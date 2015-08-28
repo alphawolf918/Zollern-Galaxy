@@ -1,0 +1,20 @@
+tile.galaxymod_solarblock.name=Zollus Rock
+tile.galaxymod_zolstone.name=Zolstone
+tile.galaxymod_edendirt.name=Eden's Soil
+tile.galaxymod_edenrock.name=Eden's Rock
+tile.galaxymod_edencobblestone.name=Eden's Cobblerock
+tile.galaxymod_edenironore.name=Eden's Iron Ore
+tile.galaxymod.edenmeteoricironore.name=Eden's Meteoric Iron Ore
+tile.galaxymod_edengoldore.name=Eden's Gold Ore
+tile.galaxymod_edendiamondore.name=Eden's Diamond Ore
+tile.galaxymod_edenemeraldore.name=Eden's Emerald Ore
+tile.galaxymod_edencoalore.name=Eden's Coal Ore
+tile.galaxymod_edencopperore.name=Eden's Copper Ore
+tile.galaxymod_edentinore.name=Eden's Tin Ore
+
+planet.zollus=Zollus
+planet.eden=Eden
+
+star.psion6=Psion-6
+
+solarsystem.psion6=Psion-6
