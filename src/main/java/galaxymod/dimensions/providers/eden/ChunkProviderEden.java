@@ -397,7 +397,7 @@ public class ChunkProviderEden extends ChunkProviderGenerate {
 		} else if (par1EnumCreatureType == EnumCreatureType.creature) {
 			final List creatures = new ArrayList();
 			creatures
-					.add(new SpawnListEntry(EntityAlienVillager.class, 2, 0, 1));
+					.add(new SpawnListEntry(EntityAlienVillager.class, 1, 0, 1));
 			return creatures;
 		} else {
 			return null;

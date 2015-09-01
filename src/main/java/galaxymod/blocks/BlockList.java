@@ -16,6 +16,7 @@ public class BlockList {
 	public static final Block solarBlock = new BlockZollus();
 	public static final Block zolstone = new BlockZolstone();
 	public static final Block edenRock = new BlockEdenRock();
+	public static final Block edenCobbleRock = new BlockEdenCobblerock();
 	public static final Block edenIronOre = new EdenIronOre();
 	public static final Block edenCopperOre = new EdenCopperOre();
 	public static final Block edenTinOre = new EdenTinOre();
@@ -37,6 +38,7 @@ public class BlockList {
 		addBlock(edenEmeraldOre, "Eden Emerald Ore");
 		addBlock(edenGoldOre, "Eden Gold Ore");
 		addBlock(edenCoalOre, "Eden Coal Ore");
+		addBlock(edenCobbleRock, "Eden Cobble Rock");
 	}
 
 	public static void addBlock(Block block, String name) {

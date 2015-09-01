@@ -144,7 +144,7 @@ public class WorldProviderEden extends WorldProviderSpace implements
 			float f = 1.2F - this.getStarBrightness(1.0F);
 			return new Vector3(0 / 255F * f, 100 / 255F * f, 190 / 255F * f);
 		}
-		float f = 1.15F - this.getStarBrightness(1.0F);
+		float f = 1.25F - this.getStarBrightness(1.0F);
 		return new Vector3(120 / 255F * f, 191 / 255F * f, 255 / 250F * f);
 	}
 
@@ -160,7 +160,7 @@ public class WorldProviderEden extends WorldProviderSpace implements
 
 	@Override
 	public long getDayLength() {
-		return 41000L;
+		return 48000L;
 	}
 
 	@Override
