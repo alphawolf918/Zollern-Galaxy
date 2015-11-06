@@ -30,8 +30,8 @@ public class SkyProviderZollus extends IRenderHandler {
 	public int glSkyList2;
 	private float sunSize;
 
-	public SkyProviderZollus(IGalacticraftWorldProvider marsProvider) {
-		this.sunSize = 7.5F * marsProvider.getSolarSize();
+	public SkyProviderZollus(IGalacticraftWorldProvider zollusProvider) {
+		this.sunSize = 7.5F * zollusProvider.getSolarSize();
 
 		int displayLists = GLAllocation.generateDisplayLists(3);
 		this.starList = displayLists;

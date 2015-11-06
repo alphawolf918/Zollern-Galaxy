@@ -11,6 +11,7 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
 public class MapGenCavesEden extends MapGenBaseMeta {
+
 	public static final int BREAK_THROUGH_CHANCE = 25; // 1 in n chance
 
 	protected void generateLargeCaveNode(long par1, int par3, int par4,
@@ -174,8 +175,8 @@ public class MapGenCavesEden extends MapGenBaseMeta {
 												&& xfactorSq + yfactorSq
 														+ zfactorSq < 1.0D) {
 											if (blockIdArray[coords] == BlockList.edenRock) {
-												if (metaArray[coords] == 3
-														|| metaArray[coords] == 4) {
+												if (metaArray[coords] == 6
+														|| metaArray[coords] == 9) {
 													blockIdArray[coords] = Blocks.air;
 												} else if (metaArray[coords] == 5
 														&& random

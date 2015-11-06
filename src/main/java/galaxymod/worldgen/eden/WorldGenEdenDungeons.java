@@ -89,7 +89,7 @@ public class WorldGenEdenDungeons extends WorldGenerator {
 										BlockList.edenRock, 0, 2);
 							} else {
 								p_76484_1_.setBlock(k1, l1, i2,
-										BlockList.edenRock, 0, 2);
+										BlockList.edenCobbleRock, 0, 2);
 							}
 						}
 					}

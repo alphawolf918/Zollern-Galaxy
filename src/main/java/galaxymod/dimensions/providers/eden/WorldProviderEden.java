@@ -1,14 +1,12 @@
 package galaxymod.dimensions.providers.eden;
 
 import galaxymod.core.NGCore;
-import galaxymod.dimensions.chunkmanagers.WorldChunkManagerEden;
 import galaxymod.dimensions.providers.renderers.SkyProviderEden;
 import micdoodle8.mods.galacticraft.api.galaxies.CelestialBody;
 import micdoodle8.mods.galacticraft.api.prefab.world.gen.WorldProviderSpace;
 import micdoodle8.mods.galacticraft.api.vector.Vector3;
 import micdoodle8.mods.galacticraft.api.world.IExitHeight;
 import micdoodle8.mods.galacticraft.api.world.ISolarLevel;
-import micdoodle8.mods.galacticraft.core.client.CloudRenderer;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.biome.WorldChunkManager;
 import net.minecraft.world.chunk.IChunkProvider;
@@ -21,7 +19,12 @@ public class WorldProviderEden extends WorldProviderSpace implements
 
 	@Override
 	public float getGravity() {
-		return 0.058F;
+		return 0.068F;
+	}
+
+	@Override
+	public float getSolarSize() {
+		return 24.0F;
 	}
 
 	@Override
@@ -61,7 +64,7 @@ public class WorldProviderEden extends WorldProviderSpace implements
 
 	@Override
 	public float getWindLevel() {
-		return 1.0F;
+		return 1.5F;
 	}
 
 	@Override
@@ -87,18 +90,16 @@ public class WorldProviderEden extends WorldProviderSpace implements
 	@Override
 	@SideOnly(Side.CLIENT)
 	public float getStarBrightness(float par1) {
-		final float var2 = this.worldObj.getCelestialAngle(par1);
-		float var3 = 1.0F - (MathHelper.cos(var2 * (float) Math.PI * 2.0F) * 2.0F + 0.25F);
+		float f1 = this.worldObj.getCelestialAngle(par1);
+		float f2 = 1.0F - (MathHelper.cos(f1 * (float) Math.PI * 2.0F) * 2.0F + 0.25F);
 
-		if (var3 < 0.0F) {
-			var3 = 0.0F;
+		if (f2 < 0.0F) {
+			f2 = 0.0F;
 		}
-
-		if (var3 > 1.0F) {
-			var3 = 1.0F;
+		if (f2 > 1.0F) {
+			f2 = 1.0F;
 		}
-
-		return var3 * var3 * 0.5F + 0.3F;
+		return f2 * f2 * 0.4F;
 	}
 
 	@Override
@@ -141,11 +142,11 @@ public class WorldProviderEden extends WorldProviderSpace implements
 	@Override
 	public Vector3 getSkyColor() {
 		if (this.worldObj.isRaining()) {
-			float f = 1.2F - this.getStarBrightness(1.0F);
+			float f = 1.15F - this.getStarBrightness(1.0F);
 			return new Vector3(0 / 255F * f, 100 / 255F * f, 190 / 255F * f);
 		}
-		float f = 1.25F - this.getStarBrightness(1.0F);
-		return new Vector3(120 / 255F * f, 191 / 255F * f, 255 / 250F * f);
+		float f = 1.15F - this.getStarBrightness(1.0F);
+		return new Vector3(120 / 255F * f, 191 / 255F * f, 255 / 255F * f);
 	}
 
 	@Override
@@ -155,7 +156,7 @@ public class WorldProviderEden extends WorldProviderSpace implements
 
 	@Override
 	public boolean hasSunset() {
-		return true;
+		return false;
 	}
 
 	@Override
@@ -164,17 +165,13 @@ public class WorldProviderEden extends WorldProviderSpace implements
 	}
 
 	@Override
-	public IRenderHandler getCloudRenderer() {
-		return new CloudRenderer();
-	}
-
 	public IRenderHandler getSkyRenderer() {
 		return new SkyProviderEden();
 	}
 
 	@Override
 	public boolean shouldForceRespawn() {
-		return false;
+		return true;
 	}
 
 	@Override

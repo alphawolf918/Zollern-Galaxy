@@ -1,3 +1,15 @@
+/*******************************************************************************
+ * Copyright 2015 Zollern Wolf - Project Nova / Nova Galactic
+ * Final Frontier
+ * Galacticraft Add-On Mod
+ * You CAN:
+ * 	- Learn from it
+ *  - Use it to get ideas and concepts
+ * You CAN'T:
+ *  - Redistribute it
+ *  - Claim it as your own
+ ******************************************************************************/
+
 package galaxymod.biomes.decorators;
 
 import galaxymod.blocks.BlockList;
@@ -7,7 +19,6 @@ import java.util.Random;
 import micdoodle8.mods.galacticraft.api.event.wgen.GCCoreEventPopulate;
 import micdoodle8.mods.galacticraft.core.world.gen.WorldGenMinableMeta;
 import net.minecraft.world.World;
-import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.common.MinecraftForge;
 
@@ -27,8 +38,9 @@ public class BiomeDecoratorEden extends BiomeDecoratorNova {
 	private WorldGenerator diamondGen;
 	private WorldGenerator emeraldGen;
 	private WorldGenerator coalGen;
+	private WorldGenerator deshGen;
 
-	public BiomeDecoratorEden(BiomeGenBase par1BiomeGenBase) {
+	public BiomeDecoratorEden() {
 		this.ironGen = new WorldGenMinableMeta(BlockList.edenIronOre, 5, 0,
 				false, BlockList.edenRock, 0);
 		this.meteoricIronGen = new WorldGenMinableMeta(
@@ -45,6 +57,8 @@ public class BiomeDecoratorEden extends BiomeDecoratorNova {
 		this.goldGen = new WorldGenMinableMeta(BlockList.edenGoldOre, 6, 0,
 				false, BlockList.edenRock, 0);
 		this.coalGen = new WorldGenMinableMeta(BlockList.edenCoalOre, 15, 0,
+				false, BlockList.edenRock, 0);
+		this.deshGen = new WorldGenMinableMeta(BlockList.edenDeshOre, 5, 0,
 				false, BlockList.edenRock, 0);
 	}
 
@@ -85,6 +99,7 @@ public class BiomeDecoratorEden extends BiomeDecoratorNova {
 		this.genOre(28, this.copperGen, 4, 60);
 		this.genOre(28, this.tinGen, 4, 40);
 		this.genOre(30, this.coalGen, 2, 60);
+		this.genOre(5, this.deshGen, 4, 40);
 		MinecraftForge.EVENT_BUS.post(new GCCoreEventPopulate.Post(
 				this.worldObj, this.randomGenerator, this.chunkX, this.chunkZ));
 	}

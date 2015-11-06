@@ -1,20 +1,57 @@
 tile.galaxymod_solarblock.name=Zollus Rock
 tile.galaxymod_zolstone.name=Zolstone
-tile.galaxymod_edendirt.name=Eden's Soil
-tile.galaxymod_edenrock.name=Eden's Rock
+
+tile.galaxymod_edensurfaceblock.name=Eden's Greenrock
+tile.galaxymod:edengrass.name=Eden's Grass
+tile.galaxymod_edensoil.name=Eden's Soil
+tile.galaxymod_edenrock.name=Eden's Cave Rock
 tile.galaxymod_edencobblerock.name=Eden's Cobblerock
 tile.galaxymod_edenironore.name=Eden's Iron Ore
-tile.galaxymod.edenmeteoricironore.name=Eden's Meteoric Iron Ore
+tile.galaxymod_edenmeteoricironore.name=Eden's Meteoric Iron Ore
 tile.galaxymod_edengoldore.name=Eden's Gold Ore
 tile.galaxymod_edendiamondore.name=Eden's Diamond Ore
 tile.galaxymod_edenemeraldore.name=Eden's Emerald Ore
 tile.galaxymod_edencoalore.name=Eden's Coal Ore
 tile.galaxymod_edencopperore.name=Eden's Copper Ore
 tile.galaxymod_edentinore.name=Eden's Tin Ore
+tile.galaxymod_edendeshore.name=Eden's Desh Ore
+tile.galaxymod_edenflower.name=Eden's Flower
+tile.galaxymod_edentallgrass.name=Eden's Tall Grass
+tile.galaxymod_bloodsand.name=Eden's Blood Sand
+tile.galaxymod_bloodstone.name=Eden's Bloodstone
+tile.galaxymod_bonestone.name=Eden's Bone Stone
+
+item.galaxymod_alienbeefraw.name=Raw Alien Beef
+item.galaxymod_alienbeefcooked.name=Cooked Alien Beef
+
+entity.galaxymod_moolus.name=Moolus
 
 planet.zollus=Zollus
 planet.eden=Eden
+planet.vestian=Vestian
 
-star.psion6=Psion-6
+planet.xathius=Xathius
+planet.xantheon=Xantheon
+planet.atheon=Atheon
 
-solarsystem.psion6=Psion-6
+planet.meztli=Meztli
+planet.centotl=Centotl
+planet.toci=Toci
+planet.tlaloc=Tlaloc
+
+planet.ares=Ares
+planet.prometheus=Prometheus
+planet.icarus=Icarus
+planet.kronos=Kronos
+
+star.psion6=Sirius
+star.praedyth=Praedyth
+star.pantheon=Pantheon
+star.olympus=Olympus
+
+solarsystem.psion6=Sirius
+solarsystem.praedyth=Praedyth
+solarsystem.pantheon=Pantheon
+solarsystem.olympus=Olympus
+
+itemGroup.NovaGalactic=Project Nova

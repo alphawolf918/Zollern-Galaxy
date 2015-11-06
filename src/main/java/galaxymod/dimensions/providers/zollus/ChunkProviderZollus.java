@@ -55,18 +55,18 @@ public class ChunkProviderZollus extends ChunkProviderSpace {
 	@Override
 	protected SpawnListEntry[] getMonsters() {
 		SpawnListEntry skele = new SpawnListEntry(EntityEvolvedSkeleton.class,
-				100, 4, 4);
+				20, 4, 4);
 		SpawnListEntry creeper = new SpawnListEntry(EntityEvolvedCreeper.class,
-				100, 4, 4);
+				20, 4, 4);
 		SpawnListEntry zombie = new SpawnListEntry(EntityEvolvedZombie.class,
-				100, 4, 4);
+				20, 4, 4);
 		return new SpawnListEntry[] { skele, creeper, zombie };
 	}
 
 	@Override
 	protected SpawnListEntry[] getCreatures() {
 		SpawnListEntry villager = new SpawnListEntry(EntityAlienVillager.class,
-				10, 2, 2);
+				2, 2, 2);
 		return new SpawnListEntry[] { villager };
 	}
 
@@ -117,11 +117,11 @@ public class ChunkProviderZollus extends ChunkProviderSpace {
 
 	@Override
 	public void onPopulate(IChunkProvider provider, int cX, int cZ) {
-		
+
 	}
-   
-    @Override
-    public boolean chunkExists(int x, int y){
-        return false;
-    }
+
+	@Override
+	public boolean chunkExists(int x, int y) {
+		return false;
+	}
 }

@@ -21,7 +21,7 @@ public class WorldProviderZollus extends WorldProviderSpace implements
 
 	@Override
 	public float getGravity() {
-		return 0.07F;
+		return 0.04F;
 	}
 
 	@Override
@@ -30,8 +30,13 @@ public class WorldProviderZollus extends WorldProviderSpace implements
 	}
 
 	@Override
+	public float getSolarSize() {
+		return 16.0F;
+	}
+
+	@Override
 	public double getFuelUsageMultiplier() {
-		return 0.1D;
+		return 0.4D;
 	}
 
 	@Override
@@ -51,15 +56,15 @@ public class WorldProviderZollus extends WorldProviderSpace implements
 
 	@Override
 	public float getSoundVolReductionAmount() {
-		return 0F;
+		return 2F;
 	}
 
 	@Override
 	public float getThermalLevelModifier() {
 		if (this.isDaytime()) {
-			return 3.75F;
+			return 0.0F;
 		} else {
-			return -0.25F;
+			return -0.05F;
 		}
 	}
 
@@ -80,22 +85,19 @@ public class WorldProviderZollus extends WorldProviderSpace implements
 
 	@Override
 	public double getYCoordinateToTeleport() {
-		return 800;
+		return 400;
 	}
 
 	@Override
 	@SideOnly(Side.CLIENT)
-	public float getStarBrightness(float par1)
-	{
+	public float getStarBrightness(float par1) {
 		float var2 = this.worldObj.getCelestialAngle(par1);
 		float var3 = 1.0F - (MathHelper.cos(var2 * (float) Math.PI * 2.0F) * 2.0F + 0.25F);
 
-		if (var3 < 0.0F)
-		{
+		if (var3 < 0.0F) {
 			var3 = 0.25F;
 		}
-		if (var3 > 1.0F)
-		{
+		if (var3 > 1.0F) {
 			var3 = 0.75F;
 		}
 		return var3 * var3 * 0.5F + 0.2F;
@@ -103,23 +105,19 @@ public class WorldProviderZollus extends WorldProviderSpace implements
 
 	@Override
 	@SideOnly(Side.CLIENT)
-	public float getSunBrightness(float par1)
-	{
+	public float getSunBrightness(float par1) {
 		float f1 = this.worldObj.getCelestialAngle(1.0F);
 		float f2 = 1.0F - (MathHelper.cos(f1 * (float) Math.PI * 2.0F) * 2.0F + 0.2F);
 
-		if (f2 < 0.0F)
-		{
+		if (f2 < 0.0F) {
 			f2 = 0.6F;
 		}
-		if (f2 > 1.0F)
-		{
+		if (f2 > 1.0F) {
 			f2 = 0.95F;
 		}
 		f2 = 0.95F - f2;
-		return f2 * 1.0F;
+		return f2 * 1.2F;
 	}
-
 
 	@Override
 	public double getHorizon() {
@@ -132,39 +130,38 @@ public class WorldProviderZollus extends WorldProviderSpace implements
 	}
 
 	@Override
-	public Vector3 getFogColor()
-	{
+	public Vector3 getFogColor() {
 		float f = 1.0F - this.getStarBrightness(1.0F);
 		return new Vector3(20 / 255F * f, 27 / 255F * f, 33 / 255F * f);
 	}
 
 	@Override
-	public Vector3 getSkyColor()
-	{
+	public Vector3 getSkyColor() {
 		return new Vector3(0, 0, 0);
 	}
 
 	@Override
 	public boolean canRainOrSnow() {
-		return true;
+		return false;
 	}
 
 	@Override
 	public boolean hasSunset() {
-		return true;
+		return false;
 	}
 
 	@Override
 	public long getDayLength() {
-		return 41000L;
+		return 46000L;
 	}
 
 	@Override
 	public IRenderHandler getCloudRenderer() {
 		return new CloudRenderer();
 	}
-	
-	public IRenderHandler getSkyRenderer(){
+
+	@Override
+	public IRenderHandler getSkyRenderer() {
 		return new SkyProviderZollus(this);
 	}
 

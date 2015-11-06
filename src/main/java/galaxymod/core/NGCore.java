@@ -7,6 +7,7 @@ package galaxymod.core;
 
 import galaxymod.dimensions.providers.eden.WorldProviderEden;
 import galaxymod.dimensions.providers.zollus.WorldProviderZollus;
+import galaxymod.events.NGEventHandler;
 import galaxymod.lib.ModInfo;
 import micdoodle8.mods.galacticraft.api.GalacticraftRegistry;
 import micdoodle8.mods.galacticraft.api.galaxies.CelestialBody.ScalableDistance;
@@ -28,6 +29,7 @@ public class NGCore {
 	public static Planet eden;
 
 	public static void init() {
+		NGEventHandler.init();
 		initStarSystems();
 		initPlanets();
 		initMoons();
@@ -40,7 +42,7 @@ public class NGCore {
 				.setMapPosition(new Vector3(0.9F, 1.2F, 0.2F));
 		starPsion6 = new Star("psion6").setParentSolarSystem(systemPsion6);
 		starPsion6.setTierRequired(-1);
-		starPsion6.setRelativeSize(40.0F);
+		starPsion6.setRelativeSize(60.0F);
 		starPsion6.setBodyIcon(new ResourceLocation(ModInfo.MODID,
 				"textures/gui/psion6.png"));
 		systemPsion6.setMainStar(starPsion6);
@@ -48,20 +50,19 @@ public class NGCore {
 
 	public static void initPlanets() {
 
-		// <Planet Zollus
+		// Planet Zollus
 		zollus = new Planet("zollus").setParentSolarSystem(systemPsion6);
 		zollus.setRingColorRGB(0.1F, 0.9F, 2.6F);
 		zollus.setPhaseShift(8.7446F);
 		zollus.setRelativeDistanceFromCenter(new ScalableDistance(5.0F, 5.0F));
 		zollus.setRelativeOrbitTime(13F);
 		zollus.setTierRequired(3);
-		zollus.setRelativeSize(6.876F);
+		zollus.setRelativeSize(14.876F);
 		zollus.setBodyIcon(new ResourceLocation(ModInfo.MODID,
 				"textures/gui/zollus.png"));
 		zollus.setDimensionInfo(-31, WorldProviderZollus.class);
-		// >
 
-		// <Planet Eden
+		// Planet Eden
 		eden = new Planet("eden").setParentSolarSystem(systemPsion6);
 		eden.setRingColorRGB(0.1F, 0.9F, 2.6F);
 		eden.setPhaseShift(0.0F);
@@ -72,15 +73,14 @@ public class NGCore {
 				.atmosphereComponent(IAtmosphericGas.ARGON)
 				.atmosphereComponent(IAtmosphericGas.WATER);
 		eden.setTierRequired(3);
-		eden.setRelativeSize(20.0F);
+		eden.setRelativeSize(40.0F);
 		eden.setBodyIcon(new ResourceLocation(ModInfo.MODID,
 				"textures/gui/eden.png"));
 		eden.setDimensionInfo(-32, WorldProviderEden.class);
-		// >
 	}
 
 	public static void initMoons() {
-		
+
 	}
 
 	public static void registerSystems() {

@@ -19,7 +19,7 @@ apply plugin: 'forge'
 
 version = "1.0-1.7.10"
 group= "galaxymod" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "GalaxyMod"
+archivesBaseName = "galaxymod"
 
 sourceSets {
     main {

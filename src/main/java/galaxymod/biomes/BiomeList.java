@@ -11,10 +11,19 @@ public class BiomeList {
 
 	public static BiomeGenBase biomeZollus = new BiomeZollus(179);
 	public static BiomeGenBase biomeEden = new BiomeEden(178);
+	public static BiomeGenBase biomeEdenRockMountains = new BiomeEdenRockMountains(
+			177);
+	public static BiomeGenBase biomeEdenTerranValley = new BiomeEdenTerranValley(
+			176);
+	public static BiomeGenBase biomeEdenBloodDesert = new BiomeEdenBloodDesert(
+			175);
 
 	public static void init() {
 		addBiome(biomeZollus, BiomeType.COOL, 0);
 		addBiome(biomeEden, BiomeType.WARM, 0);
+		addBiome(biomeEdenRockMountains, BiomeType.WARM, 0);
+		addBiome(biomeEdenTerranValley, BiomeType.COOL, 0);
+		addBiome(biomeEdenBloodDesert, BiomeType.DESERT, 0);
 	}
 
 	public static void addBiome(BiomeGenBase biome, BiomeType biomeType,

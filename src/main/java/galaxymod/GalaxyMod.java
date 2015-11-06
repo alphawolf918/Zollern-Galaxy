@@ -1,6 +1,13 @@
 /*******************************************************************************
  * Copyright 2015 Zollern Wolf - Project Nova / Nova Galactic
+ * Final Frontier
  * Galacticraft Add-On Mod
+ * You CAN:
+ * 	- Learn from it
+ *  - Use it to get ideas and concepts
+ * You CAN'T:
+ *  - Redistribute it
+ *  - Claim it as your own
  ******************************************************************************/
 
 package galaxymod;
@@ -10,8 +17,12 @@ import galaxymod.blocks.BlockList;
 import galaxymod.commands.CommandList;
 import galaxymod.core.NGCore;
 import galaxymod.creativetabs.ModTabs;
+import galaxymod.items.ItemList;
 import galaxymod.lib.ModInfo;
+import galaxymod.lib.Recipes;
+import galaxymod.mobs.Mobs;
 import galaxymod.proxies.CommonProxy;
+import galaxymod.worldgen.eden.NGWorldGenManager;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.SidedProxy;
@@ -19,6 +30,7 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
+import cpw.mods.fml.common.registry.GameRegistry;
 
 @Mod(modid = ModInfo.MODID, name = ModInfo.NAME, dependencies = "required-after:GalacticraftCore", version = ModInfo.VERSION)
 public class GalaxyMod {
@@ -32,13 +44,18 @@ public class GalaxyMod {
 
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
-		BlockList.init();
 		ModTabs.init();
-		BiomeList.init();
+		BlockList.init();
+		ItemList.init();
+		Mobs.init();
 	}
 
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
+		proxy.initRenderers();
+		BiomeList.init();
+		Recipes.init();
+		GameRegistry.registerWorldGenerator(new NGWorldGenManager(), 30);
 		NGCore.init();
 	}
 
