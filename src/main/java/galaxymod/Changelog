@@ -42,4 +42,5 @@
         * Raw if killed while not on fire, and cooked if killed while on fire.
         * Can be cooked into Cooked Alien Beef.
 * All ores can now be smelted.
-* Lava lakes will now randomly generate at any layer on Eden.
+* Crystal Towers now generate in Green Lands and Terran Valley biomes.
+    * Usually spawns with at least 1 chest, sometimes spawns with 2.

@@ -128,7 +128,7 @@ public class SkyProviderEden extends IRenderHandler {
 		GL11.glColor4f(1.0F, 1.0F, 1.0F, 5F);
 		GL11.glRotatef(world.getCelestialAngle(partialTicks) * 360.0F, 1.0F,
 				0.0F, 0.0F);
-		var12 = 30.0F;
+		var12 = 20.0F;
 		FMLClientHandler.instance().getClient().renderEngine
 				.bindTexture(SkyProviderEden.sunTexture);
 		var23.startDrawingQuads();

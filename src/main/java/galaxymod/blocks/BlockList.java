@@ -19,6 +19,7 @@ import galaxymod.blocks.eden.BloodStone;
 import galaxymod.blocks.eden.BoneBlock;
 import galaxymod.blocks.eden.EdenFlower;
 import galaxymod.blocks.eden.EdenGrass;
+import galaxymod.blocks.eden.EdenSacredStone;
 import galaxymod.blocks.eden.EdenSoil;
 import galaxymod.blocks.eden.EdenSurfaceRock;
 import galaxymod.blocks.eden.EdenTallGrass;
@@ -66,6 +67,7 @@ public class BlockList {
 	public static final Block edenBloodSand = new BloodSand();
 	public static final Block edenBloodStone = new BloodStone();
 	public static final Block edenBoneStone = new BoneBlock();
+	public static final Block edenSacredStone = new EdenSacredStone();
 
 	public static void init() {
 		addBlock(solarBlock, "Zollus Rock");
@@ -95,6 +97,7 @@ public class BlockList {
 		addBlock(edenBloodSand, "Eden Blood Sand");
 		addBlock(edenBloodStone, "Eden Bloodstone");
 		addBlock(edenBoneStone, "Eden's Bone Stone");
+		addBlock(edenSacredStone, "Eden's Sacred Stone");
 	}
 
 	public static void addBlock(Block block, String name) {

@@ -1,3 +1,15 @@
+/*******************************************************************************
+ * Copyright 2015 Zollern Wolf - Project Nova / Nova Galactic
+ * Final Frontier
+ * Galacticraft Add-On Mod
+ * You CAN:
+ * 	- Learn from it
+ *  - Use it to get ideas and concepts
+ * You CAN'T:
+ *  - Redistribute it
+ *  - Claim it as your own
+ ******************************************************************************/
+
 package galaxymod.dimensions.providers.eden;
 
 import galaxymod.core.NGCore;
@@ -115,17 +127,17 @@ public class WorldProviderEden extends WorldProviderSpace implements
 			f2 = 1.0F;
 		}
 		f2 = 1.0F - f2;
-		return f2 * 1.5F;
+		return f2 * 1.0F;
 	}
 
 	@Override
 	public double getHorizon() {
-		return 44.0D;
+		return 64.0D;
 	}
 
 	@Override
 	public int getAverageGroundLevel() {
-		return 44;
+		return 64;
 	}
 
 	@Override
@@ -156,7 +168,7 @@ public class WorldProviderEden extends WorldProviderSpace implements
 
 	@Override
 	public boolean hasSunset() {
-		return false;
+		return true;
 	}
 
 	@Override

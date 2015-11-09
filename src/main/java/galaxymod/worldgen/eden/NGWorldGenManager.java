@@ -104,6 +104,15 @@ public class NGWorldGenManager implements IWorldGenerator {
 					new WorldGenDropShip());
 		}
 
+		// Crystal Tower
+		if (random.nextInt(50) <= 10) {
+			if (currentBiome == BiomeList.biomeEden
+					|| currentBiome == BiomeList.biomeEdenTerranValley) {
+				this.spawnStructure(52, 90, world, random, x, y, z,
+						new WorldGenCrystalTower());
+			}
+		}
+
 		if (random.nextInt(2) == 1) {
 			if (currentBiome == BiomeList.biomeEden
 					|| currentBiome == BiomeList.biomeEdenTerranValley) {

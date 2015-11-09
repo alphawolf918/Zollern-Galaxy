@@ -26,11 +26,12 @@ public class BiomeEden extends BiomeGenNovaBase {
 	public BiomeEden(int par1) {
 		super(par1);
 		this.setBiomeName("Green Lands");
+		this.setChunkHeightModifier(5);
 		this.theBiomeDecorator.generateLakes = true;
 		this.grassFoilageColorMultiplier = 0x009f00;
 		this.waterColorMultiplier = 0x009f9f;
 		this.spawnableCreatureList.add(new SpawnListEntry(EntityMoolus.class,
-				16, 2, 3));
+				4, 2, 2));
 		this.temperature = 6F;
 		this.topBlock = BlockList.edenSurfaceRock;
 		this.fillerBlock = BlockList.edenSoil;

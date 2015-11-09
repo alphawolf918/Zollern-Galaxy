@@ -79,7 +79,6 @@ public class RegisterHelper {
 		Blocks.fire.setFireInfo(block, encouragement, flammibility);
 	}
 
-	@Deprecated
 	public static void registerEntity(Class<? extends Entity> var0,
 			String var1, int color1, int color2) {
 		EntityRegistry.registerGlobalEntityID(var0, var1,

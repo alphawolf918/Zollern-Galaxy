@@ -1,9 +1,20 @@
+/*******************************************************************************
+ * Copyright 2015 Zollern Wolf - Project Nova / Nova Galactic
+ * Final Frontier
+ * Galacticraft Add-On Mod
+ * You CAN:
+ * 	- Learn from it
+ *  - Use it to get ideas and concepts
+ * You CAN'T:
+ *  - Redistribute it
+ *  - Claim it as your own
+ ******************************************************************************/
+
 package galaxymod.dimensions.providers.eden;
 
 import static net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.ANIMALS;
 import static net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.ICE;
 import static net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.LAKE;
-import static net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.LAVA;
 import galaxymod.biomes.BiomeList;
 import galaxymod.biomes.decorators.BiomeDecoratorEden;
 import galaxymod.blocks.BlockList;
@@ -107,27 +118,20 @@ public class ChunkProviderEden extends ChunkProviderSpace {
 	}
 
 	@Override
-	protected BiomeGenBase.SpawnListEntry[] getMonsters() {
-		List<BiomeGenBase.SpawnListEntry> monsters = new ArrayList<BiomeGenBase.SpawnListEntry>();
-		monsters.add(new BiomeGenBase.SpawnListEntry(EntityEvolvedZombie.class,
-				8, 2, 3));
-		monsters.add(new BiomeGenBase.SpawnListEntry(EntityEvolvedSpider.class,
-				8, 2, 3));
-		monsters.add(new BiomeGenBase.SpawnListEntry(
-				EntityEvolvedSkeleton.class, 8, 2, 3));
-		monsters.add(new BiomeGenBase.SpawnListEntry(
-				EntityEvolvedCreeper.class, 8, 2, 3));
-		return monsters
-				.toArray(new BiomeGenBase.SpawnListEntry[monsters.size()]);
+	protected SpawnListEntry[] getMonsters() {
+		List<SpawnListEntry> monsters = new ArrayList<SpawnListEntry>();
+		monsters.add(new SpawnListEntry(EntityEvolvedZombie.class, 2, 1, 2));
+		monsters.add(new SpawnListEntry(EntityEvolvedSpider.class, 2, 1, 2));
+		monsters.add(new SpawnListEntry(EntityEvolvedSkeleton.class, 2, 1, 2));
+		monsters.add(new SpawnListEntry(EntityEvolvedCreeper.class, 2, 1, 2));
+		return monsters.toArray(new SpawnListEntry[monsters.size()]);
 	}
 
 	@Override
-	protected BiomeGenBase.SpawnListEntry[] getCreatures() {
-		List<BiomeGenBase.SpawnListEntry> creatures = new ArrayList<BiomeGenBase.SpawnListEntry>();
-		creatures.add(new BiomeGenBase.SpawnListEntry(EntityMoolus.class, 16,
-				2, 3));
-		return creatures.toArray(new BiomeGenBase.SpawnListEntry[creatures
-				.size()]);
+	protected SpawnListEntry[] getCreatures() {
+		List<SpawnListEntry> creatures = new ArrayList<SpawnListEntry>();
+		creatures.add(new SpawnListEntry(EntityMoolus.class, 1, 2, 2));
+		return creatures.toArray(new SpawnListEntry[creatures.size()]);
 	}
 
 	@Override
@@ -155,18 +159,15 @@ public class ChunkProviderEden extends ChunkProviderSpace {
 		BiomeGenBase currentBiome = worldObj.getBiomeGenForCoords(x, z);
 		if (type == EnumCreatureType.monster) {
 			List monsters = new ArrayList();
-			monsters.add(new BiomeGenBase.SpawnListEntry(
-					EntityEvolvedZombie.class, 8, 2, 3));
-			monsters.add(new BiomeGenBase.SpawnListEntry(
-					EntityEvolvedSpider.class, 8, 2, 3));
-			monsters.add(new BiomeGenBase.SpawnListEntry(
-					EntityEvolvedSkeleton.class, 8, 2, 3));
-			monsters.add(new BiomeGenBase.SpawnListEntry(
-					EntityEvolvedCreeper.class, 8, 2, 3));
+			monsters.add(new SpawnListEntry(EntityEvolvedZombie.class, 4, 2, 2));
+			monsters.add(new SpawnListEntry(EntityEvolvedSpider.class, 4, 2, 2));
+			monsters.add(new SpawnListEntry(EntityEvolvedSkeleton.class, 4, 2,
+					3));
+			monsters.add(new SpawnListEntry(EntityEvolvedCreeper.class, 4, 2, 2));
 			return monsters;
 		} else if (type == EnumCreatureType.creature) {
 			List creatures = new ArrayList();
-			creatures.add(new SpawnListEntry(EntityMoolus.class, 16, 2, 4));
+			creatures.add(new SpawnListEntry(EntityMoolus.class, 2, 2, 2));
 			return creatures;
 		} else {
 			return null;
@@ -215,15 +216,6 @@ public class ChunkProviderEden extends ChunkProviderSpace {
 					k1, l1, i2);
 		}
 
-		if (TerrainGen.populate(par1IChunkProvider, worldObj, rand, par2, par3,
-				flag, LAVA) && !flag && this.rand.nextInt(8) == 0) {
-			k1 = k + this.rand.nextInt(16) + 8;
-			l1 = this.rand.nextInt(this.rand.nextInt(248) + 8);
-			i2 = l + this.rand.nextInt(16) + 8;
-			new WorldGenLakes(Blocks.lava).generate(this.worldObj, this.rand,
-					k1, l1, i2);
-		}
-
 		boolean doGen;
 
 		BiomeGenBase biomegenbase = currentBiome;
@@ -261,7 +253,7 @@ public class ChunkProviderEden extends ChunkProviderSpace {
 
 	@Override
 	public int getCraterProbability() {
-		return 2000;
+		return 2200;
 	}
 
 	@Override

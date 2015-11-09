@@ -36,11 +36,17 @@ import cpw.mods.fml.common.registry.GameRegistry;
 public class GalaxyMod {
 
 	@Mod.Instance(ModInfo.MODID)
-	public static GalaxyMod INSTANCE;
+	private static GalaxyMod INSTANCE;
 
 	@SidedProxy(clientSide = ModInfo.PROXY_LOCATION + ".ClientProxy", serverSide = ModInfo.PROXY_LOCATION
 			+ ".CommonProxy")
 	public static CommonProxy proxy;
+
+	public static final int modGuiIndex = 11;
+
+	public static GalaxyMod instance() {
+		return INSTANCE;
+	}
 
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {

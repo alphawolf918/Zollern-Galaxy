@@ -1,7 +1,7 @@
 tile.galaxymod_solarblock.name=Zollus Rock
 tile.galaxymod_zolstone.name=Zolstone
 
-tile.galaxymod_edensurfaceblock.name=Eden's Greenrock
+tile.galaxymod_edensurfaceblock.name=Eden's Grassrock
 tile.galaxymod:edengrass.name=Eden's Grass
 tile.galaxymod_edensoil.name=Eden's Soil
 tile.galaxymod_edenrock.name=Eden's Cave Rock
@@ -20,15 +20,19 @@ tile.galaxymod_edentallgrass.name=Eden's Tall Grass
 tile.galaxymod_bloodsand.name=Eden's Blood Sand
 tile.galaxymod_bloodstone.name=Eden's Bloodstone
 tile.galaxymod_bonestone.name=Eden's Bone Stone
+tile.galaxymod_edensacredstone.name=Eden's Sacred Stone
+tile.galaxymod_edenpurplius.name=Eden's Purplius
 
 item.galaxymod_alienbeefraw.name=Raw Alien Beef
 item.galaxymod_alienbeefcooked.name=Cooked Alien Beef
 
 entity.galaxymod_moolus.name=Moolus
+entity.galaxymod_grayalien.name=Gray Alien
 
 planet.zollus=Zollus
 planet.eden=Eden
 planet.vestian=Vestian
+planet.kriffus=Kriffus
 
 planet.xathius=Xathius
 planet.xantheon=Xantheon
@@ -49,7 +53,7 @@ star.praedyth=Praedyth
 star.pantheon=Pantheon
 star.olympus=Olympus
 
-solarsystem.psion6=Sirius
+solarsystem.psion6=Psios
 solarsystem.praedyth=Praedyth
 solarsystem.pantheon=Pantheon
 solarsystem.olympus=Olympus

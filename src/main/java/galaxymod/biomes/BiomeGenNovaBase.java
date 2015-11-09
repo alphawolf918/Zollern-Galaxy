@@ -17,6 +17,7 @@ import net.minecraft.world.biome.BiomeGenBase;
 public abstract class BiomeGenNovaBase extends BiomeGenBase {
 
 	public static int grassFoilageColorMultiplier = 0x00ff00;
+	public static int chunkHeightModifier = 12;
 
 	public BiomeGenNovaBase(int p_i1971_1_) {
 		super(p_i1971_1_);
@@ -30,6 +31,14 @@ public abstract class BiomeGenNovaBase extends BiomeGenBase {
 		this.spawnableMonsterList.clear();
 		this.spawnableWaterCreatureList.clear();
 		this.spawnableCreatureList.clear();
+	}
+
+	public static void setChunkHeightModifier(int heightMod) {
+		chunkHeightModifier = heightMod;
+	}
+
+	public static int getChunkHeightModifier() {
+		return chunkHeightModifier;
 	}
 
 	@Override

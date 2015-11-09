@@ -2,6 +2,7 @@ package galaxymod.mobs;
 
 import galaxymod.biomes.BiomeList;
 import galaxymod.lib.ModInfo;
+import galaxymod.mobs.entities.EntityGrayAlien;
 import galaxymod.mobs.entities.EntityMoolus;
 import net.minecraft.entity.EntityList;
 import net.minecraft.entity.EntityList.EntityEggInfo;
@@ -17,9 +18,12 @@ public class Mobs {
 
 		// Moolus
 		registerEntity(EntityMoolus.class, "moolus", 0x008b00, 0xeeeeee);
-		EntityRegistry.addSpawn(EntityMoolus.class, 15, 2, 4,
+		EntityRegistry.addSpawn(EntityMoolus.class, 4, 2, 4,
 				EnumCreatureType.creature, BiomeList.biomeEden,
 				BiomeList.biomeEdenTerranValley);
+
+		// Gray Alien
+		registerEntity(EntityGrayAlien.class, "grayalien", 0xeeeeee, 0x000000);
 	}
 
 	public static void registerEntity(Class<? extends EntityLiving> entity,

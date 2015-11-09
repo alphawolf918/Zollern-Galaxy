@@ -56,6 +56,12 @@ public class NGEvents {
 								} else if (currentBlock == BlockList.edenSoil) {
 									storage.func_150818_a(x, y, z,
 											biome.fillerBlock);
+								} else if (currentBlock == Blocks.stone) {
+									storage.func_150818_a(x, y, z,
+											BlockList.edenRock);
+								} else if (currentBlock == Blocks.coal_ore) {
+									storage.func_150818_a(x, y, z,
+											BlockList.edenCoalOre);
 								}
 							}
 						}

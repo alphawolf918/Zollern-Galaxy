@@ -1,0 +1,14 @@
+{
+  "mob.alien.say": {
+    "category": "master",
+    "sounds": [
+      "mob/alien/say"
+    ]
+  },
+  "mob.alien.hurt": {
+	"category": "master",
+	"sounds": [
+      "mob/alien/hurt"
+	]
+  }
+}

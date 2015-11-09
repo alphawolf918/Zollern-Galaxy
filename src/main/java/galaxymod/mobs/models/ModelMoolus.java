@@ -24,7 +24,6 @@ public class ModelMoolus extends ModelBase {
 	public ModelMoolus() {
 		textureWidth = 64;
 		textureHeight = 32;
-
 		head = new ModelRenderer(this, 0, 0);
 		head.addBox(-4F, -4F, -6F, 8, 8, 6);
 		head.setRotationPoint(-3F, 4F, -8F);
@@ -93,7 +92,7 @@ public class ModelMoolus extends ModelBase {
 		super.render(par1Entity, par2, par3, par4, par5, par6, par7);
 		setRotationAngles(par2, par3, par4, par5, par6, par7, par1Entity);
 		if (this.isChild) {
-			float f6 = 2.0F;
+			float f6 = 2.5F;
 			GL11.glPushMatrix();
 			GL11.glTranslatef(0.0F, this.field_78145_g * par7,
 					this.field_78151_h * par7);
