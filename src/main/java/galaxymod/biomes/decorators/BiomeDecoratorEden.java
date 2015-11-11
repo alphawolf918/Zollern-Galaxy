@@ -13,104 +13,129 @@
 package galaxymod.biomes.decorators;
 
 import galaxymod.blocks.BlockList;
+import galaxymod.worldgen.eden.WorldGenEdenFlowers;
 
 import java.util.Random;
 
-import micdoodle8.mods.galacticraft.api.event.wgen.GCCoreEventPopulate;
-import micdoodle8.mods.galacticraft.core.world.gen.WorldGenMinableMeta;
 import net.minecraft.world.World;
-import net.minecraft.world.gen.feature.WorldGenerator;
+import net.minecraft.world.biome.BiomeDecorator;
+import net.minecraft.world.biome.BiomeGenBase;
+import net.minecraft.world.gen.feature.WorldGenTallGrass;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.terraingen.DecorateBiomeEvent;
+import net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType;
+import net.minecraftforge.event.terraingen.TerrainGen;
 
-public class BiomeDecoratorEden extends BiomeDecoratorNova {
+public class BiomeDecoratorEden extends BiomeDecorator {
 
-	private World worldObj;
-	private Random randomGenerator;
-
-	private int chunkX;
-	private int chunkZ;
-
-	private WorldGenerator copperGen;
-	private WorldGenerator tinGen;
-	private WorldGenerator ironGen;
-	private WorldGenerator meteoricIronGen;
-	private WorldGenerator goldGen;
-	private WorldGenerator diamondGen;
-	private WorldGenerator emeraldGen;
-	private WorldGenerator coalGen;
-	private WorldGenerator deshGen;
-
-	public BiomeDecoratorEden() {
-		this.ironGen = new WorldGenMinableMeta(BlockList.edenIronOre, 5, 0,
-				false, BlockList.edenRock, 0);
-		this.meteoricIronGen = new WorldGenMinableMeta(
-				BlockList.edenMeteoricIronOre, 2, 0, false, BlockList.edenRock,
-				0);
-		this.copperGen = new WorldGenMinableMeta(BlockList.edenCopperOre, 8, 0,
-				false, BlockList.edenRock, 0);
-		this.tinGen = new WorldGenMinableMeta(BlockList.edenTinOre, 10, 0,
-				false, BlockList.edenRock, 0);
-		this.diamondGen = new WorldGenMinableMeta(BlockList.edenDiamondOre, 4,
-				0, false, BlockList.edenRock, 0);
-		this.emeraldGen = new WorldGenMinableMeta(BlockList.edenEmeraldOre, 4,
-				0, false, BlockList.edenRock, 0);
-		this.goldGen = new WorldGenMinableMeta(BlockList.edenGoldOre, 6, 0,
-				false, BlockList.edenRock, 0);
-		this.coalGen = new WorldGenMinableMeta(BlockList.edenCoalOre, 15, 0,
-				false, BlockList.edenRock, 0);
-		this.deshGen = new WorldGenMinableMeta(BlockList.edenDeshOre, 5, 0,
-				false, BlockList.edenRock, 0);
-	}
+	public int edenTallGrassPerChunk = 0;
+	public int edenFlowersPerChunk = 4;
+	public int deadBushPerChunk = 0;
+	public int edenSandPerChunk = 0;
 
 	@Override
-	public void decorate(World worldObj, Random rand, int chunkX, int chunkZ) {
-		if (this.worldObj != null) {
+	public void decorateChunk(World world, Random rand, BiomeGenBase biome,
+			int x, int z) {
+		if (this.currentWorld != null) {
 			throw new RuntimeException("Already decorating!!");
 		} else {
-			this.worldObj = worldObj;
+			this.currentWorld = world;
 			this.randomGenerator = rand;
-			this.chunkX = chunkX;
-			this.chunkZ = chunkZ;
-			this.generateEden();
-			this.worldObj = null;
+			this.chunk_X = x;
+			this.chunk_Z = z;
+			this.genDecorations(biome);
+			this.currentWorld = null;
 			this.randomGenerator = null;
 		}
 	}
 
-	void genOre(int amountPerChunk, WorldGenerator worldGenerator, int minY,
-			int maxY) {
-		for (int var5 = 0; var5 < amountPerChunk; ++var5) {
-			final int var6 = this.chunkX + this.randomGenerator.nextInt(16);
-			final int var7 = this.randomGenerator.nextInt(maxY - minY) + minY;
-			final int var8 = this.chunkZ + this.randomGenerator.nextInt(16);
-			worldGenerator.generate(this.worldObj, this.randomGenerator, var6,
-					var7, var8);
+	@Override
+	protected void genDecorations(BiomeGenBase biome) {
+		MinecraftForge.EVENT_BUS.post(new DecorateBiomeEvent.Pre(
+				this.currentWorld, this.randomGenerator, this.chunk_X,
+				this.chunk_Z));
+		int x;
+		int y;
+		int z;
+		int i;
+
+		// Tall Grass
+		for (i = 0; this.getGen(EventType.GRASS)
+				&& i < this.edenTallGrassPerChunk; ++i) {
+			x = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
+			y = this.randomGenerator.nextInt(256);
+			z = this.chunk_Z + this.randomGenerator.nextInt(16) + 8;
+			new WorldGenTallGrass(BlockList.edenTallGrass, 0).generate(
+					this.currentWorld, this.randomGenerator, x, y, z);
 		}
+
+		// Eden Flowers
+		for (i = 0; this.getGen(EventType.FLOWERS)
+				&& i < this.edenFlowersPerChunk; ++i) {
+
+			if (this.randomGenerator.nextInt(4) == 0) {
+				x = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
+				y = this.randomGenerator.nextInt(256);
+				z = this.chunk_Z + this.randomGenerator.nextInt(16) + 8;
+				new WorldGenEdenFlowers(BlockList.edenFlower, 0).generate(
+						this.currentWorld, this.randomGenerator, x, y, z);
+			}
+
+			if (this.randomGenerator.nextInt(4) == 0) {
+				x = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
+				y = this.randomGenerator.nextInt(256);
+				z = this.chunk_Z + this.randomGenerator.nextInt(16) + 8;
+				new WorldGenEdenFlowers(BlockList.edenFlower, 1).generate(
+						this.currentWorld, this.randomGenerator, x, y, z);
+			}
+
+			if (this.randomGenerator.nextInt(4) == 0) {
+				x = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
+				y = this.randomGenerator.nextInt(256);
+				z = this.chunk_Z + this.randomGenerator.nextInt(16) + 8;
+				new WorldGenEdenFlowers(BlockList.edenFlower, 2).generate(
+						this.currentWorld, this.randomGenerator, x, y, z);
+			}
+
+			if (this.randomGenerator.nextInt(8) == 0) {
+				x = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
+				y = this.randomGenerator.nextInt(256);
+				z = this.chunk_Z + this.randomGenerator.nextInt(16) + 8;
+				new WorldGenEdenFlowers(BlockList.edenFlower, 3).generate(
+						this.currentWorld, this.randomGenerator, x, y, z);
+			}
+
+			if (this.randomGenerator.nextInt(8) == 0) {
+				x = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
+				y = this.randomGenerator.nextInt(256);
+				z = this.chunk_Z + this.randomGenerator.nextInt(16) + 8;
+				new WorldGenEdenFlowers(BlockList.edenFlower, 4).generate(
+						this.currentWorld, this.randomGenerator, x, y, z);
+			}
+
+			if (this.randomGenerator.nextInt(8) == 0) {
+				x = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
+				y = this.randomGenerator.nextInt(256);
+				z = this.chunk_Z + this.randomGenerator.nextInt(16) + 8;
+				new WorldGenEdenFlowers(BlockList.edenFlower, 5).generate(
+						this.currentWorld, this.randomGenerator, x, y, z);
+			}
+
+			if (this.randomGenerator.nextInt(8) == 0) {
+				x = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
+				y = this.randomGenerator.nextInt(256);
+				z = this.chunk_Z + this.randomGenerator.nextInt(16) + 8;
+				new WorldGenEdenFlowers(BlockList.edenFlower, 6).generate(
+						this.currentWorld, this.randomGenerator, x, y, z);
+			}
+		}
+		MinecraftForge.EVENT_BUS.post(new DecorateBiomeEvent.Post(
+				this.currentWorld, this.randomGenerator, this.chunk_X,
+				this.chunk_Z));
 	}
 
-	void generateEden() {
-		MinecraftForge.EVENT_BUS.post(new GCCoreEventPopulate.Pre(
-				this.worldObj, this.randomGenerator, this.chunkX, this.chunkZ));
-		this.genOre(27, this.ironGen, 4, 50);
-		this.genOre(22, this.meteoricIronGen, 10, 20);
-		this.genOre(25, this.goldGen, 4, 50);
-		this.genOre(24, this.diamondGen, 12, 16);
-		this.genOre(24, this.emeraldGen, 12, 14);
-		this.genOre(28, this.copperGen, 4, 60);
-		this.genOre(28, this.tinGen, 4, 40);
-		this.genOre(30, this.coalGen, 2, 60);
-		this.genOre(5, this.deshGen, 4, 40);
-		MinecraftForge.EVENT_BUS.post(new GCCoreEventPopulate.Post(
-				this.worldObj, this.randomGenerator, this.chunkX, this.chunkZ));
-	}
-
-	@Override
-	protected void setCurrentWorld(World world) {
-		this.worldObj = world;
-	}
-
-	@Override
-	protected World getCurrentWorld() {
-		return this.worldObj;
+	private boolean getGen(EventType event) {
+		return TerrainGen.decorate(this.currentWorld, this.randomGenerator,
+				this.chunk_X, this.chunk_Z, event);
 	}
 }

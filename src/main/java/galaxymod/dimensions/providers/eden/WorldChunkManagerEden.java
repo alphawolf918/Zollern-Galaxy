@@ -27,6 +27,7 @@ public class WorldChunkManagerEden extends WorldChunkManagerSpace {
 		this.myBiomesToSpawnIn.add(BiomeList.biomeEdenRockMountains);
 		this.myBiomesToSpawnIn.add(BiomeList.biomeEdenTerranValley);
 		this.myBiomesToSpawnIn.add(BiomeList.biomeEdenBloodDesert);
+		this.myBiomesToSpawnIn.add(BiomeList.biomeEdenGarden);
 	}
 
 	public WorldChunkManagerEden(long seed) {

@@ -15,8 +15,8 @@ import net.minecraft.world.gen.layer.IntCache;
 public class GenLayerEdenBiomes extends GenLayer {
 	protected BiomeGenBase[] commonBiomes = { BiomeList.biomeEden,
 			BiomeList.biomeEdenRockMountains, BiomeList.biomeEdenTerranValley,
-			BiomeList.biomeEdenBloodDesert };
-	protected BiomeGenBase[] rareBiomes = { BiomeList.biomeEdenBloodDesert };
+			BiomeList.biomeEdenBloodDesert, BiomeList.biomeEdenGarden };
+	protected BiomeGenBase[] rareBiomes = { BiomeList.biomeEdenGarden };
 
 	public GenLayerEdenBiomes(long seed, GenLayer genlayer) {
 		super(seed);

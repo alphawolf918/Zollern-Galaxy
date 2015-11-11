@@ -1,7 +1,7 @@
 package galaxymod.biomes.decorators;
 
-import net.minecraft.world.World;
 import micdoodle8.mods.galacticraft.api.prefab.world.gen.BiomeDecoratorSpace;
+import net.minecraft.world.World;
 
 public class BiomeDecoratorNova extends BiomeDecoratorSpace {
 
@@ -9,7 +9,7 @@ public class BiomeDecoratorNova extends BiomeDecoratorSpace {
 
 	@Override
 	protected void decorate() {
-		
+
 	}
 
 	@Override
