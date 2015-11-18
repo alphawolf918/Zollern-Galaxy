@@ -1,13 +1,7 @@
 /*******************************************************************************
- * Copyright 2015 Zollern Wolf - Project Nova / Nova Galactic
- * Final Frontier
- * Galacticraft Add-On Mod
- * You CAN:
- * 	- Learn from it
- *  - Use it to get ideas and concepts
- * You CAN'T:
- *  - Redistribute it
- *  - Claim it as your own
+ * Copyright 2015 Zollern Wolf - Project Nova / Nova Galactic Final Frontier
+ * Galacticraft Add-On Mod You CAN: - Learn from it - Use it to get ideas and
+ * concepts You CAN'T: - Redistribute it - Claim it as your own
  ******************************************************************************/
 
 package galaxymod.lib;
@@ -24,25 +18,26 @@ import net.minecraft.item.ItemStack;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class Recipes {
-
+	
 	public static void init() {
 		SmeltingRecipes.init();
 	}
-
+	
 	public static class CraftingRecipes {
-
+		
 		public void init() {
-
+			
 		}
 	}
-
+	
 	public static class SmeltingRecipes {
-
+		
 		public static void init() {
-
+			
 			// Food
 			addSmelting(ItemList.alienBeefRaw, ItemList.alienBeefCooked, 1.4F);
-
+			addSmelting(ItemList.alienBaconRaw, ItemList.alienBaconCooked, 1.4F);
+			
 			// Ores (Eden)
 			addSmelting(BlockList.edenCoalOre,
 					new ItemStack(Blocks.coal_ore, 2), 2.0F); // Coal
@@ -63,28 +58,28 @@ public class Recipes {
 			addSmelting(BlockList.edenTinOre, new ItemStack(
 					GCBlocks.basicBlock, 2, 6), 2.0F); // Tin
 		}
-
+		
 		public static void addSmelting(ItemStack itemStack, ItemStack output,
 				float xp) {
 			GameRegistry.addSmelting(itemStack, output, xp);
 		}
-
+		
 		public static void addSmelting(Block input, Item output, float xp) {
 			addSmelting(input, new ItemStack(output, 1), xp);
 		}
-
+		
 		public static void addSmelting(Item input, ItemStack output, float xp) {
 			GameRegistry.addSmelting(input, output, xp);
 		}
-
+		
 		public static void addSmelting(Item input, Item output, float xp) {
 			addSmelting(input, new ItemStack(output, 1), xp);
 		}
-
+		
 		public static void addSmelting(Block input, ItemStack output, float xp) {
 			GameRegistry.addSmelting(input, output, xp);
 		}
-
+		
 		public static void addSmelting(Block input, Block output, float xp) {
 			addSmelting(input, new ItemStack(output, 1), xp);
 		}

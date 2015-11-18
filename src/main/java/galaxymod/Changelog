@@ -19,21 +19,21 @@
 * Added Vortex Drop Ship spawn to Eden.
 * Caves and ores now generate properly on Eden.
 * Added a flower spawn to Eden called "Eden's Flower."
-* Added Eden Rock Mountains biome to the planet Eden
-    * Eden Rock on top and Eden Cobblerock on the bottom
-* Added a Terran Valley biome
-    * Eden's Grass on top and Eden's Soil on the bottom
+* Added Eden Rock Mountains biome to the planet Eden.
+    * Eden Rock on top and Eden Cobblerock on the bottom.
+* Added a Terran Valley biome.
+    * Eden's Grass on top and Eden's Soil on the bottom.
 * Added Eden's Tall Grass.
-* Drop Ship now spawns at lower layers and generates with a chest
-* Giant, open caves can generate deep underground
+* Drop Ship now spawns at lower layers and generates with a chest.
+* Giant, open caves can generate deep underground.
     * These areas typically are loaded with mobs and are incredibly dark
-* Added a new biome to Eden called "Blood Desert"
-    * Giant bones generate in this biome for decor
-        * 35% chance to generate a treasure chest directly underneath the bones
+* Added a new biome to Eden called "Blood Desert".
+    * Giant bones generate in this biome for decor/
+        * 35% chance to generate a treasure chest directly underneath the bones/
     * Dead bushes generate here.
 * There are now 6 different colors of Eden Flowers, 7 if you count the one without a blossom.
 * Added the "Moolus" mob.
-    * Large, green, two-headed, three-eyed cow
+    * Large, green, two-headed, three-eyed cow.
     * Drops "Alien Beef" when killed.
         * Raw if killed while not on fire, and cooked if killed while on fire.
         * Can be cooked into Cooked Alien Beef.
@@ -44,3 +44,5 @@
 * Added a new biome called Garden of Eden.
     * Grass blocks with a blue hue on top.
     * Eden's Soil on the bottom.
+* Added Oinkus mob that spawns in same biomes as Moolus mob.
+    * Drops alien bacon when killed (raw or cooked, depending on if it's on fire).

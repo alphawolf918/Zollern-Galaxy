@@ -44,7 +44,7 @@ public class GalaxyMod {
 
 	public static final int modGuiIndex = 11;
 
-	public static GalaxyMod instance() {
+	public static GalaxyMod getInstance() {
 		return INSTANCE;
 	}
 

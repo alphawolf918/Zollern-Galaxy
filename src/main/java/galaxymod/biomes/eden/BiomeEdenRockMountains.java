@@ -10,7 +10,7 @@ public class BiomeEdenRockMountains extends BiomeGenEdenBase {
 		super(par1);
 		this.setColor(BiomeList.biomeColor);
 		this.setBiomeName("Rock Mountains");
-		this.setHeight(new Height(0.9F, 1.2F));
+		this.setHeight(new Height(0.5F, 0.6F));
 		this.setChunkHeightModifier(10);
 		this.getBiomeDecorator().edenTallGrassPerChunk = 0;
 		this.getBiomeDecorator().edenFlowersPerChunk = 0;

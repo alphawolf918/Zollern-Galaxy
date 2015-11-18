@@ -22,6 +22,10 @@ import micdoodle8.mods.galacticraft.api.prefab.core.BlockMetaPair;
 import micdoodle8.mods.galacticraft.api.prefab.world.gen.BiomeDecoratorSpace;
 import micdoodle8.mods.galacticraft.api.prefab.world.gen.ChunkProviderSpace;
 import micdoodle8.mods.galacticraft.api.prefab.world.gen.MapGenBaseMeta;
+import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedCreeper;
+import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedSkeleton;
+import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedSpider;
+import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedZombie;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFalling;
 import net.minecraft.entity.EnumCreatureType;
@@ -148,12 +152,10 @@ public class ChunkProviderEden extends ChunkProviderSpace {
 	@Override
 	protected SpawnListEntry[] getMonsters() {
 		List<SpawnListEntry> monsters = new ArrayList<SpawnListEntry>();
-		// monsters.add(new SpawnListEntry(EntityEvolvedZombie.class, 2, 1, 2));
-		// monsters.add(new SpawnListEntry(EntityEvolvedSpider.class, 2, 1, 2));
-		// monsters.add(new SpawnListEntry(EntityEvolvedSkeleton.class, 2, 1,
-		// 2));
-		// monsters.add(new SpawnListEntry(EntityEvolvedCreeper.class, 2, 1,
-		// 2));
+		monsters.add(new SpawnListEntry(EntityEvolvedZombie.class, 2, 1, 1));
+		monsters.add(new SpawnListEntry(EntityEvolvedSpider.class, 2, 1, 1));
+		monsters.add(new SpawnListEntry(EntityEvolvedSkeleton.class, 2, 1, 1));
+		monsters.add(new SpawnListEntry(EntityEvolvedCreeper.class, 2, 1, 1));
 		return monsters.toArray(new SpawnListEntry[monsters.size()]);
 	}
 	
@@ -181,7 +183,7 @@ public class ChunkProviderEden extends ChunkProviderSpace {
 	
 	@Override
 	public double getValleyHeightModifier() {
-		return 5;
+		return 2;
 	}
 	
 	@Override

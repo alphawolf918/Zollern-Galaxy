@@ -4,13 +4,8 @@ import net.minecraft.client.model.ModelBiped;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.MathHelper;
-
 import org.lwjgl.opengl.GL11;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
-
-@SideOnly(Side.CLIENT)
 public class ModelGrayAlien extends ModelBiped {
 	public ModelRenderer bipedHead;
 	public ModelRenderer bipedHeadwear;
@@ -21,31 +16,31 @@ public class ModelGrayAlien extends ModelBiped {
 	public ModelRenderer bipedLeftLeg;
 	public ModelRenderer bipedEars;
 	public ModelRenderer bipedCloak;
-
+	
 	/**
 	 * Records whether the model should be rendered holding an item in the left
 	 * hand, and if that item is a block.
 	 */
 	public static int heldItemLeft;
-
+	
 	/**
 	 * Records whether the model should be rendered holding an item in the right
 	 * hand, and if that item is a block.
 	 */
 	public int heldItemRight;
 	public boolean isSneak;
-
+	
 	/** Records whether the model should be rendered aiming a bow. */
 	public boolean aimedBow;
-
+	
 	public ModelGrayAlien() {
 		this(0.0F);
 	}
-
+	
 	public ModelGrayAlien(float par1) {
 		this(par1, 0.0F, 64, 32);
 	}
-
+	
 	public ModelGrayAlien(float par1, float par2, int par3, int par4) {
 		this.textureWidth = par3;
 		this.textureHeight = par4;
@@ -77,7 +72,7 @@ public class ModelGrayAlien extends ModelBiped {
 		this.bipedLeftLeg.addBox(-2.0F, 0.0F, -2.0F, 4, 12, 4, par1);
 		this.bipedLeftLeg.setRotationPoint(1.9F, 12.0F + par2, 0.0F);
 	}
-
+	
 	/**
 	 * Sets the models various rotation angles then renders the model.
 	 */
@@ -85,7 +80,7 @@ public class ModelGrayAlien extends ModelBiped {
 	public void render(Entity par1Entity, float par2, float par3, float par4,
 			float par5, float par6, float par7) {
 		this.setRotationAngles(par2, par3, par4, par5, par6, par7, par1Entity);
-
+		
 		if (this.isChild) {
 			float f6 = 2.0F;
 			GL11.glPushMatrix();
@@ -113,7 +108,7 @@ public class ModelGrayAlien extends ModelBiped {
 			this.bipedHeadwear.render(par7);
 		}
 	}
-
+	
 	/**
 	 * Sets the model's various rotation angles. For bipeds, par1 and par2 are
 	 * used for animating the movement of arms and legs, where par1 represents
@@ -141,7 +136,7 @@ public class ModelGrayAlien extends ModelBiped {
 				* 1.4F * par2;
 		this.bipedRightLeg.rotateAngleY = 0.0F;
 		this.bipedLeftLeg.rotateAngleY = 0.0F;
-
+		
 		if (this.isRiding) {
 			this.bipedRightArm.rotateAngleX += -((float) Math.PI / 5F);
 			this.bipedLeftArm.rotateAngleX += -((float) Math.PI / 5F);
@@ -150,22 +145,22 @@ public class ModelGrayAlien extends ModelBiped {
 			this.bipedRightLeg.rotateAngleY = ((float) Math.PI / 10F);
 			this.bipedLeftLeg.rotateAngleY = -((float) Math.PI / 10F);
 		}
-
+		
 		if (this.heldItemLeft != 0) {
 			this.bipedLeftArm.rotateAngleX = this.bipedLeftArm.rotateAngleX
 					* 0.5F - ((float) Math.PI / 10F) * this.heldItemLeft;
 		}
-
+		
 		if (this.heldItemRight != 0) {
 			this.bipedRightArm.rotateAngleX = this.bipedRightArm.rotateAngleX
 					* 0.5F - ((float) Math.PI / 10F) * this.heldItemRight;
 		}
-
+		
 		this.bipedRightArm.rotateAngleY = 0.0F;
 		this.bipedLeftArm.rotateAngleY = 0.0F;
 		float f6;
 		float f7;
-
+		
 		if (this.onGround > -9990.0F) {
 			f6 = this.onGround;
 			this.bipedBody.rotateAngleY = MathHelper.sin(MathHelper
@@ -194,7 +189,7 @@ public class ModelGrayAlien extends ModelBiped {
 					* (float) Math.PI)
 					* -0.4F;
 		}
-
+		
 		if (this.isSneak) {
 			this.bipedBody.rotateAngleX = 0.5F;
 			this.bipedRightArm.rotateAngleX += 0.4F;
@@ -214,12 +209,12 @@ public class ModelGrayAlien extends ModelBiped {
 			this.bipedHead.rotationPointY = 0.0F;
 			this.bipedHeadwear.rotationPointY = 0.0F;
 		}
-
+		
 		this.bipedRightArm.rotateAngleZ += MathHelper.cos(par3 * 0.09F) * 0.05F + 0.05F;
 		this.bipedLeftArm.rotateAngleZ -= MathHelper.cos(par3 * 0.09F) * 0.05F + 0.05F;
 		this.bipedRightArm.rotateAngleX += MathHelper.sin(par3 * 0.067F) * 0.05F;
 		this.bipedLeftArm.rotateAngleX -= MathHelper.sin(par3 * 0.067F) * 0.05F;
-
+		
 		if (this.aimedBow) {
 			f6 = 0.0F;
 			f7 = 0.0F;
@@ -241,7 +236,7 @@ public class ModelGrayAlien extends ModelBiped {
 			this.bipedLeftArm.rotateAngleX -= MathHelper.sin(par3 * 0.067F) * 0.05F;
 		}
 	}
-
+	
 	/**
 	 * renders the ears (specifically, deadmau5's)
 	 */
@@ -253,7 +248,7 @@ public class ModelGrayAlien extends ModelBiped {
 		this.bipedEars.rotationPointY = 0.0F;
 		this.bipedEars.render(par1);
 	}
-
+	
 	/**
 	 * Renders the cloak of the current biped (in most cases, it's a player)
 	 */

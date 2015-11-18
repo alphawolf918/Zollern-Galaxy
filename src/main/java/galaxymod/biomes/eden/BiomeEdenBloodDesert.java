@@ -10,7 +10,7 @@ public class BiomeEdenBloodDesert extends BiomeGenEdenBase {
 		super(par1);
 		this.setColor(BiomeList.biomeColor);
 		this.setBiomeName("Blood Desert");
-		this.setHeight(new Height(0.4F, 0.6F));
+		this.setHeight(new Height(0.1F, 0.3F));
 		this.setChunkHeightModifier(16);
 		this.getBiomeDecorator().edenTallGrassPerChunk = 0;
 		this.getBiomeDecorator().edenFlowersPerChunk = 0;
@@ -22,7 +22,7 @@ public class BiomeEdenBloodDesert extends BiomeGenEdenBase {
 		this.topBlock = BlockList.edenBloodSand;
 		this.fillerBlock = BlockList.edenBloodStone;
 	}
-
+	
 	@Override
 	@SideOnly(Side.CLIENT)
 	public int getSkyColorByTemp(float p_76731_1_) {

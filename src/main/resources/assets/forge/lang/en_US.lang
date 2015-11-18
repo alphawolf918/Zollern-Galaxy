@@ -25,8 +25,11 @@ tile.galaxymod_edenpurplius.name=Eden's Purplius
 
 item.galaxymod_alienbeefraw.name=Raw Alien Beef
 item.galaxymod_alienbeefcooked.name=Cooked Alien Beef
+item.galaxymod_alienbaconraw.name=Raw Alien Bacon
+item.galaxymod_alienbaconcooked.name=Cooked Alien Bacon
 
 entity.galaxymod_moolus.name=Moolus
+entity.galaxymod_oinkus.name=Oinkus
 entity.galaxymod_grayalien.name=Gray Alien
 
 planet.zollus=Zollus

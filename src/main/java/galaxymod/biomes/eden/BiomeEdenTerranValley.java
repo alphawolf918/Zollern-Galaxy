@@ -2,10 +2,7 @@ package galaxymod.biomes.eden;
 
 import galaxymod.blocks.BlockList;
 import galaxymod.lib.NGHelper;
-import galaxymod.mobs.entities.EntityMoolus;
-
 import java.util.Random;
-
 import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -21,19 +18,19 @@ public class BiomeEdenTerranValley extends BiomeGenEdenBase {
 		this.getBiomeDecorator().edenFlowersPerChunk = 6;
 		this.grassFoilageColorMultiplier = 0x0000bf;
 		this.waterColorMultiplier = 0x00008b;
-		this.spawnableCreatureList.add(new SpawnListEntry(EntityMoolus.class,
-				2, 2, 2));
-		this.temperature = 6F;
+		// this.spawnableCreatureList.add(new SpawnListEntry(EntityMoolus.class,
+		// 2, 2, 2));
+		this.temperature = 4F;
 		this.topBlock = BlockList.edenGrass;
 		this.fillerBlock = BlockList.edenSoil;
 	}
-
+	
 	@Override
 	@SideOnly(Side.CLIENT)
 	public int getSkyColorByTemp(float p_76731_1_) {
 		return 0x003a4b;
 	}
-
+	
 	@Override
 	public void decorate(World p_76728_1_, Random p_76728_2_, int p_76728_3_,
 			int p_76728_4_) {

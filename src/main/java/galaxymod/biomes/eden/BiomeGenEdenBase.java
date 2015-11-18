@@ -32,7 +32,7 @@ public abstract class BiomeGenEdenBase extends BiomeGenBase {
 		this.enableSnow = true;
 		this.setColor(BiomeList.biomeColor);
 		this.rootHeight = 1F;
-		// this.heightVariation = 2F;
+		this.heightVariation = 2F;
 		this.theBiomeDecorator.flowersPerChunk = -999;
 		this.theBiomeDecorator.treesPerChunk = -999;
 		this.theBiomeDecorator.grassPerChunk = -999;
@@ -72,9 +72,9 @@ public abstract class BiomeGenEdenBase extends BiomeGenBase {
 		int maskX = x & 15;
 		int maskZ = z & 15;
 		int worldHeight = block.length / 256;
-		int seaLevel = 32;
+		int seaLevel = 35;
 		
-		for (int y = 255; y >= 0; y--) {
+		for (int y = 232; y >= 0; y--) {
 			int index = (maskZ * 16 + maskX) * worldHeight + y;
 			
 			if (y <= 0 + rand.nextInt(5)) {

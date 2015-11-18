@@ -20,7 +20,7 @@ public class BiomeEdenGarden extends BiomeGenEdenBase {
 		super(p_i1985_1_);
 		this.setBiomeName("Garden of Eden");
 		this.setColor(112);
-		this.setHeight(new Height(0.5F, 0.5F));
+		this.setHeight(new Height(0.2F, 0.2F));
 		this.rootHeight = 0F;
 		this.heightVariation = 0F;
 		this.grassFoilageColorMultiplier = 0x009f8d;
