@@ -7,10 +7,6 @@
 package galaxymod.biomes.eden;
 
 import galaxymod.blocks.BlockList;
-import java.util.Random;
-import net.minecraft.block.Block;
-import net.minecraft.init.Blocks;
-import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -20,13 +16,14 @@ public class BiomeEdenGarden extends BiomeGenEdenBase {
 		super(p_i1985_1_);
 		this.setBiomeName("Garden of Eden");
 		this.setColor(112);
+		this.setHeightBaseModifier(200);
 		this.setHeight(new Height(0.2F, 0.2F));
-		this.rootHeight = 0F;
-		this.heightVariation = 0F;
+		this.temperature = 5F;
 		this.grassFoilageColorMultiplier = 0x009f8d;
-		this.spawnableCreatureList.clear();
-		this.getBiomeDecorator().waterlilyPerChunk = 2;
-		this.topBlock = Blocks.grass;
+		this.biomeDecor.waterlilyPerChunk = 2;
+		this.biomeDecor.edenFlowersPerChunk = 400;
+		this.theBiomeDecorator.generateLakes = true;
+		this.topBlock = BlockList.edenGrass;
 		this.fillerBlock = BlockList.edenSoil;
 	}
 	
@@ -34,13 +31,5 @@ public class BiomeEdenGarden extends BiomeGenEdenBase {
 	@SideOnly(Side.CLIENT)
 	public int getSkyColorByTemp(float p_76731_1_) {
 		return 0x002ef4;
-	}
-	
-	@Override
-	public void genTerrainBlocks(World p_150573_1_, Random p_150573_2_,
-			Block[] p_150573_3_, byte[] p_150573_4_, int p_150573_5_,
-			int p_150573_6_, double p_150573_7_) {
-		super.genTerrainBlocks(p_150573_1_, p_150573_2_, p_150573_3_,
-				p_150573_4_, p_150573_5_, p_150573_6_, p_150573_7_);
 	}
 }

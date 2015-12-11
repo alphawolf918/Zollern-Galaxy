@@ -11,10 +11,18 @@ import static net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.Ev
 import static net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.LAKE;
 import galaxymod.biomes.BiomeList;
 import galaxymod.biomes.decorators.ore.BiomeDecoratorEdenOre;
+import galaxymod.biomes.eden.BiomeGenEdenBase;
 import galaxymod.blocks.BlockList;
+import galaxymod.mobs.entities.EntityAlienSquid;
+import galaxymod.worldgen.dungeon.RoomEmptyNG;
 import galaxymod.worldgen.eden.MapGenCavernEden;
 import galaxymod.worldgen.eden.MapGenCavesEden;
+import galaxymod.worldgen.eden.MapGenEdenRavine;
 import galaxymod.worldgen.eden.WorldGenEdenDungeons;
+import galaxymod.worldgen.eden.dungeons.RoomBossEden;
+import galaxymod.worldgen.eden.dungeons.RoomChestsEden;
+import galaxymod.worldgen.eden.dungeons.RoomSpawnerEden;
+import galaxymod.worldgen.eden.dungeons.RoomTreasureEden;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -26,9 +34,11 @@ import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedCreeper;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedSkeleton;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedSpider;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedZombie;
+import micdoodle8.mods.galacticraft.core.world.gen.dungeon.MapGenDungeon;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFalling;
 import net.minecraft.entity.EnumCreatureType;
+import net.minecraft.entity.monster.EntityBlaze;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.IProgressUpdate;
 import net.minecraft.util.MathHelper;
@@ -44,6 +54,7 @@ import net.minecraft.world.gen.feature.WorldGenLakes;
 import net.minecraft.world.gen.structure.MapGenMineshaft;
 import net.minecraft.world.gen.structure.MapGenScatteredFeature;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.util.ForgeDirection;
 import net.minecraftforge.event.terraingen.PopulateChunkEvent;
 import net.minecraftforge.event.terraingen.TerrainGen;
 import com.google.common.collect.Lists;
@@ -54,6 +65,7 @@ public class ChunkProviderEden extends ChunkProviderSpace {
 	private final BiomeDecoratorEdenOre edenBiomeDecorator = new BiomeDecoratorEdenOre();
 	private final MapGenCavernEden caveGenerator = new MapGenCavernEden();
 	private final MapGenCavesEden cavernGenerator = new MapGenCavesEden();
+	private final MapGenEdenRavine ravineGenerator = new MapGenEdenRavine();
 	private final WorldGenEdenDungeons dungeonGenerator = new WorldGenEdenDungeons();
 	private MapGenMineshaft mineshaftGenerator = new MapGenMineshaft();
 	private MapGenScatteredFeature scatteredFeatureGenerator = new MapGenScatteredFeature();
@@ -83,6 +95,37 @@ public class ChunkProviderEden extends ChunkProviderSpace {
 	double[] field_147428_e;
 	double[] field_147425_f;
 	double[] field_147426_g;
+	
+	private MapGenDungeon dungeonGeneratorMain = new MapGenDungeon(
+			BlockList.edenRockBricks, 14, 8, 24, 6);
+	{
+		this.dungeonGeneratorMain.otherRooms.add(new RoomEmptyNG(null, 0, 0, 0,
+				ForgeDirection.UNKNOWN));
+		this.dungeonGeneratorMain.otherRooms.add(new RoomSpawnerEden(null, 0,
+				0, 0, ForgeDirection.UNKNOWN));
+		this.dungeonGeneratorMain.otherRooms.add(new RoomSpawnerEden(null, 0,
+				0, 0, ForgeDirection.UNKNOWN));
+		this.dungeonGeneratorMain.otherRooms.add(new RoomSpawnerEden(null, 0,
+				0, 0, ForgeDirection.UNKNOWN));
+		this.dungeonGeneratorMain.otherRooms.add(new RoomSpawnerEden(null, 0,
+				0, 0, ForgeDirection.UNKNOWN));
+		this.dungeonGeneratorMain.otherRooms.add(new RoomSpawnerEden(null, 0,
+				0, 0, ForgeDirection.UNKNOWN));
+		this.dungeonGeneratorMain.otherRooms.add(new RoomSpawnerEden(null, 0,
+				0, 0, ForgeDirection.UNKNOWN));
+		this.dungeonGeneratorMain.otherRooms.add(new RoomSpawnerEden(null, 0,
+				0, 0, ForgeDirection.UNKNOWN));
+		this.dungeonGeneratorMain.otherRooms.add(new RoomSpawnerEden(null, 0,
+				0, 0, ForgeDirection.UNKNOWN));
+		this.dungeonGeneratorMain.otherRooms.add(new RoomChestsEden(null, 0, 0,
+				0, ForgeDirection.UNKNOWN));
+		this.dungeonGeneratorMain.otherRooms.add(new RoomChestsEden(null, 0, 0,
+				0, ForgeDirection.UNKNOWN));
+		this.dungeonGeneratorMain.bossRooms.add(new RoomBossEden(null, 0, 0, 0,
+				ForgeDirection.UNKNOWN));
+		this.dungeonGeneratorMain.treasureRooms.add(new RoomTreasureEden(null,
+				0, 0, 0, ForgeDirection.UNKNOWN));
+	}
 	
 	public ChunkProviderEden(World world, long seed, boolean flag) {
 		super(world, seed, flag);
@@ -118,17 +161,19 @@ public class ChunkProviderEden extends ChunkProviderSpace {
 		return new BiomeGenBase[] { BiomeList.biomeEden,
 				BiomeList.biomeEdenRockMountains,
 				BiomeList.biomeEdenTerranValley,
-				BiomeList.biomeEdenBloodDesert, BiomeList.biomeEdenGarden };
+				BiomeList.biomeEdenBloodDesert, BiomeList.biomeEdenGarden,
+				BiomeList.biomeEdenForest, BiomeList.biomeEdenMagmaLands,
+				BiomeList.biomeEdenSnowyPlains };
 	}
 	
 	@Override
 	protected BlockMetaPair getGrassBlock() {
-		return new BlockMetaPair(BlockList.edenSurfaceRock, (byte) 5);
+		return new BlockMetaPair(BlockList.edenSurfaceRock, (byte) 0);
 	}
 	
 	@Override
 	protected BlockMetaPair getDirtBlock() {
-		return new BlockMetaPair(BlockList.edenSoil, (byte) 6);
+		return new BlockMetaPair(BlockList.edenSoil, (byte) 0);
 	}
 	
 	@Override
@@ -152,10 +197,12 @@ public class ChunkProviderEden extends ChunkProviderSpace {
 	@Override
 	protected SpawnListEntry[] getMonsters() {
 		List<SpawnListEntry> monsters = new ArrayList<SpawnListEntry>();
-		monsters.add(new SpawnListEntry(EntityEvolvedZombie.class, 2, 1, 1));
-		monsters.add(new SpawnListEntry(EntityEvolvedSpider.class, 2, 1, 1));
-		monsters.add(new SpawnListEntry(EntityEvolvedSkeleton.class, 2, 1, 1));
-		monsters.add(new SpawnListEntry(EntityEvolvedCreeper.class, 2, 1, 1));
+		// monsters.add(new SpawnListEntry(EntityEvolvedZombie.class, 1, 1, 1));
+		// monsters.add(new SpawnListEntry(EntityEvolvedSpider.class, 1, 1, 1));
+		// monsters.add(new SpawnListEntry(EntityEvolvedSkeleton.class, 1, 1,
+		// 1));
+		// monsters.add(new SpawnListEntry(EntityEvolvedCreeper.class, 1, 1,
+		// 1));
 		return monsters.toArray(new SpawnListEntry[monsters.size()]);
 	}
 	
@@ -168,7 +215,7 @@ public class ChunkProviderEden extends ChunkProviderSpace {
 	
 	@Override
 	public double getHeightModifier() {
-		return 4;
+		return 6;
 	}
 	
 	@Override
@@ -183,28 +230,34 @@ public class ChunkProviderEden extends ChunkProviderSpace {
 	
 	@Override
 	public double getValleyHeightModifier() {
-		return 2;
+		return 4;
 	}
 	
 	@Override
 	public List getPossibleCreatures(EnumCreatureType type, int x, int y, int z) {
-		BiomeGenBase currentBiome = worldObj.getBiomeGenForCoords(x, z);
+		BiomeGenEdenBase currentBiome = (BiomeGenEdenBase) worldObj
+				.getBiomeGenForCoords(x, z);
 		if (type == EnumCreatureType.monster) {
 			List monsters = new ArrayList();
-			// monsters.add(new SpawnListEntry(EntityEvolvedZombie.class, 4, 2,
-			// 2));
-			// monsters.add(new SpawnListEntry(EntityEvolvedSpider.class, 4, 2,
-			// 2));
-			// monsters.add(new SpawnListEntry(EntityEvolvedSkeleton.class, 4,
-			// 2,
-			// 3));
-			// monsters.add(new SpawnListEntry(EntityEvolvedCreeper.class, 4, 2,
-			// 2));
+			monsters.add(new SpawnListEntry(EntityEvolvedZombie.class, 4, 2, 2));
+			monsters.add(new SpawnListEntry(EntityEvolvedSpider.class, 4, 2, 2));
+			monsters.add(new SpawnListEntry(EntityEvolvedSkeleton.class, 4, 2,
+					3));
+			monsters.add(new SpawnListEntry(EntityEvolvedCreeper.class, 4, 2, 2));
+			if (currentBiome == BiomeList.biomeEdenMagmaLands) {
+				monsters.add(new SpawnListEntry(EntityBlaze.class, 4, 2, 2));
+			}
 			return monsters;
 		} else if (type == EnumCreatureType.creature) {
 			List creatures = new ArrayList();
-			// creatures.add(new SpawnListEntry(EntityMoolus.class, 2, 2, 2));
 			return creatures;
+		} else if (type == EnumCreatureType.waterCreature) {
+			List waterCreatures = new ArrayList();
+			if (!currentBiome.getIsColdBiome() && !currentBiome.getIsHotBiome()) {
+				waterCreatures.add(new SpawnListEntry(EntityAlienSquid.class,
+						1, 1, 1));
+			}
+			return waterCreatures;
 		} else {
 			return null;
 		}
@@ -221,6 +274,7 @@ public class ChunkProviderEden extends ChunkProviderSpace {
 		final long var7 = this.rand.nextLong() / 2L * 2L + 1L;
 		final long var9 = this.rand.nextLong() / 2L * 2L + 1L;
 		this.rand.setSeed(par2 * var7 + par3 * var9 ^ this.worldObj.getSeed());
+		this.dungeonGeneratorMain.handleTileEntities(this.rand);
 		boolean flag = false;
 		int k = var4;
 		int l = var5;
@@ -305,8 +359,10 @@ public class ChunkProviderEden extends ChunkProviderSpace {
 	
 	@Override
 	public void recreateStructures(int x, int z) {
+		int y = this.worldObj.getHeightValue(x, z);
 		this.mineshaftGenerator.func_151539_a(this, this.worldObj, x, z,
 				(Block[]) null);
+		this.dungeonGenerator.generate(worldObj, rand, x, y, z);
 		this.scatteredFeatureGenerator.func_151539_a(this, this.worldObj, x, z,
 				(Block[]) null);
 	}
@@ -335,6 +391,11 @@ public class ChunkProviderEden extends ChunkProviderSpace {
 				metaStorage);
 		this.cavernGenerator.generate(this, this.worldObj, x, z, blockStorage,
 				metaStorage);
+		this.ravineGenerator.func_151539_a(this, this.worldObj, x, z,
+				blockStorage);
+		this.dungeonGeneratorMain.generateUsingArrays(this.worldObj,
+				this.worldObj.getSeed(), x * 16, 30, z * 16, x, z,
+				blockStorage, metaStorage);
 		Chunk chunk = new Chunk(this.worldObj, blockStorage, metaStorage, x, z);
 		byte[] chunkBiomes = chunk.getBiomeArray();
 		
@@ -473,7 +534,7 @@ public class ChunkProviderEden extends ChunkProviderSpace {
 								/ (rootHeight + 2.0F);
 						
 						if (biomegenbase1.rootHeight > biomegenbase.rootHeight) {
-							heightFactor /= 2.0F;
+							heightFactor /= 2.2F;
 						}
 						totalVariation += heightVariation * heightFactor;
 						totalHeight += rootHeight * heightFactor;

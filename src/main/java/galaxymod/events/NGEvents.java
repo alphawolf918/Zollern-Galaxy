@@ -16,7 +16,7 @@ import cpw.mods.fml.common.eventhandler.EventPriority;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 
 public class NGEvents {
-
+	
 	@SubscribeEvent(priority = EventPriority.HIGH)
 	public void onLivingSpawnEvent(LivingSpawnEvent event) {
 		EntityLiving entity = (EntityLiving) event.entityLiving;
@@ -32,7 +32,7 @@ public class NGEvents {
 			world.spawnEntityInWorld(alien);
 		}
 	}
-
+	
 	@SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
 	public void onChunkPreLoadEvent(PopulateChunkEvent.Pre event) {
 		World worldObj = event.world;
@@ -63,6 +63,17 @@ public class NGEvents {
 									storage.func_150818_a(x, y, z,
 											BlockList.edenCoalOre);
 								}
+								// if (currentBlock == Blocks.water
+								// &&
+								// biome.equals(BiomeList.biomeEdenSnowyPlains))
+								// {
+								// storage.func_150818_a(x, y, z, Blocks.ice);
+								// } else if (currentBlock == Blocks.water
+								// &&
+								// biome.equals(BiomeList.biomeEdenMagmaLands))
+								// {
+								// storage.func_150818_a(x, y, z, Blocks.lava);
+								// }
 							}
 						}
 					}

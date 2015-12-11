@@ -2,7 +2,7 @@ package galaxymod.worldgen.eden.treasure;
 
 import java.util.ArrayList;
 import java.util.Random;
-
+import micdoodle8.mods.galacticraft.core.items.GCItems;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -12,28 +12,47 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.ChestGenHooks;
 
 public final class TreasureGenEden {
-
+	
 	public static ArrayList<String> chestTypes = new ArrayList<String>();
-
+	
 	private static WeightedRandomChestContent item5 = new WeightedRandomChestContent(
-			new ItemStack(Items.gold_ingot, 64), 50, 90, 2);
-
+			new ItemStack(Items.gold_ingot, (new Random()).nextInt(60)), 50,
+			65, 2);
+	private static WeightedRandomChestContent item6 = new WeightedRandomChestContent(
+			new ItemStack(Items.iron_ingot, (new Random()).nextInt(60)), 50,
+			65, 2);
+	private static WeightedRandomChestContent item7 = new WeightedRandomChestContent(
+			new ItemStack(Items.diamond, (new Random()).nextInt(60)), 50, 65, 2);
+	private static WeightedRandomChestContent item8 = new WeightedRandomChestContent(
+			new ItemStack(Items.emerald, (new Random()).nextInt(60)), 50, 65, 2);
+	private static WeightedRandomChestContent item9 = new WeightedRandomChestContent(
+			new ItemStack(Items.redstone, (new Random()).nextInt(60)), 50, 65,
+			2);
+	private static WeightedRandomChestContent item10 = new WeightedRandomChestContent(
+			new ItemStack(GCItems.meteoricIronIngot, (new Random()).nextInt(60)),
+			50, 65, 2);
+	
 	public static void init() {
 		addChestTypes();
 		addItems();
 	}
-
+	
 	private static void addItems() {
 		addChestItem(item5);
+		addChestItem(item6);
+		addChestItem(item7);
+		addChestItem(item8);
+		addChestItem(item9);
+		addChestItem(item10);
 	}
-
+	
 	private static void addChestItem(WeightedRandomChestContent item) {
 		int i;
 		for (i = 0; i < chestTypes.size(); i++) {
 			ChestGenHooks.addItem(chestTypes.get(i), item);
 		}
 	}
-
+	
 	public static void addChest(int i, int j, int k, Random rand, World world) {
 		init();
 		int chestX = i;
@@ -44,7 +63,7 @@ public final class TreasureGenEden {
 		spawnChest(world, rand, chestX, chestY, chestZ, isBigChest,
 				spawnChestType);
 	}
-
+	
 	public static void spawnChest(World world, Random rand, int i, int j,
 			int k, boolean isBigChest, String chestType) {
 		world.setBlock(i, j, k, Blocks.chest);
@@ -59,7 +78,7 @@ public final class TreasureGenEden {
 					info.getItems(rand), tileentitychest, info.getCount(rand));
 		}
 	}
-
+	
 	public static void addChestTypes() {
 		chestTypes.add(ChestGenHooks.DUNGEON_CHEST);
 		chestTypes.add(ChestGenHooks.MINESHAFT_CORRIDOR);
@@ -72,7 +91,7 @@ public final class TreasureGenEden {
 		chestTypes.add(ChestGenHooks.VILLAGE_BLACKSMITH);
 		chestTypes.add(EdenGenHooks.DROP_SHIP);
 	}
-
+	
 	public static String pickChestType() {
 		int randChestType = (new Random()).nextInt(chestTypes.size());
 		randChestType = (randChestType >= 0) ? 0 : randChestType;

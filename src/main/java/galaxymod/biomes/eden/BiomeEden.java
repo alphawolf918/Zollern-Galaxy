@@ -17,16 +17,15 @@ public class BiomeEden extends BiomeGenEdenBase {
 	public BiomeEden(int par1) {
 		super(par1);
 		this.setBiomeName("Green Lands");
+		this.setHeightBaseModifier(196);
 		this.setChunkHeightModifier(5);
 		this.setHeight(new Height(0.1F, 0.2F));
 		this.theBiomeDecorator.generateLakes = true;
-		this.getBiomeDecorator().edenTallGrassPerChunk = 1;
-		this.getBiomeDecorator().edenFlowersPerChunk = 4;
+		this.biomeDecor.edenTallGrassPerChunk = 1;
+		this.biomeDecor.edenFlowersPerChunk = 4;
 		this.grassFoilageColorMultiplier = 0x009f00;
 		this.waterColorMultiplier = 0x009f9f;
-		// this.spawnableCreatureList.add(new SpawnListEntry(EntityMoolus.class,
-		// 1, 2, 2));
-		this.temperature = 6F;
+		this.temperature = 5F;
 		this.topBlock = BlockList.edenSurfaceRock;
 		this.fillerBlock = BlockList.edenSoil;
 	}

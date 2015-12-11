@@ -1,28 +1,13 @@
 /*******************************************************************************
- * Copyright 2015 Zollern Wolf - Project Nova / Nova Galactic
- * Final Frontier
- * Galacticraft Add-On Mod
- * You CAN:
- * 	- Learn from it
- *  - Use it to get ideas and concepts
- * You CAN'T:
- *  - Redistribute it
- *  - Claim it as your own
- ******************************************************************************/
-
-/*******************************************************************************
- * Copyright 2015 SteveKunG - More Planets Mod
- * 
- * This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International Public License.
- * To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/4.0/.
+ * Copyright 2015 Zollern Wolf - Project Nova / Nova Galactic Final Frontier
+ * Galacticraft Add-On Mod You CAN: - Learn from it - Use it to get ideas and
+ * concepts You CAN'T: - Redistribute it - Claim it as your own
  ******************************************************************************/
 
 package galaxymod.worldgen.eden;
 
 import galaxymod.blocks.BlockList;
-
 import java.util.Random;
-
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.MathHelper;
@@ -32,7 +17,7 @@ import net.minecraft.world.gen.MapGenBase;
 
 public class MapGenEdenRavine extends MapGenBase {
 	private float[] field_75046_d = new float[1024];
-
+	
 	protected void func_151540_a(long seed, int x, int z, Block[] block,
 			double p_151540_6_, double p_151540_8_, double p_151540_10_,
 			float p_151540_12_, float p_151540_13_, float p_151540_14_,
@@ -42,28 +27,28 @@ public class MapGenEdenRavine extends MapGenBase {
 		double d5 = z * 16 + 8;
 		float f3 = 0.0F;
 		float f4 = 0.0F;
-
+		
 		if (p_151540_16_ <= 0) {
 			int j1 = this.range * 16 - 16;
 			p_151540_16_ = j1 - rand.nextInt(j1 / 4);
 		}
-
+		
 		boolean flag1 = false;
-
+		
 		if (p_151540_15_ == -1) {
 			p_151540_15_ = p_151540_16_ / 2;
 			flag1 = true;
 		}
-
+		
 		float f5 = 1.0F;
-
+		
 		for (int k1 = 0; k1 < 256; ++k1) {
 			if (k1 == 0 || rand.nextInt(3) == 0) {
 				f5 = 1.0F + rand.nextFloat() * rand.nextFloat() * 1.0F;
 			}
 			this.field_75046_d[k1] = f5 * f5;
 		}
-
+		
 		for (; p_151540_15_ < p_151540_16_; ++p_151540_15_) {
 			double d12 = 1.5D
 					+ MathHelper.sin(p_151540_15_ * (float) Math.PI
@@ -85,17 +70,17 @@ public class MapGenEdenRavine extends MapGenBase {
 					* 2.0F;
 			f3 += (rand.nextFloat() - rand.nextFloat()) * rand.nextFloat()
 					* 4.0F;
-
+			
 			if (flag1 || rand.nextInt(4) != 0) {
 				double d7 = p_151540_6_ - d4;
 				double d8 = p_151540_10_ - d5;
 				double d9 = p_151540_16_ - p_151540_15_;
 				double d10 = p_151540_12_ + 2.0F + 16.0F;
-
+				
 				if (d7 * d7 + d8 * d8 - d9 * d9 > d10 * d10) {
 					return;
 				}
-
+				
 				if (p_151540_6_ >= d4 - 16.0D - d12 * 2.0D
 						&& p_151540_10_ >= d5 - 16.0D - d12 * 2.0D
 						&& p_151540_6_ <= d4 + 16.0D + d12 * 2.0D
@@ -110,7 +95,7 @@ public class MapGenEdenRavine extends MapGenBase {
 							* 16 - 1;
 					int j2 = MathHelper.floor_double(p_151540_10_ + d12) - z
 							* 16 + 1;
-
+					
 					if (i4 < 0) {
 						i4 = 0;
 					}
@@ -129,16 +114,16 @@ public class MapGenEdenRavine extends MapGenBase {
 					if (j2 > 16) {
 						j2 = 16;
 					}
-
+					
 					boolean flag2 = false;
 					int k2;
 					int j3;
-
+					
 					for (k2 = i4; !flag2 && k2 < l1; ++k2) {
 						for (int l2 = k4; !flag2 && l2 < j2; ++l2) {
 							for (int i3 = i2 + 1; !flag2 && i3 >= j4 - 1; --i3) {
 								j3 = (k2 * 16 + l2) * 256 + i3;
-
+								
 								if (i3 >= 0 && i3 < 256) {
 									if (this.isOceanBlock(block, j3, k2, i3,
 											l2, x, z)) {
@@ -153,23 +138,23 @@ public class MapGenEdenRavine extends MapGenBase {
 							}
 						}
 					}
-
+					
 					if (!flag2) {
 						for (k2 = i4; k2 < l1; ++k2) {
 							double d13 = (k2 + x * 16 + 0.5D - p_151540_6_)
 									/ d12;
-
+							
 							for (j3 = k4; j3 < j2; ++j3) {
 								double d14 = (j3 + z * 16 + 0.5D - p_151540_10_)
 										/ d12;
 								int k3 = (k2 * 16 + j3) * 256 + i2;
 								boolean flag = false;
-
+								
 								if (d13 * d13 + d14 * d14 < 1.0D) {
 									for (int l3 = i2 - 1; l3 >= j4; --l3) {
 										double d11 = (l3 + 0.5D - p_151540_8_)
 												/ d6;
-
+										
 										if ((d13 * d13 + d14 * d14)
 												* this.field_75046_d[l3] + d11
 												* d11 / 6.0D < 1.0D) {
@@ -193,7 +178,7 @@ public class MapGenEdenRavine extends MapGenBase {
 			}
 		}
 	}
-
+	
 	@Override
 	protected void func_151538_a(World p_151538_1_, int p_151538_2_,
 			int p_151538_3_, int p_151538_4_, int p_151538_5_,
@@ -203,7 +188,7 @@ public class MapGenEdenRavine extends MapGenBase {
 			double d1 = this.rand.nextInt(this.rand.nextInt(40) + 8) + 20;
 			double d2 = p_151538_3_ * 16 + this.rand.nextInt(16);
 			byte b0 = 1;
-
+			
 			for (int i1 = 0; i1 < b0; ++i1) {
 				float f = this.rand.nextFloat() * (float) Math.PI * 2.0F;
 				float f1 = (this.rand.nextFloat() - 0.5F) * 2.0F / 8.0F;
@@ -215,20 +200,20 @@ public class MapGenEdenRavine extends MapGenBase {
 			}
 		}
 	}
-
+	
 	protected boolean isOceanBlock(Block[] data, int index, int x, int y,
 			int z, int chunkX, int chunkZ) {
 		return data[index] == Blocks.water
 				|| data[index] == Blocks.flowing_water;
 	}
-
+	
 	private boolean isTopBlock(Block[] data, int index, int x, int y, int z,
 			int chunkX, int chunkZ) {
 		BiomeGenBase biome = this.worldObj.getBiomeGenForCoords(
 				x + chunkX * 16, z + chunkZ * 16);
 		return data[index] == biome.topBlock;
 	}
-
+	
 	protected void digBlock(Block[] data, int index, int x, int y, int z,
 			int chunkX, int chunkZ, boolean foundTop) {
 		BiomeGenBase biome = this.worldObj.getBiomeGenForCoords(
@@ -236,14 +221,13 @@ public class MapGenEdenRavine extends MapGenBase {
 		Block top = biome.topBlock;
 		Block filler = biome.fillerBlock;
 		Block block = data[index];
-
-		if (block == BlockList.edenRock || block == BlockList.edenCoalOre
-				|| block == filler || block == top) {
+		
+		if (block == BlockList.edenRock || block == filler || block == top) {
 			if (y < 10) {
-				data[index] = Blocks.flowing_lava;
+				data[index] = BlockList.edenMagmaRock;
 			} else {
 				data[index] = null;
-
+				
 				if (foundTop && data[index - 1] == filler) {
 					data[index - 1] = top;
 				}

@@ -7,17 +7,23 @@
 package galaxymod.biomes.eden;
 
 import galaxymod.biomes.BiomeList;
+import galaxymod.biomes.BiomeSpace;
 import galaxymod.biomes.decorators.BiomeDecoratorEden;
 import galaxymod.blocks.BlockList;
+import galaxymod.core.NGCore;
+import java.util.ArrayList;
 import java.util.Random;
+import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedCreeper;
+import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedSkeleton;
+import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedSpider;
+import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedZombie;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeDecorator;
-import net.minecraft.world.biome.BiomeGenBase;
 
-public abstract class BiomeGenEdenBase extends BiomeGenBase {
+public abstract class BiomeGenEdenBase extends BiomeSpace {
 	
 	public static int grassFoilageColorMultiplier = 0x00ff00;
 	public static int chunkHeightModifier = 12;
@@ -25,9 +31,13 @@ public abstract class BiomeGenEdenBase extends BiomeGenBase {
 	protected byte topMeta;
 	protected byte fillerMeta;
 	protected byte stoneMeta;
+	public int biomeHeightBaseModifier = 232;
+	public BiomeDecoratorEden biomeDecor = this.getBiomeDecorator();
+	public static ArrayList<BiomeGenEdenBase> edenBiomes = new ArrayList();
 	
 	public BiomeGenEdenBase(int p_i1971_1_) {
 		super(p_i1971_1_);
+		this.setPlanetForBiome(NGCore.eden);
 		this.enableRain = true;
 		this.enableSnow = true;
 		this.setColor(BiomeList.biomeColor);
@@ -37,13 +47,42 @@ public abstract class BiomeGenEdenBase extends BiomeGenBase {
 		this.theBiomeDecorator.treesPerChunk = -999;
 		this.theBiomeDecorator.grassPerChunk = -999;
 		this.theBiomeDecorator.mushroomsPerChunk = -999;
-		this.getBiomeDecorator().edenFlowersPerChunk = 5;
-		this.getBiomeDecorator().edenTallGrassPerChunk = 2;
+		this.biomeDecor.edenFlowersPerChunk = 5;
+		this.biomeDecor.edenTallGrassPerChunk = 2;
 		this.spawnableCaveCreatureList.clear();
 		this.spawnableMonsterList.clear();
+		this.spawnableMonsterList.add(new SpawnListEntry(
+				EntityEvolvedZombie.class, 25, 1, 1));
+		this.spawnableMonsterList.add(new SpawnListEntry(
+				EntityEvolvedSpider.class, 5, 1, 1));
+		this.spawnableMonsterList.add(new SpawnListEntry(
+				EntityEvolvedSkeleton.class, 5, 1, 1));
+		this.spawnableMonsterList.add(new SpawnListEntry(
+				EntityEvolvedCreeper.class, 5, 1, 1));
 		this.spawnableWaterCreatureList.clear();
 		this.spawnableCreatureList.clear();
 		this.stoneBlock = BlockList.edenRock;
+		this.edenBiomes.add(this);
+	}
+	
+	public static ArrayList<BiomeGenEdenBase> getEdenBiomes() {
+		return edenBiomes;
+	}
+	
+	public boolean getIsHotBiome() {
+		return (this.temperature >= 7F);
+	}
+	
+	public boolean getIsColdBiome() {
+		return (this.temperature <= 3F);
+	}
+	
+	public void setHeightBaseModifier(int bioHeight) {
+		this.biomeHeightBaseModifier = bioHeight;
+	}
+	
+	public int getHeightBaseModifier() {
+		return this.biomeHeightBaseModifier;
 	}
 	
 	@Override
@@ -74,7 +113,7 @@ public abstract class BiomeGenEdenBase extends BiomeGenBase {
 		int worldHeight = block.length / 256;
 		int seaLevel = 35;
 		
-		for (int y = 232; y >= 0; y--) {
+		for (int y = this.getHeightBaseModifier(); y >= 0; y--) {
 			int index = (maskZ * 16 + maskX) * worldHeight + y;
 			
 			if (y <= 0 + rand.nextInt(5)) {

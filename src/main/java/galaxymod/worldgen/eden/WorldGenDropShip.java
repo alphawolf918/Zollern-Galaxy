@@ -1,80 +1,42 @@
 package galaxymod.worldgen.eden;
 
-import galaxymod.blocks.BlockList;
+import galaxymod.worldgen.NGWorldGenStructureCore;
 import galaxymod.worldgen.eden.treasure.TreasureGenEden;
-
 import java.util.Random;
-
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
-import net.minecraft.world.gen.feature.WorldGenerator;
 import cpw.mods.fml.common.IWorldGenerator;
 
-public class WorldGenDropShip extends WorldGenerator implements IWorldGenerator {
-	protected Block[] getValidSpawnBlocks() {
-		return new Block[] { BlockList.edenSurfaceRock, BlockList.edenRock,
-				BlockList.edenBloodSand, BlockList.edenBloodStone,
-				BlockList.edenSoil, BlockList.edenCobbleRock };
-	}
-
-	public boolean locationIsValidSpawn(World world, int i, int j, int k) {
-		int distanceToAir = 0;
-		Block check = world.getBlock(i, j, k);
-
-		while (check != Blocks.air) {
-			if (distanceToAir > 3) {
-				return false;
-			}
-
-			distanceToAir++;
-			check = world.getBlock(i, j + distanceToAir, k);
-		}
-
-		j += distanceToAir - 1;
-
-		Block block = world.getBlock(i, j, k);
-		Block blockAbove = world.getBlock(i, j + 1, k);
-		Block blockBelow = world.getBlock(i, j - 1, k);
-
-		for (Block x : getValidSpawnBlocks()) {
-			if (blockAbove != Blocks.air) {
-				return false;
-			}
-			if (block == x) {
-				return true;
-			} else if (block == Blocks.snow && blockBelow == x) {
-				return true;
-			}
-		}
-
-		return false;
-	}
-
+public class WorldGenDropShip extends NGWorldGenStructureCore implements
+		IWorldGenerator {
+	
 	public WorldGenDropShip() {
 	}
-
+	
 	@Override
 	public void generate(Random random, int chunkX, int chunkZ, World world,
 			IChunkProvider chunkGenerator, IChunkProvider chunkProvider) {
 	}
-
+	
+	@Override
 	public void setBlock(World world, int x, int y, int z, Block block,
 			int metadata) {
 		Block b1 = world.getBlock(x, y, z);
-
+		
 		if (b1.isAir(world, x, y, z) || b1.isLeaves(world, x, y, z)) {
 			world.setBlock(x, y, z, block, metadata, metadata);
 		}
 	}
-
+	
 	@Override
 	public boolean generate(World world, Random rand, int i, int j, int k) {
-
-		k = k - 10;
-		i = i - 10;
-
+		
+		k = k - 20;
+		j = j - 20;
+		i = i - 20;
+		
 		this.setBlock(world, i + 2, j + 8, k + 9, Blocks.air, 15);
 		this.setBlock(world, i + 2, j + 8, k + 10, Blocks.air, 15);
 		this.setBlock(world, i + 2, j + 8, k + 11, Blocks.air, 15);
@@ -1575,11 +1537,11 @@ public class WorldGenDropShip extends WorldGenerator implements IWorldGenerator 
 		this.setBlock(world, i + 25, j + 10, k + 26, Blocks.air, 3);
 		this.setBlock(world, i + 25, j + 11, k + 5, Blocks.iron_block, 0);
 		this.setBlock(world, i + 25, j + 11, k + 6, Blocks.iron_block, 0);
-
+		
 		generate2(world, rand, i, j, k);
 		return true;
 	}
-
+	
 	public boolean generate2(World world, Random rand, int i, int j, int k) {
 		this.setBlock(world, i + 25, j + 11, k + 24, Blocks.iron_block, 0);
 		this.setBlock(world, i + 25, j + 11, k + 25, Blocks.iron_block, 0);

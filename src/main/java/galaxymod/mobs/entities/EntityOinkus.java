@@ -7,6 +7,7 @@
 package galaxymod.mobs.entities;
 
 import galaxymod.items.ItemList;
+import micdoodle8.mods.galacticraft.api.entity.IEntityBreathable;
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIControlledByPlayer;
@@ -28,7 +29,7 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.stats.AchievementList;
 import net.minecraft.world.World;
 
-public class EntityOinkus extends EntityPig {
+public class EntityOinkus extends EntityPig implements IEntityBreathable {
 	
 	private final EntityAIControlledByPlayer aiControlledByPlayer;
 	
@@ -49,6 +50,11 @@ public class EntityOinkus extends EntityPig {
 		this.tasks.addTask(7, new EntityAIWatchClosest(this,
 				EntityPlayer.class, 6.0F));
 		this.tasks.addTask(8, new EntityAILookIdle(this));
+	}
+	
+	@Override
+	public int getMaxSpawnedInChunk() {
+		return 2;
 	}
 	
 	/**
@@ -200,5 +206,10 @@ public class EntityOinkus extends EntityPig {
 	@Override
 	public EntityOinkus createChild(EntityAgeable par1EntityAgeable) {
 		return this.spawnBabyAnimal(par1EntityAgeable);
+	}
+	
+	@Override
+	public boolean canBreath() {
+		return true;
 	}
 }

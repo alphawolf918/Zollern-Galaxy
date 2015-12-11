@@ -49,6 +49,11 @@ public class EntityGrayAlien extends EntityMob {
 	}
 	
 	@Override
+	public int getMaxSpawnedInChunk() {
+		return 2;
+	}
+	
+	@Override
 	@SideOnly(Side.CLIENT)
 	public int getBrightnessForRender(float par1) {
 		return 15728890;

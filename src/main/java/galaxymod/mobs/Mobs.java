@@ -1,7 +1,9 @@
 package galaxymod.mobs;
 
 import galaxymod.biomes.BiomeList;
+import galaxymod.biomes.eden.BiomeGenEdenBase;
 import galaxymod.lib.ModInfo;
+import galaxymod.mobs.entities.EntityAlienSquid;
 import galaxymod.mobs.entities.EntityGrayAlien;
 import galaxymod.mobs.entities.EntityMoolus;
 import galaxymod.mobs.entities.EntityOinkus;
@@ -24,13 +26,22 @@ public class Mobs {
 		registerEntity(EntityMoolus.class, "moolus", 0x008b00, 0xeeeeee);
 		EntityRegistry.addSpawn(EntityMoolus.class, 1, 1, 1,
 				EnumCreatureType.creature, BiomeList.biomeEden,
-				BiomeList.biomeEdenTerranValley, BiomeList.biomeEdenGarden);
+				BiomeList.biomeEdenTerranValley, BiomeList.biomeEdenGarden,
+				BiomeList.biomeEdenForest, BiomeList.biomeEdenSnowyPlains);
 		
 		// Oinkus
 		registerEntity(EntityOinkus.class, "oinkus", 0x009f00, 0xeeffee);
 		EntityRegistry.addSpawn(EntityOinkus.class, 1, 1, 1,
 				EnumCreatureType.creature, BiomeList.biomeEden,
-				BiomeList.biomeEdenTerranValley, BiomeList.biomeEdenGarden);
+				BiomeList.biomeEdenTerranValley, BiomeList.biomeEdenGarden,
+				BiomeList.biomeEdenForest, BiomeList.biomeEdenSnowyPlains);
+		
+		// Alien Squid
+		registerEntity(EntityAlienSquid.class, "aliensquid", 0x0099ff, 0xeeeeee);
+		for (BiomeGenEdenBase biome : BiomeGenEdenBase.getEdenBiomes()) {
+			EntityRegistry.addSpawn(EntityAlienSquid.class, 1, 1, 1,
+					EnumCreatureType.waterCreature, biome);
+		}
 	}
 	
 	public static void registerEntity(Class<? extends EntityLiving> entity,

@@ -22,11 +22,10 @@ import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
 
 public class EntityMoolus extends EntityCow implements IEntityBreathable {
-	private static final String __OBFID = "CL_00001640";
-
+	
 	public EntityMoolus(World p_i1683_1_) {
 		super(p_i1683_1_);
-		this.setSize(0.9F, 1.3F);
+		this.setSize(this.width, this.height);
 		this.getNavigator().setAvoidsWater(true);
 		this.tasks.addTask(0, new EntityAISwimming(this));
 		this.tasks.addTask(1, new EntityAIPanic(this, 2.0D));
@@ -39,12 +38,17 @@ public class EntityMoolus extends EntityCow implements IEntityBreathable {
 				EntityPlayer.class, 6.0F));
 		this.tasks.addTask(7, new EntityAILookIdle(this));
 	}
-
+	
+	@Override
+	public int getMaxSpawnedInChunk() {
+		return 2;
+	}
+	
 	@Override
 	public boolean isAIEnabled() {
 		return true;
 	}
-
+	
 	@Override
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
@@ -53,49 +57,49 @@ public class EntityMoolus extends EntityCow implements IEntityBreathable {
 		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed)
 				.setBaseValue(0.30000000298023224D);
 	}
-
+	
 	@Override
 	protected String getLivingSound() {
 		return "mob.cow.say";
 	}
-
+	
 	@Override
 	protected String getHurtSound() {
 		return "mob.cow.hurt";
 	}
-
+	
 	@Override
 	protected String getDeathSound() {
 		return "mob.cow.hurt";
 	}
-
+	
 	@Override
 	protected void func_145780_a(int p_145780_1_, int p_145780_2_,
 			int p_145780_3_, Block p_145780_4_) {
 		this.playSound("mob.cow.step", 0.15F, 1.0F);
 	}
-
+	
 	@Override
 	protected float getSoundVolume() {
 		return 0.8F;
 	}
-
+	
 	@Override
 	protected Item getDropItem() {
 		return Items.leather;
 	}
-
+	
 	@Override
 	protected void dropFewItems(boolean p_70628_1_, int p_70628_2_) {
 		int j = this.rand.nextInt(3) + this.rand.nextInt(1 + p_70628_2_);
 		int k;
-
+		
 		for (k = 0; k < j; ++k) {
 			this.dropItem(Items.leather, 1);
 		}
-
+		
 		j = this.rand.nextInt(3) + 1 + this.rand.nextInt(1 + p_70628_2_);
-
+		
 		for (k = 0; k < j; ++k) {
 			if (this.isBurning()) {
 				this.dropItem(ItemList.alienBeefCooked, 1);
@@ -104,17 +108,17 @@ public class EntityMoolus extends EntityCow implements IEntityBreathable {
 			}
 		}
 	}
-
+	
 	@Override
 	public boolean interact(EntityPlayer p_70085_1_) {
 		return false;
 	}
-
+	
 	@Override
 	public EntityMoolus createChild(EntityAgeable p_90011_1_) {
 		return new EntityMoolus(this.worldObj);
 	}
-
+	
 	@Override
 	public boolean getCanSpawnHere() {
 		BiomeGenBase currentBiome = worldObj.getBiomeGenForCoords(chunkCoordX,
@@ -122,7 +126,7 @@ public class EntityMoolus extends EntityCow implements IEntityBreathable {
 		return (currentBiome.equals(BiomeList.biomeEden) || currentBiome
 				.equals(BiomeList.biomeEdenTerranValley));
 	}
-
+	
 	@Override
 	public boolean canBreath() {
 		return true;

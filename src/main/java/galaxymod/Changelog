@@ -1,11 +1,11 @@
 == Project Nova v1.0 ==
 
-* Added a new solar system called Psion-6, with a blueish-white dwarf star.
+* Added a new solar system called Psios, with a blueish-white dwarf star.
     * Added 2 new planets to this solar system:
         * Eden, an Earth-like planet with a breathable atmosphere and habitable temperature, rich with minable resources.
-            * Evolved Mobs spawn here at night.
             * The world is incredibly dark at night due to the lack of any moons.
         * Zollus, a barren ice planet without a breathable atmosphere or tolerable thermal temperature.
+====PSIOS.EDEN====
 * New ores for Eden:
     * Iron.
     * Meteoric Iron.
@@ -26,14 +26,14 @@
 * Added Eden's Tall Grass.
 * Drop Ship now spawns at lower layers and generates with a chest.
 * Giant, open caves can generate deep underground.
-    * These areas typically are loaded with mobs and are incredibly dark
+    * These areas typically are loaded with mobs and are incredibly dark.
 * Added a new biome to Eden called "Blood Desert".
-    * Giant bones generate in this biome for decor/
-        * 35% chance to generate a treasure chest directly underneath the bones/
+    * Giant bones generate in this biome for decor.
+        * 35% chance to generate a treasure chest directly underneath the bones.
     * Dead bushes generate here.
 * There are now 6 different colors of Eden Flowers, 7 if you count the one without a blossom.
 * Added the "Moolus" mob.
-    * Large, green, two-headed, three-eyed cow.
+    * Large, green, two-headed, six-eyed cow.
     * Drops "Alien Beef" when killed.
         * Raw if killed while not on fire, and cooked if killed while on fire.
         * Can be cooked into Cooked Alien Beef.
@@ -41,8 +41,43 @@
 * Crystal Towers now generate in Green Lands and Terran Valley biomes.
     * Usually spawns with at least 1 chest, sometimes spawns with 2.
 * Large changes and improvements to how different terrain and biome chunks are generated.
+    * Scattered features and ore generation have also been improved.
 * Added a new biome called Garden of Eden.
     * Grass blocks with a blue hue on top.
     * Eden's Soil on the bottom.
+    * Littered with Eden's Flowers throughout.
 * Added Oinkus mob that spawns in same biomes as Moolus mob.
     * Drops alien bacon when killed (raw or cooked, depending on if it's on fire).
+        * Raw alien bacon can be cooked.
+* Added a new type of glass block called Eden's Glass.
+    * Obtained by smelting Eden's Blood Sand.
+    * Supports multi-block structure building.
+* Eden's Blood Sand can now be crafted into Eden's Bloodstone.
+* Eden's Cobblerock can now be smelted into Eden's Rock.
+* Added Forest of Eden biome.
+    * Same as Garden of Eden, except with no flowers, and Edenwood Trees are generated throughout.
+* Edenrock can now be crafted into Edenrock Bricks.
+* Special "Eden" villages now spawn all over the planet in any biome.
+    * Can consist of up to 2 houses, and very rarely, even 3.
+    * 2nd house harbors a chest of random loot, usually materials.
+        * If generated, the 3rd one does too.
+    * Gray Alien mob spawns here.
+* Added a new "Magma Lands" biome to Eden.
+    * Consists of "Eden's Magrock" on top and on bottom.
+        * Spreads and holds fire like Netherrack.
+    * Lakes of lava generate frequently here.
+    * Blazes will spawn here.
+* Added a new biome called "Snowy Plains."
+    * Eden's Snow generates here.
+        * Supports plants.
+        * Has most of the same qualities as regular snow.
+* Added a special item called the "Galactic HUD."
+    * Shows data about planet and current biome.
+        * Gasses, planet name, planet class, temperature and current biome
+    * Works as long as it is in your inventory.
+* Edenwood Trees now grow (and spawn) with a purple fruit on them.
+    * Will fall if not directly below an Edenwood Leaf block.
+    * Drops an edible fruit item.
+* Evolved Monsters now spawn on Eden.
+    * Blazes also spawn in Magma Lands.
+    * Squids spawn wherever there is water.

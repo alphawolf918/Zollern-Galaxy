@@ -1,7 +1,6 @@
 package galaxymod.dimensions.providers.renderers;
 
 import java.util.Random;
-
 import micdoodle8.mods.galacticraft.api.world.IGalacticraftWorldProvider;
 import micdoodle8.mods.galacticraft.core.util.ConfigManagerCore;
 import net.minecraft.client.Minecraft;
@@ -14,43 +13,41 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.Vec3;
 import net.minecraftforge.client.IRenderHandler;
-
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL12;
-
 import cpw.mods.fml.client.FMLClientHandler;
 
 public class SkyProviderZollus extends IRenderHandler {
-
+	
 	private ResourceLocation starTexture = new ResourceLocation(
 			"galaxymod:textures/gui/psion6.png");
-
+	
 	public int starList;
 	public int glSkyList;
 	public int glSkyList2;
 	private float sunSize;
-
+	
 	public SkyProviderZollus(IGalacticraftWorldProvider zollusProvider) {
-		this.sunSize = 7.5F * zollusProvider.getSolarSize();
-
+		this.sunSize = .5F * zollusProvider.getSolarSize();
+		
 		int displayLists = GLAllocation.generateDisplayLists(3);
 		this.starList = displayLists;
 		this.glSkyList = displayLists + 1;
 		this.glSkyList2 = displayLists + 2;
-
+		
 		// Bind stars to display list
 		GL11.glPushMatrix();
 		GL11.glNewList(this.starList, GL11.GL_COMPILE);
 		this.renderStars();
 		GL11.glEndList();
 		GL11.glPopMatrix();
-
+		
 		Tessellator tessellator = Tessellator.instance;
 		GL11.glNewList(this.glSkyList, GL11.GL_COMPILE);
 		byte byte2 = 64;
 		int i = 256 / byte2 + 2;
 		float f = 16F;
-
+		
 		for (int j = -byte2 * i; j <= byte2 * i; j += byte2) {
 			for (int l = -byte2 * i; l <= byte2 * i; l += byte2) {
 				tessellator.startDrawingQuads();
@@ -61,12 +58,12 @@ public class SkyProviderZollus extends IRenderHandler {
 				tessellator.draw();
 			}
 		}
-
+		
 		GL11.glEndList();
 		GL11.glNewList(this.glSkyList2, GL11.GL_COMPILE);
 		f = -16F;
 		tessellator.startDrawingQuads();
-
+		
 		for (int k = -byte2 * i; k <= byte2 * i; k += byte2) {
 			for (int i1 = -byte2 * i; i1 <= byte2 * i; i1 += byte2) {
 				tessellator.addVertex(k + byte2, f, i1 + 0);
@@ -78,7 +75,7 @@ public class SkyProviderZollus extends IRenderHandler {
 		tessellator.draw();
 		GL11.glEndList();
 	}
-
+	
 	@Override
 	public void render(float partialTicks, WorldClient world, Minecraft mc) {
 		GL11.glDisable(GL11.GL_TEXTURE_2D);
@@ -90,7 +87,7 @@ public class SkyProviderZollus extends IRenderHandler {
 		float f2 = (float) vec3.yCoord;
 		float f3 = (float) vec3.zCoord;
 		float f6;
-
+		
 		GL11.glColor3f(f1, f2, f3);
 		Tessellator tessellator1 = Tessellator.instance;
 		GL11.glDepthMask(false);
@@ -107,12 +104,12 @@ public class SkyProviderZollus extends IRenderHandler {
 		float f9;
 		float f10;
 		float f18 = world.getStarBrightness(partialTicks);
-
+		
 		if (f18 > 0.0F) {
 			GL11.glColor4f(f18, f18, f18, f18);
 			GL11.glCallList(this.starList);
 		}
-
+		
 		float[] afloat = new float[4];
 		GL11.glDisable(GL11.GL_TEXTURE_2D);
 		GL11.glShadeModel(GL11.GL_SMOOTH);
@@ -128,23 +125,23 @@ public class SkyProviderZollus extends IRenderHandler {
 		f7 = afloat[1];
 		f8 = afloat[2];
 		float f11;
-
+		
 		f18 = 1.0F - f18;
-
+		
 		tessellator1.startDrawing(GL11.GL_TRIANGLE_FAN);
 		tessellator1.setColorRGBA_F(f6 * f18, f7 * f18, f8 * f18, afloat[3] * 2
 				/ f18);
 		tessellator1.addVertex(0.0D, 100.0D, 0.0D);
 		tessellator1.setColorRGBA_F(afloat[0] * f18, afloat[1] * f18, afloat[2]
 				* f18, 0.0F);
-
+		
 		tessellator1.draw();
 		GL11.glPopMatrix();
 		GL11.glShadeModel(GL11.GL_FLAT);
-
+		
 		GL11.glEnable(GL11.GL_TEXTURE_2D);
 		GL11.glPushMatrix();
-
+		
 		GL11.glPopMatrix();
 		GL11.glPushMatrix();
 		f7 = 0.0F;
@@ -186,20 +183,20 @@ public class SkyProviderZollus extends IRenderHandler {
 		tessellator1.addVertexWithUV(f10, 100.0D, f10, 1.0D, 1.0D);
 		tessellator1.addVertexWithUV(-f10, 100.0D, f10, 0.0D, 1.0D);
 		tessellator1.draw();
-
+		
 		GL11.glPopMatrix();
 		GL11.glPushMatrix();
-
+		
 		GL11.glPopMatrix();
 		GL11.glEnable(GL11.GL_TEXTURE_2D);
 		GL11.glDepthMask(true);
 	}
-
+	
 	private void renderStars() {
 		Random rand = new Random(10842L);
 		Tessellator var2 = Tessellator.instance;
 		var2.startDrawingQuads();
-
+		
 		for (int starIndex = 0; starIndex < (ConfigManagerCore.moreStars ? 35000
 				: 6000); ++starIndex) {
 			double var4 = rand.nextFloat() * 2.0F - 1.0F;
@@ -207,7 +204,7 @@ public class SkyProviderZollus extends IRenderHandler {
 			double var8 = rand.nextFloat() * 2.0F - 1.0F;
 			double var10 = 0.15F + rand.nextFloat() * 0.1F;
 			double var12 = var4 * var4 + var6 * var6 + var8 * var8;
-
+			
 			if (var12 < 1.0D && var12 > 0.01D) {
 				var12 = 1.0D / Math.sqrt(var12);
 				var4 *= var12;
@@ -232,7 +229,7 @@ public class SkyProviderZollus extends IRenderHandler {
 				double var32 = rand.nextDouble() * Math.PI * 2.0D;
 				double var34 = Math.sin(var32);
 				double var36 = Math.cos(var32);
-
+				
 				for (int var38 = 0; var38 < 4; ++var38) {
 					double var39 = 0.0D;
 					double var41 = ((var38 & 2) - 1) * var10;
@@ -249,12 +246,12 @@ public class SkyProviderZollus extends IRenderHandler {
 		}
 		var2.draw();
 	}
-
+	
 	public float getSkyBrightness(float par1) {
 		float var2 = FMLClientHandler.instance().getClient().theWorld
 				.getCelestialAngle(par1);
 		float var3 = 1.0F - (MathHelper.sin(var2 * (float) Math.PI * 2.0F) * 2.0F + 0.25F);
-
+		
 		if (var3 < 0.0F) {
 			var3 = 0.0F;
 		}

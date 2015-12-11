@@ -15,6 +15,7 @@ import micdoodle8.mods.galacticraft.api.world.IExitHeight;
 import micdoodle8.mods.galacticraft.api.world.ISolarLevel;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.biome.WorldChunkManager;
+import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraftforge.client.IRenderHandler;
 import cpw.mods.fml.relauncher.Side;
@@ -25,7 +26,7 @@ public class WorldProviderEden extends WorldProviderSpace implements
 	
 	@Override
 	public float getGravity() {
-		return 0.068F;
+		return 0.045F;
 	}
 	
 	@Override
@@ -35,12 +36,12 @@ public class WorldProviderEden extends WorldProviderSpace implements
 	
 	@Override
 	public double getMeteorFrequency() {
-		return 6.0;
+		return 8.0;
 	}
 	
 	@Override
 	public double getFuelUsageMultiplier() {
-		return 2.1D;
+		return 2.2D;
 	}
 	
 	@Override
@@ -55,7 +56,7 @@ public class WorldProviderEden extends WorldProviderSpace implements
 	
 	@Override
 	public float getFallDamageModifier() {
-		return 0.38F;
+		return 0.36F;
 	}
 	
 	@Override
@@ -80,17 +81,27 @@ public class WorldProviderEden extends WorldProviderSpace implements
 	
 	@Override
 	public double getSolarEnergyMultiplier() {
-		return 4.45;
+		return 5.45;
 	}
 	
 	@Override
 	public double getYCoordinateToTeleport() {
-		return 400;
+		return 220;
 	}
 	
 	@Override
 	public boolean canBlockFreeze(int x, int y, int z, boolean byWater) {
 		return false;
+	}
+	
+	@Override
+	public boolean canDoRainSnowIce(Chunk chunk) {
+		return this.canRainOrSnow();
+	}
+	
+	@Override
+	public boolean canRespawnHere() {
+		return this.shouldForceRespawn();
 	}
 	
 	@Override
@@ -136,7 +147,7 @@ public class WorldProviderEden extends WorldProviderSpace implements
 	
 	@Override
 	public float getCloudHeight() {
-		return 128F;
+		return 208F;
 	}
 	
 	@Override

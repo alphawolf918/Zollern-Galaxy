@@ -1,14 +1,17 @@
 package galaxymod.biomes.zollus;
 
 import galaxymod.biomes.BiomeList;
+import galaxymod.biomes.BiomeSpace;
 import galaxymod.blocks.BlockList;
-import net.minecraft.world.biome.BiomeGenBase;
+import galaxymod.core.NGCore;
 
-public class BiomeZollus extends BiomeGenBase {
-	public BiomeZollus(int par1){
+public class BiomeZollus extends BiomeSpace {
+	public BiomeZollus(int par1) {
 		super(par1);
 		this.setColor(BiomeList.biomeColor);
+		this.setBiomeName("Ice Lands");
 		this.topBlock = BlockList.solarBlock;
 		this.fillerBlock = BlockList.solarBlock;
+		this.setPlanetForBiome(NGCore.zollus);
 	}
 }

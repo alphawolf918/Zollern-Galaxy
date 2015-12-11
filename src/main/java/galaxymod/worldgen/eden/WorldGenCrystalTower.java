@@ -1,79 +1,31 @@
 /*******************************************************************************
- * Copyright 2015 Zollern Wolf - Project Nova / Nova Galactic
- * Final Frontier
- * Galacticraft Add-On Mod
- * You CAN:
- * 	- Learn from it
- *  - Use it to get ideas and concepts
- * You CAN'T:
- *  - Redistribute it
- *  - Claim it as your own
+ * Copyright 2015 Zollern Wolf - Project Nova / Nova Galactic Final Frontier
+ * Galacticraft Add-On Mod You CAN: - Learn from it - Use it to get ideas and
+ * concepts You CAN'T: - Redistribute it - Claim it as your own
  ******************************************************************************/
 
 package galaxymod.worldgen.eden;
 
 import galaxymod.blocks.BlockList;
+import galaxymod.worldgen.NGWorldGenStructureCore;
 import galaxymod.worldgen.eden.treasure.TreasureGenEden;
-
 import java.util.Random;
-
-import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
-import net.minecraft.world.gen.feature.WorldGenerator;
 
-public class WorldGenCrystalTower extends WorldGenerator {
-
-	protected Block[] getValidSpawnBlocks() {
-		return new Block[] { BlockList.edenBloodSand, BlockList.edenBloodStone,
-				BlockList.edenSurfaceRock, BlockList.edenSoil,
-				BlockList.edenRock, BlockList.edenGrass };
-	}
-
-	public boolean locationIsValidSpawn(World world, int i, int j, int k) {
-		int distanceToAir = 0;
-		Block check = world.getBlock(i, j, k);
-
-		while (check != Blocks.air) {
-			if (distanceToAir > 3) {
-				return false;
-			}
-
-			distanceToAir++;
-			check = world.getBlock(i, j + distanceToAir, k);
-		}
-
-		j += distanceToAir - 1;
-
-		Block block = world.getBlock(i, j, k);
-		Block blockAbove = world.getBlock(i, j + 1, k);
-		Block blockBelow = world.getBlock(i, j - 1, k);
-
-		for (Block x : getValidSpawnBlocks()) {
-			if (blockAbove != Blocks.air) {
-				return false;
-			}
-			if (block == x) {
-				return true;
-			} else if (block == Blocks.snow && blockBelow == x) {
-				return true;
-			}
-		}
-
-		return false;
-	}
-
+public class WorldGenCrystalTower extends NGWorldGenStructureCore {
+	
 	public WorldGenCrystalTower() {
 	}
-
+	
 	@Override
 	public boolean generate(World world, Random rand, int i, int j, int k) {
-
+		
 		j -= 10;
 		if (world.getBlock(i, j + 1, k) == Blocks.air) {
 			return false;
 		}
-
+		
 		world.setBlock(i + 4, j + 2, k + 10, BlockList.edenSacredStone);
 		world.setBlock(i + 4, j + 2, k + 11, BlockList.edenSacredStone);
 		world.setBlock(i + 4, j + 2, k + 12, BlockList.edenSacredStone);
@@ -574,7 +526,7 @@ public class WorldGenCrystalTower extends WorldGenerator {
 		generate2(world, rand, i, j, k);
 		return true;
 	}
-
+	
 	public boolean generate2(World world, Random rand, int i, int j, int k) {
 		world.setBlock(i + 15, j + 2, k + 3, BlockList.edenSacredStone);
 		world.setBlock(i + 15, j + 2, k + 23, BlockList.edenSacredStone);

@@ -11,15 +11,13 @@ public class BiomeEdenTerranValley extends BiomeGenEdenBase {
 	public BiomeEdenTerranValley(int par1) {
 		super(par1);
 		this.setBiomeName("Terran Valley");
+		this.setHeightBaseModifier(196);
 		this.setChunkHeightModifier(4);
-		this.setHeight(new Height(0.9F, 1.2F));
 		this.theBiomeDecorator.generateLakes = true;
-		this.getBiomeDecorator().edenTallGrassPerChunk = 4;
-		this.getBiomeDecorator().edenFlowersPerChunk = 6;
+		this.biomeDecor.edenTallGrassPerChunk = 4;
+		this.biomeDecor.edenFlowersPerChunk = 6;
 		this.grassFoilageColorMultiplier = 0x0000bf;
 		this.waterColorMultiplier = 0x00008b;
-		// this.spawnableCreatureList.add(new SpawnListEntry(EntityMoolus.class,
-		// 2, 2, 2));
 		this.temperature = 4F;
 		this.topBlock = BlockList.edenGrass;
 		this.fillerBlock = BlockList.edenSoil;

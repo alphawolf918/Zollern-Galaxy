@@ -41,7 +41,7 @@ public class WorldProviderZollus extends WorldProviderSpace implements
 	
 	@Override
 	public boolean canSpaceshipTierPass(int tier) {
-		return tier >= 3;
+		return tier >= 4;
 	}
 	
 	@Override
@@ -64,13 +64,13 @@ public class WorldProviderZollus extends WorldProviderSpace implements
 		if (this.isDaytime()) {
 			return 0.0F;
 		} else {
-			return -0.05F;
+			return -0.5F;
 		}
 	}
 	
 	@Override
 	public float getWindLevel() {
-		return 0;
+		return 2;
 	}
 	
 	@Override
@@ -85,7 +85,7 @@ public class WorldProviderZollus extends WorldProviderSpace implements
 	
 	@Override
 	public double getYCoordinateToTeleport() {
-		return 400;
+		return 120;
 	}
 	
 	@Override
@@ -152,7 +152,7 @@ public class WorldProviderZollus extends WorldProviderSpace implements
 	
 	@Override
 	public long getDayLength() {
-		return 46000L;
+		return 460090L;
 	}
 	
 	@Override

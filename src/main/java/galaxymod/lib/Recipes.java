@@ -20,13 +20,27 @@ import cpw.mods.fml.common.registry.GameRegistry;
 public class Recipes {
 	
 	public static void init() {
+		CraftingRecipes.init();
 		SmeltingRecipes.init();
 	}
 	
 	public static class CraftingRecipes {
-		
-		public void init() {
+		public static void init() {
+			// Eden Bloodstone
+			ItemStack css = new ItemStack(BlockList.edenBloodStone, 4);
+			GameRegistry.addRecipe(css, new Object[] { "CC ", "CC ", "   ",
+					'C', BlockList.edenBloodSand });
 			
+			// Edenwood Planks
+			GameRegistry.addShapelessRecipe(new ItemStack(
+					BlockList.edenWoodPlanks, 4),
+					new Object[] { BlockList.edenWoodLog });
+			
+			// Edenrock Bricks
+			ItemStack edenRockBricks = new ItemStack(BlockList.edenRockBricks,
+					4);
+			GameRegistry.addRecipe(edenRockBricks, new Object[] { "CC ", "CC ",
+					"   ", 'C', BlockList.edenRock });
 		}
 	}
 	
@@ -57,6 +71,10 @@ public class Recipes {
 					GCItems.meteoricIronRaw, 2), 2.0F); // Meteoric Iron
 			addSmelting(BlockList.edenTinOre, new ItemStack(
 					GCBlocks.basicBlock, 2, 6), 2.0F); // Tin
+			
+			// Other
+			addSmelting(BlockList.edenCobbleRock, BlockList.edenRock, 0.4F);
+			addSmelting(BlockList.edenBloodSand, BlockList.edenGlass, 0.7F);
 		}
 		
 		public static void addSmelting(ItemStack itemStack, ItemStack output,

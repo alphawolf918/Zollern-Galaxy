@@ -1,11 +1,12 @@
-tile.galaxymod_solarblock.name=Zollus Rock
+tile.galaxymod_solarblock.name=Zolrock
 tile.galaxymod_zolstone.name=Zolstone
 
 tile.galaxymod_edensurfaceblock.name=Eden's Grassrock
 tile.galaxymod:edengrass.name=Eden's Grass
 tile.galaxymod_edensoil.name=Eden's Soil
-tile.galaxymod_edenrock.name=Eden's Cave Rock
-tile.galaxymod_edencobblerock.name=Eden's Cobblerock
+tile.galaxymod_edenrock.name=Edenrock Stone
+tile.galaxymod_edencobblerock.name=Edenrock Cobblestone
+tile.galaxymod_edenrockbricks.name=Edenrock Bricks
 tile.galaxymod_edenironore.name=Eden's Iron Ore
 tile.galaxymod_edenmeteoricironore.name=Eden's Meteoric Iron Ore
 tile.galaxymod_edengoldore.name=Eden's Gold Ore
@@ -22,11 +23,31 @@ tile.galaxymod_bloodstone.name=Eden's Bloodstone
 tile.galaxymod_bonestone.name=Eden's Bone Stone
 tile.galaxymod_edensacredstone.name=Eden's Sacred Stone
 tile.galaxymod_edenpurplius.name=Eden's Purplius
+tile.galaxymod_edenglass.name=Eden's Glass
+tile.galaxymod_edenwoodlog.name=Edenwood Log
+tile.galaxymod_edentreeplanks.name=Edenwood Planks
+tile.galaxymod_edenwoodleaves.name=Edenwood Leaves
+tile.galaxymod_edenwoodsapling.name=Edenwood Sapling
+tile.galaxymod_fruitofedenblock.name=Fruit of Eden
+tile.galaxymod_magmarock.name=Eden's Magrock
+tile.galaxymod_edengravel.name=Eden's Gravel
+tile.galaxymod_edenwinterrock.name=Eden's Snow
+tile.galaxymod_brightstone.name=Eden's Britestone
+tile.galaxymod_edentreasurechest.name=Eden's Treasure
+
+tile.galaxymod_kriffrock.name=Kriffrock
+tile.galaxymod_kriffstone.name=Kriffstone
+
+container.eden.treasurechest.name=Eden's Treasure
 
 item.galaxymod_alienbeefraw.name=Raw Alien Beef
 item.galaxymod_alienbeefcooked.name=Cooked Alien Beef
 item.galaxymod_alienbaconraw.name=Raw Alien Bacon
 item.galaxymod_alienbaconcooked.name=Cooked Alien Bacon
+item.galaxymod_hud.name=Galactic HUD
+item.galaxymod_fruitofeden.name=Fruit of Eden
+item.galaxymod_brightstonedust.name=Britestone Dust
+item.galaxymod_edendungeonkey.name=Eden's Treasure Key
 
 entity.galaxymod_moolus.name=Moolus
 entity.galaxymod_oinkus.name=Oinkus
@@ -51,7 +72,7 @@ planet.prometheus=Prometheus
 planet.icarus=Icarus
 planet.kronos=Kronos
 
-star.psion6=Sirius
+star.psion6=Psios
 star.praedyth=Praedyth
 star.pantheon=Pantheon
 star.olympus=Olympus

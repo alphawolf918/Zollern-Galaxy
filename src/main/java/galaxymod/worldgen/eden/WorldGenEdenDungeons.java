@@ -2,9 +2,7 @@ package galaxymod.worldgen.eden;
 
 import static net.minecraftforge.common.ChestGenHooks.DUNGEON_CHEST;
 import galaxymod.blocks.BlockList;
-
 import java.util.Random;
-
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -27,9 +25,9 @@ public class WorldGenEdenDungeons extends WorldGenerator {
 			new WeightedRandomChestContent(Items.golden_apple, 0, 1, 1, 1),
 			new WeightedRandomChestContent(Items.redstone, 0, 1, 4, 10),
 			new WeightedRandomChestContent(Items.name_tag, 0, 1, 1, 10) };
-
+	
 	private static final String __OBFID = "CL_00000425";
-
+	
 	@Override
 	public boolean generate(World p_76484_1_, Random p_76484_2_,
 			int p_76484_3_, int p_76484_4_, int p_76484_5_) {
@@ -40,21 +38,21 @@ public class WorldGenEdenDungeons extends WorldGenerator {
 		int k1;
 		int l1;
 		int i2;
-
+		
 		for (k1 = p_76484_3_ - l - 1; k1 <= p_76484_3_ + l + 1; ++k1) {
 			for (l1 = p_76484_4_ - 1; l1 <= p_76484_4_ + b0 + 1; ++l1) {
 				for (i2 = p_76484_5_ - i1 - 1; i2 <= p_76484_5_ + i1 + 1; ++i2) {
 					Material material = p_76484_1_.getBlock(k1, l1, i2)
 							.getMaterial();
-
+					
 					if (l1 == p_76484_4_ - 1 && !material.isSolid()) {
 						return false;
 					}
-
+					
 					if (l1 == p_76484_4_ + b0 + 1 && !material.isSolid()) {
 						return false;
 					}
-
+					
 					if ((k1 == p_76484_3_ - l - 1 || k1 == p_76484_3_ + l + 1
 							|| i2 == p_76484_5_ - i1 - 1 || i2 == p_76484_5_
 							+ i1 + 1)
@@ -66,7 +64,7 @@ public class WorldGenEdenDungeons extends WorldGenerator {
 				}
 			}
 		}
-
+		
 		if (j1 >= 1 && j1 <= 5) {
 			for (k1 = p_76484_3_ - l - 1; k1 <= p_76484_3_ + l + 1; ++k1) {
 				for (l1 = p_76484_4_ + b0; l1 >= p_76484_4_ - 1; --l1) {
@@ -86,7 +84,7 @@ public class WorldGenEdenDungeons extends WorldGenerator {
 							if (l1 == p_76484_4_ - 1
 									&& p_76484_2_.nextInt(4) != 0) {
 								p_76484_1_.setBlock(k1, l1, i2,
-										BlockList.edenRock, 0, 2);
+										BlockList.edenCobbleRock, 0, 2);
 							} else {
 								p_76484_1_.setBlock(k1, l1, i2,
 										BlockList.edenCobbleRock, 0, 2);
@@ -95,48 +93,48 @@ public class WorldGenEdenDungeons extends WorldGenerator {
 					}
 				}
 			}
-
+			
 			k1 = 0;
-
+			
 			while (k1 < 2) {
 				l1 = 0;
-
+				
 				while (true) {
 					if (l1 < 3) {
 						label101: {
 							i2 = p_76484_3_ + p_76484_2_.nextInt(l * 2 + 1) - l;
 							int j2 = p_76484_5_
 									+ p_76484_2_.nextInt(i1 * 2 + 1) - i1;
-
+							
 							if (p_76484_1_.isAirBlock(i2, p_76484_4_, j2)) {
 								int k2 = 0;
-
+								
 								if (p_76484_1_.getBlock(i2 - 1, p_76484_4_, j2)
 										.getMaterial().isSolid()) {
 									++k2;
 								}
-
+								
 								if (p_76484_1_.getBlock(i2 + 1, p_76484_4_, j2)
 										.getMaterial().isSolid()) {
 									++k2;
 								}
-
+								
 								if (p_76484_1_.getBlock(i2, p_76484_4_, j2 - 1)
 										.getMaterial().isSolid()) {
 									++k2;
 								}
-
+								
 								if (p_76484_1_.getBlock(i2, p_76484_4_, j2 + 1)
 										.getMaterial().isSolid()) {
 									++k2;
 								}
-
+								
 								if (k2 == 1) {
 									p_76484_1_.setBlock(i2, p_76484_4_, j2,
 											Blocks.chest, 0, 2);
 									TileEntityChest tileentitychest = (TileEntityChest) p_76484_1_
 											.getTileEntity(i2, p_76484_4_, j2);
-
+									
 									if (tileentitychest != null) {
 										WeightedRandomChestContent
 												.generateChestContents(
@@ -149,26 +147,26 @@ public class WorldGenEdenDungeons extends WorldGenerator {
 																DUNGEON_CHEST,
 																p_76484_2_));
 									}
-
+									
 									break label101;
 								}
 							}
-
+							
 							++l1;
 							continue;
 						}
 					}
-
+					
 					++k1;
 					break;
 				}
 			}
-
+			
 			p_76484_1_.setBlock(p_76484_3_, p_76484_4_, p_76484_5_,
 					Blocks.mob_spawner, 0, 2);
 			TileEntityMobSpawner tileentitymobspawner = (TileEntityMobSpawner) p_76484_1_
 					.getTileEntity(p_76484_3_, p_76484_4_, p_76484_5_);
-
+			
 			if (tileentitymobspawner != null) {
 				tileentitymobspawner.func_145881_a().setEntityName(
 						this.pickMobSpawner(p_76484_2_));
@@ -177,13 +175,13 @@ public class WorldGenEdenDungeons extends WorldGenerator {
 						+ p_76484_3_ + ", " + p_76484_4_ + ", " + p_76484_5_
 						+ ")");
 			}
-
+			
 			return true;
 		} else {
 			return false;
 		}
 	}
-
+	
 	/**
 	 * Randomly decides which spawner to use in a dungeon
 	 */
