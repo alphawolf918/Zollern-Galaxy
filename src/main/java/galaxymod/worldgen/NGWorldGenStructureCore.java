@@ -14,12 +14,13 @@ import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
 
 public abstract class NGWorldGenStructureCore extends WorldGenerator {
+	
 	protected Block[] GetValidSpawnBlocks() {
 		return new Block[] { BlockList.edenSurfaceRock, BlockList.edenRock,
 				BlockList.edenBloodSand, BlockList.edenBloodStone,
 				BlockList.edenSoil, BlockList.edenCobbleRock,
 				BlockList.edenGrass, BlockList.edenWinterRock,
-				BlockList.edenMagmaRock };
+				BlockList.edenMagmaRock, BlockList.edenWinterRock };
 	}
 	
 	public boolean LocationIsValidSpawn(World world, int i, int j, int k) {

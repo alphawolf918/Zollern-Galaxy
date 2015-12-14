@@ -104,7 +104,7 @@ public class RoomSpawnerEden extends DungeonRoom {
 	}
 	
 	private static String getMob(Random rand) {
-		switch (rand.nextInt(4)) {
+		switch (rand.nextInt(8)) {
 			case 0:
 				return "EvolvedSpider";
 			case 1:
@@ -114,7 +114,7 @@ public class RoomSpawnerEden extends DungeonRoom {
 			case 3:
 				return "EvolvedSkeleton";
 			default:
-				return "EvolvedZombie";
+				return "galaxymod_galaxyknight";
 		}
 	}
 }

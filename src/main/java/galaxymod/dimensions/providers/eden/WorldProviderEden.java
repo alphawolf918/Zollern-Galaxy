@@ -26,7 +26,7 @@ public class WorldProviderEden extends WorldProviderSpace implements
 	
 	@Override
 	public float getGravity() {
-		return 0.045F;
+		return 0.044F;
 	}
 	
 	@Override

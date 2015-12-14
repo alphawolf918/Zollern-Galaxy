@@ -18,7 +18,6 @@ import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.ChunkCoordinates;
 import net.minecraft.util.WeightedRandomChestContent;
-import net.minecraftforge.common.ChestGenHooks;
 import net.minecraftforge.common.util.ForgeDirection;
 
 public class RoomChestsEden extends DungeonRoom {
@@ -95,7 +94,7 @@ public class RoomChestsEden extends DungeonRoom {
 				for (int i = 0; i < chest.getSizeInventory(); i++) {
 					chest.setInventorySlotContents(i, null);
 				}
-				final ChestGenHooks info = ChestGenHooks
+				final EdenGenHooks info = EdenGenHooks
 						.getInfo(EdenGenHooks.DROP_SHIP);
 				WeightedRandomChestContent.generateChestContents(rand,
 						info.getItems(rand), chest, info.getCount(rand));

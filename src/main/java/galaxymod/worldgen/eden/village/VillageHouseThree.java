@@ -293,7 +293,7 @@ public class VillageHouseThree extends NGWorldGenStructureCore {
 		world.setBlock(i + 1, j + 1, k + 7, Blocks.lava);
 		world.setBlock(i + 1, j + 1, k + 8, Blocks.lava);
 		world.setBlock(i + 2, j + 2, k + 2, Blocks.wooden_pressure_plate);
-		NGHelper.echo("\r\n Success! At: " + i + " " + j + " " + k);
+		NGHelper.echo("Success! At: " + i + " " + j + " " + k);
 		return true;
 	}
 }

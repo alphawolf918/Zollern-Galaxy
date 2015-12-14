@@ -4,20 +4,18 @@
  * concepts You CAN'T: - Redistribute it - Claim it as your own
  ******************************************************************************/
 
-package galaxymod.items.eden;
+package galaxymod.blocks.eden;
 
-import galaxymod.items.ItemNova;
-import micdoodle8.mods.galacticraft.api.item.IKeyItem;
-import net.minecraft.item.ItemStack;
+import galaxymod.blocks.BlockNova;
+import net.minecraft.block.material.Material;
 
-public class ItemEdenDungeonKey extends ItemNova implements IKeyItem {
+public class BlockEdenViri extends BlockNova {
 	
-	public ItemEdenDungeonKey() {
-		super("edendungeonkey");
+	public BlockEdenViri() {
+		super(Material.iron);
+		this.setHardResist(2.0F);
+		this.setNameAndTexture("viriblock");
+		this.setStepSound(soundTypeMetal);
 	}
 	
-	@Override
-	public int getTier(ItemStack stack) {
-		return 3;
-	}
 }

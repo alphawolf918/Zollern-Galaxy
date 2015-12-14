@@ -17,7 +17,7 @@ public class GenLayerEdenBiomes extends GenLayer {
 			BiomeList.biomeEdenRockMountains, BiomeList.biomeEdenTerranValley,
 			BiomeList.biomeEdenBloodDesert, BiomeList.biomeEdenGarden,
 			BiomeList.biomeEdenForest, BiomeList.biomeEdenMagmaLands,
-			BiomeList.biomeEdenSnowyPlains };
+			BiomeList.biomeEdenSwamp };
 	protected BiomeGenBase[] rareBiomes = { BiomeList.biomeEdenSnowyPlains };
 	
 	public GenLayerEdenBiomes(long seed, GenLayer genlayer) {

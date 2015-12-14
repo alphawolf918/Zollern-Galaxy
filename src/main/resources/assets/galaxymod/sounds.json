@@ -10,5 +10,32 @@
 	"sounds": [
       "mob/alien/hurt"
 	]
+  },
+  "mob.galaxyknight.say": {
+	"category": "master",
+	"sounds": [
+      "mob/galaxyknight/say"
+	]
+  },
+  "mob.galaxyknight.die": {
+	"category": "master",
+	"sounds": [
+      "mob/galaxyknight/die"
+	]
+  },
+  "mob.crawler.hurt": {
+	"category": "master",
+	"sounds": [
+      "mob/crawler/hurt1",
+      "mob/crawler/hurt2"
+	]
+  },
+  "mob.crawler.say": {
+	"category": "master",
+	"sounds": [
+      "mob/crawler/say1",
+      "mob/crawler/say2",
+      "mob/crawler/say3"
+	]
   }
 }

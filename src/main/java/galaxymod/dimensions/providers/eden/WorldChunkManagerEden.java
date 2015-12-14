@@ -13,6 +13,7 @@ import net.minecraft.world.gen.layer.GenLayer;
 import net.minecraft.world.gen.layer.IntCache;
 
 public class WorldChunkManagerEden extends WorldChunkManagerSpace {
+	
 	private GenLayer unzoomedBiomes;
 	private GenLayer zoomedBiomes;
 	private BiomeCache myBiomeCache;
@@ -29,6 +30,7 @@ public class WorldChunkManagerEden extends WorldChunkManagerSpace {
 		this.myBiomesToSpawnIn.add(BiomeList.biomeEdenForest);
 		this.myBiomesToSpawnIn.add(BiomeList.biomeEdenMagmaLands);
 		this.myBiomesToSpawnIn.add(BiomeList.biomeEdenSnowyPlains);
+		this.myBiomesToSpawnIn.add(BiomeList.biomeEdenSwamp);
 	}
 	
 	public WorldChunkManagerEden(long seed) {

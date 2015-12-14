@@ -123,8 +123,8 @@ public class VillageHouseTwo extends NGWorldGenStructureCore {
 		world.setBlock(i + 4, j + 4, k + 3, BlockList.edenWoodLog);
 		world.setBlock(i + 4, j + 4, k + 4, BlockList.edenWoodLog);
 		world.setBlock(i + 2, j + 3, k + 1, GCBlocks.glowstoneTorch);
-		NGHelper.echo("\r\n Success! At: " + i + " " + j + " " + k);
-		NGHelper.echo("\r\n Preparing to spawn next house...");
+		NGHelper.echo("Success! At: " + i + " " + j + " " + k);
+		NGHelper.echo("Preparing to spawn next house...");
 		(new VillageHouseThree()).generate(world, rand, i, j, k);
 		return true;
 	}

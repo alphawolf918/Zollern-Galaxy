@@ -9,6 +9,7 @@ package galaxymod.worldgen;
 import galaxymod.biomes.BiomeList;
 import galaxymod.blocks.BlockList;
 import galaxymod.worldgen.eden.WorldGenCrystalTower;
+import galaxymod.worldgen.eden.WorldGenDropShip;
 import galaxymod.worldgen.eden.WorldGenGiantBone;
 import galaxymod.worldgen.eden.WorldGenMinableEden;
 import galaxymod.worldgen.eden.village.VillageHouseOne;
@@ -58,29 +59,31 @@ public class NGWorldGenManager implements IWorldGenerator {
 		int y = world.getHeightValue(x, z);
 		
 		// Drop Ship
-		// if (random.nextInt(50) <= 10) {
-		// this.spawnStructure(62, 80, world, random, x, y, z,
-		// new WorldGenDropShip());
-		// }
+		if (random.nextInt(50) <= 10) {
+			this.spawnStructure(62, 80, world, random, x, y, z,
+					new WorldGenDropShip());
+		}
 		
 		// Crystal Tower
-		if (random.nextInt(50) <= 10) {
+		if (random.nextInt(60) <= 10) {
 			if (currentBiome == BiomeList.biomeEden
 					|| currentBiome == BiomeList.biomeEdenTerranValley) {
-				this.spawnStructure(46, 94, world, random, x, y, z,
+				this.spawnStructure(36, 94, world, random, x, y, z,
 						new WorldGenCrystalTower());
 			}
 		}
 		
 		// Eden's Flowers
-		if (random.nextInt(2) == 1) {
+		if (random.nextInt(4) == 1) {
 			if (currentBiome == BiomeList.biomeEden
 					|| currentBiome == BiomeList.biomeEdenTerranValley
 					|| currentBiome == BiomeList.biomeEdenForest
-					|| currentBiome == BiomeList.biomeEdenGarden) {
+					|| currentBiome == BiomeList.biomeEdenGarden
+					|| currentBiome == BiomeList.biomeEdenSwamp
+					|| currentBiome == BiomeList.biomeEdenSnowyPlains) {
 				Block flowerBlock;
 				Random r = new Random();
-				int flowerType = r.nextInt(6);
+				int flowerType = r.nextInt(7);
 				switch (flowerType) {
 					default:
 					case 0:
@@ -114,16 +117,10 @@ public class NGWorldGenManager implements IWorldGenerator {
 		}
 		
 		// Eden Village
-		if (random.nextInt(80) <= 10) {
-			this.spawnStructure(16, 170, world, random, x, y, z,
+		if (random.nextInt(180) <= 10) {
+			this.spawnStructure(10, 180, world, random, x, y, z,
 					new VillageHouseOne());
 		}
-		
-		// if (currentBiome == BiomeList.biomeEden
-		// || currentBiome == BiomeList.biomeEdenTerranValley) {
-		// this.spawnStructure(16, 17, world, random, x, y, z,
-		// new WorldGenTallGrass(BlockList.edenTallGrass, 0));
-		// }
 		
 		if (currentBiome == BiomeList.biomeEdenBloodDesert) {
 			this.spawnStructure(14, 19, world, random, x, y, z,

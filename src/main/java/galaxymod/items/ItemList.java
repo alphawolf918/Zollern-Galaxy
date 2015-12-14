@@ -6,7 +6,6 @@ import galaxymod.items.food.ItemFruit;
 import galaxymod.items.food.RawFood;
 import galaxymod.lib.RegisterHelper;
 import net.minecraft.item.Item;
-import cpw.mods.fml.common.registry.GameRegistry;
 
 public class ItemList {
 	
@@ -15,23 +14,28 @@ public class ItemList {
 	public static final Item alienBaconRaw = new RawFood("alienbaconraw");
 	public static final Item alienBaconCooked = new CookedFood(
 			"alienbaconcooked");
-	public static final Item hud = new ItemHUD();
+	public static final ItemNova hud = new ItemHUD();
 	public static final Item spaceFruit = new ItemFruit("fruitofeden");
-	public static final Item edenDungeonKey = new ItemEdenDungeonKey();
-	public static final Item brightStoneDust = new ItemNova("brightstonedust");
+	public static final ItemNova edenDungeonKey = new ItemEdenDungeonKey();
+	public static final ItemNova brightStoneDust = new ItemNova(
+			"brightstonedust");
+	public static final ItemNova rawViri = new ItemNova("rawviri");
+	public static final ItemNova ingotViri = new ItemNova("ingotviri");
 	
 	public static void init() {
-		addItem(alienBeefRaw, "Raw Alien Beef");
-		addItem(alienBeefCooked, "Cooked Alien Beef");
-		addItem(alienBaconRaw, "Raw Alien Bacon");
-		addItem(alienBaconCooked, "Cooked Alien Bacon");
-		addItem(hud, "HUD");
-		addItem(spaceFruit, "Fruit of Eden");
-		addItem(brightStoneDust, "Brightstone Dust");
-		RegisterHelper.registerItem(edenDungeonKey);
+		addItem(alienBeefRaw);
+		addItem(alienBeefCooked);
+		addItem(alienBaconRaw);
+		addItem(alienBaconCooked);
+		addItem(hud);
+		addItem(spaceFruit);
+		addItem(brightStoneDust);
+		addItem(edenDungeonKey);
+		addItem(rawViri);
+		addItem(ingotViri);
 	}
 	
-	public static void addItem(Item item, String name) {
-		GameRegistry.registerItem(item, name);
+	public static void addItem(Item par1Item) {
+		RegisterHelper.registerItem(par1Item);
 	}
 }

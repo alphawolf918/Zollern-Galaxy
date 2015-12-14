@@ -7,6 +7,7 @@
 package galaxymod.blocks.eden;
 
 import galaxymod.blocks.BlockNova;
+import galaxymod.items.ItemList;
 import galaxymod.items.ItemNova;
 import java.util.Random;
 import net.minecraft.block.material.Material;
@@ -14,7 +15,7 @@ import net.minecraft.item.Item;
 
 public class BlockEdenBrightStone extends BlockNova {
 	
-	private static ItemNova dropItem;
+	private static ItemNova dropItem = ItemList.brightStoneDust;
 	
 	public BlockEdenBrightStone() {
 		super(Material.glass);

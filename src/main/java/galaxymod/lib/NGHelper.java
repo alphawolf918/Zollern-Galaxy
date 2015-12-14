@@ -13,6 +13,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenFlowers;
 import net.minecraftforge.common.config.Configuration;
 import org.lwjgl.input.Keyboard;
+import cpw.mods.fml.common.FMLLog;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
 public class NGHelper {
@@ -105,7 +106,7 @@ public class NGHelper {
 	}
 	
 	public static void echo(String str) {
-		System.out.println(str);
+		FMLLog.info(str);
 	}
 	
 	public static void Log(String str) {

@@ -7,6 +7,7 @@
 package galaxymod.worldgen.eden.dungeons;
 
 import galaxymod.blocks.BlockList;
+import galaxymod.tileentities.eden.TileEntityDungeonSpawnerEden;
 import java.util.Random;
 import micdoodle8.mods.galacticraft.api.vector.Vector3;
 import micdoodle8.mods.galacticraft.core.tile.TileEntityDungeonSpawner;
@@ -20,6 +21,7 @@ import net.minecraft.util.ChunkCoordinates;
 import net.minecraftforge.common.util.ForgeDirection;
 
 public class RoomBossEden extends DungeonRoom {
+	
 	public int sizeX;
 	public int sizeY;
 	public int sizeZ;
@@ -136,8 +138,8 @@ public class RoomBossEden extends DungeonRoom {
 				this.spawnerCoords.posX, this.spawnerCoords.posY,
 				this.spawnerCoords.posZ);
 		
-		if (tile == null || !(tile instanceof TileEntityDungeonSpawner)) {
-			final TileEntityDungeonSpawner spawner = new TileEntityDungeonSpawner();
+		if (tile == null || !(tile instanceof TileEntityDungeonSpawnerEden)) {
+			final TileEntityDungeonSpawner spawner = new TileEntityDungeonSpawnerEden();
 			spawner.setRoom(new Vector3(this.posX, this.posY, this.posZ),
 					new Vector3(this.sizeX, this.sizeY, this.sizeZ));
 			this.worldObj.setTileEntity(this.spawnerCoords.posX,

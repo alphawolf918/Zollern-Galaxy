@@ -41,6 +41,12 @@ public class Recipes {
 					4);
 			GameRegistry.addRecipe(edenRockBricks, new Object[] { "CC ", "CC ",
 					"   ", 'C', BlockList.edenRock });
+			
+			// Virinium Block
+			GameRegistry
+					.addRecipe(new ItemStack(BlockList.edenViriBlock, 1),
+							new Object[] { "VVV", "VVV", "VVV", 'V',
+									ItemList.ingotViri });
 		}
 	}
 	
@@ -71,6 +77,8 @@ public class Recipes {
 					GCItems.meteoricIronRaw, 2), 2.0F); // Meteoric Iron
 			addSmelting(BlockList.edenTinOre, new ItemStack(
 					GCBlocks.basicBlock, 2, 6), 2.0F); // Tin
+			addSmelting(ItemList.rawViri, new ItemStack(ItemList.ingotViri, 1),
+					2.0F); // Viri
 			
 			// Other
 			addSmelting(BlockList.edenCobbleRock, BlockList.edenRock, 0.4F);

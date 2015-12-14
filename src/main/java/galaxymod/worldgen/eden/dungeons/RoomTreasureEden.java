@@ -11,6 +11,7 @@ import galaxymod.tileentities.eden.TileEntityTreasureChestEden;
 import galaxymod.worldgen.eden.treasure.EdenGenHooks;
 import java.util.HashSet;
 import java.util.Random;
+import micdoodle8.mods.galacticraft.core.items.GCItems;
 import micdoodle8.mods.galacticraft.core.world.gen.dungeon.DungeonBoundingBox;
 import micdoodle8.mods.galacticraft.core.world.gen.dungeon.DungeonRoom;
 import micdoodle8.mods.galacticraft.core.world.gen.dungeon.MapGenDungeon;
@@ -91,8 +92,12 @@ public class RoomTreasureEden extends DungeonRoom {
 		return new RoomTreasureEden(dungeon, x, y, z, dir);
 	}
 	
+	// TODO: Return portal gate crafting ingredient
 	public ItemStack getGuaranteedLoot(Random rand) {
-		switch (rand.nextInt(4)) {
+		switch (rand.nextInt(10)) {
+			default:
+				return new ItemStack(GCItems.meteoricIronIngot,
+						(new Random()).nextInt(64));
 			case 0:
 				return new ItemStack(Items.gold_ingot, rand.nextInt(2) + 50, 0);
 			case 1:
@@ -102,9 +107,8 @@ public class RoomTreasureEden extends DungeonRoom {
 			case 3:
 				return new ItemStack(Items.emerald, rand.nextInt(3) + 50, 1);
 			case 4:
-				return new ItemStack(Items.redstone, 64, 0);
+				return new ItemStack(Items.redstone, rand.nextInt(15) + 50, 0);
 		}
-		return null;
 	}
 	
 	@Override

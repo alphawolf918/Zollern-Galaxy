@@ -44,7 +44,7 @@ public class EdenGenHooks extends ChestGenHooks {
 		
 		hasInit = true;
 		
-		addInfo(DROP_SHIP, dropShipChestContents, 3, 7);
+		addInfo(DROP_SHIP, dropShipChestContents, 4, 8);
 		
 		ItemStack book = new ItemStack(Items.enchanted_book, 1, 0);
 		WeightedRandomChestContent tmp = new WeightedRandomChestContent(book,

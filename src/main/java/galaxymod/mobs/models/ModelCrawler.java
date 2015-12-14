@@ -4,20 +4,12 @@
  * concepts You CAN'T: - Redistribute it - Claim it as your own
  ******************************************************************************/
 
-package galaxymod.items.eden;
+package galaxymod.mobs.models;
 
-import galaxymod.items.ItemNova;
-import micdoodle8.mods.galacticraft.api.item.IKeyItem;
-import net.minecraft.item.ItemStack;
+import net.minecraft.client.model.ModelSpider;
 
-public class ItemEdenDungeonKey extends ItemNova implements IKeyItem {
+public class ModelCrawler extends ModelSpider {
 	
-	public ItemEdenDungeonKey() {
-		super("edendungeonkey");
-	}
-	
-	@Override
-	public int getTier(ItemStack stack) {
-		return 3;
+	public ModelCrawler() {
 	}
 }

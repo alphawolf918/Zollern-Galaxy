@@ -1,21 +1,15 @@
 == Project Nova v1.0 ==
 
-* Added a new solar system called Psios, with a blueish-white dwarf star.
-    * Added 2 new planets to this solar system:
+* Added a solar system called Psios, with a blueish-white dwarf star.
+    * Added planets to this solar system:
         * Eden, an Earth-like planet with a breathable atmosphere and habitable temperature, rich with minable resources.
             * The world is incredibly dark at night due to the lack of any moons.
         * Zollus, a barren ice planet without a breathable atmosphere or tolerable thermal temperature.
+        * Kriffus, a hot planet close to its sun, Psios
+            * Unbreathable and uninhabitable due to temperature
 ====PSIOS.EDEN====
 * New ores for Eden:
-    * Iron.
-    * Meteoric Iron.
-    * Gold.
-    * Copper.
-    * Tin.
-    * Diamond.
-    * Emerald.
-    * Coal.
-    * Desh.
+    * Iron, Meteoric Iron, Gold, Copper, Tin, Diamond, Emerald, Coal and Desh.
 * Added Vortex Drop Ship spawn to Eden.
 * Caves and ores now generate properly on Eden.
 * Added a flower spawn to Eden called "Eden's Flower."
@@ -31,7 +25,7 @@
     * Giant bones generate in this biome for decor.
         * 35% chance to generate a treasure chest directly underneath the bones.
     * Dead bushes generate here.
-* There are now 6 different colors of Eden Flowers, 7 if you count the one without a blossom.
+* There are now 8 different colors of Eden Flowers, 9 if you count the one without a blossom.
 * Added the "Moolus" mob.
     * Large, green, two-headed, six-eyed cow.
     * Drops "Alien Beef" when killed.
@@ -79,5 +73,22 @@
     * Will fall if not directly below an Edenwood Leaf block.
     * Drops an edible fruit item.
 * Evolved Monsters now spawn on Eden.
-    * Blazes also spawn in Magma Lands.
-    * Squids spawn wherever there is water.
+    * Alien Squids spawn wherever there is water.
+        * Behave the same as normal squids for now, but are giant and green.
+* Added Britestone.
+    * Basically just green Glowstone.
+* Added a special dungeon spawn to Eden.
+    * Consists of Eden Rock Bricks, Mob Spawners, Cobwebs, Britestone, and Eden's Treasure Chests.
+        * Eden's Treasure Chests require an Eden's Dungeon Key to open.
+* Added Galactic Sentry Guard mob.
+    * Only spawns in dungeons (this mob will be in dungeons on every planet).
+    * Custom sounds for living and death (uses Blaze 'hit' noise when hurt).
+        * Living: "I am a Galactic Sentry Guard. Please leave this area, or be destroyed."
+        * Death: "Error."
+    * Very hostile to the player with 60 health and 20-level armor - also has a powerful attack.
+* Green "Eden's Gravel" now spawns on Eden.
+    * Does not yet serve any purpose.
+* Added a Crawler mob.
+    * Giant, furry spider that roars and growls. Has a lot of health and a powerful attack.
+    * Spawns in Eden Dungeons as a boss.
+    * Drops an Eden's Dungeon Key to open green loot chests with.

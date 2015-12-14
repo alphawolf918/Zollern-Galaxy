@@ -598,8 +598,8 @@ public class VillageHouseOne extends NGWorldGenStructureCore {
 		world.setBlock(i + 15, j + 0, k + 22, currentBiome.topBlock);
 		world.setBlock(i + 15, j + 0, k + 23, currentBiome.topBlock);
 		world.setBlock(i + 15, j + 0, k + 24, currentBiome.topBlock);
-		NGHelper.echo("\r\n Success! At: " + i + " " + j + " " + k);
-		NGHelper.echo("\r\n Preparing to spawn next house...");
+		NGHelper.echo("Success! At: " + i + " " + j + " " + k);
+		NGHelper.echo("Preparing to spawn next house...");
 		(new VillageHouseTwo()).generate(world, rand, i, j, k);
 		return true;
 	}

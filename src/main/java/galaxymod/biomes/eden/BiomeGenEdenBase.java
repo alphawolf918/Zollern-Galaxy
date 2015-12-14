@@ -13,10 +13,6 @@ import galaxymod.blocks.BlockList;
 import galaxymod.core.NGCore;
 import java.util.ArrayList;
 import java.util.Random;
-import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedCreeper;
-import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedSkeleton;
-import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedSpider;
-import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedZombie;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
@@ -31,7 +27,7 @@ public abstract class BiomeGenEdenBase extends BiomeSpace {
 	protected byte topMeta;
 	protected byte fillerMeta;
 	protected byte stoneMeta;
-	public int biomeHeightBaseModifier = 232;
+	public static int biomeHeightBaseModifier = 232;
 	public BiomeDecoratorEden biomeDecor = this.getBiomeDecorator();
 	public static ArrayList<BiomeGenEdenBase> edenBiomes = new ArrayList();
 	
@@ -41,8 +37,7 @@ public abstract class BiomeGenEdenBase extends BiomeSpace {
 		this.enableRain = true;
 		this.enableSnow = true;
 		this.setColor(BiomeList.biomeColor);
-		this.rootHeight = 1F;
-		this.heightVariation = 2F;
+		this.setHeight(new Height(1.5F, 0.4F));
 		this.theBiomeDecorator.flowersPerChunk = -999;
 		this.theBiomeDecorator.treesPerChunk = -999;
 		this.theBiomeDecorator.grassPerChunk = -999;
@@ -51,18 +46,15 @@ public abstract class BiomeGenEdenBase extends BiomeSpace {
 		this.biomeDecor.edenTallGrassPerChunk = 2;
 		this.spawnableCaveCreatureList.clear();
 		this.spawnableMonsterList.clear();
-		this.spawnableMonsterList.add(new SpawnListEntry(
-				EntityEvolvedZombie.class, 25, 1, 1));
-		this.spawnableMonsterList.add(new SpawnListEntry(
-				EntityEvolvedSpider.class, 5, 1, 1));
-		this.spawnableMonsterList.add(new SpawnListEntry(
-				EntityEvolvedSkeleton.class, 5, 1, 1));
-		this.spawnableMonsterList.add(new SpawnListEntry(
-				EntityEvolvedCreeper.class, 5, 1, 1));
 		this.spawnableWaterCreatureList.clear();
 		this.spawnableCreatureList.clear();
 		this.stoneBlock = BlockList.edenRock;
 		this.edenBiomes.add(this);
+	}
+	
+	@Override
+	public float getSpawningChance() {
+		return 0.1F;
 	}
 	
 	public static ArrayList<BiomeGenEdenBase> getEdenBiomes() {
@@ -143,7 +135,7 @@ public abstract class BiomeGenEdenBase extends BiomeSpace {
 							if (y < seaLevel - 1
 									&& (topBlock == null || topBlock
 											.getMaterial() == Material.air)) {
-								if (this.getFloatTemperature(x, y, z) <= 2.00F) {
+								if (this.getIsColdBiome()) {
 									topBlock = Blocks.ice;
 									topMeta = 0;
 								} else {

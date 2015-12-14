@@ -7,6 +7,7 @@ import galaxymod.biomes.eden.BiomeEdenGarden;
 import galaxymod.biomes.eden.BiomeEdenMagmaLands;
 import galaxymod.biomes.eden.BiomeEdenRockMountains;
 import galaxymod.biomes.eden.BiomeEdenSnowyPlains;
+import galaxymod.biomes.eden.BiomeEdenSwamp;
 import galaxymod.biomes.eden.BiomeEdenTerranValley;
 import galaxymod.biomes.kriffus.BiomeKriffus;
 import galaxymod.biomes.zollus.BiomeZollus;
@@ -21,6 +22,7 @@ public class BiomeList {
 	public static int biomeColor = 1404852;
 	
 	public static BiomeGenBase biomeZollus = new BiomeZollus(179);
+	
 	public static BiomeGenBase biomeEden = new BiomeEden(178);
 	public static BiomeGenBase biomeEdenRockMountains = new BiomeEdenRockMountains(
 			177);
@@ -34,9 +36,12 @@ public class BiomeList {
 			172);
 	public static BiomeGenBase biomeEdenSnowyPlains = new BiomeEdenSnowyPlains(
 			171);
-	public static BiomeGenBase biomeKriffus = new BiomeKriffus(170);
+	public static BiomeGenBase biomeEdenSwamp = new BiomeEdenSwamp(170);
+	
+	public static BiomeGenBase biomeKriffus = new BiomeKriffus(160);
 	
 	public static void init() {
+		
 		// ZOLLUS
 		addBiome(biomeZollus, BiomeType.COOL, BiomeDictionary.Type.COLD, 0);
 		
@@ -54,6 +59,7 @@ public class BiomeList {
 				BiomeDictionary.Type.WASTELAND, 0);
 		addBiome(biomeEdenSnowyPlains, BiomeType.ICY,
 				BiomeDictionary.Type.COLD, 0);
+		addBiome(biomeEdenSwamp, BiomeType.WARM, BiomeDictionary.Type.SWAMP, 0);
 		
 		// KRIFFUS
 		addBiome(biomeKriffus, BiomeType.DESERT,

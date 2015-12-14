@@ -11,6 +11,7 @@ import galaxymod.blocks.eden.BlockEdenCobblerock;
 import galaxymod.blocks.eden.BlockEdenRock;
 import galaxymod.blocks.eden.BlockEdenRockBricks;
 import galaxymod.blocks.eden.BlockEdenTreasureChest;
+import galaxymod.blocks.eden.BlockEdenViri;
 import galaxymod.blocks.eden.BlockEdenWoodLeaves;
 import galaxymod.blocks.eden.BlockEdenWoodLog;
 import galaxymod.blocks.eden.BlockEdenWoodPlanks;
@@ -38,13 +39,13 @@ import galaxymod.blocks.eden.ores.EdenGoldOre;
 import galaxymod.blocks.eden.ores.EdenIronOre;
 import galaxymod.blocks.eden.ores.EdenMeteoricIronOre;
 import galaxymod.blocks.eden.ores.EdenTinOre;
+import galaxymod.blocks.eden.ores.EdenViriOre;
 import galaxymod.blocks.kriffus.KriffRock;
 import galaxymod.blocks.kriffus.KriffStone;
 import galaxymod.blocks.zollus.BlockZollus;
 import galaxymod.blocks.zollus.BlockZolstone;
 import galaxymod.lib.RegisterHelper;
 import net.minecraft.block.Block;
-import cpw.mods.fml.common.registry.GameRegistry;
 
 public class BlockList {
 	
@@ -63,6 +64,7 @@ public class BlockList {
 	public static final Block edenGoldOre = new EdenGoldOre();
 	public static final Block edenCoalOre = new EdenCoalOre();
 	public static final Block edenDeshOre = new EdenDeshOre();
+	public static final Block edenViriOre = new EdenViriOre();
 	public static final Block edenSoil = new EdenSoil();
 	public static final Block edenSurfaceRock = new EdenSurfaceRock();
 	public static final Block edenFlower = new EdenFlower("");
@@ -90,57 +92,62 @@ public class BlockList {
 	public static final Block edenSpaceFruit = new SpaceFruitBlock();
 	public static final Block edenTreasureChest = new BlockEdenTreasureChest();
 	public static final Block edenBrightStone = new BlockEdenBrightStone();
+	public static final Block edenViriBlock = new BlockEdenViri();
 	
 	public static final Block kriffRock = new KriffRock();
 	public static final Block kriffStone = new KriffStone();
 	
 	public static void init() {
-		addBlock(solarBlock, "Zollus Rock");
-		addBlock(zolstone, "Zolstone");
-		addBlock(edenRock, "Eden Rock");
-		addBlock(edenCobbleRock, "Eden Cobble Rock");
-		addBlock(edenRockBricks, "Edenrock Bricks");
-		addBlock(edenIronOre, "Eden Iron Ore");
-		addBlock(edenCopperOre, "Eden Copper Ore");
-		addBlock(edenTinOre, "Eden Tin Ore");
-		addBlock(edenMeteoricIronOre, "Eden Meteoric Iron Ore");
-		addBlock(edenDiamondOre, "Eden Diamond Ore");
-		addBlock(edenEmeraldOre, "Eden Emerald Ore");
-		addBlock(edenGoldOre, "Eden Gold Ore");
-		addBlock(edenCoalOre, "Eden Coal Ore");
-		addBlock(edenDeshOre, "Eden Desh Ore");
-		addBlock(edenSurfaceRock, "Eden Surface Rock");
-		addBlock(edenSoil, "Eden Soil");
-		addBlock(edenFlower, "Eden Flower");
-		addBlock(edenFlowerBlue, "Eden Blue Flower");
-		addBlock(edenFlowerRed, "Eden Red Flower");
-		addBlock(edenFlowerOrange, "Eden Orange Flower");
-		addBlock(edenFlowerYellow, "Eden Yellow Flower");
-		addBlock(edenFlowerPurple, "Eden Purple Flower");
-		addBlock(edenFlowerCyan, "Eden Cyan Flower");
-		addBlock(edenFlowerGreen, "Eden Green Flower");
-		addBlock(edenGrass, "Eden Grass");
-		addBlock(edenTallGrass, "Eden Tall Grass");
-		addBlock(edenBloodSand, "Eden Blood Sand");
-		addBlock(edenBloodStone, "Eden Bloodstone");
-		addBlock(edenBoneStone, "Eden Bone Stone");
-		addBlock(edenSacredStone, "Eden's Sacred Stone");
-		addBlock(edenGlass, "Eden Glass");
-		addBlock(edenWoodPlanks, "Edenwood Planks");
-		addBlock(edenWoodLog, "Edenwood Log");
-		addBlock(edenWoodLeaves, "Edenwood Leaves");
-		addBlock(edenWoodSapling, "Edenwood Sapling");
-		addBlock(edenMagmaRock, "Eden's Magrock");
-		addBlock(edenGravel, "Eden's Gravel");
-		addBlock(edenWinterRock, "Eden's Winterrock");
-		addBlock(edenSpaceFruit, "Eden's Space Fruit");
-		addBlock(edenBrightStone, "Eden's Brightstone");
-		RegisterHelper.registerBlock(edenTreasureChest);
-		addBlock(kriffRock, "Kriffrock");
-		addBlock(kriffStone, "Kriffstone");
+		addBlock(solarBlock);
+		addBlock(zolstone);
+		
+		addBlock(edenRock);
+		addBlock(edenCobbleRock);
+		addBlock(edenRockBricks);
+		addBlock(edenIronOre);
+		addBlock(edenCopperOre);
+		addBlock(edenTinOre);
+		addBlock(edenMeteoricIronOre);
+		addBlock(edenDiamondOre);
+		addBlock(edenEmeraldOre);
+		addBlock(edenGoldOre);
+		addBlock(edenCoalOre);
+		addBlock(edenDeshOre);
+		addBlock(edenViriOre);
+		addBlock(edenSurfaceRock);
+		addBlock(edenSoil);
+		addBlock(edenFlower);
+		addBlock(edenFlowerBlue);
+		addBlock(edenFlowerRed);
+		addBlock(edenFlowerOrange);
+		addBlock(edenFlowerYellow);
+		addBlock(edenFlowerPurple);
+		addBlock(edenFlowerCyan);
+		addBlock(edenFlowerGreen);
+		addBlock(edenGrass);
+		addBlock(edenTallGrass);
+		addBlock(edenBloodSand);
+		addBlock(edenBloodStone);
+		addBlock(edenBoneStone);
+		addBlock(edenSacredStone);
+		addBlock(edenGlass);
+		addBlock(edenWoodPlanks);
+		addBlock(edenWoodLog);
+		addBlock(edenWoodLeaves);
+		addBlock(edenWoodSapling);
+		addBlock(edenMagmaRock);
+		addBlock(edenGravel);
+		addBlock(edenWinterRock);
+		addBlock(edenSpaceFruit);
+		addBlock(edenBrightStone);
+		addBlock(edenTreasureChest);
+		addBlock(edenViriBlock);
+		
+		addBlock(kriffRock);
+		addBlock(kriffStone);
 	}
 	
-	public static void addBlock(Block block, String name) {
-		GameRegistry.registerBlock(block, name);
+	public static void addBlock(Block par1Block) {
+		RegisterHelper.registerBlock(par1Block);
 	}
 }

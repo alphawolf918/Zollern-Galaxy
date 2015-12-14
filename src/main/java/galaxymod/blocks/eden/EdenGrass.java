@@ -25,7 +25,7 @@ public class EdenGrass extends Block {
 	public EdenGrass() {
 		super(Material.grass);
 		NGHelper.setTab(this);
-		this.setBlockName("galaxymod:edengrass");
+		this.setBlockName("galaxymod_edengrass");
 		this.setHardness(0.4F);
 		this.setResistance(0.4F);
 		this.setStepSound(soundTypeGrass);

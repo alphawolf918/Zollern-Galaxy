@@ -97,7 +97,7 @@ public class ChunkProviderEden extends ChunkProviderSpace {
 	double[] field_147426_g;
 	
 	private MapGenDungeon dungeonGeneratorMain = new MapGenDungeon(
-			BlockList.edenRockBricks, 14, 8, 24, 6);
+			BlockList.edenRockBricks, 14, 10, 24, 6);
 	{
 		this.dungeonGeneratorMain.otherRooms.add(new RoomEmptyNG(null, 0, 0, 0,
 				ForgeDirection.UNKNOWN));
@@ -163,7 +163,7 @@ public class ChunkProviderEden extends ChunkProviderSpace {
 				BiomeList.biomeEdenTerranValley,
 				BiomeList.biomeEdenBloodDesert, BiomeList.biomeEdenGarden,
 				BiomeList.biomeEdenForest, BiomeList.biomeEdenMagmaLands,
-				BiomeList.biomeEdenSnowyPlains };
+				BiomeList.biomeEdenSnowyPlains, BiomeList.biomeEdenSwamp };
 	}
 	
 	@Override

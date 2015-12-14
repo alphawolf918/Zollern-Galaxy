@@ -4,9 +4,11 @@ import galaxymod.biomes.BiomeList;
 import galaxymod.biomes.eden.BiomeGenEdenBase;
 import galaxymod.lib.ModInfo;
 import galaxymod.mobs.entities.EntityAlienSquid;
+import galaxymod.mobs.entities.EntityGalaxyKnight;
 import galaxymod.mobs.entities.EntityGrayAlien;
 import galaxymod.mobs.entities.EntityMoolus;
 import galaxymod.mobs.entities.EntityOinkus;
+import galaxymod.mobs.entities.boss.EntityCrawlerBoss;
 import net.minecraft.entity.EntityList;
 import net.minecraft.entity.EntityList.EntityEggInfo;
 import net.minecraft.entity.EntityLiving;
@@ -42,6 +44,13 @@ public class Mobs {
 			EntityRegistry.addSpawn(EntityAlienSquid.class, 1, 1, 1,
 					EnumCreatureType.waterCreature, biome);
 		}
+		
+		// Galaxy Knight
+		registerEntity(EntityGalaxyKnight.class, "galaxyknight", 0x444444,
+				0x8b008b);
+		
+		// Crawler
+		registerEntity(EntityCrawlerBoss.class, "crawler", 0xdddddd, 0x444444);
 	}
 	
 	public static void registerEntity(Class<? extends EntityLiving> entity,

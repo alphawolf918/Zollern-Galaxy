@@ -16,20 +16,20 @@ public final class TreasureGenEden {
 	public static ArrayList<String> chestTypes = new ArrayList<String>();
 	
 	private static WeightedRandomChestContent item5 = new WeightedRandomChestContent(
-			new ItemStack(Items.gold_ingot, (new Random()).nextInt(60)), 50,
+			new ItemStack(Items.gold_ingot, (new Random()).nextInt(64)), 50,
 			65, 2);
 	private static WeightedRandomChestContent item6 = new WeightedRandomChestContent(
-			new ItemStack(Items.iron_ingot, (new Random()).nextInt(60)), 50,
+			new ItemStack(Items.iron_ingot, (new Random()).nextInt(64)), 50,
 			65, 2);
 	private static WeightedRandomChestContent item7 = new WeightedRandomChestContent(
-			new ItemStack(Items.diamond, (new Random()).nextInt(60)), 50, 65, 2);
+			new ItemStack(Items.diamond, (new Random()).nextInt(64)), 50, 65, 2);
 	private static WeightedRandomChestContent item8 = new WeightedRandomChestContent(
-			new ItemStack(Items.emerald, (new Random()).nextInt(60)), 50, 65, 2);
+			new ItemStack(Items.emerald, (new Random()).nextInt(64)), 50, 65, 2);
 	private static WeightedRandomChestContent item9 = new WeightedRandomChestContent(
 			new ItemStack(Items.redstone, (new Random()).nextInt(60)), 50, 65,
 			2);
 	private static WeightedRandomChestContent item10 = new WeightedRandomChestContent(
-			new ItemStack(GCItems.meteoricIronIngot, (new Random()).nextInt(60)),
+			new ItemStack(GCItems.meteoricIronIngot, (new Random()).nextInt(64)),
 			50, 65, 2);
 	
 	public static void init() {

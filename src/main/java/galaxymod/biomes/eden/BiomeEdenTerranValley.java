@@ -16,7 +16,7 @@ public class BiomeEdenTerranValley extends BiomeGenEdenBase {
 		this.theBiomeDecorator.generateLakes = true;
 		this.biomeDecor.edenTallGrassPerChunk = 4;
 		this.biomeDecor.edenFlowersPerChunk = 6;
-		this.grassFoilageColorMultiplier = 0x0000bf;
+		this.grassFoilageColorMultiplier = 0x00008b;
 		this.waterColorMultiplier = 0x00008b;
 		this.temperature = 4F;
 		this.topBlock = BlockList.edenGrass;

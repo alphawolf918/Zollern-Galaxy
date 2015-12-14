@@ -20,6 +20,7 @@ import net.minecraft.world.biome.BiomeDecorator;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.gen.feature.WorldGenDeadBush;
 import net.minecraft.world.gen.feature.WorldGenTallGrass;
+import net.minecraft.world.gen.feature.WorldGenWaterlily;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.terraingen.DecorateBiomeEvent;
 import net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType;
@@ -34,6 +35,7 @@ public class BiomeDecoratorEden extends BiomeDecorator {
 	public int edenSandPerChunk = 4;
 	public int edenGravPerChunk = 2;
 	public int edenLakesPerChunk = 1;
+	public int edenWaterLillyPerChunk = 0;
 	
 	@Override
 	public void decorateChunk(World world, Random rand, BiomeGenBase biome,
@@ -77,6 +79,16 @@ public class BiomeDecoratorEden extends BiomeDecorator {
 			z = this.chunk_Z + this.randomGenerator.nextInt(16) + 8;
 			new WorldGenEdenSand(BlockList.edenGravel, 0, 8).generate(
 					this.currentWorld, this.randomGenerator, x, y, z);
+		}
+		
+		// Water Lillies
+		for (i = 0; this.getGen(EventType.LILYPAD)
+				&& i < this.edenWaterLillyPerChunk; i++) {
+			x = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
+			y = this.randomGenerator.nextInt(256);
+			z = this.chunk_Z + this.randomGenerator.nextInt(16) + 8;
+			new WorldGenWaterlily().generate(currentWorld, randomGenerator, x,
+					y, z);
 		}
 		
 		// Lava & Water (Lakes)
