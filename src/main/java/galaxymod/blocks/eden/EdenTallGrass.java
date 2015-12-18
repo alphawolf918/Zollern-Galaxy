@@ -1,7 +1,6 @@
 package galaxymod.blocks.eden;
 
 import galaxymod.blocks.BlockList;
-import galaxymod.lib.NGHelper;
 import java.util.Random;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
@@ -20,7 +19,6 @@ public class EdenTallGrass extends EdenFlower {
 	
 	public EdenTallGrass() {
 		super("");
-		NGHelper.setTab(this);
 		this.setBlockName("galaxymod_edentallgrass");
 		this.setBlockTextureName("galaxymod:edentallgrass");
 		setHardness(0.1F);

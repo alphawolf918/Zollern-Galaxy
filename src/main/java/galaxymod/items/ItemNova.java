@@ -6,8 +6,10 @@
 
 package galaxymod.items;
 
+import galaxymod.ProjectNovaCore;
 import galaxymod.lib.NGHelper;
 import micdoodle8.mods.galacticraft.core.proxy.ClientProxyCore;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -41,5 +43,10 @@ public class ItemNova extends Item {
 	@SideOnly(Side.CLIENT)
 	public EnumRarity getRarity(ItemStack itemStack) {
 		return ClientProxyCore.galacticraftItem;
+	}
+	
+	@Override
+	public CreativeTabs getCreativeTab() {
+		return ProjectNovaCore.novaTabItems;
 	}
 }

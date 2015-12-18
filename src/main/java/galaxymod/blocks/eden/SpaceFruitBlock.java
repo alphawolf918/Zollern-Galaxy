@@ -7,6 +7,7 @@
 package galaxymod.blocks.eden;
 
 import galaxymod.blocks.BlockList;
+import galaxymod.blocks.BlockNova;
 import galaxymod.items.ItemList;
 import galaxymod.lib.NGHelper;
 import java.util.Random;
@@ -17,11 +18,10 @@ import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.world.World;
 
-public class SpaceFruitBlock extends Block {
+public class SpaceFruitBlock extends BlockNova {
 	
 	public SpaceFruitBlock() {
 		super(Material.gourd);
-		NGHelper.setTab(this);
 		NGHelper.setNameAndTexture(this, "fruitofedenblock");
 		this.setBlockBounds(0.2F, 0.2F, 0.2F, 0.6F, 0.6F, 0.6F);
 		this.setTickRandomly(true);

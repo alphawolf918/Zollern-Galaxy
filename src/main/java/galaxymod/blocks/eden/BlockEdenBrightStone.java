@@ -8,14 +8,9 @@ package galaxymod.blocks.eden;
 
 import galaxymod.blocks.BlockNova;
 import galaxymod.items.ItemList;
-import galaxymod.items.ItemNova;
-import java.util.Random;
 import net.minecraft.block.material.Material;
-import net.minecraft.item.Item;
 
 public class BlockEdenBrightStone extends BlockNova {
-	
-	private static ItemNova dropItem = ItemList.brightStoneDust;
 	
 	public BlockEdenBrightStone() {
 		super(Material.glass);
@@ -23,12 +18,6 @@ public class BlockEdenBrightStone extends BlockNova {
 		this.setLightLevel(1.0F);
 		this.setHardResist(0.4F);
 		this.setStepSound(soundTypeGlass);
+		this.setDropItem(ItemList.brightStoneDust, 3, 4);
 	}
-	
-	@Override
-	public Item getItemDropped(int p_149650_1_, Random p_149650_2_,
-			int p_149650_3_) {
-		return this.dropItem;
-	}
-	
 }

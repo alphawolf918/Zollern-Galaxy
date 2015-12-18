@@ -11,15 +11,17 @@ import galaxymod.biomes.BiomeList;
 import galaxymod.blocks.BlockList;
 import galaxymod.commands.CommandList;
 import galaxymod.core.NGCore;
-import galaxymod.creativetabs.ModTabs;
+import galaxymod.creativetabs.ProjectNovaTab;
 import galaxymod.gui.GuiHandlerNG;
 import galaxymod.items.ItemList;
 import galaxymod.lib.ModInfo;
-import galaxymod.lib.Recipes;
+import galaxymod.lib.RecipeManagerNova;
 import galaxymod.mobs.Mobs;
 import galaxymod.proxies.CommonProxy;
 import galaxymod.tileentities.TileEntityListNG;
 import galaxymod.worldgen.NGWorldGenManager;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.ItemStack;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.SidedProxy;
@@ -33,24 +35,26 @@ import cpw.mods.fml.common.registry.GameRegistry;
 @Mod(modid = ModInfo.MODID, name = ModInfo.NAME,
 		dependencies = "required-after:GalacticraftCore",
 		version = ModInfo.VERSION)
-public class GalaxyMod {
+public class ProjectNovaCore {
 	
 	@Mod.Instance(ModInfo.MODID)
-	private static GalaxyMod INSTANCE;
+	private static ProjectNovaCore INSTANCE;
 	
 	@SidedProxy(clientSide = ModInfo.PROXY_LOCATION + ".ClientProxy",
 			serverSide = ModInfo.PROXY_LOCATION + ".CommonProxy")
 	public static CommonProxy proxy;
 	
+	public static CreativeTabs novaTabBlocks;
+	public static CreativeTabs novaTabItems;
+	
 	public static final int modGuiIndex = 11;
 	
-	public static GalaxyMod getInstance() {
+	public static ProjectNovaCore getInstance() {
 		return INSTANCE;
 	}
 	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
-		ModTabs.init();
 		BlockList.init();
 		ItemList.init();
 		Mobs.init();
@@ -59,10 +63,14 @@ public class GalaxyMod {
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
 		proxy.initRenderers();
-		BiomeList.init();
-		Recipes.init();
-		GameRegistry.registerWorldGenerator(new NGWorldGenManager(), 30);
 		NGCore.init();
+		novaTabBlocks = new ProjectNovaTab("NovaGalacticBlocks", new ItemStack(
+				BlockList.edenSurfaceRock, 1));
+		novaTabItems = new ProjectNovaTab("NovaGalacticItems", new ItemStack(
+				ItemList.ingotViri, 1));
+		BiomeList.init();
+		RecipeManagerNova.init();
+		GameRegistry.registerWorldGenerator(new NGWorldGenManager(), 30);
 	}
 	
 	@EventHandler

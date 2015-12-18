@@ -8,7 +8,7 @@ package galaxymod.gui;
 
 import galaxymod.biomes.BiomeSpace;
 import galaxymod.core.EnumPlanetClass;
-import galaxymod.core.PlanetNG;
+import galaxymod.core.PlanetNova;
 import galaxymod.items.ItemList;
 import galaxymod.lib.NGHelper;
 import java.util.ArrayList;
@@ -87,7 +87,7 @@ public class GuiHud extends Gui {
 					fontRendererObj.drawString(temp, 26, yPos - 30, i3);
 					
 					// Planet Name
-					PlanetNG planet = ((BiomeSpace) biome).getPlanetForBiome();
+					PlanetNova planet = ((BiomeSpace) biome).getPlanetForBiome();
 					String planetName = NGHelper.capitalizeFirstLetter(planet
 							.getName());
 					String p = "Planet: " + planetName;

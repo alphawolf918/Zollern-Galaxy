@@ -1,17 +1,15 @@
 package galaxymod.blocks.zollus;
 
-import galaxymod.lib.ModInfo;
-import net.minecraft.block.Block;
+import galaxymod.blocks.BlockList;
+import galaxymod.blocks.BlockNova;
 import net.minecraft.block.material.Material;
-import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
 
-public class BlockZolstone extends Block {
-	public BlockZolstone(){
+public class BlockZolstone extends BlockNova {
+	public BlockZolstone() {
 		super(Material.rock);
-		this.setCreativeTab(CreativeTabs.tabBlock);
-		this.setBlockName(ModInfo.MODID+"_zolstone");
-		this.setResistance(9.8F);
-		this.setHardness(4.1F);
-		this.setBlockTextureName(ModInfo.MODID+":zolstone");
+		this.setNameAndTexture("zolstone");
+		this.setHardResist(4.1F, 9.8F);
+		this.setDropItem(Item.getItemFromBlock(BlockList.zolCobbleRock));
 	}
 }

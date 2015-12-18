@@ -30,8 +30,27 @@ public class WorldProviderZollus extends WorldProviderSpace implements
 	}
 	
 	@Override
+	public void updateWeather() {
+		if (this.canRainOrSnow()) {
+			super.updateWeather();
+		} else {
+			this.worldObj.getWorldInfo().setRainTime(0);
+			this.worldObj.getWorldInfo().setRaining(false);
+			this.worldObj.getWorldInfo().setThunderTime(0);
+			this.worldObj.getWorldInfo().setThundering(false);
+			this.worldObj.rainingStrength = 0.0F;
+			this.worldObj.thunderingStrength = 0.0F;
+		}
+	}
+	
+	@Override
+	public boolean hasBreathableAtmosphere() {
+		return false;
+	}
+	
+	@Override
 	public float getSolarSize() {
-		return 2.0F;
+		return 1.5F;
 	}
 	
 	@Override
@@ -42,11 +61,6 @@ public class WorldProviderZollus extends WorldProviderSpace implements
 	@Override
 	public boolean canSpaceshipTierPass(int tier) {
 		return tier >= 4;
-	}
-	
-	@Override
-	public boolean hasBreathableAtmosphere() {
-		return false;
 	}
 	
 	@Override
@@ -62,7 +76,7 @@ public class WorldProviderZollus extends WorldProviderSpace implements
 	@Override
 	public float getThermalLevelModifier() {
 		if (this.isDaytime()) {
-			return 0.0F;
+			return -0.1F;
 		} else {
 			return -0.5F;
 		}

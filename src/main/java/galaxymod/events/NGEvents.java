@@ -1,19 +1,28 @@
 package galaxymod.events;
 
 import galaxymod.blocks.BlockList;
+import galaxymod.items.ItemList;
+import galaxymod.mobs.entities.boss.EntityCrawlerBoss;
 import micdoodle8.mods.galacticraft.core.entities.EntityAlienVillager;
 import net.minecraft.block.Block;
 import net.minecraft.entity.EntityLiving;
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.passive.EntityVillager;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
+import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.storage.ExtendedBlockStorage;
+import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.event.entity.living.LivingSpawnEvent;
 import net.minecraftforge.event.terraingen.PopulateChunkEvent;
 import cpw.mods.fml.common.eventhandler.EventPriority;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import cpw.mods.fml.common.gameevent.PlayerEvent.ItemCraftedEvent;
+import cpw.mods.fml.common.gameevent.PlayerEvent.ItemSmeltedEvent;
 
 public class NGEvents {
 	
@@ -31,6 +40,32 @@ public class NGEvents {
 					entity.rotationPitch);
 			world.spawnEntityInWorld(alien);
 		}
+	}
+	
+	@SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
+	public void onLivingDropsEvent(LivingDropsEvent event) {
+		EntityLivingBase theEntity = event.entityLiving;
+		World worldObj = theEntity.worldObj;
+		if (theEntity instanceof EntityCrawlerBoss) {
+			EntityItem item = new EntityItem(worldObj, theEntity.posX,
+					theEntity.posY, theEntity.posZ, new ItemStack(
+							ItemList.edenDungeonKey, 2));
+			worldObj.spawnEntityInWorld(item);
+		}
+	}
+	
+	@SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
+	public void onItemCraftedEvent(ItemCraftedEvent event) {
+		EntityPlayer player = event.player;
+		ItemStack crafting = event.crafting;
+		// TODO
+	}
+	
+	@SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
+	public void onItemSmeltedEvent(ItemSmeltedEvent event) {
+		EntityPlayer player = event.player;
+		ItemStack smelting = event.smelting;
+		// TODO
 	}
 	
 	@SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)

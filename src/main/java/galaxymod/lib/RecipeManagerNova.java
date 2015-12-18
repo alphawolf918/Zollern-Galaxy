@@ -13,19 +13,22 @@ import micdoodle8.mods.galacticraft.core.items.GCItems;
 import micdoodle8.mods.galacticraft.planets.mars.items.MarsItems;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import cpw.mods.fml.common.registry.GameRegistry;
 
-public class Recipes {
+public class RecipeManagerNova {
 	
 	public static void init() {
 		CraftingRecipes.init();
 		SmeltingRecipes.init();
+		PulverizerRecipes.init();
 	}
 	
 	public static class CraftingRecipes {
 		public static void init() {
+			
 			// Eden Bloodstone
 			ItemStack css = new ItemStack(BlockList.edenBloodStone, 4);
 			GameRegistry.addRecipe(css, new Object[] { "CC ", "CC ", "   ",
@@ -47,6 +50,37 @@ public class Recipes {
 					.addRecipe(new ItemStack(BlockList.edenViriBlock, 1),
 							new Object[] { "VVV", "VVV", "VVV", 'V',
 									ItemList.ingotViri });
+			
+			// Britestone
+			GameRegistry.addRecipe(new ItemStack(BlockList.edenBrightStone, 1),
+					new Object[] { "XX ", "XX ", "   ", 'X',
+							ItemList.brightStoneDust });
+			GameRegistry.addShapelessRecipe(new ItemStack(
+					ItemList.brightStoneDust, 4),
+					new Object[] { BlockList.edenBrightStone });
+			
+			// HUD
+			GameRegistry.addRecipe(new ItemStack(ItemList.hud, 1),
+					new Object[] { "RXR", "SDS", "RXR", 'R', Items.redstone,
+							'X', new ItemStack(GCItems.basicItem, 1, 3), 'S',
+							new ItemStack(GCItems.basicItem, 1, 5), 'D',
+							new ItemStack(MarsItems.marsItemBasic, 1, 3) });
+			
+			// Eden's Essence
+			GameRegistry.addRecipe(
+					new ItemStack(ItemList.ancientEssenceEden, 1),
+					new Object[] { "CVC", "ZBZ", "CIC", 'C',
+							ItemList.edenCrystal, 'V', ItemList.ingotViri, 'Z',
+							GCItems.meteoricIronIngot, 'B',
+							BlockList.edenViriBlock, 'I',
+							BlockList.edenBrightStone });
+			
+			// Ancient Tablet (Eden)
+			GameRegistry.addRecipe(new ItemStack(ItemList.edenZollusTablet, 1),
+					new Object[] { "CVC", "XAX", "VAV", 'C',
+							ItemList.edenCrystal, 'V', ItemList.ingotViri, 'X',
+							new ItemStack(GCItems.basicItem, 1, 3), 'A',
+							ItemList.ancientEssenceEden });
 		}
 	}
 	
@@ -108,6 +142,13 @@ public class Recipes {
 		
 		public static void addSmelting(Block input, Block output, float xp) {
 			addSmelting(input, new ItemStack(output, 1), xp);
+		}
+	}
+	
+	public static class PulverizerRecipes {
+		
+		public static void init() {
+			
 		}
 	}
 }

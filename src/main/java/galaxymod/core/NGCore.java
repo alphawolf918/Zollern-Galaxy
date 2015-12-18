@@ -25,9 +25,9 @@ public class NGCore {
 	
 	public static Star starPsion6;
 	
-	public static PlanetNG zollus = new PlanetNG("zollus");
-	public static PlanetNG eden = new PlanetNG("eden");
-	public static PlanetNG kriffus = new PlanetNG("kriffus");// 90 -45 45 (color
+	public static PlanetNova zollus = new PlanetNova("zollus");
+	public static PlanetNova eden = new PlanetNova("eden");
+	public static PlanetNova kriffus = new PlanetNova("kriffus");// 90 -45 45 (color
 																// code for
 																// Kriffrock and
 																// ores)
@@ -64,7 +64,8 @@ public class NGCore {
 		zollus.setRelativeOrbitTime(24F);
 		zollus.setRelativeDistanceFromCenter(new ScalableDistance(5.0F, 5.0F));
 		zollus.atmosphereComponent(IAtmosphericGas.NITROGEN)
-				.atmosphereComponent(IAtmosphericGas.ARGON);
+				.atmosphereComponent(IAtmosphericGas.ARGON)
+				.atmosphereComponent(IAtmosphericGas.CO2);
 		zollus.setTierRequired(3);
 		zollus.setRelativeSize(14.876F);
 		zollus.setBodyIcon(new ResourceLocation(ModInfo.MODID,

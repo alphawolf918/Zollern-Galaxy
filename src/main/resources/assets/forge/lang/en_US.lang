@@ -1,5 +1,14 @@
 tile.galaxymod_solarblock.name=Zolrock
 tile.galaxymod_zolstone.name=Zolstone
+tile.galaxymod_zolcobblerock.name=Zolrock Cobblestone
+tile.galaxymod_spacecrystal.name=Zolnium Crystals
+tile.galaxymod_zolcoalore.name=Zollus Coal Ore
+tile.galaxymod_zolironore.name=Zollus Iron Ore
+tile.galaxymod_zolgoldore.name=Zollus Gold Ore
+tile.galaxymod_zoltinore.name=Zollus Tin Ore
+tile.galaxymod_zolcopperore.name=Zollus Copper Ore
+
+tile.galaxymod_edenzollusportal.name=Zollus Gate
 
 tile.galaxymod_edensurfaceblock.name=Eden's Grassrock
 tile.galaxymod_edengrass.name=Eden's Grass
@@ -17,7 +26,7 @@ tile.galaxymod_edencopperore.name=Eden's Copper Ore
 tile.galaxymod_edentinore.name=Eden's Tin Ore
 tile.galaxymod_edendeshore.name=Eden's Desh Ore
 tile.galaxymod_edenviriore.name=Eden's Virinium Ore
-tile.galaxymod_viriblock=Eden's Virinium Block
+tile.galaxymod_viriblock.name=Eden's Virinium Block
 tile.galaxymod_edenflower_.name=Eden's Flower
 tile.galaxymod_edenflower_blue.name=Eden's Blue Flower
 tile.galaxymod_edenflower_red.name=Eden's Red Flower
@@ -49,6 +58,8 @@ tile.galaxymod_kriffstone.name=Kriffstone
 
 container.eden.treasurechest.name=Eden's Treasure
 
+item.galaxymod_zolluscrystal.name=Zolnium Crystal
+
 item.galaxymod_alienbeefraw.name=Raw Alien Beef
 item.galaxymod_alienbeefcooked.name=Cooked Alien Beef
 item.galaxymod_alienbaconraw.name=Raw Alien Bacon
@@ -59,9 +70,13 @@ item.galaxymod_brightstonedust.name=Britestone Dust
 item.galaxymod_edendungeonkey.name=Eden's Treasure Key
 item.galaxymod_rawviri.name=Raw Virinium
 item.galaxymod_ingotviri.name=Virinium Ingot
+item.galaxymod_alienstone.name=Ancient Eden's Essence
+item.galaxymod_edencrystal.name=Eden's Crystal
+item.galaxymod_edenzollustablet.name=Ancient Eden's Tablet
 
 entity.galaxymod_moolus.name=Moolus
 entity.galaxymod_oinkus.name=Oinkus
+entity.galaxymod_aliensquid.name=Alien Squid
 entity.galaxymod_grayalien.name=Gray Alien
 entity.galaxymod_galaxyknight.name=Galactic Sentry
 entity.galaxymod_crawler.name=Crawler Boss
@@ -95,4 +110,5 @@ solarsystem.praedyth=Praedyth
 solarsystem.pantheon=Pantheon
 solarsystem.olympus=Olympus
 
-itemGroup.NovaGalactic=Project Nova
+itemGroup.NovaGalacticBlocks=Project Nova Blocks
+itemGroup.NovaGalacticItems=Project Nova Items

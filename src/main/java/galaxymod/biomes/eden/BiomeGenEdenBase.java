@@ -61,18 +61,22 @@ public abstract class BiomeGenEdenBase extends BiomeSpace {
 		return edenBiomes;
 	}
 	
+	@Override
 	public boolean getIsHotBiome() {
 		return (this.temperature >= 7F);
 	}
 	
+	@Override
 	public boolean getIsColdBiome() {
 		return (this.temperature <= 3F);
 	}
 	
+	@Override
 	public void setHeightBaseModifier(int bioHeight) {
 		this.biomeHeightBaseModifier = bioHeight;
 	}
 	
+	@Override
 	public int getHeightBaseModifier() {
 		return this.biomeHeightBaseModifier;
 	}

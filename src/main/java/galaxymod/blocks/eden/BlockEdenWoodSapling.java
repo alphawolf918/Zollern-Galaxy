@@ -6,6 +6,7 @@
 
 package galaxymod.blocks.eden;
 
+import galaxymod.ProjectNovaCore;
 import galaxymod.blocks.BlockList;
 import galaxymod.lib.NGHelper;
 import galaxymod.worldgen.WorldGenTreeNG;
@@ -13,6 +14,7 @@ import java.util.Random;
 import net.minecraft.block.BlockBush;
 import net.minecraft.block.IGrowable;
 import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
@@ -24,12 +26,16 @@ public class BlockEdenWoodSapling extends BlockBush implements IGrowable {
 	private static IIcon field_149881_b;
 	
 	public BlockEdenWoodSapling() {
-		NGHelper.setTab(this);
 		NGHelper.setName(this, "edenwoodsapling");
 		float f = 0.4F;
 		this.setBlockBounds(0.5F - f, 0.0F, 0.5F - f, 0.5F + f, f * 2.0F,
 				0.5F + f);
 		this.setHardness(0.0F);
+	}
+	
+	@Override
+	public CreativeTabs getCreativeTabToDisplayOn() {
+		return ProjectNovaCore.novaTabBlocks;
 	}
 	
 	/**

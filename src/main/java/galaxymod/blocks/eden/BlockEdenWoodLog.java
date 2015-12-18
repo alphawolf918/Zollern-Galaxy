@@ -6,12 +6,14 @@
 
 package galaxymod.blocks.eden;
 
+import galaxymod.ProjectNovaCore;
 import galaxymod.lib.NGHelper;
 import java.util.Random;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockRotatedPillar;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
@@ -28,11 +30,15 @@ public class BlockEdenWoodLog extends BlockRotatedPillar {
 	
 	public BlockEdenWoodLog() {
 		super(Material.wood);
-		NGHelper.setTab(this);
 		NGHelper.setNameAndTexture(this, "edenwoodlog");
 		this.setHardness(2.0F);
 		this.setResistance(2.0F);
 		this.setStepSound(soundTypeWood);
+	}
+	
+	@Override
+	public CreativeTabs getCreativeTabToDisplayOn() {
+		return ProjectNovaCore.novaTabBlocks;
 	}
 	
 	@Override

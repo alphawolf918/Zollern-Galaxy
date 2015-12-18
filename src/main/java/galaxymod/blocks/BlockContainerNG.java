@@ -6,8 +6,10 @@
 
 package galaxymod.blocks;
 
+import galaxymod.ProjectNovaCore;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
+import net.minecraft.creativetab.CreativeTabs;
 
 public abstract class BlockContainerNG extends BlockContainer {
 	
@@ -18,5 +20,10 @@ public abstract class BlockContainerNG extends BlockContainer {
 	@Override
 	public int getRenderType() {
 		return -1;
+	}
+	
+	@Override
+	public CreativeTabs getCreativeTabToDisplayOn() {
+		return ProjectNovaCore.novaTabBlocks;
 	}
 }

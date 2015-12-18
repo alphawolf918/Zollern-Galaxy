@@ -6,6 +6,7 @@
 
 package galaxymod.blocks.eden;
 
+import galaxymod.blocks.BlockNova;
 import galaxymod.lib.ModInfo;
 import galaxymod.lib.NGHelper;
 import galaxymod.lib.StaticUtils;
@@ -19,7 +20,7 @@ import net.minecraftforge.common.util.ForgeDirection;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class MultiBlockGlass extends Block {
+public class MultiBlockGlass extends BlockNova {
 	
 	private static final String textureBaseName = "";
 	private IIcon[] icons = new IIcon[16];
@@ -27,7 +28,6 @@ public class MultiBlockGlass extends Block {
 	
 	public MultiBlockGlass() {
 		super(Material.glass);
-		NGHelper.setTab(this);
 		NGHelper.setName(this, "edenglass");
 		NGHelper.setTexture(this, textureBaseName);
 		this.setHardness(0.2F);

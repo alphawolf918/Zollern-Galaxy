@@ -7,6 +7,7 @@
 package galaxymod.worldgen.eden.dungeons;
 
 import galaxymod.blocks.BlockList;
+import galaxymod.items.ItemList;
 import galaxymod.tileentities.eden.TileEntityTreasureChestEden;
 import galaxymod.worldgen.eden.treasure.EdenGenHooks;
 import java.util.HashSet;
@@ -108,6 +109,12 @@ public class RoomTreasureEden extends DungeonRoom {
 				return new ItemStack(Items.emerald, rand.nextInt(3) + 50, 1);
 			case 4:
 				return new ItemStack(Items.redstone, rand.nextInt(15) + 50, 0);
+			case 5:
+				return new ItemStack(ItemList.ingotViri, rand.nextInt(15) + 45,
+						0);
+			case 6:
+				return new ItemStack(ItemList.edenCrystal, rand.nextInt(2) + 2,
+						0);
 		}
 	}
 	

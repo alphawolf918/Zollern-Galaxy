@@ -16,6 +16,7 @@ import galaxymod.blocks.eden.BlockEdenWoodLeaves;
 import galaxymod.blocks.eden.BlockEdenWoodLog;
 import galaxymod.blocks.eden.BlockEdenWoodPlanks;
 import galaxymod.blocks.eden.BlockEdenWoodSapling;
+import galaxymod.blocks.eden.BlockEdenZollusPortal;
 import galaxymod.blocks.eden.BlockWinterrock;
 import galaxymod.blocks.eden.BloodSand;
 import galaxymod.blocks.eden.BloodStone;
@@ -42,15 +43,31 @@ import galaxymod.blocks.eden.ores.EdenTinOre;
 import galaxymod.blocks.eden.ores.EdenViriOre;
 import galaxymod.blocks.kriffus.KriffRock;
 import galaxymod.blocks.kriffus.KriffStone;
+import galaxymod.blocks.zollus.BlockZolCobbleRock;
 import galaxymod.blocks.zollus.BlockZollus;
+import galaxymod.blocks.zollus.BlockZolniumCrystals;
 import galaxymod.blocks.zollus.BlockZolstone;
+import galaxymod.blocks.zollus.ores.ZollusCoalOre;
+import galaxymod.blocks.zollus.ores.ZollusCopperOre;
+import galaxymod.blocks.zollus.ores.ZollusGoldOre;
+import galaxymod.blocks.zollus.ores.ZollusIronOre;
+import galaxymod.blocks.zollus.ores.ZollusTinOre;
 import galaxymod.lib.RegisterHelper;
 import net.minecraft.block.Block;
 
 public class BlockList {
 	
-	public static final Block solarBlock = new BlockZollus();
+	public static final Block zolarBlock = new BlockZollus();
 	public static final Block zolstone = new BlockZolstone();
+	public static final Block zolCobbleRock = new BlockZolCobbleRock();
+	public static final Block zolniumCrystals = new BlockZolniumCrystals();
+	public static final Block zolCoalOre = new ZollusCoalOre();
+	public static final Block zolCopperOre = new ZollusCopperOre();
+	public static final Block zolIronOre = new ZollusIronOre();
+	public static final Block zolGoldOre = new ZollusGoldOre();
+	public static final Block zolTinOre = new ZollusTinOre();
+	
+	public static final Block edenZollusPortal = new BlockEdenZollusPortal();
 	
 	public static final Block edenRock = new BlockEdenRock();
 	public static final Block edenCobbleRock = new BlockEdenCobblerock();
@@ -98,8 +115,17 @@ public class BlockList {
 	public static final Block kriffStone = new KriffStone();
 	
 	public static void init() {
-		addBlock(solarBlock);
+		addBlock(zolarBlock);
 		addBlock(zolstone);
+		addBlock(zolCobbleRock);
+		addBlock(zolniumCrystals);
+		addBlock(zolCoalOre);
+		addBlock(zolCopperOre);
+		addBlock(zolIronOre);
+		addBlock(zolGoldOre);
+		addBlock(zolTinOre);
+		
+		addBlock(edenZollusPortal);
 		
 		addBlock(edenRock);
 		addBlock(edenCobbleRock);

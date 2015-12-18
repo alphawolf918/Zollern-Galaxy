@@ -1,24 +1,18 @@
 package galaxymod.blocks.eden.ores;
 
+import galaxymod.blocks.BlockNova;
 import galaxymod.lib.ModInfo;
-import galaxymod.lib.NGHelper;
-
 import java.util.Random;
-
-import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
 
-public class EdenCopperOre extends Block {
+public class EdenCopperOre extends BlockNova {
 	public EdenCopperOre() {
 		super(Material.rock);
-		NGHelper.setTab(this);
-		this.setBlockName(ModInfo.MODID+"_edencopperore");
-		this.setBlockTextureName(ModInfo.MODID+":edencopperore");
+		this.setBlockName(ModInfo.MODID + "_edencopperore");
+		this.setBlockTextureName(ModInfo.MODID + ":edencopperore");
 		this.setHardness(4.0F);
 		this.setResistance(2.0F);
 		this.setStepSound(soundTypeStone);

@@ -1,5 +1,6 @@
 package galaxymod.items;
 
+import galaxymod.items.eden.ItemAncientEdenTablet;
 import galaxymod.items.eden.ItemEdenDungeonKey;
 import galaxymod.items.food.CookedFood;
 import galaxymod.items.food.ItemFruit;
@@ -21,6 +22,10 @@ public class ItemList {
 			"brightstonedust");
 	public static final ItemNova rawViri = new ItemNova("rawviri");
 	public static final ItemNova ingotViri = new ItemNova("ingotviri");
+	public static final ItemNova ancientEssenceEden = new ItemNova("alienstone");
+	public static final ItemNova edenCrystal = new ItemNova("edencrystal");
+	public static final ItemNova edenZollusTablet = new ItemAncientEdenTablet();
+	public static final ItemNova zollusCrystal = new ItemNova("zolluscrystal");
 	
 	public static void init() {
 		addItem(alienBeefRaw);
@@ -33,6 +38,10 @@ public class ItemList {
 		addItem(edenDungeonKey);
 		addItem(rawViri);
 		addItem(ingotViri);
+		addItem(ancientEssenceEden);
+		addItem(edenCrystal);
+		addItem(edenZollusTablet);
+		addItem(zollusCrystal);
 	}
 	
 	public static void addItem(Item par1Item) {

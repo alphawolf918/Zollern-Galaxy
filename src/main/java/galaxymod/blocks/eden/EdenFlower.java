@@ -1,10 +1,11 @@
 package galaxymod.blocks.eden;
 
+import galaxymod.ProjectNovaCore;
 import galaxymod.blocks.BlockList;
-import galaxymod.lib.NGHelper;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBush;
 import net.minecraft.block.material.Material;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.IBlockAccess;
 import net.minecraftforge.common.EnumPlantType;
@@ -13,7 +14,6 @@ public class EdenFlower extends BlockBush {
 	
 	public EdenFlower(String strTexture) {
 		super(Material.plants);
-		NGHelper.setTab(this);
 		this.setBlockName("galaxymod_edenflower_" + strTexture);
 		this.setBlockTextureName("galaxymod:edenflower_" + strTexture);
 		setHardness(0.1F);
@@ -33,5 +33,10 @@ public class EdenFlower extends BlockBush {
 	@Override
 	public EnumPlantType getPlantType(IBlockAccess world, int x, int y, int z) {
 		return EnumPlantType.Plains;
+	}
+	
+	@Override
+	public CreativeTabs getCreativeTabToDisplayOn() {
+		return ProjectNovaCore.novaTabBlocks;
 	}
 }

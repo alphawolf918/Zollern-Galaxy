@@ -6,7 +6,7 @@
 
 package galaxymod.blocks.eden;
 
-import galaxymod.GalaxyMod;
+import galaxymod.ProjectNovaCore;
 import galaxymod.blocks.BlockContainerNG;
 import galaxymod.lib.NGHelper;
 import galaxymod.tileentities.eden.TileEntityTreasureChestEden;
@@ -30,7 +30,6 @@ public class BlockEdenTreasureChest extends BlockContainerNG {
 	
 	public BlockEdenTreasureChest() {
 		super(Material.rock);
-		NGHelper.setTab(this);
 		NGHelper.setNameAndTexture(this, "edentreasurechest");
 		this.setResistance(10000000.0F);
 		this.setHardness(-1.0F);
@@ -91,7 +90,7 @@ public class BlockEdenTreasureChest extends BlockContainerNG {
 	
 	@Override
 	public int getRenderType() {
-		return GalaxyMod.proxy.getBlockRender(this);
+		return ProjectNovaCore.proxy.getBlockRender(this);
 	}
 	
 	@Override

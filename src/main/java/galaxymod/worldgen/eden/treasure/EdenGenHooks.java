@@ -1,5 +1,6 @@
 package galaxymod.worldgen.eden.treasure;
 
+import galaxymod.items.ItemList;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -28,11 +29,21 @@ public class EdenGenHooks extends ChestGenHooks {
 			new WeightedRandomChestContent(GCItems.meteoricIronIngot, 0, 1, 5,
 					10) };
 	
-	public static final WeightedRandomChestContent[] bossChestContents = new WeightedRandomChestContent[] { new WeightedRandomChestContent(
-			GCItems.meteoricIronIngot, 32, 64, 10, 10) };
+	public static final WeightedRandomChestContent[] bossChestContents = new WeightedRandomChestContent[] {
+			new WeightedRandomChestContent(Items.iron_ingot, 0, 2, 5, 10),
+			new WeightedRandomChestContent(Items.gold_ingot, 0, 2, 5, 10),
+			new WeightedRandomChestContent(Items.diamond, 0, 2, 5, 10),
+			new WeightedRandomChestContent(Items.emerald, 0, 2, 5, 10),
+			new WeightedRandomChestContent(Items.quartz, 0, 2, 5, 10),
+			new WeightedRandomChestContent(Items.coal, 0, 2, 5, 10),
+			new WeightedRandomChestContent(GCItems.meteoricIronIngot, 32, 64,
+					10, 10),
+			new WeightedRandomChestContent(ItemList.edenCrystal, 2, 4, 10, 10) };
 	
 	private static final HashMap<String, EdenGenHooks> chestInfo = new HashMap<String, EdenGenHooks>();
+	
 	private static boolean hasInit = false;
+	
 	static {
 		init();
 	}
@@ -45,6 +56,7 @@ public class EdenGenHooks extends ChestGenHooks {
 		hasInit = true;
 		
 		addInfo(DROP_SHIP, dropShipChestContents, 4, 8);
+		addInfo(BOSS_CHEST, bossChestContents, 5, 10);
 		
 		ItemStack book = new ItemStack(Items.enchanted_book, 1, 0);
 		WeightedRandomChestContent tmp = new WeightedRandomChestContent(book,

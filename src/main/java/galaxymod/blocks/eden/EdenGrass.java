@@ -1,7 +1,7 @@
 package galaxymod.blocks.eden;
 
 import galaxymod.blocks.BlockList;
-import galaxymod.lib.NGHelper;
+import galaxymod.blocks.BlockNova;
 import java.util.Random;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -17,14 +17,13 @@ import net.minecraftforge.common.util.ForgeDirection;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class EdenGrass extends Block {
+public class EdenGrass extends BlockNova {
 	
 	private IIcon[] edenGrassIcon;
 	public IIcon blockIcon;
 	
 	public EdenGrass() {
 		super(Material.grass);
-		NGHelper.setTab(this);
 		this.setBlockName("galaxymod_edengrass");
 		this.setHardness(0.4F);
 		this.setResistance(0.4F);

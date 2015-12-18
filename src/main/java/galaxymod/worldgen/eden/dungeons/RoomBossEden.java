@@ -37,6 +37,8 @@ public class RoomBossEden extends DungeonRoom {
 			this.sizeX = this.rand.nextInt(6) + 14;
 			this.sizeY = this.rand.nextInt(2) + 8;
 			this.sizeZ = this.rand.nextInt(6) + 14;
+			// NGHelper.echo("Boss room spawned at: " + posX + " " + posY + " "
+			// + posZ);
 		}
 	}
 	

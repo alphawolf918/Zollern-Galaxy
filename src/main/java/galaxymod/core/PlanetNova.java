@@ -10,11 +10,11 @@ import java.util.ArrayList;
 import micdoodle8.mods.galacticraft.api.galaxies.Planet;
 import micdoodle8.mods.galacticraft.api.world.IAtmosphericGas;
 
-public class PlanetNG extends Planet {
+public class PlanetNova extends Planet {
 	
 	private EnumPlanetClass planetClass;
 	
-	public PlanetNG(String planetName) {
+	public PlanetNova(String planetName) {
 		super(planetName);
 	}
 	

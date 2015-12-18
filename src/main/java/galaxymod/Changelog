@@ -3,13 +3,11 @@
 * Added a solar system called Psios, with a blueish-white dwarf star.
     * Added planets to this solar system:
         * Eden, an Earth-like planet with a breathable atmosphere and habitable temperature, rich with minable resources.
-            * The world is incredibly dark at night due to the lack of any moons.
         * Zollus, a barren ice planet without a breathable atmosphere or tolerable thermal temperature.
-        * Kriffus, a hot planet close to its sun, Psios
-            * Unbreathable and uninhabitable due to temperature
+        * Kriffus, a hot planet close to its sun, Psios, also unbreathable and without a tolerable temperature.
 ====PSIOS.EDEN====
 * New ores for Eden:
-    * Iron, Meteoric Iron, Gold, Copper, Tin, Diamond, Emerald, Coal and Desh.
+    * Iron, Meteoric Iron, Gold, Copper, Tin, Diamond, Emerald, Coal, Desh and Virinium.
 * Added Vortex Drop Ship spawn to Eden.
 * Caves and ores now generate properly on Eden.
 * Added a flower spawn to Eden called "Eden's Flower."
@@ -91,4 +89,14 @@
 * Added a Crawler mob.
     * Giant, furry spider that roars and growls. Has a lot of health and a powerful attack.
     * Spawns in Eden Dungeons as a boss.
-    * Drops an Eden's Dungeon Key to open green loot chests with.
+    * Drops 2 Eden's Dungeon Keys to open green loot chests with.
+* Added 5 new items:
+    * Ancient Eden's Essence: Crafting material. Not found naturally, must be crafted.
+    * Ancient Eden's Tablet: Special tablet that spawns a portal to the next planet over: Zollus.
+    * Eden's Crystal: Crafting material. Found rarely and only in boss chests (in the room where the Britestone is, after defeating the Crawler boss).
+    * Raw Virinium: Obtained by mining (or smelting) Virinium Ore.
+        * Ore is found rarely in caves at lower levels.
+    * Virinium Ingots: Obtained by smelting Raw Virinium, sometimes spawn in loot chests in Eden's Dungeons.
+==PSIOS.ZOLLUS==
+* Added new blocks and items to Zollus.
+* 

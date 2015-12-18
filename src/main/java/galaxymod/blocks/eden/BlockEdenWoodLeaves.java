@@ -6,6 +6,7 @@
 
 package galaxymod.blocks.eden;
 
+import galaxymod.ProjectNovaCore;
 import galaxymod.blocks.BlockList;
 import galaxymod.lib.NGHelper;
 import java.util.ArrayList;
@@ -13,6 +14,7 @@ import java.util.Random;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLeavesBase;
 import net.minecraft.block.material.Material;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -31,12 +33,16 @@ public class BlockEdenWoodLeaves extends BlockLeavesBase implements IShearable {
 	
 	public BlockEdenWoodLeaves() {
 		super(Material.leaves, false);
-		NGHelper.setTab(this);
 		NGHelper.setNameAndTexture(this, "edenwoodleaves");
 		this.setTickRandomly(true);
 		this.setHardness(0.2F);
 		this.setLightOpacity(1);
 		this.setStepSound(Block.soundTypeGrass);
+	}
+	
+	@Override
+	public CreativeTabs getCreativeTabToDisplayOn() {
+		return ProjectNovaCore.novaTabBlocks;
 	}
 	
 	@Override

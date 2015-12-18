@@ -27,7 +27,7 @@ public class WorldProviderKriffus extends WorldProviderSpace implements
 	
 	@Override
 	public float getGravity() {
-		return 0.46F;
+		return 0.046F;
 	}
 	
 	@Override
@@ -47,7 +47,7 @@ public class WorldProviderKriffus extends WorldProviderSpace implements
 	
 	@Override
 	public boolean canSpaceshipTierPass(int tier) {
-		return tier >= 4;
+		return tier >= 3;
 	}
 	
 	@Override

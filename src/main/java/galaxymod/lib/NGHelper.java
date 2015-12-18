@@ -1,7 +1,7 @@
 package galaxymod.lib;
 
+import galaxymod.ProjectNovaCore;
 import galaxymod.blocks.BlockList;
-import galaxymod.creativetabs.ModTabs;
 import java.io.File;
 import java.util.Random;
 import net.minecraft.block.Block;
@@ -19,11 +19,11 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 public class NGHelper {
 	
 	public static void setTab(Block block) {
-		block.setCreativeTab(ModTabs.ngTab);
+		block.setCreativeTab(ProjectNovaCore.novaTabBlocks);
 	}
 	
 	public static void setTab(Item item) {
-		item.setCreativeTab(ModTabs.ngTab);
+		item.setCreativeTab(ProjectNovaCore.novaTabItems);
 	}
 	
 	public static void setName(Block block, String strName) {
@@ -171,5 +171,10 @@ public class NGHelper {
 					|| Keyboard.isKeyDown(Keyboard.KEY_RSHIFT);
 			
 		}
+	}
+	
+	public static void setHardResist(Block block, float f) {
+		block.setHardness(f);
+		block.setResistance(f);
 	}
 }
