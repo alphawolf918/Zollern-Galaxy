@@ -1,6 +1,6 @@
 package galaxymod.worldgen.eden.village;
 
-import galaxymod.lib.NGHelper;
+import galaxymod.lib.NovaHelper;
 import galaxymod.mobs.entities.EntityGrayAlien;
 import java.util.Random;
 import net.minecraft.world.World;
@@ -19,9 +19,9 @@ public class NGEdenVillageHelper {
 			alien.setLocationAndAngles(spawnX, spawnY, spawnZ, 0, 0);
 			alien.setHomeArea(spawnX, spawnY, spawnZ, (new Random()).nextInt(5));
 			world.spawnEntityInWorld(alien);
-			NGHelper.echo("Alien spawned");
+			NovaHelper.echo("Alien spawned");
 		} else {
-			NGHelper.echo("Block was not free at coords. Could not spawn alien.");
+			NovaHelper.echo("Block was not free at coords. Could not spawn alien.");
 		}
 	}
 }

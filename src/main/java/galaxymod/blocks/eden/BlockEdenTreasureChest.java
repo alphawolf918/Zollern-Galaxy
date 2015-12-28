@@ -8,7 +8,7 @@ package galaxymod.blocks.eden;
 
 import galaxymod.ProjectNovaCore;
 import galaxymod.blocks.BlockContainerNG;
-import galaxymod.lib.NGHelper;
+import galaxymod.lib.NovaHelper;
 import galaxymod.tileentities.eden.TileEntityTreasureChestEden;
 import java.util.Random;
 import net.minecraft.block.Block;
@@ -30,7 +30,7 @@ public class BlockEdenTreasureChest extends BlockContainerNG {
 	
 	public BlockEdenTreasureChest() {
 		super(Material.rock);
-		NGHelper.setNameAndTexture(this, "edentreasurechest");
+		NovaHelper.setNameAndTexture(this, "edentreasurechest");
 		this.setResistance(10000000.0F);
 		this.setHardness(-1.0F);
 		this.setBlockBounds(0.0625F, 0.0F, 0.0625F, 0.9375F, 0.875F, 0.9375F);

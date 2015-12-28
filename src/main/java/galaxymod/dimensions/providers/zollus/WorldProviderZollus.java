@@ -1,6 +1,6 @@
 package galaxymod.dimensions.providers.zollus;
 
-import galaxymod.core.NGCore;
+import galaxymod.core.NGPlanets;
 import galaxymod.dimensions.chunkmanagers.WorldChunkManagerZollus;
 import galaxymod.dimensions.providers.renderers.SkyProviderZollus;
 import micdoodle8.mods.galacticraft.api.galaxies.CelestialBody;
@@ -26,7 +26,7 @@ public class WorldProviderZollus extends WorldProviderSpace implements
 	
 	@Override
 	public double getMeteorFrequency() {
-		return 5.0;
+		return 6.0;
 	}
 	
 	@Override
@@ -50,7 +50,7 @@ public class WorldProviderZollus extends WorldProviderSpace implements
 	
 	@Override
 	public float getSolarSize() {
-		return 1.5F;
+		return 1.0F;
 	}
 	
 	@Override
@@ -76,9 +76,9 @@ public class WorldProviderZollus extends WorldProviderSpace implements
 	@Override
 	public float getThermalLevelModifier() {
 		if (this.isDaytime()) {
-			return -0.1F;
+			return -2.1F;
 		} else {
-			return -0.5F;
+			return -4.2F;
 		}
 	}
 	
@@ -89,12 +89,12 @@ public class WorldProviderZollus extends WorldProviderSpace implements
 	
 	@Override
 	public CelestialBody getCelestialBody() {
-		return NGCore.zollus;
+		return NGPlanets.planetZollus;
 	}
 	
 	@Override
 	public double getSolarEnergyMultiplier() {
-		return 0.45;
+		return 0.045;
 	}
 	
 	@Override
@@ -114,7 +114,7 @@ public class WorldProviderZollus extends WorldProviderSpace implements
 		if (var3 > 1.0F) {
 			var3 = 0.75F;
 		}
-		return var3 * var3 * 0.5F + 0.2F;
+		return var3 * var3 * 0.2F + 0.1F;
 	}
 	
 	@Override
@@ -146,12 +146,12 @@ public class WorldProviderZollus extends WorldProviderSpace implements
 	@Override
 	public Vector3 getFogColor() {
 		float f = 1.0F - this.getStarBrightness(1.0F);
-		return new Vector3(20 / 255F * f, 27 / 255F * f, 33 / 255F * f);
+		return new Vector3(20 / 255F * f, 27 / 255F * f, 45 / 255F * f);
 	}
 	
 	@Override
 	public Vector3 getSkyColor() {
-		return new Vector3(0, 0, 0);
+		return new Vector3(0, 0, 210);
 	}
 	
 	@Override
@@ -166,7 +166,7 @@ public class WorldProviderZollus extends WorldProviderSpace implements
 	
 	@Override
 	public long getDayLength() {
-		return 460090L;
+		return 46019L;
 	}
 	
 	@Override
@@ -181,7 +181,7 @@ public class WorldProviderZollus extends WorldProviderSpace implements
 	
 	@Override
 	public boolean shouldForceRespawn() {
-		return false;
+		return true;
 	}
 	
 	@Override

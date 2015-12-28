@@ -31,8 +31,10 @@ public class BiomeDecoratorEdenOre extends BiomeDecoratorNova {
 	private WorldGenerator diamondGen;
 	private WorldGenerator emeraldGen;
 	private WorldGenerator coalGen;
+	private WorldGenerator redstoneGen;
 	private WorldGenerator deshGen;
-	private WorldGenerator viriGen;
+	private WorldGenerator aluminumGen;
+	private WorldGenerator viriniumGen;
 	
 	private WorldGenerator gravelGen;
 	
@@ -54,9 +56,13 @@ public class BiomeDecoratorEdenOre extends BiomeDecoratorNova {
 				false, BlockList.edenRock, 0);
 		this.coalGen = new WorldGenMinableMeta(BlockList.edenCoalOre, 10, 0,
 				false, BlockList.edenRock, 0);
+		this.redstoneGen = new WorldGenMinableMeta(BlockList.edenRedstoneOre,
+				6, 0, false, BlockList.edenRock, 0);
 		this.deshGen = new WorldGenMinableMeta(BlockList.edenDeshOre, 5, 0,
 				false, BlockList.edenRock, 0);
-		this.viriGen = new WorldGenMinableMeta(BlockList.edenViriOre, 5, 0,
+		this.aluminumGen = new WorldGenMinableMeta(BlockList.edenAluminumOre,
+				10, 0, false, BlockList.edenRock, 0);
+		this.viriniumGen = new WorldGenMinableMeta(BlockList.edenViriOre, 5, 0,
 				false, BlockList.edenRock, 0);
 		this.gravelGen = new WorldGenMinableMeta(BlockList.edenGravel, 10, 0,
 				false, BlockList.edenRock, 0);
@@ -99,8 +105,10 @@ public class BiomeDecoratorEdenOre extends BiomeDecoratorNova {
 		this.genOre(28, this.copperGen, 4, 120);
 		this.genOre(28, this.tinGen, 4, 120);
 		this.genOre(30, this.coalGen, 2, 120);
+		this.genOre(28, this.coalGen, 2, 40);
 		this.genOre(5, this.deshGen, 4, 30);
-		this.genOre(4, this.viriGen, 4, 12);
+		this.genOre(4, this.aluminumGen, 2, 62);
+		this.genOre(4, this.viriniumGen, 4, 12);
 		this.genOre(15, this.gravelGen, 4, 52);
 		MinecraftForge.EVENT_BUS.post(new GCCoreEventPopulate.Post(
 				this.worldObj, this.randomGenerator, this.chunkX, this.chunkZ));

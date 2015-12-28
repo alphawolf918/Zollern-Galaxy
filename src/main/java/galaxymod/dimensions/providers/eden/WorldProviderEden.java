@@ -6,7 +6,7 @@
 
 package galaxymod.dimensions.providers.eden;
 
-import galaxymod.core.NGCore;
+import galaxymod.core.NGPlanets;
 import galaxymod.dimensions.providers.renderers.SkyProviderEden;
 import micdoodle8.mods.galacticraft.api.galaxies.CelestialBody;
 import micdoodle8.mods.galacticraft.api.prefab.world.gen.WorldProviderSpace;
@@ -31,12 +31,12 @@ public class WorldProviderEden extends WorldProviderSpace implements
 	
 	@Override
 	public float getSolarSize() {
-		return 4.0F;
+		return 3.5F;
 	}
 	
 	@Override
 	public double getMeteorFrequency() {
-		return 8.0;
+		return 10.0;
 	}
 	
 	@Override
@@ -76,7 +76,7 @@ public class WorldProviderEden extends WorldProviderSpace implements
 	
 	@Override
 	public CelestialBody getCelestialBody() {
-		return NGCore.eden;
+		return NGPlanets.planetEden;
 	}
 	
 	@Override
@@ -153,7 +153,7 @@ public class WorldProviderEden extends WorldProviderSpace implements
 	@Override
 	public Vector3 getFogColor() {
 		float f = 1.1F - this.getStarBrightness(1.0F);
-		return new Vector3(2F / 255F * f, 128F / 255F * f, 253F / 255F * f);
+		return new Vector3(2F / 255F * f, 128F / 255F * f, 248F / 255F * f);
 	}
 	
 	@Override

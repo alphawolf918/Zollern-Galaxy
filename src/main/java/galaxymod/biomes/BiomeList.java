@@ -9,8 +9,9 @@ import galaxymod.biomes.eden.BiomeEdenRockMountains;
 import galaxymod.biomes.eden.BiomeEdenSnowyPlains;
 import galaxymod.biomes.eden.BiomeEdenSwamp;
 import galaxymod.biomes.eden.BiomeEdenTerranValley;
-import galaxymod.biomes.kriffus.BiomeKriffus;
-import galaxymod.biomes.zollus.BiomeZollus;
+import galaxymod.biomes.kriffus.BiomeGenKriffonBase;
+import galaxymod.biomes.zollus.BiomeGenZollusBase;
+import galaxymod.blocks.BlockList;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.common.BiomeManager;
@@ -21,7 +22,9 @@ public class BiomeList {
 	
 	public static int biomeColor = 1404852;
 	
-	public static BiomeGenBase biomeZollus = new BiomeZollus(179);
+	public static BiomeGenBase biomeZollus = ((BiomeGenZollusBase) new BiomeGenZollusBase(
+			179).setTemp(1F).setBiomeName("Ice Lands")).setBlocks(
+			BlockList.zolarBlock, BlockList.zolDirt);
 	
 	public static BiomeGenBase biomeEden = new BiomeEden(178);
 	public static BiomeGenBase biomeEdenRockMountains = new BiomeEdenRockMountains(
@@ -38,7 +41,9 @@ public class BiomeList {
 			171);
 	public static BiomeGenBase biomeEdenSwamp = new BiomeEdenSwamp(170);
 	
-	public static BiomeGenBase biomeKriffus = new BiomeKriffus(160);
+	public static BiomeGenBase biomeKriffus = ((BiomeGenKriffonBase) new BiomeGenKriffonBase(
+			160).setBiomeName("Flaming Plains")).setTemp(8F).setBlocks(
+			BlockList.kriffRock, BlockList.kriffDirt);
 	
 	public static void init() {
 		
@@ -61,7 +66,7 @@ public class BiomeList {
 				BiomeDictionary.Type.COLD, 0);
 		addBiome(biomeEdenSwamp, BiomeType.WARM, BiomeDictionary.Type.SWAMP, 0);
 		
-		// KRIFFUS
+		// KRIFFON
 		addBiome(biomeKriffus, BiomeType.DESERT,
 				BiomeDictionary.Type.WASTELAND, 0);
 	}

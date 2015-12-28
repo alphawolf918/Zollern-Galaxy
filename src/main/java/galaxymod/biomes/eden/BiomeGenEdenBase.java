@@ -10,7 +10,7 @@ import galaxymod.biomes.BiomeList;
 import galaxymod.biomes.BiomeSpace;
 import galaxymod.biomes.decorators.BiomeDecoratorEden;
 import galaxymod.blocks.BlockList;
-import galaxymod.core.NGCore;
+import galaxymod.core.NGPlanets;
 import java.util.ArrayList;
 import java.util.Random;
 import net.minecraft.block.Block;
@@ -33,7 +33,6 @@ public abstract class BiomeGenEdenBase extends BiomeSpace {
 	
 	public BiomeGenEdenBase(int p_i1971_1_) {
 		super(p_i1971_1_);
-		this.setPlanetForBiome(NGCore.eden);
 		this.enableRain = true;
 		this.enableSnow = true;
 		this.setColor(BiomeList.biomeColor);
@@ -49,6 +48,7 @@ public abstract class BiomeGenEdenBase extends BiomeSpace {
 		this.spawnableWaterCreatureList.clear();
 		this.spawnableCreatureList.clear();
 		this.stoneBlock = BlockList.edenRock;
+		this.setPlanetForBiome(NGPlanets.planetEden);
 		this.edenBiomes.add(this);
 	}
 	
@@ -72,8 +72,9 @@ public abstract class BiomeGenEdenBase extends BiomeSpace {
 	}
 	
 	@Override
-	public void setHeightBaseModifier(int bioHeight) {
+	public BiomeSpace setHeightBaseModifier(int bioHeight) {
 		this.biomeHeightBaseModifier = bioHeight;
+		return this;
 	}
 	
 	@Override
@@ -187,8 +188,10 @@ public abstract class BiomeGenEdenBase extends BiomeSpace {
 		this.genEdenBiomeTerrain(world, rand, block, meta, x, z, stoneNoise);
 	}
 	
-	public static void setChunkHeightModifier(int heightMod) {
+	@Override
+	public BiomeSpace setChunkHeightModifier(int heightMod) {
 		chunkHeightModifier = heightMod;
+		return this;
 	}
 	
 	public static int getChunkHeightModifier() {

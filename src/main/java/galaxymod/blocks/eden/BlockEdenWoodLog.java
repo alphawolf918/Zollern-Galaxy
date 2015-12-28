@@ -7,7 +7,7 @@
 package galaxymod.blocks.eden;
 
 import galaxymod.ProjectNovaCore;
-import galaxymod.lib.NGHelper;
+import galaxymod.lib.NovaHelper;
 import java.util.Random;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockRotatedPillar;
@@ -30,9 +30,8 @@ public class BlockEdenWoodLog extends BlockRotatedPillar {
 	
 	public BlockEdenWoodLog() {
 		super(Material.wood);
-		NGHelper.setNameAndTexture(this, "edenwoodlog");
+		NovaHelper.setNameAndTexture(this, "edenwoodlog");
 		this.setHardness(2.0F);
-		this.setResistance(2.0F);
 		this.setStepSound(soundTypeWood);
 	}
 	

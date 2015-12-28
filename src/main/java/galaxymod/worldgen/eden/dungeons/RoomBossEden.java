@@ -141,7 +141,7 @@ public class RoomBossEden extends DungeonRoom {
 				this.spawnerCoords.posZ);
 		
 		if (tile == null || !(tile instanceof TileEntityDungeonSpawnerEden)) {
-			final TileEntityDungeonSpawner spawner = new TileEntityDungeonSpawnerEden();
+			final TileEntityDungeonSpawnerEden spawner = new TileEntityDungeonSpawnerEden();
 			spawner.setRoom(new Vector3(this.posX, this.posY, this.posZ),
 					new Vector3(this.sizeX, this.sizeY, this.sizeZ));
 			this.worldObj.setTileEntity(this.spawnerCoords.posX,

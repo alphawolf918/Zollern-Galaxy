@@ -16,7 +16,7 @@ import net.minecraft.world.World;
 
 public class MapGenCavesZollus extends MapGenBaseMeta {
 	
-	public static final int BREAK_THROUGH_CHANCE = 15; // 1 in n chance
+	public static final int BREAK_THROUGH_CHANCE = 4; // 1 in n chance
 	
 	protected void generateLargeCaveNode(long par1, int par3, int par4,
 			Block[] blockIdArray, byte[] metaArray, double par6, double par8,

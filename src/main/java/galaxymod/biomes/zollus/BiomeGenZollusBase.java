@@ -10,8 +10,7 @@ import galaxymod.biomes.BiomeList;
 import galaxymod.biomes.BiomeSpace;
 import galaxymod.biomes.decorators.BiomeDecoratorZollus;
 import galaxymod.blocks.BlockList;
-import galaxymod.core.NGCore;
-import java.util.ArrayList;
+import galaxymod.core.NGPlanets;
 import java.util.Random;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -19,35 +18,38 @@ import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeDecorator;
 
-public abstract class BiomeGenZollusBase extends BiomeSpace {
+public class BiomeGenZollusBase extends BiomeSpace {
 	
-	public static int grassFoilageColorMultiplier = 0x00ff00;
+	public static int grassFoilageColorMultiplier = 0x00008b;
 	public static int chunkHeightModifier = 12;
 	protected Block stoneBlock;
 	protected byte topMeta;
 	protected byte fillerMeta;
 	protected byte stoneMeta;
-	public static int biomeHeightBaseModifier = 232;
+	public static int biomeHeightBaseModifier = 200;
 	public BiomeDecoratorZollus biomeDecor = this.getBiomeDecorator();
-	public static ArrayList<BiomeGenZollusBase> edenBiomes = new ArrayList();
 	
 	public BiomeGenZollusBase(int p_i1971_1_) {
 		super(p_i1971_1_);
-		this.setPlanetForBiome(NGCore.zollus);
-		this.enableRain = true;
+		this.setPlanetForBiome(NGPlanets.planetZollus);
+		this.enableRain = false;
 		this.enableSnow = true;
 		this.setColor(BiomeList.biomeColor);
-		this.setHeight(new Height(0.4F, 0.5F));
+		this.setHeight(new Height(0.2F, 0.2F));
 		this.theBiomeDecorator.flowersPerChunk = -999;
 		this.theBiomeDecorator.treesPerChunk = -999;
 		this.theBiomeDecorator.grassPerChunk = -999;
 		this.theBiomeDecorator.mushroomsPerChunk = -999;
 		this.biomeDecor.zollusCrystalsPerChunk = 2;
+		this.biomeDecor.zollusIceLakesPerChunk = 4;
 		this.spawnableCaveCreatureList.clear();
 		this.spawnableMonsterList.clear();
 		this.spawnableWaterCreatureList.clear();
 		this.spawnableCreatureList.clear();
+		this.topBlock = BlockList.zolarBlock;
+		this.fillerBlock = BlockList.zolDirt;
 		this.stoneBlock = BlockList.zolstone;
+		this.setPlanetForBiome(NGPlanets.planetZollus);
 	}
 	
 	@Override
@@ -56,8 +58,9 @@ public abstract class BiomeGenZollusBase extends BiomeSpace {
 	}
 	
 	@Override
-	public void setHeightBaseModifier(int bioHeight) {
+	public BiomeSpace setHeightBaseModifier(int bioHeight) {
 		this.biomeHeightBaseModifier = bioHeight;
+		return this;
 	}
 	
 	@Override
@@ -124,7 +127,7 @@ public abstract class BiomeGenZollusBase extends BiomeSpace {
 									&& (topBlock == null || topBlock
 											.getMaterial() == Material.air)) {
 								if (this.getIsColdBiome()) {
-									topBlock = Blocks.ice;
+									topBlock = Blocks.packed_ice;
 									topMeta = 0;
 								} else {
 									topBlock = Blocks.water;
@@ -139,9 +142,9 @@ public abstract class BiomeGenZollusBase extends BiomeSpace {
 								meta[index] = topMeta;
 							} else if (y < seaLevel - 8 - maxFillerDepth) {
 								topBlock = null;
-								fillerBlock = BlockList.zolarBlock;
+								fillerBlock = BlockList.zolCobbleRock;
 								fillerMeta = 0;
-								block[index] = BlockList.zolCobbleRock;
+								block[index] = BlockList.zolstone;
 							} else {
 								block[index] = fillerBlock;
 								meta[index] = fillerMeta;
@@ -152,7 +155,7 @@ public abstract class BiomeGenZollusBase extends BiomeSpace {
 							meta[index] = fillerMeta;
 							
 							if (currentFillerDepth == 0
-									&& fillerBlock == BlockList.zolarBlock) {
+									&& fillerBlock == BlockList.zolDirt) {
 								currentFillerDepth = rand.nextInt(4)
 										+ Math.max(0, y - (seaLevel - 1));
 								fillerBlock = BlockList.zolCobbleRock;
@@ -171,8 +174,10 @@ public abstract class BiomeGenZollusBase extends BiomeSpace {
 		this.genZollusBiomeTerrain(world, rand, block, meta, x, z, stoneNoise);
 	}
 	
-	public static void setChunkHeightModifier(int heightMod) {
+	@Override
+	public BiomeSpace setChunkHeightModifier(int heightMod) {
 		chunkHeightModifier = heightMod;
+		return this;
 	}
 	
 	public static int getChunkHeightModifier() {

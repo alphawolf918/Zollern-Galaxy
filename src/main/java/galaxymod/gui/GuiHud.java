@@ -10,7 +10,7 @@ import galaxymod.biomes.BiomeSpace;
 import galaxymod.core.EnumPlanetClass;
 import galaxymod.core.PlanetNova;
 import galaxymod.items.ItemList;
-import galaxymod.lib.NGHelper;
+import galaxymod.lib.NovaHelper;
 import java.util.ArrayList;
 import micdoodle8.mods.galacticraft.api.world.IAtmosphericGas;
 import net.minecraft.client.Minecraft;
@@ -87,8 +87,9 @@ public class GuiHud extends Gui {
 					fontRendererObj.drawString(temp, 26, yPos - 30, i3);
 					
 					// Planet Name
-					PlanetNova planet = ((BiomeSpace) biome).getPlanetForBiome();
-					String planetName = NGHelper.capitalizeFirstLetter(planet
+					PlanetNova planet = ((BiomeSpace) biome)
+							.getPlanetForBiome();
+					String planetName = NovaHelper.capitalizeFirstLetter(planet
 							.getName());
 					String p = "Planet: " + planetName;
 					fontRendererObj.drawString(p, 2, 46, i3);

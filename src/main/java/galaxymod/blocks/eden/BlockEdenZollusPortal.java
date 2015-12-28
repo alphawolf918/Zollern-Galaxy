@@ -2,7 +2,7 @@ package galaxymod.blocks.eden;
 
 import galaxymod.blocks.BlockList;
 import galaxymod.dimensions.providers.eden.TeleporterEdenZollus;
-import galaxymod.lib.NGHelper;
+import galaxymod.lib.NovaHelper;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockPortal;
 import net.minecraft.client.renderer.texture.IIconRegister;
@@ -18,7 +18,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 public class BlockEdenZollusPortal extends BlockPortal {
 	
 	public BlockEdenZollusPortal() {
-		NGHelper.setNameAndTexture(this, "edenzollusportal");
+		NovaHelper.setNameAndTexture(this, "edenzollusportal");
 		this.setTickRandomly(true);
 		this.setLightLevel(1F);
 	}

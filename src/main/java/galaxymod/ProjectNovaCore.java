@@ -10,11 +10,13 @@ package galaxymod;
 import galaxymod.biomes.BiomeList;
 import galaxymod.blocks.BlockList;
 import galaxymod.commands.CommandList;
-import galaxymod.core.NGCore;
+import galaxymod.core.NGPlanets;
 import galaxymod.creativetabs.ProjectNovaTab;
 import galaxymod.gui.GuiHandlerNG;
+import galaxymod.integration.TreeCapitatorIntegrationNova;
 import galaxymod.items.ItemList;
 import galaxymod.lib.ModInfo;
+import galaxymod.lib.OreDictionaryNova;
 import galaxymod.lib.RecipeManagerNova;
 import galaxymod.mobs.Mobs;
 import galaxymod.proxies.CommonProxy;
@@ -58,12 +60,13 @@ public class ProjectNovaCore {
 		BlockList.init();
 		ItemList.init();
 		Mobs.init();
+		TreeCapitatorIntegrationNova.init();
 	}
 	
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
 		proxy.initRenderers();
-		NGCore.init();
+		NGPlanets.init();
 		novaTabBlocks = new ProjectNovaTab("NovaGalacticBlocks", new ItemStack(
 				BlockList.edenSurfaceRock, 1));
 		novaTabItems = new ProjectNovaTab("NovaGalacticItems", new ItemStack(
@@ -71,6 +74,7 @@ public class ProjectNovaCore {
 		BiomeList.init();
 		RecipeManagerNova.init();
 		GameRegistry.registerWorldGenerator(new NGWorldGenManager(), 30);
+		OreDictionaryNova.init();
 	}
 	
 	@EventHandler

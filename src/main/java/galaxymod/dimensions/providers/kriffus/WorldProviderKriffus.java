@@ -6,7 +6,7 @@
 
 package galaxymod.dimensions.providers.kriffus;
 
-import galaxymod.core.NGCore;
+import galaxymod.core.NGPlanets;
 import galaxymod.dimensions.chunkmanagers.WorldChunkManagerKriffus;
 import galaxymod.dimensions.providers.renderers.SkyProviderKriffus;
 import micdoodle8.mods.galacticraft.api.galaxies.CelestialBody;
@@ -27,7 +27,7 @@ public class WorldProviderKriffus extends WorldProviderSpace implements
 	
 	@Override
 	public float getGravity() {
-		return 0.046F;
+		return 0.054F;
 	}
 	
 	@Override
@@ -37,7 +37,7 @@ public class WorldProviderKriffus extends WorldProviderSpace implements
 	
 	@Override
 	public float getSolarSize() {
-		return 5.0F;
+		return 8.0F;
 	}
 	
 	@Override
@@ -47,7 +47,7 @@ public class WorldProviderKriffus extends WorldProviderSpace implements
 	
 	@Override
 	public boolean canSpaceshipTierPass(int tier) {
-		return tier >= 3;
+		return tier >= 4;
 	}
 	
 	@Override
@@ -81,7 +81,7 @@ public class WorldProviderKriffus extends WorldProviderSpace implements
 	
 	@Override
 	public CelestialBody getCelestialBody() {
-		return NGCore.kriffus;
+		return NGPlanets.planetKriffon;
 	}
 	
 	@Override
@@ -138,7 +138,7 @@ public class WorldProviderKriffus extends WorldProviderSpace implements
 	@Override
 	public Vector3 getFogColor() {
 		float f = 1.0F - this.getStarBrightness(1.0F);
-		return new Vector3(20 / 255F * f, 27 / 255F * f, 33 / 255F * f);
+		return new Vector3(20 / 255F * f, 27 / 255F * f, 64 / 255F * f);
 	}
 	
 	@Override
@@ -173,7 +173,7 @@ public class WorldProviderKriffus extends WorldProviderSpace implements
 	
 	@Override
 	public boolean shouldForceRespawn() {
-		return false;
+		return true;
 	}
 	
 	@Override

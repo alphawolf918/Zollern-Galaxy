@@ -5,10 +5,14 @@ import galaxymod.items.eden.ItemEdenDungeonKey;
 import galaxymod.items.food.CookedFood;
 import galaxymod.items.food.ItemFruit;
 import galaxymod.items.food.RawFood;
+import galaxymod.items.zollus.ItemAncientZollusTablet;
+import galaxymod.lib.NovaHelper;
 import galaxymod.lib.RegisterHelper;
 import net.minecraft.item.Item;
 
 public class ItemList {
+	
+	static int totalItems = 0;
 	
 	public static final Item alienBeefRaw = new RawFood("alienbeefraw");
 	public static final Item alienBeefCooked = new CookedFood("alienbeefcooked");
@@ -25,7 +29,18 @@ public class ItemList {
 	public static final ItemNova ancientEssenceEden = new ItemNova("alienstone");
 	public static final ItemNova edenCrystal = new ItemNova("edencrystal");
 	public static final ItemNova edenZollusTablet = new ItemAncientEdenTablet();
+	public static final ItemNova edenCompressedVirinium = new ItemNova(
+			"compressedvirinium");
+	
 	public static final ItemNova zollusCrystal = new ItemNova("zolluscrystal");
+	public static final ItemNova zollusHeartium = new ItemNova("heartofzol");
+	public static final ItemNova zollusCompressedHeartium = new ItemNova(
+			"compressedheartium");
+	public static final ItemNova zollusCompressedVyrex = new ItemNova(
+			"compressedvyrex");
+	public static final ItemNova zollusKriffonTablet = new ItemAncientZollusTablet();
+	
+	public static final ItemNova aluminumDust = new ItemNova("aluminumdust");
 	
 	public static void init() {
 		addItem(alienBeefRaw);
@@ -41,10 +56,21 @@ public class ItemList {
 		addItem(ancientEssenceEden);
 		addItem(edenCrystal);
 		addItem(edenZollusTablet);
+		addItem(edenCompressedVirinium);
+		
 		addItem(zollusCrystal);
+		addItem(zollusHeartium);
+		addItem(zollusCompressedHeartium);
+		addItem(zollusCompressedVyrex);
+		addItem(zollusKriffonTablet);
+		
+		addItem(aluminumDust);
+		
+		NovaHelper.echo("Loaded a total of " + totalItems + " items.");
 	}
 	
 	public static void addItem(Item par1Item) {
 		RegisterHelper.registerItem(par1Item);
+		totalItems++;
 	}
 }

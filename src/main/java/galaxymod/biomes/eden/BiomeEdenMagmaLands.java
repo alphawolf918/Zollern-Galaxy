@@ -8,7 +8,7 @@ package galaxymod.biomes.eden;
 
 import galaxymod.biomes.BiomeList;
 import galaxymod.blocks.BlockList;
-import galaxymod.core.NGCore;
+import galaxymod.core.NGPlanets;
 import net.minecraft.entity.monster.EntityBlaze;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -18,7 +18,7 @@ public class BiomeEdenMagmaLands extends BiomeGenEdenBase {
 		super(par1);
 		this.setColor(BiomeList.biomeColor);
 		this.setBiomeName("Magma Lands");
-		this.setPlanetForBiome(NGCore.eden);
+		this.setPlanetForBiome(NGPlanets.planetEden);
 		this.setHeightBaseModifier(226);
 		this.setHeight(new Height(0.5F, 0.6F));
 		this.setDisableRain();

@@ -8,7 +8,7 @@ package galaxymod.blocks.eden;
 
 import galaxymod.blocks.BlockNova;
 import galaxymod.lib.ModInfo;
-import galaxymod.lib.NGHelper;
+import galaxymod.lib.NovaHelper;
 import galaxymod.lib.StaticUtils;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -28,8 +28,8 @@ public class MultiBlockGlass extends BlockNova {
 	
 	public MultiBlockGlass() {
 		super(Material.glass);
-		NGHelper.setName(this, "edenglass");
-		NGHelper.setTexture(this, textureBaseName);
+		NovaHelper.setName(this, "edenglass");
+		NovaHelper.setTexture(this, textureBaseName);
 		this.setHardness(0.2F);
 		this.setResistance(0.4F);
 		this.setStepSound(soundTypeGlass);

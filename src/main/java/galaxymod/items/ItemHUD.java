@@ -6,7 +6,7 @@
 
 package galaxymod.items;
 
-import galaxymod.lib.NGHelper.KeyHelper;
+import galaxymod.lib.NovaHelper.KeyHelper;
 import java.util.List;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;

@@ -224,7 +224,7 @@ public class MapGenZollusRavine extends MapGenBase {
 		
 		if (block == BlockList.zolstone || block == filler || block == top) {
 			if (y < 10) {
-				data[index] = BlockList.edenMagmaRock;
+				data[index] = Blocks.packed_ice;
 			} else {
 				data[index] = null;
 				

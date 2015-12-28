@@ -4,10 +4,16 @@
     * Added planets to this solar system:
         * Eden, an Earth-like planet with a breathable atmosphere and habitable temperature, rich with minable resources.
         * Zollus, a barren ice planet without a breathable atmosphere or tolerable thermal temperature.
-        * Kriffus, a hot planet close to its sun, Psios, also unbreathable and without a tolerable temperature.
+        * Kriffon, a hot planet close to its sun, Psios, also unbreathable and without a tolerable temperature.
+* Added the Praedyth solar system, with a bright-red giant star.
+    * No planets are currently in this system. May do a few like this just for show.
+* Aluminum ore can now be pulverized into dust that can then be cooked into aluminum ingots. FINALLY!
+* Registered all ores with the OreDictionary.
+* Added compressed metal items.
+
 ====PSIOS.EDEN====
 * New ores for Eden:
-    * Iron, Meteoric Iron, Gold, Copper, Tin, Diamond, Emerald, Coal, Desh and Virinium.
+    * Iron, Meteoric Iron, Gold, Copper, Tin, Diamond, Emerald, Coal, Redstone, Desh, Aluminum and Virinium.
 * Added Vortex Drop Ship spawn to Eden.
 * Caves and ores now generate properly on Eden.
 * Added a flower spawn to Eden called "Eden's Flower."
@@ -17,7 +23,7 @@
     * Eden's Grass on top and Eden's Soil on the bottom.
 * Added Eden's Tall Grass.
 * Drop Ship now spawns at lower layers and generates with a chest.
-* Giant, open caves can generate deep underground.
+* Giant, round caves can generate deep underground.
     * These areas typically are loaded with mobs and are incredibly dark.
 * Added a new biome to Eden called "Blood Desert".
     * Giant bones generate in this biome for decor.
@@ -29,7 +35,7 @@
     * Drops "Alien Beef" when killed.
         * Raw if killed while not on fire, and cooked if killed while on fire.
         * Can be cooked into Cooked Alien Beef.
-* All ores can now be smelted.
+* All Eden ores can now be smelted.
 * Crystal Towers now generate in Green Lands and Terran Valley biomes.
     * Usually spawns with at least 1 chest, sometimes spawns with 2.
 * Large changes and improvements to how different terrain and biome chunks are generated.
@@ -46,8 +52,9 @@
     * Supports multi-block structure building.
 * Eden's Blood Sand can now be crafted into Eden's Bloodstone.
 * Eden's Cobblerock can now be smelted into Eden's Rock.
-* Added Forest of Eden biome.
-    * Same as Garden of Eden, except with no flowers, and Edenwood Trees are generated throughout.
+* Added Edenwood Forest biome.
+    * Same as Garden of Eden, except with much fewer flowers, and Edenwood Trees are generated throughout.
+        * Trees usually spawn with a purple fruit.
 * Edenrock can now be crafted into Edenrock Bricks.
 * Special "Eden" villages now spawn all over the planet in any biome.
     * Can consist of up to 2 houses, and very rarely, even 3.
@@ -79,7 +86,7 @@
     * Consists of Eden Rock Bricks, Mob Spawners, Cobwebs, Britestone, and Eden's Treasure Chests.
         * Eden's Treasure Chests require an Eden's Dungeon Key to open.
 * Added Galactic Sentry Guard mob.
-    * Only spawns in dungeons (this mob will be in dungeons on every planet).
+    * Only spawns in dungeons (this mob will be in dungeons on every planet that has them).
     * Custom sounds for living and death (uses Blaze 'hit' noise when hurt).
         * Living: "I am a Galactic Sentry Guard. Please leave this area, or be destroyed."
         * Death: "Error."
@@ -97,6 +104,27 @@
     * Raw Virinium: Obtained by mining (or smelting) Virinium Ore.
         * Ore is found rarely in caves at lower levels.
     * Virinium Ingots: Obtained by smelting Raw Virinium, sometimes spawn in loot chests in Eden's Dungeons.
+* Edenrock can now be crafted into Edenrock Bricks.
+
 ==PSIOS.ZOLLUS==
 * Added new blocks and items to Zollus.
-* 
+    * Ores have been added: copper, coal, tin, iron and gold.
+* Added special Zolnium Crystals.
+    * Drops Zollus Crystals when broken.
+        * May require a level 4 (Desh?) pickaxe.
+* Added a new, special ore to Zollus called Zollus Heartium Ore.
+    * Drops Zollus Heartium when broken (quant. 1-2).
+* Lakes of packed (unmelting) ice generate frequently on this planet.
+* Added Ancient Zollus Tablet that spawns a portal to Kriffon.
+* Eden planet now renders in the sky.
+* Sun is far from the planet and is very tiny with a glowing aura around it.
+* The days and nights here are very long, and solar panels do not pick up much energy.
+
+==PSIOS.KRIFFON==
+* Added base blocks to Kriffon.
+* Large lakes of lava now spawn throughout Kriffon.
+* Not many mobs generate here, only a couple, and both are hostile.
+* Added ores: coal, copper, redstone, iron and gold.
+* Eden and Zollus planets now render in the sky.
+* Sun is close to the planet and is very huge with a glowing aura around it.
+* The days and nights here are super quick, and solar panels pick up a lot of energy.

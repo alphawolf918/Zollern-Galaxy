@@ -1,7 +1,7 @@
 package galaxymod.worldgen.eden.village;
 
 import galaxymod.blocks.BlockList;
-import galaxymod.lib.NGHelper;
+import galaxymod.lib.NovaHelper;
 import galaxymod.worldgen.NGWorldGenStructureCore;
 import galaxymod.worldgen.eden.treasure.TreasureGenEden;
 import java.util.Random;
@@ -15,9 +15,9 @@ public class VillageHouseThree extends NGWorldGenStructureCore {
 	
 	@Override
 	public boolean generate(World world, Random rand, int i, int j, int k) {
-		NGHelper.echo("Attempting to spawn village house three..");
+		NovaHelper.echo("Attempting to spawn village house three..");
 		if (!LocationIsValidSpawn(world, i, j, k)) {
-			NGHelper.echo("Failed");
+			NovaHelper.echo("Failed");
 			return false;
 		}
 		
@@ -293,7 +293,7 @@ public class VillageHouseThree extends NGWorldGenStructureCore {
 		world.setBlock(i + 1, j + 1, k + 7, Blocks.lava);
 		world.setBlock(i + 1, j + 1, k + 8, Blocks.lava);
 		world.setBlock(i + 2, j + 2, k + 2, Blocks.wooden_pressure_plate);
-		NGHelper.echo("Success! At: " + i + " " + j + " " + k);
+		NovaHelper.echo("Success! At: " + i + " " + j + " " + k);
 		return true;
 	}
 }

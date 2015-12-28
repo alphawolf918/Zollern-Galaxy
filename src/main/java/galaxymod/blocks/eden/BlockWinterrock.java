@@ -7,7 +7,7 @@
 package galaxymod.blocks.eden;
 
 import galaxymod.blocks.BlockNova;
-import galaxymod.lib.NGHelper;
+import galaxymod.lib.NovaHelper;
 import java.util.Random;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -23,7 +23,7 @@ import net.minecraftforge.common.util.ForgeDirection;
 public class BlockWinterrock extends BlockNova {
 	public BlockWinterrock() {
 		super(Material.snow);
-		NGHelper.setNameAndTexture(this, "edenwinterrock");
+		NovaHelper.setNameAndTexture(this, "edenwinterrock");
 		this.setHardness(0.4F);
 		this.setResistance(0.4F);
 		this.setStepSound(soundTypeSnow);

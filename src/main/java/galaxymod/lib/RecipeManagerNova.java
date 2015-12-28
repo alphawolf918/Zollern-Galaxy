@@ -7,7 +7,9 @@
 package galaxymod.lib;
 
 import galaxymod.blocks.BlockList;
+import galaxymod.integration.ThermalExpansionHelper;
 import galaxymod.items.ItemList;
+import micdoodle8.mods.galacticraft.api.recipe.CompressorRecipes;
 import micdoodle8.mods.galacticraft.core.blocks.GCBlocks;
 import micdoodle8.mods.galacticraft.core.items.GCItems;
 import micdoodle8.mods.galacticraft.planets.mars.items.MarsItems;
@@ -24,6 +26,7 @@ public class RecipeManagerNova {
 		CraftingRecipes.init();
 		SmeltingRecipes.init();
 		PulverizerRecipes.init();
+		CompressorRecipesNova.init();
 	}
 	
 	public static class CraftingRecipes {
@@ -70,7 +73,8 @@ public class RecipeManagerNova {
 			GameRegistry.addRecipe(
 					new ItemStack(ItemList.ancientEssenceEden, 1),
 					new Object[] { "CVC", "ZBZ", "CIC", 'C',
-							ItemList.edenCrystal, 'V', ItemList.ingotViri, 'Z',
+							ItemList.edenCrystal, 'V',
+							ItemList.edenCompressedVirinium, 'Z',
 							GCItems.meteoricIronIngot, 'B',
 							BlockList.edenViriBlock, 'I',
 							BlockList.edenBrightStone });
@@ -78,9 +82,17 @@ public class RecipeManagerNova {
 			// Ancient Tablet (Eden)
 			GameRegistry.addRecipe(new ItemStack(ItemList.edenZollusTablet, 1),
 					new Object[] { "CVC", "XAX", "VAV", 'C',
-							ItemList.edenCrystal, 'V', ItemList.ingotViri, 'X',
+							ItemList.edenCrystal, 'V',
+							ItemList.edenCompressedVirinium, 'X',
 							new ItemStack(GCItems.basicItem, 1, 3), 'A',
 							ItemList.ancientEssenceEden });
+			
+			// Ancient Tablet (Zollus)
+			GameRegistry.addRecipe(new ItemStack(ItemList.zollusKriffonTablet,
+					1), new Object[] { "VCV", "HYH", "YCY", 'V',
+					ItemList.zollusCompressedVyrex, 'C',
+					ItemList.zollusCompressedHeartium, 'H',
+					ItemList.zollusHeartium, 'Y', ItemList.zollusCrystal });
 		}
 	}
 	
@@ -113,10 +125,29 @@ public class RecipeManagerNova {
 					GCBlocks.basicBlock, 2, 6), 2.0F); // Tin
 			addSmelting(ItemList.rawViri, new ItemStack(ItemList.ingotViri, 1),
 					2.0F); // Viri
+			addSmelting(BlockList.edenViriOre, new ItemStack(ItemList.rawViri,
+					1), 1.0F); // Viri
+			
+			// Ores (Zollus)
+			addSmelting(BlockList.zolCoalOre,
+					new ItemStack(Blocks.coal_ore, 3), 2.5F); // Coal
+			addSmelting(BlockList.zolCopperOre, new ItemStack(
+					GCBlocks.basicBlock, 3, 5), 2.5F); // Copper
+			addSmelting(BlockList.zolGoldOre,
+					new ItemStack(Blocks.gold_ore, 3), 2.5F); // Gold
+			addSmelting(BlockList.zolIronOre,
+					new ItemStack(Blocks.iron_ore, 3), 2.5F); // Iron
+			addSmelting(BlockList.zolTinOre, new ItemStack(GCBlocks.basicBlock,
+					3, 6), 2.5F);
+			addSmelting(BlockList.zolHeartOre, new ItemStack(
+					ItemList.zollusHeartium, 1), 1.0F); // Heartium
 			
 			// Other
 			addSmelting(BlockList.edenCobbleRock, BlockList.edenRock, 0.4F);
 			addSmelting(BlockList.edenBloodSand, BlockList.edenGlass, 0.7F);
+			addSmelting(BlockList.zolCobbleRock, BlockList.zolstone, 0.4F);
+			addSmelting(ItemList.aluminumDust, new ItemStack(GCItems.basicItem,
+					1, 5), 0.9F);
 		}
 		
 		public static void addSmelting(ItemStack itemStack, ItemStack output,
@@ -148,7 +179,34 @@ public class RecipeManagerNova {
 	public static class PulverizerRecipes {
 		
 		public static void init() {
+			// SPC Ore
+			ThermalExpansionHelper.addPulverizerRecipe(1600, new ItemStack(
+					GCBlocks.basicBlock, 1, 7), new ItemStack(
+					ItemList.aluminumDust, 2), new ItemStack(Items.coal), 30);
+		}
+	}
+	
+	public static class CompressorRecipesNova {
+		
+		public static void init() {
 			
+			// Compressed Virinium
+			CompressorRecipes.addShapelessRecipe(new ItemStack(
+					ItemList.edenCompressedVirinium, 2), new ItemStack(
+					ItemList.ingotViri, 1, 0), new ItemStack(
+					ItemList.ingotViri, 1, 0));
+			
+			// Compressed Heartium
+			CompressorRecipes.addShapelessRecipe(new ItemStack(
+					ItemList.zollusCompressedHeartium, 2), new ItemStack(
+					ItemList.zollusHeartium, 1, 0), new ItemStack(
+					ItemList.zollusHeartium, 1, 0));
+			
+			// Compressed Vyrex
+			CompressorRecipes.addShapelessRecipe(new ItemStack(
+					ItemList.zollusCompressedVyrex, 2), new ItemStack(
+					ItemList.edenCompressedVirinium, 1, 0), new ItemStack(
+					ItemList.zollusCompressedHeartium, 1, 0));
 		}
 	}
 }

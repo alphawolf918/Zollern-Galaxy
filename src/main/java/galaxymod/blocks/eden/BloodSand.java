@@ -7,7 +7,7 @@
 package galaxymod.blocks.eden;
 
 import galaxymod.ProjectNovaCore;
-import galaxymod.lib.NGHelper;
+import galaxymod.lib.NovaHelper;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFalling;
 import net.minecraft.block.material.Material;
@@ -20,7 +20,7 @@ import net.minecraftforge.common.util.ForgeDirection;
 public class BloodSand extends BlockFalling {
 	public BloodSand() {
 		super(Material.sand);
-		NGHelper.setNameAndTexture(this, "bloodsand");
+		NovaHelper.setNameAndTexture(this, "bloodsand");
 		this.setResistance(1F);
 		this.setHardness(1F);
 		this.setStepSound(soundTypeSand);

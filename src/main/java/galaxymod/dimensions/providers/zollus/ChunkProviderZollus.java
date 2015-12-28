@@ -23,6 +23,8 @@ import micdoodle8.mods.galacticraft.api.prefab.core.BlockMetaPair;
 import micdoodle8.mods.galacticraft.api.prefab.world.gen.BiomeDecoratorSpace;
 import micdoodle8.mods.galacticraft.api.prefab.world.gen.ChunkProviderSpace;
 import micdoodle8.mods.galacticraft.api.prefab.world.gen.MapGenBaseMeta;
+import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedSpider;
+import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedZombie;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFalling;
 import net.minecraft.entity.EnumCreatureType;
@@ -124,7 +126,7 @@ public class ChunkProviderZollus extends ChunkProviderSpace {
 	
 	@Override
 	protected BlockMetaPair getDirtBlock() {
-		return new BlockMetaPair(BlockList.zolCobbleRock, (byte) 0);
+		return new BlockMetaPair(BlockList.zolDirt, (byte) 0);
 	}
 	
 	@Override
@@ -134,7 +136,7 @@ public class ChunkProviderZollus extends ChunkProviderSpace {
 	
 	@Override
 	protected int getSeaLevel() {
-		return 83;
+		return 43;
 	}
 	
 	@Override
@@ -166,22 +168,22 @@ public class ChunkProviderZollus extends ChunkProviderSpace {
 	
 	@Override
 	public double getHeightModifier() {
-		return 4;
-	}
-	
-	@Override
-	public double getSmallFeatureHeightModifier() {
 		return 2;
 	}
 	
 	@Override
+	public double getSmallFeatureHeightModifier() {
+		return 1;
+	}
+	
+	@Override
 	public double getMountainHeightModifier() {
-		return 6;
+		return 2;
 	}
 	
 	@Override
 	public double getValleyHeightModifier() {
-		return 1;
+		return 3;
 	}
 	
 	@Override
@@ -190,15 +192,13 @@ public class ChunkProviderZollus extends ChunkProviderSpace {
 				.getBiomeGenForCoords(x, z);
 		if (type == EnumCreatureType.monster) {
 			List monsters = new ArrayList();
-			// monsters.add(new SpawnListEntry(EntityEvolvedZombie.class, 2, 2,
-			// 2));
-			// monsters.add(new SpawnListEntry(EntityEvolvedSpider.class, 2, 2,
-			// 2));
-			// monsters.add(new SpawnListEntry(EntityEvolvedSkeleton.class, 2,
-			// 2,
-			// 3));
-			// monsters.add(new SpawnListEntry(EntityEvolvedCreeper.class, 2, 2,
-			// 2));
+			monsters.add(new SpawnListEntry(EntityEvolvedZombie.class, 1, 0, 1));
+			monsters.add(new SpawnListEntry(EntityEvolvedSpider.class, 1, 0, 1));
+			// monsters.add(new SpawnListEntry(EntityEvolvedSkeleton.class, 0,
+			// 1,
+			// 1));
+			// monsters.add(new SpawnListEntry(EntityEvolvedCreeper.class, 1, 0,
+			// 1));
 			return monsters;
 		} else if (type == EnumCreatureType.creature) {
 			List creatures = new ArrayList();
@@ -247,8 +247,8 @@ public class ChunkProviderZollus extends ChunkProviderSpace {
 			k1 = var4 + this.rand.nextInt(16) + 8;
 			l1 = this.rand.nextInt(256);
 			i2 = var5 + this.rand.nextInt(16) + 8;
-			new WorldGenLakes(Blocks.water).generate(this.worldObj, this.rand,
-					k1, l1, i2);
+			new WorldGenLakes(Blocks.packed_ice).generate(this.worldObj,
+					this.rand, k1, l1, i2);
 		}
 		
 		boolean doGen;

@@ -7,6 +7,7 @@
 package galaxymod.mobs.entities.boss;
 
 import galaxymod.items.ItemList;
+import galaxymod.tileentities.eden.TileEntityTreasureChestEden;
 import galaxymod.worldgen.eden.treasure.EdenGenHooks;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,11 +17,9 @@ import micdoodle8.mods.galacticraft.api.entity.IEntityBreathable;
 import micdoodle8.mods.galacticraft.api.vector.Vector3;
 import micdoodle8.mods.galacticraft.core.GalacticraftCore;
 import micdoodle8.mods.galacticraft.core.entities.IBoss;
-import micdoodle8.mods.galacticraft.core.items.GCItems;
 import micdoodle8.mods.galacticraft.core.network.PacketSimple;
 import micdoodle8.mods.galacticraft.core.network.PacketSimple.EnumSimplePacket;
 import micdoodle8.mods.galacticraft.core.tile.TileEntityDungeonSpawner;
-import micdoodle8.mods.galacticraft.core.tile.TileEntityTreasureChest;
 import micdoodle8.mods.galacticraft.core.util.ConfigManagerCore;
 import micdoodle8.mods.galacticraft.core.util.GCCoreUtil;
 import net.minecraft.block.Block;
@@ -94,11 +93,11 @@ public class EntityCrawlerBoss extends EntitySpider implements IBoss,
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getEntityAttribute(SharedMonsterAttributes.maxHealth)
-				.setBaseValue(210.0F * ConfigManagerCore.dungeonBossHealthMod);
+				.setBaseValue(215.0F * ConfigManagerCore.dungeonBossHealthMod);
 		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed)
 				.setBaseValue(0.25F);
 		this.getEntityAttribute(SharedMonsterAttributes.attackDamage)
-				.setBaseValue(5.25F);
+				.setBaseValue(2.25F);
 	}
 	
 	@Override
@@ -169,12 +168,12 @@ public class EntityCrawlerBoss extends EntitySpider implements IBoss,
 			if (!this.worldObj.isRemote) {
 				for (final TileEntity tile : new ArrayList<TileEntity>(
 						this.worldObj.loadedTileEntityList)) {
-					if (tile instanceof TileEntityTreasureChest) {
+					if (tile instanceof TileEntityTreasureChestEden) {
 						final double d3 = tile.xCoord + 0.5D - this.posX;
 						final double d4 = tile.yCoord + 0.5D - this.posY;
 						final double d5 = tile.zCoord + 0.5D - this.posZ;
 						final double dSq = d3 * d3 + d4 * d4 + d5 * d5;
-						TileEntityTreasureChest chest = (TileEntityTreasureChest) tile;
+						TileEntityTreasureChestEden chest = (TileEntityTreasureChestEden) tile;
 						
 						if (dSq < 10000) {
 							if (!chest.locked) {
@@ -208,7 +207,8 @@ public class EntityCrawlerBoss extends EntitySpider implements IBoss,
 				}
 			}
 			
-			this.entityDropItem(new ItemStack(GCItems.key, 1, 0), 0.5F);
+			this.entityDropItem(new ItemStack(ItemList.edenDungeonKey, 1, 0),
+					0.5F);
 			
 			super.setDead();
 			
@@ -320,11 +320,11 @@ public class EntityCrawlerBoss extends EntitySpider implements IBoss,
 	}
 	
 	public float getExperienceToSpawn() {
-		return 60.0F;
+		return 40.0F;
 	}
 	
 	public double getDistanceToSpawn() {
-		return 40.0D;
+		return 20.0D;
 	}
 	
 	@Override

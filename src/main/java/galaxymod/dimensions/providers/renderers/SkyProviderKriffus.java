@@ -1,10 +1,6 @@
-/*******************************************************************************
- * Copyright 2015 Zollern Wolf - Project Nova / Nova Galactic Final Frontier
- * Galacticraft Add-On Mod You CAN: - Learn from it - Use it to get ideas and
- * concepts You CAN'T: - Redistribute it - Claim it as your own
- ******************************************************************************/
 package galaxymod.dimensions.providers.renderers;
 
+import galaxymod.lib.ModInfo;
 import java.util.Random;
 import micdoodle8.mods.galacticraft.api.world.IGalacticraftWorldProvider;
 import micdoodle8.mods.galacticraft.core.util.ConfigManagerCore;
@@ -24,16 +20,20 @@ import cpw.mods.fml.client.FMLClientHandler;
 
 public class SkyProviderKriffus extends IRenderHandler {
 	
-	private ResourceLocation starTexture = new ResourceLocation(
-			"galaxymod:textures/gui/psion6.png");
+	private ResourceLocation psiosTexture = new ResourceLocation(ModInfo.MODID,
+			"textures/gui/psion6.png");
+	private ResourceLocation edenTexture = new ResourceLocation(ModInfo.MODID,
+			"textures/gui/eden.png");
+	private ResourceLocation zollusTexture = new ResourceLocation(
+			ModInfo.MODID, "textures/gui/zollus.png");
 	
 	public int starList;
 	public int glSkyList;
 	public int glSkyList2;
 	private float sunSize;
 	
-	public SkyProviderKriffus(IGalacticraftWorldProvider zollusProvider) {
-		this.sunSize = 9.5F * zollusProvider.getSolarSize();
+	public SkyProviderKriffus(IGalacticraftWorldProvider gcProvider) {
+		this.sunSize = 7.5F * gcProvider.getSolarSize();
 		
 		int displayLists = GLAllocation.generateDisplayLists(3);
 		this.starList = displayLists;
@@ -77,6 +77,7 @@ public class SkyProviderKriffus extends IRenderHandler {
 				tessellator.addVertex(k + byte2, f, i1 + byte2);
 			}
 		}
+		
 		tessellator.draw();
 		GL11.glEndList();
 	}
@@ -93,11 +94,20 @@ public class SkyProviderKriffus extends IRenderHandler {
 		float f3 = (float) vec3.zCoord;
 		float f6;
 		
-		GL11.glColor3f(f1, f2, f3);
+		if (mc.gameSettings.anaglyph) {
+			float f4 = (f1 * 30.0F + f2 * 59.0F + f3 * 11.0F) / 100.0F;
+			float f5 = (f1 * 30.0F + f2 * 70.0F) / 100.0F;
+			f6 = (f1 * 30.0F + f3 * 70.0F) / 100.0F;
+			f1 = f4;
+			f2 = f5;
+			f3 = f6;
+		}
+		
+		GL11.glColor3f(0, 0, 0);
 		Tessellator tessellator1 = Tessellator.instance;
 		GL11.glDepthMask(false);
 		GL11.glEnable(GL11.GL_FOG);
-		GL11.glColor3f(f1, f2, f3);
+		GL11.glColor3f(0, 0, 0);
 		GL11.glCallList(this.glSkyList);
 		GL11.glDisable(GL11.GL_FOG);
 		GL11.glDisable(GL11.GL_ALPHA_TEST);
@@ -108,6 +118,7 @@ public class SkyProviderKriffus extends IRenderHandler {
 		float f8;
 		float f9;
 		float f10;
+		
 		float f18 = world.getStarBrightness(partialTicks);
 		
 		if (f18 > 0.0F) {
@@ -122,14 +133,23 @@ public class SkyProviderKriffus extends IRenderHandler {
 		GL11.glRotatef(-90.0F, 0.0F, 1.0F, 0.0F);
 		GL11.glRotatef(world.getCelestialAngle(partialTicks) * 360.0F, 1.0F,
 				0.0F, 0.0F);
-		afloat[0] = 0 / 255.0F;
-		afloat[1] = 225 / 255.0F;
-		afloat[2] = 255 / 255.0F;
-		afloat[3] = 0.4F;
+		afloat[0] = 255 / 255.0F;
+		afloat[1] = 255 / 255.0F;
+		afloat[2] = 235 / 255.0F;
+		afloat[3] = 1.0F;
 		f6 = afloat[0];
 		f7 = afloat[1];
 		f8 = afloat[2];
 		float f11;
+		
+		if (mc.gameSettings.anaglyph) {
+			f9 = (f6 * 30.0F + f7 * 59.0F + f8 * 11.0F) / 100.0F;
+			f10 = (f6 * 30.0F + f7 * 70.0F) / 100.0F;
+			f11 = (f6 * 30.0F + f8 * 70.0F) / 100.0F;
+			f6 = f9;
+			f7 = f10;
+			f8 = f11;
+		}
 		
 		f18 = 1.0F - f18;
 		
@@ -140,48 +160,58 @@ public class SkyProviderKriffus extends IRenderHandler {
 		tessellator1.setColorRGBA_F(afloat[0] * f18, afloat[1] * f18, afloat[2]
 				* f18, 0.0F);
 		
+		// Render sun aura
+		f10 = 100.0F;
+		tessellator1.addVertex(-f10, 100.0D, -f10);
+		tessellator1.addVertex(0, 100.0D, (double) -f10 * 1.5F);
+		tessellator1.addVertex(f10, 100.0D, -f10);
+		tessellator1.addVertex((double) f10 * 1.5F, 100.0D, 0);
+		tessellator1.addVertex(f10, 100.0D, f10);
+		tessellator1.addVertex(0, 100.0D, (double) f10 * 1.5F);
+		tessellator1.addVertex(-f10, 100.0D, f10);
+		tessellator1.addVertex((double) -f10 * 1.5F, 100.0D, 0);
+		tessellator1.addVertex(-f10, 100.0D, -f10);
+		
+		tessellator1.draw();
+		tessellator1.startDrawing(GL11.GL_TRIANGLE_FAN);
+		tessellator1.setColorRGBA_F(f6 * f18, f7 * f18, f8 * f18, afloat[3]
+				* f18);
+		tessellator1.addVertex(0.0D, 100.0D, 0.0D);
+		tessellator1.setColorRGBA_F(afloat[0] * f18, afloat[1] * f18, afloat[2]
+				* f18, 0.0F);
+		
+		// Render larger sun aura
+		f10 = 150.0F;
+		tessellator1.addVertex(-f10, 100.0D, -f10);
+		tessellator1.addVertex(0, 100.0D, (double) -f10 * 1.5F);
+		tessellator1.addVertex(f10, 100.0D, -f10);
+		tessellator1.addVertex((double) f10 * 1.5F, 100.0D, 0);
+		tessellator1.addVertex(f10, 100.0D, f10);
+		tessellator1.addVertex(0, 100.0D, (double) f10 * 1.5F);
+		tessellator1.addVertex(-f10, 100.0D, f10);
+		tessellator1.addVertex((double) -f10 * 1.5F, 100.0D, 0);
+		tessellator1.addVertex(-f10, 100.0D, -f10);
+		
 		tessellator1.draw();
 		GL11.glPopMatrix();
 		GL11.glShadeModel(GL11.GL_FLAT);
 		
 		GL11.glEnable(GL11.GL_TEXTURE_2D);
-		GL11.glPushMatrix();
-		
-		GL11.glPopMatrix();
+		OpenGlHelper.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE, GL11.GL_ONE,
+				GL11.GL_ZERO);
 		GL11.glPushMatrix();
 		f7 = 0.0F;
 		f8 = 0.0F;
 		f9 = 0.0F;
+		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
 		GL11.glTranslatef(f7, f8, f9);
 		GL11.glRotatef(-90.0F, 0.0F, 1.0F, 0.0F);
+		
+		// Render sun
 		GL11.glRotatef(world.getCelestialAngle(partialTicks) * 360.0F, 1.0F,
 				0.0F, 0.0F);
-		GL11.glDisable(GL11.GL_TEXTURE_2D);
-		GL11.glColor4f(0.0F, 0.0F, 0.0F, 1.0F);
-		f10 = 9.5F / 3.5F;
-		tessellator1.startDrawingQuads();
-		tessellator1.addVertex(-f10, 99.9D, -f10);
-		tessellator1.addVertex(f10, 99.9D, -f10);
-		tessellator1.addVertex(f10, 99.9D, f10);
-		tessellator1.addVertex(-f10, 99.9D, f10);
-		tessellator1.draw();
-		GL11.glEnable(GL11.GL_TEXTURE_2D);
-		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-		// Render sirius
-		GL11.glDisable(GL11.GL_TEXTURE_2D);
-		GL11.glColor4f(0.0F, 0.0F, 0.0F, 1.0F);
-		// Some blanking to conceal the stars
-		f10 = this.sunSize / 3.5F;
-		tessellator1.startDrawingQuads();
-		tessellator1.addVertex(-f10, 99.9D, -f10);
-		tessellator1.addVertex(f10, 99.9D, -f10);
-		tessellator1.addVertex(f10, 99.9D, f10);
-		tessellator1.addVertex(-f10, 99.9D, f10);
-		tessellator1.draw();
-		GL11.glEnable(GL11.GL_TEXTURE_2D);
-		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-		f10 = this.sunSize + 0;
-		mc.renderEngine.bindTexture(this.starTexture);
+		f10 = this.sunSize;
+		mc.renderEngine.bindTexture(this.psiosTexture);
 		tessellator1.startDrawingQuads();
 		tessellator1.addVertexWithUV(-f10, 100.0D, -f10, 0.0D, 0.0D);
 		tessellator1.addVertexWithUV(f10, 100.0D, -f10, 1.0D, 0.0D);
@@ -189,9 +219,95 @@ public class SkyProviderKriffus extends IRenderHandler {
 		tessellator1.addVertexWithUV(-f10, 100.0D, f10, 0.0D, 1.0D);
 		tessellator1.draw();
 		
-		GL11.glPopMatrix();
-		GL11.glPushMatrix();
+		GL11.glDisable(GL11.GL_BLEND);
 		
+		// Eden
+		f10 = 2.35F;
+		GL11.glScalef(0.6F, 0.6F, 0.6F);
+		GL11.glRotatef(15.0F, 5.0F, 0.0F, 0.0F);
+		GL11.glRotatef(-32F, -100.0F, -20.0F, 180.0F);
+		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1F);
+		FMLClientHandler.instance().getClient().renderEngine
+				.bindTexture(this.edenTexture);
+		tessellator1.startDrawingQuads();
+		tessellator1.addVertexWithUV(-f10, -100.0D, f10, 0, 1);
+		tessellator1.addVertexWithUV(f10, -100.0D, f10, 1, 1);
+		tessellator1.addVertexWithUV(f10, -100.0D, -f10, 1, 0);
+		tessellator1.addVertexWithUV(-f10, -100.0D, -f10, 0, 0);
+		tessellator1.draw();
+		
+		// Zollus
+		f10 = 0.25F;
+		GL11.glScalef(0.6F, 0.6F, 0.6F);
+		GL11.glRotatef(200F, 1.0F, 0.0F, 0.0F);
+		GL11.glRotatef(-600F, 50.0F, 10.0F, 10.0F);
+		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1F);
+		GL11.glRotatef(world.getCelestialAngle(partialTicks) * 360.0F, 10.0F,
+				0.0F, 0.0F);
+		FMLClientHandler.instance().getClient().renderEngine
+				.bindTexture(this.zollusTexture);
+		tessellator1.startDrawingQuads();
+		tessellator1.addVertexWithUV(-f10, -100.0D, f10, 0, 1);
+		tessellator1.addVertexWithUV(f10, -100.0D, f10, 1, 1);
+		tessellator1.addVertexWithUV(f10, -100.0D, -f10, 1, 0);
+		tessellator1.addVertexWithUV(-f10, -100.0D, -f10, 0, 0);
+		tessellator1.draw();
+		
+		GL11.glDisable(GL11.GL_TEXTURE_2D);
+		
+		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
+		GL11.glDisable(GL11.GL_BLEND);
+		GL11.glEnable(GL11.GL_ALPHA_TEST);
+		GL11.glEnable(GL11.GL_FOG);
+		GL11.glPopMatrix();
+		GL11.glDisable(GL11.GL_TEXTURE_2D);
+		GL11.glColor3f(0.0F, 0.0F, 0.0F);
+		double d0 = mc.thePlayer.getPosition(partialTicks).yCoord
+				- world.getHorizon();
+		
+		if (d0 < 0.0D) {
+			GL11.glPushMatrix();
+			GL11.glTranslatef(0.0F, 12.0F, 0.0F);
+			GL11.glCallList(this.glSkyList2);
+			GL11.glPopMatrix();
+			f8 = 1.0F;
+			f9 = -((float) (d0 + 65.0D));
+			f10 = -f8;
+			tessellator1.startDrawingQuads();
+			tessellator1.setColorRGBA_I(0, 255);
+			tessellator1.addVertex(-f8, f9, f8);
+			tessellator1.addVertex(f8, f9, f8);
+			tessellator1.addVertex(f8, f10, f8);
+			tessellator1.addVertex(-f8, f10, f8);
+			tessellator1.addVertex(-f8, f10, -f8);
+			tessellator1.addVertex(f8, f10, -f8);
+			tessellator1.addVertex(f8, f9, -f8);
+			tessellator1.addVertex(-f8, f9, -f8);
+			tessellator1.addVertex(f8, f10, -f8);
+			tessellator1.addVertex(f8, f10, f8);
+			tessellator1.addVertex(f8, f9, f8);
+			tessellator1.addVertex(f8, f9, -f8);
+			tessellator1.addVertex(-f8, f9, -f8);
+			tessellator1.addVertex(-f8, f9, f8);
+			tessellator1.addVertex(-f8, f10, f8);
+			tessellator1.addVertex(-f8, f10, -f8);
+			tessellator1.addVertex(-f8, f10, -f8);
+			tessellator1.addVertex(-f8, f10, f8);
+			tessellator1.addVertex(f8, f10, f8);
+			tessellator1.addVertex(f8, f10, -f8);
+			tessellator1.draw();
+		}
+		
+		if (world.provider.isSkyColored()) {
+			GL11.glColor3f(f1 * 0.2F + 0.04F, f2 * 0.2F + 0.04F,
+					f3 * 0.6F + 0.1F);
+		} else {
+			GL11.glColor3f(f1, f2, f3);
+		}
+		
+		GL11.glPushMatrix();
+		GL11.glTranslatef(0.0F, -((float) (d0 - 16.0D)), 0.0F);
+		GL11.glCallList(this.glSkyList2);
 		GL11.glPopMatrix();
 		GL11.glEnable(GL11.GL_TEXTURE_2D);
 		GL11.glDepthMask(true);
@@ -202,7 +318,7 @@ public class SkyProviderKriffus extends IRenderHandler {
 		Tessellator var2 = Tessellator.instance;
 		var2.startDrawingQuads();
 		
-		for (int starIndex = 0; starIndex < (ConfigManagerCore.moreStars ? 35000
+		for (int starIndex = 0; starIndex < (ConfigManagerCore.moreStars ? 55000
 				: 6000); ++starIndex) {
 			double var4 = rand.nextFloat() * 2.0F - 1.0F;
 			double var6 = rand.nextFloat() * 2.0F - 1.0F;

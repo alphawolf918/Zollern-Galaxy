@@ -7,7 +7,7 @@
 package galaxymod.blocks.eden;
 
 import galaxymod.ProjectNovaCore;
-import galaxymod.lib.NGHelper;
+import galaxymod.lib.NovaHelper;
 import net.minecraft.block.BlockFalling;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
@@ -15,7 +15,7 @@ import net.minecraft.creativetab.CreativeTabs;
 public class EdenGravel extends BlockFalling {
 	public EdenGravel() {
 		super(Material.grass);
-		NGHelper.setNameAndTexture(this, "edengravel");
+		NovaHelper.setNameAndTexture(this, "edengravel");
 		this.setHardness(0.9F);
 		this.setResistance(5.6F);
 		this.setStepSound(this.soundTypeGravel);

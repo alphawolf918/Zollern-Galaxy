@@ -6,7 +6,7 @@
 
 package galaxymod.items.food;
 
-import galaxymod.lib.NGHelper;
+import galaxymod.lib.NovaHelper;
 import net.minecraft.item.ItemFood;
 
 public class ItemFruit extends ItemFood {
@@ -22,7 +22,7 @@ public class ItemFruit extends ItemFood {
 	}
 	
 	void setInfo(String strTexture) {
-		NGHelper.setTab(this);
-		NGHelper.setNameAndTexture(this, strTexture);
+		NovaHelper.setTab(this);
+		NovaHelper.setNameAndTexture(this, strTexture);
 	}
 }

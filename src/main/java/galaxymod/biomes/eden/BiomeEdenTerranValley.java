@@ -1,7 +1,7 @@
 package galaxymod.biomes.eden;
 
 import galaxymod.blocks.BlockList;
-import galaxymod.lib.NGHelper;
+import galaxymod.lib.NovaHelper;
 import java.util.Random;
 import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
@@ -34,7 +34,7 @@ public class BiomeEdenTerranValley extends BiomeGenEdenBase {
 			int p_76728_4_) {
 		super.decorate(p_76728_1_, p_76728_2_, p_76728_3_, p_76728_4_);
 		for (int i = 0; i < 5; i++) {
-			NGHelper.genEdenFlowers(p_76728_1_, p_76728_2_, p_76728_3_,
+			NovaHelper.genEdenFlowers(p_76728_1_, p_76728_2_, p_76728_3_,
 					p_76728_4_);
 		}
 	}

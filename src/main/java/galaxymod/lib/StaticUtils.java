@@ -15,6 +15,7 @@ import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.IFluidHandler;
 
 public class StaticUtils {
+	
 	public static final ForgeDirection[] CardinalDirections = new ForgeDirection[] {
 			ForgeDirection.NORTH, ForgeDirection.EAST, ForgeDirection.SOUTH,
 			ForgeDirection.WEST };
@@ -63,19 +64,26 @@ public class StaticUtils {
 		public static class Inventory {
 			/**
 			 * Consume a single item from a stack of items
-			 * @param stack The stack from which to consume
-			 * @return The remainder of the stack, or null if the stack was fully consumed.
+			 * 
+			 * @param stack
+			 *            The stack from which to consume
+			 * @return The remainder of the stack, or null if the stack was
+			 *         fully consumed.
 			 */
 			public static ItemStack consumeItem(ItemStack stack) {
 				return consumeItem(stack, 1);
 			}
 			
 			/**
-			 * Consume some amount of items from a stack of items. Assumes you've already validated
-			 * the consumption. If you try to consume more than the stack has, it will simply destroy
-			 * the stack, as if you'd consumed all of it.
-			 * @param stack The stack from which to consume
-			 * @return The remainder of the stack, or null if the stack was fully consumed.
+			 * Consume some amount of items from a stack of items. Assumes
+			 * you've already validated the consumption. If you try to consume
+			 * more than the stack has, it will simply destroy the stack, as if
+			 * you'd consumed all of it.
+			 * 
+			 * @param stack
+			 *            The stack from which to consume
+			 * @return The remainder of the stack, or null if the stack was
+			 *         fully consumed.
 			 */
 			public static ItemStack consumeItem(ItemStack stack, int amount) {
 				if (stack == null) {

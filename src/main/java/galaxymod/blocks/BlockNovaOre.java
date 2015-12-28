@@ -6,35 +6,33 @@
 
 package galaxymod.blocks;
 
-import java.util.Random;
 import micdoodle8.mods.galacticraft.api.block.IDetectableResource;
+import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.item.Item;
-import net.minecraft.util.MathHelper;
-import net.minecraft.world.IBlockAccess;
 
 public class BlockNovaOre extends BlockNova implements IDetectableResource {
 	
 	public BlockNovaOre() {
 		super(Material.rock);
-		this.setHardResist(2.0F, 4.0F);
-		this.setHarvestLevel("pickaxe", 3);
-		this.setStepSound(soundTypeStone);
+		this.setDefaults();
 	}
 	
-	private Random rand = new Random();
+	public BlockNovaOre(String strTexture) {
+		super(Material.rock);
+		this.setDefaults();
+		this.setNameAndTexture(strTexture);
+	}
 	
-	@Override
-	public int getExpDrop(IBlockAccess p_149690_1_, int p_149690_5_,
-			int p_149690_7_) {
-		if (this.getItemDropped(p_149690_5_, rand, p_149690_7_) != Item
-				.getItemFromBlock(this)) {
-			int j1 = 0;
-			j1 = MathHelper.getRandomIntegerInRange(rand, 6, 11);
-			
-			return j1;
-		}
-		return 0;
+	public BlockNovaOre(String strTexture, float hardness, float resistance) {
+		super(Material.rock);
+		this.setDefaults();
+	}
+	
+	public Block setDefaults() {
+		this.setHardResist(2.5F, 4.0F);
+		this.setHarvestLevel("pickaxe", 3);
+		this.setStepSound(soundTypeStone);
+		return this;
 	}
 	
 	@Override

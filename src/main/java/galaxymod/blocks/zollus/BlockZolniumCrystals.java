@@ -9,7 +9,7 @@ package galaxymod.blocks.zollus;
 import galaxymod.ProjectNovaCore;
 import galaxymod.blocks.BlockList;
 import galaxymod.items.ItemList;
-import galaxymod.lib.NGHelper;
+import galaxymod.lib.NovaHelper;
 import java.util.Random;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBush;
@@ -18,15 +18,16 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.world.IBlockAccess;
 import net.minecraftforge.common.EnumPlantType;
+import net.minecraftforge.common.IPlantable;
 
-public class BlockZolniumCrystals extends BlockBush {
+public class BlockZolniumCrystals extends BlockBush implements IPlantable {
 	
 	public static Item dropItem = ItemList.zollusCrystal;
 	
 	public BlockZolniumCrystals() {
 		super(Material.rock);
-		NGHelper.setNameAndTexture(this, "spacecrystals");
-		NGHelper.setHardResist(this, 0.5F);
+		NovaHelper.setNameAndTexture(this, "spacecrystals");
+		NovaHelper.setHardResist(this, 0.5F);
 		this.setHarvestLevel("pickaxe", 4);
 	}
 	

@@ -7,6 +7,7 @@
 package galaxymod.biomes;
 
 import galaxymod.core.PlanetNova;
+import net.minecraft.block.Block;
 import net.minecraft.world.biome.BiomeGenBase;
 
 public class BiomeSpace extends BiomeGenBase {
@@ -18,10 +19,12 @@ public class BiomeSpace extends BiomeGenBase {
 	
 	public BiomeSpace(int par1) {
 		super(par1);
+		this.setColor(BiomeList.biomeColor);
 	}
 	
-	public void setPlanetForBiome(PlanetNova planet) {
+	public BiomeSpace setPlanetForBiome(PlanetNova planet) {
 		this.planetForBiome = planet;
+		return this;
 	}
 	
 	public PlanetNova getPlanetForBiome() {
@@ -36,19 +39,32 @@ public class BiomeSpace extends BiomeGenBase {
 		return (this.temperature <= 3F);
 	}
 	
-	public void setHeightBaseModifier(int bioHeight) {
+	public BiomeSpace setHeightBaseModifier(int bioHeight) {
 		this.biomeHeightBaseModifier = bioHeight;
+		return this;
 	}
 	
 	public int getHeightBaseModifier() {
 		return this.biomeHeightBaseModifier;
 	}
 	
-	public static void setChunkHeightModifier(int heightMod) {
+	public BiomeSpace setChunkHeightModifier(int heightMod) {
 		chunkHeightModifier = heightMod;
+		return this;
 	}
 	
 	public static int getChunkHeightModifier() {
 		return chunkHeightModifier;
+	}
+	
+	public BiomeSpace setBlocks(Block topBlock, Block fillerBlock) {
+		this.topBlock = topBlock;
+		this.fillerBlock = fillerBlock;
+		return this;
+	}
+	
+	public BiomeSpace setTemp(float biomeTemp) {
+		this.temperature = biomeTemp;
+		return this;
 	}
 }

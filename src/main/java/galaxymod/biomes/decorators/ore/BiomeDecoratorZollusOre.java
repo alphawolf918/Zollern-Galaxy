@@ -28,6 +28,7 @@ public class BiomeDecoratorZollusOre extends BiomeDecoratorNova {
 	private WorldGenerator tinGen;
 	private WorldGenerator ironGen;
 	private WorldGenerator goldGen;
+	private WorldGenerator heartGen;
 	
 	public BiomeDecoratorZollusOre() {
 		this.coalGen = new WorldGenMinableMeta(BlockList.zolCoalOre, 10, 0,
@@ -39,6 +40,8 @@ public class BiomeDecoratorZollusOre extends BiomeDecoratorNova {
 		this.goldGen = new WorldGenMinableMeta(BlockList.zolGoldOre, 5, 0,
 				false, BlockList.zolstone, 0);
 		this.tinGen = new WorldGenMinableMeta(BlockList.zolTinOre, 10, 0,
+				false, BlockList.zolstone, 0);
+		this.heartGen = new WorldGenMinableMeta(BlockList.zolHeartOre, 2, 0,
 				false, BlockList.zolstone, 0);
 	}
 	
@@ -76,6 +79,7 @@ public class BiomeDecoratorZollusOre extends BiomeDecoratorNova {
 		this.genOre(27, this.ironGen, 4, 60);
 		this.genOre(25, this.goldGen, 4, 50);
 		this.genOre(28, this.tinGen, 4, 60);
+		this.genOre(14, this.heartGen, 6, 11);
 		MinecraftForge.EVENT_BUS.post(new GCCoreEventPopulate.Post(
 				this.worldObj, this.randomGenerator, this.chunkX, this.chunkZ));
 	}

@@ -17,6 +17,7 @@ import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.gen.feature.WorldGenerator;
 
 public class WorldGenEdenLakes extends WorldGenerator {
+	
 	private Block field_150556_a;
 	private static final String __OBFID = "CL_00000418";
 	
@@ -145,7 +146,7 @@ public class WorldGenEdenLakes extends WorldGenerator {
 							} else {
 								p_76484_1_.setBlock(p_76484_3_ + i1, p_76484_4_
 										+ j1 - 1, p_76484_5_ + j2,
-										BlockList.edenGrass, 0, 2);
+										BlockList.edenMagmaRock, 0, 2);
 							}
 						}
 					}
@@ -204,7 +205,6 @@ public class WorldGenEdenLakes extends WorldGenerator {
 					}
 				}
 			}
-			
 			return true;
 		}
 	}

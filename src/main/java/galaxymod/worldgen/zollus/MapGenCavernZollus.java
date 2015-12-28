@@ -207,7 +207,7 @@ public class MapGenCavernZollus extends MapGenBaseMeta {
 											int coords = (var42 * 16 + var45)
 													* 256 + var50;
 											
-											if (arrayOfIDs[coords] == BlockList.zolarBlock) {
+											if (arrayOfIDs[coords] == BlockList.zolstone) {
 												arrayOfIDs[coords] = Blocks.air;
 											}
 										}
@@ -243,7 +243,7 @@ public class MapGenCavernZollus extends MapGenBaseMeta {
 													* 256 + var50 - 1;
 											
 											if (Blocks.air == arrayOfIDs[coords]) {
-												if (arrayOfIDs[coordsAbove] == BlockList.zolarBlock
+												if (arrayOfIDs[coordsAbove] == BlockList.zolstone
 														&& this.rand
 																.nextInt(200) == 0) {
 													int modifier = 0;
@@ -257,7 +257,7 @@ public class MapGenCavernZollus extends MapGenBaseMeta {
 																+ var50
 																- 1 + modifier;
 													}
-												} else if (arrayOfIDs[coordsBelow] == BlockList.zolarBlock
+												} else if (arrayOfIDs[coordsBelow] == BlockList.zolstone
 														&& this.rand
 																.nextInt(200) == 0) {
 													arrayOfIDs[coords] = BlockList.zolCobbleRock;

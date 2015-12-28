@@ -1,7 +1,6 @@
 package galaxymod.blocks.eden;
 
 import galaxymod.blocks.BlockNova;
-import galaxymod.lib.ModInfo;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.world.IBlockAccess;
@@ -10,12 +9,11 @@ import net.minecraftforge.common.IPlantable;
 import net.minecraftforge.common.util.ForgeDirection;
 
 public class EdenSurfaceRock extends BlockNova {
+	
 	public EdenSurfaceRock() {
 		super(Material.rock);
-		this.setBlockName(ModInfo.MODID + "_edensurfaceblock");
-		this.setResistance(3.8F);
-		this.setHardness(1.1F);
-		this.setBlockTextureName(ModInfo.MODID + ":edensurfaceblock");
+		this.setNameAndTexture("edensurfaceblock");
+		this.setHardResist(1.1F, 3.8F);
 	}
 	
 	@Override

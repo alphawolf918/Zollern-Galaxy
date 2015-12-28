@@ -1,14 +1,17 @@
 tile.galaxymod_solarblock.name=Zolrock
 tile.galaxymod_zolstone.name=Zolstone
 tile.galaxymod_zolcobblerock.name=Zolrock Cobblestone
-tile.galaxymod_spacecrystal.name=Zolnium Crystals
+tile.galaxymod_spacecrystals.name=Zolnium Crystals
 tile.galaxymod_zolcoalore.name=Zollus Coal Ore
 tile.galaxymod_zolironore.name=Zollus Iron Ore
 tile.galaxymod_zolgoldore.name=Zollus Gold Ore
 tile.galaxymod_zoltinore.name=Zollus Tin Ore
 tile.galaxymod_zolcopperore.name=Zollus Copper Ore
+tile.galaxymod_zolheartore.name=Zollus Heartium Ore
+tile.galaxymod_zoldirt.name=Zollus Dirt
 
 tile.galaxymod_edenzollusportal.name=Zollus Gate
+tile.galaxymod_zolluskriffonportal.name=Kriffon Gate
 
 tile.galaxymod_edensurfaceblock.name=Eden's Grassrock
 tile.galaxymod_edengrass.name=Eden's Grass
@@ -22,9 +25,11 @@ tile.galaxymod_edengoldore.name=Eden's Gold Ore
 tile.galaxymod_edendiamondore.name=Eden's Diamond Ore
 tile.galaxymod_edenemeraldore.name=Eden's Emerald Ore
 tile.galaxymod_edencoalore.name=Eden's Coal Ore
+tile.galaxymod_edenredstoneore.name=Eden's Redstone Ore
 tile.galaxymod_edencopperore.name=Eden's Copper Ore
 tile.galaxymod_edentinore.name=Eden's Tin Ore
 tile.galaxymod_edendeshore.name=Eden's Desh Ore
+tile.galaxymod_edenaluminumore.name=Eden's Aluminum Ore
 tile.galaxymod_edenviriore.name=Eden's Virinium Ore
 tile.galaxymod_viriblock.name=Eden's Virinium Block
 tile.galaxymod_edenflower_.name=Eden's Flower
@@ -47,7 +52,7 @@ tile.galaxymod_edentreeplanks.name=Edenwood Planks
 tile.galaxymod_edenwoodleaves.name=Edenwood Leaves
 tile.galaxymod_edenwoodsapling.name=Edenwood Sapling
 tile.galaxymod_fruitofedenblock.name=Fruit of Eden
-tile.galaxymod_magmarock.name=Eden's Magrock
+tile.galaxymod_magmarock.name=Magrock
 tile.galaxymod_edengravel.name=Eden's Gravel
 tile.galaxymod_edenwinterrock.name=Eden's Snow
 tile.galaxymod_brightstone.name=Eden's Britestone
@@ -55,10 +60,23 @@ tile.galaxymod_edentreasurechest.name=Eden's Treasure
 
 tile.galaxymod_kriffrock.name=Kriffrock
 tile.galaxymod_kriffstone.name=Kriffstone
+tile.galaxymod_kriffcoalore.name=Kriffon Coal Ore
+tile.galaxymod_kriffcopperore.name=Kriffon Copper Ore
+tile.galaxymod_kriffredstoneore.name=Kriffon Redstone Ore
+tile.galaxymod_kriffironore.name=Kriffon Iron Ore
+tile.galaxymod_kriffgoldore.name=Kriffon Gold Ore
+tile.galaxymod_kriffdirt.name=Kriffon Dirt
 
 container.eden.treasurechest.name=Eden's Treasure
 
 item.galaxymod_zolluscrystal.name=Zolnium Crystal
+item.galaxymod_heartofzol.name=Zollus Heartium
+item.galaxymod_compressedvirinium.name=Compressed Virinium
+item.galaxymod_compressedheartium.name=Compressed Heartium
+item.galaxymod_compressedvyrex.name=Compressed Vyrex
+item.galaxymod_zolluskriffontablet.name=Ancient Zollus Tablet
+
+item.galaxymod_aluminumdust.name=Pulverized Aluminum
 
 item.galaxymod_alienbeefraw.name=Raw Alien Beef
 item.galaxymod_alienbeefcooked.name=Cooked Alien Beef
@@ -83,8 +101,8 @@ entity.galaxymod_crawler.name=Crawler Boss
 
 planet.zollus=Zollus
 planet.eden=Eden
-planet.vestian=Vestian
-planet.kriffus=Kriffus
+planet.purgot=Purgot
+planet.kriffus=Kriffon
 
 planet.xathius=Xathius
 planet.xantheon=Xantheon
@@ -100,15 +118,25 @@ planet.prometheus=Prometheus
 planet.icarus=Icarus
 planet.kronos=Kronos
 
+planet.asgard=Asgard
+
+planet.meridian=Meridian
+
 star.psion6=Psios
 star.praedyth=Praedyth
 star.pantheon=Pantheon
 star.olympus=Olympus
+star.asgard=Asgard
+star.vega=Vega
+star.nova=Nova
 
 solarsystem.psion6=Psios
 solarsystem.praedyth=Praedyth
-solarsystem.pantheon=Pantheon
+solarsystem.pantheon=Hykaria
 solarsystem.olympus=Olympus
+solarsystem.asgard=Asgard
+solarsystem.vega=Vega
+solarsystem.Nova=Nova
 
 itemGroup.NovaGalacticBlocks=Project Nova Blocks
 itemGroup.NovaGalacticItems=Project Nova Items

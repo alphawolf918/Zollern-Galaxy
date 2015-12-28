@@ -1,7 +1,7 @@
 package galaxymod.items.food;
 
 import galaxymod.ProjectNovaCore;
-import galaxymod.lib.NGHelper;
+import galaxymod.lib.NovaHelper;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemFood;
 
@@ -20,8 +20,8 @@ public class CookedFood extends ItemFood {
 	}
 	
 	public void setDefaults(String strTexture) {
-		NGHelper.setTab(this);
-		NGHelper.setNameAndTexture(this, strTexture);
+		NovaHelper.setTab(this);
+		NovaHelper.setNameAndTexture(this, strTexture);
 		setMaxStackSize(64);
 	}
 	

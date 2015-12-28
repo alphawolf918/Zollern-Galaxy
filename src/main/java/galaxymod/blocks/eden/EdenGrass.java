@@ -25,8 +25,7 @@ public class EdenGrass extends BlockNova {
 	public EdenGrass() {
 		super(Material.grass);
 		this.setBlockName("galaxymod_edengrass");
-		this.setHardness(0.4F);
-		this.setResistance(0.4F);
+		this.setHardResist(0.4F);
 		this.setStepSound(soundTypeGrass);
 		this.setTickRandomly(true);
 	}
@@ -71,7 +70,7 @@ public class EdenGrass extends BlockNova {
 	@SideOnly(Side.CLIENT)
 	public int getBlockColor() {
 		double d0 = 0.5D;
-		double d1 = 1.0D;
+		double d1 = 0.1D;
 		return ColorizerGrass.getGrassColor(d0, d1);
 	}
 	
@@ -135,8 +134,7 @@ public class EdenGrass extends BlockNova {
 			ForgeDirection direction, IPlantable plantable) {
 		Block plant = plantable.getPlant(world, x, y + 1, z);
 		EnumPlantType plantType = plantable.getPlantType(world, x, y + 1, z);
-		if (plantType == EnumPlantType.Plains
-				|| plantType == EnumPlantType.Crop) {
+		if (plantType == EnumPlantType.Plains) {
 			return true;
 		}
 		return false;

@@ -8,7 +8,7 @@ package galaxymod.blocks.eden;
 
 import galaxymod.ProjectNovaCore;
 import galaxymod.blocks.BlockList;
-import galaxymod.lib.NGHelper;
+import galaxymod.lib.NovaHelper;
 import java.util.ArrayList;
 import java.util.Random;
 import net.minecraft.block.Block;
@@ -33,7 +33,7 @@ public class BlockEdenWoodLeaves extends BlockLeavesBase implements IShearable {
 	
 	public BlockEdenWoodLeaves() {
 		super(Material.leaves, false);
-		NGHelper.setNameAndTexture(this, "edenwoodleaves");
+		NovaHelper.setNameAndTexture(this, "edenwoodleaves");
 		this.setTickRandomly(true);
 		this.setHardness(0.2F);
 		this.setLightOpacity(1);

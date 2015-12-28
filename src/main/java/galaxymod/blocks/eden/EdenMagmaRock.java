@@ -7,7 +7,7 @@
 package galaxymod.blocks.eden;
 
 import galaxymod.blocks.BlockNova;
-import galaxymod.lib.NGHelper;
+import galaxymod.lib.NovaHelper;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.IBlockAccess;
@@ -17,9 +17,8 @@ import net.minecraftforge.common.util.ForgeDirection;
 public class EdenMagmaRock extends BlockNova {
 	public EdenMagmaRock() {
 		super(Material.rock);
-		NGHelper.setNameAndTexture(this, "magmarock");
-		this.setResistance(9.8F);
-		this.setHardness(1.8F);
+		NovaHelper.setNameAndTexture(this, "magmarock");
+		this.setHardResist(1.8F, 9.8F);
 		this.setLightOpacity(1);
 		this.setStepSound(soundTypeStone);
 	}

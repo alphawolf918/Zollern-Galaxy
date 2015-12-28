@@ -37,5 +37,17 @@
       "mob/crawler/say2",
       "mob/crawler/say3"
 	]
+  },
+  "dig.xeno": {
+	"category": "master",
+	"sounds": [
+      "dig/xeno"
+	]
+  },
+  "step.xeno": {
+	"category": "master",
+	"sounds": [
+      "step/xeno"
+	]
   }
 }

@@ -8,7 +8,7 @@ package galaxymod.blocks.eden;
 
 import galaxymod.ProjectNovaCore;
 import galaxymod.blocks.BlockList;
-import galaxymod.lib.NGHelper;
+import galaxymod.lib.NovaHelper;
 import galaxymod.worldgen.WorldGenTreeNG;
 import java.util.Random;
 import net.minecraft.block.BlockBush;
@@ -26,7 +26,7 @@ public class BlockEdenWoodSapling extends BlockBush implements IGrowable {
 	private static IIcon field_149881_b;
 	
 	public BlockEdenWoodSapling() {
-		NGHelper.setName(this, "edenwoodsapling");
+		NovaHelper.setName(this, "edenwoodsapling");
 		float f = 0.4F;
 		this.setBlockBounds(0.5F - f, 0.0F, 0.5F - f, 0.5F + f, f * 2.0F,
 				0.5F + f);

@@ -7,7 +7,8 @@
 package galaxymod.items;
 
 import galaxymod.ProjectNovaCore;
-import galaxymod.lib.NGHelper;
+import galaxymod.lib.NovaHelper;
+import galaxymod.lib.OreDictionaryNova;
 import micdoodle8.mods.galacticraft.core.proxy.ClientProxyCore;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.EnumRarity;
@@ -19,24 +20,28 @@ import cpw.mods.fml.relauncher.SideOnly;
 public class ItemNova extends Item {
 	
 	public ItemNova(String strTexture) {
-		NGHelper.setTab(this);
+		NovaHelper.setTab(this);
 		this.setNameAndTexture(strTexture);
 	}
 	
+	public static void registerItemOre(String strName, Item item) {
+		OreDictionaryNova.registerOre(strName, item);
+	}
+	
 	public void setName(String strName) {
-		NGHelper.setName(this, strName);
+		NovaHelper.setName(this, strName);
 	}
 	
 	public void setTexture(String strTexture) {
-		NGHelper.setTexture(this, strTexture);
+		NovaHelper.setTexture(this, strTexture);
 	}
 	
 	public void setNameAndTexture(String strTexture) {
-		NGHelper.setNameAndTexture(this, strTexture);
+		NovaHelper.setNameAndTexture(this, strTexture);
 	}
 	
 	public void setNameAndTexture(String strName, String strTexture) {
-		NGHelper.setNameAndTexture(this, strName, strTexture);
+		NovaHelper.setNameAndTexture(this, strName, strTexture);
 	}
 	
 	@Override
