@@ -10,16 +10,14 @@
  * - Claim it as your own
  *******************************************************************************/
 
-package galaxymod.dimensions.chunkmanagers;
+package galaxymod.core;
 
-import galaxymod.biomes.BiomeList;
-import micdoodle8.mods.galacticraft.api.prefab.world.gen.WorldChunkManagerSpace;
-import net.minecraft.world.biome.BiomeGenBase;
+import micdoodle8.mods.galacticraft.api.galaxies.SolarSystem;
 
-public class WorldChunkManagerKriffus extends WorldChunkManagerSpace {
+public class NovaSystem extends SolarSystem {
 	
-	@Override
-	public BiomeGenBase getBiome() {
-		return BiomeList.biomeKriffus;
+	public NovaSystem(String solarSystemName) {
+		super(solarSystemName, "milkyWay");
 	}
+	
 }

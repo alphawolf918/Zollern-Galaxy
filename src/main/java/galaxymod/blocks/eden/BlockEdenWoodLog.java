@@ -1,8 +1,14 @@
 /*******************************************************************************
- * Copyright 2015 Zollern Wolf - Project Nova / Nova Galactic Final Frontier
- * Galacticraft Add-On Mod You CAN: - Learn from it - Use it to get ideas and
- * concepts You CAN'T: - Redistribute it - Claim it as your own
- ******************************************************************************/
+ * Copyright 2015 Zollern Wolf
+ * - Project Nova / Nova Galactic Final Frontier
+ * Galacticraft Add-On Mod
+ * You CAN:
+ * - Learn from it
+ * - Use it to get ideas and concepts
+ * You CAN'T:
+ * - Redistribute it
+ * - Claim it as your own
+ *******************************************************************************/
 
 package galaxymod.blocks.eden;
 
@@ -31,7 +37,7 @@ public class BlockEdenWoodLog extends BlockRotatedPillar {
 	public BlockEdenWoodLog() {
 		super(Material.wood);
 		NovaHelper.setNameAndTexture(this, "edenwoodlog");
-		this.setHardness(2.0F);
+		NovaHelper.setHardResist(this, 2.0F);
 		this.setStepSound(soundTypeWood);
 	}
 	

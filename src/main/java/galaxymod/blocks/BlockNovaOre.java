@@ -1,8 +1,14 @@
 /*******************************************************************************
- * Copyright 2015 Zollern Wolf - Project Nova / Nova Galactic Final Frontier
- * Galacticraft Add-On Mod You CAN: - Learn from it - Use it to get ideas and
- * concepts You CAN'T: - Redistribute it - Claim it as your own
- ******************************************************************************/
+ * Copyright 2015 Zollern Wolf
+ * - Project Nova / Nova Galactic Final Frontier
+ * Galacticraft Add-On Mod
+ * You CAN:
+ * - Learn from it
+ * - Use it to get ideas and concepts
+ * You CAN'T:
+ * - Redistribute it
+ * - Claim it as your own
+ *******************************************************************************/
 
 package galaxymod.blocks;
 
@@ -28,6 +34,7 @@ public class BlockNovaOre extends BlockNova implements IDetectableResource {
 		this.setDefaults();
 	}
 	
+	@Override
 	public Block setDefaults() {
 		this.setHardResist(2.5F, 4.0F);
 		this.setHarvestLevel("pickaxe", 3);

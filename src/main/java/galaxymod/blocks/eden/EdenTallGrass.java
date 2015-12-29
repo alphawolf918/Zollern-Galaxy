@@ -1,6 +1,19 @@
+/*******************************************************************************
+ * Copyright 2015 Zollern Wolf
+ * - Project Nova / Nova Galactic Final Frontier
+ * Galacticraft Add-On Mod
+ * You CAN:
+ * - Learn from it
+ * - Use it to get ideas and concepts
+ * You CAN'T:
+ * - Redistribute it
+ * - Claim it as your own
+ *******************************************************************************/
+
 package galaxymod.blocks.eden;
 
 import galaxymod.blocks.BlockList;
+import galaxymod.lib.NovaHelper;
 import java.util.Random;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
@@ -19,10 +32,8 @@ public class EdenTallGrass extends EdenFlower {
 	
 	public EdenTallGrass() {
 		super("");
-		this.setBlockName("galaxymod_edentallgrass");
-		this.setBlockTextureName("galaxymod:edentallgrass");
-		setHardness(0.1F);
-		setResistance(0.1F);
+		NovaHelper.setNameAndTexture(this, "edentallgrass");
+		NovaHelper.setHardResist(this, 0.1F);
 		setStepSound(soundTypeGrass);
 	}
 	

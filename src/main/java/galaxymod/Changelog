@@ -7,9 +7,16 @@
         * Kriffon, a hot planet close to its sun, Psios, also unbreathable and without a tolerable temperature.
 * Added the Praedyth solar system, with a bright-red giant star.
     * No planets are currently in this system. May do a few like this just for show.
+* Added several new star systems:
+    * Pantheon
+    * Olympus
+    * Asgard
+    * Vega
+    * Nova
 * Aluminum ore can now be pulverized into dust that can then be cooked into aluminum ingots. FINALLY!
-* Registered all ores with the OreDictionary.
+* Registered all ores with the Ore Dictionary.
 * Added compressed metal items.
+* Did a little file cleanup.
 
 ====PSIOS.EDEN====
 * New ores for Eden:
@@ -128,3 +135,4 @@
 * Eden and Zollus planets now render in the sky.
 * Sun is close to the planet and is very huge with a glowing aura around it.
 * The days and nights here are super quick, and solar panels pick up a lot of energy.
+* 

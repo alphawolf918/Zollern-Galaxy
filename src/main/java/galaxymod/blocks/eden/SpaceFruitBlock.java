@@ -1,15 +1,20 @@
 /*******************************************************************************
- * Copyright 2015 Zollern Wolf - Project Nova / Nova Galactic Final Frontier
- * Galacticraft Add-On Mod You CAN: - Learn from it - Use it to get ideas and
- * concepts You CAN'T: - Redistribute it - Claim it as your own
- ******************************************************************************/
+ * Copyright 2015 Zollern Wolf
+ * - Project Nova / Nova Galactic Final Frontier
+ * Galacticraft Add-On Mod
+ * You CAN:
+ * - Learn from it
+ * - Use it to get ideas and concepts
+ * You CAN'T:
+ * - Redistribute it
+ * - Claim it as your own
+ *******************************************************************************/
 
 package galaxymod.blocks.eden;
 
 import galaxymod.blocks.BlockList;
 import galaxymod.blocks.BlockNova;
 import galaxymod.items.ItemList;
-import galaxymod.lib.NovaHelper;
 import java.util.Random;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -22,10 +27,10 @@ public class SpaceFruitBlock extends BlockNova {
 	
 	public SpaceFruitBlock() {
 		super(Material.gourd);
-		NovaHelper.setNameAndTexture(this, "fruitofedenblock");
+		this.setNameAndTexture("fruitofedenblock");
+		this.setHardResist(0.6F);
 		this.setBlockBounds(0.2F, 0.2F, 0.2F, 0.6F, 0.6F, 0.6F);
 		this.setTickRandomly(true);
-		this.setHardness(0.6F);
 		this.setStepSound(soundTypePiston);
 	}
 	

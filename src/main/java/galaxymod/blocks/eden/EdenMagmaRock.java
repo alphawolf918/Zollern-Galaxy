@@ -1,13 +1,18 @@
 /*******************************************************************************
- * Copyright 2015 Zollern Wolf - Project Nova / Nova Galactic Final Frontier
- * Galacticraft Add-On Mod You CAN: - Learn from it - Use it to get ideas and
- * concepts You CAN'T: - Redistribute it - Claim it as your own
- ******************************************************************************/
+ * Copyright 2015 Zollern Wolf
+ * - Project Nova / Nova Galactic Final Frontier
+ * Galacticraft Add-On Mod
+ * You CAN:
+ * - Learn from it
+ * - Use it to get ideas and concepts
+ * You CAN'T:
+ * - Redistribute it
+ * - Claim it as your own
+ *******************************************************************************/
 
 package galaxymod.blocks.eden;
 
 import galaxymod.blocks.BlockNova;
-import galaxymod.lib.NovaHelper;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.IBlockAccess;
@@ -17,7 +22,7 @@ import net.minecraftforge.common.util.ForgeDirection;
 public class EdenMagmaRock extends BlockNova {
 	public EdenMagmaRock() {
 		super(Material.rock);
-		NovaHelper.setNameAndTexture(this, "magmarock");
+		this.setNameAndTexture("magmarock");
 		this.setHardResist(1.8F, 9.8F);
 		this.setLightOpacity(1);
 		this.setStepSound(soundTypeStone);

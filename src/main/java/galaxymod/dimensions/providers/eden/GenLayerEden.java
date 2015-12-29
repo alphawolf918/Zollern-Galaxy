@@ -1,3 +1,15 @@
+/*******************************************************************************
+ * Copyright 2015 Zollern Wolf
+ * - Project Nova / Nova Galactic Final Frontier
+ * Galacticraft Add-On Mod
+ * You CAN:
+ * - Learn from it
+ * - Use it to get ideas and concepts
+ * You CAN'T:
+ * - Redistribute it
+ * - Claim it as your own
+ *******************************************************************************/
+
 package galaxymod.dimensions.providers.eden;
 
 import net.minecraft.world.gen.layer.GenLayer;
@@ -9,7 +21,7 @@ public abstract class GenLayerEden extends GenLayer {
 	public GenLayerEden(long seed) {
 		super(seed);
 	}
-
+	
 	public static GenLayer[] makeTheWorld(long seed) {
 		GenLayer biomes = new GenLayerEdenBiomes(1L);
 		biomes = new GenLayerZoom(1000L, biomes);
@@ -24,7 +36,7 @@ public abstract class GenLayerEden extends GenLayer {
 		genlayervoronoizoom.initWorldGenSeed(seed);
 		return new GenLayer[] { biomes, genlayervoronoizoom, genlayerriver };
 	}
-
+	
 	@Override
 	public int[] getInts(int x, int z, int width, int depth) {
 		return null;

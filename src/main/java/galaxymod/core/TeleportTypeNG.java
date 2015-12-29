@@ -1,7 +1,18 @@
+/*******************************************************************************
+ * Copyright 2015 Zollern Wolf
+ * - Project Nova / Nova Galactic Final Frontier
+ * Galacticraft Add-On Mod
+ * You CAN:
+ * - Learn from it
+ * - Use it to get ideas and concepts
+ * You CAN'T:
+ * - Redistribute it
+ * - Claim it as your own
+ *******************************************************************************/
+
 package galaxymod.core;
 
 import java.util.Random;
-
 import micdoodle8.mods.galacticraft.api.vector.Vector3;
 import micdoodle8.mods.galacticraft.api.world.ITeleportType;
 import micdoodle8.mods.galacticraft.core.entities.player.GCPlayerStats;
@@ -16,7 +27,7 @@ public class TeleportTypeNG implements ITeleportType {
 	public boolean useParachute() {
 		return true;
 	}
-
+	
 	@Override
 	public Vector3 getPlayerSpawnLocation(WorldServer world,
 			EntityPlayerMP player) {
@@ -27,12 +38,12 @@ public class TeleportTypeNG implements ITeleportType {
 		}
 		return null;
 	}
-
+	
 	@Override
 	public Vector3 getEntitySpawnLocation(WorldServer world, Entity entity) {
 		return new Vector3(entity.posX, 250.0, entity.posZ);
 	}
-
+	
 	@Override
 	public Vector3 getParaChestSpawnLocation(WorldServer world,
 			EntityPlayerMP player, Random rand) {
@@ -40,7 +51,7 @@ public class TeleportTypeNG implements ITeleportType {
 		double z = (rand.nextDouble() * 2 - 1.0D) * 5.0D;
 		return new Vector3(player.posX + x, 230.0D, player.posZ + z);
 	}
-
+	
 	@Override
 	public void onSpaceDimensionChanged(World newWorld, EntityPlayerMP player,
 			boolean ridingAutoRocket) {

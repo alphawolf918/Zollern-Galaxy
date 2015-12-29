@@ -1,8 +1,14 @@
 /*******************************************************************************
- * Copyright 2015 Zollern Wolf - Project Nova / Nova Galactic Final Frontier
- * Galacticraft Add-On Mod You CAN: - Learn from it - Use it to get ideas and
- * concepts You CAN'T: - Redistribute it - Claim it as your own
- ******************************************************************************/
+ * Copyright 2015 Zollern Wolf
+ * - Project Nova / Nova Galactic Final Frontier
+ * Galacticraft Add-On Mod
+ * You CAN:
+ * - Learn from it
+ * - Use it to get ideas and concepts
+ * You CAN'T:
+ * - Redistribute it
+ * - Claim it as your own
+ *******************************************************************************/
 
 package galaxymod.gui;
 
@@ -11,8 +17,6 @@ import galaxymod.core.EnumPlanetClass;
 import galaxymod.core.PlanetNova;
 import galaxymod.items.ItemList;
 import galaxymod.lib.NovaHelper;
-import java.util.ArrayList;
-import micdoodle8.mods.galacticraft.api.world.IAtmosphericGas;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.Gui;
@@ -104,7 +108,7 @@ public class GuiHud extends Gui {
 					
 					// Gasses
 					String strGasses = "Gasses: ";
-					ArrayList<IAtmosphericGas> gasses = planet.getGasses();
+					String gasses = planet.getGasses();
 					fontRendererObj.drawString(strGasses, 2, 66, i3);
 					fontRendererObj.drawString(strGasses, 26, yPos - 64, i3);
 					String actualGasses = gasses.toString();

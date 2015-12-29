@@ -1,7 +1,14 @@
 /*******************************************************************************
- * Copyright 2015 Zollern Wolf - Project Nova / Nova Galactic Galacticraft
- * Add-On Mod
- ******************************************************************************/
+ * Copyright 2015 Zollern Wolf
+ * - Project Nova / Nova Galactic Final Frontier
+ * Galacticraft Add-On Mod
+ * You CAN:
+ * - Learn from it
+ * - Use it to get ideas and concepts
+ * You CAN'T:
+ * - Redistribute it
+ * - Claim it as your own
+ *******************************************************************************/
 
 package galaxymod.core;
 
@@ -26,18 +33,13 @@ public class NGPlanets {
 	static int totalPlanets = 0;
 	static int totalMoons = 0;
 	
-	public static SolarSystem systemPsios = new SolarSystem("psion6",
-			"milkyWay");
-	public static SolarSystem systemPraedyth = new SolarSystem("praedyth",
-			"milkyWay");
-	public static SolarSystem systemPantheon = new SolarSystem("pantheon",
-			"milkyWay");
-	public static SolarSystem systemOlympus = new SolarSystem("olympus",
-			"milkyWay");
-	public static SolarSystem systemAsgard = new SolarSystem("asgard",
-			"milkyWay");
-	public static SolarSystem systemVega = new SolarSystem("vega", "milkyWay");
-	public static SolarSystem systemNova = new SolarSystem("nova", "milkyWay");
+	public static SolarSystem systemPsios = new NovaSystem("psion6");
+	public static SolarSystem systemPraedyth = new NovaSystem("praedyth");
+	public static SolarSystem systemPantheon = new NovaSystem("pantheon");
+	public static SolarSystem systemOlympus = new NovaSystem("olympus");
+	public static SolarSystem systemAsgard = new NovaSystem("asgard");
+	public static SolarSystem systemVega = new NovaSystem("vega");
+	public static SolarSystem systemNova = new NovaSystem("nova");
 	
 	public static Star starPsios = new Star("psion6");
 	public static Star starPraedyth = new Star("praedyth");
@@ -58,7 +60,7 @@ public class NGPlanets {
 	public static PlanetNova planetXantheon;
 	public static PlanetNova planetAtheon;
 	
-	// Pantheon / Hykaria System
+	// Pantheon System
 	public static PlanetNova planetMeztli;
 	public static PlanetNova planetCentotl;
 	public static PlanetNova planetToci;
@@ -75,6 +77,9 @@ public class NGPlanets {
 	
 	// Vega System
 	public static PlanetNova planetMeridian;
+	
+	// Nova System
+	public static PlanetNova planetPrimor;
 	
 	public static void init() {
 		NovaEventHandler.init();

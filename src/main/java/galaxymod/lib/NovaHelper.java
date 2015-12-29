@@ -1,3 +1,15 @@
+/*******************************************************************************
+ * Copyright 2015 Zollern Wolf
+ * - Project Nova / Nova Galactic Final Frontier
+ * Galacticraft Add-On Mod
+ * You CAN:
+ * - Learn from it
+ * - Use it to get ideas and concepts
+ * You CAN'T:
+ * - Redistribute it
+ * - Claim it as your own
+ *******************************************************************************/
+
 package galaxymod.lib;
 
 import galaxymod.ProjectNovaCore;
@@ -56,6 +68,11 @@ public class NovaHelper {
 			float par2HardResist) {
 		par1Block.setHardness(par2HardResist);
 		par1Block.setResistance(par2HardResist);
+	}
+	
+	public static void setHardResist(Block block, float blockHardness,
+			float blockResistance) {
+		setHardnessAndResistance(block, blockHardness, blockResistance);
 	}
 	
 	public static void setTexture(Item item, String strTexture) {

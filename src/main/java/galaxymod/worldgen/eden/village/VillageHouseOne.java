@@ -1,7 +1,18 @@
+/*******************************************************************************
+ * Copyright 2015 Zollern Wolf
+ * - Project Nova / Nova Galactic Final Frontier
+ * Galacticraft Add-On Mod
+ * You CAN:
+ * - Learn from it
+ * - Use it to get ideas and concepts
+ * You CAN'T:
+ * - Redistribute it
+ * - Claim it as your own
+ *******************************************************************************/
+
 package galaxymod.worldgen.eden.village;
 
 import galaxymod.blocks.BlockList;
-import galaxymod.lib.NovaHelper;
 import galaxymod.worldgen.NGWorldGenStructureCore;
 import java.util.Random;
 import net.minecraft.init.Blocks;
@@ -16,10 +27,10 @@ public class VillageHouseOne extends NGWorldGenStructureCore {
 	@Override
 	public boolean generate(World world, Random rand, int i, int j, int k) {
 		super.generate(world, rand, i, j, k);
-		NovaHelper.echo("Attempting to spawn village house one..");
+		// NovaHelper.echo("Attempting to spawn village house one..");
 		
 		if (!LocationIsValidSpawn(world, i, j, k)) {
-			NovaHelper.echo("Failed");
+			// NovaHelper.echo("Failed");
 			return false;
 		}
 		
@@ -598,8 +609,8 @@ public class VillageHouseOne extends NGWorldGenStructureCore {
 		world.setBlock(i + 15, j + 0, k + 22, currentBiome.topBlock);
 		world.setBlock(i + 15, j + 0, k + 23, currentBiome.topBlock);
 		world.setBlock(i + 15, j + 0, k + 24, currentBiome.topBlock);
-		NovaHelper.echo("Success! At: " + i + " " + j + " " + k);
-		NovaHelper.echo("Preparing to spawn next house...");
+		// NovaHelper.echo("Success! At: " + i + " " + j + " " + k);
+		// NovaHelper.echo("Preparing to spawn next house...");
 		(new VillageHouseTwo()).generate(world, rand, i, j, k);
 		return true;
 	}

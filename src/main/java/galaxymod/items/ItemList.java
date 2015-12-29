@@ -1,11 +1,22 @@
+/*******************************************************************************
+ * Copyright 2015 Zollern Wolf
+ * - Project Nova / Nova Galactic Final Frontier
+ * Galacticraft Add-On Mod
+ * You CAN:
+ * - Learn from it
+ * - Use it to get ideas and concepts
+ * You CAN'T:
+ * - Redistribute it
+ * - Claim it as your own
+ *******************************************************************************/
+
 package galaxymod.items;
 
-import galaxymod.items.eden.ItemAncientEdenTablet;
+import galaxymod.blocks.BlockList;
 import galaxymod.items.eden.ItemEdenDungeonKey;
 import galaxymod.items.food.CookedFood;
 import galaxymod.items.food.ItemFruit;
 import galaxymod.items.food.RawFood;
-import galaxymod.items.zollus.ItemAncientZollusTablet;
 import galaxymod.lib.NovaHelper;
 import galaxymod.lib.RegisterHelper;
 import net.minecraft.item.Item;
@@ -28,7 +39,8 @@ public class ItemList {
 	public static final ItemNova ingotViri = new ItemNova("ingotviri");
 	public static final ItemNova ancientEssenceEden = new ItemNova("alienstone");
 	public static final ItemNova edenCrystal = new ItemNova("edencrystal");
-	public static final ItemNova edenZollusTablet = new ItemAncientEdenTablet();
+	public static final ItemNova edenZollusTablet = new ItemTablet(
+			"edenzollustablet", BlockList.edenZollusPortal);
 	public static final ItemNova edenCompressedVirinium = new ItemNova(
 			"compressedvirinium");
 	
@@ -38,7 +50,8 @@ public class ItemList {
 			"compressedheartium");
 	public static final ItemNova zollusCompressedVyrex = new ItemNova(
 			"compressedvyrex");
-	public static final ItemNova zollusKriffonTablet = new ItemAncientZollusTablet();
+	public static final ItemNova zollusKriffonTablet = new ItemTablet(
+			"zolluskriffontablet", BlockList.zollusKriffonPortal);
 	
 	public static final ItemNova aluminumDust = new ItemNova("aluminumdust");
 	

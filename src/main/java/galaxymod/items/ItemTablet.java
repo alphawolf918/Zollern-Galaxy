@@ -1,13 +1,18 @@
 /*******************************************************************************
- * Copyright 2015 Zollern Wolf - Project Nova / Nova Galactic Final Frontier
- * Galacticraft Add-On Mod You CAN: - Learn from it - Use it to get ideas and
- * concepts You CAN'T: - Redistribute it - Claim it as your own
- ******************************************************************************/
+ * Copyright 2015 Zollern Wolf
+ * - Project Nova / Nova Galactic Final Frontier
+ * Galacticraft Add-On Mod
+ * You CAN:
+ * - Learn from it
+ * - Use it to get ideas and concepts
+ * You CAN'T:
+ * - Redistribute it
+ * - Claim it as your own
+ *******************************************************************************/
 
-package galaxymod.items.eden;
+package galaxymod.items;
 
-import galaxymod.blocks.BlockList;
-import galaxymod.items.ItemNova;
+import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemStack;
@@ -16,10 +21,13 @@ import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
 
-public class ItemAncientEdenTablet extends ItemNova {
+public class ItemTablet extends ItemNova {
 	
-	public ItemAncientEdenTablet() {
-		super("edenzollustablet");
+	private Block portalBlock = null;
+	
+	public ItemTablet(String strName, Block portalBlock) {
+		super(strName);
+		this.portalBlock = portalBlock;
 		this.setMaxDamage(4);
 	}
 	
@@ -62,9 +70,11 @@ public class ItemAncientEdenTablet extends ItemNova {
 		int par6 = movingobjectposition.blockZ;
 		
 		if (!world.isRemote) {
-			world.setBlock(par4, par5, par6, BlockList.edenZollusPortal);
-			if (!entityplayer.capabilities.isCreativeMode) {
-				itemstack.damageItem(1, entityplayer);
+			if (this.portalBlock != null) {
+				world.setBlock(par4, par5, par6, this.portalBlock);
+				if (!entityplayer.capabilities.isCreativeMode) {
+					itemstack.damageItem(1, entityplayer);
+				}
 			}
 		}
 		return itemstack;

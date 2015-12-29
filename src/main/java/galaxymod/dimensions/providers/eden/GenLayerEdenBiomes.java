@@ -1,9 +1,14 @@
 /*******************************************************************************
- * Copyright 2015 SteveKunG - More Planets Mod This work is licensed under a
- * Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International
- * Public License. To view a copy of this license, visit
- * http://creativecommons.org/licenses/by-nc-nd/4.0/.
- ******************************************************************************/
+ * Copyright 2015 Zollern Wolf
+ * - Project Nova / Nova Galactic Final Frontier
+ * Galacticraft Add-On Mod
+ * You CAN:
+ * - Learn from it
+ * - Use it to get ideas and concepts
+ * You CAN'T:
+ * - Redistribute it
+ * - Claim it as your own
+ *******************************************************************************/
 
 package galaxymod.dimensions.providers.eden;
 
@@ -13,6 +18,7 @@ import net.minecraft.world.gen.layer.GenLayer;
 import net.minecraft.world.gen.layer.IntCache;
 
 public class GenLayerEdenBiomes extends GenLayer {
+	
 	protected BiomeGenBase[] commonBiomes = { BiomeList.biomeEden,
 			BiomeList.biomeEdenRockMountains, BiomeList.biomeEdenTerranValley,
 			BiomeList.biomeEdenBloodDesert, BiomeList.biomeEdenGarden,
