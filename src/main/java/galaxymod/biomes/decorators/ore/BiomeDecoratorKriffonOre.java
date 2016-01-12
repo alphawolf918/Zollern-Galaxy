@@ -12,7 +12,6 @@
 
 package galaxymod.biomes.decorators.ore;
 
-import galaxymod.biomes.decorators.BiomeDecoratorNova;
 import galaxymod.blocks.BlockList;
 import java.util.Random;
 import micdoodle8.mods.galacticraft.api.event.wgen.GCCoreEventPopulate;
@@ -34,6 +33,7 @@ public class BiomeDecoratorKriffonOre extends BiomeDecoratorNova {
 	private WorldGenerator redstoneGen;
 	private WorldGenerator ironGen;
 	private WorldGenerator goldGen;
+	private WorldGenerator cobaltGen;
 	
 	public BiomeDecoratorKriffonOre() {
 		this.coalGen = new WorldGenMinableMeta(BlockList.kriffCoalOre, 10, 0,
@@ -46,6 +46,8 @@ public class BiomeDecoratorKriffonOre extends BiomeDecoratorNova {
 				false, BlockList.kriffStone, 0);
 		this.goldGen = new WorldGenMinableMeta(BlockList.kriffGoldOre, 5, 0,
 				false, BlockList.kriffStone, 0);
+		this.cobaltGen = new WorldGenMinableMeta(BlockList.kriffCobaltOre, 5,
+				0, false, BlockList.kriffStone, 0);
 	}
 	
 	@Override
@@ -57,7 +59,7 @@ public class BiomeDecoratorKriffonOre extends BiomeDecoratorNova {
 			this.randomGenerator = rand;
 			this.chunkX = chunkX;
 			this.chunkZ = chunkZ;
-			this.generateEden();
+			this.generateKriffon();
 			this.worldObj = null;
 			this.randomGenerator = null;
 		}
@@ -74,14 +76,15 @@ public class BiomeDecoratorKriffonOre extends BiomeDecoratorNova {
 		}
 	}
 	
-	void generateEden() {
+	void generateKriffon() {
 		MinecraftForge.EVENT_BUS.post(new GCCoreEventPopulate.Pre(
 				this.worldObj, this.randomGenerator, this.chunkX, this.chunkZ));
-		this.genOre(30, this.coalGen, 4, 70);
-		this.genOre(28, this.copperGen, 4, 70);
-		this.genOre(20, this.redstoneGen, 2, 50);
-		this.genOre(27, this.ironGen, 4, 60);
-		this.genOre(25, this.goldGen, 4, 50);
+		this.genOre(20, this.coalGen, 4, 70);
+		this.genOre(16, this.copperGen, 4, 70);
+		this.genOre(11, this.redstoneGen, 2, 50);
+		this.genOre(14, this.ironGen, 4, 60);
+		this.genOre(12, this.goldGen, 4, 50);
+		this.genOre(8, this.cobaltGen, 2, 35);
 		MinecraftForge.EVENT_BUS.post(new GCCoreEventPopulate.Post(
 				this.worldObj, this.randomGenerator, this.chunkX, this.chunkZ));
 	}

@@ -17,16 +17,19 @@ import galaxymod.biomes.BiomeList;
 import galaxymod.blocks.BlockList;
 import galaxymod.commands.CommandList;
 import galaxymod.core.NGPlanets;
+import galaxymod.core.config.ConfigManagerNova;
 import galaxymod.creativetabs.ProjectNovaTab;
 import galaxymod.gui.GuiHandlerNG;
 import galaxymod.integration.TreeCapitatorIntegrationNova;
 import galaxymod.items.ItemList;
-import galaxymod.lib.ModInfo;
-import galaxymod.lib.OreDictionaryNova;
-import galaxymod.lib.RecipeManagerNova;
 import galaxymod.mobs.Mobs;
 import galaxymod.proxies.CommonProxy;
 import galaxymod.tileentities.TileEntityListNG;
+import galaxymod.utils.FurnaceFuelHandlerNova;
+import galaxymod.utils.ModInfo;
+import galaxymod.utils.NovaHelper;
+import galaxymod.utils.OreDictionaryNova;
+import galaxymod.utils.RecipeManagerNova;
 import galaxymod.worldgen.NGWorldGenManager;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
@@ -63,14 +66,18 @@ public class ProjectNovaCore {
 	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
+		NovaHelper.echo("Beginning pre-initiliazation loading phase...");
+		ConfigManagerNova.init(event);
 		BlockList.init();
 		ItemList.init();
 		Mobs.init();
 		TreeCapitatorIntegrationNova.init();
+		NovaHelper.echo("Pre-initiliazation phase has completed.");
 	}
 	
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
+		NovaHelper.echo("Beginning initialization loading phase...");
 		proxy.initRenderers();
 		NGPlanets.init();
 		novaTabBlocks = new ProjectNovaTab("NovaGalacticBlocks", new ItemStack(
@@ -81,18 +88,24 @@ public class ProjectNovaCore {
 		RecipeManagerNova.init();
 		GameRegistry.registerWorldGenerator(new NGWorldGenManager(), 30);
 		OreDictionaryNova.init();
+		NovaHelper.echo("Initialization phase has completed.");
 	}
 	
 	@EventHandler
 	public void postInit(FMLPostInitializationEvent event) {
+		NovaHelper.echo("Beginning post-initialization loading phase...");
 		proxy.postInit(event);
 		TileEntityListNG.init();
 		proxy.initGUI();
+		GameRegistry.registerFuelHandler(new FurnaceFuelHandlerNova());
 		NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandlerNG());
+		NovaHelper.echo("Post-initialization phase has completed.");
 	}
 	
 	@EventHandler
 	public void serverPreInit(FMLServerStartingEvent event) {
+		NovaHelper.echo("Beginning server starting event...");
 		CommandList.init(event);
+		NovaHelper.echo("Server starting event has finished.");
 	}
 }

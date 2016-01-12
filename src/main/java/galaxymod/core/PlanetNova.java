@@ -12,7 +12,7 @@
 
 package galaxymod.core;
 
-import galaxymod.lib.NovaHelper;
+import galaxymod.utils.NovaHelper;
 import java.util.ArrayList;
 import micdoodle8.mods.galacticraft.api.galaxies.Planet;
 import micdoodle8.mods.galacticraft.api.galaxies.Star;
@@ -52,8 +52,8 @@ public class PlanetNova extends Planet {
 		for (IAtmosphericGas planetGas : planetAtmosphere) {
 			ch++;
 			gasList += NovaHelper.capitalizeFirstLetter(planetGas.toString()
-					.substring(0, 1).toLowerCase());
-			if (ch <= planetAtmosphere.size()) {
+					.substring(0, 3).toLowerCase());
+			if (ch < planetAtmosphere.size()) {
 				gasList += ", ";
 			}
 		}

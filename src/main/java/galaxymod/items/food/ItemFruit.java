@@ -13,7 +13,7 @@
 package galaxymod.items.food;
 
 import galaxymod.ProjectNovaCore;
-import galaxymod.lib.NovaHelper;
+import galaxymod.utils.NovaHelper;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemFood;
 

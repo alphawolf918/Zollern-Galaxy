@@ -14,8 +14,8 @@ package galaxymod.blocks.eden;
 
 import galaxymod.ProjectNovaCore;
 import galaxymod.blocks.BlockContainerNG;
-import galaxymod.lib.NovaHelper;
 import galaxymod.tileentities.eden.TileEntityTreasureChestEden;
+import galaxymod.utils.NovaHelper;
 import java.util.Random;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;

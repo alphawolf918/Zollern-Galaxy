@@ -13,7 +13,7 @@
 package galaxymod.integration;
 
 import galaxymod.blocks.BlockList;
-import galaxymod.lib.ModInfo;
+import galaxymod.utils.ModInfo;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.nbt.NBTTagCompound;

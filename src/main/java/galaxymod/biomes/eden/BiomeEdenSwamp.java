@@ -19,18 +19,18 @@ public class BiomeEdenSwamp extends BiomeGenEdenBase {
 	public BiomeEdenSwamp(int par1) {
 		super(par1);
 		this.setBiomeName("Swamplands");
-		this.setHeightBaseModifier(225);
+		this.setHeightBaseModifier(228);
 		this.waterColorMultiplier = 0x004422;
 		this.grassFoilageColorMultiplier = 0x00aa00;
 		this.temperature = 6.5F;
-		this.rootHeight = -1F;
-		this.heightVariation = 0F;
+		this.rootHeight = 1F;
+		this.heightVariation = 1F;
 		this.biomeDecor.edenFlowersPerChunk = 4;
 		this.biomeDecor.edenTallGrassPerChunk = 2;
 		this.biomeDecor.edenWoodTreesPerChunk = 25;
 		this.biomeDecor.edenSandPerChunk = 10;
 		this.biomeDecor.edenLakesPerChunk = 4;
-		this.biomeDecor.edenWaterLillyPerChunk = 8;
+		this.biomeDecor.edenWaterLillyPerChunk = 800;
 		this.theBiomeDecorator.deadBushPerChunk = 1;
 		this.theBiomeDecorator.mushroomsPerChunk = 8;
 		this.topBlock = BlockList.edenGrass;

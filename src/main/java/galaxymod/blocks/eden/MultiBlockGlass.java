@@ -13,9 +13,9 @@
 package galaxymod.blocks.eden;
 
 import galaxymod.blocks.BlockNova;
-import galaxymod.lib.ModInfo;
-import galaxymod.lib.NovaHelper;
-import galaxymod.lib.StaticUtils;
+import galaxymod.utils.ModInfo;
+import galaxymod.utils.NovaHelper;
+import galaxymod.utils.StaticUtils;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;

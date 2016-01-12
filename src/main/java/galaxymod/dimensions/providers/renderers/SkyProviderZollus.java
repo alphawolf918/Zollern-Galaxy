@@ -13,7 +13,7 @@
 package galaxymod.dimensions.providers.renderers;
 
 import galaxymod.dimensions.providers.zollus.WorldProviderZollus;
-import galaxymod.lib.ModInfo;
+import galaxymod.utils.ModInfo;
 import java.util.Random;
 import micdoodle8.mods.galacticraft.api.world.IGalacticraftWorldProvider;
 import micdoodle8.mods.galacticraft.core.util.ConfigManagerCore;

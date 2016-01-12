@@ -13,7 +13,7 @@
 package galaxymod.biomes.eden;
 
 import galaxymod.blocks.BlockList;
-import galaxymod.lib.NovaHelper;
+import galaxymod.utils.NovaHelper;
 import java.util.Random;
 import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;

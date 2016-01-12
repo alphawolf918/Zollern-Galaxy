@@ -19,12 +19,14 @@ import galaxymod.biomes.BiomeList;
 import galaxymod.biomes.decorators.ore.BiomeDecoratorEdenOre;
 import galaxymod.biomes.eden.BiomeGenEdenBase;
 import galaxymod.blocks.BlockList;
-import galaxymod.mobs.entities.EntityAlienSquid;
+import galaxymod.core.config.ConfigManagerNova;
+import galaxymod.mobs.entities.eden.EntityAlienSquid;
 import galaxymod.worldgen.dungeon.RoomEmptyNG;
 import galaxymod.worldgen.eden.MapGenCavernEden;
 import galaxymod.worldgen.eden.MapGenCavesEden;
 import galaxymod.worldgen.eden.MapGenEdenRavine;
 import galaxymod.worldgen.eden.WorldGenEdenDungeons;
+import galaxymod.worldgen.eden.WorldGenEdenLakes;
 import galaxymod.worldgen.eden.dungeons.RoomBossEden;
 import galaxymod.worldgen.eden.dungeons.RoomChestsEden;
 import galaxymod.worldgen.eden.dungeons.RoomSpawnerEden;
@@ -45,6 +47,10 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockFalling;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.entity.monster.EntityBlaze;
+import net.minecraft.entity.passive.EntityChicken;
+import net.minecraft.entity.passive.EntityCow;
+import net.minecraft.entity.passive.EntityPig;
+import net.minecraft.entity.passive.EntitySheep;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.IProgressUpdate;
 import net.minecraft.util.MathHelper;
@@ -56,7 +62,6 @@ import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.NoiseGeneratorOctaves;
 import net.minecraft.world.gen.NoiseGeneratorPerlin;
-import net.minecraft.world.gen.feature.WorldGenLakes;
 import net.minecraft.world.gen.structure.MapGenMineshaft;
 import net.minecraft.world.gen.structure.MapGenScatteredFeature;
 import net.minecraftforge.common.MinecraftForge;
@@ -245,23 +250,30 @@ public class ChunkProviderEden extends ChunkProviderSpace {
 				.getBiomeGenForCoords(x, z);
 		if (type == EnumCreatureType.monster) {
 			List monsters = new ArrayList();
-			monsters.add(new SpawnListEntry(EntityEvolvedZombie.class, 4, 2, 2));
-			monsters.add(new SpawnListEntry(EntityEvolvedSpider.class, 4, 2, 2));
-			monsters.add(new SpawnListEntry(EntityEvolvedSkeleton.class, 4, 2,
-					3));
-			monsters.add(new SpawnListEntry(EntityEvolvedCreeper.class, 4, 2, 2));
+			monsters.add(new SpawnListEntry(EntityEvolvedZombie.class, 1, 0, 1));
+			monsters.add(new SpawnListEntry(EntityEvolvedSpider.class, 1, 0, 1));
+			monsters.add(new SpawnListEntry(EntityEvolvedSkeleton.class, 1, 0,
+					1));
+			monsters.add(new SpawnListEntry(EntityEvolvedCreeper.class, 1, 0, 1));
 			if (currentBiome == BiomeList.biomeEdenMagmaLands) {
-				monsters.add(new SpawnListEntry(EntityBlaze.class, 4, 2, 2));
+				monsters.add(new SpawnListEntry(EntityBlaze.class, 1, 0, 1));
 			}
 			return monsters;
 		} else if (type == EnumCreatureType.creature) {
 			List creatures = new ArrayList();
+			if (ConfigManagerNova.canEarthAnimalsSpawnOnEden
+					&& !currentBiome.getIsHotBiome()) {
+				creatures.add(new SpawnListEntry(EntityCow.class, 1, 0, 1));
+				creatures.add(new SpawnListEntry(EntityPig.class, 1, 0, 1));
+				creatures.add(new SpawnListEntry(EntityChicken.class, 1, 0, 1));
+				creatures.add(new SpawnListEntry(EntitySheep.class, 1, 0, 1));
+			}
 			return creatures;
 		} else if (type == EnumCreatureType.waterCreature) {
 			List waterCreatures = new ArrayList();
 			if (!currentBiome.getIsColdBiome() && !currentBiome.getIsHotBiome()) {
 				waterCreatures.add(new SpawnListEntry(EntityAlienSquid.class,
-						1, 1, 1));
+						1, 0, 1));
 			}
 			return waterCreatures;
 		} else {
@@ -308,8 +320,8 @@ public class ChunkProviderEden extends ChunkProviderSpace {
 			k1 = var4 + this.rand.nextInt(16) + 8;
 			l1 = this.rand.nextInt(256);
 			i2 = var5 + this.rand.nextInt(16) + 8;
-			new WorldGenLakes(Blocks.water).generate(this.worldObj, this.rand,
-					k1, l1, i2);
+			new WorldGenEdenLakes(Blocks.water).generate(this.worldObj,
+					this.rand, k1, l1, i2);
 		}
 		
 		boolean doGen;
@@ -349,7 +361,7 @@ public class ChunkProviderEden extends ChunkProviderSpace {
 	
 	@Override
 	public int getCraterProbability() {
-		return 2200;
+		return 1200;
 	}
 	
 	@Override
@@ -537,7 +549,7 @@ public class ChunkProviderEden extends ChunkProviderSpace {
 						float heightVariation = biomegenbase1.heightVariation;
 						float heightFactor = this.parabolicField[ox + 2
 								+ (oz + 2) * 5]
-								/ (rootHeight + 2.0F);
+								/ (rootHeight + 1.5F);
 						
 						if (biomegenbase1.rootHeight > biomegenbase.rootHeight) {
 							heightFactor /= 2.2F;

@@ -164,7 +164,7 @@ public class BiomeGenZollusBase extends BiomeSpace {
 									&& fillerBlock == BlockList.zolDirt) {
 								currentFillerDepth = rand.nextInt(4)
 										+ Math.max(0, y - (seaLevel - 1));
-								fillerBlock = BlockList.zolCobbleRock;
+								fillerBlock = BlockList.zolstone;
 								fillerMeta = 0;
 							}
 						}

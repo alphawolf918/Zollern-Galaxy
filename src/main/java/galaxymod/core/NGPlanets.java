@@ -12,15 +12,18 @@
 
 package galaxymod.core;
 
+import galaxymod.core.config.ConfigManagerNova;
 import galaxymod.dimensions.providers.eden.WorldProviderEden;
-import galaxymod.dimensions.providers.kriffus.WorldProviderKriffus;
+import galaxymod.dimensions.providers.kriffon.WorldProviderKriffon;
+import galaxymod.dimensions.providers.purgot.WorldProviderPurgot;
 import galaxymod.dimensions.providers.zollus.WorldProviderZollus;
 import galaxymod.events.NovaEventHandler;
-import galaxymod.lib.ModInfo;
-import galaxymod.lib.NovaHelper;
+import galaxymod.utils.ModInfo;
+import galaxymod.utils.NovaHelper;
 import micdoodle8.mods.galacticraft.api.GalacticraftRegistry;
 import micdoodle8.mods.galacticraft.api.galaxies.CelestialBody.ScalableDistance;
 import micdoodle8.mods.galacticraft.api.galaxies.GalaxyRegistry;
+import micdoodle8.mods.galacticraft.api.galaxies.Moon;
 import micdoodle8.mods.galacticraft.api.galaxies.SolarSystem;
 import micdoodle8.mods.galacticraft.api.galaxies.Star;
 import micdoodle8.mods.galacticraft.api.vector.Vector3;
@@ -53,7 +56,8 @@ public class NGPlanets {
 	public static PlanetNova planetZollus = new PlanetNova("zollus");
 	public static PlanetNova planetEden = new PlanetNova("eden");
 	public static PlanetNova planetKriffon = new PlanetNova("kriffus");
-	public static PlanetNova planetPurgot;
+	public static PlanetNova planetPurgot = new PlanetNova("purgot");
+	public static Moon moonAstros;
 	
 	// Praedyth System
 	public static PlanetNova planetXathius;
@@ -77,6 +81,7 @@ public class NGPlanets {
 	
 	// Vega System
 	public static PlanetNova planetMeridian;
+	public static PlanetNova planetRequiem;
 	
 	// Nova System
 	public static PlanetNova planetPrimor;
@@ -181,7 +186,9 @@ public class NGPlanets {
 		planetZollus.setRelativeSize(14.876F);
 		planetZollus.setBodyIcon(new ResourceLocation(ModInfo.MODID,
 				"textures/gui/zollus.png"));
-		planetZollus.setDimensionInfo(-31, WorldProviderZollus.class);
+		planetZollus.setDimensionInfo(
+				ConfigManagerNova.planetZollusDimensionId,
+				WorldProviderZollus.class);
 		totalPlanets++;
 		
 		// Planet Eden
@@ -200,7 +207,8 @@ public class NGPlanets {
 		planetEden.setRelativeSize(40.0F);
 		planetEden.setBodyIcon(new ResourceLocation(ModInfo.MODID,
 				"textures/gui/eden.png"));
-		planetEden.setDimensionInfo(-32, WorldProviderEden.class);
+		planetEden.setDimensionInfo(ConfigManagerNova.planetEdenDimensionId,
+				WorldProviderEden.class);
 		totalPlanets++;
 		
 		// Planet Kriffus
@@ -213,11 +221,34 @@ public class NGPlanets {
 				0.4F));
 		planetKriffon.atmosphereComponent(IAtmosphericGas.OXYGEN)
 				.atmosphereComponent(IAtmosphericGas.ARGON);
-		planetKriffon.setTierRequired(3);
+		planetKriffon.setTierRequired(4);
 		planetKriffon.setRelativeSize(20.0F);
 		planetKriffon.setBodyIcon(new ResourceLocation(ModInfo.MODID,
 				"textures/gui/kriffus.png"));
-		planetKriffon.setDimensionInfo(-33, WorldProviderKriffus.class);
+		planetKriffon.setDimensionInfo(
+				ConfigManagerNova.planetKriffonDimensionId,
+				WorldProviderKriffon.class);
+		totalPlanets++;
+		
+		// Planet Purgot
+		planetPurgot.setParentSolarSystem(systemPsios);
+		planetPurgot.setPlanetClass(EnumPlanetClass.NINE);
+		planetPurgot.setRingColorRGB(0.1F, 0.9F, 2.6F);
+		planetPurgot.setPhaseShift(0.1F);
+		planetPurgot.setRelativeOrbitTime(16F);
+		planetPurgot.setRelativeDistanceFromCenter(new ScalableDistance(6.0F,
+				6.0F));
+		planetPurgot.atmosphereComponent(IAtmosphericGas.OXYGEN)
+				.atmosphereComponent(IAtmosphericGas.WATER)
+				.atmosphereComponent(IAtmosphericGas.NITROGEN)
+				.atmosphereComponent(IAtmosphericGas.ARGON);
+		planetPurgot.setTierRequired(5);
+		planetPurgot.setRelativeSize(40.0F);
+		planetPurgot.setBodyIcon(new ResourceLocation(ModInfo.MODID,
+				"textures/gui/purgot.png"));
+		planetPurgot.setDimensionInfo(
+				ConfigManagerNova.planetPurgotDimensionId,
+				WorldProviderPurgot.class);
 		totalPlanets++;
 		
 		NovaHelper.echo("Loaded a total of " + totalPlanets + " planets.");
@@ -239,6 +270,7 @@ public class NGPlanets {
 		GalaxyRegistry.registerPlanet(planetZollus);
 		GalaxyRegistry.registerPlanet(planetEden);
 		GalaxyRegistry.registerPlanet(planetKriffon);
+		GalaxyRegistry.registerPlanet(planetPurgot);
 	}
 	
 	public static void registerTeleportTypes() {
@@ -247,7 +279,9 @@ public class NGPlanets {
 				teleType);
 		GalacticraftRegistry.registerTeleportType(WorldProviderEden.class,
 				teleType);
-		GalacticraftRegistry.registerTeleportType(WorldProviderKriffus.class,
+		GalacticraftRegistry.registerTeleportType(WorldProviderKriffon.class,
+				teleType);
+		GalacticraftRegistry.registerTeleportType(WorldProviderPurgot.class,
 				teleType);
 	}
 }

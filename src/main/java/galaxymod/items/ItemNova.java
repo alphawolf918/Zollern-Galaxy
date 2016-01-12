@@ -13,8 +13,8 @@
 package galaxymod.items;
 
 import galaxymod.ProjectNovaCore;
-import galaxymod.lib.NovaHelper;
-import galaxymod.lib.OreDictionaryNova;
+import galaxymod.utils.NovaHelper;
+import galaxymod.utils.OreDictionaryNova;
 import micdoodle8.mods.galacticraft.core.proxy.ClientProxyCore;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.EnumRarity;

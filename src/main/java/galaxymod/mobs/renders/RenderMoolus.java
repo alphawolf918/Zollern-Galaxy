@@ -12,7 +12,7 @@
 
 package galaxymod.mobs.renders;
 
-import galaxymod.mobs.entities.EntityMoolus;
+import galaxymod.mobs.entities.eden.EntityMoolus;
 import galaxymod.mobs.models.ModelMoolus;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.entity.Entity;

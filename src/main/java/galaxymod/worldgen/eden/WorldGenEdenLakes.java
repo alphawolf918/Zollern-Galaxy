@@ -13,6 +13,8 @@
 package galaxymod.worldgen.eden;
 
 import galaxymod.blocks.BlockList;
+import galaxymod.core.config.ConfigManagerNova;
+import galaxymod.mobs.entities.kriffon.EntityMagmos;
 import java.util.Random;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -32,33 +34,32 @@ public class WorldGenEdenLakes extends WorldGenerator {
 	}
 	
 	@Override
-	public boolean generate(World p_76484_1_, Random p_76484_2_,
-			int p_76484_3_, int p_76484_4_, int p_76484_5_) {
-		p_76484_3_ -= 8;
+	public boolean generate(World par1World, Random par2Rand, int par3,
+			int par4, int par5) {
+		par3 -= 8;
 		
-		for (p_76484_5_ -= 8; p_76484_4_ > 5
-				&& p_76484_1_.isAirBlock(p_76484_3_, p_76484_4_, p_76484_5_); --p_76484_4_) {
+		for (par5 -= 8; par4 > 5 && par1World.isAirBlock(par3, par4, par5); --par4) {
 			;
 		}
 		
-		if (p_76484_4_ <= 4) {
+		if (par4 <= 4) {
 			return false;
 		} else {
-			p_76484_4_ -= 4;
+			par4 -= 4;
 			boolean[] aboolean = new boolean[2048];
-			int l = p_76484_2_.nextInt(4) + 4;
+			int l = par2Rand.nextInt(4) + 4;
 			int i1;
 			
 			for (i1 = 0; i1 < l; ++i1) {
-				double d0 = p_76484_2_.nextDouble() * 6.0D + 3.0D;
-				double d1 = p_76484_2_.nextDouble() * 4.0D + 2.0D;
-				double d2 = p_76484_2_.nextDouble() * 6.0D + 3.0D;
-				double d3 = p_76484_2_.nextDouble() * (16.0D - d0 - 2.0D)
-						+ 1.0D + d0 / 2.0D;
-				double d4 = p_76484_2_.nextDouble() * (8.0D - d1 - 4.0D) + 2.0D
+				double d0 = par2Rand.nextDouble() * 6.0D + 3.0D;
+				double d1 = par2Rand.nextDouble() * 4.0D + 2.0D;
+				double d2 = par2Rand.nextDouble() * 6.0D + 3.0D;
+				double d3 = par2Rand.nextDouble() * (16.0D - d0 - 2.0D) + 1.0D
+						+ d0 / 2.0D;
+				double d4 = par2Rand.nextDouble() * (8.0D - d1 - 4.0D) + 2.0D
 						+ d1 / 2.0D;
-				double d5 = p_76484_2_.nextDouble() * (16.0D - d2 - 2.0D)
-						+ 1.0D + d2 / 2.0D;
+				double d5 = par2Rand.nextDouble() * (16.0D - d2 - 2.0D) + 1.0D
+						+ d2 / 2.0D;
 				
 				for (int k1 = 1; k1 < 15; ++k1) {
 					for (int l1 = 1; l1 < 15; ++l1) {
@@ -101,9 +102,8 @@ public class WorldGenEdenLakes extends WorldGenerator {
 												+ (j1 - 1)]);
 						
 						if (flag) {
-							Material material = p_76484_1_.getBlock(
-									p_76484_3_ + i1, p_76484_4_ + j1,
-									p_76484_5_ + j2).getMaterial();
+							Material material = par1World.getBlock(par3 + i1,
+									par4 + j1, par5 + j2).getMaterial();
 							
 							if (j1 >= 4 && material.isLiquid()) {
 								return false;
@@ -111,8 +111,8 @@ public class WorldGenEdenLakes extends WorldGenerator {
 							
 							if (j1 < 4
 									&& !material.isSolid()
-									&& p_76484_1_.getBlock(p_76484_3_ + i1,
-											p_76484_4_ + j1, p_76484_5_ + j2) != this.field_150556_a) {
+									&& par1World.getBlock(par3 + i1, par4 + j1,
+											par5 + j2) != this.field_150556_a) {
 								return false;
 							}
 						}
@@ -124,9 +124,9 @@ public class WorldGenEdenLakes extends WorldGenerator {
 				for (j2 = 0; j2 < 16; ++j2) {
 					for (j1 = 0; j1 < 8; ++j1) {
 						if (aboolean[(i1 * 16 + j2) * 8 + j1]) {
-							p_76484_1_.setBlock(p_76484_3_ + i1, p_76484_4_
-									+ j1, p_76484_5_ + j2, j1 >= 4 ? Blocks.air
-									: this.field_150556_a, 0, 2);
+							par1World.setBlock(par3 + i1, par4 + j1, par5 + j2,
+									j1 >= 4 ? Blocks.air : this.field_150556_a,
+									0, 2);
 						}
 					}
 				}
@@ -136,23 +136,20 @@ public class WorldGenEdenLakes extends WorldGenerator {
 				for (j2 = 0; j2 < 16; ++j2) {
 					for (j1 = 4; j1 < 8; ++j1) {
 						if (aboolean[(i1 * 16 + j2) * 8 + j1]
-								&& p_76484_1_.getBlock(p_76484_3_ + i1,
-										p_76484_4_ + j1 - 1, p_76484_5_ + j2) == BlockList.edenSoil
-								&& p_76484_1_.getSavedLightValue(
-										EnumSkyBlock.Sky, p_76484_3_ + i1,
-										p_76484_4_ + j1, p_76484_5_ + j2) > 0) {
-							BiomeGenBase biomegenbase = p_76484_1_
-									.getBiomeGenForCoords(p_76484_3_ + i1,
-											p_76484_5_ + j2);
+								&& par1World.getBlock(par3 + i1, par4 + j1 - 1,
+										par5 + j2) == BlockList.edenSoil
+								&& par1World.getSavedLightValue(
+										EnumSkyBlock.Sky, par3 + i1, par4 + j1,
+										par5 + j2) > 0) {
+							BiomeGenBase biomegenbase = par1World
+									.getBiomeGenForCoords(par3 + i1, par5 + j2);
 							
 							if (biomegenbase.topBlock == BlockList.edenGrass) {
-								p_76484_1_.setBlock(p_76484_3_ + i1, p_76484_4_
-										+ j1 - 1, p_76484_5_ + j2,
-										BlockList.edenGrass, 0, 2);
+								par1World.setBlock(par3 + i1, par4 + j1 - 1,
+										par5 + j2, BlockList.edenGrass, 0, 2);
 							} else {
-								p_76484_1_.setBlock(p_76484_3_ + i1, p_76484_4_
-										+ j1 - 1, p_76484_5_ + j2,
-										BlockList.edenMagmaRock, 0, 2);
+								par1World.setBlock(par3 + i1, par4 + j1 - 1,
+										par5 + j2, BlockList.edenSoil, 0, 2);
 							}
 						}
 					}
@@ -183,15 +180,26 @@ public class WorldGenEdenLakes extends WorldGenerator {
 													+ (j1 - 1)]);
 							
 							if (flag
-									&& (j1 < 4 || p_76484_2_.nextInt(2) != 0)
-									&& p_76484_1_
-											.getBlock(p_76484_3_ + i1,
-													p_76484_4_ + j1,
-													p_76484_5_ + j2)
-											.getMaterial().isSolid()) {
-								p_76484_1_.setBlock(p_76484_3_ + i1, p_76484_4_
-										+ j1, p_76484_5_ + j2,
-										BlockList.edenMagmaRock, 0, 2);
+									&& (j1 < 4 || par2Rand.nextInt(2) != 0)
+									&& par1World
+											.getBlock(par3 + i1, par4 + j1,
+													par5 + j2).getMaterial()
+											.isSolid()) {
+								par1World.setBlock(par3 + i1, par4 + j1, par5
+										+ j2, BlockList.edenMagmaRock, 0, 2);
+								if (par1World.provider.dimensionId == ConfigManagerNova.planetKriffonDimensionId) {
+									if (par2Rand.nextInt(500) == 1) {
+										EntityMagmos magmos = new EntityMagmos(
+												par1World);
+										int x = par3;
+										int y = par4 + 4;
+										int z = par5;
+										magmos.setLocationAndAngles(x, y, z,
+												magmos.rotationYaw,
+												magmos.rotationPitch);
+										par1World.spawnEntityInWorld(magmos);
+									}
+								}
 							}
 						}
 					}
@@ -203,10 +211,10 @@ public class WorldGenEdenLakes extends WorldGenerator {
 					for (j2 = 0; j2 < 16; ++j2) {
 						byte b0 = 4;
 						
-						if (p_76484_1_.isBlockFreezable(p_76484_3_ + i1,
-								p_76484_4_ + b0, p_76484_5_ + j2)) {
-							p_76484_1_.setBlock(p_76484_3_ + i1, p_76484_4_
-									+ b0, p_76484_5_ + j2, Blocks.ice, 0, 2);
+						if (par1World.isBlockFreezable(par3 + i1, par4 + b0,
+								par5 + j2)) {
+							par1World.setBlock(par3 + i1, par4 + b0, par5 + j2,
+									Blocks.ice, 0, 2);
 						}
 					}
 				}

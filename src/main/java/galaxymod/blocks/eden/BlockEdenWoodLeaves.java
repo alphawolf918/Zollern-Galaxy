@@ -14,7 +14,7 @@ package galaxymod.blocks.eden;
 
 import galaxymod.ProjectNovaCore;
 import galaxymod.blocks.BlockList;
-import galaxymod.lib.NovaHelper;
+import galaxymod.utils.NovaHelper;
 import java.util.ArrayList;
 import java.util.Random;
 import net.minecraft.block.Block;

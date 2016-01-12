@@ -33,7 +33,7 @@ public abstract class BiomeGenEdenBase extends BiomeSpace {
 	protected byte topMeta;
 	protected byte fillerMeta;
 	protected byte stoneMeta;
-	public static int biomeHeightBaseModifier = 232;
+	public static int biomeHeightBaseModifier = 212;
 	public BiomeDecoratorEden biomeDecor = this.getBiomeDecorator();
 	public static ArrayList<BiomeGenEdenBase> edenBiomes = new ArrayList();
 	

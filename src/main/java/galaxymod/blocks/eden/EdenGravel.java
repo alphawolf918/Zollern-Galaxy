@@ -13,7 +13,7 @@
 package galaxymod.blocks.eden;
 
 import galaxymod.ProjectNovaCore;
-import galaxymod.lib.NovaHelper;
+import galaxymod.utils.NovaHelper;
 import net.minecraft.block.BlockFalling;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;

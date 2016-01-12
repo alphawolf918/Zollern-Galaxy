@@ -13,8 +13,9 @@
 package galaxymod.blocks.kriffus;
 
 import galaxymod.blocks.BlockList;
+import galaxymod.core.config.ConfigManagerNova;
 import galaxymod.dimensions.providers.zollus.TeleporterZollusKriffon;
-import galaxymod.lib.NovaHelper;
+import galaxymod.utils.NovaHelper;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockPortal;
 import net.minecraft.client.renderer.texture.IIconRegister;
@@ -60,23 +61,25 @@ public class BlockZollusKriffonPortal extends BlockPortal {
 			
 			if (player.timeUntilPortal > 0) {
 				player.timeUntilPortal = 10;
-			} else if (player.dimension != -33) {
+			} else if (player.dimension != ConfigManagerNova.planetKriffonDimensionId) {
 				player.timeUntilPortal = 10;
 				
-				player.mcServer.getConfigurationManager()
+				player.mcServer
+						.getConfigurationManager()
 						.transferPlayerToDimension(
 								player,
-								-33,
-								new TeleporterZollusKriffon(mServer
-										.worldServerForDimension(-33)));
+								ConfigManagerNova.planetKriffonDimensionId,
+								new TeleporterZollusKriffon(
+										mServer.worldServerForDimension(ConfigManagerNova.planetKriffonDimensionId)));
 			} else {
 				player.timeUntilPortal = 10;
-				player.mcServer.getConfigurationManager()
+				player.mcServer
+						.getConfigurationManager()
 						.transferPlayerToDimension(
 								player,
-								0,
-								new TeleporterZollusKriffon(mServer
-										.worldServerForDimension(1)));
+								ConfigManagerNova.planetZollusDimensionId,
+								new TeleporterZollusKriffon(
+										mServer.worldServerForDimension(ConfigManagerNova.planetZollusDimensionId)));
 			}
 		}
 	}

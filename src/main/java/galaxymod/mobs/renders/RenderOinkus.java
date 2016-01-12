@@ -12,7 +12,7 @@
 
 package galaxymod.mobs.renders;
 
-import galaxymod.mobs.entities.EntityOinkus;
+import galaxymod.mobs.entities.eden.EntityOinkus;
 import galaxymod.mobs.models.ModelOinkus;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.entity.Entity;

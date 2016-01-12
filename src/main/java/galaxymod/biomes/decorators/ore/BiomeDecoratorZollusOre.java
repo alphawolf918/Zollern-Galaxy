@@ -12,7 +12,6 @@
 
 package galaxymod.biomes.decorators.ore;
 
-import galaxymod.biomes.decorators.BiomeDecoratorNova;
 import galaxymod.blocks.BlockList;
 import java.util.Random;
 import micdoodle8.mods.galacticraft.api.event.wgen.GCCoreEventPopulate;
@@ -60,7 +59,7 @@ public class BiomeDecoratorZollusOre extends BiomeDecoratorNova {
 			this.randomGenerator = rand;
 			this.chunkX = chunkX;
 			this.chunkZ = chunkZ;
-			this.generateEden();
+			this.generateZollus();
 			this.worldObj = null;
 			this.randomGenerator = null;
 		}
@@ -77,15 +76,15 @@ public class BiomeDecoratorZollusOre extends BiomeDecoratorNova {
 		}
 	}
 	
-	void generateEden() {
+	void generateZollus() {
 		MinecraftForge.EVENT_BUS.post(new GCCoreEventPopulate.Pre(
 				this.worldObj, this.randomGenerator, this.chunkX, this.chunkZ));
-		this.genOre(30, this.coalGen, 4, 70);
-		this.genOre(28, this.copperGen, 4, 70);
-		this.genOre(27, this.ironGen, 4, 60);
-		this.genOre(25, this.goldGen, 4, 50);
-		this.genOre(28, this.tinGen, 4, 60);
-		this.genOre(14, this.heartGen, 6, 11);
+		this.genOre(18, this.coalGen, 4, 70);
+		this.genOre(16, this.copperGen, 4, 70);
+		this.genOre(14, this.ironGen, 4, 60);
+		this.genOre(12, this.goldGen, 4, 50);
+		this.genOre(16, this.tinGen, 4, 60);
+		this.genOre(8, this.heartGen, 6, 11);
 		MinecraftForge.EVENT_BUS.post(new GCCoreEventPopulate.Post(
 				this.worldObj, this.randomGenerator, this.chunkX, this.chunkZ));
 	}

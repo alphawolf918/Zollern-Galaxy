@@ -12,6 +12,7 @@ tile.galaxymod_zoldirt.name=Zollus Dirt
 
 tile.galaxymod_edenzollusportal.name=Zollus Gate
 tile.galaxymod_zolluskriffonportal.name=Kriffon Gate
+tile.galaxymod_kriffonpurgotportal.name=Purgot Gate
 
 tile.galaxymod_edensurfaceblock.name=Eden's Grassrock
 tile.galaxymod_edengrass.name=Eden's Grass
@@ -26,6 +27,7 @@ tile.galaxymod_edendiamondore.name=Eden's Diamond Ore
 tile.galaxymod_edenemeraldore.name=Eden's Emerald Ore
 tile.galaxymod_edencoalore.name=Eden's Coal Ore
 tile.galaxymod_edenredstoneore.name=Eden's Redstone Ore
+tile.galaxymod_edenlapisore.name=Eden's Lapis Ore
 tile.galaxymod_edencopperore.name=Eden's Copper Ore
 tile.galaxymod_edentinore.name=Eden's Tin Ore
 tile.galaxymod_edendeshore.name=Eden's Desh Ore
@@ -60,12 +62,23 @@ tile.galaxymod_edentreasurechest.name=Eden's Treasure
 
 tile.galaxymod_kriffrock.name=Kriffrock
 tile.galaxymod_kriffstone.name=Kriffstone
+tile.galaxymod_kriffcobblerock.name=Kriffon Cobblerock
 tile.galaxymod_kriffcoalore.name=Kriffon Coal Ore
 tile.galaxymod_kriffcopperore.name=Kriffon Copper Ore
 tile.galaxymod_kriffredstoneore.name=Kriffon Redstone Ore
 tile.galaxymod_kriffironore.name=Kriffon Iron Ore
 tile.galaxymod_kriffgoldore.name=Kriffon Gold Ore
+tile.galaxymod_kriffcobaltore.name=Kriffon Cobalt Ore
 tile.galaxymod_kriffdirt.name=Kriffon Dirt
+
+tile.galaxymod_purgrock.name=Purgot Rock
+tile.galaxymod_purgcobblerock.name=Purgot Cobblerock
+tile.galaxymod_purgstone.name=Purgot Stone
+tile.galaxymod_purgdirt.name=Purgot Dirt
+tile.galaxymod_purgironore.name=Purgot Iron Ore
+tile.galaxymod_purggoldore.name=Purgot Gold Ore
+tile.galaxymod_purgcopperore.name=Purgot Copper Ore
+tile.galaxymod_purgdiamondore.name=Purgot Diamond Ore
 
 container.eden.treasurechest.name=Eden's Treasure
 
@@ -77,6 +90,8 @@ item.galaxymod_compressedvyrex.name=Compressed Vyrex
 item.galaxymod_zolluskriffontablet.name=Ancient Zollus Tablet
 
 item.galaxymod_aluminumdust.name=Pulverized Aluminum
+item.galaxymod_pulverizedcobalt.name=Pulverized Cobalt
+item.galaxymod_diamonddust.name=Pulverized Diamond
 
 item.galaxymod_alienbeefraw.name=Raw Alien Beef
 item.galaxymod_alienbeefcooked.name=Cooked Alien Beef
@@ -92,12 +107,20 @@ item.galaxymod_alienstone.name=Ancient Eden's Essence
 item.galaxymod_edencrystal.name=Eden's Crystal
 item.galaxymod_edenzollustablet.name=Ancient Eden's Tablet
 
+item.galaxymod_ingotcobalt.name=Cobalt Ingot
+item.galaxymod_compressedcobalt.name=Compressed Cobalt
+item.galaxymod_compressedkriffonium.name=Compressed Kriffonium
+item.galaxymod_kriffoncrystal.name=Kriffon Crystal
+item.galaxymod_kriffonpurgottablet.name=Ancient Kriffon Tablet
+
 entity.galaxymod_moolus.name=Moolus
 entity.galaxymod_oinkus.name=Oinkus
 entity.galaxymod_aliensquid.name=Alien Squid
 entity.galaxymod_grayalien.name=Gray Alien
 entity.galaxymod_galaxyknight.name=Galactic Sentry
 entity.galaxymod_crawler.name=Crawler Boss
+entity.galaxymod_frostgiant.name=Frost Giant
+entity.galaxymod_magmos.name=Magmos
 
 planet.zollus=Zollus
 planet.eden=Eden
@@ -140,3 +163,11 @@ solarsystem.Nova=Nova
 
 itemGroup.NovaGalacticBlocks=Project Nova Blocks
 itemGroup.NovaGalacticItems=Project Nova Items
+
+death.attack.deathcold=%1$s froze to death.
+death.attack.deathcold.player=%1$s froze to death, because of %2$s.
+death.attack.deathcold.item=%1$s froze to death because of %2$s using %3$s.
+
+death.attack.deathhot=%1$s melted to death.
+death.attack.deathhot.player=%1$s melted to death, because of %2$s.
+death.attack.deathhot.item=%1$s melted to death because of %2$s using %3$s.

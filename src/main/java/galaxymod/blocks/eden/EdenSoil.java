@@ -25,8 +25,9 @@ public class EdenSoil extends BlockNova {
 	public EdenSoil() {
 		super(Material.grass);
 		this.setNameAndTexture("edensoil");
-		this.setHardResist(0.8F);
+		this.setHardResist(0.4F);
 		this.setStepSound(soundTypeGravel);
+		this.setHarvestLevel("shovel", 1);
 	}
 	
 	@Override

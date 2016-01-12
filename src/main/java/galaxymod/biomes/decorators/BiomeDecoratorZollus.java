@@ -12,13 +12,12 @@
 
 package galaxymod.biomes.decorators;
 
-import galaxymod.blocks.BlockList;
+import galaxymod.worldgen.zollus.WorldGenZolnium;
 import java.util.Random;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeDecorator;
 import net.minecraft.world.biome.BiomeGenBase;
-import net.minecraft.world.gen.feature.WorldGenFlowers;
 import net.minecraft.world.gen.feature.WorldGenLakes;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.terraingen.DecorateBiomeEvent;
@@ -27,8 +26,8 @@ import net.minecraftforge.event.terraingen.TerrainGen;
 
 public class BiomeDecoratorZollus extends BiomeDecorator {
 	
-	public int zollusCrystalsPerChunk = 1;
-	public int zollusIceLakesPerChunk = 5;
+	public int zollusCrystalsPerChunk = 3;
+	public int zollusIceLakesPerChunk = 4;
 	
 	@Override
 	public void decorateChunk(World world, Random rand, BiomeGenBase biome,
@@ -62,14 +61,14 @@ public class BiomeDecoratorZollus extends BiomeDecorator {
 				x = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
 				y = this.randomGenerator.nextInt(256);
 				z = this.chunk_Z + this.randomGenerator.nextInt(16) + 8;
-				new WorldGenFlowers(BlockList.zolniumCrystals).generate(
-						this.currentWorld, this.randomGenerator, x, y, z);
+				new WorldGenZolnium().generate(this.currentWorld,
+						this.randomGenerator, x, y, z);
 			}
 		}
 		
 		for (i = 0; this.getGen(EventType.LAKE)
 				&& i < this.zollusIceLakesPerChunk; ++i) {
-			if (this.randomGenerator.nextInt(2) == 0) {
+			if (this.randomGenerator.nextInt(3) == 0) {
 				x = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
 				y = this.randomGenerator.nextInt(256);
 				z = this.chunk_Z + this.randomGenerator.nextInt(16) + 8;

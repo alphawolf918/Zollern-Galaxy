@@ -12,7 +12,7 @@
 
 package galaxymod.mobs.entities;
 
-import galaxymod.lib.ModInfo;
+import galaxymod.utils.ModInfo;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIAttackOnCollide;
 import net.minecraft.entity.ai.EntityAIBreakDoor;

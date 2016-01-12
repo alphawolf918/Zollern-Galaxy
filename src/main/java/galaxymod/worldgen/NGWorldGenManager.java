@@ -14,6 +14,7 @@ package galaxymod.worldgen;
 
 import galaxymod.biomes.BiomeList;
 import galaxymod.blocks.BlockList;
+import galaxymod.core.config.ConfigManagerNova;
 import galaxymod.worldgen.eden.WorldGenCrystalTower;
 import galaxymod.worldgen.eden.WorldGenDropShip;
 import galaxymod.worldgen.eden.WorldGenGiantBone;
@@ -35,24 +36,14 @@ public class NGWorldGenManager implements IWorldGenerator {
 	@Override
 	public void generate(Random random, int chunkX, int chunkZ, World world,
 			IChunkProvider chunkGenerator, IChunkProvider chunkProvider) {
-		switch (world.provider.dimensionId) {
-			case 0:
-				generateEarth(world, random, chunkX * 16, chunkZ * 16);
-			break;
-			case -31:
-				generateZollus(world, random, chunkX * 16, chunkZ * 16);
-			break;
-			case -32:
-				generateEden(world, random, chunkX * 16, chunkZ * 16);
-			break;
+		if (world.provider.dimensionId == 0) {
+			this.generateEarth(world, random, chunkX * 16, chunkZ * 16);
+		} else if (world.provider.dimensionId == ConfigManagerNova.planetEdenDimensionId) {
+			this.generateEden(world, random, chunkX * 16, chunkZ * 16);
 		}
 	}
 	
 	private void generateEarth(World world, Random random, int x, int z) {
-		
-	}
-	
-	private void generateZollus(World world, Random random, int x, int z) {
 		
 	}
 	
@@ -123,8 +114,8 @@ public class NGWorldGenManager implements IWorldGenerator {
 		}
 		
 		// Eden Village
-		if (random.nextInt(180) <= 10) {
-			this.spawnStructure(10, 180, world, random, x, y, z,
+		if (random.nextInt(280) <= 10) {
+			this.spawnStructure(5, 280, world, random, x, y, z,
 					new VillageHouseOne());
 		}
 		

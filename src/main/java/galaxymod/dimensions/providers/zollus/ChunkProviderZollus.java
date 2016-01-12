@@ -137,7 +137,7 @@ public class ChunkProviderZollus extends ChunkProviderSpace {
 	
 	@Override
 	protected BlockMetaPair getStoneBlock() {
-		return new BlockMetaPair(BlockList.zolstone, (byte) 9);
+		return new BlockMetaPair(BlockList.zolstone, (byte) 0);
 	}
 	
 	@Override
@@ -432,7 +432,7 @@ public class ChunkProviderZollus extends ChunkProviderSpace {
 								if ((d15 += d16) > 0.0D) {
 									blockStorage[j3 += short1] = Blocks.stone;
 								} else if (k2 * 8 + l2 < seaLevel) {
-									blockStorage[j3 += short1] = Blocks.water;
+									blockStorage[j3 += short1] = Blocks.packed_ice;
 								} else {
 									blockStorage[j3 += short1] = null;
 								}

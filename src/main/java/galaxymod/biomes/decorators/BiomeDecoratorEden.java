@@ -99,31 +99,35 @@ public class BiomeDecoratorEden extends BiomeDecorator {
 		
 		// Lava & Water (Lakes)
 		for (i = 0; this.getGen(EventType.LAKE) && i < this.edenLakesPerChunk; i++) {
-			x = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
-			y = this.randomGenerator.nextInt(256);
-			z = this.chunk_Z + this.randomGenerator.nextInt(16) + 8;
-			BiomeGenEdenBase currentBiome = (BiomeGenEdenBase) this.currentWorld
-					.getBiomeGenForCoords(x, z);
-			if (currentBiome.theBiomeDecorator.generateLakes != false) {
-				Block lakeBlock = (currentBiome.getIsHotBiome()) ? Blocks.lava
-						: Blocks.water;
-				if (!currentBiome.getIsHotBiome()) {
-					lakeBlock = (lakeBlock == Blocks.water && currentBiome
-							.getIsColdBiome()) ? Blocks.ice : Blocks.water;
+			if (this.randomGenerator.nextInt(3) == 0) {
+				x = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
+				y = this.randomGenerator.nextInt(256);
+				z = this.chunk_Z + this.randomGenerator.nextInt(16) + 8;
+				BiomeGenEdenBase currentBiome = (BiomeGenEdenBase) this.currentWorld
+						.getBiomeGenForCoords(x, z);
+				if (currentBiome.theBiomeDecorator.generateLakes != false) {
+					Block lakeBlock = (currentBiome.getIsHotBiome()) ? Blocks.lava
+							: Blocks.water;
+					if (!currentBiome.getIsHotBiome()) {
+						lakeBlock = (lakeBlock == Blocks.water && currentBiome
+								.getIsColdBiome()) ? Blocks.ice : Blocks.water;
+					}
+					new WorldGenEdenLakes(lakeBlock).generate(currentWorld,
+							randomGenerator, x, y, z);
 				}
-				new WorldGenEdenLakes(lakeBlock).generate(currentWorld,
-						randomGenerator, x, y, z);
 			}
 		}
 		
 		// Tall Grass
 		for (i = 0; this.getGen(EventType.GRASS)
 				&& i < this.edenTallGrassPerChunk; ++i) {
-			x = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
-			y = this.randomGenerator.nextInt(256);
-			z = this.chunk_Z + this.randomGenerator.nextInt(16) + 8;
-			new WorldGenTallGrass(BlockList.edenTallGrass, 0).generate(
-					this.currentWorld, this.randomGenerator, x, y, z);
+			if (this.randomGenerator.nextInt(3) == 0) {
+				x = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
+				y = this.randomGenerator.nextInt(256);
+				z = this.chunk_Z + this.randomGenerator.nextInt(16) + 8;
+				new WorldGenTallGrass(BlockList.edenTallGrass, 0).generate(
+						this.currentWorld, this.randomGenerator, x, y, z);
+			}
 		}
 		
 		// Dead Bush
@@ -139,12 +143,14 @@ public class BiomeDecoratorEden extends BiomeDecorator {
 		// Trees
 		for (i = 0; this.getGen(EventType.TREE)
 				&& i < this.edenWoodTreesPerChunk; i++) {
-			x = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
-			y = this.randomGenerator.nextInt(256);
-			z = this.chunk_Z + this.randomGenerator.nextInt(16) + 8;
-			new WorldGenTreeNG(BlockList.edenWoodLog, BlockList.edenWoodLeaves,
-					0, 0, false, 6, 4, true).generate(currentWorld,
-					randomGenerator, x, y, z);
+			if (this.randomGenerator.nextInt(2) == 0) {
+				x = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
+				y = this.randomGenerator.nextInt(256);
+				z = this.chunk_Z + this.randomGenerator.nextInt(16) + 8;
+				new WorldGenTreeNG(BlockList.edenWoodLog,
+						BlockList.edenWoodLeaves, 0, 0, false, 6, 4, true)
+						.generate(currentWorld, randomGenerator, x, y, z);
+			}
 		}
 		
 		// Eden Flowers

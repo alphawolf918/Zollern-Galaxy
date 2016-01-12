@@ -14,7 +14,7 @@ package galaxymod.blocks.eden;
 
 import galaxymod.ProjectNovaCore;
 import galaxymod.blocks.BlockList;
-import galaxymod.lib.NovaHelper;
+import galaxymod.utils.NovaHelper;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBush;
 import net.minecraft.block.material.Material;

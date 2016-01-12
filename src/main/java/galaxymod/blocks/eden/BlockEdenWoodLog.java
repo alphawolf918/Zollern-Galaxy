@@ -13,7 +13,7 @@
 package galaxymod.blocks.eden;
 
 import galaxymod.ProjectNovaCore;
-import galaxymod.lib.NovaHelper;
+import galaxymod.utils.NovaHelper;
 import java.util.Random;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockRotatedPillar;

@@ -12,7 +12,7 @@
 
 package galaxymod.mobs.renders;
 
-import galaxymod.mobs.entities.EntityAlienSquid;
+import galaxymod.mobs.entities.eden.EntityAlienSquid;
 import galaxymod.mobs.models.ModelAlienSquid;
 import net.minecraft.client.renderer.entity.RenderSquid;
 import net.minecraft.entity.Entity;

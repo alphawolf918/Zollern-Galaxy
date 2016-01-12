@@ -14,12 +14,10 @@ package galaxymod.dimensions.providers.zollus;
 
 import galaxymod.core.NGPlanets;
 import galaxymod.dimensions.chunkmanagers.WorldChunkManagerZollus;
+import galaxymod.dimensions.providers.WorldProviderNova;
 import galaxymod.dimensions.providers.renderers.SkyProviderZollus;
 import micdoodle8.mods.galacticraft.api.galaxies.CelestialBody;
-import micdoodle8.mods.galacticraft.api.prefab.world.gen.WorldProviderSpace;
 import micdoodle8.mods.galacticraft.api.vector.Vector3;
-import micdoodle8.mods.galacticraft.api.world.IExitHeight;
-import micdoodle8.mods.galacticraft.api.world.ISolarLevel;
 import micdoodle8.mods.galacticraft.core.client.CloudRenderer;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.biome.WorldChunkManager;
@@ -28,8 +26,7 @@ import net.minecraftforge.client.IRenderHandler;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class WorldProviderZollus extends WorldProviderSpace implements
-		IExitHeight, ISolarLevel {
+public class WorldProviderZollus extends WorldProviderNova {
 	
 	@Override
 	public float getGravity() {
@@ -178,7 +175,7 @@ public class WorldProviderZollus extends WorldProviderSpace implements
 	
 	@Override
 	public long getDayLength() {
-		return 46019L;
+		return 46010L;
 	}
 	
 	@Override
@@ -189,11 +186,6 @@ public class WorldProviderZollus extends WorldProviderSpace implements
 	@Override
 	public IRenderHandler getSkyRenderer() {
 		return new SkyProviderZollus(this);
-	}
-	
-	@Override
-	public boolean shouldForceRespawn() {
-		return true;
 	}
 	
 	@Override

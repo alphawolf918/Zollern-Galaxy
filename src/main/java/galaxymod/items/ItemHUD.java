@@ -11,7 +11,7 @@
  *******************************************************************************/
 package galaxymod.items;
 
-import galaxymod.lib.NovaHelper.KeyHelper;
+import galaxymod.utils.NovaHelper.KeyHelper;
 import java.util.List;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
@@ -30,11 +30,9 @@ public class ItemHUD extends ItemNova {
 	public void addInformation(ItemStack p_77624_1_, EntityPlayer p_77624_2_,
 			List list, boolean p_77624_4_) {
 		if (KeyHelper.isCtrlKeyDown() || KeyHelper.isShiftKeyDown()) {
-			list.add(EnumChatFormatting.ITALIC
-					+ "Passively shows all planetary");
+			list.add(EnumChatFormatting.ITALIC + "Shows all planetary");
 			list.add(EnumChatFormatting.ITALIC + "and biome data.");
-			list.add(EnumChatFormatting.ITALIC
-					+ " Works by being in inventory.");
+			list.add(EnumChatFormatting.ITALIC + "Only works when held.");
 		} else {
 			list.add("Hold LSHIFT for more information.");
 		}

@@ -13,8 +13,9 @@
 package galaxymod.blocks.eden;
 
 import galaxymod.blocks.BlockList;
+import galaxymod.core.config.ConfigManagerNova;
 import galaxymod.dimensions.providers.eden.TeleporterEdenZollus;
-import galaxymod.lib.NovaHelper;
+import galaxymod.utils.NovaHelper;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockPortal;
 import net.minecraft.client.renderer.texture.IIconRegister;
@@ -59,23 +60,25 @@ public class BlockEdenZollusPortal extends BlockPortal {
 			
 			if (player.timeUntilPortal > 0) {
 				player.timeUntilPortal = 10;
-			} else if (player.dimension != -31) {
+			} else if (player.dimension != ConfigManagerNova.planetZollusDimensionId) {
 				player.timeUntilPortal = 10;
 				
-				player.mcServer.getConfigurationManager()
+				player.mcServer
+						.getConfigurationManager()
 						.transferPlayerToDimension(
 								player,
-								-31,
-								new TeleporterEdenZollus(mServer
-										.worldServerForDimension(-31)));
+								ConfigManagerNova.planetZollusDimensionId,
+								new TeleporterEdenZollus(
+										mServer.worldServerForDimension(ConfigManagerNova.planetZollusDimensionId)));
 			} else {
 				player.timeUntilPortal = 10;
-				player.mcServer.getConfigurationManager()
+				player.mcServer
+						.getConfigurationManager()
 						.transferPlayerToDimension(
 								player,
-								0,
-								new TeleporterEdenZollus(mServer
-										.worldServerForDimension(1)));
+								ConfigManagerNova.planetEdenDimensionId,
+								new TeleporterEdenZollus(
+										mServer.worldServerForDimension(ConfigManagerNova.planetEdenDimensionId)));
 			}
 		}
 	}

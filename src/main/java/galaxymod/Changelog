@@ -5,9 +5,9 @@
         * Eden, an Earth-like planet with a breathable atmosphere and habitable temperature, rich with minable resources.
         * Zollus, a barren ice planet without a breathable atmosphere or tolerable thermal temperature.
         * Kriffon, a hot planet close to its sun, Psios, also unbreathable and without a tolerable temperature.
-* Added the Praedyth solar system, with a bright-red giant star.
-    * No planets are currently in this system. May do a few like this just for show.
+        * Purgot, a cold, bleak planet even farther from its star than Zollus, but with a breathable atmosphere.
 * Added several new star systems:
+    * Praedyth
     * Pantheon
     * Olympus
     * Asgard
@@ -16,11 +16,13 @@
 * Aluminum ore can now be pulverized into dust that can then be cooked into aluminum ingots. FINALLY!
 * Registered all ores with the Ore Dictionary.
 * Added compressed metal items.
-* Did a little file cleanup.
+* Did a little code cleanup.
+* Diamond Ore can now be pulverized into Diamond Dust.
+    * The dust can then be cooked back into diamonds.
 
 ====PSIOS.EDEN====
-* New ores for Eden:
-    * Iron, Meteoric Iron, Gold, Copper, Tin, Diamond, Emerald, Coal, Redstone, Desh, Aluminum and Virinium.
+* Added ores for Eden:
+    * Iron, Meteoric Iron, Gold, Copper, Tin, Diamond, Emerald, Coal, Redstone, Lapis, Desh, Aluminum and Virinium.
 * Added Vortex Drop Ship spawn to Eden.
 * Caves and ores now generate properly on Eden.
 * Added a flower spawn to Eden called "Eden's Flower."
@@ -80,6 +82,7 @@
 * Added a special item called the "Galactic HUD."
     * Shows data about planet and current biome.
         * Gasses, planet name, planet class, temperature and current biome
+        * Only works when held as the active item.
     * Works as long as it is in your inventory.
 * Edenwood Trees now grow (and spawn) with a purple fruit on them.
     * Will fall if not directly below an Edenwood Leaf block.
@@ -126,13 +129,33 @@
 * Eden planet now renders in the sky.
 * Sun is far from the planet and is very tiny with a glowing aura around it.
 * The days and nights here are very long, and solar panels do not pick up much energy.
+* Added Frost Giant mob that sometimes spawns inside Zolnium crystals.
+    * Very tall biped with a lot of health and a strong attack that moves rather slow.
+    * Will die if in a hot biome.
 
 ==PSIOS.KRIFFON==
 * Added base blocks to Kriffon.
 * Large lakes of lava now spawn throughout Kriffon.
 * Not many mobs generate here, only a couple, and both are hostile.
-* Added ores: coal, copper, redstone, iron and gold.
+* Added ores: coal, copper, redstone, iron, gold and cobalt.
 * Eden and Zollus planets now render in the sky.
 * Sun is close to the planet and is very huge with a glowing aura around it.
 * The days and nights here are super quick, and solar panels pick up a lot of energy.
-* 
+* Added Kriffon Cobalt Ore.
+    * Smelts into Cobalt Ingots.
+    * Can be turned into Compressed Cobalt.
+        * Can then be mixed with other compressed metals.
+* Made tablet and portal.
+* Added more craftable items and recipes.
+* Added portal spawning tablet.
+* Added the Magmos mob.
+    * Basically the exact opposite of the Frost Giant.
+    * Has a 1 in 500 chance of spawning in lava lakes on Kriffon.
+    * Will die if in a cold biome.
+    * Shoots fireballs and attacks the same way a Blaze does.
+
+==PSIOS.PURGOT==
+* Added the base blocks for Purgot.
+* Added the Purgatory biome.
+* Added ores: iron, gold, copper and diamond.
+* Caves and ravines now generate on Purgot.

@@ -2,8 +2,8 @@
 {
   "modid": "galaxymod",
   "name": "Project Nova",
-  "description": "Space exploration.",
-  "version": "1.0",
+  "description": "To evolve, to explore - to go where no man has gone before.",
+  "version": "1.0.0",
   "mcversion": "1.7.10",
   "url": "",
   "updateUrl": "",

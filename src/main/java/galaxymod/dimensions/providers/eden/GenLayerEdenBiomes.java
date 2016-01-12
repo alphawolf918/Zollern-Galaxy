@@ -22,9 +22,9 @@ public class GenLayerEdenBiomes extends GenLayer {
 	protected BiomeGenBase[] commonBiomes = { BiomeList.biomeEden,
 			BiomeList.biomeEdenRockMountains, BiomeList.biomeEdenTerranValley,
 			BiomeList.biomeEdenBloodDesert, BiomeList.biomeEdenGarden,
-			BiomeList.biomeEdenForest, BiomeList.biomeEdenMagmaLands,
+			BiomeList.biomeEdenForest, BiomeList.biomeEdenMagmaLands };
+	protected BiomeGenBase[] rareBiomes = { BiomeList.biomeEdenSnowyPlains,
 			BiomeList.biomeEdenSwamp };
-	protected BiomeGenBase[] rareBiomes = { BiomeList.biomeEdenSnowyPlains };
 	
 	public GenLayerEdenBiomes(long seed, GenLayer genlayer) {
 		super(seed);
@@ -43,7 +43,7 @@ public class GenLayerEdenBiomes extends GenLayer {
 			for (int dx = 0; dx < width; dx++) {
 				this.initChunkSeed(dx + x, dz + z);
 				
-				if (this.nextInt(15) == 0) {
+				if (this.nextInt(20) == 0) {
 					dest[dx + dz * width] = this.rareBiomes[this
 							.nextInt(this.rareBiomes.length)].biomeID;
 				} else {

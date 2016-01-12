@@ -12,7 +12,6 @@
 
 package galaxymod.biomes.decorators.ore;
 
-import galaxymod.biomes.decorators.BiomeDecoratorNova;
 import galaxymod.blocks.BlockList;
 import java.util.Random;
 import micdoodle8.mods.galacticraft.api.event.wgen.GCCoreEventPopulate;
@@ -38,6 +37,7 @@ public class BiomeDecoratorEdenOre extends BiomeDecoratorNova {
 	private WorldGenerator emeraldGen;
 	private WorldGenerator coalGen;
 	private WorldGenerator redstoneGen;
+	private WorldGenerator lapisGen;
 	private WorldGenerator deshGen;
 	private WorldGenerator aluminumGen;
 	private WorldGenerator viriniumGen;
@@ -64,6 +64,8 @@ public class BiomeDecoratorEdenOre extends BiomeDecoratorNova {
 				false, BlockList.edenRock, 0);
 		this.redstoneGen = new WorldGenMinableMeta(BlockList.edenRedstoneOre,
 				6, 0, false, BlockList.edenRock, 0);
+		this.lapisGen = new WorldGenMinableMeta(BlockList.edenLapisOre, 8, 0,
+				false, BlockList.edenRock, 0);
 		this.deshGen = new WorldGenMinableMeta(BlockList.edenDeshOre, 5, 0,
 				false, BlockList.edenRock, 0);
 		this.aluminumGen = new WorldGenMinableMeta(BlockList.edenAluminumOre,
@@ -103,18 +105,19 @@ public class BiomeDecoratorEdenOre extends BiomeDecoratorNova {
 	void generateEden() {
 		MinecraftForge.EVENT_BUS.post(new GCCoreEventPopulate.Pre(
 				this.worldObj, this.randomGenerator, this.chunkX, this.chunkZ));
-		this.genOre(27, this.ironGen, 4, 60);
-		this.genOre(22, this.meteoricIronGen, 10, 20);
-		this.genOre(25, this.goldGen, 4, 50);
-		this.genOre(24, this.diamondGen, 10, 14);
-		this.genOre(24, this.emeraldGen, 10, 12);
-		this.genOre(28, this.copperGen, 4, 120);
-		this.genOre(28, this.tinGen, 4, 120);
-		this.genOre(30, this.coalGen, 2, 120);
-		this.genOre(28, this.coalGen, 2, 40);
-		this.genOre(5, this.deshGen, 4, 30);
-		this.genOre(4, this.aluminumGen, 2, 62);
-		this.genOre(4, this.viriniumGen, 4, 12);
+		this.genOre(15, this.ironGen, 4, 60);
+		this.genOre(5, this.meteoricIronGen, 10, 20);
+		this.genOre(14, this.goldGen, 4, 75);
+		this.genOre(10, this.diamondGen, 10, 14);
+		this.genOre(6, this.emeraldGen, 10, 12);
+		this.genOre(14, this.copperGen, 4, 120);
+		this.genOre(16, this.tinGen, 4, 120);
+		this.genOre(18, this.coalGen, 2, 40);
+		this.genOre(10, this.redstoneGen, 2, 25);
+		this.genOre(14, this.lapisGen, 2, 25);
+		this.genOre(6, this.deshGen, 4, 30);
+		this.genOre(10, this.aluminumGen, 2, 72);
+		this.genOre(6, this.viriniumGen, 4, 12);
 		this.genOre(15, this.gravelGen, 4, 52);
 		MinecraftForge.EVENT_BUS.post(new GCCoreEventPopulate.Post(
 				this.worldObj, this.randomGenerator, this.chunkX, this.chunkZ));

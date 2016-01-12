@@ -15,7 +15,7 @@ package galaxymod.blocks.zollus;
 import galaxymod.ProjectNovaCore;
 import galaxymod.blocks.BlockList;
 import galaxymod.items.ItemList;
-import galaxymod.lib.NovaHelper;
+import galaxymod.utils.NovaHelper;
 import java.util.Random;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBush;

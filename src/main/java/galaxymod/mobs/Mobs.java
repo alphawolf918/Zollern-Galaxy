@@ -14,13 +14,16 @@ package galaxymod.mobs;
 
 import galaxymod.biomes.BiomeList;
 import galaxymod.biomes.eden.BiomeGenEdenBase;
-import galaxymod.lib.ModInfo;
-import galaxymod.mobs.entities.EntityAlienSquid;
 import galaxymod.mobs.entities.EntityGalaxyKnight;
 import galaxymod.mobs.entities.EntityGrayAlien;
-import galaxymod.mobs.entities.EntityMoolus;
-import galaxymod.mobs.entities.EntityOinkus;
 import galaxymod.mobs.entities.boss.EntityCrawlerBoss;
+import galaxymod.mobs.entities.eden.EntityAlienSquid;
+import galaxymod.mobs.entities.eden.EntityMoolus;
+import galaxymod.mobs.entities.eden.EntityOinkus;
+import galaxymod.mobs.entities.kriffon.EntityMagmos;
+import galaxymod.mobs.entities.zollus.EntityFrostGiant;
+import galaxymod.utils.ModInfo;
+import galaxymod.utils.NovaHelper;
 import net.minecraft.entity.EntityList;
 import net.minecraft.entity.EntityList.EntityEggInfo;
 import net.minecraft.entity.EntityLiving;
@@ -30,6 +33,7 @@ import cpw.mods.fml.common.registry.EntityRegistry;
 public class Mobs {
 	
 	public static int startEntityId = 300;
+	static int totalMobs = 0;
 	
 	public static void init() {
 		
@@ -38,22 +42,24 @@ public class Mobs {
 		
 		// Moolus
 		registerEntity(EntityMoolus.class, "moolus", 0x008b00, 0xeeeeee);
-		EntityRegistry.addSpawn(EntityMoolus.class, 1, 1, 1,
+		EntityRegistry.addSpawn(EntityMoolus.class, 1, 0, 1,
 				EnumCreatureType.creature, BiomeList.biomeEden,
 				BiomeList.biomeEdenTerranValley, BiomeList.biomeEdenGarden,
-				BiomeList.biomeEdenForest, BiomeList.biomeEdenSnowyPlains);
+				BiomeList.biomeEdenForest, BiomeList.biomeEdenSnowyPlains,
+				BiomeList.biomeEdenSwamp);
 		
 		// Oinkus
 		registerEntity(EntityOinkus.class, "oinkus", 0x009f00, 0xeeffee);
-		EntityRegistry.addSpawn(EntityOinkus.class, 1, 1, 1,
+		EntityRegistry.addSpawn(EntityOinkus.class, 1, 0, 1,
 				EnumCreatureType.creature, BiomeList.biomeEden,
 				BiomeList.biomeEdenTerranValley, BiomeList.biomeEdenGarden,
-				BiomeList.biomeEdenForest, BiomeList.biomeEdenSnowyPlains);
+				BiomeList.biomeEdenForest, BiomeList.biomeEdenSnowyPlains,
+				BiomeList.biomeEdenSwamp);
 		
 		// Alien Squid
 		registerEntity(EntityAlienSquid.class, "aliensquid", 0x0099ff, 0xeeeeee);
 		for (BiomeGenEdenBase biome : BiomeGenEdenBase.getEdenBiomes()) {
-			EntityRegistry.addSpawn(EntityAlienSquid.class, 1, 1, 1,
+			EntityRegistry.addSpawn(EntityAlienSquid.class, 1, 0, 1,
 					EnumCreatureType.waterCreature, biome);
 		}
 		
@@ -63,6 +69,14 @@ public class Mobs {
 		
 		// Crawler
 		registerEntity(EntityCrawlerBoss.class, "crawler", 0xdddddd, 0x444444);
+		
+		// Frost Giant
+		registerEntity(EntityFrostGiant.class, "frostgiant", 0x0099ff, 0x3399ff);
+		
+		// Magmos
+		registerEntity(EntityMagmos.class, "magmos", 0x8b0000, 0xff0000);
+		
+		NovaHelper.echo("Loaded a total of " + totalMobs + " mobs.");
 	}
 	
 	public static void registerEntity(Class<? extends EntityLiving> entity,
@@ -71,6 +85,7 @@ public class Mobs {
 		EntityRegistry.registerGlobalEntityID(entity, ModInfo.MODID + "_"
 				+ entityName, uniqueEntityId);
 		registerEntityEgg(entity, entityPrimaryColor, entitySecondaryColor);
+		totalMobs++;
 	}
 	
 	public static void registerEntityEgg(Class<? extends EntityLiving> entity,

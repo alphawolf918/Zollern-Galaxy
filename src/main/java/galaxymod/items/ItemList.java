@@ -12,13 +12,15 @@
 
 package galaxymod.items;
 
-import galaxymod.blocks.BlockList;
 import galaxymod.items.eden.ItemEdenDungeonKey;
+import galaxymod.items.eden.ItemTabletEden;
 import galaxymod.items.food.CookedFood;
 import galaxymod.items.food.ItemFruit;
 import galaxymod.items.food.RawFood;
-import galaxymod.lib.NovaHelper;
-import galaxymod.lib.RegisterHelper;
+import galaxymod.items.kriffon.ItemKriffonTablet;
+import galaxymod.items.zollus.ItemAncientZollusTablet;
+import galaxymod.utils.NovaHelper;
+import galaxymod.utils.RegisterHelper;
 import net.minecraft.item.Item;
 
 public class ItemList {
@@ -39,8 +41,7 @@ public class ItemList {
 	public static final ItemNova ingotViri = new ItemNova("ingotviri");
 	public static final ItemNova ancientEssenceEden = new ItemNova("alienstone");
 	public static final ItemNova edenCrystal = new ItemNova("edencrystal");
-	public static final ItemNova edenZollusTablet = new ItemTablet(
-			"edenzollustablet", BlockList.edenZollusPortal);
+	public static final ItemNova edenZollusTablet = new ItemTabletEden();
 	public static final ItemNova edenCompressedVirinium = new ItemNova(
 			"compressedvirinium");
 	
@@ -50,10 +51,19 @@ public class ItemList {
 			"compressedheartium");
 	public static final ItemNova zollusCompressedVyrex = new ItemNova(
 			"compressedvyrex");
-	public static final ItemNova zollusKriffonTablet = new ItemTablet(
-			"zolluskriffontablet", BlockList.zollusKriffonPortal);
+	public static final ItemNova zollusKriffonTablet = new ItemAncientZollusTablet();
 	
-	public static final ItemNova aluminumDust = new ItemNova("aluminumdust");
+	public static final ItemNova ingotCobalt = new ItemNova("ingotcobalt");
+	public static final ItemNova compressedCobalt = new ItemNova(
+			"compressedcobalt");
+	public static final ItemNova compressedKriffonium = new ItemNova(
+			"compressedkriffonium");
+	public static final ItemNova kriffonCrystal = new ItemNova("kriffoncrystal");
+	public static final ItemNova kriffonPurgotTablet = new ItemKriffonTablet();
+	
+	public static final ItemNova dustAluminum = new ItemNova("aluminumdust");
+	public static final ItemNova dustCobalt = new ItemNova("pulverizedcobalt");
+	public static final ItemNova dustDiamond = new ItemNova("diamonddust");
 	
 	public static void init() {
 		addItem(alienBeefRaw);
@@ -77,7 +87,15 @@ public class ItemList {
 		addItem(zollusCompressedVyrex);
 		addItem(zollusKriffonTablet);
 		
-		addItem(aluminumDust);
+		addItem(ingotCobalt);
+		addItem(compressedCobalt);
+		addItem(compressedKriffonium);
+		addItem(kriffonCrystal);
+		addItem(kriffonPurgotTablet);
+		
+		addItem(dustAluminum);
+		addItem(dustCobalt);
+		addItem(dustDiamond);
 		
 		NovaHelper.echo("Loaded a total of " + totalItems + " items.");
 	}

@@ -55,7 +55,7 @@ public class BiomeDecoratorKriffon extends BiomeDecorator {
 		
 		for (i = 0; this.getGen(EventType.LAKE)
 				&& i < this.kriffonLavaLakesPerChunk; ++i) {
-			if (this.randomGenerator.nextInt(1) == 0) {
+			if (this.randomGenerator.nextInt(2) == 0) {
 				x = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
 				y = this.randomGenerator.nextInt(256);
 				z = this.chunk_Z + this.randomGenerator.nextInt(16) + 8;

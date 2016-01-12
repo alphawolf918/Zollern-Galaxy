@@ -13,6 +13,7 @@
 package galaxymod.events;
 
 import galaxymod.blocks.BlockList;
+import galaxymod.core.config.ConfigManagerNova;
 import galaxymod.items.ItemList;
 import galaxymod.mobs.entities.boss.EntityCrawlerBoss;
 import micdoodle8.mods.galacticraft.core.entities.EntityAlienVillager;
@@ -87,7 +88,7 @@ public class NovaEvents {
 				event.chunkZ * 16);
 		Chunk chunk = event.world.getChunkFromChunkCoords(event.chunkX,
 				event.chunkZ);
-		if (worldObj.provider.dimensionId == -32) {
+		if (worldObj.provider.dimensionId == ConfigManagerNova.planetEdenDimensionId) {
 			Block fromBlock = Blocks.stone;
 			Block toBlock = BlockList.edenRock;
 			for (ExtendedBlockStorage storage : chunk.getBlockStorageArray()) {
@@ -123,7 +124,7 @@ public class NovaEvents {
 				}
 			}
 			chunk.isModified = true;
-		} else if (worldObj.provider.dimensionId == -31) {
+		} else if (worldObj.provider.dimensionId == ConfigManagerNova.planetZollusDimensionId) {
 			for (ExtendedBlockStorage storage : chunk.getBlockStorageArray()) {
 				if (storage != null) {
 					for (int x = 0; x < 16; ++x) {
@@ -141,7 +142,7 @@ public class NovaEvents {
 				}
 			}
 			chunk.isModified = true;
-		} else if (worldObj.provider.dimensionId == -33) {
+		} else if (worldObj.provider.dimensionId == ConfigManagerNova.planetKriffonDimensionId) {
 			for (ExtendedBlockStorage storage : chunk.getBlockStorageArray()) {
 				if (storage != null) {
 					for (int x = 0; x < 16; ++x) {
@@ -158,7 +159,28 @@ public class NovaEvents {
 					}
 				}
 			}
+			chunk.isModified = true;
+		} else if (worldObj.provider.dimensionId == ConfigManagerNova.planetPurgotDimensionId) {
+			for (ExtendedBlockStorage storage : chunk.getBlockStorageArray()) {
+				if (storage != null) {
+					for (int x = 0; x < 16; ++x) {
+						for (int y = 0; y < 16; ++y) {
+							for (int z = 0; z < 16; ++z) {
+								Block currentBlock = storage.getBlockByExtId(x,
+										y, z);
+								if (currentBlock == Blocks.stone) {
+									storage.func_150818_a(x, y, z,
+											BlockList.purgStone);
+								} else if (currentBlock == Blocks.water) {
+									storage.func_150818_a(x, y, z,
+											BlockList.purgDirt);
+								}
+							}
+						}
+					}
+				}
+			}
+			chunk.isModified = true;
 		}
-		chunk.isModified = true;
 	}
 }

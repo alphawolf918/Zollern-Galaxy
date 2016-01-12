@@ -85,6 +85,12 @@ public class EntityCrawlerBoss extends EntitySpider implements IBoss,
 	}
 	
 	@Override
+	protected Entity findPlayerToAttack() {
+		double d0 = 18.0D;
+		return this.worldObj.getClosestVulnerablePlayerToEntity(this, d0);
+	}
+	
+	@Override
 	protected void func_145780_a(int p_145780_1_, int p_145780_2_,
 			int p_145780_3_, Block p_145780_4_) {
 		this.playSound("mob.spider.step", 0.30F, 0.5F);
@@ -99,11 +105,11 @@ public class EntityCrawlerBoss extends EntitySpider implements IBoss,
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getEntityAttribute(SharedMonsterAttributes.maxHealth)
-				.setBaseValue(215.0F * ConfigManagerCore.dungeonBossHealthMod);
+				.setBaseValue(235.0F * ConfigManagerCore.dungeonBossHealthMod);
 		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed)
 				.setBaseValue(0.25F);
 		this.getEntityAttribute(SharedMonsterAttributes.attackDamage)
-				.setBaseValue(2.25F);
+				.setBaseValue(2.50F);
 	}
 	
 	@Override
