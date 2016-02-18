@@ -62,6 +62,26 @@ public class RecipeManagerNova {
 					"   ", 'C', BlockList.edenRock });
 			totalCraftingRecipes++;
 			
+			// Zolrock Bricks
+			ItemStack zolRockBricks = new ItemStack(BlockList.zolRockBricks, 4);
+			GameRegistry.addRecipe(edenRockBricks, new Object[] { "CC ", "CC ",
+					"   ", 'C', BlockList.zolstone });
+			totalCraftingRecipes++;
+			
+			// Kriffrock Bricks
+			ItemStack kriffonRockBricks = new ItemStack(
+					BlockList.kriffRockBricks, 4);
+			GameRegistry.addRecipe(edenRockBricks, new Object[] { "CC ", "CC ",
+					"   ", 'C', BlockList.kriffStone });
+			totalCraftingRecipes++;
+			
+			// Purgrock Bricks
+			ItemStack purgRockBricks = new ItemStack(BlockList.purgRockBricks,
+					4);
+			GameRegistry.addRecipe(edenRockBricks, new Object[] { "CC ", "CC ",
+					"   ", 'C', BlockList.purgStone });
+			totalCraftingRecipes++;
+			
 			// Virinium Block
 			GameRegistry
 					.addRecipe(new ItemStack(BlockList.edenViriBlock, 1),
@@ -132,7 +152,7 @@ public class RecipeManagerNova {
 			totalCraftingRecipes++;
 			
 			NovaHelper.echo("Loaded a total of " + totalCraftingRecipes
-					+ " crafting recipes.");
+					+ " new crafting recipes.");
 		}
 	}
 	
@@ -211,6 +231,10 @@ public class RecipeManagerNova {
 					GCBlocks.basicBlock, 5, 5), 4.0F); // Copper
 			addSmelting(BlockList.purgDiamondOre, new ItemStack(
 					Blocks.diamond_ore, 5), 4.0F); // Diamond
+			addSmelting(BlockList.purgEmeraldOre, new ItemStack(
+					Blocks.emerald_ore, 5), 4.0F); // Emerald
+			addSmelting(BlockList.purgEveOre, new ItemStack(
+					ItemList.ingotEvenium, 1), 4.0F);
 			
 			// Other
 			addSmelting(BlockList.edenCobbleRock, BlockList.edenRock, 0.4F);
@@ -224,9 +248,13 @@ public class RecipeManagerNova {
 					ItemList.ingotCobalt, 1), 1.5F);
 			addSmelting(ItemList.dustDiamond, new ItemStack(Items.diamond, 1),
 					0.6F);
+			addSmelting(ItemList.dustEmerald, new ItemStack(Items.emerald, 1),
+					0.6F);
+			addSmelting(ItemList.dustEvenium, new ItemStack(
+					ItemList.ingotEvenium, 1), 1.5F);
 			
 			NovaHelper.echo("Loaded a total of " + totalSmeltingRecipes
-					+ " total smelting recipes.");
+					+ " new smelting recipes.");
 			
 		}
 		
@@ -289,14 +317,35 @@ public class RecipeManagerNova {
 					ItemList.dustAluminum), 15);
 			totalPulverizerRecipes++;
 			
+			// Emerald Ore
+			ThermalExpansionHelper.addPulverizerRecipe(1600, new ItemStack(
+					Blocks.emerald_ore),
+					new ItemStack(ItemList.dustEmerald, 2), new ItemStack(
+							ItemList.dustDiamond), 65);
+			totalPulverizerRecipes++;
+			
 			// Cobalt Ingot
 			ThermalExpansionHelper.addPulverizerRecipe(2800, new ItemStack(
 					ItemList.ingotCobalt, 1), new ItemStack(
 					ItemList.dustCobalt, 1), new ItemStack(Items.coal), 1);
 			totalPulverizerRecipes++;
 			
+			// Evenium Ore
+			ThermalExpansionHelper.addPulverizerRecipe(2600, new ItemStack(
+					BlockList.purgEveOre, 1), new ItemStack(
+					ItemList.dustEvenium, 2),
+					new ItemStack(ItemList.dustCobalt), 5);
+			totalPulverizerRecipes++;
+			
+			// Evenium Ingot
+			ThermalExpansionHelper.addPulverizerRecipe(2800, new ItemStack(
+					ItemList.ingotEvenium, 1), new ItemStack(
+					ItemList.dustEvenium, 1), new ItemStack(
+					ItemList.ingotCobalt), 1);
+			totalPulverizerRecipes++;
+			
 			NovaHelper.echo("Loaded a total of " + totalPulverizerRecipes
-					+ " pulverizer recipes.");
+					+ " new pulverizer recipes.");
 		}
 	}
 	
@@ -340,7 +389,7 @@ public class RecipeManagerNova {
 			totalCompressorRecipes++;
 			
 			NovaHelper.echo("Loaded a total of " + totalCompressorRecipes
-					+ " compressor recipes.");
+					+ " new compressor recipes.");
 		}
 	}
 }

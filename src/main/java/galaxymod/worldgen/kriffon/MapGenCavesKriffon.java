@@ -22,7 +22,7 @@ import net.minecraft.world.World;
 
 public class MapGenCavesKriffon extends MapGenBaseMeta {
 	
-	public static final int BREAK_THROUGH_CHANCE = 2; // 1 in n chance
+	public static int BREAK_THROUGH_CHANCE = 2; // 1 in n chance
 	
 	protected void generateLargeCaveNode(long par1, int par3, int par4,
 			Block[] blockIdArray, byte[] metaArray, double par6, double par8,
@@ -36,14 +36,14 @@ public class MapGenCavesKriffon extends MapGenBaseMeta {
 			Block[] blockIdArray, byte[] metaArray, double par6, double par8,
 			double par10, float par12, float par13, float par14, int par15,
 			int par16, double par17) {
-		final double d4 = par3 * 16 + 8;
-		final double d5 = par4 * 16 + 8;
+		double d4 = par3 * 16 + 8;
+		double d5 = par4 * 16 + 8;
 		float f3 = 0.0F;
 		float f4 = 0.0F;
-		final Random random = new Random(par1);
+		Random random = new Random(par1);
 		
 		if (par16 <= 0) {
-			final int j1 = this.range * 16 - 16;
+			int j1 = this.range * 16 - 16;
 			par16 = j1 - random.nextInt(j1 / 4);
 		}
 		
@@ -54,15 +54,14 @@ public class MapGenCavesKriffon extends MapGenBaseMeta {
 			flag = true;
 		}
 		
-		final int k1 = random.nextInt(par16 / 2) + par16 / 4;
+		int k1 = random.nextInt(par16 / 2) + par16 / 4;
 		
-		for (final boolean flag1 = random.nextInt(6) == 0; par15 < par16; ++par15) {
-			final double d6 = 1.5D
-					+ MathHelper.sin(par15 * (float) Math.PI / par16) * par12
-					* 1.0F;
-			final double d7 = d6 * par17;
-			final float f5 = MathHelper.cos(par14);
-			final float f6 = MathHelper.sin(par14);
+		for (boolean flag1 = random.nextInt(6) == 0; par15 < par16; ++par15) {
+			double d6 = 1.5D + MathHelper.sin(par15 * (float) Math.PI / par16)
+					* par12 * 1.0F;
+			double d7 = d6 * par17;
+			float f5 = MathHelper.cos(par14);
+			float f6 = MathHelper.sin(par14);
 			par6 += MathHelper.cos(par13) * f5;
 			par8 += f6;
 			par10 += MathHelper.sin(par13) * f5;
@@ -97,10 +96,10 @@ public class MapGenCavesKriffon extends MapGenBaseMeta {
 			}
 			
 			if (flag || random.nextInt(4) != 0) {
-				final double d8 = par6 - d4;
-				final double d9 = par10 - d5;
-				final double d10 = par16 - par15;
-				final double d11 = par12 + 2.0F + 16.0F;
+				double d8 = par6 - d4;
+				double d9 = par10 - d5;
+				double d10 = par16 - par15;
+				double d11 = par12 + 2.0F + 16.0F;
 				
 				if (d8 * d8 + d9 * d9 - d10 * d10 > d11 * d11) {
 					return;
@@ -143,7 +142,6 @@ public class MapGenCavesKriffon extends MapGenBaseMeta {
 						i3 = 16;
 					}
 					
-					final boolean flag2 = false;
 					int j3;
 					for (j3 = l1; j3 < i2; ++j3) {
 						for (int l3 = l2; l3 < i3; ++l3) {
@@ -162,37 +160,35 @@ public class MapGenCavesKriffon extends MapGenBaseMeta {
 					if (true) {
 						
 						for (int localY = j2; localY < k2; localY++) {
-							final double yfactor = (localY + 0.5D - par8) / d7;
-							final double yfactorSq = yfactor * yfactor;
+							double yfactor = (localY + 0.5D - par8) / d7;
+							double yfactorSq = yfactor * yfactor;
 							
 							for (int localX = l1; localX < i2; localX++) {
-								final double zfactor = (localX + par3 * 16
-										+ 0.5D - par6)
+								double zfactor = (localX + par3 * 16 + 0.5D - par6)
 										/ d6;
-								final double zfactorSq = zfactor * zfactor;
+								double zfactorSq = zfactor * zfactor;
 								
 								for (int localZ = l2; localZ < i3; localZ++) {
-									final double xfactor = (localZ + par4 * 16
-											+ 0.5D - par10)
+									double xfactor = (localZ + par4 * 16 + 0.5D - par10)
 											/ d6;
-									final double xfactorSq = xfactor * xfactor;
+									double xfactorSq = xfactor * xfactor;
 									
 									if (xfactorSq + zfactorSq < 1.0D) {
-										final int coords = (localX * 16 + localZ)
+										int coords = (localX * 16 + localZ)
 												* 256 + localY;
 										
 										if (yfactor > -0.7D
 												&& xfactorSq + yfactorSq
 														+ zfactorSq < 1.0D) {
-											if (blockIdArray[coords] == BlockList.kriffStone) {
-												if (metaArray[coords] == 6
-														|| metaArray[coords] == 9) {
-													blockIdArray[coords] = Blocks.air;
-												} else if (metaArray[coords] == 5
-														&& random
-																.nextInt(MapGenCavesKriffon.BREAK_THROUGH_CHANCE) == 0) {
-													blockIdArray[coords] = Blocks.air;
-												}
+											if (blockIdArray[coords] == BlockList.kriffDirt
+													&& metaArray[coords] == 0
+													|| blockIdArray[coords] == BlockList.kriffStone
+													&& metaArray[coords] == 0) {
+												blockIdArray[coords] = Blocks.air;
+											} else if (metaArray[coords] == 0
+													&& random
+															.nextInt(MapGenCavesKriffon.BREAK_THROUGH_CHANCE) == 0) {
+												blockIdArray[coords] = Blocks.air;
 											}
 										}
 									}
@@ -220,9 +216,9 @@ public class MapGenCavesKriffon extends MapGenBaseMeta {
 		}
 		
 		for (int var8 = 0; var8 < var7; ++var8) {
-			final double var9 = par2 * 16 + this.rand.nextInt(16);
-			final double var11 = this.rand.nextInt(this.rand.nextInt(120) + 8);
-			final double var13 = par3 * 16 + this.rand.nextInt(16);
+			double var9 = par2 * 16 + this.rand.nextInt(16);
+			double var11 = this.rand.nextInt(this.rand.nextInt(120) + 8);
+			double var13 = par3 * 16 + this.rand.nextInt(16);
 			int var15 = 1;
 			
 			if (this.rand.nextInt(4) == 0) {
@@ -232,9 +228,8 @@ public class MapGenCavesKriffon extends MapGenBaseMeta {
 			}
 			
 			for (int var16 = 0; var16 < var15; ++var16) {
-				final float var17 = this.rand.nextFloat() * (float) Math.PI
-						* 2.0F;
-				final float var18 = (this.rand.nextFloat() - 0.5F) * 2.0F / 8.0F;
+				float var17 = this.rand.nextFloat() * (float) Math.PI * 2.0F;
+				float var18 = (this.rand.nextFloat() - 0.5F) * 2.0F / 8.0F;
 				float var19 = this.rand.nextFloat() * 2.0F
 						+ this.rand.nextFloat();
 				
@@ -242,7 +237,6 @@ public class MapGenCavesKriffon extends MapGenBaseMeta {
 					var19 *= this.rand.nextFloat() * this.rand.nextFloat()
 							* 3.0F + 1.0F;
 				}
-				
 				this.generateCaveNode(this.rand.nextLong(), par4, par5,
 						blockIdArray, metaArray, var9, var11, var13, var19,
 						var17, var18, 0, 0, 1.0D);

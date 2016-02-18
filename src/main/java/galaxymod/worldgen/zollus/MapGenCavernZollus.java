@@ -266,7 +266,7 @@ public class MapGenCavernZollus extends MapGenBaseMeta {
 												} else if (arrayOfIDs[coordsBelow] == BlockList.zolstone
 														&& this.rand
 																.nextInt(200) == 0) {
-													arrayOfIDs[coords] = BlockList.zolCobbleRock;
+													arrayOfIDs[coords] = Blocks.air;
 													arrayOfMeta[coords] = 0;
 												}
 											}

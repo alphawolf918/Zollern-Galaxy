@@ -61,9 +61,15 @@ public class ItemList {
 	public static final ItemNova kriffonCrystal = new ItemNova("kriffoncrystal");
 	public static final ItemNova kriffonPurgotTablet = new ItemKriffonTablet();
 	
+	public static final ItemNova ingotEvenium = new ItemNova("ingotevenium");
+	public static final ItemNova compressedEvenium = new ItemNova(
+			"compressedevenium");
+	
 	public static final ItemNova dustAluminum = new ItemNova("aluminumdust");
 	public static final ItemNova dustCobalt = new ItemNova("pulverizedcobalt");
 	public static final ItemNova dustDiamond = new ItemNova("diamonddust");
+	public static final ItemNova dustEmerald = new ItemNova("emeralddust");
+	public static final ItemNova dustEvenium = new ItemNova("eveniumdust");
 	
 	public static void init() {
 		addItem(alienBeefRaw);
@@ -93,11 +99,16 @@ public class ItemList {
 		addItem(kriffonCrystal);
 		addItem(kriffonPurgotTablet);
 		
+		addItem(ingotEvenium);
+		addItem(compressedEvenium);
+		
 		addItem(dustAluminum);
 		addItem(dustCobalt);
 		addItem(dustDiamond);
+		addItem(dustEmerald);
+		addItem(dustEvenium);
 		
-		NovaHelper.echo("Loaded a total of " + totalItems + " items.");
+		NovaHelper.echo("Loaded a total of " + totalItems + " new items.");
 	}
 	
 	public static void addItem(Item par1Item) {

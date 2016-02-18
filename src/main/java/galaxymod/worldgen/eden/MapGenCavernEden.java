@@ -22,6 +22,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
 
 public class MapGenCavernEden extends MapGenBaseMeta {
+	
 	protected int range = 8;
 	
 	protected Random rand = new Random();
@@ -265,7 +266,7 @@ public class MapGenCavernEden extends MapGenBaseMeta {
 												} else if (arrayOfIDs[coordsBelow] == BlockList.edenRock
 														&& this.rand
 																.nextInt(200) == 0) {
-													arrayOfIDs[coords] = BlockList.edenSoil;
+													arrayOfIDs[coords] = Blocks.air;
 													arrayOfMeta[coords] = 0;
 												}
 											}

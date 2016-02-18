@@ -1,6 +1,7 @@
 tile.galaxymod_solarblock.name=Zolrock
 tile.galaxymod_zolstone.name=Zolstone
 tile.galaxymod_zolcobblerock.name=Zolrock Cobblestone
+tile.galaxymod_zolrockbricks.name=Zollus Rock Bricks
 tile.galaxymod_spacecrystals.name=Zolnium Crystals
 tile.galaxymod_zolcoalore.name=Zollus Coal Ore
 tile.galaxymod_zolironore.name=Zollus Iron Ore
@@ -63,6 +64,7 @@ tile.galaxymod_edentreasurechest.name=Eden's Treasure
 tile.galaxymod_kriffrock.name=Kriffrock
 tile.galaxymod_kriffstone.name=Kriffstone
 tile.galaxymod_kriffcobblerock.name=Kriffon Cobblerock
+tile.galaxymod_kriffrockbricks.name=Kriffon Rock Bricks
 tile.galaxymod_kriffcoalore.name=Kriffon Coal Ore
 tile.galaxymod_kriffcopperore.name=Kriffon Copper Ore
 tile.galaxymod_kriffredstoneore.name=Kriffon Redstone Ore
@@ -73,12 +75,15 @@ tile.galaxymod_kriffdirt.name=Kriffon Dirt
 
 tile.galaxymod_purgrock.name=Purgot Rock
 tile.galaxymod_purgcobblerock.name=Purgot Cobblerock
+tile.galaxymod_purgrockbricks.name=Purgot Rock Bricks
 tile.galaxymod_purgstone.name=Purgot Stone
 tile.galaxymod_purgdirt.name=Purgot Dirt
 tile.galaxymod_purgironore.name=Purgot Iron Ore
 tile.galaxymod_purggoldore.name=Purgot Gold Ore
 tile.galaxymod_purgcopperore.name=Purgot Copper Ore
 tile.galaxymod_purgdiamondore.name=Purgot Diamond Ore
+tile.galaxymod_purgemeraldore.name=Purgot Emerald Ore
+tile.galaxymod_purgeveniumore.name=Purgot Evenium Ore
 
 container.eden.treasurechest.name=Eden's Treasure
 
@@ -92,6 +97,8 @@ item.galaxymod_zolluskriffontablet.name=Ancient Zollus Tablet
 item.galaxymod_aluminumdust.name=Pulverized Aluminum
 item.galaxymod_pulverizedcobalt.name=Pulverized Cobalt
 item.galaxymod_diamonddust.name=Pulverized Diamond
+item.galaxymod_emeralddust.name=Pulverized Emerald
+item.galaxymod_eveniumdust.name=Pulverized Evenium
 
 item.galaxymod_alienbeefraw.name=Raw Alien Beef
 item.galaxymod_alienbeefcooked.name=Cooked Alien Beef
@@ -113,6 +120,9 @@ item.galaxymod_compressedkriffonium.name=Compressed Kriffonium
 item.galaxymod_kriffoncrystal.name=Kriffon Crystal
 item.galaxymod_kriffonpurgottablet.name=Ancient Kriffon Tablet
 
+item.galaxymod_ingotevenium.name=Evenium Ingot
+item.galaxymod_compressedevenium.name=Compressed Evenium
+
 entity.galaxymod_moolus.name=Moolus
 entity.galaxymod_oinkus.name=Oinkus
 entity.galaxymod_aliensquid.name=Alien Squid
@@ -126,6 +136,7 @@ planet.zollus=Zollus
 planet.eden=Eden
 planet.purgot=Purgot
 planet.kriffus=Kriffon
+moon.astros=Astros
 
 planet.xathius=Xathius
 planet.xantheon=Xantheon
@@ -155,7 +166,7 @@ star.nova=Nova
 
 solarsystem.psion6=Psios
 solarsystem.praedyth=Praedyth
-solarsystem.pantheon=Hykaria
+solarsystem.pantheon=Pantheon
 solarsystem.olympus=Olympus
 solarsystem.asgard=Asgard
 solarsystem.vega=Vega

@@ -76,7 +76,7 @@ public class Mobs {
 		// Magmos
 		registerEntity(EntityMagmos.class, "magmos", 0x8b0000, 0xff0000);
 		
-		NovaHelper.echo("Loaded a total of " + totalMobs + " mobs.");
+		NovaHelper.echo("Loaded a total of " + totalMobs + " new mobs.");
 	}
 	
 	public static void registerEntity(Class<? extends EntityLiving> entity,

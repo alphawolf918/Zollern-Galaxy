@@ -44,7 +44,8 @@ public class OreDictionaryNova {
 				BlockList.purgDiamondOre);
 		
 		// Emerald
-		registerOre("oreEmerald", BlockList.edenEmeraldOre);
+		registerOre("oreEmerald", BlockList.edenEmeraldOre,
+				BlockList.purgEmeraldOre);
 		
 		// Gold
 		registerOre("oreGold", BlockList.edenGoldOre, BlockList.zolGoldOre,
@@ -90,9 +91,10 @@ public class OreDictionaryNova {
 		registerOre("dustAluminum", ItemList.dustAluminum);
 		registerOre("dustCobalt", ItemList.dustCobalt);
 		registerOre("dustDiamond", ItemList.dustDiamond);
+		registerOre("dustEmerald", ItemList.dustEmerald);
 		
 		NovaHelper.echo("Loaded a total of " + totalEntries
-				+ " Ore Dictionary entries.");
+				+ " new Ore Dictionary entries.");
 	}
 	
 	public static void registerOre(String strName, Item item) {

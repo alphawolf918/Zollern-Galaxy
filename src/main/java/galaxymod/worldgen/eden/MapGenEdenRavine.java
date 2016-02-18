@@ -230,7 +230,7 @@ public class MapGenEdenRavine extends MapGenBase {
 		
 		if (block == BlockList.edenRock || block == filler || block == top) {
 			if (y < 10) {
-				data[index] = BlockList.edenMagmaRock;
+				data[index] = BlockList.edenRock;
 			} else {
 				data[index] = null;
 				

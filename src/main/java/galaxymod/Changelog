@@ -1,12 +1,12 @@
 == Project Nova v1.0 ==
 
-* Added a solar system called Psios, with a blueish-white dwarf star.
-    * Added planets to this solar system:
-        * Eden, an Earth-like planet with a breathable atmosphere and habitable temperature, rich with minable resources.
-        * Zollus, a barren ice planet without a breathable atmosphere or tolerable thermal temperature.
-        * Kriffon, a hot planet close to its sun, Psios, also unbreathable and without a tolerable temperature.
-        * Purgot, a cold, bleak planet even farther from its star than Zollus, but with a breathable atmosphere.
 * Added several new star systems:
+    * Psios
+        * Added planets to this solar system:
+            * Eden, an Earth-like planet with a breathable atmosphere and habitable temperature, rich with minable resources.
+            * Zollus, a barren ice planet without a breathable atmosphere or tolerable thermal temperature.
+            * Kriffon, a hot planet close to its sun, Psios, also unbreathable and without a tolerable temperature.
+            * Purgot, a cold, bleak planet even farther from its star than Zollus, but with a breathable atmosphere.
     * Praedyth
     * Pantheon
     * Olympus
@@ -19,6 +19,12 @@
 * Did a little code cleanup.
 * Diamond Ore can now be pulverized into Diamond Dust.
     * The dust can then be cooked back into diamonds.
+* Emerald Ore can now be pulverized into Emerald Dust.
+    * The dust can then be cooked back into emeralds.
+* Added rock bricks for each planet.
+* Fixed lag problem on each planet (turns out it was the amount of stars in the sky).
+* Caves now generate again and much more frequently on all planets.
+* Caverns are now completely void inside (no biome filler blocks scattered throughout) on all planets.
 
 ====PSIOS.EDEN====
 * Added ores for Eden:
@@ -152,10 +158,10 @@
     * Basically the exact opposite of the Frost Giant.
     * Has a 1 in 500 chance of spawning in lava lakes on Kriffon.
     * Will die if in a cold biome.
-    * Shoots fireballs and attacks the same way a Blaze does.
+    * Shoots fireballs (?) and attacks the same way a Blaze does.
 
 ==PSIOS.PURGOT==
 * Added the base blocks for Purgot.
 * Added the Purgatory biome.
-* Added ores: iron, gold, copper and diamond.
+* Added ores: iron, gold, copper, diamond, emerald and evenium.
 * Caves and ravines now generate on Purgot.

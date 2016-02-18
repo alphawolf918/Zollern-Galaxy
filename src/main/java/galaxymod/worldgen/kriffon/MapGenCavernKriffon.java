@@ -266,7 +266,7 @@ public class MapGenCavernKriffon extends MapGenBaseMeta {
 												} else if (arrayOfIDs[coordsBelow] == BlockList.kriffStone
 														&& this.rand
 																.nextInt(200) == 0) {
-													arrayOfIDs[coords] = BlockList.kriffRock;
+													arrayOfIDs[coords] = Blocks.air;
 													arrayOfMeta[coords] = 0;
 												}
 											}

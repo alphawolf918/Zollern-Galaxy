@@ -91,7 +91,7 @@ public class BiomeList {
 		// PURGOT
 		addBiome(biomePurgatory, BiomeType.COOL, 0);
 		
-		NovaHelper.echo("Loaded a total of " + totalBiomes + " biomes.");
+		NovaHelper.echo("Loaded a total of " + totalBiomes + " new biomes.");
 	}
 	
 	public static void addBiome(BiomeGenBase biome, BiomeType biomeType,

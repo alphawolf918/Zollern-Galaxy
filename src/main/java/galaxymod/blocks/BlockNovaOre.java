@@ -47,7 +47,7 @@ public class BlockNovaOre extends BlockNova implements IDetectableResource {
 	@Override
 	public Block setDefaults() {
 		super.setDefaults();
-		this.setHardResist(2.5F, 4.0F);
+		this.setHardResist(1.6F, 2.5F);
 		this.setHarvestLevel("pickaxe", 3);
 		return this;
 	}

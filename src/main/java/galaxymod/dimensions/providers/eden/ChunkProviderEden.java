@@ -74,8 +74,8 @@ public class ChunkProviderEden extends ChunkProviderSpace {
 	
 	private Random rand;
 	private final BiomeDecoratorEdenOre edenBiomeDecorator = new BiomeDecoratorEdenOre();
-	private final MapGenCavernEden caveGenerator = new MapGenCavernEden();
-	private final MapGenCavesEden cavernGenerator = new MapGenCavesEden();
+	private final MapGenCavesEden caveGenerator = new MapGenCavesEden();
+	private final MapGenCavernEden cavernGenerator = new MapGenCavernEden();
 	private final MapGenEdenRavine ravineGenerator = new MapGenEdenRavine();
 	private final WorldGenEdenDungeons dungeonGenerator = new WorldGenEdenDungeons();
 	private MapGenMineshaft mineshaftGenerator = new MapGenMineshaft();
@@ -194,7 +194,7 @@ public class ChunkProviderEden extends ChunkProviderSpace {
 	
 	@Override
 	protected int getSeaLevel() {
-		return 83;
+		return 63;
 	}
 	
 	@Override

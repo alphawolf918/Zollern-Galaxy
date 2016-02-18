@@ -57,8 +57,8 @@ public class ChunkProviderPurgot extends ChunkProviderSpace {
 	
 	private Random rand;
 	private final BiomeDecoratorPurgotOre purgotBiomeDecorator = new BiomeDecoratorPurgotOre();
-	private final MapGenCavernPurgot caveGenerator = new MapGenCavernPurgot();
-	private final MapGenCavesPurgot cavernGenerator = new MapGenCavesPurgot();
+	private final MapGenCavesPurgot caveGenerator = new MapGenCavesPurgot();
+	private final MapGenCavernPurgot cavernGenerator = new MapGenCavernPurgot();
 	private final MapGenPurgotRavine ravineGenerator = new MapGenPurgotRavine();
 	// private final WorldGenPurgotDungeons dungeonGenerator = new
 	// WorldGenPurgotDungeons();

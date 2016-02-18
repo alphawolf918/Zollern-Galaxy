@@ -45,6 +45,7 @@ import galaxymod.blocks.kriffus.ores.KriffRedstoneOre;
 import galaxymod.blocks.purgot.BlockKriffonPurgotPortal;
 import galaxymod.blocks.purgot.PurgStone;
 import galaxymod.blocks.purgot.ores.PurgDiamondOre;
+import galaxymod.blocks.purgot.ores.PurgEmeraldOre;
 import galaxymod.blocks.zollus.BlockZolniumCrystals;
 import galaxymod.blocks.zollus.ZolStone;
 import galaxymod.blocks.zollus.ZolarBlock;
@@ -77,6 +78,8 @@ public class BlockList {
 	public static final Block zolDirt = ((BlockNova) new BlockNova("zoldirt",
 			Material.ground).setHardResist(0.6F))
 			.setSoundType(Block.soundTypeGravel);
+	public static final Block zolRockBricks = new BlockNova("zolrockbricks",
+			Material.rock).setHardResist(0.9F, 9.8F);
 	public static final Block edenZollusPortal = new BlockEdenZollusPortal();
 	
 	public static final Block edenCobbleRock = new BlockNova("edencobblerock",
@@ -157,6 +160,8 @@ public class BlockList {
 	public static final Block kriffDirt = ((BlockNova) new BlockNova(
 			"kriffdirt", Material.ground).setHardResist(0.6F))
 			.setSoundType(Block.soundTypeGravel);
+	public static final Block kriffRockBricks = new BlockNova(
+			"kriffrockbricks", Material.rock).setHardResist(0.9F, 9.8F);
 	public static final Block kriffonPurgotPortal = new BlockKriffonPurgotPortal();
 	
 	public static final Block purgRock = new BlockNova("purgrock",
@@ -174,6 +179,11 @@ public class BlockList {
 	public static final Block purgCopperOre = new BlockNovaOre("purgcopperore")
 			.setHardResist(1.2F);
 	public static final Block purgDiamondOre = new PurgDiamondOre();
+	public static final Block purgEmeraldOre = new PurgEmeraldOre();
+	public static final Block purgEveOre = ((BlockNovaOre) new BlockNovaOre(
+			"purgeveniumore").setHardResist(1.4F)).setExpDrop(6, 8);
+	public static final Block purgRockBricks = new BlockNova("purgrockbricks",
+			Material.rock).setHardResist(0.9F, 9.8F);
 	
 	public static void init() {
 		addBlock(zolarBlock);
@@ -187,8 +197,10 @@ public class BlockList {
 		addBlock(zolTinOre);
 		addBlock(zolHeartOre);
 		addBlock(zolDirt);
+		addBlock(zolRockBricks);
 		
 		addBlock(edenZollusPortal);
+		
 		addBlock(edenCobbleRock);
 		addBlock(edenRock);
 		addBlock(edenRockBricks);
@@ -247,6 +259,7 @@ public class BlockList {
 		addBlock(kriffCobaltOre);
 		addBlock(kriffDirt);
 		addBlock(kriffonPurgotPortal);
+		addBlock(kriffRockBricks);
 		
 		addBlock(purgRock);
 		addBlock(purgCobbleRock);
@@ -256,8 +269,11 @@ public class BlockList {
 		addBlock(purgGoldOre);
 		addBlock(purgCopperOre);
 		addBlock(purgDiamondOre);
+		addBlock(purgEmeraldOre);
+		addBlock(purgEveOre);
+		addBlock(purgRockBricks);
 		
-		NovaHelper.echo("Loaded a total of " + totalBlocks + " blocks.");
+		NovaHelper.echo("Loaded a total of " + totalBlocks + " new blocks.");
 	}
 	
 	public static void addBlock(Block par1Block) {

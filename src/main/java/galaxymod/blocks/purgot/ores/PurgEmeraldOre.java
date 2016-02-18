@@ -10,25 +10,31 @@
  * - Claim it as your own
  ******************************************************************************/
 
-package galaxymod.blocks.eden;
+package galaxymod.blocks.purgot.ores;
 
-import galaxymod.blocks.BlockList;
-import galaxymod.blocks.BlockNova;
+import galaxymod.blocks.BlockNovaOre;
 import java.util.Random;
-import net.minecraft.block.material.Material;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
+import net.minecraft.util.MathHelper;
 
-public class EdenRock extends BlockNova {
+public class PurgEmeraldOre extends BlockNovaOre {
 	
-	public EdenRock() {
-		super("edenrock", Material.rock);
-		this.setHardResist(1.0F, 6.5F);
+	public PurgEmeraldOre() {
+		super("purgemeraldore");
+		this.setHardResist(2.6F);
+		this.setExpDrop(10, 15);
 	}
 	
 	@Override
 	public Item getItemDropped(int p_149650_1_, Random p_149650_2_,
 			int p_149650_3_) {
-		return Item.getItemFromBlock(BlockList.edenCobbleRock);
+		return Items.emerald;
+	}
+	
+	@Override
+	public int quantityDropped(Random p_149745_1_) {
+		return MathHelper.getRandomIntegerInRange(p_149745_1_, 1, 4);
 	}
 	
 }

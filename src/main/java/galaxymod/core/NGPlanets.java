@@ -166,7 +166,8 @@ public class NGPlanets {
 		systemNova.setMainStar(starNova);
 		totalSystems++;
 		
-		NovaHelper.echo("Loaded a total of " + totalSystems + " star systems.");
+		NovaHelper.echo("Loaded a total of " + totalSystems
+				+ " new star systems.");
 	}
 	
 	public static void initPlanets() {
@@ -251,12 +252,12 @@ public class NGPlanets {
 				WorldProviderPurgot.class);
 		totalPlanets++;
 		
-		NovaHelper.echo("Loaded a total of " + totalPlanets + " planets.");
+		NovaHelper.echo("Loaded a total of " + totalPlanets + " new planets.");
 	}
 	
 	public static void initMoons() {
 		// TODO
-		NovaHelper.echo("Loaded a total of " + totalMoons + " moons.");
+		NovaHelper.echo("Loaded a total of " + totalMoons + " new moons.");
 	}
 	
 	public static void registerSystems() {

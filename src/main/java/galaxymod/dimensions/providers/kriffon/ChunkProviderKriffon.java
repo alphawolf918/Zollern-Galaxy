@@ -57,8 +57,8 @@ public class ChunkProviderKriffon extends ChunkProviderSpace {
 	
 	private Random rand;
 	private final BiomeDecoratorKriffonOre kriffonBiomeDecorator = new BiomeDecoratorKriffonOre();
-	private final MapGenCavernKriffon caveGenerator = new MapGenCavernKriffon();
-	private final MapGenCavesKriffon cavernGenerator = new MapGenCavesKriffon();
+	private final MapGenCavesKriffon caveGenerator = new MapGenCavesKriffon();
+	private final MapGenCavernKriffon cavernGenerator = new MapGenCavernKriffon();
 	private final MapGenKriffonRavine ravineGenerator = new MapGenKriffonRavine();
 	// private final WorldGenKriffonDungeons dungeonGenerator = new
 	// WorldGenKriffonDungeons();

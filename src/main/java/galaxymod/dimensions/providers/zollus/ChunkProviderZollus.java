@@ -57,8 +57,8 @@ public class ChunkProviderZollus extends ChunkProviderSpace {
 	
 	private Random rand;
 	private final BiomeDecoratorZollusOre zollusBiomeDecorator = new BiomeDecoratorZollusOre();
-	private final MapGenCavernZollus caveGenerator = new MapGenCavernZollus();
-	private final MapGenCavesZollus cavernGenerator = new MapGenCavesZollus();
+	private final MapGenCavesZollus caveGenerator = new MapGenCavesZollus();
+	private final MapGenCavernZollus cavernGenerator = new MapGenCavernZollus();
 	private final MapGenZollusRavine ravineGenerator = new MapGenZollusRavine();
 	// private final WorldGenZollusDungeons dungeonGenerator = new
 	// WorldGenZollusDungeons();

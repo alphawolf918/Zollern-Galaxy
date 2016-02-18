@@ -266,7 +266,7 @@ public class MapGenCavernPurgot extends MapGenBaseMeta {
 												} else if (arrayOfIDs[coordsBelow] == BlockList.purgStone
 														&& this.rand
 																.nextInt(200) == 0) {
-													arrayOfIDs[coords] = BlockList.purgCobbleRock;
+													arrayOfIDs[coords] = Blocks.air;
 													arrayOfMeta[coords] = 0;
 												}
 											}
