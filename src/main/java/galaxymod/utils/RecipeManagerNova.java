@@ -235,6 +235,8 @@ public class RecipeManagerNova {
 					Blocks.emerald_ore, 5), 4.0F); // Emerald
 			addSmelting(BlockList.purgEveOre, new ItemStack(
 					ItemList.ingotEvenium, 1), 4.0F);
+			addSmelting(BlockList.purgCobaltOre, new ItemStack(
+					BlockList.kriffCobaltOre, 2), 4.4F);
 			
 			// Other
 			addSmelting(BlockList.edenCobbleRock, BlockList.edenRock, 0.4F);
@@ -315,6 +317,11 @@ public class RecipeManagerNova {
 					BlockList.kriffCobaltOre, 1), new ItemStack(
 					ItemList.dustCobalt, 2), new ItemStack(
 					ItemList.dustAluminum), 15);
+			totalPulverizerRecipes++;
+			ThermalExpansionHelper.addPulverizerRecipe(2800, new ItemStack(
+					BlockList.purgCobaltOre, 1), new ItemStack(
+					ItemList.dustCobalt, 5), new ItemStack(
+					ItemList.dustAluminum), 25);
 			totalPulverizerRecipes++;
 			
 			// Emerald Ore

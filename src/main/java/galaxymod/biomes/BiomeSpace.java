@@ -13,8 +13,11 @@
 package galaxymod.biomes;
 
 import galaxymod.core.PlanetNova;
+import galaxymod.dimensions.providers.WorldProviderNova;
+import galaxymod.utils.NovaHelper;
 import net.minecraft.block.Block;
 import net.minecraft.world.biome.BiomeGenBase;
+import org.apache.logging.log4j.Level;
 
 public class BiomeSpace extends BiomeGenBase {
 	
@@ -28,6 +31,26 @@ public class BiomeSpace extends BiomeGenBase {
 		this.setColor(BiomeList.biomeColor);
 	}
 	
+	public boolean isBreathable() {
+		PlanetNova biomePlanet = this.getPlanetForBiome();
+		Class<? extends WorldProviderNova> provider = (Class<? extends WorldProviderNova>) biomePlanet
+				.getWorldProvider();
+		try {
+			WorldProviderNova providerNova = provider.newInstance();
+			return providerNova.hasBreathableAtmosphere();
+		} catch (InstantiationException e) {
+			NovaHelper.logMessage(
+					"Error in creating new instance of Nova World Provider!",
+					Level.FATAL);
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			NovaHelper.logMessage(
+					"Nova World Provider was accessed illegally!", Level.FATAL);
+			e.printStackTrace();
+		}
+		return false;
+	}
+	
 	public BiomeSpace setPlanetForBiome(PlanetNova planet) {
 		this.planetForBiome = planet;
 		return this;
@@ -38,11 +61,11 @@ public class BiomeSpace extends BiomeGenBase {
 	}
 	
 	public boolean getIsHotBiome() {
-		return (this.temperature >= 7F);
+		return (this.getTemp() >= 7F);
 	}
 	
 	public boolean getIsColdBiome() {
-		return (this.temperature <= 3F);
+		return (this.getTemp() <= 3F);
 	}
 	
 	public BiomeSpace setHeightBaseModifier(int bioHeight) {
@@ -72,5 +95,9 @@ public class BiomeSpace extends BiomeGenBase {
 	public BiomeSpace setTemp(float biomeTemp) {
 		this.temperature = biomeTemp;
 		return this;
+	}
+	
+	public float getTemp() {
+		return this.temperature;
 	}
 }

@@ -16,6 +16,7 @@ import galaxymod.core.config.ConfigManagerNova;
 import galaxymod.dimensions.providers.eden.WorldProviderEden;
 import galaxymod.dimensions.providers.kriffon.WorldProviderKriffon;
 import galaxymod.dimensions.providers.purgot.WorldProviderPurgot;
+import galaxymod.dimensions.providers.xathius.WorldProviderXathius;
 import galaxymod.dimensions.providers.zollus.WorldProviderZollus;
 import galaxymod.events.NovaEventHandler;
 import galaxymod.utils.ModInfo;
@@ -60,7 +61,7 @@ public class NGPlanets {
 	public static Moon moonAstros;
 	
 	// Praedyth System
-	public static PlanetNova planetXathius;
+	public static PlanetNova planetXathius = new PlanetNova("xathius");
 	public static PlanetNova planetXantheon;
 	public static PlanetNova planetAtheon;
 	
@@ -252,6 +253,27 @@ public class NGPlanets {
 				WorldProviderPurgot.class);
 		totalPlanets++;
 		
+		// Planet Xathius
+		planetXathius.setParentSolarSystem(systemPraedyth);
+		planetXathius.setPlanetClass(EnumPlanetClass.NINE);
+		planetXathius.setRingColorRGB(0.1F, 0.9F, 1.4F);
+		planetXathius.setPhaseShift(0.2F);
+		planetXathius.setRelativeOrbitTime(16F);
+		planetXathius.setRelativeDistanceFromCenter(new ScalableDistance(3.4F,
+				3.4F));
+		planetXathius.atmosphereComponent(IAtmosphericGas.OXYGEN)
+				.atmosphereComponent(IAtmosphericGas.WATER)
+				.atmosphereComponent(IAtmosphericGas.NITROGEN)
+				.atmosphereComponent(IAtmosphericGas.ARGON);
+		planetXathius.setTierRequired(5);
+		planetXathius.setRelativeSize(20.0F);
+		planetXathius.setBodyIcon(new ResourceLocation(ModInfo.MODID,
+				"textures/gui/xathius.png"));
+		planetXathius.setDimensionInfo(
+				ConfigManagerNova.planetXathiusDimensionId,
+				WorldProviderXathius.class);
+		totalPlanets++;
+		
 		NovaHelper.echo("Loaded a total of " + totalPlanets + " new planets.");
 	}
 	
@@ -272,6 +294,7 @@ public class NGPlanets {
 		GalaxyRegistry.registerPlanet(planetEden);
 		GalaxyRegistry.registerPlanet(planetKriffon);
 		GalaxyRegistry.registerPlanet(planetPurgot);
+		GalaxyRegistry.registerPlanet(planetXathius);
 	}
 	
 	public static void registerTeleportTypes() {
@@ -283,6 +306,8 @@ public class NGPlanets {
 		GalacticraftRegistry.registerTeleportType(WorldProviderKriffon.class,
 				teleType);
 		GalacticraftRegistry.registerTeleportType(WorldProviderPurgot.class,
+				teleType);
+		GalacticraftRegistry.registerTeleportType(WorldProviderXathius.class,
 				teleType);
 	}
 }

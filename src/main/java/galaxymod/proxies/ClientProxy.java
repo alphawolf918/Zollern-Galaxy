@@ -22,6 +22,7 @@ import galaxymod.mobs.entities.eden.EntityAlienSquid;
 import galaxymod.mobs.entities.eden.EntityMoolus;
 import galaxymod.mobs.entities.eden.EntityOinkus;
 import galaxymod.mobs.entities.kriffon.EntityMagmos;
+import galaxymod.mobs.entities.xathius.slimes.EntitySlimeRaspberry;
 import galaxymod.mobs.entities.zollus.EntityFrostGiant;
 import galaxymod.mobs.models.ModelAlienSquid;
 import galaxymod.mobs.models.ModelCrawler;
@@ -31,6 +32,7 @@ import galaxymod.mobs.models.ModelGrayAlien;
 import galaxymod.mobs.models.ModelMagmos;
 import galaxymod.mobs.models.ModelMoolus;
 import galaxymod.mobs.models.ModelOinkus;
+import galaxymod.mobs.models.ModelSlimeRaspberry;
 import galaxymod.mobs.renders.RenderAlienSquid;
 import galaxymod.mobs.renders.RenderCrawler;
 import galaxymod.mobs.renders.RenderFrostGiant;
@@ -39,6 +41,7 @@ import galaxymod.mobs.renders.RenderGrayAlien;
 import galaxymod.mobs.renders.RenderMagmos;
 import galaxymod.mobs.renders.RenderMoolus;
 import galaxymod.mobs.renders.RenderOinkus;
+import galaxymod.mobs.renders.RenderSlimeRaspberry;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.common.MinecraftForge;
@@ -86,6 +89,11 @@ public class ClientProxy extends CommonProxy {
 		
 		RenderingRegistry.registerEntityRenderingHandler(EntityMagmos.class,
 				new RenderMagmos(new ModelMagmos(), 0.5F));
+		
+		RenderingRegistry.registerEntityRenderingHandler(
+				EntitySlimeRaspberry.class, new RenderSlimeRaspberry(
+						new ModelSlimeRaspberry(), new ModelSlimeRaspberry(),
+						0.25F));
 	}
 	
 	public static void registerBlockRenderers() {

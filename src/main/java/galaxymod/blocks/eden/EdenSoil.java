@@ -23,11 +23,11 @@ import net.minecraftforge.common.util.ForgeDirection;
 public class EdenSoil extends BlockNova {
 	
 	public EdenSoil() {
-		super(Material.grass);
+		super(Material.ground);
 		this.setNameAndTexture("edensoil");
 		this.setHardResist(0.4F);
 		this.setStepSound(soundTypeGravel);
-		this.setHarvestLevel("shovel", 1);
+		this.setHarvestLevel("shovel", 2);
 	}
 	
 	@Override

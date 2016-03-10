@@ -49,8 +49,7 @@ public class NovaEvents {
 			float posZ = event.z;
 			entity.setDead();
 			EntityAlienVillager alien = new EntityAlienVillager(world);
-			alien.setLocationAndAngles(posX, posY, posZ, entity.rotationYaw,
-					entity.rotationPitch);
+			alien.copyLocationAndAnglesFrom(entity);
 			world.spawnEntityInWorld(alien);
 		}
 	}
@@ -174,6 +173,36 @@ public class NovaEvents {
 								} else if (currentBlock == Blocks.water) {
 									storage.func_150818_a(x, y, z,
 											BlockList.purgDirt);
+								} else if (currentBlock == BlockList.purgRock) {
+									storage.func_150818_a(x, y, z,
+											biome.topBlock);
+								} else if (currentBlock == BlockList.purgDirt) {
+									storage.func_150818_a(x, y, z,
+											biome.fillerBlock);
+								}
+							}
+						}
+					}
+				}
+			}
+			chunk.isModified = true;
+		} else if (worldObj.provider.dimensionId == ConfigManagerNova.planetXathiusDimensionId) {
+			for (ExtendedBlockStorage storage : chunk.getBlockStorageArray()) {
+				if (storage != null) {
+					for (int x = 0; x < 16; ++x) {
+						for (int y = 0; y < 16; ++y) {
+							for (int z = 0; z < 16; ++z) {
+								Block currentBlock = storage.getBlockByExtId(x,
+										y, z);
+								if (currentBlock == Blocks.stone) {
+									storage.func_150818_a(x, y, z,
+											BlockList.xathStone);
+								} else if (currentBlock == BlockList.xathRock) {
+									storage.func_150818_a(x, y, z,
+											biome.topBlock);
+								} else if (currentBlock == BlockList.xathDirt) {
+									storage.func_150818_a(x, y, z,
+											biome.fillerBlock);
 								}
 							}
 						}

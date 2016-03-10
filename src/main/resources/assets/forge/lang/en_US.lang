@@ -78,12 +78,21 @@ tile.galaxymod_purgcobblerock.name=Purgot Cobblerock
 tile.galaxymod_purgrockbricks.name=Purgot Rock Bricks
 tile.galaxymod_purgstone.name=Purgot Stone
 tile.galaxymod_purgdirt.name=Purgot Dirt
+tile.galaxymod_whiterock.name=Whiterock
+tile.galaxymod_blackrock.name=Blackrock
 tile.galaxymod_purgironore.name=Purgot Iron Ore
 tile.galaxymod_purggoldore.name=Purgot Gold Ore
 tile.galaxymod_purgcopperore.name=Purgot Copper Ore
 tile.galaxymod_purgdiamondore.name=Purgot Diamond Ore
 tile.galaxymod_purgemeraldore.name=Purgot Emerald Ore
 tile.galaxymod_purgeveniumore.name=Purgot Evenium Ore
+tile.galaxymod_purgcobaltore.name=Purgot Cobalt Ore
+
+tile.galaxymod_xathrock.name=Xathian Rock
+tile.galaxymod_xathstone.name=Xathian Stone
+tile.galaxymod_xathcobblerock.name=Xathian Cobblerock
+tile.galaxymod_xathdirt.name=Xathian Dirt
+tile.galaxymod_xathgrass.name=Xathian Grass
 
 container.eden.treasurechest.name=Eden's Treasure
 
@@ -131,6 +140,7 @@ entity.galaxymod_galaxyknight.name=Galactic Sentry
 entity.galaxymod_crawler.name=Crawler Boss
 entity.galaxymod_frostgiant.name=Frost Giant
 entity.galaxymod_magmos.name=Magmos
+entity.galaxymod_slime.raspberry.name=Galaxy Slime (Raspberry)
 
 planet.zollus=Zollus
 planet.eden=Eden

@@ -21,6 +21,7 @@ import galaxymod.mobs.entities.eden.EntityAlienSquid;
 import galaxymod.mobs.entities.eden.EntityMoolus;
 import galaxymod.mobs.entities.eden.EntityOinkus;
 import galaxymod.mobs.entities.kriffon.EntityMagmos;
+import galaxymod.mobs.entities.xathius.slimes.EntitySlimeRaspberry;
 import galaxymod.mobs.entities.zollus.EntityFrostGiant;
 import galaxymod.utils.ModInfo;
 import galaxymod.utils.NovaHelper;
@@ -75,6 +76,16 @@ public class Mobs {
 		
 		// Magmos
 		registerEntity(EntityMagmos.class, "magmos", 0x8b0000, 0xff0000);
+		
+		// Galaxy Slimes
+		
+		// (Raspberry)
+		registerEntity(EntitySlimeRaspberry.class, "slime.raspberry", 0x000000,
+				0x0099ff);
+		EntityRegistry
+				.addSpawn(EntitySlimeRaspberry.class, 2, 1, 2,
+						EnumCreatureType.creature,
+						BiomeList.biomeXathiusAbstractPlains);
 		
 		NovaHelper.echo("Loaded a total of " + totalMobs + " new mobs.");
 	}

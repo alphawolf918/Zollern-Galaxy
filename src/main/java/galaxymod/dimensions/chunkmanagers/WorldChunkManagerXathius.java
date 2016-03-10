@@ -10,9 +10,10 @@
  * - Claim it as your own
  *******************************************************************************/
 
-package galaxymod.dimensions.providers.eden;
+package galaxymod.dimensions.chunkmanagers;
 
 import galaxymod.biomes.BiomeList;
+import galaxymod.dimensions.providers.xathius.GenLayerXathius;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -24,42 +25,35 @@ import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.gen.layer.GenLayer;
 import net.minecraft.world.gen.layer.IntCache;
 
-public class WorldChunkManagerEden extends WorldChunkManagerSpace {
+public class WorldChunkManagerXathius extends WorldChunkManagerSpace {
 	
 	private GenLayer unzoomedBiomes;
 	private GenLayer zoomedBiomes;
 	private BiomeCache myBiomeCache;
 	private List<BiomeGenBase> myBiomesToSpawnIn;
 	
-	protected WorldChunkManagerEden() {
+	protected WorldChunkManagerXathius() {
 		this.myBiomeCache = new BiomeCache(this);
 		this.myBiomesToSpawnIn = new ArrayList();
-		this.myBiomesToSpawnIn.add(BiomeList.biomeEden);
-		this.myBiomesToSpawnIn.add(BiomeList.biomeEdenRockMountains);
-		this.myBiomesToSpawnIn.add(BiomeList.biomeEdenTerranValley);
-		this.myBiomesToSpawnIn.add(BiomeList.biomeEdenBloodDesert);
-		this.myBiomesToSpawnIn.add(BiomeList.biomeEdenGarden);
-		this.myBiomesToSpawnIn.add(BiomeList.biomeEdenForest);
-		this.myBiomesToSpawnIn.add(BiomeList.biomeEdenMagmaLands);
-		this.myBiomesToSpawnIn.add(BiomeList.biomeEdenSnowyPlains);
-		this.myBiomesToSpawnIn.add(BiomeList.biomeEdenSwamp);
+		this.myBiomesToSpawnIn.add(BiomeList.biomeXathius);
+		this.myBiomesToSpawnIn.add(BiomeList.biomeXathiusAbstractPlains);
 	}
 	
-	public WorldChunkManagerEden(long seed) {
+	public WorldChunkManagerXathius(long seed) {
 		this();
 		GenLayer[] agenlayer;
-		agenlayer = GenLayerEden.makeTheWorld(seed);
+		agenlayer = GenLayerXathius.makeTheWorld(seed);
 		this.unzoomedBiomes = agenlayer[0];
 		this.zoomedBiomes = agenlayer[1];
 	}
 	
-	public WorldChunkManagerEden(World world) {
+	public WorldChunkManagerXathius(World world) {
 		this(world.getSeed());
 	}
 	
 	@Override
 	public BiomeGenBase getBiome() {
-		return BiomeList.biomeEden;
+		return BiomeList.biomeXathius;
 	}
 	
 	@Override
@@ -72,7 +66,7 @@ public class WorldChunkManagerEden extends WorldChunkManagerSpace {
 		BiomeGenBase biome = this.myBiomeCache.getBiomeGenAt(par1, par2);
 		
 		if (biome == null) {
-			return BiomeList.biomeEden;
+			return BiomeList.biomeXathius;
 		}
 		return biome;
 	}
@@ -116,7 +110,7 @@ public class WorldChunkManagerEden extends WorldChunkManagerSpace {
 				par1ArrayOfBiomeGenBase[i] = BiomeGenBase
 						.getBiome(arrayOfInts[i]);
 			} else {
-				par1ArrayOfBiomeGenBase[i] = BiomeList.biomeEden;
+				par1ArrayOfBiomeGenBase[i] = BiomeList.biomeXathius;
 			}
 		}
 		return par1ArrayOfBiomeGenBase;
@@ -151,7 +145,7 @@ public class WorldChunkManagerEden extends WorldChunkManagerSpace {
 			if (ai[i] >= 0) {
 				par1ArrayOfBiomeGenBase[i] = BiomeGenBase.getBiome(ai[i]);
 			} else {
-				par1ArrayOfBiomeGenBase[i] = BiomeList.biomeEden;
+				par1ArrayOfBiomeGenBase[i] = BiomeList.biomeXathius;
 			}
 		}
 		return par1ArrayOfBiomeGenBase;

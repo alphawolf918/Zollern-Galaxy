@@ -58,10 +58,14 @@ public class BlockNova extends Block {
 		this.setNameAndTexture(strTexture);
 	}
 	
+	public BlockNova(String strTexture) {
+		this(strTexture, Material.rock);
+	}
+	
 	public Block setDefaults() {
-		this.setHardResist(1.8F, 9.8F);
+		this.setHardResist(1.8F, 4.8F);
+		this.setHarvestLevel("pickaxe", 1);
 		this.setStepSound(soundTypeStone);
-		// this.setDropItem(Item.getItemFromBlock(this));
 		return this;
 	}
 	

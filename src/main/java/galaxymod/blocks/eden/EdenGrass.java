@@ -40,6 +40,7 @@ public class EdenGrass extends BlockNova {
 		this.setHardResist(0.4F);
 		this.setStepSound(soundTypeGrass);
 		this.setTickRandomly(true);
+		this.setHarvestLevel("shovel", 1);
 	}
 	
 	@Override

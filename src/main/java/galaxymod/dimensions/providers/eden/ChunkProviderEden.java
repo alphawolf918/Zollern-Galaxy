@@ -21,6 +21,7 @@ import galaxymod.biomes.eden.BiomeGenEdenBase;
 import galaxymod.blocks.BlockList;
 import galaxymod.core.config.ConfigManagerNova;
 import galaxymod.mobs.entities.eden.EntityAlienSquid;
+import galaxymod.utils.NovaHelper;
 import galaxymod.worldgen.dungeon.RoomEmptyNG;
 import galaxymod.worldgen.eden.MapGenCavernEden;
 import galaxymod.worldgen.eden.MapGenCavesEden;
@@ -51,6 +52,7 @@ import net.minecraft.entity.passive.EntityChicken;
 import net.minecraft.entity.passive.EntityCow;
 import net.minecraft.entity.passive.EntityPig;
 import net.minecraft.entity.passive.EntitySheep;
+import net.minecraft.entity.passive.EntityWolf;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.IProgressUpdate;
 import net.minecraft.util.MathHelper;
@@ -68,6 +70,7 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.util.ForgeDirection;
 import net.minecraftforge.event.terraingen.PopulateChunkEvent;
 import net.minecraftforge.event.terraingen.TerrainGen;
+import org.apache.logging.log4j.Level;
 import com.google.common.collect.Lists;
 
 public class ChunkProviderEden extends ChunkProviderSpace {
@@ -246,37 +249,53 @@ public class ChunkProviderEden extends ChunkProviderSpace {
 	
 	@Override
 	public List getPossibleCreatures(EnumCreatureType type, int x, int y, int z) {
-		BiomeGenEdenBase currentBiome = (BiomeGenEdenBase) worldObj
-				.getBiomeGenForCoords(x, z);
-		if (type == EnumCreatureType.monster) {
-			List monsters = new ArrayList();
-			monsters.add(new SpawnListEntry(EntityEvolvedZombie.class, 1, 0, 1));
-			monsters.add(new SpawnListEntry(EntityEvolvedSpider.class, 1, 0, 1));
-			monsters.add(new SpawnListEntry(EntityEvolvedSkeleton.class, 1, 0,
-					1));
-			monsters.add(new SpawnListEntry(EntityEvolvedCreeper.class, 1, 0, 1));
-			if (currentBiome == BiomeList.biomeEdenMagmaLands) {
-				monsters.add(new SpawnListEntry(EntityBlaze.class, 1, 0, 1));
+		if (this.worldObj.provider.dimensionId == ConfigManagerNova.planetEdenDimensionId) {
+			BiomeGenEdenBase currentBiome = (BiomeGenEdenBase) worldObj
+					.getBiomeGenForCoords(x, z);
+			if (type == EnumCreatureType.monster) {
+				List monsters = new ArrayList();
+				monsters.add(new SpawnListEntry(EntityEvolvedZombie.class, 1,
+						0, 1));
+				monsters.add(new SpawnListEntry(EntityEvolvedSpider.class, 1,
+						0, 1));
+				monsters.add(new SpawnListEntry(EntityEvolvedSkeleton.class, 1,
+						0, 1));
+				monsters.add(new SpawnListEntry(EntityEvolvedCreeper.class, 1,
+						0, 1));
+				if (currentBiome == BiomeList.biomeEdenMagmaLands) {
+					monsters.add(new SpawnListEntry(EntityBlaze.class, 1, 0, 1));
+				}
+				return monsters;
+			} else if (type == EnumCreatureType.creature) {
+				List creatures = new ArrayList();
+				if (ConfigManagerNova.canEarthAnimalsSpawnOnEden
+						&& !currentBiome.getIsHotBiome()) {
+					creatures.add(new SpawnListEntry(EntityCow.class, 1, 0, 1));
+					creatures.add(new SpawnListEntry(EntityPig.class, 1, 0, 1));
+					creatures.add(new SpawnListEntry(EntityChicken.class, 1, 0,
+							1));
+					creatures
+							.add(new SpawnListEntry(EntitySheep.class, 1, 0, 1));
+					creatures
+							.add(new SpawnListEntry(EntityWolf.class, 1, 0, 1));
+				}
+				return creatures;
+			} else if (type == EnumCreatureType.waterCreature) {
+				List waterCreatures = new ArrayList();
+				if (!currentBiome.getIsColdBiome()
+						&& !currentBiome.getIsHotBiome()) {
+					waterCreatures.add(new SpawnListEntry(
+							EntityAlienSquid.class, 1, 0, 1));
+				}
+				return waterCreatures;
+			} else {
+				return null;
 			}
-			return monsters;
-		} else if (type == EnumCreatureType.creature) {
-			List creatures = new ArrayList();
-			if (ConfigManagerNova.canEarthAnimalsSpawnOnEden
-					&& !currentBiome.getIsHotBiome()) {
-				creatures.add(new SpawnListEntry(EntityCow.class, 1, 0, 1));
-				creatures.add(new SpawnListEntry(EntityPig.class, 1, 0, 1));
-				creatures.add(new SpawnListEntry(EntityChicken.class, 1, 0, 1));
-				creatures.add(new SpawnListEntry(EntitySheep.class, 1, 0, 1));
-			}
-			return creatures;
-		} else if (type == EnumCreatureType.waterCreature) {
-			List waterCreatures = new ArrayList();
-			if (!currentBiome.getIsColdBiome() && !currentBiome.getIsHotBiome()) {
-				waterCreatures.add(new SpawnListEntry(EntityAlienSquid.class,
-						1, 0, 1));
-			}
-			return waterCreatures;
 		} else {
+			NovaHelper
+					.logMessage(
+							"There is a biome ID conflict with a mod you are using. One of Eden's biomes tried to generate in the Overworld, but we canceled it to avoid a crash.",
+							Level.WARN);
 			return null;
 		}
 	}

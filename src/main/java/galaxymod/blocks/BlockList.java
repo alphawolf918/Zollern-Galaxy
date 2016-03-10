@@ -42,10 +42,13 @@ import galaxymod.blocks.kriffus.BlockZollusKriffonPortal;
 import galaxymod.blocks.kriffus.KriffStone;
 import galaxymod.blocks.kriffus.ores.KriffCoalOre;
 import galaxymod.blocks.kriffus.ores.KriffRedstoneOre;
+import galaxymod.blocks.purgot.BlackRock;
 import galaxymod.blocks.purgot.BlockKriffonPurgotPortal;
 import galaxymod.blocks.purgot.PurgStone;
+import galaxymod.blocks.purgot.WhiteRock;
 import galaxymod.blocks.purgot.ores.PurgDiamondOre;
 import galaxymod.blocks.purgot.ores.PurgEmeraldOre;
+import galaxymod.blocks.xathius.XathiusGrass;
 import galaxymod.blocks.zollus.BlockZolniumCrystals;
 import galaxymod.blocks.zollus.ZolStone;
 import galaxymod.blocks.zollus.ZolarBlock;
@@ -157,9 +160,7 @@ public class BlockList {
 			.setHardResist(1.5F);
 	public static final Block kriffCobaltOre = new BlockNovaOre(
 			"kriffcobaltore").setHardResist(1.8F);
-	public static final Block kriffDirt = ((BlockNova) new BlockNova(
-			"kriffdirt", Material.ground).setHardResist(0.6F))
-			.setSoundType(Block.soundTypeGravel);
+	public static final Block kriffDirt = new BlockNovaDirt("kriffdirt", 0.6F);
 	public static final Block kriffRockBricks = new BlockNova(
 			"kriffrockbricks", Material.rock).setHardResist(0.9F, 9.8F);
 	public static final Block kriffonPurgotPortal = new BlockKriffonPurgotPortal();
@@ -169,9 +170,9 @@ public class BlockList {
 	public static final Block purgCobbleRock = new BlockNova("purgcobblerock",
 			Material.rock).setHardResist(1.0F, 10.0F);
 	public static final Block purgStone = new PurgStone();
-	public static final Block purgDirt = new BlockNova("purgdirt",
-			Material.ground).setHardResist(0.5F).setStepSound(
-			Block.soundTypeGravel);
+	public static final Block purgDirt = new BlockNovaDirt("purgdirt");
+	public static final Block purgWhiteRock = new WhiteRock();
+	public static final Block purgBlackRock = new BlackRock();
 	public static final Block purgIronOre = new BlockNovaOre("purgironore")
 			.setHardResist(1.4F);
 	public static final Block purgGoldOre = new BlockNovaOre("purggoldore")
@@ -182,8 +183,19 @@ public class BlockList {
 	public static final Block purgEmeraldOre = new PurgEmeraldOre();
 	public static final Block purgEveOre = ((BlockNovaOre) new BlockNovaOre(
 			"purgeveniumore").setHardResist(1.4F)).setExpDrop(6, 8);
+	public static final Block purgCobaltOre = ((BlockNovaOre) new BlockNovaOre(
+			"purgcobaltore").setHardResist(3.4F)).setExpDrop(6, 8);
 	public static final Block purgRockBricks = new BlockNova("purgrockbricks",
 			Material.rock).setHardResist(0.9F, 9.8F);
+	
+	public static final Block xathRock = new BlockNova("xathrock",
+			Material.rock).setHardResist(1.9F, 0.1F);
+	public static final Block xathCobbleRock = new BlockNova("xathcobblerock",
+			Material.rock).setHardResist(0.5F, 7.2F);
+	public static final Block xathStone = new BlockNova("xathstone",
+			Material.rock).setHardResist(0.8F, 4.2F);
+	public static final Block xathDirt = new BlockNovaDirt("xathdirt", 0.4F);
+	public static final Block xathGrass = new XathiusGrass();
 	
 	public static void init() {
 		addBlock(zolarBlock);
@@ -265,13 +277,22 @@ public class BlockList {
 		addBlock(purgCobbleRock);
 		addBlock(purgStone);
 		addBlock(purgDirt);
+		addBlock(purgWhiteRock);
+		addBlock(purgBlackRock);
 		addBlock(purgIronOre);
 		addBlock(purgGoldOre);
 		addBlock(purgCopperOre);
 		addBlock(purgDiamondOre);
 		addBlock(purgEmeraldOre);
 		addBlock(purgEveOre);
+		addBlock(purgCobaltOre);
 		addBlock(purgRockBricks);
+		
+		addBlock(xathRock);
+		addBlock(xathCobbleRock);
+		addBlock(xathStone);
+		addBlock(xathDirt);
+		addBlock(xathGrass);
 		
 		NovaHelper.echo("Loaded a total of " + totalBlocks + " new blocks.");
 	}

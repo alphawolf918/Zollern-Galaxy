@@ -78,6 +78,11 @@ public class ConfigManagerNova {
 	
 	// Biomes (Purgot)
 	public static int biomePurgatoryId;
+	public static int biomePurgotLimboId;
+	
+	// Biomes (Xathius)
+	public static int biomeXathiusId;
+	public static int biomeXathiusAbstractPlainsId;
 	
 	// Misc (Can Earth animals generate on Eden?)
 	public static boolean canEarthAnimalsSpawnOnEden;
@@ -101,7 +106,7 @@ public class ConfigManagerNova {
 		
 		// Moons (Psios -> Purgot -> Astros)
 		moonAstrosDimensionId = configuration.get(CATEGORY_MOONS,
-				"Moon Astros Dimension ID", -50).getInt();
+				"Moon Astros Dimension ID", -100).getInt();
 		
 		// Planets (Praedyth)
 		planetXathiusDimensionId = configuration.get(CATEGORY_DIMENSIONS,
@@ -176,6 +181,14 @@ public class ConfigManagerNova {
 		// Biomes (Purgot)
 		biomePurgatoryId = configuration.get(CATEGORY_BIOMES,
 				"Purgot Purgatory Biome ID", 167).getInt();
+		biomePurgotLimboId = configuration.get(CATEGORY_BIOMES,
+				"Purgot Limbo Biome ID", 200).getInt();
+		
+		// Biomes (Xathius)
+		biomeXathiusId = configuration.get(CATEGORY_BIOMES,
+				"Xathius Happy Hills Biome ID", 166).getInt();
+		biomeXathiusId = configuration.get(CATEGORY_BIOMES,
+				"Xathius Abstract Plains ID", 165).getInt();
 		
 		// Misc (Can Earth animals spawn on Eden?)
 		canEarthAnimalsSpawnOnEden = configuration.get(CATEGORY_MISC,

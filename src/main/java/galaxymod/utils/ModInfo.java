@@ -14,7 +14,7 @@ package galaxymod.utils;
 
 public class ModInfo {
 	
-	public static final int majorVersion = 1;
+	public static final int majorVersion = 2;
 	public static final int minorVersion = 0;
 	public static final int buildVersion = 0;
 	

@@ -19,6 +19,7 @@ import galaxymod.biomes.BiomeList;
 import galaxymod.biomes.decorators.ore.BiomeDecoratorZollusOre;
 import galaxymod.biomes.zollus.BiomeGenZollusBase;
 import galaxymod.blocks.BlockList;
+import galaxymod.core.config.ConfigManagerNova;
 import galaxymod.worldgen.zollus.MapGenCavernZollus;
 import galaxymod.worldgen.zollus.MapGenCavesZollus;
 import galaxymod.worldgen.zollus.MapGenZollusRavine;
@@ -194,21 +195,29 @@ public class ChunkProviderZollus extends ChunkProviderSpace {
 	
 	@Override
 	public List getPossibleCreatures(EnumCreatureType type, int x, int y, int z) {
-		BiomeGenZollusBase currentBiome = (BiomeGenZollusBase) worldObj
-				.getBiomeGenForCoords(x, z);
-		if (type == EnumCreatureType.monster) {
-			List monsters = new ArrayList();
-			monsters.add(new SpawnListEntry(EntityEvolvedZombie.class, 1, 0, 1));
-			monsters.add(new SpawnListEntry(EntityEvolvedSpider.class, 1, 0, 1));
-			// monsters.add(new SpawnListEntry(EntityEvolvedSkeleton.class, 0,
-			// 1,
-			// 1));
-			// monsters.add(new SpawnListEntry(EntityEvolvedCreeper.class, 1, 0,
-			// 1));
-			return monsters;
-		} else if (type == EnumCreatureType.creature) {
-			List creatures = new ArrayList();
-			return creatures;
+		if (this.worldObj.provider.dimensionId == ConfigManagerNova.planetZollusDimensionId) {
+			BiomeGenZollusBase currentBiome = (BiomeGenZollusBase) worldObj
+					.getBiomeGenForCoords(x, z);
+			if (type == EnumCreatureType.monster) {
+				List monsters = new ArrayList();
+				monsters.add(new SpawnListEntry(EntityEvolvedZombie.class, 1,
+						0, 1));
+				monsters.add(new SpawnListEntry(EntityEvolvedSpider.class, 1,
+						0, 1));
+				// monsters.add(new SpawnListEntry(EntityEvolvedSkeleton.class,
+				// 0,
+				// 1,
+				// 1));
+				// monsters.add(new SpawnListEntry(EntityEvolvedCreeper.class,
+				// 1, 0,
+				// 1));
+				return monsters;
+			} else if (type == EnumCreatureType.creature) {
+				List creatures = new ArrayList();
+				return creatures;
+			} else {
+				return null;
+			}
 		} else {
 			return null;
 		}

@@ -19,6 +19,7 @@ import galaxymod.biomes.BiomeList;
 import galaxymod.biomes.decorators.ore.BiomeDecoratorKriffonOre;
 import galaxymod.biomes.kriffus.BiomeGenKriffonBase;
 import galaxymod.blocks.BlockList;
+import galaxymod.core.config.ConfigManagerNova;
 import galaxymod.worldgen.eden.WorldGenEdenLakes;
 import galaxymod.worldgen.kriffon.MapGenCavernKriffon;
 import galaxymod.worldgen.kriffon.MapGenCavesKriffon;
@@ -194,16 +195,22 @@ public class ChunkProviderKriffon extends ChunkProviderSpace {
 	
 	@Override
 	public List getPossibleCreatures(EnumCreatureType type, int x, int y, int z) {
-		BiomeGenKriffonBase currentBiome = (BiomeGenKriffonBase) worldObj
-				.getBiomeGenForCoords(x, z);
-		if (type == EnumCreatureType.monster) {
-			List monsters = new ArrayList();
-			monsters.add(new SpawnListEntry(EntityEvolvedCreeper.class, 1, 0, 1));
-			monsters.add(new SpawnListEntry(EntityEvolvedSpider.class, 1, 0, 1));
-			return monsters;
-		} else if (type == EnumCreatureType.creature) {
-			List creatures = new ArrayList();
-			return creatures;
+		if (this.worldObj.provider.dimensionId == ConfigManagerNova.planetKriffonDimensionId) {
+			BiomeGenKriffonBase currentBiome = (BiomeGenKriffonBase) worldObj
+					.getBiomeGenForCoords(x, z);
+			if (type == EnumCreatureType.monster) {
+				List monsters = new ArrayList();
+				monsters.add(new SpawnListEntry(EntityEvolvedCreeper.class, 1,
+						0, 1));
+				monsters.add(new SpawnListEntry(EntityEvolvedSpider.class, 1,
+						0, 1));
+				return monsters;
+			} else if (type == EnumCreatureType.creature) {
+				List creatures = new ArrayList();
+				return creatures;
+			} else {
+				return null;
+			}
 		} else {
 			return null;
 		}

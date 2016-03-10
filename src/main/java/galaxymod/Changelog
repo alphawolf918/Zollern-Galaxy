@@ -1,3 +1,25 @@
+== Project Nova v2.0 ==
+
+* Praedyth System
+    * Added the planet Xathius.
+        * Beautiful, tropical-like planet with a breathable atmosphere and multiple colors.
+        * Added the Happy Hills and Abstract Plains biomes to this planet.
+* Psios System
+    * Added 2 new blocks and 1 new biome to planet Purgot.
+        * Biome: Limbo - Comprised of Whiterock on top and Purgrock on the bottom.
+        * Blocks: Whiterock and Blackrock.
+            * Whiterock will turn into Blackrock when stepped on, and Blackrock will eventually turn back into Whiterock on its own.
+    * Added Cobalt Ore to Purgot.
+
+== Project Nova v1.1 ==
+* Psios System
+    * Wolves can now spawn on Eden.
+    * Fixed (or so it seems) the biome ID issues with Biomes'O'Plenty.
+        * Will now warn the user in the Logs that there was a conflict, but should not crash anymore.
+        * Currently only implemented on Eden - will implement on other planets in next major version.
+
+----------------
+
 == Project Nova v1.0 ==
 
 * Added several new star systems:

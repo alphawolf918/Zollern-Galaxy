@@ -34,6 +34,7 @@ public class BiomeDecoratorPurgotOre extends BiomeDecoratorNova {
 	private WorldGenerator diamondGen;
 	private WorldGenerator emeraldGen;
 	private WorldGenerator eveniumGen;
+	private WorldGenerator cobaltGen;
 	
 	public BiomeDecoratorPurgotOre() {
 		this.copperGen = new WorldGenMinableMeta(BlockList.purgCopperOre, 8, 0,
@@ -47,6 +48,8 @@ public class BiomeDecoratorPurgotOre extends BiomeDecoratorNova {
 		this.emeraldGen = new WorldGenMinableMeta(BlockList.purgEmeraldOre, 2,
 				0, false, BlockList.purgStone, 0);
 		this.eveniumGen = new WorldGenMinableMeta(BlockList.purgEveOre, 3, 0,
+				false, BlockList.purgStone, 0);
+		this.cobaltGen = new WorldGenMinableMeta(BlockList.purgCobaltOre, 3, 0,
 				false, BlockList.purgStone, 0);
 	}
 	
@@ -85,6 +88,7 @@ public class BiomeDecoratorPurgotOre extends BiomeDecoratorNova {
 		this.genOre(6, this.diamondGen, 2, 14);
 		this.genOre(4, this.emeraldGen, 2, 10);
 		this.genOre(5, this.eveniumGen, 2, 14);
+		this.genOre(5, this.cobaltGen, 2, 14);
 		MinecraftForge.EVENT_BUS.post(new GCCoreEventPopulate.Post(
 				this.worldObj, this.randomGenerator, this.chunkX, this.chunkZ));
 	}

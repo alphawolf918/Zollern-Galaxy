@@ -23,11 +23,13 @@ import galaxymod.biomes.eden.BiomeEdenSwamp;
 import galaxymod.biomes.eden.BiomeEdenTerranValley;
 import galaxymod.biomes.kriffus.BiomeGenKriffonBase;
 import galaxymod.biomes.purgot.BiomeGenPurgotBase;
+import galaxymod.biomes.purgot.BiomeGenPurgotLimbo;
+import galaxymod.biomes.xathius.BiomeGenXathiusAbstractPlains;
+import galaxymod.biomes.xathius.BiomeGenXathiusBase;
 import galaxymod.biomes.zollus.BiomeGenZollusBase;
 import galaxymod.blocks.BlockList;
 import galaxymod.core.config.ConfigManagerNova;
 import galaxymod.utils.NovaHelper;
-import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraftforge.common.BiomeManager;
 import net.minecraftforge.common.BiomeManager.BiomeEntry;
 import net.minecraftforge.common.BiomeManager.BiomeType;
@@ -37,37 +39,45 @@ public class BiomeList {
 	public static int biomeColor = 1404851;
 	static int totalBiomes = 0;
 	
-	public static BiomeGenBase biomeZollus = ((BiomeGenZollusBase) new BiomeGenZollusBase(
+	public static BiomeSpace biomeZollus = ((BiomeGenZollusBase) new BiomeGenZollusBase(
 			ConfigManagerNova.biomeZollusIcyLandsId).setTemp(1F).setBiomeName(
 			"Ice Lands")).setBlocks(BlockList.zolarBlock, BlockList.zolDirt);
 	
-	public static BiomeGenBase biomeKriffus = ((BiomeGenKriffonBase) new BiomeGenKriffonBase(
+	public static BiomeSpace biomeKriffus = ((BiomeGenKriffonBase) new BiomeGenKriffonBase(
 			ConfigManagerNova.biomeKriffonFlamingPlainsId)
 			.setBiomeName("Flaming Plains")).setTemp(10F).setBlocks(
 			BlockList.kriffRock, BlockList.kriffDirt);
 	
-	public static BiomeGenBase biomeEden = new BiomeEden(
+	public static BiomeSpace biomeXathius = ((BiomeGenXathiusBase) new BiomeGenXathiusBase(
+			ConfigManagerNova.biomeXathiusId).setBiomeName("Happy Hills"))
+			.setTemp(5F).setBlocks(BlockList.xathRock, BlockList.xathDirt);
+	public static BiomeSpace biomeXathiusAbstractPlains = new BiomeGenXathiusAbstractPlains(
+			ConfigManagerNova.biomeXathiusAbstractPlainsId);
+	
+	public static BiomeSpace biomeEden = new BiomeEden(
 			ConfigManagerNova.biomeEdenGreenLandsId);
-	public static BiomeGenBase biomeEdenRockMountains = new BiomeEdenRockMountains(
+	public static BiomeSpace biomeEdenRockMountains = new BiomeEdenRockMountains(
 			ConfigManagerNova.biomeEdenRockMountainsId);
-	public static BiomeGenBase biomeEdenTerranValley = new BiomeEdenTerranValley(
+	public static BiomeSpace biomeEdenTerranValley = new BiomeEdenTerranValley(
 			ConfigManagerNova.biomeEdenTerranValleyId);
-	public static BiomeGenBase biomeEdenBloodDesert = new BiomeEdenBloodDesert(
+	public static BiomeSpace biomeEdenBloodDesert = new BiomeEdenBloodDesert(
 			ConfigManagerNova.biomeEdenBloodDesertId);
-	public static BiomeGenBase biomeEdenGarden = new BiomeEdenGarden(
+	public static BiomeSpace biomeEdenGarden = new BiomeEdenGarden(
 			ConfigManagerNova.biomeEdenGardenId);
-	public static BiomeGenBase biomeEdenForest = new BiomeEdenForest(
+	public static BiomeSpace biomeEdenForest = new BiomeEdenForest(
 			ConfigManagerNova.biomeEdenForestId);
-	public static BiomeGenBase biomeEdenMagmaLands = new BiomeEdenMagmaLands(
+	public static BiomeSpace biomeEdenMagmaLands = new BiomeEdenMagmaLands(
 			ConfigManagerNova.biomeEdenMagmaLandsId);
-	public static BiomeGenBase biomeEdenSnowyPlains = new BiomeEdenSnowyPlains(
+	public static BiomeSpace biomeEdenSnowyPlains = new BiomeEdenSnowyPlains(
 			ConfigManagerNova.biomeEdenSnowyPlainsId);
-	public static BiomeGenBase biomeEdenSwamp = new BiomeEdenSwamp(
+	public static BiomeSpace biomeEdenSwamp = new BiomeEdenSwamp(
 			ConfigManagerNova.biomeEdenSwamplandsId);
 	
-	public static BiomeGenBase biomePurgatory = ((BiomeSpace) new BiomeGenPurgotBase(
+	public static BiomeSpace biomePurgatory = ((BiomeSpace) new BiomeGenPurgotBase(
 			ConfigManagerNova.biomePurgatoryId).setTemp(5F).setBiomeName(
 			"Purgatory")).setBlocks(BlockList.purgRock, BlockList.purgDirt);
+	public static BiomeSpace biomePurgotLimbo = new BiomeGenPurgotLimbo(
+			ConfigManagerNova.biomePurgotLimboId);
 	
 	public static void init() {
 		
@@ -90,15 +100,22 @@ public class BiomeList {
 		
 		// PURGOT
 		addBiome(biomePurgatory, BiomeType.COOL, 0);
+		addBiome(biomePurgotLimbo, BiomeType.ICY, 0);
+		
+		// Xathius
+		addBiome(biomeXathius, BiomeType.WARM, 0);
+		addBiome(biomeXathiusAbstractPlains, BiomeType.WARM, 0);
 		
 		NovaHelper.echo("Loaded a total of " + totalBiomes + " new biomes.");
 	}
 	
-	public static void addBiome(BiomeGenBase biome, BiomeType biomeType,
+	public static void addBiome(BiomeSpace biome, BiomeType biomeType,
 			int biomeWeight) {
 		BiomeManager.addBiome(biomeType, new BiomeEntry(biome, biomeWeight));
 		// BiomeManager.addSpawnBiome(biome);
-		// BiomeManager.addVillageBiome(biome, true);
+		if (biome.isBreathable()) {
+			BiomeManager.addVillageBiome(biome, true);
+		}
 		// BiomeManager.addStrongholdBiome(biome);
 		totalBiomes++;
 	}

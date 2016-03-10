@@ -32,7 +32,7 @@ public class BiomeGenPurgotBase extends BiomeSpace {
 	protected byte topMeta;
 	protected byte fillerMeta;
 	protected byte stoneMeta;
-	public static int biomeHeightBaseModifier = 254;
+	public static int biomeHeightBaseModifier = 204;
 	public BiomeDecoratorPurgot biomeDecor = this.getBiomeDecorator();
 	
 	public BiomeGenPurgotBase(int p_i1971_1_) {
@@ -118,7 +118,7 @@ public class BiomeGenPurgotBase extends BiomeSpace {
 							if (maxFillerDepth <= 0) {
 								topBlock = null;
 								topMeta = 0;
-								fillerBlock = BlockList.zolarBlock;
+								fillerBlock = BlockList.purgRock;
 								fillerMeta = 0;
 							} else if (y >= seaLevel - 5 && y <= seaLevel) {
 								topBlock = this.topBlock;
@@ -145,9 +145,9 @@ public class BiomeGenPurgotBase extends BiomeSpace {
 								meta[index] = topMeta;
 							} else if (y < seaLevel - 8 - maxFillerDepth) {
 								topBlock = null;
-								fillerBlock = BlockList.zolCobbleRock;
+								fillerBlock = BlockList.purgCobbleRock;
 								fillerMeta = 0;
-								block[index] = BlockList.zolstone;
+								block[index] = BlockList.purgStone;
 							} else {
 								block[index] = fillerBlock;
 								meta[index] = fillerMeta;
@@ -158,10 +158,10 @@ public class BiomeGenPurgotBase extends BiomeSpace {
 							meta[index] = fillerMeta;
 							
 							if (currentFillerDepth == 0
-									&& fillerBlock == BlockList.zolDirt) {
+									&& fillerBlock == BlockList.purgDirt) {
 								currentFillerDepth = rand.nextInt(4)
 										+ Math.max(0, y - (seaLevel - 1));
-								fillerBlock = BlockList.zolstone;
+								fillerBlock = BlockList.purgStone;
 								fillerMeta = 0;
 							}
 						}

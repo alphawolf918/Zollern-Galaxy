@@ -75,7 +75,8 @@ public class OreDictionaryNova {
 		registerOre("oreHeartium", BlockList.zolHeartOre);
 		
 		// Cobalt
-		registerOre("oreCobalt", BlockList.kriffCobaltOre);
+		registerOre("oreCobalt", BlockList.kriffCobaltOre,
+				BlockList.purgCobaltOre);
 		
 		// Blocks (Trees)
 		registerOre("plankWood", BlockList.edenWoodPlanks);

@@ -13,6 +13,7 @@
 package galaxymod.dimensions.providers.eden;
 
 import galaxymod.core.NGPlanets;
+import galaxymod.dimensions.chunkmanagers.WorldChunkManagerEden;
 import galaxymod.dimensions.providers.WorldProviderNova;
 import galaxymod.dimensions.providers.renderers.SkyProviderEden;
 import micdoodle8.mods.galacticraft.api.galaxies.CelestialBody;

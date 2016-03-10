@@ -19,6 +19,7 @@ import galaxymod.biomes.BiomeList;
 import galaxymod.biomes.decorators.ore.BiomeDecoratorPurgotOre;
 import galaxymod.biomes.purgot.BiomeGenPurgotBase;
 import galaxymod.blocks.BlockList;
+import galaxymod.core.config.ConfigManagerNova;
 import galaxymod.worldgen.purgot.MapGenCavernPurgot;
 import galaxymod.worldgen.purgot.MapGenCavesPurgot;
 import galaxymod.worldgen.purgot.MapGenPurgotRavine;
@@ -29,6 +30,8 @@ import micdoodle8.mods.galacticraft.api.prefab.core.BlockMetaPair;
 import micdoodle8.mods.galacticraft.api.prefab.world.gen.BiomeDecoratorSpace;
 import micdoodle8.mods.galacticraft.api.prefab.world.gen.ChunkProviderSpace;
 import micdoodle8.mods.galacticraft.api.prefab.world.gen.MapGenBaseMeta;
+import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedCreeper;
+import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedSkeleton;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedSpider;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedZombie;
 import net.minecraft.block.Block;
@@ -122,27 +125,28 @@ public class ChunkProviderPurgot extends ChunkProviderSpace {
 	
 	@Override
 	protected BiomeGenBase[] getBiomesForGeneration() {
-		return new BiomeGenBase[] { BiomeList.biomePurgatory };
+		return new BiomeGenBase[] { BiomeList.biomePurgatory,
+				BiomeList.biomePurgotLimbo };
 	}
 	
 	@Override
 	protected BlockMetaPair getGrassBlock() {
-		return new BlockMetaPair(BlockList.zolarBlock, (byte) 0);
+		return new BlockMetaPair(BlockList.purgRock, (byte) 0);
 	}
 	
 	@Override
 	protected BlockMetaPair getDirtBlock() {
-		return new BlockMetaPair(BlockList.zolDirt, (byte) 0);
+		return new BlockMetaPair(BlockList.purgDirt, (byte) 0);
 	}
 	
 	@Override
 	protected BlockMetaPair getStoneBlock() {
-		return new BlockMetaPair(BlockList.zolstone, (byte) 0);
+		return new BlockMetaPair(BlockList.purgStone, (byte) 0);
 	}
 	
 	@Override
 	protected int getSeaLevel() {
-		return 43;
+		return 33;
 	}
 	
 	@Override
@@ -184,31 +188,36 @@ public class ChunkProviderPurgot extends ChunkProviderSpace {
 	
 	@Override
 	public double getMountainHeightModifier() {
-		return 2;
+		return 4;
 	}
 	
 	@Override
 	public double getValleyHeightModifier() {
-		return 3;
+		return 2;
 	}
 	
 	@Override
 	public List getPossibleCreatures(EnumCreatureType type, int x, int y, int z) {
-		BiomeGenPurgotBase currentBiome = (BiomeGenPurgotBase) worldObj
-				.getBiomeGenForCoords(x, z);
-		if (type == EnumCreatureType.monster) {
-			List monsters = new ArrayList();
-			monsters.add(new SpawnListEntry(EntityEvolvedZombie.class, 1, 0, 1));
-			monsters.add(new SpawnListEntry(EntityEvolvedSpider.class, 1, 0, 1));
-			// monsters.add(new SpawnListEntry(EntityEvolvedSkeleton.class, 0,
-			// 1,
-			// 1));
-			// monsters.add(new SpawnListEntry(EntityEvolvedCreeper.class, 1, 0,
-			// 1));
-			return monsters;
-		} else if (type == EnumCreatureType.creature) {
-			List creatures = new ArrayList();
-			return creatures;
+		if (this.worldObj.provider.dimensionId == ConfigManagerNova.planetPurgotDimensionId) {
+			BiomeGenPurgotBase currentBiome = (BiomeGenPurgotBase) worldObj
+					.getBiomeGenForCoords(x, z);
+			if (type == EnumCreatureType.monster) {
+				List monsters = new ArrayList();
+				monsters.add(new SpawnListEntry(EntityEvolvedZombie.class, 1,
+						0, 1));
+				monsters.add(new SpawnListEntry(EntityEvolvedSpider.class, 1,
+						0, 1));
+				monsters.add(new SpawnListEntry(EntityEvolvedSkeleton.class, 0,
+						1, 1));
+				monsters.add(new SpawnListEntry(EntityEvolvedCreeper.class, 1,
+						0, 1));
+				return monsters;
+			} else if (type == EnumCreatureType.creature) {
+				List creatures = new ArrayList();
+				return creatures;
+			} else {
+				return null;
+			}
 		} else {
 			return null;
 		}
