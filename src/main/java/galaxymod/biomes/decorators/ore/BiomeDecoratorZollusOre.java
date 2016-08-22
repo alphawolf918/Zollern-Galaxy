@@ -79,12 +79,12 @@ public class BiomeDecoratorZollusOre extends BiomeDecoratorNova {
 	void generateZollus() {
 		MinecraftForge.EVENT_BUS.post(new GCCoreEventPopulate.Pre(
 				this.worldObj, this.randomGenerator, this.chunkX, this.chunkZ));
-		this.genOre(18, this.coalGen, 4, 70);
-		this.genOre(16, this.copperGen, 4, 70);
-		this.genOre(14, this.ironGen, 4, 60);
-		this.genOre(12, this.goldGen, 4, 50);
-		this.genOre(16, this.tinGen, 4, 60);
-		this.genOre(8, this.heartGen, 6, 11);
+		this.genOre(8, this.coalGen, 4, 70);
+		this.genOre(6, this.copperGen, 4, 70);
+		this.genOre(10, this.ironGen, 4, 60);
+		this.genOre(5, this.goldGen, 4, 50);
+		this.genOre(8, this.tinGen, 4, 60);
+		this.genOre(4, this.heartGen, 6, 11);
 		MinecraftForge.EVENT_BUS.post(new GCCoreEventPopulate.Post(
 				this.worldObj, this.randomGenerator, this.chunkX, this.chunkZ));
 	}

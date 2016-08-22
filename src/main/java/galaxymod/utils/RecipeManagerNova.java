@@ -43,6 +43,8 @@ public class RecipeManagerNova {
 	public static class CraftingRecipes {
 		public static void init() {
 			
+			BlueprintRecipes.init();
+			
 			// Eden Bloodstone
 			ItemStack css = new ItemStack(BlockList.edenBloodStone, 4);
 			GameRegistry.addRecipe(css, new Object[] { "CC ", "CC ", "   ",
@@ -154,6 +156,24 @@ public class RecipeManagerNova {
 			NovaHelper.echo("Loaded a total of " + totalCraftingRecipes
 					+ " new crafting recipes.");
 		}
+	}
+	
+	public static class BlueprintRecipes {
+		
+		public static void init() {
+			// Radiation Blueprint
+			GameRegistry.addRecipe(new ItemStack(ItemList.blueprintRad),
+					new Object[] { "G G", " E ", "GVG", 'G', Blocks.gold_block,
+							'E', ItemList.edenCrystal, 'V',
+							ItemList.edenCompressedVirinium });
+			
+			// Toxicity Blueprint
+			GameRegistry.addRecipe(new ItemStack(ItemList.blueprintTox),
+					new Object[] { "E E", " Z ", "EVE", 'E',
+							Blocks.emerald_block, 'Z', ItemList.zollusCrystal,
+							'V', ItemList.zollusCompressedVyrex });
+		}
+		
 	}
 	
 	public static class SmeltingRecipes {
@@ -393,6 +413,18 @@ public class RecipeManagerNova {
 					ItemList.compressedKriffonium, 2), new ItemStack(
 					ItemList.zollusCompressedVyrex, 1, 0), new ItemStack(
 					ItemList.compressedCobalt, 1, 0));
+			totalCompressorRecipes++;
+			
+			// Compressed Emerald
+			CompressorRecipes.addShapelessRecipe(new ItemStack(
+					ItemList.compressedEmerald, 2), new ItemStack(
+					Items.emerald, 1, 0), new ItemStack(Items.emerald, 1, 0));
+			totalCompressorRecipes++;
+			
+			// Compressed Diamond
+			CompressorRecipes.addShapelessRecipe(new ItemStack(
+					ItemList.compressedDiamond, 2), new ItemStack(
+					Items.diamond, 1, 0), new ItemStack(Items.diamond, 1, 0));
 			totalCompressorRecipes++;
 			
 			NovaHelper.echo("Loaded a total of " + totalCompressorRecipes

@@ -58,7 +58,7 @@ public class ProjectNovaCore {
 	public static CreativeTabs novaTabBlocks;
 	public static CreativeTabs novaTabItems;
 	
-	public static final int modGuiIndex = 11;
+	public static final int modGuiIndex = 14;
 	
 	public static ProjectNovaCore getInstance() {
 		return INSTANCE;

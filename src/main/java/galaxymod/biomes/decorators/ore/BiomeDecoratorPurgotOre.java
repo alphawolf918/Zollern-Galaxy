@@ -82,7 +82,7 @@ public class BiomeDecoratorPurgotOre extends BiomeDecoratorNova {
 	void generatePurgot() {
 		MinecraftForge.EVENT_BUS.post(new GCCoreEventPopulate.Pre(
 				this.worldObj, this.randomGenerator, this.chunkX, this.chunkZ));
-		this.genOre(14, this.copperGen, 4, 70);
+		this.genOre(6, this.copperGen, 4, 70);
 		this.genOre(10, this.ironGen, 4, 60);
 		this.genOre(8, this.goldGen, 4, 50);
 		this.genOre(6, this.diamondGen, 2, 14);

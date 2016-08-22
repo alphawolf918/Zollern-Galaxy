@@ -105,20 +105,20 @@ public class BiomeDecoratorEdenOre extends BiomeDecoratorNova {
 	void generateEden() {
 		MinecraftForge.EVENT_BUS.post(new GCCoreEventPopulate.Pre(
 				this.worldObj, this.randomGenerator, this.chunkX, this.chunkZ));
-		this.genOre(15, this.ironGen, 4, 60);
+		this.genOre(10, this.ironGen, 4, 60);
 		this.genOre(5, this.meteoricIronGen, 10, 20);
-		this.genOre(14, this.goldGen, 4, 75);
-		this.genOre(10, this.diamondGen, 10, 14);
-		this.genOre(6, this.emeraldGen, 10, 12);
-		this.genOre(14, this.copperGen, 4, 120);
-		this.genOre(16, this.tinGen, 4, 120);
-		this.genOre(18, this.coalGen, 2, 40);
-		this.genOre(10, this.redstoneGen, 2, 25);
-		this.genOre(14, this.lapisGen, 2, 25);
-		this.genOre(6, this.deshGen, 4, 30);
+		this.genOre(7, this.goldGen, 4, 75);
+		this.genOre(5, this.diamondGen, 10, 14);
+		this.genOre(4, this.emeraldGen, 10, 12);
+		this.genOre(5, this.copperGen, 4, 120);
+		this.genOre(6, this.tinGen, 4, 120);
+		this.genOre(8, this.coalGen, 2, 40);
+		this.genOre(7, this.redstoneGen, 2, 25);
+		this.genOre(7, this.lapisGen, 2, 25);
+		this.genOre(5, this.deshGen, 4, 30);
 		this.genOre(10, this.aluminumGen, 2, 72);
 		this.genOre(6, this.viriniumGen, 4, 12);
-		this.genOre(15, this.gravelGen, 4, 52);
+		this.genOre(5, this.gravelGen, 4, 52);
 		MinecraftForge.EVENT_BUS.post(new GCCoreEventPopulate.Post(
 				this.worldObj, this.randomGenerator, this.chunkX, this.chunkZ));
 	}

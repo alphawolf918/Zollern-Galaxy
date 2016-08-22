@@ -12,6 +12,7 @@
 
 package galaxymod.biomes.decorators;
 
+import galaxymod.biomes.zollus.BiomeGenZollusBase;
 import galaxymod.worldgen.zollus.WorldGenZolnium;
 import java.util.Random;
 import net.minecraft.init.Blocks;
@@ -55,25 +56,28 @@ public class BiomeDecoratorZollus extends BiomeDecorator {
 		int z;
 		int i;
 		
-		for (i = 0; this.getGen(EventType.FLOWERS)
-				&& i < this.zollusCrystalsPerChunk; ++i) {
-			if (this.randomGenerator.nextInt(6) == 0) {
-				x = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
-				y = this.randomGenerator.nextInt(256);
-				z = this.chunk_Z + this.randomGenerator.nextInt(16) + 8;
-				new WorldGenZolnium().generate(this.currentWorld,
-						this.randomGenerator, x, y, z);
+		if (biome instanceof BiomeGenZollusBase) {
+			
+			for (i = 0; this.getGen(EventType.FLOWERS)
+					&& i < this.zollusCrystalsPerChunk; ++i) {
+				if (this.randomGenerator.nextInt(6) == 0) {
+					x = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
+					y = this.randomGenerator.nextInt(256);
+					z = this.chunk_Z + this.randomGenerator.nextInt(16) + 8;
+					new WorldGenZolnium().generate(this.currentWorld,
+							this.randomGenerator, x, y, z);
+				}
 			}
-		}
-		
-		for (i = 0; this.getGen(EventType.LAKE)
-				&& i < this.zollusIceLakesPerChunk; ++i) {
-			if (this.randomGenerator.nextInt(3) == 0) {
-				x = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
-				y = this.randomGenerator.nextInt(256);
-				z = this.chunk_Z + this.randomGenerator.nextInt(16) + 8;
-				new WorldGenLakes(Blocks.packed_ice).generate(currentWorld,
-						randomGenerator, x, y, z);
+			
+			for (i = 0; this.getGen(EventType.LAKE)
+					&& i < this.zollusIceLakesPerChunk; ++i) {
+				if (this.randomGenerator.nextInt(3) == 0) {
+					x = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
+					y = this.randomGenerator.nextInt(256);
+					z = this.chunk_Z + this.randomGenerator.nextInt(16) + 8;
+					new WorldGenLakes(Blocks.packed_ice).generate(currentWorld,
+							randomGenerator, x, y, z);
+				}
 			}
 		}
 		

@@ -21,7 +21,6 @@ import galaxymod.biomes.kriffus.BiomeGenKriffonBase;
 import galaxymod.blocks.BlockList;
 import galaxymod.core.config.ConfigManagerNova;
 import galaxymod.worldgen.eden.WorldGenEdenLakes;
-import galaxymod.worldgen.kriffon.MapGenCavernKriffon;
 import galaxymod.worldgen.kriffon.MapGenCavesKriffon;
 import galaxymod.worldgen.kriffon.MapGenKriffonRavine;
 import java.util.ArrayList;
@@ -59,7 +58,6 @@ public class ChunkProviderKriffon extends ChunkProviderSpace {
 	private Random rand;
 	private final BiomeDecoratorKriffonOre kriffonBiomeDecorator = new BiomeDecoratorKriffonOre();
 	private final MapGenCavesKriffon caveGenerator = new MapGenCavesKriffon();
-	private final MapGenCavernKriffon cavernGenerator = new MapGenCavernKriffon();
 	private final MapGenKriffonRavine ravineGenerator = new MapGenKriffonRavine();
 	// private final WorldGenKriffonDungeons dungeonGenerator = new
 	// WorldGenKriffonDungeons();
@@ -150,7 +148,6 @@ public class ChunkProviderKriffon extends ChunkProviderSpace {
 	protected List<MapGenBaseMeta> getWorldGenerators() {
 		List<MapGenBaseMeta> generators = Lists.newArrayList();
 		generators.add(this.caveGenerator);
-		generators.add(this.cavernGenerator);
 		return generators;
 	}
 	
@@ -341,8 +338,6 @@ public class ChunkProviderKriffon extends ChunkProviderSpace {
 		this.replaceBlocksForBiome(x, z, blockStorage, metaStorage,
 				this.biomesForGeneration);
 		this.caveGenerator.generate(this, this.worldObj, x, z, blockStorage,
-				metaStorage);
-		this.cavernGenerator.generate(this, this.worldObj, x, z, blockStorage,
 				metaStorage);
 		this.ravineGenerator.func_151539_a(this, this.worldObj, x, z,
 				blockStorage);

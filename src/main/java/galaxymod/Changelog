@@ -1,4 +1,41 @@
-== Project Nova v2.0 ==
+== Zollern Galaxy v1.3 ==
+
+* Renamed mod from Project Nova to Zollern Galaxy.
+* Applied an instanceof check to (hopefully) prevent biomes being cast as BiomeGenEdenBase, which caused crashes.
+    * Also applied this to other BiomeSpace gens as well.
+* Did some minor tweaking on the Crawler boss.
+    * It will actually fight back now.
+* Removed "Caverns" from new planet world gen.
+    * Way too much strain on the JVM to generate this so often.
+    * Caves still generate, but the huge, round rooms do not.
+* Implemented new survival mechanics for the planets.
+    * Planets can now cause two new types of damage:
+        * Radioactive and Toxic
+        * Each Planet has its own levels for each.
+            * If the levels are above (or below) a certain value, the Player will be damaged.
+                * This can be prevented by having the respective blueprint for protection in your inventory.
+                    * The blueprints also take damage over time and must be recharged. (Not yet operational as of right now)
+* Changed random Y coordinate's max spawn from 256 to 128.
+    * This should lower memory usage by a crap-ton.
+* Added more Planet bioclasses.
+    * Each one is described in the code now.
+* Changed how Planet gasses are registered.
+* Reduced number of ores generated per chunk on all planets.
+* Added Compressed Emerald and Compressed Diamond items.
+    * Used in constructing Survival Blueprints.
+* Protection blueprints are now craftable.
+* Slightly tweaked planet temperature algorithm.
+
+
+-- FIXES --
+* Fixed there being too many stars in the sky.
+* Fixed (?) crash relating to BiomeGenEdenBase.
+    * Won't know for sure until released for production.
+        * Will be released as a beta version for this reason.
+* Fixed (hopefully) extreme memory leak by removing and lowering some stuff.
+-----------
+
+== Project Nova v1.2 ==
 
 * Praedyth System
     * Added the planet Xathius.
@@ -10,6 +47,9 @@
         * Blocks: Whiterock and Blackrock.
             * Whiterock will turn into Blackrock when stepped on, and Blackrock will eventually turn back into Whiterock on its own.
     * Added Cobalt Ore to Purgot.
+    * Villagers should no longer turn into aliens (sorry xD).
+    * SOME of the memory overload has been fixed, but not all. This release is mainly to fix the villager issue.
+----------------
 
 == Project Nova v1.1 ==
 * Psios System
@@ -138,7 +178,8 @@
 * Added 5 new items:
     * Ancient Eden's Essence: Crafting material. Not found naturally, must be crafted.
     * Ancient Eden's Tablet: Special tablet that spawns a portal to the next planet over: Zollus.
-    * Eden's Crystal: Crafting material. Found rarely and only in boss chests (in the room where the Britestone is, after defeating the Crawler boss).
+    * Eden's Crystal: Crafting material. Found rarely and only in boss chests (in the room where the Britestone is,
+      after defeating the Crawler boss).
     * Raw Virinium: Obtained by mining (or smelting) Virinium Ore.
         * Ore is found rarely in caves at lower levels.
     * Virinium Ingots: Obtained by smelting Raw Virinium, sometimes spawn in loot chests in Eden's Dungeons.

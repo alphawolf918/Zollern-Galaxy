@@ -324,8 +324,8 @@ public class SkyProviderZollus extends IRenderHandler {
 		Tessellator var2 = Tessellator.instance;
 		var2.startDrawingQuads();
 		
-		for (int starIndex = 0; starIndex < (ConfigManagerCore.moreStars ? 4000
-				: 2000); ++starIndex) {
+		for (int starIndex = 0; starIndex < (ConfigManagerCore.moreStars ? 2000
+				: 1000); ++starIndex) {
 			double var4 = var1.nextFloat() * 2.0F - 1.0F;
 			double var6 = var1.nextFloat() * 2.0F - 1.0F;
 			double var8 = var1.nextFloat() * 2.0F - 1.0F;

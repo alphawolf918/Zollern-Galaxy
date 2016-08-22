@@ -13,11 +13,8 @@
 package galaxymod.biomes;
 
 import galaxymod.core.PlanetNova;
-import galaxymod.dimensions.providers.WorldProviderNova;
-import galaxymod.utils.NovaHelper;
 import net.minecraft.block.Block;
 import net.minecraft.world.biome.BiomeGenBase;
-import org.apache.logging.log4j.Level;
 
 public class BiomeSpace extends BiomeGenBase {
 	
@@ -26,30 +23,37 @@ public class BiomeSpace extends BiomeGenBase {
 	public static int chunkHeightModifier = 12;
 	public static int biomeHeightBaseModifier = 232;
 	
+	// public WorldProviderNova providerNova = this.getNovaWorldProvider();
+	
 	public BiomeSpace(int par1) {
 		super(par1);
 		this.setColor(BiomeList.biomeColor);
+		this.setChunkHeightModifier(this.chunkHeightModifier);
+		this.setHeightBaseModifier(this.biomeHeightBaseModifier);
 	}
 	
-	public boolean isBreathable() {
-		PlanetNova biomePlanet = this.getPlanetForBiome();
-		Class<? extends WorldProviderNova> provider = (Class<? extends WorldProviderNova>) biomePlanet
-				.getWorldProvider();
-		try {
-			WorldProviderNova providerNova = provider.newInstance();
-			return providerNova.hasBreathableAtmosphere();
-		} catch (InstantiationException e) {
-			NovaHelper.logMessage(
-					"Error in creating new instance of Nova World Provider!",
-					Level.FATAL);
-			e.printStackTrace();
-		} catch (IllegalAccessException e) {
-			NovaHelper.logMessage(
-					"Nova World Provider was accessed illegally!", Level.FATAL);
-			e.printStackTrace();
-		}
-		return false;
-	}
+	/**
+	 * Checks if it's day time or not.
+	 * 
+	 * @return Whether or not it's day time.
+	 */
+	// public boolean isDaytime() {
+	// PlanetNova biomePlanet = this.getPlanetForBiome();
+	// Class<? extends WorldProviderNova> provider = (Class<? extends
+	// WorldProviderNova>) biomePlanet
+	// .getWorldProvider();
+	// try {
+	// WorldProviderNova worldProvider = provider.getDeclaredConstructor()
+	// .newInstance();
+	//
+	// } catch (InstantiationException | IllegalAccessException
+	// | IllegalArgumentException | InvocationTargetException
+	// | NoSuchMethodException | SecurityException e) {
+	// NovaHelper.logMessage("A fatal error was detected.", Level.FATAL);
+	// e.printStackTrace();
+	// }
+	// return false;
+	// }
 	
 	public BiomeSpace setPlanetForBiome(PlanetNova planet) {
 		this.planetForBiome = planet;
@@ -61,11 +65,11 @@ public class BiomeSpace extends BiomeGenBase {
 	}
 	
 	public boolean getIsHotBiome() {
-		return (this.getTemp() >= 7F);
+		return (this.getBiomeTemp() >= 8F);
 	}
 	
 	public boolean getIsColdBiome() {
-		return (this.getTemp() <= 3F);
+		return (this.getBiomeTemp() <= 3F);
 	}
 	
 	public BiomeSpace setHeightBaseModifier(int bioHeight) {
@@ -92,12 +96,51 @@ public class BiomeSpace extends BiomeGenBase {
 		return this;
 	}
 	
+	/**
+	 * Sets the Biome temperature.
+	 * 
+	 * @param biomeTemp
+	 *            Biome temperature.
+	 * @return The Planet to apply this biome to.
+	 */
 	public BiomeSpace setTemp(float biomeTemp) {
 		this.temperature = biomeTemp;
 		return this;
 	}
 	
-	public float getTemp() {
+	/**
+	 * Returns the temperature of the current biome.
+	 * 
+	 * @return Biome temp.
+	 */
+	public float getBiomeTemp() {
 		return this.temperature;
 	}
+	
+	/**
+	 * Returns the actual temperature of the Planet, taking biome temp into
+	 * account.
+	 * 
+	 * @return The current temperature of the Planet.
+	 */
+	public float getPlanetTemp() {
+		PlanetNova planet = this.getPlanetForBiome();
+		float biomeTemp = this.getBiomeTemp();
+		float planetTemp = planet.getPlanetTemperature();
+		if (planet.getIsColdPlanet()) {
+			planetTemp -= biomeTemp;
+		} else if (planet.getIsHotPlanet()) {
+			planetTemp += biomeTemp;
+		} else {
+			// planetTemp *= (.01 * biomeTemp);
+		}
+		// if (!this.isDaytime()) {
+		// Random rand = new Random();
+		// int divideBy = rand.nextInt(5);
+		// divideBy = (divideBy > 1) ? divideBy : 2;
+		// planetTemp /= divideBy;
+		// }
+		return planetTemp;
+	}
+	
 }

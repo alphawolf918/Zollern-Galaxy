@@ -13,6 +13,7 @@
 package galaxymod.utils;
 
 import galaxymod.blocks.BlockList;
+import galaxymod.items.ItemList;
 import java.util.HashMap;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
@@ -26,11 +27,18 @@ public class FurnaceFuelHandlerNova implements IFuelHandler {
 	
 	@Override
 	public int getBurnTime(ItemStack fuel) {
-		return getFuelValue(fuel);
+		if (fuel.getItem() == ItemList.prometheanCrystal) {
+			return 102400;
+		} else if (fuel.getItem() == Item
+				.getItemFromBlock(BlockList.edenWoodSapling)) {
+			return 500;
+		} else {
+			return 0;
+		}
 	}
 	
 	public static void setFuelValues() {
-		addFuel(BlockList.edenWoodSapling, 100);
+		
 	}
 	
 	private static void addFuel(Item item, int metadata, int value) {

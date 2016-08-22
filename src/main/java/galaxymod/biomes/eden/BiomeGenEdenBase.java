@@ -17,7 +17,6 @@ import galaxymod.biomes.BiomeSpace;
 import galaxymod.biomes.decorators.BiomeDecoratorEden;
 import galaxymod.blocks.BlockList;
 import galaxymod.core.NGPlanets;
-import java.util.ArrayList;
 import java.util.Random;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -35,7 +34,6 @@ public abstract class BiomeGenEdenBase extends BiomeSpace {
 	protected byte stoneMeta;
 	public static int biomeHeightBaseModifier = 212;
 	public BiomeDecoratorEden biomeDecor = this.getBiomeDecorator();
-	public static ArrayList<BiomeGenEdenBase> edenBiomes = new ArrayList();
 	
 	public BiomeGenEdenBase(int p_i1971_1_) {
 		super(p_i1971_1_);
@@ -47,7 +45,7 @@ public abstract class BiomeGenEdenBase extends BiomeSpace {
 		this.theBiomeDecorator.treesPerChunk = -999;
 		this.theBiomeDecorator.grassPerChunk = -999;
 		this.theBiomeDecorator.mushroomsPerChunk = -999;
-		this.biomeDecor.edenFlowersPerChunk = 5;
+		this.biomeDecor.edenFlowersPerChunk = 4;
 		this.biomeDecor.edenTallGrassPerChunk = 2;
 		this.spawnableCaveCreatureList.clear();
 		this.spawnableMonsterList.clear();
@@ -55,26 +53,11 @@ public abstract class BiomeGenEdenBase extends BiomeSpace {
 		this.spawnableCreatureList.clear();
 		this.stoneBlock = BlockList.edenRock;
 		this.setPlanetForBiome(NGPlanets.planetEden);
-		this.edenBiomes.add(this);
 	}
 	
 	@Override
 	public float getSpawningChance() {
 		return 0.1F;
-	}
-	
-	public static ArrayList<BiomeGenEdenBase> getEdenBiomes() {
-		return edenBiomes;
-	}
-	
-	@Override
-	public boolean getIsHotBiome() {
-		return (this.temperature >= 7F);
-	}
-	
-	@Override
-	public boolean getIsColdBiome() {
-		return (this.temperature <= 3F);
 	}
 	
 	@Override

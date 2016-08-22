@@ -23,7 +23,6 @@ import galaxymod.core.config.ConfigManagerNova;
 import galaxymod.mobs.entities.eden.EntityAlienSquid;
 import galaxymod.utils.NovaHelper;
 import galaxymod.worldgen.dungeon.RoomEmptyNG;
-import galaxymod.worldgen.eden.MapGenCavernEden;
 import galaxymod.worldgen.eden.MapGenCavesEden;
 import galaxymod.worldgen.eden.MapGenEdenRavine;
 import galaxymod.worldgen.eden.WorldGenEdenDungeons;
@@ -78,7 +77,7 @@ public class ChunkProviderEden extends ChunkProviderSpace {
 	private Random rand;
 	private final BiomeDecoratorEdenOre edenBiomeDecorator = new BiomeDecoratorEdenOre();
 	private final MapGenCavesEden caveGenerator = new MapGenCavesEden();
-	private final MapGenCavernEden cavernGenerator = new MapGenCavernEden();
+	// private final MapGenCavernEden cavernGenerator = new MapGenCavernEden();
 	private final MapGenEdenRavine ravineGenerator = new MapGenEdenRavine();
 	private final WorldGenEdenDungeons dungeonGenerator = new WorldGenEdenDungeons();
 	private MapGenMineshaft mineshaftGenerator = new MapGenMineshaft();
@@ -204,7 +203,7 @@ public class ChunkProviderEden extends ChunkProviderSpace {
 	protected List<MapGenBaseMeta> getWorldGenerators() {
 		List<MapGenBaseMeta> generators = Lists.newArrayList();
 		generators.add(this.caveGenerator);
-		generators.add(this.cavernGenerator);
+		// generators.add(this.cavernGenerator);
 		return generators;
 	}
 	
@@ -268,8 +267,7 @@ public class ChunkProviderEden extends ChunkProviderSpace {
 				return monsters;
 			} else if (type == EnumCreatureType.creature) {
 				List creatures = new ArrayList();
-				if (ConfigManagerNova.canEarthAnimalsSpawnOnEden
-						&& !currentBiome.getIsHotBiome()) {
+				if (ConfigManagerNova.canEarthAnimalsSpawnOnEden) {
 					creatures.add(new SpawnListEntry(EntityCow.class, 1, 0, 1));
 					creatures.add(new SpawnListEntry(EntityPig.class, 1, 0, 1));
 					creatures.add(new SpawnListEntry(EntityChicken.class, 1, 0,
@@ -294,7 +292,7 @@ public class ChunkProviderEden extends ChunkProviderSpace {
 		} else {
 			NovaHelper
 					.logMessage(
-							"There is a biome ID conflict with a mod you are using. One of Eden's biomes tried to generate in the Overworld, but we canceled it to avoid a crash.",
+							"One of Eden's biomes tried to generate in the Overworld, but we canceled it to avoid a crash.",
 							Level.WARN);
 			return null;
 		}
@@ -380,13 +378,21 @@ public class ChunkProviderEden extends ChunkProviderSpace {
 	
 	@Override
 	public int getCraterProbability() {
-		return 1200;
+		return 600;
 	}
 	
 	@Override
 	public void decoratePlanet(World par1World, Random par2Random, int par3,
 			int par4) {
-		this.edenBiomeDecorator.decorate(par1World, par2Random, par3, par4);
+		BiomeGenBase currentBiome = par1World.getBiomeGenForCoords(par3, par4);
+		if (par1World.provider.dimensionId == ConfigManagerNova.planetEdenDimensionId) {
+			this.edenBiomeDecorator.decorate(par1World, par2Random, par3, par4);
+		} else {
+			NovaHelper
+					.logMessage(
+							"One of Eden's biomes tried to generate in the Overworld, but we canceled it to avoid a crash.",
+							Level.WARN);
+		}
 	}
 	
 	@Override
@@ -426,8 +432,9 @@ public class ChunkProviderEden extends ChunkProviderSpace {
 				this.biomesForGeneration);
 		this.caveGenerator.generate(this, this.worldObj, x, z, blockStorage,
 				metaStorage);
-		this.cavernGenerator.generate(this, this.worldObj, x, z, blockStorage,
-				metaStorage);
+		// this.cavernGenerator.generate(this, this.worldObj, x, z,
+		// blockStorage,
+		// metaStorage);
 		this.ravineGenerator.func_151539_a(this, this.worldObj, x, z,
 				blockStorage);
 		this.dungeonGeneratorMain.generateUsingArrays(this.worldObj,

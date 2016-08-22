@@ -14,13 +14,13 @@ package galaxymod.utils;
 
 public class ModInfo {
 	
-	public static final int majorVersion = 2;
-	public static final int minorVersion = 0;
+	public static final int majorVersion = 1;
+	public static final int minorVersion = 3;
 	public static final int buildVersion = 0;
 	
 	public static final String MODID = "galaxymod";
 	public static final String NAME = "galaxymod";
-	public static final String OFFICIAL_NAME = "Project Nova";
+	public static final String OFFICIAL_NAME = "Zollern Galaxy";
 	public static final String VERSION = majorVersion + "." + minorVersion
 			+ "." + buildVersion;
 	public static final String CHANNEL = MODID;

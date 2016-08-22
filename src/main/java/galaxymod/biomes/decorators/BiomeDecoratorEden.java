@@ -35,11 +35,11 @@ import net.minecraftforge.event.terraingen.TerrainGen;
 public class BiomeDecoratorEden extends BiomeDecorator {
 	
 	public int edenTallGrassPerChunk = 0;
-	public int edenFlowersPerChunk = 4;
+	public int edenFlowersPerChunk = 3;
 	public int edenWoodTreesPerChunk = 1;
 	public int edenDeadBushPerChunk = 0;
-	public int edenSandPerChunk = 4;
-	public int edenGravPerChunk = 2;
+	public int edenSandPerChunk = 2;
+	public int edenGravPerChunk = 1;
 	public int edenLakesPerChunk = 1;
 	public int edenWaterLillyPerChunk = 0;
 	
@@ -69,155 +69,162 @@ public class BiomeDecoratorEden extends BiomeDecorator {
 		int z;
 		int i;
 		
-		// Eden's Blood Sand
-		for (i = 0; this.getGen(EventType.SAND) && i < this.edenSandPerChunk; i++) {
-			x = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
-			y = this.randomGenerator.nextInt(256);
-			z = this.chunk_Z + this.randomGenerator.nextInt(16) + 8;
-			new WorldGenEdenSand(BlockList.edenBloodSand, 0, 6).generate(
-					this.currentWorld, this.randomGenerator, x, y, z);
-		}
-		
-		// Eden's Gravel
-		for (i = 0; this.getGen(EventType.SAND) && i < this.edenGravPerChunk; i++) {
-			x = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
-			y = this.randomGenerator.nextInt(256);
-			z = this.chunk_Z + this.randomGenerator.nextInt(16) + 8;
-			new WorldGenEdenSand(BlockList.edenGravel, 0, 8).generate(
-					this.currentWorld, this.randomGenerator, x, y, z);
-		}
-		
-		// Water Lillies
-		for (i = 0; this.getGen(EventType.LILYPAD)
-				&& i < this.edenWaterLillyPerChunk; i++) {
-			x = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
-			y = this.randomGenerator.nextInt(256);
-			z = this.chunk_Z + this.randomGenerator.nextInt(16) + 8;
-			new WorldGenWaterlily().generate(currentWorld, randomGenerator, x,
-					y, z);
-		}
-		
-		// Lava & Water (Lakes)
-		for (i = 0; this.getGen(EventType.LAKE) && i < this.edenLakesPerChunk; i++) {
-			if (this.randomGenerator.nextInt(3) == 0) {
+		if (biome instanceof BiomeGenEdenBase) {
+			
+			// Eden's Blood Sand
+			for (i = 0; this.getGen(EventType.SAND)
+					&& i < this.edenSandPerChunk; i++) {
 				x = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
-				y = this.randomGenerator.nextInt(256);
+				y = this.randomGenerator.nextInt(128);
 				z = this.chunk_Z + this.randomGenerator.nextInt(16) + 8;
-				BiomeGenEdenBase currentBiome = (BiomeGenEdenBase) this.currentWorld
-						.getBiomeGenForCoords(x, z);
-				if (currentBiome.theBiomeDecorator.generateLakes != false) {
-					Block lakeBlock = (currentBiome.getIsHotBiome()) ? Blocks.lava
-							: Blocks.water;
-					if (!currentBiome.getIsHotBiome()) {
-						lakeBlock = (lakeBlock == Blocks.water && currentBiome
-								.getIsColdBiome()) ? Blocks.ice : Blocks.water;
+				new WorldGenEdenSand(BlockList.edenBloodSand, 0, 6).generate(
+						this.currentWorld, this.randomGenerator, x, y, z);
+			}
+			
+			// Eden's Gravel
+			for (i = 0; this.getGen(EventType.SAND)
+					&& i < this.edenGravPerChunk; i++) {
+				x = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
+				y = this.randomGenerator.nextInt(128);
+				z = this.chunk_Z + this.randomGenerator.nextInt(16) + 8;
+				new WorldGenEdenSand(BlockList.edenGravel, 0, 8).generate(
+						this.currentWorld, this.randomGenerator, x, y, z);
+			}
+			
+			// Water Lillies
+			for (i = 0; this.getGen(EventType.LILYPAD)
+					&& i < this.edenWaterLillyPerChunk; i++) {
+				x = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
+				y = this.randomGenerator.nextInt(128);
+				z = this.chunk_Z + this.randomGenerator.nextInt(16) + 8;
+				new WorldGenWaterlily().generate(currentWorld, randomGenerator,
+						x, y, z);
+			}
+			
+			// Lava & Water (Lakes)
+			for (i = 0; this.getGen(EventType.LAKE)
+					&& i < this.edenLakesPerChunk; i++) {
+				if (this.randomGenerator.nextInt(3) == 0) {
+					x = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
+					y = this.randomGenerator.nextInt(128);
+					z = this.chunk_Z + this.randomGenerator.nextInt(16) + 8;
+					BiomeGenEdenBase currentBiome = (BiomeGenEdenBase) this.currentWorld
+							.getBiomeGenForCoords(x, z);
+					if (currentBiome.theBiomeDecorator.generateLakes != false) {
+						Block lakeBlock = (currentBiome.getIsHotBiome()) ? Blocks.lava
+								: Blocks.water;
+						if (!currentBiome.getIsHotBiome()) {
+							lakeBlock = (lakeBlock == Blocks.water && currentBiome
+									.getIsColdBiome()) ? Blocks.ice
+									: Blocks.water;
+						}
+						new WorldGenEdenLakes(lakeBlock).generate(currentWorld,
+								randomGenerator, x, y, z);
 					}
-					new WorldGenEdenLakes(lakeBlock).generate(currentWorld,
-							randomGenerator, x, y, z);
 				}
 			}
-		}
-		
-		// Tall Grass
-		for (i = 0; this.getGen(EventType.GRASS)
-				&& i < this.edenTallGrassPerChunk; ++i) {
-			if (this.randomGenerator.nextInt(3) == 0) {
-				x = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
-				y = this.randomGenerator.nextInt(256);
-				z = this.chunk_Z + this.randomGenerator.nextInt(16) + 8;
-				new WorldGenTallGrass(BlockList.edenTallGrass, 0).generate(
-						this.currentWorld, this.randomGenerator, x, y, z);
-			}
-		}
-		
-		// Dead Bush
-		for (i = 0; this.getGen(EventType.DEAD_BUSH)
-				&& i < this.edenDeadBushPerChunk; ++i) {
-			x = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
-			y = this.randomGenerator.nextInt(256);
-			z = this.chunk_Z + this.randomGenerator.nextInt(16) + 8;
-			new WorldGenDeadBush(Blocks.deadbush).generate(currentWorld,
-					randomGenerator, x, y, z);
-		}
-		
-		// Trees
-		for (i = 0; this.getGen(EventType.TREE)
-				&& i < this.edenWoodTreesPerChunk; i++) {
-			if (this.randomGenerator.nextInt(2) == 0) {
-				x = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
-				y = this.randomGenerator.nextInt(256);
-				z = this.chunk_Z + this.randomGenerator.nextInt(16) + 8;
-				new WorldGenTreeNG(BlockList.edenWoodLog,
-						BlockList.edenWoodLeaves, 0, 0, false, 6, 4, true)
-						.generate(currentWorld, randomGenerator, x, y, z);
-			}
-		}
-		
-		// Eden Flowers
-		for (i = 0; this.getGen(EventType.FLOWERS)
-				&& i < this.edenFlowersPerChunk; ++i) {
-			if (this.randomGenerator.nextInt(4) == 0) {
-				x = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
-				y = this.randomGenerator.nextInt(256);
-				z = this.chunk_Z + this.randomGenerator.nextInt(16) + 8;
-				new WorldGenEdenFlowers(BlockList.edenFlower, 0).generate(
-						this.currentWorld, this.randomGenerator, x, y, z);
+			
+			// Tall Grass
+			for (i = 0; this.getGen(EventType.GRASS)
+					&& i < this.edenTallGrassPerChunk; ++i) {
+				if (this.randomGenerator.nextInt(3) == 0) {
+					x = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
+					y = this.randomGenerator.nextInt(128);
+					z = this.chunk_Z + this.randomGenerator.nextInt(16) + 8;
+					new WorldGenTallGrass(BlockList.edenTallGrass, 0).generate(
+							this.currentWorld, this.randomGenerator, x, y, z);
+				}
 			}
 			
-			if (this.randomGenerator.nextInt(4) == 0) {
+			// Dead Bush
+			for (i = 0; this.getGen(EventType.DEAD_BUSH)
+					&& i < this.edenDeadBushPerChunk; ++i) {
 				x = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
-				y = this.randomGenerator.nextInt(256);
+				y = this.randomGenerator.nextInt(128);
 				z = this.chunk_Z + this.randomGenerator.nextInt(16) + 8;
-				new WorldGenEdenFlowers(BlockList.edenFlower, 1).generate(
-						this.currentWorld, this.randomGenerator, x, y, z);
+				new WorldGenDeadBush(Blocks.deadbush).generate(currentWorld,
+						randomGenerator, x, y, z);
 			}
 			
-			if (this.randomGenerator.nextInt(4) == 0) {
-				x = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
-				y = this.randomGenerator.nextInt(256);
-				z = this.chunk_Z + this.randomGenerator.nextInt(16) + 8;
-				new WorldGenEdenFlowers(BlockList.edenFlower, 2).generate(
-						this.currentWorld, this.randomGenerator, x, y, z);
+			// Trees
+			for (i = 0; this.getGen(EventType.TREE)
+					&& i < this.edenWoodTreesPerChunk; i++) {
+				if (this.randomGenerator.nextInt(2) == 0) {
+					x = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
+					y = this.randomGenerator.nextInt(128);
+					z = this.chunk_Z + this.randomGenerator.nextInt(16) + 8;
+					new WorldGenTreeNG(BlockList.edenWoodLog,
+							BlockList.edenWoodLeaves, 0, 0, false, 6, 4, true)
+							.generate(currentWorld, randomGenerator, x, y, z);
+				}
 			}
 			
-			if (this.randomGenerator.nextInt(8) == 0) {
-				x = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
-				y = this.randomGenerator.nextInt(256);
-				z = this.chunk_Z + this.randomGenerator.nextInt(16) + 8;
-				new WorldGenEdenFlowers(BlockList.edenFlower, 3).generate(
-						this.currentWorld, this.randomGenerator, x, y, z);
-			}
-			
-			if (this.randomGenerator.nextInt(8) == 0) {
-				x = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
-				y = this.randomGenerator.nextInt(256);
-				z = this.chunk_Z + this.randomGenerator.nextInt(16) + 8;
-				new WorldGenEdenFlowers(BlockList.edenFlower, 4).generate(
-						this.currentWorld, this.randomGenerator, x, y, z);
-			}
-			
-			if (this.randomGenerator.nextInt(8) == 0) {
-				x = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
-				y = this.randomGenerator.nextInt(256);
-				z = this.chunk_Z + this.randomGenerator.nextInt(16) + 8;
-				new WorldGenEdenFlowers(BlockList.edenFlower, 5).generate(
-						this.currentWorld, this.randomGenerator, x, y, z);
-			}
-			
-			if (this.randomGenerator.nextInt(8) == 0) {
-				x = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
-				y = this.randomGenerator.nextInt(256);
-				z = this.chunk_Z + this.randomGenerator.nextInt(16) + 8;
-				new WorldGenEdenFlowers(BlockList.edenFlower, 6).generate(
-						this.currentWorld, this.randomGenerator, x, y, z);
-			}
-			
-			if (this.randomGenerator.nextInt(8) == 0) {
-				x = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
-				y = this.randomGenerator.nextInt(256);
-				z = this.chunk_Z + this.randomGenerator.nextInt(16) + 8;
-				new WorldGenEdenFlowers(BlockList.edenFlower, 7).generate(
-						this.currentWorld, this.randomGenerator, x, y, z);
+			// Eden Flowers
+			for (i = 0; this.getGen(EventType.FLOWERS)
+					&& i < this.edenFlowersPerChunk; ++i) {
+				if (this.randomGenerator.nextInt(4) == 0) {
+					x = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
+					y = this.randomGenerator.nextInt(128);
+					z = this.chunk_Z + this.randomGenerator.nextInt(16) + 8;
+					new WorldGenEdenFlowers(BlockList.edenFlower, 0).generate(
+							this.currentWorld, this.randomGenerator, x, y, z);
+				}
+				
+				if (this.randomGenerator.nextInt(4) == 0) {
+					x = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
+					y = this.randomGenerator.nextInt(128);
+					z = this.chunk_Z + this.randomGenerator.nextInt(16) + 8;
+					new WorldGenEdenFlowers(BlockList.edenFlower, 1).generate(
+							this.currentWorld, this.randomGenerator, x, y, z);
+				}
+				
+				if (this.randomGenerator.nextInt(4) == 0) {
+					x = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
+					y = this.randomGenerator.nextInt(128);
+					z = this.chunk_Z + this.randomGenerator.nextInt(16) + 8;
+					new WorldGenEdenFlowers(BlockList.edenFlower, 2).generate(
+							this.currentWorld, this.randomGenerator, x, y, z);
+				}
+				
+				if (this.randomGenerator.nextInt(8) == 0) {
+					x = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
+					y = this.randomGenerator.nextInt(128);
+					z = this.chunk_Z + this.randomGenerator.nextInt(16) + 8;
+					new WorldGenEdenFlowers(BlockList.edenFlower, 3).generate(
+							this.currentWorld, this.randomGenerator, x, y, z);
+				}
+				
+				if (this.randomGenerator.nextInt(8) == 0) {
+					x = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
+					y = this.randomGenerator.nextInt(128);
+					z = this.chunk_Z + this.randomGenerator.nextInt(16) + 8;
+					new WorldGenEdenFlowers(BlockList.edenFlower, 4).generate(
+							this.currentWorld, this.randomGenerator, x, y, z);
+				}
+				
+				if (this.randomGenerator.nextInt(8) == 0) {
+					x = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
+					y = this.randomGenerator.nextInt(128);
+					z = this.chunk_Z + this.randomGenerator.nextInt(16) + 8;
+					new WorldGenEdenFlowers(BlockList.edenFlower, 5).generate(
+							this.currentWorld, this.randomGenerator, x, y, z);
+				}
+				
+				if (this.randomGenerator.nextInt(8) == 0) {
+					x = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
+					y = this.randomGenerator.nextInt(128);
+					z = this.chunk_Z + this.randomGenerator.nextInt(16) + 8;
+					new WorldGenEdenFlowers(BlockList.edenFlower, 6).generate(
+							this.currentWorld, this.randomGenerator, x, y, z);
+				}
+				
+				if (this.randomGenerator.nextInt(8) == 0) {
+					x = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
+					y = this.randomGenerator.nextInt(128);
+					z = this.chunk_Z + this.randomGenerator.nextInt(16) + 8;
+					new WorldGenEdenFlowers(BlockList.edenFlower, 7).generate(
+							this.currentWorld, this.randomGenerator, x, y, z);
+				}
 			}
 		}
 		

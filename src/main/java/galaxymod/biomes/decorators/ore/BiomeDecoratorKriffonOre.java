@@ -79,11 +79,11 @@ public class BiomeDecoratorKriffonOre extends BiomeDecoratorNova {
 	void generateKriffon() {
 		MinecraftForge.EVENT_BUS.post(new GCCoreEventPopulate.Pre(
 				this.worldObj, this.randomGenerator, this.chunkX, this.chunkZ));
-		this.genOre(20, this.coalGen, 4, 70);
-		this.genOre(16, this.copperGen, 4, 70);
+		this.genOre(10, this.coalGen, 4, 70);
+		this.genOre(6, this.copperGen, 4, 70);
 		this.genOre(11, this.redstoneGen, 2, 50);
-		this.genOre(14, this.ironGen, 4, 60);
-		this.genOre(12, this.goldGen, 4, 50);
+		this.genOre(8, this.ironGen, 4, 60);
+		this.genOre(6, this.goldGen, 4, 50);
 		this.genOre(8, this.cobaltGen, 2, 35);
 		MinecraftForge.EVENT_BUS.post(new GCCoreEventPopulate.Post(
 				this.worldObj, this.randomGenerator, this.chunkX, this.chunkZ));

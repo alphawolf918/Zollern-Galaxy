@@ -12,6 +12,7 @@
 
 package galaxymod.biomes.decorators;
 
+import galaxymod.biomes.kriffus.BiomeGenKriffonBase;
 import galaxymod.worldgen.eden.WorldGenEdenLakes;
 import java.util.Random;
 import net.minecraft.init.Blocks;
@@ -53,14 +54,17 @@ public class BiomeDecoratorKriffon extends BiomeDecorator {
 		int z;
 		int i;
 		
-		for (i = 0; this.getGen(EventType.LAKE)
-				&& i < this.kriffonLavaLakesPerChunk; ++i) {
-			if (this.randomGenerator.nextInt(2) == 0) {
-				x = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
-				y = this.randomGenerator.nextInt(256);
-				z = this.chunk_Z + this.randomGenerator.nextInt(16) + 8;
-				new WorldGenEdenLakes(Blocks.lava).generate(currentWorld,
-						randomGenerator, x, y, z);
+		if (biome instanceof BiomeGenKriffonBase) {
+			
+			for (i = 0; this.getGen(EventType.LAKE)
+					&& i < this.kriffonLavaLakesPerChunk; ++i) {
+				if (this.randomGenerator.nextInt(2) == 0) {
+					x = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
+					y = this.randomGenerator.nextInt(256);
+					z = this.chunk_Z + this.randomGenerator.nextInt(16) + 8;
+					new WorldGenEdenLakes(Blocks.lava).generate(currentWorld,
+							randomGenerator, x, y, z);
+				}
 			}
 		}
 		

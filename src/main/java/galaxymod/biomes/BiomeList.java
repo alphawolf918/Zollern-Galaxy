@@ -22,6 +22,7 @@ import galaxymod.biomes.eden.BiomeEdenSnowyPlains;
 import galaxymod.biomes.eden.BiomeEdenSwamp;
 import galaxymod.biomes.eden.BiomeEdenTerranValley;
 import galaxymod.biomes.kriffus.BiomeGenKriffonBase;
+import galaxymod.biomes.oasis.BiomeGenOasisBase;
 import galaxymod.biomes.purgot.BiomeGenPurgotBase;
 import galaxymod.biomes.purgot.BiomeGenPurgotLimbo;
 import galaxymod.biomes.xathius.BiomeGenXathiusAbstractPlains;
@@ -45,7 +46,7 @@ public class BiomeList {
 	
 	public static BiomeSpace biomeKriffus = ((BiomeGenKriffonBase) new BiomeGenKriffonBase(
 			ConfigManagerNova.biomeKriffonFlamingPlainsId)
-			.setBiomeName("Flaming Plains")).setTemp(10F).setBlocks(
+			.setBiomeName("Scorched Valley")).setTemp(10F).setBlocks(
 			BlockList.kriffRock, BlockList.kriffDirt);
 	
 	public static BiomeSpace biomeXathius = ((BiomeGenXathiusBase) new BiomeGenXathiusBase(
@@ -53,6 +54,10 @@ public class BiomeList {
 			.setTemp(5F).setBlocks(BlockList.xathRock, BlockList.xathDirt);
 	public static BiomeSpace biomeXathiusAbstractPlains = new BiomeGenXathiusAbstractPlains(
 			ConfigManagerNova.biomeXathiusAbstractPlainsId);
+	
+	public static BiomeSpace biomeOasis = ((BiomeSpace) new BiomeGenOasisBase(
+			ConfigManagerNova.biomeOasisId).setTemp(5f).setBiomeName("Oasis"))
+			.setBlocks(BlockList.oasisGrass, BlockList.oasisDirt);
 	
 	public static BiomeSpace biomeEden = new BiomeEden(
 			ConfigManagerNova.biomeEdenGreenLandsId);
@@ -73,8 +78,8 @@ public class BiomeList {
 	public static BiomeSpace biomeEdenSwamp = new BiomeEdenSwamp(
 			ConfigManagerNova.biomeEdenSwamplandsId);
 	
-	public static BiomeSpace biomePurgatory = ((BiomeSpace) new BiomeGenPurgotBase(
-			ConfigManagerNova.biomePurgatoryId).setTemp(5F).setBiomeName(
+	public static BiomeSpace biomePurgatory = ((BiomeGenPurgotBase) new BiomeGenPurgotBase(
+			ConfigManagerNova.biomePurgatoryId).setTemp(4F).setBiomeName(
 			"Purgatory")).setBlocks(BlockList.purgRock, BlockList.purgDirt);
 	public static BiomeSpace biomePurgotLimbo = new BiomeGenPurgotLimbo(
 			ConfigManagerNova.biomePurgotLimboId);
@@ -106,17 +111,15 @@ public class BiomeList {
 		addBiome(biomeXathius, BiomeType.WARM, 0);
 		addBiome(biomeXathiusAbstractPlains, BiomeType.WARM, 0);
 		
+		// Oasis
+		addBiome(biomeOasis, BiomeType.WARM, 0);
+		
 		NovaHelper.echo("Loaded a total of " + totalBiomes + " new biomes.");
 	}
 	
 	public static void addBiome(BiomeSpace biome, BiomeType biomeType,
 			int biomeWeight) {
 		BiomeManager.addBiome(biomeType, new BiomeEntry(biome, biomeWeight));
-		// BiomeManager.addSpawnBiome(biome);
-		if (biome.isBreathable()) {
-			BiomeManager.addVillageBiome(biome, true);
-		}
-		// BiomeManager.addStrongholdBiome(biome);
 		totalBiomes++;
 	}
 }

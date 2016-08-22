@@ -151,7 +151,7 @@ public class WorldProviderEden extends WorldProviderNova {
 	
 	@Override
 	public float getCloudHeight() {
-		return 208F;
+		return 168F;
 	}
 	
 	@Override

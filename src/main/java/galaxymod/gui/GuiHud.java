@@ -81,21 +81,26 @@ public class GuiHud extends Gui {
 							this.mc.theWorld.getWorldChunkManager());
 					if (biome instanceof BiomeSpace) {
 						
+						BiomeSpace biomeSpace = (BiomeSpace) biome;
+						
 						// Biome Name
 						String biomeName = biome.biomeName;
 						String s = "Biome: " + biomeName;
 						fontRendererObj.drawString(s, 2, 26, i3);
 						fontRendererObj.drawString(s, 26, yPos - 20, i3);
 						
-						// Biome Temp
-						float biomeTemp = biome.temperature;
-						String temp = "Temp: " + biomeTemp * 10.0 + " F";
+						// Planet Temp
+						float planetTemp = biomeSpace.getPlanetTemp();
+						String strTemp = "" + (planetTemp * 1.0f);
+						if (strTemp.length() > 4) {
+							strTemp = strTemp.substring(0, 4);
+						}
+						String temp = "Temp: " + strTemp + " F";
 						fontRendererObj.drawString(temp, 2, 36, i3);
 						fontRendererObj.drawString(temp, 26, yPos - 30, i3);
 						
 						// Planet Name
-						PlanetNova planet = ((BiomeSpace) biome)
-								.getPlanetForBiome();
+						PlanetNova planet = biomeSpace.getPlanetForBiome();
 						String planetName = NovaHelper
 								.capitalizeFirstLetter(planet.getName());
 						String p = "Planet: " + planetName;
@@ -119,6 +124,18 @@ public class GuiHud extends Gui {
 						fontRendererObj.drawString(actualGasses, 2, 76, i3);
 						fontRendererObj.drawString(actualGasses, 26, yPos - 74,
 								i3);
+						
+						// Radioactivity
+						float planetRadLevel = planet.getRadiationLevel();
+						String strRad = "Radiation: " + planetRadLevel + "%";
+						fontRendererObj.drawString(strRad, 2, 86, i3);
+						fontRendererObj.drawString(strRad, 26, yPos - 84, i3);
+						
+						// Toxicity
+						float planetToxLevel = planet.getToxicLevel();
+						String strTox = "Toxicity: " + planetToxLevel + "%";
+						fontRendererObj.drawString(strTox, 2, 96, i3);
+						fontRendererObj.drawString(strTox, 26, yPos - 94, i3);
 					}
 				}
 			}

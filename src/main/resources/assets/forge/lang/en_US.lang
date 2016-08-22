@@ -93,6 +93,12 @@ tile.galaxymod_xathstone.name=Xathian Stone
 tile.galaxymod_xathcobblerock.name=Xathian Cobblerock
 tile.galaxymod_xathdirt.name=Xathian Dirt
 tile.galaxymod_xathgrass.name=Xathian Grass
+tile.galaxymod_xathiusprometheanore.name=Xathian Promethean Ore
+
+tile.galaxymod_oasisgrass.name=Oasis Grass
+tile.galaxymod_oasisstone.name=Oasis Stone
+tile.galaxymod_oasiscobblerock.name=Oasis Cobblerock
+tile.galaxymod_oasisdirt.name=Oasis Dirt
 
 container.eden.treasurechest.name=Eden's Treasure
 
@@ -132,6 +138,16 @@ item.galaxymod_kriffonpurgottablet.name=Ancient Kriffon Tablet
 item.galaxymod_ingotevenium.name=Evenium Ingot
 item.galaxymod_compressedevenium.name=Compressed Evenium
 
+item.galaxymod_prometheancrystal.name=Promethean Crystal
+
+item.galaxymod_blueprint_scorch.name=Scorch Protection
+item.galaxymod_blueprint_freeze.name=Freeze Protection
+item.galaxymod_blueprint_rad.name=Radiation Protection
+item.galaxymod_blueprint_tox.name=Toxicity Protection
+
+item.galaxymod_compressedemerald.name=Compressed Emerald
+item.galaxymod_compresseddiamond.name=Compressed Diamond
+
 entity.galaxymod_moolus.name=Moolus
 entity.galaxymod_oinkus.name=Oinkus
 entity.galaxymod_aliensquid.name=Alien Squid
@@ -149,6 +165,7 @@ planet.kriffus=Kriffon
 moon.astros=Astros
 
 planet.xathius=Xathius
+planet.oasis=Oasis
 planet.xantheon=Xantheon
 planet.atheon=Atheon
 

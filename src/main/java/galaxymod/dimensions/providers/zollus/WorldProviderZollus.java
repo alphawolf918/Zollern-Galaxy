@@ -139,7 +139,7 @@ public class WorldProviderZollus extends WorldProviderNova {
 			f2 = 0.95F;
 		}
 		f2 = 0.95F - f2;
-		return f2 * 1.2F;
+		return f2 * 1.1F;
 	}
 	
 	@Override

@@ -20,7 +20,6 @@ import galaxymod.biomes.decorators.ore.BiomeDecoratorXathiusOre;
 import galaxymod.biomes.xathius.BiomeGenXathiusBase;
 import galaxymod.blocks.BlockList;
 import galaxymod.core.config.ConfigManagerNova;
-import galaxymod.worldgen.xathius.MapGenCavernXathius;
 import galaxymod.worldgen.xathius.MapGenCavesXathius;
 import galaxymod.worldgen.xathius.MapGenXathiusRavine;
 import java.util.ArrayList;
@@ -61,7 +60,6 @@ public class ChunkProviderXathius extends ChunkProviderSpace {
 	private Random rand;
 	private final BiomeDecoratorXathiusOre xathiusBiomeDecorator = new BiomeDecoratorXathiusOre();
 	private final MapGenCavesXathius caveGenerator = new MapGenCavesXathius();
-	private final MapGenCavernXathius cavernGenerator = new MapGenCavernXathius();
 	private final MapGenXathiusRavine ravineGenerator = new MapGenXathiusRavine();
 	// private final WorldGenXathiusDungeons dungeonGenerator = new
 	// WorldGenXathiusDungeons();
@@ -153,7 +151,6 @@ public class ChunkProviderXathius extends ChunkProviderSpace {
 	protected List<MapGenBaseMeta> getWorldGenerators() {
 		List<MapGenBaseMeta> generators = Lists.newArrayList();
 		generators.add(this.caveGenerator);
-		generators.add(this.cavernGenerator);
 		return generators;
 	}
 	
@@ -355,8 +352,6 @@ public class ChunkProviderXathius extends ChunkProviderSpace {
 		this.replaceBlocksForBiome(x, z, blockStorage, metaStorage,
 				this.biomesForGeneration);
 		this.caveGenerator.generate(this, this.worldObj, x, z, blockStorage,
-				metaStorage);
-		this.cavernGenerator.generate(this, this.worldObj, x, z, blockStorage,
 				metaStorage);
 		this.ravineGenerator.func_151539_a(this, this.worldObj, x, z,
 				blockStorage);

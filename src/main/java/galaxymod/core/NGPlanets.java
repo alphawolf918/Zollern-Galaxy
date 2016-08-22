@@ -15,6 +15,7 @@ package galaxymod.core;
 import galaxymod.core.config.ConfigManagerNova;
 import galaxymod.dimensions.providers.eden.WorldProviderEden;
 import galaxymod.dimensions.providers.kriffon.WorldProviderKriffon;
+import galaxymod.dimensions.providers.oasis.WorldProviderOasis;
 import galaxymod.dimensions.providers.purgot.WorldProviderPurgot;
 import galaxymod.dimensions.providers.xathius.WorldProviderXathius;
 import galaxymod.dimensions.providers.zollus.WorldProviderZollus;
@@ -22,7 +23,6 @@ import galaxymod.events.NovaEventHandler;
 import galaxymod.utils.ModInfo;
 import galaxymod.utils.NovaHelper;
 import micdoodle8.mods.galacticraft.api.GalacticraftRegistry;
-import micdoodle8.mods.galacticraft.api.galaxies.CelestialBody.ScalableDistance;
 import micdoodle8.mods.galacticraft.api.galaxies.GalaxyRegistry;
 import micdoodle8.mods.galacticraft.api.galaxies.Moon;
 import micdoodle8.mods.galacticraft.api.galaxies.SolarSystem;
@@ -62,6 +62,7 @@ public class NGPlanets {
 	
 	// Praedyth System
 	public static PlanetNova planetXathius = new PlanetNova("xathius");
+	public static PlanetNova planetOasis = new PlanetNova("oasis");
 	public static PlanetNova planetXantheon;
 	public static PlanetNova planetAtheon;
 	
@@ -178,16 +179,16 @@ public class NGPlanets {
 		planetZollus.setRingColorRGB(0.1F, 0.9F, 2.6F);
 		planetZollus.setPhaseShift(0.0F);
 		planetZollus.setRelativeOrbitTime(16F);
-		planetZollus.setRelativeDistanceFromCenter(new ScalableDistance(4.0F,
-				4.0F));
-		planetZollus.atmosphereComponent(IAtmosphericGas.HYDROGEN)
-				.atmosphereComponent(IAtmosphericGas.NITROGEN)
-				.atmosphereComponent(IAtmosphericGas.OXYGEN)
-				.atmosphereComponent(IAtmosphericGas.HELIUM);
+		planetZollus.setDistanceFromCenter(6.0f);
+		planetZollus.setPlanetGasses(IAtmosphericGas.HYDROGEN,
+				IAtmosphericGas.NITROGEN, IAtmosphericGas.OXYGEN,
+				IAtmosphericGas.HELIUM);
 		planetZollus.setTierRequired(4);
 		planetZollus.setRelativeSize(14.876F);
-		planetZollus.setBodyIcon(new ResourceLocation(ModInfo.MODID,
-				"textures/gui/zollus.png"));
+		planetZollus.setPlanetTemperature(-19.6f);
+		planetZollus.setPlanetToxicity(0.4f);
+		planetZollus.setPlanetRadiation(4.5f);
+		planetZollus.setPlanetIcon("zollus");
 		planetZollus.setDimensionInfo(
 				ConfigManagerNova.planetZollusDimensionId,
 				WorldProviderZollus.class);
@@ -197,18 +198,18 @@ public class NGPlanets {
 		planetEden.setParentSolarSystem(systemPsios);
 		planetEden.setPlanetClass(EnumPlanetClass.M);
 		planetEden.setRingColorRGB(0.1F, 0.9F, 2.6F);
-		planetEden.setPhaseShift(0.0F);
+		planetEden.setPhaseShift(1.0F);
 		planetEden.setRelativeOrbitTime(8.0F);
-		planetEden.setRelativeDistanceFromCenter(new ScalableDistance(2.4F,
-				2.4F));
-		planetEden.atmosphereComponent(IAtmosphericGas.NITROGEN)
-				.atmosphereComponent(IAtmosphericGas.OXYGEN)
-				.atmosphereComponent(IAtmosphericGas.ARGON)
-				.atmosphereComponent(IAtmosphericGas.WATER);
+		planetEden.setDistanceFromCenter(3.2f);
+		planetEden.setPlanetGasses(IAtmosphericGas.NITROGEN,
+				IAtmosphericGas.OXYGEN, IAtmosphericGas.ARGON,
+				IAtmosphericGas.WATER);
 		planetEden.setTierRequired(3);
 		planetEden.setRelativeSize(40.0F);
-		planetEden.setBodyIcon(new ResourceLocation(ModInfo.MODID,
-				"textures/gui/eden.png"));
+		planetEden.setPlanetTemperature(71.2f);
+		planetEden.setPlanetToxicity(0.0f);
+		planetEden.setPlanetRadiation(0.0f);
+		planetEden.setPlanetIcon("eden");
 		planetEden.setDimensionInfo(ConfigManagerNova.planetEdenDimensionId,
 				WorldProviderEden.class);
 		totalPlanets++;
@@ -217,16 +218,17 @@ public class NGPlanets {
 		planetKriffon.setParentSolarSystem(systemPsios);
 		planetKriffon.setPlanetClass(EnumPlanetClass.Y);
 		planetKriffon.setRingColorRGB(0.1F, 0.9F, 2.6F);
-		planetKriffon.setPhaseShift(0.0F);
+		planetKriffon.setPhaseShift(2.0F);
 		planetKriffon.setRelativeOrbitTime(2.0F);
-		planetKriffon.setRelativeDistanceFromCenter(new ScalableDistance(0.4F,
-				0.4F));
-		planetKriffon.atmosphereComponent(IAtmosphericGas.OXYGEN)
-				.atmosphereComponent(IAtmosphericGas.ARGON);
+		planetKriffon.setDistanceFromCenter(0.4f);
+		planetKriffon.setPlanetGasses(IAtmosphericGas.OXYGEN,
+				IAtmosphericGas.ARGON, IAtmosphericGas.METHANE);
 		planetKriffon.setTierRequired(4);
 		planetKriffon.setRelativeSize(20.0F);
-		planetKriffon.setBodyIcon(new ResourceLocation(ModInfo.MODID,
-				"textures/gui/kriffus.png"));
+		planetKriffon.setPlanetTemperature(327.4f);
+		planetKriffon.setPlanetToxicity(14.1f);
+		planetKriffon.setPlanetRadiation(16.8f);
+		planetKriffon.setPlanetIcon("kriffus");
 		planetKriffon.setDimensionInfo(
 				ConfigManagerNova.planetKriffonDimensionId,
 				WorldProviderKriffon.class);
@@ -236,18 +238,18 @@ public class NGPlanets {
 		planetPurgot.setParentSolarSystem(systemPsios);
 		planetPurgot.setPlanetClass(EnumPlanetClass.NINE);
 		planetPurgot.setRingColorRGB(0.1F, 0.9F, 2.6F);
-		planetPurgot.setPhaseShift(0.1F);
+		planetPurgot.setPhaseShift(0.2F);
 		planetPurgot.setRelativeOrbitTime(16F);
-		planetPurgot.setRelativeDistanceFromCenter(new ScalableDistance(6.0F,
-				6.0F));
-		planetPurgot.atmosphereComponent(IAtmosphericGas.OXYGEN)
-				.atmosphereComponent(IAtmosphericGas.WATER)
-				.atmosphereComponent(IAtmosphericGas.NITROGEN)
-				.atmosphereComponent(IAtmosphericGas.ARGON);
+		planetPurgot.setDistanceFromCenter(6.0f);
+		planetPurgot.setPlanetGasses(IAtmosphericGas.OXYGEN,
+				IAtmosphericGas.WATER, IAtmosphericGas.NITROGEN,
+				IAtmosphericGas.ARGON);
 		planetPurgot.setTierRequired(5);
 		planetPurgot.setRelativeSize(40.0F);
-		planetPurgot.setBodyIcon(new ResourceLocation(ModInfo.MODID,
-				"textures/gui/purgot.png"));
+		planetPurgot.setPlanetTemperature(26.5f);
+		planetPurgot.setPlanetToxicity(14.6f);
+		planetPurgot.setPlanetRadiation(5.2f);
+		planetPurgot.setPlanetIcon("purgot");
 		planetPurgot.setDimensionInfo(
 				ConfigManagerNova.planetPurgotDimensionId,
 				WorldProviderPurgot.class);
@@ -257,21 +259,39 @@ public class NGPlanets {
 		planetXathius.setParentSolarSystem(systemPraedyth);
 		planetXathius.setPlanetClass(EnumPlanetClass.NINE);
 		planetXathius.setRingColorRGB(0.1F, 0.9F, 1.4F);
-		planetXathius.setPhaseShift(0.2F);
+		planetXathius.setPhaseShift(4.2F);
 		planetXathius.setRelativeOrbitTime(16F);
-		planetXathius.setRelativeDistanceFromCenter(new ScalableDistance(3.4F,
-				3.4F));
-		planetXathius.atmosphereComponent(IAtmosphericGas.OXYGEN)
-				.atmosphereComponent(IAtmosphericGas.WATER)
-				.atmosphereComponent(IAtmosphericGas.NITROGEN)
-				.atmosphereComponent(IAtmosphericGas.ARGON);
+		planetXathius.setDistanceFromCenter(3.4f);
+		planetXathius.setPlanetGasses(IAtmosphericGas.OXYGEN,
+				IAtmosphericGas.WATER, IAtmosphericGas.NITROGEN,
+				IAtmosphericGas.ARGON);
 		planetXathius.setTierRequired(5);
 		planetXathius.setRelativeSize(20.0F);
-		planetXathius.setBodyIcon(new ResourceLocation(ModInfo.MODID,
-				"textures/gui/xathius.png"));
+		planetXathius.setPlanetTemperature(82.4f);
+		planetXathius.setPlanetToxicity(1.5f);
+		planetXathius.setPlanetRadiation(16.5f);
+		planetXathius.setPlanetIcon("xathius");
 		planetXathius.setDimensionInfo(
 				ConfigManagerNova.planetXathiusDimensionId,
 				WorldProviderXathius.class);
+		totalPlanets++;
+		
+		// Planet Oasis
+		planetOasis.setParentSolarSystem(systemPraedyth);
+		planetOasis.setPlanetClass(EnumPlanetClass.R);
+		planetOasis.setRingColorRGB(2.0f, 5.4f, 3.2f);
+		planetOasis.setPhaseShift(2.6f);
+		planetOasis.setRelativeOrbitTime(32f);
+		planetOasis.setPlanetGasses(IAtmosphericGas.OXYGEN,
+				IAtmosphericGas.WATER);
+		planetOasis.setTierRequired(5);
+		planetOasis.setRelativeSize(64.0f);
+		planetOasis.setPlanetTemperature(68.2f);
+		planetOasis.setPlanetToxicity(0.5f);
+		planetOasis.setPlanetRadiation(2.0f);
+		planetOasis.setPlanetIcon("oasis");
+		planetOasis.setDimensionInfo(ConfigManagerNova.planetOasisDimensionId,
+				WorldProviderOasis.class);
 		totalPlanets++;
 		
 		NovaHelper.echo("Loaded a total of " + totalPlanets + " new planets.");
@@ -295,6 +315,7 @@ public class NGPlanets {
 		GalaxyRegistry.registerPlanet(planetKriffon);
 		GalaxyRegistry.registerPlanet(planetPurgot);
 		GalaxyRegistry.registerPlanet(planetXathius);
+		GalaxyRegistry.registerPlanet(planetOasis);
 	}
 	
 	public static void registerTeleportTypes() {
@@ -308,6 +329,8 @@ public class NGPlanets {
 		GalacticraftRegistry.registerTeleportType(WorldProviderPurgot.class,
 				teleType);
 		GalacticraftRegistry.registerTeleportType(WorldProviderXathius.class,
+				teleType);
+		GalacticraftRegistry.registerTeleportType(WorldProviderOasis.class,
 				teleType);
 	}
 }

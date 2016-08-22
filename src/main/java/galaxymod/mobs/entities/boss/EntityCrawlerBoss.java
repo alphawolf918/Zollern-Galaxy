@@ -32,6 +32,7 @@ import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.ai.EntityAIAttackOnCollide;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
@@ -79,14 +80,16 @@ public class EntityCrawlerBoss extends EntitySpider implements IBoss,
 		this.tasks.addTask(3, new EntityAIWatchClosest(this,
 				EntityPlayer.class, 8.0F));
 		this.tasks.addTask(3, new EntityAILookIdle(this));
+		this.tasks.addTask(4, new EntityAIAttackOnCollide(this,
+				EntityPlayer.class, 2.0D, false));
 		this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
 		this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this,
-				EntityPlayer.class, 0, true));
+				EntityPlayer.class, 50, true));
 	}
 	
 	@Override
 	protected Entity findPlayerToAttack() {
-		double d0 = 18.0D;
+		double d0 = 20.0D;
 		return this.worldObj.getClosestVulnerablePlayerToEntity(this, d0);
 	}
 	
@@ -105,11 +108,11 @@ public class EntityCrawlerBoss extends EntitySpider implements IBoss,
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getEntityAttribute(SharedMonsterAttributes.maxHealth)
-				.setBaseValue(235.0F * ConfigManagerCore.dungeonBossHealthMod);
+				.setBaseValue(535.0F * ConfigManagerCore.dungeonBossHealthMod);
 		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed)
 				.setBaseValue(0.25F);
 		this.getEntityAttribute(SharedMonsterAttributes.attackDamage)
-				.setBaseValue(2.50F);
+				.setBaseValue(4.0F);
 	}
 	
 	@Override

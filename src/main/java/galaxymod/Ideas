@@ -1,0 +1,14 @@
+* Universal elements that can be found on any planet, not necessarily as ores, but as "crystals" that
+  can be broken only by multi-tools.
+    * Plutonium.
+        * Could be used as a recharging element for blueprints and other damaged technologies.
+
+* Implement multi-tools as an "upgrade" from the pickaxe.
+    * Each multi-tool will have a certain tier and a special perk.
+
+* Structures that can generate on any planet.
+    * When inside, extremities don't effect the Player.
+        * Could do this using canBlockSeeTheSky() method?
+    * Each one could have special "stations" used by right-clicking:
+        * A rechargable health station.
+        * Blueprint damage repair station?

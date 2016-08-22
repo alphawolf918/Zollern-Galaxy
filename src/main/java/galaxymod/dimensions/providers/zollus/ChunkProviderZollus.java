@@ -20,7 +20,6 @@ import galaxymod.biomes.decorators.ore.BiomeDecoratorZollusOre;
 import galaxymod.biomes.zollus.BiomeGenZollusBase;
 import galaxymod.blocks.BlockList;
 import galaxymod.core.config.ConfigManagerNova;
-import galaxymod.worldgen.zollus.MapGenCavernZollus;
 import galaxymod.worldgen.zollus.MapGenCavesZollus;
 import galaxymod.worldgen.zollus.MapGenZollusRavine;
 import java.util.ArrayList;
@@ -59,7 +58,6 @@ public class ChunkProviderZollus extends ChunkProviderSpace {
 	private Random rand;
 	private final BiomeDecoratorZollusOre zollusBiomeDecorator = new BiomeDecoratorZollusOre();
 	private final MapGenCavesZollus caveGenerator = new MapGenCavesZollus();
-	private final MapGenCavernZollus cavernGenerator = new MapGenCavernZollus();
 	private final MapGenZollusRavine ravineGenerator = new MapGenZollusRavine();
 	// private final WorldGenZollusDungeons dungeonGenerator = new
 	// WorldGenZollusDungeons();
@@ -150,7 +148,6 @@ public class ChunkProviderZollus extends ChunkProviderSpace {
 	protected List<MapGenBaseMeta> getWorldGenerators() {
 		List<MapGenBaseMeta> generators = Lists.newArrayList();
 		generators.add(this.caveGenerator);
-		generators.add(this.cavernGenerator);
 		return generators;
 	}
 	
@@ -348,8 +345,6 @@ public class ChunkProviderZollus extends ChunkProviderSpace {
 		this.replaceBlocksForBiome(x, z, blockStorage, metaStorage,
 				this.biomesForGeneration);
 		this.caveGenerator.generate(this, this.worldObj, x, z, blockStorage,
-				metaStorage);
-		this.cavernGenerator.generate(this, this.worldObj, x, z, blockStorage,
 				metaStorage);
 		this.ravineGenerator.func_151539_a(this, this.worldObj, x, z,
 				blockStorage);

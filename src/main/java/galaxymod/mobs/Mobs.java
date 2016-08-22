@@ -13,7 +13,6 @@
 package galaxymod.mobs;
 
 import galaxymod.biomes.BiomeList;
-import galaxymod.biomes.eden.BiomeGenEdenBase;
 import galaxymod.mobs.entities.EntityGalaxyKnight;
 import galaxymod.mobs.entities.EntityGrayAlien;
 import galaxymod.mobs.entities.boss.EntityCrawlerBoss;
@@ -59,10 +58,6 @@ public class Mobs {
 		
 		// Alien Squid
 		registerEntity(EntityAlienSquid.class, "aliensquid", 0x0099ff, 0xeeeeee);
-		for (BiomeGenEdenBase biome : BiomeGenEdenBase.getEdenBiomes()) {
-			EntityRegistry.addSpawn(EntityAlienSquid.class, 1, 0, 1,
-					EnumCreatureType.waterCreature, biome);
-		}
 		
 		// Galaxy Knight
 		registerEntity(EntityGalaxyKnight.class, "galaxyknight", 0x444444,

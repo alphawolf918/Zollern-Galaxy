@@ -34,6 +34,7 @@ public class ConfigManagerNova {
 	
 	// Planets (Praedyth)
 	public static int planetXathiusDimensionId;
+	public static int planetOasisDimensionId;
 	public static int planetXantheonDimensionId;
 	public static int planetAtheonDimensionId;
 	
@@ -84,8 +85,13 @@ public class ConfigManagerNova {
 	public static int biomeXathiusId;
 	public static int biomeXathiusAbstractPlainsId;
 	
+	// Biomes (Oasis)
+	public static int biomeOasisId;
+	
 	// Misc (Can Earth animals generate on Eden?)
 	public static boolean canEarthAnimalsSpawnOnEden;
+	
+	private static int biomeAbstractPlainsId;
 	
 	public static void init(FMLPreInitializationEvent event) {
 		configuration = new Configuration(new File(event
@@ -111,6 +117,8 @@ public class ConfigManagerNova {
 		// Planets (Praedyth)
 		planetXathiusDimensionId = configuration.get(CATEGORY_DIMENSIONS,
 				"Planet Xathius Dimension ID", -35).getInt();
+		planetOasisDimensionId = configuration.get(CATEGORY_DIMENSIONS,
+				"Planet Oasis Dimension ID", -50).getInt();
 		planetXantheonDimensionId = configuration.get(CATEGORY_DIMENSIONS,
 				"Planet Xantheon Dimension ID", -36).getInt();
 		planetAtheonDimensionId = configuration.get(CATEGORY_DIMENSIONS,
@@ -187,8 +195,12 @@ public class ConfigManagerNova {
 		// Biomes (Xathius)
 		biomeXathiusId = configuration.get(CATEGORY_BIOMES,
 				"Xathius Happy Hills Biome ID", 166).getInt();
-		biomeXathiusId = configuration.get(CATEGORY_BIOMES,
+		biomeAbstractPlainsId = configuration.get(CATEGORY_BIOMES,
 				"Xathius Abstract Plains ID", 165).getInt();
+		
+		// Biomes (Oasis)
+		biomeOasisId = configuration.get(CATEGORY_BIOMES, "Oasis ID", 164)
+				.getInt();
 		
 		// Misc (Can Earth animals spawn on Eden?)
 		canEarthAnimalsSpawnOnEden = configuration.get(CATEGORY_MISC,

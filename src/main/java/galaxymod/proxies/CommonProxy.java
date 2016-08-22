@@ -16,6 +16,7 @@ import net.minecraft.block.Block;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 
 public class CommonProxy {
+	
 	public void initRenderers() {
 		
 	}

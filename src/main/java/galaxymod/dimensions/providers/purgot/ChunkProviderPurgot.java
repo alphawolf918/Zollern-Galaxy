@@ -20,7 +20,6 @@ import galaxymod.biomes.decorators.ore.BiomeDecoratorPurgotOre;
 import galaxymod.biomes.purgot.BiomeGenPurgotBase;
 import galaxymod.blocks.BlockList;
 import galaxymod.core.config.ConfigManagerNova;
-import galaxymod.worldgen.purgot.MapGenCavernPurgot;
 import galaxymod.worldgen.purgot.MapGenCavesPurgot;
 import galaxymod.worldgen.purgot.MapGenPurgotRavine;
 import java.util.ArrayList;
@@ -61,7 +60,6 @@ public class ChunkProviderPurgot extends ChunkProviderSpace {
 	private Random rand;
 	private final BiomeDecoratorPurgotOre purgotBiomeDecorator = new BiomeDecoratorPurgotOre();
 	private final MapGenCavesPurgot caveGenerator = new MapGenCavesPurgot();
-	private final MapGenCavernPurgot cavernGenerator = new MapGenCavernPurgot();
 	private final MapGenPurgotRavine ravineGenerator = new MapGenPurgotRavine();
 	// private final WorldGenPurgotDungeons dungeonGenerator = new
 	// WorldGenPurgotDungeons();
@@ -153,7 +151,6 @@ public class ChunkProviderPurgot extends ChunkProviderSpace {
 	protected List<MapGenBaseMeta> getWorldGenerators() {
 		List<MapGenBaseMeta> generators = Lists.newArrayList();
 		generators.add(this.caveGenerator);
-		generators.add(this.cavernGenerator);
 		return generators;
 	}
 	
@@ -348,8 +345,6 @@ public class ChunkProviderPurgot extends ChunkProviderSpace {
 		this.replaceBlocksForBiome(x, z, blockStorage, metaStorage,
 				this.biomesForGeneration);
 		this.caveGenerator.generate(this, this.worldObj, x, z, blockStorage,
-				metaStorage);
-		this.cavernGenerator.generate(this, this.worldObj, x, z, blockStorage,
 				metaStorage);
 		this.ravineGenerator.func_151539_a(this, this.worldObj, x, z,
 				blockStorage);

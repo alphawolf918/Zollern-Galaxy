@@ -22,7 +22,7 @@ import net.minecraft.world.World;
 
 public class MapGenCavesEden extends MapGenBaseMeta {
 	
-	public static int BREAK_THROUGH_CHANCE = 5; // 1 in n chance
+	public static int BREAK_THROUGH_CHANCE = 10; // 1 in n chance
 	
 	protected void generateLargeCaveNode(long par1, int par3, int par4,
 			Block[] blockIdArray, byte[] metaArray, double par6, double par8,

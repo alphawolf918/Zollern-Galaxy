@@ -12,8 +12,10 @@
 
 package galaxymod.biomes.decorators.ore;
 
+import galaxymod.blocks.BlockList;
 import java.util.Random;
 import micdoodle8.mods.galacticraft.api.event.wgen.GCCoreEventPopulate;
+import micdoodle8.mods.galacticraft.core.world.gen.WorldGenMinableMeta;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.common.MinecraftForge;
@@ -26,8 +28,12 @@ public class BiomeDecoratorXathiusOre extends BiomeDecoratorNova {
 	private int chunkX;
 	private int chunkZ;
 	
+	private WorldGenerator prometheanGen;
+	
 	public BiomeDecoratorXathiusOre() {
-		// TODO
+		this.prometheanGen = new WorldGenMinableMeta(
+				BlockList.xathPrometheanOre, 8, 0, false, BlockList.xathStone,
+				0);
 	}
 	
 	@Override
@@ -59,7 +65,7 @@ public class BiomeDecoratorXathiusOre extends BiomeDecoratorNova {
 	void generateXathius() {
 		MinecraftForge.EVENT_BUS.post(new GCCoreEventPopulate.Pre(
 				this.worldObj, this.randomGenerator, this.chunkX, this.chunkZ));
-		// TODO
+		this.genOre(7, this.prometheanGen, 4, 40);
 		MinecraftForge.EVENT_BUS.post(new GCCoreEventPopulate.Post(
 				this.worldObj, this.randomGenerator, this.chunkX, this.chunkZ));
 	}

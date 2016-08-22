@@ -65,11 +65,29 @@ public class ItemList {
 	public static final ItemNova compressedEvenium = new ItemNova(
 			"compressedevenium");
 	
+	public static final ItemNova prometheanCrystal = new ItemNova(
+			"prometheancrystal");
+	
 	public static final ItemNova dustAluminum = new ItemNova("aluminumdust");
 	public static final ItemNova dustCobalt = new ItemNova("pulverizedcobalt");
 	public static final ItemNova dustDiamond = new ItemNova("diamonddust");
 	public static final ItemNova dustEmerald = new ItemNova("emeralddust");
 	public static final ItemNova dustEvenium = new ItemNova("eveniumdust");
+	
+	// public static final ItemBlueprint blueprintScorch = new ItemBlueprint(
+	// "blueprint_scorch");
+	// public static final ItemBlueprint blueprintFreeze = new ItemBlueprint(
+	// "blueprint_freeze");
+	public static final ItemBlueprint blueprintRad = new ItemBlueprint(
+			"blueprint_rad");
+	public static final ItemBlueprint blueprintTox = new ItemBlueprint(
+			"blueprint_tox");
+	
+	public static final ItemNova compressedEmerald = new ItemNova(
+			"compressedemerald");
+	public static final ItemNova compressedDiamond = new ItemNova(
+			"compresseddiamond");
+	public static final ItemNova compressedGold = new ItemNova("compressedgold");
 	
 	public static void init() {
 		addItem(alienBeefRaw);
@@ -102,11 +120,22 @@ public class ItemList {
 		addItem(ingotEvenium);
 		addItem(compressedEvenium);
 		
+		addItem(prometheanCrystal);
+		
 		addItem(dustAluminum);
 		addItem(dustCobalt);
 		addItem(dustDiamond);
 		addItem(dustEmerald);
 		addItem(dustEvenium);
+		
+		// addItem(blueprintScorch);
+		// addItem(blueprintFreeze);
+		addItem(blueprintRad);
+		addItem(blueprintTox);
+		
+		addItem(compressedEmerald);
+		addItem(compressedDiamond);
+		addItem(compressedGold);
 		
 		NovaHelper.echo("Loaded a total of " + totalItems + " new items.");
 	}

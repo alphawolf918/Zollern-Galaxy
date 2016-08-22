@@ -42,6 +42,8 @@ import galaxymod.blocks.kriffus.BlockZollusKriffonPortal;
 import galaxymod.blocks.kriffus.KriffStone;
 import galaxymod.blocks.kriffus.ores.KriffCoalOre;
 import galaxymod.blocks.kriffus.ores.KriffRedstoneOre;
+import galaxymod.blocks.oasis.OasisGrass;
+import galaxymod.blocks.oasis.OasisRock;
 import galaxymod.blocks.purgot.BlackRock;
 import galaxymod.blocks.purgot.BlockKriffonPurgotPortal;
 import galaxymod.blocks.purgot.PurgStone;
@@ -49,6 +51,7 @@ import galaxymod.blocks.purgot.WhiteRock;
 import galaxymod.blocks.purgot.ores.PurgDiamondOre;
 import galaxymod.blocks.purgot.ores.PurgEmeraldOre;
 import galaxymod.blocks.xathius.XathiusGrass;
+import galaxymod.blocks.xathius.ores.XathiusPrometheanOre;
 import galaxymod.blocks.zollus.BlockZolniumCrystals;
 import galaxymod.blocks.zollus.ZolStone;
 import galaxymod.blocks.zollus.ZolarBlock;
@@ -196,6 +199,13 @@ public class BlockList {
 			Material.rock).setHardResist(0.8F, 4.2F);
 	public static final Block xathDirt = new BlockNovaDirt("xathdirt", 0.4F);
 	public static final Block xathGrass = new XathiusGrass();
+	public static final Block xathPrometheanOre = new XathiusPrometheanOre();
+	
+	public static Block oasisGrass = new OasisGrass();
+	public static Block oasisDirt = new BlockNovaDirt("oasisdirt", 0.4F);
+	public static Block oasisCobbleRock = new BlockNova("oasiscobblerock",
+			Material.rock).setHardResist(0.8f, 4.2f);
+	public static Block oasisStone = new OasisRock();
 	
 	public static void init() {
 		addBlock(zolarBlock);
@@ -293,6 +303,12 @@ public class BlockList {
 		addBlock(xathStone);
 		addBlock(xathDirt);
 		addBlock(xathGrass);
+		addBlock(xathPrometheanOre);
+		
+		addBlock(oasisStone);
+		addBlock(oasisCobbleRock);
+		addBlock(oasisDirt);
+		addBlock(oasisGrass);
 		
 		NovaHelper.echo("Loaded a total of " + totalBlocks + " new blocks.");
 	}
