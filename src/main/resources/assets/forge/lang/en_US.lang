@@ -14,6 +14,7 @@ tile.galaxymod_zoldirt.name=Zollus Dirt
 tile.galaxymod_edenzollusportal.name=Zollus Gate
 tile.galaxymod_zolluskriffonportal.name=Kriffon Gate
 tile.galaxymod_kriffonpurgotportal.name=Purgot Gate
+tile.galaxymod_purgotoasisportal.name=Praedyth Portal
 
 tile.galaxymod_edensurfaceblock.name=Eden's Grassrock
 tile.galaxymod_edengrass.name=Eden's Grass
@@ -99,14 +100,14 @@ tile.galaxymod_oasisgrass.name=Oasis Grass
 tile.galaxymod_oasisstone.name=Oasis Stone
 tile.galaxymod_oasiscobblerock.name=Oasis Cobblerock
 tile.galaxymod_oasisdirt.name=Oasis Dirt
+tile.galaxymod_oasistallgras.name=Oasis Tall Grass
+
+tile.galaxymod_healingstation.name=Healing Station
 
 container.eden.treasurechest.name=Eden's Treasure
 
 item.galaxymod_zolluscrystal.name=Zolnium Crystal
 item.galaxymod_heartofzol.name=Zollus Heartium
-item.galaxymod_compressedvirinium.name=Compressed Virinium
-item.galaxymod_compressedheartium.name=Compressed Heartium
-item.galaxymod_compressedvyrex.name=Compressed Vyrex
 item.galaxymod_zolluskriffontablet.name=Ancient Zollus Tablet
 
 item.galaxymod_aluminumdust.name=Pulverized Aluminum
@@ -130,15 +131,15 @@ item.galaxymod_edencrystal.name=Eden's Crystal
 item.galaxymod_edenzollustablet.name=Ancient Eden's Tablet
 
 item.galaxymod_ingotcobalt.name=Cobalt Ingot
-item.galaxymod_compressedcobalt.name=Compressed Cobalt
-item.galaxymod_compressedkriffonium.name=Compressed Kriffonium
 item.galaxymod_kriffoncrystal.name=Kriffon Crystal
 item.galaxymod_kriffonpurgottablet.name=Ancient Kriffon Tablet
 
 item.galaxymod_ingotevenium.name=Evenium Ingot
-item.galaxymod_compressedevenium.name=Compressed Evenium
+item.galaxymod_purgotcrystal.name=Purgot Crystal
+item.galaxymod_purgotoasistablet.name=Oasis Gem
 
 item.galaxymod_prometheancrystal.name=Promethean Crystal
+item.galaxymod_plutoniumcrystal.name=Plutonium Crystal
 
 item.galaxymod_blueprint_scorch.name=Scorch Protection
 item.galaxymod_blueprint_freeze.name=Freeze Protection
@@ -147,6 +148,13 @@ item.galaxymod_blueprint_tox.name=Toxicity Protection
 
 item.galaxymod_compressedemerald.name=Compressed Emerald
 item.galaxymod_compresseddiamond.name=Compressed Diamond
+item.galaxymod_compressedgold.name=Compressed Gold
+item.galaxymod_compressedevenium.name=Compressed Evenium
+item.galaxymod_compressedcobalt.name=Compressed Cobalt
+item.galaxymod_compressedkriffonium.name=Compressed Kriffonium
+item.galaxymod_compressedvirinium.name=Compressed Virinium
+item.galaxymod_compressedheartium.name=Compressed Heartium
+item.galaxymod_compressedvyrex.name=Compressed Vyrexite
 
 entity.galaxymod_moolus.name=Moolus
 entity.galaxymod_oinkus.name=Oinkus
@@ -203,9 +211,17 @@ itemGroup.NovaGalacticBlocks=Project Nova Blocks
 itemGroup.NovaGalacticItems=Project Nova Items
 
 death.attack.deathcold=%1$s froze to death.
-death.attack.deathcold.player=%1$s froze to death, because of %2$s.
+death.attack.deathcold.player=%1$s froze to death because of %2$s.
 death.attack.deathcold.item=%1$s froze to death because of %2$s using %3$s.
 
 death.attack.deathhot=%1$s melted to death.
-death.attack.deathhot.player=%1$s melted to death, because of %2$s.
+death.attack.deathhot.player=%1$s melted to death because of %2$s.
 death.attack.deathhot.item=%1$s melted to death because of %2$s using %3$s.
+
+death.attack.toxic=%1$s died of toxicity.
+death.attack.toxic.player=%1$s died of toxicity because of %2$s.
+death.attack.toxic.item=%1$s died of toxicity because of %2$s using %3$s.
+
+death.attack.radioactive=%1$s died of toxicity.
+death.attack.radioactive.player=%1$s died of toxicity because of %2$s.
+death.attack.radioactive.item=%1$s died of toxicity because of %2$s using %3$s.

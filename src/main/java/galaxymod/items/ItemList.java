@@ -18,6 +18,7 @@ import galaxymod.items.food.CookedFood;
 import galaxymod.items.food.ItemFruit;
 import galaxymod.items.food.RawFood;
 import galaxymod.items.kriffon.ItemKriffonTablet;
+import galaxymod.items.purgot.ItemPurgotTablet;
 import galaxymod.items.zollus.ItemAncientZollusTablet;
 import galaxymod.utils.NovaHelper;
 import galaxymod.utils.RegisterHelper;
@@ -64,9 +65,13 @@ public class ItemList {
 	public static final ItemNova ingotEvenium = new ItemNova("ingotevenium");
 	public static final ItemNova compressedEvenium = new ItemNova(
 			"compressedevenium");
+	public static final ItemNova purgotCrystal = new ItemNova("purgotcrystal");
+	public static final ItemNova purgotOasisTablet = new ItemPurgotTablet();
 	
 	public static final ItemNova prometheanCrystal = new ItemNova(
 			"prometheancrystal");
+	public static final ItemNova plutoniumCrystal = new ItemNova(
+			"plutoniumcrystal");
 	
 	public static final ItemNova dustAluminum = new ItemNova("aluminumdust");
 	public static final ItemNova dustCobalt = new ItemNova("pulverizedcobalt");
@@ -74,10 +79,10 @@ public class ItemList {
 	public static final ItemNova dustEmerald = new ItemNova("emeralddust");
 	public static final ItemNova dustEvenium = new ItemNova("eveniumdust");
 	
-	// public static final ItemBlueprint blueprintScorch = new ItemBlueprint(
-	// "blueprint_scorch");
-	// public static final ItemBlueprint blueprintFreeze = new ItemBlueprint(
-	// "blueprint_freeze");
+	public static final ItemBlueprint blueprintScorch = new ItemBlueprint(
+			"blueprint_scorch");
+	public static final ItemBlueprint blueprintFreeze = new ItemBlueprint(
+			"blueprint_freeze");
 	public static final ItemBlueprint blueprintRad = new ItemBlueprint(
 			"blueprint_rad");
 	public static final ItemBlueprint blueprintTox = new ItemBlueprint(
@@ -119,8 +124,11 @@ public class ItemList {
 		
 		addItem(ingotEvenium);
 		addItem(compressedEvenium);
+		addItem(purgotCrystal);
+		addItem(purgotOasisTablet);
 		
 		addItem(prometheanCrystal);
+		addItem(plutoniumCrystal);
 		
 		addItem(dustAluminum);
 		addItem(dustCobalt);

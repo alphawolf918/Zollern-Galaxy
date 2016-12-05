@@ -42,7 +42,7 @@ public class SkyProviderOasis extends IRenderHandler {
 	private float sunSize;
 	
 	public SkyProviderOasis(IGalacticraftWorldProvider marsProvider) {
-		this.sunSize = 2.2F * marsProvider.getSolarSize();
+		this.sunSize = 1.0F * marsProvider.getSolarSize();
 		
 		int displayLists = GLAllocation.generateDisplayLists(3);
 		this.starList = displayLists;
@@ -101,20 +101,11 @@ public class SkyProviderOasis extends IRenderHandler {
 		float f3 = (float) vec3.zCoord;
 		float f6;
 		
-		if (mc.gameSettings.anaglyph) {
-			float f4 = (f1 * 30.0F + f2 * 59.0F + f3 * 11.0F) / 100.0F;
-			float f5 = (f1 * 30.0F + f2 * 70.0F) / 100.0F;
-			f6 = (f1 * 30.0F + f3 * 70.0F) / 100.0F;
-			f1 = f4;
-			f2 = f5;
-			f3 = f6;
-		}
-		
-		GL11.glColor3f(f1, f2, f3);
+		// GL11.glColor3f(f1, f2, f3);
 		Tessellator tessellator1 = Tessellator.instance;
 		GL11.glDepthMask(false);
 		GL11.glEnable(GL11.GL_FOG);
-		GL11.glColor3f(f1, f2, f3);
+		// GL11.glColor3f(f1, f2, f3);
 		GL11.glCallList(this.glSkyList);
 		GL11.glDisable(GL11.GL_FOG);
 		GL11.glDisable(GL11.GL_ALPHA_TEST);
@@ -149,15 +140,6 @@ public class SkyProviderOasis extends IRenderHandler {
 		f8 = afloat[2];
 		float f11;
 		
-		if (mc.gameSettings.anaglyph) {
-			f9 = (f6 * 30.0F + f7 * 59.0F + f8 * 11.0F) / 100.0F;
-			f10 = (f6 * 30.0F + f7 * 70.0F) / 100.0F;
-			f11 = (f6 * 30.0F + f8 * 70.0F) / 100.0F;
-			f6 = f9;
-			f7 = f10;
-			f8 = f11;
-		}
-		
 		f18 = 1.0F - f18;
 		
 		tessellator1.startDrawing(GL11.GL_TRIANGLE_FAN);
@@ -168,7 +150,7 @@ public class SkyProviderOasis extends IRenderHandler {
 				* f18, 0.0F);
 		
 		// Render sun aura
-		f10 = 15.0F;
+		f10 = 5.0F;
 		tessellator1.addVertex(-f10, 100.0D, -f10);
 		tessellator1.addVertex(0, 100.0D, (double) -f10 * 1.5F);
 		tessellator1.addVertex(f10, 100.0D, -f10);
@@ -179,16 +161,8 @@ public class SkyProviderOasis extends IRenderHandler {
 		tessellator1.addVertex((double) -f10 * 1.5F, 100.0D, 0);
 		tessellator1.addVertex(-f10, 100.0D, -f10);
 		
-		tessellator1.draw();
-		tessellator1.startDrawing(GL11.GL_TRIANGLE_FAN);
-		tessellator1.setColorRGBA_F(f6 * f18, f7 * f18, f8 * f18, afloat[3]
-				* f18);
-		tessellator1.addVertex(0.0D, 100.0D, 0.0D);
-		tessellator1.setColorRGBA_F(afloat[0] * f18, afloat[1] * f18, afloat[2]
-				* f18, 0.0F);
-		
 		// Render larger sun aura
-		f10 = 25.0F;
+		f10 = 15.0F;
 		tessellator1.addVertex(-f10, 100.0D, -f10);
 		tessellator1.addVertex(0, 100.0D, (double) -f10 * 1.5F);
 		tessellator1.addVertex(f10, 100.0D, -f10);
@@ -216,7 +190,7 @@ public class SkyProviderOasis extends IRenderHandler {
 				0.0F, 0.0F);
 		GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
 		GL11.glDisable(GL11.GL_TEXTURE_2D);
-		GL11.glColor4f(0.0F, 0.0F, 0.0F, 1.0F);
+		GL11.glColor4f(2.0F, 0.0F, 0.0F, 1.0F);
 		f10 = 12.0F / 3.5F;
 		tessellator1.startDrawingQuads();
 		tessellator1.addVertex(-f10, 99.9D, -f10);

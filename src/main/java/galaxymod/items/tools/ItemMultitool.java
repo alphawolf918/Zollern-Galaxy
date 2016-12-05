@@ -24,11 +24,23 @@ public class ItemMultitool extends ItemPickaxe {
 		this.setHarvestLevel("multitool", 6);
 	}
 	
+	/**
+	 * Accepted modes: pickaxe, shovel, axe, hoe.
+	 * 
+	 * @param mode
+	 *            The mode that the tool is set to.
+	 * @return
+	 */
 	public ItemMultitool setToolMode(String mode) {
 		this.toolMode = mode;
 		return this;
 	}
 	
+	/**
+	 * Returns the current tool mode (pickaxe, shovel, axe or hoe).
+	 * 
+	 * @return The current mode of the multi-tool.
+	 */
 	public String getToolMode() {
 		return this.toolMode;
 	}

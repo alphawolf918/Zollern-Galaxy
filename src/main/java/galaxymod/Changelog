@@ -1,5 +1,7 @@
 == Zollern Galaxy v1.3 ==
 
+[NOTE: This release is meant to FIX ISSUES while adding very limited new things. It is a beta version, so please be aware of that upon installing this version.]
+
 * Renamed mod from Project Nova to Zollern Galaxy.
 * Applied an instanceof check to (hopefully) prevent biomes being cast as BiomeGenEdenBase, which caused crashes.
     * Also applied this to other BiomeSpace gens as well.
@@ -21,10 +23,17 @@
     * Each one is described in the code now.
 * Changed how Planet gasses are registered.
 * Reduced number of ores generated per chunk on all planets.
-* Added Compressed Emerald and Compressed Diamond items.
+* Added Compressed Emerald, Compressed Diamond and Compressed Gold items.
     * Used in constructing Survival Blueprints.
 * Protection blueprints are now craftable.
 * Slightly tweaked planet temperature algorithm.
+* Added the Oasis planet in the Praedyth star system.
+* Set gasses to null after they're retrieved.
+* Added Oasis Crystal.
+    * Takes user to planet Oasis in the Praedyth system.
+        * Currently unfinished, will be modified and improved in the next update.
+    * Craftable.
+* Added a special "Healing Station" block that heals the Player when right-clicked.
 
 
 -- FIXES --

@@ -187,6 +187,7 @@ public class PlanetNova extends Planet implements INovaPlanet {
 				gasList += ", ";
 			}
 		}
+		planetAtmosphere = null;
 		return gasList;
 	}
 	
@@ -206,9 +207,7 @@ public class PlanetNova extends Planet implements INovaPlanet {
 	}
 	
 	/**
-	 * Sets the planet's base temperature. Anything <= 10.0 requires the freeze
-	 * protection blueprint. Likewise, anything >= 115.0 requires the scorch
-	 * protection blueprint.
+	 * Sets the planet's base temperature.
 	 * 
 	 * @param planetTemp
 	 *            The temperature to set.
@@ -220,7 +219,7 @@ public class PlanetNova extends Planet implements INovaPlanet {
 	}
 	
 	/**
-	 * Sets the planet's base radiation level. Anything >= 25.0 requires the
+	 * Sets the planet's base radiation level. Anything >= 10.0 requires the
 	 * radiation protection blueprint.
 	 * 
 	 * @param planetRad
@@ -280,12 +279,12 @@ public class PlanetNova extends Planet implements INovaPlanet {
 	}
 	
 	/**
-	 * Returns true if the radioacitivity is >= 25.
+	 * Returns true if the radioacitivity is >= 10.
 	 * 
 	 * @return
 	 */
 	public boolean getIsRadioactivePlanet() {
-		return this.baseRadiation >= 25.0f;
+		return this.baseRadiation >= 10.0f;
 	}
 	
 	/**

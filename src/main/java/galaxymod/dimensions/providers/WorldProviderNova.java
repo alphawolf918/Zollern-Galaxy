@@ -15,6 +15,7 @@ package galaxymod.dimensions.providers;
 import micdoodle8.mods.galacticraft.api.prefab.world.gen.WorldProviderSpace;
 import micdoodle8.mods.galacticraft.api.world.IExitHeight;
 import micdoodle8.mods.galacticraft.api.world.ISolarLevel;
+import net.minecraft.world.World;
 
 public abstract class WorldProviderNova extends WorldProviderSpace implements
 		IExitHeight, ISolarLevel {
@@ -27,6 +28,10 @@ public abstract class WorldProviderNova extends WorldProviderSpace implements
 		return "planets/" + this.planetName;
 	}
 	
+	public World getWorldObj() {
+		return this.worldObj;
+	}
+	
 	@Override
 	public boolean shouldForceRespawn() {
 		return true;
@@ -34,7 +39,7 @@ public abstract class WorldProviderNova extends WorldProviderSpace implements
 	
 	@Override
 	public String getDimensionName() {
-		return this.planetName;
+		return "Planet " + this.planetName;
 	}
 	
 	@Override

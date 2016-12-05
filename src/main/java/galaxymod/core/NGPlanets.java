@@ -185,7 +185,7 @@ public class NGPlanets {
 				IAtmosphericGas.HELIUM);
 		planetZollus.setTierRequired(4);
 		planetZollus.setRelativeSize(14.876F);
-		planetZollus.setPlanetTemperature(-19.6f);
+		planetZollus.setPlanetTemperature(-192.6f);
 		planetZollus.setPlanetToxicity(0.4f);
 		planetZollus.setPlanetRadiation(4.5f);
 		planetZollus.setPlanetIcon("zollus");
@@ -247,7 +247,7 @@ public class NGPlanets {
 		planetPurgot.setTierRequired(5);
 		planetPurgot.setRelativeSize(40.0F);
 		planetPurgot.setPlanetTemperature(26.5f);
-		planetPurgot.setPlanetToxicity(14.6f);
+		planetPurgot.setPlanetToxicity(15.2f);
 		planetPurgot.setPlanetRadiation(5.2f);
 		planetPurgot.setPlanetIcon("purgot");
 		planetPurgot.setDimensionInfo(

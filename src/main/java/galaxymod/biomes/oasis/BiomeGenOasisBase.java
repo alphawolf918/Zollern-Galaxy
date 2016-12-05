@@ -41,6 +41,7 @@ public class BiomeGenOasisBase extends BiomeSpace {
 		this.enableSnow = true;
 		this.setColor(BiomeList.biomeColor);
 		this.setHeight(new Height(1.5F, 0.4F));
+		this.waterColorMultiplier = 0xdd0000;
 		this.theBiomeDecorator.flowersPerChunk = -999;
 		this.theBiomeDecorator.treesPerChunk = -999;
 		this.theBiomeDecorator.grassPerChunk = -999;

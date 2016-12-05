@@ -76,14 +76,14 @@ public class NovaEvents {
 				float radDamage = (radLevel * NGDamageSource.baseRadDamage) / 2.2f;
 				
 				float hotTempDamage = 1.0f;
-				hotTempDamage = (planetTemp * NGDamageSource.baseHotDamage) / 1.1f;
+				hotTempDamage = (planetTemp * NGDamageSource.baseHotDamage) / 1.4f;
 				
 				float coldTempDamage = 1.0f;
 				coldTempDamage = Math.abs((planetTemp
-						* (NGDamageSource.baseColdDamage) * 2.0f) / 1.5f);
+						* (NGDamageSource.baseColdDamage) * 2.0f) / 1.5f) - 4.6f;
 				
 				// Applies the survival mechanics.
-				if (rand.nextInt(514) <= 392) {
+				if (rand.nextInt(614) <= 392) {
 					// Toxic Damage
 					this.performSurvivalEffect(ItemList.blueprintTox,
 							NGDamageSource.deathToxic, toxDamage, player,
@@ -95,12 +95,12 @@ public class NovaEvents {
 							planet.getIsRadioactivePlanet());
 					
 					// Heat Damage
-					// this.performSurvivalEffect(ItemList.blueprintScorch,
+					// this.performThermalEffect(ItemList.blueprintScorch,
 					// NGDamageSource.deathTempHot, hotTempDamage, player,
 					// planet.getIsHotPlanet());
 					
 					// Cold Damage
-					// this.performSurvivalEffect(ItemList.blueprintFreeze,
+					// this.performThermalEffect(ItemList.blueprintFreeze,
 					// NGDamageSource.deathTempCold, coldTempDamage,
 					// player, planet.getIsColdPlanet());
 				}
@@ -125,17 +125,44 @@ public class NovaEvents {
 			if (!matrix.hasItem(blueprintItem)) {
 				player.attackEntityFrom(damageSource, damageAmount);
 			} else {
-				for (int i = 0; i < matrix.getSizeInventory(); i++) {
-					if (matrix.getStackInSlot(i) != null) {
-						ItemStack stackNew = matrix.getStackInSlot(i);
-						if (stackNew != null
-								&& stackNew.getItem() == blueprintItem) {
-							ItemStack k = new ItemStack(blueprintItem);
-							k.damageItem(k.getItemDamage()
-									+ ((int) damageAmount), player);
-							matrix.setInventorySlotContents(i, k);
-						}
-					}
+				this.damageItemStack(blueprintItem, damageAmount, player);
+			}
+		}
+	}
+	
+	// private void performThermalEffect(Item blueprintItem,
+	// NGDamageSource damageSource, float damageAmount,
+	// EntityPlayer player, boolean check) {
+	// InventoryPlayer matrix = player.inventory;
+	// boolean canDamage = true;
+	// if (check) {
+	// if (!matrix.hasItem(blueprintItem)) {
+	// if (player != null && player instanceof EntityPlayerMP) {
+	// GCPlayerStats gcStats = GCPlayerStats
+	// .get((EntityPlayerMP) player);
+	// if (gcStats.thermalLevel >= 4) {
+	// canDamage = false;
+	// }
+	// }
+	// if (canDamage) {
+	// player.attackEntityFrom(damageSource, damageAmount);
+	// }
+	// } else {
+	// this.damageItemStack(blueprintItem, damageAmount, player);
+	// }
+	// }
+	// }
+	
+	private void damageItemStack(Item blueprintItem, float damageAmount,
+			EntityPlayer player) {
+		InventoryPlayer matrix = player.inventory;
+		for (int i = 0; i < matrix.getSizeInventory(); i++) {
+			if (matrix.getStackInSlot(i) != null) {
+				ItemStack stackNew = matrix.getStackInSlot(i);
+				if (stackNew != null && stackNew.getItem() == blueprintItem) {
+					ItemStack k = new ItemStack(blueprintItem);
+					k.setItemDamage(k.getItemDamage() + (int) damageAmount);
+					matrix.setInventorySlotContents(i, k);
 				}
 			}
 		}

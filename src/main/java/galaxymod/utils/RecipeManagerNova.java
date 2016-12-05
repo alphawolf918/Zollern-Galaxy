@@ -153,6 +153,21 @@ public class RecipeManagerNova {
 					ItemList.kriffonCrystal, 'C', ItemList.compressedCobalt });
 			totalCraftingRecipes++;
 			
+			// Purgot Crystal
+			GameRegistry.addRecipe(new ItemStack(ItemList.purgotCrystal, 1),
+					new Object[] { "E E", " R ", "E E", 'E',
+							ItemList.compressedEvenium, 'R', Items.redstone });
+			
+			// Ancient Tablet (Oasis)
+			GameRegistry.addRecipe(
+					new ItemStack(ItemList.purgotOasisTablet, 1), new Object[] {
+							"E Z", " V ", "K P", 'E', ItemList.edenCrystal,
+							'Z', ItemList.zollusCrystal, 'K',
+							ItemList.kriffonCrystal, 'V',
+							ItemList.compressedEvenium, 'P',
+							ItemList.purgotCrystal });
+			totalCraftingRecipes++;
+			
 			NovaHelper.echo("Loaded a total of " + totalCraftingRecipes
 					+ " new crafting recipes.");
 		}

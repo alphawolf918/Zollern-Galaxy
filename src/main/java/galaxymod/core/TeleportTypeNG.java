@@ -12,6 +12,7 @@
 
 package galaxymod.core;
 
+import galaxymod.dimensions.providers.WorldProviderNova;
 import java.util.Random;
 import micdoodle8.mods.galacticraft.api.vector.Vector3;
 import micdoodle8.mods.galacticraft.api.world.ITeleportType;
@@ -19,6 +20,7 @@ import micdoodle8.mods.galacticraft.core.entities.player.GCPlayerStats;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.world.World;
+import net.minecraft.world.WorldProvider;
 import net.minecraft.world.WorldServer;
 
 public class TeleportTypeNG implements ITeleportType {
@@ -41,7 +43,13 @@ public class TeleportTypeNG implements ITeleportType {
 	
 	@Override
 	public Vector3 getEntitySpawnLocation(WorldServer world, Entity entity) {
-		return new Vector3(entity.posX, 250.0, entity.posZ);
+		double y = 250.0f;
+		WorldProvider provider = world.provider;
+		if (provider instanceof WorldProviderNova) {
+			WorldProviderNova novaProvider = (WorldProviderNova) provider;
+			y = novaProvider.getYCoordinateToTeleport();
+		}
+		return new Vector3(entity.posX, y, entity.posZ);
 	}
 	
 	@Override

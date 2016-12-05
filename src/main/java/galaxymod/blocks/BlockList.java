@@ -12,6 +12,7 @@
 
 package galaxymod.blocks;
 
+import galaxymod.blocks.coreblocks.BlockHealingStation;
 import galaxymod.blocks.eden.BlockEdenTreasureChest;
 import galaxymod.blocks.eden.BlockEdenWoodLeaves;
 import galaxymod.blocks.eden.BlockEdenWoodLog;
@@ -42,8 +43,10 @@ import galaxymod.blocks.kriffus.BlockZollusKriffonPortal;
 import galaxymod.blocks.kriffus.KriffStone;
 import galaxymod.blocks.kriffus.ores.KriffCoalOre;
 import galaxymod.blocks.kriffus.ores.KriffRedstoneOre;
+import galaxymod.blocks.oasis.BlockPurgotOasisPortal;
 import galaxymod.blocks.oasis.OasisGrass;
 import galaxymod.blocks.oasis.OasisRock;
+import galaxymod.blocks.oasis.OasisTallGrass;
 import galaxymod.blocks.purgot.BlackRock;
 import galaxymod.blocks.purgot.BlockKriffonPurgotPortal;
 import galaxymod.blocks.purgot.PurgStone;
@@ -190,6 +193,7 @@ public class BlockList {
 			"purgcobaltore").setHardResist(3.4F)).setExpDrop(6, 8);
 	public static final Block purgRockBricks = new BlockNova("purgrockbricks",
 			Material.rock).setHardResist(0.9F, 9.8F);
+	public static final Block purgotOasisPortal = new BlockPurgotOasisPortal();
 	
 	public static final Block xathRock = new BlockNova("xathrock",
 			Material.rock).setHardResist(1.9F, 0.1F);
@@ -206,6 +210,9 @@ public class BlockList {
 	public static Block oasisCobbleRock = new BlockNova("oasiscobblerock",
 			Material.rock).setHardResist(0.8f, 4.2f);
 	public static Block oasisStone = new OasisRock();
+	public static Block oasisTallGrass = new OasisTallGrass();
+	
+	public static Block healingStation = new BlockHealingStation();
 	
 	public static void init() {
 		addBlock(zolarBlock);
@@ -297,6 +304,7 @@ public class BlockList {
 		addBlock(purgEveOre);
 		addBlock(purgCobaltOre);
 		addBlock(purgRockBricks);
+		addBlock(purgotOasisPortal);
 		
 		addBlock(xathRock);
 		addBlock(xathCobbleRock);
@@ -309,6 +317,9 @@ public class BlockList {
 		addBlock(oasisCobbleRock);
 		addBlock(oasisDirt);
 		addBlock(oasisGrass);
+		addBlock(oasisTallGrass);
+		
+		addBlock(healingStation);
 		
 		NovaHelper.echo("Loaded a total of " + totalBlocks + " new blocks.");
 	}
