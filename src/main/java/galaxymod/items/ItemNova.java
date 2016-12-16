@@ -15,13 +15,8 @@ package galaxymod.items;
 import galaxymod.ProjectNovaCore;
 import galaxymod.utils.NovaHelper;
 import galaxymod.utils.OreDictionaryNova;
-import micdoodle8.mods.galacticraft.core.proxy.ClientProxyCore;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.EnumRarity;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemNova extends Item {
 	
@@ -48,12 +43,6 @@ public class ItemNova extends Item {
 	
 	public void setNameAndTexture(String strName, String strTexture) {
 		NovaHelper.setNameAndTexture(this, strName, strTexture);
-	}
-	
-	@Override
-	@SideOnly(Side.CLIENT)
-	public EnumRarity getRarity(ItemStack itemStack) {
-		return ClientProxyCore.galacticraftItem;
 	}
 	
 	@Override

@@ -1,3 +1,11 @@
+== Zollern Galaxy v1.4 ==
+
+* Removed server pre-init phase.
+* Changed BiomeGenBase to BiomeGenEdenBase in WorldChunkManagerEden.java.
+* Changed BiomeGenBase code in all base biome gens to have 32 sea level and start chunks from 255.
+* Changed biome decorator ore generation mechanics.
+* 
+
 == Zollern Galaxy v1.3 ==
 
 [NOTE: This release is meant to FIX ISSUES while adding very limited new things. It is a beta version, so please be aware of that upon installing this version.]
@@ -34,7 +42,7 @@
         * Currently unfinished, will be modified and improved in the next update.
     * Craftable.
 * Added a special "Healing Station" block that heals the Player when right-clicked.
-
+* Removed chunk changing events from NovaEvents.java.
 
 -- FIXES --
 * Fixed there being too many stars in the sky.

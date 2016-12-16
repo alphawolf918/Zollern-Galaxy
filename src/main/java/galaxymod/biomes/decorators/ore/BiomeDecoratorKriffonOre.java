@@ -14,11 +14,9 @@ package galaxymod.biomes.decorators.ore;
 
 import galaxymod.blocks.BlockList;
 import java.util.Random;
-import micdoodle8.mods.galacticraft.api.event.wgen.GCCoreEventPopulate;
 import micdoodle8.mods.galacticraft.core.world.gen.WorldGenMinableMeta;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
-import net.minecraftforge.common.MinecraftForge;
 
 public class BiomeDecoratorKriffonOre extends BiomeDecoratorNova {
 	
@@ -59,7 +57,14 @@ public class BiomeDecoratorKriffonOre extends BiomeDecoratorNova {
 			this.randomGenerator = rand;
 			this.chunkX = chunkX;
 			this.chunkZ = chunkZ;
-			this.generateKriffon();
+			//
+			this.genOre(10, this.coalGen, 4, 70);
+			this.genOre(6, this.copperGen, 4, 70);
+			this.genOre(11, this.redstoneGen, 2, 50);
+			this.genOre(8, this.ironGen, 4, 60);
+			this.genOre(6, this.goldGen, 4, 50);
+			this.genOre(8, this.cobaltGen, 2, 35);
+			//
 			this.worldObj = null;
 			this.randomGenerator = null;
 		}
@@ -74,19 +79,6 @@ public class BiomeDecoratorKriffonOre extends BiomeDecoratorNova {
 			worldGenerator.generate(this.worldObj, this.randomGenerator, var6,
 					var7, var8);
 		}
-	}
-	
-	void generateKriffon() {
-		MinecraftForge.EVENT_BUS.post(new GCCoreEventPopulate.Pre(
-				this.worldObj, this.randomGenerator, this.chunkX, this.chunkZ));
-		this.genOre(10, this.coalGen, 4, 70);
-		this.genOre(6, this.copperGen, 4, 70);
-		this.genOre(11, this.redstoneGen, 2, 50);
-		this.genOre(8, this.ironGen, 4, 60);
-		this.genOre(6, this.goldGen, 4, 50);
-		this.genOre(8, this.cobaltGen, 2, 35);
-		MinecraftForge.EVENT_BUS.post(new GCCoreEventPopulate.Post(
-				this.worldObj, this.randomGenerator, this.chunkX, this.chunkZ));
 	}
 	
 	@Override

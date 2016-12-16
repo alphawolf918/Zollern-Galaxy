@@ -18,12 +18,13 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 public class BiomeEdenRockMountains extends BiomeGenEdenBase {
+	
 	public BiomeEdenRockMountains(int par1) {
 		super(par1);
 		this.setColor(BiomeList.biomeColor);
 		this.setBiomeName("Rock Mountains");
 		this.setHeightBaseModifier(236);
-		this.setHeight(new Height(0.5F, 0.6F));
+		this.setHeight(new Height(0.2F, 0.4F));
 		this.setChunkHeightModifier(10);
 		this.biomeDecor.edenTallGrassPerChunk = 0;
 		this.biomeDecor.edenFlowersPerChunk = 0;

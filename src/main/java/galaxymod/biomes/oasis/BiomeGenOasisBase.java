@@ -98,9 +98,9 @@ public class BiomeGenOasisBase extends BiomeSpace {
 		int maskX = x & 15;
 		int maskZ = z & 15;
 		int worldHeight = block.length / 256;
-		int seaLevel = 35;
+		int seaLevel = 32;
 		
-		for (int y = this.getHeightBaseModifier(); y >= 0; y--) {
+		for (int y = 255; y >= 0; y--) {
 			int index = (maskZ * 16 + maskX) * worldHeight + y;
 			
 			if (y <= 0 + rand.nextInt(5)) {

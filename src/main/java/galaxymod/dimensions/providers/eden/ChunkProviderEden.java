@@ -110,7 +110,7 @@ public class ChunkProviderEden extends ChunkProviderSpace {
 	double[] field_147426_g;
 	
 	private MapGenDungeon dungeonGeneratorMain = new MapGenDungeon(
-			BlockList.edenRockBricks, 14, 10, 24, 6);
+			BlockList.edenRockBricks, 14, 8, 24, 4);
 	{
 		this.dungeonGeneratorMain.otherRooms.add(new RoomEmptyNG(null, 0, 0, 0,
 				ForgeDirection.UNKNOWN));
@@ -343,7 +343,7 @@ public class ChunkProviderEden extends ChunkProviderSpace {
 		
 		boolean doGen;
 		
-		BiomeGenBase biomegenbase = currentBiome;
+		BiomeGenEdenBase biomegenbase = (BiomeGenEdenBase) currentBiome;
 		biomegenbase.decorate(this.worldObj, this.rand, k, l);
 		k += 8;
 		l += 8;

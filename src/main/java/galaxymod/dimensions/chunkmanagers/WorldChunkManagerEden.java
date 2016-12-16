@@ -13,6 +13,7 @@
 package galaxymod.dimensions.chunkmanagers;
 
 import galaxymod.biomes.BiomeList;
+import galaxymod.biomes.eden.BiomeGenEdenBase;
 import galaxymod.dimensions.providers.eden.GenLayerEden;
 import java.util.ArrayList;
 import java.util.List;
@@ -30,20 +31,27 @@ public class WorldChunkManagerEden extends WorldChunkManagerSpace {
 	private GenLayer unzoomedBiomes;
 	private GenLayer zoomedBiomes;
 	private BiomeCache myBiomeCache;
-	private List<BiomeGenBase> myBiomesToSpawnIn;
+	private List<BiomeGenEdenBase> myBiomesToSpawnIn;
 	
 	protected WorldChunkManagerEden() {
 		this.myBiomeCache = new BiomeCache(this);
 		this.myBiomesToSpawnIn = new ArrayList();
-		this.myBiomesToSpawnIn.add(BiomeList.biomeEden);
-		this.myBiomesToSpawnIn.add(BiomeList.biomeEdenRockMountains);
-		this.myBiomesToSpawnIn.add(BiomeList.biomeEdenTerranValley);
-		this.myBiomesToSpawnIn.add(BiomeList.biomeEdenBloodDesert);
-		this.myBiomesToSpawnIn.add(BiomeList.biomeEdenGarden);
-		this.myBiomesToSpawnIn.add(BiomeList.biomeEdenForest);
-		this.myBiomesToSpawnIn.add(BiomeList.biomeEdenMagmaLands);
-		this.myBiomesToSpawnIn.add(BiomeList.biomeEdenSnowyPlains);
-		this.myBiomesToSpawnIn.add(BiomeList.biomeEdenSwamp);
+		this.myBiomesToSpawnIn.add((BiomeGenEdenBase) BiomeList.biomeEden);
+		this.myBiomesToSpawnIn
+				.add((BiomeGenEdenBase) BiomeList.biomeEdenRockMountains);
+		this.myBiomesToSpawnIn
+				.add((BiomeGenEdenBase) BiomeList.biomeEdenTerranValley);
+		this.myBiomesToSpawnIn
+				.add((BiomeGenEdenBase) BiomeList.biomeEdenBloodDesert);
+		this.myBiomesToSpawnIn
+				.add((BiomeGenEdenBase) BiomeList.biomeEdenGarden);
+		this.myBiomesToSpawnIn
+				.add((BiomeGenEdenBase) BiomeList.biomeEdenForest);
+		this.myBiomesToSpawnIn
+				.add((BiomeGenEdenBase) BiomeList.biomeEdenMagmaLands);
+		this.myBiomesToSpawnIn
+				.add((BiomeGenEdenBase) BiomeList.biomeEdenSnowyPlains);
+		this.myBiomesToSpawnIn.add((BiomeGenEdenBase) BiomeList.biomeEdenSwamp);
 	}
 	
 	public WorldChunkManagerEden(long seed) {

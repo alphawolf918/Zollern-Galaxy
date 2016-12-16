@@ -18,7 +18,6 @@ import galaxymod.core.config.ConfigManagerNova;
 import galaxymod.worldgen.eden.WorldGenCrystalTower;
 import galaxymod.worldgen.eden.WorldGenDropShip;
 import galaxymod.worldgen.eden.WorldGenGiantBone;
-import galaxymod.worldgen.eden.WorldGenMinableEden;
 import galaxymod.worldgen.eden.village.VillageHouseOne;
 import java.util.Random;
 import net.minecraft.block.Block;
@@ -56,7 +55,7 @@ public class NGWorldGenManager implements IWorldGenerator {
 		int y = world.getHeightValue(x, z);
 		
 		// Drop Ship
-		if (random.nextInt(50) <= 10) {
+		if (random.nextInt(120) <= 5) {
 			this.spawnStructure(62, 80, world, random, x, y, z,
 					new WorldGenDropShip());
 		}
@@ -149,26 +148,6 @@ public class NGWorldGenManager implements IWorldGenerator {
 			World world, Random random, int x, int y, int z, WorldGenerator wg) {
 		if (random.nextInt(maxChance) == minChance) {
 			wg.generate(world, random, x, y, z);
-		}
-	}
-	
-	public void addEdenOreSpawn(Block block, World world, Random random,
-			int blockXPos, int blockZPos, int maxX, int maxZ, int maxVeinSize,
-			int chancesToSpawn, int minY, int maxY) {
-		int maxPossY = minY + maxY - 1;
-		assert maxY > minY : "The maximum Y must be greater than the Minimum Y";
-		assert maxX > 0 && maxX <= 16 : "addOreSpawn: The Maximum X must be greater than 0 and less than 16";
-		assert minY > 0 : "addOreSpawn: The Minimum Y must be greater than 0";
-		assert maxY < 256 && maxY > 0 : "addOreSpawn: The Maximum Y must be less than 256 but greater than 0";
-		assert maxZ > 0 && maxZ <= 16 : "addOreSpawn: The Maximum Z must be greater than 0 and less than 16";
-		
-		int diffBtwnMinMaxY = maxY - minY;
-		for (int x = 0; x < chancesToSpawn; x++) {
-			int posX = blockXPos + random.nextInt(maxX);
-			int posY = minY + random.nextInt(diffBtwnMinMaxY);
-			int posZ = blockZPos + random.nextInt(maxZ);
-			new WorldGenMinableEden(block, maxVeinSize).generate(world, random,
-					posX, posY, posZ);
 		}
 	}
 }

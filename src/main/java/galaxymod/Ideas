@@ -12,3 +12,6 @@
     * Each one could have special "stations" used by right-clicking:
         * A rechargable health station.
         * Blueprint damage repair station?
+
+* Blueprints auto-repair if Plutonium is found in inventory.
+    * Make blueprints custom items and have them do a tick check and search the Player's inventory.

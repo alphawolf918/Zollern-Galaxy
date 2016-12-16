@@ -12,12 +12,17 @@
 
 package galaxymod.biomes.decorators.ore;
 
+import java.util.Random;
 import micdoodle8.mods.galacticraft.api.prefab.world.gen.BiomeDecoratorSpace;
 import net.minecraft.world.World;
 
 public class BiomeDecoratorNova extends BiomeDecoratorSpace {
 	
 	protected World worldObj;
+	protected Random randomGenerator;
+	
+	private int chunkX;
+	private int chunkZ;
 	
 	@Override
 	protected void decorate() {

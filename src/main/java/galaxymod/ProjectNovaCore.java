@@ -15,7 +15,6 @@ package galaxymod;
 
 import galaxymod.biomes.BiomeList;
 import galaxymod.blocks.BlockList;
-import galaxymod.commands.CommandList;
 import galaxymod.core.NGPlanets;
 import galaxymod.core.config.ConfigManagerNova;
 import galaxymod.creativetabs.ProjectNovaTab;
@@ -39,7 +38,6 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 
@@ -102,10 +100,10 @@ public class ProjectNovaCore {
 		NovaHelper.echo("Post-initialization phase has completed.");
 	}
 	
-	@EventHandler
-	public void serverPreInit(FMLServerStartingEvent event) {
-		NovaHelper.echo("Beginning server starting event...");
-		CommandList.init(event);
-		NovaHelper.echo("Server starting event has finished.");
-	}
+	// @EventHandler
+	// public void serverPreInit(FMLServerStartingEvent event) {
+	// NovaHelper.echo("Beginning server starting event...");
+	// CommandList.init(event);
+	// NovaHelper.echo("Server starting event has finished.");
+	// }
 }

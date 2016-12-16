@@ -20,6 +20,7 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 public class BiomeEden extends BiomeGenEdenBase {
+	
 	public BiomeEden(int par1) {
 		super(par1);
 		this.setBiomeName("Green Lands");
