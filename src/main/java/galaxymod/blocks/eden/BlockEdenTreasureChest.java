@@ -1,6 +1,6 @@
 /*******************************************************************************
- * Copyright 2015 Zollern Wolf
- * - Project Nova / Nova Galactic Final Frontier
+ * Copyright 2016 Zollern Wolf
+ * - Zollern Galaxy
  * Galacticraft Add-On Mod
  * You CAN:
  * - Learn from it
@@ -8,6 +8,7 @@
  * You CAN'T:
  * - Redistribute it
  * - Claim it as your own
+ * Steve Kung's "More Planets" mod was a big help.
  *******************************************************************************/
 
 package galaxymod.blocks.eden;
@@ -15,7 +16,7 @@ package galaxymod.blocks.eden;
 import galaxymod.ProjectNovaCore;
 import galaxymod.blocks.BlockContainerNG;
 import galaxymod.tileentities.eden.TileEntityTreasureChestEden;
-import galaxymod.utils.NovaHelper;
+import galaxymod.utils.ZGHelper;
 import java.util.Random;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -36,7 +37,7 @@ public class BlockEdenTreasureChest extends BlockContainerNG {
 	
 	public BlockEdenTreasureChest() {
 		super(Material.rock);
-		NovaHelper.setNameAndTexture(this, "edentreasurechest");
+		ZGHelper.setNameAndTexture(this, "edentreasurechest");
 		this.setResistance(10000000.0F);
 		this.setHardness(-1.0F);
 		this.setBlockBounds(0.0625F, 0.0F, 0.0625F, 0.9375F, 0.875F, 0.9375F);

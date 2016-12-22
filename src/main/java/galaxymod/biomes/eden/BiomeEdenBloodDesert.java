@@ -1,6 +1,6 @@
 /*******************************************************************************
- * Copyright 2015 Zollern Wolf
- * - Project Nova / Nova Galactic Final Frontier
+ * Copyright 2016 Zollern Wolf
+ * - Zollern Galaxy
  * Galacticraft Add-On Mod
  * You CAN:
  * - Learn from it
@@ -8,6 +8,7 @@
  * You CAN'T:
  * - Redistribute it
  * - Claim it as your own
+ * Steve Kung's "More Planets" mod was a big help.
  *******************************************************************************/
 
 package galaxymod.biomes.eden;
@@ -22,9 +23,6 @@ public class BiomeEdenBloodDesert extends BiomeGenEdenBase {
 		super(par1);
 		this.setColor(BiomeList.biomeColor);
 		this.setBiomeName("Blood Desert");
-		this.setHeightBaseModifier(220);
-		this.setHeight(new Height(0.1F, 0.3F));
-		this.setChunkHeightModifier(16);
 		this.biomeDecor.edenTallGrassPerChunk = 0;
 		this.biomeDecor.edenFlowersPerChunk = 0;
 		this.grassFoilageColorMultiplier = 0xbf0000;

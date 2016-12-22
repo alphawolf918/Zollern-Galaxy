@@ -1,6 +1,6 @@
 /*******************************************************************************
- * Copyright 2015 Zollern Wolf
- * - Project Nova / Nova Galactic Final Frontier
+ * Copyright 2016 Zollern Wolf
+ * - Zollern Galaxy
  * Galacticraft Add-On Mod
  * You CAN:
  * - Learn from it
@@ -8,11 +8,12 @@
  * You CAN'T:
  * - Redistribute it
  * - Claim it as your own
+ * Steve Kung's "More Planets" mod was a big help.
  *******************************************************************************/
 
 package galaxymod.dimensions.providers.xathius;
 
-import galaxymod.core.NGPlanets;
+import galaxymod.core.ZGPlanets;
 import galaxymod.dimensions.chunkmanagers.WorldChunkManagerXathius;
 import galaxymod.dimensions.providers.WorldProviderNova;
 import galaxymod.dimensions.providers.renderers.SkyProviderXathius;
@@ -80,7 +81,7 @@ public class WorldProviderXathius extends WorldProviderNova {
 	
 	@Override
 	public CelestialBody getCelestialBody() {
-		return NGPlanets.planetXathius;
+		return ZGPlanets.planetXathius;
 	}
 	
 	@Override

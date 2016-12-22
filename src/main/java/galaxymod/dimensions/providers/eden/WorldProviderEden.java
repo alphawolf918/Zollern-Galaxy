@@ -1,6 +1,6 @@
 /*******************************************************************************
- * Copyright 2015 Zollern Wolf
- * - Project Nova / Nova Galactic Final Frontier
+ * Copyright 2016 Zollern Wolf
+ * - Zollern Galaxy
  * Galacticraft Add-On Mod
  * You CAN:
  * - Learn from it
@@ -8,21 +8,20 @@
  * You CAN'T:
  * - Redistribute it
  * - Claim it as your own
+ * Steve Kung's "More Planets" mod was a big help.
  *******************************************************************************/
 
 package galaxymod.dimensions.providers.eden;
 
-import galaxymod.core.NGPlanets;
+import galaxymod.core.ZGPlanets;
 import galaxymod.dimensions.chunkmanagers.WorldChunkManagerEden;
 import galaxymod.dimensions.providers.WorldProviderNova;
-import galaxymod.dimensions.providers.renderers.SkyProviderEden;
 import micdoodle8.mods.galacticraft.api.galaxies.CelestialBody;
 import micdoodle8.mods.galacticraft.api.vector.Vector3;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.biome.WorldChunkManager;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.IChunkProvider;
-import net.minecraftforge.client.IRenderHandler;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -80,7 +79,7 @@ public class WorldProviderEden extends WorldProviderNova {
 	
 	@Override
 	public CelestialBody getCelestialBody() {
-		return NGPlanets.planetEden;
+		return ZGPlanets.planetEden;
 	}
 	
 	@Override
@@ -141,17 +140,17 @@ public class WorldProviderEden extends WorldProviderNova {
 	
 	@Override
 	public double getHorizon() {
-		return 64.0D;
+		return 44.0D;
 	}
 	
 	@Override
 	public int getAverageGroundLevel() {
-		return 64;
+		return 44;
 	}
 	
 	@Override
 	public float getCloudHeight() {
-		return 168F;
+		return 128F;
 	}
 	
 	@Override
@@ -183,11 +182,6 @@ public class WorldProviderEden extends WorldProviderNova {
 	@Override
 	public long getDayLength() {
 		return 48000L;
-	}
-	
-	@Override
-	public IRenderHandler getSkyRenderer() {
-		return new SkyProviderEden(this);
 	}
 	
 	@Override

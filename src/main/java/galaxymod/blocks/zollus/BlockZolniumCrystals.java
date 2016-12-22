@@ -1,6 +1,6 @@
 /*******************************************************************************
- * Copyright 2015 Zollern Wolf
- * - Project Nova / Nova Galactic Final Frontier
+ * Copyright 2016 Zollern Wolf
+ * - Zollern Galaxy
  * Galacticraft Add-On Mod
  * You CAN:
  * - Learn from it
@@ -8,6 +8,7 @@
  * You CAN'T:
  * - Redistribute it
  * - Claim it as your own
+ * Steve Kung's "More Planets" mod was a big help.
  *******************************************************************************/
 
 package galaxymod.blocks.zollus;
@@ -15,7 +16,7 @@ package galaxymod.blocks.zollus;
 import galaxymod.ProjectNovaCore;
 import galaxymod.blocks.BlockList;
 import galaxymod.items.ItemList;
-import galaxymod.utils.NovaHelper;
+import galaxymod.utils.ZGHelper;
 import java.util.Random;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBush;
@@ -32,8 +33,8 @@ public class BlockZolniumCrystals extends BlockBush implements IPlantable {
 	
 	public BlockZolniumCrystals() {
 		super(Material.rock);
-		NovaHelper.setNameAndTexture(this, "spacecrystals");
-		NovaHelper.setHardResist(this, 0.5F);
+		ZGHelper.setNameAndTexture(this, "spacecrystals");
+		ZGHelper.setHardResist(this, 0.5F);
 		this.setHarvestLevel("pickaxe", 4);
 	}
 	

@@ -1,6 +1,6 @@
 /*******************************************************************************
- * Copyright 2015 Zollern Wolf
- * - Project Nova / Nova Galactic Final Frontier
+ * Copyright 2016 Zollern Wolf
+ * - Zollern Galaxy
  * Galacticraft Add-On Mod
  * You CAN:
  * - Learn from it
@@ -8,14 +8,15 @@
  * You CAN'T:
  * - Redistribute it
  * - Claim it as your own
+ * Steve Kung's "More Planets" mod was a big help.
  *******************************************************************************/
 
 package galaxymod.blocks.eden;
 
 import galaxymod.blocks.BlockNova;
 import galaxymod.utils.ModInfo;
-import galaxymod.utils.NovaHelper;
 import galaxymod.utils.StaticUtils;
+import galaxymod.utils.ZGHelper;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
@@ -37,7 +38,7 @@ public class MultiBlockGlass extends BlockNova {
 		this.setName("edenglass");
 		this.setHardResist(0.2F, 0.4F);
 		this.setStepSound(soundTypeGlass);
-		NovaHelper.setTexture(this, textureBaseName);
+		ZGHelper.setTexture(this, textureBaseName);
 	}
 	
 	@Override

@@ -1,6 +1,6 @@
 /*******************************************************************************
- * Copyright 2015 Zollern Wolf
- * - Project Nova / Nova Galactic Final Frontier
+ * Copyright 2016 Zollern Wolf
+ * - Zollern Galaxy
  * Galacticraft Add-On Mod
  * You CAN:
  * - Learn from it
@@ -8,13 +8,14 @@
  * You CAN'T:
  * - Redistribute it
  * - Claim it as your own
+ * Steve Kung's "More Planets" mod was a big help.
  *******************************************************************************/
 
 package galaxymod.blocks.eden;
 
 import galaxymod.ProjectNovaCore;
 import galaxymod.blocks.BlockList;
-import galaxymod.utils.NovaHelper;
+import galaxymod.utils.ZGHelper;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBush;
 import net.minecraft.block.material.Material;
@@ -27,8 +28,8 @@ public class EdenFlower extends BlockBush {
 	
 	public EdenFlower(String strTexture) {
 		super(Material.plants);
-		NovaHelper.setNameAndTexture(this, "edenflower_" + strTexture);
-		NovaHelper.setHardResist(this, 0.1F);
+		ZGHelper.setNameAndTexture(this, "edenflower_" + strTexture);
+		ZGHelper.setHardResist(this, 0.1F);
 		this.setStepSound(soundTypeGrass);
 	}
 	

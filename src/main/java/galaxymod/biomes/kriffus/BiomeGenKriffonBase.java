@@ -1,6 +1,6 @@
 /*******************************************************************************
- * Copyright 2015 Zollern Wolf
- * - Project Nova / Nova Galactic Final Frontier
+ * Copyright 2016 Zollern Wolf
+ * - Zollern Galaxy
  * Galacticraft Add-On Mod
  * You CAN:
  * - Learn from it
@@ -8,6 +8,7 @@
  * You CAN'T:
  * - Redistribute it
  * - Claim it as your own
+ * Steve Kung's "More Planets" mod was a big help.
  *******************************************************************************/
 
 package galaxymod.biomes.kriffus;
@@ -16,7 +17,7 @@ import galaxymod.biomes.BiomeList;
 import galaxymod.biomes.BiomeSpace;
 import galaxymod.biomes.decorators.BiomeDecoratorKriffon;
 import galaxymod.blocks.BlockList;
-import galaxymod.core.NGPlanets;
+import galaxymod.core.ZGPlanets;
 import java.util.Random;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -32,15 +33,12 @@ public class BiomeGenKriffonBase extends BiomeSpace {
 	protected byte topMeta;
 	protected byte fillerMeta;
 	protected byte stoneMeta;
-	public static int biomeHeightBaseModifier = 200;
-	public BiomeDecoratorKriffon biomeDecor = this.getBiomeDecorator();
 	
 	public BiomeGenKriffonBase(int p_i1971_1_) {
 		super(p_i1971_1_);
 		this.enableRain = false;
 		this.enableSnow = false;
 		this.setColor(BiomeList.biomeColor);
-		this.setHeight(new Height(0.4F, 0.2F));
 		this.theBiomeDecorator.flowersPerChunk = -999;
 		this.theBiomeDecorator.treesPerChunk = -999;
 		this.theBiomeDecorator.grassPerChunk = -999;
@@ -52,23 +50,12 @@ public class BiomeGenKriffonBase extends BiomeSpace {
 		this.topBlock = BlockList.kriffRock;
 		this.fillerBlock = BlockList.kriffDirt;
 		this.stoneBlock = BlockList.kriffStone;
-		this.setPlanetForBiome(NGPlanets.planetKriffon);
+		this.setPlanetForBiome(ZGPlanets.planetKriffon);
 	}
 	
 	@Override
 	public float getSpawningChance() {
 		return 0.1F;
-	}
-	
-	@Override
-	public BiomeSpace setHeightBaseModifier(int bioHeight) {
-		this.biomeHeightBaseModifier = bioHeight;
-		return this;
-	}
-	
-	@Override
-	public int getHeightBaseModifier() {
-		return this.biomeHeightBaseModifier;
 	}
 	
 	@Override
@@ -170,12 +157,6 @@ public class BiomeGenKriffonBase extends BiomeSpace {
 	public void genTerrainBlocks(World world, Random rand, Block[] block,
 			byte[] meta, int x, int z, double stoneNoise) {
 		this.genKriffonBiomeTerrain(world, rand, block, meta, x, z, stoneNoise);
-	}
-	
-	@Override
-	public BiomeSpace setChunkHeightModifier(int heightMod) {
-		chunkHeightModifier = heightMod;
-		return this;
 	}
 	
 	public static int getChunkHeightModifier() {

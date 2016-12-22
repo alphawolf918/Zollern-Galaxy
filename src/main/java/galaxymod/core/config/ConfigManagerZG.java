@@ -1,6 +1,6 @@
 /*******************************************************************************
- * Copyright 2015 Zollern Wolf - Project Nova / Nova Galactic
- * Final Frontier
+ * Copyright 2016 Zollern Wolf
+ * - Zollern Galaxy
  * Galacticraft Add-On Mod
  * You CAN:
  * - Learn from it
@@ -8,7 +8,8 @@
  * You CAN'T:
  * - Redistribute it
  * - Claim it as your own
- ******************************************************************************/
+ * Steve Kung's "More Planets" mod was a big help.
+ *******************************************************************************/
 
 package galaxymod.core.config;
 
@@ -16,7 +17,7 @@ import java.io.File;
 import net.minecraftforge.common.config.Configuration;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
-public class ConfigManagerNova {
+public class ConfigManagerZG {
 	
 	static Configuration configuration;
 	
@@ -96,7 +97,7 @@ public class ConfigManagerNova {
 	public static void init(FMLPreInitializationEvent event) {
 		configuration = new Configuration(new File(event
 				.getModConfigurationDirectory().getAbsolutePath()
-				+ "/ProjectNova/core.cfg"));
+				+ "/ZollernGalaxy/core.cfg"));
 		
 		configuration.load();
 		

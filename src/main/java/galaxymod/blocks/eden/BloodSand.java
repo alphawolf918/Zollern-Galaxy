@@ -1,6 +1,6 @@
 /*******************************************************************************
- * Copyright 2015 Zollern Wolf
- * - Project Nova / Nova Galactic Final Frontier
+ * Copyright 2016 Zollern Wolf
+ * - Zollern Galaxy
  * Galacticraft Add-On Mod
  * You CAN:
  * - Learn from it
@@ -8,12 +8,13 @@
  * You CAN'T:
  * - Redistribute it
  * - Claim it as your own
+ * Steve Kung's "More Planets" mod was a big help.
  *******************************************************************************/
 
 package galaxymod.blocks.eden;
 
 import galaxymod.ProjectNovaCore;
-import galaxymod.utils.NovaHelper;
+import galaxymod.utils.ZGHelper;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFalling;
 import net.minecraft.block.material.Material;
@@ -26,7 +27,7 @@ import net.minecraftforge.common.util.ForgeDirection;
 public class BloodSand extends BlockFalling {
 	public BloodSand() {
 		super(Material.sand);
-		NovaHelper.setNameAndTexture(this, "bloodsand");
+		ZGHelper.setNameAndTexture(this, "bloodsand");
 		this.setResistance(1F);
 		this.setHardness(1F);
 		this.setStepSound(soundTypeSand);

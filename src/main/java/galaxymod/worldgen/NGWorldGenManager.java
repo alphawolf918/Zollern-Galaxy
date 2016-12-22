@@ -1,6 +1,6 @@
 /*******************************************************************************
- * Copyright 2015 Zollern Wolf
- * - Project Nova / Nova Galactic Final Frontier
+ * Copyright 2016 Zollern Wolf
+ * - Zollern Galaxy
  * Galacticraft Add-On Mod
  * You CAN:
  * - Learn from it
@@ -8,13 +8,14 @@
  * You CAN'T:
  * - Redistribute it
  * - Claim it as your own
+ * Steve Kung's "More Planets" mod was a big help.
  *******************************************************************************/
 
 package galaxymod.worldgen;
 
 import galaxymod.biomes.BiomeList;
 import galaxymod.blocks.BlockList;
-import galaxymod.core.config.ConfigManagerNova;
+import galaxymod.core.config.ConfigManagerZG;
 import galaxymod.worldgen.eden.WorldGenCrystalTower;
 import galaxymod.worldgen.eden.WorldGenDropShip;
 import galaxymod.worldgen.eden.WorldGenGiantBone;
@@ -37,7 +38,7 @@ public class NGWorldGenManager implements IWorldGenerator {
 			IChunkProvider chunkGenerator, IChunkProvider chunkProvider) {
 		if (world.provider.dimensionId == 0) {
 			this.generateEarth(world, random, chunkX * 16, chunkZ * 16);
-		} else if (world.provider.dimensionId == ConfigManagerNova.planetEdenDimensionId) {
+		} else if (world.provider.dimensionId == ConfigManagerZG.planetEdenDimensionId) {
 			this.generateEden(world, random, chunkX * 16, chunkZ * 16);
 		}
 	}

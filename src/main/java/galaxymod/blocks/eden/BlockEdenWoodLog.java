@@ -1,6 +1,6 @@
 /*******************************************************************************
- * Copyright 2015 Zollern Wolf
- * - Project Nova / Nova Galactic Final Frontier
+ * Copyright 2016 Zollern Wolf
+ * - Zollern Galaxy
  * Galacticraft Add-On Mod
  * You CAN:
  * - Learn from it
@@ -8,12 +8,13 @@
  * You CAN'T:
  * - Redistribute it
  * - Claim it as your own
+ * Steve Kung's "More Planets" mod was a big help.
  *******************************************************************************/
 
 package galaxymod.blocks.eden;
 
 import galaxymod.ProjectNovaCore;
-import galaxymod.utils.NovaHelper;
+import galaxymod.utils.ZGHelper;
 import java.util.Random;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockRotatedPillar;
@@ -36,8 +37,8 @@ public class BlockEdenWoodLog extends BlockRotatedPillar {
 	
 	public BlockEdenWoodLog() {
 		super(Material.wood);
-		NovaHelper.setNameAndTexture(this, "edenwoodlog");
-		NovaHelper.setHardResist(this, 2.0F);
+		ZGHelper.setNameAndTexture(this, "edenwoodlog");
+		ZGHelper.setHardResist(this, 2.0F);
 		this.setStepSound(soundTypeWood);
 	}
 	

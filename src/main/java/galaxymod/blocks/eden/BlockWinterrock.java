@@ -1,6 +1,6 @@
 /*******************************************************************************
- * Copyright 2015 Zollern Wolf
- * - Project Nova / Nova Galactic Final Frontier
+ * Copyright 2016 Zollern Wolf
+ * - Zollern Galaxy
  * Galacticraft Add-On Mod
  * You CAN:
  * - Learn from it
@@ -8,12 +8,13 @@
  * You CAN'T:
  * - Redistribute it
  * - Claim it as your own
+ * Steve Kung's "More Planets" mod was a big help.
  *******************************************************************************/
 
 package galaxymod.blocks.eden;
 
 import galaxymod.blocks.BlockNova;
-import galaxymod.utils.NovaHelper;
+import galaxymod.utils.ZGHelper;
 import java.util.Random;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -27,9 +28,10 @@ import net.minecraftforge.common.IPlantable;
 import net.minecraftforge.common.util.ForgeDirection;
 
 public class BlockWinterrock extends BlockNova {
+	
 	public BlockWinterrock() {
 		super(Material.snow);
-		NovaHelper.setNameAndTexture(this, "edenwinterrock");
+		ZGHelper.setNameAndTexture(this, "edenwinterrock");
 		this.setHardness(0.4F);
 		this.setResistance(0.4F);
 		this.setStepSound(soundTypeSnow);

@@ -18,7 +18,7 @@ import micdoodle8.mods.galacticraft.core.world.gen.WorldGenMinableMeta;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
 
-public class BiomeDecoratorXathiusOre extends BiomeDecoratorNova {
+public class BiomeDecoratorXathiusOre extends BiomeDecoratorZG {
 	
 	private World worldObj;
 	private Random randomGenerator;

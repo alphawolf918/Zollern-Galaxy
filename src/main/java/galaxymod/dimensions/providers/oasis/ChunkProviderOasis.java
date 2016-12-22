@@ -1,6 +1,6 @@
 /*******************************************************************************
- * Copyright 2015 Zollern Wolf
- * - Project Nova / Nova Galactic Final Frontier
+ * Copyright 2016 Zollern Wolf
+ * - Zollern Galaxy
  * Galacticraft Add-On Mod
  * You CAN:
  * - Learn from it
@@ -8,6 +8,7 @@
  * You CAN'T:
  * - Redistribute it
  * - Claim it as your own
+ * Steve Kung's "More Planets" mod was a big help.
  *******************************************************************************/
 
 package galaxymod.dimensions.providers.oasis;
@@ -17,7 +18,7 @@ import static net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.Ev
 import galaxymod.biomes.BiomeList;
 import galaxymod.biomes.decorators.ore.BiomeDecoratorOasisOre;
 import galaxymod.blocks.BlockList;
-import galaxymod.core.config.ConfigManagerNova;
+import galaxymod.core.config.ConfigManagerZG;
 import galaxymod.worldgen.oasis.MapGenCavesOasis;
 import galaxymod.worldgen.oasis.MapGenOasisRavine;
 import java.util.ArrayList;
@@ -189,7 +190,7 @@ public class ChunkProviderOasis extends ChunkProviderSpace {
 	
 	@Override
 	public List getPossibleCreatures(EnumCreatureType type, int x, int y, int z) {
-		if (this.worldObj.provider.dimensionId == ConfigManagerNova.planetOasisDimensionId) {
+		if (this.worldObj.provider.dimensionId == ConfigManagerZG.planetOasisDimensionId) {
 			if (type == EnumCreatureType.monster) {
 				List monsters = new ArrayList();
 				monsters.add(new SpawnListEntry(EntityEvolvedCreeper.class, 1,

@@ -1,6 +1,6 @@
 /*******************************************************************************
- * Copyright 2015 Zollern Wolf
- * - Project Nova / Nova Galactic Final Frontier
+ * Copyright 2016 Zollern Wolf
+ * - Zollern Galaxy
  * Galacticraft Add-On Mod
  * You CAN:
  * - Learn from it
@@ -8,6 +8,7 @@
  * You CAN'T:
  * - Redistribute it
  * - Claim it as your own
+ * Steve Kung's "More Planets" mod was a big help.
  *******************************************************************************/
 
 package galaxymod.biomes.xathius;
@@ -16,7 +17,7 @@ import galaxymod.biomes.BiomeList;
 import galaxymod.biomes.BiomeSpace;
 import galaxymod.biomes.decorators.BiomeDecoratorXathius;
 import galaxymod.blocks.BlockList;
-import galaxymod.core.NGPlanets;
+import galaxymod.core.ZGPlanets;
 import java.util.Random;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -32,7 +33,6 @@ public class BiomeGenXathiusBase extends BiomeSpace {
 	protected byte topMeta;
 	protected byte fillerMeta;
 	protected byte stoneMeta;
-	public static int biomeHeightBaseModifier = 146;
 	public BiomeDecoratorXathius biomeDecor = this.getBiomeDecorator();
 	
 	public BiomeGenXathiusBase(int p_i1971_1_) {
@@ -40,7 +40,6 @@ public class BiomeGenXathiusBase extends BiomeSpace {
 		this.enableRain = true;
 		this.enableSnow = true;
 		this.setColor(BiomeList.biomeColor);
-		this.setHeight(new Height(0.1F, 0.1F));
 		this.theBiomeDecorator.flowersPerChunk = -999;
 		this.theBiomeDecorator.treesPerChunk = -999;
 		this.theBiomeDecorator.grassPerChunk = -999;
@@ -52,23 +51,12 @@ public class BiomeGenXathiusBase extends BiomeSpace {
 		this.topBlock = BlockList.xathRock;
 		this.fillerBlock = BlockList.xathDirt;
 		this.stoneBlock = BlockList.xathStone;
-		this.setPlanetForBiome(NGPlanets.planetXathius);
+		this.setPlanetForBiome(ZGPlanets.planetXathius);
 	}
 	
 	@Override
 	public float getSpawningChance() {
 		return 0.1F;
-	}
-	
-	@Override
-	public BiomeSpace setHeightBaseModifier(int bioHeight) {
-		this.biomeHeightBaseModifier = bioHeight;
-		return this;
-	}
-	
-	@Override
-	public int getHeightBaseModifier() {
-		return this.biomeHeightBaseModifier;
 	}
 	
 	@Override
@@ -175,12 +163,6 @@ public class BiomeGenXathiusBase extends BiomeSpace {
 	public void genTerrainBlocks(World world, Random rand, Block[] block,
 			byte[] meta, int x, int z, double stoneNoise) {
 		this.genXathiusBiomeTerrain(world, rand, block, meta, x, z, stoneNoise);
-	}
-	
-	@Override
-	public BiomeSpace setChunkHeightModifier(int heightMod) {
-		chunkHeightModifier = heightMod;
-		return this;
 	}
 	
 	public static int getChunkHeightModifier() {

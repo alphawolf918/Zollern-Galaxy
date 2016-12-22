@@ -1,6 +1,6 @@
 /*******************************************************************************
- * Copyright 2015 Zollern Wolf
- * - Project Nova / Nova Galactic Final Frontier
+ * Copyright 2016 Zollern Wolf
+ * - Zollern Galaxy
  * Galacticraft Add-On Mod
  * You CAN:
  * - Learn from it
@@ -8,6 +8,7 @@
  * You CAN'T:
  * - Redistribute it
  * - Claim it as your own
+ * Steve Kung's "More Planets" mod was a big help.
  *******************************************************************************/
 
 package galaxymod.gui;
@@ -16,7 +17,7 @@ import galaxymod.biomes.BiomeSpace;
 import galaxymod.core.EnumPlanetClass;
 import galaxymod.core.PlanetNova;
 import galaxymod.items.ItemList;
-import galaxymod.utils.NovaHelper;
+import galaxymod.utils.ZGHelper;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.Gui;
@@ -101,7 +102,7 @@ public class GuiHud extends Gui {
 						
 						// Planet Name
 						PlanetNova planet = biomeSpace.getPlanetForBiome();
-						String planetName = NovaHelper
+						String planetName = ZGHelper
 								.capitalizeFirstLetter(planet.getName());
 						String p = "Planet: " + planetName;
 						fontRendererObj.drawString(p, 2, 46, i3);

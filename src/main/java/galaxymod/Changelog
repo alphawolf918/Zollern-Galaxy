@@ -1,14 +1,27 @@
+== Zollern Galaxy v1.4.1 - Planet Lag Hotfix ==
+
+* Fixed lag issues on Zollus, Kriffon and Purgot.
+    * This was accomplished by removing the "CloudRenderer" method from their respective WorldProvider class.
+
+
 == Zollern Galaxy v1.4 ==
+
+* FINALLY FIXED THE LAG ISSUE!!!! Turns out it was how I was registering my SkyRenderer classes!!!!
+    * If you still experience the extreme lag/memory leakage, then please, please contact me!
+* Some mechanical fixes to hopefully reduce the lag a little bit.
+* Changed BiomeGenEdenBase back to BiomeGenBase in WorldChunkManagerEden.java.
+* Changed ChunkProviderEden.java's mechanics to something faster and a bit more streamlined.
+
+== Zollern Galaxy v1.3.1 ==
 
 * Removed server pre-init phase.
 * Changed BiomeGenBase to BiomeGenEdenBase in WorldChunkManagerEden.java.
 * Changed BiomeGenBase code in all base biome gens to have 32 sea level and start chunks from 255.
 * Changed biome decorator ore generation mechanics.
-* 
 
 == Zollern Galaxy v1.3 ==
 
-[NOTE: This release is meant to FIX ISSUES while adding very limited new things. It is a beta version, so please be aware of that upon installing this version.]
+[NOTE: This release is meant to FIX ISSUES while adding very limited new things.]
 
 * Renamed mod from Project Nova to Zollern Galaxy.
 * Applied an instanceof check to (hopefully) prevent biomes being cast as BiomeGenEdenBase, which caused crashes.

@@ -1,6 +1,6 @@
 /*******************************************************************************
- * Copyright 2015 Zollern Wolf
- * - Project Nova / Nova Galactic Final Frontier
+ * Copyright 2016 Zollern Wolf
+ * - Zollern Galaxy
  * Galacticraft Add-On Mod
  * You CAN:
  * - Learn from it
@@ -8,21 +8,19 @@
  * You CAN'T:
  * - Redistribute it
  * - Claim it as your own
+ * Steve Kung's "More Planets" mod was a big help.
  *******************************************************************************/
 
 package galaxymod.dimensions.providers.purgot;
 
-import galaxymod.core.NGPlanets;
+import galaxymod.core.ZGPlanets;
 import galaxymod.dimensions.chunkmanagers.WorldChunkManagerPurgot;
 import galaxymod.dimensions.providers.WorldProviderNova;
-import galaxymod.dimensions.providers.renderers.SkyProviderPurgot;
 import micdoodle8.mods.galacticraft.api.galaxies.CelestialBody;
 import micdoodle8.mods.galacticraft.api.vector.Vector3;
-import micdoodle8.mods.galacticraft.core.client.CloudRenderer;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.biome.WorldChunkManager;
 import net.minecraft.world.chunk.IChunkProvider;
-import net.minecraftforge.client.IRenderHandler;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -94,7 +92,7 @@ public class WorldProviderPurgot extends WorldProviderNova {
 	
 	@Override
 	public CelestialBody getCelestialBody() {
-		return NGPlanets.planetPurgot;
+		return ZGPlanets.planetPurgot;
 	}
 	
 	@Override
@@ -172,16 +170,6 @@ public class WorldProviderPurgot extends WorldProviderNova {
 	@Override
 	public long getDayLength() {
 		return 22000L;
-	}
-	
-	@Override
-	public IRenderHandler getCloudRenderer() {
-		return new CloudRenderer();
-	}
-	
-	@Override
-	public IRenderHandler getSkyRenderer() {
-		return new SkyProviderPurgot(this);
 	}
 	
 	@Override

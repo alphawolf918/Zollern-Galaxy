@@ -1,6 +1,6 @@
 /*******************************************************************************
- * Copyright 2015 Zollern Wolf
- * - Project Nova / Nova Galactic Final Frontier
+ * Copyright 2016 Zollern Wolf
+ * - Zollern Galaxy
  * Galacticraft Add-On Mod
  * You CAN:
  * - Learn from it
@@ -8,12 +8,13 @@
  * You CAN'T:
  * - Redistribute it
  * - Claim it as your own
+ * Steve Kung's "More Planets" mod was a big help.
  *******************************************************************************/
 
 package galaxymod.blocks;
 
 import galaxymod.ProjectNovaCore;
-import galaxymod.utils.NovaHelper;
+import galaxymod.utils.ZGHelper;
 import java.util.Random;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -79,32 +80,32 @@ public class BlockNova extends Block {
 	}
 	
 	public Block setHardResist(float par1Hardness, float par2Resistance) {
-		NovaHelper.setHardnessAndResistance(this, par1Hardness, par2Resistance);
+		ZGHelper.setHardnessAndResistance(this, par1Hardness, par2Resistance);
 		return this;
 	}
 	
 	public Block setHardResist(float par1HardResist) {
-		NovaHelper.setHardnessAndResistance(this, par1HardResist);
+		ZGHelper.setHardnessAndResistance(this, par1HardResist);
 		return this;
 	}
 	
 	public Block setName(String strName) {
-		NovaHelper.setName(this, strName);
+		ZGHelper.setName(this, strName);
 		return this;
 	}
 	
 	public Block setTexture(String strTexture) {
-		NovaHelper.setTexture(this, strTexture);
+		ZGHelper.setTexture(this, strTexture);
 		return this;
 	}
 	
 	public Block setNameAndTexture(String strTexture) {
-		NovaHelper.setNameAndTexture(this, strTexture);
+		ZGHelper.setNameAndTexture(this, strTexture);
 		return this;
 	}
 	
 	public Block setNameAndTexture(String strName, String strTexture) {
-		NovaHelper.setNameAndTexture(this, strName, strTexture);
+		ZGHelper.setNameAndTexture(this, strName, strTexture);
 		return this;
 	}
 	

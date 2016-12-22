@@ -1,6 +1,6 @@
 /*******************************************************************************
- * Copyright 2015 Zollern Wolf
- * - Project Nova / Nova Galactic Final Frontier
+ * Copyright 2016 Zollern Wolf
+ * - Zollern Galaxy
  * Galacticraft Add-On Mod
  * You CAN:
  * - Learn from it
@@ -8,10 +8,12 @@
  * You CAN'T:
  * - Redistribute it
  * - Claim it as your own
+ * Steve Kung's "More Planets" mod was a big help.
  *******************************************************************************/
 
 package galaxymod.biomes.eden;
 
+import galaxymod.biomes.BiomeList;
 import galaxymod.blocks.BlockList;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -21,9 +23,7 @@ public class BiomeEdenGarden extends BiomeGenEdenBase {
 	public BiomeEdenGarden(int p_i1985_1_) {
 		super(p_i1985_1_);
 		this.setBiomeName("Garden of Eden");
-		this.setColor(112);
-		this.setHeightBaseModifier(200);
-		this.setHeight(new Height(0.2F, 0.2F));
+		this.setColor(BiomeList.biomeColor);
 		this.temperature = 5F;
 		this.grassFoilageColorMultiplier = 0x009f8d;
 		this.biomeDecor.waterlilyPerChunk = 2;

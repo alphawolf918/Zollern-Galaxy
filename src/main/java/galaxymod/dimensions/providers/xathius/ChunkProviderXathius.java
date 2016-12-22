@@ -1,6 +1,6 @@
 /*******************************************************************************
- * Copyright 2015 Zollern Wolf
- * - Project Nova / Nova Galactic Final Frontier
+ * Copyright 2016 Zollern Wolf
+ * - Zollern Galaxy
  * Galacticraft Add-On Mod
  * You CAN:
  * - Learn from it
@@ -8,6 +8,7 @@
  * You CAN'T:
  * - Redistribute it
  * - Claim it as your own
+ * Steve Kung's "More Planets" mod was a big help.
  *******************************************************************************/
 
 package galaxymod.dimensions.providers.xathius;
@@ -19,7 +20,7 @@ import galaxymod.biomes.BiomeList;
 import galaxymod.biomes.decorators.ore.BiomeDecoratorXathiusOre;
 import galaxymod.biomes.xathius.BiomeGenXathiusBase;
 import galaxymod.blocks.BlockList;
-import galaxymod.core.config.ConfigManagerNova;
+import galaxymod.core.config.ConfigManagerZG;
 import galaxymod.worldgen.xathius.MapGenCavesXathius;
 import galaxymod.worldgen.xathius.MapGenXathiusRavine;
 import java.util.ArrayList;
@@ -195,7 +196,7 @@ public class ChunkProviderXathius extends ChunkProviderSpace {
 	
 	@Override
 	public List getPossibleCreatures(EnumCreatureType type, int x, int y, int z) {
-		if (this.worldObj.provider.dimensionId == ConfigManagerNova.planetXathiusDimensionId) {
+		if (this.worldObj.provider.dimensionId == ConfigManagerZG.planetXathiusDimensionId) {
 			BiomeGenXathiusBase currentBiome = (BiomeGenXathiusBase) worldObj
 					.getBiomeGenForCoords(x, z);
 			if (type == EnumCreatureType.monster) {

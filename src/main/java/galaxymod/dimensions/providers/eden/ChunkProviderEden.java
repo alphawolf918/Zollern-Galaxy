@@ -1,6 +1,6 @@
 /*******************************************************************************
- * Copyright 2015 Zollern Wolf
- * - Project Nova / Nova Galactic Final Frontier
+ * Copyright 2016 Zollern Wolf
+ * - Zollern Galaxy
  * Galacticraft Add-On Mod
  * You CAN:
  * - Learn from it
@@ -8,25 +8,21 @@
  * You CAN'T:
  * - Redistribute it
  * - Claim it as your own
+ * Steve Kung's "More Planets" mod was a big help.
  *******************************************************************************/
 
 package galaxymod.dimensions.providers.eden;
 
-import static net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.ANIMALS;
-import static net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.ICE;
-import static net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.LAKE;
-import galaxymod.biomes.BiomeList;
 import galaxymod.biomes.decorators.ore.BiomeDecoratorEdenOre;
-import galaxymod.biomes.eden.BiomeGenEdenBase;
 import galaxymod.blocks.BlockList;
-import galaxymod.core.config.ConfigManagerNova;
+import galaxymod.core.config.ConfigManagerZG;
 import galaxymod.mobs.entities.eden.EntityAlienSquid;
-import galaxymod.utils.NovaHelper;
+import galaxymod.mobs.entities.eden.EntityMoolus;
+import galaxymod.mobs.entities.eden.EntityOinkus;
 import galaxymod.worldgen.dungeon.RoomEmptyNG;
 import galaxymod.worldgen.eden.MapGenCavesEden;
 import galaxymod.worldgen.eden.MapGenEdenRavine;
 import galaxymod.worldgen.eden.WorldGenEdenDungeons;
-import galaxymod.worldgen.eden.WorldGenEdenLakes;
 import galaxymod.worldgen.eden.dungeons.RoomBossEden;
 import galaxymod.worldgen.eden.dungeons.RoomChestsEden;
 import galaxymod.worldgen.eden.dungeons.RoomSpawnerEden;
@@ -34,10 +30,6 @@ import galaxymod.worldgen.eden.dungeons.RoomTreasureEden;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import micdoodle8.mods.galacticraft.api.prefab.core.BlockMetaPair;
-import micdoodle8.mods.galacticraft.api.prefab.world.gen.BiomeDecoratorSpace;
-import micdoodle8.mods.galacticraft.api.prefab.world.gen.ChunkProviderSpace;
-import micdoodle8.mods.galacticraft.api.prefab.world.gen.MapGenBaseMeta;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedCreeper;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedSkeleton;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedSpider;
@@ -46,51 +38,49 @@ import micdoodle8.mods.galacticraft.core.world.gen.dungeon.MapGenDungeon;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFalling;
 import net.minecraft.entity.EnumCreatureType;
-import net.minecraft.entity.monster.EntityBlaze;
+import net.minecraft.entity.monster.EntityCreeper;
+import net.minecraft.entity.monster.EntityEnderman;
+import net.minecraft.entity.monster.EntitySkeleton;
+import net.minecraft.entity.monster.EntitySpider;
+import net.minecraft.entity.monster.EntityWitch;
+import net.minecraft.entity.monster.EntityZombie;
 import net.minecraft.entity.passive.EntityChicken;
 import net.minecraft.entity.passive.EntityCow;
 import net.minecraft.entity.passive.EntityPig;
 import net.minecraft.entity.passive.EntitySheep;
-import net.minecraft.entity.passive.EntityWolf;
+import net.minecraft.entity.passive.EntitySquid;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.IProgressUpdate;
 import net.minecraft.util.MathHelper;
+import net.minecraft.world.ChunkPosition;
 import net.minecraft.world.SpawnerAnimals;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.biome.BiomeGenBase.SpawnListEntry;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.IChunkProvider;
+import net.minecraft.world.gen.ChunkProviderGenerate;
 import net.minecraft.world.gen.NoiseGeneratorOctaves;
 import net.minecraft.world.gen.NoiseGeneratorPerlin;
 import net.minecraft.world.gen.structure.MapGenMineshaft;
-import net.minecraft.world.gen.structure.MapGenScatteredFeature;
-import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.util.ForgeDirection;
-import net.minecraftforge.event.terraingen.PopulateChunkEvent;
-import net.minecraftforge.event.terraingen.TerrainGen;
-import org.apache.logging.log4j.Level;
-import com.google.common.collect.Lists;
 
-public class ChunkProviderEden extends ChunkProviderSpace {
+public class ChunkProviderEden extends ChunkProviderGenerate {
 	
 	private Random rand;
-	private final BiomeDecoratorEdenOre edenBiomeDecorator = new BiomeDecoratorEdenOre();
-	private final MapGenCavesEden caveGenerator = new MapGenCavesEden();
-	// private final MapGenCavernEden cavernGenerator = new MapGenCavernEden();
-	private final MapGenEdenRavine ravineGenerator = new MapGenEdenRavine();
-	private final WorldGenEdenDungeons dungeonGenerator = new WorldGenEdenDungeons();
-	private MapGenMineshaft mineshaftGenerator = new MapGenMineshaft();
-	private MapGenScatteredFeature scatteredFeatureGenerator = new MapGenScatteredFeature();
-	public World worldObj;
 	private NoiseGeneratorOctaves noiseGen4;
 	public NoiseGeneratorOctaves noiseGen5;
 	public NoiseGeneratorOctaves noiseGen6;
 	public NoiseGeneratorOctaves mobSpawnerNoise;
+	private World worldObj;
 	private double[] stoneNoise;
-	int i3;
-	int j3;
-	int k3;
+	private MapGenCavesEden caveGenerator;
+	// private MapGenCavernEden cavernGenerator;
+	public BiomeDecoratorEdenOre biomedecoratorplanet = new BiomeDecoratorEdenOre();
+	// private MapGenEdenVillage villageGenerator = new MapGenEdenVillage();
+	private MapGenEdenRavine ravineGenerator = new MapGenEdenRavine();
+	private final WorldGenEdenDungeons mobSpawnerGenerator = new WorldGenEdenDungeons();
+	private MapGenMineshaft mineshaftGenerator = new MapGenMineshaft();
 	private BiomeGenBase[] biomesForGeneration;
 	double[] noise3;
 	double[] noise1;
@@ -108,41 +98,44 @@ public class ChunkProviderEden extends ChunkProviderSpace {
 	double[] field_147428_e;
 	double[] field_147425_f;
 	double[] field_147426_g;
+	int[][] field_73219_j = new int[32][32];
 	
-	private MapGenDungeon dungeonGeneratorMain = new MapGenDungeon(
+	private MapGenDungeon dungeonGenerator = new MapGenDungeon(
 			BlockList.edenRockBricks, 14, 8, 24, 4);
 	{
-		this.dungeonGeneratorMain.otherRooms.add(new RoomEmptyNG(null, 0, 0, 0,
+		this.dungeonGenerator.otherRooms.add(new RoomEmptyNG(null, 0, 0, 0,
 				ForgeDirection.UNKNOWN));
-		this.dungeonGeneratorMain.otherRooms.add(new RoomSpawnerEden(null, 0,
-				0, 0, ForgeDirection.UNKNOWN));
-		this.dungeonGeneratorMain.otherRooms.add(new RoomSpawnerEden(null, 0,
-				0, 0, ForgeDirection.UNKNOWN));
-		this.dungeonGeneratorMain.otherRooms.add(new RoomSpawnerEden(null, 0,
-				0, 0, ForgeDirection.UNKNOWN));
-		this.dungeonGeneratorMain.otherRooms.add(new RoomSpawnerEden(null, 0,
-				0, 0, ForgeDirection.UNKNOWN));
-		this.dungeonGeneratorMain.otherRooms.add(new RoomSpawnerEden(null, 0,
-				0, 0, ForgeDirection.UNKNOWN));
-		this.dungeonGeneratorMain.otherRooms.add(new RoomSpawnerEden(null, 0,
-				0, 0, ForgeDirection.UNKNOWN));
-		this.dungeonGeneratorMain.otherRooms.add(new RoomSpawnerEden(null, 0,
-				0, 0, ForgeDirection.UNKNOWN));
-		this.dungeonGeneratorMain.otherRooms.add(new RoomSpawnerEden(null, 0,
-				0, 0, ForgeDirection.UNKNOWN));
-		this.dungeonGeneratorMain.otherRooms.add(new RoomChestsEden(null, 0, 0,
-				0, ForgeDirection.UNKNOWN));
-		this.dungeonGeneratorMain.otherRooms.add(new RoomChestsEden(null, 0, 0,
-				0, ForgeDirection.UNKNOWN));
-		this.dungeonGeneratorMain.bossRooms.add(new RoomBossEden(null, 0, 0, 0,
+		this.dungeonGenerator.otherRooms.add(new RoomSpawnerEden(null, 0, 0, 0,
 				ForgeDirection.UNKNOWN));
-		this.dungeonGeneratorMain.treasureRooms.add(new RoomTreasureEden(null,
-				0, 0, 0, ForgeDirection.UNKNOWN));
+		this.dungeonGenerator.otherRooms.add(new RoomSpawnerEden(null, 0, 0, 0,
+				ForgeDirection.UNKNOWN));
+		this.dungeonGenerator.otherRooms.add(new RoomSpawnerEden(null, 0, 0, 0,
+				ForgeDirection.UNKNOWN));
+		this.dungeonGenerator.otherRooms.add(new RoomSpawnerEden(null, 0, 0, 0,
+				ForgeDirection.UNKNOWN));
+		this.dungeonGenerator.otherRooms.add(new RoomSpawnerEden(null, 0, 0, 0,
+				ForgeDirection.UNKNOWN));
+		this.dungeonGenerator.otherRooms.add(new RoomSpawnerEden(null, 0, 0, 0,
+				ForgeDirection.UNKNOWN));
+		this.dungeonGenerator.otherRooms.add(new RoomSpawnerEden(null, 0, 0, 0,
+				ForgeDirection.UNKNOWN));
+		this.dungeonGenerator.otherRooms.add(new RoomSpawnerEden(null, 0, 0, 0,
+				ForgeDirection.UNKNOWN));
+		this.dungeonGenerator.otherRooms.add(new RoomChestsEden(null, 0, 0, 0,
+				ForgeDirection.UNKNOWN));
+		this.dungeonGenerator.otherRooms.add(new RoomChestsEden(null, 0, 0, 0,
+				ForgeDirection.UNKNOWN));
+		this.dungeonGenerator.bossRooms.add(new RoomBossEden(null, 0, 0, 0,
+				ForgeDirection.UNKNOWN));
+		this.dungeonGenerator.treasureRooms.add(new RoomTreasureEden(null, 0,
+				0, 0, ForgeDirection.UNKNOWN));
 	}
 	
 	public ChunkProviderEden(World world, long seed, boolean flag) {
 		super(world, seed, flag);
 		this.stoneNoise = new double[256];
+		this.caveGenerator = new MapGenCavesEden();
+		// this.cavernGenerator = new MapGenCavernEden();
 		this.worldObj = world;
 		this.rand = new Random(seed);
 		this.noiseGen4 = new NoiseGeneratorOctaves(this.rand, 4);
@@ -165,261 +158,6 @@ public class ChunkProviderEden extends ChunkProviderSpace {
 	}
 	
 	@Override
-	protected BiomeDecoratorSpace getBiomeGenerator() {
-		return this.edenBiomeDecorator;
-	}
-	
-	@Override
-	protected BiomeGenBase[] getBiomesForGeneration() {
-		return new BiomeGenBase[] { BiomeList.biomeEden,
-				BiomeList.biomeEdenRockMountains,
-				BiomeList.biomeEdenTerranValley,
-				BiomeList.biomeEdenBloodDesert, BiomeList.biomeEdenGarden,
-				BiomeList.biomeEdenForest, BiomeList.biomeEdenMagmaLands,
-				BiomeList.biomeEdenSnowyPlains, BiomeList.biomeEdenSwamp };
-	}
-	
-	@Override
-	protected BlockMetaPair getGrassBlock() {
-		return new BlockMetaPair(BlockList.edenSurfaceRock, (byte) 0);
-	}
-	
-	@Override
-	protected BlockMetaPair getDirtBlock() {
-		return new BlockMetaPair(BlockList.edenSoil, (byte) 0);
-	}
-	
-	@Override
-	protected BlockMetaPair getStoneBlock() {
-		return new BlockMetaPair(BlockList.edenRock, (byte) 9);
-	}
-	
-	@Override
-	protected int getSeaLevel() {
-		return 63;
-	}
-	
-	@Override
-	protected List<MapGenBaseMeta> getWorldGenerators() {
-		List<MapGenBaseMeta> generators = Lists.newArrayList();
-		generators.add(this.caveGenerator);
-		// generators.add(this.cavernGenerator);
-		return generators;
-	}
-	
-	@Override
-	protected SpawnListEntry[] getMonsters() {
-		List<SpawnListEntry> monsters = new ArrayList<SpawnListEntry>();
-		// monsters.add(new SpawnListEntry(EntityEvolvedZombie.class, 1, 1, 1));
-		// monsters.add(new SpawnListEntry(EntityEvolvedSpider.class, 1, 1, 1));
-		// monsters.add(new SpawnListEntry(EntityEvolvedSkeleton.class, 1, 1,
-		// 1));
-		// monsters.add(new SpawnListEntry(EntityEvolvedCreeper.class, 1, 1,
-		// 1));
-		return monsters.toArray(new SpawnListEntry[monsters.size()]);
-	}
-	
-	@Override
-	protected SpawnListEntry[] getCreatures() {
-		List<SpawnListEntry> creatures = new ArrayList<SpawnListEntry>();
-		// creatures.add(new SpawnListEntry(EntityMoolus.class, 1, 2, 2));
-		return creatures.toArray(new SpawnListEntry[creatures.size()]);
-	}
-	
-	@Override
-	public double getHeightModifier() {
-		return 6;
-	}
-	
-	@Override
-	public double getSmallFeatureHeightModifier() {
-		return 4;
-	}
-	
-	@Override
-	public double getMountainHeightModifier() {
-		return 4;
-	}
-	
-	@Override
-	public double getValleyHeightModifier() {
-		return 4;
-	}
-	
-	@Override
-	public List getPossibleCreatures(EnumCreatureType type, int x, int y, int z) {
-		if (this.worldObj.provider.dimensionId == ConfigManagerNova.planetEdenDimensionId) {
-			BiomeGenEdenBase currentBiome = (BiomeGenEdenBase) worldObj
-					.getBiomeGenForCoords(x, z);
-			if (type == EnumCreatureType.monster) {
-				List monsters = new ArrayList();
-				monsters.add(new SpawnListEntry(EntityEvolvedZombie.class, 1,
-						0, 1));
-				monsters.add(new SpawnListEntry(EntityEvolvedSpider.class, 1,
-						0, 1));
-				monsters.add(new SpawnListEntry(EntityEvolvedSkeleton.class, 1,
-						0, 1));
-				monsters.add(new SpawnListEntry(EntityEvolvedCreeper.class, 1,
-						0, 1));
-				if (currentBiome == BiomeList.biomeEdenMagmaLands) {
-					monsters.add(new SpawnListEntry(EntityBlaze.class, 1, 0, 1));
-				}
-				return monsters;
-			} else if (type == EnumCreatureType.creature) {
-				List creatures = new ArrayList();
-				if (ConfigManagerNova.canEarthAnimalsSpawnOnEden) {
-					creatures.add(new SpawnListEntry(EntityCow.class, 1, 0, 1));
-					creatures.add(new SpawnListEntry(EntityPig.class, 1, 0, 1));
-					creatures.add(new SpawnListEntry(EntityChicken.class, 1, 0,
-							1));
-					creatures
-							.add(new SpawnListEntry(EntitySheep.class, 1, 0, 1));
-					creatures
-							.add(new SpawnListEntry(EntityWolf.class, 1, 0, 1));
-				}
-				return creatures;
-			} else if (type == EnumCreatureType.waterCreature) {
-				List waterCreatures = new ArrayList();
-				if (!currentBiome.getIsColdBiome()
-						&& !currentBiome.getIsHotBiome()) {
-					waterCreatures.add(new SpawnListEntry(
-							EntityAlienSquid.class, 1, 0, 1));
-				}
-				return waterCreatures;
-			} else {
-				return null;
-			}
-		} else {
-			NovaHelper
-					.logMessage(
-							"One of Eden's biomes tried to generate in the Overworld, but we canceled it to avoid a crash.",
-							Level.WARN);
-			return null;
-		}
-	}
-	
-	@Override
-	public void populate(IChunkProvider par1IChunkProvider, int par2, int par3) {
-		BlockFalling.fallInstantly = true;
-		final int var4 = par2 * 16;
-		final int var5 = par3 * 16;
-		BiomeGenBase currentBiome = this.worldObj.getBiomeGenForCoords(
-				var4 + 16, var5 + 16);
-		this.rand.setSeed(this.worldObj.getSeed());
-		final long var7 = this.rand.nextLong() / 2L * 2L + 1L;
-		final long var9 = this.rand.nextLong() / 2L * 2L + 1L;
-		this.rand.setSeed(par2 * var7 + par3 * var9 ^ this.worldObj.getSeed());
-		this.dungeonGeneratorMain.handleTileEntities(this.rand);
-		boolean flag = false;
-		int k = var4;
-		int l = var5;
-		MinecraftForge.EVENT_BUS.post(new PopulateChunkEvent.Pre(
-				par1IChunkProvider, worldObj, rand, par2, par3, flag));
-		
-		this.mineshaftGenerator.generateStructuresInChunk(this.worldObj,
-				this.rand, par2, par3);
-		this.dungeonGenerator.generate(worldObj, rand, var5, k, l);
-		this.scatteredFeatureGenerator.generateStructuresInChunk(this.worldObj,
-				this.rand, par2, par3);
-		int k1;
-		int l1;
-		int i2;
-		
-		if (TerrainGen.populate(par1IChunkProvider, worldObj, rand, par2, par3,
-				flag, ANIMALS)) {
-			SpawnerAnimals.performWorldGenSpawning(this.worldObj, currentBiome,
-					k + 8, l + 8, 16, 16, this.rand);
-		}
-		
-		if (this.rand.nextInt(4) == 0
-				&& TerrainGen.populate(par1IChunkProvider, worldObj, rand,
-						par2, par3, flag, LAKE)) {
-			k1 = var4 + this.rand.nextInt(16) + 8;
-			l1 = this.rand.nextInt(256);
-			i2 = var5 + this.rand.nextInt(16) + 8;
-			new WorldGenEdenLakes(Blocks.water).generate(this.worldObj,
-					this.rand, k1, l1, i2);
-		}
-		
-		boolean doGen;
-		
-		BiomeGenEdenBase biomegenbase = (BiomeGenEdenBase) currentBiome;
-		biomegenbase.decorate(this.worldObj, this.rand, k, l);
-		k += 8;
-		l += 8;
-		
-		doGen = TerrainGen.populate(par1IChunkProvider, worldObj, rand, par2,
-				par3, flag, ICE);
-		for (k1 = 0; doGen && k1 < 16; ++k1) {
-			for (l1 = 0; l1 < 16; ++l1) {
-				i2 = this.worldObj.getPrecipitationHeight(k + k1, l + l1);
-				
-				if (this.worldObj.isBlockFreezable(k1 + k, i2 - 1, l1 + l)) {
-					this.worldObj.setBlock(k1 + k, i2 - 1, l1 + l, Blocks.ice,
-							0, 2);
-				}
-			}
-		}
-		MinecraftForge.EVENT_BUS.post(new PopulateChunkEvent.Post(
-				par1IChunkProvider, worldObj, rand, par2, par3, flag));
-		this.decoratePlanet(this.worldObj, this.rand, var4, var5);
-		BlockFalling.fallInstantly = false;
-	}
-	
-	@Override
-	public boolean saveChunks(boolean flag, IProgressUpdate progress) {
-		return true;
-	}
-	
-	@Override
-	public boolean canSave() {
-		return true;
-	}
-	
-	@Override
-	public int getCraterProbability() {
-		return 600;
-	}
-	
-	@Override
-	public void decoratePlanet(World par1World, Random par2Random, int par3,
-			int par4) {
-		BiomeGenBase currentBiome = par1World.getBiomeGenForCoords(par3, par4);
-		if (par1World.provider.dimensionId == ConfigManagerNova.planetEdenDimensionId) {
-			this.edenBiomeDecorator.decorate(par1World, par2Random, par3, par4);
-		} else {
-			NovaHelper
-					.logMessage(
-							"One of Eden's biomes tried to generate in the Overworld, but we canceled it to avoid a crash.",
-							Level.WARN);
-		}
-	}
-	
-	@Override
-	public int getLoadedChunkCount() {
-		return 0;
-	}
-	
-	@Override
-	public void recreateStructures(int x, int z) {
-		int y = this.worldObj.getHeightValue(x, z);
-		this.mineshaftGenerator.func_151539_a(this, this.worldObj, x, z,
-				(Block[]) null);
-		this.dungeonGenerator.generate(worldObj, rand, x, y, z);
-		this.scatteredFeatureGenerator.func_151539_a(this, this.worldObj, x, z,
-				(Block[]) null);
-	}
-	
-	@Override
-	public void onChunkProvide(int cX, int cZ, Block[] blocks, byte[] metadata) {
-	}
-	
-	@Override
-	public void onPopulate(IChunkProvider provider, int cX, int cZ) {
-		
-	}
-	
-	@Override
 	public Chunk provideChunk(int x, int z) {
 		this.rand.setSeed(x * 341873128712L + z * 132897987541L);
 		Block[] blockStorage = new Block[256 * 256];
@@ -437,7 +175,7 @@ public class ChunkProviderEden extends ChunkProviderSpace {
 		// metaStorage);
 		this.ravineGenerator.func_151539_a(this, this.worldObj, x, z,
 				blockStorage);
-		this.dungeonGeneratorMain.generateUsingArrays(this.worldObj,
+		this.dungeonGenerator.generateUsingArrays(this.worldObj,
 				this.worldObj.getSeed(), x * 16, 30, z * 16, x, z,
 				blockStorage, metaStorage);
 		Chunk chunk = new Chunk(this.worldObj, blockStorage, metaStorage, x, z);
@@ -448,33 +186,6 @@ public class ChunkProviderEden extends ChunkProviderSpace {
 		}
 		chunk.generateSkylightMap();
 		return chunk;
-	}
-	
-	@Override
-	public void replaceBlocksForBiome(int chunkX, int chunkZ,
-			Block[] blockStorage, byte[] metaStorage, BiomeGenBase[] biomes) {
-		double d0 = 0.03125D;
-		this.stoneNoise = this.field_147430_m.func_151599_a(this.stoneNoise,
-				chunkX * 16, chunkZ * 16, 16, 16, d0 * 2.0D, d0 * 2.0D, 1.0D);
-		
-		for (int z = 0; z < 16; z++) {
-			for (int x = 0; x < 16; x++) {
-				BiomeGenBase biomegenbase = biomes[x + z * 16];
-				biomegenbase.genTerrainBlocks(this.worldObj, this.rand,
-						blockStorage, metaStorage, chunkX * 16 + z, chunkZ * 16
-								+ x, this.stoneNoise[x + z * 16]);
-			}
-		}
-	}
-	
-	@Override
-	public String makeString() {
-		return "EdenLevelSource";
-	}
-	
-	@Override
-	public Chunk loadChunk(int x, int z) {
-		return this.provideChunk(x, z);
 	}
 	
 	public void generateTerrain(int chunkX, int chunkZ, Block[] blockStorage) {
@@ -575,10 +286,10 @@ public class ChunkProviderEden extends ChunkProviderSpace {
 						float heightVariation = biomegenbase1.heightVariation;
 						float heightFactor = this.parabolicField[ox + 2
 								+ (oz + 2) * 5]
-								/ (rootHeight + 1.5F);
+								/ (rootHeight + 2.0F);
 						
 						if (biomegenbase1.rootHeight > biomegenbase.rootHeight) {
-							heightFactor /= 2.2F;
+							heightFactor /= 2.0F;
 						}
 						totalVariation += heightVariation * heightFactor;
 						totalHeight += rootHeight * heightFactor;
@@ -640,5 +351,156 @@ public class ChunkProviderEden extends ChunkProviderSpace {
 				}
 			}
 		}
+	}
+	
+	@Override
+	public void replaceBlocksForBiome(int chunkX, int chunkZ,
+			Block[] blockStorage, byte[] metaStorage, BiomeGenBase[] biomes) {
+		double d0 = 0.03125D;
+		this.stoneNoise = this.field_147430_m.func_151599_a(this.stoneNoise,
+				chunkX * 16, chunkZ * 16, 16, 16, d0 * 2.0D, d0 * 2.0D, 1.0D);
+		
+		for (int z = 0; z < 16; z++) {
+			for (int x = 0; x < 16; x++) {
+				BiomeGenBase biomegenbase = biomes[x + z * 16];
+				biomegenbase.genTerrainBlocks(this.worldObj, this.rand,
+						blockStorage, metaStorage, chunkX * 16 + z, chunkZ * 16
+								+ x, this.stoneNoise[x + z * 16]);
+			}
+		}
+	}
+	
+	@Override
+	public Chunk loadChunk(int x, int z) {
+		return this.provideChunk(x, z);
+	}
+	
+	@Override
+	public boolean chunkExists(int x, int z) {
+		return true;
+	}
+	
+	@Override
+	public void populate(IChunkProvider chunk, int x, int z) {
+		BlockFalling.fallInstantly = true;
+		int var4 = x * 16;
+		int var5 = z * 16;
+		BiomeGenBase biomeGen = this.worldObj.getBiomeGenForCoords(var4 + 16,
+				var5 + 16);
+		this.worldObj.getBiomeGenForCoords(var4 + 16, var5 + 16);
+		this.rand.setSeed(this.worldObj.getSeed());
+		long var7 = this.rand.nextLong() / 2L * 2L + 1L;
+		long var9 = this.rand.nextLong() / 2L * 2L + 1L;
+		this.rand.setSeed(x * var7 + z * var9 ^ this.worldObj.getSeed());
+		this.mineshaftGenerator.generateStructuresInChunk(this.worldObj,
+				this.rand, x, z);
+		this.dungeonGenerator.handleTileEntities(this.rand);
+		biomeGen.decorate(this.worldObj, this.rand, var4, var5);
+		this.decoratePlanet(this.worldObj, this.rand, var4, var5);
+		SpawnerAnimals.performWorldGenSpawning(this.worldObj, biomeGen,
+				var4 + 8, var5 + 8, 16, 16, this.rand);
+		this.mobSpawnerGenerator.generate(worldObj, rand, var4, 20, var5);
+		// this.villageGenerator.generateStructuresInChunk(this.worldObj,
+		// this.rand, x, z);
+		BlockFalling.fallInstantly = false;
+	}
+	
+	public void decoratePlanet(World world, Random rand, int x, int z) {
+		this.biomedecoratorplanet.decorate(world, rand, x, z);
+	}
+	
+	@Override
+	public boolean saveChunks(boolean flag, IProgressUpdate progress) {
+		return true;
+	}
+	
+	@Override
+	public boolean canSave() {
+		return true;
+	}
+	
+	@Override
+	public String makeString() {
+		return "EdenLevelSource";
+	}
+	
+	@Override
+	public List getPossibleCreatures(EnumCreatureType type, int x, int y, int z) {
+		if (type == EnumCreatureType.monster) {
+			List monsters = new ArrayList();
+			if (!ConfigManagerZG.canEarthAnimalsSpawnOnEden) {
+				monsters.add(new SpawnListEntry(EntityEvolvedZombie.class, 100,
+						4, 4));
+				monsters.add(new SpawnListEntry(EntityEvolvedSpider.class, 100,
+						4, 4));
+				monsters.add(new SpawnListEntry(EntityEvolvedSkeleton.class,
+						100, 4, 4));
+				monsters.add(new SpawnListEntry(EntityEvolvedCreeper.class,
+						100, 4, 4));
+			} else {
+				monsters.add(new SpawnListEntry(EntityZombie.class, 100, 4, 4));
+				monsters.add(new SpawnListEntry(EntitySpider.class, 100, 4, 4));
+				monsters.add(new SpawnListEntry(EntitySkeleton.class, 100, 4, 4));
+				monsters.add(new SpawnListEntry(EntityCreeper.class, 100, 4, 4));
+				monsters.add(new SpawnListEntry(EntityEnderman.class, 100, 1, 4));
+				monsters.add(new SpawnListEntry(EntityWitch.class, 5, 1, 1));
+			}
+			return monsters;
+		} else if (type == EnumCreatureType.creature) {
+			List creatures = new ArrayList();
+			creatures.add(new SpawnListEntry(EntityMoolus.class, 8, 4, 4));
+			creatures.add(new SpawnListEntry(EntityOinkus.class, 8, 4, 4));
+			
+			if (ConfigManagerZG.canEarthAnimalsSpawnOnEden == true) {
+				creatures.add(new SpawnListEntry(EntitySheep.class, 12, 4, 4));
+				creatures.add(new SpawnListEntry(EntityPig.class, 10, 4, 4));
+				creatures
+						.add(new SpawnListEntry(EntityChicken.class, 10, 4, 4));
+				creatures.add(new SpawnListEntry(EntityCow.class, 8, 4, 4));
+			} else {
+				return null;
+			}
+			return creatures;
+		} else if (type == EnumCreatureType.waterCreature) {
+			List waterCreatures = new ArrayList();
+			waterCreatures.add(new SpawnListEntry(EntityAlienSquid.class, 10,
+					4, 4));
+			if (ConfigManagerZG.canEarthAnimalsSpawnOnEden) {
+				waterCreatures.add(new SpawnListEntry(EntitySquid.class, 10, 4,
+						4));
+			}
+			return waterCreatures;
+		}
+		return null;
+	}
+	
+	@Override
+	public int getLoadedChunkCount() {
+		return 0;
+	}
+	
+	@Override
+	public void recreateStructures(int x, int z) {
+		// this.villageGenerator.func_151539_a(this, this.worldObj, x, z,
+		// (Block[]) null);
+		int y = this.worldObj.getHeightValue(x, z);
+		this.mineshaftGenerator.func_151539_a(this, this.worldObj, x, z,
+				(Block[]) null);
+		this.mobSpawnerGenerator.generate(worldObj, rand, x, y, z);
+	}
+	
+	@Override
+	public boolean unloadQueuedChunks() {
+		return false;
+	}
+	
+	@Override
+	public void saveExtraData() {
+	}
+	
+	@Override
+	public ChunkPosition func_147416_a(World world, String string, int x,
+			int y, int z) {
+		return null;
 	}
 }

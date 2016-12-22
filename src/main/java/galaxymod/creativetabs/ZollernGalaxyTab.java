@@ -1,6 +1,6 @@
 /*******************************************************************************
- * Copyright 2015 Zollern Wolf
- * - Project Nova / Nova Galactic Final Frontier
+ * Copyright 2016 Zollern Wolf
+ * - Zollern Galaxy
  * Galacticraft Add-On Mod
  * You CAN:
  * - Learn from it
@@ -8,6 +8,7 @@
  * You CAN'T:
  * - Redistribute it
  * - Claim it as your own
+ * Steve Kung's "More Planets" mod was a big help.
  *******************************************************************************/
 
 package galaxymod.creativetabs;
@@ -18,11 +19,11 @@ import net.minecraft.item.ItemStack;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ProjectNovaTab extends CreativeTabs {
+public class ZollernGalaxyTab extends CreativeTabs {
 	
 	protected ItemStack displayItem;
 	
-	public ProjectNovaTab(String label, ItemStack theItemStack) {
+	public ZollernGalaxyTab(String label, ItemStack theItemStack) {
 		super(CreativeTabs.getNextID(), label);
 		this.displayItem = theItemStack;
 	}

@@ -1,6 +1,6 @@
 /*******************************************************************************
- * Copyright 2015 Zollern Wolf
- * - Project Nova / Nova Galactic Final Frontier
+ * Copyright 2016 Zollern Wolf
+ * - Zollern Galaxy
  * Galacticraft Add-On Mod
  * You CAN:
  * - Learn from it
@@ -8,12 +8,13 @@
  * You CAN'T:
  * - Redistribute it
  * - Claim it as your own
+ * Steve Kung's "More Planets" mod was a big help.
  *******************************************************************************/
 
 package galaxymod.proxies;
 
 import galaxymod.blocks.BlockList;
-import galaxymod.blocks.renderers.TileEntityRendererNG;
+import galaxymod.blocks.renderers.TileEntityRendererZG;
 import galaxymod.gui.GuiHud;
 import galaxymod.mobs.entities.EntityGalaxyKnight;
 import galaxymod.mobs.entities.EntityGrayAlien;
@@ -56,7 +57,7 @@ public class ClientProxy extends CommonProxy {
 	
 	@Override
 	public void postInit(FMLPostInitializationEvent event) {
-		TileEntityRendererNG.registerTileEntityRenderers();
+		TileEntityRendererZG.registerTileEntityRenderers();
 		ClientProxy.registerBlockRenderers();
 	}
 	

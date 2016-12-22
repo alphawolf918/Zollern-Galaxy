@@ -1,6 +1,6 @@
 /*******************************************************************************
- * Copyright 2015 Zollern Wolf
- * - Project Nova / Nova Galactic Final Frontier
+ * Copyright 2016 Zollern Wolf
+ * - Zollern Galaxy
  * Galacticraft Add-On Mod
  * You CAN:
  * - Learn from it
@@ -8,20 +8,21 @@
  * You CAN'T:
  * - Redistribute it
  * - Claim it as your own
+ * Steve Kung's "More Planets" mod was a big help.
  *******************************************************************************/
 
 package galaxymod.core;
 
-import galaxymod.core.config.ConfigManagerNova;
+import galaxymod.core.config.ConfigManagerZG;
 import galaxymod.dimensions.providers.eden.WorldProviderEden;
 import galaxymod.dimensions.providers.kriffon.WorldProviderKriffon;
 import galaxymod.dimensions.providers.oasis.WorldProviderOasis;
 import galaxymod.dimensions.providers.purgot.WorldProviderPurgot;
 import galaxymod.dimensions.providers.xathius.WorldProviderXathius;
 import galaxymod.dimensions.providers.zollus.WorldProviderZollus;
-import galaxymod.events.NovaEventHandler;
+import galaxymod.events.ZGEventHandler;
 import galaxymod.utils.ModInfo;
-import galaxymod.utils.NovaHelper;
+import galaxymod.utils.ZGHelper;
 import micdoodle8.mods.galacticraft.api.GalacticraftRegistry;
 import micdoodle8.mods.galacticraft.api.galaxies.GalaxyRegistry;
 import micdoodle8.mods.galacticraft.api.galaxies.Moon;
@@ -31,19 +32,19 @@ import micdoodle8.mods.galacticraft.api.vector.Vector3;
 import micdoodle8.mods.galacticraft.api.world.IAtmosphericGas;
 import net.minecraft.util.ResourceLocation;
 
-public class NGPlanets {
+public class ZGPlanets {
 	
 	static int totalSystems = 0;
 	static int totalPlanets = 0;
 	static int totalMoons = 0;
 	
-	public static SolarSystem systemPsios = new NovaSystem("psion6");
-	public static SolarSystem systemPraedyth = new NovaSystem("praedyth");
-	public static SolarSystem systemPantheon = new NovaSystem("pantheon");
-	public static SolarSystem systemOlympus = new NovaSystem("olympus");
-	public static SolarSystem systemAsgard = new NovaSystem("asgard");
-	public static SolarSystem systemVega = new NovaSystem("vega");
-	public static SolarSystem systemNova = new NovaSystem("nova");
+	public static SolarSystem systemPsios = new ZollernSystem("psion6");
+	public static SolarSystem systemPraedyth = new ZollernSystem("praedyth");
+	public static SolarSystem systemPantheon = new ZollernSystem("pantheon");
+	public static SolarSystem systemOlympus = new ZollernSystem("olympus");
+	public static SolarSystem systemAsgard = new ZollernSystem("asgard");
+	public static SolarSystem systemVega = new ZollernSystem("vega");
+	public static SolarSystem systemNova = new ZollernSystem("nova");
 	
 	public static Star starPsios = new Star("psion6");
 	public static Star starPraedyth = new Star("praedyth");
@@ -89,7 +90,7 @@ public class NGPlanets {
 	public static PlanetNova planetPrimor;
 	
 	public static void init() {
-		NovaEventHandler.init();
+		ZGEventHandler.init();
 		initStarSystems();
 		initPlanets();
 		initMoons();
@@ -168,7 +169,7 @@ public class NGPlanets {
 		systemNova.setMainStar(starNova);
 		totalSystems++;
 		
-		NovaHelper.echo("Loaded a total of " + totalSystems
+		ZGHelper.echo("Loaded a total of " + totalSystems
 				+ " new star systems.");
 	}
 	
@@ -180,8 +181,7 @@ public class NGPlanets {
 		planetZollus.setPhaseShift(0.0F);
 		planetZollus.setRelativeOrbitTime(16F);
 		planetZollus.setDistanceFromCenter(6.0f);
-		planetZollus.setPlanetGasses(IAtmosphericGas.HYDROGEN,
-				IAtmosphericGas.NITROGEN, IAtmosphericGas.OXYGEN,
+		planetZollus.setPlanetGasses(IAtmosphericGas.NITROGEN,
 				IAtmosphericGas.HELIUM);
 		planetZollus.setTierRequired(4);
 		planetZollus.setRelativeSize(14.876F);
@@ -189,8 +189,7 @@ public class NGPlanets {
 		planetZollus.setPlanetToxicity(0.4f);
 		planetZollus.setPlanetRadiation(4.5f);
 		planetZollus.setPlanetIcon("zollus");
-		planetZollus.setDimensionInfo(
-				ConfigManagerNova.planetZollusDimensionId,
+		planetZollus.setDimensionInfo(ConfigManagerZG.planetZollusDimensionId,
 				WorldProviderZollus.class);
 		totalPlanets++;
 		
@@ -210,7 +209,7 @@ public class NGPlanets {
 		planetEden.setPlanetToxicity(0.0f);
 		planetEden.setPlanetRadiation(0.0f);
 		planetEden.setPlanetIcon("eden");
-		planetEden.setDimensionInfo(ConfigManagerNova.planetEdenDimensionId,
+		planetEden.setDimensionInfo(ConfigManagerZG.planetEdenDimensionId,
 				WorldProviderEden.class);
 		totalPlanets++;
 		
@@ -230,7 +229,7 @@ public class NGPlanets {
 		planetKriffon.setPlanetRadiation(16.8f);
 		planetKriffon.setPlanetIcon("kriffus");
 		planetKriffon.setDimensionInfo(
-				ConfigManagerNova.planetKriffonDimensionId,
+				ConfigManagerZG.planetKriffonDimensionId,
 				WorldProviderKriffon.class);
 		totalPlanets++;
 		
@@ -250,8 +249,7 @@ public class NGPlanets {
 		planetPurgot.setPlanetToxicity(15.2f);
 		planetPurgot.setPlanetRadiation(5.2f);
 		planetPurgot.setPlanetIcon("purgot");
-		planetPurgot.setDimensionInfo(
-				ConfigManagerNova.planetPurgotDimensionId,
+		planetPurgot.setDimensionInfo(ConfigManagerZG.planetPurgotDimensionId,
 				WorldProviderPurgot.class);
 		totalPlanets++;
 		
@@ -272,7 +270,7 @@ public class NGPlanets {
 		planetXathius.setPlanetRadiation(16.5f);
 		planetXathius.setPlanetIcon("xathius");
 		planetXathius.setDimensionInfo(
-				ConfigManagerNova.planetXathiusDimensionId,
+				ConfigManagerZG.planetXathiusDimensionId,
 				WorldProviderXathius.class);
 		totalPlanets++;
 		
@@ -290,16 +288,16 @@ public class NGPlanets {
 		planetOasis.setPlanetToxicity(0.5f);
 		planetOasis.setPlanetRadiation(2.0f);
 		planetOasis.setPlanetIcon("oasis");
-		planetOasis.setDimensionInfo(ConfigManagerNova.planetOasisDimensionId,
+		planetOasis.setDimensionInfo(ConfigManagerZG.planetOasisDimensionId,
 				WorldProviderOasis.class);
 		totalPlanets++;
 		
-		NovaHelper.echo("Loaded a total of " + totalPlanets + " new planets.");
+		ZGHelper.echo("Loaded a total of " + totalPlanets + " new planets.");
 	}
 	
 	public static void initMoons() {
 		// TODO
-		NovaHelper.echo("Loaded a total of " + totalMoons + " new moons.");
+		ZGHelper.echo("Loaded a total of " + totalMoons + " new moons.");
 	}
 	
 	public static void registerSystems() {

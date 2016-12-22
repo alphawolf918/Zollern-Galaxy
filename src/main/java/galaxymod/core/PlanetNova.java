@@ -1,6 +1,6 @@
 /*******************************************************************************
- * Copyright 2015 Zollern Wolf
- * - Project Nova / Nova Galactic Final Frontier
+ * Copyright 2016 Zollern Wolf
+ * - Zollern Galaxy
  * Galacticraft Add-On Mod
  * You CAN:
  * - Learn from it
@@ -8,13 +8,14 @@
  * You CAN'T:
  * - Redistribute it
  * - Claim it as your own
+ * Steve Kung's "More Planets" mod was a big help.
  *******************************************************************************/
 
 package galaxymod.core;
 
 import galaxymod.biomes.BiomeSpace;
 import galaxymod.utils.ModInfo;
-import galaxymod.utils.NovaHelper;
+import galaxymod.utils.ZGHelper;
 import java.util.ArrayList;
 import micdoodle8.mods.galacticraft.api.galaxies.Planet;
 import micdoodle8.mods.galacticraft.api.galaxies.Star;
@@ -22,7 +23,7 @@ import micdoodle8.mods.galacticraft.api.world.IAtmosphericGas;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 
-public class PlanetNova extends Planet implements INovaPlanet {
+public class PlanetNova extends Planet implements IZollernPlanet {
 	
 	private EnumPlanetClass planetClass;
 	private Star planetStar;
@@ -181,7 +182,7 @@ public class PlanetNova extends Planet implements INovaPlanet {
 		int ch = 0;
 		for (IAtmosphericGas planetGas : planetAtmosphere) {
 			ch++;
-			gasList += NovaHelper.capitalizeFirstLetter(planetGas.toString()
+			gasList += ZGHelper.capitalizeFirstLetter(planetGas.toString()
 					.substring(0, 3).toLowerCase());
 			if (ch < planetAtmosphere.size()) {
 				gasList += ", ";

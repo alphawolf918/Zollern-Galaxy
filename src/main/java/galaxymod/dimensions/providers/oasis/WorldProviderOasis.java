@@ -1,6 +1,6 @@
 /*******************************************************************************
- * Copyright 2015 Zollern Wolf
- * - Project Nova / Nova Galactic Final Frontier
+ * Copyright 2016 Zollern Wolf
+ * - Zollern Galaxy
  * Galacticraft Add-On Mod
  * You CAN:
  * - Learn from it
@@ -8,14 +8,14 @@
  * You CAN'T:
  * - Redistribute it
  * - Claim it as your own
+ * Steve Kung's "More Planets" mod was a big help.
  *******************************************************************************/
 
 package galaxymod.dimensions.providers.oasis;
 
-import galaxymod.core.NGPlanets;
+import galaxymod.core.ZGPlanets;
 import galaxymod.dimensions.chunkmanagers.WorldChunkManagerOasis;
 import galaxymod.dimensions.providers.WorldProviderNova;
-import galaxymod.dimensions.providers.renderers.SkyProviderOasis;
 import micdoodle8.mods.galacticraft.api.galaxies.CelestialBody;
 import micdoodle8.mods.galacticraft.api.vector.Vector3;
 import net.minecraft.util.MathHelper;
@@ -23,7 +23,6 @@ import net.minecraft.world.World;
 import net.minecraft.world.biome.WorldChunkManager;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.IChunkProvider;
-import net.minecraftforge.client.IRenderHandler;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -34,6 +33,7 @@ public class WorldProviderOasis extends WorldProviderNova {
 		return 0.05F;
 	}
 	
+	@Override
 	public World getWorldObj() {
 		return this.worldObj;
 	}
@@ -85,7 +85,7 @@ public class WorldProviderOasis extends WorldProviderNova {
 	
 	@Override
 	public CelestialBody getCelestialBody() {
-		return NGPlanets.planetOasis;
+		return ZGPlanets.planetOasis;
 	}
 	
 	@Override
@@ -188,11 +188,6 @@ public class WorldProviderOasis extends WorldProviderNova {
 	@Override
 	public long getDayLength() {
 		return 36000L;
-	}
-	
-	@Override
-	public IRenderHandler getSkyRenderer() {
-		return new SkyProviderOasis(this);
 	}
 	
 	@Override

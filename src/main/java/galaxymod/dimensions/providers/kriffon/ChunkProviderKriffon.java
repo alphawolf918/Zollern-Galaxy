@@ -1,6 +1,6 @@
 /*******************************************************************************
- * Copyright 2015 Zollern Wolf
- * - Project Nova / Nova Galactic Final Frontier
+ * Copyright 2016 Zollern Wolf
+ * - Zollern Galaxy
  * Galacticraft Add-On Mod
  * You CAN:
  * - Learn from it
@@ -8,6 +8,7 @@
  * You CAN'T:
  * - Redistribute it
  * - Claim it as your own
+ * Steve Kung's "More Planets" mod was a big help.
  *******************************************************************************/
 
 package galaxymod.dimensions.providers.kriffon;
@@ -19,7 +20,7 @@ import galaxymod.biomes.BiomeList;
 import galaxymod.biomes.decorators.ore.BiomeDecoratorKriffonOre;
 import galaxymod.biomes.kriffus.BiomeGenKriffonBase;
 import galaxymod.blocks.BlockList;
-import galaxymod.core.config.ConfigManagerNova;
+import galaxymod.core.config.ConfigManagerZG;
 import galaxymod.worldgen.eden.WorldGenEdenLakes;
 import galaxymod.worldgen.kriffon.MapGenCavesKriffon;
 import galaxymod.worldgen.kriffon.MapGenKriffonRavine;
@@ -192,7 +193,7 @@ public class ChunkProviderKriffon extends ChunkProviderSpace {
 	
 	@Override
 	public List getPossibleCreatures(EnumCreatureType type, int x, int y, int z) {
-		if (this.worldObj.provider.dimensionId == ConfigManagerNova.planetKriffonDimensionId) {
+		if (this.worldObj.provider.dimensionId == ConfigManagerZG.planetKriffonDimensionId) {
 			BiomeGenKriffonBase currentBiome = (BiomeGenKriffonBase) worldObj
 					.getBiomeGenForCoords(x, z);
 			if (type == EnumCreatureType.monster) {

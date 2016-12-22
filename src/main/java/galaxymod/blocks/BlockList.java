@@ -1,6 +1,6 @@
 /*******************************************************************************
- * Copyright 2015 Zollern Wolf
- * - Project Nova / Nova Galactic Final Frontier
+ * Copyright 2016 Zollern Wolf
+ * - Zollern Galaxy
  * Galacticraft Add-On Mod
  * You CAN:
  * - Learn from it
@@ -8,6 +8,7 @@
  * You CAN'T:
  * - Redistribute it
  * - Claim it as your own
+ * Steve Kung's "More Planets" mod was a big help.
  *******************************************************************************/
 
 package galaxymod.blocks;
@@ -60,8 +61,8 @@ import galaxymod.blocks.zollus.ZolStone;
 import galaxymod.blocks.zollus.ZolarBlock;
 import galaxymod.blocks.zollus.ores.ZolCoalOre;
 import galaxymod.blocks.zollus.ores.ZolHeartiumOre;
-import galaxymod.utils.NovaHelper;
 import galaxymod.utils.RegisterHelper;
+import galaxymod.utils.ZGHelper;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 
@@ -321,7 +322,7 @@ public class BlockList {
 		
 		addBlock(healingStation);
 		
-		NovaHelper.echo("Loaded a total of " + totalBlocks + " new blocks.");
+		ZGHelper.echo("Loaded a total of " + totalBlocks + " new blocks.");
 	}
 	
 	public static void addBlock(Block par1Block) {

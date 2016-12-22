@@ -1,6 +1,6 @@
 /*******************************************************************************
- * Copyright 2015 Zollern Wolf
- * - Project Nova / Nova Galactic Final Frontier
+ * Copyright 2016 Zollern Wolf
+ * - Zollern Galaxy
  * Galacticraft Add-On Mod
  * You CAN:
  * - Learn from it
@@ -8,12 +8,13 @@
  * You CAN'T:
  * - Redistribute it
  * - Claim it as your own
+ * Steve Kung's "More Planets" mod was a big help.
  *******************************************************************************/
 
 package galaxymod.biomes.eden;
 
 import galaxymod.blocks.BlockList;
-import galaxymod.utils.NovaHelper;
+import galaxymod.utils.ZGHelper;
 import java.util.Random;
 import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
@@ -24,9 +25,6 @@ public class BiomeEden extends BiomeGenEdenBase {
 	public BiomeEden(int par1) {
 		super(par1);
 		this.setBiomeName("Green Lands");
-		this.setHeightBaseModifier(196);
-		this.setChunkHeightModifier(5);
-		this.setHeight(new Height(0.1F, 0.2F));
 		this.theBiomeDecorator.generateLakes = true;
 		this.biomeDecor.edenTallGrassPerChunk = 1;
 		this.biomeDecor.edenFlowersPerChunk = 4;
@@ -48,7 +46,7 @@ public class BiomeEden extends BiomeGenEdenBase {
 			int p_76728_4_) {
 		super.decorate(p_76728_1_, p_76728_2_, p_76728_3_, p_76728_4_);
 		for (int i = 0; i < 5; i++) {
-			NovaHelper.genEdenFlowers(p_76728_1_, p_76728_2_, p_76728_3_,
+			ZGHelper.genEdenFlowers(p_76728_1_, p_76728_2_, p_76728_3_,
 					p_76728_4_);
 		}
 	}

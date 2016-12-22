@@ -1,6 +1,6 @@
 /*******************************************************************************
- * Copyright 2015 Zollern Wolf - Project Nova / Nova Galactic
- * Final Frontier
+ * Copyright 2016 Zollern Wolf
+ * - Zollern Galaxy
  * Galacticraft Add-On Mod
  * You CAN:
  * - Learn from it
@@ -8,7 +8,8 @@
  * You CAN'T:
  * - Redistribute it
  * - Claim it as your own
- ******************************************************************************/
+ * Steve Kung's "More Planets" mod was a big help.
+ *******************************************************************************/
 
 package galaxymod.biomes.xathius;
 
@@ -21,9 +22,6 @@ public class BiomeGenXathiusAbstractPlains extends BiomeGenXathiusBase {
 	public BiomeGenXathiusAbstractPlains(int par1) {
 		super(par1);
 		this.setBiomeName("Abstract Plains");
-		this.setHeightBaseModifier(145);
-		this.setHeight(new Height(0.1F, 0.1F));
-		this.setChunkHeightModifier(5);
 		this.setTemp(6F);
 		this.grassFoilageColorMultiplier = 0xbfbfbf;
 		this.theBiomeDecorator.generateLakes = false;

@@ -1,6 +1,6 @@
 /*******************************************************************************
- * Copyright 2015 Zollern Wolf
- * - Project Nova / Nova Galactic Final Frontier
+ * Copyright 2016 Zollern Wolf
+ * - Zollern Galaxy
  * Galacticraft Add-On Mod
  * You CAN:
  * - Learn from it
@@ -8,6 +8,7 @@
  * You CAN'T:
  * - Redistribute it
  * - Claim it as your own
+ * Steve Kung's "More Planets" mod was a big help.
  *******************************************************************************/
 
 package galaxymod.dimensions.providers.renderers;
@@ -31,12 +32,12 @@ import cpw.mods.fml.client.FMLClientHandler;
 
 public class SkyProviderEden extends IRenderHandler {
 	
-	private ResourceLocation kriffonTexture = new ResourceLocation(
-			"galaxymod:textures/gui/kriffus.png");
-	private ResourceLocation purgotTexture = new ResourceLocation(
-			"galaxymod:textures/gui/purgot.png");
-	private ResourceLocation zollusTexture = new ResourceLocation(
-			"galaxymod:textures/gui/zollus.png");
+	// private ResourceLocation kriffonTexture = new ResourceLocation(
+	// "galaxymod:textures/gui/kriffus.png");
+	// private ResourceLocation purgotTexture = new ResourceLocation(
+	// "galaxymod:textures/gui/purgot.png");
+	// private ResourceLocation zollusTexture = new ResourceLocation(
+	// "galaxymod:textures/gui/zollus.png");
 	private ResourceLocation psiosTexture = new ResourceLocation(
 			"galaxymod:textures/gui/psion6.png");
 	
@@ -231,6 +232,7 @@ public class SkyProviderEden extends IRenderHandler {
 		GL11.glEnable(GL11.GL_TEXTURE_2D);
 		GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE);
 		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
+		
 		// Render sun
 		GL11.glDisable(GL11.GL_TEXTURE_2D);
 		GL11.glColor4f(0.0F, 0.0F, 0.0F, 1.0F);
@@ -255,58 +257,58 @@ public class SkyProviderEden extends IRenderHandler {
 		tessellator1.draw();
 		
 		// Render Kriffon
-		f10 = 2.0F;
-		GL11.glScalef(0.6F, 0.6F, 0.6F);
-		GL11.glRotatef(60.0F, 1.0F, 0.0F, 1.0F);
-		GL11.glRotatef(200F, 1.0F, 0.0F, 0.0F);
-		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1F);
-		FMLClientHandler.instance().getClient().renderEngine
-				.bindTexture(this.kriffonTexture);
-		tessellator1.startDrawingQuads();
-		tessellator1.addVertexWithUV(-f10, -100.0D, f10, 0, 1);
-		tessellator1.addVertexWithUV(f10, -100.0D, f10, 1, 1);
-		tessellator1.addVertexWithUV(f10, -100.0D, -f10, 1, 0);
-		tessellator1.addVertexWithUV(-f10, -100.0D, -f10, 0, 0);
-		tessellator1.draw();
+		// f10 = 2.0F;
+		// GL11.glScalef(0.6F, 0.6F, 0.6F);
+		// GL11.glRotatef(60.0F, 1.0F, 0.0F, 1.0F);
+		// GL11.glRotatef(200F, 1.0F, 0.0F, 0.0F);
+		// GL11.glColor4f(1.0F, 1.0F, 1.0F, 1F);
+		// FMLClientHandler.instance().getClient().renderEngine
+		// .bindTexture(this.kriffonTexture);
+		// tessellator1.startDrawingQuads();
+		// tessellator1.addVertexWithUV(-f10, -100.0D, f10, 0, 1);
+		// tessellator1.addVertexWithUV(f10, -100.0D, f10, 1, 1);
+		// tessellator1.addVertexWithUV(f10, -100.0D, -f10, 1, 0);
+		// tessellator1.addVertexWithUV(-f10, -100.0D, -f10, 0, 0);
+		// tessellator1.draw();
 		
-		GL11.glPopMatrix();
-		GL11.glPushMatrix();
+		// GL11.glPopMatrix();
+		// GL11.glPushMatrix();
 		
 		// Render Purgot
-		f10 = 0.5F;
-		GL11.glRotatef(-90.0F, 0.0F, 1.0F, 0.0F);
-		GL11.glRotatef(world.getCelestialAngle(partialTicks) * 360.0F, 1.0F,
-				0.0F, 0.0F);
-		GL11.glScalef(0.6F, 0.6F, 0.6F);
-		GL11.glRotatef(40.0F, 0.0F, 0.0F, 1.0F);
-		GL11.glRotatef(730F, 1.0F, 0.0F, 0.0F);
-		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1F);
-		FMLClientHandler.instance().getClient().renderEngine
-				.bindTexture(this.purgotTexture);
-		tessellator1.startDrawingQuads();
-		tessellator1.addVertexWithUV(-f10, -100.0D, f10, 0, 1);
-		tessellator1.addVertexWithUV(f10, -100.0D, f10, 1, 1);
-		tessellator1.addVertexWithUV(f10, -100.0D, -f10, 1, 0);
-		tessellator1.addVertexWithUV(-f10, -100.0D, -f10, 0, 0);
-		tessellator1.draw();
+		// f10 = 0.5F;
+		// GL11.glRotatef(-90.0F, 0.0F, 1.0F, 0.0F);
+		// GL11.glRotatef(world.getCelestialAngle(partialTicks) * 360.0F, 1.0F,
+		// 0.0F, 0.0F);
+		// GL11.glScalef(0.6F, 0.6F, 0.6F);
+		// GL11.glRotatef(40.0F, 0.0F, 0.0F, 1.0F);
+		// GL11.glRotatef(730F, 1.0F, 0.0F, 0.0F);
+		// GL11.glColor4f(1.0F, 1.0F, 1.0F, 1F);
+		// FMLClientHandler.instance().getClient().renderEngine
+		// .bindTexture(this.purgotTexture);
+		// tessellator1.startDrawingQuads();
+		// tessellator1.addVertexWithUV(-f10, -100.0D, f10, 0, 1);
+		// tessellator1.addVertexWithUV(f10, -100.0D, f10, 1, 1);
+		// tessellator1.addVertexWithUV(f10, -100.0D, -f10, 1, 0);
+		// tessellator1.addVertexWithUV(-f10, -100.0D, -f10, 0, 0);
+		// tessellator1.draw();
 		
 		// Render Zollus
-		f10 = 1.0F;
-		GL11.glRotatef(-50.0F, 0.0F, 1.0F, 0.0F);
-		GL11.glRotatef(world.getCelestialAngle(partialTicks) * 240.0F, 1.5F,
-				0.0F, 0.0F);
-		GL11.glScalef(0.6F, 0.6F, 0.6F);
-		GL11.glRotatef(40.0F, 0.0F, 0.0F, 1.0F);
-		GL11.glRotatef(730F, 1.0F, 0.0F, 0.0F);
-		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1F);
-		FMLClientHandler.instance().getClient().renderEngine
-				.bindTexture(this.zollusTexture);
-		tessellator1.startDrawingQuads();
-		tessellator1.addVertexWithUV(-f10, -100.0D, f10, 0, 1);
-		tessellator1.addVertexWithUV(f10, -100.0D, f10, 1, 1);
-		tessellator1.addVertexWithUV(f10, -100.0D, -f10, 1, 0);
-		tessellator1.addVertexWithUV(-f10, -100.0D, -f10, 0, 0);
-		tessellator1.draw();
+		// f10 = 1.0F;
+		// GL11.glRotatef(-50.0F, 0.0F, 1.0F, 0.0F);
+		// GL11.glRotatef(world.getCelestialAngle(partialTicks) * 240.0F, 1.5F,
+		// 0.0F, 0.0F);
+		// GL11.glScalef(0.6F, 0.6F, 0.6F);
+		// GL11.glRotatef(40.0F, 0.0F, 0.0F, 1.0F);
+		// GL11.glRotatef(730F, 1.0F, 0.0F, 0.0F);
+		// GL11.glColor4f(1.0F, 1.0F, 1.0F, 1F);
+		// FMLClientHandler.instance().getClient().renderEngine
+		// .bindTexture(this.zollusTexture);
+		// tessellator1.startDrawingQuads();
+		// tessellator1.addVertexWithUV(-f10, -100.0D, f10, 0, 1);
+		// tessellator1.addVertexWithUV(f10, -100.0D, f10, 1, 1);
+		// tessellator1.addVertexWithUV(f10, -100.0D, -f10, 1, 0);
+		// tessellator1.addVertexWithUV(-f10, -100.0D, -f10, 0, 0);
+		// tessellator1.draw();
 		
 		GL11.glPopMatrix();
 		GL11.glPushMatrix();

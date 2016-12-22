@@ -1,6 +1,6 @@
 /*******************************************************************************
- * Copyright 2015 Zollern Wolf
- * - Project Nova / Nova Galactic Final Frontier
+ * Copyright 2016 Zollern Wolf
+ * - Zollern Galaxy
  * Galacticraft Add-On Mod
  * You CAN:
  * - Learn from it
@@ -8,6 +8,7 @@
  * You CAN'T:
  * - Redistribute it
  * - Claim it as your own
+ * Steve Kung's "More Planets" mod was a big help.
  *******************************************************************************/
 
 package galaxymod.mobs;
@@ -23,7 +24,7 @@ import galaxymod.mobs.entities.kriffon.EntityMagmos;
 import galaxymod.mobs.entities.xathius.slimes.EntitySlimeRaspberry;
 import galaxymod.mobs.entities.zollus.EntityFrostGiant;
 import galaxymod.utils.ModInfo;
-import galaxymod.utils.NovaHelper;
+import galaxymod.utils.ZGHelper;
 import net.minecraft.entity.EntityList;
 import net.minecraft.entity.EntityList.EntityEggInfo;
 import net.minecraft.entity.EntityLiving;
@@ -82,7 +83,7 @@ public class Mobs {
 						EnumCreatureType.creature,
 						BiomeList.biomeXathiusAbstractPlains);
 		
-		NovaHelper.echo("Loaded a total of " + totalMobs + " new mobs.");
+		ZGHelper.echo("Loaded a total of " + totalMobs + " new mobs.");
 	}
 	
 	public static void registerEntity(Class<? extends EntityLiving> entity,

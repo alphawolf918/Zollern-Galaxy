@@ -1,6 +1,6 @@
 /*******************************************************************************
- * Copyright 2015 Zollern Wolf
- * - Project Nova / Nova Galactic Final Frontier
+ * Copyright 2016 Zollern Wolf
+ * - Zollern Galaxy
  * Galacticraft Add-On Mod
  * You CAN:
  * - Learn from it
@@ -8,20 +8,21 @@
  * You CAN'T:
  * - Redistribute it
  * - Claim it as your own
+ * Steve Kung's "More Planets" mod was a big help.
  *******************************************************************************/
 
 package galaxymod.items;
 
 import galaxymod.ProjectNovaCore;
-import galaxymod.utils.NovaHelper;
 import galaxymod.utils.OreDictionaryNova;
+import galaxymod.utils.ZGHelper;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 
 public class ItemNova extends Item {
 	
 	public ItemNova(String strTexture) {
-		NovaHelper.setTab(this);
+		ZGHelper.setTab(this);
 		this.setNameAndTexture(strTexture);
 	}
 	
@@ -30,19 +31,19 @@ public class ItemNova extends Item {
 	}
 	
 	public void setName(String strName) {
-		NovaHelper.setName(this, strName);
+		ZGHelper.setName(this, strName);
 	}
 	
 	public void setTexture(String strTexture) {
-		NovaHelper.setTexture(this, strTexture);
+		ZGHelper.setTexture(this, strTexture);
 	}
 	
 	public void setNameAndTexture(String strTexture) {
-		NovaHelper.setNameAndTexture(this, strTexture);
+		ZGHelper.setNameAndTexture(this, strTexture);
 	}
 	
 	public void setNameAndTexture(String strName, String strTexture) {
-		NovaHelper.setNameAndTexture(this, strName, strTexture);
+		ZGHelper.setNameAndTexture(this, strName, strTexture);
 	}
 	
 	@Override

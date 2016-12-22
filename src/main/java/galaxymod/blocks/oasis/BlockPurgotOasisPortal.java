@@ -1,6 +1,6 @@
 /*******************************************************************************
- * Copyright 2015 Zollern Wolf
- * - Project Nova / Nova Galactic Final Frontier
+ * Copyright 2016 Zollern Wolf
+ * - Zollern Galaxy
  * Galacticraft Add-On Mod
  * You CAN:
  * - Learn from it
@@ -8,14 +8,15 @@
  * You CAN'T:
  * - Redistribute it
  * - Claim it as your own
+ * Steve Kung's "More Planets" mod was a big help.
  *******************************************************************************/
 
 package galaxymod.blocks.oasis;
 
 import galaxymod.blocks.BlockList;
-import galaxymod.core.config.ConfigManagerNova;
+import galaxymod.core.config.ConfigManagerZG;
 import galaxymod.dimensions.providers.purgot.TeleporterPurgotOasis;
-import galaxymod.utils.NovaHelper;
+import galaxymod.utils.ZGHelper;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockPortal;
 import net.minecraft.client.renderer.texture.IIconRegister;
@@ -31,7 +32,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 public class BlockPurgotOasisPortal extends BlockPortal {
 	
 	public BlockPurgotOasisPortal() {
-		NovaHelper.setNameAndTexture(this, "purgotoasisportal");
+		ZGHelper.setNameAndTexture(this, "purgotoasisportal");
 		this.setTickRandomly(true);
 		this.setLightLevel(1F);
 	}
@@ -61,25 +62,25 @@ public class BlockPurgotOasisPortal extends BlockPortal {
 			
 			if (player.timeUntilPortal > 0) {
 				player.timeUntilPortal = 10;
-			} else if (player.dimension != ConfigManagerNova.planetOasisDimensionId) {
+			} else if (player.dimension != ConfigManagerZG.planetOasisDimensionId) {
 				player.timeUntilPortal = 10;
 				
 				player.mcServer
 						.getConfigurationManager()
 						.transferPlayerToDimension(
 								player,
-								ConfigManagerNova.planetOasisDimensionId,
+								ConfigManagerZG.planetOasisDimensionId,
 								new TeleporterPurgotOasis(
-										mServer.worldServerForDimension(ConfigManagerNova.planetOasisDimensionId)));
+										mServer.worldServerForDimension(ConfigManagerZG.planetOasisDimensionId)));
 			} else {
 				player.timeUntilPortal = 10;
 				player.mcServer
 						.getConfigurationManager()
 						.transferPlayerToDimension(
 								player,
-								ConfigManagerNova.planetPurgotDimensionId,
+								ConfigManagerZG.planetPurgotDimensionId,
 								new TeleporterPurgotOasis(
-										mServer.worldServerForDimension(ConfigManagerNova.planetPurgotDimensionId)));
+										mServer.worldServerForDimension(ConfigManagerZG.planetPurgotDimensionId)));
 			}
 		}
 	}

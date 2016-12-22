@@ -1,6 +1,6 @@
 /*******************************************************************************
- * Copyright 2015 Zollern Wolf
- * - Project Nova / Nova Galactic Final Frontier
+ * Copyright 2016 Zollern Wolf
+ * - Zollern Galaxy
  * Galacticraft Add-On Mod
  * You CAN:
  * - Learn from it
@@ -8,12 +8,12 @@
  * You CAN'T:
  * - Redistribute it
  * - Claim it as your own
+ * Steve Kung's "More Planets" mod was a big help.
  *******************************************************************************/
 
 package galaxymod.dimensions.chunkmanagers;
 
 import galaxymod.biomes.BiomeList;
-import galaxymod.biomes.eden.BiomeGenEdenBase;
 import galaxymod.dimensions.providers.eden.GenLayerEden;
 import java.util.ArrayList;
 import java.util.List;
@@ -31,27 +31,20 @@ public class WorldChunkManagerEden extends WorldChunkManagerSpace {
 	private GenLayer unzoomedBiomes;
 	private GenLayer zoomedBiomes;
 	private BiomeCache myBiomeCache;
-	private List<BiomeGenEdenBase> myBiomesToSpawnIn;
+	private List<BiomeGenBase> myBiomesToSpawnIn;
 	
 	protected WorldChunkManagerEden() {
 		this.myBiomeCache = new BiomeCache(this);
 		this.myBiomesToSpawnIn = new ArrayList();
-		this.myBiomesToSpawnIn.add((BiomeGenEdenBase) BiomeList.biomeEden);
-		this.myBiomesToSpawnIn
-				.add((BiomeGenEdenBase) BiomeList.biomeEdenRockMountains);
-		this.myBiomesToSpawnIn
-				.add((BiomeGenEdenBase) BiomeList.biomeEdenTerranValley);
-		this.myBiomesToSpawnIn
-				.add((BiomeGenEdenBase) BiomeList.biomeEdenBloodDesert);
-		this.myBiomesToSpawnIn
-				.add((BiomeGenEdenBase) BiomeList.biomeEdenGarden);
-		this.myBiomesToSpawnIn
-				.add((BiomeGenEdenBase) BiomeList.biomeEdenForest);
-		this.myBiomesToSpawnIn
-				.add((BiomeGenEdenBase) BiomeList.biomeEdenMagmaLands);
-		this.myBiomesToSpawnIn
-				.add((BiomeGenEdenBase) BiomeList.biomeEdenSnowyPlains);
-		this.myBiomesToSpawnIn.add((BiomeGenEdenBase) BiomeList.biomeEdenSwamp);
+		this.myBiomesToSpawnIn.add(BiomeList.biomeEden);
+		this.myBiomesToSpawnIn.add(BiomeList.biomeEdenRockMountains);
+		this.myBiomesToSpawnIn.add(BiomeList.biomeEdenTerranValley);
+		this.myBiomesToSpawnIn.add(BiomeList.biomeEdenBloodDesert);
+		this.myBiomesToSpawnIn.add(BiomeList.biomeEdenGarden);
+		this.myBiomesToSpawnIn.add(BiomeList.biomeEdenForest);
+		this.myBiomesToSpawnIn.add(BiomeList.biomeEdenMagmaLands);
+		this.myBiomesToSpawnIn.add(BiomeList.biomeEdenSnowyPlains);
+		this.myBiomesToSpawnIn.add(BiomeList.biomeEdenSwamp);
 	}
 	
 	public WorldChunkManagerEden(long seed) {

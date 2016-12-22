@@ -1,6 +1,6 @@
 /*******************************************************************************
- * Copyright 2015 Zollern Wolf
- * - Project Nova / Nova Galactic Final Frontier
+ * Copyright 2016 Zollern Wolf
+ * - Zollern Galaxy
  * Galacticraft Add-On Mod
  * You CAN:
  * - Learn from it
@@ -8,13 +8,14 @@
  * You CAN'T:
  * - Redistribute it
  * - Claim it as your own
+ * Steve Kung's "More Planets" mod was a big help.
  *******************************************************************************/
 
 package galaxymod.biomes.eden;
 
 import galaxymod.biomes.BiomeList;
 import galaxymod.blocks.BlockList;
-import galaxymod.core.NGPlanets;
+import galaxymod.core.ZGPlanets;
 import net.minecraft.entity.monster.EntityBlaze;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -24,11 +25,8 @@ public class BiomeEdenMagmaLands extends BiomeGenEdenBase {
 		super(par1);
 		this.setColor(BiomeList.biomeColor);
 		this.setBiomeName("Magma Lands");
-		this.setPlanetForBiome(NGPlanets.planetEden);
-		this.setHeightBaseModifier(226);
-		this.setHeight(new Height(0.5F, 0.6F));
+		this.setPlanetForBiome(ZGPlanets.planetEden);
 		this.setDisableRain();
-		this.setChunkHeightModifier(10);
 		this.biomeDecor.edenLakesPerChunk = 8;
 		this.biomeDecor.edenTallGrassPerChunk = 0;
 		this.biomeDecor.edenFlowersPerChunk = 0;
@@ -37,15 +35,15 @@ public class BiomeEdenMagmaLands extends BiomeGenEdenBase {
 		this.grassFoilageColorMultiplier = 0x009f44;
 		this.waterColorMultiplier = 0x009f9f;
 		this.temperature = 8.5F;
-		this.spawnableMonsterList.add(new SpawnListEntry(EntityBlaze.class, 5,
-				2, 4));
+		this.spawnableMonsterList.add(new SpawnListEntry(EntityBlaze.class, 2,
+				1, 2));
 		this.topBlock = BlockList.edenMagmaRock;
 		this.fillerBlock = BlockList.edenMagmaRock;
 	}
 	
 	@Override
 	public float getSpawningChance() {
-		return 5.0F;
+		return 0.1F;
 	}
 	
 	@Override

@@ -1,6 +1,6 @@
 /*******************************************************************************
- * Copyright 2015 Zollern Wolf
- * - Project Nova / Nova Galactic Final Frontier
+ * Copyright 2016 Zollern Wolf
+ * - Zollern Galaxy
  * Galacticraft Add-On Mod
  * You CAN:
  * - Learn from it
@@ -8,11 +8,12 @@
  * You CAN'T:
  * - Redistribute it
  * - Claim it as your own
+ * Steve Kung's "More Planets" mod was a big help.
  *******************************************************************************/
 
 package galaxymod.commands;
 
-import galaxymod.utils.NovaHelper;
+import galaxymod.utils.ZGHelper;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
 
 public class CommandList {
@@ -21,6 +22,6 @@ public class CommandList {
 	
 	public static void init(FMLServerStartingEvent event) {
 		
-		NovaHelper.echo("Loaded a total of " + totalCommands + " commands.");
+		ZGHelper.echo("Loaded a total of " + totalCommands + " commands.");
 	}
 }

@@ -1,6 +1,6 @@
 /*******************************************************************************
- * Copyright 2015 Zollern Wolf
- * - Project Nova / Nova Galactic Final Frontier
+ * Copyright 2016 Zollern Wolf
+ * - Zollern Galaxy
  * Galacticraft Add-On Mod
  * You CAN:
  * - Learn from it
@@ -8,13 +8,14 @@
  * You CAN'T:
  * - Redistribute it
  * - Claim it as your own
+ * Steve Kung's "More Planets" mod was a big help.
  *******************************************************************************/
 
 package galaxymod.tileentities;
 
 import galaxymod.tileentities.eden.TileEntityDungeonSpawnerEden;
 import galaxymod.tileentities.eden.TileEntityTreasureChestEden;
-import galaxymod.utils.NovaHelper;
+import galaxymod.utils.ZGHelper;
 import net.minecraft.tileentity.TileEntity;
 import cpw.mods.fml.common.registry.GameRegistry;
 
@@ -26,7 +27,7 @@ public class TileEntityListNG {
 		registerTile(TileEntityTreasureChestEden.class, "EdenTreasureChest");
 		registerTile(TileEntityDungeonSpawnerEden.class, "EdenDungeonSpawner");
 		
-		NovaHelper.echo("Loaded a total of " + totalTileEntities
+		ZGHelper.echo("Loaded a total of " + totalTileEntities
 				+ " new tile entities.");
 	}
 	

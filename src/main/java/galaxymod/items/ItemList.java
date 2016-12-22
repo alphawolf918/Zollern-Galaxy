@@ -1,6 +1,6 @@
 /*******************************************************************************
- * Copyright 2015 Zollern Wolf
- * - Project Nova / Nova Galactic Final Frontier
+ * Copyright 2016 Zollern Wolf
+ * - Zollern Galaxy
  * Galacticraft Add-On Mod
  * You CAN:
  * - Learn from it
@@ -8,6 +8,7 @@
  * You CAN'T:
  * - Redistribute it
  * - Claim it as your own
+ * Steve Kung's "More Planets" mod was a big help.
  *******************************************************************************/
 
 package galaxymod.items;
@@ -20,8 +21,8 @@ import galaxymod.items.food.RawFood;
 import galaxymod.items.kriffon.ItemKriffonTablet;
 import galaxymod.items.purgot.ItemPurgotTablet;
 import galaxymod.items.zollus.ItemAncientZollusTablet;
-import galaxymod.utils.NovaHelper;
 import galaxymod.utils.RegisterHelper;
+import galaxymod.utils.ZGHelper;
 import net.minecraft.item.Item;
 
 public class ItemList {
@@ -145,7 +146,7 @@ public class ItemList {
 		addItem(compressedDiamond);
 		addItem(compressedGold);
 		
-		NovaHelper.echo("Loaded a total of " + totalItems + " new items.");
+		ZGHelper.echo("Loaded a total of " + totalItems + " new items.");
 	}
 	
 	public static void addItem(Item par1Item) {

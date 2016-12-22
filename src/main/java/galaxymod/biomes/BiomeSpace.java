@@ -1,6 +1,6 @@
 /*******************************************************************************
- * Copyright 2015 Zollern Wolf
- * - Project Nova / Nova Galactic Final Frontier
+ * Copyright 2016 Zollern Wolf
+ * - Zollern Galaxy
  * Galacticraft Add-On Mod
  * You CAN:
  * - Learn from it
@@ -8,6 +8,7 @@
  * You CAN'T:
  * - Redistribute it
  * - Claim it as your own
+ * Steve Kung's "More Planets" mod was a big help.
  *******************************************************************************/
 
 package galaxymod.biomes;
@@ -22,15 +23,11 @@ public class BiomeSpace extends BiomeGenBase {
 	
 	protected PlanetNova planetForBiome = null;
 	public static int grassFoilageColorMultiplier = 0x00ff00;
-	public static int chunkHeightModifier = 12;
-	public static int biomeHeightBaseModifier = 232;
 	protected static World world = null;
 	
 	public BiomeSpace(int par1) {
 		super(par1);
 		this.setColor(BiomeList.biomeColor);
-		this.setChunkHeightModifier(this.getChunkHeightModifier());
-		this.setHeightBaseModifier(this.getHeightBaseModifier());
 	}
 	
 	/**
@@ -114,37 +111,6 @@ public class BiomeSpace extends BiomeGenBase {
 	 */
 	public boolean getIsColdBiome() {
 		return (this.getBiomeTemp() <= 3F);
-	}
-	
-	/**
-	 * Sets the base height for the biome to generate at (used in GenBases for
-	 * biomes).
-	 * 
-	 * @param bioHeight
-	 *            The min height of the biome to begin generating.
-	 * @return The biome for this height modifier.
-	 */
-	public BiomeSpace setHeightBaseModifier(int bioHeight) {
-		this.biomeHeightBaseModifier = bioHeight;
-		return this;
-	}
-	
-	/**
-	 * Gets the base height for this biome.
-	 * 
-	 * @return
-	 */
-	public int getHeightBaseModifier() {
-		return this.biomeHeightBaseModifier;
-	}
-	
-	public BiomeSpace setChunkHeightModifier(int heightMod) {
-		chunkHeightModifier = heightMod;
-		return this;
-	}
-	
-	public static int getChunkHeightModifier() {
-		return chunkHeightModifier;
 	}
 	
 	public BiomeSpace setBlocks(Block topBlock, Block fillerBlock) {

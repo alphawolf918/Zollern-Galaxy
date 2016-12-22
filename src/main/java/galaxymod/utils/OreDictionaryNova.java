@@ -1,6 +1,6 @@
 /*******************************************************************************
- * Copyright 2015 Zollern Wolf
- * - Project Nova / Nova Galactic Final Frontier
+ * Copyright 2016 Zollern Wolf
+ * - Zollern Galaxy
  * Galacticraft Add-On Mod
  * You CAN:
  * - Learn from it
@@ -8,6 +8,7 @@
  * You CAN'T:
  * - Redistribute it
  * - Claim it as your own
+ * Steve Kung's "More Planets" mod was a big help.
  *******************************************************************************/
 
 package galaxymod.utils;
@@ -94,7 +95,7 @@ public class OreDictionaryNova {
 		registerOre("dustDiamond", ItemList.dustDiamond);
 		registerOre("dustEmerald", ItemList.dustEmerald);
 		
-		NovaHelper.echo("Loaded a total of " + totalEntries
+		ZGHelper.echo("Loaded a total of " + totalEntries
 				+ " new Ore Dictionary entries.");
 	}
 	

@@ -1,6 +1,6 @@
 /*******************************************************************************
- * Copyright 2015 Zollern Wolf
- * - Project Nova / Nova Galactic Final Frontier
+ * Copyright 2016 Zollern Wolf
+ * - Zollern Galaxy
  * Galacticraft Add-On Mod
  * You CAN:
  * - Learn from it
@@ -8,6 +8,7 @@
  * You CAN'T:
  * - Redistribute it
  * - Claim it as your own
+ * Steve Kung's "More Planets" mod was a big help.
  *******************************************************************************/
 
 package galaxymod.biomes;
@@ -29,8 +30,8 @@ import galaxymod.biomes.xathius.BiomeGenXathiusAbstractPlains;
 import galaxymod.biomes.xathius.BiomeGenXathiusBase;
 import galaxymod.biomes.zollus.BiomeGenZollusBase;
 import galaxymod.blocks.BlockList;
-import galaxymod.core.config.ConfigManagerNova;
-import galaxymod.utils.NovaHelper;
+import galaxymod.core.config.ConfigManagerZG;
+import galaxymod.utils.ZGHelper;
 import net.minecraftforge.common.BiomeManager;
 import net.minecraftforge.common.BiomeManager.BiomeEntry;
 import net.minecraftforge.common.BiomeManager.BiomeType;
@@ -41,48 +42,48 @@ public class BiomeList {
 	static int totalBiomes = 0;
 	
 	public static BiomeSpace biomeZollus = ((BiomeGenZollusBase) new BiomeGenZollusBase(
-			ConfigManagerNova.biomeZollusIcyLandsId).setTemp(1F).setBiomeName(
+			ConfigManagerZG.biomeZollusIcyLandsId).setTemp(1F).setBiomeName(
 			"Ice Lands")).setBlocks(BlockList.zolarBlock, BlockList.zolDirt);
 	
 	public static BiomeSpace biomeKriffus = ((BiomeGenKriffonBase) new BiomeGenKriffonBase(
-			ConfigManagerNova.biomeKriffonFlamingPlainsId)
+			ConfigManagerZG.biomeKriffonFlamingPlainsId)
 			.setBiomeName("Scorched Valley")).setTemp(10F).setBlocks(
 			BlockList.kriffRock, BlockList.kriffDirt);
 	
 	public static BiomeSpace biomeXathius = ((BiomeGenXathiusBase) new BiomeGenXathiusBase(
-			ConfigManagerNova.biomeXathiusId).setBiomeName("Happy Hills"))
+			ConfigManagerZG.biomeXathiusId).setBiomeName("Happy Hills"))
 			.setTemp(5F).setBlocks(BlockList.xathRock, BlockList.xathDirt);
 	public static BiomeSpace biomeXathiusAbstractPlains = new BiomeGenXathiusAbstractPlains(
-			ConfigManagerNova.biomeXathiusAbstractPlainsId);
+			ConfigManagerZG.biomeXathiusAbstractPlainsId);
 	
 	public static BiomeSpace biomeOasis = ((BiomeSpace) new BiomeGenOasisBase(
-			ConfigManagerNova.biomeOasisId).setTemp(5f).setBiomeName("Oasis"))
+			ConfigManagerZG.biomeOasisId).setTemp(5f).setBiomeName("Oasis"))
 			.setBlocks(BlockList.oasisGrass, BlockList.oasisDirt);
 	
 	public static BiomeSpace biomeEden = new BiomeEden(
-			ConfigManagerNova.biomeEdenGreenLandsId);
+			ConfigManagerZG.biomeEdenGreenLandsId);
 	public static BiomeSpace biomeEdenRockMountains = new BiomeEdenRockMountains(
-			ConfigManagerNova.biomeEdenRockMountainsId);
+			ConfigManagerZG.biomeEdenRockMountainsId);
 	public static BiomeSpace biomeEdenTerranValley = new BiomeEdenTerranValley(
-			ConfigManagerNova.biomeEdenTerranValleyId);
+			ConfigManagerZG.biomeEdenTerranValleyId);
 	public static BiomeSpace biomeEdenBloodDesert = new BiomeEdenBloodDesert(
-			ConfigManagerNova.biomeEdenBloodDesertId);
+			ConfigManagerZG.biomeEdenBloodDesertId);
 	public static BiomeSpace biomeEdenGarden = new BiomeEdenGarden(
-			ConfigManagerNova.biomeEdenGardenId);
+			ConfigManagerZG.biomeEdenGardenId);
 	public static BiomeSpace biomeEdenForest = new BiomeEdenForest(
-			ConfigManagerNova.biomeEdenForestId);
+			ConfigManagerZG.biomeEdenForestId);
 	public static BiomeSpace biomeEdenMagmaLands = new BiomeEdenMagmaLands(
-			ConfigManagerNova.biomeEdenMagmaLandsId);
+			ConfigManagerZG.biomeEdenMagmaLandsId);
 	public static BiomeSpace biomeEdenSnowyPlains = new BiomeEdenSnowyPlains(
-			ConfigManagerNova.biomeEdenSnowyPlainsId);
+			ConfigManagerZG.biomeEdenSnowyPlainsId);
 	public static BiomeSpace biomeEdenSwamp = new BiomeEdenSwamp(
-			ConfigManagerNova.biomeEdenSwamplandsId);
+			ConfigManagerZG.biomeEdenSwamplandsId);
 	
 	public static BiomeSpace biomePurgatory = ((BiomeGenPurgotBase) new BiomeGenPurgotBase(
-			ConfigManagerNova.biomePurgatoryId).setTemp(4F).setBiomeName(
+			ConfigManagerZG.biomePurgatoryId).setTemp(4F).setBiomeName(
 			"Purgatory")).setBlocks(BlockList.purgRock, BlockList.purgDirt);
 	public static BiomeSpace biomePurgotLimbo = new BiomeGenPurgotLimbo(
-			ConfigManagerNova.biomePurgotLimboId);
+			ConfigManagerZG.biomePurgotLimboId);
 	
 	public static void init() {
 		
@@ -114,7 +115,7 @@ public class BiomeList {
 		// Oasis
 		addBiome(biomeOasis, BiomeType.WARM, 0);
 		
-		NovaHelper.echo("Loaded a total of " + totalBiomes + " new biomes.");
+		ZGHelper.echo("Loaded a total of " + totalBiomes + " new biomes.");
 	}
 	
 	public static void addBiome(BiomeSpace biome, BiomeType biomeType,

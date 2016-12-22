@@ -10,8 +10,12 @@
     * When inside, extremities don't effect the Player.
         * Could do this using canBlockSeeTheSky() method?
     * Each one could have special "stations" used by right-clicking:
-        * A rechargable health station.
+        * A rechargable health station. [DONE]
         * Blueprint damage repair station?
 
 * Blueprints auto-repair if Plutonium is found in inventory.
     * Make blueprints custom items and have them do a tick check and search the Player's inventory.
+    
+==EDEN==
+
+* More plants and trees (some that give food).

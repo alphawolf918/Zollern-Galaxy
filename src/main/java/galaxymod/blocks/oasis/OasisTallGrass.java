@@ -1,6 +1,6 @@
 /*******************************************************************************
- * Copyright 2015 Zollern Wolf
- * - Project Nova / Nova Galactic Final Frontier
+ * Copyright 2016 Zollern Wolf
+ * - Zollern Galaxy
  * Galacticraft Add-On Mod
  * You CAN:
  * - Learn from it
@@ -8,13 +8,14 @@
  * You CAN'T:
  * - Redistribute it
  * - Claim it as your own
+ * Steve Kung's "More Planets" mod was a big help.
  *******************************************************************************/
 
 package galaxymod.blocks.oasis;
 
 import galaxymod.blocks.BlockList;
 import galaxymod.blocks.eden.EdenFlower;
-import galaxymod.utils.NovaHelper;
+import galaxymod.utils.ZGHelper;
 import java.util.Random;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
@@ -32,8 +33,8 @@ public class OasisTallGrass extends EdenFlower {
 	
 	public OasisTallGrass() {
 		super("");
-		NovaHelper.setNameAndTexture(this, "oasistallgrass");
-		NovaHelper.setHardResist(this, 0.0F);
+		ZGHelper.setNameAndTexture(this, "oasistallgrass");
+		ZGHelper.setHardResist(this, 0.0F);
 		setStepSound(soundTypeGrass);
 	}
 	

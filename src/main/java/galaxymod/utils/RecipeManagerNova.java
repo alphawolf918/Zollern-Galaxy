@@ -1,6 +1,6 @@
 /*******************************************************************************
- * Copyright 2015 Zollern Wolf
- * - Project Nova / Nova Galactic Final Frontier
+ * Copyright 2016 Zollern Wolf
+ * - Zollern Galaxy
  * Galacticraft Add-On Mod
  * You CAN:
  * - Learn from it
@@ -8,6 +8,7 @@
  * You CAN'T:
  * - Redistribute it
  * - Claim it as your own
+ * Steve Kung's "More Planets" mod was a big help.
  *******************************************************************************/
 
 package galaxymod.utils;
@@ -168,7 +169,7 @@ public class RecipeManagerNova {
 							ItemList.purgotCrystal });
 			totalCraftingRecipes++;
 			
-			NovaHelper.echo("Loaded a total of " + totalCraftingRecipes
+			ZGHelper.echo("Loaded a total of " + totalCraftingRecipes
 					+ " new crafting recipes.");
 		}
 	}
@@ -290,7 +291,7 @@ public class RecipeManagerNova {
 			addSmelting(ItemList.dustEvenium, new ItemStack(
 					ItemList.ingotEvenium, 1), 1.5F);
 			
-			NovaHelper.echo("Loaded a total of " + totalSmeltingRecipes
+			ZGHelper.echo("Loaded a total of " + totalSmeltingRecipes
 					+ " new smelting recipes.");
 			
 		}
@@ -386,7 +387,7 @@ public class RecipeManagerNova {
 					ItemList.ingotCobalt), 1);
 			totalPulverizerRecipes++;
 			
-			NovaHelper.echo("Loaded a total of " + totalPulverizerRecipes
+			ZGHelper.echo("Loaded a total of " + totalPulverizerRecipes
 					+ " new pulverizer recipes.");
 		}
 	}
@@ -442,7 +443,7 @@ public class RecipeManagerNova {
 					Items.diamond, 1, 0), new ItemStack(Items.diamond, 1, 0));
 			totalCompressorRecipes++;
 			
-			NovaHelper.echo("Loaded a total of " + totalCompressorRecipes
+			ZGHelper.echo("Loaded a total of " + totalCompressorRecipes
 					+ " new compressor recipes.");
 		}
 	}

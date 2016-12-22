@@ -1,6 +1,6 @@
 /*******************************************************************************
- * Copyright 2015 Zollern Wolf
- * - Project Nova / Nova Galactic Final Frontier
+ * Copyright 2016 Zollern Wolf
+ * - Zollern Galaxy
  * Galacticraft Add-On Mod
  * You CAN:
  * - Learn from it
@@ -8,12 +8,13 @@
  * You CAN'T:
  * - Redistribute it
  * - Claim it as your own
+ * Steve Kung's "More Planets" mod was a big help.
  *******************************************************************************/
 
 package galaxymod.worldgen.eden;
 
 import galaxymod.blocks.BlockList;
-import galaxymod.core.config.ConfigManagerNova;
+import galaxymod.core.config.ConfigManagerZG;
 import galaxymod.mobs.entities.kriffon.EntityMagmos;
 import java.util.Random;
 import net.minecraft.block.Block;
@@ -187,7 +188,7 @@ public class WorldGenEdenLakes extends WorldGenerator {
 											.isSolid()) {
 								par1World.setBlock(par3 + i1, par4 + j1, par5
 										+ j2, BlockList.edenMagmaRock, 0, 2);
-								if (par1World.provider.dimensionId == ConfigManagerNova.planetKriffonDimensionId) {
+								if (par1World.provider.dimensionId == ConfigManagerZG.planetKriffonDimensionId) {
 									if (par2Rand.nextInt(500) == 1) {
 										EntityMagmos magmos = new EntityMagmos(
 												par1World);

@@ -1,6 +1,6 @@
 /*******************************************************************************
- * Copyright 2015 Zollern Wolf
- * - Project Nova / Nova Galactic Final Frontier
+ * Copyright 2016 Zollern Wolf
+ * - Zollern Galaxy
  * Galacticraft Add-On Mod
  * You CAN:
  * - Learn from it
@@ -8,6 +8,7 @@
  * You CAN'T:
  * - Redistribute it
  * - Claim it as your own
+ * Steve Kung's "More Planets" mod was a big help.
  *******************************************************************************/
 
 package galaxymod.dimensions.providers.renderers;
@@ -31,8 +32,8 @@ import cpw.mods.fml.client.FMLClientHandler;
 
 public class SkyProviderOasis extends IRenderHandler {
 	
-	private ResourceLocation xathiusTexture = new ResourceLocation(
-			"galaxymod:textures/gui/xathius.png");
+	// private ResourceLocation xathiusTexture = new ResourceLocation(
+	// "galaxymod:textures/gui/xathius.png");
 	private ResourceLocation praedythTexture = new ResourceLocation(
 			"galaxymod:textures/gui/praedyth.png");
 	
@@ -225,19 +226,19 @@ public class SkyProviderOasis extends IRenderHandler {
 		tessellator1.draw();
 		
 		// Render Xathius
-		f10 = 2.0F;
-		GL11.glScalef(0.6F, 0.6F, 0.6F);
-		GL11.glRotatef(60.0F, 1.0F, 0.0F, 1.0F);
-		GL11.glRotatef(200F, 1.0F, 0.0F, 0.0F);
-		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1F);
-		FMLClientHandler.instance().getClient().renderEngine
-				.bindTexture(this.xathiusTexture);
-		tessellator1.startDrawingQuads();
-		tessellator1.addVertexWithUV(-f10, -100.0D, f10, 0, 1);
-		tessellator1.addVertexWithUV(f10, -100.0D, f10, 1, 1);
-		tessellator1.addVertexWithUV(f10, -100.0D, -f10, 1, 0);
-		tessellator1.addVertexWithUV(-f10, -100.0D, -f10, 0, 0);
-		tessellator1.draw();
+		// f10 = 2.0F;
+		// GL11.glScalef(0.6F, 0.6F, 0.6F);
+		// GL11.glRotatef(60.0F, 1.0F, 0.0F, 1.0F);
+		// GL11.glRotatef(200F, 1.0F, 0.0F, 0.0F);
+		// GL11.glColor4f(1.0F, 1.0F, 1.0F, 1F);
+		// FMLClientHandler.instance().getClient().renderEngine
+		// .bindTexture(this.xathiusTexture);
+		// tessellator1.startDrawingQuads();
+		// tessellator1.addVertexWithUV(-f10, -100.0D, f10, 0, 1);
+		// tessellator1.addVertexWithUV(f10, -100.0D, f10, 1, 1);
+		// tessellator1.addVertexWithUV(f10, -100.0D, -f10, 1, 0);
+		// tessellator1.addVertexWithUV(-f10, -100.0D, -f10, 0, 0);
+		// tessellator1.draw();
 		
 		GL11.glPopMatrix();
 		GL11.glPushMatrix();

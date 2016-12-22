@@ -1,6 +1,6 @@
 /*******************************************************************************
- * Copyright 2015 Zollern Wolf
- * - Project Nova / Nova Galactic Final Frontier
+ * Copyright 2016 Zollern Wolf
+ * - Zollern Galaxy
  * Galacticraft Add-On Mod
  * You CAN:
  * - Learn from it
@@ -8,6 +8,7 @@
  * You CAN'T:
  * - Redistribute it
  * - Claim it as your own
+ * Steve Kung's "More Planets" mod was a big help.
  *******************************************************************************/
 
 package galaxymod.dimensions.providers.renderers;
@@ -32,14 +33,14 @@ import cpw.mods.fml.client.FMLClientHandler;
 
 public class SkyProviderPurgot extends IRenderHandler {
 	
+	// private ResourceLocation edenTexture = new ResourceLocation(
+	// "galaxymod:textures/gui/eden.png");
+	// private ResourceLocation zollusTexture = new ResourceLocation(
+	// "galaxymod:textures/gui/zollus.png");
+	// private ResourceLocation kriffonTexture = new ResourceLocation(
+	// "galaxymod:textures/gui/kriffus.png");
 	private ResourceLocation psiosTexture = new ResourceLocation(
 			"galaxymod:textures/gui/psion6.png");
-	private ResourceLocation edenTexture = new ResourceLocation(
-			"galaxymod:textures/gui/eden.png");
-	private ResourceLocation zollusTexture = new ResourceLocation(
-			"galaxymod:textures/gui/zollus.png");
-	private ResourceLocation kriffonTexture = new ResourceLocation(
-			"galaxymod:textures/gui/kriffus.png");
 	
 	public int starGLCallList = GLAllocation.generateDisplayLists(3);
 	public int glSkyList;
@@ -254,55 +255,55 @@ public class SkyProviderPurgot extends IRenderHandler {
 		GL11.glDisable(GL11.GL_BLEND);
 		
 		// Eden
-		f10 = 1.05F;
-		GL11.glScalef(0.6F, 0.6F, 0.6F);
-		GL11.glRotatef(200F, 1.0F, 0.0F, 0.0F);
-		GL11.glRotatef(-600F, 50.0F, 10.0F, 10.0F);
-		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1F);
-		GL11.glRotatef(world.getCelestialAngle(partialTicks) * 360.0F, 10.0F,
-				0.0F, 0.0F);
-		FMLClientHandler.instance().getClient().renderEngine
-				.bindTexture(this.edenTexture);
-		tessellator1.startDrawingQuads();
-		tessellator1.addVertexWithUV(-f10, -100.0D, f10, 0, 1);
-		tessellator1.addVertexWithUV(f10, -100.0D, f10, 1, 1);
-		tessellator1.addVertexWithUV(f10, -100.0D, -f10, 1, 0);
-		tessellator1.addVertexWithUV(-f10, -100.0D, -f10, 0, 0);
-		tessellator1.draw();
+		// f10 = 1.05F;
+		// GL11.glScalef(0.6F, 0.6F, 0.6F);
+		// GL11.glRotatef(200F, 1.0F, 0.0F, 0.0F);
+		// GL11.glRotatef(-600F, 50.0F, 10.0F, 10.0F);
+		// GL11.glColor4f(1.0F, 1.0F, 1.0F, 1F);
+		// GL11.glRotatef(world.getCelestialAngle(partialTicks) * 360.0F, 10.0F,
+		// 0.0F, 0.0F);
+		// FMLClientHandler.instance().getClient().renderEngine
+		// .bindTexture(this.edenTexture);
+		// tessellator1.startDrawingQuads();
+		// tessellator1.addVertexWithUV(-f10, -100.0D, f10, 0, 1);
+		// tessellator1.addVertexWithUV(f10, -100.0D, f10, 1, 1);
+		// tessellator1.addVertexWithUV(f10, -100.0D, -f10, 1, 0);
+		// tessellator1.addVertexWithUV(-f10, -100.0D, -f10, 0, 0);
+		// tessellator1.draw();
 		
 		// Zollus
-		f10 = 3.05F;
-		GL11.glScalef(0.6F, 0.6F, 0.6F);
-		GL11.glRotatef(400F, 1.0F, 0.0F, 0.0F);
-		GL11.glRotatef(-800F, 50.0F, 10.0F, 10.0F);
-		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1F);
-		GL11.glRotatef(world.getCelestialAngle(partialTicks) * 180.0F, 0.0F,
-				0.0F, 0.0F);
-		FMLClientHandler.instance().getClient().renderEngine
-				.bindTexture(this.zollusTexture);
-		tessellator1.startDrawingQuads();
-		tessellator1.addVertexWithUV(-f10, -100.0D, f10, 0, 1);
-		tessellator1.addVertexWithUV(f10, -100.0D, f10, 1, 1);
-		tessellator1.addVertexWithUV(f10, -100.0D, -f10, 1, 0);
-		tessellator1.addVertexWithUV(-f10, -100.0D, -f10, 0, 0);
-		tessellator1.draw();
+		// f10 = 3.05F;
+		// GL11.glScalef(0.6F, 0.6F, 0.6F);
+		// GL11.glRotatef(400F, 1.0F, 0.0F, 0.0F);
+		// GL11.glRotatef(-800F, 50.0F, 10.0F, 10.0F);
+		// GL11.glColor4f(1.0F, 1.0F, 1.0F, 1F);
+		// GL11.glRotatef(world.getCelestialAngle(partialTicks) * 180.0F, 0.0F,
+		// 0.0F, 0.0F);
+		// FMLClientHandler.instance().getClient().renderEngine
+		// .bindTexture(this.zollusTexture);
+		// tessellator1.startDrawingQuads();
+		// tessellator1.addVertexWithUV(-f10, -100.0D, f10, 0, 1);
+		// tessellator1.addVertexWithUV(f10, -100.0D, f10, 1, 1);
+		// tessellator1.addVertexWithUV(f10, -100.0D, -f10, 1, 0);
+		// tessellator1.addVertexWithUV(-f10, -100.0D, -f10, 0, 0);
+		// tessellator1.draw();
 		
 		// Kriffon
-		f10 = 0.5F;
-		GL11.glScalef(0.6F, 0.6F, 0.6F);
-		GL11.glRotatef(50F, 1.0F, 0.0F, 0.0F);
-		GL11.glRotatef(-200F, 50.0F, 10.0F, 10.0F);
-		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1F);
-		GL11.glRotatef(world.getCelestialAngle(partialTicks) * 40.0F, 0.0F,
-				0.0F, 0.0F);
-		FMLClientHandler.instance().getClient().renderEngine
-				.bindTexture(this.kriffonTexture);
-		tessellator1.startDrawingQuads();
-		tessellator1.addVertexWithUV(-f10, -100.0D, f10, 0, 1);
-		tessellator1.addVertexWithUV(f10, -100.0D, f10, 1, 1);
-		tessellator1.addVertexWithUV(f10, -100.0D, -f10, 1, 0);
-		tessellator1.addVertexWithUV(-f10, -100.0D, -f10, 0, 0);
-		tessellator1.draw();
+		// f10 = 0.5F;
+		// GL11.glScalef(0.6F, 0.6F, 0.6F);
+		// GL11.glRotatef(50F, 1.0F, 0.0F, 0.0F);
+		// GL11.glRotatef(-200F, 50.0F, 10.0F, 10.0F);
+		// GL11.glColor4f(1.0F, 1.0F, 1.0F, 1F);
+		// GL11.glRotatef(world.getCelestialAngle(partialTicks) * 40.0F, 0.0F,
+		// 0.0F, 0.0F);
+		// FMLClientHandler.instance().getClient().renderEngine
+		// .bindTexture(this.kriffonTexture);
+		// tessellator1.startDrawingQuads();
+		// tessellator1.addVertexWithUV(-f10, -100.0D, f10, 0, 1);
+		// tessellator1.addVertexWithUV(f10, -100.0D, f10, 1, 1);
+		// tessellator1.addVertexWithUV(f10, -100.0D, -f10, 1, 0);
+		// tessellator1.addVertexWithUV(-f10, -100.0D, -f10, 0, 0);
+		// tessellator1.draw();
 		
 		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
 		GL11.glDisable(GL11.GL_BLEND);

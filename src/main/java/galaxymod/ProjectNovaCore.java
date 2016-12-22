@@ -1,6 +1,6 @@
 /*******************************************************************************
- * Copyright 2015 Zollern Wolf
- * - Project Nova / Nova Galactic Final Frontier
+ * Copyright 2016 Zollern Wolf
+ * - Zollern Galaxy
  * Galacticraft Add-On Mod
  * You CAN:
  * - Learn from it
@@ -15,23 +15,25 @@ package galaxymod;
 
 import galaxymod.biomes.BiomeList;
 import galaxymod.blocks.BlockList;
-import galaxymod.core.NGPlanets;
-import galaxymod.core.config.ConfigManagerNova;
-import galaxymod.creativetabs.ProjectNovaTab;
+import galaxymod.core.ZGPlanets;
+import galaxymod.core.config.ConfigManagerZG;
+import galaxymod.creativetabs.ZollernGalaxyTab;
+import galaxymod.dimensions.providers.renderers.core.ZGSkyProviderHandler;
 import galaxymod.gui.GuiHandlerNG;
-import galaxymod.integration.TreeCapitatorIntegrationNova;
+import galaxymod.integration.TreeCapitatorIntegrationZG;
 import galaxymod.items.ItemList;
 import galaxymod.mobs.Mobs;
 import galaxymod.proxies.CommonProxy;
 import galaxymod.tileentities.TileEntityListNG;
 import galaxymod.utils.FurnaceFuelHandlerNova;
 import galaxymod.utils.ModInfo;
-import galaxymod.utils.NovaHelper;
 import galaxymod.utils.OreDictionaryNova;
 import galaxymod.utils.RecipeManagerNova;
+import galaxymod.utils.ZGHelper;
 import galaxymod.worldgen.NGWorldGenManager;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
+import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.SidedProxy;
@@ -64,40 +66,41 @@ public class ProjectNovaCore {
 	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
-		NovaHelper.echo("Beginning pre-initiliazation loading phase...");
-		ConfigManagerNova.init(event);
+		ZGHelper.echo("Beginning Pre-Initiliazation loading phase...");
+		FMLCommonHandler.instance().bus().register(new ZGSkyProviderHandler());
+		ConfigManagerZG.init(event);
 		BlockList.init();
 		ItemList.init();
 		Mobs.init();
-		TreeCapitatorIntegrationNova.init();
-		NovaHelper.echo("Pre-initiliazation phase has completed.");
+		TreeCapitatorIntegrationZG.init();
+		ZGHelper.echo("Pre-Initiliazation phase has completed.");
 	}
 	
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
-		NovaHelper.echo("Beginning initialization loading phase...");
+		ZGHelper.echo("Beginning Initialization loading phase...");
 		proxy.initRenderers();
-		NGPlanets.init();
-		novaTabBlocks = new ProjectNovaTab("NovaGalacticBlocks", new ItemStack(
-				BlockList.edenSurfaceRock, 1));
-		novaTabItems = new ProjectNovaTab("NovaGalacticItems", new ItemStack(
+		ZGPlanets.init();
+		novaTabBlocks = new ZollernGalaxyTab("NovaGalacticBlocks",
+				new ItemStack(BlockList.edenSurfaceRock, 1));
+		novaTabItems = new ZollernGalaxyTab("NovaGalacticItems", new ItemStack(
 				ItemList.ingotViri, 1));
 		BiomeList.init();
 		RecipeManagerNova.init();
 		GameRegistry.registerWorldGenerator(new NGWorldGenManager(), 30);
 		OreDictionaryNova.init();
-		NovaHelper.echo("Initialization phase has completed.");
+		ZGHelper.echo("Initialization phase has completed.");
 	}
 	
 	@EventHandler
 	public void postInit(FMLPostInitializationEvent event) {
-		NovaHelper.echo("Beginning post-initialization loading phase...");
+		ZGHelper.echo("Beginning Post-Initialization loading phase...");
 		proxy.postInit(event);
 		TileEntityListNG.init();
 		proxy.initGUI();
 		GameRegistry.registerFuelHandler(new FurnaceFuelHandlerNova());
 		NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandlerNG());
-		NovaHelper.echo("Post-initialization phase has completed.");
+		ZGHelper.echo("Post-Initialization phase has completed.");
 	}
 	
 	// @EventHandler

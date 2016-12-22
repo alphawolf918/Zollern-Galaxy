@@ -1,6 +1,6 @@
 /*******************************************************************************
- * Copyright 2015 Zollern Wolf - Project Nova / Nova Galactic
- * Final Frontier
+ * Copyright 2016 Zollern Wolf
+ * - Zollern Galaxy
  * Galacticraft Add-On Mod
  * You CAN:
  * - Learn from it
@@ -8,11 +8,12 @@
  * You CAN'T:
  * - Redistribute it
  * - Claim it as your own
- ******************************************************************************/
+ * Steve Kung's "More Planets" mod was a big help.
+ *******************************************************************************/
 
 package galaxymod.mobs.entities.zollus;
 
-import galaxymod.utils.NGDamageSource;
+import galaxymod.utils.ZGDamageSource;
 import micdoodle8.mods.galacticraft.api.entity.IEntityBreathable;
 import micdoodle8.mods.galacticraft.core.entities.EntityAlienVillager;
 import net.minecraft.entity.Entity;
@@ -88,7 +89,7 @@ public class EntityFrostGiant extends EntityMob implements IEntityBreathable {
 			BiomeGenBase currentBiome = this.worldObj.getBiomeGenForCoords(
 					this.chunkCoordX, chunkCoordZ);
 			if (currentBiome.temperature >= 4F) {
-				this.attackEntityFrom(NGDamageSource.deathTempHot, 2.0F);
+				this.attackEntityFrom(ZGDamageSource.deathTempHot, 2.0F);
 			}
 		}
 	}

@@ -1,6 +1,6 @@
 /*******************************************************************************
- * Copyright 2015 Zollern Wolf
- * - Project Nova / Nova Galactic Final Frontier
+ * Copyright 2016 Zollern Wolf
+ * - Zollern Galaxy
  * Galacticraft Add-On Mod
  * You CAN:
  * - Learn from it
@@ -8,12 +8,13 @@
  * You CAN'T:
  * - Redistribute it
  * - Claim it as your own
+ * Steve Kung's "More Planets" mod was a big help.
  *******************************************************************************/
 
 package galaxymod.items.food;
 
 import galaxymod.ProjectNovaCore;
-import galaxymod.utils.NovaHelper;
+import galaxymod.utils.ZGHelper;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemFood;
 
@@ -32,8 +33,8 @@ public class CookedFood extends ItemFood {
 	}
 	
 	public void setDefaults(String strTexture) {
-		NovaHelper.setTab(this);
-		NovaHelper.setNameAndTexture(this, strTexture);
+		ZGHelper.setTab(this);
+		ZGHelper.setNameAndTexture(this, strTexture);
 		setMaxStackSize(64);
 	}
 	

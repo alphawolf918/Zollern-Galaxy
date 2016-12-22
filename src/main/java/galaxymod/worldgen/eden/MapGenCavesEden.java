@@ -1,6 +1,6 @@
 /*******************************************************************************
- * Copyright 2015 Zollern Wolf
- * - Project Nova / Nova Galactic Final Frontier
+ * Copyright 2016 Zollern Wolf
+ * - Zollern Galaxy
  * Galacticraft Add-On Mod
  * You CAN:
  * - Learn from it
@@ -8,6 +8,7 @@
  * You CAN'T:
  * - Redistribute it
  * - Claim it as your own
+ * Steve Kung's "More Planets" mod was a big help.
  *******************************************************************************/
 
 package galaxymod.worldgen.eden;
@@ -22,7 +23,7 @@ import net.minecraft.world.World;
 
 public class MapGenCavesEden extends MapGenBaseMeta {
 	
-	public static int BREAK_THROUGH_CHANCE = 10; // 1 in n chance
+	public static int BREAK_THROUGH_CHANCE = 5; // 1 in n chance
 	
 	protected void generateLargeCaveNode(long par1, int par3, int par4,
 			Block[] blockIdArray, byte[] metaArray, double par6, double par8,

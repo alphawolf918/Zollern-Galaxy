@@ -1,6 +1,6 @@
 /*******************************************************************************
- * Copyright 2015 Zollern Wolf
- * - Project Nova / Nova Galactic Final Frontier
+ * Copyright 2016 Zollern Wolf
+ * - Zollern Galaxy
  * Galacticraft Add-On Mod
  * You CAN:
  * - Learn from it
@@ -8,6 +8,7 @@
  * You CAN'T:
  * - Redistribute it
  * - Claim it as your own
+ * Steve Kung's "More Planets" mod was a big help.
  *******************************************************************************/
 
 package galaxymod.biomes.purgot;
@@ -16,7 +17,7 @@ import galaxymod.biomes.BiomeList;
 import galaxymod.biomes.BiomeSpace;
 import galaxymod.biomes.decorators.BiomeDecoratorPurgot;
 import galaxymod.blocks.BlockList;
-import galaxymod.core.NGPlanets;
+import galaxymod.core.ZGPlanets;
 import java.util.Random;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -52,23 +53,12 @@ public class BiomeGenPurgotBase extends BiomeSpace {
 		this.topBlock = BlockList.purgRock;
 		this.fillerBlock = BlockList.purgDirt;
 		this.stoneBlock = BlockList.purgStone;
-		this.setPlanetForBiome(NGPlanets.planetPurgot);
+		this.setPlanetForBiome(ZGPlanets.planetPurgot);
 	}
 	
 	@Override
 	public float getSpawningChance() {
 		return 0.1F;
-	}
-	
-	@Override
-	public BiomeSpace setHeightBaseModifier(int bioHeight) {
-		this.biomeHeightBaseModifier = bioHeight;
-		return this;
-	}
-	
-	@Override
-	public int getHeightBaseModifier() {
-		return this.biomeHeightBaseModifier;
 	}
 	
 	@Override
@@ -175,12 +165,6 @@ public class BiomeGenPurgotBase extends BiomeSpace {
 	public void genTerrainBlocks(World world, Random rand, Block[] block,
 			byte[] meta, int x, int z, double stoneNoise) {
 		this.genPurgotBiomeTerrain(world, rand, block, meta, x, z, stoneNoise);
-	}
-	
-	@Override
-	public BiomeSpace setChunkHeightModifier(int heightMod) {
-		chunkHeightModifier = heightMod;
-		return this;
 	}
 	
 	public static int getChunkHeightModifier() {

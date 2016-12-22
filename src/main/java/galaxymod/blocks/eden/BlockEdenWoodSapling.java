@@ -1,6 +1,6 @@
 /*******************************************************************************
- * Copyright 2015 Zollern Wolf
- * - Project Nova / Nova Galactic Final Frontier
+ * Copyright 2016 Zollern Wolf
+ * - Zollern Galaxy
  * Galacticraft Add-On Mod
  * You CAN:
  * - Learn from it
@@ -8,13 +8,14 @@
  * You CAN'T:
  * - Redistribute it
  * - Claim it as your own
+ * Steve Kung's "More Planets" mod was a big help.
  *******************************************************************************/
 
 package galaxymod.blocks.eden;
 
 import galaxymod.ProjectNovaCore;
 import galaxymod.blocks.BlockList;
-import galaxymod.utils.NovaHelper;
+import galaxymod.utils.ZGHelper;
 import galaxymod.worldgen.WorldGenTreeNG;
 import java.util.Random;
 import net.minecraft.block.BlockBush;
@@ -32,7 +33,7 @@ public class BlockEdenWoodSapling extends BlockBush implements IGrowable {
 	private static IIcon field_149881_b;
 	
 	public BlockEdenWoodSapling() {
-		NovaHelper.setName(this, "edenwoodsapling");
+		ZGHelper.setName(this, "edenwoodsapling");
 		float f = 0.4F;
 		this.setBlockBounds(0.5F - f, 0.0F, 0.5F - f, 0.5F + f, f * 2.0F,
 				0.5F + f);
