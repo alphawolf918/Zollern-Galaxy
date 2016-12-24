@@ -13,7 +13,7 @@
 
 package galaxymod.blocks.eden;
 
-import galaxymod.ProjectNovaCore;
+import galaxymod.ZollernGalaxyCore;
 import galaxymod.utils.ZGHelper;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFalling;
@@ -47,6 +47,6 @@ public class BloodSand extends BlockFalling {
 	
 	@Override
 	public CreativeTabs getCreativeTabToDisplayOn() {
-		return ProjectNovaCore.novaTabBlocks;
+		return ZollernGalaxyCore.novaTabBlocks;
 	}
 }

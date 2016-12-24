@@ -13,7 +13,7 @@
 
 package galaxymod.blocks.eden;
 
-import galaxymod.ProjectNovaCore;
+import galaxymod.ZollernGalaxyCore;
 import galaxymod.utils.ZGHelper;
 import net.minecraft.block.BlockFalling;
 import net.minecraft.block.material.Material;
@@ -29,6 +29,6 @@ public class EdenGravel extends BlockFalling {
 	
 	@Override
 	public CreativeTabs getCreativeTabToDisplayOn() {
-		return ProjectNovaCore.novaTabBlocks;
+		return ZollernGalaxyCore.novaTabBlocks;
 	}
 }

@@ -13,7 +13,7 @@
 
 package galaxymod.blocks.eden;
 
-import galaxymod.ProjectNovaCore;
+import galaxymod.ZollernGalaxyCore;
 import galaxymod.blocks.BlockList;
 import galaxymod.utils.ZGHelper;
 import net.minecraft.block.Block;
@@ -49,6 +49,6 @@ public class EdenFlower extends BlockBush {
 	
 	@Override
 	public CreativeTabs getCreativeTabToDisplayOn() {
-		return ProjectNovaCore.novaTabBlocks;
+		return ZollernGalaxyCore.novaTabBlocks;
 	}
 }

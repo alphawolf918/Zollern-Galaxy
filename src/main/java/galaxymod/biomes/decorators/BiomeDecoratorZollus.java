@@ -28,7 +28,7 @@ import net.minecraftforge.event.terraingen.TerrainGen;
 
 public class BiomeDecoratorZollus extends BiomeDecorator {
 	
-	public int zollusCrystalsPerChunk = 3;
+	public int zollusCrystalsPerChunk = 6;
 	public int zollusIceLakesPerChunk = 4;
 	
 	@Override

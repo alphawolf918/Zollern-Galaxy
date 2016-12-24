@@ -16,13 +16,11 @@ package galaxymod.dimensions.providers.zollus;
 import galaxymod.core.ZGPlanets;
 import galaxymod.dimensions.chunkmanagers.WorldChunkManagerZollus;
 import galaxymod.dimensions.providers.WorldProviderNova;
-import galaxymod.dimensions.providers.renderers.SkyProviderZollus;
 import micdoodle8.mods.galacticraft.api.galaxies.CelestialBody;
 import micdoodle8.mods.galacticraft.api.vector.Vector3;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.biome.WorldChunkManager;
 import net.minecraft.world.chunk.IChunkProvider;
-import net.minecraftforge.client.IRenderHandler;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -30,7 +28,7 @@ public class WorldProviderZollus extends WorldProviderNova {
 	
 	@Override
 	public float getGravity() {
-		return 0.04F;
+		return 0.02F;
 	}
 	
 	@Override
@@ -176,11 +174,6 @@ public class WorldProviderZollus extends WorldProviderNova {
 	@Override
 	public long getDayLength() {
 		return 46010L;
-	}
-	
-	@Override
-	public IRenderHandler getSkyRenderer() {
-		return new SkyProviderZollus(this);
 	}
 	
 	@Override

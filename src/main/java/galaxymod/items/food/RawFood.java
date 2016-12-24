@@ -13,7 +13,7 @@
 
 package galaxymod.items.food;
 
-import galaxymod.ProjectNovaCore;
+import galaxymod.ZollernGalaxyCore;
 import galaxymod.utils.ZGHelper;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemFood;
@@ -31,6 +31,6 @@ public class RawFood extends ItemFood {
 	
 	@Override
 	public CreativeTabs getCreativeTab() {
-		return ProjectNovaCore.novaTabItems;
+		return ZollernGalaxyCore.novaTabItems;
 	}
 }

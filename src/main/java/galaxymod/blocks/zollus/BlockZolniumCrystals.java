@@ -13,7 +13,7 @@
 
 package galaxymod.blocks.zollus;
 
-import galaxymod.ProjectNovaCore;
+import galaxymod.ZollernGalaxyCore;
 import galaxymod.blocks.BlockList;
 import galaxymod.items.ItemList;
 import galaxymod.utils.ZGHelper;
@@ -65,6 +65,6 @@ public class BlockZolniumCrystals extends BlockBush implements IPlantable {
 	
 	@Override
 	public CreativeTabs getCreativeTabToDisplayOn() {
-		return ProjectNovaCore.novaTabBlocks;
+		return ZollernGalaxyCore.novaTabBlocks;
 	}
 }

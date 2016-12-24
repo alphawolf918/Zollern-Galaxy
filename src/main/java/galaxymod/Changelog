@@ -1,8 +1,14 @@
 == Zollern Galaxy v1.4.1 - Planet Lag Hotfix ==
 
 * Fixed lag issues on Zollus, Kriffon and Purgot.
-    * This was accomplished by removing the "CloudRenderer" method from their respective WorldProvider class.
-
+    * This was accomplished by removing the "CloudRenderer" methods from their respective WorldProvider classes.
+* Modified ChunkProviderZollus.java's mechanics to mimic Eden's.
+* Water on Purgot has been replaced with Purgot Dirt.
+    * The planet is intended to be too cool for water to stay in liquid form.
+* Changed texture of Magrock from black to bright orange.
+    * This fits much better with the colors of the rest of Eden.
+        * Also makes it harder to see the lava lakes, which is a good survival mechanic in itself.
+* Water in the Magma Lands biome on planet Eden has now been changed to Magrock.
 
 == Zollern Galaxy v1.4 ==
 
@@ -37,7 +43,8 @@
         * Each Planet has its own levels for each.
             * If the levels are above (or below) a certain value, the Player will be damaged.
                 * This can be prevented by having the respective blueprint for protection in your inventory.
-                    * The blueprints also take damage over time and must be recharged. (Not yet operational as of right now)
+                    * The blueprints also take damage over time and must be recharged. 
+                        * (Recharging not yet operational as of right now)
 * Changed random Y coordinate's max spawn from 256 to 128.
     * This should lower memory usage by a crap-ton.
 * Added more Planet bioclasses.
@@ -49,12 +56,14 @@
 * Protection blueprints are now craftable.
 * Slightly tweaked planet temperature algorithm.
 * Added the Oasis planet in the Praedyth star system.
+    * This planet is based on a planet I encountered once in No Man's Sky that I will never see again.
 * Set gasses to null after they're retrieved.
 * Added Oasis Crystal.
     * Takes user to planet Oasis in the Praedyth system.
-        * Currently unfinished, will be modified and improved in the next update.
+        * Currently unfinished planet, will be modified and improved in the next major update.
     * Craftable.
 * Added a special "Healing Station" block that heals the Player when right-clicked.
+    * Not obtainable in Survival yet.
 * Removed chunk changing events from NovaEvents.java.
 
 -- FIXES --
@@ -74,7 +83,6 @@
 * Psios System
     * Added 2 new blocks and 1 new biome to planet Purgot.
         * Biome: Limbo - Comprised of Whiterock on top and Purgrock on the bottom.
-        * Blocks: Whiterock and Blackrock.
             * Whiterock will turn into Blackrock when stepped on, and Blackrock will eventually turn back into Whiterock on its own.
     * Added Cobalt Ore to Purgot.
     * Villagers should no longer turn into aliens (sorry xD).

@@ -46,10 +46,10 @@ import cpw.mods.fml.common.registry.GameRegistry;
 @Mod(modid = ModInfo.MODID, name = ModInfo.NAME,
 		dependencies = "required-after:GalacticraftCore",
 		version = ModInfo.VERSION)
-public class ProjectNovaCore {
+public class ZollernGalaxyCore {
 	
 	@Mod.Instance(ModInfo.MODID)
-	private static ProjectNovaCore INSTANCE;
+	private static ZollernGalaxyCore INSTANCE;
 	
 	@SidedProxy(clientSide = ModInfo.PROXY_LOCATION + ".ClientProxy",
 			serverSide = ModInfo.PROXY_LOCATION + ".CommonProxy")
@@ -60,7 +60,7 @@ public class ProjectNovaCore {
 	
 	public static final int modGuiIndex = 14;
 	
-	public static ProjectNovaCore getInstance() {
+	public static ZollernGalaxyCore getInstance() {
 		return INSTANCE;
 	}
 	

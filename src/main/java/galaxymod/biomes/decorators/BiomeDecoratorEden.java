@@ -26,6 +26,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeDecorator;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.gen.feature.WorldGenDeadBush;
+import net.minecraft.world.gen.feature.WorldGenDungeons;
 import net.minecraft.world.gen.feature.WorldGenTallGrass;
 import net.minecraft.world.gen.feature.WorldGenWaterlily;
 import net.minecraftforge.common.MinecraftForge;
@@ -43,6 +44,7 @@ public class BiomeDecoratorEden extends BiomeDecorator {
 	public int edenGravPerChunk = 1;
 	public int edenLakesPerChunk = 1;
 	public int edenWaterLillyPerChunk = 0;
+	public int dungeonSpawnerPerChunk = 1;
 	
 	@Override
 	public void decorateChunk(World world, Random rand, BiomeGenBase biome,
@@ -226,6 +228,16 @@ public class BiomeDecoratorEden extends BiomeDecorator {
 					new WorldGenEdenFlowers(BlockList.edenFlower, 7).generate(
 							this.currentWorld, this.randomGenerator, x, y, z);
 				}
+			}
+			
+			// Dungeon Spawner
+			for (i = 0; this.getGen(EventType.CUSTOM)
+					&& i < this.dungeonSpawnerPerChunk; ++i) {
+				x = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
+				y = this.randomGenerator.nextInt(128);
+				z = this.chunk_Z + this.randomGenerator.nextInt(16) + 8;
+				new WorldGenDungeons().generate(this.currentWorld,
+						this.randomGenerator, x, y, z);
 			}
 		}
 		

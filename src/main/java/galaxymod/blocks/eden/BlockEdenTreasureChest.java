@@ -13,7 +13,7 @@
 
 package galaxymod.blocks.eden;
 
-import galaxymod.ProjectNovaCore;
+import galaxymod.ZollernGalaxyCore;
 import galaxymod.blocks.BlockContainerNG;
 import galaxymod.tileentities.eden.TileEntityTreasureChestEden;
 import galaxymod.utils.ZGHelper;
@@ -97,7 +97,7 @@ public class BlockEdenTreasureChest extends BlockContainerNG {
 	
 	@Override
 	public int getRenderType() {
-		return ProjectNovaCore.proxy.getBlockRender(this);
+		return ZollernGalaxyCore.proxy.getBlockRender(this);
 	}
 	
 	@Override

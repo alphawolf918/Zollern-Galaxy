@@ -100,35 +100,35 @@ public class ChunkProviderEden extends ChunkProviderGenerate {
 	double[] field_147426_g;
 	int[][] field_73219_j = new int[32][32];
 	
-	private MapGenDungeon dungeonGenerator = new MapGenDungeon(
-			BlockList.edenRockBricks, 14, 8, 24, 4);
+	private MapGenDungeon dungeonGeneratorMain = new MapGenDungeon(
+			BlockList.edenRockBricks, 14, 10, 24, 6);
 	{
-		this.dungeonGenerator.otherRooms.add(new RoomEmptyNG(null, 0, 0, 0,
+		this.dungeonGeneratorMain.otherRooms.add(new RoomEmptyNG(null, 0, 0, 0,
 				ForgeDirection.UNKNOWN));
-		this.dungeonGenerator.otherRooms.add(new RoomSpawnerEden(null, 0, 0, 0,
-				ForgeDirection.UNKNOWN));
-		this.dungeonGenerator.otherRooms.add(new RoomSpawnerEden(null, 0, 0, 0,
-				ForgeDirection.UNKNOWN));
-		this.dungeonGenerator.otherRooms.add(new RoomSpawnerEden(null, 0, 0, 0,
-				ForgeDirection.UNKNOWN));
-		this.dungeonGenerator.otherRooms.add(new RoomSpawnerEden(null, 0, 0, 0,
-				ForgeDirection.UNKNOWN));
-		this.dungeonGenerator.otherRooms.add(new RoomSpawnerEden(null, 0, 0, 0,
-				ForgeDirection.UNKNOWN));
-		this.dungeonGenerator.otherRooms.add(new RoomSpawnerEden(null, 0, 0, 0,
-				ForgeDirection.UNKNOWN));
-		this.dungeonGenerator.otherRooms.add(new RoomSpawnerEden(null, 0, 0, 0,
-				ForgeDirection.UNKNOWN));
-		this.dungeonGenerator.otherRooms.add(new RoomSpawnerEden(null, 0, 0, 0,
-				ForgeDirection.UNKNOWN));
-		this.dungeonGenerator.otherRooms.add(new RoomChestsEden(null, 0, 0, 0,
-				ForgeDirection.UNKNOWN));
-		this.dungeonGenerator.otherRooms.add(new RoomChestsEden(null, 0, 0, 0,
-				ForgeDirection.UNKNOWN));
-		this.dungeonGenerator.bossRooms.add(new RoomBossEden(null, 0, 0, 0,
-				ForgeDirection.UNKNOWN));
-		this.dungeonGenerator.treasureRooms.add(new RoomTreasureEden(null, 0,
+		this.dungeonGeneratorMain.otherRooms.add(new RoomSpawnerEden(null, 0,
 				0, 0, ForgeDirection.UNKNOWN));
+		this.dungeonGeneratorMain.otherRooms.add(new RoomSpawnerEden(null, 0,
+				0, 0, ForgeDirection.UNKNOWN));
+		this.dungeonGeneratorMain.otherRooms.add(new RoomSpawnerEden(null, 0,
+				0, 0, ForgeDirection.UNKNOWN));
+		this.dungeonGeneratorMain.otherRooms.add(new RoomSpawnerEden(null, 0,
+				0, 0, ForgeDirection.UNKNOWN));
+		this.dungeonGeneratorMain.otherRooms.add(new RoomSpawnerEden(null, 0,
+				0, 0, ForgeDirection.UNKNOWN));
+		this.dungeonGeneratorMain.otherRooms.add(new RoomSpawnerEden(null, 0,
+				0, 0, ForgeDirection.UNKNOWN));
+		this.dungeonGeneratorMain.otherRooms.add(new RoomSpawnerEden(null, 0,
+				0, 0, ForgeDirection.UNKNOWN));
+		this.dungeonGeneratorMain.otherRooms.add(new RoomSpawnerEden(null, 0,
+				0, 0, ForgeDirection.UNKNOWN));
+		this.dungeonGeneratorMain.otherRooms.add(new RoomChestsEden(null, 0, 0,
+				0, ForgeDirection.UNKNOWN));
+		this.dungeonGeneratorMain.otherRooms.add(new RoomChestsEden(null, 0, 0,
+				0, ForgeDirection.UNKNOWN));
+		this.dungeonGeneratorMain.bossRooms.add(new RoomBossEden(null, 0, 0, 0,
+				ForgeDirection.UNKNOWN));
+		this.dungeonGeneratorMain.treasureRooms.add(new RoomTreasureEden(null,
+				0, 0, 0, ForgeDirection.UNKNOWN));
 	}
 	
 	public ChunkProviderEden(World world, long seed, boolean flag) {
@@ -175,7 +175,7 @@ public class ChunkProviderEden extends ChunkProviderGenerate {
 		// metaStorage);
 		this.ravineGenerator.func_151539_a(this, this.worldObj, x, z,
 				blockStorage);
-		this.dungeonGenerator.generateUsingArrays(this.worldObj,
+		this.dungeonGeneratorMain.generateUsingArrays(this.worldObj,
 				this.worldObj.getSeed(), x * 16, 30, z * 16, x, z,
 				blockStorage, metaStorage);
 		Chunk chunk = new Chunk(this.worldObj, blockStorage, metaStorage, x, z);
@@ -394,7 +394,7 @@ public class ChunkProviderEden extends ChunkProviderGenerate {
 		this.rand.setSeed(x * var7 + z * var9 ^ this.worldObj.getSeed());
 		this.mineshaftGenerator.generateStructuresInChunk(this.worldObj,
 				this.rand, x, z);
-		this.dungeonGenerator.handleTileEntities(this.rand);
+		this.dungeonGeneratorMain.handleTileEntities(this.rand);
 		biomeGen.decorate(this.worldObj, this.rand, var4, var5);
 		this.decoratePlanet(this.worldObj, this.rand, var4, var5);
 		SpawnerAnimals.performWorldGenSpawning(this.worldObj, biomeGen,

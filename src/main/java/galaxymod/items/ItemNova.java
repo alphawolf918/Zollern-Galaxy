@@ -13,7 +13,7 @@
 
 package galaxymod.items;
 
-import galaxymod.ProjectNovaCore;
+import galaxymod.ZollernGalaxyCore;
 import galaxymod.utils.OreDictionaryNova;
 import galaxymod.utils.ZGHelper;
 import net.minecraft.creativetab.CreativeTabs;
@@ -48,6 +48,6 @@ public class ItemNova extends Item {
 	
 	@Override
 	public CreativeTabs getCreativeTab() {
-		return ProjectNovaCore.novaTabItems;
+		return ZollernGalaxyCore.novaTabItems;
 	}
 }

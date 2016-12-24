@@ -213,15 +213,15 @@ public class ZGPlanets {
 				WorldProviderEden.class);
 		totalPlanets++;
 		
-		// Planet Kriffus
+		// Planet Kriffon
 		planetKriffon.setParentSolarSystem(systemPsios);
 		planetKriffon.setPlanetClass(EnumPlanetClass.Y);
 		planetKriffon.setRingColorRGB(0.1F, 0.9F, 2.6F);
 		planetKriffon.setPhaseShift(2.0F);
 		planetKriffon.setRelativeOrbitTime(2.0F);
 		planetKriffon.setDistanceFromCenter(0.4f);
-		planetKriffon.setPlanetGasses(IAtmosphericGas.OXYGEN,
-				IAtmosphericGas.ARGON, IAtmosphericGas.METHANE);
+		planetKriffon.setPlanetGasses(IAtmosphericGas.ARGON,
+				IAtmosphericGas.METHANE);
 		planetKriffon.setTierRequired(4);
 		planetKriffon.setRelativeSize(20.0F);
 		planetKriffon.setPlanetTemperature(327.4f);
@@ -238,16 +238,16 @@ public class ZGPlanets {
 		planetPurgot.setPlanetClass(EnumPlanetClass.NINE);
 		planetPurgot.setRingColorRGB(0.1F, 0.9F, 2.6F);
 		planetPurgot.setPhaseShift(0.2F);
-		planetPurgot.setRelativeOrbitTime(16F);
-		planetPurgot.setDistanceFromCenter(6.0f);
+		planetPurgot.setRelativeOrbitTime(14F);
+		planetPurgot.setDistanceFromCenter(4.0f);
 		planetPurgot.setPlanetGasses(IAtmosphericGas.OXYGEN,
 				IAtmosphericGas.WATER, IAtmosphericGas.NITROGEN,
 				IAtmosphericGas.ARGON);
 		planetPurgot.setTierRequired(5);
 		planetPurgot.setRelativeSize(40.0F);
-		planetPurgot.setPlanetTemperature(26.5f);
+		planetPurgot.setPlanetTemperature(-74.5f);
 		planetPurgot.setPlanetToxicity(15.2f);
-		planetPurgot.setPlanetRadiation(5.2f);
+		planetPurgot.setPlanetRadiation(6.2f);
 		planetPurgot.setPlanetIcon("purgot");
 		planetPurgot.setDimensionInfo(ConfigManagerZG.planetPurgotDimensionId,
 				WorldProviderPurgot.class);

@@ -13,7 +13,7 @@
 
 package galaxymod.blocks.eden;
 
-import galaxymod.ProjectNovaCore;
+import galaxymod.ZollernGalaxyCore;
 import galaxymod.blocks.BlockList;
 import galaxymod.utils.ZGHelper;
 import galaxymod.worldgen.WorldGenTreeNG;
@@ -43,7 +43,7 @@ public class BlockEdenWoodSapling extends BlockBush implements IGrowable {
 	
 	@Override
 	public CreativeTabs getCreativeTabToDisplayOn() {
-		return ProjectNovaCore.novaTabBlocks;
+		return ZollernGalaxyCore.novaTabBlocks;
 	}
 	
 	/**

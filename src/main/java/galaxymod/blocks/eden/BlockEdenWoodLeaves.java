@@ -13,7 +13,7 @@
 
 package galaxymod.blocks.eden;
 
-import galaxymod.ProjectNovaCore;
+import galaxymod.ZollernGalaxyCore;
 import galaxymod.blocks.BlockList;
 import galaxymod.utils.ZGHelper;
 import java.util.ArrayList;
@@ -49,7 +49,7 @@ public class BlockEdenWoodLeaves extends BlockLeavesBase implements IShearable {
 	
 	@Override
 	public CreativeTabs getCreativeTabToDisplayOn() {
-		return ProjectNovaCore.novaTabBlocks;
+		return ZollernGalaxyCore.novaTabBlocks;
 	}
 	
 	@Override

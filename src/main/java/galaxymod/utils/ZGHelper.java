@@ -13,7 +13,7 @@
 
 package galaxymod.utils;
 
-import galaxymod.ProjectNovaCore;
+import galaxymod.ZollernGalaxyCore;
 import galaxymod.blocks.BlockList;
 import java.io.File;
 import java.util.Random;
@@ -33,11 +33,11 @@ import cpw.mods.fml.relauncher.FMLRelaunchLog;
 public class ZGHelper {
 	
 	public static void setTab(Block block) {
-		block.setCreativeTab(ProjectNovaCore.novaTabBlocks);
+		block.setCreativeTab(ZollernGalaxyCore.novaTabBlocks);
 	}
 	
 	public static void setTab(Item item) {
-		item.setCreativeTab(ProjectNovaCore.novaTabItems);
+		item.setCreativeTab(ZollernGalaxyCore.novaTabItems);
 	}
 	
 	public static void setName(Block block, String strName) {

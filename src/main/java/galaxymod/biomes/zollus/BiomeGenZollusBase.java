@@ -28,7 +28,6 @@ import net.minecraft.world.biome.BiomeDecorator;
 public class BiomeGenZollusBase extends BiomeSpace {
 	
 	public static int grassFoilageColorMultiplier = 0x00008b;
-	public static int chunkHeightModifier = 12;
 	protected Block stoneBlock;
 	protected byte topMeta;
 	protected byte fillerMeta;

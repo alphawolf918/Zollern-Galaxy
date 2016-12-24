@@ -107,15 +107,6 @@ public class SkyProviderZollus extends IRenderHandler {
 		float f3 = (float) vec3.zCoord;
 		float f6;
 		
-		if (mc.gameSettings.anaglyph) {
-			float f4 = (f1 * 30.0F + f2 * 59.0F + f3 * 11.0F) / 100.0F;
-			float f5 = (f1 * 30.0F + f2 * 70.0F) / 100.0F;
-			f6 = (f1 * 30.0F + f3 * 70.0F) / 100.0F;
-			f1 = f4;
-			f2 = f5;
-			f3 = f6;
-		}
-		
 		GL11.glColor3f(1F, 1F, 1F);
 		Tessellator var23 = Tessellator.instance;
 		Tessellator tessellator1 = Tessellator.instance;

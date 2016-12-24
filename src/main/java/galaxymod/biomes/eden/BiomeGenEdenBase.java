@@ -18,9 +18,16 @@ import galaxymod.biomes.BiomeSpace;
 import galaxymod.biomes.decorators.BiomeDecoratorEden;
 import galaxymod.blocks.BlockList;
 import galaxymod.core.ZGPlanets;
+import galaxymod.core.config.ConfigManagerZG;
 import java.util.Random;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.entity.passive.EntityChicken;
+import net.minecraft.entity.passive.EntityCow;
+import net.minecraft.entity.passive.EntityHorse;
+import net.minecraft.entity.passive.EntityPig;
+import net.minecraft.entity.passive.EntitySheep;
+import net.minecraft.entity.passive.EntityWolf;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeDecorator;
@@ -53,6 +60,20 @@ public abstract class BiomeGenEdenBase extends BiomeSpace {
 		this.spawnableCreatureList.clear();
 		this.stoneBlock = BlockList.edenRock;
 		this.setPlanetForBiome(ZGPlanets.planetEden);
+		if (ConfigManagerZG.canEarthAnimalsSpawnOnEden) {
+			this.spawnableCreatureList.add(new SpawnListEntry(
+					EntityChicken.class, 100, 1, 2));
+			this.spawnableCreatureList.add(new SpawnListEntry(
+					EntitySheep.class, 100, 3, 5));
+			this.spawnableCreatureList.add(new SpawnListEntry(EntityWolf.class,
+					100, 5, 8));
+			this.spawnableCreatureList.add(new SpawnListEntry(EntityCow.class,
+					100, 2, 4));
+			this.spawnableCreatureList.add(new SpawnListEntry(EntityPig.class,
+					100, 1, 3));
+			this.spawnableCreatureList.add(new SpawnListEntry(
+					EntityHorse.class, 100, 2, 5));
+		}
 	}
 	
 	@Override

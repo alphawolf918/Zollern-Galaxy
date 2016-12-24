@@ -13,7 +13,7 @@
 
 package galaxymod.blocks.eden;
 
-import galaxymod.ProjectNovaCore;
+import galaxymod.ZollernGalaxyCore;
 import galaxymod.utils.ZGHelper;
 import java.util.Random;
 import net.minecraft.block.Block;
@@ -44,7 +44,7 @@ public class BlockEdenWoodLog extends BlockRotatedPillar {
 	
 	@Override
 	public CreativeTabs getCreativeTabToDisplayOn() {
-		return ProjectNovaCore.novaTabBlocks;
+		return ZollernGalaxyCore.novaTabBlocks;
 	}
 	
 	@Override

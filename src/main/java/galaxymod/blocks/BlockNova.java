@@ -13,7 +13,7 @@
 
 package galaxymod.blocks;
 
-import galaxymod.ProjectNovaCore;
+import galaxymod.ZollernGalaxyCore;
 import galaxymod.utils.ZGHelper;
 import java.util.Random;
 import net.minecraft.block.Block;
@@ -111,6 +111,6 @@ public class BlockNova extends Block {
 	
 	@Override
 	public CreativeTabs getCreativeTabToDisplayOn() {
-		return ProjectNovaCore.novaTabBlocks;
+		return ZollernGalaxyCore.novaTabBlocks;
 	}
 }
