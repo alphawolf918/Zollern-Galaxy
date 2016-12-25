@@ -61,7 +61,7 @@ public class BiomeDecoratorZollus extends BiomeDecorator {
 			
 			for (i = 0; this.getGen(EventType.FLOWERS)
 					&& i < this.zollusCrystalsPerChunk; ++i) {
-				if (this.randomGenerator.nextInt(6) == 0) {
+				if (this.randomGenerator.nextInt(3) == 0) {
 					x = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
 					y = this.randomGenerator.nextInt(256);
 					z = this.chunk_Z + this.randomGenerator.nextInt(16) + 8;

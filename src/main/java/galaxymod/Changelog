@@ -1,3 +1,16 @@
+== Zollern Galaxy v1.5 ==
+
+* Survival effects no longer affect blueprints or Players when in Creative Mode.
+* Changed the color of the Zollus Dirt block.
+* 
+
+== Zollern Galaxy v1.4.2 - Xathius Hotfix ==
+
+* Fixed Abstract Plains having biome ID of 0.
+    * I called the wrong variable name in the config, apparently.
+* Fixed Xathius lag issues.
+    * Forgot this one apparently, should be good now though.
+
 == Zollern Galaxy v1.4.1 - Planet Lag Hotfix ==
 
 * Fixed lag issues on Zollus, Kriffon and Purgot.

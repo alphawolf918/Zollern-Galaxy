@@ -44,8 +44,6 @@ public class RoomBossEden extends DungeonRoom {
 			this.sizeX = this.rand.nextInt(6) + 14;
 			this.sizeY = this.rand.nextInt(2) + 8;
 			this.sizeZ = this.rand.nextInt(6) + 14;
-			// NGHelper.echo("Boss room spawned at: " + posX + " " + posY + " "
-			// + posZ);
 		}
 	}
 	
@@ -141,14 +139,14 @@ public class RoomBossEden extends DungeonRoom {
 		
 		this.worldObj.setBlock(this.spawnerCoords.posX,
 				this.spawnerCoords.posY, this.spawnerCoords.posZ,
-				BlockList.edenRock, 15, 3);
+				BlockList.edenRockBricks, 15, 3);
 		
 		final TileEntity tile = this.worldObj.getTileEntity(
 				this.spawnerCoords.posX, this.spawnerCoords.posY,
 				this.spawnerCoords.posZ);
 		
 		if (tile == null || !(tile instanceof TileEntityDungeonSpawnerEden)) {
-			final TileEntityDungeonSpawnerEden spawner = new TileEntityDungeonSpawnerEden();
+			final TileEntityDungeonSpawner spawner = new TileEntityDungeonSpawnerEden();
 			spawner.setRoom(new Vector3(this.posX, this.posY, this.posZ),
 					new Vector3(this.sizeX, this.sizeY, this.sizeZ));
 			this.worldObj.setTileEntity(this.spawnerCoords.posX,

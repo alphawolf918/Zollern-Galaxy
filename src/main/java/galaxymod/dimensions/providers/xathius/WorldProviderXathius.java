@@ -16,14 +16,12 @@ package galaxymod.dimensions.providers.xathius;
 import galaxymod.core.ZGPlanets;
 import galaxymod.dimensions.chunkmanagers.WorldChunkManagerXathius;
 import galaxymod.dimensions.providers.WorldProviderNova;
-import galaxymod.dimensions.providers.renderers.SkyProviderXathius;
 import micdoodle8.mods.galacticraft.api.galaxies.CelestialBody;
 import micdoodle8.mods.galacticraft.api.vector.Vector3;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.biome.WorldChunkManager;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.IChunkProvider;
-import net.minecraftforge.client.IRenderHandler;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -184,11 +182,6 @@ public class WorldProviderXathius extends WorldProviderNova {
 	@Override
 	public long getDayLength() {
 		return 24000L;
-	}
-	
-	@Override
-	public IRenderHandler getSkyRenderer() {
-		return new SkyProviderXathius(this);
 	}
 	
 	@Override

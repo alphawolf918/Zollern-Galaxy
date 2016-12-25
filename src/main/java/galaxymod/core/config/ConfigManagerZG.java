@@ -196,7 +196,7 @@ public class ConfigManagerZG {
 		// Biomes (Xathius)
 		biomeXathiusId = configuration.get(CATEGORY_BIOMES,
 				"Xathius Happy Hills Biome ID", 166).getInt();
-		biomeAbstractPlainsId = configuration.get(CATEGORY_BIOMES,
+		biomeXathiusAbstractPlainsId = configuration.get(CATEGORY_BIOMES,
 				"Xathius Abstract Plains ID", 165).getInt();
 		
 		// Biomes (Oasis)

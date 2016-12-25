@@ -112,12 +112,14 @@ public class ZGEvents {
 	private void performSurvivalEffect(Item blueprintItem,
 			ZGDamageSource damageSource, float damageAmount,
 			EntityPlayer player, boolean check) {
-		InventoryPlayer matrix = player.inventory;
-		if (check) {
-			if (!matrix.hasItem(blueprintItem)) {
-				player.attackEntityFrom(damageSource, damageAmount);
-			} else {
-				this.damageItemStack(blueprintItem, damageAmount, player);
+		if (!player.capabilities.isCreativeMode) {
+			InventoryPlayer matrix = player.inventory;
+			if (check) {
+				if (!matrix.hasItem(blueprintItem)) {
+					player.attackEntityFrom(damageSource, damageAmount);
+				} else {
+					this.damageItemStack(blueprintItem, damageAmount, player);
+				}
 			}
 		}
 	}

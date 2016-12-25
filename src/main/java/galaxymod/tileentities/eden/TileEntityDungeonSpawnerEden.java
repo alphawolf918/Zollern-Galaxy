@@ -22,7 +22,6 @@ import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedSkeleton;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedSpider;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedZombie;
 import micdoodle8.mods.galacticraft.core.tile.TileEntityDungeonSpawner;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 
 public class TileEntityDungeonSpawnerEden extends TileEntityDungeonSpawner {
@@ -42,9 +41,9 @@ public class TileEntityDungeonSpawnerEden extends TileEntityDungeonSpawner {
 		return list;
 	}
 	
-	@Override
-	public void playSpawnSound(Entity entity) {
-		this.worldObj.playSoundAtEntity(entity,
-				"galacticraftcore:ambience.scaryscape", 9.0F, 1.4F);
-	}
+	// @Override
+	// public void playSpawnSound(Entity entity) {
+	// this.worldObj.playSoundAtEntity(entity,
+	// "galacticraftcore:ambience.scaryscape", 9.0F, 1.4F);
+	// }
 }
