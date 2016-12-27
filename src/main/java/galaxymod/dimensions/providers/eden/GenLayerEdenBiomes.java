@@ -23,7 +23,8 @@ public class GenLayerEdenBiomes extends GenLayer {
 	protected BiomeGenBase[] commonBiomes = { BiomeList.biomeEden,
 			BiomeList.biomeEdenRockMountains, BiomeList.biomeEdenTerranValley,
 			BiomeList.biomeEdenBloodDesert, BiomeList.biomeEdenGarden,
-			BiomeList.biomeEdenForest, BiomeList.biomeEdenMagmaLands };
+			BiomeList.biomeEdenForest, BiomeList.biomeEdenMagmaLands,
+			BiomeList.biomeEdenGoldenMeadow };
 	protected BiomeGenBase[] rareBiomes = { BiomeList.biomeEdenSnowyPlains,
 			BiomeList.biomeEdenSwamp };
 	

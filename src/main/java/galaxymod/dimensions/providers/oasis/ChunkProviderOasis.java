@@ -13,63 +13,47 @@
 
 package galaxymod.dimensions.providers.oasis;
 
-import static net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.ANIMALS;
-import static net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.ICE;
-import galaxymod.biomes.BiomeList;
 import galaxymod.biomes.decorators.ore.BiomeDecoratorOasisOre;
-import galaxymod.blocks.BlockList;
-import galaxymod.core.config.ConfigManagerZG;
 import galaxymod.worldgen.oasis.MapGenCavesOasis;
 import galaxymod.worldgen.oasis.MapGenOasisRavine;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import micdoodle8.mods.galacticraft.api.prefab.core.BlockMetaPair;
-import micdoodle8.mods.galacticraft.api.prefab.world.gen.BiomeDecoratorSpace;
-import micdoodle8.mods.galacticraft.api.prefab.world.gen.ChunkProviderSpace;
-import micdoodle8.mods.galacticraft.api.prefab.world.gen.MapGenBaseMeta;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedCreeper;
+import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedSkeleton;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedSpider;
+import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedZombie;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFalling;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.IProgressUpdate;
 import net.minecraft.util.MathHelper;
+import net.minecraft.world.ChunkPosition;
 import net.minecraft.world.SpawnerAnimals;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.biome.BiomeGenBase.SpawnListEntry;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.IChunkProvider;
+import net.minecraft.world.gen.ChunkProviderGenerate;
 import net.minecraft.world.gen.NoiseGeneratorOctaves;
 import net.minecraft.world.gen.NoiseGeneratorPerlin;
 import net.minecraft.world.gen.structure.MapGenMineshaft;
-import net.minecraft.world.gen.structure.MapGenScatteredFeature;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.terraingen.PopulateChunkEvent;
-import net.minecraftforge.event.terraingen.TerrainGen;
-import com.google.common.collect.Lists;
 
-public class ChunkProviderOasis extends ChunkProviderSpace {
+public class ChunkProviderOasis extends ChunkProviderGenerate {
 	
 	private Random rand;
-	private final BiomeDecoratorOasisOre oasisBiomeDecorator = new BiomeDecoratorOasisOre();
-	private final MapGenCavesOasis caveGenerator = new MapGenCavesOasis();
-	private final MapGenOasisRavine ravineGenerator = new MapGenOasisRavine();
-	// private final WorldGenOasisDungeons dungeonGenerator = new
-	// WorldGenOasisDungeons();
-	private MapGenMineshaft mineshaftGenerator = new MapGenMineshaft();
-	private MapGenScatteredFeature scatteredFeatureGenerator = new MapGenScatteredFeature();
-	public World worldObj;
 	private NoiseGeneratorOctaves noiseGen4;
 	public NoiseGeneratorOctaves noiseGen5;
 	public NoiseGeneratorOctaves noiseGen6;
 	public NoiseGeneratorOctaves mobSpawnerNoise;
+	private World worldObj;
 	private double[] stoneNoise;
-	int i3;
-	int j3;
-	int k3;
+	private MapGenCavesOasis caveGenerator;
+	public BiomeDecoratorOasisOre biomedecoratorplanet = new BiomeDecoratorOasisOre();
+	private MapGenOasisRavine ravineGenerator = new MapGenOasisRavine();
+	private MapGenMineshaft mineshaftGenerator = new MapGenMineshaft();
 	private BiomeGenBase[] biomesForGeneration;
 	double[] noise3;
 	double[] noise1;
@@ -87,10 +71,12 @@ public class ChunkProviderOasis extends ChunkProviderSpace {
 	double[] field_147428_e;
 	double[] field_147425_f;
 	double[] field_147426_g;
+	int[][] field_73219_j = new int[32][32];
 	
 	public ChunkProviderOasis(World world, long seed, boolean flag) {
 		super(world, seed, flag);
 		this.stoneNoise = new double[256];
+		this.caveGenerator = new MapGenCavesOasis();
 		this.worldObj = world;
 		this.rand = new Random(seed);
 		this.noiseGen4 = new NoiseGeneratorOctaves(this.rand, 4);
@@ -113,206 +99,6 @@ public class ChunkProviderOasis extends ChunkProviderSpace {
 	}
 	
 	@Override
-	protected BiomeDecoratorSpace getBiomeGenerator() {
-		return this.oasisBiomeDecorator;
-	}
-	
-	@Override
-	protected BiomeGenBase[] getBiomesForGeneration() {
-		return new BiomeGenBase[] { BiomeList.biomeOasis };
-	}
-	
-	@Override
-	protected BlockMetaPair getGrassBlock() {
-		return new BlockMetaPair(BlockList.oasisGrass, (byte) 0);
-	}
-	
-	@Override
-	protected BlockMetaPair getDirtBlock() {
-		return new BlockMetaPair(BlockList.oasisDirt, (byte) 0);
-	}
-	
-	@Override
-	protected BlockMetaPair getStoneBlock() {
-		return new BlockMetaPair(BlockList.oasisStone, (byte) 0);
-	}
-	
-	@Override
-	protected int getSeaLevel() {
-		return 53;
-	}
-	
-	@Override
-	protected List<MapGenBaseMeta> getWorldGenerators() {
-		List<MapGenBaseMeta> generators = Lists.newArrayList();
-		generators.add(this.caveGenerator);
-		return generators;
-	}
-	
-	@Override
-	protected SpawnListEntry[] getMonsters() {
-		List<SpawnListEntry> monsters = new ArrayList<SpawnListEntry>();
-		// monsters.add(new SpawnListEntry(EntityEvolvedZombie.class, 1, 1, 1));
-		// monsters.add(new SpawnListEntry(EntityEvolvedSpider.class, 1, 1, 1));
-		// monsters.add(new SpawnListEntry(EntityEvolvedSkeleton.class, 1, 1,
-		// 1));
-		// monsters.add(new SpawnListEntry(EntityEvolvedCreeper.class, 1, 1,
-		// 1));
-		return monsters.toArray(new SpawnListEntry[monsters.size()]);
-	}
-	
-	@Override
-	protected SpawnListEntry[] getCreatures() {
-		List<SpawnListEntry> creatures = new ArrayList<SpawnListEntry>();
-		// creatures.add(new SpawnListEntry(EntityMoolus.class, 1, 2, 2));
-		return creatures.toArray(new SpawnListEntry[creatures.size()]);
-	}
-	
-	@Override
-	public double getHeightModifier() {
-		return 2;
-	}
-	
-	@Override
-	public double getSmallFeatureHeightModifier() {
-		return 1;
-	}
-	
-	@Override
-	public double getMountainHeightModifier() {
-		return 2;
-	}
-	
-	@Override
-	public double getValleyHeightModifier() {
-		return 3;
-	}
-	
-	@Override
-	public List getPossibleCreatures(EnumCreatureType type, int x, int y, int z) {
-		if (this.worldObj.provider.dimensionId == ConfigManagerZG.planetOasisDimensionId) {
-			if (type == EnumCreatureType.monster) {
-				List monsters = new ArrayList();
-				monsters.add(new SpawnListEntry(EntityEvolvedCreeper.class, 1,
-						0, 1));
-				monsters.add(new SpawnListEntry(EntityEvolvedSpider.class, 1,
-						0, 1));
-				return monsters;
-			} else if (type == EnumCreatureType.creature) {
-				List creatures = new ArrayList();
-				return creatures;
-			} else {
-				return null;
-			}
-		} else {
-			return null;
-		}
-	}
-	
-	@Override
-	public void populate(IChunkProvider par1IChunkProvider, int par2, int par3) {
-		BlockFalling.fallInstantly = true;
-		final int var4 = par2 * 16;
-		final int var5 = par3 * 16;
-		BiomeGenBase currentBiome = this.worldObj.getBiomeGenForCoords(
-				var4 + 16, var5 + 16);
-		this.rand.setSeed(this.worldObj.getSeed());
-		final long var7 = this.rand.nextLong() / 2L * 2L + 1L;
-		final long var9 = this.rand.nextLong() / 2L * 2L + 1L;
-		this.rand.setSeed(par2 * var7 + par3 * var9 ^ this.worldObj.getSeed());
-		// this.dungeonGeneratorMain.handleTileEntities(this.rand);
-		boolean flag = false;
-		int k = var4;
-		int l = var5;
-		MinecraftForge.EVENT_BUS.post(new PopulateChunkEvent.Pre(
-				par1IChunkProvider, worldObj, rand, par2, par3, flag));
-		
-		this.mineshaftGenerator.generateStructuresInChunk(this.worldObj,
-				this.rand, par2, par3);
-		// this.dungeonGenerator.generate(worldObj, rand, var5, k, l);
-		this.scatteredFeatureGenerator.generateStructuresInChunk(this.worldObj,
-				this.rand, par2, par3);
-		int k1;
-		int l1;
-		int i2;
-		
-		if (TerrainGen.populate(par1IChunkProvider, worldObj, rand, par2, par3,
-				flag, ANIMALS)) {
-			SpawnerAnimals.performWorldGenSpawning(this.worldObj, currentBiome,
-					k + 8, l + 8, 16, 16, this.rand);
-		}
-		
-		boolean doGen;
-		
-		BiomeGenBase biomegenbase = currentBiome;
-		biomegenbase.decorate(this.worldObj, this.rand, k, l);
-		k += 8;
-		l += 8;
-		
-		doGen = TerrainGen.populate(par1IChunkProvider, worldObj, rand, par2,
-				par3, flag, ICE);
-		for (k1 = 0; doGen && k1 < 16; ++k1) {
-			for (l1 = 0; l1 < 16; ++l1) {
-				i2 = this.worldObj.getPrecipitationHeight(k + k1, l + l1);
-				
-				if (this.worldObj.isBlockFreezable(k1 + k, i2 - 1, l1 + l)) {
-					this.worldObj.setBlock(k1 + k, i2 - 1, l1 + l, Blocks.ice,
-							0, 2);
-				}
-			}
-		}
-		MinecraftForge.EVENT_BUS.post(new PopulateChunkEvent.Post(
-				par1IChunkProvider, worldObj, rand, par2, par3, flag));
-		this.decoratePlanet(this.worldObj, this.rand, var4, var5);
-		BlockFalling.fallInstantly = false;
-	}
-	
-	@Override
-	public boolean saveChunks(boolean flag, IProgressUpdate progress) {
-		return true;
-	}
-	
-	@Override
-	public boolean canSave() {
-		return true;
-	}
-	
-	@Override
-	public int getCraterProbability() {
-		return 2200;
-	}
-	
-	@Override
-	public void decoratePlanet(World par1World, Random par2Random, int par3,
-			int par4) {
-		this.oasisBiomeDecorator.decorate(par1World, par2Random, par3, par4);
-	}
-	
-	@Override
-	public int getLoadedChunkCount() {
-		return 0;
-	}
-	
-	@Override
-	public void recreateStructures(int x, int z) {
-		int y = this.worldObj.getHeightValue(x, z);
-		this.mineshaftGenerator.func_151539_a(this, this.worldObj, x, z,
-				(Block[]) null);
-		// this.dungeonGenerator.generate(worldObj, rand, x, y, z);
-		this.scatteredFeatureGenerator.func_151539_a(this, this.worldObj, x, z,
-				(Block[]) null);
-	}
-	
-	@Override
-	public void onChunkProvide(int cX, int cZ, Block[] blocks, byte[] metadata) {
-	}
-	
-	@Override
-	public void onPopulate(IChunkProvider provider, int cX, int cZ) {
-		
-	}
-	
-	@Override
 	public Chunk provideChunk(int x, int z) {
 		this.rand.setSeed(x * 341873128712L + z * 132897987541L);
 		Block[] blockStorage = new Block[256 * 256];
@@ -325,11 +111,11 @@ public class ChunkProviderOasis extends ChunkProviderSpace {
 				this.biomesForGeneration);
 		this.caveGenerator.generate(this, this.worldObj, x, z, blockStorage,
 				metaStorage);
+		// this.cavernGenerator.generate(this, this.worldObj, x, z,
+		// blockStorage,
+		// metaStorage);
 		this.ravineGenerator.func_151539_a(this, this.worldObj, x, z,
 				blockStorage);
-		// this.dungeonGeneratorMain.generateUsingArrays(this.worldObj,
-		// this.worldObj.getSeed(), x * 16, 30, z * 16, x, z,
-		// blockStorage, metaStorage);
 		Chunk chunk = new Chunk(this.worldObj, blockStorage, metaStorage, x, z);
 		byte[] chunkBiomes = chunk.getBiomeArray();
 		
@@ -338,33 +124,6 @@ public class ChunkProviderOasis extends ChunkProviderSpace {
 		}
 		chunk.generateSkylightMap();
 		return chunk;
-	}
-	
-	@Override
-	public void replaceBlocksForBiome(int chunkX, int chunkZ,
-			Block[] blockStorage, byte[] metaStorage, BiomeGenBase[] biomes) {
-		double d0 = 0.03125D;
-		this.stoneNoise = this.field_147430_m.func_151599_a(this.stoneNoise,
-				chunkX * 16, chunkZ * 16, 16, 16, d0 * 2.0D, d0 * 2.0D, 1.0D);
-		
-		for (int z = 0; z < 16; z++) {
-			for (int x = 0; x < 16; x++) {
-				BiomeGenBase biomegenbase = biomes[x + z * 16];
-				biomegenbase.genTerrainBlocks(this.worldObj, this.rand,
-						blockStorage, metaStorage, chunkX * 16 + z, chunkZ * 16
-								+ x, this.stoneNoise[x + z * 16]);
-			}
-		}
-	}
-	
-	@Override
-	public String makeString() {
-		return "OasisLevelSource";
-	}
-	
-	@Override
-	public Chunk loadChunk(int x, int z) {
-		return this.provideChunk(x, z);
 	}
 	
 	public void generateTerrain(int chunkX, int chunkZ, Block[] blockStorage) {
@@ -415,7 +174,7 @@ public class ChunkProviderOasis extends ChunkProviderSpace {
 								if ((d15 += d16) > 0.0D) {
 									blockStorage[j3 += short1] = Blocks.stone;
 								} else if (k2 * 8 + l2 < seaLevel) {
-									blockStorage[j3 += short1] = Blocks.lava;
+									blockStorage[j3 += short1] = Blocks.water;
 								} else {
 									blockStorage[j3 += short1] = null;
 								}
@@ -468,7 +227,7 @@ public class ChunkProviderOasis extends ChunkProviderSpace {
 								/ (rootHeight + 2.0F);
 						
 						if (biomegenbase1.rootHeight > biomegenbase.rootHeight) {
-							heightFactor /= 2.2F;
+							heightFactor /= 2.0F;
 						}
 						totalVariation += heightVariation * heightFactor;
 						totalHeight += rootHeight * heightFactor;
@@ -530,5 +289,120 @@ public class ChunkProviderOasis extends ChunkProviderSpace {
 				}
 			}
 		}
+	}
+	
+	@Override
+	public void replaceBlocksForBiome(int chunkX, int chunkZ,
+			Block[] blockStorage, byte[] metaStorage, BiomeGenBase[] biomes) {
+		double d0 = 0.03125D;
+		this.stoneNoise = this.field_147430_m.func_151599_a(this.stoneNoise,
+				chunkX * 16, chunkZ * 16, 16, 16, d0 * 2.0D, d0 * 2.0D, 1.0D);
+		
+		for (int z = 0; z < 16; z++) {
+			for (int x = 0; x < 16; x++) {
+				BiomeGenBase biomegenbase = biomes[x + z * 16];
+				biomegenbase.genTerrainBlocks(this.worldObj, this.rand,
+						blockStorage, metaStorage, chunkX * 16 + z, chunkZ * 16
+								+ x, this.stoneNoise[x + z * 16]);
+			}
+		}
+	}
+	
+	@Override
+	public Chunk loadChunk(int x, int z) {
+		return this.provideChunk(x, z);
+	}
+	
+	@Override
+	public boolean chunkExists(int x, int z) {
+		return true;
+	}
+	
+	@Override
+	public void populate(IChunkProvider chunk, int x, int z) {
+		BlockFalling.fallInstantly = true;
+		int var4 = x * 16;
+		int var5 = z * 16;
+		BiomeGenBase biomeGen = this.worldObj.getBiomeGenForCoords(var4 + 16,
+				var5 + 16);
+		this.worldObj.getBiomeGenForCoords(var4 + 16, var5 + 16);
+		this.rand.setSeed(this.worldObj.getSeed());
+		long var7 = this.rand.nextLong() / 2L * 2L + 1L;
+		long var9 = this.rand.nextLong() / 2L * 2L + 1L;
+		this.rand.setSeed(x * var7 + z * var9 ^ this.worldObj.getSeed());
+		this.mineshaftGenerator.generateStructuresInChunk(this.worldObj,
+				this.rand, x, z);
+		biomeGen.decorate(this.worldObj, this.rand, var4, var5);
+		this.decoratePlanet(this.worldObj, this.rand, var4, var5);
+		SpawnerAnimals.performWorldGenSpawning(this.worldObj, biomeGen,
+				var4 + 8, var5 + 8, 16, 16, this.rand);
+		// this.villageGenerator.generateStructuresInChunk(this.worldObj,
+		// this.rand, x, z);
+		BlockFalling.fallInstantly = false;
+	}
+	
+	public void decoratePlanet(World world, Random rand, int x, int z) {
+		this.biomedecoratorplanet.decorate(world, rand, x, z);
+	}
+	
+	@Override
+	public boolean saveChunks(boolean flag, IProgressUpdate progress) {
+		return true;
+	}
+	
+	@Override
+	public boolean canSave() {
+		return true;
+	}
+	
+	@Override
+	public String makeString() {
+		return "OasisLevelSource";
+	}
+	
+	@Override
+	public List getPossibleCreatures(EnumCreatureType type, int x, int y, int z) {
+		if (type == EnumCreatureType.monster) {
+			List monsters = new ArrayList();
+			monsters.add(new SpawnListEntry(EntityEvolvedZombie.class, 100, 4,
+					4));
+			monsters.add(new SpawnListEntry(EntityEvolvedSpider.class, 100, 4,
+					4));
+			monsters.add(new SpawnListEntry(EntityEvolvedSkeleton.class, 100,
+					4, 4));
+			monsters.add(new SpawnListEntry(EntityEvolvedCreeper.class, 100, 4,
+					4));
+			return monsters;
+		}
+		return null;
+	}
+	
+	@Override
+	public int getLoadedChunkCount() {
+		return 0;
+	}
+	
+	@Override
+	public void recreateStructures(int x, int z) {
+		// this.villageGenerator.func_151539_a(this, this.worldObj, x, z,
+		// (Block[]) null);
+		int y = this.worldObj.getHeightValue(x, z);
+		this.mineshaftGenerator.func_151539_a(this, this.worldObj, x, z,
+				(Block[]) null);
+	}
+	
+	@Override
+	public boolean unloadQueuedChunks() {
+		return false;
+	}
+	
+	@Override
+	public void saveExtraData() {
+	}
+	
+	@Override
+	public ChunkPosition func_147416_a(World world, String string, int x,
+			int y, int z) {
+		return null;
 	}
 }

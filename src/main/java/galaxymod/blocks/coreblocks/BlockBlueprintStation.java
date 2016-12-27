@@ -14,14 +14,16 @@
 package galaxymod.blocks.coreblocks;
 
 import galaxymod.blocks.BlockNova;
+import galaxymod.items.ItemBlueprint;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-public class BlockHealingStation extends BlockNova {
+public class BlockBlueprintStation extends BlockNova {
 	
-	public BlockHealingStation() {
-		super("heartblock", Material.anvil);
+	public BlockBlueprintStation() {
+		super("blueprintblock", Material.anvil);
 		this.setHardResist(10.0F);
 		this.setBlockUnbreakable();
 		this.setStepSound(soundTypeMetal);
@@ -35,8 +37,14 @@ public class BlockHealingStation extends BlockNova {
 				par6, par7, par8, par9);
 		EntityPlayer player = par5EntityPlayer;
 		if (!player.capabilities.isCreativeMode) {
-			float maxHealth = player.getMaxHealth();
-			player.setHealth(maxHealth);
+			ItemStack heldItem = player.getHeldItem();
+			if (heldItem != null) {
+				if (heldItem.getItem() instanceof ItemBlueprint) {
+					int blueprintDamage = heldItem.getItemDamage();
+					int blueprintNewDamage = (blueprintDamage - 50);
+					heldItem.setItemDamage(blueprintNewDamage);
+				}
+			}
 		}
 		return true;
 	}

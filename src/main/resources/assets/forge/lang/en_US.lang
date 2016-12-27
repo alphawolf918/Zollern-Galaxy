@@ -18,6 +18,7 @@ tile.galaxymod_purgotoasisportal.name=Praedyth Portal
 
 tile.galaxymod_edensurfaceblock.name=Eden's Grassrock
 tile.galaxymod_edengrass.name=Eden's Grass
+tile.galaxymod_edengoldengrass.name=Eden's Golden Grass
 tile.galaxymod_edensoil.name=Eden's Soil
 tile.galaxymod_edenrock.name=Edenrock Stone
 tile.galaxymod_edencobblerock.name=Edenrock Cobblestone
@@ -102,7 +103,8 @@ tile.galaxymod_oasiscobblerock.name=Oasis Cobblerock
 tile.galaxymod_oasisdirt.name=Oasis Dirt
 tile.galaxymod_oasistallgras.name=Oasis Tall Grass
 
-tile.galaxymod_healingstation.name=Healing Station
+tile.galaxymod_heartblock.name=Healing Station
+tile.galaxymod_blueprintblock.name=Blueprint Repair Station
 
 container.eden.treasurechest.name=Eden's Treasure
 

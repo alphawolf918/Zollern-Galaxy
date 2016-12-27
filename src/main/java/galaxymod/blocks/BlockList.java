@@ -13,7 +13,9 @@
 
 package galaxymod.blocks;
 
+import galaxymod.blocks.coreblocks.BlockBlueprintStation;
 import galaxymod.blocks.coreblocks.BlockHealingStation;
+import galaxymod.blocks.eden.BlockEdenGoldenGrass;
 import galaxymod.blocks.eden.BlockEdenTreasureChest;
 import galaxymod.blocks.eden.BlockEdenWoodLeaves;
 import galaxymod.blocks.eden.BlockEdenWoodLog;
@@ -124,6 +126,7 @@ public class BlockList {
 	public static final Block edenFlowerCyan = new EdenFlower("cyan");
 	public static final Block edenFlowerGreen = new EdenFlower("green");
 	public static final Block edenGrass = new EdenGrass();
+	public static final Block edenGoldenGrass = new BlockEdenGoldenGrass();
 	public static final Block edenTallGrass = new EdenTallGrass();
 	public static final Block edenBloodSand = new BloodSand();
 	public static final Block edenBloodStone = new BlockNova("bloodstone",
@@ -214,6 +217,7 @@ public class BlockList {
 	public static Block oasisTallGrass = new OasisTallGrass();
 	
 	public static Block healingStation = new BlockHealingStation();
+	public static Block blueprintStation = new BlockBlueprintStation();
 	
 	public static void init() {
 		addBlock(zolarBlock);
@@ -258,6 +262,7 @@ public class BlockList {
 		addBlock(edenFlowerCyan);
 		addBlock(edenFlowerGreen);
 		addBlock(edenGrass);
+		addBlock(edenGoldenGrass);
 		addBlock(edenTallGrass);
 		addBlock(edenBloodSand);
 		addBlock(edenBloodStone);
@@ -321,6 +326,7 @@ public class BlockList {
 		addBlock(oasisTallGrass);
 		
 		addBlock(healingStation);
+		addBlock(blueprintStation);
 		
 		ZGHelper.echo("Loaded a total of " + totalBlocks + " new blocks.");
 	}

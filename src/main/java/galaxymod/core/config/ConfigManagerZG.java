@@ -71,6 +71,7 @@ public class ConfigManagerZG {
 	public static int biomeEdenMagmaLandsId;
 	public static int biomeEdenSnowyPlainsId;
 	public static int biomeEdenSwamplandsId;
+	public static int biomeEdenGoldenMeadowId;
 	
 	// Biomes (Zollus)
 	public static int biomeZollusIcyLandsId;
@@ -178,6 +179,8 @@ public class ConfigManagerZG {
 				"Eden Snowy Plains Biome ID", 171).getInt();
 		biomeEdenSwamplandsId = configuration.get(CATEGORY_BIOMES,
 				"Eden Swamplands Biome ID", 170).getInt();
+		biomeEdenGoldenMeadowId = configuration.get(CATEGORY_BIOMES,
+				"Eden Golden Meadow ID", 163).getInt();
 		
 		// Biomes (Zollus)
 		biomeZollusIcyLandsId = configuration.get(CATEGORY_BIOMES,

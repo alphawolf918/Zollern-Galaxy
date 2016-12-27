@@ -1,8 +1,22 @@
-== Zollern Galaxy v1.5 ==
+== Zollern Galaxy v1.4.4 - ChunkProvider Hotfix ==
+
+* Changed all ChunkProvider classes to match Eden's.
+    * This is in an attempt to stop the type-cast crashes with Thaumcraft (and potentially other mods as well).
+
+== Zollern Galaxy v1.4.3 ==
 
 * Survival effects no longer affect blueprints or Players when in Creative Mode.
 * Changed the color of the Zollus Dirt block.
-* 
+* Added a new block to Eden called Golden Grass.
+    * Just like regular grass, but golden!
+* Added a new biome to Eden called Golden Meadow.
+    * Golden Grass on top and Eden's Soil on the bottom.
+* "Outposts" now generate throughout Eden, anywhere on the planet.
+    * Random shelters that spawn as a convenience for the Player.
+    * Will always have a Healing Station and a Blueprint Repair Station.
+        * Healing Stations heal the Player's health fully.
+        * Blueprint Repair stations repair the Blueprint that the Player is holding when they right-click the block.
+* Updated Kriffon's ChunkProvider code to match Eden and Zollus.
 
 == Zollern Galaxy v1.4.2 - Xathius Hotfix ==
 

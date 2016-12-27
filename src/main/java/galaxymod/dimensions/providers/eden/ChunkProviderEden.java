@@ -75,9 +75,7 @@ public class ChunkProviderEden extends ChunkProviderGenerate {
 	private World worldObj;
 	private double[] stoneNoise;
 	private MapGenCavesEden caveGenerator;
-	// private MapGenCavernEden cavernGenerator;
 	public BiomeDecoratorEdenOre biomedecoratorplanet = new BiomeDecoratorEdenOre();
-	// private MapGenEdenVillage villageGenerator = new MapGenEdenVillage();
 	private MapGenEdenRavine ravineGenerator = new MapGenEdenRavine();
 	private final WorldGenEdenDungeons mobSpawnerGenerator = new WorldGenEdenDungeons();
 	private MapGenMineshaft mineshaftGenerator = new MapGenMineshaft();
@@ -135,7 +133,6 @@ public class ChunkProviderEden extends ChunkProviderGenerate {
 		super(world, seed, flag);
 		this.stoneNoise = new double[256];
 		this.caveGenerator = new MapGenCavesEden();
-		// this.cavernGenerator = new MapGenCavernEden();
 		this.worldObj = world;
 		this.rand = new Random(seed);
 		this.noiseGen4 = new NoiseGeneratorOctaves(this.rand, 4);

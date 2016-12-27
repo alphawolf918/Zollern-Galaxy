@@ -164,30 +164,6 @@ public class ZGEvents {
 				}
 				chunk.isModified = true;
 			}
-		} else if (worldObj.provider.dimensionId == ConfigManagerZG.planetEdenDimensionId) {
-			if (biome.equals(BiomeList.biomeEdenMagmaLands)) {
-				for (ExtendedBlockStorage storage : chunk
-						.getBlockStorageArray()) {
-					if (storage != null) {
-						for (int x = 0; x < 16; ++x) {
-							for (int y = 0; y < 16; ++y) {
-								for (int z = 0; z < 16; ++z) {
-									Block currentBlock = storage
-											.getBlockByExtId(x, y, z);
-									if (currentBlock == Blocks.water) {
-										storage.func_150818_a(x, y, z,
-												BlockList.edenMagmaRock);
-										if ((new Random()).nextInt(100) <= 5) {
-											storage.func_150818_a(x, (y + 1),
-													z, Blocks.fire);
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}
 		} else if (worldObj.provider.dimensionId == ConfigManagerZG.planetZollusDimensionId) {
 			if (biome.equals(BiomeList.biomeZollus)) {
 				for (ExtendedBlockStorage storage : chunk

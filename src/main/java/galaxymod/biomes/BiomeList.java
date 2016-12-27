@@ -17,6 +17,7 @@ import galaxymod.biomes.eden.BiomeEden;
 import galaxymod.biomes.eden.BiomeEdenBloodDesert;
 import galaxymod.biomes.eden.BiomeEdenForest;
 import galaxymod.biomes.eden.BiomeEdenGarden;
+import galaxymod.biomes.eden.BiomeEdenGoldenMeadow;
 import galaxymod.biomes.eden.BiomeEdenMagmaLands;
 import galaxymod.biomes.eden.BiomeEdenRockMountains;
 import galaxymod.biomes.eden.BiomeEdenSnowyPlains;
@@ -78,6 +79,8 @@ public class BiomeList {
 			ConfigManagerZG.biomeEdenSnowyPlainsId);
 	public static BiomeSpace biomeEdenSwamp = new BiomeEdenSwamp(
 			ConfigManagerZG.biomeEdenSwamplandsId);
+	public static BiomeSpace biomeEdenGoldenMeadow = new BiomeEdenGoldenMeadow(
+			ConfigManagerZG.biomeEdenGoldenMeadowId);
 	
 	public static BiomeSpace biomePurgatory = ((BiomeGenPurgotBase) new BiomeGenPurgotBase(
 			ConfigManagerZG.biomePurgatoryId).setTemp(4F).setBiomeName(
@@ -103,6 +106,7 @@ public class BiomeList {
 		addBiome(biomeEdenMagmaLands, BiomeType.WARM, 0);
 		addBiome(biomeEdenSnowyPlains, BiomeType.ICY, 0);
 		addBiome(biomeEdenSwamp, BiomeType.WARM, 0);
+		addBiome(biomeEdenGoldenMeadow, BiomeType.WARM, 0);
 		
 		// PURGOT
 		addBiome(biomePurgatory, BiomeType.COOL, 0);

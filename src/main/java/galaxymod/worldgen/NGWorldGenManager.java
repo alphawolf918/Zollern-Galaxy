@@ -70,6 +70,12 @@ public class NGWorldGenManager implements IWorldGenerator {
 			}
 		}
 		
+		// Outpost
+		if (random.nextInt(100) <= 20) {
+			this.spawnStructure(26, 50, world, random, x, y, z,
+					new WorldGenOutpost());
+		}
+		
 		// Eden's Flowers
 		if (random.nextInt(4) == 1) {
 			if (currentBiome == BiomeList.biomeEden

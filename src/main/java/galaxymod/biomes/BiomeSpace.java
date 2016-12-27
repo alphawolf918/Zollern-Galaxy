@@ -28,51 +28,12 @@ public class BiomeSpace extends BiomeGenBase {
 	public BiomeSpace(int par1) {
 		super(par1);
 		this.setColor(BiomeList.biomeColor);
+		this.temperature = 5F;
 	}
-	
-	/**
-	 * Gets the World object for this biome using Java Reflection.
-	 * 
-	 * @param provider
-	 *            The WorldProvider class to use.
-	 * @return The World object for this biome.
-	 */
-	// public World getWorldObj(Class<? extends WorldProviderNova> provider) {
-	// World worldObj = null;
-	// try {
-	// worldObj = (World) provider.getMethod("getWorldObj").invoke(null);
-	// } catch (IllegalAccessException | IllegalArgumentException
-	// | InvocationTargetException | NoSuchMethodException
-	// | SecurityException e) {
-	// NovaHelper.logMessage(
-	// "Encountered a fatal error! Localized message: "
-	// + e.getLocalizedMessage(), Level.FATAL);
-	// e.printStackTrace();
-	// }
-	// return worldObj;
-	// }
 	
 	public World getWorld() {
 		return this.world;
 	}
-	
-	/**
-	 * Gets if it's currently day time or not.
-	 * 
-	 * @return True if day time, false if not.
-	 */
-	// public boolean getIsDaytime() {
-	// PlanetNova planet = this.getPlanetForBiome();
-	// Class<? extends WorldProviderNova> provider = (Class<? extends
-	// WorldProviderNova>) planet
-	// .getWorldProvider();
-	// World worldObj = this.getWorldObj(provider);
-	// boolean isDayTime = false;
-	// if (worldObj.skylightSubtracted < 4) {
-	// isDayTime = true;
-	// }
-	// return isDayTime;
-	// }
 	
 	/**
 	 * Sets the Planet to be associated with this biome.
@@ -159,7 +120,7 @@ public class BiomeSpace extends BiomeGenBase {
 		} else if (planet.getIsHotPlanet()) {
 			planetTemp += biomeTemp;
 		} else {
-			if (rand.nextInt(50000) <= 2) {
+			if (rand.nextInt(500) <= 2) {
 				if (rand.nextInt(50) <= 25) {
 					planetTemp += biomeTemp;
 					planetTemp = (planetTemp > maxTemp) ? maxTemp : planetTemp;
@@ -169,13 +130,6 @@ public class BiomeSpace extends BiomeGenBase {
 				}
 			}
 		}
-		// if (this.getIsDaytime()) {
-		// planetTemp += (biomeTemp + rand.nextInt(5));
-		// planetTemp = (planetTemp > maxTemp) ? maxTemp : planetTemp;
-		// } else {
-		// planetTemp -= (biomeTemp - rand.nextInt(5));
-		// planetTemp = (planetTemp < minTemp) ? minTemp : planetTemp;
-		// }
 		return planetTemp;
 	}
 	

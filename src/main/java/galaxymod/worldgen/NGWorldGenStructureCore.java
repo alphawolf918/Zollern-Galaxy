@@ -27,7 +27,8 @@ public abstract class NGWorldGenStructureCore extends WorldGenerator {
 				BlockList.edenBloodSand, BlockList.edenBloodStone,
 				BlockList.edenSoil, BlockList.edenCobbleRock,
 				BlockList.edenGrass, BlockList.edenWinterRock,
-				BlockList.edenMagmaRock, BlockList.edenWinterRock };
+				BlockList.edenMagmaRock, BlockList.edenWinterRock,
+				BlockList.edenGoldenGrass };
 	}
 	
 	public boolean LocationIsValidSpawn(World world, int i, int j, int k) {
