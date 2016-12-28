@@ -48,7 +48,7 @@ public class BiomeList {
 	
 	public static BiomeSpace biomeKriffus = ((BiomeGenKriffonBase) new BiomeGenKriffonBase(
 			ConfigManagerZG.biomeKriffonFlamingPlainsId)
-			.setBiomeName("Scorched Valley")).setTemp(10F).setBlocks(
+			.setBiomeName("Scorched Lands")).setTemp(10F).setBlocks(
 			BlockList.kriffRock, BlockList.kriffDirt);
 	
 	public static BiomeSpace biomeXathius = ((BiomeGenXathiusBase) new BiomeGenXathiusBase(

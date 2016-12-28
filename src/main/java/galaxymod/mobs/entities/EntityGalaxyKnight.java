@@ -14,6 +14,7 @@
 package galaxymod.mobs.entities;
 
 import galaxymod.utils.ModInfo;
+import micdoodle8.mods.galacticraft.api.entity.IEntityBreathable;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIAttackOnCollide;
 import net.minecraft.entity.ai.EntityAIBreakDoor;
@@ -30,7 +31,7 @@ import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
 
-public class EntityGalaxyKnight extends EntityMob {
+public class EntityGalaxyKnight extends EntityMob implements IEntityBreathable {
 	
 	public EntityGalaxyKnight(World par1World) {
 		super(par1World);
@@ -97,5 +98,10 @@ public class EntityGalaxyKnight extends EntityMob {
 				.setBaseValue(0.2D);
 		this.getEntityAttribute(SharedMonsterAttributes.attackDamage)
 				.setBaseValue(8.0D);
+	}
+	
+	@Override
+	public boolean canBreath() {
+		return true;
 	}
 }

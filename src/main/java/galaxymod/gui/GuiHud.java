@@ -16,6 +16,7 @@ package galaxymod.gui;
 import galaxymod.biomes.BiomeSpace;
 import galaxymod.core.EnumPlanetClass;
 import galaxymod.core.PlanetNova;
+import galaxymod.core.config.ConfigManagerZG;
 import galaxymod.items.ItemList;
 import galaxymod.utils.ZGHelper;
 import net.minecraft.client.Minecraft;
@@ -90,23 +91,37 @@ public class GuiHud extends Gui {
 						fontRendererObj.drawString(s, 2, 26, i3);
 						fontRendererObj.drawString(s, 26, yPos - 20, i3);
 						
-						// Planet Temp
+						// Planet Temp (Displays in either F or C)
+						String tempType = ConfigManagerZG.temperatureType;
 						float planetTemp = biomeSpace.getPlanetTemp();
-						String strTemp = "" + (planetTemp * 1.0f);
-						if (strTemp.length() > 4) {
-							strTemp = strTemp.substring(0, 4);
+						if (tempType == "F") {
+							String strTemp = "" + (planetTemp * 1.0f);
+							strTemp = (strTemp.length() > 4) ? strTemp
+									.substring(0, 4) : strTemp;
+							String temp = "Temp: " + strTemp + " F";
+							fontRendererObj.drawString(temp, 2, 36, i3);
+							fontRendererObj.drawString(temp, 26, yPos - 30, i3);
+						} else if (tempType == "C") {
+							float planetTempCelsius = (((planetTemp - 32) * 5) / 9);
+							String strTemp = "" + (planetTempCelsius * 1.0f);
+							String temp = "Temp: " + strTemp + " C";
+							fontRendererObj.drawString(temp, 2, 36, i3);
+							fontRendererObj.drawString(temp, 26, yPos - 30, i3);
+						} else {
+							fontRendererObj.drawString("Error", 2, 36, i3);
+							fontRendererObj.drawString("Error", 26, yPos - 30,
+									i3);
 						}
-						String temp = "Temp: " + strTemp + " F";
-						fontRendererObj.drawString(temp, 2, 36, i3);
-						fontRendererObj.drawString(temp, 26, yPos - 30, i3);
 						
 						// Planet Name
 						PlanetNova planet = biomeSpace.getPlanetForBiome();
-						String planetName = ZGHelper
-								.capitalizeFirstLetter(planet.getName());
-						String p = "Planet: " + planetName;
-						fontRendererObj.drawString(p, 2, 46, i3);
-						fontRendererObj.drawString(p, 26, yPos - 40, i3);
+						if (planet != null) {
+							String planetName = ZGHelper
+									.capitalizeFirstLetter(planet.getName());
+							String p = "Planet: " + planetName;
+							fontRendererObj.drawString(p, 2, 46, i3);
+							fontRendererObj.drawString(p, 26, yPos - 40, i3);
+						}
 						
 						// Planet Class
 						EnumPlanetClass planetClass = planet.getPlanetClass();

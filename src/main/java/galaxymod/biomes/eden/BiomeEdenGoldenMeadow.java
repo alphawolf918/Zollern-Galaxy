@@ -24,12 +24,12 @@ public class BiomeEdenGoldenMeadow extends BiomeGenEdenBase {
 		super(p_i1985_1_);
 		this.setBiomeName("Golden Meadow");
 		this.setColor(BiomeList.biomeColor);
-		this.temperature = 4F;
+		this.temperature = 5F;
 		this.grassFoilageColorMultiplier = 0xffff00;
 		this.biomeDecor.waterlilyPerChunk = 0;
 		this.biomeDecor.edenFlowersPerChunk = 2;
-		this.biomeDecor.edenTallGrassPerChunk = 0;
-		this.biomeDecor.edenWoodTreesPerChunk = 1;
+		this.biomeDecor.edenTallGrassPerChunk = 5;
+		this.biomeDecor.edenWoodTreesPerChunk = 2;
 		this.theBiomeDecorator.generateLakes = true;
 		this.topBlock = BlockList.edenGoldenGrass;
 		this.fillerBlock = BlockList.edenSoil;

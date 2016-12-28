@@ -25,7 +25,7 @@ public class BiomeGenPurgotLimbo extends BiomeGenPurgotBase {
 		this.setTemp(1F);
 		this.grassFoilageColorMultiplier = 0xbfbfbf;
 		this.theBiomeDecorator.generateLakes = false;
-		this.waterColorMultiplier = 0x000000;
+		this.waterColorMultiplier = 0xffffff;
 		this.topBlock = BlockList.purgWhiteRock;
 		this.fillerBlock = BlockList.purgRock;
 	}

@@ -26,7 +26,6 @@ public class BiomeEdenBloodDesert extends BiomeGenEdenBase {
 		this.setBiomeName("Blood Desert");
 		this.biomeDecor.edenTallGrassPerChunk = 0;
 		this.biomeDecor.edenFlowersPerChunk = 0;
-		this.grassFoilageColorMultiplier = 0xbf0000;
 		this.theBiomeDecorator.generateLakes = false;
 		this.theBiomeDecorator.deadBushPerChunk = 2;
 		this.biomeDecor.edenDeadBushPerChunk = 2;

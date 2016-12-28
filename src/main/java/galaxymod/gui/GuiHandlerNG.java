@@ -35,7 +35,7 @@ public class GuiHandlerNG implements IGuiHandler {
 		TileEntity tile = world.getTileEntity(x, y, z);
 		if (playerBase == null) {
 			player.addChatMessage(new ChatComponentText(
-					"BUG. Players are null from server-side in Project Nova."));
+					"BUG. Players are null from server-side in Zollern Galaxy."));
 			return null;
 		}
 		return tile;

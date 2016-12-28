@@ -24,13 +24,14 @@ public class BiomeEdenSwamp extends BiomeGenEdenBase {
 		this.grassFoilageColorMultiplier = 0x00aa00;
 		this.temperature = 6.5F;
 		this.biomeDecor.edenFlowersPerChunk = 4;
-		this.biomeDecor.edenTallGrassPerChunk = 2;
+		this.biomeDecor.edenTallGrassPerChunk = 4;
 		this.biomeDecor.edenWoodTreesPerChunk = 25;
 		this.biomeDecor.edenSandPerChunk = 2;
 		this.biomeDecor.edenLakesPerChunk = 6;
 		this.biomeDecor.edenWaterLillyPerChunk = 800;
-		this.theBiomeDecorator.deadBushPerChunk = 1;
-		this.theBiomeDecorator.mushroomsPerChunk = 8;
+		this.biomeDecor.edenGravPerChunk = 2;
+		this.theBiomeDecorator.deadBushPerChunk = 2;
+		this.theBiomeDecorator.mushroomsPerChunk = 20;
 		this.topBlock = BlockList.edenGrass;
 		this.fillerBlock = BlockList.edenSoil;
 	}

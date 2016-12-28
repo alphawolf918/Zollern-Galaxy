@@ -13,7 +13,6 @@
 
 package galaxymod.mobs;
 
-import galaxymod.biomes.BiomeList;
 import galaxymod.mobs.entities.EntityGalaxyKnight;
 import galaxymod.mobs.entities.EntityGrayAlien;
 import galaxymod.mobs.entities.boss.EntityCrawlerBoss;
@@ -28,7 +27,6 @@ import galaxymod.utils.ZGHelper;
 import net.minecraft.entity.EntityList;
 import net.minecraft.entity.EntityList.EntityEggInfo;
 import net.minecraft.entity.EntityLiving;
-import net.minecraft.entity.EnumCreatureType;
 import cpw.mods.fml.common.registry.EntityRegistry;
 
 public class Mobs {
@@ -43,19 +41,9 @@ public class Mobs {
 		
 		// Moolus
 		registerEntity(EntityMoolus.class, "moolus", 0x008b00, 0xeeeeee);
-		EntityRegistry.addSpawn(EntityMoolus.class, 1, 0, 1,
-				EnumCreatureType.creature, BiomeList.biomeEden,
-				BiomeList.biomeEdenTerranValley, BiomeList.biomeEdenGarden,
-				BiomeList.biomeEdenForest, BiomeList.biomeEdenSnowyPlains,
-				BiomeList.biomeEdenSwamp);
 		
 		// Oinkus
 		registerEntity(EntityOinkus.class, "oinkus", 0x009f00, 0xeeffee);
-		EntityRegistry.addSpawn(EntityOinkus.class, 1, 0, 1,
-				EnumCreatureType.creature, BiomeList.biomeEden,
-				BiomeList.biomeEdenTerranValley, BiomeList.biomeEdenGarden,
-				BiomeList.biomeEdenForest, BiomeList.biomeEdenSnowyPlains,
-				BiomeList.biomeEdenSwamp);
 		
 		// Alien Squid
 		registerEntity(EntityAlienSquid.class, "aliensquid", 0x0099ff, 0xeeeeee);
@@ -78,10 +66,6 @@ public class Mobs {
 		// (Raspberry)
 		registerEntity(EntitySlimeRaspberry.class, "slime.raspberry", 0x000000,
 				0x0099ff);
-		EntityRegistry
-				.addSpawn(EntitySlimeRaspberry.class, 2, 1, 2,
-						EnumCreatureType.creature,
-						BiomeList.biomeXathiusAbstractPlains);
 		
 		ZGHelper.echo("Loaded a total of " + totalMobs + " new mobs.");
 	}

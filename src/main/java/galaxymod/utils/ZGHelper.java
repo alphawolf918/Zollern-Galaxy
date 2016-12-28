@@ -15,7 +15,6 @@ package galaxymod.utils;
 
 import galaxymod.ZollernGalaxyCore;
 import galaxymod.blocks.BlockList;
-import java.io.File;
 import java.util.Random;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
@@ -24,10 +23,8 @@ import net.minecraft.item.Item;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenFlowers;
-import net.minecraftforge.common.config.Configuration;
 import org.apache.logging.log4j.Level;
 import org.lwjgl.input.Keyboard;
-import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.relauncher.FMLRelaunchLog;
 
 public class ZGHelper {
@@ -100,24 +97,6 @@ public class ZGHelper {
 	public static void setNameAndTexture(Item item, String strBoth) {
 		setName(item, strBoth);
 		setTexture(item, strBoth);
-	}
-	
-	public static boolean getConfig(Configuration config,
-			String configCategory, String configKey,
-			boolean configDefaultValue, String configComment) {
-		return config.get(configCategory, configKey, configDefaultValue,
-				configComment).getBoolean();
-	}
-	
-	public static int getConfig(Configuration config, String configCategory,
-			String configKey, int configDefaultValue, String configComment) {
-		return config.get(configCategory, configKey, configDefaultValue,
-				configComment).getInt();
-	}
-	
-	public static File getFilePath(FMLPreInitializationEvent event) {
-		return new File(event.getModConfigurationDirectory().getAbsolutePath()
-				+ "galaxymod/");
 	}
 	
 	public static void addChatMessage(EntityPlayer player, String text) {

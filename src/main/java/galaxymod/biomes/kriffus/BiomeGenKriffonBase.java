@@ -28,7 +28,6 @@ import net.minecraft.world.biome.BiomeDecorator;
 public class BiomeGenKriffonBase extends BiomeSpace {
 	
 	public static int grassFoilageColorMultiplier = 0x8b0000;
-	public static int chunkHeightModifier = 12;
 	protected Block stoneBlock;
 	protected byte topMeta;
 	protected byte fillerMeta;
@@ -157,10 +156,6 @@ public class BiomeGenKriffonBase extends BiomeSpace {
 	public void genTerrainBlocks(World world, Random rand, Block[] block,
 			byte[] meta, int x, int z, double stoneNoise) {
 		this.genKriffonBiomeTerrain(world, rand, block, meta, x, z, stoneNoise);
-	}
-	
-	public static int getChunkHeightModifier() {
-		return chunkHeightModifier;
 	}
 	
 	@Override

@@ -28,12 +28,10 @@ import net.minecraft.world.biome.BiomeDecorator;
 public class BiomeGenPurgotBase extends BiomeSpace {
 	
 	public static int grassFoilageColorMultiplier = 0xffffff;
-	public static int chunkHeightModifier = 14;
 	protected Block stoneBlock;
 	protected byte topMeta;
 	protected byte fillerMeta;
 	protected byte stoneMeta;
-	public static int biomeHeightBaseModifier = 204;
 	public BiomeDecoratorPurgot biomeDecor = this.getBiomeDecorator();
 	
 	public BiomeGenPurgotBase(int p_i1971_1_) {
@@ -41,7 +39,6 @@ public class BiomeGenPurgotBase extends BiomeSpace {
 		this.enableRain = false;
 		this.enableSnow = true;
 		this.setColor(BiomeList.biomeColor);
-		this.setHeight(new Height(0.2F, 1.2F));
 		this.theBiomeDecorator.flowersPerChunk = -999;
 		this.theBiomeDecorator.treesPerChunk = -999;
 		this.theBiomeDecorator.grassPerChunk = -999;
@@ -165,10 +162,6 @@ public class BiomeGenPurgotBase extends BiomeSpace {
 	public void genTerrainBlocks(World world, Random rand, Block[] block,
 			byte[] meta, int x, int z, double stoneNoise) {
 		this.genPurgotBiomeTerrain(world, rand, block, meta, x, z, stoneNoise);
-	}
-	
-	public static int getChunkHeightModifier() {
-		return chunkHeightModifier;
 	}
 	
 	@Override

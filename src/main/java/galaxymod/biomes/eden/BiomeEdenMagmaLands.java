@@ -32,13 +32,13 @@ public class BiomeEdenMagmaLands extends BiomeGenEdenBase {
 		this.biomeDecor.edenFlowersPerChunk = 0;
 		this.biomeDecor.edenWoodTreesPerChunk = 0;
 		this.biomeDecor.edenDeadBushPerChunk = 0;
-		this.grassFoilageColorMultiplier = 0x009f44;
-		this.waterColorMultiplier = 0x009f9f;
+		this.grassFoilageColorMultiplier = 0x000;
+		this.waterColorMultiplier = 0x000000;
 		this.temperature = 8.5F;
-		this.spawnableMonsterList.add(new SpawnListEntry(EntityBlaze.class, 2,
-				1, 2));
+		this.spawnableMonsterList.add(new SpawnListEntry(EntityBlaze.class,
+				100, 1, 2));
 		this.topBlock = BlockList.edenMagmaRock;
-		this.fillerBlock = BlockList.edenMagmaRock;
+		this.fillerBlock = BlockList.edenRock;
 	}
 	
 	@Override
@@ -49,6 +49,6 @@ public class BiomeEdenMagmaLands extends BiomeGenEdenBase {
 	@Override
 	@SideOnly(Side.CLIENT)
 	public int getSkyColorByTemp(float p_76731_1_) {
-		return 0x4f0000;
+		return 0x000000;
 	}
 }

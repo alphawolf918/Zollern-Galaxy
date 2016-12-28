@@ -25,7 +25,7 @@ public class BiomeGenXathiusAbstractPlains extends BiomeGenXathiusBase {
 		this.setTemp(6F);
 		this.grassFoilageColorMultiplier = 0xbfbfbf;
 		this.theBiomeDecorator.generateLakes = false;
-		this.waterColorMultiplier = 0x000000;
+		this.waterColorMultiplier = 0x8b008b;
 		this.topBlock = BlockList.xathGrass;
 		this.fillerBlock = BlockList.xathRock;
 	}

@@ -12,9 +12,11 @@
 
 package galaxymod.biomes.decorators.ore;
 
+import galaxymod.biomes.oasis.BiomeGenOasisBase;
 import java.util.Random;
 import micdoodle8.mods.galacticraft.api.event.wgen.GCCoreEventPopulate;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.common.MinecraftForge;
 
@@ -63,7 +65,11 @@ public class BiomeDecoratorOasisOre extends BiomeDecoratorOre {
 	void generateOasis() {
 		MinecraftForge.EVENT_BUS.post(new GCCoreEventPopulate.Pre(
 				this.worldObj, this.randomGenerator, this.chunkX, this.chunkZ));
-		// this.genOre(7, this.prometheanGen, 4, 40);
+		BiomeGenBase currentBiome = worldObj.getBiomeGenForCoords(chunkX,
+				chunkZ);
+		if (currentBiome instanceof BiomeGenOasisBase) {
+			// this.genOre(7, this.prometheanGen, 4, 40);
+		}
 		MinecraftForge.EVENT_BUS.post(new GCCoreEventPopulate.Post(
 				this.worldObj, this.randomGenerator, this.chunkX, this.chunkZ));
 	}

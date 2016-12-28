@@ -29,6 +29,7 @@ public class WorldGenCrystalTower extends NGWorldGenStructureCore {
 	public boolean generate(World world, Random rand, int i, int j, int k) {
 		
 		j -= 10;
+		
 		if (world.getBlock(i, j + 1, k) == Blocks.air) {
 			return false;
 		}

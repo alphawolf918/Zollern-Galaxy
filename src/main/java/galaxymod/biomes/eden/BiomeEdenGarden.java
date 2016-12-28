@@ -25,7 +25,7 @@ public class BiomeEdenGarden extends BiomeGenEdenBase {
 		this.setBiomeName("Garden of Eden");
 		this.setColor(BiomeList.biomeColor);
 		this.temperature = 5F;
-		this.grassFoilageColorMultiplier = 0x009f8d;
+		this.grassFoilageColorMultiplier = 0x006f8d;
 		this.biomeDecor.waterlilyPerChunk = 2;
 		this.biomeDecor.edenFlowersPerChunk = 400;
 		this.theBiomeDecorator.generateLakes = true;

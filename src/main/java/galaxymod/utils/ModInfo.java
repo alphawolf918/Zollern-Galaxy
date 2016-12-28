@@ -20,8 +20,8 @@ public class ModInfo {
 	public static final int buildVersion = 0;
 	
 	public static final String MODID = "galaxymod";
-	public static final String NAME = "galaxymod";
-	public static final String OFFICIAL_NAME = "Zollern Galaxy";
+	public static final String NAME = "Zollern Galaxy";
+	public static final String OFFICIAL_NAME = NAME;
 	public static final String VERSION = majorVersion + "." + minorVersion
 			+ "." + buildVersion;
 	public static final String CHANNEL = MODID;

@@ -28,7 +28,6 @@ import net.minecraft.world.biome.BiomeDecorator;
 public class BiomeGenOasisBase extends BiomeSpace {
 	
 	public static int grassFoilageColorMultiplier = 0x00ff00;
-	public static int chunkHeightModifier = 12;
 	protected Block stoneBlock;
 	protected byte topMeta;
 	protected byte fillerMeta;
@@ -153,10 +152,6 @@ public class BiomeGenOasisBase extends BiomeSpace {
 	public void genTerrainBlocks(World world, Random rand, Block[] block,
 			byte[] meta, int x, int z, double stoneNoise) {
 		this.genOasisBiomeTerrain(world, rand, block, meta, x, z, stoneNoise);
-	}
-	
-	public static int getChunkHeightModifier() {
-		return chunkHeightModifier;
 	}
 	
 	@Override

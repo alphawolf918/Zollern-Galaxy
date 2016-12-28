@@ -28,8 +28,7 @@ public class BiomeEdenRockMountains extends BiomeGenEdenBase {
 		this.biomeDecor.edenFlowersPerChunk = 0;
 		this.theBiomeDecorator.generateLakes = false;
 		this.grassFoilageColorMultiplier = 0x009f44;
-		this.waterColorMultiplier = 0x009f9f;
-		this.temperature = 6F;
+		this.temperature = 7.2F;
 		this.enableRain = false;
 		this.topBlock = BlockList.edenRock;
 		this.fillerBlock = BlockList.edenCobbleRock;

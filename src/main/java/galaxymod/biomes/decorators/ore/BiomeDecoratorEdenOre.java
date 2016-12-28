@@ -13,10 +13,12 @@
 
 package galaxymod.biomes.decorators.ore;
 
+import galaxymod.biomes.eden.BiomeGenEdenBase;
 import galaxymod.blocks.BlockList;
 import java.util.Random;
 import micdoodle8.mods.galacticraft.core.world.gen.WorldGenMinableMeta;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.gen.feature.WorldGenerator;
 
 public class BiomeDecoratorEdenOre extends BiomeDecoratorOre {
@@ -85,20 +87,24 @@ public class BiomeDecoratorEdenOre extends BiomeDecoratorOre {
 			this.chunkX = chunkX;
 			this.chunkZ = chunkZ;
 			//
-			this.genOre(10, this.ironGen, 4, 60);
-			this.genOre(5, this.meteoricIronGen, 10, 20);
-			this.genOre(7, this.goldGen, 4, 75);
-			this.genOre(5, this.diamondGen, 10, 14);
-			this.genOre(4, this.emeraldGen, 10, 12);
-			this.genOre(5, this.copperGen, 4, 120);
-			this.genOre(6, this.tinGen, 4, 120);
-			this.genOre(8, this.coalGen, 2, 40);
-			this.genOre(7, this.redstoneGen, 2, 25);
-			this.genOre(7, this.lapisGen, 2, 25);
-			this.genOre(5, this.deshGen, 4, 30);
-			this.genOre(10, this.aluminumGen, 2, 72);
-			this.genOre(6, this.viriniumGen, 4, 12);
-			this.genOre(5, this.gravelGen, 4, 52);
+			BiomeGenBase currentBiome = worldObj.getBiomeGenForCoords(chunkX,
+					chunkZ);
+			if (currentBiome instanceof BiomeGenEdenBase) {
+				this.genOre(10, this.ironGen, 4, 60);
+				this.genOre(5, this.meteoricIronGen, 10, 20);
+				this.genOre(7, this.goldGen, 4, 75);
+				this.genOre(5, this.diamondGen, 10, 14);
+				this.genOre(4, this.emeraldGen, 10, 12);
+				this.genOre(5, this.copperGen, 4, 120);
+				this.genOre(6, this.tinGen, 4, 120);
+				this.genOre(8, this.coalGen, 2, 40);
+				this.genOre(7, this.redstoneGen, 2, 25);
+				this.genOre(7, this.lapisGen, 2, 25);
+				this.genOre(5, this.deshGen, 4, 30);
+				this.genOre(10, this.aluminumGen, 2, 72);
+				this.genOre(6, this.viriniumGen, 4, 12);
+				this.genOre(5, this.gravelGen, 4, 52);
+			}
 			//
 			this.worldObj = null;
 			this.randomGenerator = null;

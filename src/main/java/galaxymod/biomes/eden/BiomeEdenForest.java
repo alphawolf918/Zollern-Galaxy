@@ -20,7 +20,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class BiomeEdenForest extends BiomeEdenTerranValley {
 	
-	public static int grassFoilageColorMultiplier = 0x00ff22;
+	public static int grassFoilageColorMultiplier = 0x00ff00;
 	
 	public BiomeEdenForest(int p_i1971_1_) {
 		super(p_i1971_1_);
@@ -30,7 +30,7 @@ public class BiomeEdenForest extends BiomeEdenTerranValley {
 		this.enableSnow = true;
 		this.temperature = 5F;
 		this.biomeDecor.edenWoodTreesPerChunk = 1600;
-		this.biomeDecor.edenTallGrassPerChunk = 1;
+		this.biomeDecor.edenTallGrassPerChunk = 2;
 		this.spawnableCaveCreatureList.clear();
 		this.spawnableMonsterList.clear();
 		this.spawnableWaterCreatureList.clear();

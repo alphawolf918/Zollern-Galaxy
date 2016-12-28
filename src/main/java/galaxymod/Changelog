@@ -6,7 +6,7 @@
     * Same code that allows Zombies to hide from the sun in buildings and under trees.
 * Gray Aliens can now spawn in Villages and Outposts.
     * Can breathe in any atmosphere.
-    * Harmless mobs that moves around and can open doors.
+    * Harmless mobs that move around and can open doors.
 * Slightly modified lang file.
 * Fixed Praedyth star being wrong color in Oasis and Xathius SkyProvider classes.
 * Heavily modified config file.
@@ -14,6 +14,11 @@
 * Dungeon Spawners now spawn correctly on Eden.
 * Eden Villages have been heavily modified - should spawn more often now.
     * Third house should start spawning now.
+* Temperatures displayed on the HUD can now display in either Fahrenheit or Celsius.
+    * Can be toggled in the config.
+    * Biome temperature should now affect overall planet temperature as well.
+* Applied instanceof checks to BiomeDecoratorOre classes for each planet.
+* Slightly modified biome generation mechanics.
 * 
 
 == Zollern Galaxy v1.4.4 - ChunkProvider Hotfix ==

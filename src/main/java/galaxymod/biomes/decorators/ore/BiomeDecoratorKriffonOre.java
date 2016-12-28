@@ -13,10 +13,12 @@
 
 package galaxymod.biomes.decorators.ore;
 
+import galaxymod.biomes.kriffus.BiomeGenKriffonBase;
 import galaxymod.blocks.BlockList;
 import java.util.Random;
 import micdoodle8.mods.galacticraft.core.world.gen.WorldGenMinableMeta;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.gen.feature.WorldGenerator;
 
 public class BiomeDecoratorKriffonOre extends BiomeDecoratorOre {
@@ -59,12 +61,16 @@ public class BiomeDecoratorKriffonOre extends BiomeDecoratorOre {
 			this.chunkX = chunkX;
 			this.chunkZ = chunkZ;
 			//
-			this.genOre(10, this.coalGen, 4, 70);
-			this.genOre(6, this.copperGen, 4, 70);
-			this.genOre(11, this.redstoneGen, 2, 50);
-			this.genOre(8, this.ironGen, 4, 60);
-			this.genOre(6, this.goldGen, 4, 50);
-			this.genOre(8, this.cobaltGen, 2, 35);
+			BiomeGenBase currentBiome = worldObj.getBiomeGenForCoords(chunkX,
+					chunkZ);
+			if (currentBiome instanceof BiomeGenKriffonBase) {
+				this.genOre(10, this.coalGen, 4, 70);
+				this.genOre(6, this.copperGen, 4, 70);
+				this.genOre(11, this.redstoneGen, 2, 50);
+				this.genOre(8, this.ironGen, 4, 60);
+				this.genOre(6, this.goldGen, 4, 50);
+				this.genOre(8, this.cobaltGen, 2, 35);
+			}
 			//
 			this.worldObj = null;
 			this.randomGenerator = null;

@@ -26,9 +26,9 @@ public class BiomeEdenSnowyPlains extends BiomeGenEdenBase {
 		this.temperature = 1F;
 		this.theBiomeDecorator.generateLakes = true;
 		this.biomeDecor.edenGravPerChunk = 4;
-		this.biomeDecor.edenFlowersPerChunk = 3;
-		this.biomeDecor.edenTallGrassPerChunk = 2;
-		this.biomeDecor.edenLakesPerChunk = 2;
+		this.biomeDecor.edenFlowersPerChunk = 4;
+		this.biomeDecor.edenTallGrassPerChunk = 4;
+		this.biomeDecor.edenLakesPerChunk = 4;
 		this.biomeDecor.edenSandPerChunk = 1;
 		this.biomeDecor.edenWoodTreesPerChunk = 5;
 		this.topBlock = BlockList.edenWinterRock;

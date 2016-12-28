@@ -12,10 +12,12 @@
 
 package galaxymod.biomes.decorators.ore;
 
+import galaxymod.biomes.xathius.BiomeGenXathiusBase;
 import galaxymod.blocks.BlockList;
 import java.util.Random;
 import micdoodle8.mods.galacticraft.core.world.gen.WorldGenMinableMeta;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.gen.feature.WorldGenerator;
 
 public class BiomeDecoratorXathiusOre extends BiomeDecoratorOre {
@@ -43,7 +45,13 @@ public class BiomeDecoratorXathiusOre extends BiomeDecoratorOre {
 			this.randomGenerator = rand;
 			this.chunkX = chunkX;
 			this.chunkZ = chunkZ;
-			this.genOre(7, this.prometheanGen, 4, 40);
+			//
+			BiomeGenBase currentBiome = worldObj.getBiomeGenForCoords(chunkX,
+					chunkZ);
+			if (currentBiome instanceof BiomeGenXathiusBase) {
+				this.genOre(7, this.prometheanGen, 4, 40);
+			}
+			//
 			this.worldObj = null;
 			this.randomGenerator = null;
 		}

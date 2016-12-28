@@ -36,7 +36,7 @@ public class TeleportTypeNG implements ITeleportType {
 			EntityPlayerMP player) {
 		if (player != null) {
 			GCPlayerStats stats = GCPlayerStats.get(player);
-			return new Vector3(stats.coordsTeleportedFromX, 250.0,
+			return new Vector3(stats.coordsTeleportedFromX, 150.0,
 					stats.coordsTeleportedFromZ);
 		}
 		return null;

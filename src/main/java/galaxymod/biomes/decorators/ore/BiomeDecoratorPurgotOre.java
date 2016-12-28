@@ -12,10 +12,12 @@
 
 package galaxymod.biomes.decorators.ore;
 
+import galaxymod.biomes.purgot.BiomeGenPurgotBase;
 import galaxymod.blocks.BlockList;
 import java.util.Random;
 import micdoodle8.mods.galacticraft.core.world.gen.WorldGenMinableMeta;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.gen.feature.WorldGenerator;
 
 public class BiomeDecoratorPurgotOre extends BiomeDecoratorOre {
@@ -61,13 +63,17 @@ public class BiomeDecoratorPurgotOre extends BiomeDecoratorOre {
 			this.chunkX = chunkX;
 			this.chunkZ = chunkZ;
 			//
-			this.genOre(6, this.copperGen, 4, 70);
-			this.genOre(10, this.ironGen, 4, 60);
-			this.genOre(8, this.goldGen, 4, 50);
-			this.genOre(6, this.diamondGen, 2, 14);
-			this.genOre(4, this.emeraldGen, 2, 10);
-			this.genOre(5, this.eveniumGen, 2, 14);
-			this.genOre(5, this.cobaltGen, 2, 14);
+			BiomeGenBase currentBiome = worldObj.getBiomeGenForCoords(chunkX,
+					chunkZ);
+			if (currentBiome instanceof BiomeGenPurgotBase) {
+				this.genOre(6, this.copperGen, 4, 70);
+				this.genOre(10, this.ironGen, 4, 60);
+				this.genOre(8, this.goldGen, 4, 50);
+				this.genOre(6, this.diamondGen, 2, 14);
+				this.genOre(4, this.emeraldGen, 2, 10);
+				this.genOre(5, this.eveniumGen, 2, 14);
+				this.genOre(5, this.cobaltGen, 2, 14);
+			}
 			//
 			this.worldObj = null;
 			this.randomGenerator = null;

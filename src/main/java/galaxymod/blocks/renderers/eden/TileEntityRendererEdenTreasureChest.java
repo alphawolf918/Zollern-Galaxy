@@ -26,6 +26,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class TileEntityRendererEdenTreasureChest extends
 		TileEntitySpecialRenderer {
+	
 	private static final ResourceLocation treasureChestTexture = new ResourceLocation(
 			"galaxymod:textures/model/edentreasurechest.png");
 	

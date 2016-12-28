@@ -30,7 +30,7 @@ public class BlockNova extends Block {
 	
 	private Random rand = new Random();
 	
-	public static SoundType soundTypeXeno = new SoundType("xeno", 4.0F, 0.5F) {
+	public static SoundType soundTypeXeno = new SoundType("xeno", 4.0F, 2.0F) {
 		
 		@Override
 		public String getBreakSound() {

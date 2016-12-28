@@ -113,14 +113,14 @@ public class BiomeSpace extends BiomeGenBase {
 		} else if (planet.getIsHotPlanet()) {
 			planetTemp += biomeTemp;
 		} else {
-			if (rand.nextInt(500) <= 2) {
-				if (rand.nextInt(50) <= 25) {
-					planetTemp += biomeTemp;
-					planetTemp = (planetTemp > maxTemp) ? maxTemp : planetTemp;
-				} else {
-					planetTemp -= biomeTemp;
-					planetTemp = (planetTemp < minTemp) ? minTemp : planetTemp;
-				}
+			if (rand.nextInt(500) <= 25) {
+				planetTemp += biomeTemp;
+				// planetTemp = (planetTemp > maxTemp) ? maxTemp :
+				// planetTemp;
+			} else {
+				planetTemp -= biomeTemp;
+				// planetTemp = (planetTemp < minTemp) ? minTemp :
+				// planetTemp;
 			}
 		}
 		return planetTemp;

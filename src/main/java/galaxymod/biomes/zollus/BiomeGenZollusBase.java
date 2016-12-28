@@ -44,8 +44,6 @@ public class BiomeGenZollusBase extends BiomeSpace {
 		this.theBiomeDecorator.treesPerChunk = -999;
 		this.theBiomeDecorator.grassPerChunk = -999;
 		this.theBiomeDecorator.mushroomsPerChunk = -999;
-		this.biomeDecor.zollusCrystalsPerChunk = 2;
-		this.biomeDecor.zollusIceLakesPerChunk = 4;
 		this.spawnableCaveCreatureList.clear();
 		this.spawnableMonsterList.clear();
 		this.spawnableWaterCreatureList.clear();

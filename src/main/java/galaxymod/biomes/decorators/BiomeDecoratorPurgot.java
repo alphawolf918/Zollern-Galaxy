@@ -13,6 +13,7 @@
 
 package galaxymod.biomes.decorators;
 
+import galaxymod.biomes.purgot.BiomeGenPurgotBase;
 import java.util.Random;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeDecorator;
@@ -49,6 +50,10 @@ public class BiomeDecoratorPurgot extends BiomeDecorator {
 		int y;
 		int z;
 		int i;
+		
+		if (biome instanceof BiomeGenPurgotBase) {
+			
+		}
 		
 		MinecraftForge.EVENT_BUS.post(new DecorateBiomeEvent.Post(
 				this.currentWorld, this.randomGenerator, this.chunk_X,

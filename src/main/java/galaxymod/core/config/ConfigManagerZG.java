@@ -90,10 +90,9 @@ public class ConfigManagerZG {
 	// Biomes (Oasis)
 	public static int biomeOasisId;
 	
-	// Misc (Can Earth animals generate on Eden?)
+	// Misc
 	public static boolean canEarthAnimalsSpawnOnEden;
-	
-	private static int biomeAbstractPlainsId;
+	public static String temperatureType;
 	
 	public static void init(FMLPreInitializationEvent event) {
 		configuration = new Configuration(new File(event
@@ -209,6 +208,12 @@ public class ConfigManagerZG {
 		// Misc (Can Earth animals spawn on Eden?)
 		canEarthAnimalsSpawnOnEden = configuration.get(CATEGORY_MISC,
 				"Earth Animals Spawn On Eden", true).getBoolean();
+		
+		// Misc (Temperatures shown in fahrenheit or celsius?)
+		temperatureType = configuration
+				.get(CATEGORY_MISC, "Temperature Type (F or C only)", "F",
+						"Should temperatures be shown in Fahrenheit (F) or Celsius (C)?")
+				.getString();
 		
 		configuration.save();
 	}

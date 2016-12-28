@@ -28,7 +28,6 @@ import net.minecraft.world.biome.BiomeDecorator;
 public class BiomeGenXathiusBase extends BiomeSpace {
 	
 	public static int grassFoilageColorMultiplier = 0xff0000;
-	public static int chunkHeightModifier = 10;
 	protected Block stoneBlock;
 	protected byte topMeta;
 	protected byte fillerMeta;
@@ -163,10 +162,6 @@ public class BiomeGenXathiusBase extends BiomeSpace {
 	public void genTerrainBlocks(World world, Random rand, Block[] block,
 			byte[] meta, int x, int z, double stoneNoise) {
 		this.genXathiusBiomeTerrain(world, rand, block, meta, x, z, stoneNoise);
-	}
-	
-	public static int getChunkHeightModifier() {
-		return chunkHeightModifier;
 	}
 	
 	@Override
