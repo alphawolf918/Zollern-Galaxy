@@ -86,15 +86,17 @@ public class ZGEvents {
 				
 				// Applies the survival mechanics.
 				if (rand.nextInt(614) <= 392) {
-					// Toxic Damage
-					this.performSurvivalEffect(ItemList.blueprintTox,
-							ZGDamageSource.deathToxic, toxDamage, player,
-							planet.getIsToxicPlanet());
-					
-					// Radiation Damage
-					this.performSurvivalEffect(ItemList.blueprintRad,
-							ZGDamageSource.deathRadiation, radDamage, player,
-							planet.getIsRadioactivePlanet());
+					if (world.canBlockSeeTheSky(playerX, playerY, playerZ)) {
+						// Toxic Damage
+						this.performSurvivalEffect(ItemList.blueprintTox,
+								ZGDamageSource.deathToxic, toxDamage, player,
+								planet.getIsToxicPlanet());
+						
+						// Radiation Damage
+						this.performSurvivalEffect(ItemList.blueprintRad,
+								ZGDamageSource.deathRadiation, radDamage,
+								player, planet.getIsRadioactivePlanet());
+					}
 				}
 			}
 		}

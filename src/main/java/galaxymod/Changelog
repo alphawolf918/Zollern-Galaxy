@@ -1,3 +1,21 @@
+== Zollern Galaxy v1.5 - The Unnamed Update ==
+
+* Outposts now generate on all planets, made of different material for each.
+* Survival effects (radiation and toxicity) now only affect the Player if the sky is visible.
+    * They should not affect the Player inside of an Outpost.
+    * Same code that allows Zombies to hide from the sun in buildings and under trees.
+* Gray Aliens can now spawn in Villages and Outposts.
+    * Can breathe in any atmosphere.
+    * Harmless mobs that moves around and can open doors.
+* Slightly modified lang file.
+* Fixed Praedyth star being wrong color in Oasis and Xathius SkyProvider classes.
+* Heavily modified config file.
+    * Dimensions IDs are in the -7000s now, in order to avoid dimension ID conflicts.
+* Dungeon Spawners now spawn correctly on Eden.
+* Eden Villages have been heavily modified - should spawn more often now.
+    * Third house should start spawning now.
+* 
+
 == Zollern Galaxy v1.4.4 - ChunkProvider Hotfix ==
 
 * Changed all ChunkProvider classes to match Eden's.
@@ -37,7 +55,7 @@
         * Also makes it harder to see the lava lakes, which is a good survival mechanic in itself.
 * Water in the Magma Lands biome on planet Eden has now been changed to Magrock.
 
-== Zollern Galaxy v1.4 ==
+== Zollern Galaxy v1.4 - Galatic Revamp ==
 
 * FINALLY FIXED THE LAG ISSUE!!!! Turns out it was how I was registering my SkyRenderer classes!!!!
     * If you still experience the extreme lag/memory leakage, then please, please contact me!
@@ -45,14 +63,14 @@
 * Changed BiomeGenEdenBase back to BiomeGenBase in WorldChunkManagerEden.java.
 * Changed ChunkProviderEden.java's mechanics to something faster and a bit more streamlined.
 
-== Zollern Galaxy v1.3.1 ==
+== Zollern Galaxy v1.3.1 - Baby Steps ==
 
 * Removed server pre-init phase.
 * Changed BiomeGenBase to BiomeGenEdenBase in WorldChunkManagerEden.java.
 * Changed BiomeGenBase code in all base biome gens to have 32 sea level and start chunks from 255.
 * Changed biome decorator ore generation mechanics.
 
-== Zollern Galaxy v1.3 ==
+== Zollern Galaxy v1.3 - Acknowledging Issues ==
 
 [NOTE: This release is meant to FIX ISSUES while adding very limited new things.]
 
@@ -101,7 +119,7 @@
 * Fixed (hopefully) extreme memory leak by removing and lowering some stuff.
 -----------
 
-== Project Nova v1.2 ==
+== Project Nova v1.2 - The Start of Things to Come ==
 
 * Praedyth System
     * Added the planet Xathius.
@@ -116,7 +134,7 @@
     * SOME of the memory overload has been fixed, but not all. This release is mainly to fix the villager issue.
 ----------------
 
-== Project Nova v1.1 ==
+== Project Nova v1.1 - Minor hotfix ==
 * Psios System
     * Wolves can now spawn on Eden.
     * Fixed (or so it seems) the biome ID issues with Biomes'O'Plenty.
@@ -125,7 +143,7 @@
 
 ----------------
 
-== Project Nova v1.0 ==
+== Project Nova v1.0 - Initial Release ==
 
 * Added several new star systems:
     * Psios

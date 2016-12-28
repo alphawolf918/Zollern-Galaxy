@@ -26,8 +26,8 @@ public class BiomeEdenSwamp extends BiomeGenEdenBase {
 		this.biomeDecor.edenFlowersPerChunk = 4;
 		this.biomeDecor.edenTallGrassPerChunk = 2;
 		this.biomeDecor.edenWoodTreesPerChunk = 25;
-		this.biomeDecor.edenSandPerChunk = 10;
-		this.biomeDecor.edenLakesPerChunk = 4;
+		this.biomeDecor.edenSandPerChunk = 2;
+		this.biomeDecor.edenLakesPerChunk = 6;
 		this.biomeDecor.edenWaterLillyPerChunk = 800;
 		this.theBiomeDecorator.deadBushPerChunk = 1;
 		this.theBiomeDecorator.mushroomsPerChunk = 8;

@@ -89,7 +89,7 @@ public class WorldProviderEden extends WorldProviderNova {
 	
 	@Override
 	public double getYCoordinateToTeleport() {
-		return 220;
+		return 150;
 	}
 	
 	@Override
@@ -182,6 +182,18 @@ public class WorldProviderEden extends WorldProviderNova {
 	@Override
 	public long getDayLength() {
 		return 48000L;
+	}
+	
+	@Override
+	public void updateWeather() {
+		super.updateWeather();
+		this.worldObj.getWorldInfo().setRaining(true);
+		this.worldObj.getWorldInfo().setThundering(true);
+	}
+	
+	@Override
+	public boolean canCoordinateBeSpawn(int var1, int var2) {
+		return true;
 	}
 	
 	@Override

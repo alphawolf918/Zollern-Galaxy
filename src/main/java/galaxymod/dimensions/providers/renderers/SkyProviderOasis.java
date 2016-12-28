@@ -215,7 +215,7 @@ public class SkyProviderOasis extends IRenderHandler {
 		tessellator1.addVertex(-f10, 99.9D, f10);
 		tessellator1.draw();
 		GL11.glEnable(GL11.GL_TEXTURE_2D);
-		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
+		GL11.glColor4f(1.0F, 0.0F, 0.0F, 1.0F);
 		f10 = this.sunSize + 7;
 		mc.renderEngine.bindTexture(this.praedythTexture);
 		tessellator1.startDrawingQuads();

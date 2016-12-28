@@ -34,13 +34,11 @@ import net.minecraft.world.biome.BiomeDecorator;
 
 public abstract class BiomeGenEdenBase extends BiomeSpace {
 	
-	public static int grassFoilageColorMultiplier = 0x00ff00;
-	public static int chunkHeightModifier = 12;
+	public static int grassFoilageColorMultiplier;
 	protected Block stoneBlock;
 	protected byte topMeta;
 	protected byte fillerMeta;
 	protected byte stoneMeta;
-	public static int biomeHeightBaseModifier = 212;
 	public BiomeDecoratorEden biomeDecor = this.getBiomeDecorator();
 	
 	public BiomeGenEdenBase(int p_i1971_1_) {
@@ -72,7 +70,7 @@ public abstract class BiomeGenEdenBase extends BiomeSpace {
 			this.spawnableCreatureList.add(new SpawnListEntry(EntityPig.class,
 					100, 1, 3));
 			this.spawnableCreatureList.add(new SpawnListEntry(
-					EntityHorse.class, 100, 2, 5));
+					EntityHorse.class, 100, 1, 3));
 		}
 	}
 	

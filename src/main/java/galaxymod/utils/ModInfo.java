@@ -16,8 +16,8 @@ package galaxymod.utils;
 public class ModInfo {
 	
 	public static final int majorVersion = 1;
-	public static final int minorVersion = 4;
-	public static final int buildVersion = 4;
+	public static final int minorVersion = 5;
+	public static final int buildVersion = 0;
 	
 	public static final String MODID = "galaxymod";
 	public static final String NAME = "galaxymod";

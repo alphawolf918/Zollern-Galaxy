@@ -28,6 +28,7 @@ import net.minecraftforge.common.ChestGenHooks;
 import net.minecraftforge.common.DungeonHooks;
 
 public class WorldGenEdenDungeons extends WorldGenerator {
+	
 	public static final WeightedRandomChestContent[] field_111189_a = new WeightedRandomChestContent[] {
 			new WeightedRandomChestContent(Items.iron_ingot, 0, 1, 4, 10),
 			new WeightedRandomChestContent(Items.bread, 0, 1, 1, 10),
@@ -38,8 +39,6 @@ public class WorldGenEdenDungeons extends WorldGenerator {
 			new WeightedRandomChestContent(Items.golden_apple, 0, 1, 1, 1),
 			new WeightedRandomChestContent(Items.redstone, 0, 1, 4, 10),
 			new WeightedRandomChestContent(Items.name_tag, 0, 1, 1, 10) };
-	
-	private static final String __OBFID = "CL_00000425";
 	
 	@Override
 	public boolean generate(World p_76484_1_, Random p_76484_2_,

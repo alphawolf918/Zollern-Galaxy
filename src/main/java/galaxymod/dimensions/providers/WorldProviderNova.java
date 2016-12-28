@@ -47,5 +47,4 @@ public abstract class WorldProviderNova extends WorldProviderSpace implements
 	public float getSolarSize() {
 		return 1.0F;
 	}
-	
 }

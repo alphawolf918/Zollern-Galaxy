@@ -17,7 +17,7 @@ import java.util.Random;
 import micdoodle8.mods.galacticraft.api.prefab.world.gen.BiomeDecoratorSpace;
 import net.minecraft.world.World;
 
-public class BiomeDecoratorZG extends BiomeDecoratorSpace {
+public class BiomeDecoratorOre extends BiomeDecoratorSpace {
 	
 	protected World worldObj;
 	protected Random randomGenerator;

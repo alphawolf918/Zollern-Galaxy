@@ -16,6 +16,7 @@ package galaxymod.biomes.decorators;
 import galaxymod.biomes.eden.BiomeGenEdenBase;
 import galaxymod.blocks.BlockList;
 import galaxymod.worldgen.WorldGenTreeNG;
+import galaxymod.worldgen.eden.WorldGenEdenDungeons;
 import galaxymod.worldgen.eden.WorldGenEdenFlowers;
 import galaxymod.worldgen.eden.WorldGenEdenLakes;
 import galaxymod.worldgen.eden.WorldGenEdenSand;
@@ -26,7 +27,6 @@ import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeDecorator;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.gen.feature.WorldGenDeadBush;
-import net.minecraft.world.gen.feature.WorldGenDungeons;
 import net.minecraft.world.gen.feature.WorldGenTallGrass;
 import net.minecraft.world.gen.feature.WorldGenWaterlily;
 import net.minecraftforge.common.MinecraftForge;
@@ -236,7 +236,7 @@ public class BiomeDecoratorEden extends BiomeDecorator {
 				x = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
 				y = this.randomGenerator.nextInt(128);
 				z = this.chunk_Z + this.randomGenerator.nextInt(16) + 8;
-				new WorldGenDungeons().generate(this.currentWorld,
+				new WorldGenEdenDungeons().generate(this.currentWorld,
 						this.randomGenerator, x, y, z);
 			}
 		}

@@ -143,8 +143,6 @@ item.galaxymod_purgotoasistablet.name=Oasis Gem
 item.galaxymod_prometheancrystal.name=Promethean Crystal
 item.galaxymod_plutoniumcrystal.name=Plutonium Crystal
 
-item.galaxymod_blueprint_scorch.name=Scorch Protection
-item.galaxymod_blueprint_freeze.name=Freeze Protection
 item.galaxymod_blueprint_rad.name=Radiation Protection
 item.galaxymod_blueprint_tox.name=Toxicity Protection
 
@@ -209,8 +207,8 @@ solarsystem.asgard=Asgard
 solarsystem.vega=Vega
 solarsystem.Nova=Nova
 
-itemGroup.NovaGalacticBlocks=Project Nova Blocks
-itemGroup.NovaGalacticItems=Project Nova Items
+itemGroup.NovaGalacticBlocks=Zollern Galaxy Blocks
+itemGroup.NovaGalacticItems=Zollern Galaxy Items
 
 death.attack.deathcold=%1$s froze to death.
 death.attack.deathcold.player=%1$s froze to death because of %2$s.

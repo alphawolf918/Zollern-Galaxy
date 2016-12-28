@@ -40,11 +40,21 @@ public class NGWorldGenManager implements IWorldGenerator {
 			this.generateEarth(world, random, chunkX * 16, chunkZ * 16);
 		} else if (world.provider.dimensionId == ConfigManagerZG.planetEdenDimensionId) {
 			this.generateEden(world, random, chunkX * 16, chunkZ * 16);
+		} else if (world.provider.dimensionId == ConfigManagerZG.planetZollusDimensionId) {
+			this.generateZollus(world, random, chunkX * 16, chunkZ * 16);
+		} else if (world.provider.dimensionId == ConfigManagerZG.planetKriffonDimensionId) {
+			this.generateKriffon(world, random, chunkX * 16, chunkZ * 16);
+		} else if (world.provider.dimensionId == ConfigManagerZG.planetPurgotDimensionId) {
+			this.generatePurgot(world, random, chunkX * 16, chunkZ * 16);
+		} else if (world.provider.dimensionId == ConfigManagerZG.planetOasisDimensionId) {
+			this.generateOasis(world, random, chunkX * 16, chunkZ * 16);
+		} else if (world.provider.dimensionId == ConfigManagerZG.planetXathiusDimensionId) {
+			this.generateXathius(world, random, chunkX * 16, chunkZ * 16);
 		}
 	}
 	
 	private void generateEarth(World world, Random random, int x, int z) {
-		
+		// TODO
 	}
 	
 	private void generateEden(World world, Random random, int x, int z) {
@@ -73,7 +83,8 @@ public class NGWorldGenManager implements IWorldGenerator {
 		// Outpost
 		if (random.nextInt(100) <= 20) {
 			this.spawnStructure(26, 50, world, random, x, y, z,
-					new WorldGenOutpost());
+					new WorldGenOutpost(BlockList.edenSacredStone,
+							BlockList.edenWoodPlanks));
 		}
 		
 		// Eden's Flowers
@@ -128,6 +139,86 @@ public class NGWorldGenManager implements IWorldGenerator {
 		if (currentBiome == BiomeList.biomeEdenBloodDesert) {
 			this.spawnStructure(14, 19, world, random, x, y, z,
 					new WorldGenGiantBone());
+		}
+	}
+	
+	private void generateZollus(World world, Random random, int x, int z) {
+		
+		// Grab Biome
+		currentBiome = world.getBiomeGenForCoords(x, z);
+		
+		// Current Layer
+		int y = world.getHeightValue(x, z);
+		
+		// Outpost
+		if (random.nextInt(100) <= 20) {
+			this.spawnStructure(26, 50, world, random, x, y, z,
+					new WorldGenOutpost(BlockList.zolRockBricks,
+							BlockList.zolarBlock));
+		}
+	}
+	
+	private void generateKriffon(World world, Random random, int x, int z) {
+		
+		// Grab Biome
+		currentBiome = world.getBiomeGenForCoords(x, z);
+		
+		// Current Layer
+		int y = world.getHeightValue(x, z);
+		
+		// Outpost
+		if (random.nextInt(100) <= 20) {
+			this.spawnStructure(26, 50, world, random, x, y, z,
+					new WorldGenOutpost(BlockList.kriffRockBricks,
+							BlockList.kriffStone));
+		}
+	}
+	
+	private void generatePurgot(World world, Random random, int x, int z) {
+		
+		// Grab Biome
+		currentBiome = world.getBiomeGenForCoords(x, z);
+		
+		// Current Layer
+		int y = world.getHeightValue(x, z);
+		
+		// Outpost
+		if (random.nextInt(100) <= 20) {
+			this.spawnStructure(26, 50, world, random, x, y, z,
+					new WorldGenOutpost(BlockList.purgRockBricks,
+							BlockList.purgWhiteRock));
+		}
+	}
+	
+	private void generateOasis(World world, Random random, int x, int z) {
+		
+		// Grab Biome
+		currentBiome = world.getBiomeGenForCoords(x, z);
+		
+		// Current Layer
+		int y = world.getHeightValue(x, z);
+		
+		// Outpost
+		if (random.nextInt(100) <= 20) {
+			this.spawnStructure(26, 50, world, random, x, y, z,
+					new WorldGenOutpost(BlockList.oasisCobbleRock,
+							BlockList.oasisStone));
+		}
+	}
+	
+	private void generateXathius(World world, Random random, int x, int z) {
+		
+		// Grab Biome
+		currentBiome = world.getBiomeGenForCoords(x, z);
+		
+		// Current Layer
+		int y = world.getHeightValue(x, z);
+		
+		// Outpost
+		if (random.nextInt(100) <= 20) {
+			this.spawnStructure(26, 50, world, random, x, y, z,
+					new WorldGenOutpost(BlockList.xathCobbleRock,
+							BlockList.xathRock));
 		}
 	}
 	

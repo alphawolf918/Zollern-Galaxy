@@ -27,13 +27,11 @@ public class VillageHouseThree extends NGWorldGenStructureCore {
 	
 	@Override
 	public boolean generate(World world, Random rand, int i, int j, int k) {
-		// NovaHelper.echo("Attempting to spawn village house three..");
-		if (!LocationIsValidSpawn(world, i, j, k)) {
-			// NovaHelper.echo("Failed");
-			return false;
-		}
+		
+		j -= 1;
 		
 		NGEdenVillageHelper.spawnAlien(world, i - 2, j + 1, k + 0, 3);
+		
 		world.setBlock(i + 0, j + 0, k + 0, BlockList.edenCobbleRock);
 		world.setBlock(i + 0, j + 0, k + 1, BlockList.edenCobbleRock);
 		world.setBlock(i + 0, j + 0, k + 2, BlockList.edenCobbleRock);
@@ -269,7 +267,9 @@ public class VillageHouseThree extends NGWorldGenStructureCore {
 		world.setBlock(i + 6, j + 1, k + 3, BlockList.edenWoodLog);
 		world.setBlock(i + 6, j + 1, k + 5, Blocks.fence);
 		world.setBlock(i + 6, j + 1, k + 9, Blocks.fence);
+		
 		TreasureGenEden.addChest(i + 1, j + 1, k + 5, rand, world);
+		
 		world.setBlock(i + 6, j + 2, k + 0, BlockList.edenWoodLog);
 		world.setBlock(i + 6, j + 2, k + 1, BlockList.edenWoodPlanks);
 		world.setBlock(i + 6, j + 2, k + 2, BlockList.edenWoodPlanks);
@@ -305,7 +305,7 @@ public class VillageHouseThree extends NGWorldGenStructureCore {
 		world.setBlock(i + 1, j + 1, k + 7, Blocks.lava);
 		world.setBlock(i + 1, j + 1, k + 8, Blocks.lava);
 		world.setBlock(i + 2, j + 2, k + 2, Blocks.wooden_pressure_plate);
-		// NovaHelper.echo("Success! At: " + i + " " + j + " " + k);
+		
 		return true;
 	}
 }

@@ -19,6 +19,7 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 public class BiomeEdenBloodDesert extends BiomeGenEdenBase {
+	
 	public BiomeEdenBloodDesert(int par1) {
 		super(par1);
 		this.setColor(BiomeList.biomeColor);
@@ -29,7 +30,7 @@ public class BiomeEdenBloodDesert extends BiomeGenEdenBase {
 		this.theBiomeDecorator.generateLakes = false;
 		this.theBiomeDecorator.deadBushPerChunk = 2;
 		this.biomeDecor.edenDeadBushPerChunk = 2;
-		this.waterColorMultiplier = 0x8b009f;
+		this.waterColorMultiplier = 0x00009f;
 		this.temperature = 8F;
 		this.topBlock = BlockList.edenBloodSand;
 		this.fillerBlock = BlockList.edenBloodStone;

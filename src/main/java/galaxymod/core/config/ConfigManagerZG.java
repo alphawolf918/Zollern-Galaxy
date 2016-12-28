@@ -24,7 +24,7 @@ public class ConfigManagerZG {
 	public static String CATEGORY_DIMENSIONS = "Dimensions";
 	public static String CATEGORY_BIOMES = "Biomes";
 	public static String CATEGORY_MOONS = "Moons";
-	public static String CATEGORY_MISC = "MISCELLANEOUS";
+	public static String CATEGORY_MISC = "Miscallenous";
 	
 	// Planets (Psios)
 	public static int planetEdenDimensionId;
@@ -104,61 +104,61 @@ public class ConfigManagerZG {
 		
 		// Planets (Psios)
 		planetEdenDimensionId = configuration.get(CATEGORY_DIMENSIONS,
-				"Planet Eden Dimension ID", -32).getInt();
+				"Planet Eden Dimension ID", -7996).getInt();
 		planetZollusDimensionId = configuration.get(CATEGORY_DIMENSIONS,
-				"Planet Zollus Dimension ID", -31).getInt();
+				"Planet Zollus Dimension ID", -7982).getInt();
 		planetKriffonDimensionId = configuration.get(CATEGORY_DIMENSIONS,
-				"Planet Kriffon Dimension ID", -33).getInt();
+				"Planet Kriffon Dimension ID", -7994).getInt();
 		planetPurgotDimensionId = configuration.get(CATEGORY_DIMENSIONS,
-				"Planet Purgot Dimension ID", -34).getInt();
+				"Planet Purgot Dimension ID", -7988).getInt();
 		
 		// Moons (Psios -> Purgot -> Astros)
 		moonAstrosDimensionId = configuration.get(CATEGORY_MOONS,
-				"Moon Astros Dimension ID", -100).getInt();
+				"Moon Astros Dimension ID", -7981).getInt();
 		
 		// Planets (Praedyth)
 		planetXathiusDimensionId = configuration.get(CATEGORY_DIMENSIONS,
-				"Planet Xathius Dimension ID", -35).getInt();
+				"Planet Xathius Dimension ID", -7983).getInt();
 		planetOasisDimensionId = configuration.get(CATEGORY_DIMENSIONS,
-				"Planet Oasis Dimension ID", -50).getInt();
+				"Planet Oasis Dimension ID", -7990).getInt();
 		planetXantheonDimensionId = configuration.get(CATEGORY_DIMENSIONS,
-				"Planet Xantheon Dimension ID", -36).getInt();
+				"Planet Xantheon Dimension ID", -7984).getInt();
 		planetAtheonDimensionId = configuration.get(CATEGORY_DIMENSIONS,
-				"Planet Atheon Dimension ID", -37).getInt();
+				"Planet Atheon Dimension ID", -7998).getInt();
 		
 		// Planets (Pantheon)
 		planetMeztliDimensionId = configuration.get(CATEGORY_DIMENSIONS,
-				"Planet Meztli Dimension ID", -38).getInt();
+				"Planet Meztli Dimension ID", -7991).getInt();
 		planetCentotlDimensionId = configuration.get(CATEGORY_DIMENSIONS,
-				"Planet Centotl Dimension ID", -39).getInt();
+				"Planet Centotl Dimension ID", -7997).getInt();
 		planetTociDimensionId = configuration.get(CATEGORY_DIMENSIONS,
-				"Planet Toci Dimension ID", -40).getInt();
+				"Planet Toci Dimension ID", -7985).getInt();
 		planetTlalocDimensionId = configuration.get(CATEGORY_DIMENSIONS,
-				"Planet Tlaloc Dimension ID", -41).getInt();
+				"Planet Tlaloc Dimension ID", -7986).getInt();
 		
 		// Planets (Olympus)
 		planetAresDimensionId = configuration.get(CATEGORY_DIMENSIONS,
-				"Planet Ares Dimension ID", -42).getInt();
+				"Planet Ares Dimension ID", -8000).getInt();
 		planetPrometheusDimensionId = configuration.get(CATEGORY_DIMENSIONS,
-				"Planet Ares Dimension ID", -43).getInt();
+				"Planet Prometheus Dimension ID", -7981).getInt();
 		planetIcarusDimensionId = configuration.get(CATEGORY_DIMENSIONS,
-				"Planet Icarus Dimension ID", -44).getInt();
+				"Planet Icarus Dimension ID", -7995).getInt();
 		planetKronosDimensionId = configuration.get(CATEGORY_DIMENSIONS,
-				"Planet Kronos Dimension ID", -45).getInt();
+				"Planet Kronos Dimension ID", -7993).getInt();
 		
 		// Planets (Asgard)
 		planetAsgardDimensionId = configuration.get(CATEGORY_DIMENSIONS,
-				"Planet Asgard Dimension ID", -46).getInt();
+				"Planet Asgard Dimension ID", -7999).getInt();
 		
 		// Planets (Vega)
 		planetMeridianDimensionId = configuration.get(CATEGORY_DIMENSIONS,
-				"Planet Meridian Dimension ID", -47).getInt();
+				"Planet Meridian Dimension ID", -7992).getInt();
 		planetRequiemDimensionId = configuration.get(CATEGORY_DIMENSIONS,
-				"Planet Requiem Dimension ID", -48).getInt();
+				"Planet Requiem Dimension ID", -7987).getInt();
 		
 		// Planets (Nova)
 		planetPrimorDimensionId = configuration.get(CATEGORY_DIMENSIONS,
-				"Planet Primor Dimension ID", -49).getInt();
+				"Planet Primor Dimension ID", -7989).getInt();
 		
 		// Biomes (Eden)
 		biomeEdenGreenLandsId = configuration.get(CATEGORY_BIOMES,
@@ -203,12 +203,12 @@ public class ConfigManagerZG {
 				"Xathius Abstract Plains ID", 165).getInt();
 		
 		// Biomes (Oasis)
-		biomeOasisId = configuration.get(CATEGORY_BIOMES, "Oasis ID", 164)
-				.getInt();
+		biomeOasisId = configuration
+				.get(CATEGORY_BIOMES, "Oasis Biome ID", 164).getInt();
 		
 		// Misc (Can Earth animals spawn on Eden?)
 		canEarthAnimalsSpawnOnEden = configuration.get(CATEGORY_MISC,
-				"Earth Animals Spawn On Eden", false).getBoolean();
+				"Earth Animals Spawn On Eden", true).getBoolean();
 		
 		configuration.save();
 	}

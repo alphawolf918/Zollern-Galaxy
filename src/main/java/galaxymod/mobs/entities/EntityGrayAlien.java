@@ -13,6 +13,7 @@
 
 package galaxymod.mobs.entities;
 
+import micdoodle8.mods.galacticraft.api.entity.IEntityBreathable;
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
@@ -30,7 +31,7 @@ import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class EntityGrayAlien extends EntityMob {
+public class EntityGrayAlien extends EntityMob implements IEntityBreathable {
 	
 	public EntityGrayAlien(World p_i1595_1_) {
 		super(p_i1595_1_);
@@ -117,5 +118,10 @@ public class EntityGrayAlien extends EntityMob {
 	
 	public int getAttackStrength(Entity par1Entity) {
 		return 10;
+	}
+	
+	@Override
+	public boolean canBreath() {
+		return true;
 	}
 }

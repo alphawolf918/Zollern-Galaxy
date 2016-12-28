@@ -13,6 +13,7 @@
 
 package galaxymod.worldgen.eden.treasure;
 
+import galaxymod.items.ItemList;
 import java.util.ArrayList;
 import java.util.Random;
 import micdoodle8.mods.galacticraft.core.items.GCItems;
@@ -44,6 +45,9 @@ public final class TreasureGenEden {
 	private static WeightedRandomChestContent item10 = new WeightedRandomChestContent(
 			new ItemStack(GCItems.meteoricIronIngot, (new Random()).nextInt(64)),
 			50, 65, 2);
+	private static WeightedRandomChestContent item11 = new WeightedRandomChestContent(
+			new ItemStack(ItemList.ingotViri, (new Random()).nextInt(64)), 50,
+			65, 2);
 	
 	public static void init() {
 		addChestTypes();

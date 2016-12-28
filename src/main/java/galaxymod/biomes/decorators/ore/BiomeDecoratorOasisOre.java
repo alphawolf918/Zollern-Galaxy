@@ -18,7 +18,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.common.MinecraftForge;
 
-public class BiomeDecoratorOasisOre extends BiomeDecoratorZG {
+public class BiomeDecoratorOasisOre extends BiomeDecoratorOre {
 	
 	private World worldObj;
 	private Random randomGenerator;

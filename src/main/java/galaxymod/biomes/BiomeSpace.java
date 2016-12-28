@@ -16,23 +16,16 @@ package galaxymod.biomes;
 import galaxymod.core.PlanetNova;
 import java.util.Random;
 import net.minecraft.block.Block;
-import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
 
 public class BiomeSpace extends BiomeGenBase {
 	
 	protected PlanetNova planetForBiome = null;
 	public static int grassFoilageColorMultiplier = 0x00ff00;
-	protected static World world = null;
 	
 	public BiomeSpace(int par1) {
 		super(par1);
 		this.setColor(BiomeList.biomeColor);
-		this.temperature = 5F;
-	}
-	
-	public World getWorld() {
-		return this.world;
 	}
 	
 	/**
@@ -62,7 +55,7 @@ public class BiomeSpace extends BiomeGenBase {
 	 * @return True if the biome temp is >= 8.0f, otherwise false.
 	 */
 	public boolean getIsHotBiome() {
-		return (this.getBiomeTemp() >= 8F);
+		return (this.getBiomeTemp() >= 7F);
 	}
 	
 	/**
@@ -132,5 +125,4 @@ public class BiomeSpace extends BiomeGenBase {
 		}
 		return planetTemp;
 	}
-	
 }
