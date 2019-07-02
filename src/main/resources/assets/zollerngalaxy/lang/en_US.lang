@@ -1,0 +1,227 @@
+tile.zollerngalaxy_solarblock.name=Zolrock
+tile.zollerngalaxy_zolstone.name=Zolstone
+tile.zollerngalaxy_zolcobblerock.name=Zolrock Cobblestone
+tile.zollerngalaxy_zolrockbricks.name=Zollus Rock Bricks
+tile.zollerngalaxy_spacecrystals.name=Zolnium Crystals
+tile.zollerngalaxy_zolcoalore.name=Zollus Coal Ore
+tile.zollerngalaxy_zolironore.name=Zollus Iron Ore
+tile.zollerngalaxy_zolgoldore.name=Zollus Gold Ore
+tile.zollerngalaxy_zoltinore.name=Zollus Tin Ore
+tile.zollerngalaxy_zolcopperore.name=Zollus Copper Ore
+tile.zollerngalaxy_zolheartore.name=Zollus Heartium Ore
+tile.zollerngalaxy_zoldirt.name=Zollus Dirt
+
+tile.zollerngalaxy_edenzollusportal.name=Zollus Gate
+tile.zollerngalaxy_zolluskriffonportal.name=Kriffon Gate
+tile.zollerngalaxy_kriffonpurgotportal.name=Purgot Gate
+tile.zollerngalaxy_purgotoasisportal.name=Praedyth Portal
+
+tile.zollerngalaxy_edensurfaceblock.name=Eden's Grassrock
+tile.zollerngalaxy_edengrass.name=Eden's Grass
+tile.zollerngalaxy_edengoldengrass.name=Eden's Golden Grass
+tile.zollerngalaxy_edensoil.name=Eden's Soil
+tile.zollerngalaxy_edenrock.name=Edenrock Stone
+tile.zollerngalaxy_edencobblerock.name=Edenrock Cobblestone
+tile.zollerngalaxy_edenrockbricks.name=Edenrock Bricks
+tile.zollerngalaxy_edenironore.name=Eden's Iron Ore
+tile.zollerngalaxy_edenmeteoricironore.name=Eden's Meteoric Iron Ore
+tile.zollerngalaxy_edengoldore.name=Eden's Gold Ore
+tile.zollerngalaxy_edendiamondore.name=Eden's Diamond Ore
+tile.zollerngalaxy_edenemeraldore.name=Eden's Emerald Ore
+tile.zollerngalaxy_edencoalore.name=Eden's Coal Ore
+tile.zollerngalaxy_edenredstoneore.name=Eden's Redstone Ore
+tile.zollerngalaxy_edenlapisore.name=Eden's Lapis Ore
+tile.zollerngalaxy_edencopperore.name=Eden's Copper Ore
+tile.zollerngalaxy_edentinore.name=Eden's Tin Ore
+tile.zollerngalaxy_edendeshore.name=Eden's Desh Ore
+tile.zollerngalaxy_edenaluminumore.name=Eden's Aluminum Ore
+tile.zollerngalaxy_edenviriore.name=Eden's Virinium Ore
+tile.zollerngalaxy_viriblock.name=Eden's Virinium Block
+tile.zollerngalaxy_edenflower_.name=Eden's Flower
+tile.zollerngalaxy_edenflower_blue.name=Eden's Blue Flower
+tile.zollerngalaxy_edenflower_red.name=Eden's Red Flower
+tile.zollerngalaxy_edenflower_orange.name=Eden's Orange Flower
+tile.zollerngalaxy_edenflower_yellow.name=Eden's Yellow Flower
+tile.zollerngalaxy_edenflower_purple.name=Eden's Purple Flower
+tile.zollerngalaxy_edenflower_cyan.name=Eden's Cyan Flower
+tile.zollerngalaxy_edenflower_green.name=Eden's Green Flower
+tile.zollerngalaxy_edentallgrass.name=Eden's Tall Grass
+tile.zollerngalaxy_bloodsand.name=Eden's Blood Sand
+tile.zollerngalaxy_bloodstone.name=Eden's Bloodstone
+tile.zollerngalaxy_bonestone.name=Eden's Bone Stone
+tile.zollerngalaxy_edensacredstone.name=Eden's Sacred Stone
+tile.zollerngalaxy_edenpurplius.name=Eden's Purplius
+tile.zollerngalaxy_edenglass.name=Eden's Glass
+tile.zollerngalaxy_edenwoodlog.name=Edenwood Log
+tile.zollerngalaxy_edentreeplanks.name=Edenwood Planks
+tile.zollerngalaxy_edenwoodleaves.name=Edenwood Leaves
+tile.zollerngalaxy_edenwoodsapling.name=Edenwood Sapling
+tile.zollerngalaxy_fruitofedenblock.name=Fruit of Eden
+tile.zollerngalaxy_magmarock.name=Magrock
+tile.zollerngalaxy_edengravel.name=Eden's Gravel
+tile.zollerngalaxy_edenwinterrock.name=Eden's Snow
+tile.zollerngalaxy_brightstone.name=Eden's Britestone
+tile.zollerngalaxy_edentreasurechest.name=Eden's Treasure
+
+tile.zollerngalaxy_kriffrock.name=Kriffrock
+tile.zollerngalaxy_kriffstone.name=Kriffstone
+tile.zollerngalaxy_kriffcobblerock.name=Kriffon Cobblerock
+tile.zollerngalaxy_kriffrockbricks.name=Kriffon Rock Bricks
+tile.zollerngalaxy_kriffcoalore.name=Kriffon Coal Ore
+tile.zollerngalaxy_kriffcopperore.name=Kriffon Copper Ore
+tile.zollerngalaxy_kriffredstoneore.name=Kriffon Redstone Ore
+tile.zollerngalaxy_kriffironore.name=Kriffon Iron Ore
+tile.zollerngalaxy_kriffgoldore.name=Kriffon Gold Ore
+tile.zollerngalaxy_kriffcobaltore.name=Kriffon Cobalt Ore
+tile.zollerngalaxy_kriffdirt.name=Kriffon Dirt
+
+tile.zollerngalaxy_purgrock.name=Purgot Rock
+tile.zollerngalaxy_purgcobblerock.name=Purgot Cobblerock
+tile.zollerngalaxy_purgrockbricks.name=Purgot Rock Bricks
+tile.zollerngalaxy_purgstone.name=Purgot Stone
+tile.zollerngalaxy_purgdirt.name=Purgot Dirt
+tile.zollerngalaxy_whiterock.name=Whiterock
+tile.zollerngalaxy_blackrock.name=Blackrock
+tile.zollerngalaxy_purgironore.name=Purgot Iron Ore
+tile.zollerngalaxy_purggoldore.name=Purgot Gold Ore
+tile.zollerngalaxy_purgcopperore.name=Purgot Copper Ore
+tile.zollerngalaxy_purgdiamondore.name=Purgot Diamond Ore
+tile.zollerngalaxy_purgemeraldore.name=Purgot Emerald Ore
+tile.zollerngalaxy_purgeveniumore.name=Purgot Evenium Ore
+tile.zollerngalaxy_purgcobaltore.name=Purgot Cobalt Ore
+
+tile.zollerngalaxy_xathrock.name=Xathian Rock
+tile.zollerngalaxy_xathstone.name=Xathian Stone
+tile.zollerngalaxy_xathcobblerock.name=Xathian Cobblerock
+tile.zollerngalaxy_xathdirt.name=Xathian Dirt
+tile.zollerngalaxy_xathgrass.name=Xathian Grass
+tile.zollerngalaxy_xathiusprometheanore.name=Xathian Promethean Ore
+
+tile.zollerngalaxy_oasisgrass.name=Oasis Grass
+tile.zollerngalaxy_oasisstone.name=Oasis Stone
+tile.zollerngalaxy_oasiscobblerock.name=Oasis Cobblerock
+tile.zollerngalaxy_oasisdirt.name=Oasis Dirt
+tile.zollerngalaxy_oasistallgras.name=Oasis Tall Grass
+
+tile.zollerngalaxy_heartblock.name=Healing Station
+tile.zollerngalaxy_blueprintblock.name=Blueprint Repair Station
+
+container.eden.treasurechest.name=Eden's Treasure
+
+item.zollerngalaxy_zolluscrystal.name=Zolnium Crystal
+item.zollerngalaxy_heartofzol.name=Zollus Heartium
+item.zollerngalaxy_zolluskriffontablet.name=Ancient Zollus Tablet
+
+item.zollerngalaxy_aluminumdust.name=Pulverized Aluminum
+item.zollerngalaxy_pulverizedcobalt.name=Pulverized Cobalt
+item.zollerngalaxy_diamonddust.name=Pulverized Diamond
+item.zollerngalaxy_emeralddust.name=Pulverized Emerald
+item.zollerngalaxy_eveniumdust.name=Pulverized Evenium
+
+item.zollerngalaxy_alienbeefraw.name=Raw Alien Beef
+item.zollerngalaxy_alienbeefcooked.name=Cooked Alien Beef
+item.zollerngalaxy_alienbaconraw.name=Raw Alien Bacon
+item.zollerngalaxy_alienbaconcooked.name=Cooked Alien Bacon
+item.zollerngalaxy_hud.name=Galactic HUD
+item.zollerngalaxy_fruitofeden.name=Fruit of Eden
+item.zollerngalaxy_brightstonedust.name=Britestone Dust
+item.zollerngalaxy_edendungeonkey.name=Eden's Treasure Key
+item.zollerngalaxy_rawviri.name=Raw Virinium
+item.zollerngalaxy_ingotviri.name=Virinium Ingot
+item.zollerngalaxy_alienstone.name=Ancient Eden's Essence
+item.zollerngalaxy_edencrystal.name=Eden's Crystal
+item.zollerngalaxy_edenzollustablet.name=Ancient Eden's Tablet
+
+item.zollerngalaxy_ingotcobalt.name=Cobalt Ingot
+item.zollerngalaxy_kriffoncrystal.name=Kriffon Crystal
+item.zollerngalaxy_kriffonpurgottablet.name=Ancient Kriffon Tablet
+
+item.zollerngalaxy_ingotevenium.name=Evenium Ingot
+item.zollerngalaxy_purgotcrystal.name=Purgot Crystal
+item.zollerngalaxy_purgotoasistablet.name=Oasis Gem
+
+item.zollerngalaxy_prometheancrystal.name=Promethean Crystal
+item.zollerngalaxy_plutoniumcrystal.name=Plutonium Crystal
+
+item.zollerngalaxy_blueprint_rad.name=Radiation Protection
+item.zollerngalaxy_blueprint_tox.name=Toxicity Protection
+
+item.zollerngalaxy_compressedemerald.name=Compressed Emerald
+item.zollerngalaxy_compresseddiamond.name=Compressed Diamond
+item.zollerngalaxy_compressedgold.name=Compressed Gold
+item.zollerngalaxy_compressedevenium.name=Compressed Evenium
+item.zollerngalaxy_compressedcobalt.name=Compressed Cobalt
+item.zollerngalaxy_compressedkriffonium.name=Compressed Kriffonium
+item.zollerngalaxy_compressedvirinium.name=Compressed Virinium
+item.zollerngalaxy_compressedheartium.name=Compressed Heartium
+item.zollerngalaxy_compressedvyrex.name=Compressed Vyrexite
+
+entity.zollerngalaxy_moolus.name=Moolus
+entity.zollerngalaxy_oinkus.name=Oinkus
+entity.zollerngalaxy_aliensquid.name=Alien Squid
+entity.zollerngalaxy_grayalien.name=Gray Alien
+entity.zollerngalaxy_galaxyknight.name=Galactic Sentry
+entity.zollerngalaxy_crawler.name=Crawler Boss
+entity.zollerngalaxy_frostgiant.name=Frost Giant
+entity.zollerngalaxy_magmos.name=Magmos
+entity.zollerngalaxy_slime.raspberry.name=Galaxy Slime (Raspberry)
+
+planet.zollus=Zollus
+planet.eden=Eden
+planet.purgot=Purgot
+planet.kriffus=Kriffon
+moon.astros=Astros
+
+planet.xathius=Xathius
+planet.oasis=Oasis
+planet.xantheon=Xantheon
+planet.atheon=Atheon
+
+planet.meztli=Meztli
+planet.centotl=Centotl
+planet.toci=Toci
+planet.tlaloc=Tlaloc
+
+planet.ares=Ares
+planet.prometheus=Prometheus
+planet.icarus=Icarus
+planet.kronos=Kronos
+
+planet.asgard=Asgard
+
+planet.meridian=Meridian
+
+star.psion6=Psios
+star.praedyth=Praedyth
+star.pantheon=Pantheon
+star.olympus=Olympus
+star.asgard=Asgard
+star.vega=Vega
+star.nova=Nova
+
+solarsystem.psion6=Psios
+solarsystem.praedyth=Praedyth
+solarsystem.pantheon=Pantheon
+solarsystem.olympus=Olympus
+solarsystem.asgard=Asgard
+solarsystem.vega=Vega
+solarsystem.Nova=Nova
+
+itemGroup.NovaGalacticBlocks=Zollern Galaxy Blocks
+itemGroup.NovaGalacticItems=Zollern Galaxy Items
+
+death.attack.deathcold=%1$s froze to death.
+death.attack.deathcold.player=%1$s froze to death because of %2$s.
+death.attack.deathcold.item=%1$s froze to death because of %2$s using %3$s.
+
+death.attack.deathhot=%1$s melted to death.
+death.attack.deathhot.player=%1$s melted to death because of %2$s.
+death.attack.deathhot.item=%1$s melted to death because of %2$s using %3$s.
+
+death.attack.toxic=%1$s died of toxicity.
+death.attack.toxic.player=%1$s died of toxicity because of %2$s.
+death.attack.toxic.item=%1$s died of toxicity because of %2$s using %3$s.
+
+death.attack.radiation=%1$s died of radiation.
+death.attack.radiation.player=%1$s died of radiation because of %2$s.
+death.attack.radiation.item=%1$s died of radiation because of %2$s using %3$s.

@@ -1,14 +1,14 @@
 [
 {
-  "modid": "galaxymod",
-  "name": "Zollern Galaxy",
-  "description": "To evolve, to explore - to go where no miner has gone before.",
-  "version": "1.5",
-  "mcversion": "1.7.10",
+  "modid": "zollernextras",
+  "name": "Zollern Extras",
+  "description": "A playground mod full of extras and fun things.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
   "url": "",
   "updateUrl": "",
   "authorList": ["ZollernWolf"],
-  "credits": "Myself and Steve Kung for his code support.",
+  "credits": "Zollern Wolf, Master Zane, and Lazy Logic.",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []
