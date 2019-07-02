@@ -1,7 +1,7 @@
 # Zollern Galaxy
 An adventurous space exploration add-on mod for Galacticraft.
 
- * Copyright 2015-2017 Zollern Wolf
+ * Copyright 2015-2020 Zollern Wolf
  * - Zollern Galaxy
  * Galacticraft Add-On Mod
  * You CAN:
