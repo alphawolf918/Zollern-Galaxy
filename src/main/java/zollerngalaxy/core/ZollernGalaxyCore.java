@@ -8,6 +8,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
+import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.lib.ZGInfo;
 import zollerngalaxy.lib.helpers.ModHelperBase;
@@ -40,6 +41,8 @@ public class ZollernGalaxyCore {
 		ModHelperBase.detectMods();
 		// PLACEHOLDER
 		ZGInfo.init(event.getModMetadata());
+		
+		ZGBlocks.init();
 		instance().proxy.preInit(event);
 	}
 	
@@ -47,6 +50,7 @@ public class ZollernGalaxyCore {
 	public void init(FMLInitializationEvent event) {
 		// STUFF
 		ZGPlanets.init();
+		instance().proxy.registerInitRendering();
 		instance().proxy.init(event);
 		NetworkRegistry.INSTANCE.registerGuiHandler(this, new CommonProxy());
 	}

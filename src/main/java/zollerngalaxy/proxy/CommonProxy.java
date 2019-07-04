@@ -11,6 +11,15 @@ import net.minecraftforge.fml.common.network.IGuiHandler;
 
 public class CommonProxy implements IProxy, IGuiHandler {
 	
+	public void registerPreRendering() {
+	}
+	
+	public void registerPostRendering() {
+	}
+	
+	public void registerInitRendering() {
+	}
+	
 	@Override
 	public void preInit(FMLPreInitializationEvent event) {
 		

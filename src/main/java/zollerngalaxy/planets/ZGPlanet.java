@@ -1,10 +1,12 @@
 package zollerngalaxy.planets;
 
+import java.util.ArrayList;
 import micdoodle8.mods.galacticraft.api.galaxies.Planet;
 import micdoodle8.mods.galacticraft.api.galaxies.Star;
 import micdoodle8.mods.galacticraft.api.world.AtmosphereInfo;
+import micdoodle8.mods.galacticraft.api.world.EnumAtmosphericGas;
 import net.minecraft.util.ResourceLocation;
-import zollerngalaxy.core.EnumPlanetClass;
+import zollerngalaxy.core.enums.EnumPlanetClass;
 import zollerngalaxy.lib.ZGInfo;
 
 public class ZGPlanet extends Planet implements IZollernPlanet {
@@ -23,15 +25,20 @@ public class ZGPlanet extends Planet implements IZollernPlanet {
 	
 	private AtmosphereInfo atmosphere;
 	
+	private ArrayList<EnumAtmosphericGas> planetGasses;
+	
 	public ZGPlanet(String planetName) {
 		super(planetName);
-		this.setPlanetTemperature(70.0F);
+		this.setPlanetTemperature(65.0F);
 		this.setPlanetRadiation(0.0F);
 		this.setPlanetToxicity(0.0F);
 		this.setBreathable(false);
 		this.setHasRain(false);
 		this.setWindLevel(0.0F);
 		this.setAtmosphere();
+		// if (planetGasses != null) {
+		// SpaceRegistryHelper.setAtmosphereComponentList(this, planetGasses);
+		// }
 	}
 	
 	public ZGPlanet setPlanetStar(Star systemStar) {
@@ -151,12 +158,27 @@ public class ZGPlanet extends Planet implements IZollernPlanet {
 		return this;
 	}
 	
+	/**
+	 * Sets the planet's atmosphere. Atmosphere is determined by several
+	 * factors: Is the planet breathable? Does the planet have rain? Is the
+	 * planet corrosive (radioactive or toxic)? What's the planet's temperature?
+	 * How strong is the wind level? How strong is the density level?
+	 * 
+	 * @return The planet of the atmosphere being set on.
+	 */
 	public Planet setAtmosphere() {
 		atmosphere = new AtmosphereInfo(this.getIsBreathable(),
 				this.getHasRain(),
 				(this.getIsRadioactivePlanet() || this.getIsToxicPlanet()),
 				this.getPlanetTemperature(), this.getWindLevel(),
 				this.getAtmosphericDensity());
+		return this;
+	}
+	
+	public Planet setPlanetGasses(EnumAtmosphericGas... gasses) {
+		for (EnumAtmosphericGas gas : gasses) {
+			planetGasses.add(gas);
+		}
 		return this;
 	}
 	

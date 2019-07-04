@@ -1,4 +1,4 @@
-package zollerngalaxy.core;
+package zollerngalaxy.core.enums;
 
 public enum EnumPlanetClass {
 	
