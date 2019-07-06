@@ -14,7 +14,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import zollerngalaxy.core.ISingleZGBlockRender;
+import zollerngalaxy.blocks.creativetabs.ZGTabs;
 import zollerngalaxy.core.enums.EnumHarvestLevel;
 
 public class ZGBlockBase extends Block implements ISingleZGBlockRender {
@@ -32,14 +32,14 @@ public class ZGBlockBase extends Block implements ISingleZGBlockRender {
 		super(blockMaterial);
 		instance = this;
 		this.name = blockName;
-		setBlockName(this, blockName);
+		this.setBlockName(this, blockName);
 		this.setHardResist(hardResist);
 		this.setHarvestLevel("pickaxe",
-				EnumHarvestLevel.STONE.getHarvestLevel());
+				EnumHarvestLevel.DIAMOND.getHarvestLevel());
 		this.setSoundType(blockSound);
 	}
 	
-	public static void setBlockName(final Block block, final String blockName) {
+	public void setBlockName(final Block block, final String blockName) {
 		block.setUnlocalizedName(blockName);
 	}
 	
@@ -138,8 +138,7 @@ public class ZGBlockBase extends Block implements ISingleZGBlockRender {
 	@Override
 	@SideOnly(Side.CLIENT)
 	public CreativeTabs getCreativeTabToDisplayOn() {
-		// return ZollernTabs.zTab;
-		return CreativeTabs.BUILDING_BLOCKS;
+		return ZGTabs.zgBlocksTab;
 	}
 	
 	@Override

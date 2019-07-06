@@ -1,12 +1,16 @@
 package zollerngalaxy.planets;
 
+import micdoodle8.mods.galacticraft.api.GalacticraftRegistry;
 import micdoodle8.mods.galacticraft.api.galaxies.GalaxyRegistry;
 import micdoodle8.mods.galacticraft.api.galaxies.Moon;
 import micdoodle8.mods.galacticraft.api.galaxies.SolarSystem;
 import micdoodle8.mods.galacticraft.api.galaxies.Star;
 import micdoodle8.mods.galacticraft.api.vector.Vector3;
+import micdoodle8.mods.galacticraft.core.dimension.TeleportTypeMoon;
 import net.minecraft.util.ResourceLocation;
-import zollerngalaxy.core.dimensions.teleporters.TeleportTypeNG;
+import zollerngalaxy.biomes.ZGBiomes;
+import zollerngalaxy.config.ConfigManagerZG;
+import zollerngalaxy.core.dimensions.worldproviders.WorldProviderZollus;
 import zollerngalaxy.core.enums.EnumPlanetClass;
 import zollerngalaxy.lib.ZGInfo;
 import zollerngalaxy.lib.helpers.ZollernHelper;
@@ -153,6 +157,8 @@ public class ZGPlanets {
 	
 	public static void initPlanets() {
 		// Planet Zollus
+		planetZollus.setDimensionInfo(ConfigManagerZG.planetZollusDimensionId,
+				WorldProviderZollus.class);
 		planetZollus.setParentSolarSystem(systemPsios);
 		planetZollus.setPlanetClass(EnumPlanetClass.L);
 		planetZollus.setRingColorRGB(0.1F, 0.9F, 2.6F);
@@ -170,8 +176,8 @@ public class ZGPlanets {
 		// planetZollus.setPlanetGasses(EnumAtmosphericGas.NITROGEN,
 		// EnumAtmosphericGas.HELIUM);
 		planetZollus.setPlanetIcon("zollus");
-		// planetZollus.setDimensionInfo(ConfigManagerZG.planetZollusDimensionId,
-		// WorldProviderZollus.class);
+		planetZollus.setBiomeInfo(ZGBiomes.ZOLLUS);
+		planetZollus.addChecklistKeys("equipOxygenSuit");
 		totalPlanets++;
 		
 		// Planet Eden
@@ -319,9 +325,9 @@ public class ZGPlanets {
 	}
 	
 	public static void registerTeleportTypes() {
-		TeleportTypeNG teleType = new TeleportTypeNG();
-		// GalacticraftRegistry.registerTeleportType(WorldProviderZollus.class,
-		// teleType);
+		// TeleportTypeNG teleType = new TeleportTypeNG();
+		GalacticraftRegistry.registerTeleportType(WorldProviderZollus.class,
+				new TeleportTypeMoon());
 		// GalacticraftRegistry.registerTeleportType(WorldProviderEden.class,
 		// teleType);
 		// GalacticraftRegistry.registerTeleportType(WorldProviderKriffon.class,

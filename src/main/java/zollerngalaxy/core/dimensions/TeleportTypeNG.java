@@ -1,10 +1,4 @@
-/*******************************************************************************
- * Copyright 2019 Zollern Wolf - Zollern Galaxy Galacticraft Add-On Mod You CAN:
- * - Learn from it - Use it to get ideas and concepts You CAN'T: - Redistribute
- * it - Claim it as your own Steve Kung's "More Planets" mod was a big help.
- *******************************************************************************/
-
-package zollerngalaxy.core.dimensions.teleporters;
+package zollerngalaxy.core.dimensions;
 
 import java.util.Random;
 import micdoodle8.mods.galacticraft.api.vector.Vector3;
@@ -15,6 +9,7 @@ import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldProvider;
 import net.minecraft.world.WorldServer;
+import zollerngalaxy.core.dimensions.worldproviders.WorldProviderZG;
 
 public class TeleportTypeNG implements ITeleportType {
 	
@@ -34,15 +29,14 @@ public class TeleportTypeNG implements ITeleportType {
 		return null;
 	}
 	
-	// TODO
 	@Override
 	public Vector3 getEntitySpawnLocation(WorldServer world, Entity entity) {
 		double y = 250.0f;
 		WorldProvider provider = world.provider;
-		// if (provider instanceof WorldProviderNova) {
-		// WorldProviderNova novaProvider = (WorldProviderNova) provider;
-		// y = novaProvider.getYCoordinateToTeleport();
-		// }
+		if (provider instanceof WorldProviderZG) {
+			WorldProviderZG novaProvider = (WorldProviderZG) provider;
+			y = novaProvider.getYCoordinateToTeleport();
+		}
 		return new Vector3(entity.posX, y, entity.posZ);
 	}
 	
@@ -61,13 +55,5 @@ public class TeleportTypeNG implements ITeleportType {
 	
 	@Override
 	public void setupAdventureSpawn(EntityPlayerMP player) {
-		// TODO Auto-generated method stub
-		
 	}
-	
-	// @Override
-	// public Vector3 getEntitySpawnLocation(WorldServer world, Entity entity) {
-	// // TODO Auto-generated method stub
-	// return null;
-	// }
 }

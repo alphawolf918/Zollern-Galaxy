@@ -1,5 +1,6 @@
 package zollerngalaxy.core;
 
+import micdoodle8.mods.galacticraft.api.world.BiomeGenBaseGC;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -8,13 +9,18 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
+import zollerngalaxy.biomes.ZGBiomes;
 import zollerngalaxy.blocks.ZGBlocks;
+import zollerngalaxy.blocks.creativetabs.ZGTabs;
+import zollerngalaxy.blocks.items.ZGItems;
 import zollerngalaxy.config.ConfigManagerZG;
+import zollerngalaxy.core.dimensions.ZGDimensions;
 import zollerngalaxy.lib.ZGInfo;
 import zollerngalaxy.lib.helpers.ModHelperBase;
 import zollerngalaxy.planets.ZGPlanets;
 import zollerngalaxy.proxy.CommonProxy;
 import zollerngalaxy.proxy.IProxy;
+import zollerngalaxy.recipes.ZGRecipeRegistry;
 
 @Mod(modid = ZGInfo.MOD_ID, version = ZGInfo.modVersion, name = ZGInfo.name,
 		dependencies = ZGInfo.DEPENDENCIES)
@@ -39,25 +45,37 @@ public class ZollernGalaxyCore {
 	public void preInit(FMLPreInitializationEvent event) {
 		ConfigManagerZG.init(event);
 		ModHelperBase.detectMods();
-		// PLACEHOLDER
-		ZGInfo.init(event.getModMetadata());
 		
+		ZGInfo.init(event.getModMetadata());
+		ZGItems.init();
 		ZGBlocks.init();
+		ZGBiomes.init();
+		ZGPlanets.init();
+		
+		instance().proxy.registerPreRendering();
 		instance().proxy.preInit(event);
 	}
 	
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
-		// STUFF
-		ZGPlanets.init();
+		ZGTabs.init();
+		ZGRecipeRegistry.init();
+		
+		for (BiomeGenBaseGC biome : ZGBiomes.biomeList) {
+			biome.registerTypes(biome);
+		}
+		
 		instance().proxy.registerInitRendering();
 		instance().proxy.init(event);
+		
 		NetworkRegistry.INSTANCE.registerGuiHandler(this, new CommonProxy());
 	}
 	
 	@EventHandler
 	public void postInit(FMLPostInitializationEvent event) {
-		// THINGS
+		ZGDimensions.init();
+		
+		instance().proxy.registerPostRendering();
 		instance().proxy.postInit(event);
 	}
 	

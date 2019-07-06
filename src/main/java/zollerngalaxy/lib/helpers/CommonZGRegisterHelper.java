@@ -19,8 +19,8 @@ import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.oredict.OreDictionary;
 import org.lwjgl.input.Keyboard;
-import zollerngalaxy.core.ISingleZGBlockRender;
-import zollerngalaxy.core.ISingleZGItemRender;
+import zollerngalaxy.blocks.ISingleZGBlockRender;
+import zollerngalaxy.blocks.items.ISingleZGItemRender;
 import com.google.common.base.Function;
 
 public class CommonZGRegisterHelper {
@@ -62,8 +62,7 @@ public class CommonZGRegisterHelper {
 			ISingleZGItemRender itemRender = (ISingleZGItemRender) item;
 			
 			if (itemRender.getName() != null) {
-				CommonZGRegisterHelper.SINGLE_ITEM_RENDER_LIST.put(item,
-						itemRender.getName());
+				CommonZGRegisterHelper.SINGLE_ITEM_RENDER_LIST.put(item, name);
 			}
 		}
 	}

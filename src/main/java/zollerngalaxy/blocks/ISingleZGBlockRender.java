@@ -1,4 +1,4 @@
-package zollerngalaxy.core;
+package zollerngalaxy.blocks;
 
 public interface ISingleZGBlockRender {
 	

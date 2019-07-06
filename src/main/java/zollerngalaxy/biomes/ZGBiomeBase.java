@@ -1,21 +1,40 @@
 package zollerngalaxy.biomes;
 
+import static net.minecraftforge.common.BiomeDictionary.Type.COLD;
+import static net.minecraftforge.common.BiomeDictionary.Type.DEAD;
+import static net.minecraftforge.common.BiomeDictionary.Type.DRY;
+import micdoodle8.mods.galacticraft.api.world.BiomeGenBaseGC;
 import net.minecraft.block.Block;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.biome.Biome;
+import zollerngalaxy.lib.helpers.CommonZGRegisterHelper;
 
-public abstract class ZollernBiome extends Biome {
+public class ZGBiomeBase extends BiomeGenBaseGC {
 	
-	protected TempCategory tempBiomeCtg = TempCategory.MEDIUM;
+	protected TempCategory tempBiomeCtg = TempCategory.COLD;
 	protected boolean hasMutation = false;
 	protected boolean enableSnow = false;
 	protected int waterColor = 0x0000ff;
 	protected int foliageColor = 0x00ff00;
 	protected int grassColor = 0x00ff00;
 	protected int skyColor = 0x0099ff;
+	private String singleName = "";
 	
-	public ZollernBiome(BiomeProperties properties) {
-		super(properties);
+	public ZGBiomeBase(BiomeProperties properties) {
+		super(properties, true);
+		ZGBiomes.biomeList.add(this);
+	}
+	
+	public ZGBiomeBase(String singleName, BiomeProperties properties) {
+		this(properties);
+		this.singleName = singleName;
+	}
+	
+	@Override
+	public void registerTypes(Biome biome) {
+		if (this.singleName.equals("diona")) {
+			CommonZGRegisterHelper.registerBiomeType(biome, COLD, DEAD, DRY);
+		}
 	}
 	
 	public Biome setSkyColor(int par1SkyColor) {

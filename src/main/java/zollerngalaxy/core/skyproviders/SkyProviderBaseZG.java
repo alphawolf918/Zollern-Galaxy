@@ -1,4 +1,4 @@
-package zollerngalaxy.core.providers;
+package zollerngalaxy.core.skyproviders;
 
 import java.util.Random;
 import micdoodle8.mods.galacticraft.core.util.ConfigManagerCore;
@@ -17,6 +17,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public abstract class SkyProviderBaseZG extends IRenderHandler {
+	
 	protected int starList;
 	protected int glSkyList;
 	protected int glSkyList2;

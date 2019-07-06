@@ -4,7 +4,7 @@ import java.util.Random;
 import net.minecraft.block.Block;
 import zollerngalaxy.planets.ZGPlanet;
 
-public class BiomeSpace extends ZollernBiome {
+public class BiomeSpace extends ZGBiomeBase {
 	
 	protected ZGPlanet planetForBiome = null;
 	public static int grassFoilageColorMultiplier = 0x00ff00;

@@ -3,6 +3,7 @@ package zollerngalaxy.lib.helpers;
 import java.io.File;
 import java.util.Random;
 import net.minecraft.block.Block;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
@@ -14,16 +15,16 @@ import net.minecraft.world.DimensionType;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldProvider;
 import net.minecraftforge.common.DimensionManager;
-import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.core.Logger;
-import zollerngalaxy.lib.ZGInfo;
+import org.apache.logging.log4j.Logger;
+import zollerngalaxy.blocks.creativetabs.CreativeTabsHelper;
+import zollerngalaxy.blocks.creativetabs.ZGTabs;
 
 public class ZollernHelper {
 	
-	private static final Logger LOGGER = (Logger) LogManager.getLogger();
+	private static final Logger LOGGER = LogManager.getLogger("Zollern Galaxy");
 	
 	public static void dropItem(Item droppedItem, World worldObj,
 			Entity theEntity) {
@@ -55,22 +56,25 @@ public class ZollernHelper {
 		return randInt;
 	}
 	
-	// public static void setTab(Block block) {
-	// block.setCreativeTab(ZollernTabs.zTab);
-	// }
-	//
-	// public static void setTab(Item item) {
-	// item.setCreativeTab(ZollernTabs.zTab);
-	// }
+	public static void setTab(Block block) {
+		block.setCreativeTab(ZGTabs.zgBlocksTab);
+	}
+	
+	public static void setTab(Item item) {
+		item.setCreativeTab(ZGTabs.zgItemsTab);
+	}
+	
+	public static CreativeTabs createCreativeTabs(String name,
+			ItemStack itemStack) {
+		return new CreativeTabsHelper(name, itemStack);
+	}
 	
 	public static void setName(Block block, String strName) {
-		block.setRegistryName(ZGInfo.MOD_ID + "_" + strName);
-		block.setUnlocalizedName(ZGInfo.MOD_ID + "_" + strName);
+		block.setUnlocalizedName(strName);
 	}
 	
 	public static void setName(Item item, String strName) {
-		item.setRegistryName(ZGInfo.MOD_ID + "_" + strName);
-		item.setUnlocalizedName(ZGInfo.MOD_ID + "_" + strName);
+		item.setUnlocalizedName(strName);
 	}
 	
 	public static void setHardResist(Block block, float hardness,
@@ -81,19 +85,6 @@ public class ZollernHelper {
 	
 	public static void setHardResist(Block block, float hardResist) {
 		ZollernHelper.setHardResist(block, hardResist, hardResist);
-	}
-	
-	public static boolean getConfig(Configuration config,
-			String configCategory, String configKey,
-			boolean configDefaultValue, String configComment) {
-		return config.get(configCategory, configKey, configDefaultValue,
-				configComment).getBoolean();
-	}
-	
-	public static int getConfig(Configuration config, String configCategory,
-			String configKey, int configDefaultValue, String configComment) {
-		return config.get(configCategory, configKey, configDefaultValue,
-				configComment).getInt();
 	}
 	
 	public static File getFilePath(FMLPreInitializationEvent event) {
@@ -113,24 +104,13 @@ public class ZollernHelper {
 	
 	public static void log(Level level, String strMessage) {
 		if (level == Level.INFO) {
-			LOGGER.info("[" + ZGInfo.officialName + "] " + strMessage);
-		}// else if (level == Level.DEBUG) {
-			// if (ZEConfig.enableDebugMode) {
-		// LOGGER.debug("[DEB:" + ZGInfo.officialName + "] "
-		// + strMessage);
-		// }
-		// }
+			LOGGER.info(strMessage);
+		}
 	}
 	
 	public static void logInfo(String str) {
 		log(Level.INFO, str);
 	}
-	
-	// public static void logDebug(String str) {
-	// if (ZEConfig.enableDebugMode) {
-	// log(Level.DEBUG, str);
-	// }
-	// }
 	
 	public static void damageItemStack(Item item, float damageAmount,
 			EntityPlayer player) {
