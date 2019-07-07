@@ -9,6 +9,7 @@ import net.minecraft.block.Block;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.DimensionType;
+import net.minecraft.world.biome.BiomeProvider;
 import net.minecraft.world.gen.IChunkGenerator;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -24,7 +25,7 @@ public class WorldProviderZollus extends WorldProviderZG {
 	
 	@Override
 	public float getGravity() {
-		return 0.02F;
+		return 0.052F;
 	}
 	
 	@Override
@@ -47,18 +48,13 @@ public class WorldProviderZollus extends WorldProviderZG {
 	}
 	
 	@Override
-	public boolean hasBreathableAtmosphere() {
-		return false;
-	}
-	
-	@Override
 	public float getSolarSize() {
-		return 1.0F;
+		return 0.5F;
 	}
 	
 	@Override
 	public double getFuelUsageMultiplier() {
-		return 0.4D;
+		return 0.9D;
 	}
 	
 	@Override
@@ -68,7 +64,7 @@ public class WorldProviderZollus extends WorldProviderZG {
 	
 	@Override
 	public float getSoundVolReductionAmount() {
-		return 2F;
+		return 2.0F;
 	}
 	
 	@Override
@@ -108,7 +104,7 @@ public class WorldProviderZollus extends WorldProviderZG {
 	
 	@Override
 	public double getSolarEnergyMultiplier() {
-		return 0.045;
+		return 0.0045;
 	}
 	
 	@Override
@@ -139,7 +135,7 @@ public class WorldProviderZollus extends WorldProviderZG {
 			f2 = 0.95F;
 		}
 		f2 = 0.95F - f2;
-		return f2 * 1.1F;
+		return f2 * 0.3F;
 	}
 	
 	@Override
@@ -149,7 +145,7 @@ public class WorldProviderZollus extends WorldProviderZG {
 	
 	@Override
 	public int getAverageGroundLevel() {
-		return 44;
+		return 68;
 	}
 	
 	@Override
@@ -160,7 +156,7 @@ public class WorldProviderZollus extends WorldProviderZG {
 	
 	@Override
 	public Vector3 getSkyColor() {
-		return new Vector3(0, 0, 210);
+		return new Vector3(0, 0, 0);
 	}
 	
 	@Override
@@ -211,11 +207,6 @@ public class WorldProviderZollus extends WorldProviderZG {
 	}
 	
 	@Override
-	public IChunkGenerator createChunkGenerator() {
-		return new ChunkProviderZollus(this.world, this.world.getSeed());
-	}
-	
-	@Override
 	public DimensionType getDimensionType() {
 		return ZGDimensions.ZOLLUS;
 	}
@@ -223,6 +214,21 @@ public class WorldProviderZollus extends WorldProviderZG {
 	@Override
 	public double getYCoordinateToTeleport() {
 		return 120;
+	}
+	
+	@Override
+	public boolean isSkyColored() {
+		return false;
+	}
+	
+	@Override
+	public BiomeProvider getBiomeProvider() {
+		return new BiomeProviderZollus();
+	}
+	
+	@Override
+	public Class<? extends IChunkGenerator> getChunkProviderClass() {
+		return ChunkProviderZollus.class;
 	}
 	
 }

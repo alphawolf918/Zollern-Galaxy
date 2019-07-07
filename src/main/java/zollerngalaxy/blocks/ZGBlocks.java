@@ -4,8 +4,11 @@ import net.minecraft.block.Block;
 import net.minecraft.init.Items;
 import zollerngalaxy.blocks.items.ZGItems;
 import zollerngalaxy.lib.helpers.CommonZGRegisterHelper;
+import zollerngalaxy.lib.helpers.ZGHelper;
 
 public class ZGBlocks {
+	
+	private static int totalBlocks = 0;
 	
 	public static final Block zolcobblerock = new ZGBlockBase("zolcobblerock",
 			1.2F);
@@ -38,9 +41,11 @@ public class ZGBlocks {
 		ZGBlocks.addBlock(zolHeartOre);
 		ZGBlocks.addBlock(zolTinOre);
 		ZGBlocks.addBlock(zolIronOre);
+		ZGHelper.Log("Loaded a total of " + totalBlocks + " new blocks.");
 	}
 	
 	private static void addBlock(Block block) {
 		CommonZGRegisterHelper.registerBlock(block);
+		totalBlocks++;
 	}
 }

@@ -13,6 +13,10 @@ public class BiomeSpace extends ZGBiomeBase {
 		super(properties);
 	}
 	
+	public BiomeSpace(String singleName, BiomeProperties props) {
+		super(singleName, props);
+	}
+	
 	/**
 	 * Sets the Planet to be associated with this biome.
 	 * 

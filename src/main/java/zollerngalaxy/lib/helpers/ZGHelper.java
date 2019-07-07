@@ -22,7 +22,7 @@ import org.apache.logging.log4j.Logger;
 import zollerngalaxy.blocks.creativetabs.CreativeTabsHelper;
 import zollerngalaxy.blocks.creativetabs.ZGTabs;
 
-public class ZollernHelper {
+public class ZGHelper {
 	
 	private static final Logger LOGGER = LogManager.getLogger("Zollern Galaxy");
 	
@@ -84,7 +84,7 @@ public class ZollernHelper {
 	}
 	
 	public static void setHardResist(Block block, float hardResist) {
-		ZollernHelper.setHardResist(block, hardResist, hardResist);
+		ZGHelper.setHardResist(block, hardResist, hardResist);
 	}
 	
 	public static File getFilePath(FMLPreInitializationEvent event) {
@@ -102,14 +102,14 @@ public class ZollernHelper {
 		player.sendMessage(new TextComponentString(text));
 	}
 	
-	public static void log(Level level, String strMessage) {
+	public static void Log(Level level, String strMessage) {
 		if (level == Level.INFO) {
 			LOGGER.info(strMessage);
 		}
 	}
 	
-	public static void logInfo(String str) {
-		log(Level.INFO, str);
+	public static void Log(String str) {
+		Log(Level.INFO, str);
 	}
 	
 	public static void damageItemStack(Item item, float damageAmount,

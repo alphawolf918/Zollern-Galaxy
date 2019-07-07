@@ -32,7 +32,7 @@ public class ZGBiomeBase extends BiomeGenBaseGC {
 	
 	@Override
 	public void registerTypes(Biome biome) {
-		if (this.singleName.equals("diona")) {
+		if (this.singleName.equals("zollus")) {
 			CommonZGRegisterHelper.registerBiomeType(biome, COLD, DEAD, DRY);
 		}
 	}

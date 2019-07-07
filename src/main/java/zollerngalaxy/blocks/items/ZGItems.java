@@ -2,8 +2,11 @@ package zollerngalaxy.blocks.items;
 
 import net.minecraft.item.Item;
 import zollerngalaxy.lib.helpers.CommonZGRegisterHelper;
+import zollerngalaxy.lib.helpers.ZGHelper;
 
 public class ZGItems {
+	
+	private static int totalItems = 0;
 	
 	public static final Item heartOfZol = new ZGItemBase("heartofzol");
 	public static final Item zolCrystal = new ZGItemBase("zolluscrystal");
@@ -15,10 +18,12 @@ public class ZGItems {
 		ZGItems.addItem(zolCrystal);
 		ZGItems.addItem(rawViri);
 		ZGItems.addItem(ingotViri);
+		ZGHelper.Log("Loaded a total of " + totalItems + " new items.");
 	}
 	
 	private static void addItem(Item item) {
 		CommonZGRegisterHelper.registerItem(item);
+		totalItems++;
 	}
 	
 }

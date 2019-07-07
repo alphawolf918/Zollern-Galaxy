@@ -16,7 +16,7 @@ public class BiomeZollus extends BiomeSpace {
 	public BiomeDecoratorZollus biomeDecor = this.getBiomeDecorator();
 	
 	public BiomeZollus(BiomeProperties props) {
-		super(props);
+		super("zollus", props);
 		props.setRainDisabled();
 		this.enableSnow = true;
 		this.decorator.flowersPerChunk = -999;

@@ -10,21 +10,24 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.Biome.BiomeProperties;
 import net.minecraftforge.common.BiomeDictionary;
 import zollerngalaxy.lib.helpers.CommonZGRegisterHelper;
+import zollerngalaxy.lib.helpers.ZGHelper;
 
 public class ZGBiomes {
 	
 	public static final List<BiomeGenBaseGC> biomeList = new LinkedList<>();
+	private static int totalBiomes = 0;
 	
-	public static Biome ZOLLUS = new ZGBiomeBase("zollus", new BiomeProperties(
-			"Zollus").setRainfall(0.0F));
+	public static Biome ZOLLUS = new BiomeZollus(new BiomeProperties("Zollus"));
 	
 	public static void init() {
 		ZGBiomes.addBiome(ZGBiomes.ZOLLUS, COLD, DEAD, DRY);
+		ZGHelper.Log("Loaded a total of " + totalBiomes + " new biomes.");
 	}
 	
 	private static void addBiome(Biome biome, BiomeDictionary.Type... biomeType) {
 		CommonZGRegisterHelper.registerBiome(biome);
 		CommonZGRegisterHelper.registerBiomeType(biome, biomeType);
+		totalBiomes++;
 	}
 	
 }

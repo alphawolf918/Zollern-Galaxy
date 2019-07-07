@@ -10,7 +10,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import zollerngalaxy.lib.helpers.ZollernHelper;
+import zollerngalaxy.lib.helpers.ZGHelper;
 
 public class ZGOreGem extends ZGBlockOre {
 	
@@ -61,7 +61,7 @@ public class ZGOreGem extends ZGBlockOre {
 	@Override
 	public void getDrops(NonNullList<ItemStack> drops, IBlockAccess world,
 			BlockPos pos, IBlockState state, int fortune) {
-		int j = ZollernHelper.rngNumber(this.getMinDropped(),
+		int j = ZGHelper.rngNumber(this.getMinDropped(),
 				this.getMaxDropped());
 		for (int k = 0; k < j; ++k) {
 			drops.add(new ItemStack(itemToDrop, 1, this.droppedMetadata));
@@ -97,20 +97,20 @@ public class ZGOreGem extends ZGBlockOre {
 		int numDropped = 1;
 		switch (this.getBlockVariant()) {
 		default:
-			numDropped = ZollernHelper.rngNumber(1, 1);
+			numDropped = ZGHelper.rngNumber(1, 1);
 			break;
 		case OVERWORLD:
-			numDropped = ZollernHelper.rngNumber(minDropped, maxDropped);
+			numDropped = ZGHelper.rngNumber(minDropped, maxDropped);
 			break;
 		case NETHER:
-			numDropped = ZollernHelper.rngNumber(maxDropped, maxDropped + 2);
+			numDropped = ZGHelper.rngNumber(maxDropped, maxDropped + 2);
 			break;
 		case END:
-			numDropped = ZollernHelper
+			numDropped = ZGHelper
 					.rngNumber(maxDropped + 2, maxDropped + 4);
 			break;
 		case UPSIDE_DOWN:
-			numDropped = ZollernHelper
+			numDropped = ZGHelper
 					.rngNumber(maxDropped + 4, maxDropped + 6);
 			break;
 		}

@@ -8,7 +8,9 @@ import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.client.FMLClientHandler;
 
 public class SkyProviderZollus extends SkyProviderBaseZG {
 	
@@ -17,11 +19,11 @@ public class SkyProviderZollus extends SkyProviderBaseZG {
 	private ResourceLocation edenTexture = new ResourceLocation(
 			"zollerngalaxy:textures/gui/eden.png");
 	private ResourceLocation purgotTexture = new ResourceLocation(
-			"zollerngalaxy:textures/gui/celestialbodies/purgot.png");
+			"zollerngalaxy:textures/gui/purgot.png");
 	
 	public SkyProviderZollus(IGalacticraftWorldProvider provider) {
 		super();
-		this.sunSize = 17.5F * provider.getSolarSize();
+		this.sunSize = 0.5F * provider.getSolarSize();
 	}
 	
 	@Override
@@ -56,7 +58,7 @@ public class SkyProviderZollus extends SkyProviderBaseZG {
 		GlStateManager.color(0.0F, 0.0F, 0.0F, 1.0F);
 		
 		// Some blanking to conceal the stars
-		scale = this.sunSize / 2.5F;
+		scale = this.sunSize / 3.5F;
 		worldrenderer.begin(7, DefaultVertexFormats.POSITION);
 		worldrenderer.pos(-scale, 99.9D, -scale).endVertex();
 		worldrenderer.pos(scale, 99.9D, -scale).endVertex();
@@ -133,5 +135,19 @@ public class SkyProviderZollus extends SkyProviderBaseZG {
 	@Override
 	protected float getRainStrength(World world, float partialTicks) {
 		return 0.0F;
+	}
+	
+	public float getSkyBrightness(float par1) {
+		float var2 = FMLClientHandler.instance().getClient().world
+				.getCelestialAngle(par1);
+		float var3 = 1.0F - (MathHelper.sin(var2 * (float) Math.PI * 2.0F) * 2.0F + 0.25F);
+		
+		if (var3 < 0.0F) {
+			var3 = 0.0F;
+		}
+		if (var3 > 1.0F) {
+			var3 = 1.0F;
+		}
+		return var3 * var3 * 1F;
 	}
 }

@@ -82,7 +82,7 @@ public abstract class WorldProviderZG extends WorldProviderSpace implements
 	
 	@Override
 	public int getDungeonSpacing() {
-		return 500;
+		return 704;
 	}
 	
 	@Override
@@ -142,11 +142,6 @@ public abstract class WorldProviderZG extends WorldProviderSpace implements
 	public abstract void init();
 	
 	@Override
-	public abstract IChunkGenerator createChunkGenerator();
-	
-	@Override
-	public Class<? extends IChunkGenerator> getChunkProviderClass() {
-		return null;
-	}
+	public abstract Class<? extends IChunkGenerator> getChunkProviderClass();
 	
 }

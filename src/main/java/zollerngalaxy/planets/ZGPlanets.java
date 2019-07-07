@@ -13,7 +13,7 @@ import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderZollus;
 import zollerngalaxy.core.enums.EnumPlanetClass;
 import zollerngalaxy.lib.ZGInfo;
-import zollerngalaxy.lib.helpers.ZollernHelper;
+import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.starsystems.ZGStarSystem;
 
 public class ZGPlanets {
@@ -151,7 +151,7 @@ public class ZGPlanets {
 		systemNova.setMainStar(starNova);
 		totalSystems++;
 		
-		ZollernHelper.logInfo("Loaded a total of " + totalSystems
+		ZGHelper.Log("Loaded a total of " + totalSystems
 				+ " new star systems.");
 	}
 	
@@ -297,15 +297,15 @@ public class ZGPlanets {
 		// WorldProviderOasis.class);
 		totalPlanets++;
 		
-		ZollernHelper.logInfo("Loaded a total of " + totalPlanets
+		ZGHelper.Log("Loaded a total of " + totalPlanets
 				+ " new planets.");
 	}
 	
 	public static void initMoons() {
 		// TODO
 		totalPlanets++;
-		ZollernHelper
-				.logInfo("Loaded a total of " + totalMoons + " new moons.");
+		ZGHelper
+				.Log("Loaded a total of " + totalMoons + " new moons.");
 	}
 	
 	public static void registerSystems() {

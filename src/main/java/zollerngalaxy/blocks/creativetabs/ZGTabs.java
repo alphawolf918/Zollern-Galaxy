@@ -4,7 +4,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.blocks.items.ZGItems;
-import zollerngalaxy.lib.helpers.ZollernHelper;
+import zollerngalaxy.lib.helpers.ZGHelper;
 
 public class ZGTabs {
 	
@@ -12,9 +12,9 @@ public class ZGTabs {
 	public static CreativeTabs zgBlocksTab;
 	
 	public static void init() {
-		zgBlocksTab = ZollernHelper.createCreativeTabs("ZollernGalaxyBlocks",
+		zgBlocksTab = ZGHelper.createCreativeTabs("ZollernGalaxyBlocks",
 				new ItemStack(ZGBlocks.zolSurfaceRock));
-		zgItemsTab = ZollernHelper.createCreativeTabs("ZollernGalaxyItems",
+		zgItemsTab = ZGHelper.createCreativeTabs("ZollernGalaxyItems",
 				new ItemStack(ZGItems.ingotViri));
 	}
 }

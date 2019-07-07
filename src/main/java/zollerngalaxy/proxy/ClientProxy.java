@@ -7,7 +7,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import zollerngalaxy.core.renderers.ZGItemRender;
-import zollerngalaxy.lib.helpers.ZollernHelper;
+import zollerngalaxy.lib.helpers.ZGHelper;
 
 public class ClientProxy extends CommonProxy {
 	
@@ -28,7 +28,7 @@ public class ClientProxy extends CommonProxy {
 	
 	@Override
 	public void sendChatMessage(EntityPlayer player, String message) {
-		ZollernHelper.addChatMessage(player, message);
+		ZGHelper.addChatMessage(player, message);
 	}
 	
 	@Override
