@@ -3,6 +3,7 @@ package zollerngalaxy.blocks;
 import net.minecraft.block.Block;
 import net.minecraft.init.Items;
 import zollerngalaxy.blocks.items.ZGItems;
+import zollerngalaxy.blocks.zollus.ZolniumCrystals;
 import zollerngalaxy.lib.helpers.CommonZGRegisterHelper;
 import zollerngalaxy.lib.helpers.ZGHelper;
 
@@ -28,6 +29,7 @@ public class ZGBlocks {
 			ZGItems.heartOfZol);
 	public static final Block zolTinOre = new ZGBlockOre("zoltinore", 1.2F);
 	public static final Block zolIronOre = new ZGBlockOre("zolironore", 1.4F);
+	public static final Block zolCrystals = new ZolniumCrystals();
 	
 	public static void init() {
 		ZGBlocks.addBlock(zolstone);
@@ -41,6 +43,7 @@ public class ZGBlocks {
 		ZGBlocks.addBlock(zolHeartOre);
 		ZGBlocks.addBlock(zolTinOre);
 		ZGBlocks.addBlock(zolIronOre);
+		ZGBlocks.addBlock(zolCrystals);
 		ZGHelper.Log("Loaded a total of " + totalBlocks + " new blocks.");
 	}
 	

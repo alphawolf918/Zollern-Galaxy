@@ -1,7 +1,8 @@
-package zollerngalaxy.biomes;
+package zollerngalaxy.biomes.zollus;
 
 import net.minecraft.block.Block;
 import net.minecraft.world.biome.BiomeDecorator;
+import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.biomes.decorators.BiomeDecoratorZollus;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.planets.ZGPlanets;

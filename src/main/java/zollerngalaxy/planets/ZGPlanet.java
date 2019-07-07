@@ -168,8 +168,7 @@ public class ZGPlanet extends Planet implements IZollernPlanet {
 	 */
 	public Planet setAtmosphere() {
 		atmosphere = new AtmosphereInfo(this.getIsBreathable(),
-				this.getHasRain(),
-				(this.getIsRadioactivePlanet() || this.getIsToxicPlanet()),
+				this.getHasRain(), this.getIsCorrosive(),
 				this.getPlanetTemperature(), this.getWindLevel(),
 				this.getAtmosphericDensity());
 		return this;
@@ -322,6 +321,10 @@ public class ZGPlanet extends Planet implements IZollernPlanet {
 	@Override
 	public float getAtmosphericDensity() {
 		return this.density;
+	}
+	
+	public boolean getIsCorrosive() {
+		return (this.getIsToxicPlanet() || this.getIsRadioactivePlanet());
 	}
 	
 }

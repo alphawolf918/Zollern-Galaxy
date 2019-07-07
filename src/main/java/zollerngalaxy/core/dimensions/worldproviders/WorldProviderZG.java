@@ -8,6 +8,7 @@ import micdoodle8.mods.galacticraft.api.world.ISolarLevel;
 import micdoodle8.mods.galacticraft.core.event.EventHandlerGC;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.IChunkGenerator;
+import net.minecraft.world.storage.WorldInfo;
 import net.minecraftforge.client.IRenderHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -18,7 +19,7 @@ public abstract class WorldProviderZG extends WorldProviderSpace implements
 	
 	@Override
 	public String getSaveFolder() {
-		return "planets/" + this.getCelestialBody().getName();
+		return "planets/" + this.getPlanet().getName();
 	}
 	
 	public World getWorldObj() {
@@ -30,6 +31,12 @@ public abstract class WorldProviderZG extends WorldProviderSpace implements
 		return true;
 	}
 	
+	public ZGPlanet getPlanet() {
+		CelestialBody planet = this.getCelestialBody();
+		ZGPlanet planetNova = (ZGPlanet) planet;
+		return planetNova;
+	}
+	
 	@Override
 	public float getSolarSize() {
 		return 1.0F;
@@ -38,6 +45,27 @@ public abstract class WorldProviderZG extends WorldProviderSpace implements
 	@Override
 	public Vector3 getFogColor() {
 		return new Vector3(0, 0, 0);
+	}
+	
+	@Override
+	public float getWindLevel() {
+		return this.getPlanet().getWindLevel();
+	}
+	
+	@Override
+	public void updateWeather() {
+		World worldObj = this.getWorldObj();
+		WorldInfo worldInfo = worldObj.getWorldInfo();
+		if (!this.shouldDisablePrecipitation()) {
+			super.updateWeather();
+		} else {
+			worldInfo.setRainTime(0);
+			worldInfo.setRaining(false);
+			worldInfo.setThunderTime(0);
+			worldInfo.setThundering(false);
+			worldObj.rainingStrength = 0.0F;
+			worldObj.thunderingStrength = 0.0F;
+		}
 	}
 	
 	@Override
@@ -56,23 +84,12 @@ public abstract class WorldProviderZG extends WorldProviderSpace implements
 	
 	@Override
 	public double getFuelUsageMultiplier() {
-		return 0.9D;
+		return 0.5D;
 	}
 	
 	@Override
 	public double getMeteorFrequency() {
-		CelestialBody planet = this.getCelestialBody();
-		float d;
-		if (planet instanceof ZGPlanet) {
-			ZGPlanet planetNova = (ZGPlanet) planet;
-			d = ((ZGPlanet) planet).getAtmosphericDensity();
-			return d;
-		}
-		d = planet.atmosphere.relativeDensity();
-		if (d <= 0.0F) {
-			return 10.0D;
-		}
-		return d * 110D;
+		return this.getPlanet().getAtmosphericDensity();
 	}
 	
 	@Override
@@ -87,17 +104,12 @@ public abstract class WorldProviderZG extends WorldProviderSpace implements
 	
 	@Override
 	public boolean hasBreathableAtmosphere() {
-		CelestialBody planet = this.getCelestialBody();
-		if (planet instanceof ZGPlanet) {
-			ZGPlanet planetNova = (ZGPlanet) planet;
-			return planetNova.getIsBreathable();
-		}
-		return false;
+		return this.getPlanet().getIsBreathable();
 	}
 	
 	@Override
 	public boolean canSpaceshipTierPass(int tier) {
-		return tier <= this.getCelestialBody().getTierRequirement();
+		return tier <= this.getPlanet().getTierRequirement();
 	}
 	
 	@Override

@@ -25,36 +25,22 @@ public class WorldProviderZollus extends WorldProviderZG {
 	
 	@Override
 	public float getGravity() {
-		return 0.052F;
+		return 0.042F;
 	}
 	
 	@Override
 	public double getMeteorFrequency() {
-		return 6.0;
-	}
-	
-	@Override
-	public void updateWeather() {
-		if (this.canRainOrSnow()) {
-			super.updateWeather();
-		} else {
-			this.world.getWorldInfo().setRainTime(0);
-			this.world.getWorldInfo().setRaining(false);
-			this.world.getWorldInfo().setThunderTime(0);
-			this.world.getWorldInfo().setThundering(false);
-			this.world.rainingStrength = 0.0F;
-			this.world.thunderingStrength = 0.0F;
-		}
+		return 25.0;
 	}
 	
 	@Override
 	public float getSolarSize() {
-		return 0.5F;
+		return 0.2F;
 	}
 	
 	@Override
 	public double getFuelUsageMultiplier() {
-		return 0.9D;
+		return 0.6D;
 	}
 	
 	@Override
@@ -69,32 +55,14 @@ public class WorldProviderZollus extends WorldProviderZG {
 	
 	@Override
 	public float getThermalLevelModifier() {
-		CelestialBody planet = this.getCelestialBody();
-		if (planet instanceof ZGPlanet) {
-			ZGPlanet planetNova = (ZGPlanet) planet;
-			float planetTemp = planetNova.getPlanetTemperature();
-			if (this.isDaytime()) {
-				planetTemp -= -2.1F;
-			} else {
-				planetTemp -= -4.2F;
-			}
-			return planetTemp;
-		}
+		ZGPlanet planet = this.getPlanet();
+		float planetTemp = planet.getPlanetTemperature();
 		if (this.isDaytime()) {
-			return -2.1F;
+			planetTemp -= -2.1F;
 		} else {
-			return -4.2F;
+			planetTemp -= -4.2F;
 		}
-	}
-	
-	@Override
-	public float getWindLevel() {
-		CelestialBody planet = this.getCelestialBody();
-		if (planet instanceof ZGPlanet) {
-			ZGPlanet planetNova = (ZGPlanet) planet;
-			return ((ZGPlanet) planet).getWindLevel();
-		}
-		return 2.0F;
+		return planetTemp;
 	}
 	
 	@Override
@@ -135,7 +103,7 @@ public class WorldProviderZollus extends WorldProviderZG {
 			f2 = 0.95F;
 		}
 		f2 = 0.95F - f2;
-		return f2 * 0.3F;
+		return f2 * 0.34F;
 	}
 	
 	@Override
@@ -152,11 +120,6 @@ public class WorldProviderZollus extends WorldProviderZG {
 	public Vector3 getFogColor() {
 		float f = 1.0F - this.getStarBrightness(1.0F);
 		return new Vector3(20 / 255F * f, 27 / 255F * f, 45 / 255F * f);
-	}
-	
-	@Override
-	public Vector3 getSkyColor() {
-		return new Vector3(0, 0, 0);
 	}
 	
 	@Override

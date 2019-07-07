@@ -23,7 +23,7 @@ public class SkyProviderZollus extends SkyProviderBaseZG {
 	
 	public SkyProviderZollus(IGalacticraftWorldProvider provider) {
 		super();
-		this.sunSize = 0.5F * provider.getSolarSize();
+		this.sunSize = 0.1F * provider.getSolarSize();
 	}
 	
 	@Override
@@ -58,7 +58,7 @@ public class SkyProviderZollus extends SkyProviderBaseZG {
 		GlStateManager.color(0.0F, 0.0F, 0.0F, 1.0F);
 		
 		// Some blanking to conceal the stars
-		scale = this.sunSize / 3.5F;
+		scale = 1.5F;// this.sunSize / 3.5F;
 		worldrenderer.begin(7, DefaultVertexFormats.POSITION);
 		worldrenderer.pos(-scale, 99.9D, -scale).endVertex();
 		worldrenderer.pos(scale, 99.9D, -scale).endVertex();

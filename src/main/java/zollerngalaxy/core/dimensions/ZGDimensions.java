@@ -11,6 +11,7 @@ public class ZGDimensions {
 	public static DimensionType KRIFFON;
 	public static DimensionType EDEN;
 	public static DimensionType PURGOT;
+	public static DimensionType ASTROS;
 	
 	// Praedyth
 	public static DimensionType OASIS;
@@ -18,20 +19,26 @@ public class ZGDimensions {
 	
 	public static void init() {
 		// Psion-6
-		ZGDimensions.ZOLLUS = WorldUtil
-				.getDimensionTypeById(ConfigManagerZG.planetZollusDimensionId);
-		ZGDimensions.KRIFFON = WorldUtil
-				.getDimensionTypeById(ConfigManagerZG.planetKriffonDimensionId);
-		ZGDimensions.EDEN = WorldUtil
-				.getDimensionTypeById(ConfigManagerZG.planetEdenDimensionId);
-		ZGDimensions.PURGOT = WorldUtil
-				.getDimensionTypeById(ConfigManagerZG.planetPurgotDimensionId);
+		ZGDimensions.ZOLLUS = ZGDimensions
+				.getDimType(ConfigManagerZG.planetZollusDimensionId);
+		// ZGDimensions.KRIFFON = WorldUtil
+		// .getDimensionTypeById(ConfigManagerZG.planetKriffonDimensionId);
+		// ZGDimensions.EDEN = WorldUtil
+		// .getDimensionTypeById(ConfigManagerZG.planetEdenDimensionId);
+		// ZGDimensions.PURGOT = WorldUtil
+		// .getDimensionTypeById(ConfigManagerZG.planetPurgotDimensionId);
+		//
+		// // Praedyth
+		// ZGDimensions.OASIS = WorldUtil
+		// .getDimensionTypeById(ConfigManagerZG.planetOasisDimensionId);
+		// ZGDimensions.XATHIUS = WorldUtil
+		// .getDimensionTypeById(ConfigManagerZG.planetXathiusDimensionId);
+		// ZGDimensions.ASTROS = WorldUtil
+		// .getDimensionTypeById(ConfigManagerZG.moonAstrosDimensionId);
 		
-		// Praedyth
-		ZGDimensions.OASIS = WorldUtil
-				.getDimensionTypeById(ConfigManagerZG.planetOasisDimensionId);
-		ZGDimensions.XATHIUS = WorldUtil
-				.getDimensionTypeById(ConfigManagerZG.planetXathiusDimensionId);
-		
+	}
+	
+	public static DimensionType getDimType(int dimId) {
+		return WorldUtil.getDimensionTypeById(dimId);
 	}
 }
