@@ -18,8 +18,8 @@ import zollerngalaxy.lib.helpers.ZGHelper;
 
 public class ZolniumCrystals extends ZGBlockFlower {
 	
-	protected int minDropped = 2;
-	protected int maxDropped = 4;
+	protected int minDropped = 1;
+	protected int maxDropped = 3;
 	protected Item itemToDrop;
 	
 	public ZolniumCrystals() {

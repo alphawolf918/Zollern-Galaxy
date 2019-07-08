@@ -30,17 +30,17 @@ public class BiomeDecoratorZollus extends BiomeDecoratorZG {
 		this.packedIceGen = new WorldGenMinableZG(Blocks.PACKED_ICE,
 				ZGBlocks.zolSurfaceRock, EnumOreGenZG.PACKED_ICE);
 		this.tinGen = new WorldGenMinableZG(ZGBlocks.zolTinOre,
-				ZGBlocks.zolstone, EnumOreGenZG.TIN);
+				ZGBlocks.zolStone, EnumOreGenZG.TIN);
 		this.copperGen = new WorldGenMinableZG(ZGBlocks.zolCopperOre,
-				ZGBlocks.zolstone, EnumOreGenZG.COPPER);
+				ZGBlocks.zolStone, EnumOreGenZG.COPPER);
 		this.ironGen = new WorldGenMinableZG(ZGBlocks.zolIronOre,
-				ZGBlocks.zolstone, EnumOreGenZG.IRON);
+				ZGBlocks.zolStone, EnumOreGenZG.IRON);
 		this.goldGen = new WorldGenMinableZG(ZGBlocks.zolGoldOre,
-				ZGBlocks.zolstone, EnumOreGenZG.GOLD);
+				ZGBlocks.zolStone, EnumOreGenZG.GOLD);
 		this.heartiumGen = new WorldGenMinableZG(ZGBlocks.zolHeartOre,
-				ZGBlocks.zolstone, EnumOreGenZG.HEARTIUM);
+				ZGBlocks.zolStone, EnumOreGenZG.HEARTIUM);
 		this.coalGen = new WorldGenMinableZG(ZGBlocks.zolCoalOre,
-				ZGBlocks.zolstone, EnumOreGenZG.COAL);
+				ZGBlocks.zolStone, EnumOreGenZG.COAL);
 	}
 	
 	@Override

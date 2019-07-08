@@ -6,10 +6,12 @@ import micdoodle8.mods.galacticraft.api.galaxies.Moon;
 import micdoodle8.mods.galacticraft.api.galaxies.SolarSystem;
 import micdoodle8.mods.galacticraft.api.galaxies.Star;
 import micdoodle8.mods.galacticraft.api.vector.Vector3;
+import micdoodle8.mods.galacticraft.api.world.EnumAtmosphericGas;
 import micdoodle8.mods.galacticraft.core.dimension.TeleportTypeMoon;
 import net.minecraft.util.ResourceLocation;
 import zollerngalaxy.biomes.ZGBiomes;
 import zollerngalaxy.config.ConfigManagerZG;
+import zollerngalaxy.core.dimensions.worldproviders.WorldProviderKriffon;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderZollus;
 import zollerngalaxy.core.enums.EnumPlanetClass;
 import zollerngalaxy.lib.ZGInfo;
@@ -151,8 +153,7 @@ public class ZGPlanets {
 		systemNova.setMainStar(starNova);
 		totalSystems++;
 		
-		ZGHelper.Log("Loaded a total of " + totalSystems
-				+ " new star systems.");
+		ZGHelper.Log("Loaded a total of " + totalSystems + " new star systems.");
 	}
 	
 	public static void initPlanets() {
@@ -163,48 +164,28 @@ public class ZGPlanets {
 		planetZollus.setPlanetClass(EnumPlanetClass.L);
 		planetZollus.setRingColorRGB(0.1F, 0.9F, 2.6F);
 		planetZollus.setPhaseShift(0.0F);
-		planetZollus.setRelativeOrbitTime(16F);
-		planetZollus.setDistanceFromCenter(3.0F);
+		planetZollus.setRelativeOrbitTime(26F);
+		planetZollus.setDistanceFromCenter(4F);
 		planetZollus.setTierRequired(4);
-		planetZollus.setRelativeSize(14.876F);
+		planetZollus.setRelativeSize(10.876F);
 		planetZollus.setPlanetTemperature(-102.6f);
 		planetZollus.setPlanetToxicity(0.4f);
 		planetZollus.setPlanetRadiation(0.5f);
 		planetZollus.setWindLevel(3.6F);
 		planetZollus.setDensity(0.1F);
 		planetZollus.setHasRain(false);
-		// planetZollus.setPlanetGasses(EnumAtmosphericGas.NITROGEN,
-		// EnumAtmosphericGas.HELIUM);
+		planetZollus.setPlanetGasses(EnumAtmosphericGas.NITROGEN,
+				EnumAtmosphericGas.HELIUM);
+		planetZollus.setAtmosphere();
 		planetZollus.setPlanetIcon("zollus");
 		planetZollus.setBiomeInfo(ZGBiomes.ZOLLUS);
 		planetZollus.addChecklistKeys("equipOxygenSuit");
 		totalPlanets++;
 		
-		// Planet Eden
-		planetEden.setParentSolarSystem(systemPsios);
-		planetEden.setPlanetClass(EnumPlanetClass.M);
-		planetEden.setRingColorRGB(0.1F, 0.9F, 2.6F);
-		planetEden.setPhaseShift(0.0F);
-		planetEden.setRelativeOrbitTime(8.0F);
-		planetEden.setDistanceFromCenter(2F);
-		planetEden.setTierRequired(3);
-		planetEden.setRelativeSize(40.0F);
-		planetEden.setPlanetTemperature(71.2f);
-		planetEden.setPlanetToxicity(0.0f);
-		planetEden.setPlanetRadiation(0.0f);
-		planetEden.setBreathable(true);
-		planetEden.setWindLevel(0.6F);
-		planetEden.setDensity(0.9F);
-		planetEden.setHasRain(true);
-		// planetEden.setPlanetGasses(EnumAtmosphericGas.NITROGEN,
-		// EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.ARGON,
-		// EnumAtmosphericGas.WATER);
-		planetEden.setPlanetIcon("eden");
-		// planetEden.setDimensionInfo(ConfigManagerZG.planetEdenDimensionId,
-		// WorldProviderEden.class);
-		totalPlanets++;
-		
 		// Planet Kriffon
+		planetKriffon.setDimensionInfo(
+				ConfigManagerZG.planetKriffonDimensionId,
+				WorldProviderKriffon.class);
 		planetKriffon.setParentSolarSystem(systemPsios);
 		planetKriffon.setPlanetClass(EnumPlanetClass.Y);
 		planetKriffon.setRingColorRGB(0.1F, 0.9F, 2.6F);
@@ -219,12 +200,35 @@ public class ZGPlanets {
 		planetKriffon.setWindLevel(0.1F);
 		planetKriffon.setDensity(3.0F);
 		planetKriffon.setHasRain(false);
-		// planetKriffon.setPlanetGasses(EnumAtmosphericGas.ARGON,
-		// EnumAtmosphericGas.METHANE);
+		planetKriffon.setPlanetGasses(EnumAtmosphericGas.ARGON,
+				EnumAtmosphericGas.METHANE);
+		planetKriffon.setAtmosphere();
 		planetKriffon.setPlanetIcon("kriffus");
-		// planetKriffon.setDimensionInfo(
-		// ConfigManagerZG.planetKriffonDimensionId,
-		// WorldProviderKriffon.class);
+		totalPlanets++;
+		
+		// Planet Eden
+		// planetEden.setDimensionInfo(ConfigManagerZG.planetEdenDimensionId,
+		// WorldProviderEden.class);
+		planetEden.setParentSolarSystem(systemPsios);
+		planetEden.setPlanetClass(EnumPlanetClass.M);
+		planetEden.setRingColorRGB(0.1F, 0.9F, 2.6F);
+		planetEden.setPhaseShift(0.0F);
+		planetEden.setRelativeOrbitTime(8.0F);
+		planetEden.setDistanceFromCenter(2F);
+		planetEden.setTierRequired(5);
+		planetEden.setRelativeSize(40.0F);
+		planetEden.setPlanetTemperature(71.2f);
+		planetEden.setPlanetToxicity(0.0f);
+		planetEden.setPlanetRadiation(0.0f);
+		planetEden.setBreathable(true);
+		planetEden.setWindLevel(0.6F);
+		planetEden.setDensity(0.9F);
+		planetEden.setHasRain(true);
+		planetEden.setPlanetGasses(EnumAtmosphericGas.NITROGEN,
+				EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.ARGON,
+				EnumAtmosphericGas.WATER);
+		planetEden.setAtmosphere();
+		planetEden.setPlanetIcon("eden");
 		totalPlanets++;
 		
 		// Planet Purgot
@@ -233,7 +237,7 @@ public class ZGPlanets {
 		planetPurgot.setRingColorRGB(0.1F, 0.9F, 2.6F);
 		planetPurgot.setPhaseShift(0.0F);
 		planetPurgot.setRelativeOrbitTime(10F);
-		planetPurgot.setDistanceFromCenter(1.2f);
+		planetPurgot.setDistanceFromCenter(3.5F);
 		planetPurgot.setTierRequired(5);
 		planetPurgot.setRelativeSize(40.0F);
 		planetPurgot.setPlanetTemperature(-74.5f);
@@ -242,9 +246,10 @@ public class ZGPlanets {
 		planetPurgot.setWindLevel(5.7F);
 		planetPurgot.setDensity(0.3F);
 		planetPurgot.setHasRain(false);
-		// planetPurgot.setPlanetGasses(EnumAtmosphericGas.OXYGEN,
-		// EnumAtmosphericGas.WATER, EnumAtmosphericGas.NITROGEN,
-		// EnumAtmosphericGas.ARGON);
+		planetPurgot.setPlanetGasses(EnumAtmosphericGas.OXYGEN,
+				EnumAtmosphericGas.WATER, EnumAtmosphericGas.NITROGEN,
+				EnumAtmosphericGas.ARGON);
+		planetPurgot.setAtmosphere();
 		planetPurgot.setPlanetIcon("purgot");
 		// planetPurgot.setDimensionInfo(ConfigManagerZG.planetPurgotDimensionId,
 		// WorldProviderPurgot.class);
@@ -257,7 +262,7 @@ public class ZGPlanets {
 		planetXathius.setPhaseShift(0.0F);
 		planetXathius.setRelativeOrbitTime(3F);
 		planetXathius.setDistanceFromCenter(3.4F);
-		planetXathius.setTierRequired(5);
+		planetXathius.setTierRequired(4);
 		planetXathius.setRelativeSize(20.0F);
 		planetXathius.setPlanetTemperature(82.4f);
 		planetXathius.setPlanetToxicity(1.5f);
@@ -265,9 +270,10 @@ public class ZGPlanets {
 		planetXathius.setWindLevel(3.2F);
 		planetXathius.setDensity(1.1F);
 		planetXathius.setHasRain(true);
-		// planetXathius.setPlanetGasses(EnumAtmosphericGas.OXYGEN,
-		// EnumAtmosphericGas.WATER, EnumAtmosphericGas.NITROGEN,
-		// EnumAtmosphericGas.ARGON);
+		planetXathius.setPlanetGasses(EnumAtmosphericGas.OXYGEN,
+				EnumAtmosphericGas.WATER, EnumAtmosphericGas.NITROGEN,
+				EnumAtmosphericGas.ARGON);
+		planetXathius.setAtmosphere();
 		planetXathius.setPlanetIcon("xathius");
 		// planetXathius.setDimensionInfo(
 		// ConfigManagerZG.planetXathiusDimensionId,
@@ -279,33 +285,32 @@ public class ZGPlanets {
 		planetOasis.setPlanetClass(EnumPlanetClass.R);
 		planetOasis.setRingColorRGB(2.0f, 5.4f, 3.2f);
 		planetOasis.setPhaseShift(0.0f);
-		planetOasis.setRelativeOrbitTime(4f);
-		planetXathius.setDistanceFromCenter(3.9f);
+		planetOasis.setRelativeOrbitTime(6F);
+		planetXathius.setDistanceFromCenter(2.5f);
 		planetOasis.setTierRequired(5);
 		planetOasis.setRelativeSize(64.0f);
 		planetOasis.setPlanetTemperature(68.2f);
 		planetOasis.setPlanetToxicity(0.5f);
-		planetOasis.setPlanetRadiation(2.0f);
+		planetOasis.setPlanetRadiation(4.0f);
 		planetOasis.setBreathable(true);
 		planetOasis.setWindLevel(0.9F);
 		planetOasis.setDensity(1.0F);
 		planetOasis.setHasRain(true);
-		// planetOasis.setPlanetGasses(EnumAtmosphericGas.OXYGEN,
-		// EnumAtmosphericGas.WATER);
+		planetOasis.setPlanetGasses(EnumAtmosphericGas.OXYGEN,
+				EnumAtmosphericGas.WATER);
+		planetOasis.setAtmosphere();
 		planetOasis.setPlanetIcon("oasis");
 		// planetOasis.setDimensionInfo(ConfigManagerZG.planetOasisDimensionId,
 		// WorldProviderOasis.class);
 		totalPlanets++;
 		
-		ZGHelper.Log("Loaded a total of " + totalPlanets
-				+ " new planets.");
+		ZGHelper.Log("Loaded a total of " + totalPlanets + " new planets.");
 	}
 	
 	public static void initMoons() {
 		// TODO
 		totalPlanets++;
-		ZGHelper
-				.Log("Loaded a total of " + totalMoons + " new moons.");
+		ZGHelper.Log("Loaded a total of " + totalMoons + " new moons.");
 	}
 	
 	public static void registerSystems() {
@@ -328,9 +333,9 @@ public class ZGPlanets {
 		// TeleportTypeNG teleType = new TeleportTypeNG();
 		GalacticraftRegistry.registerTeleportType(WorldProviderZollus.class,
 				new TeleportTypeMoon());
+		GalacticraftRegistry.registerTeleportType(WorldProviderKriffon.class,
+				new TeleportTypeMoon());
 		// GalacticraftRegistry.registerTeleportType(WorldProviderEden.class,
-		// teleType);
-		// GalacticraftRegistry.registerTeleportType(WorldProviderKriffon.class,
 		// teleType);
 		// GalacticraftRegistry.registerTeleportType(WorldProviderPurgot.class,
 		// teleType);

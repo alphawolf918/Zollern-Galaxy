@@ -3,6 +3,7 @@ package zollerngalaxy.biomes;
 import static net.minecraftforge.common.BiomeDictionary.Type.COLD;
 import static net.minecraftforge.common.BiomeDictionary.Type.DEAD;
 import static net.minecraftforge.common.BiomeDictionary.Type.DRY;
+import static net.minecraftforge.common.BiomeDictionary.Type.HOT;
 import micdoodle8.mods.galacticraft.api.world.BiomeGenBaseGC;
 import net.minecraft.block.Block;
 import net.minecraft.util.math.BlockPos;
@@ -34,6 +35,8 @@ public class ZGBiomeBase extends BiomeGenBaseGC {
 	public void registerTypes(Biome biome) {
 		if (this.singleName.equals("zollus")) {
 			CommonZGRegisterHelper.registerBiomeType(biome, COLD, DEAD, DRY);
+		} else if (this.singleName.equals("kriffon")) {
+			CommonZGRegisterHelper.registerBiomeType(biome, HOT, DEAD, DRY);
 		}
 	}
 	

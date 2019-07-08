@@ -23,7 +23,7 @@ public class SkyProviderZollus extends SkyProviderBaseZG {
 	
 	public SkyProviderZollus(IGalacticraftWorldProvider provider) {
 		super();
-		this.sunSize = 0.1F * provider.getSolarSize();
+		this.sunSize = 0.01F * provider.getSolarSize();
 	}
 	
 	@Override
@@ -58,7 +58,7 @@ public class SkyProviderZollus extends SkyProviderBaseZG {
 		GlStateManager.color(0.0F, 0.0F, 0.0F, 1.0F);
 		
 		// Some blanking to conceal the stars
-		scale = 1.5F;// this.sunSize / 3.5F;
+		// scale = 1.5F;// this.sunSize / 3.5F;
 		worldrenderer.begin(7, DefaultVertexFormats.POSITION);
 		worldrenderer.pos(-scale, 99.9D, -scale).endVertex();
 		worldrenderer.pos(scale, 99.9D, -scale).endVertex();
@@ -67,7 +67,7 @@ public class SkyProviderZollus extends SkyProviderBaseZG {
 		tessellator.draw();
 		GlStateManager.enableTexture2D();
 		GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
-		scale = this.sunSize + 5.0F;
+		// scale = this.sunSize + 5.0F;
 		mc.getTextureManager().bindTexture(this.psios6Texture);
 		worldrenderer.begin(7, DefaultVertexFormats.POSITION_TEX);
 		worldrenderer.pos(-scale, 100.0D, -scale).tex(0.0D, 0.0D).endVertex();
@@ -80,7 +80,7 @@ public class SkyProviderZollus extends SkyProviderBaseZG {
 		GlStateManager.pushMatrix();
 		
 		// Eden
-		scale = 3.0F;
+		scale = 1.5F;
 		GlStateManager.scale(0.6F, 0.6F, 0.6F);
 		GlStateManager.rotate(50.0F, 0.0F, 0.0F, 1.0F);
 		GlStateManager.rotate(200F, 1.0F, 0.0F, 0.0F);

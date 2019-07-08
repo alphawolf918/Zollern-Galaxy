@@ -9,7 +9,6 @@ public class ConfigManagerZG {
 	public static Configuration configuration;
 	
 	public static String CATEGORY_DIMENSIONS = "Dimensions";
-	public static String CATEGORY_BIOMES = "Biomes";
 	public static String CATEGORY_MOONS = "Moons";
 	public static String CATEGORY_MISC = "Miscallenous";
 	
@@ -47,35 +46,6 @@ public class ConfigManagerZG {
 	
 	// Planets (Nova)
 	public static int planetPrimorDimensionId;
-	
-	// Biomes (Eden)
-	public static int biomeEdenGreenLandsId;
-	public static int biomeEdenRockMountainsId;
-	public static int biomeEdenTerranValleyId;
-	public static int biomeEdenBloodDesertId;
-	public static int biomeEdenGardenId;
-	public static int biomeEdenForestId;
-	public static int biomeEdenMagmaLandsId;
-	public static int biomeEdenSnowyPlainsId;
-	public static int biomeEdenSwamplandsId;
-	public static int biomeEdenGoldenMeadowId;
-	
-	// Biomes (Zollus)
-	public static int biomeZollusIcyLandsId;
-	
-	// Biomes (Kriffon)
-	public static int biomeKriffonFlamingPlainsId;
-	
-	// Biomes (Purgot)
-	public static int biomePurgatoryId;
-	public static int biomePurgotLimboId;
-	
-	// Biomes (Xathius)
-	public static int biomeXathiusId;
-	public static int biomeXathiusAbstractPlainsId;
-	
-	// Biomes (Oasis)
-	public static int biomeOasisId;
 	
 	// Misc
 	public static boolean canEarthAnimalsSpawnOnEden;
@@ -145,59 +115,14 @@ public class ConfigManagerZG {
 		planetPrimorDimensionId = configuration.get(CATEGORY_DIMENSIONS,
 				"Planet Primor Dimension ID", -7989).getInt();
 		
-		// Biomes (Eden)
-		biomeEdenGreenLandsId = configuration.get(CATEGORY_BIOMES,
-				"Eden Green Lands Biome ID", 178).getInt();
-		biomeEdenRockMountainsId = configuration.get(CATEGORY_BIOMES,
-				"Eden Rock Mountains Biome ID", 177).getInt();
-		biomeEdenTerranValleyId = configuration.get(CATEGORY_BIOMES,
-				"Eden Terran Valley Biome ID", 176).getInt();
-		biomeEdenBloodDesertId = configuration.get(CATEGORY_BIOMES,
-				"Eden Blood Desert Biome ID", 175).getInt();
-		biomeEdenGardenId = configuration.get(CATEGORY_BIOMES,
-				"Eden Garden Biome ID", 174).getInt();
-		biomeEdenForestId = configuration.get(CATEGORY_BIOMES,
-				"Eden Forest Biome ID", 173).getInt();
-		biomeEdenMagmaLandsId = configuration.get(CATEGORY_BIOMES,
-				"Eden Magma Lands Biome ID", 172).getInt();
-		biomeEdenSnowyPlainsId = configuration.get(CATEGORY_BIOMES,
-				"Eden Snowy Plains Biome ID", 171).getInt();
-		biomeEdenSwamplandsId = configuration.get(CATEGORY_BIOMES,
-				"Eden Swamplands Biome ID", 170).getInt();
-		biomeEdenGoldenMeadowId = configuration.get(CATEGORY_BIOMES,
-				"Eden Golden Meadow ID", 163).getInt();
-		
-		// Biomes (Zollus)
-		biomeZollusIcyLandsId = configuration.get(CATEGORY_BIOMES,
-				"Zollus Icy Lands Biome ID", 169).getInt();
-		
-		// Biomes (Kriffon)
-		biomeKriffonFlamingPlainsId = configuration.get(CATEGORY_BIOMES,
-				"Kriffon Flaming Plains Biome ID", 168).getInt();
-		
-		// Biomes (Purgot)
-		biomePurgatoryId = configuration.get(CATEGORY_BIOMES,
-				"Purgot Purgatory Biome ID", 167).getInt();
-		biomePurgotLimboId = configuration.get(CATEGORY_BIOMES,
-				"Purgot Limbo Biome ID", 200).getInt();
-		
-		// Biomes (Xathius)
-		biomeXathiusId = configuration.get(CATEGORY_BIOMES,
-				"Xathius Happy Hills Biome ID", 166).getInt();
-		biomeXathiusAbstractPlainsId = configuration.get(CATEGORY_BIOMES,
-				"Xathius Abstract Plains ID", 165).getInt();
-		
-		// Biomes (Oasis)
-		biomeOasisId = configuration
-				.get(CATEGORY_BIOMES, "Oasis Biome ID", 164).getInt();
-		
 		// Misc (Can Earth animals spawn on Eden?)
 		canEarthAnimalsSpawnOnEden = configuration.get(CATEGORY_MISC,
 				"Earth Animals Spawn On Eden", true).getBoolean();
 		
 		// Misc (Temperatures shown in fahrenheit or celsius?)
 		temperatureType = configuration
-				.get(CATEGORY_MISC, "Temperature Type (F or C only)", "F",
+				.get(CATEGORY_MISC,
+						"[HUD DISPLAY] Temperature Type (F or C only)", "F",
 						"Should temperatures be shown in Fahrenheit (F) or Celsius (C)?")
 				.getString();
 		

@@ -30,7 +30,7 @@ public class BiomeZollus extends BiomeSpace {
 		this.spawnableCreatureList.clear();
 		this.topBlock = ZGBlocks.zolSurfaceRock.getDefaultState();
 		this.fillerBlock = ZGBlocks.zolDirt.getDefaultState();
-		this.stoneBlock = ZGBlocks.zolstone;
+		this.stoneBlock = ZGBlocks.zolStone;
 		this.setPlanetForBiome(ZGPlanets.planetZollus);
 	}
 	

@@ -1,5 +1,6 @@
 # Zollern Galaxy
-An adventurous space exploration add-on mod for Galacticraft.
+An adventurous space exploration add-on mod for Galacticraft version 4.
+For Minecraft version 1.12.2.
 
  * Copyright 2015-2020 Zollern Wolf
  * - Zollern Galaxy

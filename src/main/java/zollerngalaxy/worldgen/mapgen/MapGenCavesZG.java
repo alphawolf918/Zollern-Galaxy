@@ -1,4 +1,4 @@
-package zollerngalaxy.worldgen.caves;
+package zollerngalaxy.worldgen.mapgen;
 
 import java.util.Random;
 import net.minecraft.block.Block;
@@ -13,17 +13,14 @@ public class MapGenCavesZG extends MapGenBase {
 	
 	private Block block;
 	private Block blockLava = Blocks.LAVA;
-	private int[] meta;
 	
-	public MapGenCavesZG(Block block, Block blockLava, int[] meta) {
+	public MapGenCavesZG(Block block, Block blockLava) {
 		this.block = block;
 		this.blockLava = blockLava;
-		this.meta = meta;
 	}
 	
-	public MapGenCavesZG(Block block, int[] meta) {
+	public MapGenCavesZG(Block block) {
 		this.block = block;
-		this.meta = meta;
 	}
 	
 	protected void generateLargeCaveNode(long seed, int chunkX, int chunkZ,
@@ -151,65 +148,41 @@ public class MapGenCavesZG extends MapGenBase {
 						}
 					}
 					
-					if (true) {
-						for (k2 = k3; k2 < l1; ++k2) {
-							double d14 = (k2 + chunkX * 16 + 0.5D - par5) / d6;
+					for (k2 = k3; k2 < l1; ++k2) {
+						double d14 = (k2 + chunkX * 16 + 0.5D - par5) / d6;
+						
+						for (int j4 = i4; j4 < j2; ++j4) {
+							double d12 = (j4 + chunkZ * 16 + 0.5D - par7) / d6;
 							
-							for (int j4 = i4; j4 < j2; ++j4) {
-								double d12 = (j4 + chunkZ * 16 + 0.5D - par7)
-										/ d6;
-								
-								if (d14 * d14 + d12 * d12 < 1.0D) {
-									for (int j3 = i2; j3 > l3; --j3) {
-										double d13 = (j3 - 1 + 0.5D - par6)
-												/ d7;
+							if (d14 * d14 + d12 * d12 < 1.0D) {
+								for (int j3 = i2; j3 > l3; --j3) {
+									double d13 = (j3 - 1 + 0.5D - par6) / d7;
+									
+									if (d13 > -0.7D
+											&& d14 * d14 + d13 * d13 + d12
+													* d12 < 1.0D) {
+										IBlockState state = chunk
+												.getBlockState(k2, j3, j4);
 										
-										if (d13 > -0.7D
-												&& d14 * d14 + d13 * d13 + d12
-														* d12 < 1.0D) {
-											IBlockState state = chunk
-													.getBlockState(k2, j3, j4);
-											
-											if (state.getBlock() == this.block
-													&& this.block
-															.getMetaFromState(state) == this.meta[1]
-													|| state.getBlock() == this.block
-													&& this.block
-															.getMetaFromState(state) == this.meta[2]) {
-												if (j3 < 10) {
-													chunk.setBlockState(
-															k2,
-															j3,
-															j4,
-															this.blockLava
-																	.getDefaultState());
-												} else {
-													chunk.setBlockState(
-															k2,
-															j3,
-															j4,
-															Blocks.AIR
-																	.getDefaultState());
-												}
-											} else if (state.getBlock() == this.block
-													&& this.block
-															.getMetaFromState(state) == this.meta[0]) {
-												chunk.setBlockState(
-														k2,
-														j3,
-														j4,
-														Blocks.AIR
-																.getDefaultState());
+										if (state.getBlock() == this.block) {
+											if (j3 < 10) {
+												this.setBlock(k2, j3, j4,
+														chunk, this.blockLava);
+											} else {
+												this.setBlock(k2, j3, j4,
+														chunk, Blocks.AIR);
 											}
+										} else if (state.getBlock() == this.block) {
+											this.setBlock(k2, j3, j4, chunk,
+													Blocks.AIR);
 										}
 									}
 								}
 							}
 						}
-						
-						if (flag2) {
-							break;
-						}
+					}
+					if (flag2) {
+						break;
 					}
 				}
 			}
@@ -232,10 +205,10 @@ public class MapGenCavesZG extends MapGenBase {
 			double d2 = chunkZ * 16 + this.rand.nextInt(16);
 			int k1 = 1;
 			
-			if (this.rand.nextInt(4) == 0) {
+			if (this.rand.nextInt(2) == 0) {
 				this.generateLargeCaveNode(this.rand.nextLong(), oriX, oriZ,
 						chunk, d0, d1, d2);
-				k1 += this.rand.nextInt(4);
+				k1 += this.rand.nextInt(6);
 			}
 			
 			for (int l1 = 0; l1 < k1; ++l1) {
@@ -251,5 +224,9 @@ public class MapGenCavesZG extends MapGenBase {
 						d0, d1, d2, f2, f, f1, 0, 0, 1.0D);
 			}
 		}
+	}
+	
+	public void setBlock(int x, int y, int z, ChunkPrimer chunk, Block block) {
+		chunk.setBlockState(x, y, z, block.getDefaultState());
 	}
 }

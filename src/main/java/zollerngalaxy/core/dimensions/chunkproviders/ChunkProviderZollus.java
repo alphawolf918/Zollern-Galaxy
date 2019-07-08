@@ -18,7 +18,8 @@ import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.ChunkPrimer;
 import zollerngalaxy.biomes.ZGBiomes;
 import zollerngalaxy.blocks.ZGBlocks;
-import zollerngalaxy.worldgen.caves.MapGenCavesZG;
+import zollerngalaxy.worldgen.mapgen.MapGenCavesZG;
+import zollerngalaxy.worldgen.mapgen.MapGenRavinesZG;
 
 public class ChunkProviderZollus extends ChunkProviderBase {
 	
@@ -26,7 +27,7 @@ public class ChunkProviderZollus extends ChunkProviderBase {
 			.getDefaultState();
 	public static final IBlockState BLOCK_FILL = ZGBlocks.zolDirt
 			.getDefaultState();
-	public static final IBlockState BLOCK_LOWER = ZGBlocks.zolstone
+	public static final IBlockState BLOCK_LOWER = ZGBlocks.zolStone
 			.getDefaultState();
 	
 	private final Random rand;
@@ -41,7 +42,9 @@ public class ChunkProviderZollus extends ChunkProviderBase {
 	private Biome[] biomesForGeneration = { ZGBiomes.ZOLLUS };
 	
 	private final MapGenCavesZG caveGenerator = new MapGenCavesZG(
-			ZGBlocks.zolstone, Blocks.PACKED_ICE, new int[] { 0, 0, 0, 0 });
+			ZGBlocks.zolStone, Blocks.PACKED_ICE);
+	private final MapGenRavinesZG ravineGenerator = new MapGenRavinesZG(
+			ZGBlocks.zolStone);
 	
 	private static final int CRATER_PROB = 300;
 	
@@ -158,6 +161,7 @@ public class ChunkProviderZollus extends ChunkProviderBase {
 		this.replaceBlocksForBiome(x, z, chunkprimer, null);
 		
 		this.caveGenerator.generate(this.world, x, z, chunkprimer);
+		this.ravineGenerator.generate(this.world, x, z, chunkprimer);
 		
 		// this.dungeonGeneratorMoon.generate(this.world, x, z, chunkprimer);
 		// this.villageGenerator.generate(this.world, x, z, chunkprimer);

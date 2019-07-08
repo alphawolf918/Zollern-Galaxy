@@ -1,6 +1,5 @@
 package zollerngalaxy.planets;
 
-import java.util.ArrayList;
 import micdoodle8.mods.galacticraft.api.galaxies.Planet;
 import micdoodle8.mods.galacticraft.api.galaxies.Star;
 import micdoodle8.mods.galacticraft.api.world.AtmosphereInfo;
@@ -25,8 +24,6 @@ public class ZGPlanet extends Planet implements IZollernPlanet {
 	
 	private AtmosphereInfo atmosphere;
 	
-	private ArrayList<EnumAtmosphericGas> planetGasses;
-	
 	public ZGPlanet(String planetName) {
 		super(planetName);
 		this.setPlanetTemperature(65.0F);
@@ -36,9 +33,6 @@ public class ZGPlanet extends Planet implements IZollernPlanet {
 		this.setHasRain(false);
 		this.setWindLevel(0.0F);
 		this.setAtmosphere();
-		// if (planetGasses != null) {
-		// SpaceRegistryHelper.setAtmosphereComponentList(this, planetGasses);
-		// }
 	}
 	
 	public ZGPlanet setPlanetStar(Star systemStar) {
@@ -176,7 +170,7 @@ public class ZGPlanet extends Planet implements IZollernPlanet {
 	
 	public Planet setPlanetGasses(EnumAtmosphericGas... gasses) {
 		for (EnumAtmosphericGas gas : gasses) {
-			planetGasses.add(gas);
+			this.atmosphereComponent(gas);
 		}
 		return this;
 	}
@@ -323,6 +317,11 @@ public class ZGPlanet extends Planet implements IZollernPlanet {
 		return this.density;
 	}
 	
+	/**
+	 * Whether or not the planet corrodes armor.
+	 * 
+	 * @return True/False
+	 */
 	public boolean getIsCorrosive() {
 		return (this.getIsToxicPlanet() || this.getIsRadioactivePlanet());
 	}

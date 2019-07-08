@@ -25,27 +25,27 @@ public class WorldProviderZollus extends WorldProviderZG {
 	
 	@Override
 	public float getGravity() {
-		return 0.042F;
+		return 0.02F;
 	}
 	
 	@Override
 	public double getMeteorFrequency() {
-		return 25.0;
+		return 6.0;
 	}
 	
 	@Override
 	public float getSolarSize() {
-		return 0.2F;
+		return 0.01F;
 	}
 	
 	@Override
 	public double getFuelUsageMultiplier() {
-		return 0.6D;
+		return 0.8D;
 	}
 	
 	@Override
 	public float getFallDamageModifier() {
-		return 0.44F;
+		return 0.18F;
 	}
 	
 	@Override
@@ -134,7 +134,7 @@ public class WorldProviderZollus extends WorldProviderZG {
 	
 	@Override
 	public long getDayLength() {
-		return 46010L;
+		return 86010L;
 	}
 	
 	@Override

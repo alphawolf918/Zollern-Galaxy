@@ -13,7 +13,7 @@ public class SmeltingRecipes {
 	
 	public static void init() {
 		// Zollus
-		SmeltingRecipes.SmeltBlock(ZGBlocks.zolcobblerock, ZGBlocks.zolstone,
+		SmeltingRecipes.SmeltBlock(ZGBlocks.zolCobbleRock, ZGBlocks.zolStone,
 				1.5F); // Zolstone
 		SmeltingRecipes.SmeltBlockToItem(ZGBlocks.zolIronOre, Items.IRON_INGOT,
 				2.1F); // Iron
