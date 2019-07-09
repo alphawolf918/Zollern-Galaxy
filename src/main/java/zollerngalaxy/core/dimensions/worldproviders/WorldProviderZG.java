@@ -116,7 +116,7 @@ public abstract class WorldProviderZG extends WorldProviderSpace implements
 	
 	@Override
 	public boolean canSpaceshipTierPass(int tier) {
-		return tier <= this.getPlanet().getTierRequirement();
+		return tier >= this.getPlanet().getTierRequirement();
 	}
 	
 	@Override

@@ -11,19 +11,25 @@ public class ZGItems {
 	public static final Item heartOfZol = new ZGItemBase("heartofzol");
 	public static final Item zolCrystal = new ZGItemBase("zolluscrystal");
 	public static final Item rawViri = new ZGItemBase("rawviri");
+	public static final Item dustCobalt = new ZGItemBase("cobaltdust");
 	public static final Item ingotViri = new ZGItemBase("ingotviri");
+	public static final Item ingotCobalt = new ZGItemBase("ingotcobalt");
 	
 	public static void init() {
-		ZGItems.addItem(heartOfZol);
-		ZGItems.addItem(zolCrystal);
-		ZGItems.addItem(rawViri);
-		ZGItems.addItem(ingotViri);
+		ZGItems.registerItems(heartOfZol, zolCrystal, rawViri, dustCobalt,
+				ingotViri, ingotCobalt);
 		ZGHelper.Log("Loaded a total of " + totalItems + " new items.");
 	}
 	
 	private static void addItem(Item item) {
 		CommonZGRegisterHelper.registerItem(item);
 		totalItems++;
+	}
+	
+	private static void registerItems(Item... items) {
+		for (Item i : items) {
+			ZGItems.addItem(i);
+		}
 	}
 	
 }

@@ -24,8 +24,20 @@ public class SmeltingRecipes {
 		SmeltingRecipes.SmeltBlockToItem(ZGBlocks.zolTinOre, new ItemStack(
 				GCItems.basicItem, 1, 4), 2.4F); // Tin
 		
+		// Kriffon
+		SmeltingRecipes.SmeltBlock(ZGBlocks.kriffCobbleRock,
+				ZGBlocks.kriffStone, 1.5F); // Kriffstone
+		SmeltingRecipes.SmeltBlockToItem(ZGBlocks.kriffIronOre,
+				Items.IRON_INGOT, 2.1F); // Iron
+		SmeltingRecipes.SmeltBlockToItem(ZGBlocks.kriffGoldOre,
+				Items.GOLD_INGOT, 2.4F); // Gold
+		SmeltingRecipes.SmeltBlockToItem(ZGBlocks.kriffCopperOre,
+				new ItemStack(GCItems.basicItem, 1, 3), 2.4F); // Copper
+		SmeltingRecipes.SmeltBlockToItem(ZGBlocks.kriffCobaltOre,
+				ZGItems.ingotCobalt, 1.6F); // Cobalt
+		
 		// Eden
-		SmeltingRecipes.SmeltItem(ZGItems.rawViri, ZGItems.ingotViri, 3.6F);
+		SmeltingRecipes.SmeltItem(ZGItems.rawViri, ZGItems.ingotViri, 3.6F); // Virinium
 	}
 	
 	public static void SmeltBlock(Block blockIn, Block blockOut, float xp) {
