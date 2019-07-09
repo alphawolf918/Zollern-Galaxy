@@ -65,6 +65,7 @@ public class ZollernGalaxyCore {
 		for (BiomeGenBaseGC biome : ZGBiomes.biomeList) {
 			biome.registerTypes(biome);
 		}
+		
 		ZGMobs.init();
 		instance().proxy.registerInitRendering();
 		instance().proxy.init(event);

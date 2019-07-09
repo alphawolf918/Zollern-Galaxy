@@ -23,7 +23,7 @@ public class SkyProviderKriffon extends SkyProviderBaseZG {
 	
 	public SkyProviderKriffon(IGalacticraftWorldProvider provider) {
 		super();
-		this.sunSize = 8.0F * provider.getSolarSize();
+		this.sunSize = 10.0F * provider.getSolarSize();
 	}
 	
 	@Override
@@ -67,7 +67,7 @@ public class SkyProviderKriffon extends SkyProviderBaseZG {
 		tessellator.draw();
 		GlStateManager.enableTexture2D();
 		GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
-		// scale = this.sunSize + 5.0F;
+		scale = this.sunSize + 5.0F;
 		mc.getTextureManager().bindTexture(this.psios6Texture);
 		worldrenderer.begin(7, DefaultVertexFormats.POSITION_TEX);
 		worldrenderer.pos(-scale, 100.0D, -scale).tex(0.0D, 0.0D).endVertex();

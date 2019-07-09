@@ -35,12 +35,12 @@ public class WorldProviderKriffon extends WorldProviderZG {
 	
 	@Override
 	public float getSolarSize() {
-		return 1.0F;
+		return 4.0F;
 	}
 	
 	@Override
 	public double getFuelUsageMultiplier() {
-		return 1.8D;
+		return 1.2D;
 	}
 	
 	@Override
@@ -94,7 +94,7 @@ public class WorldProviderKriffon extends WorldProviderZG {
 	@SideOnly(Side.CLIENT)
 	public float getSunBrightness(float par1) {
 		float f1 = this.world.getCelestialAngle(1.0F);
-		float f2 = 1.5F - (MathHelper.cos(f1 * (float) Math.PI * 2.0F) * 2.0F + 0.2F);
+		float f2 = 2.5F - (MathHelper.cos(f1 * (float) Math.PI * 2.0F) * 2.0F + 0.2F);
 		
 		if (f2 < 0.0F) {
 			f2 = 0.6F;
@@ -103,7 +103,7 @@ public class WorldProviderKriffon extends WorldProviderZG {
 			f2 = 0.95F;
 		}
 		f2 = 0.95F - f2;
-		return f2 * 1.5F;
+		return f2 * 2.5F;
 	}
 	
 	@Override

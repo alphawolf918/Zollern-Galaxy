@@ -204,6 +204,8 @@ public class ZGPlanets {
 				EnumAtmosphericGas.METHANE);
 		planetKriffon.setAtmosphere();
 		planetKriffon.setPlanetIcon("kriffus");
+		planetZollus.setBiomeInfo(ZGBiomes.KRIFFON);
+		planetZollus.addChecklistKeys("equipOxygenSuit");
 		totalPlanets++;
 		
 		// Planet Eden

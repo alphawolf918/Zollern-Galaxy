@@ -1,10 +1,15 @@
 package zollerngalaxy.biomes.kriffon;
 
+import static net.minecraftforge.common.BiomeDictionary.Type.DEAD;
+import static net.minecraftforge.common.BiomeDictionary.Type.DRY;
+import static net.minecraftforge.common.BiomeDictionary.Type.HOT;
 import net.minecraft.block.Block;
+import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeDecorator;
 import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.biomes.decorators.BiomeDecoratorKriffon;
 import zollerngalaxy.blocks.ZGBlocks;
+import zollerngalaxy.lib.helpers.CommonZGRegisterHelper;
 import zollerngalaxy.planets.ZGPlanets;
 
 public class BiomeKriffon extends BiomeSpace {
@@ -19,6 +24,7 @@ public class BiomeKriffon extends BiomeSpace {
 	public BiomeKriffon(BiomeProperties props) {
 		super("kriffon", props);
 		props.setRainDisabled();
+		this.setTempCategory(TempCategory.WARM);
 		this.enableSnow = false;
 		this.decorator.flowersPerChunk = -999;
 		this.decorator.treesPerChunk = -999;
@@ -37,6 +43,11 @@ public class BiomeKriffon extends BiomeSpace {
 	@Override
 	public float getSpawningChance() {
 		return 0.1F;
+	}
+	
+	@Override
+	public void registerTypes(Biome biome) {
+		CommonZGRegisterHelper.registerBiomeType(biome, HOT, DEAD, DRY);
 	}
 	
 	@Override

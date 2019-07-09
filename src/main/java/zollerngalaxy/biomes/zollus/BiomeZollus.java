@@ -1,10 +1,15 @@
 package zollerngalaxy.biomes.zollus;
 
+import static net.minecraftforge.common.BiomeDictionary.Type.COLD;
+import static net.minecraftforge.common.BiomeDictionary.Type.DEAD;
+import static net.minecraftforge.common.BiomeDictionary.Type.DRY;
 import net.minecraft.block.Block;
+import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeDecorator;
 import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.biomes.decorators.BiomeDecoratorZollus;
 import zollerngalaxy.blocks.ZGBlocks;
+import zollerngalaxy.lib.helpers.CommonZGRegisterHelper;
 import zollerngalaxy.planets.ZGPlanets;
 
 public class BiomeZollus extends BiomeSpace {
@@ -32,6 +37,11 @@ public class BiomeZollus extends BiomeSpace {
 		this.fillerBlock = ZGBlocks.zolDirt.getDefaultState();
 		this.stoneBlock = ZGBlocks.zolStone;
 		this.setPlanetForBiome(ZGPlanets.planetZollus);
+	}
+	
+	@Override
+	public void registerTypes(Biome biome) {
+		CommonZGRegisterHelper.registerBiomeType(biome, COLD, DEAD, DRY);
 	}
 	
 	@Override
