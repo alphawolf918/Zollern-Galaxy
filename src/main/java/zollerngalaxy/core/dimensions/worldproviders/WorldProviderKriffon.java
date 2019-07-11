@@ -17,7 +17,7 @@ import zollerngalaxy.biomes.providers.BiomeProviderKriffon;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.core.dimensions.ZGDimensions;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderKriffon;
-import zollerngalaxy.core.skyproviders.SkyProviderKriffon;
+import zollerngalaxy.core.dimensions.skyproviders.SkyProviderKriffon;
 import zollerngalaxy.planets.ZGPlanet;
 import zollerngalaxy.planets.ZGPlanets;
 

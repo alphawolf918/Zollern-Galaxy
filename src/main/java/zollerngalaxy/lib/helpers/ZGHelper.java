@@ -26,11 +26,10 @@ public class ZGHelper {
 	
 	private static final Logger LOGGER = LogManager.getLogger("Zollern Galaxy");
 	
-	public static void dropItem(Item droppedItem, World worldObj,
-			Entity theEntity) {
+	public static void dropItem(Item droppedItem, World worldObj, Entity theEntity) {
 		ItemStack itemStack = new ItemStack(droppedItem, rngNumber(1, 2));
-		EntityItem itemEntity = new EntityItem(worldObj, theEntity.posX,
-				theEntity.posY, theEntity.posZ, itemStack);
+		EntityItem itemEntity = new EntityItem(worldObj, theEntity.posX, theEntity.posY,
+				theEntity.posZ, itemStack);
 		worldObj.spawnEntity(itemEntity);
 	}
 	
@@ -64,8 +63,7 @@ public class ZGHelper {
 		item.setCreativeTab(ZGTabs.zgItemsTab);
 	}
 	
-	public static CreativeTabs createCreativeTabs(String name,
-			ItemStack itemStack) {
+	public static CreativeTabs createCreativeTabs(String name, ItemStack itemStack) {
 		return new CreativeTabsHelper(name, itemStack);
 	}
 	
@@ -77,8 +75,7 @@ public class ZGHelper {
 		item.setUnlocalizedName(strName);
 	}
 	
-	public static void setHardResist(Block block, float hardness,
-			float resistance) {
+	public static void setHardResist(Block block, float hardness, float resistance) {
 		block.setHardness(hardness);
 		block.setResistance(resistance);
 	}
@@ -88,8 +85,7 @@ public class ZGHelper {
 	}
 	
 	public static File getFilePath(FMLPreInitializationEvent event) {
-		return new File(event.getModConfigurationDirectory().getAbsolutePath()
-				+ "ZollernGalaxy/");
+		return new File(event.getModConfigurationDirectory().getAbsolutePath() + "ZollernGalaxy/");
 	}
 	
 	/**
@@ -112,8 +108,7 @@ public class ZGHelper {
 		Log(Level.INFO, str);
 	}
 	
-	public static void damageItemStack(Item item, float damageAmount,
-			EntityPlayer player) {
+	public static void damageItemStack(Item item, float damageAmount, EntityPlayer player) {
 		InventoryPlayer matrix = player.inventory;
 		for (int i = 0; i < matrix.getSizeInventory(); i++) {
 			if (matrix.getStackInSlot(i) != null) {
@@ -131,11 +126,10 @@ public class ZGHelper {
 		item.setItemDamage(item.getMaxDamage());
 	}
 	
-	public static DimensionType registerDimension(String dimName,
-			String dimUnlocalizedName, int dimID,
-			Class<? extends WorldProvider> worldProvider) {
-		DimensionType dim = DimensionType.register(dimName, dimUnlocalizedName,
-				dimID, worldProvider, false);
+	public static DimensionType registerDimension(String dimName, String dimUnlocalizedName,
+			int dimID, Class<? extends WorldProvider> worldProvider) {
+		DimensionType dim = DimensionType.register(dimName, dimUnlocalizedName, dimID,
+				worldProvider, false);
 		DimensionManager.registerDimension(dimID, dim);
 		return dim;
 	}

@@ -24,9 +24,8 @@ public class WorldGenZGFlowers extends WorldGenerator {
 	@Override
 	public boolean generate(World worldIn, Random rand, BlockPos position) {
 		for (int i = 0; i < 68; ++i) {
-			BlockPos blockpos = position.add(rand.nextInt(8) - rand.nextInt(8),
-					rand.nextInt(4) - rand.nextInt(4),
-					rand.nextInt(8) - rand.nextInt(8));
+			BlockPos blockpos = position.add(rand.nextInt(8) - rand.nextInt(8), rand.nextInt(4)
+					- rand.nextInt(4), rand.nextInt(8) - rand.nextInt(8));
 			
 			if (worldIn.isAirBlock(blockpos) && (blockpos.getY() < 255)
 					&& this.flower.canBlockStay(worldIn, blockpos, this.state)) {

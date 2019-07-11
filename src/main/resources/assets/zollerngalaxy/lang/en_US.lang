@@ -93,6 +93,11 @@ tile.purgdiamondore.name=Purgot Diamond Ore
 tile.purgemeraldore.name=Purgot Emerald Ore
 tile.purgeveniumore.name=Purgot Evenium Ore
 tile.purgcobaltore.name=Purgot Cobalt Ore
+tile.purgredstoneore.name=Purgot Redstone Ore
+tile.purgaluminumore.name=Purgot Aluminum Ore
+tile.purgtinore.name=Purgot Tin Ore
+tile.purgleadore.name=Purgot Lead Ore
+tile.purgmeteoricironore.name=Purgot Meteoric Iron Ore
 
 tile.xathrock.name=Xathian Rock
 tile.xathstone.name=Xathian Stone

@@ -6,6 +6,7 @@ import cofh.CoFHCore;
 import cofh.thermaldynamics.ThermalDynamics;
 import cofh.thermalexpansion.ThermalExpansion;
 import cofh.thermalfoundation.ThermalFoundation;
+import erogenousbeef.bigreactors.common.BigReactors;
 
 public class ModHelperBase {
 	
@@ -14,7 +15,6 @@ public class ModHelperBase {
 	public static boolean useThermalFoundation = false;
 	public static boolean useThermalDynamics = false;
 	public static boolean useExtremeReactors = false;
-	public static boolean useNatura = false;
 	public static boolean useMorePlanets = false;
 	
 	public static void detectMods() {
@@ -22,15 +22,14 @@ public class ModHelperBase {
 		useThermalExpansion = isModLoaded(ThermalExpansion.MOD_ID);
 		useThermalFoundation = isModLoaded(ThermalFoundation.MOD_ID);
 		useThermalDynamics = isModLoaded(ThermalDynamics.MOD_ID);
-		useExtremeReactors = isModLoaded("bigreactors");
-		useNatura = isModLoaded("natura");
+		useExtremeReactors = isModLoaded(BigReactors.MODID);
 		useMorePlanets = isModLoaded(MorePlanetsCore.MOD_ID);
 	}
 	
 	public static boolean isModLoaded(String modId) {
 		boolean isLoaded = Loader.isModLoaded(modId);
-		String strDetectedMod = (isLoaded) ? "Detected mod: " + modId
-				: "Could not detect mod: " + modId;
+		String strDetectedMod = (isLoaded) ? "Detected mod: " + modId : "Could not detect mod: "
+				+ modId;
 		ZGHelper.Log(strDetectedMod);
 		return isLoaded;
 	}

@@ -26,31 +26,28 @@ public class ZGBlockFalling extends ZGBlockBase {
 	}
 	
 	@Override
-	public void neighborChanged(IBlockState state, World worldIn, BlockPos pos,
-			Block blockIn, BlockPos fromPos) {
+	public void neighborChanged(IBlockState state, World worldIn, BlockPos pos, Block blockIn,
+			BlockPos fromPos) {
 		worldIn.scheduleUpdate(pos, this, this.tickRate(worldIn));
 	}
 	
 	@Override
-	public void updateTick(World worldIn, BlockPos pos, IBlockState state,
-			Random rand) {
+	public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
 		if (!worldIn.isRemote) {
 			this.checkFallable(worldIn, pos);
 		}
 	}
 	
 	private void checkFallable(World worldIn, BlockPos pos) {
-		if ((worldIn.isAirBlock(pos.down()) || canFallThrough(worldIn
-				.getBlockState(pos.down()))) && pos.getY() >= 0) {
+		if ((worldIn.isAirBlock(pos.down()) || canFallThrough(worldIn.getBlockState(pos.down())))
+				&& pos.getY() >= 0) {
 			int i = 32;
 			
-			if (!fallInstantly
-					&& worldIn.isAreaLoaded(pos.add(-32, -32, -32),
-							pos.add(32, 32, 32))) {
+			if (!fallInstantly && worldIn.isAreaLoaded(pos.add(-32, -32, -32), pos.add(32, 32, 32))) {
 				if (!worldIn.isRemote) {
-					EntityFallingBlock entityfallingblock = new EntityFallingBlock(
-							worldIn, pos.getX() + 0.5D, pos.getY(),
-							pos.getZ() + 0.5D, worldIn.getBlockState(pos));
+					EntityFallingBlock entityfallingblock = new EntityFallingBlock(worldIn,
+							pos.getX() + 0.5D, pos.getY(), pos.getZ() + 0.5D,
+							worldIn.getBlockState(pos));
 					this.onStartFalling(entityfallingblock);
 					worldIn.spawnEntity(entityfallingblock);
 				}
@@ -92,8 +89,8 @@ public class ZGBlockFalling extends ZGBlockBase {
 	public static boolean canFallThrough(IBlockState state) {
 		Block block = state.getBlock();
 		Material material = state.getMaterial();
-		return block == Blocks.FIRE || material == Material.AIR
-				|| material == Material.WATER || material == Material.LAVA;
+		return block == Blocks.FIRE || material == Material.AIR || material == Material.WATER
+				|| material == Material.LAVA;
 	}
 	
 	public void onEndFalling(World worldIn, BlockPos pos) {
@@ -104,8 +101,7 @@ public class ZGBlockFalling extends ZGBlockBase {
 	
 	@Override
 	@SideOnly(Side.CLIENT)
-	public void randomDisplayTick(IBlockState stateIn, World worldIn,
-			BlockPos pos, Random rand) {
+	public void randomDisplayTick(IBlockState stateIn, World worldIn, BlockPos pos, Random rand) {
 		if (rand.nextInt(16) == 0) {
 			BlockPos blockpos = pos.down();
 			
@@ -113,8 +109,7 @@ public class ZGBlockFalling extends ZGBlockBase {
 				double d0 = pos.getX() + rand.nextFloat();
 				double d1 = pos.getY() - 0.05D;
 				double d2 = pos.getZ() + rand.nextFloat();
-				worldIn.spawnParticle(EnumParticleTypes.FALLING_DUST, d0, d1,
-						d2, 0.0D, 0.0D, 0.0D,
+				worldIn.spawnParticle(EnumParticleTypes.FALLING_DUST, d0, d1, d2, 0.0D, 0.0D, 0.0D,
 						new int[] { Block.getStateId(stateIn) });
 			}
 		}

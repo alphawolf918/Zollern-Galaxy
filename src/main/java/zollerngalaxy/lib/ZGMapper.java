@@ -11,8 +11,7 @@ public class ZGMapper extends StateMapperBase implements ItemMeshDefinition {
 	public final ModelResourceLocation location;
 	
 	public ZGMapper(String modName, String fileName, String modelName) {
-		this.location = new ModelResourceLocation(modName + ":" + fileName,
-				modelName);
+		this.location = new ModelResourceLocation(modName + ":" + fileName, modelName);
 	}
 	
 	@Override

@@ -11,12 +11,15 @@ import net.minecraftforge.fml.common.network.IGuiHandler;
 
 public class CommonProxy implements IProxy, IGuiHandler {
 	
+	@Override
 	public void registerPreRendering() {
 	}
 	
+	@Override
 	public void registerPostRendering() {
 	}
 	
+	@Override
 	public void registerInitRendering() {
 	}
 	
@@ -56,14 +59,12 @@ public class CommonProxy implements IProxy, IGuiHandler {
 	}
 	
 	@Override
-	public Object getServerGuiElement(int ID, EntityPlayer player, World world,
-			int x, int y, int z) {
+	public Object getServerGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
 		return null;
 	}
 	
 	@Override
-	public Object getClientGuiElement(int ID, EntityPlayer player, World world,
-			int x, int y, int z) {
+	public Object getClientGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
 		return null;
 	}
 }

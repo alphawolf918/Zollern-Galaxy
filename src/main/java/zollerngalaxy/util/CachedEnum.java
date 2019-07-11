@@ -11,8 +11,7 @@ public class CachedEnum {
 	
 	private static EnumHand[] handValues = EnumHand.values();
 	private static EnumDyeColor[] dyeColorValues = EnumDyeColor.values();
-	private static IRocketType.EnumRocketType[] rocketValues = IRocketType.EnumRocketType
-			.values();
+	private static IRocketType.EnumRocketType[] rocketValues = IRocketType.EnumRocketType.values();
 	private static BiomeType[] biomeValues = BiomeType.values();
 	private static Axis[] axisValues = Axis.values();
 	private static TextFormatting[] textFormatValues = TextFormatting.values();

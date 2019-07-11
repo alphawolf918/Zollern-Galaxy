@@ -12,12 +12,14 @@ public class ZGItems {
 	public static final Item zolCrystal = new ZGItemBase("zolluscrystal");
 	public static final Item rawViri = new ZGItemBase("rawviri");
 	public static final Item dustCobalt = new ZGItemBase("cobaltdust");
+	public static final Item dustEve = new ZGItemBase("eveniumdust");
 	public static final Item ingotViri = new ZGItemBase("ingotviri");
 	public static final Item ingotCobalt = new ZGItemBase("ingotcobalt");
+	public static final Item ingotEve = new ZGItemBase("ingotevenium");
 	
 	public static void init() {
-		ZGItems.registerItems(heartOfZol, zolCrystal, rawViri, dustCobalt,
-				ingotViri, ingotCobalt);
+		ZGItems.registerItems(heartOfZol, zolCrystal, rawViri, dustEve, dustCobalt, ingotViri,
+				ingotCobalt, ingotEve);
 		ZGHelper.Log("Loaded a total of " + totalItems + " new items.");
 	}
 	

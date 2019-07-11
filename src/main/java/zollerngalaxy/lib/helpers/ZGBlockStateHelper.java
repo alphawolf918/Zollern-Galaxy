@@ -20,29 +20,25 @@ public class ZGBlockStateHelper {
 	public static PropertyBool CHECK_DECAY = PropertyBool.create("check_decay");
 	
 	/** Used for Custom Block Facing */
-	public static PropertyDirection FACING_HORIZON = PropertyDirection.create(
-			"facing", EnumFacing.Plane.HORIZONTAL);
-	public static PropertyDirection FACING_ALL = PropertyDirection
-			.create("facing");
+	public static PropertyDirection FACING_HORIZON = PropertyDirection.create("facing",
+			EnumFacing.Plane.HORIZONTAL);
+	public static PropertyDirection FACING_ALL = PropertyDirection.create("facing");
 	
 	/** Used for Custom Wood Log */
-	public static PropertyEnum<EnumAxis> AXIS = PropertyEnum.create("axis",
-			EnumAxis.class);
+	public static PropertyEnum<EnumAxis> AXIS = PropertyEnum.create("axis", EnumAxis.class);
 	
 	/** Used for Custom Cake */
 	public static PropertyInteger BITES = PropertyInteger.create("bites", 0, 6);
 	
 	/** Used for Custom Farmland */
-	public static PropertyInteger MOISTURE = PropertyInteger.create("moisture",
-			0, 1);
+	public static PropertyInteger MOISTURE = PropertyInteger.create("moisture", 0, 1);
 	
 	/** Used for Custom Snow Layer */
-	public static PropertyInteger LAYERS = PropertyInteger.create("layers", 1,
-			8);
+	public static PropertyInteger LAYERS = PropertyInteger.create("layers", 1, 8);
 	
 	/** Used for Custom Colored Block */
-	public static PropertyEnum<EnumDyeColor> COLOR = PropertyEnum.create(
-			"color", EnumDyeColor.class);
+	public static PropertyEnum<EnumDyeColor> COLOR = PropertyEnum.create("color",
+			EnumDyeColor.class);
 	
 	/** Used for Custom Plant with tickable */
 	public static PropertyInteger AGE = PropertyInteger.create("age", 0, 15);

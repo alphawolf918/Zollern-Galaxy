@@ -23,12 +23,9 @@ import zollerngalaxy.worldgen.mapgen.MapGenRavinesZG;
 
 public class ChunkProviderKriffon extends ChunkProviderBase {
 	
-	public static final IBlockState BLOCK_TOP = ZGBlocks.kriffSurfaceRock
-			.getDefaultState();
-	public static final IBlockState BLOCK_FILL = ZGBlocks.kriffDirt
-			.getDefaultState();
-	public static final IBlockState BLOCK_LOWER = ZGBlocks.kriffStone
-			.getDefaultState();
+	public static final IBlockState BLOCK_TOP = ZGBlocks.kriffSurfaceRock.getDefaultState();
+	public static final IBlockState BLOCK_FILL = ZGBlocks.kriffDirt.getDefaultState();
+	public static final IBlockState BLOCK_LOWER = ZGBlocks.kriffStone.getDefaultState();
 	
 	private final Random rand;
 	
@@ -41,10 +38,9 @@ public class ChunkProviderKriffon extends ChunkProviderBase {
 	
 	private Biome[] biomesForGeneration = { ZGBiomes.KRIFFON };
 	
-	private final MapGenCavesZG caveGenerator = new MapGenCavesZG(
-			ZGBlocks.kriffStone, ZGBlocks.kriffMagmaRock);
-	private final MapGenRavinesZG ravineGenerator = new MapGenRavinesZG(
-			ZGBlocks.kriffStone);
+	private final MapGenCavesZG caveGenerator = new MapGenCavesZG(ZGBlocks.kriffStone,
+			ZGBlocks.kriffMagmaRock);
+	private final MapGenRavinesZG ravineGenerator = new MapGenRavinesZG(ZGBlocks.kriffStone);
 	
 	private static final int CRATER_PROB = 500;
 	
@@ -71,12 +67,9 @@ public class ChunkProviderKriffon extends ChunkProviderBase {
 		
 		for (int x = 0; x < ChunkProviderKriffon.CHUNK_SIZE_X; x++) {
 			for (int z = 0; z < ChunkProviderKriffon.CHUNK_SIZE_Z; z++) {
-				final double d = this.noiseGen1.getNoise(x + chunkX * 16, z
-						+ chunkZ * 16) * 8;
-				final double d2 = this.noiseGen2.getNoise(x + chunkX * 16, z
-						+ chunkZ * 16) * 24;
-				double d3 = this.noiseGen3.getNoise(x + chunkX * 16, z + chunkZ
-						* 16) - 0.1;
+				final double d = this.noiseGen1.getNoise(x + chunkX * 16, z + chunkZ * 16) * 8;
+				final double d2 = this.noiseGen2.getNoise(x + chunkX * 16, z + chunkZ * 16) * 24;
+				double d3 = this.noiseGen3.getNoise(x + chunkX * 16, z + chunkZ * 16) - 0.1;
 				d3 *= 4;
 				
 				double yDev;
@@ -103,8 +96,8 @@ public class ChunkProviderKriffon extends ChunkProviderBase {
 		final int var5 = 20;
 		for (int var8 = 0; var8 < 16; ++var8) {
 			for (int var9 = 0; var9 < 16; ++var9) {
-				final int var12 = (int) (this.noiseGen4.getNoise(var8 + par1
-						* 16, var9 * par2 * 16) / 3.0D + 3.0D + this.rand
+				final int var12 = (int) (this.noiseGen4
+						.getNoise(var8 + par1 * 16, var9 * par2 * 16) / 3.0D + 3.0D + this.rand
 						.nextDouble() * 0.25D);
 				int var13 = -1;
 				IBlockState state0 = BLOCK_TOP;
@@ -114,11 +107,9 @@ public class ChunkProviderKriffon extends ChunkProviderBase {
 					final int index = this.getIndex(var8, var16, var9);
 					
 					if (var16 <= this.rand.nextInt(5)) {
-						primer.setBlockState(var8, var16, var9,
-								Blocks.BEDROCK.getDefaultState());
+						primer.setBlockState(var8, var16, var9, Blocks.BEDROCK.getDefaultState());
 					} else {
-						IBlockState var18 = primer.getBlockState(var8, var16,
-								var9);
+						IBlockState var18 = primer.getBlockState(var8, var16, var9);
 						if (Blocks.AIR == var18) {
 							var13 = -1;
 						} else if (var18 == BLOCK_LOWER) {
@@ -126,20 +117,16 @@ public class ChunkProviderKriffon extends ChunkProviderBase {
 								if (var12 <= 0) {
 									state0 = Blocks.AIR.getDefaultState();
 									state1 = BLOCK_LOWER;
-								} else if (var16 >= var5 - -16
-										&& var16 <= var5 + 1) {
+								} else if (var16 >= var5 - -16 && var16 <= var5 + 1) {
 									state0 = BLOCK_FILL;
 								}
 								
 								var13 = var12;
 								
 								if (var16 >= var5 - 1) {
-									primer.setBlockState(var8, var16, var9,
-											state0);
-								} else if (var16 < var5 - 1
-										&& var16 >= var5 - 2) {
-									primer.setBlockState(var8, var16, var9,
-											state1);
+									primer.setBlockState(var8, var16, var9, state0);
+								} else if (var16 < var5 - 1 && var16 >= var5 - 2) {
+									primer.setBlockState(var8, var16, var9, state1);
 								}
 							} else if (var13 > 0) {
 								--var13;
@@ -182,21 +169,17 @@ public class ChunkProviderKriffon extends ChunkProviderBase {
 			for (int cz = chunkZ - 2; cz <= chunkZ + 2; cz++) {
 				for (int x = 0; x < ChunkProviderKriffon.CHUNK_SIZE_X; x++) {
 					for (int z = 0; z < ChunkProviderKriffon.CHUNK_SIZE_Z; z++) {
-						if (Math.abs(this.randFromPoint(cx * 16 + x,
-								(cz * 16 + z) * 1000)) < this.noiseGen4
-								.getNoise(x * ChunkProviderKriffon.CHUNK_SIZE_X
-										+ x, cz
+						if (Math.abs(this.randFromPoint(cx * 16 + x, (cz * 16 + z) * 1000)) < this.noiseGen4
+								.getNoise(x * ChunkProviderKriffon.CHUNK_SIZE_X + x, cz
 										* ChunkProviderKriffon.CHUNK_SIZE_Z + z)
 								/ ChunkProviderKriffon.CRATER_PROB) {
-							final Random random = new Random(cx * 16 + x
-									+ (cz * 16 + z) * 5000);
+							final Random random = new Random(cx * 16 + x + (cz * 16 + z) * 5000);
 							final EnumCraterSize cSize = EnumCraterSize.sizeArray[random
 									.nextInt(EnumCraterSize.sizeArray.length)];
-							final int size = random.nextInt(cSize.MAX_SIZE
-									- cSize.MIN_SIZE)
+							final int size = random.nextInt(cSize.MAX_SIZE - cSize.MIN_SIZE)
 									+ cSize.MIN_SIZE;
-							this.makeCrater(cx * 16 + x, cz * 16 + z,
-									chunkX * 16, chunkZ * 16, size, primer);
+							this.makeCrater(cx * 16 + x, cz * 16 + z, chunkX * 16, chunkZ * 16,
+									size, primer);
 						}
 					}
 				}
@@ -204,8 +187,8 @@ public class ChunkProviderKriffon extends ChunkProviderBase {
 		}
 	}
 	
-	private void makeCrater(int craterX, int craterZ, int chunkX, int chunkZ,
-			int size, ChunkPrimer primer) {
+	private void makeCrater(int craterX, int craterZ, int chunkX, int chunkZ, int size,
+			ChunkPrimer primer) {
 		for (int x = 0; x < ChunkProviderKriffon.CHUNK_SIZE_X; x++) {
 			for (int z = 0; z < ChunkProviderKriffon.CHUNK_SIZE_Z; z++) {
 				double xDev = craterX - (chunkX + x);
@@ -218,10 +201,9 @@ public class ChunkProviderKriffon extends ChunkProviderBase {
 					yDev = 5 - yDev;
 					int helper = 0;
 					for (int y = 127; y > 0; y--) {
-						if (Blocks.AIR != primer.getBlockState(x, y, z)
-								.getBlock() && helper <= yDev) {
-							primer.setBlockState(x, y, z,
-									Blocks.AIR.getDefaultState());
+						if (Blocks.AIR != primer.getBlockState(x, y, z).getBlock()
+								&& helper <= yDev) {
+							primer.setBlockState(x, y, z, Blocks.AIR.getDefaultState());
 							helper++;
 						}
 						if (helper > yDev) {
@@ -264,8 +246,8 @@ public class ChunkProviderKriffon extends ChunkProviderBase {
 	}
 	
 	@Override
-	public List<Biome.SpawnListEntry> getPossibleCreatures(
-			EnumCreatureType creatureType, BlockPos pos) {
+	public List<Biome.SpawnListEntry> getPossibleCreatures(EnumCreatureType creatureType,
+			BlockPos pos) {
 		Biome biomegenbase = this.world.getBiome(pos);
 		return biomegenbase.getSpawnableList(creatureType);
 	}

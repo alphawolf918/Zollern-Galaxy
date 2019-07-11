@@ -19,14 +19,12 @@ public class ZGDimensions {
 	
 	public static void init() {
 		// Psion-6
-		ZGDimensions.ZOLLUS = ZGDimensions
-				.getDimType(ConfigManagerZG.planetZollusDimensionId);
-		ZGDimensions.KRIFFON = ZGDimensions
-				.getDimType(ConfigManagerZG.planetKriffonDimensionId);
+		ZGDimensions.ZOLLUS = ZGDimensions.getDimType(ConfigManagerZG.planetZollusDimensionId);
+		ZGDimensions.KRIFFON = ZGDimensions.getDimType(ConfigManagerZG.planetKriffonDimensionId);
 		// ZGDimensions.EDEN = WorldUtil
 		// .getDimensionTypeById(ConfigManagerZG.planetEdenDimensionId);
-		// ZGDimensions.PURGOT = WorldUtil
-		// .getDimensionTypeById(ConfigManagerZG.planetPurgotDimensionId);
+		ZGDimensions.PURGOT = WorldUtil
+				.getDimensionTypeById(ConfigManagerZG.planetPurgotDimensionId);
 		//
 		// // Praedyth
 		// ZGDimensions.OASIS = WorldUtil

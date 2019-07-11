@@ -38,8 +38,7 @@ public class JSONRecipes {
 	// https://gist.github.com/Draco18s/6398d3b94a4c07ded26eb641639a2ce2 - for
 	// Advancements (recipes unlocked)
 	
-	private static final Gson GSON = new GsonBuilder().setPrettyPrinting()
-			.create();
+	private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
 	private static File RECIPE_DIR = null;
 	private static File ADVANCE_DIR = null;
 	private static final Set<String> USED_OD_NAMES = new TreeSet<>();
@@ -57,8 +56,8 @@ public class JSONRecipes {
 	
 	private static void setupAdvDir() {
 		if (ADVANCE_DIR == null) {
-			ADVANCE_DIR = ConfigManagerZG.configuration.getConfigFile()
-					.toPath().resolve("../advancements/").toFile();
+			ADVANCE_DIR = ConfigManagerZG.configuration.getConfigFile().toPath()
+					.resolve("../advancements/").toFile();
 		}
 		if (!ADVANCE_DIR.exists()) {
 			ADVANCE_DIR.mkdir();
@@ -89,26 +88,22 @@ public class JSONRecipes {
 			
 			if (obj instanceof Character) {
 				if (curKey != null) {
-					throw new IllegalArgumentException(
-							"Provided two char keys in a row");
+					throw new IllegalArgumentException("Provided two char keys in a row");
 				}
 				curKey = (Character) obj;
 			} else {
 				if (curKey == null) {
-					throw new IllegalArgumentException(
-							"Providing object without a char key");
+					throw new IllegalArgumentException("Providing object without a char key");
 				}
 				if (obj instanceof String) {
 					isOreDict = true;
 				}
-				key.put(Character.toString(Character.toUpperCase(curKey)),
-						serializeItem(obj));
+				key.put(Character.toString(Character.toUpperCase(curKey)), serializeItem(obj));
 				curKey = null;
 			}
 		}
 		
-		json.put("type", isOreDict ? "forge:ore_shaped"
-				: "minecraft:crafting_shaped");
+		json.put("type", isOreDict ? "forge:ore_shaped" : "minecraft:crafting_shaped");
 		json.put("pattern", pattern);
 		json.put("key", key);
 		json.put("result", serializeItem(output));
@@ -116,21 +111,17 @@ public class JSONRecipes {
 		// names the json the same name as the output's registry name
 		// repeatedly adds _alt if a file already exists
 		// janky I know but it works
-		String suffix = output.getItem().getHasSubtypes() ? "_"
-				+ output.getItemDamage() : "";
-		File file = new File(RECIPE_DIR, output.getItem().getRegistryName()
-				.getResourcePath()
+		String suffix = output.getItem().getHasSubtypes() ? "_" + output.getItemDamage() : "";
+		File file = new File(RECIPE_DIR, output.getItem().getRegistryName().getResourcePath()
 				+ suffix + ".json");
 		
 		while (file.exists()) {
 			suffix += "_alt";
-			file = new File(RECIPE_DIR, output.getItem().getRegistryName()
-					.getResourcePath()
+			file = new File(RECIPE_DIR, output.getItem().getRegistryName().getResourcePath()
 					+ suffix + ".json");
 		}
 		
-		writeAdvancements(output.getItem().getRegistryName().getResourcePath()
-				+ suffix);
+		writeAdvancements(output.getItem().getRegistryName().getResourcePath() + suffix);
 		
 		try (FileWriter writer = new FileWriter(file)) {
 			GSON.toJson(json, writer);
@@ -139,8 +130,7 @@ public class JSONRecipes {
 		}
 	}
 	
-	public static void addShapelessRecipe(ItemStack output,
-			Object... components) {
+	public static void addShapelessRecipe(ItemStack output, Object... components) {
 		if (!ENABLE) {
 			return;
 		}
@@ -157,29 +147,24 @@ public class JSONRecipes {
 			ingredients.add(serializeItem(obj));
 		}
 		
-		json.put("type", isOreDict ? "forge:ore_shapeless"
-				: "minecraft:crafting_shapeless");
+		json.put("type", isOreDict ? "forge:ore_shapeless" : "minecraft:crafting_shapeless");
 		json.put("ingredients", ingredients);
 		json.put("result", serializeItem(output));
 		
 		// names the json the same name as the output's registry name
 		// repeatedly adds _alt if a file already exists
 		// janky I know but it works
-		String suffix = output.getItem().getHasSubtypes() ? "_"
-				+ output.getItemDamage() : "";
-		File file = new File(RECIPE_DIR, output.getItem().getRegistryName()
-				.getResourcePath()
+		String suffix = output.getItem().getHasSubtypes() ? "_" + output.getItemDamage() : "";
+		File file = new File(RECIPE_DIR, output.getItem().getRegistryName().getResourcePath()
 				+ suffix + ".json");
 		
 		while (file.exists()) {
 			suffix += "_alt";
-			file = new File(RECIPE_DIR, output.getItem().getRegistryName()
-					.getResourcePath()
+			file = new File(RECIPE_DIR, output.getItem().getRegistryName().getResourcePath()
 					+ suffix + ".json");
 		}
 		
-		writeAdvancements(output.getItem().getRegistryName().getResourcePath()
-				+ suffix);
+		writeAdvancements(output.getItem().getRegistryName().getResourcePath() + suffix);
 		
 		try (FileWriter writer = new FileWriter(file)) {
 			GSON.toJson(json, writer);
@@ -205,8 +190,7 @@ public class JSONRecipes {
 			
 			ret.put("item", itemStack.getItem().getRegistryName().toString());
 			
-			if (itemStack.getItem().getHasSubtypes()
-					|| itemStack.getItemDamage() != 0) {
+			if (itemStack.getItem().getHasSubtypes() || itemStack.getItemDamage() != 0) {
 				ret.put("data", itemStack.getItemDamage());
 			}
 			if (itemStack.hasTagCompound()) {
@@ -223,8 +207,7 @@ public class JSONRecipes {
 			ret.put("item", "#" + ((String) obj).toUpperCase(Locale.ROOT));
 			return ret;
 		}
-		throw new IllegalArgumentException(
-				"Not a block, item, stack, or od name");
+		throw new IllegalArgumentException("Not a block, item, stack, or od name");
 	}
 	
 	public static void writeAdvancements(String result) {
@@ -289,13 +272,11 @@ public class JSONRecipes {
 		for (String s : USED_OD_NAMES) {
 			Map<String, Object> entry = new HashMap<>();
 			entry.put("name", s.toUpperCase(Locale.ROOT));
-			entry.put("ingredient",
-					ImmutableMap.of("type", "forge:ore_dict", "ore", s));
+			entry.put("ingredient", ImmutableMap.of("type", "forge:ore_dict", "ore", s));
 			json.add(entry);
 		}
 		
-		try (FileWriter w = new FileWriter(new File(RECIPE_DIR,
-				"_constants.json"))) {
+		try (FileWriter w = new FileWriter(new File(RECIPE_DIR, "_constants.json"))) {
 			GSON.toJson(json, w);
 		} catch (IOException e) {
 			e.printStackTrace();

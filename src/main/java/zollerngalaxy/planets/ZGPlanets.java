@@ -12,6 +12,7 @@ import net.minecraft.util.ResourceLocation;
 import zollerngalaxy.biomes.ZGBiomes;
 import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderKriffon;
+import zollerngalaxy.core.dimensions.worldproviders.WorldProviderPurgot;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderZollus;
 import zollerngalaxy.core.enums.EnumPlanetClass;
 import zollerngalaxy.lib.ZGInfo;
@@ -88,8 +89,7 @@ public class ZGPlanets {
 		starPsios.setParentSolarSystem(systemPsios);
 		starPsios.setTierRequired(-1);
 		starPsios.setRelativeSize(35.0F);
-		starPsios.setBodyIcon(new ResourceLocation(ZGInfo.MOD_ID,
-				"textures/gui/psion6.png"));
+		starPsios.setBodyIcon(new ResourceLocation(ZGInfo.MOD_ID, "textures/gui/psion6.png"));
 		systemPsios.setMainStar(starPsios);
 		totalSystems++;
 		
@@ -98,8 +98,7 @@ public class ZGPlanets {
 		starPraedyth.setParentSolarSystem(systemPraedyth);
 		starPraedyth.setTierRequired(-1);
 		starPraedyth.setRelativeSize(40.0F);
-		starPraedyth.setBodyIcon(new ResourceLocation(ZGInfo.MOD_ID,
-				"textures/gui/praedyth.png"));
+		starPraedyth.setBodyIcon(new ResourceLocation(ZGInfo.MOD_ID, "textures/gui/praedyth.png"));
 		systemPraedyth.setMainStar(starPraedyth);
 		totalSystems++;
 		
@@ -108,8 +107,7 @@ public class ZGPlanets {
 		starPantheon.setParentSolarSystem(systemPantheon);
 		starPantheon.setTierRequired(-1);
 		starPantheon.setRelativeSize(20.0F);
-		starPantheon.setBodyIcon(new ResourceLocation(ZGInfo.MOD_ID,
-				"textures/gui/pantheon.png"));
+		starPantheon.setBodyIcon(new ResourceLocation(ZGInfo.MOD_ID, "textures/gui/pantheon.png"));
 		systemPantheon.setMainStar(starPantheon);
 		totalSystems++;
 		
@@ -118,8 +116,7 @@ public class ZGPlanets {
 		starOlympus.setParentSolarSystem(systemOlympus);
 		starOlympus.setTierRequired(-1);
 		starOlympus.setRelativeSize(45.0F);
-		starOlympus.setBodyIcon(new ResourceLocation(ZGInfo.MOD_ID,
-				"textures/gui/olympus.png"));
+		starOlympus.setBodyIcon(new ResourceLocation(ZGInfo.MOD_ID, "textures/gui/olympus.png"));
 		systemOlympus.setMainStar(starOlympus);
 		totalSystems++;
 		
@@ -128,8 +125,7 @@ public class ZGPlanets {
 		starAsgard.setParentSolarSystem(systemAsgard);
 		starAsgard.setTierRequired(-1);
 		starAsgard.setRelativeSize(16.0F);
-		starAsgard.setBodyIcon(new ResourceLocation(ZGInfo.MOD_ID,
-				"textures/gui/asgard.png"));
+		starAsgard.setBodyIcon(new ResourceLocation(ZGInfo.MOD_ID, "textures/gui/asgard.png"));
 		systemAsgard.setMainStar(starAsgard);
 		totalSystems++;
 		
@@ -138,8 +134,7 @@ public class ZGPlanets {
 		starVega.setParentSolarSystem(systemVega);
 		starVega.setTierRequired(-1);
 		starVega.setRelativeSize(5.0F);
-		starVega.setBodyIcon(new ResourceLocation(ZGInfo.MOD_ID,
-				"textures/gui/vega.png"));
+		starVega.setBodyIcon(new ResourceLocation(ZGInfo.MOD_ID, "textures/gui/vega.png"));
 		systemVega.setMainStar(starVega);
 		totalSystems++;
 		
@@ -148,8 +143,7 @@ public class ZGPlanets {
 		starNova.setParentSolarSystem(systemNova);
 		starNova.setTierRequired(-1);
 		starNova.setRelativeSize(5.0F);
-		starNova.setBodyIcon(new ResourceLocation(ZGInfo.MOD_ID,
-				"textures/gui/nova.png"));
+		starNova.setBodyIcon(new ResourceLocation(ZGInfo.MOD_ID, "textures/gui/nova.png"));
 		systemNova.setMainStar(starNova);
 		totalSystems++;
 		
@@ -174,8 +168,7 @@ public class ZGPlanets {
 		planetZollus.setWindLevel(3.6F);
 		planetZollus.setDensity(0.1F);
 		planetZollus.setHasRain(false);
-		planetZollus.setPlanetGasses(EnumAtmosphericGas.NITROGEN,
-				EnumAtmosphericGas.HELIUM);
+		planetZollus.setPlanetGasses(EnumAtmosphericGas.NITROGEN, EnumAtmosphericGas.HELIUM);
 		planetZollus.setAtmosphere();
 		planetZollus.setPlanetIcon("zollus");
 		planetZollus.setBiomeInfo(ZGBiomes.ZOLLUS);
@@ -183,8 +176,7 @@ public class ZGPlanets {
 		totalPlanets++;
 		
 		// Planet Kriffon
-		planetKriffon.setDimensionInfo(
-				ConfigManagerZG.planetKriffonDimensionId,
+		planetKriffon.setDimensionInfo(ConfigManagerZG.planetKriffonDimensionId,
 				WorldProviderKriffon.class);
 		planetKriffon.setParentSolarSystem(systemPsios);
 		planetKriffon.setPlanetClass(EnumPlanetClass.Y);
@@ -200,8 +192,7 @@ public class ZGPlanets {
 		planetKriffon.setWindLevel(0.1F);
 		planetKriffon.setDensity(3.0F);
 		planetKriffon.setHasRain(false);
-		planetKriffon.setPlanetGasses(EnumAtmosphericGas.ARGON,
-				EnumAtmosphericGas.METHANE);
+		planetKriffon.setPlanetGasses(EnumAtmosphericGas.ARGON, EnumAtmosphericGas.METHANE);
 		planetKriffon.setAtmosphere();
 		planetKriffon.setPlanetIcon("kriffus");
 		planetKriffon.setBiomeInfo(ZGBiomes.KRIFFON);
@@ -226,9 +217,8 @@ public class ZGPlanets {
 		planetEden.setWindLevel(0.6F);
 		planetEden.setDensity(0.9F);
 		planetEden.setHasRain(true);
-		planetEden.setPlanetGasses(EnumAtmosphericGas.NITROGEN,
-				EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.ARGON,
-				EnumAtmosphericGas.WATER);
+		planetEden.setPlanetGasses(EnumAtmosphericGas.NITROGEN, EnumAtmosphericGas.OXYGEN,
+				EnumAtmosphericGas.ARGON, EnumAtmosphericGas.WATER);
 		planetEden.setAtmosphere();
 		planetEden.setPlanetIcon("eden");
 		totalPlanets++;
@@ -248,13 +238,14 @@ public class ZGPlanets {
 		planetPurgot.setWindLevel(5.7F);
 		planetPurgot.setDensity(0.3F);
 		planetPurgot.setHasRain(false);
-		planetPurgot.setPlanetGasses(EnumAtmosphericGas.OXYGEN,
-				EnumAtmosphericGas.WATER, EnumAtmosphericGas.NITROGEN,
-				EnumAtmosphericGas.ARGON);
+		planetPurgot.setPlanetGasses(EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.WATER,
+				EnumAtmosphericGas.NITROGEN, EnumAtmosphericGas.ARGON);
 		planetPurgot.setAtmosphere();
 		planetPurgot.setPlanetIcon("purgot");
-		// planetPurgot.setDimensionInfo(ConfigManagerZG.planetPurgotDimensionId,
-		// WorldProviderPurgot.class);
+		planetPurgot.setBiomeInfo(ZGBiomes.PURGOT);
+		planetPurgot.addChecklistKeys("equipOxygenSuit");
+		planetPurgot.setDimensionInfo(ConfigManagerZG.planetPurgotDimensionId,
+				WorldProviderPurgot.class);
 		totalPlanets++;
 		
 		// Planet Xathius
@@ -272,9 +263,8 @@ public class ZGPlanets {
 		planetXathius.setWindLevel(3.2F);
 		planetXathius.setDensity(1.1F);
 		planetXathius.setHasRain(true);
-		planetXathius.setPlanetGasses(EnumAtmosphericGas.OXYGEN,
-				EnumAtmosphericGas.WATER, EnumAtmosphericGas.NITROGEN,
-				EnumAtmosphericGas.ARGON);
+		planetXathius.setPlanetGasses(EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.WATER,
+				EnumAtmosphericGas.NITROGEN, EnumAtmosphericGas.ARGON);
 		planetXathius.setAtmosphere();
 		planetXathius.setPlanetIcon("xathius");
 		// planetXathius.setDimensionInfo(
@@ -298,8 +288,7 @@ public class ZGPlanets {
 		planetOasis.setWindLevel(0.9F);
 		planetOasis.setDensity(1.0F);
 		planetOasis.setHasRain(true);
-		planetOasis.setPlanetGasses(EnumAtmosphericGas.OXYGEN,
-				EnumAtmosphericGas.WATER);
+		planetOasis.setPlanetGasses(EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.WATER);
 		planetOasis.setAtmosphere();
 		planetOasis.setPlanetIcon("oasis");
 		// planetOasis.setDimensionInfo(ConfigManagerZG.planetOasisDimensionId,
@@ -333,14 +322,14 @@ public class ZGPlanets {
 	
 	public static void registerTeleportTypes() {
 		// TeleportTypeNG teleType = new TeleportTypeNG();
-		GalacticraftRegistry.registerTeleportType(WorldProviderZollus.class,
-				new TeleportTypeMoon());
+		GalacticraftRegistry
+				.registerTeleportType(WorldProviderZollus.class, new TeleportTypeMoon());
 		GalacticraftRegistry.registerTeleportType(WorldProviderKriffon.class,
 				new TeleportTypeMoon());
 		// GalacticraftRegistry.registerTeleportType(WorldProviderEden.class,
 		// teleType);
-		// GalacticraftRegistry.registerTeleportType(WorldProviderPurgot.class,
-		// teleType);
+		GalacticraftRegistry
+				.registerTeleportType(WorldProviderPurgot.class, new TeleportTypeMoon());
 		// GalacticraftRegistry.registerTeleportType(WorldProviderXathius.class,
 		// teleType);
 		// GalacticraftRegistry.registerTeleportType(WorldProviderOasis.class,

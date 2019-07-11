@@ -23,16 +23,15 @@ public class MapGenCavesZG extends MapGenBase {
 		this.block = block;
 	}
 	
-	protected void generateLargeCaveNode(long seed, int chunkX, int chunkZ,
-			ChunkPrimer chunk, double par5, double par6, double par7) {
+	protected void generateLargeCaveNode(long seed, int chunkX, int chunkZ, ChunkPrimer chunk,
+			double par5, double par6, double par7) {
 		this.generateCaveNode(seed, chunkX, chunkZ, chunk, par5, par6, par7,
 				1.0F + this.rand.nextFloat() * 6.0F, 0.0F, 0.0F, -1, -1, 0.5D);
 	}
 	
-	protected void generateCaveNode(long seed, int chunkX, int chunkZ,
-			ChunkPrimer chunk, double par5, double par6, double par7,
-			float par8, float par9, float par10, int par11, int par12,
-			double par13) {
+	protected void generateCaveNode(long seed, int chunkX, int chunkZ, ChunkPrimer chunk,
+			double par5, double par6, double par7, float par8, float par9, float par10, int par11,
+			int par12, double par13) {
 		double d4 = chunkX * 16 + 8;
 		double d5 = chunkZ * 16 + 8;
 		float f3 = 0.0F;
@@ -54,8 +53,7 @@ public class MapGenCavesZG extends MapGenBase {
 		int k1 = random.nextInt(par12 / 2) + par12 / 4;
 		
 		for (boolean flag = random.nextInt(6) == 0; par11 < par12; ++par11) {
-			double d6 = 1.5D + MathHelper.sin(par11 * (float) Math.PI / par12)
-					* par8 * 1.0F;
+			double d6 = 1.5D + MathHelper.sin(par11 * (float) Math.PI / par12) * par8 * 1.0F;
 			double d7 = d6 * par13;
 			float f5 = MathHelper.cos(par10);
 			float f6 = MathHelper.sin(par10);
@@ -73,20 +71,16 @@ public class MapGenCavesZG extends MapGenBase {
 			par9 += f3 * 0.1F;
 			f4 *= 0.9F;
 			f3 *= 0.75F;
-			f4 += (random.nextFloat() - random.nextFloat())
-					* random.nextFloat() * 2.0F;
-			f3 += (random.nextFloat() - random.nextFloat())
-					* random.nextFloat() * 4.0F;
+			f4 += (random.nextFloat() - random.nextFloat()) * random.nextFloat() * 2.0F;
+			f3 += (random.nextFloat() - random.nextFloat()) * random.nextFloat() * 4.0F;
 			
 			if (!flag2 && par11 == k1 && par8 > 1.0F && par12 > 0) {
-				this.generateCaveNode(random.nextLong(), chunkX, chunkZ, chunk,
-						par5, par6, par7, random.nextFloat() * 0.5F + 0.5F,
-						par9 - (float) Math.PI / 2F, par10 / 3.0F, par11,
-						par12, 1.0D);
-				this.generateCaveNode(random.nextLong(), chunkX, chunkZ, chunk,
-						par5, par6, par7, random.nextFloat() * 0.5F + 0.5F,
-						par9 + (float) Math.PI / 2F, par10 / 3.0F, par11,
-						par12, 1.0D);
+				this.generateCaveNode(random.nextLong(), chunkX, chunkZ, chunk, par5, par6, par7,
+						random.nextFloat() * 0.5F + 0.5F, par9 - (float) Math.PI / 2F,
+						par10 / 3.0F, par11, par12, 1.0D);
+				this.generateCaveNode(random.nextLong(), chunkX, chunkZ, chunk, par5, par6, par7,
+						random.nextFloat() * 0.5F + 0.5F, par9 + (float) Math.PI / 2F,
+						par10 / 3.0F, par11, par12, 1.0D);
 				return;
 			}
 			
@@ -100,10 +94,8 @@ public class MapGenCavesZG extends MapGenBase {
 					return;
 				}
 				
-				if (par5 >= d4 - 16.0D - d6 * 2.0D
-						&& par7 >= d5 - 16.0D - d6 * 2.0D
-						&& par5 <= d4 + 16.0D + d6 * 2.0D
-						&& par7 <= d5 + 16.0D + d6 * 2.0D) {
+				if (par5 >= d4 - 16.0D - d6 * 2.0D && par7 >= d5 - 16.0D - d6 * 2.0D
+						&& par5 <= d4 + 16.0D + d6 * 2.0D && par7 <= d5 + 16.0D + d6 * 2.0D) {
 					int k3 = MathHelper.floor(par5 - d6) - chunkX * 16 - 1;
 					int l1 = MathHelper.floor(par5 + d6) - chunkX * 16 + 1;
 					int l3 = MathHelper.floor(par6 - d7) - 1;
@@ -138,8 +130,7 @@ public class MapGenCavesZG extends MapGenBase {
 								if (i3 >= 0 && i3 < 256) {
 									chunk.getBlockState(k2, i3, l2);
 									
-									if (i3 != l3 - 1 && k2 != k3
-											&& k2 != l1 - 1 && l2 != i4
+									if (i3 != l3 - 1 && k2 != k3 && k2 != l1 - 1 && l2 != i4
 											&& l2 != j2 - 1) {
 										i3 = l3;
 									}
@@ -158,23 +149,17 @@ public class MapGenCavesZG extends MapGenBase {
 								for (int j3 = i2; j3 > l3; --j3) {
 									double d13 = (j3 - 1 + 0.5D - par6) / d7;
 									
-									if (d13 > -0.7D
-											&& d14 * d14 + d13 * d13 + d12
-													* d12 < 1.0D) {
-										IBlockState state = chunk
-												.getBlockState(k2, j3, j4);
+									if (d13 > -0.7D && d14 * d14 + d13 * d13 + d12 * d12 < 1.0D) {
+										IBlockState state = chunk.getBlockState(k2, j3, j4);
 										
 										if (state.getBlock() == this.block) {
 											if (j3 < 10) {
-												this.setBlock(k2, j3, j4,
-														chunk, this.blockLava);
+												this.setBlock(k2, j3, j4, chunk, this.blockLava);
 											} else {
-												this.setBlock(k2, j3, j4,
-														chunk, Blocks.AIR);
+												this.setBlock(k2, j3, j4, chunk, Blocks.AIR);
 											}
 										} else if (state.getBlock() == this.block) {
-											this.setBlock(k2, j3, j4, chunk,
-													Blocks.AIR);
+											this.setBlock(k2, j3, j4, chunk, Blocks.AIR);
 										}
 									}
 								}
@@ -190,10 +175,9 @@ public class MapGenCavesZG extends MapGenBase {
 	}
 	
 	@Override
-	protected void recursiveGenerate(World world, int chunkX, int chunkZ,
-			int oriX, int oriZ, ChunkPrimer chunk) {
-		int i1 = this.rand
-				.nextInt(this.rand.nextInt(this.rand.nextInt(15) + 1) + 1);
+	protected void recursiveGenerate(World world, int chunkX, int chunkZ, int oriX, int oriZ,
+			ChunkPrimer chunk) {
+		int i1 = this.rand.nextInt(this.rand.nextInt(this.rand.nextInt(15) + 1) + 1);
 		
 		if (this.rand.nextInt(7) != 0) {
 			i1 = 0;
@@ -206,8 +190,7 @@ public class MapGenCavesZG extends MapGenBase {
 			int k1 = 1;
 			
 			if (this.rand.nextInt(2) == 0) {
-				this.generateLargeCaveNode(this.rand.nextLong(), oriX, oriZ,
-						chunk, d0, d1, d2);
+				this.generateLargeCaveNode(this.rand.nextLong(), oriX, oriZ, chunk, d0, d1, d2);
 				k1 += this.rand.nextInt(6);
 			}
 			
@@ -217,11 +200,10 @@ public class MapGenCavesZG extends MapGenBase {
 				float f2 = this.rand.nextFloat() * 2.0F + this.rand.nextFloat();
 				
 				if (this.rand.nextInt(10) == 0) {
-					f2 *= this.rand.nextFloat() * this.rand.nextFloat() * 3.0F
-							+ 1.0F;
+					f2 *= this.rand.nextFloat() * this.rand.nextFloat() * 3.0F + 1.0F;
 				}
-				this.generateCaveNode(this.rand.nextLong(), oriX, oriZ, chunk,
-						d0, d1, d2, f2, f, f1, 0, 0, 1.0D);
+				this.generateCaveNode(this.rand.nextLong(), oriX, oriZ, chunk, d0, d1, d2, f2, f,
+						f1, 0, 0, 1.0D);
 			}
 		}
 	}

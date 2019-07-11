@@ -11,6 +11,7 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.Biome.BiomeProperties;
 import net.minecraftforge.common.BiomeDictionary;
 import zollerngalaxy.biomes.kriffon.BiomeKriffon;
+import zollerngalaxy.biomes.purgot.BiomePurgot;
 import zollerngalaxy.biomes.zollus.BiomeZollus;
 import zollerngalaxy.lib.helpers.CommonZGRegisterHelper;
 import zollerngalaxy.lib.helpers.ZGHelper;
@@ -21,12 +22,13 @@ public class ZGBiomes {
 	private static int totalBiomes = 0;
 	
 	public static Biome ZOLLUS = new BiomeZollus(new BiomeProperties("Zollus"));
-	public static Biome KRIFFON = new BiomeKriffon(new BiomeProperties(
-			"Kriffon"));
+	public static Biome KRIFFON = new BiomeKriffon(new BiomeProperties("Kriffon"));
+	public static Biome PURGOT = new BiomePurgot(new BiomeProperties("Purgot"));
 	
 	public static void init() {
 		ZGBiomes.addBiome(ZGBiomes.ZOLLUS, COLD, DEAD, DRY);
 		ZGBiomes.addBiome(ZGBiomes.KRIFFON, HOT, DEAD, DRY);
+		ZGBiomes.addBiome(ZGBiomes.PURGOT, DEAD, DRY);
 		ZGHelper.Log("Loaded a total of " + totalBiomes + " new biomes.");
 	}
 	

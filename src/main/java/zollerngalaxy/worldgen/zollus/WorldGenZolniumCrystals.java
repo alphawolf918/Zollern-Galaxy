@@ -19,13 +19,12 @@ public class WorldGenZolniumCrystals extends WorldGenerator {
 	public boolean generate(World world, Random rand, BlockPos pos) {
 		for (int i = 0; i < 128; ++i) {
 			BlockPos pos1 = pos.add(rand.nextInt(8) - rand.nextInt(8),
-					rand.nextInt(4) - rand.nextInt(4),
-					rand.nextInt(8) - rand.nextInt(8));
+					rand.nextInt(4) - rand.nextInt(4), rand.nextInt(8) - rand.nextInt(8));
 			
 			if (world.isAirBlock(pos1)
 					&& (!world.provider.isNether() || pos1.getY() < 255)
-					&& ((ZolniumCrystals) this.flower.getBlock()).canBlockStay(
-							world, pos1, this.flower)) {
+					&& ((ZolniumCrystals) this.flower.getBlock()).canBlockStay(world, pos1,
+							this.flower)) {
 				world.setBlockState(pos1, this.flower, 2);
 			}
 		}

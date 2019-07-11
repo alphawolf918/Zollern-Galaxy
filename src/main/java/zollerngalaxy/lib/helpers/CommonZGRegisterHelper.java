@@ -32,8 +32,7 @@ public class CommonZGRegisterHelper {
 		CommonZGRegisterHelper.registerBlock(block, ItemBlock::new);
 	}
 	
-	public static void registerBlock(Block block,
-			@Nullable Function<Block, ItemBlock> itemBlock) {
+	public static void registerBlock(Block block, @Nullable Function<Block, ItemBlock> itemBlock) {
 		String name = block.getUnlocalizedName().substring(5);
 		ForgeRegistries.BLOCKS.register(block.setRegistryName(name));
 		
@@ -43,13 +42,12 @@ public class CommonZGRegisterHelper {
 			if (blockRender.getName() != null) {
 				// ZollernHelper.logInfo("BR Name: " + blockRender.getName());
 				// ZollernHelper.logInfo("BR Name: " + name);
-				CommonZGRegisterHelper.SINGLE_BLOCK_RENDER_LIST
-						.put(block, name);
+				CommonZGRegisterHelper.SINGLE_BLOCK_RENDER_LIST.put(block, name);
 			}
 		}
 		if (itemBlock != null) {
-			ForgeRegistries.ITEMS.register(itemBlock.apply(block)
-					.setRegistryName(block.getRegistryName()));
+			ForgeRegistries.ITEMS.register(itemBlock.apply(block).setRegistryName(
+					block.getRegistryName()));
 		}
 	}
 	
@@ -71,8 +69,7 @@ public class CommonZGRegisterHelper {
 		ForgeRegistries.BIOMES.register(biome);
 	}
 	
-	public static void registerBiomeType(Biome biome,
-			@Nonnull BiomeDictionary.Type... biomeType) {
+	public static void registerBiomeType(Biome biome, @Nonnull BiomeDictionary.Type... biomeType) {
 		BiomeDictionary.addTypes(biome, biomeType);
 	}
 	
@@ -80,8 +77,7 @@ public class CommonZGRegisterHelper {
 		FluidRegistry.addBucketForFluid(fluid);
 	}
 	
-	public static void setFireBurn(Block block, int encouragement,
-			int flammibility) {
+	public static void setFireBurn(Block block, int encouragement, int flammibility) {
 		Blocks.FIRE.setFireInfo(block, encouragement, flammibility);
 	}
 	
@@ -110,8 +106,7 @@ public class CommonZGRegisterHelper {
 	}
 	
 	public static boolean isShiftKeyDown() {
-		return Keyboard.isKeyDown(Keyboard.KEY_LSHIFT)
-				|| Keyboard.isKeyDown(Keyboard.KEY_RSHIFT);
+		return Keyboard.isKeyDown(Keyboard.KEY_LSHIFT) || Keyboard.isKeyDown(Keyboard.KEY_RSHIFT);
 	}
 	
 	public static boolean isControlKeyDown() {

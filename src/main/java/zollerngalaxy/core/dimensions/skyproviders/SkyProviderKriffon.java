@@ -1,4 +1,4 @@
-package zollerngalaxy.core.skyproviders;
+package zollerngalaxy.core.dimensions.skyproviders;
 
 import micdoodle8.mods.galacticraft.api.world.IGalacticraftWorldProvider;
 import net.minecraft.client.Minecraft;
@@ -27,8 +27,7 @@ public class SkyProviderKriffon extends SkyProviderBaseZG {
 	}
 	
 	@Override
-	protected void renderPlanetInSky(float partialTicks, WorldClient world,
-			Minecraft mc) {
+	protected void renderPlanetInSky(float partialTicks, WorldClient world, Minecraft mc) {
 		Tessellator tessellator = Tessellator.getInstance();
 		BufferBuilder worldrenderer = tessellator.getBuffer();
 		float scale;
@@ -37,8 +36,7 @@ public class SkyProviderKriffon extends SkyProviderBaseZG {
 		GlStateManager.tryBlendFuncSeparate(770, 1, 1, 0);
 		GlStateManager.translate(0.0F, 0.0F, 0.0F);
 		GlStateManager.rotate(-90.0F, 0.0F, 1.0F, 0.0F);
-		GlStateManager.rotate(world.getCelestialAngle(partialTicks) * 360.0F,
-				1.0F, 0.0F, 0.0F);
+		GlStateManager.rotate(world.getCelestialAngle(partialTicks) * 360.0F, 1.0F, 0.0F, 0.0F);
 		GlStateManager.blendFunc(770, 771);
 		GlStateManager.disableTexture2D();
 		GlStateManager.color(0.0F, 0.0F, 0.0F, 1.0F);
@@ -85,8 +83,7 @@ public class SkyProviderKriffon extends SkyProviderBaseZG {
 		GlStateManager.rotate(50.0F, 0.0F, 0.0F, 1.0F);
 		GlStateManager.rotate(200F, 1.0F, 0.0F, 0.0F);
 		GlStateManager.color(1.0F, 1.0F, 1.0F, 1F);
-		GlStateManager.rotate(world.getCelestialAngle(partialTicks) * 360.0F,
-				1.0F, 0.0F, 0.0F);
+		GlStateManager.rotate(world.getCelestialAngle(partialTicks) * 360.0F, 1.0F, 0.0F, 0.0F);
 		mc.getTextureManager().bindTexture(this.edenTexture);
 		worldrenderer.begin(7, DefaultVertexFormats.POSITION_TEX);
 		worldrenderer.pos(-scale, 100.0D, -scale).tex(0.0D, 0.0D).endVertex();
@@ -104,8 +101,7 @@ public class SkyProviderKriffon extends SkyProviderBaseZG {
 		GlStateManager.rotate(-150.0F, 1.0F, 0.0F, 1.0F);
 		GlStateManager.rotate(-200F, 1.0F, 0.0F, 0.0F);
 		GlStateManager.color(1.0F, 1.0F, 1.0F, 1F);
-		GlStateManager.rotate(world.getCelestialAngle(partialTicks) * 360.0F,
-				1.0F, 0.0F, 0.0F);
+		GlStateManager.rotate(world.getCelestialAngle(partialTicks) * 360.0F, 1.0F, 0.0F, 0.0F);
 		mc.getTextureManager().bindTexture(this.purgotTexture);
 		worldrenderer.begin(7, DefaultVertexFormats.POSITION_TEX);
 		worldrenderer.pos(-scale, 100.0D, -scale).tex(0.0D, 0.0D).endVertex();
@@ -138,8 +134,7 @@ public class SkyProviderKriffon extends SkyProviderBaseZG {
 	}
 	
 	public float getSkyBrightness(float par1) {
-		float var2 = FMLClientHandler.instance().getClient().world
-				.getCelestialAngle(par1);
+		float var2 = FMLClientHandler.instance().getClient().world.getCelestialAngle(par1);
 		float var3 = 1.0F - (MathHelper.sin(var2 * (float) Math.PI * 2.0F) * 2.0F + 0.25F);
 		
 		if (var3 < 0.0F) {

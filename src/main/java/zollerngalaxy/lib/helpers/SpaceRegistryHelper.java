@@ -14,8 +14,7 @@ public class SpaceRegistryHelper {
 		}
 	}
 	
-	public static void setAtmosphereComponentList(Moon celestial,
-			EnumAtmosphericGas... gasList) {
+	public static void setAtmosphereComponentList(Moon celestial, EnumAtmosphericGas... gasList) {
 		for (EnumAtmosphericGas gas : gasList) {
 			celestial.atmosphereComponent(gas);
 		}

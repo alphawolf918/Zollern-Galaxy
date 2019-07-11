@@ -52,14 +52,13 @@ public class ConfigManagerZG {
 	public static String temperatureType;
 	
 	public static void init(FMLPreInitializationEvent event) {
-		configuration = new Configuration(new File(event
-				.getModConfigurationDirectory().getAbsolutePath()
-				+ "/ZollernGalaxy/core.cfg"));
+		configuration = new Configuration(new File(event.getModConfigurationDirectory()
+				.getAbsolutePath() + "/ZollernGalaxy/core.cfg"));
 		configuration.load();
 		
 		// Planets (Psios)
-		planetEdenDimensionId = configuration.get(CATEGORY_DIMENSIONS,
-				"Planet Eden Dimension ID", -7996).getInt();
+		planetEdenDimensionId = configuration.get(CATEGORY_DIMENSIONS, "Planet Eden Dimension ID",
+				-7996).getInt();
 		planetZollusDimensionId = configuration.get(CATEGORY_DIMENSIONS,
 				"Planet Zollus Dimension ID", -7982).getInt();
 		planetKriffonDimensionId = configuration.get(CATEGORY_DIMENSIONS,
@@ -68,8 +67,8 @@ public class ConfigManagerZG {
 				"Planet Purgot Dimension ID", -7988).getInt();
 		
 		// Moons (Psios -> Purgot -> Astros)
-		moonAstrosDimensionId = configuration.get(CATEGORY_MOONS,
-				"Moon Astros Dimension ID", -7981).getInt();
+		moonAstrosDimensionId = configuration
+				.get(CATEGORY_MOONS, "Moon Astros Dimension ID", -7981).getInt();
 		
 		// Planets (Praedyth)
 		planetXathiusDimensionId = configuration.get(CATEGORY_DIMENSIONS,
@@ -86,14 +85,14 @@ public class ConfigManagerZG {
 				"Planet Meztli Dimension ID", -7991).getInt();
 		planetCentotlDimensionId = configuration.get(CATEGORY_DIMENSIONS,
 				"Planet Centotl Dimension ID", -7997).getInt();
-		planetTociDimensionId = configuration.get(CATEGORY_DIMENSIONS,
-				"Planet Toci Dimension ID", -7985).getInt();
+		planetTociDimensionId = configuration.get(CATEGORY_DIMENSIONS, "Planet Toci Dimension ID",
+				-7985).getInt();
 		planetTlalocDimensionId = configuration.get(CATEGORY_DIMENSIONS,
 				"Planet Tlaloc Dimension ID", -7986).getInt();
 		
 		// Planets (Olympus)
-		planetAresDimensionId = configuration.get(CATEGORY_DIMENSIONS,
-				"Planet Ares Dimension ID", -8000).getInt();
+		planetAresDimensionId = configuration.get(CATEGORY_DIMENSIONS, "Planet Ares Dimension ID",
+				-8000).getInt();
 		planetPrometheusDimensionId = configuration.get(CATEGORY_DIMENSIONS,
 				"Planet Prometheus Dimension ID", -7981).getInt();
 		planetIcarusDimensionId = configuration.get(CATEGORY_DIMENSIONS,
@@ -120,11 +119,9 @@ public class ConfigManagerZG {
 				"Earth Animals Spawn On Eden", true).getBoolean();
 		
 		// Misc (Temperatures shown in fahrenheit or celsius?)
-		temperatureType = configuration
-				.get(CATEGORY_MISC,
-						"[HUD DISPLAY] Temperature Type (F or C only)", "F",
-						"Should temperatures be shown in Fahrenheit (F) or Celsius (C)?")
-				.getString();
+		temperatureType = configuration.get(CATEGORY_MISC,
+				"[HUD DISPLAY] Temperature Type (F or C only)", "F",
+				"Should temperatures be shown in Fahrenheit (F) or Celsius (C)?").getString();
 		
 		configuration.save();
 	}

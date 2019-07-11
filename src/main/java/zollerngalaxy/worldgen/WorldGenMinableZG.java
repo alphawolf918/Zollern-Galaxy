@@ -21,8 +21,7 @@ public class WorldGenMinableZG extends WorldGenerator {
 		this.fillBlock = fillBlock.getDefaultState();
 	}
 	
-	public WorldGenMinableZG(Block oreBlock, Block fillBlock,
-			EnumOreGenZG oreGen) {
+	public WorldGenMinableZG(Block oreBlock, Block fillBlock, EnumOreGenZG oreGen) {
 		this.oreBlock = oreBlock.getDefaultState();
 		this.numberOfBlocks = oreGen.getGenCount();
 		this.fillBlock = fillBlock.getDefaultState();
@@ -31,14 +30,10 @@ public class WorldGenMinableZG extends WorldGenerator {
 	@Override
 	public boolean generate(World world, Random rand, BlockPos pos) {
 		float f = rand.nextFloat() * (float) Math.PI;
-		double d0 = pos.getX() + 8 + MathHelper.sin(f) * this.numberOfBlocks
-				/ 8.0F;
-		double d1 = pos.getX() + 8 - MathHelper.sin(f) * this.numberOfBlocks
-				/ 8.0F;
-		double d2 = pos.getZ() + 8 + MathHelper.cos(f) * this.numberOfBlocks
-				/ 8.0F;
-		double d3 = pos.getZ() + 8 - MathHelper.cos(f) * this.numberOfBlocks
-				/ 8.0F;
+		double d0 = pos.getX() + 8 + MathHelper.sin(f) * this.numberOfBlocks / 8.0F;
+		double d1 = pos.getX() + 8 - MathHelper.sin(f) * this.numberOfBlocks / 8.0F;
+		double d2 = pos.getZ() + 8 + MathHelper.cos(f) * this.numberOfBlocks / 8.0F;
+		double d3 = pos.getZ() + 8 - MathHelper.cos(f) * this.numberOfBlocks / 8.0F;
 		double d4 = pos.getY() + rand.nextInt(3) - 2;
 		double d5 = pos.getY() + rand.nextInt(3) - 2;
 		
@@ -48,10 +43,8 @@ public class WorldGenMinableZG extends WorldGenerator {
 			double d7 = d4 + (d5 - d4) * f1;
 			double d8 = d2 + (d3 - d2) * f1;
 			double d9 = rand.nextDouble() * this.numberOfBlocks / 16.0D;
-			double d10 = (MathHelper.sin((float) Math.PI * f1) + 1.0F) * d9
-					+ 1.0D;
-			double d11 = (MathHelper.sin((float) Math.PI * f1) + 1.0F) * d9
-					+ 1.0D;
+			double d10 = (MathHelper.sin((float) Math.PI * f1) + 1.0F) * d9 + 1.0D;
+			double d11 = (MathHelper.sin((float) Math.PI * f1) + 1.0F) * d9 + 1.0D;
 			int j = MathHelper.floor(d6 - d10 / 2.0D);
 			int k = MathHelper.floor(d7 - d11 / 2.0D);
 			int l = MathHelper.floor(d8 - d10 / 2.0D);
@@ -74,8 +67,7 @@ public class WorldGenMinableZG extends WorldGenerator {
 									BlockPos blockpos = new BlockPos(l1, i2, j2);
 									
 									if (world.getBlockState(blockpos) == this.fillBlock) {
-										world.setBlockState(blockpos,
-												this.oreBlock, 2);
+										world.setBlockState(blockpos, this.oreBlock, 2);
 									}
 								}
 							}

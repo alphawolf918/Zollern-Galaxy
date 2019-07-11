@@ -34,8 +34,7 @@ public class ZGBlockBase extends Block implements ISingleZGBlockRender {
 		this.name = blockName;
 		this.setBlockName(this, blockName);
 		this.setHardResist(hardResist);
-		this.setHarvestLevel("pickaxe",
-				EnumHarvestLevel.DIAMOND.getHarvestLevel());
+		this.setHarvestLevel("pickaxe", EnumHarvestLevel.DIAMOND.getHarvestLevel());
 		this.setSoundType(blockSound);
 	}
 	
@@ -88,10 +87,8 @@ public class ZGBlockBase extends Block implements ISingleZGBlockRender {
 	
 	@Override
 	public void onEntityWalk(World worldIn, BlockPos pos, Entity entityIn) {
-		if (!entityIn.isImmuneToFire()
-				&& entityIn instanceof EntityLivingBase
-				&& !EnchantmentHelper
-						.hasFrostWalkerEnchantment((EntityLivingBase) entityIn)
+		if (!entityIn.isImmuneToFire() && entityIn instanceof EntityLivingBase
+				&& !EnchantmentHelper.hasFrostWalkerEnchantment((EntityLivingBase) entityIn)
 				&& this.getIsHotBlock()) {
 			entityIn.attackEntityFrom(DamageSource.HOT_FLOOR, 1.5F);
 		}

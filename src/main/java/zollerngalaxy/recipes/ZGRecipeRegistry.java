@@ -6,7 +6,7 @@ public class ZGRecipeRegistry {
 	
 	public static void init() {
 		CraftingRecipes.init();
-		SmeltingRecipes.init();
+		SmeltRecipes.init();
 		if (ModHelperBase.useCofh) {
 			PulverizerRecipes.init();
 		}

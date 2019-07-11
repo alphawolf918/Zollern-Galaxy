@@ -27,8 +27,7 @@ import zollerngalaxy.recipes.ZGRecipeRegistry;
 		dependencies = ZGInfo.DEPENDENCIES)
 public class ZollernGalaxyCore {
 	
-	@SidedProxy(clientSide = ZGInfo.proxyClient,
-			serverSide = ZGInfo.proxyServer)
+	@SidedProxy(clientSide = ZGInfo.proxyClient, serverSide = ZGInfo.proxyServer)
 	public static IProxy proxy;
 	
 	@Mod.Instance(ZGInfo.MOD_ID)

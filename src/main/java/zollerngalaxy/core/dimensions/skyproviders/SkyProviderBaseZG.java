@@ -1,4 +1,4 @@
-package zollerngalaxy.core.skyproviders;
+package zollerngalaxy.core.dimensions.skyproviders;
 
 import java.util.Random;
 import micdoodle8.mods.galacticraft.core.util.ConfigManagerCore;
@@ -102,20 +102,14 @@ public abstract class SkyProviderBaseZG extends IRenderHandler {
 		if (star > 0.0F) {
 			GlStateManager.pushMatrix();
 			GlStateManager.rotate(-90.0F, 0.0F, 1.0F, 0.0F);
-			GlStateManager.rotate(
-					world.getCelestialAngle(partialTicks) * 360.0F, 1.0F, 0.0F,
-					0.0F);
+			GlStateManager.rotate(world.getCelestialAngle(partialTicks) * 360.0F, 1.0F, 0.0F, 0.0F);
 			GlStateManager.rotate(-19.0F, 0.0F, 1.0F, 0.0F);
 			
-			if (this.useDefaultStarBrightness()
-					&& this.getStarBrightness() == null) {
-				GlStateManager.color(star - rain, star - rain, star - rain,
-						star - rain);
+			if (this.useDefaultStarBrightness() && this.getStarBrightness() == null) {
+				GlStateManager.color(star - rain, star - rain, star - rain, star - rain);
 			} else {
-				GlStateManager.color(custom[0] - rain, custom[0] - rain,
-						custom[0] - rain,
-						custom[1] * world.getStarBrightness(partialTicks)
-								/ 0.25F - rain);
+				GlStateManager.color(custom[0] - rain, custom[0] - rain, custom[0] - rain,
+						custom[1] * world.getStarBrightness(partialTicks) / 0.25F - rain);
 			}
 			GlStateManager.callList(this.starList);
 			GlStateManager.popMatrix();
@@ -130,8 +124,7 @@ public abstract class SkyProviderBaseZG extends IRenderHandler {
 		GlStateManager.popMatrix();
 		GlStateManager.disableTexture2D();
 		GlStateManager.color(0.0F, 0.0F, 0.0F);
-		double playerEyes = mc.player.getPositionEyes(partialTicks).y
-				- world.getHorizon();
+		double playerEyes = mc.player.getPositionEyes(partialTicks).y - world.getHorizon();
 		
 		if (playerEyes < 0.0D) {
 			GlStateManager.pushMatrix();
@@ -142,36 +135,24 @@ public abstract class SkyProviderBaseZG extends IRenderHandler {
 			worldrenderer.begin(7, DefaultVertexFormats.POSITION_COLOR);
 			worldrenderer.pos(-1.0D, f, 1.0D).color(0, 0, 0, 255).endVertex();
 			worldrenderer.pos(1.0D, f, 1.0D).color(0, 0, 0, 255).endVertex();
-			worldrenderer.pos(1.0D, -1.0D, 1.0D).color(0, 0, 0, 255)
-					.endVertex();
-			worldrenderer.pos(-1.0D, -1.0D, 1.0D).color(0, 0, 0, 255)
-					.endVertex();
-			worldrenderer.pos(-1.0D, -1.0D, -1.0D).color(0, 0, 0, 255)
-					.endVertex();
-			worldrenderer.pos(1.0D, -1.0D, -1.0D).color(0, 0, 0, 255)
-					.endVertex();
+			worldrenderer.pos(1.0D, -1.0D, 1.0D).color(0, 0, 0, 255).endVertex();
+			worldrenderer.pos(-1.0D, -1.0D, 1.0D).color(0, 0, 0, 255).endVertex();
+			worldrenderer.pos(-1.0D, -1.0D, -1.0D).color(0, 0, 0, 255).endVertex();
+			worldrenderer.pos(1.0D, -1.0D, -1.0D).color(0, 0, 0, 255).endVertex();
 			worldrenderer.pos(1.0D, f, -1.0D).color(0, 0, 0, 255).endVertex();
 			worldrenderer.pos(-1.0D, f, -1.0D).color(0, 0, 0, 255).endVertex();
-			worldrenderer.pos(1.0D, -1.0D, -1.0D).color(0, 0, 0, 255)
-					.endVertex();
-			worldrenderer.pos(1.0D, -1.0D, 1.0D).color(0, 0, 0, 255)
-					.endVertex();
+			worldrenderer.pos(1.0D, -1.0D, -1.0D).color(0, 0, 0, 255).endVertex();
+			worldrenderer.pos(1.0D, -1.0D, 1.0D).color(0, 0, 0, 255).endVertex();
 			worldrenderer.pos(1.0D, f, 1.0D).color(0, 0, 0, 255).endVertex();
 			worldrenderer.pos(1.0D, f, -1.0D).color(0, 0, 0, 255).endVertex();
 			worldrenderer.pos(-1.0D, f, -1.0D).color(0, 0, 0, 255).endVertex();
 			worldrenderer.pos(-1.0D, f, 1.0D).color(0, 0, 0, 255).endVertex();
-			worldrenderer.pos(-1.0D, -1.0D, 1.0D).color(0, 0, 0, 255)
-					.endVertex();
-			worldrenderer.pos(-1.0D, -1.0D, -1.0D).color(0, 0, 0, 255)
-					.endVertex();
-			worldrenderer.pos(-1.0D, -1.0D, -1.0D).color(0, 0, 0, 255)
-					.endVertex();
-			worldrenderer.pos(-1.0D, -1.0D, 1.0D).color(0, 0, 0, 255)
-					.endVertex();
-			worldrenderer.pos(1.0D, -1.0D, 1.0D).color(0, 0, 0, 255)
-					.endVertex();
-			worldrenderer.pos(1.0D, -1.0D, -1.0D).color(0, 0, 0, 255)
-					.endVertex();
+			worldrenderer.pos(-1.0D, -1.0D, 1.0D).color(0, 0, 0, 255).endVertex();
+			worldrenderer.pos(-1.0D, -1.0D, -1.0D).color(0, 0, 0, 255).endVertex();
+			worldrenderer.pos(-1.0D, -1.0D, -1.0D).color(0, 0, 0, 255).endVertex();
+			worldrenderer.pos(-1.0D, -1.0D, 1.0D).color(0, 0, 0, 255).endVertex();
+			worldrenderer.pos(1.0D, -1.0D, 1.0D).color(0, 0, 0, 255).endVertex();
+			worldrenderer.pos(1.0D, -1.0D, -1.0D).color(0, 0, 0, 255).endVertex();
 			tessellator.draw();
 		}
 		GlStateManager.color(red, green, blue);
@@ -194,8 +175,8 @@ public abstract class SkyProviderBaseZG extends IRenderHandler {
 		Random rand = new Random(10842L);
 		worldrenderer.begin(7, DefaultVertexFormats.POSITION);
 		
-		for (int starIndex = 0; starIndex < (ConfigManagerCore.moreStars ? this
-				.getMaxStarCount()[0] : 6000); ++starIndex) {
+		for (int starIndex = 0; starIndex < (ConfigManagerCore.moreStars ? this.getMaxStarCount()[0]
+				: 6000); ++starIndex) {
 			double d0 = rand.nextFloat() * 2.0F - 1.0F;
 			double d1 = rand.nextFloat() * 2.0F - 1.0F;
 			double d2 = rand.nextFloat() * 2.0F - 1.0F;
@@ -209,16 +190,13 @@ public abstract class SkyProviderBaseZG extends IRenderHandler {
 				d2 *= d4;
 				double d5 = d0
 						* (ConfigManagerCore.moreStars ? rand.nextDouble()
-								* this.getMaxStarCount()[1]
-								+ this.getMaxStarCount()[2] : 100.0D);
+								* this.getMaxStarCount()[1] + this.getMaxStarCount()[2] : 100.0D);
 				double d6 = d1
 						* (ConfigManagerCore.moreStars ? rand.nextDouble()
-								* this.getMaxStarCount()[1]
-								+ this.getMaxStarCount()[2] : 100.0D);
+								* this.getMaxStarCount()[1] + this.getMaxStarCount()[2] : 100.0D);
 				double d7 = d2
 						* (ConfigManagerCore.moreStars ? rand.nextDouble()
-								* this.getMaxStarCount()[1]
-								+ this.getMaxStarCount()[2] : 100.0D);
+								* this.getMaxStarCount()[1] + this.getMaxStarCount()[2] : 100.0D);
 				double d8 = Math.atan2(d0, d2);
 				double d9 = Math.sin(d8);
 				double d10 = Math.cos(d8);
@@ -245,8 +223,7 @@ public abstract class SkyProviderBaseZG extends IRenderHandler {
 		tessellator.draw();
 	}
 	
-	protected abstract void renderPlanetInSky(float partialTicks,
-			WorldClient world, Minecraft mc);
+	protected abstract void renderPlanetInSky(float partialTicks, WorldClient world, Minecraft mc);
 	
 	protected abstract double[] getMaxStarCount();
 	

@@ -25,22 +25,21 @@ public class BiomeDecoratorZollus extends BiomeDecoratorZG {
 	private int zolCrystalsPerChunk = 1;
 	
 	public BiomeDecoratorZollus() {
-		this.dirtGen = new WorldGenMinableZG(ZGBlocks.zolDirt,
-				ZGBlocks.zolSurfaceRock, EnumOreGenZG.DIRT);
-		this.packedIceGen = new WorldGenMinableZG(Blocks.PACKED_ICE,
-				ZGBlocks.zolSurfaceRock, EnumOreGenZG.PACKED_ICE);
-		this.tinGen = new WorldGenMinableZG(ZGBlocks.zolTinOre,
-				ZGBlocks.zolStone, EnumOreGenZG.TIN);
-		this.copperGen = new WorldGenMinableZG(ZGBlocks.zolCopperOre,
-				ZGBlocks.zolStone, EnumOreGenZG.COPPER);
-		this.ironGen = new WorldGenMinableZG(ZGBlocks.zolIronOre,
-				ZGBlocks.zolStone, EnumOreGenZG.IRON);
-		this.goldGen = new WorldGenMinableZG(ZGBlocks.zolGoldOre,
-				ZGBlocks.zolStone, EnumOreGenZG.GOLD);
-		this.heartiumGen = new WorldGenMinableZG(ZGBlocks.zolHeartOre,
-				ZGBlocks.zolStone, EnumOreGenZG.HEARTIUM);
-		this.coalGen = new WorldGenMinableZG(ZGBlocks.zolCoalOre,
-				ZGBlocks.zolStone, EnumOreGenZG.COAL);
+		this.dirtGen = new WorldGenMinableZG(ZGBlocks.zolDirt, ZGBlocks.zolSurfaceRock,
+				EnumOreGenZG.DIRT);
+		this.packedIceGen = new WorldGenMinableZG(Blocks.PACKED_ICE, ZGBlocks.zolSurfaceRock,
+				EnumOreGenZG.PACKED_ICE);
+		this.tinGen = new WorldGenMinableZG(ZGBlocks.zolTinOre, ZGBlocks.zolStone, EnumOreGenZG.TIN);
+		this.copperGen = new WorldGenMinableZG(ZGBlocks.zolCopperOre, ZGBlocks.zolStone,
+				EnumOreGenZG.COPPER);
+		this.ironGen = new WorldGenMinableZG(ZGBlocks.zolIronOre, ZGBlocks.zolStone,
+				EnumOreGenZG.IRON);
+		this.goldGen = new WorldGenMinableZG(ZGBlocks.zolGoldOre, ZGBlocks.zolStone,
+				EnumOreGenZG.GOLD);
+		this.heartiumGen = new WorldGenMinableZG(ZGBlocks.zolHeartOre, ZGBlocks.zolStone,
+				EnumOreGenZG.HEARTIUM);
+		this.coalGen = new WorldGenMinableZG(ZGBlocks.zolCoalOre, ZGBlocks.zolStone,
+				EnumOreGenZG.COAL);
 	}
 	
 	@Override
@@ -54,16 +53,15 @@ public class BiomeDecoratorZollus extends BiomeDecoratorZG {
 		this.generateOre(this.copperGen, EnumOreGenZG.COPPER, world, rand);
 		this.generateOre(this.heartiumGen, EnumOreGenZG.HEARTIUM, world, rand);
 		this.generateOre(this.dirtGen, EnumOreGenZG.DIRT, world, rand);
-		this.generateOre(this.packedIceGen, EnumOreGenZG.PACKED_ICE, world,
-				rand);
+		this.generateOre(this.packedIceGen, EnumOreGenZG.PACKED_ICE, world, rand);
 		this.generateOre(this.coalGen, EnumOreGenZG.COAL, world, rand);
 		
 		int i;
 		
 		for (i = 0; i < this.zolCrystalsPerChunk; ++i) {
-			ZGDecorateHelper.generatePlants(new WorldGenZolniumCrystals(
-					ZGBlocks.zolCrystals.getDefaultState()), world, rand,
-					this.chunkPos);
+			ZGDecorateHelper.generatePlants(
+					new WorldGenZolniumCrystals(ZGBlocks.zolCrystals.getDefaultState()), world,
+					rand, this.chunkPos);
 		}
 	}
 }

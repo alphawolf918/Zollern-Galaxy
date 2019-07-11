@@ -14,8 +14,7 @@ public class ZGItemRender {
 	}
 	
 	private static void registerBlockRenderer() {
-		for (Entry<Block, String> map : CommonZGRegisterHelper.SINGLE_BLOCK_RENDER_LIST
-				.entrySet()) {
+		for (Entry<Block, String> map : CommonZGRegisterHelper.SINGLE_BLOCK_RENDER_LIST.entrySet()) {
 			Block block = map.getKey();
 			String name = map.getValue();
 			ClientZGRegisterHelper.registerModelRender(block, name);
@@ -23,8 +22,7 @@ public class ZGItemRender {
 	}
 	
 	private static void registerItemRenderer() {
-		for (Entry<Item, String> map : CommonZGRegisterHelper.SINGLE_ITEM_RENDER_LIST
-				.entrySet()) {
+		for (Entry<Item, String> map : CommonZGRegisterHelper.SINGLE_ITEM_RENDER_LIST.entrySet()) {
 			Item item = map.getKey();
 			String name = map.getValue();
 			ClientZGRegisterHelper.registerModelRender(item, name);

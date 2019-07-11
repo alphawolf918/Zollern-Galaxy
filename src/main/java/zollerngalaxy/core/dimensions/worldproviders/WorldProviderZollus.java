@@ -17,7 +17,7 @@ import zollerngalaxy.biomes.providers.BiomeProviderZollus;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.core.dimensions.ZGDimensions;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderZollus;
-import zollerngalaxy.core.skyproviders.SkyProviderZollus;
+import zollerngalaxy.core.dimensions.skyproviders.SkyProviderZollus;
 import zollerngalaxy.planets.ZGPlanet;
 import zollerngalaxy.planets.ZGPlanets;
 
@@ -25,7 +25,7 @@ public class WorldProviderZollus extends WorldProviderZG {
 	
 	@Override
 	public float getGravity() {
-		return 0.02F;
+		return 0.065F;
 	}
 	
 	@Override
@@ -45,7 +45,7 @@ public class WorldProviderZollus extends WorldProviderZG {
 	
 	@Override
 	public float getFallDamageModifier() {
-		return 0.18F;
+		return 0.44F;
 	}
 	
 	@Override

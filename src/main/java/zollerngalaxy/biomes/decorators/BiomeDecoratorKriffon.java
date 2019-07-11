@@ -20,22 +20,22 @@ public class BiomeDecoratorKriffon extends BiomeDecoratorZG {
 	private WorldGenerator coalGen;
 	
 	public BiomeDecoratorKriffon() {
-		this.dirtGen = new WorldGenMinableZG(ZGBlocks.kriffDirt,
-				ZGBlocks.kriffSurfaceRock, EnumOreGenZG.DIRT);
-		this.magmaGen = new WorldGenMinableZG(ZGBlocks.kriffMagmaRock,
-				ZGBlocks.kriffSurfaceRock, EnumOreGenZG.MAGMA);
-		this.copperGen = new WorldGenMinableZG(ZGBlocks.kriffCopperOre,
-				ZGBlocks.kriffStone, EnumOreGenZG.COPPER);
-		this.ironGen = new WorldGenMinableZG(ZGBlocks.kriffIronOre,
-				ZGBlocks.kriffStone, EnumOreGenZG.IRON);
-		this.goldGen = new WorldGenMinableZG(ZGBlocks.kriffGoldOre,
-				ZGBlocks.kriffStone, EnumOreGenZG.GOLD);
-		this.cobaltGen = new WorldGenMinableZG(ZGBlocks.kriffCobaltOre,
-				ZGBlocks.kriffStone, EnumOreGenZG.COBALT);
-		this.coalGen = new WorldGenMinableZG(ZGBlocks.kriffCoalOre,
-				ZGBlocks.kriffStone, EnumOreGenZG.COAL);
-		this.redstoneGen = new WorldGenMinableZG(ZGBlocks.kriffRedstoneOre,
-				ZGBlocks.kriffStone, EnumOreGenZG.REDSTONE);
+		this.dirtGen = new WorldGenMinableZG(ZGBlocks.kriffDirt, ZGBlocks.kriffSurfaceRock,
+				EnumOreGenZG.DIRT);
+		this.magmaGen = new WorldGenMinableZG(ZGBlocks.kriffMagmaRock, ZGBlocks.kriffSurfaceRock,
+				EnumOreGenZG.MAGMA);
+		this.copperGen = new WorldGenMinableZG(ZGBlocks.kriffCopperOre, ZGBlocks.kriffStone,
+				EnumOreGenZG.COPPER);
+		this.ironGen = new WorldGenMinableZG(ZGBlocks.kriffIronOre, ZGBlocks.kriffStone,
+				EnumOreGenZG.IRON);
+		this.goldGen = new WorldGenMinableZG(ZGBlocks.kriffGoldOre, ZGBlocks.kriffStone,
+				EnumOreGenZG.GOLD);
+		this.cobaltGen = new WorldGenMinableZG(ZGBlocks.kriffCobaltOre, ZGBlocks.kriffStone,
+				EnumOreGenZG.COBALT);
+		this.coalGen = new WorldGenMinableZG(ZGBlocks.kriffCoalOre, ZGBlocks.kriffStone,
+				EnumOreGenZG.COAL);
+		this.redstoneGen = new WorldGenMinableZG(ZGBlocks.kriffRedstoneOre, ZGBlocks.kriffStone,
+				EnumOreGenZG.REDSTONE);
 	}
 	
 	@Override

@@ -161,9 +161,8 @@ public class ZGPlanet extends Planet implements IZollernPlanet {
 	 * @return The planet of the atmosphere being set on.
 	 */
 	public Planet setAtmosphere() {
-		atmosphere = new AtmosphereInfo(this.getIsBreathable(),
-				this.getHasRain(), this.getIsCorrosive(),
-				this.getPlanetTemperature(), this.getWindLevel(),
+		atmosphere = new AtmosphereInfo(this.getIsBreathable(), this.getHasRain(),
+				this.getIsCorrosive(), this.getPlanetTemperature(), this.getWindLevel(),
 				this.getAtmosphericDensity());
 		return this;
 	}
@@ -186,8 +185,8 @@ public class ZGPlanet extends Planet implements IZollernPlanet {
 	}
 	
 	public ZGPlanet setPlanetIcon(String planetTexture) {
-		this.setBodyIcon(new ResourceLocation(ZGInfo.MOD_ID + ":textures/gui/"
-				+ planetTexture + ".png"));
+		this.setBodyIcon(new ResourceLocation(ZGInfo.MOD_ID + ":textures/gui/" + planetTexture
+				+ ".png"));
 		return this;
 	}
 	

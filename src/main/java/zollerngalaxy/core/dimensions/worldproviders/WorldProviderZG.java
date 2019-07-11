@@ -15,8 +15,8 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.planets.ZGPlanet;
 
-public abstract class WorldProviderZG extends WorldProviderSpace implements
-		ISolarLevel, IExitHeight {
+public abstract class WorldProviderZG extends WorldProviderSpace implements ISolarLevel,
+		IExitHeight {
 	
 	@Override
 	public String getSaveFolder() {

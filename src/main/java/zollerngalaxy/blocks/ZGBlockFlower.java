@@ -37,8 +37,7 @@ public class ZGBlockFlower extends ZGBlockBase {
 	}
 	
 	@Override
-	public AxisAlignedBB getCollisionBoundingBox(IBlockState state,
-			IBlockAccess world, BlockPos pos) {
+	public AxisAlignedBB getCollisionBoundingBox(IBlockState state, IBlockAccess world, BlockPos pos) {
 		return null;
 	}
 	
@@ -53,31 +52,28 @@ public class ZGBlockFlower extends ZGBlockBase {
 	}
 	
 	@Override
-	public IBlockState getStateForPlacement(World world, BlockPos pos,
-			EnumFacing facing, float hitX, float hitY, float hitZ, int meta,
-			EntityLivingBase placer, EnumHand hand) {
+	public IBlockState getStateForPlacement(World world, BlockPos pos, EnumFacing facing,
+			float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer, EnumHand hand) {
 		if (world.getBlockState(pos).getBlock().isReplaceable(world, pos)
 				&& this.canBlockStay(world, pos, this.getDefaultState())) {
-			return super.getStateForPlacement(world, pos, facing, hitX, hitY,
-					hitZ, meta, placer, hand);
+			return super.getStateForPlacement(world, pos, facing, hitX, hitY, hitZ, meta, placer,
+					hand);
 		}
 		return world.getBlockState(pos);
 	}
 	
 	@Override
-	public void neighborChanged(IBlockState state, World world, BlockPos pos,
-			Block block, BlockPos fromPos) {
+	public void neighborChanged(IBlockState state, World world, BlockPos pos, Block block,
+			BlockPos fromPos) {
 		this.checkAndDropBlock(world, pos, state);
 	}
 	
 	@Override
-	public void updateTick(World world, BlockPos pos, IBlockState state,
-			Random rand) {
+	public void updateTick(World world, BlockPos pos, IBlockState state, Random rand) {
 		this.checkAndDropBlock(world, pos, state);
 	}
 	
-	protected void checkAndDropBlock(World world, BlockPos pos,
-			IBlockState state) {
+	protected void checkAndDropBlock(World world, BlockPos pos, IBlockState state) {
 		if (!this.canBlockStay(world, pos, state)) {
 			this.dropBlockAsItem(world, pos, state, 0);
 			world.setBlockState(pos, Blocks.AIR.getDefaultState(), 3);
@@ -89,8 +85,8 @@ public class ZGBlockFlower extends ZGBlockBase {
 	}
 	
 	@Override
-	public BlockFaceShape getBlockFaceShape(IBlockAccess world,
-			IBlockState state, BlockPos pos, EnumFacing facing) {
+	public BlockFaceShape getBlockFaceShape(IBlockAccess world, IBlockState state, BlockPos pos,
+			EnumFacing facing) {
 		return BlockFaceShape.UNDEFINED;
 	}
 	
