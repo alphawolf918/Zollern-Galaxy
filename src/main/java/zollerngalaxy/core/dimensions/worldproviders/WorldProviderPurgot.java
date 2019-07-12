@@ -1,8 +1,9 @@
 package zollerngalaxy.core.dimensions.worldproviders;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import micdoodle8.mods.galacticraft.api.galaxies.CelestialBody;
+import micdoodle8.mods.galacticraft.api.prefab.world.gen.BiomeAdaptive;
 import micdoodle8.mods.galacticraft.api.vector.Vector3;
 import micdoodle8.mods.galacticraft.core.client.CloudRenderer;
 import net.minecraft.block.Block;
@@ -25,7 +26,7 @@ public class WorldProviderPurgot extends WorldProviderZG {
 	
 	@Override
 	public float getGravity() {
-		return 0.032F;
+		return 0.052F;
 	}
 	
 	@Override
@@ -45,7 +46,7 @@ public class WorldProviderPurgot extends WorldProviderZG {
 	
 	@Override
 	public float getFallDamageModifier() {
-		return 0.44F;
+		return 0.10F;
 	}
 	
 	@Override
@@ -85,14 +86,14 @@ public class WorldProviderPurgot extends WorldProviderZG {
 		if (var3 > 1.0F) {
 			var3 = 0.75F;
 		}
-		return var3 * var3 * 1.2F + 0.3F;
+		return var3 * var3 * 1.2F + 0.5F;
 	}
 	
 	@Override
 	@SideOnly(Side.CLIENT)
 	public float getSunBrightness(float par1) {
 		float f1 = this.world.getCelestialAngle(1.0F);
-		float f2 = 1.0F - (MathHelper.cos(f1 * (float) Math.PI * 2.0F) * 2.0F + 0.2F);
+		float f2 = 4.0F - (MathHelper.cos(f1 * (float) Math.PI * 2.0F) * 2.0F + 0.2F);
 		
 		if (f2 < 0.0F) {
 			f2 = 0.6F;
@@ -101,7 +102,7 @@ public class WorldProviderPurgot extends WorldProviderZG {
 			f2 = 0.95F;
 		}
 		f2 = 0.95F - f2;
-		return f2 * 0.34F;
+		return f2 * 2.34F;
 	}
 	
 	@Override
@@ -111,13 +112,19 @@ public class WorldProviderPurgot extends WorldProviderZG {
 	
 	@Override
 	public int getAverageGroundLevel() {
-		return 68;
+		return 76;
+	}
+	
+	@Override
+	public Vector3 getSkyColor() {
+		float f = 0.6F - this.getStarBrightness(1.0F);
+		return new Vector3(255 / 255F * f, 20 / 255F * f, 255 / 255F * f);
 	}
 	
 	@Override
 	public Vector3 getFogColor() {
 		float f = 1.0F - this.getStarBrightness(1.0F);
-		return new Vector3(45 / 255F * f, 27 / 255F * f, 45 / 255F * f);
+		return new Vector3(200 / 255F * f, 27 / 255F * f, 200 / 255F * f);
 	}
 	
 	@Override
@@ -127,12 +134,12 @@ public class WorldProviderPurgot extends WorldProviderZG {
 	
 	@Override
 	public boolean hasSunset() {
-		return false;
+		return true;
 	}
 	
 	@Override
 	public long getDayLength() {
-		return 64010L;
+		return 46010L;
 	}
 	
 	@Override
@@ -143,9 +150,10 @@ public class WorldProviderPurgot extends WorldProviderZG {
 	
 	@Override
 	public List<Block> getSurfaceBlocks() {
-		ArrayList<Block> blockList = new ArrayList<Block>();
-		blockList.add(ZGBlocks.purgSurfaceRock);
-		return blockList;
+		List<Block> list = new LinkedList<>();
+		list.add(ZGBlocks.purgSurfaceRock);
+		list.add(ZGBlocks.purgBlackRock);
+		return list;
 	}
 	
 	@Override
@@ -163,8 +171,9 @@ public class WorldProviderPurgot extends WorldProviderZG {
 	}
 	
 	@Override
-	public void init() {
-		this.biomeProvider = new BiomeProviderPurgot();
+	public Class<? extends BiomeProvider> getBiomeProviderClass() {
+		BiomeAdaptive.setBodyMultiBiome(ZGPlanets.planetPurgot);
+		return BiomeProviderPurgot.class;
 	}
 	
 	@Override
@@ -178,13 +187,13 @@ public class WorldProviderPurgot extends WorldProviderZG {
 	}
 	
 	@Override
-	public boolean isSkyColored() {
-		return false;
+	public boolean canCoordinateBeSpawn(int var1, int var2) {
+		return true;
 	}
 	
 	@Override
-	public BiomeProvider getBiomeProvider() {
-		return new BiomeProviderPurgot();
+	public boolean isSkyColored() {
+		return true;
 	}
 	
 	@Override

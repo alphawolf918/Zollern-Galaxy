@@ -1,31 +1,29 @@
 package zollerngalaxy.biomes.purgot;
 
-import static net.minecraftforge.common.BiomeDictionary.Type.COLD;
 import static net.minecraftforge.common.BiomeDictionary.Type.DEAD;
-import static net.minecraftforge.common.BiomeDictionary.Type.DRY;
-import java.util.Random;
+import static net.minecraftforge.common.BiomeDictionary.Type.SPOOKY;
 import net.minecraft.block.Block;
-import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeDecorator;
-import net.minecraft.world.chunk.ChunkPrimer;
 import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.biomes.decorators.BiomeDecoratorPurgot;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.lib.helpers.CommonZGRegisterHelper;
 import zollerngalaxy.planets.ZGPlanets;
 
-public class BiomePurgot extends BiomeSpace {
+public class BiomeLimbo extends BiomeSpace {
 	
 	public static int grassFoilageColorMultiplier = 0x00008b;
-	public Block stoneBlock;
+	protected Block stoneBlock;
 	protected byte topMeta;
 	protected byte fillerMeta;
 	protected byte stoneMeta;
+	public BiomeDecoratorPurgot biomeDecor = this.getBiomeDecorator();
 	
-	public BiomePurgot(BiomeProperties props) {
-		super("purgot", props);
+	public BiomeLimbo(BiomeProperties props) {
+		super("limbo", props);
 		props.setRainDisabled();
+		props.setBaseHeight(2.0F);
 		this.enableSnow = true;
 		this.decorator.flowersPerChunk = -999;
 		this.decorator.treesPerChunk = -999;
@@ -35,20 +33,20 @@ public class BiomePurgot extends BiomeSpace {
 		this.spawnableMonsterList.clear();
 		this.spawnableWaterCreatureList.clear();
 		this.spawnableCreatureList.clear();
-		this.topBlock = ZGBlocks.purgSurfaceRock.getDefaultState();
-		this.fillerBlock = ZGBlocks.purgDirt.getDefaultState();
+		this.topBlock = ZGBlocks.purgBlackRock.getDefaultState();
+		this.fillerBlock = ZGBlocks.purgWhiteRock.getDefaultState();
 		this.stoneBlock = ZGBlocks.purgStone;
 		this.setPlanetForBiome(ZGPlanets.planetPurgot);
 	}
 	
 	@Override
 	public void registerTypes(Biome biome) {
-		CommonZGRegisterHelper.registerBiomeType(biome, COLD, DEAD, DRY);
+		CommonZGRegisterHelper.registerBiomeType(biome, SPOOKY, DEAD);
 	}
 	
 	@Override
 	public float getSpawningChance() {
-		return 0.01F;
+		return 0.1F;
 	}
 	
 	@Override
@@ -56,8 +54,17 @@ public class BiomePurgot extends BiomeSpace {
 		return new BiomeDecoratorPurgot();
 	}
 	
+	protected BiomeDecoratorPurgot getBiomeDecorator() {
+		return (BiomeDecoratorPurgot) this.decorator;
+	}
+	
 	@Override
-	public void genTerrainBlocks(World worldIn, Random rand, ChunkPrimer chunkPrimerIn,
-			int p_180622_4_, int p_180622_5_, double p_180622_6_) {
+	public int getModdedBiomeFoliageColor(int original) {
+		return this.grassFoilageColorMultiplier;
+	}
+	
+	@Override
+	public int getModdedBiomeGrassColor(int original) {
+		return this.grassFoilageColorMultiplier;
 	}
 }

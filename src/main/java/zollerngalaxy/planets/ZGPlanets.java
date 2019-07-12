@@ -232,7 +232,7 @@ public class ZGPlanets {
 		planetPurgot.setDistanceFromCenter(3.5F);
 		planetPurgot.setTierRequired(5);
 		planetPurgot.setRelativeSize(40.0F);
-		planetPurgot.setPlanetTemperature(-74.5f);
+		planetPurgot.setPlanetTemperature(34.5f);
 		planetPurgot.setPlanetToxicity(15.2f);
 		planetPurgot.setPlanetRadiation(6.2f);
 		planetPurgot.setWindLevel(5.7F);
@@ -242,7 +242,7 @@ public class ZGPlanets {
 				EnumAtmosphericGas.NITROGEN, EnumAtmosphericGas.ARGON);
 		planetPurgot.setAtmosphere();
 		planetPurgot.setPlanetIcon("purgot");
-		planetPurgot.setBiomeInfo(ZGBiomes.PURGOT);
+		planetPurgot.setBiomeInfo(ZGBiomes.PURGOT, ZGBiomes.LIMBO);
 		planetPurgot.addChecklistKeys("equipOxygenSuit");
 		planetPurgot.setDimensionInfo(ConfigManagerZG.planetPurgotDimensionId,
 				WorldProviderPurgot.class);

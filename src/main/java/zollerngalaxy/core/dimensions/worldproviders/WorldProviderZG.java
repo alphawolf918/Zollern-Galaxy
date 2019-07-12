@@ -158,9 +158,6 @@ public abstract class WorldProviderZG extends WorldProviderSpace implements ISol
 	protected abstract void renderWeather();
 	
 	@Override
-	public abstract void init();
-	
-	@Override
 	public abstract Class<? extends IChunkGenerator> getChunkProviderClass();
 	
 }
