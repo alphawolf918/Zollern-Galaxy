@@ -1,6 +1,6 @@
 {
-    "parent": "block/cube_all",
-    "textures": {
-        "all": "zollerngalaxy:blocks/kriffredstoneore"
-    }
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "zollerngalaxy:blocks/kriffredstoneore"
+  }
 }

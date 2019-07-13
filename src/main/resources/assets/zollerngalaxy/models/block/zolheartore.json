@@ -1,6 +1,6 @@
 {
-    "parent": "block/cube_all",
-    "textures": {
-        "all": "zollerngalaxy:blocks/zolheartore"
-    }
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "zollerngalaxy:blocks/zolheartore"
+  }
 }

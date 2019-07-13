@@ -7,7 +7,7 @@ import micdoodle8.mods.galacticraft.api.galaxies.SolarSystem;
 import micdoodle8.mods.galacticraft.api.galaxies.Star;
 import micdoodle8.mods.galacticraft.api.vector.Vector3;
 import micdoodle8.mods.galacticraft.api.world.EnumAtmosphericGas;
-import micdoodle8.mods.galacticraft.core.dimension.TeleportTypeMoon;
+import micdoodle8.mods.galacticraft.planets.venus.dimension.TeleportTypeVenus;
 import net.minecraft.util.ResourceLocation;
 import zollerngalaxy.biomes.ZGBiomes;
 import zollerngalaxy.config.ConfigManagerZG;
@@ -169,7 +169,6 @@ public class ZGPlanets {
 		planetZollus.setDensity(0.1F);
 		planetZollus.setHasRain(false);
 		planetZollus.setPlanetGasses(EnumAtmosphericGas.NITROGEN, EnumAtmosphericGas.HELIUM);
-		planetZollus.setAtmosphere();
 		planetZollus.setPlanetIcon("zollus");
 		planetZollus.setBiomeInfo(ZGBiomes.ZOLLUS);
 		planetZollus.addChecklistKeys("equipOxygenSuit");
@@ -193,10 +192,33 @@ public class ZGPlanets {
 		planetKriffon.setDensity(3.0F);
 		planetKriffon.setHasRain(false);
 		planetKriffon.setPlanetGasses(EnumAtmosphericGas.ARGON, EnumAtmosphericGas.METHANE);
-		planetKriffon.setAtmosphere();
 		planetKriffon.setPlanetIcon("kriffus");
 		planetKriffon.setBiomeInfo(ZGBiomes.KRIFFON);
 		planetKriffon.addChecklistKeys("equipOxygenSuit");
+		totalPlanets++;
+		
+		// Planet Purgot
+		planetPurgot.setParentSolarSystem(systemPsios);
+		planetPurgot.setPlanetClass(EnumPlanetClass.R);
+		planetPurgot.setRingColorRGB(0.1F, 0.9F, 2.6F);
+		planetPurgot.setPhaseShift(0.0F);
+		planetPurgot.setRelativeOrbitTime(10F);
+		planetPurgot.setDistanceFromCenter(3.5F);
+		planetPurgot.setTierRequired(5);
+		planetPurgot.setRelativeSize(40.0F);
+		planetPurgot.setPlanetTemperature(54.5f);
+		planetPurgot.setPlanetToxicity(5.2f);
+		planetPurgot.setPlanetRadiation(2.2f);
+		planetPurgot.setWindLevel(5.7F);
+		planetPurgot.setDensity(0.3F);
+		planetPurgot.setHasRain(false);
+		planetPurgot.setPlanetGasses(EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.WATER,
+				EnumAtmosphericGas.NITROGEN, EnumAtmosphericGas.ARGON);
+		planetPurgot.setPlanetIcon("purgot");
+		planetPurgot.setBiomeInfo(ZGBiomes.PURGOT, ZGBiomes.LIMBO);
+		planetPurgot.addChecklistKeys("equipOxygenSuit");
+		planetPurgot.setDimensionInfo(ConfigManagerZG.planetPurgotDimensionId,
+				WorldProviderPurgot.class);
 		totalPlanets++;
 		
 		// Planet Eden
@@ -219,33 +241,7 @@ public class ZGPlanets {
 		planetEden.setHasRain(true);
 		planetEden.setPlanetGasses(EnumAtmosphericGas.NITROGEN, EnumAtmosphericGas.OXYGEN,
 				EnumAtmosphericGas.ARGON, EnumAtmosphericGas.WATER);
-		planetEden.setAtmosphere();
 		planetEden.setPlanetIcon("eden");
-		totalPlanets++;
-		
-		// Planet Purgot
-		planetPurgot.setParentSolarSystem(systemPsios);
-		planetPurgot.setPlanetClass(EnumPlanetClass.R);
-		planetPurgot.setRingColorRGB(0.1F, 0.9F, 2.6F);
-		planetPurgot.setPhaseShift(0.0F);
-		planetPurgot.setRelativeOrbitTime(10F);
-		planetPurgot.setDistanceFromCenter(3.5F);
-		planetPurgot.setTierRequired(5);
-		planetPurgot.setRelativeSize(40.0F);
-		planetPurgot.setPlanetTemperature(34.5f);
-		planetPurgot.setPlanetToxicity(5.2f);
-		planetPurgot.setPlanetRadiation(6.2f);
-		planetPurgot.setWindLevel(5.7F);
-		planetPurgot.setDensity(0.3F);
-		planetPurgot.setHasRain(false);
-		planetPurgot.setPlanetGasses(EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.WATER,
-				EnumAtmosphericGas.NITROGEN, EnumAtmosphericGas.ARGON);
-		planetPurgot.setAtmosphere();
-		planetPurgot.setPlanetIcon("purgot");
-		planetPurgot.setBiomeInfo(ZGBiomes.PURGOT, ZGBiomes.LIMBO);
-		planetPurgot.addChecklistKeys("equipOxygenSuit");
-		planetPurgot.setDimensionInfo(ConfigManagerZG.planetPurgotDimensionId,
-				WorldProviderPurgot.class);
 		totalPlanets++;
 		
 		// Planet Xathius
@@ -300,7 +296,7 @@ public class ZGPlanets {
 	
 	public static void initMoons() {
 		// TODO
-		totalPlanets++;
+		// totalMoons++;
 		ZGHelper.Log("Loaded a total of " + totalMoons + " new moons.");
 	}
 	
@@ -321,15 +317,15 @@ public class ZGPlanets {
 	}
 	
 	public static void registerTeleportTypes() {
-		// TeleportTypeNG teleType = new TeleportTypeNG();
-		GalacticraftRegistry
-				.registerTeleportType(WorldProviderZollus.class, new TeleportTypeMoon());
+		GalacticraftRegistry.registerTeleportType(WorldProviderZollus.class,
+				new TeleportTypeVenus());
 		GalacticraftRegistry.registerTeleportType(WorldProviderKriffon.class,
-				new TeleportTypeMoon());
+				new TeleportTypeVenus());
+		GalacticraftRegistry.registerTeleportType(WorldProviderPurgot.class,
+				new TeleportTypeVenus());
 		// GalacticraftRegistry.registerTeleportType(WorldProviderEden.class,
 		// teleType);
-		GalacticraftRegistry
-				.registerTeleportType(WorldProviderPurgot.class, new TeleportTypeMoon());
+		
 		// GalacticraftRegistry.registerTeleportType(WorldProviderXathius.class,
 		// teleType);
 		// GalacticraftRegistry.registerTeleportType(WorldProviderOasis.class,

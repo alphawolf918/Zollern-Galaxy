@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "normal": { "model": "zollerngalaxy:purgdirt" }
+  "variants": {
+    "normal": {
+      "model": "zollerngalaxy:purgdirt"
     }
+  }
 }

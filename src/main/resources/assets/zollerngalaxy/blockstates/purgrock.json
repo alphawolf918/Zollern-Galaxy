@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "normal": { "model": "zollerngalaxy:purgrock" }
+  "variants": {
+    "normal": {
+      "model": "zollerngalaxy:purgrock"
     }
+  }
 }

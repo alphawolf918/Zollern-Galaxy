@@ -1,9 +1,9 @@
 package zollerngalaxy.lib.helpers;
 
-import zollerngalaxy.lib.helpers.json.JSONRecipeHelper;
 import micdoodle8.mods.galacticraft.api.recipe.CompressorRecipes;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import zollerngalaxy.lib.helpers.json.JSONRecipeHelper;
 
 public class ZGRecipeHelper {
 	

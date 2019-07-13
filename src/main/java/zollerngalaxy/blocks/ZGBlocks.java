@@ -1,6 +1,7 @@
 package zollerngalaxy.blocks;
 
 import micdoodle8.mods.galacticraft.core.GCItems;
+import micdoodle8.mods.galacticraft.planets.mars.items.MarsItems;
 import net.minecraft.block.Block;
 import net.minecraft.init.Items;
 import zollerngalaxy.blocks.zollus.ZolniumCrystals;
@@ -67,6 +68,51 @@ public class ZGBlocks {
 	public static final Block purgRedstoneOre = new ZGOreGem("purgredstoneore", 1.5F,
 			Items.REDSTONE);
 	
+	// Eden
+	public static final Block edenSurfaceRock = new ZGBlockBase("edensurfacerock", 2.1F);
+	public static final Block edenDirt = new ZGBlockDirt("edensoil", 1.6F);
+	public static final Block edenCobbleRock = new ZGBlockBase("edencobblerock", 1.5F);
+	public static final Block edenStone = new ZGPlanetStone("edenrock", 2.6F,
+			ZGBlocks.edenCobbleRock);
+	public static final Block edenSacredStone = new ZGBlockBase("edensacredstone", 3.2F);
+	public static final Block edenRockBricks = new ZGBlockBase("edenrockbricks", 1.4F);
+	public static final Block edenWinterRock = new ZGBlockBase("edenwinterrock", 1.6F);
+	public static final Block edenBloodSand = new ZGSand("bloodsand", 1.4F);
+	public static final Block edenBloodStone = new ZGBlockBase("bloodstone", 1.4F);
+	public static final Block edenBoneStone = new ZGBlockBase("bonestone", 1.8F);
+	public static final Block edenGravel = new ZGGravel("edengravel", 2.1F);
+	public static final Block edenBrightStone = new ZGShineBlock("brightstone",
+			ZGItems.dustBrightstone);
+	public static final Block edenAluminumOre = new ZGBlockOre("edenaluminumore", 1.5F);
+	public static final Block edenBronzeOre = new ZGBlockOre("edenbronzeore", 2.8F);
+	public static final Block edenCoalOre = new ZGOreGem("edencoalore", 1.5F, Items.COAL);
+	public static final Block edenCopperOre = new ZGBlockOre("edencopperore", 1.4F);
+	public static final Block edenDeshOre = new ZGOreGem("edendeshore", 2.4F,
+			MarsItems.marsItemBasic);
+	public static final Block edenDiamondOre = new ZGOreGem("edendiamondore", 2.0F, Items.DIAMOND);
+	public static final Block edenEmeraldOre = new ZGOreGem("edenemeraldore", 2.5F, Items.EMERALD);
+	public static final Block edenGoldOre = new ZGBlockOre("edengoldore", 1.5F);
+	public static final Block edenIronOre = new ZGBlockOre("edenironore", 1.4F);
+	public static final Block edenLapisOre = new ZGOreGem("edenlapisore", 1.2F, Items.DYE)
+			.setDropMeta(4, true);
+	public static final Block edenMeteoricIronOre = new ZGOreGem("edenmeteoricironore", 3.4F,
+			GCItems.meteoricIronRaw);
+	public static final Block edenRedstoneOre = new ZGOreGem("edenredstoneore", 1.6F,
+			Items.REDSTONE);
+	public static final Block edenTinOre = new ZGBlockOre("edentinore", 1.2F);
+	public static final Block edenViriniumOre = new ZGOreGem("edenviriore", 2.6F, ZGItems.rawViri);
+	
+	// Metals
+	public static final Block blockViri = new ZGBlockMetal("viriblock");
+	public static final Block blockEve = new ZGBlockMetal("eveniumblock");
+	public static final Block blockCobalt = new ZGBlockMetal("cobaltblock");
+	
+	// Xathius
+	// TODO
+	
+	// Oasis
+	// TODO
+	
 	public static void init() {
 		ZGBlocks.registerBlocks(zolStone, zolCobbleRock, zolSurfaceRock, zolDirt, zolRockBricks,
 				zolCoalOre, zolCopperOre, zolGoldOre, zolHeartOre, zolTinOre, zolIronOre,
@@ -76,7 +122,12 @@ public class ZGBlocks {
 				purgRockBricks, purgWhiteRock, purgBlackRock, purgSurfaceRock, purgDirt,
 				purgMeteoricIronOre, purgCobaltOre, purgIronOre, purgGoldOre, purgCopperOre,
 				purgDiamondOre, purgEmeraldOre, purgEveniumOre, purgAluminumOre, purgTinOre,
-				purgLeadOre, purgRedstoneOre);
+				purgLeadOre, purgRedstoneOre, edenSurfaceRock, edenDirt, edenStone,
+				edenSacredStone, edenCobbleRock, edenRockBricks, edenWinterRock, edenBloodSand,
+				edenBloodStone, edenBoneStone, edenGravel, edenBrightStone, edenAluminumOre,
+				edenBronzeOre, edenCoalOre, edenCopperOre, edenDeshOre, edenDiamondOre,
+				edenEmeraldOre, edenGoldOre, edenIronOre, edenLapisOre, edenMeteoricIronOre,
+				edenRedstoneOre, edenTinOre, edenViriniumOre, blockViri, blockCobalt, blockEve);
 		ZGHelper.Log("Loaded a total of " + totalBlocks + " new blocks.");
 	}
 	

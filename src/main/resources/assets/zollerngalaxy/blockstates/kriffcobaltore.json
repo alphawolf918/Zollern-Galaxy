@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "normal": { "model": "zollerngalaxy:kriffcobaltore" }
+  "variants": {
+    "normal": {
+      "model": "zollerngalaxy:kriffcobaltore"
     }
+  }
 }

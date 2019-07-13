@@ -117,6 +117,12 @@ public class WorldProviderKriffon extends WorldProviderZG {
 	}
 	
 	@Override
+	public Vector3 getSkyColor() {
+		float f = 0.6F - this.getStarBrightness(1.0F);
+		return new Vector3(255 / 255F * f, 20 / 255F * f, 20 / 255F * f);
+	}
+	
+	@Override
 	public Vector3 getFogColor() {
 		float f = 1.0F - this.getStarBrightness(1.0F);
 		return new Vector3(80 / 255F * f, 0 / 255F * f, 0 / 255F * f);

@@ -20,7 +20,7 @@ tile.zolluskriffonportal.name=Kriffon Gate
 tile.kriffonpurgotportal.name=Purgot Gate
 tile.purgotoasisportal.name=Praedyth Portal
 
-tile.edensurfaceblock.name=Eden's Grassrock
+tile.edensurfacerock.name=Eden's Grassrock
 tile.edengrass.name=Eden's Grass
 tile.edengoldengrass.name=Eden's Golden Grass
 tile.edensoil.name=Eden's Soil
@@ -40,7 +40,7 @@ tile.edentinore.name=Eden's Tin Ore
 tile.edendeshore.name=Eden's Desh Ore
 tile.edenaluminumore.name=Eden's Aluminum Ore
 tile.edenviriore.name=Eden's Virinium Ore
-tile.viriblock.name=Eden's Virinium Block
+tile.viriblock.name=Block of Virinium
 tile.edenflower_.name=Eden's Flower
 tile.edenflower_blue.name=Eden's Blue Flower
 tile.edenflower_red.name=Eden's Red Flower
@@ -78,6 +78,7 @@ tile.kriffironore.name=Kriffon Iron Ore
 tile.kriffgoldore.name=Kriffon Gold Ore
 tile.kriffcobaltore.name=Kriffon Cobalt Ore
 tile.kriffdirt.name=Kriffon Dirt
+tile.cobaltblock.name=Block of Cobalt
 
 tile.purgrock.name=Purgot Rock
 tile.purgcobblerock.name=Purgot Cobblerock
@@ -98,6 +99,7 @@ tile.purgaluminumore.name=Purgot Aluminum Ore
 tile.purgtinore.name=Purgot Tin Ore
 tile.purgleadore.name=Purgot Lead Ore
 tile.purgmeteoricironore.name=Purgot Meteoric Iron Ore
+tile.eveniumblock.name=Block of Evenium
 
 tile.xathrock.name=Xathian Rock
 tile.xathstone.name=Xathian Stone
@@ -121,7 +123,6 @@ item.zolluscrystal.name=Zolnium Crystal
 item.heartofzol.name=Zollus Heartium
 item.zolluskriffontablet.name=Ancient Zollus Tablet
 
-item.aluminumdust.name=Pulverized Aluminum
 item.cobaltdust.name=Pulverized Cobalt
 item.diamonddust.name=Pulverized Diamond
 item.emeralddust.name=Pulverized Emerald
@@ -147,7 +148,7 @@ item.kriffonpurgottablet.name=Ancient Kriffon Tablet
 
 item.ingotevenium.name=Evenium Ingot
 item.purgotcrystal.name=Purgot Crystal
-item.purgotoasistablet.name=Oasis Gem
+item.purgotessence.name=Oasis Gem
 
 item.prometheancrystal.name=Promethean Crystal
 item.plutoniumcrystal.name=Plutonium Crystal

@@ -1,6 +1,6 @@
 {
-    "parent": "block/cube_all",
-    "textures": {
-        "all": "zollerngalaxy:blocks/purgcobaltore"
-    }
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "zollerngalaxy:blocks/purgcobaltore"
+  }
 }

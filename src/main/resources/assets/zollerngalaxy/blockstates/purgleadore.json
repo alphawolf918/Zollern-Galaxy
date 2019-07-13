@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "normal": { "model": "zollerngalaxy:purgleadore" }
+  "variants": {
+    "normal": {
+      "model": "zollerngalaxy:purgleadore"
     }
+  }
 }

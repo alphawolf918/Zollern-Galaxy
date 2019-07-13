@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "normal": { "model": "zollerngalaxy:kriffredstoneore" }
+  "variants": {
+    "normal": {
+      "model": "zollerngalaxy:kriffredstoneore"
     }
+  }
 }

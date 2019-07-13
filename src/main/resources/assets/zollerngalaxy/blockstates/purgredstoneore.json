@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "normal": { "model": "zollerngalaxy:purgredstoneore" }
+  "variants": {
+    "normal": {
+      "model": "zollerngalaxy:purgredstoneore"
     }
+  }
 }

@@ -101,7 +101,7 @@ public class ChunkProviderPurgot extends ChunkProviderBase {
 						.nextDouble() * 0.25D);
 				int var13 = -1;
 				
-				int x = par1 * 16;
+				int x = var8 + par1 * 16;
 				int z = par2 * 16;
 				int y = world.getHeight(x, z);
 				
@@ -145,7 +145,7 @@ public class ChunkProviderPurgot extends ChunkProviderBase {
 								} else if (var16 < var5 - 1 && var16 >= var5 - 2) {
 									primer.setBlockState(var8, var16, var9, state1);
 								}
-							} else if (var13 > 0) {
+							} else if (var13 == 0) {
 								--var13;
 								primer.setBlockState(var8, var16, var9, state1);
 							}

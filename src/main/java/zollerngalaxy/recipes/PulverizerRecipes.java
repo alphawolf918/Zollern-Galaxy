@@ -18,11 +18,15 @@ public class PulverizerRecipes {
 				new ItemStack(ItemHelper.getItemFromStack(TFItems.itemMaterial.dustCopper), 4, 64));
 		ThermalExpansionHelper.addPulverizerRecipe(5400, new ItemStack(ZGBlocks.purgCopperOre),
 				new ItemStack(ItemHelper.getItemFromStack(TFItems.itemMaterial.dustCopper), 4, 64));
+		ThermalExpansionHelper.addPulverizerRecipe(5400, new ItemStack(ZGBlocks.edenCopperOre),
+				new ItemStack(ItemHelper.getItemFromStack(TFItems.itemMaterial.dustCopper), 4, 64));
 		
 		// Tin
 		ThermalExpansionHelper.addPulverizerRecipe(5400, new ItemStack(ZGBlocks.zolTinOre),
 				new ItemStack(ItemHelper.getItemFromStack(TFItems.itemMaterial.dustTin), 4, 65));
 		ThermalExpansionHelper.addPulverizerRecipe(5400, new ItemStack(ZGBlocks.purgTinOre),
+				new ItemStack(ItemHelper.getItemFromStack(TFItems.itemMaterial.dustTin), 4, 65));
+		ThermalExpansionHelper.addPulverizerRecipe(5400, new ItemStack(ZGBlocks.edenTinOre),
 				new ItemStack(ItemHelper.getItemFromStack(TFItems.itemMaterial.dustTin), 4, 65));
 		
 		// Lead
@@ -36,6 +40,8 @@ public class PulverizerRecipes {
 				new ItemStack(ItemHelper.getItemFromStack(TFItems.itemMaterial.dustIron), 4, 0));
 		ThermalExpansionHelper.addPulverizerRecipe(5400, new ItemStack(ZGBlocks.purgIronOre),
 				new ItemStack(ItemHelper.getItemFromStack(TFItems.itemMaterial.dustIron), 4, 0));
+		ThermalExpansionHelper.addPulverizerRecipe(5400, new ItemStack(ZGBlocks.edenIronOre),
+				new ItemStack(ItemHelper.getItemFromStack(TFItems.itemMaterial.dustIron), 4, 0));
 		
 		// Gold
 		ThermalExpansionHelper.addPulverizerRecipe(5400, new ItemStack(ZGBlocks.zolGoldOre),
@@ -44,11 +50,20 @@ public class PulverizerRecipes {
 				new ItemStack(ItemHelper.getItemFromStack(TFItems.itemMaterial.dustGold), 4, 1));
 		ThermalExpansionHelper.addPulverizerRecipe(5400, new ItemStack(ZGBlocks.purgGoldOre),
 				new ItemStack(ItemHelper.getItemFromStack(TFItems.itemMaterial.dustGold), 4, 1));
+		ThermalExpansionHelper.addPulverizerRecipe(5400, new ItemStack(ZGBlocks.edenGoldOre),
+				new ItemStack(ItemHelper.getItemFromStack(TFItems.itemMaterial.dustGold), 4, 1));
 		
 		// Aluminum
 		ThermalExpansionHelper
 				.addPulverizerRecipe(5400, new ItemStack(ZGBlocks.purgAluminumOre), new ItemStack(
 						ItemHelper.getItemFromStack(TFItems.itemMaterial.dustAluminum), 4, 68));
+		ThermalExpansionHelper
+				.addPulverizerRecipe(5400, new ItemStack(ZGBlocks.edenAluminumOre), new ItemStack(
+						ItemHelper.getItemFromStack(TFItems.itemMaterial.dustAluminum), 4, 68));
+		
+		// Bronze
+		ThermalExpansionHelper.addPulverizerRecipe(5400, new ItemStack(ZGBlocks.edenBronzeOre),
+				new ItemStack(ItemHelper.getItemFromStack(TFItems.itemMaterial.dustBronze), 4, 99));
 		
 		// Cobalt
 		ThermalExpansionHelper.addPulverizerRecipe(5400, new ItemStack(ZGBlocks.kriffCobaltOre),
@@ -63,6 +78,9 @@ public class PulverizerRecipes {
 		// Meteoric Iron
 		ThermalExpansionHelper.addPulverizerRecipe(5400,
 				new ItemStack(ZGBlocks.purgMeteoricIronOre), new ItemStack(GCItems.meteoricIronRaw,
+						4));
+		ThermalExpansionHelper.addPulverizerRecipe(5400,
+				new ItemStack(ZGBlocks.edenMeteoricIronOre), new ItemStack(GCItems.meteoricIronRaw,
 						4));
 	}
 }

@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "normal": { "model": "zollerngalaxy:purgmeteoricironore" }
+  "variants": {
+    "normal": {
+      "model": "zollerngalaxy:purgmeteoricironore"
     }
+  }
 }

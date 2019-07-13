@@ -1,6 +1,6 @@
 {
-    "parent": "block/cube_all",
-    "textures": {
-        "all": "zollerngalaxy:blocks/purgcopperore"
-    }
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "zollerngalaxy:blocks/purgcopperore"
+  }
 }

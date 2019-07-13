@@ -1,11 +1,14 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "ingredients": [
-    {
-      "item": "zollerngalaxy:kriffstone",
-      "count": 4
-    }
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SS",
+    "SS"
   ],
+  "key": {
+    "S": {
+      "item": "zollerngalaxy:kriffstone"
+    }
+  },
   "result": {
     "item": "zollerngalaxy:kriffrockbricks",
     "count": 4

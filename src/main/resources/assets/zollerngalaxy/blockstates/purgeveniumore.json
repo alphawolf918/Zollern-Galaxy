@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "normal": { "model": "zollerngalaxy:purgeveniumore" }
+  "variants": {
+    "normal": {
+      "model": "zollerngalaxy:purgeveniumore"
     }
+  }
 }

@@ -16,8 +16,9 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.blocks.creativetabs.ZGTabs;
 import zollerngalaxy.core.enums.EnumHarvestLevel;
+import zollerngalaxy.lib.helpers.json.JSONRegistryHelper;
 
-public class ZGBlockBase extends Block implements ISingleZGBlockRender {
+public class ZGBlockBase extends Block implements ISingleZGBlockRender, IJSONBlock {
 	
 	protected static ZGBlockBase instance;
 	protected static Material blockMaterial = Material.ROCK;
@@ -25,6 +26,7 @@ public class ZGBlockBase extends Block implements ISingleZGBlockRender {
 	protected boolean shouldAlwaysBurn = false;
 	protected boolean isHotFloorBlock = false;
 	protected boolean hasInfo = false;
+	protected boolean shouldIgnore = false;
 	protected String blockInfo = "";
 	protected static String name;
 	
@@ -36,6 +38,10 @@ public class ZGBlockBase extends Block implements ISingleZGBlockRender {
 		this.setHardResist(hardResist);
 		this.setHarvestLevel("pickaxe", EnumHarvestLevel.DIAMOND.getHarvestLevel());
 		this.setSoundType(blockSound);
+		
+		if (!this.shouldJSONIgnore()) {
+			JSONRegistryHelper.registerBlock(blockName);
+		}
 	}
 	
 	public void setBlockName(final Block block, final String blockName) {
@@ -141,6 +147,16 @@ public class ZGBlockBase extends Block implements ISingleZGBlockRender {
 	@Override
 	public String getName() {
 		return this.name.toLowerCase();
+	}
+	
+	@Override
+	public boolean shouldJSONIgnore() {
+		return false;
+	}
+	
+	public Block setShouldJSONIgnore(boolean ignore) {
+		this.shouldIgnore = ignore;
+		return this;
 	}
 	
 }

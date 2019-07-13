@@ -23,6 +23,7 @@ public class ZGBlockFlower extends ZGBlockBase {
 		super(blockName, 0.0F);
 		this.setSoundType(SoundType.PLANT);
 		this.setTickRandomly(true);
+		this.setShouldJSONIgnore(true);
 	}
 	
 	@Override
@@ -90,4 +91,8 @@ public class ZGBlockFlower extends ZGBlockBase {
 		return BlockFaceShape.UNDEFINED;
 	}
 	
+	@Override
+	public boolean shouldJSONIgnore() {
+		return true;
+	}
 }

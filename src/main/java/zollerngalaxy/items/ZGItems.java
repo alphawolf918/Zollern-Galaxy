@@ -10,16 +10,43 @@ public class ZGItems {
 	
 	public static final Item heartOfZol = new ZGItemBase("heartofzol");
 	public static final Item zolCrystal = new ZGItemBase("zolluscrystal");
+	public static final Item kriffCrystal = new ZGItemBase("kriffoncrystal");
+	public static final Item purgCrystal = new ZGItemBase("purgotcrystal");
+	public static final Item edenCrystal = new ZGItemBase("edencrystal");
+	public static final Item purgEssence = new ZGItemBase("purgotessence");
+	public static final Item prometheanCrystal = new ZGItemBase("prometheancrystal");
+	public static final Item plutoniumCrystal = new ZGItemBase("plutoniumcrystal");
+	
 	public static final Item rawViri = new ZGItemBase("rawviri");
 	public static final Item dustCobalt = new ZGItemBase("cobaltdust");
 	public static final Item dustEve = new ZGItemBase("eveniumdust");
+	public static final Item dustDiamond = new ZGItemBase("diamonddust");
+	public static final Item dustEmerald = new ZGItemBase("emeralddust");
+	public static final Item dustBrightstone = new ZGItemBase("brightstonedust");
+	
 	public static final Item ingotViri = new ZGItemBase("ingotviri");
 	public static final Item ingotCobalt = new ZGItemBase("ingotcobalt");
 	public static final Item ingotEve = new ZGItemBase("ingotevenium");
+	public static final Item hud = new ZGItemBase("hud");
+	public static final Item alienStone = new ZGItemBase("alienstone");
+	
+	public static final Item compressedCobalt = new ZGItemBase("compressedcobalt");
+	public static final Item compressedDiamond = new ZGItemBase("compresseddiamond");
+	public static final Item compressedEmerald = new ZGItemBase("compressedemerald");
+	public static final Item compressedEvenium = new ZGItemBase("compressedevenium");
+	public static final Item compressedGold = new ZGItemBase("compressedgold");
+	public static final Item compressedHeartium = new ZGItemBase("compressedheartium");
+	public static final Item compressedKriffonium = new ZGItemBase("compressedkriffonium");
+	public static final Item compressedVirinium = new ZGItemBase("compressedvirinium");
+	public static final Item compressedVyrex = new ZGItemBase("compressedvyrex");
 	
 	public static void init() {
-		ZGItems.registerItems(heartOfZol, zolCrystal, rawViri, dustEve, dustCobalt, ingotViri,
-				ingotCobalt, ingotEve);
+		ZGItems.registerItems(heartOfZol, zolCrystal, kriffCrystal, purgCrystal, edenCrystal,
+				purgEssence, prometheanCrystal, plutoniumCrystal, dustBrightstone, rawViri,
+				dustEve, dustCobalt, dustDiamond, dustEmerald, ingotViri, ingotCobalt, ingotEve,
+				hud, alienStone, compressedCobalt, compressedDiamond, compressedEmerald,
+				compressedEvenium, compressedGold, compressedHeartium, compressedKriffonium,
+				compressedVirinium, compressedVyrex);
 		ZGHelper.Log("Loaded a total of " + totalItems + " new items.");
 	}
 	

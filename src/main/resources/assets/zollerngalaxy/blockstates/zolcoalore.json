@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "normal": { "model": "zollerngalaxy:zolcoalore" }
+  "variants": {
+    "normal": {
+      "model": "zollerngalaxy:zolcoalore"
     }
+  }
 }

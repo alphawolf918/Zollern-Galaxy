@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SS",
+    "SS"
+  ],
+  "key": {
+    "S": {
+      "item": "zollerngalaxy:edenrock"
+    }
+  },
+  "result": {
+    "item": "zollerngalaxy:edenrockbricks",
+    "count": 4
+  }
+}

@@ -1,11 +1,14 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "ingredients": [
-    {
-      "item": "zollerngalaxy:zolstone",
-      "count": 4
-    }
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SS",
+    "SS"
   ],
+  "key": {
+    "S": {
+      "item": "zollerngalaxy:zolstone"
+    }
+  },
   "result": {
     "item": "zollerngalaxy:zolrockbricks",
     "count": 4

@@ -86,7 +86,7 @@ public class WorldProviderPurgot extends WorldProviderZG {
 		if (var3 > 1.0F) {
 			var3 = 0.45F;
 		}
-		return var3 * var3 * 0.8F + 0.6F;
+		return var3 * var3 * 1.0F + 0.6F;
 	}
 	
 	@Override

@@ -13,8 +13,8 @@ public class ZGTabs {
 	
 	public static void init() {
 		zgBlocksTab = ZGHelper.createCreativeTabs("ZollernGalaxyBlocks", new ItemStack(
-				ZGBlocks.zolSurfaceRock));
+				ZGBlocks.edenSurfaceRock));
 		zgItemsTab = ZGHelper.createCreativeTabs("ZollernGalaxyItems", new ItemStack(
-				ZGItems.ingotViri));
+				ZGItems.alienStone));
 	}
 }

@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "normal": { "model": "zollerngalaxy:magmarock" }
+  "variants": {
+    "normal": {
+      "model": "zollerngalaxy:magmarock"
     }
+  }
 }

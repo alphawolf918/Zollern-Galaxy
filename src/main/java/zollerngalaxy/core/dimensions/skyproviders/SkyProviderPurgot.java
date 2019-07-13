@@ -18,8 +18,8 @@ public class SkyProviderPurgot extends SkyProviderBaseZG {
 			"zollerngalaxy:textures/gui/psion6.png");
 	private ResourceLocation edenTexture = new ResourceLocation(
 			"zollerngalaxy:textures/gui/eden.png");
-	private ResourceLocation kriffonTexture = new ResourceLocation(
-			"zollerngalaxy:textures/gui/kriffus.png");
+	private ResourceLocation zollusTexture = new ResourceLocation(
+			"zollerngalaxy:textures/gui/zollus.png");
 	
 	public SkyProviderPurgot(IGalacticraftWorldProvider provider) {
 		super();
@@ -95,14 +95,14 @@ public class SkyProviderPurgot extends SkyProviderBaseZG {
 		GlStateManager.popMatrix();
 		GlStateManager.pushMatrix();
 		
-		// Kriffon
-		scale = 0.2F;
+		// Zollus
+		scale = 2.0F;
 		GlStateManager.scale(0.6F, 0.6F, 0.6F);
-		GlStateManager.rotate(-150.0F, 1.0F, 0.0F, 1.0F);
+		GlStateManager.rotate(150.0F, 1.0F, 0.0F, 1.0F);
 		GlStateManager.rotate(-200F, 1.0F, 0.0F, 0.0F);
 		GlStateManager.color(1.0F, 1.0F, 1.0F, 1F);
 		GlStateManager.rotate(world.getCelestialAngle(partialTicks) * 360.0F, 1.0F, 0.0F, 0.0F);
-		mc.getTextureManager().bindTexture(this.kriffonTexture);
+		mc.getTextureManager().bindTexture(this.zollusTexture);
 		worldrenderer.begin(7, DefaultVertexFormats.POSITION_TEX);
 		worldrenderer.pos(-scale, 100.0D, -scale).tex(0.0D, 0.0D).endVertex();
 		worldrenderer.pos(scale, 100.0D, -scale).tex(1.0D, 0.0D).endVertex();

@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "normal": { "model": "zollerngalaxy:viriblock" }
+  "variants": {
+    "normal": {
+      "model": "zollerngalaxy:viriblock"
     }
+  }
 }

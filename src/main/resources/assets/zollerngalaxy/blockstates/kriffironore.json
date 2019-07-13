@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "normal": { "model": "zollerngalaxy:kriffironore" }
+  "variants": {
+    "normal": {
+      "model": "zollerngalaxy:kriffironore"
     }
+  }
 }

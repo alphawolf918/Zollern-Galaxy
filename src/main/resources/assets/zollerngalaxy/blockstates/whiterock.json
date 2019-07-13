@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "normal": { "model": "zollerngalaxy:whiterock" }
+  "variants": {
+    "normal": {
+      "model": "zollerngalaxy:whiterock"
     }
+  }
 }
