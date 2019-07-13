@@ -3,8 +3,8 @@ package zollerngalaxy.blocks;
 import micdoodle8.mods.galacticraft.core.GCItems;
 import net.minecraft.block.Block;
 import net.minecraft.init.Items;
-import zollerngalaxy.blocks.items.ZGItems;
 import zollerngalaxy.blocks.zollus.ZolniumCrystals;
+import zollerngalaxy.items.ZGItems;
 import zollerngalaxy.lib.helpers.CommonZGRegisterHelper;
 import zollerngalaxy.lib.helpers.ZGHelper;
 

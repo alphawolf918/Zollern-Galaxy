@@ -20,7 +20,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.oredict.OreDictionary;
 import org.lwjgl.input.Keyboard;
 import zollerngalaxy.blocks.ISingleZGBlockRender;
-import zollerngalaxy.blocks.items.ISingleZGItemRender;
+import zollerngalaxy.items.ISingleZGItemRender;
 import com.google.common.base.Function;
 
 public class CommonZGRegisterHelper {

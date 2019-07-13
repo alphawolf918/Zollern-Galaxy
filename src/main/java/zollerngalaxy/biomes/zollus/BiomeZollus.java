@@ -3,7 +3,6 @@ package zollerngalaxy.biomes.zollus;
 import static net.minecraftforge.common.BiomeDictionary.Type.COLD;
 import static net.minecraftforge.common.BiomeDictionary.Type.DEAD;
 import static net.minecraftforge.common.BiomeDictionary.Type.DRY;
-import net.minecraft.block.Block;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeDecorator;
 import zollerngalaxy.biomes.BiomeSpace;
@@ -15,10 +14,7 @@ import zollerngalaxy.planets.ZGPlanets;
 public class BiomeZollus extends BiomeSpace {
 	
 	public static int grassFoilageColorMultiplier = 0x00008b;
-	protected Block stoneBlock;
-	protected byte topMeta;
-	protected byte fillerMeta;
-	protected byte stoneMeta;
+	
 	public BiomeDecoratorZollus biomeDecor = this.getBiomeDecorator();
 	
 	public BiomeZollus(BiomeProperties props) {

@@ -7,7 +7,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import zollerngalaxy.blocks.ZGBlocks;
-import zollerngalaxy.blocks.items.ZGItems;
+import zollerngalaxy.items.ZGItems;
 
 public class SmeltRecipes {
 	
@@ -45,6 +45,10 @@ public class SmeltRecipes {
 				GCItems.itemBasicMoon), 4.0F); // Meteoric Iron
 		SmeltRecipes.SmeltBlockToItem(ZGBlocks.purgCobaltOre, ZGItems.ingotCobalt, 1.6F); // Cobalt
 		SmeltRecipes.SmeltBlockToItem(ZGBlocks.purgEveniumOre, ZGItems.ingotEve, 3.6F); // Evenium
+		
+		// Lead
+		SmeltRecipes.SmeltBlockToItem(ZGBlocks.purgLeadOre, new ItemStack(GCItems.basicItem, 1, 1),
+				1.5F);
 		
 		// Dust -> Ingots
 		SmeltRecipes.SmeltItem(ZGItems.dustCobalt, ZGItems.ingotCobalt, 2.4F);

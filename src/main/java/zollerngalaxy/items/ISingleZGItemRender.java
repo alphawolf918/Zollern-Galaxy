@@ -1,4 +1,4 @@
-package zollerngalaxy.blocks.items;
+package zollerngalaxy.items;
 
 public interface ISingleZGItemRender {
 	

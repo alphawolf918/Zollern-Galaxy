@@ -3,7 +3,7 @@ package zollerngalaxy.recipes;
 import micdoodle8.mods.galacticraft.core.GCItems;
 import net.minecraft.item.ItemStack;
 import zollerngalaxy.blocks.ZGBlocks;
-import zollerngalaxy.blocks.items.ZGItems;
+import zollerngalaxy.items.ZGItems;
 import cofh.api.util.ThermalExpansionHelper;
 import cofh.core.util.helpers.ItemHelper;
 import cofh.thermalfoundation.init.TFItems;

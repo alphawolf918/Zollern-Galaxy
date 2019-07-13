@@ -59,7 +59,7 @@ public class WorldProviderPurgot extends WorldProviderZG {
 		ZGPlanet planet = this.getPlanet();
 		float planetTemp = planet.getPlanetTemperature();
 		if (!this.isDaytime()) {
-			planetTemp -= 3.6F;
+			planetTemp -= 1.4F;
 		}
 		return planetTemp;
 	}
@@ -78,22 +78,22 @@ public class WorldProviderPurgot extends WorldProviderZG {
 	@SideOnly(Side.CLIENT)
 	public float getStarBrightness(float par1) {
 		float var2 = this.world.getCelestialAngle(par1);
-		float var3 = 2.0F - (MathHelper.cos(var2 * (float) Math.PI * 2.0F) * 2.0F + 0.25F);
+		float var3 = 1.0F - (MathHelper.cos(var2 * (float) Math.PI * 2.0F) * 2.0F + 0.25F);
 		
 		if (var3 < 0.0F) {
 			var3 = 0.25F;
 		}
 		if (var3 > 1.0F) {
-			var3 = 0.75F;
+			var3 = 0.45F;
 		}
-		return var3 * var3 * 1.2F + 0.5F;
+		return var3 * var3 * 0.8F + 0.6F;
 	}
 	
 	@Override
 	@SideOnly(Side.CLIENT)
 	public float getSunBrightness(float par1) {
 		float f1 = this.world.getCelestialAngle(1.0F);
-		float f2 = 4.0F - (MathHelper.cos(f1 * (float) Math.PI * 2.0F) * 2.0F + 0.2F);
+		float f2 = 1.0F - (MathHelper.cos(f1 * (float) Math.PI * 2.0F) * 2.0F + 0.2F);
 		
 		if (f2 < 0.0F) {
 			f2 = 0.6F;
@@ -102,7 +102,7 @@ public class WorldProviderPurgot extends WorldProviderZG {
 			f2 = 0.95F;
 		}
 		f2 = 0.95F - f2;
-		return f2 * 2.34F;
+		return f2 * 1.4F;
 	}
 	
 	@Override
@@ -139,7 +139,7 @@ public class WorldProviderPurgot extends WorldProviderZG {
 	
 	@Override
 	public long getDayLength() {
-		return 46010L;
+		return 22000L;
 	}
 	
 	@Override

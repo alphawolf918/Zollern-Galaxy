@@ -3,7 +3,6 @@ package zollerngalaxy.biomes.kriffon;
 import static net.minecraftforge.common.BiomeDictionary.Type.DEAD;
 import static net.minecraftforge.common.BiomeDictionary.Type.DRY;
 import static net.minecraftforge.common.BiomeDictionary.Type.HOT;
-import net.minecraft.block.Block;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeDecorator;
 import zollerngalaxy.biomes.BiomeSpace;
@@ -15,10 +14,7 @@ import zollerngalaxy.planets.ZGPlanets;
 public class BiomeKriffon extends BiomeSpace {
 	
 	public static int grassFoilageColorMultiplier = 0x8b0000;
-	protected Block stoneBlock;
-	protected byte topMeta;
-	protected byte fillerMeta;
-	protected byte stoneMeta;
+	
 	public BiomeDecoratorKriffon biomeDecor = this.getBiomeDecorator();
 	
 	public BiomeKriffon(BiomeProperties props) {

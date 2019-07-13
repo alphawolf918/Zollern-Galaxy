@@ -12,9 +12,9 @@ import net.minecraftforge.fml.common.network.NetworkRegistry;
 import zollerngalaxy.biomes.ZGBiomes;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.blocks.creativetabs.ZGTabs;
-import zollerngalaxy.blocks.items.ZGItems;
 import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.ZGDimensions;
+import zollerngalaxy.items.ZGItems;
 import zollerngalaxy.lib.ZGInfo;
 import zollerngalaxy.lib.helpers.ModHelperBase;
 import zollerngalaxy.mobs.ZGMobs;
@@ -33,8 +33,14 @@ public class ZollernGalaxyCore {
 	@Mod.Instance(ZGInfo.MOD_ID)
 	private static ZollernGalaxyCore INSTANCE;
 	
+	private static boolean devMode = true;
+	
 	public static ZollernGalaxyCore instance() {
 		return INSTANCE;
+	}
+	
+	public static boolean isInDevMode() {
+		return devMode;
 	}
 	
 	static {
@@ -50,7 +56,6 @@ public class ZollernGalaxyCore {
 		ZGItems.init();
 		ZGBlocks.init();
 		ZGBiomes.init();
-		ZGPlanets.init();
 		
 		instance().proxy.registerPreRendering();
 		instance().proxy.preInit(event);
@@ -66,6 +71,7 @@ public class ZollernGalaxyCore {
 		}
 		
 		ZGMobs.init();
+		ZGPlanets.init();
 		instance().proxy.registerInitRendering();
 		instance().proxy.init(event);
 		

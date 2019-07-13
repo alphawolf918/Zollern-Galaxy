@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "zollerngalaxy:zolstone",
+      "count": 4
+    }
+  ],
+  "result": {
+    "item": "zollerngalaxy:zolrockbricks",
+    "count": 4
+  }
+}

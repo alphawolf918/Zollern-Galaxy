@@ -2,7 +2,6 @@ package zollerngalaxy.biomes.purgot;
 
 import static net.minecraftforge.common.BiomeDictionary.Type.DEAD;
 import static net.minecraftforge.common.BiomeDictionary.Type.SPOOKY;
-import net.minecraft.block.Block;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeDecorator;
 import zollerngalaxy.biomes.BiomeSpace;
@@ -13,11 +12,8 @@ import zollerngalaxy.planets.ZGPlanets;
 
 public class BiomeLimbo extends BiomeSpace {
 	
-	public static int grassFoilageColorMultiplier = 0x00008b;
-	protected Block stoneBlock;
-	protected byte topMeta;
-	protected byte fillerMeta;
-	protected byte stoneMeta;
+	public static int grassFoilageColorMultiplier = 0x000000;
+	
 	public BiomeDecoratorPurgot biomeDecor = this.getBiomeDecorator();
 	
 	public BiomeLimbo(BiomeProperties props) {

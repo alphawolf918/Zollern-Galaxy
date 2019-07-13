@@ -3,7 +3,7 @@ package zollerngalaxy.blocks.creativetabs;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import zollerngalaxy.blocks.ZGBlocks;
-import zollerngalaxy.blocks.items.ZGItems;
+import zollerngalaxy.items.ZGItems;
 import zollerngalaxy.lib.helpers.ZGHelper;
 
 public class ZGTabs {

@@ -1,4 +1,4 @@
-package zollerngalaxy.lib.helpers;
+package zollerngalaxy.lib.helpers.json;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -16,6 +16,8 @@ import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import zollerngalaxy.config.ConfigManagerZG;
+import zollerngalaxy.core.ZollernGalaxyCore;
+import zollerngalaxy.lib.ZGInfo;
 import com.google.common.collect.ImmutableMap;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -24,7 +26,7 @@ import com.google.gson.GsonBuilder;
 // work follows the Mojang EULA.
 // The original source is viewable at
 // https://gist.github.com/williewillus/a1a899ce5b0f0ba099078d46ae3dae6e
-public class JSONRecipes {
+public class JSONRecipeHelper {
 	// This is a janky JSON generator, for porting from below 1.12 to 1.12.
 	// Simply replace calls to GameRegistry.addShapeless/ShapedRecipe with these
 	// methods, which will dump it to a json in RECIPE_DIR
@@ -42,12 +44,16 @@ public class JSONRecipes {
 	private static File RECIPE_DIR = null;
 	private static File ADVANCE_DIR = null;
 	private static final Set<String> USED_OD_NAMES = new TreeSet<>();
-	private static final boolean ENABLE = false;
+	
+	private static final boolean ENABLE = ZollernGalaxyCore.isInDevMode();
+	private static final String MOD_ID = ZGInfo.MOD_ID;
+	private static final String ASSETS_PATH = "../../../../src/main/resources/assets/";
+	private static final String FULL_PATH = ASSETS_PATH + MOD_ID;
 	
 	private static void setupDir() {
 		if (RECIPE_DIR == null) {
 			RECIPE_DIR = ConfigManagerZG.configuration.getConfigFile().toPath()
-					.resolve("../recipes/").toFile();
+					.resolve(FULL_PATH + "/recipes/").toFile();
 		}
 		if (!RECIPE_DIR.exists()) {
 			RECIPE_DIR.mkdir();
@@ -57,7 +63,7 @@ public class JSONRecipes {
 	private static void setupAdvDir() {
 		if (ADVANCE_DIR == null) {
 			ADVANCE_DIR = ConfigManagerZG.configuration.getConfigFile().toPath()
-					.resolve("../advancements/").toFile();
+					.resolve(FULL_PATH + "/advancements/").toFile();
 		}
 		if (!ADVANCE_DIR.exists()) {
 			ADVANCE_DIR.mkdir();
@@ -109,16 +115,14 @@ public class JSONRecipes {
 		json.put("result", serializeItem(output));
 		
 		// names the json the same name as the output's registry name
-		// repeatedly adds _alt if a file already exists
-		// janky I know but it works
 		String suffix = output.getItem().getHasSubtypes() ? "_" + output.getItemDamage() : "";
 		File file = new File(RECIPE_DIR, output.getItem().getRegistryName().getResourcePath()
 				+ suffix + ".json");
 		
 		while (file.exists()) {
-			suffix += "_alt";
+			file.delete();
 			file = new File(RECIPE_DIR, output.getItem().getRegistryName().getResourcePath()
-					+ suffix + ".json");
+					+ ".json");
 		}
 		
 		writeAdvancements(output.getItem().getRegistryName().getResourcePath() + suffix);
@@ -152,14 +156,12 @@ public class JSONRecipes {
 		json.put("result", serializeItem(output));
 		
 		// names the json the same name as the output's registry name
-		// repeatedly adds _alt if a file already exists
-		// janky I know but it works
 		String suffix = output.getItem().getHasSubtypes() ? "_" + output.getItemDamage() : "";
 		File file = new File(RECIPE_DIR, output.getItem().getRegistryName().getResourcePath()
 				+ suffix + ".json");
 		
 		while (file.exists()) {
-			suffix += "_alt";
+			file.delete();
 			file = new File(RECIPE_DIR, output.getItem().getRegistryName().getResourcePath()
 					+ suffix + ".json");
 		}
@@ -228,7 +230,7 @@ public class JSONRecipes {
 		LinkedList<String> reqs = new LinkedList<>();
 		
 		json.put("parent", "minecraft:recipes/root");
-		recipes.add("moreplanets:" + result);
+		recipes.add(MOD_ID + ":" + result);
 		rewards.put("recipes", recipes);
 		
 		has_item.put("trigger", "minecraft:inventory_changed");
@@ -253,7 +255,7 @@ public class JSONRecipes {
 		File f = new File(ADVANCE_DIR, result + suffix + ".json");
 		
 		while (f.exists()) {
-			suffix += "_alt";
+			f.delete();
 			f = new File(ADVANCE_DIR, result + suffix + ".json");
 		}
 		

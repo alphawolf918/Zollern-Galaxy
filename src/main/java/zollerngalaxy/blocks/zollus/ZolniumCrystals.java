@@ -13,7 +13,7 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import zollerngalaxy.blocks.ZGBlockFlower;
-import zollerngalaxy.blocks.items.ZGItems;
+import zollerngalaxy.items.ZGItems;
 import zollerngalaxy.lib.helpers.ZGHelper;
 
 public class ZolniumCrystals extends ZGBlockFlower {

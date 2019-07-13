@@ -1,4 +1,4 @@
-package zollerngalaxy.blocks.items;
+package zollerngalaxy.items;
 
 import net.minecraft.item.Item;
 import zollerngalaxy.lib.helpers.CommonZGRegisterHelper;

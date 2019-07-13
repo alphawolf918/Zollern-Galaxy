@@ -16,6 +16,8 @@ public class ZGBiomeBase extends BiomeGenBaseGC {
 	protected int skyColor = 0x0099ff;
 	private String singleName = "";
 	
+	protected Block stoneBlock;
+	
 	public ZGBiomeBase(BiomeProperties properties) {
 		super(properties, true);
 		ZGBiomes.biomeList.add(this);
@@ -146,6 +148,15 @@ public class ZGBiomeBase extends BiomeGenBaseGC {
 	
 	public Block getTopBlock() {
 		return this.topBlock.getBlock();
+	}
+	
+	public Biome setStoneBlock(Block b) {
+		this.stoneBlock = b;
+		return this;
+	}
+	
+	public Block getStoneBlock() {
+		return this.stoneBlock;
 	}
 	
 	public Biome setTempCategory(TempCategory tc) {

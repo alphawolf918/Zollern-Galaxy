@@ -225,7 +225,7 @@ public class ZGPlanets {
 		
 		// Planet Purgot
 		planetPurgot.setParentSolarSystem(systemPsios);
-		planetPurgot.setPlanetClass(EnumPlanetClass.NINE);
+		planetPurgot.setPlanetClass(EnumPlanetClass.R);
 		planetPurgot.setRingColorRGB(0.1F, 0.9F, 2.6F);
 		planetPurgot.setPhaseShift(0.0F);
 		planetPurgot.setRelativeOrbitTime(10F);
@@ -233,7 +233,7 @@ public class ZGPlanets {
 		planetPurgot.setTierRequired(5);
 		planetPurgot.setRelativeSize(40.0F);
 		planetPurgot.setPlanetTemperature(34.5f);
-		planetPurgot.setPlanetToxicity(15.2f);
+		planetPurgot.setPlanetToxicity(5.2f);
 		planetPurgot.setPlanetRadiation(6.2f);
 		planetPurgot.setWindLevel(5.7F);
 		planetPurgot.setDensity(0.3F);
@@ -255,7 +255,7 @@ public class ZGPlanets {
 		planetXathius.setPhaseShift(0.0F);
 		planetXathius.setRelativeOrbitTime(3F);
 		planetXathius.setDistanceFromCenter(3.4F);
-		planetXathius.setTierRequired(4);
+		planetXathius.setTierRequired(5);
 		planetXathius.setRelativeSize(20.0F);
 		planetXathius.setPlanetTemperature(82.4f);
 		planetXathius.setPlanetToxicity(1.5f);
@@ -279,7 +279,7 @@ public class ZGPlanets {
 		planetOasis.setPhaseShift(0.0f);
 		planetOasis.setRelativeOrbitTime(6F);
 		planetXathius.setDistanceFromCenter(2.5f);
-		planetOasis.setTierRequired(5);
+		planetOasis.setTierRequired(6);
 		planetOasis.setRelativeSize(64.0f);
 		planetOasis.setPlanetTemperature(68.2f);
 		planetOasis.setPlanetToxicity(0.5f);

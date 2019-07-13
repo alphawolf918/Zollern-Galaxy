@@ -129,7 +129,7 @@ public class WorldProviderZollus extends WorldProviderZG {
 	
 	@Override
 	public boolean hasSunset() {
-		return false;
+		return true;
 	}
 	
 	@Override
@@ -181,7 +181,7 @@ public class WorldProviderZollus extends WorldProviderZG {
 	
 	@Override
 	public boolean isSkyColored() {
-		return false;
+		return true;
 	}
 	
 	@Override
