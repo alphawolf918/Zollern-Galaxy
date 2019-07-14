@@ -14,6 +14,7 @@ public class ZGBiomeBase extends BiomeGenBaseGC {
 	protected int foliageColor = 0x00ff00;
 	protected int grassColor = 0x00ff00;
 	protected int skyColor = 0x0099ff;
+	protected float temp = 0.0F;
 	private String singleName = "";
 	
 	protected Block stoneBlock;

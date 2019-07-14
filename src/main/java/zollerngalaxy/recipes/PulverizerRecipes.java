@@ -1,6 +1,5 @@
 package zollerngalaxy.recipes;
 
-import micdoodle8.mods.galacticraft.core.GCItems;
 import net.minecraft.item.ItemStack;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.items.ZGItems;
@@ -29,8 +28,14 @@ public class PulverizerRecipes {
 		ThermalExpansionHelper.addPulverizerRecipe(5400, new ItemStack(ZGBlocks.edenTinOre),
 				new ItemStack(ItemHelper.getItemFromStack(TFItems.itemMaterial.dustTin), 4, 65));
 		
+		// Silver
+		ThermalExpansionHelper.addPulverizerRecipe(5400, new ItemStack(ZGBlocks.edenSilverOre),
+				new ItemStack(ItemHelper.getItemFromStack(TFItems.itemMaterial.dustSilver), 4, 66));
+		
 		// Lead
 		ThermalExpansionHelper.addPulverizerRecipe(5400, new ItemStack(ZGBlocks.purgLeadOre),
+				new ItemStack(ItemHelper.getItemFromStack(TFItems.itemMaterial.dustLead), 4, 67));
+		ThermalExpansionHelper.addPulverizerRecipe(5400, new ItemStack(ZGBlocks.edenLeadOre),
 				new ItemStack(ItemHelper.getItemFromStack(TFItems.itemMaterial.dustLead), 4, 67));
 		
 		// Iron
@@ -61,26 +66,40 @@ public class PulverizerRecipes {
 				.addPulverizerRecipe(5400, new ItemStack(ZGBlocks.edenAluminumOre), new ItemStack(
 						ItemHelper.getItemFromStack(TFItems.itemMaterial.dustAluminum), 4, 68));
 		
+		// Steel
+		ThermalExpansionHelper.addPulverizerRecipe(5400, new ItemStack(ZGBlocks.edenSteelOre),
+				new ItemStack(ItemHelper.getItemFromStack(TFItems.itemMaterial.dustSteel), 4, 96));
+		
 		// Bronze
 		ThermalExpansionHelper.addPulverizerRecipe(5400, new ItemStack(ZGBlocks.edenBronzeOre),
 				new ItemStack(ItemHelper.getItemFromStack(TFItems.itemMaterial.dustBronze), 4, 99));
+		
+		// Invar
+		ThermalExpansionHelper.addPulverizerRecipe(5400, new ItemStack(ZGBlocks.edenInvarOre),
+				new ItemStack(ItemHelper.getItemFromStack(TFItems.itemMaterial.dustInvar), 4, 98));
+		
+		// Electrum
+		ThermalExpansionHelper
+				.addPulverizerRecipe(5400, new ItemStack(ZGBlocks.edenElectrumOre), new ItemStack(
+						ItemHelper.getItemFromStack(TFItems.itemMaterial.dustElectrum), 4, 97));
+		
+		// Platinum
+		ThermalExpansionHelper
+				.addPulverizerRecipe(5400, new ItemStack(ZGBlocks.edenPlatinumOre), new ItemStack(
+						ItemHelper.getItemFromStack(TFItems.itemMaterial.dustPlatinum), 4, 70));
 		
 		// Cobalt
 		ThermalExpansionHelper.addPulverizerRecipe(5400, new ItemStack(ZGBlocks.kriffCobaltOre),
 				new ItemStack(ZGItems.dustCobalt, 4));
 		ThermalExpansionHelper.addPulverizerRecipe(5400, new ItemStack(ZGBlocks.purgCobaltOre),
 				new ItemStack(ZGItems.dustCobalt, 4));
+		ThermalExpansionHelper.addPulverizerRecipe(5400, new ItemStack(ZGBlocks.edenCobaltOre),
+				new ItemStack(ZGItems.dustCobalt, 4));
 		
 		// Evenium
 		ThermalExpansionHelper.addPulverizerRecipe(5400, new ItemStack(ZGBlocks.purgEveniumOre),
 				new ItemStack(ZGItems.dustEve, 4));
-		
-		// Meteoric Iron
-		ThermalExpansionHelper.addPulverizerRecipe(5400,
-				new ItemStack(ZGBlocks.purgMeteoricIronOre), new ItemStack(GCItems.meteoricIronRaw,
-						4));
-		ThermalExpansionHelper.addPulverizerRecipe(5400,
-				new ItemStack(ZGBlocks.edenMeteoricIronOre), new ItemStack(GCItems.meteoricIronRaw,
-						4));
+		ThermalExpansionHelper.addPulverizerRecipe(5400, new ItemStack(ZGBlocks.edenEveniumOre),
+				new ItemStack(ZGItems.dustEve, 4));
 	}
 }

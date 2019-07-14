@@ -13,7 +13,7 @@ public class ZGItemBase extends Item implements ISingleZGItemRender {
 	public ZGItemBase(String name) {
 		super();
 		setItemName(this, name);
-		if (ZollernGalaxyCore.isInDevMode()) {
+		if (ZollernGalaxyCore.instance().isInDevMode()) {
 			JSONRegistryHelper.registerItem(name);
 		}
 	}

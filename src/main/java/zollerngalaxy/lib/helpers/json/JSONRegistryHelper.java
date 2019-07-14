@@ -5,6 +5,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import net.minecraftforge.common.config.Configuration;
 import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.ZollernGalaxyCore;
 import zollerngalaxy.lib.ZGInfo;
@@ -12,27 +13,31 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 /**
- * JSON Block/Item generator Saves a good bit of hassle and time of dealing with
- * JSON files NOTE: This is only for REGULAR blocks; special ones still need to
- * be modified after they're generated.
+ * JSON Block/Item generator. Saves a good bit of hassle and time of dealing
+ * with JSON files. NOTE: This is only for REGULAR blocks; special ones still
+ * need to be modified after they're generated.
  * 
  * @author Zollern Wolf
  */
 public final class JSONRegistryHelper {
 	
-	private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
-	private static File ITEM_DIR = null;
-	private static File BLOCK_DIR = null;
-	private static File BLOCK_STATES_DIR = null;
-	
-	// Change to True or False
-	private static final boolean ENABLE = ZollernGalaxyCore.isInDevMode();
+	// Change to True or False or make a method like this
+	private static final boolean ENABLE = ZollernGalaxyCore.instance().isInDevMode();
 	
 	// Change to ID of your Mod
 	private static final String MOD_ID = ZGInfo.MOD_ID;
 	
+	// Change to your config file
+	private static final Configuration config = ConfigManagerZG.configuration;
+	
+	// Shouldn't need to edit below this line
 	private static final String ASSETS_PATH = "../../../../src/main/resources/assets/";
 	private static final String FULL_PATH = ASSETS_PATH + MOD_ID;
+	
+	private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
+	private static File ITEM_DIR = null;
+	private static File BLOCK_DIR = null;
+	private static File BLOCK_STATES_DIR = null;
 	
 	private static void setupItemDir() {
 		if (ITEM_DIR == null) {
@@ -64,10 +69,8 @@ public final class JSONRegistryHelper {
 		}
 	}
 	
-	// Change to your configuration file
 	private static File getPath(String path) {
-		return ConfigManagerZG.configuration.getConfigFile().toPath()
-				.resolve(FULL_PATH + "/" + path + "/").toFile();
+		return config.getConfigFile().toPath().resolve(FULL_PATH + "/" + path + "/").toFile();
 	}
 	
 	public static void registerItem(String itemName) {
@@ -77,7 +80,6 @@ public final class JSONRegistryHelper {
 		
 		JSONRegistryHelper.setupItemDir();
 		
-		// Item Model (Models)
 		Map<String, Object> json = new LinkedHashMap<>();
 		Map<String, Object> layers = new LinkedHashMap<>();
 		
@@ -110,7 +112,6 @@ public final class JSONRegistryHelper {
 		String jsonFileName = blockName + ".json";
 		JSONRegistryHelper.setupBlockDirs();
 		
-		// Block Model (Models)
 		Map<String, Object> json = new LinkedHashMap<>();
 		Map<String, Object> all = new LinkedHashMap<>();
 		
@@ -132,7 +133,6 @@ public final class JSONRegistryHelper {
 			e.printStackTrace();
 		}
 		
-		// Register BlockState
 		JSONRegistryHelper.registerBlockState(blockName);
 	}
 	
@@ -159,7 +159,6 @@ public final class JSONRegistryHelper {
 			e.printStackTrace();
 		}
 		
-		// Register block in item models
 		JSONRegistryHelper.registerBlockItem(blockName);
 	}
 	
@@ -181,5 +180,4 @@ public final class JSONRegistryHelper {
 			e.printStackTrace();
 		}
 	}
-	
 }

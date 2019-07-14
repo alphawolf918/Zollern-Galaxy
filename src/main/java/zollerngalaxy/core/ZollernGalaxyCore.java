@@ -22,6 +22,7 @@ import zollerngalaxy.planets.ZGPlanets;
 import zollerngalaxy.proxy.CommonProxy;
 import zollerngalaxy.proxy.IProxy;
 import zollerngalaxy.recipes.ZGRecipeRegistry;
+import zollerngalaxy.utils.OreDictRegistry;
 
 @Mod(modid = ZGInfo.MOD_ID, version = ZGInfo.modVersion, name = ZGInfo.name,
 		dependencies = ZGInfo.DEPENDENCIES)
@@ -39,7 +40,7 @@ public class ZollernGalaxyCore {
 		return INSTANCE;
 	}
 	
-	public static boolean isInDevMode() {
+	public boolean isInDevMode() {
 		return devMode;
 	}
 	
@@ -56,6 +57,7 @@ public class ZollernGalaxyCore {
 		ZGItems.init();
 		ZGBlocks.init();
 		ZGBiomes.init();
+		OreDictRegistry.init();
 		
 		instance().proxy.registerPreRendering();
 		instance().proxy.preInit(event);

@@ -11,6 +11,7 @@ import micdoodle8.mods.galacticraft.planets.venus.dimension.TeleportTypeVenus;
 import net.minecraft.util.ResourceLocation;
 import zollerngalaxy.biomes.ZGBiomes;
 import zollerngalaxy.config.ConfigManagerZG;
+import zollerngalaxy.core.dimensions.worldproviders.WorldProviderEden;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderKriffon;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderPurgot;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderZollus;
@@ -199,7 +200,7 @@ public class ZGPlanets {
 		
 		// Planet Purgot
 		planetPurgot.setParentSolarSystem(systemPsios);
-		planetPurgot.setPlanetClass(EnumPlanetClass.R);
+		planetPurgot.setPlanetClass(EnumPlanetClass.NINE);
 		planetPurgot.setRingColorRGB(0.1F, 0.9F, 2.6F);
 		planetPurgot.setPhaseShift(0.0F);
 		planetPurgot.setRelativeOrbitTime(10F);
@@ -222,8 +223,7 @@ public class ZGPlanets {
 		totalPlanets++;
 		
 		// Planet Eden
-		// planetEden.setDimensionInfo(ConfigManagerZG.planetEdenDimensionId,
-		// WorldProviderEden.class);
+		planetEden.setDimensionInfo(ConfigManagerZG.planetEdenDimensionId, WorldProviderEden.class);
 		planetEden.setParentSolarSystem(systemPsios);
 		planetEden.setPlanetClass(EnumPlanetClass.M);
 		planetEden.setRingColorRGB(0.1F, 0.9F, 2.6F);
@@ -242,6 +242,7 @@ public class ZGPlanets {
 		planetEden.setPlanetGasses(EnumAtmosphericGas.NITROGEN, EnumAtmosphericGas.OXYGEN,
 				EnumAtmosphericGas.ARGON, EnumAtmosphericGas.WATER);
 		planetEden.setPlanetIcon("eden");
+		planetEden.setBiomeInfo(ZGBiomes.EDEN_GREEN_LANDS);
 		totalPlanets++;
 		
 		// Planet Xathius
@@ -323,8 +324,7 @@ public class ZGPlanets {
 				new TeleportTypeVenus());
 		GalacticraftRegistry.registerTeleportType(WorldProviderPurgot.class,
 				new TeleportTypeVenus());
-		// GalacticraftRegistry.registerTeleportType(WorldProviderEden.class,
-		// teleType);
+		GalacticraftRegistry.registerTeleportType(WorldProviderEden.class, new TeleportTypeVenus());
 		
 		// GalacticraftRegistry.registerTeleportType(WorldProviderXathius.class,
 		// teleType);

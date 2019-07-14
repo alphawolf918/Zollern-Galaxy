@@ -84,7 +84,11 @@ public class ZGBlocks {
 	public static final Block edenBrightStone = new ZGShineBlock("brightstone",
 			ZGItems.dustBrightstone);
 	public static final Block edenAluminumOre = new ZGBlockOre("edenaluminumore", 1.5F);
+	public static final Block edenSteelOre = new ZGBlockOre("edensteelore", 3.0F);
 	public static final Block edenBronzeOre = new ZGBlockOre("edenbronzeore", 2.8F);
+	public static final Block edenInvarOre = new ZGBlockOre("edeninvarore", 2.8F);
+	public static final Block edenElectrumOre = new ZGBlockOre("edenelectrumore", 2.8F);
+	public static final Block edenPlatinumOre = new ZGBlockOre("edenplatinumore", 4.2F);
 	public static final Block edenCoalOre = new ZGOreGem("edencoalore", 1.5F, Items.COAL);
 	public static final Block edenCopperOre = new ZGBlockOre("edencopperore", 1.4F);
 	public static final Block edenDeshOre = new ZGOreGem("edendeshore", 2.4F,
@@ -92,6 +96,7 @@ public class ZGBlocks {
 	public static final Block edenDiamondOre = new ZGOreGem("edendiamondore", 2.0F, Items.DIAMOND);
 	public static final Block edenEmeraldOre = new ZGOreGem("edenemeraldore", 2.5F, Items.EMERALD);
 	public static final Block edenGoldOre = new ZGBlockOre("edengoldore", 1.5F);
+	public static final Block edenSilverOre = new ZGBlockOre("edensilverore", 1.6F);
 	public static final Block edenIronOre = new ZGBlockOre("edenironore", 1.4F);
 	public static final Block edenLapisOre = new ZGOreGem("edenlapisore", 1.2F, Items.DYE)
 			.setDropMeta(4, true);
@@ -100,7 +105,11 @@ public class ZGBlocks {
 	public static final Block edenRedstoneOre = new ZGOreGem("edenredstoneore", 1.6F,
 			Items.REDSTONE);
 	public static final Block edenTinOre = new ZGBlockOre("edentinore", 1.2F);
+	public static final Block edenLeadOre = new ZGBlockOre("edenleadore", 1.2F);
+	public static final Block edenNickleOre = new ZGBlockOre("edennickleore", 1.2F);
 	public static final Block edenViriniumOre = new ZGOreGem("edenviriore", 2.6F, ZGItems.rawViri);
+	public static final Block edenCobaltOre = new ZGBlockOre("edencobaltore", 2.6F);
+	public static final Block edenEveniumOre = new ZGBlockOre("edeneveniumore", 2.8F);
 	
 	// Metals
 	public static final Block blockViri = new ZGBlockMetal("viriblock");
@@ -125,9 +134,11 @@ public class ZGBlocks {
 				purgLeadOre, purgRedstoneOre, edenSurfaceRock, edenDirt, edenStone,
 				edenSacredStone, edenCobbleRock, edenRockBricks, edenWinterRock, edenBloodSand,
 				edenBloodStone, edenBoneStone, edenGravel, edenBrightStone, edenAluminumOre,
-				edenBronzeOre, edenCoalOre, edenCopperOre, edenDeshOre, edenDiamondOre,
-				edenEmeraldOre, edenGoldOre, edenIronOre, edenLapisOre, edenMeteoricIronOre,
-				edenRedstoneOre, edenTinOre, edenViriniumOre, blockViri, blockCobalt, blockEve);
+				edenSteelOre, edenBronzeOre, edenInvarOre, edenElectrumOre, edenPlatinumOre,
+				edenCoalOre, edenCopperOre, edenDeshOre, edenDiamondOre, edenEmeraldOre,
+				edenGoldOre, edenSilverOre, edenIronOre, edenLapisOre, edenMeteoricIronOre,
+				edenRedstoneOre, edenTinOre, edenLeadOre, edenNickleOre, edenViriniumOre,
+				edenCobaltOre, edenEveniumOre, blockViri, blockCobalt, blockEve);
 		ZGHelper.Log("Loaded a total of " + totalBlocks + " new blocks.");
 	}
 	

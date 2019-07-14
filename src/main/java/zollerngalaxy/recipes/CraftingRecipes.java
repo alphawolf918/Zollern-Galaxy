@@ -44,6 +44,7 @@ public class CraftingRecipes {
 	private static void addIngotMetal(Item ingotIn, Block blockOut) {
 		ZGRecipeHelper.addRecipe(new ItemStack(blockOut, 1), new Object[] { "III", "III", "III",
 				'I', ingotIn });
+		ZGRecipeHelper.addShapelessRecipe(new ItemStack(ingotIn, 9), new ItemStack(blockOut));
 	}
 	
 	private static void addBriteStone(Item dustIn, Block blockOut) {

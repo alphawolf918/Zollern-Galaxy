@@ -22,8 +22,6 @@ public class BiomeDecoratorPurgot extends BiomeDecoratorZG {
 	private WorldGenerator emeraldGen;
 	private WorldGenerator meteoricIronGen;
 	
-	private int purgCrystalsPerChunk = 1;
-	
 	public BiomeDecoratorPurgot() {
 		this.dirtGen = new WorldGenMinableZG(ZGBlocks.purgDirt, ZGBlocks.purgSurfaceRock,
 				EnumOreGenZG.DIRT);

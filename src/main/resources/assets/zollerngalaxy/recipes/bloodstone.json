@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SS",
+    "SS"
+  ],
+  "key": {
+    "S": {
+      "item": "zollerngalaxy:bloodsand"
+    }
+  },
+  "result": {
+    "item": "zollerngalaxy:bloodstone",
+    "count": 4
+  }
+}

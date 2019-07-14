@@ -71,7 +71,7 @@ public class BiomeSpace extends ZGBiomeBase {
 	 * @return The Planet to apply this biome to.
 	 */
 	public BiomeSpace setTemp(float biomeTemp) {
-		this.setTemp(biomeTemp);
+		this.temp = biomeTemp;
 		return this;
 	}
 	
@@ -81,7 +81,7 @@ public class BiomeSpace extends ZGBiomeBase {
 	 * @return Biome temp.
 	 */
 	public float getBiomeTemp() {
-		return this.getBiomeTemp();
+		return this.temp;
 	}
 	
 	/**

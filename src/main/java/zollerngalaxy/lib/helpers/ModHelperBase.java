@@ -6,6 +6,7 @@ import cofh.CoFHCore;
 import cofh.thermaldynamics.ThermalDynamics;
 import cofh.thermalexpansion.ThermalExpansion;
 import cofh.thermalfoundation.ThermalFoundation;
+import com.mjr.extraplanets.Constants;
 import erogenousbeef.bigreactors.common.BigReactors;
 
 public class ModHelperBase {
@@ -16,6 +17,7 @@ public class ModHelperBase {
 	public static boolean useThermalDynamics = false;
 	public static boolean useExtremeReactors = false;
 	public static boolean useMorePlanets = false;
+	public static boolean useExtraPlanets = false;
 	
 	public static void detectMods() {
 		useCofh = isModLoaded(CoFHCore.MOD_ID);
@@ -24,6 +26,7 @@ public class ModHelperBase {
 		useThermalDynamics = isModLoaded(ThermalDynamics.MOD_ID);
 		useExtremeReactors = isModLoaded(BigReactors.MODID);
 		useMorePlanets = isModLoaded(MorePlanetsCore.MOD_ID);
+		useExtraPlanets = isModLoaded(Constants.modID);
 	}
 	
 	public static boolean isModLoaded(String modId) {

@@ -9,6 +9,9 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.items.ZGItems;
+import zollerngalaxy.lib.helpers.ModHelperBase;
+import cofh.core.util.helpers.ItemHelper;
+import cofh.thermalfoundation.init.TFItems;
 
 public class SmeltRecipes {
 	
@@ -61,10 +64,33 @@ public class SmeltRecipes {
 				5), 2.4F); // Aluminum
 		SmeltRecipes.SmeltBlockToItem(ZGBlocks.edenMeteoricIronOre, new ItemStack(
 				GCItems.itemBasicMoon), 4.0F); // Meteoric Iron
-		SmeltRecipes.SmeltBlockToItem(ZGBlocks.purgLeadOre, new ItemStack(GCItems.basicItem, 1, 1),
+		SmeltRecipes.SmeltBlockToItem(ZGBlocks.edenLeadOre, new ItemStack(GCItems.basicItem, 1, 1),
 				2.4F); // Lead
-		SmeltRecipes.SmeltBlockToItem(ZGBlocks.purgTinOre, new ItemStack(GCItems.basicItem, 1, 1),
-				2.4F); // Lead
+		
+		// Other mod metals
+		if (ModHelperBase.useCofh) {
+			SmeltRecipes.SmeltBlockToItem(ZGBlocks.edenSilverOre,
+					new ItemStack(ItemHelper.getItemFromStack(TFItems.itemMaterial.ingotSilver), 1,
+							130), 3.7F); // Silver
+			SmeltRecipes.SmeltBlockToItem(ZGBlocks.edenNickleOre,
+					new ItemStack(ItemHelper.getItemFromStack(TFItems.itemMaterial.ingotNickel), 1,
+							133), 3.5F); // Nickle
+			SmeltRecipes.SmeltBlockToItem(ZGBlocks.edenSteelOre,
+					new ItemStack(ItemHelper.getItemFromStack(TFItems.itemMaterial.ingotSteel), 1,
+							160), 4.2F); // Steel
+			SmeltRecipes.SmeltBlockToItem(ZGBlocks.edenBronzeOre,
+					new ItemStack(ItemHelper.getItemFromStack(TFItems.itemMaterial.ingotBronze), 1,
+							163), 4.2F); // Bronze
+			SmeltRecipes.SmeltBlockToItem(ZGBlocks.edenElectrumOre,
+					new ItemStack(ItemHelper.getItemFromStack(TFItems.itemMaterial.ingotElectrum),
+							1, 161), 4.2F); // Electrum
+			SmeltRecipes.SmeltBlockToItem(ZGBlocks.edenInvarOre,
+					new ItemStack(ItemHelper.getItemFromStack(TFItems.itemMaterial.ingotInvar), 1,
+							162), 4.2F); // Invar
+			SmeltRecipes.SmeltBlockToItem(ZGBlocks.edenPlatinumOre,
+					new ItemStack(ItemHelper.getItemFromStack(TFItems.itemMaterial.ingotPlatinum),
+							1, 134), 4.2F); // Platinum
+		}
 		
 		// Xathius
 		// TODO

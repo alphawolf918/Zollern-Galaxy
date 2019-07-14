@@ -45,7 +45,7 @@ public class JSONRecipeHelper {
 	private static File ADVANCE_DIR = null;
 	private static final Set<String> USED_OD_NAMES = new TreeSet<>();
 	
-	private static final boolean ENABLE = ZollernGalaxyCore.isInDevMode();
+	private static final boolean ENABLE = ZollernGalaxyCore.instance().isInDevMode();
 	private static final String MOD_ID = ZGInfo.MOD_ID;
 	private static final String ASSETS_PATH = "../../../../src/main/resources/assets/";
 	private static final String FULL_PATH = ASSETS_PATH + MOD_ID;

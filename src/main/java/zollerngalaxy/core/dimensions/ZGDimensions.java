@@ -21,10 +21,9 @@ public class ZGDimensions {
 		// Psion-6
 		ZGDimensions.ZOLLUS = ZGDimensions.getDimType(ConfigManagerZG.planetZollusDimensionId);
 		ZGDimensions.KRIFFON = ZGDimensions.getDimType(ConfigManagerZG.planetKriffonDimensionId);
-		// ZGDimensions.EDEN = WorldUtil
-		// .getDimensionTypeById(ConfigManagerZG.planetEdenDimensionId);
 		ZGDimensions.PURGOT = WorldUtil
 				.getDimensionTypeById(ConfigManagerZG.planetPurgotDimensionId);
+		ZGDimensions.EDEN = WorldUtil.getDimensionTypeById(ConfigManagerZG.planetEdenDimensionId);
 		//
 		// // Praedyth
 		// ZGDimensions.OASIS = WorldUtil

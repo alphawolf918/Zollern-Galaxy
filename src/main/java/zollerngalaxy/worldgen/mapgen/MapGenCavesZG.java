@@ -189,7 +189,7 @@ public class MapGenCavesZG extends MapGenBase {
 			double d2 = chunkZ * 16 + this.rand.nextInt(16);
 			int k1 = 1;
 			
-			if (this.rand.nextInt(2) == 0) {
+			if (this.rand.nextInt(1) == 0) {
 				this.generateLargeCaveNode(this.rand.nextLong(), oriX, oriZ, chunk, d0, d1, d2);
 				k1 += this.rand.nextInt(6);
 			}
@@ -199,7 +199,7 @@ public class MapGenCavesZG extends MapGenBase {
 				float f1 = (this.rand.nextFloat() - 0.5F) * 2.0F / 8.0F;
 				float f2 = this.rand.nextFloat() * 2.0F + this.rand.nextFloat();
 				
-				if (this.rand.nextInt(10) == 0) {
+				if (this.rand.nextInt(5) == 0) {
 					f2 *= this.rand.nextFloat() * this.rand.nextFloat() * 3.0F + 1.0F;
 				}
 				this.generateCaveNode(this.rand.nextLong(), oriX, oriZ, chunk, d0, d1, d2, f2, f,
