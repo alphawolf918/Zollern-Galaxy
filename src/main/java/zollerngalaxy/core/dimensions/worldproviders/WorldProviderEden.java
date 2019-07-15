@@ -3,6 +3,7 @@ package zollerngalaxy.core.dimensions.worldproviders;
 import java.util.ArrayList;
 import java.util.List;
 import micdoodle8.mods.galacticraft.api.galaxies.CelestialBody;
+import micdoodle8.mods.galacticraft.api.prefab.world.gen.BiomeAdaptive;
 import micdoodle8.mods.galacticraft.api.vector.Vector3;
 import micdoodle8.mods.galacticraft.core.client.CloudRenderer;
 import net.minecraft.block.Block;
@@ -210,11 +211,6 @@ public class WorldProviderEden extends WorldProviderZG {
 	}
 	
 	@Override
-	public void init() {
-		this.biomeProvider = new BiomeProviderEden();
-	}
-	
-	@Override
 	public DimensionType getDimensionType() {
 		return ZGDimensions.EDEN;
 	}
@@ -225,8 +221,9 @@ public class WorldProviderEden extends WorldProviderZG {
 	}
 	
 	@Override
-	public BiomeProvider getBiomeProvider() {
-		return new BiomeProviderEden();
+	public Class<? extends BiomeProvider> getBiomeProviderClass() {
+		BiomeAdaptive.setBodyMultiBiome(ZGPlanets.planetEden);
+		return BiomeProviderEden.class;
 	}
 	
 	@Override

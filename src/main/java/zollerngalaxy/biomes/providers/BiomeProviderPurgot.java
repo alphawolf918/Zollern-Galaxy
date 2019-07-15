@@ -16,7 +16,7 @@ import net.minecraft.world.gen.layer.GenLayer;
 import net.minecraft.world.gen.layer.IntCache;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import zollerngalaxy.biomes.genlayers.GenLayerPurgot;
+import zollerngalaxy.biomes.genlayers.purgot.GenLayerPurgot;
 import zollerngalaxy.planets.ZGPlanets;
 
 public class BiomeProviderPurgot extends BiomeProvider {

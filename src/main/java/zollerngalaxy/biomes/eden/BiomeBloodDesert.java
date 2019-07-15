@@ -1,7 +1,9 @@
 package zollerngalaxy.biomes.eden;
 
-import static net.minecraftforge.common.BiomeDictionary.Type.LUSH;
-import static net.minecraftforge.common.BiomeDictionary.Type.WET;
+import static net.minecraftforge.common.BiomeDictionary.Type.DEAD;
+import static net.minecraftforge.common.BiomeDictionary.Type.DRY;
+import static net.minecraftforge.common.BiomeDictionary.Type.HOT;
+import static net.minecraftforge.common.BiomeDictionary.Type.MOUNTAIN;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeDecorator;
 import net.minecraftforge.fml.relauncher.Side;
@@ -12,35 +14,34 @@ import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.lib.helpers.CommonZGRegisterHelper;
 import zollerngalaxy.planets.ZGPlanets;
 
-public class BiomeEden extends BiomeSpace {
+public class BiomeBloodDesert extends BiomeSpace {
 	
 	public static int grassFoilageColorMultiplier = 0x8b0000;
 	
 	public BiomeDecoratorEden biomeDecor = this.getBiomeDecorator();
 	
-	public BiomeEden(BiomeProperties props) {
+	public BiomeBloodDesert(BiomeProperties props) {
 		super("greenlands", props);
 		props.setRainDisabled();
-		this.setTempCategory(TempCategory.MEDIUM);
-		this.setTemp(5F);
-		this.setBiomeHeight(72);
+		this.setTempCategory(TempCategory.WARM);
+		this.setTemp(8.0F);
+		this.setBiomeHeight(102);
+		this.biomeDecor.edenTallGrassPerChunk = 0;
+		this.biomeDecor.edenFlowersPerChunk = 0;
+		this.decorator.generateFalls = true;
+		this.biomeDecor.generateLakes = true;
+		this.biomeDecor.deadBushPerChunk = 2;
 		this.enableSnow = false;
 		this.decorator.flowersPerChunk = -999;
 		this.decorator.treesPerChunk = -999;
 		this.decorator.grassPerChunk = -999;
 		this.decorator.mushroomsPerChunk = -999;
-		this.decorator.generateFalls = true;
 		this.biomeDecor.edenTallGrassPerChunk = 1;
 		this.biomeDecor.edenFlowersPerChunk = 4;
 		this.grassFoilageColorMultiplier = 0x009f00;
-		this.waterColor = 0x009f9f;
-		this.spawnableCaveCreatureList.clear();
-		this.spawnableMonsterList.clear();
-		this.spawnableWaterCreatureList.clear();
-		this.spawnableCreatureList.clear();
-		this.topBlock = ZGBlocks.edenSurfaceRock.getDefaultState();
-		this.fillerBlock = ZGBlocks.edenDirt.getDefaultState();
-		this.stoneBlock = ZGBlocks.edenStone;
+		this.waterColor = 0x00009f;
+		this.topBlock = ZGBlocks.edenBloodSand.getDefaultState();
+		this.fillerBlock = ZGBlocks.edenBloodStone.getDefaultState();
 		this.setPlanetForBiome(ZGPlanets.planetEden);
 	}
 	
@@ -57,7 +58,7 @@ public class BiomeEden extends BiomeSpace {
 	
 	@Override
 	public void registerTypes(Biome biome) {
-		CommonZGRegisterHelper.registerBiomeType(biome, LUSH, WET);
+		CommonZGRegisterHelper.registerBiomeType(biome, HOT, DEAD, DRY, MOUNTAIN);
 	}
 	
 	@Override

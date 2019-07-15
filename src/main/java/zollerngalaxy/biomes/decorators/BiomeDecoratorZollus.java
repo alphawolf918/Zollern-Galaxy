@@ -22,7 +22,7 @@ public class BiomeDecoratorZollus extends BiomeDecoratorZG {
 	private WorldGenerator heartiumGen;
 	private WorldGenerator coalGen;
 	
-	private int zolCrystalsPerChunk = 1;
+	public int zolCrystalsPerChunk = 1;
 	
 	public BiomeDecoratorZollus() {
 		this.dirtGen = new WorldGenMinableZG(ZGBlocks.zolDirt, ZGBlocks.zolSurfaceRock,

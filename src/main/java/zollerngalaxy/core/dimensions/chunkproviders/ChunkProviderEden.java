@@ -2,7 +2,6 @@ package zollerngalaxy.core.dimensions.chunkproviders;
 
 import java.util.List;
 import java.util.Random;
-import micdoodle8.mods.galacticraft.api.prefab.world.gen.BiomeAdaptive;
 import micdoodle8.mods.galacticraft.api.world.ChunkProviderBase;
 import micdoodle8.mods.galacticraft.core.perlin.NoiseModule;
 import micdoodle8.mods.galacticraft.core.perlin.generator.Gradient;
@@ -15,6 +14,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.ChunkPrimer;
+import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.biomes.ZGBiomes;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.worldgen.mapgen.MapGenCavesZG;
@@ -22,9 +22,9 @@ import zollerngalaxy.worldgen.mapgen.MapGenRavinesZG;
 
 public class ChunkProviderEden extends ChunkProviderBase {
 	
-	public static final IBlockState BLOCK_TOP = ZGBlocks.edenSurfaceRock.getDefaultState();
-	public static final IBlockState BLOCK_FILL = ZGBlocks.edenDirt.getDefaultState();
-	public static final IBlockState BLOCK_LOWER = ZGBlocks.edenStone.getDefaultState();
+	public static IBlockState BLOCK_TOP = ZGBlocks.edenSurfaceRock.getDefaultState();
+	public static IBlockState BLOCK_FILL = ZGBlocks.edenDirt.getDefaultState();
+	public static IBlockState BLOCK_STONE = ZGBlocks.edenStone.getDefaultState();
 	
 	private final Random rand;
 	
@@ -35,13 +35,13 @@ public class ChunkProviderEden extends ChunkProviderBase {
 	
 	private final World world;
 	
-	private Biome[] biomesForGeneration = { ZGBiomes.EDEN_GREEN_LANDS };
+	private Biome[] biomesForGeneration = { ZGBiomes.EDEN_GREEN_LANDS, ZGBiomes.EDEN_BLOOD_DESERT };
 	
 	private final MapGenCavesZG caveGenerator = new MapGenCavesZG(ZGBlocks.edenStone, Blocks.LAVA);
 	private final MapGenRavinesZG ravineGenerator = new MapGenRavinesZG(ZGBlocks.edenStone);
 	
 	// DO NOT CHANGE
-	private static final int MID_HEIGHT = 72;
+	private static int MID_HEIGHT = 72;
 	private static final int CHUNK_SIZE_X = 16;
 	private static final int CHUNK_SIZE_Y = 128;
 	private static final int CHUNK_SIZE_Z = 16;
@@ -78,9 +78,20 @@ public class ChunkProviderEden extends ChunkProviderBase {
 					yDev = d + (d2 - d) * d3;
 				}
 				
+				int posX = chunkX * 16;
+				int posZ = chunkZ * 16;
+				int posY = world.getHeight(posX, posZ);
+				
+				Biome biome = world.getBiomeForCoordsBody(new BlockPos(posX, posY, posZ));
+				
+				if (biome instanceof BiomeSpace) {
+					BiomeSpace spaceBiome = (BiomeSpace) biome;
+					ChunkProviderEden.MID_HEIGHT = spaceBiome.getBiomeHeight();
+				}
+				
 				for (int y = 0; y < ChunkProviderEden.CHUNK_SIZE_Y - 1; y++) {
 					if (y < ChunkProviderEden.MID_HEIGHT + yDev) {
-						primer.setBlockState(x, y, z, BLOCK_LOWER);
+						primer.setBlockState(x, y, z, BLOCK_STONE);
 					}
 				}
 			}
@@ -96,10 +107,27 @@ public class ChunkProviderEden extends ChunkProviderBase {
 						.getNoise(var8 + par1 * 16, var9 * par2 * 16) / 3.0D + 3.0D + this.rand
 						.nextDouble() * 0.25D);
 				int var13 = -1;
+				
+				int x = var8 + par1 * 16;
+				int z = par2 * 16;
+				int y = world.getHeight(x, z);
+				
+				BlockPos posInWorld = new BlockPos(x, y, z);
+				
+				Biome currentBiome = world.getBiome(posInWorld);
+				
+				BLOCK_TOP = currentBiome.topBlock;
+				BLOCK_FILL = currentBiome.fillerBlock;
+				
+				if (currentBiome instanceof BiomeSpace) {
+					BiomeSpace biomeSpace = (BiomeSpace) currentBiome;
+					BLOCK_STONE = biomeSpace.getStoneBlock().getDefaultState();
+				}
+				
 				IBlockState state0 = BLOCK_TOP;
 				IBlockState state1 = BLOCK_FILL;
 				
-				for (int var16 = 127; var16 >= 0; --var16) {
+				for (int var16 = ChunkProviderEden.CHUNK_SIZE_Y - 1; var16 >= 0; --var16) {
 					final int index = this.getIndex(var8, var16, var9);
 					
 					if (var16 == 0) {
@@ -108,11 +136,11 @@ public class ChunkProviderEden extends ChunkProviderBase {
 						IBlockState var18 = primer.getBlockState(var8, var16, var9);
 						if (Blocks.AIR == var18) {
 							var13 = -1;
-						} else if (var18 == BLOCK_LOWER) {
+						} else if (var18 == BLOCK_STONE) {
 							if (var13 == -1) {
 								if (var12 <= 0) {
 									state0 = Blocks.AIR.getDefaultState();
-									state1 = BLOCK_LOWER;
+									state1 = BLOCK_STONE;
 								} else if (var16 >= var5 - -16 && var16 <= var5 + 1) {
 									state0 = BLOCK_FILL;
 								}
@@ -140,19 +168,19 @@ public class ChunkProviderEden extends ChunkProviderBase {
 		this.rand.setSeed(x * 341873128712L + z * 132897987541L);
 		ChunkPrimer chunkprimer = new ChunkPrimer();
 		this.setBlocksInChunk(x, z, chunkprimer);
-		this.replaceBlocksForBiome(x, z, chunkprimer, null);
+		this.biomesForGeneration = this.world.getBiomeProvider().getBiomes(
+				this.biomesForGeneration, x * 16, z * 16, 16, 16);
+		
+		this.replaceBlocksForBiome(x, z, chunkprimer, this.biomesForGeneration);
 		
 		this.caveGenerator.generate(this.world, x, z, chunkprimer);
 		this.ravineGenerator.generate(this.world, x, z, chunkprimer);
 		
-		// this.dungeonGeneratorMoon.generate(this.world, x, z, chunkprimer);
-		// this.villageGenerator.generate(this.world, x, z, chunkprimer);
-		
 		Chunk chunk = new Chunk(this.world, chunkprimer, x, z);
 		byte[] abyte = chunk.getBiomeArray();
-		final byte b = (byte) Biome.getIdForBiome(BiomeAdaptive.biomeDefault);
+		
 		for (int i = 0; i < abyte.length; ++i) {
-			abyte[i] = b;
+			abyte[i] = (byte) Biome.getIdForBiome(this.biomesForGeneration[i]);
 		}
 		
 		chunk.generateSkylightMap();

@@ -15,18 +15,33 @@ public class ZGBiomeBase extends BiomeGenBaseGC {
 	protected int grassColor = 0x00ff00;
 	protected int skyColor = 0x0099ff;
 	protected float temp = 0.0F;
+	protected int BIOME_HEIGHT = 63;
+	
 	private String singleName = "";
 	
 	protected Block stoneBlock;
 	
 	public ZGBiomeBase(BiomeProperties properties) {
 		super(properties, true);
+		this.spawnableCaveCreatureList.clear();
+		this.spawnableMonsterList.clear();
+		this.spawnableWaterCreatureList.clear();
+		this.spawnableCreatureList.clear();
 		ZGBiomes.biomeList.add(this);
 	}
 	
 	public ZGBiomeBase(String singleName, BiomeProperties properties) {
 		this(properties);
 		this.singleName = singleName;
+	}
+	
+	public Biome setBiomeHeight(int biomeHeight) {
+		this.BIOME_HEIGHT = biomeHeight;
+		return this;
+	}
+	
+	public int getBiomeHeight() {
+		return this.BIOME_HEIGHT;
 	}
 	
 	public Biome setSkyColor(int par1SkyColor) {

@@ -1,22 +1,22 @@
 package zollerngalaxy.worldgen;
 
 import java.util.Random;
+import net.minecraft.block.BlockBush;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
-import zollerngalaxy.blocks.ZGBlockFlower;
 
 public class WorldGenZGFlowers extends WorldGenerator {
 	
-	private ZGBlockFlower flower;
+	private BlockBush flower;
 	private IBlockState state;
 	
-	public WorldGenZGFlowers(ZGBlockFlower flowerIn) {
+	public WorldGenZGFlowers(BlockBush flowerIn) {
 		this.setGeneratedBlock(flowerIn);
 	}
 	
-	public void setGeneratedBlock(ZGBlockFlower flowerIn) {
+	public void setGeneratedBlock(BlockBush flowerIn) {
 		this.flower = flowerIn;
 		this.state = flowerIn.getDefaultState();
 	}

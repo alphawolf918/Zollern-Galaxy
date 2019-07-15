@@ -1,17 +1,17 @@
-package zollerngalaxy.biomes.genlayers;
+package zollerngalaxy.biomes.genlayers.eden;
 
 import net.minecraft.world.gen.layer.GenLayer;
 import net.minecraft.world.gen.layer.GenLayerVoronoiZoom;
 import net.minecraft.world.gen.layer.GenLayerZoom;
 
-public abstract class GenLayerPurgot extends GenLayer {
+public abstract class GenLayerEden extends GenLayer {
 	
-	public GenLayerPurgot(long l) {
+	public GenLayerEden(long l) {
 		super(l);
 	}
 	
 	public static GenLayer[] createWorld(long l) {
-		GenLayer biomes = new GenLayerPurgotBiomes(l);
+		GenLayer biomes = new GenLayerEdenBiomes(l);
 		biomes = new GenLayerZoom(1000L, biomes);
 		biomes = new GenLayerZoom(1001L, biomes);
 		biomes = new GenLayerZoom(1002L, biomes);

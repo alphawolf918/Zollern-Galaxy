@@ -1,21 +1,21 @@
-package zollerngalaxy.biomes.genlayers;
+package zollerngalaxy.biomes.genlayers.eden;
 
 import micdoodle8.mods.miccore.IntCache;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.layer.GenLayer;
 import zollerngalaxy.planets.ZGPlanets;
 
-public class GenLayerPurgotBiomes extends GenLayer {
+public class GenLayerEdenBiomes extends GenLayer {
 	
-	private static final Biome[] biomes = ZGPlanets.planetPurgot.biomesToGenerate
-			.toArray(new Biome[0]);// { ZGBiomes.PURGOT, ZGBiomes.LIMBO };
+	private static final Biome[] biomes = ZGPlanets.planetEden.biomesToGenerate
+			.toArray(new Biome[0]);
 	
-	public GenLayerPurgotBiomes(long l, GenLayer parent) {
+	public GenLayerEdenBiomes(long l, GenLayer parent) {
 		super(l);
 		this.parent = parent;
 	}
 	
-	public GenLayerPurgotBiomes(long l) {
+	public GenLayerEdenBiomes(long l) {
 		super(l);
 	}
 	

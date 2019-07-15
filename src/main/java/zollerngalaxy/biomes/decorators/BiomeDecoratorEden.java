@@ -1,12 +1,18 @@
 package zollerngalaxy.biomes.decorators;
 
 import java.util.Random;
+import net.minecraft.block.Block;
+import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.feature.WorldGenerator;
+import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.core.enums.EnumOreGenZG;
+import zollerngalaxy.lib.helpers.ZGDecorateHelper;
+import zollerngalaxy.worldgen.WorldGenLakesZG;
 import zollerngalaxy.worldgen.WorldGenMinableZG;
+import zollerngalaxy.worldgen.WorldGenZGFlowers;
 
 public class BiomeDecoratorEden extends BiomeDecoratorZG {
 	
@@ -38,6 +44,10 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 	
 	public int edenTallGrassPerChunk = 4;
 	public int edenFlowersPerChunk = 4;
+	public int lavaLakesPerChunk = 2;
+	public int waterLakesPerChunk = 2;
+	
+	public boolean generateLakes = true;
 	
 	public BiomeDecoratorEden() {
 		this.dirtGen = new WorldGenMinableZG(ZGBlocks.edenDirt, ZGBlocks.edenSurfaceRock,
@@ -122,5 +132,40 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 		this.generateOre(this.invarGen, EnumOreGenZG.INVAR, world, rand);
 		this.generateOre(this.electrumGen, EnumOreGenZG.ELECTRUM, world, rand);
 		this.generateOre(this.platinumGen, EnumOreGenZG.PLATINUM, world, rand);
+		
+		int genY = 248;
+		int y = genY;
+		
+		Block BLOCK_TOP = biome.topBlock.getBlock();
+		Block BLOCK_FILL = biome.fillerBlock.getBlock();
+		Block BLOCK_STONE = ZGBlocks.edenStone;
+		
+		if (biome instanceof BiomeSpace) {
+			BiomeSpace spaceBiome = (BiomeSpace) biome;
+			genY = spaceBiome.getBiomeHeight();
+		}
+		
+		if (this.generateLakes && this.lavaLakesPerChunk > 0) {
+			for (int i = 0; i < this.lavaLakesPerChunk; ++i) {
+				y = rand.nextInt(rand.nextInt(genY) + 8);
+				
+				(new WorldGenLakesZG(Blocks.LAVA, BLOCK_STONE)).generate(world, rand,
+						this.chunkPos.add(x, y, z));
+			}
+		}
+		
+		for (int i = 0; i < this.deadBushPerChunk; ++i) {
+			ZGDecorateHelper.generatePlants(new WorldGenZGFlowers(Blocks.DEADBUSH), world, rand,
+					this.chunkPos);
+		}
+		
+		if (this.generateLakes && this.waterLakesPerChunk > 0) {
+			for (int i = 0; i < this.waterLakesPerChunk; ++i) {
+				y = rand.nextInt(rand.nextInt(genY) + 8);
+				
+				(new WorldGenLakesZG(Blocks.WATER, BLOCK_TOP)).generate(world, rand,
+						this.chunkPos.add(x, y, z));
+			}
+		}
 	}
 }

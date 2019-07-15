@@ -26,13 +26,6 @@ public class ZGPlanet extends Planet implements IZollernPlanet {
 	
 	public ZGPlanet(String planetName) {
 		super(planetName);
-		this.setPlanetTemperature(65.0F);
-		this.setPlanetRadiation(0.0F);
-		this.setPlanetToxicity(0.0F);
-		this.setBreathable(false);
-		this.setHasRain(false);
-		this.setWindLevel(0.0F);
-		this.setAtmosphere();
 	}
 	
 	public ZGPlanet setPlanetStar(Star systemStar) {

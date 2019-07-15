@@ -170,6 +170,7 @@ public class ZGPlanets {
 		planetZollus.setDensity(0.1F);
 		planetZollus.setHasRain(false);
 		planetZollus.setPlanetGasses(EnumAtmosphericGas.NITROGEN, EnumAtmosphericGas.HELIUM);
+		planetZollus.setAtmosphere();
 		planetZollus.setPlanetIcon("zollus");
 		planetZollus.setBiomeInfo(ZGBiomes.ZOLLUS);
 		planetZollus.addChecklistKeys("equipOxygenSuit");
@@ -193,6 +194,7 @@ public class ZGPlanets {
 		planetKriffon.setDensity(3.0F);
 		planetKriffon.setHasRain(false);
 		planetKriffon.setPlanetGasses(EnumAtmosphericGas.ARGON, EnumAtmosphericGas.METHANE);
+		planetKriffon.setAtmosphere();
 		planetKriffon.setPlanetIcon("kriffus");
 		planetKriffon.setBiomeInfo(ZGBiomes.KRIFFON);
 		planetKriffon.addChecklistKeys("equipOxygenSuit");
@@ -216,6 +218,7 @@ public class ZGPlanets {
 		planetPurgot.setPlanetGasses(EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.WATER,
 				EnumAtmosphericGas.NITROGEN, EnumAtmosphericGas.ARGON);
 		planetPurgot.setPlanetIcon("purgot");
+		planetPurgot.setAtmosphere();
 		planetPurgot.setBiomeInfo(ZGBiomes.PURGOT, ZGBiomes.LIMBO);
 		planetPurgot.addChecklistKeys("equipOxygenSuit");
 		planetPurgot.setDimensionInfo(ConfigManagerZG.planetPurgotDimensionId,
@@ -241,8 +244,9 @@ public class ZGPlanets {
 		planetEden.setHasRain(true);
 		planetEden.setPlanetGasses(EnumAtmosphericGas.NITROGEN, EnumAtmosphericGas.OXYGEN,
 				EnumAtmosphericGas.ARGON, EnumAtmosphericGas.WATER);
+		planetEden.setAtmosphere();
 		planetEden.setPlanetIcon("eden");
-		planetEden.setBiomeInfo(ZGBiomes.EDEN_GREEN_LANDS);
+		planetEden.setBiomeInfo(ZGBiomes.EDEN_GREEN_LANDS, ZGBiomes.EDEN_BLOOD_DESERT);
 		totalPlanets++;
 		
 		// Planet Xathius
