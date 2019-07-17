@@ -14,9 +14,12 @@ import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.ChunkPrimer;
+import net.minecraft.world.gen.structure.MapGenMineshaft;
+import net.minecraft.world.gen.structure.MapGenVillage;
 import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.biomes.ZGBiomes;
 import zollerngalaxy.blocks.ZGBlocks;
+import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.worldgen.mapgen.MapGenCavesZG;
 import zollerngalaxy.worldgen.mapgen.MapGenRavinesZG;
 
@@ -35,13 +38,15 @@ public class ChunkProviderEden extends ChunkProviderBase {
 	
 	private final World world;
 	
-	private Biome[] biomesForGeneration = { ZGBiomes.EDEN_GREEN_LANDS, ZGBiomes.EDEN_BLOOD_DESERT };
+	private Biome[] biomesForGeneration = { ZGBiomes.EDEN_GREEN_LANDS, ZGBiomes.EDEN_BLOOD_DESERT,
+			ZGBiomes.EDEN_ROCK_MOUNTAINS, ZGBiomes.EDEN_TERRAN_VALLEY };
 	
 	private final MapGenCavesZG caveGenerator = new MapGenCavesZG(ZGBlocks.edenStone, Blocks.LAVA);
 	private final MapGenRavinesZG ravineGenerator = new MapGenRavinesZG(ZGBlocks.edenStone);
+	private MapGenVillage villageGenerator = new MapGenVillage();
+	private MapGenMineshaft mineshaftGenerator = new MapGenMineshaft();
 	
-	// DO NOT CHANGE
-	private static int MID_HEIGHT = 72;
+	private static int MID_HEIGHT = ZGHelper.rngNumber(63, 120);
 	private static final int CHUNK_SIZE_X = 16;
 	private static final int CHUNK_SIZE_Y = 128;
 	private static final int CHUNK_SIZE_Z = 16;
@@ -82,7 +87,7 @@ public class ChunkProviderEden extends ChunkProviderBase {
 				int posZ = chunkZ * 16;
 				int posY = world.getHeight(posX, posZ);
 				
-				Biome biome = world.getBiomeForCoordsBody(new BlockPos(posX, posY, posZ));
+				Biome biome = world.getBiome(new BlockPos(posX, posY, posZ));
 				
 				if (biome instanceof BiomeSpace) {
 					BiomeSpace spaceBiome = (BiomeSpace) biome;
@@ -108,7 +113,7 @@ public class ChunkProviderEden extends ChunkProviderBase {
 						.nextDouble() * 0.25D);
 				int var13 = -1;
 				
-				int x = var8 + par1 * 16;
+				int x = par1 * 16;
 				int z = par2 * 16;
 				int y = world.getHeight(x, z);
 				
@@ -227,5 +232,8 @@ public class ChunkProviderEden extends ChunkProviderBase {
 	@Override
 	public void recreateStructures(Chunk chunk, int x, int z) {
 		// this.dungeonGeneratorMoon.generate(this.world, x, z, null);
+		
+		this.mineshaftGenerator.generate(this.world, x, z, (ChunkPrimer) null);
+		this.villageGenerator.generate(this.world, x, z, (ChunkPrimer) null);
 	}
 }

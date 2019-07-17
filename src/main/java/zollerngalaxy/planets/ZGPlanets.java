@@ -246,7 +246,8 @@ public class ZGPlanets {
 				EnumAtmosphericGas.ARGON, EnumAtmosphericGas.WATER);
 		planetEden.setAtmosphere();
 		planetEden.setPlanetIcon("eden");
-		planetEden.setBiomeInfo(ZGBiomes.EDEN_GREEN_LANDS, ZGBiomes.EDEN_BLOOD_DESERT);
+		planetEden.setBiomeInfo(ZGBiomes.EDEN_GREEN_LANDS, ZGBiomes.EDEN_BLOOD_DESERT,
+				ZGBiomes.EDEN_ROCK_MOUNTAINS, ZGBiomes.EDEN_TERRAN_VALLEY);
 		totalPlanets++;
 		
 		// Planet Xathius

@@ -16,6 +16,8 @@ import net.minecraft.world.biome.Biome.BiomeProperties;
 import net.minecraftforge.common.BiomeDictionary;
 import zollerngalaxy.biomes.eden.BiomeBloodDesert;
 import zollerngalaxy.biomes.eden.BiomeEden;
+import zollerngalaxy.biomes.eden.BiomeStoneMountains;
+import zollerngalaxy.biomes.eden.BiomeTerranValley;
 import zollerngalaxy.biomes.kriffon.BiomeKriffon;
 import zollerngalaxy.biomes.purgot.BiomeLimbo;
 import zollerngalaxy.biomes.purgot.BiomePurgot;
@@ -38,6 +40,10 @@ public class ZGBiomes {
 	public static Biome EDEN_GREEN_LANDS = new BiomeEden(new BiomeProperties("Green Lands"));
 	public static Biome EDEN_BLOOD_DESERT = new BiomeBloodDesert(
 			new BiomeProperties("Blood Desert"));
+	public static Biome EDEN_ROCK_MOUNTAINS = new BiomeStoneMountains(new BiomeProperties(
+			"Rock Mountains"));
+	public static Biome EDEN_TERRAN_VALLEY = new BiomeTerranValley(new BiomeProperties(
+			"Terran Valley"));
 	
 	public static void init() {
 		ZGBiomes.addBiome(ZGBiomes.ZOLLUS, COLD, DEAD, DRY);
@@ -46,6 +52,8 @@ public class ZGBiomes {
 		ZGBiomes.addBiome(ZGBiomes.LIMBO, SPOOKY, DEAD);
 		ZGBiomes.addBiome(ZGBiomes.EDEN_GREEN_LANDS, LUSH, WET);
 		ZGBiomes.addBiome(ZGBiomes.EDEN_BLOOD_DESERT, HOT, DEAD, DRY, MOUNTAIN);
+		ZGBiomes.addBiome(ZGBiomes.EDEN_ROCK_MOUNTAINS, MOUNTAIN, DEAD);
+		ZGBiomes.addBiome(ZGBiomes.EDEN_TERRAN_VALLEY, LUSH, WET);
 		
 		ZGHelper.Log("Loaded a total of " + totalBiomes + " new biomes.");
 	}

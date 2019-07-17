@@ -30,6 +30,7 @@ public class BiomeEden extends BiomeSpace {
 		this.decorator.grassPerChunk = -999;
 		this.decorator.mushroomsPerChunk = -999;
 		this.decorator.generateFalls = true;
+		this.biomeDecor.waterLakesPerChunk = 1;
 		this.biomeDecor.edenTallGrassPerChunk = 1;
 		this.biomeDecor.edenFlowersPerChunk = 4;
 		this.grassFoilageColorMultiplier = 0x009f00;

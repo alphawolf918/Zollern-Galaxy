@@ -13,10 +13,6 @@ public class WorldGenZGFlowers extends WorldGenerator {
 	private IBlockState state;
 	
 	public WorldGenZGFlowers(BlockBush flowerIn) {
-		this.setGeneratedBlock(flowerIn);
-	}
-	
-	public void setGeneratedBlock(BlockBush flowerIn) {
 		this.flower = flowerIn;
 		this.state = flowerIn.getDefaultState();
 	}

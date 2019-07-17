@@ -1,8 +1,6 @@
 package zollerngalaxy.biomes.eden;
 
 import static net.minecraftforge.common.BiomeDictionary.Type.DEAD;
-import static net.minecraftforge.common.BiomeDictionary.Type.DRY;
-import static net.minecraftforge.common.BiomeDictionary.Type.HOT;
 import static net.minecraftforge.common.BiomeDictionary.Type.MOUNTAIN;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeDecorator;
@@ -14,42 +12,44 @@ import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.lib.helpers.CommonZGRegisterHelper;
 import zollerngalaxy.planets.ZGPlanets;
 
-public class BiomeBloodDesert extends BiomeSpace {
+public class BiomeStoneMountains extends BiomeSpace {
 	
 	public static int grassFoilageColorMultiplier = 0x8b0000;
 	
 	public BiomeDecoratorEden biomeDecor = this.getBiomeDecorator();
 	
-	public BiomeBloodDesert(BiomeProperties props) {
-		super("greenlands", props);
+	public BiomeStoneMountains(BiomeProperties props) {
+		super("stonemountains", props);
 		props.setRainDisabled();
 		this.setTempCategory(TempCategory.WARM);
-		this.setTemp(8.0F);
-		this.setBiomeHeight(102);
-		this.biomeDecor.edenTallGrassPerChunk = 0;
-		this.biomeDecor.edenFlowersPerChunk = 0;
-		this.decorator.generateFalls = true;
-		this.biomeDecor.generateLakes = true;
-		this.biomeDecor.deadBushPerChunk = 4;
-		this.biomeDecor.waterLakesPerChunk = 3;
+		this.setTemp(7.2F);
+		this.setBiomeHeight(120);
 		this.enableSnow = false;
 		this.decorator.flowersPerChunk = -999;
 		this.decorator.treesPerChunk = -999;
 		this.decorator.grassPerChunk = -999;
 		this.decorator.mushroomsPerChunk = -999;
-		this.biomeDecor.edenTallGrassPerChunk = 1;
-		this.biomeDecor.edenFlowersPerChunk = 4;
+		this.decorator.generateFalls = true;
+		this.biomeDecor.waterLakesPerChunk = 1;
+		this.biomeDecor.lavaLakesPerChunk = 1;
+		this.biomeDecor.edenTallGrassPerChunk = 0;
+		this.biomeDecor.edenFlowersPerChunk = 0;
 		this.grassFoilageColorMultiplier = 0x009f00;
-		this.waterColor = 0x00009f;
-		this.topBlock = ZGBlocks.edenBloodSand.getDefaultState();
-		this.fillerBlock = ZGBlocks.edenBloodStone.getDefaultState();
+		this.waterColor = 0x0000ff;
+		this.spawnableCaveCreatureList.clear();
+		this.spawnableMonsterList.clear();
+		this.spawnableWaterCreatureList.clear();
+		this.spawnableCreatureList.clear();
+		this.topBlock = ZGBlocks.edenStone.getDefaultState();
+		this.fillerBlock = ZGBlocks.edenCobbleRock.getDefaultState();
+		this.stoneBlock = ZGBlocks.edenStone;
 		this.setPlanetForBiome(ZGPlanets.planetEden);
 	}
 	
 	@Override
 	@SideOnly(Side.CLIENT)
 	public int getSkyColorByTemp(float p_76731_1_) {
-		return 0x004f2e;
+		return 0x4f2ad8;
 	}
 	
 	@Override
@@ -59,7 +59,7 @@ public class BiomeBloodDesert extends BiomeSpace {
 	
 	@Override
 	public void registerTypes(Biome biome) {
-		CommonZGRegisterHelper.registerBiomeType(biome, HOT, DEAD, DRY, MOUNTAIN);
+		CommonZGRegisterHelper.registerBiomeType(biome, MOUNTAIN, DEAD);
 	}
 	
 	@Override

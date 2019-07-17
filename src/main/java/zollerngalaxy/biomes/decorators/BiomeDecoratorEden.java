@@ -7,12 +7,14 @@ import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import zollerngalaxy.biomes.BiomeSpace;
+import zollerngalaxy.blocks.ZGBlockTallGrass;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.core.enums.EnumOreGenZG;
 import zollerngalaxy.lib.helpers.ZGDecorateHelper;
 import zollerngalaxy.worldgen.WorldGenLakesZG;
 import zollerngalaxy.worldgen.WorldGenMinableZG;
 import zollerngalaxy.worldgen.WorldGenZGFlowers;
+import zollerngalaxy.worldgen.eden.WorldGenEdenTallGrass;
 
 public class BiomeDecoratorEden extends BiomeDecoratorZG {
 	
@@ -42,8 +44,8 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 	private WorldGenerator electrumGen;
 	private WorldGenerator platinumGen;
 	
-	public int edenTallGrassPerChunk = 4;
-	public int edenFlowersPerChunk = 4;
+	public int edenTallGrassPerChunk = 2;
+	public int edenFlowersPerChunk = 2;
 	public int lavaLakesPerChunk = 2;
 	public int waterLakesPerChunk = 2;
 	
@@ -165,6 +167,13 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 				
 				(new WorldGenLakesZG(Blocks.WATER, BLOCK_TOP)).generate(world, rand,
 						this.chunkPos.add(x, y, z));
+			}
+		}
+		
+		if (this.edenTallGrassPerChunk > 0) {
+			for (int i = 0; i < this.edenTallGrassPerChunk; ++i) {
+				ZGDecorateHelper.generatePlants(new WorldGenEdenTallGrass(
+						(ZGBlockTallGrass) ZGBlocks.edenTallGrass), world, rand, this.chunkPos);
 			}
 		}
 	}

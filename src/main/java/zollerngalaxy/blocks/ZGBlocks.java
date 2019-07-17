@@ -70,6 +70,8 @@ public class ZGBlocks {
 	
 	// Eden
 	public static final Block edenSurfaceRock = new ZGBlockBase("edensurfacerock", 2.1F);
+	public static final Block edenGrass = new ZGBlockGrass("edengrass", 1.2F);
+	public static final Block edenTallGrass = new ZGBlockTallGrass("edentallgrass");
 	public static final Block edenDirt = new ZGBlockDirt("edensoil", 1.6F);
 	public static final Block edenCobbleRock = new ZGBlockBase("edencobblerock", 1.5F);
 	public static final Block edenStone = new ZGPlanetStone("edenrock", 2.6F,
@@ -131,14 +133,14 @@ public class ZGBlocks {
 				purgRockBricks, purgWhiteRock, purgBlackRock, purgSurfaceRock, purgDirt,
 				purgMeteoricIronOre, purgCobaltOre, purgIronOre, purgGoldOre, purgCopperOre,
 				purgDiamondOre, purgEmeraldOre, purgEveniumOre, purgAluminumOre, purgTinOre,
-				purgLeadOre, purgRedstoneOre, edenSurfaceRock, edenDirt, edenStone,
-				edenSacredStone, edenCobbleRock, edenRockBricks, edenWinterRock, edenBloodSand,
-				edenBloodStone, edenBoneStone, edenGravel, edenBrightStone, edenAluminumOre,
-				edenSteelOre, edenBronzeOre, edenInvarOre, edenElectrumOre, edenPlatinumOre,
-				edenCoalOre, edenCopperOre, edenDeshOre, edenDiamondOre, edenEmeraldOre,
-				edenGoldOre, edenSilverOre, edenIronOre, edenLapisOre, edenMeteoricIronOre,
-				edenRedstoneOre, edenTinOre, edenLeadOre, edenNickleOre, edenViriniumOre,
-				edenCobaltOre, edenEveniumOre, blockViri, blockCobalt, blockEve);
+				purgLeadOre, purgRedstoneOre, edenSurfaceRock, edenTallGrass, edenGrass, edenDirt,
+				edenStone, edenSacredStone, edenCobbleRock, edenRockBricks, edenWinterRock,
+				edenBloodSand, edenBloodStone, edenBoneStone, edenGravel, edenBrightStone,
+				edenAluminumOre, edenSteelOre, edenBronzeOre, edenInvarOre, edenElectrumOre,
+				edenPlatinumOre, edenCoalOre, edenCopperOre, edenDeshOre, edenDiamondOre,
+				edenEmeraldOre, edenGoldOre, edenSilverOre, edenIronOre, edenLapisOre,
+				edenMeteoricIronOre, edenRedstoneOre, edenTinOre, edenLeadOre, edenNickleOre,
+				edenViriniumOre, edenCobaltOre, edenEveniumOre, blockViri, blockCobalt, blockEve);
 		ZGHelper.Log("Loaded a total of " + totalBlocks + " new blocks.");
 	}
 	
