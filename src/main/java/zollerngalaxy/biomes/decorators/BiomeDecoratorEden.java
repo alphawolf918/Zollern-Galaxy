@@ -5,6 +5,7 @@ import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.Biome.TempCategory;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.blocks.ZGBlockTallGrass;
@@ -44,7 +45,7 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 	private WorldGenerator electrumGen;
 	private WorldGenerator platinumGen;
 	
-	public int edenTallGrassPerChunk = 2;
+	public int edenTallGrassPerChunk = 4;
 	public int edenFlowersPerChunk = 2;
 	public int lavaLakesPerChunk = 2;
 	public int waterLakesPerChunk = 2;
@@ -100,7 +101,7 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 				EnumOreGenZG.INVAR);
 		this.electrumGen = new WorldGenMinableZG(ZGBlocks.edenElectrumOre, ZGBlocks.edenStone,
 				EnumOreGenZG.ELECTRUM);
-		this.platinumGen = new WorldGenMinableZG(ZGBlocks.edenElectrumOre, ZGBlocks.edenStone,
+		this.platinumGen = new WorldGenMinableZG(ZGBlocks.edenPlatinumOre, ZGBlocks.edenStone,
 				EnumOreGenZG.ELECTRUM);
 	}
 	
@@ -165,7 +166,10 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 			for (int i = 0; i < this.waterLakesPerChunk; ++i) {
 				y = rand.nextInt(rand.nextInt(genY) + 8);
 				
-				(new WorldGenLakesZG(Blocks.WATER, BLOCK_TOP)).generate(world, rand,
+				Block blockToUse = (biome.getTempCategory() == TempCategory.COLD) ? Blocks.ICE
+						: Blocks.WATER;
+				
+				(new WorldGenLakesZG(blockToUse, BLOCK_TOP)).generate(world, rand,
 						this.chunkPos.add(x, y, z));
 			}
 		}

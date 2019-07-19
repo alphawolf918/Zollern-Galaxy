@@ -2,6 +2,7 @@ package zollerngalaxy.blocks;
 
 import java.util.Random;
 import net.minecraft.block.IGrowable;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.Item;
@@ -16,6 +17,7 @@ public class ZGBlockGrass extends ZGBlockDirt implements IGrowable {
 	public ZGBlockGrass(String blockName, float hardResist) {
 		super(blockName, hardResist);
 		this.setMaterial(Material.GRASS);
+		this.setSoundType(SoundType.PLANT);
 		this.setTickRandomly(true);
 		this.setShouldJSONIgnore(true);
 	}

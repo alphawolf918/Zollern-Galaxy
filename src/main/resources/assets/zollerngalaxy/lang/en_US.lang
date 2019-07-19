@@ -22,6 +22,7 @@ tile.purgotoasisportal.name=Praedyth Portal
 
 tile.edensurfacerock.name=Eden's Greenrock
 tile.edengrass.name=Eden's Grass
+tile.edengrass_snow.name=Eden's Snowy Grass
 tile.edengoldengrass.name=Eden's Golden Grass
 tile.edensoil.name=Eden's Soil
 tile.edenrock.name=Edenrock Stone
@@ -76,7 +77,7 @@ tile.edenwoodsapling.name=Edenwood Sapling
 tile.fruitofedenblock.name=Fruit of Eden
 tile.magmarock.name=Magrock
 tile.edengravel.name=Eden's Gravel
-tile.edenwinterrock.name=Eden's Snow
+tile.edenwinterrock.name=Eden's Snowrock
 tile.brightstone.name=Eden's Britestone
 tile.edentreasurechest.name=Eden's Treasure
 

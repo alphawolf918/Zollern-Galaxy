@@ -6,6 +6,7 @@ import static net.minecraftforge.common.BiomeDictionary.Type.DRY;
 import static net.minecraftforge.common.BiomeDictionary.Type.HOT;
 import static net.minecraftforge.common.BiomeDictionary.Type.LUSH;
 import static net.minecraftforge.common.BiomeDictionary.Type.MOUNTAIN;
+import static net.minecraftforge.common.BiomeDictionary.Type.PLAINS;
 import static net.minecraftforge.common.BiomeDictionary.Type.SPOOKY;
 import static net.minecraftforge.common.BiomeDictionary.Type.WET;
 import java.util.LinkedList;
@@ -15,7 +16,9 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.Biome.BiomeProperties;
 import net.minecraftforge.common.BiomeDictionary;
 import zollerngalaxy.biomes.eden.BiomeBloodDesert;
-import zollerngalaxy.biomes.eden.BiomeEden;
+import zollerngalaxy.biomes.eden.BiomeGoldenMeadow;
+import zollerngalaxy.biomes.eden.BiomeGreenLands;
+import zollerngalaxy.biomes.eden.BiomeSnowyPlains;
 import zollerngalaxy.biomes.eden.BiomeStoneMountains;
 import zollerngalaxy.biomes.eden.BiomeTerranValley;
 import zollerngalaxy.biomes.kriffon.BiomeKriffon;
@@ -37,13 +40,17 @@ public class ZGBiomes {
 	public static Biome PURGOT = new BiomePurgot(new BiomeProperties("Purgotary"));
 	public static Biome LIMBO = new BiomeLimbo(new BiomeProperties("Limbo"));
 	
-	public static Biome EDEN_GREEN_LANDS = new BiomeEden(new BiomeProperties("Green Lands"));
+	public static Biome EDEN_GREEN_LANDS = new BiomeGreenLands(new BiomeProperties("Green Lands"));
 	public static Biome EDEN_BLOOD_DESERT = new BiomeBloodDesert(
 			new BiomeProperties("Blood Desert"));
 	public static Biome EDEN_ROCK_MOUNTAINS = new BiomeStoneMountains(new BiomeProperties(
 			"Rock Mountains"));
 	public static Biome EDEN_TERRAN_VALLEY = new BiomeTerranValley(new BiomeProperties(
 			"Terran Valley"));
+	public static Biome EDEN_SNOWY_PLAINS = new BiomeSnowyPlains(
+			new BiomeProperties("Snowy Plains"));
+	public static Biome EDEN_GOLDEN_MEADOW = new BiomeGoldenMeadow(new BiomeProperties(
+			"Golden Meadow"));
 	
 	public static void init() {
 		ZGBiomes.addBiome(ZGBiomes.ZOLLUS, COLD, DEAD, DRY);
@@ -54,6 +61,8 @@ public class ZGBiomes {
 		ZGBiomes.addBiome(ZGBiomes.EDEN_BLOOD_DESERT, HOT, DEAD, DRY, MOUNTAIN);
 		ZGBiomes.addBiome(ZGBiomes.EDEN_ROCK_MOUNTAINS, MOUNTAIN, DEAD);
 		ZGBiomes.addBiome(ZGBiomes.EDEN_TERRAN_VALLEY, LUSH, WET);
+		ZGBiomes.addBiome(ZGBiomes.EDEN_SNOWY_PLAINS, PLAINS, COLD);
+		ZGBiomes.addBiome(ZGBiomes.EDEN_GOLDEN_MEADOW, LUSH, WET);
 		
 		ZGHelper.Log("Loaded a total of " + totalBiomes + " new biomes.");
 	}

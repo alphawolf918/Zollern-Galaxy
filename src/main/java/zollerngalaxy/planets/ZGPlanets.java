@@ -210,7 +210,7 @@ public class ZGPlanets {
 		planetPurgot.setTierRequired(5);
 		planetPurgot.setRelativeSize(40.0F);
 		planetPurgot.setPlanetTemperature(54.5f);
-		planetPurgot.setPlanetToxicity(5.2f);
+		planetPurgot.setPlanetToxicity(15.2f);
 		planetPurgot.setPlanetRadiation(2.2f);
 		planetPurgot.setWindLevel(5.7F);
 		planetPurgot.setDensity(0.3F);
@@ -247,7 +247,8 @@ public class ZGPlanets {
 		planetEden.setAtmosphere();
 		planetEden.setPlanetIcon("eden");
 		planetEden.setBiomeInfo(ZGBiomes.EDEN_GREEN_LANDS, ZGBiomes.EDEN_BLOOD_DESERT,
-				ZGBiomes.EDEN_ROCK_MOUNTAINS, ZGBiomes.EDEN_TERRAN_VALLEY);
+				ZGBiomes.EDEN_ROCK_MOUNTAINS, ZGBiomes.EDEN_TERRAN_VALLEY,
+				ZGBiomes.EDEN_SNOWY_PLAINS, ZGBiomes.EDEN_GOLDEN_MEADOW);
 		totalPlanets++;
 		
 		// Planet Xathius

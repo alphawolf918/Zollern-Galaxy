@@ -40,7 +40,9 @@ public class ZGBlockTallGrass extends ZGBlockFlower implements IGrowable, IShear
 	public boolean canBlockStay(World worldIn, BlockPos pos, IBlockState state) {
 		IBlockState soil = worldIn.getBlockState(pos.down());
 		if (soil == ZGBlocks.edenDirt.getDefaultState()
-				|| soil == ZGBlocks.edenGrass.getDefaultState()) {
+				|| soil == ZGBlocks.edenGrass.getDefaultState()
+				|| soil == ZGBlocks.edenSnow.getDefaultState()
+				|| soil == ZGBlocks.edenGoldenGrass.getDefaultState()) {
 			return true;
 		}
 		return false;

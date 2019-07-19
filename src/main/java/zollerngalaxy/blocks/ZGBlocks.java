@@ -3,6 +3,7 @@ package zollerngalaxy.blocks;
 import micdoodle8.mods.galacticraft.core.GCItems;
 import micdoodle8.mods.galacticraft.planets.mars.items.MarsItems;
 import net.minecraft.block.Block;
+import net.minecraft.block.SoundType;
 import net.minecraft.init.Items;
 import zollerngalaxy.blocks.zollus.ZolniumCrystals;
 import zollerngalaxy.items.ZGItems;
@@ -85,6 +86,9 @@ public class ZGBlocks {
 	public static final Block edenGravel = new ZGGravel("edengravel", 2.1F);
 	public static final Block edenBrightStone = new ZGShineBlock("brightstone",
 			ZGItems.dustBrightstone);
+	public static final Block edenSnow = new ZGBlockGrass("edengrass_snow", 1.2F)
+			.setSound(SoundType.SNOW);
+	public static final Block edenGoldenGrass = new ZGBlockGrass("edengoldengrass", 1.2F);
 	public static final Block edenAluminumOre = new ZGBlockOre("edenaluminumore", 1.5F);
 	public static final Block edenSteelOre = new ZGBlockOre("edensteelore", 3.0F);
 	public static final Block edenBronzeOre = new ZGBlockOre("edenbronzeore", 2.8F);
@@ -134,13 +138,14 @@ public class ZGBlocks {
 				purgMeteoricIronOre, purgCobaltOre, purgIronOre, purgGoldOre, purgCopperOre,
 				purgDiamondOre, purgEmeraldOre, purgEveniumOre, purgAluminumOre, purgTinOre,
 				purgLeadOre, purgRedstoneOre, edenSurfaceRock, edenTallGrass, edenGrass, edenDirt,
-				edenStone, edenSacredStone, edenCobbleRock, edenRockBricks, edenWinterRock,
-				edenBloodSand, edenBloodStone, edenBoneStone, edenGravel, edenBrightStone,
-				edenAluminumOre, edenSteelOre, edenBronzeOre, edenInvarOre, edenElectrumOre,
-				edenPlatinumOre, edenCoalOre, edenCopperOre, edenDeshOre, edenDiamondOre,
-				edenEmeraldOre, edenGoldOre, edenSilverOre, edenIronOre, edenLapisOre,
-				edenMeteoricIronOre, edenRedstoneOre, edenTinOre, edenLeadOre, edenNickleOre,
-				edenViriniumOre, edenCobaltOre, edenEveniumOre, blockViri, blockCobalt, blockEve);
+				edenStone, edenSacredStone, edenCobbleRock, edenRockBricks, edenGoldenGrass,
+				edenSnow, edenWinterRock, edenBloodSand, edenBloodStone, edenBoneStone, edenGravel,
+				edenBrightStone, edenAluminumOre, edenSteelOre, edenBronzeOre, edenInvarOre,
+				edenElectrumOre, edenPlatinumOre, edenCoalOre, edenCopperOre, edenDeshOre,
+				edenDiamondOre, edenEmeraldOre, edenGoldOre, edenSilverOre, edenIronOre,
+				edenLapisOre, edenMeteoricIronOre, edenRedstoneOre, edenTinOre, edenLeadOre,
+				edenNickleOre, edenViriniumOre, edenCobaltOre, edenEveniumOre, blockViri,
+				blockCobalt, blockEve);
 		ZGHelper.Log("Loaded a total of " + totalBlocks + " new blocks.");
 	}
 	

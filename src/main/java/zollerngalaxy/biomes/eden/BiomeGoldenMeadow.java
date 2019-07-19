@@ -8,15 +8,15 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.lib.helpers.CommonZGRegisterHelper;
 
-public class BiomeTerranValley extends BiomeGenEdenBase {
+public class BiomeGoldenMeadow extends BiomeGenEdenBase {
 	
 	public static int grassFoilageColorMultiplier = 0x8b0000;
 	
-	public BiomeTerranValley(BiomeProperties props) {
-		super("terranvalley", props);
+	public BiomeGoldenMeadow(BiomeProperties props) {
+		super("goldmeadow", props);
 		this.setTempCategory(TempCategory.MEDIUM);
-		props.setBaseHeight(1.2F);
-		props.setHeightVariation(0.5F);
+		props.setBaseHeight(1.6F);
+		props.setHeightVariation(2.5F);
 		props.setTemperature(4.0F);
 		this.setTemp(4F);
 		this.setBiomeHeight(52);
@@ -24,11 +24,11 @@ public class BiomeTerranValley extends BiomeGenEdenBase {
 		this.decorator.generateFalls = true;
 		this.biomeDecor.waterLakesPerChunk = 1;
 		this.biomeDecor.lavaLakesPerChunk = 0;
-		this.biomeDecor.edenTallGrassPerChunk = 4;
-		this.biomeDecor.edenFlowersPerChunk = 6;
+		this.biomeDecor.edenTallGrassPerChunk = 5;
+		this.biomeDecor.edenFlowersPerChunk = 2;
 		this.grassFoilageColorMultiplier = 0x00008b;
 		this.waterColor = 0x00008b;
-		this.topBlock = ZGBlocks.edenGrass.getDefaultState();
+		this.topBlock = ZGBlocks.edenGoldenGrass.getDefaultState();
 		this.fillerBlock = ZGBlocks.edenDirt.getDefaultState();
 		this.stoneBlock = ZGBlocks.edenStone;
 	}
@@ -36,12 +36,7 @@ public class BiomeTerranValley extends BiomeGenEdenBase {
 	@Override
 	@SideOnly(Side.CLIENT)
 	public int getSkyColorByTemp(float p_76731_1_) {
-		return 0x003a4b;
-	}
-	
-	@Override
-	public float getSpawningChance() {
-		return 0.1F;
+		return 0x00bbbb;
 	}
 	
 	@Override
