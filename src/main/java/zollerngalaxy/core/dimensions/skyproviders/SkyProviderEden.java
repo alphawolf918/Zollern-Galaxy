@@ -36,7 +36,7 @@ public class SkyProviderEden extends IRenderHandler {
 	private float sunSize;
 	
 	public SkyProviderEden(IGalacticraftWorldProvider worldProvider) {
-		this.sunSize = 4.2F * worldProvider.getSolarSize();
+		this.sunSize = 5.5F * worldProvider.getSolarSize();
 		
 		int displayLists = GLAllocation.generateDisplayLists(3);
 		this.starList = displayLists;
@@ -96,15 +96,6 @@ public class SkyProviderEden extends IRenderHandler {
 		float f3 = (float) vec3.z;
 		float f6;
 		
-		if (mc.gameSettings.anaglyph) {
-			float f4 = (f1 * 30.0F + f2 * 59.0F + f3 * 11.0F) / 100.0F;
-			float f5 = (f1 * 30.0F + f2 * 70.0F) / 100.0F;
-			f6 = (f1 * 30.0F + f3 * 70.0F) / 100.0F;
-			f1 = f4;
-			f2 = f5;
-			f3 = f6;
-		}
-		
 		GL11.glColor3f(f1, f2, f3);
 		Tessellator tessellator1 = Tessellator.getInstance();
 		BufferBuilder worldRenderer1 = tessellator1.getBuffer();
@@ -127,7 +118,7 @@ public class SkyProviderEden extends IRenderHandler {
 		if (f18 > 0.0F) {
 			GL11.glPushMatrix();
 			GL11.glRotatef(-90.0F, 0.0F, 1.0F, 0.0F);
-			GL11.glRotatef(-world.getCelestialAngle(partialTicks) * 360.0F, 1.0F, 0.0F, 0.0F);
+			GL11.glRotatef(world.getCelestialAngle(partialTicks) * 360.0F, 1.0F, 0.0F, 0.0F);
 			GL11.glRotatef(-19.0F, 0, 1.0F, 0);
 			GL11.glColor4f(f18, f18, f18, f18);
 			GL11.glCallList(this.starList);
@@ -139,7 +130,7 @@ public class SkyProviderEden extends IRenderHandler {
 		GL11.glShadeModel(GL11.GL_SMOOTH);
 		GL11.glPushMatrix();
 		GL11.glRotatef(-90.0F, 0.0F, 1.0F, 0.0F);
-		GL11.glRotatef(-world.getCelestialAngle(partialTicks) * 360.0F, 1.0F, 0.0F, 0.0F);
+		GL11.glRotatef(world.getCelestialAngle(partialTicks) * 360.0F, 1.0F, 0.0F, 0.0F);
 		afloat[0] = 255 / 255.0F;
 		afloat[1] = 194 / 255.0F;
 		afloat[2] = 180 / 255.0F;
@@ -148,15 +139,6 @@ public class SkyProviderEden extends IRenderHandler {
 		f7 = afloat[1];
 		f8 = afloat[2];
 		float f11;
-		
-		if (mc.gameSettings.anaglyph) {
-			f9 = (f6 * 30.0F + f7 * 59.0F + f8 * 11.0F) / 100.0F;
-			f10 = (f6 * 30.0F + f7 * 70.0F) / 100.0F;
-			f11 = (f6 * 30.0F + f8 * 70.0F) / 100.0F;
-			f6 = f9;
-			f7 = f10;
-			f8 = f11;
-		}
 		
 		f18 = 1.0F - f18;
 		
@@ -186,9 +168,9 @@ public class SkyProviderEden extends IRenderHandler {
 		
 		tessellator1.draw();
 		worldRenderer1.begin(GL11.GL_TRIANGLE_FAN, DefaultVertexFormats.POSITION_COLOR);
-		r = f6 * f18;
-		g = f7 * f18;
-		b = f8 * f18;
+		r = 0;// f6 * f18;
+		g = 10;// f7 * f18;
+		b = 10;// f8 * f18;
 		a = afloat[3] * f18;
 		worldRenderer1.pos(0.0D, 100.0D, 0.0D).color(r, g, b, a).endVertex();
 		r = afloat[0] * f18;
@@ -220,10 +202,10 @@ public class SkyProviderEden extends IRenderHandler {
 		f9 = 0.0F;
 		GL11.glTranslatef(f7, f8, f9);
 		GL11.glRotatef(-90.0F, 0.0F, 1.0F, 0.0F);
-		GL11.glRotatef(-world.getCelestialAngle(partialTicks) * 360.0F, 1.0F, 0.0F, 0.0F);
+		GL11.glRotatef(world.getCelestialAngle(partialTicks) * 360.0F, 1.0F, 0.0F, 0.0F);
 		// Render sun
 		GL11.glDisable(GL11.GL_TEXTURE_2D);
-		GL11.glColor4f(0.0F, 1.0F, 1.0F, 1.0F);
+		// GL11.glColor4f(0.0F, 1.0F, 1.0F, 1.0F);
 		// Some blanking to conceal the stars
 		f10 = this.sunSize / 3.5F;
 		worldRenderer1.begin(GL11.GL_QUADS, DefaultVertexFormats.POSITION);
@@ -233,7 +215,7 @@ public class SkyProviderEden extends IRenderHandler {
 		worldRenderer1.pos(-f10, 99.9D, f10).endVertex();
 		tessellator1.draw();
 		GL11.glEnable(GL11.GL_TEXTURE_2D);
-		GL11.glColor4f(0.0F, 1.0F, 1.0F, 0.1F);
+		// GL11.glColor4f(0.0F, 0.0F, 0.0F, 1.0F);// TODO
 		f10 = this.sunSize;
 		mc.renderEngine.bindTexture(SkyProviderEden.psios6Texture);
 		worldRenderer1.begin(GL11.GL_QUADS, DefaultVertexFormats.POSITION_TEX);
@@ -243,12 +225,12 @@ public class SkyProviderEden extends IRenderHandler {
 		worldRenderer1.pos(-f10, 100.0D, f10).tex(0.0D, 1.0D).endVertex();
 		tessellator1.draw();
 		
-		// Render earth
-		f10 = 0.5F;
-		GL11.glScalef(0.6F, 0.6F, 0.6F);
+		// Render Purgot
+		f10 = 2.0F;
+		GL11.glScalef(0.4F, 0.4F, 0.4F);
 		GL11.glRotatef(40.0F, 0.0F, 0.0F, 1.0F);
-		GL11.glRotatef(200F, 1.0F, 0.0F, 0.0F);
-		GL11.glColor4f(0.0F, 0.0F, 0.0F, 1F);
+		GL11.glRotatef(-world.getCelestialAngle(partialTicks) * 360.0F, 1.0F, 0.0F, 0.0F);
+		// GL11.glColor4f(0.0F, 0.0F, 0.0F, 1F);
 		FMLClientHandler.instance().getClient().renderEngine
 				.bindTexture(SkyProviderEden.purgotTexture);
 		worldRenderer1.begin(GL11.GL_QUADS, DefaultVertexFormats.POSITION_TEX);
@@ -260,7 +242,7 @@ public class SkyProviderEden extends IRenderHandler {
 		
 		GL11.glDisable(GL11.GL_TEXTURE_2D);
 		
-		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
+		// GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
 		GL11.glDisable(GL11.GL_BLEND);
 		GL11.glEnable(GL11.GL_ALPHA_TEST);
 		GL11.glEnable(GL11.GL_FOG);

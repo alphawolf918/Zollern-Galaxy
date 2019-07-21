@@ -10,7 +10,9 @@ import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.storage.loot.LootTableList;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
@@ -21,6 +23,7 @@ import net.minecraftforge.oredict.OreDictionary;
 import org.lwjgl.input.Keyboard;
 import zollerngalaxy.blocks.ISingleZGBlockRender;
 import zollerngalaxy.items.ISingleZGItemRender;
+import zollerngalaxy.lib.ZGInfo;
 import com.google.common.base.Function;
 
 public class CommonZGRegisterHelper {
@@ -119,5 +122,13 @@ public class CommonZGRegisterHelper {
 		int j = i / 60;
 		i = i % 60;
 		return i < 10 ? j + ":0" + i : j + ":" + i;
+	}
+	
+	public static ResourceLocation registerEntityLoot(String name) {
+		return LootTableList.register(new ResourceLocation(ZGInfo.MOD_ID + ":entities/" + name));
+	}
+	
+	public static ResourceLocation registerChestLoot(String name) {
+		return LootTableList.register(new ResourceLocation(ZGInfo.MOD_ID + ":chests/" + name));
 	}
 }

@@ -8,6 +8,7 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import zollerngalaxy.core.renderers.ZGItemRender;
 import zollerngalaxy.lib.helpers.ZGHelper;
+import zollerngalaxy.mobs.MobRenders;
 
 public class ClientProxy extends CommonProxy {
 	
@@ -23,7 +24,7 @@ public class ClientProxy extends CommonProxy {
 	@Override
 	public void preInit(FMLPreInitializationEvent event) {
 		super.preInit(event);
-		
+		MobRenders.init();
 	}
 	
 	@Override

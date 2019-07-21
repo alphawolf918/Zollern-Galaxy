@@ -15,6 +15,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.blocks.creativetabs.ZGTabs;
+import zollerngalaxy.core.enums.EnumBlockType;
 import zollerngalaxy.core.enums.EnumHarvestLevel;
 import zollerngalaxy.lib.helpers.json.JSONRegistryHelper;
 
@@ -23,6 +24,7 @@ public class ZGBlockBase extends Block implements ISingleZGBlockRender, IJSONBlo
 	protected static ZGBlockBase instance;
 	protected static Material blockMaterial = Material.ROCK;
 	protected static SoundType blockSound = SoundType.STONE;
+	protected EnumBlockType blockType = EnumBlockType.NORMAL;
 	protected boolean shouldAlwaysBurn = false;
 	protected boolean isHotFloorBlock = false;
 	protected boolean hasInfo = false;
@@ -157,6 +159,15 @@ public class ZGBlockBase extends Block implements ISingleZGBlockRender, IJSONBlo
 	public Block setShouldJSONIgnore(boolean ignore) {
 		this.shouldIgnore = ignore;
 		return this;
+	}
+	
+	public Block setBlockType(EnumBlockType bType) {
+		this.blockType = bType;
+		return this;
+	}
+	
+	public EnumBlockType getBlockType() {
+		return this.blockType;
 	}
 	
 }

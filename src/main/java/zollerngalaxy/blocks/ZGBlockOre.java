@@ -8,6 +8,7 @@ import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import zollerngalaxy.core.enums.EnumBlockType;
 import zollerngalaxy.core.enums.EnumBlockVariant;
 import zollerngalaxy.core.enums.EnumHarvestLevel;
 
@@ -25,6 +26,7 @@ public class ZGBlockOre extends ZGBlockBase {
 		super(blockName, hardResist);
 		instance = this;
 		this.setHarvestLevel("pickaxe", EnumHarvestLevel.DIAMOND.getHarvestLevel());
+		this.setBlockType(EnumBlockType.ORE);
 	}
 	
 	public Block setShouldGivePotionEffect(boolean shouldGivePotionEffect, Potion potionEffect) {

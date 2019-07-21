@@ -1,0 +1,15 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "textures": {
+            "bottom": "zollerngalaxy:blocks/edensoil",
+            "top": "zollerngalaxy:blocks/edenswampgrass",
+            "side": "zollerngalaxy:blocks/edenswampgrass_side"
+        },
+        "model": "cube_bottom_top"
+    },
+    "variants": {
+        "normal": [{ "y": 90 }, { "y": 180 }, { "y": 270 }],
+        "inventory": [{}]
+    }
+}

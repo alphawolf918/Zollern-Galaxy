@@ -6,6 +6,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.init.Items;
 import zollerngalaxy.blocks.zollus.ZolniumCrystals;
+import zollerngalaxy.core.enums.EnumBlockType;
 import zollerngalaxy.items.ZGItems;
 import zollerngalaxy.lib.helpers.CommonZGRegisterHelper;
 import zollerngalaxy.lib.helpers.ZGHelper;
@@ -15,7 +16,8 @@ public class ZGBlocks {
 	private static int totalBlocks = 0;
 	
 	// Zollus
-	public static final Block zolCobbleRock = new ZGBlockBase("zolcobblerock", 1.2F);
+	public static final Block zolCobbleRock = new ZGBlockBase("zolcobblerock", 1.2F)
+			.setBlockType(EnumBlockType.COBBLESTONE);
 	public static final Block zolStone = new ZGPlanetStone("zolstone", 1.6F, ZGBlocks.zolCobbleRock);
 	public static final Block zolSurfaceRock = new ZGBlockBase("zolsurfacerock", 1.2F);
 	public static final Block zolDirt = new ZGBlockDirt("zoldirt");
@@ -29,7 +31,8 @@ public class ZGBlocks {
 	public static final Block zolCrystals = new ZolniumCrystals();
 	
 	// Kriffon
-	public static final Block kriffCobbleRock = new ZGBlockBase("kriffcobblerock", 1.4F);
+	public static final Block kriffCobbleRock = new ZGBlockBase("kriffcobblerock", 1.4F)
+			.setBlockType(EnumBlockType.COBBLESTONE);
 	public static final Block kriffStone = new ZGPlanetStone("kriffstone", 1.6F,
 			ZGBlocks.kriffCobbleRock);
 	public static final Block kriffSurfaceRock = new ZGBlockBase("kriffrock", 1.6F);
@@ -46,7 +49,8 @@ public class ZGBlocks {
 			Items.REDSTONE);
 	
 	// Purgot
-	public static final Block purgCobbleRock = new ZGBlockBase("purgcobblerock", 2.0F);
+	public static final Block purgCobbleRock = new ZGBlockBase("purgcobblerock", 2.0F)
+			.setBlockType(EnumBlockType.COBBLESTONE);
 	public static final Block purgStone = new ZGPlanetStone("purgstone", 2.5F,
 			ZGBlocks.purgCobbleRock);
 	public static final Block purgRockBricks = new ZGBlockBase("purgrockbricks", 1.6F);
@@ -72,9 +76,11 @@ public class ZGBlocks {
 	// Eden
 	public static final Block edenSurfaceRock = new ZGBlockBase("edensurfacerock", 2.1F);
 	public static final Block edenGrass = new ZGBlockGrass("edengrass", 1.2F);
+	public static final Block edenSwampGrass = new ZGBlockGrass("edenswampgrass", 1.2F);
 	public static final Block edenTallGrass = new ZGBlockTallGrass("edentallgrass");
 	public static final Block edenDirt = new ZGBlockDirt("edensoil", 1.6F);
-	public static final Block edenCobbleRock = new ZGBlockBase("edencobblerock", 1.5F);
+	public static final Block edenCobbleRock = new ZGBlockBase("edencobblerock", 1.5F)
+			.setBlockType(EnumBlockType.COBBLESTONE);
 	public static final Block edenStone = new ZGPlanetStone("edenrock", 2.6F,
 			ZGBlocks.edenCobbleRock);
 	public static final Block edenSacredStone = new ZGBlockBase("edensacredstone", 3.2F);
@@ -113,9 +119,11 @@ public class ZGBlocks {
 	public static final Block edenTinOre = new ZGBlockOre("edentinore", 1.2F);
 	public static final Block edenLeadOre = new ZGBlockOre("edenleadore", 1.2F);
 	public static final Block edenNickleOre = new ZGBlockOre("edennickleore", 1.2F);
-	public static final Block edenViriniumOre = new ZGOreGem("edenviriore", 2.6F, ZGItems.rawViri);
+	public static final Block edenViriniumOre = new ZGOreGem("edenviriore", 2.6F, ZGItems.dustViri);
 	public static final Block edenCobaltOre = new ZGBlockOre("edencobaltore", 2.6F);
 	public static final Block edenEveniumOre = new ZGBlockOre("edeneveniumore", 2.8F);
+	public static final Block edenHeartiumOre = new ZGOreGem("edenheartiumore", 2.8F,
+			ZGItems.heartOfZol);
 	
 	// Metals
 	public static final Block blockViri = new ZGBlockMetal("viriblock");
@@ -139,13 +147,13 @@ public class ZGBlocks {
 				purgDiamondOre, purgEmeraldOre, purgEveniumOre, purgAluminumOre, purgTinOre,
 				purgLeadOre, purgRedstoneOre, edenSurfaceRock, edenTallGrass, edenGrass, edenDirt,
 				edenStone, edenSacredStone, edenCobbleRock, edenRockBricks, edenGoldenGrass,
-				edenSnow, edenWinterRock, edenBloodSand, edenBloodStone, edenBoneStone, edenGravel,
-				edenBrightStone, edenAluminumOre, edenSteelOre, edenBronzeOre, edenInvarOre,
-				edenElectrumOre, edenPlatinumOre, edenCoalOre, edenCopperOre, edenDeshOre,
-				edenDiamondOre, edenEmeraldOre, edenGoldOre, edenSilverOre, edenIronOre,
-				edenLapisOre, edenMeteoricIronOre, edenRedstoneOre, edenTinOre, edenLeadOre,
-				edenNickleOre, edenViriniumOre, edenCobaltOre, edenEveniumOre, blockViri,
-				blockCobalt, blockEve);
+				edenSwampGrass, edenSnow, edenWinterRock, edenBloodSand, edenBloodStone,
+				edenBoneStone, edenGravel, edenBrightStone, edenAluminumOre, edenSteelOre,
+				edenBronzeOre, edenInvarOre, edenElectrumOre, edenPlatinumOre, edenCoalOre,
+				edenCopperOre, edenDeshOre, edenDiamondOre, edenEmeraldOre, edenGoldOre,
+				edenSilverOre, edenIronOre, edenLapisOre, edenMeteoricIronOre, edenRedstoneOre,
+				edenTinOre, edenLeadOre, edenNickleOre, edenViriniumOre, edenCobaltOre,
+				edenEveniumOre, edenHeartiumOre, blockViri, blockCobalt, blockEve);
 		ZGHelper.Log("Loaded a total of " + totalBlocks + " new blocks.");
 	}
 	

@@ -5,12 +5,14 @@ import net.minecraft.block.SoundType;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
+import zollerngalaxy.core.enums.EnumBlockType;
 
 public class ZGGravel extends ZGBlockFalling {
 	
 	public ZGGravel(String blockName, float hardResist) {
 		super(blockName, hardResist);
 		this.setSoundType(SoundType.GROUND);
+		this.setBlockType(EnumBlockType.GRAVEL);
 	}
 	
 	@Override

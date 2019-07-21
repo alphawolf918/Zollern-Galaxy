@@ -24,7 +24,6 @@ import net.minecraft.world.gen.NoiseGeneratorPerlin;
 import net.minecraft.world.gen.structure.MapGenMineshaft;
 import zollerngalaxy.biomes.decorators.BiomeDecoratorEden;
 import zollerngalaxy.blocks.ZGBlocks;
-import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.worldgen.mapgen.MapGenCavesZG;
 import zollerngalaxy.worldgen.mapgen.MapGenRavinesZG;
 
@@ -34,7 +33,7 @@ public class ChunkProviderEden extends ChunkProviderBase {
 	public static IBlockState BLOCK_FILL = ZGBlocks.edenDirt.getDefaultState();
 	public static IBlockState BLOCK_STONE = ZGBlocks.edenStone.getDefaultState();
 	
-	public static int MID_HEIGHT = ZGHelper.rngNumber(50, 92);
+	public static double CHUNK_HEIGHT = 40.0D;// ZGHelper.rngDbl(20.0D, 40.0D);
 	
 	private final BiomeDecoratorEden biomeDecoratorEden = new BiomeDecoratorEden();
 	private Random rand;
@@ -139,7 +138,8 @@ public class ChunkProviderEden extends ChunkProviderBase {
 								int z = l * 4 + l2;
 								
 								if ((lvt_45_1_ += d16) > this.noiseGenSmooth1.getNoise(chunkX * 16
-										+ x, chunkZ * 16 + z) * 20.0) {
+										+ x, chunkZ * 16 + z)
+										* CHUNK_HEIGHT) {
 									primer.setBlockState(x, y, z, BLOCK_STONE);
 								}
 							}

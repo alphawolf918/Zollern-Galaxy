@@ -174,7 +174,7 @@ public class MapGenRavinesZG extends MapGenBase {
 	@Override
 	protected void recursiveGenerate(World worldIn, int chunkX, int chunkZ, int originalX,
 			int originalZ, ChunkPrimer chunkPrimerIn) {
-		if (this.rand.nextInt(50) == 0) {
+		if (this.rand.nextInt(30) == 0) {
 			double d0 = chunkX * 16 + this.rand.nextInt(16);
 			double d1 = this.rand.nextInt(this.rand.nextInt(40) + 8) + 20;
 			double d2 = chunkZ * 16 + this.rand.nextInt(16);

@@ -167,7 +167,8 @@ public class JSONRecipeHelper {
 					+ suffix + ".json");
 		}
 		
-		writeAdvancements(output.getItem().getRegistryName().getResourcePath() + suffix);
+		// writeAdvancements(output.getItem().getRegistryName().getResourcePath()
+		// + suffix);
 		
 		try (FileWriter writer = new FileWriter(file)) {
 			GSON.toJson(json, writer);

@@ -17,7 +17,7 @@ public class ZGItems {
 	public static final Item prometheanCrystal = new ZGItemBase("prometheancrystal");
 	public static final Item plutoniumCrystal = new ZGItemBase("plutoniumcrystal");
 	
-	public static final Item rawViri = new ZGItemBase("rawviri");
+	public static final Item dustViri = new ZGItemBase("rawviri");
 	public static final Item dustCobalt = new ZGItemBase("cobaltdust");
 	public static final Item dustEve = new ZGItemBase("eveniumdust");
 	public static final Item dustDiamond = new ZGItemBase("diamonddust");
@@ -40,13 +40,22 @@ public class ZGItems {
 	public static final Item compressedVirinium = new ZGItemBase("compressedvirinium");
 	public static final Item compressedVyrex = new ZGItemBase("compressedvyrex");
 	
+	public static final Item rawAlienBacon = new ZGItemFood("alienbaconraw", 2, 1.5F, true);
+	public static final Item rawAlienBeef = new ZGItemFood("alienbeefraw", 2, 1.5F, true);
+	public static final Item cookedAlienBacon = new ZGItemFood("alienbaconcooked", 6, 4.0F, true);
+	public static final Item cookedAlienBeef = new ZGItemFood("alienbeefcooked", 6, 4.0F, true);
+	public static final Item edenFruit = new ZGItemFood("fruitofeden", 4, 2.5F, false);
+	
+	public static final Item edenDungeonKey = new ZGItemBase("edendungeonkey");
+	
 	public static void init() {
 		ZGItems.registerItems(heartOfZol, zolCrystal, kriffCrystal, purgCrystal, edenCrystal,
-				purgEssence, prometheanCrystal, plutoniumCrystal, dustBrightstone, rawViri,
+				purgEssence, prometheanCrystal, plutoniumCrystal, dustBrightstone, dustViri,
 				dustEve, dustCobalt, dustDiamond, dustEmerald, ingotViri, ingotCobalt, ingotEve,
 				hud, alienStone, compressedCobalt, compressedDiamond, compressedEmerald,
 				compressedEvenium, compressedGold, compressedHeartium, compressedKriffonium,
-				compressedVirinium, compressedVyrex);
+				compressedVirinium, compressedVyrex, rawAlienBacon, cookedAlienBacon, rawAlienBeef,
+				cookedAlienBeef, edenFruit, edenDungeonKey);
 		ZGHelper.Log("Loaded a total of " + totalItems + " new items.");
 	}
 	

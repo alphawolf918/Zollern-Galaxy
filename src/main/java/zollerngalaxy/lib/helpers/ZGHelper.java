@@ -46,13 +46,23 @@ public class ZGHelper {
 	}
 	
 	public static int rngNumber(int min, int max) {
-		assert min >= max : " Min can't be lower than max!";
+		assert min >= max : "Min can't be lower than max!";
 		Random rand = new Random();
 		int randInt = rand.nextInt(max);
 		if (randInt < min) {
 			randInt = min;
 		}
 		return randInt;
+	}
+	
+	public static double rngDbl(double min, double max) {
+		assert min >= max : "Min can't be lower than max!";
+		Random rand = new Random();
+		double randDbl = rand.nextDouble() * max;
+		if (randDbl < min) {
+			randDbl = min;
+		}
+		return randDbl;
 	}
 	
 	public static void setTab(Block block) {

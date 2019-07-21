@@ -11,6 +11,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import zollerngalaxy.core.enums.EnumBlockType;
 
 public class ZGBlockGrass extends ZGBlockDirt implements IGrowable {
 	
@@ -20,6 +21,7 @@ public class ZGBlockGrass extends ZGBlockDirt implements IGrowable {
 		this.setSoundType(SoundType.PLANT);
 		this.setTickRandomly(true);
 		this.setShouldJSONIgnore(true);
+		this.setBlockType(EnumBlockType.GRASS);
 	}
 	
 	public ZGBlockGrass(String blockName) {

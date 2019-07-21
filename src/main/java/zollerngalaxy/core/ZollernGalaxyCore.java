@@ -17,7 +17,8 @@ import zollerngalaxy.core.dimensions.ZGDimensions;
 import zollerngalaxy.items.ZGItems;
 import zollerngalaxy.lib.ZGInfo;
 import zollerngalaxy.lib.helpers.ModHelperBase;
-import zollerngalaxy.mobs.ZGMobs;
+import zollerngalaxy.lib.helpers.ZGHandlers;
+import zollerngalaxy.mobs.MobRegistry;
 import zollerngalaxy.planets.ZGPlanets;
 import zollerngalaxy.proxy.CommonProxy;
 import zollerngalaxy.proxy.IProxy;
@@ -67,13 +68,15 @@ public class ZollernGalaxyCore {
 	public void init(FMLInitializationEvent event) {
 		ZGTabs.init();
 		ZGRecipeRegistry.init();
+		ZGHandlers.init();
 		
 		for (BiomeGenBaseGC biome : ZGBiomes.biomeList) {
 			biome.registerTypes(biome);
 		}
 		
-		ZGMobs.init();
+		MobRegistry.init();
 		ZGPlanets.init();
+		
 		instance().proxy.registerInitRendering();
 		instance().proxy.init(event);
 		

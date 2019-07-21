@@ -1,0 +1,9 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "all": "zollerngalaxy:blocks/edensoil",
+	"top": "zollerngalaxy:blocks/edenswampgrass",
+	"right": "zollerngalaxy:blocks/edenswampgrass_side",
+	"left": "zollerngalaxy:blocks/edenswampgrass_side"
+  }
+}

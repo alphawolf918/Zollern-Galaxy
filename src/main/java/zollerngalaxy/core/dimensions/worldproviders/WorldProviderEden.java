@@ -116,6 +116,11 @@ public class WorldProviderEden extends WorldProviderZG {
 	}
 	
 	@Override
+	public boolean shouldDisablePrecipitation() {
+		return false;
+	}
+	
+	@Override
 	public boolean canDoRainSnowIce(Chunk chunk) {
 		return this.canRainOrSnow();
 	}
@@ -163,19 +168,12 @@ public class WorldProviderEden extends WorldProviderZG {
 	
 	@Override
 	public double getHorizon() {
-		return 44.0D;
+		return 54.0D;
 	}
 	
 	@Override
 	public int getAverageGroundLevel() {
-		return 72;
-	}
-	
-	@Override
-	public void updateWeather() {
-		super.updateWeather();
-		this.world.getWorldInfo().setRaining(true);
-		this.world.getWorldInfo().setThundering(true);
+		return 82;
 	}
 	
 	@Override

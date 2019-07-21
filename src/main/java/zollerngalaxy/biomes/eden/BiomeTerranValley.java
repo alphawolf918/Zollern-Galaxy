@@ -7,6 +7,8 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.lib.helpers.CommonZGRegisterHelper;
+import zollerngalaxy.mobs.entities.EntityMoolus;
+import zollerngalaxy.mobs.entities.EntityOinkus;
 
 public class BiomeTerranValley extends BiomeGenEdenBase {
 	
@@ -28,6 +30,8 @@ public class BiomeTerranValley extends BiomeGenEdenBase {
 		this.biomeDecor.edenFlowersPerChunk = 6;
 		this.grassFoilageColorMultiplier = 0x00008b;
 		this.waterColor = 0x00008b;
+		this.spawnableCreatureList.add(new SpawnListEntry(EntityMoolus.class, 100, 4, 6));
+		this.spawnableCreatureList.add(new SpawnListEntry(EntityOinkus.class, 100, 4, 6));
 		this.topBlock = ZGBlocks.edenGrass.getDefaultState();
 		this.fillerBlock = ZGBlocks.edenDirt.getDefaultState();
 		this.stoneBlock = ZGBlocks.edenStone;

@@ -24,6 +24,7 @@ tile.edensurfacerock.name=Eden's Greenrock
 tile.edengrass.name=Eden's Grass
 tile.edengrass_snow.name=Eden's Snowy Grass
 tile.edengoldengrass.name=Eden's Golden Grass
+tile.edenswampgrass.name=Eden's Swamp Grass
 tile.edensoil.name=Eden's Soil
 tile.edenrock.name=Edenrock Stone
 tile.edencobblerock.name=Edenrock Cobblestone
@@ -54,6 +55,7 @@ tile.edenludacriteore.name=Eden's Ludacrite Ore
 tile.edenviriore.name=Eden's Virinium Ore
 tile.edencobaltore.name=Eden's Cobalt Ore
 tile.edeneveniumore.name=Eden's Evenium Ore
+tile.edenheartiumore.name=Eden's Heartium Ore
 tile.viriblock.name=Block of Virinium
 tile.edenflower_.name=Eden's Flower
 tile.edenflower_blue.name=Eden's Blue Flower
@@ -180,15 +182,15 @@ item.compressedvirinium.name=Compressed Virinium
 item.compressedheartium.name=Compressed Heartium
 item.compressedvyrex.name=Compressed Vyrexite
 
-entity.moolus.name=Moolus
-entity.oinkus.name=Oinkus
-entity.aliensquid.name=Alien Squid
-entity.grayalien.name=Gray Alien
-entity.galaxyknight.name=Galactic Sentry
-entity.crawler.name=Crawler Boss
-entity.frostgiant.name=Frost Giant
-entity.magmos.name=Magmos
-entity.slime.raspberry.name=Galaxy Slime (Raspberry)
+entity.zollerngalaxy:moolus.name=Moolus
+entity.zollerngalaxy:oinkus.name=Oinkus
+entity.zollerngalaxy:aliensquid.name=Alien Squid
+entity.zollerngalaxy:grayalien.name=Gray Alien
+entity.zollerngalaxy:galaxyknight.name=Galactic Sentry
+entity.zollerngalaxy:crawler.name=Crawler Boss
+entity.zollerngalaxy:frostgiant.name=Frost Giant
+entity.zollerngalaxy:magmos.name=Magmos
+entity.zollerngalaxy:slime.raspberry.name=Galaxy Slime (Raspberry)
 
 planet.zollus=Zollus
 planet.eden=Eden
@@ -233,19 +235,3 @@ solarsystem.Nova=Nova
 
 itemGroup.ZollernGalaxyBlocks=Zollern Galaxy Blocks
 itemGroup.ZollernGalaxyItems=Zollern Galaxy Items
-
-death.attack.deathcold=%1$s froze to death.
-death.attack.deathcold.player=%1$s froze to death because of %2$s.
-death.attack.deathcold.item=%1$s froze to death because of %2$s using %3$s.
-
-death.attack.deathhot=%1$s melted to death.
-death.attack.deathhot.player=%1$s melted to death because of %2$s.
-death.attack.deathhot.item=%1$s melted to death because of %2$s using %3$s.
-
-death.attack.toxic=%1$s died of toxicity.
-death.attack.toxic.player=%1$s died of toxicity because of %2$s.
-death.attack.toxic.item=%1$s died of toxicity because of %2$s using %3$s.
-
-death.attack.radiation=%1$s died of radiation.
-death.attack.radiation.player=%1$s died of radiation because of %2$s.
-death.attack.radiation.item=%1$s died of radiation because of %2$s using %3$s.

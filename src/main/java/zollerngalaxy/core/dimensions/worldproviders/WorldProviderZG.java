@@ -49,14 +49,8 @@ public abstract class WorldProviderZG extends WorldProviderSpace implements ISol
 	}
 	
 	@Override
-	public float getWindLevel() {
-		return this.getPlanet().getWindLevel();
-	}
-	
-	@Override
 	public boolean canBlockFreeze(BlockPos pos, boolean byWater) {
-		ZGPlanet planet = this.getPlanet();
-		return planet.getIsColdPlanet();
+		return this.getPlanet().getIsColdPlanet();
 	}
 	
 	@Override

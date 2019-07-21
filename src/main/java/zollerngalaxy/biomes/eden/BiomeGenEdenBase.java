@@ -31,6 +31,8 @@ import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.biomes.decorators.BiomeDecoratorEden;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.config.ConfigManagerZG;
+import zollerngalaxy.mobs.entities.EntityMoolus;
+import zollerngalaxy.mobs.entities.EntityOinkus;
 import zollerngalaxy.planets.ZGPlanets;
 
 public abstract class BiomeGenEdenBase extends BiomeSpace {
@@ -53,10 +55,12 @@ public abstract class BiomeGenEdenBase extends BiomeSpace {
 		this.decorator.mushroomsPerChunk = -999;
 		this.biomeDecor.edenFlowersPerChunk = 4;
 		this.biomeDecor.edenTallGrassPerChunk = 2;
+		this.biomeDecor.edenTreesPerChunk = 1;
 		this.spawnableCaveCreatureList.clear();
 		this.spawnableMonsterList.clear();
 		this.spawnableWaterCreatureList.clear();
 		this.spawnableCreatureList.clear();
+		
 		if (ConfigManagerZG.canEarthAnimalsSpawnOnEden) {
 			this.spawnableCreatureList.add(new SpawnListEntry(EntityChicken.class, 100, 1, 2));
 			this.spawnableCreatureList.add(new SpawnListEntry(EntitySheep.class, 100, 3, 5));
@@ -66,7 +70,9 @@ public abstract class BiomeGenEdenBase extends BiomeSpace {
 			this.spawnableCreatureList.add(new SpawnListEntry(EntityHorse.class, 100, 1, 3));
 		}
 		
-		this.spawnableCreatureList.add(new SpawnListEntry(EntityAlienVillager.class, 50, 2, 8));
+		this.spawnableCreatureList.add(new SpawnListEntry(EntityAlienVillager.class, 35, 2, 8));
+		this.spawnableCreatureList.add(new SpawnListEntry(EntityMoolus.class, 80, 2, 4));
+		this.spawnableCreatureList.add(new SpawnListEntry(EntityOinkus.class, 80, 2, 4));
 		
 		if (!ConfigManagerZG.canEarthAnimalsSpawnOnEden) {
 			spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedZombie.class, 100, 4, 4));
@@ -87,11 +93,6 @@ public abstract class BiomeGenEdenBase extends BiomeSpace {
 	}
 	
 	@Override
-	public float getSpawningChance() {
-		return 0.1F;
-	}
-	
-	@Override
 	public BiomeDecorator createBiomeDecorator() {
 		return new BiomeDecoratorEden();
 	}
@@ -103,8 +104,9 @@ public abstract class BiomeGenEdenBase extends BiomeSpace {
 	public final void generateEdenTerrain(World worldIn, Random rand, ChunkPrimer chunkPrimerIn,
 			int x, int z, double noiseVal) {
 		int i = worldIn.getSeaLevel();
-		IBlockState iblockstate = this.topBlock;
-		IBlockState iblockstate1 = this.fillerBlock;
+		float biomeHeight = this.getBiomeHeight();
+		IBlockState topState = this.topBlock;
+		IBlockState fillState = this.fillerBlock;
 		int j = -1;
 		int k = (int) (noiseVal / 3.0D + 3.0D + rand.nextDouble() * 0.25D);
 		int l = x & 15;
@@ -122,36 +124,35 @@ public abstract class BiomeGenEdenBase extends BiomeSpace {
 				} else if (iblockstate2.getBlock() == ZGBlocks.edenStone) {
 					if (j == -1) {
 						if (k <= 0) {
-							iblockstate = AIR;
-							iblockstate1 = STONE;
+							topState = AIR;
+							fillState = STONE;
 						} else if (j1 >= i - 4 && j1 <= i + 1) {
-							iblockstate = this.topBlock;
-							iblockstate1 = this.fillerBlock;
+							topState = this.topBlock;
+							fillState = this.fillerBlock;
 						}
 						
-						if (j1 < i
-								&& (iblockstate == null || iblockstate.getMaterial() == Material.AIR)) {
+						if (j1 < i && (topState == null || topState.getMaterial() == Material.AIR)) {
 							if (this.getIsColdBiome()) {
-								iblockstate = ICE;
+								topState = ICE;
 							} else {
-								iblockstate = WATER;
+								topState = WATER;
 							}
 						}
 						
 						j = k;
 						
 						if (j1 >= i - 1) {
-							chunkPrimerIn.setBlockState(i1, j1, l, iblockstate);
+							chunkPrimerIn.setBlockState(i1, j1, l, topState);
 						} else if (j1 < i - 7 - k) {
-							iblockstate = AIR;
-							iblockstate1 = STONE;
+							topState = AIR;
+							fillState = STONE;
 							chunkPrimerIn.setBlockState(i1, j1, l, GRAVEL);
 						} else {
-							chunkPrimerIn.setBlockState(i1, j1, l, iblockstate1);
+							chunkPrimerIn.setBlockState(i1, j1, l, fillState);
 						}
 					} else if (j > 0) {
 						--j;
-						chunkPrimerIn.setBlockState(i1, j1, l, iblockstate1);
+						chunkPrimerIn.setBlockState(i1, j1, l, fillState);
 					}
 				}
 			}
@@ -166,12 +167,12 @@ public abstract class BiomeGenEdenBase extends BiomeSpace {
 	
 	@Override
 	public int getModdedBiomeFoliageColor(int original) {
-		return this.grassFoilageColorMultiplier;
+		return this.grassFoliageColor;
 	}
 	
 	@Override
 	public int getModdedBiomeGrassColor(int original) {
-		return this.grassFoilageColorMultiplier;
+		return this.grassFoliageColor;
 	}
 	
 }

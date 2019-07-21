@@ -44,9 +44,11 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 	private WorldGenerator invarGen;
 	private WorldGenerator electrumGen;
 	private WorldGenerator platinumGen;
+	private WorldGenerator heartiumGen;
 	
 	public int edenTallGrassPerChunk = 4;
 	public int edenFlowersPerChunk = 2;
+	public int edenTreesPerChunk = 1;
 	public int lavaLakesPerChunk = 2;
 	public int waterLakesPerChunk = 2;
 	
@@ -102,7 +104,9 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 		this.electrumGen = new WorldGenMinableZG(ZGBlocks.edenElectrumOre, ZGBlocks.edenStone,
 				EnumOreGenZG.ELECTRUM);
 		this.platinumGen = new WorldGenMinableZG(ZGBlocks.edenPlatinumOre, ZGBlocks.edenStone,
-				EnumOreGenZG.ELECTRUM);
+				EnumOreGenZG.PLATINUM);
+		this.heartiumGen = new WorldGenMinableZG(ZGBlocks.edenHeartiumOre, ZGBlocks.edenStone,
+				EnumOreGenZG.HEARTIUM);
 	}
 	
 	@Override
@@ -135,6 +139,7 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 		this.generateOre(this.invarGen, EnumOreGenZG.INVAR, world, rand);
 		this.generateOre(this.electrumGen, EnumOreGenZG.ELECTRUM, world, rand);
 		this.generateOre(this.platinumGen, EnumOreGenZG.PLATINUM, world, rand);
+		this.generateOre(this.heartiumGen, EnumOreGenZG.HEARTIUM, world, rand);
 		
 		int genY = 248;
 		int y = genY;
@@ -175,7 +180,7 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 		}
 		
 		if (this.edenTallGrassPerChunk > 0) {
-			for (int i = 0; i < this.edenTallGrassPerChunk; ++i) {
+			for (int i = 0; i < this.edenTallGrassPerChunk + 4; ++i) {
 				ZGDecorateHelper.generatePlants(new WorldGenEdenTallGrass(
 						(ZGBlockTallGrass) ZGBlocks.edenTallGrass), world, rand, this.chunkPos);
 			}

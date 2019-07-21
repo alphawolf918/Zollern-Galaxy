@@ -7,7 +7,9 @@ import static net.minecraftforge.common.BiomeDictionary.Type.HOT;
 import static net.minecraftforge.common.BiomeDictionary.Type.LUSH;
 import static net.minecraftforge.common.BiomeDictionary.Type.MOUNTAIN;
 import static net.minecraftforge.common.BiomeDictionary.Type.PLAINS;
+import static net.minecraftforge.common.BiomeDictionary.Type.SNOWY;
 import static net.minecraftforge.common.BiomeDictionary.Type.SPOOKY;
+import static net.minecraftforge.common.BiomeDictionary.Type.SWAMP;
 import static net.minecraftforge.common.BiomeDictionary.Type.WET;
 import java.util.LinkedList;
 import java.util.List;
@@ -20,6 +22,7 @@ import zollerngalaxy.biomes.eden.BiomeGoldenMeadow;
 import zollerngalaxy.biomes.eden.BiomeGreenLands;
 import zollerngalaxy.biomes.eden.BiomeSnowyPlains;
 import zollerngalaxy.biomes.eden.BiomeStoneMountains;
+import zollerngalaxy.biomes.eden.BiomeSwamplands;
 import zollerngalaxy.biomes.eden.BiomeTerranValley;
 import zollerngalaxy.biomes.kriffon.BiomeKriffon;
 import zollerngalaxy.biomes.purgot.BiomeLimbo;
@@ -51,18 +54,27 @@ public class ZGBiomes {
 			new BiomeProperties("Snowy Plains"));
 	public static Biome EDEN_GOLDEN_MEADOW = new BiomeGoldenMeadow(new BiomeProperties(
 			"Golden Meadow"));
+	public static Biome EDEN_SWAMPLANDS = new BiomeSwamplands(new BiomeProperties("Swamplands"));
 	
 	public static void init() {
+		// Zollus
 		ZGBiomes.addBiome(ZGBiomes.ZOLLUS, COLD, DEAD, DRY);
+		
+		// Kriffon
 		ZGBiomes.addBiome(ZGBiomes.KRIFFON, HOT, DEAD, DRY);
+		
+		// Purgot
 		ZGBiomes.addBiome(ZGBiomes.PURGOT, DEAD, DRY);
 		ZGBiomes.addBiome(ZGBiomes.LIMBO, SPOOKY, DEAD);
+		
+		// Eden
 		ZGBiomes.addBiome(ZGBiomes.EDEN_GREEN_LANDS, LUSH, WET);
 		ZGBiomes.addBiome(ZGBiomes.EDEN_BLOOD_DESERT, HOT, DEAD, DRY, MOUNTAIN);
 		ZGBiomes.addBiome(ZGBiomes.EDEN_ROCK_MOUNTAINS, MOUNTAIN, DEAD);
 		ZGBiomes.addBiome(ZGBiomes.EDEN_TERRAN_VALLEY, LUSH, WET);
-		ZGBiomes.addBiome(ZGBiomes.EDEN_SNOWY_PLAINS, PLAINS, COLD);
+		ZGBiomes.addBiome(ZGBiomes.EDEN_SNOWY_PLAINS, PLAINS, COLD, SNOWY);
 		ZGBiomes.addBiome(ZGBiomes.EDEN_GOLDEN_MEADOW, LUSH, WET);
+		ZGBiomes.addBiome(ZGBiomes.EDEN_SWAMPLANDS, LUSH, WET, SWAMP);
 		
 		ZGHelper.Log("Loaded a total of " + totalBiomes + " new biomes.");
 	}

@@ -1,38 +1,136 @@
 package zollerngalaxy.utils;
 
+import net.minecraft.block.Block;
+import net.minecraft.item.Item;
+import net.minecraftforge.oredict.OreDictionary;
+import zollerngalaxy.blocks.ZGBlocks;
+import zollerngalaxy.items.ZGItems;
+
 public class OreDictRegistry {
 	
 	public static void init() {
 		// Copper
-		// TODO
+		registerOre("oreCopper", ZGBlocks.edenCopperOre, ZGBlocks.kriffCopperOre,
+				ZGBlocks.purgCopperOre, ZGBlocks.zolCopperOre);
 		
 		// Tin
-		// TODO
+		registerOre("oreTin", ZGBlocks.edenTinOre, ZGBlocks.purgTinOre, ZGBlocks.zolTinOre);
 		
 		// Lead
-		// TODO
+		registerOre("oreLead", ZGBlocks.edenLeadOre, ZGBlocks.purgLeadOre);
 		
-		// Iron
-		// TODO
+		// Silver
+		registerOre("oreSilver", ZGBlocks.edenSilverOre);
 		
-		// Gold
-		// TODO
+		// Lapis
+		registerOre("oreLapis", ZGBlocks.edenLapisOre);
 		
-		// Nickle
-		// TODO
+		// Dirt
+		registerOre("blockDirt", ZGBlocks.edenDirt, ZGBlocks.kriffDirt, ZGBlocks.purgDirt,
+				ZGBlocks.zolDirt);
 		
-		// Diamond
-		// TODO
+		// Grass
+		registerOre("blockGrass", ZGBlocks.edenGoldenGrass, ZGBlocks.edenGrass);
 		
-		// Emerald
-		// TODO
+		// Stone
+		registerOre("blockStone", ZGBlocks.edenStone, ZGBlocks.kriffStone, ZGBlocks.purgStone,
+				ZGBlocks.zolStone);
+		
+		// Sand
+		registerOre("blockSand", ZGBlocks.edenBloodSand);
+		
+		// Cobble
+		registerOre("blockCobble", ZGBlocks.edenCobbleRock, ZGBlocks.kriffCobbleRock,
+				ZGBlocks.purgCobbleRock, ZGBlocks.zolCobbleRock);
 		
 		// Coal
-		// TODO
+		registerOre("oreCoal", ZGBlocks.edenCoalOre, ZGBlocks.kriffCoalOre, ZGBlocks.zolCoalOre);
+		
+		// Iron
+		registerOre("oreIron", ZGBlocks.edenIronOre, ZGBlocks.kriffIronOre, ZGBlocks.purgIronOre,
+				ZGBlocks.zolIronOre);
+		
+		// Gold
+		registerOre("oreGold", ZGBlocks.edenGoldOre, ZGBlocks.kriffGoldOre, ZGBlocks.purgGoldOre,
+				ZGBlocks.zolGoldOre);
+		
+		// Nickle
+		registerOre("oreNickel", ZGBlocks.edenNickleOre);
+		
+		// Diamond
+		registerOre("oreDiamond", ZGBlocks.edenDiamondOre, ZGBlocks.purgDiamondOre);
+		registerOre("dustDiamond", ZGItems.dustDiamond);
+		
+		// Emerald
+		registerOre("oreEmerald", ZGBlocks.edenEmeraldOre, ZGBlocks.purgEmeraldOre);
+		registerOre("dustEmerald", ZGItems.dustEmerald);
+		
+		// Redstone
+		registerOre("oreRedstone", ZGBlocks.edenRedstoneOre, ZGBlocks.kriffRedstoneOre,
+				ZGBlocks.purgRedstoneOre);
 		
 		// Steel
+		registerOre("oreSteel", ZGBlocks.edenSteelOre);
+		
+		// Platinum
+		registerOre("orePlatinum", ZGBlocks.edenPlatinumOre);
+		
+		// Electrum
+		registerOre("oreElectrum", ZGBlocks.edenElectrumOre);
+		
+		// Invar
+		registerOre("oreInvar", ZGBlocks.edenInvarOre);
+		
+		// Bronze
+		registerOre("oreBronze", ZGBlocks.edenBronzeOre);
+		
+		// Desh
+		registerOre("oreDesh", ZGBlocks.edenDeshOre);
+		
+		// Meteoric Iron
+		registerOre("oreMeteoricIron", ZGBlocks.edenMeteoricIronOre, ZGBlocks.purgMeteoricIronOre);
+		
+		// Aluminum
+		registerOre("oreAluminum", ZGBlocks.edenAluminumOre, ZGBlocks.purgAluminumOre);
+		
+		// Heartium
+		registerOre("oreHeartium", ZGBlocks.edenHeartiumOre, ZGBlocks.zolHeartOre);
+		registerOre("gemHeartium", ZGItems.heartOfZol);
+		
+		// Cobalt
+		registerOre("oreCobalt", ZGBlocks.edenCobaltOre, ZGBlocks.kriffCobaltOre,
+				ZGBlocks.purgCobaltOre);
+		registerOre("dustCobalt", ZGItems.dustCobalt);
+		registerOre("ingotCobalt", ZGItems.ingotCobalt);
+		registerOre("blockCobalt", ZGBlocks.blockCobalt);
+		
+		// Evenium
+		registerOre("oreEvenium", ZGBlocks.edenEveniumOre, ZGBlocks.purgEveniumOre);
+		registerOre("dustEvenium", ZGItems.dustEve);
+		registerOre("ingotEvenium", ZGItems.ingotEve);
+		registerOre("blockEvenium", ZGBlocks.blockEve);
+		
+		// Virinium
+		registerOre("oreVirinium", ZGBlocks.edenViriniumOre);
+		registerOre("dustVirinium", ZGItems.dustViri);
+		registerOre("ingotVirinium", ZGItems.ingotViri);
+		registerOre("blockVirinium", ZGBlocks.blockViri);
+		
+		// Titanium
 		// TODO
 		
 		// TODO: Add More
+	}
+	
+	private static void registerOre(String strName, Item... items) {
+		for (Item i : items) {
+			OreDictionary.registerOre(strName, i);
+		}
+	}
+	
+	private static void registerOre(String strName, Block... blocks) {
+		for (Block b : blocks) {
+			OreDictionary.registerOre(strName, b);
+		}
 	}
 }

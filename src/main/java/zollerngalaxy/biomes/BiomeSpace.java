@@ -7,7 +7,7 @@ import zollerngalaxy.planets.ZGPlanet;
 public class BiomeSpace extends ZGBiomeBase {
 	
 	protected ZGPlanet planetForBiome = null;
-	public static int grassFoilageColorMultiplier = 0x00ff00;
+	public static int grassFoliageColor = 0x00ff00;
 	
 	public BiomeSpace(BiomeProperties properties) {
 		super(properties);

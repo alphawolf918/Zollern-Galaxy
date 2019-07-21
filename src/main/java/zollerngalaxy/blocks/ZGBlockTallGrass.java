@@ -19,6 +19,8 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.IShearable;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ZGBlockTallGrass extends ZGBlockFlower implements IGrowable, IShearable {
 	
@@ -38,11 +40,8 @@ public class ZGBlockTallGrass extends ZGBlockFlower implements IGrowable, IShear
 	
 	@Override
 	public boolean canBlockStay(World worldIn, BlockPos pos, IBlockState state) {
-		IBlockState soil = worldIn.getBlockState(pos.down());
-		if (soil == ZGBlocks.edenDirt.getDefaultState()
-				|| soil == ZGBlocks.edenGrass.getDefaultState()
-				|| soil == ZGBlocks.edenSnow.getDefaultState()
-				|| soil == ZGBlocks.edenGoldenGrass.getDefaultState()) {
+		Block soil = worldIn.getBlockState(pos.down()).getBlock();
+		if (soil instanceof ZGBlockGrass || soil instanceof ZGBlockDirt) {
 			return true;
 		}
 		return false;
@@ -81,17 +80,6 @@ public class ZGBlockTallGrass extends ZGBlockFlower implements IGrowable, IShear
 	@Override
 	public ItemStack getItem(World worldIn, BlockPos pos, IBlockState state) {
 		return new ItemStack(this, 1, state.getBlock().getMetaFromState(state));
-	}
-	
-	/**
-	 * returns a list of blocks with the same ID, but different meta (eg: wood
-	 * returns 4 blocks)
-	 */
-	@Override
-	public void getSubBlocks(CreativeTabs itemIn, NonNullList<ItemStack> items) {
-		for (int i = 1; i < 3; ++i) {
-			items.add(new ItemStack(this, 1, i));
-		}
 	}
 	
 	/**
@@ -151,10 +139,17 @@ public class ZGBlockTallGrass extends ZGBlockFlower implements IGrowable, IShear
 	@Override
 	public void getDrops(NonNullList<ItemStack> drops, IBlockAccess world, BlockPos pos,
 			IBlockState state, int fortune) {
-		if (RANDOM.nextInt(8) != 0)
+		if (RANDOM.nextInt(4) != 0)
 			return;
 		ItemStack seed = net.minecraftforge.common.ForgeHooks.getGrassSeed(RANDOM, fortune);
-		if (!seed.isEmpty())
+		if (!seed.isEmpty()) {
 			drops.add(seed);
+		}
+	}
+	
+	@Override
+	@SideOnly(Side.CLIENT)
+	public CreativeTabs getCreativeTabToDisplayOn() {
+		return null;
 	}
 }
