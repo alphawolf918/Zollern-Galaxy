@@ -95,6 +95,9 @@ public class ZGBlocks {
 	public static final Block edenSnow = new ZGBlockGrass("edengrass_snow", 1.2F)
 			.setSound(SoundType.SNOW);
 	public static final Block edenGoldenGrass = new ZGBlockGrass("edengoldengrass", 1.2F);
+	public static final Block edenWoodLog = new ZGBlockLog("edenwoodlog");
+	public static final Block edenWoodLeaves = new ZGBlockLeaves("edenwoodleaves");
+	public static final Block edenWoodPlanks = new ZGBlockPlanks("edenwoodplanks");
 	public static final Block edenAluminumOre = new ZGBlockOre("edenaluminumore", 1.5F);
 	public static final Block edenSteelOre = new ZGBlockOre("edensteelore", 3.0F);
 	public static final Block edenBronzeOre = new ZGBlockOre("edenbronzeore", 2.8F);
@@ -130,10 +133,10 @@ public class ZGBlocks {
 	public static final Block blockEve = new ZGBlockMetal("eveniumblock");
 	public static final Block blockCobalt = new ZGBlockMetal("cobaltblock");
 	
-	// Xathius
+	// Oasis
 	// TODO
 	
-	// Oasis
+	// Xathius
 	// TODO
 	
 	public static void init() {
@@ -148,12 +151,13 @@ public class ZGBlocks {
 				purgLeadOre, purgRedstoneOre, edenSurfaceRock, edenTallGrass, edenGrass, edenDirt,
 				edenStone, edenSacredStone, edenCobbleRock, edenRockBricks, edenGoldenGrass,
 				edenSwampGrass, edenSnow, edenWinterRock, edenBloodSand, edenBloodStone,
-				edenBoneStone, edenGravel, edenBrightStone, edenAluminumOre, edenSteelOre,
-				edenBronzeOre, edenInvarOre, edenElectrumOre, edenPlatinumOre, edenCoalOre,
-				edenCopperOre, edenDeshOre, edenDiamondOre, edenEmeraldOre, edenGoldOre,
-				edenSilverOre, edenIronOre, edenLapisOre, edenMeteoricIronOre, edenRedstoneOre,
-				edenTinOre, edenLeadOre, edenNickleOre, edenViriniumOre, edenCobaltOre,
-				edenEveniumOre, edenHeartiumOre, blockViri, blockCobalt, blockEve);
+				edenBoneStone, edenGravel, edenBrightStone, edenWoodLog, edenWoodLeaves,
+				edenWoodPlanks, edenAluminumOre, edenSteelOre, edenBronzeOre, edenInvarOre,
+				edenElectrumOre, edenPlatinumOre, edenCoalOre, edenCopperOre, edenDeshOre,
+				edenDiamondOre, edenEmeraldOre, edenGoldOre, edenSilverOre, edenIronOre,
+				edenLapisOre, edenMeteoricIronOre, edenRedstoneOre, edenTinOre, edenLeadOre,
+				edenNickleOre, edenViriniumOre, edenCobaltOre, edenEveniumOre, edenHeartiumOre,
+				blockViri, blockCobalt, blockEve);
 		ZGHelper.Log("Loaded a total of " + totalBlocks + " new blocks.");
 	}
 	

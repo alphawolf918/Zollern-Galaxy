@@ -108,7 +108,7 @@ public class ZGBlockGrass extends ZGBlockDirt implements IGrowable {
 						if (iblockstate1.getBlock() == ZGBlocks.edenDirt
 								&& worldIn.getLightFromNeighbors(blockpos.up()) >= 4
 								&& iblockstate.getLightOpacity(worldIn, pos.up()) <= 2) {
-							worldIn.setBlockState(blockpos, ZGBlocks.edenGrass.getDefaultState());
+							worldIn.setBlockState(blockpos, this.getDefaultState());
 						}
 					}
 				}

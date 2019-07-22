@@ -26,7 +26,7 @@ public class BiomeSnowyPlains extends BiomeGenEdenBase {
 		this.decorator.generateFalls = true;
 		this.biomeDecor.generateLakes = true;
 		this.biomeDecor.waterLakesPerChunk = 4;
-		this.biomeDecor.edenTallGrassPerChunk = 4;
+		this.biomeDecor.edenTallGrassPerChunk = 6;
 		this.biomeDecor.edenFlowersPerChunk = 4;
 		this.grassFoilageColorMultiplier = 0x00009f;
 		this.waterColor = 0x00009f;

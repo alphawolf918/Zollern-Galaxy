@@ -16,6 +16,7 @@ import zollerngalaxy.worldgen.WorldGenLakesZG;
 import zollerngalaxy.worldgen.WorldGenMinableZG;
 import zollerngalaxy.worldgen.WorldGenZGFlowers;
 import zollerngalaxy.worldgen.eden.WorldGenEdenTallGrass;
+import zollerngalaxy.worldgen.eden.WorldGenEdenTrees;
 
 public class BiomeDecoratorEden extends BiomeDecoratorZG {
 	
@@ -49,8 +50,8 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 	public int edenTallGrassPerChunk = 4;
 	public int edenFlowersPerChunk = 2;
 	public int edenTreesPerChunk = 1;
-	public int lavaLakesPerChunk = 2;
-	public int waterLakesPerChunk = 2;
+	public int lavaLakesPerChunk = 1;
+	public int waterLakesPerChunk = 4;
 	
 	public boolean generateLakes = true;
 	
@@ -183,6 +184,15 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 			for (int i = 0; i < this.edenTallGrassPerChunk + 4; ++i) {
 				ZGDecorateHelper.generatePlants(new WorldGenEdenTallGrass(
 						(ZGBlockTallGrass) ZGBlocks.edenTallGrass), world, rand, this.chunkPos);
+			}
+		}
+		
+		if (this.edenTreesPerChunk > 0) {
+			for (int i = 0; i < this.edenTreesPerChunk + 2; ++i) {
+				WorldGenEdenTrees treeGen = new WorldGenEdenTrees(true, 5,
+						ZGBlocks.edenWoodLog.getDefaultState(),
+						ZGBlocks.edenWoodLeaves.getDefaultState(), false);
+				treeGen.generate(world, rand, this.chunkPos);
 			}
 		}
 	}

@@ -1,4 +1,4 @@
-package zollerngalaxy.utils;
+package zollerngalaxy.util;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;

@@ -56,10 +56,7 @@ public abstract class BiomeGenEdenBase extends BiomeSpace {
 		this.biomeDecor.edenFlowersPerChunk = 4;
 		this.biomeDecor.edenTallGrassPerChunk = 2;
 		this.biomeDecor.edenTreesPerChunk = 1;
-		this.spawnableCaveCreatureList.clear();
-		this.spawnableMonsterList.clear();
-		this.spawnableWaterCreatureList.clear();
-		this.spawnableCreatureList.clear();
+		this.clearAllSpawning();
 		
 		if (ConfigManagerZG.canEarthAnimalsSpawnOnEden) {
 			this.spawnableCreatureList.add(new SpawnListEntry(EntityChicken.class, 100, 1, 2));
