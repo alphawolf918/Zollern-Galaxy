@@ -90,7 +90,7 @@ public class ZGBlockGrass extends ZGBlockDirt implements IGrowable {
 						// neighbor's light and spreading
 			if (worldIn.getLightFromNeighbors(pos.up()) < 4
 					&& worldIn.getBlockState(pos.up()).getLightOpacity(worldIn, pos.up()) > 2) {
-				worldIn.setBlockState(pos, ZGBlocks.edenDirt.getDefaultState());
+				worldIn.setBlockState(pos, ZGBlocks.edenSoil.getDefaultState());
 			} else {
 				if (worldIn.getLightFromNeighbors(pos.up()) >= 9) {
 					for (int i = 0; i < 4; ++i) {
@@ -105,7 +105,7 @@ public class ZGBlockGrass extends ZGBlockDirt implements IGrowable {
 						IBlockState iblockstate = worldIn.getBlockState(blockpos.up());
 						IBlockState iblockstate1 = worldIn.getBlockState(blockpos);
 						
-						if (iblockstate1.getBlock() == ZGBlocks.edenDirt
+						if (iblockstate1.getBlock() == ZGBlocks.edenSoil
 								&& worldIn.getLightFromNeighbors(blockpos.up()) >= 4
 								&& iblockstate.getLightOpacity(worldIn, pos.up()) <= 2) {
 							worldIn.setBlockState(blockpos, this.getDefaultState());
@@ -118,7 +118,7 @@ public class ZGBlockGrass extends ZGBlockDirt implements IGrowable {
 	
 	@Override
 	public Item getItemDropped(IBlockState state, Random rand, int fortune) {
-		return Item.getItemFromBlock(ZGBlocks.edenDirt);
+		return Item.getItemFromBlock(ZGBlocks.edenSoil);
 	}
 	
 	@Override

@@ -19,6 +19,7 @@ public abstract class GenLayerEden extends GenLayer {
 		biomes = new GenLayerZoom(1004L, biomes);
 		biomes = new GenLayerZoom(1005L, biomes);
 		biomes = new GenLayerZoom(1006L, biomes);
+		biomes = new GenLayerZoom(1007L, biomes);
 		GenLayer genLayerVeronoiZoom = new GenLayerVoronoiZoom(10L, biomes);
 		biomes.initWorldGenSeed(l);
 		genLayerVeronoiZoom.initWorldGenSeed(l);

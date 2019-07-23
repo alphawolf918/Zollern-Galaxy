@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "zollerngalaxy:edenwoodlog"
+    }
+  ],
+  "result": {
+    "item": "zollerngalaxy:edenwoodplanks",
+    "count": 4
+  }
+}

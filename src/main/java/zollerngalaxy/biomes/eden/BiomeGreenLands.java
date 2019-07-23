@@ -29,7 +29,7 @@ public class BiomeGreenLands extends BiomeGenEdenBase {
 		this.grassFoilageColorMultiplier = 0x009f00;
 		this.waterColor = 0x009f9f;
 		this.topBlock = ZGBlocks.edenSurfaceRock.getDefaultState();
-		this.fillerBlock = ZGBlocks.edenDirt.getDefaultState();
+		this.fillerBlock = ZGBlocks.edenSoil.getDefaultState();
 		this.stoneBlock = ZGBlocks.edenStone;
 	}
 	

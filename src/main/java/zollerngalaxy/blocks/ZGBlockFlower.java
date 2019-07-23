@@ -14,11 +14,13 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import net.minecraftforge.common.EnumPlantType;
+import net.minecraftforge.common.IPlantable;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.core.enums.EnumBlockType;
 
-public class ZGBlockFlower extends ZGBlockBase {
+public class ZGBlockFlower extends ZGBlockBase implements IPlantable {
 	
 	public ZGBlockFlower(String blockName) {
 		super(blockName, 0.0F);
@@ -96,5 +98,18 @@ public class ZGBlockFlower extends ZGBlockBase {
 	@Override
 	public boolean shouldJSONIgnore() {
 		return true;
+	}
+	
+	@Override
+	public EnumPlantType getPlantType(IBlockAccess world, BlockPos pos) {
+		return EnumPlantType.Plains;
+	}
+	
+	@Override
+	public IBlockState getPlant(net.minecraft.world.IBlockAccess world, BlockPos pos) {
+		IBlockState state = world.getBlockState(pos);
+		if (state.getBlock() != this)
+			return getDefaultState();
+		return state;
 	}
 }

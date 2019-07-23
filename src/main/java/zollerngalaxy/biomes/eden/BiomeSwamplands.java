@@ -19,9 +19,10 @@ public class BiomeSwamplands extends BiomeGenEdenBase {
 		props.setTemperature(6.5F);
 		this.setBiomeHeight(65);
 		this.biomeDecor.generateLakes = true;
+		this.biomeDecor.generateVines = true;
 		this.biomeDecor.edenFlowersPerChunk = 4;
 		this.biomeDecor.edenTallGrassPerChunk = 8;
-		this.biomeDecor.edenTreesPerChunk = 10;
+		this.biomeDecor.edenTreesPerChunk = 16;
 		this.biomeDecor.waterLakesPerChunk = 16;
 		this.biomeDecor.waterlilyPerChunk = 16;
 		this.biomeDecor.deadBushPerChunk = 2;
@@ -32,7 +33,7 @@ public class BiomeSwamplands extends BiomeGenEdenBase {
 		this.grassFoliageColor = 0x00aa00;
 		this.waterColor = 0x004422;
 		this.topBlock = ZGBlocks.edenSwampGrass.getDefaultState();
-		this.fillerBlock = ZGBlocks.edenDirt.getDefaultState();
+		this.fillerBlock = ZGBlocks.edenSoil.getDefaultState();
 	}
 	
 	@Override
@@ -46,10 +47,11 @@ public class BiomeSwamplands extends BiomeGenEdenBase {
 			
 			for (int k = 255; k >= 0; --k) {
 				if (chunkPrimerIn.getBlockState(j, k, i).getMaterial() != Material.AIR) {
-					if (k == 62 && chunkPrimerIn.getBlockState(j, k, i).getBlock() != Blocks.WATER) {
+					if (k <= (this.getBiomeHeight() - 3)
+							&& chunkPrimerIn.getBlockState(j, k, i).getBlock() != Blocks.WATER) {
 						chunkPrimerIn.setBlockState(j, k, i, WATER);
 						
-						if (d0 < 0.12D) {
+						if (d0 <= 0.24D) {
 							chunkPrimerIn.setBlockState(j, k + 1, i,
 									Blocks.WATERLILY.getDefaultState());
 						}

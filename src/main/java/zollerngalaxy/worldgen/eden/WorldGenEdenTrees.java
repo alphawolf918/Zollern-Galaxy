@@ -11,6 +11,7 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
+import zollerngalaxy.blocks.ZGBlockDirt;
 import zollerngalaxy.blocks.ZGBlockGrass;
 
 public class WorldGenEdenTrees extends WorldGenAbstractTree {
@@ -39,7 +40,7 @@ public class WorldGenEdenTrees extends WorldGenAbstractTree {
 		int i = rand.nextInt(3) + this.minTreeHeight;
 		boolean flag = true;
 		
-		if (position.getY() >= 1 && position.getY() + i + 1 <= worldIn.getHeight() + 20) {
+		if (position.getY() >= 1 && position.getY() + i + 1 <= worldIn.getHeight()) {
 			for (int j = position.getY(); j <= position.getY() + 1 + i; ++j) {
 				int k = 1;
 				
@@ -74,7 +75,8 @@ public class WorldGenEdenTrees extends WorldGenAbstractTree {
 				} else {
 					IBlockState state = worldIn.getBlockState(position.down());
 					
-					if (state.getBlock() instanceof ZGBlockGrass) {
+					if (state.getBlock() instanceof ZGBlockGrass
+							|| state.getBlock() instanceof ZGBlockDirt) {
 						// state.getBlock().onPlantGrow(state, worldIn,
 						// position.down(), position);
 						int k2 = 3;
@@ -204,7 +206,6 @@ public class WorldGenEdenTrees extends WorldGenAbstractTree {
 								}
 							}
 						}
-						
 						return true;
 					} else {
 						return false;

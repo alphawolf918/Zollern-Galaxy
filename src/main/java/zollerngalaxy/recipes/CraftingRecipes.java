@@ -33,6 +33,8 @@ public class CraftingRecipes {
 		
 		CraftingRecipes.addBriteStone(ZGItems.dustBrightstone, ZGBlocks.edenBrightStone);
 		
+		CraftingRecipes.addPlanks(ZGBlocks.edenWoodLog, ZGBlocks.edenWoodPlanks);
+		
 		// HUD
 		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.hud, 1), new Object[] { "RXR", "SDS", "RXR",
 				'R', Items.REDSTONE, 'X', new ItemStack(GCItems.basicItem, 1, 3), 'S',
@@ -57,6 +59,11 @@ public class CraftingRecipes {
 	private static void addBriteStone(Item dustIn, Block blockOut) {
 		ZGRecipeHelper.addRecipe(new ItemStack(blockOut, 1),
 				new Object[] { "DD", "DD", 'D', dustIn });
+		totalCraftRecipes++;
+	}
+	
+	private static void addPlanks(Block logIn, Block planksOut) {
+		ZGRecipeHelper.addShapelessRecipe(new ItemStack(planksOut, 4), new ItemStack(logIn));
 		totalCraftRecipes++;
 	}
 }

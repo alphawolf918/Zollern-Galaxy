@@ -30,7 +30,7 @@ import zollerngalaxy.worldgen.mapgen.MapGenRavinesZG;
 public class ChunkProviderEden extends ChunkProviderBase {
 	
 	public static IBlockState BLOCK_TOP = ZGBlocks.edenSurfaceRock.getDefaultState();
-	public static IBlockState BLOCK_FILL = ZGBlocks.edenDirt.getDefaultState();
+	public static IBlockState BLOCK_FILL = ZGBlocks.edenSoil.getDefaultState();
 	public static IBlockState BLOCK_STONE = ZGBlocks.edenStone.getDefaultState();
 	
 	public static double CHUNK_HEIGHT = 40.0D;// ZGHelper.rngDbl(20.0D, 40.0D);

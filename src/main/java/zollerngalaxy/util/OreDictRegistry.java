@@ -26,21 +26,40 @@ public class OreDictRegistry {
 		registerOre("oreLapis", ZGBlocks.edenLapisOre);
 		
 		// Dirt
-		registerOre("blockDirt", ZGBlocks.edenDirt, ZGBlocks.kriffDirt, ZGBlocks.purgDirt,
+		registerOre("dirt", ZGBlocks.edenSoil, ZGBlocks.kriffDirt, ZGBlocks.purgDirt,
 				ZGBlocks.zolDirt);
 		
+		// Gravel
+		registerOre("gravel", ZGBlocks.edenGravel);
+		
 		// Grass
-		registerOre("blockGrass", ZGBlocks.edenGoldenGrass, ZGBlocks.edenGrass);
+		registerOre("grass", ZGBlocks.edenGoldenGrass, ZGBlocks.edenGrass, ZGBlocks.edenSwampGrass);
+		
+		// Logs
+		registerOre("log", ZGBlocks.edenWoodLog);
+		
+		// Leaves
+		registerOre("leaves", ZGBlocks.edenWoodLeaves);
+		
+		// Planks
+		registerOre("wood", ZGBlocks.edenWoodPlanks);
 		
 		// Stone
-		registerOre("blockStone", ZGBlocks.edenStone, ZGBlocks.kriffStone, ZGBlocks.purgStone,
+		registerOre("stone", ZGBlocks.edenStone, ZGBlocks.kriffStone, ZGBlocks.purgStone,
 				ZGBlocks.zolStone);
 		
+		// Stone Bricks
+		registerOre("stonebrick", ZGBlocks.edenRockBricks, ZGBlocks.kriffRockBricks,
+				ZGBlocks.purgRockBricks, ZGBlocks.zolRockBricks);
+		
+		// Glowstone
+		registerOre("glowstone", ZGBlocks.edenBrightStone);
+		
 		// Sand
-		registerOre("blockSand", ZGBlocks.edenBloodSand);
+		registerOre("sand", ZGBlocks.edenBloodSand);
 		
 		// Cobble
-		registerOre("blockCobble", ZGBlocks.edenCobbleRock, ZGBlocks.kriffCobbleRock,
+		registerOre("cobblestone", ZGBlocks.edenCobbleRock, ZGBlocks.kriffCobbleRock,
 				ZGBlocks.purgCobbleRock, ZGBlocks.zolCobbleRock);
 		
 		// Coal

@@ -18,6 +18,7 @@ import zollerngalaxy.items.ZGItems;
 import zollerngalaxy.lib.ZGInfo;
 import zollerngalaxy.lib.helpers.ModHelperBase;
 import zollerngalaxy.lib.helpers.ZGHandlers;
+import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.mobs.MobRegistry;
 import zollerngalaxy.planets.ZGPlanets;
 import zollerngalaxy.proxy.CommonProxy;
@@ -25,24 +26,24 @@ import zollerngalaxy.proxy.IProxy;
 import zollerngalaxy.recipes.ZGRecipeRegistry;
 import zollerngalaxy.util.OreDictRegistry;
 
-@Mod(modid = ZGInfo.MOD_ID, version = ZGInfo.modVersion, name = ZGInfo.name,
+@Mod(modid = ZGInfo.MOD_ID, version = ZGInfo.MOD_VERSION, name = ZGInfo.NAME,
 		dependencies = ZGInfo.DEPENDENCIES)
 public class ZollernGalaxyCore {
 	
-	@SidedProxy(clientSide = ZGInfo.proxyClient, serverSide = ZGInfo.proxyServer)
+	@SidedProxy(clientSide = ZGInfo.PROXY_CLIENT, serverSide = ZGInfo.PROXY_SERVER)
 	public static IProxy proxy;
 	
 	@Mod.Instance(ZGInfo.MOD_ID)
 	private static ZollernGalaxyCore INSTANCE;
 	
-	private static boolean devMode = true;
+	private static final boolean DEV_MODE = true;
 	
 	public static ZollernGalaxyCore instance() {
 		return INSTANCE;
 	}
 	
 	public boolean isInDevMode() {
-		return devMode;
+		return DEV_MODE;
 	}
 	
 	static {
@@ -51,6 +52,7 @@ public class ZollernGalaxyCore {
 	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
+		ZGHelper.Log("Beginning Pre-Initilization phase...");
 		ConfigManagerZG.init(event);
 		ModHelperBase.detectMods();
 		
@@ -62,10 +64,12 @@ public class ZollernGalaxyCore {
 		
 		instance().proxy.registerPreRendering();
 		instance().proxy.preInit(event);
+		ZGHelper.Log("Pre-Init phase complete.");
 	}
 	
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
+		ZGHelper.Log("Beginning Initialization phase...");
 		ZGTabs.init();
 		ZGRecipeRegistry.init();
 		ZGHandlers.init();
@@ -81,14 +85,17 @@ public class ZollernGalaxyCore {
 		instance().proxy.init(event);
 		
 		NetworkRegistry.INSTANCE.registerGuiHandler(this, new CommonProxy());
+		ZGHelper.Log("Init phase complete.");
 	}
 	
 	@EventHandler
 	public void postInit(FMLPostInitializationEvent event) {
+		ZGHelper.Log("Beginning Post-Initialization phase...");
 		ZGDimensions.init();
 		
 		instance().proxy.registerPostRendering();
 		instance().proxy.postInit(event);
+		ZGHelper.Log("Post-init phase complete.");
 	}
 	
 }

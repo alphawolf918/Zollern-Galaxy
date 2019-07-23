@@ -29,7 +29,7 @@ public class BiomeGoldenMeadow extends BiomeGenEdenBase {
 		this.grassFoilageColorMultiplier = 0x00008b;
 		this.waterColor = 0x00008b;
 		this.topBlock = ZGBlocks.edenGoldenGrass.getDefaultState();
-		this.fillerBlock = ZGBlocks.edenDirt.getDefaultState();
+		this.fillerBlock = ZGBlocks.edenSoil.getDefaultState();
 		this.stoneBlock = ZGBlocks.edenStone;
 	}
 	

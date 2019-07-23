@@ -24,16 +24,17 @@ public class BiomeTerranValley extends BiomeGenEdenBase {
 		this.setBiomeHeight(52);
 		this.enableSnow = false;
 		this.decorator.generateFalls = true;
-		this.biomeDecor.waterLakesPerChunk = 1;
+		this.biomeDecor.waterLakesPerChunk = 2;
 		this.biomeDecor.lavaLakesPerChunk = 0;
-		this.biomeDecor.edenTallGrassPerChunk = 8;
+		this.biomeDecor.edenTallGrassPerChunk = 14;
 		this.biomeDecor.edenFlowersPerChunk = 6;
+		this.biomeDecor.edenTreesPerChunk = 1;
 		this.grassFoilageColorMultiplier = 0x00008b;
 		this.waterColor = 0x00008b;
 		this.spawnableCreatureList.add(new SpawnListEntry(EntityMoolus.class, 100, 4, 6));
 		this.spawnableCreatureList.add(new SpawnListEntry(EntityOinkus.class, 100, 4, 6));
 		this.topBlock = ZGBlocks.edenGrass.getDefaultState();
-		this.fillerBlock = ZGBlocks.edenDirt.getDefaultState();
+		this.fillerBlock = ZGBlocks.edenSoil.getDefaultState();
 		this.stoneBlock = ZGBlocks.edenStone;
 	}
 	
@@ -41,11 +42,6 @@ public class BiomeTerranValley extends BiomeGenEdenBase {
 	@SideOnly(Side.CLIENT)
 	public int getSkyColorByTemp(float p_76731_1_) {
 		return 0x003a4b;
-	}
-	
-	@Override
-	public float getSpawningChance() {
-		return 0.1F;
 	}
 	
 	@Override

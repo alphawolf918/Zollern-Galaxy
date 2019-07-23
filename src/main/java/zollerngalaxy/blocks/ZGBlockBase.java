@@ -98,7 +98,7 @@ public class ZGBlockBase extends Block implements ISingleZGBlockRender, IJSONBlo
 		if (!entityIn.isImmuneToFire() && entityIn instanceof EntityLivingBase
 				&& !EnchantmentHelper.hasFrostWalkerEnchantment((EntityLivingBase) entityIn)
 				&& this.getIsHotBlock()) {
-			entityIn.attackEntityFrom(DamageSource.HOT_FLOOR, 1.5F);
+			entityIn.attackEntityFrom(DamageSource.HOT_FLOOR, 2.5F);
 		}
 		
 		super.onEntityWalk(worldIn, pos, entityIn);
