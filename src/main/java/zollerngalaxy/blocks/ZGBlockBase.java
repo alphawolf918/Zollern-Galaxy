@@ -10,7 +10,9 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -40,6 +42,8 @@ public class ZGBlockBase extends Block implements ISingleZGBlockRender, IJSONBlo
 		this.setHardResist(hardResist);
 		this.setHarvestLevel("pickaxe", EnumHarvestLevel.DIAMOND.getHarvestLevel());
 		this.setSoundType(blockSound);
+		this.setBlockType(blockType);
+		this.translucent = false;
 		
 		if (!this.shouldJSONIgnore()) {
 			JSONRegistryHelper.registerBlock(blockName);
@@ -170,4 +174,28 @@ public class ZGBlockBase extends Block implements ISingleZGBlockRender, IJSONBlo
 		return this.blockType;
 	}
 	
+	@Override
+	public boolean isReplaceable(IBlockAccess worldIn, BlockPos pos) {
+		return false;
+	}
+	
+	@Override
+	public boolean isOpaqueCube(IBlockState state) {
+		return true;
+	}
+	
+	@Override
+	public boolean isCollidable() {
+		return true;
+	}
+	
+	@Override
+	public boolean isFullCube(IBlockState state) {
+		return true;
+	}
+	
+	@Override
+	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
+		return FULL_BLOCK_AABB;
+	}
 }

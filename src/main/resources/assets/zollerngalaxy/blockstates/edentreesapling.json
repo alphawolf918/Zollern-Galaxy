@@ -5,8 +5,7 @@
         "uvlock": true
     },
     "variants": {
-		"normal": { "model": "zollerngalaxy:edentreesapling" },
-        "stage=0": { "model": "zollerngalaxy:edentreesapling" },
+		"stage=0": { "model": "zollerngalaxy:edentreesapling" },
         "stage=1": { "model": "zollerngalaxy:edentreesapling" }
     }
 }

@@ -12,6 +12,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
+import net.minecraftforge.event.terraingen.TerrainGen;
 import zollerngalaxy.core.enums.EnumBlockType;
 import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.worldgen.eden.WorldGenEdenTrees;
@@ -74,14 +75,15 @@ public class ZGBlockSapling extends ZGBlockFlower implements IGrowable {
 	}
 	
 	public void generateTree(World worldIn, BlockPos pos, IBlockState state, Random rand) {
-		if (!net.minecraftforge.event.terraingen.TerrainGen.saplingGrowTree(worldIn, rand, pos))
+		if (!TerrainGen.saplingGrowTree(worldIn, rand, pos))
 			return;
 		WorldGenerator worldgenerator = new WorldGenEdenTrees(true, ZGHelper.rngNumber(5, 15),
 				ZGBlocks.edenWoodLog.getDefaultState(), ZGBlocks.edenWoodLeaves.getDefaultState(),
 				false);
 		int i = 0;
 		int j = 0;
-		boolean flag = false;
+		
+		boolean flag = true;
 		
 		IBlockState iblockstate2 = Blocks.AIR.getDefaultState();
 		

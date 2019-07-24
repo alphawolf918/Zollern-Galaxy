@@ -43,8 +43,6 @@ public class CommonZGRegisterHelper {
 			ISingleZGBlockRender blockRender = (ISingleZGBlockRender) block;
 			
 			if (blockRender.getName() != null) {
-				// ZollernHelper.logInfo("BR Name: " + blockRender.getName());
-				// ZollernHelper.logInfo("BR Name: " + name);
 				CommonZGRegisterHelper.SINGLE_BLOCK_RENDER_LIST.put(block, name);
 			}
 		}

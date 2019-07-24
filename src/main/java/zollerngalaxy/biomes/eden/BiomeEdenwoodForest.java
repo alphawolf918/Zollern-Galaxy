@@ -14,6 +14,7 @@ public class BiomeEdenwoodForest extends BiomeGenEdenBase {
 		this.setBiomeHeight(72);
 		this.decorator.generateFalls = true;
 		this.biomeDecor.generateLakes = true;
+		this.biomeDecor.lavaLakesPerChunk = 0;
 		this.biomeDecor.generateVines = false;
 		this.biomeDecor.edenFlowersPerChunk = 4;
 		this.biomeDecor.edenTallGrassPerChunk = 8;

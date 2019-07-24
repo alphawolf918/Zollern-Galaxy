@@ -71,21 +71,18 @@ public abstract class BiomeGenEdenBase extends BiomeSpace {
 		this.spawnableCreatureList.add(new SpawnListEntry(EntityMoolus.class, 80, 2, 4));
 		this.spawnableCreatureList.add(new SpawnListEntry(EntityOinkus.class, 80, 2, 4));
 		
-		if (!ConfigManagerZG.canEarthAnimalsSpawnOnEden) {
-			spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedZombie.class, 100, 4, 4));
-			spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedSpider.class, 100, 4, 4));
-			spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedSkeleton.class, 100, 4, 4));
-			spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedCreeper.class, 100, 4, 4));
-			spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedEnderman.class, 100, 4, 4));
-			spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedWitch.class, 100, 4, 4));
-		} else {
-			spawnableMonsterList.add(new SpawnListEntry(EntityZombie.class, 100, 4, 4));
-			spawnableMonsterList.add(new SpawnListEntry(EntitySpider.class, 100, 4, 4));
-			spawnableMonsterList.add(new SpawnListEntry(EntitySkeleton.class, 100, 4, 4));
-			spawnableMonsterList.add(new SpawnListEntry(EntityCreeper.class, 100, 4, 4));
-			spawnableMonsterList.add(new SpawnListEntry(EntityEnderman.class, 100, 1, 4));
-			spawnableMonsterList.add(new SpawnListEntry(EntityWitch.class, 5, 1, 1));
-		}
+		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedZombie.class, 100, 4, 4));
+		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedSpider.class, 100, 4, 4));
+		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedSkeleton.class, 100, 4, 4));
+		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedCreeper.class, 100, 4, 4));
+		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedEnderman.class, 100, 4, 4));
+		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedWitch.class, 100, 4, 4));
+		this.spawnableMonsterList.add(new SpawnListEntry(EntityZombie.class, 100, 4, 4));
+		this.spawnableMonsterList.add(new SpawnListEntry(EntitySpider.class, 100, 4, 4));
+		this.spawnableMonsterList.add(new SpawnListEntry(EntitySkeleton.class, 100, 4, 4));
+		this.spawnableMonsterList.add(new SpawnListEntry(EntityCreeper.class, 100, 4, 4));
+		this.spawnableMonsterList.add(new SpawnListEntry(EntityEnderman.class, 100, 1, 4));
+		this.spawnableMonsterList.add(new SpawnListEntry(EntityWitch.class, 5, 1, 1));
 		this.setPlanetForBiome(ZGPlanets.planetEden);
 	}
 	

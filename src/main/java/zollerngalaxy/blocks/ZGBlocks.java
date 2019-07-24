@@ -14,6 +14,7 @@ import zollerngalaxy.lib.helpers.ZGHelper;
 public class ZGBlocks {
 	
 	private static int totalBlocks = 0;
+	public static final Block edenWoodSapling = new ZGBlockSapling("edentreesapling");
 	
 	// Zollus
 	public static final Block zolCobbleRock = new ZGBlockBase("zolcobblerock", 1.2F)
@@ -98,7 +99,6 @@ public class ZGBlocks {
 	public static final Block edenWoodLog = new ZGBlockLog("edenwoodlog");
 	public static final Block edenWoodLeaves = new ZGBlockLeaves("edenwoodleaves");
 	public static final Block edenWoodPlanks = new ZGBlockPlanks("edenwoodplanks");
-	public static final Block edenWoodSapling = new ZGBlockSapling("edentreesapling");
 	public static final Block edenAluminumOre = new ZGBlockOre("edenaluminumore", 1.5F);
 	public static final Block edenSteelOre = new ZGBlockOre("edensteelore", 3.0F);
 	public static final Block edenBronzeOre = new ZGBlockOre("edenbronzeore", 2.8F);
@@ -141,9 +141,9 @@ public class ZGBlocks {
 	// TODO
 	
 	public static void init() {
-		ZGBlocks.registerBlocks(zolStone, zolCobbleRock, zolSurfaceRock, zolDirt, zolRockBricks,
-				zolCoalOre, zolCopperOre, zolGoldOre, zolHeartOre, zolTinOre, zolIronOre,
-				zolCrystals, kriffSurfaceRock, kriffStone, kriffCobbleRock, kriffDirt,
+		ZGBlocks.registerBlocks(edenWoodSapling, zolStone, zolCobbleRock, zolSurfaceRock, zolDirt,
+				zolRockBricks, zolCoalOre, zolCopperOre, zolGoldOre, zolHeartOre, zolTinOre,
+				zolIronOre, zolCrystals, kriffSurfaceRock, kriffStone, kriffCobbleRock, kriffDirt,
 				kriffRockBricks, kriffMagmaRock, kriffCoalOre, kriffCopperOre, kriffIronOre,
 				kriffGoldOre, kriffRedstoneOre, kriffCobaltOre, purgCobbleRock, purgStone,
 				purgRockBricks, purgWhiteRock, purgBlackRock, purgSurfaceRock, purgDirt,
@@ -153,12 +153,12 @@ public class ZGBlocks {
 				edenStone, edenSacredStone, edenCobbleRock, edenRockBricks, edenGoldenGrass,
 				edenSwampGrass, edenSnow, edenWinterRock, edenBloodSand, edenBloodStone,
 				edenBoneStone, edenGravel, edenBrightStone, edenWoodLog, edenWoodLeaves,
-				edenWoodPlanks, edenWoodSapling, edenAluminumOre, edenSteelOre, edenBronzeOre,
-				edenInvarOre, edenElectrumOre, edenPlatinumOre, edenCoalOre, edenCopperOre,
-				edenDeshOre, edenDiamondOre, edenEmeraldOre, edenGoldOre, edenSilverOre,
-				edenIronOre, edenLapisOre, edenMeteoricIronOre, edenRedstoneOre, edenTinOre,
-				edenLeadOre, edenNickleOre, edenViriniumOre, edenCobaltOre, edenEveniumOre,
-				edenHeartiumOre, blockViri, blockCobalt, blockEve);
+				edenWoodPlanks, edenAluminumOre, edenSteelOre, edenBronzeOre, edenInvarOre,
+				edenElectrumOre, edenPlatinumOre, edenCoalOre, edenCopperOre, edenDeshOre,
+				edenDiamondOre, edenEmeraldOre, edenGoldOre, edenSilverOre, edenIronOre,
+				edenLapisOre, edenMeteoricIronOre, edenRedstoneOre, edenTinOre, edenLeadOre,
+				edenNickleOre, edenViriniumOre, edenCobaltOre, edenEveniumOre, edenHeartiumOre,
+				blockViri, blockCobalt, blockEve);
 		ZGHelper.Log("Loaded a total of " + totalBlocks + " new blocks.");
 	}
 	
