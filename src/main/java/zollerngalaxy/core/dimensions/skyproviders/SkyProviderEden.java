@@ -149,9 +149,9 @@ public class SkyProviderEden extends IRenderHandler {
 		float a = afloat[3] * 2 / f18;
 		worldRenderer1.pos(0.0D, 100.0D, 0.0D).color(r, g, b, a).endVertex();
 		byte b0 = 16;
-		r = afloat[0] * f18;
-		g = afloat[1] * f18;
-		b = afloat[2] * f18 / 20.0F;
+		r = 0;// afloat[0] * f18;
+		g = 10;// afloat[1] * f18;
+		b = 10;// afloat[2] * f18 / 20.0F;
 		a = 0.0F;
 		
 		// Render sun aura
@@ -173,9 +173,9 @@ public class SkyProviderEden extends IRenderHandler {
 		b = 10;// f8 * f18;
 		a = afloat[3] * f18;
 		worldRenderer1.pos(0.0D, 100.0D, 0.0D).color(r, g, b, a).endVertex();
-		r = afloat[0] * f18;
-		g = afloat[1] * f18;
-		b = afloat[2] * f18;
+		r = 0;// afloat[0] * f18;
+		g = 10;// afloat[1] * f18;
+		b = 10;// afloat[2] * f18;
 		a = 0.0F;
 		
 		// Render larger sun aura
@@ -228,8 +228,8 @@ public class SkyProviderEden extends IRenderHandler {
 		// Render Purgot
 		f10 = 2.0F;
 		GL11.glScalef(0.4F, 0.4F, 0.4F);
-		GL11.glRotatef(40.0F, 0.0F, 0.0F, 1.0F);
-		GL11.glRotatef(-world.getCelestialAngle(partialTicks) * 360.0F, 1.0F, 0.0F, 0.0F);
+		GL11.glRotatef(20.0F, 0.0F, 0.0F, 1.0F);
+		GL11.glRotatef(world.getCelestialAngle(partialTicks) * 180.0F, 1.0F, 0.0F, 0.0F);
 		// GL11.glColor4f(0.0F, 0.0F, 0.0F, 1F);
 		FMLClientHandler.instance().getClient().renderEngine
 				.bindTexture(SkyProviderEden.purgotTexture);

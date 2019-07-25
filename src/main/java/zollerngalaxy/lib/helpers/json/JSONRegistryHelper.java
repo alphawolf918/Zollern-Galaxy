@@ -180,4 +180,86 @@ public final class JSONRegistryHelper {
 			e.printStackTrace();
 		}
 	}
+	
+	public static void registerFlowerBlock(String blockName) {
+		if (!ENABLE) {
+			return;
+		}
+		
+		String jsonFileName = blockName + ".json";
+		JSONRegistryHelper.setupBlockDirs();
+		
+		Map<String, Object> json = new LinkedHashMap<>();
+		Map<String, Object> cross = new LinkedHashMap<>();
+		
+		cross.put("cross", MOD_ID + ":blocks/" + blockName);
+		
+		json.put("parent", "block/cross");
+		json.put("textures", cross);
+		
+		File file = new File(BLOCK_DIR, jsonFileName);
+		
+		while (file.exists()) {
+			file.delete();
+			file = new File(BLOCK_DIR, jsonFileName);
+		}
+		
+		try (FileWriter writer = new FileWriter(file)) {
+			GSON.toJson(json, writer);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		JSONRegistryHelper.registerFlowerBlockState(blockName);
+	}
+	
+	private static void registerFlowerBlockState(String blockName) {
+		String jsonFileName = blockName + ".json";
+		Map<String, Object> json = new LinkedHashMap<>();
+		Map<String, Object> normal = new LinkedHashMap<>();
+		Map<String, Object> model = new LinkedHashMap<>();
+		
+		model.put("model", MOD_ID + ":" + blockName);
+		normal.put("normal", model);
+		json.put("variants", normal);
+		
+		File file = new File(BLOCK_STATES_DIR, jsonFileName);
+		
+		while (file.exists()) {
+			file.delete();
+			file = new File(BLOCK_STATES_DIR, jsonFileName);
+		}
+		
+		try (FileWriter writer = new FileWriter(file)) {
+			GSON.toJson(json, writer);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		JSONRegistryHelper.registerBlockAsItem(blockName);
+	}
+	
+	private static void registerBlockAsItem(String blockName) {
+		String jsonFileName = blockName + ".json";
+		Map<String, Object> json = new LinkedHashMap<>();
+		Map<String, Object> layers = new LinkedHashMap<>();
+		
+		layers.put("layer0", MOD_ID + ":blocks/" + blockName);
+		
+		json.put("parent", "item/generated");
+		json.put("textures", layers);
+		
+		File file = new File(ITEM_DIR, jsonFileName);
+		
+		while (file.exists()) {
+			file.delete();
+			file = new File(ITEM_DIR, jsonFileName);
+		}
+		
+		try (FileWriter writer = new FileWriter(file)) {
+			GSON.toJson(json, writer);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 }

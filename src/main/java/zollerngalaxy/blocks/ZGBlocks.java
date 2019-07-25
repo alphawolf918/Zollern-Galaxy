@@ -15,6 +15,14 @@ public class ZGBlocks {
 	
 	private static int totalBlocks = 0;
 	public static final Block edenWoodSapling = new ZGBlockSapling("edentreesapling");
+	public static final Block edenFlower = new EdenFlower();
+	public static final Block edenFlowerBlue = new EdenFlower("blue");
+	public static final Block edenFlowerCyan = new EdenFlower("cyan");
+	public static final Block edenFlowerGreen = new EdenFlower("green");
+	public static final Block edenFlowerOrange = new EdenFlower("orange");
+	public static final Block edenFlowerPurple = new EdenFlower("purple");
+	public static final Block edenFlowerRed = new EdenFlower("red");
+	public static final Block edenFlowerYellow = new EdenFlower("yellow");
 	
 	// Zollus
 	public static final Block zolCobbleRock = new ZGBlockBase("zolcobblerock", 1.2F)
@@ -141,9 +149,11 @@ public class ZGBlocks {
 	// TODO
 	
 	public static void init() {
-		ZGBlocks.registerBlocks(edenWoodSapling, zolStone, zolCobbleRock, zolSurfaceRock, zolDirt,
-				zolRockBricks, zolCoalOre, zolCopperOre, zolGoldOre, zolHeartOre, zolTinOre,
-				zolIronOre, zolCrystals, kriffSurfaceRock, kriffStone, kriffCobbleRock, kriffDirt,
+		ZGBlocks.registerBlocks(edenWoodSapling, edenFlower, edenFlowerBlue, edenFlowerCyan,
+				edenFlowerGreen, edenFlowerOrange, edenFlowerPurple, edenFlowerRed,
+				edenFlowerYellow, zolStone, zolCobbleRock, zolSurfaceRock, zolDirt, zolRockBricks,
+				zolCoalOre, zolCopperOre, zolGoldOre, zolHeartOre, zolTinOre, zolIronOre,
+				zolCrystals, kriffSurfaceRock, kriffStone, kriffCobbleRock, kriffDirt,
 				kriffRockBricks, kriffMagmaRock, kriffCoalOre, kriffCopperOre, kriffIronOre,
 				kriffGoldOre, kriffRedstoneOre, kriffCobaltOre, purgCobbleRock, purgStone,
 				purgRockBricks, purgWhiteRock, purgBlackRock, purgSurfaceRock, purgDirt,

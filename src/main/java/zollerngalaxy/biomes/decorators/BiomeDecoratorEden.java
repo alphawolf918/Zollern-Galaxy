@@ -2,6 +2,7 @@ package zollerngalaxy.biomes.decorators;
 
 import java.util.Random;
 import net.minecraft.block.Block;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
@@ -16,6 +17,7 @@ import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.worldgen.WorldGenLakesZG;
 import zollerngalaxy.worldgen.WorldGenMinableZG;
 import zollerngalaxy.worldgen.WorldGenZGFlowers;
+import zollerngalaxy.worldgen.eden.WorldGenEdenFlowers;
 import zollerngalaxy.worldgen.eden.WorldGenEdenTallGrass;
 import zollerngalaxy.worldgen.eden.WorldGenEdenTrees;
 
@@ -165,9 +167,11 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 			}
 		}
 		
-		for (int i = 0; i < this.deadBushPerChunk; ++i) {
-			ZGDecorateHelper.generatePlants(new WorldGenZGFlowers(Blocks.DEADBUSH), world, rand,
-					this.chunkPos);
+		if (this.deadBushPerChunk > 0) {
+			for (int i = 0; i < this.deadBushPerChunk; ++i) {
+				ZGDecorateHelper.generatePlants(new WorldGenZGFlowers(Blocks.DEADBUSH), world,
+						rand, this.chunkPos);
+			}
 		}
 		
 		if (this.generateLakes && this.waterLakesPerChunk > 0) {
@@ -202,6 +206,36 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 							ZGBlocks.edenWoodLeaves.getDefaultState(), this.generateVines);
 					treeGen.generate(world, rand, this.chunkPos.add(x, y, z));
 				}
+			}
+		}
+		
+		if (this.edenFlowersPerChunk > 0) {
+			for (int i = 0; i < this.edenFlowersPerChunk; ++i) {
+				Block edenFlower = ZGBlocks.edenFlower;
+				
+				int r = rand.nextInt(20);
+				if (r <= 5) {
+					edenFlower = ZGBlocks.edenFlowerBlue;
+				} else if (r <= 7) {
+					edenFlower = ZGBlocks.edenFlowerCyan;
+				} else if (r <= 10) {
+					edenFlower = ZGBlocks.edenFlowerGreen;
+				} else if (r <= 13) {
+					edenFlower = ZGBlocks.edenFlowerOrange;
+				} else if (r <= 15) {
+					edenFlower = ZGBlocks.edenFlowerPurple;
+				} else if (r <= 17) {
+					edenFlower = ZGBlocks.edenFlowerRed;
+				} else if (r <= 19) {
+					edenFlower = ZGBlocks.edenFlowerYellow;
+				} else {
+					edenFlower = ZGBlocks.edenFlower;
+				}
+				
+				IBlockState flowerState = edenFlower.getDefaultState();
+				
+				ZGDecorateHelper.generatePlants(new WorldGenEdenFlowers(flowerState), world, rand,
+						this.chunkPos);
 			}
 		}
 	}
