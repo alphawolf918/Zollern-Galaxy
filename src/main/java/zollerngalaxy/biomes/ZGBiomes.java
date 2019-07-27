@@ -20,6 +20,7 @@ import net.minecraft.world.biome.Biome.BiomeProperties;
 import net.minecraftforge.common.BiomeDictionary;
 import zollerngalaxy.biomes.eden.BiomeBloodDesert;
 import zollerngalaxy.biomes.eden.BiomeEdenwoodForest;
+import zollerngalaxy.biomes.eden.BiomeFlowerGarden;
 import zollerngalaxy.biomes.eden.BiomeGoldenMeadow;
 import zollerngalaxy.biomes.eden.BiomeGreenLands;
 import zollerngalaxy.biomes.eden.BiomeSnowyPlains;
@@ -59,6 +60,8 @@ public class ZGBiomes {
 	public static Biome EDEN_SWAMPLANDS = new BiomeSwamplands(new BiomeProperties("Swamplands"));
 	public static Biome EDENWOOD_FOREST = new BiomeEdenwoodForest(new BiomeProperties(
 			"Edenwood Forest"));
+	public static Biome EDEN_FLOWER_GARDEN = new BiomeFlowerGarden(
+			new BiomeProperties("The Garden"));
 	
 	public static void init() {
 		// Zollus
@@ -75,11 +78,12 @@ public class ZGBiomes {
 		ZGBiomes.addBiome(ZGBiomes.EDEN_GREEN_LANDS, LUSH, WET);
 		ZGBiomes.addBiome(ZGBiomes.EDEN_BLOOD_DESERT, HOT, DEAD, DRY, MOUNTAIN);
 		ZGBiomes.addBiome(ZGBiomes.EDEN_ROCK_MOUNTAINS, MOUNTAIN, DEAD);
-		ZGBiomes.addBiome(ZGBiomes.EDEN_TERRAN_VALLEY, LUSH, WET);
+		ZGBiomes.addBiome(ZGBiomes.EDEN_TERRAN_VALLEY, LUSH, WET, PLAINS);
 		ZGBiomes.addBiome(ZGBiomes.EDEN_SNOWY_PLAINS, PLAINS, COLD, SNOWY);
 		ZGBiomes.addBiome(ZGBiomes.EDEN_GOLDEN_MEADOW, LUSH, WET);
 		ZGBiomes.addBiome(ZGBiomes.EDEN_SWAMPLANDS, LUSH, WET, SWAMP);
 		ZGBiomes.addBiome(ZGBiomes.EDENWOOD_FOREST, LUSH, WET, FOREST);
+		ZGBiomes.addBiome(ZGBiomes.EDEN_FLOWER_GARDEN, LUSH, WET, PLAINS);
 		
 		ZGHelper.Log("Loaded a total of " + totalBiomes + " new biomes.");
 	}

@@ -60,6 +60,18 @@ public class ChunkProviderEden extends ChunkProviderBase {
 	private double[] octaves3;
 	private double[] octaves4;
 	
+	// TODO: Setup an Eden Dungeon
+	// private final MapGenDungeonVenus dungeonGenerator = new
+	// MapGenDungeonVenus(
+	// new
+	// DungeonConfigurationVenus(VenusBlocks.venusBlock.getDefaultState().withProperty(
+	// BlockBasicVenus.BASIC_TYPE_VENUS,
+	// BlockBasicVenus.EnumBlockBasicVenus.DUNGEON_BRICK_1),
+	// VenusBlocks.venusBlock
+	// .getDefaultState().withProperty(BlockBasicVenus.BASIC_TYPE_VENUS,
+	// BlockBasicVenus.EnumBlockBasicVenus.DUNGEON_BRICK_2), 30, 8, 16, 7, 7,
+	// RoomBossVenus.class, RoomTreasureVenus.class));
+	
 	public ChunkProviderEden(World worldIn, long seed, boolean mapFeaturesEnabled) {
 		this.world = worldIn;
 		this.worldType = worldIn.getWorldInfo().getTerrainType();
@@ -186,6 +198,7 @@ public class ChunkProviderEden extends ChunkProviderBase {
 		this.caveGenerator.generate(this.world, x, z, chunkprimer);
 		this.ravineGenerator.generate(this.world, x, z, chunkprimer);
 		this.villageGenerator.generate(this.world, x, z, chunkprimer);
+		this.mineshaftGenerator.generate(this.world, x, z, chunkprimer);
 		
 		Chunk chunk = new Chunk(this.world, chunkprimer, x, z);
 		byte[] abyte = chunk.getBiomeArray();
@@ -318,6 +331,8 @@ public class ChunkProviderEden extends ChunkProviderBase {
 		if (!ConfigManagerCore.disableMoonVillageGen) {
 			this.villageGenerator.generateStructure(this.world, this.rand, new ChunkPos(x, z));
 		}
+		
+		this.mineshaftGenerator.generateStructure(this.world, this.rand, new ChunkPos(x, z));
 		
 		biomegenbase.decorate(this.world, this.rand, new BlockPos(i, 0, j));
 		WorldEntitySpawner.performWorldGenSpawning(this.world, biomegenbase, i + 8, j + 8, 16, 16,

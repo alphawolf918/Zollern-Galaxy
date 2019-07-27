@@ -1,0 +1,27 @@
+{
+    "ambientocclusion": false,
+    "textures": {
+        "particle": "zollerngalaxy:blocks/edenfruit_age1_s",
+        "edenfruit": "zollerngalaxy:blocks/edenfruit_age1_s"
+    },
+    "elements": [
+        {   "from": [ 6, 7, 11 ],
+            "to": [ 10, 12, 15 ],
+            "faces": {
+                "down":  { "uv": [  0, 0,  4, 4 ], "texture": "#edenfruit" },
+                "up":    { "uv": [  0, 0,  4, 4 ], "texture": "#edenfruit" },
+                "north": { "uv": [ 11, 4, 15, 9 ], "texture": "#edenfruit" },
+                "south": { "uv": [ 11, 4, 15, 9 ], "texture": "#edenfruit" },
+                "west":  { "uv": [ 11, 4, 15, 9 ], "texture": "#edenfruit" },
+                "east":  { "uv": [ 11, 4, 15, 9 ], "texture": "#edenfruit" }
+            }
+        },
+        {   "from": [ 8, 12, 12 ],
+            "to": [ 8, 16, 16 ],
+            "faces": {
+                "west": { "uv": [ 12, 0, 16, 4 ], "texture": "#edenfruit" },
+                "east": { "uv": [ 16, 0, 12, 4 ], "texture": "#edenfruit" }
+            }
+        }
+    ]
+}

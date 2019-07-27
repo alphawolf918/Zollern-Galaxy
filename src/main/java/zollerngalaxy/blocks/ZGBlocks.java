@@ -5,6 +5,8 @@ import micdoodle8.mods.galacticraft.planets.mars.items.MarsItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.init.Items;
+import zollerngalaxy.blocks.eden.EdenFlower;
+import zollerngalaxy.blocks.eden.EdenFruit;
 import zollerngalaxy.blocks.zollus.ZolniumCrystals;
 import zollerngalaxy.core.enums.EnumBlockType;
 import zollerngalaxy.items.ZGItems;
@@ -14,15 +16,21 @@ import zollerngalaxy.lib.helpers.ZGHelper;
 public class ZGBlocks {
 	
 	private static int totalBlocks = 0;
+	
+	// These have to be declared up top or else weird things happen.
 	public static final Block edenWoodSapling = new ZGBlockSapling("edentreesapling");
+	public static final Block edenFruit = new EdenFruit();
 	public static final Block edenFlower = new EdenFlower();
+	public static final Block edenFlowerBlack = new EdenFlower("black");
 	public static final Block edenFlowerBlue = new EdenFlower("blue");
 	public static final Block edenFlowerCyan = new EdenFlower("cyan");
 	public static final Block edenFlowerGreen = new EdenFlower("green");
 	public static final Block edenFlowerOrange = new EdenFlower("orange");
+	public static final Block edenFlowerPink = new EdenFlower("pink");
 	public static final Block edenFlowerPurple = new EdenFlower("purple");
 	public static final Block edenFlowerRed = new EdenFlower("red");
 	public static final Block edenFlowerYellow = new EdenFlower("yellow");
+	public static final Block edenFlowerWhite = new EdenFlower("white");
 	
 	// Zollus
 	public static final Block zolCobbleRock = new ZGBlockBase("zolcobblerock", 1.2F)
@@ -93,6 +101,7 @@ public class ZGBlocks {
 	public static final Block edenStone = new ZGPlanetStone("edenrock", 2.6F,
 			ZGBlocks.edenCobbleRock);
 	public static final Block edenSacredStone = new ZGBlockBase("edensacredstone", 3.2F);
+	public static final Block edenDungeonBricks = new ZGBlockBase("edendungeonbricks", 3.4F);
 	public static final Block edenRockBricks = new ZGBlockBase("edenrockbricks", 1.4F);
 	public static final Block edenWinterRock = new ZGBlockBase("edenwinterrock", 1.6F);
 	public static final Block edenBloodSand = new ZGSand("bloodsand", 1.4F);
@@ -149,26 +158,27 @@ public class ZGBlocks {
 	// TODO
 	
 	public static void init() {
-		ZGBlocks.registerBlocks(edenWoodSapling, edenFlower, edenFlowerBlue, edenFlowerCyan,
-				edenFlowerGreen, edenFlowerOrange, edenFlowerPurple, edenFlowerRed,
-				edenFlowerYellow, zolStone, zolCobbleRock, zolSurfaceRock, zolDirt, zolRockBricks,
-				zolCoalOre, zolCopperOre, zolGoldOre, zolHeartOre, zolTinOre, zolIronOre,
-				zolCrystals, kriffSurfaceRock, kriffStone, kriffCobbleRock, kriffDirt,
-				kriffRockBricks, kriffMagmaRock, kriffCoalOre, kriffCopperOre, kriffIronOre,
-				kriffGoldOre, kriffRedstoneOre, kriffCobaltOre, purgCobbleRock, purgStone,
-				purgRockBricks, purgWhiteRock, purgBlackRock, purgSurfaceRock, purgDirt,
-				purgMeteoricIronOre, purgCobaltOre, purgIronOre, purgGoldOre, purgCopperOre,
-				purgDiamondOre, purgEmeraldOre, purgEveniumOre, purgAluminumOre, purgTinOre,
-				purgLeadOre, purgRedstoneOre, edenSurfaceRock, edenTallGrass, edenGrass, edenSoil,
-				edenStone, edenSacredStone, edenCobbleRock, edenRockBricks, edenGoldenGrass,
-				edenSwampGrass, edenSnow, edenWinterRock, edenBloodSand, edenBloodStone,
-				edenBoneStone, edenGravel, edenBrightStone, edenWoodLog, edenWoodLeaves,
-				edenWoodPlanks, edenAluminumOre, edenSteelOre, edenBronzeOre, edenInvarOre,
-				edenElectrumOre, edenPlatinumOre, edenCoalOre, edenCopperOre, edenDeshOre,
-				edenDiamondOre, edenEmeraldOre, edenGoldOre, edenSilverOre, edenIronOre,
-				edenLapisOre, edenMeteoricIronOre, edenRedstoneOre, edenTinOre, edenLeadOre,
-				edenNickleOre, edenViriniumOre, edenCobaltOre, edenEveniumOre, edenHeartiumOre,
-				blockViri, blockCobalt, blockEve);
+		ZGBlocks.registerBlocks(edenWoodSapling, edenFruit, edenFlower, edenFlowerBlack,
+				edenFlowerBlue, edenFlowerCyan, edenFlowerGreen, edenFlowerOrange, edenFlowerPink,
+				edenFlowerPurple, edenFlowerRed, edenFlowerYellow, edenFlowerWhite, zolStone,
+				zolCobbleRock, zolSurfaceRock, zolDirt, zolRockBricks, zolCoalOre, zolCopperOre,
+				zolGoldOre, zolHeartOre, zolTinOre, zolIronOre, zolCrystals, kriffSurfaceRock,
+				kriffStone, kriffCobbleRock, kriffDirt, kriffRockBricks, kriffMagmaRock,
+				kriffCoalOre, kriffCopperOre, kriffIronOre, kriffGoldOre, kriffRedstoneOre,
+				kriffCobaltOre, purgCobbleRock, purgStone, purgRockBricks, purgWhiteRock,
+				purgBlackRock, purgSurfaceRock, purgDirt, purgMeteoricIronOre, purgCobaltOre,
+				purgIronOre, purgGoldOre, purgCopperOre, purgDiamondOre, purgEmeraldOre,
+				purgEveniumOre, purgAluminumOre, purgTinOre, purgLeadOre, purgRedstoneOre,
+				edenSurfaceRock, edenTallGrass, edenGrass, edenSoil, edenStone, edenSacredStone,
+				edenCobbleRock, edenRockBricks, edenGoldenGrass, edenSwampGrass, edenSnow,
+				edenWinterRock, edenBloodSand, edenBloodStone, edenBoneStone, edenGravel,
+				edenBrightStone, edenWoodLog, edenWoodLeaves, edenWoodPlanks, edenDungeonBricks,
+				edenAluminumOre, edenSteelOre, edenBronzeOre, edenInvarOre, edenElectrumOre,
+				edenPlatinumOre, edenCoalOre, edenCopperOre, edenDeshOre, edenDiamondOre,
+				edenEmeraldOre, edenGoldOre, edenSilverOre, edenIronOre, edenLapisOre,
+				edenMeteoricIronOre, edenRedstoneOre, edenTinOre, edenLeadOre, edenNickleOre,
+				edenViriniumOre, edenCobaltOre, edenEveniumOre, edenHeartiumOre, blockViri,
+				blockCobalt, blockEve);
 		ZGHelper.Log("Loaded a total of " + totalBlocks + " new blocks.");
 	}
 	

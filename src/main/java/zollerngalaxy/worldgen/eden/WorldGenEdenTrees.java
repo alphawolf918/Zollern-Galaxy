@@ -1,7 +1,6 @@
 package zollerngalaxy.worldgen.eden;
 
 import java.util.Random;
-import net.minecraft.block.BlockCocoa;
 import net.minecraft.block.BlockVine;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyBool;
@@ -13,6 +12,8 @@ import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 import zollerngalaxy.blocks.ZGBlockDirt;
 import zollerngalaxy.blocks.ZGBlockGrass;
+import zollerngalaxy.blocks.ZGBlocks;
+import zollerngalaxy.blocks.eden.EdenFruit;
 
 public class WorldGenEdenTrees extends WorldGenAbstractTree {
 	
@@ -54,22 +55,6 @@ public class WorldGenEdenTrees extends WorldGenAbstractTree {
 				
 				BlockPos.MutableBlockPos blockpos$mutableblockpos = new BlockPos.MutableBlockPos();
 				
-				// for (int l = position.getX() - k; l <= position.getX() + k &&
-				// flag; ++l) {
-				// for (int i1 = position.getZ() - k; i1 <= position.getZ() + k
-				// && flag; ++i1) {
-				// if (j >= 0 && j < worldIn.getHeight()) {
-				// if (!this.isReplaceable(worldIn,
-				// blockpos$mutableblockpos.setPos(l, j, i1))) {
-				// flag = false;
-				// }
-				// } else {
-				// flag = false;
-				// }
-				// }
-				// }
-				// }
-				
 				if (!flag) {
 					return false;
 				} else {
@@ -77,8 +62,7 @@ public class WorldGenEdenTrees extends WorldGenAbstractTree {
 					
 					if (state.getBlock() instanceof ZGBlockGrass
 							|| state.getBlock() instanceof ZGBlockDirt) {
-						// state.getBlock().onPlantGrow(state, worldIn,
-						// position.down(), position);
+						state.getBlock().onPlantGrow(state, worldIn, position.down(), position);
 						int k2 = 3;
 						int l2 = 0;
 						
@@ -192,20 +176,24 @@ public class WorldGenEdenTrees extends WorldGenAbstractTree {
 									}
 								}
 							}
-							
-							if (rand.nextInt(5) == 0 && i > 5) {
-								for (int l3 = 0; l3 < 2; ++l3) {
-									for (EnumFacing enumfacing : EnumFacing.Plane.HORIZONTAL) {
-										if (rand.nextInt(4 - l3) == 0) {
-											EnumFacing enumfacing1 = enumfacing.getOpposite();
-											this.placeCocoa(worldIn, rand.nextInt(3), position.add(
-													enumfacing1.getFrontOffsetX(), i - 5 + l3,
-													enumfacing1.getFrontOffsetZ()), enumfacing);
-										}
+						}
+						
+						if (rand.nextInt(3) == 0 && i > 4) {
+							for (int l3 = 0; l3 < 2; ++l3) {
+								for (EnumFacing enumfacing : EnumFacing.Plane.HORIZONTAL) {
+									if (rand.nextInt(4 - l3) == 0) {
+										EnumFacing enumfacing1 = enumfacing.getOpposite();
+										this.placeFruit(
+												worldIn,
+												rand.nextInt(3),
+												position.add(enumfacing1.getFrontOffsetX(), i - 5
+														+ l3, enumfacing1.getFrontOffsetZ()),
+												enumfacing);
 									}
 								}
 							}
 						}
+						
 						return true;
 					} else {
 						return false;
@@ -218,13 +206,13 @@ public class WorldGenEdenTrees extends WorldGenAbstractTree {
 		return flag;
 	}
 	
-	private void placeCocoa(World worldIn, int p_181652_2_, BlockPos pos, EnumFacing side) {
+	private void placeFruit(World worldIn, int p_181652_2_, BlockPos pos, EnumFacing side) {
 		this.setBlockAndNotifyAdequately(
 				worldIn,
 				pos,
-				Blocks.COCOA.getDefaultState()
-						.withProperty(BlockCocoa.AGE, Integer.valueOf(p_181652_2_))
-						.withProperty(BlockCocoa.FACING, side));
+				ZGBlocks.edenFruit.getDefaultState()
+						.withProperty(EdenFruit.AGE, Integer.valueOf(p_181652_2_))
+						.withProperty(EdenFruit.FACING, side));
 	}
 	
 	private void addVine(World worldIn, BlockPos pos, PropertyBool prop) {

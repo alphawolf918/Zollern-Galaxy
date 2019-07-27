@@ -226,10 +226,10 @@ public class SkyProviderEden extends IRenderHandler {
 		tessellator1.draw();
 		
 		// Render Purgot
-		f10 = 2.0F;
+		f10 = 2.2F;
 		GL11.glScalef(0.4F, 0.4F, 0.4F);
-		GL11.glRotatef(20.0F, 0.0F, 0.0F, 1.0F);
-		GL11.glRotatef(world.getCelestialAngle(partialTicks) * 180.0F, 1.0F, 0.0F, 0.0F);
+		GL11.glRotatef(0.0F, 0.0F, 0.0F, 1.0F);
+		GL11.glRotatef(world.getCelestialAngle(partialTicks) * -360.0F, 1.0F, 0.0F, 0.0F);
 		// GL11.glColor4f(0.0F, 0.0F, 0.0F, 1F);
 		FMLClientHandler.instance().getClient().renderEngine
 				.bindTexture(SkyProviderEden.purgotTexture);

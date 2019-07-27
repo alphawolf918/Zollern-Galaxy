@@ -18,7 +18,7 @@ public class BiomeEdenwoodForest extends BiomeGenEdenBase {
 		this.biomeDecor.generateVines = false;
 		this.biomeDecor.edenFlowersPerChunk = 4;
 		this.biomeDecor.edenTallGrassPerChunk = 8;
-		this.biomeDecor.edenTreesPerChunk = 80;
+		this.biomeDecor.edenTreesPerChunk = 90;
 		this.biomeDecor.waterLakesPerChunk = 4;
 		this.biomeDecor.edenTallGrassPerChunk = 14;
 		this.enableSnow = true;
@@ -33,4 +33,5 @@ public class BiomeEdenwoodForest extends BiomeGenEdenBase {
 	public int getSkyColorByTemp(float p_76731_1_) {
 		return 0x004a4b;
 	}
+	
 }

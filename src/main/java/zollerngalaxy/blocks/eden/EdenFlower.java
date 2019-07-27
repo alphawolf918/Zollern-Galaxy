@@ -1,10 +1,13 @@
-package zollerngalaxy.blocks;
+package zollerngalaxy.blocks.eden;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import zollerngalaxy.blocks.ZGBlockDirt;
+import zollerngalaxy.blocks.ZGBlockFlower;
+import zollerngalaxy.blocks.ZGBlockGrass;
 import zollerngalaxy.lib.helpers.json.JSONRegistryHelper;
 
 public class EdenFlower extends ZGBlockFlower {
@@ -24,7 +27,7 @@ public class EdenFlower extends ZGBlockFlower {
 		this.setupFlower();
 	}
 	
-	protected void setupFlower() {
+	private void setupFlower() {
 		this.setMaterial(Material.VINE);
 		String flowerName = (this.getColor() == "") ? blockName : blockName + "_" + this.getColor();
 		JSONRegistryHelper.registerFlowerBlock(flowerName);
