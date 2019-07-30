@@ -52,7 +52,7 @@ public class MapGenCavesZG extends MapGenBase {
 		
 		int k1 = random.nextInt(par12 / 2) + par12 / 4;
 		
-		for (boolean flag = random.nextInt(6) == 0; par11 < par12; ++par11) {
+		for (boolean flag = random.nextInt(3) == 0; par11 < par12; ++par11) {
 			double d6 = 1.5D + MathHelper.sin(par11 * (float) Math.PI / par12) * par8 * 1.0F;
 			double d7 = d6 * par13;
 			float f5 = MathHelper.cos(par10);
@@ -84,7 +84,7 @@ public class MapGenCavesZG extends MapGenBase {
 				return;
 			}
 			
-			if (flag2 || random.nextInt(4) != 0) {
+			if (flag2 || random.nextInt(6) != 0) {
 				double d8 = par5 - d4;
 				double d9 = par7 - d5;
 				double d10 = par12 - par11;

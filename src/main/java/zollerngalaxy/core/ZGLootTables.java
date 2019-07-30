@@ -12,6 +12,7 @@ public class ZGLootTables {
 			.registerEntityLoot("oinkus");
 	
 	// Chests
-	// TODO
+	public static final ResourceLocation CHEST_EDEN_TOWER = CommonZGRegisterHelper
+			.registerChestLoot("edentower");
 	
 }

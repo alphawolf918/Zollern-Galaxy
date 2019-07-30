@@ -168,13 +168,10 @@ public class MapGenRavinesZG extends MapGenBase {
 		}
 	}
 	
-	/**
-	 * Recursively called by generate()
-	 */
 	@Override
 	protected void recursiveGenerate(World worldIn, int chunkX, int chunkZ, int originalX,
 			int originalZ, ChunkPrimer chunkPrimerIn) {
-		if (this.rand.nextInt(30) == 0) {
+		if (this.rand.nextInt(20) == 0) {
 			double d0 = chunkX * 16 + this.rand.nextInt(16);
 			double d1 = this.rand.nextInt(this.rand.nextInt(40) + 8) + 20;
 			double d2 = chunkZ * 16 + this.rand.nextInt(16);
@@ -194,6 +191,12 @@ public class MapGenRavinesZG extends MapGenBase {
 		Biome biome = world.getBiome(new BlockPos(x + chunkX * 16, 0, z + chunkZ * 16));
 		IBlockState state = data.getBlockState(x, y, z);
 		return (state.getBlock() == biome.topBlock);
+	}
+	
+	private boolean isFillBlock(ChunkPrimer data, int x, int y, int z, int chunkX, int chunkZ) {
+		Biome biome = world.getBiome(new BlockPos(x + chunkX * 16, 0, z + chunkZ * 16));
+		IBlockState state = data.getBlockState(x, y, z);
+		return (state.getBlock() == biome.fillerBlock);
 	}
 	
 	protected void digBlock(ChunkPrimer data, int x, int y, int z, int chunkX, int chunkZ,

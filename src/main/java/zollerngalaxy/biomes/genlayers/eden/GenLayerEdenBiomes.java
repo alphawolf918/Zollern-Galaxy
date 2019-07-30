@@ -41,6 +41,7 @@ public class GenLayerEdenBiomes extends GenLayerEden {
 		list.add(new BiomeEntry(ZGBiomes.EDEN_TERRAN_VALLEY, 75));
 		list.add(new BiomeEntry(ZGBiomes.EDENWOOD_FOREST, 65));
 		list.add(new BiomeEntry(ZGBiomes.EDEN_FLOWER_GARDEN, 55));
+		list.add(new BiomeEntry(ZGBiomes.EDEN_CRATERS, 50));
 		list.add(new BiomeEntry(ZGBiomes.EDEN_ROCK_MOUNTAINS, 45));
 		list.add(new BiomeEntry(ZGBiomes.EDEN_GREEN_LANDS, 35));
 		list.add(new BiomeEntry(ZGBiomes.EDEN_SWAMPLANDS, 30));

@@ -18,6 +18,7 @@ import micdoodle8.mods.galacticraft.api.world.BiomeGenBaseGC;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.Biome.BiomeProperties;
 import net.minecraftforge.common.BiomeDictionary;
+import zollerngalaxy.biomes.eden.BiomeAsteroidCraters;
 import zollerngalaxy.biomes.eden.BiomeBloodDesert;
 import zollerngalaxy.biomes.eden.BiomeEdenwoodForest;
 import zollerngalaxy.biomes.eden.BiomeFlowerGarden;
@@ -62,6 +63,8 @@ public class ZGBiomes {
 			"Edenwood Forest"));
 	public static Biome EDEN_FLOWER_GARDEN = new BiomeFlowerGarden(
 			new BiomeProperties("The Garden"));
+	public static Biome EDEN_CRATERS = new BiomeAsteroidCraters(new BiomeProperties(
+			"Asteroid Craters"));
 	
 	public static void init() {
 		// Zollus
@@ -84,6 +87,7 @@ public class ZGBiomes {
 		ZGBiomes.addBiome(ZGBiomes.EDEN_SWAMPLANDS, LUSH, WET, SWAMP);
 		ZGBiomes.addBiome(ZGBiomes.EDENWOOD_FOREST, LUSH, WET, FOREST);
 		ZGBiomes.addBiome(ZGBiomes.EDEN_FLOWER_GARDEN, LUSH, WET, PLAINS);
+		ZGBiomes.addBiome(ZGBiomes.EDEN_CRATERS, MOUNTAIN, DEAD, SPOOKY);
 		
 		ZGHelper.Log("Loaded a total of " + totalBiomes + " new biomes.");
 	}

@@ -5,10 +5,12 @@ import java.util.Random;
 import micdoodle8.mods.galacticraft.api.world.ChunkProviderBase;
 import micdoodle8.mods.galacticraft.core.perlin.generator.Gradient;
 import micdoodle8.mods.galacticraft.core.util.ConfigManagerCore;
+import micdoodle8.mods.galacticraft.core.world.gen.EnumCraterSize;
 import micdoodle8.mods.galacticraft.core.world.gen.MapGenVillageMoon;
 import net.minecraft.block.BlockFalling;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EnumCreatureType;
+import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MathHelper;
@@ -35,6 +37,9 @@ public class ChunkProviderEden extends ChunkProviderBase {
 	
 	public static double CHUNK_HEIGHT = 40.0D;// ZGHelper.rngDbl(20.0D, 40.0D);
 	
+	private static final int CHUNK_SIZE_X = 16;
+	private static final int CHUNK_SIZE_Z = 16;
+	
 	private final BiomeDecoratorEden biomeDecoratorEden = new BiomeDecoratorEden();
 	private Random rand;
 	private NoiseGeneratorOctaves noiseGen1;
@@ -60,17 +65,11 @@ public class ChunkProviderEden extends ChunkProviderBase {
 	private double[] octaves3;
 	private double[] octaves4;
 	
+	public static ChunkProviderEden INSTANCE;
+	
 	// TODO: Setup an Eden Dungeon
-	// private final MapGenDungeonVenus dungeonGenerator = new
-	// MapGenDungeonVenus(
-	// new
-	// DungeonConfigurationVenus(VenusBlocks.venusBlock.getDefaultState().withProperty(
-	// BlockBasicVenus.BASIC_TYPE_VENUS,
-	// BlockBasicVenus.EnumBlockBasicVenus.DUNGEON_BRICK_1),
-	// VenusBlocks.venusBlock
-	// .getDefaultState().withProperty(BlockBasicVenus.BASIC_TYPE_VENUS,
-	// BlockBasicVenus.EnumBlockBasicVenus.DUNGEON_BRICK_2), 30, 8, 16, 7, 7,
-	// RoomBossVenus.class, RoomTreasureVenus.class));
+	
+	private static final int CRATER_PROB = 100;
 	
 	public ChunkProviderEden(World worldIn, long seed, boolean mapFeaturesEnabled) {
 		this.world = worldIn;
@@ -103,6 +102,7 @@ public class ChunkProviderEden extends ChunkProviderBase {
 		this.noiseGen5 = (NoiseGeneratorOctaves) noiseGens[4];
 		this.noiseGen6 = (NoiseGeneratorOctaves) noiseGens[5];
 		this.mobSpawnerNoise = (NoiseGeneratorOctaves) noiseGens[6];
+		this.INSTANCE = this;
 	}
 	
 	private void setBlocksInChunk(int chunkX, int chunkZ, ChunkPrimer primer) {
@@ -153,6 +153,9 @@ public class ChunkProviderEden extends ChunkProviderBase {
 										+ x, chunkZ * 16 + z)
 										* CHUNK_HEIGHT) {
 									primer.setBlockState(x, y, z, BLOCK_STONE);
+								} else if (i2 * 8 + j2 < 63) {
+									primer.setBlockState(i * 4 + k2, i2 * 8 + j2, l * 4 + l2,
+											Blocks.WATER.getDefaultState());
 								}
 							}
 							
@@ -314,6 +317,64 @@ public class ChunkProviderEden extends ChunkProviderBase {
 				}
 			}
 		}
+	}
+	
+	public void createCraters(int chunkX, int chunkZ, ChunkPrimer primer) {
+		for (int cx = chunkX - 2; cx <= chunkX + 2; cx++) {
+			for (int cz = chunkZ - 2; cz <= chunkZ + 2; cz++) {
+				for (int x = 0; x < ChunkProviderEden.CHUNK_SIZE_X; x++) {
+					for (int z = 0; z < ChunkProviderEden.CHUNK_SIZE_Z; z++) {
+						if (Math.abs(this.randFromPoint(cx * 16 + x, (cz * 16 + z) * 1000)) < this.noiseGen4
+								.getValue(x * ChunkProviderEden.CHUNK_SIZE_X + x, cz
+										* ChunkProviderEden.CHUNK_SIZE_Z + z)
+								/ ChunkProviderEden.CRATER_PROB) {
+							final Random random = new Random(cx * 16 + x + (cz * 16 + z) * 5000);
+							final EnumCraterSize cSize = EnumCraterSize.sizeArray[random
+									.nextInt(EnumCraterSize.sizeArray.length)];
+							final int size = random.nextInt(cSize.MAX_SIZE - cSize.MIN_SIZE)
+									+ cSize.MIN_SIZE;
+							this.makeCrater(cx * 16 + x, cz * 16 + z, chunkX * 16, chunkZ * 16,
+									size, primer);
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	private void makeCrater(int craterX, int craterZ, int chunkX, int chunkZ, int size,
+			ChunkPrimer primer) {
+		for (int x = 0; x < ChunkProviderEden.CHUNK_SIZE_X; x++) {
+			for (int z = 0; z < ChunkProviderEden.CHUNK_SIZE_Z; z++) {
+				double xDev = craterX - (chunkX + x);
+				double zDev = craterZ - (chunkZ + z);
+				if (xDev * xDev + zDev * zDev < size * size) {
+					xDev /= size;
+					zDev /= size;
+					final double sqrtY = xDev * xDev + zDev * zDev;
+					double yDev = sqrtY * sqrtY * 6;
+					yDev = 5 - yDev;
+					int helper = 0;
+					for (int y = 127; y > 0; y--) {
+						if (Blocks.AIR != primer.getBlockState(x, y, z).getBlock()
+								&& helper <= yDev) {
+							primer.setBlockState(x, y, z, Blocks.AIR.getDefaultState());
+							helper++;
+						}
+						if (helper > yDev) {
+							break;
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	private double randFromPoint(int x, int z) {
+		int n;
+		n = x + z * 57;
+		n = n << 13 ^ n;
+		return 1.0 - (n * (n * n * 15731 + 789221) + 1376312589 & 0x7fffffff) / 1073741824.0;
 	}
 	
 	@Override

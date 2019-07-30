@@ -151,6 +151,9 @@ public class ZGBlocks {
 	public static final Block blockEve = new ZGBlockMetal("eveniumblock");
 	public static final Block blockCobalt = new ZGBlockMetal("cobaltblock");
 	
+	// Other
+	public static final Block blockCrater = new ZGBlockBase("crater_rock", 2.4F);
+	
 	// Oasis
 	// TODO
 	
@@ -178,7 +181,7 @@ public class ZGBlocks {
 				edenEmeraldOre, edenGoldOre, edenSilverOre, edenIronOre, edenLapisOre,
 				edenMeteoricIronOre, edenRedstoneOre, edenTinOre, edenLeadOre, edenNickleOre,
 				edenViriniumOre, edenCobaltOre, edenEveniumOre, edenHeartiumOre, blockViri,
-				blockCobalt, blockEve);
+				blockCobalt, blockEve, blockCrater);
 		ZGHelper.Log("Loaded a total of " + totalBlocks + " new blocks.");
 	}
 	

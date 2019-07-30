@@ -4,15 +4,18 @@ import java.util.Random;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.Biome.TempCategory;
+import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.gen.feature.WorldGenWaterlily;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.biomes.eden.BiomeEdenwoodForest;
 import zollerngalaxy.blocks.ZGBlockTallGrass;
 import zollerngalaxy.blocks.ZGBlocks;
+import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderEden;
 import zollerngalaxy.core.enums.EnumOreGenZG;
 import zollerngalaxy.lib.helpers.ZGDecorateHelper;
 import zollerngalaxy.lib.helpers.ZGHelper;
@@ -21,6 +24,7 @@ import zollerngalaxy.worldgen.WorldGenMinableZG;
 import zollerngalaxy.worldgen.WorldGenZGFlowers;
 import zollerngalaxy.worldgen.eden.WorldGenEdenFlowers;
 import zollerngalaxy.worldgen.eden.WorldGenEdenTallGrass;
+import zollerngalaxy.worldgen.eden.WorldGenEdenTower;
 import zollerngalaxy.worldgen.eden.WorldGenEdenTrees;
 
 public class BiomeDecoratorEden extends BiomeDecoratorZG {
@@ -57,9 +61,13 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 	public int edenTreesPerChunk = 1;
 	public int lavaLakesPerChunk = 1;
 	public int waterLakesPerChunk = 4;
-	public boolean generateVines = false;
+	public int towersPerChunk = 1;
 	
+	public boolean generateVines = false;
 	public boolean generateLakes = true;
+	public boolean generateCraters = false;
+	public boolean generateWitchHuts = false;
+	public boolean generateTowers = true;
 	
 	public BiomeDecoratorEden() {
 		this.dirtGen = new WorldGenMinableZG(ZGBlocks.edenSoil, ZGBlocks.edenSurfaceRock,
@@ -120,6 +128,8 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 	protected void generate(Biome biome, World world, Random rand) {
 		int x = rand.nextInt(16) + 8;
 		int z = rand.nextInt(16) + 8;
+		
+		ChunkPrimer chunkPrimer = new ChunkPrimer();
 		
 		this.generateOre(this.dirtGen, EnumOreGenZG.DIRT, world, rand);
 		this.generateOre(this.gravelGen, EnumOreGenZG.GRAVEL, world, rand);
@@ -226,6 +236,7 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 				Block edenFlower = ZGBlocks.edenFlower;
 				
 				int r = rand.nextInt(30);
+				
 				if (r <= 5) {
 					edenFlower = ZGBlocks.edenFlowerBlue;
 				} else if (r <= 7) {
@@ -252,6 +263,23 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 				
 				ZGDecorateHelper.generatePlants(new WorldGenEdenFlowers(flowerState), world, rand,
 						this.chunkPos);
+			}
+		}
+		
+		if (this.generateCraters) {
+			ChunkProviderEden.INSTANCE.createCraters(x, z, chunkPrimer);
+		}
+		
+		if (this.generateWitchHuts) {
+			// TODO
+		}
+		
+		if (this.generateTowers && this.towersPerChunk > 0) {
+			y = rand.nextInt(rand.nextInt(genY) + 8);
+			if (y >= 63) {
+				if (rand.nextInt(500) <= 150) {
+					(new WorldGenEdenTower()).generate(world, rand, new BlockPos(x, y, z));
+				}
 			}
 		}
 	}
