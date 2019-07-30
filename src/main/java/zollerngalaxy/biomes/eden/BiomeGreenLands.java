@@ -18,7 +18,7 @@ public class BiomeGreenLands extends BiomeGenEdenBase {
 		this.setBiomeHeight(72);
 		this.enableSnow = false;
 		this.decorator.generateFalls = true;
-		this.biomeDecor.waterLakesPerChunk = 1;
+		this.biomeDecor.waterLakesPerChunk = 2;
 		this.biomeDecor.edenTallGrassPerChunk = 1;
 		this.biomeDecor.edenFlowersPerChunk = 4;
 		this.biomeDecor.edenTreesPerChunk = 0;
@@ -26,7 +26,6 @@ public class BiomeGreenLands extends BiomeGenEdenBase {
 		this.waterColor = 0x009f9f;
 		this.topBlock = ZGBlocks.edenSurfaceRock.getDefaultState();
 		this.fillerBlock = ZGBlocks.edenSoil.getDefaultState();
-		this.stoneBlock = ZGBlocks.edenStone;
 	}
 	
 	@Override

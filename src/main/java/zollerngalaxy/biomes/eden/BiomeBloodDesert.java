@@ -1,14 +1,8 @@
 package zollerngalaxy.biomes.eden;
 
-import static net.minecraftforge.common.BiomeDictionary.Type.DEAD;
-import static net.minecraftforge.common.BiomeDictionary.Type.DRY;
-import static net.minecraftforge.common.BiomeDictionary.Type.HOT;
-import static net.minecraftforge.common.BiomeDictionary.Type.MOUNTAIN;
-import net.minecraft.world.biome.Biome;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.blocks.ZGBlocks;
-import zollerngalaxy.lib.helpers.CommonZGRegisterHelper;
 
 public class BiomeBloodDesert extends BiomeGenEdenBase {
 	
@@ -40,10 +34,5 @@ public class BiomeBloodDesert extends BiomeGenEdenBase {
 	@SideOnly(Side.CLIENT)
 	public int getSkyColorByTemp(float p_76731_1_) {
 		return 0x004f2e;
-	}
-	
-	@Override
-	public void registerTypes(Biome biome) {
-		CommonZGRegisterHelper.registerBiomeType(biome, HOT, DEAD, DRY, MOUNTAIN);
 	}
 }

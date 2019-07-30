@@ -1,12 +1,8 @@
 package zollerngalaxy.biomes.eden;
 
-import static net.minecraftforge.common.BiomeDictionary.Type.LUSH;
-import static net.minecraftforge.common.BiomeDictionary.Type.WET;
-import net.minecraft.world.biome.Biome;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.blocks.ZGBlocks;
-import zollerngalaxy.lib.helpers.CommonZGRegisterHelper;
 
 public class BiomeGoldenMeadow extends BiomeGenEdenBase {
 	
@@ -37,10 +33,5 @@ public class BiomeGoldenMeadow extends BiomeGenEdenBase {
 	@SideOnly(Side.CLIENT)
 	public int getSkyColorByTemp(float p_76731_1_) {
 		return 0x00bbbb;
-	}
-	
-	@Override
-	public void registerTypes(Biome biome) {
-		CommonZGRegisterHelper.registerBiomeType(biome, LUSH, WET);
 	}
 }

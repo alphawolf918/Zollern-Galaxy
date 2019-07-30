@@ -39,6 +39,7 @@ public class GenLayerEdenBiomes extends GenLayerEden {
 		ArrayList<BiomeEntry>[] currentBiomes = new ArrayList[CachedEnum.valuesBiomeCached().length];
 		List<BiomeEntry> list = new ArrayList<>();
 		list.add(new BiomeEntry(ZGBiomes.EDEN_TERRAN_VALLEY, 75));
+		list.add(new BiomeEntry(ZGBiomes.EDEN_OCEAN, 70));
 		list.add(new BiomeEntry(ZGBiomes.EDENWOOD_FOREST, 65));
 		list.add(new BiomeEntry(ZGBiomes.EDEN_FLOWER_GARDEN, 55));
 		list.add(new BiomeEntry(ZGBiomes.EDEN_CRATERS, 50));

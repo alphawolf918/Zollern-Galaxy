@@ -9,6 +9,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.core.ZGLootTables;
+import zollerngalaxy.core.ZollernGalaxyCore;
 import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.worldgen.ZGWorldGenMaster;
 
@@ -33,7 +34,9 @@ public class WorldGenEdenTower extends ZGWorldGenMaster {
 		int j = pos.getY() - 10;
 		pos = new BlockPos(pos.getX(), j, pos.getZ());
 		
-		ZGHelper.Log("Spawning at: " + this.getSpawnedAtString(pos));
+		if (ZollernGalaxyCore.instance().isInDevMode()) {
+			ZGHelper.Log("Spawning at: " + this.getSpawnedAtString(pos));
+		}
 		
 		this.setBlock(world, pos.add(4, 2, 10), ZGBlocks.edenSacredStone);
 		this.setBlock(world, pos.add(4, 2, 11), ZGBlocks.edenSacredStone);

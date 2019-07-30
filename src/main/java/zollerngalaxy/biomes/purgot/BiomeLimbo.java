@@ -1,13 +1,9 @@
 package zollerngalaxy.biomes.purgot;
 
-import static net.minecraftforge.common.BiomeDictionary.Type.DEAD;
-import static net.minecraftforge.common.BiomeDictionary.Type.SPOOKY;
-import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeDecorator;
 import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.biomes.decorators.BiomeDecoratorPurgot;
 import zollerngalaxy.blocks.ZGBlocks;
-import zollerngalaxy.lib.helpers.CommonZGRegisterHelper;
 import zollerngalaxy.planets.ZGPlanets;
 
 public class BiomeLimbo extends BiomeSpace {
@@ -33,11 +29,6 @@ public class BiomeLimbo extends BiomeSpace {
 		this.fillerBlock = ZGBlocks.purgWhiteRock.getDefaultState();
 		this.stoneBlock = ZGBlocks.purgStone;
 		this.setPlanetForBiome(ZGPlanets.planetPurgot);
-	}
-	
-	@Override
-	public void registerTypes(Biome biome) {
-		CommonZGRegisterHelper.registerBiomeType(biome, SPOOKY, DEAD);
 	}
 	
 	@Override

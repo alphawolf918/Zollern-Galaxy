@@ -277,7 +277,7 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 		if (this.generateTowers && this.towersPerChunk > 0) {
 			y = rand.nextInt(rand.nextInt(genY) + 8);
 			if (y >= 63) {
-				if (rand.nextInt(500) <= 150) {
+				if (rand.nextInt(500) <= 90) {
 					(new WorldGenEdenTower()).generate(world, rand, new BlockPos(x, y, z));
 				}
 			}

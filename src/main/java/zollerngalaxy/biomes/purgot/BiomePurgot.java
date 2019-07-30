@@ -1,14 +1,9 @@
 package zollerngalaxy.biomes.purgot;
 
-import static net.minecraftforge.common.BiomeDictionary.Type.COLD;
-import static net.minecraftforge.common.BiomeDictionary.Type.DEAD;
-import static net.minecraftforge.common.BiomeDictionary.Type.DRY;
-import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeDecorator;
 import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.biomes.decorators.BiomeDecoratorPurgot;
 import zollerngalaxy.blocks.ZGBlocks;
-import zollerngalaxy.lib.helpers.CommonZGRegisterHelper;
 import zollerngalaxy.planets.ZGPlanets;
 
 public class BiomePurgot extends BiomeSpace {
@@ -31,11 +26,6 @@ public class BiomePurgot extends BiomeSpace {
 		this.fillerBlock = ZGBlocks.purgDirt.getDefaultState();
 		this.stoneBlock = ZGBlocks.purgStone;
 		this.setPlanetForBiome(ZGPlanets.planetPurgot);
-	}
-	
-	@Override
-	public void registerTypes(Biome biome) {
-		CommonZGRegisterHelper.registerBiomeType(biome, COLD, DEAD, DRY);
 	}
 	
 	@Override

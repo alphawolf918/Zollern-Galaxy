@@ -249,7 +249,8 @@ public class ZGPlanets {
 		planetEden.setBiomeInfo(ZGBiomes.EDEN_GREEN_LANDS, ZGBiomes.EDEN_BLOOD_DESERT,
 				ZGBiomes.EDEN_ROCK_MOUNTAINS, ZGBiomes.EDEN_TERRAN_VALLEY,
 				ZGBiomes.EDEN_SNOWY_PLAINS, ZGBiomes.EDEN_GOLDEN_MEADOW, ZGBiomes.EDEN_SWAMPLANDS,
-				ZGBiomes.EDENWOOD_FOREST, ZGBiomes.EDEN_FLOWER_GARDEN, ZGBiomes.EDEN_CRATERS);
+				ZGBiomes.EDENWOOD_FOREST, ZGBiomes.EDEN_FLOWER_GARDEN, ZGBiomes.EDEN_CRATERS,
+				ZGBiomes.EDEN_OCEAN);
 		totalPlanets++;
 		
 		// Planet Xathius

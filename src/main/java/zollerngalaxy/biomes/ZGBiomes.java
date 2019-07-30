@@ -7,6 +7,7 @@ import static net.minecraftforge.common.BiomeDictionary.Type.FOREST;
 import static net.minecraftforge.common.BiomeDictionary.Type.HOT;
 import static net.minecraftforge.common.BiomeDictionary.Type.LUSH;
 import static net.minecraftforge.common.BiomeDictionary.Type.MOUNTAIN;
+import static net.minecraftforge.common.BiomeDictionary.Type.OCEAN;
 import static net.minecraftforge.common.BiomeDictionary.Type.PLAINS;
 import static net.minecraftforge.common.BiomeDictionary.Type.SNOWY;
 import static net.minecraftforge.common.BiomeDictionary.Type.SPOOKY;
@@ -20,6 +21,7 @@ import net.minecraft.world.biome.Biome.BiomeProperties;
 import net.minecraftforge.common.BiomeDictionary;
 import zollerngalaxy.biomes.eden.BiomeAsteroidCraters;
 import zollerngalaxy.biomes.eden.BiomeBloodDesert;
+import zollerngalaxy.biomes.eden.BiomeEdenOcean;
 import zollerngalaxy.biomes.eden.BiomeEdenwoodForest;
 import zollerngalaxy.biomes.eden.BiomeFlowerGarden;
 import zollerngalaxy.biomes.eden.BiomeGoldenMeadow;
@@ -65,6 +67,7 @@ public class ZGBiomes {
 			new BiomeProperties("The Garden"));
 	public static Biome EDEN_CRATERS = new BiomeAsteroidCraters(new BiomeProperties(
 			"Asteroid Craters"));
+	public static Biome EDEN_OCEAN = new BiomeEdenOcean(new BiomeProperties("Ocean of Eden"));
 	
 	public static void init() {
 		// Zollus
@@ -88,6 +91,7 @@ public class ZGBiomes {
 		ZGBiomes.addBiome(ZGBiomes.EDENWOOD_FOREST, LUSH, WET, FOREST);
 		ZGBiomes.addBiome(ZGBiomes.EDEN_FLOWER_GARDEN, LUSH, WET, PLAINS);
 		ZGBiomes.addBiome(ZGBiomes.EDEN_CRATERS, MOUNTAIN, DEAD, SPOOKY);
+		ZGBiomes.addBiome(ZGBiomes.EDEN_OCEAN, LUSH, WET, OCEAN);
 		
 		ZGHelper.Log("Loaded a total of " + totalBiomes + " new biomes.");
 	}
