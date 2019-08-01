@@ -18,6 +18,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldEntitySpawner;
 import net.minecraft.world.WorldType;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.Biome.TempCategory;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.gen.NoiseGenerator;
@@ -31,11 +32,12 @@ import zollerngalaxy.worldgen.mapgen.MapGenRavinesZG;
 
 public class ChunkProviderEden extends ChunkProviderBase {
 	
-	public static IBlockState BLOCK_TOP = ZGBlocks.edenSurfaceRock.getDefaultState();
-	public static IBlockState BLOCK_FILL = ZGBlocks.edenSoil.getDefaultState();
-	public static IBlockState BLOCK_STONE = ZGBlocks.edenStone.getDefaultState();
+	public static final IBlockState STONE = ZGBlocks.edenStone.getDefaultState();
+	public static final IBlockState WATER = Blocks.WATER.getDefaultState();
+	public static final IBlockState ICE = Blocks.ICE.getDefaultState();
 	
-	public static double CHUNK_HEIGHT = 40.0D;// ZGHelper.rngDbl(20.0D, 40.0D);
+	public static final double CHUNK_HEIGHT = 40.0D;
+	public static final int SEA_LEVEL = 63;
 	
 	private static final int CHUNK_SIZE_X = 16;
 	private static final int CHUNK_SIZE_Z = 16;
@@ -152,10 +154,12 @@ public class ChunkProviderEden extends ChunkProviderBase {
 								if ((lvt_45_1_ += d16) > this.noiseGenSmooth1.getNoise(chunkX * 16
 										+ x, chunkZ * 16 + z)
 										* CHUNK_HEIGHT) {
-									primer.setBlockState(x, y, z, BLOCK_STONE);
-								} else if (i2 * 8 + j2 < 63) {
-									primer.setBlockState(i * 4 + k2, i2 * 8 + j2, l * 4 + l2,
-											Blocks.WATER.getDefaultState());
+									primer.setBlockState(x, y, z, STONE);
+								} else if (y < SEA_LEVEL) {
+									Biome biome = world.getBiome(new BlockPos(x, y, z));
+									IBlockState blockToUse = (biome.getTempCategory() == TempCategory.COLD) ? ICE
+											: WATER;
+									primer.setBlockState(x, y, z, blockToUse);
 								}
 							}
 							
@@ -248,6 +252,7 @@ public class ChunkProviderEden extends ChunkProviderBase {
 						
 						float f7 = this.parabolicField[j1 + 2 + (k1 + 2) * 5] / (f5 + 2.0F);
 						
+						// TODO: Test removing?
 						if (biomegenbase1.getBaseHeight() > biomegenbase.getBaseHeight()) {
 							f7 /= 2.0F;
 						}

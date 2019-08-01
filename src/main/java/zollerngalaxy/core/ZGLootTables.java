@@ -14,5 +14,7 @@ public class ZGLootTables {
 	// Chests
 	public static final ResourceLocation CHEST_EDEN_TOWER = CommonZGRegisterHelper
 			.registerChestLoot("edentower");
+	public static final ResourceLocation CHEST_GIANT_BONE = CommonZGRegisterHelper
+			.registerChestLoot("giantbone");
 	
 }

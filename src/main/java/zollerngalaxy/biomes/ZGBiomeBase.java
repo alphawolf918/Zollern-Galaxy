@@ -23,10 +23,7 @@ public class ZGBiomeBase extends BiomeGenBaseGC {
 	
 	public ZGBiomeBase(BiomeProperties properties) {
 		super(properties, true);
-		this.spawnableCaveCreatureList.clear();
-		this.spawnableMonsterList.clear();
-		this.spawnableWaterCreatureList.clear();
-		this.spawnableCreatureList.clear();
+		this.clearAllSpawning();
 		ZGBiomes.biomeList.add(this);
 	}
 	
@@ -185,8 +182,8 @@ public class ZGBiomeBase extends BiomeGenBaseGC {
 		return this.tempBiomeCtg;
 	}
 	
-	public static enum Type {
-		NORMAL, EXTRA_TREES, MUTATED, HILLS;
+	public static enum EnumBiomeType {
+		NORMAL, OCEAN, FOREST, DESERT;
 	}
 	
 }

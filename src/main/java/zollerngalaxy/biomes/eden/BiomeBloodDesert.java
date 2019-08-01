@@ -21,6 +21,7 @@ public class BiomeBloodDesert extends BiomeGenEdenBase {
 		this.biomeDecor.edenFlowersPerChunk = 0;
 		this.decorator.generateFalls = true;
 		this.biomeDecor.generateLakes = true;
+		this.biomeDecor.generateGiantBones = true;
 		this.biomeDecor.deadBushPerChunk = 4;
 		this.biomeDecor.waterLakesPerChunk = 3;
 		this.enableSnow = false;

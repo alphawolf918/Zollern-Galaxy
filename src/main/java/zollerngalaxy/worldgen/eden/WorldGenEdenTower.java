@@ -9,8 +9,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.core.ZGLootTables;
-import zollerngalaxy.core.ZollernGalaxyCore;
-import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.worldgen.ZGWorldGenMaster;
 
 public class WorldGenEdenTower extends ZGWorldGenMaster {
@@ -27,16 +25,12 @@ public class WorldGenEdenTower extends ZGWorldGenMaster {
 	
 	@Override
 	public boolean generate(World world, Random rand, BlockPos pos) {
-		if (!this.isValidSpawn(world, pos)) {
-			return false;
-		}
+		int i = pos.getX();
+		int j = pos.getY();
+		int k = pos.getZ();
 		
-		int j = pos.getY() - 10;
+		j -= 10;
 		pos = new BlockPos(pos.getX(), j, pos.getZ());
-		
-		if (ZollernGalaxyCore.instance().isInDevMode()) {
-			ZGHelper.Log("Spawning at: " + this.getSpawnedAtString(pos));
-		}
 		
 		this.setBlock(world, pos.add(4, 2, 10), ZGBlocks.edenSacredStone);
 		this.setBlock(world, pos.add(4, 2, 11), ZGBlocks.edenSacredStone);
@@ -87,15 +81,20 @@ public class WorldGenEdenTower extends ZGWorldGenMaster {
 		this.setBlock(world, pos.add(4, 8, 14), ZGBlocks.edenSacredStone);
 		this.setBlock(world, pos.add(4, 8, 15), ZGBlocks.edenSacredStone);
 		this.setBlock(world, pos.add(4, 8, 16), ZGBlocks.edenSacredStone);
-		// int randDist = rand.nextInt(10);
-		// int chestX = i + 5;
-		// int chestY = j - 1;
-		// int chestZ = k + 13;
-		// int chestRand = rand.nextInt(2);
-		// boolean isBigChest = chestRand == 1 ? true : false;
-		// String chestString = chestX + " " + chestY + " " + chestZ;
-		// Treasures.spawnChest(world, rand, chestX, chestY, chestZ, isBigChest,
-		// ZEChestGenHooks.ENDER_TOWER);
+		//
+		if (rand.nextInt(500) <= 125) {
+			BlockPos chestPos = pos.add(5, 7, 13);
+			
+			world.setBlockState(chestPos,
+					Blocks.CHEST.correctFacing(world, chestPos, Blocks.CHEST.getDefaultState()), 2);
+			TileEntity tileentity1 = world.getTileEntity(chestPos);
+			
+			if (tileentity1 instanceof TileEntityChest) {
+				((TileEntityChest) tileentity1).setLootTable(ZGLootTables.CHEST_EDEN_TOWER,
+						rand.nextLong());
+			}
+		}
+		//
 		this.setBlock(world, pos.add(5, 2, 8), ZGBlocks.edenSacredStone);
 		this.setBlock(world, pos.add(5, 2, 9), ZGBlocks.edenSacredStone);
 		this.setBlock(world, pos.add(5, 2, 17), ZGBlocks.edenSacredStone);
@@ -394,17 +393,18 @@ public class WorldGenEdenTower extends ZGWorldGenMaster {
 		this.setBlock(world, pos.add(11, 21, 12), ZGBlocks.edenSacredStone);
 		this.setBlock(world, pos.add(11, 21, 13), ZGBlocks.edenSacredStone);
 		this.setBlock(world, pos.add(11, 21, 14), ZGBlocks.edenSacredStone);
-		BlockPos chestPos = pos.add(12, 20, 14);
+		//
+		BlockPos chestPos1 = pos.add(12, 20, 14);
 		
-		world.setBlockState(chestPos,
-				Blocks.CHEST.correctFacing(world, chestPos, Blocks.CHEST.getDefaultState()), 2);
-		TileEntity tileentity1 = world.getTileEntity(chestPos);
+		world.setBlockState(chestPos1,
+				Blocks.CHEST.correctFacing(world, chestPos1, Blocks.CHEST.getDefaultState()), 2);
+		TileEntity tileentity2 = world.getTileEntity(chestPos1);
 		
-		if (tileentity1 instanceof TileEntityChest) {
-			((TileEntityChest) tileentity1).setLootTable(ZGLootTables.CHEST_EDEN_TOWER,
+		if (tileentity2 instanceof TileEntityChest) {
+			((TileEntityChest) tileentity2).setLootTable(ZGLootTables.CHEST_EDEN_TOWER,
 					rand.nextLong());
 		}
-		
+		//
 		this.setBlock(world, pos.add(12, 2, 3), ZGBlocks.edenSacredStone);
 		this.setBlock(world, pos.add(12, 2, 23), ZGBlocks.edenSacredStone);
 		this.setBlock(world, pos.add(12, 3, 3), ZGBlocks.edenSacredStone);
@@ -551,20 +551,6 @@ public class WorldGenEdenTower extends ZGWorldGenMaster {
 		this.setBlock(world, pos.add(14, 23, 11), ZGBlocks.edenSacredStone);
 		this.setBlock(world, pos.add(14, 23, 15), ZGBlocks.edenSacredStone);
 		this.setBlock(world, pos.add(14, 24, 12), ZGBlocks.edenSacredStone);
-		
-		// if (!world.isRemote) {
-		// EntityEnderSkeleton skeleton = new EntityEnderSkeleton(world);
-		// skeleton.setLocationAndAngles(pos.add(14, 25, 13), 0.0f, 0.0f);
-		// world.spawnEntityInWorld(skeleton);
-		//
-		// for (int t = 1; t < rand.nextInt(5) + 1; t++) {
-		// EntityEnderSkeleton skeleton2 = new EntityEnderSkeleton(world);
-		// skeleton2.setLocationAndAngles(pos.add(14 + t, 25, 13 + t),
-		// 0.0f, 0.0f);
-		// world.spawnEntityInWorld(skeleton2);
-		// }
-		// }
-		
 		this.setBlock(world, pos.add(14, 24, 14), ZGBlocks.edenSacredStone);
 		
 		generate2(world, rand, pos);

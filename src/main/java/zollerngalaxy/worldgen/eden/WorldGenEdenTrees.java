@@ -17,21 +17,17 @@ import zollerngalaxy.blocks.eden.EdenFruit;
 
 public class WorldGenEdenTrees extends WorldGenAbstractTree {
 	
-	/** The minimum height of a generated tree. */
 	private final int minTreeHeight;
-	/** True if this tree should grow Vines. */
 	private final boolean vinesGrow;
-	/** The metadata value of the wood to use in tree generation. */
-	private final IBlockState metaWood;
-	/** The metadata value of the leaves to use in tree generation. */
-	private final IBlockState metaLeaves;
+	private final IBlockState blockLog;
+	private final IBlockState blockLeaves;
 	
 	public WorldGenEdenTrees(boolean notify, int minTreeHeightIn, IBlockState woodMeta,
 			IBlockState p_i46446_4_, boolean growVines) {
 		super(notify);
 		this.minTreeHeight = minTreeHeightIn;
-		this.metaWood = woodMeta;
-		this.metaLeaves = p_i46446_4_;
+		this.blockLog = woodMeta;
+		this.blockLeaves = p_i46446_4_;
 		this.vinesGrow = growVines;
 	}
 	
@@ -86,7 +82,7 @@ public class WorldGenEdenTrees extends WorldGenAbstractTree {
 														blockpos)
 												|| state.getMaterial() == Material.VINE) {
 											this.setBlockAndNotifyAdequately(worldIn, blockpos,
-													this.metaLeaves);
+													this.blockLeaves);
 										}
 									}
 								}
@@ -101,7 +97,7 @@ public class WorldGenEdenTrees extends WorldGenAbstractTree {
 									|| state.getBlock().isLeaves(state, worldIn, upN)
 									|| state.getMaterial() == Material.VINE) {
 								this.setBlockAndNotifyAdequately(worldIn, position.up(j3),
-										this.metaWood);
+										this.blockLog);
 								
 								if (this.vinesGrow && j3 > 0) {
 									if (rand.nextInt(3) > 0
@@ -181,7 +177,7 @@ public class WorldGenEdenTrees extends WorldGenAbstractTree {
 						if (rand.nextInt(3) == 0 && i > 4) {
 							for (int l3 = 0; l3 < 2; ++l3) {
 								for (EnumFacing enumfacing : EnumFacing.Plane.HORIZONTAL) {
-									if (rand.nextInt(4 - l3) == 0) {
+									if (rand.nextInt(8 - l3) == 0) {
 										EnumFacing enumfacing1 = enumfacing.getOpposite();
 										this.placeFruit(
 												worldIn,

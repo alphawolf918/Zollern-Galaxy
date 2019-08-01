@@ -4,7 +4,6 @@ import java.util.Random;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
-import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.Biome.TempCategory;
@@ -12,7 +11,6 @@ import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.gen.feature.WorldGenWaterlily;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import zollerngalaxy.biomes.BiomeSpace;
-import zollerngalaxy.biomes.eden.BiomeEdenwoodForest;
 import zollerngalaxy.blocks.ZGBlockTallGrass;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderEden;
@@ -21,11 +19,11 @@ import zollerngalaxy.lib.helpers.ZGDecorateHelper;
 import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.worldgen.WorldGenLakesZG;
 import zollerngalaxy.worldgen.WorldGenMinableZG;
-import zollerngalaxy.worldgen.WorldGenZGFlowers;
 import zollerngalaxy.worldgen.eden.WorldGenEdenFlowers;
 import zollerngalaxy.worldgen.eden.WorldGenEdenTallGrass;
 import zollerngalaxy.worldgen.eden.WorldGenEdenTower;
 import zollerngalaxy.worldgen.eden.WorldGenEdenTrees;
+import zollerngalaxy.worldgen.eden.WorldGenGiantBone;
 
 public class BiomeDecoratorEden extends BiomeDecoratorZG {
 	
@@ -61,13 +59,14 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 	public int edenTreesPerChunk = 1;
 	public int lavaLakesPerChunk = 1;
 	public int waterLakesPerChunk = 4;
-	public int towersPerChunk = 1;
 	
 	public boolean generateVines = false;
 	public boolean generateLakes = true;
 	public boolean generateCraters = false;
 	public boolean generateWitchHuts = false;
 	public boolean generateTowers = true;
+	public boolean generateGiantBones = false;
+	public boolean generateMansions = false;
 	
 	public BiomeDecoratorEden() {
 		this.dirtGen = new WorldGenMinableZG(ZGBlocks.edenSoil, ZGBlocks.edenSurfaceRock,
@@ -174,16 +173,15 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 			for (int i = 0; i < this.lavaLakesPerChunk; ++i) {
 				y = rand.nextInt(rand.nextInt(genY) + 8);
 				
-				(new WorldGenLakesZG(Blocks.LAVA, BLOCK_STONE)).generate(world, rand,
-						this.chunkPos.add(x, y, z));
+				if (rand.nextInt(100) <= 50) {
+					(new WorldGenLakesZG(Blocks.LAVA, BLOCK_STONE)).generate(world, rand,
+							this.chunkPos.add(x, y, z));
+				}
 			}
 		}
 		
 		if (this.deadBushPerChunk > 0) {
-			for (int i = 0; i < this.deadBushPerChunk; ++i) {
-				ZGDecorateHelper.generatePlants(new WorldGenZGFlowers(Blocks.DEADBUSH), world,
-						rand, this.chunkPos);// TODO
-			}
+			// TODO
 		}
 		
 		if (this.generateLakes && this.waterLakesPerChunk > 0) {
@@ -212,7 +210,7 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 		}
 		
 		if (this.edenTreesPerChunk > 0) {
-			WorldGenEdenTrees treeGen = new WorldGenEdenTrees(true, ZGHelper.rngNumber(5, 15),
+			WorldGenEdenTrees treeGen = new WorldGenEdenTrees(false, ZGHelper.rngNumber(5, 10),
 					ZGBlocks.edenWoodLog.getDefaultState(),
 					ZGBlocks.edenWoodLeaves.getDefaultState(), this.generateVines);
 			for (int i = 0; i < this.edenTreesPerChunk; ++i) {
@@ -222,10 +220,6 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 				}
 				
 				if (rand.nextInt(100) <= 50) {
-					treeGen.generate(world, rand, this.chunkPos.add(x, y, z));
-				}
-				
-				if (biome instanceof BiomeEdenwoodForest) {
 					treeGen.generate(world, rand, this.chunkPos.add(x, y, z));
 				}
 			}
@@ -274,11 +268,24 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 			// TODO
 		}
 		
-		if (this.generateTowers && this.towersPerChunk > 0) {
+		if (this.generateMansions) {
+			// TODO
+		}
+		
+		if (this.generateTowers) {
 			y = rand.nextInt(rand.nextInt(genY) + 8);
 			if (y >= 63) {
-				if (rand.nextInt(500) <= 90) {
-					(new WorldGenEdenTower()).generate(world, rand, new BlockPos(x, y, z));
+				if (rand.nextInt(1000) <= 45) {
+					(new WorldGenEdenTower()).generate(world, rand, this.chunkPos.add(x, y, z));
+				}
+			}
+		}
+		
+		if (this.generateGiantBones) {
+			y = rand.nextInt(rand.nextInt(genY) + 8);
+			if (y >= 62) {
+				if (rand.nextInt(700) <= 90) {
+					(new WorldGenGiantBone()).generate(world, rand, this.chunkPos.add(x, y, z));
 				}
 			}
 		}

@@ -42,32 +42,34 @@ public class ZGBiomes {
 	public static final List<BiomeGenBaseGC> biomeList = new LinkedList<>();
 	private static int totalBiomes = 0;
 	
-	public static Biome ZOLLUS = new BiomeZollus(new BiomeProperties("Zollus"));
+	public static final Biome ZOLLUS = new BiomeZollus(new BiomeProperties("Zollus"));
 	
-	public static Biome KRIFFON = new BiomeKriffon(new BiomeProperties("Kriffon"));
+	public static final Biome KRIFFON = new BiomeKriffon(new BiomeProperties("Kriffon"));
 	
-	public static Biome PURGOT = new BiomePurgot(new BiomeProperties("Purgotary"));
-	public static Biome LIMBO = new BiomeLimbo(new BiomeProperties("Limbo"));
+	public static final Biome PURGOT = new BiomePurgot(new BiomeProperties("Purgotary"));
+	public static final Biome LIMBO = new BiomeLimbo(new BiomeProperties("Limbo"));
 	
-	public static Biome EDEN_GREEN_LANDS = new BiomeGreenLands(new BiomeProperties("Green Lands"));
-	public static Biome EDEN_BLOOD_DESERT = new BiomeBloodDesert(
-			new BiomeProperties("Blood Desert"));
-	public static Biome EDEN_ROCK_MOUNTAINS = new BiomeStoneMountains(new BiomeProperties(
+	public static final Biome EDEN_GREEN_LANDS = new BiomeGreenLands(new BiomeProperties(
+			"Green Lands"));
+	public static final Biome EDEN_BLOOD_DESERT = new BiomeBloodDesert(new BiomeProperties(
+			"Blood Desert"));
+	public static final Biome EDEN_ROCK_MOUNTAINS = new BiomeStoneMountains(new BiomeProperties(
 			"Rock Mountains"));
-	public static Biome EDEN_TERRAN_VALLEY = new BiomeTerranValley(new BiomeProperties(
+	public static final Biome EDEN_TERRAN_VALLEY = new BiomeTerranValley(new BiomeProperties(
 			"Terran Valley"));
-	public static Biome EDEN_SNOWY_PLAINS = new BiomeSnowyPlains(
-			new BiomeProperties("Snowy Plains"));
-	public static Biome EDEN_GOLDEN_MEADOW = new BiomeGoldenMeadow(new BiomeProperties(
+	public static final Biome EDEN_SNOWY_PLAINS = new BiomeSnowyPlains(new BiomeProperties(
+			"Snowy Plains"));
+	public static final Biome EDEN_GOLDEN_MEADOW = new BiomeGoldenMeadow(new BiomeProperties(
 			"Golden Meadow"));
-	public static Biome EDEN_SWAMPLANDS = new BiomeSwamplands(new BiomeProperties("Swamplands"));
-	public static Biome EDENWOOD_FOREST = new BiomeEdenwoodForest(new BiomeProperties(
+	public static final Biome EDEN_SWAMPLANDS = new BiomeSwamplands(new BiomeProperties(
+			"Swamplands"));
+	public static final Biome EDENWOOD_FOREST = new BiomeEdenwoodForest(new BiomeProperties(
 			"Edenwood Forest"));
-	public static Biome EDEN_FLOWER_GARDEN = new BiomeFlowerGarden(
-			new BiomeProperties("The Garden"));
-	public static Biome EDEN_CRATERS = new BiomeAsteroidCraters(new BiomeProperties(
+	public static final Biome EDEN_FLOWER_GARDEN = new BiomeFlowerGarden(new BiomeProperties(
+			"The Garden"));
+	public static final Biome EDEN_CRATERS = new BiomeAsteroidCraters(new BiomeProperties(
 			"Asteroid Craters"));
-	public static Biome EDEN_OCEAN = new BiomeEdenOcean(new BiomeProperties("Ocean of Eden"));
+	public static final Biome EDEN_OCEAN = new BiomeEdenOcean(new BiomeProperties("Ocean of Eden"));
 	
 	public static void init() {
 		// Zollus

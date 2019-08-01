@@ -2,52 +2,52 @@
   "mob.alien.say": {
     "category": "master",
     "sounds": [
-      "mob/alien/say"
+      "zollerngalaxy:mob/alien/say"
     ]
   },
   "mob.alien.hurt": {
 	"category": "master",
 	"sounds": [
-      "mob/alien/hurt"
+      "zollerngalaxy:mob/alien/hurt"
 	]
   },
   "mob.galaxyknight.say": {
 	"category": "master",
 	"sounds": [
-      "mob/galaxyknight/say"
+      "zollerngalaxy:mob/galaxyknight/say"
 	]
   },
   "mob.galaxyknight.die": {
 	"category": "master",
 	"sounds": [
-      "mob/galaxyknight/die"
+      "zollerngalaxy:mob/galaxyknight/die"
 	]
   },
   "mob.crawler.hurt": {
 	"category": "master",
 	"sounds": [
-      "mob/crawler/hurt1",
-      "mob/crawler/hurt2"
+      "zollerngalaxy:mob/crawler/hurt1",
+      "zollerngalaxy:mob/crawler/hurt2"
 	]
   },
   "mob.crawler.say": {
 	"category": "master",
 	"sounds": [
-      "mob/crawler/say1",
-      "mob/crawler/say2",
-      "mob/crawler/say3"
+      "zollerngalaxy:mob/crawler/say1",
+      "zollerngalaxy:mob/crawler/say2",
+      "zollerngalaxy:mob/crawler/say3"
 	]
   },
   "dig.xeno": {
 	"category": "master",
 	"sounds": [
-      "dig/xeno"
+      "zollerngalaxy:dig/xeno"
 	]
   },
   "step.xeno": {
 	"category": "master",
 	"sounds": [
-      "step/xeno"
+      "zollerngalaxy:step/xeno"
 	]
   }
 }

@@ -41,7 +41,7 @@ public class BiomeSpace extends ZGBiomeBase {
 	/**
 	 * Checks if the biome is a hot biome or not.
 	 * 
-	 * @return True if the biome temp is >= 8.0f, otherwise false.
+	 * @return True if the biome temp is >= 7.0f, otherwise false.
 	 */
 	public boolean getIsHotBiome() {
 		return (this.getBiomeTemp() >= 7F);
@@ -96,8 +96,8 @@ public class BiomeSpace extends ZGBiomeBase {
 		Random rand = new Random();
 		float oldPlanetTemp = planet.getPlanetTemperature();
 		float planetTemp = oldPlanetTemp;
-		float maxTemp = oldPlanetTemp + 50;
-		float minTemp = oldPlanetTemp - 50;
+		float maxTemp = oldPlanetTemp + 25;
+		float minTemp = oldPlanetTemp - 25;
 		if (planet.getIsColdPlanet()) {
 			planetTemp -= biomeTemp;
 		} else if (planet.getIsHotPlanet()) {

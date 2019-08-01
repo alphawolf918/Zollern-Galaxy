@@ -37,12 +37,16 @@ import zollerngalaxy.planets.ZGPlanets;
 
 public abstract class BiomeGenEdenBase extends BiomeSpace {
 	
-	protected static IBlockState STONE = ZGBlocks.edenStone.getDefaultState();
-	protected static IBlockState AIR = Blocks.AIR.getDefaultState();
-	protected static IBlockState BEDROCK = Blocks.BEDROCK.getDefaultState();
-	protected static IBlockState GRAVEL = ZGBlocks.edenGravel.getDefaultState();
-	protected static IBlockState ICE = Blocks.ICE.getDefaultState();
-	protected static IBlockState WATER = Blocks.WATER.getDefaultState();
+	protected static final IBlockState STONE = ZGBlocks.edenStone.getDefaultState();
+	protected static final IBlockState AIR = Blocks.AIR.getDefaultState();
+	protected static final IBlockState BEDROCK = Blocks.BEDROCK.getDefaultState();
+	protected static final IBlockState GRAVEL = ZGBlocks.edenGravel.getDefaultState();
+	protected static final IBlockState DIRT = ZGBlocks.edenSoil.getDefaultState();
+	protected static final IBlockState ICE = Blocks.ICE.getDefaultState();
+	protected static final IBlockState WATER = Blocks.WATER.getDefaultState();
+	
+	protected static final int SEA_LEVEL = 63;
+	protected static final int SEA_FLOOR_LEVEL = 42;
 	
 	public BiomeDecoratorEden biomeDecor = this.getBiomeDecorator();
 	
@@ -112,11 +116,12 @@ public abstract class BiomeGenEdenBase extends BiomeSpace {
 			} else {
 				IBlockState iblockstate2 = chunkPrimerIn.getBlockState(i1, j1, l);
 				if (this.getBiomeName() == ZGBiomes.EDEN_OCEAN.getBiomeName()) {
-					if (j1 < 63 && j1 > 32) {
+					if (j1 < SEA_LEVEL && j1 > SEA_FLOOR_LEVEL) {
 						chunkPrimerIn.setBlockState(i1, j1, l, WATER);
-					} else if (j1 < 32) {
+					} else if (j1 < SEA_FLOOR_LEVEL) {
+						chunkPrimerIn.setBlockState(i1, j1 + 1, l, DIRT);
 						chunkPrimerIn.setBlockState(i1, j1, l, STONE);
-					} else if (j1 >= 63) {
+					} else if (j1 >= SEA_LEVEL) {
 						chunkPrimerIn.setBlockState(i1, j1, l, AIR);
 					}
 				} else {
@@ -158,6 +163,58 @@ public abstract class BiomeGenEdenBase extends BiomeSpace {
 						}
 					}
 				}
+			}
+		}
+	}
+	
+	protected void generateOcean(int j1, int i1, int l, ChunkPrimer chunkPrimerIn) {
+		if ((j1 < SEA_LEVEL) && (j1 > SEA_FLOOR_LEVEL)) {
+			chunkPrimerIn.setBlockState(i1, j1, l, WATER);
+		} else if (j1 < SEA_FLOOR_LEVEL) {
+			chunkPrimerIn.setBlockState(i1, (j1 + 1), l, DIRT);
+			chunkPrimerIn.setBlockState(i1, j1, l, STONE);
+		} else if (j1 >= SEA_LEVEL) {
+			chunkPrimerIn.setBlockState(i1, j1, l, AIR);
+		}
+	}
+	
+	protected void generateNormally(IBlockState iblockstate2, IBlockState topState,
+			IBlockState fillState, int j, int k, int i, int j1, int i1, int l,
+			ChunkPrimer chunkPrimerIn) {
+		if (iblockstate2.getMaterial() == Material.AIR) {
+			j = -1;
+		} else if (iblockstate2.getBlock() == ZGBlocks.edenStone) {
+			if (j == -1) {
+				if (k <= 0) {
+					topState = AIR;
+					fillState = STONE;
+				} else if (j1 >= i - 4 && j1 <= i + 1) {
+					topState = this.topBlock;
+					fillState = this.fillerBlock;
+				}
+				
+				if (j1 < i && (topState == null || topState.getMaterial() == Material.AIR)) {
+					if (this.tempBiomeCtg == TempCategory.COLD) {
+						topState = ICE;
+					} else {
+						topState = WATER;
+					}
+				}
+				
+				j = k;
+				
+				if (j1 >= i - 1) {
+					chunkPrimerIn.setBlockState(i1, j1, l, topState);
+				} else if (j1 < i - 7 - k) {
+					topState = AIR;
+					fillState = STONE;
+					chunkPrimerIn.setBlockState(i1, j1, l, GRAVEL);
+				} else {
+					chunkPrimerIn.setBlockState(i1, j1, l, fillState);
+				}
+			} else if (j > 0) {
+				--j;
+				chunkPrimerIn.setBlockState(i1, j1, l, fillState);
 			}
 		}
 	}
