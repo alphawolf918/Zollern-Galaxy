@@ -4,7 +4,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.blocks.ZGBlocks;
 
-public class BiomeEdenwoodForest extends BiomeGenEdenBase {
+public class BiomeEdenwoodForest extends BiomeEdenBase {
 	
 	public BiomeEdenwoodForest(BiomeProperties props) {
 		super("edenwoodforest", props);

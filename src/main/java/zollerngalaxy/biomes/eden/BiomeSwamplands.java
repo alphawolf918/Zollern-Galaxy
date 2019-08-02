@@ -10,7 +10,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.blocks.ZGBlocks;
 
-public class BiomeSwamplands extends BiomeGenEdenBase {
+public class BiomeSwamplands extends BiomeEdenBase {
 	
 	public BiomeSwamplands(BiomeProperties props) {
 		super("edenswamplands", props);

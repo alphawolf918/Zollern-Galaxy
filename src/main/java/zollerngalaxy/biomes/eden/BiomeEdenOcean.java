@@ -4,8 +4,9 @@ import net.minecraft.entity.passive.EntitySquid;
 import net.minecraft.init.Blocks;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import zollerngalaxy.mobs.entities.EntitySquidlus;
 
-public class BiomeEdenOcean extends BiomeGenEdenBase {
+public class BiomeEdenOcean extends BiomeEdenBase {
 	
 	public static int grassFoilageColorMultiplier = 0x00ff00;
 	
@@ -14,13 +15,14 @@ public class BiomeEdenOcean extends BiomeGenEdenBase {
 		props.setRainDisabled();
 		props.setBaseHeight(0.0F);
 		props.setHeightVariation(0.0F);
-		props.setTemperature(8.0F);
+		props.setTemperature(5.0F);
 		this.setTempCategory(TempCategory.OCEAN);
 		this.setTemp(5.0F);
 		this.setBiomeHeight(63);
 		this.setBlocks(Blocks.AIR);
 		this.clearAllNonMonsterSpawning();
 		this.spawnableWaterCreatureList.add(new SpawnListEntry(EntitySquid.class, 100, 1, 4));
+		this.spawnableWaterCreatureList.add(new SpawnListEntry(EntitySquidlus.class, 100, 1, 4));
 		this.biomeDecor.edenTallGrassPerChunk = 6;
 		this.biomeDecor.edenFlowersPerChunk = 5;
 		this.biomeDecor.generateFalls = true;

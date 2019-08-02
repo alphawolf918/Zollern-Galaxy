@@ -4,6 +4,7 @@ import net.minecraft.world.biome.BiomeDecorator;
 import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.biomes.decorators.BiomeDecoratorZollus;
 import zollerngalaxy.blocks.ZGBlocks;
+import zollerngalaxy.mobs.entities.EntityFrostGiant;
 import zollerngalaxy.planets.ZGPlanets;
 
 public class BiomeZollus extends BiomeSpace {
@@ -16,14 +17,12 @@ public class BiomeZollus extends BiomeSpace {
 		super("zollus", props);
 		props.setRainDisabled();
 		this.enableSnow = true;
-		this.decorator.flowersPerChunk = -999;
-		this.decorator.treesPerChunk = -999;
-		this.decorator.grassPerChunk = -999;
-		this.decorator.mushroomsPerChunk = -999;
-		this.spawnableCaveCreatureList.clear();
-		this.spawnableMonsterList.clear();
-		this.spawnableWaterCreatureList.clear();
-		this.spawnableCreatureList.clear();
+		this.biomeDecor.flowersPerChunk = -999;
+		this.biomeDecor.treesPerChunk = -999;
+		this.biomeDecor.grassPerChunk = -999;
+		this.biomeDecor.mushroomsPerChunk = -999;
+		this.clearAllSpawning();
+		this.spawnableMonsterList.add(new SpawnListEntry(EntityFrostGiant.class, 25, 1, 1));
 		this.topBlock = ZGBlocks.zolSurfaceRock.getDefaultState();
 		this.fillerBlock = ZGBlocks.zolDirt.getDefaultState();
 		this.stoneBlock = ZGBlocks.zolStone;

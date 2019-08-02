@@ -6,7 +6,7 @@ import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.mobs.entities.EntityMoolus;
 import zollerngalaxy.mobs.entities.EntityOinkus;
 
-public class BiomeTerranValley extends BiomeGenEdenBase {
+public class BiomeTerranValley extends BiomeEdenBase {
 	
 	public BiomeTerranValley(BiomeProperties props) {
 		super("terranvalley", props);

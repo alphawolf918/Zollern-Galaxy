@@ -6,7 +6,7 @@ import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.mobs.entities.EntityMoolus;
 import zollerngalaxy.mobs.entities.EntityOinkus;
 
-public class BiomeFlowerGarden extends BiomeGenEdenBase {
+public class BiomeFlowerGarden extends BiomeEdenBase {
 	
 	public BiomeFlowerGarden(BiomeProperties props) {
 		super("flowergarden", props);

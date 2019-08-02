@@ -4,7 +4,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.blocks.ZGBlocks;
 
-public class BiomeStoneMountains extends BiomeGenEdenBase {
+public class BiomeStoneMountains extends BiomeEdenBase {
 	
 	public static int grassFoilageColorMultiplier = 0x8b0000;
 	

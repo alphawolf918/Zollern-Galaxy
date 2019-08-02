@@ -4,7 +4,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.blocks.ZGBlocks;
 
-public class BiomeAsteroidCraters extends BiomeGenEdenBase {
+public class BiomeAsteroidCraters extends BiomeEdenBase {
 	
 	public BiomeAsteroidCraters(BiomeProperties props) {
 		super("craters", props);

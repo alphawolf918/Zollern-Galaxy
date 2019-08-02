@@ -14,6 +14,7 @@ import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.blocks.creativetabs.ZGTabs;
 import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.ZGDimensions;
+import zollerngalaxy.events.ZGSoundEvents;
 import zollerngalaxy.items.ZGItems;
 import zollerngalaxy.lib.ZGInfo;
 import zollerngalaxy.lib.helpers.ModHelperBase;
@@ -36,7 +37,7 @@ public class ZollernGalaxyCore {
 	@Mod.Instance(ZGInfo.MOD_ID)
 	private static ZollernGalaxyCore INSTANCE;
 	
-	private static final boolean DEV_MODE = true;
+	private static final boolean DEV_MODE = false;
 	
 	public static ZollernGalaxyCore instance() {
 		return INSTANCE;
@@ -54,6 +55,7 @@ public class ZollernGalaxyCore {
 	public void preInit(FMLPreInitializationEvent event) {
 		ZGHelper.Log("Beginning Pre-Initilization phase...");
 		ConfigManagerZG.init(event);
+		ZGSoundEvents.init();
 		ModHelperBase.detectMods();
 		
 		ZGInfo.init(event.getModMetadata());

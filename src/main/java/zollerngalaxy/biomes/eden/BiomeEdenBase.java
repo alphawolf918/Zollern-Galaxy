@@ -35,7 +35,7 @@ import zollerngalaxy.mobs.entities.EntityMoolus;
 import zollerngalaxy.mobs.entities.EntityOinkus;
 import zollerngalaxy.planets.ZGPlanets;
 
-public abstract class BiomeGenEdenBase extends BiomeSpace {
+public abstract class BiomeEdenBase extends BiomeSpace {
 	
 	protected static final IBlockState STONE = ZGBlocks.edenStone.getDefaultState();
 	protected static final IBlockState AIR = Blocks.AIR.getDefaultState();
@@ -50,7 +50,7 @@ public abstract class BiomeGenEdenBase extends BiomeSpace {
 	
 	public BiomeDecoratorEden biomeDecor = this.getBiomeDecorator();
 	
-	public BiomeGenEdenBase(String singleName, BiomeProperties props) {
+	public BiomeEdenBase(String singleName, BiomeProperties props) {
 		super(singleName, props);
 		this.setTempCategory(TempCategory.MEDIUM);
 		this.decorator.flowersPerChunk = -999;

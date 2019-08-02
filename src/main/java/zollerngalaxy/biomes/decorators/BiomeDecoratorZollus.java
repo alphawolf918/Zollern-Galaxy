@@ -22,7 +22,7 @@ public class BiomeDecoratorZollus extends BiomeDecoratorZG {
 	private WorldGenerator heartiumGen;
 	private WorldGenerator coalGen;
 	
-	public int zolCrystalsPerChunk = 1;
+	public int zolCrystalsPerChunk = 2;
 	
 	public BiomeDecoratorZollus() {
 		this.dirtGen = new WorldGenMinableZG(ZGBlocks.zolDirt, ZGBlocks.zolSurfaceRock,
@@ -57,7 +57,7 @@ public class BiomeDecoratorZollus extends BiomeDecoratorZG {
 		this.generateOre(this.coalGen, EnumOreGenZG.COAL, world, rand);
 		
 		int i;
-		
+		boolean hasSpawned = false;
 		for (i = 0; i < this.zolCrystalsPerChunk; ++i) {
 			ZGDecorateHelper.generatePlants(
 					new WorldGenZolniumCrystals(ZGBlocks.zolCrystals.getDefaultState()), world,

@@ -6,6 +6,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import zollerngalaxy.blocks.zollus.ZolniumCrystals;
+import zollerngalaxy.mobs.entities.EntityFrostGiant;
 
 public class WorldGenZolniumCrystals extends WorldGenerator {
 	
@@ -26,6 +27,18 @@ public class WorldGenZolniumCrystals extends WorldGenerator {
 					&& ((ZolniumCrystals) this.flower.getBlock()).canBlockStay(world, pos1,
 							this.flower)) {
 				world.setBlockState(pos1, this.flower, 2);
+			}
+		}
+		
+		if (rand.nextInt(100) <= 25) {
+			double x = pos.getX();
+			double y = pos.getY();
+			double z = pos.getZ();
+			
+			if (!world.isRemote) {
+				EntityFrostGiant frostGiant = new EntityFrostGiant(world);
+				frostGiant.setLocationAndAngles(x, y, z, 0, 0);
+				world.spawnEntity(frostGiant);
 			}
 		}
 		return true;

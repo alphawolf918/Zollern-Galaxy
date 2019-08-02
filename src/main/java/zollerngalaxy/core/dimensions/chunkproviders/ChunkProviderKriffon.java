@@ -42,12 +42,11 @@ public class ChunkProviderKriffon extends ChunkProviderBase {
 			ZGBlocks.kriffMagmaRock);
 	private final MapGenRavinesZG ravineGenerator = new MapGenRavinesZG(ZGBlocks.kriffStone);
 	
-	private static final int CRATER_PROB = 500;
+	private static final int CRATER_PROB = 100;
 	
-	// DO NOT CHANGE
 	private static final int MID_HEIGHT = 63;
 	private static final int CHUNK_SIZE_X = 16;
-	private static final int CHUNK_SIZE_Y = 128;
+	private static final int CHUNK_SIZE_Y = 228;
 	private static final int CHUNK_SIZE_Z = 16;
 	
 	public ChunkProviderKriffon(World par1World, long par2, boolean par4) {
@@ -106,7 +105,7 @@ public class ChunkProviderKriffon extends ChunkProviderBase {
 				for (int var16 = 127; var16 >= 0; --var16) {
 					final int index = this.getIndex(var8, var16, var9);
 					
-					if (var16 <= this.rand.nextInt(5)) {
+					if (var16 == 0) {
 						primer.setBlockState(var8, var16, var9, Blocks.BEDROCK.getDefaultState());
 					} else {
 						IBlockState var18 = primer.getBlockState(var8, var16, var9);
