@@ -68,6 +68,7 @@ public class ZGPlanets {
 	
 	// Asgard system
 	public static ZGPlanet planetAsgard;
+	public static ZGPlanet planetMaveth;
 	
 	// Vega System
 	public static ZGPlanet planetMeridian;
@@ -234,7 +235,7 @@ public class ZGPlanets {
 		planetEden.setRelativeOrbitTime(8.0F);
 		planetEden.setDistanceFromCenter(2F);
 		planetEden.setTierRequired(5);
-		planetEden.setRelativeSize(40.0F);
+		planetEden.setRelativeSize(50.0F);
 		planetEden.setPlanetTemperature(71.2f);
 		planetEden.setPlanetToxicity(0.0f);
 		planetEden.setPlanetRadiation(0.0f);

@@ -27,7 +27,7 @@ public class ZGItems {
 	public static final Item ingotViri = new ZGItemBase("ingotviri");
 	public static final Item ingotCobalt = new ZGItemBase("ingotcobalt");
 	public static final Item ingotEve = new ZGItemBase("ingotevenium");
-	public static final Item hud = new ZGItemBase("hud");
+	public static final Item hud = new ItemHUD();
 	public static final Item alienStone = new ZGItemBase("alienstone");
 	
 	public static final Item compressedCobalt = new ZGItemBase("compressedcobalt");

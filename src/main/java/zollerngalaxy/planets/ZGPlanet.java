@@ -11,16 +11,17 @@ import zollerngalaxy.lib.ZGInfo;
 public class ZGPlanet extends Planet implements IZollernPlanet {
 	
 	private EnumPlanetClass planetClass;
+	
 	private Star planetStar;
 	
 	private float baseTemp;
 	private float baseRadiation;
 	private float baseToxicity;
+	private float windLevel;
+	private float density;
 	
 	private boolean breathable;
 	private boolean rains;
-	private float windLevel;
-	private float density;
 	
 	private AtmosphereInfo atmosphere;
 	

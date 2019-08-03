@@ -4,6 +4,7 @@ import net.minecraft.world.biome.BiomeDecorator;
 import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.biomes.decorators.BiomeDecoratorKriffon;
 import zollerngalaxy.blocks.ZGBlocks;
+import zollerngalaxy.mobs.entities.EntityMagmos;
 import zollerngalaxy.planets.ZGPlanets;
 
 public class BiomeKriffon extends BiomeSpace {
@@ -21,10 +22,7 @@ public class BiomeKriffon extends BiomeSpace {
 		this.decorator.treesPerChunk = -999;
 		this.decorator.grassPerChunk = -999;
 		this.decorator.mushroomsPerChunk = -999;
-		this.spawnableCaveCreatureList.clear();
-		this.spawnableMonsterList.clear();
-		this.spawnableWaterCreatureList.clear();
-		this.spawnableCreatureList.clear();
+		this.spawnableMonsterList.add(new SpawnListEntry(EntityMagmos.class, 25, 1, 1));
 		this.topBlock = ZGBlocks.kriffSurfaceRock.getDefaultState();
 		this.fillerBlock = ZGBlocks.kriffDirt.getDefaultState();
 		this.stoneBlock = ZGBlocks.kriffStone;

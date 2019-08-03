@@ -1,17 +1,23 @@
 package zollerngalaxy.biomes.decorators;
 
 import java.util.Random;
+import net.minecraft.block.Block;
+import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.core.enums.EnumOreGenZG;
+import zollerngalaxy.worldgen.WorldGenLakesZG;
 import zollerngalaxy.worldgen.WorldGenMinableZG;
 
 public class BiomeDecoratorKriffon extends BiomeDecoratorZG {
 	
+	private static final Block STONE = ZGBlocks.kriffStone;
+	
 	private WorldGenerator dirtGen;
 	private WorldGenerator magmaGen;
+	private WorldGenerator magmaGen2;
 	private WorldGenerator ironGen;
 	private WorldGenerator goldGen;
 	private WorldGenerator copperGen;
@@ -19,10 +25,14 @@ public class BiomeDecoratorKriffon extends BiomeDecoratorZG {
 	private WorldGenerator redstoneGen;
 	private WorldGenerator coalGen;
 	
+	public int lavaLakesPerChunk = 8;
+	
 	public BiomeDecoratorKriffon() {
 		this.dirtGen = new WorldGenMinableZG(ZGBlocks.kriffDirt, ZGBlocks.kriffSurfaceRock,
 				EnumOreGenZG.DIRT);
 		this.magmaGen = new WorldGenMinableZG(ZGBlocks.kriffMagmaRock, ZGBlocks.kriffSurfaceRock,
+				EnumOreGenZG.MAGMA);
+		this.magmaGen2 = new WorldGenMinableZG(ZGBlocks.kriffMagmaRock, ZGBlocks.kriffStone,
 				EnumOreGenZG.MAGMA);
 		this.copperGen = new WorldGenMinableZG(ZGBlocks.kriffCopperOre, ZGBlocks.kriffStone,
 				EnumOreGenZG.COPPER);
@@ -49,7 +59,22 @@ public class BiomeDecoratorKriffon extends BiomeDecoratorZG {
 		this.generateOre(this.cobaltGen, EnumOreGenZG.COBALT, world, rand);
 		this.generateOre(this.dirtGen, EnumOreGenZG.DIRT, world, rand);
 		this.generateOre(this.magmaGen, EnumOreGenZG.MAGMA, world, rand);
+		this.generateOre(this.magmaGen2, EnumOreGenZG.MAGMA, world, rand);
 		this.generateOre(this.coalGen, EnumOreGenZG.COAL, world, rand);
 		this.generateOre(this.redstoneGen, EnumOreGenZG.REDSTONE, world, rand);
+		
+		int genY = 248;
+		int y = genY;
+		
+		if (this.lavaLakesPerChunk > 0) {
+			for (int i = 0; i < this.lavaLakesPerChunk; ++i) {
+				y = rand.nextInt(rand.nextInt(genY) + 8);
+				
+				if (rand.nextInt(100) <= 50) {
+					(new WorldGenLakesZG(Blocks.LAVA, STONE)).generate(world, rand,
+							this.chunkPos.add(x, y, z));
+				}
+			}
+		}
 	}
 }

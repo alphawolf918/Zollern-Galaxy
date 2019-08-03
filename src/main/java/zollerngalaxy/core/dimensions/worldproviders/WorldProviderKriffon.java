@@ -25,12 +25,12 @@ public class WorldProviderKriffon extends WorldProviderZG {
 	
 	@Override
 	public float getGravity() {
-		return 0.065F;
+		return 0.055F;
 	}
 	
 	@Override
 	public double getMeteorFrequency() {
-		return 70.0;
+		return 4.0;
 	}
 	
 	@Override
@@ -71,8 +71,13 @@ public class WorldProviderKriffon extends WorldProviderZG {
 	}
 	
 	@Override
+	public int getHeight() {
+		return 800;
+	}
+	
+	@Override
 	public double getSolarEnergyMultiplier() {
-		return 2.0F;
+		return 6.5F;
 	}
 	
 	@Override
@@ -102,7 +107,7 @@ public class WorldProviderKriffon extends WorldProviderZG {
 		if (f2 > 1.0F) {
 			f2 = 0.95F;
 		}
-		f2 = 0.95F - f2;
+		f2 = 1.95F - f2;
 		return f2 * 2.5F;
 	}
 	
@@ -113,13 +118,13 @@ public class WorldProviderKriffon extends WorldProviderZG {
 	
 	@Override
 	public int getAverageGroundLevel() {
-		return 68;
+		return 82;
 	}
 	
 	@Override
 	public Vector3 getSkyColor() {
 		float f = 0.6F - this.getStarBrightness(1.0F);
-		return new Vector3(255 / 255F * f, 20 / 255F * f, 20 / 255F * f);
+		return new Vector3(80 / 255F * f, 0 / 255F * f, 0 / 255F * f);
 	}
 	
 	@Override
@@ -135,7 +140,7 @@ public class WorldProviderKriffon extends WorldProviderZG {
 	
 	@Override
 	public boolean hasSunset() {
-		return false;
+		return true;
 	}
 	
 	@Override

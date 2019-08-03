@@ -7,6 +7,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
+import net.minecraftforge.common.ForgeModContainer;
 
 public class WorldGenLakesZG extends WorldGenerator {
 	
@@ -128,12 +129,9 @@ public class WorldGenLakesZG extends WorldGenerator {
 						int l4 = 4;
 						
 						if (worldIn.canBlockFreezeWater(position.add(k2, 4, l3))) {
-							int flag = net.minecraftforge.common.ForgeModContainer.fixVanillaCascading ? 2 | 16
-									: 2; // Forge: With bit 5 unset, it will
-											// notify neighbors and load
-											// adjacent chunks.
+							int flag = ForgeModContainer.fixVanillaCascading ? 2 | 16 : 2;
 							worldIn.setBlockState(position.add(k2, 4, l3),
-									Blocks.PACKED_ICE.getDefaultState(), flag); // Forge
+									Blocks.PACKED_ICE.getDefaultState(), flag);
 						}
 					}
 				}

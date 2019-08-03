@@ -4,10 +4,13 @@ import micdoodle8.mods.galacticraft.api.world.BiomeGenBaseGC;
 import net.minecraft.block.Block;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.biome.Biome;
+import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 
 public class ZGBiomeBase extends BiomeGenBaseGC {
 	
 	protected TempCategory tempBiomeCtg = TempCategory.COLD;
+	protected EnumBiomeTypeZG biomeType = EnumBiomeTypeZG.SPACE;
+	
 	protected boolean hasMutation = false;
 	protected boolean enableSnow = false;
 	protected int waterColor = 0x0000ff;
@@ -180,10 +183,6 @@ public class ZGBiomeBase extends BiomeGenBaseGC {
 	@Override
 	public TempCategory getTempCategory() {
 		return this.tempBiomeCtg;
-	}
-	
-	public static enum EnumBiomeType {
-		NORMAL, OCEAN, FOREST, DESERT;
 	}
 	
 }

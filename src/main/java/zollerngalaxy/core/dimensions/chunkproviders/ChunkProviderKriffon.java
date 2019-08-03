@@ -2,7 +2,6 @@ package zollerngalaxy.core.dimensions.chunkproviders;
 
 import java.util.List;
 import java.util.Random;
-import micdoodle8.mods.galacticraft.api.prefab.world.gen.BiomeAdaptive;
 import micdoodle8.mods.galacticraft.api.world.ChunkProviderBase;
 import micdoodle8.mods.galacticraft.core.perlin.NoiseModule;
 import micdoodle8.mods.galacticraft.core.perlin.generator.Gradient;
@@ -25,7 +24,7 @@ public class ChunkProviderKriffon extends ChunkProviderBase {
 	
 	public static final IBlockState BLOCK_TOP = ZGBlocks.kriffSurfaceRock.getDefaultState();
 	public static final IBlockState BLOCK_FILL = ZGBlocks.kriffDirt.getDefaultState();
-	public static final IBlockState BLOCK_LOWER = ZGBlocks.kriffStone.getDefaultState();
+	public static final IBlockState BLOCK_STONE = ZGBlocks.kriffStone.getDefaultState();
 	
 	private final Random rand;
 	
@@ -42,11 +41,11 @@ public class ChunkProviderKriffon extends ChunkProviderBase {
 			ZGBlocks.kriffMagmaRock);
 	private final MapGenRavinesZG ravineGenerator = new MapGenRavinesZG(ZGBlocks.kriffStone);
 	
-	private static final int CRATER_PROB = 100;
+	private static final int CRATER_PROB = 50;
 	
-	private static final int MID_HEIGHT = 63;
+	private static final int MID_HEIGHT = 162;
 	private static final int CHUNK_SIZE_X = 16;
-	private static final int CHUNK_SIZE_Y = 228;
+	private static final int CHUNK_SIZE_Y = MID_HEIGHT + 65;
 	private static final int CHUNK_SIZE_Z = 16;
 	
 	public ChunkProviderKriffon(World par1World, long par2, boolean par4) {
@@ -83,7 +82,7 @@ public class ChunkProviderKriffon extends ChunkProviderBase {
 				
 				for (int y = 0; y < ChunkProviderKriffon.CHUNK_SIZE_Y; y++) {
 					if (y < ChunkProviderKriffon.MID_HEIGHT + yDev) {
-						primer.setBlockState(x, y, z, BLOCK_LOWER);
+						primer.setBlockState(x, y, z, BLOCK_STONE);
 					}
 				}
 			}
@@ -102,7 +101,7 @@ public class ChunkProviderKriffon extends ChunkProviderBase {
 				IBlockState state0 = BLOCK_TOP;
 				IBlockState state1 = BLOCK_FILL;
 				
-				for (int var16 = 127; var16 >= 0; --var16) {
+				for (int var16 = ChunkProviderKriffon.CHUNK_SIZE_Y - 1; var16 >= 0; --var16) {
 					final int index = this.getIndex(var8, var16, var9);
 					
 					if (var16 == 0) {
@@ -111,11 +110,11 @@ public class ChunkProviderKriffon extends ChunkProviderBase {
 						IBlockState var18 = primer.getBlockState(var8, var16, var9);
 						if (Blocks.AIR == var18) {
 							var13 = -1;
-						} else if (var18 == BLOCK_LOWER) {
+						} else if (var18 == BLOCK_STONE) {
 							if (var13 == -1) {
 								if (var12 <= 0) {
 									state0 = Blocks.AIR.getDefaultState();
-									state1 = BLOCK_LOWER;
+									state1 = BLOCK_STONE;
 								} else if (var16 >= var5 - -16 && var16 <= var5 + 1) {
 									state0 = BLOCK_FILL;
 								}
@@ -154,7 +153,7 @@ public class ChunkProviderKriffon extends ChunkProviderBase {
 		
 		Chunk chunk = new Chunk(this.world, chunkprimer, x, z);
 		byte[] abyte = chunk.getBiomeArray();
-		final byte b = (byte) Biome.getIdForBiome(BiomeAdaptive.biomeDefault);
+		final byte b = (byte) Biome.getIdForBiome(ZGBiomes.KRIFFON);
 		for (int i = 0; i < abyte.length; ++i) {
 			abyte[i] = b;
 		}
@@ -199,7 +198,7 @@ public class ChunkProviderKriffon extends ChunkProviderBase {
 					double yDev = sqrtY * sqrtY * 6;
 					yDev = 5 - yDev;
 					int helper = 0;
-					for (int y = 127; y > 0; y--) {
+					for (int y = ChunkProviderKriffon.CHUNK_SIZE_Y - 1; y > 0; y--) {
 						if (Blocks.AIR != primer.getBlockState(x, y, z).getBlock()
 								&& helper <= yDev) {
 							primer.setBlockState(x, y, z, Blocks.AIR.getDefaultState());

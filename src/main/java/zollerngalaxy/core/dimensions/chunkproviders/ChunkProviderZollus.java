@@ -2,7 +2,6 @@ package zollerngalaxy.core.dimensions.chunkproviders;
 
 import java.util.List;
 import java.util.Random;
-import micdoodle8.mods.galacticraft.api.prefab.world.gen.BiomeAdaptive;
 import micdoodle8.mods.galacticraft.api.world.ChunkProviderBase;
 import micdoodle8.mods.galacticraft.core.perlin.NoiseModule;
 import micdoodle8.mods.galacticraft.core.perlin.generator.Gradient;
@@ -155,7 +154,7 @@ public class ChunkProviderZollus extends ChunkProviderBase {
 		
 		Chunk chunk = new Chunk(this.world, chunkprimer, x, z);
 		byte[] abyte = chunk.getBiomeArray();
-		final byte b = (byte) Biome.getIdForBiome(BiomeAdaptive.biomeDefault);
+		final byte b = (byte) Biome.getIdForBiome(ZGBiomes.ZOLLUS);
 		for (int i = 0; i < abyte.length; ++i) {
 			abyte[i] = b;
 		}

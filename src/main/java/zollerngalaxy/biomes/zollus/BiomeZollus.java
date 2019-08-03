@@ -22,7 +22,7 @@ public class BiomeZollus extends BiomeSpace {
 		this.biomeDecor.grassPerChunk = -999;
 		this.biomeDecor.mushroomsPerChunk = -999;
 		this.clearAllSpawning();
-		this.spawnableMonsterList.add(new SpawnListEntry(EntityFrostGiant.class, 25, 1, 1));
+		this.spawnableMonsterList.add(new SpawnListEntry(EntityFrostGiant.class, 50, 1, 1));
 		this.topBlock = ZGBlocks.zolSurfaceRock.getDefaultState();
 		this.fillerBlock = ZGBlocks.zolDirt.getDefaultState();
 		this.stoneBlock = ZGBlocks.zolStone;

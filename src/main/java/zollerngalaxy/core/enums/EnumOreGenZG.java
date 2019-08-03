@@ -2,7 +2,7 @@ package zollerngalaxy.core.enums;
 
 public enum EnumOreGenZG {
 	
-	COAL(15, 20, 0, 256), IRON(11, 20, 0, 70), GOLD(16, 6, 0, 41), REDSTONE(11, 10, 0, 26), LAPIS(
+	COAL(15, 25, 0, 256), IRON(21, 20, 0, 256), GOLD(16, 6, 0, 41), REDSTONE(21, 15, 0, 36), LAPIS(
 			7, 7, 16, 26), DIAMOND(8, 4, 0, 16), EMERALD(4, 6, 0, 12), HEARTIUM(10, 8, 0, 16), VIRINIUM(
 			10, 7, 0, 20), EVENIUM(5, 6, 0, 12), DESH(4, 15, 0, 32), METEORIC_IRON(4, 13, 0, 32), DIRT(
 			20, 20, 0, 256), PACKED_ICE(53, 20, 0, 256), MAGMA(53, 35, 0, 256), GRAVEL(33, 8, 0,
