@@ -195,6 +195,7 @@ public class WorldProviderEden extends WorldProviderZG {
 	}
 	
 	@Override
+	@SideOnly(Side.CLIENT)
 	protected void renderSky() {
 		this.setSkyRenderer(new SkyProviderEden(this));
 	}
