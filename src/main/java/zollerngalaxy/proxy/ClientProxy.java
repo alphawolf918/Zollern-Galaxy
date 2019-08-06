@@ -3,10 +3,12 @@ package zollerngalaxy.proxy;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.color.BlockColors;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import zollerngalaxy.core.renderers.ZGItemRender;
+import zollerngalaxy.gui.GuiHUD;
 import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.mobs.MobRenders;
 
@@ -41,12 +43,12 @@ public class ClientProxy extends CommonProxy {
 	@Override
 	public void postInit(FMLPostInitializationEvent event) {
 		super.postInit(event);
-		
+		this.initGUI();
 	}
 	
 	@Override
 	public void initGUI() {
-		
+		MinecraftForge.EVENT_BUS.register(new GuiHUD(this.getMinecraft()));
 	}
 	
 	@Override

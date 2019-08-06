@@ -48,6 +48,17 @@ public class ZGItems {
 	
 	public static final Item edenDungeonKey = new ZGItemBase("edendungeonkey");
 	
+	public static final Item starGateTier1 = new ItemStargate(1);
+	public static final Item starGateTier2 = new ItemStargate(2);
+	public static final Item starGateTier3 = new ItemStargate(3);
+	public static final Item starGateTier4 = new ItemStargate(4);
+	public static final Item starGateTier5 = new ItemStargate(5);
+	public static final Item starGateTier6 = new ItemStargate(6);
+	public static final Item starGateTier7 = new ItemStargate(7);
+	public static final Item starGateTier8 = new ItemStargate(8);
+	public static final Item starGateTier9 = new ItemStargate(9);
+	public static final Item starGateTier10 = new ItemStargate(10);
+	
 	public static void init() {
 		ZGItems.registerItems(heartOfZol, zolCrystal, kriffCrystal, purgCrystal, edenCrystal,
 				purgEssence, prometheanCrystal, plutoniumCrystal, dustBrightstone, dustViri,
@@ -55,7 +66,9 @@ public class ZGItems {
 				hud, alienStone, compressedCobalt, compressedDiamond, compressedEmerald,
 				compressedEvenium, compressedGold, compressedHeartium, compressedKriffonium,
 				compressedVirinium, compressedVyrex, rawAlienBacon, cookedAlienBacon, rawAlienBeef,
-				cookedAlienBeef, edenFruit, edenDungeonKey);
+				cookedAlienBeef, edenFruit, edenDungeonKey, starGateTier1, starGateTier2,
+				starGateTier3, starGateTier4, starGateTier5, starGateTier6, starGateTier7,
+				starGateTier8, starGateTier9, starGateTier10);
 		ZGHelper.Log("Loaded a total of " + totalItems + " new items.");
 	}
 	

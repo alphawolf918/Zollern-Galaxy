@@ -3,6 +3,7 @@ package zollerngalaxy.biomes.eden;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.blocks.ZGBlocks;
+import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 
 public class BiomeAsteroidCraters extends BiomeEdenBase {
 	
@@ -15,6 +16,7 @@ public class BiomeAsteroidCraters extends BiomeEdenBase {
 		this.setTempCategory(TempCategory.MEDIUM);
 		this.setTemp(6.5F);
 		this.setBiomeHeight(42);
+		this.setBiomeType(EnumBiomeTypeZG.ABANDONED);
 		this.enableSnow = false;
 		this.biomeDecor.generateFalls = true;
 		this.biomeDecor.generateCraters = true;

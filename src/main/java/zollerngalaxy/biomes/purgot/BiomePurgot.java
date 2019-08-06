@@ -4,6 +4,7 @@ import net.minecraft.world.biome.BiomeDecorator;
 import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.biomes.decorators.BiomeDecoratorPurgot;
 import zollerngalaxy.blocks.ZGBlocks;
+import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 import zollerngalaxy.planets.ZGPlanets;
 
 public class BiomePurgot extends BiomeSpace {
@@ -13,6 +14,7 @@ public class BiomePurgot extends BiomeSpace {
 	public BiomePurgot(BiomeProperties props) {
 		super("purgot", props);
 		props.setRainDisabled();
+		this.setBiomeType(EnumBiomeTypeZG.DARK);
 		this.enableSnow = true;
 		this.decorator.flowersPerChunk = -999;
 		this.decorator.treesPerChunk = -999;

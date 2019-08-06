@@ -27,10 +27,10 @@ import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeDecorator;
 import net.minecraft.world.chunk.ChunkPrimer;
 import zollerngalaxy.biomes.BiomeSpace;
-import zollerngalaxy.biomes.ZGBiomes;
 import zollerngalaxy.biomes.decorators.BiomeDecoratorEden;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.config.ConfigManagerZG;
+import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 import zollerngalaxy.mobs.entities.EntityMoolus;
 import zollerngalaxy.mobs.entities.EntityOinkus;
 import zollerngalaxy.planets.ZGPlanets;
@@ -115,12 +115,13 @@ public abstract class BiomeEdenBase extends BiomeSpace {
 				chunkPrimerIn.setBlockState(i1, j1, l, BEDROCK);
 			} else {
 				IBlockState iblockstate2 = chunkPrimerIn.getBlockState(i1, j1, l);
-				if (this.getBiomeName() == ZGBiomes.EDEN_OCEAN.getBiomeName()) {
-					if (j1 < SEA_LEVEL && j1 > SEA_FLOOR_LEVEL) {
+				if (this.getBiomeType() == EnumBiomeTypeZG.OCEAN) {
+					if ((j1 < SEA_LEVEL) && (j1 > SEA_FLOOR_LEVEL)) {
 						chunkPrimerIn.setBlockState(i1, j1, l, WATER);
 					} else if (j1 < SEA_FLOOR_LEVEL) {
-						chunkPrimerIn.setBlockState(i1, j1 + 1, l, DIRT);
 						chunkPrimerIn.setBlockState(i1, j1, l, STONE);
+					} else if (j1 == SEA_FLOOR_LEVEL) {
+						chunkPrimerIn.setBlockState(i1, j1, l, DIRT);
 					} else if (j1 >= SEA_LEVEL) {
 						chunkPrimerIn.setBlockState(i1, j1, l, AIR);
 					}
@@ -139,11 +140,7 @@ public abstract class BiomeEdenBase extends BiomeSpace {
 							
 							if (j1 < i
 									&& (topState == null || topState.getMaterial() == Material.AIR)) {
-								if (this.tempBiomeCtg == TempCategory.COLD) {
-									topState = ICE;
-								} else {
-									topState = WATER;
-								}
+								topState = (this.getIsColdBiome()) ? ICE : WATER;
 							}
 							
 							j = k;
@@ -163,58 +160,6 @@ public abstract class BiomeEdenBase extends BiomeSpace {
 						}
 					}
 				}
-			}
-		}
-	}
-	
-	protected void generateOcean(int j1, int i1, int l, ChunkPrimer chunkPrimerIn) {
-		if ((j1 < SEA_LEVEL) && (j1 > SEA_FLOOR_LEVEL)) {
-			chunkPrimerIn.setBlockState(i1, j1, l, WATER);
-		} else if (j1 < SEA_FLOOR_LEVEL) {
-			chunkPrimerIn.setBlockState(i1, (j1 + 1), l, DIRT);
-			chunkPrimerIn.setBlockState(i1, j1, l, STONE);
-		} else if (j1 >= SEA_LEVEL) {
-			chunkPrimerIn.setBlockState(i1, j1, l, AIR);
-		}
-	}
-	
-	protected void generateNormally(IBlockState iblockstate2, IBlockState topState,
-			IBlockState fillState, int j, int k, int i, int j1, int i1, int l,
-			ChunkPrimer chunkPrimerIn) {
-		if (iblockstate2.getMaterial() == Material.AIR) {
-			j = -1;
-		} else if (iblockstate2.getBlock() == ZGBlocks.edenStone) {
-			if (j == -1) {
-				if (k <= 0) {
-					topState = AIR;
-					fillState = STONE;
-				} else if (j1 >= i - 4 && j1 <= i + 1) {
-					topState = this.topBlock;
-					fillState = this.fillerBlock;
-				}
-				
-				if (j1 < i && (topState == null || topState.getMaterial() == Material.AIR)) {
-					if (this.tempBiomeCtg == TempCategory.COLD) {
-						topState = ICE;
-					} else {
-						topState = WATER;
-					}
-				}
-				
-				j = k;
-				
-				if (j1 >= i - 1) {
-					chunkPrimerIn.setBlockState(i1, j1, l, topState);
-				} else if (j1 < i - 7 - k) {
-					topState = AIR;
-					fillState = STONE;
-					chunkPrimerIn.setBlockState(i1, j1, l, GRAVEL);
-				} else {
-					chunkPrimerIn.setBlockState(i1, j1, l, fillState);
-				}
-			} else if (j > 0) {
-				--j;
-				chunkPrimerIn.setBlockState(i1, j1, l, fillState);
 			}
 		}
 	}

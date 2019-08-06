@@ -4,11 +4,10 @@ import net.minecraft.entity.passive.EntitySquid;
 import net.minecraft.init.Blocks;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 import zollerngalaxy.mobs.entities.EntitySquidlus;
 
 public class BiomeEdenOcean extends BiomeEdenBase {
-	
-	public static int grassFoilageColorMultiplier = 0x00ff00;
 	
 	public BiomeEdenOcean(BiomeProperties props) {
 		super("edenocean", props);
@@ -20,6 +19,7 @@ public class BiomeEdenOcean extends BiomeEdenBase {
 		this.setTemp(5.0F);
 		this.setBiomeHeight(63);
 		this.setBlocks(Blocks.AIR);
+		this.setBiomeType(EnumBiomeTypeZG.OCEAN);
 		this.clearAllNonMonsterSpawning();
 		this.spawnableWaterCreatureList.add(new SpawnListEntry(EntitySquid.class, 100, 1, 4));
 		this.spawnableWaterCreatureList.add(new SpawnListEntry(EntitySquidlus.class, 100, 1, 4));
@@ -32,7 +32,7 @@ public class BiomeEdenOcean extends BiomeEdenBase {
 		this.biomeDecor.deadBushPerChunk = 0;
 		this.biomeDecor.waterLakesPerChunk = 6;
 		this.enableSnow = false;
-		this.grassFoilageColorMultiplier = 0x009f00;
+		this.grassFoliageColor = 0x009f00;
 		this.waterColor = 0x00009f;
 	}
 	

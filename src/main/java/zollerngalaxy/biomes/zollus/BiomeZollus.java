@@ -4,6 +4,7 @@ import net.minecraft.world.biome.BiomeDecorator;
 import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.biomes.decorators.BiomeDecoratorZollus;
 import zollerngalaxy.blocks.ZGBlocks;
+import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 import zollerngalaxy.mobs.entities.EntityFrostGiant;
 import zollerngalaxy.planets.ZGPlanets;
 
@@ -16,6 +17,7 @@ public class BiomeZollus extends BiomeSpace {
 	public BiomeZollus(BiomeProperties props) {
 		super("zollus", props);
 		props.setRainDisabled();
+		this.setBiomeType(EnumBiomeTypeZG.ICY);
 		this.enableSnow = true;
 		this.biomeDecor.flowersPerChunk = -999;
 		this.biomeDecor.treesPerChunk = -999;

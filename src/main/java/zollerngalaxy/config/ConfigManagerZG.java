@@ -105,7 +105,7 @@ public class ConfigManagerZG {
 		planetAsgardDimensionId = configuration.get(CATEGORY_DIMENSIONS,
 				"Planet Asgard Dimension ID", -7999).getInt();
 		planetMavethDimensionId = configuration.get(CATEGORY_DIMENSIONS,
-				"Planet Asgard Dimension ID", -4552).getInt();
+				"Planet Maveth Dimension ID", -4552).getInt();
 		
 		// Planets (Vega)
 		planetMeridianDimensionId = configuration.get(CATEGORY_DIMENSIONS,

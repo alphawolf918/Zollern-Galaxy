@@ -18,7 +18,7 @@ public class ZGBiomeBase extends BiomeGenBaseGC {
 	protected int grassColor = 0x00ff00;
 	protected int skyColor = 0x0099ff;
 	protected float temp = 0.0F;
-	protected int BIOME_HEIGHT = 63;
+	protected int BIOME_HEIGHT = 72;
 	
 	private String singleName = "";
 	
@@ -183,6 +183,15 @@ public class ZGBiomeBase extends BiomeGenBaseGC {
 	@Override
 	public TempCategory getTempCategory() {
 		return this.tempBiomeCtg;
+	}
+	
+	public EnumBiomeTypeZG getBiomeType() {
+		return this.biomeType;
+	}
+	
+	public Biome setBiomeType(EnumBiomeTypeZG t) {
+		this.biomeType = t;
+		return this;
 	}
 	
 }

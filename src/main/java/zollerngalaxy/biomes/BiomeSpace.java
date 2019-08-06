@@ -92,27 +92,29 @@ public class BiomeSpace extends ZGBiomeBase {
 	 */
 	public float getPlanetTemp() {
 		ZGPlanet planet = this.getPlanetForBiome();
+		
 		float biomeTemp = this.getBiomeTemp();
 		Random rand = new Random();
-		float oldPlanetTemp = planet.getPlanetTemperature();
-		float planetTemp = oldPlanetTemp;
-		float maxTemp = oldPlanetTemp + 25;
-		float minTemp = oldPlanetTemp - 25;
+		
+		float planetTemp = planet.getPlanetTemperature();
+		float flucTemp = planetTemp;
+		
+		float maxTemp = planetTemp + 25;
+		float minTemp = planetTemp - 25;
+		
 		if (planet.getIsColdPlanet()) {
-			planetTemp -= biomeTemp;
+			flucTemp -= biomeTemp;
 		} else if (planet.getIsHotPlanet()) {
-			planetTemp += biomeTemp;
+			flucTemp += biomeTemp;
 		} else {
-			if (rand.nextInt(500) <= 25) {
-				planetTemp += biomeTemp;
-				// planetTemp = (planetTemp > maxTemp) ? maxTemp :
-				// planetTemp;
-			} else {
-				planetTemp -= biomeTemp;
-				// planetTemp = (planetTemp < minTemp) ? minTemp :
-				// planetTemp;
+			int rng = rand.nextInt(200);
+			if (rng == 25) {
+				flucTemp += biomeTemp;
+			} else if (rng == 50) {
+				flucTemp -= biomeTemp;
 			}
+			
 		}
-		return planetTemp;
+		return flucTemp;
 	}
 }

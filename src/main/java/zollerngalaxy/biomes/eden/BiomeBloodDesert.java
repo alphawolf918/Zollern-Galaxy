@@ -3,6 +3,7 @@ package zollerngalaxy.biomes.eden;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.blocks.ZGBlocks;
+import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 
 public class BiomeBloodDesert extends BiomeEdenBase {
 	
@@ -17,6 +18,7 @@ public class BiomeBloodDesert extends BiomeEdenBase {
 		this.setTempCategory(TempCategory.WARM);
 		this.setTemp(8.0F);
 		this.setBiomeHeight(102);
+		this.setBiomeType(EnumBiomeTypeZG.DESERT);
 		this.biomeDecor.edenTallGrassPerChunk = 0;
 		this.biomeDecor.edenFlowersPerChunk = 0;
 		this.decorator.generateFalls = true;

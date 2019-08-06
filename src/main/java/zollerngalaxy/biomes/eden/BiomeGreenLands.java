@@ -3,6 +3,7 @@ package zollerngalaxy.biomes.eden;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.blocks.ZGBlocks;
+import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 
 public class BiomeGreenLands extends BiomeEdenBase {
 	
@@ -16,6 +17,7 @@ public class BiomeGreenLands extends BiomeEdenBase {
 		this.setTempCategory(TempCategory.MEDIUM);
 		this.setTemp(5F);
 		this.setBiomeHeight(72);
+		this.setBiomeType(EnumBiomeTypeZG.NORMAL);
 		this.enableSnow = false;
 		this.decorator.generateFalls = true;
 		this.biomeDecor.waterLakesPerChunk = 2;

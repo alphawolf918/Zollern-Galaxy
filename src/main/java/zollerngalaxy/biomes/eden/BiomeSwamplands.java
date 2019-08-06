@@ -9,6 +9,7 @@ import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.blocks.ZGBlocks;
+import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 
 public class BiomeSwamplands extends BiomeEdenBase {
 	
@@ -18,6 +19,7 @@ public class BiomeSwamplands extends BiomeEdenBase {
 		props.setHeightVariation(0.2F);
 		props.setTemperature(6.5F);
 		this.setBiomeHeight(65);
+		this.setBiomeType(EnumBiomeTypeZG.SWAMP);
 		this.biomeDecor.generateLakes = true;
 		this.biomeDecor.generateVines = true;
 		this.biomeDecor.edenFlowersPerChunk = 4;

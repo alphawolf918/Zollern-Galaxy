@@ -3,6 +3,7 @@ package zollerngalaxy.biomes.eden;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.blocks.ZGBlocks;
+import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 
 public class BiomeEdenwoodForest extends BiomeEdenBase {
 	
@@ -12,6 +13,7 @@ public class BiomeEdenwoodForest extends BiomeEdenBase {
 		props.setHeightVariation(0.2F);
 		props.setTemperature(5.5F);
 		this.setBiomeHeight(72);
+		this.setBiomeType(EnumBiomeTypeZG.FOREST);
 		this.decorator.generateFalls = true;
 		this.biomeDecor.generateLakes = true;
 		this.biomeDecor.lavaLakesPerChunk = 0;

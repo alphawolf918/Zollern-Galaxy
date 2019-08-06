@@ -18,7 +18,10 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL12;
 import zollerngalaxy.biomes.BiomeSpace;
+import zollerngalaxy.config.ConfigManagerZG;
+import zollerngalaxy.core.enums.EnumPlanetClass;
 import zollerngalaxy.items.ZGItems;
+import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.planets.ZGPlanet;
 
 @SideOnly(Side.CLIENT)
@@ -62,13 +65,62 @@ public class GuiHUD extends Gui {
 				Biome biome = chunk.getBiome(blockPos, this.mc.world.getBiomeProvider());
 				
 				if (biome instanceof BiomeSpace) {
-					BiomeSpace spaceBiome = (BiomeSpace) biome;
-					ZGPlanet planet = spaceBiome.getPlanetForBiome();
-					String planetName = planet.getLocalizedName();
-					String s = "Planet: " + planetName;
-					
+					BiomeSpace biomeSpace = (BiomeSpace) biome;
+					// Biome Name
+					String biomeName = biome.getBiomeName();
+					String s = "Biome: " + biomeName;
 					fontRendererObj.drawString(s, 2, 26, i3);
 					fontRendererObj.drawString(s, 26, yPos - 20, i3);
+					
+					// Planet Temp (Displays in either F or C)
+					String tempType = ConfigManagerZG.temperatureType;
+					float planetTemp = biomeSpace.getPlanetTemp();
+					tempType = (tempType != "F" && tempType != "C") ? "F" : tempType;
+					if (tempType == "F") {
+						String strTemp = "" + (planetTemp * 1.0f);
+						strTemp = (strTemp.length() > 4) ? strTemp.substring(0, 4) : strTemp;
+						String temp = "Temp: " + strTemp + " F";
+						fontRendererObj.drawString(temp, 2, 36, i3);
+						fontRendererObj.drawString(temp, 26, yPos - 30, i3);
+					} else if (tempType == "C") {
+						float planetTempCelsius = (((planetTemp - 32) * 5) / 9);
+						String strTemp = "" + (planetTempCelsius * 1.0f);
+						String temp = "Temp: " + strTemp + " C";
+						fontRendererObj.drawString(temp, 2, 36, i3);
+						fontRendererObj.drawString(temp, 26, yPos - 30, i3);
+					} else {
+						String s2 = "Error";
+						fontRendererObj.drawString(s2, 2, 36, i3);
+						fontRendererObj.drawString(s2, 26, yPos - 30, i3);
+					}
+					
+					// Planet Name
+					ZGPlanet planet = biomeSpace.getPlanetForBiome();
+					if (planet != null) {
+						String planetName = ZGHelper.capitalizeFirstLetter(planet.getName());
+						String p = "Planet: " + planetName;
+						fontRendererObj.drawString(p, 2, 46, i3);
+						fontRendererObj.drawString(p, 26, yPos - 40, i3);
+					}
+					
+					// Planet Class
+					EnumPlanetClass planetClass = planet.getPlanetClass();
+					String pClass = planetClass.getPlanetStrClass();
+					String pc = "Class " + pClass + " Planet";
+					fontRendererObj.drawString(pc, 2, 56, i3);
+					fontRendererObj.drawString(pc, 26, yPos - 54, i3);
+					
+					// Radioactivity
+					float planetRadLevel = planet.getRadiationLevel();
+					String strRad = "Radiation: " + planetRadLevel + "%";
+					fontRendererObj.drawString(strRad, 2, 86, i3);
+					fontRendererObj.drawString(strRad, 26, yPos - 84, i3);
+					
+					// Toxicity
+					float planetToxLevel = planet.getToxicLevel();
+					String strTox = "Toxicity: " + planetToxLevel + "%";
+					fontRendererObj.drawString(strTox, 2, 96, i3);
+					fontRendererObj.drawString(strTox, 26, yPos - 94, i3);
 				}
 			}
 		}

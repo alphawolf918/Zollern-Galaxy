@@ -3,6 +3,7 @@ package zollerngalaxy.biomes.eden;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.blocks.ZGBlocks;
+import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 
 public class BiomeSnowyPlains extends BiomeEdenBase {
 	
@@ -18,6 +19,7 @@ public class BiomeSnowyPlains extends BiomeEdenBase {
 		this.setTemp(1F);
 		this.setEnableSnow(true);
 		this.setBiomeHeight(46);
+		this.setBiomeType(EnumBiomeTypeZG.ICY);
 		this.enableSnow = true;
 		this.decorator.generateFalls = true;
 		this.biomeDecor.generateLakes = true;

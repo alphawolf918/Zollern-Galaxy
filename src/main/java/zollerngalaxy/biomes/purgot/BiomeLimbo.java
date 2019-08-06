@@ -4,6 +4,7 @@ import net.minecraft.world.biome.BiomeDecorator;
 import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.biomes.decorators.BiomeDecoratorPurgot;
 import zollerngalaxy.blocks.ZGBlocks;
+import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 import zollerngalaxy.planets.ZGPlanets;
 
 public class BiomeLimbo extends BiomeSpace {
@@ -16,6 +17,7 @@ public class BiomeLimbo extends BiomeSpace {
 		super("limbo", props);
 		props.setRainDisabled();
 		props.setBaseHeight(2.0F);
+		this.setBiomeType(EnumBiomeTypeZG.ABANDONED);
 		this.enableSnow = true;
 		this.decorator.flowersPerChunk = -999;
 		this.decorator.treesPerChunk = -999;

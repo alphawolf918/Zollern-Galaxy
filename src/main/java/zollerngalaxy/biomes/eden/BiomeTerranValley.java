@@ -3,6 +3,7 @@ package zollerngalaxy.biomes.eden;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.blocks.ZGBlocks;
+import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 import zollerngalaxy.mobs.entities.EntityMoolus;
 import zollerngalaxy.mobs.entities.EntityOinkus;
 
@@ -25,6 +26,7 @@ public class BiomeTerranValley extends BiomeEdenBase {
 		props.setTemperature(4.0F);
 		this.setTemp(4F);
 		this.setBiomeHeight(52);
+		this.setBiomeType(EnumBiomeTypeZG.LUSH);
 		this.enableSnow = false;
 		this.decorator.generateFalls = true;
 		this.biomeDecor.waterLakesPerChunk = 2;
