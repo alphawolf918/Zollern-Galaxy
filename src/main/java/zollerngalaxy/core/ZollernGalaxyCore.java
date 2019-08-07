@@ -9,6 +9,8 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
+import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
+import net.minecraftforge.fml.relauncher.Side;
 import zollerngalaxy.biomes.ZGBiomes;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.blocks.creativetabs.ZGTabs;
@@ -21,6 +23,7 @@ import zollerngalaxy.lib.helpers.ModHelperBase;
 import zollerngalaxy.lib.helpers.ZGHandlers;
 import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.mobs.MobRegistry;
+import zollerngalaxy.network.teleporter.MessageTeleportToDimension;
 import zollerngalaxy.planets.ZGPlanets;
 import zollerngalaxy.proxy.CommonProxy;
 import zollerngalaxy.proxy.IProxy;
@@ -39,6 +42,8 @@ public class ZollernGalaxyCore {
 	
 	private static final boolean DEV_MODE = false;
 	
+	public static SimpleNetworkWrapper snw;
+	
 	public static ZollernGalaxyCore instance() {
 		return INSTANCE;
 	}
@@ -54,6 +59,9 @@ public class ZollernGalaxyCore {
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 		ZGHelper.Log("Beginning Pre-Initilization phase...");
+		snw = NetworkRegistry.INSTANCE.newSimpleChannel(ZGInfo.CHANNEL);
+		snw.registerMessage(MessageTeleportToDimension.TeleportHandler.class,
+				MessageTeleportToDimension.class, 1, Side.SERVER);
 		ConfigManagerZG.init(event);
 		ZGSoundEvents.init();
 		ModHelperBase.detectMods();

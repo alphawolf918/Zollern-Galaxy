@@ -28,6 +28,7 @@ public class BiomeGreenLands extends BiomeEdenBase {
 		this.waterColor = 0x009f9f;
 		this.topBlock = ZGBlocks.edenSurfaceRock.getDefaultState();
 		this.fillerBlock = ZGBlocks.edenSoil.getDefaultState();
+		this.stoneBlock = ZGBlocks.edenStone;
 	}
 	
 	@Override

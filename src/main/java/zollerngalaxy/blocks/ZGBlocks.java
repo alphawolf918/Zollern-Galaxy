@@ -154,9 +154,11 @@ public class ZGBlocks {
 	// Other
 	public static final Block blockCrater = new ZGBlockBase("crater_rock", 2.4F);
 	
+	// Next release...
 	// Oasis
 	// TODO
 	
+	// Next release...
 	// Xathius
 	// TODO
 	

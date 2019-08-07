@@ -7,6 +7,7 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
 import zollerngalaxy.core.renderers.ZGItemRender;
 import zollerngalaxy.gui.GuiHUD;
 import zollerngalaxy.lib.helpers.ZGHelper;
@@ -54,5 +55,10 @@ public class ClientProxy extends CommonProxy {
 	@Override
 	public Minecraft getMinecraft() {
 		return this.mc;
+	}
+	
+	@Override
+	public EntityPlayer getPlayerEntity(MessageContext ctx) {
+		return ctx.side.isClient() ? this.getMinecraft().player : super.getPlayerEntity(ctx);
 	}
 }

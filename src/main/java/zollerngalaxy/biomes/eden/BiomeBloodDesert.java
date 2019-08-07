@@ -31,6 +31,7 @@ public class BiomeBloodDesert extends BiomeEdenBase {
 		this.waterColor = 0x00009f;
 		this.topBlock = ZGBlocks.edenBloodSand.getDefaultState();
 		this.fillerBlock = ZGBlocks.edenBloodStone.getDefaultState();
+		this.stoneBlock = ZGBlocks.edenStone;
 	}
 	
 	@Override

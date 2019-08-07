@@ -36,6 +36,7 @@ public class BiomeSwamplands extends BiomeEdenBase {
 		this.waterColor = 0x004422;
 		this.topBlock = ZGBlocks.edenSwampGrass.getDefaultState();
 		this.fillerBlock = ZGBlocks.edenSoil.getDefaultState();
+		this.stoneBlock = ZGBlocks.edenStone;
 	}
 	
 	@Override

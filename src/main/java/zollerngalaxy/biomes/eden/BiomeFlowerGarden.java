@@ -35,6 +35,7 @@ public class BiomeFlowerGarden extends BiomeEdenBase {
 		this.spawnableCreatureList.add(new SpawnListEntry(EntityOinkus.class, 100, 4, 6));
 		this.topBlock = ZGBlocks.edenGrass.getDefaultState();
 		this.fillerBlock = ZGBlocks.edenSoil.getDefaultState();
+		this.stoneBlock = ZGBlocks.edenStone;
 	}
 	
 	@Override

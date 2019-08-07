@@ -6,6 +6,7 @@ import net.minecraft.potion.Potion;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
 
 public interface IProxy {
 	
@@ -28,4 +29,6 @@ public interface IProxy {
 	public void sendChatMessage(EntityPlayer player, String message);
 	
 	public Minecraft getMinecraft();
+	
+	public EntityPlayer getPlayerEntity(MessageContext ctx);
 }

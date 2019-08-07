@@ -4,6 +4,7 @@ import net.minecraft.entity.passive.EntitySquid;
 import net.minecraft.init.Blocks;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 import zollerngalaxy.mobs.entities.EntitySquidlus;
 
@@ -34,6 +35,7 @@ public class BiomeEdenOcean extends BiomeEdenBase {
 		this.enableSnow = false;
 		this.grassFoliageColor = 0x009f00;
 		this.waterColor = 0x00009f;
+		this.stoneBlock = ZGBlocks.edenStone;
 	}
 	
 	@Override

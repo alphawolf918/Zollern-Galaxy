@@ -30,6 +30,7 @@ public class BiomeStoneMountains extends BiomeEdenBase {
 		this.waterColor = 0x0000ff;
 		this.topBlock = ZGBlocks.edenStone.getDefaultState();
 		this.fillerBlock = ZGBlocks.edenCobbleRock.getDefaultState();
+		this.stoneBlock = ZGBlocks.edenStone;
 	}
 	
 	@Override

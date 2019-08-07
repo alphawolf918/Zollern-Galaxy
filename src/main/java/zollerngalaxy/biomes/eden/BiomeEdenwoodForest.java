@@ -28,6 +28,7 @@ public class BiomeEdenwoodForest extends BiomeEdenBase {
 		this.waterColor = 0x0000ff;
 		this.topBlock = ZGBlocks.edenGrass.getDefaultState();
 		this.fillerBlock = ZGBlocks.edenSoil.getDefaultState();
+		this.stoneBlock = ZGBlocks.edenStone;
 	}
 	
 	@Override

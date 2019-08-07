@@ -30,6 +30,7 @@ public class BiomeSnowyPlains extends BiomeEdenBase {
 		this.waterColor = 0x00009f;
 		this.topBlock = ZGBlocks.edenSnow.getDefaultState();
 		this.fillerBlock = ZGBlocks.edenWinterRock.getDefaultState();
+		this.stoneBlock = ZGBlocks.edenStone;
 	}
 	
 	@Override

@@ -87,6 +87,7 @@ public abstract class BiomeEdenBase extends BiomeSpace {
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityCreeper.class, 100, 4, 4));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityEnderman.class, 100, 1, 4));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityWitch.class, 5, 1, 1));
+		this.setStoneBlock(ZGBlocks.edenStone);
 		this.setPlanetForBiome(ZGPlanets.planetEden);
 	}
 	

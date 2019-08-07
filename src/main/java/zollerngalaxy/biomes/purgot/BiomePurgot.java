@@ -20,14 +20,10 @@ public class BiomePurgot extends BiomeSpace {
 		this.decorator.treesPerChunk = -999;
 		this.decorator.grassPerChunk = -999;
 		this.decorator.mushroomsPerChunk = -999;
-		this.spawnableCaveCreatureList.clear();
-		this.spawnableMonsterList.clear();
-		this.spawnableWaterCreatureList.clear();
-		this.spawnableCreatureList.clear();
 		this.topBlock = ZGBlocks.purgSurfaceRock.getDefaultState();
 		this.fillerBlock = ZGBlocks.purgDirt.getDefaultState();
-		this.stoneBlock = ZGBlocks.purgStone;
 		this.setPlanetForBiome(ZGPlanets.planetPurgot);
+		this.stoneBlock = ZGBlocks.purgStone;
 	}
 	
 	@Override

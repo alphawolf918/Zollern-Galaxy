@@ -29,6 +29,7 @@ public class BiomeAsteroidCraters extends BiomeEdenBase {
 		this.waterColor = 0x000000;
 		this.topBlock = ZGBlocks.blockCrater.getDefaultState();
 		this.fillerBlock = ZGBlocks.blockCrater.getDefaultState();
+		this.stoneBlock = ZGBlocks.edenStone;
 	}
 	
 	@Override
