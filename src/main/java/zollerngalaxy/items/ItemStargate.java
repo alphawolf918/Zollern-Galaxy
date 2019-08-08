@@ -1,15 +1,22 @@
 package zollerngalaxy.items;
 
+import java.util.List;
+import javax.annotation.Nullable;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.ZollernGalaxyCore;
+import zollerngalaxy.lib.helpers.CommonZGRegisterHelper;
 import zollerngalaxy.network.teleporter.MessageTeleportToDimension;
 import zollerngalaxy.proxy.IProxy;
 
@@ -27,30 +34,32 @@ public class ItemStargate extends ZGItemBase {
 	
 	private void teleportPlayer(World world, EntityPlayer player) {
 		int playerId = player.getEntityId();
+		int dim = player.dimension;
 		
 		switch (this.gateTier) {
 		default:
 			this.proxy.sendChatMessage(player, "This tier isn't functional yet.");
+			break;
 		case 0:
 			this.proxy.sendChatMessage(player,
 					"Unknown tier detected; unable to transfer biological entity.");
 			break;
 		case 1:
-			if (player.dimension == ConfigManagerZG.planetZollusDimensionId) {
+			if (dim == ConfigManagerZG.planetZollusDimensionId) {
 				this.sendToServer(ConfigManagerZG.planetKriffonDimensionId, playerId);
 			} else {
 				this.sendToServer(ConfigManagerZG.planetZollusDimensionId, playerId);
 			}
 			break;
 		case 2:
-			if (player.dimension == ConfigManagerZG.planetKriffonDimensionId) {
+			if (dim == ConfigManagerZG.planetKriffonDimensionId) {
 				this.sendToServer(ConfigManagerZG.planetPurgotDimensionId, playerId);
 			} else {
 				this.sendToServer(ConfigManagerZG.planetKriffonDimensionId, playerId);
 			}
 			break;
 		case 3:
-			if (player.dimension == ConfigManagerZG.planetPurgotDimensionId) {
+			if (dim == ConfigManagerZG.planetPurgotDimensionId) {
 				this.sendToServer(ConfigManagerZG.planetEdenDimensionId, playerId);
 			} else {
 				this.sendToServer(ConfigManagerZG.planetPurgotDimensionId, playerId);
@@ -75,5 +84,18 @@ public class ItemStargate extends ZGItemBase {
 	@Override
 	public EnumRarity getRarity(ItemStack stack) {
 		return EnumRarity.RARE;
+	}
+	
+	@Override
+	@SideOnly(Side.CLIENT)
+	public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip,
+			ITooltipFlag flagIn) {
+		if (CommonZGRegisterHelper.isControlKeyDown() || CommonZGRegisterHelper.isShiftKeyDown()) {
+			tooltip.add(TextFormatting.ITALIC + "A gateway between two");
+			tooltip.add(TextFormatting.ITALIC + "worlds, moving the Player");
+			tooltip.add(TextFormatting.ITALIC + "through space and time.");
+		} else {
+			tooltip.add("Hold LSHIFT for more information.");
+		}
 	}
 }

@@ -110,6 +110,15 @@ public class GuiHUD extends Gui {
 					fontRendererObj.drawString(pc, 2, 56, i3);
 					fontRendererObj.drawString(pc, 26, yPos - 54, i3);
 					
+					// Gasses
+					String strGasses = "Gasses: ";
+					String gasses = planet.getGasses();
+					fontRendererObj.drawString(strGasses, 2, 66, i3);
+					fontRendererObj.drawString(strGasses, 26, yPos - 64, i3);
+					String actualGasses = gasses.toString();
+					fontRendererObj.drawString(actualGasses, 2, 76, i3);
+					fontRendererObj.drawString(actualGasses, 26, yPos - 74, i3);
+					
 					// Radioactivity
 					float planetRadLevel = planet.getRadiationLevel();
 					String strRad = "Radiation: " + planetRadLevel + "%";

@@ -160,7 +160,7 @@ public class ZGPlanets {
 		planetZollus.setPlanetClass(EnumPlanetClass.L);
 		planetZollus.setRingColorRGB(0.1F, 0.9F, 2.6F);
 		planetZollus.setPhaseShift(0.0F);
-		planetZollus.setRelativeOrbitTime(26F);
+		planetZollus.setRelativeOrbitTime(42F);
 		planetZollus.setDistanceFromCenter(4F);
 		planetZollus.setTierRequired(4);
 		planetZollus.setRelativeSize(10.876F);

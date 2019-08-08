@@ -1,5 +1,6 @@
 package zollerngalaxy.planets;
 
+import java.util.ArrayList;
 import micdoodle8.mods.galacticraft.api.galaxies.Planet;
 import micdoodle8.mods.galacticraft.api.galaxies.Star;
 import micdoodle8.mods.galacticraft.api.world.AtmosphereInfo;
@@ -7,6 +8,7 @@ import micdoodle8.mods.galacticraft.api.world.EnumAtmosphericGas;
 import net.minecraft.util.ResourceLocation;
 import zollerngalaxy.core.enums.EnumPlanetClass;
 import zollerngalaxy.lib.ZGInfo;
+import zollerngalaxy.lib.helpers.ZGHelper;
 
 public class ZGPlanet extends Planet implements IZollernPlanet {
 	
@@ -24,6 +26,7 @@ public class ZGPlanet extends Planet implements IZollernPlanet {
 	private boolean rains;
 	
 	private AtmosphereInfo atmosphere;
+	private ArrayList<EnumAtmosphericGas> planetGasses = new ArrayList<EnumAtmosphericGas>();
 	
 	public ZGPlanet(String planetName) {
 		super(planetName);
@@ -155,7 +158,7 @@ public class ZGPlanet extends Planet implements IZollernPlanet {
 	 * @return The planet of the atmosphere being set on.
 	 */
 	public Planet setAtmosphere() {
-		atmosphere = new AtmosphereInfo(this.getIsBreathable(), this.getHasRain(),
+		this.atmosphere = new AtmosphereInfo(this.getIsBreathable(), this.getHasRain(),
 				this.getIsCorrosive(), this.getPlanetTemperature(), this.getWindLevel(),
 				this.getAtmosphericDensity());
 		return this;
@@ -163,8 +166,12 @@ public class ZGPlanet extends Planet implements IZollernPlanet {
 	
 	public Planet setPlanetGasses(EnumAtmosphericGas... gasses) {
 		for (EnumAtmosphericGas gas : gasses) {
-			this.atmosphereComponent(gas);
+			if (gas != null) {
+				this.atmosphereComponent(gas);
+				this.planetGasses.add(gas);
+			}
 		}
+		
 		return this;
 	}
 	
@@ -252,6 +259,27 @@ public class ZGPlanet extends Planet implements IZollernPlanet {
 	 */
 	public EnumPlanetClass getPlanetClass() {
 		return this.planetClass;
+	}
+	
+	/**
+	 * Gets all gasses in a planet's atmosphere.
+	 * 
+	 * @return All gasses in a planet's atmosphere.
+	 */
+	public String getGasses() {
+		String gasList = "";
+		ArrayList<EnumAtmosphericGas> planetAtmosphere = this.planetGasses;
+		int ch = 0;
+		for (EnumAtmosphericGas planetGas : planetAtmosphere) {
+			ch++;
+			gasList += ZGHelper.capitalizeFirstLetter(planetGas.toString().substring(0, 3)
+					.toLowerCase());
+			if (ch < planetAtmosphere.size()) {
+				gasList += ", ";
+			}
+		}
+		planetAtmosphere = null;
+		return gasList;
 	}
 	
 	/**

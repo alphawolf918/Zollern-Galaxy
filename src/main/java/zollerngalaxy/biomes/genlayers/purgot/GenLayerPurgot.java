@@ -16,6 +16,8 @@ public abstract class GenLayerPurgot extends GenLayer {
 		biomes = new GenLayerZoom(1001L, biomes);
 		biomes = new GenLayerZoom(1002L, biomes);
 		biomes = new GenLayerZoom(1003L, biomes);
+		biomes = new GenLayerZoom(1004L, biomes);
+		biomes = new GenLayerZoom(1005L, biomes);
 		GenLayer genLayerVeronoiZoom = new GenLayerVoronoiZoom(10L, biomes);
 		biomes.initWorldGenSeed(l);
 		genLayerVeronoiZoom.initWorldGenSeed(l);

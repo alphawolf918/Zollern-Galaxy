@@ -73,6 +73,7 @@ public class ZGBlocks {
 	public static final Block purgRockBricks = new ZGBlockBase("purgrockbricks", 1.6F);
 	public static final Block purgSurfaceRock = new ZGBlockBase("purgrock", 1.7F);
 	public static final Block purgDirt = new ZGBlockDirt("purgdirt");
+	public static final Block purgGravel = new ZGGravel("purggravel", 2.3F);
 	public static final Block purgBlackRock = new ZGBlockBase("blackrock", 1.2F);
 	public static final Block purgWhiteRock = new ZGBlockBase("whiterock", 1.2F);
 	public static final Block purgMeteoricIronOre = new ZGOreGem("purgmeteoricironore", 3.6F,
@@ -171,12 +172,12 @@ public class ZGBlocks {
 				kriffStone, kriffCobbleRock, kriffDirt, kriffRockBricks, kriffMagmaRock,
 				kriffCoalOre, kriffCopperOre, kriffIronOre, kriffGoldOre, kriffRedstoneOre,
 				kriffCobaltOre, purgCobbleRock, purgStone, purgRockBricks, purgWhiteRock,
-				purgBlackRock, purgSurfaceRock, purgDirt, purgMeteoricIronOre, purgCobaltOre,
-				purgIronOre, purgGoldOre, purgCopperOre, purgDiamondOre, purgEmeraldOre,
-				purgEveniumOre, purgAluminumOre, purgTinOre, purgLeadOre, purgRedstoneOre,
-				edenSurfaceRock, edenTallGrass, edenGrass, edenSoil, edenStone, edenSacredStone,
-				edenCobbleRock, edenRockBricks, edenGoldenGrass, edenSwampGrass, edenSnow,
-				edenWinterRock, edenBloodSand, edenBloodStone, edenBoneStone, edenGravel,
+				purgBlackRock, purgSurfaceRock, purgDirt, purgGravel, purgMeteoricIronOre,
+				purgCobaltOre, purgIronOre, purgGoldOre, purgCopperOre, purgDiamondOre,
+				purgEmeraldOre, purgEveniumOre, purgAluminumOre, purgTinOre, purgLeadOre,
+				purgRedstoneOre, edenSurfaceRock, edenTallGrass, edenGrass, edenSoil, edenStone,
+				edenSacredStone, edenCobbleRock, edenRockBricks, edenGoldenGrass, edenSwampGrass,
+				edenSnow, edenWinterRock, edenBloodSand, edenBloodStone, edenBoneStone, edenGravel,
 				edenBrightStone, edenWoodLog, edenWoodLeaves, edenWoodPlanks, edenDungeonBricks,
 				edenAluminumOre, edenSteelOre, edenBronzeOre, edenInvarOre, edenElectrumOre,
 				edenPlatinumOre, edenCoalOre, edenCopperOre, edenDeshOre, edenDiamondOre,
