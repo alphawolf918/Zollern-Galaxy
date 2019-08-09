@@ -210,7 +210,7 @@ public class ZGPlanets {
 		planetPurgot.setDistanceFromCenter(3.5F);
 		planetPurgot.setTierRequired(5);
 		planetPurgot.setRelativeSize(40.0F);
-		planetPurgot.setPlanetTemperature(54.5f);
+		planetPurgot.setPlanetTemperature(-54.5f);
 		planetPurgot.setPlanetToxicity(15.2f);
 		planetPurgot.setPlanetRadiation(2.2f);
 		planetPurgot.setWindLevel(5.7F);

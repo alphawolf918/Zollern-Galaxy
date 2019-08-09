@@ -42,6 +42,37 @@ public class CraftingRecipes {
 				new ItemStack(GCItems.basicItem, 1, 5), 'D',
 				new ItemStack(MarsItems.marsItemBasic, 1, 3) });
 		totalCraftRecipes++;
+		
+		// Kriffon Crystal
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.kriffCrystal, 1), new Object[] { "FZF",
+				"CVC", "ERE", 'F', ZGItems.compressedKriffonium, 'Z', ZGItems.zolCrystal, 'C',
+				ZGItems.compressedCobalt, 'V', ZGItems.compressedVirinium, 'E',
+				ZGItems.compressedHeartium, 'R', ZGItems.compressedEmerald });
+		
+		// Purgot Crystal
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.purgCrystal, 1), new Object[] { "E E",
+				" R ", "E E", 'E', ZGItems.compressedEvenium, 'R', Items.REDSTONE });
+		
+		// Star Gate (Tier 1)
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.starGateTier1, 1), new Object[] { "VCV",
+				"HYH", "YCY", 'V', ZGItems.compressedDiamond, 'C', ZGItems.compressedHeartium, 'H',
+				ZGItems.heartOfZol, 'Y', ZGItems.zolCrystal });
+		totalCraftRecipes++;
+		
+		// Star Gate (Tier 2)
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.starGateTier2, 1), new Object[] { "VCV",
+				"HYH", "YCY", 'V', ZGItems.compressedCobalt, 'C', ZGItems.kriffCrystal, 'H',
+				ZGItems.heartOfZol, 'Y', ZGBlocks.blockCobalt });
+		totalCraftRecipes++;
+		
+		// Star Gate (Tier 3)
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.starGateTier3, 1), new Object[] { "VCV",
+				"HYH", "YCY", 'V', ZGItems.compressedEvenium, 'C', ZGItems.compressedHeartium, 'H',
+				ZGItems.compressedCobalt, 'Y', ZGItems.purgCrystal });
+		totalCraftRecipes++;
+		
+		// Star Gate (Tier 4)
+		// TODO: Next release...
 	}
 	
 	private static void addRockBricks(Block stoneIn, Block bricksOut) {

@@ -77,13 +77,13 @@ public class GuiHUD extends Gui {
 					float planetTemp = biomeSpace.getPlanetTemp();
 					tempType = (tempType != "F" && tempType != "C") ? "F" : tempType;
 					if (tempType == "F") {
-						String strTemp = "" + (planetTemp * 1.0f);
+						String strTemp = "" + Math.round(planetTemp * 1.0f);
 						strTemp = (strTemp.length() > 4) ? strTemp.substring(0, 4) : strTemp;
 						String temp = "Temp: " + strTemp + " F";
 						fontRendererObj.drawString(temp, 2, 36, i3);
 						fontRendererObj.drawString(temp, 26, yPos - 30, i3);
 					} else if (tempType == "C") {
-						float planetTempCelsius = (((planetTemp - 32) * 5) / 9);
+						float planetTempCelsius = Math.round(((planetTemp - 32) * 5) / 9);
 						String strTemp = "" + (planetTempCelsius * 1.0f);
 						String temp = "Temp: " + strTemp + " C";
 						fontRendererObj.drawString(temp, 2, 36, i3);

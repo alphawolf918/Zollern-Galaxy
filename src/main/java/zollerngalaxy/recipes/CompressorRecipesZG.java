@@ -16,6 +16,11 @@ public class CompressorRecipesZG {
 				new ItemStack(ZGItems.ingotViri, 1, 0), new ItemStack(ZGItems.ingotViri, 1, 0));
 		totalCompressorRecipes++;
 		
+		// Compressed Evenium
+		CompressorRecipes.addShapelessRecipe(new ItemStack(ZGItems.compressedEvenium, 2),
+				new ItemStack(ZGItems.ingotEve, 1, 0), new ItemStack(ZGItems.ingotEve, 1, 0));
+		totalCompressorRecipes++;
+		
 		// Compressed Heartium
 		CompressorRecipes.addShapelessRecipe(new ItemStack(ZGItems.compressedHeartium, 2),
 				new ItemStack(ZGItems.heartOfZol, 1, 0), new ItemStack(ZGItems.heartOfZol, 1, 0));
@@ -34,7 +39,7 @@ public class CompressorRecipesZG {
 		
 		// Compressed Kriffonium
 		CompressorRecipes.addShapelessRecipe(new ItemStack(ZGItems.compressedKriffonium, 2),
-				new ItemStack(ZGItems.compressedVyrex, 1, 0), new ItemStack(
+				new ItemStack(ZGItems.compressedGold, 1, 0), new ItemStack(
 						ZGItems.compressedCobalt, 1, 0));
 		totalCompressorRecipes++;
 		
@@ -46,6 +51,11 @@ public class CompressorRecipesZG {
 		// Compressed Diamond
 		CompressorRecipes.addShapelessRecipe(new ItemStack(ZGItems.compressedDiamond, 2),
 				new ItemStack(Items.DIAMOND, 1, 0), new ItemStack(Items.DIAMOND, 1, 0));
+		totalCompressorRecipes++;
+		
+		// Compressed Gold
+		CompressorRecipes.addShapelessRecipe(new ItemStack(ZGItems.compressedGold, 2),
+				new ItemStack(Items.GOLD_INGOT, 1, 0), new ItemStack(Items.GOLD_INGOT, 1, 0));
 		totalCompressorRecipes++;
 		
 		ZGHelper.Log("Loaded a total of " + totalCompressorRecipes + " new compressor recipes.");

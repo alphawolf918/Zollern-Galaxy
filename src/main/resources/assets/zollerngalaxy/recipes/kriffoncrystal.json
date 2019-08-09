@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "FZF",
+    "CVC",
+    "ERE"
+  ],
+  "key": {
+    "R": {
+      "item": "zollerngalaxy:compressedemerald"
+    },
+    "C": {
+      "item": "zollerngalaxy:compressedcobalt"
+    },
+    "E": {
+      "item": "zollerngalaxy:compressedheartium"
+    },
+    "F": {
+      "item": "zollerngalaxy:compressedkriffonium"
+    },
+    "V": {
+      "item": "zollerngalaxy:compressedvirinium"
+    },
+    "Z": {
+      "item": "zollerngalaxy:zolluscrystal"
+    }
+  },
+  "result": {
+    "item": "zollerngalaxy:kriffoncrystal"
+  }
+}
