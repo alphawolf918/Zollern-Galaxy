@@ -96,7 +96,7 @@ public class ZGPlanets {
 		totalSystems++;
 		
 		// Praedyth System
-		systemPraedyth.setMapPosition(new Vector3(-1.1F, 1.4F, -0.2F));
+		systemPraedyth.setMapPosition(new Vector3(-1.2F, 1.4F, -0.3F));
 		starPraedyth.setParentSolarSystem(systemPraedyth);
 		starPraedyth.setTierRequired(-1);
 		starPraedyth.setRelativeSize(40.0F);
@@ -114,7 +114,7 @@ public class ZGPlanets {
 		totalSystems++;
 		
 		// Olympus System
-		systemOlympus.setMapPosition(new Vector3(4.5F, 1.5F, 1.4F));
+		systemOlympus.setMapPosition(new Vector3(3.5F, 1.5F, 1.0F));
 		starOlympus.setParentSolarSystem(systemOlympus);
 		starOlympus.setTierRequired(-1);
 		starOlympus.setRelativeSize(45.0F);
@@ -132,7 +132,7 @@ public class ZGPlanets {
 		totalSystems++;
 		
 		// Vega System
-		systemVega.setMapPosition(new Vector3(1.0F, 2.5F, 0.9F));
+		systemVega.setMapPosition(new Vector3(1.0F, 2.5F, 0.6F));
 		starVega.setParentSolarSystem(systemVega);
 		starVega.setTierRequired(-1);
 		starVega.setRelativeSize(5.0F);
@@ -141,7 +141,7 @@ public class ZGPlanets {
 		totalSystems++;
 		
 		// Nova System
-		systemNova.setMapPosition(new Vector3(-3.0F, 4.0F, -2.0F));
+		systemNova.setMapPosition(new Vector3(-1.5F, 4.0F, -2.0F));
 		starNova.setParentSolarSystem(systemNova);
 		starNova.setTierRequired(-1);
 		starNova.setRelativeSize(5.0F);

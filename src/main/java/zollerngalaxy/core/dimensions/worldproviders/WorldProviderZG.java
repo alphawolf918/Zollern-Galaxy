@@ -6,6 +6,7 @@ import micdoodle8.mods.galacticraft.api.vector.Vector3;
 import micdoodle8.mods.galacticraft.api.world.IExitHeight;
 import micdoodle8.mods.galacticraft.api.world.ISolarLevel;
 import micdoodle8.mods.galacticraft.core.event.EventHandlerGC;
+import micdoodle8.mods.galacticraft.core.util.ConfigManagerCore;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.IChunkGenerator;
@@ -29,7 +30,7 @@ public abstract class WorldProviderZG extends WorldProviderSpace implements ISol
 	
 	@Override
 	public boolean shouldForceRespawn() {
-		return true;
+		return !ConfigManagerCore.forceOverworldRespawn;
 	}
 	
 	public ZGPlanet getPlanet() {
@@ -67,6 +68,11 @@ public abstract class WorldProviderZG extends WorldProviderSpace implements ISol
 			worldObj.rainingStrength = 0.0F;
 			worldObj.thunderingStrength = 0.0F;
 		}
+	}
+	
+	@Override
+	public float getWindLevel() {
+		return this.getPlanet().getWindLevel();
 	}
 	
 	@Override

@@ -1,5 +1,6 @@
 package zollerngalaxy.biomes.eden;
 
+import net.minecraft.entity.monster.EntityPolarBear;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.blocks.ZGBlocks;
@@ -16,10 +17,11 @@ public class BiomeSnowyPlains extends BiomeEdenBase {
 		props.setHeightVariation(0.5F);
 		props.setTemperature(1.0F);
 		this.setTempCategory(TempCategory.COLD);
-		this.setTemp(1F);
+		this.setTemp(1.0F);
 		this.setEnableSnow(true);
 		this.setBiomeHeight(46);
 		this.setBiomeType(EnumBiomeTypeZG.ICY);
+		this.spawnableCreatureList.add(new SpawnListEntry(EntityPolarBear.class, 100, 4, 6));
 		this.enableSnow = true;
 		this.decorator.generateFalls = true;
 		this.biomeDecor.generateLakes = true;

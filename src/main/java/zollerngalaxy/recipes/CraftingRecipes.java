@@ -48,10 +48,12 @@ public class CraftingRecipes {
 				"CVC", "ERE", 'F', ZGItems.compressedKriffonium, 'Z', ZGItems.zolCrystal, 'C',
 				ZGItems.compressedCobalt, 'V', ZGItems.compressedVirinium, 'E',
 				ZGItems.compressedHeartium, 'R', ZGItems.compressedEmerald });
+		totalCraftRecipes++;
 		
 		// Purgot Crystal
 		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.purgCrystal, 1), new Object[] { "E E",
 				" R ", "E E", 'E', ZGItems.compressedEvenium, 'R', Items.REDSTONE });
+		totalCraftRecipes++;
 		
 		// Star Gate (Tier 1)
 		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.starGateTier1, 1), new Object[] { "VCV",

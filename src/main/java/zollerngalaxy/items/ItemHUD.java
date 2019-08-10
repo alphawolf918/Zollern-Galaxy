@@ -14,6 +14,7 @@ public class ItemHUD extends ZGItemBase {
 	
 	public ItemHUD() {
 		super("hud");
+		this.setMaxStackSize(1);
 	}
 	
 	@Override

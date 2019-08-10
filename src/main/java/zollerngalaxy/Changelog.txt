@@ -2,4 +2,4 @@
 INITIAL PORT TO 1.12.2
 =====================
 
-* Almost ready!
+* And we are READY!
