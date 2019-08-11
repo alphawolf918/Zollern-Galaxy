@@ -70,7 +70,7 @@ public class SmeltRecipes {
 		SmeltRecipes.SmeltBlockToItem(ZGBlocks.edenEveniumOre, ZGItems.ingotEve, 3.6F); // Evenium
 		
 		// Other mod metals
-		if (ModHelperBase.useCofh) {
+		if (ModHelperBase.useCofh && ModHelperBase.useThermalFoundation) {
 			SmeltRecipes.SmeltBlockToItem(ZGBlocks.edenSilverOre,
 					new ItemStack(ItemHelper.getItemFromStack(TFItems.itemMaterial.ingotSilver), 1,
 							130), 3.7F); // Silver

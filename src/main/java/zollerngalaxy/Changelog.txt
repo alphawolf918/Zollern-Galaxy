@@ -1,5 +1,10 @@
 ===== CHANGELOG =====
-INITIAL PORT TO 1.12.2
+Zollern Galaxy v2.0.1
 =====================
 
-* And we are READY!
+* Fixed crash when using CoFH, but not Thermal Foundation.
+    * Checks to see if BOTH are present now.
+* Added capability to have Research Papers (from Planet Progression) integrated into Zollern Galaxy.
+    * Only issue is that they currently don't have textures...
+* Changed around locations of certain star systems.
+* Added Cobalt, Evenium and Virinium blocks to use in Extreme Reactors' turbine interiors.

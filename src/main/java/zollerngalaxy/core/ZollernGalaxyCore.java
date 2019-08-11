@@ -22,6 +22,7 @@ import zollerngalaxy.lib.ZGInfo;
 import zollerngalaxy.lib.helpers.ModHelperBase;
 import zollerngalaxy.lib.helpers.ZGHandlers;
 import zollerngalaxy.lib.helpers.ZGHelper;
+import zollerngalaxy.lib.helpers.integration.ZGTurbineBlocks;
 import zollerngalaxy.mobs.MobRegistry;
 import zollerngalaxy.network.teleporter.MessageTeleportToDimension;
 import zollerngalaxy.planets.ZGPlanets;
@@ -65,6 +66,10 @@ public class ZollernGalaxyCore {
 		ConfigManagerZG.init(event);
 		ZGSoundEvents.init();
 		ModHelperBase.detectMods();
+		
+		if (ModHelperBase.useExtremeReactors) {
+			ZGTurbineBlocks.init();
+		}
 		
 		ZGInfo.init(event.getModMetadata());
 		ZGItems.init();

@@ -8,7 +8,7 @@ public class ZGRecipeRegistry {
 		CraftingRecipes.init();
 		SmeltRecipes.init();
 		CompressorRecipesZG.init();
-		if (ModHelperBase.useCofh) {
+		if (ModHelperBase.useCofh && ModHelperBase.useThermalFoundation) {
 			PulverizerRecipes.init();
 		}
 	}

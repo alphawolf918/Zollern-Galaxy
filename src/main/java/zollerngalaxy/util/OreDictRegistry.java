@@ -141,7 +141,7 @@ public class OreDictRegistry {
 		// Titanium
 		// TODO
 		
-		// TODO: Add More
+		// TODO: Add More...
 	}
 	
 	private static void registerOre(String strName, Item... items) {
