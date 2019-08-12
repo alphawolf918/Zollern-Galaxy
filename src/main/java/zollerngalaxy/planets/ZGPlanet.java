@@ -8,9 +8,7 @@ import micdoodle8.mods.galacticraft.api.world.EnumAtmosphericGas;
 import net.minecraft.util.ResourceLocation;
 import zollerngalaxy.core.enums.EnumPlanetClass;
 import zollerngalaxy.lib.ZGInfo;
-import zollerngalaxy.lib.helpers.ModHelperBase;
 import zollerngalaxy.lib.helpers.ZGHelper;
-import zollerngalaxy.lib.helpers.integration.ZGResearchPapers;
 
 public class ZGPlanet extends Planet implements IZollernPlanet {
 	
@@ -32,9 +30,9 @@ public class ZGPlanet extends Planet implements IZollernPlanet {
 	
 	public ZGPlanet(String planetName) {
 		super(planetName);
-		if (ModHelperBase.usePlanetProgression) {
-			ZGResearchPapers.AddResearchPaper(this.getUnlocalizedName());
-		}
+		// if (ModHelperBase.usePlanetProgression) {
+		// ZGResearchPapers.AddResearchPaper(this.getUnlocalizedName());
+		// }
 	}
 	
 	public ZGPlanet setPlanetStar(Star systemStar) {

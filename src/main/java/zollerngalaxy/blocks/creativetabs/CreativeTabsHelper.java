@@ -16,11 +16,18 @@ public class CreativeTabsHelper extends CreativeTabs {
 	
 	@Override
 	@SideOnly(Side.CLIENT)
-	public ItemStack getIconItemStack() {
-		return this.itemStack;
+	public int getTabPage() {
+		return 2;
 	}
 	
 	@Override
+	@SideOnly(Side.CLIENT)
+	public boolean hasSearchBar() {
+		return true;
+	}
+	
+	@Override
+	@SideOnly(Side.CLIENT)
 	public ItemStack getTabIconItem() {
 		return this.itemStack;
 	}

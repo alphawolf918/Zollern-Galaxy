@@ -78,7 +78,7 @@ public class ZGBlockOre extends ZGBlockBase {
 	}
 	
 	@Override
-	public void onBlockDestroyedByPlayer(World worldIn, BlockPos pos, IBlockState state) {
+	public void onBlockHarvested(World worldIn, BlockPos pos, IBlockState state, EntityPlayer player) {
 		if (!worldIn.isRemote) {
 			if (this.getShouldExplode()) {
 				if (rand.nextInt(this.getExplosionChance()) <= 2) {
@@ -88,8 +88,6 @@ public class ZGBlockOre extends ZGBlockBase {
 		}
 		if (this.getShouldGivePotionEffect()) {
 			if (rand.nextInt(10) <= 4) {
-				EntityPlayer player = worldIn.getClosestPlayer(pos.getX(), pos.getY(), pos.getZ(),
-						2.5D, false);
 				if (player != null && this.blockPotionEffect != null) {
 					player.addPotionEffect(new PotionEffect(this.blockPotionEffect, 200, 0));
 				}
