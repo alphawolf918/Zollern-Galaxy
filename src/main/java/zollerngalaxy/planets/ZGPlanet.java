@@ -30,9 +30,6 @@ public class ZGPlanet extends Planet implements IZollernPlanet {
 	
 	public ZGPlanet(String planetName) {
 		super(planetName);
-		// if (ModHelperBase.usePlanetProgression) {
-		// ZGResearchPapers.AddResearchPaper(this.getUnlocalizedName());
-		// }
 	}
 	
 	public ZGPlanet setPlanetStar(Star systemStar) {

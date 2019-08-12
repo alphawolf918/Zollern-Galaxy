@@ -75,6 +75,7 @@ public class ZollernGalaxyCore {
 		ZGItems.init();
 		ZGBlocks.init();
 		ZGBiomes.init();
+		ZGPlanets.init();
 		OreDictRegistry.init();
 		
 		instance().proxy.registerPreRendering();
@@ -94,7 +95,6 @@ public class ZollernGalaxyCore {
 		}
 		
 		MobRegistry.init();
-		ZGPlanets.init();
 		
 		instance().proxy.registerInitRendering();
 		instance().proxy.init(event);

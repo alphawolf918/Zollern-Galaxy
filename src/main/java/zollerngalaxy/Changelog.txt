@@ -2,5 +2,8 @@
 Zollern Galaxy v2.0.2
 =====================
 
-* Updated to latest Forge version and snapshot.
+* Updated to latest Forge and Galacticraft versions.
+* Fixed glitch with Planet Progression not picking up Zollern Galaxy planets/moons.
+    * Removed my "workaround" that was temporary. Many thanks to MJRLegends for his help!
+* Added a search bar to the Creative Tabs.
 * 
