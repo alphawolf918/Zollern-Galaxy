@@ -97,17 +97,17 @@ public class ZGOreGem extends ZGBlockOre {
 		default:
 			numDropped = ZGHelper.rngNumber(1, 1);
 			break;
-		case OVERWORLD:
+		case ONE:
 			numDropped = ZGHelper.rngNumber(minDropped, maxDropped);
 			break;
-		case NETHER:
+		case TWO:
 			numDropped = ZGHelper.rngNumber(maxDropped, maxDropped + 2);
 			break;
-		case END:
-			numDropped = ZGHelper.rngNumber(maxDropped + 2, maxDropped + 4);
+		case THREE:
+			numDropped = ZGHelper.rngNumber(maxDropped + 2, maxDropped + 3);
 			break;
-		case UPSIDE_DOWN:
-			numDropped = ZGHelper.rngNumber(maxDropped + 4, maxDropped + 6);
+		case FOUR:
+			numDropped = ZGHelper.rngNumber(maxDropped + 4, maxDropped + 5);
 			break;
 		}
 		return numDropped;

@@ -17,6 +17,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.ZollernGalaxyCore;
 import zollerngalaxy.lib.helpers.CommonZGRegisterHelper;
+import zollerngalaxy.lib.helpers.ModHelperBase;
 import zollerngalaxy.network.teleporter.MessageTeleportToDimension;
 import zollerngalaxy.proxy.IProxy;
 
@@ -35,6 +36,11 @@ public class ItemStargate extends ZGItemBase {
 	private void teleportPlayer(World world, EntityPlayer player) {
 		int playerId = player.getEntityId();
 		int dim = player.dimension;
+		boolean canTP = true;
+		
+		if (ModHelperBase.usePlanetProgression) {
+			// TODO: Check to see if destination is unlocked first...
+		}
 		
 		switch (this.gateTier) {
 		default:

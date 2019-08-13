@@ -8,16 +8,16 @@ import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import zollerngalaxy.core.enums.EnumBlockTier;
 import zollerngalaxy.core.enums.EnumBlockType;
-import zollerngalaxy.core.enums.EnumBlockVariant;
 import zollerngalaxy.core.enums.EnumHarvestLevel;
 
 public class ZGBlockOre extends ZGBlockBase {
 	
-	protected EnumBlockVariant oreVariant = EnumBlockVariant.OVERWORLD;
+	protected EnumBlockTier oreVariant = EnumBlockTier.ONE;
 	protected static ZGBlockOre instance;
 	protected boolean isExplosive = false;
-	protected int explosionChance = 40;
+	protected int explosionWeight = 40;
 	protected boolean hasPotionEffect = false;
 	protected Potion blockPotionEffect;
 	protected Random rand = new Random();
@@ -48,7 +48,7 @@ public class ZGBlockOre extends ZGBlockBase {
 	 * @return Block
 	 */
 	public Block setExplosionChance(int par1ExplosionChance) {
-		this.explosionChance = par1ExplosionChance;
+		this.explosionWeight = par1ExplosionChance;
 		return this;
 	}
 	
@@ -59,7 +59,7 @@ public class ZGBlockOre extends ZGBlockBase {
 	 * @return int
 	 */
 	public int getExplosionChance() {
-		return this.explosionChance;
+		return this.explosionWeight;
 	}
 	
 	public Block setShouldExplode(boolean shouldExplode, int explodeChance) {
@@ -78,16 +78,18 @@ public class ZGBlockOre extends ZGBlockBase {
 	}
 	
 	@Override
-	public void onBlockHarvested(World worldIn, BlockPos pos, IBlockState state, EntityPlayer player) {
+	public void onBlockDestroyedByPlayer(World worldIn, BlockPos pos, IBlockState state) {
 		if (!worldIn.isRemote) {
 			if (this.getShouldExplode()) {
-				if (rand.nextInt(this.getExplosionChance()) <= 2) {
+				if (rand.nextInt(this.getExplosionChance()) <= 4) {
 					worldIn.createExplosion(null, pos.getX(), pos.getY(), pos.getZ(), 2.5F, true);
 				}
 			}
 		}
 		if (this.getShouldGivePotionEffect()) {
 			if (rand.nextInt(10) <= 4) {
+				EntityPlayer player = worldIn.getClosestPlayer(pos.getX(), pos.getY(), pos.getZ(),
+						2.5D, false);
 				if (player != null && this.blockPotionEffect != null) {
 					player.addPotionEffect(new PotionEffect(this.blockPotionEffect, 200, 0));
 				}
@@ -99,11 +101,11 @@ public class ZGBlockOre extends ZGBlockBase {
 		return instance;
 	}
 	
-	public EnumBlockVariant getBlockVariant() {
+	public EnumBlockTier getBlockVariant() {
 		return this.oreVariant;
 	}
 	
-	public Block setBlockVariant(EnumBlockVariant variantType) {
+	public Block setBlockVariant(EnumBlockTier variantType) {
 		this.oreVariant = variantType;
 		return this;
 	}

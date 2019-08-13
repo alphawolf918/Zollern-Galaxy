@@ -46,7 +46,7 @@ public class CraftingRecipes {
 		// Kriffon Crystal
 		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.kriffCrystal, 1), new Object[] { "FZF",
 				"CVC", "ERE", 'F', ZGItems.compressedKriffonium, 'Z', ZGItems.zolCrystal, 'C',
-				ZGItems.compressedCobalt, 'V', ZGItems.compressedVirinium, 'E',
+				ZGItems.compressedCobalt, 'V', new ItemStack(MarsItems.marsItemBasic, 1, 3), 'E',
 				ZGItems.compressedHeartium, 'R', ZGItems.compressedEmerald });
 		totalCraftRecipes++;
 		

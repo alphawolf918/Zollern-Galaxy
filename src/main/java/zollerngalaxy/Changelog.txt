@@ -6,4 +6,8 @@ Zollern Galaxy v2.0.2
 * Fixed glitch with Planet Progression not picking up Zollern Galaxy planets/moons.
     * Removed my "workaround" that was temporary. Many thanks to MJRLegends for his help!
 * Added a search bar to the Creative Tabs.
+* Fixed Kriffon Crystal recipe to use Tier 2 Heavy Duty Plating instead of Virinium.
+* Changed EnumBlockVariant to EnumBlockTier (10 Tiers but only 4 matter right now).
+* Kriffon ores now have a chance to blow up when harvested/destroyed by a Player if they are in Survival Mode.
+* Purgot ores now have a chance to give varying Potion Effects when harvested/destroyed by a Player if they are in Survival Mode.
 * 

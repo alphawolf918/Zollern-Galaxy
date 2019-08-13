@@ -19,7 +19,8 @@
       "item": "zollerngalaxy:compressedkriffonium"
     },
     "V": {
-      "item": "zollerngalaxy:compressedvirinium"
+      "item": "galacticraftplanets:item_basic_mars",
+      "data": 3
     },
     "Z": {
       "item": "zollerngalaxy:zolluscrystal"

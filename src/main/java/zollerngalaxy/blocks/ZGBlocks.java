@@ -5,6 +5,7 @@ import micdoodle8.mods.galacticraft.planets.mars.items.MarsItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.init.Items;
+import net.minecraft.init.MobEffects;
 import zollerngalaxy.blocks.eden.EdenFlower;
 import zollerngalaxy.blocks.eden.EdenFruit;
 import zollerngalaxy.blocks.zollus.ZolniumCrystals;
@@ -57,13 +58,18 @@ public class ZGBlocks {
 	public static final Block kriffRockBricks = new ZGBlockBase("kriffrockbricks", 1.4F);
 	public static final Block kriffMagmaRock = ((ZGBlockBase) new ZGBlockBase("magmarock", 2.6F)
 			.setIsHotBlock(true).setLightLevel(1.0F)).setShouldAlwaysBurn(true);
-	public static final Block kriffCoalOre = new ZGOreGem("kriffcoalore", 1.6F, Items.COAL);
-	public static final Block kriffCopperOre = new ZGBlockOre("kriffcopperore", 1.7F);
-	public static final Block kriffIronOre = new ZGBlockOre("kriffironore", 1.4F);
-	public static final Block kriffGoldOre = new ZGBlockOre("kriffgoldore", 1.7F);
-	public static final Block kriffCobaltOre = new ZGBlockOre("kriffcobaltore", 1.9F);
+	public static final Block kriffCoalOre = new ZGOreGem("kriffcoalore", 1.6F, Items.COAL)
+			.setShouldExplode(true, 90);
+	public static final Block kriffCopperOre = new ZGBlockOre("kriffcopperore", 1.7F)
+			.setShouldExplode(true, 80);
+	public static final Block kriffIronOre = new ZGBlockOre("kriffironore", 1.4F).setShouldExplode(
+			true, 70);
+	public static final Block kriffGoldOre = new ZGBlockOre("kriffgoldore", 1.7F).setShouldExplode(
+			true, 50);
+	public static final Block kriffCobaltOre = new ZGBlockOre("kriffcobaltore", 1.9F)
+			.setShouldExplode(true, 10);
 	public static final Block kriffRedstoneOre = new ZGOreGem("kriffredstoneore", 1.8F,
-			Items.REDSTONE);
+			Items.REDSTONE).setShouldExplode(true, 35);
 	
 	// Purgot
 	public static final Block purgCobbleRock = new ZGBlockBase("purgcobblerock", 2.0F)
@@ -77,19 +83,28 @@ public class ZGBlocks {
 	public static final Block purgBlackRock = new ZGBlockBase("blackrock", 1.2F);
 	public static final Block purgWhiteRock = new ZGBlockBase("whiterock", 1.2F);
 	public static final Block purgMeteoricIronOre = new ZGOreGem("purgmeteoricironore", 3.6F,
-			GCItems.meteoricIronRaw);
-	public static final Block purgCobaltOre = new ZGBlockOre("purgcobaltore", 2.8F);
-	public static final Block purgIronOre = new ZGBlockOre("purgironore", 2.6F);
-	public static final Block purgGoldOre = new ZGBlockOre("purggoldore", 2.6F);
+			GCItems.meteoricIronRaw).setShouldGivePotionEffect(true, MobEffects.LEVITATION);
+	public static final Block purgCobaltOre = new ZGBlockOre("purgcobaltore", 2.8F)
+			.setShouldGivePotionEffect(true, MobEffects.BLINDNESS);
+	public static final Block purgIronOre = new ZGBlockOre("purgironore", 2.6F)
+			.setShouldGivePotionEffect(true, MobEffects.INVISIBILITY);
+	public static final Block purgGoldOre = new ZGBlockOre("purggoldore", 2.6F)
+			.setShouldGivePotionEffect(true, MobEffects.HUNGER);
 	public static final Block purgCopperOre = new ZGBlockOre("purgcopperore", 2.1F);
-	public static final Block purgDiamondOre = new ZGOreGem("purgdiamondore", 2.9F, Items.DIAMOND);
-	public static final Block purgEmeraldOre = new ZGOreGem("purgemeraldore", 3.0F, Items.EMERALD);
-	public static final Block purgEveniumOre = new ZGBlockOre("purgeveniumore", 2.9F);
-	public static final Block purgAluminumOre = new ZGBlockOre("purgaluminumore", 2.6F);
-	public static final Block purgTinOre = new ZGBlockOre("purgtinore", 1.6F);
-	public static final Block purgLeadOre = new ZGBlockOre("purgleadore", 1.8F);
+	public static final Block purgDiamondOre = new ZGOreGem("purgdiamondore", 2.9F, Items.DIAMOND)
+			.setShouldGivePotionEffect(true, MobEffects.SLOWNESS);
+	public static final Block purgEmeraldOre = new ZGOreGem("purgemeraldore", 3.0F, Items.EMERALD)
+			.setShouldGivePotionEffect(true, MobEffects.HEALTH_BOOST);
+	public static final Block purgEveniumOre = new ZGBlockOre("purgeveniumore", 2.9F)
+			.setShouldGivePotionEffect(true, MobEffects.GLOWING);
+	public static final Block purgAluminumOre = new ZGBlockOre("purgaluminumore", 2.6F)
+			.setShouldGivePotionEffect(true, MobEffects.JUMP_BOOST);
+	public static final Block purgTinOre = new ZGBlockOre("purgtinore", 1.6F)
+			.setShouldGivePotionEffect(true, MobEffects.NIGHT_VISION);
+	public static final Block purgLeadOre = new ZGBlockOre("purgleadore", 1.8F)
+			.setShouldGivePotionEffect(true, MobEffects.HASTE);
 	public static final Block purgRedstoneOre = new ZGOreGem("purgredstoneore", 1.5F,
-			Items.REDSTONE);
+			Items.REDSTONE).setShouldGivePotionEffect(true, MobEffects.REGENERATION);
 	
 	// Eden
 	public static final Block edenSurfaceRock = new ZGBlockBase("edensurfacerock", 2.1F);
