@@ -1,7 +1,6 @@
 package zollerngalaxy.lib.helpers;
 
 import net.minecraftforge.fml.common.Loader;
-import stevekung.mods.moreplanets.core.MorePlanetsCore;
 import cofh.CoFHCore;
 import cofh.thermaldynamics.ThermalDynamics;
 import cofh.thermalexpansion.ThermalExpansion;
@@ -25,9 +24,9 @@ public class ModHelperBase {
 		useThermalFoundation = isModLoaded(ThermalFoundation.MOD_ID);
 		useThermalDynamics = isModLoaded(ThermalDynamics.MOD_ID);
 		useExtremeReactors = isModLoaded(BigReactors.MODID);
-		useMorePlanets = isModLoaded(MorePlanetsCore.MOD_ID);
-		useExtraPlanets = isModLoaded(com.mjr.extraplanets.Constants.modID);
-		usePlanetProgression = isModLoaded(com.mjr.planetprogression.Constants.modID);
+		useMorePlanets = isModLoaded("moreplanets");
+		useExtraPlanets = isModLoaded("extraplanets");
+		usePlanetProgression = isModLoaded("planetprogression");
 	}
 	
 	public static boolean isModLoaded(String modId) {

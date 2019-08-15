@@ -5,6 +5,7 @@ import javax.annotation.Nullable;
 import micdoodle8.mods.galacticraft.api.galaxies.CelestialBody;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResult;
@@ -19,8 +20,10 @@ import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.ZollernGalaxyCore;
 import zollerngalaxy.core.dimensions.ZGDimensions;
 import zollerngalaxy.lib.helpers.CommonZGRegisterHelper;
+import zollerngalaxy.lib.helpers.ModHelperBase;
 import zollerngalaxy.network.teleporter.MessageTeleportToDimension;
 import zollerngalaxy.proxy.IProxy;
+import com.mjr.planetprogression.api.research.ResearchHooksMP;
 
 public class ItemStargate extends ZGItemBase {
 	
@@ -74,7 +77,23 @@ public class ItemStargate extends ZGItemBase {
 	
 	private void sendToServer(int dimId, EntityPlayer player, CelestialBody destination) {
 		int playerId = player.getEntityId();
-		this.snw.sendToServer(new MessageTeleportToDimension(dimId, playerId));
+		boolean canTP = true;
+		
+		if (ModHelperBase.usePlanetProgression) {
+			if (!ResearchHooksMP.hasUnlockedCelestialBody((EntityPlayerMP) player, destination)) {
+				canTP = false;
+				proxy.sendChatMessage(
+						player,
+						TextFormatting.BOLD
+								+ " "
+								+ TextFormatting.DARK_RED
+								+ "Unable to teleport; celestial body not yet discovered. Could not locate destination on galaxy map.");
+			}
+		}
+		
+		if (canTP) {
+			this.snw.sendToServer(new MessageTeleportToDimension(dimId, playerId));
+		}
 	}
 	
 	@Override
