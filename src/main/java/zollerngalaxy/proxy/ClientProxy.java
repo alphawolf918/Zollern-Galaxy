@@ -1,8 +1,10 @@
 package zollerngalaxy.proxy;
 
+import micdoodle8.mods.galacticraft.core.util.WorldUtil;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.color.BlockColors;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.world.WorldProvider;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
@@ -60,5 +62,10 @@ public class ClientProxy extends CommonProxy {
 	@Override
 	public EntityPlayer getPlayerEntity(MessageContext ctx) {
 		return ctx.side.isClient() ? this.getMinecraft().player : super.getPlayerEntity(ctx);
+	}
+	
+	@Override
+	public WorldProvider getWorldProviderForDimension(int dimID) {
+		return WorldUtil.getProviderForDimensionClient(dimID);
 	}
 }

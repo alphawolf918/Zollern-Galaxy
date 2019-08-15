@@ -1,8 +1,8 @@
-package zollerngalaxy.lib.helpers.integration;
+package zollerngalaxy.compatibility;
 
 import erogenousbeef.bigreactors.api.registry.TurbineCoil;
 
-public class ZGTurbineBlocks {
+public class ExtremeReactorsCompatibility {
 	
 	public static void init() {
 		TurbineCoil.registerBlock("blockCobalt", 2.5f, 1.0f, 2.4f);

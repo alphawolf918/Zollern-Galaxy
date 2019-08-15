@@ -189,16 +189,16 @@ item.compressedvirinium.name=Compressed Virinium
 item.compressedheartium.name=Compressed Heartium
 item.compressedvyrex.name=Compressed Vyrexite
 
-item.stargate_tier1.name=Stargate (Tier 1)
-item.stargate_tier2.name=Stargate (Tier 2)
-item.stargate_tier3.name=Stargate (Tier 3)
-item.stargate_tier4.name=Stargate (Tier 4)
-item.stargate_tier5.name=Stargate (Tier 5)
-item.stargate_tier6.name=Stargate (Tier 6)
-item.stargate_tier7.name=Stargate (Tier 7)
-item.stargate_tier8.name=Stargate (Tier 8)
-item.stargate_tier9.name=Stargate (Tier 9)
-item.stargate_tier10.name=Stargate (Tier 10)
+item.stargate_tier1.name=Stargate (Protocol One)
+item.stargate_tier2.name=Stargate (Protocol Two)
+item.stargate_tier3.name=Stargate (Protocol Three)
+item.stargate_tier4.name=Stargate (Protocol Four)
+item.stargate_tier5.name=Stargate (Protocol Five)
+item.stargate_tier6.name=Stargate (Protocol Six)
+item.stargate_tier7.name=Stargate (Protocol Seven)
+item.stargate_tier8.name=Stargate (Protocol Eight)
+item.stargate_tier9.name=Stargate (Protocol Nine)
+item.stargate_tier10.name=Stargate (Protocol Ten)
 
 entity.zollerngalaxy:moolus.name=Moolus
 entity.zollerngalaxy:oinkus.name=Oinkus

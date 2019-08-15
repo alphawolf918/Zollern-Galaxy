@@ -1,10 +1,17 @@
 package zollerngalaxy.core.dimensions;
 
+import micdoodle8.mods.galacticraft.api.galaxies.CelestialBody;
+import micdoodle8.mods.galacticraft.api.prefab.world.gen.WorldProviderSpace;
 import micdoodle8.mods.galacticraft.core.util.WorldUtil;
 import net.minecraft.world.DimensionType;
+import net.minecraft.world.WorldProvider;
 import zollerngalaxy.config.ConfigManagerZG;
+import zollerngalaxy.core.ZollernGalaxyCore;
+import zollerngalaxy.proxy.IProxy;
 
 public class ZGDimensions {
+	
+	private static IProxy proxy = ZollernGalaxyCore.proxy;
 	
 	// Psion-6
 	public static DimensionType ZOLLUS;
@@ -37,5 +44,14 @@ public class ZGDimensions {
 	
 	public static DimensionType getDimType(int dimId) {
 		return WorldUtil.getDimensionTypeById(dimId);
+	}
+	
+	public static CelestialBody getPlanetFromDimID(int dimID) {
+		WorldProvider provider = proxy.getWorldProviderForDimension(dimID);
+		if (provider instanceof WorldProviderSpace) {
+			WorldProviderSpace spaceProvider = (WorldProviderSpace) provider;
+			CelestialBody celBody = spaceProvider.getCelestialBody();
+		}
+		return null;
 	}
 }

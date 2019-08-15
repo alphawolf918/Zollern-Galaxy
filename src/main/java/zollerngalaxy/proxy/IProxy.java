@@ -3,6 +3,7 @@ package zollerngalaxy.proxy;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.potion.Potion;
+import net.minecraft.world.WorldProvider;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -31,4 +32,6 @@ public interface IProxy {
 	public Minecraft getMinecraft();
 	
 	public EntityPlayer getPlayerEntity(MessageContext ctx);
+	
+	public WorldProvider getWorldProviderForDimension(int dimID);
 }

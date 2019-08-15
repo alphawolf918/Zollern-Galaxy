@@ -2,6 +2,7 @@ package zollerngalaxy.items;
 
 import java.util.List;
 import javax.annotation.Nullable;
+import micdoodle8.mods.galacticraft.api.galaxies.CelestialBody;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumRarity;
@@ -16,8 +17,8 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.ZollernGalaxyCore;
+import zollerngalaxy.core.dimensions.ZGDimensions;
 import zollerngalaxy.lib.helpers.CommonZGRegisterHelper;
-import zollerngalaxy.lib.helpers.ModHelperBase;
 import zollerngalaxy.network.teleporter.MessageTeleportToDimension;
 import zollerngalaxy.proxy.IProxy;
 
@@ -34,13 +35,9 @@ public class ItemStargate extends ZGItemBase {
 	}
 	
 	private void teleportPlayer(World world, EntityPlayer player) {
-		int playerId = player.getEntityId();
 		int dim = player.dimension;
-		boolean canTP = true;
 		
-		if (ModHelperBase.usePlanetProgression) {
-			// TODO: Check to see if destination is unlocked first...
-		}
+		CelestialBody destination = ZGDimensions.getPlanetFromDimID(dim);
 		
 		switch (this.gateTier) {
 		default:
@@ -52,30 +49,31 @@ public class ItemStargate extends ZGItemBase {
 			break;
 		case 1:
 			if (dim == ConfigManagerZG.planetZollusDimensionId) {
-				this.sendToServer(ConfigManagerZG.planetKriffonDimensionId, playerId);
+				this.sendToServer(ConfigManagerZG.planetKriffonDimensionId, player, destination);
 			} else {
-				this.sendToServer(ConfigManagerZG.planetZollusDimensionId, playerId);
+				this.sendToServer(ConfigManagerZG.planetZollusDimensionId, player, destination);
 			}
 			break;
 		case 2:
 			if (dim == ConfigManagerZG.planetKriffonDimensionId) {
-				this.sendToServer(ConfigManagerZG.planetPurgotDimensionId, playerId);
+				this.sendToServer(ConfigManagerZG.planetPurgotDimensionId, player, destination);
 			} else {
-				this.sendToServer(ConfigManagerZG.planetKriffonDimensionId, playerId);
+				this.sendToServer(ConfigManagerZG.planetKriffonDimensionId, player, destination);
 			}
 			break;
 		case 3:
 			if (dim == ConfigManagerZG.planetPurgotDimensionId) {
-				this.sendToServer(ConfigManagerZG.planetEdenDimensionId, playerId);
+				this.sendToServer(ConfigManagerZG.planetEdenDimensionId, player, destination);
 			} else {
-				this.sendToServer(ConfigManagerZG.planetPurgotDimensionId, playerId);
+				this.sendToServer(ConfigManagerZG.planetPurgotDimensionId, player, destination);
 			}
 			break;
 		}
 		// TODO: Add more planets and moons! To be continued...
 	}
 	
-	private void sendToServer(int dimId, int playerId) {
+	private void sendToServer(int dimId, EntityPlayer player, CelestialBody destination) {
+		int playerId = player.getEntityId();
 		this.snw.sendToServer(new MessageTeleportToDimension(dimId, playerId));
 	}
 	

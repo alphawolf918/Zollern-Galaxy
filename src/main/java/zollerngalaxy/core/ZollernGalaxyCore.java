@@ -14,6 +14,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import zollerngalaxy.biomes.ZGBiomes;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.blocks.creativetabs.ZGTabs;
+import zollerngalaxy.compatibility.ExtremeReactorsCompatibility;
 import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.ZGDimensions;
 import zollerngalaxy.events.ZGSoundEvents;
@@ -22,7 +23,6 @@ import zollerngalaxy.lib.ZGInfo;
 import zollerngalaxy.lib.helpers.ModHelperBase;
 import zollerngalaxy.lib.helpers.ZGHandlers;
 import zollerngalaxy.lib.helpers.ZGHelper;
-import zollerngalaxy.lib.helpers.integration.ZGTurbineBlocks;
 import zollerngalaxy.mobs.MobRegistry;
 import zollerngalaxy.network.teleporter.MessageTeleportToDimension;
 import zollerngalaxy.planets.ZGPlanets;
@@ -68,7 +68,7 @@ public class ZollernGalaxyCore {
 		ModHelperBase.detectMods();
 		
 		if (ModHelperBase.useExtremeReactors) {
-			ZGTurbineBlocks.init();
+			ExtremeReactorsCompatibility.init();
 		}
 		
 		ZGInfo.init(event.getModMetadata());

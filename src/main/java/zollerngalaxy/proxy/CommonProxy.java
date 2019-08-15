@@ -1,9 +1,11 @@
 package zollerngalaxy.proxy;
 
+import micdoodle8.mods.galacticraft.core.util.WorldUtil;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.potion.Potion;
 import net.minecraft.world.World;
+import net.minecraft.world.WorldProvider;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -72,5 +74,10 @@ public class CommonProxy implements IProxy, IGuiHandler {
 	@Override
 	public EntityPlayer getPlayerEntity(MessageContext ctx) {
 		return ctx.getServerHandler().player;
+	}
+	
+	@Override
+	public WorldProvider getWorldProviderForDimension(int dimID) {
+		return WorldUtil.getProviderForDimensionServer(dimID);
 	}
 }

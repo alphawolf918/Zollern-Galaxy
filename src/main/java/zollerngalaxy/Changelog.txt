@@ -10,4 +10,6 @@ Zollern Galaxy v2.0.2
 * Changed EnumBlockVariant to EnumBlockTier (10 Tiers but only 4 matter right now).
 * Kriffon ores now have a chance to blow up when harvested/destroyed by a Player if they are in Survival Mode.
 * Purgot ores now have a chance to give varying Potion Effects when harvested/destroyed by a Player if they are in Survival Mode.
+* Mod set to load after Planet Progression.
+* Renamed Star Gate "Tiers" to "Protocols" to avoid confusion.
 * 
