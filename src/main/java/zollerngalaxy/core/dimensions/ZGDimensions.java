@@ -3,7 +3,9 @@ package zollerngalaxy.core.dimensions;
 import micdoodle8.mods.galacticraft.api.galaxies.CelestialBody;
 import micdoodle8.mods.galacticraft.api.prefab.world.gen.WorldProviderSpace;
 import micdoodle8.mods.galacticraft.core.util.WorldUtil;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.DimensionType;
+import net.minecraft.world.World;
 import net.minecraft.world.WorldProvider;
 import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.ZollernGalaxyCore;
@@ -46,11 +48,13 @@ public class ZGDimensions {
 		return WorldUtil.getDimensionTypeById(dimId);
 	}
 	
-	public static CelestialBody getPlanetFromDimID(int dimID) {
-		WorldProvider provider = proxy.getWorldProviderForDimension(dimID);
+	public static CelestialBody getPlanetFromDimID(EntityPlayer player, int dimID) {
+		World worldObj = player.world;
+		WorldProvider provider = worldObj.provider;
 		if (provider instanceof WorldProviderSpace) {
 			WorldProviderSpace spaceProvider = (WorldProviderSpace) provider;
 			CelestialBody celBody = spaceProvider.getCelestialBody();
+			return celBody;
 		}
 		return null;
 	}

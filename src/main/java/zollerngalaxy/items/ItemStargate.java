@@ -37,10 +37,10 @@ public class ItemStargate extends ZGItemBase {
 		this.gateTier = tier;
 	}
 	
-	private void teleportPlayer(World world, EntityPlayer player) {
+	private void teleportPlayer(World world, EntityPlayerMP player) {
 		int dim = player.dimension;
 		
-		CelestialBody destination = ZGDimensions.getPlanetFromDimID(dim);
+		CelestialBody destination = ZGDimensions.getPlanetFromDimID(player, dim);
 		
 		switch (this.gateTier) {
 		default:
@@ -75,12 +75,12 @@ public class ItemStargate extends ZGItemBase {
 		// TODO: Add more planets and moons! To be continued...
 	}
 	
-	private void sendToServer(int dimId, EntityPlayer player, CelestialBody destination) {
+	private void sendToServer(int dimId, EntityPlayerMP player, CelestialBody destination) {
 		int playerId = player.getEntityId();
 		boolean canTP = true;
 		
 		if (ModHelperBase.usePlanetProgression) {
-			if (!ResearchHooksMP.hasUnlockedCelestialBody((EntityPlayerMP) player, destination)) {
+			if (!ResearchHooksMP.hasUnlockedCelestialBody(player, destination)) {
 				canTP = false;
 				proxy.sendChatMessage(
 						player,
@@ -100,7 +100,10 @@ public class ItemStargate extends ZGItemBase {
 	public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn,
 			EnumHand handIn) {
 		ItemStack itemstack = playerIn.getHeldItem(handIn);
-		this.teleportPlayer(worldIn, playerIn);
+		if (playerIn instanceof EntityPlayerMP) {
+			EntityPlayerMP player = (EntityPlayerMP) playerIn;
+			this.teleportPlayer(worldIn, player);
+		}
 		return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, itemstack);
 	}
 	
