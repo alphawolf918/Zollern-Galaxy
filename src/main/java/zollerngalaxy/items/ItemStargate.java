@@ -21,6 +21,7 @@ import zollerngalaxy.core.ZollernGalaxyCore;
 import zollerngalaxy.core.dimensions.ZGDimensions;
 import zollerngalaxy.lib.helpers.CommonZGRegisterHelper;
 import zollerngalaxy.lib.helpers.ModHelperBase;
+import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.network.teleporter.MessageTeleportToDimension;
 import zollerngalaxy.proxy.IProxy;
 import com.mjr.planetprogression.api.research.ResearchHooksMP;
@@ -40,7 +41,7 @@ public class ItemStargate extends ZGItemBase {
 	private void teleportPlayer(World world, EntityPlayerMP player) {
 		int dim = player.dimension;
 		
-		CelestialBody destination = ZGDimensions.getPlanetFromDimID(player, dim);
+		CelestialBody destination = null;
 		
 		switch (this.gateTier) {
 		default:
@@ -52,46 +53,48 @@ public class ItemStargate extends ZGItemBase {
 			break;
 		case 1:
 			if (dim == ConfigManagerZG.planetZollusDimensionId) {
-				this.sendToServer(ConfigManagerZG.planetKriffonDimensionId, player, destination);
+				this.sendToServer(ConfigManagerZG.planetKriffonDimensionId, player);
 			} else {
-				this.sendToServer(ConfigManagerZG.planetZollusDimensionId, player, destination);
+				this.sendToServer(ConfigManagerZG.planetZollusDimensionId, player);
 			}
 			break;
 		case 2:
 			if (dim == ConfigManagerZG.planetKriffonDimensionId) {
-				this.sendToServer(ConfigManagerZG.planetPurgotDimensionId, player, destination);
+				this.sendToServer(ConfigManagerZG.planetPurgotDimensionId, player);
 			} else {
-				this.sendToServer(ConfigManagerZG.planetKriffonDimensionId, player, destination);
+				this.sendToServer(ConfigManagerZG.planetKriffonDimensionId, player);
 			}
 			break;
 		case 3:
 			if (dim == ConfigManagerZG.planetPurgotDimensionId) {
-				this.sendToServer(ConfigManagerZG.planetEdenDimensionId, player, destination);
+				this.sendToServer(ConfigManagerZG.planetEdenDimensionId, player);
 			} else {
-				this.sendToServer(ConfigManagerZG.planetPurgotDimensionId, player, destination);
+				this.sendToServer(ConfigManagerZG.planetPurgotDimensionId, player);
 			}
 			break;
 		}
 		// TODO: Add more planets and moons! To be continued...
 	}
 	
-	private void sendToServer(int dimId, EntityPlayerMP player, CelestialBody destination) {
+	private void sendToServer(int dimId, EntityPlayerMP player) {
 		int playerId = player.getEntityId();
+		CelestialBody destination = ZGDimensions.getCelestialBodyByID(dimId);
+		
 		boolean canTP = true;
+		String txtFormat = TextFormatting.BOLD + " " + TextFormatting.DARK_RED;
+		String bodyName = destination.getLocalizedName();
+		String msg = "Unable to teleport; " + bodyName + "  not yet discovered.";
+		msg += " Could not locate destination on galaxy map.";
 		
 		if (ModHelperBase.usePlanetProgression) {
 			if (!ResearchHooksMP.hasUnlockedCelestialBody(player, destination)) {
 				canTP = false;
-				proxy.sendChatMessage(
-						player,
-						TextFormatting.BOLD
-								+ " "
-								+ TextFormatting.DARK_RED
-								+ "Unable to teleport; celestial body not yet discovered. Could not locate destination on galaxy map.");
+				proxy.sendChatMessage(player, txtFormat + msg);
 			}
 		}
 		
 		if (canTP) {
+			ZGHelper.Log(TextFormatting.GREEN + bodyName + " researched! Teleporting Player...");
 			this.snw.sendToServer(new MessageTeleportToDimension(dimId, playerId));
 		}
 	}

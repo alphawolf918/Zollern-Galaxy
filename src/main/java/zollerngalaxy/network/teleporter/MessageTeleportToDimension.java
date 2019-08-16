@@ -144,7 +144,6 @@ public class MessageTeleportToDimension implements IMessage {
 				worldObj.setBlockState(new BlockPos(x, y + 1, z + 1), airState);
 				
 				player.fallDistance = 0.0f;
-				FMLCommonHandler.instance().firePlayerChangedDimensionEvent(player, oldDim, dim);
 			}
 		}
 	}

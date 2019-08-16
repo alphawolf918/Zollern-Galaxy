@@ -1,14 +1,12 @@
 package zollerngalaxy.core.dimensions;
 
 import micdoodle8.mods.galacticraft.api.galaxies.CelestialBody;
-import micdoodle8.mods.galacticraft.api.prefab.world.gen.WorldProviderSpace;
 import micdoodle8.mods.galacticraft.core.util.WorldUtil;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.DimensionType;
-import net.minecraft.world.World;
-import net.minecraft.world.WorldProvider;
 import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.ZollernGalaxyCore;
+import zollerngalaxy.lib.helpers.ZGHelper;
+import zollerngalaxy.planets.ZGPlanets;
 import zollerngalaxy.proxy.IProxy;
 
 public class ZGDimensions {
@@ -48,14 +46,21 @@ public class ZGDimensions {
 		return WorldUtil.getDimensionTypeById(dimId);
 	}
 	
-	public static CelestialBody getPlanetFromDimID(EntityPlayer player, int dimID) {
-		World worldObj = player.world;
-		WorldProvider provider = worldObj.provider;
-		if (provider instanceof WorldProviderSpace) {
-			WorldProviderSpace spaceProvider = (WorldProviderSpace) provider;
-			CelestialBody celBody = spaceProvider.getCelestialBody();
-			return celBody;
+	public static CelestialBody getCelestialBodyByID(int dimID) {
+		CelestialBody body = null;
+		if (dimID == ConfigManagerZG.planetZollusDimensionId) {
+			body = ZGPlanets.planetZollus;
+		} else if (dimID == ConfigManagerZG.planetKriffonDimensionId) {
+			body = ZGPlanets.planetKriffon;
+		} else if (dimID == ConfigManagerZG.planetPurgotDimensionId) {
+			body = ZGPlanets.planetPurgot;
+		} else if (dimID == ConfigManagerZG.planetEdenDimensionId) {
+			body = ZGPlanets.planetEden;
 		}
-		return null;
+		if (body == null) {
+			ZGHelper.Log("Celestial Body was null.");
+		}
+		return body;
 	}
+	
 }
