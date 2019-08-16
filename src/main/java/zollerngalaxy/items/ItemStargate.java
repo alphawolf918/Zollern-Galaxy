@@ -21,7 +21,6 @@ import zollerngalaxy.core.ZollernGalaxyCore;
 import zollerngalaxy.core.dimensions.ZGDimensions;
 import zollerngalaxy.lib.helpers.CommonZGRegisterHelper;
 import zollerngalaxy.lib.helpers.ModHelperBase;
-import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.network.teleporter.MessageTeleportToDimension;
 import zollerngalaxy.proxy.IProxy;
 import com.mjr.planetprogression.api.research.ResearchHooksMP;
@@ -38,7 +37,7 @@ public class ItemStargate extends ZGItemBase {
 		this.gateTier = tier;
 	}
 	
-	private void teleportPlayer(World world, EntityPlayerMP player) {
+	private void teleportPlayer(World world, EntityPlayer player) {
 		int dim = player.dimension;
 		
 		CelestialBody destination = null;
@@ -76,7 +75,7 @@ public class ItemStargate extends ZGItemBase {
 		// TODO: Add more planets and moons! To be continued...
 	}
 	
-	private void sendToServer(int dimId, EntityPlayerMP player) {
+	private void sendToServer(int dimId, EntityPlayer player) {
 		int playerId = player.getEntityId();
 		CelestialBody destination = ZGDimensions.getCelestialBodyByID(dimId);
 		
@@ -87,14 +86,16 @@ public class ItemStargate extends ZGItemBase {
 		msg += " Could not locate destination on galaxy map.";
 		
 		if (ModHelperBase.usePlanetProgression) {
-			if (!ResearchHooksMP.hasUnlockedCelestialBody(player, destination)) {
-				canTP = false;
-				proxy.sendChatMessage(player, txtFormat + msg);
+			if (player instanceof EntityPlayerMP) {
+				EntityPlayerMP playerMP = (EntityPlayerMP) player;
+				if (!ResearchHooksMP.hasUnlockedCelestialBody(playerMP, destination)) {
+					canTP = false;
+					proxy.sendChatMessage(player, msg);
+				}
 			}
 		}
 		
 		if (canTP) {
-			ZGHelper.Log(TextFormatting.GREEN + bodyName + " researched! Teleporting Player...");
 			this.snw.sendToServer(new MessageTeleportToDimension(dimId, playerId));
 		}
 	}
@@ -103,10 +104,7 @@ public class ItemStargate extends ZGItemBase {
 	public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn,
 			EnumHand handIn) {
 		ItemStack itemstack = playerIn.getHeldItem(handIn);
-		if (playerIn instanceof EntityPlayerMP) {
-			EntityPlayerMP player = (EntityPlayerMP) playerIn;
-			this.teleportPlayer(worldIn, player);
-		}
+		this.teleportPlayer(worldIn, playerIn);
 		return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, itemstack);
 	}
 	

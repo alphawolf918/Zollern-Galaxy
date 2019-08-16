@@ -12,4 +12,6 @@ Zollern Galaxy v2.0.2
 * Purgot ores now have a chance to give varying Potion Effects when harvested/destroyed by a Player if they are in Survival Mode.
 * Mod set to load after Planet Progression.
 * Renamed Star Gate "Tiers" to "Protocols" to avoid confusion.
-* 
+* Star Gates are now integrated with Planet Progression.
+    * If the Planet or Moon that the Gate takes the Player to is not yet researched, they will be prevented from going there.
+    * In the future this will be toggleable in the config.
