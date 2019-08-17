@@ -5,4 +5,5 @@ Zollern Galaxy v2.0.3
 * Updated mcmod.info file.
 * Removed extra space from chat message when a planet was undiscovered when using Planet Progressions.
 * Changed text formatting colors for Star Gates.
+* Working on fixing an exploit with blocks.
 * 
