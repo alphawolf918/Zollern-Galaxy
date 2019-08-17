@@ -40,7 +40,7 @@ public class ZGBlockBase extends Block implements ISingleZGBlockRender, IJSONBlo
 		this.name = blockName;
 		this.setBlockName(this, blockName);
 		this.setHardResist(hardResist);
-		this.setHarvestLevel("pickaxe", EnumHarvestLevel.DIAMOND.getHarvestLevel());
+		this.setBlockHarvestLevel("pickaxe", EnumHarvestLevel.DIAMOND.getHarvestLevel());
 		this.setSoundType(blockSound);
 		this.setBlockType(blockType);
 		this.translucent = false;

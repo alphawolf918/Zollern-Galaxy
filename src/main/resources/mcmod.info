@@ -1,14 +1,14 @@
 [
 {
-  "modid": "zollernextras",
-  "name": "Zollern Extras",
-  "description": "A playground mod full of extras and fun things.",
+  "modid": "zollerngalaxy",
+  "name": "Zollern Galaxy",
+  "description": "An adventurous space exploration add-on mod for Galacticraft.An adventurous space exploration add-on mod for Galacticraft.",
   "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "",
   "updateUrl": "",
   "authorList": ["ZollernWolf"],
-  "credits": "Zollern Wolf, Master Zane, and Lazy Logic.",
+  "credits": "Zollern Wolf, Steve Kung, MJRLegends, micdoodle8.",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []

@@ -12,6 +12,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.core.enums.EnumBlockType;
+import zollerngalaxy.core.enums.EnumHarvestLevel;
 
 public class ZGBlockGrass extends ZGBlockDirt implements IGrowable {
 	
@@ -22,6 +23,7 @@ public class ZGBlockGrass extends ZGBlockDirt implements IGrowable {
 		this.setTickRandomly(true);
 		this.setShouldJSONIgnore(true);
 		this.setBlockType(EnumBlockType.GRASS);
+		this.setBlockHarvestLevel("shovel", EnumHarvestLevel.IRON.getHarvestLevel());
 	}
 	
 	public ZGBlockGrass(String blockName) {

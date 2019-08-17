@@ -11,7 +11,7 @@ public class ZGBlockDirt extends ZGBlockBase {
 		super(blockName, hardResist);
 		this.setMaterial(Material.GROUND);
 		this.setSoundType(SoundType.GROUND);
-		this.setHarvestLevel("shovel", EnumHarvestLevel.IRON.getHarvestLevel());
+		this.setBlockHarvestLevel("shovel", EnumHarvestLevel.IRON.getHarvestLevel());
 		this.setBlockType(EnumBlockType.DIRT);
 	}
 	

@@ -1,17 +1,8 @@
 ===== CHANGELOG =====
-Zollern Galaxy v2.0.2
+Zollern Galaxy v2.0.3
 =====================
 
-* Updated to latest Forge and Galacticraft versions.
-* Fixed glitch with Planet Progression not picking up Zollern Galaxy planets/moons.
-    * Removed my "workaround" that was temporary. Many thanks to MJRLegends for his help!
-* Added a search bar to the Creative Tabs.
-* Fixed Kriffon Crystal recipe to use Tier 2 Heavy Duty Plating instead of Virinium.
-* Changed EnumBlockVariant to EnumBlockTier (10 Tiers but only 4 matter right now).
-* Kriffon ores now have a chance to blow up when harvested/destroyed by a Player if they are in Survival Mode.
-* Purgot ores now have a chance to give varying Potion Effects when harvested/destroyed by a Player if they are in Survival Mode.
-* Mod set to load after Planet Progression.
-* Renamed Star Gate "Tiers" to "Protocols" to avoid confusion.
-* Star Gates are now integrated with Planet Progression.
-    * If the Planet or Moon that the Gate takes the Player to is not yet researched, they will be prevented from going there.
-    * In the future this will be toggleable in the config.
+* Updated mcmod.info file.
+* Removed extra space from chat message when a planet was undiscovered when using Planet Progressions.
+* Changed text formatting colors for Star Gates.
+* 

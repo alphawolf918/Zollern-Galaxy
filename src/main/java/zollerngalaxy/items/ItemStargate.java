@@ -40,8 +40,6 @@ public class ItemStargate extends ZGItemBase {
 	private void teleportPlayer(World world, EntityPlayer player) {
 		int dim = player.dimension;
 		
-		CelestialBody destination = null;
-		
 		switch (this.gateTier) {
 		default:
 			this.proxy.sendChatMessage(player, "This tier isn't functional yet.");
@@ -71,6 +69,27 @@ public class ItemStargate extends ZGItemBase {
 				this.sendToServer(ConfigManagerZG.planetPurgotDimensionId, player);
 			}
 			break;
+		case 4:
+			// TODO
+			break;
+		case 5:
+			// TODO
+			break;
+		case 6:
+			// TODO
+			break;
+		case 7:
+			// TODO
+			break;
+		case 8:
+			// TODO
+			break;
+		case 9:
+			// TODO
+			break;
+		case 10:
+			// TODO
+			break;
 		}
 		// TODO: Add more planets and moons! To be continued...
 	}
@@ -82,7 +101,7 @@ public class ItemStargate extends ZGItemBase {
 		boolean canTP = true;
 		String txtFormat = TextFormatting.BOLD + " " + TextFormatting.DARK_RED;
 		String bodyName = destination.getLocalizedName();
-		String msg = "Unable to teleport; " + bodyName + "  not yet discovered.";
+		String msg = "Unable to teleport; " + bodyName + " not yet discovered.";
 		msg += " Could not locate destination on galaxy map.";
 		
 		if (ModHelperBase.usePlanetProgression) {
@@ -117,12 +136,12 @@ public class ItemStargate extends ZGItemBase {
 	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip,
 			ITooltipFlag flagIn) {
-		if (CommonZGRegisterHelper.isControlKeyDown() || CommonZGRegisterHelper.isShiftKeyDown()) {
-			tooltip.add(TextFormatting.ITALIC + "A gateway between two");
-			tooltip.add(TextFormatting.ITALIC + "worlds, moving the Player");
-			tooltip.add(TextFormatting.ITALIC + "through space and time.");
+		if (CommonZGRegisterHelper.isShiftKeyDown()) {
+			tooltip.add(TextFormatting.GREEN + "A gateway between two");
+			tooltip.add(TextFormatting.GREEN + "worlds, moving the Player");
+			tooltip.add(TextFormatting.GREEN + "through space and time.");
 		} else {
-			tooltip.add("Hold LSHIFT for more information.");
+			tooltip.add(TextFormatting.GOLD + "Hold LSHIFT for more information.");
 		}
 	}
 }
