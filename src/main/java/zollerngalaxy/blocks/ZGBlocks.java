@@ -90,7 +90,8 @@ public class ZGBlocks {
 			.setShouldGivePotionEffect(true, MobEffects.INVISIBILITY);
 	public static final Block purgGoldOre = new ZGBlockOre("purggoldore", 2.6F)
 			.setShouldGivePotionEffect(true, MobEffects.HUNGER);
-	public static final Block purgCopperOre = new ZGBlockOre("purgcopperore", 2.1F);
+	public static final Block purgCopperOre = new ZGBlockOre("purgcopperore", 2.1F)
+			.setShouldGivePotionEffect(true, MobEffects.UNLUCK);
 	public static final Block purgDiamondOre = new ZGOreGem("purgdiamondore", 2.9F, Items.DIAMOND)
 			.setShouldGivePotionEffect(true, MobEffects.SLOWNESS);
 	public static final Block purgEmeraldOre = new ZGOreGem("purgemeraldore", 3.0F, Items.EMERALD)

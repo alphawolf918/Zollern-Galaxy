@@ -17,6 +17,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.core.enums.EnumBlockType;
+import zollerngalaxy.core.enums.EnumHarvestLevelZG;
 
 public class ZGBlockFlower extends ZGBlockBase {
 	
@@ -96,5 +97,15 @@ public class ZGBlockFlower extends ZGBlockBase {
 	@Override
 	public boolean shouldJSONIgnore() {
 		return true;
+	}
+	
+	@Override
+	public int getHarvestLevel(IBlockState state) {
+		return EnumHarvestLevelZG.WOOD.getHarvestLevel();
+	}
+	
+	@Override
+	public String getHarvestTool(IBlockState state) {
+		return "";
 	}
 }

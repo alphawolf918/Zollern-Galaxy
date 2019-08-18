@@ -4,6 +4,7 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import zollerngalaxy.core.enums.EnumHarvestLevelZG;
+import zollerngalaxy.core.enums.EnumHarvestToolZG;
 
 public class ZGBlockLog extends ZGBlockPlanks {
 	
@@ -47,6 +48,16 @@ public class ZGBlockLog extends ZGBlockPlanks {
 	@Override
 	public boolean isWood(net.minecraft.world.IBlockAccess world, BlockPos pos) {
 		return true;
+	}
+	
+	@Override
+	public int getHarvestLevel(IBlockState state) {
+		return EnumHarvestLevelZG.IRON.getHarvestLevel();
+	}
+	
+	@Override
+	public String getHarvestTool(IBlockState state) {
+		return EnumHarvestToolZG.AXE.getHarvestTool();
 	}
 	
 }

@@ -93,7 +93,7 @@ public class ZGOreGem extends ZGBlockOre {
 	@Override
 	public int quantityDropped(Random rand) {
 		int numDropped = 1;
-		switch (this.getBlockVariant()) {
+		switch (this.getBlockTier()) {
 		default:
 			numDropped = ZGHelper.rngNumber(1, 1);
 			break;

@@ -1,5 +1,6 @@
 package zollerngalaxy.blocks;
 
+import micdoodle8.mods.galacticraft.api.block.ITerraformableBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -19,11 +20,12 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.blocks.creativetabs.ZGTabs;
 import zollerngalaxy.core.enums.EnumBlockType;
 import zollerngalaxy.core.enums.EnumHarvestLevelZG;
+import zollerngalaxy.core.enums.EnumHarvestToolZG;
 import zollerngalaxy.lib.helpers.json.JSONRegistryHelper;
 
-public class ZGBlockBase extends Block implements ISingleZGBlockRender, IJSONBlock {
+public class ZGBlockBase extends Block implements ISingleZGBlockRender, IJSONBlock,
+		ITerraformableBlock {
 	
-	protected static ZGBlockBase instance;
 	protected static Material blockMaterial = Material.ROCK;
 	protected static SoundType blockSound = SoundType.STONE;
 	protected EnumBlockType blockType = EnumBlockType.NORMAL;
@@ -36,11 +38,9 @@ public class ZGBlockBase extends Block implements ISingleZGBlockRender, IJSONBlo
 	
 	public ZGBlockBase(String blockName, float hardResist) {
 		super(blockMaterial);
-		instance = this;
 		this.name = blockName;
 		this.setBlockName(this, blockName);
 		this.setHardResist(hardResist);
-		this.setBlockHarvestLevel("pickaxe", EnumHarvestLevelZG.DIAMOND.getHarvestLevel());
 		this.setSoundType(blockSound);
 		this.setBlockType(blockType);
 		this.translucent = false;
@@ -125,9 +125,17 @@ public class ZGBlockBase extends Block implements ISingleZGBlockRender, IJSONBlo
 		return this.shouldAlwaysBurn;
 	}
 	
+	protected static void setHarvestLevel(Block block, String toolClass, int level) {
+		block.setHarvestLevel(toolClass, level);
+	}
+	
+	@Override
+	public void setHarvestLevel(String toolClass, int level) {
+		super.setHarvestLevel(toolClass, level);
+	}
+	
 	public Block setBlockHarvestLevel(String toolClass, int level) {
 		this.setHarvestLevel(toolClass, level);
-		this.setHarvestLevel(toolClass, level, this.getDefaultState());
 		return this;
 	}
 	
@@ -139,10 +147,6 @@ public class ZGBlockBase extends Block implements ISingleZGBlockRender, IJSONBlo
 	@Override
 	public Material getMaterial(IBlockState block) {
 		return blockMaterial;
-	}
-	
-	public static ZGBlockBase instance() {
-		return instance;
 	}
 	
 	@Override
@@ -198,5 +202,20 @@ public class ZGBlockBase extends Block implements ISingleZGBlockRender, IJSONBlo
 	@Override
 	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
 		return FULL_BLOCK_AABB;
+	}
+	
+	@Override
+	public int getHarvestLevel(IBlockState state) {
+		return EnumHarvestLevelZG.IRON.getHarvestLevel();
+	}
+	
+	@Override
+	public String getHarvestTool(IBlockState state) {
+		return EnumHarvestToolZG.PICKAXE.getHarvestTool();
+	}
+	
+	@Override
+	public boolean isTerraformable(World world, BlockPos pos) {
+		return true;
 	}
 }

@@ -10,10 +10,11 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import zollerngalaxy.core.enums.EnumBlockTier;
 import zollerngalaxy.core.enums.EnumBlockType;
+import zollerngalaxy.core.enums.EnumHarvestLevelZG;
 
 public class ZGBlockOre extends ZGBlockBase {
 	
-	protected EnumBlockTier oreVariant = EnumBlockTier.ONE;
+	protected EnumBlockTier oreTier = EnumBlockTier.ONE;
 	
 	protected boolean isExplosive = false;
 	protected int explosionWeight = 40;
@@ -94,12 +95,17 @@ public class ZGBlockOre extends ZGBlockBase {
 		}
 	}
 	
-	public EnumBlockTier getBlockVariant() {
-		return this.oreVariant;
+	public EnumBlockTier getBlockTier() {
+		return this.oreTier;
 	}
 	
-	public Block setBlockVariant(EnumBlockTier variantType) {
-		this.oreVariant = variantType;
+	public Block setBlockTier(EnumBlockTier variantType) {
+		this.oreTier = variantType;
 		return this;
+	}
+	
+	@Override
+	public int getHarvestLevel(IBlockState state) {
+		return EnumHarvestLevelZG.DIAMOND.getHarvestLevel();
 	}
 }
