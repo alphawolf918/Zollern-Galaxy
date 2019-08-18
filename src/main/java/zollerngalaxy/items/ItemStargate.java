@@ -16,6 +16,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import zollerngalaxy.compatibility.PlanetProgressionCompatibility;
 import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.ZollernGalaxyCore;
 import zollerngalaxy.core.dimensions.ZGDimensions;
@@ -23,7 +24,6 @@ import zollerngalaxy.lib.helpers.CommonZGRegisterHelper;
 import zollerngalaxy.lib.helpers.ModHelperBase;
 import zollerngalaxy.network.teleporter.MessageTeleportToDimension;
 import zollerngalaxy.proxy.IProxy;
-import com.mjr.planetprogression.api.research.ResearchHooksMP;
 
 public class ItemStargate extends ZGItemBase {
 	
@@ -107,7 +107,7 @@ public class ItemStargate extends ZGItemBase {
 		if (ModHelperBase.usePlanetProgression) {
 			if (player instanceof EntityPlayerMP) {
 				EntityPlayerMP playerMP = (EntityPlayerMP) player;
-				if (!ResearchHooksMP.hasUnlockedCelestialBody(playerMP, destination)) {
+				if (!PlanetProgressionCompatibility.hasResearched(playerMP, destination)) {
 					canTP = false;
 					proxy.sendChatMessage(player, msg);
 				}

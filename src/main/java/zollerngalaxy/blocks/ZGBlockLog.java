@@ -3,13 +3,13 @@ package zollerngalaxy.blocks;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import zollerngalaxy.core.enums.EnumHarvestLevel;
+import zollerngalaxy.core.enums.EnumHarvestLevelZG;
 
 public class ZGBlockLog extends ZGBlockPlanks {
 	
 	public ZGBlockLog(String blockName, float hardResist) {
 		super(blockName, hardResist);
-		this.setHarvestLevel("axe", EnumHarvestLevel.IRON.getHarvestLevel());
+		this.setHarvestLevel("axe", EnumHarvestLevelZG.IRON.getHarvestLevel());
 		this.setShouldJSONIgnore(true);
 	}
 	

@@ -18,7 +18,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.blocks.creativetabs.ZGTabs;
 import zollerngalaxy.core.enums.EnumBlockType;
-import zollerngalaxy.core.enums.EnumHarvestLevel;
+import zollerngalaxy.core.enums.EnumHarvestLevelZG;
 import zollerngalaxy.lib.helpers.json.JSONRegistryHelper;
 
 public class ZGBlockBase extends Block implements ISingleZGBlockRender, IJSONBlock {
@@ -40,7 +40,7 @@ public class ZGBlockBase extends Block implements ISingleZGBlockRender, IJSONBlo
 		this.name = blockName;
 		this.setBlockName(this, blockName);
 		this.setHardResist(hardResist);
-		this.setBlockHarvestLevel("pickaxe", EnumHarvestLevel.DIAMOND.getHarvestLevel());
+		this.setBlockHarvestLevel("pickaxe", EnumHarvestLevelZG.DIAMOND.getHarvestLevel());
 		this.setSoundType(blockSound);
 		this.setBlockType(blockType);
 		this.translucent = false;
@@ -127,6 +127,7 @@ public class ZGBlockBase extends Block implements ISingleZGBlockRender, IJSONBlo
 	
 	public Block setBlockHarvestLevel(String toolClass, int level) {
 		this.setHarvestLevel(toolClass, level);
+		this.setHarvestLevel(toolClass, level, this.getDefaultState());
 		return this;
 	}
 	

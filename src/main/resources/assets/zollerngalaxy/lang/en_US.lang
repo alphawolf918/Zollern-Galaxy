@@ -144,7 +144,6 @@ container.eden.treasurechest.name=Eden's Treasure
 
 item.zolluscrystal.name=Zolnium Crystal
 item.heartofzol.name=Zollus Heartium
-item.zolluskriffontablet.name=Ancient Zollus Tablet
 
 item.cobaltdust.name=Pulverized Cobalt
 item.diamonddust.name=Pulverized Diamond
@@ -163,11 +162,9 @@ item.rawviri.name=Raw Virinium
 item.ingotviri.name=Virinium Ingot
 item.alienstone.name=Ancient Eden's Essence
 item.edencrystal.name=Eden's Crystal
-item.edenzollustablet.name=Ancient Eden's Tablet
 
 item.ingotcobalt.name=Cobalt Ingot
 item.kriffoncrystal.name=Kriffon Crystal
-item.kriffonpurgottablet.name=Ancient Kriffon Tablet
 
 item.ingotevenium.name=Evenium Ingot
 item.purgotcrystal.name=Purgot Crystal

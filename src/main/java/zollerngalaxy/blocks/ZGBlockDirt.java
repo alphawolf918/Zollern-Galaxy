@@ -3,7 +3,7 @@ package zollerngalaxy.blocks;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import zollerngalaxy.core.enums.EnumBlockType;
-import zollerngalaxy.core.enums.EnumHarvestLevel;
+import zollerngalaxy.core.enums.EnumHarvestLevelZG;
 
 public class ZGBlockDirt extends ZGBlockBase {
 	
@@ -11,7 +11,7 @@ public class ZGBlockDirt extends ZGBlockBase {
 		super(blockName, hardResist);
 		this.setMaterial(Material.GROUND);
 		this.setSoundType(SoundType.GROUND);
-		this.setBlockHarvestLevel("shovel", EnumHarvestLevel.IRON.getHarvestLevel());
+		this.setBlockHarvestLevel("shovel", EnumHarvestLevelZG.IRON.getHarvestLevel());
 		this.setBlockType(EnumBlockType.DIRT);
 	}
 	
