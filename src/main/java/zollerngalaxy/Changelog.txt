@@ -7,4 +7,4 @@ Zollern Galaxy v2.0.3
 * Changed text formatting colors for Star Gates.
 * Added a Potion Effect to Purgot Copper Ore.
 * Made planet blocks terraformable.
-* 
+* Fixed block exploit that allowed Players to harvest any block with just their hand.

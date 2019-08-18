@@ -37,7 +37,7 @@ public class ZGBlockBase extends Block implements ISingleZGBlockRender, IJSONBlo
 	protected static String name;
 	
 	public ZGBlockBase(String blockName, float hardResist) {
-		super(blockMaterial);
+		super(Material.ROCK);
 		this.name = blockName;
 		this.setBlockName(this, blockName);
 		this.setHardResist(hardResist);

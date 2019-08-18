@@ -11,6 +11,8 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import zollerngalaxy.core.enums.EnumHarvestLevelZG;
+import zollerngalaxy.core.enums.EnumHarvestToolZG;
 
 public class ZGBlockFalling extends ZGBlockBase {
 	
@@ -18,6 +20,7 @@ public class ZGBlockFalling extends ZGBlockBase {
 	
 	public ZGBlockFalling(String blockName, float hardResist) {
 		super(blockName, hardResist);
+		this.setMaterial(Material.SAND);
 	}
 	
 	@Override
@@ -118,6 +121,16 @@ public class ZGBlockFalling extends ZGBlockBase {
 	@SideOnly(Side.CLIENT)
 	public int getDustColor(IBlockState p_189876_1_) {
 		return -16777216;
+	}
+	
+	@Override
+	public int getHarvestLevel(IBlockState state) {
+		return EnumHarvestLevelZG.IRON.getHarvestLevel();
+	}
+	
+	@Override
+	public String getHarvestTool(IBlockState state) {
+		return EnumHarvestToolZG.SHOVEL.getHarvestTool();
 	}
 	
 }

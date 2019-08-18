@@ -6,7 +6,6 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import zollerngalaxy.core.enums.EnumBlockType;
-import zollerngalaxy.core.enums.EnumHarvestLevelZG;
 
 public class ZGGravel extends ZGBlockFalling {
 	
@@ -14,7 +13,6 @@ public class ZGGravel extends ZGBlockFalling {
 		super(blockName, hardResist);
 		this.setSoundType(SoundType.GROUND);
 		this.setBlockType(EnumBlockType.GRAVEL);
-		this.setBlockHarvestLevel("shovel", EnumHarvestLevelZG.IRON.getHarvestLevel());
 	}
 	
 	@Override
