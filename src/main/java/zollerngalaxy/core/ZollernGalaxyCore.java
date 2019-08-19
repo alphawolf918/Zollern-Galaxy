@@ -41,6 +41,7 @@ public class ZollernGalaxyCore {
 	@Mod.Instance(ZGInfo.MOD_ID)
 	private static ZollernGalaxyCore INSTANCE;
 	
+	// CHANGE THIS TO FALSE BEFORE DEPLOYMENT
 	private static final boolean DEV_MODE = false;
 	
 	public static SimpleNetworkWrapper snw;

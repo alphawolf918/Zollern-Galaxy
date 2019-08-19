@@ -21,6 +21,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.IShearable;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import zollerngalaxy.lib.helpers.json.JSONRegistryHelper;
 
 public class ZGBlockTallGrass extends ZGBlockFlower implements IGrowable, IShearable {
 	
@@ -31,6 +32,7 @@ public class ZGBlockTallGrass extends ZGBlockFlower implements IGrowable, IShear
 	protected ZGBlockTallGrass(String blockName) {
 		super(blockName);
 		this.setMaterial(Material.VINE);
+		JSONRegistryHelper.registerFlowerBlock(blockName);
 	}
 	
 	@Override

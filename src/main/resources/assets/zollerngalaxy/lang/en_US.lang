@@ -129,7 +129,8 @@ tile.xathstone.name=Xathian Stone
 tile.xathcobblerock.name=Xathian Cobblerock
 tile.xathdirt.name=Xathian Dirt
 tile.xathgrass.name=Xathian Grass
-tile.xathiusprometheanore.name=Xathian Promethean Ore
+tile.xathtallgrass.name=Xathian Tall Grass
+tile.xathprometheanore.name=Xathian Promethean Ore
 
 tile.oasisgrass.name=Oasis Grass
 tile.oasisstone.name=Oasis Stone

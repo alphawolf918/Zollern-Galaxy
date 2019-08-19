@@ -109,10 +109,13 @@ public class ZGBlocks {
 	
 	// Eden
 	public static final Block edenSurfaceRock = new ZGBlockBase("edensurfacerock", 2.1F);
-	public static final Block edenGrass = new ZGBlockGrass("edengrass", 1.2F);
-	public static final Block edenSwampGrass = new ZGBlockGrass("edenswampgrass", 1.2F);
-	public static final Block edenTallGrass = new ZGBlockTallGrass("edentallgrass");
 	public static final Block edenSoil = new ZGBlockDirt("edensoil", 1.6F);
+	public static final Block edenGrass = new ZGBlockGrassEden("edengrass");
+	public static final Block edenTallGrass = new ZGBlockTallGrass("edentallgrass");
+	public static final Block edenSwampGrass = new ZGBlockGrassEden("edenswampgrass");
+	public static final Block edenSnow = new ZGBlockGrassEden("edengrass_snow")
+			.setSound(SoundType.SNOW);
+	public static final Block edenGoldenGrass = new ZGBlockGrassEden("edengoldengrass");
 	public static final Block edenCobbleRock = new ZGBlockBase("edencobblerock", 1.5F)
 			.setBlockType(EnumBlockType.COBBLESTONE);
 	public static final Block edenStone = new ZGPlanetStone("edenrock", 2.6F,
@@ -127,9 +130,6 @@ public class ZGBlocks {
 	public static final Block edenGravel = new ZGGravel("edengravel", 2.1F);
 	public static final Block edenBrightStone = new ZGShineBlock("brightstone",
 			ZGItems.dustBrightstone);
-	public static final Block edenSnow = new ZGBlockGrass("edengrass_snow", 1.2F)
-			.setSound(SoundType.SNOW);
-	public static final Block edenGoldenGrass = new ZGBlockGrass("edengoldengrass", 1.2F);
 	public static final Block edenWoodLog = new ZGBlockLog("edenwoodlog");
 	public static final Block edenWoodLeaves = new ZGBlockLeaves("edenwoodleaves");
 	public static final Block edenWoodPlanks = new ZGBlockPlanks("edenwoodplanks");
@@ -164,7 +164,15 @@ public class ZGBlocks {
 			ZGItems.heartOfZol);
 	
 	// Xathius
-	// TODO
+	public static final Block xathRock = new ZGBlockBase("xathrock");
+	public static final Block xathCobble = new ZGBlockBase("xathcobblerock")
+			.setBlockType(EnumBlockType.COBBLESTONE);
+	public static final Block xathStone = new ZGPlanetStone("xathstone", 3.1F, ZGBlocks.xathCobble);
+	public static final Block xathDirt = new ZGBlockDirt("xathdirt");
+	public static final Block xathTallGrass = new ZGBlockTallGrass("xathtallgrass");
+	public static final Block xathGrass = new ZGBlockGrassXath("xathgrass");
+	public static final Block xathPrometheanOre = new ZGOreGem("xathprometheanore", 3.6F,
+			ZGItems.prometheanCrystal);
 	
 	// Oasis
 	// TODO
@@ -176,14 +184,6 @@ public class ZGBlocks {
 	
 	// Other
 	public static final Block blockCrater = new ZGBlockBase("crater_rock", 2.4F);
-	
-	// Next release...
-	// Oasis
-	// TODO
-	
-	// Next release...
-	// Xathius
-	// TODO
 	
 	public static void init() {
 		ZGBlocks.registerBlocks(edenWoodSapling, edenFruit, edenFlower, edenFlowerBlack,
@@ -205,8 +205,9 @@ public class ZGBlocks {
 				edenPlatinumOre, edenCoalOre, edenCopperOre, edenDeshOre, edenDiamondOre,
 				edenEmeraldOre, edenGoldOre, edenSilverOre, edenIronOre, edenLapisOre,
 				edenMeteoricIronOre, edenRedstoneOre, edenTinOre, edenLeadOre, edenNickleOre,
-				edenViriniumOre, edenCobaltOre, edenEveniumOre, edenHeartiumOre, blockViri,
-				blockCobalt, blockEve, blockCrater);
+				edenViriniumOre, edenCobaltOre, edenEveniumOre, edenHeartiumOre, xathRock,
+				xathCobble, xathStone, xathGrass, xathDirt, xathTallGrass, xathPrometheanOre,
+				blockViri, blockCobalt, blockEve, blockCrater);
 		ZGHelper.Log("Loaded a total of " + totalBlocks + " new blocks.");
 	}
 	

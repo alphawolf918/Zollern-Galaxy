@@ -50,6 +50,10 @@ public class ZGBlockBase extends Block implements ISingleZGBlockRender, IJSONBlo
 		}
 	}
 	
+	public ZGBlockBase(String blockName) {
+		this(blockName, 2.0F);
+	}
+	
 	public void setBlockName(Block block, final String blockName) {
 		block.setUnlocalizedName(blockName);
 	}
