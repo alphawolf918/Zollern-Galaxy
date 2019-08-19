@@ -163,6 +163,12 @@ public class ZGBlocks {
 	public static final Block edenHeartiumOre = new ZGOreGem("edenheartiumore", 2.8F,
 			ZGItems.heartOfZol);
 	
+	// Xathius
+	// TODO
+	
+	// Oasis
+	// TODO
+	
 	// Metals
 	public static final Block blockViri = new ZGBlockMetal("viriblock");
 	public static final Block blockEve = new ZGBlockMetal("eveniumblock");

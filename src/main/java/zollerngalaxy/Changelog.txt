@@ -1,10 +1,5 @@
 ===== CHANGELOG =====
-Zollern Galaxy v2.0.3
+Zollern Galaxy v2.0.4
 =====================
 
-* Updated mcmod.info file.
-* Removed extra space from chat message when a planet was undiscovered when using Planet Progressions.
-* Changed text formatting colors for Star Gates.
-* Added a Potion Effect to Purgot Copper Ore.
-* Made planet blocks terraformable.
-* Fixed block exploit that allowed Players to harvest any block with just their hand.
+* 
