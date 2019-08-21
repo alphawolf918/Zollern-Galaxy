@@ -171,6 +171,7 @@ public class ZGBlocks {
 	public static final Block xathDirt = new ZGBlockDirt("xathdirt");
 	public static final Block xathTallGrass = new ZGBlockTallGrass("xathtallgrass");
 	public static final Block xathGrass = new ZGBlockGrassXath("xathgrass");
+	public static final Block xathGravel = new ZGGravel("xathgravel");
 	public static final Block xathPrometheanOre = new ZGOreGem("xathprometheanore", 3.6F,
 			ZGItems.prometheanCrystal);
 	
@@ -206,8 +207,8 @@ public class ZGBlocks {
 				edenEmeraldOre, edenGoldOre, edenSilverOre, edenIronOre, edenLapisOre,
 				edenMeteoricIronOre, edenRedstoneOre, edenTinOre, edenLeadOre, edenNickleOre,
 				edenViriniumOre, edenCobaltOre, edenEveniumOre, edenHeartiumOre, xathRock,
-				xathCobble, xathStone, xathGrass, xathDirt, xathTallGrass, xathPrometheanOre,
-				blockViri, blockCobalt, blockEve, blockCrater);
+				xathCobble, xathStone, xathGrass, xathDirt, xathGravel, xathTallGrass,
+				xathPrometheanOre, blockViri, blockCobalt, blockEve, blockCrater);
 		ZGHelper.Log("Loaded a total of " + totalBlocks + " new blocks.");
 	}
 	

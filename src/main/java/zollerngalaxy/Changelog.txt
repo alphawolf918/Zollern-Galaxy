@@ -2,4 +2,6 @@
 Zollern Galaxy v2.0.4
 =====================
 
+* Added planet Xathius.
+	* Abstract, multi-colored planet with minor radiation and a unique atmospheric composition as well as a colorful sky.
 * 

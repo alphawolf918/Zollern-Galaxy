@@ -33,6 +33,7 @@ import zollerngalaxy.biomes.eden.BiomeTerranValley;
 import zollerngalaxy.biomes.kriffon.BiomeKriffon;
 import zollerngalaxy.biomes.purgot.BiomeLimbo;
 import zollerngalaxy.biomes.purgot.BiomePurgot;
+import zollerngalaxy.biomes.xathius.BiomeAbstractPlains;
 import zollerngalaxy.biomes.zollus.BiomeZollus;
 import zollerngalaxy.lib.helpers.CommonZGRegisterHelper;
 import zollerngalaxy.lib.helpers.ZGHelper;
@@ -42,13 +43,17 @@ public class ZGBiomes {
 	public static final List<BiomeGenBaseGC> biomeList = new LinkedList<>();
 	private static int totalBiomes = 0;
 	
+	// Zollus
 	public static final Biome ZOLLUS = new BiomeZollus(new BiomeProperties("Zollus"));
 	
+	// Kriffon
 	public static final Biome KRIFFON = new BiomeKriffon(new BiomeProperties("Kriffon"));
 	
-	public static final Biome PURGOT = new BiomePurgot(new BiomeProperties("Purgotary"));
-	public static final Biome LIMBO = new BiomeLimbo(new BiomeProperties("Limbo"));
+	// Purgot
+	public static final Biome PURGOT_BASE = new BiomePurgot(new BiomeProperties("Purgotary"));
+	public static final Biome PURGOT_LIMBO = new BiomeLimbo(new BiomeProperties("Limbo"));
 	
+	// Eden
 	public static final Biome EDEN_GREEN_LANDS = new BiomeGreenLands(new BiomeProperties(
 			"Green Lands"));
 	public static final Biome EDEN_BLOOD_DESERT = new BiomeBloodDesert(new BiomeProperties(
@@ -71,6 +76,13 @@ public class ZGBiomes {
 			"Asteroid Craters"));
 	public static final Biome EDEN_OCEAN = new BiomeEdenOcean(new BiomeProperties("Ocean of Eden"));
 	
+	// Xathius
+	public static final Biome XATHIUS_ABSTRACT_PLAINS = new BiomeAbstractPlains(
+			new BiomeProperties("Abstract Plains"));
+	
+	// Oasis
+	// TODO
+	
 	public static void init() {
 		// Zollus
 		ZGBiomes.addBiome(ZGBiomes.ZOLLUS, COLD, DEAD, DRY);
@@ -79,8 +91,8 @@ public class ZGBiomes {
 		ZGBiomes.addBiome(ZGBiomes.KRIFFON, HOT, DEAD, DRY);
 		
 		// Purgot
-		ZGBiomes.addBiome(ZGBiomes.PURGOT, DEAD, DRY);
-		ZGBiomes.addBiome(ZGBiomes.LIMBO, SPOOKY, DEAD);
+		ZGBiomes.addBiome(ZGBiomes.PURGOT_BASE, DEAD, DRY);
+		ZGBiomes.addBiome(ZGBiomes.PURGOT_LIMBO, SPOOKY, DEAD);
 		
 		// Eden
 		ZGBiomes.addBiome(ZGBiomes.EDEN_GREEN_LANDS, LUSH, WET);
@@ -94,6 +106,12 @@ public class ZGBiomes {
 		ZGBiomes.addBiome(ZGBiomes.EDEN_FLOWER_GARDEN, LUSH, WET, PLAINS);
 		ZGBiomes.addBiome(ZGBiomes.EDEN_CRATERS, MOUNTAIN, DEAD, SPOOKY);
 		ZGBiomes.addBiome(ZGBiomes.EDEN_OCEAN, LUSH, WET, OCEAN);
+		
+		// Xathius
+		ZGBiomes.addBiome(ZGBiomes.XATHIUS_ABSTRACT_PLAINS, LUSH, PLAINS);
+		
+		// Oasis
+		// TODO
 		
 		ZGHelper.Log("Loaded a total of " + totalBiomes + " new biomes.");
 	}

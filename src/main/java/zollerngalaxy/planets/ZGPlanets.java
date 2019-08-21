@@ -14,6 +14,7 @@ import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderEden;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderKriffon;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderPurgot;
+import zollerngalaxy.core.dimensions.worldproviders.WorldProviderXathius;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderZollus;
 import zollerngalaxy.core.enums.EnumPlanetClass;
 import zollerngalaxy.lib.ZGInfo;
@@ -96,7 +97,7 @@ public class ZGPlanets {
 		totalSystems++;
 		
 		// Praedyth System
-		systemPraedyth.setMapPosition(new Vector3(-1.2F, 1.4F, -0.3F));
+		systemPraedyth.setMapPosition(new Vector3(-1.1F, 1.3F, -0.2F));
 		starPraedyth.setParentSolarSystem(systemPraedyth);
 		starPraedyth.setTierRequired(-1);
 		starPraedyth.setRelativeSize(40.0F);
@@ -141,7 +142,7 @@ public class ZGPlanets {
 		totalSystems++;
 		
 		// Nova System
-		systemNova.setMapPosition(new Vector3(-2.5F, 4.0F, -2.0F));
+		systemNova.setMapPosition(new Vector3(-2.0F, 1.6F, -2.0F));
 		starNova.setParentSolarSystem(systemNova);
 		starNova.setTierRequired(-1);
 		starNova.setRelativeSize(5.0F);
@@ -220,7 +221,7 @@ public class ZGPlanets {
 				EnumAtmosphericGas.NITROGEN, EnumAtmosphericGas.ARGON);
 		planetPurgot.setPlanetIcon("purgot");
 		planetPurgot.setAtmosphere();
-		planetPurgot.setBiomeInfo(ZGBiomes.PURGOT, ZGBiomes.LIMBO);
+		planetPurgot.setBiomeInfo(ZGBiomes.PURGOT_BASE, ZGBiomes.PURGOT_LIMBO);
 		planetPurgot.addChecklistKeys("equipOxygenSuit");
 		planetPurgot.setDimensionInfo(ConfigManagerZG.planetPurgotDimensionId,
 				WorldProviderPurgot.class);
@@ -255,16 +256,18 @@ public class ZGPlanets {
 		totalPlanets++;
 		
 		// Planet Xathius
+		planetXathius.setDimensionInfo(ConfigManagerZG.planetXathiusDimensionId,
+				WorldProviderXathius.class);
 		planetXathius.setParentSolarSystem(systemPraedyth);
 		planetXathius.setPlanetClass(EnumPlanetClass.NINE);
 		planetXathius.setRingColorRGB(0.1F, 0.9F, 1.4F);
 		planetXathius.setPhaseShift(0.0F);
-		planetXathius.setRelativeOrbitTime(3F);
+		planetXathius.setRelativeOrbitTime(2.5F);
 		planetXathius.setDistanceFromCenter(3.4F);
-		planetXathius.setTierRequired(5);
+		planetXathius.setTierRequired(6);
 		planetXathius.setRelativeSize(20.0F);
 		planetXathius.setPlanetTemperature(82.4f);
-		planetXathius.setPlanetToxicity(1.5f);
+		planetXathius.setPlanetToxicity(2.5f);
 		planetXathius.setPlanetRadiation(16.5f);
 		planetXathius.setWindLevel(3.2F);
 		planetXathius.setDensity(1.1F);
@@ -273,9 +276,7 @@ public class ZGPlanets {
 				EnumAtmosphericGas.NITROGEN, EnumAtmosphericGas.ARGON);
 		planetXathius.setAtmosphere();
 		planetXathius.setPlanetIcon("xathius");
-		// planetXathius.setDimensionInfo(
-		// ConfigManagerZG.planetXathiusDimensionId,
-		// WorldProviderXathius.class);
+		planetXathius.setBiomeInfo(ZGBiomes.XATHIUS_ABSTRACT_PLAINS);
 		totalPlanets++;
 		
 		// Planet Oasis

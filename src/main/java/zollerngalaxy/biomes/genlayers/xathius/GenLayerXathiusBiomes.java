@@ -1,4 +1,4 @@
-package zollerngalaxy.biomes.genlayers.purgot;
+package zollerngalaxy.biomes.genlayers.xathius;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,16 +9,17 @@ import net.minecraftforge.common.BiomeManager;
 import net.minecraftforge.common.BiomeManager.BiomeEntry;
 import net.minecraftforge.common.BiomeManager.BiomeType;
 import zollerngalaxy.biomes.ZGBiomes;
+import zollerngalaxy.biomes.genlayers.purgot.GenLayerPurgot;
 import zollerngalaxy.util.CachedEnum;
 import com.google.common.collect.ImmutableList;
 
-public class GenLayerPurgotBiomes extends GenLayerPurgot {
+public class GenLayerXathiusBiomes extends GenLayerPurgot {
 	
 	@SuppressWarnings("unchecked")
 	private List<BiomeEntry>[] biomes = new ArrayList[CachedEnum.valuesBiomeCached().length];
 	private ArrayList<BiomeEntry>[] biomesList = this.setupBiomes();
 	
-	public GenLayerPurgotBiomes(long seed) {
+	public GenLayerXathiusBiomes(long seed) {
 		super(seed);
 		
 		for (BiomeType type : CachedEnum.valuesBiomeCached()) {
@@ -38,8 +39,7 @@ public class GenLayerPurgotBiomes extends GenLayerPurgot {
 		@SuppressWarnings("unchecked")
 		ArrayList<BiomeEntry>[] currentBiomes = new ArrayList[CachedEnum.valuesBiomeCached().length];
 		List<BiomeEntry> list = new ArrayList<>();
-		list.add(new BiomeEntry(ZGBiomes.PURGOT_BASE, 75));
-		list.add(new BiomeEntry(ZGBiomes.PURGOT_LIMBO, 70));
+		list.add(new BiomeEntry(ZGBiomes.XATHIUS_ABSTRACT_PLAINS, 100));
 		
 		currentBiomes[BiomeType.WARM.ordinal()] = new ArrayList<>(list);
 		return currentBiomes;

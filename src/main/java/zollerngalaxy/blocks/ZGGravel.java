@@ -15,6 +15,10 @@ public class ZGGravel extends ZGBlockFalling {
 		this.setBlockType(EnumBlockType.GRAVEL);
 	}
 	
+	public ZGGravel(String blockName) {
+		this(blockName, 2.2F);
+	}
+	
 	@Override
 	public Item getItemDropped(IBlockState state, Random rand, int fortune) {
 		if (fortune > 3) {
