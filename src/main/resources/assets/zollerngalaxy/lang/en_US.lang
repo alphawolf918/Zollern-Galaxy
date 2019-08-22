@@ -250,5 +250,12 @@ solarsystem.asgard=Asgard
 solarsystem.vega=Vega
 solarsystem.Nova=Nova
 
+satellite.space_station.zollus=Zollus Space Station
+satellite.space_station.kriffon=Kriffon Space Station
+satellite.space_station.purgot=Purgot Space Station
+satellite.space_station.eden=Eden Space Station
+satellite.space_station.xathius=Xathius Space Station
+satellite.space_station.oasis=Oasis Space Station
+
 itemGroup.ZollernGalaxyBlocks=Zollern Galaxy Blocks
 itemGroup.ZollernGalaxyItems=Zollern Galaxy Items

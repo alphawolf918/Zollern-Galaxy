@@ -10,6 +10,7 @@ public class ConfigManagerZG {
 	
 	public static String CATEGORY_DIMENSIONS = "Dimensions";
 	public static String CATEGORY_MOONS = "Moons";
+	public static String CATEGORY_SATELLITES = "Space Stations";
 	public static String CATEGORY_MISC = "Miscallenous";
 	
 	// Planets (Psios)
@@ -47,6 +48,25 @@ public class ConfigManagerZG {
 	
 	// Planets (Nova)
 	public static int planetPrimorDimensionId;
+	
+	// Space Stations
+	public static int spaceStationZollusId;
+	public static int spaceStationZollusStaticId;
+	
+	public static int spaceStationKriffonId;
+	public static int spaceStationKriffonStaticId;
+	
+	public static int spaceStationPurgotId;
+	public static int spaceStationPurgotStaticId;
+	
+	public static int spaceStationEdenId;
+	public static int spaceStationEdenStaticId;
+	
+	public static int spaceStationXathiusId;
+	public static int spaceStationXathiusStaticId;
+	
+	public static int spaceStationOasisId;
+	public static int spaceStationOasisStaticId;
 	
 	// Misc
 	public static boolean canEarthAnimalsSpawnOnEden;
@@ -116,6 +136,44 @@ public class ConfigManagerZG {
 		// Planets (Nova)
 		planetPrimorDimensionId = configuration.get(CATEGORY_DIMENSIONS,
 				"Planet Primor Dimension ID", -7989).getInt();
+		
+		// Space Stations (Psios-6)
+		// Zollus
+		spaceStationZollusId = configuration.get(CATEGORY_SATELLITES, "Zollus Space Station ID",
+				-6000).getInt();
+		spaceStationZollusStaticId = configuration.get(CATEGORY_SATELLITES,
+				"Zollus Space Station Static ID", -6001).getInt();
+		
+		// Kriffon
+		spaceStationKriffonId = configuration.get(CATEGORY_SATELLITES, "Kriffon Space Station ID",
+				-6002).getInt();
+		spaceStationKriffonStaticId = configuration.get(CATEGORY_SATELLITES,
+				"Kriffon Space Station Static ID", -6003).getInt();
+		
+		// Purgot
+		spaceStationPurgotId = configuration.get(CATEGORY_SATELLITES, "Purgot Space Station ID",
+				-6004).getInt();
+		spaceStationPurgotStaticId = configuration.get(CATEGORY_SATELLITES,
+				"Purgot Space Station Static ID", -6005).getInt();
+		
+		// Eden
+		spaceStationEdenId = configuration.get(CATEGORY_SATELLITES, "Eden Space Station ID", -6006)
+				.getInt();
+		spaceStationEdenStaticId = configuration.get(CATEGORY_SATELLITES,
+				"Eden Space Station Static ID", -6007).getInt();
+		
+		// Space Stations (Praedyth)
+		// Xathius
+		spaceStationXathiusId = configuration.get(CATEGORY_SATELLITES, "Xathius Space Station ID",
+				-6008).getInt();
+		spaceStationXathiusStaticId = configuration.get(CATEGORY_SATELLITES,
+				"Xathius Space Station Static ID", -6009).getInt();
+		
+		// Oasis
+		spaceStationOasisId = configuration.get(CATEGORY_SATELLITES, "Oasis Space Station ID",
+				-6010).getInt();
+		spaceStationOasisStaticId = configuration.get(CATEGORY_SATELLITES,
+				"Oasis Space Station Static ID", -6011).getInt();
 		
 		// Misc (Can Earth animals spawn on Eden?)
 		canEarthAnimalsSpawnOnEden = configuration.get(CATEGORY_MISC,

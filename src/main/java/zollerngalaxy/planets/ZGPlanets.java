@@ -336,9 +336,9 @@ public class ZGPlanets {
 				new TeleportTypeVenus());
 		GalacticraftRegistry.registerTeleportType(WorldProviderEden.class, new TeleportTypeVenus());
 		
-		// GalacticraftRegistry.registerTeleportType(WorldProviderXathius.class,
-		// teleType);
+		GalacticraftRegistry.registerTeleportType(WorldProviderXathius.class,
+				new TeleportTypeVenus());
 		// GalacticraftRegistry.registerTeleportType(WorldProviderOasis.class,
-		// teleType);
+		// new TeleportTypeVenus());
 	}
 }

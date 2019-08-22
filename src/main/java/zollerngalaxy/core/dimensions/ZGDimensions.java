@@ -13,6 +13,8 @@ public class ZGDimensions {
 	public static DimensionType ZOLLUS;
 	public static DimensionType KRIFFON;
 	public static DimensionType EDEN;
+	public static DimensionType EDEN_ORBIT;
+	public static DimensionType EDEN_ORBIT_STATIC;
 	public static DimensionType PURGOT;
 	public static DimensionType ASTROS;
 	
@@ -26,6 +28,9 @@ public class ZGDimensions {
 		ZGDimensions.KRIFFON = ZGDimensions.getDimType(ConfigManagerZG.planetKriffonDimensionId);
 		ZGDimensions.PURGOT = ZGDimensions.getDimType(ConfigManagerZG.planetPurgotDimensionId);
 		ZGDimensions.EDEN = ZGDimensions.getDimType(ConfigManagerZG.planetEdenDimensionId);
+		ZGDimensions.EDEN_ORBIT = ZGDimensions.getDimType(ConfigManagerZG.spaceStationEdenId);
+		ZGDimensions.EDEN_ORBIT_STATIC = ZGDimensions
+				.getDimType(ConfigManagerZG.spaceStationEdenStaticId);
 		
 		// Praedyth
 		ZGDimensions.XATHIUS = ZGDimensions.getDimType(ConfigManagerZG.planetXathiusDimensionId);

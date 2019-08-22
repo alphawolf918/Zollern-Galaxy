@@ -26,6 +26,7 @@ import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.mobs.MobRegistry;
 import zollerngalaxy.network.teleporter.MessageTeleportToDimension;
 import zollerngalaxy.planets.ZGPlanets;
+import zollerngalaxy.planets.ZGSpaceStations;
 import zollerngalaxy.proxy.CommonProxy;
 import zollerngalaxy.proxy.IProxy;
 import zollerngalaxy.recipes.ZGRecipeRegistry;
@@ -41,7 +42,7 @@ public class ZollernGalaxyCore {
 	@Mod.Instance(ZGInfo.MOD_ID)
 	private static ZollernGalaxyCore INSTANCE;
 	
-	// CHANGE THIS TO FALSE BEFORE DEPLOYMENT
+	// CHANGE THIS TO FALSE BEFORE DEPLOYMENT!!
 	private static final boolean DEV_MODE = false;
 	
 	public static SimpleNetworkWrapper snw;
@@ -77,6 +78,7 @@ public class ZollernGalaxyCore {
 		ZGBlocks.init();
 		ZGBiomes.init();
 		ZGPlanets.init();
+		ZGSpaceStations.init();
 		OreDictRegistry.init();
 		
 		instance().proxy.registerPreRendering();
