@@ -1,5 +1,7 @@
 package zollerngalaxy.planets;
 
+import zollerngalaxy.core.enums.EnumPlanetClass;
+
 public interface IZollernPlanet {
 	
 	/**
@@ -52,4 +54,10 @@ public interface IZollernPlanet {
 	 * @return Atmospheric density.
 	 */
 	public float getAtmosphericDensity();
+	
+	public EnumPlanetClass getPlanetClass();
+	
+	public boolean getIsCorrosive();
+	
+	public String getGasses();
 }

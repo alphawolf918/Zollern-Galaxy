@@ -80,7 +80,13 @@ public class ZGPlanet extends Planet implements IZollernPlanet {
 	 * starships.<br>
 	 * <br>
 	 * NINE: Another type of gas giant, usually located in the home star system
-	 * of a hostile race.
+	 * of a hostile race.<br>
+	 * <br>
+	 * Exotic: A strange world that is uniquely proportioned and makes no
+	 * logical sense; an anomaly.<br>
+	 * <br>
+	 * Abandoned: A desolate void, long abandoned due to catastrophe or other
+	 * hostility.<br>
 	 * 
 	 * @param pClass
 	 *            The bioclassification of the Planet.
@@ -253,10 +259,17 @@ public class ZGPlanet extends Planet implements IZollernPlanet {
 	 * starships.<br>
 	 * <br>
 	 * NINE: Another type of gas giant, usually located in the home star system
-	 * of a hostile race.
+	 * of a hostile race.<br>
+	 * <br>
+	 * Exotic: A strange world that is uniquely proportioned and makes no
+	 * logical sense; an anomaly.<br>
+	 * <br>
+	 * Abandoned: A desolate void, long abandoned due to catastrophe or other
+	 * hostility.<br>
 	 * 
 	 * @return The bioclassification of the Planet.
 	 */
+	@Override
 	public EnumPlanetClass getPlanetClass() {
 		return this.planetClass;
 	}
@@ -266,6 +279,7 @@ public class ZGPlanet extends Planet implements IZollernPlanet {
 	 * 
 	 * @return All gasses in a planet's atmosphere.
 	 */
+	@Override
 	public String getGasses() {
 		String gasList = "";
 		ArrayList<EnumAtmosphericGas> planetAtmosphere = this.planetGasses;
@@ -343,6 +357,7 @@ public class ZGPlanet extends Planet implements IZollernPlanet {
 	 * 
 	 * @return True/False
 	 */
+	@Override
 	public boolean getIsCorrosive() {
 		return (this.getIsToxicPlanet() || this.getIsRadioactivePlanet());
 	}

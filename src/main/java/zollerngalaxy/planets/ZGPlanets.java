@@ -163,7 +163,7 @@ public class ZGPlanets {
 		planetZollus.setPhaseShift(0.0F);
 		planetZollus.setRelativeOrbitTime(42F);
 		planetZollus.setDistanceFromCenter(4F);
-		planetZollus.setTierRequired(4);
+		planetZollus.setTierRequired(3);
 		planetZollus.setRelativeSize(10.876F);
 		planetZollus.setPlanetTemperature(-102.6f);
 		planetZollus.setPlanetToxicity(0.4f);
@@ -286,7 +286,7 @@ public class ZGPlanets {
 		planetOasis.setRingColorRGB(2.0f, 5.4f, 3.2f);
 		planetOasis.setPhaseShift(0.0f);
 		planetOasis.setRelativeOrbitTime(6F);
-		planetXathius.setDistanceFromCenter(2.5f);
+		planetOasis.setDistanceFromCenter(2.5f);
 		planetOasis.setTierRequired(6);
 		planetOasis.setRelativeSize(64.0f);
 		planetOasis.setPlanetTemperature(68.2f);

@@ -132,12 +132,18 @@ tile.xathgrass.name=Xathian Grass
 tile.xathgravel.name=Xathian Gravel
 tile.xathtallgrass.name=Xathian Tall Grass
 tile.xathprometheanore.name=Xathian Promethean Ore
+tile.xathemeraldore.name=Xathian Emerald Ore
+tile.xathdiamondore.name=Xathian Diamond Ore
+tile.xathgoldore.name=Xathian Gold Ore
+tile.xathironore.name=Xathian Iron Ore
+tile.xathtinore.name=Xathian Tin Ore
+tile.xathredstoneore.name=Xathian Redstone Ore
 
 tile.oasisgrass.name=Oasis Grass
 tile.oasisstone.name=Oasis Stone
 tile.oasiscobblerock.name=Oasis Cobblerock
 tile.oasisdirt.name=Oasis Dirt
-tile.oasistallgras.name=Oasis Tall Grass
+tile.oasistallgrass.name=Oasis Tall Grass
 
 tile.heartblock.name=Healing Station
 tile.blueprintblock.name=Blueprint Repair Station

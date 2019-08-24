@@ -5,4 +5,10 @@ Zollern Galaxy v2.0.4
 * Added planet Xathius.
 	* Abstract, multi-colored planet with minor radiation and a unique atmospheric composition as well as a colorful sky.
 * Began work on space stations.
+    * Gonna be a while before they're ready.
+* Increased the rarity of Redstone, and decreased how much of it can spawn in one vein.
+    * Previously-generated chunks will not be affected.
+* Added two new Planet Classes: Exotic and Abandoned.
+* Decreased Tier of Zollus to 3. This was an oversight.
+* Added more ores to Xathius.
 * 

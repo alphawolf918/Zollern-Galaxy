@@ -246,7 +246,7 @@ public class ChunkProviderXathius extends ChunkProviderBase {
 						
 						// TODO: Test removing?
 						if (biomegenbase1.getBaseHeight() > biomegenbase.getBaseHeight()) {
-							f7 /= 1.2F;
+							f7 /= 0.2F;
 						}
 						
 						f2 += f6 * f7;
