@@ -276,7 +276,8 @@ public class ZGPlanets {
 				EnumAtmosphericGas.NITROGEN, EnumAtmosphericGas.ARGON);
 		planetXathius.setAtmosphere();
 		planetXathius.setPlanetIcon("xathius");
-		planetXathius.setBiomeInfo(ZGBiomes.XATHIUS_ABSTRACT_PLAINS);
+		planetXathius.setBiomeInfo(ZGBiomes.XATHIUS_ABSTRACT_PLAINS, ZGBiomes.XATHIUS_OCEAN,
+				ZGBiomes.XATHIUS_BLUELANDS);
 		totalPlanets++;
 		
 		// Planet Oasis
@@ -319,6 +320,11 @@ public class ZGPlanets {
 		GalaxyRegistry.registerSolarSystem(systemAsgard);
 		GalaxyRegistry.registerSolarSystem(systemVega);
 		GalaxyRegistry.registerSolarSystem(systemNova);
+		
+		ZGPlanets.registerPlanets();
+	}
+	
+	public static void registerPlanets() {
 		GalaxyRegistry.registerPlanet(planetZollus);
 		GalaxyRegistry.registerPlanet(planetEden);
 		GalaxyRegistry.registerPlanet(planetKriffon);

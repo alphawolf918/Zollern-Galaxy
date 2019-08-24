@@ -39,7 +39,9 @@ public class GenLayerXathiusBiomes extends GenLayerPurgot {
 		@SuppressWarnings("unchecked")
 		ArrayList<BiomeEntry>[] currentBiomes = new ArrayList[CachedEnum.valuesBiomeCached().length];
 		List<BiomeEntry> list = new ArrayList<>();
-		list.add(new BiomeEntry(ZGBiomes.XATHIUS_ABSTRACT_PLAINS, 100));
+		list.add(new BiomeEntry(ZGBiomes.XATHIUS_ABSTRACT_PLAINS, 85));
+		list.add(new BiomeEntry(ZGBiomes.XATHIUS_OCEAN, 75));
+		list.add(new BiomeEntry(ZGBiomes.XATHIUS_BLUELANDS, 65));
 		
 		currentBiomes[BiomeType.WARM.ordinal()] = new ArrayList<>(list);
 		return currentBiomes;

@@ -19,8 +19,8 @@ import zollerngalaxy.lib.helpers.ZGDecorateHelper;
 import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.worldgen.WorldGenLakesZG;
 import zollerngalaxy.worldgen.WorldGenMinableZG;
+import zollerngalaxy.worldgen.WorldGenTallGrassZG;
 import zollerngalaxy.worldgen.eden.WorldGenEdenFlowers;
-import zollerngalaxy.worldgen.eden.WorldGenEdenTallGrass;
 import zollerngalaxy.worldgen.eden.WorldGenEdenTower;
 import zollerngalaxy.worldgen.eden.WorldGenEdenTrees;
 import zollerngalaxy.worldgen.eden.WorldGenGiantBone;
@@ -204,7 +204,7 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 		
 		if (this.edenTallGrassPerChunk > 0) {
 			for (int i = 0; i < this.edenTallGrassPerChunk + 4; ++i) {
-				ZGDecorateHelper.generatePlants(new WorldGenEdenTallGrass(
+				ZGDecorateHelper.generatePlants(new WorldGenTallGrassZG(
 						(ZGBlockTallGrass) ZGBlocks.edenTallGrass), world, rand, this.chunkPos);
 			}
 		}

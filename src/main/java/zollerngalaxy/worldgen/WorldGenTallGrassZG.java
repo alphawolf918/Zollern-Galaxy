@@ -1,4 +1,4 @@
-package zollerngalaxy.worldgen.eden;
+package zollerngalaxy.worldgen;
 
 import java.util.Random;
 import net.minecraft.block.state.IBlockState;
@@ -7,12 +7,12 @@ import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import zollerngalaxy.blocks.ZGBlockTallGrass;
 
-public class WorldGenEdenTallGrass extends WorldGenerator {
+public class WorldGenTallGrassZG extends WorldGenerator {
 	
 	private IBlockState flower;
 	
-	public WorldGenEdenTallGrass(ZGBlockTallGrass edentallgrass) {
-		this.flower = edentallgrass.getDefaultState();
+	public WorldGenTallGrassZG(ZGBlockTallGrass tallgrass) {
+		this.flower = tallgrass.getDefaultState();
 	}
 	
 	@Override
