@@ -89,8 +89,7 @@ public class BiomeProviderPurgot extends BiomeProvider {
 	}
 	
 	@Override
-	public Biome[] getBiomes(@Nullable Biome[] listToReuse, int x, int z, int width, int length,
-			boolean cacheFlag) {
+	public Biome[] getBiomes(@Nullable Biome[] listToReuse, int x, int z, int width, int length, boolean cacheFlag) {
 		IntCache.resetIntCache();
 		BiomeAdaptive.setBodyMultiBiome(body);
 		

@@ -32,7 +32,7 @@ public class EntityFrostGiant extends EntityMob implements IEntityBreathable {
 	
 	public EntityFrostGiant(World worldIn) {
 		super(worldIn);
-		this.setSize(1.6F, 1.05F);
+		this.setSize(1.8F, 4.05F);
 	}
 	
 	@Override
@@ -49,22 +49,17 @@ public class EntityFrostGiant extends EntityMob implements IEntityBreathable {
 	
 	protected void applyEntityAI() {
 		this.tasks.addTask(6, new EntityAIMoveThroughVillage(this, 1.0D, false));
-		this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, true,
-				new Class[] { EntityEnderman.class }));
-		this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class,
-				true));
-		this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this,
-				EntityAlienVillager.class, false));
-		this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this,
-				EntityIronGolem.class, true));
+		this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, true, new Class[] { EntityEnderman.class }));
+		this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, true));
+		this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityAlienVillager.class, false));
+		this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityIronGolem.class, true));
 	}
 	
 	@Override
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(45.0D);
-		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(
-				0.22000000417232513D);
+		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.22000000417232513D);
 		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(10.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.ARMOR).setBaseValue(6.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(60.0D);

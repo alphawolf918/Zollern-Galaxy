@@ -47,8 +47,7 @@ public class ZGBlockLeaves extends ZGBlockBase implements IShearable {
 		int l = pos.getY();
 		int i1 = pos.getZ();
 		
-		if (worldIn.isAreaLoaded(new BlockPos(k - 2, l - 2, i1 - 2), new BlockPos(k + 2, l + 2,
-				i1 + 2))) {
+		if (worldIn.isAreaLoaded(new BlockPos(k - 2, l - 2, i1 - 2), new BlockPos(k + 2, l + 2, i1 + 2))) {
 			for (int j1 = -1; j1 <= 1; ++j1) {
 				for (int k1 = -1; k1 <= 1; ++k1) {
 					for (int l1 = -1; l1 <= 1; ++l1) {
@@ -90,21 +89,17 @@ public class ZGBlockLeaves extends ZGBlockBase implements IShearable {
 					for (int i2 = -4; i2 <= 4; ++i2) {
 						for (int j2 = -4; j2 <= 4; ++j2) {
 							for (int k2 = -4; k2 <= 4; ++k2) {
-								IBlockState iblockstate = worldIn
-										.getBlockState(blockpos$mutableblockpos.setPos(k + i2, l
-												+ j2, i1 + k2));
+								IBlockState iblockstate = worldIn.getBlockState(blockpos$mutableblockpos.setPos(k + i2, l
+										+ j2, i1 + k2));
 								Block block = iblockstate.getBlock();
 								
 								if (!block.canSustainLeaves(iblockstate, worldIn,
 										blockpos$mutableblockpos.setPos(k + i2, l + j2, i1 + k2))) {
 									if (block.isLeaves(iblockstate, worldIn,
-											blockpos$mutableblockpos
-													.setPos(k + i2, l + j2, i1 + k2))) {
-										this.surroundings[(i2 + 16) * 1024 + (j2 + 16) * 32 + k2
-												+ 16] = -2;
+											blockpos$mutableblockpos.setPos(k + i2, l + j2, i1 + k2))) {
+										this.surroundings[(i2 + 16) * 1024 + (j2 + 16) * 32 + k2 + 16] = -2;
 									} else {
-										this.surroundings[(i2 + 16) * 1024 + (j2 + 16) * 32 + k2
-												+ 16] = -1;
+										this.surroundings[(i2 + 16) * 1024 + (j2 + 16) * 32 + k2 + 16] = -1;
 									}
 								} else {
 									this.surroundings[(i2 + 16) * 1024 + (j2 + 16) * 32 + k2 + 16] = 0;
@@ -117,42 +112,29 @@ public class ZGBlockLeaves extends ZGBlockBase implements IShearable {
 						for (int j3 = -4; j3 <= 4; ++j3) {
 							for (int k3 = -4; k3 <= 4; ++k3) {
 								for (int l3 = -4; l3 <= 4; ++l3) {
-									if (this.surroundings[(j3 + 16) * 1024 + (k3 + 16) * 32 + l3
-											+ 16] == i3 - 1) {
-										if (this.surroundings[(j3 + 16 - 1) * 1024 + (k3 + 16) * 32
-												+ l3 + 16] == -2) {
-											this.surroundings[(j3 + 16 - 1) * 1024 + (k3 + 16) * 32
-													+ l3 + 16] = i3;
+									if (this.surroundings[(j3 + 16) * 1024 + (k3 + 16) * 32 + l3 + 16] == i3 - 1) {
+										if (this.surroundings[(j3 + 16 - 1) * 1024 + (k3 + 16) * 32 + l3 + 16] == -2) {
+											this.surroundings[(j3 + 16 - 1) * 1024 + (k3 + 16) * 32 + l3 + 16] = i3;
 										}
 										
-										if (this.surroundings[(j3 + 16 + 1) * 1024 + (k3 + 16) * 32
-												+ l3 + 16] == -2) {
-											this.surroundings[(j3 + 16 + 1) * 1024 + (k3 + 16) * 32
-													+ l3 + 16] = i3;
+										if (this.surroundings[(j3 + 16 + 1) * 1024 + (k3 + 16) * 32 + l3 + 16] == -2) {
+											this.surroundings[(j3 + 16 + 1) * 1024 + (k3 + 16) * 32 + l3 + 16] = i3;
 										}
 										
-										if (this.surroundings[(j3 + 16) * 1024 + (k3 + 16 - 1) * 32
-												+ l3 + 16] == -2) {
-											this.surroundings[(j3 + 16) * 1024 + (k3 + 16 - 1) * 32
-													+ l3 + 16] = i3;
+										if (this.surroundings[(j3 + 16) * 1024 + (k3 + 16 - 1) * 32 + l3 + 16] == -2) {
+											this.surroundings[(j3 + 16) * 1024 + (k3 + 16 - 1) * 32 + l3 + 16] = i3;
 										}
 										
-										if (this.surroundings[(j3 + 16) * 1024 + (k3 + 16 + 1) * 32
-												+ l3 + 16] == -2) {
-											this.surroundings[(j3 + 16) * 1024 + (k3 + 16 + 1) * 32
-													+ l3 + 16] = i3;
+										if (this.surroundings[(j3 + 16) * 1024 + (k3 + 16 + 1) * 32 + l3 + 16] == -2) {
+											this.surroundings[(j3 + 16) * 1024 + (k3 + 16 + 1) * 32 + l3 + 16] = i3;
 										}
 										
-										if (this.surroundings[(j3 + 16) * 1024 + (k3 + 16) * 32
-												+ (l3 + 16 - 1)] == -2) {
-											this.surroundings[(j3 + 16) * 1024 + (k3 + 16) * 32
-													+ (l3 + 16 - 1)] = i3;
+										if (this.surroundings[(j3 + 16) * 1024 + (k3 + 16) * 32 + (l3 + 16 - 1)] == -2) {
+											this.surroundings[(j3 + 16) * 1024 + (k3 + 16) * 32 + (l3 + 16 - 1)] = i3;
 										}
 										
-										if (this.surroundings[(j3 + 16) * 1024 + (k3 + 16) * 32
-												+ l3 + 16 + 1] == -2) {
-											this.surroundings[(j3 + 16) * 1024 + (k3 + 16) * 32
-													+ l3 + 16 + 1] = i3;
+										if (this.surroundings[(j3 + 16) * 1024 + (k3 + 16) * 32 + l3 + 16 + 1] == -2) {
+											this.surroundings[(j3 + 16) * 1024 + (k3 + 16) * 32 + l3 + 16 + 1] = i3;
 										}
 									}
 								}
@@ -181,8 +163,7 @@ public class ZGBlockLeaves extends ZGBlockBase implements IShearable {
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void randomDisplayTick(IBlockState stateIn, World worldIn, BlockPos pos, Random rand) {
-		if (worldIn.isRainingAt(pos.up()) && !worldIn.getBlockState(pos.down()).isTopSolid()
-				&& rand.nextInt(15) == 1) {
+		if (worldIn.isRainingAt(pos.up()) && !worldIn.getBlockState(pos.down()).isTopSolid() && rand.nextInt(15) == 1) {
 			double d0 = pos.getX() + rand.nextFloat();
 			double d1 = pos.getY() - 0.05D;
 			double d2 = pos.getZ() + rand.nextFloat();
@@ -201,8 +182,7 @@ public class ZGBlockLeaves extends ZGBlockBase implements IShearable {
 	}
 	
 	@Override
-	public void dropBlockAsItemWithChance(World worldIn, BlockPos pos, IBlockState state,
-			float chance, int fortune) {
+	public void dropBlockAsItemWithChance(World worldIn, BlockPos pos, IBlockState state, float chance, int fortune) {
 		super.dropBlockAsItemWithChance(worldIn, pos, state, chance, fortune);
 	}
 	
@@ -247,8 +227,8 @@ public class ZGBlockLeaves extends ZGBlockBase implements IShearable {
 	}
 	
 	@Override
-	public void getDrops(net.minecraft.util.NonNullList<ItemStack> drops, IBlockAccess world,
-			BlockPos pos, IBlockState state, int fortune) {
+	public void getDrops(net.minecraft.util.NonNullList<ItemStack> drops, IBlockAccess world, BlockPos pos,
+			IBlockState state, int fortune) {
 		Random rand = world instanceof World ? ((World) world).rand : new Random();
 		int chance = this.getSaplingDropChance(state);
 		
@@ -259,8 +239,7 @@ public class ZGBlockLeaves extends ZGBlockBase implements IShearable {
 		}
 		
 		if (rand.nextInt(chance) == 0) {
-			ItemStack drop = new ItemStack(getItemDropped(state, rand, fortune), 1,
-					damageDropped(state));
+			ItemStack drop = new ItemStack(getItemDropped(state, rand, fortune), 1, damageDropped(state));
 			if (!drop.isEmpty())
 				drops.add(drop);
 		}
@@ -280,10 +259,9 @@ public class ZGBlockLeaves extends ZGBlockBase implements IShearable {
 	
 	@Override
 	@SideOnly(Side.CLIENT)
-	public boolean shouldSideBeRendered(IBlockState blockState, IBlockAccess blockAccess,
-			BlockPos pos, EnumFacing side) {
-		return !this.leavesFancy && blockAccess.getBlockState(pos.offset(side)).getBlock() == this ? false
-				: super.shouldSideBeRendered(blockState, blockAccess, pos, side);
+	public boolean shouldSideBeRendered(IBlockState blockState, IBlockAccess blockAccess, BlockPos pos, EnumFacing side) {
+		return !this.leavesFancy && blockAccess.getBlockState(pos.offset(side)).getBlock() == this ? false : super
+				.shouldSideBeRendered(blockState, blockAccess, pos, side);
 	}
 	
 	@Override

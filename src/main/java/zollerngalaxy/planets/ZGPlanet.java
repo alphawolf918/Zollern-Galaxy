@@ -30,6 +30,7 @@ public class ZGPlanet extends Planet implements IZollernPlanet {
 	
 	public ZGPlanet(String planetName) {
 		super(planetName);
+		this.addChecklistKeys("thermal_padding", "equip_oxygen_suit", "equip_parachute");
 	}
 	
 	public ZGPlanet setPlanetStar(Star systemStar) {
@@ -164,9 +165,8 @@ public class ZGPlanet extends Planet implements IZollernPlanet {
 	 * @return The planet of the atmosphere being set on.
 	 */
 	public Planet setAtmosphere() {
-		this.atmosphere = new AtmosphereInfo(this.getIsBreathable(), this.getHasRain(),
-				this.getIsCorrosive(), this.getPlanetTemperature(), this.getWindLevel(),
-				this.getAtmosphericDensity());
+		this.atmosphere = new AtmosphereInfo(this.getIsBreathable(), this.getHasRain(), this.getIsCorrosive(),
+				this.getPlanetTemperature(), this.getWindLevel(), this.getAtmosphericDensity());
 		return this;
 	}
 	
@@ -191,8 +191,7 @@ public class ZGPlanet extends Planet implements IZollernPlanet {
 	}
 	
 	public ZGPlanet setPlanetIcon(String planetTexture) {
-		this.setBodyIcon(new ResourceLocation(ZGInfo.MOD_ID + ":textures/gui/" + planetTexture
-				+ ".png"));
+		this.setBodyIcon(new ResourceLocation(ZGInfo.MOD_ID + ":textures/gui/" + planetTexture + ".png"));
 		return this;
 	}
 	
@@ -280,8 +279,7 @@ public class ZGPlanet extends Planet implements IZollernPlanet {
 		int ch = 0;
 		for (EnumAtmosphericGas planetGas : planetAtmosphere) {
 			ch++;
-			gasList += ZGHelper.capitalizeFirstLetter(planetGas.toString().substring(0, 3)
-					.toLowerCase());
+			gasList += ZGHelper.capitalizeFirstLetter(planetGas.toString().substring(0, 3).toLowerCase());
 			if (ch < planetAtmosphere.size()) {
 				gasList += ", ";
 			}
@@ -358,6 +356,8 @@ public class ZGPlanet extends Planet implements IZollernPlanet {
 	
 	@Override
 	public float getPlanetTemperature() {
-		return this.baseTemp;
+		float planetTemp = this.baseTemp;
+		// TODO: Factor in biome temps..
+		return planetTemp;
 	}
 }

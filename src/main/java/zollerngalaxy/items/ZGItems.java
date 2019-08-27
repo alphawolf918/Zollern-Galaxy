@@ -60,15 +60,13 @@ public class ZGItems {
 	public static final Item starGateTier10 = new ItemStargate(10);
 	
 	public static void init() {
-		ZGItems.registerItems(heartOfZol, zolCrystal, kriffCrystal, purgCrystal, edenCrystal,
-				purgEssence, prometheanCrystal, plutoniumCrystal, dustBrightstone, dustViri,
-				dustEve, dustCobalt, dustDiamond, dustEmerald, ingotViri, ingotCobalt, ingotEve,
-				hud, alienStone, compressedCobalt, compressedDiamond, compressedEmerald,
-				compressedEvenium, compressedGold, compressedHeartium, compressedKriffonium,
-				compressedVirinium, compressedVyrex, rawAlienBacon, cookedAlienBacon, rawAlienBeef,
-				cookedAlienBeef, edenFruit, edenDungeonKey, starGateTier1, starGateTier2,
-				starGateTier3, starGateTier4, starGateTier5, starGateTier6, starGateTier7,
-				starGateTier8, starGateTier9, starGateTier10);
+		ZGItems.registerItems(heartOfZol, zolCrystal, kriffCrystal, purgCrystal, edenCrystal, purgEssence,
+				prometheanCrystal, plutoniumCrystal, dustBrightstone, dustViri, dustEve, dustCobalt, dustDiamond,
+				dustEmerald, ingotViri, ingotCobalt, ingotEve, hud, alienStone, compressedCobalt, compressedDiamond,
+				compressedEmerald, compressedEvenium, compressedGold, compressedHeartium, compressedKriffonium,
+				compressedVirinium, compressedVyrex, rawAlienBacon, cookedAlienBacon, rawAlienBeef, cookedAlienBeef,
+				edenFruit, edenDungeonKey, starGateTier1, starGateTier2, starGateTier3, starGateTier4, starGateTier5,
+				starGateTier6, starGateTier7, starGateTier8, starGateTier9, starGateTier10);
 		ZGHelper.Log("Loaded a total of " + totalItems + " new items.");
 	}
 	

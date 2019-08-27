@@ -20,8 +20,7 @@ public class PacketDispatcher {
 	 * packets. Since I will be adding wrapper methods, this field is private,
 	 * but you should make it public if you plan on using it directly.
 	 */
-	private static final SimpleNetworkWrapper dispatcher = NetworkRegistry.INSTANCE
-			.newSimpleChannel(ZGInfo.MOD_ID);
+	private static final SimpleNetworkWrapper dispatcher = NetworkRegistry.INSTANCE.newSimpleChannel(ZGInfo.MOD_ID);
 	
 	/**
 	 * Call this during pre-init or loading and register all of your packets
@@ -30,9 +29,8 @@ public class PacketDispatcher {
 	public static final void registerPackets() {
 		ZGHelper.Log("Registering packets..");
 		
-		PacketDispatcher.dispatcher.registerMessage(
-				MessageTeleportToDimension.TeleportHandler.class, MessageTeleportToDimension.class,
-				1, Side.SERVER);
+		PacketDispatcher.dispatcher.registerMessage(MessageTeleportToDimension.TeleportHandler.class,
+				MessageTeleportToDimension.class, 1, Side.SERVER);
 		
 		ZGHelper.Log("Packets regsitered.");
 	}
@@ -44,8 +42,7 @@ public class PacketDispatcher {
 	/**
 	 * Registers an {@link AbstractMessage} to the appropriate side(s)
 	 */
-	private static final <T extends AbstractMessage<T> & IMessageHandler<T, IMessage>> void registerMessage(
-			Class<T> clazz) {
+	private static final <T extends AbstractMessage<T> & IMessageHandler<T, IMessage>> void registerMessage(Class<T> clazz) {
 		if (AbstractMessage.AbstractClientMessage.class.isAssignableFrom(clazz)) {
 			PacketDispatcher.dispatcher.registerMessage(clazz, clazz, packetId++, Side.CLIENT);
 		} else if (AbstractMessage.AbstractServerMessage.class.isAssignableFrom(clazz)) {
@@ -77,10 +74,8 @@ public class PacketDispatcher {
 	 * the same dimension. Shortcut to
 	 * {@link SimpleNetworkWrapper#sendToAllAround(IMessage, NetworkRegistry.TargetPoint)}
 	 */
-	public static final void sendToAllAround(IMessage message, int dimension, double x, double y,
-			double z, double range) {
-		PacketDispatcher.sendToAllAround(message, new NetworkRegistry.TargetPoint(dimension, x, y,
-				z, range));
+	public static final void sendToAllAround(IMessage message, int dimension, double x, double y, double z, double range) {
+		PacketDispatcher.sendToAllAround(message, new NetworkRegistry.TargetPoint(dimension, x, y, z, range));
 	}
 	
 	/**
@@ -97,8 +92,8 @@ public class PacketDispatcher {
 	 * {@link SimpleNetworkWrapper#sendToAllAround(IMessage, NetworkRegistry.TargetPoint)}
 	 */
 	public static final void sendToAllAround(IMessage message, EntityPlayer player, double range) {
-		PacketDispatcher.sendToAllAround(message, player.world.provider.getDimension(),
-				player.posX, player.posY, player.posZ, range);
+		PacketDispatcher.sendToAllAround(message, player.world.provider.getDimension(), player.posX, player.posY,
+				player.posZ, range);
 	}
 	
 	/**

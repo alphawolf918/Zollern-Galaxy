@@ -24,8 +24,7 @@ public class MobRenders {
 		RenderMob(EntityMagmos.class, RenderMagmos::new);
 	}
 	
-	private static <T extends Entity> void RenderMob(Class<T> entityClass,
-			IRenderFactory<? super T> renderFactory) {
+	private static <T extends Entity> void RenderMob(Class<T> entityClass, IRenderFactory<? super T> renderFactory) {
 		RenderingRegistry.registerEntityRenderingHandler(entityClass, renderFactory);
 	}
 	

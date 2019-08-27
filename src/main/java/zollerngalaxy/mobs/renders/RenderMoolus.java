@@ -25,7 +25,7 @@ public class RenderMoolus extends RenderLiving<EntityMoolus> {
 		this.scaleMoolus(entitylivingbaseIn, partialTickTime);
 	}
 	
-	protected void scaleMoolus(EntityMoolus par1EntityCaveSpider, float par2) {
+	protected void scaleMoolus(EntityMoolus par1EntityMoolus, float par2) {
 		GL11.glScalef(f6, f6, f6);
 	}
 	

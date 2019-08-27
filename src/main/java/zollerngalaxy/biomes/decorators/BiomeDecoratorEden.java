@@ -69,58 +69,33 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 	public boolean generateMansions = false;
 	
 	public BiomeDecoratorEden() {
-		this.dirtGen = new WorldGenMinableZG(ZGBlocks.edenSoil, ZGBlocks.edenSurfaceRock,
-				EnumOreGenZG.DIRT);
-		this.gravelGen = new WorldGenMinableZG(ZGBlocks.edenGravel, ZGBlocks.edenStone,
-				EnumOreGenZG.GRAVEL);
-		this.coalGen = new WorldGenMinableZG(ZGBlocks.edenCoalOre, ZGBlocks.edenStone,
-				EnumOreGenZG.COAL);
-		this.tinGen = new WorldGenMinableZG(ZGBlocks.edenTinOre, ZGBlocks.edenStone,
-				EnumOreGenZG.TIN);
-		this.leadGen = new WorldGenMinableZG(ZGBlocks.edenLeadOre, ZGBlocks.edenStone,
-				EnumOreGenZG.LEAD);
-		this.nickleGen = new WorldGenMinableZG(ZGBlocks.edenNickleOre, ZGBlocks.edenStone,
-				EnumOreGenZG.NICKLE);
-		this.copperGen = new WorldGenMinableZG(ZGBlocks.edenCopperOre, ZGBlocks.edenStone,
-				EnumOreGenZG.COPPER);
-		this.silverGen = new WorldGenMinableZG(ZGBlocks.edenSilverOre, ZGBlocks.edenStone,
-				EnumOreGenZG.SILVER);
-		this.ironGen = new WorldGenMinableZG(ZGBlocks.edenIronOre, ZGBlocks.edenStone,
-				EnumOreGenZG.IRON);
-		this.goldGen = new WorldGenMinableZG(ZGBlocks.edenGoldOre, ZGBlocks.edenStone,
-				EnumOreGenZG.GOLD);
-		this.aluminumGen = new WorldGenMinableZG(ZGBlocks.edenAluminumOre, ZGBlocks.edenStone,
-				EnumOreGenZG.ALUMINUM);
-		this.redstoneGen = new WorldGenMinableZG(ZGBlocks.edenRedstoneOre, ZGBlocks.edenStone,
-				EnumOreGenZG.REDSTONE);
-		this.lapisGen = new WorldGenMinableZG(ZGBlocks.edenLapisOre, ZGBlocks.edenStone,
-				EnumOreGenZG.LAPIS);
-		this.diamondGen = new WorldGenMinableZG(ZGBlocks.edenDiamondOre, ZGBlocks.edenStone,
-				EnumOreGenZG.DIAMOND);
-		this.emeraldGen = new WorldGenMinableZG(ZGBlocks.edenEmeraldOre, ZGBlocks.edenStone,
-				EnumOreGenZG.EMERALD);
-		this.meteoricIronGen = new WorldGenMinableZG(ZGBlocks.edenMeteoricIronOre,
-				ZGBlocks.edenStone, EnumOreGenZG.METEORIC_IRON);
-		this.deshGen = new WorldGenMinableZG(ZGBlocks.edenDeshOre, ZGBlocks.edenStone,
-				EnumOreGenZG.DESH);
-		this.viriGen = new WorldGenMinableZG(ZGBlocks.edenViriniumOre, ZGBlocks.edenStone,
-				EnumOreGenZG.VIRINIUM);
-		this.cobaltGen = new WorldGenMinableZG(ZGBlocks.edenCobaltOre, ZGBlocks.edenStone,
-				EnumOreGenZG.COBALT);
-		this.eveniumGen = new WorldGenMinableZG(ZGBlocks.edenEveniumOre, ZGBlocks.edenStone,
-				EnumOreGenZG.EVENIUM);
-		this.steelGen = new WorldGenMinableZG(ZGBlocks.edenSteelOre, ZGBlocks.edenSteelOre,
-				EnumOreGenZG.STEEL);
-		this.bronzeGen = new WorldGenMinableZG(ZGBlocks.edenBronzeOre, ZGBlocks.edenStone,
-				EnumOreGenZG.BRONZE);
-		this.invarGen = new WorldGenMinableZG(ZGBlocks.edenInvarOre, ZGBlocks.edenStone,
-				EnumOreGenZG.INVAR);
-		this.electrumGen = new WorldGenMinableZG(ZGBlocks.edenElectrumOre, ZGBlocks.edenStone,
-				EnumOreGenZG.ELECTRUM);
-		this.platinumGen = new WorldGenMinableZG(ZGBlocks.edenPlatinumOre, ZGBlocks.edenStone,
-				EnumOreGenZG.PLATINUM);
-		this.heartiumGen = new WorldGenMinableZG(ZGBlocks.edenHeartiumOre, ZGBlocks.edenStone,
-				EnumOreGenZG.HEARTIUM);
+		this.dirtGen = new WorldGenMinableZG(ZGBlocks.edenSoil, ZGBlocks.edenSurfaceRock, EnumOreGenZG.DIRT);
+		this.gravelGen = new WorldGenMinableZG(ZGBlocks.edenGravel, ZGBlocks.edenStone, EnumOreGenZG.GRAVEL);
+		this.coalGen = new WorldGenMinableZG(ZGBlocks.edenCoalOre, ZGBlocks.edenStone, EnumOreGenZG.COAL);
+		this.tinGen = new WorldGenMinableZG(ZGBlocks.edenTinOre, ZGBlocks.edenStone, EnumOreGenZG.TIN);
+		this.leadGen = new WorldGenMinableZG(ZGBlocks.edenLeadOre, ZGBlocks.edenStone, EnumOreGenZG.LEAD);
+		this.nickleGen = new WorldGenMinableZG(ZGBlocks.edenNickleOre, ZGBlocks.edenStone, EnumOreGenZG.NICKLE);
+		this.copperGen = new WorldGenMinableZG(ZGBlocks.edenCopperOre, ZGBlocks.edenStone, EnumOreGenZG.COPPER);
+		this.silverGen = new WorldGenMinableZG(ZGBlocks.edenSilverOre, ZGBlocks.edenStone, EnumOreGenZG.SILVER);
+		this.ironGen = new WorldGenMinableZG(ZGBlocks.edenIronOre, ZGBlocks.edenStone, EnumOreGenZG.IRON);
+		this.goldGen = new WorldGenMinableZG(ZGBlocks.edenGoldOre, ZGBlocks.edenStone, EnumOreGenZG.GOLD);
+		this.aluminumGen = new WorldGenMinableZG(ZGBlocks.edenAluminumOre, ZGBlocks.edenStone, EnumOreGenZG.ALUMINUM);
+		this.redstoneGen = new WorldGenMinableZG(ZGBlocks.edenRedstoneOre, ZGBlocks.edenStone, EnumOreGenZG.REDSTONE);
+		this.lapisGen = new WorldGenMinableZG(ZGBlocks.edenLapisOre, ZGBlocks.edenStone, EnumOreGenZG.LAPIS);
+		this.diamondGen = new WorldGenMinableZG(ZGBlocks.edenDiamondOre, ZGBlocks.edenStone, EnumOreGenZG.DIAMOND);
+		this.emeraldGen = new WorldGenMinableZG(ZGBlocks.edenEmeraldOre, ZGBlocks.edenStone, EnumOreGenZG.EMERALD);
+		this.meteoricIronGen = new WorldGenMinableZG(ZGBlocks.edenMeteoricIronOre, ZGBlocks.edenStone,
+				EnumOreGenZG.METEORIC_IRON);
+		this.deshGen = new WorldGenMinableZG(ZGBlocks.edenDeshOre, ZGBlocks.edenStone, EnumOreGenZG.DESH);
+		this.viriGen = new WorldGenMinableZG(ZGBlocks.edenViriniumOre, ZGBlocks.edenStone, EnumOreGenZG.VIRINIUM);
+		this.cobaltGen = new WorldGenMinableZG(ZGBlocks.edenCobaltOre, ZGBlocks.edenStone, EnumOreGenZG.COBALT);
+		this.eveniumGen = new WorldGenMinableZG(ZGBlocks.edenEveniumOre, ZGBlocks.edenStone, EnumOreGenZG.EVENIUM);
+		this.steelGen = new WorldGenMinableZG(ZGBlocks.edenSteelOre, ZGBlocks.edenSteelOre, EnumOreGenZG.STEEL);
+		this.bronzeGen = new WorldGenMinableZG(ZGBlocks.edenBronzeOre, ZGBlocks.edenStone, EnumOreGenZG.BRONZE);
+		this.invarGen = new WorldGenMinableZG(ZGBlocks.edenInvarOre, ZGBlocks.edenStone, EnumOreGenZG.INVAR);
+		this.electrumGen = new WorldGenMinableZG(ZGBlocks.edenElectrumOre, ZGBlocks.edenStone, EnumOreGenZG.ELECTRUM);
+		this.platinumGen = new WorldGenMinableZG(ZGBlocks.edenPlatinumOre, ZGBlocks.edenStone, EnumOreGenZG.PLATINUM);
+		this.heartiumGen = new WorldGenMinableZG(ZGBlocks.edenHeartiumOre, ZGBlocks.edenStone, EnumOreGenZG.HEARTIUM);
 	}
 	
 	@Override
@@ -174,8 +149,7 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 				y = rand.nextInt(rand.nextInt(genY) + 8);
 				
 				if (rand.nextInt(100) <= 50) {
-					(new WorldGenLakesZG(Blocks.LAVA, BLOCK_STONE)).generate(world, rand,
-							this.chunkPos.add(x, y, z));
+					(new WorldGenLakesZG(Blocks.LAVA, BLOCK_STONE)).generate(world, rand, this.chunkPos.add(x, y, z));
 				}
 			}
 		}
@@ -188,11 +162,9 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 			for (int i = 0; i < this.waterLakesPerChunk; ++i) {
 				y = rand.nextInt(rand.nextInt(genY) + 8);
 				
-				Block blockToUse = (biome.getTempCategory() == TempCategory.COLD) ? Blocks.ICE
-						: Blocks.WATER;
+				Block blockToUse = (biome.getTempCategory() == TempCategory.COLD) ? Blocks.ICE : Blocks.WATER;
 				
-				(new WorldGenLakesZG(blockToUse, BLOCK_TOP)).generate(world, rand,
-						this.chunkPos.add(x, y, z));
+				(new WorldGenLakesZG(blockToUse, BLOCK_TOP)).generate(world, rand, this.chunkPos.add(x, y, z));
 			}
 			
 			if (this.waterlilyPerChunk > 0) {
@@ -204,15 +176,14 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 		
 		if (this.edenTallGrassPerChunk > 0) {
 			for (int i = 0; i < this.edenTallGrassPerChunk + 4; ++i) {
-				ZGDecorateHelper.generatePlants(new WorldGenTallGrassZG(
-						(ZGBlockTallGrass) ZGBlocks.edenTallGrass), world, rand, this.chunkPos);
+				ZGDecorateHelper.generatePlants(new WorldGenTallGrassZG((ZGBlockTallGrass) ZGBlocks.edenTallGrass), world,
+						rand, this.chunkPos);
 			}
 		}
 		
 		if (this.edenTreesPerChunk > 0) {
 			WorldGenEdenTrees treeGen = new WorldGenEdenTrees(false, ZGHelper.rngNumber(5, 10),
-					ZGBlocks.edenWoodLog.getDefaultState(),
-					ZGBlocks.edenWoodLeaves.getDefaultState(), this.generateVines);
+					ZGBlocks.edenWoodLog.getDefaultState(), ZGBlocks.edenWoodLeaves.getDefaultState(), this.generateVines);
 			for (int i = 0; i < this.edenTreesPerChunk; ++i) {
 				y = rand.nextInt(rand.nextInt(genY) + 8);
 				if (y < 64) {
@@ -255,8 +226,7 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 				
 				IBlockState flowerState = edenFlower.getDefaultState();
 				
-				ZGDecorateHelper.generatePlants(new WorldGenEdenFlowers(flowerState), world, rand,
-						this.chunkPos);
+				ZGDecorateHelper.generatePlants(new WorldGenEdenFlowers(flowerState), world, rand, this.chunkPos);
 			}
 		}
 		

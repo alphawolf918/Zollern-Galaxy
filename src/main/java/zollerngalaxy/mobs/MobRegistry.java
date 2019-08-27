@@ -40,17 +40,17 @@ public class MobRegistry {
 	private static void registerEntity(String name, Class<? extends Entity> cls, int id) {
 		ResourceLocation registryName = new ResourceLocation(ZGInfo.MOD_ID + ":" + name);
 		EntityRegistry.registerModEntity(registryName, cls,
-				CaseFormat.LOWER_UNDERSCORE.to(CaseFormat.LOWER_CAMEL, registryName.toString()),
-				id, ZollernGalaxyCore.instance(), 64, 1, true);
+				CaseFormat.LOWER_UNDERSCORE.to(CaseFormat.LOWER_CAMEL, registryName.toString()), id,
+				ZollernGalaxyCore.instance(), 64, 1, true);
 		totalMobs++;
 	}
 	
-	private static void registerEntity(String name, Class<? extends Entity> cls, int id,
-			int primaryEggColor, int secondaryEggColor) {
+	private static void registerEntity(String name, Class<? extends Entity> cls, int id, int primaryEggColor,
+			int secondaryEggColor) {
 		ResourceLocation registryName = new ResourceLocation(ZGInfo.MOD_ID + ":" + name);
 		EntityRegistry.registerModEntity(registryName, cls,
-				CaseFormat.LOWER_UNDERSCORE.to(CaseFormat.LOWER_CAMEL, registryName.toString()),
-				id, ZollernGalaxyCore.instance(), 64, 1, true, primaryEggColor, secondaryEggColor);
+				CaseFormat.LOWER_UNDERSCORE.to(CaseFormat.LOWER_CAMEL, registryName.toString()), id,
+				ZollernGalaxyCore.instance(), 64, 1, true, primaryEggColor, secondaryEggColor);
 		totalMobs++;
 	}
 	

@@ -86,8 +86,7 @@ public class ZGBlockGrass extends ZGBlockDirt implements IGrowable {
 							if (rand.nextInt(8) == 0) {
 								worldIn.getBiome(blockpos1).plantFlower(worldIn, rand, blockpos1);
 							} else {
-								ZGBlockTallGrass tallGrass = (ZGBlockTallGrass) this
-										.getTallGrassBlock();
+								ZGBlockTallGrass tallGrass = (ZGBlockTallGrass) this.getTallGrassBlock();
 								IBlockState iblockstate1 = tallGrass.getDefaultState();
 								
 								if (tallGrass.canBlockStay(worldIn, blockpos1, iblockstate1)) {
@@ -99,8 +98,8 @@ public class ZGBlockGrass extends ZGBlockDirt implements IGrowable {
 						break;
 					}
 					
-					blockpos1 = blockpos1.add(rand.nextInt(3) - 1,
-							(rand.nextInt(3) - 1) * rand.nextInt(3) / 2, rand.nextInt(3) - 1);
+					blockpos1 = blockpos1.add(rand.nextInt(3) - 1, (rand.nextInt(3) - 1) * rand.nextInt(3) / 2,
+							rand.nextInt(3) - 1);
 					
 					if (worldIn.getBlockState(blockpos1.down()).getBlock() != this
 							|| worldIn.getBlockState(blockpos1).isNormalCube()) {
@@ -124,11 +123,9 @@ public class ZGBlockGrass extends ZGBlockDirt implements IGrowable {
 			} else {
 				if (worldIn.getLightFromNeighbors(pos.up()) >= 9) {
 					for (int i = 0; i < 4; ++i) {
-						BlockPos blockpos = pos.add(rand.nextInt(3) - 1, rand.nextInt(5) - 3,
-								rand.nextInt(3) - 1);
+						BlockPos blockpos = pos.add(rand.nextInt(3) - 1, rand.nextInt(5) - 3, rand.nextInt(3) - 1);
 						
-						if (blockpos.getY() >= 0 && blockpos.getY() < 256
-								&& !worldIn.isBlockLoaded(blockpos)) {
+						if (blockpos.getY() >= 0 && blockpos.getY() < 256 && !worldIn.isBlockLoaded(blockpos)) {
 							return;
 						}
 						

@@ -8,7 +8,7 @@ import net.minecraft.world.World;
 import zollerngalaxy.blocks.ZGBlockDirt;
 import zollerngalaxy.blocks.ZGBlockFlower;
 import zollerngalaxy.blocks.ZGBlockGrass;
-import zollerngalaxy.lib.helpers.json.JSONRegistryHelper;
+import zollerngalaxy.lib.helpers.json.JSONFactory;
 
 public class EdenFlower extends ZGBlockFlower {
 	
@@ -30,7 +30,7 @@ public class EdenFlower extends ZGBlockFlower {
 	private void setupFlower() {
 		this.setMaterial(Material.VINE);
 		String flowerName = (this.getColor() == "") ? blockName : blockName + "_" + this.getColor();
-		JSONRegistryHelper.registerFlowerBlock(flowerName);
+		JSONFactory.registerFlowerBlock(flowerName);
 	}
 	
 	@Override

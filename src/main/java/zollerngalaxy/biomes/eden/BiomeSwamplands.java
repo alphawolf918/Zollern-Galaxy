@@ -40,8 +40,7 @@ public class BiomeSwamplands extends BiomeEdenBase {
 	}
 	
 	@Override
-	public void genTerrainBlocks(World worldIn, Random rand, ChunkPrimer chunkPrimerIn, int x,
-			int z, double noiseVal) {
+	public void genTerrainBlocks(World worldIn, Random rand, ChunkPrimer chunkPrimerIn, int x, int z, double noiseVal) {
 		double d0 = GRASS_COLOR_NOISE.getValue(x * 0.25D, z * 0.25D);
 		
 		if (d0 > 0.0D) {
@@ -50,13 +49,11 @@ public class BiomeSwamplands extends BiomeEdenBase {
 			
 			for (int k = 255; k >= 0; --k) {
 				if (chunkPrimerIn.getBlockState(j, k, i).getMaterial() != Material.AIR) {
-					if (k <= (this.getBiomeHeight() - 3)
-							&& chunkPrimerIn.getBlockState(j, k, i).getBlock() != Blocks.WATER) {
+					if (k <= (this.getBiomeHeight() - 3) && chunkPrimerIn.getBlockState(j, k, i).getBlock() != Blocks.WATER) {
 						chunkPrimerIn.setBlockState(j, k, i, WATER);
 						
 						if (d0 <= 0.24D) {
-							chunkPrimerIn.setBlockState(j, k + 1, i,
-									Blocks.WATERLILY.getDefaultState());
+							chunkPrimerIn.setBlockState(j, k + 1, i, Blocks.WATERLILY.getDefaultState());
 						}
 					}
 					

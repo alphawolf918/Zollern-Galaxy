@@ -59,7 +59,7 @@ public class WorldProviderPurgot extends WorldProviderZG {
 		ZGPlanet planet = this.getPlanet();
 		float planetTemp = planet.getPlanetTemperature();
 		if (!this.isDaytime()) {
-			planetTemp -= 1.4F;
+			planetTemp /= 1.4F;
 		}
 		return planetTemp;
 	}

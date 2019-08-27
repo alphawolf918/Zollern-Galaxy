@@ -12,35 +12,33 @@ public class CompressorRecipesZG {
 	
 	public static void init() {
 		// Compressed Virinium
-		CompressorRecipes.addShapelessRecipe(new ItemStack(ZGItems.compressedVirinium, 2),
-				new ItemStack(ZGItems.ingotViri, 1, 0), new ItemStack(ZGItems.ingotViri, 1, 0));
+		CompressorRecipes.addShapelessRecipe(new ItemStack(ZGItems.compressedVirinium, 2), new ItemStack(ZGItems.ingotViri,
+				1, 0), new ItemStack(ZGItems.ingotViri, 1, 0));
 		totalCompressorRecipes++;
 		
 		// Compressed Evenium
-		CompressorRecipes.addShapelessRecipe(new ItemStack(ZGItems.compressedEvenium, 2),
-				new ItemStack(ZGItems.ingotEve, 1, 0), new ItemStack(ZGItems.ingotEve, 1, 0));
+		CompressorRecipes.addShapelessRecipe(new ItemStack(ZGItems.compressedEvenium, 2), new ItemStack(ZGItems.ingotEve, 1,
+				0), new ItemStack(ZGItems.ingotEve, 1, 0));
 		totalCompressorRecipes++;
 		
 		// Compressed Heartium
-		CompressorRecipes.addShapelessRecipe(new ItemStack(ZGItems.compressedHeartium, 2),
-				new ItemStack(ZGItems.heartOfZol, 1, 0), new ItemStack(ZGItems.heartOfZol, 1, 0));
+		CompressorRecipes.addShapelessRecipe(new ItemStack(ZGItems.compressedHeartium, 2), new ItemStack(ZGItems.heartOfZol,
+				1, 0), new ItemStack(ZGItems.heartOfZol, 1, 0));
 		totalCompressorRecipes++;
 		
 		// Compressed Vyrex
-		CompressorRecipes.addShapelessRecipe(new ItemStack(ZGItems.compressedVyrex, 2),
-				new ItemStack(ZGItems.compressedVirinium, 1, 0), new ItemStack(
-						ZGItems.compressedHeartium, 1, 0));
+		CompressorRecipes.addShapelessRecipe(new ItemStack(ZGItems.compressedVyrex, 2), new ItemStack(
+				ZGItems.compressedVirinium, 1, 0), new ItemStack(ZGItems.compressedHeartium, 1, 0));
 		totalCompressorRecipes++;
 		
 		// Compressed Cobalt
-		CompressorRecipes.addShapelessRecipe(new ItemStack(ZGItems.compressedCobalt, 2),
-				new ItemStack(ZGItems.ingotCobalt, 1, 0), new ItemStack(ZGItems.ingotCobalt, 1, 0));
+		CompressorRecipes.addShapelessRecipe(new ItemStack(ZGItems.compressedCobalt, 2), new ItemStack(ZGItems.ingotCobalt,
+				1, 0), new ItemStack(ZGItems.ingotCobalt, 1, 0));
 		totalCompressorRecipes++;
 		
 		// Compressed Kriffonium
-		CompressorRecipes.addShapelessRecipe(new ItemStack(ZGItems.compressedKriffonium, 2),
-				new ItemStack(ZGItems.compressedGold, 1, 0), new ItemStack(
-						ZGItems.compressedCobalt, 1, 0));
+		CompressorRecipes.addShapelessRecipe(new ItemStack(ZGItems.compressedKriffonium, 2), new ItemStack(
+				ZGItems.compressedGold, 1, 0), new ItemStack(ZGItems.compressedCobalt, 1, 0));
 		totalCompressorRecipes++;
 		
 		// Compressed Emerald

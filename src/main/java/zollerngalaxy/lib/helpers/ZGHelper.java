@@ -28,8 +28,7 @@ public class ZGHelper {
 	
 	public static void dropItem(Item droppedItem, World worldObj, Entity theEntity) {
 		ItemStack itemStack = new ItemStack(droppedItem, rngNumber(1, 2));
-		EntityItem itemEntity = new EntityItem(worldObj, theEntity.posX, theEntity.posY,
-				theEntity.posZ, itemStack);
+		EntityItem itemEntity = new EntityItem(worldObj, theEntity.posX, theEntity.posY, theEntity.posZ, itemStack);
 		worldObj.spawnEntity(itemEntity);
 	}
 	
@@ -143,10 +142,9 @@ public class ZGHelper {
 		item.setItemDamage(item.getMaxDamage());
 	}
 	
-	public static DimensionType registerDimension(String dimName, String dimUnlocalizedName,
-			int dimID, Class<? extends WorldProvider> worldProvider) {
-		DimensionType dim = DimensionType.register(dimName, dimUnlocalizedName, dimID,
-				worldProvider, false);
+	public static DimensionType registerDimension(String dimName, String dimUnlocalizedName, int dimID,
+			Class<? extends WorldProvider> worldProvider) {
+		DimensionType dim = DimensionType.register(dimName, dimUnlocalizedName, dimID, worldProvider, false);
 		DimensionManager.registerDimension(dimID, dim);
 		return dim;
 	}

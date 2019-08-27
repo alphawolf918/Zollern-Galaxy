@@ -56,35 +56,22 @@ public class ZGBiomes {
 	public static final Biome PURGOT_LIMBO = new BiomeLimbo(new BiomeProperties("Limbo"));
 	
 	// Eden
-	public static final Biome EDEN_GREEN_LANDS = new BiomeGreenLands(new BiomeProperties(
-			"Green Lands"));
-	public static final Biome EDEN_BLOOD_DESERT = new BiomeBloodDesert(new BiomeProperties(
-			"Blood Desert"));
-	public static final Biome EDEN_ROCK_MOUNTAINS = new BiomeStoneMountains(new BiomeProperties(
-			"Rock Mountains"));
-	public static final Biome EDEN_TERRAN_VALLEY = new BiomeTerranValley(new BiomeProperties(
-			"Terran Valley"));
-	public static final Biome EDEN_SNOWY_PLAINS = new BiomeSnowyPlains(new BiomeProperties(
-			"Snowy Plains"));
-	public static final Biome EDEN_GOLDEN_MEADOW = new BiomeGoldenMeadow(new BiomeProperties(
-			"Golden Meadow"));
-	public static final Biome EDEN_SWAMPLANDS = new BiomeSwamplands(new BiomeProperties(
-			"Swamplands"));
-	public static final Biome EDENWOOD_FOREST = new BiomeEdenwoodForest(new BiomeProperties(
-			"Edenwood Forest"));
-	public static final Biome EDEN_FLOWER_GARDEN = new BiomeFlowerGarden(new BiomeProperties(
-			"The Garden"));
-	public static final Biome EDEN_CRATERS = new BiomeAsteroidCraters(new BiomeProperties(
-			"Asteroid Craters"));
+	public static final Biome EDEN_GREEN_LANDS = new BiomeGreenLands(new BiomeProperties("Green Lands"));
+	public static final Biome EDEN_BLOOD_DESERT = new BiomeBloodDesert(new BiomeProperties("Blood Desert"));
+	public static final Biome EDEN_ROCK_MOUNTAINS = new BiomeStoneMountains(new BiomeProperties("Rock Mountains"));
+	public static final Biome EDEN_TERRAN_VALLEY = new BiomeTerranValley(new BiomeProperties("Terran Valley"));
+	public static final Biome EDEN_SNOWY_PLAINS = new BiomeSnowyPlains(new BiomeProperties("Snowy Plains"));
+	public static final Biome EDEN_GOLDEN_MEADOW = new BiomeGoldenMeadow(new BiomeProperties("Golden Meadow"));
+	public static final Biome EDEN_SWAMPLANDS = new BiomeSwamplands(new BiomeProperties("Swamplands"));
+	public static final Biome EDENWOOD_FOREST = new BiomeEdenwoodForest(new BiomeProperties("Edenwood Forest"));
+	public static final Biome EDEN_FLOWER_GARDEN = new BiomeFlowerGarden(new BiomeProperties("The Garden"));
+	public static final Biome EDEN_CRATERS = new BiomeAsteroidCraters(new BiomeProperties("Asteroid Craters"));
 	public static final Biome EDEN_OCEAN = new BiomeEdenOcean(new BiomeProperties("Ocean of Eden"));
 	
 	// Xathius
-	public static final Biome XATHIUS_ABSTRACT_PLAINS = new BiomeAbstractPlains(
-			new BiomeProperties("Abstract Plains"));
-	public static final Biome XATHIUS_OCEAN = new BiomeXathiusOcean(new BiomeProperties(
-			"Xathius Ocean"));
-	public static final Biome XATHIUS_BLUELANDS = new BiomeBluelands(new BiomeProperties(
-			"Bluelands"));
+	public static final Biome XATHIUS_ABSTRACT_PLAINS = new BiomeAbstractPlains(new BiomeProperties("Abstract Plains"));
+	public static final Biome XATHIUS_OCEAN = new BiomeXathiusOcean(new BiomeProperties("Xathius Ocean"));
+	public static final Biome XATHIUS_BLUELANDS = new BiomeBluelands(new BiomeProperties("Bluelands"));
 	
 	// Oasis
 	// TODO

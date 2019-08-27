@@ -22,8 +22,8 @@ public class WorldGenEdenTrees extends WorldGenAbstractTree {
 	private final IBlockState blockLog;
 	private final IBlockState blockLeaves;
 	
-	public WorldGenEdenTrees(boolean notify, int minTreeHeightIn, IBlockState woodMeta,
-			IBlockState p_i46446_4_, boolean growVines) {
+	public WorldGenEdenTrees(boolean notify, int minTreeHeightIn, IBlockState woodMeta, IBlockState p_i46446_4_,
+			boolean growVines) {
 		super(notify);
 		this.minTreeHeight = minTreeHeightIn;
 		this.blockLog = woodMeta;
@@ -56,8 +56,7 @@ public class WorldGenEdenTrees extends WorldGenAbstractTree {
 				} else {
 					IBlockState state = worldIn.getBlockState(position.down());
 					
-					if (state.getBlock() instanceof ZGBlockGrass
-							|| state.getBlock() instanceof ZGBlockDirt) {
+					if (state.getBlock() instanceof ZGBlockGrass || state.getBlock() instanceof ZGBlockDirt) {
 						state.getBlock().onPlantGrow(state, worldIn, position.down(), position);
 						int k2 = 3;
 						int l2 = 0;
@@ -72,17 +71,14 @@ public class WorldGenEdenTrees extends WorldGenAbstractTree {
 								for (int i2 = position.getZ() - j1; i2 <= position.getZ() + j1; ++i2) {
 									int j2 = i2 - position.getZ();
 									
-									if (Math.abs(l1) != j1 || Math.abs(j2) != j1
-											|| rand.nextInt(2) != 0 && i4 != 0) {
+									if (Math.abs(l1) != j1 || Math.abs(j2) != j1 || rand.nextInt(2) != 0 && i4 != 0) {
 										BlockPos blockpos = new BlockPos(k1, i3, i2);
 										state = worldIn.getBlockState(blockpos);
 										
 										if (state.getBlock().isAir(state, worldIn, blockpos)
-												|| state.getBlock().isLeaves(state, worldIn,
-														blockpos)
+												|| state.getBlock().isLeaves(state, worldIn, blockpos)
 												|| state.getMaterial() == Material.VINE) {
-											this.setBlockAndNotifyAdequately(worldIn, blockpos,
-													this.blockLeaves);
+											this.setBlockAndNotifyAdequately(worldIn, blockpos, this.blockLeaves);
 										}
 									}
 								}
@@ -96,32 +92,23 @@ public class WorldGenEdenTrees extends WorldGenAbstractTree {
 							if (state.getBlock().isAir(state, worldIn, upN)
 									|| state.getBlock().isLeaves(state, worldIn, upN)
 									|| state.getMaterial() == Material.VINE) {
-								this.setBlockAndNotifyAdequately(worldIn, position.up(j3),
-										this.blockLog);
+								this.setBlockAndNotifyAdequately(worldIn, position.up(j3), this.blockLog);
 								
 								if (this.vinesGrow && j3 > 0) {
-									if (rand.nextInt(3) > 0
-											&& worldIn.isAirBlock(position.add(-1, j3, 0))) {
-										this.addVine(worldIn, position.add(-1, j3, 0),
-												BlockVine.EAST);
+									if (rand.nextInt(3) > 0 && worldIn.isAirBlock(position.add(-1, j3, 0))) {
+										this.addVine(worldIn, position.add(-1, j3, 0), BlockVine.EAST);
 									}
 									
-									if (rand.nextInt(3) > 0
-											&& worldIn.isAirBlock(position.add(1, j3, 0))) {
-										this.addVine(worldIn, position.add(1, j3, 0),
-												BlockVine.WEST);
+									if (rand.nextInt(3) > 0 && worldIn.isAirBlock(position.add(1, j3, 0))) {
+										this.addVine(worldIn, position.add(1, j3, 0), BlockVine.WEST);
 									}
 									
-									if (rand.nextInt(3) > 0
-											&& worldIn.isAirBlock(position.add(0, j3, -1))) {
-										this.addVine(worldIn, position.add(0, j3, -1),
-												BlockVine.SOUTH);
+									if (rand.nextInt(3) > 0 && worldIn.isAirBlock(position.add(0, j3, -1))) {
+										this.addVine(worldIn, position.add(0, j3, -1), BlockVine.SOUTH);
 									}
 									
-									if (rand.nextInt(3) > 0
-											&& worldIn.isAirBlock(position.add(0, j3, 1))) {
-										this.addVine(worldIn, position.add(0, j3, 1),
-												BlockVine.NORTH);
+									if (rand.nextInt(3) > 0 && worldIn.isAirBlock(position.add(0, j3, 1))) {
+										this.addVine(worldIn, position.add(0, j3, 1), BlockVine.NORTH);
 									}
 								}
 							}
@@ -138,35 +125,26 @@ public class WorldGenEdenTrees extends WorldGenAbstractTree {
 										blockpos$mutableblockpos1.setPos(l4, k3, i5);
 										
 										state = worldIn.getBlockState(blockpos$mutableblockpos1);
-										if (state.getBlock().isLeaves(state, worldIn,
-												blockpos$mutableblockpos1)) {
+										if (state.getBlock().isLeaves(state, worldIn, blockpos$mutableblockpos1)) {
 											BlockPos blockpos2 = blockpos$mutableblockpos1.west();
 											BlockPos blockpos3 = blockpos$mutableblockpos1.east();
 											BlockPos blockpos4 = blockpos$mutableblockpos1.north();
 											BlockPos blockpos1 = blockpos$mutableblockpos1.south();
 											
-											if (rand.nextInt(4) == 0
-													&& worldIn.isAirBlock(blockpos2)) {
-												this.addHangingVine(worldIn, blockpos2,
-														BlockVine.EAST);
+											if (rand.nextInt(4) == 0 && worldIn.isAirBlock(blockpos2)) {
+												this.addHangingVine(worldIn, blockpos2, BlockVine.EAST);
 											}
 											
-											if (rand.nextInt(4) == 0
-													&& worldIn.isAirBlock(blockpos3)) {
-												this.addHangingVine(worldIn, blockpos3,
-														BlockVine.WEST);
+											if (rand.nextInt(4) == 0 && worldIn.isAirBlock(blockpos3)) {
+												this.addHangingVine(worldIn, blockpos3, BlockVine.WEST);
 											}
 											
-											if (rand.nextInt(4) == 0
-													&& worldIn.isAirBlock(blockpos4)) {
-												this.addHangingVine(worldIn, blockpos4,
-														BlockVine.SOUTH);
+											if (rand.nextInt(4) == 0 && worldIn.isAirBlock(blockpos4)) {
+												this.addHangingVine(worldIn, blockpos4, BlockVine.SOUTH);
 											}
 											
-											if (rand.nextInt(4) == 0
-													&& worldIn.isAirBlock(blockpos1)) {
-												this.addHangingVine(worldIn, blockpos1,
-														BlockVine.NORTH);
+											if (rand.nextInt(4) == 0 && worldIn.isAirBlock(blockpos1)) {
+												this.addHangingVine(worldIn, blockpos1, BlockVine.NORTH);
 											}
 										}
 									}
@@ -182,9 +160,8 @@ public class WorldGenEdenTrees extends WorldGenAbstractTree {
 										this.placeFruit(
 												worldIn,
 												rand.nextInt(3),
-												position.add(enumfacing1.getFrontOffsetX(), i - 5
-														+ l3, enumfacing1.getFrontOffsetZ()),
-												enumfacing);
+												position.add(enumfacing1.getFrontOffsetX(), i - 5 + l3,
+														enumfacing1.getFrontOffsetZ()), enumfacing);
 									}
 								}
 							}
@@ -206,8 +183,7 @@ public class WorldGenEdenTrees extends WorldGenAbstractTree {
 		this.setBlockAndNotifyAdequately(
 				worldIn,
 				pos,
-				ZGBlocks.edenFruit.getDefaultState()
-						.withProperty(EdenFruit.AGE, Integer.valueOf(p_181652_2_))
+				ZGBlocks.edenFruit.getDefaultState().withProperty(EdenFruit.AGE, Integer.valueOf(p_181652_2_))
 						.withProperty(EdenFruit.FACING, side));
 	}
 	

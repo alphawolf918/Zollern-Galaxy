@@ -58,8 +58,7 @@ public class ZGOreGem extends ZGBlockOre {
 	}
 	
 	@Override
-	public void getDrops(NonNullList<ItemStack> drops, IBlockAccess world, BlockPos pos,
-			IBlockState state, int fortune) {
+	public void getDrops(NonNullList<ItemStack> drops, IBlockAccess world, BlockPos pos, IBlockState state, int fortune) {
 		int j = ZGHelper.rngNumber(this.getMinDropped(), this.getMaxDropped());
 		for (int k = 0; k < j; ++k) {
 			drops.add(new ItemStack(itemToDrop, 1, this.droppedMetadata));
@@ -116,8 +115,8 @@ public class ZGOreGem extends ZGBlockOre {
 	@Override
 	public int quantityDroppedWithBonus(int fortune, Random random) {
 		if (fortune > 0
-				&& Item.getItemFromBlock(this) != this.getItemDropped(this.getBlockState()
-						.getValidStates().iterator().next(), random, fortune)) {
+				&& Item.getItemFromBlock(this) != this.getItemDropped(this.getBlockState().getValidStates().iterator()
+						.next(), random, fortune)) {
 			int i = random.nextInt(fortune + 2) - 1;
 			
 			if (i < 0) {
@@ -131,8 +130,7 @@ public class ZGOreGem extends ZGBlockOre {
 	}
 	
 	@Override
-	public int getExpDrop(IBlockState state, net.minecraft.world.IBlockAccess world, BlockPos pos,
-			int fortune) {
+	public int getExpDrop(IBlockState state, net.minecraft.world.IBlockAccess world, BlockPos pos, int fortune) {
 		Random rand = world instanceof World ? ((World) world).rand : new Random();
 		return MathHelper.getInt(rand, 3, 7);
 	}

@@ -47,8 +47,7 @@ public class CommonZGRegisterHelper {
 			}
 		}
 		if (itemBlock != null) {
-			ForgeRegistries.ITEMS.register(itemBlock.apply(block).setRegistryName(
-					block.getRegistryName()));
+			ForgeRegistries.ITEMS.register(itemBlock.apply(block).setRegistryName(block.getRegistryName()));
 		}
 	}
 	
@@ -111,8 +110,7 @@ public class CommonZGRegisterHelper {
 	}
 	
 	public static boolean isControlKeyDown() {
-		return Keyboard.isKeyDown(Keyboard.KEY_LCONTROL)
-				|| Keyboard.isKeyDown(Keyboard.KEY_RCONTROL);
+		return Keyboard.isKeyDown(Keyboard.KEY_LCONTROL) || Keyboard.isKeyDown(Keyboard.KEY_RCONTROL);
 	}
 	
 	public static String ticksToElapsedTime(int ticks) {

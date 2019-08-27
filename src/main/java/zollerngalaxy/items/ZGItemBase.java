@@ -6,7 +6,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.blocks.creativetabs.ZGTabs;
 import zollerngalaxy.core.ZollernGalaxyCore;
-import zollerngalaxy.lib.helpers.json.JSONRegistryHelper;
+import zollerngalaxy.lib.helpers.json.JSONFactory;
 
 public class ZGItemBase extends Item implements ISingleZGItemRender {
 	
@@ -14,7 +14,7 @@ public class ZGItemBase extends Item implements ISingleZGItemRender {
 		super();
 		setItemName(this, name);
 		if (ZollernGalaxyCore.instance().isInDevMode()) {
-			JSONRegistryHelper.registerItem(name);
+			JSONFactory.registerItem(name);
 		}
 	}
 	

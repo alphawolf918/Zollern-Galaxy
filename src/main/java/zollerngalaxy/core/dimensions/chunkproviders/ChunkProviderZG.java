@@ -64,8 +64,7 @@ public abstract class ChunkProviderZG extends ChunkGeneratorOverworld {
 				
 				for (int y = 0; y < this.CHUNK_SIZE_Y; y++) {
 					if (y < this.getTerrainHeight() + yDev) {
-						chunk.setBlockState(x, y, z,
-								this.getBaseBlock().getStateFromMeta(this.getBlockMetadata()[2]));
+						chunk.setBlockState(x, y, z, this.getBaseBlock().getStateFromMeta(this.getBlockMetadata()[2]));
 					}
 				}
 			}
@@ -84,8 +83,7 @@ public abstract class ChunkProviderZG extends ChunkGeneratorOverworld {
 	
 	@Override
 	@Nullable
-	public BlockPos getNearestStructurePos(World worldIn, String structureName, BlockPos position,
-			boolean findUnexplored) {
+	public BlockPos getNearestStructurePos(World worldIn, String structureName, BlockPos position, boolean findUnexplored) {
 		return null;
 	}
 	
@@ -128,16 +126,13 @@ public abstract class ChunkProviderZG extends ChunkGeneratorOverworld {
 								var13 = noise;
 								
 								if (y >= var5 - 1) {
-									chunk.setBlockState(x, y, z,
-											topBlock.getStateFromMeta(topBlockMeta));
+									chunk.setBlockState(x, y, z, topBlock.getStateFromMeta(topBlockMeta));
 								} else if (y < var5 - 1 && y >= var5 - 2) {
-									chunk.setBlockState(x, y, z,
-											fillBlock.getStateFromMeta(fillBlockMeta));
+									chunk.setBlockState(x, y, z, fillBlock.getStateFromMeta(fillBlockMeta));
 								}
 							} else if (var13 > 0) {
 								--var13;
-								chunk.setBlockState(x, y, z,
-										fillBlock.getStateFromMeta(fillBlockMeta));
+								chunk.setBlockState(x, y, z, fillBlock.getStateFromMeta(fillBlockMeta));
 							}
 						}
 					}
@@ -152,16 +147,14 @@ public abstract class ChunkProviderZG extends ChunkGeneratorOverworld {
 				for (int x = 0; x < this.CHUNK_SIZE_X; x++) {
 					for (int z = 0; z < this.CHUNK_SIZE_Z; z++) {
 						if (this.getCraterChance() > 0) {
-							if (Math.abs(this.randFromPoint(cx * 16 + x, (cz * 16 + z) * 1000)) < this.noiseGen4
-									.getNoise(x * this.CHUNK_SIZE_X + x, cz * this.CHUNK_SIZE_Z + z)
+							if (Math.abs(this.randFromPoint(cx * 16 + x, (cz * 16 + z) * 1000)) < this.noiseGen4.getNoise(x
+									* this.CHUNK_SIZE_X + x, cz * this.CHUNK_SIZE_Z + z)
 									/ this.getCraterChance()) {
 								Random random = new Random(cx * 16 + x + (cz * 16 + z) * 5000);
 								EnumCraterSize cSize = EnumCraterSize.sizeArray[random
 										.nextInt(EnumCraterSize.sizeArray.length)];
-								int size = random.nextInt(cSize.MAX_SIZE - cSize.MIN_SIZE)
-										+ cSize.MIN_SIZE;
-								this.makeCrater(cx * 16 + x, cz * 16 + z, chunkX * 16, chunkZ * 16,
-										size, chunk);
+								int size = random.nextInt(cSize.MAX_SIZE - cSize.MIN_SIZE) + cSize.MIN_SIZE;
+								this.makeCrater(cx * 16 + x, cz * 16 + z, chunkX * 16, chunkZ * 16, size, chunk);
 							}
 						}
 					}
@@ -170,8 +163,7 @@ public abstract class ChunkProviderZG extends ChunkGeneratorOverworld {
 		}
 	}
 	
-	public void makeCrater(int craterX, int craterZ, int chunkX, int chunkZ, int size,
-			ChunkPrimer chunk) {
+	public void makeCrater(int craterX, int craterZ, int chunkX, int chunkZ, int size, ChunkPrimer chunk) {
 		for (int x = 0; x < this.CHUNK_SIZE_X; x++) {
 			for (int z = 0; z < this.CHUNK_SIZE_Z; z++) {
 				double xDev = craterX - (chunkX + x);

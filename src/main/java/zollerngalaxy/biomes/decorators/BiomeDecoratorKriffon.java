@@ -28,24 +28,15 @@ public class BiomeDecoratorKriffon extends BiomeDecoratorZG {
 	public int lavaLakesPerChunk = 8;
 	
 	public BiomeDecoratorKriffon() {
-		this.dirtGen = new WorldGenMinableZG(ZGBlocks.kriffDirt, ZGBlocks.kriffSurfaceRock,
-				EnumOreGenZG.DIRT);
-		this.magmaGen = new WorldGenMinableZG(ZGBlocks.kriffMagmaRock, ZGBlocks.kriffSurfaceRock,
-				EnumOreGenZG.MAGMA);
-		this.magmaGen2 = new WorldGenMinableZG(ZGBlocks.kriffMagmaRock, ZGBlocks.kriffStone,
-				EnumOreGenZG.MAGMA);
-		this.copperGen = new WorldGenMinableZG(ZGBlocks.kriffCopperOre, ZGBlocks.kriffStone,
-				EnumOreGenZG.COPPER);
-		this.ironGen = new WorldGenMinableZG(ZGBlocks.kriffIronOre, ZGBlocks.kriffStone,
-				EnumOreGenZG.IRON);
-		this.goldGen = new WorldGenMinableZG(ZGBlocks.kriffGoldOre, ZGBlocks.kriffStone,
-				EnumOreGenZG.GOLD);
-		this.cobaltGen = new WorldGenMinableZG(ZGBlocks.kriffCobaltOre, ZGBlocks.kriffStone,
-				EnumOreGenZG.COBALT);
-		this.coalGen = new WorldGenMinableZG(ZGBlocks.kriffCoalOre, ZGBlocks.kriffStone,
-				EnumOreGenZG.COAL);
-		this.redstoneGen = new WorldGenMinableZG(ZGBlocks.kriffRedstoneOre, ZGBlocks.kriffStone,
-				EnumOreGenZG.REDSTONE);
+		this.dirtGen = new WorldGenMinableZG(ZGBlocks.kriffDirt, ZGBlocks.kriffSurfaceRock, EnumOreGenZG.DIRT);
+		this.magmaGen = new WorldGenMinableZG(ZGBlocks.kriffMagmaRock, ZGBlocks.kriffSurfaceRock, EnumOreGenZG.MAGMA);
+		this.magmaGen2 = new WorldGenMinableZG(ZGBlocks.kriffMagmaRock, ZGBlocks.kriffStone, EnumOreGenZG.MAGMA);
+		this.copperGen = new WorldGenMinableZG(ZGBlocks.kriffCopperOre, ZGBlocks.kriffStone, EnumOreGenZG.COPPER);
+		this.ironGen = new WorldGenMinableZG(ZGBlocks.kriffIronOre, ZGBlocks.kriffStone, EnumOreGenZG.IRON);
+		this.goldGen = new WorldGenMinableZG(ZGBlocks.kriffGoldOre, ZGBlocks.kriffStone, EnumOreGenZG.GOLD);
+		this.cobaltGen = new WorldGenMinableZG(ZGBlocks.kriffCobaltOre, ZGBlocks.kriffStone, EnumOreGenZG.COBALT);
+		this.coalGen = new WorldGenMinableZG(ZGBlocks.kriffCoalOre, ZGBlocks.kriffStone, EnumOreGenZG.COAL);
+		this.redstoneGen = new WorldGenMinableZG(ZGBlocks.kriffRedstoneOre, ZGBlocks.kriffStone, EnumOreGenZG.REDSTONE);
 	}
 	
 	@Override
@@ -71,8 +62,7 @@ public class BiomeDecoratorKriffon extends BiomeDecoratorZG {
 				y = rand.nextInt(rand.nextInt(genY) + 8);
 				
 				if (rand.nextInt(100) <= 50) {
-					(new WorldGenLakesZG(Blocks.LAVA, STONE)).generate(world, rand,
-							this.chunkPos.add(x, y, z));
+					(new WorldGenLakesZG(Blocks.LAVA, STONE)).generate(world, rand, this.chunkPos.add(x, y, z));
 				}
 			}
 		}

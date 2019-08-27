@@ -175,8 +175,7 @@ public abstract class SkyProviderBaseZG extends IRenderHandler {
 		Random rand = new Random(10842L);
 		worldrenderer.begin(7, DefaultVertexFormats.POSITION);
 		
-		for (int starIndex = 0; starIndex < (ConfigManagerCore.moreStars ? this.getMaxStarCount()[0]
-				: 6000); ++starIndex) {
+		for (int starIndex = 0; starIndex < (ConfigManagerCore.moreStars ? this.getMaxStarCount()[0] : 6000); ++starIndex) {
 			double d0 = rand.nextFloat() * 2.0F - 1.0F;
 			double d1 = rand.nextFloat() * 2.0F - 1.0F;
 			double d2 = rand.nextFloat() * 2.0F - 1.0F;
@@ -189,14 +188,14 @@ public abstract class SkyProviderBaseZG extends IRenderHandler {
 				d1 *= d4;
 				d2 *= d4;
 				double d5 = d0
-						* (ConfigManagerCore.moreStars ? rand.nextDouble()
-								* this.getMaxStarCount()[1] + this.getMaxStarCount()[2] : 100.0D);
+						* (ConfigManagerCore.moreStars ? rand.nextDouble() * this.getMaxStarCount()[1]
+								+ this.getMaxStarCount()[2] : 100.0D);
 				double d6 = d1
-						* (ConfigManagerCore.moreStars ? rand.nextDouble()
-								* this.getMaxStarCount()[1] + this.getMaxStarCount()[2] : 100.0D);
+						* (ConfigManagerCore.moreStars ? rand.nextDouble() * this.getMaxStarCount()[1]
+								+ this.getMaxStarCount()[2] : 100.0D);
 				double d7 = d2
-						* (ConfigManagerCore.moreStars ? rand.nextDouble()
-								* this.getMaxStarCount()[1] + this.getMaxStarCount()[2] : 100.0D);
+						* (ConfigManagerCore.moreStars ? rand.nextDouble() * this.getMaxStarCount()[1]
+								+ this.getMaxStarCount()[2] : 100.0D);
 				double d8 = Math.atan2(d0, d2);
 				double d9 = Math.sin(d8);
 				double d10 = Math.cos(d8);

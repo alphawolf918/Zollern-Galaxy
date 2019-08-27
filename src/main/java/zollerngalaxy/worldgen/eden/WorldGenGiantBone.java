@@ -37,13 +37,11 @@ public class WorldGenGiantBone extends ZGWorldGenMaster {
 		if (rand.nextInt(100) <= 35) {
 			BlockPos chestPos1 = position.add(0, -1, 0);
 			
-			world.setBlockState(chestPos1,
-					Blocks.CHEST.correctFacing(world, chestPos1, Blocks.CHEST.getDefaultState()), 2);
+			world.setBlockState(chestPos1, Blocks.CHEST.correctFacing(world, chestPos1, Blocks.CHEST.getDefaultState()), 2);
 			TileEntity tileentity2 = world.getTileEntity(chestPos1);
 			
 			if (tileentity2 instanceof TileEntityChest) {
-				((TileEntityChest) tileentity2).setLootTable(ZGLootTables.CHEST_GIANT_BONE,
-						rand.nextLong());
+				((TileEntityChest) tileentity2).setLootTable(ZGLootTables.CHEST_GIANT_BONE, rand.nextLong());
 			}
 		}
 		//

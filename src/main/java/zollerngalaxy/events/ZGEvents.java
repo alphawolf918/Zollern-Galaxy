@@ -26,8 +26,6 @@ import zollerngalaxy.util.CachedEnum;
 
 public class ZGEvents {
 	
-	// My way around loot tables. Use a randomized integer to get a chance for a
-	// specific mob to drop an item or items.
 	@SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
 	public void onLivingDropsEvent(LivingDropsEvent event) {
 		Entity theEntity = event.getEntityLiving();
@@ -66,17 +64,16 @@ public class ZGEvents {
 		}
 	}
 	
-	private void setFarmland(UseHoeEvent event, World world, BlockPos pos, IBlockState state,
-			IProperty<?> property, Object value, Block dirt, Block farmland) {
+	private void setFarmland(UseHoeEvent event, World world, BlockPos pos, IBlockState state, IProperty<?> property,
+			Object value, Block dirt, Block farmland) {
 		if (state.getValue(property) == value) {
 			world.setBlockState(pos, dirt.getDefaultState());
 		} else {
 			world.setBlockState(pos, farmland.getDefaultState());
 		}
 		event.setResult(Result.ALLOW);
-		world.playSound(null, pos.getX(), pos.getY(), pos.getZ(), SoundType.GROUND.getStepSound(),
-				SoundCategory.BLOCKS, (SoundType.GROUND.getVolume() + 1.0F) / 2.0F,
-				SoundType.GROUND.getPitch() * 0.8F);
+		world.playSound(null, pos.getX(), pos.getY(), pos.getZ(), SoundType.GROUND.getStepSound(), SoundCategory.BLOCKS,
+				(SoundType.GROUND.getVolume() + 1.0F) / 2.0F, SoundType.GROUND.getPitch() * 0.8F);
 		
 		for (EnumHand hand : CachedEnum.valuesHandCached()) {
 			event.getEntityPlayer().swingArm(hand);
@@ -86,9 +83,8 @@ public class ZGEvents {
 	private void setFarmland(UseHoeEvent event, World world, BlockPos pos, Block farmland) {
 		world.setBlockState(pos, farmland.getDefaultState());
 		event.setResult(Result.ALLOW);
-		world.playSound(null, pos.getX(), pos.getY(), pos.getZ(), SoundType.GROUND.getStepSound(),
-				SoundCategory.BLOCKS, (SoundType.GROUND.getVolume() + 1.0F) / 2.0F,
-				SoundType.GROUND.getPitch() * 0.8F);
+		world.playSound(null, pos.getX(), pos.getY(), pos.getZ(), SoundType.GROUND.getStepSound(), SoundCategory.BLOCKS,
+				(SoundType.GROUND.getVolume() + 1.0F) / 2.0F, SoundType.GROUND.getPitch() * 0.8F);
 		
 		for (EnumHand hand : CachedEnum.valuesHandCached()) {
 			event.getEntityPlayer().swingArm(hand);

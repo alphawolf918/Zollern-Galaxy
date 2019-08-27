@@ -45,36 +45,22 @@ public class ItemStargate extends ZGItemBase {
 			this.proxy.sendChatMessage(player, "This Protocol isn't functional yet.");
 			break;
 		case 0:
-			this.proxy.sendChatMessage(player,
-					"Unknown Protocol detected; unable to transfer biological entity.");
+			this.proxy.sendChatMessage(player, "Unknown Protocol detected; unable to transfer biological entity.");
 			break;
 		case 1:
-			if (dim == ConfigManagerZG.planetZollusDimensionId) {
-				this.sendToServer(ConfigManagerZG.planetKriffonDimensionId, player);
-			} else {
-				this.sendToServer(ConfigManagerZG.planetZollusDimensionId, player);
-			}
+			this.sendToPlanet(ConfigManagerZG.planetKriffonDimensionId, ConfigManagerZG.planetZollusDimensionId, player);
 			break;
 		case 2:
-			if (dim == ConfigManagerZG.planetKriffonDimensionId) {
-				this.sendToServer(ConfigManagerZG.planetPurgotDimensionId, player);
-			} else {
-				this.sendToServer(ConfigManagerZG.planetKriffonDimensionId, player);
-			}
+			this.sendToPlanet(ConfigManagerZG.planetPurgotDimensionId, ConfigManagerZG.planetKriffonDimensionId, player);
 			break;
 		case 3:
-			if (dim == ConfigManagerZG.planetPurgotDimensionId) {
-				this.sendToServer(ConfigManagerZG.planetEdenDimensionId, player);
-			} else {
-				this.sendToServer(ConfigManagerZG.planetPurgotDimensionId, player);
-			}
+			this.sendToPlanet(ConfigManagerZG.planetPurgotDimensionId, ConfigManagerZG.planetEdenDimensionId, player);
 			break;
 		case 4:
-			this.sendToPlanet(ConfigManagerZG.planetXathiusDimensionId,
-					ConfigManagerZG.planetEdenDimensionId, player);
+			this.sendToPlanet(ConfigManagerZG.planetXathiusDimensionId, ConfigManagerZG.planetEdenDimensionId, player);
 			break;
 		case 5:
-			// TODO
+			this.sendToPlanet(ConfigManagerZG.planetOasisDimensionId, ConfigManagerZG.planetXathiusDimensionId, player);
 			break;
 		case 6:
 			// TODO
@@ -126,8 +112,7 @@ public class ItemStargate extends ZGItemBase {
 	}
 	
 	@Override
-	public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn,
-			EnumHand handIn) {
+	public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn) {
 		ItemStack itemstack = playerIn.getHeldItem(handIn);
 		this.teleportPlayer(worldIn, playerIn);
 		return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, itemstack);
@@ -140,8 +125,7 @@ public class ItemStargate extends ZGItemBase {
 	
 	@Override
 	@SideOnly(Side.CLIENT)
-	public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip,
-			ITooltipFlag flagIn) {
+	public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
 		if (CommonZGRegisterHelper.isShiftKeyDown()) {
 			tooltip.add(TextFormatting.GREEN + "A gateway between two");
 			tooltip.add(TextFormatting.GREEN + "worlds, moving the Player");

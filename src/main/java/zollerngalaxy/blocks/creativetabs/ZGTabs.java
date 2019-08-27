@@ -12,9 +12,7 @@ public class ZGTabs {
 	public static CreativeTabs zgBlocksTab;
 	
 	public static void init() {
-		zgBlocksTab = ZGHelper.createCreativeTabs("ZollernGalaxyBlocks", new ItemStack(
-				ZGBlocks.edenGrass));
-		zgItemsTab = ZGHelper.createCreativeTabs("ZollernGalaxyItems", new ItemStack(
-				ZGItems.alienStone));
+		zgBlocksTab = ZGHelper.createCreativeTabs("ZollernGalaxyBlocks", new ItemStack(ZGBlocks.edenGrass));
+		zgItemsTab = ZGHelper.createCreativeTabs("ZollernGalaxyItems", new ItemStack(ZGItems.alienStone));
 	}
 }

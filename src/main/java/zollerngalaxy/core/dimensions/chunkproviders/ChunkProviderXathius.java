@@ -55,7 +55,8 @@ public class ChunkProviderXathius extends ChunkProviderBase {
 	private final double[] terrainCalcs;
 	private final float[] parabolicField;
 	private double[] stoneNoise = new double[256];
-	private MapGenCavesZG caveGenerator = new MapGenCavesZG(ZGBlocks.xathStone);
+	private MapGenCavesZG caveGenerator = new MapGenCavesZG(ZGBlocks.xathStone, Blocks.OBSIDIAN);
+	private MapGenCavesZG caveGenerator2 = new MapGenCavesZG(ZGBlocks.xathStone);
 	private final MapGenRavinesZG ravineGenerator = new MapGenRavinesZG(ZGBlocks.xathStone);
 	private final MapGenVillageMoon villageGenerator = new MapGenVillageMoon();
 	private MapGenMineshaft mineshaftGenerator = new MapGenMineshaft();
@@ -89,8 +90,7 @@ public class ChunkProviderXathius extends ChunkProviderBase {
 			}
 		}
 		
-		NoiseGenerator[] noiseGens = { noiseGen1, noiseGen2, noiseGen3, noiseGen4, noiseGen5,
-				noiseGen6, mobSpawnerNoise };
+		NoiseGenerator[] noiseGens = { noiseGen1, noiseGen2, noiseGen3, noiseGen4, noiseGen5, noiseGen6, mobSpawnerNoise };
 		this.noiseGen1 = (NoiseGeneratorOctaves) noiseGens[0];
 		this.noiseGen2 = (NoiseGeneratorOctaves) noiseGens[1];
 		this.noiseGen3 = (NoiseGeneratorOctaves) noiseGens[2];
@@ -102,8 +102,8 @@ public class ChunkProviderXathius extends ChunkProviderBase {
 	
 	private void setBlocksInChunk(int chunkX, int chunkZ, ChunkPrimer primer) {
 		this.noiseGenSmooth1.setFrequency(0.015F);
-		this.biomesForGeneration = this.world.getBiomeProvider().getBiomesForGeneration(
-				this.biomesForGeneration, chunkX * 4 - 2, chunkZ * 4 - 2, 10, 10);
+		this.biomesForGeneration = this.world.getBiomeProvider().getBiomesForGeneration(this.biomesForGeneration,
+				chunkX * 4 - 2, chunkZ * 4 - 2, 10, 10);
 		this.createLandPerBiome(chunkX * 4, chunkZ * 4);
 		
 		for (int i = 0; i < 4; ++i) {
@@ -144,8 +144,7 @@ public class ChunkProviderXathius extends ChunkProviderBase {
 								int y = i2 * 8 + j2;
 								int z = l * 4 + l2;
 								
-								if ((lvt_45_1_ += d16) > this.noiseGenSmooth1.getNoise(chunkX * 16
-										+ x, chunkZ * 16 + z)
+								if ((lvt_45_1_ += d16) > this.noiseGenSmooth1.getNoise(chunkX * 16 + x, chunkZ * 16 + z)
 										* CHUNK_HEIGHT) {
 									primer.setBlockState(x, y, z, STONE);
 								} else if (y < SEA_LEVEL) {
@@ -169,17 +168,16 @@ public class ChunkProviderXathius extends ChunkProviderBase {
 		}
 	}
 	
-	private void replaceBlocksForBiome(int p_180517_1_, int p_180517_2_, ChunkPrimer p_180517_3_,
-			Biome[] p_180517_4_) {
+	private void replaceBlocksForBiome(int p_180517_1_, int p_180517_2_, ChunkPrimer p_180517_3_, Biome[] p_180517_4_) {
 		double d0 = 0.03125D;
-		this.stoneNoise = this.noiseGen4.getRegion(this.stoneNoise, p_180517_1_ * 16,
-				p_180517_2_ * 16, 16, 16, d0 * 2.0D, d0 * 2.0D, 1.0D);
+		this.stoneNoise = this.noiseGen4.getRegion(this.stoneNoise, p_180517_1_ * 16, p_180517_2_ * 16, 16, 16, d0 * 2.0D,
+				d0 * 2.0D, 1.0D);
 		
 		for (int i = 0; i < 16; ++i) {
 			for (int j = 0; j < 16; ++j) {
 				Biome biomegenbase = p_180517_4_[j + i * 16];
-				biomegenbase.genTerrainBlocks(this.world, this.rand, p_180517_3_, p_180517_1_ * 16
-						+ i, p_180517_2_ * 16 + j, this.stoneNoise[j + i * 16]);
+				biomegenbase.genTerrainBlocks(this.world, this.rand, p_180517_3_, p_180517_1_ * 16 + i,
+						p_180517_2_ * 16 + j, this.stoneNoise[j + i * 16]);
 			}
 		}
 	}
@@ -189,12 +187,12 @@ public class ChunkProviderXathius extends ChunkProviderBase {
 		this.rand.setSeed(x * 341873128712L + z * 132897987541L);
 		ChunkPrimer chunkprimer = new ChunkPrimer();
 		this.setBlocksInChunk(x, z, chunkprimer);
-		this.biomesForGeneration = this.world.getBiomeProvider().getBiomes(
-				this.biomesForGeneration, x * 16, z * 16, 16, 16);
+		this.biomesForGeneration = this.world.getBiomeProvider().getBiomes(this.biomesForGeneration, x * 16, z * 16, 16, 16);
 		
 		this.replaceBlocksForBiome(x, z, chunkprimer, this.biomesForGeneration);
 		
 		this.caveGenerator.generate(this.world, x, z, chunkprimer);
+		this.caveGenerator2.generate(this.world, x, z, chunkprimer);
 		this.ravineGenerator.generate(this.world, x, z, chunkprimer);
 		this.villageGenerator.generate(this.world, x, z, chunkprimer);
 		this.mineshaftGenerator.generate(this.world, x, z, chunkprimer);
@@ -211,14 +209,11 @@ public class ChunkProviderXathius extends ChunkProviderBase {
 	}
 	
 	private void createLandPerBiome(int x, int z) {
-		this.octaves4 = this.noiseGen6.generateNoiseOctaves(this.octaves4, x, z, 5, 5, 2000.0,
-				2000.0, 0.5);
-		this.octaves1 = this.noiseGen3.generateNoiseOctaves(this.octaves1, x, 0, z, 5, 33, 5,
-				8.555150000000001D, 4.277575000000001D, 8.555150000000001D);
-		this.octaves2 = this.noiseGen1.generateNoiseOctaves(this.octaves2, x, 0, z, 5, 33, 5,
-				684.412D, 684.412D, 684.412D);
-		this.octaves3 = this.noiseGen2.generateNoiseOctaves(this.octaves3, x, 0, z, 5, 33, 5,
-				684.412D, 684.412D, 684.412D);
+		this.octaves4 = this.noiseGen6.generateNoiseOctaves(this.octaves4, x, z, 5, 5, 2000.0, 2000.0, 0.5);
+		this.octaves1 = this.noiseGen3.generateNoiseOctaves(this.octaves1, x, 0, z, 5, 33, 5, 8.555150000000001D,
+				4.277575000000001D, 8.555150000000001D);
+		this.octaves2 = this.noiseGen1.generateNoiseOctaves(this.octaves2, x, 0, z, 5, 33, 5, 684.412D, 684.412D, 684.412D);
+		this.octaves3 = this.noiseGen2.generateNoiseOctaves(this.octaves3, x, 0, z, 5, 33, 5, 684.412D, 684.412D, 684.412D);
 		int i = 0;
 		int j = 0;
 		
@@ -232,8 +227,7 @@ public class ChunkProviderXathius extends ChunkProviderBase {
 				
 				for (int j1 = -i1; j1 <= i1; ++j1) {
 					for (int k1 = -i1; k1 <= i1; ++k1) {
-						Biome biomegenbase1 = this.biomesForGeneration[k + j1 + 2 + (l + k1 + 2)
-								* 10];
+						Biome biomegenbase1 = this.biomesForGeneration[k + j1 + 2 + (l + k1 + 2) * 10];
 						float f5 = biomegenbase1.getBaseHeight();
 						float f6 = biomegenbase1.getHeightVariation();
 						
@@ -243,11 +237,6 @@ public class ChunkProviderXathius extends ChunkProviderBase {
 						}
 						
 						float f7 = this.parabolicField[j1 + 2 + (k1 + 2) * 5] / (f5 + 2.0F);
-						
-						// TODO: Test removing?
-						if (biomegenbase1.getBaseHeight() > biomegenbase.getBaseHeight()) {
-							f7 /= 0.2F;
-						}
 						
 						f2 += f6 * f7;
 						f3 += f5 * f7;
@@ -301,8 +290,8 @@ public class ChunkProviderXathius extends ChunkProviderBase {
 					double d2 = this.octaves2[i] / 512.0;
 					double d3 = this.octaves3[i] / 1024.0;
 					double d4 = (this.octaves1[i] / 10.0D + 1.0D) / 2.0D;
-					// double d5 = MathHelper.clampedLerp(d2, d3, d4) - d1;
-					double d5 = d3 - d1;
+					double d5 = MathHelper.clampedLerp(d2, d3, d4) - d1;
+					// double d5 = d3 - d1;
 					
 					if (l1 > 29) {
 						double d6 = (l1 - 29) / 3.0F;
@@ -321,17 +310,14 @@ public class ChunkProviderXathius extends ChunkProviderBase {
 			for (int cz = chunkZ - 2; cz <= chunkZ + 2; cz++) {
 				for (int x = 0; x < ChunkProviderXathius.CHUNK_SIZE_X; x++) {
 					for (int z = 0; z < ChunkProviderXathius.CHUNK_SIZE_Z; z++) {
-						if (Math.abs(this.randFromPoint(cx * 16 + x, (cz * 16 + z) * 1000)) < this.noiseGen4
-								.getValue(x * ChunkProviderXathius.CHUNK_SIZE_X + x, cz
-										* ChunkProviderXathius.CHUNK_SIZE_Z + z)
+						if (Math.abs(this.randFromPoint(cx * 16 + x, (cz * 16 + z) * 1000)) < this.noiseGen4.getValue(x
+								* ChunkProviderXathius.CHUNK_SIZE_X + x, cz * ChunkProviderXathius.CHUNK_SIZE_Z + z)
 								/ ChunkProviderXathius.CRATER_PROB) {
 							final Random random = new Random(cx * 16 + x + (cz * 16 + z) * 5000);
 							final EnumCraterSize cSize = EnumCraterSize.sizeArray[random
 									.nextInt(EnumCraterSize.sizeArray.length)];
-							final int size = random.nextInt(cSize.MAX_SIZE - cSize.MIN_SIZE)
-									+ cSize.MIN_SIZE;
-							this.makeCrater(cx * 16 + x, cz * 16 + z, chunkX * 16, chunkZ * 16,
-									size, primer);
+							final int size = random.nextInt(cSize.MAX_SIZE - cSize.MIN_SIZE) + cSize.MIN_SIZE;
+							this.makeCrater(cx * 16 + x, cz * 16 + z, chunkX * 16, chunkZ * 16, size, primer);
 						}
 					}
 				}
@@ -339,8 +325,7 @@ public class ChunkProviderXathius extends ChunkProviderBase {
 		}
 	}
 	
-	private void makeCrater(int craterX, int craterZ, int chunkX, int chunkZ, int size,
-			ChunkPrimer primer) {
+	private void makeCrater(int craterX, int craterZ, int chunkX, int chunkZ, int size, ChunkPrimer primer) {
 		for (int x = 0; x < ChunkProviderXathius.CHUNK_SIZE_X; x++) {
 			for (int z = 0; z < ChunkProviderXathius.CHUNK_SIZE_Z; z++) {
 				double xDev = craterX - (chunkX + x);
@@ -353,8 +338,7 @@ public class ChunkProviderXathius extends ChunkProviderBase {
 					yDev = 5 - yDev;
 					int helper = 0;
 					for (int y = 127; y > 0; y--) {
-						if (Blocks.AIR != primer.getBlockState(x, y, z).getBlock()
-								&& helper <= yDev) {
+						if (Blocks.AIR != primer.getBlockState(x, y, z).getBlock() && helper <= yDev) {
 							primer.setBlockState(x, y, z, Blocks.AIR.getDefaultState());
 							helper++;
 						}
@@ -393,15 +377,13 @@ public class ChunkProviderXathius extends ChunkProviderBase {
 		this.mineshaftGenerator.generateStructure(this.world, this.rand, new ChunkPos(x, z));
 		
 		biomegenbase.decorate(this.world, this.rand, new BlockPos(i, 0, j));
-		WorldEntitySpawner.performWorldGenSpawning(this.world, biomegenbase, i + 8, j + 8, 16, 16,
-				this.rand);
+		WorldEntitySpawner.performWorldGenSpawning(this.world, biomegenbase, i + 8, j + 8, 16, 16, this.rand);
 		
 		BlockFalling.fallInstantly = false;
 	}
 	
 	@Override
-	public List<Biome.SpawnListEntry> getPossibleCreatures(EnumCreatureType creatureType,
-			BlockPos pos) {
+	public List<Biome.SpawnListEntry> getPossibleCreatures(EnumCreatureType creatureType, BlockPos pos) {
 		Biome biomegenbase = this.world.getBiome(pos);
 		return biomegenbase.getSpawnableList(creatureType);
 	}

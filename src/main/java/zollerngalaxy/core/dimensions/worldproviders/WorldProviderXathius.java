@@ -20,13 +20,14 @@ import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.core.dimensions.ZGDimensions;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderXathius;
 import zollerngalaxy.core.dimensions.skyproviders.SkyProviderXathius;
+import zollerngalaxy.planets.ZGPlanet;
 import zollerngalaxy.planets.ZGPlanets;
 
 public class WorldProviderXathius extends WorldProviderZG {
 	
 	@Override
 	public float getGravity() {
-		return 0.034F;
+		return 0.024F;
 	}
 	
 	@Override
@@ -56,12 +57,20 @@ public class WorldProviderXathius extends WorldProviderZG {
 	
 	@Override
 	public float getSoundVolReductionAmount() {
-		return 0F;
+		return 0.0F;
 	}
 	
 	@Override
 	public float getThermalLevelModifier() {
-		return -1.4F;
+		ZGPlanet planet = this.getPlanet();
+		float planetTemp = planet.getPlanetTemperature();
+		
+		if (this.isDaytime()) {
+			planetTemp *= 1.2F;
+		} else {
+			planetTemp = planet.getPlanetTemperature();
+		}
+		return planetTemp;
 	}
 	
 	@Override
@@ -191,6 +200,7 @@ public class WorldProviderXathius extends WorldProviderZG {
 	public List<Block> getSurfaceBlocks() {
 		ArrayList<Block> blockList = new ArrayList<Block>();
 		blockList.add(ZGBlocks.xathGrass);
+		blockList.add(ZGBlocks.xathRock);
 		return blockList;
 	}
 	

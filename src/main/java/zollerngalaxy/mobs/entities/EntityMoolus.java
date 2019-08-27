@@ -30,7 +30,7 @@ public class EntityMoolus extends EntityCow implements IEntityBreathable {
 	
 	public EntityMoolus(World worldIn) {
 		super(worldIn);
-		this.setSize(this.width, this.height);
+		this.setSize(this.width * 0.4F, this.height * 0.2F);
 	}
 	
 	public static void registerFixesCow(DataFixer fixer) {
@@ -53,8 +53,7 @@ public class EntityMoolus extends EntityCow implements IEntityBreathable {
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(30.0D);
-		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(
-				0.2000000298023224D);
+		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.2000000298023224D);
 	}
 	
 	@Override

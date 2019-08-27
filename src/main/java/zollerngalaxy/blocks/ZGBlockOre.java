@@ -86,8 +86,7 @@ public class ZGBlockOre extends ZGBlockBase {
 		}
 		if (this.getShouldGivePotionEffect()) {
 			if (rand.nextInt(10) <= 4) {
-				EntityPlayer player = worldIn.getClosestPlayer(pos.getX(), pos.getY(), pos.getZ(),
-						2.5D, false);
+				EntityPlayer player = worldIn.getClosestPlayer(pos.getX(), pos.getY(), pos.getZ(), 2.5D, false);
 				if (player != null && this.blockPotionEffect != null) {
 					player.addPotionEffect(new PotionEffect(this.blockPotionEffect, 200, 0));
 				}

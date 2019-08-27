@@ -25,7 +25,7 @@ public class RenderOinkus extends RenderLiving<EntityOinkus> {
 		this.scaleOinkus(entitylivingbaseIn, partialTickTime);
 	}
 	
-	protected void scaleOinkus(EntityOinkus par1EntityCaveSpider, float par2) {
+	protected void scaleOinkus(EntityOinkus par1EntityOinkus, float par2) {
 		GL11.glScalef(f6, f6, f6);
 	}
 	

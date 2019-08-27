@@ -107,14 +107,17 @@ public class BiomeSpace extends ZGBiomeBase {
 		} else if (planet.getIsHotPlanet()) {
 			flucTemp += biomeTemp;
 		} else {
-			int rng = rand.nextInt(200);
-			if (rng == 25) {
-				flucTemp += biomeTemp;
-			} else if (rng == 50) {
-				flucTemp -= biomeTemp;
-			}
-			
+			flucTemp = planetTemp + biomeTemp;
 		}
+		
+		if (planetTemp < minTemp) {
+			planetTemp = minTemp;
+		}
+		
+		if (planetTemp > maxTemp) {
+			planetTemp = maxTemp;
+		}
+		
 		return flucTemp;
 	}
 }

@@ -4,6 +4,7 @@ Zollern Galaxy v2.0.4
 
 * Added planet Xathius.
 	* Abstract, multi-colored planet with minor radiation and a unique atmospheric composition as well as a colorful sky.
+	* Resource-intensive planet; filled with Obsidian lakes.
 * Began work on space stations.
     * Gonna be a while before they're ready.
 * Increased the rarity of Redstone, and decreased how much of it can spawn in one vein.
@@ -11,4 +12,12 @@ Zollern Galaxy v2.0.4
 * Added two new Planet Classes: Exotic and Abandoned.
 * Decreased Tier of Zollus to 3. This was an oversight.
 * Added more ores to Xathius.
+* Diamond pickaxes are now needed to harvest Zolnium Crystals.
+* Changed Purgot and Zollus to be much colder at night.
+* Changed Xathius to be much hotter during the day.
+* Adjusted hitboxes of Mobs.
+* Updated HUD to show the thermal level modifier when not neutral.
+* Added Wind Level to Galactic HUD.
+* Modified Star Gates to warp players closer to ground level.
+    * Too many space explorers were dying due to inability to survive the force of gravity and we received complaints from the Human Resources department.
 * 

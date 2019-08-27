@@ -135,8 +135,7 @@ public class EdenFruit extends ZGBlockHorizontal implements IGrowable {
 	 * post-place logic
 	 */
 	@Override
-	public void onBlockPlacedBy(World worldIn, BlockPos pos, IBlockState state,
-			EntityLivingBase placer, ItemStack stack) {
+	public void onBlockPlacedBy(World worldIn, BlockPos pos, IBlockState state, EntityLivingBase placer, ItemStack stack) {
 		EnumFacing enumfacing = EnumFacing.fromAngle(placer.rotationYaw);
 		worldIn.setBlockState(pos, state.withProperty(FACING, enumfacing), 2);
 	}
@@ -146,19 +145,17 @@ public class EdenFruit extends ZGBlockHorizontal implements IGrowable {
 	 * allow for adjustments to the IBlockstate
 	 */
 	@Override
-	public IBlockState getStateForPlacement(World worldIn, BlockPos pos, EnumFacing facing,
-			float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer) {
+	public IBlockState getStateForPlacement(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY,
+			float hitZ, int meta, EntityLivingBase placer) {
 		if (!facing.getAxis().isHorizontal()) {
 			facing = EnumFacing.NORTH;
 		}
 		
-		return this.getDefaultState().withProperty(FACING, facing.getOpposite())
-				.withProperty(AGE, Integer.valueOf(0));
+		return this.getDefaultState().withProperty(FACING, facing.getOpposite()).withProperty(AGE, Integer.valueOf(0));
 	}
 	
 	@Override
-	public void neighborChanged(IBlockState state, World worldIn, BlockPos pos, Block blockIn,
-			BlockPos fromPos) {
+	public void neighborChanged(IBlockState state, World worldIn, BlockPos pos, Block blockIn, BlockPos fromPos) {
 		if (!this.canBlockStay(worldIn, pos, state)) {
 			this.dropBlock(worldIn, pos, state);
 		}
@@ -173,14 +170,13 @@ public class EdenFruit extends ZGBlockHorizontal implements IGrowable {
 	 * Spawns this Block's drops into the World as EntityItems.
 	 */
 	@Override
-	public void dropBlockAsItemWithChance(World worldIn, BlockPos pos, IBlockState state,
-			float chance, int fortune) {
+	public void dropBlockAsItemWithChance(World worldIn, BlockPos pos, IBlockState state, float chance, int fortune) {
 		super.dropBlockAsItemWithChance(worldIn, pos, state, chance, fortune);
 	}
 	
 	@Override
-	public void getDrops(net.minecraft.util.NonNullList<ItemStack> drops, IBlockAccess world,
-			BlockPos pos, IBlockState state, int fortune) {
+	public void getDrops(net.minecraft.util.NonNullList<ItemStack> drops, IBlockAccess world, BlockPos pos,
+			IBlockState state, int fortune) {
 		super.getDrops(drops, world, pos, state, fortune);
 		int i = state.getValue(AGE).intValue();
 		int j = 0;
@@ -211,8 +207,7 @@ public class EdenFruit extends ZGBlockHorizontal implements IGrowable {
 	
 	@Override
 	public void grow(World worldIn, Random rand, BlockPos pos, IBlockState state) {
-		worldIn.setBlockState(pos,
-				state.withProperty(AGE, Integer.valueOf(state.getValue(AGE).intValue() + 1)), 2);
+		worldIn.setBlockState(pos, state.withProperty(AGE, Integer.valueOf(state.getValue(AGE).intValue() + 1)), 2);
 	}
 	
 	@Override
@@ -241,8 +236,7 @@ public class EdenFruit extends ZGBlockHorizontal implements IGrowable {
 	}
 	
 	@Override
-	public BlockFaceShape getBlockFaceShape(IBlockAccess worldIn, IBlockState state, BlockPos pos,
-			EnumFacing face) {
+	public BlockFaceShape getBlockFaceShape(IBlockAccess worldIn, IBlockState state, BlockPos pos, EnumFacing face) {
 		return BlockFaceShape.UNDEFINED;
 	}
 	

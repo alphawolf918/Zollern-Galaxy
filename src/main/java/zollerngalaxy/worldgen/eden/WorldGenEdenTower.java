@@ -85,13 +85,11 @@ public class WorldGenEdenTower extends ZGWorldGenMaster {
 		if (rand.nextInt(500) <= 125) {
 			BlockPos chestPos = pos.add(5, 7, 13);
 			
-			world.setBlockState(chestPos,
-					Blocks.CHEST.correctFacing(world, chestPos, Blocks.CHEST.getDefaultState()), 2);
+			world.setBlockState(chestPos, Blocks.CHEST.correctFacing(world, chestPos, Blocks.CHEST.getDefaultState()), 2);
 			TileEntity tileentity1 = world.getTileEntity(chestPos);
 			
 			if (tileentity1 instanceof TileEntityChest) {
-				((TileEntityChest) tileentity1).setLootTable(ZGLootTables.CHEST_EDEN_TOWER,
-						rand.nextLong());
+				((TileEntityChest) tileentity1).setLootTable(ZGLootTables.CHEST_EDEN_TOWER, rand.nextLong());
 			}
 		}
 		//
@@ -396,13 +394,11 @@ public class WorldGenEdenTower extends ZGWorldGenMaster {
 		//
 		BlockPos chestPos1 = pos.add(12, 20, 14);
 		
-		world.setBlockState(chestPos1,
-				Blocks.CHEST.correctFacing(world, chestPos1, Blocks.CHEST.getDefaultState()), 2);
+		world.setBlockState(chestPos1, Blocks.CHEST.correctFacing(world, chestPos1, Blocks.CHEST.getDefaultState()), 2);
 		TileEntity tileentity2 = world.getTileEntity(chestPos1);
 		
 		if (tileentity2 instanceof TileEntityChest) {
-			((TileEntityChest) tileentity2).setLootTable(ZGLootTables.CHEST_EDEN_TOWER,
-					rand.nextLong());
+			((TileEntityChest) tileentity2).setLootTable(ZGLootTables.CHEST_EDEN_TOWER, rand.nextLong());
 		}
 		//
 		this.setBlock(world, pos.add(12, 2, 3), ZGBlocks.edenSacredStone);

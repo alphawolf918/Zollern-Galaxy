@@ -23,28 +23,18 @@ public class BiomeDecoratorPurgot extends BiomeDecoratorZG {
 	private WorldGenerator meteoricIronGen;
 	
 	public BiomeDecoratorPurgot() {
-		this.dirtGen = new WorldGenMinableZG(ZGBlocks.purgDirt, ZGBlocks.purgSurfaceRock,
-				EnumOreGenZG.DIRT);
-		this.tinGen = new WorldGenMinableZG(ZGBlocks.purgTinOre, ZGBlocks.purgStone,
-				EnumOreGenZG.TIN);
-		this.copperGen = new WorldGenMinableZG(ZGBlocks.purgCopperOre, ZGBlocks.purgStone,
-				EnumOreGenZG.COPPER);
-		this.ironGen = new WorldGenMinableZG(ZGBlocks.purgIronOre, ZGBlocks.purgStone,
-				EnumOreGenZG.IRON);
-		this.goldGen = new WorldGenMinableZG(ZGBlocks.purgGoldOre, ZGBlocks.purgStone,
-				EnumOreGenZG.GOLD);
-		this.leadGen = new WorldGenMinableZG(ZGBlocks.purgLeadOre, ZGBlocks.purgStone,
-				EnumOreGenZG.LEAD);
-		this.aluminumGen = new WorldGenMinableZG(ZGBlocks.purgAluminumOre, ZGBlocks.purgStone,
-				EnumOreGenZG.ALUMINUM);
-		this.redstoneGen = new WorldGenMinableZG(ZGBlocks.purgRedstoneOre, ZGBlocks.purgStone,
-				EnumOreGenZG.REDSTONE);
-		this.diamondGen = new WorldGenMinableZG(ZGBlocks.purgDiamondOre, ZGBlocks.purgStone,
-				EnumOreGenZG.DIAMOND);
-		this.emeraldGen = new WorldGenMinableZG(ZGBlocks.purgEmeraldOre, ZGBlocks.purgStone,
-				EnumOreGenZG.EMERALD);
-		this.meteoricIronGen = new WorldGenMinableZG(ZGBlocks.purgMeteoricIronOre,
-				ZGBlocks.purgStone, EnumOreGenZG.METEORIC_IRON);
+		this.dirtGen = new WorldGenMinableZG(ZGBlocks.purgDirt, ZGBlocks.purgSurfaceRock, EnumOreGenZG.DIRT);
+		this.tinGen = new WorldGenMinableZG(ZGBlocks.purgTinOre, ZGBlocks.purgStone, EnumOreGenZG.TIN);
+		this.copperGen = new WorldGenMinableZG(ZGBlocks.purgCopperOre, ZGBlocks.purgStone, EnumOreGenZG.COPPER);
+		this.ironGen = new WorldGenMinableZG(ZGBlocks.purgIronOre, ZGBlocks.purgStone, EnumOreGenZG.IRON);
+		this.goldGen = new WorldGenMinableZG(ZGBlocks.purgGoldOre, ZGBlocks.purgStone, EnumOreGenZG.GOLD);
+		this.leadGen = new WorldGenMinableZG(ZGBlocks.purgLeadOre, ZGBlocks.purgStone, EnumOreGenZG.LEAD);
+		this.aluminumGen = new WorldGenMinableZG(ZGBlocks.purgAluminumOre, ZGBlocks.purgStone, EnumOreGenZG.ALUMINUM);
+		this.redstoneGen = new WorldGenMinableZG(ZGBlocks.purgRedstoneOre, ZGBlocks.purgStone, EnumOreGenZG.REDSTONE);
+		this.diamondGen = new WorldGenMinableZG(ZGBlocks.purgDiamondOre, ZGBlocks.purgStone, EnumOreGenZG.DIAMOND);
+		this.emeraldGen = new WorldGenMinableZG(ZGBlocks.purgEmeraldOre, ZGBlocks.purgStone, EnumOreGenZG.EMERALD);
+		this.meteoricIronGen = new WorldGenMinableZG(ZGBlocks.purgMeteoricIronOre, ZGBlocks.purgStone,
+				EnumOreGenZG.METEORIC_IRON);
 	}
 	
 	@Override

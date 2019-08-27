@@ -65,12 +65,10 @@ public class PulverizerRecipes {
 				new ItemStack(ItemHelper.getItemFromStack(TFItems.itemMaterial.dustGold), 4, 1));
 		
 		// Aluminum
-		ThermalExpansionHelper
-				.addPulverizerRecipe(5400, new ItemStack(ZGBlocks.purgAluminumOre), new ItemStack(
-						ItemHelper.getItemFromStack(TFItems.itemMaterial.dustAluminum), 4, 68));
-		ThermalExpansionHelper
-				.addPulverizerRecipe(5400, new ItemStack(ZGBlocks.edenAluminumOre), new ItemStack(
-						ItemHelper.getItemFromStack(TFItems.itemMaterial.dustAluminum), 4, 68));
+		ThermalExpansionHelper.addPulverizerRecipe(5400, new ItemStack(ZGBlocks.purgAluminumOre),
+				new ItemStack(ItemHelper.getItemFromStack(TFItems.itemMaterial.dustAluminum), 4, 68));
+		ThermalExpansionHelper.addPulverizerRecipe(5400, new ItemStack(ZGBlocks.edenAluminumOre),
+				new ItemStack(ItemHelper.getItemFromStack(TFItems.itemMaterial.dustAluminum), 4, 68));
 		
 		// Steel
 		ThermalExpansionHelper.addPulverizerRecipe(5400, new ItemStack(ZGBlocks.edenSteelOre),
@@ -85,27 +83,25 @@ public class PulverizerRecipes {
 				new ItemStack(ItemHelper.getItemFromStack(TFItems.itemMaterial.dustInvar), 4, 98));
 		
 		// Electrum
-		ThermalExpansionHelper
-				.addPulverizerRecipe(5400, new ItemStack(ZGBlocks.edenElectrumOre), new ItemStack(
-						ItemHelper.getItemFromStack(TFItems.itemMaterial.dustElectrum), 4, 97));
+		ThermalExpansionHelper.addPulverizerRecipe(5400, new ItemStack(ZGBlocks.edenElectrumOre),
+				new ItemStack(ItemHelper.getItemFromStack(TFItems.itemMaterial.dustElectrum), 4, 97));
 		
 		// Platinum
-		ThermalExpansionHelper
-				.addPulverizerRecipe(5400, new ItemStack(ZGBlocks.edenPlatinumOre), new ItemStack(
-						ItemHelper.getItemFromStack(TFItems.itemMaterial.dustPlatinum), 4, 70));
+		ThermalExpansionHelper.addPulverizerRecipe(5400, new ItemStack(ZGBlocks.edenPlatinumOre),
+				new ItemStack(ItemHelper.getItemFromStack(TFItems.itemMaterial.dustPlatinum), 4, 70));
 		
 		// Cobalt
-		ThermalExpansionHelper.addPulverizerRecipe(5400, new ItemStack(ZGBlocks.kriffCobaltOre),
-				new ItemStack(ZGItems.dustCobalt, 4));
-		ThermalExpansionHelper.addPulverizerRecipe(5400, new ItemStack(ZGBlocks.purgCobaltOre),
-				new ItemStack(ZGItems.dustCobalt, 4));
-		ThermalExpansionHelper.addPulverizerRecipe(5400, new ItemStack(ZGBlocks.edenCobaltOre),
-				new ItemStack(ZGItems.dustCobalt, 4));
+		ThermalExpansionHelper.addPulverizerRecipe(5400, new ItemStack(ZGBlocks.kriffCobaltOre), new ItemStack(
+				ZGItems.dustCobalt, 4));
+		ThermalExpansionHelper.addPulverizerRecipe(5400, new ItemStack(ZGBlocks.purgCobaltOre), new ItemStack(
+				ZGItems.dustCobalt, 4));
+		ThermalExpansionHelper.addPulverizerRecipe(5400, new ItemStack(ZGBlocks.edenCobaltOre), new ItemStack(
+				ZGItems.dustCobalt, 4));
 		
 		// Evenium
-		ThermalExpansionHelper.addPulverizerRecipe(5400, new ItemStack(ZGBlocks.purgEveniumOre),
-				new ItemStack(ZGItems.dustEve, 4));
-		ThermalExpansionHelper.addPulverizerRecipe(5400, new ItemStack(ZGBlocks.edenEveniumOre),
-				new ItemStack(ZGItems.dustEve, 4));
+		ThermalExpansionHelper.addPulverizerRecipe(5400, new ItemStack(ZGBlocks.purgEveniumOre), new ItemStack(
+				ZGItems.dustEve, 4));
+		ThermalExpansionHelper.addPulverizerRecipe(5400, new ItemStack(ZGBlocks.edenEveniumOre), new ItemStack(
+				ZGItems.dustEve, 4));
 	}
 }

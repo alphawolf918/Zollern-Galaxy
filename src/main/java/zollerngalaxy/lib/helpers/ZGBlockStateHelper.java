@@ -20,8 +20,7 @@ public class ZGBlockStateHelper {
 	public static PropertyBool CHECK_DECAY = PropertyBool.create("check_decay");
 	
 	/** Used for Custom Block Facing */
-	public static PropertyDirection FACING_HORIZON = PropertyDirection.create("facing",
-			EnumFacing.Plane.HORIZONTAL);
+	public static PropertyDirection FACING_HORIZON = PropertyDirection.create("facing", EnumFacing.Plane.HORIZONTAL);
 	public static PropertyDirection FACING_ALL = PropertyDirection.create("facing");
 	
 	/** Used for Custom Wood Log */
@@ -37,8 +36,7 @@ public class ZGBlockStateHelper {
 	public static PropertyInteger LAYERS = PropertyInteger.create("layers", 1, 8);
 	
 	/** Used for Custom Colored Block */
-	public static PropertyEnum<EnumDyeColor> COLOR = PropertyEnum.create("color",
-			EnumDyeColor.class);
+	public static PropertyEnum<EnumDyeColor> COLOR = PropertyEnum.create("color", EnumDyeColor.class);
 	
 	/** Used for Custom Plant with tickable */
 	public static PropertyInteger AGE = PropertyInteger.create("age", 0, 15);

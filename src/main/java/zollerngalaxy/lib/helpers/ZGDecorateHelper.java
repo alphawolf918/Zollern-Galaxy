@@ -8,8 +8,7 @@ import net.minecraft.world.gen.feature.WorldGenerator;
 
 public class ZGDecorateHelper {
 	
-	public static void generatePlants(WorldGenerator worldGen, World world, Random rand,
-			BlockPos pos) {
+	public static void generatePlants(WorldGenerator worldGen, World world, Random rand, BlockPos pos) {
 		int x = rand.nextInt(16) + 8;
 		int z = rand.nextInt(16) + 8;
 		int y = world.getHeight(pos.add(x, 0, z)).getY() * 2;
@@ -20,8 +19,7 @@ public class ZGDecorateHelper {
 		}
 	}
 	
-	public static void generateCustomTrees(WorldGenerator worldGen, World world, Random rand,
-			Biome biome, BlockPos pos) {
+	public static void generateCustomTrees(WorldGenerator worldGen, World world, Random rand, Biome biome, BlockPos pos) {
 		int x = rand.nextInt(16) + 8;
 		int z = rand.nextInt(16) + 8;
 		BlockPos blockpos = world.getHeight(pos.add(x, 0, z));

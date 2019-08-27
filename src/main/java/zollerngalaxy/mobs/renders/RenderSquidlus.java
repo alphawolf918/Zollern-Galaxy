@@ -25,7 +25,7 @@ public class RenderSquidlus extends RenderLiving<EntitySquidlus> {
 		this.scaleSquidlus(entitylivingbaseIn, partialTickTime);
 	}
 	
-	protected void scaleSquidlus(EntitySquidlus par1EntityCaveSpider, float par2) {
+	protected void scaleSquidlus(EntitySquidlus par1Entity, float par2) {
 		GL11.glScalef(f6, f6, f6);
 	}
 	

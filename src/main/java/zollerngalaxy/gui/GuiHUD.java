@@ -1,5 +1,6 @@
 package zollerngalaxy.gui;
 
+import micdoodle8.mods.galacticraft.api.prefab.world.gen.WorldProviderSpace;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.Gui;
@@ -8,6 +9,7 @@ import net.minecraft.client.renderer.RenderHelper;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.WorldProvider;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
@@ -45,9 +47,8 @@ public class GuiHUD extends Gui {
 		}
 		
 		int i3 = 14737632;
-		BlockPos blockPos = new BlockPos(this.mc.getRenderViewEntity().posX, this.mc
-				.getRenderViewEntity().getEntityBoundingBox().minY,
-				this.mc.getRenderViewEntity().posZ);
+		BlockPos blockPos = new BlockPos(this.mc.getRenderViewEntity().posX, this.mc.getRenderViewEntity()
+				.getEntityBoundingBox().minY, this.mc.getRenderViewEntity().posZ);
 		ScaledResolution scaledresolution = new ScaledResolution(this.mc);
 		int k = scaledresolution.getScaledWidth();
 		int l = scaledresolution.getScaledHeight();
@@ -63,9 +64,12 @@ public class GuiHUD extends Gui {
 				GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
 				GL11.glDisable(GL11.GL_LIGHTING);
 				Biome biome = chunk.getBiome(blockPos, this.mc.world.getBiomeProvider());
+				WorldProvider worldProvider = this.mc.world.provider;
 				
 				if (biome instanceof BiomeSpace) {
 					BiomeSpace biomeSpace = (BiomeSpace) biome;
+					WorldProviderSpace spaceProvider = (WorldProviderSpace) worldProvider;
+					
 					// Biome Name
 					String biomeName = biome.getBiomeName();
 					String s = "Biome: " + biomeName;
@@ -74,7 +78,9 @@ public class GuiHUD extends Gui {
 					
 					// Planet Temp (Displays in either F or C)
 					String tempType = ConfigManagerZG.temperatureType;
-					float planetTemp = biomeSpace.getPlanetTemp();
+					float thermalMod = spaceProvider.getThermalLevelModifier();
+					float biomeTemp = biomeSpace.getPlanetTemp();
+					float planetTemp = (thermalMod != 0.0F) ? thermalMod : biomeTemp;
 					tempType = (tempType != "F" && tempType != "C") ? "F" : tempType;
 					if (tempType == "F") {
 						String strTemp = "" + Math.round(planetTemp * 1.0f);
@@ -130,6 +136,12 @@ public class GuiHUD extends Gui {
 					String strTox = "Toxicity: " + planetToxLevel + "%";
 					fontRendererObj.drawString(strTox, 2, 96, i3);
 					fontRendererObj.drawString(strTox, 26, yPos - 94, i3);
+					
+					// Wind Level
+					float planetWindLevel = planet.getWindLevel();
+					String strWind = "Wind Level: " + planetWindLevel + "%";
+					fontRendererObj.drawString(strWind, 2, 106, i3);
+					fontRendererObj.drawString(strWind, 26, yPos - 104, i3);
 				}
 			}
 		}

@@ -100,8 +100,8 @@ public abstract class BiomeEdenBase extends BiomeSpace {
 		return (BiomeDecoratorEden) this.decorator;
 	}
 	
-	public final void generateEdenTerrain(World worldIn, Random rand, ChunkPrimer chunkPrimerIn,
-			int x, int z, double noiseVal) {
+	public final void generateEdenTerrain(World worldIn, Random rand, ChunkPrimer chunkPrimerIn, int x, int z,
+			double noiseVal) {
 		int i = worldIn.getSeaLevel();
 		float biomeHeight = this.getBiomeHeight();
 		IBlockState topState = this.topBlock;
@@ -139,8 +139,7 @@ public abstract class BiomeEdenBase extends BiomeSpace {
 								fillState = this.fillerBlock;
 							}
 							
-							if (j1 < i
-									&& (topState == null || topState.getMaterial() == Material.AIR)) {
+							if (j1 < i && (topState == null || topState.getMaterial() == Material.AIR)) {
 								topState = (this.getIsColdBiome()) ? ICE : WATER;
 							}
 							
@@ -166,8 +165,7 @@ public abstract class BiomeEdenBase extends BiomeSpace {
 	}
 	
 	@Override
-	public void genTerrainBlocks(World worldIn, Random rand, ChunkPrimer chunkPrimerIn, int x,
-			int z, double noiseVal) {
+	public void genTerrainBlocks(World worldIn, Random rand, ChunkPrimer chunkPrimerIn, int x, int z, double noiseVal) {
 		this.generateEdenTerrain(worldIn, rand, chunkPrimerIn, x, z, noiseVal);
 	}
 	

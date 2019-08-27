@@ -41,14 +41,12 @@ public class ClientZGRegisterHelper {
 	
 	public static void registerVariantsName(Item item, String... variant) {
 		for (String name : variant) {
-			ModelBakery.registerItemVariants(item, new ModelResourceLocation("zollerngalaxy:"
-					+ name, "inventory"));
+			ModelBakery.registerItemVariants(item, new ModelResourceLocation("zollerngalaxy:" + name, "inventory"));
 		}
 	}
 	
 	public static void registerVariantsName(Item item, Class<? extends Enum> enumClass) {
-		String[] enumNameList = Arrays.stream(enumClass.getEnumConstants()).map(Enum::name)
-				.toArray(String[]::new);
+		String[] enumNameList = Arrays.stream(enumClass.getEnumConstants()).map(Enum::name).toArray(String[]::new);
 		
 		for (String name : enumNameList) {
 			ClientZGRegisterHelper.registerVariantsName(item, name.toLowerCase());
@@ -60,8 +58,7 @@ public class ClientZGRegisterHelper {
 	}
 	
 	public static void registerVariantsName(Block block, Class<? extends Enum> enumClass) {
-		String[] enumNameList = Arrays.stream(enumClass.getEnumConstants()).map(Enum::name)
-				.toArray(String[]::new);
+		String[] enumNameList = Arrays.stream(enumClass.getEnumConstants()).map(Enum::name).toArray(String[]::new);
 		
 		for (String name : enumNameList) {
 			ClientZGRegisterHelper.registerVariantsName(block, name.toLowerCase());
@@ -81,18 +78,13 @@ public class ClientZGRegisterHelper {
 	}
 	
 	public static void registerModelRender(Item item, int meta, String variantName) {
-		Minecraft
-				.getMinecraft()
-				.getRenderItem()
-				.getItemModelMesher()
-				.register(item, meta,
-						new ModelResourceLocation("zollerngalaxy:" + variantName, "inventory"));
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher()
+				.register(item, meta, new ModelResourceLocation("zollerngalaxy:" + variantName, "inventory"));
 	}
 	
 	public static void registerModelRender(Item item, Class<? extends Enum> enumClass) {
 		for (Enum enumObj : enumClass.getEnumConstants()) {
-			ClientZGRegisterHelper.registerModelRender(item, enumObj.ordinal(), enumObj.name()
-					.toLowerCase());
+			ClientZGRegisterHelper.registerModelRender(item, enumObj.ordinal(), enumObj.name().toLowerCase());
 		}
 	}
 	
@@ -108,8 +100,7 @@ public class ClientZGRegisterHelper {
 		ClientZGRegisterHelper.registerModelRender(item, 0, variantName);
 	}
 	
-	public static void registerToolsModelRender(Item sword, Item shovel, Item pickaxe, Item axe,
-			Item hoe, String toolName) {
+	public static void registerToolsModelRender(Item sword, Item shovel, Item pickaxe, Item axe, Item hoe, String toolName) {
 		ClientZGRegisterHelper.registerModelRender(sword, 0, toolName + "_sword");
 		ClientZGRegisterHelper.registerModelRender(shovel, 0, toolName + "_shovel");
 		ClientZGRegisterHelper.registerModelRender(pickaxe, 0, toolName + "_pickaxe");
@@ -117,8 +108,7 @@ public class ClientZGRegisterHelper {
 		ClientZGRegisterHelper.registerModelRender(hoe, 0, toolName + "_hoe");
 	}
 	
-	public static void registerArmorModelRender(Item helmet, Item chestplate, Item leggings,
-			Item boots, String toolName) {
+	public static void registerArmorModelRender(Item helmet, Item chestplate, Item leggings, Item boots, String toolName) {
 		ClientZGRegisterHelper.registerModelRender(helmet, 0, toolName + "_helmet");
 		ClientZGRegisterHelper.registerModelRender(chestplate, 0, toolName + "_chestplate");
 		ClientZGRegisterHelper.registerModelRender(leggings, 0, toolName + "_leggings");
@@ -126,8 +116,7 @@ public class ClientZGRegisterHelper {
 	}
 	
 	public static void registerStateMapper(Block block, EnumStateMapper mapper) {
-		ClientZGRegisterHelper.registerStateMapper(block, new Builder()
-				.ignore(mapper.getProperty()).build());
+		ClientZGRegisterHelper.registerStateMapper(block, new Builder().ignore(mapper.getProperty()).build());
 	}
 	
 	public static void registerStateMapper(Block block, IStateMapper mapper) {
@@ -163,8 +152,7 @@ public class ClientZGRegisterHelper {
 	}
 	
 	private static void registerVariantsName(Item item, String variant) {
-		ModelBakery.registerItemVariants(item, new ModelResourceLocation(
-				"zollerngalaxy:" + variant, "inventory"));
+		ModelBakery.registerItemVariants(item, new ModelResourceLocation("zollerngalaxy:" + variant, "inventory"));
 	}
 	
 }

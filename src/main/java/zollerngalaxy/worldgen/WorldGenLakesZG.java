@@ -21,8 +21,8 @@ public class WorldGenLakesZG extends WorldGenerator {
 	
 	@Override
 	public boolean generate(World worldIn, Random rand, BlockPos position) {
-		for (position = position.add(-8, 0, -8); position.getY() > 5
-				&& worldIn.isAirBlock(position); position = position.down()) {
+		for (position = position.add(-8, 0, -8); position.getY() > 5 && worldIn.isAirBlock(position); position = position
+				.down()) {
 			;
 		}
 		
@@ -69,15 +69,13 @@ public class WorldGenLakesZG extends WorldGenerator {
 										&& aboolean[(k1 * 16 + l2) * 8 + (k - 1)]);
 						
 						if (flag) {
-							Material material = worldIn.getBlockState(position.add(k1, k, l2))
-									.getMaterial();
+							Material material = worldIn.getBlockState(position.add(k1, k, l2)).getMaterial();
 							
 							if (k >= 4 && material.isLiquid()) {
 								return false;
 							}
 							
-							if (k < 4
-									&& !material.isSolid()
+							if (k < 4 && !material.isSolid()
 									&& worldIn.getBlockState(position.add(k1, k, l2)).getBlock() != this.blockToGenerate) {
 								return false;
 							}
@@ -90,10 +88,8 @@ public class WorldGenLakesZG extends WorldGenerator {
 				for (int i3 = 0; i3 < 16; ++i3) {
 					for (int i4 = 0; i4 < 8; ++i4) {
 						if (aboolean[(l1 * 16 + i3) * 8 + i4]) {
-							worldIn.setBlockState(
-									position.add(l1, i4, i3),
-									i4 >= 4 ? Blocks.AIR.getDefaultState() : this.blockToGenerate
-											.getDefaultState(), 2);
+							worldIn.setBlockState(position.add(l1, i4, i3), i4 >= 4 ? Blocks.AIR.getDefaultState()
+									: this.blockToGenerate.getDefaultState(), 2);
 						}
 					}
 				}
@@ -104,19 +100,16 @@ public class WorldGenLakesZG extends WorldGenerator {
 					for (int k3 = 0; k3 < 16; ++k3) {
 						for (int k4 = 0; k4 < 8; ++k4) {
 							boolean flag1 = !aboolean[(j2 * 16 + k3) * 8 + k4]
-									&& (j2 < 15 && aboolean[((j2 + 1) * 16 + k3) * 8 + k4]
-											|| j2 > 0 && aboolean[((j2 - 1) * 16 + k3) * 8 + k4]
-											|| k3 < 15 && aboolean[(j2 * 16 + k3 + 1) * 8 + k4]
-											|| k3 > 0 && aboolean[(j2 * 16 + (k3 - 1)) * 8 + k4]
-											|| k4 < 7 && aboolean[(j2 * 16 + k3) * 8 + k4 + 1] || k4 > 0
+									&& (j2 < 15 && aboolean[((j2 + 1) * 16 + k3) * 8 + k4] || j2 > 0
+											&& aboolean[((j2 - 1) * 16 + k3) * 8 + k4] || k3 < 15
+											&& aboolean[(j2 * 16 + k3 + 1) * 8 + k4] || k3 > 0
+											&& aboolean[(j2 * 16 + (k3 - 1)) * 8 + k4] || k4 < 7
+											&& aboolean[(j2 * 16 + k3) * 8 + k4 + 1] || k4 > 0
 											&& aboolean[(j2 * 16 + k3) * 8 + (k4 - 1)]);
 							
-							if (flag1
-									&& (k4 < 4 || rand.nextInt(2) != 0)
-									&& worldIn.getBlockState(position.add(j2, k4, k3))
-											.getMaterial().isSolid()) {
-								worldIn.setBlockState(position.add(j2, k4, k3),
-										stoneBlock.getDefaultState(), 2);
+							if (flag1 && (k4 < 4 || rand.nextInt(2) != 0)
+									&& worldIn.getBlockState(position.add(j2, k4, k3)).getMaterial().isSolid()) {
+								worldIn.setBlockState(position.add(j2, k4, k3), stoneBlock.getDefaultState(), 2);
 							}
 						}
 					}
@@ -130,8 +123,7 @@ public class WorldGenLakesZG extends WorldGenerator {
 						
 						if (worldIn.canBlockFreezeWater(position.add(k2, 4, l3))) {
 							int flag = ForgeModContainer.fixVanillaCascading ? 2 | 16 : 2;
-							worldIn.setBlockState(position.add(k2, 4, l3),
-									Blocks.PACKED_ICE.getDefaultState(), flag);
+							worldIn.setBlockState(position.add(k2, 4, l3), Blocks.PACKED_ICE.getDefaultState(), flag);
 						}
 					}
 				}

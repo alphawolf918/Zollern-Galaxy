@@ -67,8 +67,7 @@ public class GenLayerEdenBiomes extends GenLayerEden {
 		for (int dz = 0; dz < areaHeight; dz++) {
 			for (int dx = 0; dx < areaWidth; dx++) {
 				this.initChunkSeed(dx + areaX, dz + areaY);
-				dest[dx + dz * areaWidth] = Biome.getIdForBiome(this
-						.getWeightedBiomeEntry(BiomeType.WARM).biome);
+				dest[dx + dz * areaWidth] = Biome.getIdForBiome(this.getWeightedBiomeEntry(BiomeType.WARM).biome);
 			}
 		}
 		return dest;
@@ -77,8 +76,7 @@ public class GenLayerEdenBiomes extends GenLayerEden {
 	protected BiomeEntry getWeightedBiomeEntry(BiomeType type) {
 		List<BiomeEntry> biomeList = this.biomes[type.ordinal()];
 		int totalWeight = WeightedRandom.getTotalWeight(biomeList);
-		int weight = BiomeManager.isTypeListModded(type) ? this.nextInt(totalWeight) : this
-				.nextInt(totalWeight / 10) * 10;
+		int weight = BiomeManager.isTypeListModded(type) ? this.nextInt(totalWeight) : this.nextInt(totalWeight / 10) * 10;
 		return WeightedRandom.getRandomItem(biomeList, weight);
 	}
 }

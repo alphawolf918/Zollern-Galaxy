@@ -25,7 +25,6 @@ public class BiomeXathiusOcean extends BiomeXathiusBase {
 		this.spawnableWaterCreatureList.add(new SpawnListEntry(EntitySquid.class, 100, 1, 4));
 		this.spawnableWaterCreatureList.add(new SpawnListEntry(EntitySquidlus.class, 100, 1, 4));
 		this.biomeDecor.xathTallGrassPerChunk = 9;
-		// this.biomeDecor.xathFlowersPerChunk = 5;
 		this.biomeDecor.generateFalls = true;
 		this.biomeDecor.generateLakes = true;
 		this.biomeDecor.lavaLakesPerChunk = 0;

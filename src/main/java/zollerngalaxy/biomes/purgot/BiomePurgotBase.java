@@ -49,8 +49,8 @@ public class BiomePurgotBase extends BiomeSpace {
 		this.setPlanetForBiome(ZGPlanets.planetPurgot);
 	}
 	
-	public final void generatePurgotTerrain(World worldIn, Random rand, ChunkPrimer chunkPrimerIn,
-			int x, int z, double noiseVal) {
+	public final void generatePurgotTerrain(World worldIn, Random rand, ChunkPrimer chunkPrimerIn, int x, int z,
+			double noiseVal) {
 		int i = worldIn.getSeaLevel();
 		float biomeHeight = this.getBiomeHeight();
 		IBlockState topState = this.topBlock;
@@ -88,8 +88,7 @@ public class BiomePurgotBase extends BiomeSpace {
 								fillState = this.fillerBlock;
 							}
 							
-							if (j1 < i
-									&& (topState == null || topState.getMaterial() == Material.AIR)) {
+							if (j1 < i && (topState == null || topState.getMaterial() == Material.AIR)) {
 								topState = ICE;
 							}
 							
@@ -115,8 +114,7 @@ public class BiomePurgotBase extends BiomeSpace {
 	}
 	
 	@Override
-	public void genTerrainBlocks(World worldIn, Random rand, ChunkPrimer chunkPrimerIn, int x,
-			int z, double noiseVal) {
+	public void genTerrainBlocks(World worldIn, Random rand, ChunkPrimer chunkPrimerIn, int x, int z, double noiseVal) {
 		this.generatePurgotTerrain(worldIn, rand, chunkPrimerIn, x, z, noiseVal);
 	}
 	

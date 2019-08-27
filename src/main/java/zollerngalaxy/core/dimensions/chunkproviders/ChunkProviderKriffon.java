@@ -37,8 +37,7 @@ public class ChunkProviderKriffon extends ChunkProviderBase {
 	
 	private Biome[] biomesForGeneration = { ZGBiomes.KRIFFON };
 	
-	private final MapGenCavesZG caveGenerator = new MapGenCavesZG(ZGBlocks.kriffStone,
-			ZGBlocks.kriffMagmaRock);
+	private final MapGenCavesZG caveGenerator = new MapGenCavesZG(ZGBlocks.kriffStone, ZGBlocks.kriffMagmaRock);
 	private final MapGenRavinesZG ravineGenerator = new MapGenRavinesZG(ZGBlocks.kriffStone);
 	
 	private static final int CRATER_PROB = 50;
@@ -89,13 +88,11 @@ public class ChunkProviderKriffon extends ChunkProviderBase {
 		}
 	}
 	
-	public void replaceBlocksForBiome(int par1, int par2, ChunkPrimer primer,
-			Biome[] par4ArrayOfBiome) {
+	public void replaceBlocksForBiome(int par1, int par2, ChunkPrimer primer, Biome[] par4ArrayOfBiome) {
 		final int var5 = 20;
 		for (int var8 = 0; var8 < 16; ++var8) {
 			for (int var9 = 0; var9 < 16; ++var9) {
-				final int var12 = (int) (this.noiseGen4
-						.getNoise(var8 + par1 * 16, var9 * par2 * 16) / 3.0D + 3.0D + this.rand
+				final int var12 = (int) (this.noiseGen4.getNoise(var8 + par1 * 16, var9 * par2 * 16) / 3.0D + 3.0D + this.rand
 						.nextDouble() * 0.25D);
 				int var13 = -1;
 				IBlockState state0 = BLOCK_TOP;
@@ -167,17 +164,14 @@ public class ChunkProviderKriffon extends ChunkProviderBase {
 			for (int cz = chunkZ - 2; cz <= chunkZ + 2; cz++) {
 				for (int x = 0; x < ChunkProviderKriffon.CHUNK_SIZE_X; x++) {
 					for (int z = 0; z < ChunkProviderKriffon.CHUNK_SIZE_Z; z++) {
-						if (Math.abs(this.randFromPoint(cx * 16 + x, (cz * 16 + z) * 1000)) < this.noiseGen4
-								.getNoise(x * ChunkProviderKriffon.CHUNK_SIZE_X + x, cz
-										* ChunkProviderKriffon.CHUNK_SIZE_Z + z)
+						if (Math.abs(this.randFromPoint(cx * 16 + x, (cz * 16 + z) * 1000)) < this.noiseGen4.getNoise(x
+								* ChunkProviderKriffon.CHUNK_SIZE_X + x, cz * ChunkProviderKriffon.CHUNK_SIZE_Z + z)
 								/ ChunkProviderKriffon.CRATER_PROB) {
 							final Random random = new Random(cx * 16 + x + (cz * 16 + z) * 5000);
 							final EnumCraterSize cSize = EnumCraterSize.sizeArray[random
 									.nextInt(EnumCraterSize.sizeArray.length)];
-							final int size = random.nextInt(cSize.MAX_SIZE - cSize.MIN_SIZE)
-									+ cSize.MIN_SIZE;
-							this.makeCrater(cx * 16 + x, cz * 16 + z, chunkX * 16, chunkZ * 16,
-									size, primer);
+							final int size = random.nextInt(cSize.MAX_SIZE - cSize.MIN_SIZE) + cSize.MIN_SIZE;
+							this.makeCrater(cx * 16 + x, cz * 16 + z, chunkX * 16, chunkZ * 16, size, primer);
 						}
 					}
 				}
@@ -185,8 +179,7 @@ public class ChunkProviderKriffon extends ChunkProviderBase {
 		}
 	}
 	
-	private void makeCrater(int craterX, int craterZ, int chunkX, int chunkZ, int size,
-			ChunkPrimer primer) {
+	private void makeCrater(int craterX, int craterZ, int chunkX, int chunkZ, int size, ChunkPrimer primer) {
 		for (int x = 0; x < ChunkProviderKriffon.CHUNK_SIZE_X; x++) {
 			for (int z = 0; z < ChunkProviderKriffon.CHUNK_SIZE_Z; z++) {
 				double xDev = craterX - (chunkX + x);
@@ -199,8 +192,7 @@ public class ChunkProviderKriffon extends ChunkProviderBase {
 					yDev = 5 - yDev;
 					int helper = 0;
 					for (int y = ChunkProviderKriffon.CHUNK_SIZE_Y - 1; y > 0; y--) {
-						if (Blocks.AIR != primer.getBlockState(x, y, z).getBlock()
-								&& helper <= yDev) {
+						if (Blocks.AIR != primer.getBlockState(x, y, z).getBlock() && helper <= yDev) {
 							primer.setBlockState(x, y, z, Blocks.AIR.getDefaultState());
 							helper++;
 						}
@@ -244,8 +236,7 @@ public class ChunkProviderKriffon extends ChunkProviderBase {
 	}
 	
 	@Override
-	public List<Biome.SpawnListEntry> getPossibleCreatures(EnumCreatureType creatureType,
-			BlockPos pos) {
+	public List<Biome.SpawnListEntry> getPossibleCreatures(EnumCreatureType creatureType, BlockPos pos) {
 		Biome biomegenbase = this.world.getBiome(pos);
 		return biomegenbase.getSpawnableList(creatureType);
 	}

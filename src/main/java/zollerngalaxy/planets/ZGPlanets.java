@@ -155,8 +155,7 @@ public class ZGPlanets {
 	
 	public static void initPlanets() {
 		// Planet Zollus
-		planetZollus.setDimensionInfo(ConfigManagerZG.planetZollusDimensionId,
-				WorldProviderZollus.class);
+		planetZollus.setDimensionInfo(ConfigManagerZG.planetZollusDimensionId, WorldProviderZollus.class);
 		planetZollus.setParentSolarSystem(systemPsios);
 		planetZollus.setPlanetClass(EnumPlanetClass.L);
 		planetZollus.setRingColorRGB(0.1F, 0.9F, 2.6F);
@@ -175,12 +174,10 @@ public class ZGPlanets {
 		planetZollus.setAtmosphere();
 		planetZollus.setPlanetIcon("zollus");
 		planetZollus.setBiomeInfo(ZGBiomes.ZOLLUS);
-		planetZollus.addChecklistKeys("equipOxygenSuit");
 		totalPlanets++;
 		
 		// Planet Kriffon
-		planetKriffon.setDimensionInfo(ConfigManagerZG.planetKriffonDimensionId,
-				WorldProviderKriffon.class);
+		planetKriffon.setDimensionInfo(ConfigManagerZG.planetKriffonDimensionId, WorldProviderKriffon.class);
 		planetKriffon.setParentSolarSystem(systemPsios);
 		planetKriffon.setPlanetClass(EnumPlanetClass.Y);
 		planetKriffon.setRingColorRGB(0.1F, 0.9F, 2.6F);
@@ -199,7 +196,6 @@ public class ZGPlanets {
 		planetKriffon.setAtmosphere();
 		planetKriffon.setPlanetIcon("kriffus");
 		planetKriffon.setBiomeInfo(ZGBiomes.KRIFFON);
-		planetKriffon.addChecklistKeys("equipOxygenSuit");
 		totalPlanets++;
 		
 		// Planet Purgot
@@ -217,14 +213,13 @@ public class ZGPlanets {
 		planetPurgot.setWindLevel(5.7F);
 		planetPurgot.setDensity(0.3F);
 		planetPurgot.setHasRain(false);
-		planetPurgot.setPlanetGasses(EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.WATER,
-				EnumAtmosphericGas.NITROGEN, EnumAtmosphericGas.ARGON);
+		planetPurgot.setPlanetGasses(EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.WATER, EnumAtmosphericGas.NITROGEN,
+				EnumAtmosphericGas.ARGON);
 		planetPurgot.setPlanetIcon("purgot");
 		planetPurgot.setAtmosphere();
 		planetPurgot.setBiomeInfo(ZGBiomes.PURGOT_BASE, ZGBiomes.PURGOT_LIMBO);
 		planetPurgot.addChecklistKeys("equipOxygenSuit");
-		planetPurgot.setDimensionInfo(ConfigManagerZG.planetPurgotDimensionId,
-				WorldProviderPurgot.class);
+		planetPurgot.setDimensionInfo(ConfigManagerZG.planetPurgotDimensionId, WorldProviderPurgot.class);
 		totalPlanets++;
 		
 		// Planet Eden
@@ -244,20 +239,18 @@ public class ZGPlanets {
 		planetEden.setWindLevel(0.6F);
 		planetEden.setDensity(0.9F);
 		planetEden.setHasRain(true);
-		planetEden.setPlanetGasses(EnumAtmosphericGas.NITROGEN, EnumAtmosphericGas.OXYGEN,
-				EnumAtmosphericGas.ARGON, EnumAtmosphericGas.WATER);
+		planetEden.setPlanetGasses(EnumAtmosphericGas.NITROGEN, EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.ARGON,
+				EnumAtmosphericGas.WATER);
 		planetEden.setAtmosphere();
 		planetEden.setPlanetIcon("eden");
-		planetEden.setBiomeInfo(ZGBiomes.EDEN_GREEN_LANDS, ZGBiomes.EDEN_BLOOD_DESERT,
-				ZGBiomes.EDEN_ROCK_MOUNTAINS, ZGBiomes.EDEN_TERRAN_VALLEY,
-				ZGBiomes.EDEN_SNOWY_PLAINS, ZGBiomes.EDEN_GOLDEN_MEADOW, ZGBiomes.EDEN_SWAMPLANDS,
-				ZGBiomes.EDENWOOD_FOREST, ZGBiomes.EDEN_FLOWER_GARDEN, ZGBiomes.EDEN_CRATERS,
+		planetEden.setBiomeInfo(ZGBiomes.EDEN_GREEN_LANDS, ZGBiomes.EDEN_BLOOD_DESERT, ZGBiomes.EDEN_ROCK_MOUNTAINS,
+				ZGBiomes.EDEN_TERRAN_VALLEY, ZGBiomes.EDEN_SNOWY_PLAINS, ZGBiomes.EDEN_GOLDEN_MEADOW,
+				ZGBiomes.EDEN_SWAMPLANDS, ZGBiomes.EDENWOOD_FOREST, ZGBiomes.EDEN_FLOWER_GARDEN, ZGBiomes.EDEN_CRATERS,
 				ZGBiomes.EDEN_OCEAN);
 		totalPlanets++;
 		
 		// Planet Xathius
-		planetXathius.setDimensionInfo(ConfigManagerZG.planetXathiusDimensionId,
-				WorldProviderXathius.class);
+		planetXathius.setDimensionInfo(ConfigManagerZG.planetXathiusDimensionId, WorldProviderXathius.class);
 		planetXathius.setParentSolarSystem(systemPraedyth);
 		planetXathius.setPlanetClass(EnumPlanetClass.NINE);
 		planetXathius.setRingColorRGB(0.1F, 0.9F, 1.4F);
@@ -272,12 +265,11 @@ public class ZGPlanets {
 		planetXathius.setWindLevel(3.2F);
 		planetXathius.setDensity(1.1F);
 		planetXathius.setHasRain(true);
-		planetXathius.setPlanetGasses(EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.WATER,
-				EnumAtmosphericGas.NITROGEN, EnumAtmosphericGas.ARGON);
+		planetXathius.setPlanetGasses(EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.WATER, EnumAtmosphericGas.NITROGEN,
+				EnumAtmosphericGas.ARGON);
 		planetXathius.setAtmosphere();
 		planetXathius.setPlanetIcon("xathius");
-		planetXathius.setBiomeInfo(ZGBiomes.XATHIUS_ABSTRACT_PLAINS, ZGBiomes.XATHIUS_OCEAN,
-				ZGBiomes.XATHIUS_BLUELANDS);
+		planetXathius.setBiomeInfo(ZGBiomes.XATHIUS_ABSTRACT_PLAINS, ZGBiomes.XATHIUS_OCEAN, ZGBiomes.XATHIUS_BLUELANDS);
 		totalPlanets++;
 		
 		// Planet Oasis
@@ -334,16 +326,12 @@ public class ZGPlanets {
 	}
 	
 	public static void registerTeleportTypes() {
-		GalacticraftRegistry.registerTeleportType(WorldProviderZollus.class,
-				new TeleportTypeVenus());
-		GalacticraftRegistry.registerTeleportType(WorldProviderKriffon.class,
-				new TeleportTypeVenus());
-		GalacticraftRegistry.registerTeleportType(WorldProviderPurgot.class,
-				new TeleportTypeVenus());
+		GalacticraftRegistry.registerTeleportType(WorldProviderZollus.class, new TeleportTypeVenus());
+		GalacticraftRegistry.registerTeleportType(WorldProviderKriffon.class, new TeleportTypeVenus());
+		GalacticraftRegistry.registerTeleportType(WorldProviderPurgot.class, new TeleportTypeVenus());
 		GalacticraftRegistry.registerTeleportType(WorldProviderEden.class, new TeleportTypeVenus());
 		
-		GalacticraftRegistry.registerTeleportType(WorldProviderXathius.class,
-				new TeleportTypeVenus());
+		GalacticraftRegistry.registerTeleportType(WorldProviderXathius.class, new TeleportTypeVenus());
 		// GalacticraftRegistry.registerTeleportType(WorldProviderOasis.class,
 		// new TeleportTypeVenus());
 	}

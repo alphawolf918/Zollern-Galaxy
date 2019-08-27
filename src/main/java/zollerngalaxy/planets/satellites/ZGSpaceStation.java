@@ -14,8 +14,7 @@ public class ZGSpaceStation extends Satellite {
 		this.setRelativeDistanceFromCenter(new ScalableDistance(5.5F, 5.5F));
 		this.setRelativeOrbitTime(20.0F);
 		this.setTierRequired(parentBody.getTierRequirement());
-		this.setBodyIcon(new ResourceLocation(
-				"galacticraftcore:textures/gui/celestialbodies/space_station.png"));
+		this.setBodyIcon(new ResourceLocation("galacticraftcore:textures/gui/celestialbodies/space_station.png"));
 		this.addChecklistKeys("thermal_padding", "equip_oxygen_suit", "equip_parachute");
 		this.setBiomeInfo(BiomeOrbit.space);
 	}

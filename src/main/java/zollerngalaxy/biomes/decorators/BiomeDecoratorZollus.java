@@ -25,21 +25,14 @@ public class BiomeDecoratorZollus extends BiomeDecoratorZG {
 	public int zolCrystalsPerChunk = 2;
 	
 	public BiomeDecoratorZollus() {
-		this.dirtGen = new WorldGenMinableZG(ZGBlocks.zolDirt, ZGBlocks.zolSurfaceRock,
-				EnumOreGenZG.DIRT);
-		this.packedIceGen = new WorldGenMinableZG(Blocks.PACKED_ICE, ZGBlocks.zolSurfaceRock,
-				EnumOreGenZG.PACKED_ICE);
+		this.dirtGen = new WorldGenMinableZG(ZGBlocks.zolDirt, ZGBlocks.zolSurfaceRock, EnumOreGenZG.DIRT);
+		this.packedIceGen = new WorldGenMinableZG(Blocks.PACKED_ICE, ZGBlocks.zolSurfaceRock, EnumOreGenZG.PACKED_ICE);
 		this.tinGen = new WorldGenMinableZG(ZGBlocks.zolTinOre, ZGBlocks.zolStone, EnumOreGenZG.TIN);
-		this.copperGen = new WorldGenMinableZG(ZGBlocks.zolCopperOre, ZGBlocks.zolStone,
-				EnumOreGenZG.COPPER);
-		this.ironGen = new WorldGenMinableZG(ZGBlocks.zolIronOre, ZGBlocks.zolStone,
-				EnumOreGenZG.IRON);
-		this.goldGen = new WorldGenMinableZG(ZGBlocks.zolGoldOre, ZGBlocks.zolStone,
-				EnumOreGenZG.GOLD);
-		this.heartiumGen = new WorldGenMinableZG(ZGBlocks.zolHeartOre, ZGBlocks.zolStone,
-				EnumOreGenZG.HEARTIUM);
-		this.coalGen = new WorldGenMinableZG(ZGBlocks.zolCoalOre, ZGBlocks.zolStone,
-				EnumOreGenZG.COAL);
+		this.copperGen = new WorldGenMinableZG(ZGBlocks.zolCopperOre, ZGBlocks.zolStone, EnumOreGenZG.COPPER);
+		this.ironGen = new WorldGenMinableZG(ZGBlocks.zolIronOre, ZGBlocks.zolStone, EnumOreGenZG.IRON);
+		this.goldGen = new WorldGenMinableZG(ZGBlocks.zolGoldOre, ZGBlocks.zolStone, EnumOreGenZG.GOLD);
+		this.heartiumGen = new WorldGenMinableZG(ZGBlocks.zolHeartOre, ZGBlocks.zolStone, EnumOreGenZG.HEARTIUM);
+		this.coalGen = new WorldGenMinableZG(ZGBlocks.zolCoalOre, ZGBlocks.zolStone, EnumOreGenZG.COAL);
 	}
 	
 	@Override
@@ -59,8 +52,7 @@ public class BiomeDecoratorZollus extends BiomeDecoratorZG {
 		int i;
 		boolean hasSpawned = false;
 		for (i = 0; i < this.zolCrystalsPerChunk; ++i) {
-			ZGDecorateHelper.generatePlants(
-					new WorldGenZolniumCrystals(ZGBlocks.zolCrystals.getDefaultState()), world,
+			ZGDecorateHelper.generatePlants(new WorldGenZolniumCrystals(ZGBlocks.zolCrystals.getDefaultState()), world,
 					rand, this.chunkPos);
 		}
 	}

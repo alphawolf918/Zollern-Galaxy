@@ -25,17 +25,16 @@ public class ZGSpaceStations {
 	
 	private static void initSpaceStations() {
 		EDEN_SPACE_STATION = new ZGSpaceStation("eden", ZGPlanets.planetEden);
-		EDEN_SPACE_STATION.setDimensionInfo(ConfigManagerZG.spaceStationEdenId,
-				ConfigManagerZG.spaceStationEdenStaticId, WorldProviderOrbitEden.class);
+		EDEN_SPACE_STATION.setDimensionInfo(ConfigManagerZG.spaceStationEdenId, ConfigManagerZG.spaceStationEdenStaticId,
+				WorldProviderOrbitEden.class);
 		totalSpaceStations++;
 	}
 	
 	private static void registerSpaceStations() {
 		GalaxyRegistry.registerSatellite(EDEN_SPACE_STATION);
-		GalacticraftRegistry.registerTeleportType(WorldProviderOrbitEden.class,
-				new TeleportTypeOrbit());
-		GalacticraftRegistry.registerDimension("Eden Space Station", "_eden_orbit",
-				ConfigManagerZG.spaceStationEdenId, WorldProviderOrbitEden.class, false);
+		GalacticraftRegistry.registerTeleportType(WorldProviderOrbitEden.class, new TeleportTypeOrbit());
+		GalacticraftRegistry.registerDimension("Eden Space Station", "_eden_orbit", ConfigManagerZG.spaceStationEdenId,
+				WorldProviderOrbitEden.class, false);
 		GalacticraftRegistry.registerDimension("Eden Space Station", "_eden_orbit",
 				ConfigManagerZG.spaceStationEdenStaticId, WorldProviderOrbitEden.class, true);
 	}

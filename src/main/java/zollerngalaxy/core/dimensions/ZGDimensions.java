@@ -29,8 +29,7 @@ public class ZGDimensions {
 		ZGDimensions.PURGOT = ZGDimensions.getDimType(ConfigManagerZG.planetPurgotDimensionId);
 		ZGDimensions.EDEN = ZGDimensions.getDimType(ConfigManagerZG.planetEdenDimensionId);
 		ZGDimensions.EDEN_ORBIT = ZGDimensions.getDimType(ConfigManagerZG.spaceStationEdenId);
-		ZGDimensions.EDEN_ORBIT_STATIC = ZGDimensions
-				.getDimType(ConfigManagerZG.spaceStationEdenStaticId);
+		ZGDimensions.EDEN_ORBIT_STATIC = ZGDimensions.getDimType(ConfigManagerZG.spaceStationEdenStaticId);
 		
 		// Praedyth
 		ZGDimensions.XATHIUS = ZGDimensions.getDimType(ConfigManagerZG.planetXathiusDimensionId);

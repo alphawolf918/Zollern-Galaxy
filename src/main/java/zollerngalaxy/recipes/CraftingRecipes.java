@@ -37,40 +37,38 @@ public class CraftingRecipes {
 		CraftingRecipes.addPlanks(ZGBlocks.edenWoodLog, ZGBlocks.edenWoodPlanks);
 		
 		// HUD
-		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.hud, 1), new Object[] { "RXR", "SDS", "RXR",
-				'R', Items.REDSTONE, 'X', new ItemStack(GCItems.basicItem, 1, 3), 'S',
-				new ItemStack(GCItems.basicItem, 1, 5), 'D',
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.hud, 1), new Object[] { "RXR", "SDS", "RXR", 'R', Items.REDSTONE,
+				'X', new ItemStack(GCItems.basicItem, 1, 3), 'S', new ItemStack(GCItems.basicItem, 1, 5), 'D',
 				new ItemStack(MarsItems.marsItemBasic, 1, 3) });
 		totalCraftRecipes++;
 		
 		// Kriffon Crystal
-		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.kriffCrystal, 1), new Object[] { "FZF",
-				"CVC", "ERE", 'F', ZGItems.compressedKriffonium, 'Z', ZGItems.zolCrystal, 'C',
-				ZGItems.compressedCobalt, 'V', new ItemStack(MarsItems.marsItemBasic, 1, 3), 'E',
-				ZGItems.compressedHeartium, 'R', ZGItems.compressedEmerald });
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.kriffCrystal, 1), new Object[] { "FZF", "CVC", "ERE", 'F',
+				ZGItems.compressedKriffonium, 'Z', ZGItems.zolCrystal, 'C', ZGItems.compressedCobalt, 'V',
+				new ItemStack(MarsItems.marsItemBasic, 1, 3), 'E', ZGItems.compressedHeartium, 'R',
+				ZGItems.compressedEmerald });
 		totalCraftRecipes++;
 		
 		// Purgot Crystal
-		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.purgCrystal, 1), new Object[] { "E E",
-				" R ", "E E", 'E', ZGItems.compressedEvenium, 'R', Items.REDSTONE });
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.purgCrystal, 1), new Object[] { "E E", " R ", "E E", 'E',
+				ZGItems.compressedEvenium, 'R', Items.REDSTONE });
 		totalCraftRecipes++;
 		
 		// Star Gate (Tier 1)
-		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.starGateTier1, 1), new Object[] { "VCV",
-				"HYH", "YCY", 'V', ZGItems.compressedDiamond, 'C', ZGItems.compressedHeartium, 'H',
-				ZGItems.heartOfZol, 'Y', ZGItems.zolCrystal });
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.starGateTier1, 1),
+				new Object[] { "VCV", "HYH", "YCY", 'V', ZGItems.compressedDiamond, 'C', ZGItems.compressedHeartium, 'H',
+						ZGItems.heartOfZol, 'Y', ZGItems.zolCrystal });
 		totalCraftRecipes++;
 		
 		// Star Gate (Tier 2)
-		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.starGateTier2, 1), new Object[] { "VCV",
-				"HYH", "YCY", 'V', ZGItems.compressedCobalt, 'C', ZGItems.kriffCrystal, 'H',
-				ZGItems.heartOfZol, 'Y', ZGBlocks.blockCobalt });
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.starGateTier2, 1), new Object[] { "VCV", "HYH", "YCY", 'V',
+				ZGItems.compressedCobalt, 'C', ZGItems.kriffCrystal, 'H', ZGItems.heartOfZol, 'Y', ZGBlocks.blockCobalt });
 		totalCraftRecipes++;
 		
 		// Star Gate (Tier 3)
-		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.starGateTier3, 1), new Object[] { "VCV",
-				"HYH", "YCY", 'V', ZGItems.compressedEvenium, 'C', ZGItems.compressedHeartium, 'H',
-				ZGItems.compressedCobalt, 'Y', ZGItems.purgCrystal });
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.starGateTier3, 1), new Object[] { "VCV", "HYH", "YCY", 'V',
+				ZGItems.compressedEvenium, 'C', ZGItems.compressedHeartium, 'H', ZGItems.compressedCobalt, 'Y',
+				ZGItems.purgCrystal });
 		totalCraftRecipes++;
 		
 		// Star Gate (Tier 4)
@@ -78,21 +76,18 @@ public class CraftingRecipes {
 	}
 	
 	private static void addRockBricks(Block stoneIn, Block bricksOut) {
-		ZGRecipeHelper.addRecipe(new ItemStack(bricksOut, 4), new Object[] { "SS", "SS", 'S',
-				stoneIn });
+		ZGRecipeHelper.addRecipe(new ItemStack(bricksOut, 4), new Object[] { "SS", "SS", 'S', stoneIn });
 		totalCraftRecipes++;
 	}
 	
 	private static void addIngotMetal(Item ingotIn, Block blockOut) {
-		ZGRecipeHelper.addRecipe(new ItemStack(blockOut, 1), new Object[] { "III", "III", "III",
-				'I', ingotIn });
+		ZGRecipeHelper.addRecipe(new ItemStack(blockOut, 1), new Object[] { "III", "III", "III", 'I', ingotIn });
 		ZGRecipeHelper.addShapelessRecipe(new ItemStack(ingotIn, 9), new ItemStack(blockOut));
 		totalCraftRecipes += 2;
 	}
 	
 	private static void addBriteStone(Item dustIn, Block blockOut) {
-		ZGRecipeHelper.addRecipe(new ItemStack(blockOut, 1),
-				new Object[] { "DD", "DD", 'D', dustIn });
+		ZGRecipeHelper.addRecipe(new ItemStack(blockOut, 1), new Object[] { "DD", "DD", 'D', dustIn });
 		totalCraftRecipes++;
 	}
 	

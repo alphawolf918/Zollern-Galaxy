@@ -26,7 +26,7 @@ import com.google.gson.GsonBuilder;
 // work follows the Mojang EULA.
 // The original source is viewable at
 // https://gist.github.com/williewillus/a1a899ce5b0f0ba099078d46ae3dae6e
-public class JSONRecipeHelper {
+public class JSONRecipeFactory {
 	// This is a janky JSON generator, for porting from below 1.12 to 1.12.
 	// Simply replace calls to GameRegistry.addShapeless/ShapedRecipe with these
 	// methods, which will dump it to a json in RECIPE_DIR
@@ -52,8 +52,7 @@ public class JSONRecipeHelper {
 	
 	private static void setupDir() {
 		if (RECIPE_DIR == null) {
-			RECIPE_DIR = ConfigManagerZG.configuration.getConfigFile().toPath()
-					.resolve(FULL_PATH + "/recipes/").toFile();
+			RECIPE_DIR = ConfigManagerZG.configuration.getConfigFile().toPath().resolve(FULL_PATH + "/recipes/").toFile();
 		}
 		if (!RECIPE_DIR.exists()) {
 			RECIPE_DIR.mkdir();
@@ -62,8 +61,8 @@ public class JSONRecipeHelper {
 	
 	private static void setupAdvDir() {
 		if (ADVANCE_DIR == null) {
-			ADVANCE_DIR = ConfigManagerZG.configuration.getConfigFile().toPath()
-					.resolve(FULL_PATH + "/advancements/").toFile();
+			ADVANCE_DIR = ConfigManagerZG.configuration.getConfigFile().toPath().resolve(FULL_PATH + "/advancements/")
+					.toFile();
 		}
 		if (!ADVANCE_DIR.exists()) {
 			ADVANCE_DIR.mkdir();
@@ -116,13 +115,11 @@ public class JSONRecipeHelper {
 		
 		// names the json the same name as the output's registry name
 		String suffix = output.getItem().getHasSubtypes() ? "_" + output.getItemDamage() : "";
-		File file = new File(RECIPE_DIR, output.getItem().getRegistryName().getResourcePath()
-				+ suffix + ".json");
+		File file = new File(RECIPE_DIR, output.getItem().getRegistryName().getResourcePath() + suffix + ".json");
 		
 		while (file.exists()) {
 			file.delete();
-			file = new File(RECIPE_DIR, output.getItem().getRegistryName().getResourcePath()
-					+ ".json");
+			file = new File(RECIPE_DIR, output.getItem().getRegistryName().getResourcePath() + ".json");
 		}
 		
 		// writeAdvancements(output.getItem().getRegistryName().getResourcePath()
@@ -158,13 +155,11 @@ public class JSONRecipeHelper {
 		
 		// names the json the same name as the output's registry name
 		String suffix = output.getItem().getHasSubtypes() ? "_" + output.getItemDamage() : "";
-		File file = new File(RECIPE_DIR, output.getItem().getRegistryName().getResourcePath()
-				+ suffix + ".json");
+		File file = new File(RECIPE_DIR, output.getItem().getRegistryName().getResourcePath() + suffix + ".json");
 		
 		while (file.exists()) {
 			file.delete();
-			file = new File(RECIPE_DIR, output.getItem().getRegistryName().getResourcePath()
-					+ suffix + ".json");
+			file = new File(RECIPE_DIR, output.getItem().getRegistryName().getResourcePath() + suffix + ".json");
 		}
 		
 		// writeAdvancements(output.getItem().getRegistryName().getResourcePath()

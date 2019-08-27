@@ -44,20 +44,13 @@ public class BiomeDecoratorXathius extends BiomeDecoratorZG {
 	public BiomeDecoratorXathius() {
 		this.dirtGen = new WorldGenMinableZG(ZGBlocks.xathDirt, STONE, EnumOreGenZG.DIRT);
 		this.gravelGen = new WorldGenMinableZG(ZGBlocks.xathGravel, STONE, EnumOreGenZG.GRAVEL);
-		this.prometheanGen = new WorldGenMinableZG(ZGBlocks.xathPrometheanOre, STONE,
-				EnumOreGenZG.PROMETHEAN);
-		this.emeraldGen = new WorldGenMinableZG(ZGBlocks.xathEmeraldOre, STONE,
-				EnumOreGenZG.EMERALD.setGenCount(10));
-		this.diamondGen = new WorldGenMinableZG(ZGBlocks.xathDiamondOre, STONE,
-				EnumOreGenZG.DIAMOND.setGenCount(15));
-		this.redstoneGen = new WorldGenMinableZG(ZGBlocks.xathRedstoneOre, STONE,
-				EnumOreGenZG.REDSTONE.setGenCount(30));
-		this.ironGen = new WorldGenMinableZG(ZGBlocks.xathIronOre, STONE,
-				EnumOreGenZG.IRON.setGenCount(25));
-		this.goldGen = new WorldGenMinableZG(ZGBlocks.xathGoldOre, STONE,
-				EnumOreGenZG.GOLD.setGenCount(35));
-		this.tinGen = new WorldGenMinableZG(ZGBlocks.xathTinOre, STONE,
-				EnumOreGenZG.TIN.setGenCount(45));
+		this.prometheanGen = new WorldGenMinableZG(ZGBlocks.xathPrometheanOre, STONE, EnumOreGenZG.PROMETHEAN);
+		this.emeraldGen = new WorldGenMinableZG(ZGBlocks.xathEmeraldOre, STONE, EnumOreGenZG.EMERALD.setGenCount(10));
+		this.diamondGen = new WorldGenMinableZG(ZGBlocks.xathDiamondOre, STONE, EnumOreGenZG.DIAMOND.setGenCount(15));
+		this.redstoneGen = new WorldGenMinableZG(ZGBlocks.xathRedstoneOre, STONE, EnumOreGenZG.REDSTONE.setGenCount(30));
+		this.ironGen = new WorldGenMinableZG(ZGBlocks.xathIronOre, STONE, EnumOreGenZG.IRON.setGenCount(25));
+		this.goldGen = new WorldGenMinableZG(ZGBlocks.xathGoldOre, STONE, EnumOreGenZG.GOLD.setGenCount(35));
+		this.tinGen = new WorldGenMinableZG(ZGBlocks.xathTinOre, STONE, EnumOreGenZG.TIN.setGenCount(45));
 	}
 	
 	@Override
@@ -87,11 +80,9 @@ public class BiomeDecoratorXathius extends BiomeDecoratorZG {
 			for (int i = 0; i < this.waterLakesPerChunk; ++i) {
 				y = rand.nextInt(rand.nextInt(genY) + 8);
 				
-				Block blockToUse = (biome.getTempCategory() == TempCategory.COLD) ? Blocks.ICE
-						: Blocks.WATER;
+				Block blockToUse = (biome.getTempCategory() == TempCategory.COLD) ? Blocks.ICE : Blocks.WATER;
 				
-				(new WorldGenLakesZG(blockToUse, BLOCK_TOP)).generate(world, rand,
-						this.chunkPos.add(x, y, z));
+				(new WorldGenLakesZG(blockToUse, BLOCK_TOP)).generate(world, rand, this.chunkPos.add(x, y, z));
 			}
 			
 			if (this.waterlilyPerChunk > 0) {
@@ -106,8 +97,7 @@ public class BiomeDecoratorXathius extends BiomeDecoratorZG {
 				y = rand.nextInt(rand.nextInt(genY) + 8);
 				
 				if (rand.nextInt(100) <= 5) {
-					(new WorldGenLakesZG(Blocks.LAVA, STONE)).generate(world, rand,
-							this.chunkPos.add(x, y, z));
+					(new WorldGenLakesZG(Blocks.LAVA, STONE)).generate(world, rand, this.chunkPos.add(x, y, z));
 				}
 			}
 		}
@@ -117,16 +107,15 @@ public class BiomeDecoratorXathius extends BiomeDecoratorZG {
 				y = rand.nextInt(rand.nextInt(genY) + 8);
 				
 				if (rand.nextInt(100) <= 10) {
-					(new WorldGenLakesZG(Blocks.OBSIDIAN, STONE)).generate(world, rand,
-							this.chunkPos.add(x, y, z));
+					(new WorldGenLakesZG(Blocks.OBSIDIAN, STONE)).generate(world, rand, this.chunkPos.add(x, y, z));
 				}
 			}
 		}
 		
 		if (this.xathTallGrassPerChunk > 0) {
 			for (int i = 0; i < this.xathTallGrassPerChunk + 4; ++i) {
-				ZGDecorateHelper.generatePlants(new WorldGenTallGrassZG(
-						(ZGBlockTallGrass) ZGBlocks.xathTallGrass), world, rand, this.chunkPos);
+				ZGDecorateHelper.generatePlants(new WorldGenTallGrassZG((ZGBlockTallGrass) ZGBlocks.xathTallGrass), world,
+						rand, this.chunkPos);
 			}
 		}
 	}

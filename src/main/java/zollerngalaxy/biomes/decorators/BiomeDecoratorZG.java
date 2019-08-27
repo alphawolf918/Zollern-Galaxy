@@ -19,14 +19,12 @@ public abstract class BiomeDecoratorZG extends BiomeDecorator {
 	protected void generateOres(World world, Random rand) {
 	}
 	
-	protected void generateOre(WorldGenerator generator, EnumOreGenZG oreGen, World world,
-			Random rand) {
-		this.generateOre(generator, oreGen.getBlockCount(), oreGen.getMinHeight(),
-				oreGen.getMaxHeight(), world, rand);
+	protected void generateOre(WorldGenerator generator, EnumOreGenZG oreGen, World world, Random rand) {
+		this.generateOre(generator, oreGen.getBlockCount(), oreGen.getMinHeight(), oreGen.getMaxHeight(), world, rand);
 	}
 	
-	protected void generateOre(WorldGenerator generator, int blockCount, int minHeight,
-			int maxHeight, World world, Random rand) {
+	protected void generateOre(WorldGenerator generator, int blockCount, int minHeight, int maxHeight, World world,
+			Random rand) {
 		if (maxHeight < minHeight) {
 			int i = minHeight;
 			minHeight = maxHeight;
@@ -40,24 +38,21 @@ public abstract class BiomeDecoratorZG extends BiomeDecorator {
 		}
 		
 		for (int j = 0; j < blockCount; ++j) {
-			BlockPos blockpos = this.chunkPos.add(rand.nextInt(16),
-					rand.nextInt(maxHeight - minHeight) + minHeight, rand.nextInt(16));
+			BlockPos blockpos = this.chunkPos.add(rand.nextInt(16), rand.nextInt(maxHeight - minHeight) + minHeight,
+					rand.nextInt(16));
 			generator.generate(world, rand, blockpos);
 		}
 	}
 	
-	protected void generateLapis(WorldGenerator generator, EnumOreGenZG oreGen, World world,
-			Random rand) {
-		this.generateLapis(generator, oreGen.getBlockCount(), oreGen.getMinHeight(),
-				oreGen.getMaxHeight(), world, rand);
+	protected void generateLapis(WorldGenerator generator, EnumOreGenZG oreGen, World world, Random rand) {
+		this.generateLapis(generator, oreGen.getBlockCount(), oreGen.getMinHeight(), oreGen.getMaxHeight(), world, rand);
 	}
 	
-	protected void generateLapis(WorldGenerator generator, int blockCount, int centerHeight,
-			int spread, World world, Random rand) {
+	protected void generateLapis(WorldGenerator generator, int blockCount, int centerHeight, int spread, World world,
+			Random rand) {
 		for (int i = 0; i < blockCount; ++i) {
-			BlockPos blockpos = this.chunkPos.add(rand.nextInt(16),
-					rand.nextInt(spread) + rand.nextInt(spread) + centerHeight - spread,
-					rand.nextInt(16));
+			BlockPos blockpos = this.chunkPos.add(rand.nextInt(16), rand.nextInt(spread) + rand.nextInt(spread)
+					+ centerHeight - spread, rand.nextInt(16));
 			generator.generate(world, rand, blockpos);
 		}
 	}

@@ -32,8 +32,7 @@ import zollerngalaxy.proxy.IProxy;
 import zollerngalaxy.recipes.ZGRecipeRegistry;
 import zollerngalaxy.util.OreDictRegistry;
 
-@Mod(modid = ZGInfo.MOD_ID, version = ZGInfo.MOD_VERSION, name = ZGInfo.NAME,
-		dependencies = ZGInfo.DEPENDENCIES)
+@Mod(modid = ZGInfo.MOD_ID, version = ZGInfo.MOD_VERSION, name = ZGInfo.NAME, dependencies = ZGInfo.DEPENDENCIES)
 public class ZollernGalaxyCore {
 	
 	@SidedProxy(clientSide = ZGInfo.PROXY_CLIENT, serverSide = ZGInfo.PROXY_SERVER)
@@ -63,8 +62,8 @@ public class ZollernGalaxyCore {
 	public void preInit(FMLPreInitializationEvent event) {
 		ZGHelper.Log("Beginning Pre-Initilization phase...");
 		snw = NetworkRegistry.INSTANCE.newSimpleChannel(ZGInfo.CHANNEL);
-		snw.registerMessage(MessageTeleportToDimension.TeleportHandler.class,
-				MessageTeleportToDimension.class, 1, Side.SERVER);
+		snw.registerMessage(MessageTeleportToDimension.TeleportHandler.class, MessageTeleportToDimension.class, 1,
+				Side.SERVER);
 		ConfigManagerZG.init(event);
 		ZGSoundEvents.init();
 		ModHelperBase.detectMods();

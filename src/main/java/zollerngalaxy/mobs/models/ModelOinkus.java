@@ -108,15 +108,13 @@ public class ModelOinkus extends ModelBase {
 	}
 	
 	@Override
-	public void render(Entity p_78088_1_, float p_78088_2_, float p_78088_3_, float p_78088_4_,
-			float p_78088_5_, float p_78088_6_, float p_78088_7_) {
-		this.setRotationAngles(p_78088_2_, p_78088_3_, p_78088_4_, p_78088_5_, p_78088_6_,
-				p_78088_7_, p_78088_1_);
+	public void render(Entity p_78088_1_, float p_78088_2_, float p_78088_3_, float p_78088_4_, float p_78088_5_,
+			float p_78088_6_, float p_78088_7_) {
+		this.setRotationAngles(p_78088_2_, p_78088_3_, p_78088_4_, p_78088_5_, p_78088_6_, p_78088_7_, p_78088_1_);
 		if (this.isChild) {
 			float f6 = 2.0F;
 			GL11.glPushMatrix();
-			GL11.glTranslatef(0.0F, this.field_78145_g * p_78088_7_, this.field_78151_h
-					* p_78088_7_);
+			GL11.glTranslatef(0.0F, this.field_78145_g * p_78088_7_, this.field_78151_h * p_78088_7_);
 			this.head.render(p_78088_7_);
 			headThing.render(p_78088_7_);
 			cheekThingRight.render(p_78088_7_);
@@ -151,8 +149,8 @@ public class ModelOinkus extends ModelBase {
 	}
 	
 	@Override
-	public void setRotationAngles(float p_78087_1_, float p_78087_2_, float p_78087_3_,
-			float p_78087_4_, float p_78087_5_, float p_78087_6_, Entity p_78087_7_) {
+	public void setRotationAngles(float p_78087_1_, float p_78087_2_, float p_78087_3_, float p_78087_4_, float p_78087_5_,
+			float p_78087_6_, Entity p_78087_7_) {
 		float f6 = (180F / (float) Math.PI);
 		this.head.rotateAngleX = p_78087_5_ / (180F / (float) Math.PI);
 		this.head.rotateAngleY = p_78087_4_ / (180F / (float) Math.PI);
@@ -166,10 +164,8 @@ public class ModelOinkus extends ModelBase {
 		this.cheekThingRight.rotateAngleY = p_78087_4_ / (180F / (float) Math.PI);
 		this.body.rotateAngleX = ((float) Math.PI / 2F);
 		this.leg1.rotateAngleX = MathHelper.cos(p_78087_1_ * 0.6662F) * 1.4F * p_78087_2_;
-		this.leg2.rotateAngleX = MathHelper.cos(p_78087_1_ * 0.6662F + (float) Math.PI) * 1.4F
-				* p_78087_2_;
-		this.leg3.rotateAngleX = MathHelper.cos(p_78087_1_ * 0.6662F + (float) Math.PI) * 1.4F
-				* p_78087_2_;
+		this.leg2.rotateAngleX = MathHelper.cos(p_78087_1_ * 0.6662F + (float) Math.PI) * 1.4F * p_78087_2_;
+		this.leg3.rotateAngleX = MathHelper.cos(p_78087_1_ * 0.6662F + (float) Math.PI) * 1.4F * p_78087_2_;
 		this.leg4.rotateAngleX = MathHelper.cos(p_78087_1_ * 0.6662F) * 1.4F * p_78087_2_;
 	}
 }

@@ -13,9 +13,8 @@ import zollerngalaxy.lib.helpers.ZGBlockStateHelper;
 @SideOnly(Side.CLIENT)
 public enum EnumStateMapper {
 	FENCE_GATE(BlockFenceGate.POWERED), DOOR(BlockDoor.POWERED), FORGE_LEVEL(BlockFluidBase.LEVEL), VANILLA_LEVEL(
-			BlockLiquid.LEVEL), FIRE(BlockFire.AGE), TNT(ZGBlockStateHelper.EXPLODE), LEAVES(
-			ZGBlockStateHelper.CHECK_DECAY, ZGBlockStateHelper.DECAYABLE), PLANT_AGE(
-			ZGBlockStateHelper.AGE);
+			BlockLiquid.LEVEL), FIRE(BlockFire.AGE), TNT(ZGBlockStateHelper.EXPLODE), LEAVES(ZGBlockStateHelper.CHECK_DECAY,
+			ZGBlockStateHelper.DECAYABLE), PLANT_AGE(ZGBlockStateHelper.AGE);
 	
 	private IProperty[] property;
 	

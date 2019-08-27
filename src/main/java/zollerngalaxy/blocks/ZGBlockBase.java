@@ -21,10 +21,9 @@ import zollerngalaxy.blocks.creativetabs.ZGTabs;
 import zollerngalaxy.core.enums.EnumBlockType;
 import zollerngalaxy.core.enums.EnumHarvestLevelZG;
 import zollerngalaxy.core.enums.EnumHarvestToolZG;
-import zollerngalaxy.lib.helpers.json.JSONRegistryHelper;
+import zollerngalaxy.lib.helpers.json.JSONFactory;
 
-public class ZGBlockBase extends Block implements ISingleZGBlockRender, IJSONBlock,
-		ITerraformableBlock {
+public class ZGBlockBase extends Block implements ISingleZGBlockRender, IJSONBlock, ITerraformableBlock {
 	
 	protected static Material blockMaterial = Material.ROCK;
 	protected static SoundType blockSound = SoundType.STONE;
@@ -46,7 +45,7 @@ public class ZGBlockBase extends Block implements ISingleZGBlockRender, IJSONBlo
 		this.translucent = false;
 		
 		if (!this.shouldJSONIgnore()) {
-			JSONRegistryHelper.registerBlock(blockName);
+			JSONFactory.registerBlock(blockName);
 		}
 	}
 	
@@ -104,8 +103,7 @@ public class ZGBlockBase extends Block implements ISingleZGBlockRender, IJSONBlo
 	@Override
 	public void onEntityWalk(World worldIn, BlockPos pos, Entity entityIn) {
 		if (!entityIn.isImmuneToFire() && entityIn instanceof EntityLivingBase
-				&& !EnchantmentHelper.hasFrostWalkerEnchantment((EntityLivingBase) entityIn)
-				&& this.getIsHotBlock()) {
+				&& !EnchantmentHelper.hasFrostWalkerEnchantment((EntityLivingBase) entityIn) && this.getIsHotBlock()) {
 			entityIn.attackEntityFrom(DamageSource.HOT_FLOOR, 2.5F);
 		}
 		

@@ -19,7 +19,7 @@ import com.google.gson.GsonBuilder;
  * 
  * @author Zollern Wolf
  */
-public final class JSONRegistryHelper {
+public final class JSONFactory {
 	
 	// Change to True or False or make a method like this
 	private static final boolean ENABLE = ZollernGalaxyCore.instance().isInDevMode();
@@ -41,7 +41,7 @@ public final class JSONRegistryHelper {
 	
 	private static void setupItemDir() {
 		if (ITEM_DIR == null) {
-			ITEM_DIR = JSONRegistryHelper.getPath("models/item");
+			ITEM_DIR = JSONFactory.getPath("models/item");
 		}
 		
 		if (!ITEM_DIR.exists()) {
@@ -51,14 +51,14 @@ public final class JSONRegistryHelper {
 	
 	private static void setupBlockDirs() {
 		if (BLOCK_DIR == null) {
-			BLOCK_DIR = JSONRegistryHelper.getPath("models/block");
+			BLOCK_DIR = JSONFactory.getPath("models/block");
 		}
 		
 		if (BLOCK_STATES_DIR == null) {
-			BLOCK_STATES_DIR = JSONRegistryHelper.getPath("blockstates");
+			BLOCK_STATES_DIR = JSONFactory.getPath("blockstates");
 		}
 		
-		JSONRegistryHelper.setupItemDir();
+		JSONFactory.setupItemDir();
 		
 		if (!BLOCK_DIR.exists()) {
 			BLOCK_DIR.mkdir();
@@ -78,7 +78,7 @@ public final class JSONRegistryHelper {
 			return;
 		}
 		
-		JSONRegistryHelper.setupItemDir();
+		JSONFactory.setupItemDir();
 		
 		Map<String, Object> json = new LinkedHashMap<>();
 		Map<String, Object> layers = new LinkedHashMap<>();
@@ -110,7 +110,7 @@ public final class JSONRegistryHelper {
 		}
 		
 		String jsonFileName = blockName + ".json";
-		JSONRegistryHelper.setupBlockDirs();
+		JSONFactory.setupBlockDirs();
 		
 		Map<String, Object> json = new LinkedHashMap<>();
 		Map<String, Object> all = new LinkedHashMap<>();
@@ -133,7 +133,7 @@ public final class JSONRegistryHelper {
 			e.printStackTrace();
 		}
 		
-		JSONRegistryHelper.registerBlockState(blockName);
+		JSONFactory.registerBlockState(blockName);
 	}
 	
 	private static void registerBlockState(String blockName) {
@@ -159,7 +159,7 @@ public final class JSONRegistryHelper {
 			e.printStackTrace();
 		}
 		
-		JSONRegistryHelper.registerBlockItem(blockName);
+		JSONFactory.registerBlockItem(blockName);
 	}
 	
 	private static void registerBlockItem(String blockName) {
@@ -187,7 +187,7 @@ public final class JSONRegistryHelper {
 		}
 		
 		String jsonFileName = blockName + ".json";
-		JSONRegistryHelper.setupBlockDirs();
+		JSONFactory.setupBlockDirs();
 		
 		Map<String, Object> json = new LinkedHashMap<>();
 		Map<String, Object> cross = new LinkedHashMap<>();
@@ -210,7 +210,7 @@ public final class JSONRegistryHelper {
 			e.printStackTrace();
 		}
 		
-		JSONRegistryHelper.registerFlowerBlockState(blockName);
+		JSONFactory.registerFlowerBlockState(blockName);
 	}
 	
 	private static void registerFlowerBlockState(String blockName) {
@@ -236,7 +236,7 @@ public final class JSONRegistryHelper {
 			e.printStackTrace();
 		}
 		
-		JSONRegistryHelper.registerBlockAsItem(blockName);
+		JSONFactory.registerBlockAsItem(blockName);
 	}
 	
 	private static void registerBlockAsItem(String blockName) {

@@ -14,12 +14,9 @@ import net.minecraftforge.fml.client.FMLClientHandler;
 
 public class SkyProviderPurgot extends SkyProviderBaseZG {
 	
-	private ResourceLocation psios6Texture = new ResourceLocation(
-			"zollerngalaxy:textures/gui/psion6.png");
-	private ResourceLocation edenTexture = new ResourceLocation(
-			"zollerngalaxy:textures/gui/eden.png");
-	private ResourceLocation zollusTexture = new ResourceLocation(
-			"zollerngalaxy:textures/gui/zollus.png");
+	private ResourceLocation psios6Texture = new ResourceLocation("zollerngalaxy:textures/gui/psion6.png");
+	private ResourceLocation edenTexture = new ResourceLocation("zollerngalaxy:textures/gui/eden.png");
+	private ResourceLocation zollusTexture = new ResourceLocation("zollerngalaxy:textures/gui/zollus.png");
 	
 	public SkyProviderPurgot(IGalacticraftWorldProvider provider) {
 		super();

@@ -20,9 +20,8 @@ import zollerngalaxy.worldgen.eden.WorldGenEdenTrees;
 public class ZGBlockSapling extends ZGBlockFlower implements IGrowable {
 	
 	public static final PropertyInteger STAGE = PropertyInteger.create("stage", 0, 1);
-	protected static final AxisAlignedBB SAPLING_AABB = new AxisAlignedBB(0.09999999403953552D,
-			0.0D, 0.09999999403953552D, 0.8999999761581421D, 0.800000011920929D,
-			0.8999999761581421D);
+	protected static final AxisAlignedBB SAPLING_AABB = new AxisAlignedBB(0.09999999403953552D, 0.0D, 0.09999999403953552D,
+			0.8999999761581421D, 0.800000011920929D, 0.8999999761581421D);
 	
 	public ZGBlockSapling(String blockName) {
 		super(blockName);
@@ -78,8 +77,7 @@ public class ZGBlockSapling extends ZGBlockFlower implements IGrowable {
 		if (!TerrainGen.saplingGrowTree(worldIn, rand, pos))
 			return;
 		WorldGenerator worldgenerator = new WorldGenEdenTrees(true, ZGHelper.rngNumber(5, 15),
-				ZGBlocks.edenWoodLog.getDefaultState(), ZGBlocks.edenWoodLeaves.getDefaultState(),
-				false);
+				ZGBlocks.edenWoodLog.getDefaultState(), ZGBlocks.edenWoodLeaves.getDefaultState(), false);
 		int i = 0;
 		int j = 0;
 		

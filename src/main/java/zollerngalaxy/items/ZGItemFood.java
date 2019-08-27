@@ -7,7 +7,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.blocks.creativetabs.ZGTabs;
 import zollerngalaxy.core.ZollernGalaxyCore;
-import zollerngalaxy.lib.helpers.json.JSONRegistryHelper;
+import zollerngalaxy.lib.helpers.json.JSONFactory;
 
 public class ZGItemFood extends ItemFood implements ISingleZGItemRender {
 	
@@ -15,7 +15,7 @@ public class ZGItemFood extends ItemFood implements ISingleZGItemRender {
 		super(amount, saturation, isWolfFood);
 		setItemName(this, name);
 		if (ZollernGalaxyCore.instance().isInDevMode()) {
-			JSONRegistryHelper.registerItem(name);
+			JSONFactory.registerItem(name);
 		}
 	}
 	

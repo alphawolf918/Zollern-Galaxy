@@ -21,18 +21,17 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.IShearable;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import zollerngalaxy.lib.helpers.json.JSONRegistryHelper;
+import zollerngalaxy.lib.helpers.json.JSONFactory;
 
 public class ZGBlockTallGrass extends ZGBlockFlower implements IGrowable, IShearable {
 	
-	protected static final AxisAlignedBB TALL_GRASS_AABB = new AxisAlignedBB(0.09999999403953552D,
-			0.0D, 0.09999999403953552D, 0.8999999761581421D, 0.800000011920929D,
-			0.8999999761581421D);
+	protected static final AxisAlignedBB TALL_GRASS_AABB = new AxisAlignedBB(0.09999999403953552D, 0.0D,
+			0.09999999403953552D, 0.8999999761581421D, 0.800000011920929D, 0.8999999761581421D);
 	
 	protected ZGBlockTallGrass(String blockName) {
 		super(blockName);
 		this.setMaterial(Material.VINE);
-		JSONRegistryHelper.registerFlowerBlock(blockName);
+		JSONFactory.registerFlowerBlock(blockName);
 	}
 	
 	@Override
@@ -69,8 +68,8 @@ public class ZGBlockTallGrass extends ZGBlockFlower implements IGrowable, IShear
 	 * Block has possibly been set to air via Block.removedByPlayer
 	 */
 	@Override
-	public void harvestBlock(World worldIn, EntityPlayer player, BlockPos pos, IBlockState state,
-			@Nullable TileEntity te, ItemStack stack) {
+	public void harvestBlock(World worldIn, EntityPlayer player, BlockPos pos, IBlockState state, @Nullable TileEntity te,
+			ItemStack stack) {
 		if (!worldIn.isRemote && stack.getItem() == Items.SHEARS) {
 			player.addStat(StatList.getBlockStats(this));
 			spawnAsEntity(worldIn, pos, new ItemStack(this, 1));
@@ -133,14 +132,12 @@ public class ZGBlockTallGrass extends ZGBlockFlower implements IGrowable, IShear
 	}
 	
 	@Override
-	public NonNullList<ItemStack> onSheared(ItemStack item, IBlockAccess world, BlockPos pos,
-			int fortune) {
+	public NonNullList<ItemStack> onSheared(ItemStack item, IBlockAccess world, BlockPos pos, int fortune) {
 		return NonNullList.withSize(1, new ItemStack(this, 1));
 	}
 	
 	@Override
-	public void getDrops(NonNullList<ItemStack> drops, IBlockAccess world, BlockPos pos,
-			IBlockState state, int fortune) {
+	public void getDrops(NonNullList<ItemStack> drops, IBlockAccess world, BlockPos pos, IBlockState state, int fortune) {
 		if (RANDOM.nextInt(4) != 0)
 			return;
 		ItemStack seed = net.minecraftforge.common.ForgeHooks.getGrassSeed(RANDOM, fortune);

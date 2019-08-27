@@ -31,8 +31,7 @@ public class ModHelperBase {
 	
 	public static boolean isModLoaded(String modId) {
 		boolean isLoaded = Loader.isModLoaded(modId);
-		String strDetectedMod = (isLoaded) ? "Detected mod: " + modId : "Could not detect mod: "
-				+ modId;
+		String strDetectedMod = (isLoaded) ? "Detected mod: " + modId : "Could not detect mod: " + modId;
 		ZGHelper.Log(strDetectedMod);
 		return isLoaded;
 	}

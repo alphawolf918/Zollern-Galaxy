@@ -48,8 +48,8 @@ public abstract class BiomeXathiusBase extends BiomeSpace {
 		return (BiomeDecoratorXathius) this.decorator;
 	}
 	
-	public final void generateXathiusTerrain(World worldIn, Random rand, ChunkPrimer chunkPrimerIn,
-			int x, int z, double noiseVal) {
+	public final void generateXathiusTerrain(World worldIn, Random rand, ChunkPrimer chunkPrimerIn, int x, int z,
+			double noiseVal) {
 		int i = worldIn.getSeaLevel();
 		float biomeHeight = this.getBiomeHeight();
 		IBlockState topState = this.topBlock;
@@ -87,8 +87,7 @@ public abstract class BiomeXathiusBase extends BiomeSpace {
 								fillState = this.fillerBlock;
 							}
 							
-							if (j1 < i
-									&& (topState == null || topState.getMaterial() == Material.AIR)) {
+							if (j1 < i && (topState == null || topState.getMaterial() == Material.AIR)) {
 								topState = (this.getIsColdBiome()) ? ICE : WATER;
 							}
 							
@@ -114,8 +113,7 @@ public abstract class BiomeXathiusBase extends BiomeSpace {
 	}
 	
 	@Override
-	public void genTerrainBlocks(World worldIn, Random rand, ChunkPrimer chunkPrimerIn, int x,
-			int z, double noiseVal) {
+	public void genTerrainBlocks(World worldIn, Random rand, ChunkPrimer chunkPrimerIn, int x, int z, double noiseVal) {
 		this.generateXathiusTerrain(worldIn, rand, chunkPrimerIn, x, z, noiseVal);
 	}
 	

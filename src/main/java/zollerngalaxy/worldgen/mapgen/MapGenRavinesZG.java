@@ -22,10 +22,9 @@ public class MapGenRavinesZG extends MapGenBase {
 		this.stoneBlock = stoneBlockIn.getDefaultState();
 	}
 	
-	protected void addTunnel(long p_180707_1_, int p_180707_3_, int p_180707_4_,
-			ChunkPrimer p_180707_5_, double p_180707_6_, double p_180707_8_, double p_180707_10_,
-			float p_180707_12_, float p_180707_13_, float p_180707_14_, int p_180707_15_,
-			int p_180707_16_, double p_180707_17_) {
+	protected void addTunnel(long p_180707_1_, int p_180707_3_, int p_180707_4_, ChunkPrimer p_180707_5_,
+			double p_180707_6_, double p_180707_8_, double p_180707_10_, float p_180707_12_, float p_180707_13_,
+			float p_180707_14_, int p_180707_15_, int p_180707_16_, double p_180707_17_) {
 		Random random = new Random(p_180707_1_);
 		double d0 = p_180707_3_ * 16 + 8;
 		double d1 = p_180707_4_ * 16 + 8;
@@ -55,8 +54,7 @@ public class MapGenRavinesZG extends MapGenBase {
 		}
 		
 		for (; p_180707_15_ < p_180707_16_; ++p_180707_15_) {
-			double d9 = 1.5D + MathHelper.sin(p_180707_15_ * (float) Math.PI / p_180707_16_)
-					* p_180707_12_;
+			double d9 = 1.5D + MathHelper.sin(p_180707_15_ * (float) Math.PI / p_180707_16_) * p_180707_12_;
 			double d2 = d9 * p_180707_17_;
 			d9 = d9 * (random.nextFloat() * 0.25D + 0.75D);
 			d2 = d2 * (random.nextFloat() * 0.25D + 0.75D);
@@ -84,8 +82,7 @@ public class MapGenRavinesZG extends MapGenBase {
 				}
 				
 				if (p_180707_6_ >= d0 - 16.0D - d9 * 2.0D && p_180707_10_ >= d1 - 16.0D - d9 * 2.0D
-						&& p_180707_6_ <= d0 + 16.0D + d9 * 2.0D
-						&& p_180707_10_ <= d1 + 16.0D + d9 * 2.0D) {
+						&& p_180707_6_ <= d0 + 16.0D + d9 * 2.0D && p_180707_10_ <= d1 + 16.0D + d9 * 2.0D) {
 					int k2 = MathHelper.floor(p_180707_6_ - d9) - p_180707_3_ * 16 - 1;
 					int k = MathHelper.floor(p_180707_6_ + d9) - p_180707_3_ * 16 + 1;
 					int l2 = MathHelper.floor(p_180707_8_ - d2) - 1;
@@ -123,8 +120,7 @@ public class MapGenRavinesZG extends MapGenBase {
 						for (int k1 = i3; !flag2 && k1 < i1; ++k1) {
 							for (int l1 = l + 1; !flag2 && l1 >= l2 - 1; --l1) {
 								if (l1 >= 0 && l1 < 256) {
-									if (l1 != l2 - 1 && j1 != k2 && j1 != k - 1 && k1 != i3
-											&& k1 != i1 - 1) {
+									if (l1 != l2 - 1 && j1 != k2 && j1 != k - 1 && k1 != i3 && k1 != i1 - 1) {
 										l1 = l2;
 									}
 								}
@@ -144,15 +140,12 @@ public class MapGenRavinesZG extends MapGenBase {
 									for (int j2 = l; j2 > l2; --j2) {
 										double d8 = (j2 - 1 + 0.5D - p_180707_8_) / d2;
 										
-										if ((d10 * d10 + d7 * d7) * this.rs[j2 - 1] + d8 * d8
-												/ 6.0D < 1.0D) {
-											if (isTopBlock(p_180707_5_, j3, j2, i2, p_180707_3_,
-													p_180707_4_)) {
+										if ((d10 * d10 + d7 * d7) * this.rs[j2 - 1] + d8 * d8 / 6.0D < 1.0D) {
+											if (isTopBlock(p_180707_5_, j3, j2, i2, p_180707_3_, p_180707_4_)) {
 												flag = true;
 											}
 											
-											digBlock(p_180707_5_, j3, j2, i2, p_180707_3_,
-													p_180707_4_, flag);
+											digBlock(p_180707_5_, j3, j2, i2, p_180707_3_, p_180707_4_, flag);
 										}
 									}
 								}
@@ -169,8 +162,8 @@ public class MapGenRavinesZG extends MapGenBase {
 	}
 	
 	@Override
-	protected void recursiveGenerate(World worldIn, int chunkX, int chunkZ, int originalX,
-			int originalZ, ChunkPrimer chunkPrimerIn) {
+	protected void recursiveGenerate(World worldIn, int chunkX, int chunkZ, int originalX, int originalZ,
+			ChunkPrimer chunkPrimerIn) {
 		if (this.rand.nextInt(20) == 0) {
 			double d0 = chunkX * 16 + this.rand.nextInt(16);
 			double d1 = this.rand.nextInt(this.rand.nextInt(40) + 8) + 20;
@@ -181,8 +174,7 @@ public class MapGenRavinesZG extends MapGenBase {
 				float f = this.rand.nextFloat() * ((float) Math.PI * 2F);
 				float f1 = (this.rand.nextFloat() - 0.5F) * 2.0F / 8.0F;
 				float f2 = (this.rand.nextFloat() * 2.0F + this.rand.nextFloat()) * 2.0F;
-				this.addTunnel(this.rand.nextLong(), originalX, originalZ, chunkPrimerIn, d0, d1,
-						d2, f2, f, f1, 0, 0, 3.0D);
+				this.addTunnel(this.rand.nextLong(), originalX, originalZ, chunkPrimerIn, d0, d1, d2, f2, f, f1, 0, 0, 3.0D);
 			}
 		}
 	}
@@ -199,8 +191,7 @@ public class MapGenRavinesZG extends MapGenBase {
 		return (state.getBlock() == biome.fillerBlock);
 	}
 	
-	protected void digBlock(ChunkPrimer data, int x, int y, int z, int chunkX, int chunkZ,
-			boolean foundTop) {
+	protected void digBlock(ChunkPrimer data, int x, int y, int z, int chunkX, int chunkZ, boolean foundTop) {
 		Biome biome = world.getBiome(new BlockPos(x + chunkX * 16, 0, z + chunkZ * 16));
 		IBlockState state = data.getBlockState(x, y, z);
 		IBlockState top = biome.topBlock;

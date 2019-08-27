@@ -40,8 +40,7 @@ public class ZGBlockLog extends ZGBlockPlanks {
 	}
 	
 	@Override
-	public boolean canSustainLeaves(IBlockState state, net.minecraft.world.IBlockAccess world,
-			BlockPos pos) {
+	public boolean canSustainLeaves(IBlockState state, net.minecraft.world.IBlockAccess world, BlockPos pos) {
 		return true;
 	}
 	

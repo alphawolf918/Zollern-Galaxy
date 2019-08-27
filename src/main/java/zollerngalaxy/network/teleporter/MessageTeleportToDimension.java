@@ -48,12 +48,10 @@ public class MessageTeleportToDimension implements IMessage {
 		buf.writeInt(this.id);
 	}
 	
-	public static class TeleportHandler implements
-			IMessageHandler<MessageTeleportToDimension, IMessage> {
+	public static class TeleportHandler implements IMessageHandler<MessageTeleportToDimension, IMessage> {
 		
 		@Override
-		public synchronized IMessage onMessage(MessageTeleportToDimension message,
-				MessageContext ctx) {
+		public synchronized IMessage onMessage(MessageTeleportToDimension message, MessageContext ctx) {
 			FMLCommonHandler.instance().getWorldThread(ctx.netHandler)
 					.addScheduledTask(() -> this.teleportPlayer(message, ctx));
 			return message;
@@ -87,11 +85,11 @@ public class MessageTeleportToDimension implements IMessage {
 				
 				if (worldProvider instanceof WorldProviderSpace) {
 					WorldProviderSpace spaceProvider = (WorldProviderSpace) worldProvider;
+					y = spaceProvider.getAverageGroundLevel();
 					CelestialBody cb = spaceProvider.getCelestialBody();
 					if (cb instanceof ZGPlanet) {
 						ZGPlanet planet = (ZGPlanet) cb;
-						BlockPos blockPos = new BlockPos(player.posX,
-								player.getEntityBoundingBox().minY, player.posZ);
+						BlockPos blockPos = new BlockPos(player.posX, player.getEntityBoundingBox().minY, player.posZ);
 						Chunk chunk = worldObj.getChunkFromBlockCoords(blockPos);
 						Biome biome = chunk.getBiome(blockPos, worldObj.getBiomeProvider());
 						if (biome instanceof BiomeSpace) {
