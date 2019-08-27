@@ -18,7 +18,6 @@ import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.core.dimensions.ZGDimensions;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderZollus;
 import zollerngalaxy.core.dimensions.skyproviders.SkyProviderZollus;
-import zollerngalaxy.planets.ZGPlanet;
 import zollerngalaxy.planets.ZGPlanets;
 
 public class WorldProviderZollus extends WorldProviderZG {
@@ -51,18 +50,6 @@ public class WorldProviderZollus extends WorldProviderZG {
 	@Override
 	public float getSoundVolReductionAmount() {
 		return 2.0F;
-	}
-	
-	@Override
-	public float getThermalLevelModifier() {
-		ZGPlanet planet = this.getPlanet();
-		float planetTemp = planet.getPlanetTemperature();
-		if (this.isDaytime()) {
-			planetTemp -= -2.1F;
-		} else {
-			planetTemp -= -4.2F;
-		}
-		return planetTemp;
 	}
 	
 	@Override

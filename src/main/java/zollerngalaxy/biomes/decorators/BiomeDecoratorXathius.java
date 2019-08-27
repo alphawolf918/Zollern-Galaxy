@@ -23,7 +23,6 @@ public class BiomeDecoratorXathius extends BiomeDecoratorZG {
 	
 	private WorldGenerator dirtGen;
 	private WorldGenerator gravelGen;
-	private WorldGenerator obsidianGen;
 	private WorldGenerator prometheanGen;
 	private WorldGenerator emeraldGen;
 	private WorldGenerator diamondGen;
@@ -35,7 +34,7 @@ public class BiomeDecoratorXathius extends BiomeDecoratorZG {
 	public int waterLakesPerChunk = 4;
 	public int lavaLakesPerChunk = 1;
 	public int oilLakesPerChunk = 4;
-	public int obsidianLakesPerChunk = 2;
+	public int obsidianLakesPerChunk = 1;
 	public int xathTallGrassPerChunk = 8;
 	
 	public boolean generateLakes = true;
@@ -44,6 +43,7 @@ public class BiomeDecoratorXathius extends BiomeDecoratorZG {
 	
 	public BiomeDecoratorXathius() {
 		this.dirtGen = new WorldGenMinableZG(ZGBlocks.xathDirt, STONE, EnumOreGenZG.DIRT);
+		this.gravelGen = new WorldGenMinableZG(ZGBlocks.xathGravel, STONE, EnumOreGenZG.GRAVEL);
 		this.prometheanGen = new WorldGenMinableZG(ZGBlocks.xathPrometheanOre, STONE,
 				EnumOreGenZG.PROMETHEAN);
 		this.emeraldGen = new WorldGenMinableZG(ZGBlocks.xathEmeraldOre, STONE,
@@ -58,8 +58,6 @@ public class BiomeDecoratorXathius extends BiomeDecoratorZG {
 				EnumOreGenZG.GOLD.setGenCount(35));
 		this.tinGen = new WorldGenMinableZG(ZGBlocks.xathTinOre, STONE,
 				EnumOreGenZG.TIN.setGenCount(45));
-		this.obsidianGen = new WorldGenMinableZG(Blocks.OBSIDIAN, STONE,
-				EnumOreGenZG.OBSIDIAN.setGenCount(46));
 	}
 	
 	@Override
@@ -74,6 +72,7 @@ public class BiomeDecoratorXathius extends BiomeDecoratorZG {
 		Block BLOCK_FILL = biome.fillerBlock.getBlock();
 		
 		this.generateOre(this.dirtGen, EnumOreGenZG.DIRT, world, rand);
+		this.generateOre(this.gravelGen, EnumOreGenZG.GRAVEL, world, rand);
 		this.generateOre(this.prometheanGen, EnumOreGenZG.PROMETHEAN, world, rand);
 		this.generateOre(this.emeraldGen, EnumOreGenZG.EMERALD, world, rand);
 		this.generateOre(this.diamondGen, EnumOreGenZG.DIAMOND, world, rand);
@@ -81,7 +80,6 @@ public class BiomeDecoratorXathius extends BiomeDecoratorZG {
 		this.generateOre(this.ironGen, EnumOreGenZG.IRON, world, rand);
 		this.generateOre(this.goldGen, EnumOreGenZG.GOLD, world, rand);
 		this.generateOre(this.tinGen, EnumOreGenZG.TIN, world, rand);
-		this.generateOre(this.obsidianGen, EnumOreGenZG.OBSIDIAN, world, rand);
 		
 		ChunkPrimer chunkPrimer = new ChunkPrimer();
 		

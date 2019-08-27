@@ -177,7 +177,6 @@ public class ZGPlanet extends Planet implements IZollernPlanet {
 				this.planetGasses.add(gas);
 			}
 		}
-		
 		return this;
 	}
 	
@@ -209,11 +208,6 @@ public class ZGPlanet extends Planet implements IZollernPlanet {
 	@Override
 	public float getToxicLevel() {
 		return this.baseToxicity;
-	}
-	
-	@Override
-	public float getPlanetTemperature() {
-		return this.baseTemp;
 	}
 	
 	/**
@@ -302,16 +296,16 @@ public class ZGPlanet extends Planet implements IZollernPlanet {
 	 * @return
 	 */
 	public boolean getIsHotPlanet() {
-		return this.baseTemp >= 115.0f;
+		return this.baseTemp >= 115.0F;
 	}
 	
 	/**
-	 * Returns true if the temp is <= 0.
+	 * Returns true if the temp is <= -25.
 	 * 
 	 * @return
 	 */
 	public boolean getIsColdPlanet() {
-		return this.baseTemp <= 0.0f;
+		return this.baseTemp <= -25.0F;
 	}
 	
 	/**
@@ -320,7 +314,7 @@ public class ZGPlanet extends Planet implements IZollernPlanet {
 	 * @return
 	 */
 	public boolean getIsRadioactivePlanet() {
-		return this.baseRadiation >= 10.0f;
+		return this.baseRadiation >= 10.0F;
 	}
 	
 	/**
@@ -329,7 +323,7 @@ public class ZGPlanet extends Planet implements IZollernPlanet {
 	 * @return
 	 */
 	public boolean getIsToxicPlanet() {
-		return this.baseToxicity >= 15.0f;
+		return this.baseToxicity >= 15.0F;
 	}
 	
 	@Override
@@ -362,4 +356,8 @@ public class ZGPlanet extends Planet implements IZollernPlanet {
 		return (this.getIsToxicPlanet() || this.getIsRadioactivePlanet());
 	}
 	
+	@Override
+	public float getPlanetTemperature() {
+		return this.baseTemp;
+	}
 }

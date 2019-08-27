@@ -14,7 +14,8 @@ public class OreDictRegistry {
 				ZGBlocks.purgCopperOre, ZGBlocks.zolCopperOre);
 		
 		// Tin
-		registerOre("oreTin", ZGBlocks.edenTinOre, ZGBlocks.purgTinOre, ZGBlocks.zolTinOre);
+		registerOre("oreTin", ZGBlocks.edenTinOre, ZGBlocks.purgTinOre, ZGBlocks.zolTinOre,
+				ZGBlocks.xathTinOre);
 		
 		// Lead
 		registerOre("oreLead", ZGBlocks.edenLeadOre, ZGBlocks.purgLeadOre);
@@ -27,13 +28,14 @@ public class OreDictRegistry {
 		
 		// Dirt
 		registerOre("dirt", ZGBlocks.edenSoil, ZGBlocks.kriffDirt, ZGBlocks.purgDirt,
-				ZGBlocks.zolDirt);
+				ZGBlocks.zolDirt, ZGBlocks.xathDirt);
 		
 		// Gravel
-		registerOre("gravel", ZGBlocks.edenGravel, ZGBlocks.purgGravel);
+		registerOre("gravel", ZGBlocks.edenGravel, ZGBlocks.purgGravel, ZGBlocks.xathGravel);
 		
 		// Grass
-		registerOre("grass", ZGBlocks.edenGoldenGrass, ZGBlocks.edenGrass, ZGBlocks.edenSwampGrass);
+		registerOre("grass", ZGBlocks.edenGoldenGrass, ZGBlocks.edenGrass, ZGBlocks.edenSwampGrass,
+				ZGBlocks.xathGrass);
 		
 		// Logs
 		registerOre("logWood", ZGBlocks.edenWoodLog);
@@ -49,7 +51,7 @@ public class OreDictRegistry {
 		
 		// Stone
 		registerOre("stone", ZGBlocks.edenStone, ZGBlocks.kriffStone, ZGBlocks.purgStone,
-				ZGBlocks.zolStone);
+				ZGBlocks.zolStone, ZGBlocks.xathStone);
 		
 		// Stone Bricks
 		registerOre("stonebrick", ZGBlocks.edenRockBricks, ZGBlocks.kriffRockBricks,
@@ -63,33 +65,35 @@ public class OreDictRegistry {
 		
 		// Cobble
 		registerOre("cobblestone", ZGBlocks.edenCobbleRock, ZGBlocks.kriffCobbleRock,
-				ZGBlocks.purgCobbleRock, ZGBlocks.zolCobbleRock);
+				ZGBlocks.purgCobbleRock, ZGBlocks.zolCobbleRock, ZGBlocks.xathCobble);
 		
 		// Coal
 		registerOre("oreCoal", ZGBlocks.edenCoalOre, ZGBlocks.kriffCoalOre, ZGBlocks.zolCoalOre);
 		
 		// Iron
 		registerOre("oreIron", ZGBlocks.edenIronOre, ZGBlocks.kriffIronOre, ZGBlocks.purgIronOre,
-				ZGBlocks.zolIronOre);
+				ZGBlocks.zolIronOre, ZGBlocks.xathIronOre);
 		
 		// Gold
 		registerOre("oreGold", ZGBlocks.edenGoldOre, ZGBlocks.kriffGoldOre, ZGBlocks.purgGoldOre,
-				ZGBlocks.zolGoldOre);
+				ZGBlocks.zolGoldOre, ZGBlocks.xathGoldOre);
 		
 		// Nickle
 		registerOre("oreNickel", ZGBlocks.edenNickleOre);
 		
 		// Diamond
-		registerOre("oreDiamond", ZGBlocks.edenDiamondOre, ZGBlocks.purgDiamondOre);
+		registerOre("oreDiamond", ZGBlocks.edenDiamondOre, ZGBlocks.purgDiamondOre,
+				ZGBlocks.xathDiamondOre);
 		registerOre("dustDiamond", ZGItems.dustDiamond);
 		
 		// Emerald
-		registerOre("oreEmerald", ZGBlocks.edenEmeraldOre, ZGBlocks.purgEmeraldOre);
+		registerOre("oreEmerald", ZGBlocks.edenEmeraldOre, ZGBlocks.purgEmeraldOre,
+				ZGBlocks.xathEmeraldOre);
 		registerOre("dustEmerald", ZGItems.dustEmerald);
 		
 		// Redstone
 		registerOre("oreRedstone", ZGBlocks.edenRedstoneOre, ZGBlocks.kriffRedstoneOre,
-				ZGBlocks.purgRedstoneOre);
+				ZGBlocks.purgRedstoneOre, ZGBlocks.xathRedstoneOre);
 		
 		// Steel
 		registerOre("oreSteel", ZGBlocks.edenSteelOre);
@@ -137,6 +141,10 @@ public class OreDictRegistry {
 		registerOre("dustVirinium", ZGItems.dustViri);
 		registerOre("ingotVirinium", ZGItems.ingotViri);
 		registerOre("blockVirinium", ZGBlocks.blockViri);
+		
+		// Promethean
+		registerOre("orePromethean", ZGBlocks.xathPrometheanOre);
+		registerOre("gemPromethean", ZGItems.prometheanCrystal);
 		
 		// Titanium
 		// TODO

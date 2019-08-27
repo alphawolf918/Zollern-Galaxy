@@ -95,7 +95,12 @@ public class SmeltRecipes {
 		}
 		
 		// Xathius
-		// TODO
+		SmeltRecipes.SmeltBlock(ZGBlocks.xathCobble, ZGBlocks.xathStone, 1.5F); // Xath
+																				// Stone
+		SmeltRecipes.SmeltBlockToItem(ZGBlocks.xathIronOre, Items.IRON_INGOT, 2.1F); // Iron
+		SmeltRecipes.SmeltBlockToItem(ZGBlocks.xathGoldOre, Items.GOLD_INGOT, 2.4F); // Gold
+		SmeltRecipes.SmeltBlockToItem(ZGBlocks.xathTinOre, new ItemStack(GCItems.basicItem, 1, 4),
+				2.4F); // Tin
 		
 		// Oasis
 		// TODO

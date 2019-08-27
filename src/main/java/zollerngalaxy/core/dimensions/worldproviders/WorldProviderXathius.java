@@ -61,7 +61,7 @@ public class WorldProviderXathius extends WorldProviderZG {
 	
 	@Override
 	public float getThermalLevelModifier() {
-		return 0.0F;
+		return -1.4F;
 	}
 	
 	@Override

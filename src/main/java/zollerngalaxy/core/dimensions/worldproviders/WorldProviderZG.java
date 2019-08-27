@@ -19,6 +19,16 @@ import zollerngalaxy.planets.ZGPlanet;
 public abstract class WorldProviderZG extends WorldProviderSpace implements ISolarLevel,
 		IExitHeight {
 	
+	private static WorldProviderZG instance;
+	
+	public WorldProviderZG() {
+		instance = this;
+	}
+	
+	public static WorldProviderZG instance() {
+		return instance;
+	}
+	
 	@Override
 	public String getSaveFolder() {
 		return "planets/" + this.getPlanet().getName();

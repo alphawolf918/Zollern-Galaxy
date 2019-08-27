@@ -42,11 +42,11 @@ public class ItemStargate extends ZGItemBase {
 		
 		switch (this.gateTier) {
 		default:
-			this.proxy.sendChatMessage(player, "This tier isn't functional yet.");
+			this.proxy.sendChatMessage(player, "This Protocol isn't functional yet.");
 			break;
 		case 0:
 			this.proxy.sendChatMessage(player,
-					"Unknown tier detected; unable to transfer biological entity.");
+					"Unknown Protocol detected; unable to transfer biological entity.");
 			break;
 		case 1:
 			if (dim == ConfigManagerZG.planetZollusDimensionId) {
@@ -70,7 +70,8 @@ public class ItemStargate extends ZGItemBase {
 			}
 			break;
 		case 4:
-			// TODO
+			this.sendToPlanet(ConfigManagerZG.planetXathiusDimensionId,
+					ConfigManagerZG.planetEdenDimensionId, player);
 			break;
 		case 5:
 			// TODO
@@ -91,7 +92,6 @@ public class ItemStargate extends ZGItemBase {
 			// TODO
 			break;
 		}
-		// TODO: Add more planets and moons! To be continued...
 	}
 	
 	private void sendToServer(int dimId, EntityPlayer player) {
@@ -117,6 +117,12 @@ public class ItemStargate extends ZGItemBase {
 		if (canTP) {
 			this.snw.sendToServer(new MessageTeleportToDimension(dimId, playerId));
 		}
+	}
+	
+	private void sendToPlanet(int toDimensionId, int fromDimensionId, EntityPlayer player) {
+		int dim = player.dimension;
+		int sendToDim = (dim == fromDimensionId) ? toDimensionId : fromDimensionId;
+		this.sendToServer(sendToDim, player);
 	}
 	
 	@Override
