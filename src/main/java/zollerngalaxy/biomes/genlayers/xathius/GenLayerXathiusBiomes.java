@@ -42,6 +42,7 @@ public class GenLayerXathiusBiomes extends GenLayerPurgot {
 		list.add(new BiomeEntry(ZGBiomes.XATHIUS_ABSTRACT_PLAINS, 85));
 		list.add(new BiomeEntry(ZGBiomes.XATHIUS_OCEAN, 75));
 		list.add(new BiomeEntry(ZGBiomes.XATHIUS_BLUELANDS, 65));
+		list.add(new BiomeEntry(ZGBiomes.XATHIUS_MOUNTAINS, 55));
 		
 		currentBiomes[BiomeType.WARM.ordinal()] = new ArrayList<>(list);
 		return currentBiomes;

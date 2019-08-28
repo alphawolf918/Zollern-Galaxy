@@ -9,6 +9,7 @@ import net.minecraft.world.biome.Biome.TempCategory;
 import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.gen.feature.WorldGenWaterlily;
 import net.minecraft.world.gen.feature.WorldGenerator;
+import zollerngalaxy.biomes.ZGBiomes;
 import zollerngalaxy.blocks.ZGBlockTallGrass;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.core.enums.EnumOreGenZG;
@@ -19,6 +20,7 @@ import zollerngalaxy.worldgen.WorldGenTallGrassZG;
 
 public class BiomeDecoratorXathius extends BiomeDecoratorZG {
 	
+	public static final Block SURFACE_ROCK = ZGBlocks.xathRock;
 	public static final Block STONE = ZGBlocks.xathStone;
 	
 	private WorldGenerator dirtGen;
@@ -63,6 +65,16 @@ public class BiomeDecoratorXathius extends BiomeDecoratorZG {
 		
 		Block BLOCK_TOP = biome.topBlock.getBlock();
 		Block BLOCK_FILL = biome.fillerBlock.getBlock();
+		
+		if (biome.equals(ZGBiomes.XATHIUS_MOUNTAINS)) {
+			EnumOreGenZG.GRAVEL.setMaxHeight(256);
+			EnumOreGenZG.EMERALD.setMaxHeight(256);
+			EnumOreGenZG.DIAMOND.setMaxHeight(256);
+			EnumOreGenZG.REDSTONE.setMaxHeight(256);
+			EnumOreGenZG.IRON.setMaxHeight(256);
+			EnumOreGenZG.GOLD.setMaxHeight(256);
+			EnumOreGenZG.TIN.setMaxHeight(256);
+		}
 		
 		this.generateOre(this.dirtGen, EnumOreGenZG.DIRT, world, rand);
 		this.generateOre(this.gravelGen, EnumOreGenZG.GRAVEL, world, rand);

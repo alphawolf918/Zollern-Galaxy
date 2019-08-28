@@ -20,4 +20,6 @@ Zollern Galaxy v2.0.4
 * Added Wind Level to Galactic HUD.
 * Modified Star Gates to warp players closer to ground level.
     * Too many space explorers were dying due to inability to survive the force of gravity and we received complaints from the Human Resources department.
+* Modified ChunkProviders for Eden and Xathius to generate more beautifully.
+* Set Rocket Tier requirement for Xathius to 10 since it's such a heavily-ored Planet.
 * 

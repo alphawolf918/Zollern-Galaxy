@@ -35,6 +35,7 @@ import zollerngalaxy.biomes.purgot.BiomeLimbo;
 import zollerngalaxy.biomes.purgot.BiomePurgot;
 import zollerngalaxy.biomes.xathius.BiomeAbstractPlains;
 import zollerngalaxy.biomes.xathius.BiomeBluelands;
+import zollerngalaxy.biomes.xathius.BiomeXathiusMountains;
 import zollerngalaxy.biomes.xathius.BiomeXathiusOcean;
 import zollerngalaxy.biomes.zollus.BiomeZollus;
 import zollerngalaxy.lib.helpers.CommonZGRegisterHelper;
@@ -72,6 +73,7 @@ public class ZGBiomes {
 	public static final Biome XATHIUS_ABSTRACT_PLAINS = new BiomeAbstractPlains(new BiomeProperties("Abstract Plains"));
 	public static final Biome XATHIUS_OCEAN = new BiomeXathiusOcean(new BiomeProperties("Xathius Ocean"));
 	public static final Biome XATHIUS_BLUELANDS = new BiomeBluelands(new BiomeProperties("Bluelands"));
+	public static final Biome XATHIUS_MOUNTAINS = new BiomeXathiusMountains(new BiomeProperties("Xathian Mountains"));
 	
 	// Oasis
 	// TODO
@@ -104,6 +106,7 @@ public class ZGBiomes {
 		ZGBiomes.addBiome(ZGBiomes.XATHIUS_ABSTRACT_PLAINS, LUSH, PLAINS);
 		ZGBiomes.addBiome(ZGBiomes.XATHIUS_OCEAN, LUSH, WET, OCEAN);
 		ZGBiomes.addBiome(ZGBiomes.XATHIUS_BLUELANDS, LUSH, MOUNTAIN);
+		ZGBiomes.addBiome(ZGBiomes.XATHIUS_MOUNTAINS, MOUNTAIN, DEAD);
 		
 		// Oasis
 		// TODO
