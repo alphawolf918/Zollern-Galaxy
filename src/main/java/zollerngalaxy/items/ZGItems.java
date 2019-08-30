@@ -46,6 +46,8 @@ public class ZGItems {
 	public static final Item cookedAlienBeef = new ZGItemFood("alienbeefcooked", 6, 4.0F, true);
 	public static final Item edenFruit = new ZGItemFood("fruitofeden", 4, 2.5F, false);
 	
+	public static final Item superChargedCoal = new ItemFuelBase("superchargedcoal", 6400);
+	
 	public static final Item edenDungeonKey = new ZGItemBase("edendungeonkey");
 	
 	public static final Item starGateTier1 = new ItemStargate(1);
@@ -65,8 +67,8 @@ public class ZGItems {
 				dustEmerald, ingotViri, ingotCobalt, ingotEve, hud, alienStone, compressedCobalt, compressedDiamond,
 				compressedEmerald, compressedEvenium, compressedGold, compressedHeartium, compressedKriffonium,
 				compressedVirinium, compressedVyrex, rawAlienBacon, cookedAlienBacon, rawAlienBeef, cookedAlienBeef,
-				edenFruit, edenDungeonKey, starGateTier1, starGateTier2, starGateTier3, starGateTier4, starGateTier5,
-				starGateTier6, starGateTier7, starGateTier8, starGateTier9, starGateTier10);
+				edenFruit, edenDungeonKey, superChargedCoal, starGateTier1, starGateTier2, starGateTier3, starGateTier4,
+				starGateTier5, starGateTier6, starGateTier7, starGateTier8, starGateTier9, starGateTier10);
 		ZGHelper.Log("Loaded a total of " + totalItems + " new items.");
 	}
 	

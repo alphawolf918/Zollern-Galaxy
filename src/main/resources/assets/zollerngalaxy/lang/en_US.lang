@@ -126,6 +126,7 @@ tile.eveniumblock.name=Block of Evenium
 
 tile.xathrock.name=Xathian Rock
 tile.xathstone.name=Xathian Stone
+tile.xathrockbricks.Xathian Rock Bricks
 tile.xathcobblerock.name=Xathian Cobblerock
 tile.xathdirt.name=Xathian Dirt
 tile.xathgrass.name=Xathian Grass
@@ -139,11 +140,20 @@ tile.xathironore.name=Xathian Iron Ore
 tile.xathtinore.name=Xathian Tin Ore
 tile.xathredstoneore.name=Xathian Redstone Ore
 
+tile.oasisrock.name=Oasis Rock
 tile.oasisgrass.name=Oasis Grass
 tile.oasisstone.name=Oasis Stone
 tile.oasiscobblerock.name=Oasis Cobblerock
 tile.oasisdirt.name=Oasis Dirt
 tile.oasistallgrass.name=Oasis Tall Grass
+tile.oasisgravel.name=Oasis Gravel
+tile.oasissuperchargedcoalore.name=Oasis Super Charged Coal Ore
+tile.oasiscoalore.name=Oasis Coal Ore
+tile.oasisironore.name=Oasis Iron Ore
+tile.oasisgoldore.name=Oasis Gold Ore
+tile.oasisredstoneore.name=Oasis Redstone Ore
+tile.oasisdiamondore.name=Oasis Diamond Ore
+tile.superchargedcoalblock.name=Block of Super Charged Coal
 
 tile.heartblock.name=Healing Station
 tile.blueprintblock.name=Blueprint Repair Station
@@ -193,6 +203,8 @@ item.compressedkriffonium.name=Compressed Kriffonium
 item.compressedvirinium.name=Compressed Virinium
 item.compressedheartium.name=Compressed Heartium
 item.compressedvyrex.name=Compressed Vyrexite
+
+item.superchargedcoal.name=Super Charged Coal
 
 item.stargate_tier1.name=Stargate (Protocol One)
 item.stargate_tier2.name=Stargate (Protocol Two)
