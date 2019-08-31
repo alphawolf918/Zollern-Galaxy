@@ -9,11 +9,10 @@ import net.minecraftforge.common.BiomeManager;
 import net.minecraftforge.common.BiomeManager.BiomeEntry;
 import net.minecraftforge.common.BiomeManager.BiomeType;
 import zollerngalaxy.biomes.ZGBiomes;
-import zollerngalaxy.biomes.genlayers.purgot.GenLayerPurgot;
 import zollerngalaxy.util.CachedEnum;
 import com.google.common.collect.ImmutableList;
 
-public class GenLayerOasisBiomes extends GenLayerPurgot {
+public class GenLayerOasisBiomes extends GenLayerOasis {
 	
 	@SuppressWarnings("unchecked")
 	private List<BiomeEntry>[] biomes = new ArrayList[CachedEnum.valuesBiomeCached().length];
@@ -39,7 +38,9 @@ public class GenLayerOasisBiomes extends GenLayerPurgot {
 		@SuppressWarnings("unchecked")
 		ArrayList<BiomeEntry>[] currentBiomes = new ArrayList[CachedEnum.valuesBiomeCached().length];
 		List<BiomeEntry> list = new ArrayList<>();
-		list.add(new BiomeEntry(ZGBiomes.XATHIUS_ABSTRACT_PLAINS, 85));
+		list.add(new BiomeEntry(ZGBiomes.OASIS_PLAINS, 95));
+		list.add(new BiomeEntry(ZGBiomes.OASIS_OCEAN, 85));
+		list.add(new BiomeEntry(ZGBiomes.OASIS_REDLANDS, 75));
 		currentBiomes[BiomeType.WARM.ordinal()] = new ArrayList<>(list);
 		return currentBiomes;
 	}

@@ -5,24 +5,24 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 
-public class BiomeOasisPlains extends BiomeOasisBase {
+public class BiomeRedlands extends BiomeOasisBase {
 	
-	public BiomeOasisPlains(BiomeProperties props) {
-		super("oasisplains", props);
-		props.setBaseHeight(0.5F);
-		props.setHeightVariation(0.0F);
-		props.setTemperature(6.0F);
+	public BiomeRedlands(BiomeProperties props) {
+		super("redlands", props);
+		props.setBaseHeight(1.5F);
+		props.setHeightVariation(1.0F);
+		props.setTemperature(4.0F);
 		this.setTempCategory(TempCategory.MEDIUM);
-		this.setTemp(6.0F);
-		this.setBiomeHeight(53);
+		this.setTemp(4.0F);
+		this.setBiomeHeight(62);
 		this.setBiomeType(EnumBiomeTypeZG.LUSH);
 		this.enableSnow = false;
 		this.decorator.generateFalls = true;
-		this.biomeDecor.waterLakesPerChunk = 2;
-		this.grassFoliageColor = 0x9f0000;
+		this.biomeDecor.waterLakesPerChunk = 1;
+		this.grassFoliageColor = 0x9fcc8b;
 		this.waterColor = 0x8b2cff;
-		this.topBlock = ZGBlocks.oasisGrass.getDefaultState();
-		this.fillerBlock = ZGBlocks.oasisDirt.getDefaultState();
+		this.topBlock = ZGBlocks.oasisRock.getDefaultState();
+		this.fillerBlock = ZGBlocks.oasisGravel.getDefaultState();
 		this.stoneBlock = ZGBlocks.oasisStone;
 	}
 	

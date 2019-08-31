@@ -32,6 +32,8 @@ import zollerngalaxy.biomes.eden.BiomeSwamplands;
 import zollerngalaxy.biomes.eden.BiomeTerranValley;
 import zollerngalaxy.biomes.kriffon.BiomeKriffon;
 import zollerngalaxy.biomes.oasis.BiomeOasisPlains;
+import zollerngalaxy.biomes.oasis.BiomeOasisRedSea;
+import zollerngalaxy.biomes.oasis.BiomeRedlands;
 import zollerngalaxy.biomes.purgot.BiomeLimbo;
 import zollerngalaxy.biomes.purgot.BiomePurgot;
 import zollerngalaxy.biomes.xathius.BiomeAbstractPlains;
@@ -78,6 +80,8 @@ public class ZGBiomes {
 	
 	// Oasis
 	public static final Biome OASIS_PLAINS = new BiomeOasisPlains(new BiomeProperties("Oasis Plains"));
+	public static final Biome OASIS_OCEAN = new BiomeOasisRedSea(new BiomeProperties("Red Sea"));
+	public static final Biome OASIS_REDLANDS = new BiomeRedlands(new BiomeProperties("Redlands"));
 	
 	public static void init() {
 		// Zollus
@@ -111,6 +115,8 @@ public class ZGBiomes {
 		
 		// Oasis
 		ZGBiomes.addBiome(ZGBiomes.OASIS_PLAINS, LUSH, WET, PLAINS);
+		ZGBiomes.addBiome(ZGBiomes.OASIS_OCEAN, LUSH, WET, OCEAN);
+		ZGBiomes.addBiome(ZGBiomes.OASIS_REDLANDS, LUSH, MOUNTAIN);
 		
 		ZGHelper.Log("Loaded a total of " + totalBiomes + " new biomes.");
 	}

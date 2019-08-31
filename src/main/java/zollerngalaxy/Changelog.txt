@@ -24,4 +24,6 @@ Zollern Galaxy v2.0.4
 * Set Rocket Tier requirement for Xathius to 10 since it's such a heavily-ored Planet.
 * Added planet Oasis.
     * Mostly another paradise planet with some secrets. Maybe it's not all good...
+    * Very colorful planet though.
+* Added more Rock Bricks for the new planets.
 * 

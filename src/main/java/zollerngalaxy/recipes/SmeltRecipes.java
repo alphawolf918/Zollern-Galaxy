@@ -58,6 +58,13 @@ public class SmeltRecipes {
 		SmeltRecipes.SmeltBlockToItem(ZGBlocks.edenCobaltOre, ZGItems.ingotCobalt, 1.6F); // Cobalt
 		SmeltRecipes.SmeltBlockToItem(ZGBlocks.edenEveniumOre, ZGItems.ingotEve, 3.6F); // Evenium
 		
+		// Xathius
+		SmeltRecipes.SmeltBlock(ZGBlocks.xathCobble, ZGBlocks.xathStone, 1.5F); // Xath
+																				// Stone
+		SmeltRecipes.SmeltBlockToItem(ZGBlocks.xathIronOre, Items.IRON_INGOT, 2.1F); // Iron
+		SmeltRecipes.SmeltBlockToItem(ZGBlocks.xathGoldOre, Items.GOLD_INGOT, 2.4F); // Gold
+		SmeltRecipes.SmeltBlockToItem(ZGBlocks.xathTinOre, new ItemStack(GCItems.basicItem, 1, 4), 2.4F); // Tin
+		
 		// Other mod metals
 		if (ModHelperBase.useCofh && ModHelperBase.useThermalFoundation) {
 			SmeltRecipes.SmeltBlockToItem(ZGBlocks.edenSilverOre,
@@ -76,15 +83,13 @@ public class SmeltRecipes {
 					new ItemStack(ItemHelper.getItemFromStack(TFItems.itemMaterial.ingotPlatinum), 1, 134), 4.2F); // Platinum
 		}
 		
-		// Xathius
-		SmeltRecipes.SmeltBlock(ZGBlocks.xathCobble, ZGBlocks.xathStone, 1.5F); // Xath
-																				// Stone
-		SmeltRecipes.SmeltBlockToItem(ZGBlocks.xathIronOre, Items.IRON_INGOT, 2.1F); // Iron
-		SmeltRecipes.SmeltBlockToItem(ZGBlocks.xathGoldOre, Items.GOLD_INGOT, 2.4F); // Gold
-		SmeltRecipes.SmeltBlockToItem(ZGBlocks.xathTinOre, new ItemStack(GCItems.basicItem, 1, 4), 2.4F); // Tin
-		
 		// Oasis
-		// TODO
+		SmeltRecipes.SmeltBlock(ZGBlocks.oasisCobble, ZGBlocks.oasisStone, 1.5F);// Oasis
+																					// Stone
+		SmeltRecipes.SmeltBlockToItem(ZGBlocks.oasisIronOre, Items.IRON_INGOT, 2.1F); // Iron
+		SmeltRecipes.SmeltBlockToItem(ZGBlocks.oasisGoldOre, Items.GOLD_INGOT, 2.4F); // Gold
+		SmeltRecipes.SmeltBlockToItem(ZGBlocks.oasisTinOre, new ItemStack(GCItems.basicItem, 1, 4), 2.4F); // Tin
+		SmeltRecipes.SmeltBlockToItem(ZGBlocks.oasisLeadOre, new ItemStack(VenusItems.basicItem, 1, 1), 2.4F); // Lead
 		
 		// Dust -> Ingots/Gems
 		SmeltRecipes.SmeltItem(ZGItems.dustDiamond, Items.DIAMOND, 2.6F);

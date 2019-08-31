@@ -144,6 +144,7 @@ tile.oasisrock.name=Oasis Rock
 tile.oasisgrass.name=Oasis Grass
 tile.oasisstone.name=Oasis Stone
 tile.oasiscobblerock.name=Oasis Cobblerock
+tile.oasisrockbricks.name=Oasis Rock Bricks
 tile.oasisdirt.name=Oasis Dirt
 tile.oasistallgrass.name=Oasis Tall Grass
 tile.oasisgravel.name=Oasis Gravel
@@ -174,8 +175,9 @@ item.alienbeefraw.name=Raw Alien Beef
 item.alienbeefcooked.name=Cooked Alien Beef
 item.alienbaconraw.name=Raw Alien Bacon
 item.alienbaconcooked.name=Cooked Alien Bacon
-item.hud.name=Galactic HUD
 item.fruitofeden.name=Fruit of Eden
+
+item.hud.name=Galactic HUD
 item.brightstonedust.name=Britestone Dust
 item.edendungeonkey.name=Eden's Treasure Key
 item.rawviri.name=Raw Virinium
@@ -188,13 +190,15 @@ item.kriffoncrystal.name=Kriffon Crystal
 
 item.ingotevenium.name=Evenium Ingot
 item.purgotcrystal.name=Purgot Crystal
-item.purgotessence.name=Oasis Gem
 
 item.prometheancrystal.name=Promethean Crystal
 item.plutoniumcrystal.name=Plutonium Crystal
 
+item.purgotessence.name=Oasis Gem
+
 item.blueprint_rad.name=Radiation Protection
 item.blueprint_tox.name=Toxicity Protection
+item.blueprint_poison.name=Posion Protection
 
 item.compressedemerald.name=Compressed Emerald
 item.compresseddiamond.name=Compressed Diamond

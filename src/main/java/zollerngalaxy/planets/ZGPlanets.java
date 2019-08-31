@@ -13,6 +13,7 @@ import zollerngalaxy.biomes.ZGBiomes;
 import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderEden;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderKriffon;
+import zollerngalaxy.core.dimensions.worldproviders.WorldProviderOasis;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderPurgot;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderXathius;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderZollus;
@@ -274,13 +275,12 @@ public class ZGPlanets {
 		totalPlanets++;
 		
 		// Planet Oasis
-		// planetOasis.setDimensionInfo(ConfigManagerZG.planetOasisDimensionId,
-		// WorldProviderOasis.class);
+		planetOasis.setDimensionInfo(ConfigManagerZG.planetOasisDimensionId, WorldProviderOasis.class);
 		planetOasis.setParentSolarSystem(systemPraedyth);
 		planetOasis.setPlanetClass(EnumPlanetClass.R);
 		planetOasis.setRingColorRGB(2.0f, 5.4f, 3.2f);
 		planetOasis.setPhaseShift(0.0f);
-		planetOasis.setRelativeOrbitTime(6F);
+		planetOasis.setRelativeOrbitTime(6.2F);
 		planetOasis.setDistanceFromCenter(2.5f);
 		planetOasis.setTierRequired(6);
 		planetOasis.setRelativeSize(64.0f);
@@ -289,11 +289,12 @@ public class ZGPlanets {
 		planetOasis.setPlanetRadiation(4.0f);
 		planetOasis.setBreathable(true);
 		planetOasis.setWindLevel(0.9F);
-		planetOasis.setDensity(1.0F);
+		planetOasis.setDensity(1.6F);
 		planetOasis.setHasRain(true);
 		planetOasis.setPlanetGasses(EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.WATER);
 		planetOasis.setAtmosphere();
 		planetOasis.setPlanetIcon("oasis");
+		planetOasis.setBiomeInfo(ZGBiomes.OASIS_PLAINS, ZGBiomes.OASIS_OCEAN, ZGBiomes.OASIS_REDLANDS);
 		totalPlanets++;
 		
 		ZGHelper.Log("Loaded a total of " + totalPlanets + " new planets.");
@@ -333,7 +334,6 @@ public class ZGPlanets {
 		GalacticraftRegistry.registerTeleportType(WorldProviderEden.class, new TeleportTypeVenus());
 		
 		GalacticraftRegistry.registerTeleportType(WorldProviderXathius.class, new TeleportTypeVenus());
-		// GalacticraftRegistry.registerTeleportType(WorldProviderOasis.class,
-		// new TeleportTypeVenus());
+		GalacticraftRegistry.registerTeleportType(WorldProviderOasis.class, new TeleportTypeVenus());
 	}
 }

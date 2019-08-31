@@ -33,10 +33,9 @@ public class BiomeDecoratorOasis extends BiomeDecoratorZG {
 	private WorldGenerator leadGen;
 	
 	public int waterLakesPerChunk = 4;
-	public int lavaLakesPerChunk = 1;
+	public int lavaLakesPerChunk = 6;
 	public int oilLakesPerChunk = 4;
-	public int obsidianLakesPerChunk = 1;
-	public int oasisTallGrassPerChunk = 8;
+	public int oasisTallGrassPerChunk = 2;
 	
 	public boolean generateLakes = true;
 	public boolean generateVines = false;
@@ -74,6 +73,7 @@ public class BiomeDecoratorOasis extends BiomeDecoratorZG {
 		this.generateOre(this.ironGen, EnumOreGenZG.IRON, world, rand);
 		this.generateOre(this.goldGen, EnumOreGenZG.GOLD, world, rand);
 		this.generateOre(this.tinGen, EnumOreGenZG.TIN, world, rand);
+		this.generateOre(this.leadGen, EnumOreGenZG.LEAD, world, rand);
 		
 		ChunkPrimer chunkPrimer = new ChunkPrimer();
 		
@@ -103,18 +103,8 @@ public class BiomeDecoratorOasis extends BiomeDecoratorZG {
 			}
 		}
 		
-		if (this.generateLakes && this.obsidianLakesPerChunk > 0) {
-			for (int i = 0; i < this.obsidianLakesPerChunk; ++i) {
-				y = rand.nextInt(rand.nextInt(genY) + 8);
-				
-				if (rand.nextInt(100) <= 10) {
-					(new WorldGenLakesZG(Blocks.OBSIDIAN, STONE)).generate(world, rand, this.chunkPos.add(x, y, z));
-				}
-			}
-		}
-		
 		if (this.oasisTallGrassPerChunk > 0) {
-			for (int i = 0; i < this.oasisTallGrassPerChunk + 4; ++i) {
+			for (int i = 0; i < this.oasisTallGrassPerChunk + 2; ++i) {
 				ZGDecorateHelper.generatePlants(new WorldGenTallGrassZG((ZGBlockTallGrass) ZGBlocks.oasisTallGrass), world,
 						rand, this.chunkPos);
 			}

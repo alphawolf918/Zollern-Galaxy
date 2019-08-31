@@ -151,6 +151,7 @@ public class ZGBlocks {
 	public static final Block xathRock = new ZGBlockBase("xathrock");
 	public static final Block xathCobble = new ZGBlockBase("xathcobblerock").setBlockType(EnumBlockType.COBBLESTONE);
 	public static final Block xathStone = new ZGPlanetStone("xathstone", 3.1F, ZGBlocks.xathCobble);
+	public static final Block xathRockBricks = new ZGBlockBase("xathrockbricks", 2.1F);
 	public static final Block xathDirt = new ZGBlockDirt("xathdirt");
 	public static final Block xathTallGrass = new ZGBlockTallGrass("xathtallgrass");
 	public static final Block xathGrass = new ZGBlockGrassXath("xathgrass");
@@ -167,6 +168,7 @@ public class ZGBlocks {
 	public static final Block oasisRock = new ZGBlockBase("oasisrock");
 	public static final Block oasisCobble = new ZGBlockBase("oasiscobblerock").setBlockType(EnumBlockType.COBBLESTONE);
 	public static final Block oasisStone = new ZGPlanetStone("oasisstone", 2.6F, ZGBlocks.oasisCobble);
+	public static final Block oasisRockBricks = new ZGBlockBase("oasisrockbricks", 2.1F);
 	public static final Block oasisDirt = new ZGBlockDirt("oasisdirt");
 	public static final Block oasisTallGrass = new ZGBlockTallGrass("oasistallgrass");
 	public static final Block oasisGrass = new ZGBlockGrassOasis("oasisgrass");
@@ -205,10 +207,11 @@ public class ZGBlocks {
 				edenPlatinumOre, edenCoalOre, edenCopperOre, edenDeshOre, edenDiamondOre, edenEmeraldOre, edenGoldOre,
 				edenSilverOre, edenIronOre, edenLapisOre, edenMeteoricIronOre, edenRedstoneOre, edenTinOre, edenLeadOre,
 				edenNickleOre, edenViriniumOre, edenCobaltOre, edenEveniumOre, edenHeartiumOre, xathRock, xathCobble,
-				xathStone, xathGrass, xathDirt, xathGravel, xathTallGrass, xathPrometheanOre, xathEmeraldOre,
-				xathDiamondOre, xathRedstoneOre, xathIronOre, xathGoldOre, xathTinOre, oasisRock, oasisStone, oasisCobble,
-				oasisDirt, oasisTallGrass, oasisGrass, oasisGravel, oasisSuperChargedCoalOre, oasisIronOre, oasisGoldOre,
-				oasisRedstoneOre, oasisDiamondOre, blockViri, blockCobalt, blockEve, blockCrater, blockSuperChargedCoal);
+				xathStone, xathRockBricks, xathGrass, xathDirt, xathGravel, xathTallGrass, xathPrometheanOre,
+				xathEmeraldOre, xathDiamondOre, xathRedstoneOre, xathIronOre, xathGoldOre, xathTinOre, oasisRock,
+				oasisStone, oasisRockBricks, oasisCobble, oasisDirt, oasisTallGrass, oasisGrass, oasisGravel,
+				oasisSuperChargedCoalOre, oasisIronOre, oasisGoldOre, oasisRedstoneOre, oasisDiamondOre, oasisTinOre,
+				oasisLeadOre, blockViri, blockCobalt, blockEve, blockCrater, blockSuperChargedCoal);
 		ZGHelper.Log("Loaded a total of " + totalBlocks + " new blocks.");
 	}
 	

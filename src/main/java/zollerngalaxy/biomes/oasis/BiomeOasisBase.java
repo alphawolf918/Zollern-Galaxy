@@ -10,6 +10,7 @@ import net.minecraft.world.chunk.ChunkPrimer;
 import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.biomes.decorators.BiomeDecoratorOasis;
 import zollerngalaxy.blocks.ZGBlocks;
+import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderOasis;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 import zollerngalaxy.planets.ZGPlanets;
 
@@ -23,8 +24,8 @@ public abstract class BiomeOasisBase extends BiomeSpace {
 	protected static final IBlockState ICE = Blocks.ICE.getDefaultState();
 	protected static final IBlockState WATER = Blocks.WATER.getDefaultState();
 	
-	protected static final int SEA_LEVEL = 63;
-	protected static final int SEA_FLOOR_LEVEL = 42;
+	protected static final int SEA_LEVEL = ChunkProviderOasis.SEA_LEVEL;
+	protected static final int SEA_FLOOR_LEVEL = 36;
 	
 	public BiomeDecoratorOasis biomeDecor = this.getBiomeDecorator();
 	

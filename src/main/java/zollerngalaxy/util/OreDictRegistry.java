@@ -14,10 +14,11 @@ public class OreDictRegistry {
 				ZGBlocks.zolCopperOre);
 		
 		// Tin
-		registerOre("oreTin", ZGBlocks.edenTinOre, ZGBlocks.purgTinOre, ZGBlocks.zolTinOre, ZGBlocks.xathTinOre);
+		registerOre("oreTin", ZGBlocks.edenTinOre, ZGBlocks.purgTinOre, ZGBlocks.zolTinOre, ZGBlocks.xathTinOre,
+				ZGBlocks.oasisTinOre);
 		
 		// Lead
-		registerOre("oreLead", ZGBlocks.edenLeadOre, ZGBlocks.purgLeadOre);
+		registerOre("oreLead", ZGBlocks.edenLeadOre, ZGBlocks.purgLeadOre, ZGBlocks.oasisLeadOre);
 		
 		// Silver
 		registerOre("oreSilver", ZGBlocks.edenSilverOre);
@@ -26,13 +27,15 @@ public class OreDictRegistry {
 		registerOre("oreLapis", ZGBlocks.edenLapisOre);
 		
 		// Dirt
-		registerOre("dirt", ZGBlocks.edenSoil, ZGBlocks.kriffDirt, ZGBlocks.purgDirt, ZGBlocks.zolDirt, ZGBlocks.xathDirt);
+		registerOre("dirt", ZGBlocks.edenSoil, ZGBlocks.kriffDirt, ZGBlocks.purgDirt, ZGBlocks.zolDirt, ZGBlocks.xathDirt,
+				ZGBlocks.oasisDirt);
 		
 		// Gravel
-		registerOre("gravel", ZGBlocks.edenGravel, ZGBlocks.purgGravel, ZGBlocks.xathGravel);
+		registerOre("gravel", ZGBlocks.edenGravel, ZGBlocks.purgGravel, ZGBlocks.xathGravel, ZGBlocks.oasisGravel);
 		
 		// Grass
-		registerOre("grass", ZGBlocks.edenGoldenGrass, ZGBlocks.edenGrass, ZGBlocks.edenSwampGrass, ZGBlocks.xathGrass);
+		registerOre("grass", ZGBlocks.edenGoldenGrass, ZGBlocks.edenGrass, ZGBlocks.edenSwampGrass, ZGBlocks.xathGrass,
+				ZGBlocks.oasisGrass);
 		
 		// Logs
 		registerOre("logWood", ZGBlocks.edenWoodLog);
@@ -48,11 +51,11 @@ public class OreDictRegistry {
 		
 		// Stone
 		registerOre("stone", ZGBlocks.edenStone, ZGBlocks.kriffStone, ZGBlocks.purgStone, ZGBlocks.zolStone,
-				ZGBlocks.xathStone);
+				ZGBlocks.xathStone, ZGBlocks.oasisStone);
 		
 		// Stone Bricks
 		registerOre("stonebrick", ZGBlocks.edenRockBricks, ZGBlocks.kriffRockBricks, ZGBlocks.purgRockBricks,
-				ZGBlocks.zolRockBricks);
+				ZGBlocks.zolRockBricks, ZGBlocks.xathRockBricks, ZGBlocks.oasisRockBricks);
 		
 		// Glowstone
 		registerOre("glowstone", ZGBlocks.edenBrightStone);
@@ -62,24 +65,25 @@ public class OreDictRegistry {
 		
 		// Cobble
 		registerOre("cobblestone", ZGBlocks.edenCobbleRock, ZGBlocks.kriffCobbleRock, ZGBlocks.purgCobbleRock,
-				ZGBlocks.zolCobbleRock, ZGBlocks.xathCobble);
+				ZGBlocks.zolCobbleRock, ZGBlocks.xathCobble, ZGBlocks.oasisCobble);
 		
 		// Coal
 		registerOre("oreCoal", ZGBlocks.edenCoalOre, ZGBlocks.kriffCoalOre, ZGBlocks.zolCoalOre);
 		
 		// Iron
 		registerOre("oreIron", ZGBlocks.edenIronOre, ZGBlocks.kriffIronOre, ZGBlocks.purgIronOre, ZGBlocks.zolIronOre,
-				ZGBlocks.xathIronOre);
+				ZGBlocks.xathIronOre, ZGBlocks.oasisIronOre);
 		
 		// Gold
 		registerOre("oreGold", ZGBlocks.edenGoldOre, ZGBlocks.kriffGoldOre, ZGBlocks.purgGoldOre, ZGBlocks.zolGoldOre,
-				ZGBlocks.xathGoldOre);
+				ZGBlocks.xathGoldOre, ZGBlocks.oasisGoldOre);
 		
 		// Nickle
 		registerOre("oreNickel", ZGBlocks.edenNickleOre);
 		
 		// Diamond
-		registerOre("oreDiamond", ZGBlocks.edenDiamondOre, ZGBlocks.purgDiamondOre, ZGBlocks.xathDiamondOre);
+		registerOre("oreDiamond", ZGBlocks.edenDiamondOre, ZGBlocks.purgDiamondOre, ZGBlocks.xathDiamondOre,
+				ZGBlocks.oasisDiamondOre);
 		registerOre("dustDiamond", ZGItems.dustDiamond);
 		
 		// Emerald
@@ -88,7 +92,7 @@ public class OreDictRegistry {
 		
 		// Redstone
 		registerOre("oreRedstone", ZGBlocks.edenRedstoneOre, ZGBlocks.kriffRedstoneOre, ZGBlocks.purgRedstoneOre,
-				ZGBlocks.xathRedstoneOre);
+				ZGBlocks.xathRedstoneOre, ZGBlocks.oasisRedstoneOre);
 		
 		// Steel
 		registerOre("oreSteel", ZGBlocks.edenSteelOre);
@@ -139,6 +143,11 @@ public class OreDictRegistry {
 		// Promethean
 		registerOre("orePromethean", ZGBlocks.xathPrometheanOre);
 		registerOre("gemPromethean", ZGItems.prometheanCrystal);
+		
+		// Super Charged Coal
+		registerOre("oreSuperChargedCoal", ZGBlocks.oasisSuperChargedCoalOre);
+		registerOre("gemSuperChargedCoal", ZGItems.superChargedCoal);
+		registerOre("blockSuperChargedCoal", ZGBlocks.blockSuperChargedCoal);
 		
 		// Titanium
 		// TODO
