@@ -177,6 +177,8 @@ public class ZGBlocks {
 	public static final Block oasisGoldOre = new ZGBlockOre("oasisgoldore", 2.3F);
 	public static final Block oasisRedstoneOre = new ZGOreGem("oasisredstoneore", 3.5F, Items.REDSTONE);
 	public static final Block oasisDiamondOre = new ZGOreGem("oasisdiamondore", 4.2F, Items.DIAMOND);
+	public static final Block oasisTinOre = new ZGBlockOre("oasistinore", 2.3F);
+	public static final Block oasisLeadOre = new ZGBlockOre("oasisleadore", 2.9F);
 	
 	// Metals
 	public static final Block blockViri = new ZGBlockMetal("viriblock");

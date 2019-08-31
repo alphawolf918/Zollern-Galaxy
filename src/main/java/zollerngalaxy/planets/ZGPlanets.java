@@ -274,6 +274,8 @@ public class ZGPlanets {
 		totalPlanets++;
 		
 		// Planet Oasis
+		// planetOasis.setDimensionInfo(ConfigManagerZG.planetOasisDimensionId,
+		// WorldProviderOasis.class);
 		planetOasis.setParentSolarSystem(systemPraedyth);
 		planetOasis.setPlanetClass(EnumPlanetClass.R);
 		planetOasis.setRingColorRGB(2.0f, 5.4f, 3.2f);
@@ -292,8 +294,6 @@ public class ZGPlanets {
 		planetOasis.setPlanetGasses(EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.WATER);
 		planetOasis.setAtmosphere();
 		planetOasis.setPlanetIcon("oasis");
-		// planetOasis.setDimensionInfo(ConfigManagerZG.planetOasisDimensionId,
-		// WorldProviderOasis.class);
 		totalPlanets++;
 		
 		ZGHelper.Log("Loaded a total of " + totalPlanets + " new planets.");

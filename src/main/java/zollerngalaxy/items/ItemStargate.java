@@ -90,6 +90,7 @@ public class ItemStargate extends ZGItemBase {
 		String msg = "Unable to teleport; " + bodyName + " not yet discovered.";
 		msg += " Could not locate destination on galaxy map.";
 		
+		// Thank you MJRLegends
 		if (ModHelperBase.usePlanetProgression) {
 			if (player instanceof EntityPlayerMP) {
 				EntityPlayerMP playerMP = (EntityPlayerMP) player;

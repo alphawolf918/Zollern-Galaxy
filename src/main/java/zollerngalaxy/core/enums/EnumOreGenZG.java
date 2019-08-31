@@ -8,7 +8,7 @@ public enum EnumOreGenZG {
 			33, 8, 0, 256), SILICON(7, 3, 0, 25), ALUMINUM(11, 18, 0, 70), TIN(11, 22, 0, 70), COPPER(11, 24, 0, 75), SILVER(
 			5, 16, 0, 42), LEAD(6, 20, 0, 36), NICKLE(8, 14, 0, 36), COBALT(5, 14, 0, 24), STEEL(9, 15, 0, 32), BRONZE(6, 6,
 			0, 24), INVAR(8, 6, 0, 24), ELECTRUM(6, 6, 0, 24), PLATINUM(4, 4, 0, 24), PROMETHEAN(4, 16, 0, 45), OBSIDIAN(20,
-			25, 0, 45);
+			25, 0, 45), SUPER_CHARGED_COAL(5, 15, 0, 35);
 	
 	private int genCount;
 	private int blockCount;

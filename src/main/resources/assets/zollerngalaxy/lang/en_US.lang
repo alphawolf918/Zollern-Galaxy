@@ -153,6 +153,8 @@ tile.oasisironore.name=Oasis Iron Ore
 tile.oasisgoldore.name=Oasis Gold Ore
 tile.oasisredstoneore.name=Oasis Redstone Ore
 tile.oasisdiamondore.name=Oasis Diamond Ore
+tile.oasistinore.name=Oasis Tin Ore
+tile.oasisleadore.name=Oasis Lead Ore
 tile.superchargedcoalblock.name=Block of Super Charged Coal
 
 tile.heartblock.name=Healing Station

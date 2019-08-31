@@ -1,5 +1,6 @@
 package zollerngalaxy.lib.helpers;
 
+import net.machinemuse.powersuits.api.constants.MPSModConstants;
 import net.minecraftforge.fml.common.Loader;
 import cofh.CoFHCore;
 import cofh.thermaldynamics.ThermalDynamics;
@@ -17,6 +18,7 @@ public class ModHelperBase {
 	public static boolean useMorePlanets = false;
 	public static boolean useExtraPlanets = false;
 	public static boolean usePlanetProgression = false;
+	public static boolean useModularPowerSuits = false;
 	
 	public static void detectMods() {
 		useCofh = isModLoaded(CoFHCore.MOD_ID);
@@ -27,6 +29,7 @@ public class ModHelperBase {
 		useMorePlanets = isModLoaded("moreplanets");
 		useExtraPlanets = isModLoaded("extraplanets");
 		usePlanetProgression = isModLoaded("planetprogression");
+		useModularPowerSuits = isModLoaded(MPSModConstants.MODID);
 	}
 	
 	public static boolean isModLoaded(String modId) {

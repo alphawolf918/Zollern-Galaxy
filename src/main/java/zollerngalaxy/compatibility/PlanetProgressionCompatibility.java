@@ -4,6 +4,7 @@ import micdoodle8.mods.galacticraft.api.galaxies.CelestialBody;
 import net.minecraft.entity.player.EntityPlayerMP;
 import com.mjr.planetprogression.api.research.ResearchHooksMP;
 
+// Thank you MJRLegends
 public class PlanetProgressionCompatibility {
 	
 	/**

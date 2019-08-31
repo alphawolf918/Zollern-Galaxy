@@ -33,6 +33,7 @@ public class ZGDimensions {
 		
 		// Praedyth
 		ZGDimensions.XATHIUS = ZGDimensions.getDimType(ConfigManagerZG.planetXathiusDimensionId);
+		ZGDimensions.OASIS = ZGDimensions.getDimType(ConfigManagerZG.planetOasisDimensionId);
 	}
 	
 	public static DimensionType getDimType(int dimId) {

@@ -31,6 +31,7 @@ import zollerngalaxy.biomes.eden.BiomeStoneMountains;
 import zollerngalaxy.biomes.eden.BiomeSwamplands;
 import zollerngalaxy.biomes.eden.BiomeTerranValley;
 import zollerngalaxy.biomes.kriffon.BiomeKriffon;
+import zollerngalaxy.biomes.oasis.BiomeOasisPlains;
 import zollerngalaxy.biomes.purgot.BiomeLimbo;
 import zollerngalaxy.biomes.purgot.BiomePurgot;
 import zollerngalaxy.biomes.xathius.BiomeAbstractPlains;
@@ -76,7 +77,7 @@ public class ZGBiomes {
 	public static final Biome XATHIUS_MOUNTAINS = new BiomeXathiusMountains(new BiomeProperties("Xathian Mountains"));
 	
 	// Oasis
-	// TODO
+	public static final Biome OASIS_PLAINS = new BiomeOasisPlains(new BiomeProperties("Oasis Plains"));
 	
 	public static void init() {
 		// Zollus
@@ -109,7 +110,7 @@ public class ZGBiomes {
 		ZGBiomes.addBiome(ZGBiomes.XATHIUS_MOUNTAINS, MOUNTAIN, DEAD);
 		
 		// Oasis
-		// TODO
+		ZGBiomes.addBiome(ZGBiomes.OASIS_PLAINS, LUSH, WET, PLAINS);
 		
 		ZGHelper.Log("Loaded a total of " + totalBiomes + " new biomes.");
 	}
