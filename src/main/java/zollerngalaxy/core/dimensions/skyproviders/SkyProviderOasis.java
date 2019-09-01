@@ -36,7 +36,7 @@ public class SkyProviderOasis extends IRenderHandler {
 	private IGalacticraftWorldProvider provider;
 	
 	public SkyProviderOasis(IGalacticraftWorldProvider worldProvider) {
-		this.sunSize = 4.2F * worldProvider.getSolarSize();
+		this.sunSize = 6.4F * worldProvider.getSolarSize();
 		
 		int displayLists = GLAllocation.generateDisplayLists(3);
 		this.starList = displayLists;
@@ -156,7 +156,7 @@ public class SkyProviderOasis extends IRenderHandler {
 		a = 0.0F;
 		
 		// Render sun aura
-		f10 = 20.0F;
+		f10 = 25.0F;
 		worldRenderer1.pos(-f10, 100.0D, -f10).color(r, g, b, a).endVertex();
 		worldRenderer1.pos(0, 100.0D, (double) -f10 * 1.5F).color(r, g, b, a).endVertex();
 		worldRenderer1.pos(f10, 100.0D, -f10).color(r, g, b, a).endVertex();
@@ -171,16 +171,16 @@ public class SkyProviderOasis extends IRenderHandler {
 		worldRenderer1.begin(GL11.GL_TRIANGLE_FAN, DefaultVertexFormats.POSITION_COLOR);
 		r = 10;// f6 * f18;
 		g = 0;// f7 * f18;
-		b = 0;// f8 * f18;
+		b = 10;// f8 * f18;
 		a = afloat[3] * f18;
 		worldRenderer1.pos(0.0D, 100.0D, 0.0D).color(r, g, b, a).endVertex();
 		r = 10;// afloat[0] * f18;
 		g = 0;// afloat[1] * f18;
-		b = 0;// afloat[2] * f18;
+		b = 10;// afloat[2] * f18;
 		a = 0.0F;
 		
 		// Render larger sun aura
-		f10 = 40.0F;
+		f10 = 45.0F;
 		worldRenderer1.pos(-f10, 100.0D, -f10).color(r, g, b, a).endVertex();
 		worldRenderer1.pos(0, 100.0D, (double) -f10 * 1.5F).color(r, g, b, a).endVertex();
 		worldRenderer1.pos(f10, 100.0D, -f10).color(r, g, b, a).endVertex();

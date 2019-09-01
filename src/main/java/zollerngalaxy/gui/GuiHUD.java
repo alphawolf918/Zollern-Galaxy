@@ -80,7 +80,8 @@ public class GuiHUD extends Gui {
 					String tempType = ConfigManagerZG.temperatureType;
 					float thermalMod = spaceProvider.getThermalLevelModifier();
 					float biomeTemp = biomeSpace.getPlanetTemp();
-					float planetTemp = (thermalMod != 0.0F) ? thermalMod : biomeTemp;
+					float planetTemp = thermalMod;
+					planetTemp = (spaceProvider.isDaytime()) ? planetTemp + biomeTemp : planetTemp - biomeTemp;
 					tempType = (tempType != "F" && tempType != "C") ? "F" : tempType;
 					if (tempType == "F") {
 						String strTemp = "" + Math.round(planetTemp * 1.0f);

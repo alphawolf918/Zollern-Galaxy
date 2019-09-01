@@ -27,6 +27,7 @@ public class BiomeDecoratorOasis extends BiomeDecoratorZG {
 	private WorldGenerator superChargedCoalGen;
 	private WorldGenerator diamondGen;
 	private WorldGenerator redstoneGen;
+	private WorldGenerator coalGen;
 	private WorldGenerator ironGen;
 	private WorldGenerator goldGen;
 	private WorldGenerator tinGen;
@@ -48,6 +49,7 @@ public class BiomeDecoratorOasis extends BiomeDecoratorZG {
 				EnumOreGenZG.SUPER_CHARGED_COAL);
 		this.diamondGen = new WorldGenMinableZG(ZGBlocks.oasisDiamondOre, STONE, EnumOreGenZG.DIAMOND);
 		this.redstoneGen = new WorldGenMinableZG(ZGBlocks.oasisRedstoneOre, STONE, EnumOreGenZG.REDSTONE);
+		this.coalGen = new WorldGenMinableZG(ZGBlocks.oasisCoalOre, STONE, EnumOreGenZG.COAL);
 		this.ironGen = new WorldGenMinableZG(ZGBlocks.oasisIronOre, STONE, EnumOreGenZG.IRON);
 		this.goldGen = new WorldGenMinableZG(ZGBlocks.oasisGoldOre, STONE, EnumOreGenZG.GOLD);
 		this.tinGen = new WorldGenMinableZG(ZGBlocks.oasisTinOre, STONE, EnumOreGenZG.TIN);
@@ -71,6 +73,7 @@ public class BiomeDecoratorOasis extends BiomeDecoratorZG {
 		this.generateOre(this.diamondGen, EnumOreGenZG.DIAMOND, world, rand);
 		this.generateOre(this.redstoneGen, EnumOreGenZG.REDSTONE, world, rand);
 		this.generateOre(this.ironGen, EnumOreGenZG.IRON, world, rand);
+		this.generateOre(this.coalGen, EnumOreGenZG.COAL, world, rand);
 		this.generateOre(this.goldGen, EnumOreGenZG.GOLD, world, rand);
 		this.generateOre(this.tinGen, EnumOreGenZG.TIN, world, rand);
 		this.generateOre(this.leadGen, EnumOreGenZG.LEAD, world, rand);

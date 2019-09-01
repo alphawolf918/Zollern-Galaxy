@@ -67,9 +67,8 @@ public class WorldProviderOasis extends WorldProviderZG {
 		
 		if (!this.isDaytime()) {
 			planetTemp /= 2.2F;
-		} else {
-			planetTemp = planet.getPlanetTemperature();
 		}
+		
 		return planetTemp;
 	}
 	
@@ -121,7 +120,7 @@ public class WorldProviderOasis extends WorldProviderZG {
 	
 	@Override
 	public long getDayLength() {
-		return 26000L;
+		return 34125L;
 	}
 	
 	@Override

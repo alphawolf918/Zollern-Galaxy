@@ -2,8 +2,10 @@ package zollerngalaxy.blocks.creativetabs;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import zollerngalaxy.lib.ZGInfo;
 
 public class CreativeTabsHelper extends CreativeTabs {
 	
@@ -28,6 +30,12 @@ public class CreativeTabsHelper extends CreativeTabs {
 	@Override
 	public boolean hasSearchBar() {
 		return true;
+	}
+	
+	@Override
+	@SideOnly(Side.CLIENT)
+	public ResourceLocation getBackgroundImage() {
+		return new ResourceLocation(ZGInfo.MOD_ID + ":textures/gui/container/zg_creative_tab_search.png");
 	}
 	
 }

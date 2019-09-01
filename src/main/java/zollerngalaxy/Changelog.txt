@@ -26,4 +26,5 @@ Zollern Galaxy v2.0.4
     * Mostly another paradise planet with some secrets. Maybe it's not all good...
     * Very colorful planet though.
 * Added more Rock Bricks for the new planets.
+* Made a custom Creative Tabs image.
 * 

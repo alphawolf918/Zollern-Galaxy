@@ -175,6 +175,7 @@ public class ZGBlocks {
 	public static final Block oasisGravel = new ZGGravel("oasisgravel", 2.4F);
 	public static final Block oasisSuperChargedCoalOre = new ZGOreGem("oasissuperchargedcoalore", 4.6F,
 			ZGItems.superChargedCoal);
+	public static final Block oasisCoalOre = new ZGOreGem("oasiscoalore", 2.1F, Items.COAL);
 	public static final Block oasisIronOre = new ZGBlockOre("oasisironore", 2.5F);
 	public static final Block oasisGoldOre = new ZGBlockOre("oasisgoldore", 2.3F);
 	public static final Block oasisRedstoneOre = new ZGOreGem("oasisredstoneore", 3.5F, Items.REDSTONE);
@@ -210,8 +211,8 @@ public class ZGBlocks {
 				xathStone, xathRockBricks, xathGrass, xathDirt, xathGravel, xathTallGrass, xathPrometheanOre,
 				xathEmeraldOre, xathDiamondOre, xathRedstoneOre, xathIronOre, xathGoldOre, xathTinOre, oasisRock,
 				oasisStone, oasisRockBricks, oasisCobble, oasisDirt, oasisTallGrass, oasisGrass, oasisGravel,
-				oasisSuperChargedCoalOre, oasisIronOre, oasisGoldOre, oasisRedstoneOre, oasisDiamondOre, oasisTinOre,
-				oasisLeadOre, blockViri, blockCobalt, blockEve, blockCrater, blockSuperChargedCoal);
+				oasisSuperChargedCoalOre, oasisCoalOre, oasisIronOre, oasisGoldOre, oasisRedstoneOre, oasisDiamondOre,
+				oasisTinOre, oasisLeadOre, blockViri, blockCobalt, blockEve, blockCrater, blockSuperChargedCoal);
 		ZGHelper.Log("Loaded a total of " + totalBlocks + " new blocks.");
 	}
 	

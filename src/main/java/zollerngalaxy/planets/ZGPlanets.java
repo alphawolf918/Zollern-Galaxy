@@ -288,7 +288,7 @@ public class ZGPlanets {
 		planetOasis.setPlanetToxicity(0.5f);
 		planetOasis.setPlanetRadiation(4.0f);
 		planetOasis.setBreathable(true);
-		planetOasis.setWindLevel(0.9F);
+		planetOasis.setWindLevel(1.9F);
 		planetOasis.setDensity(1.6F);
 		planetOasis.setHasRain(true);
 		planetOasis.setPlanetGasses(EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.WATER);

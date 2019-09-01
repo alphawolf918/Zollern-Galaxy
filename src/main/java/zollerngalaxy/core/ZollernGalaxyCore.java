@@ -112,7 +112,7 @@ public class ZollernGalaxyCore {
 		
 		instance().proxy.registerPostRendering();
 		instance().proxy.postInit(event);
-		ZGHelper.Log("Post-init phase complete.");
+		ZGHelper.Log("Post-Init phase complete.");
 	}
 	
 }
