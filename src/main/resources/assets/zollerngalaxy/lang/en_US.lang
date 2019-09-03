@@ -223,6 +223,8 @@ item.stargate_tier8.name=Stargate (Protocol Eight)
 item.stargate_tier9.name=Stargate (Protocol Nine)
 item.stargate_tier10.name=Stargate (Protocol Ten)
 
+item.omnitool.name=Omnitool
+
 entity.zollerngalaxy:moolus.name=Moolus
 entity.zollerngalaxy:oinkus.name=Oinkus
 entity.zollerngalaxy:squidlus.name=Squidlus

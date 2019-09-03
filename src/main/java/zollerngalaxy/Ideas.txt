@@ -9,4 +9,5 @@
 * Different temperatures for day and night.
 * Random alien encounters that cause various things to happen.
 * An "Omnitool" capable of harvesting specific resources.
+* Interaction with Modular Powersuits.
 * 

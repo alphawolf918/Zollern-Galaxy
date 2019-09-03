@@ -1,6 +1,7 @@
 package zollerngalaxy.items;
 
 import net.minecraft.item.Item;
+import zollerngalaxy.items.tools.ItemOmnitool;
 import zollerngalaxy.lib.helpers.CommonZGRegisterHelper;
 import zollerngalaxy.lib.helpers.ZGHelper;
 
@@ -61,6 +62,8 @@ public class ZGItems {
 	public static final Item starGateTier9 = new ItemStargate(9);
 	public static final Item starGateTier10 = new ItemStargate(10);
 	
+	public static final Item OMNITOOL = new ItemOmnitool();
+	
 	public static void init() {
 		ZGItems.registerItems(heartOfZol, zolCrystal, kriffCrystal, purgCrystal, edenCrystal, purgEssence,
 				prometheanCrystal, plutoniumCrystal, dustBrightstone, dustViri, dustEve, dustCobalt, dustDiamond,
@@ -68,7 +71,7 @@ public class ZGItems {
 				compressedEmerald, compressedEvenium, compressedGold, compressedHeartium, compressedKriffonium,
 				compressedVirinium, compressedVyrex, rawAlienBacon, cookedAlienBacon, rawAlienBeef, cookedAlienBeef,
 				edenFruit, edenDungeonKey, superChargedCoal, starGateTier1, starGateTier2, starGateTier3, starGateTier4,
-				starGateTier5, starGateTier6, starGateTier7, starGateTier8, starGateTier9, starGateTier10);
+				starGateTier5, starGateTier6, starGateTier7, starGateTier8, starGateTier9, starGateTier10, OMNITOOL);
 		ZGHelper.Log("Loaded a total of " + totalItems + " new items.");
 	}
 	

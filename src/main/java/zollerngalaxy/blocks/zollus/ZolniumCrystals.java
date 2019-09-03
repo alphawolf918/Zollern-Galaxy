@@ -28,7 +28,7 @@ public class ZolniumCrystals extends ZGBlockFlower {
 	public ZolniumCrystals() {
 		super("zolcrystals");
 		this.setMaterial(Material.IRON);
-		this.setHardResist(1.6F);
+		this.setHardResist(2.6F);
 		this.setSoundType(METAL);
 		this.setHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.DIAMOND.getHarvestLevel());
 		this.setItemDropped(ZGItems.zolCrystal);

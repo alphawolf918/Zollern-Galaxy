@@ -2,11 +2,11 @@ package zollerngalaxy.core.enums;
 
 public enum EnumHarvestToolZG {
 	
-	PICKAXE("pickaxe"), SHOVEL("shovel"), AXE("axe");
+	PICKAXE("pickaxe"), SHOVEL("shovel"), AXE("axe"), OMNITOOL("omnitool");
 	
-	String harvestTool = "pickaxe";
+	private String harvestTool = "pickaxe";
 	
-	EnumHarvestToolZG(String toolClass) {
+	private EnumHarvestToolZG(String toolClass) {
 		this.harvestTool = toolClass;
 	}
 	

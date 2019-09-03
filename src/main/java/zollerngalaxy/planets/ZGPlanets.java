@@ -284,7 +284,7 @@ public class ZGPlanets {
 		planetOasis.setDistanceFromCenter(2.5f);
 		planetOasis.setTierRequired(6);
 		planetOasis.setRelativeSize(64.0f);
-		planetOasis.setPlanetTemperature(68.2f);
+		planetOasis.setPlanetTemperature(68.2F);
 		planetOasis.setPlanetToxicity(0.5f);
 		planetOasis.setPlanetRadiation(4.0f);
 		planetOasis.setBreathable(true);
