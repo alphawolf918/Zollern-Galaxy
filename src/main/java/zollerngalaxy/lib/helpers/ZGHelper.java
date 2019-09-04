@@ -19,8 +19,8 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import zollerngalaxy.blocks.creativetabs.CreativeTabsHelper;
-import zollerngalaxy.blocks.creativetabs.ZGTabs;
+import zollerngalaxy.creativetabs.CreativeTabsHelper;
+import zollerngalaxy.creativetabs.ZGTabs;
 
 public class ZGHelper {
 	

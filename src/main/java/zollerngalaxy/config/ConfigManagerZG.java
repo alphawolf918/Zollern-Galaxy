@@ -71,6 +71,7 @@ public class ConfigManagerZG {
 	// Misc
 	public static boolean canEarthAnimalsSpawnOnEden;
 	public static String temperatureType;
+	public static boolean shouldOasisUseLiquidRedstone;
 	
 	public static void init(FMLPreInitializationEvent event) {
 		configuration = new Configuration(new File(event.getModConfigurationDirectory().getAbsolutePath()
@@ -152,6 +153,15 @@ public class ConfigManagerZG {
 		// Misc (Temperatures shown in fahrenheit or celsius?)
 		temperatureType = configuration.get(CATEGORY_MISC, "[HUD DISPLAY] Temperature Type (F or C only)", "F",
 				"Should temperatures be shown in Fahrenheit (F) or Celsius (C)?").getString();
+		
+		// Misc (Whether or not to use Thermal Foundation's Detabilized Redstone
+		// for the Red Sea in Oasis)
+		shouldOasisUseLiquidRedstone = configuration.get(
+				CATEGORY_MISC,
+				"Oasis uses Thermal Foundation's Destabilized Redstone",
+				false,
+				"Whether or not Oasis should use Detabilized Redstone for its Red Sea biome (false by default). "
+						+ "WARNING: This can use a LOT of your PC's memory! Use at your own risk.").getBoolean();
 		
 		configuration.save();
 	}

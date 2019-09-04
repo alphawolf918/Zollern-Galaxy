@@ -1,20 +1,40 @@
 package zollerngalaxy.biomes;
 
 import java.util.Random;
+import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedCreeper;
+import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedEnderman;
+import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedSkeleton;
+import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedSpider;
+import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedWitch;
+import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedZombie;
 import net.minecraft.block.Block;
+import zollerngalaxy.core.dimensions.worldproviders.WorldProviderZG;
 import zollerngalaxy.planets.ZGPlanet;
 
 public class BiomeSpace extends ZGBiomeBase {
 	
 	protected ZGPlanet planetForBiome = null;
+	protected WorldProviderZG spaceProvider = null;
 	public static int grassFoliageColor = 0x00ff00;
 	
 	public BiomeSpace(BiomeProperties properties) {
 		super(properties);
+		this.init();
 	}
 	
 	public BiomeSpace(String singleName, BiomeProperties props) {
 		super(singleName, props);
+		this.init();
+	}
+	
+	private void init() {
+		this.clearAllSpawning();
+		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedZombie.class, 100, 4, 4));
+		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedSpider.class, 100, 4, 4));
+		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedSkeleton.class, 100, 4, 4));
+		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedCreeper.class, 100, 4, 4));
+		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedEnderman.class, 100, 4, 4));
+		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedWitch.class, 100, 4, 4));
 	}
 	
 	/**
@@ -36,6 +56,15 @@ public class BiomeSpace extends ZGBiomeBase {
 	 */
 	public ZGPlanet getPlanetForBiome() {
 		return this.planetForBiome;
+	}
+	
+	public BiomeSpace setSpaceProvider(WorldProviderZG provider) {
+		this.spaceProvider = provider;
+		return this;
+	}
+	
+	public WorldProviderZG getSpaceProvider() {
+		return this.spaceProvider;
 	}
 	
 	/**

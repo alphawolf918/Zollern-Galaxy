@@ -2,6 +2,7 @@ package zollerngalaxy.biomes.decorators;
 
 import java.util.Random;
 import net.minecraft.block.Block;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
@@ -16,6 +17,7 @@ import zollerngalaxy.lib.helpers.ZGDecorateHelper;
 import zollerngalaxy.worldgen.WorldGenLakesZG;
 import zollerngalaxy.worldgen.WorldGenMinableZG;
 import zollerngalaxy.worldgen.WorldGenTallGrassZG;
+import zollerngalaxy.worldgen.oasis.WorldGenOasisFlowers;
 
 public class BiomeDecoratorOasis extends BiomeDecoratorZG {
 	
@@ -36,7 +38,8 @@ public class BiomeDecoratorOasis extends BiomeDecoratorZG {
 	public int waterLakesPerChunk = 4;
 	public int lavaLakesPerChunk = 6;
 	public int oilLakesPerChunk = 4;
-	public int oasisTallGrassPerChunk = 2;
+	public int oasisTallGrassPerChunk = 3;
+	public int oasisFlowersPerChunk = 4;
 	
 	public boolean generateLakes = true;
 	public boolean generateVines = false;
@@ -110,6 +113,13 @@ public class BiomeDecoratorOasis extends BiomeDecoratorZG {
 			for (int i = 0; i < this.oasisTallGrassPerChunk + 2; ++i) {
 				ZGDecorateHelper.generatePlants(new WorldGenTallGrassZG((ZGBlockTallGrass) ZGBlocks.oasisTallGrass), world,
 						rand, this.chunkPos);
+			}
+		}
+		
+		if (this.oasisFlowersPerChunk > 0) {
+			for (int i = 0; i < this.oasisFlowersPerChunk; i++) {
+				IBlockState flowerState = ZGBlocks.oasisFlower.getDefaultState();
+				ZGDecorateHelper.generatePlants(new WorldGenOasisFlowers(flowerState), world, rand, this.chunkPos);
 			}
 		}
 	}

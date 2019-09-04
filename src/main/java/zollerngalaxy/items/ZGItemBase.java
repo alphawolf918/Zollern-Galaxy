@@ -4,8 +4,8 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import zollerngalaxy.blocks.creativetabs.ZGTabs;
 import zollerngalaxy.core.ZollernGalaxyCore;
+import zollerngalaxy.creativetabs.ZGTabs;
 import zollerngalaxy.lib.helpers.json.JSONFactory;
 
 public class ZGItemBase extends Item implements ISingleZGItemRender {

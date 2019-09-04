@@ -5,8 +5,8 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemFood;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import zollerngalaxy.blocks.creativetabs.ZGTabs;
 import zollerngalaxy.core.ZollernGalaxyCore;
+import zollerngalaxy.creativetabs.ZGTabs;
 import zollerngalaxy.lib.helpers.json.JSONFactory;
 
 public class ZGItemFood extends ItemFood implements ISingleZGItemRender {

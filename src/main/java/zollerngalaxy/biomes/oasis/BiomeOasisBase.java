@@ -10,9 +10,12 @@ import net.minecraft.world.chunk.ChunkPrimer;
 import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.biomes.decorators.BiomeDecoratorOasis;
 import zollerngalaxy.blocks.ZGBlocks;
+import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderOasis;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
+import zollerngalaxy.lib.helpers.ModHelperBase;
 import zollerngalaxy.planets.ZGPlanets;
+import cofh.thermalfoundation.init.TFFluids;
 
 public abstract class BiomeOasisBase extends BiomeSpace {
 	
@@ -27,15 +30,17 @@ public abstract class BiomeOasisBase extends BiomeSpace {
 	protected static final int SEA_LEVEL = ChunkProviderOasis.SEA_LEVEL;
 	protected static final int SEA_FLOOR_LEVEL = 36;
 	
+	protected boolean shouldUseRedstone = (ModHelperBase.useThermalFoundation && ConfigManagerZG.shouldOasisUseLiquidRedstone);
+	
 	public BiomeDecoratorOasis biomeDecor = this.getBiomeDecorator();
 	
 	public BiomeOasisBase(String singleName, BiomeProperties props) {
 		super(singleName, props);
 		this.setTempCategory(TempCategory.MEDIUM);
-		this.decorator.flowersPerChunk = -999;
-		this.decorator.treesPerChunk = -999;
-		this.decorator.grassPerChunk = -999;
-		this.decorator.mushroomsPerChunk = -999;
+		this.biomeDecor.flowersPerChunk = -999;
+		this.biomeDecor.treesPerChunk = -999;
+		this.biomeDecor.grassPerChunk = -999;
+		this.biomeDecor.mushroomsPerChunk = -999;
 		this.setStoneBlock(ZGBlocks.oasisStone);
 		this.setPlanetForBiome(ZGPlanets.planetOasis);
 	}
@@ -67,7 +72,8 @@ public abstract class BiomeOasisBase extends BiomeSpace {
 				IBlockState iblockstate2 = chunkPrimerIn.getBlockState(i1, j1, l);
 				if (this.getBiomeType() == EnumBiomeTypeZG.OCEAN) {
 					if ((j1 < SEA_LEVEL) && (j1 > SEA_FLOOR_LEVEL)) {
-						chunkPrimerIn.setBlockState(i1, j1, l, WATER);
+						IBlockState blockToUse = (shouldUseRedstone) ? TFFluids.blockFluidRedstone.getDefaultState() : WATER;
+						chunkPrimerIn.setBlockState(i1, j1, l, blockToUse);
 					} else if (j1 < SEA_FLOOR_LEVEL) {
 						chunkPrimerIn.setBlockState(i1, j1, l, STONE);
 					} else if (j1 == SEA_FLOOR_LEVEL) {

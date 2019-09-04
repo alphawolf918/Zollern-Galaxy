@@ -6,6 +6,7 @@ import micdoodle8.mods.galacticraft.api.galaxies.Star;
 import micdoodle8.mods.galacticraft.api.world.AtmosphereInfo;
 import micdoodle8.mods.galacticraft.api.world.EnumAtmosphericGas;
 import net.minecraft.util.ResourceLocation;
+import zollerngalaxy.core.dimensions.worldproviders.WorldProviderZG;
 import zollerngalaxy.core.enums.EnumPlanetClass;
 import zollerngalaxy.lib.ZGInfo;
 import zollerngalaxy.lib.helpers.ZGHelper;
@@ -27,6 +28,8 @@ public class ZGPlanet extends Planet implements IZollernPlanet {
 	
 	private AtmosphereInfo atmosphere;
 	private ArrayList<EnumAtmosphericGas> planetGasses = new ArrayList<EnumAtmosphericGas>();
+	
+	private WorldProviderZG spaceProvider = null;
 	
 	public ZGPlanet(String planetName) {
 		super(planetName);
@@ -193,6 +196,15 @@ public class ZGPlanet extends Planet implements IZollernPlanet {
 	public ZGPlanet setPlanetIcon(String planetTexture) {
 		this.setBodyIcon(new ResourceLocation(ZGInfo.MOD_ID + ":textures/gui/" + planetTexture + ".png"));
 		return this;
+	}
+	
+	public ZGPlanet setSpaceProvider(WorldProviderZG provider) {
+		this.spaceProvider = provider;
+		return this;
+	}
+	
+	public WorldProviderZG getSpaceProvider() {
+		return this.spaceProvider;
 	}
 	
 	public Star getPlanetStar() {

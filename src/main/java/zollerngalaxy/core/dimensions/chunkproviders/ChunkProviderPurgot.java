@@ -237,11 +237,6 @@ public class ChunkProviderPurgot extends ChunkProviderBase {
 						
 						float f7 = this.parabolicField[j1 + 2 + (k1 + 2) * 5] / (f5 + 2.0F);
 						
-						// TODO: Test removing?
-						if (biomegenbase1.getBaseHeight() > biomegenbase.getBaseHeight()) {
-							f7 /= 2.0F;
-						}
-						
 						f2 += f6 * f7;
 						f3 += f5 * f7;
 						f4 += f7;
@@ -294,8 +289,7 @@ public class ChunkProviderPurgot extends ChunkProviderBase {
 					double d2 = this.octaves2[i] / 512.0;
 					double d3 = this.octaves3[i] / 1024.0;
 					double d4 = (this.octaves1[i] / 10.0D + 1.0D) / 2.0D;
-					// double d5 = MathHelper.clampedLerp(d2, d3, d4) - d1;
-					double d5 = d3 - d1;
+					double d5 = MathHelper.clampedLerp(d2, d3, d4) - d1;
 					
 					if (l1 > 29) {
 						double d6 = (l1 - 29) / 3.0F;

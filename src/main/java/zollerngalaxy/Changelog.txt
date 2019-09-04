@@ -20,13 +20,15 @@ Zollern Galaxy v2.0.4
 * Added Wind Level to Galactic HUD.
 * Modified Star Gates to warp players closer to ground level.
     * Too many space explorers were dying due to inability to survive the force of gravity and we received complaints from the Human Resources department.
-* Modified ChunkProviders for Eden to generate more beautifully. To see these changes, you will need to generate new chunks there.
+* Modified ChunkProviders for Eden and Purgot to generate more beautifully. To see these changes, you will need to generate new chunks there.
 * Set Rocket Tier requirement for Xathius to 10 since it's such a heavily-ored Planet.
 * Added planet Oasis.
     * Mostly another paradise planet with lots of water and some secrets.
 * Added more Rock Bricks for the new planets.
 * Made a custom Creative Tabs image (complete with search bar!).
 * Fixed HUD showing incorrect temperature data.
-* Created an "Omnitool." Can harvest any block. A bit OP, will tone down soon.
+* Created an "Omnitool." Can harvest any block.
 * Increased hardness and resistance of Zolnium Crystals.
+* Added a config option for Oasis to use Redstone for its Red Sea biome (false by default as it uses a lot of RAM).
+* Lowered the chance for Eden's Sacred Towers to generate.
 * 

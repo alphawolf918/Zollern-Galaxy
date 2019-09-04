@@ -13,10 +13,10 @@ import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import net.minecraftforge.fml.relauncher.Side;
 import zollerngalaxy.biomes.ZGBiomes;
 import zollerngalaxy.blocks.ZGBlocks;
-import zollerngalaxy.blocks.creativetabs.ZGTabs;
-import zollerngalaxy.compatibility.ExtremeReactorsCompatibility;
+import zollerngalaxy.compatibility.ZGCompats;
 import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.ZGDimensions;
+import zollerngalaxy.creativetabs.ZGTabs;
 import zollerngalaxy.events.ZGSoundEvents;
 import zollerngalaxy.items.ZGItems;
 import zollerngalaxy.lib.ZGInfo;
@@ -67,11 +67,7 @@ public class ZollernGalaxyCore {
 		ConfigManagerZG.init(event);
 		ZGSoundEvents.init();
 		ModHelperBase.detectMods();
-		
-		if (ModHelperBase.useExtremeReactors) {
-			ExtremeReactorsCompatibility.init();
-		}
-		
+		ZGCompats.init();
 		ZGInfo.init(event.getModMetadata());
 		ZGItems.init();
 		ZGBlocks.init();

@@ -1,4 +1,4 @@
-package zollerngalaxy.blocks.creativetabs;
+package zollerngalaxy.creativetabs;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
