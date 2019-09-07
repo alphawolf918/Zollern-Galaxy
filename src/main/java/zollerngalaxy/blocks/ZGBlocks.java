@@ -11,6 +11,8 @@ import zollerngalaxy.blocks.eden.EdenFruit;
 import zollerngalaxy.blocks.oasis.OasisFlower;
 import zollerngalaxy.blocks.zollus.ZolniumCrystals;
 import zollerngalaxy.core.enums.EnumBlockType;
+import zollerngalaxy.core.enums.EnumHarvestLevelZG;
+import zollerngalaxy.core.enums.EnumHarvestToolZG;
 import zollerngalaxy.items.ZGItems;
 import zollerngalaxy.lib.helpers.CommonZGRegisterHelper;
 import zollerngalaxy.lib.helpers.ZGHelper;
@@ -176,7 +178,8 @@ public class ZGBlocks {
 	public static final Block oasisGrass = new ZGBlockGrassOasis("oasisgrass");
 	public static final Block oasisGravel = new ZGGravel("oasisgravel", 2.4F);
 	public static final Block oasisSuperChargedCoalOre = new ZGOreGem("oasissuperchargedcoalore", 4.6F,
-			ZGItems.superChargedCoal);
+			ZGItems.superChargedCoal).setBlockHarvestLevel(EnumHarvestToolZG.OMNITOOL.getHarvestTool(),
+			EnumHarvestLevelZG.DIAMOND.getHarvestLevel());
 	public static final Block oasisCoalOre = new ZGOreGem("oasiscoalore", 2.1F, Items.COAL);
 	public static final Block oasisIronOre = new ZGBlockOre("oasisironore", 2.5F);
 	public static final Block oasisGoldOre = new ZGBlockOre("oasisgoldore", 2.3F);
@@ -189,10 +192,19 @@ public class ZGBlocks {
 	public static final Block blockViri = new ZGBlockMetal("viriblock");
 	public static final Block blockEve = new ZGBlockMetal("eveniumblock");
 	public static final Block blockCobalt = new ZGBlockMetal("cobaltblock");
+	public static final Block blockPromethean = new ZGBlockMetal("prometheanblock");
+	public static final Block blockSuperChargedCoal = new ZGBlockBase("superchargedcoalblock", 2.6F);
+	
+	// Compressed Metals
+	public static final Block blockCompressedHeartium = new ZGBlockCompressed("compressedheartiumblock");
+	public static final Block blockCompressedViri = new ZGBlockCompressed("compressedviriniumblock");
+	public static final Block blockCompressedEve = new ZGBlockCompressed("compressedeveniumblock");
+	public static final Block blockCompressedCobalt = new ZGBlockCompressed("compressedcobaltblock");
+	public static final Block blockCompressedPromethean = new ZGBlockCompressed("compressedprometheanblock");
+	public static final Block blockCompressedSuperChargedCoal = new ZGBlockCompressed("compressedsuperchargedcoalblock");
 	
 	// Other
 	public static final Block blockCrater = new ZGBlockBase("crater_rock", 2.4F);
-	public static final Block blockSuperChargedCoal = new ZGBlockBase("superchargedcoalblock", 2.6F);
 	
 	public static void init() {
 		ZGBlocks.registerBlocks(edenWoodSapling, edenFruit, edenFlower, edenFlowerBlack, edenFlowerBlue, edenFlowerCyan,
@@ -214,7 +226,9 @@ public class ZGBlocks {
 				xathEmeraldOre, xathDiamondOre, xathRedstoneOre, xathIronOre, xathGoldOre, xathTinOre, oasisRock,
 				oasisStone, oasisRockBricks, oasisCobble, oasisDirt, oasisTallGrass, oasisGrass, oasisGravel,
 				oasisSuperChargedCoalOre, oasisCoalOre, oasisIronOre, oasisGoldOre, oasisRedstoneOre, oasisDiamondOre,
-				oasisTinOre, oasisLeadOre, blockViri, blockCobalt, blockEve, blockCrater, blockSuperChargedCoal);
+				oasisTinOre, oasisLeadOre, blockViri, blockCobalt, blockEve, blockPromethean, blockCrater,
+				blockSuperChargedCoal, blockCompressedHeartium, blockCompressedViri, blockCompressedEve,
+				blockCompressedCobalt, blockCompressedPromethean, blockCompressedSuperChargedCoal);
 		ZGHelper.Log("Loaded a total of " + totalBlocks + " new blocks.");
 	}
 	

@@ -28,7 +28,7 @@
                 {
                     "type": "item",
                     "name": "galacticraftcore:heavy_plating",
-                    "weight": 5,
+                    "weight": 2,
                     "functions": [
                         {
                             "function": "minecraft:set_count",
@@ -42,7 +42,7 @@
                 {
                     "type": "item",
                     "name": "minecraft:iron_ingot",
-                    "weight": 5,
+                    "weight": 9,
                     "functions": [
                         {
                             "function": "minecraft:set_count",
@@ -56,7 +56,7 @@
                 {
                     "type": "item",
                     "name": "minecraft:gold_ingot",
-                    "weight": 25,
+                    "weight": 7,
                     "functions": [
                         {
                             "function": "minecraft:set_count",
@@ -70,7 +70,7 @@
                 {
                     "type": "item",
                     "name": "minecraft:diamond",
-                    "weight": 15,
+                    "weight": 5,
                     "functions": [
                         {
                             "function": "minecraft:set_count",
@@ -84,7 +84,7 @@
                 {
                     "type": "item",
                     "name": "galacticraftplanets:item_basic_asteroids",
-                    "weight": 10,
+                    "weight": 3,
                     "functions": [
                         {
                             "function": "minecraft:set_data",
@@ -105,7 +105,7 @@
                 {
                     "type": "item",
                     "name": "zollerngalaxy:ingotviri",
-                    "weight": 12,
+                    "weight": 2,
                     "functions": [
                         {
                             "function": "minecraft:set_count",
@@ -119,7 +119,7 @@
                 {
                     "type": "item",
                     "name": "zollerngalaxy:ingotcobalt",
-                    "weight": 12,
+                    "weight": 2,
                     "functions": [
                         {
                             "function": "minecraft:set_count",
@@ -133,21 +133,7 @@
                 {
                     "type": "item",
                     "name": "zollerngalaxy:ingotevenium",
-                    "weight": 12,
-                    "functions": [
-                        {
-                            "function": "minecraft:set_count",
-                            "count": {
-                                "min": 1,
-                                "max": 4
-                            }
-                        }
-                    ]
-                },
-                {
-                    "type": "item",
-                    "name": "zollerngalaxy:alienstone",
-                    "weight": 12,
+                    "weight": 2,
                     "functions": [
                         {
                             "function": "minecraft:set_count",
@@ -168,6 +154,20 @@
                             "count": {
                                 "min": 1,
                                 "max": 20
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "zollerngalaxy:edencrystal",
+                    "weight": 4,
+                    "functions": [
+                        {
+                            "function": "minecraft:set_count",
+                            "count": {
+                                "min": 1,
+                                "max": 2
                             }
                         }
                     ]

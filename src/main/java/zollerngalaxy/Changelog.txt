@@ -31,4 +31,8 @@ Zollern Galaxy v2.0.4
 * Increased hardness and resistance of Zolnium Crystals.
 * Added a config option for Oasis to use Redstone for its Red Sea biome (false by default as it uses a lot of RAM).
 * Lowered the chance for Eden's Sacred Towers to generate.
+* Slightly increased hardness and resistance for metal blocks.
+* Added Super Charged Coal.
+    * Burns at twice the rate of regular coal.
+* More metals have been added into the mod.
 * 

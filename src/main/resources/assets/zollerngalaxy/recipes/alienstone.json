@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CVC",
+    "ZBZ",
+    "CIC"
+  ],
+  "key": {
+    "B": {
+      "item": "zollerngalaxy:viriblock"
+    },
+    "C": {
+      "item": "zollerngalaxy:edencrystal"
+    },
+    "V": {
+      "item": "zollerngalaxy:compressedvyrex"
+    },
+    "I": {
+      "item": "zollerngalaxy:brightstone"
+    },
+    "Z": {
+      "item": "zollerngalaxy:compressedcobaltblock"
+    }
+  },
+  "result": {
+    "item": "zollerngalaxy:alienstone"
+  }
+}

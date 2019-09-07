@@ -139,6 +139,7 @@ tile.xathgoldore.name=Xathian Gold Ore
 tile.xathironore.name=Xathian Iron Ore
 tile.xathtinore.name=Xathian Tin Ore
 tile.xathredstoneore.name=Xathian Redstone Ore
+tile.prometheanblock.name=Block of Promethean
 
 tile.oasisrock.name=Oasis Rock
 tile.oasisgrass.name=Oasis Grass
@@ -161,6 +162,13 @@ tile.superchargedcoalblock.name=Block of Super Charged Coal
 
 tile.heartblock.name=Healing Station
 tile.blueprintblock.name=Blueprint Repair Station
+
+tile.compressedprometheanblock.name=Block of Compressed Promethean
+tile.compressedsuperchargedcoalblock.name=Block of Compressed Super Charged Coal
+tile.compressedviriniumblock.name=Block of Compressed Virinium
+tile.compressedeveniumblock.name=Block of Compressed Evenium
+tile.compressedcobaltblock.name=Block of Compressed Cobalt
+tile.compressedheartiumblock.name=Block of Compressed Heartium
 
 container.eden.treasurechest.name=Eden's Treasure
 
@@ -210,6 +218,8 @@ item.compressedkriffonium.name=Compressed Kriffonium
 item.compressedvirinium.name=Compressed Virinium
 item.compressedheartium.name=Compressed Heartium
 item.compressedvyrex.name=Compressed Vyrexite
+item.compressedpromethean.name=Compressed Promethean
+item.compressedsuperchargedcoal.name=Compressed Super Charged Coal
 
 item.superchargedcoal.name=Super Charged Coal
 

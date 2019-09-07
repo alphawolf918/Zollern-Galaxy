@@ -10,4 +10,7 @@
 * Random alien encounters that cause various things to happen.
 * An "Omnitool" capable of harvesting specific resources.
 * Interaction with Modular Powersuits.
+* Interaction with Forestry.
+    * Special hives that generate on a certain planet.
+* Planet LV-426 with Facehuggers from Alien.
 * 

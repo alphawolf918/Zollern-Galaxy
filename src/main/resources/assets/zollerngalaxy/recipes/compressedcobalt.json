@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "zollerngalaxy:compressedcobaltblock"
+    }
+  ],
+  "result": {
+    "item": "zollerngalaxy:compressedcobalt",
+    "count": 9
+  }
+}

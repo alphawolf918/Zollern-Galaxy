@@ -33,7 +33,14 @@ public class CraftingRecipes {
 		CraftingRecipes.addIngotMetal(ZGItems.ingotViri, ZGBlocks.blockViri);
 		CraftingRecipes.addIngotMetal(ZGItems.ingotCobalt, ZGBlocks.blockCobalt);
 		CraftingRecipes.addIngotMetal(ZGItems.ingotEve, ZGBlocks.blockEve);
+		CraftingRecipes.addIngotMetal(ZGItems.prometheanCrystal, ZGBlocks.blockPromethean);
 		CraftingRecipes.addIngotMetal(ZGItems.superChargedCoal, ZGBlocks.blockSuperChargedCoal);
+		CraftingRecipes.addIngotMetal(ZGItems.compressedCobalt, ZGBlocks.blockCompressedCobalt);
+		CraftingRecipes.addIngotMetal(ZGItems.compressedEvenium, ZGBlocks.blockCompressedEve);
+		CraftingRecipes.addIngotMetal(ZGItems.compressedHeartium, ZGBlocks.blockCompressedHeartium);
+		CraftingRecipes.addIngotMetal(ZGItems.compressedPromethean, ZGBlocks.blockCompressedPromethean);
+		CraftingRecipes.addIngotMetal(ZGItems.compressedSuperChargedCoal, ZGBlocks.blockCompressedSuperChargedCoal);
+		CraftingRecipes.addIngotMetal(ZGItems.compressedVirinium, ZGBlocks.blockCompressedViri);
 		
 		CraftingRecipes.addBriteStone(ZGItems.dustBrightstone, ZGBlocks.edenBrightStone);
 		
@@ -57,6 +64,12 @@ public class CraftingRecipes {
 				ZGItems.compressedEvenium, 'R', Items.REDSTONE });
 		totalCraftRecipes++;
 		
+		// Eden's Crystal
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.alienStone, 1), new Object[] { "CVC", "ZBZ", "CIC", 'C',
+				ZGItems.edenCrystal, 'V', ZGItems.compressedVyrex, 'Z', ZGBlocks.blockCompressedCobalt, 'B',
+				ZGBlocks.blockViri, 'I', ZGBlocks.edenBrightStone });
+		totalCraftRecipes++;
+		
 		// Star Gate (Tier 1)
 		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.starGateTier1, 1),
 				new Object[] { "VCV", "HYH", "YCY", 'V', ZGItems.compressedDiamond, 'C', ZGItems.compressedHeartium, 'H',
@@ -75,7 +88,12 @@ public class CraftingRecipes {
 		totalCraftRecipes++;
 		
 		// Star Gate (Tier 4)
-		// TODO: Next release...
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.starGateTier4, 1), new Object[] { "VCV", "HYH", "YCY", 'V',
+				ZGBlocks.blockCompressedViri, 'C', ZGItems.compressedVyrex, 'H', ZGBlocks.blockCompressedCobalt, 'Y',
+				ZGItems.alienStone });
+		
+		// Star Gate (Tier 5)
+		// TODO: Next release..
 	}
 	
 	private static void addRockBricks(Block stoneIn, Block bricksOut) {

@@ -7,7 +7,7 @@ import zollerngalaxy.core.enums.EnumBlockType;
 public class ZGBlockMetal extends ZGBlockBase {
 	
 	public ZGBlockMetal(String strTexture) {
-		super(strTexture, 2.1F);
+		super(strTexture, 2.4F);
 		this.setMaterial(Material.IRON);
 		this.setSoundType(SoundType.METAL);
 		this.setBlockType(EnumBlockType.METAL);

@@ -3,6 +3,7 @@ package zollerngalaxy.recipes;
 import micdoodle8.mods.galacticraft.api.recipe.CompressorRecipes;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.items.ZGItems;
 import zollerngalaxy.lib.helpers.ZGHelper;
 
@@ -27,8 +28,8 @@ public class CompressorRecipesZG {
 		totalCompressorRecipes++;
 		
 		// Compressed Vyrex
-		CompressorRecipes.addShapelessRecipe(new ItemStack(ZGItems.compressedVyrex, 2), new ItemStack(
-				ZGItems.compressedVirinium, 1, 0), new ItemStack(ZGItems.compressedHeartium, 1, 0));
+		CompressorRecipes.addShapelessRecipe(new ItemStack(ZGItems.compressedVyrex, 1), new ItemStack(
+				ZGBlocks.blockCompressedViri, 1, 0), new ItemStack(ZGBlocks.blockCompressedHeartium, 1, 0));
 		totalCompressorRecipes++;
 		
 		// Compressed Cobalt
@@ -54,6 +55,16 @@ public class CompressorRecipesZG {
 		// Compressed Gold
 		CompressorRecipes.addShapelessRecipe(new ItemStack(ZGItems.compressedGold, 2),
 				new ItemStack(Items.GOLD_INGOT, 1, 0), new ItemStack(Items.GOLD_INGOT, 1, 0));
+		totalCompressorRecipes++;
+		
+		// Compressed Promethean
+		CompressorRecipes.addShapelessRecipe(new ItemStack(ZGItems.compressedPromethean, 1), new ItemStack(
+				ZGBlocks.blockPromethean, 1, 0), ZGBlocks.blockPromethean);
+		totalCompressorRecipes++;
+		
+		// Compressed Super Charged Coal
+		CompressorRecipes.addShapelessRecipe(new ItemStack(ZGItems.compressedSuperChargedCoal, 1), new ItemStack(
+				ZGBlocks.blockSuperChargedCoal, 1, 0), ZGBlocks.blockSuperChargedCoal);
 		totalCompressorRecipes++;
 		
 		ZGHelper.Log("Loaded a total of " + totalCompressorRecipes + " new compressor recipes.");

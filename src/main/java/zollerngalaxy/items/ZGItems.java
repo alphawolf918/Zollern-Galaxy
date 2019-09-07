@@ -31,6 +31,8 @@ public class ZGItems {
 	public static final Item hud = new ItemHUD();
 	public static final Item alienStone = new ZGItemBase("alienstone");
 	
+	public static final Item superChargedCoal = new ItemFuelBase("superchargedcoal", 6400);
+	
 	public static final Item compressedCobalt = new ZGItemBase("compressedcobalt");
 	public static final Item compressedDiamond = new ZGItemBase("compresseddiamond");
 	public static final Item compressedEmerald = new ZGItemBase("compressedemerald");
@@ -40,14 +42,14 @@ public class ZGItems {
 	public static final Item compressedKriffonium = new ZGItemBase("compressedkriffonium");
 	public static final Item compressedVirinium = new ZGItemBase("compressedvirinium");
 	public static final Item compressedVyrex = new ZGItemBase("compressedvyrex");
+	public static final Item compressedPromethean = new ZGItemBase("compressedpromethean");
+	public static final Item compressedSuperChargedCoal = new ZGItemBase("compressedsuperchargedcoal");
 	
 	public static final Item rawAlienBacon = new ZGItemFood("alienbaconraw", 2, 1.5F, true);
 	public static final Item rawAlienBeef = new ZGItemFood("alienbeefraw", 2, 1.5F, true);
 	public static final Item cookedAlienBacon = new ZGItemFood("alienbaconcooked", 6, 4.0F, true);
 	public static final Item cookedAlienBeef = new ZGItemFood("alienbeefcooked", 6, 4.0F, true);
 	public static final Item edenFruit = new ZGItemFood("fruitofeden", 4, 2.5F, false);
-	
-	public static final Item superChargedCoal = new ItemFuelBase("superchargedcoal", 6400);
 	
 	public static final Item edenDungeonKey = new ZGItemBase("edendungeonkey");
 	
@@ -69,9 +71,10 @@ public class ZGItems {
 				prometheanCrystal, plutoniumCrystal, dustBrightstone, dustViri, dustEve, dustCobalt, dustDiamond,
 				dustEmerald, ingotViri, ingotCobalt, ingotEve, hud, alienStone, compressedCobalt, compressedDiamond,
 				compressedEmerald, compressedEvenium, compressedGold, compressedHeartium, compressedKriffonium,
-				compressedVirinium, compressedVyrex, rawAlienBacon, cookedAlienBacon, rawAlienBeef, cookedAlienBeef,
-				edenFruit, edenDungeonKey, superChargedCoal, starGateTier1, starGateTier2, starGateTier3, starGateTier4,
-				starGateTier5, starGateTier6, starGateTier7, starGateTier8, starGateTier9, starGateTier10, OMNITOOL);
+				compressedVirinium, compressedVyrex, compressedPromethean, compressedSuperChargedCoal, rawAlienBacon,
+				cookedAlienBacon, rawAlienBeef, cookedAlienBeef, edenFruit, edenDungeonKey, superChargedCoal, starGateTier1,
+				starGateTier2, starGateTier3, starGateTier4, starGateTier5, starGateTier6, starGateTier7, starGateTier8,
+				starGateTier9, starGateTier10, OMNITOOL);
 		ZGHelper.Log("Loaded a total of " + totalItems + " new items.");
 	}
 	
