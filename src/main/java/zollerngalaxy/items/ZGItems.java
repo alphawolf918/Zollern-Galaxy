@@ -1,7 +1,13 @@
 package zollerngalaxy.items;
 
 import net.minecraft.item.Item;
+import zollerngalaxy.core.enums.EnumHarvestLevelZG;
 import zollerngalaxy.items.tools.ItemOmnitool;
+import zollerngalaxy.items.tools.ZGItemAxe;
+import zollerngalaxy.items.tools.ZGItemHoe;
+import zollerngalaxy.items.tools.ZGItemPickaxe;
+import zollerngalaxy.items.tools.ZGItemShovel;
+import zollerngalaxy.items.tools.ZGItemSword;
 import zollerngalaxy.lib.helpers.CommonZGRegisterHelper;
 import zollerngalaxy.lib.helpers.ZGHelper;
 
@@ -64,7 +70,33 @@ public class ZGItems {
 	public static final Item starGateTier9 = new ItemStargate(9);
 	public static final Item starGateTier10 = new ItemStargate(10);
 	
+	// Tools
 	public static final Item OMNITOOL = new ItemOmnitool();
+	
+	// Pickaxes
+	public static final Item pickaxeCobalt = new ZGItemPickaxe("cobalt", EnumHarvestLevelZG.COBALT.getHarvestLevel());
+	public static final Item pickaxeEvenium = new ZGItemPickaxe("evenium", EnumHarvestLevelZG.EVENIUM.getHarvestLevel());
+	public static final Item pickaxeVirinium = new ZGItemPickaxe("virinium", EnumHarvestLevelZG.VIRINIUM.getHarvestLevel());
+	
+	// Shovels
+	public static final Item shovelCobalt = new ZGItemShovel("cobalt", EnumHarvestLevelZG.COBALT.getHarvestLevel());
+	public static final Item shovelEvenium = new ZGItemShovel("evenium", EnumHarvestLevelZG.EVENIUM.getHarvestLevel());
+	public static final Item shovelVirinium = new ZGItemShovel("virinium", EnumHarvestLevelZG.VIRINIUM.getHarvestLevel());
+	
+	// Axes
+	public static final Item axeCobalt = new ZGItemAxe("cobalt", EnumHarvestLevelZG.COBALT.getHarvestLevel());
+	public static final Item axeEvenium = new ZGItemAxe("evenium", EnumHarvestLevelZG.EVENIUM.getHarvestLevel());
+	public static final Item axeVirinium = new ZGItemAxe("virinium", EnumHarvestLevelZG.VIRINIUM.getHarvestLevel());
+	
+	// Hoes
+	public static final Item hoeCobalt = new ZGItemHoe("cobalt", EnumHarvestLevelZG.COBALT.getHarvestLevel());
+	public static final Item hoeEvenium = new ZGItemHoe("evenium", EnumHarvestLevelZG.EVENIUM.getHarvestLevel());
+	public static final Item hoeVirinium = new ZGItemHoe("virinium", EnumHarvestLevelZG.VIRINIUM.getHarvestLevel());
+	
+	// Swords
+	public static final Item swordCobalt = new ZGItemSword("cobalt", EnumHarvestLevelZG.COBALT.getHarvestLevel());
+	public static final Item swordEvenium = new ZGItemSword("evenium", EnumHarvestLevelZG.EVENIUM.getHarvestLevel());
+	public static final Item swordVirinium = new ZGItemSword("virinium", EnumHarvestLevelZG.VIRINIUM.getHarvestLevel());
 	
 	public static void init() {
 		ZGItems.registerItems(heartOfZol, zolCrystal, kriffCrystal, purgCrystal, edenCrystal, purgEssence,
@@ -74,7 +106,9 @@ public class ZGItems {
 				compressedVirinium, compressedVyrex, compressedPromethean, compressedSuperChargedCoal, rawAlienBacon,
 				cookedAlienBacon, rawAlienBeef, cookedAlienBeef, edenFruit, edenDungeonKey, superChargedCoal, starGateTier1,
 				starGateTier2, starGateTier3, starGateTier4, starGateTier5, starGateTier6, starGateTier7, starGateTier8,
-				starGateTier9, starGateTier10, OMNITOOL);
+				starGateTier9, starGateTier10, OMNITOOL, pickaxeCobalt, pickaxeEvenium, pickaxeVirinium, shovelCobalt,
+				shovelEvenium, shovelVirinium, axeCobalt, axeEvenium, axeVirinium, hoeCobalt, hoeEvenium, hoeVirinium,
+				swordCobalt, swordEvenium, swordVirinium);
 		ZGHelper.Log("Loaded a total of " + totalItems + " new items.");
 	}
 	

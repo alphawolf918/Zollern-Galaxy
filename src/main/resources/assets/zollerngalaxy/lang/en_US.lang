@@ -236,6 +236,24 @@ item.stargate_tier10.name=Stargate (Protocol Ten)
 
 item.omnitool.name=Omnitool
 
+item.cobalt_pickaxe.name=Cobalt Pickaxe
+item.cobalt_sword.name=Cobalt Sword
+item.cobalt_shovel.name=Cobalt Shovel
+item.cobalt_axe.name=Cobalt Axe
+item.cobalt_hoe.name=Cobalt Hoe
+
+item.evenium_pickaxe.name=Evenium Pickaxe
+item.evenium_sword.name=Evenium Sword
+item.evenium_shovel.name=Evenium Shovel
+item.evenium_axe.name=Evenium Axe
+item.evenium_hoe.name=Evenium Hoe
+
+item.virinium_pickaxe.name=Virinium Pickaxe
+item.virinium_sword.name=Virinium Sword
+item.virinium_shovel.name=Virinium Shovel
+item.virinium_axe.name=Virinium Axe
+item.virinium_hoe.name=Virinium Hoe
+
 entity.zollerngalaxy:moolus.name=Moolus
 entity.zollerngalaxy:oinkus.name=Oinkus
 entity.zollerngalaxy:squidlus.name=Squidlus

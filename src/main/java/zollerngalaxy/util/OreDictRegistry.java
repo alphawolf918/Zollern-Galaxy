@@ -127,22 +127,26 @@ public class OreDictRegistry {
 		registerOre("dustCobalt", ZGItems.dustCobalt);
 		registerOre("ingotCobalt", ZGItems.ingotCobalt);
 		registerOre("blockCobalt", ZGBlocks.blockCobalt);
+		registerOre("pickaxeCobalt", ZGItems.pickaxeCobalt);
 		
 		// Evenium
 		registerOre("oreEvenium", ZGBlocks.edenEveniumOre, ZGBlocks.purgEveniumOre);
 		registerOre("dustEvenium", ZGItems.dustEve);
 		registerOre("ingotEvenium", ZGItems.ingotEve);
 		registerOre("blockEvenium", ZGBlocks.blockEve);
+		registerOre("pickaxeEvenium", ZGItems.pickaxeVirinium);
 		
 		// Virinium
 		registerOre("oreVirinium", ZGBlocks.edenViriniumOre);
 		registerOre("dustVirinium", ZGItems.dustViri);
 		registerOre("ingotVirinium", ZGItems.ingotViri);
 		registerOre("blockVirinium", ZGBlocks.blockViri);
+		registerOre("pickaxeVirinium", ZGItems.pickaxeVirinium);
 		
 		// Promethean
 		registerOre("orePromethean", ZGBlocks.xathPrometheanOre);
 		registerOre("gemPromethean", ZGItems.prometheanCrystal);
+		registerOre("blockPromethean", ZGBlocks.blockPromethean);
 		
 		// Super Charged Coal
 		registerOre("oreSuperChargedCoal", ZGBlocks.oasisSuperChargedCoalOre);
@@ -150,6 +154,9 @@ public class OreDictRegistry {
 		registerOre("blockSuperChargedCoal", ZGBlocks.blockSuperChargedCoal);
 		
 		// Titanium
+		// TODO
+		
+		// Plutonium
 		// TODO
 		
 		// TODO: Add More...

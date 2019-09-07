@@ -64,11 +64,21 @@ public class CraftingRecipes {
 				ZGItems.compressedEvenium, 'R', Items.REDSTONE });
 		totalCraftRecipes++;
 		
-		// Eden's Crystal
+		// Eden Crystal
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.edenCrystal, 1), new Object[] { "EXE", "HRH", "EXE", 'E',
+				ZGItems.compressedEmerald, 'R', ZGItems.kriffCrystal, 'X', ZGItems.purgCrystal, 'H', ZGItems.zolCrystal });
+		totalCraftRecipes++;
+		
+		// Alien Stone
 		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.alienStone, 1), new Object[] { "CVC", "ZBZ", "CIC", 'C',
 				ZGItems.edenCrystal, 'V', ZGItems.compressedVyrex, 'Z', ZGBlocks.blockCompressedCobalt, 'B',
 				ZGBlocks.blockViri, 'I', ZGBlocks.edenBrightStone });
 		totalCraftRecipes++;
+		
+		// Pickaxes
+		CraftingRecipes.addToolSet(new ItemStack(ZGItems.pickaxeCobalt), ZGItems.ingotCobalt, "pickaxe");
+		CraftingRecipes.addToolSet(new ItemStack(ZGItems.pickaxeEvenium), ZGItems.ingotEve, "pickaxe");
+		CraftingRecipes.addToolSet(new ItemStack(ZGItems.pickaxeVirinium), ZGItems.ingotViri, "pickaxe");
 		
 		// Star Gate (Tier 1)
 		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.starGateTier1, 1),
@@ -91,6 +101,7 @@ public class CraftingRecipes {
 		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.starGateTier4, 1), new Object[] { "VCV", "HYH", "YCY", 'V',
 				ZGBlocks.blockCompressedViri, 'C', ZGItems.compressedVyrex, 'H', ZGBlocks.blockCompressedCobalt, 'Y',
 				ZGItems.alienStone });
+		totalCraftRecipes++;
 		
 		// Star Gate (Tier 5)
 		// TODO: Next release..
@@ -114,6 +125,11 @@ public class CraftingRecipes {
 	
 	private static void addPlanks(Block logIn, Block planksOut) {
 		ZGRecipeHelper.addShapelessRecipe(new ItemStack(planksOut, 4), new ItemStack(logIn));
+		totalCraftRecipes++;
+	}
+	
+	private static void addToolSet(ItemStack itemOutput, Item itemIngot, String toolType) {
+		ZGRecipeHelper.addSimpleToolSet(itemOutput, itemIngot, toolType);
 		totalCraftRecipes++;
 	}
 }
