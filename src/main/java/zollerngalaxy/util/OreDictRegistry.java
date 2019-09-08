@@ -132,14 +132,14 @@ public class OreDictRegistry {
 		// Evenium
 		registerOre("oreEvenium", ZGBlocks.edenEveniumOre, ZGBlocks.purgEveniumOre);
 		registerOre("dustEvenium", ZGItems.dustEve);
-		registerOre("ingotEvenium", ZGItems.ingotEve);
+		registerOre("ingotEvenium", ZGItems.ingotEvenium);
 		registerOre("blockEvenium", ZGBlocks.blockEve);
 		registerOre("pickaxeEvenium", ZGItems.pickaxeVirinium);
 		
 		// Virinium
 		registerOre("oreVirinium", ZGBlocks.edenViriniumOre);
 		registerOre("dustVirinium", ZGItems.dustViri);
-		registerOre("ingotVirinium", ZGItems.ingotViri);
+		registerOre("ingotVirinium", ZGItems.ingotVirinium);
 		registerOre("blockVirinium", ZGBlocks.blockViri);
 		registerOre("pickaxeVirinium", ZGItems.pickaxeVirinium);
 		

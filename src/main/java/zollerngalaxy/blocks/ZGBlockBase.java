@@ -50,7 +50,7 @@ public class ZGBlockBase extends Block implements ISingleZGBlockRender, IJSONBlo
 	}
 	
 	public ZGBlockBase(String blockName) {
-		this(blockName, 2.0F);
+		this(blockName, 2.6F);
 	}
 	
 	public void setBlockName(Block block, final String blockName) {
@@ -125,15 +125,6 @@ public class ZGBlockBase extends Block implements ISingleZGBlockRender, IJSONBlo
 	
 	public boolean getShouldAlwaysBurn() {
 		return this.shouldAlwaysBurn;
-	}
-	
-	protected static void setHarvestLevel(Block block, String toolClass, int level) {
-		block.setHarvestLevel(toolClass, level);
-	}
-	
-	@Override
-	public void setHarvestLevel(String toolClass, int level) {
-		super.setHarvestLevel(toolClass, level);
 	}
 	
 	public Block setBlockHarvestLevel(String toolClass, int level) {

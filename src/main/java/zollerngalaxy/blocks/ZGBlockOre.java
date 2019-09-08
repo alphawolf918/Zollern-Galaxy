@@ -11,6 +11,7 @@ import net.minecraft.world.World;
 import zollerngalaxy.core.enums.EnumBlockTier;
 import zollerngalaxy.core.enums.EnumBlockType;
 import zollerngalaxy.core.enums.EnumHarvestLevelZG;
+import zollerngalaxy.core.enums.EnumHarvestToolZG;
 
 public class ZGBlockOre extends ZGBlockBase {
 	
@@ -21,10 +22,15 @@ public class ZGBlockOre extends ZGBlockBase {
 	protected boolean hasPotionEffect = false;
 	protected Potion blockPotionEffect;
 	protected Random rand = new Random();
+	protected String harvestTool = "pickaxe";
+	protected int harvestLevel = 3;
 	
 	public ZGBlockOre(String blockName, float hardResist) {
 		super(blockName, hardResist);
+		this.setHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.DIAMOND.getHarvestLevel());
 		this.setBlockType(EnumBlockType.ORE);
+		this.harvestTool = EnumHarvestToolZG.PICKAXE.getHarvestTool();
+		this.harvestLevel = EnumHarvestLevelZG.DIAMOND.getHarvestLevel();
 	}
 	
 	public Block setShouldGivePotionEffect(boolean shouldGivePotionEffect, Potion potionEffect) {
@@ -105,6 +111,11 @@ public class ZGBlockOre extends ZGBlockBase {
 	
 	@Override
 	public int getHarvestLevel(IBlockState state) {
-		return EnumHarvestLevelZG.DIAMOND.getHarvestLevel();
+		return this.harvestLevel;
+	}
+	
+	@Override
+	public String getHarvestTool(IBlockState state) {
+		return this.harvestTool;
 	}
 }

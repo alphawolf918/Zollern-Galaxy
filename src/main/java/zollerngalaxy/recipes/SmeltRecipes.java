@@ -43,7 +43,7 @@ public class SmeltRecipes {
 		SmeltRecipes.SmeltBlockToItem(ZGBlocks.purgTinOre, new ItemStack(GCItems.basicItem, 1, 4), 2.4F); // Tin
 		SmeltRecipes.SmeltBlockToItem(ZGBlocks.purgAluminumOre, new ItemStack(GCItems.basicItem, 1, 5), 2.4F); // Aluminum
 		SmeltRecipes.SmeltBlockToItem(ZGBlocks.purgCobaltOre, ZGItems.ingotCobalt, 1.6F); // Cobalt
-		SmeltRecipes.SmeltBlockToItem(ZGBlocks.purgEveniumOre, ZGItems.ingotEve, 3.6F); // Evenium
+		SmeltRecipes.SmeltBlockToItem(ZGBlocks.purgEveniumOre, ZGItems.ingotEvenium, 3.6F); // Evenium
 		
 		// Eden
 		SmeltRecipes.SmeltBlock(ZGBlocks.edenCobbleRock, ZGBlocks.edenStone, 1.5F); // Eden
@@ -56,7 +56,7 @@ public class SmeltRecipes {
 		SmeltRecipes.SmeltBlockToItem(ZGBlocks.edenAluminumOre, new ItemStack(GCItems.basicItem, 1, 5), 2.4F); // Aluminum
 		SmeltRecipes.SmeltBlockToItem(ZGBlocks.edenLeadOre, new ItemStack(VenusItems.basicItem, 1, 1), 2.4F); // Lead
 		SmeltRecipes.SmeltBlockToItem(ZGBlocks.edenCobaltOre, ZGItems.ingotCobalt, 1.6F); // Cobalt
-		SmeltRecipes.SmeltBlockToItem(ZGBlocks.edenEveniumOre, ZGItems.ingotEve, 3.6F); // Evenium
+		SmeltRecipes.SmeltBlockToItem(ZGBlocks.edenEveniumOre, ZGItems.ingotEvenium, 3.6F); // Evenium
 		
 		// Xathius
 		SmeltRecipes.SmeltBlock(ZGBlocks.xathCobble, ZGBlocks.xathStone, 1.5F); // Xath
@@ -95,8 +95,8 @@ public class SmeltRecipes {
 		SmeltRecipes.SmeltItem(ZGItems.dustDiamond, Items.DIAMOND, 2.6F);
 		SmeltRecipes.SmeltItem(ZGItems.dustEmerald, Items.EMERALD, 3.2F);
 		SmeltRecipes.SmeltItem(ZGItems.dustCobalt, ZGItems.ingotCobalt, 2.4F);
-		SmeltRecipes.SmeltItem(ZGItems.dustEve, ZGItems.ingotEve, 2.8F);
-		SmeltRecipes.SmeltItem(ZGItems.dustViri, ZGItems.ingotViri, 2.6F);
+		SmeltRecipes.SmeltItem(ZGItems.dustEve, ZGItems.ingotEvenium, 2.8F);
+		SmeltRecipes.SmeltItem(ZGItems.dustViri, ZGItems.ingotVirinium, 2.6F);
 		
 		// Food (Raw -> Cooked)
 		SmeltRecipes.SmeltItem(ZGItems.rawAlienBacon, ZGItems.cookedAlienBacon, 1.2F);

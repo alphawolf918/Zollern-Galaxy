@@ -30,9 +30,9 @@ public class CraftingRecipes {
 		CraftingRecipes.addRockBricks(ZGBlocks.xathStone, ZGBlocks.xathRockBricks);
 		CraftingRecipes.addRockBricks(ZGBlocks.oasisStone, ZGBlocks.oasisRockBricks);
 		
-		CraftingRecipes.addIngotMetal(ZGItems.ingotViri, ZGBlocks.blockViri);
+		CraftingRecipes.addIngotMetal(ZGItems.ingotVirinium, ZGBlocks.blockViri);
 		CraftingRecipes.addIngotMetal(ZGItems.ingotCobalt, ZGBlocks.blockCobalt);
-		CraftingRecipes.addIngotMetal(ZGItems.ingotEve, ZGBlocks.blockEve);
+		CraftingRecipes.addIngotMetal(ZGItems.ingotEvenium, ZGBlocks.blockEve);
 		CraftingRecipes.addIngotMetal(ZGItems.prometheanCrystal, ZGBlocks.blockPromethean);
 		CraftingRecipes.addIngotMetal(ZGItems.superChargedCoal, ZGBlocks.blockSuperChargedCoal);
 		CraftingRecipes.addIngotMetal(ZGItems.compressedCobalt, ZGBlocks.blockCompressedCobalt);
@@ -76,9 +76,32 @@ public class CraftingRecipes {
 		totalCraftRecipes++;
 		
 		// Pickaxes
-		CraftingRecipes.addToolSet(new ItemStack(ZGItems.pickaxeCobalt), ZGItems.ingotCobalt, "pickaxe");
-		CraftingRecipes.addToolSet(new ItemStack(ZGItems.pickaxeEvenium), ZGItems.ingotEve, "pickaxe");
-		CraftingRecipes.addToolSet(new ItemStack(ZGItems.pickaxeVirinium), ZGItems.ingotViri, "pickaxe");
+		CraftingRecipes.addPickaxe(new ItemStack(ZGItems.pickaxeCobalt), ZGItems.ingotCobalt);
+		CraftingRecipes.addPickaxe(new ItemStack(ZGItems.pickaxeEvenium), ZGItems.ingotEvenium);
+		CraftingRecipes.addPickaxe(new ItemStack(ZGItems.pickaxeVirinium), ZGItems.ingotVirinium);
+		
+		// Shovels
+		CraftingRecipes.addShovel(new ItemStack(ZGItems.shovelCobalt), ZGItems.ingotCobalt);
+		CraftingRecipes.addShovel(new ItemStack(ZGItems.shovelEvenium), ZGItems.ingotEvenium);
+		CraftingRecipes.addShovel(new ItemStack(ZGItems.shovelVirinium), ZGItems.ingotVirinium);
+		
+		// Axes
+		CraftingRecipes.addAxe(new ItemStack(ZGItems.axeCobalt), ZGItems.ingotCobalt);
+		CraftingRecipes.addAxe(new ItemStack(ZGItems.axeEvenium), ZGItems.ingotEvenium);
+		CraftingRecipes.addAxe(new ItemStack(ZGItems.axeVirinium), ZGItems.ingotVirinium);
+		
+		// Swords
+		CraftingRecipes.addSword(new ItemStack(ZGItems.swordCobalt), ZGItems.ingotCobalt);
+		CraftingRecipes.addSword(new ItemStack(ZGItems.swordEvenium), ZGItems.ingotEvenium);
+		CraftingRecipes.addSword(new ItemStack(ZGItems.swordVirinium), ZGItems.ingotVirinium);
+		
+		// Hoes
+		CraftingRecipes.addHoe(new ItemStack(ZGItems.hoeCobalt), ZGItems.ingotCobalt);
+		CraftingRecipes.addHoe(new ItemStack(ZGItems.hoeEvenium), ZGItems.ingotEvenium);
+		CraftingRecipes.addHoe(new ItemStack(ZGItems.hoeVirinium), ZGItems.ingotVirinium);
+		
+		// Omnitool
+		// TODO
 		
 		// Star Gate (Tier 1)
 		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.starGateTier1, 1),
@@ -131,5 +154,25 @@ public class CraftingRecipes {
 	private static void addToolSet(ItemStack itemOutput, Item itemIngot, String toolType) {
 		ZGRecipeHelper.addSimpleToolSet(itemOutput, itemIngot, toolType);
 		totalCraftRecipes++;
+	}
+	
+	private static void addPickaxe(ItemStack itemOutput, Item itemIngot) {
+		CraftingRecipes.addToolSet(itemOutput, itemIngot, "pickaxe");
+	}
+	
+	private static void addShovel(ItemStack itemOutput, Item itemIngot) {
+		CraftingRecipes.addToolSet(itemOutput, itemIngot, "shovel");
+	}
+	
+	private static void addAxe(ItemStack itemOutput, Item itemIngot) {
+		CraftingRecipes.addToolSet(itemOutput, itemIngot, "axe");
+	}
+	
+	private static void addSword(ItemStack itemOutput, Item itemIngot) {
+		CraftingRecipes.addToolSet(itemOutput, itemIngot, "sword");
+	}
+	
+	private static void addHoe(ItemStack itemOutput, Item itemIngot) {
+		CraftingRecipes.addToolSet(itemOutput, itemIngot, "hoe");
 	}
 }

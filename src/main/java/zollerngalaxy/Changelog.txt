@@ -35,4 +35,6 @@ Zollern Galaxy v2.0.4
 * Added Super Charged Coal.
     * Burns at twice the rate of regular coal.
 * More metals have been added into the mod.
-* 
+* Added three tool sets. Armor will come later.
+* Updated all ores to need Diamond level or higher Pickaxes.
+* Increased harvest level of ores per planet.

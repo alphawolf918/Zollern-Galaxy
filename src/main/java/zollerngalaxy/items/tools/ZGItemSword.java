@@ -13,7 +13,7 @@ import zollerngalaxy.lib.helpers.json.JSONFactory;
 public class ZGItemSword extends ItemSword implements ISingleZGItemRender {
 	
 	protected String toolType = "sword";
-	protected float strengthMultiplier = 2.0F;
+	protected float strengthMultiplier = 4.0F;
 	protected int harvestLvl = 3;
 	
 	public ZGItemSword(String toolMetalName, int harvestLevel) {
@@ -21,7 +21,7 @@ public class ZGItemSword extends ItemSword implements ISingleZGItemRender {
 		this.setItemName(this, toolMetalName + "_" + this.toolType);
 		this.setMaxDamage(this.getDiamondMaxUses() * harvestLevel);
 		this.setHarvestLevel(this.toolType, harvestLevel);
-		this.strengthMultiplier = ToolMaterial.DIAMOND.getAttackDamage() + (harvestLevel + 2);
+		this.strengthMultiplier = (harvestLevel + 2) * 1.0F;
 		this.harvestLvl = harvestLevel;
 		this.initJSONFactory();
 	}
@@ -40,12 +40,12 @@ public class ZGItemSword extends ItemSword implements ISingleZGItemRender {
 	
 	@Override
 	public int getItemEnchantability() {
-		return ToolMaterial.DIAMOND.getEnchantability() * harvestLvl;
+		return ToolMaterial.DIAMOND.getEnchantability() * this.harvestLvl;
 	}
 	
 	@Override
 	public float getAttackDamage() {
-		return this.strengthMultiplier;
+		return ToolMaterial.DIAMOND.getAttackDamage() * this.strengthMultiplier;
 	}
 	
 	public void setItemName(final Item item, final String itemName) {

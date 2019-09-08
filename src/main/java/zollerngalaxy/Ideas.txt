@@ -3,7 +3,7 @@
 * Exotic planets.
     - Will have unique properties, landscapes, features, ores, mobs, resources, etc., and will be "weird."
 * Easter eggs.
-    - A chance that using a Star Gate will have a 1 in 1,000 chance of teleporting the Player to one of two places:
+    - A chance that using a Star Gate will have a 1 in 10,000 chance of teleporting the Player to one of two places:
         - A deep, desolate void in the middle of space.
         - A rare planet that can only be reached by meeting certain criteria.
 * Different temperatures for day and night.
@@ -11,6 +11,8 @@
 * An "Omnitool" capable of harvesting specific resources.
 * Interaction with Modular Powersuits.
 * Interaction with Forestry.
-    * Special hives that generate on a certain planet.
+    * Special hives that generate on a certain planet. Space bees!
 * Planet LV-426 with Facehuggers from Alien.
+* Candy Planet.
+* Pizza Planet?
 * 

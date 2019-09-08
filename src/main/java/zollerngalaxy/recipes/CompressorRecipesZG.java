@@ -13,13 +13,13 @@ public class CompressorRecipesZG {
 	
 	public static void init() {
 		// Compressed Virinium
-		CompressorRecipes.addShapelessRecipe(new ItemStack(ZGItems.compressedVirinium, 2), new ItemStack(ZGItems.ingotViri,
-				1, 0), new ItemStack(ZGItems.ingotViri, 1, 0));
+		CompressorRecipes.addShapelessRecipe(new ItemStack(ZGItems.compressedVirinium, 2), new ItemStack(ZGItems.ingotVirinium,
+				1, 0), new ItemStack(ZGItems.ingotVirinium, 1, 0));
 		totalCompressorRecipes++;
 		
 		// Compressed Evenium
-		CompressorRecipes.addShapelessRecipe(new ItemStack(ZGItems.compressedEvenium, 2), new ItemStack(ZGItems.ingotEve, 1,
-				0), new ItemStack(ZGItems.ingotEve, 1, 0));
+		CompressorRecipes.addShapelessRecipe(new ItemStack(ZGItems.compressedEvenium, 2), new ItemStack(ZGItems.ingotEvenium, 1,
+				0), new ItemStack(ZGItems.ingotEvenium, 1, 0));
 		totalCompressorRecipes++;
 		
 		// Compressed Heartium

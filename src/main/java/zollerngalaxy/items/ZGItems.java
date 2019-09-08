@@ -31,9 +31,9 @@ public class ZGItems {
 	public static final Item dustEmerald = new ZGItemBase("emeralddust");
 	public static final Item dustBrightstone = new ZGItemBase("brightstonedust");
 	
-	public static final Item ingotViri = new ZGItemBase("ingotviri");
+	public static final Item ingotVirinium = new ZGItemBase("ingotviri");
 	public static final Item ingotCobalt = new ZGItemBase("ingotcobalt");
-	public static final Item ingotEve = new ZGItemBase("ingotevenium");
+	public static final Item ingotEvenium = new ZGItemBase("ingotevenium");
 	public static final Item hud = new ItemHUD();
 	public static final Item alienStone = new ZGItemBase("alienstone");
 	
@@ -101,7 +101,7 @@ public class ZGItems {
 	public static void init() {
 		ZGItems.registerItems(heartOfZol, zolCrystal, kriffCrystal, purgCrystal, edenCrystal, purgEssence,
 				prometheanCrystal, plutoniumCrystal, dustBrightstone, dustViri, dustEve, dustCobalt, dustDiamond,
-				dustEmerald, ingotViri, ingotCobalt, ingotEve, hud, alienStone, compressedCobalt, compressedDiamond,
+				dustEmerald, ingotVirinium, ingotCobalt, ingotEvenium, hud, alienStone, compressedCobalt, compressedDiamond,
 				compressedEmerald, compressedEvenium, compressedGold, compressedHeartium, compressedKriffonium,
 				compressedVirinium, compressedVyrex, compressedPromethean, compressedSuperChargedCoal, rawAlienBacon,
 				cookedAlienBacon, rawAlienBeef, cookedAlienBeef, edenFruit, edenDungeonKey, superChargedCoal, starGateTier1,
