@@ -1,15 +1,27 @@
 {
-    "forge_marker": 1,
-    "defaults": {
-        "textures": {
-            "bottom": "zollerngalaxy:blocks/xathdirt",
-            "top": "zollerngalaxy:blocks/xathgrass",
-            "side": "zollerngalaxy:blocks/xathgrass_side"
-        },
-        "model": "cube_bottom_top"
+  "forge_marker": 1,
+  "defaults": {
+    "textures": {
+      "bottom": "zollerngalaxy:blocks/xathdirt",
+      "top": "zollerngalaxy:blocks/xathgrass",
+      "side": "zollerngalaxy:blocks/xathgrass_side"
     },
-    "variants": {
-        "normal": [{ "y": 90 }, { "y": 180 }, { "y": 270 }],
-        "inventory": [{}]
-    }
+    "model": "cube_bottom_top"
+  },
+  "variants": {
+    "normal": [
+      {
+        "y": 90
+      },
+      {
+        "y": 180
+      },
+      {
+        "y": 270
+      }
+    ],
+    "inventory": [
+      {}
+    ]
+  }
 }

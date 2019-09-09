@@ -12,7 +12,9 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import zollerngalaxy.core.ZollernGalaxyCore;
 import zollerngalaxy.core.enums.EnumBlockType;
+import zollerngalaxy.lib.helpers.json.JSONFactory;
 
 public class ZGBlockGrass extends ZGBlockDirt implements IGrowable {
 	
@@ -26,6 +28,9 @@ public class ZGBlockGrass extends ZGBlockDirt implements IGrowable {
 		this.setTickRandomly(true);
 		this.setShouldJSONIgnore(true);
 		this.setBlockType(EnumBlockType.GRASS);
+		if (ZollernGalaxyCore.instance().isInDevMode()) {
+			JSONFactory.registerGrassBlock(blockName, this.getDirtBlock().getUnlocalizedName().substring(5));
+		}
 	}
 	
 	public ZGBlockGrass(String blockName) {

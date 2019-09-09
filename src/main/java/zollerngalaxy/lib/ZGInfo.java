@@ -9,7 +9,7 @@ public class ZGInfo {
 	public static final String MOD_ID = "zollerngalaxy";
 	public static final String vMAJOR = "2";
 	public static final String vMINOR = "0";
-	public static final String vBUILD = "4";
+	public static final String vBUILD = "5";
 	public static final String MOD_VERSION = vMAJOR + "." + vMINOR + "." + vBUILD;
 	public static final String MINECRAFT_VERSION = "1.12.2";
 	public static final String OFFICIAL_NAME = "Zollern Galaxy";
@@ -30,7 +30,7 @@ public class ZGInfo {
 		info.name = ZGInfo.NAME;
 		info.version = ZGInfo.MOD_VERSION;
 		info.description = "An adventurous space exploration add-on mod for Galacticraft.";
-		info.credits = "All credits to Galacticraft Sources/API, Steve Kung, MJRLegends, and Sean Murray (No Man's Sky).";
+		info.credits = "All credits to Galacticraft Sources/API, Steve Kung, and MJRLegends.";
 		info.authorList = Arrays.asList("ZollernWolf");
 		
 		ZGHelper.Log("Mod information load completed.");

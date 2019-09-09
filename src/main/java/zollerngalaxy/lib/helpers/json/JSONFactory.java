@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.LinkedHashMap;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 import net.minecraftforge.common.config.Configuration;
 import zollerngalaxy.config.ConfigManagerZG;
@@ -261,5 +263,98 @@ public final class JSONFactory {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	public static void registerGrassBlock(String blockName, String blockBottomName) {
+		if (!ENABLE) {
+			return;
+		}
+		
+		String jsonFileName = blockName + ".json";
+		JSONFactory.setupBlockDirs();
+		
+		Map<String, Object> json = new LinkedHashMap<>();
+		Map<String, Object> defaults = new LinkedHashMap<>();
+		Map<String, Object> textures = new LinkedHashMap<>();
+		Map<String, Object> variants = new LinkedHashMap<>();
+		
+		textures.put("bottom", MOD_ID + ":blocks/" + blockBottomName);
+		textures.put("top", MOD_ID + ":blocks/" + blockName);
+		textures.put("side", MOD_ID + ":blocks/" + blockName + "_side");
+		
+		defaults.put("textures", textures);
+		defaults.put("model", "cube_bottom_top");
+		
+		List<InnerArray> yList = new LinkedList<InnerArray>();
+		yList.add(new InnerArray(90));
+		yList.add(new InnerArray(180));
+		yList.add(new InnerArray(270));
+		
+		List<EmptyArray> eList = new LinkedList<EmptyArray>();
+		eList.add(new EmptyArray());
+		
+		variants.put("normal", yList);
+		variants.put("inventory", eList);
+		
+		json.put("forge_marker", 1);
+		json.put("defaults", defaults);
+		json.put("variants", variants);
+		
+		File file = new File(BLOCK_STATES_DIR, jsonFileName);
+		
+		while (file.exists()) {
+			file.delete();
+			file = new File(BLOCK_STATES_DIR, jsonFileName);
+		}
+		
+		try (FileWriter writer = new FileWriter(file)) {
+			GSON.toJson(json, writer);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		JSONFactory.registerGrassBlockState(blockName, blockBottomName);
+	}
+	
+	private static void registerGrassBlockState(String blockName, String blockBottomName) {
+		String jsonFileName = blockName + ".json";
+		
+		Map<String, Object> json = new LinkedHashMap();
+		Map<String, Object> textures = new LinkedHashMap();
+		
+		textures.put("all", MOD_ID + ":blocks/" + blockBottomName);
+		textures.put("top", MOD_ID + ":blocks/" + blockName);
+		textures.put("right", MOD_ID + ":blocks/" + blockName + "_side");
+		textures.put("left", MOD_ID + ":blocks/" + blockName + "_side");
+		
+		json.put("parent", "block/cube");
+		json.put("textures", textures);
+		
+		File file = new File(BLOCK_DIR, jsonFileName);
+		
+		while (file.exists()) {
+			file.delete();
+			file = new File(BLOCK_DIR, jsonFileName);
+		}
+		
+		try (FileWriter writer = new FileWriter(file)) {
+			GSON.toJson(json, writer);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		JSONFactory.registerBlockItem(blockName);
+	}
+	
+	protected static class InnerArray {
+		int y = 0;
+		
+		protected InnerArray(int yIn) {
+			this.y = yIn;
+		}
+	}
+	
+	protected static class EmptyArray {
+		
 	}
 }

@@ -2,8 +2,8 @@
   "parent": "block/cube",
   "textures": {
     "all": "zollerngalaxy:blocks/oasisdirt",
-	"top": "zollerngalaxy:blocks/oasisgrass",
-	"right": "zollerngalaxy:blocks/oasisgrass_side",
-	"left": "zollerngalaxy:blocks/oasisgrass_side"
+    "top": "zollerngalaxy:blocks/oasisgrass",
+    "right": "zollerngalaxy:blocks/oasisgrass_side",
+    "left": "zollerngalaxy:blocks/oasisgrass_side"
   }
 }

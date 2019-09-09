@@ -2,8 +2,8 @@
   "parent": "block/cube",
   "textures": {
     "all": "zollerngalaxy:blocks/xathdirt",
-	"top": "zollerngalaxy:blocks/xathgrass",
-	"right": "zollerngalaxy:blocks/xathgrass_side",
-	"left": "zollerngalaxy:blocks/xathgrass_side"
+    "top": "zollerngalaxy:blocks/xathgrass",
+    "right": "zollerngalaxy:blocks/xathgrass_side",
+    "left": "zollerngalaxy:blocks/xathgrass_side"
   }
 }

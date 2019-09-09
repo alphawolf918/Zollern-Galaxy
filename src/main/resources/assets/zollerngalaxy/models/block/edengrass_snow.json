@@ -2,8 +2,8 @@
   "parent": "block/cube",
   "textures": {
     "all": "zollerngalaxy:blocks/edensoil",
-	"top": "zollerngalaxy:blocks/edengrass_snow",
-	"right": "zollerngalaxy:blocks/edengrass_side_snow",
-	"left": "zollerngalaxy:blocks/edengrass_side_snow"
+    "top": "zollerngalaxy:blocks/edengrass_snow",
+    "right": "zollerngalaxy:blocks/edengrass_snow_side",
+    "left": "zollerngalaxy:blocks/edengrass_snow_side"
   }
 }
