@@ -13,4 +13,9 @@ public class ZGBlockMetal extends ZGBlockBase {
 		this.setBlockType(EnumBlockType.METAL);
 	}
 	
+	public ZGBlockMetal(String strTexture, float hardResist) {
+		this(strTexture);
+		this.setHardResist(hardResist);
+	}
+	
 }

@@ -176,7 +176,7 @@ public class ZGBlocks {
 			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.EVENIUM.getHarvestLevel());
 	public static final Block edenLeadOre = new ZGBlockOre("edenleadore", 1.2F).setBlockHarvestLevel(
 			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.EVENIUM.getHarvestLevel());
-	public static final Block edenNickleOre = new ZGBlockOre("edennickleore", 1.2F).setBlockHarvestLevel(
+	public static final Block edenNickelOre = new ZGBlockOre("edennickleore", 1.2F).setBlockHarvestLevel(
 			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.EVENIUM.getHarvestLevel());
 	public static final Block edenViriniumOre = new ZGOreGem("edenviriore", 2.6F, ZGItems.dustViri).setBlockHarvestLevel(
 			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.EVENIUM.getHarvestLevel());
@@ -238,12 +238,25 @@ public class ZGBlocks {
 	public static final Block oasisLeadOre = new ZGBlockOre("oasisleadore", 2.9F).setBlockHarvestLevel(
 			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.VIRINIUM.getHarvestLevel());
 	
+	// Xantheon
+	public static final Block xantheonRock = new ZGBlockBase("xantheonrock", 5.1F);
+	public static final Block xantheonChrome = new ZGBlockMetal("xantheonchrome", 4.2F);
+	public static final Block xantheonStone = new ZGBlockBase("xantheonstone", 5.6F);
+	public static final Block xantheonCoalOre = new ZGOreGem("xantheoncoalore", 5.6F, Items.COAL);
+	public static final Block xantheonIronOre = new ZGBlockOre("xantheonironore", 5.7F);
+	public static final Block xantheonNickelOre = new ZGBlockOre("xantheonnickelore", 5.7F);
+	public static final Block xantheonPlutoniumOre = new ZGOreGem("xantheonplutoniumore", 6.0F, ZGItems.plutoniumCrystal);
+	
+	// Atheon
+	// TODO
+	
 	// Metals
 	public static final Block blockViri = new ZGBlockMetal("viriblock");
 	public static final Block blockEve = new ZGBlockMetal("eveniumblock");
 	public static final Block blockCobalt = new ZGBlockMetal("cobaltblock");
 	public static final Block blockPromethean = new ZGBlockMetal("prometheanblock");
 	public static final Block blockSuperChargedCoal = new ZGBlockBase("superchargedcoalblock", 2.6F);
+	public static final Block blockPlutonium = new ZGBlockBase("plutoniumblock", 4.5F);
 	
 	// Compressed Metals
 	public static final Block blockCompressedHeartium = new ZGBlockCompressed("compressedheartiumblock");
@@ -271,14 +284,15 @@ public class ZGBlocks {
 				edenWoodPlanks, edenDungeonBricks, edenAluminumOre, edenSteelOre, edenBronzeOre, edenInvarOre,
 				edenElectrumOre, edenPlatinumOre, edenCoalOre, edenCopperOre, edenDeshOre, edenDiamondOre, edenEmeraldOre,
 				edenGoldOre, edenSilverOre, edenIronOre, edenLapisOre, edenMeteoricIronOre, edenRedstoneOre, edenTinOre,
-				edenLeadOre, edenNickleOre, edenViriniumOre, edenCobaltOre, edenEveniumOre, edenHeartiumOre, xathRock,
+				edenLeadOre, edenNickelOre, edenViriniumOre, edenCobaltOre, edenEveniumOre, edenHeartiumOre, xathRock,
 				xathCobble, xathStone, xathRockBricks, xathGrass, xathDirt, xathGravel, xathTallGrass, xathPrometheanOre,
 				xathEmeraldOre, xathDiamondOre, xathRedstoneOre, xathIronOre, xathGoldOre, xathTinOre, oasisRock,
 				oasisStone, oasisRockBricks, oasisCobble, oasisDirt, oasisTallGrass, oasisGrass, oasisGravel,
 				oasisSuperChargedCoalOre, oasisCoalOre, oasisIronOre, oasisGoldOre, oasisRedstoneOre, oasisDiamondOre,
-				oasisTinOre, oasisLeadOre, blockViri, blockCobalt, blockEve, blockPromethean, blockCrater,
+				oasisTinOre, oasisLeadOre, xantheonRock, xantheonChrome, xantheonStone, xantheonCoalOre, xantheonIronOre,
+				xantheonNickelOre, xantheonPlutoniumOre, blockViri, blockCobalt, blockEve, blockPromethean, blockCrater,
 				blockSuperChargedCoal, blockCompressedHeartium, blockCompressedViri, blockCompressedEve,
-				blockCompressedCobalt, blockCompressedPromethean, blockCompressedSuperChargedCoal);
+				blockCompressedCobalt, blockCompressedPromethean, blockCompressedSuperChargedCoal, blockPlutonium);
 		ZGHelper.Log("Loaded a total of " + totalBlocks + " new blocks.");
 	}
 	

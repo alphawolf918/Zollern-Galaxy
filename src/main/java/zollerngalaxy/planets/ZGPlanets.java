@@ -53,7 +53,7 @@ public class ZGPlanets {
 	// Praedyth System
 	public static ZGPlanet planetXathius = new ZGPlanet("xathius");
 	public static ZGPlanet planetOasis = new ZGPlanet("oasis");
-	public static ZGPlanet planetXantheon;
+	public static ZGPlanet planetXantheon = new ZGPlanet("xantheon");
 	public static ZGPlanet planetAtheon;
 	
 	// Pantheon System
@@ -297,6 +297,26 @@ public class ZGPlanets {
 		planetOasis.setBiomeInfo(ZGBiomes.OASIS_PLAINS, ZGBiomes.OASIS_OCEAN, ZGBiomes.OASIS_REDLANDS);
 		totalPlanets++;
 		
+		// Planet Xantheon
+		// planetXantheon.setDimensionInfo(ConfigManagerZG.planetXantheonDimensionId,
+		// WorldProviderXantheon.class);
+		planetXantheon.setParentSolarSystem(systemPraedyth);
+		planetXantheon.setPlanetClass(EnumPlanetClass.CONSTRUCTED);
+		planetXantheon.setRingColorRGB(1.6f, 3.7f, 2.1f);
+		planetXantheon.setPhaseShift(4.0f);
+		planetXantheon.setRelativeOrbitTime(0.2F);
+		planetXantheon.setDistanceFromCenter(0.5f);
+		planetXantheon.setTierRequired(7);
+		planetXantheon.setRelativeSize(96.0f);
+		planetXantheon.setPlanetTemperature(0.05F);
+		planetXantheon.setPlanetToxicity(0.0f);
+		planetXantheon.setPlanetRadiation(46.3f);
+		planetXantheon.setBreathable(false);
+		planetXantheon.setWindLevel(0.0F);
+		planetXantheon.setDensity(10.6F);
+		planetXantheon.setHasRain(false);
+		totalPlanets++;
+		
 		ZGHelper.Log("Loaded a total of " + totalPlanets + " new planets.");
 	}
 	
@@ -325,6 +345,7 @@ public class ZGPlanets {
 		GalaxyRegistry.registerPlanet(planetPurgot);
 		GalaxyRegistry.registerPlanet(planetXathius);
 		GalaxyRegistry.registerPlanet(planetOasis);
+		GalaxyRegistry.registerPlanet(planetXantheon);
 	}
 	
 	public static void registerTeleportTypes() {
@@ -335,5 +356,7 @@ public class ZGPlanets {
 		
 		GalacticraftRegistry.registerTeleportType(WorldProviderXathius.class, new TeleportTypeVenus());
 		GalacticraftRegistry.registerTeleportType(WorldProviderOasis.class, new TeleportTypeVenus());
+		// GalacticraftRegistry.registerTeleportType(WorldProviderXantheon.class,
+		// new TeleportTypeVenus());
 	}
 }

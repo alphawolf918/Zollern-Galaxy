@@ -69,7 +69,7 @@ public class SmeltRecipes {
 		if (ModHelperBase.useCofh && ModHelperBase.useThermalFoundation) {
 			SmeltRecipes.SmeltBlockToItem(ZGBlocks.edenSilverOre,
 					new ItemStack(ItemHelper.getItemFromStack(TFItems.itemMaterial.ingotSilver), 1, 130), 3.7F); // Silver
-			SmeltRecipes.SmeltBlockToItem(ZGBlocks.edenNickleOre,
+			SmeltRecipes.SmeltBlockToItem(ZGBlocks.edenNickelOre,
 					new ItemStack(ItemHelper.getItemFromStack(TFItems.itemMaterial.ingotNickel), 1, 133), 3.5F); // Nickle
 			SmeltRecipes.SmeltBlockToItem(ZGBlocks.edenSteelOre,
 					new ItemStack(ItemHelper.getItemFromStack(TFItems.itemMaterial.ingotSteel), 1, 160), 4.2F); // Steel

@@ -160,6 +160,15 @@ tile.oasistinore.name=Oasis Tin Ore
 tile.oasisleadore.name=Oasis Lead Ore
 tile.superchargedcoalblock.name=Block of Super Charged Coal
 
+tile.xantheonrock.name=Xantheon Surface Rock
+tile.xantheonstone.name=Xantheon Stone
+tile.xantheonchrome.name=Xantheon Chrome
+tile.xantheonplutoniumore.name=Xantheon Plutonium Ore
+tile.xantheonironore.name=Xantheon Iron Ore
+tile.xantheoncoalore.name=Xantheon Coal Ore
+tile.xantheonnickelore.name=Xantheon Nickel Ore
+tile.plutoniumblock.name=Block of Plutonium
+
 tile.heartblock.name=Healing Station
 tile.blueprintblock.name=Blueprint Repair Station
 

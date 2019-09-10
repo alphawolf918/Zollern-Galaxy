@@ -74,7 +74,7 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 		this.coalGen = new WorldGenMinableZG(ZGBlocks.edenCoalOre, ZGBlocks.edenStone, EnumOreGenZG.COAL);
 		this.tinGen = new WorldGenMinableZG(ZGBlocks.edenTinOre, ZGBlocks.edenStone, EnumOreGenZG.TIN);
 		this.leadGen = new WorldGenMinableZG(ZGBlocks.edenLeadOre, ZGBlocks.edenStone, EnumOreGenZG.LEAD);
-		this.nickleGen = new WorldGenMinableZG(ZGBlocks.edenNickleOre, ZGBlocks.edenStone, EnumOreGenZG.NICKLE);
+		this.nickleGen = new WorldGenMinableZG(ZGBlocks.edenNickelOre, ZGBlocks.edenStone, EnumOreGenZG.NICKLE);
 		this.copperGen = new WorldGenMinableZG(ZGBlocks.edenCopperOre, ZGBlocks.edenStone, EnumOreGenZG.COPPER);
 		this.silverGen = new WorldGenMinableZG(ZGBlocks.edenSilverOre, ZGBlocks.edenStone, EnumOreGenZG.SILVER);
 		this.ironGen = new WorldGenMinableZG(ZGBlocks.edenIronOre, ZGBlocks.edenStone, EnumOreGenZG.IRON);

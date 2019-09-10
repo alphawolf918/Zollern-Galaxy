@@ -35,6 +35,7 @@ public class CraftingRecipes {
 		CraftingRecipes.addIngotMetal(ZGItems.ingotEvenium, ZGBlocks.blockEve);
 		CraftingRecipes.addIngotMetal(ZGItems.prometheanCrystal, ZGBlocks.blockPromethean);
 		CraftingRecipes.addIngotMetal(ZGItems.superChargedCoal, ZGBlocks.blockSuperChargedCoal);
+		CraftingRecipes.addIngotMetal(ZGItems.plutoniumCrystal, ZGBlocks.blockPlutonium);
 		CraftingRecipes.addIngotMetal(ZGItems.compressedCobalt, ZGBlocks.blockCompressedCobalt);
 		CraftingRecipes.addIngotMetal(ZGItems.compressedEvenium, ZGBlocks.blockCompressedEve);
 		CraftingRecipes.addIngotMetal(ZGItems.compressedHeartium, ZGBlocks.blockCompressedHeartium);
