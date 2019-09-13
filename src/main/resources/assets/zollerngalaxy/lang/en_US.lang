@@ -159,6 +159,7 @@ tile.oasisdiamondore.name=Oasis Diamond Ore
 tile.oasistinore.name=Oasis Tin Ore
 tile.oasisleadore.name=Oasis Lead Ore
 tile.superchargedcoalblock.name=Block of Super Charged Coal
+tile.chargiumblock.name=Block of Conductive Chargium
 
 tile.xantheonrock.name=Xantheon Surface Rock
 tile.xantheonstone.name=Xantheon Stone
@@ -167,7 +168,10 @@ tile.xantheonplutoniumore.name=Xantheon Plutonium Ore
 tile.xantheonironore.name=Xantheon Iron Ore
 tile.xantheoncoalore.name=Xantheon Coal Ore
 tile.xantheonnickelore.name=Xantheon Nickel Ore
+tile.xantheoncopperore.name=Xantheon Copper Ore
 tile.plutoniumblock.name=Block of Plutonium
+
+tile.endrock.name=Endrock
 
 tile.heartblock.name=Healing Station
 tile.blueprintblock.name=Blueprint Repair Station
@@ -178,6 +182,10 @@ tile.compressedviriniumblock.name=Block of Compressed Virinium
 tile.compressedeveniumblock.name=Block of Compressed Evenium
 tile.compressedcobaltblock.name=Block of Compressed Cobalt
 tile.compressedheartiumblock.name=Block of Compressed Heartium
+
+chargium=Conductive Chargium
+tile.chargium.name=Conductive Chargium
+fluid.chargium=Conductive Chargium
 
 container.eden.treasurechest.name=Eden's Treasure
 

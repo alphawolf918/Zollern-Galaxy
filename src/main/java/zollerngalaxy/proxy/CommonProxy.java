@@ -9,6 +9,7 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.network.IGuiHandler;
 import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
+import zollerngalaxy.blocks.fluids.IZGFluidModel;
 
 public class CommonProxy implements IProxy, IGuiHandler {
 	
@@ -72,5 +73,10 @@ public class CommonProxy implements IProxy, IGuiHandler {
 	@Override
 	public EntityPlayer getPlayerEntity(MessageContext ctx) {
 		return ctx.getServerHandler().player;
+	}
+	
+	@Override
+	public boolean addIModelRegister(IZGFluidModel model) {
+		return false;
 	}
 }

@@ -244,6 +244,7 @@ public class ZGBlocks {
 	public static final Block xantheonStone = new ZGBlockBase("xantheonstone", 5.6F);
 	public static final Block xantheonCoalOre = new ZGOreGem("xantheoncoalore", 5.6F, Items.COAL);
 	public static final Block xantheonIronOre = new ZGBlockOre("xantheonironore", 5.7F);
+	public static final Block xantheonCopperOre = new ZGBlockOre("xantheoncopperore", 5.3F);
 	public static final Block xantheonNickelOre = new ZGBlockOre("xantheonnickelore", 5.7F);
 	public static final Block xantheonPlutoniumOre = new ZGOreGem("xantheonplutoniumore", 6.0F, ZGItems.plutoniumCrystal);
 	
@@ -256,7 +257,7 @@ public class ZGBlocks {
 	public static final Block blockCobalt = new ZGBlockMetal("cobaltblock");
 	public static final Block blockPromethean = new ZGBlockMetal("prometheanblock");
 	public static final Block blockSuperChargedCoal = new ZGBlockBase("superchargedcoalblock", 2.6F);
-	public static final Block blockPlutonium = new ZGBlockBase("plutoniumblock", 4.5F);
+	public static final Block blockPlutonium = new ZGBlockMetal("plutoniumblock", 4.5F);
 	
 	// Compressed Metals
 	public static final Block blockCompressedHeartium = new ZGBlockCompressed("compressedheartiumblock");
@@ -269,6 +270,7 @@ public class ZGBlocks {
 	// Other
 	public static final Block blockCrater = new ZGBlockBase("crater_rock", 2.4F);
 	
+	// TODO: Re-add fluids
 	public static void init() {
 		ZGBlocks.registerBlocks(edenWoodSapling, edenFruit, edenFlower, edenFlowerBlack, edenFlowerBlue, edenFlowerCyan,
 				edenFlowerGreen, edenFlowerOrange, edenFlowerPink, edenFlowerPurple, edenFlowerRed, edenFlowerYellow,
@@ -290,9 +292,10 @@ public class ZGBlocks {
 				oasisStone, oasisRockBricks, oasisCobble, oasisDirt, oasisTallGrass, oasisGrass, oasisGravel,
 				oasisSuperChargedCoalOre, oasisCoalOre, oasisIronOre, oasisGoldOre, oasisRedstoneOre, oasisDiamondOre,
 				oasisTinOre, oasisLeadOre, xantheonRock, xantheonChrome, xantheonStone, xantheonCoalOre, xantheonIronOre,
-				xantheonNickelOre, xantheonPlutoniumOre, blockViri, blockCobalt, blockEve, blockPromethean, blockCrater,
-				blockSuperChargedCoal, blockCompressedHeartium, blockCompressedViri, blockCompressedEve,
-				blockCompressedCobalt, blockCompressedPromethean, blockCompressedSuperChargedCoal, blockPlutonium);
+				xantheonCopperOre, xantheonNickelOre, xantheonPlutoniumOre, blockViri, blockCobalt, blockEve,
+				blockPromethean, blockCrater, blockSuperChargedCoal, blockCompressedHeartium, blockCompressedViri,
+				blockCompressedEve, blockCompressedCobalt, blockCompressedPromethean, blockCompressedSuperChargedCoal,
+				blockPlutonium);
 		ZGHelper.Log("Loaded a total of " + totalBlocks + " new blocks.");
 	}
 	

@@ -6,9 +6,9 @@ public enum EnumOreGenZG {
 			4, 0, 16), EMERALD(4, 6, 0, 12), HEARTIUM(10, 8, 0, 16), VIRINIUM(10, 7, 0, 20), EVENIUM(5, 6, 0, 12), DESH(4,
 			15, 0, 32), METEORIC_IRON(4, 13, 0, 32), DIRT(20, 20, 0, 256), PACKED_ICE(53, 20, 0, 256), MAGMA(53, 35, 0, 256), GRAVEL(
 			33, 8, 0, 256), SILICON(7, 3, 0, 25), ALUMINUM(11, 18, 0, 70), TIN(11, 22, 0, 70), COPPER(11, 24, 0, 75), SILVER(
-			5, 16, 0, 42), LEAD(6, 20, 0, 36), NICKLE(8, 14, 0, 36), COBALT(5, 14, 0, 24), STEEL(9, 15, 0, 32), BRONZE(6, 6,
+			5, 16, 0, 42), LEAD(6, 20, 0, 36), NICKEL(8, 14, 0, 36), COBALT(5, 14, 0, 24), STEEL(9, 15, 0, 32), BRONZE(6, 6,
 			0, 24), INVAR(8, 6, 0, 24), ELECTRUM(6, 6, 0, 24), PLATINUM(4, 4, 0, 24), PROMETHEAN(4, 16, 0, 45), OBSIDIAN(20,
-			25, 0, 45), SUPER_CHARGED_COAL(5, 15, 0, 35);
+			25, 0, 45), SUPER_CHARGED_COAL(5, 15, 0, 35), PLUTONIUM(3, 4, 0, 15);
 	
 	private int genCount;
 	private int blockCount;
@@ -51,6 +51,11 @@ public enum EnumOreGenZG {
 	public int setMaxHeight(int maxHeight) {
 		this.maxHeight = maxHeight;
 		return maxHeight;
+	}
+	
+	public int setBlockCount(int countBlock) {
+		this.blockCount = countBlock;
+		return blockCount;
 	}
 	
 	public EnumOreGenZG instance() {

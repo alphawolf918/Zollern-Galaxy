@@ -1,0 +1,29 @@
+{
+	"forge_marker": 1,
+	"defaults": {
+		"model": "forge:fluid"
+	},
+	"variants": {
+		"chargium": [
+			{
+				"custom": {
+					"fluid": "chargium"
+				}
+			}
+		],
+		"fueltonium": [
+			{
+				"custom": {
+					"fluid": "fueltonium"
+				}
+			}
+		],
+		"whitelava": [
+			{
+				"custom": {
+					"fluid": "whitelava"
+				}
+			}
+		]
+	}
+}

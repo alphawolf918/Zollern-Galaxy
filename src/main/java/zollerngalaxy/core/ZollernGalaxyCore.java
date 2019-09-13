@@ -71,6 +71,7 @@ public class ZollernGalaxyCore {
 		ZGInfo.init(event.getModMetadata());
 		ZGItems.init();
 		ZGBlocks.init();
+		// TODO: ZGFluids.init();
 		ZGBiomes.init();
 		ZGPlanets.init();
 		ZGSpaceStations.init();

@@ -7,6 +7,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
+import zollerngalaxy.blocks.fluids.IZGFluidModel;
 
 public interface IProxy {
 	
@@ -31,4 +32,6 @@ public interface IProxy {
 	public Minecraft getMinecraft();
 	
 	public EntityPlayer getPlayerEntity(MessageContext ctx);
+	
+	public boolean addIModelRegister(IZGFluidModel model);
 }

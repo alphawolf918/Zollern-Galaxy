@@ -11,7 +11,7 @@ public class OreDictRegistry {
 	public static void init() {
 		// Copper
 		registerOre("oreCopper", ZGBlocks.edenCopperOre, ZGBlocks.kriffCopperOre, ZGBlocks.purgCopperOre,
-				ZGBlocks.zolCopperOre);
+				ZGBlocks.zolCopperOre, ZGBlocks.xantheonCopperOre);
 		
 		// Tin
 		registerOre("oreTin", ZGBlocks.edenTinOre, ZGBlocks.purgTinOre, ZGBlocks.zolTinOre, ZGBlocks.xathTinOre,
@@ -79,7 +79,7 @@ public class OreDictRegistry {
 		registerOre("oreGold", ZGBlocks.edenGoldOre, ZGBlocks.kriffGoldOre, ZGBlocks.purgGoldOre, ZGBlocks.zolGoldOre,
 				ZGBlocks.xathGoldOre, ZGBlocks.oasisGoldOre);
 		
-		// Nickle
+		// Nickel
 		registerOre("oreNickel", ZGBlocks.edenNickelOre, ZGBlocks.xantheonNickelOre);
 		
 		// Diamond
@@ -154,13 +154,13 @@ public class OreDictRegistry {
 		registerOre("gemSuperChargedCoal", ZGItems.superChargedCoal);
 		registerOre("blockSuperChargedCoal", ZGBlocks.blockSuperChargedCoal);
 		
-		// Titanium
-		// TODO
-		
 		// Plutonium
 		registerOre("orePlutonium", ZGBlocks.xantheonPlutoniumOre);
 		registerOre("gemPlutonium", ZGItems.plutoniumCrystal);
 		registerOre("blockPlutonium", ZGBlocks.blockPlutonium);
+		
+		// Titanium
+		// TODO
 		
 		// TODO: Add More...
 	}
