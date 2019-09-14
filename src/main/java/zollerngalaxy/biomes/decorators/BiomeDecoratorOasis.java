@@ -34,6 +34,7 @@ public class BiomeDecoratorOasis extends BiomeDecoratorZG {
 	private WorldGenerator goldGen;
 	private WorldGenerator tinGen;
 	private WorldGenerator leadGen;
+	private WorldGenerator shinestoneGen;
 	
 	public int waterLakesPerChunk = 4;
 	public int lavaLakesPerChunk = 6;
@@ -57,6 +58,7 @@ public class BiomeDecoratorOasis extends BiomeDecoratorZG {
 		this.goldGen = new WorldGenMinableZG(ZGBlocks.oasisGoldOre, STONE, EnumOreGenZG.GOLD);
 		this.tinGen = new WorldGenMinableZG(ZGBlocks.oasisTinOre, STONE, EnumOreGenZG.TIN);
 		this.leadGen = new WorldGenMinableZG(ZGBlocks.oasisLeadOre, STONE, EnumOreGenZG.LEAD);
+		this.shinestoneGen = new WorldGenMinableZG(ZGBlocks.blockShinestone, STONE, EnumOreGenZG.SHINESTONE);
 	}
 	
 	@Override
@@ -80,6 +82,7 @@ public class BiomeDecoratorOasis extends BiomeDecoratorZG {
 		this.generateOre(this.goldGen, EnumOreGenZG.GOLD, world, rand);
 		this.generateOre(this.tinGen, EnumOreGenZG.TIN, world, rand);
 		this.generateOre(this.leadGen, EnumOreGenZG.LEAD, world, rand);
+		this.generateOre(this.shinestoneGen, EnumOreGenZG.SHINESTONE, world, rand);
 		
 		ChunkPrimer chunkPrimer = new ChunkPrimer();
 		
@@ -110,14 +113,14 @@ public class BiomeDecoratorOasis extends BiomeDecoratorZG {
 		}
 		
 		if (this.oasisTallGrassPerChunk > 0) {
-			for (int i = 0; i < this.oasisTallGrassPerChunk + 2; ++i) {
+			for (int i = 0; i < this.oasisTallGrassPerChunk + 4; ++i) {
 				ZGDecorateHelper.generatePlants(new WorldGenTallGrassZG((ZGBlockTallGrass) ZGBlocks.oasisTallGrass), world,
 						rand, this.chunkPos);
 			}
 		}
 		
 		if (this.oasisFlowersPerChunk > 0) {
-			for (int i = 0; i < this.oasisFlowersPerChunk; i++) {
+			for (int i = 0; i < this.oasisFlowersPerChunk + 2; i++) {
 				IBlockState flowerState = ZGBlocks.oasisFlower.getDefaultState();
 				ZGDecorateHelper.generatePlants(new WorldGenOasisFlowers(flowerState), world, rand, this.chunkPos);
 			}

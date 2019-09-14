@@ -173,6 +173,18 @@ public class OreDictRegistry {
 		registerOre("gemSuperChargedCoal", ZGItems.superChargedCoal);
 		registerOre("blockSuperChargedCoal", ZGBlocks.blockSuperChargedCoal);
 		
+		// Uranium
+		registerOre("oreUranium", ZGBlocks.xantheonFueltoniumOre);
+		registerOre("ingotUranium", ZGItems.ingotFueltonium);
+		registerOre("dustUranium", ZGItems.dustFueltonium);
+		registerOre("blockUranium", ZGBlocks.blockFueltonium);
+		
+		// Fueltonium
+		registerOre("oreFueltonium", ZGBlocks.xantheonFueltoniumOre);
+		registerOre("ingotFueltonium", ZGItems.ingotFueltonium);
+		registerOre("dustFueltonium", ZGItems.dustFueltonium);
+		registerOre("blockFueltonium", ZGBlocks.blockFueltonium);
+		
 		// Plutonium
 		registerOre("orePlutonium", ZGBlocks.xantheonPlutoniumOre);
 		registerOre("gemPlutonium", ZGItems.plutoniumCrystal);

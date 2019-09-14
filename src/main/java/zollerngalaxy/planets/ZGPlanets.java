@@ -15,6 +15,7 @@ import zollerngalaxy.core.dimensions.worldproviders.WorldProviderEden;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderKriffon;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderOasis;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderPurgot;
+import zollerngalaxy.core.dimensions.worldproviders.WorldProviderXantheon;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderXathius;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderZollus;
 import zollerngalaxy.core.enums.EnumPlanetClass;
@@ -298,24 +299,26 @@ public class ZGPlanets {
 		totalPlanets++;
 		
 		// Planet Xantheon
-		// planetXantheon.setDimensionInfo(ConfigManagerZG.planetXantheonDimensionId,
-		// WorldProviderXantheon.class);
+		planetXantheon.setDimensionInfo(ConfigManagerZG.planetXantheonDimensionId, WorldProviderXantheon.class);
 		planetXantheon.setParentSolarSystem(systemPraedyth);
 		planetXantheon.setPlanetClass(EnumPlanetClass.CONSTRUCTED);
 		planetXantheon.setRingColorRGB(1.6f, 3.7f, 2.1f);
 		planetXantheon.setPhaseShift(4.0f);
-		planetXantheon.setRelativeOrbitTime(0.2F);
-		planetXantheon.setDistanceFromCenter(0.5f);
+		planetXantheon.setRelativeOrbitTime(20.2F);
+		planetXantheon.setDistanceFromCenter(5.5f);
 		planetXantheon.setTierRequired(8);
 		planetXantheon.setRelativeSize(96.0f);
-		planetXantheon.setPlanetTemperature(0.05F);
-		planetXantheon.setPlanetToxicity(0.0f);
+		planetXantheon.setPlanetTemperature(-31.2F);
+		planetXantheon.setPlanetToxicity(5.2f);
 		planetXantheon.setPlanetRadiation(46.3f);
 		planetXantheon.setBreathable(false);
 		planetXantheon.setWindLevel(0.0F);
-		planetXantheon.setDensity(10.6F);
+		planetXantheon.setDensity(20.6F);
 		planetXantheon.setHasRain(false);
+		planetOasis.setPlanetGasses(EnumAtmosphericGas.CO2, EnumAtmosphericGas.ARGON, EnumAtmosphericGas.HELIUM);
+		planetXantheon.setAtmosphere();
 		planetXantheon.setPlanetIcon("xantheon");
+		planetXantheon.setBiomeInfo(ZGBiomes.XANTHEON);
 		totalPlanets++;
 		
 		ZGHelper.Log("Loaded a total of " + totalPlanets + " new planets.");
@@ -357,7 +360,6 @@ public class ZGPlanets {
 		
 		GalacticraftRegistry.registerTeleportType(WorldProviderXathius.class, new TeleportTypeVenus());
 		GalacticraftRegistry.registerTeleportType(WorldProviderOasis.class, new TeleportTypeVenus());
-		// GalacticraftRegistry.registerTeleportType(WorldProviderXantheon.class,
-		// new TeleportTypeVenus());
+		GalacticraftRegistry.registerTeleportType(WorldProviderXantheon.class, new TeleportTypeVenus());
 	}
 }

@@ -247,6 +247,8 @@ public class ZGBlocks {
 	public static final Block xantheonCopperOre = new ZGBlockOre("xantheoncopperore", 5.3F);
 	public static final Block xantheonNickelOre = new ZGBlockOre("xantheonnickelore", 5.7F);
 	public static final Block xantheonPlutoniumOre = new ZGOreGem("xantheonplutoniumore", 6.0F, ZGItems.plutoniumCrystal);
+	public static final Block xantheonFueltoniumOre = new ZGOreGem("xantheonfueltoniumore", 6.1F, ZGItems.dustFueltonium);
+	public static final Block xantheonConstructBlock = new ZGBlockMetal("constructblock", 8.2F);
 	
 	// Atheon
 	// TODO
@@ -300,11 +302,11 @@ public class ZGBlocks {
 				oasisStone, oasisRockBricks, oasisCobble, oasisDirt, oasisTallGrass, oasisGrass, oasisGravel,
 				oasisSuperChargedCoalOre, oasisCoalOre, oasisIronOre, oasisGoldOre, oasisRedstoneOre, oasisDiamondOre,
 				oasisTinOre, oasisLeadOre, xantheonRock, xantheonChrome, xantheonStone, xantheonCoalOre, xantheonIronOre,
-				xantheonCopperOre, xantheonNickelOre, xantheonPlutoniumOre, blockViri, blockCobalt, blockEve,
-				blockPromethean, blockCrater, blockSuperChargedCoal, blockPlutonium, blockFueltonium, blockChargium,
-				blockShinium, blockShinestone, blockShinestoneCrystal, blockShinestonePolished,
-				blockShinestoneCrystalBricks, blockCompressedHeartium, blockCompressedViri, blockCompressedEve,
-				blockCompressedCobalt, blockCompressedPromethean, blockCompressedSuperChargedCoal);
+				xantheonCopperOre, xantheonNickelOre, xantheonPlutoniumOre, xantheonFueltoniumOre, xantheonConstructBlock,
+				blockViri, blockCobalt, blockEve, blockPromethean, blockCrater, blockSuperChargedCoal, blockPlutonium,
+				blockFueltonium, blockChargium, blockShinium, blockShinestone, blockShinestoneCrystal,
+				blockShinestonePolished, blockShinestoneCrystalBricks, blockCompressedHeartium, blockCompressedViri,
+				blockCompressedEve, blockCompressedCobalt, blockCompressedPromethean, blockCompressedSuperChargedCoal);
 		ZGHelper.Log("Loaded a total of " + totalBlocks + " new blocks.");
 	}
 	

@@ -1,12 +1,6 @@
 package zollerngalaxy.lib.helpers;
 
-import net.machinemuse.powersuits.api.constants.MPSModConstants;
 import net.minecraftforge.fml.common.Loader;
-import cofh.CoFHCore;
-import cofh.thermaldynamics.ThermalDynamics;
-import cofh.thermalexpansion.ThermalExpansion;
-import cofh.thermalfoundation.ThermalFoundation;
-import erogenousbeef.bigreactors.common.BigReactors;
 
 public class ModHelperBase {
 	
@@ -21,15 +15,15 @@ public class ModHelperBase {
 	public static boolean useModularPowerSuits = false;
 	
 	public static void detectMods() {
-		useCofh = isModLoaded(CoFHCore.MOD_ID);
-		useThermalExpansion = isModLoaded(ThermalExpansion.MOD_ID);
-		useThermalFoundation = isModLoaded(ThermalFoundation.MOD_ID);
-		useThermalDynamics = isModLoaded(ThermalDynamics.MOD_ID);
-		useExtremeReactors = isModLoaded(BigReactors.MODID);
+		useCofh = isModLoaded("cofhcore");
+		useThermalExpansion = isModLoaded("thermalexpansion");
+		useThermalFoundation = isModLoaded("thermalfoundation");
+		useThermalDynamics = isModLoaded("thermaldynamics");
+		useExtremeReactors = isModLoaded("bigreactors");
 		useMorePlanets = isModLoaded("moreplanets");
 		useExtraPlanets = isModLoaded("extraplanets");
 		usePlanetProgression = isModLoaded("planetprogression");
-		useModularPowerSuits = isModLoaded(MPSModConstants.MODID);
+		useModularPowerSuits = isModLoaded("powersuits");
 	}
 	
 	public static boolean isModLoaded(String modId) {

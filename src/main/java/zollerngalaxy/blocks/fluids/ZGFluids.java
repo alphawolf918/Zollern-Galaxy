@@ -52,9 +52,9 @@ public class ZGFluids {
 	
 	private static void registerFluidBlocks() {
 		blockChargiumFluid = (ZGFluidBase) new ZGFluidBase("chargium", fluidChargium, Material.LAVA, MapColor.LIGHT_BLUE)
-				.setQuantaPerBlock(6).setLightLevel(1.0F);
+				.setQuantaPerBlock(3).setLightLevel(1.0F);
 		blockWhiteLavaFluid = (ZGFluidBase) ((ZGFluidBase) new ZGFluidBase("whitelava", fluidWhiteLava, Material.LAVA,
-				MapColor.WHITE_STAINED_HARDENED_CLAY).setQuantaPerBlock(3).setLightLevel(1.0F)).setTemperature(5000);
+				MapColor.WHITE_STAINED_HARDENED_CLAY).setQuantaPerBlock(6).setLightLevel(1.0F)).setTemperature(5000);
 		blockFueltoniumFluid = (ZGFluidBase) ((ZGFluidBase) new ZGFluidBase("fueltonium", fluidFueltonium, Material.LAVA,
 				MapColor.GREEN).setQuantaPerBlock(10).setLightLevel(1.0F)).setTemperature(10000);
 		

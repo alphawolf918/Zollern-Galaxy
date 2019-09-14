@@ -30,8 +30,8 @@ public class ZGInfo {
 		info.name = ZGInfo.NAME;
 		info.version = ZGInfo.MOD_VERSION;
 		info.description = "An adventurous space exploration add-on mod for Galacticraft.";
-		info.credits = "All credits to Galacticraft Sources/API, Steve Kung, and MJRLegends.";
-		info.authorList = Arrays.asList("ZollernWolf");
+		info.credits = "All credits to Galacticraft Sources/API, Steve KunG, and MJRLegends.";
+		info.authorList = Arrays.asList("Zollern Wolf");
 		
 		ZGHelper.Log("Mod information load completed.");
 	}

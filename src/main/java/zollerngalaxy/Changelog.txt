@@ -4,7 +4,12 @@ Zollern Galaxy v2.0.5
 
 * Added the Constructed planet type.
 * Added Chargium and White Lava fluids.
-    * Chargium will be able to be used inside of an Extreme Reactors turbine with extreme efficiency.
-        * It must be created with careful precision - it is liquified from Super Charged Coal.
+    * Chargium can be used inside of an Extreme Reactors turbine with extreme efficiency.
+        * Chargium must be created with careful precision - it is liquified from Super Charged Coal.
 * Added Shinestone and Fueltonium.
+* Added Shinestone gen to Oasis caves.
+* Increased spawn rate of Oasis Flowers and Oasis Tall Grass on planet Oasis.
+* Fueltonium can be used in place of Yellorite / Uranium.
+* Created the artificial "tech" planet, Xantheon.
+* Radiolaria Spouts (essentially white lava) have a chance to spawn, with "Constructed" Blocks.
 * 

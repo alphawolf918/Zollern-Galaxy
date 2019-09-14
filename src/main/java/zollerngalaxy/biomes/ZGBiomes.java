@@ -12,6 +12,7 @@ import static net.minecraftforge.common.BiomeDictionary.Type.PLAINS;
 import static net.minecraftforge.common.BiomeDictionary.Type.SNOWY;
 import static net.minecraftforge.common.BiomeDictionary.Type.SPOOKY;
 import static net.minecraftforge.common.BiomeDictionary.Type.SWAMP;
+import static net.minecraftforge.common.BiomeDictionary.Type.WASTELAND;
 import static net.minecraftforge.common.BiomeDictionary.Type.WET;
 import java.util.LinkedList;
 import java.util.List;
@@ -36,6 +37,7 @@ import zollerngalaxy.biomes.oasis.BiomeOasisRedSea;
 import zollerngalaxy.biomes.oasis.BiomeRedlands;
 import zollerngalaxy.biomes.purgot.BiomeLimbo;
 import zollerngalaxy.biomes.purgot.BiomePurgot;
+import zollerngalaxy.biomes.xantheon.BiomeXantheon;
 import zollerngalaxy.biomes.xathius.BiomeAbstractPlains;
 import zollerngalaxy.biomes.xathius.BiomeBluelands;
 import zollerngalaxy.biomes.xathius.BiomeXathiusMountains;
@@ -83,6 +85,9 @@ public class ZGBiomes {
 	public static final Biome OASIS_OCEAN = new BiomeOasisRedSea(new BiomeProperties("Red Sea"));
 	public static final Biome OASIS_REDLANDS = new BiomeRedlands(new BiomeProperties("Redlands"));
 	
+	// Xantheon
+	public static final Biome XANTHEON = new BiomeXantheon(new BiomeProperties("Xantheon"));
+	
 	public static void init() {
 		// Zollus
 		ZGBiomes.addBiome(ZGBiomes.ZOLLUS, COLD, DEAD, DRY);
@@ -117,6 +122,9 @@ public class ZGBiomes {
 		ZGBiomes.addBiome(ZGBiomes.OASIS_PLAINS, LUSH, WET, PLAINS);
 		ZGBiomes.addBiome(ZGBiomes.OASIS_OCEAN, LUSH, WET, OCEAN);
 		ZGBiomes.addBiome(ZGBiomes.OASIS_REDLANDS, LUSH, MOUNTAIN);
+		
+		// Xantheon
+		ZGBiomes.addBiome(ZGBiomes.XANTHEON, DEAD, SPOOKY, COLD, WASTELAND);
 		
 		ZGHelper.Log("Loaded a total of " + totalBiomes + " new biomes.");
 	}

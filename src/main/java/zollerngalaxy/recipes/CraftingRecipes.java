@@ -24,6 +24,10 @@ public class CraftingRecipes {
 	}
 	
 	private static void addRecipes() {
+		CraftingRecipes.addBriteStone(ZGItems.dustBrightstone, ZGBlocks.edenBrightStone);
+		CraftingRecipes.addBriteStone(ZGItems.dustShinestone, ZGBlocks.blockShinestone);
+		CraftingRecipes.addBriteStone(ZGBlocks.blockShinestoneCrystal, ZGBlocks.blockShinestonePolished);
+		
 		CraftingRecipes.addRockBricks(ZGBlocks.zolStone, ZGBlocks.zolRockBricks);
 		CraftingRecipes.addRockBricks(ZGBlocks.kriffStone, ZGBlocks.kriffRockBricks);
 		CraftingRecipes.addRockBricks(ZGBlocks.purgStone, ZGBlocks.purgRockBricks);
@@ -50,10 +54,6 @@ public class CraftingRecipes {
 		CraftingRecipes.addIngotMetal(ZGItems.compressedPromethean, ZGBlocks.blockCompressedPromethean);
 		CraftingRecipes.addIngotMetal(ZGItems.compressedSuperChargedCoal, ZGBlocks.blockCompressedSuperChargedCoal);
 		CraftingRecipes.addIngotMetal(ZGItems.compressedVirinium, ZGBlocks.blockCompressedViri);
-		
-		CraftingRecipes.addBriteStone(ZGItems.dustBrightstone, ZGBlocks.edenBrightStone);
-		CraftingRecipes.addBriteStone(ZGItems.dustShinestone, ZGBlocks.blockShinestone);
-		CraftingRecipes.addBriteStone(ZGBlocks.blockShinestoneCrystal, ZGBlocks.blockShinestonePolished);
 		
 		CraftingRecipes.addPlanks(ZGBlocks.edenWoodLog, ZGBlocks.edenWoodPlanks);
 		

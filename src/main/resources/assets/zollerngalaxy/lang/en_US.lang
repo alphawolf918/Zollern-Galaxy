@@ -174,8 +174,10 @@ tile.xantheonironore.name=Xantheon Iron Ore
 tile.xantheoncoalore.name=Xantheon Coal Ore
 tile.xantheonnickelore.name=Xantheon Nickel Ore
 tile.xantheoncopperore.name=Xantheon Copper Ore
+tile.xantheonfueltoniumore.name=Xantheon Fueltonium Ore
 tile.plutoniumblock.name=Block of Plutonium
 tile.fueltoniumblock.name=Block of Fueltonium
+tile.constructblock.name=Constructed Block
 
 tile.endrock.name=Endrock
 
