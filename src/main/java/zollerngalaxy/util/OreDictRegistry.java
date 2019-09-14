@@ -55,10 +55,11 @@ public class OreDictRegistry {
 		
 		// Stone Bricks
 		registerOre("stonebrick", ZGBlocks.edenRockBricks, ZGBlocks.kriffRockBricks, ZGBlocks.purgRockBricks,
-				ZGBlocks.zolRockBricks, ZGBlocks.xathRockBricks, ZGBlocks.oasisRockBricks);
+				ZGBlocks.zolRockBricks, ZGBlocks.xathRockBricks, ZGBlocks.oasisRockBricks,
+				ZGBlocks.blockShinestoneCrystalBricks);
 		
 		// Glowstone
-		registerOre("glowstone", ZGBlocks.edenBrightStone);
+		registerOre("glowstone", ZGBlocks.edenBrightStone, ZGBlocks.blockShinestone);
 		
 		// Sand
 		registerOre("sand", ZGBlocks.edenBloodSand);
@@ -100,6 +101,24 @@ public class OreDictRegistry {
 		
 		// Platinum
 		registerOre("orePlatinum", ZGBlocks.edenPlatinumOre);
+		registerOre("dustPlatinum", ZGItems.dustShinium);
+		registerOre("ingotPlatinum", ZGItems.ingotShinium);
+		registerOre("blockPlatinum", ZGBlocks.blockShinium);
+		
+		// Shinium
+		registerOre("dustShinium", ZGItems.dustShinium);
+		registerOre("ingotShinium", ZGItems.ingotShinium);
+		registerOre("blockShinium", ZGBlocks.blockShinium);
+		
+		// Chargium
+		registerOre("dustChargium", ZGItems.dustChargium);
+		registerOre("ingotChargium", ZGItems.ingotChargium);
+		registerOre("blockChargium", ZGBlocks.blockChargium);
+		
+		// Shinestone
+		registerOre("dustShinestone", ZGItems.dustShinestone);
+		registerOre("ingotShinestone", ZGItems.ingotShinestone);
+		registerOre("blockShinestone", ZGBlocks.blockShinestone);
 		
 		// Electrum
 		registerOre("oreElectrum", ZGBlocks.edenElectrumOre);
@@ -132,14 +151,14 @@ public class OreDictRegistry {
 		
 		// Evenium
 		registerOre("oreEvenium", ZGBlocks.edenEveniumOre, ZGBlocks.purgEveniumOre);
-		registerOre("dustEvenium", ZGItems.dustEve);
+		registerOre("dustEvenium", ZGItems.dustEvenium);
 		registerOre("ingotEvenium", ZGItems.ingotEvenium);
 		registerOre("blockEvenium", ZGBlocks.blockEve);
 		registerOre("pickaxeEvenium", ZGItems.pickaxeVirinium);
 		
 		// Virinium
 		registerOre("oreVirinium", ZGBlocks.edenViriniumOre);
-		registerOre("dustVirinium", ZGItems.dustViri);
+		registerOre("dustVirinium", ZGItems.dustVirinium);
 		registerOre("ingotVirinium", ZGItems.ingotVirinium);
 		registerOre("blockVirinium", ZGBlocks.blockViri);
 		registerOre("pickaxeVirinium", ZGItems.pickaxeVirinium);
@@ -158,11 +177,6 @@ public class OreDictRegistry {
 		registerOre("orePlutonium", ZGBlocks.xantheonPlutoniumOre);
 		registerOre("gemPlutonium", ZGItems.plutoniumCrystal);
 		registerOre("blockPlutonium", ZGBlocks.blockPlutonium);
-		
-		// Titanium
-		// TODO
-		
-		// TODO: Add More...
 	}
 	
 	private static void registerOre(String strName, Item... items) {

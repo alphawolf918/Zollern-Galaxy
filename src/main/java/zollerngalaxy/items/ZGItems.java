@@ -24,16 +24,26 @@ public class ZGItems {
 	public static final Item prometheanCrystal = new ZGItemBase("prometheancrystal");
 	public static final Item plutoniumCrystal = new ZGItemBase("plutoniumcrystal");
 	
-	public static final Item dustViri = new ZGItemBase("rawviri");
+	public static final Item dustVirinium = new ZGItemBase("rawviri");
 	public static final Item dustCobalt = new ZGItemBase("cobaltdust");
-	public static final Item dustEve = new ZGItemBase("eveniumdust");
+	public static final Item dustEvenium = new ZGItemBase("eveniumdust");
+	public static final Item dustFueltonium = new ZGItemBase("fueltoniumraw");
 	public static final Item dustDiamond = new ZGItemBase("diamonddust");
 	public static final Item dustEmerald = new ZGItemBase("emeralddust");
 	public static final Item dustBrightstone = new ZGItemBase("brightstonedust");
+	public static final Item dustShinestone = new ZGItemBase("shinestonedust");
+	public static final Item dustShinium = new ZGItemBase("shiniumdust");
+	public static final Item dustChargium = new ZGItemBase("chargiumdust");
 	
 	public static final Item ingotVirinium = new ZGItemBase("ingotviri");
 	public static final Item ingotCobalt = new ZGItemBase("ingotcobalt");
 	public static final Item ingotEvenium = new ZGItemBase("ingotevenium");
+	public static final Item ingotFueltonium = new ZGItemBase("fueltonium");
+	public static final Item ingotShinestone = new ZGItemBase("shinestoneingot");
+	public static final Item ingotShinium = new ZGItemBase("shiniumingot");
+	public static final Item ingotChargium = new ZGItemBase("chargiumingot");
+	public static final Item ingotLapis = new ZGItemBase("lapisingot");
+	
 	public static final Item hud = new ItemHUD();
 	public static final Item alienStone = new ZGItemBase("alienstone");
 	
@@ -100,15 +110,16 @@ public class ZGItems {
 	
 	public static void init() {
 		ZGItems.registerItems(heartOfZol, zolCrystal, kriffCrystal, purgCrystal, edenCrystal, purgEssence,
-				prometheanCrystal, plutoniumCrystal, dustBrightstone, dustViri, dustEve, dustCobalt, dustDiamond,
-				dustEmerald, ingotVirinium, ingotCobalt, ingotEvenium, hud, alienStone, compressedCobalt, compressedDiamond,
-				compressedEmerald, compressedEvenium, compressedGold, compressedHeartium, compressedKriffonium,
-				compressedVirinium, compressedVyrex, compressedPromethean, compressedSuperChargedCoal, rawAlienBacon,
-				cookedAlienBacon, rawAlienBeef, cookedAlienBeef, edenFruit, edenDungeonKey, superChargedCoal, starGateTier1,
-				starGateTier2, starGateTier3, starGateTier4, starGateTier5, starGateTier6, starGateTier7, starGateTier8,
-				starGateTier9, starGateTier10, OMNITOOL, pickaxeCobalt, pickaxeEvenium, pickaxeVirinium, shovelCobalt,
-				shovelEvenium, shovelVirinium, axeCobalt, axeEvenium, axeVirinium, hoeCobalt, hoeEvenium, hoeVirinium,
-				swordCobalt, swordEvenium, swordVirinium);
+				prometheanCrystal, plutoniumCrystal, dustBrightstone, dustShinestone, dustVirinium, dustEvenium, dustCobalt,
+				dustFueltonium, dustShinium, dustChargium, dustDiamond, dustEmerald, ingotVirinium, ingotCobalt,
+				ingotEvenium, ingotShinestone, ingotShinium, ingotChargium, ingotLapis, hud, alienStone, compressedCobalt,
+				compressedDiamond, compressedEmerald, compressedEvenium, compressedGold, compressedHeartium,
+				compressedKriffonium, compressedVirinium, compressedVyrex, compressedPromethean, compressedSuperChargedCoal,
+				rawAlienBacon, cookedAlienBacon, rawAlienBeef, cookedAlienBeef, edenFruit, edenDungeonKey, superChargedCoal,
+				starGateTier1, starGateTier2, starGateTier3, starGateTier4, starGateTier5, starGateTier6, starGateTier7,
+				starGateTier8, starGateTier9, starGateTier10, OMNITOOL, pickaxeCobalt, pickaxeEvenium, pickaxeVirinium,
+				shovelCobalt, shovelEvenium, shovelVirinium, axeCobalt, axeEvenium, axeVirinium, hoeCobalt, hoeEvenium,
+				hoeVirinium, swordCobalt, swordEvenium, swordVirinium);
 		ZGHelper.Log("Loaded a total of " + totalItems + " new items.");
 	}
 	

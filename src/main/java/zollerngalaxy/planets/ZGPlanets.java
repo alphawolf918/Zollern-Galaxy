@@ -306,7 +306,7 @@ public class ZGPlanets {
 		planetXantheon.setPhaseShift(4.0f);
 		planetXantheon.setRelativeOrbitTime(0.2F);
 		planetXantheon.setDistanceFromCenter(0.5f);
-		planetXantheon.setTierRequired(7);
+		planetXantheon.setTierRequired(8);
 		planetXantheon.setRelativeSize(96.0f);
 		planetXantheon.setPlanetTemperature(0.05F);
 		planetXantheon.setPlanetToxicity(0.0f);
@@ -315,6 +315,7 @@ public class ZGPlanets {
 		planetXantheon.setWindLevel(0.0F);
 		planetXantheon.setDensity(10.6F);
 		planetXantheon.setHasRain(false);
+		planetXantheon.setPlanetIcon("xantheon");
 		totalPlanets++;
 		
 		ZGHelper.Log("Loaded a total of " + totalPlanets + " new planets.");

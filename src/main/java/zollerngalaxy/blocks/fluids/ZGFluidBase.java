@@ -1,5 +1,6 @@
 package zollerngalaxy.blocks.fluids;
 
+import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelBakery;
@@ -13,23 +14,37 @@ import net.minecraftforge.fluids.BlockFluidClassic;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import zollerngalaxy.blocks.ISingleZGBlockRender;
 import zollerngalaxy.lib.ZGInfo;
 import zollerngalaxy.lib.ZGMapper;
 
-public class ZGFluidBase extends BlockFluidClassic implements IZGFluidModel, ISingleZGBlockRender {
+public class ZGFluidBase extends BlockFluidClassic implements IZGFluidModel {
 	
 	protected String name;
 	
 	public ZGFluidBase(String fluidName, Fluid fluid, Material material) {
 		super(fluid, material);
+		this.setupFluid(fluidName);
+	}
+	
+	public ZGFluidBase(String fluidName, Fluid fluid, Material material, MapColor mapColor) {
+		super(fluid, material, mapColor);
+		this.setupFluid(fluidName);
+	}
+	
+	protected void setupFluid(String fluidName) {
 		this.name = fluidName;
-		this.setUnlocalizedName(fluidName);
+		this.setUnlocalizedName("fluid_" + fluidName);
+		this.setRegistryName("fluid_" + fluidName);
 	}
 	
 	@Override
 	public boolean canCreatureSpawn(IBlockState state, IBlockAccess world, BlockPos pos, EntityLiving.SpawnPlacementType type) {
 		return false;
+	}
+	
+	@Override
+	public boolean canDrain(World worldIn, BlockPos pos) {
+		return true;
 	}
 	
 	@Override
@@ -61,11 +76,6 @@ public class ZGFluidBase extends BlockFluidClassic implements IZGFluidModel, ISi
 		
 		// Block Model
 		ModelLoader.setCustomStateMapper(this, mapper);
-	}
-	
-	@Override
-	public String getName() {
-		return this.name;
 	}
 	
 }

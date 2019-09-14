@@ -108,8 +108,8 @@ public class PulverizerRecipes {
 		
 		// Evenium
 		ThermalExpansionHelper.addPulverizerRecipe(5400, new ItemStack(ZGBlocks.purgEveniumOre), new ItemStack(
-				ZGItems.dustEve, 4));
+				ZGItems.dustEvenium, 4));
 		ThermalExpansionHelper.addPulverizerRecipe(5400, new ItemStack(ZGBlocks.edenEveniumOre), new ItemStack(
-				ZGItems.dustEve, 4));
+				ZGItems.dustEvenium, 4));
 	}
 }

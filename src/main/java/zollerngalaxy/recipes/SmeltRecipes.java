@@ -95,8 +95,13 @@ public class SmeltRecipes {
 		SmeltRecipes.SmeltItem(ZGItems.dustDiamond, Items.DIAMOND, 2.6F);
 		SmeltRecipes.SmeltItem(ZGItems.dustEmerald, Items.EMERALD, 3.2F);
 		SmeltRecipes.SmeltItem(ZGItems.dustCobalt, ZGItems.ingotCobalt, 2.4F);
-		SmeltRecipes.SmeltItem(ZGItems.dustEve, ZGItems.ingotEvenium, 2.8F);
-		SmeltRecipes.SmeltItem(ZGItems.dustViri, ZGItems.ingotVirinium, 2.6F);
+		SmeltRecipes.SmeltItem(ZGItems.dustEvenium, ZGItems.ingotEvenium, 2.8F);
+		SmeltRecipes.SmeltItem(ZGItems.dustVirinium, ZGItems.ingotVirinium, 2.6F);
+		SmeltRecipes.SmeltItem(ZGItems.dustShinestone, ZGItems.ingotShinestone, 2.6F);
+		SmeltRecipes.SmeltItem(ZGItems.dustShinium, ZGItems.ingotShinium, 4.2F);
+		
+		// Lapis Dust -> Lapis Ingot
+		SmeltRecipes.SmeltItem(new ItemStack(Items.DYE, 1, 4), new ItemStack(ZGItems.ingotLapis, 1), 1.0F);
 		
 		// Food (Raw -> Cooked)
 		SmeltRecipes.SmeltItem(ZGItems.rawAlienBacon, ZGItems.cookedAlienBacon, 1.2F);
@@ -123,6 +128,10 @@ public class SmeltRecipes {
 	public static void SmeltItem(Item itemIn, ItemStack stackOut, float xp) {
 		GameRegistry.addSmelting(itemIn, stackOut, xp);
 		totalSmeltRecipes++;
+	}
+	
+	public static void SmeltItem(ItemStack stackIn, ItemStack stackOut, float xp) {
+		GameRegistry.addSmelting(stackIn, stackOut, xp);
 	}
 	
 	public static void SmeltBlockToItem(Block blockIn, Item itemOut, float xp) {

@@ -6,7 +6,10 @@ import net.minecraft.block.Block;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fluids.FluidStack;
+import net.minecraftforge.fluids.FluidUtil;
 import zollerngalaxy.blocks.ZGBlocks;
+import zollerngalaxy.blocks.fluids.ZGFluids;
 import zollerngalaxy.items.ZGItems;
 import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.lib.helpers.ZGRecipeHelper;
@@ -29,6 +32,7 @@ public class CraftingRecipes {
 		CraftingRecipes.addRockBricks(ZGBlocks.edenSacredStone, ZGBlocks.edenDungeonBricks);
 		CraftingRecipes.addRockBricks(ZGBlocks.xathStone, ZGBlocks.xathRockBricks);
 		CraftingRecipes.addRockBricks(ZGBlocks.oasisStone, ZGBlocks.oasisRockBricks);
+		CraftingRecipes.addRockBricks(ZGBlocks.blockShinestonePolished, ZGBlocks.blockShinestoneCrystalBricks);
 		
 		CraftingRecipes.addIngotMetal(ZGItems.ingotVirinium, ZGBlocks.blockViri);
 		CraftingRecipes.addIngotMetal(ZGItems.ingotCobalt, ZGBlocks.blockCobalt);
@@ -36,6 +40,10 @@ public class CraftingRecipes {
 		CraftingRecipes.addIngotMetal(ZGItems.prometheanCrystal, ZGBlocks.blockPromethean);
 		CraftingRecipes.addIngotMetal(ZGItems.superChargedCoal, ZGBlocks.blockSuperChargedCoal);
 		CraftingRecipes.addIngotMetal(ZGItems.plutoniumCrystal, ZGBlocks.blockPlutonium);
+		CraftingRecipes.addIngotMetal(ZGItems.ingotShinestone, ZGBlocks.blockShinestoneCrystal);
+		CraftingRecipes.addIngotMetal(ZGItems.ingotShinium, ZGBlocks.blockShinium);
+		CraftingRecipes.addIngotMetal(ZGItems.ingotChargium, ZGBlocks.blockChargium);
+		
 		CraftingRecipes.addIngotMetal(ZGItems.compressedCobalt, ZGBlocks.blockCompressedCobalt);
 		CraftingRecipes.addIngotMetal(ZGItems.compressedEvenium, ZGBlocks.blockCompressedEve);
 		CraftingRecipes.addIngotMetal(ZGItems.compressedHeartium, ZGBlocks.blockCompressedHeartium);
@@ -44,8 +52,24 @@ public class CraftingRecipes {
 		CraftingRecipes.addIngotMetal(ZGItems.compressedVirinium, ZGBlocks.blockCompressedViri);
 		
 		CraftingRecipes.addBriteStone(ZGItems.dustBrightstone, ZGBlocks.edenBrightStone);
+		CraftingRecipes.addBriteStone(ZGItems.dustShinestone, ZGBlocks.blockShinestone);
+		CraftingRecipes.addBriteStone(ZGBlocks.blockShinestoneCrystal, ZGBlocks.blockShinestonePolished);
 		
 		CraftingRecipes.addPlanks(ZGBlocks.edenWoodLog, ZGBlocks.edenWoodPlanks);
+		
+		// Shinium
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.ingotShinium, 1), new Object[] { "DLD", "DSD", "DLD", 'D',
+				ZGItems.prometheanCrystal, 'S', ZGItems.ingotShinestone, 'L', ZGItems.ingotLapis });
+		totalCraftRecipes++;
+		
+		// Chargium Fluid
+		ItemStack filledBucket = FluidUtil.getFilledBucket(new FluidStack(ZGFluids.fluidChargium,
+				ZGFluids.fluidChargium.BUCKET_VOLUME));
+		
+		// Chargium Dust
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.dustChargium, 8), new Object[] { "SS ", "ZZ ", "F  ", 'S',
+				ZGItems.dustShinium, 'Z', ZGItems.kriffCrystal, 'F', filledBucket });
+		totalCraftRecipes++;
 		
 		// HUD
 		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.hud, 1), new Object[] { "RXR", "SDS", "RXR", 'R', Items.REDSTONE,
@@ -129,6 +153,9 @@ public class CraftingRecipes {
 		
 		// Star Gate (Tier 5)
 		// TODO: Next release..
+		
+		// Star Gate (Tier 6)
+		// TODO: Next release..
 	}
 	
 	private static void addRockBricks(Block stoneIn, Block bricksOut) {
@@ -144,6 +171,11 @@ public class CraftingRecipes {
 	
 	private static void addBriteStone(Item dustIn, Block blockOut) {
 		ZGRecipeHelper.addRecipe(new ItemStack(blockOut, 1), new Object[] { "DD", "DD", 'D', dustIn });
+		totalCraftRecipes++;
+	}
+	
+	private static void addBriteStone(Block blockIn, Block blockOut) {
+		ZGRecipeHelper.addRecipe(new ItemStack(blockOut, 1), new Object[] { "DD", "DD", 'D', blockIn });
 		totalCraftRecipes++;
 	}
 	

@@ -10,6 +10,9 @@ public class ZGRecipeRegistry {
 		CompressorRecipesZG.init();
 		if (ModHelperBase.useCofh && ModHelperBase.useThermalFoundation) {
 			PulverizerRecipes.init();
+			InductionSmelterRecipes.init();
+			MagmaCrucibleRecipes.init();
+			FluidTransposerRecipes.init();
 		}
 	}
 }

@@ -13,6 +13,7 @@ import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import net.minecraftforge.fml.relauncher.Side;
 import zollerngalaxy.biomes.ZGBiomes;
 import zollerngalaxy.blocks.ZGBlocks;
+import zollerngalaxy.blocks.fluids.ZGFluids;
 import zollerngalaxy.compatibility.ZGCompats;
 import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.ZGDimensions;
@@ -71,7 +72,7 @@ public class ZollernGalaxyCore {
 		ZGInfo.init(event.getModMetadata());
 		ZGItems.init();
 		ZGBlocks.init();
-		// TODO: ZGFluids.init();
+		ZGFluids.init();
 		ZGBiomes.init();
 		ZGPlanets.init();
 		ZGSpaceStations.init();

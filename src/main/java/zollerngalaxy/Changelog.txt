@@ -3,4 +3,8 @@ Zollern Galaxy v2.0.5
 =====================
 
 * Added the Constructed planet type.
+* Added Chargium and White Lava fluids.
+    * Chargium will be able to be used inside of an Extreme Reactors turbine with extreme efficiency.
+        * It must be created with careful precision - it is liquified from Super Charged Coal.
+* Added Shinestone and Fueltonium.
 * 

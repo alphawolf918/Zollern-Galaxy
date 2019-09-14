@@ -178,8 +178,8 @@ public class ZGBlocks {
 			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.EVENIUM.getHarvestLevel());
 	public static final Block edenNickelOre = new ZGBlockOre("edennickleore", 1.2F).setBlockHarvestLevel(
 			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.EVENIUM.getHarvestLevel());
-	public static final Block edenViriniumOre = new ZGOreGem("edenviriore", 2.6F, ZGItems.dustViri).setBlockHarvestLevel(
-			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.EVENIUM.getHarvestLevel());
+	public static final Block edenViriniumOre = new ZGOreGem("edenviriore", 2.6F, ZGItems.dustVirinium)
+			.setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.EVENIUM.getHarvestLevel());
 	public static final Block edenCobaltOre = new ZGBlockOre("edencobaltore", 2.6F).setBlockHarvestLevel(
 			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.EVENIUM.getHarvestLevel());
 	public static final Block edenEveniumOre = new ZGBlockOre("edeneveniumore", 2.8F).setBlockHarvestLevel(
@@ -258,6 +258,15 @@ public class ZGBlocks {
 	public static final Block blockPromethean = new ZGBlockMetal("prometheanblock");
 	public static final Block blockSuperChargedCoal = new ZGBlockBase("superchargedcoalblock", 2.6F);
 	public static final Block blockPlutonium = new ZGBlockMetal("plutoniumblock", 4.5F);
+	public static final Block blockFueltonium = new ZGBlockMetal("fueltoniumblock", 3.2F);
+	public static final Block blockChargium = new ZGBlockMetal("chargiumblock", 5.2F).setLightLevel(1.0F);
+	public static final Block blockShinium = new ZGBlockMetal("shiniumblock", 2.3F).setLightLevel(1.0F);
+	
+	// Glow Blocks
+	public static final Block blockShinestone = new ZGShineBlock("shinestone", 1.6F, ZGItems.dustShinestone);
+	public static final Block blockShinestoneCrystal = new ZGShineBlock("shinestonecrystal", 1.8F);
+	public static final Block blockShinestonePolished = new ZGShineBlock("polishedshinestone", 1.4F);
+	public static final Block blockShinestoneCrystalBricks = new ZGShineBlock("shinestonecrystalbricks", 2.4F);
 	
 	// Compressed Metals
 	public static final Block blockCompressedHeartium = new ZGBlockCompressed("compressedheartiumblock");
@@ -270,7 +279,6 @@ public class ZGBlocks {
 	// Other
 	public static final Block blockCrater = new ZGBlockBase("crater_rock", 2.4F);
 	
-	// TODO: Re-add fluids
 	public static void init() {
 		ZGBlocks.registerBlocks(edenWoodSapling, edenFruit, edenFlower, edenFlowerBlack, edenFlowerBlue, edenFlowerCyan,
 				edenFlowerGreen, edenFlowerOrange, edenFlowerPink, edenFlowerPurple, edenFlowerRed, edenFlowerYellow,
@@ -293,9 +301,10 @@ public class ZGBlocks {
 				oasisSuperChargedCoalOre, oasisCoalOre, oasisIronOre, oasisGoldOre, oasisRedstoneOre, oasisDiamondOre,
 				oasisTinOre, oasisLeadOre, xantheonRock, xantheonChrome, xantheonStone, xantheonCoalOre, xantheonIronOre,
 				xantheonCopperOre, xantheonNickelOre, xantheonPlutoniumOre, blockViri, blockCobalt, blockEve,
-				blockPromethean, blockCrater, blockSuperChargedCoal, blockCompressedHeartium, blockCompressedViri,
-				blockCompressedEve, blockCompressedCobalt, blockCompressedPromethean, blockCompressedSuperChargedCoal,
-				blockPlutonium);
+				blockPromethean, blockCrater, blockSuperChargedCoal, blockPlutonium, blockFueltonium, blockChargium,
+				blockShinium, blockShinestone, blockShinestoneCrystal, blockShinestonePolished,
+				blockShinestoneCrystalBricks, blockCompressedHeartium, blockCompressedViri, blockCompressedEve,
+				blockCompressedCobalt, blockCompressedPromethean, blockCompressedSuperChargedCoal);
 		ZGHelper.Log("Loaded a total of " + totalBlocks + " new blocks.");
 	}
 	

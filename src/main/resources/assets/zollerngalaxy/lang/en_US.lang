@@ -160,6 +160,11 @@ tile.oasistinore.name=Oasis Tin Ore
 tile.oasisleadore.name=Oasis Lead Ore
 tile.superchargedcoalblock.name=Block of Super Charged Coal
 tile.chargiumblock.name=Block of Conductive Chargium
+tile.shiniumblock.name=Block of Shinium
+tile.shinestone.name=Shinestone
+tile.shinestonecrystal.name=Shinestone Crystal
+tile.polishedshinestone.name=Polished Shinestone
+tile.shinestonecrystalbricks.name=Shinestone Crystal Bricks
 
 tile.xantheonrock.name=Xantheon Surface Rock
 tile.xantheonstone.name=Xantheon Stone
@@ -170,6 +175,7 @@ tile.xantheoncoalore.name=Xantheon Coal Ore
 tile.xantheonnickelore.name=Xantheon Nickel Ore
 tile.xantheoncopperore.name=Xantheon Copper Ore
 tile.plutoniumblock.name=Block of Plutonium
+tile.fueltoniumblock.name=Block of Fueltonium
 
 tile.endrock.name=Endrock
 
@@ -186,6 +192,14 @@ tile.compressedheartiumblock.name=Block of Compressed Heartium
 chargium=Conductive Chargium
 tile.chargium.name=Conductive Chargium
 fluid.chargium=Conductive Chargium
+
+whitelava=Radiolaria
+tile.whitelava.name=Radiolaria
+fluid.whitelava=Radiolaria
+
+fueltonium=Molten Fueltonium
+tile.fueltonium.name=Molten Fueltonium
+fluid.fueltonium=Molten Fueltonium
 
 container.eden.treasurechest.name=Eden's Treasure
 
@@ -221,6 +235,20 @@ item.prometheancrystal.name=Promethean Crystal
 item.plutoniumcrystal.name=Plutonium Crystal
 
 item.purgotessence.name=Oasis Gem
+
+item.fueltoniumraw.name=Raw Fuelonite
+item.fueltoniumingot.name=Fueltonium Ingot
+
+item.chargiumdust.name=Chargium Blend
+item.chargiumingot.name=Chargium Ingot
+
+item.shiniumdust.name=Shinium Dust
+item.shiniumingot.name=Shinium Ingot
+
+item.shinestonedust.name=Shinestone Dust
+item.shinestoneingot.name=Shinestone Ingot
+
+item.lapisingot.name=Lapis Ingot
 
 item.blueprint_rad.name=Radiation Protection
 item.blueprint_tox.name=Toxicity Protection
