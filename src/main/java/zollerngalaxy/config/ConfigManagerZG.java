@@ -24,6 +24,7 @@ public class ConfigManagerZG {
 	public static int planetXathiusDimensionId;
 	public static int planetOasisDimensionId;
 	public static int planetXantheonDimensionId;
+	public static int planetCandoraDimensionId;
 	public static int planetAtheonDimensionId;
 	
 	// Planets (Pantheon)
@@ -43,6 +44,7 @@ public class ConfigManagerZG {
 	public static int planetMavethDimensionId;
 	
 	// Planets (Vega)
+	public static int planetReachDimensionId;
 	public static int planetMeridianDimensionId;
 	public static int planetRequiemDimensionId;
 	
@@ -91,6 +93,7 @@ public class ConfigManagerZG {
 		planetXathiusDimensionId = configuration.get(CATEGORY_DIMENSIONS, "Planet Xathius Dimension ID", -7983).getInt();
 		planetOasisDimensionId = configuration.get(CATEGORY_DIMENSIONS, "Planet Oasis Dimension ID", -7990).getInt();
 		planetXantheonDimensionId = configuration.get(CATEGORY_DIMENSIONS, "Planet Xantheon Dimension ID", -7984).getInt();
+		planetCandoraDimensionId = configuration.get(CATEGORY_DIMENSIONS, "Planet Candora Dimension ID", -7777).getInt();
 		planetAtheonDimensionId = configuration.get(CATEGORY_DIMENSIONS, "Planet Atheon Dimension ID", -7998).getInt();
 		
 		// Planets (Pantheon)
@@ -112,6 +115,7 @@ public class ConfigManagerZG {
 		
 		// Planets (Vega)
 		planetMeridianDimensionId = configuration.get(CATEGORY_DIMENSIONS, "Planet Meridian Dimension ID", -7992).getInt();
+		planetReachDimensionId = configuration.get(CATEGORY_DIMENSIONS, "Planet Reach Dimension ID", -7676).getInt();
 		planetRequiemDimensionId = configuration.get(CATEGORY_DIMENSIONS, "Planet Requiem Dimension ID", -7987).getInt();
 		
 		// Planets (Nova)
@@ -156,12 +160,13 @@ public class ConfigManagerZG {
 		
 		// Misc (Whether or not to use Thermal Foundation's Detabilized Redstone
 		// for the Red Sea in Oasis)
-		shouldOasisUseLiquidRedstone = configuration.get(
-				CATEGORY_MISC,
-				"Oasis uses Thermal Foundation's Destabilized Redstone",
-				false,
-				"Whether or not Oasis should use Detabilized Redstone for its Red Sea biome (false by default). "
-						+ "WARNING: This can use a LOT of your PC's memory! Use at your own risk.").getBoolean();
+		shouldOasisUseLiquidRedstone = configuration
+				.get(CATEGORY_MISC,
+						"Oasis uses Thermal Foundation's Destabilized Redstone",
+						false,
+						"Whether or not Oasis should use Detabilized Redstone for its Red Sea biome (false by default). "
+								+ "WARNING: This can use a LOT of your PC's memory! This can lead to severe LAG! Use at your own risk.")
+				.getBoolean();
 		
 		configuration.save();
 	}

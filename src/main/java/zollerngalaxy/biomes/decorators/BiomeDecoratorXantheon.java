@@ -23,6 +23,7 @@ public class BiomeDecoratorXantheon extends BiomeDecoratorZG {
 	private WorldGenerator nickelGen;
 	private WorldGenerator plutoniumGen;
 	private WorldGenerator fueltoniumGen;
+	private WorldGenerator constructGen;
 	
 	public boolean generateLakes = true;
 	public boolean generateSpouts = true;
@@ -38,6 +39,7 @@ public class BiomeDecoratorXantheon extends BiomeDecoratorZG {
 		this.nickelGen = new WorldGenMinableZG(ZGBlocks.xantheonNickelOre, STONE, EnumOreGenZG.NICKEL);
 		this.plutoniumGen = new WorldGenMinableZG(ZGBlocks.xantheonPlutoniumOre, STONE, EnumOreGenZG.PLUTONIUM);
 		this.fueltoniumGen = new WorldGenMinableZG(ZGBlocks.xantheonFueltoniumOre, STONE, EnumOreGenZG.FUELTONIUM);
+		this.constructGen = new WorldGenMinableZG(ZGBlocks.xantheonConstructBlock, STONE, EnumOreGenZG.CONSTRUCTED);
 	}
 	
 	@Override
@@ -52,6 +54,7 @@ public class BiomeDecoratorXantheon extends BiomeDecoratorZG {
 		this.generateOre(this.nickelGen, EnumOreGenZG.NICKEL, world, rand);
 		this.generateOre(this.plutoniumGen, EnumOreGenZG.PLUTONIUM, world, rand);
 		this.generateOre(this.fueltoniumGen, EnumOreGenZG.FUELTONIUM, world, rand);
+		this.generateOre(this.constructGen, EnumOreGenZG.CONSTRUCTED, world, rand);
 		
 		int genY = 248;
 		int y = genY;
@@ -60,9 +63,11 @@ public class BiomeDecoratorXantheon extends BiomeDecoratorZG {
 			for (int i = 0; i < this.whiteLavaLakesPerChunk; ++i) {
 				y = rand.nextInt(rand.nextInt(genY) + 8);
 				
-				if (rand.nextInt(150) <= 20) {
-					(new WorldGenLakesZG(ZGFluids.blockWhiteLavaFluid, STONE)).generate(world, rand,
-							this.chunkPos.add(x, y, z));
+				if (rand.nextInt(150) <= 10) {
+					if (y <= 62) {
+						(new WorldGenLakesZG(ZGFluids.blockWhiteLavaFluid, STONE)).generate(world, rand,
+								this.chunkPos.add(x, y, z));
+					}
 				}
 			}
 		}
@@ -70,7 +75,7 @@ public class BiomeDecoratorXantheon extends BiomeDecoratorZG {
 		if (this.generateSpouts) {
 			y = rand.nextInt(rand.nextInt(genY) + 8);
 			
-			if (rand.nextInt(300) <= 5) {
+			if (rand.nextInt(300) == 0) {
 				if (y >= 70) {
 					(new WorldGenRadiolariaSpouts()).generate(world, rand, this.chunkPos.add(x, y, z));
 				}

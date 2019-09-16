@@ -90,7 +90,7 @@ public class ZGPlanets {
 	
 	public static void initStarSystems() {
 		// Psios System
-		systemPsios.setMapPosition(new Vector3(-2.5F, 1.1F, 0.9F));
+		systemPsios.setMapPosition(new Vector3(-2.5F, 1.2F, 0.8F));
 		starPsios.setParentSolarSystem(systemPsios);
 		starPsios.setTierRequired(-1);
 		starPsios.setRelativeSize(35.0F);
@@ -99,7 +99,7 @@ public class ZGPlanets {
 		totalSystems++;
 		
 		// Praedyth System
-		systemPraedyth.setMapPosition(new Vector3(-1.1F, 1.3F, -0.2F));
+		systemPraedyth.setMapPosition(new Vector3(-1.2F, 1.4F, -0.3F));
 		starPraedyth.setParentSolarSystem(systemPraedyth);
 		starPraedyth.setTierRequired(-1);
 		starPraedyth.setRelativeSize(40.0F);
@@ -163,7 +163,7 @@ public class ZGPlanets {
 		planetZollus.setRingColorRGB(0.1F, 0.9F, 2.6F);
 		planetZollus.setPhaseShift(0.0F);
 		planetZollus.setRelativeOrbitTime(42F);
-		planetZollus.setDistanceFromCenter(4F);
+		planetZollus.setDistanceFromCenter(2.0F);
 		planetZollus.setTierRequired(3);
 		planetZollus.setRelativeSize(10.876F);
 		planetZollus.setPlanetTemperature(-102.6f);
@@ -185,7 +185,7 @@ public class ZGPlanets {
 		planetKriffon.setRingColorRGB(0.1F, 0.9F, 2.6F);
 		planetKriffon.setPhaseShift(0.0F);
 		planetKriffon.setRelativeOrbitTime(0.3F);
-		planetKriffon.setDistanceFromCenter(1F);
+		planetKriffon.setDistanceFromCenter(0.5F);
 		planetKriffon.setTierRequired(4);
 		planetKriffon.setRelativeSize(20.0F);
 		planetKriffon.setPlanetTemperature(227.4F);
@@ -206,7 +206,7 @@ public class ZGPlanets {
 		planetPurgot.setRingColorRGB(0.1F, 0.9F, 2.6F);
 		planetPurgot.setPhaseShift(0.0F);
 		planetPurgot.setRelativeOrbitTime(10F);
-		planetPurgot.setDistanceFromCenter(3.5F);
+		planetPurgot.setDistanceFromCenter(2.5F);
 		planetPurgot.setTierRequired(5);
 		planetPurgot.setRelativeSize(40.0F);
 		planetPurgot.setPlanetTemperature(-54.5f);
@@ -231,7 +231,7 @@ public class ZGPlanets {
 		planetEden.setRingColorRGB(0.1F, 0.9F, 2.6F);
 		planetEden.setPhaseShift(0.0F);
 		planetEden.setRelativeOrbitTime(8.0F);
-		planetEden.setDistanceFromCenter(2F);
+		planetEden.setDistanceFromCenter(1.8F);
 		planetEden.setTierRequired(5);
 		planetEden.setRelativeSize(50.0F);
 		planetEden.setPlanetTemperature(71.2f);
@@ -258,7 +258,7 @@ public class ZGPlanets {
 		planetXathius.setRingColorRGB(0.1F, 0.9F, 1.4F);
 		planetXathius.setPhaseShift(0.0F);
 		planetXathius.setRelativeOrbitTime(2.5F);
-		planetXathius.setDistanceFromCenter(3.4F);
+		planetXathius.setDistanceFromCenter(1.4F);
 		planetXathius.setTierRequired(10);
 		planetXathius.setRelativeSize(20.0F);
 		planetXathius.setPlanetTemperature(82.4f);
@@ -282,7 +282,7 @@ public class ZGPlanets {
 		planetOasis.setRingColorRGB(2.0f, 5.4f, 3.2f);
 		planetOasis.setPhaseShift(0.0f);
 		planetOasis.setRelativeOrbitTime(6.2F);
-		planetOasis.setDistanceFromCenter(2.5f);
+		planetOasis.setDistanceFromCenter(1.8f);
 		planetOasis.setTierRequired(6);
 		planetOasis.setRelativeSize(64.0f);
 		planetOasis.setPlanetTemperature(68.2F);
@@ -305,7 +305,7 @@ public class ZGPlanets {
 		planetXantheon.setRingColorRGB(1.6f, 3.7f, 2.1f);
 		planetXantheon.setPhaseShift(4.0f);
 		planetXantheon.setRelativeOrbitTime(20.2F);
-		planetXantheon.setDistanceFromCenter(5.5f);
+		planetXantheon.setDistanceFromCenter(2.8F);
 		planetXantheon.setTierRequired(8);
 		planetXantheon.setRelativeSize(96.0f);
 		planetXantheon.setPlanetTemperature(-31.2F);

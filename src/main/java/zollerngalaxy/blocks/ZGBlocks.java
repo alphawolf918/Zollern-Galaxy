@@ -278,6 +278,20 @@ public class ZGBlocks {
 	public static final Block blockCompressedPromethean = new ZGBlockCompressed("compressedprometheanblock");
 	public static final Block blockCompressedSuperChargedCoal = new ZGBlockCompressed("compressedsuperchargedcoalblock");
 	
+	// Candy Blocks
+	public static final Block candyCubeWhite = new CandyCubeBlock("white");
+	public static final Block candyCubeBlack = new CandyCubeBlock("black");
+	public static final Block candyCubeGray = new CandyCubeBlock("gray");
+	public static final Block candyCubeOrange = new CandyCubeBlock("orange");
+	public static final Block candyCubeBrown = new CandyCubeBlock("brown");
+	public static final Block candyCubeRed = new CandyCubeBlock("red");
+	public static final Block candyCubeBlue = new CandyCubeBlock("blue");
+	public static final Block candyCubeYellow = new CandyCubeBlock("yellow");
+	public static final Block candyCubePurple = new CandyCubeBlock("purple");
+	public static final Block candyCubeCyan = new CandyCubeBlock("cyan");
+	public static final Block candyCubePink = new CandyCubeBlock("pink");
+	public static final Block candyCubeGreen = new CandyCubeBlock("green");
+	
 	// Other
 	public static final Block blockCrater = new ZGBlockBase("crater_rock", 2.4F);
 	
@@ -306,7 +320,9 @@ public class ZGBlocks {
 				blockViri, blockCobalt, blockEve, blockPromethean, blockCrater, blockSuperChargedCoal, blockPlutonium,
 				blockFueltonium, blockChargium, blockShinium, blockShinestone, blockShinestoneCrystal,
 				blockShinestonePolished, blockShinestoneCrystalBricks, blockCompressedHeartium, blockCompressedViri,
-				blockCompressedEve, blockCompressedCobalt, blockCompressedPromethean, blockCompressedSuperChargedCoal);
+				blockCompressedEve, blockCompressedCobalt, blockCompressedPromethean, blockCompressedSuperChargedCoal,
+				candyCubeWhite, candyCubeBlack, candyCubeGray, candyCubeOrange, candyCubeBrown, candyCubeRed, candyCubeBlue,
+				candyCubeYellow, candyCubePurple, candyCubeCyan, candyCubePink, candyCubeGreen);
 		ZGHelper.Log("Loaded a total of " + totalBlocks + " new blocks.");
 	}
 	

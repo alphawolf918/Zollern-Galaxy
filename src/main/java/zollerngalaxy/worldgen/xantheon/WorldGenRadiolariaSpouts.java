@@ -28,7 +28,7 @@ public class WorldGenRadiolariaSpouts extends ZGWorldGenMaster {
 		// }
 		
 		int randTop = (rand.nextInt(6));
-		randTop = (randTop == 0) ? 5 : randTop;
+		randTop = (randTop == 0) ? 3 : randTop;
 		
 		for (int s = 0; s < randTop; s++) {
 			this.setBlock(world, pos.add(0, s, 0), ZGBlocks.xantheonConstructBlock);

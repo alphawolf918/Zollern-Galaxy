@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "III",
+    "III",
+    "III"
+  ],
+  "key": {
+    "I": {
+      "item": "zollerngalaxy:fueltoniumingot"
+    }
+  },
+  "result": {
+    "item": "zollerngalaxy:fueltoniumblock"
+  }
+}

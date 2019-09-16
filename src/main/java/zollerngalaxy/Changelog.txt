@@ -12,4 +12,7 @@ Zollern Galaxy v2.0.5
 * Fueltonium can be used in place of Yellorite / Uranium.
 * Created the artificial "tech" planet, Xantheon.
 * Radiolaria Spouts (essentially white lava) have a chance to spawn, with "Constructed" Blocks.
+* Added Candy Cube blocks.
+* Modified positions of planets and star systems on galactic map.
+* Added planet Xantheon, an artificially-constructed planet.
 * 

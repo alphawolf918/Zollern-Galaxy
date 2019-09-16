@@ -35,7 +35,7 @@ public class ZGItemSword extends ItemSword implements ISingleZGItemRender {
 	}
 	
 	private int getDiamondMaxUses() {
-		return ToolMaterial.DIAMOND.getMaxUses();
+		return ToolMaterial.DIAMOND.getMaxUses() * this.harvestLvl;
 	}
 	
 	@Override
@@ -45,7 +45,7 @@ public class ZGItemSword extends ItemSword implements ISingleZGItemRender {
 	
 	@Override
 	public float getAttackDamage() {
-		return ToolMaterial.DIAMOND.getAttackDamage() * this.strengthMultiplier;
+		return ToolMaterial.DIAMOND.getAttackDamage() * (this.strengthMultiplier + this.harvestLvl);
 	}
 	
 	public void setItemName(final Item item, final String itemName) {

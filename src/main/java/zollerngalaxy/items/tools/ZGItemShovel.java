@@ -1,5 +1,7 @@
 package zollerngalaxy.items.tools;
 
+import net.minecraft.block.Block;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemSpade;
@@ -54,6 +56,15 @@ public class ZGItemShovel extends ItemSpade implements ISingleZGItemRender {
 	@Override
 	public String getName() {
 		return this.getUnlocalizedName().substring(5);
+	}
+	
+	@Override
+	public boolean canHarvestBlock(IBlockState stateIn) {
+		boolean canHarvest = false;
+		Block block = stateIn.getBlock();
+		int harvestLevel = block.getHarvestLevel(stateIn);
+		canHarvest = (harvestLevel >= this.harvestLvl);
+		return canHarvest;
 	}
 	
 }

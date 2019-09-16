@@ -15,11 +15,6 @@ tile.zolcopperore.name=Zollus Copper Ore
 tile.zolheartore.name=Zollus Heartium Ore
 tile.zoldirt.name=Zollus Dirt
 
-tile.edenzollusportal.name=Zollus Gate
-tile.zolluskriffonportal.name=Kriffon Gate
-tile.kriffonpurgotportal.name=Purgot Gate
-tile.purgotoasisportal.name=Praedyth Portal
-
 tile.edensurfacerock.name=Eden's Greenrock
 tile.edengrass.name=Eden's Grass
 tile.edengrass_snow.name=Eden's Snowy Grass
@@ -179,6 +174,19 @@ tile.plutoniumblock.name=Block of Plutonium
 tile.fueltoniumblock.name=Block of Fueltonium
 tile.constructblock.name=Constructed Block
 
+tile.candycube_white.name=White Candy Cube
+tile.candycube_black.name=Black Candy Cube
+tile.candycube_gray.name=Gray Candy Cube
+tile.candycube_orange.name=Orange Candy Cube
+tile.candycube_brown.name=Brown Candy Cube
+tile.candycube_red.name=Red Candy Cube
+tile.candycube_blue.name=Blue Candy Cube
+tile.candycube_yellow.name=Yellow Candy Cube
+tile.candycube_purple.name=Purple Candy Cube
+tile.candycube_cyan.name=Cyan Candy Cube
+tile.candycube_pink.name=Pink Candy Cube
+tile.candycube_green.name=Green Candy Cube
+
 tile.endrock.name=Endrock
 
 tile.heartblock.name=Healing Station
@@ -320,6 +328,7 @@ moon.astros=Astros
 planet.xathius=Xathius
 planet.oasis=Oasis
 planet.xantheon=Xantheon
+planet.candora=Candora
 planet.atheon=Atheon
 
 planet.meztli=Meztli
@@ -336,6 +345,7 @@ planet.asgard=Asgard
 planet.maveth=Maveth
 
 planet.meridian=Meridian
+planet.reach=Reach
 
 star.psion6=Psios
 star.praedyth=Praedyth
