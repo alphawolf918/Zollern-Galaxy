@@ -186,6 +186,11 @@ tile.candycube_purple.name=Purple Candy Cube
 tile.candycube_cyan.name=Cyan Candy Cube
 tile.candycube_pink.name=Pink Candy Cube
 tile.candycube_green.name=Green Candy Cube
+tile.chocolateblock.name=Chocolate Block
+tile.cookieblock.name=Cookie Block
+tile.brownieblock.name=Brownie Block
+tile.icecreamsandwichblock.name=Ice Cream Sandwich Block
+tile.sugarcube.name=Sugar Cube
 
 tile.endrock.name=Endrock
 
@@ -210,6 +215,10 @@ fluid.whitelava=Radiolaria
 fueltonium=Molten Fueltonium
 tile.fueltonium.name=Molten Fueltonium
 fluid.fueltonium=Molten Fueltonium
+
+chocolatemelted=Melted Chocolate
+tile.chocolatemelted.name=Melted Chocolate
+fluid.chocolatemelted=Melted Chocolate
 
 container.eden.treasurechest.name=Eden's Treasure
 
@@ -288,6 +297,7 @@ item.stargate_tier7.name=Stargate (Protocol Seven)
 item.stargate_tier8.name=Stargate (Protocol Eight)
 item.stargate_tier9.name=Stargate (Protocol Nine)
 item.stargate_tier10.name=Stargate (Protocol Ten)
+item.stargate_tier918.name=Stargate (Birthday Protocol)
 
 item.omnitool.name=Omnitool
 

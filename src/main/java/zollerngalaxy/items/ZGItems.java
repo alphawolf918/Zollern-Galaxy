@@ -79,6 +79,7 @@ public class ZGItems {
 	public static final Item starGateTier8 = new ItemStargate(8);
 	public static final Item starGateTier9 = new ItemStargate(9);
 	public static final Item starGateTier10 = new ItemStargate(10);
+	public static final Item starGateCandy = new ItemStargate(918);
 	
 	// Tools
 	public static final Item OMNITOOL = new ItemOmnitool();
@@ -117,9 +118,9 @@ public class ZGItems {
 				compressedHeartium, compressedKriffonium, compressedVirinium, compressedVyrex, compressedPromethean,
 				compressedSuperChargedCoal, rawAlienBacon, cookedAlienBacon, rawAlienBeef, cookedAlienBeef, edenFruit,
 				edenDungeonKey, superChargedCoal, starGateTier1, starGateTier2, starGateTier3, starGateTier4, starGateTier5,
-				starGateTier6, starGateTier7, starGateTier8, starGateTier9, starGateTier10, OMNITOOL, pickaxeCobalt,
-				pickaxeEvenium, pickaxeVirinium, shovelCobalt, shovelEvenium, shovelVirinium, axeCobalt, axeEvenium,
-				axeVirinium, hoeCobalt, hoeEvenium, hoeVirinium, swordCobalt, swordEvenium, swordVirinium);
+				starGateTier6, starGateTier7, starGateTier8, starGateTier9, starGateTier10, starGateCandy, OMNITOOL,
+				pickaxeCobalt, pickaxeEvenium, pickaxeVirinium, shovelCobalt, shovelEvenium, shovelVirinium, axeCobalt,
+				axeEvenium, axeVirinium, hoeCobalt, hoeEvenium, hoeVirinium, swordCobalt, swordEvenium, swordVirinium);
 		ZGHelper.Log("Loaded a total of " + totalItems + " new items.");
 	}
 	

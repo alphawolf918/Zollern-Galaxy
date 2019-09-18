@@ -20,6 +20,7 @@ import micdoodle8.mods.galacticraft.api.world.BiomeGenBaseGC;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.Biome.BiomeProperties;
 import net.minecraftforge.common.BiomeDictionary;
+import zollerngalaxy.biomes.candora.BiomeCandyMountain;
 import zollerngalaxy.biomes.eden.BiomeAsteroidCraters;
 import zollerngalaxy.biomes.eden.BiomeBloodDesert;
 import zollerngalaxy.biomes.eden.BiomeEdenOcean;
@@ -88,6 +89,9 @@ public class ZGBiomes {
 	// Xantheon
 	public static final Biome XANTHEON = new BiomeXantheon(new BiomeProperties("Xantheon"));
 	
+	// Candora
+	public static final Biome CANDY_MOUNTAIN = new BiomeCandyMountain(new BiomeProperties("Candy Mountain"));
+	
 	public static void init() {
 		// Zollus
 		ZGBiomes.addBiome(ZGBiomes.ZOLLUS, COLD, DEAD, DRY);
@@ -125,6 +129,9 @@ public class ZGBiomes {
 		
 		// Xantheon
 		ZGBiomes.addBiome(ZGBiomes.XANTHEON, DEAD, SPOOKY, COLD, WASTELAND);
+		
+		// Candora
+		ZGBiomes.addBiome(ZGBiomes.CANDY_MOUNTAIN, MOUNTAIN);
 		
 		ZGHelper.Log("Loaded a total of " + totalBiomes + " new biomes.");
 	}

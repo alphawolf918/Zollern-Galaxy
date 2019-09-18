@@ -1,12 +1,6 @@
-package zollerngalaxy.biomes.purgot;
+package zollerngalaxy.biomes.candora;
 
 import java.util.Random;
-import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedCreeper;
-import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedEnderman;
-import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedSkeleton;
-import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedSpider;
-import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedWitch;
-import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedZombie;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
@@ -14,25 +8,27 @@ import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeDecorator;
 import net.minecraft.world.chunk.ChunkPrimer;
 import zollerngalaxy.biomes.BiomeSpace;
-import zollerngalaxy.biomes.decorators.BiomeDecoratorPurgot;
+import zollerngalaxy.biomes.decorators.BiomeDecoratorCandora;
 import zollerngalaxy.blocks.ZGBlocks;
+import zollerngalaxy.blocks.fluids.ZGFluids;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 import zollerngalaxy.planets.ZGPlanets;
 
-public class BiomePurgotBase extends BiomeSpace {
+public class BiomeCandoraBase extends BiomeSpace {
 	
-	protected static final IBlockState STONE = ZGBlocks.purgStone.getDefaultState();
+	protected static final IBlockState STONE = ZGBlocks.candyCubeGray.getDefaultState();
 	protected static final IBlockState AIR = Blocks.AIR.getDefaultState();
 	protected static final IBlockState BEDROCK = Blocks.BEDROCK.getDefaultState();
-	protected static final IBlockState GRAVEL = ZGBlocks.purgGravel.getDefaultState();
-	protected static final IBlockState DIRT = ZGBlocks.purgDirt.getDefaultState();
-	protected static final IBlockState ICE = Blocks.PACKED_ICE.getDefaultState();
-	protected static final IBlockState WATER = Blocks.WATER.getDefaultState();
+	protected static final IBlockState GRAVEL = ZGBlocks.blockCookie.getDefaultState();
+	protected static final IBlockState DIRT = ZGBlocks.candyCubeBrown.getDefaultState();
+	protected static final IBlockState ICE = ZGBlocks.candyCubeCyan.getDefaultState();
 	
-	protected static final int SEA_LEVEL = 63;
-	protected static final int SEA_FLOOR_LEVEL = 42;
+	protected static final int SEA_LEVEL = 65;
+	protected static final int SEA_FLOOR_LEVEL = 52;
 	
-	public BiomePurgotBase(String singleName, BiomeProperties props) {
+	public BiomeDecoratorCandora biomeDecor = this.getBiomeDecorator();
+	
+	public BiomeCandoraBase(String singleName, BiomeProperties props) {
 		super(singleName, props);
 		this.setTempCategory(TempCategory.COLD);
 		this.decorator.flowersPerChunk = -999;
@@ -40,16 +36,10 @@ public class BiomePurgotBase extends BiomeSpace {
 		this.decorator.grassPerChunk = -999;
 		this.decorator.mushroomsPerChunk = -999;
 		this.clearAllSpawning();
-		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedZombie.class, 100, 4, 4));
-		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedSpider.class, 100, 4, 4));
-		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedSkeleton.class, 100, 4, 4));
-		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedCreeper.class, 100, 4, 4));
-		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedEnderman.class, 100, 4, 4));
-		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedWitch.class, 100, 4, 4));
-		this.setPlanetForBiome(ZGPlanets.planetPurgot);
+		this.setPlanetForBiome(ZGPlanets.planetCandora);
 	}
 	
-	public final void generatePurgotTerrain(World worldIn, Random rand, ChunkPrimer chunkPrimerIn, int x, int z,
+	public final void generateCandoraTerrain(World worldIn, Random rand, ChunkPrimer chunkPrimerIn, int x, int z,
 			double noiseVal) {
 		int i = worldIn.getSeaLevel();
 		float biomeHeight = this.getBiomeHeight();
@@ -67,7 +57,7 @@ public class BiomePurgotBase extends BiomeSpace {
 				IBlockState iblockstate2 = chunkPrimerIn.getBlockState(i1, j1, l);
 				if (this.getBiomeType() == EnumBiomeTypeZG.OCEAN) {
 					if ((j1 < SEA_LEVEL) && (j1 > SEA_FLOOR_LEVEL)) {
-						chunkPrimerIn.setBlockState(i1, j1, l, WATER);
+						chunkPrimerIn.setBlockState(i1, j1, l, ZGFluids.blockChocolateFluid.getDefaultState());
 					} else if (j1 < SEA_FLOOR_LEVEL) {
 						chunkPrimerIn.setBlockState(i1, j1, l, STONE);
 					} else if (j1 == SEA_FLOOR_LEVEL) {
@@ -78,7 +68,7 @@ public class BiomePurgotBase extends BiomeSpace {
 				} else {
 					if (iblockstate2.getMaterial() == Material.AIR) {
 						j = -1;
-					} else if (iblockstate2.getBlock() == ZGBlocks.purgStone) {
+					} else if (iblockstate2.getBlock() == STONE) {
 						if (j == -1) {
 							if (k <= 0) {
 								topState = AIR;
@@ -115,7 +105,7 @@ public class BiomePurgotBase extends BiomeSpace {
 	
 	@Override
 	public void genTerrainBlocks(World worldIn, Random rand, ChunkPrimer chunkPrimerIn, int x, int z, double noiseVal) {
-		this.generatePurgotTerrain(worldIn, rand, chunkPrimerIn, x, z, noiseVal);
+		this.generateCandoraTerrain(worldIn, rand, chunkPrimerIn, x, z, noiseVal);
 	}
 	
 	@Override
@@ -125,11 +115,11 @@ public class BiomePurgotBase extends BiomeSpace {
 	
 	@Override
 	public BiomeDecorator createBiomeDecorator() {
-		return new BiomeDecoratorPurgot();
+		return new BiomeDecoratorCandora();
 	}
 	
-	protected BiomeDecoratorPurgot getBiomeDecorator() {
-		return (BiomeDecoratorPurgot) this.decorator;
+	protected BiomeDecoratorCandora getBiomeDecorator() {
+		return (BiomeDecoratorCandora) this.decorator;
 	}
 	
 	@Override

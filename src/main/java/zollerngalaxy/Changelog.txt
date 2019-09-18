@@ -15,4 +15,6 @@ Zollern Galaxy v2.0.5
 * Added Candy Cube blocks.
 * Modified positions of planets and star systems on galactic map.
 * Added planet Xantheon, an artificially-constructed planet.
+* Modified Xathius graphic and added a few new planet graphics.
+* Added planet Candora as a fun, "birthday" planet.
 * 

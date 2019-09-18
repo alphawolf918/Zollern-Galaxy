@@ -4,11 +4,14 @@ import micdoodle8.mods.galacticraft.core.GCItems;
 import micdoodle8.mods.galacticraft.planets.mars.items.MarsItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
+import net.minecraft.block.material.Material;
 import net.minecraft.init.Items;
 import net.minecraft.init.MobEffects;
 import zollerngalaxy.blocks.eden.EdenFlower;
 import zollerngalaxy.blocks.eden.EdenFruit;
 import zollerngalaxy.blocks.oasis.OasisFlower;
+import zollerngalaxy.blocks.sweetblocks.CandyCubeBlock;
+import zollerngalaxy.blocks.sweetblocks.CookieBlock;
 import zollerngalaxy.blocks.zollus.ZolniumCrystals;
 import zollerngalaxy.core.enums.EnumBlockType;
 import zollerngalaxy.core.enums.EnumHarvestLevelZG;
@@ -250,9 +253,6 @@ public class ZGBlocks {
 	public static final Block xantheonFueltoniumOre = new ZGOreGem("xantheonfueltoniumore", 6.1F, ZGItems.dustFueltonium);
 	public static final Block xantheonConstructBlock = new ZGBlockMetal("constructblock", 8.2F);
 	
-	// Atheon
-	// TODO
-	
 	// Metals
 	public static final Block blockViri = new ZGBlockMetal("viriblock");
 	public static final Block blockEve = new ZGBlockMetal("eveniumblock");
@@ -292,8 +292,20 @@ public class ZGBlocks {
 	public static final Block candyCubePink = new CandyCubeBlock("pink");
 	public static final Block candyCubeGreen = new CandyCubeBlock("green");
 	
+	// Sweet Blocks
+	public static final Block blockChocolate = new ZGBlockBase("chocolateblock", 1.6F);
+	public static final Block blockCookie = new CookieBlock();
+	public static final Block blockBrownie = ((ZGBlockBase) ((ZGBlockBase) new ZGBlockBase("brownieblock", 1.8F)
+			.setMaterial(Material.CLOTH)).setSound(SoundType.CLOTH)).setBlockType(EnumBlockType.SWEET);
+	public static final Block blockIceCreamSandwich = ((ZGBlockBase) ((ZGBlockBase) new ZGBlockBase("icecreamsandwichblock",
+			1.6F).setMaterial(Material.CLOTH)).setSound(SoundType.CLOTH)).setBlockType(EnumBlockType.SWEET);
+	public static final Block blockSugarCube = new ZGBlockBase("sugarcube", 0.6F).setBlockType(EnumBlockType.SWEET);
+	
 	// Other
 	public static final Block blockCrater = new ZGBlockBase("crater_rock", 2.4F);
+	
+	// Atheon
+	// TODO
 	
 	public static void init() {
 		ZGBlocks.registerBlocks(edenWoodSapling, edenFruit, edenFlower, edenFlowerBlack, edenFlowerBlue, edenFlowerCyan,
@@ -322,7 +334,8 @@ public class ZGBlocks {
 				blockShinestonePolished, blockShinestoneCrystalBricks, blockCompressedHeartium, blockCompressedViri,
 				blockCompressedEve, blockCompressedCobalt, blockCompressedPromethean, blockCompressedSuperChargedCoal,
 				candyCubeWhite, candyCubeBlack, candyCubeGray, candyCubeOrange, candyCubeBrown, candyCubeRed, candyCubeBlue,
-				candyCubeYellow, candyCubePurple, candyCubeCyan, candyCubePink, candyCubeGreen);
+				candyCubeYellow, candyCubePurple, candyCubeCyan, candyCubePink, candyCubeGreen, blockChocolate, blockCookie,
+				blockBrownie, blockIceCreamSandwich, blockSugarCube);
 		ZGHelper.Log("Loaded a total of " + totalBlocks + " new blocks.");
 	}
 	

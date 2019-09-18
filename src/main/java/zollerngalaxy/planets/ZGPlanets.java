@@ -11,6 +11,7 @@ import micdoodle8.mods.galacticraft.planets.venus.dimension.TeleportTypeVenus;
 import net.minecraft.util.ResourceLocation;
 import zollerngalaxy.biomes.ZGBiomes;
 import zollerngalaxy.config.ConfigManagerZG;
+import zollerngalaxy.core.dimensions.worldproviders.WorldProviderCandora;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderEden;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderKriffon;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderOasis;
@@ -55,6 +56,7 @@ public class ZGPlanets {
 	public static ZGPlanet planetXathius = new ZGPlanet("xathius");
 	public static ZGPlanet planetOasis = new ZGPlanet("oasis");
 	public static ZGPlanet planetXantheon = new ZGPlanet("xantheon");
+	public static ZGPlanet planetCandora = new ZGPlanet("candora");
 	public static ZGPlanet planetAtheon;
 	
 	// Pantheon System
@@ -305,7 +307,7 @@ public class ZGPlanets {
 		planetXantheon.setRingColorRGB(1.6f, 3.7f, 2.1f);
 		planetXantheon.setPhaseShift(4.0f);
 		planetXantheon.setRelativeOrbitTime(20.2F);
-		planetXantheon.setDistanceFromCenter(2.8F);
+		planetXantheon.setDistanceFromCenter(2.5F);
 		planetXantheon.setTierRequired(8);
 		planetXantheon.setRelativeSize(96.0f);
 		planetXantheon.setPlanetTemperature(-31.2F);
@@ -315,10 +317,33 @@ public class ZGPlanets {
 		planetXantheon.setWindLevel(0.0F);
 		planetXantheon.setDensity(20.6F);
 		planetXantheon.setHasRain(false);
-		planetOasis.setPlanetGasses(EnumAtmosphericGas.CO2, EnumAtmosphericGas.ARGON, EnumAtmosphericGas.HELIUM);
+		planetXantheon.setPlanetGasses(EnumAtmosphericGas.CO2, EnumAtmosphericGas.ARGON, EnumAtmosphericGas.HELIUM);
 		planetXantheon.setAtmosphere();
 		planetXantheon.setPlanetIcon("xantheon");
 		planetXantheon.setBiomeInfo(ZGBiomes.XANTHEON);
+		totalPlanets++;
+		
+		planetCandora.setDimensionInfo(ConfigManagerZG.planetCandoraDimensionId, WorldProviderCandora.class);
+		planetCandora.setParentSolarSystem(systemPraedyth);
+		planetCandora.setPlanetClass(EnumPlanetClass.EXOTIC);
+		planetCandora.setRingColorRGB(2.5F, 0.0F, 2.5F);
+		planetCandora.setPhaseShift(0.1F);
+		planetCandora.setRelativeOrbitTime(10.5F);
+		planetCandora.setDistanceFromCenter(2.1F);
+		planetCandora.setTierRequired(10);
+		planetCandora.setRelativeSize(102.9F);
+		planetCandora.setPlanetTemperature(67.5F);
+		planetCandora.setPlanetToxicity(0.0F);
+		planetCandora.setPlanetRadiation(0.0F);
+		planetCandora.setBreathable(true);
+		planetCandora.setWindLevel(0.0F);
+		planetCandora.setDensity(0.1F);
+		planetCandora.setHasRain(false);
+		planetCandora.setPlanetGasses(EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.CO2, EnumAtmosphericGas.WATER,
+				EnumAtmosphericGas.HELIUM);
+		planetCandora.setAtmosphere();
+		planetCandora.setPlanetIcon("candora");
+		planetCandora.setBiomeInfo(ZGBiomes.CANDY_MOUNTAIN);
 		totalPlanets++;
 		
 		ZGHelper.Log("Loaded a total of " + totalPlanets + " new planets.");
@@ -350,16 +375,20 @@ public class ZGPlanets {
 		GalaxyRegistry.registerPlanet(planetXathius);
 		GalaxyRegistry.registerPlanet(planetOasis);
 		GalaxyRegistry.registerPlanet(planetXantheon);
+		GalaxyRegistry.registerPlanet(planetCandora);
 	}
 	
 	public static void registerTeleportTypes() {
+		// Psios-6
 		GalacticraftRegistry.registerTeleportType(WorldProviderZollus.class, new TeleportTypeVenus());
 		GalacticraftRegistry.registerTeleportType(WorldProviderKriffon.class, new TeleportTypeVenus());
 		GalacticraftRegistry.registerTeleportType(WorldProviderPurgot.class, new TeleportTypeVenus());
 		GalacticraftRegistry.registerTeleportType(WorldProviderEden.class, new TeleportTypeVenus());
 		
+		// Praedyth
 		GalacticraftRegistry.registerTeleportType(WorldProviderXathius.class, new TeleportTypeVenus());
 		GalacticraftRegistry.registerTeleportType(WorldProviderOasis.class, new TeleportTypeVenus());
 		GalacticraftRegistry.registerTeleportType(WorldProviderXantheon.class, new TeleportTypeVenus());
+		GalacticraftRegistry.registerTeleportType(WorldProviderCandora.class, new TeleportTypeVenus());
 	}
 }

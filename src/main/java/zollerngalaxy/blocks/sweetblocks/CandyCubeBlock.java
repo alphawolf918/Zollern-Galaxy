@@ -1,6 +1,7 @@
-package zollerngalaxy.blocks;
+package zollerngalaxy.blocks.sweetblocks;
 
 import net.minecraft.block.Block;
+import zollerngalaxy.blocks.ZGBlockBase;
 import zollerngalaxy.core.enums.EnumBlockType;
 import zollerngalaxy.core.enums.EnumHarvestLevelZG;
 import zollerngalaxy.core.enums.EnumHarvestToolZG;

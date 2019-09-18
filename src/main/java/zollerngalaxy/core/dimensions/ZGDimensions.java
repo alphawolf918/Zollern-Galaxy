@@ -22,6 +22,7 @@ public class ZGDimensions {
 	public static DimensionType XATHIUS;
 	public static DimensionType OASIS;
 	public static DimensionType XANTHEON;
+	public static DimensionType CANDORA;
 	
 	public static void init() {
 		// Psion-6
@@ -36,6 +37,7 @@ public class ZGDimensions {
 		ZGDimensions.XATHIUS = ZGDimensions.getDimType(ConfigManagerZG.planetXathiusDimensionId);
 		ZGDimensions.OASIS = ZGDimensions.getDimType(ConfigManagerZG.planetOasisDimensionId);
 		ZGDimensions.XANTHEON = ZGDimensions.getDimType(ConfigManagerZG.planetXantheonDimensionId);
+		ZGDimensions.CANDORA = ZGDimensions.getDimType(ConfigManagerZG.planetCandoraDimensionId);
 	}
 	
 	public static DimensionType getDimType(int dimId) {
@@ -58,6 +60,8 @@ public class ZGDimensions {
 			body = ZGPlanets.planetOasis;
 		} else if (dimID == ConfigManagerZG.planetXantheonDimensionId) {
 			body = ZGPlanets.planetXantheon;
+		} else if (dimID == ConfigManagerZG.planetCandoraDimensionId) {
+			body = ZGPlanets.planetCandora;
 		}
 		if (body == null) {
 			ZGHelper.Log("Celestial Body was null.");

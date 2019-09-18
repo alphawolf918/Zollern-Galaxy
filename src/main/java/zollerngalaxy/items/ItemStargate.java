@@ -77,6 +77,10 @@ public class ItemStargate extends ZGItemBase {
 		// case 10:
 		// // TODO
 		// break;
+		case 918:
+			// TODO: Make other planet a random destination of previous planets.
+			this.sendToPlanet(ConfigManagerZG.planetCandoraDimensionId, ConfigManagerZG.planetOasisDimensionId, player);
+			break;
 		}
 	}
 	
