@@ -11,6 +11,7 @@ import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.biomes.decorators.BiomeDecoratorCandora;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.blocks.fluids.ZGFluids;
+import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderCandora;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 import zollerngalaxy.planets.ZGPlanets;
 
@@ -23,7 +24,7 @@ public class BiomeCandoraBase extends BiomeSpace {
 	protected static final IBlockState DIRT = ZGBlocks.candyCubeBrown.getDefaultState();
 	protected static final IBlockState ICE = ZGBlocks.candyCubeCyan.getDefaultState();
 	
-	protected static final int SEA_LEVEL = 65;
+	protected static final int SEA_LEVEL = ChunkProviderCandora.SEA_LEVEL;
 	protected static final int SEA_FLOOR_LEVEL = 52;
 	
 	public BiomeDecoratorCandora biomeDecor = this.getBiomeDecorator();

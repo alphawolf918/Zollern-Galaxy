@@ -48,6 +48,9 @@ public class CraftingRecipes {
 		CraftingRecipes.addIngotMetal(ZGItems.ingotShinium, ZGBlocks.blockShinium);
 		CraftingRecipes.addIngotMetal(ZGItems.ingotChargium, ZGBlocks.blockChargium);
 		CraftingRecipes.addIngotMetal(ZGItems.ingotFueltonium, ZGBlocks.blockFueltonium);
+		CraftingRecipes.addIngotMetal(ZGItems.ingotAmaranth, ZGBlocks.blockAmaranth);
+		CraftingRecipes.addIngotMetal(ZGItems.azurite, ZGBlocks.blockAzurite);
+		CraftingRecipes.addIngotMetal(ZGItems.ingotZollernium, ZGBlocks.blockZollernium);
 		
 		CraftingRecipes.addIngotMetal(ZGItems.compressedCobalt, ZGBlocks.blockCompressedCobalt);
 		CraftingRecipes.addIngotMetal(ZGItems.compressedEvenium, ZGBlocks.blockCompressedEve);
@@ -105,26 +108,41 @@ public class CraftingRecipes {
 		CraftingRecipes.addPickaxe(new ItemStack(ZGItems.pickaxeCobalt), ZGItems.ingotCobalt);
 		CraftingRecipes.addPickaxe(new ItemStack(ZGItems.pickaxeEvenium), ZGItems.ingotEvenium);
 		CraftingRecipes.addPickaxe(new ItemStack(ZGItems.pickaxeVirinium), ZGItems.ingotVirinium);
+		CraftingRecipes.addPickaxe(new ItemStack(ZGItems.pickaxeAmaranth), ZGItems.ingotAmaranth);
+		CraftingRecipes.addPickaxe(new ItemStack(ZGItems.pickaxeAzurite), ZGItems.azurite);
+		CraftingRecipes.addPickaxe(new ItemStack(ZGItems.pickaxeZollernium), ZGItems.ingotZollernium);
 		
 		// Shovels
 		CraftingRecipes.addShovel(new ItemStack(ZGItems.shovelCobalt), ZGItems.ingotCobalt);
 		CraftingRecipes.addShovel(new ItemStack(ZGItems.shovelEvenium), ZGItems.ingotEvenium);
 		CraftingRecipes.addShovel(new ItemStack(ZGItems.shovelVirinium), ZGItems.ingotVirinium);
+		CraftingRecipes.addShovel(new ItemStack(ZGItems.shovelAmaranth), ZGItems.ingotAmaranth);
+		CraftingRecipes.addShovel(new ItemStack(ZGItems.shovelAzurite), ZGItems.azurite);
+		CraftingRecipes.addShovel(new ItemStack(ZGItems.shovelZollernium), ZGItems.ingotZollernium);
 		
 		// Axes
 		CraftingRecipes.addAxe(new ItemStack(ZGItems.axeCobalt), ZGItems.ingotCobalt);
 		CraftingRecipes.addAxe(new ItemStack(ZGItems.axeEvenium), ZGItems.ingotEvenium);
 		CraftingRecipes.addAxe(new ItemStack(ZGItems.axeVirinium), ZGItems.ingotVirinium);
-		
-		// Swords
-		CraftingRecipes.addSword(new ItemStack(ZGItems.swordCobalt), ZGItems.ingotCobalt);
-		CraftingRecipes.addSword(new ItemStack(ZGItems.swordEvenium), ZGItems.ingotEvenium);
-		CraftingRecipes.addSword(new ItemStack(ZGItems.swordVirinium), ZGItems.ingotVirinium);
+		CraftingRecipes.addAxe(new ItemStack(ZGItems.axeAmaranth), ZGItems.ingotAmaranth);
+		CraftingRecipes.addAxe(new ItemStack(ZGItems.axeAzurite), ZGItems.azurite);
+		CraftingRecipes.addAxe(new ItemStack(ZGItems.axeZollernium), ZGItems.ingotZollernium);
 		
 		// Hoes
 		CraftingRecipes.addHoe(new ItemStack(ZGItems.hoeCobalt), ZGItems.ingotCobalt);
 		CraftingRecipes.addHoe(new ItemStack(ZGItems.hoeEvenium), ZGItems.ingotEvenium);
 		CraftingRecipes.addHoe(new ItemStack(ZGItems.hoeVirinium), ZGItems.ingotVirinium);
+		CraftingRecipes.addHoe(new ItemStack(ZGItems.hoeAmaranth), ZGItems.ingotAmaranth);
+		CraftingRecipes.addHoe(new ItemStack(ZGItems.hoeAzurite), ZGItems.azurite);
+		CraftingRecipes.addHoe(new ItemStack(ZGItems.hoeZollernium), ZGItems.ingotZollernium);
+		
+		// Swords
+		CraftingRecipes.addSword(new ItemStack(ZGItems.swordCobalt), ZGItems.ingotCobalt);
+		CraftingRecipes.addSword(new ItemStack(ZGItems.swordEvenium), ZGItems.ingotEvenium);
+		CraftingRecipes.addSword(new ItemStack(ZGItems.swordVirinium), ZGItems.ingotVirinium);
+		CraftingRecipes.addSword(new ItemStack(ZGItems.swordAmaranth), ZGItems.ingotAmaranth);
+		CraftingRecipes.addSword(new ItemStack(ZGItems.swordAzurite), ZGItems.azurite);
+		CraftingRecipes.addSword(new ItemStack(ZGItems.swordZollernium), ZGItems.ingotZollernium);
 		
 		// Omnitool
 		// TODO
@@ -157,6 +175,9 @@ public class CraftingRecipes {
 		
 		// Star Gate (Tier 6)
 		// TODO: Next release..
+		
+		// Star Gate (Birthday Protocol)
+		// TODO
 	}
 	
 	private static void addRockBricks(Block stoneIn, Block bricksOut) {

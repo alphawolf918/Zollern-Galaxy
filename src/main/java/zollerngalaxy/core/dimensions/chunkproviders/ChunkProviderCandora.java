@@ -37,8 +37,8 @@ public class ChunkProviderCandora extends ChunkProviderBase {
 	public static final IBlockState CHOCOLATE = ZGFluids.blockChocolateFluid.getDefaultState();
 	public static final IBlockState ICE = ZGBlocks.candyCubeCyan.getDefaultState();
 	
-	public static final double CHUNK_HEIGHT = 52.0D;
-	public static final int SEA_LEVEL = 67;
+	public static final double CHUNK_HEIGHT = 72.0D;
+	public static final int SEA_LEVEL = 62;
 	
 	private static final int CHUNK_SIZE_X = 16;
 	private static final int CHUNK_SIZE_Z = 16;

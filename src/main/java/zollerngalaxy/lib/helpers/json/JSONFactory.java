@@ -106,6 +106,37 @@ public final class JSONFactory {
 		}
 	}
 	
+	public static void registerTool(String toolName) {
+		if (!ENABLE) {
+			return;
+		}
+		
+		JSONFactory.setupItemDir();
+		
+		Map<String, Object> json = new LinkedHashMap<>();
+		Map<String, Object> layers = new LinkedHashMap<>();
+		
+		layers.put("layer0", MOD_ID + ":items/" + toolName);
+		
+		json.put("parent", "item/handheld");
+		json.put("textures", layers);
+		
+		String jsonFileName = toolName + ".json";
+		
+		File file = new File(ITEM_DIR, jsonFileName);
+		
+		while (file.exists()) {
+			file.delete();
+			file = new File(ITEM_DIR, jsonFileName);
+		}
+		
+		try (FileWriter writer = new FileWriter(file)) {
+			GSON.toJson(json, writer);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
 	public static void registerBlock(String blockName) {
 		if (!ENABLE) {
 			return;

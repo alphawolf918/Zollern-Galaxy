@@ -10,11 +10,16 @@ Zollern Galaxy v2.0.5
 * Added Shinestone gen to Oasis caves.
 * Increased spawn rate of Oasis Flowers and Oasis Tall Grass on planet Oasis.
 * Fueltonium can be used in place of Yellorite / Uranium.
-* Created the artificial "tech" planet, Xantheon.
+* Created the artificially constructed, "tech" planet, Xantheon.
 * Radiolaria Spouts (essentially white lava) have a chance to spawn, with "Constructed" Blocks.
 * Added Candy Cube blocks.
 * Modified positions of planets and star systems on galactic map.
 * Added planet Xantheon, an artificially-constructed planet.
 * Modified Xathius graphic and added a few new planet graphics.
 * Added planet Candora as a fun, "birthday" planet.
+* Added a new, special Star Gate for Candora.
+* Fixed custom tools not having correct harvest/damage/efficiency/other things.
+* Fixed tools being seen as items instead of handheld tools.
+* Added new "sweet foods" that give potion effects when eaten. Always edible.
+* Created three new tool sets: Amaranth, Azurite and Zollernium.
 * 

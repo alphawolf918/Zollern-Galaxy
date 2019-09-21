@@ -9,11 +9,10 @@ import net.minecraftforge.common.BiomeManager;
 import net.minecraftforge.common.BiomeManager.BiomeEntry;
 import net.minecraftforge.common.BiomeManager.BiomeType;
 import zollerngalaxy.biomes.ZGBiomes;
-import zollerngalaxy.biomes.genlayers.eden.GenLayerEden;
 import zollerngalaxy.util.CachedEnum;
 import com.google.common.collect.ImmutableList;
 
-public class GenLayerCandoraBiomes extends GenLayerEden {
+public class GenLayerCandoraBiomes extends GenLayerCandora {
 	
 	@SuppressWarnings("unchecked")
 	private List<BiomeEntry>[] biomes = new ArrayList[CachedEnum.valuesBiomeCached().length];
@@ -40,6 +39,7 @@ public class GenLayerCandoraBiomes extends GenLayerEden {
 		ArrayList<BiomeEntry>[] currentBiomes = new ArrayList[CachedEnum.valuesBiomeCached().length];
 		List<BiomeEntry> list = new ArrayList<>();
 		list.add(new BiomeEntry(ZGBiomes.CANDY_MOUNTAIN, 75));
+		list.add(new BiomeEntry(ZGBiomes.CANDY_OCEAN, 45));
 		
 		currentBiomes[BiomeType.WARM.ordinal()] = new ArrayList<>(list);
 		return currentBiomes;

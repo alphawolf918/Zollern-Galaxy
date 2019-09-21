@@ -343,7 +343,7 @@ public class ZGPlanets {
 				EnumAtmosphericGas.HELIUM);
 		planetCandora.setAtmosphere();
 		planetCandora.setPlanetIcon("candora");
-		planetCandora.setBiomeInfo(ZGBiomes.CANDY_MOUNTAIN);
+		planetCandora.setBiomeInfo(ZGBiomes.CANDY_MOUNTAIN, ZGBiomes.CANDY_OCEAN);
 		totalPlanets++;
 		
 		ZGHelper.Log("Loaded a total of " + totalPlanets + " new planets.");

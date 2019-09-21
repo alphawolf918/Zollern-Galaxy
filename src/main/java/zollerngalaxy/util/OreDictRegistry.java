@@ -163,6 +163,20 @@ public class OreDictRegistry {
 		registerOre("blockVirinium", ZGBlocks.blockViri);
 		registerOre("pickaxeVirinium", ZGItems.pickaxeVirinium);
 		
+		// Amaranth
+		registerOre("dustAmaranth", ZGItems.dustAmaranth);
+		registerOre("ingotAmaranth", ZGItems.ingotAmaranth);
+		registerOre("blockAmaranth", ZGBlocks.blockAmaranth);
+		
+		// Azurite
+		registerOre("gemAzurite", ZGItems.azurite);
+		registerOre("blockAzurite", ZGBlocks.blockAzurite);
+		
+		// Zollernium
+		registerOre("dustZollernium", ZGItems.dustZollernium);
+		registerOre("ingotZollernium", ZGItems.ingotZollernium);
+		registerOre("blockZollernium", ZGBlocks.blockZollernium);
+		
 		// Promethean
 		registerOre("orePromethean", ZGBlocks.xathPrometheanOre);
 		registerOre("gemPromethean", ZGItems.prometheanCrystal);

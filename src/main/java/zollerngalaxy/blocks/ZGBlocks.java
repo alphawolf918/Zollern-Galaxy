@@ -263,6 +263,9 @@ public class ZGBlocks {
 	public static final Block blockFueltonium = new ZGBlockMetal("fueltoniumblock", 3.2F);
 	public static final Block blockChargium = new ZGBlockMetal("chargiumblock", 5.2F).setLightLevel(1.0F);
 	public static final Block blockShinium = new ZGBlockMetal("shiniumblock", 2.3F).setLightLevel(1.0F);
+	public static final Block blockAmaranth = new ZGBlockMetal("amaranthblock", 2.4F);
+	public static final Block blockAzurite = new ZGBlockMetal("azuriteblock", 2.1F).setLightLevel(1.0F);
+	public static final Block blockZollernium = new ZGBlockMetal("zollerniumblock", 2.5F);
 	
 	// Glow Blocks
 	public static final Block blockShinestone = new ZGShineBlock("shinestone", 1.6F, ZGItems.dustShinestone);
@@ -330,12 +333,12 @@ public class ZGBlocks {
 				oasisTinOre, oasisLeadOre, xantheonRock, xantheonChrome, xantheonStone, xantheonCoalOre, xantheonIronOre,
 				xantheonCopperOre, xantheonNickelOre, xantheonPlutoniumOre, xantheonFueltoniumOre, xantheonConstructBlock,
 				blockViri, blockCobalt, blockEve, blockPromethean, blockCrater, blockSuperChargedCoal, blockPlutonium,
-				blockFueltonium, blockChargium, blockShinium, blockShinestone, blockShinestoneCrystal,
-				blockShinestonePolished, blockShinestoneCrystalBricks, blockCompressedHeartium, blockCompressedViri,
-				blockCompressedEve, blockCompressedCobalt, blockCompressedPromethean, blockCompressedSuperChargedCoal,
-				candyCubeWhite, candyCubeBlack, candyCubeGray, candyCubeOrange, candyCubeBrown, candyCubeRed, candyCubeBlue,
-				candyCubeYellow, candyCubePurple, candyCubeCyan, candyCubePink, candyCubeGreen, blockChocolate, blockCookie,
-				blockBrownie, blockIceCreamSandwich, blockSugarCube);
+				blockFueltonium, blockChargium, blockShinium, blockAmaranth, blockAzurite, blockZollernium, blockShinestone,
+				blockShinestoneCrystal, blockShinestonePolished, blockShinestoneCrystalBricks, blockCompressedHeartium,
+				blockCompressedViri, blockCompressedEve, blockCompressedCobalt, blockCompressedPromethean,
+				blockCompressedSuperChargedCoal, candyCubeWhite, candyCubeBlack, candyCubeGray, candyCubeOrange,
+				candyCubeBrown, candyCubeRed, candyCubeBlue, candyCubeYellow, candyCubePurple, candyCubeCyan, candyCubePink,
+				candyCubeGreen, blockChocolate, blockCookie, blockBrownie, blockIceCreamSandwich, blockSugarCube);
 		ZGHelper.Log("Loaded a total of " + totalBlocks + " new blocks.");
 	}
 	

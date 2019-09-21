@@ -192,6 +192,10 @@ tile.brownieblock.name=Brownie Block
 tile.icecreamsandwichblock.name=Ice Cream Sandwich Block
 tile.sugarcube.name=Sugar Cube
 
+tile.amaranthblock.name=Block of Amaranth
+tile.azuriteblock.name=Block of Azurite
+tile.zollerniumblock.name=Block of Zollernium
+
 tile.endrock.name=Endrock
 
 tile.heartblock.name=Healing Station
@@ -236,6 +240,14 @@ item.alienbaconraw.name=Raw Alien Bacon
 item.alienbaconcooked.name=Cooked Alien Bacon
 item.fruitofeden.name=Fruit of Eden
 
+item.creamball.name=Cream Ball
+item.rawchocolate.name=Raw Chocolate
+item.chocolatebar.name=Chocolate Bar
+item.brownie.name=Brownie
+item.candyapple.name=Candy Apple
+item.icecreamsandwich.name=Ice Cream Sandwich
+item.icecream.name=Ice Cream
+
 item.hud.name=Galactic HUD
 item.brightstonedust.name=Britestone Dust
 item.edendungeonkey.name=Eden's Treasure Key
@@ -268,6 +280,23 @@ item.shinestonedust.name=Shinestone Dust
 item.shinestoneingot.name=Shinestone Ingot
 
 item.lapisingot.name=Lapis Ingot
+
+item.amaranthingot.name=Amaranth Ingot
+item.amaranthdust.name=Amaranth Dust
+item.amaranthnugget.name=Amaranth Nugget
+
+item.ascendium.name=Ascendium
+item.azurite.name=Azurite
+item.ascendantamaranthingot.name=Ascendant Amaranth Ingot
+
+item.zollerniumingot.name=Zollernium Ingot
+item.zollerniumdust.name=Zollernium Dust
+
+item.rokkite.name=Rokkite
+
+item.powerstick.name=Power Stick
+item.blackmarblestick.name=Black Marble Stick
+item.marblestick.name=Marble Stick
 
 item.blueprint_rad.name=Radiation Protection
 item.blueprint_tox.name=Toxicity Protection
@@ -318,6 +347,26 @@ item.virinium_sword.name=Virinium Sword
 item.virinium_shovel.name=Virinium Shovel
 item.virinium_axe.name=Virinium Axe
 item.virinium_hoe.name=Virinium Hoe
+
+item.amaranth_pickaxe.name=Amaranth Pickaxe
+item.amaranth_sword.name=Amaranth Sword
+item.amaranth_shovel.name=Amaranth Shovel
+item.amaranth_axe.name=Amaranth Axe
+item.amaranth_hoe.name=Amaranth Hoe
+
+item.bedrockbreaker.name=Bedrock Breaker
+
+item.azurite_pickaxe.name=Azurite Pickaxe
+item.azurite_sword.name=Azurite Sword
+item.azurite_shovel.name=Azurite Shovel
+item.azurite_axe.name=Azurite Axe
+item.azurite_hoe.name=Azurite Hoe
+
+item.zollernium_pickaxe.name=Zollernium Pickaxe
+item.zollernium_sword.name=Zollernium Sword
+item.zollernium_shovel.name=Zollernium Shovel
+item.zollernium_axe.name=Zollernium Axe
+item.zollernium_hoe.name=Zollernium Hoe
 
 entity.zollerngalaxy:moolus.name=Moolus
 entity.zollerngalaxy:oinkus.name=Oinkus

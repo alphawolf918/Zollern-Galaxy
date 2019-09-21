@@ -30,7 +30,7 @@ public class ItemOmnitool extends ItemTool implements ISingleZGItemRender {
 			Blocks.STONE_SLAB, Blocks.STONE_BUTTON, Blocks.STONE_PRESSURE_PLATE, ZGBlocks.zolCrystals);
 	
 	public ItemOmnitool() {
-		super(16.0F, 2.0F, ToolMaterial.DIAMOND, EFFECTIVE_ON); // FIXME
+		super(18.0F, 3.6F, ZGToolMats.AMARANTH, EFFECTIVE_ON);
 		this.setItemName(this, OMNITOOL_NAME);
 		this.setMaxStackSize(1);
 		this.setMaxDamage(0);
@@ -39,7 +39,7 @@ public class ItemOmnitool extends ItemTool implements ISingleZGItemRender {
 	
 	private void initJSONFactory() {
 		if (ZollernGalaxyCore.instance().isInDevMode()) {
-			JSONFactory.registerItem(OMNITOOL_NAME);
+			JSONFactory.registerTool(OMNITOOL_NAME);
 		}
 	}
 	
@@ -48,7 +48,7 @@ public class ItemOmnitool extends ItemTool implements ISingleZGItemRender {
 	public float getDestroySpeed(ItemStack stack, IBlockState state) {
 		Material material = state.getMaterial();
 		return (material != Material.IRON && material != Material.ANVIL && material != Material.ROCK ? super
-				.getDestroySpeed(stack, state) : this.efficiency) * 0.8F;
+				.getDestroySpeed(stack, state) : this.efficiency) * 0.9F;
 	}
 	
 	public void setItemName(final Item item, final String itemName) {

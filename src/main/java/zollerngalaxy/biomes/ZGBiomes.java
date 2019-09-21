@@ -21,6 +21,7 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.Biome.BiomeProperties;
 import net.minecraftforge.common.BiomeDictionary;
 import zollerngalaxy.biomes.candora.BiomeCandyMountain;
+import zollerngalaxy.biomes.candora.BiomeChocolateOcean;
 import zollerngalaxy.biomes.eden.BiomeAsteroidCraters;
 import zollerngalaxy.biomes.eden.BiomeBloodDesert;
 import zollerngalaxy.biomes.eden.BiomeEdenOcean;
@@ -91,6 +92,7 @@ public class ZGBiomes {
 	
 	// Candora
 	public static final Biome CANDY_MOUNTAIN = new BiomeCandyMountain(new BiomeProperties("Candy Mountain"));
+	public static final Biome CANDY_OCEAN = new BiomeChocolateOcean(new BiomeProperties("Chocolate Ocean"));
 	
 	public static void init() {
 		// Zollus
@@ -132,6 +134,7 @@ public class ZGBiomes {
 		
 		// Candora
 		ZGBiomes.addBiome(ZGBiomes.CANDY_MOUNTAIN, MOUNTAIN);
+		ZGBiomes.addBiome(ZGBiomes.CANDY_OCEAN, OCEAN, WET);
 		
 		ZGHelper.Log("Loaded a total of " + totalBiomes + " new biomes.");
 	}
