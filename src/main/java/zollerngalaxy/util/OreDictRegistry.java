@@ -4,6 +4,7 @@ import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraftforge.oredict.OreDictionary;
 import zollerngalaxy.blocks.ZGBlocks;
+import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.items.ZGItems;
 
 public class OreDictRegistry {
@@ -143,11 +144,17 @@ public class OreDictRegistry {
 		registerOre("gemHeartium", ZGItems.heartOfZol);
 		
 		// Cobalt
-		registerOre("oreCobalt", ZGBlocks.edenCobaltOre, ZGBlocks.kriffCobaltOre, ZGBlocks.purgCobaltOre);
-		registerOre("dustCobalt", ZGItems.dustCobalt);
-		registerOre("ingotCobalt", ZGItems.ingotCobalt);
-		registerOre("blockCobalt", ZGBlocks.blockCobalt);
-		registerOre("pickaxeCobalt", ZGItems.pickaxeCobalt);
+		if (ConfigManagerZG.registerCobaltOreDict) {
+			registerOre("oreCobalt", ZGBlocks.edenCobaltOre, ZGBlocks.kriffCobaltOre, ZGBlocks.purgCobaltOre);
+			registerOre("dustCobalt", ZGItems.dustCobalt);
+			registerOre("ingotCobalt", ZGItems.ingotCobalt);
+			registerOre("blockCobalt", ZGBlocks.blockCobalt);
+			registerOre("pickaxeCobalt", ZGItems.pickaxeCobalt);
+			registerOre("shovelCobalt", ZGItems.shovelCobalt);
+			registerOre("axeCobalt", ZGItems.axeCobalt);
+			registerOre("hoeCobalt", ZGItems.hoeCobalt);
+			registerOre("swordCobalt", ZGItems.swordCobalt);
+		}
 		
 		// Evenium
 		registerOre("oreEvenium", ZGBlocks.edenEveniumOre, ZGBlocks.purgEveniumOre);
@@ -164,18 +171,23 @@ public class OreDictRegistry {
 		registerOre("pickaxeVirinium", ZGItems.pickaxeVirinium);
 		
 		// Amaranth
+		registerOre("oreAmaranth", ZGBlocks.xantheonAmaranthOre);
 		registerOre("dustAmaranth", ZGItems.dustAmaranth);
 		registerOre("ingotAmaranth", ZGItems.ingotAmaranth);
 		registerOre("blockAmaranth", ZGBlocks.blockAmaranth);
+		registerOre("pickaxeAmaranth", ZGItems.pickaxeAmaranth);
 		
 		// Azurite
+		registerOre("oreAzurite", ZGBlocks.xathAzuriteOre);
 		registerOre("gemAzurite", ZGItems.azurite);
 		registerOre("blockAzurite", ZGBlocks.blockAzurite);
+		registerOre("pickaxeAzurite", ZGItems.pickaxeAzurite);
 		
 		// Zollernium
 		registerOre("dustZollernium", ZGItems.dustZollernium);
 		registerOre("ingotZollernium", ZGItems.ingotZollernium);
 		registerOre("blockZollernium", ZGBlocks.blockZollernium);
+		registerOre("pickaxeZollernium", ZGItems.pickaxeZollernium);
 		
 		// Promethean
 		registerOre("orePromethean", ZGBlocks.xathPrometheanOre);
@@ -188,10 +200,12 @@ public class OreDictRegistry {
 		registerOre("blockSuperChargedCoal", ZGBlocks.blockSuperChargedCoal);
 		
 		// Uranium
-		registerOre("oreUranium", ZGBlocks.xantheonFueltoniumOre);
-		registerOre("ingotUranium", ZGItems.ingotFueltonium);
-		registerOre("dustUranium", ZGItems.dustFueltonium);
-		registerOre("blockUranium", ZGBlocks.blockFueltonium);
+		if (ConfigManagerZG.fueltoniumIsUranium) {
+			registerOre("oreUranium", ZGBlocks.xantheonFueltoniumOre);
+			registerOre("ingotUranium", ZGItems.ingotFueltonium);
+			registerOre("dustUranium", ZGItems.dustFueltonium);
+			registerOre("blockUranium", ZGBlocks.blockFueltonium);
+		}
 		
 		// Fueltonium
 		registerOre("oreFueltonium", ZGBlocks.xantheonFueltoniumOre);

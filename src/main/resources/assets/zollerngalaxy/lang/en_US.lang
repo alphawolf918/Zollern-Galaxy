@@ -134,6 +134,7 @@ tile.xathgoldore.name=Xathian Gold Ore
 tile.xathironore.name=Xathian Iron Ore
 tile.xathtinore.name=Xathian Tin Ore
 tile.xathredstoneore.name=Xathian Redstone Ore
+tile.xathazuriteore.name=Xathian Azurite Ore
 tile.prometheanblock.name=Block of Promethean
 
 tile.oasisrock.name=Oasis Rock
@@ -170,6 +171,7 @@ tile.xantheoncoalore.name=Xantheon Coal Ore
 tile.xantheonnickelore.name=Xantheon Nickel Ore
 tile.xantheoncopperore.name=Xantheon Copper Ore
 tile.xantheonfueltoniumore.name=Xantheon Fueltonium Ore
+tile.xantheonamaranthore.name=Xantheon Amaranth Ore
 tile.plutoniumblock.name=Block of Plutonium
 tile.fueltoniumblock.name=Block of Fueltonium
 tile.constructblock.name=Constructed Block
@@ -313,8 +315,13 @@ item.compressedheartium.name=Compressed Heartium
 item.compressedvyrex.name=Compressed Vyrexite
 item.compressedpromethean.name=Compressed Promethean
 item.compressedsuperchargedcoal.name=Compressed Super Charged Coal
+item.compressedriven.name=Compressed Riven
+item.compressedamaranth.name=Compressed Amaranth
+item.compressedazurite.name=Compressed Azurite
+item.compressedzollernium.name=Compressed Zollernium
 
 item.superchargedcoal.name=Super Charged Coal
+item.powerstick.name=Rod of Ascension
 
 item.stargate_tier1.name=Stargate (Protocol One)
 item.stargate_tier2.name=Stargate (Protocol Two)

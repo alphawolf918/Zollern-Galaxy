@@ -1,6 +1,7 @@
 package zollerngalaxy.biomes.purgot;
 
 import java.util.Random;
+import micdoodle8.mods.galacticraft.core.entities.EntityAlienVillager;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedCreeper;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedEnderman;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedSkeleton;
@@ -40,6 +41,7 @@ public class BiomePurgotBase extends BiomeSpace {
 		this.decorator.grassPerChunk = -999;
 		this.decorator.mushroomsPerChunk = -999;
 		this.clearAllSpawning();
+		this.spawnableCreatureList.add(new SpawnListEntry(EntityAlienVillager.class, 35, 2, 8));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedZombie.class, 100, 4, 4));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedSpider.class, 100, 4, 4));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedSkeleton.class, 100, 4, 4));

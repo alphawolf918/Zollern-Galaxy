@@ -1,5 +1,6 @@
 package zollerngalaxy.biomes.kriffon;
 
+import micdoodle8.mods.galacticraft.core.entities.EntityAlienVillager;
 import net.minecraft.world.biome.BiomeDecorator;
 import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.biomes.decorators.BiomeDecoratorKriffon;
@@ -24,6 +25,7 @@ public class BiomeKriffon extends BiomeSpace {
 		this.decorator.treesPerChunk = -999;
 		this.decorator.grassPerChunk = -999;
 		this.decorator.mushroomsPerChunk = -999;
+		this.spawnableCreatureList.add(new SpawnListEntry(EntityAlienVillager.class, 35, 2, 8));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityMagmos.class, 25, 1, 1));
 		this.topBlock = ZGBlocks.kriffSurfaceRock.getDefaultState();
 		this.fillerBlock = ZGBlocks.kriffDirt.getDefaultState();

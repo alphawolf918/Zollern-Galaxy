@@ -13,13 +13,13 @@ public class CompressorRecipesZG {
 	
 	public static void init() {
 		// Compressed Virinium
-		CompressorRecipes.addShapelessRecipe(new ItemStack(ZGItems.compressedVirinium, 2), new ItemStack(ZGItems.ingotVirinium,
-				1, 0), new ItemStack(ZGItems.ingotVirinium, 1, 0));
+		CompressorRecipes.addShapelessRecipe(new ItemStack(ZGItems.compressedVirinium, 2), new ItemStack(
+				ZGItems.ingotVirinium, 1, 0), new ItemStack(ZGItems.ingotVirinium, 1, 0));
 		totalCompressorRecipes++;
 		
 		// Compressed Evenium
-		CompressorRecipes.addShapelessRecipe(new ItemStack(ZGItems.compressedEvenium, 2), new ItemStack(ZGItems.ingotEvenium, 1,
-				0), new ItemStack(ZGItems.ingotEvenium, 1, 0));
+		CompressorRecipes.addShapelessRecipe(new ItemStack(ZGItems.compressedEvenium, 2), new ItemStack(
+				ZGItems.ingotEvenium, 1, 0), new ItemStack(ZGItems.ingotEvenium, 1, 0));
 		totalCompressorRecipes++;
 		
 		// Compressed Heartium
@@ -65,6 +65,26 @@ public class CompressorRecipesZG {
 		// Compressed Super Charged Coal
 		CompressorRecipes.addShapelessRecipe(new ItemStack(ZGItems.compressedSuperChargedCoal, 1), new ItemStack(
 				ZGBlocks.blockSuperChargedCoal, 1, 0), ZGBlocks.blockSuperChargedCoal);
+		totalCompressorRecipes++;
+		
+		// Compressed Riven
+		CompressorRecipes.addShapelessRecipe(new ItemStack(ZGItems.compressedRiven, 1), new ItemStack(
+				ZGBlocks.blockCompressedEve, 1, 0), ZGItems.compressedGold);
+		totalCompressorRecipes++;
+		
+		// Compressed Amaranth
+		CompressorRecipes.addShapelessRecipe(new ItemStack(ZGItems.compressedAmaranth, 1), new ItemStack(
+				ZGBlocks.blockAmaranth, 1, 0), ZGBlocks.blockAmaranth);
+		totalCompressorRecipes++;
+		
+		// Compressed Azurite
+		CompressorRecipes.addShapelessRecipe(new ItemStack(ZGItems.compressedAzurite, 1), new ItemStack(
+				ZGBlocks.blockAzurite, 1, 0), ZGBlocks.blockAzurite);
+		totalCompressorRecipes++;
+		
+		// Compressed Zollernium
+		CompressorRecipes.addShapelessRecipe(new ItemStack(ZGItems.compressedZollernium, 1), new ItemStack(
+				ZGBlocks.blockZollernium, 1, 0), ZGBlocks.blockZollernium);
 		totalCompressorRecipes++;
 		
 		ZGHelper.Log("Loaded a total of " + totalCompressorRecipes + " new compressor recipes.");

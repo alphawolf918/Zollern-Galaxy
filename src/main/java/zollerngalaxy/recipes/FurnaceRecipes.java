@@ -71,6 +71,8 @@ public class FurnaceRecipes {
 					new ItemStack(ItemHelper.getItemFromStack(TFItems.itemMaterial.ingotSilver), 1, 130), 3.7F); // Silver
 			FurnaceRecipes.SmeltBlockToItem(ZGBlocks.edenNickelOre,
 					new ItemStack(ItemHelper.getItemFromStack(TFItems.itemMaterial.ingotNickel), 1, 133), 3.5F); // Nickle
+			FurnaceRecipes.SmeltBlockToItem(ZGBlocks.xantheonNickelOre,
+					new ItemStack(ItemHelper.getItemFromStack(TFItems.itemMaterial.ingotNickel), 1, 133), 3.5F); // Nickle
 			FurnaceRecipes.SmeltBlockToItem(ZGBlocks.edenSteelOre,
 					new ItemStack(ItemHelper.getItemFromStack(TFItems.itemMaterial.ingotSteel), 1, 160), 4.2F); // Steel
 			FurnaceRecipes.SmeltBlockToItem(ZGBlocks.edenBronzeOre,
@@ -91,8 +93,9 @@ public class FurnaceRecipes {
 		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.oasisTinOre, new ItemStack(GCItems.basicItem, 1, 4), 2.4F); // Tin
 		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.oasisLeadOre, new ItemStack(VenusItems.basicItem, 1, 1), 2.4F); // Lead
 		
-		// Ores -> Ingots
-		// TODO
+		// Xantheon
+		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.xantheonIronOre, Items.IRON_INGOT, 3.2F);
+		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.xantheonAmaranthOre, ZGItems.ingotAmaranth, 3.6F);
 		
 		// Dust -> Ingots/Gems
 		FurnaceRecipes.SmeltItem(ZGItems.dustDiamond, Items.DIAMOND, 2.6F);

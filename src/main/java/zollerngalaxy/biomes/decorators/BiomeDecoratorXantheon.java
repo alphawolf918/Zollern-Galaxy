@@ -23,6 +23,7 @@ public class BiomeDecoratorXantheon extends BiomeDecoratorZG {
 	private WorldGenerator nickelGen;
 	private WorldGenerator plutoniumGen;
 	private WorldGenerator fueltoniumGen;
+	private WorldGenerator amaranthGen;
 	private WorldGenerator constructGen;
 	
 	public boolean generateLakes = true;
@@ -39,6 +40,7 @@ public class BiomeDecoratorXantheon extends BiomeDecoratorZG {
 		this.nickelGen = new WorldGenMinableZG(ZGBlocks.xantheonNickelOre, STONE, EnumOreGenZG.NICKEL);
 		this.plutoniumGen = new WorldGenMinableZG(ZGBlocks.xantheonPlutoniumOre, STONE, EnumOreGenZG.PLUTONIUM);
 		this.fueltoniumGen = new WorldGenMinableZG(ZGBlocks.xantheonFueltoniumOre, STONE, EnumOreGenZG.FUELTONIUM);
+		this.amaranthGen = new WorldGenMinableZG(ZGBlocks.xantheonAmaranthOre, STONE, EnumOreGenZG.AMARANTH);
 		this.constructGen = new WorldGenMinableZG(ZGBlocks.xantheonConstructBlock, STONE, EnumOreGenZG.CONSTRUCTED);
 	}
 	
@@ -54,6 +56,7 @@ public class BiomeDecoratorXantheon extends BiomeDecoratorZG {
 		this.generateOre(this.nickelGen, EnumOreGenZG.NICKEL, world, rand);
 		this.generateOre(this.plutoniumGen, EnumOreGenZG.PLUTONIUM, world, rand);
 		this.generateOre(this.fueltoniumGen, EnumOreGenZG.FUELTONIUM, world, rand);
+		this.generateOre(this.amaranthGen, EnumOreGenZG.AMARANTH, world, rand);
 		this.generateOre(this.constructGen, EnumOreGenZG.CONSTRUCTED, world, rand);
 		
 		int genY = 248;
@@ -76,7 +79,7 @@ public class BiomeDecoratorXantheon extends BiomeDecoratorZG {
 			y = rand.nextInt(rand.nextInt(genY) + 8);
 			
 			if (rand.nextInt(300) == 0) {
-				if (y >= 70) {
+				if (y >= 70 && y <= 90) {
 					(new WorldGenRadiolariaSpouts()).generate(world, rand, this.chunkPos.add(x, y, z));
 				}
 			}

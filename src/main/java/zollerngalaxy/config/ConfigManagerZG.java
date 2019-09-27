@@ -12,6 +12,7 @@ public class ConfigManagerZG {
 	public static String CATEGORY_MOONS = "Moons";
 	public static String CATEGORY_SATELLITES = "Space Stations";
 	public static String CATEGORY_MISC = "Miscallenous";
+	public static String CATEGORY_COMPATIBILITY = "Compatibility";
 	
 	// Planets (Psios)
 	public static int planetEdenDimensionId;
@@ -73,7 +74,12 @@ public class ConfigManagerZG {
 	// Misc
 	public static boolean canEarthAnimalsSpawnOnEden;
 	public static String temperatureType;
+	
+	// Compat
 	public static boolean shouldOasisUseLiquidRedstone;
+	public static boolean enableExtraPulverizerOutput;
+	public static boolean fueltoniumIsUranium;
+	public static boolean registerCobaltOreDict;
 	
 	public static void init(FMLPreInitializationEvent event) {
 		configuration = new Configuration(new File(event.getModConfigurationDirectory().getAbsolutePath()
@@ -152,20 +158,41 @@ public class ConfigManagerZG {
 		spaceStationOasisStaticId = configuration.get(CATEGORY_SATELLITES, "Oasis Space Station Static ID", -6011).getInt();
 		
 		// Misc (Can Earth animals spawn on Eden?)
-		canEarthAnimalsSpawnOnEden = configuration.get(CATEGORY_MISC, "Earth Animals Spawn On Eden", true).getBoolean();
+		canEarthAnimalsSpawnOnEden = configuration.get(CATEGORY_MISC, "Earth Animals Spawn On Eden", true,
+				"Should Earth animals spawn on Eden? (default: true)").getBoolean();
 		
 		// Misc (Temperatures shown in fahrenheit or celsius?)
 		temperatureType = configuration.get(CATEGORY_MISC, "[HUD DISPLAY] Temperature Type (F or C only)", "F",
-				"Should temperatures be shown in Fahrenheit (F) or Celsius (C)?").getString();
+				"Should temperatures be shown in Fahrenheit (F) or Celsius (C)? (default: F)").getString();
 		
-		// Misc (Whether or not to use Thermal Foundation's Detabilized Redstone
+		// Compatibility (Whether or not to use Thermal Foundation's Detabilized
+		// Redstone
 		// for the Red Sea in Oasis)
-		shouldOasisUseLiquidRedstone = configuration
-				.get(CATEGORY_MISC,
-						"Oasis uses Thermal Foundation's Destabilized Redstone",
-						false,
-						"Whether or not Oasis should use Detabilized Redstone for its Red Sea biome (false by default). "
-								+ "WARNING: This can use a LOT of your PC's memory! This can lead to severe LAG! Use at your own risk.")
+		shouldOasisUseLiquidRedstone = configuration.get(
+				CATEGORY_COMPATIBILITY,
+				"Oasis uses Thermal Foundation's Destabilized Redstone",
+				true,
+				"Whether or not Oasis should use Detabilized Redstone for its Red Sea biome. "
+						+ "WARNING: This can use a LOT of your PC's memory! "
+						+ "This can lead to severe LAG! Use at your own risk. (default: true)").getBoolean();
+		
+		// Compatibility (Whether or not Thermal Foundation Pulverizers should
+		// give extra
+		// (4) instead of normal (2))
+		enableExtraPulverizerOutput = configuration.get(
+				CATEGORY_COMPATIBILITY,
+				"Enable extra Pulverizer Output",
+				true,
+				"Whether or not Zollern Galaxy ores give extra dust from Thermal Foundation's Pulverizers. "
+						+ "Disable if it causes compatibility issues (default: true).").getBoolean();
+		
+		// Compat (Should Fueltonium register as Uranium?)
+		fueltoniumIsUranium = configuration.get(CATEGORY_COMPATIBILITY, "Fueltonium counts as Uranium", true,
+				"Should Fueltonium register as Uranium? (default: true)").getBoolean();
+		
+		// Compat (Should Cobalt register in the Ore Dictionary?)
+		registerCobaltOreDict = configuration.get(CATEGORY_COMPATIBILITY, "Register Cobalt in Ore Dictionary", true,
+				"Set this to false if there are any problems " + " with mods like Tinker's Construct. (default: true)")
 				.getBoolean();
 		
 		configuration.save();

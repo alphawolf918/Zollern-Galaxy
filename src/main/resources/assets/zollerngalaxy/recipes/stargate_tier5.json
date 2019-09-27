@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "VCV",
+    "HYH",
+    "YCY"
+  ],
+  "key": {
+    "C": {
+      "item": "zollerngalaxy:prometheancrystal"
+    },
+    "V": {
+      "item": "zollerngalaxy:compressedprometheanblock"
+    },
+    "H": {
+      "item": "zollerngalaxy:compressedviriniumblock"
+    },
+    "Y": {
+      "item": "zollerngalaxy:compressedpromethean"
+    }
+  },
+  "result": {
+    "item": "zollerngalaxy:stargate_tier5"
+  }
+}

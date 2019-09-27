@@ -3,8 +3,6 @@ package zollerngalaxy.blocks;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
 import zollerngalaxy.core.enums.EnumBlockType;
 import zollerngalaxy.core.enums.EnumHarvestLevelZG;
 import zollerngalaxy.core.enums.EnumHarvestToolZG;
@@ -30,11 +28,6 @@ public class ZGBlockDirt extends ZGBlockBase {
 	@Override
 	public String getHarvestTool(IBlockState state) {
 		return EnumHarvestToolZG.SHOVEL.getHarvestTool();
-	}
-	
-	@Override
-	public boolean isTerraformable(World world, BlockPos pos) {
-		return false;
 	}
 	
 }

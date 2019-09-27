@@ -32,6 +32,7 @@ public class BiomeDecoratorXathius extends BiomeDecoratorZG {
 	private WorldGenerator ironGen;
 	private WorldGenerator goldGen;
 	private WorldGenerator tinGen;
+	private WorldGenerator azuriteGen;
 	
 	public int waterLakesPerChunk = 4;
 	public int lavaLakesPerChunk = 1;
@@ -53,6 +54,7 @@ public class BiomeDecoratorXathius extends BiomeDecoratorZG {
 		this.ironGen = new WorldGenMinableZG(ZGBlocks.xathIronOre, STONE, EnumOreGenZG.IRON.setGenCount(25));
 		this.goldGen = new WorldGenMinableZG(ZGBlocks.xathGoldOre, STONE, EnumOreGenZG.GOLD.setGenCount(35));
 		this.tinGen = new WorldGenMinableZG(ZGBlocks.xathTinOre, STONE, EnumOreGenZG.TIN.setGenCount(45));
+		this.azuriteGen = new WorldGenMinableZG(ZGBlocks.xathAzuriteOre, Blocks.OBSIDIAN, EnumOreGenZG.AZURITE);
 	}
 	
 	@Override
@@ -85,6 +87,7 @@ public class BiomeDecoratorXathius extends BiomeDecoratorZG {
 		this.generateOre(this.ironGen, EnumOreGenZG.IRON, world, rand);
 		this.generateOre(this.goldGen, EnumOreGenZG.GOLD, world, rand);
 		this.generateOre(this.tinGen, EnumOreGenZG.TIN, world, rand);
+		this.generateOre(this.azuriteGen, EnumOreGenZG.AZURITE, world, rand);
 		
 		ChunkPrimer chunkPrimer = new ChunkPrimer();
 		

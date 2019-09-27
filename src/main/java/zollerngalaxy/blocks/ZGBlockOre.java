@@ -10,8 +10,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import zollerngalaxy.core.enums.EnumBlockTier;
 import zollerngalaxy.core.enums.EnumBlockType;
-import zollerngalaxy.core.enums.EnumHarvestLevelZG;
-import zollerngalaxy.core.enums.EnumHarvestToolZG;
 
 public class ZGBlockOre extends ZGBlockBase {
 	
@@ -22,15 +20,10 @@ public class ZGBlockOre extends ZGBlockBase {
 	protected boolean hasPotionEffect = false;
 	protected Potion blockPotionEffect;
 	protected Random rand = new Random();
-	protected String harvestTool = "pickaxe";
-	protected int harvestLevel = 3;
 	
 	public ZGBlockOre(String blockName, float hardResist) {
 		super(blockName, hardResist);
-		this.setHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.DIAMOND.getHarvestLevel());
 		this.setBlockType(EnumBlockType.ORE);
-		this.harvestTool = EnumHarvestToolZG.PICKAXE.getHarvestTool();
-		this.harvestLevel = EnumHarvestLevelZG.DIAMOND.getHarvestLevel();
 	}
 	
 	public Block setShouldGivePotionEffect(boolean shouldGivePotionEffect, Potion potionEffect) {
@@ -91,10 +84,10 @@ public class ZGBlockOre extends ZGBlockBase {
 			}
 		}
 		if (this.getShouldGivePotionEffect()) {
-			if (rand.nextInt(10) <= 4) {
+			if (rand.nextInt(10) <= 5) {
 				EntityPlayer player = worldIn.getClosestPlayer(pos.getX(), pos.getY(), pos.getZ(), 2.5D, false);
 				if (player != null && this.blockPotionEffect != null) {
-					player.addPotionEffect(new PotionEffect(this.blockPotionEffect, 200, 0));
+					player.addPotionEffect(new PotionEffect(this.blockPotionEffect, 200));
 				}
 			}
 		}
@@ -107,15 +100,5 @@ public class ZGBlockOre extends ZGBlockBase {
 	public Block setBlockTier(EnumBlockTier variantType) {
 		this.oreTier = variantType;
 		return this;
-	}
-	
-	@Override
-	public int getHarvestLevel(IBlockState state) {
-		return this.harvestLevel;
-	}
-	
-	@Override
-	public String getHarvestTool(IBlockState state) {
-		return this.harvestTool;
 	}
 }

@@ -1,6 +1,7 @@
 package zollerngalaxy.biomes.oasis;
 
 import java.util.Random;
+import micdoodle8.mods.galacticraft.core.entities.EntityAlienVillager;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
@@ -41,6 +42,7 @@ public abstract class BiomeOasisBase extends BiomeSpace {
 		this.biomeDecor.treesPerChunk = -999;
 		this.biomeDecor.grassPerChunk = -999;
 		this.biomeDecor.mushroomsPerChunk = -999;
+		this.spawnableCreatureList.add(new SpawnListEntry(EntityAlienVillager.class, 35, 2, 8));
 		this.setStoneBlock(ZGBlocks.oasisStone);
 		this.setPlanetForBiome(ZGPlanets.planetOasis);
 	}

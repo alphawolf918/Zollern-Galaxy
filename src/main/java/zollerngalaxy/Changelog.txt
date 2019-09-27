@@ -2,8 +2,11 @@
 Zollern Galaxy v2.0.5
 =====================
 
+* Fixed custom tools not having correct harvest/damage/efficiency/other things.
+* Fixed tools being seen as items instead of handheld tools.
+* Fixed blocks having the wrong harvest levels.
 * Added the Constructed planet type.
-* Added Chargium and White Lava fluids.
+* Added Conductive Chargium, Radiolaria, Molten Fueltonium and Melted Chocolate fluids.
     * Chargium can be used inside of an Extreme Reactors turbine with extreme efficiency.
         * Chargium must be created with careful precision - it is liquified from Super Charged Coal.
 * Added Shinestone and Fueltonium.
@@ -18,8 +21,17 @@ Zollern Galaxy v2.0.5
 * Modified Xathius graphic and added a few new planet graphics.
 * Added planet Candora as a fun, "birthday" planet.
 * Added a new, special Star Gate for Candora.
-* Fixed custom tools not having correct harvest/damage/efficiency/other things.
-* Fixed tools being seen as items instead of handheld tools.
 * Added new "sweet foods" that give potion effects when eaten. Always edible.
 * Created three new tool sets: Amaranth, Azurite and Zollernium.
+* Created a new config category (Compatibility).
+* Added a config option to disable getting extra (4) dust from Pulverizers from Thermal Foundation instead of normal (2).
+* Moved Oasis Redstone Destabilized Sea to new Compatibility category and set it to true by default.
+* Slightly increased chance for potion-irradiated ores to apply Potion Effects to the Player.
+* Increased count of Super Charged Coal Ore blocks per spawn.
+* Added a config option to enable/disable Fueltonium registering as Uranium (true by default).
+* Created the Gray Aliens.
+* Gray Aliens and Alien Villagers now spawn on Xantheon.
+* Gray Aliens can clip through walls like Vex.
+* Alien Villagers now spawn on all planets and walk around. This is an effort to make the planets seem more alive.
+* Azurite Ore has been added to planet Xathius, requiring the Player to revisit it later.
 * 

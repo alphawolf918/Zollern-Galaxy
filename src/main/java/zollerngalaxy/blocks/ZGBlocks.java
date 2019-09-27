@@ -213,6 +213,8 @@ public class ZGBlocks {
 			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.VIRINIUM.getHarvestLevel());
 	public static final Block xathTinOre = new ZGBlockOre("xathtinore", 3.4F).setBlockHarvestLevel(
 			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.VIRINIUM.getHarvestLevel());
+	public static final Block xathAzuriteOre = new ZGOreGem("xathazuriteore", 9.6F, ZGItems.azurite).setBlockHarvestLevel(
+			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.AMARANTH.getHarvestLevel());
 	
 	// Oasis
 	public static final Block oasisRock = new ZGBlockBase("oasisrock");
@@ -245,13 +247,22 @@ public class ZGBlocks {
 	public static final Block xantheonRock = new ZGBlockBase("xantheonrock", 5.1F);
 	public static final Block xantheonChrome = new ZGBlockMetal("xantheonchrome", 4.2F);
 	public static final Block xantheonStone = new ZGBlockBase("xantheonstone", 5.6F);
-	public static final Block xantheonCoalOre = new ZGOreGem("xantheoncoalore", 5.6F, Items.COAL);
-	public static final Block xantheonIronOre = new ZGBlockOre("xantheonironore", 5.7F);
-	public static final Block xantheonCopperOre = new ZGBlockOre("xantheoncopperore", 5.3F);
-	public static final Block xantheonNickelOre = new ZGBlockOre("xantheonnickelore", 5.7F);
-	public static final Block xantheonPlutoniumOre = new ZGOreGem("xantheonplutoniumore", 6.0F, ZGItems.plutoniumCrystal);
-	public static final Block xantheonFueltoniumOre = new ZGOreGem("xantheonfueltoniumore", 6.1F, ZGItems.dustFueltonium);
-	public static final Block xantheonConstructBlock = new ZGBlockMetal("constructblock", 8.2F);
+	public static final Block xantheonCoalOre = new ZGOreGem("xantheoncoalore", 5.6F, Items.COAL).setBlockHarvestLevel(
+			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.VIRINIUM.getHarvestLevel());
+	public static final Block xantheonIronOre = new ZGBlockOre("xantheonironore", 5.7F).setBlockHarvestLevel(
+			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.VIRINIUM.getHarvestLevel());
+	public static final Block xantheonCopperOre = new ZGBlockOre("xantheoncopperore", 5.3F).setBlockHarvestLevel(
+			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.VIRINIUM.getHarvestLevel());
+	public static final Block xantheonNickelOre = new ZGBlockOre("xantheonnickelore", 5.7F).setBlockHarvestLevel(
+			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.VIRINIUM.getHarvestLevel());
+	public static final Block xantheonPlutoniumOre = new ZGOreGem("xantheonplutoniumore", 6.0F, ZGItems.plutoniumCrystal)
+			.setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.VIRINIUM.getHarvestLevel());
+	public static final Block xantheonFueltoniumOre = new ZGOreGem("xantheonfueltoniumore", 6.1F, ZGItems.dustFueltonium)
+			.setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.AMARANTH.getHarvestLevel());
+	public static final Block xantheonAmaranthOre = new ZGBlockOre("xantheonamaranthore", 6.2F).setBlockHarvestLevel(
+			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.VIRINIUM.getHarvestLevel());
+	public static final Block xantheonConstructBlock = new ZGBlockMetal("constructblock", 8.2F).setBlockHarvestLevel(
+			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.VIRINIUM.getHarvestLevel());
 	
 	// Metals
 	public static final Block blockViri = new ZGBlockMetal("viriblock");
@@ -327,18 +338,19 @@ public class ZGBlocks {
 				edenGoldOre, edenSilverOre, edenIronOre, edenLapisOre, edenMeteoricIronOre, edenRedstoneOre, edenTinOre,
 				edenLeadOre, edenNickelOre, edenViriniumOre, edenCobaltOre, edenEveniumOre, edenHeartiumOre, xathRock,
 				xathCobble, xathStone, xathRockBricks, xathGrass, xathDirt, xathGravel, xathTallGrass, xathPrometheanOre,
-				xathEmeraldOre, xathDiamondOre, xathRedstoneOre, xathIronOre, xathGoldOre, xathTinOre, oasisRock,
-				oasisStone, oasisRockBricks, oasisCobble, oasisDirt, oasisTallGrass, oasisGrass, oasisGravel,
+				xathEmeraldOre, xathDiamondOre, xathRedstoneOre, xathIronOre, xathGoldOre, xathTinOre, xathAzuriteOre,
+				oasisRock, oasisStone, oasisRockBricks, oasisCobble, oasisDirt, oasisTallGrass, oasisGrass, oasisGravel,
 				oasisSuperChargedCoalOre, oasisCoalOre, oasisIronOre, oasisGoldOre, oasisRedstoneOre, oasisDiamondOre,
 				oasisTinOre, oasisLeadOre, xantheonRock, xantheonChrome, xantheonStone, xantheonCoalOre, xantheonIronOre,
-				xantheonCopperOre, xantheonNickelOre, xantheonPlutoniumOre, xantheonFueltoniumOre, xantheonConstructBlock,
-				blockViri, blockCobalt, blockEve, blockPromethean, blockCrater, blockSuperChargedCoal, blockPlutonium,
-				blockFueltonium, blockChargium, blockShinium, blockAmaranth, blockAzurite, blockZollernium, blockShinestone,
-				blockShinestoneCrystal, blockShinestonePolished, blockShinestoneCrystalBricks, blockCompressedHeartium,
-				blockCompressedViri, blockCompressedEve, blockCompressedCobalt, blockCompressedPromethean,
-				blockCompressedSuperChargedCoal, candyCubeWhite, candyCubeBlack, candyCubeGray, candyCubeOrange,
-				candyCubeBrown, candyCubeRed, candyCubeBlue, candyCubeYellow, candyCubePurple, candyCubeCyan, candyCubePink,
-				candyCubeGreen, blockChocolate, blockCookie, blockBrownie, blockIceCreamSandwich, blockSugarCube);
+				xantheonCopperOre, xantheonNickelOre, xantheonPlutoniumOre, xantheonFueltoniumOre, xantheonAmaranthOre,
+				xantheonConstructBlock, blockViri, blockCobalt, blockEve, blockPromethean, blockCrater,
+				blockSuperChargedCoal, blockPlutonium, blockFueltonium, blockChargium, blockShinium, blockAmaranth,
+				blockAzurite, blockZollernium, blockShinestone, blockShinestoneCrystal, blockShinestonePolished,
+				blockShinestoneCrystalBricks, blockCompressedHeartium, blockCompressedViri, blockCompressedEve,
+				blockCompressedCobalt, blockCompressedPromethean, blockCompressedSuperChargedCoal, candyCubeWhite,
+				candyCubeBlack, candyCubeGray, candyCubeOrange, candyCubeBrown, candyCubeRed, candyCubeBlue,
+				candyCubeYellow, candyCubePurple, candyCubeCyan, candyCubePink, candyCubeGreen, blockChocolate, blockCookie,
+				blockBrownie, blockIceCreamSandwich, blockSugarCube);
 		ZGHelper.Log("Loaded a total of " + totalBlocks + " new blocks.");
 	}
 	

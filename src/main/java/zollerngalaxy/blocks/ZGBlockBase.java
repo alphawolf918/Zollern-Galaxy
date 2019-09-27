@@ -18,7 +18,6 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.core.enums.EnumBlockType;
-import zollerngalaxy.core.enums.EnumHarvestLevelZG;
 import zollerngalaxy.core.enums.EnumHarvestToolZG;
 import zollerngalaxy.creativetabs.ZGTabs;
 import zollerngalaxy.lib.helpers.json.JSONFactory;
@@ -34,6 +33,7 @@ public class ZGBlockBase extends Block implements ISingleZGBlockRender, IJSONBlo
 	protected boolean shouldIgnore = false;
 	protected String blockInfo = "";
 	protected static String name;
+	protected int harvestLvl = 3;
 	
 	public ZGBlockBase(String blockName, float hardResist) {
 		super(Material.ROCK);
@@ -104,7 +104,7 @@ public class ZGBlockBase extends Block implements ISingleZGBlockRender, IJSONBlo
 	public void onEntityWalk(World worldIn, BlockPos pos, Entity entityIn) {
 		if (!entityIn.isImmuneToFire() && entityIn instanceof EntityLivingBase
 				&& !EnchantmentHelper.hasFrostWalkerEnchantment((EntityLivingBase) entityIn) && this.getIsHotBlock()) {
-			entityIn.attackEntityFrom(DamageSource.HOT_FLOOR, 2.5F);
+			entityIn.attackEntityFrom(DamageSource.HOT_FLOOR, 4.5F);
 		}
 		
 		super.onEntityWalk(worldIn, pos, entityIn);
@@ -128,7 +128,8 @@ public class ZGBlockBase extends Block implements ISingleZGBlockRender, IJSONBlo
 	}
 	
 	public Block setBlockHarvestLevel(String toolClass, int level) {
-		this.setHarvestLevel(toolClass, level);
+		this.harvestLvl = level;
+		this.setHarvestLevel(toolClass, level, this.getDefaultState());
 		return this;
 	}
 	
@@ -199,7 +200,7 @@ public class ZGBlockBase extends Block implements ISingleZGBlockRender, IJSONBlo
 	
 	@Override
 	public int getHarvestLevel(IBlockState state) {
-		return EnumHarvestLevelZG.IRON.getHarvestLevel();
+		return this.harvestLvl;
 	}
 	
 	@Override

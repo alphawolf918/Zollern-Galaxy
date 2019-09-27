@@ -1,6 +1,7 @@
 package zollerngalaxy.biomes.xathius;
 
 import java.util.Random;
+import micdoodle8.mods.galacticraft.core.entities.EntityAlienVillager;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
@@ -35,6 +36,7 @@ public abstract class BiomeXathiusBase extends BiomeSpace {
 		this.decorator.treesPerChunk = -999;
 		this.decorator.grassPerChunk = -999;
 		this.decorator.mushroomsPerChunk = -999;
+		this.spawnableCreatureList.add(new SpawnListEntry(EntityAlienVillager.class, 35, 2, 8));
 		this.setStoneBlock(ZGBlocks.xathStone);
 		this.setPlanetForBiome(ZGPlanets.planetXathius);
 	}

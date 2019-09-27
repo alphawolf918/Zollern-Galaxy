@@ -144,6 +144,11 @@ public class CraftingRecipes {
 		CraftingRecipes.addSword(new ItemStack(ZGItems.swordAzurite), ZGItems.azurite);
 		CraftingRecipes.addSword(new ItemStack(ZGItems.swordZollernium), ZGItems.ingotZollernium);
 		
+		// Power Stick
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.powerStick, 2), new Object[] { " A ", " L ", " A ", 'A',
+				ZGItems.compressedAmaranth, 'L', ZGItems.ingotLapis });
+		totalCraftRecipes++;
+		
 		// Omnitool
 		// TODO
 		
@@ -171,13 +176,25 @@ public class CraftingRecipes {
 		totalCraftRecipes++;
 		
 		// Star Gate (Tier 5)
-		// TODO: Next release..
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.starGateTier5, 1), new Object[] { "VCV", "HYH", "YCY", 'V',
+				ZGBlocks.blockCompressedPromethean, 'C', ZGItems.prometheanCrystal, 'H', ZGBlocks.blockCompressedViri, 'Y',
+				ZGItems.compressedPromethean });
+		totalCraftRecipes++;
 		
 		// Star Gate (Tier 6)
-		// TODO: Next release..
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.starGateTier6, 1), new Object[] { "VCV", "HYH", "YCY", 'V',
+				ZGBlocks.blockCompressedSuperChargedCoal, 'C', ZGItems.compressedRiven, 'H',
+				ZGBlocks.blockCompressedPromethean, 'Y', ZGItems.compressedSuperChargedCoal });
+		totalCraftRecipes++;
+		
+		// Star Gate (Tier 7)
+		// TODO
 		
 		// Star Gate (Birthday Protocol)
-		// TODO
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.starGateCandy, 1), new Object[] { "VCV", "HYH", "YCY", 'V',
+				ZGBlocks.xathCobble, 'C', ZGBlocks.oasisRock, 'H', ZGBlocks.blockCompressedPromethean, 'Y',
+				ZGItems.compressedSuperChargedCoal });
+		totalCraftRecipes++;
 	}
 	
 	private static void addRockBricks(Block stoneIn, Block bricksOut) {

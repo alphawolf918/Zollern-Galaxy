@@ -1,5 +1,6 @@
 package zollerngalaxy.biomes.zollus;
 
+import micdoodle8.mods.galacticraft.core.entities.EntityAlienVillager;
 import net.minecraft.world.biome.BiomeDecorator;
 import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.biomes.decorators.BiomeDecoratorZollus;
@@ -24,6 +25,7 @@ public class BiomeZollus extends BiomeSpace {
 		this.biomeDecor.grassPerChunk = -999;
 		this.biomeDecor.mushroomsPerChunk = -999;
 		this.clearAllSpawning();
+		this.spawnableCreatureList.add(new SpawnListEntry(EntityAlienVillager.class, 35, 2, 8));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityFrostGiant.class, 50, 1, 1));
 		this.topBlock = ZGBlocks.zolSurfaceRock.getDefaultState();
 		this.fillerBlock = ZGBlocks.zolDirt.getDefaultState();
