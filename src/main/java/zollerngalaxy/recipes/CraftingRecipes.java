@@ -24,10 +24,12 @@ public class CraftingRecipes {
 	}
 	
 	private static void addRecipes() {
+		// Bright Stuff
 		CraftingRecipes.addBriteStone(ZGItems.dustBrightstone, ZGBlocks.edenBrightStone);
 		CraftingRecipes.addBriteStone(ZGItems.dustShinestone, ZGBlocks.blockShinestone);
 		CraftingRecipes.addBriteStone(ZGBlocks.blockShinestoneCrystal, ZGBlocks.blockShinestonePolished);
 		
+		// Rock Bricks
 		CraftingRecipes.addRockBricks(ZGBlocks.zolStone, ZGBlocks.zolRockBricks);
 		CraftingRecipes.addRockBricks(ZGBlocks.kriffStone, ZGBlocks.kriffRockBricks);
 		CraftingRecipes.addRockBricks(ZGBlocks.purgStone, ZGBlocks.purgRockBricks);
@@ -37,7 +39,9 @@ public class CraftingRecipes {
 		CraftingRecipes.addRockBricks(ZGBlocks.xathStone, ZGBlocks.xathRockBricks);
 		CraftingRecipes.addRockBricks(ZGBlocks.oasisStone, ZGBlocks.oasisRockBricks);
 		CraftingRecipes.addRockBricks(ZGBlocks.blockShinestonePolished, ZGBlocks.blockShinestoneCrystalBricks);
+		CraftingRecipes.addRockBricks(ZGBlocks.blockChocolate, ZGBlocks.blockChocolateBricks);
 		
+		// Items -> Blocks
 		CraftingRecipes.addIngotMetal(ZGItems.ingotVirinium, ZGBlocks.blockViri);
 		CraftingRecipes.addIngotMetal(ZGItems.ingotCobalt, ZGBlocks.blockCobalt);
 		CraftingRecipes.addIngotMetal(ZGItems.ingotEvenium, ZGBlocks.blockEve);
@@ -51,13 +55,21 @@ public class CraftingRecipes {
 		CraftingRecipes.addIngotMetal(ZGItems.ingotAmaranth, ZGBlocks.blockAmaranth);
 		CraftingRecipes.addIngotMetal(ZGItems.azurite, ZGBlocks.blockAzurite);
 		CraftingRecipes.addIngotMetal(ZGItems.ingotZollernium, ZGBlocks.blockZollernium);
+		CraftingRecipes.addIngotMetal(Items.BLAZE_POWDER, ZGBlocks.kriffBlazeRock);
 		
+		// Compression
 		CraftingRecipes.addIngotMetal(ZGItems.compressedCobalt, ZGBlocks.blockCompressedCobalt);
 		CraftingRecipes.addIngotMetal(ZGItems.compressedEvenium, ZGBlocks.blockCompressedEve);
 		CraftingRecipes.addIngotMetal(ZGItems.compressedHeartium, ZGBlocks.blockCompressedHeartium);
 		CraftingRecipes.addIngotMetal(ZGItems.compressedPromethean, ZGBlocks.blockCompressedPromethean);
 		CraftingRecipes.addIngotMetal(ZGItems.compressedSuperChargedCoal, ZGBlocks.blockCompressedSuperChargedCoal);
 		CraftingRecipes.addIngotMetal(ZGItems.compressedVirinium, ZGBlocks.blockCompressedViri);
+		
+		// Schweets
+		CraftingRecipes.addIngotMetal(ZGItems.chocolateBar, ZGBlocks.blockChocolate);
+		CraftingRecipes.addIngotMetal(Items.COOKIE, ZGBlocks.blockCookie);
+		CraftingRecipes.addIngotMetal(ZGItems.brownie, ZGBlocks.blockBrownie);
+		CraftingRecipes.addIngotMetal(ZGItems.iceCreamSandwich, ZGBlocks.blockIceCreamSandwich);
 		
 		CraftingRecipes.addPlanks(ZGBlocks.edenWoodLog, ZGBlocks.edenWoodPlanks);
 		
@@ -103,6 +115,39 @@ public class CraftingRecipes {
 				ZGItems.edenCrystal, 'V', ZGItems.compressedVyrex, 'Z', ZGBlocks.blockCompressedCobalt, 'B',
 				ZGBlocks.blockViri, 'I', ZGBlocks.edenBrightStone });
 		totalCraftRecipes++;
+		
+		// **** Begin Sweets ****
+		
+		// Raw Chocolate
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.chocolateRaw, 3), new Object[] { "CCC", "CEC", "CCC", 'C',
+				new ItemStack(Items.DYE, 1, 3), 'E', Items.EGG });
+		totalCraftRecipes++;
+		
+		// Brownie
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.brownie, 4), new Object[] { "CC ", "CC ", "   ", 'C',
+				ZGItems.chocolateRaw });
+		totalCraftRecipes++;
+		
+		// Candy Apple
+		ZGRecipeHelper.addShapelessRecipe(new ItemStack(ZGItems.candyApple, 1), new Object[] { Items.APPLE,
+				ZGItems.chocolateRaw });
+		totalCraftRecipes++;
+		
+		// Cream Ball
+		ZGRecipeHelper.addShapelessRecipe(new ItemStack(ZGItems.creamBall, 3),
+				new Object[] { Items.MILK_BUCKET, Items.SUGAR });
+		totalCraftRecipes++;
+		
+		// Ice Cream Sandwich
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.iceCreamSandwich, 1), new Object[] { "B  ", "C  ", "B  ", 'B',
+				ZGItems.brownie, 'C', ZGItems.creamBall });
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.iceCreamSandwich, 1), new Object[] { " B ", " C ", " B ", 'B',
+				ZGItems.brownie, 'C', ZGItems.creamBall });
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.iceCreamSandwich, 1), new Object[] { "  B", "  C", "  B", 'B',
+				ZGItems.brownie, 'C', ZGItems.creamBall });
+		totalCraftRecipes += 3;
+		
+		// **** End Sweets ****
 		
 		// Pickaxes
 		CraftingRecipes.addPickaxe(new ItemStack(ZGItems.pickaxeCobalt), ZGItems.ingotCobalt);

@@ -41,12 +41,12 @@ public class EntityGrayAlien extends EntityMob implements IEntityBreathable {
 		this.stepHeight = 2.0F;
 	}
 	
-	@Override
-	public void onUpdate() {
-		this.noClip = true;
-		super.onUpdate();
-		this.noClip = false;
-	}
+	// @Override
+	// public void onUpdate() {
+	// this.noClip = true;
+	// super.onUpdate();
+	// this.noClip = false;
+	// }
 	
 	@Override
 	protected void applyEntityAttributes() {
@@ -65,7 +65,7 @@ public class EntityGrayAlien extends EntityMob implements IEntityBreathable {
 	
 	@Override
 	public int getMaxSpawnedInChunk() {
-		return 2;
+		return 4;
 	}
 	
 	@Override

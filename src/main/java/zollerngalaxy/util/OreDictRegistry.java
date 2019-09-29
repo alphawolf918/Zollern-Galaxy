@@ -1,6 +1,7 @@
 package zollerngalaxy.util;
 
 import net.minecraft.block.Block;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraftforge.oredict.OreDictionary;
 import zollerngalaxy.blocks.ZGBlocks;
@@ -161,7 +162,11 @@ public class OreDictRegistry {
 		registerOre("dustEvenium", ZGItems.dustEvenium);
 		registerOre("ingotEvenium", ZGItems.ingotEvenium);
 		registerOre("blockEvenium", ZGBlocks.blockEve);
-		registerOre("pickaxeEvenium", ZGItems.pickaxeVirinium);
+		registerOre("pickaxeEvenium", ZGItems.pickaxeEvenium);
+		registerOre("shovelEvenium", ZGItems.shovelEvenium);
+		registerOre("axeEvenium", ZGItems.axeEvenium);
+		registerOre("hoeEvenium", ZGItems.hoeEvenium);
+		registerOre("swordEvenium", ZGItems.swordEvenium);
 		
 		// Virinium
 		registerOre("oreVirinium", ZGBlocks.edenViriniumOre);
@@ -169,6 +174,10 @@ public class OreDictRegistry {
 		registerOre("ingotVirinium", ZGItems.ingotVirinium);
 		registerOre("blockVirinium", ZGBlocks.blockViri);
 		registerOre("pickaxeVirinium", ZGItems.pickaxeVirinium);
+		registerOre("shovelVirinium", ZGItems.shovelVirinium);
+		registerOre("axeVirinium", ZGItems.axeVirinium);
+		registerOre("hoeVirinium", ZGItems.hoeVirinium);
+		registerOre("swordVirinium", ZGItems.swordVirinium);
 		
 		// Amaranth
 		registerOre("oreAmaranth", ZGBlocks.xantheonAmaranthOre);
@@ -176,18 +185,30 @@ public class OreDictRegistry {
 		registerOre("ingotAmaranth", ZGItems.ingotAmaranth);
 		registerOre("blockAmaranth", ZGBlocks.blockAmaranth);
 		registerOre("pickaxeAmaranth", ZGItems.pickaxeAmaranth);
+		registerOre("shovelAmaranth", ZGItems.shovelAmaranth);
+		registerOre("axeAmaranth", ZGItems.axeAmaranth);
+		registerOre("hoeAmaranth", ZGItems.hoeAmaranth);
+		registerOre("swordAmaranth", ZGItems.swordAmaranth);
 		
 		// Azurite
 		registerOre("oreAzurite", ZGBlocks.xathAzuriteOre);
 		registerOre("gemAzurite", ZGItems.azurite);
 		registerOre("blockAzurite", ZGBlocks.blockAzurite);
 		registerOre("pickaxeAzurite", ZGItems.pickaxeAzurite);
+		registerOre("shovelAzurite", ZGItems.shovelAzurite);
+		registerOre("axeAzurite", ZGItems.axeAzurite);
+		registerOre("hoeAzurite", ZGItems.hoeAzurite);
+		registerOre("swordAzurite", ZGItems.swordAzurite);
 		
 		// Zollernium
 		registerOre("dustZollernium", ZGItems.dustZollernium);
 		registerOre("ingotZollernium", ZGItems.ingotZollernium);
 		registerOre("blockZollernium", ZGBlocks.blockZollernium);
 		registerOre("pickaxeZollernium", ZGItems.pickaxeZollernium);
+		registerOre("shovelZollernium", ZGItems.shovelZollernium);
+		registerOre("axeZollernium", ZGItems.axeZollernium);
+		registerOre("hoeZollernium", ZGItems.hoeZollernium);
+		registerOre("swordZollernium", ZGItems.swordZollernium);
 		
 		// Promethean
 		registerOre("orePromethean", ZGBlocks.xathPrometheanOre);
@@ -217,6 +238,10 @@ public class OreDictRegistry {
 		registerOre("orePlutonium", ZGBlocks.xantheonPlutoniumOre);
 		registerOre("gemPlutonium", ZGItems.plutoniumCrystal);
 		registerOre("blockPlutonium", ZGBlocks.blockPlutonium);
+		
+		// Blazerock
+		registerOre("blockBlazePowder", ZGBlocks.kriffBlazeRock);
+		registerOre("gemBlazePowder", Items.BLAZE_POWDER);
 	}
 	
 	private static void registerOre(String strName, Item... items) {

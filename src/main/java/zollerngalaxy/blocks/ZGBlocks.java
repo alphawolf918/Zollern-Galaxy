@@ -12,6 +12,7 @@ import zollerngalaxy.blocks.eden.EdenFruit;
 import zollerngalaxy.blocks.oasis.OasisFlower;
 import zollerngalaxy.blocks.sweetblocks.CandyCubeBlock;
 import zollerngalaxy.blocks.sweetblocks.CookieBlock;
+import zollerngalaxy.blocks.sweetblocks.IceCreamSandwichBlock;
 import zollerngalaxy.blocks.zollus.ZolniumCrystals;
 import zollerngalaxy.core.enums.EnumBlockType;
 import zollerngalaxy.core.enums.EnumHarvestLevelZG;
@@ -62,6 +63,8 @@ public class ZGBlocks {
 	public static final Block kriffDirt = new ZGBlockDirt("kriffdirt");
 	public static final Block kriffRockBricks = new ZGBlockBase("kriffrockbricks", 1.4F);
 	public static final Block kriffMagmaRock = ((ZGBlockBase) new ZGBlockBase("magmarock", 2.6F).setIsHotBlock(true)
+			.setLightLevel(1.0F)).setShouldAlwaysBurn(true);
+	public static final Block kriffBlazeRock = ((ZGBlockBase) new ZGBlockBase("blazerock", 3.4F).setIsHotBlock(true)
 			.setLightLevel(1.0F)).setShouldAlwaysBurn(true);
 	public static final Block kriffCoalOre = new ZGOreGem("kriffcoalore", 1.6F, Items.COAL).setShouldExplode(true, 90);
 	public static final Block kriffCopperOre = new ZGBlockOre("kriffcopperore", 1.7F).setShouldExplode(true, 80);
@@ -199,20 +202,27 @@ public class ZGBlocks {
 	public static final Block xathTallGrass = new ZGBlockTallGrass("xathtallgrass");
 	public static final Block xathGrass = new ZGBlockGrassXath("xathgrass");
 	public static final Block xathGravel = new ZGGravel("xathgravel");
-	public static final Block xathPrometheanOre = new ZGOreGem("xathprometheanore", 3.6F, ZGItems.prometheanCrystal)
-			.setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.VIRINIUM.getHarvestLevel());
-	public static final Block xathEmeraldOre = new ZGOreGem("xathemeraldore", 3.4F, Items.EMERALD).setBlockHarvestLevel(
-			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.VIRINIUM.getHarvestLevel());
-	public static final Block xathDiamondOre = new ZGOreGem("xathdiamondore", 3.2F, Items.DIAMOND).setBlockHarvestLevel(
-			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.VIRINIUM.getHarvestLevel());
-	public static final Block xathRedstoneOre = new ZGOreGem("xathredstoneore", 2.6F, Items.REDSTONE).setBlockHarvestLevel(
-			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.VIRINIUM.getHarvestLevel());
-	public static final Block xathIronOre = new ZGBlockOre("xathironore", 3.1F).setBlockHarvestLevel(
-			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.VIRINIUM.getHarvestLevel());
-	public static final Block xathGoldOre = new ZGBlockOre("xathgoldore", 3.2F).setBlockHarvestLevel(
-			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.VIRINIUM.getHarvestLevel());
-	public static final Block xathTinOre = new ZGBlockOre("xathtinore", 3.4F).setBlockHarvestLevel(
-			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.VIRINIUM.getHarvestLevel());
+	public static final Block xathPrometheanOre = ((ZGBlockOre) new ZGOreGem("xathprometheanore", 3.6F,
+			ZGItems.prometheanCrystal).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
+			EnumHarvestLevelZG.VIRINIUM.getHarvestLevel())).setShouldExplode(true, 15);
+	public static final Block xathEmeraldOre = ((ZGBlockOre) new ZGOreGem("xathemeraldore", 3.4F, Items.EMERALD)
+			.setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.VIRINIUM.getHarvestLevel()))
+			.setShouldGivePotionEffect(true, MobEffects.INVISIBILITY);
+	public static final Block xathDiamondOre = ((ZGBlockOre) new ZGOreGem("xathdiamondore", 3.2F, Items.DIAMOND)
+			.setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.VIRINIUM.getHarvestLevel()))
+			.setShouldExplode(true, 25);
+	public static final Block xathRedstoneOre = ((ZGBlockOre) new ZGOreGem("xathredstoneore", 2.6F, Items.REDSTONE)
+			.setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.VIRINIUM.getHarvestLevel()))
+			.setShouldGivePotionEffect(true, MobEffects.NAUSEA);
+	public static final Block xathIronOre = ((ZGBlockOre) new ZGBlockOre("xathironore", 3.1F).setBlockHarvestLevel(
+			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.VIRINIUM.getHarvestLevel())).setShouldExplode(
+			true, 31);
+	public static final Block xathGoldOre = ((ZGBlockOre) new ZGBlockOre("xathgoldore", 3.2F).setBlockHarvestLevel(
+			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.VIRINIUM.getHarvestLevel()))
+			.setShouldGivePotionEffect(true, MobEffects.HUNGER);
+	public static final Block xathTinOre = ((ZGBlockOre) new ZGBlockOre("xathtinore", 3.4F).setBlockHarvestLevel(
+			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.VIRINIUM.getHarvestLevel())).setShouldExplode(
+			true, 30);
 	public static final Block xathAzuriteOre = new ZGOreGem("xathazuriteore", 9.6F, ZGItems.azurite).setBlockHarvestLevel(
 			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.AMARANTH.getHarvestLevel());
 	
@@ -308,11 +318,11 @@ public class ZGBlocks {
 	
 	// Sweet Blocks
 	public static final Block blockChocolate = new ZGBlockBase("chocolateblock", 1.6F);
+	public static final Block blockChocolateBricks = new ZGBlockBase("chocolatebricks", 1.8F);
 	public static final Block blockCookie = new CookieBlock();
 	public static final Block blockBrownie = ((ZGBlockBase) ((ZGBlockBase) new ZGBlockBase("brownieblock", 1.8F)
 			.setMaterial(Material.CLOTH)).setSound(SoundType.CLOTH)).setBlockType(EnumBlockType.SWEET);
-	public static final Block blockIceCreamSandwich = ((ZGBlockBase) ((ZGBlockBase) new ZGBlockBase("icecreamsandwichblock",
-			1.6F).setMaterial(Material.CLOTH)).setSound(SoundType.CLOTH)).setBlockType(EnumBlockType.SWEET);
+	public static final Block blockIceCreamSandwich = new IceCreamSandwichBlock();
 	public static final Block blockSugarCube = new ZGBlockBase("sugarcube", 0.6F).setBlockType(EnumBlockType.SWEET);
 	
 	// Other
@@ -326,11 +336,11 @@ public class ZGBlocks {
 				edenFlowerGreen, edenFlowerOrange, edenFlowerPink, edenFlowerPurple, edenFlowerRed, edenFlowerYellow,
 				edenFlowerWhite, oasisFlower, zolStone, zolCobbleRock, zolSurfaceRock, zolDirt, zolRockBricks, zolCoalOre,
 				zolCopperOre, zolGoldOre, zolHeartOre, zolTinOre, zolIronOre, zolCrystals, kriffSurfaceRock, kriffStone,
-				kriffCobbleRock, kriffDirt, kriffRockBricks, kriffMagmaRock, kriffCoalOre, kriffCopperOre, kriffIronOre,
-				kriffGoldOre, kriffRedstoneOre, kriffCobaltOre, purgCobbleRock, purgStone, purgRockBricks, purgWhiteRock,
-				purgBlackRock, purgSurfaceRock, purgDirt, purgGravel, purgMeteoricIronOre, purgCobaltOre, purgIronOre,
-				purgGoldOre, purgCopperOre, purgDiamondOre, purgEmeraldOre, purgEveniumOre, purgAluminumOre, purgTinOre,
-				purgLeadOre, purgRedstoneOre, edenSurfaceRock, edenTallGrass, edenGrass, edenSoil, edenStone,
+				kriffCobbleRock, kriffDirt, kriffRockBricks, kriffMagmaRock, kriffBlazeRock, kriffCoalOre, kriffCopperOre,
+				kriffIronOre, kriffGoldOre, kriffRedstoneOre, kriffCobaltOre, purgCobbleRock, purgStone, purgRockBricks,
+				purgWhiteRock, purgBlackRock, purgSurfaceRock, purgDirt, purgGravel, purgMeteoricIronOre, purgCobaltOre,
+				purgIronOre, purgGoldOre, purgCopperOre, purgDiamondOre, purgEmeraldOre, purgEveniumOre, purgAluminumOre,
+				purgTinOre, purgLeadOre, purgRedstoneOre, edenSurfaceRock, edenTallGrass, edenGrass, edenSoil, edenStone,
 				edenSacredStone, edenCobbleRock, edenRockBricks, edenGoldenGrass, edenSwampGrass, edenSnow, edenWinterRock,
 				edenBloodSand, edenBloodStone, edenBoneStone, edenGravel, edenBrightStone, edenWoodLog, edenWoodLeaves,
 				edenWoodPlanks, edenDungeonBricks, edenAluminumOre, edenSteelOre, edenBronzeOre, edenInvarOre,
@@ -349,8 +359,8 @@ public class ZGBlocks {
 				blockShinestoneCrystalBricks, blockCompressedHeartium, blockCompressedViri, blockCompressedEve,
 				blockCompressedCobalt, blockCompressedPromethean, blockCompressedSuperChargedCoal, candyCubeWhite,
 				candyCubeBlack, candyCubeGray, candyCubeOrange, candyCubeBrown, candyCubeRed, candyCubeBlue,
-				candyCubeYellow, candyCubePurple, candyCubeCyan, candyCubePink, candyCubeGreen, blockChocolate, blockCookie,
-				blockBrownie, blockIceCreamSandwich, blockSugarCube);
+				candyCubeYellow, candyCubePurple, candyCubeCyan, candyCubePink, candyCubeGreen, blockChocolate,
+				blockChocolateBricks, blockCookie, blockBrownie, blockIceCreamSandwich, blockSugarCube);
 		ZGHelper.Log("Loaded a total of " + totalBlocks + " new blocks.");
 	}
 	

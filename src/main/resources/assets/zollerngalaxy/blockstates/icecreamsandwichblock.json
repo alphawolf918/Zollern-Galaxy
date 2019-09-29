@@ -1,7 +1,27 @@
 {
+  "forge_marker": 1,
+  "defaults": {
+    "textures": {
+      "bottom": "zollerngalaxy:blocks/brownieblock",
+      "top": "zollerngalaxy:blocks/brownieblock",
+      "side": "zollerngalaxy:blocks/icecreamsandwichblock"
+    },
+    "model": "cube_bottom_top"
+  },
   "variants": {
-    "normal": {
-      "model": "zollerngalaxy:icecreamsandwichblock"
-    }
+    "normal": [
+      {
+        "y": 90
+      },
+      {
+        "y": 180
+      },
+      {
+        "y": 270
+      }
+    ],
+    "inventory": [
+      {}
+    ]
   }
 }

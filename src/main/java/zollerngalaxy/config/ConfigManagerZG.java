@@ -80,6 +80,7 @@ public class ConfigManagerZG {
 	public static boolean enableExtraPulverizerOutput;
 	public static boolean fueltoniumIsUranium;
 	public static boolean registerCobaltOreDict;
+	public static boolean enablePlanetProgressionsCompat;
 	
 	public static void init(FMLPreInitializationEvent event) {
 		configuration = new Configuration(new File(event.getModConfigurationDirectory().getAbsolutePath()
@@ -194,6 +195,15 @@ public class ConfigManagerZG {
 		registerCobaltOreDict = configuration.get(CATEGORY_COMPATIBILITY, "Register Cobalt in Ore Dictionary", true,
 				"Set this to false if there are any problems " + " with mods like Tinker's Construct. (default: true)")
 				.getBoolean();
+		
+		// Compat (Should intergration with Planet Progressions be enabled?
+		enablePlanetProgressionsCompat = configuration.get(
+				CATEGORY_COMPATIBILITY,
+				"Enable Planet Progressions compatibility",
+				true,
+				"If Planet Progressions is installed, " + " you will need to discover the Planet or Moon "
+						+ " before you can travel to it via Star Gates."
+						+ " Set this to false to disable that. (default: true)").getBoolean();
 		
 		configuration.save();
 	}

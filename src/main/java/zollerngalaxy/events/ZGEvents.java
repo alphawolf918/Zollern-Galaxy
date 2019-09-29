@@ -3,7 +3,6 @@ package zollerngalaxy.events;
 import java.util.Random;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
-import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.init.Blocks;
@@ -20,6 +19,7 @@ import zollerngalaxy.blocks.ZGBlockDirt;
 import zollerngalaxy.blocks.ZGBlockGrass;
 import zollerngalaxy.items.ZGItems;
 import zollerngalaxy.lib.helpers.ZGHelper;
+import zollerngalaxy.mobs.entities.EntityGrayAlien;
 import zollerngalaxy.mobs.entities.EntityMoolus;
 import zollerngalaxy.mobs.entities.EntityOinkus;
 import zollerngalaxy.util.CachedEnum;
@@ -38,15 +38,24 @@ public class ZGEvents {
 			for (int i = 0; i < ZGHelper.rngNumber(1, 4); i++) {
 				ZGHelper.dropItem(ZGItems.rawAlienBeef, worldObj, theEntity);
 			}
-		} else if (theEntity instanceof EntityOinkus) {
-			// Oinkus (Alien Pig)
+		}
+		
+		// Oinkus (Alien Pig)
+		if (theEntity instanceof EntityOinkus) {
 			for (int i = 0; i < ZGHelper.rngNumber(1, 4); i++) {
 				ZGHelper.dropItem(ZGItems.rawAlienBacon, worldObj, theEntity);
 			}
 		}
+		
+		// Gray Alien
+		if (theEntity instanceof EntityGrayAlien) {
+			for (int i = 0; i < ZGHelper.rngNumber(1, 2); i++) {
+				ZGHelper.dropItem(ZGItems.alienStone, worldObj, theEntity);
+			}
+		}
 	}
 	
-	@SubscribeEvent
+	@SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
 	public void onUseHoe(UseHoeEvent event) {
 		if (event.getResult() != Result.DEFAULT || event.isCanceled()) {
 			return;
@@ -61,22 +70,6 @@ public class ZGEvents {
 			if (block instanceof ZGBlockGrass || block instanceof ZGBlockDirt) {
 				this.setFarmland(event, world, pos, Blocks.FARMLAND);
 			}
-		}
-	}
-	
-	private void setFarmland(UseHoeEvent event, World world, BlockPos pos, IBlockState state, IProperty<?> property,
-			Object value, Block dirt, Block farmland) {
-		if (state.getValue(property) == value) {
-			world.setBlockState(pos, dirt.getDefaultState());
-		} else {
-			world.setBlockState(pos, farmland.getDefaultState());
-		}
-		event.setResult(Result.ALLOW);
-		world.playSound(null, pos.getX(), pos.getY(), pos.getZ(), SoundType.GROUND.getStepSound(), SoundCategory.BLOCKS,
-				(SoundType.GROUND.getVolume() + 1.0F) / 2.0F, SoundType.GROUND.getPitch() * 0.8F);
-		
-		for (EnumHand hand : CachedEnum.valuesHandCached()) {
-			event.getEntityPlayer().swingArm(hand);
 		}
 	}
 	

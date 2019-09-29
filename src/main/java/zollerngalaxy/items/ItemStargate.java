@@ -95,7 +95,7 @@ public class ItemStargate extends ZGItemBase {
 		msg += " Could not locate destination on galaxy map.";
 		
 		// Thank you MJRLegends
-		if (ModHelperBase.usePlanetProgression) {
+		if (ModHelperBase.usePlanetProgression && ConfigManagerZG.enablePlanetProgressionsCompat) {
 			if (player instanceof EntityPlayerMP) {
 				EntityPlayerMP playerMP = (EntityPlayerMP) player;
 				if (!PlanetProgressionCompatibility.hasResearched(playerMP, destination)) {

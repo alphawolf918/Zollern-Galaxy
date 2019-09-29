@@ -115,6 +115,7 @@ public class FurnaceRecipes {
 		// Food (Raw -> Cooked)
 		FurnaceRecipes.SmeltItem(ZGItems.rawAlienBacon, ZGItems.cookedAlienBacon, 1.2F);
 		FurnaceRecipes.SmeltItem(ZGItems.rawAlienBeef, ZGItems.cookedAlienBeef, 1.2F);
+		FurnaceRecipes.SmeltItem(ZGItems.chocolateRaw, ZGItems.chocolateBar, 1.5F);
 		
 		ZGHelper.Log("Loaded a total of " + totalSmeltRecipes + " new smelting recipes.");
 	}

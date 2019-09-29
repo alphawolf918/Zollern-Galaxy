@@ -96,6 +96,7 @@ tile.kriffcobaltore.name=Kriffon Cobalt Ore
 tile.kriffdirt.name=Kriffon Dirt
 tile.cobaltblock.name=Block of Cobalt
 tile.magmarock.name=Magrock
+tile.blazerock.name=Blazerock
 
 tile.purgrock.name=Purgot Rock
 tile.purgcobblerock.name=Purgot Cobblerock
@@ -189,6 +190,7 @@ tile.candycube_cyan.name=Cyan Candy Cube
 tile.candycube_pink.name=Pink Candy Cube
 tile.candycube_green.name=Green Candy Cube
 tile.chocolateblock.name=Chocolate Block
+tile.chocolatebricks.name=Chocolate Bricks
 tile.cookieblock.name=Cookie Block
 tile.brownieblock.name=Brownie Block
 tile.icecreamsandwichblock.name=Ice Cream Sandwich Block
