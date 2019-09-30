@@ -13,6 +13,7 @@ public class ConfigManagerZG {
 	public static String CATEGORY_SATELLITES = "Space Stations";
 	public static String CATEGORY_MISC = "Miscallenous";
 	public static String CATEGORY_COMPATIBILITY = "Compatibility";
+	public static String CATEGORY_COORDINATES = "Coordinates";
 	
 	// Planets (Psios)
 	public static int planetEdenDimensionId;
@@ -81,6 +82,41 @@ public class ConfigManagerZG {
 	public static boolean fueltoniumIsUranium;
 	public static boolean registerCobaltOreDict;
 	public static boolean enablePlanetProgressionsCompat;
+	
+	// Coords (Psios)
+	public static float psiosX;
+	public static float psiosY;
+	public static float psiosZ;
+	
+	// Coords (Praedyth)
+	public static float praedythX;
+	public static float praedythY;
+	public static float praedythZ;
+	
+	// Coords (Pantheon)
+	public static float pantheonX;
+	public static float pantheonY;
+	public static float pantheonZ;
+	
+	// Coords (Olympus)
+	public static float olympusX;
+	public static float olympusY;
+	public static float olympusZ;
+	
+	// Coords (Asgard)
+	public static float asgardX;
+	public static float asgardY;
+	public static float asgardZ;
+	
+	// Coords (Vega)
+	public static float vegaX;
+	public static float vegaY;
+	public static float vegaZ;
+	
+	// Coords (Nova)
+	public static float novaX;
+	public static float novaY;
+	public static float novaZ;
 	
 	public static void init(FMLPreInitializationEvent event) {
 		configuration = new Configuration(new File(event.getModConfigurationDirectory().getAbsolutePath()
@@ -204,6 +240,41 @@ public class ConfigManagerZG {
 				"If Planet Progressions is installed, " + " you will need to discover the Planet or Moon "
 						+ " before you can travel to it via Star Gates."
 						+ " Set this to false to disable that. (default: true)").getBoolean();
+		
+		// Coords (Psios)
+		psiosX = (float) configuration.get(CATEGORY_COORDINATES, "Psios X", -2.5).getDouble();
+		psiosY = (float) configuration.get(CATEGORY_COORDINATES, "Psios Y", 1.2).getDouble();
+		psiosZ = (float) configuration.get(CATEGORY_COORDINATES, "Psios Z", 0.8).getDouble();
+		
+		// Coords (Praedyth)
+		praedythX = (float) configuration.get(CATEGORY_COORDINATES, "Praedyth X", -1.2).getDouble();
+		praedythY = (float) configuration.get(CATEGORY_COORDINATES, "Praedyth Y", 1.4).getDouble();
+		praedythZ = (float) configuration.get(CATEGORY_COORDINATES, "Praedyth Z", -0.3).getDouble();
+		
+		// Coords (Pantheon)
+		pantheonX = (float) configuration.get(CATEGORY_COORDINATES, "Pantheon X", 2.0).getDouble();
+		pantheonY = (float) configuration.get(CATEGORY_COORDINATES, "Pantheon Y", 1.2).getDouble();
+		pantheonZ = (float) configuration.get(CATEGORY_COORDINATES, "Pantheon Z", 0.2).getDouble();
+		
+		// Coords (Olympus)
+		olympusX = (float) configuration.get(CATEGORY_COORDINATES, "Olympus X", 1.5).getDouble();
+		olympusY = (float) configuration.get(CATEGORY_COORDINATES, "Olympus Y", 1.5).getDouble();
+		olympusZ = (float) configuration.get(CATEGORY_COORDINATES, "Olympus Z", 0.1).getDouble();
+		
+		// Coords (Asgard)
+		asgardX = (float) configuration.get(CATEGORY_COORDINATES, "Asgard X", 3.0).getDouble();
+		asgardY = (float) configuration.get(CATEGORY_COORDINATES, "Asgard Y", 1.2).getDouble();
+		asgardZ = (float) configuration.get(CATEGORY_COORDINATES, "Asgard Z", 0.3).getDouble();
+		
+		// Coords (Vega)
+		vegaX = (float) configuration.get(CATEGORY_COORDINATES, "Vega X", -1.0).getDouble();
+		vegaY = (float) configuration.get(CATEGORY_COORDINATES, "Vega Y", 2.5).getDouble();
+		vegaZ = (float) configuration.get(CATEGORY_COORDINATES, "Vega Z", -0.6).getDouble();
+		
+		// Coords (Nova)
+		novaX = (float) configuration.get(CATEGORY_COORDINATES, "Nova X", -2.5).getDouble();
+		novaY = (float) configuration.get(CATEGORY_COORDINATES, "Nova Y", 1.6).getDouble();
+		novaZ = (float) configuration.get(CATEGORY_COORDINATES, "Nova Z", -2.0).getDouble();
 		
 		configuration.save();
 	}

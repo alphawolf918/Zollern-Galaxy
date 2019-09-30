@@ -35,6 +35,7 @@ public class PulverizerRecipes {
 		PulverizerRecipes.addRecipe(ZGBlocks.edenTinOre, ItemHelper.getItemFromStack(TFItems.itemMaterial.dustTin), 65);
 		PulverizerRecipes.addRecipe(ZGBlocks.xathTinOre, ItemHelper.getItemFromStack(TFItems.itemMaterial.dustTin), 65);
 		PulverizerRecipes.addRecipe(ZGBlocks.oasisTinOre, ItemHelper.getItemFromStack(TFItems.itemMaterial.dustTin), 65);
+		PulverizerRecipes.addRecipe(ZGBlocks.atheonTinOre, ItemHelper.getItemFromStack(TFItems.itemMaterial.dustTin), 65);
 		
 		// Silver
 		PulverizerRecipes
@@ -102,6 +103,13 @@ public class PulverizerRecipes {
 		
 		// Amaranth
 		PulverizerRecipes.addRecipe(ZGBlocks.xantheonAmaranthOre, ZGItems.dustAmaranth);
+		PulverizerRecipes.addRecipe(ZGBlocks.atheonAmaranthOre, ZGItems.dustAmaranth);
+		
+		// Zollernium
+		PulverizerRecipes.addRecipe(ZGBlocks.atheonZollerniumOre, ZGItems.dustZollernium);
+		
+		// Zinc
+		PulverizerRecipes.addRecipe(ZGBlocks.atheonZincOre, ZGItems.dustZinc);
 		
 		// Fueltonium
 		PulverizerRecipes.addRecipe(ZGBlocks.xantheonFueltoniumOre, ZGItems.dustFueltonium);

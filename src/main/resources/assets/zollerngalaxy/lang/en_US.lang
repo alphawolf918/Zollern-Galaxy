@@ -196,9 +196,22 @@ tile.brownieblock.name=Brownie Block
 tile.icecreamsandwichblock.name=Ice Cream Sandwich Block
 tile.sugarcube.name=Sugar Cube
 
+tile.atheonamaranthore.name=Atheon Amaranth Ore
+tile.atheonredstoneore.name=Atheon Redstone Ore
+tile.atheontinore.name=Atheon Tin Ore
+tile.atheondiamondore.name=Atheon Diamond Ore
+tile.atheonzollerniumore.name=Atheon Zollernium Ore
+tile.atheonzincore.name=Atheon Zinc Ore
+tile.atheoncobblestone.name=Atheon Cobblestone
+tile.atheonstone.name=Atheon Stone
+tile.atheonluxrock.name=Atheon Luxrock
+tile.atheonrockbricks.name=Atheon Rock Bricks
+tile.atheonrock.name=Atheon Goldrock
+
 tile.amaranthblock.name=Block of Amaranth
 tile.azuriteblock.name=Block of Azurite
 tile.zollerniumblock.name=Block of Zollernium
+tile.zincblock.name=Block of Zinc
 
 tile.endrock.name=Endrock
 
@@ -295,6 +308,9 @@ item.ascendantamaranthingot.name=Ascendant Amaranth Ingot
 
 item.zollerniumingot.name=Zollernium Ingot
 item.zollerniumdust.name=Zollernium Dust
+
+item.zincingot.name=Zinc Ingot
+item.zincdust.name=Zinc Dust
 
 item.rokkite.name=Rokkite
 

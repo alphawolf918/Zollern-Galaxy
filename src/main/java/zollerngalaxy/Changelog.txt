@@ -23,7 +23,7 @@ Zollern Galaxy v2.0.5
 * Added a new, special Star Gate for Candora.
 * Added new "sweet foods" that give potion effects when eaten. Always edible.
 * Created three new tool sets: Amaranth, Azurite and Zollernium.
-* Created a new config category (Compatibility).
+* Created two new config categories (Compatibility and Coordinates).
 * Moved Oasis Redstone Destabilized Sea to new Compatibility category and set it to true by default.
 * Slightly increased chance for potion-irradiated ores to apply Potion Effects to the Player.
 * Increased count of Super Charged Coal Ore blocks per spawn.
@@ -31,6 +31,7 @@ Zollern Galaxy v2.0.5
 * Added a config option to enable/disable Fueltonium registering as Uranium.
 * Added a config option to enable/disable Cobalt registering in the Ore Dictionary.
 * Added a config option to enable/disable Planet Progressions integration.
+* Added config options to set custom X, Y, Z coordinates of star systems.
 * Created the Gray Aliens.
 * Gray Aliens and Alien Villagers now spawn on Xantheon.
 * Alien Villagers now spawn on all planets and walk around. This is an effort to make the planets seem more alive.
@@ -40,4 +41,5 @@ Zollern Galaxy v2.0.5
 * Gray Aliens now have a chance to drop Alien Stone.
 * Added Blazerock generation to Kriffon.
 * Blazerocks can be crafted from 9 Blaze Powders and vice versa.
+* Added Zinc.
 * 

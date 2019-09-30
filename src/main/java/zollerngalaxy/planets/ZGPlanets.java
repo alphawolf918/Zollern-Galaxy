@@ -3,12 +3,9 @@ package zollerngalaxy.planets;
 import micdoodle8.mods.galacticraft.api.GalacticraftRegistry;
 import micdoodle8.mods.galacticraft.api.galaxies.GalaxyRegistry;
 import micdoodle8.mods.galacticraft.api.galaxies.Moon;
-import micdoodle8.mods.galacticraft.api.galaxies.SolarSystem;
-import micdoodle8.mods.galacticraft.api.galaxies.Star;
 import micdoodle8.mods.galacticraft.api.vector.Vector3;
 import micdoodle8.mods.galacticraft.api.world.EnumAtmosphericGas;
 import micdoodle8.mods.galacticraft.planets.venus.dimension.TeleportTypeVenus;
-import net.minecraft.util.ResourceLocation;
 import zollerngalaxy.biomes.ZGBiomes;
 import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderCandora;
@@ -20,66 +17,104 @@ import zollerngalaxy.core.dimensions.worldproviders.WorldProviderXantheon;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderXathius;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderZollus;
 import zollerngalaxy.core.enums.EnumPlanetClass;
-import zollerngalaxy.lib.ZGInfo;
 import zollerngalaxy.lib.helpers.ZGHelper;
+import zollerngalaxy.starsystems.ZGStar;
 import zollerngalaxy.starsystems.ZGStarSystem;
 
 public class ZGPlanets {
-	static int totalSystems = 0;
-	static int totalPlanets = 0;
-	static int totalMoons = 0;
 	
-	public static SolarSystem systemPsios = new ZGStarSystem("psion6");
-	public static SolarSystem systemPraedyth = new ZGStarSystem("praedyth");
-	public static SolarSystem systemPantheon = new ZGStarSystem("pantheon");
-	public static SolarSystem systemOlympus = new ZGStarSystem("olympus");
-	public static SolarSystem systemAsgard = new ZGStarSystem("asgard");
-	public static SolarSystem systemVega = new ZGStarSystem("vega");
-	public static SolarSystem systemNova = new ZGStarSystem("nova");
+	private static int totalSystems = 0;
+	private static int totalPlanets = 0;
+	private static int totalMoons = 0;
 	
-	public static Star starPsios = new Star("psion6");
-	public static Star starPraedyth = new Star("praedyth");
-	public static Star starPantheon = new Star("pantheon");
-	public static Star starOlympus = new Star("olympus");
-	public static Star starAsgard = new Star("asgard");
-	public static Star starVega = new Star("vega");
-	public static Star starNova = new Star("nova");
+	// Coords (Psios)
+	private static float PSIOS_X = ConfigManagerZG.psiosX;
+	private static float PSIOS_Y = ConfigManagerZG.psiosY;
+	private static float PSIOS_Z = ConfigManagerZG.psiosZ;
 	
-	// Psios System
+	// Coords (Praedyth)
+	private static float PRAEDYTH_X = ConfigManagerZG.praedythX;
+	private static float PRAEDYTH_Y = ConfigManagerZG.praedythY;
+	private static float PRAEDYTH_Z = ConfigManagerZG.praedythZ;
+	
+	// Coords (Pantheon)
+	private static float PANTHEON_X = ConfigManagerZG.pantheonX;
+	private static float PANTHEON_Y = ConfigManagerZG.pantheonY;
+	private static float PANTHEON_Z = ConfigManagerZG.pantheonZ;
+	
+	// Coords (Olympus)
+	private static float OLYMPUS_X = ConfigManagerZG.olympusX;
+	private static float OLYMPUS_Y = ConfigManagerZG.olympusY;
+	private static float OLYMPUS_Z = ConfigManagerZG.olympusZ;
+	
+	// Coords (Asgard)
+	private static float ASGARD_X = ConfigManagerZG.asgardX;
+	private static float ASGARD_Y = ConfigManagerZG.asgardY;
+	private static float ASGARD_Z = ConfigManagerZG.asgardZ;
+	
+	// Coords (Vega)
+	private static float VEGA_X = ConfigManagerZG.vegaX;
+	private static float VEGA_Y = ConfigManagerZG.vegaY;
+	private static float VEGA_Z = ConfigManagerZG.vegaZ;
+	
+	// Coords (Nova)
+	private static float NOVA_X = ConfigManagerZG.novaX;
+	private static float NOVA_Y = ConfigManagerZG.novaY;
+	private static float NOVA_Z = ConfigManagerZG.novaZ;
+	
+	// Solar Systems
+	public static ZGStarSystem systemPsios = new ZGStarSystem("psion6");
+	public static ZGStarSystem systemPraedyth = new ZGStarSystem("praedyth");
+	public static ZGStarSystem systemPantheon = new ZGStarSystem("pantheon");
+	public static ZGStarSystem systemOlympus = new ZGStarSystem("olympus");
+	public static ZGStarSystem systemAsgard = new ZGStarSystem("asgard");
+	public static ZGStarSystem systemVega = new ZGStarSystem("vega");
+	public static ZGStarSystem systemNova = new ZGStarSystem("nova");
+	
+	// Stars
+	public static ZGStar starPsios = new ZGStar("psion6");
+	public static ZGStar starPraedyth = new ZGStar("praedyth");
+	public static ZGStar starPantheon = new ZGStar("pantheon");
+	public static ZGStar starOlympus = new ZGStar("olympus");
+	public static ZGStar starAsgard = new ZGStar("asgard");
+	public static ZGStar starVega = new ZGStar("vega");
+	public static ZGStar starNova = new ZGStar("nova");
+	
+	// Psios Planets
 	public static ZGPlanet planetEden = new ZGPlanet("eden");
 	public static ZGPlanet planetZollus = new ZGPlanet("zollus");
 	public static ZGPlanet planetKriffon = new ZGPlanet("kriffus");
 	public static ZGPlanet planetPurgot = new ZGPlanet("purgot");
 	public static Moon moonAstros;
 	
-	// Praedyth System
+	// Praedyth Planets
 	public static ZGPlanet planetXathius = new ZGPlanet("xathius");
 	public static ZGPlanet planetOasis = new ZGPlanet("oasis");
 	public static ZGPlanet planetXantheon = new ZGPlanet("xantheon");
 	public static ZGPlanet planetCandora = new ZGPlanet("candora");
-	public static ZGPlanet planetAtheon;
+	public static ZGPlanet planetAtheon = new ZGPlanet("atheon");
 	
-	// Pantheon System
+	// Pantheon Planets
 	public static ZGPlanet planetMeztli;
 	public static ZGPlanet planetCentotl;
 	public static ZGPlanet planetToci;
 	public static ZGPlanet planetTlaloc;
 	
-	// Olympus System
+	// Olympus Planets
 	public static ZGPlanet planetAres;
 	public static ZGPlanet planetPrometheus;
 	public static ZGPlanet planetIcarus;
 	public static ZGPlanet planetKronos;
 	
-	// Asgard system
+	// Asgard Planets
 	public static ZGPlanet planetAsgard;
 	public static ZGPlanet planetMaveth;
 	
-	// Vega System
+	// Vega Planets
 	public static ZGPlanet planetMeridian;
 	public static ZGPlanet planetRequiem;
 	
-	// Nova System
+	// Nova Planets
 	public static ZGPlanet planetPrimor;
 	
 	public static void init() {
@@ -92,65 +127,72 @@ public class ZGPlanets {
 	
 	public static void initStarSystems() {
 		// Psios System
-		systemPsios.setMapPosition(new Vector3(-2.5F, 1.2F, 0.8F));
+		systemPsios.setMapPosition(new Vector3(PSIOS_X, PSIOS_Y, PSIOS_Z));
 		starPsios.setParentSolarSystem(systemPsios);
-		starPsios.setTierRequired(-1);
+		// starPsios.setTierRequired(-1);
 		starPsios.setRelativeSize(35.0F);
-		starPsios.setBodyIcon(new ResourceLocation(ZGInfo.MOD_ID, "textures/gui/psion6.png"));
+		// starPsios.setBodyIcon(new ResourceLocation(ZGInfo.MOD_ID,
+		// "textures/gui/psion6.png"));
 		systemPsios.setMainStar(starPsios);
 		totalSystems++;
 		
 		// Praedyth System
-		systemPraedyth.setMapPosition(new Vector3(-1.2F, 1.4F, -0.3F));
+		systemPraedyth.setMapPosition(new Vector3(PRAEDYTH_X, PRAEDYTH_Y, PRAEDYTH_Z));
 		starPraedyth.setParentSolarSystem(systemPraedyth);
-		starPraedyth.setTierRequired(-1);
+		// starPraedyth.setTierRequired(-1);
 		starPraedyth.setRelativeSize(40.0F);
-		starPraedyth.setBodyIcon(new ResourceLocation(ZGInfo.MOD_ID, "textures/gui/praedyth.png"));
+		// starPraedyth.setBodyIcon(new ResourceLocation(ZGInfo.MOD_ID,
+		// "textures/gui/praedyth.png"));
 		systemPraedyth.setMainStar(starPraedyth);
 		totalSystems++;
 		
 		// Pantheon System
-		systemPantheon.setMapPosition(new Vector3(2.0F, 1.2F, 0.2F));
+		systemPantheon.setMapPosition(new Vector3(PANTHEON_X, PANTHEON_Y, PANTHEON_Z));
 		starPantheon.setParentSolarSystem(systemPantheon);
-		starPantheon.setTierRequired(-1);
+		// starPantheon.setTierRequired(-1);
 		starPantheon.setRelativeSize(20.0F);
-		starPantheon.setBodyIcon(new ResourceLocation(ZGInfo.MOD_ID, "textures/gui/pantheon.png"));
+		// starPantheon.setBodyIcon(new ResourceLocation(ZGInfo.MOD_ID,
+		// "textures/gui/pantheon.png"));
 		systemPantheon.setMainStar(starPantheon);
 		totalSystems++;
 		
 		// Olympus System
-		systemOlympus.setMapPosition(new Vector3(1.5F, 1.5F, 0.1F));
+		systemOlympus.setMapPosition(new Vector3(OLYMPUS_X, OLYMPUS_Y, OLYMPUS_Z));
 		starOlympus.setParentSolarSystem(systemOlympus);
-		starOlympus.setTierRequired(-1);
+		// starOlympus.setTierRequired(-1);
 		starOlympus.setRelativeSize(45.0F);
-		starOlympus.setBodyIcon(new ResourceLocation(ZGInfo.MOD_ID, "textures/gui/olympus.png"));
+		// starOlympus.setBodyIcon(new ResourceLocation(ZGInfo.MOD_ID,
+		// "textures/gui/olympus.png"));
 		systemOlympus.setMainStar(starOlympus);
 		totalSystems++;
 		
 		// Asgard System
-		systemAsgard.setMapPosition(new Vector3(3.0F, 1.2F, 0.3F));
+		systemAsgard.setMapPosition(new Vector3(ASGARD_X, ASGARD_Y, ASGARD_Z));
 		starAsgard.setParentSolarSystem(systemAsgard);
-		starAsgard.setTierRequired(-1);
+		// starAsgard.setTierRequired(-1);
 		starAsgard.setRelativeSize(16.0F);
-		starAsgard.setBodyIcon(new ResourceLocation(ZGInfo.MOD_ID, "textures/gui/asgard.png"));
+		// starAsgard.setBodyIcon(new ResourceLocation(ZGInfo.MOD_ID,
+		// "textures/gui/asgard.png"));
 		systemAsgard.setMainStar(starAsgard);
 		totalSystems++;
 		
 		// Vega System
-		systemVega.setMapPosition(new Vector3(-1.0F, 2.5F, -0.6F));
+		systemVega.setMapPosition(new Vector3(VEGA_X, VEGA_Y, VEGA_Z));
 		starVega.setParentSolarSystem(systemVega);
-		starVega.setTierRequired(-1);
+		// starVega.setTierRequired(-1);
 		starVega.setRelativeSize(5.0F);
-		starVega.setBodyIcon(new ResourceLocation(ZGInfo.MOD_ID, "textures/gui/vega.png"));
+		// starVega.setBodyIcon(new ResourceLocation(ZGInfo.MOD_ID,
+		// "textures/gui/vega.png"));
 		systemVega.setMainStar(starVega);
 		totalSystems++;
 		
 		// Nova System
-		systemNova.setMapPosition(new Vector3(-2.0F, 1.6F, -2.0F));
+		systemNova.setMapPosition(new Vector3(NOVA_X, NOVA_Y, NOVA_Z));
 		starNova.setParentSolarSystem(systemNova);
-		starNova.setTierRequired(-1);
+		// starNova.setTierRequired(-1);
 		starNova.setRelativeSize(5.0F);
-		starNova.setBodyIcon(new ResourceLocation(ZGInfo.MOD_ID, "textures/gui/nova.png"));
+		// starNova.setBodyIcon(new ResourceLocation(ZGInfo.MOD_ID,
+		// "textures/gui/nova.png"));
 		systemNova.setMainStar(starNova);
 		totalSystems++;
 		
@@ -164,14 +206,14 @@ public class ZGPlanets {
 		planetZollus.setPlanetClass(EnumPlanetClass.L);
 		planetZollus.setRingColorRGB(0.1F, 0.9F, 2.6F);
 		planetZollus.setPhaseShift(0.0F);
-		planetZollus.setRelativeOrbitTime(42F);
-		planetZollus.setDistanceFromCenter(2.0F);
+		planetZollus.setRelativeOrbitTime(42.2F);
+		planetZollus.setDistanceFromCenter(1.9F);
 		planetZollus.setTierRequired(3);
 		planetZollus.setRelativeSize(10.876F);
-		planetZollus.setPlanetTemperature(-102.6f);
+		planetZollus.setPlanetTemperature(-152.6f);
 		planetZollus.setPlanetToxicity(0.4f);
 		planetZollus.setPlanetRadiation(0.5f);
-		planetZollus.setWindLevel(3.6F);
+		planetZollus.setWindLevel(6.7F);
 		planetZollus.setDensity(0.1F);
 		planetZollus.setHasRain(false);
 		planetZollus.setPlanetGasses(EnumAtmosphericGas.NITROGEN, EnumAtmosphericGas.HELIUM);
@@ -196,7 +238,7 @@ public class ZGPlanets {
 		planetKriffon.setWindLevel(0.1F);
 		planetKriffon.setDensity(3.0F);
 		planetKriffon.setHasRain(false);
-		planetKriffon.setPlanetGasses(EnumAtmosphericGas.ARGON, EnumAtmosphericGas.METHANE);
+		planetKriffon.setPlanetGasses(EnumAtmosphericGas.ARGON, EnumAtmosphericGas.METHANE, EnumAtmosphericGas.OXYGEN);
 		planetKriffon.setAtmosphere();
 		planetKriffon.setPlanetIcon("kriffus");
 		planetKriffon.setBiomeInfo(ZGBiomes.KRIFFON);
@@ -344,6 +386,30 @@ public class ZGPlanets {
 		planetCandora.setAtmosphere();
 		planetCandora.setPlanetIcon("candora");
 		planetCandora.setBiomeInfo(ZGBiomes.CANDY_MOUNTAIN, ZGBiomes.CANDY_OCEAN);
+		totalPlanets++;
+		
+		// planetAtheon.setDimensionInfo(ConfigManagerZG.planetAtheonDimensionId,
+		// WorldProviderAtheon.class);
+		planetAtheon.setParentSolarSystem(systemPraedyth);
+		planetAtheon.setPlanetClass(EnumPlanetClass.CONSTRUCTED);
+		planetAtheon.setRingColorRGB(3.6F, 1.2F, 4.7F);
+		planetAtheon.setPhaseShift(10.2F);
+		planetAtheon.setRelativeOrbitTime(6.2F);
+		planetAtheon.setDistanceFromCenter(2.7F);
+		planetAtheon.setTierRequired(9);
+		planetAtheon.setRelativeSize(102.5F);
+		planetAtheon.setPlanetTemperature(57.2F);
+		planetAtheon.setPlanetToxicity(0.0F);
+		planetAtheon.setPlanetRadiation(96.7F);
+		planetAtheon.setBreathable(false);
+		planetAtheon.setWindLevel(0.0F);
+		planetAtheon.setDensity(20.2F);
+		planetAtheon.setHasRain(false);
+		planetAtheon.setPlanetGasses(EnumAtmosphericGas.CO2, EnumAtmosphericGas.ARGON, EnumAtmosphericGas.HELIUM,
+				EnumAtmosphericGas.METHANE);
+		planetAtheon.setAtmosphere();
+		planetAtheon.setPlanetIcon("atheon");
+		// planetAtheon.setBiomeInfo(ZGBiomes.ATHEON_GOLDEN_PLAINS);
 		totalPlanets++;
 		
 		ZGHelper.Log("Loaded a total of " + totalPlanets + " new planets.");
