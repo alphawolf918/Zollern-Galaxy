@@ -42,7 +42,7 @@ public abstract class BiomeOasisBase extends BiomeSpace {
 		this.biomeDecor.treesPerChunk = -999;
 		this.biomeDecor.grassPerChunk = -999;
 		this.biomeDecor.mushroomsPerChunk = -999;
-		this.spawnableCreatureList.add(new SpawnListEntry(EntityAlienVillager.class, 35, 2, 8));
+		this.spawnableCreatureList.add(new SpawnListEntry(EntityAlienVillager.class, 15, 2, 4));
 		this.setStoneBlock(ZGBlocks.oasisStone);
 		this.setPlanetForBiome(ZGPlanets.planetOasis);
 	}

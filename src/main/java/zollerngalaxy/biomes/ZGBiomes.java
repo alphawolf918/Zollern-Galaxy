@@ -20,6 +20,8 @@ import micdoodle8.mods.galacticraft.api.world.BiomeGenBaseGC;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.Biome.BiomeProperties;
 import net.minecraftforge.common.BiomeDictionary;
+import zollerngalaxy.biomes.atheon.BiomeGoldlands;
+import zollerngalaxy.biomes.atheon.BiomeRadiolarianLakes;
 import zollerngalaxy.biomes.candora.BiomeCandyMountain;
 import zollerngalaxy.biomes.candora.BiomeChocolateOcean;
 import zollerngalaxy.biomes.eden.BiomeAsteroidCraters;
@@ -94,6 +96,10 @@ public class ZGBiomes {
 	public static final Biome CANDY_MOUNTAIN = new BiomeCandyMountain(new BiomeProperties("Candy Mountain"));
 	public static final Biome CANDY_OCEAN = new BiomeChocolateOcean(new BiomeProperties("Chocolate Ocean"));
 	
+	// Atheon
+	public static final Biome ATHEON_GOLDLANDS = new BiomeGoldlands(new BiomeProperties("Golden Constructs"));
+	public static final Biome ATHEON_LAVA_LAKES = new BiomeRadiolarianLakes(new BiomeProperties("Radiolarian Ocean"));
+	
 	public static void init() {
 		// Zollus
 		ZGBiomes.addBiome(ZGBiomes.ZOLLUS, COLD, DEAD, DRY);
@@ -135,6 +141,10 @@ public class ZGBiomes {
 		// Candora
 		ZGBiomes.addBiome(ZGBiomes.CANDY_MOUNTAIN, MOUNTAIN);
 		ZGBiomes.addBiome(ZGBiomes.CANDY_OCEAN, OCEAN, WET);
+		
+		// Atheon
+		ZGBiomes.addBiome(ZGBiomes.ATHEON_GOLDLANDS, DEAD, SPOOKY, HOT, WASTELAND);
+		ZGBiomes.addBiome(ZGBiomes.ATHEON_LAVA_LAKES, DEAD, SPOOKY, HOT, OCEAN);
 		
 		ZGHelper.Log("Loaded a total of " + totalBiomes + " new biomes.");
 	}

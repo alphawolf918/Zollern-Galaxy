@@ -38,27 +38,27 @@ public class BiomeDecoratorCandora extends BiomeDecoratorZG {
 	
 	public BiomeDecoratorCandora() {
 		this.brownGen = new WorldGenMinableZG(ZGBlocks.candyCubeBrown, ZGBlocks.candyCubeGray,
-				EnumOreGenZG.CANDY.setGenCount(35));
+				EnumOreGenZG.CANDY.setBlockCount(35));
 		this.redGen = new WorldGenMinableZG(ZGBlocks.candyCubeRed, ZGBlocks.candyCubeGray,
-				EnumOreGenZG.CANDY.setGenCount(45));
+				EnumOreGenZG.CANDY.setBlockCount(45));
 		this.whiteGen = new WorldGenMinableZG(ZGBlocks.candyCubeWhite, ZGBlocks.candyCubeGray,
-				EnumOreGenZG.CANDY.setGenCount(45));
+				EnumOreGenZG.CANDY.setBlockCount(45));
 		this.orangeGen = new WorldGenMinableZG(ZGBlocks.candyCubeOrange, ZGBlocks.candyCubeGray,
-				EnumOreGenZG.CANDY.setGenCount(35));
+				EnumOreGenZG.CANDY.setBlockCount(35));
 		this.blackGen = new WorldGenMinableZG(ZGBlocks.candyCubeBlack, ZGBlocks.candyCubeGray,
-				EnumOreGenZG.CANDY.setGenCount(30));
+				EnumOreGenZG.CANDY.setBlockCount(30));
 		this.purpleGen = new WorldGenMinableZG(ZGBlocks.candyCubeBrown, ZGBlocks.candyCubePurple,
-				EnumOreGenZG.CANDY.setGenCount(35));
+				EnumOreGenZG.CANDY.setBlockCount(35));
 		this.blueGen = new WorldGenMinableZG(ZGBlocks.candyCubeBlue, ZGBlocks.candyCubeGray,
-				EnumOreGenZG.CANDY.setGenCount(30));
+				EnumOreGenZG.CANDY.setBlockCount(30));
 		this.yellowGen = new WorldGenMinableZG(ZGBlocks.candyCubeYellow, ZGBlocks.candyCubeGray,
-				EnumOreGenZG.CANDY.setGenCount(25));
+				EnumOreGenZG.CANDY.setBlockCount(25));
 		this.cyanGen = new WorldGenMinableZG(ZGBlocks.candyCubeCyan, ZGBlocks.candyCubeGray,
-				EnumOreGenZG.CANDY.setGenCount(15));
+				EnumOreGenZG.CANDY.setBlockCount(15));
 		this.greenGen = new WorldGenMinableZG(ZGBlocks.candyCubeGreen, ZGBlocks.candyCubeGray,
-				EnumOreGenZG.CANDY.setGenCount(15));
+				EnumOreGenZG.CANDY.setBlockCount(15));
 		this.pinkGen = new WorldGenMinableZG(ZGBlocks.candyCubePink, ZGBlocks.candyCubeGray,
-				EnumOreGenZG.CANDY.setGenCount(35));
+				EnumOreGenZG.CANDY.setBlockCount(35));
 		this.chocolateGen = new WorldGenMinableZG(ZGBlocks.blockCookie, ZGBlocks.candyCubeGray,
 				EnumOreGenZG.SWEET.setGenCount(25));
 		this.cookieGen = new WorldGenMinableZG(ZGBlocks.blockChocolate, ZGBlocks.candyCubeGray,
@@ -105,7 +105,7 @@ public class BiomeDecoratorCandora extends BiomeDecoratorZG {
 			for (int i = 0; i < this.chocolateLakesPerChunk; ++i) {
 				y = rand.nextInt(rand.nextInt(genY) + 8);
 				
-				Block blockToUse = (biome.getTempCategory() == TempCategory.COLD) ? ZGBlocks.candyCubeCyan
+				Block blockToUse = (biome.getTempCategory() == TempCategory.COLD) ? ZGBlocks.candyCubeBrown
 						: ZGFluids.blockChocolateFluid;
 				
 				(new WorldGenLakesZG(blockToUse, BLOCK_TOP)).generate(world, rand, this.chunkPos.add(x, y, z));

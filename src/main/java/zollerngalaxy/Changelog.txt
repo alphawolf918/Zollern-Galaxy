@@ -17,7 +17,6 @@ Zollern Galaxy v2.0.5
 * Radiolaria Spouts (essentially white lava) have a chance to spawn, with "Constructed" Blocks.
 * Added Candy Cube blocks.
 * Modified positions of planets and star systems on galactic map.
-* Added planet Xantheon, an artificially-constructed planet.
 * Modified Xathius graphic and added a few new planet graphics.
 * Added planet Candora as a fun, "birthday" planet.
 * Added a new, special Star Gate for Candora.
@@ -41,5 +40,8 @@ Zollern Galaxy v2.0.5
 * Gray Aliens now have a chance to drop Alien Stone.
 * Added Blazerock generation to Kriffon.
 * Blazerocks can be crafted from 9 Blaze Powders and vice versa.
-* Added Zinc.
-* 
+* Added Zinc. Currently has no use but will in the future.
+* Added planet Atheon, a more advanced Constructed planet.
+* Constructed and Golden Constructed blocks can be crafted.
+* Added Plutonium and Zollernium as Turbine Coils.
+* The Omnitool can now be crafted.

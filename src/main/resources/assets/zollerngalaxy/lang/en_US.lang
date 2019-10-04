@@ -202,11 +202,12 @@ tile.atheontinore.name=Atheon Tin Ore
 tile.atheondiamondore.name=Atheon Diamond Ore
 tile.atheonzollerniumore.name=Atheon Zollernium Ore
 tile.atheonzincore.name=Atheon Zinc Ore
-tile.atheoncobblestone.name=Atheon Cobblestone
+tile.atheoncobble.name=Atheon Cobblestone
 tile.atheonstone.name=Atheon Stone
 tile.atheonluxrock.name=Atheon Luxrock
 tile.atheonrockbricks.name=Atheon Rock Bricks
 tile.atheonrock.name=Atheon Goldrock
+tile.goldenconstructblock.name=Golden Constructed Block
 
 tile.amaranthblock.name=Block of Amaranth
 tile.azuriteblock.name=Block of Azurite

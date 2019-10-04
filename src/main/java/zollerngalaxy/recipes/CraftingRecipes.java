@@ -3,6 +3,7 @@ package zollerngalaxy.recipes;
 import micdoodle8.mods.galacticraft.core.GCItems;
 import micdoodle8.mods.galacticraft.planets.mars.items.MarsItems;
 import net.minecraft.block.Block;
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -38,8 +39,10 @@ public class CraftingRecipes {
 		CraftingRecipes.addRockBricks(ZGBlocks.edenSacredStone, ZGBlocks.edenDungeonBricks);
 		CraftingRecipes.addRockBricks(ZGBlocks.xathStone, ZGBlocks.xathRockBricks);
 		CraftingRecipes.addRockBricks(ZGBlocks.oasisStone, ZGBlocks.oasisRockBricks);
+		CraftingRecipes.addRockBricks(ZGBlocks.atheonStone, ZGBlocks.atheonRockBricks);
 		CraftingRecipes.addRockBricks(ZGBlocks.blockShinestonePolished, ZGBlocks.blockShinestoneCrystalBricks);
 		CraftingRecipes.addRockBricks(ZGBlocks.blockChocolate, ZGBlocks.blockChocolateBricks);
+		CraftingRecipes.addRockBricks(ZGBlocks.xantheonChrome, ZGBlocks.xantheonConstructBlock);
 		
 		// Items -> Blocks
 		CraftingRecipes.addIngotMetal(ZGItems.ingotVirinium, ZGBlocks.blockViri);
@@ -195,8 +198,15 @@ public class CraftingRecipes {
 				ZGItems.compressedAmaranth, 'L', ZGItems.ingotLapis });
 		totalCraftRecipes++;
 		
+		// Golden Construct Blocks
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGBlocks.atheonConstructBlock, 4), new Object[] { "GGG", "GCG", "GGG", 'G',
+				Blocks.GOLD_BLOCK, 'C', ZGBlocks.xantheonConstructBlock });
+		totalCraftRecipes++;
+		
 		// Omnitool
-		// TODO
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.OMNITOOL, 1), new Object[] { "ZZZ", "APA", " P ", 'Z',
+				ZGItems.compressedZollernium, 'A', ZGItems.compressedAzurite, 'P', ZGItems.powerStick });
+		totalCraftRecipes++;
 		
 		// Star Gate (Tier 1)
 		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.starGateTier1, 1),
@@ -234,6 +244,12 @@ public class CraftingRecipes {
 		totalCraftRecipes++;
 		
 		// Star Gate (Tier 7)
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.starGateTier7, 1), new Object[] { "VCV", "HYH", "YCY", 'V',
+				ZGItems.compressedAmaranth, 'C', ZGItems.compressedAzurite, 'H', ZGBlocks.xantheonConstructBlock, 'Y',
+				ZGBlocks.blockFueltonium });
+		totalCraftRecipes++;
+		
+		// Star Gate (Tier 8)
 		// TODO
 		
 		// Star Gate (Birthday Protocol)

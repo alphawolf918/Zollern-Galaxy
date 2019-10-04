@@ -1,13 +1,7 @@
-package zollerngalaxy.biomes.purgot;
+package zollerngalaxy.biomes.atheon;
 
 import java.util.Random;
 import micdoodle8.mods.galacticraft.core.entities.EntityAlienVillager;
-import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedCreeper;
-import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedEnderman;
-import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedSkeleton;
-import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedSpider;
-import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedWitch;
-import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedZombie;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
@@ -15,43 +9,51 @@ import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeDecorator;
 import net.minecraft.world.chunk.ChunkPrimer;
 import zollerngalaxy.biomes.BiomeSpace;
-import zollerngalaxy.biomes.decorators.BiomeDecoratorPurgot;
+import zollerngalaxy.biomes.decorators.BiomeDecoratorAtheon;
 import zollerngalaxy.blocks.ZGBlocks;
+import zollerngalaxy.blocks.fluids.ZGFluids;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
+import zollerngalaxy.mobs.entities.EntityGrayAlien;
 import zollerngalaxy.planets.ZGPlanets;
 
-public class BiomePurgotBase extends BiomeSpace {
+public abstract class BiomeAtheonBase extends BiomeSpace {
 	
-	protected static final IBlockState STONE = ZGBlocks.purgStone.getDefaultState();
+	protected static final IBlockState STONE = ZGBlocks.atheonStone.getDefaultState();
 	protected static final IBlockState AIR = Blocks.AIR.getDefaultState();
 	protected static final IBlockState BEDROCK = Blocks.BEDROCK.getDefaultState();
-	protected static final IBlockState GRAVEL = ZGBlocks.purgGravel.getDefaultState();
-	protected static final IBlockState DIRT = ZGBlocks.purgDirt.getDefaultState();
-	protected static final IBlockState ICE = Blocks.PACKED_ICE.getDefaultState();
+	protected static final IBlockState CONSTRUCT = ZGBlocks.atheonConstructBlock.getDefaultState();
+	protected static final IBlockState DIRT = ZGBlocks.atheonLuxrock.getDefaultState();
+	protected static final IBlockState ICE = Blocks.ICE.getDefaultState();
 	protected static final IBlockState WATER = Blocks.WATER.getDefaultState();
 	
-	protected static final int SEA_LEVEL = 63;
-	protected static final int SEA_FLOOR_LEVEL = 42;
+	protected static final int SEA_LEVEL = 57;// ChunkProviderAtheon.SEA_LEVEL;
+	protected static final int SEA_FLOOR_LEVEL = 36;
 	
-	public BiomePurgotBase(String singleName, BiomeProperties props) {
+	public BiomeDecoratorAtheon biomeDecor = this.getBiomeDecorator();
+	
+	public BiomeAtheonBase(String singleName, BiomeProperties props) {
 		super(singleName, props);
-		this.setTempCategory(TempCategory.COLD);
-		this.decorator.flowersPerChunk = -999;
-		this.decorator.treesPerChunk = -999;
-		this.decorator.grassPerChunk = -999;
-		this.decorator.mushroomsPerChunk = -999;
-		this.clearAllSpawning();
+		this.setTempCategory(TempCategory.MEDIUM);
+		this.biomeDecor.flowersPerChunk = -999;
+		this.biomeDecor.treesPerChunk = -999;
+		this.biomeDecor.grassPerChunk = -999;
+		this.biomeDecor.mushroomsPerChunk = -999;
 		this.spawnableCreatureList.add(new SpawnListEntry(EntityAlienVillager.class, 15, 2, 4));
-		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedZombie.class, 100, 4, 4));
-		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedSpider.class, 100, 4, 4));
-		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedSkeleton.class, 100, 4, 4));
-		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedCreeper.class, 100, 4, 4));
-		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedEnderman.class, 100, 4, 4));
-		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedWitch.class, 100, 4, 4));
-		this.setPlanetForBiome(ZGPlanets.planetPurgot);
+		this.spawnableMonsterList.add(new SpawnListEntry(EntityGrayAlien.class, 100, 2, 4));
+		this.setStoneBlock(ZGBlocks.atheonStone);
+		this.setPlanetForBiome(ZGPlanets.planetAtheon);
 	}
 	
-	public final void generatePurgotTerrain(World worldIn, Random rand, ChunkPrimer chunkPrimerIn, int x, int z,
+	@Override
+	public BiomeDecorator createBiomeDecorator() {
+		return new BiomeDecoratorAtheon();
+	}
+	
+	protected BiomeDecoratorAtheon getBiomeDecorator() {
+		return (BiomeDecoratorAtheon) this.decorator;
+	}
+	
+	public final void generateAtheonTerrain(World worldIn, Random rand, ChunkPrimer chunkPrimerIn, int x, int z,
 			double noiseVal) {
 		int i = worldIn.getSeaLevel();
 		float biomeHeight = this.getBiomeHeight();
@@ -69,7 +71,8 @@ public class BiomePurgotBase extends BiomeSpace {
 				IBlockState iblockstate2 = chunkPrimerIn.getBlockState(i1, j1, l);
 				if (this.getBiomeType() == EnumBiomeTypeZG.OCEAN) {
 					if ((j1 < SEA_LEVEL) && (j1 > SEA_FLOOR_LEVEL)) {
-						chunkPrimerIn.setBlockState(i1, j1, l, WATER);
+						IBlockState blockToUse = ZGFluids.blockWhiteLavaFluid.getDefaultState();
+						chunkPrimerIn.setBlockState(i1, j1, l, blockToUse);
 					} else if (j1 < SEA_FLOOR_LEVEL) {
 						chunkPrimerIn.setBlockState(i1, j1, l, STONE);
 					} else if (j1 == SEA_FLOOR_LEVEL) {
@@ -80,7 +83,7 @@ public class BiomePurgotBase extends BiomeSpace {
 				} else {
 					if (iblockstate2.getMaterial() == Material.AIR) {
 						j = -1;
-					} else if (iblockstate2.getBlock() == ZGBlocks.purgStone) {
+					} else if (iblockstate2.getBlock() == ZGBlocks.atheonStone) {
 						if (j == -1) {
 							if (k <= 0) {
 								topState = AIR;
@@ -91,7 +94,7 @@ public class BiomePurgotBase extends BiomeSpace {
 							}
 							
 							if (j1 < i && (topState == null || topState.getMaterial() == Material.AIR)) {
-								topState = ICE;
+								topState = (this.getIsColdBiome()) ? ICE : WATER;
 							}
 							
 							j = k;
@@ -101,7 +104,7 @@ public class BiomePurgotBase extends BiomeSpace {
 							} else if (j1 < i - 7 - k) {
 								topState = AIR;
 								fillState = STONE;
-								chunkPrimerIn.setBlockState(i1, j1, l, GRAVEL);
+								chunkPrimerIn.setBlockState(i1, j1, l, CONSTRUCT);
 							} else {
 								chunkPrimerIn.setBlockState(i1, j1, l, fillState);
 							}
@@ -117,21 +120,7 @@ public class BiomePurgotBase extends BiomeSpace {
 	
 	@Override
 	public void genTerrainBlocks(World worldIn, Random rand, ChunkPrimer chunkPrimerIn, int x, int z, double noiseVal) {
-		this.generatePurgotTerrain(worldIn, rand, chunkPrimerIn, x, z, noiseVal);
-	}
-	
-	@Override
-	public float getSpawningChance() {
-		return 0.1F;
-	}
-	
-	@Override
-	public BiomeDecorator createBiomeDecorator() {
-		return new BiomeDecoratorPurgot();
-	}
-	
-	protected BiomeDecoratorPurgot getBiomeDecorator() {
-		return (BiomeDecoratorPurgot) this.decorator;
+		this.generateAtheonTerrain(worldIn, rand, chunkPrimerIn, x, z, noiseVal);
 	}
 	
 	@Override

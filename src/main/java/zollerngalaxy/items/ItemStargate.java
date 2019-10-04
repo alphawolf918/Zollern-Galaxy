@@ -65,9 +65,9 @@ public class ItemStargate extends ZGItemBase {
 		case 6:
 			this.sendToPlanet(ConfigManagerZG.planetXantheonDimensionId, ConfigManagerZG.planetOasisDimensionId, player);
 			break;
-		// case 7:
-		// // TODO
-		// break;
+		case 7:
+			this.sendToPlanet(ConfigManagerZG.planetAtheonDimensionId, ConfigManagerZG.planetXantheonDimensionId, player);
+			break;
 		// case 8:
 		// // TODO
 		// break;

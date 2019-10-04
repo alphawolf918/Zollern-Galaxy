@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SS",
+    "SS"
+  ],
+  "key": {
+    "S": {
+      "item": "zollerngalaxy:atheonstone"
+    }
+  },
+  "result": {
+    "item": "zollerngalaxy:atheonrockbricks",
+    "count": 4
+  }
+}
