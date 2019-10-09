@@ -74,6 +74,7 @@ public class ConfigManagerZG {
 	
 	// Misc
 	public static boolean canEarthAnimalsSpawnOnEden;
+	public static boolean disableStarGates;
 	public static String temperatureType;
 	
 	// Compat
@@ -197,6 +198,14 @@ public class ConfigManagerZG {
 		// Misc (Can Earth animals spawn on Eden?)
 		canEarthAnimalsSpawnOnEden = configuration.get(CATEGORY_MISC, "Earth Animals Spawn On Eden", true,
 				"Should Earth animals spawn on Eden? (default: true)").getBoolean();
+		
+		// Misc (Should Star Gates be disabled?)
+		disableStarGates = configuration.get(
+				CATEGORY_MISC,
+				"Disable use of Star Gates",
+				false,
+				"Set this to true if you want to ONLY access Zollern Galaxy " + "planets using rockets. "
+						+ "WARNING: will not work without another add-on this way! (default: false)").getBoolean();
 		
 		// Misc (Temperatures shown in fahrenheit or celsius?)
 		temperatureType = configuration.get(CATEGORY_MISC, "[HUD DISPLAY] Temperature Type (F or C only)", "F",

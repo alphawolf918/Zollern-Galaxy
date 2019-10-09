@@ -130,70 +130,49 @@ public class ZGPlanets {
 		// Psios System
 		systemPsios.setMapPosition(new Vector3(PSIOS_X, PSIOS_Y, PSIOS_Z));
 		starPsios.setParentSolarSystem(systemPsios);
-		// starPsios.setTierRequired(-1);
 		starPsios.setRelativeSize(35.0F);
-		// starPsios.setBodyIcon(new ResourceLocation(ZGInfo.MOD_ID,
-		// "textures/gui/psion6.png"));
 		systemPsios.setMainStar(starPsios);
 		totalSystems++;
 		
 		// Praedyth System
 		systemPraedyth.setMapPosition(new Vector3(PRAEDYTH_X, PRAEDYTH_Y, PRAEDYTH_Z));
 		starPraedyth.setParentSolarSystem(systemPraedyth);
-		// starPraedyth.setTierRequired(-1);
 		starPraedyth.setRelativeSize(40.0F);
-		// starPraedyth.setBodyIcon(new ResourceLocation(ZGInfo.MOD_ID,
-		// "textures/gui/praedyth.png"));
 		systemPraedyth.setMainStar(starPraedyth);
 		totalSystems++;
 		
 		// Pantheon System
 		systemPantheon.setMapPosition(new Vector3(PANTHEON_X, PANTHEON_Y, PANTHEON_Z));
 		starPantheon.setParentSolarSystem(systemPantheon);
-		// starPantheon.setTierRequired(-1);
 		starPantheon.setRelativeSize(20.0F);
-		// starPantheon.setBodyIcon(new ResourceLocation(ZGInfo.MOD_ID,
-		// "textures/gui/pantheon.png"));
 		systemPantheon.setMainStar(starPantheon);
 		totalSystems++;
 		
 		// Olympus System
 		systemOlympus.setMapPosition(new Vector3(OLYMPUS_X, OLYMPUS_Y, OLYMPUS_Z));
 		starOlympus.setParentSolarSystem(systemOlympus);
-		// starOlympus.setTierRequired(-1);
 		starOlympus.setRelativeSize(45.0F);
-		// starOlympus.setBodyIcon(new ResourceLocation(ZGInfo.MOD_ID,
-		// "textures/gui/olympus.png"));
 		systemOlympus.setMainStar(starOlympus);
 		totalSystems++;
 		
 		// Asgard System
 		systemAsgard.setMapPosition(new Vector3(ASGARD_X, ASGARD_Y, ASGARD_Z));
 		starAsgard.setParentSolarSystem(systemAsgard);
-		// starAsgard.setTierRequired(-1);
 		starAsgard.setRelativeSize(16.0F);
-		// starAsgard.setBodyIcon(new ResourceLocation(ZGInfo.MOD_ID,
-		// "textures/gui/asgard.png"));
 		systemAsgard.setMainStar(starAsgard);
 		totalSystems++;
 		
 		// Vega System
 		systemVega.setMapPosition(new Vector3(VEGA_X, VEGA_Y, VEGA_Z));
 		starVega.setParentSolarSystem(systemVega);
-		// starVega.setTierRequired(-1);
 		starVega.setRelativeSize(5.0F);
-		// starVega.setBodyIcon(new ResourceLocation(ZGInfo.MOD_ID,
-		// "textures/gui/vega.png"));
 		systemVega.setMainStar(starVega);
 		totalSystems++;
 		
 		// Nova System
 		systemNova.setMapPosition(new Vector3(NOVA_X, NOVA_Y, NOVA_Z));
 		starNova.setParentSolarSystem(systemNova);
-		// starNova.setTierRequired(-1);
 		starNova.setRelativeSize(5.0F);
-		// starNova.setBodyIcon(new ResourceLocation(ZGInfo.MOD_ID,
-		// "textures/gui/nova.png"));
 		systemNova.setMainStar(starNova);
 		totalSystems++;
 		
@@ -211,9 +190,9 @@ public class ZGPlanets {
 		planetZollus.setDistanceFromCenter(1.9F);
 		planetZollus.setTierRequired(3);
 		planetZollus.setRelativeSize(10.876F);
-		planetZollus.setPlanetTemperature(-152.6f);
-		planetZollus.setPlanetToxicity(0.4f);
-		planetZollus.setPlanetRadiation(0.5f);
+		planetZollus.setPlanetTemperature(-152.6F);
+		planetZollus.setPlanetToxicity(0.4F);
+		planetZollus.setPlanetRadiation(0.5F);
 		planetZollus.setWindLevel(6.7F);
 		planetZollus.setDensity(0.1F);
 		planetZollus.setHasRain(false);
@@ -251,12 +230,12 @@ public class ZGPlanets {
 		planetPurgot.setRingColorRGB(0.1F, 0.9F, 2.6F);
 		planetPurgot.setPhaseShift(0.0F);
 		planetPurgot.setRelativeOrbitTime(10F);
-		planetPurgot.setDistanceFromCenter(2.5F);
+		planetPurgot.setDistanceFromCenter(1.0F);
 		planetPurgot.setTierRequired(5);
 		planetPurgot.setRelativeSize(40.0F);
-		planetPurgot.setPlanetTemperature(-54.5f);
-		planetPurgot.setPlanetToxicity(15.2f);
-		planetPurgot.setPlanetRadiation(2.2f);
+		planetPurgot.setPlanetTemperature(-54.5F);
+		planetPurgot.setPlanetToxicity(15.2F);
+		planetPurgot.setPlanetRadiation(2.2F);
 		planetPurgot.setWindLevel(5.7F);
 		planetPurgot.setDensity(0.3F);
 		planetPurgot.setHasRain(false);
@@ -276,12 +255,12 @@ public class ZGPlanets {
 		planetEden.setRingColorRGB(0.1F, 0.9F, 2.6F);
 		planetEden.setPhaseShift(0.0F);
 		planetEden.setRelativeOrbitTime(8.0F);
-		planetEden.setDistanceFromCenter(1.8F);
+		planetEden.setDistanceFromCenter(0.6F);
 		planetEden.setTierRequired(5);
 		planetEden.setRelativeSize(50.0F);
-		planetEden.setPlanetTemperature(71.2f);
-		planetEden.setPlanetToxicity(0.0f);
-		planetEden.setPlanetRadiation(0.0f);
+		planetEden.setPlanetTemperature(71.2F);
+		planetEden.setPlanetToxicity(0.0F);
+		planetEden.setPlanetRadiation(0.0F);
 		planetEden.setBreathable(true);
 		planetEden.setWindLevel(0.6F);
 		planetEden.setDensity(0.9F);

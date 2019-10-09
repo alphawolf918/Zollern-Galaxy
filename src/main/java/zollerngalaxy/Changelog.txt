@@ -1,47 +1,7 @@
 ===== CHANGELOG =====
-Zollern Galaxy v2.0.5
+Zollern Galaxy v2.0.6
 =====================
 
-* Fixed custom tools not having correct harvest/damage/efficiency/other things.
-* Fixed tools being seen as items instead of handheld tools.
-* Fixed blocks having the wrong harvest levels.
-* Added the Constructed planet type.
-* Added Conductive Chargium, Radiolaria, Molten Fueltonium and Melted Chocolate fluids.
-    * Chargium can be used inside of an Extreme Reactors turbine with extreme efficiency.
-        * Chargium must be created with careful precision - it is liquified from Super Charged Coal.
-* Added Shinestone and Fueltonium.
-* Added Shinestone gen to Oasis caves.
-* Increased spawn rate of Oasis Flowers and Oasis Tall Grass on planet Oasis.
-* Fueltonium can be used in place of Yellorite / Uranium.
-* Created the artificially constructed, "tech" planet, Xantheon.
-* Radiolaria Spouts (essentially white lava) have a chance to spawn, with "Constructed" Blocks.
-* Added Candy Cube blocks.
-* Modified positions of planets and star systems on galactic map.
-* Modified Xathius graphic and added a few new planet graphics.
-* Added planet Candora as a fun, "birthday" planet.
-* Added a new, special Star Gate for Candora.
-* Added new "sweet foods" that give potion effects when eaten. Always edible.
-* Created three new tool sets: Amaranth, Azurite and Zollernium.
-* Created two new config categories (Compatibility and Coordinates).
-* Moved Oasis Redstone Destabilized Sea to new Compatibility category and set it to true by default.
-* Slightly increased chance for potion-irradiated ores to apply Potion Effects to the Player.
-* Increased count of Super Charged Coal Ore blocks per spawn.
-* Added a config option to enable/disable getting extra (4) dust from Pulverizers from Thermal Foundation instead of normal (2).
-* Added a config option to enable/disable Fueltonium registering as Uranium.
-* Added a config option to enable/disable Cobalt registering in the Ore Dictionary.
-* Added a config option to enable/disable Planet Progressions integration.
-* Added config options to set custom X, Y, Z coordinates of star systems.
-* Created the Gray Aliens.
-* Gray Aliens and Alien Villagers now spawn on Xantheon.
-* Alien Villagers now spawn on all planets and walk around. This is an effort to make the planets seem more alive.
-* Azurite Ore has been added to planet Xathius, requiring the Player to revisit it later.
-* Registered all tools with the Ore Dictionary.
-* Xathius Ores now have a chance to either explode or give varying Potion Effects.
-* Gray Aliens now have a chance to drop Alien Stone.
-* Added Blazerock generation to Kriffon.
-* Blazerocks can be crafted from 9 Blaze Powders and vice versa.
-* Added Zinc. Currently has no use but will in the future.
-* Added planet Atheon, a more advanced Constructed planet.
-* Constructed and Golden Constructed blocks can be crafted.
-* Added Plutonium and Zollernium as Turbine Coils.
-* The Omnitool can now be crafted.
+* Fixed Zollus having incorrect distance from its star on the Galactic Map.
+* Increased distance of Purgot on the Galactic Map.
+* Added a config option to disable Star Gates in case the Player wants to only use rockets.
