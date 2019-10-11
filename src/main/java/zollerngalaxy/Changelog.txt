@@ -1,7 +1,6 @@
 ===== CHANGELOG =====
-Zollern Galaxy v2.0.6
+Zollern Galaxy v2.0.7
 =====================
 
-* Fixed Zollus having incorrect distance from its star on the Galactic Map.
-* Increased distance of Purgot on the Galactic Map.
-* Added a config option to disable Star Gates in case the Player wants to only use rockets.
+* Fixed Zollern Galaxy / Thermal Foundation hybrid ores all pulverizing into Iron.
+* Fixed a typo in Eden Nickel Ore in en_US lang file.
