@@ -1,6 +1,6 @@
 ===== CHANGELOG =====
-Zollern Galaxy v2.0.7
+Zollern Galaxy v2.0.8
 =====================
 
-* Fixed Zollern Galaxy / Thermal Foundation hybrid ores all pulverizing into Iron.
-* Fixed a typo in Eden Nickel Ore in en_US lang file.
+* Updated Zollern Galaxy to support and require latest Galacticraft mod version.
+* 

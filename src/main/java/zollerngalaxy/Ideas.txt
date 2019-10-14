@@ -13,6 +13,5 @@
 * Interaction with Forestry.
     * Special hives that generate on a certain planet. Space bees!
 * Planet LV-426 with Facehuggers from Alien.
-* Candy Planet.
 * Pizza Planet?
-* 
+* ?
