@@ -127,7 +127,7 @@ public class WorldProviderOrbitEden extends WorldProviderOverworldOrbit {
 	
 	@Override
 	public String getPlanetToOrbit() {
-		return "planet.eden";
+		return "planet.Eden";
 	}
 	
 	@Override

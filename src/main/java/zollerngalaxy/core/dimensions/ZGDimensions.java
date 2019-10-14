@@ -4,6 +4,7 @@ import micdoodle8.mods.galacticraft.api.galaxies.CelestialBody;
 import micdoodle8.mods.galacticraft.core.util.WorldUtil;
 import net.minecraft.world.DimensionType;
 import zollerngalaxy.config.ConfigManagerZG;
+import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitEden;
 import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.planets.ZGPlanets;
 
@@ -31,8 +32,10 @@ public class ZGDimensions {
 		ZGDimensions.KRIFFON = ZGDimensions.getDimType(ConfigManagerZG.planetKriffonDimensionId);
 		ZGDimensions.PURGOT = ZGDimensions.getDimType(ConfigManagerZG.planetPurgotDimensionId);
 		ZGDimensions.EDEN = ZGDimensions.getDimType(ConfigManagerZG.planetEdenDimensionId);
-		ZGDimensions.EDEN_ORBIT = ZGDimensions.getDimType(ConfigManagerZG.spaceStationEdenId);
-		ZGDimensions.EDEN_ORBIT_STATIC = ZGDimensions.getDimType(ConfigManagerZG.spaceStationEdenStaticId);
+		ZGDimensions.EDEN_ORBIT = DimensionType.register("Eden Space Station", "_eden_orbit",
+				ConfigManagerZG.spaceStationEdenId, WorldProviderOrbitEden.class, false);
+		ZGDimensions.EDEN_ORBIT_STATIC = DimensionType.register("Eden Space Station", "_eden_orbit",
+				ConfigManagerZG.spaceStationEdenStaticId, WorldProviderOrbitEden.class, true);
 		
 		// Praedyth
 		ZGDimensions.XATHIUS = ZGDimensions.getDimType(ConfigManagerZG.planetXathiusDimensionId);
