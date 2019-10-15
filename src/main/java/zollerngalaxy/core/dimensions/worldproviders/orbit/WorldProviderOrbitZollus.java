@@ -15,11 +15,11 @@ import zollerngalaxy.core.dimensions.ZGDimensions;
 import zollerngalaxy.planets.ZGPlanets;
 import zollerngalaxy.planets.ZGSpaceStations;
 
-public class WorldProviderOrbitEden extends WorldProviderOverworldOrbit {
+public class WorldProviderOrbitZollus extends WorldProviderOverworldOrbit {
 	
 	@Override
 	public CelestialBody getCelestialBody() {
-		return ZGSpaceStations.EDEN_SPACE_STATION;
+		return ZGSpaceStations.ZOLLUS_SPACE_STATION;
 	}
 	
 	@Override
@@ -122,12 +122,12 @@ public class WorldProviderOrbitEden extends WorldProviderOverworldOrbit {
 	
 	@Override
 	public String getPlanetToOrbit() {
-		return "planet.eden";
+		return "planet.zollus";
 	}
 	
 	@Override
 	public String getSaveFolder() {
-		return "space_stations/eden";
+		return "space_stations/zollus";
 	}
 	
 	@Override
@@ -137,7 +137,7 @@ public class WorldProviderOrbitEden extends WorldProviderOverworldOrbit {
 	
 	@Override
 	public boolean canSpaceshipTierPass(int tier) {
-		return tier > ZGPlanets.planetEden.getTierRequirement();
+		return tier > ZGPlanets.planetZollus.getTierRequirement();
 	}
 	
 	@Override
@@ -162,6 +162,6 @@ public class WorldProviderOrbitEden extends WorldProviderOverworldOrbit {
 	
 	@Override
 	public DimensionType getDimensionType() {
-		return ZGDimensions.EDEN_ORBIT;
+		return ZGDimensions.ZOLLUS_ORBIT;
 	}
 }

@@ -132,7 +132,7 @@ public class WorldProviderZollus extends WorldProviderZG {
 	
 	@Override
 	public long getDayLength() {
-		return 86010L;
+		return 68010L;
 	}
 	
 	@Override

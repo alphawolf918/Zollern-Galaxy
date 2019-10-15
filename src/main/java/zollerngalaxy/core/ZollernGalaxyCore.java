@@ -88,7 +88,6 @@ public class ZollernGalaxyCore {
 		ZGHelper.Log("Beginning Initialization phase...");
 		ZGTabs.init();
 		ZGRecipeRegistry.init();
-		ZGSpaceStations.registerSpaceStationRecipes();
 		ZGHandlers.init();
 		
 		for (BiomeGenBaseGC biome : ZGBiomes.biomeList) {

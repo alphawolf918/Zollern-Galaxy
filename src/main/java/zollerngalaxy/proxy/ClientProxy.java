@@ -12,6 +12,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
 import zollerngalaxy.blocks.fluids.IZGFluidModel;
 import zollerngalaxy.core.renderers.ZGItemRender;
+import zollerngalaxy.events.ZGSkyProviderHandler;
 import zollerngalaxy.gui.GuiHUD;
 import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.mobs.MobRenders;
@@ -37,6 +38,8 @@ public class ClientProxy extends CommonProxy {
 		for (IZGFluidModel model : modelRegisters) {
 			model.registerModels();
 		}
+		
+		MinecraftForge.EVENT_BUS.register(new ZGSkyProviderHandler());
 	}
 	
 	@Override
