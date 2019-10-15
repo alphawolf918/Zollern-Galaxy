@@ -4,3 +4,5 @@ Zollern Galaxy v2.0.8
 
 * Updated Zollern Galaxy to support and require latest Galacticraft mod version.
 * Worked more on getting Eden's space station ready.
+* Fixed issue with planets disappearing when zoomed in.
+* 

@@ -10,7 +10,7 @@ public class ConfigManagerZG {
 	
 	public static String CATEGORY_DIMENSIONS = "Dimensions";
 	public static String CATEGORY_MOONS = "Moons";
-	public static String CATEGORY_SATELLITES = "Space Stations";
+	public static String CATEGORY_SATELLITES = "Space_Stations";
 	public static String CATEGORY_MISC = "Miscallenous";
 	public static String CATEGORY_COMPATIBILITY = "Compatibility";
 	public static String CATEGORY_COORDINATES = "Coordinates";

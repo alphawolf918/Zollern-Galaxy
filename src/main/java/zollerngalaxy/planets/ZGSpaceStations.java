@@ -1,11 +1,16 @@
 package zollerngalaxy.planets;
 
+import java.util.HashMap;
 import micdoodle8.mods.galacticraft.api.GalacticraftRegistry;
 import micdoodle8.mods.galacticraft.api.galaxies.GalaxyRegistry;
 import micdoodle8.mods.galacticraft.core.dimension.TeleportTypeOrbit;
+import net.minecraft.init.Items;
+import net.minecraft.item.ItemStack;
 import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitEden;
+import zollerngalaxy.items.ZGItems;
 import zollerngalaxy.lib.helpers.ZGHelper;
+import zollerngalaxy.lib.helpers.ZGRecipeHelper;
 import zollerngalaxy.planets.satellites.ZGSpaceStation;
 
 public class ZGSpaceStations {
@@ -37,6 +42,17 @@ public class ZGSpaceStations {
 				WorldProviderOrbitEden.class, false);
 		GalacticraftRegistry.registerDimension("Eden Space Station", "_eden_orbit",
 				ConfigManagerZG.spaceStationEdenStaticId, WorldProviderOrbitEden.class, true);
+	}
+	
+	public static void registerSpaceStationRecipes() {
+		HashMap<Object, Integer> inputMap;
+		inputMap = new HashMap<Object, Integer>();
+		inputMap.put("ingotTin", 32);
+		inputMap.put("waferAdvanced", 1);
+		inputMap.put(new ItemStack(ZGItems.ingotVirinium, 1, 0), 24);
+		inputMap.put(Items.IRON_INGOT, 24);
+		ZGRecipeHelper.addSpaceStationRecipe(ConfigManagerZG.spaceStationEdenId, ConfigManagerZG.planetEdenDimensionId,
+				inputMap);
 	}
 	
 }
