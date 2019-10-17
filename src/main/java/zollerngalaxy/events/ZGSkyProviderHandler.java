@@ -12,7 +12,14 @@ import net.minecraftforge.fml.common.gameevent.TickEvent.Phase;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.core.dimensions.skyproviders.SkyProviderOrbitZG;
+import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitAtheon;
+import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitCandora;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitEden;
+import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitKriffon;
+import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitOasis;
+import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitPurgot;
+import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitXantheon;
+import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitXathius;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitZollus;
 import zollerngalaxy.lib.ZGInfo;
 import zollerngalaxy.util.ZGUtils;
@@ -27,11 +34,56 @@ public class ZGSkyProviderHandler {
 		final EntityPlayerSP player = minecraft.player;
 		
 		if (event.phase == Phase.START && player != null && world != null) {
+			// Psios-6 (Zollus)
+			if (world.provider instanceof WorldProviderOrbitZollus) {
+				if (world.provider.getSkyRenderer() == null || world.provider.getSkyRenderer() instanceof SkyProviderOrbit) {
+					SkyProviderOrbitZG sky = new SkyProviderOrbitZG(new ResourceLocation(ZGInfo.MOD_ID
+							+ ":textures/gui/zollus.png"), "psion6");
+					WorldProviderOrbitZollus provider = (WorldProviderOrbitZollus) world.provider;
+					provider.setSpinDeltaPerTick(provider.getSpinManager().getSpinRate());
+					world.provider.setSkyRenderer(sky);
+				}
+				
+				if (world.provider.getCloudRenderer() == null) {
+					world.provider.setCloudRenderer(new CloudRenderer());
+				}
+			}
+			
+			// Psios-6 (Kriffon)
+			if (world.provider instanceof WorldProviderOrbitKriffon) {
+				if (world.provider.getSkyRenderer() == null || world.provider.getSkyRenderer() instanceof SkyProviderOrbit) {
+					SkyProviderOrbitZG sky = new SkyProviderOrbitZG(new ResourceLocation(ZGInfo.MOD_ID
+							+ ":textures/gui/kriffus.png"), "psion6");
+					WorldProviderOrbitKriffon provider = (WorldProviderOrbitKriffon) world.provider;
+					provider.setSpinDeltaPerTick(provider.getSpinManager().getSpinRate());
+					world.provider.setSkyRenderer(sky);
+				}
+				
+				if (world.provider.getCloudRenderer() == null) {
+					world.provider.setCloudRenderer(new CloudRenderer());
+				}
+			}
+			
+			// Psios-6 (Purgot)
+			if (world.provider instanceof WorldProviderOrbitPurgot) {
+				if (world.provider.getSkyRenderer() == null || world.provider.getSkyRenderer() instanceof SkyProviderOrbit) {
+					SkyProviderOrbitZG sky = new SkyProviderOrbitZG(new ResourceLocation(ZGInfo.MOD_ID
+							+ ":textures/gui/purgot.png"), "psion6");
+					WorldProviderOrbitPurgot provider = (WorldProviderOrbitPurgot) world.provider;
+					provider.setSpinDeltaPerTick(provider.getSpinManager().getSpinRate());
+					world.provider.setSkyRenderer(sky);
+				}
+				
+				if (world.provider.getCloudRenderer() == null) {
+					world.provider.setCloudRenderer(new CloudRenderer());
+				}
+			}
+			
 			// Psios-6 (Eden)
 			if (world.provider instanceof WorldProviderOrbitEden) {
 				if (world.provider.getSkyRenderer() == null || world.provider.getSkyRenderer() instanceof SkyProviderOrbit) {
 					SkyProviderOrbitZG sky = new SkyProviderOrbitZG(new ResourceLocation(ZGInfo.MOD_ID
-							+ ":textures/gui/eden.png"), "psion6.png");
+							+ ":textures/gui/eden.png"), "psion6");
 					WorldProviderOrbitEden provider = (WorldProviderOrbitEden) world.provider;
 					provider.setSpinDeltaPerTick(provider.getSpinManager().getSpinRate());
 					world.provider.setSkyRenderer(sky);
@@ -42,12 +94,72 @@ public class ZGSkyProviderHandler {
 				}
 			}
 			
-			// Psios-6 (Zollus)
-			if (world.provider instanceof WorldProviderOrbitZollus) {
+			// Praedyth (Xathius)
+			if (world.provider instanceof WorldProviderOrbitXathius) {
 				if (world.provider.getSkyRenderer() == null || world.provider.getSkyRenderer() instanceof SkyProviderOrbit) {
 					SkyProviderOrbitZG sky = new SkyProviderOrbitZG(new ResourceLocation(ZGInfo.MOD_ID
-							+ ":textures/gui/zollus.png"), "psion6");
-					WorldProviderOrbitZollus provider = (WorldProviderOrbitZollus) world.provider;
+							+ ":textures/gui/xathius.png"), "praedyth");
+					WorldProviderOrbitXathius provider = (WorldProviderOrbitXathius) world.provider;
+					provider.setSpinDeltaPerTick(provider.getSpinManager().getSpinRate());
+					world.provider.setSkyRenderer(sky);
+				}
+				
+				if (world.provider.getCloudRenderer() == null) {
+					world.provider.setCloudRenderer(new CloudRenderer());
+				}
+			}
+			
+			// Praedyth (Oasis)
+			if (world.provider instanceof WorldProviderOrbitOasis) {
+				if (world.provider.getSkyRenderer() == null || world.provider.getSkyRenderer() instanceof SkyProviderOrbit) {
+					SkyProviderOrbitZG sky = new SkyProviderOrbitZG(new ResourceLocation(ZGInfo.MOD_ID
+							+ ":textures/gui/oasis.png"), "praedyth");
+					WorldProviderOrbitOasis provider = (WorldProviderOrbitOasis) world.provider;
+					provider.setSpinDeltaPerTick(provider.getSpinManager().getSpinRate());
+					world.provider.setSkyRenderer(sky);
+				}
+				
+				if (world.provider.getCloudRenderer() == null) {
+					world.provider.setCloudRenderer(new CloudRenderer());
+				}
+			}
+			
+			// Praedyth (Xantheon)
+			if (world.provider instanceof WorldProviderOrbitXantheon) {
+				if (world.provider.getSkyRenderer() == null || world.provider.getSkyRenderer() instanceof SkyProviderOrbit) {
+					SkyProviderOrbitZG sky = new SkyProviderOrbitZG(new ResourceLocation(ZGInfo.MOD_ID
+							+ ":textures/gui/xantheon.png"), "praedyth");
+					WorldProviderOrbitXantheon provider = (WorldProviderOrbitXantheon) world.provider;
+					provider.setSpinDeltaPerTick(provider.getSpinManager().getSpinRate());
+					world.provider.setSkyRenderer(sky);
+				}
+				
+				if (world.provider.getCloudRenderer() == null) {
+					world.provider.setCloudRenderer(new CloudRenderer());
+				}
+			}
+			
+			// Praedyth (Candora)
+			if (world.provider instanceof WorldProviderOrbitCandora) {
+				if (world.provider.getSkyRenderer() == null || world.provider.getSkyRenderer() instanceof SkyProviderOrbit) {
+					SkyProviderOrbitZG sky = new SkyProviderOrbitZG(new ResourceLocation(ZGInfo.MOD_ID
+							+ ":textures/gui/candora.png"), "praedyth");
+					WorldProviderOrbitCandora provider = (WorldProviderOrbitCandora) world.provider;
+					provider.setSpinDeltaPerTick(provider.getSpinManager().getSpinRate());
+					world.provider.setSkyRenderer(sky);
+				}
+				
+				if (world.provider.getCloudRenderer() == null) {
+					world.provider.setCloudRenderer(new CloudRenderer());
+				}
+			}
+			
+			// Praedyth (Atheon)
+			if (world.provider instanceof WorldProviderOrbitAtheon) {
+				if (world.provider.getSkyRenderer() == null || world.provider.getSkyRenderer() instanceof SkyProviderOrbit) {
+					SkyProviderOrbitZG sky = new SkyProviderOrbitZG(new ResourceLocation(ZGInfo.MOD_ID
+							+ ":textures/gui/atheon.png"), "praedyth");
+					WorldProviderOrbitAtheon provider = (WorldProviderOrbitAtheon) world.provider;
 					provider.setSpinDeltaPerTick(provider.getSpinManager().getSpinRate());
 					world.provider.setSkyRenderer(sky);
 				}

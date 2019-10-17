@@ -15,23 +15,22 @@ import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderOrbitZG;
 import zollerngalaxy.planets.ZGPlanets;
 import zollerngalaxy.planets.ZGSpaceStations;
 
-public class WorldProviderOrbitEden extends WorldProviderOverworldOrbit {
+public class WorldProviderOrbitXantheon extends WorldProviderOverworldOrbit {
 	
 	@Override
 	public CelestialBody getCelestialBody() {
-		return ZGSpaceStations.EDEN_SPACE_STATION;
+		return ZGSpaceStations.XANTHEON_SPACE_STATION;
 	}
 	
 	@Override
 	public Vector3 getFogColor() {
-		float f = 1.1F - this.getStarBrightness(1.0F);
-		return new Vector3(2F / 255F * f, 128F / 255F * f, 248F / 255F * f);
+		float f = 1.0F - this.getStarBrightness(1.0F);
+		return new Vector3(60F / 255F * f, 60F / 255F * f, 60F / 255F * f);
 	}
 	
 	@Override
 	public Vector3 getSkyColor() {
-		float f = 1.15F - this.getStarBrightness(1.0F);
-		return new Vector3(120 / 255F * f, 161 / 255F * f, 255 / 255F * f);
+		return new Vector3(0, 0, 0);
 	}
 	
 	@Override
@@ -46,7 +45,7 @@ public class WorldProviderOrbitEden extends WorldProviderOverworldOrbit {
 	
 	@Override
 	public long getDayLength() {
-		return 48000L;
+		return 106020L;
 	}
 	
 	@Override
@@ -124,12 +123,12 @@ public class WorldProviderOrbitEden extends WorldProviderOverworldOrbit {
 	
 	@Override
 	public String getPlanetToOrbit() {
-		return "planet.eden";
+		return "planet.xantheon";
 	}
 	
 	@Override
 	public String getSaveFolder() {
-		return "space_stations/eden";
+		return "space_stations/xantheon";
 	}
 	
 	@Override
@@ -139,7 +138,7 @@ public class WorldProviderOrbitEden extends WorldProviderOverworldOrbit {
 	
 	@Override
 	public boolean canSpaceshipTierPass(int tier) {
-		return tier > ZGPlanets.planetEden.getTierRequirement();
+		return tier > ZGPlanets.planetXantheon.getTierRequirement();
 	}
 	
 	@Override
@@ -164,6 +163,6 @@ public class WorldProviderOrbitEden extends WorldProviderOverworldOrbit {
 	
 	@Override
 	public DimensionType getDimensionType() {
-		return ZGDimensions.EDEN_ORBIT;
+		return ZGDimensions.XANTHEON_ORBIT;
 	}
 }

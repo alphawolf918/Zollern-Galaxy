@@ -211,12 +211,12 @@ public class CraftingRecipes {
 		// Star Gate (Tier 1)
 		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.starGateTier1, 1),
 				new Object[] { "VCV", "HYH", "YCY", 'V', ZGItems.compressedDiamond, 'C', ZGItems.compressedHeartium, 'H',
-						ZGItems.heartOfZol, 'Y', ZGItems.zolCrystal });
+						ZGItems.heartium, 'Y', ZGItems.zolCrystal });
 		totalCraftRecipes++;
 		
 		// Star Gate (Tier 2)
 		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.starGateTier2, 1), new Object[] { "VCV", "HYH", "YCY", 'V',
-				ZGItems.compressedCobalt, 'C', ZGItems.kriffCrystal, 'H', ZGItems.heartOfZol, 'Y', ZGBlocks.blockCobalt });
+				ZGItems.compressedCobalt, 'C', ZGItems.kriffCrystal, 'H', ZGItems.heartium, 'Y', ZGBlocks.blockCobalt });
 		totalCraftRecipes++;
 		
 		// Star Gate (Tier 3)

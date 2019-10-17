@@ -35,6 +35,9 @@ public class OreDictRegistry {
 		// Constructed
 		registerOre("blockConstructed", ZGBlocks.xantheonConstructBlock, ZGBlocks.atheonConstructBlock);
 		
+		// Space Station
+		registerOre("blockSpaceStation", ZGBlocks.blockSpaceStation);
+		
 		// Gravel
 		registerOre("gravel", ZGBlocks.edenGravel, ZGBlocks.purgGravel, ZGBlocks.xathGravel, ZGBlocks.oasisGravel);
 		
@@ -145,7 +148,7 @@ public class OreDictRegistry {
 		
 		// Heartium
 		registerOre("oreHeartium", ZGBlocks.edenHeartiumOre, ZGBlocks.zolHeartOre);
-		registerOre("gemHeartium", ZGItems.heartOfZol);
+		registerOre("gemHeartium", ZGItems.heartium);
 		
 		// Cobalt
 		if (ConfigManagerZG.registerCobaltOreDict) {

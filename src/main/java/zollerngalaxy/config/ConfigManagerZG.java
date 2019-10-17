@@ -72,6 +72,15 @@ public class ConfigManagerZG {
 	public static int spaceStationOasisId;
 	public static int spaceStationOasisStaticId;
 	
+	public static int spaceStationXantheonId;
+	public static int spaceStationXantheonStaticId;
+	
+	public static int spaceStationCandoraId;
+	public static int spaceStationCandoraStaticId;
+	
+	public static int spaceStationAtheonId;
+	public static int spaceStationAtheonStaticId;
+	
 	// Misc
 	public static boolean canEarthAnimalsSpawnOnEden;
 	public static boolean disableStarGates;
@@ -195,6 +204,21 @@ public class ConfigManagerZG {
 		spaceStationOasisId = configuration.get(CATEGORY_SATELLITES, "Oasis Space Station ID", -6010).getInt();
 		spaceStationOasisStaticId = configuration.get(CATEGORY_SATELLITES, "Oasis Space Station Static ID", -6011).getInt();
 		
+		// Xantheon
+		spaceStationXantheonId = configuration.get(CATEGORY_SATELLITES, "Xantheon Space Station ID", -6012).getInt();
+		spaceStationXantheonStaticId = configuration.get(CATEGORY_SATELLITES, "Xantheon Space Station Static Id", -6013)
+				.getInt();
+		
+		// Candora
+		spaceStationCandoraId = configuration.get(CATEGORY_SATELLITES, "Candora Space Station ID", -6014).getInt();
+		spaceStationCandoraStaticId = configuration.get(CATEGORY_SATELLITES, "Candora Space Station Static Id", -6015)
+				.getInt();
+		
+		// Atheon
+		spaceStationAtheonId = configuration.get(CATEGORY_SATELLITES, "Atheon Space Station ID", -6016).getInt();
+		spaceStationAtheonStaticId = configuration.get(CATEGORY_SATELLITES, "Atheon Space Station Static ID", -6017)
+				.getInt();
+		
 		// Misc (Can Earth animals spawn on Eden?)
 		canEarthAnimalsSpawnOnEden = configuration.get(CATEGORY_MISC, "Earth Animals Spawn On Eden", true,
 				"Should Earth animals spawn on Eden? (default: true)").getBoolean();
@@ -253,37 +277,37 @@ public class ConfigManagerZG {
 		// Coords (Psios)
 		psiosX = (float) configuration.get(CATEGORY_COORDINATES, "Psios X", -2.5).getDouble();
 		psiosY = (float) configuration.get(CATEGORY_COORDINATES, "Psios Y", 1.2).getDouble();
-		psiosZ = (float) configuration.get(CATEGORY_COORDINATES, "Psios Z", 0.8).getDouble();
+		psiosZ = (float) configuration.get(CATEGORY_COORDINATES, "Psios Z", 0.0).getDouble();
 		
 		// Coords (Praedyth)
 		praedythX = (float) configuration.get(CATEGORY_COORDINATES, "Praedyth X", -1.2).getDouble();
 		praedythY = (float) configuration.get(CATEGORY_COORDINATES, "Praedyth Y", 1.4).getDouble();
-		praedythZ = (float) configuration.get(CATEGORY_COORDINATES, "Praedyth Z", -0.3).getDouble();
+		praedythZ = (float) configuration.get(CATEGORY_COORDINATES, "Praedyth Z", 0.0).getDouble();
 		
 		// Coords (Pantheon)
 		pantheonX = (float) configuration.get(CATEGORY_COORDINATES, "Pantheon X", 2.0).getDouble();
 		pantheonY = (float) configuration.get(CATEGORY_COORDINATES, "Pantheon Y", 1.2).getDouble();
-		pantheonZ = (float) configuration.get(CATEGORY_COORDINATES, "Pantheon Z", 0.2).getDouble();
+		pantheonZ = (float) configuration.get(CATEGORY_COORDINATES, "Pantheon Z", 0.0).getDouble();
 		
 		// Coords (Olympus)
 		olympusX = (float) configuration.get(CATEGORY_COORDINATES, "Olympus X", 1.5).getDouble();
 		olympusY = (float) configuration.get(CATEGORY_COORDINATES, "Olympus Y", 1.5).getDouble();
-		olympusZ = (float) configuration.get(CATEGORY_COORDINATES, "Olympus Z", 0.1).getDouble();
+		olympusZ = (float) configuration.get(CATEGORY_COORDINATES, "Olympus Z", 0.0).getDouble();
 		
 		// Coords (Asgard)
 		asgardX = (float) configuration.get(CATEGORY_COORDINATES, "Asgard X", 3.0).getDouble();
 		asgardY = (float) configuration.get(CATEGORY_COORDINATES, "Asgard Y", 1.2).getDouble();
-		asgardZ = (float) configuration.get(CATEGORY_COORDINATES, "Asgard Z", 0.3).getDouble();
+		asgardZ = (float) configuration.get(CATEGORY_COORDINATES, "Asgard Z", 0.0).getDouble();
 		
 		// Coords (Vega)
 		vegaX = (float) configuration.get(CATEGORY_COORDINATES, "Vega X", -1.0).getDouble();
 		vegaY = (float) configuration.get(CATEGORY_COORDINATES, "Vega Y", 2.5).getDouble();
-		vegaZ = (float) configuration.get(CATEGORY_COORDINATES, "Vega Z", -0.6).getDouble();
+		vegaZ = (float) configuration.get(CATEGORY_COORDINATES, "Vega Z", 0.0).getDouble();
 		
 		// Coords (Nova)
-		novaX = (float) configuration.get(CATEGORY_COORDINATES, "Nova X", -2.5).getDouble();
-		novaY = (float) configuration.get(CATEGORY_COORDINATES, "Nova Y", 1.6).getDouble();
-		novaZ = (float) configuration.get(CATEGORY_COORDINATES, "Nova Z", -2.0).getDouble();
+		novaX = (float) configuration.get(CATEGORY_COORDINATES, "Nova X", 1.5).getDouble();
+		novaY = (float) configuration.get(CATEGORY_COORDINATES, "Nova Y", 1.2).getDouble();
+		novaZ = (float) configuration.get(CATEGORY_COORDINATES, "Nova Z", 0.0).getDouble();
 		
 		configuration.save();
 	}

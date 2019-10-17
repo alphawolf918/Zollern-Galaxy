@@ -15,23 +15,23 @@ import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderOrbitZG;
 import zollerngalaxy.planets.ZGPlanets;
 import zollerngalaxy.planets.ZGSpaceStations;
 
-public class WorldProviderOrbitEden extends WorldProviderOverworldOrbit {
+public class WorldProviderOrbitCandora extends WorldProviderOverworldOrbit {
 	
 	@Override
 	public CelestialBody getCelestialBody() {
-		return ZGSpaceStations.EDEN_SPACE_STATION;
+		return ZGSpaceStations.CANDORA_SPACE_STATION;
 	}
 	
 	@Override
 	public Vector3 getFogColor() {
 		float f = 1.1F - this.getStarBrightness(1.0F);
-		return new Vector3(2F / 255F * f, 128F / 255F * f, 248F / 255F * f);
+		return new Vector3(120F / 255F * f, 75F / 255F * f, 120F / 255F * f);
 	}
 	
 	@Override
 	public Vector3 getSkyColor() {
 		float f = 1.15F - this.getStarBrightness(1.0F);
-		return new Vector3(120 / 255F * f, 161 / 255F * f, 255 / 255F * f);
+		return new Vector3(240 / 255F * f, 120 / 255F * f, 240 / 255F * f);
 	}
 	
 	@Override
@@ -124,12 +124,12 @@ public class WorldProviderOrbitEden extends WorldProviderOverworldOrbit {
 	
 	@Override
 	public String getPlanetToOrbit() {
-		return "planet.eden";
+		return "planet.candora";
 	}
 	
 	@Override
 	public String getSaveFolder() {
-		return "space_stations/eden";
+		return "space_stations/candora";
 	}
 	
 	@Override
@@ -139,7 +139,7 @@ public class WorldProviderOrbitEden extends WorldProviderOverworldOrbit {
 	
 	@Override
 	public boolean canSpaceshipTierPass(int tier) {
-		return tier > ZGPlanets.planetEden.getTierRequirement();
+		return tier > ZGPlanets.planetCandora.getTierRequirement();
 	}
 	
 	@Override
@@ -164,6 +164,6 @@ public class WorldProviderOrbitEden extends WorldProviderOverworldOrbit {
 	
 	@Override
 	public DimensionType getDimensionType() {
-		return ZGDimensions.EDEN_ORBIT;
+		return ZGDimensions.CANDORA_ORBIT;
 	}
 }

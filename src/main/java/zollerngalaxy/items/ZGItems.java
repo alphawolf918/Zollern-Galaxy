@@ -19,7 +19,7 @@ public class ZGItems {
 	
 	private static int totalItems = 0;
 	
-	public static final Item heartOfZol = new ZGItemBase("heartofzol");
+	public static final Item heartium = new ZGItemBase("heartofzol");
 	public static final Item zolCrystal = new ZGItemBase("zolluscrystal");
 	public static final Item kriffCrystal = new ZGItemBase("kriffoncrystal");
 	public static final Item purgCrystal = new ZGItemBase("purgotcrystal");
@@ -151,7 +151,7 @@ public class ZGItems {
 	public static final Item swordZollernium = new ZGItemSword("zollernium", ZGToolMats.ZOLLERNIUM);
 	
 	public static void init() {
-		ZGItems.registerItems(heartOfZol, zolCrystal, kriffCrystal, purgCrystal, edenCrystal, purgEssence,
+		ZGItems.registerItems(heartium, zolCrystal, kriffCrystal, purgCrystal, edenCrystal, purgEssence,
 				prometheanCrystal, plutoniumCrystal, azurite, ascendium, dustBrightstone, dustShinestone, dustVirinium,
 				dustEvenium, dustCobalt, dustFueltonium, dustShinium, dustChargium, dustDiamond, dustEmerald, dustAmaranth,
 				dustZollernium, dustZinc, ingotVirinium, ingotCobalt, ingotEvenium, ingotShinestone, ingotShinium,

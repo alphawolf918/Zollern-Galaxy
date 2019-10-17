@@ -50,7 +50,7 @@ public class ZGBlocks {
 	public static final Block zolCoalOre = new ZGOreGem("zolcoalore", 1.4F, Items.COAL);
 	public static final Block zolCopperOre = new ZGBlockOre("zolcopperore", 1.7F);
 	public static final Block zolGoldOre = new ZGBlockOre("zolgoldore", 1.8F);
-	public static final Block zolHeartOre = new ZGOreGem("zolheartore", 1.5F, ZGItems.heartOfZol);
+	public static final Block zolHeartOre = new ZGOreGem("zolheartore", 1.5F, ZGItems.heartium);
 	public static final Block zolTinOre = new ZGBlockOre("zoltinore", 1.2F);
 	public static final Block zolIronOre = new ZGBlockOre("zolironore", 1.4F);
 	public static final Block zolCrystals = new ZolniumCrystals();
@@ -191,7 +191,7 @@ public class ZGBlocks {
 			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.EVENIUM.getHarvestLevel());
 	public static final Block edenEveniumOre = new ZGBlockOre("edeneveniumore", 2.8F).setBlockHarvestLevel(
 			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.EVENIUM.getHarvestLevel());
-	public static final Block edenHeartiumOre = new ZGOreGem("edenheartiumore", 2.8F, ZGItems.heartOfZol)
+	public static final Block edenHeartiumOre = new ZGOreGem("edenheartiumore", 2.8F, ZGItems.heartium)
 			.setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.EVENIUM.getHarvestLevel());
 	
 	// Xathius
@@ -348,6 +348,10 @@ public class ZGBlocks {
 	public static final Block blockIceCreamSandwich = new IceCreamSandwichBlock();
 	public static final Block blockSugarCube = new ZGBlockBase("sugarcube", 0.6F).setBlockType(EnumBlockType.SWEET);
 	
+	// Space Station Blocks
+	public static final Block blockSpaceStation = new ZGBlockBase("spacestationblock", 1.5F)
+			.setBlockType(EnumBlockType.SPACE);
+	
 	public static void init() {
 		ZGBlocks.registerBlocks(edenWoodSapling, edenFruit, edenFlower, edenFlowerBlack, edenFlowerBlue, edenFlowerCyan,
 				edenFlowerGreen, edenFlowerOrange, edenFlowerPink, edenFlowerPurple, edenFlowerRed, edenFlowerYellow,
@@ -379,7 +383,7 @@ public class ZGBlocks {
 				blockCompressedPromethean, blockCompressedSuperChargedCoal, candyCubeWhite, candyCubeBlack, candyCubeGray,
 				candyCubeOrange, candyCubeBrown, candyCubeRed, candyCubeBlue, candyCubeYellow, candyCubePurple,
 				candyCubeCyan, candyCubePink, candyCubeGreen, blockChocolate, blockChocolateBricks, blockCookie,
-				blockBrownie, blockIceCreamSandwich, blockSugarCube);
+				blockBrownie, blockIceCreamSandwich, blockSugarCube, blockSpaceStation);
 		ZGHelper.Log("Loaded a total of " + totalBlocks + " new blocks.");
 	}
 	

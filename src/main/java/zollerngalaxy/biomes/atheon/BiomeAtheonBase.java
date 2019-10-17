@@ -12,6 +12,7 @@ import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.biomes.decorators.BiomeDecoratorAtheon;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.blocks.fluids.ZGFluids;
+import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderAtheon;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 import zollerngalaxy.mobs.entities.EntityGrayAlien;
 import zollerngalaxy.planets.ZGPlanets;
@@ -26,7 +27,7 @@ public abstract class BiomeAtheonBase extends BiomeSpace {
 	protected static final IBlockState ICE = Blocks.ICE.getDefaultState();
 	protected static final IBlockState WATER = Blocks.WATER.getDefaultState();
 	
-	protected static final int SEA_LEVEL = 57;// ChunkProviderAtheon.SEA_LEVEL;
+	protected static final int SEA_LEVEL = ChunkProviderAtheon.SEA_LEVEL;
 	protected static final int SEA_FLOOR_LEVEL = 36;
 	
 	public BiomeDecoratorAtheon biomeDecor = this.getBiomeDecorator();

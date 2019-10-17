@@ -4,5 +4,10 @@ Zollern Galaxy v2.0.8
 
 * Updated Zollern Galaxy to support and require latest Galacticraft mod version.
 * All planets now have space stations with varying recipes.
-* Fixed issue with planets disappearing when zoomed in (if this issue still occurs for you, set the Z coordinate for the star systems to 0.0).
+    - You will need higher-tier rockets to access these space stations.
+* Fixed issue with planets disappearing when zoomed in
+    - If this issue still occurs for you, set the Z coordinate for the star systems to 0.0.
+    - New players should be unaffected.
+* Modified default coordinates of Nova star system.
+* Created a specific block for Space Stations.
 * 

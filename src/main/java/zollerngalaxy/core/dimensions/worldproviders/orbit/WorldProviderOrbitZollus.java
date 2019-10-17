@@ -5,13 +5,13 @@ import micdoodle8.mods.galacticraft.api.vector.Vector3;
 import micdoodle8.mods.galacticraft.core.Constants;
 import micdoodle8.mods.galacticraft.core.dimension.WorldProviderOverworldOrbit;
 import micdoodle8.mods.galacticraft.core.util.ConfigManagerCore;
-import micdoodle8.mods.galacticraft.core.world.gen.ChunkProviderOrbit;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.DimensionType;
 import net.minecraft.world.gen.IChunkGenerator;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.core.dimensions.ZGDimensions;
+import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderOrbitZG;
 import zollerngalaxy.planets.ZGPlanets;
 import zollerngalaxy.planets.ZGSpaceStations;
 
@@ -44,12 +44,12 @@ public class WorldProviderOrbitZollus extends WorldProviderOverworldOrbit {
 	
 	@Override
 	public long getDayLength() {
-		return 24000L;
+		return 68010L;
 	}
 	
 	@Override
 	public Class<? extends IChunkGenerator> getChunkProviderClass() {
-		return ChunkProviderOrbit.class;
+		return ChunkProviderOrbitZG.class;
 	}
 	
 	@Override

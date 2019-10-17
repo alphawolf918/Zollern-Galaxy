@@ -51,6 +51,13 @@ public class ZollernGalaxyCore {
 		return INSTANCE;
 	}
 	
+	/**
+	 * If the mod is in Developer Mode, the JSON generators will run through
+	 * every block, item, and recipe to re-generate them over the top of the
+	 * current ones, as well as generate new ones.
+	 * 
+	 * @return Whether or not Developer Mode is active.
+	 */
 	public boolean isInDevMode() {
 		return DEV_MODE;
 	}

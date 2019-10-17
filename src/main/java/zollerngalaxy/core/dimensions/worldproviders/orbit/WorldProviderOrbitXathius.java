@@ -15,11 +15,11 @@ import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderOrbitZG;
 import zollerngalaxy.planets.ZGPlanets;
 import zollerngalaxy.planets.ZGSpaceStations;
 
-public class WorldProviderOrbitEden extends WorldProviderOverworldOrbit {
+public class WorldProviderOrbitXathius extends WorldProviderOverworldOrbit {
 	
 	@Override
 	public CelestialBody getCelestialBody() {
-		return ZGSpaceStations.EDEN_SPACE_STATION;
+		return ZGSpaceStations.XATHIUS_SPACE_STATION;
 	}
 	
 	@Override
@@ -31,7 +31,7 @@ public class WorldProviderOrbitEden extends WorldProviderOverworldOrbit {
 	@Override
 	public Vector3 getSkyColor() {
 		float f = 1.15F - this.getStarBrightness(1.0F);
-		return new Vector3(120 / 255F * f, 161 / 255F * f, 255 / 255F * f);
+		return new Vector3(120 / 255F * f, 1 / 255F * f, 120 / 255F * f);
 	}
 	
 	@Override
@@ -41,12 +41,12 @@ public class WorldProviderOrbitEden extends WorldProviderOverworldOrbit {
 	
 	@Override
 	public boolean hasSunset() {
-		return false;
+		return true;
 	}
 	
 	@Override
 	public long getDayLength() {
-		return 48000L;
+		return 26000L;
 	}
 	
 	@Override
@@ -79,7 +79,7 @@ public class WorldProviderOrbitEden extends WorldProviderOverworldOrbit {
 	
 	@Override
 	public boolean isSkyColored() {
-		return false;
+		return true;
 	}
 	
 	@Override
@@ -124,12 +124,12 @@ public class WorldProviderOrbitEden extends WorldProviderOverworldOrbit {
 	
 	@Override
 	public String getPlanetToOrbit() {
-		return "planet.eden";
+		return "planet.xathius";
 	}
 	
 	@Override
 	public String getSaveFolder() {
-		return "space_stations/eden";
+		return "space_stations/xathius";
 	}
 	
 	@Override
@@ -139,7 +139,7 @@ public class WorldProviderOrbitEden extends WorldProviderOverworldOrbit {
 	
 	@Override
 	public boolean canSpaceshipTierPass(int tier) {
-		return tier > ZGPlanets.planetEden.getTierRequirement();
+		return tier > ZGPlanets.planetXathius.getTierRequirement();
 	}
 	
 	@Override
@@ -164,6 +164,6 @@ public class WorldProviderOrbitEden extends WorldProviderOverworldOrbit {
 	
 	@Override
 	public DimensionType getDimensionType() {
-		return ZGDimensions.EDEN_ORBIT;
+		return ZGDimensions.XATHIUS_ORBIT;
 	}
 }

@@ -23,8 +23,8 @@ public class CompressorRecipesZG {
 		totalCompressorRecipes++;
 		
 		// Compressed Heartium
-		CompressorRecipes.addShapelessRecipe(new ItemStack(ZGItems.compressedHeartium, 2), new ItemStack(ZGItems.heartOfZol,
-				1, 0), new ItemStack(ZGItems.heartOfZol, 1, 0));
+		CompressorRecipes.addShapelessRecipe(new ItemStack(ZGItems.compressedHeartium, 2), new ItemStack(ZGItems.heartium,
+				1, 0), new ItemStack(ZGItems.heartium, 1, 0));
 		totalCompressorRecipes++;
 		
 		// Compressed Vyrex

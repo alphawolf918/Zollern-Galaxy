@@ -219,6 +219,8 @@ tile.endrock.name=Endrock
 tile.heartblock.name=Healing Station
 tile.blueprintblock.name=Blueprint Repair Station
 
+tile.spacestationblock.name=Space Station Block
+
 tile.compressedprometheanblock.name=Block of Compressed Promethean
 tile.compressedsuperchargedcoalblock.name=Block of Compressed Super Charged Coal
 tile.compressedviriniumblock.name=Block of Compressed Virinium
@@ -454,6 +456,9 @@ satellite.space_station.purgot=Purgot Space Station
 satellite.space_station.eden=Eden Space Station
 satellite.space_station.xathius=Xathius Space Station
 satellite.space_station.oasis=Oasis Space Station
+satellite.space_station.xantheon=Xantheon Space Station
+satellite.space_station.candora=Candora Space Station
+satellite.space_station.atheon=Atheon Space Station
 
 itemGroup.ZollernGalaxyBlocks=Zollern Galaxy Blocks
 itemGroup.ZollernGalaxyItems=Zollern Galaxy Items
