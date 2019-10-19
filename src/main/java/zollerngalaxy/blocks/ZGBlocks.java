@@ -351,6 +351,7 @@ public class ZGBlocks {
 	// Space Station Blocks
 	public static final Block blockSpaceStation = new ZGBlockBase("spacestationblock", 1.5F)
 			.setBlockType(EnumBlockType.SPACE);
+	public static final Block blockLore = new LoreBlock();
 	
 	public static void init() {
 		ZGBlocks.registerBlocks(edenWoodSapling, edenFruit, edenFlower, edenFlowerBlack, edenFlowerBlue, edenFlowerCyan,
@@ -383,7 +384,7 @@ public class ZGBlocks {
 				blockCompressedPromethean, blockCompressedSuperChargedCoal, candyCubeWhite, candyCubeBlack, candyCubeGray,
 				candyCubeOrange, candyCubeBrown, candyCubeRed, candyCubeBlue, candyCubeYellow, candyCubePurple,
 				candyCubeCyan, candyCubePink, candyCubeGreen, blockChocolate, blockChocolateBricks, blockCookie,
-				blockBrownie, blockIceCreamSandwich, blockSugarCube, blockSpaceStation);
+				blockBrownie, blockIceCreamSandwich, blockSugarCube, blockSpaceStation, blockLore);
 		ZGHelper.Log("Loaded a total of " + totalBlocks + " new blocks.");
 	}
 	

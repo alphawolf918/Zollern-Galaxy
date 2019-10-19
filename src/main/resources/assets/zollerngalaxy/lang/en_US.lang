@@ -220,6 +220,7 @@ tile.heartblock.name=Healing Station
 tile.blueprintblock.name=Blueprint Repair Station
 
 tile.spacestationblock.name=Space Station Block
+tile.loreblock.name=Lore Block
 
 tile.compressedprometheanblock.name=Block of Compressed Promethean
 tile.compressedsuperchargedcoalblock.name=Block of Compressed Super Charged Coal

@@ -14,4 +14,7 @@
     * Special hives that generate on a certain planet. Space bees!
 * Planet LV-426 with Facehuggers from Alien.
 * Pizza Planet?
-* ?
+* Findable "lore" for the mod to create a story.
+    - Lore Blocks that are only inside space stations.
+        - Give Lore Books when right-clicked from a randomized list.
+* 

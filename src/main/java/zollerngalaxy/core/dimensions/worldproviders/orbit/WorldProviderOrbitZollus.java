@@ -24,7 +24,8 @@ public class WorldProviderOrbitZollus extends WorldProviderOverworldOrbit {
 	
 	@Override
 	public Vector3 getFogColor() {
-		return new Vector3(0, 0, 0);
+		float f = 1.0F - this.getStarBrightness(1.0F);
+		return new Vector3(20 / 255F * f, 27 / 255F * f, 45 / 255F * f);
 	}
 	
 	@Override

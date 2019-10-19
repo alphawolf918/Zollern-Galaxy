@@ -32,6 +32,7 @@ import zollerngalaxy.proxy.CommonProxy;
 import zollerngalaxy.proxy.IProxy;
 import zollerngalaxy.recipes.ZGRecipeRegistry;
 import zollerngalaxy.util.OreDictRegistry;
+import zollerngalaxy.util.ZGLore;
 
 @Mod(modid = ZGInfo.MOD_ID, version = ZGInfo.MOD_VERSION, name = ZGInfo.NAME, dependencies = ZGInfo.DEPENDENCIES)
 public class ZollernGalaxyCore {
@@ -77,6 +78,7 @@ public class ZollernGalaxyCore {
 		ModHelperBase.detectMods();
 		ZGCompats.init();
 		ZGInfo.init(event.getModMetadata());
+		ZGLore.init();
 		ZGItems.init();
 		ZGBlocks.init();
 		ZGFluids.init();
