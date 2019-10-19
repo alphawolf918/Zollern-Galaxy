@@ -14,21 +14,18 @@ public class ZGLore {
 	public static LoreBook BOOK_ONE;
 	
 	public static void init() {
-		BOOK_ONE = createLoreBook(
-				"The Vranor",
-				"The Vranor (now known simply as \"Alien Villagers\") were once a militaristic race of hyper-advanced beings who ruled the galaxy. ",
-				"This rule ended when an unknown force " + "devolved them back to their primitive, Neanderthal-like state. ",
-				"Since then, they simply wander planets, building villages and offering goods to anyone who will barter. ",
-				"Oddly enough, they are known for their peacefulness. ",
+		BOOK_ONE = createLoreBook("The Vranor",
+				"The Vranor were once a militaristic race of hyper-advanced beings who ruled the galaxy.",
+				"This rule ended when an unknown force " + "devolved them back to their primitive, Neanderthal-like state.",
+				"Since then, they simply wander planets, building villages and offering goods to anyone who will barter.",
+				"Oddly enough, they are known for their peacefulness.",
 				"However, they still remain a target for many other alien races.");
 		ZGHelper.Log("Loaded a total of " + totalLoreBooks + " lore books.");
 	}
 	
 	public static LoreBook createLoreBook(String bookTitle, String... pages) {
 		LoreBook book = new LoreBook(bookTitle);
-		for (String p : pages) {
-			book.addPage(p);
-		}
+		book.addPages(pages);
 		registerLoreBook(book);
 		totalLoreBooks++;
 		return book;

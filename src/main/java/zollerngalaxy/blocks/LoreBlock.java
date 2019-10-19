@@ -17,6 +17,7 @@ import net.minecraft.world.World;
 import zollerngalaxy.core.ZollernGalaxyCore;
 import zollerngalaxy.core.enums.EnumBlockType;
 import zollerngalaxy.items.ZGItems;
+import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.proxy.IProxy;
 import zollerngalaxy.util.LoreBook;
 import zollerngalaxy.util.ZGLore;
@@ -42,23 +43,24 @@ public class LoreBlock extends ZGBlockBase {
 				
 				NBTTagCompound nbt = new NBTTagCompound();
 				NBTTagList bookPages = new NBTTagList();
-				
-				book.setTagInfo("pages", bookPages);
 				book.setTagInfo("author", new NBTTagString("Zollern Wolf"));
 				book.setTagInfo("title", new NBTTagString(loreBook.getTitle()));
 				
 				List<String> pages = loreBook.getPages();
 				
-				for (String p : pages) {
-					bookPages.appendTag(new NBTTagString(p));
+				for (int s = 0; s < pages.size(); s++) {
+					ZGHelper.Log("Page " + s + ": " + pages.get(s));
+					bookPages.appendTag(new NBTTagString(pages.get(s)));
 				}
+				
+				book.getTagCompound().setTag("pages", bookPages);
 				
 				playerIn.addItemStackToInventory(book);
 				worldIn.setBlockState(pos, Blocks.AIR.getDefaultState());
 				proxy.sendChatMessage(playerIn,
 						TextFormatting.GOLD + "You have discovered lore! Book: " + loreBook.getTitle());
 			} else {
-				proxy.sendChatMessage(playerIn, TextFormatting.DARK_BLUE + "You will need an Omnitool to access this.");
+				proxy.sendChatMessage(playerIn, TextFormatting.AQUA + "You will need an Omnitool to access this.");
 			}
 		}
 		return true;

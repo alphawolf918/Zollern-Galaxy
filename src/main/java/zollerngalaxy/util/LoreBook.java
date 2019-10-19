@@ -36,6 +36,9 @@ public final class LoreBook {
 	}
 	
 	public String getPage(int pageNum) {
+		if (pageNum <= 0) {
+			pageNum = 1;
+		}
 		return this.pages.get(pageNum);
 	}
 	
