@@ -12,12 +12,12 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.Biome.SpawnListEntry;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.ChunkPrimer;
+import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.worldgen.space.WorldGenSpaceStationZG;
 
 public class ChunkProviderOrbitZG extends ChunkProviderBase {
 	
 	private final Random rand;
-	
 	private final World world;
 	
 	public ChunkProviderOrbitZG(World par1World, long par2, boolean par4) {
@@ -52,6 +52,8 @@ public class ChunkProviderOrbitZG extends ChunkProviderBase {
 		final long j1 = this.rand.nextLong() / 2L * 2L + 1L;
 		this.rand.setSeed(x * i1 + z * j1 ^ this.world.getSeed());
 		if (k == 0 && l == 0) {
+			BlockPos pos = new BlockPos(k, 64, l);
+			this.world.setBlockState(pos, ZGBlocks.blockLore.getDefaultState(), 2);
 			new WorldGenSpaceStationZG().generate(this.world, this.rand, new BlockPos(k - 10, 62, l - 3));
 		}
 		BlockFalling.fallInstantly = false;

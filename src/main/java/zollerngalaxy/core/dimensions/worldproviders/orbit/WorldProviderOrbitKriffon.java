@@ -122,7 +122,7 @@ public class WorldProviderOrbitKriffon extends WorldProviderOverworldOrbit {
 	
 	@Override
 	public String getPlanetToOrbit() {
-		return "planet.kriffon";
+		return "planet.kriffus";
 	}
 	
 	@Override
