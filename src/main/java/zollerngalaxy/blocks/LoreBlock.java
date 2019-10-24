@@ -1,7 +1,9 @@
 package zollerngalaxy.blocks;
 
 import java.util.List;
+import javax.annotation.Nullable;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -16,9 +18,12 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.core.ZollernGalaxyCore;
 import zollerngalaxy.core.enums.EnumBlockType;
 import zollerngalaxy.items.ZGItems;
+import zollerngalaxy.lib.helpers.CommonZGRegisterHelper;
 import zollerngalaxy.proxy.IProxy;
 import zollerngalaxy.util.LoreBook;
 import zollerngalaxy.util.ZGLore;
@@ -41,12 +46,13 @@ public class LoreBlock extends ZGBlockBase {
 			if (playerIn.getHeldItem(hand).getItem() == ZGItems.OMNITOOL) {
 				try {
 					LoreBook loreBook = ZGLore.getRandomLoreBook();
+					int bookID = loreBook.getBookID();
 					ItemStack book = new ItemStack(Items.WRITTEN_BOOK);
 					
 					NBTTagCompound nbt = new NBTTagCompound();
 					NBTTagList bookPages = new NBTTagList();
 					book.setTagInfo("author", new NBTTagString("Zollern Wolf"));
-					book.setTagInfo("title", new NBTTagString(loreBook.getTitle()));
+					book.setTagInfo("title", new NBTTagString("Lore Book #" + bookID + ": " + loreBook.getTitle()));
 					
 					List<String> pages = loreBook.getPages();
 					
@@ -60,10 +66,11 @@ public class LoreBlock extends ZGBlockBase {
 					NBTTagCompound cmp = book.getTagCompound();
 					cmp.setTag("pages", bookPages);
 					
+					String txtFormat = TextFormatting.GOLD + "" + TextFormatting.BOLD;
+					
 					playerIn.addItemStackToInventory(book);
 					worldIn.setBlockState(pos, Blocks.AIR.getDefaultState());
-					proxy.sendChatMessage(playerIn,
-							TextFormatting.GOLD + "You have discovered lore! Book: " + loreBook.getTitle());
+					proxy.sendChatMessage(playerIn, txtFormat + "You have discovered lore! Book: " + loreBook.getTitle());
 				} catch (IllegalArgumentException ex) {
 					proxy.sendChatMessage(playerIn, TextFormatting.RED + "No lore was found..");
 				}
@@ -72,6 +79,18 @@ public class LoreBlock extends ZGBlockBase {
 			}
 		}
 		return true;
+	}
+	
+	@Override
+	@SideOnly(Side.CLIENT)
+	public void addInformation(ItemStack stack, @Nullable World player, List<String> tooltip, ITooltipFlag advanced) {
+		if (CommonZGRegisterHelper.isControlKeyDown() || CommonZGRegisterHelper.isShiftKeyDown()) {
+			tooltip.add("Provides the Player with Lore.");
+			tooltip.add("Requires an Omnitool to work.");
+			tooltip.add("Only found on Space Stations.");
+		} else {
+			tooltip.add("Hold LSHIFT for more information.");
+		}
 	}
 	
 	@Override
