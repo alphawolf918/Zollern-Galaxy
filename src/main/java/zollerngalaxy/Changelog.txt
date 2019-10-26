@@ -16,5 +16,6 @@ Zollern Galaxy v2.0.8
     - Gives the Player a random Lore Book and then disappears.
     - Block cannot be broken through normal means.
     - The Player can only access it by right-clicking with an Omnitool.
-    - The Player will not get the same lore book twice IN THE SAME SESSION - if the Player leaves or the game is reset, the pool regenerates.
+    - The Player will not get the same lore book twice IN THE SAME SESSION.
+        - If the game is closed, then the pool regenerates.
 * 

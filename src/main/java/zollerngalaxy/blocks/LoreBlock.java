@@ -72,7 +72,7 @@ public class LoreBlock extends ZGBlockBase {
 					worldIn.setBlockState(pos, Blocks.AIR.getDefaultState());
 					proxy.sendChatMessage(playerIn, txtFormat + "You have discovered lore! Book: " + loreBook.getTitle());
 				} catch (IllegalArgumentException ex) {
-					proxy.sendChatMessage(playerIn, TextFormatting.RED + "No lore was found..");
+					proxy.sendChatMessage(playerIn, TextFormatting.GRAY + "No lore was found..");
 				}
 			} else {
 				proxy.sendChatMessage(playerIn, TextFormatting.AQUA + "You will need an Omnitool to access this.");

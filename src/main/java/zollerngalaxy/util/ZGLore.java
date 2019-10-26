@@ -38,26 +38,25 @@ public class ZGLore {
 	public static void init() {
 		BOOK_ONE = ZGLore.createLoreBook(1, "The Vranor",
 				"The Vranor were once a militaristic race of hyper-advanced beings who ruled the galaxy.",
-				"This rule ended when an unknown force " + "devolved them back to their primitive, Neanderthal-like state.",
+				"This rule ended when an unknown force devolved them back to their primitive, Neanderthal-like state.",
 				"Since then, they simply wander planets, building villages and offering goods to anyone who will barter.",
 				"Oddly enough, they are known for their peacefulness.",
 				"However, they still remain a target for many other alien races.");
 		
-		BOOK_TWO = ZGLore.createLoreBook(2, "Sentient Temperatures",
+		BOOK_TWO = ZGLore.createLoreBook(2, "Nature Beings",
 				"Magmos and Frost Giants are actually considered part of the planet itself.",
-				"Magmos thrive on the scalding hot temperatures in Kriffon,",
-				"while Frost Giants survive off of extreme cold on Zollus. If a Magmos gets too cold, or a "
-						+ "Frost Giant too hot, they will die.",
+				"Magmos thrive on the scalding hot temperatures in Kriffon, while Frost Giants"
+						+ " survive off of extreme cold on Zollus.",
+				"If a Magmos gets too cold, or a Frost Giant too hot, they will die.",
 				"Though sentient and very strong, they are nothing more than essentially the protectors of their planets.",
 				"They do not like things that do not belong, such as the Player, or the Vranor.");
 		
-		BOOK_THREE = ZGLore.createLoreBook(3, "Constructed Planets",
-				"Planets Xantheon and Atheon are artificially-constructed, "
-						+ "genetically-spliced planets that were created by the Grays.",
-				"These planets are generally void of most life, " + "though the Grays do still inhabit them. ",
-				"These worlds are typically very hostile to the Player.",
-				"They also contain resources with extreme value. Constructed planets were created from asteroids, "
-						+ " using the energy of a Dyson-sphere and arduous terraforming.",
+		BOOK_THREE = ZGLore.createLoreBook(3, "Tech Planets",
+				"Planets Xantheon and Atheon are artificial planets that were created by the Grays.",
+				"The planets are generally void of most life, though the Grays do still inhabit them.",
+				"These worlds are typically very hostile to the Player.", "They also contain resources with extreme value.",
+				"Constructed planets were created from asteroids, "
+						+ "using the energy of a Dyson sphere and arduous terraforming.",
 				"These worlds ride through space until they are caught in the orbit of a star system, "
 						+ "which they then consider home.");
 		
@@ -93,6 +92,74 @@ public class ZGLore {
 						+ "that protocol being those two worlds, or moons.",
 				"They were invented by an Earth scientist that spliced the DNA "
 						+ "of a captured Gray into human technology, making more advances possible.");
+		
+		BOOK_SEVEN = ZGLore.createLoreBook(7, "Planet Eden", "Eden is a paradise planet in the Psios-6 system.",
+				"It orbits a blue star with its three other planetary neighbors.",
+				"It is a multi-biome planet with unique fauna and environmental factors.",
+				"It has been hypothesized that humans actually hail from planet Eden, "
+						+ "and were banished to Earth millennia ago, though the reasons remain unclear.",
+				"Nevertheless, The Garden (a biome of Eden) is a lushful place, full of life and growth.");
+		
+		BOOK_EIGHT = ZGLore.createLoreBook(8, "Planet Zollus",
+				"Zollus is a barren, icy planet, and the home of the Frost Giants.",
+				"It is the furthermost planet from Psios-6.", "Many space explorers tend to begin their journies here.",
+				"Not all of them survive, and those that do, simply make it on to the next harsh planet.",
+				"Paradise awaits a Player that can trudge through ice and hellscape successfully.",
+				"Zollus Crystals grow here, which are believed to have been formed "
+						+ "from the planet's crust in its conception.",
+				"They grow as plants, stemming from deep into the ground.",
+				"The Heart of Zol, or Heartium, can also be found here.",
+				"Zol was believed to be the first Frost Giant, and therefore the planet is named after him.");
+		
+		BOOK_NINE = ZGLore.createLoreBook(9, "Planet Kriffon", "Kriffon is a bright but gloomy hellscape, "
+				+ "populated by volcanic entities called the Magmos.", "The metal Cobalt can be found here.",
+				"The planet was named after the Kriff: "
+						+ "a race of red-skinned entities that drove their planet to extinction with their rapid evolution "
+						+ "and then had to escape.",
+				"They are said to be a plague, conquering planet after planet within days.",
+				"Kriffon is the closest to its star in the Psios-6 system.");
+		
+		BOOK_TEN = ZGLore.createLoreBook(10, "Planet Purgot",
+				"Purgot was once believed to be a separate dimension called Purgatory.",
+				"This likely comes from the name of one of its biomes, " + "with another biome being called Limbo.",
+				"It is an icy planet, but it is rich with fauna.", "The primary metal here is Evenium, "
+						+ "and can be found deep inside of its caves.", "Ancient astronauts used to tell stories to "
+						+ "humans of how trapped souls would be sent here either to learn a lesson,"
+						+ " or to await their judgment.");
+		
+		BOOK_ELEVEN = ZGLore.createLoreBook(11, "Planet Xathius", "Xathius is a strange but beautiful planet, "
+				+ "located in the Praedyth system.", "Its colors are primarily purple and blue, "
+				+ "but there are also some yellows and occasional reds thrown in there as well.",
+				"Xathius is primarily known for its abundance of Promethean Ore, "
+						+ "which is a very powerful metal in the creation of Star Gates.",
+				"It also has some of the biggest oceans.");
+		
+		BOOK_TWELVE = ZGLore.createLoreBook(12, "Planet Oasis",
+				"Oasis is a paradise planet located in the Praedyth system.",
+				"Some adventurers have reported finding oceans of Destabilized Redstone, "
+						+ "while others report simple red oceans. Its best qualities are its colors, "
+						+ "and its abundance of Super Charged Coal.",
+				"Some of the brightest and most vibrant sunsets and sunrises in the universe occur here.",
+				"A lot of explorers even say that they believe the planet to still be growing.");
+		
+		BOOK_THIRTEEN = ZGLore.createLoreBook(13, "Fueltonium",
+				"Fueltonium is a reactant metal that has been used inside of Big Reactors, "
+						+ "and as a replacement for Uranium.", "It is believed to be a greener, cleaner alternative.",
+				"It can also be melted down into a lava-like substance, " + "though its use is currently undocumented.",
+				"This metal can be found on the artificially-constructed planet, Xantheon, along with Amaranth Ore.",
+				"It can also be used inside of Turbines.");
+		
+		BOOK_FOURTEEN = ZGLore.createLoreBook(14, "Planet Candora", "Candora is considered an Exotic class planet, "
+				+ "which is a rare class that is usually only found by strange means.",
+				"It is often jokingly referred to as the Birthday Planet.", "It is filled with a Candy Cube landscape, "
+						+ "and has an ocean comprised entirely of melted chocolate.",
+				"No one knows how this is even possible.", "It usually is used as a partying planet, "
+						+ "and one of celebration.", "Many sweets can be found here, as can many strange anomalies.");
+		
+		BOOK_FIFTEEN = ZGLore
+				.createLoreBook(15, "Plutonium", "Plutonium, often used in Turbines, can be found on planet Xantheon.",
+						"It is a rare commodity amongst space traders due to its secrecy.",
+						"It also is used in the crafting of a Star Gate to get to planet Atheon, where the super-metal Zollernium can be found.");
 		
 		ZGHelper.Log("Loaded a total of " + totalLoreBooks + " lore books.");
 	}
