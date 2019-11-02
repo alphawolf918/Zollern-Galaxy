@@ -85,6 +85,7 @@ public class ConfigManagerZG {
 	public static boolean canEarthAnimalsSpawnOnEden;
 	public static boolean disableStarGates;
 	public static String temperatureType;
+	public static boolean hideUnusedStarSystems;
 	
 	// Compat
 	public static boolean shouldOasisUseLiquidRedstone;
@@ -230,6 +231,9 @@ public class ConfigManagerZG {
 				false,
 				"Set this to true if you want to ONLY access Zollern Galaxy " + "planets using rockets. "
 						+ "WARNING: will not work without another add-on this way! (default: false)").getBoolean();
+		
+		hideUnusedStarSystems = configuration.get(CATEGORY_MISC, "Hide Stars with no Planets", true,
+				"Enable to see Stars that have no Planets yet. (default: true)").getBoolean();
 		
 		// Misc (Temperatures shown in fahrenheit or celsius?)
 		temperatureType = configuration.get(CATEGORY_MISC, "[HUD DISPLAY] Temperature Type (F or C only)", "F",

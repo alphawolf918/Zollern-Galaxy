@@ -63,6 +63,8 @@ public class ZGPlanets {
 	private static float NOVA_Y = ConfigManagerZG.novaY;
 	private static float NOVA_Z = ConfigManagerZG.novaZ;
 	
+	private static boolean hideUnusedStarSystems = ConfigManagerZG.hideUnusedStarSystems;
+	
 	// Solar Systems
 	public static ZGStarSystem systemPsios = new ZGStarSystem("psion6");
 	public static ZGStarSystem systemPraedyth = new ZGStarSystem("praedyth");
@@ -405,11 +407,13 @@ public class ZGPlanets {
 	public static void registerSystems() {
 		GalaxyRegistry.registerSolarSystem(systemPsios);
 		GalaxyRegistry.registerSolarSystem(systemPraedyth);
-		GalaxyRegistry.registerSolarSystem(systemPantheon);
-		GalaxyRegistry.registerSolarSystem(systemOlympus);
-		GalaxyRegistry.registerSolarSystem(systemAsgard);
-		GalaxyRegistry.registerSolarSystem(systemVega);
-		GalaxyRegistry.registerSolarSystem(systemNova);
+		if (!hideUnusedStarSystems) {
+			GalaxyRegistry.registerSolarSystem(systemPantheon);
+			GalaxyRegistry.registerSolarSystem(systemOlympus);
+			GalaxyRegistry.registerSolarSystem(systemAsgard);
+			GalaxyRegistry.registerSolarSystem(systemVega);
+			GalaxyRegistry.registerSolarSystem(systemNova);
+		}
 		
 		ZGPlanets.registerPlanets();
 	}

@@ -156,10 +156,52 @@ public class ZGLore {
 				"No one knows how this is even possible.", "It usually is used as a partying planet, "
 						+ "and one of celebration.", "Many sweets can be found here, as can many strange anomalies.");
 		
-		BOOK_FIFTEEN = ZGLore
-				.createLoreBook(15, "Plutonium", "Plutonium, often used in Turbines, can be found on planet Xantheon.",
-						"It is a rare commodity amongst space traders due to its secrecy.",
-						"It also is used in the crafting of a Star Gate to get to planet Atheon, where the super-metal Zollernium can be found.");
+		BOOK_FIFTEEN = ZGLore.createLoreBook(15, "Plutonium",
+				"Plutonium, often used in Turbines, can be found on planet Xantheon.",
+				"It is a rare commodity amongst space traders due to its secrecy.",
+				"It also is used in the crafting of a Star Gate to get to planet Atheon, "
+						+ "where the super-metal Zollernium can be found.");
+		
+		BOOK_SIXTEEN = ZGLore.createLoreBook(16, "Ayanna's Father", "Ayanna called to her father in the stars, "
+				+ "but alas he could not hear her.",
+				"He was entranced at the beauty of what he saw, " + "and what he felt.",
+				"\"There are so many of them,\" he had said to his daughter.",
+				"\"I think I'll go into one now, for I am tired, my dear.\"",
+				"After that, he had vanished into a peaceful slumber.",
+				"Legend says that Ayanna still searches for her father in the stars, "
+						+ "and that one day, she hopes to bring him home.");
+		
+		BOOK_SEVENTEEN = ZGLore.createLoreBook(17, "Dark Galaxy",
+				"The Dark Galaxy is rumored to be at the center of the universe, "
+						+ "destroying or corrupting all things that it touches.",
+				"Legend tells of adventurers that made it to this place, "
+						+ "but when they came back, they were somehow...different.",
+				"They looked, sounded, acted differently, "
+						+ "as if they were given a task or some menacing purpose to fulfill.",
+				"It's said that they serve whoever or whatever is inside of that galaxy: sentient dark matter.");
+		
+		BOOK_EIGHTEEN = ZGLore.createLoreBook(18, "Ayanna's Moon", "The moon spoke to Ayanna. It said sweet things to her.",
+				"In that moment, she thought, maybe, it was her father; "
+						+ "that he was still alive. But she had given that hope up long ago.",
+				"She used to look at the moon with such reverence, " + "but now she only feels spite.",
+				"She wonders how much of her memory is real, and how much of it a fantasy.",
+				"She grabs the crystal on her necklace and says, \"I'm going to find out.\"");
+		
+		BOOK_NINETEEN = ZGLore.createLoreBook(19, "Star Queen", "Ayanna's search ended bitterly, "
+				+ "for she did not find her father.", "Instead, she came face-to-face with the Dark Galaxy: "
+				+ "a whole cluster of dark-matter stars.", "They corrupted and changed her into something else.",
+				"She no longer went by Ayanna anymore, but by Mytra, the Star Queen.", "Every fifty years, "
+						+ "she ventures out of her galaxy to dispatch " + "darkness across the universe.",
+				"When an adventurer finds it, they too are transformed, "
+						+ "and they spread her will around even further. These are the Agents of Darkness.");
+		
+		BOOK_TWENTY = ZGLore.createLoreBook(20, "Planet Caligro", "Caligro was once a paradise planet like Oasis.",
+				"It was full of beautiful, vibrant colors, "
+						+ "carving its own path in the universe as one of its most beautiful planets.",
+				"But, something had occurred on this planet.", "The darkness had consumed it entirely.",
+				"It was no longer a place of beauty, but of death and gloom.",
+				"Its old name was Forma, named for its beauty.", "But now... Now it brought death to all who set "
+						+ "foot upon it.", "It is one of the few worlds where the Dark Agents have succeeded.");
 		
 		ZGHelper.Log("Loaded a total of " + totalLoreBooks + " lore books.");
 	}
