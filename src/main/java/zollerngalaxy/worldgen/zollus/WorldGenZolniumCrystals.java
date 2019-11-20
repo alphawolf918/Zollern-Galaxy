@@ -33,7 +33,9 @@ public class WorldGenZolniumCrystals extends WorldGenerator {
 			double y = pos.getY();
 			double z = pos.getZ();
 			
-			if (!world.isRemote) {
+			int randInt = rand.nextInt(50);
+			
+			if (!(world.isRemote && randInt <= 25) && (y <= 72)) {
 				EntityFrostGiant frostGiant = new EntityFrostGiant(world);
 				frostGiant.setLocationAndAngles(x, y, z, 0, 0);
 				world.spawnEntity(frostGiant);

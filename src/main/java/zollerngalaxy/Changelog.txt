@@ -1,23 +1,11 @@
 ===== CHANGELOG =====
-Zollern Galaxy v2.0.8
+Zollern Galaxy v2.0.9
 =====================
 
-* Updated Zollern Galaxy to support and require latest Galacticraft mod version.
-* All planets now have space stations with varying recipes.
-    - You will need higher-tier rockets to access these space stations.
-* Fixed issue with planets disappearing when zoomed in.
-    - If this issue still occurs for you, set the Z coordinate for the star systems to 0.0.
-    - New players should be unaffected.
-* Modified default coordinates of Nova star system.
-* Created a specific block for Space Stations.
-* Began a story for the mod through findable lore.
-* Created the Lore Block.
-    - Only spawns in Space Stations.
-    - Gives the Player a random Lore Book and then disappears.
-    - Block cannot be broken through normal means.
-    - The Player can only access it by right-clicking with an Omnitool.
-    - The Player will not get the same lore book twice IN THE SAME SESSION.
-        - If the game is closed, then the pool regenerates.
-* Added a config option to enable/disable the showing/registration of Stars with no Planets yet.
-    - Turned off by default.
-* Added 20 findable Lore Books. More will be added in the future.
+* Cut the spawn-rate of Alien Villagers on planets in half.
+    * Did the same thing to the Frost Giants on Zollus.
+* Slightly increased spawn-rate of Magmos on Kriffon.
+* Updated Candy Cube block textures for planet Candora.
+* Restructured Candora completely so that it generates as intended.
+* Cut chunk height of Kriffon to 72 instead of 92.
+* 

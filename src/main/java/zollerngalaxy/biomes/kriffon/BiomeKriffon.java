@@ -25,8 +25,8 @@ public class BiomeKriffon extends BiomeSpace {
 		this.decorator.treesPerChunk = -999;
 		this.decorator.grassPerChunk = -999;
 		this.decorator.mushroomsPerChunk = -999;
-		this.spawnableCreatureList.add(new SpawnListEntry(EntityAlienVillager.class, 15, 2, 4));
-		this.spawnableMonsterList.add(new SpawnListEntry(EntityMagmos.class, 25, 1, 1));
+		this.spawnableCreatureList.add(new SpawnListEntry(EntityAlienVillager.class, 5, 1, 2));
+		this.spawnableMonsterList.add(new SpawnListEntry(EntityMagmos.class, 25, 1, 2));
 		this.topBlock = ZGBlocks.kriffSurfaceRock.getDefaultState();
 		this.fillerBlock = ZGBlocks.kriffDirt.getDefaultState();
 		this.stoneBlock = ZGBlocks.kriffStone;

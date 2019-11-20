@@ -71,7 +71,7 @@ public abstract class BiomeEdenBase extends BiomeSpace {
 			this.spawnableCreatureList.add(new SpawnListEntry(EntityHorse.class, 100, 1, 3));
 		}
 		
-		this.spawnableCreatureList.add(new SpawnListEntry(EntityAlienVillager.class, 15, 2, 4));
+		this.spawnableCreatureList.add(new SpawnListEntry(EntityAlienVillager.class, 5, 1, 2));
 		this.spawnableCreatureList.add(new SpawnListEntry(EntityMoolus.class, 80, 2, 4));
 		this.spawnableCreatureList.add(new SpawnListEntry(EntityOinkus.class, 80, 2, 4));
 		
@@ -87,6 +87,7 @@ public abstract class BiomeEdenBase extends BiomeSpace {
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityCreeper.class, 100, 4, 4));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityEnderman.class, 100, 1, 4));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityWitch.class, 5, 1, 1));
+		
 		this.setStoneBlock(ZGBlocks.edenStone);
 		this.setPlanetForBiome(ZGPlanets.planetEden);
 	}

@@ -151,7 +151,53 @@ public class ChunkProviderCandora extends ChunkProviderBase {
 								
 								if ((lvt_45_1_ += d16) > this.noiseGenSmooth1.getNoise(chunkX * 16 + x, chunkZ * 16 + z)
 										* CHUNK_HEIGHT) {
-									primer.setBlockState(x, y, z, STONE);
+									int randInt = rand.nextInt(100);
+									IBlockState blockToUse = STONE;
+									
+									// blockToUse = (rand.nextInt(20) <= 5) ?
+									// blockToUse : ZGBlocks.candyCubePink
+									// .getDefaultState();
+									// blockToUse = (rand.nextInt(20) <= 5) ?
+									// blockToUse : ZGBlocks.candyCubePurple
+									// .getDefaultState();
+									// blockToUse = (rand.nextInt(20) <= 5) ?
+									// blockToUse : ZGBlocks.candyCubeGreen
+									// .getDefaultState();
+									// blockToUse = (rand.nextInt(20) <= 5) ?
+									// blockToUse : ZGBlocks.candyCubeYellow
+									// .getDefaultState();
+									// blockToUse = (rand.nextInt(20) <= 5) ?
+									// blockToUse : ZGBlocks.candyCubeOrange
+									// .getDefaultState();
+									// blockToUse = (rand.nextInt(20) <= 5) ?
+									// blockToUse : ZGBlocks.candyCubeBlue
+									// .getDefaultState();
+									// blockToUse = (rand.nextInt(20) <= 5) ?
+									// blockToUse : ZGBlocks.candyCubeCyan
+									// .getDefaultState();
+									// blockToUse = (rand.nextInt(20) <= 5) ?
+									// blockToUse : ZGBlocks.candyCubeBlack
+									// .getDefaultState();
+									// blockToUse = (rand.nextInt(25) <= 5) ?
+									// blockToUse : ZGBlocks.candyCubeRed
+									// .getDefaultState();
+									// blockToUse = (rand.nextInt(25) <= 5) ?
+									// blockToUse : ZGBlocks.candyCubeWhite
+									// .getDefaultState();
+									// blockToUse = (rand.nextInt(25) <= 5) ?
+									// blockToUse : STONE;
+									blockToUse = (rand.nextInt(45) <= 5) ? ZGBlocks.blockCookie.getDefaultState()
+											: blockToUse;
+									blockToUse = (rand.nextInt(35) <= 5) ? ZGBlocks.blockChocolate.getDefaultState()
+											: blockToUse;
+									blockToUse = (rand.nextInt(55) <= 5) ? ZGBlocks.blockBrownie.getDefaultState()
+											: blockToUse;
+									blockToUse = (rand.nextInt(25) <= 5) ? ZGBlocks.blockSugarCube.getDefaultState()
+											: blockToUse;
+									blockToUse = (rand.nextInt(65) <= 5) ? ZGBlocks.blockIceCreamSandwich.getDefaultState()
+											: blockToUse;
+									
+									primer.setBlockState(x, y, z, blockToUse);
 								} else if (y < SEA_LEVEL) {
 									Biome biome = world.getBiome(new BlockPos(x, y, z));
 									IBlockState blockToUse = (biome.getTempCategory() == TempCategory.COLD) ? ICE

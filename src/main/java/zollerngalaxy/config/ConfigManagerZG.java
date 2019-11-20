@@ -14,6 +14,7 @@ public class ConfigManagerZG {
 	public static String CATEGORY_MISC = "Miscallenous";
 	public static String CATEGORY_COMPATIBILITY = "Compatibility";
 	public static String CATEGORY_COORDINATES = "Coordinates";
+	public static String CATEGORY_CUSTOMIZATIONS = "Customizations";
 	
 	// Planets (Psios)
 	public static int planetEdenDimensionId;
@@ -28,6 +29,9 @@ public class ConfigManagerZG {
 	public static int planetXantheonDimensionId;
 	public static int planetCandoraDimensionId;
 	public static int planetAtheonDimensionId;
+	
+	// Planets (Sol-2)
+	public static int planetExodusDimensionId;
 	
 	// Planets (Pantheon)
 	public static int planetMeztliDimensionId;
@@ -149,6 +153,9 @@ public class ConfigManagerZG {
 		planetXantheonDimensionId = configuration.get(CATEGORY_DIMENSIONS, "Planet Xantheon Dimension ID", -7984).getInt();
 		planetCandoraDimensionId = configuration.get(CATEGORY_DIMENSIONS, "Planet Candora Dimension ID", -7777).getInt();
 		planetAtheonDimensionId = configuration.get(CATEGORY_DIMENSIONS, "Planet Atheon Dimension ID", -7998).getInt();
+		
+		// Planets (Sol-2)
+		planetExodusDimensionId = configuration.get(CATEGORY_DIMENSIONS, "Planet Exodus Dimension ID", -7980).getInt();
 		
 		// Planets (Pantheon)
 		planetMeztliDimensionId = configuration.get(CATEGORY_DIMENSIONS, "Planet Meztli Dimension ID", -7991).getInt();
@@ -277,6 +284,9 @@ public class ConfigManagerZG {
 				"If Planet Progressions is installed, " + " you will need to discover the Planet or Moon "
 						+ " before you can travel to it via Star Gates."
 						+ " Set this to false to disable that. (default: true)").getBoolean();
+		
+		// Customization Options
+		// TODO
 		
 		// Coords (Psios)
 		psiosX = (float) configuration.get(CATEGORY_COORDINATES, "Psios X", -2.5).getDouble();

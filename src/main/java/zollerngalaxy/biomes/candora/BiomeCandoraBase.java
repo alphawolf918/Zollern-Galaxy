@@ -12,6 +12,7 @@ import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.biomes.decorators.BiomeDecoratorCandora;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.blocks.fluids.ZGFluids;
+import zollerngalaxy.blocks.sweetblocks.CandyCubeBlock;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderCandora;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 import zollerngalaxy.planets.ZGPlanets;
@@ -21,7 +22,7 @@ public class BiomeCandoraBase extends BiomeSpace {
 	protected static final IBlockState STONE = ZGBlocks.candyCubeGray.getDefaultState();
 	protected static final IBlockState AIR = Blocks.AIR.getDefaultState();
 	protected static final IBlockState BEDROCK = Blocks.BEDROCK.getDefaultState();
-	protected static final IBlockState GRAVEL = ZGBlocks.blockCookie.getDefaultState();
+	protected static final IBlockState COOKIE = ZGBlocks.blockCookie.getDefaultState();
 	protected static final IBlockState DIRT = ZGBlocks.candyCubeBrown.getDefaultState();
 	protected static final IBlockState ICE = ZGBlocks.candyCubeCyan.getDefaultState();
 	
@@ -39,7 +40,7 @@ public class BiomeCandoraBase extends BiomeSpace {
 		this.decorator.grassPerChunk = -999;
 		this.decorator.mushroomsPerChunk = -999;
 		this.clearAllSpawning();
-		this.spawnableCreatureList.add(new SpawnListEntry(EntityAlienVillager.class, 35, 2, 8));
+		this.spawnableCreatureList.add(new SpawnListEntry(EntityAlienVillager.class, 5, 1, 2));
 		this.setPlanetForBiome(ZGPlanets.planetCandora);
 	}
 	
@@ -72,11 +73,12 @@ public class BiomeCandoraBase extends BiomeSpace {
 				} else {
 					if (iblockstate2.getMaterial() == Material.AIR) {
 						j = -1;
-					} else if (iblockstate2.getBlock() == STONE) {
+					} else if (iblockstate2.getBlock() instanceof CandyCubeBlock) {
 						if (j == -1) {
 							if (k <= 0) {
 								topState = AIR;
-								fillState = STONE;
+								// fillState = STONE;
+								fillState = ZGBlocks.candyCubeWhite.getDefaultState();
 							} else if (j1 >= i - 4 && j1 <= i + 1) {
 								topState = this.topBlock;
 								fillState = this.fillerBlock;
@@ -93,7 +95,7 @@ public class BiomeCandoraBase extends BiomeSpace {
 							} else if (j1 < i - 7 - k) {
 								topState = AIR;
 								fillState = STONE;
-								chunkPrimerIn.setBlockState(i1, j1, l, GRAVEL);
+								chunkPrimerIn.setBlockState(i1, j1, l, COOKIE);
 							} else {
 								chunkPrimerIn.setBlockState(i1, j1, l, fillState);
 							}

@@ -419,6 +419,8 @@ planet.xantheon=Xantheon
 planet.candora=Candora
 planet.atheon=Atheon
 
+planet.exodus=Exodus
+
 planet.meztli=Meztli
 planet.centotl=Centotl
 planet.toci=Toci
@@ -437,6 +439,7 @@ planet.reach=Reach
 
 star.psion6=Psios
 star.praedyth=Praedyth
+star.sol2=Sol-2
 star.pantheon=Pantheon
 star.olympus=Olympus
 star.asgard=Asgard
@@ -445,6 +448,7 @@ star.nova=Nova
 
 solarsystem.psion6=Psios
 solarsystem.praedyth=Praedyth
+solarsystem.sol2=Sol-2
 solarsystem.pantheon=Pantheon
 solarsystem.olympus=Olympus
 solarsystem.asgard=Asgard

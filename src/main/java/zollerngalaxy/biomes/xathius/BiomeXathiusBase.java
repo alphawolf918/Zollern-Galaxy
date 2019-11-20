@@ -36,7 +36,7 @@ public abstract class BiomeXathiusBase extends BiomeSpace {
 		this.decorator.treesPerChunk = -999;
 		this.decorator.grassPerChunk = -999;
 		this.decorator.mushroomsPerChunk = -999;
-		this.spawnableCreatureList.add(new SpawnListEntry(EntityAlienVillager.class, 15, 2, 4));
+		this.spawnableCreatureList.add(new SpawnListEntry(EntityAlienVillager.class, 5, 1, 2));
 		this.setStoneBlock(ZGBlocks.xathStone);
 		this.setPlanetForBiome(ZGPlanets.planetXathius);
 	}
