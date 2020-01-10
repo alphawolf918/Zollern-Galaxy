@@ -98,6 +98,10 @@ public class ConfigManagerZG {
 	public static boolean registerCobaltOreDict;
 	public static boolean enablePlanetProgressionsCompat;
 	
+	// Customizations
+	public static int kriffonLavaLakesPerChunk;
+	public static int kriffonLavaLakesGenChance;
+	
 	// Coords (Psios)
 	public static float psiosX;
 	public static float psiosY;
@@ -286,7 +290,10 @@ public class ConfigManagerZG {
 						+ " Set this to false to disable that. (default: true)").getBoolean();
 		
 		// Customization Options
-		// TODO
+		kriffonLavaLakesPerChunk = configuration.get(CATEGORY_CUSTOMIZATIONS, "Kriffon Lava Lakes Per Chunk", 4,
+				"The amount of Lava Lakes to generate per chunk on planet Kriffon. (default: 4)").getInt();
+		kriffonLavaLakesGenChance = configuration.get(CATEGORY_CUSTOMIZATIONS, "Kriffon Lava Lakes Gen Percentage", 25,
+				"The chance (out of 100) for a lava lake to generate on planet Kriffon. (default: 25)").getInt();
 		
 		// Coords (Psios)
 		psiosX = (float) configuration.get(CATEGORY_COORDINATES, "Psios X", -2.5).getDouble();

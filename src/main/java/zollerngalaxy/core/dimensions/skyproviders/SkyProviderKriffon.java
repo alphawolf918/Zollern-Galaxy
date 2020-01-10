@@ -20,7 +20,7 @@ public class SkyProviderKriffon extends SkyProviderBaseZG {
 	
 	public SkyProviderKriffon(IGalacticraftWorldProvider provider) {
 		super();
-		this.sunSize = 10.0F * provider.getSolarSize();
+		this.sunSize = 6.0F * provider.getSolarSize();
 	}
 	
 	@Override

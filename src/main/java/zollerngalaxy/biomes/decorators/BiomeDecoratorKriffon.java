@@ -7,6 +7,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import zollerngalaxy.blocks.ZGBlocks;
+import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.enums.EnumOreGenZG;
 import zollerngalaxy.worldgen.WorldGenLakesZG;
 import zollerngalaxy.worldgen.WorldGenMinableZG;
@@ -28,7 +29,7 @@ public class BiomeDecoratorKriffon extends BiomeDecoratorZG {
 	private WorldGenerator redstoneGen;
 	private WorldGenerator coalGen;
 	
-	public int lavaLakesPerChunk = 8;
+	public int lavaLakesPerChunk = ConfigManagerZG.kriffonLavaLakesPerChunk;
 	
 	public BiomeDecoratorKriffon() {
 		this.dirtGen = new WorldGenMinableZG(ZGBlocks.kriffDirt, SURFACE, EnumOreGenZG.DIRT);
@@ -59,14 +60,14 @@ public class BiomeDecoratorKriffon extends BiomeDecoratorZG {
 		this.generateOre(this.coalGen, EnumOreGenZG.COAL, world, rand);
 		this.generateOre(this.redstoneGen, EnumOreGenZG.REDSTONE, world, rand);
 		
-		int genY = 248;
+		int genY = 128;
 		int y = genY;
 		
 		if (this.lavaLakesPerChunk > 0) {
 			for (int i = 0; i < this.lavaLakesPerChunk; ++i) {
 				y = rand.nextInt(rand.nextInt(genY) + 8);
 				
-				if (rand.nextInt(100) <= 50) {
+				if (rand.nextInt(100) <= ConfigManagerZG.kriffonLavaLakesGenChance) {
 					(new WorldGenLakesZG(Blocks.LAVA, STONE)).generate(world, rand, this.chunkPos.add(x, y, z));
 				}
 			}

@@ -10,7 +10,13 @@
 * Random alien encounters that cause various things to happen.
 * Interaction with Modular Powersuits.
 * Interaction with Forestry.
-    * Special hives that generate on a certain planet. Space bees!
+    - Special hives that generate on a certain planet. Space bees!
 * Planet LV-426 with Facehuggers from Alien.
 * Pizza Planet?
-* ?
+* Transparent planet.
+* Planets with oceans that have flora and fauna in them.
+* Partially-procedural worlds.
+* Lost Desert planet.
+* Advancements.
+* Water planets.
+* 

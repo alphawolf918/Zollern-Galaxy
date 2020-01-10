@@ -71,11 +71,6 @@ public class WorldProviderKriffon extends WorldProviderZG {
 	}
 	
 	@Override
-	public int getHeight() {
-		return 800;
-	}
-	
-	@Override
 	public double getSolarEnergyMultiplier() {
 		return 6.5F;
 	}
@@ -118,7 +113,7 @@ public class WorldProviderKriffon extends WorldProviderZG {
 	
 	@Override
 	public int getAverageGroundLevel() {
-		return 82;
+		return 64;
 	}
 	
 	@Override

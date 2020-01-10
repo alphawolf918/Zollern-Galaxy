@@ -39,7 +39,10 @@ public class GenLayerCandoraBiomes extends GenLayerCandora {
 		ArrayList<BiomeEntry>[] currentBiomes = new ArrayList[CachedEnum.valuesBiomeCached().length];
 		List<BiomeEntry> list = new ArrayList<>();
 		list.add(new BiomeEntry(ZGBiomes.CANDY_MOUNTAIN, 75));
-		list.add(new BiomeEntry(ZGBiomes.CANDY_OCEAN, 45));
+		list.add(new BiomeEntry(ZGBiomes.CANDY_JOLLY_MELON_PLAINS, 65));
+		list.add(new BiomeEntry(ZGBiomes.CANDY_BLUEBERRY_HILLS, 55));
+		list.add(new BiomeEntry(ZGBiomes.CANDY_COOKIE_LANDS, 45));
+		list.add(new BiomeEntry(ZGBiomes.CANDY_OCEAN, 35));
 		
 		currentBiomes[BiomeType.WARM.ordinal()] = new ArrayList<>(list);
 		return currentBiomes;

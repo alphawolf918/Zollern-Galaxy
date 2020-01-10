@@ -54,6 +54,37 @@ public class ChunkProviderOrbitZG extends ChunkProviderBase {
 		if (k == 0 && l == 0) {
 			BlockPos pos = new BlockPos(k, 64, l);
 			this.world.setBlockState(pos, ZGBlocks.blockLore.getDefaultState(), 2);
+			
+			if (rand.nextInt(100) <= 50) {
+				BlockPos pos2 = new BlockPos(k, pos.getY() + 1, l);
+				this.world.setBlockState(pos2, ZGBlocks.blockLore.getDefaultState(), 2);
+			}
+			
+			if (rand.nextInt(100) <= 50) {
+				BlockPos pos3 = new BlockPos(k + 1, pos.getY(), l);
+				this.world.setBlockState(pos3, ZGBlocks.blockLore.getDefaultState(), 2);
+			}
+			
+			if (rand.nextInt(100) <= 50) {
+				BlockPos pos4 = new BlockPos(k, pos.getY(), l + 1);
+				this.world.setBlockState(pos4, ZGBlocks.blockLore.getDefaultState(), 2);
+			}
+			
+			if (rand.nextInt(100) <= 50) {
+				BlockPos pos2 = new BlockPos(k, pos.getY() - 1, l);
+				this.world.setBlockState(pos2, ZGBlocks.blockLore.getDefaultState(), 2);
+			}
+			
+			if (rand.nextInt(100) <= 50) {
+				BlockPos pos3 = new BlockPos(k - 1, pos.getY(), l);
+				this.world.setBlockState(pos3, ZGBlocks.blockLore.getDefaultState(), 2);
+			}
+			
+			if (rand.nextInt(100) <= 50) {
+				BlockPos pos4 = new BlockPos(k, pos.getY(), l - 1);
+				this.world.setBlockState(pos4, ZGBlocks.blockLore.getDefaultState(), 2);
+			}
+			
 			new WorldGenSpaceStationZG().generate(this.world, this.rand, new BlockPos(k - 10, 62, l - 3));
 		}
 		BlockFalling.fallInstantly = false;

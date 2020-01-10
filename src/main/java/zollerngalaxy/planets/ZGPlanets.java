@@ -368,7 +368,8 @@ public class ZGPlanets {
 				EnumAtmosphericGas.HELIUM);
 		planetCandora.setAtmosphere();
 		planetCandora.setPlanetIcon("candora");
-		planetCandora.setBiomeInfo(ZGBiomes.CANDY_MOUNTAIN, ZGBiomes.CANDY_OCEAN);
+		planetCandora.setBiomeInfo(ZGBiomes.CANDY_MOUNTAIN, ZGBiomes.CANDY_OCEAN, ZGBiomes.CANDY_JOLLY_MELON_PLAINS,
+				ZGBiomes.CANDY_BLUEBERRY_HILLS, ZGBiomes.CANDY_COOKIE_LANDS);
 		totalPlanets++;
 		
 		// Atheon
@@ -407,6 +408,7 @@ public class ZGPlanets {
 	public static void registerSystems() {
 		GalaxyRegistry.registerSolarSystem(systemPsios);
 		GalaxyRegistry.registerSolarSystem(systemPraedyth);
+		
 		if (!hideUnusedStarSystems) {
 			GalaxyRegistry.registerSolarSystem(systemPantheon);
 			GalaxyRegistry.registerSolarSystem(systemOlympus);

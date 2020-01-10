@@ -3,9 +3,21 @@ Zollern Galaxy v2.0.9
 =====================
 
 * Cut the spawn-rate of Alien Villagers on planets in half.
-    * Did the same thing to the Frost Giants on Zollus.
+    - Did the same thing to the Frost Giants on Zollus.
 * Slightly increased spawn-rate of Magmos on Kriffon.
 * Updated Candy Cube block textures for planet Candora.
 * Restructured Candora completely so that it generates as intended.
-* Cut chunk height of Kriffon to 72 instead of 92.
+* Lowered chunk height of Kriffon to 72 instead of 92.
+* Halved the amount of lava lakes per chunk on Kriffon.
+* Cut the chance for lava lakes to generate on Kriffon in half.
+* Added config options for customization on Kriffon.
+* Modified textures of Atheon Rock, Magma Rock and Zolrock.
+* Slightly lowered size of sun on Kriffon.
+* Lowered spawn rate and count of Magma Blocks on Kriffon.
+* Added new biomes to planet Candora.
+    - Jolly Watermelon Plains
+    - Blueberry Hills
+    - Cookie Lands
+* Lowered chunk height of Atheon.
+* Added a 50% chance (each) for 6 additional Lore Blocks to spawn on Space Stations.
 * 

@@ -42,7 +42,7 @@ public class ChunkProviderKriffon extends ChunkProviderBase {
 	
 	private static final int CRATER_PROB = 50;
 	
-	private static final int MID_HEIGHT = 72;
+	private static final int MID_HEIGHT = 62;
 	private static final int CHUNK_SIZE_X = 16;
 	private static final int CHUNK_SIZE_Y = 128;
 	private static final int CHUNK_SIZE_Z = 16;

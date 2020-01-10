@@ -22,8 +22,11 @@ import net.minecraft.world.biome.Biome.BiomeProperties;
 import net.minecraftforge.common.BiomeDictionary;
 import zollerngalaxy.biomes.atheon.BiomeGoldlands;
 import zollerngalaxy.biomes.atheon.BiomeRadiolarianLakes;
+import zollerngalaxy.biomes.candora.BiomeBlueberryHills;
 import zollerngalaxy.biomes.candora.BiomeCandyMountain;
 import zollerngalaxy.biomes.candora.BiomeChocolateOcean;
+import zollerngalaxy.biomes.candora.BiomeCookieLands;
+import zollerngalaxy.biomes.candora.BiomeJollyWatermelonPlains;
 import zollerngalaxy.biomes.eden.BiomeAsteroidCraters;
 import zollerngalaxy.biomes.eden.BiomeBloodDesert;
 import zollerngalaxy.biomes.eden.BiomeEdenOcean;
@@ -95,6 +98,10 @@ public class ZGBiomes {
 	// Candora
 	public static final Biome CANDY_MOUNTAIN = new BiomeCandyMountain(new BiomeProperties("Candy Mountain"));
 	public static final Biome CANDY_OCEAN = new BiomeChocolateOcean(new BiomeProperties("Chocolate Ocean"));
+	public static final Biome CANDY_JOLLY_MELON_PLAINS = new BiomeJollyWatermelonPlains(new BiomeProperties(
+			"Jolly Watermelon Plains"));
+	public static final Biome CANDY_BLUEBERRY_HILLS = new BiomeBlueberryHills(new BiomeProperties("Blueberry Hills"));
+	public static final Biome CANDY_COOKIE_LANDS = new BiomeCookieLands(new BiomeProperties("Cookie Lands"));
 	
 	// Atheon
 	public static final Biome ATHEON_GOLDLANDS = new BiomeGoldlands(new BiomeProperties("Golden Constructs"));
@@ -141,6 +148,9 @@ public class ZGBiomes {
 		// Candora
 		ZGBiomes.addBiome(ZGBiomes.CANDY_MOUNTAIN, MOUNTAIN);
 		ZGBiomes.addBiome(ZGBiomes.CANDY_OCEAN, OCEAN, WET);
+		ZGBiomes.addBiome(ZGBiomes.CANDY_JOLLY_MELON_PLAINS, PLAINS);
+		ZGBiomes.addBiome(ZGBiomes.CANDY_BLUEBERRY_HILLS, MOUNTAIN);
+		ZGBiomes.addBiome(ZGBiomes.CANDY_COOKIE_LANDS, PLAINS);
 		
 		// Atheon
 		ZGBiomes.addBiome(ZGBiomes.ATHEON_GOLDLANDS, DEAD, SPOOKY, HOT, WASTELAND);

@@ -35,7 +35,7 @@ public class ChunkProviderAtheon extends ChunkProviderBase {
 	public static final IBlockState STONE = ZGBlocks.atheonStone.getDefaultState();
 	public static final IBlockState WATER = ZGFluids.blockWhiteLavaFluid.getDefaultState();
 	
-	public static final double CHUNK_HEIGHT = 55.0D;
+	public static final double CHUNK_HEIGHT = 44.0D;
 	public static final int SEA_LEVEL = 57;
 	
 	private static final int CHUNK_SIZE_X = 16;
