@@ -85,7 +85,21 @@ public class ChunkProviderOrbitZG extends ChunkProviderBase {
 				this.world.setBlockState(pos4, ZGBlocks.blockLore.getDefaultState(), 2);
 			}
 			
-			new WorldGenSpaceStationZG().generate(this.world, this.rand, new BlockPos(k - 10, 62, l - 3));
+			int posX = k - 10;
+			int posY = 62;
+			int posZ = l - 3;
+			
+			BlockPos posGen1 = new BlockPos(posX, posY, posZ);
+			BlockPos posGen2 = new BlockPos(posX + 100, posY, posZ);
+			BlockPos posGen3 = new BlockPos(posX - 100, posY, posZ);
+			BlockPos posGen4 = new BlockPos(posX, posY, posZ + 100);
+			BlockPos posGen5 = new BlockPos(posX, posY, posZ - 100);
+			
+			new WorldGenSpaceStationZG().generate(this.world, this.rand, posGen1);
+			new WorldGenSpaceStationZG().generate(this.world, this.rand, posGen2);
+			new WorldGenSpaceStationZG().generate(this.world, this.rand, posGen3);
+			new WorldGenSpaceStationZG().generate(this.world, this.rand, posGen4);
+			new WorldGenSpaceStationZG().generate(this.world, this.rand, posGen5);
 		}
 		BlockFalling.fallInstantly = false;
 	}

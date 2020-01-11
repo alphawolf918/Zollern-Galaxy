@@ -19,5 +19,5 @@ Zollern Galaxy v2.0.9
     - Blueberry Hills
     - Cookie Lands
 * Lowered chunk height of Atheon.
-* Added a 50% chance (each) for 6 additional Lore Blocks to spawn on Space Stations.
-* 
+* Added a 50% chance (each) for six (6) additional Lore Blocks to spawn on Space Stations.
+* Zollern Galaxy Space Stations now generate five (5) stations 100 blocks away from each other.
