@@ -21,10 +21,6 @@ public class BiomeKriffon extends BiomeSpace {
 		this.setTempCategory(TempCategory.WARM);
 		this.setBiomeType(EnumBiomeTypeZG.VOLCANIC);
 		this.enableSnow = false;
-		this.decorator.flowersPerChunk = -999;
-		this.decorator.treesPerChunk = -999;
-		this.decorator.grassPerChunk = -999;
-		this.decorator.mushroomsPerChunk = -999;
 		this.spawnableCreatureList.add(new SpawnListEntry(EntityAlienVillager.class, 5, 1, 2));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityMagmos.class, 25, 1, 2));
 		this.topBlock = ZGBlocks.kriffSurfaceRock.getDefaultState();

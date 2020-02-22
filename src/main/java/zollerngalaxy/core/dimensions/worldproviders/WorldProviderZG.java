@@ -166,6 +166,19 @@ public abstract class WorldProviderZG extends WorldProviderSpace implements ISol
 	
 	protected abstract void renderWeather();
 	
+	public float getPlanetTemp() {
+		ZGPlanet planet = this.getPlanet();
+		float planetTemp = planet.getPlanetTemperature();
+		
+		if (this.isDaytime()) {
+			planetTemp /= 2.2F;
+		} else {
+			planetTemp = planet.getPlanetTemperature();
+		}
+		
+		return planetTemp;
+	}
+	
 	@Override
 	public abstract Class<? extends IChunkGenerator> getChunkProviderClass();
 	

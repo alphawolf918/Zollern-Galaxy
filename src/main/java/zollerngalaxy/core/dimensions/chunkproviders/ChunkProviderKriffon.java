@@ -40,9 +40,9 @@ public class ChunkProviderKriffon extends ChunkProviderBase {
 	private final MapGenCavesZG caveGenerator = new MapGenCavesZG(ZGBlocks.kriffStone, ZGBlocks.kriffMagmaRock);
 	private final MapGenRavinesZG ravineGenerator = new MapGenRavinesZG(ZGBlocks.kriffStone);
 	
-	private static final int CRATER_PROB = 50;
+	private static final int CRATER_PROB = 300;
 	
-	private static final int MID_HEIGHT = 62;
+	private static final int MID_HEIGHT = 63;
 	private static final int CHUNK_SIZE_X = 16;
 	private static final int CHUNK_SIZE_Y = 128;
 	private static final int CHUNK_SIZE_Z = 16;

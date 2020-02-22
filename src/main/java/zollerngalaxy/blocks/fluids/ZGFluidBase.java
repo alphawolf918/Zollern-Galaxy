@@ -27,7 +27,7 @@ public class ZGFluidBase extends BlockFluidClassic implements IZGFluidModel {
 	}
 	
 	public ZGFluidBase(String fluidName, Fluid fluid, Material material, MapColor mapColor) {
-		super(fluid, material, mapColor);
+		super(fluid, material);
 		this.setupFluid(fluidName);
 	}
 	

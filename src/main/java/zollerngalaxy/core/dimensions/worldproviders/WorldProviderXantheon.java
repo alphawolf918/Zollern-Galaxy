@@ -50,6 +50,11 @@ public class WorldProviderXantheon extends WorldProviderZG {
 	
 	@Override
 	public float getThermalLevelModifier() {
+		return -1.5F;
+	}
+	
+	@Override
+	public float getPlanetTemp() {
 		ZGPlanet planet = this.getPlanet();
 		float planetTemp = planet.getPlanetTemperature();
 		if (!this.isDaytime()) {

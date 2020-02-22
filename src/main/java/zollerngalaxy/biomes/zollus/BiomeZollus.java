@@ -20,13 +20,9 @@ public class BiomeZollus extends BiomeSpace {
 		props.setRainDisabled();
 		this.setBiomeType(EnumBiomeTypeZG.ICY);
 		this.enableSnow = true;
-		this.biomeDecor.flowersPerChunk = -999;
-		this.biomeDecor.treesPerChunk = -999;
-		this.biomeDecor.grassPerChunk = -999;
-		this.biomeDecor.mushroomsPerChunk = -999;
 		this.clearAllSpawning();
 		this.spawnableCreatureList.add(new SpawnListEntry(EntityAlienVillager.class, 5, 1, 2));
-		this.spawnableMonsterList.add(new SpawnListEntry(EntityFrostGiant.class, 25, 1, 1));
+		this.spawnableMonsterList.add(new SpawnListEntry(EntityFrostGiant.class, 15, 1, 1));
 		this.topBlock = ZGBlocks.zolSurfaceRock.getDefaultState();
 		this.fillerBlock = ZGBlocks.zolDirt.getDefaultState();
 		this.stoneBlock = ZGBlocks.zolStone;

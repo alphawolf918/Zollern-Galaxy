@@ -20,7 +20,6 @@ import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.core.dimensions.ZGDimensions;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderOasis;
 import zollerngalaxy.core.dimensions.skyproviders.SkyProviderOasis;
-import zollerngalaxy.planets.ZGPlanet;
 import zollerngalaxy.planets.ZGPlanets;
 
 public class WorldProviderOasis extends WorldProviderZG {
@@ -62,14 +61,7 @@ public class WorldProviderOasis extends WorldProviderZG {
 	
 	@Override
 	public float getThermalLevelModifier() {
-		ZGPlanet planet = this.getPlanet();
-		float planetTemp = planet.getPlanetTemperature();
-		
-		if (!this.isDaytime()) {
-			planetTemp /= 2.2F;
-		}
-		
-		return planetTemp;
+		return 0.0F;
 	}
 	
 	@Override

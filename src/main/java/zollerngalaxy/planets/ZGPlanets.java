@@ -265,10 +265,10 @@ public class ZGPlanets {
 		planetEden.setPlanetRadiation(0.0F);
 		planetEden.setBreathable(true);
 		planetEden.setWindLevel(0.6F);
-		planetEden.setDensity(0.9F);
+		planetEden.setDensity(1.0F);
 		planetEden.setHasRain(true);
 		planetEden.setPlanetGasses(EnumAtmosphericGas.NITROGEN, EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.ARGON,
-				EnumAtmosphericGas.WATER);
+				EnumAtmosphericGas.WATER, EnumAtmosphericGas.CO2);
 		planetEden.setAtmosphere();
 		planetEden.setPlanetIcon("eden");
 		planetEden.setBiomeInfo(ZGBiomes.EDEN_GREEN_LANDS, ZGBiomes.EDEN_BLOOD_DESERT, ZGBiomes.EDEN_ROCK_MOUNTAINS,

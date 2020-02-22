@@ -30,7 +30,7 @@ public class WorldProviderKriffon extends WorldProviderZG {
 	
 	@Override
 	public double getMeteorFrequency() {
-		return 4.0;
+		return 8.0;
 	}
 	
 	@Override
@@ -55,6 +55,11 @@ public class WorldProviderKriffon extends WorldProviderZG {
 	
 	@Override
 	public float getThermalLevelModifier() {
+		return 5.2F;
+	}
+	
+	@Override
+	public float getPlanetTemp() {
 		ZGPlanet planet = this.getPlanet();
 		float planetTemp = planet.getPlanetTemperature();
 		if (this.isDaytime()) {
@@ -87,7 +92,7 @@ public class WorldProviderKriffon extends WorldProviderZG {
 		if (var3 > 1.0F) {
 			var3 = 0.75F;
 		}
-		return var3 * var3 * 0.2F + 0.1F;
+		return var3 * var3 * 0.6F;
 	}
 	
 	@Override

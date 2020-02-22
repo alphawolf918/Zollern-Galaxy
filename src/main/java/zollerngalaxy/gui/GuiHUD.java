@@ -1,6 +1,5 @@
 package zollerngalaxy.gui;
 
-import micdoodle8.mods.galacticraft.api.prefab.world.gen.WorldProviderSpace;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.Gui;
@@ -21,6 +20,7 @@ import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL12;
 import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.config.ConfigManagerZG;
+import zollerngalaxy.core.dimensions.worldproviders.WorldProviderZG;
 import zollerngalaxy.core.enums.EnumPlanetClass;
 import zollerngalaxy.items.ZGItems;
 import zollerngalaxy.lib.helpers.ZGHelper;
@@ -68,7 +68,7 @@ public class GuiHUD extends Gui {
 				
 				if (biome instanceof BiomeSpace) {
 					BiomeSpace biomeSpace = (BiomeSpace) biome;
-					WorldProviderSpace spaceProvider = (WorldProviderSpace) worldProvider;
+					WorldProviderZG spaceProvider = (WorldProviderZG) worldProvider;
 					
 					// Biome Name
 					String biomeName = biome.getBiomeName();
@@ -78,9 +78,8 @@ public class GuiHUD extends Gui {
 					
 					// Planet Temp (Displays in either F or C)
 					String tempType = ConfigManagerZG.temperatureType;
-					float thermalMod = spaceProvider.getThermalLevelModifier();
 					float biomeTemp = biomeSpace.getBiomeTemp();
-					float planetTemp = thermalMod;
+					float planetTemp = spaceProvider.getPlanetTemp();
 					planetTemp = (spaceProvider.isDaytime()) ? planetTemp + biomeTemp : planetTemp - biomeTemp;
 					tempType = (tempType != "F" && tempType != "C") ? "F" : tempType;
 					if (tempType == "F") {

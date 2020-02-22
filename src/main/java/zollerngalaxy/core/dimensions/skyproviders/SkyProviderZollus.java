@@ -75,37 +75,41 @@ public class SkyProviderZollus extends SkyProviderBaseZG {
 		GlStateManager.pushMatrix();
 		
 		// Eden
-		scale = 1.5F;
-		GlStateManager.scale(0.6F, 0.6F, 0.6F);
-		GlStateManager.rotate(50.0F, 0.0F, 0.0F, 1.0F);
-		GlStateManager.rotate(200F, 1.0F, 0.0F, 0.0F);
-		GlStateManager.color(1.0F, 1.0F, 1.0F, 1F);
-		GlStateManager.rotate(world.getCelestialAngle(partialTicks) * 360.0F, 1.0F, 0.0F, 0.0F);
-		mc.getTextureManager().bindTexture(this.edenTexture);
-		worldrenderer.begin(7, DefaultVertexFormats.POSITION_TEX);
-		worldrenderer.pos(-scale, 100.0D, -scale).tex(0.0D, 0.0D).endVertex();
-		worldrenderer.pos(scale, 100.0D, -scale).tex(1.0D, 0.0D).endVertex();
-		worldrenderer.pos(scale, 100.0D, scale).tex(1.0D, 1.0D).endVertex();
-		worldrenderer.pos(-scale, 100.0D, scale).tex(0.0D, 1.0D).endVertex();
-		tessellator.draw();
+		// scale = 1.5F;
+		// GlStateManager.scale(0.6F, 0.6F, 0.6F);
+		// GlStateManager.rotate(50.0F, 0.0F, 0.0F, 1.0F);
+		// GlStateManager.rotate(200F, 1.0F, 0.0F, 0.0F);
+		// GlStateManager.color(1.0F, 1.0F, 1.0F, 1F);
+		// GlStateManager.rotate(world.getCelestialAngle(partialTicks) * 360.0F,
+		// 1.0F, 0.0F, 0.0F);
+		// mc.getTextureManager().bindTexture(this.edenTexture);
+		// worldrenderer.begin(7, DefaultVertexFormats.POSITION_TEX);
+		// worldrenderer.pos(-scale, 100.0D, -scale).tex(0.0D,
+		// 0.0D).endVertex();
+		// worldrenderer.pos(scale, 100.0D, -scale).tex(1.0D, 0.0D).endVertex();
+		// worldrenderer.pos(scale, 100.0D, scale).tex(1.0D, 1.0D).endVertex();
+		// worldrenderer.pos(-scale, 100.0D, scale).tex(0.0D, 1.0D).endVertex();
+		// tessellator.draw();
 		
-		GlStateManager.popMatrix();
-		GlStateManager.pushMatrix();
-		
-		// Purgot
-		scale = 2.0F;
-		GlStateManager.scale(0.6F, 0.6F, 0.6F);
-		GlStateManager.rotate(-150.0F, 1.0F, 0.0F, 1.0F);
-		GlStateManager.rotate(-200F, 1.0F, 0.0F, 0.0F);
-		GlStateManager.color(1.0F, 1.0F, 1.0F, 1F);
-		GlStateManager.rotate(world.getCelestialAngle(partialTicks) * 360.0F, 1.0F, 0.0F, 0.0F);
-		mc.getTextureManager().bindTexture(this.purgotTexture);
-		worldrenderer.begin(7, DefaultVertexFormats.POSITION_TEX);
-		worldrenderer.pos(-scale, 100.0D, -scale).tex(0.0D, 0.0D).endVertex();
-		worldrenderer.pos(scale, 100.0D, -scale).tex(1.0D, 0.0D).endVertex();
-		worldrenderer.pos(scale, 100.0D, scale).tex(1.0D, 1.0D).endVertex();
-		worldrenderer.pos(-scale, 100.0D, scale).tex(0.0D, 1.0D).endVertex();
-		tessellator.draw();
+		// GlStateManager.popMatrix();
+		// GlStateManager.pushMatrix();
+		//
+		// // Purgot
+		// scale = 2.0F;
+		// GlStateManager.scale(0.6F, 0.6F, 0.6F);
+		// GlStateManager.rotate(-150.0F, 1.0F, 0.0F, 1.0F);
+		// GlStateManager.rotate(-200F, 1.0F, 0.0F, 0.0F);
+		// GlStateManager.color(1.0F, 1.0F, 1.0F, 1F);
+		// GlStateManager.rotate(world.getCelestialAngle(partialTicks) * 360.0F,
+		// 1.0F, 0.0F, 0.0F);
+		// mc.getTextureManager().bindTexture(this.purgotTexture);
+		// worldrenderer.begin(7, DefaultVertexFormats.POSITION_TEX);
+		// worldrenderer.pos(-scale, 100.0D, -scale).tex(0.0D,
+		// 0.0D).endVertex();
+		// worldrenderer.pos(scale, 100.0D, -scale).tex(1.0D, 0.0D).endVertex();
+		// worldrenderer.pos(scale, 100.0D, scale).tex(1.0D, 1.0D).endVertex();
+		// worldrenderer.pos(-scale, 100.0D, scale).tex(0.0D, 1.0D).endVertex();
+		// tessellator.draw();
 		
 		GlStateManager.popMatrix();
 	}
@@ -140,6 +144,6 @@ public class SkyProviderZollus extends SkyProviderBaseZG {
 		if (var3 > 1.0F) {
 			var3 = 1.0F;
 		}
-		return var3 * var3 * 1F;
+		return var3 * var3 * 1.2F;
 	}
 }
