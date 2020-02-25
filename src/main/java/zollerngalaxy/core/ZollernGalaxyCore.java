@@ -1,3 +1,10 @@
+/**
+ * Zollern Galaxy by @author Zollern Wolf
+ * Copyright 2016 - 2025
+ * You may use this code to learn from, but do not
+ * claim it as your own, and do not
+ * redistribute it.
+ */
 package zollerngalaxy.core;
 
 import micdoodle8.mods.galacticraft.api.world.BiomeGenBaseGC;
@@ -44,7 +51,7 @@ public class ZollernGalaxyCore {
 	private static ZollernGalaxyCore INSTANCE;
 	
 	// CHANGE THIS TO FALSE BEFORE DEPLOYMENT!!
-	private static final boolean DEV_MODE = false;
+	private static final boolean DEV_MODE = true;
 	
 	public static SimpleNetworkWrapper snw;
 	
@@ -71,8 +78,7 @@ public class ZollernGalaxyCore {
 	public void preInit(FMLPreInitializationEvent event) {
 		ZGHelper.Log("Beginning Pre-Initilization phase...");
 		snw = NetworkRegistry.INSTANCE.newSimpleChannel(ZGInfo.CHANNEL);
-		snw.registerMessage(MessageTeleportToDimension.TeleportHandler.class, MessageTeleportToDimension.class, 1,
-				Side.SERVER);
+		snw.registerMessage(MessageTeleportToDimension.TeleportHandler.class, MessageTeleportToDimension.class, 1, Side.SERVER);
 		ConfigManagerZG.init(event);
 		ZGSoundEvents.init();
 		ModHelperBase.detectMods();

@@ -1,3 +1,10 @@
+/**
+ * Zollern Galaxy by @author Zollern Wolf
+ * Copyright 2016 - 2025
+ * You may use this code to learn from, but do not
+ * claim it as your own, and do not
+ * redistribute it.
+ */
 package zollerngalaxy.biomes.decorators;
 
 import java.util.Random;
@@ -23,8 +30,7 @@ public abstract class BiomeDecoratorZG extends BiomeDecorator {
 		this.generateOre(generator, oreGen.getBlockCount(), oreGen.getMinHeight(), oreGen.getMaxHeight(), world, rand);
 	}
 	
-	protected void generateOre(WorldGenerator generator, int blockCount, int minHeight, int maxHeight, World world,
-			Random rand) {
+	protected void generateOre(WorldGenerator generator, int blockCount, int minHeight, int maxHeight, World world, Random rand) {
 		if (maxHeight < minHeight) {
 			int i = minHeight;
 			minHeight = maxHeight;
@@ -48,11 +54,10 @@ public abstract class BiomeDecoratorZG extends BiomeDecorator {
 		this.generateLapis(generator, oreGen.getBlockCount(), oreGen.getMinHeight(), oreGen.getMaxHeight(), world, rand);
 	}
 	
-	protected void generateLapis(WorldGenerator generator, int blockCount, int centerHeight, int spread, World world,
-			Random rand) {
+	protected void generateLapis(WorldGenerator generator, int blockCount, int centerHeight, int spread, World world, Random rand) {
 		for (int i = 0; i < blockCount; ++i) {
-			BlockPos blockpos = this.chunkPos.add(rand.nextInt(16), rand.nextInt(spread) + rand.nextInt(spread)
-					+ centerHeight - spread, rand.nextInt(16));
+			BlockPos blockpos = this.chunkPos.add(rand.nextInt(16), rand.nextInt(spread) + rand.nextInt(spread) + centerHeight
+					- spread, rand.nextInt(16));
 			generator.generate(world, rand, blockpos);
 		}
 	}

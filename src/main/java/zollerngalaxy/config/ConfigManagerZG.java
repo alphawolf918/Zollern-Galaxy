@@ -57,7 +57,13 @@ public class ConfigManagerZG {
 	// Planets (Nova)
 	public static int planetPrimorDimensionId;
 	
-	// Space Stations
+	// Number of Space Stations to generate
+	public static int spaceStationGenAmount;
+	
+	// Whether or not Lore Blocks can spawn extra
+	public static boolean canExtraLoreSpawn;
+	
+	// Space Station IDs
 	public static int spaceStationZollusId;
 	public static int spaceStationZollusStaticId;
 	
@@ -186,7 +192,18 @@ public class ConfigManagerZG {
 		// Planets (Nova)
 		planetPrimorDimensionId = configuration.get(CATEGORY_DIMENSIONS, "Planet Primor Dimension ID", -7989).getInt();
 		
+		// Number of space stations to generate
+		spaceStationGenAmount = configuration.get(CATEGORY_SATELLITES, "Space Station Generation Count", 1,
+				"How many Space Stations should generate in orbit (between 1 to 5)? (default: 1)").getInt();
+		spaceStationGenAmount = (spaceStationGenAmount <= 5) ? spaceStationGenAmount : 5;
+		spaceStationGenAmount = (spaceStationGenAmount >= 1) ? spaceStationGenAmount : 1;
+		
+		// Whether or not Lore Blocks can spawn extra
+		canExtraLoreSpawn = configuration.get(CATEGORY_SATELLITES, "Spawn Extra Lore Blocks", true,
+				"Can additional Lore Blocks spawn? (default: true)").getBoolean();
+		
 		// Space Stations (Psios-6)
+		
 		// Zollus
 		spaceStationZollusId = configuration.get(CATEGORY_SATELLITES, "Zollus Space Station ID", -6000).getInt();
 		spaceStationZollusStaticId = configuration.get(CATEGORY_SATELLITES, "Zollus Space Station Static ID", -6001)

@@ -1,8 +1,16 @@
+/**
+ * Zollern Galaxy by @author Zollern Wolf
+ * Copyright 2016 - 2025
+ * You may use this code to learn from, but do not
+ * claim it as your own, and do not
+ * redistribute it.
+ */
 package zollerngalaxy.core.dimensions.skyproviders;
 
 import java.util.Random;
 import micdoodle8.mods.galacticraft.core.Constants;
 import micdoodle8.mods.galacticraft.core.client.SkyProviderOrbit;
+import micdoodle8.mods.galacticraft.core.dimension.WorldProviderOverworldOrbit;
 import micdoodle8.mods.galacticraft.core.util.ConfigManagerCore;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.WorldClient;
@@ -15,6 +23,7 @@ import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.WorldProvider;
 import net.minecraftforge.fml.client.FMLClientHandler;
 import org.lwjgl.opengl.GL11;
 import zollerngalaxy.lib.ZGInfo;
@@ -22,6 +31,7 @@ import zollerngalaxy.lib.ZGInfo;
 public class SkyProviderOrbitZG extends SkyProviderOrbit {
 	
 	private static ResourceLocation sunTexture;
+	private static WorldProviderOverworldOrbit orbitProvider;
 	
 	public int starGLCallList = GLAllocation.generateDisplayLists(3);
 	public int glSkyList;
@@ -33,10 +43,11 @@ public class SkyProviderOrbitZG extends SkyProviderOrbit {
 	private float prevPartialTicks = 0;
 	private long prevTick;
 	
-	public SkyProviderOrbitZG(ResourceLocation planet, String textureSun) {
+	public SkyProviderOrbitZG(ResourceLocation planet, String textureSun, WorldProvider providerIn) {
 		super(planet, false, true);
 		this.planetToRender = planet;
 		this.sunTexture = new ResourceLocation(ZGInfo.MOD_ID, "textures/gui/" + textureSun + ".png");
+		orbitProvider = (WorldProviderOverworldOrbit) providerIn;
 		GL11.glPushMatrix();
 		GL11.glNewList(this.starGLCallList, GL11.GL_COMPILE);
 		this.renderStars();
@@ -131,8 +142,8 @@ public class SkyProviderOrbitZG extends SkyProviderOrbit {
 			GL11.glShadeModel(GL11.GL_SMOOTH);
 			GL11.glPushMatrix();
 			GL11.glRotatef(90.0F, 1.0F, 0.0F, 0.0F);
-			GL11.glRotatef(MathHelper.sin(this.minecraft.world.getCelestialAngleRadians(partialTicks)) < 0.0F ? 180.0F
-					: 0.0F, 0.0F, 0.0F, 1.0F);
+			GL11.glRotatef(MathHelper.sin(this.minecraft.world.getCelestialAngleRadians(partialTicks)) < 0.0F ? 180.0F : 0.0F,
+					0.0F, 0.0F, 1.0F);
 			GL11.glRotatef(90.0F, 0.0F, 0.0F, 1.0F);
 			var8 = var24[0];
 			var9 = var24[1];
@@ -206,7 +217,7 @@ public class SkyProviderOrbitZG extends SkyProviderOrbit {
 		if (this.renderSun) {
 			GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
 			GL11.glDisable(GL11.GL_TEXTURE_2D);
-			GL11.glColor4f(0.0F, 0.0F, 0.0F, 1.0F);
+			GL11.glColor4f(255.0F, 255.0F, 255.0F, 1.0F);
 			var12 = 8.0F;
 			BufferBuilder worldRenderer = var23.getBuffer();
 			worldRenderer.begin(GL11.GL_QUADS, DefaultVertexFormats.POSITION);
@@ -218,7 +229,7 @@ public class SkyProviderOrbitZG extends SkyProviderOrbit {
 			GL11.glEnable(GL11.GL_TEXTURE_2D);
 			GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE);
 			GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-			var12 = 28.0F;
+			var12 = orbitProvider.getSolarSize(); // 28.0F;
 			this.minecraft.renderEngine.bindTexture(SkyProviderOrbitZG.sunTexture);
 			worldRenderer.begin(GL11.GL_QUADS, DefaultVertexFormats.POSITION_TEX);
 			worldRenderer.pos(-var12, 100.0D, -var12).tex(0.0D, 0.0D).endVertex();
@@ -261,40 +272,6 @@ public class SkyProviderOrbitZG extends SkyProviderOrbit {
 		GL11.glEnable(GL11.GL_ALPHA_TEST);
 		
 		GL11.glColor3f(0.0F, 0.0F, 0.0F);
-		
-		/*
-		 * This all does nothing! double var25 = 0.0D;
-		 * 
-		 * // if (this.minecraft.player.getRidingEntity() != null) { var25 =
-		 * this.minecraft.player.posY - 64;
-		 * 
-		 * if (var25 < 0.0D) { // GL11.glPushMatrix(); //
-		 * GL11.glTranslatef(0.0F, 12.0F, 0.0F); //
-		 * GL11.glCallList(this.glSkyList2); // GL11.glPopMatrix(); // var10 =
-		 * 1.0F; // var11 = -((float)(var25 + 65.0D)); // var12 = -var10; //
-		 * var23.startDrawingQuads(); // var23.setColorRGBA_I(0, 255); //
-		 * var23.addVertex(-var10, var11, var10); // var23.addVertex(var10,
-		 * var11, var10); // var23.addVertex(var10, var12, var10); //
-		 * var23.addVertex(-var10, var12, var10); // var23.addVertex(-var10,
-		 * var12, -var10); // var23.addVertex(var10, var12, -var10); //
-		 * var23.addVertex(var10, var11, -var10); // var23.addVertex(-var10,
-		 * var11, -var10); // var23.addVertex(var10, var12, -var10); //
-		 * var23.addVertex(var10, var12, var10); // var23.addVertex(var10,
-		 * var11, var10); // var23.addVertex(var10, var11, -var10); //
-		 * var23.addVertex(-var10, var11, -var10); // var23.addVertex(-var10,
-		 * var11, var10); // var23.addVertex(-var10, var12, var10); //
-		 * var23.addVertex(-var10, var12, -var10); // var23.addVertex(-var10,
-		 * var12, -var10); // var23.addVertex(-var10, var12, var10); //
-		 * var23.addVertex(var10, var12, var10); // var23.addVertex(var10,
-		 * var12, -var10); // var23.draw(); } }
-		 * 
-		 * if (this.minecraft.world.provider.isSkyColored()) {
-		 * GL11.glColor3f(0.0f, 0.0f, 0.0f); } else { GL11.glColor3f(var3, var4,
-		 * var5); } GL11.glColor3f(0.0f, 0.0f, 0.0f);
-		 * 
-		 * GL11.glPushMatrix(); GL11.glTranslatef(0.0F, -((float) (var25 -
-		 * 16.0D)), 0.0F); GL11.glPopMatrix();
-		 */
 		GlStateManager.enableRescaleNormal();
 		GL11.glEnable(GL11.GL_TEXTURE_2D);
 		GL11.glEnable(GL11.GL_COLOR_MATERIAL);

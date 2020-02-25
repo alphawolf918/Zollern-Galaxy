@@ -1,3 +1,10 @@
+/**
+ * Zollern Galaxy by @author Zollern Wolf
+ * Copyright 2016 - 2025
+ * You may use this code to learn from, but do not
+ * claim it as your own, and do not
+ * redistribute it.
+ */
 package zollerngalaxy.biomes.decorators;
 
 import java.util.Random;
@@ -129,8 +136,8 @@ public class BiomeDecoratorXathius extends BiomeDecoratorZG {
 		
 		if (this.xathTallGrassPerChunk > 0) {
 			for (int i = 0; i < this.xathTallGrassPerChunk + 4; ++i) {
-				ZGDecorateHelper.generatePlants(new WorldGenTallGrassZG((ZGBlockTallGrass) ZGBlocks.xathTallGrass), world,
-						rand, this.chunkPos);
+				ZGDecorateHelper.generatePlants(new WorldGenTallGrassZG((ZGBlockTallGrass) ZGBlocks.xathTallGrass), world, rand,
+						this.chunkPos);
 			}
 		}
 	}

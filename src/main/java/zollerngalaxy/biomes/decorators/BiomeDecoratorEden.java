@@ -1,3 +1,10 @@
+/**
+ * Zollern Galaxy by @author Zollern Wolf
+ * Copyright 2016 - 2025
+ * You may use this code to learn from, but do not
+ * claim it as your own, and do not
+ * redistribute it.
+ */
 package zollerngalaxy.biomes.decorators;
 
 import java.util.Random;
@@ -84,8 +91,7 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 		this.lapisGen = new WorldGenMinableZG(ZGBlocks.edenLapisOre, ZGBlocks.edenStone, EnumOreGenZG.LAPIS);
 		this.diamondGen = new WorldGenMinableZG(ZGBlocks.edenDiamondOre, ZGBlocks.edenStone, EnumOreGenZG.DIAMOND);
 		this.emeraldGen = new WorldGenMinableZG(ZGBlocks.edenEmeraldOre, ZGBlocks.edenStone, EnumOreGenZG.EMERALD);
-		this.meteoricIronGen = new WorldGenMinableZG(ZGBlocks.edenMeteoricIronOre, ZGBlocks.edenStone,
-				EnumOreGenZG.METEORIC_IRON);
+		this.meteoricIronGen = new WorldGenMinableZG(ZGBlocks.edenMeteoricIronOre, ZGBlocks.edenStone, EnumOreGenZG.METEORIC_IRON);
 		this.deshGen = new WorldGenMinableZG(ZGBlocks.edenDeshOre, ZGBlocks.edenStone, EnumOreGenZG.DESH);
 		this.viriGen = new WorldGenMinableZG(ZGBlocks.edenViriniumOre, ZGBlocks.edenStone, EnumOreGenZG.VIRINIUM);
 		this.cobaltGen = new WorldGenMinableZG(ZGBlocks.edenCobaltOre, ZGBlocks.edenStone, EnumOreGenZG.COBALT);
@@ -176,8 +182,8 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 		
 		if (this.edenTallGrassPerChunk > 0) {
 			for (int i = 0; i < this.edenTallGrassPerChunk + 4; ++i) {
-				ZGDecorateHelper.generatePlants(new WorldGenTallGrassZG((ZGBlockTallGrass) ZGBlocks.edenTallGrass), world,
-						rand, this.chunkPos);
+				ZGDecorateHelper.generatePlants(new WorldGenTallGrassZG((ZGBlockTallGrass) ZGBlocks.edenTallGrass), world, rand,
+						this.chunkPos);
 			}
 		}
 		

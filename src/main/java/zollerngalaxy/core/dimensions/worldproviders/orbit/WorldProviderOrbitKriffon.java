@@ -23,6 +23,11 @@ public class WorldProviderOrbitKriffon extends WorldProviderOverworldOrbit {
 	}
 	
 	@Override
+	public float getSolarSize() {
+		return 8.0F;
+	}
+	
+	@Override
 	public Vector3 getFogColor() {
 		return new Vector3(0, 0, 0);
 	}

@@ -1,3 +1,10 @@
+/**
+ * Zollern Galaxy by @author Zollern Wolf
+ * Copyright 2016 - 2025
+ * You may use this code to learn from, but do not
+ * claim it as your own, and do not
+ * redistribute it.
+ */
 package zollerngalaxy.biomes.decorators;
 
 import java.util.Random;
@@ -37,34 +44,25 @@ public class BiomeDecoratorCandora extends BiomeDecoratorZG {
 	public boolean generateLakes = true;
 	
 	public BiomeDecoratorCandora() {
-		this.brownGen = new WorldGenMinableZG(ZGBlocks.candyCubeBrown, ZGBlocks.candyCubeGray,
-				EnumOreGenZG.CANDY.setGenCount(35));
-		this.redGen = new WorldGenMinableZG(ZGBlocks.candyCubeRed, ZGBlocks.candyCubeGray,
-				EnumOreGenZG.CANDY.setGenCount(45));
-		this.whiteGen = new WorldGenMinableZG(ZGBlocks.candyCubeWhite, ZGBlocks.candyCubeGray,
-				EnumOreGenZG.CANDY.setGenCount(55));
+		this.brownGen = new WorldGenMinableZG(ZGBlocks.candyCubeBrown, ZGBlocks.candyCubeGray, EnumOreGenZG.CANDY.setGenCount(35));
+		this.redGen = new WorldGenMinableZG(ZGBlocks.candyCubeRed, ZGBlocks.candyCubeGray, EnumOreGenZG.CANDY.setGenCount(45));
+		this.whiteGen = new WorldGenMinableZG(ZGBlocks.candyCubeWhite, ZGBlocks.candyCubeGray, EnumOreGenZG.CANDY.setGenCount(55));
 		this.orangeGen = new WorldGenMinableZG(ZGBlocks.candyCubeOrange, ZGBlocks.candyCubeGray,
 				EnumOreGenZG.CANDY.setGenCount(35));
-		this.blackGen = new WorldGenMinableZG(ZGBlocks.candyCubeBlack, ZGBlocks.candyCubeGray,
-				EnumOreGenZG.CANDY.setGenCount(30));
+		this.blackGen = new WorldGenMinableZG(ZGBlocks.candyCubeBlack, ZGBlocks.candyCubeGray, EnumOreGenZG.CANDY.setGenCount(30));
 		this.purpleGen = new WorldGenMinableZG(ZGBlocks.candyCubePurple, ZGBlocks.candyCubePurple,
 				EnumOreGenZG.CANDY.setGenCount(35));
-		this.blueGen = new WorldGenMinableZG(ZGBlocks.candyCubeBlue, ZGBlocks.candyCubeGray,
-				EnumOreGenZG.CANDY.setGenCount(30));
+		this.blueGen = new WorldGenMinableZG(ZGBlocks.candyCubeBlue, ZGBlocks.candyCubeGray, EnumOreGenZG.CANDY.setGenCount(30));
 		this.yellowGen = new WorldGenMinableZG(ZGBlocks.candyCubeYellow, ZGBlocks.candyCubeGray,
 				EnumOreGenZG.CANDY.setGenCount(25));
-		this.cyanGen = new WorldGenMinableZG(ZGBlocks.candyCubeCyan, ZGBlocks.candyCubeGray,
-				EnumOreGenZG.CANDY.setGenCount(15));
-		this.greenGen = new WorldGenMinableZG(ZGBlocks.candyCubeGreen, ZGBlocks.candyCubeGray,
-				EnumOreGenZG.CANDY.setGenCount(15));
-		this.pinkGen = new WorldGenMinableZG(ZGBlocks.candyCubePink, ZGBlocks.candyCubeGray,
-				EnumOreGenZG.CANDY.setGenCount(35));
+		this.cyanGen = new WorldGenMinableZG(ZGBlocks.candyCubeCyan, ZGBlocks.candyCubeGray, EnumOreGenZG.CANDY.setGenCount(15));
+		this.greenGen = new WorldGenMinableZG(ZGBlocks.candyCubeGreen, ZGBlocks.candyCubeGray, EnumOreGenZG.CANDY.setGenCount(15));
+		this.pinkGen = new WorldGenMinableZG(ZGBlocks.candyCubePink, ZGBlocks.candyCubeGray, EnumOreGenZG.CANDY.setGenCount(35));
 		this.chocolateGen = new WorldGenMinableZG(ZGBlocks.blockCookie, ZGBlocks.candyCubeGray,
 				EnumOreGenZG.SWEET.setGenCount(25));
 		this.cookieGen = new WorldGenMinableZG(ZGBlocks.blockChocolate, ZGBlocks.candyCubeGray,
 				EnumOreGenZG.SWEET.setGenCount(16));
-		this.brownieGen = new WorldGenMinableZG(ZGBlocks.blockBrownie, ZGBlocks.candyCubeGray,
-				EnumOreGenZG.SWEET.setGenCount(18));
+		this.brownieGen = new WorldGenMinableZG(ZGBlocks.blockBrownie, ZGBlocks.candyCubeGray, EnumOreGenZG.SWEET.setGenCount(18));
 		this.sugarCubeGen = new WorldGenMinableZG(ZGBlocks.blockSugarCube, ZGBlocks.candyCubeGray,
 				EnumOreGenZG.SWEET.setGenCount(20));
 		this.iceCreamSandwichGen = new WorldGenMinableZG(ZGBlocks.blockIceCreamSandwich, ZGBlocks.candyCubeGray,

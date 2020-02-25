@@ -38,7 +38,7 @@ public class ZGSkyProviderHandler {
 			if (world.provider instanceof WorldProviderOrbitZollus) {
 				if (world.provider.getSkyRenderer() == null || world.provider.getSkyRenderer() instanceof SkyProviderOrbit) {
 					SkyProviderOrbitZG sky = new SkyProviderOrbitZG(new ResourceLocation(ZGInfo.MOD_ID
-							+ ":textures/gui/zollus.png"), "psion6");
+							+ ":textures/gui/zollus.png"), "psion6", world.provider);
 					WorldProviderOrbitZollus provider = (WorldProviderOrbitZollus) world.provider;
 					provider.setSpinDeltaPerTick(provider.getSpinManager().getSpinRate());
 					world.provider.setSkyRenderer(sky);
@@ -53,7 +53,7 @@ public class ZGSkyProviderHandler {
 			if (world.provider instanceof WorldProviderOrbitKriffon) {
 				if (world.provider.getSkyRenderer() == null || world.provider.getSkyRenderer() instanceof SkyProviderOrbit) {
 					SkyProviderOrbitZG sky = new SkyProviderOrbitZG(new ResourceLocation(ZGInfo.MOD_ID
-							+ ":textures/gui/kriffus.png"), "psion6");
+							+ ":textures/gui/kriffus.png"), "psion6", world.provider);
 					WorldProviderOrbitKriffon provider = (WorldProviderOrbitKriffon) world.provider;
 					provider.setSpinDeltaPerTick(provider.getSpinManager().getSpinRate());
 					world.provider.setSkyRenderer(sky);
@@ -68,7 +68,7 @@ public class ZGSkyProviderHandler {
 			if (world.provider instanceof WorldProviderOrbitPurgot) {
 				if (world.provider.getSkyRenderer() == null || world.provider.getSkyRenderer() instanceof SkyProviderOrbit) {
 					SkyProviderOrbitZG sky = new SkyProviderOrbitZG(new ResourceLocation(ZGInfo.MOD_ID
-							+ ":textures/gui/purgot.png"), "psion6");
+							+ ":textures/gui/purgot.png"), "psion6", world.provider);
 					WorldProviderOrbitPurgot provider = (WorldProviderOrbitPurgot) world.provider;
 					provider.setSpinDeltaPerTick(provider.getSpinManager().getSpinRate());
 					world.provider.setSkyRenderer(sky);
@@ -83,7 +83,7 @@ public class ZGSkyProviderHandler {
 			if (world.provider instanceof WorldProviderOrbitEden) {
 				if (world.provider.getSkyRenderer() == null || world.provider.getSkyRenderer() instanceof SkyProviderOrbit) {
 					SkyProviderOrbitZG sky = new SkyProviderOrbitZG(new ResourceLocation(ZGInfo.MOD_ID
-							+ ":textures/gui/eden.png"), "psion6");
+							+ ":textures/gui/eden.png"), "psion6", world.provider);
 					WorldProviderOrbitEden provider = (WorldProviderOrbitEden) world.provider;
 					provider.setSpinDeltaPerTick(provider.getSpinManager().getSpinRate());
 					world.provider.setSkyRenderer(sky);
@@ -98,7 +98,7 @@ public class ZGSkyProviderHandler {
 			if (world.provider instanceof WorldProviderOrbitXathius) {
 				if (world.provider.getSkyRenderer() == null || world.provider.getSkyRenderer() instanceof SkyProviderOrbit) {
 					SkyProviderOrbitZG sky = new SkyProviderOrbitZG(new ResourceLocation(ZGInfo.MOD_ID
-							+ ":textures/gui/xathius.png"), "praedyth");
+							+ ":textures/gui/xathius.png"), "praedyth", world.provider);
 					WorldProviderOrbitXathius provider = (WorldProviderOrbitXathius) world.provider;
 					provider.setSpinDeltaPerTick(provider.getSpinManager().getSpinRate());
 					world.provider.setSkyRenderer(sky);
@@ -113,7 +113,7 @@ public class ZGSkyProviderHandler {
 			if (world.provider instanceof WorldProviderOrbitOasis) {
 				if (world.provider.getSkyRenderer() == null || world.provider.getSkyRenderer() instanceof SkyProviderOrbit) {
 					SkyProviderOrbitZG sky = new SkyProviderOrbitZG(new ResourceLocation(ZGInfo.MOD_ID
-							+ ":textures/gui/oasis.png"), "praedyth");
+							+ ":textures/gui/oasis.png"), "praedyth", world.provider);
 					WorldProviderOrbitOasis provider = (WorldProviderOrbitOasis) world.provider;
 					provider.setSpinDeltaPerTick(provider.getSpinManager().getSpinRate());
 					world.provider.setSkyRenderer(sky);
@@ -128,7 +128,7 @@ public class ZGSkyProviderHandler {
 			if (world.provider instanceof WorldProviderOrbitXantheon) {
 				if (world.provider.getSkyRenderer() == null || world.provider.getSkyRenderer() instanceof SkyProviderOrbit) {
 					SkyProviderOrbitZG sky = new SkyProviderOrbitZG(new ResourceLocation(ZGInfo.MOD_ID
-							+ ":textures/gui/xantheon.png"), "praedyth");
+							+ ":textures/gui/xantheon.png"), "praedyth", world.provider);
 					WorldProviderOrbitXantheon provider = (WorldProviderOrbitXantheon) world.provider;
 					provider.setSpinDeltaPerTick(provider.getSpinManager().getSpinRate());
 					world.provider.setSkyRenderer(sky);
@@ -143,7 +143,7 @@ public class ZGSkyProviderHandler {
 			if (world.provider instanceof WorldProviderOrbitCandora) {
 				if (world.provider.getSkyRenderer() == null || world.provider.getSkyRenderer() instanceof SkyProviderOrbit) {
 					SkyProviderOrbitZG sky = new SkyProviderOrbitZG(new ResourceLocation(ZGInfo.MOD_ID
-							+ ":textures/gui/candora.png"), "praedyth");
+							+ ":textures/gui/candora.png"), "praedyth", world.provider);
 					WorldProviderOrbitCandora provider = (WorldProviderOrbitCandora) world.provider;
 					provider.setSpinDeltaPerTick(provider.getSpinManager().getSpinRate());
 					world.provider.setSkyRenderer(sky);
@@ -158,7 +158,7 @@ public class ZGSkyProviderHandler {
 			if (world.provider instanceof WorldProviderOrbitAtheon) {
 				if (world.provider.getSkyRenderer() == null || world.provider.getSkyRenderer() instanceof SkyProviderOrbit) {
 					SkyProviderOrbitZG sky = new SkyProviderOrbitZG(new ResourceLocation(ZGInfo.MOD_ID
-							+ ":textures/gui/atheon.png"), "praedyth");
+							+ ":textures/gui/atheon.png"), "praedyth", world.provider);
 					WorldProviderOrbitAtheon provider = (WorldProviderOrbitAtheon) world.provider;
 					provider.setSpinDeltaPerTick(provider.getSpinManager().getSpinRate());
 					world.provider.setSkyRenderer(sky);

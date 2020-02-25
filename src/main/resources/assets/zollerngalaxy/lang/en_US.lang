@@ -209,6 +209,15 @@ tile.atheonrockbricks.name=Atheon Rock Bricks
 tile.atheonrock.name=Atheon Goldrock
 tile.goldenconstructblock.name=Golden Constructed Block
 
+tile.perdsand.name=Lost Sand
+tile.perdrock.name=Lost Rock
+tile.perdstone.name=Lost Stone
+tile.perdrockbricks.name=Lost Rock Bricks
+tile.perdcobble.name=Lost Cobblestone
+tile.perdgravel.name=Lost Gravel
+tile.perdcreepdirt.name=Lost Creepdirt
+tile.perdcreepstone.name=Lost Creepstone
+
 tile.amaranthblock.name=Block of Amaranth
 tile.azuriteblock.name=Block of Azurite
 tile.zollerniumblock.name=Block of Zollernium
@@ -420,6 +429,7 @@ planet.candora=Candora
 planet.atheon=Atheon
 
 planet.exodus=Exodus
+planet.perdita=Perdita
 
 planet.meztli=Meztli
 planet.centotl=Centotl

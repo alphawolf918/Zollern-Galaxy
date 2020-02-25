@@ -1,3 +1,10 @@
+/**
+ * Zollern Galaxy by @author Zollern Wolf
+ * Copyright 2016 - 2025
+ * You may use this code to learn from, but do not
+ * claim it as your own, and do not
+ * redistribute it.
+ */
 package zollerngalaxy.biomes.oasis;
 
 import java.util.Random;
@@ -56,8 +63,7 @@ public abstract class BiomeOasisBase extends BiomeSpace {
 		return (BiomeDecoratorOasis) this.decorator;
 	}
 	
-	public final void generateOasisTerrain(World worldIn, Random rand, ChunkPrimer chunkPrimerIn, int x, int z,
-			double noiseVal) {
+	public final void generateOasisTerrain(World worldIn, Random rand, ChunkPrimer chunkPrimerIn, int x, int z, double noiseVal) {
 		int i = worldIn.getSeaLevel();
 		float biomeHeight = this.getBiomeHeight();
 		IBlockState topState = this.topBlock;

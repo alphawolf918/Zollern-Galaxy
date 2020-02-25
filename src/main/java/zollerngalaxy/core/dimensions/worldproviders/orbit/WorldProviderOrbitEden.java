@@ -23,6 +23,11 @@ public class WorldProviderOrbitEden extends WorldProviderOverworldOrbit {
 	}
 	
 	@Override
+	public float getSolarSize() {
+		return 5.5F;
+	}
+	
+	@Override
 	public Vector3 getFogColor() {
 		float f = 1.1F - this.getStarBrightness(1.0F);
 		return new Vector3(2F / 255F * f, 128F / 255F * f, 248F / 255F * f);

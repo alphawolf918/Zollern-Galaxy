@@ -1,3 +1,10 @@
+/**
+ * Zollern Galaxy by @author Zollern Wolf
+ * Copyright 2016 - 2025
+ * You may use this code to learn from, but do not
+ * claim it as your own, and do not
+ * redistribute it.
+ */
 package zollerngalaxy.util;
 
 import java.util.ArrayList;
@@ -34,6 +41,42 @@ public class ZGLore {
 	public static LoreBook BOOK_EIGHTEEN;
 	public static LoreBook BOOK_NINETEEN;
 	public static LoreBook BOOK_TWENTY;
+	
+	public static LoreBook BOOK_TWENTYONE;
+	public static LoreBook BOOK_TWENTYTWO;
+	public static LoreBook BOOK_TWENTYTHREE;
+	public static LoreBook BOOK_TWENTYFOUR;
+	public static LoreBook BOOK_TWENTYFIVE;
+	
+	public static LoreBook BOOK_TWENTYSIX;
+	public static LoreBook BOOK_TWENTYSEVEN;
+	public static LoreBook BOOK_TWENTYEIGHT;
+	public static LoreBook BOOK_TWENTYNINE;
+	public static LoreBook BOOK_THIRTY;
+	
+	public static LoreBook BOOK_THIRTYONE;
+	public static LoreBook BOOK_THIRTYTWO;
+	public static LoreBook BOOK_THIRTYTHREE;
+	public static LoreBook BOOK_THIRTYFOUR;
+	public static LoreBook BOOK_THIRTYFIVE;
+	
+	public static LoreBook BOOK_THIRTYSIX;
+	public static LoreBook BOOK_THIRTYSEVEN;
+	public static LoreBook BOOK_THIRTYEIGHT;
+	public static LoreBook BOOK_THIRTYNINE;
+	public static LoreBook BOOK_FOURTY;
+	
+	public static LoreBook BOOK_FOURTYONE;
+	public static LoreBook BOOK_FOURTYTWO;
+	public static LoreBook BOOK_FOURTYTHREE;
+	public static LoreBook BOOK_FOURTYFOUR;
+	public static LoreBook BOOK_FOURTYFIVE;
+	
+	public static LoreBook BOOK_FOURTYSIX;
+	public static LoreBook BOOK_FOURTYSEVEN;
+	public static LoreBook BOOK_FOURTYEIGHT;
+	public static LoreBook BOOK_FOURTYNINE;
+	public static LoreBook BOOK_FIFTY;
 	
 	public static void init() {
 		BOOK_ONE = ZGLore.createLoreBook(1, "The Vranor",
@@ -115,8 +158,7 @@ public class ZGLore {
 				+ "populated by volcanic entities called the Magmos.", "The metal Cobalt can be found here.",
 				"The planet was named after the Kriff: "
 						+ "a race of red-skinned entities that drove their planet to extinction with their rapid evolution "
-						+ "and then had to escape.",
-				"They are said to be a plague, conquering planet after planet within days.",
+						+ "and then had to escape.", "They are said to be a plague, conquering planet after planet within days.",
 				"Kriffon is the closest to its star in the Psios-6 system.");
 		
 		BOOK_TEN = ZGLore.createLoreBook(10, "Planet Purgot",
@@ -134,8 +176,7 @@ public class ZGLore {
 						+ "which is a very powerful metal in the creation of Star Gates.",
 				"It also has some of the biggest oceans.");
 		
-		BOOK_TWELVE = ZGLore.createLoreBook(12, "Planet Oasis",
-				"Oasis is a paradise planet located in the Praedyth system.",
+		BOOK_TWELVE = ZGLore.createLoreBook(12, "Planet Oasis", "Oasis is a paradise planet located in the Praedyth system.",
 				"Some adventurers have reported finding oceans of Destabilized Redstone, "
 						+ "while others report simple red oceans. Its best qualities are its colors, "
 						+ "and its abundance of Super Charged Coal.",
@@ -152,9 +193,9 @@ public class ZGLore {
 		BOOK_FOURTEEN = ZGLore.createLoreBook(14, "Planet Candora", "Candora is considered an Exotic class planet, "
 				+ "which is a rare class that is usually only found by strange means.",
 				"It is often jokingly referred to as the Birthday Planet.", "It is filled with a Candy Cube landscape, "
-						+ "and has an ocean comprised entirely of melted chocolate.",
-				"No one knows how this is even possible.", "It usually is used as a partying planet, "
-						+ "and one of celebration.", "Many sweets can be found here, as can many strange anomalies.");
+						+ "and has an ocean comprised entirely of melted chocolate.", "No one knows how this is even possible.",
+				"It usually is used as a partying planet, " + "and one of celebration.",
+				"Many sweets can be found here, as can many strange anomalies.");
 		
 		BOOK_FIFTEEN = ZGLore.createLoreBook(15, "Plutonium",
 				"Plutonium, often used in Turbines, can be found on planet Xantheon.",
@@ -163,8 +204,7 @@ public class ZGLore {
 						+ "where the super-metal Zollernium can be found.");
 		
 		BOOK_SIXTEEN = ZGLore.createLoreBook(16, "Ayanna's Father", "Ayanna called to her father in the stars, "
-				+ "but alas he could not hear her.",
-				"He was entranced at the beauty of what he saw, " + "and what he felt.",
+				+ "but alas he could not hear her.", "He was entranced at the beauty of what he saw, " + "and what he felt.",
 				"\"There are so many of them,\" he had said to his daughter.",
 				"\"I think I'll go into one now, for I am tired, my dear.\"",
 				"After that, he had vanished into a peaceful slumber.",
@@ -175,8 +215,7 @@ public class ZGLore {
 				"The Dark Galaxy is rumored to be at the center of the universe, "
 						+ "destroying or corrupting all things that it touches.",
 				"Legend tells of adventurers that made it to this place, "
-						+ "but when they came back, they were somehow...different.",
-				"They looked, sounded, acted differently, "
+						+ "but when they came back, they were somehow...different.", "They looked, sounded, acted differently, "
 						+ "as if they were given a task or some menacing purpose to fulfill.",
 				"It's said that they serve whoever or whatever is inside of that galaxy: sentient dark matter.");
 		
@@ -199,9 +238,66 @@ public class ZGLore {
 				"It was full of beautiful, vibrant colors, "
 						+ "carving its own path in the universe as one of its most beautiful planets.",
 				"But, something had occurred on this planet.", "The darkness had consumed it entirely.",
-				"It was no longer a place of beauty, but of death and gloom.",
-				"Its old name was Forma, named for its beauty.", "But now... Now it brought death to all who set "
-						+ "foot upon it.", "It is one of the few worlds where the Dark Agents have succeeded.");
+				"It was no longer a place of beauty, but of death and gloom.", "Its old name was Forma, named for its beauty.",
+				"But now... Now it brought death to all who set " + "foot upon it.",
+				"It is one of the few worlds where the Dark Agents have succeeded.");
+		
+		BOOK_TWENTYONE = ZGLore.createLoreBook(21, "Class D Planets", "Class D planets are a small, rock-based body, "
+				+ "typically a heavily-cratered asteroid, moon, or planetoid with little or no atmosphere.");
+		
+		BOOK_TWENTYTWO = ZGLore.createLoreBook(22, "Class H Planets",
+				"Class H planets are a characteristically lifeless planet, uninhabitable by humans.",
+				"Could contain gasses Oxygen and Argon.");
+		
+		BOOK_TWENTYTHREE = ZGLore.createLoreBook(23, "Class J Planets", "Class J planets are typically a gas giant, "
+				+ "usually with wind speeds of over 10k kmph.", "Also should contain Fluorine gas in its atmosphere.");
+		
+		BOOK_TWENTYFOUR = ZGLore.createLoreBook(24, "Class K Planets", "Class K planets are a typically uninhabitable world "
+				+ "made sustainable by pressure domes and life-support systems.");
+		
+		BOOK_TWENTYFIVE = ZGLore.createLoreBook(25, "Class L Planets",
+				"Class L planets are a barely habitable world or moon that usually " + "consists of an Oxygen/Argon atmosphere.",
+				"Typically rich with flora, but no fauna.");
+		
+		BOOK_TWENTYSIX = ZGLore.createLoreBook(26, "Class M Planets",
+				"Class M planets are a habitable world suitable for sustaining human life, "
+						+ "with little or no terraforming required.",
+				"Atmosphere is usually composed of Nitrogen, Oxygen and other trace elements, "
+						+ "usually those required for life.", "These worlds are usually abundant with water, flora, and fauna,"
+						+ " with a core rich in Nickel and Iron.", "Some of these worlds can emit electromagnetic radiation.",
+				"Usually has its own entire ecosystem and amino acids.");
+		
+		BOOK_TWENTYSEVEN = ZGLore.createLoreBook(27, "Class N Planets", "Class N planets are a world with very little gravity, "
+				+ "rich in minable, volatile resources, typically used in explosives.");
+		
+		BOOK_TWENTYEIGHT = ZGLore.createLoreBook(28, "Class T Planets",
+				"Class T planets are a type of gas giant, typically home to dark matter life.");
+		
+		BOOK_TWENTYNINE = ZGLore.createLoreBook(29, "Class R Planets",
+				"Class R planets are a lesser bioclassification of a Class M planet," + " these worlds are generally habitable, "
+						+ "however they lack some or most of the characteristics for a terrestrial planet.");
+		
+		BOOK_THIRTY = ZGLore.createLoreBook(30, "Class Y Planets",
+				"Class Y planets are a world characterized by a toxic atmosphere, "
+						+ "thermionic radiation discharges and surface temperatures " + "at or above five hundred Kelvin, "
+						+ "nicknamed the \"demon class.\"", "Typically hazardous to both humans and starships.");
+		
+		BOOK_THIRTYONE = ZGLore.createLoreBook(31, "Class 9 Planets", "Class NINE planets are another type of gas giant, "
+				+ "usually located in the home star system of a hostile race.");
+		
+		BOOK_THIRTYTWO = ZGLore.createLoreBook(32, "Class Exotic Planets",
+				"Class Exotic planets are a strange world that is uniquely proportioned "
+						+ "and makes no logical sense; an anomaly.");
+		
+		BOOK_THIRTYTHREE = ZGLore.createLoreBook(33, "Class Abandoned Planets",
+				"Class Abandoned planets are a desolate void, long abandoned due to catastrophe or other hostility.");
+		
+		BOOK_THIRTYFOUR = ZGLore.createLoreBook(34, "Metamorphasis - Part 1", "At one point, for several months (Earth time), "
+				+ "all planets seemed to give off a uniquely intense thermal level.",
+				"It was as if the galaxy had somehow been supercharged, " + "and it is now cooling down.",
+				"While not yet known what caused it, " + "Earth's best scientists are trying to figure it out.",
+				"It should also be noted that drastic changes have affected Kriffon and Zollus.",
+				"They seem to be undergoing some kind of metamorphasis.", "End log. - Star Captain Hohen");
 		
 		ZGHelper.Log("Loaded a total of " + totalLoreBooks + " lore books.");
 	}

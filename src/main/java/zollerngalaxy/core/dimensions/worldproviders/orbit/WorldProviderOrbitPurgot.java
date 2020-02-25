@@ -24,6 +24,11 @@ public class WorldProviderOrbitPurgot extends WorldProviderOverworldOrbit {
 	}
 	
 	@Override
+	public float getSolarSize() {
+		return 0.5F;
+	}
+	
+	@Override
 	public Vector3 getSkyColor() {
 		float f = 0.6F - this.getStarBrightness(1.0F);
 		return new Vector3(255 / 255F * f, 20 / 255F * f, 255 / 255F * f);

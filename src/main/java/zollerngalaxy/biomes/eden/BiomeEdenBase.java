@@ -1,3 +1,10 @@
+/**
+ * Zollern Galaxy by @author Zollern Wolf
+ * Copyright 2016 - 2025
+ * You may use this code to learn from, but do not
+ * claim it as your own, and do not
+ * redistribute it.
+ */
 package zollerngalaxy.biomes.eden;
 
 import java.util.Random;
@@ -102,8 +109,7 @@ public abstract class BiomeEdenBase extends BiomeSpace {
 		return (BiomeDecoratorEden) this.decorator;
 	}
 	
-	public final void generateEdenTerrain(World worldIn, Random rand, ChunkPrimer chunkPrimerIn, int x, int z,
-			double noiseVal) {
+	public final void generateEdenTerrain(World worldIn, Random rand, ChunkPrimer chunkPrimerIn, int x, int z, double noiseVal) {
 		int i = worldIn.getSeaLevel();
 		float biomeHeight = this.getBiomeHeight();
 		IBlockState topState = this.topBlock;

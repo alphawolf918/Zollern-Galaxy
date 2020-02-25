@@ -1,0 +1,471 @@
+#Created by mindy15963
+
+language.name=Korean
+language.region=KR
+language.code=ko_KR
+
+tile.zolsurfacerock.name=졸루스 표면석
+tile.zolstone.name=졸루스석
+tile.zolcobblerock.name=졸루스 조약돌
+tile.zolrockbricks.name=졸루스 석재 벽돌
+tile.zolcrystals.name=졸늄 수정
+tile.zolcoalore.name=졸루스 석탄 광석
+tile.zolironore.name=졸루스 철광석
+tile.zolgoldore.name=졸루스 금광석
+tile.zoltinore.name=졸루스 주석 광석
+tile.zolcopperore.name=졸루스 구리 광석
+tile.zolheartore.name=졸루스 하튬 광석
+tile.zoldirt.name=졸루스 흙
+
+tile.edensurfacerock.name=에덴 표면석
+tile.edengrass.name=에덴 잔디 블록
+tile.edengrass_snow.name=에덴 눈 잔디 블록
+tile.edengoldengrass.name=에덴 금 잔디 블록
+tile.edenswampgrass.name=에덴 늪 잔디 블록
+tile.edensoil.name=에덴 흙
+tile.edenrock.name=에덴석
+tile.edencobblerock.name=에덴 조약돌
+tile.edenrockbricks.name=에덴 석재 벽돌
+tile.edenironore.name=에덴 철광석
+tile.edenmeteoricironore.name=에덴 유성 철광석
+tile.edengoldore.name=에덴 금광석
+tile.edendiamondore.name=에덴 다이아몬드 원석
+tile.edenemeraldore.name=에덴 에메랄드 원석
+tile.edencoalore.name=에덴 석탄 광석
+tile.edenredstoneore.name=에덴 레드스톤 원석
+tile.edenlapisore.name=에덴 청금석 원석
+tile.edencopperore.name=에덴 구리 광석
+tile.edentinore.name=에덴 주석 광석
+tile.edennickleore.name=에덴 니켈 광석
+tile.edensilverore.name=에덴 은광석
+tile.edenleadore.name=에덴 납 광석
+tile.edendeshore.name=에덴 데쉬 광석
+tile.edenaluminumore.name=에덴 알루미늄 광석
+tile.edenbronzeore.name=에덴 청동 광석
+tile.edeninvarore.name=에덴 인바 광석
+tile.edenelectrumore.name=에덴 일렉트륨 광석
+tile.edensteelore.name=에덴 강철광석
+tile.edenplatinumore.name=에덴 백금광석
+tile.edenuraniumore.name=에덴 우라늄 광석
+tile.edencyaniteore.name=에덴 남정석 광석
+tile.edenludacriteore.name=에덴 루다크라이트 광석
+tile.edenviriore.name=에덴 비리늄 광석
+tile.edencobaltore.name=에덴 코발트 광석
+tile.edeneveniumore.name=에덴 에베늄 광석
+tile.edenheartiumore.name=에덴 하튬 광석
+tile.viriblock.name=비리듐 블록
+tile.edenflower.name=에덴화
+tile.edenflower_blue.name=푸른 에덴화
+tile.edenflower_red.name=붉은 에덴화
+tile.edenflower_orange.name=주황 에덴화
+tile.edenflower_yellow.name=노란 에덴화
+tile.edenflower_purple.name=보라 에덴화
+tile.edenflower_cyan.name=청록 에덴화
+tile.edenflower_green.name=녹색 에덴화
+tile.edenflower_pink.name=분홍 에덴화
+tile.edenflower_black.name=검은 에덴화
+tile.edenflower_white.name=하얀 에덴화
+tile.edentallgrass.name=에덴 장초
+tile.bloodsand.name=에덴 혈사
+tile.bloodstone.name=에덴 혈석
+tile.bonestone.name=에덴 골석
+tile.edensacredstone.name=에덴 성석
+tile.edenfruit.name=에덴 인디고플루트
+tile.edenglass.name=에덴 유리
+tile.edenwoodlog.name=에덴나무 원목
+tile.edenwoodplanks.name=에덴나무 판자
+tile.edenwoodleaves.name=에덴나무 잎
+tile.edentreesapling.name=에덴나무 묘목
+tile.fruitofedenblock.name=에덴 열매
+tile.edengravel.name=에덴 자갈
+tile.edenwinterrock.name=에덴 설암
+tile.brightstone.name=에덴 명석
+tile.edentreasurechest.name=에덴 보물 상자
+tile.edendungeonbricks.name=에덴 던전 벽돌 블록
+
+tile.crater_rock.name=크레이터암
+
+tile.kriffrock.name=크리폰 표면석
+tile.kriffstone.name=크리폰석
+tile.kriffcobblerock.name=크리폰 조약돌
+tile.kriffrockbricks.name=크리폰 석재 벽돌
+tile.kriffcoalore.name=크리폰 석탄 광석
+tile.kriffcopperore.name=크리폰 구리 광석
+tile.kriffredstoneore.name=크리폰 레드스톤 원석
+tile.kriffironore.name=크리폰 철광석
+tile.kriffgoldore.name=크리폰 금광석
+tile.kriffcobaltore.name=크리폰 코발트 광석
+tile.kriffdirt.name=크리폰 흙
+tile.cobaltblock.name=코발트 블록
+tile.magmarock.name=마그마암
+tile.blazerock.name=블레이즈암
+
+tile.purgrock.name=퍼고트 표면석
+tile.purgcobblerock.name=퍼고트 조약돌
+tile.purgrockbricks.name=퍼고트 석재 벽돌
+tile.purgstone.name=퍼고트석
+tile.purgdirt.name=퍼고트 흙
+tile.purggravel.name=퍼고트 자갈
+tile.whiterock.name=백암
+tile.blackrock.name=흑암
+tile.purgironore.name=퍼고트 철광석
+tile.purggoldore.name=퍼고트 금광석
+tile.purgcopperore.name=퍼고트 구리 광석
+tile.purgdiamondore.name=퍼고트 다이아몬드 원석
+tile.purgemeraldore.name=퍼고트 에메랄드 원석
+tile.purgeveniumore.name=퍼고트 에베늄 광석
+tile.purgcobaltore.name=퍼고트 코발트 광석
+tile.purgredstoneore.name=퍼고트 레드스톤 원석
+tile.purgaluminumore.name=퍼고트 알루미늄 광석
+tile.purgtinore.name=퍼고트 주석 광석
+tile.purgleadore.name=퍼고트 납 광석
+tile.purgmeteoricironore.name=퍼고트 유성 철광석
+tile.eveniumblock.name=에베늄 블록
+
+tile.xathrock.name=자티안 표면석
+tile.xathstone.name=자티안석
+tile.xathrockbricks.name=자티안 석재 블록
+tile.xathcobblerock.name=자티안 조약돌
+tile.xathdirt.name=자티안 흙
+tile.xathgrass.name=자티안 잔디 블록
+tile.xathgravel.name=자티안 자갈
+tile.xathtallgrass.name=자티안 장초
+tile.xathprometheanore.name=자티안 프로메시언 광석
+tile.xathemeraldore.name=자티안 에메랄드 원석
+tile.xathdiamondore.name=자티안 다이아몬드 원석
+tile.xathgoldore.name=자티안 금광석
+tile.xathironore.name=자티안 철광석
+tile.xathtinore.name=자티안 주석 광석
+tile.xathredstoneore.name=자티안 레드스톤 원석
+tile.xathazuriteore.name=자티안 남동석 광석
+tile.prometheanblock.name=프로메시언 블록
+
+tile.oasisrock.name=오아시스 표면석
+tile.oasisgrass.name=오아시스 잔디 블록
+tile.oasisstone.name=오아시스석
+tile.oasiscobblerock.name=오아시스 조약돌
+tile.oasisrockbricks.name=오아시스 석재 블록
+tile.oasisdirt.name=오아시스 흙
+tile.oasistallgrass.name=오아시스 장초
+tile.oasisflower.name=오아시스화
+tile.oasisgravel.name=오아시스 자갈
+tile.oasissuperchargedcoalore.name=오아시스 특석탄 광석
+tile.oasiscoalore.name=오아시스 석탄 광석
+tile.oasisironore.name=오아시스 철광석
+tile.oasisgoldore.name=오아시스 금광석
+tile.oasisredstoneore.name=오아시스 레드스톤 원석
+tile.oasisdiamondore.name=오아시스 다이아몬드 원석
+tile.oasistinore.name=오아시스 주석 광석
+tile.oasisleadore.name=오아시스 납 광석
+tile.superchargedcoalblock.name=특석탄 블록
+tile.chargiumblock.name=차귬 블록
+tile.shiniumblock.name=샤이늄 블록
+tile.shinestone.name=샤인석
+tile.shinestonecrystal.name=샤인석 수정
+tile.polishedshinestone.name=윤나는 샤인석
+tile.shinestonecrystalbricks.name=샤인석 수정 벽돌
+
+tile.xantheonrock.name=잔테온 표면석
+tile.xantheonstone.name=잔테온석
+tile.xantheonchrome.name=잔테온 크롬
+tile.xantheonplutoniumore.name=잔테온 백금광석
+tile.xantheonironore.name=잔테온 철광석
+tile.xantheoncoalore.name=잔테온 석탄 광석
+tile.xantheonnickelore.name=잔테온 니켈 광석
+tile.xantheoncopperore.name=잔테온 구리 광석
+tile.xantheonfueltoniumore.name=잔테온 푸엘토늄 광석
+tile.xantheonamaranthore.name=잔테온 아마란스 광석
+tile.plutoniumblock.name=플루토늄 블록
+tile.fueltoniumblock.name=푸엘토늄 블록
+tile.constructblock.name=구성 블록
+
+tile.candycube_white.name=하얀색 사탕 큐브
+tile.candycube_black.name=검은색 사탕 큐브
+tile.candycube_gray.name=회색 사탕 큐브
+tile.candycube_orange.name=주황색 사탕 큐브
+tile.candycube_brown.name=갈색 사탕 큐브
+tile.candycube_red.name=빨간색 사탕 큐브
+tile.candycube_blue.name=파란색 사탕 큐브
+tile.candycube_yellow.name=노란색 사탕 큐브
+tile.candycube_purple.name=보라색 사탕 큐브
+tile.candycube_cyan.name=청록색 사탕 큐브
+tile.candycube_pink.name=분홍색 사탕 큐브
+tile.candycube_green.name=초록색 사탕 큐브
+tile.chocolateblock.name=초콜렛 블록
+tile.chocolatebricks.name=초콜렛 벽돌
+tile.cookieblock.name=쿠키 블록
+tile.brownieblock.name=브라우니 블록
+tile.icecreamsandwichblock.name=아이스크림 샌드위치 블록
+tile.sugarcube.name=설탕 큐브
+
+tile.atheonamaranthore.name=아테온 아마란스 광석
+tile.atheonredstoneore.name=아테온 레드스톤 원석
+tile.atheontinore.name=아테온 주석 광석
+tile.atheondiamondore.name=아테온 다이아몬드 원석
+tile.atheonzollerniumore.name=아테온 졸러늄 광석
+tile.atheonzincore.name=아테온 아연 광석
+tile.atheoncobble.name=아테온 조약돌
+tile.atheonstone.name=아테온석
+tile.atheonluxrock.name=아테온 럭스암
+tile.atheonrockbricks.name=아테온 석재 벽돌
+tile.atheonrock.name=아테온 금암
+tile.goldenconstructblock.name=금빛 구성 블록
+
+tile.amaranthblock.name=아마란스 블록
+tile.azuriteblock.name=남동석 블록
+tile.zollerniumblock.name=졸러늄 블록
+tile.zincblock.name=아연 블록
+
+tile.endrock.name=엔드암
+
+tile.heartblock.name=치유 정거장
+tile.blueprintblock.name=청사진 수리 정거장
+
+tile.spacestationblock.name=우주 정거장 블록
+tile.loreblock.name=학문 블록
+
+tile.compressedprometheanblock.name=압축된 프로메시언 블록
+tile.compressedsuperchargedcoalblock.name=압축된 특석탄 블록
+tile.compressedviriniumblock.name=압축된 비리늄 블록
+tile.compressedeveniumblock.name=압축된 에베늄 블록
+tile.compressedcobaltblock.name=압축된 코발트 블록
+tile.compressedheartiumblock.name=압축된 하튬 블록
+
+chargium=차귬
+tile.chargium.name=차귬
+fluid.chargium=차귬
+
+whitelava=백용암
+tile.whitelava.name=백용암
+fluid.whitelava=백용암
+
+fueltonium=녹은 푸엘토늄
+tile.fueltonium.name=녹은 푸엘토늄
+fluid.fueltonium=녹은 푸엘토늄
+
+chocolatemelted=녹은 초콜렛
+tile.chocolatemelted.name=녹은 초콜렛
+fluid.chocolatemelted=녹은 초콜렛
+
+container.eden.treasurechest.name=에덴 보물 상자
+
+item.zolluscrystal.name=졸늄 수정
+item.heartofzol.name=졸루스 하튬
+
+item.cobaltdust.name=분쇄된 코발트
+item.diamonddust.name=분쇄된 다이아몬드
+item.emeralddust.name=분쇄된 에메랄드
+item.eveniumdust.name=분쇄된 에베늄
+
+item.alienbeefraw.name=익히지 않은 외계 소고기
+item.alienbeefcooked.name=외계 스테이크
+item.alienbaconraw.name=익히지 않은 외계 베이컨
+item.alienbaconcooked.name=익힌 외계 베이컨
+item.fruitofeden.name=에덴 열매
+
+item.creamball.name=크림 볼
+item.rawchocolate.name=생초콜렛
+item.chocolatebar.name=초콜렛 바
+item.brownie.name=브라우니
+item.candyapple.name=캔디 애플
+item.icecreamsandwich.name=아이스크림 샌드위치
+item.icecream.name=아이스크림
+
+item.hud.name=갤럭틱 HUD
+item.brightstonedust.name=명석 가루
+item.edendungeonkey.name=에덴 보물 열쇠
+item.rawviri.name=생 비리늄
+item.ingotviri.name=비리늄괴
+item.alienstone.name=고대 에덴의 에센스
+item.edencrystal.name=에덴 수정
+
+item.ingotcobalt.name=코발트괴
+item.kriffoncrystal.name=크리폰 수정
+
+item.ingotevenium.name=에베늄괴
+item.purgotcrystal.name=퍼고트 수정
+
+item.prometheancrystal.name=프로메시언 수정
+item.plutoniumcrystal.name=플루토늄 수정
+
+item.purgotessence.name=오아시스 보석
+
+item.fueltoniumraw.name=생 푸엘로나이트
+item.fueltoniumingot.name=푸엘토늄괴
+
+item.chargiumdust.name=차귬 가루
+item.chargiumingot.name=차귬괴
+
+item.shiniumdust.name=샤이늄 가루
+item.shiniumingot.name=샤이늄괴
+
+item.shinestonedust.name=샤인석 가루
+item.shinestoneingot.name=샤인석괴
+
+item.lapisingot.name=청금석괴
+
+item.amaranthingot.name=아마란스괴
+item.amaranthdust.name=아마란스 가루
+item.amaranthnugget.name=아마란스 조각
+
+item.ascendium.name=아센듐
+item.azurite.name=남동석
+item.ascendantamaranthingot.name=상승 아마란스괴
+
+item.zollerniumingot.name=졸러늄괴
+item.zollerniumdust.name=졸러늄 가루
+
+item.zincingot.name=아연괴
+item.zincdust.name=아연 가루
+
+item.rokkite.name=로키트
+
+item.powerstick.name=파워 막대
+item.blackmarblestick.name=검은 마블 막대
+item.marblestick.name=마블 막대
+
+item.blueprint_rad.name=방사능 보호
+item.blueprint_tox.name=독성 보호
+item.blueprint_poison.name=독 보호
+
+item.compressedemerald.name=압축된 에메랄드
+item.compresseddiamond.name=압축된 다이아몬드
+item.compressedgold.name=압축된 금
+item.compressedevenium.name=압축된 에베늄
+item.compressedcobalt.name=압축된 코발트
+item.compressedkriffonium.name=압축된 크리포늄
+item.compressedvirinium.name=압축된 비리늄
+item.compressedheartium.name=압축된 하튬
+item.compressedvyrex.name=압축된 비렉사이트
+item.compressedpromethean.name=압축된 프로메시언
+item.compressedsuperchargedcoal.name=압축된 특석탄
+item.compressedriven.name=압축된 리븐
+item.compressedamaranth.name=압축된 아마란스
+item.compressedazurite.name=압축된 남동석
+item.compressedzollernium.name=압축된 졸러늄
+
+item.superchargedcoal.name=특석탄
+item.powerstick.name=승천의 지팡이
+
+item.stargate_tier1.name=스타게이트 (프로토콜 1)
+item.stargate_tier2.name=스타게이트 (프로토콜 2)
+item.stargate_tier3.name=스타게이트 (프로토콜 3)
+item.stargate_tier4.name=스타게이트 (프로토콜 4)
+item.stargate_tier5.name=스타게이트 (프로토콜 5)
+item.stargate_tier6.name=스타게이트 (프로토콜 6)
+item.stargate_tier7.name=스타게이트 (프로토콜 7)
+item.stargate_tier8.name=스타게이트 (프로토콜 8)
+item.stargate_tier9.name=스타게이트 (프로토콜 9)
+item.stargate_tier10.name=스타게이트 (프로토콜 10)
+item.stargate_tier918.name=스타게이트 (생일 프로토콜)
+
+item.omnitool.name=옴니툴
+
+item.cobalt_pickaxe.name=코발트 곡괭이
+item.cobalt_sword.name=코발트 검
+item.cobalt_shovel.name=코발트 삽
+item.cobalt_axe.name=코발트 도끼
+item.cobalt_hoe.name=코발트 괭이
+
+item.evenium_pickaxe.name=에베늄 곡괭이
+item.evenium_sword.name=에베늄 검
+item.evenium_shovel.name=에베늄 삽
+item.evenium_axe.name=에베늄 도끼
+item.evenium_hoe.name=에베늄 괭이
+
+item.virinium_pickaxe.name=비리늄 곡괭이
+item.virinium_sword.name=비리늄 검
+item.virinium_shovel.name=비리늄 삽
+item.virinium_axe.name=비리늄 도끼
+item.virinium_hoe.name=비리늄 괭이
+
+item.amaranth_pickaxe.name=아마란스 곡괭이
+item.amaranth_sword.name=아마란스 검
+item.amaranth_shovel.name=아마란스 삽
+item.amaranth_axe.name=아마란스 도끼
+item.amaranth_hoe.name=아마란스 괭이
+
+item.bedrockbreaker.name=기반암 파괴기
+
+item.azurite_pickaxe.name=남동석 곡괭이
+item.azurite_sword.name=남동석 검
+item.azurite_shovel.name=남동석 삽
+item.azurite_axe.name=남동석 도끼
+item.azurite_hoe.name=남동석 괭이
+
+item.zollernium_pickaxe.name=졸러늄 곡괭이
+item.zollernium_sword.name=졸러늄 검
+item.zollernium_shovel.name=졸러늄 삽
+item.zollernium_axe.name=졸러늄 도끼
+item.zollernium_hoe.name=졸러늄 괭이
+
+entity.zollerngalaxy:moolus.name=물루스
+entity.zollerngalaxy:oinkus.name=오인쿠스
+entity.zollerngalaxy:squidlus.name=스키들루스
+entity.zollerngalaxy:grayalien.name=회색 외계인
+entity.zollerngalaxy:galaxyknight.name=은하 보초
+entity.zollerngalaxy:crawler.name=겁쟁이 보스
+entity.zollerngalaxy:frostgiant.name=서리 거인
+entity.zollerngalaxy:magmos.name=마그모스
+entity.zollerngalaxy:slime.raspberry.name=은하 슬라임 (라즈베리)
+
+planet.zollus=졸루스
+planet.eden=에덴
+planet.purgot=퍼고트
+planet.kriffus=크리폰
+moon.astros=아스트로스
+
+planet.xathius=자티우스
+planet.oasis=오아시스
+planet.xantheon=잔테온
+planet.candora=칸도라
+planet.atheon=아테온
+
+planet.exodus=엑소더스
+
+planet.meztli=메즈틀리
+planet.centotl=센토틀
+planet.toci=토시
+planet.tlaloc=틀라록
+
+planet.ares=아레스
+planet.prometheus=프로메테우스
+planet.icarus=이카루스
+planet.kronos=크로노스
+
+planet.asgard=아스가드
+planet.maveth=마베스
+
+planet.meridian=메리디안
+planet.reach=리치
+
+star.psion6=사이오스
+star.praedyth=프래디스
+star.sol2=태양-2
+star.pantheon=판테온
+star.olympus=올림푸스
+star.asgard=아스가드
+star.vega=베가
+star.nova=노바
+
+solarsystem.psion6=사이오스
+solarsystem.praedyth=프래디스
+solarsystem.sol2=태양-2
+solarsystem.pantheon=판테온
+solarsystem.olympus=올림푸스
+solarsystem.asgard=아스가드
+solarsystem.vega=베가
+solarsystem.Nova=노바
+
+satellite.space_station.zollus=졸루스 우주 정거장
+satellite.space_station.kriffon=크리폰 우주 정거장
+satellite.space_station.purgot=퍼고트 우주 정거장
+satellite.space_station.eden=에덴 우주 정거장
+satellite.space_station.xathius=자티우스 우주 정거장
+satellite.space_station.oasis=오아시스 우주 정거장
+satellite.space_station.xantheon=잔테온 우주 정거장
+satellite.space_station.candora=칸도라 우주 정거장
+satellite.space_station.atheon=아테온 우주 정거장
+
+itemGroup.ZollernGalaxyBlocks=졸런 갤럭시 (블록)
+itemGroup.ZollernGalaxyItems=졸런 갤럭시 (아이템)

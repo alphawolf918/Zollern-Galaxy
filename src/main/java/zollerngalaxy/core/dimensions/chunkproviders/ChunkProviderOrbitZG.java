@@ -1,3 +1,10 @@
+/**
+ * Zollern Galaxy by @author Zollern Wolf
+ * Copyright 2016 - 2025
+ * You may use this code to learn from, but do not
+ * claim it as your own, and do not
+ * redistribute it.
+ */
 package zollerngalaxy.core.dimensions.chunkproviders;
 
 import java.util.List;
@@ -13,6 +20,8 @@ import net.minecraft.world.biome.Biome.SpawnListEntry;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.ChunkPrimer;
 import zollerngalaxy.blocks.ZGBlocks;
+import zollerngalaxy.config.ConfigManagerZG;
+import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.worldgen.space.WorldGenSpaceStationZG;
 
 public class ChunkProviderOrbitZG extends ChunkProviderBase {
@@ -60,47 +69,54 @@ public class ChunkProviderOrbitZG extends ChunkProviderBase {
 				this.world.setBlockState(pos2, ZGBlocks.blockLore.getDefaultState(), 2);
 			}
 			
-			if (rand.nextInt(100) <= 50) {
-				BlockPos pos3 = new BlockPos(k + 1, pos.getY(), l);
-				this.world.setBlockState(pos3, ZGBlocks.blockLore.getDefaultState(), 2);
-			}
-			
-			if (rand.nextInt(100) <= 50) {
-				BlockPos pos4 = new BlockPos(k, pos.getY(), l + 1);
-				this.world.setBlockState(pos4, ZGBlocks.blockLore.getDefaultState(), 2);
-			}
-			
-			if (rand.nextInt(100) <= 50) {
-				BlockPos pos2 = new BlockPos(k, pos.getY() - 1, l);
-				this.world.setBlockState(pos2, ZGBlocks.blockLore.getDefaultState(), 2);
-			}
-			
-			if (rand.nextInt(100) <= 50) {
-				BlockPos pos3 = new BlockPos(k - 1, pos.getY(), l);
-				this.world.setBlockState(pos3, ZGBlocks.blockLore.getDefaultState(), 2);
-			}
-			
-			if (rand.nextInt(100) <= 50) {
-				BlockPos pos4 = new BlockPos(k, pos.getY(), l - 1);
-				this.world.setBlockState(pos4, ZGBlocks.blockLore.getDefaultState(), 2);
+			if (ConfigManagerZG.canExtraLoreSpawn) {
+				if (rand.nextInt(100) <= 50) {
+					BlockPos pos3 = new BlockPos(k + 1, pos.getY(), l);
+					this.world.setBlockState(pos3, ZGBlocks.blockLore.getDefaultState(), 2);
+				}
+				
+				if (rand.nextInt(100) <= 50) {
+					BlockPos pos4 = new BlockPos(k, pos.getY(), l + 1);
+					this.world.setBlockState(pos4, ZGBlocks.blockLore.getDefaultState(), 2);
+				}
+				
+				if (rand.nextInt(100) <= 50) {
+					BlockPos pos2 = new BlockPos(k, pos.getY() - 1, l);
+					this.world.setBlockState(pos2, ZGBlocks.blockLore.getDefaultState(), 2);
+				}
+				
+				if (rand.nextInt(100) <= 50) {
+					BlockPos pos3 = new BlockPos(k - 1, pos.getY(), l);
+					this.world.setBlockState(pos3, ZGBlocks.blockLore.getDefaultState(), 2);
+				}
+				
+				if (rand.nextInt(100) <= 50) {
+					BlockPos pos4 = new BlockPos(k, pos.getY(), l - 1);
+					this.world.setBlockState(pos4, ZGBlocks.blockLore.getDefaultState(), 2);
+				}
 			}
 			
 			int posX = k - 10;
 			int posY = 62;
 			int posZ = l - 3;
 			
-			BlockPos posGen1 = new BlockPos(posX, posY, posZ);
-			BlockPos posGen2 = new BlockPos(posX + 100, posY, posZ);
-			BlockPos posGen3 = new BlockPos(posX - 100, posY, posZ);
-			BlockPos posGen4 = new BlockPos(posX, posY, posZ + 100);
-			BlockPos posGen5 = new BlockPos(posX, posY, posZ - 100);
+			int increaseBy = ZGHelper.rngNumber(100, 200);
 			
-			new WorldGenSpaceStationZG().generate(this.world, this.rand, posGen1);
-			new WorldGenSpaceStationZG().generate(this.world, this.rand, posGen2);
-			new WorldGenSpaceStationZG().generate(this.world, this.rand, posGen3);
-			new WorldGenSpaceStationZG().generate(this.world, this.rand, posGen4);
-			new WorldGenSpaceStationZG().generate(this.world, this.rand, posGen5);
+			int numSpaceStations = ConfigManagerZG.spaceStationGenAmount;
+			
+			BlockPos posGen1 = new BlockPos(posX, posY, posZ);
+			BlockPos posGenX;
+			
+			if (numSpaceStations == 1) {
+				new WorldGenSpaceStationZG().generate(this.world, this.rand, posGen1);
+			} else {
+				for (int i = 0; i < numSpaceStations; i++) {
+					posGenX = new BlockPos(posGen1.getX() + increaseBy, posGen1.getY(), posGen1.getZ());
+					new WorldGenSpaceStationZG().generate(this.world, this.rand, posGen1);
+				}
+			}
 		}
+		
 		BlockFalling.fallInstantly = false;
 	}
 	

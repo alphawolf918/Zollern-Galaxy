@@ -1,3 +1,10 @@
+/**
+ * Zollern Galaxy by @author Zollern Wolf
+ * Copyright 2016 - 2025
+ * You may use this code to learn from, but do not
+ * claim it as your own, and do not
+ * redistribute it.
+ */
 package zollerngalaxy.biomes.decorators;
 
 import java.util.Random;
@@ -33,8 +40,7 @@ public class BiomeDecoratorPurgot extends BiomeDecoratorZG {
 		this.redstoneGen = new WorldGenMinableZG(ZGBlocks.purgRedstoneOre, ZGBlocks.purgStone, EnumOreGenZG.REDSTONE);
 		this.diamondGen = new WorldGenMinableZG(ZGBlocks.purgDiamondOre, ZGBlocks.purgStone, EnumOreGenZG.DIAMOND);
 		this.emeraldGen = new WorldGenMinableZG(ZGBlocks.purgEmeraldOre, ZGBlocks.purgStone, EnumOreGenZG.EMERALD);
-		this.meteoricIronGen = new WorldGenMinableZG(ZGBlocks.purgMeteoricIronOre, ZGBlocks.purgStone,
-				EnumOreGenZG.METEORIC_IRON);
+		this.meteoricIronGen = new WorldGenMinableZG(ZGBlocks.purgMeteoricIronOre, ZGBlocks.purgStone, EnumOreGenZG.METEORIC_IRON);
 	}
 	
 	@Override

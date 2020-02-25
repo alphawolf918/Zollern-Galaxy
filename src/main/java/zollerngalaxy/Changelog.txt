@@ -1,19 +1,14 @@
 ===== CHANGELOG =====
-Zollern Galaxy v2.0.10
+Zollern Galaxy v2.0.11
 =====================
 
-* Added Korean and Chinese language files.
-    - Korean done by mindy15963.
-    - Chinese done by RedShakespeare/Silencess.
-* Updated some planet textures as created by Skaptic.
-* Further cut down spawn rate of Frost Giants.
-* Updated to latest 1.12.2 Forge and Galacticraft versions.
-* Fixed temperature bug on my planets due to change in Galacticraft thermal level modifier functionality.
-    - Galactic HUD now uses a separate system to display aesthetic temperatures.
-* Modified the SkyProvider for planet Zollus.
-    - Planets no longer display in the sky. This is, surprisingly, what was causing the lag.
-* Modified the SkyProvider for planet Kriffon the same way.
-    - Lowered the size of its sun a bit more.
-    - Decreased spawn rate of craters and Magma Blocks.
-    - Magma Blocks no longer spawn on the surface.
-* Modified some mechanics for Eden.
+* Added config option to control the amount of Space Stations that spawn (between 1 and 5 only).
+* Added config option to control whether or not extra Lore Blocks can spawn aboard Space Stations.
+* Added several more Lore Books - the start of another small story.
+* Now requires latest versions of Galacticraft and Forge for 1.12.2.
+* SkyProvider for Zollern Galaxy Space Stations now scales the sun accordingly per planet/moon.
+* Cobalt now registers as "Colbatium" when the Ore Dictionary config option is disabled.
+* Updated graphic for Planet Eden a bit.
+* Created new graphic for Planet Perdita.
+* Created new blocks for Planet Perdita.
+* 

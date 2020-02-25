@@ -1,3 +1,10 @@
+/**
+ * Zollern Galaxy by @author Zollern Wolf
+ * Copyright 2016 - 2025
+ * You may use this code to learn from, but do not
+ * claim it as your own, and do not
+ * redistribute it.
+ */
 package zollerngalaxy.items;
 
 import net.minecraft.init.MobEffects;
@@ -151,23 +158,22 @@ public class ZGItems {
 	public static final Item swordZollernium = new ZGItemSword("zollernium", ZGToolMats.ZOLLERNIUM);
 	
 	public static void init() {
-		ZGItems.registerItems(heartium, zolCrystal, kriffCrystal, purgCrystal, edenCrystal, purgEssence,
-				prometheanCrystal, plutoniumCrystal, azurite, ascendium, dustBrightstone, dustShinestone, dustVirinium,
-				dustEvenium, dustCobalt, dustFueltonium, dustShinium, dustChargium, dustDiamond, dustEmerald, dustAmaranth,
-				dustZollernium, dustZinc, ingotVirinium, ingotCobalt, ingotEvenium, ingotShinestone, ingotShinium,
-				ingotChargium, ingotFueltonium, ingotLapis, ingotAmaranth, ingotAscendantAmaranth, ingotZollernium,
-				ingotZinc, hud, alienStone, compressedCobalt, compressedDiamond, compressedEmerald, compressedEvenium,
-				compressedGold, compressedHeartium, compressedKriffonium, compressedVirinium, compressedVyrex,
-				compressedPromethean, compressedSuperChargedCoal, compressedRiven, compressedAmaranth, compressedAzurite,
-				compressedZollernium, rawAlienBacon, cookedAlienBacon, rawAlienBeef, cookedAlienBeef, edenFruit, creamBall,
-				chocolateRaw, chocolateBar, brownie, candyApple, iceCreamSandwich, iceCream, edenDungeonKey,
-				superChargedCoal, powerStick, starGateTier1, starGateTier2, starGateTier3, starGateTier4, starGateTier5,
-				starGateTier6, starGateTier7, starGateTier8, starGateTier9, starGateTier10, starGateCandy, OMNITOOL,
-				pickaxeCobalt, pickaxeEvenium, pickaxeVirinium, pickaxeAmaranth, pickaxeAzurite, pickaxeZollernium,
-				shovelCobalt, shovelEvenium, shovelVirinium, shovelAmaranth, shovelAzurite, shovelZollernium, axeCobalt,
-				axeEvenium, axeVirinium, axeAmaranth, axeAzurite, axeZollernium, hoeCobalt, hoeEvenium, hoeVirinium,
-				hoeAmaranth, hoeAzurite, hoeZollernium, swordCobalt, swordEvenium, swordVirinium, swordAmaranth,
-				swordAzurite, swordZollernium);
+		ZGItems.registerItems(heartium, zolCrystal, kriffCrystal, purgCrystal, edenCrystal, purgEssence, prometheanCrystal,
+				plutoniumCrystal, azurite, ascendium, dustBrightstone, dustShinestone, dustVirinium, dustEvenium, dustCobalt,
+				dustFueltonium, dustShinium, dustChargium, dustDiamond, dustEmerald, dustAmaranth, dustZollernium, dustZinc,
+				ingotVirinium, ingotCobalt, ingotEvenium, ingotShinestone, ingotShinium, ingotChargium, ingotFueltonium,
+				ingotLapis, ingotAmaranth, ingotAscendantAmaranth, ingotZollernium, ingotZinc, hud, alienStone, compressedCobalt,
+				compressedDiamond, compressedEmerald, compressedEvenium, compressedGold, compressedHeartium,
+				compressedKriffonium, compressedVirinium, compressedVyrex, compressedPromethean, compressedSuperChargedCoal,
+				compressedRiven, compressedAmaranth, compressedAzurite, compressedZollernium, rawAlienBacon, cookedAlienBacon,
+				rawAlienBeef, cookedAlienBeef, edenFruit, creamBall, chocolateRaw, chocolateBar, brownie, candyApple,
+				iceCreamSandwich, iceCream, edenDungeonKey, superChargedCoal, powerStick, starGateTier1, starGateTier2,
+				starGateTier3, starGateTier4, starGateTier5, starGateTier6, starGateTier7, starGateTier8, starGateTier9,
+				starGateTier10, starGateCandy, OMNITOOL, pickaxeCobalt, pickaxeEvenium, pickaxeVirinium, pickaxeAmaranth,
+				pickaxeAzurite, pickaxeZollernium, shovelCobalt, shovelEvenium, shovelVirinium, shovelAmaranth, shovelAzurite,
+				shovelZollernium, axeCobalt, axeEvenium, axeVirinium, axeAmaranth, axeAzurite, axeZollernium, hoeCobalt,
+				hoeEvenium, hoeVirinium, hoeAmaranth, hoeAzurite, hoeZollernium, swordCobalt, swordEvenium, swordVirinium,
+				swordAmaranth, swordAzurite, swordZollernium);
 		ZGHelper.Log("Loaded a total of " + totalItems + " new items.");
 	}
 	

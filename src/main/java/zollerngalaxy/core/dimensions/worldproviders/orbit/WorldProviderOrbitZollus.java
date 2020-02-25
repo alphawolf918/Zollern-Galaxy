@@ -23,6 +23,11 @@ public class WorldProviderOrbitZollus extends WorldProviderOverworldOrbit {
 	}
 	
 	@Override
+	public float getSolarSize() {
+		return 0.01F;
+	}
+	
+	@Override
 	public Vector3 getFogColor() {
 		float f = 1.0F - this.getStarBrightness(1.0F);
 		return new Vector3(20 / 255F * f, 27 / 255F * f, 45 / 255F * f);

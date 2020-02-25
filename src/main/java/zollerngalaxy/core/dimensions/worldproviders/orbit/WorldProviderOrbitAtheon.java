@@ -23,6 +23,11 @@ public class WorldProviderOrbitAtheon extends WorldProviderOverworldOrbit {
 	}
 	
 	@Override
+	public float getSolarSize() {
+		return 2.0F;
+	}
+	
+	@Override
 	public Vector3 getFogColor() {
 		float f = 1.1F - this.getStarBrightness(1.0F);
 		return new Vector3(120F / 255F * f, 75F / 255F * f, 120F / 255F * f);
