@@ -32,6 +32,7 @@ public class ConfigManagerZG {
 	
 	// Planets (Sol-2)
 	public static int planetExodusDimensionId;
+	public static int planetPerditaDimensionId;
 	
 	// Planets (Pantheon)
 	public static int planetMeztliDimensionId;
@@ -118,6 +119,11 @@ public class ConfigManagerZG {
 	public static float praedythY;
 	public static float praedythZ;
 	
+	// Coords (Sol-2)
+	public static float sol2X;
+	public static float sol2Y;
+	public static float sol2Z;
+	
 	// Coords (Pantheon)
 	public static float pantheonX;
 	public static float pantheonY;
@@ -166,6 +172,7 @@ public class ConfigManagerZG {
 		
 		// Planets (Sol-2)
 		planetExodusDimensionId = configuration.get(CATEGORY_DIMENSIONS, "Planet Exodus Dimension ID", -7980).getInt();
+		planetPerditaDimensionId = configuration.get(CATEGORY_DIMENSIONS, "Planet Perdita Dimension ID", -7979).getInt();
 		
 		// Planets (Pantheon)
 		planetMeztliDimensionId = configuration.get(CATEGORY_DIMENSIONS, "Planet Meztli Dimension ID", -7991).getInt();
@@ -175,8 +182,7 @@ public class ConfigManagerZG {
 		
 		// Planets (Olympus)
 		planetAresDimensionId = configuration.get(CATEGORY_DIMENSIONS, "Planet Ares Dimension ID", -8000).getInt();
-		planetPrometheusDimensionId = configuration.get(CATEGORY_DIMENSIONS, "Planet Prometheus Dimension ID", -7981)
-				.getInt();
+		planetPrometheusDimensionId = configuration.get(CATEGORY_DIMENSIONS, "Planet Prometheus Dimension ID", -7981).getInt();
 		planetIcarusDimensionId = configuration.get(CATEGORY_DIMENSIONS, "Planet Icarus Dimension ID", -7995).getInt();
 		planetKronosDimensionId = configuration.get(CATEGORY_DIMENSIONS, "Planet Kronos Dimension ID", -7993).getInt();
 		
@@ -206,18 +212,15 @@ public class ConfigManagerZG {
 		
 		// Zollus
 		spaceStationZollusId = configuration.get(CATEGORY_SATELLITES, "Zollus Space Station ID", -6000).getInt();
-		spaceStationZollusStaticId = configuration.get(CATEGORY_SATELLITES, "Zollus Space Station Static ID", -6001)
-				.getInt();
+		spaceStationZollusStaticId = configuration.get(CATEGORY_SATELLITES, "Zollus Space Station Static ID", -6001).getInt();
 		
 		// Kriffon
 		spaceStationKriffonId = configuration.get(CATEGORY_SATELLITES, "Kriffon Space Station ID", -6002).getInt();
-		spaceStationKriffonStaticId = configuration.get(CATEGORY_SATELLITES, "Kriffon Space Station Static ID", -6003)
-				.getInt();
+		spaceStationKriffonStaticId = configuration.get(CATEGORY_SATELLITES, "Kriffon Space Station Static ID", -6003).getInt();
 		
 		// Purgot
 		spaceStationPurgotId = configuration.get(CATEGORY_SATELLITES, "Purgot Space Station ID", -6004).getInt();
-		spaceStationPurgotStaticId = configuration.get(CATEGORY_SATELLITES, "Purgot Space Station Static ID", -6005)
-				.getInt();
+		spaceStationPurgotStaticId = configuration.get(CATEGORY_SATELLITES, "Purgot Space Station Static ID", -6005).getInt();
 		
 		// Eden
 		spaceStationEdenId = configuration.get(CATEGORY_SATELLITES, "Eden Space Station ID", -6006).getInt();
@@ -226,8 +229,7 @@ public class ConfigManagerZG {
 		// Space Stations (Praedyth)
 		// Xathius
 		spaceStationXathiusId = configuration.get(CATEGORY_SATELLITES, "Xathius Space Station ID", -6008).getInt();
-		spaceStationXathiusStaticId = configuration.get(CATEGORY_SATELLITES, "Xathius Space Station Static ID", -6009)
-				.getInt();
+		spaceStationXathiusStaticId = configuration.get(CATEGORY_SATELLITES, "Xathius Space Station Static ID", -6009).getInt();
 		
 		// Oasis
 		spaceStationOasisId = configuration.get(CATEGORY_SATELLITES, "Oasis Space Station ID", -6010).getInt();
@@ -235,18 +237,15 @@ public class ConfigManagerZG {
 		
 		// Xantheon
 		spaceStationXantheonId = configuration.get(CATEGORY_SATELLITES, "Xantheon Space Station ID", -6012).getInt();
-		spaceStationXantheonStaticId = configuration.get(CATEGORY_SATELLITES, "Xantheon Space Station Static Id", -6013)
-				.getInt();
+		spaceStationXantheonStaticId = configuration.get(CATEGORY_SATELLITES, "Xantheon Space Station Static Id", -6013).getInt();
 		
 		// Candora
 		spaceStationCandoraId = configuration.get(CATEGORY_SATELLITES, "Candora Space Station ID", -6014).getInt();
-		spaceStationCandoraStaticId = configuration.get(CATEGORY_SATELLITES, "Candora Space Station Static Id", -6015)
-				.getInt();
+		spaceStationCandoraStaticId = configuration.get(CATEGORY_SATELLITES, "Candora Space Station Static Id", -6015).getInt();
 		
 		// Atheon
 		spaceStationAtheonId = configuration.get(CATEGORY_SATELLITES, "Atheon Space Station ID", -6016).getInt();
-		spaceStationAtheonStaticId = configuration.get(CATEGORY_SATELLITES, "Atheon Space Station Static ID", -6017)
-				.getInt();
+		spaceStationAtheonStaticId = configuration.get(CATEGORY_SATELLITES, "Atheon Space Station Static ID", -6017).getInt();
 		
 		// Misc (Can Earth animals spawn on Eden?)
 		canEarthAnimalsSpawnOnEden = configuration.get(CATEGORY_MISC, "Earth Animals Spawn On Eden", true,
@@ -303,8 +302,8 @@ public class ConfigManagerZG {
 				"Enable Planet Progressions compatibility",
 				true,
 				"If Planet Progressions is installed, " + " you will need to discover the Planet or Moon "
-						+ " before you can travel to it via Star Gates."
-						+ " Set this to false to disable that. (default: true)").getBoolean();
+						+ " before you can travel to it via Star Gates." + " Set this to false to disable that. (default: true)")
+				.getBoolean();
 		
 		// Customization Options
 		kriffonLavaLakesPerChunk = configuration.get(CATEGORY_CUSTOMIZATIONS, "Kriffon Lava Lakes Per Chunk", 4,
@@ -321,6 +320,11 @@ public class ConfigManagerZG {
 		praedythX = (float) configuration.get(CATEGORY_COORDINATES, "Praedyth X", -1.2).getDouble();
 		praedythY = (float) configuration.get(CATEGORY_COORDINATES, "Praedyth Y", 1.4).getDouble();
 		praedythZ = (float) configuration.get(CATEGORY_COORDINATES, "Praedyth Z", 0.0).getDouble();
+		
+		// Coords (Sol-2)
+		sol2X = (float) configuration.get(CATEGORY_COORDINATES, "Praedyth X", 1.2).getDouble();
+		sol2Y = (float) configuration.get(CATEGORY_COORDINATES, "Praedyth Y", -1.4).getDouble();
+		sol2Z = (float) configuration.get(CATEGORY_COORDINATES, "Praedyth Z", 0.0).getDouble();
 		
 		// Coords (Pantheon)
 		pantheonX = (float) configuration.get(CATEGORY_COORDINATES, "Pantheon X", 2.0).getDouble();

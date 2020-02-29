@@ -217,6 +217,11 @@ tile.perdcobble.name=Lost Cobblestone
 tile.perdgravel.name=Lost Gravel
 tile.perdcreepdirt.name=Lost Creepdirt
 tile.perdcreepstone.name=Lost Creepstone
+tile.perdcavestone.name=Lost Cavestone
+tile.perdcavestonebricks.name=Lost Cavestone Bricks
+tile.perdcactus.name=Lost Cactus
+tile.perdtorch.name=Lost Glowtorch
+tile.perdglowstone.name=Lost Glowstone
 
 tile.amaranthblock.name=Block of Amaranth
 tile.azuriteblock.name=Block of Azurite
@@ -353,6 +358,10 @@ item.compressedzollernium.name=Compressed Zollernium
 
 item.superchargedcoal.name=Super Charged Coal
 item.powerstick.name=Rod of Ascension
+
+item.perddiamond.name=Lost Diamond
+item.perdpearl.name=Lost Pearl
+item.perdglowstonedust.name=Lost Glowdust
 
 item.stargate_tier1.name=Stargate (Protocol One)
 item.stargate_tier2.name=Stargate (Protocol Two)

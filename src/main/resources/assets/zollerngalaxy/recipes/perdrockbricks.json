@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SS",
+    "SS"
+  ],
+  "key": {
+    "S": {
+      "item": "zollerngalaxy:perdstone"
+    }
+  },
+  "result": {
+    "item": "zollerngalaxy:perdrockbricks",
+    "count": 4
+  }
+}

@@ -302,11 +302,12 @@ public class ZGBlocks {
 	public static final Block perdSand = new ZGSand("perdsand", 3.4F);
 	public static final Block perdRock = new ZGBlockBase("perdrock");
 	public static final Block perdCobble = new ZGBlockBase("perdcobble").setBlockType(EnumBlockType.COBBLESTONE);
-	public static final Block perdStone = new ZGPlanetStone("perdstone", 3.4F, ZGBlocks.perdCobble);
-	public static final Block perdRockBricks = new ZGBlockBase("perdrockbricks", 3.6F);
+	public static final Block perdStone = new ZGPlanetStone("perdstone", 3.4F, ZGBlocks.perdCobble).setLightLevel(0.7F);
+	public static final Block perdRockBricks = new ZGBlockBase("perdrockbricks", 3.6F).setLightLevel(1.0F);
 	public static final Block perdGravel = new ZGGravel("perdgravel");
 	public static final Block perdCreepDirt = new ZGBlockDirt("perdcreepdirt");
 	public static final Block perdCreepStone = new ZGPlanetStone("perdcreepstone");
+	public static final Block perdGlowstone = new ZGShineBlock("perdglowstone", ZGItems.perdGlowdust);
 	
 	// Caligro
 	// TODO
@@ -398,7 +399,8 @@ public class ZGBlocks {
 				candyCubeWhite, candyCubeBlack, candyCubeGray, candyCubeOrange, candyCubeBrown, candyCubeRed, candyCubeBlue,
 				candyCubeYellow, candyCubePurple, candyCubeCyan, candyCubePink, candyCubeGreen, blockChocolate,
 				blockChocolateBricks, blockCookie, blockBrownie, blockIceCreamSandwich, blockSugarCube, blockSpaceStation,
-				blockLore, perdSand, perdRock, perdStone, perdCobble, perdRockBricks, perdGravel, perdCreepDirt, perdCreepStone);
+				blockLore, perdSand, perdRock, perdStone, perdCobble, perdRockBricks, perdGravel, perdCreepDirt, perdCreepStone,
+				perdGlowstone);
 		ZGHelper.Log("Loaded a total of " + totalBlocks + " new blocks.");
 	}
 	

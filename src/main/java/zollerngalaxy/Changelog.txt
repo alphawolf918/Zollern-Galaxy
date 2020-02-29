@@ -10,5 +10,5 @@ Zollern Galaxy v2.0.11
 * Cobalt now registers as "Colbatium" when the Ore Dictionary config option is disabled.
 * Updated graphic for Planet Eden a bit.
 * Created new graphic for Planet Perdita.
-* Created new blocks for Planet Perdita.
+* Created new blocks and items for Planet Perdita.
 * 

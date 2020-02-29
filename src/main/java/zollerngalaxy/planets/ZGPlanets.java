@@ -38,6 +38,11 @@ public class ZGPlanets {
 	private static float PRAEDYTH_Y = ConfigManagerZG.praedythY;
 	private static float PRAEDYTH_Z = ConfigManagerZG.praedythZ;
 	
+	// Coords (Sol-2)
+	private static float SOL2_X = ConfigManagerZG.sol2X;
+	private static float SOL2_Y = ConfigManagerZG.sol2Y;
+	private static float SOL2_Z = ConfigManagerZG.sol2Z;
+	
 	// Coords (Pantheon)
 	private static float PANTHEON_X = ConfigManagerZG.pantheonX;
 	private static float PANTHEON_Y = ConfigManagerZG.pantheonY;
@@ -68,6 +73,7 @@ public class ZGPlanets {
 	// Solar Systems
 	public static ZGStarSystem systemPsios = new ZGStarSystem("psion6");
 	public static ZGStarSystem systemPraedyth = new ZGStarSystem("praedyth");
+	public static ZGStarSystem systemSol2 = new ZGStarSystem("sol2");
 	public static ZGStarSystem systemPantheon = new ZGStarSystem("pantheon");
 	public static ZGStarSystem systemOlympus = new ZGStarSystem("olympus");
 	public static ZGStarSystem systemAsgard = new ZGStarSystem("asgard");
@@ -77,6 +83,7 @@ public class ZGPlanets {
 	// Stars
 	public static ZGStar starPsios = new ZGStar("psion6");
 	public static ZGStar starPraedyth = new ZGStar("praedyth");
+	public static ZGStar starSol2 = new ZGStar("sol2");
 	public static ZGStar starPantheon = new ZGStar("pantheon");
 	public static ZGStar starOlympus = new ZGStar("olympus");
 	public static ZGStar starAsgard = new ZGStar("asgard");
@@ -96,6 +103,9 @@ public class ZGPlanets {
 	public static ZGPlanet planetXantheon = new ZGPlanet("xantheon");
 	public static ZGPlanet planetCandora = new ZGPlanet("candora");
 	public static ZGPlanet planetAtheon = new ZGPlanet("atheon");
+	
+	// Sol-2 Planets
+	public static ZGPlanet planetPerdita = new ZGPlanet("perdita");
 	
 	// Pantheon Planets
 	public static ZGPlanet planetMeztli;
@@ -141,6 +151,13 @@ public class ZGPlanets {
 		starPraedyth.setParentSolarSystem(systemPraedyth);
 		starPraedyth.setRelativeSize(40.0F);
 		systemPraedyth.setMainStar(starPraedyth);
+		totalSystems++;
+		
+		// Sol2 System
+		systemSol2.setMapPosition(new Vector3(SOL2_X, SOL2_Y, SOL2_Z));
+		starSol2.setParentSolarSystem(systemPraedyth);
+		starSol2.setRelativeSize(40.0F);
+		systemSol2.setMainStar(starPraedyth);
 		totalSystems++;
 		
 		// Pantheon System
@@ -272,9 +289,8 @@ public class ZGPlanets {
 		planetEden.setAtmosphere();
 		planetEden.setPlanetIcon("eden");
 		planetEden.setBiomeInfo(ZGBiomes.EDEN_GREEN_LANDS, ZGBiomes.EDEN_BLOOD_DESERT, ZGBiomes.EDEN_ROCK_MOUNTAINS,
-				ZGBiomes.EDEN_TERRAN_VALLEY, ZGBiomes.EDEN_SNOWY_PLAINS, ZGBiomes.EDEN_GOLDEN_MEADOW,
-				ZGBiomes.EDEN_SWAMPLANDS, ZGBiomes.EDENWOOD_FOREST, ZGBiomes.EDEN_FLOWER_GARDEN, ZGBiomes.EDEN_CRATERS,
-				ZGBiomes.EDEN_OCEAN);
+				ZGBiomes.EDEN_TERRAN_VALLEY, ZGBiomes.EDEN_SNOWY_PLAINS, ZGBiomes.EDEN_GOLDEN_MEADOW, ZGBiomes.EDEN_SWAMPLANDS,
+				ZGBiomes.EDENWOOD_FOREST, ZGBiomes.EDEN_FLOWER_GARDEN, ZGBiomes.EDEN_CRATERS, ZGBiomes.EDEN_OCEAN);
 		totalPlanets++;
 		
 		// Planet Xathius
@@ -396,6 +412,15 @@ public class ZGPlanets {
 		planetAtheon.setBiomeInfo(ZGBiomes.ATHEON_GOLDLANDS, ZGBiomes.ATHEON_LAVA_LAKES);
 		totalPlanets++;
 		
+		// Perdita
+		// planetPerdita.setDimensionInfo(ConfigManagerZG.planetPerditaDimensionId,
+		// WorldProviderPedita.class);
+		//
+		// TODO
+		
+		// Caligro
+		// TODO
+		
 		ZGHelper.Log("Loaded a total of " + totalPlanets + " new planets.");
 	}
 	
@@ -408,6 +433,7 @@ public class ZGPlanets {
 	public static void registerSystems() {
 		GalaxyRegistry.registerSolarSystem(systemPsios);
 		GalaxyRegistry.registerSolarSystem(systemPraedyth);
+		GalaxyRegistry.registerSolarSystem(systemSol2);
 		
 		if (!hideUnusedStarSystems) {
 			GalaxyRegistry.registerSolarSystem(systemPantheon);
@@ -430,6 +456,7 @@ public class ZGPlanets {
 		GalaxyRegistry.registerPlanet(planetXantheon);
 		GalaxyRegistry.registerPlanet(planetCandora);
 		GalaxyRegistry.registerPlanet(planetAtheon);
+		// GalaxyRegistry.registerPlanet(planetPerdita); TODO
 	}
 	
 	public static void registerTeleportTypes() {
@@ -445,5 +472,8 @@ public class ZGPlanets {
 		GalacticraftRegistry.registerTeleportType(WorldProviderXantheon.class, new TeleportTypeVenus());
 		GalacticraftRegistry.registerTeleportType(WorldProviderCandora.class, new TeleportTypeVenus());
 		GalacticraftRegistry.registerTeleportType(WorldProviderAtheon.class, new TeleportTypeVenus());
+		
+		// Sol-2
+		// TODO
 	}
 }
