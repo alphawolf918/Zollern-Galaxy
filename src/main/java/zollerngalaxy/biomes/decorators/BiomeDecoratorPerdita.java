@@ -15,6 +15,7 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.event.terraingen.DecorateBiomeEvent;
 import net.minecraftforge.event.terraingen.TerrainGen;
+import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.core.enums.EnumOreGenZG;
 import zollerngalaxy.worldgen.WorldGenMinableZG;
@@ -25,7 +26,7 @@ public class BiomeDecoratorPerdita extends BiomeDecoratorZG {
 	private static final Block STONE = ZGBlocks.perdStone;
 	private static final Block ROCK = ZGBlocks.perdRock;
 	
-	private int cactiPerChunk = 10;
+	public int lostCactiPerChunk = 10;
 	
 	private WorldGenerator creepstoneGen;
 	private WorldGenerator creepdirtGen;
@@ -34,6 +35,7 @@ public class BiomeDecoratorPerdita extends BiomeDecoratorZG {
 	private WorldGenerator perdEtriumOreGen;
 	private WorldGenerator perdIronOreGen;
 	private WorldGenerator perdGoldOreGen;
+	private WorldGenerator perdZollerniumOreGen;
 	
 	private WorldGenerator lostCactusGen = new WorldGenLostCactus();
 	
@@ -45,6 +47,7 @@ public class BiomeDecoratorPerdita extends BiomeDecoratorZG {
 		this.perdEtriumOreGen = new WorldGenMinableZG(ZGBlocks.perdEtriumOre, STONE, EnumOreGenZG.EMERALD);
 		this.perdIronOreGen = new WorldGenMinableZG(ZGBlocks.perdIronOre, STONE, EnumOreGenZG.IRON);
 		this.perdGoldOreGen = new WorldGenMinableZG(ZGBlocks.perdGoldOre, STONE, EnumOreGenZG.GOLD);
+		this.perdZollerniumOreGen = new WorldGenMinableZG(ZGBlocks.perdZollerniumOre, STONE, EnumOreGenZG.ZOLLERNIUM);
 	}
 	
 	@Override
@@ -52,7 +55,13 @@ public class BiomeDecoratorPerdita extends BiomeDecoratorZG {
 		int x = rand.nextInt(16) + 8;
 		int z = rand.nextInt(16) + 8;
 		int y = rand.nextInt(248) + 8;
+		
 		int genY = y;
+		
+		if (biome instanceof BiomeSpace) {
+			BiomeSpace spaceBiome = (BiomeSpace) biome;
+			genY = spaceBiome.getBiomeHeight();
+		}
 		
 		this.generateOre(this.creepstoneGen, EnumOreGenZG.SPECIAL_STONE, world, rand);
 		this.generateOre(this.creepdirtGen, EnumOreGenZG.SPECIAL_STONE, world, rand);
@@ -61,17 +70,18 @@ public class BiomeDecoratorPerdita extends BiomeDecoratorZG {
 		this.generateOre(this.perdEtriumOreGen, EnumOreGenZG.EMERALD, world, rand);
 		this.generateOre(this.perdIronOreGen, EnumOreGenZG.IRON, world, rand);
 		this.generateOre(this.perdGoldOreGen, EnumOreGenZG.GOLD, world, rand);
+		this.generateOre(this.perdZollerniumOreGen, EnumOreGenZG.ZOLLERNIUM, world, rand);
 		
 		ChunkPos forgeChunkPos = new ChunkPos(chunkPos);
 		
 		if (TerrainGen.decorate(world, rand, forgeChunkPos, DecorateBiomeEvent.Decorate.EventType.CACTUS)) {
 			if (rand.nextInt(12) == 0) {
-				for (int i = 0; i < this.cactiPerChunk; i++) {
+				for (int i = 0; i < this.lostCactiPerChunk; i++) {
 					int x1 = rand.nextInt(16) + 8;
 					int z1 = rand.nextInt(16) + 8;
 					int y1 = world.getHeight(this.chunkPos.add(x1, 0, z1)).getY() * 2;
 					if (y1 > 0) {
-						int y2 = rand.nextInt(y);
+						int y2 = rand.nextInt(y1);
 						this.lostCactusGen.generate(world, rand, this.chunkPos.add(x1, y2, z1));
 					}
 				}

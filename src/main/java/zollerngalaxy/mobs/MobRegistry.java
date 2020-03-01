@@ -9,6 +9,7 @@ import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.mobs.entities.EntityFrostGiant;
 import zollerngalaxy.mobs.entities.EntityGrayAlien;
 import zollerngalaxy.mobs.entities.EntityMagmos;
+import zollerngalaxy.mobs.entities.EntityMegaCreeper;
 import zollerngalaxy.mobs.entities.EntityMoolus;
 import zollerngalaxy.mobs.entities.EntityOinkus;
 import zollerngalaxy.mobs.entities.EntitySquidlus;
@@ -37,6 +38,9 @@ public class MobRegistry {
 		
 		// Gray Alien
 		registerEntity("grayalien", EntityGrayAlien.class, entityId++, 0xeeeeee, 0x000000);
+		
+		// Mega Creeper
+		registerEntity("megacreeper", EntityMegaCreeper.class, entityId++, 0xee00ee, 0x00ee00);
 		
 		ZGHelper.Log("Loaded a total of " + totalMobs + " new mobs.");
 	}

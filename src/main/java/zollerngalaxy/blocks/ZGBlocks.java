@@ -333,6 +333,8 @@ public class ZGBlocks {
 			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
 	public static final Block perdGoldOre = new ZGBlockOre("perdgoldore", 5.7F).setBlockHarvestLevel(
 			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
+	public static final Block perdZollerniumOre = new ZGBlockOre("perdzollerniumore", 6.2F).setBlockHarvestLevel(
+			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
 	
 	// Caligro
 	// TODO
@@ -353,6 +355,7 @@ public class ZGBlocks {
 	public static final Block blockZinc = new ZGBlockMetal("zincblock", 2.6F);
 	public static final Block blockPerdDiamond = new ZGBlockMetal("perddiamondblock", 4.5F);
 	public static final Block blockPerdEtrium = new ZGBlockMetal("perdetriumblock", 6.2F);
+	public static final Block blockZucrite = new ZGBlockMetal("zucriteblock", 8.4F);
 	
 	// Glow Blocks
 	public static final Block blockShinestone = new ZGShineBlock("shinestone", 1.6F, ZGItems.dustShinestone);
@@ -421,14 +424,14 @@ public class ZGBlocks {
 				atheonTinOre, atheonDiamondOre, atheonZollerniumOre, atheonZincOre, atheonConstructBlock, blockViri, blockCobalt,
 				blockEve, blockPromethean, blockCrater, blockSuperChargedCoal, blockPlutonium, blockFueltonium, blockChargium,
 				blockShinium, blockAmaranth, blockAzurite, blockZollernium, blockZinc, blockPerdDiamond, blockPerdEtrium,
-				blockShinestone, blockShinestoneCrystal, blockShinestonePolished, blockShinestoneCrystalBricks,
+				blockZucrite, blockShinestone, blockShinestoneCrystal, blockShinestonePolished, blockShinestoneCrystalBricks,
 				blockCompressedHeartium, blockCompressedViri, blockCompressedEve, blockCompressedCobalt,
 				blockCompressedPromethean, blockCompressedSuperChargedCoal, candyCubeWhite, candyCubeBlack, candyCubeGray,
 				candyCubeOrange, candyCubeBrown, candyCubeRed, candyCubeBlue, candyCubeYellow, candyCubePurple, candyCubeCyan,
 				candyCubePink, candyCubeGreen, blockChocolate, blockChocolateBricks, blockCookie, blockBrownie,
 				blockIceCreamSandwich, blockSugarCube, blockSpaceStation, blockLore, perdSand, perdRock, perdStone, perdCobble,
 				perdRockBricks, perdGravel, perdCreepDirt, perdSoil, perdCreepStone, perdGlowstone, perdCaveStone,
-				perdCaveStoneBricks, perdCactus, perdDiamondOre, perdEtriumOre, perdIronOre, perdGoldOre);
+				perdCaveStoneBricks, perdCactus, perdDiamondOre, perdEtriumOre, perdIronOre, perdGoldOre, perdZollerniumOre);
 		ZGHelper.Log("Loaded a total of " + totalBlocks + " new blocks.");
 	}
 	

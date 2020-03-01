@@ -50,6 +50,7 @@ import zollerngalaxy.biomes.oasis.BiomeOasisPlains;
 import zollerngalaxy.biomes.oasis.BiomeOasisRedSea;
 import zollerngalaxy.biomes.oasis.BiomeRedlands;
 import zollerngalaxy.biomes.perdita.BiomeLostDesert;
+import zollerngalaxy.biomes.perdita.BiomeLostHallows;
 import zollerngalaxy.biomes.purgot.BiomeLimbo;
 import zollerngalaxy.biomes.purgot.BiomePurgot;
 import zollerngalaxy.biomes.xantheon.BiomeXantheon;
@@ -117,6 +118,7 @@ public class ZGBiomes {
 	
 	// Perdita
 	public static final Biome PERDITA_DESERT = new BiomeLostDesert(new BiomeProperties("Lost Desert"));
+	public static final Biome PERDITA_HALLOWS = new BiomeLostHallows(new BiomeProperties("Lost Hallows"));
 	
 	public static void init() {
 		// Zollus
@@ -168,7 +170,8 @@ public class ZGBiomes {
 		ZGBiomes.addBiome(ZGBiomes.ATHEON_LAVA_LAKES, DEAD, SPOOKY, HOT, OCEAN);
 		
 		// Perdita
-		ZGBiomes.addBiome(ZGBiomes.PERDITA_DESERT, DEAD, HOT, DRY);
+		ZGBiomes.addBiome(ZGBiomes.PERDITA_DESERT, DEAD, HOT, DRY, MOUNTAIN, WASTELAND);
+		ZGBiomes.addBiome(ZGBiomes.PERDITA_HALLOWS, DEAD, HOT, DRY, PLAINS);
 		
 		ZGHelper.Log("Loaded a total of " + totalBiomes + " new biomes.");
 	}

@@ -22,6 +22,7 @@ import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderPerdita;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 import zollerngalaxy.mobs.entities.EntityGrayAlien;
+import zollerngalaxy.mobs.entities.EntityMegaCreeper;
 import zollerngalaxy.planets.ZGPlanets;
 
 public abstract class BiomePerditaBase extends BiomeSpace {
@@ -49,6 +50,7 @@ public abstract class BiomePerditaBase extends BiomeSpace {
 		this.biomeDecor.mushroomsPerChunk = -999;
 		this.spawnableCreatureList.add(new SpawnListEntry(EntityAlienVillager.class, 5, 1, 2));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityGrayAlien.class, 80, 2, 4));
+		this.spawnableMonsterList.add(new SpawnListEntry(EntityMegaCreeper.class, 25, 1, 3));
 		this.setStoneBlock(ZGBlocks.perdStone);
 		this.setPlanetForBiome(ZGPlanets.planetPerdita);
 	}

@@ -155,6 +155,7 @@ public class OreDictRegistry {
 		// Etrium
 		registerOre("oreEtrium", ZGBlocks.perdEtriumOre);
 		registerOre("blockEtrium", ZGBlocks.blockPerdEtrium);
+		registerOre("ingotEtrium", ZGItems.ingotEtrium);
 		registerOre("gemEtrium", ZGItems.perdEtrium);
 		
 		// Lost Diamond
@@ -229,7 +230,7 @@ public class OreDictRegistry {
 		registerOre("swordAzurite", ZGItems.swordAzurite);
 		
 		// Zollernium
-		registerOre("oreZollernium", ZGBlocks.atheonZollerniumOre);
+		registerOre("oreZollernium", ZGBlocks.atheonZollerniumOre, ZGBlocks.perdZollerniumOre);
 		registerOre("dustZollernium", ZGItems.dustZollernium);
 		registerOre("ingotZollernium", ZGItems.ingotZollernium);
 		registerOre("blockZollernium", ZGBlocks.blockZollernium);
@@ -273,6 +274,11 @@ public class OreDictRegistry {
 		registerOre("orePlutonium", ZGBlocks.xantheonPlutoniumOre);
 		registerOre("gemPlutonium", ZGItems.plutoniumCrystal);
 		registerOre("blockPlutonium", ZGBlocks.blockPlutonium);
+		
+		// Zucrite
+		registerOre("blockZucrite", ZGBlocks.blockZucrite);
+		registerOre("ingotZucrite", ZGItems.ingotZucrite);
+		registerOre("dustZucrite", ZGItems.dustZucrite);
 		
 		// Blazerock
 		registerOre("blockBlazePowder", ZGBlocks.kriffBlazeRock);

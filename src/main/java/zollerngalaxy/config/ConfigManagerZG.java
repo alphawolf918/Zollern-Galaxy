@@ -8,6 +8,7 @@ public class ConfigManagerZG {
 	
 	public static Configuration configuration;
 	
+	// Categories
 	public static String CATEGORY_DIMENSIONS = "Dimensions";
 	public static String CATEGORY_MOONS = "Moons";
 	public static String CATEGORY_SATELLITES = "Space_Stations";
@@ -15,6 +16,7 @@ public class ConfigManagerZG {
 	public static String CATEGORY_COMPATIBILITY = "Compatibility";
 	public static String CATEGORY_COORDINATES = "Coordinates";
 	public static String CATEGORY_CUSTOMIZATIONS = "Customizations";
+	public static String CATEGORY_TIERS = "Planet Tiers";
 	
 	// Planets (Psios)
 	public static int planetEdenDimensionId;
@@ -100,6 +102,7 @@ public class ConfigManagerZG {
 	public static boolean disableStarGates;
 	public static String temperatureType;
 	public static boolean hideUnusedStarSystems;
+	public static boolean enableMegaCreeperGriefing;
 	
 	// Compat
 	public static boolean shouldOasisUseLiquidRedstone;
@@ -151,6 +154,22 @@ public class ConfigManagerZG {
 	public static float novaX;
 	public static float novaY;
 	public static float novaZ;
+	
+	// Planet Tiers (Psios-6)
+	public static int planetZollusTier;
+	public static int planetKriffonTier;
+	public static int planetPurgotTier;
+	public static int planetEdenTier;
+	
+	// Planet Tiers (Praedyth)
+	public static int planetXathiusTier;
+	public static int planetOasisTier;
+	public static int planetXantheonTier;
+	public static int planetCandoraTier;
+	public static int planetAtheonTier;
+	
+	// Planet Tiers (Sol-2)
+	public static int planetPerditaTier;
 	
 	public static void init(FMLPreInitializationEvent event) {
 		configuration = new Configuration(new File(event.getModConfigurationDirectory().getAbsolutePath()
@@ -271,6 +290,10 @@ public class ConfigManagerZG {
 		hideUnusedStarSystems = configuration.get(CATEGORY_MISC, "Hide Stars with no Planets", true,
 				"Enable to see Stars that have no Planets yet. (default: true)").getBoolean();
 		
+		// Misc (Should Mega Creeper explosions harm terrain?)
+		enableMegaCreeperGriefing = configuration.get(CATEGORY_MISC, "Enable Mega Creeper Griefing", true,
+				"Set to false if you don't want Mega Creepers to destroy terrain. (default: true)").getBoolean();
+		
 		// Misc (Temperatures shown in fahrenheit or celsius?)
 		temperatureType = configuration.get(CATEGORY_MISC, "[HUD DISPLAY] Temperature Type (F or C only)", "F",
 				"Should temperatures be shown in Fahrenheit (F) or Celsius (C)? (default: F)").getString();
@@ -282,8 +305,7 @@ public class ConfigManagerZG {
 				CATEGORY_COMPATIBILITY,
 				"Oasis uses Thermal Foundation's Destabilized Redstone",
 				true,
-				"Whether or not Oasis should use Detabilized Redstone for its Red Sea biome. "
-						+ "WARNING: This can use a LOT of your PC's memory! "
+				"Whether or not Oasis should use Detabilized Redstone for its Red Sea biome. WARNING: This can use a LOT of your PC's memory! "
 						+ "This can lead to severe LAG! Use at your own risk. (default: true)").getBoolean();
 		
 		// Compatibility (Whether or not Thermal Foundation Pulverizers should
@@ -332,7 +354,7 @@ public class ConfigManagerZG {
 		
 		// Coords (Sol-2)
 		sol2X = (float) configuration.get(CATEGORY_COORDINATES, "Sol-2 X", 1.2).getDouble();
-		sol2Y = (float) configuration.get(CATEGORY_COORDINATES, "Sol-2 Y", -1.4).getDouble();
+		sol2Y = (float) configuration.get(CATEGORY_COORDINATES, "Sol-2 Y", -1.2).getDouble();
 		sol2Z = (float) configuration.get(CATEGORY_COORDINATES, "Sol-2 Z", 0.0).getDouble();
 		
 		// Coords (Pantheon)
@@ -359,6 +381,22 @@ public class ConfigManagerZG {
 		novaX = (float) configuration.get(CATEGORY_COORDINATES, "Nova X", 1.5).getDouble();
 		novaY = (float) configuration.get(CATEGORY_COORDINATES, "Nova Y", 1.2).getDouble();
 		novaZ = (float) configuration.get(CATEGORY_COORDINATES, "Nova Z", 0.0).getDouble();
+		
+		// Planet Tiers (Psios-6)
+		planetZollusTier = configuration.get(CATEGORY_TIERS, "Planet Zollus Tier", 3).getInt();
+		planetKriffonTier = configuration.get(CATEGORY_TIERS, "Planet Kriffon Tier", 4).getInt();
+		planetPurgotTier = configuration.get(CATEGORY_TIERS, "Planet Purgot Tier", 5).getInt();
+		planetEdenTier = configuration.get(CATEGORY_TIERS, "Planet Eden Tier", 5).getInt();
+		
+		// Planet Tiers (Praedyth)
+		planetXathiusTier = configuration.get(CATEGORY_TIERS, "Planet Xathius Tier", 6).getInt();
+		planetOasisTier = configuration.get(CATEGORY_TIERS, "Planet Oasis Tier", 6).getInt();
+		planetXantheonTier = configuration.get(CATEGORY_TIERS, "Planet Xantheon Tier", 7).getInt();
+		planetCandoraTier = configuration.get(CATEGORY_TIERS, "Planet Candora Tier", 8).getInt();
+		planetAtheonTier = configuration.get(CATEGORY_TIERS, "Planet Atheon Tier", 8).getInt();
+		
+		// Planet Tiers (Sol-2)
+		planetPerditaTier = configuration.get(CATEGORY_TIERS, "Planet Perdita Tier", 9).getInt();
 		
 		configuration.save();
 	}

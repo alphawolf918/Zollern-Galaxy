@@ -4,6 +4,7 @@ Zollern Galaxy v2.0.11
 
 * Added config option to control the amount of Space Stations that spawn (between 1 and 5 only).
 * Added config option to control whether or not extra Lore Blocks can spawn aboard Space Stations.
+* Added config options for customizable planet tiers.
 * Added several more Lore Books - the start of another small story.
 * Now requires latest versions of Galacticraft and Forge for 1.12.2.
 * SkyProvider for Zollern Galaxy Space Stations now scales the sun accordingly per planet/moon.
@@ -20,5 +21,12 @@ Zollern Galaxy v2.0.11
 * Added Lost Diamond Ore and Etrium Ore.
     - Will be used to create a new metal alloy called Zucrite.
 * Added the Lost Desert biome with a special cactus.
-    - Has a chance to drop a Lost Berry (edible).
+    - Has a chance to drop a Lost Berry (edible fruit).
+* Added the Lost Hallows biome.
+* Lowered the spawn height of Crystal Towers on Edeon by 10.
+* 2 Etrium Ingots and 4 Lost Diamonds in an Induction Smelter = 2 Zucrite Ingots
+* Added the Mega Creeper mob.
+    - Explosions are over twice as large and happen twice as fast as regular Creepers.
+    - Drops Super Charged Coal on death, but very powerful and fast.
+    - Only spawns on Planet Perdita.
 * 

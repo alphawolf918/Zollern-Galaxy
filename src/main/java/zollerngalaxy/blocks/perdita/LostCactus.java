@@ -185,7 +185,10 @@ public class LostCactus extends ZGBlockBase implements IPlantable {
 	public void onBlockDestroyedByPlayer(World worldIn, BlockPos pos, IBlockState state) {
 		int randInt = ZGHelper.rngNumber(1, 10);
 		if (randInt <= 3) {
-			ZGHelper.dropItem(ZGItems.perdBerry, worldIn, pos);
+			int dropNum = ZGHelper.rngNumber(1, 3);
+			for (int i = 0; i < dropNum; i++) {
+				ZGHelper.dropItem(ZGItems.perdBerry, worldIn, pos);
+			}
 		}
 	}
 	

@@ -16,7 +16,14 @@
 * Transparent planet.
 * Planets with oceans that have flora and fauna in them.
 * Partially-procedural worlds.
-* Lost Desert planet.
 * Advancements.
 * Water planets.
+* Gas planets.
+* LOOT!
+* Dungeons.
+* 3D "crystal" blocks, similar to No Man's Sky.
+* More lore.
+* Installable "blueprint technology" that can withstand the planet hazards for you.
+    - Can be recharged with special metals automatically.
+* Lost Reeds.
 * 

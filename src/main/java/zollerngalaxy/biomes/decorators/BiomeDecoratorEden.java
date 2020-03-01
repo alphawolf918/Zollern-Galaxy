@@ -252,6 +252,7 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 			y = rand.nextInt(rand.nextInt(genY) + 8);
 			if (y >= 63) {
 				if (rand.nextInt(1000) <= 25) {
+					y -= 10;
 					(new WorldGenEdenTower()).generate(world, rand, this.chunkPos.add(x, y, z));
 				}
 			}

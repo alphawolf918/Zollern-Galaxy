@@ -63,7 +63,7 @@ public class CraftingRecipes {
 		CraftingRecipes.addIngotMetal(ZGItems.ingotZollernium, ZGBlocks.blockZollernium);
 		CraftingRecipes.addIngotMetal(ZGItems.ingotZinc, ZGBlocks.blockZinc);
 		CraftingRecipes.addIngotMetal(ZGItems.perdDiamond, ZGBlocks.blockPerdDiamond);
-		CraftingRecipes.addIngotMetal(ZGItems.perdEtrium, ZGBlocks.blockPerdEtrium);
+		CraftingRecipes.addIngotMetal(ZGItems.ingotEtrium, ZGBlocks.blockPerdEtrium);
 		CraftingRecipes.addIngotMetal(Items.BLAZE_POWDER, ZGBlocks.kriffBlazeRock);
 		
 		// Compression

@@ -56,7 +56,7 @@ public class ZGHelper {
 	}
 	
 	public static int rngNumber(int min, int max) {
-		assert min >= max : "Min can't be lower than max!";
+		assert min >= max : "Min can't be greater than max!";
 		Random rand = new Random();
 		int randInt = rand.nextInt(max);
 		if (randInt < min) {
@@ -66,13 +66,23 @@ public class ZGHelper {
 	}
 	
 	public static double rngDbl(double min, double max) {
-		assert min >= max : "Min can't be lower than max!";
+		assert min >= max : "Min can't be greater than max!";
 		Random rand = new Random();
 		double randDbl = rand.nextDouble() * max;
 		if (randDbl < min) {
 			randDbl = min;
 		}
 		return randDbl;
+	}
+	
+	public static float rngFloat(float min, float max) {
+		assert min >= max : "Min can't be greater than max!";
+		Random rand = new Random();
+		float randFlt = rand.nextFloat() * max;
+		if (randFlt < min) {
+			randFlt = min;
+		}
+		return randFlt;
 	}
 	
 	public static String capitalizeFirstLetter(String original) {
@@ -119,7 +129,9 @@ public class ZGHelper {
 	 * Send a chat message to the Player. Call this from your ClientProxy!
 	 * 
 	 * @param player
+	 *            The Player to send the message to.
 	 * @param text
+	 *            The message to send.
 	 */
 	public static void addChatMessage(EntityPlayer player, String text) {
 		player.sendMessage(new TextComponentString(text));

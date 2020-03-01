@@ -208,7 +208,7 @@ public class ZGPlanets {
 		planetZollus.setPhaseShift(0.0F);
 		planetZollus.setRelativeOrbitTime(42.2F);
 		planetZollus.setDistanceFromCenter(1.9F);
-		planetZollus.setTierRequired(3);
+		planetZollus.setTierRequired(ConfigManagerZG.planetZollusTier);
 		planetZollus.setRelativeSize(10.876F);
 		planetZollus.setPlanetTemperature(-152.6F);
 		planetZollus.setPlanetToxicity(0.4F);
@@ -230,7 +230,7 @@ public class ZGPlanets {
 		planetKriffon.setPhaseShift(0.0F);
 		planetKriffon.setRelativeOrbitTime(0.3F);
 		planetKriffon.setDistanceFromCenter(0.5F);
-		planetKriffon.setTierRequired(4);
+		planetKriffon.setTierRequired(ConfigManagerZG.planetKriffonTier);
 		planetKriffon.setRelativeSize(20.0F);
 		planetKriffon.setPlanetTemperature(227.4F);
 		planetKriffon.setPlanetToxicity(14.1F);
@@ -251,7 +251,7 @@ public class ZGPlanets {
 		planetPurgot.setPhaseShift(0.0F);
 		planetPurgot.setRelativeOrbitTime(10F);
 		planetPurgot.setDistanceFromCenter(1.0F);
-		planetPurgot.setTierRequired(5);
+		planetPurgot.setTierRequired(ConfigManagerZG.planetPurgotTier);
 		planetPurgot.setRelativeSize(40.0F);
 		planetPurgot.setPlanetTemperature(-54.5F);
 		planetPurgot.setPlanetToxicity(15.2F);
@@ -276,7 +276,7 @@ public class ZGPlanets {
 		planetEden.setPhaseShift(0.0F);
 		planetEden.setRelativeOrbitTime(8.0F);
 		planetEden.setDistanceFromCenter(0.6F);
-		planetEden.setTierRequired(5);
+		planetEden.setTierRequired(ConfigManagerZG.planetEdenTier);
 		planetEden.setRelativeSize(50.0F);
 		planetEden.setPlanetTemperature(71.2F);
 		planetEden.setPlanetToxicity(0.0F);
@@ -302,7 +302,7 @@ public class ZGPlanets {
 		planetXathius.setPhaseShift(0.0F);
 		planetXathius.setRelativeOrbitTime(2.5F);
 		planetXathius.setDistanceFromCenter(1.4F);
-		planetXathius.setTierRequired(10);
+		planetXathius.setTierRequired(ConfigManagerZG.planetXathiusTier);
 		planetXathius.setRelativeSize(20.0F);
 		planetXathius.setPlanetTemperature(82.4f);
 		planetXathius.setPlanetToxicity(2.5f);
@@ -326,7 +326,7 @@ public class ZGPlanets {
 		planetOasis.setPhaseShift(0.0f);
 		planetOasis.setRelativeOrbitTime(6.2F);
 		planetOasis.setDistanceFromCenter(1.8f);
-		planetOasis.setTierRequired(6);
+		planetOasis.setTierRequired(ConfigManagerZG.planetOasisTier);
 		planetOasis.setRelativeSize(64.0f);
 		planetOasis.setPlanetTemperature(68.2F);
 		planetOasis.setPlanetToxicity(0.5f);
@@ -349,7 +349,7 @@ public class ZGPlanets {
 		planetXantheon.setPhaseShift(4.0f);
 		planetXantheon.setRelativeOrbitTime(20.2F);
 		planetXantheon.setDistanceFromCenter(2.5F);
-		planetXantheon.setTierRequired(8);
+		planetXantheon.setTierRequired(ConfigManagerZG.planetXantheonTier);
 		planetXantheon.setRelativeSize(96.0f);
 		planetXantheon.setPlanetTemperature(-31.2F);
 		planetXantheon.setPlanetToxicity(5.2f);
@@ -372,7 +372,7 @@ public class ZGPlanets {
 		planetCandora.setPhaseShift(0.1F);
 		planetCandora.setRelativeOrbitTime(10.5F);
 		planetCandora.setDistanceFromCenter(2.1F);
-		planetCandora.setTierRequired(10);
+		planetCandora.setTierRequired(ConfigManagerZG.planetCandoraTier);
 		planetCandora.setRelativeSize(102.9F);
 		planetCandora.setPlanetTemperature(67.5F);
 		planetCandora.setPlanetToxicity(0.0F);
@@ -397,7 +397,7 @@ public class ZGPlanets {
 		planetAtheon.setPhaseShift(10.2F);
 		planetAtheon.setRelativeOrbitTime(0.6F);
 		planetAtheon.setDistanceFromCenter(0.4F);
-		planetAtheon.setTierRequired(9);
+		planetAtheon.setTierRequired(ConfigManagerZG.planetAtheonTier);
 		planetAtheon.setRelativeSize(102.5F);
 		planetAtheon.setPlanetTemperature(57.2F);
 		planetAtheon.setPlanetToxicity(0.0F);
@@ -421,9 +421,11 @@ public class ZGPlanets {
 		planetPerdita.setPhaseShift(20.1F);
 		planetPerdita.setRelativeOrbitTime(1.2F);
 		planetPerdita.setDistanceFromCenter(0.8F);
-		planetPerdita.setTierRequired(10);
+		planetPerdita.setTierRequired(ConfigManagerZG.planetPerditaTier);
 		planetPerdita.setRelativeSize(204.6F);
-		planetPerdita.setPlanetTemperature(125.6F);
+		planetPerdita.setPlanetTemperature(195.8F);
+		planetAtheon.setPlanetToxicity(1.2F);
+		planetAtheon.setPlanetRadiation(3.5F);
 		planetPerdita.setBreathable(true);
 		planetPerdita.setWindLevel(16.16F);
 		planetPerdita.setDensity(20.4F);
@@ -432,7 +434,7 @@ public class ZGPlanets {
 				EnumAtmosphericGas.WATER);
 		planetPerdita.setAtmosphere();
 		planetPerdita.setPlanetIcon("perdita");
-		planetPerdita.setBiomeInfo(ZGBiomes.PERDITA_DESERT);
+		planetPerdita.setBiomeInfo(ZGBiomes.PERDITA_DESERT, ZGBiomes.PERDITA_HALLOWS);
 		totalPlanets++;
 		
 		// Caligro

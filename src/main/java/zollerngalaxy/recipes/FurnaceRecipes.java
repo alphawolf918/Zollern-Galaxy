@@ -106,6 +106,9 @@ public class FurnaceRecipes {
 		
 		// Perdita
 		FurnaceRecipes.SmeltBlock(ZGBlocks.perdCobble, ZGBlocks.perdStone, 5.6F);
+		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.perdIronOre, Items.IRON_INGOT, 5.8F);
+		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.perdGoldOre, Items.GOLD_INGOT, 5.9F);
+		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.perdZollerniumOre, ZGItems.ingotZollernium, 7.2F);
 		
 		// Dust -> Ingots/Gems
 		FurnaceRecipes.SmeltItem(ZGItems.dustDiamond, Items.DIAMOND, 2.6F);
@@ -119,6 +122,7 @@ public class FurnaceRecipes {
 		FurnaceRecipes.SmeltItem(ZGItems.dustAmaranth, ZGItems.ingotAmaranth, 5.6F);
 		FurnaceRecipes.SmeltItem(ZGItems.dustZollernium, ZGItems.ingotZollernium, 5.6F);
 		FurnaceRecipes.SmeltItem(ZGItems.dustZinc, ZGItems.ingotZinc, 5.6F);
+		FurnaceRecipes.SmeltItem(ZGItems.perdEtrium, ZGItems.ingotEtrium, 5.6F);
 		
 		// Lapis Dust -> Lapis Ingot
 		FurnaceRecipes.SmeltItem(new ItemStack(Items.DYE, 1, 4), new ItemStack(ZGItems.ingotLapis, 1), 1.0F);

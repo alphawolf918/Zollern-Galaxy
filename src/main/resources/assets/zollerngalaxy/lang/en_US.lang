@@ -224,10 +224,12 @@ tile.perdcactus.name=Lost Cactus
 tile.perdtorch.name=Lost Glowtorch
 tile.perddiamondblock.name=Block of Lost Diamond
 tile.perdetriumblock.name=Block of Etrium
+tile.zucriteblock.name=Block of Zucrite
 tile.perddiamondore.name=Lost Diamond Ore
 tile.perdetriumore.name=Lost Etrium Ore
 tile.perdironore.name=Lost Iron Ore
 tile.perdgoldore.name=Lost Gold Ore
+tile.perdzollerniumore.name=Lost Zollernium Ore
 tile.perdsoil.name=Lost Soil
 
 tile.amaranthblock.name=Block of Amaranth
@@ -369,7 +371,10 @@ item.superchargedcoal.name=Super Charged Coal
 item.powerstick.name=Rod of Ascension
 
 item.perddiamond.name=Lost Diamond
-item.etrium.name=Etrium
+item.etrium.name=Raw Etrium
+item.etriumingot.name=Etrium Ingot
+item.zucritedust.name=Zucrite Dust
+item.zucritedust.name=Zucrite Ingot
 item.perdpearl.name=Lost Pearl
 item.perdglowstonedust.name=Lost Glowdust
 
@@ -434,6 +439,7 @@ entity.zollerngalaxy:crawler.name=Crawler Boss
 entity.zollerngalaxy:frostgiant.name=Frost Giant
 entity.zollerngalaxy:magmos.name=Magmos
 entity.zollerngalaxy:slime.raspberry.name=Galaxy Slime (Raspberry)
+entity.zollerngalaxy:megacreeper.name=Mega Creeper
 
 planet.zollus=Zollus
 planet.eden=Eden

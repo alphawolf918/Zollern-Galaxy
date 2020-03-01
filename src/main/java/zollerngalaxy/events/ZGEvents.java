@@ -20,6 +20,7 @@ import zollerngalaxy.blocks.ZGBlockGrass;
 import zollerngalaxy.items.ZGItems;
 import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.mobs.entities.EntityGrayAlien;
+import zollerngalaxy.mobs.entities.EntityMegaCreeper;
 import zollerngalaxy.mobs.entities.EntityMoolus;
 import zollerngalaxy.mobs.entities.EntityOinkus;
 import zollerngalaxy.util.CachedEnum;
@@ -51,6 +52,13 @@ public class ZGEvents {
 		if (theEntity instanceof EntityGrayAlien) {
 			for (int i = 0; i < ZGHelper.rngNumber(1, 2); i++) {
 				ZGHelper.dropItem(ZGItems.alienStone, worldObj, theEntity);
+			}
+		}
+		
+		// Mega Creeper
+		if (theEntity instanceof EntityMegaCreeper) {
+			for (int i = 0; i < ZGHelper.rngNumber(1, 3); i++) {
+				ZGHelper.dropItem(ZGItems.superChargedCoal, worldObj, theEntity);
 			}
 		}
 	}
