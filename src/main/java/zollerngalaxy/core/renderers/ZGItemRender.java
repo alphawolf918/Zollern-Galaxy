@@ -17,6 +17,7 @@ public class ZGItemRender {
 		for (Entry<Block, String> map : CommonZGRegisterHelper.SINGLE_BLOCK_RENDER_LIST.entrySet()) {
 			Block block = map.getKey();
 			String name = map.getValue();
+			
 			ClientZGRegisterHelper.registerModelRender(block, name);
 		}
 	}

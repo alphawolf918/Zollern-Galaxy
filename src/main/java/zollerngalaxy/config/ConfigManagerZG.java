@@ -92,6 +92,9 @@ public class ConfigManagerZG {
 	public static int spaceStationAtheonId;
 	public static int spaceStationAtheonStaticId;
 	
+	public static int spaceStationPerditaId;
+	public static int spaceStationPerditaStaticId;
+	
 	// Misc
 	public static boolean canEarthAnimalsSpawnOnEden;
 	public static boolean disableStarGates;
@@ -247,6 +250,12 @@ public class ConfigManagerZG {
 		spaceStationAtheonId = configuration.get(CATEGORY_SATELLITES, "Atheon Space Station ID", -6016).getInt();
 		spaceStationAtheonStaticId = configuration.get(CATEGORY_SATELLITES, "Atheon Space Station Static ID", -6017).getInt();
 		
+		// Space Stations (Sol-2)
+		// Perdita
+		// TODO
+		spaceStationPerditaId = configuration.get(CATEGORY_SATELLITES, "Perdita Space Station ID", -6018).getInt();
+		spaceStationPerditaStaticId = configuration.get(CATEGORY_SATELLITES, "Perdita Space Station Static ID", -6019).getInt();
+		
 		// Misc (Can Earth animals spawn on Eden?)
 		canEarthAnimalsSpawnOnEden = configuration.get(CATEGORY_MISC, "Earth Animals Spawn On Eden", true,
 				"Should Earth animals spawn on Eden? (default: true)").getBoolean();
@@ -322,9 +331,9 @@ public class ConfigManagerZG {
 		praedythZ = (float) configuration.get(CATEGORY_COORDINATES, "Praedyth Z", 0.0).getDouble();
 		
 		// Coords (Sol-2)
-		sol2X = (float) configuration.get(CATEGORY_COORDINATES, "Praedyth X", 1.2).getDouble();
-		sol2Y = (float) configuration.get(CATEGORY_COORDINATES, "Praedyth Y", -1.4).getDouble();
-		sol2Z = (float) configuration.get(CATEGORY_COORDINATES, "Praedyth Z", 0.0).getDouble();
+		sol2X = (float) configuration.get(CATEGORY_COORDINATES, "Sol-2 X", 1.2).getDouble();
+		sol2Y = (float) configuration.get(CATEGORY_COORDINATES, "Sol-2 Y", -1.4).getDouble();
+		sol2Z = (float) configuration.get(CATEGORY_COORDINATES, "Sol-2 Z", 0.0).getDouble();
 		
 		// Coords (Pantheon)
 		pantheonX = (float) configuration.get(CATEGORY_COORDINATES, "Pantheon X", 2.0).getDouble();

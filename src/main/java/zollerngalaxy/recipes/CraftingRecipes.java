@@ -44,7 +44,8 @@ public class CraftingRecipes {
 		CraftingRecipes.addRockBricks(ZGBlocks.blockShinestonePolished, ZGBlocks.blockShinestoneCrystalBricks);
 		CraftingRecipes.addRockBricks(ZGBlocks.blockChocolate, ZGBlocks.blockChocolateBricks);
 		CraftingRecipes.addRockBricks(ZGBlocks.xantheonChrome, ZGBlocks.xantheonConstructBlock);
-		CraftingRecipes.addRockBricks(ZGBlocks.perdStone, ZGBlocks.perdRockBricks);
+		CraftingRecipes.addRockBricks(ZGBlocks.perdRock, ZGBlocks.perdRockBricks);
+		CraftingRecipes.addRockBricks(ZGBlocks.perdCaveStone, ZGBlocks.perdCaveStoneBricks);
 		
 		// Items -> Blocks
 		CraftingRecipes.addIngotMetal(ZGItems.ingotVirinium, ZGBlocks.blockViri);
@@ -61,6 +62,8 @@ public class CraftingRecipes {
 		CraftingRecipes.addIngotMetal(ZGItems.azurite, ZGBlocks.blockAzurite);
 		CraftingRecipes.addIngotMetal(ZGItems.ingotZollernium, ZGBlocks.blockZollernium);
 		CraftingRecipes.addIngotMetal(ZGItems.ingotZinc, ZGBlocks.blockZinc);
+		CraftingRecipes.addIngotMetal(ZGItems.perdDiamond, ZGBlocks.blockPerdDiamond);
+		CraftingRecipes.addIngotMetal(ZGItems.perdEtrium, ZGBlocks.blockPerdEtrium);
 		CraftingRecipes.addIngotMetal(Items.BLAZE_POWDER, ZGBlocks.kriffBlazeRock);
 		
 		// Compression

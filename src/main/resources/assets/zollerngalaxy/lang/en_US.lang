@@ -219,9 +219,16 @@ tile.perdcreepdirt.name=Lost Creepdirt
 tile.perdcreepstone.name=Lost Creepstone
 tile.perdcavestone.name=Lost Cavestone
 tile.perdcavestonebricks.name=Lost Cavestone Bricks
+tile.perdglowstone.name=Lost Glowstone
 tile.perdcactus.name=Lost Cactus
 tile.perdtorch.name=Lost Glowtorch
-tile.perdglowstone.name=Lost Glowstone
+tile.perddiamondblock.name=Block of Lost Diamond
+tile.perdetriumblock.name=Block of Etrium
+tile.perddiamondore.name=Lost Diamond Ore
+tile.perdetriumore.name=Lost Etrium Ore
+tile.perdironore.name=Lost Iron Ore
+tile.perdgoldore.name=Lost Gold Ore
+tile.perdsoil.name=Lost Soil
 
 tile.amaranthblock.name=Block of Amaranth
 tile.azuriteblock.name=Block of Azurite
@@ -274,6 +281,8 @@ item.alienbeefcooked.name=Cooked Alien Beef
 item.alienbaconraw.name=Raw Alien Bacon
 item.alienbaconcooked.name=Cooked Alien Bacon
 item.fruitofeden.name=Fruit of Eden
+item.perdberry.name=Lost Berry
+item.perdpeach.name=Lost Peach
 
 item.creamball.name=Cream Ball
 item.rawchocolate.name=Raw Chocolate
@@ -360,6 +369,7 @@ item.superchargedcoal.name=Super Charged Coal
 item.powerstick.name=Rod of Ascension
 
 item.perddiamond.name=Lost Diamond
+item.etrium.name=Etrium
 item.perdpearl.name=Lost Pearl
 item.perdglowstonedust.name=Lost Glowdust
 

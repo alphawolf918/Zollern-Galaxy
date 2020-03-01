@@ -104,6 +104,9 @@ public class FurnaceRecipes {
 		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.atheonZollerniumOre, ZGItems.ingotZollernium, 3.6F);
 		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.atheonZincOre, ZGItems.ingotZinc, 3.6F);
 		
+		// Perdita
+		FurnaceRecipes.SmeltBlock(ZGBlocks.perdCobble, ZGBlocks.perdStone, 5.6F);
+		
 		// Dust -> Ingots/Gems
 		FurnaceRecipes.SmeltItem(ZGItems.dustDiamond, Items.DIAMOND, 2.6F);
 		FurnaceRecipes.SmeltItem(ZGItems.dustEmerald, Items.EMERALD, 3.2F);

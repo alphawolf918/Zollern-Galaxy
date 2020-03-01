@@ -10,6 +10,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraft.world.DimensionType;
 import net.minecraft.world.World;
@@ -27,9 +28,19 @@ public class ZGHelper {
 	private static final Logger LOGGER = LogManager.getLogger("Zollern Galaxy");
 	
 	public static void dropItem(Item droppedItem, World worldObj, Entity theEntity) {
-		ItemStack itemStack = new ItemStack(droppedItem, rngNumber(1, 2));
-		EntityItem itemEntity = new EntityItem(worldObj, theEntity.posX, theEntity.posY, theEntity.posZ, itemStack);
-		worldObj.spawnEntity(itemEntity);
+		if (!worldObj.isRemote) {
+			ItemStack itemStack = new ItemStack(droppedItem, rngNumber(1, 2));
+			EntityItem itemEntity = new EntityItem(worldObj, theEntity.posX, theEntity.posY, theEntity.posZ, itemStack);
+			worldObj.spawnEntity(itemEntity);
+		}
+	}
+	
+	public static void dropItem(Item droppedItem, World worldObj, BlockPos pos) {
+		if (!worldObj.isRemote) {
+			ItemStack itemStack = new ItemStack(droppedItem, rngNumber(1, 2));
+			EntityItem itemEntity = new EntityItem(worldObj, pos.getX(), pos.getY(), pos.getZ(), itemStack);
+			worldObj.spawnEntity(itemEntity);
+		}
 	}
 	
 	public static boolean getRNGChance(int min, int max) {

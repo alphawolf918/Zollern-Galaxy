@@ -69,9 +69,9 @@ public class ItemStargate extends ZGItemBase {
 			case 7:
 				this.sendToPlanet(ConfigManagerZG.planetAtheonDimensionId, ConfigManagerZG.planetXantheonDimensionId, player);
 				break;
-			// case 8:
-			// // TODO
-			// break;
+			case 8:
+				this.sendToPlanet(ConfigManagerZG.planetPerditaDimensionId, ConfigManagerZG.planetAtheonDimensionId, player);
+				break;
 			// case 9:
 			// // TODO
 			// break;
@@ -85,8 +85,7 @@ public class ItemStargate extends ZGItemBase {
 				break;
 			}
 		} else {
-			proxy.sendChatMessage(player, TextFormatting.DARK_RED + "Use of Star Gates has been "
-					+ "disabled in the config.");
+			proxy.sendChatMessage(player, TextFormatting.DARK_RED + "Use of Star Gates has been " + "disabled in the config.");
 		}
 	}
 	

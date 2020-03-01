@@ -11,4 +11,14 @@ Zollern Galaxy v2.0.11
 * Updated graphic for Planet Eden a bit.
 * Created new graphic for Planet Perdita.
 * Created new blocks and items for Planet Perdita.
+    - Perdita blocks require Zollernium tools for harvesting.
+    - Texture for Lost Sand courtesy of texture designer Skaptic.
+    - Texture for Lost Cobblestone and Lost Subsoil courtesy of dabbingevee.
+* Updated Crater Block texture.
+* Created the Sol-2 star system.
+* Created Planet Perdita.
+* Added Lost Diamond Ore and Etrium Ore.
+    - Will be used to create a new metal alloy called Zucrite.
+* Added the Lost Desert biome with a special cactus.
+    - Has a chance to drop a Lost Berry (edible).
 * 

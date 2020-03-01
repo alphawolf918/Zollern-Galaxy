@@ -285,14 +285,14 @@ public class ZGLore {
 		BOOK_THIRTYONE = ZGLore.createLoreBook(31, "Class 9 Planets", "Class NINE planets are another type of gas giant, "
 				+ "usually located in the home star system of a hostile race.");
 		
-		BOOK_THIRTYTWO = ZGLore.createLoreBook(32, "Class Exotic Planets",
+		BOOK_THIRTYTWO = ZGLore.createLoreBook(32, "Exotic Planets",
 				"Class Exotic planets are a strange world that is uniquely proportioned "
 						+ "and makes no logical sense; an anomaly.");
 		
-		BOOK_THIRTYTHREE = ZGLore.createLoreBook(33, "Class Abandoned Planets",
+		BOOK_THIRTYTHREE = ZGLore.createLoreBook(33, "Abandoned Planets",
 				"Class Abandoned planets are a desolate void, long abandoned due to catastrophe or other hostility.");
 		
-		BOOK_THIRTYFOUR = ZGLore.createLoreBook(34, "Metamorphasis - Part 1", "At one point, for several months (Earth time), "
+		BOOK_THIRTYFOUR = ZGLore.createLoreBook(34, "Metamorphasis 1", "At one point, for several months (Earth time), "
 				+ "all planets seemed to give off a uniquely intense thermal level.",
 				"It was as if the galaxy had somehow been supercharged, " + "and it is now cooling down.",
 				"While not yet known what caused it, " + "Earth's best scientists are trying to figure it out.",

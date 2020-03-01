@@ -19,6 +19,7 @@ import net.minecraft.world.chunk.ChunkPrimer;
 import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.biomes.decorators.BiomeDecoratorPerdita;
 import zollerngalaxy.blocks.ZGBlocks;
+import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderPerdita;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 import zollerngalaxy.mobs.entities.EntityGrayAlien;
 import zollerngalaxy.planets.ZGPlanets;
@@ -32,8 +33,9 @@ public abstract class BiomePerditaBase extends BiomeSpace {
 	protected static final IBlockState DIRT = ZGBlocks.perdRock.getDefaultState();
 	protected static final IBlockState ICE = Blocks.ICE.getDefaultState();
 	protected static final IBlockState WATER = Blocks.WATER.getDefaultState();
+	protected static final IBlockState LAVA = Blocks.LAVA.getDefaultState();
 	
-	protected static final int SEA_LEVEL = 63;// ChunkProviderPerdita.SEA_LEVEL;
+	protected static final int SEA_LEVEL = ChunkProviderPerdita.SEA_LEVEL;
 	protected static final int SEA_FLOOR_LEVEL = 36;
 	
 	public BiomeDecoratorPerdita biomeDecor = this.getBiomeDecorator();
@@ -77,8 +79,7 @@ public abstract class BiomePerditaBase extends BiomeSpace {
 				IBlockState iblockstate2 = chunkPrimerIn.getBlockState(i1, j1, l);
 				if (this.getBiomeType() == EnumBiomeTypeZG.OCEAN) {
 					if ((j1 < SEA_LEVEL) && (j1 > SEA_FLOOR_LEVEL)) {
-						IBlockState blockToUse = WATER;
-						chunkPrimerIn.setBlockState(i1, j1, l, blockToUse);
+						chunkPrimerIn.setBlockState(i1, j1, l, LAVA);
 					} else if (j1 < SEA_FLOOR_LEVEL) {
 						chunkPrimerIn.setBlockState(i1, j1, l, STONE);
 					} else if (j1 == SEA_FLOOR_LEVEL) {
@@ -100,7 +101,7 @@ public abstract class BiomePerditaBase extends BiomeSpace {
 							}
 							
 							if (j1 < i && (topState == null || topState.getMaterial() == Material.AIR)) {
-								topState = (this.getIsColdBiome()) ? ICE : WATER;
+								topState = LAVA;
 							}
 							
 							j = k;

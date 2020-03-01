@@ -58,6 +58,10 @@ public class ZGDimensions {
 	public static DimensionType ATHEON_ORBIT;
 	public static DimensionType ATHEON_ORBIT_STATIC;
 	
+	public static DimensionType PERDITA;
+	public static DimensionType PERDITA_ORBIT;
+	public static DimensionType PERDITA_ORBIT_STATIC;
+	
 	public static void init() {
 		// Psion-6 (Zollus)
 		ZGDimensions.ZOLLUS = ZGDimensions.getDimType(ConfigManagerZG.planetZollusDimensionId);
@@ -82,8 +86,8 @@ public class ZGDimensions {
 		
 		// Psion-6 (Eden)
 		ZGDimensions.EDEN = ZGDimensions.getDimType(ConfigManagerZG.planetEdenDimensionId);
-		ZGDimensions.EDEN_ORBIT = DimensionType.register("Eden Space Station", "_eden_orbit",
-				ConfigManagerZG.spaceStationEdenId, WorldProviderOrbitEden.class, false);
+		ZGDimensions.EDEN_ORBIT = DimensionType.register("Eden Space Station", "_eden_orbit", ConfigManagerZG.spaceStationEdenId,
+				WorldProviderOrbitEden.class, false);
 		ZGDimensions.EDEN_ORBIT_STATIC = DimensionType.register("Eden Space Station", "_eden_orbit",
 				ConfigManagerZG.spaceStationEdenStaticId, WorldProviderOrbitEden.class, true);
 		
@@ -121,6 +125,9 @@ public class ZGDimensions {
 				ConfigManagerZG.spaceStationAtheonId, WorldProviderOrbitAtheon.class, false);
 		ZGDimensions.ATHEON_ORBIT_STATIC = DimensionType.register("Atheon Space Station", "_atheon_orbit",
 				ConfigManagerZG.spaceStationAtheonStaticId, WorldProviderOrbitAtheon.class, true);
+		
+		// Sol-2 (Perdita)
+		ZGDimensions.PERDITA = ZGDimensions.getDimType(ConfigManagerZG.planetPerditaDimensionId);
 	}
 	
 	public static DimensionType getDimType(int dimId) {
@@ -147,6 +154,8 @@ public class ZGDimensions {
 			body = ZGPlanets.planetCandora;
 		} else if (dimID == ConfigManagerZG.planetAtheonDimensionId) {
 			body = ZGPlanets.planetAtheon;
+		} else if (dimID == ConfigManagerZG.planetPerditaDimensionId) {
+			body = ZGPlanets.planetPerdita;
 		}
 		if (body == null) {
 			ZGHelper.Log("Celestial Body was null.");

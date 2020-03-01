@@ -3,7 +3,7 @@ package zollerngalaxy.core.enums;
 public enum EnumPlanetClass {
 	
 	D("D"), H("H"), J("J"), K("K"), L("L"), M("M"), N("N"), R("R"), T("T"), Y("Y"), NINE("9"), EXOTIC("Exotic"), ABANDONED(
-			"Abandoned"), CONSTRUCTED("Constructed");
+			"Abandoned"), CONSTRUCTED("Constructed"), DESERT("Desert");
 	
 	private EnumPlanetClass planetClass;
 	private String planetClassStr;

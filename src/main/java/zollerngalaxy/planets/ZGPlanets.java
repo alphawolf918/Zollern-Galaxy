@@ -13,6 +13,7 @@ import zollerngalaxy.core.dimensions.worldproviders.WorldProviderCandora;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderEden;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderKriffon;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderOasis;
+import zollerngalaxy.core.dimensions.worldproviders.WorldProviderPerdita;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderPurgot;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderXantheon;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderXathius;
@@ -153,11 +154,11 @@ public class ZGPlanets {
 		systemPraedyth.setMainStar(starPraedyth);
 		totalSystems++;
 		
-		// Sol2 System
+		// Sol-2 System
 		systemSol2.setMapPosition(new Vector3(SOL2_X, SOL2_Y, SOL2_Z));
-		starSol2.setParentSolarSystem(systemPraedyth);
-		starSol2.setRelativeSize(40.0F);
-		systemSol2.setMainStar(starPraedyth);
+		starSol2.setParentSolarSystem(systemSol2);
+		starSol2.setRelativeSize(80.0F);
+		systemSol2.setMainStar(starSol2);
 		totalSystems++;
 		
 		// Pantheon System
@@ -413,10 +414,26 @@ public class ZGPlanets {
 		totalPlanets++;
 		
 		// Perdita
-		// planetPerdita.setDimensionInfo(ConfigManagerZG.planetPerditaDimensionId,
-		// WorldProviderPedita.class);
-		//
-		// TODO
+		planetPerdita.setDimensionInfo(ConfigManagerZG.planetPerditaDimensionId, WorldProviderPerdita.class);
+		planetPerdita.setParentSolarSystem(systemSol2);
+		planetPerdita.setPlanetClass(EnumPlanetClass.DESERT);
+		planetPerdita.setRingColorRGB(4.6F, 2.2F, 6.7F);
+		planetPerdita.setPhaseShift(20.1F);
+		planetPerdita.setRelativeOrbitTime(1.2F);
+		planetPerdita.setDistanceFromCenter(0.8F);
+		planetPerdita.setTierRequired(10);
+		planetPerdita.setRelativeSize(204.6F);
+		planetPerdita.setPlanetTemperature(125.6F);
+		planetPerdita.setBreathable(true);
+		planetPerdita.setWindLevel(16.16F);
+		planetPerdita.setDensity(20.4F);
+		planetPerdita.setHasRain(false);
+		planetPerdita.setPlanetGasses(EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.CO2, EnumAtmosphericGas.NITROGEN,
+				EnumAtmosphericGas.WATER);
+		planetPerdita.setAtmosphere();
+		planetPerdita.setPlanetIcon("perdita");
+		planetPerdita.setBiomeInfo(ZGBiomes.PERDITA_DESERT);
+		totalPlanets++;
 		
 		// Caligro
 		// TODO
@@ -456,7 +473,7 @@ public class ZGPlanets {
 		GalaxyRegistry.registerPlanet(planetXantheon);
 		GalaxyRegistry.registerPlanet(planetCandora);
 		GalaxyRegistry.registerPlanet(planetAtheon);
-		// GalaxyRegistry.registerPlanet(planetPerdita); TODO
+		GalaxyRegistry.registerPlanet(planetPerdita);
 	}
 	
 	public static void registerTeleportTypes() {
@@ -474,6 +491,6 @@ public class ZGPlanets {
 		GalacticraftRegistry.registerTeleportType(WorldProviderAtheon.class, new TeleportTypeVenus());
 		
 		// Sol-2
-		// TODO
+		GalacticraftRegistry.registerTeleportType(WorldProviderPerdita.class, new TeleportTypeVenus());
 	}
 }

@@ -49,6 +49,7 @@ import zollerngalaxy.biomes.kriffon.BiomeKriffon;
 import zollerngalaxy.biomes.oasis.BiomeOasisPlains;
 import zollerngalaxy.biomes.oasis.BiomeOasisRedSea;
 import zollerngalaxy.biomes.oasis.BiomeRedlands;
+import zollerngalaxy.biomes.perdita.BiomeLostDesert;
 import zollerngalaxy.biomes.purgot.BiomeLimbo;
 import zollerngalaxy.biomes.purgot.BiomePurgot;
 import zollerngalaxy.biomes.xantheon.BiomeXantheon;
@@ -114,6 +115,9 @@ public class ZGBiomes {
 	public static final Biome ATHEON_GOLDLANDS = new BiomeGoldlands(new BiomeProperties("Golden Constructs"));
 	public static final Biome ATHEON_LAVA_LAKES = new BiomeRadiolarianLakes(new BiomeProperties("Radiolarian Ocean"));
 	
+	// Perdita
+	public static final Biome PERDITA_DESERT = new BiomeLostDesert(new BiomeProperties("Lost Desert"));
+	
 	public static void init() {
 		// Zollus
 		ZGBiomes.addBiome(ZGBiomes.ZOLLUS, COLD, DEAD, DRY);
@@ -162,6 +166,9 @@ public class ZGBiomes {
 		// Atheon
 		ZGBiomes.addBiome(ZGBiomes.ATHEON_GOLDLANDS, DEAD, SPOOKY, HOT, WASTELAND);
 		ZGBiomes.addBiome(ZGBiomes.ATHEON_LAVA_LAKES, DEAD, SPOOKY, HOT, OCEAN);
+		
+		// Perdita
+		ZGBiomes.addBiome(ZGBiomes.PERDITA_DESERT, DEAD, HOT, DRY);
 		
 		ZGHelper.Log("Loaded a total of " + totalBiomes + " new biomes.");
 	}
