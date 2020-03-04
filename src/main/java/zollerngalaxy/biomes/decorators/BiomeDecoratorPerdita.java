@@ -20,6 +20,7 @@ import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.core.enums.EnumOreGenZG;
 import zollerngalaxy.worldgen.WorldGenMinableZG;
 import zollerngalaxy.worldgen.perdita.WorldGenLostCactus;
+import zollerngalaxy.worldgen.perdita.WorldGenLostDeadBush;
 
 public class BiomeDecoratorPerdita extends BiomeDecoratorZG {
 	
@@ -27,6 +28,8 @@ public class BiomeDecoratorPerdita extends BiomeDecoratorZG {
 	private static final Block ROCK = ZGBlocks.perdRock;
 	
 	public int lostCactiPerChunk = 10;
+	public int lostDeadBushPerChunk = 5;
+	public int palmWoodTreesPerChunk = 0;
 	
 	private WorldGenerator creepstoneGen;
 	private WorldGenerator creepdirtGen;
@@ -38,6 +41,8 @@ public class BiomeDecoratorPerdita extends BiomeDecoratorZG {
 	private WorldGenerator perdZollerniumOreGen;
 	
 	private WorldGenerator lostCactusGen = new WorldGenLostCactus();
+	private WorldGenerator lostDeadBushGen = new WorldGenLostDeadBush();
+	private WorldGenerator palmWoodTreeGen; // TODO
 	
 	public BiomeDecoratorPerdita() {
 		this.creepstoneGen = new WorldGenMinableZG(ZGBlocks.perdCreepStone, STONE, EnumOreGenZG.SPECIAL_STONE);
@@ -76,7 +81,7 @@ public class BiomeDecoratorPerdita extends BiomeDecoratorZG {
 		
 		if (TerrainGen.decorate(world, rand, forgeChunkPos, DecorateBiomeEvent.Decorate.EventType.CACTUS)) {
 			if (rand.nextInt(12) == 0) {
-				for (int i = 0; i < this.lostCactiPerChunk; i++) {
+				for (int i = 0; i < this.lostCactiPerChunk; ++i) {
 					int x1 = rand.nextInt(16) + 8;
 					int z1 = rand.nextInt(16) + 8;
 					int y1 = world.getHeight(this.chunkPos.add(x1, 0, z1)).getY() * 2;
@@ -87,6 +92,23 @@ public class BiomeDecoratorPerdita extends BiomeDecoratorZG {
 				}
 			}
 		}
-		y = genY;
+		
+		if (TerrainGen.decorate(world, rand, forgeChunkPos, DecorateBiomeEvent.Decorate.EventType.DEAD_BUSH)) {
+			if (rand.nextInt(6) == 0) {
+				for (int i = 0; i < this.lostDeadBushPerChunk; ++i) {
+					int x1 = rand.nextInt(16) + 8;
+					int z1 = rand.nextInt(16) + 8;
+					int y1 = world.getHeight(this.chunkPos.add(x1, 0, z1)).getY() * 2;
+					if (y1 > 0) {
+						int y2 = rand.nextInt(y1);
+						this.lostDeadBushGen.generate(world, rand, this.chunkPos.add(x1, y2, z1));
+					}
+				}
+			}
+		}
+		
+		if (TerrainGen.decorate(world, rand, forgeChunkPos, DecorateBiomeEvent.Decorate.EventType.TREE)) {
+			
+		}
 	}
 }

@@ -28,6 +28,7 @@ public class BiomeLostHallows extends BiomePerditaBase {
 		this.enableSnow = false;
 		this.decorator.generateFalls = false;
 		this.biomeDecor.lostCactiPerChunk = 0;
+		this.biomeDecor.lostDeadBushPerChunk = 0;
 		this.grassFoliageColor = 0x9f00ff;
 		this.waterColor = 0x1b2cff;
 		this.topBlock = ZGBlocks.perdSoil.getDefaultState();

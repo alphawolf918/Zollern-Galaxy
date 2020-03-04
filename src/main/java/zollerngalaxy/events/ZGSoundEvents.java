@@ -11,6 +11,11 @@ public class ZGSoundEvents {
 	public static final SoundEvent ENTITY_ALIEN_AMBIENT = regSound("mob.alien.say");
 	public static final SoundEvent ENTITY_ALIEN_HURT = regSound("mob.alien.hurt");
 	
+	// Mummy
+	public static final SoundEvent ENTITY_MUMMY_AMBIENT = regSound("mob.mummy.say");
+	public static final SoundEvent ENTITY_MUMMY_HURT = regSound("mob.mummy.hurt");
+	public static final SoundEvent ENTITY_MUMMY_DEATH = regSound("mob.mummy.death");
+	
 	// Galaxy Knight
 	public static final SoundEvent ENTITY_GALAXY_KNIGHT_SAY = regSound("mob.galaxyknight.say");
 	public static final SoundEvent ENTITY_GALAXY_KNIGHT_DEATH = regSound("mob.galaxyknight.die");
@@ -24,8 +29,9 @@ public class ZGSoundEvents {
 	public static final SoundEvent MATERIAL_XENO_STEP = regSound("step.xeno");
 	
 	public static void init() {
-		registerSounds(ENTITY_ALIEN_AMBIENT, ENTITY_ALIEN_HURT, ENTITY_GALAXY_KNIGHT_SAY, ENTITY_GALAXY_KNIGHT_DEATH,
-				ENTITY_CRAWLER_SAY, ENTITY_CRAWLER_HURT, MATERIAL_XENO_DIG, MATERIAL_XENO_STEP);
+		registerSounds(ENTITY_ALIEN_AMBIENT, ENTITY_ALIEN_HURT, ENTITY_MUMMY_AMBIENT, ENTITY_MUMMY_HURT, ENTITY_MUMMY_DEATH,
+				ENTITY_GALAXY_KNIGHT_SAY, ENTITY_GALAXY_KNIGHT_DEATH, ENTITY_CRAWLER_SAY, ENTITY_CRAWLER_HURT, MATERIAL_XENO_DIG,
+				MATERIAL_XENO_STEP);
 	}
 	
 	private static void registerSound(SoundEvent sound) {

@@ -6,6 +6,7 @@ import net.minecraft.block.SoundType;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
@@ -22,6 +23,7 @@ import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.mobs.entities.EntityGrayAlien;
 import zollerngalaxy.mobs.entities.EntityMegaCreeper;
 import zollerngalaxy.mobs.entities.EntityMoolus;
+import zollerngalaxy.mobs.entities.EntityMummy;
 import zollerngalaxy.mobs.entities.EntityOinkus;
 import zollerngalaxy.util.CachedEnum;
 
@@ -59,6 +61,21 @@ public class ZGEvents {
 		if (theEntity instanceof EntityMegaCreeper) {
 			for (int i = 0; i < ZGHelper.rngNumber(1, 3); i++) {
 				ZGHelper.dropItem(ZGItems.superChargedCoal, worldObj, theEntity);
+			}
+		}
+		
+		// Mummy
+		if (theEntity instanceof EntityMummy) {
+			if (ZGHelper.getRNGChance(5, 10)) {
+				for (int i = 0; i < ZGHelper.rngNumber(1, 3); i++) {
+					ZGHelper.dropItem(Items.PAPER, worldObj, theEntity);
+				}
+			}
+			
+			if (ZGHelper.getRNGChance(5, 20)) {
+				for (int i = 0; i < ZGHelper.rngNumber(1, 2); i++) {
+					ZGHelper.dropItem(ZGItems.perdGlowdust, worldObj, theEntity);
+				}
 			}
 		}
 	}

@@ -1,5 +1,6 @@
 package zollerngalaxy.blocks;
 
+import java.util.Random;
 import micdoodle8.mods.galacticraft.api.block.ITerraformableBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
@@ -9,6 +10,9 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.potion.Potion;
+import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -27,6 +31,10 @@ public class ZGBlockBase extends Block implements ISingleZGBlockRender, IJSONBlo
 	protected static Material blockMaterial = Material.ROCK;
 	protected static SoundType blockSound = SoundType.STONE;
 	protected EnumBlockType blockType = EnumBlockType.NORMAL;
+	protected boolean isExplosive = false;
+	protected int explosionWeight = 40;
+	protected boolean hasPotionEffect = false;
+	protected Potion blockPotionEffect;
 	protected boolean shouldAlwaysBurn = false;
 	protected boolean isHotFloorBlock = false;
 	protected boolean hasInfo = false;
@@ -34,6 +42,7 @@ public class ZGBlockBase extends Block implements ISingleZGBlockRender, IJSONBlo
 	protected String blockInfo = "";
 	protected static String name;
 	protected int harvestLvl = 3;
+	protected Random rand = new Random();
 	
 	public ZGBlockBase(String blockName, float hardResist) {
 		super(Material.ROCK);
@@ -125,6 +134,74 @@ public class ZGBlockBase extends Block implements ISingleZGBlockRender, IJSONBlo
 	
 	public boolean getShouldAlwaysBurn() {
 		return this.shouldAlwaysBurn;
+	}
+	
+	/**
+	 * Sets the chance for this block to go kablooey. Higher numbers mean a
+	 * lower chance.
+	 * 
+	 * @param par1ExplosionChance
+	 *            int
+	 * @return Block
+	 */
+	public Block setExplosionChance(int par1ExplosionChance) {
+		this.explosionWeight = par1ExplosionChance;
+		return this;
+	}
+	
+	/**
+	 * Gets the chance this block has to explode. Higher numbers mean a lower
+	 * chance.
+	 * 
+	 * @return int
+	 */
+	public int getExplosionChance() {
+		return this.explosionWeight;
+	}
+	
+	public Block setShouldExplode(boolean shouldExplode, int explodeChance) {
+		this.setShouldExplode(shouldExplode);
+		this.setExplosionChance(explodeChance);
+		return this;
+	}
+	
+	public Block setShouldExplode(boolean shouldExplode) {
+		isExplosive = shouldExplode;
+		return this;
+	}
+	
+	public boolean getShouldExplode() {
+		return isExplosive;
+	}
+	
+	public Block setShouldGivePotionEffect(boolean shouldGivePotionEffect, Potion potionEffect) {
+		this.hasPotionEffect = shouldGivePotionEffect;
+		this.blockPotionEffect = potionEffect;
+		return this;
+	}
+	
+	public boolean getShouldGivePotionEffect() {
+		return this.hasPotionEffect;
+	}
+	
+	@Override
+	public void onBlockDestroyedByPlayer(World worldIn, BlockPos pos, IBlockState state) {
+		if (!worldIn.isRemote) {
+			if (this.getShouldExplode()) {
+				if (rand.nextInt(this.getExplosionChance()) <= 6) {
+					worldIn.createExplosion(null, pos.getX(), pos.getY(), pos.getZ(), 2.5F, true);
+				}
+			}
+		}
+		
+		if (this.getShouldGivePotionEffect()) {
+			if (rand.nextInt(10) <= 5) {
+				EntityPlayer player = worldIn.getClosestPlayer(pos.getX(), pos.getY(), pos.getZ(), 2.5D, false);
+				if (player != null && this.blockPotionEffect != null) {
+					player.addPotionEffect(new PotionEffect(this.blockPotionEffect, 200));
+				}
+			}
+		}
 	}
 	
 	public Block setBlockHarvestLevel(String toolClass, int level) {

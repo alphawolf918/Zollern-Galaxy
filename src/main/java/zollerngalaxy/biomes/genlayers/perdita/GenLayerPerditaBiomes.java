@@ -48,6 +48,7 @@ public class GenLayerPerditaBiomes extends GenLayerOasis {
 		List<BiomeEntry> list = new ArrayList<>();
 		list.add(new BiomeEntry(ZGBiomes.PERDITA_DESERT, 95));
 		list.add(new BiomeEntry(ZGBiomes.PERDITA_HALLOWS, 85));
+		list.add(new BiomeEntry(ZGBiomes.PERDITA_OASIS, 25));
 		currentBiomes[BiomeType.WARM.ordinal()] = new ArrayList<>(list);
 		return currentBiomes;
 	}

@@ -1,0 +1,9 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "all": "zollerngalaxy:blocks/perddirt",
+    "top": "zollerngalaxy:blocks/perdgrass",
+    "right": "zollerngalaxy:blocks/perdgrass_side",
+    "left": "zollerngalaxy:blocks/perdgrass_side"
+  }
+}

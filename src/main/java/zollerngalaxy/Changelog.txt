@@ -2,6 +2,7 @@
 Zollern Galaxy v2.0.11
 =====================
 
+* Fixed the double-requirement for Galacticraft Planets.
 * Added config option to control the amount of Space Stations that spawn (between 1 and 5 only).
 * Added config option to control whether or not extra Lore Blocks can spawn aboard Space Stations.
 * Added config options for customizable planet tiers.
@@ -23,10 +24,17 @@ Zollern Galaxy v2.0.11
 * Added the Lost Desert biome with a special cactus.
     - Has a chance to drop a Lost Berry (edible fruit).
 * Added the Lost Hallows biome.
-* Lowered the spawn height of Crystal Towers on Edeon by 10.
+* Lowered the spawn height of Crystal Towers on Edeon by 10 blocks.
 * 2 Etrium Ingots and 4 Lost Diamonds in an Induction Smelter = 2 Zucrite Ingots
 * Added the Mega Creeper mob.
     - Explosions are over twice as large and happen twice as fast as regular Creepers.
     - Drops Super Charged Coal on death, but very powerful and fast.
-    - Only spawns on Planet Perdita.
+    - Only spawns on Planet Perdita (for now).
+* Added the Lost Dead Bush, which is just a blue dead bush. No, there's nothing fancy about it. Really.
+* Added Radiolarian Fluid, Molten Fueltonium and Conductive Chargium fluids as reactant for Big Reactors.
+* Slightly increased chance for certain blocks to explode.
+* Added the Mummy mob to Planet Perdita.
+    - Basically just a fancy Zombie that's faster and hits harder.
+    - Chance to drop paper and/or Lost Glowdust.
+* Added Lost Oasis biome to Planet Perdita.
 * 

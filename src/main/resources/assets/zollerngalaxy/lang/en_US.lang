@@ -231,6 +231,10 @@ tile.perdironore.name=Lost Iron Ore
 tile.perdgoldore.name=Lost Gold Ore
 tile.perdzollerniumore.name=Lost Zollernium Ore
 tile.perdsoil.name=Lost Soil
+tile.perddeadbush.name=Lost Dead Bush
+tile.perddirt.name=Lost Dirt
+tile.perdgrass.name=Lost Grass
+tile.perdtallgrass.name=Lost Tall Grass
 
 tile.amaranthblock.name=Block of Amaranth
 tile.azuriteblock.name=Block of Azurite
@@ -440,6 +444,7 @@ entity.zollerngalaxy:frostgiant.name=Frost Giant
 entity.zollerngalaxy:magmos.name=Magmos
 entity.zollerngalaxy:slime.raspberry.name=Galaxy Slime (Raspberry)
 entity.zollerngalaxy:megacreeper.name=Mega Creeper
+entity.zollerngalaxy:mummy.name=Mummy
 
 planet.zollus=Zollus
 planet.eden=Eden
@@ -455,6 +460,8 @@ planet.atheon=Atheon
 
 planet.exodus=Exodus
 planet.perdita=Perdita
+planet.altum=Altum
+planet.caligro=Caligro
 
 planet.meztli=Meztli
 planet.centotl=Centotl

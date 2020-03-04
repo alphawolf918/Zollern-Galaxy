@@ -18,6 +18,8 @@ import zollerngalaxy.blocks.eden.EdenFlower;
 import zollerngalaxy.blocks.eden.EdenFruit;
 import zollerngalaxy.blocks.oasis.OasisFlower;
 import zollerngalaxy.blocks.perdita.LostCactus;
+import zollerngalaxy.blocks.perdita.ZGBlockGrassPerdita;
+import zollerngalaxy.blocks.perdita.ZGDeadBush;
 import zollerngalaxy.blocks.sweetblocks.CandyCubeBlock;
 import zollerngalaxy.blocks.sweetblocks.CookieBlock;
 import zollerngalaxy.blocks.sweetblocks.IceCreamSandwichBlock;
@@ -300,10 +302,15 @@ public class ZGBlocks {
 			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
 	
 	// Perdita
-	public static final Block perdSand = new ZGSand("perdsand", 3.4F).setBlockHarvestLevel(
+	public static final Block perdSand = new ZGSand("perdsand", 2.4F).setBlockHarvestLevel(
 			EnumHarvestToolZG.SHOVEL.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
 	public static final Block perdRock = new ZGBlockBase("perdrock").setBlockHarvestLevel(
 			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
+	public static final Block perdTallGrass = new ZGBlockTallGrass("perdtallgrass");
+	public static final Block perdDirt = ((ZGBlockBase) new ZGBlockDirt("perddirt").setLightLevel(0.5F)).setBlockHarvestLevel(
+			EnumHarvestToolZG.SHOVEL.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
+	public static final Block perdGrass = ((ZGBlockBase) new ZGBlockGrassPerdita("perdgrass").setLightLevel(0.7F))
+			.setBlockHarvestLevel(EnumHarvestToolZG.SHOVEL.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
 	public static final Block perdCobble = new ZGBlockBase("perdcobble").setBlockType(EnumBlockType.COBBLESTONE);
 	public static final Block perdStone = ((ZGBlockBase) new ZGPlanetStone("perdstone", 3.4F, ZGBlocks.perdCobble)
 			.setLightLevel(0.7F)).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
@@ -316,15 +323,17 @@ public class ZGBlocks {
 			EnumHarvestToolZG.SHOVEL.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
 	public static final Block perdSoil = new ZGBlockDirt("perdsoil").setBlockHarvestLevel(
 			EnumHarvestToolZG.SHOVEL.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
-	public static final Block perdCreepStone = new ZGPlanetStone("perdcreepstone").setBlockHarvestLevel(
-			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
+	public static final Block perdCreepStone = ((ZGBlockBase) new ZGPlanetStone("perdcreepstone").setBlockHarvestLevel(
+			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel())).setShouldExplode(true,
+			20);
 	public static final Block perdGlowstone = new ZGShineBlock("perdglowstone", ZGItems.perdGlowdust).setBlockHarvestLevel(
 			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
 	public static final Block perdCaveStone = new ZGPlanetStone("perdcavestone").setBlockHarvestLevel(
 			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
-	public static final Block perdCaveStoneBricks = new ZGBlockBase("perdcavestonebricks", 4.6F).setBlockHarvestLevel(
+	public static final Block perdCaveStoneBricks = new ZGBlockBase("perdcavestonebricks", 3.6F).setBlockHarvestLevel(
 			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
 	public static final Block perdCactus = new LostCactus();
+	public static final Block perdDeadBush = new ZGDeadBush("perddeadbush");
 	public static final Block perdDiamondOre = new ZGOreGem("perddiamondore", 7.2F, ZGItems.perdDiamond).setBlockHarvestLevel(
 			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
 	public static final Block perdEtriumOre = new ZGOreGem("perdetriumore", 7.5F, ZGItems.perdEtrium).setBlockHarvestLevel(
@@ -336,7 +345,13 @@ public class ZGBlocks {
 	public static final Block perdZollerniumOre = new ZGBlockOre("perdzollerniumore", 6.2F).setBlockHarvestLevel(
 			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
 	
+	// Altum
+	// TODO
+	
 	// Caligro
+	// TODO
+	
+	// Exodus
 	// TODO
 	
 	// Metals
@@ -363,7 +378,7 @@ public class ZGBlocks {
 	public static final Block blockShinestonePolished = new ZGShineBlock("polishedshinestone", 1.4F);
 	public static final Block blockShinestoneCrystalBricks = new ZGShineBlock("shinestonecrystalbricks", 2.4F);
 	
-	// Compressed Metals
+	// Compressed Metal Blocks
 	public static final Block blockCompressedHeartium = new ZGBlockCompressed("compressedheartiumblock");
 	public static final Block blockCompressedViri = new ZGBlockCompressed("compressedviriniumblock");
 	public static final Block blockCompressedEve = new ZGBlockCompressed("compressedeveniumblock");
@@ -430,8 +445,9 @@ public class ZGBlocks {
 				candyCubeOrange, candyCubeBrown, candyCubeRed, candyCubeBlue, candyCubeYellow, candyCubePurple, candyCubeCyan,
 				candyCubePink, candyCubeGreen, blockChocolate, blockChocolateBricks, blockCookie, blockBrownie,
 				blockIceCreamSandwich, blockSugarCube, blockSpaceStation, blockLore, perdSand, perdRock, perdStone, perdCobble,
-				perdRockBricks, perdGravel, perdCreepDirt, perdSoil, perdCreepStone, perdGlowstone, perdCaveStone,
-				perdCaveStoneBricks, perdCactus, perdDiamondOre, perdEtriumOre, perdIronOre, perdGoldOre, perdZollerniumOre);
+				perdRockBricks, perdGravel, perdCreepDirt, perdSoil, perdDirt, perdTallGrass, perdGrass, perdCreepStone,
+				perdGlowstone, perdCaveStone, perdCaveStoneBricks, perdCactus, perdDeadBush, perdDiamondOre, perdEtriumOre,
+				perdIronOre, perdGoldOre, perdZollerniumOre);
 		ZGHelper.Log("Loaded a total of " + totalBlocks + " new blocks.");
 	}
 	

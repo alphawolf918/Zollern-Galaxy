@@ -434,8 +434,11 @@ public class ZGPlanets {
 				EnumAtmosphericGas.WATER);
 		planetPerdita.setAtmosphere();
 		planetPerdita.setPlanetIcon("perdita");
-		planetPerdita.setBiomeInfo(ZGBiomes.PERDITA_DESERT, ZGBiomes.PERDITA_HALLOWS);
+		planetPerdita.setBiomeInfo(ZGBiomes.PERDITA_DESERT, ZGBiomes.PERDITA_HALLOWS, ZGBiomes.PERDITA_OASIS);
 		totalPlanets++;
+		
+		// Altum
+		// TODO
 		
 		// Caligro
 		// TODO
