@@ -9,6 +9,7 @@ package zollerngalaxy.items;
 
 import net.minecraft.init.MobEffects;
 import net.minecraft.item.Item;
+import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.items.food.IceCream;
 import zollerngalaxy.items.food.ItemSweetFood;
 import zollerngalaxy.items.food.ZGItemFood;
@@ -96,6 +97,7 @@ public class ZGItems {
 	public static final Item edenFruit = new ZGItemFood("fruitofeden", 4, 2.5F, false);
 	public static final Item perdBerry = new ZGItemFood("perdberry", 8, 3.6F, false);
 	public static final Item perdPeach = new ZGItemFood("perdpeach", 10, 8.2F, false);
+	public static final Item perdReed = new ZGItemSpecial("perdreed", ZGBlocks.perdReeds);
 	
 	public static final Item creamBall = new ZGItemBase("creamball");
 	public static final Item chocolateRaw = new ZGItemBase("rawchocolate");
@@ -177,7 +179,7 @@ public class ZGItems {
 				compressedPromethean, compressedSuperChargedCoal, compressedRiven, compressedAmaranth, compressedAzurite,
 				compressedZollernium, rawAlienBacon, cookedAlienBacon, rawAlienBeef, cookedAlienBeef, edenFruit, perdBerry,
 				perdPeach, creamBall, chocolateRaw, chocolateBar, brownie, candyApple, iceCreamSandwich, iceCream,
-				edenDungeonKey, perdGlowdust, perdDiamond, perdEtrium, superChargedCoal, powerStick, starGateTier1,
+				edenDungeonKey, perdGlowdust, perdDiamond, perdEtrium, perdReed, superChargedCoal, powerStick, starGateTier1,
 				starGateTier2, starGateTier3, starGateTier4, starGateTier5, starGateTier6, starGateTier7, starGateTier8,
 				starGateTier9, starGateTier10, starGateCandy, OMNITOOL, pickaxeCobalt, pickaxeEvenium, pickaxeVirinium,
 				pickaxeAmaranth, pickaxeAzurite, pickaxeZollernium, shovelCobalt, shovelEvenium, shovelVirinium, shovelAmaranth,

@@ -14,7 +14,7 @@ public class ZGSoundEvents {
 	// Mummy
 	public static final SoundEvent ENTITY_MUMMY_AMBIENT = regSound("mob.mummy.say");
 	public static final SoundEvent ENTITY_MUMMY_HURT = regSound("mob.mummy.hurt");
-	public static final SoundEvent ENTITY_MUMMY_DEATH = regSound("mob.mummy.death");
+	public static final SoundEvent ENTITY_MUMMY_DEATH = regSound("mob.mummy.die");
 	
 	// Galaxy Knight
 	public static final SoundEvent ENTITY_GALAXY_KNIGHT_SAY = regSound("mob.galaxyknight.say");

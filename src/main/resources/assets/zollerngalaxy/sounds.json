@@ -35,7 +35,7 @@
       "zollerngalaxy:mob/alien/hurt"
 	]
   },
-  "mummy.say":{
+  "mob.mummy.say":{
       "category":"master",
       "sounds":[
          "zollerngalaxy:mob/mummy/say1",
@@ -44,13 +44,13 @@
          "zollerngalaxy:mob/mummy/say4"
       ]
    },
-   "mummy.hurt":{
+   "mob.mummy.hurt":{
       "category":"master",
       "sounds":[
          "zollerngalaxy:mob/mummy/hurt"
       ]
    },
-   "mummy.die":{
+   "mob.mummy.die":{
       "category":"master",
       "sounds":[
          "zollerngalaxy:mob/mummy/die"
@@ -83,66 +83,66 @@
       "zollerngalaxy:mob/crawler/say3"
 	]
   },
-  "shadowalien.say":{
+  "mob.shadowalien.say":{
       "category":"master",
       "sounds":[
          "zollerngalaxy:mob/shadowalien/say1",
          "zollerngalaxy:shadowalien/say2"
       ]
    },
-   "shadowalien.hurt":{
+   "mob.shadowalien.hurt":{
       "category":"master",
       "sounds":[
          "zollerngalaxy:mob/shadowalien/hurt"
       ]
    },
-   "shadowalien.death":{
+   "mob.shadowalien.death":{
       "category":"master",
       "sounds":[
          "zollerngalaxy:mob/shadowalien/death"
       ]
    },
-   "spiderling.heartbeat":{
+   "mob.spiderling.heartbeat":{
       "category":"master",
       "sounds":[
          "zollerngalaxy:mob/spiderling/heartbeat"
       ]
    },
-   "krull.say":{
+   "mob.krull.say":{
       "category":"master",
       "sounds":[
          "zollerngalaxy:mob/krull/say1",
          "zollerngalaxy:mob/krull/say2"
       ]
    },
-   "krull.hurt":{
+   "mob.krull.hurt":{
       "category":"master",
       "sounds":[
          "zollerngalaxy:mob/krull/hurt1",
          "zollerngalaxy:mob/krull/hurt2"
       ]
    },
-   "krull.die":{
+   "mob.krull.die":{
       "category":"master",
       "sounds":[
          "zollerngalaxy:mob/krull/die"
       ]
    },
-   "shade.say":{
+   "mob.shade.say":{
       "category":"master",
       "sounds":[
          "zollerngalaxy:mob/shade/say1",
          "zollerngalaxy:mob/shade/say2"
       ]
    },
-   "shade.hurt":{
+   "mob.shade.hurt":{
       "category":"master",
       "sounds":[
          "zollerngalaxy:mob/shade/hurt1",
          "zollerngalaxy:mob/shade/hurt2"
       ]
    },
-   "shade.die":{
+   "mob.shade.die":{
       "category":"master",
       "sounds":[
          "zollerngalaxy:mob/shade/die"

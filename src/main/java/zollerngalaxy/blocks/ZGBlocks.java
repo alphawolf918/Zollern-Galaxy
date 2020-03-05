@@ -18,6 +18,7 @@ import zollerngalaxy.blocks.eden.EdenFlower;
 import zollerngalaxy.blocks.eden.EdenFruit;
 import zollerngalaxy.blocks.oasis.OasisFlower;
 import zollerngalaxy.blocks.perdita.LostCactus;
+import zollerngalaxy.blocks.perdita.LostReeds;
 import zollerngalaxy.blocks.perdita.ZGBlockGrassPerdita;
 import zollerngalaxy.blocks.perdita.ZGDeadBush;
 import zollerngalaxy.blocks.sweetblocks.CandyCubeBlock;
@@ -333,6 +334,7 @@ public class ZGBlocks {
 	public static final Block perdCaveStoneBricks = new ZGBlockBase("perdcavestonebricks", 3.6F).setBlockHarvestLevel(
 			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
 	public static final Block perdCactus = new LostCactus();
+	public static final Block perdReeds = new LostReeds();
 	public static final Block perdDeadBush = new ZGDeadBush("perddeadbush");
 	public static final Block perdDiamondOre = new ZGOreGem("perddiamondore", 7.2F, ZGItems.perdDiamond).setBlockHarvestLevel(
 			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
@@ -446,8 +448,8 @@ public class ZGBlocks {
 				candyCubePink, candyCubeGreen, blockChocolate, blockChocolateBricks, blockCookie, blockBrownie,
 				blockIceCreamSandwich, blockSugarCube, blockSpaceStation, blockLore, perdSand, perdRock, perdStone, perdCobble,
 				perdRockBricks, perdGravel, perdCreepDirt, perdSoil, perdDirt, perdTallGrass, perdGrass, perdCreepStone,
-				perdGlowstone, perdCaveStone, perdCaveStoneBricks, perdCactus, perdDeadBush, perdDiamondOre, perdEtriumOre,
-				perdIronOre, perdGoldOre, perdZollerniumOre);
+				perdGlowstone, perdCaveStone, perdCaveStoneBricks, perdCactus, perdReeds, perdDeadBush, perdDiamondOre,
+				perdEtriumOre, perdIronOre, perdGoldOre, perdZollerniumOre);
 		ZGHelper.Log("Loaded a total of " + totalBlocks + " new blocks.");
 	}
 	

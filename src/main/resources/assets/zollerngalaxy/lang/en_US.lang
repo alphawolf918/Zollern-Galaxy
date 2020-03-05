@@ -235,6 +235,7 @@ tile.perddeadbush.name=Lost Dead Bush
 tile.perddirt.name=Lost Dirt
 tile.perdgrass.name=Lost Grass
 tile.perdtallgrass.name=Lost Tall Grass
+tile.perdreeds.name=Lost Bamboo
 
 tile.amaranthblock.name=Block of Amaranth
 tile.azuriteblock.name=Block of Azurite
@@ -381,6 +382,7 @@ item.zucritedust.name=Zucrite Dust
 item.zucritedust.name=Zucrite Ingot
 item.perdpearl.name=Lost Pearl
 item.perdglowstonedust.name=Lost Glowdust
+item.perdreed.name=Lost Bamboo Plant
 
 item.stargate_tier1.name=Stargate (Protocol One)
 item.stargate_tier2.name=Stargate (Protocol Two)

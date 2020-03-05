@@ -26,7 +26,13 @@ public class BiomeLostOasis extends BiomePerditaBase {
 		this.setBiomeHeight(23);
 		this.setBiomeType(EnumBiomeTypeZG.LUSH);
 		this.enableSnow = false;
-		this.decorator.generateFalls = false;
+		this.biomeDecor.generateFalls = false;
+		this.biomeDecor.lostTallGrassPerChunk = 16;
+		this.biomeDecor.lostPalmWoodTreesPerChunk = 3;
+		this.biomeDecor.lostLakesPerChunk = 6;
+		this.biomeDecor.lostReedsPerChunk = 16;
+		this.biomeDecor.lostCactiPerChunk = 0;
+		this.biomeDecor.lostDeadBushPerChunk = 0;
 		this.grassFoliageColor = 0x9f00ff;
 		this.waterColor = 0x1b2cff;
 		this.topBlock = ZGBlocks.perdGrass.getDefaultState();

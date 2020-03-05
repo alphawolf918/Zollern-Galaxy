@@ -37,4 +37,5 @@ Zollern Galaxy v2.0.11
     - Basically just a fancy Zombie that's faster and hits harder.
     - Chance to drop paper and/or Lost Glowdust.
 * Added Lost Oasis biome to Planet Perdita.
+    - Consists of lakes, tall grass, trees and bamboo.
 * 
