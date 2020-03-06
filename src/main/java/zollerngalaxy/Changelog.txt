@@ -40,4 +40,6 @@ Zollern Galaxy v2.0.11
     - Consists of lakes, tall grass, trees and bamboo.
 * Added Lost Bamboo and Palmwood Trees.
 * Added Fueltonium Lakes.
+* Updated Chinese translations per Silencess.
+* Updated 71 block textures per Skaptic.
 * 
