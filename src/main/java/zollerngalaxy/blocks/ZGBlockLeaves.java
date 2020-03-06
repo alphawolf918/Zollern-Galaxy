@@ -24,19 +24,21 @@ public class ZGBlockLeaves extends ZGBlockBase implements IShearable {
 	protected boolean CHECK_DECAY = false;
 	protected boolean DECAYABLE = true;
 	protected boolean leavesFancy;
+	protected Block droppedSapling;
 	int[] surroundings;
 	
-	public ZGBlockLeaves(String blockName, float hardResist) {
+	public ZGBlockLeaves(String blockName, float hardResist, Block sapling) {
 		super(blockName, hardResist);
 		this.setMaterial(Material.LEAVES);
 		this.setSound(SoundType.PLANT);
 		this.setBlockType(EnumBlockType.LEAVES);
 		this.setTickRandomly(true);
 		this.setLightOpacity(1);
+		this.droppedSapling = sapling;
 	}
 	
-	public ZGBlockLeaves(String blockName) {
-		this(blockName, 0.4F);
+	public ZGBlockLeaves(String blockName, Block sapling) {
+		this(blockName, 0.4F, sapling);
 	}
 	
 	@Override
@@ -89,8 +91,8 @@ public class ZGBlockLeaves extends ZGBlockBase implements IShearable {
 					for (int i2 = -4; i2 <= 4; ++i2) {
 						for (int j2 = -4; j2 <= 4; ++j2) {
 							for (int k2 = -4; k2 <= 4; ++k2) {
-								IBlockState iblockstate = worldIn.getBlockState(blockpos$mutableblockpos.setPos(k + i2, l
-										+ j2, i1 + k2));
+								IBlockState iblockstate = worldIn.getBlockState(blockpos$mutableblockpos.setPos(k + i2, l + j2,
+										i1 + k2));
 								Block block = iblockstate.getBlock();
 								
 								if (!block.canSustainLeaves(iblockstate, worldIn,
@@ -178,7 +180,7 @@ public class ZGBlockLeaves extends ZGBlockBase implements IShearable {
 	
 	@Override
 	public Item getItemDropped(IBlockState state, Random rand, int fortune) {
-		return Item.getItemFromBlock(ZGBlocks.edenWoodSapling);
+		return Item.getItemFromBlock(this.droppedSapling);
 	}
 	
 	@Override
@@ -227,8 +229,8 @@ public class ZGBlockLeaves extends ZGBlockBase implements IShearable {
 	}
 	
 	@Override
-	public void getDrops(net.minecraft.util.NonNullList<ItemStack> drops, IBlockAccess world, BlockPos pos,
-			IBlockState state, int fortune) {
+	public void getDrops(net.minecraft.util.NonNullList<ItemStack> drops, IBlockAccess world, BlockPos pos, IBlockState state,
+			int fortune) {
 		Random rand = world instanceof World ? ((World) world).rand : new Random();
 		int chance = this.getSaplingDropChance(state);
 		

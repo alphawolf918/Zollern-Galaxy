@@ -28,9 +28,9 @@ public class BiomeLostOasis extends BiomePerditaBase {
 		this.enableSnow = false;
 		this.biomeDecor.generateFalls = false;
 		this.biomeDecor.lostTallGrassPerChunk = 16;
-		this.biomeDecor.lostPalmWoodTreesPerChunk = 3;
-		this.biomeDecor.lostLakesPerChunk = 6;
-		this.biomeDecor.lostReedsPerChunk = 16;
+		this.biomeDecor.lostPalmWoodTreesPerChunk = 4;
+		this.biomeDecor.lostLakesPerChunk = 10;
+		this.biomeDecor.lostReedsPerChunk = 20;
 		this.biomeDecor.lostCactiPerChunk = 0;
 		this.biomeDecor.lostDeadBushPerChunk = 0;
 		this.grassFoliageColor = 0x9f00ff;

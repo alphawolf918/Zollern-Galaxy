@@ -1,5 +1,7 @@
-package zollerngalaxy.blocks;
+package zollerngalaxy.biomes.oasis;
 
+import zollerngalaxy.blocks.ZGBlockGrass;
+import zollerngalaxy.blocks.ZGBlocks;
 import net.minecraft.block.Block;
 
 public class ZGBlockGrassOasis extends ZGBlockGrass {

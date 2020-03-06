@@ -1,0 +1,15 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "textures": {
+            "bottom": "zollerngalaxy:blocks/palmwoodlog_top",
+            "top": "zollerngalaxy:blocks/palmwoodlog_top",
+            "side": "zollerngalaxy:blocks/palmwoodlog"
+        },
+        "model": "cube_bottom_top"
+    },
+    "variants": {
+        "normal": [{ "y": 90 }, { "y": 180 }, { "y": 270 }],
+        "inventory": [{}]
+    }
+}

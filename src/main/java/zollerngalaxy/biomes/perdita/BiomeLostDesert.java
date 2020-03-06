@@ -26,7 +26,8 @@ public class BiomeLostDesert extends BiomePerditaBase {
 		this.setBiomeHeight(43);
 		this.setBiomeType(EnumBiomeTypeZG.DESERT);
 		this.enableSnow = false;
-		this.decorator.generateFalls = false;
+		this.biomeDecor.generateFalls = false;
+		this.biomeDecor.lostFueltoniumLakesPerChunk = 4;
 		this.grassFoliageColor = 0x9f00ff;
 		this.waterColor = 0x1b2cff;
 		this.topBlock = ZGBlocks.perdSand.getDefaultState();

@@ -38,4 +38,6 @@ Zollern Galaxy v2.0.11
     - Chance to drop paper and/or Lost Glowdust.
 * Added Lost Oasis biome to Planet Perdita.
     - Consists of lakes, tall grass, trees and bamboo.
+* Added Lost Bamboo and Palmwood Trees.
+* Added Fueltonium Lakes.
 * 

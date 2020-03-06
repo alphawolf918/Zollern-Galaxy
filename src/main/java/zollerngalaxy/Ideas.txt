@@ -25,7 +25,7 @@
 * More lore.
 * Installable "blueprint technology" that can withstand the planet hazards for you.
     - Can be recharged with special metals automatically.
-* Lost Reeds (Sugar Cane).
 * Mobs have a chance to drop treasure chests with specialized loot on death.
 * Still more of the lore.
+* Fueltonium lakes.
 * 

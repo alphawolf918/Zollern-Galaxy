@@ -236,6 +236,10 @@ tile.perddirt.name=Lost Dirt
 tile.perdgrass.name=Lost Grass
 tile.perdtallgrass.name=Lost Tall Grass
 tile.perdreeds.name=Lost Bamboo
+tile.palmtreesapling.name=Lost Palmwood Sapling
+tile.palmwoodlog.name=Lost Palmwood Log
+tile.palmwoodleaves.name=Lost Palmwood Leaves
+tile.palmwoodplanks.name=Lost Palmwood Planks
 
 tile.amaranthblock.name=Block of Amaranth
 tile.azuriteblock.name=Block of Azurite

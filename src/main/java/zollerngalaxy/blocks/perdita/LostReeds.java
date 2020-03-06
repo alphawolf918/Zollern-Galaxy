@@ -17,6 +17,7 @@ import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -240,5 +241,10 @@ public class LostReeds extends ZGBlockBase implements net.minecraftforge.common.
 	@Override
 	public boolean shouldJSONIgnore() {
 		return true;
+	}
+	
+	@Override
+	public CreativeTabs getCreativeTabToDisplayOn() {
+		return null;
 	}
 }

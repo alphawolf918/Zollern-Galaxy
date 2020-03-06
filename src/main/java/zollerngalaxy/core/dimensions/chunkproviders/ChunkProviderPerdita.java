@@ -33,6 +33,7 @@ import net.minecraft.world.gen.NoiseGeneratorPerlin;
 import net.minecraft.world.gen.structure.MapGenMineshaft;
 import zollerngalaxy.biomes.decorators.BiomeDecoratorPerdita;
 import zollerngalaxy.blocks.ZGBlocks;
+import zollerngalaxy.blocks.fluids.ZGFluids;
 import zollerngalaxy.worldgen.mapgen.MapGenCavesZG;
 import zollerngalaxy.worldgen.mapgen.MapGenRavinesZG;
 
@@ -40,7 +41,7 @@ public class ChunkProviderPerdita extends ChunkProviderBase {
 	
 	public static final IBlockState STONE = ZGBlocks.perdStone.getDefaultState();
 	public static final IBlockState WATER = Blocks.WATER.getDefaultState();
-	public static final IBlockState LAVA = Blocks.LAVA.getDefaultState();
+	public static IBlockState FUELTONIUM = ZGFluids.blockFueltoniumFluid.getDefaultState();
 	
 	public static final double CHUNK_HEIGHT = 53.0D;
 	public static final int SEA_LEVEL = 52;
@@ -156,7 +157,7 @@ public class ChunkProviderPerdita extends ChunkProviderBase {
 									primer.setBlockState(x, y, z, STONE);
 								} else if (y < SEA_LEVEL) {
 									Biome biome = world.getBiome(new BlockPos(x, y, z));
-									IBlockState blockToUse = LAVA;
+									IBlockState blockToUse = FUELTONIUM;
 									primer.setBlockState(x, y, z, blockToUse);
 								}
 							}

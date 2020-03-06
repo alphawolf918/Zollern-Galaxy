@@ -19,6 +19,7 @@ import net.minecraft.world.chunk.ChunkPrimer;
 import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.biomes.decorators.BiomeDecoratorPerdita;
 import zollerngalaxy.blocks.ZGBlocks;
+import zollerngalaxy.blocks.fluids.ZGFluids;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderPerdita;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 import zollerngalaxy.mobs.entities.EntityGrayAlien;
@@ -35,7 +36,7 @@ public abstract class BiomePerditaBase extends BiomeSpace {
 	protected static final IBlockState DIRT = ZGBlocks.perdRock.getDefaultState();
 	protected static final IBlockState ICE = Blocks.ICE.getDefaultState();
 	protected static final IBlockState WATER = Blocks.WATER.getDefaultState();
-	protected static final IBlockState LAVA = Blocks.LAVA.getDefaultState();
+	protected static IBlockState FUELTONIUM = ZGFluids.blockFueltoniumFluid.getDefaultState();
 	
 	protected static final int SEA_LEVEL = ChunkProviderPerdita.SEA_LEVEL;
 	protected static final int SEA_FLOOR_LEVEL = 36;
@@ -49,7 +50,7 @@ public abstract class BiomePerditaBase extends BiomeSpace {
 		this.biomeDecor.treesPerChunk = -999;
 		this.biomeDecor.grassPerChunk = -999;
 		this.biomeDecor.mushroomsPerChunk = -999;
-		this.spawnableCreatureList.add(new SpawnListEntry(EntityAlienVillager.class, 5, 1, 2));
+		this.spawnableCreatureList.add(new SpawnListEntry(EntityAlienVillager.class, 3, 1, 2));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityGrayAlien.class, 80, 2, 4));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityMegaCreeper.class, 25, 1, 3));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityMummy.class, 35, 2, 4));
@@ -83,7 +84,7 @@ public abstract class BiomePerditaBase extends BiomeSpace {
 				IBlockState iblockstate2 = chunkPrimerIn.getBlockState(i1, j1, l);
 				if (this.getBiomeType() == EnumBiomeTypeZG.OCEAN) {
 					if ((j1 < SEA_LEVEL) && (j1 > SEA_FLOOR_LEVEL)) {
-						chunkPrimerIn.setBlockState(i1, j1, l, LAVA);
+						chunkPrimerIn.setBlockState(i1, j1, l, FUELTONIUM);
 					} else if (j1 < SEA_FLOOR_LEVEL) {
 						chunkPrimerIn.setBlockState(i1, j1, l, STONE);
 					} else if (j1 == SEA_FLOOR_LEVEL) {
@@ -105,7 +106,7 @@ public abstract class BiomePerditaBase extends BiomeSpace {
 							}
 							
 							if (j1 < i && (topState == null || topState.getMaterial() == Material.AIR)) {
-								topState = LAVA;
+								topState = FUELTONIUM;
 							}
 							
 							j = k;

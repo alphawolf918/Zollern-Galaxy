@@ -1,5 +1,7 @@
-package zollerngalaxy.blocks;
+package zollerngalaxy.blocks.eden;
 
+import zollerngalaxy.blocks.ZGBlockGrass;
+import zollerngalaxy.blocks.ZGBlocks;
 import net.minecraft.block.Block;
 
 public class ZGBlockGrassEden extends ZGBlockGrass {

@@ -14,8 +14,6 @@ import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.event.terraingen.TerrainGen;
 import zollerngalaxy.core.enums.EnumBlockType;
-import zollerngalaxy.lib.helpers.ZGHelper;
-import zollerngalaxy.worldgen.eden.WorldGenEdenTrees;
 
 public class ZGBlockSapling extends ZGBlockFlower implements IGrowable {
 	
@@ -23,11 +21,14 @@ public class ZGBlockSapling extends ZGBlockFlower implements IGrowable {
 	protected static final AxisAlignedBB SAPLING_AABB = new AxisAlignedBB(0.09999999403953552D, 0.0D, 0.09999999403953552D,
 			0.8999999761581421D, 0.800000011920929D, 0.8999999761581421D);
 	
-	public ZGBlockSapling(String blockName) {
+	protected WorldGenerator treeGen;
+	
+	public ZGBlockSapling(String blockName, WorldGenerator genTree) {
 		super(blockName);
 		this.setDefaultState(this.blockState.getBaseState().withProperty(STAGE, Integer.valueOf(0)));
 		this.setMaterial(Material.VINE);
 		this.setBlockType(EnumBlockType.SAPLING);
+		this.treeGen = genTree;
 	}
 	
 	@Override
@@ -76,8 +77,7 @@ public class ZGBlockSapling extends ZGBlockFlower implements IGrowable {
 	public void generateTree(World worldIn, BlockPos pos, IBlockState state, Random rand) {
 		if (!TerrainGen.saplingGrowTree(worldIn, rand, pos))
 			return;
-		WorldGenerator worldgenerator = new WorldGenEdenTrees(true, ZGHelper.rngNumber(5, 15),
-				ZGBlocks.edenWoodLog.getDefaultState(), ZGBlocks.edenWoodLeaves.getDefaultState(), false);
+		WorldGenerator worldgenerator = this.treeGen;
 		int i = 0;
 		int j = 0;
 		

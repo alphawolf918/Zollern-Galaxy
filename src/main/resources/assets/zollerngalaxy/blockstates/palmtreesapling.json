@@ -1,0 +1,11 @@
+{
+    "forge_marker": 1,
+     "defaults": {
+        "model": "zollerngalaxy:palmtreesapling",
+        "uvlock": true
+    },
+    "variants": {
+		"stage=0": { "model": "zollerngalaxy:palmtreesapling" },
+        "stage=1": { "model": "zollerngalaxy:palmtreesapling" }
+    }
+}

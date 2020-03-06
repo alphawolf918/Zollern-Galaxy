@@ -47,16 +47,16 @@ public class OreDictRegistry {
 				ZGBlocks.oasisGrass);
 		
 		// Logs
-		registerOre("logWood", ZGBlocks.edenWoodLog);
+		registerOre("logWood", ZGBlocks.edenWoodLog, ZGBlocks.perdWoodLogs);
 		
 		// Leaves
-		registerOre("treeLeaves", ZGBlocks.edenWoodLeaves);
+		registerOre("treeLeaves", ZGBlocks.edenWoodLeaves, ZGBlocks.perdWoodLeaves);
 		
 		// Saplings
-		registerOre("treeSapling", ZGBlocks.edenWoodSapling);
+		registerOre("treeSapling", ZGBlocks.edenWoodSapling, ZGBlocks.perdTreeSapling);
 		
 		// Planks
-		registerOre("plankWood", ZGBlocks.edenWoodPlanks);
+		registerOre("plankWood", ZGBlocks.edenWoodPlanks, ZGBlocks.perdWoodPlanks);
 		
 		// Stone
 		registerOre("stone", ZGBlocks.edenStone, ZGBlocks.kriffStone, ZGBlocks.purgStone, ZGBlocks.zolStone, ZGBlocks.xathStone,

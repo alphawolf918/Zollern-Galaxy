@@ -14,8 +14,12 @@ import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Items;
 import net.minecraft.init.MobEffects;
+import net.minecraft.world.gen.feature.WorldGenerator;
+import zollerngalaxy.biomes.oasis.ZGBlockGrassOasis;
+import zollerngalaxy.biomes.xathius.ZGBlockGrassXath;
 import zollerngalaxy.blocks.eden.EdenFlower;
 import zollerngalaxy.blocks.eden.EdenFruit;
+import zollerngalaxy.blocks.eden.ZGBlockGrassEden;
 import zollerngalaxy.blocks.oasis.OasisFlower;
 import zollerngalaxy.blocks.perdita.LostCactus;
 import zollerngalaxy.blocks.perdita.LostReeds;
@@ -31,13 +35,27 @@ import zollerngalaxy.core.enums.EnumHarvestToolZG;
 import zollerngalaxy.items.ZGItems;
 import zollerngalaxy.lib.helpers.CommonZGRegisterHelper;
 import zollerngalaxy.lib.helpers.ZGHelper;
+import zollerngalaxy.worldgen.eden.WorldGenEdenTrees;
+import zollerngalaxy.worldgen.perdita.WorldGenPalmwoodTrees;
 
 public class ZGBlocks {
 	
 	private static int totalBlocks = 0;
 	
+	public static final Block edenWoodLog = new ZGBlockLog("edenwoodlog");
+	public static final Block edenWoodLeaves = new ZGBlockLeaves("edenwoodleaves", ZGBlocks.edenWoodSapling);
+	private static WorldGenerator edenTreeGen = new WorldGenEdenTrees(true, ZGHelper.rngNumber(5, 15),
+			ZGBlocks.edenWoodLog.getDefaultState(), ZGBlocks.edenWoodLeaves.getDefaultState(), false);
+	
+	public static final Block perdWoodLogs = new ZGBlockLog("palmwoodlog");
+	public static final Block perdWoodLeaves = new ZGBlockLeaves("palmwoodleaves", ZGBlocks.perdTreeSapling);
+	public static final Block perdWoodPlanks = new ZGBlockPlanks("palmwoodplanks");
+	private static WorldGenerator palmWoodTreeGen = new WorldGenPalmwoodTrees(true, ZGHelper.rngNumber(5, 15),
+			ZGBlocks.perdWoodLogs.getDefaultState(), ZGBlocks.perdWoodLeaves.getDefaultState(), false);
+	
 	// These have to be declared up top or else weird things happen.
-	public static final Block edenWoodSapling = new ZGBlockSapling("edentreesapling");
+	public static final Block perdTreeSapling = new ZGBlockSapling("palmtreesapling", palmWoodTreeGen);
+	public static final Block edenWoodSapling = new ZGBlockSapling("edentreesapling", edenTreeGen);
 	public static final Block edenFruit = new EdenFruit();
 	public static final Block edenFlower = new EdenFlower();
 	public static final Block edenFlowerBlack = new EdenFlower("black");
@@ -148,8 +166,6 @@ public class ZGBlocks {
 	public static final Block edenBoneStone = new ZGBlockBase("bonestone", 1.8F);
 	public static final Block edenGravel = new ZGGravel("edengravel", 2.1F);
 	public static final Block edenBrightStone = new ZGShineBlock("brightstone", ZGItems.dustBrightstone);
-	public static final Block edenWoodLog = new ZGBlockLog("edenwoodlog");
-	public static final Block edenWoodLeaves = new ZGBlockLeaves("edenwoodleaves");
 	public static final Block edenWoodPlanks = new ZGBlockPlanks("edenwoodplanks");
 	public static final Block blockCrater = new ZGBlockBase("crater_rock", 2.4F);
 	public static final Block edenAluminumOre = new ZGBlockOre("edenaluminumore", 1.5F).setBlockHarvestLevel(
@@ -449,7 +465,8 @@ public class ZGBlocks {
 				blockIceCreamSandwich, blockSugarCube, blockSpaceStation, blockLore, perdSand, perdRock, perdStone, perdCobble,
 				perdRockBricks, perdGravel, perdCreepDirt, perdSoil, perdDirt, perdTallGrass, perdGrass, perdCreepStone,
 				perdGlowstone, perdCaveStone, perdCaveStoneBricks, perdCactus, perdReeds, perdDeadBush, perdDiamondOre,
-				perdEtriumOre, perdIronOre, perdGoldOre, perdZollerniumOre);
+				perdEtriumOre, perdIronOre, perdGoldOre, perdZollerniumOre, perdTreeSapling, perdWoodLogs, perdWoodLeaves,
+				perdWoodPlanks);
 		ZGHelper.Log("Loaded a total of " + totalBlocks + " new blocks.");
 	}
 	

@@ -19,13 +19,16 @@ import net.minecraftforge.event.terraingen.TerrainGen;
 import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.blocks.ZGBlockTallGrass;
 import zollerngalaxy.blocks.ZGBlocks;
+import zollerngalaxy.blocks.fluids.ZGFluids;
 import zollerngalaxy.core.enums.EnumOreGenZG;
+import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.worldgen.WorldGenLakesZG;
 import zollerngalaxy.worldgen.WorldGenMinableZG;
 import zollerngalaxy.worldgen.WorldGenTallGrassZG;
 import zollerngalaxy.worldgen.perdita.WorldGenLostCactus;
 import zollerngalaxy.worldgen.perdita.WorldGenLostDeadBush;
 import zollerngalaxy.worldgen.perdita.WorldGenLostReeds;
+import zollerngalaxy.worldgen.perdita.WorldGenPalmwoodTrees;
 
 public class BiomeDecoratorPerdita extends BiomeDecoratorZG {
 	
@@ -38,6 +41,7 @@ public class BiomeDecoratorPerdita extends BiomeDecoratorZG {
 	public int lostPalmWoodTreesPerChunk = 0;
 	public int lostLakesPerChunk = 0;
 	public int lostReedsPerChunk = 0;
+	public int lostFueltoniumLakesPerChunk = 0;
 	
 	private WorldGenerator creepstoneGen;
 	private WorldGenerator creepdirtGen;
@@ -53,7 +57,9 @@ public class BiomeDecoratorPerdita extends BiomeDecoratorZG {
 	private WorldGenerator lostLakeGen = new WorldGenLakesZG(Blocks.WATER, ZGBlocks.perdGrass);
 	private WorldGenerator lostTallGrassGen = new WorldGenTallGrassZG((ZGBlockTallGrass) ZGBlocks.perdTallGrass);
 	private WorldGenerator lostReedGen = new WorldGenLostReeds();
-	private WorldGenerator lostPalmWoodTreeGen; // TODO
+	private WorldGenerator lostPalmWoodTreeGen = new WorldGenPalmwoodTrees(true, ZGHelper.rngNumber(5, 15),
+			ZGBlocks.perdWoodLogs.getDefaultState(), ZGBlocks.perdWoodLeaves.getDefaultState(), false);
+	private WorldGenerator lostFueltoniumLakeGen = new WorldGenLakesZG(ZGFluids.blockFueltoniumFluid, ZGBlocks.perdSand);
 	
 	public BiomeDecoratorPerdita() {
 		this.creepstoneGen = new WorldGenMinableZG(ZGBlocks.perdCreepStone, STONE, EnumOreGenZG.SPECIAL_STONE);
@@ -122,7 +128,17 @@ public class BiomeDecoratorPerdita extends BiomeDecoratorZG {
 		
 		// Palmwood Trees
 		if (TerrainGen.decorate(world, rand, forgeChunkPos, DecorateBiomeEvent.Decorate.EventType.TREE)) {
-			// TODO
+			if (rand.nextInt(6) == 0) {
+				for (int i = 0; i < this.lostPalmWoodTreesPerChunk; ++i) {
+					int x1 = rand.nextInt(16) + 8;
+					int z1 = rand.nextInt(16) + 8;
+					int y1 = world.getHeight(this.chunkPos.add(x1, 0, z1)).getY() * 2;
+					if (y1 > 0) {
+						int y2 = rand.nextInt(y1);
+						this.lostPalmWoodTreeGen.generate(world, rand, this.chunkPos.add(x1, y2, z1));
+					}
+				}
+			}
 		}
 		
 		// Lake gen for Lost Oasis biome
@@ -135,6 +151,21 @@ public class BiomeDecoratorPerdita extends BiomeDecoratorZG {
 					if (y1 > 0) {
 						int y2 = rand.nextInt(y1);
 						this.lostLakeGen.generate(world, rand, this.chunkPos.add(x1, y2, z1));
+					}
+				}
+			}
+		}
+		
+		// Fueltonium lakes
+		if (TerrainGen.decorate(world, rand, forgeChunkPos, DecorateBiomeEvent.Decorate.EventType.LAKE_LAVA)) {
+			if (rand.nextInt(2) == 0) {
+				for (int i = 0; i < this.lostFueltoniumLakesPerChunk; ++i) {
+					int x1 = rand.nextInt(16) + 8;
+					int z1 = rand.nextInt(16) + 8;
+					int y1 = world.getHeight(this.chunkPos.add(x1, 0, z1)).getY() * 2;
+					if (y1 > 0) {
+						int y2 = rand.nextInt(y1);
+						this.lostFueltoniumLakeGen.generate(world, rand, this.chunkPos.add(x1, y2, z1));
 					}
 				}
 			}
