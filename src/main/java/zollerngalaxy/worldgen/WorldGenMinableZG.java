@@ -6,10 +6,9 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
-import net.minecraft.world.gen.feature.WorldGenerator;
 import zollerngalaxy.core.enums.EnumOreGenZG;
 
-public class WorldGenMinableZG extends WorldGenerator {
+public class WorldGenMinableZG extends ZGWorldGenMaster {
 	
 	private IBlockState oreBlock;
 	private IBlockState fillBlock;

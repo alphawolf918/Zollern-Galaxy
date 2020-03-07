@@ -1,8 +1,9 @@
 package zollerngalaxy.core.dimensions.worldproviders;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import micdoodle8.mods.galacticraft.api.galaxies.CelestialBody;
+import micdoodle8.mods.galacticraft.api.prefab.world.gen.BiomeAdaptive;
 import micdoodle8.mods.galacticraft.api.vector.Vector3;
 import micdoodle8.mods.galacticraft.core.client.CloudRenderer;
 import net.minecraft.block.Block;
@@ -49,8 +50,13 @@ public class WorldProviderZollus extends WorldProviderZG {
 	}
 	
 	@Override
+	public float getSoundVolReductionAmount() {
+		return 2.0F;
+	}
+	
+	@Override
 	public float getThermalLevelModifier() {
-		return -2.4F;
+		return -2.2F;
 	}
 	
 	@Override
@@ -58,14 +64,9 @@ public class WorldProviderZollus extends WorldProviderZG {
 		ZGPlanet planet = this.getPlanet();
 		float planetTemp = planet.getPlanetTemperature();
 		if (!this.isDaytime()) {
-			planetTemp /= 2.4F;
+			planetTemp /= 1.4F;
 		}
 		return planetTemp;
-	}
-	
-	@Override
-	public float getSoundVolReductionAmount() {
-		return 2.0F;
 	}
 	
 	@Override
@@ -126,6 +127,11 @@ public class WorldProviderZollus extends WorldProviderZG {
 	}
 	
 	@Override
+	public Vector3 getSkyColor() {
+		return new Vector3(0, 0, 0);
+	}
+	
+	@Override
 	public boolean canRainOrSnow() {
 		return false;
 	}
@@ -148,9 +154,10 @@ public class WorldProviderZollus extends WorldProviderZG {
 	
 	@Override
 	public List<Block> getSurfaceBlocks() {
-		ArrayList<Block> blockList = new ArrayList<Block>();
-		blockList.add(ZGBlocks.zolSurfaceRock);
-		return blockList;
+		List<Block> list = new LinkedList<>();
+		list.add(ZGBlocks.zolSurfaceRock);
+		list.add(ZGBlocks.zolDirt);
+		return list;
 	}
 	
 	@Override
@@ -168,8 +175,9 @@ public class WorldProviderZollus extends WorldProviderZG {
 	}
 	
 	@Override
-	public void init() {
-		this.biomeProvider = new BiomeProviderZollus();
+	public Class<? extends BiomeProvider> getBiomeProviderClass() {
+		BiomeAdaptive.setBodyMultiBiome(ZGPlanets.planetZollus);
+		return BiomeProviderZollus.class;
 	}
 	
 	@Override
@@ -183,13 +191,13 @@ public class WorldProviderZollus extends WorldProviderZG {
 	}
 	
 	@Override
-	public boolean isSkyColored() {
+	public boolean canCoordinateBeSpawn(int var1, int var2) {
 		return true;
 	}
 	
 	@Override
-	public BiomeProvider getBiomeProvider() {
-		return new BiomeProviderZollus();
+	public boolean isSkyColored() {
+		return true;
 	}
 	
 	@Override

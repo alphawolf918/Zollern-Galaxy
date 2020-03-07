@@ -34,6 +34,7 @@ public class EntityGrayAlien extends EntityMob implements IEntityBreathable {
 		this.tasks.addTask(5, new EntityAIMoveTowardsRestriction(this, 0.6D));
 		this.tasks.addTask(9, new EntityAIWatchClosest2(this, EntityPlayer.class, 3.0F, 1.0F));
 		this.tasks.addTask(9, new EntityAIWatchClosest2(this, EntityGrayAlien.class, 5.0F, 0.02F));
+		this.tasks.addTask(9, new EntityAIWatchClosest2(this, EntityMummy.class, 5.0F, 0.02F));
 		this.tasks.addTask(9, new EntityAIWander(this, 15.6D));
 		this.tasks.addTask(10, new EntityAIWatchClosest(this, EntityLiving.class, 8.0F));
 		this.scoreValue = 70;
@@ -55,7 +56,7 @@ public class EntityGrayAlien extends EntityMob implements IEntityBreathable {
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.23000000417232513D);
 		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(10.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.ARMOR).setBaseValue(20.0D);
-		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(80.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(180.0D);
 	}
 	
 	@Override

@@ -62,8 +62,7 @@ public class ZGRecipeHelper {
 	}
 	
 	public static void addSpaceStationRecipe(int spaceStationID, int planetID, HashMap<Object, Integer> obj) {
-		GalacticraftRegistry
-				.registerSpaceStation(new SpaceStationType(spaceStationID, planetID, new SpaceStationRecipe(obj)));
+		GalacticraftRegistry.registerSpaceStation(new SpaceStationType(spaceStationID, planetID, new SpaceStationRecipe(obj)));
 	}
 	
 	public static void addCompresssorShapelessRecipe(ItemStack output, Object... inputs) {

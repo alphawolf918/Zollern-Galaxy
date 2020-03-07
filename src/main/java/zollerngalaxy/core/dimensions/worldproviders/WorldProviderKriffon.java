@@ -3,6 +3,7 @@ package zollerngalaxy.core.dimensions.worldproviders;
 import java.util.ArrayList;
 import java.util.List;
 import micdoodle8.mods.galacticraft.api.galaxies.CelestialBody;
+import micdoodle8.mods.galacticraft.api.prefab.world.gen.BiomeAdaptive;
 import micdoodle8.mods.galacticraft.api.vector.Vector3;
 import micdoodle8.mods.galacticraft.core.client.CloudRenderer;
 import net.minecraft.block.Block;
@@ -10,6 +11,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.DimensionType;
 import net.minecraft.world.biome.BiomeProvider;
+import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.gen.IChunkGenerator;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -29,18 +31,23 @@ public class WorldProviderKriffon extends WorldProviderZG {
 	}
 	
 	@Override
-	public double getMeteorFrequency() {
-		return 8.0;
-	}
-	
-	@Override
 	public float getSolarSize() {
 		return 4.0F;
 	}
 	
 	@Override
+	public double getMeteorFrequency() {
+		return 8.0;
+	}
+	
+	@Override
 	public double getFuelUsageMultiplier() {
 		return 1.2D;
+	}
+	
+	@Override
+	public boolean hasBreathableAtmosphere() {
+		return this.getPlanet().getIsBreathable();
 	}
 	
 	@Override
@@ -71,13 +78,65 @@ public class WorldProviderKriffon extends WorldProviderZG {
 	}
 	
 	@Override
-	public CelestialBody getCelestialBody() {
-		return ZGPlanets.planetKriffon;
+	public float getWindLevel() {
+		return this.getPlanet().getWindLevel();
 	}
 	
 	@Override
 	public double getSolarEnergyMultiplier() {
 		return 6.5F;
+	}
+	
+	@Override
+	public double getYCoordinateToTeleport() {
+		return 150;
+	}
+	
+	@Override
+	public float getCloudHeight() {
+		return 128F;
+	}
+	
+	@Override
+	public Vector3 getSkyColor() {
+		float f = 0.6F - this.getStarBrightness(1.0F);
+		return new Vector3(80 / 255F * f, 0 / 255F * f, 0 / 255F * f);
+	}
+	
+	@Override
+	public Vector3 getFogColor() {
+		float f = 1.0F - this.getStarBrightness(1.0F);
+		return new Vector3(80 / 255F * f, 0 / 255F * f, 0 / 255F * f);
+	}
+	
+	@Override
+	public boolean canRainOrSnow() {
+		return this.getPlanet().getHasRain();
+	}
+	
+	@Override
+	public boolean hasSunset() {
+		return true;
+	}
+	
+	@Override
+	public long getDayLength() {
+		return 6000L;
+	}
+	
+	@Override
+	public boolean shouldDisablePrecipitation() {
+		return !this.canRainOrSnow();
+	}
+	
+	@Override
+	public boolean canDoRainSnowIce(Chunk chunk) {
+		return this.canRainOrSnow();
+	}
+	
+	@Override
+	public boolean canRespawnHere() {
+		return this.shouldForceRespawn();
 	}
 	
 	@Override
@@ -112,6 +171,11 @@ public class WorldProviderKriffon extends WorldProviderZG {
 	}
 	
 	@Override
+	public CelestialBody getCelestialBody() {
+		return ZGPlanets.planetKriffon;
+	}
+	
+	@Override
 	public double getHorizon() {
 		return 44.0D;
 	}
@@ -122,30 +186,8 @@ public class WorldProviderKriffon extends WorldProviderZG {
 	}
 	
 	@Override
-	public Vector3 getSkyColor() {
-		float f = 0.6F - this.getStarBrightness(1.0F);
-		return new Vector3(80 / 255F * f, 0 / 255F * f, 0 / 255F * f);
-	}
-	
-	@Override
-	public Vector3 getFogColor() {
-		float f = 1.0F - this.getStarBrightness(1.0F);
-		return new Vector3(80 / 255F * f, 0 / 255F * f, 0 / 255F * f);
-	}
-	
-	@Override
-	public boolean canRainOrSnow() {
-		return false;
-	}
-	
-	@Override
-	public boolean hasSunset() {
+	public boolean canCoordinateBeSpawn(int var1, int var2) {
 		return true;
-	}
-	
-	@Override
-	public long getDayLength() {
-		return 6000L;
 	}
 	
 	@Override
@@ -162,6 +204,7 @@ public class WorldProviderKriffon extends WorldProviderZG {
 	}
 	
 	@Override
+	@SideOnly(Side.CLIENT)
 	protected void renderSky() {
 		this.setSkyRenderer(new SkyProviderKriffon(this));
 	}
@@ -176,18 +219,8 @@ public class WorldProviderKriffon extends WorldProviderZG {
 	}
 	
 	@Override
-	public void init() {
-		this.biomeProvider = new BiomeProviderKriffon();
-	}
-	
-	@Override
 	public DimensionType getDimensionType() {
 		return ZGDimensions.KRIFFON;
-	}
-	
-	@Override
-	public double getYCoordinateToTeleport() {
-		return 120;
 	}
 	
 	@Override
@@ -196,8 +229,9 @@ public class WorldProviderKriffon extends WorldProviderZG {
 	}
 	
 	@Override
-	public BiomeProvider getBiomeProvider() {
-		return new BiomeProviderKriffon();
+	public Class<? extends BiomeProvider> getBiomeProviderClass() {
+		BiomeAdaptive.setBodyMultiBiome(ZGPlanets.planetKriffon);
+		return BiomeProviderKriffon.class;
 	}
 	
 	@Override

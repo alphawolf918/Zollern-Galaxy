@@ -27,5 +27,4 @@
     - Can be recharged with special metals automatically.
 * Mobs have a chance to drop treasure chests with specialized loot on death.
 * Still more of the lore.
-* Fueltonium lakes.
 * 

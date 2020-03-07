@@ -10,6 +10,7 @@ import zollerngalaxy.mobs.entities.EntityMegaCreeper;
 import zollerngalaxy.mobs.entities.EntityMoolus;
 import zollerngalaxy.mobs.entities.EntityMummy;
 import zollerngalaxy.mobs.entities.EntityOinkus;
+import zollerngalaxy.mobs.entities.EntityScorpion;
 import zollerngalaxy.mobs.entities.EntitySquidlus;
 import zollerngalaxy.mobs.renders.RenderFrostGiant;
 import zollerngalaxy.mobs.renders.RenderGrayAlien;
@@ -18,6 +19,7 @@ import zollerngalaxy.mobs.renders.RenderMegaCreeper;
 import zollerngalaxy.mobs.renders.RenderMoolus;
 import zollerngalaxy.mobs.renders.RenderMummy;
 import zollerngalaxy.mobs.renders.RenderOinkus;
+import zollerngalaxy.mobs.renders.RenderScorpion;
 import zollerngalaxy.mobs.renders.RenderSquidlus;
 
 public class MobRenders {
@@ -31,9 +33,16 @@ public class MobRenders {
 		RenderMob(EntityGrayAlien.class, RenderGrayAlien::new);
 		RenderMob(EntityMegaCreeper.class, RenderMegaCreeper::new);
 		RenderMob(EntityMummy.class, RenderMummy::new);
+		RenderMob(EntityScorpion.class, RenderScorpion::new);
 	}
 	
-	private static <T extends Entity> void RenderMob(Class<T> entityClass, IRenderFactory<? super T> renderFactory) {
+	/**
+	 * Render a Mob to the registry.
+	 * 
+	 * @param entityClass
+	 * @param renderFactory
+	 */
+	public static <T extends Entity> void RenderMob(Class<T> entityClass, IRenderFactory<? super T> renderFactory) {
 		RenderingRegistry.registerEntityRenderingHandler(entityClass, renderFactory);
 	}
 	

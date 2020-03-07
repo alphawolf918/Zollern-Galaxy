@@ -28,7 +28,6 @@ import net.minecraft.entity.monster.EntityZombie;
 import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
@@ -40,8 +39,9 @@ import net.minecraft.world.World;
 import zollerngalaxy.events.ZGSoundEvents;
 import zollerngalaxy.items.ZGItems;
 import zollerngalaxy.mobs.entities.ai.EntityAIMummyAttack;
+import zollerngalaxy.mobs.entities.interfaces.IShadeEntity;
 
-public class EntityMummy extends EntityZombie {
+public class EntityMummy extends EntityZombie implements IShadeEntity {
 	
 	public EntityMummy(World worldIn) {
 		super(worldIn);
@@ -50,9 +50,9 @@ public class EntityMummy extends EntityZombie {
 	@Override
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(25.0D);
-		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.2D);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(5.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(35.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(7.4D);
 	}
 	
 	@Override
@@ -69,8 +69,7 @@ public class EntityMummy extends EntityZombie {
 			EntityMummy entitymummy = new EntityMummy(this.world);
 			entitymummy.copyLocationAndAnglesFrom(entity);
 			this.world.removeEntity(entity);
-			entitymummy.onInitialSpawn(this.world.getDifficultyForLocation(new BlockPos(entitymummy)), new EntityMummy.GroupData(
-					false));
+			entitymummy.onInitialSpawn(this.world.getDifficultyForLocation(new BlockPos(entitymummy)), new EntityMummy.GroupData(false));
 			entitymummy.setChild(entity.isChild());
 			entitymummy.setNoAI(entity.isAIDisabled());
 			
@@ -107,7 +106,7 @@ public class EntityMummy extends EntityZombie {
 			int i = this.rand.nextInt(3);
 			
 			if (i == 0) {
-				this.setItemStackToSlot(EntityEquipmentSlot.MAINHAND, new ItemStack(Items.DIAMOND_SWORD));
+				this.setItemStackToSlot(EntityEquipmentSlot.MAINHAND, new ItemStack(ZGItems.swordAzurite));
 			} else {
 				this.setItemStackToSlot(EntityEquipmentSlot.MAINHAND, new ItemStack(ZGItems.swordAmaranth));
 			}

@@ -87,7 +87,7 @@
       "category":"master",
       "sounds":[
          "zollerngalaxy:mob/shadowalien/say1",
-         "zollerngalaxy:shadowalien/say2"
+         "zollerngalaxy:mob/shadowalien/say2"
       ]
    },
    "mob.shadowalien.hurt":{

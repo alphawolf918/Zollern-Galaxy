@@ -1,3 +1,10 @@
+/**
+ * Zollern Galaxy by @author Zollern Wolf
+ * Copyright 2016 - 2025
+ * You may use this code to learn from, but do not
+ * claim it as your own, and do not
+ * redistribute it.
+ */
 package zollerngalaxy.blocks;
 
 import java.util.List;
@@ -91,14 +98,11 @@ public class ZGBlockLeaves extends ZGBlockBase implements IShearable {
 					for (int i2 = -4; i2 <= 4; ++i2) {
 						for (int j2 = -4; j2 <= 4; ++j2) {
 							for (int k2 = -4; k2 <= 4; ++k2) {
-								IBlockState iblockstate = worldIn.getBlockState(blockpos$mutableblockpos.setPos(k + i2, l + j2,
-										i1 + k2));
+								IBlockState iblockstate = worldIn.getBlockState(blockpos$mutableblockpos.setPos(k + i2, l + j2, i1 + k2));
 								Block block = iblockstate.getBlock();
 								
-								if (!block.canSustainLeaves(iblockstate, worldIn,
-										blockpos$mutableblockpos.setPos(k + i2, l + j2, i1 + k2))) {
-									if (block.isLeaves(iblockstate, worldIn,
-											blockpos$mutableblockpos.setPos(k + i2, l + j2, i1 + k2))) {
+								if (!block.canSustainLeaves(iblockstate, worldIn, blockpos$mutableblockpos.setPos(k + i2, l + j2, i1 + k2))) {
+									if (block.isLeaves(iblockstate, worldIn, blockpos$mutableblockpos.setPos(k + i2, l + j2, i1 + k2))) {
 										this.surroundings[(i2 + 16) * 1024 + (j2 + 16) * 32 + k2 + 16] = -2;
 									} else {
 										this.surroundings[(i2 + 16) * 1024 + (j2 + 16) * 32 + k2 + 16] = -1;
@@ -229,8 +233,7 @@ public class ZGBlockLeaves extends ZGBlockBase implements IShearable {
 	}
 	
 	@Override
-	public void getDrops(net.minecraft.util.NonNullList<ItemStack> drops, IBlockAccess world, BlockPos pos, IBlockState state,
-			int fortune) {
+	public void getDrops(net.minecraft.util.NonNullList<ItemStack> drops, IBlockAccess world, BlockPos pos, IBlockState state, int fortune) {
 		Random rand = world instanceof World ? ((World) world).rand : new Random();
 		int chance = this.getSaplingDropChance(state);
 		
@@ -262,8 +265,8 @@ public class ZGBlockLeaves extends ZGBlockBase implements IShearable {
 	@Override
 	@SideOnly(Side.CLIENT)
 	public boolean shouldSideBeRendered(IBlockState blockState, IBlockAccess blockAccess, BlockPos pos, EnumFacing side) {
-		return !this.leavesFancy && blockAccess.getBlockState(pos.offset(side)).getBlock() == this ? false : super
-				.shouldSideBeRendered(blockState, blockAccess, pos, side);
+		return !this.leavesFancy && blockAccess.getBlockState(pos.offset(side)).getBlock() == this ? false : super.shouldSideBeRendered(
+				blockState, blockAccess, pos, side);
 	}
 	
 	@Override

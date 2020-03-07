@@ -230,6 +230,7 @@ tile.perdetriumore.name=Lost Etrium Ore
 tile.perdironore.name=Lost Iron Ore
 tile.perdgoldore.name=Lost Gold Ore
 tile.perdzollerniumore.name=Lost Zollernium Ore
+tile.perdfueltoniumore.name=Lost Fueltonium Ore
 tile.perdsoil.name=Lost Soil
 tile.perddeadbush.name=Lost Dead Bush
 tile.perddirt.name=Lost Dirt
@@ -322,6 +323,8 @@ item.plutoniumcrystal.name=Plutonium Crystal
 
 item.purgotessence.name=Oasis Gem
 
+item.shadowessence.name=Dark Matter Essence
+
 item.fueltoniumraw.name=Raw Fuelonite
 item.fueltoniumingot.name=Fueltonium Ingot
 
@@ -383,7 +386,7 @@ item.perddiamond.name=Lost Diamond
 item.etrium.name=Raw Etrium
 item.etriumingot.name=Etrium Ingot
 item.zucritedust.name=Zucrite Dust
-item.zucritedust.name=Zucrite Ingot
+item.zucriteingot.name=Zucrite Ingot
 item.perdpearl.name=Lost Pearl
 item.perdglowstonedust.name=Lost Glowdust
 item.perdreed.name=Lost Bamboo Plant
@@ -451,6 +454,7 @@ entity.zollerngalaxy:magmos.name=Magmos
 entity.zollerngalaxy:slime.raspberry.name=Galaxy Slime (Raspberry)
 entity.zollerngalaxy:megacreeper.name=Mega Creeper
 entity.zollerngalaxy:mummy.name=Mummy
+entity.zollerngalaxy:scorpion.name=Scorpion
 
 planet.zollus=Zollus
 planet.eden=Eden
@@ -512,6 +516,10 @@ satellite.space_station.oasis=Oasis Space Station
 satellite.space_station.xantheon=Xantheon Space Station
 satellite.space_station.candora=Candora Space Station
 satellite.space_station.atheon=Atheon Space Station
+satellite.space_station.perdita=Perdita Space Station
+satellite.space_station.altum=Altum Space Station
+satellite.space_station.caligro=Caligro Space Station
+satellite.space_station.exodus=Exodus Space Station
 
 itemGroup.ZollernGalaxyBlocks=Zollern Galaxy Blocks
 itemGroup.ZollernGalaxyItems=Zollern Galaxy Items

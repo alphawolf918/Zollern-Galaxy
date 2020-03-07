@@ -1,3 +1,10 @@
+/**
+ * Zollern Galaxy by @author Zollern Wolf
+ * Copyright 2016 - 2025
+ * You may use this code to learn from, but do not
+ * claim it as your own, and do not
+ * redistribute it.
+ */
 package zollerngalaxy.blocks;
 
 import java.util.Random;
@@ -58,10 +65,9 @@ public class ZGBlockFlower extends ZGBlockBase {
 	}
 	
 	@Override
-	public IBlockState getStateForPlacement(World world, BlockPos pos, EnumFacing facing, float hitX, float hitY,
-			float hitZ, int meta, EntityLivingBase placer, EnumHand hand) {
-		if (world.getBlockState(pos).getBlock().isReplaceable(world, pos)
-				&& this.canBlockStay(world, pos, this.getDefaultState())) {
+	public IBlockState getStateForPlacement(World world, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta,
+			EntityLivingBase placer, EnumHand hand) {
+		if (world.getBlockState(pos).getBlock().isReplaceable(world, pos) && this.canBlockStay(world, pos, this.getDefaultState())) {
 			return super.getStateForPlacement(world, pos, facing, hitX, hitY, hitZ, meta, placer, hand);
 		}
 		return world.getBlockState(pos);

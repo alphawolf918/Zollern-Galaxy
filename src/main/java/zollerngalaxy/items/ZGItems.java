@@ -96,8 +96,10 @@ public class ZGItems {
 	public static final Item cookedAlienBeef = new ZGItemFood("alienbeefcooked", 6, 4.0F, true);
 	public static final Item edenFruit = new ZGItemFood("fruitofeden", 4, 2.5F, false);
 	public static final Item perdBerry = new ZGItemFood("perdberry", 8, 3.6F, false);
-	public static final Item perdPeach = new ZGItemFood("perdpeach", 10, 8.2F, false);
+	public static final Item perdPeach = new ZGItemFood("perdpeach", 13, 8.2F, false);
 	public static final Item perdReed = new ZGItemSpecial("perdreed", ZGBlocks.perdReeds);
+	
+	public static final Item darkEssence = new ZGItemBase("shadowessence");
 	
 	public static final Item creamBall = new ZGItemBase("creamball");
 	public static final Item chocolateRaw = new ZGItemBase("rawchocolate");
@@ -171,21 +173,20 @@ public class ZGItems {
 	public static void init() {
 		ZGItems.registerItems(heartium, zolCrystal, kriffCrystal, purgCrystal, edenCrystal, purgEssence, prometheanCrystal,
 				plutoniumCrystal, azurite, ascendium, dustBrightstone, dustShinestone, dustVirinium, dustEvenium, dustCobalt,
-				dustFueltonium, dustShinium, dustChargium, dustDiamond, dustEmerald, dustAmaranth, dustZollernium, dustZinc,
-				dustZucrite, ingotVirinium, ingotCobalt, ingotEvenium, ingotShinestone, ingotShinium, ingotChargium,
-				ingotFueltonium, ingotLapis, ingotAmaranth, ingotAscendantAmaranth, ingotZollernium, ingotZinc, ingotEtrium,
-				ingotZucrite, hud, alienStone, compressedCobalt, compressedDiamond, compressedEmerald, compressedEvenium,
-				compressedGold, compressedHeartium, compressedKriffonium, compressedVirinium, compressedVyrex,
-				compressedPromethean, compressedSuperChargedCoal, compressedRiven, compressedAmaranth, compressedAzurite,
-				compressedZollernium, rawAlienBacon, cookedAlienBacon, rawAlienBeef, cookedAlienBeef, edenFruit, perdBerry,
-				perdPeach, creamBall, chocolateRaw, chocolateBar, brownie, candyApple, iceCreamSandwich, iceCream,
-				edenDungeonKey, perdGlowdust, perdDiamond, perdEtrium, perdReed, superChargedCoal, powerStick, starGateTier1,
-				starGateTier2, starGateTier3, starGateTier4, starGateTier5, starGateTier6, starGateTier7, starGateTier8,
-				starGateTier9, starGateTier10, starGateCandy, OMNITOOL, pickaxeCobalt, pickaxeEvenium, pickaxeVirinium,
+				dustFueltonium, dustShinium, dustChargium, dustDiamond, dustEmerald, dustAmaranth, dustZollernium, dustZinc, dustZucrite,
+				ingotVirinium, ingotCobalt, ingotEvenium, ingotShinestone, ingotShinium, ingotChargium, ingotFueltonium, ingotLapis,
+				ingotAmaranth, ingotAscendantAmaranth, ingotZollernium, ingotZinc, ingotEtrium, ingotZucrite, hud, alienStone,
+				compressedCobalt, compressedDiamond, compressedEmerald, compressedEvenium, compressedGold, compressedHeartium,
+				compressedKriffonium, compressedVirinium, compressedVyrex, compressedPromethean, compressedSuperChargedCoal,
+				compressedRiven, compressedAmaranth, compressedAzurite, compressedZollernium, rawAlienBacon, cookedAlienBacon,
+				rawAlienBeef, cookedAlienBeef, edenFruit, perdBerry, perdPeach, creamBall, chocolateRaw, chocolateBar, brownie, candyApple,
+				iceCreamSandwich, iceCream, edenDungeonKey, perdGlowdust, perdDiamond, perdEtrium, perdReed, darkEssence, superChargedCoal,
+				powerStick, starGateTier1, starGateTier2, starGateTier3, starGateTier4, starGateTier5, starGateTier6, starGateTier7,
+				starGateTier8, starGateTier9, starGateTier10, starGateCandy, OMNITOOL, pickaxeCobalt, pickaxeEvenium, pickaxeVirinium,
 				pickaxeAmaranth, pickaxeAzurite, pickaxeZollernium, shovelCobalt, shovelEvenium, shovelVirinium, shovelAmaranth,
-				shovelAzurite, shovelZollernium, axeCobalt, axeEvenium, axeVirinium, axeAmaranth, axeAzurite, axeZollernium,
-				hoeCobalt, hoeEvenium, hoeVirinium, hoeAmaranth, hoeAzurite, hoeZollernium, swordCobalt, swordEvenium,
-				swordVirinium, swordAmaranth, swordAzurite, swordZollernium);
+				shovelAzurite, shovelZollernium, axeCobalt, axeEvenium, axeVirinium, axeAmaranth, axeAzurite, axeZollernium, hoeCobalt,
+				hoeEvenium, hoeVirinium, hoeAmaranth, hoeAzurite, hoeZollernium, swordCobalt, swordEvenium, swordVirinium, swordAmaranth,
+				swordAzurite, swordZollernium);
 		ZGHelper.Log("Loaded a total of " + totalItems + " new items.");
 	}
 	

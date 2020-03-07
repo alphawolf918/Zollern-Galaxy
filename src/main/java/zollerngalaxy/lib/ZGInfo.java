@@ -9,7 +9,7 @@ public class ZGInfo {
 	public static final String MOD_ID = "zollerngalaxy";
 	public static final String vMAJOR = "2";
 	public static final String vMINOR = "0";
-	public static final String vBUILD = "11";
+	public static final String vBUILD = "12";
 	public static final String MOD_VERSION = vMAJOR + "." + vMINOR + "." + vBUILD;
 	public static final String MINECRAFT_VERSION = "1.12.2";
 	public static final String OFFICIAL_NAME = "Zollern Galaxy";
@@ -18,8 +18,7 @@ public class ZGInfo {
 	public static final String PROXY_CLIENT = PROXY_LOCATION + "ClientProxy";
 	public static final String PROXY_SERVER = PROXY_LOCATION + "CommonProxy";
 	public static final String CHANNEL = ZGInfo.MOD_ID;
-	public static final String FORGE_MODS = "before:planetprogression@[1.12.2-0.3.8,]; " + "before:extraplanets; "
-			+ "before:powersuits;";
+	public static final String FORGE_MODS = "before:planetprogression@[1.12.2-0.3.8,]; " + "before:extraplanets; " + "before:powersuits;";
 	public static final String FORGE_VERSION = "after:forge@[14.23.5.2847,);";
 	public static final String DEPENDENCIES = "required-after:galacticraftcore@[4.0.2.244,); "
 			+ "required-after:galacticraftplanets@[4.0.2.244,); " + "required-after:micdoodlecore; " + ZGInfo.FORGE_VERSION

@@ -25,6 +25,8 @@ import zollerngalaxy.mobs.entities.EntityMegaCreeper;
 import zollerngalaxy.mobs.entities.EntityMoolus;
 import zollerngalaxy.mobs.entities.EntityMummy;
 import zollerngalaxy.mobs.entities.EntityOinkus;
+import zollerngalaxy.mobs.entities.EntityScorpion;
+import zollerngalaxy.mobs.entities.interfaces.IShadeEntity;
 import zollerngalaxy.util.CachedEnum;
 
 public class ZGEvents {
@@ -75,6 +77,24 @@ public class ZGEvents {
 			if (ZGHelper.getRNGChance(5, 20)) {
 				for (int i = 0; i < ZGHelper.rngNumber(1, 2); i++) {
 					ZGHelper.dropItem(ZGItems.perdGlowdust, worldObj, theEntity);
+				}
+			}
+		}
+		
+		// Scorpion
+		if (theEntity instanceof EntityScorpion) {
+			if (ZGHelper.getRNGChance(5, 20)) {
+				for (int i = 0; i < ZGHelper.rngNumber(1, 2); i++) {
+					ZGHelper.dropItem(ZGItems.dustEmerald, worldObj, theEntity);
+				}
+			}
+		}
+		
+		// Shade Entities
+		if (theEntity instanceof IShadeEntity) {
+			if (ZGHelper.getRNGChance(5, 10)) {
+				for (int i = 0; i < ZGHelper.rngNumber(1, 2); i++) {
+					ZGHelper.dropItem(ZGItems.darkEssence, worldObj, theEntity);
 				}
 			}
 		}

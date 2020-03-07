@@ -1,3 +1,10 @@
+/**
+ * Zollern Galaxy by @author Zollern Wolf
+ * Copyright 2016 - 2025
+ * You may use this code to learn from, but do not
+ * claim it as your own, and do not
+ * redistribute it.
+ */
 package zollerngalaxy.planets;
 
 import micdoodle8.mods.galacticraft.api.GalacticraftRegistry;
@@ -434,7 +441,8 @@ public class ZGPlanets {
 				EnumAtmosphericGas.WATER);
 		planetPerdita.setAtmosphere();
 		planetPerdita.setPlanetIcon("perdita");
-		planetPerdita.setBiomeInfo(ZGBiomes.PERDITA_DESERT, ZGBiomes.PERDITA_HALLOWS, ZGBiomes.PERDITA_OASIS);
+		planetPerdita.setBiomeInfo(ZGBiomes.PERDITA_DESERT, ZGBiomes.PERDITA_HALLOWS, ZGBiomes.PERDITA_OASIS,
+				ZGBiomes.PERDITA_FUELTONIUM_OCEAN, ZGBiomes.PERDITA_LOST_MOUNTAINS);
 		totalPlanets++;
 		
 		// Altum

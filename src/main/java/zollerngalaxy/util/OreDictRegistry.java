@@ -44,7 +44,7 @@ public class OreDictRegistry {
 		
 		// Grass
 		registerOre("grass", ZGBlocks.edenGoldenGrass, ZGBlocks.edenGrass, ZGBlocks.edenSwampGrass, ZGBlocks.xathGrass,
-				ZGBlocks.oasisGrass);
+				ZGBlocks.oasisGrass, ZGBlocks.perdGrass);
 		
 		// Logs
 		registerOre("logWood", ZGBlocks.edenWoodLog, ZGBlocks.perdWoodLogs);
@@ -258,14 +258,14 @@ public class OreDictRegistry {
 		
 		// Uranium
 		if (ConfigManagerZG.fueltoniumIsUranium) {
-			registerOre("oreUranium", ZGBlocks.xantheonFueltoniumOre);
+			registerOre("oreUranium", ZGBlocks.xantheonFueltoniumOre, ZGBlocks.perdFueltoniumOre);
 			registerOre("ingotUranium", ZGItems.ingotFueltonium);
 			registerOre("dustUranium", ZGItems.dustFueltonium);
 			registerOre("blockUranium", ZGBlocks.blockFueltonium);
 		}
 		
 		// Fueltonium
-		registerOre("oreFueltonium", ZGBlocks.xantheonFueltoniumOre);
+		registerOre("oreFueltonium", ZGBlocks.xantheonFueltoniumOre, ZGBlocks.perdFueltoniumOre);
 		registerOre("ingotFueltonium", ZGItems.ingotFueltonium);
 		registerOre("dustFueltonium", ZGItems.dustFueltonium);
 		registerOre("blockFueltonium", ZGBlocks.blockFueltonium);
@@ -285,10 +285,14 @@ public class OreDictRegistry {
 		registerOre("gemBlazePowder", Items.BLAZE_POWDER);
 		
 		// Perdita Glowstone
+		registerOre("blockLostGlowstone", ZGBlocks.perdGlowstone);
 		registerOre("dustLostGlowstone", ZGItems.perdGlowdust);
 		
 		// Cactus
 		registerOre("blockCactus", ZGBlocks.perdCactus);
+		
+		// Reeds
+		registerOre("reeds", ZGBlocks.perdReeds);
 	}
 	
 	private static void registerOre(String strName, Item... items) {

@@ -3,12 +3,14 @@ package zollerngalaxy.core.dimensions;
 import micdoodle8.mods.galacticraft.api.galaxies.CelestialBody;
 import micdoodle8.mods.galacticraft.core.util.WorldUtil;
 import net.minecraft.world.DimensionType;
+import org.apache.logging.log4j.Level;
 import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitAtheon;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitCandora;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitEden;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitKriffon;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitOasis;
+import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitPerdita;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitPurgot;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitXantheon;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitXathius;
@@ -65,8 +67,8 @@ public class ZGDimensions {
 	public static void init() {
 		// Psion-6 (Zollus)
 		ZGDimensions.ZOLLUS = ZGDimensions.getDimType(ConfigManagerZG.planetZollusDimensionId);
-		ZGDimensions.ZOLLUS_ORBIT = DimensionType.register("Zollus Space Station", "_zollus_orbit",
-				ConfigManagerZG.spaceStationZollusId, WorldProviderOrbitZollus.class, false);
+		ZGDimensions.ZOLLUS_ORBIT = DimensionType.register("Zollus Space Station", "_zollus_orbit", ConfigManagerZG.spaceStationZollusId,
+				WorldProviderOrbitZollus.class, false);
 		ZGDimensions.ZOLLUS_ORBIT_STATIC = DimensionType.register("Zollus Space Station", "_zollus_orbit",
 				ConfigManagerZG.spaceStationZollusStaticId, WorldProviderOrbitZollus.class, true);
 		
@@ -79,8 +81,8 @@ public class ZGDimensions {
 		
 		// Psion-6 (Purgot)
 		ZGDimensions.PURGOT = ZGDimensions.getDimType(ConfigManagerZG.planetPurgotDimensionId);
-		ZGDimensions.PURGOT_ORBIT = DimensionType.register("Purgot Space Station", "_purgot_orbit",
-				ConfigManagerZG.spaceStationPurgotId, WorldProviderOrbitPurgot.class, false);
+		ZGDimensions.PURGOT_ORBIT = DimensionType.register("Purgot Space Station", "_purgot_orbit", ConfigManagerZG.spaceStationPurgotId,
+				WorldProviderOrbitPurgot.class, false);
 		ZGDimensions.PURGOT_ORBIT_STATIC = DimensionType.register("Purgot Space Station", "_purgot_orbit",
 				ConfigManagerZG.spaceStationPurgotStaticId, WorldProviderOrbitPurgot.class, true);
 		
@@ -100,8 +102,8 @@ public class ZGDimensions {
 		
 		// Praedyth (Oasis)
 		ZGDimensions.OASIS = ZGDimensions.getDimType(ConfigManagerZG.planetOasisDimensionId);
-		ZGDimensions.OASIS_ORBIT = DimensionType.register("Oasis Space Station", "_oasis_orbit",
-				ConfigManagerZG.spaceStationOasisId, WorldProviderOrbitOasis.class, false);
+		ZGDimensions.OASIS_ORBIT = DimensionType.register("Oasis Space Station", "_oasis_orbit", ConfigManagerZG.spaceStationOasisId,
+				WorldProviderOrbitOasis.class, false);
 		ZGDimensions.OASIS_ORBIT_STATIC = DimensionType.register("Oasis Space Station", "_oasis_orbit",
 				ConfigManagerZG.spaceStationOasisStaticId, WorldProviderOrbitOasis.class, true);
 		
@@ -121,13 +123,17 @@ public class ZGDimensions {
 		
 		// Praedyth (Atheon)
 		ZGDimensions.ATHEON = ZGDimensions.getDimType(ConfigManagerZG.planetAtheonDimensionId);
-		ZGDimensions.ATHEON_ORBIT = DimensionType.register("Atheon Space Station", "_atheon_orbit",
-				ConfigManagerZG.spaceStationAtheonId, WorldProviderOrbitAtheon.class, false);
+		ZGDimensions.ATHEON_ORBIT = DimensionType.register("Atheon Space Station", "_atheon_orbit", ConfigManagerZG.spaceStationAtheonId,
+				WorldProviderOrbitAtheon.class, false);
 		ZGDimensions.ATHEON_ORBIT_STATIC = DimensionType.register("Atheon Space Station", "_atheon_orbit",
 				ConfigManagerZG.spaceStationAtheonStaticId, WorldProviderOrbitAtheon.class, true);
 		
 		// Sol-2 (Perdita)
 		ZGDimensions.PERDITA = ZGDimensions.getDimType(ConfigManagerZG.planetPerditaDimensionId);
+		ZGDimensions.PERDITA_ORBIT = DimensionType.register("Perdita Space Station", "_perdita_orbit",
+				ConfigManagerZG.spaceStationPerditaId, WorldProviderOrbitPerdita.class, false);
+		ZGDimensions.PERDITA_ORBIT_STATIC = DimensionType.register("Perdita Space Station", "_perdita_orbit",
+				ConfigManagerZG.spaceStationPerditaStaticId, WorldProviderOrbitPerdita.class, true);
 	}
 	
 	public static DimensionType getDimType(int dimId) {
@@ -158,9 +164,8 @@ public class ZGDimensions {
 			body = ZGPlanets.planetPerdita;
 		}
 		if (body == null) {
-			ZGHelper.Log("Celestial Body was null.");
+			ZGHelper.Log(Level.ERROR, "Celestial Body was null.");
 		}
 		return body;
 	}
-	
 }

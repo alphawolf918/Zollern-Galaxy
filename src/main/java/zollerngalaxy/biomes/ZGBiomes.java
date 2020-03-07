@@ -49,8 +49,10 @@ import zollerngalaxy.biomes.kriffon.BiomeKriffon;
 import zollerngalaxy.biomes.oasis.BiomeOasisPlains;
 import zollerngalaxy.biomes.oasis.BiomeOasisRedSea;
 import zollerngalaxy.biomes.oasis.BiomeRedlands;
+import zollerngalaxy.biomes.perdita.BiomeFueltoniumOcean;
 import zollerngalaxy.biomes.perdita.BiomeLostDesert;
 import zollerngalaxy.biomes.perdita.BiomeLostHallows;
+import zollerngalaxy.biomes.perdita.BiomeLostMountains;
 import zollerngalaxy.biomes.perdita.BiomeLostOasis;
 import zollerngalaxy.biomes.purgot.BiomeLimbo;
 import zollerngalaxy.biomes.purgot.BiomePurgot;
@@ -108,8 +110,7 @@ public class ZGBiomes {
 	// Candora
 	public static final Biome CANDY_MOUNTAIN = new BiomeCandyMountain(new BiomeProperties("Candy Mountain"));
 	public static final Biome CANDY_OCEAN = new BiomeChocolateOcean(new BiomeProperties("Chocolate Ocean"));
-	public static final Biome CANDY_JOLLY_MELON_PLAINS = new BiomeJollyWatermelonPlains(new BiomeProperties(
-			"Jolly Watermelon Plains"));
+	public static final Biome CANDY_JOLLY_MELON_PLAINS = new BiomeJollyWatermelonPlains(new BiomeProperties("Jolly Watermelon Plains"));
 	public static final Biome CANDY_BLUEBERRY_HILLS = new BiomeBlueberryHills(new BiomeProperties("Blueberry Hills"));
 	public static final Biome CANDY_COOKIE_LANDS = new BiomeCookieLands(new BiomeProperties("Cookie Lands"));
 	
@@ -121,6 +122,8 @@ public class ZGBiomes {
 	public static final Biome PERDITA_DESERT = new BiomeLostDesert(new BiomeProperties("Lost Desert"));
 	public static final Biome PERDITA_HALLOWS = new BiomeLostHallows(new BiomeProperties("Lost Hallows"));
 	public static final Biome PERDITA_OASIS = new BiomeLostOasis(new BiomeProperties("Lost Oasis"));
+	public static final Biome PERDITA_FUELTONIUM_OCEAN = new BiomeFueltoniumOcean(new BiomeProperties("Fueltonium Ocean"));
+	public static final Biome PERDITA_LOST_MOUNTAINS = new BiomeLostMountains(new BiomeProperties("Lost Mountains"));
 	
 	public static void init() {
 		// Zollus
@@ -175,6 +178,8 @@ public class ZGBiomes {
 		ZGBiomes.addBiome(ZGBiomes.PERDITA_DESERT, DEAD, HOT, DRY, MOUNTAIN, WASTELAND);
 		ZGBiomes.addBiome(ZGBiomes.PERDITA_HALLOWS, DEAD, HOT, DRY, PLAINS);
 		ZGBiomes.addBiome(ZGBiomes.PERDITA_OASIS, LUSH, WET, PLAINS);
+		ZGBiomes.addBiome(ZGBiomes.PERDITA_FUELTONIUM_OCEAN, DEAD, SPOOKY, HOT, OCEAN);
+		ZGBiomes.addBiome(ZGBiomes.PERDITA_LOST_MOUNTAINS, MOUNTAIN, DEAD);
 		
 		ZGHelper.Log("Loaded a total of " + totalBiomes + " new biomes.");
 	}

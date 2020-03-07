@@ -8,24 +8,19 @@
 package zollerngalaxy.biomes.zollus;
 
 import micdoodle8.mods.galacticraft.core.entities.EntityAlienVillager;
-import net.minecraft.world.biome.BiomeDecorator;
-import zollerngalaxy.biomes.BiomeSpace;
-import zollerngalaxy.biomes.decorators.BiomeDecoratorZollus;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 import zollerngalaxy.mobs.entities.EntityFrostGiant;
 import zollerngalaxy.planets.ZGPlanets;
 
-public class BiomeZollus extends BiomeSpace {
-	
-	public static int grassFoilageColorMultiplier = 0x00008b;
-	
-	public BiomeDecoratorZollus biomeDecor = this.getBiomeDecorator();
+public class BiomeZollus extends BiomeZollusBase {
 	
 	public BiomeZollus(BiomeProperties props) {
 		super("zollus", props);
 		props.setRainDisabled();
+		this.setBiomeHeight(45);
 		this.setBiomeType(EnumBiomeTypeZG.ICY);
+		this.setTemp(-54.2F);
 		this.enableSnow = true;
 		this.clearAllSpawning();
 		this.spawnableCreatureList.add(new SpawnListEntry(EntityAlienVillager.class, 5, 1, 2));
@@ -34,29 +29,5 @@ public class BiomeZollus extends BiomeSpace {
 		this.fillerBlock = ZGBlocks.zolDirt.getDefaultState();
 		this.stoneBlock = ZGBlocks.zolStone;
 		this.setPlanetForBiome(ZGPlanets.planetZollus);
-	}
-	
-	@Override
-	public float getSpawningChance() {
-		return 0.1F;
-	}
-	
-	@Override
-	public BiomeDecorator createBiomeDecorator() {
-		return new BiomeDecoratorZollus();
-	}
-	
-	protected BiomeDecoratorZollus getBiomeDecorator() {
-		return (BiomeDecoratorZollus) this.decorator;
-	}
-	
-	@Override
-	public int getModdedBiomeFoliageColor(int original) {
-		return this.grassFoilageColorMultiplier;
-	}
-	
-	@Override
-	public int getModdedBiomeGrassColor(int original) {
-		return this.grassFoilageColorMultiplier;
 	}
 }

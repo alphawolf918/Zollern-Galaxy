@@ -1,3 +1,10 @@
+/**
+ * Zollern Galaxy by @author Zollern Wolf
+ * Copyright 2016 - 2025
+ * You may use this code to learn from, but do not
+ * claim it as your own, and do not
+ * redistribute it.
+ */
 package zollerngalaxy.blocks;
 
 import java.util.Random;
@@ -103,11 +110,9 @@ public class ZGBlockGrass extends ZGBlockDirt implements IGrowable {
 						break;
 					}
 					
-					blockpos1 = blockpos1.add(rand.nextInt(3) - 1, (rand.nextInt(3) - 1) * rand.nextInt(3) / 2,
-							rand.nextInt(3) - 1);
+					blockpos1 = blockpos1.add(rand.nextInt(3) - 1, (rand.nextInt(3) - 1) * rand.nextInt(3) / 2, rand.nextInt(3) - 1);
 					
-					if (worldIn.getBlockState(blockpos1.down()).getBlock() != this
-							|| worldIn.getBlockState(blockpos1).isNormalCube()) {
+					if (worldIn.getBlockState(blockpos1.down()).getBlock() != this || worldIn.getBlockState(blockpos1).isNormalCube()) {
 						break;
 					}
 					
@@ -122,8 +127,7 @@ public class ZGBlockGrass extends ZGBlockDirt implements IGrowable {
 		if (!worldIn.isRemote) {
 			if (!worldIn.isAreaLoaded(pos, 3))
 				return;
-			if (worldIn.getLightFromNeighbors(pos.up()) < 4
-					&& worldIn.getBlockState(pos.up()).getLightOpacity(worldIn, pos.up()) > 2) {
+			if (worldIn.getLightFromNeighbors(pos.up()) < 4 && worldIn.getBlockState(pos.up()).getLightOpacity(worldIn, pos.up()) > 2) {
 				worldIn.setBlockState(pos, this.getDirtBlock().getDefaultState());
 			} else {
 				if (worldIn.getLightFromNeighbors(pos.up()) >= 9) {
@@ -137,8 +141,7 @@ public class ZGBlockGrass extends ZGBlockDirt implements IGrowable {
 						IBlockState iblockstate = worldIn.getBlockState(blockpos.up());
 						IBlockState iblockstate1 = worldIn.getBlockState(blockpos);
 						
-						if (iblockstate1.getBlock() == this.getDirtBlock()
-								&& worldIn.getLightFromNeighbors(blockpos.up()) >= 4
+						if (iblockstate1.getBlock() == this.getDirtBlock() && worldIn.getLightFromNeighbors(blockpos.up()) >= 4
 								&& iblockstate.getLightOpacity(worldIn, pos.up()) <= 2) {
 							worldIn.setBlockState(blockpos, this.getDefaultState());
 						}
