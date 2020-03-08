@@ -1,5 +1,7 @@
 ===== CHANGELOG =====
-Zollern Galaxy v2.0.12
+Zollern Galaxy v2.0.12 (Hotfix)
 =====================
 
-* 
+* Fixed issue with Chinese and Korean language files not working.
+* Fixed issue with Perdita Space Station being registered incorrectly.
+* Added several more Lore Books.

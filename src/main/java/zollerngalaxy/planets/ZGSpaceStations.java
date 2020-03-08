@@ -149,7 +149,7 @@ public class ZGSpaceStations {
 		ZGSpaceStations.registerSpaceStation(ATHEON_SPACE_STATION, "Atheon Space Station", "_atheon_orbit", WorldProviderOrbitAtheon.class,
 				ConfigManagerZG.spaceStationAtheonId, ConfigManagerZG.spaceStationAtheonStaticId);
 		
-		// Praedyth (Perdita)
+		// Sol-2 (Perdita)
 		ZGSpaceStations.registerSpaceStation(PERDITA_SPACE_STATION, "Perdita Space Station", "_perdita_orbit",
 				WorldProviderOrbitPerdita.class, ConfigManagerZG.spaceStationPerditaId, ConfigManagerZG.spaceStationPerditaStaticId);
 	}
