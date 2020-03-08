@@ -45,9 +45,7 @@ tile.edensteelore.name=伊甸钢矿石
 tile.edenplatinumore.name=伊甸铂金矿石
 tile.edenuraniumore.name=伊甸铀矿石
 tile.edencyaniteore.name=伊甸蓝晶石矿石
-#未实装
 tile.edenludacriteore.name=Eden's Ludacrite Ore
-#
 tile.edenviriore.name=伊甸维尔因矿石
 tile.edencobaltore.name=伊甸钴矿石
 tile.edeneveniumore.name=伊甸伊文矿石
@@ -209,6 +207,39 @@ tile.atheonluxrock.name=艾松星勒克斯岩
 tile.atheonrockbricks.name=艾松星石砖
 tile.atheonrock.name=艾松星金岩
 tile.goldenconstructblock.name=金色构造块
+#Lost暂译失落之星
+tile.perdsand.name=失落之星沙子
+tile.perdrock.name=失落之星岩石
+tile.perdstone.name=失落之星石头
+tile.perdrockbricks.name=失落之星石砖
+tile.perdcobble.name=失落之星圆石
+tile.perdgravel.name=失落之星砂砾
+tile.perdcreepdirt.name=失落之星爬行者泥土
+tile.perdcreepstone.name=失落之星爬行者石头
+tile.perdcavestone.name=失落之星岩洞石
+tile.perdcavestonebricks.name=失落之星岩洞石石砖
+tile.perdglowstone.name=失落之星萤石
+tile.perdcactus.name=失落之星仙人掌
+tile.perdtorch.name=失落之星萤石火把
+tile.perddiamondblock.name=失落之星钻石块
+tile.perdetriumblock.name=Block of Etrium
+tile.zucriteblock.name=Block of Zucrite
+tile.perddiamondore.name=失落之星钻石矿石
+tile.perdetriumore.name=Lost Etrium Ore
+tile.perdironore.name=失落之星铁矿石
+tile.perdgoldore.name=失落之星金矿石
+tile.perdzollerniumore.name=失落之星卓伦矿石
+tile.perdfueltoniumore.name=失落之星铀矿石
+tile.perdsoil.name=失落之星土壤
+tile.perddeadbush.name=失落之星枯死的灌木
+tile.perddirt.name=失落之星泥土
+tile.perdgrass.name=失落之星草方块
+tile.perdtallgrass.name=失落之星高草丛
+tile.perdreeds.name=失落之星竹子
+tile.palmtreesapling.name=失落之星棕榈木树苗
+tile.palmwoodlog.name=失落之星棕榈木原木
+tile.palmwoodleaves.name=失落之星棕榈木树叶
+tile.palmwoodplanks.name=失落之星棕榈木木板
 
 tile.amaranthblock.name=紫苋块
 tile.azuriteblock.name=蓝铜块
@@ -261,6 +292,8 @@ item.alienbeefcooked.name=外星牛排
 item.alienbaconraw.name=外星生培根
 item.alienbaconcooked.name=外星熟培根
 item.fruitofeden.name=伊甸果
+item.perdberry.name=Lost Berry
+item.perdpeach.name=Lost Peach
 
 item.creamball.name=冰淇淋球
 item.rawchocolate.name=生巧克力
@@ -288,6 +321,8 @@ item.prometheancrystal.name=普罗米修斯水晶
 item.plutoniumcrystal.name=钚水晶
 
 item.purgotessence.name=绿洲星宝石
+
+item.shadowessence.name=暗物质精粹
 
 item.fueltoniumraw.name=铀原矿
 item.fueltoniumingot.name=铀锭
@@ -345,6 +380,15 @@ item.compressedzollernium.name=致密卓伦板
 
 item.superchargedcoal.name=超充能煤炭
 item.powerstick.name=星位之杖
+
+item.perddiamond.name=失落之星钻石
+item.etrium.name=Raw Etrium
+item.etriumingot.name=Etrium Ingot
+item.zucritedust.name=Zucrite Dust
+item.zucriteingot.name=Zucrite Ingot
+item.perdpearl.name=失落之星珍珠
+item.perdglowstonedust.name=失落之星萤石粉
+item.perdreed.name=失落之星竹株
 
 item.stargate_tier1.name=星门 (协议 一)
 item.stargate_tier2.name=星门 (协议 二)
@@ -407,6 +451,9 @@ entity.zollerngalaxy:crawler.name=伏地魔蛛
 entity.zollerngalaxy:frostgiant.name=冰霜巨人
 entity.zollerngalaxy:magmos.name=熔岩人
 entity.zollerngalaxy:slime.raspberry.name=星系史莱姆 (覆盆子)
+entity.zollerngalaxy:megacreeper.name=超级爬行者
+entity.zollerngalaxy:mummy.name=木乃伊
+entity.zollerngalaxy:scorpion.name=蝎子
 
 planet.zollus=卓洛斯
 planet.eden=伊甸
@@ -419,8 +466,11 @@ planet.oasis=绿洲星
 planet.xantheon=赞茜昂
 planet.candora=坎德拉
 planet.atheon=艾松星
-
-planet.exodus=Exodus
+#暂时不确定的译名
+planet.exodus=出埃及记
+planet.perdita=珀迪塔
+planet.altum=阿尔图姆
+planet.caligro=开罗
 
 planet.meztli=梅兹特利
 planet.centotl=森特奥特尔
@@ -436,7 +486,7 @@ planet.asgard=阿斯加德
 planet.maveth=马维斯
 
 planet.meridian=默里迪恩
-planet.reach=Reach
+planet.reach=致远星
 
 star.psion6=皮索斯
 star.praedyth=普莱迪斯
@@ -465,6 +515,10 @@ satellite.space_station.oasis=绿洲星空间站
 satellite.space_station.xantheon=赞茜昂空间站
 satellite.space_station.candora=坎德拉空间站
 satellite.space_station.atheon=艾松星空间站
+satellite.space_station.perdita=珀迪塔空间站
+satellite.space_station.altum=阿尔图姆空间站
+satellite.space_station.caligro=开罗空间站
+satellite.space_station.exodus=出埃及记空间站
 
-itemGroup.ZollernGalaxyBlocks=卓伦星系方块
-itemGroup.ZollernGalaxyItems=卓伦星系物品
+itemGroup.ZollernGalaxyBlocks=卓伦星系|方块
+itemGroup.ZollernGalaxyItems=卓伦星系|物品
