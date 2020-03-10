@@ -1,6 +1,7 @@
 #parts of chinese translation are original from Silencess' version,however his translation can't be used on the most recent version.
 #arrange and translate:godhidden z2zz2zz@yahoo.com
 
+
 tile.zolsurfacerock.name=卓洛斯表层岩
 tile.zolstone.name=卓洛斯石头
 tile.zolcobblerock.name=卓洛斯原石
@@ -45,7 +46,7 @@ tile.edensteelore.name=伊甸钢矿石
 tile.edenplatinumore.name=伊甸铂金矿石
 tile.edenuraniumore.name=伊甸铀矿石
 tile.edencyaniteore.name=伊甸蓝晶石矿石
-tile.edenludacriteore.name=Eden's Ludacrite Ore
+tile.edenludacriteore.name=伊甸Ludacrite矿石
 tile.edenviriore.name=伊甸维尔因矿石
 tile.edencobaltore.name=伊甸钴矿石
 tile.edeneveniumore.name=伊甸伊文矿石
@@ -222,8 +223,6 @@ tile.perdglowstone.name=失落之星萤石
 tile.perdcactus.name=失落之星仙人掌
 tile.perdtorch.name=失落之星萤石火把
 tile.perddiamondblock.name=失落之星钻石块
-tile.perdetriumblock.name=Block of Etrium
-tile.zucriteblock.name=Block of Zucrite
 tile.perddiamondore.name=失落之星钻石矿石
 tile.perdetriumore.name=Lost Etrium Ore
 tile.perdironore.name=失落之星铁矿石
@@ -241,10 +240,29 @@ tile.palmwoodlog.name=失落之星棕榈木原木
 tile.palmwoodleaves.name=失落之星棕榈木树叶
 tile.palmwoodplanks.name=失落之星棕榈木木板
 
+tile.altumrock.name=阿尔图姆岩石
+tile.altumstone.name=阿尔图姆石头
+tile.altumcobble.name=阿尔图姆圆石
+tile.altumdirt.name=阿尔图姆泥土
+tile.altumgravel.name=阿尔图姆砂砾
+tile.altumsand.name=阿尔图姆沙子
+tile.altumcoalore.name=阿尔图姆煤矿石
+tile.altumironore.name=阿尔图姆铁矿石
+tile.altumgoldore.name=阿尔图姆金矿石
+tile.altumdiamondore.name=阿尔图姆钻石矿石
+tile.altumredstoneore.name=阿尔图姆红石矿石
+tile.altumamaranthore.name=阿尔图姆紫苋矿石
+tile.altumzollerniumore.name=阿尔图姆卓伦矿石
+tile.altumeveniumore.name=阿尔图姆伊文矿石
+tile.altumrhodiumore.name=阿尔图姆铑矿石
+
 tile.amaranthblock.name=紫苋块
 tile.azuriteblock.name=蓝铜块
 tile.zollerniumblock.name=卓伦块
 tile.zincblock.name=锌块
+tile.perdetriumblock.name=Etrium块
+tile.zucriteblock.name=Zucrite块
+tile.rhodiumblock.name=铑块
 
 tile.endrock.name=Endrock
 
@@ -292,8 +310,8 @@ item.alienbeefcooked.name=外星牛排
 item.alienbaconraw.name=外星生培根
 item.alienbaconcooked.name=外星熟培根
 item.fruitofeden.name=伊甸果
-item.perdberry.name=Lost Berry
-item.perdpeach.name=Lost Peach
+item.perdberry.name=失落之星浆果
+item.perdpeach.name=失落之星桃子
 
 item.creamball.name=冰淇淋球
 item.rawchocolate.name=生巧克力
@@ -340,7 +358,7 @@ item.lapisingot.name=青金石锭
 
 item.amaranthingot.name=紫苋锭
 item.amaranthdust.name=紫苋粉
-item.amaranthnugget.name=Amaranth Nugget
+item.amaranthnugget.name=紫苋粒
 
 item.ascendium.name=星位
 item.azurite.name=蓝铜
@@ -351,6 +369,9 @@ item.zollerniumdust.name=卓伦粉
 
 item.zincingot.name=锌锭
 item.zincdust.name=锌粉
+
+item.rhodiumingot.name=铑锭
+item.rhodiumdust.name=铑粉
 
 item.rokkite.name=Rokkite
 
