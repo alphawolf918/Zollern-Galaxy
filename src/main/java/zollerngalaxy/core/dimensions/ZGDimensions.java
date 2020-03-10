@@ -64,6 +64,10 @@ public class ZGDimensions {
 	public static DimensionType PERDITA_ORBIT;
 	public static DimensionType PERDITA_ORBIT_STATIC;
 	
+	public static DimensionType ALTUM;
+	public static DimensionType ALTUM_ORBIT;
+	public static DimensionType ALTUM_ORBIT_STATIC;
+	
 	public static void init() {
 		// Psion-6 (Zollus)
 		ZGDimensions.ZOLLUS = ZGDimensions.getDimType(ConfigManagerZG.planetZollusDimensionId);
@@ -134,6 +138,9 @@ public class ZGDimensions {
 				ConfigManagerZG.spaceStationPerditaId, WorldProviderOrbitPerdita.class, false);
 		ZGDimensions.PERDITA_ORBIT_STATIC = DimensionType.register("Perdita Space Station", "_perdita_orbit",
 				ConfigManagerZG.spaceStationPerditaStaticId, WorldProviderOrbitPerdita.class, true);
+		
+		// Sol-2 (Altum)
+		ZGDimensions.ALTUM = ZGDimensions.getDimType(ConfigManagerZG.planetAltumDimensionId);
 	}
 	
 	public static DimensionType getDimType(int dimId) {
@@ -162,7 +169,10 @@ public class ZGDimensions {
 			body = ZGPlanets.planetAtheon;
 		} else if (dimID == ConfigManagerZG.planetPerditaDimensionId) {
 			body = ZGPlanets.planetPerdita;
+		} else if (dimID == ConfigManagerZG.planetAltumDimensionId) {
+			body = ZGPlanets.planetAltum;
 		}
+		
 		if (body == null) {
 			ZGHelper.Log(Level.ERROR, "Celestial Body was null.");
 		}

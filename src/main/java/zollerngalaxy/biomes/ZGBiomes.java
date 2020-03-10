@@ -7,6 +7,7 @@
  */
 package zollerngalaxy.biomes;
 
+import static net.minecraftforge.common.BiomeDictionary.Type.BEACH;
 import static net.minecraftforge.common.BiomeDictionary.Type.COLD;
 import static net.minecraftforge.common.BiomeDictionary.Type.DEAD;
 import static net.minecraftforge.common.BiomeDictionary.Type.DRY;
@@ -27,6 +28,7 @@ import micdoodle8.mods.galacticraft.api.world.BiomeGenBaseGC;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.Biome.BiomeProperties;
 import net.minecraftforge.common.BiomeDictionary;
+import zollerngalaxy.biomes.altum.BiomeRockyIsles;
 import zollerngalaxy.biomes.atheon.BiomeGoldlands;
 import zollerngalaxy.biomes.atheon.BiomeRadiolarianLakes;
 import zollerngalaxy.biomes.candora.BiomeBlueberryHills;
@@ -125,6 +127,9 @@ public class ZGBiomes {
 	public static final Biome PERDITA_FUELTONIUM_OCEAN = new BiomeFueltoniumOcean(new BiomeProperties("Fueltonium Ocean"));
 	public static final Biome PERDITA_LOST_MOUNTAINS = new BiomeLostMountains(new BiomeProperties("Lost Mountains"));
 	
+	// Altum
+	public static final Biome ALTUM_ROCKY_ISLES = new BiomeRockyIsles(new BiomeProperties("Rocky Isles"));
+	
 	public static void init() {
 		// Zollus
 		ZGBiomes.addBiome(ZGBiomes.ZOLLUS, COLD, DEAD, DRY);
@@ -180,6 +185,9 @@ public class ZGBiomes {
 		ZGBiomes.addBiome(ZGBiomes.PERDITA_OASIS, LUSH, WET, PLAINS);
 		ZGBiomes.addBiome(ZGBiomes.PERDITA_FUELTONIUM_OCEAN, DEAD, SPOOKY, HOT, OCEAN);
 		ZGBiomes.addBiome(ZGBiomes.PERDITA_LOST_MOUNTAINS, MOUNTAIN, DEAD);
+		
+		// Altum
+		ZGBiomes.addBiome(ZGBiomes.ALTUM_ROCKY_ISLES, LUSH, WET, BEACH);
 		
 		ZGHelper.Log("Loaded a total of " + totalBiomes + " new biomes.");
 	}

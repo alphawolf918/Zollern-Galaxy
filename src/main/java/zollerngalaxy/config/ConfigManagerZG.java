@@ -35,6 +35,7 @@ public class ConfigManagerZG {
 	// Planets (Sol-2)
 	public static int planetExodusDimensionId;
 	public static int planetPerditaDimensionId;
+	public static int planetAltumDimensionId;
 	
 	// Planets (Pantheon)
 	public static int planetMeztliDimensionId;
@@ -96,6 +97,9 @@ public class ConfigManagerZG {
 	
 	public static int spaceStationPerditaId;
 	public static int spaceStationPerditaStaticId;
+	
+	public static int spaceStationAltumId;
+	public static int spaceStationAltumStaticId;
 	
 	// Misc
 	public static boolean canEarthAnimalsSpawnOnEden;
@@ -170,10 +174,10 @@ public class ConfigManagerZG {
 	
 	// Planet Tiers (Sol-2)
 	public static int planetPerditaTier;
+	public static int planetAltumTier;
 	
 	public static void init(FMLPreInitializationEvent event) {
-		configuration = new Configuration(new File(event.getModConfigurationDirectory().getAbsolutePath()
-				+ "/ZollernGalaxy/core.cfg"));
+		configuration = new Configuration(new File(event.getModConfigurationDirectory().getAbsolutePath() + "/ZollernGalaxy/core.cfg"));
 		configuration.load();
 		
 		// Planets (Psios)
@@ -195,6 +199,7 @@ public class ConfigManagerZG {
 		// Planets (Sol-2)
 		planetExodusDimensionId = configuration.get(CATEGORY_DIMENSIONS, "Planet Exodus Dimension ID", -7980).getInt();
 		planetPerditaDimensionId = configuration.get(CATEGORY_DIMENSIONS, "Planet Perdita Dimension ID", -7979).getInt();
+		planetAltumDimensionId = configuration.get(CATEGORY_DIMENSIONS, "Planet Altum Dimension ID", -7878).getInt();
 		
 		// Planets (Pantheon)
 		planetMeztliDimensionId = configuration.get(CATEGORY_DIMENSIONS, "Planet Meztli Dimension ID", -7991).getInt();
@@ -271,9 +276,12 @@ public class ConfigManagerZG {
 		
 		// Space Stations (Sol-2)
 		// Perdita
-		// TODO
 		spaceStationPerditaId = configuration.get(CATEGORY_SATELLITES, "Perdita Space Station ID", -6018).getInt();
 		spaceStationPerditaStaticId = configuration.get(CATEGORY_SATELLITES, "Perdita Space Station Static ID", -6019).getInt();
+		
+		// Altum
+		spaceStationAltumId = configuration.get(CATEGORY_SATELLITES, "Altum Space Station ID", -6020).getInt();
+		spaceStationAltumStaticId = configuration.get(CATEGORY_SATELLITES, "Altum Space Station Static ID", -6021).getInt();
 		
 		// Misc (Can Earth animals spawn on Eden?)
 		canEarthAnimalsSpawnOnEden = configuration.get(CATEGORY_MISC, "Earth Animals Spawn On Eden", true,
@@ -324,8 +332,7 @@ public class ConfigManagerZG {
 		
 		// Compat (Should Cobalt register in the Ore Dictionary?)
 		registerCobaltOreDict = configuration.get(CATEGORY_COMPATIBILITY, "Register Cobalt in Ore Dictionary", true,
-				"Set this to false if there are any problems " + " with mods like Tinker's Construct. (default: true)")
-				.getBoolean();
+				"Set this to false if there are any problems " + " with mods like Tinker's Construct. (default: true)").getBoolean();
 		
 		// Compat (Should intergration with Planet Progressions be enabled?
 		enablePlanetProgressionsCompat = configuration.get(
@@ -396,7 +403,11 @@ public class ConfigManagerZG {
 		planetAtheonTier = configuration.get(CATEGORY_TIERS, "Planet Atheon Tier", 8).getInt();
 		
 		// Planet Tiers (Sol-2)
+		// Perdita
 		planetPerditaTier = configuration.get(CATEGORY_TIERS, "Planet Perdita Tier", 9).getInt();
+		
+		// Altum
+		planetAltumTier = configuration.get(CATEGORY_TIERS, "Planet Altum Tier", 10).getInt();
 		
 		configuration.save();
 	}

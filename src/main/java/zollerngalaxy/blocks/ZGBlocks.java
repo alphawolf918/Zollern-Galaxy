@@ -360,7 +360,31 @@ public class ZGBlocks {
 			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
 	
 	// Altum
-	// TODO
+	public static final Block altumRock = new ZGBlockBase("altumrock", 2.5F);
+	public static final Block altumSand = new ZGSand("altumsand", 1.5F);
+	public static final Block altumDirt = new ZGBlockDirt("altumdirt", 0.4F);
+	public static final Block altumCobble = new ZGBlockBase("altumcobble", 1.4F).setBlockType(EnumBlockType.COBBLESTONE);
+	public static final Block altumStone = new ZGPlanetStone("altumstone", 3.5F, ZGBlocks.altumCobble).setBlockHarvestLevel(
+			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
+	public static final Block altumGravel = new ZGGravel("altumgravel");
+	public static final Block altumCoalOre = new ZGOreGem("altumcoalore", 6.2F, Items.COAL).setBlockHarvestLevel(
+			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
+	public static final Block altumIronOre = new ZGBlockOre("altumironore", 5.2F).setBlockHarvestLevel(
+			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
+	public static final Block altumGoldOre = new ZGBlockOre("altumgoldore", 5.2F).setBlockHarvestLevel(
+			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
+	public static final Block altumRedstoneOre = new ZGOreGem("altumredstoneore", 6.2F, Items.REDSTONE).setBlockHarvestLevel(
+			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
+	public static final Block altumDiamondOre = new ZGOreGem("altumdiamondore", 6.2F, Items.DIAMOND).setBlockHarvestLevel(
+			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
+	public static final Block altumZollerniumOre = new ZGBlockOre("altumzollerniumore", 7.2F).setBlockHarvestLevel(
+			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
+	public static final Block altumEveniumOre = new ZGBlockOre("altumeveniumore", 6.5F).setBlockHarvestLevel(
+			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
+	public static final Block altumRhodiumOre = new ZGBlockOre("altumrhodiumore", 8.5F).setBlockHarvestLevel(
+			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
+	public static final Block altumAmaranthOre = new ZGBlockOre("altumamaranthore", 4.4F).setBlockHarvestLevel(
+			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
 	
 	// Caligro
 	// TODO
@@ -385,6 +409,7 @@ public class ZGBlocks {
 	public static final Block blockPerdDiamond = new ZGBlockMetal("perddiamondblock", 4.5F);
 	public static final Block blockPerdEtrium = new ZGBlockMetal("perdetriumblock", 6.2F);
 	public static final Block blockZucrite = new ZGBlockMetal("zucriteblock", 8.4F);
+	public static final Block blockRhodium = new ZGBlockMetal("rhodiumblock", 9.2F);
 	
 	// Glow Blocks
 	public static final Block blockShinestone = new ZGShineBlock("shinestone", 1.6F, ZGItems.dustShinestone);
@@ -451,15 +476,17 @@ public class ZGBlocks {
 				atheonRedstoneOre, atheonTinOre, atheonDiamondOre, atheonZollerniumOre, atheonZincOre, atheonConstructBlock, blockViri,
 				blockCobalt, blockEve, blockPromethean, blockCrater, blockSuperChargedCoal, blockPlutonium, blockFueltonium, blockChargium,
 				blockShinium, blockAmaranth, blockAzurite, blockZollernium, blockZinc, blockPerdDiamond, blockPerdEtrium, blockZucrite,
-				blockShinestone, blockShinestoneCrystal, blockShinestonePolished, blockShinestoneCrystalBricks, blockCompressedHeartium,
-				blockCompressedViri, blockCompressedEve, blockCompressedCobalt, blockCompressedPromethean, blockCompressedSuperChargedCoal,
-				candyCubeWhite, candyCubeBlack, candyCubeGray, candyCubeOrange, candyCubeBrown, candyCubeRed, candyCubeBlue,
-				candyCubeYellow, candyCubePurple, candyCubeCyan, candyCubePink, candyCubeGreen, blockChocolate, blockChocolateBricks,
-				blockCookie, blockBrownie, blockIceCreamSandwich, blockSugarCube, blockSpaceStation, blockLore, perdSand, perdRock,
-				perdStone, perdCobble, perdRockBricks, perdGravel, perdCreepDirt, perdSoil, perdDirt, perdTallGrass, perdGrass,
-				perdCreepStone, perdGlowstone, perdCaveStone, perdCaveStoneBricks, perdCactus, perdReeds, perdDeadBush, perdDiamondOre,
-				perdEtriumOre, perdIronOre, perdGoldOre, perdZollerniumOre, perdFueltoniumOre, perdTreeSapling, perdWoodLogs,
-				perdWoodLeaves, perdWoodPlanks);
+				blockRhodium, blockShinestone, blockShinestoneCrystal, blockShinestonePolished, blockShinestoneCrystalBricks,
+				blockCompressedHeartium, blockCompressedViri, blockCompressedEve, blockCompressedCobalt, blockCompressedPromethean,
+				blockCompressedSuperChargedCoal, candyCubeWhite, candyCubeBlack, candyCubeGray, candyCubeOrange, candyCubeBrown,
+				candyCubeRed, candyCubeBlue, candyCubeYellow, candyCubePurple, candyCubeCyan, candyCubePink, candyCubeGreen,
+				blockChocolate, blockChocolateBricks, blockCookie, blockBrownie, blockIceCreamSandwich, blockSugarCube, blockSpaceStation,
+				blockLore, perdSand, perdRock, perdStone, perdCobble, perdRockBricks, perdGravel, perdCreepDirt, perdSoil, perdDirt,
+				perdTallGrass, perdGrass, perdCreepStone, perdGlowstone, perdCaveStone, perdCaveStoneBricks, perdCactus, perdReeds,
+				perdDeadBush, perdDiamondOre, perdEtriumOre, perdIronOre, perdGoldOre, perdZollerniumOre, perdFueltoniumOre,
+				perdTreeSapling, perdWoodLogs, perdWoodLeaves, perdWoodPlanks, altumRock, altumSand, altumDirt, altumCobble, altumStone,
+				altumGravel, altumCoalOre, altumIronOre, altumGoldOre, altumRedstoneOre, altumDiamondOre, altumZollerniumOre,
+				altumEveniumOre, altumRhodiumOre, altumAmaranthOre);
 		ZGHelper.Log("Loaded a total of " + totalBlocks + " new blocks.");
 	}
 	

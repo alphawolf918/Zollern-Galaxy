@@ -15,6 +15,7 @@ import micdoodle8.mods.galacticraft.api.world.EnumAtmosphericGas;
 import micdoodle8.mods.galacticraft.planets.venus.dimension.TeleportTypeVenus;
 import zollerngalaxy.biomes.ZGBiomes;
 import zollerngalaxy.config.ConfigManagerZG;
+import zollerngalaxy.core.dimensions.worldproviders.WorldProviderAltum;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderAtheon;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderCandora;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderEden;
@@ -114,6 +115,7 @@ public class ZGPlanets {
 	
 	// Sol-2 Planets
 	public static ZGPlanet planetPerdita = new ZGPlanet("perdita");
+	public static ZGPlanet planetAltum = new ZGPlanet("altum");
 	
 	// Pantheon Planets
 	public static ZGPlanet planetMeztli;
@@ -431,8 +433,8 @@ public class ZGPlanets {
 		planetPerdita.setTierRequired(ConfigManagerZG.planetPerditaTier);
 		planetPerdita.setRelativeSize(204.6F);
 		planetPerdita.setPlanetTemperature(195.8F);
-		planetAtheon.setPlanetToxicity(1.2F);
-		planetAtheon.setPlanetRadiation(3.5F);
+		planetPerdita.setPlanetToxicity(1.2F);
+		planetPerdita.setPlanetRadiation(3.5F);
 		planetPerdita.setBreathable(true);
 		planetPerdita.setWindLevel(16.16F);
 		planetPerdita.setDensity(20.4F);
@@ -446,7 +448,27 @@ public class ZGPlanets {
 		totalPlanets++;
 		
 		// Altum
-		// TODO
+		planetAltum.setDimensionInfo(ConfigManagerZG.planetAltumDimensionId, WorldProviderAltum.class);
+		planetAltum.setParentSolarSystem(systemSol2);
+		planetAltum.setPlanetClass(EnumPlanetClass.OCEAN);
+		planetAltum.setRingColorRGB(7.7F, 7.7F, 7.7F);
+		planetAltum.setPhaseShift(5.6F);
+		planetAltum.setRelativeOrbitTime(3.6F);
+		planetAltum.setDistanceFromCenter(1.0F);
+		planetAltum.setTierRequired(ConfigManagerZG.planetAltumTier);
+		planetAltum.setRelativeSize(80.6F);
+		planetAltum.setPlanetRadiation(0.6F);
+		planetAltum.setPlanetToxicity(0.2F);
+		planetAltum.setBreathable(true);
+		planetAltum.setWindLevel(20.42F);
+		planetAltum.setDensity(0.3F);
+		planetAltum.setHasRain(true);
+		planetAltum.setPlanetGasses(EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.CO2, EnumAtmosphericGas.NITROGEN,
+				EnumAtmosphericGas.WATER, EnumAtmosphericGas.HYDROGEN);
+		planetAltum.setAtmosphere();
+		planetAltum.setPlanetIcon("altum");
+		planetAltum.setBiomeInfo(ZGBiomes.ALTUM_ROCKY_ISLES);
+		totalPlanets++;
 		
 		// Caligro
 		// TODO
@@ -487,6 +509,7 @@ public class ZGPlanets {
 		GalaxyRegistry.registerPlanet(planetCandora);
 		GalaxyRegistry.registerPlanet(planetAtheon);
 		GalaxyRegistry.registerPlanet(planetPerdita);
+		GalaxyRegistry.registerPlanet(planetAltum);
 	}
 	
 	public static void registerTeleportTypes() {
@@ -505,5 +528,6 @@ public class ZGPlanets {
 		
 		// Sol-2
 		GalacticraftRegistry.registerTeleportType(WorldProviderPerdita.class, new TeleportTypeVenus());
+		GalacticraftRegistry.registerTeleportType(WorldProviderAltum.class, new TeleportTypeVenus());
 	}
 }

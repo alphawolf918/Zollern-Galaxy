@@ -41,48 +41,47 @@ public class ItemStargate extends ZGItemBase {
 		int dim = player.dimension;
 		if (!ConfigManagerZG.disableStarGates) {
 			switch (this.gateTier) {
-			default:
-				this.proxy.sendChatMessage(player, "Hmm. This Protocol isn't functional yet. "
-						+ " Maybe it'll work in the future.");
-				break;
-			case 0:
-				this.proxy.sendChatMessage(player, "Unknown Protocol detected; unable to transfer biological entity.");
-				break;
-			case 1:
-				this.sendToPlanet(ConfigManagerZG.planetKriffonDimensionId, ConfigManagerZG.planetZollusDimensionId, player);
-				break;
-			case 2:
-				this.sendToPlanet(ConfigManagerZG.planetPurgotDimensionId, ConfigManagerZG.planetKriffonDimensionId, player);
-				break;
-			case 3:
-				this.sendToPlanet(ConfigManagerZG.planetPurgotDimensionId, ConfigManagerZG.planetEdenDimensionId, player);
-				break;
-			case 4:
-				this.sendToPlanet(ConfigManagerZG.planetXathiusDimensionId, ConfigManagerZG.planetEdenDimensionId, player);
-				break;
-			case 5:
-				this.sendToPlanet(ConfigManagerZG.planetOasisDimensionId, ConfigManagerZG.planetXathiusDimensionId, player);
-				break;
-			case 6:
-				this.sendToPlanet(ConfigManagerZG.planetXantheonDimensionId, ConfigManagerZG.planetOasisDimensionId, player);
-				break;
-			case 7:
-				this.sendToPlanet(ConfigManagerZG.planetAtheonDimensionId, ConfigManagerZG.planetXantheonDimensionId, player);
-				break;
-			case 8:
-				this.sendToPlanet(ConfigManagerZG.planetPerditaDimensionId, ConfigManagerZG.planetAtheonDimensionId, player);
-				break;
-			// case 9:
-			// // TODO
-			// break;
-			// case 10:
-			// // TODO
-			// break;
-			case 918:
-				// TODO: Make other planet a random destination of previous
-				// planets.
-				this.sendToPlanet(ConfigManagerZG.planetCandoraDimensionId, ConfigManagerZG.planetOasisDimensionId, player);
-				break;
+				default:
+					this.proxy.sendChatMessage(player, "Hmm. This Protocol isn't functional yet. Maybe it'll work in the future.");
+					break;
+				case 0:
+					this.proxy.sendChatMessage(player, "Unknown Protocol detected; unable to transfer biological entity.");
+					break;
+				case 1:
+					this.sendToPlanet(ConfigManagerZG.planetKriffonDimensionId, ConfigManagerZG.planetZollusDimensionId, player);
+					break;
+				case 2:
+					this.sendToPlanet(ConfigManagerZG.planetPurgotDimensionId, ConfigManagerZG.planetKriffonDimensionId, player);
+					break;
+				case 3:
+					this.sendToPlanet(ConfigManagerZG.planetPurgotDimensionId, ConfigManagerZG.planetEdenDimensionId, player);
+					break;
+				case 4:
+					this.sendToPlanet(ConfigManagerZG.planetXathiusDimensionId, ConfigManagerZG.planetEdenDimensionId, player);
+					break;
+				case 5:
+					this.sendToPlanet(ConfigManagerZG.planetOasisDimensionId, ConfigManagerZG.planetXathiusDimensionId, player);
+					break;
+				case 6:
+					this.sendToPlanet(ConfigManagerZG.planetXantheonDimensionId, ConfigManagerZG.planetOasisDimensionId, player);
+					break;
+				case 7:
+					this.sendToPlanet(ConfigManagerZG.planetAtheonDimensionId, ConfigManagerZG.planetXantheonDimensionId, player);
+					break;
+				case 8:
+					this.sendToPlanet(ConfigManagerZG.planetPerditaDimensionId, ConfigManagerZG.planetAtheonDimensionId, player);
+					break;
+				case 9:
+					this.sendToPlanet(ConfigManagerZG.planetPerditaDimensionId, ConfigManagerZG.planetAltumDimensionId, player);
+					break;
+				// case 10:
+				// // TODO
+				// break;
+				case 918:
+					// TODO: Make other planet a random destination of previous
+					// planets.
+					this.sendToPlanet(ConfigManagerZG.planetCandoraDimensionId, ConfigManagerZG.planetOasisDimensionId, player);
+					break;
 			}
 		} else {
 			proxy.sendChatMessage(player, TextFormatting.DARK_RED + "Use of Star Gates has been " + "disabled in the config.");

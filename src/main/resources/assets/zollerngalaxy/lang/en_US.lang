@@ -223,8 +223,6 @@ tile.perdglowstone.name=Lost Glowstone
 tile.perdcactus.name=Lost Cactus
 tile.perdtorch.name=Lost Glowtorch
 tile.perddiamondblock.name=Block of Lost Diamond
-tile.perdetriumblock.name=Block of Etrium
-tile.zucriteblock.name=Block of Zucrite
 tile.perddiamondore.name=Lost Diamond Ore
 tile.perdetriumore.name=Lost Etrium Ore
 tile.perdironore.name=Lost Iron Ore
@@ -242,10 +240,29 @@ tile.palmwoodlog.name=Lost Palmwood Log
 tile.palmwoodleaves.name=Lost Palmwood Leaves
 tile.palmwoodplanks.name=Lost Palmwood Planks
 
+tile.altumrock.name=Altum Rock
+tile.altumstone.name=Altum Stone
+tile.altumcobble.name=Altum Cobblestone
+tile.altumdirt.name=Altum Dirt
+tile.altumgravel.name=Altum Gravel
+tile.altumsand.name=Altum Sand
+tile.altumcoalore.name=Altum Coal Ore
+tile.altumironore.name=Altum Iron Ore
+tile.altumgoldore.name=Altum Gold Ore
+tile.altumdiamondore.name=Altum Diamond Ore
+tile.altumredstoneore.name=Altum Redstone Ore
+tile.altumamaranthore.name=Altum Amaranth Ore
+tile.altumzollerniumore.name=Altum Zollernium Ore
+tile.altumeveniumore.name=Altum Evenium Ore
+tile.altumrhodiumore.name=Altum Rhodium Ore
+
 tile.amaranthblock.name=Block of Amaranth
 tile.azuriteblock.name=Block of Azurite
 tile.zollerniumblock.name=Block of Zollernium
 tile.zincblock.name=Block of Zinc
+tile.perdetriumblock.name=Block of Etrium
+tile.zucriteblock.name=Block of Zucrite
+tile.rhodiumblock.name=Block of Rhodium
 
 tile.endrock.name=Endrock
 
@@ -352,6 +369,9 @@ item.zollerniumdust.name=Zollernium Dust
 
 item.zincingot.name=Zinc Ingot
 item.zincdust.name=Zinc Dust
+
+item.rhodiumingot.name=Rhodium Ingot
+item.rhodiumdust.name=Rhodium Dust
 
 item.rokkite.name=Rokkite
 

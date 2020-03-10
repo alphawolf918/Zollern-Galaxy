@@ -1,7 +1,7 @@
 ===== CHANGELOG =====
-Zollern Galaxy v2.0.12 (Hotfix)
+Zollern Galaxy v2.0.13
 =====================
 
-* Fixed issue with Chinese and Korean language files not working.
-* Fixed issue with Perdita Space Station being registered incorrectly.
-* Added several more Lore Books.
+* Added blocks and items for Planet Altum, an ocean planet.
+* Zucrite Dust can now be cooked into Zucrite Ingots.
+* 
