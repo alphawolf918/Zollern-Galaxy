@@ -66,6 +66,7 @@ public class ChunkProviderPerdita extends ChunkProviderBase {
 	private double[] stoneNoise = new double[256];
 	private MapGenCavesZG caveGenerator2 = new MapGenCavesZG(ZGBlocks.perdStone);
 	private final MapGenRavinesZG ravineGenerator = new MapGenRavinesZG(ZGBlocks.perdStone);
+	private final MapGenRavinesZG ravineGenerator2 = new MapGenRavinesZG(ZGBlocks.perdStone);
 	private final MapGenVillageMoon villageGenerator = new MapGenVillageMoon();
 	private MapGenMineshaft mineshaftGenerator = new MapGenMineshaft();
 	private Biome[] biomesForGeneration;
@@ -152,8 +153,7 @@ public class ChunkProviderPerdita extends ChunkProviderBase {
 								int y = i2 * 8 + j2;
 								int z = l * 4 + l2;
 								
-								if ((lvt_45_1_ += d16) > this.noiseGenSmooth1.getNoise(chunkX * 16 + x, chunkZ * 16 + z)
-										* CHUNK_HEIGHT) {
+								if ((lvt_45_1_ += d16) > this.noiseGenSmooth1.getNoise(chunkX * 16 + x, chunkZ * 16 + z) * CHUNK_HEIGHT) {
 									primer.setBlockState(x, y, z, STONE);
 								} else if (y < SEA_LEVEL) {
 									Biome biome = world.getBiome(new BlockPos(x, y, z));
@@ -178,8 +178,7 @@ public class ChunkProviderPerdita extends ChunkProviderBase {
 	
 	private void replaceBlocksForBiome(int p_180517_1_, int p_180517_2_, ChunkPrimer p_180517_3_, Biome[] p_180517_4_) {
 		double d0 = 0.03125D;
-		this.stoneNoise = this.noiseGen4.getRegion(this.stoneNoise, p_180517_1_ * 16, p_180517_2_ * 16, 16, 16, d0 * 2.0D,
-				d0 * 2.0D, 1.0D);
+		this.stoneNoise = this.noiseGen4.getRegion(this.stoneNoise, p_180517_1_ * 16, p_180517_2_ * 16, 16, 16, d0 * 2.0D, d0 * 2.0D, 1.0D);
 		
 		for (int i = 0; i < 16; ++i) {
 			for (int j = 0; j < 16; ++j) {
@@ -201,6 +200,7 @@ public class ChunkProviderPerdita extends ChunkProviderBase {
 		
 		this.caveGenerator2.generate(this.world, x, z, chunkprimer);
 		this.ravineGenerator.generate(this.world, x, z, chunkprimer);
+		this.ravineGenerator2.generate(this.world, x, z, chunkprimer);
 		this.villageGenerator.generate(this.world, x, z, chunkprimer);
 		this.mineshaftGenerator.generate(this.world, x, z, chunkprimer);
 		
@@ -217,8 +217,8 @@ public class ChunkProviderPerdita extends ChunkProviderBase {
 	
 	private void createLandPerBiome(int x, int z) {
 		this.octaves4 = this.noiseGen6.generateNoiseOctaves(this.octaves4, x, z, 5, 5, 2000.0, 2000.0, 0.5);
-		this.octaves1 = this.noiseGen3.generateNoiseOctaves(this.octaves1, x, 0, z, 5, 33, 5, 8.555150000000001D,
-				4.277575000000001D, 8.555150000000001D);
+		this.octaves1 = this.noiseGen3.generateNoiseOctaves(this.octaves1, x, 0, z, 5, 33, 5, 8.555150000000001D, 4.277575000000001D,
+				8.555150000000001D);
 		this.octaves2 = this.noiseGen1.generateNoiseOctaves(this.octaves2, x, 0, z, 5, 33, 5, 684.412D, 684.412D, 684.412D);
 		this.octaves3 = this.noiseGen2.generateNoiseOctaves(this.octaves3, x, 0, z, 5, 33, 5, 684.412D, 684.412D, 684.412D);
 		int i = 0;

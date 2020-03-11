@@ -22,9 +22,9 @@ public class MapGenRavinesZG extends MapGenBase {
 		this.stoneBlock = stoneBlockIn.getDefaultState();
 	}
 	
-	protected void addTunnel(long p_180707_1_, int p_180707_3_, int p_180707_4_, ChunkPrimer p_180707_5_,
-			double p_180707_6_, double p_180707_8_, double p_180707_10_, float p_180707_12_, float p_180707_13_,
-			float p_180707_14_, int p_180707_15_, int p_180707_16_, double p_180707_17_) {
+	protected void addTunnel(long p_180707_1_, int p_180707_3_, int p_180707_4_, ChunkPrimer p_180707_5_, double p_180707_6_,
+			double p_180707_8_, double p_180707_10_, float p_180707_12_, float p_180707_13_, float p_180707_14_, int p_180707_15_,
+			int p_180707_16_, double p_180707_17_) {
 		Random random = new Random(p_180707_1_);
 		double d0 = p_180707_3_ * 16 + 8;
 		double d1 = p_180707_4_ * 16 + 8;
@@ -162,8 +162,7 @@ public class MapGenRavinesZG extends MapGenBase {
 	}
 	
 	@Override
-	protected void recursiveGenerate(World worldIn, int chunkX, int chunkZ, int originalX, int originalZ,
-			ChunkPrimer chunkPrimerIn) {
+	protected void recursiveGenerate(World worldIn, int chunkX, int chunkZ, int originalX, int originalZ, ChunkPrimer chunkPrimerIn) {
 		if (this.rand.nextInt(20) == 0) {
 			double d0 = chunkX * 16 + this.rand.nextInt(16);
 			double d1 = this.rand.nextInt(this.rand.nextInt(40) + 8) + 20;
@@ -182,13 +181,13 @@ public class MapGenRavinesZG extends MapGenBase {
 	private boolean isTopBlock(ChunkPrimer data, int x, int y, int z, int chunkX, int chunkZ) {
 		Biome biome = world.getBiome(new BlockPos(x + chunkX * 16, 0, z + chunkZ * 16));
 		IBlockState state = data.getBlockState(x, y, z);
-		return (state.getBlock() == biome.topBlock);
+		return (state.getBlock() == biome.topBlock.getBlock());
 	}
 	
 	private boolean isFillBlock(ChunkPrimer data, int x, int y, int z, int chunkX, int chunkZ) {
 		Biome biome = world.getBiome(new BlockPos(x + chunkX * 16, 0, z + chunkZ * 16));
 		IBlockState state = data.getBlockState(x, y, z);
-		return (state.getBlock() == biome.fillerBlock);
+		return (state.getBlock() == biome.fillerBlock.getBlock());
 	}
 	
 	protected void digBlock(ChunkPrimer data, int x, int y, int z, int chunkX, int chunkZ, boolean foundTop) {
@@ -197,8 +196,7 @@ public class MapGenRavinesZG extends MapGenBase {
 		IBlockState top = biome.topBlock;
 		IBlockState filler = biome.fillerBlock;
 		
-		if (state.getBlock() == this.stoneBlock || state.getBlock() == top.getBlock()
-				|| state.getBlock() == filler.getBlock()) {
+		if (state.getBlock() == this.stoneBlock || state.getBlock() == top.getBlock() || state.getBlock() == filler.getBlock()) {
 			data.setBlockState(x, y, z, AIR);
 			
 			if (foundTop && data.getBlockState(x, y - 1, z).getBlock() == filler.getBlock()) {

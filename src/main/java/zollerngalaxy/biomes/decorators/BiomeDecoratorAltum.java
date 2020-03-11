@@ -9,11 +9,16 @@ package zollerngalaxy.biomes.decorators;
 
 import java.util.Random;
 import net.minecraft.block.Block;
+import net.minecraft.init.Blocks;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.feature.WorldGenerator;
+import net.minecraftforge.event.terraingen.DecorateBiomeEvent;
+import net.minecraftforge.event.terraingen.TerrainGen;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.core.enums.EnumOreGenZG;
+import zollerngalaxy.worldgen.WorldGenLakesZG;
 import zollerngalaxy.worldgen.WorldGenMinableZG;
 
 public class BiomeDecoratorAltum extends BiomeDecoratorZG {
@@ -30,6 +35,10 @@ public class BiomeDecoratorAltum extends BiomeDecoratorZG {
 	private WorldGenerator rhodiumGen;
 	private WorldGenerator coalGen;
 	
+	public int waterLakesPerChunk = 2;
+	
+	private WorldGenerator waterLakeGen = new WorldGenLakesZG(Blocks.WATER, ZGBlocks.altumSand);
+	
 	public BiomeDecoratorAltum() {
 		this.amaranthGen = new WorldGenMinableZG(ZGBlocks.altumAmaranthOre, STONE, EnumOreGenZG.AMARANTH);
 		this.redstoneGen = new WorldGenMinableZG(ZGBlocks.altumRedstoneOre, STONE, EnumOreGenZG.REDSTONE);
@@ -39,7 +48,7 @@ public class BiomeDecoratorAltum extends BiomeDecoratorZG {
 		this.goldGen = new WorldGenMinableZG(ZGBlocks.altumGoldOre, STONE, EnumOreGenZG.GOLD);
 		this.eveniumGen = new WorldGenMinableZG(ZGBlocks.altumEveniumOre, STONE, EnumOreGenZG.EVENIUM);
 		this.rhodiumGen = new WorldGenMinableZG(ZGBlocks.altumRhodiumOre, STONE, EnumOreGenZG.RHODIUM);
-		this.coalGen = new WorldGenMinableZG(ZGBlocks.altumRhodiumOre, STONE, EnumOreGenZG.COAL);
+		this.coalGen = new WorldGenMinableZG(ZGBlocks.altumCoalOre, STONE, EnumOreGenZG.COAL);
 	}
 	
 	@Override
@@ -57,6 +66,21 @@ public class BiomeDecoratorAltum extends BiomeDecoratorZG {
 		this.generateOre(this.rhodiumGen, EnumOreGenZG.RHODIUM, world, rand);
 		this.generateOre(this.coalGen, EnumOreGenZG.COAL, world, rand);
 		
-		// TODO: World gen...
+		ChunkPos forgeChunkPos = new ChunkPos(chunkPos);
+		
+		// Lakes
+		if (TerrainGen.decorate(world, rand, forgeChunkPos, DecorateBiomeEvent.Decorate.EventType.LAKE_WATER)) {
+			if (rand.nextInt(2) == 0) {
+				for (int i = 0; i < this.waterLakesPerChunk; ++i) {
+					int x1 = rand.nextInt(16) + 8;
+					int z1 = rand.nextInt(16) + 8;
+					int y1 = world.getHeight(this.chunkPos.add(x1, 0, z1)).getY() * 2;
+					if (y1 > 0) {
+						int y2 = rand.nextInt(y1);
+						this.waterLakeGen.generate(world, rand, this.chunkPos.add(x1, y2, z1));
+					}
+				}
+			}
+		}
 	}
 }

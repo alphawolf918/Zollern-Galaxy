@@ -31,6 +31,7 @@ import net.minecraft.world.gen.NoiseGenerator;
 import net.minecraft.world.gen.NoiseGeneratorOctaves;
 import net.minecraft.world.gen.NoiseGeneratorPerlin;
 import net.minecraft.world.gen.structure.MapGenMineshaft;
+import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.biomes.decorators.BiomeDecoratorAltum;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.worldgen.mapgen.MapGenCavesZG;
@@ -42,7 +43,7 @@ public class ChunkProviderAltum extends ChunkProviderBase {
 	public static final IBlockState WATER = Blocks.WATER.getDefaultState();
 	public static final IBlockState ICE = Blocks.ICE.getDefaultState();
 	
-	public static final double CHUNK_HEIGHT = 45.0D;
+	public static final double CHUNK_HEIGHT = 30.0D;
 	public static final int SEA_LEVEL = 74;
 	
 	private static final int CHUNK_SIZE_X = 16;
@@ -151,12 +152,22 @@ public class ChunkProviderAltum extends ChunkProviderBase {
 								int y = i2 * 8 + j2;
 								int z = l * 4 + l2;
 								
-								if ((lvt_45_1_ += d16) > this.noiseGenSmooth1.getNoise(chunkX * 16 + x, chunkZ * 16 + z) * CHUNK_HEIGHT) {
+								double chunkHeightMod = CHUNK_HEIGHT;
+								
+								Biome biome = world.getBiome(new BlockPos(x, y, z));
+								
+								if (biome instanceof BiomeSpace) {
+									BiomeSpace spaceBiome = (BiomeSpace) biome;
+									double biomeHeight = spaceBiome.getBiomeHeight() * 1.0D;
+									if (biomeHeight > 0.0D) {
+										chunkHeightMod = biomeHeight;
+									}
+								}
+								
+								if ((lvt_45_1_ += d16) > this.noiseGenSmooth1.getNoise(chunkX * 16 + x, chunkZ * 16 + z) * chunkHeightMod) {
 									primer.setBlockState(x, y, z, STONE);
 								} else if (y < SEA_LEVEL) {
-									Biome biome = world.getBiome(new BlockPos(x, y, z));
-									IBlockState blockToUse = WATER;
-									primer.setBlockState(x, y, z, blockToUse);
+									primer.setBlockState(x, y, z, WATER);
 								}
 							}
 							

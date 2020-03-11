@@ -28,7 +28,9 @@ import micdoodle8.mods.galacticraft.api.world.BiomeGenBaseGC;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.Biome.BiomeProperties;
 import net.minecraftforge.common.BiomeDictionary;
+import zollerngalaxy.biomes.altum.BiomeAltumOcean;
 import zollerngalaxy.biomes.altum.BiomeRockyIsles;
+import zollerngalaxy.biomes.altum.BiomeSanctumBeach;
 import zollerngalaxy.biomes.atheon.BiomeGoldlands;
 import zollerngalaxy.biomes.atheon.BiomeRadiolarianLakes;
 import zollerngalaxy.biomes.candora.BiomeBlueberryHills;
@@ -129,6 +131,8 @@ public class ZGBiomes {
 	
 	// Altum
 	public static final Biome ALTUM_ROCKY_ISLES = new BiomeRockyIsles(new BiomeProperties("Rocky Isles"));
+	public static final Biome ALTUM_SANCTUM_BEACH = new BiomeSanctumBeach(new BiomeProperties("Sanctum Beach"));
+	public static final Biome ALTUM_OCEAN = new BiomeAltumOcean(new BiomeProperties("Mega Ocean"));
 	
 	public static void init() {
 		// Zollus
@@ -188,6 +192,8 @@ public class ZGBiomes {
 		
 		// Altum
 		ZGBiomes.addBiome(ZGBiomes.ALTUM_ROCKY_ISLES, LUSH, WET, BEACH);
+		ZGBiomes.addBiome(ZGBiomes.ALTUM_SANCTUM_BEACH, LUSH, WET, BEACH);
+		ZGBiomes.addBiome(ZGBiomes.ALTUM_OCEAN, WET, OCEAN);
 		
 		ZGHelper.Log("Loaded a total of " + totalBiomes + " new biomes.");
 	}

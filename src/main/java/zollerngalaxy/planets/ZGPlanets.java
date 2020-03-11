@@ -467,7 +467,7 @@ public class ZGPlanets {
 				EnumAtmosphericGas.WATER, EnumAtmosphericGas.HYDROGEN);
 		planetAltum.setAtmosphere();
 		planetAltum.setPlanetIcon("altum");
-		planetAltum.setBiomeInfo(ZGBiomes.ALTUM_ROCKY_ISLES);
+		planetAltum.setBiomeInfo(ZGBiomes.ALTUM_ROCKY_ISLES, ZGBiomes.ALTUM_SANCTUM_BEACH, ZGBiomes.ALTUM_OCEAN);
 		totalPlanets++;
 		
 		// Caligro

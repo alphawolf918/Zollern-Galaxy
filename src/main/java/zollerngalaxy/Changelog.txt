@@ -2,6 +2,11 @@
 Zollern Galaxy v2.0.13
 =====================
 
-* Added blocks and items for Planet Altum, an ocean planet.
+* Created Planet Altum, an ocean planet.
+* Added blocks and items for Planet Altum.
 * Zucrite Dust can now be cooked into Zucrite Ingots.
+* Updated Chinese translations by EndsM / Silencess.
+* Added biomes for new planet.
+* Fixed bug with ravines not generating correctly.
+* Added extra ravine generation to Perdita.
 * 

@@ -34,11 +34,14 @@ public class BiomeAltumBase extends BiomeSpace {
 	protected static final int SEA_LEVEL = ChunkProviderAltum.SEA_LEVEL;
 	protected static final int SEA_FLOOR_LEVEL = 42;
 	
+	public BiomeDecoratorAltum biomeDecor = this.getBiomeDecorator();
+	
 	public BiomeAltumBase(String singleName, BiomeProperties props) {
 		super(singleName, props);
 		this.setTempCategory(TempCategory.MEDIUM);
+		this.setBiomeHeight(45);
 		this.setTemp(84.23F);
-		this.waterColor = 0x0000ff;
+		this.waterColor = 0x00008b;
 		this.setPlanetForBiome(ZGPlanets.planetAltum);
 	}
 	
@@ -49,23 +52,23 @@ public class BiomeAltumBase extends BiomeSpace {
 		IBlockState fillState = this.fillerBlock;
 		int j = -1;
 		int k = (int) (noiseVal / 3.0D + 3.0D + rand.nextDouble() * 0.25D);
-		int l = x & 15;
-		int i1 = z & 15;
+		int x2 = x & 15;
+		int z2 = z & 15;
 		
-		for (int j1 = 255; j1 >= 0; --j1) {
-			if (j1 == 0) {
-				chunkPrimerIn.setBlockState(i1, j1, l, BEDROCK);
+		for (int y = 255; y >= 0; --y) {
+			if (y == 0) {
+				chunkPrimerIn.setBlockState(z2, y, x2, BEDROCK);
 			} else {
-				IBlockState iblockstate2 = chunkPrimerIn.getBlockState(i1, j1, l);
+				IBlockState iblockstate2 = chunkPrimerIn.getBlockState(z2, y, x2);
 				if (this.getBiomeType() == EnumBiomeTypeZG.OCEAN) {
-					if ((j1 < SEA_LEVEL) && (j1 > SEA_FLOOR_LEVEL)) {
-						chunkPrimerIn.setBlockState(i1, j1, l, ICE);
-					} else if (j1 < SEA_FLOOR_LEVEL) {
-						chunkPrimerIn.setBlockState(i1, j1, l, STONE);
-					} else if (j1 == SEA_FLOOR_LEVEL) {
-						chunkPrimerIn.setBlockState(i1, j1, l, DIRT);
-					} else if (j1 >= SEA_LEVEL) {
-						chunkPrimerIn.setBlockState(i1, j1, l, AIR);
+					if ((y < SEA_LEVEL) && (y > SEA_FLOOR_LEVEL)) {
+						chunkPrimerIn.setBlockState(z2, y, x2, WATER);
+					} else if (y < SEA_FLOOR_LEVEL) {
+						chunkPrimerIn.setBlockState(z2, y, x2, STONE);
+					} else if (y == SEA_FLOOR_LEVEL) {
+						chunkPrimerIn.setBlockState(z2, y, x2, DIRT);
+					} else if (y >= SEA_LEVEL) {
+						chunkPrimerIn.setBlockState(z2, y, x2, AIR);
 					}
 				} else {
 					if (iblockstate2.getMaterial() == Material.AIR) {
@@ -75,29 +78,29 @@ public class BiomeAltumBase extends BiomeSpace {
 							if (k <= 0) {
 								topState = AIR;
 								fillState = STONE;
-							} else if (j1 >= i - 4 && j1 <= i + 1) {
+							} else if (y >= i - 4 && y <= i + 1) {
 								topState = this.topBlock;
 								fillState = this.fillerBlock;
 							}
 							
-							if (j1 < i && (topState == null || topState.getMaterial() == Material.AIR)) {
-								topState = ICE;
+							if (y < i && (topState == null || topState.getMaterial() == Material.AIR)) {
+								topState = WATER;
 							}
 							
 							j = k;
 							
-							if (j1 >= i - 1) {
-								chunkPrimerIn.setBlockState(i1, j1, l, topState);
-							} else if (j1 < i - 7 - k) {
+							if (y >= i - 1) {
+								chunkPrimerIn.setBlockState(z2, y, x2, topState);
+							} else if (y < i - 7 - k) {
 								topState = AIR;
 								fillState = STONE;
-								chunkPrimerIn.setBlockState(i1, j1, l, GRAVEL);
+								chunkPrimerIn.setBlockState(z2, y, x2, GRAVEL);
 							} else {
-								chunkPrimerIn.setBlockState(i1, j1, l, fillState);
+								chunkPrimerIn.setBlockState(z2, y, x2, fillState);
 							}
 						} else if (j > 0) {
 							--j;
-							chunkPrimerIn.setBlockState(i1, j1, l, fillState);
+							chunkPrimerIn.setBlockState(z2, y, x2, fillState);
 						}
 					}
 				}

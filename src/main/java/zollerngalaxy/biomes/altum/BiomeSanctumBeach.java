@@ -11,17 +11,17 @@ import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 import zollerngalaxy.planets.ZGPlanets;
 
-public class BiomeRockyIsles extends BiomeAltumBase {
+public class BiomeSanctumBeach extends BiomeAltumBase {
 	
-	public BiomeRockyIsles(BiomeProperties props) {
-		super("rockyisles", props);
+	public BiomeSanctumBeach(BiomeProperties props) {
+		super("sanctumbeach", props);
 		props.setRainDisabled();
-		this.setBiomeHeight(42);
-		this.setBiomeType(EnumBiomeTypeZG.ISLAND);
-		this.setTemp(84.23F);
-		this.enableSnow = true;
-		this.topBlock = ZGBlocks.altumRock.getDefaultState();
-		this.fillerBlock = ZGBlocks.altumDirt.getDefaultState();
+		this.setBiomeHeight(25);
+		this.setBiomeType(EnumBiomeTypeZG.BEACH);
+		this.setTemp(76.18F);
+		this.biomeDecor.waterLakesPerChunk = 6;
+		this.topBlock = ZGBlocks.altumSand.getDefaultState();
+		this.fillerBlock = ZGBlocks.altumSand.getDefaultState();
 		this.stoneBlock = ZGBlocks.altumStone;
 		this.setPlanetForBiome(ZGPlanets.planetAltum);
 	}

@@ -159,7 +159,7 @@ public class SkyProviderAltum extends IRenderHandler {
 		a = 0.0F;
 		
 		// Render sun aura
-		f10 = 25.0F;
+		f10 = 15.0F;
 		worldRenderer1.pos(-f10, 100.0D, -f10).color(r, g, b, a).endVertex();
 		worldRenderer1.pos(0, 100.0D, (double) -f10 * 1.5F).color(r, g, b, a).endVertex();
 		worldRenderer1.pos(f10, 100.0D, -f10).color(r, g, b, a).endVertex();
@@ -183,7 +183,7 @@ public class SkyProviderAltum extends IRenderHandler {
 		a = 0.0F;
 		
 		// Render larger sun aura
-		f10 = 45.0F;
+		f10 = 20.0F;
 		worldRenderer1.pos(-f10, 100.0D, -f10).color(r, g, b, a).endVertex();
 		worldRenderer1.pos(0, 100.0D, (double) -f10 * 1.5F).color(r, g, b, a).endVertex();
 		worldRenderer1.pos(f10, 100.0D, -f10).color(r, g, b, a).endVertex();

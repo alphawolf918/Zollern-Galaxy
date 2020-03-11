@@ -46,7 +46,9 @@ public class GenLayerAltumBiomes extends GenLayerZollus {
 		@SuppressWarnings("unchecked")
 		ArrayList<BiomeEntry>[] currentBiomes = new ArrayList[CachedEnum.valuesBiomeCached().length];
 		List<BiomeEntry> list = new ArrayList<>();
-		list.add(new BiomeEntry(ZGBiomes.ALTUM_ROCKY_ISLES, 65));
+		list.add(new BiomeEntry(ZGBiomes.ALTUM_OCEAN, 95));
+		list.add(new BiomeEntry(ZGBiomes.ALTUM_SANCTUM_BEACH, 65));
+		list.add(new BiomeEntry(ZGBiomes.ALTUM_ROCKY_ISLES, 55));
 		
 		currentBiomes[BiomeType.WARM.ordinal()] = new ArrayList<>(list);
 		return currentBiomes;
