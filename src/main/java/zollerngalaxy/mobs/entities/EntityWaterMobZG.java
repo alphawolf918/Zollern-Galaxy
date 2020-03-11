@@ -164,9 +164,11 @@ public class EntityWaterMobZG extends EntityLiving implements IAnimals {
 	
 	@Override
 	public boolean getCanSpawnHere() {
-		// return this.posY > 35.0D && this.posY <= this.world.getSeaLevel() &&
-		// super.getCanSpawnHere();
-		return true;
+		boolean seaHeightMax = this.posY >= 35.0D;
+		boolean seaHeightMin = this.posY <= this.world.getSeaLevel();
+		boolean canSpawnHereSuper = super.getCanSpawnHere();
+		boolean canSpawn = (seaHeightMax && seaHeightMin && this.isInWater());
+		return canSpawn;
 	}
 	
 	/**
@@ -335,8 +337,8 @@ public class EntityWaterMobZG extends EntityLiving implements IAnimals {
 	static class AIMoveRandom extends EntityAIBase {
 		private final EntityWaterMobZG fish;
 		
-		public AIMoveRandom(EntityWaterMobZG p_i45859_1_) {
-			this.fish = p_i45859_1_;
+		public AIMoveRandom(EntityWaterMobZG fishIn) {
+			this.fish = fishIn;
 		}
 		
 		/**

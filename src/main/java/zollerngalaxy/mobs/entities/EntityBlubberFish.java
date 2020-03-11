@@ -36,7 +36,6 @@ public class EntityBlubberFish extends EntityWaterMobZG {
 		this.tasks.addTask(3, new EntityAILookIdle(this));
 		this.tasks.addTask(4, new EntityAIFishPanic(this, 1.25D));
 		this.setHealth(this.health);
-		// EntitySquid
 	}
 	
 	@Override
@@ -52,6 +51,6 @@ public class EntityBlubberFish extends EntityWaterMobZG {
 		boolean seaHeightMin = this.posY <= this.world.getSeaLevel();
 		boolean canSpawnHereSuper = super.getCanSpawnHere();
 		boolean canSpawn = (seaHeightMax && seaHeightMin && canSpawnHereSuper);
-		return seaHeightMax && seaHeightMin && canSpawnHereSuper;
+		return canSpawn;
 	}
 }

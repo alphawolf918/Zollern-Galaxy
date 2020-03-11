@@ -6,12 +6,9 @@ import net.minecraft.world.World;
 
 public class EntitySquidlus extends EntitySquid {
 	
-	private float rotationVelocity;
-	
 	public EntitySquidlus(World worldIn) {
 		super(worldIn);
-		// this.rand.setSeed(1 + this.getEntityId());
-		this.rotationVelocity = 1.0F / (this.rand.nextFloat() + 1.0F) * 0.2F;
+		this.rand.setSeed(1 + this.getEntityId());
 		this.setSize(1.5F, 1.5F);
 	}
 	
@@ -19,6 +16,15 @@ public class EntitySquidlus extends EntitySquid {
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(20.0D);
+	}
+	
+	@Override
+	public boolean getCanSpawnHere() {
+		boolean seaHeightMax = this.posY >= 35.0D;
+		boolean seaHeightMin = this.posY <= this.world.getSeaLevel();
+		boolean canSpawnHereSuper = super.getCanSpawnHere();
+		boolean canSpawn = (seaHeightMax && seaHeightMin && canSpawnHereSuper);
+		return canSpawn;
 	}
 	
 }

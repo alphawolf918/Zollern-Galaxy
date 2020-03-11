@@ -10,6 +10,7 @@ package zollerngalaxy.biomes.altum;
 import java.util.Random;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.passive.EntitySquid;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeDecorator;
@@ -43,9 +44,9 @@ public class BiomeAltumBase extends BiomeSpace {
 		this.setTempCategory(TempCategory.MEDIUM);
 		this.setBiomeHeight(45);
 		this.setTemp(84.23F);
-		// this.spawnableWaterCreatureList.add(new SpawnListEntry(EntitySquid.class, 80, 1, 4));
-		this.spawnableWaterCreatureList.add(new SpawnListEntry(EntitySquidlus.class, 95, 1, 4));
-		this.spawnableWaterCreatureList.add(new SpawnListEntry(EntityBlubberFish.class, 90, 2, 8));
+		this.spawnableWaterCreatureList.add(new SpawnListEntry(EntitySquid.class, 10, 1, 4));
+		this.spawnableWaterCreatureList.add(new SpawnListEntry(EntitySquidlus.class, 10, 1, 4));
+		this.spawnableWaterCreatureList.add(new SpawnListEntry(EntityBlubberFish.class, 10, 2, 8));
 		this.waterColor = 0x00008b;
 		this.setPlanetForBiome(ZGPlanets.planetAltum);
 	}

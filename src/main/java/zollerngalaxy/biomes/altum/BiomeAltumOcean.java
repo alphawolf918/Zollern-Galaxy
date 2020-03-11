@@ -7,6 +7,7 @@
  */
 package zollerngalaxy.biomes.altum;
 
+import net.minecraft.entity.passive.EntitySquid;
 import net.minecraft.init.Blocks;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -30,9 +31,8 @@ public class BiomeAltumOcean extends BiomeAltumBase {
 		this.setBiomeType(EnumBiomeTypeZG.OCEAN);
 		this.clearAllNonMonsterSpawning();
 		this.spawnableWaterCreatureList.add(new SpawnListEntry(EntityBlubberFish.class, 90, 13, 16));
-		// this.spawnableWaterCreatureList.add(new SpawnListEntry(EntitySquid.class, 75, 2, 4));
+		this.spawnableWaterCreatureList.add(new SpawnListEntry(EntitySquid.class, 75, 2, 4));
 		this.spawnableWaterCreatureList.add(new SpawnListEntry(EntitySquidlus.class, 85, 4, 8));
-		this.biomeDecor.generateFalls = true;
 		this.biomeDecor.waterLakesPerChunk = 6;
 		this.grassFoliageColor = 0x009f8b;
 		this.stoneBlock = ZGBlocks.altumStone;

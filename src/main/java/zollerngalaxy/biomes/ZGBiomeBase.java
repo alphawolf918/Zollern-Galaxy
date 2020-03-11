@@ -7,11 +7,16 @@
  */
 package zollerngalaxy.biomes;
 
+import java.util.LinkedList;
 import micdoodle8.mods.galacticraft.api.world.BiomeGenBaseGC;
 import net.minecraft.block.Block;
+import net.minecraft.entity.monster.EntityMob;
+import net.minecraft.entity.passive.EntityAmbientCreature;
+import net.minecraft.entity.passive.EntityWaterMob;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.biome.Biome;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
+import zollerngalaxy.mobs.entities.EntityWaterMobZG;
 
 public class ZGBiomeBase extends BiomeGenBaseGC {
 	
@@ -199,6 +204,23 @@ public class ZGBiomeBase extends BiomeGenBaseGC {
 	public Biome setBiomeType(EnumBiomeTypeZG t) {
 		this.biomeType = t;
 		return this;
+	}
+	
+	@Override
+	public void initialiseMobLists(LinkedList<SpawnListEntry> mobInfo) {
+		this.clearAllSpawning();
+		for (SpawnListEntry entry : mobInfo) {
+			Class<?> mobClass = entry.entityClass;
+			if (EntityWaterMob.class.isAssignableFrom(mobClass) || EntityWaterMobZG.class.isAssignableFrom(mobClass)) {
+				this.spawnableWaterCreatureList.add(entry);
+			} else if (EntityAmbientCreature.class.isAssignableFrom(mobClass)) {
+				this.spawnableCaveCreatureList.add(entry);
+			} else if (EntityMob.class.isAssignableFrom(mobClass)) {
+				this.spawnableMonsterList.add(entry);
+			} else {
+				this.spawnableCreatureList.add(entry);
+			}
+		}
 	}
 	
 }
