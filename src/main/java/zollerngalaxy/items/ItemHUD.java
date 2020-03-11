@@ -8,6 +8,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.lib.helpers.CommonZGRegisterHelper;
+import zollerngalaxy.util.ZGUtils;
 
 public class ItemHUD extends ZGItemBase {
 	
@@ -20,11 +21,10 @@ public class ItemHUD extends ZGItemBase {
 	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
 		if (CommonZGRegisterHelper.isControlKeyDown() || CommonZGRegisterHelper.isShiftKeyDown()) {
-			tooltip.add("Shows all planetary");
-			tooltip.add("and biome data.");
-			tooltip.add("Only works when held.");
+			tooltip.add(ZGUtils.translate("tooltips.hud"));
+			tooltip.add(ZGUtils.translate("tooltips.hud2"));
 		} else {
-			tooltip.add("Hold LSHIFT for more information.");
+			tooltip.add(ZGUtils.translate("tooltips.holdshift"));
 		}
 	}
 }

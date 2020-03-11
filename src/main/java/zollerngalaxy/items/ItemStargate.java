@@ -24,6 +24,7 @@ import zollerngalaxy.lib.helpers.CommonZGRegisterHelper;
 import zollerngalaxy.lib.helpers.ModHelperBase;
 import zollerngalaxy.network.teleporter.MessageTeleportToDimension;
 import zollerngalaxy.proxy.IProxy;
+import zollerngalaxy.util.ZGUtils;
 
 public class ItemStargate extends ZGItemBase {
 	
@@ -84,7 +85,7 @@ public class ItemStargate extends ZGItemBase {
 					break;
 			}
 		} else {
-			proxy.sendChatMessage(player, TextFormatting.DARK_RED + "Use of Star Gates has been " + "disabled in the config.");
+			proxy.sendChatMessage(player, TextFormatting.DARK_RED + "Use of Star Gates has been disabled in the config.");
 		}
 	}
 	
@@ -136,11 +137,11 @@ public class ItemStargate extends ZGItemBase {
 	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
 		if (CommonZGRegisterHelper.isShiftKeyDown()) {
-			tooltip.add(TextFormatting.GREEN + "A gateway between two");
-			tooltip.add(TextFormatting.GREEN + "worlds, moving the Player");
-			tooltip.add(TextFormatting.GREEN + "through space and time.");
+			tooltip.add(TextFormatting.GREEN + ZGUtils.translate("tooltips.stargate"));
+			tooltip.add(TextFormatting.GREEN + ZGUtils.translate("tooltips.stargate2"));
+			tooltip.add(TextFormatting.GREEN + ZGUtils.translate("tooltips.stargate3"));
 		} else {
-			tooltip.add(TextFormatting.GOLD + "Hold LSHIFT for more information.");
+			tooltip.add(TextFormatting.GOLD + ZGUtils.translate("tooltips.holdshift"));
 		}
 	}
 }

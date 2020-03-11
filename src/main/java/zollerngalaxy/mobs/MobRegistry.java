@@ -6,6 +6,7 @@ import net.minecraftforge.fml.common.registry.EntityRegistry;
 import zollerngalaxy.core.ZollernGalaxyCore;
 import zollerngalaxy.lib.ZGInfo;
 import zollerngalaxy.lib.helpers.ZGHelper;
+import zollerngalaxy.mobs.entities.EntityBlubberFish;
 import zollerngalaxy.mobs.entities.EntityFrostGiant;
 import zollerngalaxy.mobs.entities.EntityGrayAlien;
 import zollerngalaxy.mobs.entities.EntityMagmos;
@@ -50,23 +51,25 @@ public class MobRegistry {
 		// Scorpion
 		registerEntity("scorpion", EntityScorpion.class, entityId++, 0xf5eeb3, 0x8b9900);
 		
+		// Blubber Fish
+		registerEntity("blubberfish", EntityBlubberFish.class, entityId++, 0xffff00, 0x0099ff);
+		
 		ZGHelper.Log("Loaded a total of " + totalMobs + " new mobs.");
 	}
 	
 	private static void registerEntity(String name, Class<? extends Entity> cls, int id) {
 		ResourceLocation registryName = new ResourceLocation(ZGInfo.MOD_ID + ":" + name);
 		EntityRegistry.registerModEntity(registryName, cls,
-				CaseFormat.LOWER_UNDERSCORE.to(CaseFormat.LOWER_CAMEL, registryName.toString()), id,
-				ZollernGalaxyCore.instance(), 64, 1, true);
+				CaseFormat.LOWER_UNDERSCORE.to(CaseFormat.LOWER_CAMEL, registryName.toString()), id, ZollernGalaxyCore.instance(), 64, 1,
+				true);
 		totalMobs++;
 	}
 	
-	private static void registerEntity(String name, Class<? extends Entity> cls, int id, int primaryEggColor,
-			int secondaryEggColor) {
+	private static void registerEntity(String name, Class<? extends Entity> cls, int id, int primaryEggColor, int secondaryEggColor) {
 		ResourceLocation registryName = new ResourceLocation(ZGInfo.MOD_ID + ":" + name);
 		EntityRegistry.registerModEntity(registryName, cls,
-				CaseFormat.LOWER_UNDERSCORE.to(CaseFormat.LOWER_CAMEL, registryName.toString()), id,
-				ZollernGalaxyCore.instance(), 64, 1, true, primaryEggColor, secondaryEggColor);
+				CaseFormat.LOWER_UNDERSCORE.to(CaseFormat.LOWER_CAMEL, registryName.toString()), id, ZollernGalaxyCore.instance(), 64, 1,
+				true, primaryEggColor, secondaryEggColor);
 		totalMobs++;
 	}
 	

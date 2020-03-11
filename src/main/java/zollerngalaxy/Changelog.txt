@@ -9,4 +9,5 @@ Zollern Galaxy v2.0.13
 * Added biomes for new planet.
 * Fixed bug with ravines not generating correctly.
 * Added extra ravine generation to Perdita.
+* Added support for translations for in-game descriptions.
 * 

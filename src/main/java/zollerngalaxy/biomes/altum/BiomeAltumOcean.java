@@ -7,12 +7,12 @@
  */
 package zollerngalaxy.biomes.altum;
 
-import net.minecraft.entity.passive.EntitySquid;
 import net.minecraft.init.Blocks;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
+import zollerngalaxy.mobs.entities.EntityBlubberFish;
 import zollerngalaxy.mobs.entities.EntitySquidlus;
 
 public class BiomeAltumOcean extends BiomeAltumBase {
@@ -29,10 +29,10 @@ public class BiomeAltumOcean extends BiomeAltumBase {
 		this.setBlocks(Blocks.AIR);
 		this.setBiomeType(EnumBiomeTypeZG.OCEAN);
 		this.clearAllNonMonsterSpawning();
-		this.spawnableWaterCreatureList.add(new SpawnListEntry(EntitySquid.class, 100, 1, 4));
-		this.spawnableWaterCreatureList.add(new SpawnListEntry(EntitySquidlus.class, 100, 1, 4));
+		this.spawnableWaterCreatureList.add(new SpawnListEntry(EntityBlubberFish.class, 90, 13, 16));
+		// this.spawnableWaterCreatureList.add(new SpawnListEntry(EntitySquid.class, 75, 2, 4));
+		this.spawnableWaterCreatureList.add(new SpawnListEntry(EntitySquidlus.class, 85, 4, 8));
 		this.biomeDecor.generateFalls = true;
-		this.biomeDecor.deadBushPerChunk = 0;
 		this.biomeDecor.waterLakesPerChunk = 6;
 		this.grassFoliageColor = 0x009f8b;
 		this.stoneBlock = ZGBlocks.altumStone;

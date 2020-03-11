@@ -19,6 +19,8 @@ import zollerngalaxy.biomes.decorators.BiomeDecoratorAltum;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderAltum;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
+import zollerngalaxy.mobs.entities.EntityBlubberFish;
+import zollerngalaxy.mobs.entities.EntitySquidlus;
 import zollerngalaxy.planets.ZGPlanets;
 
 public class BiomeAltumBase extends BiomeSpace {
@@ -41,6 +43,9 @@ public class BiomeAltumBase extends BiomeSpace {
 		this.setTempCategory(TempCategory.MEDIUM);
 		this.setBiomeHeight(45);
 		this.setTemp(84.23F);
+		// this.spawnableWaterCreatureList.add(new SpawnListEntry(EntitySquid.class, 80, 1, 4));
+		this.spawnableWaterCreatureList.add(new SpawnListEntry(EntitySquidlus.class, 95, 1, 4));
+		this.spawnableWaterCreatureList.add(new SpawnListEntry(EntityBlubberFish.class, 90, 2, 8));
 		this.waterColor = 0x00008b;
 		this.setPlanetForBiome(ZGPlanets.planetAltum);
 	}

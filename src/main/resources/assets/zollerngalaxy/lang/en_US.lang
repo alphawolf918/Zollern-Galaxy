@@ -382,6 +382,8 @@ item.marblestick.name=Marble Stick
 item.blueprint_rad.name=Radiation Protection
 item.blueprint_tox.name=Toxicity Protection
 item.blueprint_poison.name=Posion Protection
+item.blueprint_corruption.name=Corruption Protection
+item.blueprint_radiance.name=Darkness Protection
 
 item.compressedemerald.name=Compressed Emerald
 item.compresseddiamond.name=Compressed Diamond
@@ -475,6 +477,20 @@ entity.zollerngalaxy:slime.raspberry.name=Galaxy Slime (Raspberry)
 entity.zollerngalaxy:megacreeper.name=Mega Creeper
 entity.zollerngalaxy:mummy.name=Mummy
 entity.zollerngalaxy:scorpion.name=Scorpion
+entity.zollerngalaxy:blubberfish.name=Blubber Fish
+entity.zollerngalaxy:bladefish.name=Blade Fish
+entity.zollerngalaxy:abyssalvillager.name=Abyssal Villager
+entity.zollerngalaxy:shark.name=Shark
+
+tooltips.hud=Shows all planetary and biome data.
+tooltips.hud2=Only works when held.
+tooltips.holdshift=Hold LSHIFT for more information.
+tooltips.stargate=A gateway between two worlds,
+tooltips.stargate2=moving the Player
+tooltips.stargate3=through space and time.
+tooltips.loreblock=Provides the Player with Lore.
+tooltips.loreblock2=Requires an Omnitool to work.
+tooltips.loreblock3=Only found on Space Stations.
 
 planet.zollus=Zollus
 planet.eden=Eden
