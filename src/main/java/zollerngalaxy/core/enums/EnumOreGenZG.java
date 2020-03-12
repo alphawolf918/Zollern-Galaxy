@@ -46,6 +46,7 @@ public enum EnumOreGenZG {
 	ZOLLERNIUM(15, 4, 0, 16),
 	ZINC(25, 6, 0, 26),
 	SPECIAL_STONE(25, 15, 0, 32),
+	PRISMARINE(20, 20, 0, 74),
 	RHODIUM(6, 4, 0, 20);
 	
 	private int genCount;

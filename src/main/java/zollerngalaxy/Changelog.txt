@@ -10,4 +10,10 @@ Zollern Galaxy v2.0.13
 * Fixed bug with ravines not generating correctly.
 * Added extra ravine generation to Perdita.
 * Added support for translations for in-game descriptions.
+* Added support for underwater mobs.
+* Added the Blubber Fish mob.
+* Fixed alien squid (Squidlus) not spawning.
+* Fixed Squidlus animation weirdness.
+* Fixed Perdita Fueltonium Ore not pulverizing.
+* Slightly modified texture of Zucrite block.
 * 

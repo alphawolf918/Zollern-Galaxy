@@ -20,6 +20,7 @@ import zollerngalaxy.blocks.ZGBlockDirt;
 import zollerngalaxy.blocks.ZGBlockGrass;
 import zollerngalaxy.items.ZGItems;
 import zollerngalaxy.lib.helpers.ZGHelper;
+import zollerngalaxy.mobs.entities.EntityBlubberFish;
 import zollerngalaxy.mobs.entities.EntityGrayAlien;
 import zollerngalaxy.mobs.entities.EntityMegaCreeper;
 import zollerngalaxy.mobs.entities.EntityMoolus;
@@ -88,6 +89,16 @@ public class ZGEvents {
 					ZGHelper.dropItem(ZGItems.dustEmerald, worldObj, theEntity);
 				}
 			}
+		}
+		
+		// Blubber Fish
+		if (theEntity instanceof EntityBlubberFish) {
+			ZGHelper.dropItem(ZGItems.rawBlubberFish, worldObj, theEntity);
+		}
+		
+		// Gypsy Fish
+		if (theEntity instanceof EntityBlubberFish) {
+			ZGHelper.dropItem(ZGItems.rawGypsyFish, worldObj, theEntity);
 		}
 		
 		// Shade Entities

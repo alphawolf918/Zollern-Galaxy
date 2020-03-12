@@ -1,6 +1,8 @@
 package zollerngalaxy.mobs;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLiving.SpawnPlacementType;
+import net.minecraft.entity.EntitySpawnPlacementRegistry;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 import zollerngalaxy.core.ZollernGalaxyCore;
@@ -9,6 +11,7 @@ import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.mobs.entities.EntityBlubberFish;
 import zollerngalaxy.mobs.entities.EntityFrostGiant;
 import zollerngalaxy.mobs.entities.EntityGrayAlien;
+import zollerngalaxy.mobs.entities.EntityGypsyFish;
 import zollerngalaxy.mobs.entities.EntityMagmos;
 import zollerngalaxy.mobs.entities.EntityMegaCreeper;
 import zollerngalaxy.mobs.entities.EntityMoolus;
@@ -32,6 +35,7 @@ public class MobRegistry {
 		
 		// Squidlus
 		registerEntity("squidlus", EntitySquidlus.class, entityId++, 0x0099ff, 0xeeeeee);
+		EntitySpawnPlacementRegistry.setPlacementType(EntitySquidlus.class, SpawnPlacementType.IN_WATER);
 		
 		// Frost Giant
 		registerEntity("frostgiant", EntityFrostGiant.class, entityId++, 0x0099ff, 0x3399ff);
@@ -53,6 +57,11 @@ public class MobRegistry {
 		
 		// Blubber Fish
 		registerEntity("blubberfish", EntityBlubberFish.class, entityId++, 0xffff00, 0x0099ff);
+		EntitySpawnPlacementRegistry.setPlacementType(EntityBlubberFish.class, SpawnPlacementType.IN_WATER);
+		
+		// Gypsy Fish
+		registerEntity("gypsyfish", EntityGypsyFish.class, entityId++, 0x8b9900, 0x0099ff);
+		EntitySpawnPlacementRegistry.setPlacementType(EntityGypsyFish.class, SpawnPlacementType.IN_WATER);
 		
 		ZGHelper.Log("Loaded a total of " + totalMobs + " new mobs.");
 	}

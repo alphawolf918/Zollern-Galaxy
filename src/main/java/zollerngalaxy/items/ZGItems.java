@@ -99,6 +99,13 @@ public class ZGItems {
 	public static final Item edenFruit = new ZGItemFood("fruitofeden", 4, 2.5F, false);
 	public static final Item perdBerry = new ZGItemFood("perdberry", 8, 3.6F, false);
 	public static final Item perdPeach = new ZGItemFood("perdpeach", 13, 8.2F, false);
+	public static final Item rawBlubberFish = new ZGItemFood("rawblubberfish", 1, 0.2F, false);
+	public static final Item rawBladeFish = new ZGItemFood("rawbladefish", 1, 0.2F, false);
+	public static final Item rawGypsyFish = new ZGItemFood("rawgypsyfish", 1, 0.2F, false);
+	public static final Item cookedBlubberFish = new ZGItemFood("cookedblubberfish", 6, 2.4F, false);
+	public static final Item cookedBladeFish = new ZGItemFood("cookedbladefish", 6, 2.4F, false);
+	public static final Item cookedGypsyFish = new ZGItemFood("cookedgypsyfish", 6, 2.4F, false);
+	
 	public static final Item perdReed = new ZGItemSpecial("perdreed", ZGBlocks.perdReeds);
 	
 	public static final Item darkEssence = new ZGItemBase("shadowessence");
@@ -181,14 +188,15 @@ public class ZGItems {
 				hud, alienStone, compressedCobalt, compressedDiamond, compressedEmerald, compressedEvenium, compressedGold,
 				compressedHeartium, compressedKriffonium, compressedVirinium, compressedVyrex, compressedPromethean,
 				compressedSuperChargedCoal, compressedRiven, compressedAmaranth, compressedAzurite, compressedZollernium, rawAlienBacon,
-				cookedAlienBacon, rawAlienBeef, cookedAlienBeef, edenFruit, perdBerry, perdPeach, creamBall, chocolateRaw, chocolateBar,
-				brownie, candyApple, iceCreamSandwich, iceCream, edenDungeonKey, perdGlowdust, perdDiamond, perdEtrium, perdReed,
-				darkEssence, superChargedCoal, powerStick, starGateTier1, starGateTier2, starGateTier3, starGateTier4, starGateTier5,
-				starGateTier6, starGateTier7, starGateTier8, starGateTier9, starGateTier10, starGateCandy, OMNITOOL, pickaxeCobalt,
-				pickaxeEvenium, pickaxeVirinium, pickaxeAmaranth, pickaxeAzurite, pickaxeZollernium, shovelCobalt, shovelEvenium,
-				shovelVirinium, shovelAmaranth, shovelAzurite, shovelZollernium, axeCobalt, axeEvenium, axeVirinium, axeAmaranth,
-				axeAzurite, axeZollernium, hoeCobalt, hoeEvenium, hoeVirinium, hoeAmaranth, hoeAzurite, hoeZollernium, swordCobalt,
-				swordEvenium, swordVirinium, swordAmaranth, swordAzurite, swordZollernium);
+				cookedAlienBacon, rawAlienBeef, cookedAlienBeef, edenFruit, perdBerry, perdPeach, rawBlubberFish, cookedBlubberFish,
+				rawBladeFish, cookedBladeFish, rawGypsyFish, cookedGypsyFish, creamBall, chocolateRaw, chocolateBar, brownie, candyApple,
+				iceCreamSandwich, iceCream, edenDungeonKey, perdGlowdust, perdDiamond, perdEtrium, perdReed, darkEssence, superChargedCoal,
+				powerStick, starGateTier1, starGateTier2, starGateTier3, starGateTier4, starGateTier5, starGateTier6, starGateTier7,
+				starGateTier8, starGateTier9, starGateTier10, starGateCandy, OMNITOOL, pickaxeCobalt, pickaxeEvenium, pickaxeVirinium,
+				pickaxeAmaranth, pickaxeAzurite, pickaxeZollernium, shovelCobalt, shovelEvenium, shovelVirinium, shovelAmaranth,
+				shovelAzurite, shovelZollernium, axeCobalt, axeEvenium, axeVirinium, axeAmaranth, axeAzurite, axeZollernium, hoeCobalt,
+				hoeEvenium, hoeVirinium, hoeAmaranth, hoeAzurite, hoeZollernium, swordCobalt, swordEvenium, swordVirinium, swordAmaranth,
+				swordAzurite, swordZollernium);
 		ZGHelper.Log("Loaded a total of " + totalItems + " new items.");
 	}
 	

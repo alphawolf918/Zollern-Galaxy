@@ -25,13 +25,13 @@ public class ModelBlubberFish extends ModelBase {
 		textureHeight = 64;
 		
 		body = new ModelRenderer(this);
-		body.setRotationPoint(0.0F, 24.0F, 0.0F);
+		body.setRotationPoint(0.0F, 0.0F, 0.0F);
 		body.cubeList.add(new ModelBox(body, 0, 0, -4.0F, -5.0F, -4.0F, 8, 5, 8, 0.0F, false));
 		body.cubeList.add(new ModelBox(body, 0, 13, -7.0F, -1.0F, 0.0F, 14, 0, 3, 0.0F, false));
 		body.cubeList.add(new ModelBox(body, 14, 14, 0.0F, -8.0F, -4.0F, 0, 3, 7, 0.0F, false));
 		
 		other = new ModelRenderer(this);
-		other.setRotationPoint(0.0F, 24.0F, 0.0F);
+		other.setRotationPoint(0.0F, 0.0F, 0.0F);
 		setRotationAngle(other, 0.0F, 3.1416F, 0.0F);
 		other.cubeList.add(new ModelBox(other, 0, 9, 0.0F, -6.0F, -11.0F, 0, 7, 7, 0.0F, false));
 		other.cubeList.add(new ModelBox(other, 0, 23, -3.0F, -4.0F, 4.0F, 6, 4, 2, 0.0F, false));

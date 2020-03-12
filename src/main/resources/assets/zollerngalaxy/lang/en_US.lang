@@ -413,6 +413,15 @@ item.perdpearl.name=Lost Pearl
 item.perdglowstonedust.name=Lost Glowdust
 item.perdreed.name=Lost Bamboo Plant
 
+item.rawblubberfish.name=Raw Blubber Fish
+item.cookedblubberfish.name=Cooked Blubber Fish
+item.rawgypsyfish.name=Raw Gypsy Fish
+item.cookedgypsyfish.name=Cooked Gypsy Fish
+item.rawbladefish.name=Raw Blade Fish
+item.cookedbladefish.name=Cooked Blade Fish
+item.rawshark.name=Raw Shark
+item.cookedshark.name=Cooked Shark
+
 item.stargate_tier1.name=Stargate (Protocol One)
 item.stargate_tier2.name=Stargate (Protocol Two)
 item.stargate_tier3.name=Stargate (Protocol Three)
@@ -478,6 +487,7 @@ entity.zollerngalaxy:megacreeper.name=Mega Creeper
 entity.zollerngalaxy:mummy.name=Mummy
 entity.zollerngalaxy:scorpion.name=Scorpion
 entity.zollerngalaxy:blubberfish.name=Blubber Fish
+entity.zollerngalaxy:gypsyfish.name=Gypsy Fish
 entity.zollerngalaxy:bladefish.name=Blade Fish
 entity.zollerngalaxy:abyssalvillager.name=Abyssal Villager
 entity.zollerngalaxy:shark.name=Shark

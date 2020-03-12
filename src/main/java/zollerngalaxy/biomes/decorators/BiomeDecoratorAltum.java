@@ -34,6 +34,7 @@ public class BiomeDecoratorAltum extends BiomeDecoratorZG {
 	private WorldGenerator eveniumGen;
 	private WorldGenerator rhodiumGen;
 	private WorldGenerator coalGen;
+	private WorldGenerator prismarineGen;
 	
 	public int waterLakesPerChunk = 2;
 	
@@ -49,6 +50,7 @@ public class BiomeDecoratorAltum extends BiomeDecoratorZG {
 		this.eveniumGen = new WorldGenMinableZG(ZGBlocks.altumEveniumOre, STONE, EnumOreGenZG.EVENIUM);
 		this.rhodiumGen = new WorldGenMinableZG(ZGBlocks.altumRhodiumOre, STONE, EnumOreGenZG.RHODIUM);
 		this.coalGen = new WorldGenMinableZG(ZGBlocks.altumCoalOre, STONE, EnumOreGenZG.COAL);
+		this.prismarineGen = new WorldGenMinableZG(Blocks.PRISMARINE, STONE, EnumOreGenZG.PRISMARINE);
 	}
 	
 	@Override
@@ -65,6 +67,7 @@ public class BiomeDecoratorAltum extends BiomeDecoratorZG {
 		this.generateOre(this.eveniumGen, EnumOreGenZG.EVENIUM, world, rand);
 		this.generateOre(this.rhodiumGen, EnumOreGenZG.RHODIUM, world, rand);
 		this.generateOre(this.coalGen, EnumOreGenZG.COAL, world, rand);
+		this.generateOre(this.prismarineGen, EnumOreGenZG.PRISMARINE, world, rand);
 		
 		ChunkPos forgeChunkPos = new ChunkPos(chunkPos);
 		

@@ -14,6 +14,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 import zollerngalaxy.mobs.entities.EntityBlubberFish;
+import zollerngalaxy.mobs.entities.EntityGypsyFish;
 import zollerngalaxy.mobs.entities.EntitySquidlus;
 
 public class BiomeAltumOcean extends BiomeAltumBase {
@@ -25,14 +26,15 @@ public class BiomeAltumOcean extends BiomeAltumBase {
 		props.setHeightVariation(0.0F);
 		props.setTemperature(15.2F);
 		this.setTempCategory(TempCategory.OCEAN);
-		this.setTemp(15.2F);
+		this.setTemp(65.21F);
 		this.setBiomeHeight(52);
 		this.setBlocks(Blocks.AIR);
 		this.setBiomeType(EnumBiomeTypeZG.OCEAN);
 		this.clearAllNonMonsterSpawning();
-		this.spawnableWaterCreatureList.add(new SpawnListEntry(EntityBlubberFish.class, 90, 13, 16));
+		this.spawnableWaterCreatureList.add(new SpawnListEntry(EntityBlubberFish.class, 80, 3, 6));
+		this.spawnableWaterCreatureList.add(new SpawnListEntry(EntitySquidlus.class, 85, 2, 4));
 		this.spawnableWaterCreatureList.add(new SpawnListEntry(EntitySquid.class, 75, 2, 4));
-		this.spawnableWaterCreatureList.add(new SpawnListEntry(EntitySquidlus.class, 85, 4, 8));
+		this.spawnableWaterCreatureList.add(new SpawnListEntry(EntityGypsyFish.class, 62, 4, 8));
 		this.biomeDecor.waterLakesPerChunk = 6;
 		this.grassFoliageColor = 0x009f8b;
 		this.stoneBlock = ZGBlocks.altumStone;

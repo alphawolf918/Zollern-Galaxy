@@ -43,6 +43,20 @@ public class ZGHelper {
 		}
 	}
 	
+	public static void dropItem(ItemStack itemStack, World worldObj, Entity theEntity) {
+		if (!worldObj.isRemote) {
+			EntityItem itemEntity = new EntityItem(worldObj, theEntity.posX, theEntity.posY, theEntity.posZ, itemStack);
+			worldObj.spawnEntity(itemEntity);
+		}
+	}
+	
+	public static void dropItem(ItemStack itemStack, World worldObj, BlockPos pos) {
+		if (!worldObj.isRemote) {
+			EntityItem itemEntity = new EntityItem(worldObj, pos.getX(), pos.getY(), pos.getZ(), itemStack);
+			worldObj.spawnEntity(itemEntity);
+		}
+	}
+	
 	public static boolean getRNGChance(int min, int max) {
 		if (min >= max) {
 			return false;

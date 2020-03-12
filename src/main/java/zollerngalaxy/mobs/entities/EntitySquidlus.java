@@ -15,13 +15,14 @@ public class EntitySquidlus extends EntitySquid {
 	@Override
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
+		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.21D);
 		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(20.0D);
 	}
 	
 	@Override
 	public boolean getCanSpawnHere() {
-		boolean seaHeightMax = this.posY >= 35.0D;
-		boolean seaHeightMin = this.posY <= this.world.getSeaLevel();
+		boolean seaHeightMax = this.posY >= 25.0D;
+		boolean seaHeightMin = this.posY <= this.getEntityWorld().getSeaLevel();
 		boolean canSpawnHereSuper = super.getCanSpawnHere();
 		boolean canSpawn = (seaHeightMax && seaHeightMin && canSpawnHereSuper);
 		return canSpawn;

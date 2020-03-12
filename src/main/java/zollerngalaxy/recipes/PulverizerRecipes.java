@@ -109,6 +109,10 @@ public class PulverizerRecipes {
 		
 		// Fueltonium
 		PulverizerRecipes.addRecipe(ZGBlocks.xantheonFueltoniumOre, ZGItems.dustFueltonium);
+		PulverizerRecipes.addRecipe(ZGBlocks.perdFueltoniumOre, ZGItems.dustFueltonium);
+		
+		// Rhodium
+		PulverizerRecipes.addRecipe(ZGBlocks.altumRhodiumOre, ZGItems.dustRhodium);
 		
 		ZGHelper.Log("Loaded a total of " + totalRecipes + " new Pulverizer recipes.");
 	}
