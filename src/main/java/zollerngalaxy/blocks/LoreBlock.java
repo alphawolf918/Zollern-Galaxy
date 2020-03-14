@@ -34,6 +34,7 @@ import zollerngalaxy.lib.helpers.CommonZGRegisterHelper;
 import zollerngalaxy.proxy.IProxy;
 import zollerngalaxy.util.LoreBook;
 import zollerngalaxy.util.ZGLore;
+import zollerngalaxy.util.ZGUtils;
 
 public class LoreBlock extends ZGBlockBase {
 	
@@ -92,11 +93,11 @@ public class LoreBlock extends ZGBlockBase {
 	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack stack, @Nullable World player, List<String> tooltip, ITooltipFlag advanced) {
 		if (CommonZGRegisterHelper.isControlKeyDown() || CommonZGRegisterHelper.isShiftKeyDown()) {
-			tooltip.add("Provides the Player with Lore.");
-			tooltip.add("Requires an Omnitool to work.");
-			tooltip.add("Only found on Space Stations.");
+			tooltip.add(ZGUtils.translate("tooltips.loreblock"));
+			tooltip.add(ZGUtils.translate("tooltips.loreblock2"));
+			tooltip.add(ZGUtils.translate("tooltips.loreblock3"));
 		} else {
-			tooltip.add("Hold LSHIFT for more information.");
+			tooltip.add(ZGUtils.translate("tooltips.holdshift"));
 		}
 	}
 	

@@ -8,6 +8,7 @@ import net.minecraftforge.fml.common.registry.EntityRegistry;
 import zollerngalaxy.core.ZollernGalaxyCore;
 import zollerngalaxy.lib.ZGInfo;
 import zollerngalaxy.lib.helpers.ZGHelper;
+import zollerngalaxy.mobs.entities.EntityBladeFish;
 import zollerngalaxy.mobs.entities.EntityBlubberFish;
 import zollerngalaxy.mobs.entities.EntityFrostGiant;
 import zollerngalaxy.mobs.entities.EntityGrayAlien;
@@ -18,6 +19,7 @@ import zollerngalaxy.mobs.entities.EntityMoolus;
 import zollerngalaxy.mobs.entities.EntityMummy;
 import zollerngalaxy.mobs.entities.EntityOinkus;
 import zollerngalaxy.mobs.entities.EntityScorpion;
+import zollerngalaxy.mobs.entities.EntityShark;
 import zollerngalaxy.mobs.entities.EntitySquidlus;
 import com.google.common.base.CaseFormat;
 
@@ -62,6 +64,14 @@ public class MobRegistry {
 		// Gypsy Fish
 		registerEntity("gypsyfish", EntityGypsyFish.class, entityId++, 0x8b9900, 0x0099ff);
 		EntitySpawnPlacementRegistry.setPlacementType(EntityGypsyFish.class, SpawnPlacementType.IN_WATER);
+		
+		// Blade Fish
+		registerEntity("bladefish", EntityBladeFish.class, entityId++, 0x8b0000, 0x0099ff);
+		EntitySpawnPlacementRegistry.setPlacementType(EntityBladeFish.class, SpawnPlacementType.IN_WATER);
+		
+		// Shark
+		registerEntity("shark", EntityShark.class, entityId++, 0x444444, 0x8b2222);
+		EntitySpawnPlacementRegistry.setPlacementType(EntityShark.class, SpawnPlacementType.IN_WATER);
 		
 		ZGHelper.Log("Loaded a total of " + totalMobs + " new mobs.");
 	}

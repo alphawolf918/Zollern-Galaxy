@@ -15,7 +15,7 @@ import zollerngalaxy.lib.helpers.ZGHelper;
 
 public class BiomeLostMountains extends BiomePerditaBase {
 	
-	private float temp = ZGHelper.rngNumber(16, 28);
+	private float temp = ZGHelper.rngInt(16, 28);
 	
 	public BiomeLostMountains(BiomeProperties props) {
 		super("lostmountains", props);

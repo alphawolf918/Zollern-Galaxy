@@ -14,7 +14,7 @@ public class EntityBlubberFish extends EntityWaterMobZG {
 	
 	public EntityBlubberFish(World worldIn) {
 		super(worldIn);
-		this.setSize(2.4F, 2.4F);
+		// this.setSize(2.4F, 2.4F);
 		this.rand.setSeed(1 + this.getEntityId());
 	}
 	

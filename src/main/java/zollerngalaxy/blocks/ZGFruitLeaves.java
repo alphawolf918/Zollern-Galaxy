@@ -38,7 +38,7 @@ public class ZGFruitLeaves extends ZGBlockLeaves {
 	protected void dropFruit(World worldIn, BlockPos pos) {
 		if (!worldIn.isRemote) {
 			if (ZGHelper.getRNGChance(4, 10)) {
-				int randInt = ZGHelper.rngNumber(1, 2);
+				int randInt = ZGHelper.rngInt(1, 2);
 				for (int i = 0; i < randInt; i++) {
 					ZGHelper.dropItem(droppedFood, worldIn, pos);
 				}

@@ -63,7 +63,7 @@ public class BiomeDecoratorPerdita extends BiomeDecoratorZG {
 	private WorldGenerator lostLakeGen = new WorldGenLakesZG(Blocks.WATER, ZGBlocks.perdGrass);
 	private WorldGenerator lostTallGrassGen = new WorldGenTallGrassZG((ZGBlockTallGrass) ZGBlocks.perdTallGrass);
 	private WorldGenerator lostReedGen = new WorldGenLostReeds();
-	private WorldGenerator lostPalmWoodTreeGen = new WorldGenPalmwoodTrees(true, ZGHelper.rngNumber(5, 15),
+	private WorldGenerator lostPalmWoodTreeGen = new WorldGenPalmwoodTrees(true, ZGHelper.rngInt(5, 15),
 			ZGBlocks.perdWoodLogs.getDefaultState(), ZGBlocks.perdWoodLeaves.getDefaultState(), false);
 	private WorldGenerator lostFueltoniumLakeGen = new WorldGenLakesZG(ZGFluids.blockFueltoniumFluid, ZGBlocks.perdSand);
 	

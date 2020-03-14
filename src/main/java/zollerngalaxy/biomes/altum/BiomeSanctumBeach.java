@@ -21,7 +21,7 @@ public class BiomeSanctumBeach extends BiomeAltumBase {
 		this.setTemp(76.18F);
 		this.biomeDecor.waterLakesPerChunk = 6;
 		this.topBlock = ZGBlocks.altumSand.getDefaultState();
-		this.fillerBlock = ZGBlocks.altumSand.getDefaultState();
+		this.fillerBlock = ZGBlocks.altumCobble.getDefaultState();
 		this.stoneBlock = ZGBlocks.altumStone;
 		this.setPlanetForBiome(ZGPlanets.planetAltum);
 	}

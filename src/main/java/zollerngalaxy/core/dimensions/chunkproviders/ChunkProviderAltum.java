@@ -25,6 +25,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldEntitySpawner;
 import net.minecraft.world.WorldType;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.Biome.TempCategory;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.gen.NoiseGenerator;
@@ -40,11 +41,14 @@ import zollerngalaxy.worldgen.mapgen.MapGenRavinesZG;
 public class ChunkProviderAltum extends ChunkProviderBase {
 	
 	public static final IBlockState STONE = ZGBlocks.altumStone.getDefaultState();
+	protected static final IBlockState SAND = ZGBlocks.altumSand.getDefaultState();
+	protected static final IBlockState ROCK = ZGBlocks.altumRock.getDefaultState();
 	public static final IBlockState WATER = Blocks.WATER.getDefaultState();
 	public static final IBlockState ICE = Blocks.ICE.getDefaultState();
 	
 	public static final double CHUNK_HEIGHT = 30.0D;
 	public static final int SEA_LEVEL = 74;
+	public static final int SEA_FLOOR_LEVEL = 42;
 	
 	private static final int CHUNK_SIZE_X = 16;
 	private static final int CHUNK_SIZE_Z = 16;
@@ -65,6 +69,7 @@ public class ChunkProviderAltum extends ChunkProviderBase {
 	private final float[] parabolicField;
 	private double[] stoneNoise = new double[256];
 	private MapGenCavesZG caveGenerator = new MapGenCavesZG(ZGBlocks.altumStone);
+	private MapGenCavesZG caveGenerator2 = new MapGenCavesZG(ZGBlocks.altumStone);
 	private final MapGenRavinesZG ravineGenerator = new MapGenRavinesZG(ZGBlocks.altumStone);
 	private final MapGenVillageMoon villageGenerator = new MapGenVillageMoon();
 	private MapGenMineshaft mineshaftGenerator = new MapGenMineshaft();
@@ -164,8 +169,15 @@ public class ChunkProviderAltum extends ChunkProviderBase {
 									}
 								}
 								
+								chunkHeightMod += biome.getBaseHeight();
+								
 								if ((lvt_45_1_ += d16) > this.noiseGenSmooth1.getNoise(chunkX * 16 + x, chunkZ * 16 + z) * chunkHeightMod) {
-									primer.setBlockState(x, y, z, STONE);
+									if (biome.getTempCategory() == TempCategory.OCEAN) {
+										primer.setBlockState(x, y, z, SAND);
+										primer.setBlockState(x, (y - 1), z, ROCK);
+									} else {
+										primer.setBlockState(x, y, z, STONE);
+									}
 								} else if (y < SEA_LEVEL) {
 									primer.setBlockState(x, y, z, WATER);
 								}
@@ -208,6 +220,7 @@ public class ChunkProviderAltum extends ChunkProviderBase {
 		this.replaceBlocksForBiome(x, z, chunkprimer, this.biomesForGeneration);
 		
 		this.caveGenerator.generate(this.world, x, z, chunkprimer);
+		this.caveGenerator2.generate(this.world, x, z, chunkprimer);
 		this.ravineGenerator.generate(this.world, x, z, chunkprimer);
 		this.villageGenerator.generate(this.world, x, z, chunkprimer);
 		this.mineshaftGenerator.generate(this.world, x, z, chunkprimer);
@@ -252,6 +265,10 @@ public class ChunkProviderAltum extends ChunkProviderBase {
 						}
 						
 						float f7 = this.parabolicField[j1 + 2 + (k1 + 2) * 5] / (f5 + 2.0F);
+						
+						if (biomegenbase1.getBaseHeight() > biomegenbase.getBaseHeight()) {
+							f7 /= 2.0F;
+						}
 						
 						f2 += f6 * f7;
 						f3 += f5 * f7;

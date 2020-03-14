@@ -27,9 +27,11 @@ public class ZGHelper {
 	
 	private static final Logger LOGGER = LogManager.getLogger("Zollern Galaxy");
 	
+	private static Random rand = new Random();
+	
 	public static void dropItem(Item droppedItem, World worldObj, Entity theEntity) {
 		if (!worldObj.isRemote) {
-			ItemStack itemStack = new ItemStack(droppedItem, rngNumber(1, 2));
+			ItemStack itemStack = new ItemStack(droppedItem, rngInt(1, 2));
 			EntityItem itemEntity = new EntityItem(worldObj, theEntity.posX, theEntity.posY, theEntity.posZ, itemStack);
 			worldObj.spawnEntity(itemEntity);
 		}
@@ -37,7 +39,7 @@ public class ZGHelper {
 	
 	public static void dropItem(Item droppedItem, World worldObj, BlockPos pos) {
 		if (!worldObj.isRemote) {
-			ItemStack itemStack = new ItemStack(droppedItem, rngNumber(1, 2));
+			ItemStack itemStack = new ItemStack(droppedItem, rngInt(1, 2));
 			EntityItem itemEntity = new EntityItem(worldObj, pos.getX(), pos.getY(), pos.getZ(), itemStack);
 			worldObj.spawnEntity(itemEntity);
 		}
@@ -57,21 +59,21 @@ public class ZGHelper {
 		}
 	}
 	
+	public static Random getRNG() {
+		return rand;
+	}
+	
 	public static boolean getRNGChance(int min, int max) {
-		if (min >= max) {
-			return false;
-		}
-		Random rand = new Random();
+		assert min >= max : "Min can't be greater than max!";
 		int randInt = rand.nextInt(max);
-		if (randInt <= min) {
+		if (randInt == min) {
 			return true;
 		}
 		return false;
 	}
 	
-	public static int rngNumber(int min, int max) {
+	public static int rngInt(int min, int max) {
 		assert min >= max : "Min can't be greater than max!";
-		Random rand = new Random();
 		int randInt = rand.nextInt(max);
 		if (randInt < min) {
 			randInt = min;
@@ -81,7 +83,6 @@ public class ZGHelper {
 	
 	public static double rngDbl(double min, double max) {
 		assert min >= max : "Min can't be greater than max!";
-		Random rand = new Random();
 		double randDbl = rand.nextDouble() * max;
 		if (randDbl < min) {
 			randDbl = min;
@@ -91,7 +92,6 @@ public class ZGHelper {
 	
 	public static float rngFloat(float min, float max) {
 		assert min >= max : "Min can't be greater than max!";
-		Random rand = new Random();
 		float randFlt = rand.nextFloat() * max;
 		if (randFlt < min) {
 			randFlt = min;

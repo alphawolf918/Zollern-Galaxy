@@ -27,5 +27,7 @@ public enum EnumBiomeTypeZG {
 	TECHY,
 	SWEET,
 	ISLAND,
-	BEACH;
+	BEACH,
+	INFECTED,
+	CORRUPTED;
 }

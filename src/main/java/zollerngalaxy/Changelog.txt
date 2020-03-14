@@ -11,7 +11,11 @@ Zollern Galaxy v2.0.13
 * Added extra ravine generation to Perdita.
 * Added support for translations for in-game descriptions.
 * Added support for underwater mobs.
-* Added the Blubber Fish mob.
+* Added the Blubber Fish, Gypsy Fish and Blade Fish mobs.
+    - Blade Fish will hurt you on contact.
+* Added Sharks.
+    - Hostile mobs, but will still spawn on Peaceful. Be careful!
+    - Chance to drop shagreen (shark leather) and shark teeth.
 * Fixed alien squid (Squidlus) not spawning.
 * Fixed Squidlus animation weirdness.
 * Fixed Perdita Fueltonium Ore not pulverizing.

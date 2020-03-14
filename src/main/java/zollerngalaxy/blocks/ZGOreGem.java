@@ -59,7 +59,7 @@ public class ZGOreGem extends ZGBlockOre {
 	
 	@Override
 	public void getDrops(NonNullList<ItemStack> drops, IBlockAccess world, BlockPos pos, IBlockState state, int fortune) {
-		int j = ZGHelper.rngNumber(this.getMinDropped(), this.getMaxDropped());
+		int j = ZGHelper.rngInt(this.getMinDropped(), this.getMaxDropped());
 		for (int k = 0; k < j; ++k) {
 			drops.add(new ItemStack(itemToDrop, 1, this.droppedMetadata));
 		}
@@ -94,19 +94,19 @@ public class ZGOreGem extends ZGBlockOre {
 		int numDropped = 1;
 		switch (this.getBlockTier()) {
 		default:
-			numDropped = ZGHelper.rngNumber(1, 1);
+			numDropped = ZGHelper.rngInt(1, 1);
 			break;
 		case ONE:
-			numDropped = ZGHelper.rngNumber(minDropped, maxDropped);
+			numDropped = ZGHelper.rngInt(minDropped, maxDropped);
 			break;
 		case TWO:
-			numDropped = ZGHelper.rngNumber(maxDropped, maxDropped + 2);
+			numDropped = ZGHelper.rngInt(maxDropped, maxDropped + 2);
 			break;
 		case THREE:
-			numDropped = ZGHelper.rngNumber(maxDropped + 2, maxDropped + 3);
+			numDropped = ZGHelper.rngInt(maxDropped + 2, maxDropped + 3);
 			break;
 		case FOUR:
-			numDropped = ZGHelper.rngNumber(maxDropped + 4, maxDropped + 5);
+			numDropped = ZGHelper.rngInt(maxDropped + 4, maxDropped + 5);
 			break;
 		}
 		return numDropped;

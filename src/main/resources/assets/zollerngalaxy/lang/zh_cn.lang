@@ -378,10 +378,12 @@ item.rokkite.name=Rokkite
 item.powerstick.name=能量棒
 item.blackmarblestick.name=黑色大理石棒
 item.marblestick.name=大理石棒
-
+#以下部分需要根据游戏内容进行性翻译
 item.blueprint_rad.name=辐射保护
 item.blueprint_tox.name=毒性保护
 item.blueprint_poison.name=毒防护
+item.blueprint_corruption.name=腐蚀防护
+item.blueprint_radiance.name=黑暗防护
 
 item.compressedemerald.name=致密绿宝石板
 item.compresseddiamond.name=致密钻石板
@@ -411,6 +413,15 @@ item.perdpearl.name=失落之星珍珠
 item.perdglowstonedust.name=失落之星萤石粉
 item.perdreed.name=失落之星竹株
 
+item.rawblubberfish.name=Raw Blubber Fish
+item.cookedblubberfish.name=Cooked Blubber Fish
+item.rawgypsyfish.name=生吉普赛鱼
+item.cookedgypsyfish.name=熟吉普赛鱼
+item.rawbladefish.name=生剑鱼
+item.cookedbladefish.name=熟剑鱼
+item.rawshark.name=生鲨鱼
+item.cookedshark.name=熟鲨鱼
+
 item.stargate_tier1.name=星门 (协议 一)
 item.stargate_tier2.name=星门 (协议 二)
 item.stargate_tier3.name=星门 (协议 三)
@@ -423,7 +434,7 @@ item.stargate_tier9.name=星门 (协议 九)
 item.stargate_tier10.name=星门 (协议 十)
 item.stargate_tier918.name=星门 (生日 协议)
 
-item.omnitool.name=扳手
+item.omnitool.name=多功能工具
 
 item.cobalt_pickaxe.name=钴镐
 item.cobalt_sword.name=钴剑
@@ -475,6 +486,21 @@ entity.zollerngalaxy:slime.raspberry.name=星系史莱姆 (覆盆子)
 entity.zollerngalaxy:megacreeper.name=超级爬行者
 entity.zollerngalaxy:mummy.name=木乃伊
 entity.zollerngalaxy:scorpion.name=蝎子
+entity.zollerngalaxy:blubberfish.name=Blubber Fish
+entity.zollerngalaxy:gypsyfish.name=吉普赛鱼
+entity.zollerngalaxy:bladefish.name=剑鱼
+entity.zollerngalaxy:abyssalvillager.name=深渊村民
+entity.zollerngalaxy:shark.name=鲨鱼
+
+tooltips.hud=显示所有行星及生物群系数据
+tooltips.hud2=仅在手持时生效
+tooltips.holdshift=按住 LSHIFT 显示更多信息
+tooltips.stargate两个世界之间的门径
+tooltips.stargate2=转移玩家中...
+tooltips.stargate3=穿越时空中...
+tooltips.loreblock=为玩家提供知识
+tooltips.loreblock2=需要一个多功能工具以运转
+tooltips.loreblock3=只可在宇宙空间站找到
 
 planet.zollus=卓洛斯
 planet.eden=伊甸

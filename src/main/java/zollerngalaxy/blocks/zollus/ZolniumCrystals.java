@@ -50,7 +50,7 @@ public class ZolniumCrystals extends ZGBlockFlower {
 	
 	@Override
 	public void getDrops(NonNullList<ItemStack> drops, IBlockAccess world, BlockPos pos, IBlockState state, int fortune) {
-		int j = ZGHelper.rngNumber(this.getMinDropped(), this.getMaxDropped());
+		int j = ZGHelper.rngInt(this.getMinDropped(), this.getMaxDropped());
 		for (int k = 0; k < j; ++k) {
 			drops.add(new ItemStack(itemToDrop, 1, 0));
 		}
@@ -88,7 +88,7 @@ public class ZolniumCrystals extends ZGBlockFlower {
 	@Override
 	public int quantityDropped(Random rand) {
 		int numDropped = 1;
-		numDropped = ZGHelper.rngNumber(minDropped, maxDropped);
+		numDropped = ZGHelper.rngInt(minDropped, maxDropped);
 		return numDropped;
 	}
 	

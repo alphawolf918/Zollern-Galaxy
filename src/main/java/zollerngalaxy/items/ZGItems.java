@@ -124,6 +124,9 @@ public class ZGItems {
 	public static final Item perdDiamond = new ZGItemBase("perddiamond");
 	public static final Item perdEtrium = new ZGItemBase("etrium");
 	
+	public static final Item shagreen = new ZGItemBase("shagreen");
+	public static final Item sharkTooth = new ZGItemBase("sharktooth");
+	
 	public static final Item starGateTier1 = new ItemStargate(1);
 	public static final Item starGateTier2 = new ItemStargate(2);
 	public static final Item starGateTier3 = new ItemStargate(3);
@@ -190,13 +193,13 @@ public class ZGItems {
 				compressedSuperChargedCoal, compressedRiven, compressedAmaranth, compressedAzurite, compressedZollernium, rawAlienBacon,
 				cookedAlienBacon, rawAlienBeef, cookedAlienBeef, edenFruit, perdBerry, perdPeach, rawBlubberFish, cookedBlubberFish,
 				rawBladeFish, cookedBladeFish, rawGypsyFish, cookedGypsyFish, creamBall, chocolateRaw, chocolateBar, brownie, candyApple,
-				iceCreamSandwich, iceCream, edenDungeonKey, perdGlowdust, perdDiamond, perdEtrium, perdReed, darkEssence, superChargedCoal,
-				powerStick, starGateTier1, starGateTier2, starGateTier3, starGateTier4, starGateTier5, starGateTier6, starGateTier7,
-				starGateTier8, starGateTier9, starGateTier10, starGateCandy, OMNITOOL, pickaxeCobalt, pickaxeEvenium, pickaxeVirinium,
-				pickaxeAmaranth, pickaxeAzurite, pickaxeZollernium, shovelCobalt, shovelEvenium, shovelVirinium, shovelAmaranth,
-				shovelAzurite, shovelZollernium, axeCobalt, axeEvenium, axeVirinium, axeAmaranth, axeAzurite, axeZollernium, hoeCobalt,
-				hoeEvenium, hoeVirinium, hoeAmaranth, hoeAzurite, hoeZollernium, swordCobalt, swordEvenium, swordVirinium, swordAmaranth,
-				swordAzurite, swordZollernium);
+				iceCreamSandwich, iceCream, edenDungeonKey, perdGlowdust, perdDiamond, perdEtrium, perdReed, shagreen, sharkTooth,
+				darkEssence, superChargedCoal, powerStick, starGateTier1, starGateTier2, starGateTier3, starGateTier4, starGateTier5,
+				starGateTier6, starGateTier7, starGateTier8, starGateTier9, starGateTier10, starGateCandy, OMNITOOL, pickaxeCobalt,
+				pickaxeEvenium, pickaxeVirinium, pickaxeAmaranth, pickaxeAzurite, pickaxeZollernium, shovelCobalt, shovelEvenium,
+				shovelVirinium, shovelAmaranth, shovelAzurite, shovelZollernium, axeCobalt, axeEvenium, axeVirinium, axeAmaranth,
+				axeAzurite, axeZollernium, hoeCobalt, hoeEvenium, hoeVirinium, hoeAmaranth, hoeAzurite, hoeZollernium, swordCobalt,
+				swordEvenium, swordVirinium, swordAmaranth, swordAzurite, swordZollernium);
 		ZGHelper.Log("Loaded a total of " + totalItems + " new items.");
 	}
 	

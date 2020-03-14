@@ -201,22 +201,4 @@ public class ZGBiomeBase extends BiomeGenBaseGC {
 		return this;
 	}
 	
-	// @Override
-	// public void initialiseMobLists(LinkedList<SpawnListEntry> mobInfo) {
-	// this.clearAllSpawning();
-	// for (SpawnListEntry entry : mobInfo) {
-	// Class<?> mobClass = entry.entityClass;
-	// if (EntityWaterMob.class.isAssignableFrom(mobClass) ||
-	// EntityWaterMobZG.class.isAssignableFrom(mobClass)) {
-	// this.spawnableWaterCreatureList.add(entry);
-	// } else if (EntityAmbientCreature.class.isAssignableFrom(mobClass)) {
-	// this.spawnableCaveCreatureList.add(entry);
-	// } else if (EntityMob.class.isAssignableFrom(mobClass)) {
-	// this.spawnableMonsterList.add(entry);
-	// } else {
-	// this.spawnableCreatureList.add(entry);
-	// }
-	// }
-	// }
-	
 }

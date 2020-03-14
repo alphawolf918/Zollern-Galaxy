@@ -9,6 +9,7 @@ package zollerngalaxy.biomes.altum;
 
 import java.util.Random;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.passive.EntitySquid;
 import net.minecraft.init.Blocks;
@@ -20,23 +21,30 @@ import zollerngalaxy.biomes.decorators.BiomeDecoratorAltum;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderAltum;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
+import zollerngalaxy.lib.helpers.ZGHelper;
+import zollerngalaxy.mobs.entities.EntityBladeFish;
 import zollerngalaxy.mobs.entities.EntityBlubberFish;
 import zollerngalaxy.mobs.entities.EntityGypsyFish;
+import zollerngalaxy.mobs.entities.EntityShark;
 import zollerngalaxy.mobs.entities.EntitySquidlus;
 import zollerngalaxy.planets.ZGPlanets;
 
 public class BiomeAltumBase extends BiomeSpace {
 	
 	protected static final IBlockState STONE = ZGBlocks.altumStone.getDefaultState();
+	protected static final IBlockState ROCK = ZGBlocks.altumRock.getDefaultState();
 	protected static final IBlockState AIR = Blocks.AIR.getDefaultState();
 	protected static final IBlockState BEDROCK = Blocks.BEDROCK.getDefaultState();
 	protected static final IBlockState GRAVEL = ZGBlocks.altumGravel.getDefaultState();
 	protected static final IBlockState DIRT = ZGBlocks.altumDirt.getDefaultState();
+	protected static final IBlockState SAND = ZGBlocks.altumSand.getDefaultState();
 	protected static final IBlockState ICE = Blocks.ICE.getDefaultState();
 	protected static final IBlockState WATER = Blocks.WATER.getDefaultState();
+	protected static final IBlockState SPONGE = Blocks.SPONGE.getDefaultState();
+	protected static final PropertyBool WET = PropertyBool.create("wet");
 	
 	protected static final int SEA_LEVEL = ChunkProviderAltum.SEA_LEVEL;
-	protected static final int SEA_FLOOR_LEVEL = 42;
+	protected static final int SEA_FLOOR_LEVEL = ChunkProviderAltum.SEA_FLOOR_LEVEL;
 	
 	public BiomeDecoratorAltum biomeDecor = this.getBiomeDecorator();
 	
@@ -45,10 +53,12 @@ public class BiomeAltumBase extends BiomeSpace {
 		this.setTempCategory(TempCategory.MEDIUM);
 		this.setBiomeHeight(45);
 		this.setTemp(84.23F);
-		this.spawnableWaterCreatureList.add(new SpawnListEntry(EntityBlubberFish.class, 80, 3, 6));
 		this.spawnableWaterCreatureList.add(new SpawnListEntry(EntitySquidlus.class, 85, 2, 4));
+		this.spawnableWaterCreatureList.add(new SpawnListEntry(EntityBlubberFish.class, 80, 3, 6));
 		this.spawnableWaterCreatureList.add(new SpawnListEntry(EntitySquid.class, 75, 2, 4));
 		this.spawnableWaterCreatureList.add(new SpawnListEntry(EntityGypsyFish.class, 62, 4, 8));
+		this.spawnableWaterCreatureList.add(new SpawnListEntry(EntityShark.class, 55, 1, 2));
+		this.spawnableWaterCreatureList.add(new SpawnListEntry(EntityBladeFish.class, 51, 1, 3));
 		this.waterColor = 0x00008b;
 		this.setPlanetForBiome(ZGPlanets.planetAltum);
 	}
@@ -60,24 +70,34 @@ public class BiomeAltumBase extends BiomeSpace {
 		IBlockState fillState = this.fillerBlock;
 		int j = -1;
 		int k = (int) (noiseVal / 3.0D + 3.0D + rand.nextDouble() * 0.25D);
-		int x2 = x & 15;
-		int z2 = z & 15;
+		int z2 = x & 15;
+		int x2 = z & 15;
 		
 		for (int y = 255; y >= 0; --y) {
 			if (y == 0) {
-				chunkPrimerIn.setBlockState(z2, y, x2, BEDROCK);
+				chunkPrimerIn.setBlockState(x2, y, z2, BEDROCK);
 			} else {
-				IBlockState iblockstate2 = chunkPrimerIn.getBlockState(z2, y, x2);
+				IBlockState iblockstate2 = chunkPrimerIn.getBlockState(x2, y, z2);
 				if (this.getBiomeType() == EnumBiomeTypeZG.OCEAN) {
+					topState = SAND;
+					fillState = ROCK;
 					if ((y < SEA_LEVEL) && (y > SEA_FLOOR_LEVEL)) {
-						chunkPrimerIn.setBlockState(z2, y, x2, WATER);
+						chunkPrimerIn.setBlockState(x2, y, z2, WATER);
 					} else if (y < SEA_FLOOR_LEVEL) {
-						chunkPrimerIn.setBlockState(z2, y, x2, STONE);
-					} else if (y == SEA_FLOOR_LEVEL) {
-						// TODO: Add special stuff here
-						chunkPrimerIn.setBlockState(z2, y, x2, DIRT);
+						chunkPrimerIn.setBlockState(x2, y, z2, STONE);
+					} else if (y == ZGHelper.rngInt(SEA_FLOOR_LEVEL, (SEA_LEVEL - 10))) {
+						if (rand.nextInt(10) == 2) {
+							chunkPrimerIn.setBlockState(x2, (y + 1), z2, SPONGE.withProperty(WET, Boolean.valueOf(true)));
+						}
+						if (rand.nextInt(10) == 2) {
+							chunkPrimerIn.setBlockState(x2, (y + 1), (z2 + 1), GRAVEL);
+							if (rand.nextInt(5) == 2) {
+								chunkPrimerIn.setBlockState(x2, (y + 2), (z2 + 1), GRAVEL);
+							}
+						}
+						chunkPrimerIn.setBlockState(x2, y, z2, DIRT);
 					} else if (y >= SEA_LEVEL) {
-						chunkPrimerIn.setBlockState(z2, y, x2, AIR);
+						chunkPrimerIn.setBlockState(x2, y, z2, AIR);
 					}
 				} else {
 					if (iblockstate2.getMaterial() == Material.AIR) {
@@ -99,17 +119,17 @@ public class BiomeAltumBase extends BiomeSpace {
 							j = k;
 							
 							if (y >= i - 1) {
-								chunkPrimerIn.setBlockState(z2, y, x2, topState);
+								chunkPrimerIn.setBlockState(x2, y, z2, topState);
 							} else if (y < i - 7 - k) {
 								topState = AIR;
 								fillState = STONE;
-								chunkPrimerIn.setBlockState(z2, y, x2, GRAVEL);
+								chunkPrimerIn.setBlockState(x2, y, z2, GRAVEL);
 							} else {
-								chunkPrimerIn.setBlockState(z2, y, x2, fillState);
+								chunkPrimerIn.setBlockState(x2, y, z2, fillState);
 							}
 						} else if (j > 0) {
 							--j;
-							chunkPrimerIn.setBlockState(z2, y, x2, fillState);
+							chunkPrimerIn.setBlockState(x2, y, z2, fillState);
 						}
 					}
 				}

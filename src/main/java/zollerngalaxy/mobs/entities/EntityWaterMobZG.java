@@ -14,19 +14,25 @@ import net.minecraft.entity.ai.EntityAIBase;
 import net.minecraft.entity.passive.EntityWaterMob;
 import net.minecraft.init.MobEffects;
 import net.minecraft.init.SoundEvents;
+import net.minecraft.pathfinding.PathNodeType;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.datafix.DataFixer;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 import zollerngalaxy.lib.helpers.ZGHelper;
 
 public class EntityWaterMobZG extends EntityWaterMob {
 	
-	private float randomMotionVecX;
-	private float randomMotionVecY;
-	private float randomMotionVecZ;
-	private float randomMotionSpeed = 1.0F;
+	private BlockPos homePosition = BlockPos.ORIGIN;
+	private float maximumHomeDistance = -1.0F;
+	private final float restoreWaterCost = PathNodeType.WATER.getPriority();
+	
+	protected float randomMotionVecX;
+	protected float randomMotionVecY;
+	protected float randomMotionVecZ;
+	protected float randomMotionSpeed = 0.1F;
 	
 	public float fishPitch;
 	public float prevFishPitch;
@@ -40,11 +46,14 @@ public class EntityWaterMobZG extends EntityWaterMob {
 	protected float fishSize = (this.fishEq + this.minSize);
 	
 	protected float seaLevel = (this.getEntityWorld().getSeaLevel() * 1.0F);
+	
 	protected double motionYStart;
+	protected double posYStart;
 	
 	public EntityWaterMobZG(World worldIn) {
 		super(worldIn);
-		motionYStart = this.motionY;
+		this.motionYStart = this.motionY;
+		this.posYStart = this.posY;
 	}
 	
 	public static void registerFixesSquid(DataFixer fixer) {
@@ -83,7 +92,7 @@ public class EntityWaterMobZG extends EntityWaterMob {
 	
 	@Override
 	protected float getSoundVolume() {
-		return 0.4F;
+		return 0.8F;
 	}
 	
 	@Override
@@ -93,33 +102,36 @@ public class EntityWaterMobZG extends EntityWaterMob {
 		this.prevFishYaw = this.fishYaw;
 		
 		if (this.inWater) {
-			if (motionY <= seaLevel) {
-				if (this.getRNG().nextFloat() > 0.75D) {
-					this.randomMotionSpeed = ZGHelper.rngFloat(0.1F, 1.0F);
-				} else {
-					this.randomMotionSpeed *= ZGHelper.rngFloat(0.1F, 0.9F);
-				}
-			}
-			
 			if (!this.world.isRemote) {
-				float motionYNew = this.randomMotionVecY * this.randomMotionSpeed;
-				if (motionYNew >= (seaLevel - 5)) {
-					motionYNew = (seaLevel - (seaLevel / 2));
-					this.randomMotionSpeed = ZGHelper.rngFloat(0.1F, 1.0F);
+				if (motionY <= seaLevel) {
+					if (this.getRNG().nextFloat() > 0.75D) {
+						this.randomMotionSpeed = ZGHelper.rngFloat(0.1F, 1.0F);
+					} else {
+						this.randomMotionSpeed *= ZGHelper.rngFloat(0.1F, 0.9F);
+					}
 				}
 				
-				this.motionX = this.randomMotionVecX * this.randomMotionSpeed;
-				this.motionY = motionYNew;
-				this.motionZ = this.randomMotionVecZ * this.randomMotionSpeed;
-				if (!this.inWater) {
-					this.motionY -= 2.08D;
+				if (!this.world.isRemote) {
+					double motionYNew = this.randomMotionVecY * this.randomMotionSpeed;
+					if (motionYNew >= (seaLevel - 5)) {
+						motionYNew = motionYStart;// (seaLevel - (seaLevel / 2));
+						this.posY = this.posYStart;
+						this.randomMotionSpeed = 0.1F;
+					}
+					
+					this.motionX = (this.randomMotionVecX * this.randomMotionSpeed);
+					this.motionY = motionYNew;
+					this.motionZ = (this.randomMotionVecZ * this.randomMotionSpeed);
+					if (!this.inWater) {
+						this.motionY -= 2.08D;
+					}
 				}
+				
+				float f1 = MathHelper.sqrt(this.motionX * this.motionX + this.motionZ * this.motionZ);
+				this.renderYawOffset += (-((float) MathHelper.atan2(this.motionX, this.motionZ)) * (180F / (float) Math.PI) - this.renderYawOffset) * 0.1F;
+				this.fishYaw = (float) (this.fishYaw + Math.PI * 1.5D);
+				this.fishPitch += (-((float) MathHelper.atan2(f1, this.motionY)) * (180F / (float) Math.PI) - this.fishPitch) * 0.1F;
 			}
-			
-			float f1 = MathHelper.sqrt(this.motionX * this.motionX + this.motionZ * this.motionZ);
-			this.renderYawOffset += (-((float) MathHelper.atan2(this.motionX, this.motionZ)) * (180F / (float) Math.PI) - this.renderYawOffset) * 0.1F;
-			this.fishYaw = (float) (this.fishYaw + Math.PI * 1.5D);
-			this.fishPitch += (-((float) MathHelper.atan2(f1, this.motionY)) * (180F / (float) Math.PI) - this.fishPitch) * 0.1F;
 		} else {
 			if (!this.world.isRemote) {
 				this.motionX = 0.0D;
@@ -167,7 +179,19 @@ public class EntityWaterMobZG extends EntityWaterMob {
 		return true;
 	}
 	
-	static class AIMoveRandom extends EntityAIBase {
+	public boolean isWithinHomeDistanceCurrentPosition() {
+		return this.isWithinHomeDistanceFromPosition(new BlockPos(this));
+	}
+	
+	public boolean isWithinHomeDistanceFromPosition(BlockPos pos) {
+		if (this.maximumHomeDistance == -1.0F) {
+			return true;
+		} else {
+			return this.homePosition.distanceSq(pos) < this.maximumHomeDistance * this.maximumHomeDistance;
+		}
+	}
+	
+	protected static class AIMoveRandom extends EntityAIBase {
 		
 		private final EntityWaterMobZG fish;
 		
@@ -185,7 +209,7 @@ public class EntityWaterMobZG extends EntityWaterMob {
 			int i = this.fish.getIdleTime();
 			
 			if (i > 100) {
-				this.fish.setMovementVector(0.0F, 1.0F, 0.0F);
+				this.fish.setMovementVector(0.0F, ZGHelper.rngFloat(0.1F, 1.0F), 0.0F);
 			} else if (this.fish.getRNG().nextInt(50) == 0 || !this.fish.inWater || !this.fish.hasMovementVector()) {
 				float f = this.fish.getRNG().nextFloat() * ((float) Math.PI * 2F);
 				float f1 = MathHelper.cos(f) * 0.2F;

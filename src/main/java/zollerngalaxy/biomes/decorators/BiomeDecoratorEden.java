@@ -188,12 +188,12 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 		}
 		
 		if (this.edenTreesPerChunk > 0) {
-			WorldGenEdenTrees treeGen = new WorldGenEdenTrees(false, ZGHelper.rngNumber(5, 10),
+			WorldGenEdenTrees treeGen = new WorldGenEdenTrees(false, ZGHelper.rngInt(5, 10),
 					ZGBlocks.edenWoodLog.getDefaultState(), ZGBlocks.edenWoodLeaves.getDefaultState(), this.generateVines);
 			for (int i = 0; i < this.edenTreesPerChunk; ++i) {
 				y = rand.nextInt(rand.nextInt(genY) + 8);
 				if (y < 64) {
-					y = ZGHelper.rngNumber(64, 82);
+					y = ZGHelper.rngInt(64, 82);
 				}
 				
 				if (rand.nextInt(100) <= 50) {

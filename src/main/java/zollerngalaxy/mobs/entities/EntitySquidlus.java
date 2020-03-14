@@ -9,7 +9,7 @@ public class EntitySquidlus extends EntitySquid {
 	public EntitySquidlus(World worldIn) {
 		super(worldIn);
 		this.rand.setSeed(1 + this.getEntityId());
-		this.setSize(1.5F, 1.5F);
+		// this.setSize(1.5F, 1.5F);
 	}
 	
 	@Override

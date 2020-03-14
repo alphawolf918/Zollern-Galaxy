@@ -44,13 +44,13 @@ public class ZGBlocks {
 	
 	public static final Block edenWoodLog = new ZGBlockLog("edenwoodlog");
 	public static final Block edenWoodLeaves = new ZGBlockLeaves("edenwoodleaves", ZGBlocks.edenWoodSapling);
-	private static WorldGenerator edenTreeGen = new WorldGenEdenTrees(true, ZGHelper.rngNumber(5, 15),
+	private static WorldGenerator edenTreeGen = new WorldGenEdenTrees(true, ZGHelper.rngInt(5, 15),
 			ZGBlocks.edenWoodLog.getDefaultState(), ZGBlocks.edenWoodLeaves.getDefaultState(), false);
 	
 	public static final Block perdWoodLogs = new ZGBlockLog("palmwoodlog");
 	public static final Block perdWoodLeaves = new ZGFruitLeaves("palmwoodleaves", ZGBlocks.perdTreeSapling, ZGItems.perdPeach);
 	public static final Block perdWoodPlanks = new ZGBlockPlanks("palmwoodplanks");
-	private static WorldGenerator palmWoodTreeGen = new WorldGenPalmwoodTrees(true, ZGHelper.rngNumber(5, 15),
+	private static WorldGenerator palmWoodTreeGen = new WorldGenPalmwoodTrees(true, ZGHelper.rngInt(5, 15),
 			ZGBlocks.perdWoodLogs.getDefaultState(), ZGBlocks.perdWoodLeaves.getDefaultState(), false);
 	
 	// These have to be declared up top or else weird things happen.

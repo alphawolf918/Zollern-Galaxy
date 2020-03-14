@@ -100,7 +100,7 @@ public class ChunkProviderOrbitZG extends ChunkProviderBase {
 			int posY = 62;
 			int posZ = l - 3;
 			
-			int increaseBy = ZGHelper.rngNumber(100, 200);
+			int increaseBy = ZGHelper.rngInt(100, 200);
 			
 			int numSpaceStations = ConfigManagerZG.spaceStationGenAmount;
 			
