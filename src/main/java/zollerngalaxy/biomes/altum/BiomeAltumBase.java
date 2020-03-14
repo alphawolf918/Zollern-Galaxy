@@ -25,6 +25,7 @@ import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.mobs.entities.EntityBladeFish;
 import zollerngalaxy.mobs.entities.EntityBlubberFish;
 import zollerngalaxy.mobs.entities.EntityGypsyFish;
+import zollerngalaxy.mobs.entities.EntityJellyfish;
 import zollerngalaxy.mobs.entities.EntityShark;
 import zollerngalaxy.mobs.entities.EntitySquidlus;
 import zollerngalaxy.planets.ZGPlanets;
@@ -41,6 +42,7 @@ public class BiomeAltumBase extends BiomeSpace {
 	protected static final IBlockState ICE = Blocks.ICE.getDefaultState();
 	protected static final IBlockState WATER = Blocks.WATER.getDefaultState();
 	protected static final IBlockState SPONGE = Blocks.SPONGE.getDefaultState();
+	
 	protected static final PropertyBool WET = PropertyBool.create("wet");
 	
 	protected static final int SEA_LEVEL = ChunkProviderAltum.SEA_LEVEL;
@@ -50,15 +52,12 @@ public class BiomeAltumBase extends BiomeSpace {
 	
 	public BiomeAltumBase(String singleName, BiomeProperties props) {
 		super(singleName, props);
+		props.setBaseHeight(0.5F);
+		props.setHeightVariation(0.6F);
 		this.setTempCategory(TempCategory.MEDIUM);
 		this.setBiomeHeight(45);
 		this.setTemp(84.23F);
-		this.spawnableWaterCreatureList.add(new SpawnListEntry(EntitySquidlus.class, 85, 2, 4));
-		this.spawnableWaterCreatureList.add(new SpawnListEntry(EntityBlubberFish.class, 80, 3, 6));
-		this.spawnableWaterCreatureList.add(new SpawnListEntry(EntitySquid.class, 75, 2, 4));
-		this.spawnableWaterCreatureList.add(new SpawnListEntry(EntityGypsyFish.class, 62, 4, 8));
-		this.spawnableWaterCreatureList.add(new SpawnListEntry(EntityShark.class, 55, 1, 2));
-		this.spawnableWaterCreatureList.add(new SpawnListEntry(EntityBladeFish.class, 51, 1, 3));
+		this.addWaterSpawns();
 		this.waterColor = 0x00008b;
 		this.setPlanetForBiome(ZGPlanets.planetAltum);
 	}
@@ -85,7 +84,7 @@ public class BiomeAltumBase extends BiomeSpace {
 						chunkPrimerIn.setBlockState(x2, y, z2, WATER);
 					} else if (y < SEA_FLOOR_LEVEL) {
 						chunkPrimerIn.setBlockState(x2, y, z2, STONE);
-					} else if (y == ZGHelper.rngInt(SEA_FLOOR_LEVEL, (SEA_LEVEL - 10))) {
+					} else if (y == SEA_FLOOR_LEVEL) {
 						if (rand.nextInt(10) == 2) {
 							chunkPrimerIn.setBlockState(x2, (y + 1), z2, SPONGE.withProperty(WET, Boolean.valueOf(true)));
 						}
@@ -95,7 +94,10 @@ public class BiomeAltumBase extends BiomeSpace {
 								chunkPrimerIn.setBlockState(x2, (y + 2), (z2 + 1), GRAVEL);
 							}
 						}
-						chunkPrimerIn.setBlockState(x2, y, z2, DIRT);
+						for (int i2 = 0; i2 < ZGHelper.rngInt(1, 5); i2++) {
+							IBlockState blockToUse = (ZGHelper.getRNG().nextInt(5) == 1) ? DIRT : STONE;
+							chunkPrimerIn.setBlockState(x2, (y + i2), z2, blockToUse);
+						}
 					} else if (y >= SEA_LEVEL) {
 						chunkPrimerIn.setBlockState(x2, y, z2, AIR);
 					}
@@ -164,6 +166,16 @@ public class BiomeAltumBase extends BiomeSpace {
 	@Override
 	public int getModdedBiomeGrassColor(int original) {
 		return this.grassFoliageColor;
+	}
+	
+	public void addWaterSpawns() {
+		this.spawnableWaterCreatureList.add(new SpawnListEntry(EntitySquidlus.class, 75, 2, 4));
+		this.spawnableWaterCreatureList.add(new SpawnListEntry(EntitySquid.class, 70, 2, 4));
+		this.spawnableWaterCreatureList.add(new SpawnListEntry(EntityJellyfish.class, 65, 1, 4));
+		this.spawnableWaterCreatureList.add(new SpawnListEntry(EntityGypsyFish.class, 62, 4, 8));
+		this.spawnableWaterCreatureList.add(new SpawnListEntry(EntityBlubberFish.class, 60, 3, 6));
+		this.spawnableWaterCreatureList.add(new SpawnListEntry(EntityBladeFish.class, 55, 1, 3));
+		this.spawnableWaterCreatureList.add(new SpawnListEntry(EntityShark.class, 45, 1, 2));
 	}
 	
 }

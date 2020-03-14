@@ -15,7 +15,8 @@ public class BiomeSanctumBeach extends BiomeAltumBase {
 	
 	public BiomeSanctumBeach(BiomeProperties props) {
 		super("sanctumbeach", props);
-		props.setRainDisabled();
+		props.setBaseHeight(0.5F);
+		props.setHeightVariation(1.2F);
 		this.setBiomeHeight(25);
 		this.setBiomeType(EnumBiomeTypeZG.BEACH);
 		this.setTemp(76.18F);

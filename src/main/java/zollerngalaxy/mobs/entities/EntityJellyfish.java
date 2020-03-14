@@ -9,11 +9,13 @@ package zollerngalaxy.mobs.entities;
 
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.passive.EntitySquid;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
+import zollerngalaxy.util.ZGDamageSrc;
 
-public class EntitySquidlus extends EntitySquid {
+public class EntityJellyfish extends EntitySquid {
 	
-	public EntitySquidlus(World worldIn) {
+	public EntityJellyfish(World worldIn) {
 		super(worldIn);
 		this.rand.setSeed(1 + this.getEntityId());
 	}
@@ -21,13 +23,20 @@ public class EntitySquidlus extends EntitySquid {
 	@Override
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.21D);
-		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(20.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.24D);
+		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(2.0D);
+	}
+	
+	@Override
+	public void onCollideWithPlayer(EntityPlayer playerIn) {
+		if (!this.getEntityWorld().isRemote) {
+			playerIn.attackEntityFrom(ZGDamageSrc.deathJellyfish, ZGDamageSrc.deathJellyfish.getDamageBase());
+		}
 	}
 	
 	@Override
 	public boolean getCanSpawnHere() {
-		boolean seaHeightMax = this.posY >= 25.0D;
+		boolean seaHeightMax = this.posY >= 15.0D;
 		boolean seaHeightMin = this.posY <= this.getEntityWorld().getSeaLevel();
 		boolean canSpawnHereSuper = super.getCanSpawnHere();
 		boolean canSpawn = (seaHeightMax && seaHeightMin && canSpawnHereSuper);

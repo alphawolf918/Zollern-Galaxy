@@ -15,7 +15,8 @@ public class BiomeRockyIsles extends BiomeAltumBase {
 	
 	public BiomeRockyIsles(BiomeProperties props) {
 		super("rockyisles", props);
-		props.setRainDisabled();
+		props.setBaseHeight(1.8F);
+		props.setHeightVariation(2.0F);
 		this.setBiomeHeight(42);
 		this.setBiomeType(EnumBiomeTypeZG.ISLAND);
 		this.setTemp(84.23F);

@@ -23,29 +23,29 @@ import zollerngalaxy.mobs.entities.EntityWaterMobZG;
 import com.google.common.base.Function;
 import com.google.common.base.Predicate;
 
-public class EntityAINearestAttackableWaterMobTarget<T extends EntityLivingBase> extends EntityAIWaterMobTarget {
+public class EntityAIFishNearestAttackableTarget<T extends EntityLivingBase> extends EntityAIFishTarget {
 	
 	protected final Class<T> targetClass;
 	private final int targetChance;
 	/** Instance of EntityAINearestAttackableTargetSorter. */
-	protected final EntityAINearestAttackableWaterMobTarget.Sorter sorter;
+	protected final EntityAIFishNearestAttackableTarget.Sorter sorter;
 	protected final Predicate<? super T> targetEntitySelector;
 	protected T targetEntity;
 	
-	public EntityAINearestAttackableWaterMobTarget(EntityWaterMobZG creature, Class<T> classTarget, boolean checkSight) {
+	public EntityAIFishNearestAttackableTarget(EntityWaterMobZG creature, Class<T> classTarget, boolean checkSight) {
 		this(creature, classTarget, checkSight, false);
 	}
 	
-	public EntityAINearestAttackableWaterMobTarget(EntityWaterMobZG creature, Class<T> classTarget, boolean checkSight, boolean onlyNearby) {
+	public EntityAIFishNearestAttackableTarget(EntityWaterMobZG creature, Class<T> classTarget, boolean checkSight, boolean onlyNearby) {
 		this(creature, classTarget, 10, checkSight, onlyNearby, (Predicate) null);
 	}
 	
-	public EntityAINearestAttackableWaterMobTarget(EntityWaterMobZG creature, Class<T> classTarget, int chance, boolean checkSight, boolean onlyNearby,
+	public EntityAIFishNearestAttackableTarget(EntityWaterMobZG creature, Class<T> classTarget, int chance, boolean checkSight, boolean onlyNearby,
 			@Nullable final Predicate<? super T> targetSelector) {
 		super(creature, checkSight, onlyNearby);
 		this.targetClass = classTarget;
 		this.targetChance = chance;
-		this.sorter = new EntityAINearestAttackableWaterMobTarget.Sorter(creature);
+		this.sorter = new EntityAIFishNearestAttackableTarget.Sorter(creature);
 		this.setMutexBits(1);
 		this.targetEntitySelector = new Predicate<T>() {
 			@Override
@@ -55,7 +55,7 @@ public class EntityAINearestAttackableWaterMobTarget<T extends EntityLivingBase>
 				} else if (targetSelector != null && !targetSelector.apply(p_apply_1_)) {
 					return false;
 				} else {
-					return !EntitySelectors.NOT_SPECTATING.apply(p_apply_1_) ? false : EntityAINearestAttackableWaterMobTarget.this.isSuitableTarget(
+					return !EntitySelectors.NOT_SPECTATING.apply(p_apply_1_) ? false : EntityAIFishNearestAttackableTarget.this.isSuitableTarget(
 							p_apply_1_, false);
 				}
 			}

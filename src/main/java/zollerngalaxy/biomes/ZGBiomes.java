@@ -132,7 +132,7 @@ public class ZGBiomes {
 	// Altum
 	public static final Biome ALTUM_ROCKY_ISLES = new BiomeRockyIsles(new BiomeProperties("Rocky Isles"));
 	public static final Biome ALTUM_SANCTUM_BEACH = new BiomeSanctumBeach(new BiomeProperties("Sanctum Beach"));
-	public static final Biome ALTUM_OCEAN = new BiomeAltumOcean(new BiomeProperties("Mega Ocean"));
+	public static final Biome ALTUM_OCEAN = new BiomeAltumOcean(new BiomeProperties("The Abyss"));
 	
 	public static void init() {
 		// Zollus

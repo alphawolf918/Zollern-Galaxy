@@ -13,7 +13,7 @@ import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.passive.EntitySquid;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
-import zollerngalaxy.mobs.entities.ai.EntityAINearestAttackableWaterMobTarget;
+import zollerngalaxy.mobs.entities.ai.EntityAIFishNearestAttackableTarget;
 import zollerngalaxy.util.ZGDamageSrc;
 
 public class EntityShark extends EntityWaterMobZG {
@@ -31,12 +31,12 @@ public class EntityShark extends EntityWaterMobZG {
 		this.tasks.addTask(0, new EntityWaterMobZG.AIMoveRandom(this));
 		this.tasks.addTask(1, new EntityAIWatchClosest(this, EntityPlayer.class, 16.0F));
 		this.tasks.addTask(2, new EntityAILookIdle(this));
-		this.targetTasks.addTask(1, new EntityAINearestAttackableWaterMobTarget(this, EntityPlayer.class, true));
-		this.targetTasks.addTask(2, new EntityAINearestAttackableWaterMobTarget(this, EntityBlubberFish.class, true));
-		this.targetTasks.addTask(2, new EntityAINearestAttackableWaterMobTarget(this, EntityGypsyFish.class, true));
-		this.targetTasks.addTask(2, new EntityAINearestAttackableWaterMobTarget(this, EntityBladeFish.class, true));
-		this.targetTasks.addTask(3, new EntityAINearestAttackableWaterMobTarget(this, EntitySquidlus.class, true));
-		this.targetTasks.addTask(3, new EntityAINearestAttackableWaterMobTarget(this, EntitySquid.class, true));
+		this.targetTasks.addTask(1, new EntityAIFishNearestAttackableTarget(this, EntityPlayer.class, true));
+		this.targetTasks.addTask(2, new EntityAIFishNearestAttackableTarget(this, EntityBlubberFish.class, true));
+		this.targetTasks.addTask(2, new EntityAIFishNearestAttackableTarget(this, EntityGypsyFish.class, true));
+		this.targetTasks.addTask(2, new EntityAIFishNearestAttackableTarget(this, EntityBladeFish.class, true));
+		this.targetTasks.addTask(3, new EntityAIFishNearestAttackableTarget(this, EntitySquidlus.class, true));
+		this.targetTasks.addTask(3, new EntityAIFishNearestAttackableTarget(this, EntitySquid.class, true));
 	}
 	
 	@Override

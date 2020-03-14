@@ -16,8 +16,11 @@ Zollern Galaxy v2.0.13
 * Added Sharks.
     - Hostile mobs, but will still spawn on Peaceful. Be careful!
     - Chance to drop shagreen (shark leather) and shark teeth.
+* Added Jellyfish.
+    - Basically just tiny, mean squids. They hurt and are very fast.
 * Fixed alien squid (Squidlus) not spawning.
 * Fixed Squidlus animation weirdness.
 * Fixed Perdita Fueltonium Ore not pulverizing.
+* Fixed Perdita and Mummy Lore Books both being #35.
 * Slightly modified texture of Zucrite block.
 * 

@@ -282,7 +282,7 @@ public class ZGLore {
 				"Many lost souls ended up in this world, and were converted to Dark Agents.",
 				"The planet's beauty is simply a lie; one that covers its darkest essence.", "Traveler, may you wander safely.");
 		
-		BOOK_THIRTYSIX = ZGLore.createLoreBook(35, "Mummies", "Mummies are Wanderers who were consumed by the darkness of the planet, "
+		BOOK_THIRTYSIX = ZGLore.createLoreBook(36, "Mummies", "Mummies are Wanderers who were consumed by the darkness of the planet, "
 				+ "and then converted to darkness through its metamorphic abilities.",
 				"They are mindless, and will attack anything that they perceive to be a threat - which is everything.");
 		

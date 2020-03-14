@@ -22,7 +22,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import zollerngalaxy.mobs.entities.EntityWaterMobZG;
 
-public abstract class EntityAIWaterMobTarget extends EntityAIBase {
+public abstract class EntityAIFishTarget extends EntityAIBase {
 	
 	/** The entity that this task belongs to */
 	protected final EntityWaterMobZG taskOwner;
@@ -49,11 +49,11 @@ public abstract class EntityAIWaterMobTarget extends EntityAIBase {
 	protected EntityLivingBase target;
 	protected int unseenMemoryTicks;
 	
-	public EntityAIWaterMobTarget(EntityWaterMobZG creature, boolean checkSight) {
+	public EntityAIFishTarget(EntityWaterMobZG creature, boolean checkSight) {
 		this(creature, checkSight, false);
 	}
 	
-	public EntityAIWaterMobTarget(EntityWaterMobZG creature, boolean checkSight, boolean onlyNearby) {
+	public EntityAIFishTarget(EntityWaterMobZG creature, boolean checkSight, boolean onlyNearby) {
 		this.unseenMemoryTicks = 60;
 		this.taskOwner = creature;
 		this.shouldCheckSight = checkSight;
@@ -214,7 +214,7 @@ public abstract class EntityAIWaterMobTarget extends EntityAIBase {
 		}
 	}
 	
-	public EntityAIWaterMobTarget setUnseenMemoryTicks(int p_190882_1_) {
+	public EntityAIFishTarget setUnseenMemoryTicks(int p_190882_1_) {
 		this.unseenMemoryTicks = p_190882_1_;
 		return this;
 	}

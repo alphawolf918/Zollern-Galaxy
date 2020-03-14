@@ -25,7 +25,6 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldEntitySpawner;
 import net.minecraft.world.WorldType;
 import net.minecraft.world.biome.Biome;
-import net.minecraft.world.biome.Biome.TempCategory;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.gen.NoiseGenerator;
@@ -41,8 +40,9 @@ import zollerngalaxy.worldgen.mapgen.MapGenRavinesZG;
 public class ChunkProviderAltum extends ChunkProviderBase {
 	
 	public static final IBlockState STONE = ZGBlocks.altumStone.getDefaultState();
-	protected static final IBlockState SAND = ZGBlocks.altumSand.getDefaultState();
-	protected static final IBlockState ROCK = ZGBlocks.altumRock.getDefaultState();
+	public static final IBlockState SAND = ZGBlocks.altumSand.getDefaultState();
+	public static final IBlockState DIRT = ZGBlocks.altumDirt.getDefaultState();
+	public static final IBlockState ROCK = ZGBlocks.altumRock.getDefaultState();
 	public static final IBlockState WATER = Blocks.WATER.getDefaultState();
 	public static final IBlockState ICE = Blocks.ICE.getDefaultState();
 	
@@ -171,13 +171,11 @@ public class ChunkProviderAltum extends ChunkProviderBase {
 								
 								chunkHeightMod += biome.getBaseHeight();
 								
-								if ((lvt_45_1_ += d16) > this.noiseGenSmooth1.getNoise(chunkX * 16 + x, chunkZ * 16 + z) * chunkHeightMod) {
-									if (biome.getTempCategory() == TempCategory.OCEAN) {
-										primer.setBlockState(x, y, z, SAND);
-										primer.setBlockState(x, (y - 1), z, ROCK);
-									} else {
-										primer.setBlockState(x, y, z, STONE);
-									}
+								float x16 = ((chunkX * 16) + x);
+								float z16 = ((chunkZ * 16) + z);
+								
+								if ((lvt_45_1_ += d16) > this.noiseGenSmooth1.getNoise(x16, z16) * chunkHeightMod) {
+									primer.setBlockState(x, y, z, STONE);
 								} else if (y < SEA_LEVEL) {
 									primer.setBlockState(x, y, z, WATER);
 								}
@@ -267,7 +265,7 @@ public class ChunkProviderAltum extends ChunkProviderBase {
 						float f7 = this.parabolicField[j1 + 2 + (k1 + 2) * 5] / (f5 + 2.0F);
 						
 						if (biomegenbase1.getBaseHeight() > biomegenbase.getBaseHeight()) {
-							f7 /= 2.0F;
+							f7 /= ((f6 > 0) ? f6 : (f6 + 1));
 						}
 						
 						f2 += f6 * f7;

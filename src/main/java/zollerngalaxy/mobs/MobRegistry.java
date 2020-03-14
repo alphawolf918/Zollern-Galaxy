@@ -13,6 +13,7 @@ import zollerngalaxy.mobs.entities.EntityBlubberFish;
 import zollerngalaxy.mobs.entities.EntityFrostGiant;
 import zollerngalaxy.mobs.entities.EntityGrayAlien;
 import zollerngalaxy.mobs.entities.EntityGypsyFish;
+import zollerngalaxy.mobs.entities.EntityJellyfish;
 import zollerngalaxy.mobs.entities.EntityMagmos;
 import zollerngalaxy.mobs.entities.EntityMegaCreeper;
 import zollerngalaxy.mobs.entities.EntityMoolus;
@@ -70,8 +71,12 @@ public class MobRegistry {
 		EntitySpawnPlacementRegistry.setPlacementType(EntityBladeFish.class, SpawnPlacementType.IN_WATER);
 		
 		// Shark
-		registerEntity("shark", EntityShark.class, entityId++, 0x444444, 0x8b2222);
+		registerEntity("shark", EntityShark.class, entityId++, 0x8b0000, 0x444444);
 		EntitySpawnPlacementRegistry.setPlacementType(EntityShark.class, SpawnPlacementType.IN_WATER);
+		
+		// Jellyfish
+		registerEntity("jellyfish", EntityJellyfish.class, entityId++, 0x8b0000, 0x008b00);
+		EntitySpawnPlacementRegistry.setPlacementType(EntityJellyfish.class, SpawnPlacementType.IN_WATER);
 		
 		ZGHelper.Log("Loaded a total of " + totalMobs + " new mobs.");
 	}
