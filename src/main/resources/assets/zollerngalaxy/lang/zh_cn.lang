@@ -355,6 +355,7 @@ item.shinestonedust.name=闪亮石粉
 item.shinestoneingot.name=闪亮石锭
 
 item.lapisingot.name=青金石锭
+item.lapisstick.name=青金石棒
 
 item.amaranthingot.name=紫苋锭
 item.amaranthdust.name=紫苋粉
@@ -421,6 +422,10 @@ item.rawbladefish.name=生剑鱼
 item.cookedbladefish.name=熟剑鱼
 item.rawshark.name=生鲨鱼
 item.cookedshark.name=熟鲨鱼
+
+item.shagreen.name=鲨鱼皮
+item.sharktooth.name=鲨鱼牙齿
+item.sharksword.name=鲨齿剑
 
 item.stargate_tier1.name=星门 (协议 一)
 item.stargate_tier2.name=星门 (协议 二)
@@ -491,6 +496,7 @@ entity.zollerngalaxy:gypsyfish.name=吉普赛鱼
 entity.zollerngalaxy:bladefish.name=剑鱼
 entity.zollerngalaxy:abyssalvillager.name=深渊村民
 entity.zollerngalaxy:shark.name=鲨鱼
+entity.zollerngalaxy:jellyfish.name=水母
 
 tooltips.hud=显示所有行星及生物群系数据
 tooltips.hud2=仅在手持时生效
@@ -566,6 +572,55 @@ satellite.space_station.perdita=珀迪塔空间站
 satellite.space_station.altum=阿尔图姆空间站
 satellite.space_station.caligro=开罗空间站
 satellite.space_station.exodus=出埃及记空间站
+#以下内容暂未得到验证，准确性堪忧
+death.attack.bladefish=%1$s 被戳死了。
+death.attack.bladefish.player=%1$s 被 %2$s 戳死了。
+death.attack.bladefish.item=%1$s 被 %2$s 用 %3$s 戳死了。
+
+death.attack.jellyfishsting=%1$s 被水母蛰死了。
+death.attack.jellyfishsting.player=拜 %2$s 所赐，%1$s 被水母蛰死了。
+death.attack.jellyfishsting.item=拜 %2$s 的 %3$s 所赐，%1$s 被水母蛰死了。
+
+death.attack.sharkattack=%1$s 被鲨鱼吃了。貌似还挺好吃的
+death.attack.sharkattack.player=%1$s 因为 %2$s 被鲨鱼吃了。emmmmm，友情的小船总是说翻就翻
+death.attack.sharkattack.item=%1$s 因为 %2$s 的 %3$s 被鲨鱼吃了。表要啊！
+
+death.attack.shadows=%1$s 被阴影吞没了。
+death.attack.shadows.player=%1$s 由于 %2$s 干的好事，被阴影吞没了。
+death.attack.shadows.item=%1$s 由于 %2$s 用 %3$s 干的好事，被阴影吞没了。
+
+death.attack.infection=%1$s 因病毒感染而丧生。
+death.attack.infection.player=%1$s 由 %2$s 所致，因病毒感染而丧生
+death.attack.infection.item=%1$s 由 %2$s 用 %3$s 所致，因病毒感染而丧生。
+
+death.attack.light=%1$s 被闪瞎了24K钛合金狗眼。
+death.attack.light.player=%1$s 被 %2$s 闪瞎了24K钛合金狗眼。
+death.attack.light.item=%1$s 被 %2$s 用 %3$s 闪瞎了24K钛合金狗眼。
+
+death.attack.corruption=%1$s 被侵蚀了。
+death.attack.corruption.player=%1$s 被 %2$s 侵蚀了。
+death.attack.corruption.item=%1$s 被 %2$s 用 %3$s 侵蚀了。
+
+death.attack.deathcold=%1$s 被冻死了。
+death.attack.deathcold.player=%1$s 拜 %2$s 所赐，被冻死了。
+death.attack.deathcold.item=%1$s 拜 %2$s 的 %3$s 所赐，被冻死了。
+
+death.attack.deathhot=%1$s 融化了。
+death.attack.deathhot.player=%1$s 因为 %2$s 而融化了。
+death.attack.deathhot.item=%1$s 因 %2$s 的 %3$s 而融化了。
+
+death.attack.toxic=%1$s 死于有毒物质。
+death.attack.toxic.player=%1$s 因 %2$s 死于有毒物质。
+death.attack.toxic.item=%1$s 因 %2$s 使用 %3$s 而死于有毒物质。
+
+death.attack.radioactive=%1$s 死于辐射。
+death.attack.radioactive.player=%1$s 因 %2$s 而死于辐射。
+death.attack.radioactive.item=%1$s 因 %2$s 使用 %3$s 而死于辐射。
+
+zollerngalaxy_infected=感染
+zollerngalaxy_corruption=侵蚀
+zollerngalaxy_radiance=辐射
+zollerngalaxy_enlightened=启发
 
 itemGroup.ZollernGalaxyBlocks=卓伦星系|方块
 itemGroup.ZollernGalaxyItems=卓伦星系|物品
