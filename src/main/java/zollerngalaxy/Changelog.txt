@@ -18,6 +18,12 @@ Zollern Galaxy v2.0.13
     - Chance to drop shagreen (shark leather) and shark teeth.
 * Added Jellyfish.
     - Basically just tiny, mean squids. They hurt and are very fast.
+* Added the Abyssal Villager.
+    - Model by DabbingEevee.
+    - Fast Alien Villager that can breathe underwater.
+    - If a GC Alien Villager spawns on Altum, it will immediately turn into an Abyssal Villager.
+    - Spawns on land and in water.
+    - They have their own trade items from Zollern Galaxy.
 * Fixed alien squid (Squidlus) not spawning.
 * Fixed Squidlus animation weirdness.
 * Fixed Perdita Fueltonium Ore not pulverizing.

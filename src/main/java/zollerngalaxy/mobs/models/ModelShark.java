@@ -13,7 +13,7 @@ import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
 /**
- * Made by @author Zollern Wolf
+ * Model by Zollern Wolf
  */
 public class ModelShark extends ModelBase {
 	

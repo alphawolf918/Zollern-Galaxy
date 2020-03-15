@@ -22,6 +22,7 @@ import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderAltum;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 import zollerngalaxy.lib.helpers.ZGHelper;
+import zollerngalaxy.mobs.entities.EntityAbyssalVillager;
 import zollerngalaxy.mobs.entities.EntityBladeFish;
 import zollerngalaxy.mobs.entities.EntityBlubberFish;
 import zollerngalaxy.mobs.entities.EntityGypsyFish;
@@ -94,9 +95,13 @@ public class BiomeAltumBase extends BiomeSpace {
 								chunkPrimerIn.setBlockState(x2, (y + 2), (z2 + 1), GRAVEL);
 							}
 						}
-						for (int i2 = 0; i2 < ZGHelper.rngInt(1, 5); i2++) {
-							IBlockState blockToUse = (ZGHelper.getRNG().nextInt(5) == 1) ? DIRT : STONE;
-							chunkPrimerIn.setBlockState(x2, (y + i2), z2, blockToUse);
+						if (rand.nextInt(20) == 3) {
+							for (int i2 = 0; i2 < ZGHelper.rngInt(1, 5); i2++) {
+								IBlockState blockToUse = (ZGHelper.getRNG().nextInt(5) == 1) ? DIRT : STONE;
+								chunkPrimerIn.setBlockState(x2, (y + i2), z2, blockToUse);
+							}
+						} else {
+							chunkPrimerIn.setBlockState(x2, y, z2, DIRT);
 						}
 					} else if (y >= SEA_LEVEL) {
 						chunkPrimerIn.setBlockState(x2, y, z2, AIR);
@@ -176,6 +181,8 @@ public class BiomeAltumBase extends BiomeSpace {
 		this.spawnableWaterCreatureList.add(new SpawnListEntry(EntityBlubberFish.class, 60, 3, 6));
 		this.spawnableWaterCreatureList.add(new SpawnListEntry(EntityBladeFish.class, 55, 1, 3));
 		this.spawnableWaterCreatureList.add(new SpawnListEntry(EntityShark.class, 45, 1, 2));
+		this.spawnableWaterCreatureList.add(new SpawnListEntry(EntityAbyssalVillager.class, 40, 1, 2));
+		this.spawnableCreatureList.add(new SpawnListEntry(EntityAbyssalVillager.class, 40, 1, 2));
 	}
 	
 }

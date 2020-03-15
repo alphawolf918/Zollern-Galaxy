@@ -3,6 +3,7 @@ package zollerngalaxy.mobs;
 import net.minecraft.entity.Entity;
 import net.minecraftforge.fml.client.registry.IRenderFactory;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
+import zollerngalaxy.mobs.entities.EntityAbyssalVillager;
 import zollerngalaxy.mobs.entities.EntityBladeFish;
 import zollerngalaxy.mobs.entities.EntityBlubberFish;
 import zollerngalaxy.mobs.entities.EntityFrostGiant;
@@ -17,6 +18,7 @@ import zollerngalaxy.mobs.entities.EntityOinkus;
 import zollerngalaxy.mobs.entities.EntityScorpion;
 import zollerngalaxy.mobs.entities.EntityShark;
 import zollerngalaxy.mobs.entities.EntitySquidlus;
+import zollerngalaxy.mobs.renders.RenderAbyssalVillager;
 import zollerngalaxy.mobs.renders.RenderBladeFish;
 import zollerngalaxy.mobs.renders.RenderBlubberFish;
 import zollerngalaxy.mobs.renders.RenderFrostGiant;
@@ -49,6 +51,7 @@ public final class MobRenders {
 		RenderMob(EntityBladeFish.class, RenderBladeFish::new);
 		RenderMob(EntityShark.class, RenderShark::new);
 		RenderMob(EntityJellyfish.class, RenderJellyfish::new);
+		RenderMob(EntityAbyssalVillager.class, RenderAbyssalVillager::new);
 	}
 	
 	/**
