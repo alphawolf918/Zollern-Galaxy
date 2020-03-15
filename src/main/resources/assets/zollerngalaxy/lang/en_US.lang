@@ -613,10 +613,6 @@ death.attack.toxic=%1$s died of toxicity.
 death.attack.toxic.player=%1$s died of toxicity because of %2$s.
 death.attack.toxic.item=%1$s died of toxicity because of %2$s using %3$s.
 
-death.attack.radioactive=%1$s died of toxicity.
-death.attack.radioactive.player=%1$s died of toxicity because of %2$s.
-death.attack.radioactive.item=%1$s died of toxicity because of %2$s using %3$s.
-
 zollerngalaxy_infected=Infected
 zollerngalaxy_corruption=Corruption
 zollerngalaxy_radiance=Radiance
