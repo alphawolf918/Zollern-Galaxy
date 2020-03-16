@@ -1,3 +1,10 @@
+/**
+ * Zollern Galaxy by @author Zollern Wolf
+ * Copyright 2016 - 2025
+ * You may use this code to learn from, but do not
+ * claim it as your own, and do not
+ * redistribute it.
+ */
 package zollerngalaxy.network.teleporter;
 
 import io.netty.buffer.ByteBuf;
@@ -52,8 +59,7 @@ public class MessageTeleportToDimension implements IMessage {
 		
 		@Override
 		public synchronized IMessage onMessage(MessageTeleportToDimension message, MessageContext ctx) {
-			FMLCommonHandler.instance().getWorldThread(ctx.netHandler)
-					.addScheduledTask(() -> this.teleportPlayer(message, ctx));
+			FMLCommonHandler.instance().getWorldThread(ctx.netHandler).addScheduledTask(() -> this.teleportPlayer(message, ctx));
 			return message;
 		}
 		

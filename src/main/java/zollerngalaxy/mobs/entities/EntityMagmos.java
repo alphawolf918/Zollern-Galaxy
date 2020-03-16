@@ -1,3 +1,10 @@
+/**
+ * Zollern Galaxy by @author Zollern Wolf
+ * Copyright 2016 - 2025
+ * You may use this code to learn from, but do not
+ * claim it as your own, and do not
+ * redistribute it.
+ */
 package zollerngalaxy.mobs.entities;
 
 import micdoodle8.mods.galacticraft.api.entity.IEntityBreathable;
@@ -34,7 +41,6 @@ public class EntityMagmos extends EntityMob implements IEntityBreathable {
 	
 	public EntityMagmos(World worldIn) {
 		super(worldIn);
-		this.setSize(2.6F, 2.05F);
 		this.isImmuneToFire = true;
 	}
 	
@@ -109,9 +115,8 @@ public class EntityMagmos extends EntityMob implements IEntityBreathable {
 			}
 			
 			for (int i = 0; i < 2; ++i) {
-				this.world.spawnParticle(EnumParticleTypes.SMOKE_LARGE, this.posX + (this.rand.nextDouble() - 0.5D)
-						* this.width, this.posY + this.rand.nextDouble() * this.height, this.posZ
-						+ (this.rand.nextDouble() - 0.5D) * this.width, 0.0D, 0.0D, 0.0D);
+				this.world.spawnParticle(EnumParticleTypes.SMOKE_LARGE, this.posX + (this.rand.nextDouble() - 0.5D) * this.width, this.posY
+						+ this.rand.nextDouble() * this.height, this.posZ + (this.rand.nextDouble() - 0.5D) * this.width, 0.0D, 0.0D, 0.0D);
 			}
 		}
 	}

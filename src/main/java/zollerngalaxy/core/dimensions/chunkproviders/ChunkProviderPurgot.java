@@ -1,3 +1,10 @@
+/**
+ * Zollern Galaxy by @author Zollern Wolf
+ * Copyright 2016 - 2025
+ * You may use this code to learn from, but do not
+ * claim it as your own, and do not
+ * redistribute it.
+ */
 package zollerngalaxy.core.dimensions.chunkproviders;
 
 import java.util.List;
@@ -102,8 +109,8 @@ public class ChunkProviderPurgot extends ChunkProviderBase {
 	
 	private void setBlocksInChunk(int chunkX, int chunkZ, ChunkPrimer primer) {
 		this.noiseGenSmooth1.setFrequency(0.015F);
-		this.biomesForGeneration = this.world.getBiomeProvider().getBiomesForGeneration(this.biomesForGeneration,
-				chunkX * 4 - 2, chunkZ * 4 - 2, 10, 10);
+		this.biomesForGeneration = this.world.getBiomeProvider().getBiomesForGeneration(this.biomesForGeneration, chunkX * 4 - 2,
+				chunkZ * 4 - 2, 10, 10);
 		this.createLandPerBiome(chunkX * 4, chunkZ * 4);
 		
 		for (int i = 0; i < 4; ++i) {
@@ -144,8 +151,7 @@ public class ChunkProviderPurgot extends ChunkProviderBase {
 								int y = i2 * 8 + j2;
 								int z = l * 4 + l2;
 								
-								if ((lvt_45_1_ += d16) > this.noiseGenSmooth1.getNoise(chunkX * 16 + x, chunkZ * 16 + z)
-										* CHUNK_HEIGHT) {
+								if ((lvt_45_1_ += d16) > this.noiseGenSmooth1.getNoise(chunkX * 16 + x, chunkZ * 16 + z) * CHUNK_HEIGHT) {
 									primer.setBlockState(x, y, z, STONE);
 								} else if (y < SEA_LEVEL) {
 									Biome biome = world.getBiome(new BlockPos(x, y, z));
@@ -170,14 +176,13 @@ public class ChunkProviderPurgot extends ChunkProviderBase {
 	
 	private void replaceBlocksForBiome(int p_180517_1_, int p_180517_2_, ChunkPrimer p_180517_3_, Biome[] p_180517_4_) {
 		double d0 = 0.03125D;
-		this.stoneNoise = this.noiseGen4.getRegion(this.stoneNoise, p_180517_1_ * 16, p_180517_2_ * 16, 16, 16, d0 * 2.0D,
-				d0 * 2.0D, 1.0D);
+		this.stoneNoise = this.noiseGen4.getRegion(this.stoneNoise, p_180517_1_ * 16, p_180517_2_ * 16, 16, 16, d0 * 2.0D, d0 * 2.0D, 1.0D);
 		
 		for (int i = 0; i < 16; ++i) {
 			for (int j = 0; j < 16; ++j) {
 				Biome biomegenbase = p_180517_4_[j + i * 16];
-				biomegenbase.genTerrainBlocks(this.world, this.rand, p_180517_3_, p_180517_1_ * 16 + i,
-						p_180517_2_ * 16 + j, this.stoneNoise[j + i * 16]);
+				biomegenbase.genTerrainBlocks(this.world, this.rand, p_180517_3_, p_180517_1_ * 16 + i, p_180517_2_ * 16 + j,
+						this.stoneNoise[j + i * 16]);
 			}
 		}
 	}
@@ -209,8 +214,8 @@ public class ChunkProviderPurgot extends ChunkProviderBase {
 	
 	private void createLandPerBiome(int x, int z) {
 		this.octaves4 = this.noiseGen6.generateNoiseOctaves(this.octaves4, x, z, 5, 5, 2000.0, 2000.0, 0.5);
-		this.octaves1 = this.noiseGen3.generateNoiseOctaves(this.octaves1, x, 0, z, 5, 33, 5, 8.555150000000001D,
-				4.277575000000001D, 8.555150000000001D);
+		this.octaves1 = this.noiseGen3.generateNoiseOctaves(this.octaves1, x, 0, z, 5, 33, 5, 8.555150000000001D, 4.277575000000001D,
+				8.555150000000001D);
 		this.octaves2 = this.noiseGen1.generateNoiseOctaves(this.octaves2, x, 0, z, 5, 33, 5, 684.412D, 684.412D, 684.412D);
 		this.octaves3 = this.noiseGen2.generateNoiseOctaves(this.octaves3, x, 0, z, 5, 33, 5, 684.412D, 684.412D, 684.412D);
 		int i = 0;
@@ -312,8 +317,7 @@ public class ChunkProviderPurgot extends ChunkProviderBase {
 								* ChunkProviderPurgot.CHUNK_SIZE_X + x, cz * ChunkProviderPurgot.CHUNK_SIZE_Z + z)
 								/ ChunkProviderPurgot.CRATER_PROB) {
 							final Random random = new Random(cx * 16 + x + (cz * 16 + z) * 5000);
-							final EnumCraterSize cSize = EnumCraterSize.sizeArray[random
-									.nextInt(EnumCraterSize.sizeArray.length)];
+							final EnumCraterSize cSize = EnumCraterSize.sizeArray[random.nextInt(EnumCraterSize.sizeArray.length)];
 							final int size = random.nextInt(cSize.MAX_SIZE - cSize.MIN_SIZE) + cSize.MIN_SIZE;
 							this.makeCrater(cx * 16 + x, cz * 16 + z, chunkX * 16, chunkZ * 16, size, primer);
 						}

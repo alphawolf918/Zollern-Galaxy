@@ -1,9 +1,15 @@
+/**
+ * Zollern Galaxy by @author Zollern Wolf
+ * Copyright 2016 - 2025
+ * You may use this code to learn from, but do not
+ * claim it as your own, and do not
+ * redistribute it.
+ */
 package zollerngalaxy.core.enums;
 
 public enum EnumHarvestLevelZG {
 	
-	WOOD(0), STONE(1), IRON(2), DIAMOND(3), COBALT(4), EVENIUM(5), VIRINIUM(6), AMARANTH(7), AZURITE(8), ZOLLERNIUM(9), OMNI(
-			10);
+	WOOD(0), STONE(1), IRON(2), DIAMOND(3), COBALT(4), EVENIUM(5), VIRINIUM(6), AMARANTH(7), AZURITE(8), ZOLLERNIUM(9), OMNI(10);
 	
 	protected int harvestLevel = 2;
 	

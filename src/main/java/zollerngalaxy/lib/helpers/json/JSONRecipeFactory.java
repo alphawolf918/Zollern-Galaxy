@@ -1,3 +1,10 @@
+/**
+ * Zollern Galaxy by @author Zollern Wolf
+ * Copyright 2016 - 2025
+ * You may use this code to learn from, but do not
+ * claim it as your own, and do not
+ * redistribute it.
+ */
 package zollerngalaxy.lib.helpers.json;
 
 import java.io.File;
@@ -61,8 +68,7 @@ public class JSONRecipeFactory {
 	
 	private static void setupAdvDir() {
 		if (ADVANCE_DIR == null) {
-			ADVANCE_DIR = ConfigManagerZG.configuration.getConfigFile().toPath().resolve(FULL_PATH + "/advancements/")
-					.toFile();
+			ADVANCE_DIR = ConfigManagerZG.configuration.getConfigFile().toPath().resolve(FULL_PATH + "/advancements/").toFile();
 		}
 		if (!ADVANCE_DIR.exists()) {
 			ADVANCE_DIR.mkdir();

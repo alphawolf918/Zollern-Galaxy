@@ -1,3 +1,10 @@
+/**
+ * Zollern Galaxy by @author Zollern Wolf
+ * Copyright 2016 - 2025
+ * You may use this code to learn from, but do not
+ * claim it as your own, and do not
+ * redistribute it.
+ */
 package zollerngalaxy.mobs;
 
 import net.minecraft.entity.Entity;
@@ -29,6 +36,8 @@ public class MobRegistry {
 	
 	private static int entityId = -1;
 	private static int totalMobs = 0;
+	
+	private static ZollernGalaxyCore coreInstance = ZollernGalaxyCore.instance();
 	
 	public static void init() {
 		// Moolus
@@ -89,16 +98,15 @@ public class MobRegistry {
 	private static void registerEntity(String name, Class<? extends Entity> cls, int id) {
 		ResourceLocation registryName = new ResourceLocation(ZGInfo.MOD_ID + ":" + name);
 		EntityRegistry.registerModEntity(registryName, cls,
-				CaseFormat.LOWER_UNDERSCORE.to(CaseFormat.LOWER_CAMEL, registryName.toString()), id, ZollernGalaxyCore.instance(), 64, 1,
-				true);
+				CaseFormat.LOWER_UNDERSCORE.to(CaseFormat.LOWER_CAMEL, registryName.toString()), id, coreInstance, 64, 1, true);
 		totalMobs++;
 	}
 	
 	private static void registerEntity(String name, Class<? extends Entity> cls, int id, int primaryEggColor, int secondaryEggColor) {
 		ResourceLocation registryName = new ResourceLocation(ZGInfo.MOD_ID + ":" + name);
 		EntityRegistry.registerModEntity(registryName, cls,
-				CaseFormat.LOWER_UNDERSCORE.to(CaseFormat.LOWER_CAMEL, registryName.toString()), id, ZollernGalaxyCore.instance(), 64, 1,
-				true, primaryEggColor, secondaryEggColor);
+				CaseFormat.LOWER_UNDERSCORE.to(CaseFormat.LOWER_CAMEL, registryName.toString()), id, coreInstance, 64, 1, true,
+				primaryEggColor, secondaryEggColor);
 		totalMobs++;
 	}
 	

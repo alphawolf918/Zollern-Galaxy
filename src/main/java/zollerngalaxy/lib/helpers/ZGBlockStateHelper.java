@@ -1,3 +1,10 @@
+/**
+ * Zollern Galaxy by @author Zollern Wolf
+ * Copyright 2016 - 2025
+ * You may use this code to learn from, but do not
+ * claim it as your own, and do not
+ * redistribute it.
+ */
 package zollerngalaxy.lib.helpers;
 
 import net.minecraft.block.properties.PropertyBool;
@@ -42,6 +49,7 @@ public class ZGBlockStateHelper {
 	public static PropertyInteger AGE = PropertyInteger.create("age", 0, 15);
 	
 	public static enum EnumAxis implements IStringSerializable {
+		
 		X, Y, Z, NONE;
 		
 		private static EnumAxis[] values = EnumAxis.values();
@@ -62,19 +70,20 @@ public class ZGBlockStateHelper {
 		
 		public static EnumAxis fromFacingAxis(Axis axis) {
 			switch (SwitchAxis.AXIS_LOOKUP[axis.ordinal()]) {
-			case 1:
-				return X;
-			case 2:
-				return Y;
-			case 3:
-				return Z;
-			default:
-				return NONE;
+				case 1:
+					return X;
+				case 2:
+					return Y;
+				case 3:
+					return Z;
+				default:
+					return NONE;
 			}
 		}
 	}
 	
 	public static class SwitchAxis {
+		
 		static int[] AXIS_LOOKUP = new int[CachedEnum.valuesAxisCached().length];
 		
 		static {
@@ -96,6 +105,7 @@ public class ZGBlockStateHelper {
 	}
 	
 	public static class SwitchEnumAxis {
+		
 		public static int[] AXIS_LOOKUP = new int[EnumAxis.valuesCached().length];
 		
 		static {

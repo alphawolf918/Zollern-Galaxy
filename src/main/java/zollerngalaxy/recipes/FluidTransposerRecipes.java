@@ -1,3 +1,10 @@
+/**
+ * Zollern Galaxy by @author Zollern Wolf
+ * Copyright 2016 - 2025
+ * You may use this code to learn from, but do not
+ * claim it as your own, and do not
+ * redistribute it.
+ */
 package zollerngalaxy.recipes;
 
 import net.minecraft.init.Items;
@@ -16,9 +23,8 @@ public class FluidTransposerRecipes {
 				new FluidStack(ZGFluids.fluidFueltonium, 2000), true);
 		
 		// Conductive Chargium
-		ThermalExpansionHelper.addTransposerFill(4200, new ItemStack(Items.BUCKET, 1),
-				FluidUtil.getFilledBucket(new FluidStack(ZGFluids.fluidChargium, ZGFluids.fluidChargium.BUCKET_VOLUME)),
-				new FluidStack(ZGFluids.fluidChargium, 1000), true);
+		ThermalExpansionHelper.addTransposerFill(4200, new ItemStack(Items.BUCKET, 1), FluidUtil.getFilledBucket(new FluidStack(
+				ZGFluids.fluidChargium, ZGFluids.fluidChargium.BUCKET_VOLUME)), new FluidStack(ZGFluids.fluidChargium, 1000), true);
 	}
 	
 }

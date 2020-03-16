@@ -1,10 +1,17 @@
+/**
+ * Zollern Galaxy by @author Zollern Wolf
+ * Copyright 2016 - 2025
+ * You may use this code to learn from, but do not
+ * claim it as your own, and do not
+ * redistribute it.
+ */
 package zollerngalaxy.util;
 
 import net.minecraft.util.DamageSource;
 
 public class ZGDamageSrc extends DamageSource {
 	
-	protected float damageBase = 1.0F;
+	protected float damageBase = 2.0F;
 	
 	public static final ZGDamageSrc deathTempCold = new ZGDamageSrc("deathcold", 1.5F, true);
 	public static final ZGDamageSrc deathTempHot = new ZGDamageSrc("deathhot", 2.5F, true);

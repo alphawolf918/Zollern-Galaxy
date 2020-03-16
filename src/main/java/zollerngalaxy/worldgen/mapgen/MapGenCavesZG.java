@@ -1,3 +1,10 @@
+/**
+ * Zollern Galaxy by @author Zollern Wolf
+ * Copyright 2016 - 2025
+ * You may use this code to learn from, but do not
+ * claim it as your own, and do not
+ * redistribute it.
+ */
 package zollerngalaxy.worldgen.mapgen;
 
 import java.util.Random;
@@ -23,14 +30,12 @@ public class MapGenCavesZG extends MapGenBase {
 		this.block = block;
 	}
 	
-	protected void generateLargeCaveNode(long seed, int chunkX, int chunkZ, ChunkPrimer chunk, double par5, double par6,
-			double par7) {
-		this.generateCaveNode(seed, chunkX, chunkZ, chunk, par5, par6, par7, 1.0F + this.rand.nextFloat() * 6.0F, 0.0F,
-				0.0F, -1, -1, 0.5D);
+	protected void generateLargeCaveNode(long seed, int chunkX, int chunkZ, ChunkPrimer chunk, double par5, double par6, double par7) {
+		this.generateCaveNode(seed, chunkX, chunkZ, chunk, par5, par6, par7, 1.0F + this.rand.nextFloat() * 6.0F, 0.0F, 0.0F, -1, -1, 0.5D);
 	}
 	
-	protected void generateCaveNode(long seed, int chunkX, int chunkZ, ChunkPrimer chunk, double par5, double par6,
-			double par7, float par8, float par9, float par10, int par11, int par12, double par13) {
+	protected void generateCaveNode(long seed, int chunkX, int chunkZ, ChunkPrimer chunk, double par5, double par6, double par7,
+			float par8, float par9, float par10, int par11, int par12, double par13) {
 		double d4 = chunkX * 16 + 8;
 		double d5 = chunkZ * 16 + 8;
 		float f3 = 0.0F;
@@ -74,10 +79,10 @@ public class MapGenCavesZG extends MapGenBase {
 			f3 += (random.nextFloat() - random.nextFloat()) * random.nextFloat() * 4.0F;
 			
 			if (!flag2 && par11 == k1 && par8 > 1.0F && par12 > 0) {
-				this.generateCaveNode(random.nextLong(), chunkX, chunkZ, chunk, par5, par6, par7,
-						random.nextFloat() * 0.5F + 0.5F, par9 - (float) Math.PI / 2F, par10 / 3.0F, par11, par12, 1.0D);
-				this.generateCaveNode(random.nextLong(), chunkX, chunkZ, chunk, par5, par6, par7,
-						random.nextFloat() * 0.5F + 0.5F, par9 + (float) Math.PI / 2F, par10 / 3.0F, par11, par12, 1.0D);
+				this.generateCaveNode(random.nextLong(), chunkX, chunkZ, chunk, par5, par6, par7, random.nextFloat() * 0.5F + 0.5F, par9
+						- (float) Math.PI / 2F, par10 / 3.0F, par11, par12, 1.0D);
+				this.generateCaveNode(random.nextLong(), chunkX, chunkZ, chunk, par5, par6, par7, random.nextFloat() * 0.5F + 0.5F, par9
+						+ (float) Math.PI / 2F, par10 / 3.0F, par11, par12, 1.0D);
 				return;
 			}
 			

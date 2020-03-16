@@ -1,3 +1,10 @@
+/**
+ * Zollern Galaxy by @author Zollern Wolf
+ * Copyright 2016 - 2025
+ * You may use this code to learn from, but do not
+ * claim it as your own, and do not
+ * redistribute it.
+ */
 package zollerngalaxy.worldgen.structures;
 
 import micdoodle8.mods.galacticraft.core.world.gen.dungeon.DungeonConfiguration;
@@ -12,9 +19,8 @@ public class DungeonConfigurationEden extends DungeonConfiguration {
 	public DungeonConfigurationEden() {
 	}
 	
-	public DungeonConfigurationEden(IBlockState brickBlock, IBlockState brickBlockFloor, int yPosition,
-			int hallwayLengthMin, int hallwayLengthMax, int hallwayHeight, int roomHeight, Class<?> bossRoom,
-			Class<?> treasureRoom) {
+	public DungeonConfigurationEden(IBlockState brickBlock, IBlockState brickBlockFloor, int yPosition, int hallwayLengthMin,
+			int hallwayLengthMax, int hallwayHeight, int roomHeight, Class<?> bossRoom, Class<?> treasureRoom) {
 		super(brickBlock, yPosition, hallwayLengthMin, hallwayLengthMax, hallwayHeight, roomHeight, bossRoom, treasureRoom);
 		this.brickBlockFloor = brickBlockFloor;
 	}

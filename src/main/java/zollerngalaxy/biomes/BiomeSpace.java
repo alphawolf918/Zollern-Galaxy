@@ -29,6 +29,11 @@ public class BiomeSpace extends ZGBiomeBase {
 		this.init();
 	}
 	
+	public BiomeSpace(String biomeName) {
+		super(new BiomeProperties(biomeName));
+		this.init();
+	}
+	
 	public BiomeSpace(String singleName, BiomeProperties props) {
 		super(singleName, props);
 		this.init();

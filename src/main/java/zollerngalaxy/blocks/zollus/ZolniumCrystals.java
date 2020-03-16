@@ -1,3 +1,10 @@
+/**
+ * Zollern Galaxy by @author Zollern Wolf
+ * Copyright 2016 - 2025
+ * You may use this code to learn from, but do not
+ * claim it as your own, and do not
+ * redistribute it.
+ */
 package zollerngalaxy.blocks.zollus;
 
 import static net.minecraft.block.SoundType.METAL;
@@ -95,8 +102,8 @@ public class ZolniumCrystals extends ZGBlockFlower {
 	@Override
 	public int quantityDroppedWithBonus(int fortune, Random random) {
 		if (fortune > 0
-				&& Item.getItemFromBlock(this) != this.getItemDropped(this.getBlockState().getValidStates().iterator()
-						.next(), random, fortune)) {
+				&& Item.getItemFromBlock(this) != this.getItemDropped(this.getBlockState().getValidStates().iterator().next(), random,
+						fortune)) {
 			int i = random.nextInt(fortune + 2) - 1;
 			
 			if (i < 0) {

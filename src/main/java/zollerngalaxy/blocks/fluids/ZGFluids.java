@@ -1,3 +1,10 @@
+/**
+ * Zollern Galaxy by @author Zollern Wolf
+ * Copyright 2016 - 2025
+ * You may use this code to learn from, but do not
+ * claim it as your own, and do not
+ * redistribute it.
+ */
 package zollerngalaxy.blocks.fluids;
 
 import net.minecraft.block.material.MapColor;
@@ -39,14 +46,14 @@ public class ZGFluids {
 	}
 	
 	private static void registerFluids() {
-		fluidChargium = new Fluid("chargium", new ResourceLocation(ZGInfo.MOD_ID, "blocks/chargiumfluid"),
-				new ResourceLocation(ZGInfo.MOD_ID, "blocks/chargiumfluid"));
-		fluidWhiteLava = new Fluid("whitelava", new ResourceLocation(ZGInfo.MOD_ID, "blocks/whitelava"),
-				new ResourceLocation(ZGInfo.MOD_ID, "blocks/whitelava"));
-		fluidFueltonium = new Fluid("fueltonium", new ResourceLocation(ZGInfo.MOD_ID, "blocks/fueltonium"),
-				new ResourceLocation(ZGInfo.MOD_ID, "blocks/fueltonium"));
-		fluidChocolate = new Fluid("chocolatemelted", new ResourceLocation(ZGInfo.MOD_ID, "blocks/chocolatemelted"),
-				new ResourceLocation(ZGInfo.MOD_ID, "blocks/chocolatemelted"));
+		fluidChargium = new Fluid("chargium", new ResourceLocation(ZGInfo.MOD_ID, "blocks/chargiumfluid"), new ResourceLocation(
+				ZGInfo.MOD_ID, "blocks/chargiumfluid"));
+		fluidWhiteLava = new Fluid("whitelava", new ResourceLocation(ZGInfo.MOD_ID, "blocks/whitelava"), new ResourceLocation(
+				ZGInfo.MOD_ID, "blocks/whitelava"));
+		fluidFueltonium = new Fluid("fueltonium", new ResourceLocation(ZGInfo.MOD_ID, "blocks/fueltonium"), new ResourceLocation(
+				ZGInfo.MOD_ID, "blocks/fueltonium"));
+		fluidChocolate = new Fluid("chocolatemelted", new ResourceLocation(ZGInfo.MOD_ID, "blocks/chocolatemelted"), new ResourceLocation(
+				ZGInfo.MOD_ID, "blocks/chocolatemelted"));
 		
 		FluidRegistry.registerFluid(fluidChargium);
 		FluidRegistry.registerFluid(fluidWhiteLava);
@@ -61,10 +68,10 @@ public class ZGFluids {
 				.setQuantaPerBlock(3).setLightLevel(1.0F);
 		blockWhiteLavaFluid = (ZGFluidBase) ((ZGFluidBase) new ZGFluidBase("whitelava", fluidWhiteLava, Material.LAVA,
 				MapColor.WHITE_STAINED_HARDENED_CLAY).setQuantaPerBlock(6).setLightLevel(1.0F)).setTemperature(5000);
-		blockFueltoniumFluid = (ZGFluidBase) ((ZGFluidBase) new ZGFluidBase("fueltonium", fluidFueltonium, Material.LAVA,
-				MapColor.GREEN).setQuantaPerBlock(10).setLightLevel(1.0F)).setTemperature(10000);
-		blockChocolateFluid = (ZGFluidBase) new ZGFluidBase("chocolatemelted", fluidChocolate, Material.WATER,
-				MapColor.BROWN).setQuantaPerBlock(9).setLightLevel(0.5F);
+		blockFueltoniumFluid = (ZGFluidBase) ((ZGFluidBase) new ZGFluidBase("fueltonium", fluidFueltonium, Material.LAVA, MapColor.GREEN)
+				.setQuantaPerBlock(10).setLightLevel(1.0F)).setTemperature(10000);
+		blockChocolateFluid = (ZGFluidBase) new ZGFluidBase("chocolatemelted", fluidChocolate, Material.WATER, MapColor.BROWN)
+				.setQuantaPerBlock(9).setLightLevel(0.5F);
 		
 		ForgeRegistries.BLOCKS.register(blockChargiumFluid);
 		ForgeRegistries.BLOCKS.register(blockWhiteLavaFluid);

@@ -1,5 +1,12 @@
 package zollerngalaxy.lib.helpers.json;
 
+/**
+ * Zollern Galaxy by @author Zollern Wolf
+ * Copyright 2016 - 2025
+ * You may use this code to learn from, but do not
+ * claim it as your own, and do not
+ * redistribute it.
+ */
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;

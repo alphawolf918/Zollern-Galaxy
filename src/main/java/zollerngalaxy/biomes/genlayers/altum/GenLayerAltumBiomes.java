@@ -16,11 +16,10 @@ import net.minecraftforge.common.BiomeManager;
 import net.minecraftforge.common.BiomeManager.BiomeEntry;
 import net.minecraftforge.common.BiomeManager.BiomeType;
 import zollerngalaxy.biomes.ZGBiomes;
-import zollerngalaxy.biomes.genlayers.zollus.GenLayerZollus;
 import zollerngalaxy.util.CachedEnum;
 import com.google.common.collect.ImmutableList;
 
-public class GenLayerAltumBiomes extends GenLayerZollus {
+public class GenLayerAltumBiomes extends GenLayerAltum {
 	
 	@SuppressWarnings("unchecked")
 	private List<BiomeEntry>[] biomes = new ArrayList[CachedEnum.valuesBiomeCached().length];
@@ -49,6 +48,7 @@ public class GenLayerAltumBiomes extends GenLayerZollus {
 		list.add(new BiomeEntry(ZGBiomes.ALTUM_OCEAN, 95));
 		list.add(new BiomeEntry(ZGBiomes.ALTUM_SANCTUM_BEACH, 65));
 		list.add(new BiomeEntry(ZGBiomes.ALTUM_ROCKY_ISLES, 55));
+		list.add(new BiomeEntry(ZGBiomes.ALTUM_ROCKY_SHORE, 45));
 		
 		currentBiomes[BiomeType.WARM.ordinal()] = new ArrayList<>(list);
 		return currentBiomes;

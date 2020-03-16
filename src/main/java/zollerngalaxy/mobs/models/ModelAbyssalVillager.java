@@ -74,7 +74,6 @@ public class ModelAbyssalVillager extends ModelBase {
 		LeftArm.render(scale);
 		RightLeg.render(scale);
 		LeftLeg.render(scale);
-		// ModelAlienVillager
 	}
 	
 	@Override

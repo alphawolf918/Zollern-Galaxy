@@ -1,3 +1,10 @@
+/**
+ * Zollern Galaxy by @author Zollern Wolf
+ * Copyright 2016 - 2025
+ * You may use this code to learn from, but do not
+ * claim it as your own, and do not
+ * redistribute it.
+ */
 package zollerngalaxy.mobs.entities;
 
 import micdoodle8.mods.galacticraft.api.entity.IEntityBreathable;
@@ -32,7 +39,6 @@ public class EntityFrostGiant extends EntityMob implements IEntityBreathable {
 	
 	public EntityFrostGiant(World worldIn) {
 		super(worldIn);
-		this.setSize(1.8F, 4.05F);
 	}
 	
 	@Override

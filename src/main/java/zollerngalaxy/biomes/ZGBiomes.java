@@ -30,6 +30,7 @@ import net.minecraft.world.biome.Biome.BiomeProperties;
 import net.minecraftforge.common.BiomeDictionary;
 import zollerngalaxy.biomes.altum.BiomeAltumOcean;
 import zollerngalaxy.biomes.altum.BiomeRockyIsles;
+import zollerngalaxy.biomes.altum.BiomeRockyShore;
 import zollerngalaxy.biomes.altum.BiomeSanctumBeach;
 import zollerngalaxy.biomes.atheon.BiomeGoldlands;
 import zollerngalaxy.biomes.atheon.BiomeRadiolarianLakes;
@@ -133,6 +134,7 @@ public class ZGBiomes {
 	public static final Biome ALTUM_ROCKY_ISLES = new BiomeRockyIsles(new BiomeProperties("Rocky Isles"));
 	public static final Biome ALTUM_SANCTUM_BEACH = new BiomeSanctumBeach(new BiomeProperties("Sanctum Beach"));
 	public static final Biome ALTUM_OCEAN = new BiomeAltumOcean(new BiomeProperties("The Abyss"));
+	public static final Biome ALTUM_ROCKY_SHORE = new BiomeRockyShore(new BiomeProperties("Rocky Shore"));
 	
 	public static void init() {
 		// Zollus
@@ -194,6 +196,7 @@ public class ZGBiomes {
 		ZGBiomes.addBiome(ZGBiomes.ALTUM_ROCKY_ISLES, LUSH, WET, BEACH);
 		ZGBiomes.addBiome(ZGBiomes.ALTUM_SANCTUM_BEACH, LUSH, WET, BEACH);
 		ZGBiomes.addBiome(ZGBiomes.ALTUM_OCEAN, WET, OCEAN);
+		ZGBiomes.addBiome(ZGBiomes.ALTUM_ROCKY_SHORE, LUSH, WET, MOUNTAIN);
 		
 		ZGHelper.Log("Loaded a total of " + totalBiomes + " new biomes.");
 	}

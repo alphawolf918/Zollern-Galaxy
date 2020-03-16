@@ -1,3 +1,10 @@
+/**
+ * Zollern Galaxy by @author Zollern Wolf
+ * Copyright 2016 - 2025
+ * You may use this code to learn from, but do not
+ * claim it as your own, and do not
+ * redistribute it.
+ */
 package zollerngalaxy.core.dimensions.skyproviders;
 
 import java.util.Random;
@@ -188,14 +195,11 @@ public abstract class SkyProviderBaseZG extends IRenderHandler {
 				d1 *= d4;
 				d2 *= d4;
 				double d5 = d0
-						* (ConfigManagerCore.moreStars ? rand.nextDouble() * this.getMaxStarCount()[1]
-								+ this.getMaxStarCount()[2] : 100.0D);
+						* (ConfigManagerCore.moreStars ? rand.nextDouble() * this.getMaxStarCount()[1] + this.getMaxStarCount()[2] : 100.0D);
 				double d6 = d1
-						* (ConfigManagerCore.moreStars ? rand.nextDouble() * this.getMaxStarCount()[1]
-								+ this.getMaxStarCount()[2] : 100.0D);
+						* (ConfigManagerCore.moreStars ? rand.nextDouble() * this.getMaxStarCount()[1] + this.getMaxStarCount()[2] : 100.0D);
 				double d7 = d2
-						* (ConfigManagerCore.moreStars ? rand.nextDouble() * this.getMaxStarCount()[1]
-								+ this.getMaxStarCount()[2] : 100.0D);
+						* (ConfigManagerCore.moreStars ? rand.nextDouble() * this.getMaxStarCount()[1] + this.getMaxStarCount()[2] : 100.0D);
 				double d8 = Math.atan2(d0, d2);
 				double d9 = Math.sin(d8);
 				double d10 = Math.cos(d8);

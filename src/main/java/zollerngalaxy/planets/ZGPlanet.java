@@ -1,3 +1,10 @@
+/**
+ * Zollern Galaxy by @author Zollern Wolf
+ * Copyright 2016 - 2025
+ * You may use this code to learn from, but do not
+ * claim it as your own, and do not
+ * redistribute it.
+ */
 package zollerngalaxy.planets;
 
 import java.util.ArrayList;
@@ -168,8 +175,8 @@ public class ZGPlanet extends Planet implements IZollernPlanet {
 	 * @return The planet of the atmosphere being set on.
 	 */
 	public Planet setAtmosphere() {
-		this.atmosphere = new AtmosphereInfo(this.getIsBreathable(), this.getHasRain(), this.getIsCorrosive(),
-				this.getPlanetTemperature(), this.getWindLevel(), this.getAtmosphericDensity());
+		this.atmosphere = new AtmosphereInfo(this.getIsBreathable(), this.getHasRain(), this.getIsCorrosive(), this.getPlanetTemperature(),
+				this.getWindLevel(), this.getAtmosphericDensity());
 		return this;
 	}
 	

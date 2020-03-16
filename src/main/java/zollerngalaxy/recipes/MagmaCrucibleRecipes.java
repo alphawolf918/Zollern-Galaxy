@@ -1,3 +1,10 @@
+/**
+ * Zollern Galaxy by @author Zollern Wolf
+ * Copyright 2016 - 2025
+ * You may use this code to learn from, but do not
+ * claim it as your own, and do not
+ * redistribute it.
+ */
 package zollerngalaxy.recipes;
 
 import net.minecraft.item.ItemStack;
@@ -12,18 +19,18 @@ public class MagmaCrucibleRecipes {
 	public static void init() {
 		// Molten Fueltonium
 		// Ingot
-		ThermalExpansionHelper.addCrucibleRecipe(3600, new ItemStack(ZGItems.ingotFueltonium, 1), new FluidStack(
-				ZGFluids.fluidFueltonium, 1000));
+		ThermalExpansionHelper.addCrucibleRecipe(3600, new ItemStack(ZGItems.ingotFueltonium, 1), new FluidStack(ZGFluids.fluidFueltonium,
+				1000));
 		
 		// Molten Fueltonium
 		// Block
-		ThermalExpansionHelper.addCrucibleRecipe(7200, new ItemStack(ZGBlocks.blockFueltonium, 1), new FluidStack(
-				ZGFluids.fluidFueltonium, 9000));
+		ThermalExpansionHelper.addCrucibleRecipe(7200, new ItemStack(ZGBlocks.blockFueltonium, 1), new FluidStack(ZGFluids.fluidFueltonium,
+				9000));
 		
 		// Chargium
 		// Ingot
-		ThermalExpansionHelper.addCrucibleRecipe(5000, new ItemStack(ZGItems.superChargedCoal, 1), new FluidStack(
-				ZGFluids.fluidChargium, 500));
+		ThermalExpansionHelper.addCrucibleRecipe(5000, new ItemStack(ZGItems.superChargedCoal, 1), new FluidStack(ZGFluids.fluidChargium,
+				500));
 		
 		// Chargium
 		// Block

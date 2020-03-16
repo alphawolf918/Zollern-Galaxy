@@ -1,3 +1,10 @@
+/**
+ * Zollern Galaxy by @author Zollern Wolf
+ * Copyright 2016 - 2025
+ * You may use this code to learn from, but do not
+ * claim it as your own, and do not
+ * redistribute it.
+ */
 package zollerngalaxy.network;
 
 import net.minecraft.entity.player.EntityPlayer;
@@ -29,8 +36,8 @@ public class PacketDispatcher {
 	public static final void registerPackets() {
 		ZGHelper.Log("Registering packets..");
 		
-		PacketDispatcher.dispatcher.registerMessage(MessageTeleportToDimension.TeleportHandler.class,
-				MessageTeleportToDimension.class, 1, Side.SERVER);
+		PacketDispatcher.dispatcher.registerMessage(MessageTeleportToDimension.TeleportHandler.class, MessageTeleportToDimension.class, 1,
+				Side.SERVER);
 		
 		ZGHelper.Log("Packets regsitered.");
 	}
@@ -62,8 +69,7 @@ public class PacketDispatcher {
 	}
 	
 	/**
-	 * Send this message to everyone. See
-	 * {@link SimpleNetworkWrapper#sendToAll(IMessage)}
+	 * Send this message to everyone. See {@link SimpleNetworkWrapper#sendToAll(IMessage)}
 	 */
 	public static void sendToAll(IMessage message) {
 		PacketDispatcher.dispatcher.sendToAll(message);
@@ -92,8 +98,7 @@ public class PacketDispatcher {
 	 * {@link SimpleNetworkWrapper#sendToAllAround(IMessage, NetworkRegistry.TargetPoint)}
 	 */
 	public static final void sendToAllAround(IMessage message, EntityPlayer player, double range) {
-		PacketDispatcher.sendToAllAround(message, player.world.provider.getDimension(), player.posX, player.posY,
-				player.posZ, range);
+		PacketDispatcher.sendToAllAround(message, player.world.provider.getDimension(), player.posX, player.posY, player.posZ, range);
 	}
 	
 	/**
@@ -105,8 +110,7 @@ public class PacketDispatcher {
 	}
 	
 	/**
-	 * Send this message to the server. See
-	 * {@link SimpleNetworkWrapper#sendToServer(IMessage)}
+	 * Send this message to the server. See {@link SimpleNetworkWrapper#sendToServer(IMessage)}
 	 */
 	public static final void sendToServer(IMessage message) {
 		PacketDispatcher.dispatcher.sendToServer(message);

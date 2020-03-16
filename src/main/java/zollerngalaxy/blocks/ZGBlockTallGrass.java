@@ -1,3 +1,10 @@
+/**
+ * Zollern Galaxy by @author Zollern Wolf
+ * Copyright 2016 - 2025
+ * You may use this code to learn from, but do not
+ * claim it as your own, and do not
+ * redistribute it.
+ */
 package zollerngalaxy.blocks;
 
 import java.util.Random;
@@ -25,8 +32,8 @@ import zollerngalaxy.lib.helpers.json.JSONFactory;
 
 public class ZGBlockTallGrass extends ZGBlockFlower implements IGrowable, IShearable {
 	
-	protected static final AxisAlignedBB TALL_GRASS_AABB = new AxisAlignedBB(0.09999999403953552D, 0.0D,
-			0.09999999403953552D, 0.8999999761581421D, 0.800000011920929D, 0.8999999761581421D);
+	protected static final AxisAlignedBB TALL_GRASS_AABB = new AxisAlignedBB(0.09999999403953552D, 0.0D, 0.09999999403953552D,
+			0.8999999761581421D, 0.800000011920929D, 0.8999999761581421D);
 	
 	protected ZGBlockTallGrass(String blockName) {
 		super(blockName);
@@ -68,8 +75,7 @@ public class ZGBlockTallGrass extends ZGBlockFlower implements IGrowable, IShear
 	 * Block has possibly been set to air via Block.removedByPlayer
 	 */
 	@Override
-	public void harvestBlock(World worldIn, EntityPlayer player, BlockPos pos, IBlockState state, @Nullable TileEntity te,
-			ItemStack stack) {
+	public void harvestBlock(World worldIn, EntityPlayer player, BlockPos pos, IBlockState state, @Nullable TileEntity te, ItemStack stack) {
 		if (!worldIn.isRemote && stack.getItem() == Items.SHEARS) {
 			player.addStat(StatList.getBlockStats(this));
 			spawnAsEntity(worldIn, pos, new ItemStack(this, 1));

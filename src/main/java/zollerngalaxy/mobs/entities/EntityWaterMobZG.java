@@ -112,9 +112,9 @@ public class EntityWaterMobZG extends EntityWaterMob {
 				}
 				
 				if (!this.world.isRemote) {
-					double motionYNew = this.randomMotionVecY * this.randomMotionSpeed;
+					double motionYNew = this.randomMotionVecY + this.randomMotionSpeed;
 					if (motionYNew >= (seaLevel - 5)) {
-						motionYNew = motionYStart;// (seaLevel - (seaLevel / 2));
+						motionYNew = (seaLevel - (seaLevel / 2));
 						this.posY = this.posYStart;
 						this.randomMotionSpeed = 0.1F;
 					}

@@ -1,3 +1,10 @@
+/**
+ * Zollern Galaxy by @author Zollern Wolf
+ * Copyright 2016 - 2025
+ * You may use this code to learn from, but do not
+ * claim it as your own, and do not
+ * redistribute it.
+ */
 package zollerngalaxy.blocks.eden;
 
 import java.util.Random;
@@ -54,8 +61,7 @@ public class EdenFruit extends ZGBlockHorizontal implements IGrowable {
 	public EdenFruit() {
 		super("edenfruit", 0.2F);
 		this.setMaterial(Material.PLANTS);
-		this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH)
-				.withProperty(AGE, Integer.valueOf(0)));
+		this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH).withProperty(AGE, Integer.valueOf(0)));
 		this.setTickRandomly(true);
 		this.setBlockType(EnumBlockType.FRUIT);
 		this.setSoundType(SoundType.WOOD);
@@ -100,15 +106,15 @@ public class EdenFruit extends ZGBlockHorizontal implements IGrowable {
 		int i = state.getValue(AGE).intValue();
 		
 		switch (state.getValue(FACING)) {
-		case SOUTH:
-			return EDEN_FRUIT_SOUTH_AABB[i];
-		case NORTH:
-		default:
-			return EDEN_FRUIT_NORTH_AABB[i];
-		case WEST:
-			return EDEN_FRUIT_WEST_AABB[i];
-		case EAST:
-			return EDEN_FRUIT_EAST_AABB[i];
+			case SOUTH:
+				return EDEN_FRUIT_SOUTH_AABB[i];
+			case NORTH:
+			default:
+				return EDEN_FRUIT_NORTH_AABB[i];
+			case WEST:
+				return EDEN_FRUIT_WEST_AABB[i];
+			case EAST:
+				return EDEN_FRUIT_EAST_AABB[i];
 		}
 	}
 	
@@ -145,8 +151,8 @@ public class EdenFruit extends ZGBlockHorizontal implements IGrowable {
 	 * allow for adjustments to the IBlockstate
 	 */
 	@Override
-	public IBlockState getStateForPlacement(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY,
-			float hitZ, int meta, EntityLivingBase placer) {
+	public IBlockState getStateForPlacement(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta,
+			EntityLivingBase placer) {
 		if (!facing.getAxis().isHorizontal()) {
 			facing = EnumFacing.NORTH;
 		}
@@ -175,8 +181,7 @@ public class EdenFruit extends ZGBlockHorizontal implements IGrowable {
 	}
 	
 	@Override
-	public void getDrops(net.minecraft.util.NonNullList<ItemStack> drops, IBlockAccess world, BlockPos pos,
-			IBlockState state, int fortune) {
+	public void getDrops(net.minecraft.util.NonNullList<ItemStack> drops, IBlockAccess world, BlockPos pos, IBlockState state, int fortune) {
 		super.getDrops(drops, world, pos, state, fortune);
 		int i = state.getValue(AGE).intValue();
 		int j = 0;

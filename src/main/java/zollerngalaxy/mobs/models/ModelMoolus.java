@@ -1,3 +1,10 @@
+/**
+ * Zollern Galaxy by @author Zollern Wolf
+ * Copyright 2016 - 2025
+ * You may use this code to learn from, but do not
+ * claim it as your own, and do not
+ * redistribute it.
+ */
 package zollerngalaxy.mobs.models;
 
 import net.minecraft.client.model.ModelBase;
@@ -7,6 +14,7 @@ import net.minecraft.util.math.MathHelper;
 import org.lwjgl.opengl.GL11;
 
 public class ModelMoolus extends ModelBase {
+	
 	ModelRenderer head;
 	ModelRenderer body;
 	ModelRenderer leg1;
@@ -17,6 +25,7 @@ public class ModelMoolus extends ModelBase {
 	ModelRenderer horn2;
 	ModelRenderer udders;
 	ModelRenderer head2;
+	
 	private float field_78145_g;
 	private float field_78151_h;
 	

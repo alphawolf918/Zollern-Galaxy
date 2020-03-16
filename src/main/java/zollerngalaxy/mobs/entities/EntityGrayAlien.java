@@ -1,3 +1,10 @@
+/**
+ * Zollern Galaxy by @author Zollern Wolf
+ * Copyright 2016 - 2025
+ * You may use this code to learn from, but do not
+ * claim it as your own, and do not
+ * redistribute it.
+ */
 package zollerngalaxy.mobs.entities;
 
 import micdoodle8.mods.galacticraft.api.entity.IEntityBreathable;
@@ -41,13 +48,6 @@ public class EntityGrayAlien extends EntityMob implements IEntityBreathable {
 		this.experienceValue = 80;
 		this.stepHeight = 2.0F;
 	}
-	
-	// @Override
-	// public void onUpdate() {
-	// this.noClip = true;
-	// super.onUpdate();
-	// this.noClip = false;
-	// }
 	
 	@Override
 	protected void applyEntityAttributes() {

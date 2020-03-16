@@ -95,7 +95,7 @@ public class BiomeAltumBase extends BiomeSpace {
 								chunkPrimerIn.setBlockState(x2, (y + 2), (z2 + 1), GRAVEL);
 							}
 						}
-						if (rand.nextInt(20) == 3) {
+						if (rand.nextInt(40) == 3) {
 							for (int i2 = 0; i2 < ZGHelper.rngInt(1, 5); i2++) {
 								IBlockState blockToUse = (ZGHelper.getRNG().nextInt(5) == 1) ? DIRT : STONE;
 								chunkPrimerIn.setBlockState(x2, (y + i2), z2, blockToUse);

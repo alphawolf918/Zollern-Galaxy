@@ -1,3 +1,10 @@
+/**
+ * Zollern Galaxy by @author Zollern Wolf
+ * Copyright 2016 - 2025
+ * You may use this code to learn from, but do not
+ * claim it as your own, and do not
+ * redistribute it.
+ */
 package zollerngalaxy.compatibility;
 
 import micdoodle8.mods.galacticraft.api.galaxies.CelestialBody;
@@ -5,7 +12,9 @@ import net.minecraft.entity.player.EntityPlayerMP;
 import zollerngalaxy.lib.helpers.ZGHelper;
 import com.mjr.planetprogression.api.research.ResearchHooksMP;
 
-// Thank you MJRLegends
+/**
+ * Thank you MJRLegends
+ */
 public class PlanetProgressionCompatibility {
 	
 	public static void init() {

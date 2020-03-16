@@ -1,3 +1,10 @@
+/**
+ * Zollern Galaxy by @author Zollern Wolf
+ * Copyright 2016 - 2025
+ * You may use this code to learn from, but do not
+ * claim it as your own, and do not
+ * redistribute it.
+ */
 package zollerngalaxy.network;
 
 import io.netty.buffer.ByteBuf;
@@ -67,10 +74,8 @@ public abstract class AbstractMessage<T extends AbstractMessage<T>> implements I
 	 * Make the implementation final so child classes don't need to bother with
 	 * it, since the message class shouldn't have anything to do with the
 	 * handler. This is simply to avoid having to have:
-	 * 
 	 * public static class Handler extends GenericMessageHandler<OpenGuiMessage>
 	 * {}
-	 * 
 	 * in every single message class for the sole purpose of registration.
 	 */
 	@Override

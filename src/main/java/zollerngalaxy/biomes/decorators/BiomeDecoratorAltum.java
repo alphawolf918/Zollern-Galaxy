@@ -36,7 +36,7 @@ public class BiomeDecoratorAltum extends BiomeDecoratorZG {
 	private WorldGenerator coalGen;
 	private WorldGenerator prismarineGen;
 	
-	public int waterLakesPerChunk = 2;
+	public int waterLakesPerChunk = 6;
 	
 	private WorldGenerator waterLakeGen = new WorldGenLakesZG(Blocks.WATER, ZGBlocks.altumSand);
 	

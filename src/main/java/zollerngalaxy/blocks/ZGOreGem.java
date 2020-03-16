@@ -1,3 +1,10 @@
+/**
+ * Zollern Galaxy by @author Zollern Wolf
+ * Copyright 2016 - 2025
+ * You may use this code to learn from, but do not
+ * claim it as your own, and do not
+ * redistribute it.
+ */
 package zollerngalaxy.blocks;
 
 import java.util.Random;
@@ -93,21 +100,21 @@ public class ZGOreGem extends ZGBlockOre {
 	public int quantityDropped(Random rand) {
 		int numDropped = 1;
 		switch (this.getBlockTier()) {
-		default:
-			numDropped = ZGHelper.rngInt(1, 1);
-			break;
-		case ONE:
-			numDropped = ZGHelper.rngInt(minDropped, maxDropped);
-			break;
-		case TWO:
-			numDropped = ZGHelper.rngInt(maxDropped, maxDropped + 2);
-			break;
-		case THREE:
-			numDropped = ZGHelper.rngInt(maxDropped + 2, maxDropped + 3);
-			break;
-		case FOUR:
-			numDropped = ZGHelper.rngInt(maxDropped + 4, maxDropped + 5);
-			break;
+			default:
+				numDropped = ZGHelper.rngInt(1, 1);
+				break;
+			case ONE:
+				numDropped = ZGHelper.rngInt(minDropped, maxDropped);
+				break;
+			case TWO:
+				numDropped = ZGHelper.rngInt(maxDropped, maxDropped + 2);
+				break;
+			case THREE:
+				numDropped = ZGHelper.rngInt(maxDropped + 2, maxDropped + 3);
+				break;
+			case FOUR:
+				numDropped = ZGHelper.rngInt(maxDropped + 4, maxDropped + 5);
+				break;
 		}
 		return numDropped;
 	}
@@ -115,8 +122,8 @@ public class ZGOreGem extends ZGBlockOre {
 	@Override
 	public int quantityDroppedWithBonus(int fortune, Random random) {
 		if (fortune > 0
-				&& Item.getItemFromBlock(this) != this.getItemDropped(this.getBlockState().getValidStates().iterator()
-						.next(), random, fortune)) {
+				&& Item.getItemFromBlock(this) != this.getItemDropped(this.getBlockState().getValidStates().iterator().next(), random,
+						fortune)) {
 			int i = random.nextInt(fortune + 2) - 1;
 			
 			if (i < 0) {

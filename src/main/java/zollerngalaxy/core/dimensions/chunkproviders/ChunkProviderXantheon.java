@@ -1,3 +1,10 @@
+/**
+ * Zollern Galaxy by @author Zollern Wolf
+ * Copyright 2016 - 2025
+ * You may use this code to learn from, but do not
+ * claim it as your own, and do not
+ * redistribute it.
+ */
 package zollerngalaxy.core.dimensions.chunkproviders;
 
 import java.util.List;
@@ -94,8 +101,7 @@ public class ChunkProviderXantheon extends ChunkProviderBase {
 		final int var5 = 20;
 		for (int var8 = 0; var8 < 16; ++var8) {
 			for (int var9 = 0; var9 < 16; ++var9) {
-				final int var12 = (int) (this.noiseGen4.getNoise(var8 + par1 * 16, var9 * par2 * 16) / 3.0D + 3.0D + this.rand
-						.nextDouble() * 0.25D);
+				final int var12 = (int) (this.noiseGen4.getNoise(var8 + par1 * 16, var9 * par2 * 16) / 3.0D + 3.0D + this.rand.nextDouble() * 0.25D);
 				int var13 = -1;
 				IBlockState state0 = BLOCK_TOP;
 				IBlockState state1 = BLOCK_FILL;
@@ -170,8 +176,7 @@ public class ChunkProviderXantheon extends ChunkProviderBase {
 								* ChunkProviderXantheon.CHUNK_SIZE_X + x, cz * ChunkProviderXantheon.CHUNK_SIZE_Z + z)
 								/ ChunkProviderXantheon.CRATER_PROB) {
 							final Random random = new Random(cx * 16 + x + (cz * 16 + z) * 5000);
-							final EnumCraterSize cSize = EnumCraterSize.sizeArray[random
-									.nextInt(EnumCraterSize.sizeArray.length)];
+							final EnumCraterSize cSize = EnumCraterSize.sizeArray[random.nextInt(EnumCraterSize.sizeArray.length)];
 							final int size = random.nextInt(cSize.MAX_SIZE - cSize.MIN_SIZE) + cSize.MIN_SIZE;
 							this.makeCrater(cx * 16 + x, cz * 16 + z, chunkX * 16, chunkZ * 16, size, primer);
 						}

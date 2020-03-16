@@ -1,3 +1,10 @@
+/**
+ * Zollern Galaxy by @author Zollern Wolf
+ * Copyright 2016 - 2025
+ * You may use this code to learn from, but do not
+ * claim it as your own, and do not
+ * redistribute it.
+ */
 package zollerngalaxy.worldgen.eden;
 
 import java.util.Random;
@@ -22,8 +29,7 @@ public class WorldGenEdenTrees extends WorldGenAbstractTree {
 	private final IBlockState blockLog;
 	private final IBlockState blockLeaves;
 	
-	public WorldGenEdenTrees(boolean notify, int minTreeHeightIn, IBlockState woodMeta, IBlockState p_i46446_4_,
-			boolean growVines) {
+	public WorldGenEdenTrees(boolean notify, int minTreeHeightIn, IBlockState woodMeta, IBlockState p_i46446_4_, boolean growVines) {
 		super(notify);
 		this.minTreeHeight = minTreeHeightIn;
 		this.blockLog = woodMeta;
@@ -89,8 +95,7 @@ public class WorldGenEdenTrees extends WorldGenAbstractTree {
 							BlockPos upN = position.up(j3);
 							state = worldIn.getBlockState(upN);
 							
-							if (state.getBlock().isAir(state, worldIn, upN)
-									|| state.getBlock().isLeaves(state, worldIn, upN)
+							if (state.getBlock().isAir(state, worldIn, upN) || state.getBlock().isLeaves(state, worldIn, upN)
 									|| state.getMaterial() == Material.VINE) {
 								this.setBlockAndNotifyAdequately(worldIn, position.up(j3), this.blockLog);
 								
@@ -157,11 +162,9 @@ public class WorldGenEdenTrees extends WorldGenAbstractTree {
 								for (EnumFacing enumfacing : EnumFacing.Plane.HORIZONTAL) {
 									if (rand.nextInt(8 - l3) == 0) {
 										EnumFacing enumfacing1 = enumfacing.getOpposite();
-										this.placeFruit(
-												worldIn,
-												rand.nextInt(3),
-												position.add(enumfacing1.getFrontOffsetX(), i - 5 + l3,
-														enumfacing1.getFrontOffsetZ()), enumfacing);
+										this.placeFruit(worldIn, rand.nextInt(3),
+												position.add(enumfacing1.getFrontOffsetX(), i - 5 + l3, enumfacing1.getFrontOffsetZ()),
+												enumfacing);
 									}
 								}
 							}
@@ -188,8 +191,7 @@ public class WorldGenEdenTrees extends WorldGenAbstractTree {
 	}
 	
 	private void addVine(World worldIn, BlockPos pos, PropertyBool prop) {
-		this.setBlockAndNotifyAdequately(worldIn, pos,
-				Blocks.VINE.getDefaultState().withProperty(prop, Boolean.valueOf(true)));
+		this.setBlockAndNotifyAdequately(worldIn, pos, Blocks.VINE.getDefaultState().withProperty(prop, Boolean.valueOf(true)));
 	}
 	
 	private void addHangingVine(World worldIn, BlockPos pos, PropertyBool prop) {

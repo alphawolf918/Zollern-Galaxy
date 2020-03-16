@@ -1,3 +1,10 @@
+/**
+ * Zollern Galaxy by @author Zollern Wolf
+ * Copyright 2016 - 2025
+ * You may use this code to learn from, but do not
+ * claim it as your own, and do not
+ * redistribute it.
+ */
 package zollerngalaxy.gui;
 
 import net.minecraft.client.Minecraft;
@@ -47,8 +54,8 @@ public class GuiHUD extends Gui {
 		}
 		
 		int i3 = 14737632;
-		BlockPos blockPos = new BlockPos(this.mc.getRenderViewEntity().posX, this.mc.getRenderViewEntity()
-				.getEntityBoundingBox().minY, this.mc.getRenderViewEntity().posZ);
+		BlockPos blockPos = new BlockPos(this.mc.getRenderViewEntity().posX, this.mc.getRenderViewEntity().getEntityBoundingBox().minY,
+				this.mc.getRenderViewEntity().posZ);
 		ScaledResolution scaledresolution = new ScaledResolution(this.mc);
 		int k = scaledresolution.getScaledWidth();
 		int l = scaledresolution.getScaledHeight();

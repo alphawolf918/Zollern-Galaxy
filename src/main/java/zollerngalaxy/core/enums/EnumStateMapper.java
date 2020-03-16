@@ -1,3 +1,10 @@
+/**
+ * Zollern Galaxy by @author Zollern Wolf
+ * Copyright 2016 - 2025
+ * You may use this code to learn from, but do not
+ * claim it as your own, and do not
+ * redistribute it.
+ */
 package zollerngalaxy.core.enums;
 
 import net.minecraft.block.BlockDoor;
@@ -12,9 +19,15 @@ import zollerngalaxy.lib.helpers.ZGBlockStateHelper;
 
 @SideOnly(Side.CLIENT)
 public enum EnumStateMapper {
-	FENCE_GATE(BlockFenceGate.POWERED), DOOR(BlockDoor.POWERED), FORGE_LEVEL(BlockFluidBase.LEVEL), VANILLA_LEVEL(
-			BlockLiquid.LEVEL), FIRE(BlockFire.AGE), TNT(ZGBlockStateHelper.EXPLODE), LEAVES(ZGBlockStateHelper.CHECK_DECAY,
-			ZGBlockStateHelper.DECAYABLE), PLANT_AGE(ZGBlockStateHelper.AGE);
+	
+	FENCE_GATE(BlockFenceGate.POWERED),
+	DOOR(BlockDoor.POWERED),
+	FORGE_LEVEL(BlockFluidBase.LEVEL),
+	VANILLA_LEVEL(BlockLiquid.LEVEL),
+	FIRE(BlockFire.AGE),
+	TNT(ZGBlockStateHelper.EXPLODE),
+	LEAVES(ZGBlockStateHelper.CHECK_DECAY, ZGBlockStateHelper.DECAYABLE),
+	PLANT_AGE(ZGBlockStateHelper.AGE);
 	
 	private IProperty[] property;
 	
