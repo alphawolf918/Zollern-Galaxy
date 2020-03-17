@@ -278,6 +278,8 @@ tile.compressedviriniumblock.name=Block of Compressed Virinium
 tile.compressedeveniumblock.name=Block of Compressed Evenium
 tile.compressedcobaltblock.name=Block of Compressed Cobalt
 tile.compressedheartiumblock.name=Block of Compressed Heartium
+tile.compressedrhodiumblock.name=Block of Compressed Rhodium
+tile.compressedzucriteblock.name=Block of Compressed Zucrite
 
 chargium=Conductive Chargium
 tile.chargium.name=Conductive Chargium
@@ -401,6 +403,8 @@ item.compressedriven.name=Compressed Riven
 item.compressedamaranth.name=Compressed Amaranth
 item.compressedazurite.name=Compressed Azurite
 item.compressedzollernium.name=Compressed Zollernium
+item.compressedrhodium.name=Compressed Rhodium
+item.compressedzucrite.name=Compressed Zucrite
 
 item.superchargedcoal.name=Super Charged Coal
 item.powerstick.name=Rod of Ascension

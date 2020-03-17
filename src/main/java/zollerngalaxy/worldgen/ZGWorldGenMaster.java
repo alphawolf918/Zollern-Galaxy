@@ -9,6 +9,7 @@ package zollerngalaxy.worldgen;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
@@ -80,6 +81,16 @@ public abstract class ZGWorldGenMaster extends WorldGenerator {
 	 */
 	protected String getSpawnedAtString(BlockPos pos) {
 		return "Spawned at: " + pos.getX() + " " + pos.getY() + " " + pos.getZ();
+	}
+	
+	protected boolean isValidSpawn(World world, BlockPos pos) {
+		Block blockBelow = world.getBlockState(pos.down()).getBlock();
+		
+		if (blockBelow == Blocks.AIR) {
+			return false;
+		}
+		
+		return true;
 	}
 	
 }

@@ -11,10 +11,13 @@ import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.util.EnumHandSide;
 import net.minecraft.util.math.MathHelper;
 
 /**
- * Made by DabbingEevee
+ * Model by DabbingEevee.
+ * Rendering animation by @author Zollern Wolf.
  */
 public class ModelAbyssalVillager extends ModelBase {
 	
@@ -79,17 +82,73 @@ public class ModelAbyssalVillager extends ModelBase {
 	@Override
 	public void setRotationAngles(float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch,
 			float scaleFactor, Entity entityIn) {
+		boolean flag = (entityIn instanceof EntityLivingBase) && (((EntityLivingBase) entityIn).getTicksElytraFlying() > 4);
+		float f = 1.0F;
+		
+		if (flag) {
+			f = (float) (entityIn.motionX * entityIn.motionX + entityIn.motionY * entityIn.motionY + entityIn.motionZ * entityIn.motionZ);
+			f = f / 0.2F;
+			f = f * f * f;
+		}
+		
+		if (f < 1.0F) {
+			f = 1.0F;
+		}
+		
 		this.Head.rotateAngleY = netHeadYaw * 0.017453292F;
 		this.Head.rotateAngleX = headPitch * 0.017453292F;
-		this.LeftArm.rotationPointY = 3.0F;
-		this.RightArm.rotationPointY = 3.0F;
-		this.LeftArm.rotationPointZ = -1.0F;
-		this.RightArm.rotationPointZ = -1.0F;
+		
+		this.LeftArm.rotationPointZ = 0.0F;
+		this.LeftArm.rotationPointX = 5.0F;
 		this.LeftArm.rotateAngleX = -0.75F;
+		this.RightArm.rotationPointZ = 0.0F;
+		this.RightArm.rotationPointX = -5.0F;
 		this.RightArm.rotateAngleX = -0.75F;
-		this.RightLeg.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F) * 1.4F * limbSwingAmount * 0.5F;
-		this.LeftLeg.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F + (float) Math.PI) * 1.4F * limbSwingAmount * 0.5F;
+		
+		this.RightArm.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F + (float) Math.PI) * 2.0F * limbSwingAmount * 0.5F / f;
+		this.LeftArm.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F) * 2.0F * limbSwingAmount * 0.5F / f;
+		this.LeftArm.rotateAngleZ = 0.0F;
+		this.RightLeg.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F) * 1.4F * limbSwingAmount / f;
+		this.LeftLeg.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F + (float) Math.PI) * 1.4F * limbSwingAmount / f;
 		this.RightLeg.rotateAngleY = 0.0F;
 		this.LeftLeg.rotateAngleY = 0.0F;
+		this.RightLeg.rotateAngleZ = 0.0F;
+		this.LeftLeg.rotateAngleZ = 0.0F;
+		
+		this.RightArm.rotateAngleY = 0.0F;
+		this.RightArm.rotateAngleZ = 0.0F;
+		
+		if (this.swingProgress > 0.0F) {
+			EnumHandSide enumhandside = EnumHandSide.LEFT;
+			ModelRenderer modelrenderer = this.LeftArm;
+			float f1 = this.swingProgress;
+			this.Body.rotateAngleY = MathHelper.sin(MathHelper.sqrt(f1) * ((float) Math.PI * 2F)) * 0.2F;
+			
+			if (enumhandside == EnumHandSide.LEFT) {
+				this.Body.rotateAngleY *= -1.0F;
+			}
+			
+			this.RightArm.rotationPointZ = MathHelper.sin(this.Body.rotateAngleY) * 5.0F;
+			this.RightArm.rotationPointX = -MathHelper.cos(this.Body.rotateAngleY) * 5.0F;
+			this.LeftArm.rotationPointZ = -MathHelper.sin(this.Body.rotateAngleY) * 5.0F;
+			this.LeftArm.rotationPointX = MathHelper.cos(this.Body.rotateAngleY) * 5.0F;
+			this.RightArm.rotateAngleY += this.Body.rotateAngleY;
+			this.LeftArm.rotateAngleY += this.Body.rotateAngleY;
+			this.LeftArm.rotateAngleX += this.Body.rotateAngleY;
+			f1 = 1.0F - this.swingProgress;
+			f1 = f1 * f1;
+			f1 = f1 * f1;
+			f1 = 1.0F - f1;
+			float f2 = MathHelper.sin(f1 * (float) Math.PI);
+			float f3 = MathHelper.sin(this.swingProgress * (float) Math.PI) * -(this.Head.rotateAngleX - 0.7F) * 0.75F;
+			modelrenderer.rotateAngleX = (float) (modelrenderer.rotateAngleX - (f2 * 1.2D + f3));
+			modelrenderer.rotateAngleY += this.Body.rotateAngleY * 2.0F;
+			modelrenderer.rotateAngleZ += MathHelper.sin(this.swingProgress * (float) Math.PI) * -0.4F;
+		}
+		
+		this.RightArm.rotateAngleZ += MathHelper.cos(ageInTicks * 0.09F) * 0.05F + 0.05F;
+		this.LeftArm.rotateAngleZ -= MathHelper.cos(ageInTicks * 0.09F) * 0.05F + 0.05F;
+		this.RightArm.rotateAngleX += MathHelper.sin(ageInTicks * 0.067F) * 0.05F;
+		this.LeftArm.rotateAngleX -= MathHelper.sin(ageInTicks * 0.067F) * 0.05F;
 	}
 }

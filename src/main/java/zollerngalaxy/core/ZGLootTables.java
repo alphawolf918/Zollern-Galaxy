@@ -20,5 +20,6 @@ public class ZGLootTables {
 	public static final ResourceLocation CHEST_EDEN_TOWER = CommonZGRegisterHelper.registerChestLoot("edentower");
 	public static final ResourceLocation CHEST_GIANT_BONE = CommonZGRegisterHelper.registerChestLoot("giantbone");
 	public static final ResourceLocation CHEST_BURIED_TREASURE = CommonZGRegisterHelper.registerChestLoot("buriedtreasure");
+	public static final ResourceLocation CHEST_OCEAN_TREASURE = CommonZGRegisterHelper.registerChestLoot("oceantreasure");
 	
 }

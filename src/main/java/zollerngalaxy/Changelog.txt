@@ -5,6 +5,7 @@ Zollern Galaxy v2.0.13
 * Created Planet Altum, an ocean planet.
 * Added blocks and items for Planet Altum.
 * Zucrite Dust can now be cooked into Zucrite Ingots.
+* Zucrite can now be crafted in the Galacticraft Compressor with Lost Diamonds and Etrium Ingots.
 * Updated Chinese translations by EndsM.
 * Added biomes for new planet.
 * Fixed bug with ravines not generating correctly.
@@ -28,6 +29,6 @@ Zollern Galaxy v2.0.13
 * Fixed Squidlus animation weirdness.
 * Fixed Perdita Fueltonium Ore not pulverizing.
 * Fixed Perdita and Mummy Lore Books both being Lore Book #35.
-* Slightly modified texture of Zucrite block.
 * Fixed hitboxes on Magmos and Frost Giant mobs.
+* Slightly modified texture of Zucrite block.
 * 

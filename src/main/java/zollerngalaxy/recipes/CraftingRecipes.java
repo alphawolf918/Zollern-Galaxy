@@ -82,6 +82,8 @@ public class CraftingRecipes {
 		CraftingRecipes.addIngotMetal(ZGItems.compressedPromethean, ZGBlocks.blockCompressedPromethean);
 		CraftingRecipes.addIngotMetal(ZGItems.compressedSuperChargedCoal, ZGBlocks.blockCompressedSuperChargedCoal);
 		CraftingRecipes.addIngotMetal(ZGItems.compressedVirinium, ZGBlocks.blockCompressedViri);
+		CraftingRecipes.addIngotMetal(ZGItems.compressedZucrite, ZGBlocks.blockCompressedZucrite);
+		CraftingRecipes.addIngotMetal(ZGItems.compressedRhodium, ZGBlocks.blockCompressedRhodium);
 		
 		// Schweets
 		CraftingRecipes.addIngotMetal(ZGItems.chocolateBar, ZGBlocks.blockChocolate);

@@ -10,8 +10,6 @@ package zollerngalaxy.biomes.decorators;
 import java.util.Random;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
-import net.minecraft.tileentity.TileEntity;
-import net.minecraft.tileentity.TileEntityChest;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.world.World;
@@ -29,6 +27,7 @@ import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.worldgen.WorldGenLakesZG;
 import zollerngalaxy.worldgen.WorldGenMinableZG;
 import zollerngalaxy.worldgen.WorldGenTallGrassZG;
+import zollerngalaxy.worldgen.WorldGenTreasure;
 import zollerngalaxy.worldgen.perdita.WorldGenLostCactus;
 import zollerngalaxy.worldgen.perdita.WorldGenLostDeadBush;
 import zollerngalaxy.worldgen.perdita.WorldGenLostReeds;
@@ -36,6 +35,7 @@ import zollerngalaxy.worldgen.perdita.WorldGenPalmwoodTrees;
 
 public class BiomeDecoratorPerdita extends BiomeDecoratorZG {
 	
+	private static final Block SAND = ZGBlocks.perdSand;
 	private static final Block STONE = ZGBlocks.perdStone;
 	private static final Block ROCK = ZGBlocks.perdRock;
 	
@@ -66,6 +66,7 @@ public class BiomeDecoratorPerdita extends BiomeDecoratorZG {
 	private WorldGenerator lostPalmWoodTreeGen = new WorldGenPalmwoodTrees(true, ZGHelper.rngInt(5, 15),
 			ZGBlocks.perdWoodLogs.getDefaultState(), ZGBlocks.perdWoodLeaves.getDefaultState(), false);
 	private WorldGenerator lostFueltoniumLakeGen = new WorldGenLakesZG(ZGFluids.blockFueltoniumFluid, ZGBlocks.perdSand);
+	private WorldGenerator lostTreasureGen = new WorldGenTreasure(ZGLootTables.CHEST_BURIED_TREASURE);
 	
 	public BiomeDecoratorPerdita() {
 		this.creepstoneGen = new WorldGenMinableZG(ZGBlocks.perdCreepStone, STONE, EnumOreGenZG.SPECIAL_STONE);
@@ -209,6 +210,7 @@ public class BiomeDecoratorPerdita extends BiomeDecoratorZG {
 			}
 		}
 		
+		// Chest Gen
 		if (TerrainGen.decorate(world, rand, forgeChunkPos, DecorateBiomeEvent.Decorate.EventType.FOSSIL)) {
 			if (rand.nextInt(25) == 0) {
 				for (int i = 0; i < this.lostTreasurePerChunk; i++) {
@@ -219,12 +221,7 @@ public class BiomeDecoratorPerdita extends BiomeDecoratorZG {
 						int y2 = rand.nextInt(y1);
 						BlockPos chestPos = this.chunkPos.add(x1, y2, z1);
 						chestPos = chestPos.down();
-						world.setBlockState(chestPos, Blocks.CHEST.correctFacing(world, chestPos, Blocks.CHEST.getDefaultState()), 2);
-						TileEntity tileentity1 = world.getTileEntity(chestPos);
-						
-						if (tileentity1 instanceof TileEntityChest) {
-							((TileEntityChest) tileentity1).setLootTable(ZGLootTables.CHEST_BURIED_TREASURE, rand.nextLong());
-						}
+						this.lostTreasureGen.generate(world, rand, chestPos);
 					}
 				}
 			}
