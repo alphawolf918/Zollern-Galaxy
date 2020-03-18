@@ -261,7 +261,7 @@ tile.azuriteblock.name=蓝铜块
 tile.zollerniumblock.name=卓伦块
 tile.zincblock.name=锌块
 tile.perdetriumblock.name=埃特块
-tile.zucriteblock.name=祖克块
+tile.zucriteblock.name=祖克合金块
 tile.rhodiumblock.name=铑块
 
 tile.endrock.name=Endrock
@@ -278,6 +278,8 @@ tile.compressedviriniumblock.name=致密维尔因块
 tile.compressedeveniumblock.name=致密伊文块
 tile.compressedcobaltblock.name=致密钴块
 tile.compressedheartiumblock.name=致密红心块
+tile.compressedrhodiumblock.name=致密铑块
+tile.compressedzucriteblock.name=致密祖克合金块
 
 chargium=碳导体合金
 tile.chargium.name=碳导体合金
@@ -401,6 +403,8 @@ item.compressedriven.name=致密里文板
 item.compressedamaranth.name=致密紫苋板
 item.compressedazurite.name=致密蓝铜板
 item.compressedzollernium.name=致密卓伦板
+item.compressedrhodium.name=致密铑板
+item.compressedzucrite.name=致密祖克合金板
 
 item.superchargedcoal.name=超充能煤炭
 item.powerstick.name=星位之杖
@@ -408,8 +412,8 @@ item.powerstick.name=星位之杖
 item.perddiamond.name=失落之星钻石
 item.etrium.name=埃特原矿
 item.etriumingot.name=埃特锭
-item.zucritedust.name=祖克粉
-item.zucriteingot.name=祖克锭
+item.zucritedust.name=祖克合金粉
+item.zucriteingot.name=祖克合金锭
 item.perdpearl.name=失落之星珍珠
 item.perdglowstonedust.name=失落之星萤石粉
 item.perdreed.name=失落之星竹株
