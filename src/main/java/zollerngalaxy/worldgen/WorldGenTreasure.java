@@ -14,6 +14,7 @@ import net.minecraft.tileentity.TileEntityChest;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraft.world.gen.feature.WorldGenerator;
 
 public class WorldGenTreasure extends ZGWorldGenMaster {
 	
@@ -44,5 +45,10 @@ public class WorldGenTreasure extends ZGWorldGenMaster {
 		}
 		
 		return true;
+	}
+	
+	public WorldGenerator setLootTable(ResourceLocation lootTblIn) {
+		this.lootTable = lootTblIn;
+		return this;
 	}
 }

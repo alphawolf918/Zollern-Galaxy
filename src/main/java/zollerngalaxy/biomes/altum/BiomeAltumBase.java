@@ -13,12 +13,16 @@ import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.passive.EntitySquid;
 import net.minecraft.init.Blocks;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.tileentity.TileEntityChest;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeDecorator;
 import net.minecraft.world.chunk.ChunkPrimer;
 import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.biomes.decorators.BiomeDecoratorAltum;
 import zollerngalaxy.blocks.ZGBlocks;
+import zollerngalaxy.core.ZGLootTables;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderAltum;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 import zollerngalaxy.lib.helpers.ZGHelper;
@@ -93,6 +97,16 @@ public class BiomeAltumBase extends BiomeSpace {
 							chunkPrimerIn.setBlockState(x2, (y + 1), (z2 + 1), GRAVEL);
 							if (rand.nextInt(5) == 2) {
 								chunkPrimerIn.setBlockState(x2, (y + 2), (z2 + 1), GRAVEL);
+							}
+						}
+						if (rand.nextInt(50) == 2) {
+							BlockPos chestPos = new BlockPos(x2, (y + 1), z2);
+							worldIn.setBlockState(chestPos, Blocks.CHEST.correctFacing(worldIn, chestPos, Blocks.CHEST.getDefaultState()),
+									2);
+							TileEntity tileEntity = worldIn.getTileEntity(chestPos);
+							if (tileEntity instanceof TileEntityChest) {
+								TileEntityChest chestEntity = (TileEntityChest) tileEntity;
+								chestEntity.setLootTable(ZGLootTables.CHEST_OCEAN_TREASURE, rand.nextLong());
 							}
 						}
 						if (rand.nextInt(40) == 3) {
