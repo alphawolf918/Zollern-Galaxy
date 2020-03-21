@@ -15,6 +15,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.WorldProvider;
 import zollerngalaxy.config.ConfigManagerZG;
+import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitAltum;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitAtheon;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitCandora;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitEden;
@@ -49,6 +50,7 @@ public class ZGSpaceStations {
 	
 	// Sol-2
 	public static ZGSpaceStation PERDITA_SPACE_STATION;
+	public static ZGSpaceStation ALTUM_SPACE_STATION;
 	
 	public static void init() {
 		ZGSpaceStations.initSpaceStations();
@@ -116,6 +118,12 @@ public class ZGSpaceStations {
 		PERDITA_SPACE_STATION = new ZGSpaceStation("perdita", ZGPlanets.planetPerdita);
 		PERDITA_SPACE_STATION.setDimensionInfo(ConfigManagerZG.spaceStationPerditaId, ConfigManagerZG.spaceStationPerditaStaticId,
 				WorldProviderOrbitPerdita.class);
+		totalSpaceStations++;
+		
+		// Sol-2 (Altum)
+		ALTUM_SPACE_STATION = new ZGSpaceStation("altum", ZGPlanets.planetAltum);
+		ALTUM_SPACE_STATION.setDimensionInfo(ConfigManagerZG.spaceStationAltumId, ConfigManagerZG.spaceStationAltumStaticId,
+				WorldProviderOrbitAltum.class);
 		totalSpaceStations++;
 	}
 	

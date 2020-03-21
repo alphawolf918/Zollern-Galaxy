@@ -14,10 +14,8 @@
 * Planet LV-426 with Facehuggers from Alien.
 * Pizza Planet?
 * Transparent planet.
-* Planets with oceans that have flora and fauna in them.
 * Partially-procedural worlds.
 * Advancements.
-* Water planets.
 * Gas planets.
 * LOOT!
 * Dungeons.
@@ -27,4 +25,5 @@
     - Can be recharged with special metals automatically.
 * Mobs have a chance to drop treasure chests with specialized loot on death.
 * Still more of the lore.
+* Lightning planets.
 * 

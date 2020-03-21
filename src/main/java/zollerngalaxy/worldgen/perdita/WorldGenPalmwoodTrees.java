@@ -27,8 +27,7 @@ public class WorldGenPalmwoodTrees extends WorldGenAbstractTree {
 	private final IBlockState blockLog;
 	private final IBlockState blockLeaves;
 	
-	public WorldGenPalmwoodTrees(boolean notify, int minTreeHeightIn, IBlockState woodMeta, IBlockState p_i46446_4_,
-			boolean growVines) {
+	public WorldGenPalmwoodTrees(boolean notify, int minTreeHeightIn, IBlockState woodMeta, IBlockState p_i46446_4_, boolean growVines) {
 		super(notify);
 		this.minTreeHeight = minTreeHeightIn;
 		this.blockLog = woodMeta;
@@ -190,7 +189,7 @@ public class WorldGenPalmwoodTrees extends WorldGenAbstractTree {
 		// ZGBlocks.edenFruit.getDefaultState().withProperty(EdenFruit.AGE,
 		// Integer.valueOf(p_181652_2_))
 		// .withProperty(EdenFruit.FACING, side));
-		// TODO: Peaches!
+		// TODO: Peaches?
 	}
 	
 	private void addVine(World worldIn, BlockPos pos, PropertyBool prop) {

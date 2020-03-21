@@ -13,12 +13,12 @@ import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.passive.EntitySquid;
 import net.minecraft.init.Blocks;
-import net.minecraft.tileentity.TileEntity;
-import net.minecraft.tileentity.TileEntityChest;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeDecorator;
 import net.minecraft.world.chunk.ChunkPrimer;
+import net.minecraft.world.gen.feature.WorldGenerator;
 import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.biomes.decorators.BiomeDecoratorAltum;
 import zollerngalaxy.blocks.ZGBlocks;
@@ -34,6 +34,7 @@ import zollerngalaxy.mobs.entities.EntityJellyfish;
 import zollerngalaxy.mobs.entities.EntityShark;
 import zollerngalaxy.mobs.entities.EntitySquidlus;
 import zollerngalaxy.planets.ZGPlanets;
+import zollerngalaxy.worldgen.WorldGenTreasure;
 
 public class BiomeAltumBase extends BiomeSpace {
 	
@@ -49,6 +50,9 @@ public class BiomeAltumBase extends BiomeSpace {
 	protected static final IBlockState SPONGE = Blocks.SPONGE.getDefaultState();
 	
 	protected static final PropertyBool WET = PropertyBool.create("wet");
+	
+	protected static final ResourceLocation LOOT_TABLE = ZGLootTables.CHEST_OCEAN_TREASURE;
+	protected static final WorldGenerator OCEAN_TREASURE_GEN = new WorldGenTreasure(LOOT_TABLE);
 	
 	protected static final int SEA_LEVEL = ChunkProviderAltum.SEA_LEVEL;
 	protected static final int SEA_FLOOR_LEVEL = ChunkProviderAltum.SEA_FLOOR_LEVEL;
@@ -99,16 +103,6 @@ public class BiomeAltumBase extends BiomeSpace {
 								chunkPrimerIn.setBlockState(x2, (y + 2), (z2 + 1), GRAVEL);
 							}
 						}
-						if (rand.nextInt(50) == 2) {
-							BlockPos chestPos = new BlockPos(x2, (y + 1), z2);
-							worldIn.setBlockState(chestPos, Blocks.CHEST.correctFacing(worldIn, chestPos, Blocks.CHEST.getDefaultState()),
-									2);
-							TileEntity tileEntity = worldIn.getTileEntity(chestPos);
-							if (tileEntity instanceof TileEntityChest) {
-								TileEntityChest chestEntity = (TileEntityChest) tileEntity;
-								chestEntity.setLootTable(ZGLootTables.CHEST_OCEAN_TREASURE, rand.nextLong());
-							}
-						}
 						if (rand.nextInt(40) == 3) {
 							for (int i2 = 0; i2 < ZGHelper.rngInt(1, 5); i2++) {
 								IBlockState blockToUse = (ZGHelper.getRNG().nextInt(5) == 1) ? DIRT : STONE;
@@ -116,6 +110,10 @@ public class BiomeAltumBase extends BiomeSpace {
 							}
 						} else {
 							chunkPrimerIn.setBlockState(x2, y, z2, DIRT);
+						}
+						if (rand.nextInt(50) == 2) {
+							BlockPos chestPos = new BlockPos(x2, (y + 1), z2);
+							OCEAN_TREASURE_GEN.generate(worldIn, rand, chestPos);
 						}
 					} else if (y >= SEA_LEVEL) {
 						chunkPrimerIn.setBlockState(x2, y, z2, AIR);

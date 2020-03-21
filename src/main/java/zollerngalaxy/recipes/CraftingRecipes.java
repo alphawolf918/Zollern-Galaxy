@@ -205,6 +205,10 @@ public class CraftingRecipes {
 		CraftingRecipes.addSword(new ItemStack(ZGItems.swordAzurite), ZGItems.azurite);
 		CraftingRecipes.addSword(new ItemStack(ZGItems.swordZollernium), ZGItems.ingotZollernium);
 		
+		// Ascendium
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.ascendium, 1), new Object[] { " Z ", " C ", " A ", 'Z',
+				ZGItems.compressedZollernium, 'C', ZGItems.compressedZucrite, 'A', ZGItems.compressedAmaranth });
+		
 		// Power Stick (Rod of Ascension)
 		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.powerStick, 2), new Object[] { " A ", " L ", " A ", 'A', ZGItems.compressedAmaranth,
 				'L', ZGItems.ingotLapis });
@@ -264,7 +268,9 @@ public class CraftingRecipes {
 		totalCraftRecipes++;
 		
 		// Star Gate (Tier 9)
-		// TODO
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.starGateTier9, 1), new Object[] { "VCV", "HYH", "YCY", 'V',
+				ZGBlocks.blockCompressedZucrite, 'C', ZGItems.ascendium, 'H', ZGItems.compressedZollernium, 'Y', ZGItems.alienStone });
+		totalCraftRecipes++;
 		
 		// Star Gate (Tier 10)
 		// TODO

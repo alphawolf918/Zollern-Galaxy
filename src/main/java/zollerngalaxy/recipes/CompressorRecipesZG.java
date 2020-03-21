@@ -94,14 +94,18 @@ public class CompressorRecipesZG {
 				ZGBlocks.blockZollernium);
 		totalCompressorRecipes++;
 		
+		// Zucrite Ingot
+		CompressorRecipes.addShapelessRecipe(new ItemStack(ZGItems.ingotZucrite, 1), new ItemStack(ZGItems.ingotEtrium, 2), new ItemStack(
+				ZGItems.perdDiamond, 2));
+		
 		// Compressed Zucrite
-		CompressorRecipes.addShapelessRecipe(new ItemStack(ZGItems.ingotZucrite, 2), new ItemStack(ZGItems.ingotEtrium, 1), new ItemStack(
-				ZGItems.perdDiamond, 1));
+		CompressorRecipes.addShapelessRecipe(new ItemStack(ZGItems.compressedZucrite, 2), new ItemStack(ZGItems.ingotZucrite, 2),
+				new ItemStack(ZGItems.ingotZucrite, 2));
 		totalCompressorRecipes++;
 		
 		// Compressed Rhodium
-		CompressorRecipes.addShapelessRecipe(new ItemStack(ZGItems.ingotRhodium, 2), new ItemStack(ZGItems.ingotRhodium, 1), new ItemStack(
-				ZGItems.ingotRhodium, 1));
+		CompressorRecipes.addShapelessRecipe(new ItemStack(ZGItems.compressedRhodium, 2), new ItemStack(ZGItems.ingotRhodium, 1),
+				new ItemStack(ZGItems.ingotRhodium, 1));
 		totalCompressorRecipes++;
 		
 		ZGHelper.Log("Loaded a total of " + totalCompressorRecipes + " new compressor recipes.");

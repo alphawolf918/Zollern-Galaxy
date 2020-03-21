@@ -24,9 +24,12 @@ Zollern Galaxy v2.0.13
     - If a GC Alien Villager spawns on Altum, it will immediately turn into an Abyssal Villager.
     - Spawns on land and in water.
     - They have their own trade items from Zollern Galaxy.
+* Added Rhodium metal.
+* Added Altum Space Station.
 * Slightly modified texture of Zucrite block.
-* Treasure chests generate in Altum's oceans and caves (sometimes on the surface, too).
-* Fixed alien squid (Squidlus) not spawning.
+* Treasure chests generate in Altum's oceans and caves (possibly sometimes on the surface, too).
+* 
+* Fixed Squidlus not spawning.
 * Fixed Squidlus animation weirdness.
 * Fixed Perdita Fueltonium Ore not pulverizing.
 * Fixed Perdita and Mummy Lore Books both being Lore Book #35.

@@ -19,6 +19,7 @@ import net.minecraftforge.fml.common.gameevent.TickEvent.Phase;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.core.dimensions.skyproviders.SkyProviderOrbitZG;
+import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitAltum;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitAtheon;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitCandora;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitEden;
@@ -183,6 +184,21 @@ public class ZGSkyProviderHandler {
 					SkyProviderOrbitZG sky = new SkyProviderOrbitZG(new ResourceLocation(ZGInfo.MOD_ID + ":textures/gui/perdita.png"),
 							"sol2", world.provider);
 					WorldProviderOrbitPerdita provider = (WorldProviderOrbitPerdita) world.provider;
+					provider.setSpinDeltaPerTick(provider.getSpinManager().getSpinRate());
+					world.provider.setSkyRenderer(sky);
+				}
+				
+				if (world.provider.getCloudRenderer() == null) {
+					world.provider.setCloudRenderer(new CloudRenderer());
+				}
+			}
+			
+			// Sol-2 (Altum)
+			if (world.provider instanceof WorldProviderOrbitAltum) {
+				if (world.provider.getSkyRenderer() == null || world.provider.getSkyRenderer() instanceof SkyProviderOrbit) {
+					SkyProviderOrbitZG sky = new SkyProviderOrbitZG(new ResourceLocation(ZGInfo.MOD_ID + ":textures/gui/altum.png"),
+							"sol2", world.provider);
+					WorldProviderOrbitAltum provider = (WorldProviderOrbitAltum) world.provider;
 					provider.setSpinDeltaPerTick(provider.getSpinManager().getSpinRate());
 					world.provider.setSkyRenderer(sky);
 				}

@@ -8,6 +8,8 @@
 package zollerngalaxy.worldgen;
 
 import java.util.Random;
+import net.minecraft.block.BlockChest;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityChest;
@@ -18,7 +20,9 @@ import net.minecraft.world.gen.feature.WorldGenerator;
 
 public class WorldGenTreasure extends ZGWorldGenMaster {
 	
-	protected ResourceLocation lootTable;
+	protected ResourceLocation lootTable = null;
+	protected static final BlockChest CHEST = Blocks.CHEST;
+	protected static final IBlockState CHEST_STATE = CHEST.getDefaultState();
 	
 	public WorldGenTreasure(ResourceLocation lootTblIn) {
 		this.lootTable = lootTblIn;
@@ -36,12 +40,11 @@ public class WorldGenTreasure extends ZGWorldGenMaster {
 		
 		BlockPos chestPos = pos.down();
 		
-		worldIn.setBlockState(chestPos, Blocks.CHEST.correctFacing(worldIn, chestPos, Blocks.CHEST.getDefaultState()), 2);
+		worldIn.setBlockState(chestPos, CHEST.correctFacing(worldIn, chestPos, CHEST_STATE), 2);
 		TileEntity tileEntity = worldIn.getTileEntity(chestPos);
 		
 		if (tileEntity instanceof TileEntityChest) {
-			TileEntityChest chestEntity = (TileEntityChest) tileEntity;
-			chestEntity.setLootTable(this.lootTable, rand.nextLong());
+			((TileEntityChest) tileEntity).setLootTable(this.lootTable, rand.nextLong());
 		}
 		
 		return true;
