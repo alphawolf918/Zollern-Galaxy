@@ -211,10 +211,60 @@ tile.atheonrockbricks.name=아테온 석재 벽돌
 tile.atheonrock.name=아테온 금암
 tile.goldenconstructblock.name=금빛 구성 블록
 
+tile.perdsand.name=로스트 모래
+tile.perdrock.name=로스트암
+tile.perdstone.name=로스트석
+tile.perdrockbricks.name=로스트암 벽돌
+tile.perdcobble.name=로스트 조약돌
+tile.perdgravel.name=로스트 자갈
+tile.perdcreepdirt.name=로스트 크립토
+tile.perdcreepstone.name=로스트 크립석
+tile.perdcavestone.name=로스트 석회암
+tile.perdcavestonebricks.name=로스트 석회암 벽돌
+tile.perdglowstone.name=로스트 발광석
+tile.perdcactus.name=로스트 선인장
+tile.perdtorch.name=로스트 빛나는 횃불
+tile.perddiamondblock.name=로스트 다이아몬드 블록
+tile.perddiamondore.name=로스트 다이아몬드 원석
+tile.perdetriumore.name=로스트 에트륨 광석
+tile.perdironore.name=로스트 철광석
+tile.perdgoldore.name=로스트 금광석
+tile.perdzollerniumore.name=로스트 졸러늄 광석
+tile.perdfueltoniumore.name=로스트 퓨엘토늄 광석
+tile.perdsoil.name=로스트 찰흙
+tile.perddeadbush.name=로스트 죽은 덤불
+tile.perddirt.name=로스트 흙
+tile.perdgrass.name=로스트 잔디
+tile.perdtallgrass.name=로스트 긴 잔디
+tile.perdreeds.name=로스트 대나무
+tile.palmtreesapling.name=로스트 야자나무 묘목
+tile.palmwoodlog.name=로스트 야자나무 원목
+tile.palmwoodleaves.name=로스트 야자나무 잎
+tile.palmwoodplanks.name=로스트 야자나무 판자
+
+tile.altumrock.name=알툼암
+tile.altumstone.name=알툼석
+tile.altumcobble.name=알툼 조약돌
+tile.altumdirt.name=알툼 흙
+tile.altumgravel.name=알툼 자갈
+tile.altumsand.name=알툼 모래
+tile.altumcoalore.name=알툼 석탄 광석
+tile.altumironore.name=알툼 철광석
+tile.altumgoldore.name=알툼 금광석
+tile.altumdiamondore.name=알툼 다이아몬드 원석
+tile.altumredstoneore.name=알툼 레드스톤 원석
+tile.altumamaranthore.name=알툼 아마란스 광석
+tile.altumzollerniumore.name=알툼 졸러늄 광석
+tile.altumeveniumore.name=알툼 에베늄 광석
+tile.altumrhodiumore.name=알툼 로듐 광석
+
 tile.amaranthblock.name=아마란스 블록
 tile.azuriteblock.name=남동석 블록
 tile.zollerniumblock.name=졸러늄 블록
 tile.zincblock.name=아연 블록
+tile.perdetriumblock.name=에트륨 블록
+tile.zucriteblock.name=주크라이트 블록
+tile.rhodiumblock.name=로듐 블록
 
 tile.endrock.name=엔드암
 
@@ -230,6 +280,8 @@ tile.compressedviriniumblock.name=압축된 비리늄 블록
 tile.compressedeveniumblock.name=압축된 에베늄 블록
 tile.compressedcobaltblock.name=압축된 코발트 블록
 tile.compressedheartiumblock.name=압축된 하튬 블록
+tile.compressedrhodiumblock.name=압축된 로듐 블록
+tile.compressedzucriteblock.name=압축된 주크라이트 블록
 
 chargium=차귬
 tile.chargium.name=차귬
@@ -262,6 +314,8 @@ item.alienbeefcooked.name=외계 스테이크
 item.alienbaconraw.name=익히지 않은 외계 베이컨
 item.alienbaconcooked.name=익힌 외계 베이컨
 item.fruitofeden.name=에덴 열매
+item.perdberry.name=로스트 베리
+item.perdpeach.name=로스트 복숭아
 
 item.creamball.name=크림 볼
 item.rawchocolate.name=생초콜렛
@@ -275,14 +329,14 @@ item.hud.name=갤럭틱 HUD
 item.brightstonedust.name=명석 가루
 item.edendungeonkey.name=에덴 보물 열쇠
 item.rawviri.name=생 비리늄
-item.ingotviri.name=비리늄괴
+item.ingotviri.name=비리늄 주괴
 item.alienstone.name=고대 에덴의 에센스
 item.edencrystal.name=에덴 수정
 
-item.ingotcobalt.name=코발트괴
+item.ingotcobalt.name=코발트 주괴
 item.kriffoncrystal.name=크리폰 수정
 
-item.ingotevenium.name=에베늄괴
+item.ingotevenium.name=에베늄 주괴
 item.purgotcrystal.name=퍼고트 수정
 
 item.prometheancrystal.name=프로메시언 수정
@@ -290,33 +344,39 @@ item.plutoniumcrystal.name=플루토늄 수정
 
 item.purgotessence.name=오아시스 보석
 
+item.shadowessence.name=암흑 물질 진액
+
 item.fueltoniumraw.name=생 푸엘로나이트
-item.fueltoniumingot.name=푸엘토늄괴
+item.fueltoniumingot.name=푸엘토늄 주괴
 
 item.chargiumdust.name=차귬 가루
-item.chargiumingot.name=차귬괴
+item.chargiumingot.name=차귬 주괴
 
 item.shiniumdust.name=샤이늄 가루
-item.shiniumingot.name=샤이늄괴
+item.shiniumingot.name=샤이늄 주괴
 
 item.shinestonedust.name=샤인석 가루
-item.shinestoneingot.name=샤인석괴
+item.shinestoneingot.name=샤인석 주괴
 
-item.lapisingot.name=청금석괴
+item.lapisingot.name=청금석 주괴
+item.lapisstick.name=청금석 막대
 
-item.amaranthingot.name=아마란스괴
+item.amaranthingot.name=아마란스 주괴
 item.amaranthdust.name=아마란스 가루
 item.amaranthnugget.name=아마란스 조각
 
 item.ascendium.name=아센듐
 item.azurite.name=남동석
-item.ascendantamaranthingot.name=상승 아마란스괴
+item.ascendantamaranthingot.name=상승 아마란스 주괴
 
-item.zollerniumingot.name=졸러늄괴
+item.zollerniumingot.name=졸러늄 주괴
 item.zollerniumdust.name=졸러늄 가루
 
-item.zincingot.name=아연괴
+item.zincingot.name=아연 주괴
 item.zincdust.name=아연 가루
+
+item.rhodiumingot.name=로듐 주괴
+item.rhodiumdust.name=로듐 가루
 
 item.rokkite.name=로키트
 
@@ -327,6 +387,8 @@ item.marblestick.name=마블 막대
 item.blueprint_rad.name=방사능 보호
 item.blueprint_tox.name=독성 보호
 item.blueprint_poison.name=독 보호
+item.blueprint_corruption.name=부패 보호
+item.blueprint_radiance.name=어둠 보호
 
 item.compressedemerald.name=압축된 에메랄드
 item.compresseddiamond.name=압축된 다이아몬드
@@ -343,9 +405,33 @@ item.compressedriven.name=압축된 리븐
 item.compressedamaranth.name=압축된 아마란스
 item.compressedazurite.name=압축된 남동석
 item.compressedzollernium.name=압축된 졸러늄
+item.compressedrhodium.name=압축된 로듐
+item.compressedzucrite.name=압축된 주크라이트
 
 item.superchargedcoal.name=특석탄
 item.powerstick.name=승천의 지팡이
+
+item.perddiamond.name=로스트 다이아몬드
+item.etrium.name=생 에트륨
+item.etriumingot.name=에트륨 주괴
+item.zucritedust.name=주크라이트 가루
+item.zucriteingot.name=주크라이트 주괴
+item.perdpearl.name=로스트 진주
+item.perdglowstonedust.name=로스트 발광석 가루
+item.perdreed.name=로스트 대순
+
+item.rawblubberfish.name=생 괴물어
+item.cookedblubberfish.name=익힌 괴물어
+item.rawgypsyfish.name=생 집시어
+item.cookedgypsyfish.name=익힌 집시어
+item.rawbladefish.name=생 비행어
+item.cookedbladefish.name=익힌 비행어
+item.rawshark.name=생 상어
+item.cookedshark.name=익힌 상어
+
+item.shagreen.name=샤그린
+item.sharktooth.name=상어 치아
+item.sharksword.name=상어검
 
 item.stargate_tier1.name=스타게이트 (프로토콜 1)
 item.stargate_tier2.name=스타게이트 (프로토콜 2)
@@ -408,6 +494,25 @@ entity.zollerngalaxy:crawler.name=겁쟁이 보스
 entity.zollerngalaxy:frostgiant.name=서리 거인
 entity.zollerngalaxy:magmos.name=마그모스
 entity.zollerngalaxy:slime.raspberry.name=은하 슬라임 (라즈베리)
+entity.zollerngalaxy:megacreeper.name=메가 크리퍼
+entity.zollerngalaxy:mummy.name=미라
+entity.zollerngalaxy:scorpion.name=전갈
+entity.zollerngalaxy:blubberfish.name=괴물어
+entity.zollerngalaxy:gypsyfish.name=집시어
+entity.zollerngalaxy:bladefish.name=비행어
+entity.zollerngalaxy:abyssalvillager.name=심해 주민
+entity.zollerngalaxy:shark.name=상어
+entity.zollerngalaxy:jellyfish.name=해파리
+
+tooltips.hud=모든 행성 및 생물군계 데이터를 표시합니다.
+tooltips.hud2=고정되어 있을 때만 작동합니다.
+tooltips.holdshift=자세한 내용을 보려면 LSHIFT를 누릅니다.
+tooltips.stargate=플레이어를 공간과 시간으로 
+tooltips.stargate2=이동하는 두 월드 사이의 
+tooltips.stargate3=게이트웨이입니다.
+tooltips.loreblock=플레이어에 학문을 제공합니다. 
+tooltips.loreblock2=작업하려면 옴니툴이 필요합니다.
+tooltips.loreblock3=우주 정거장에서만 찾을 수 있습니다.
 
 planet.zollus=졸루스
 planet.eden=에덴
@@ -422,6 +527,9 @@ planet.candora=칸도라
 planet.atheon=아테온
 
 planet.exodus=엑소더스
+planet.perdita=페르디타
+planet.altum=알툼
+planet.caligro=칼리그로
 
 planet.meztli=메즈틀리
 planet.centotl=센토틀
@@ -466,6 +574,55 @@ satellite.space_station.oasis=오아시스 우주 정거장
 satellite.space_station.xantheon=잔테온 우주 정거장
 satellite.space_station.candora=칸도라 우주 정거장
 satellite.space_station.atheon=아테온 우주 정거장
+satellite.space_station.perdita=페르디타 우주 정거장
+satellite.space_station.altum=알툼 우주 정거장
+satellite.space_station.caligro=칼리그로 우주 정거장
+satellite.space_station.exodus=엑소더스 우주 정거장
+
+death.attack.bladefish=%1$s가 칼에 찔려 죽었습니다.
+death.attack.bladefish.player=%1$s가 %2$s 때문에 찔려 죽었습니다.
+death.attack.bladefish.item=%1$s가 %3$s을(를) 사용하여 %2$s을(를) 찔려 죽었습니다.
+
+death.attack.jellyfishsting=%1$s가 해파리에 쏘였습니다.
+death.attack.jellyfishsting.player=%1$s은 %2$s 덕분에 해파리에 쏘였습니다.
+death.attack.jellyfishsting.item=%1$s는 %3$s을(를) 사용하는 %2$s 덕분에 해파리에 쏘였습니다.
+
+death.attack.sharkattack=%1$s는 상어에게 먹혔습니다.
+death.attack.sharkattack.player=%1$s은 %2$s 때문에 상어에게 먹혔습니다.
+death.attack.sharkattack.item=%1$s는 %3$s을(를) 사용하는 %2$s 때문에 상어에게 먹혔습니다.
+
+death.attack.shadows=%1$s가 그림자 영역에 의해 통째로 삼켜졌습니다.
+death.attack.shadows.player=%2$s의 작업으로 인해 %1$s이(가) 그림자 영역에 완전히 삼켰습니다.
+death.attack.shadows.item=%3$s을(를) 사용하는 %2$s의 작업으로 인해 %1$s이(가) 그림자 영역에 의해 통째로 삼켰습니다.
+
+death.attack.infection=바이러스 감염으로 인해 %1$s이(가) 사라졌습니다.
+death.attack.infection.player=%1$s가 바이러스 감염으로 %2$s 감소했습니다.
+death.attack.infection.item=%1$s가 %3$s을(를) 사용한 %2$s로 인해 바이러스 감염으로 소멸되었습니다.
+
+death.attack.light=%1$s이(가) 빛에 눈이 멀었습니다.
+death.attack.light.player=%1$s이(가) %2$s의 빛에 의해 눈이 멀었습니다.
+death.attack.light.item=%1$s이(가) %3$s을(를) 사용하여 %2$s의 빛에 눈이 멀었습니다.
+
+death.attack.corruption=%1$s이(가) 손상되었습니다.
+death.attack.corruption.player=%1$s가 %2$s로 손상되었습니다.
+death.attack.corruption.item=%1$s가 %3$s을(를) 사용한 %2$s에 의해 손상되었습니다.
+
+death.attack.deathcold=%1$s이(가) 얼어 죽었습니다.
+death.attack.deathcold.player=%1$s이(가) %2$s로 인해 얼어 죽었습니다.
+death.attack.deathcold.item=%1$s이(가) %3$s을(를) 사용한 %2$s로 인해 얼어 죽었습니다.
+
+death.attack.deathhot=%1$s가 녹아서 죽었습니다.
+death.attack.deathhot.player=%2$s 때문에 %1$s이(가) 녹아서 죽었습니다.
+death.attack.deathhot.item=%3$s을(를) 사용하는 %2$s 때문에 %1$s이(가) 녹아서 죽었습니다.
+
+death.attack.toxic=%1$s가 독성으로 죽었습니다.
+death.attack.toxic.player=%1$s이(가) %2$s 때문에 독성으로 죽었습니다.
+death.attack.toxic.item=%1$s이(가) %3$s을(를) 사용하는 %2$s 때문에 독성으로 죽었습니다.
+
+zollerngalaxy_infected=감염
+zollerngalaxy_corruption=부패
+zollerngalaxy_radiance=피폭
+zollerngalaxy_enlightened=계명
 
 itemGroup.ZollernGalaxyBlocks=졸런 갤럭시 (블록)
 itemGroup.ZollernGalaxyItems=졸런 갤럭시 (아이템)
