@@ -63,7 +63,7 @@ public class WorldProviderZollus extends WorldProviderZG {
 	
 	@Override
 	public float getThermalLevelModifier() {
-		return -2.2F;
+		return -12.2F;
 	}
 	
 	@Override
@@ -71,7 +71,7 @@ public class WorldProviderZollus extends WorldProviderZG {
 		ZGPlanet planet = this.getPlanet();
 		float planetTemp = planet.getPlanetTemperature();
 		if (!this.isDaytime()) {
-			planetTemp /= 1.4F;
+			planetTemp /= 2.4F;
 		}
 		return planetTemp;
 	}
@@ -98,7 +98,7 @@ public class WorldProviderZollus extends WorldProviderZG {
 		if (var3 > 1.0F) {
 			var3 = 0.75F;
 		}
-		return var3 * var3 * 0.3F;
+		return var3 * var3 * 0.6F;
 	}
 	
 	@Override
@@ -119,7 +119,7 @@ public class WorldProviderZollus extends WorldProviderZG {
 	
 	@Override
 	public double getHorizon() {
-		return 44.0D;
+		return 54.0D;
 	}
 	
 	@Override
@@ -129,13 +129,14 @@ public class WorldProviderZollus extends WorldProviderZG {
 	
 	@Override
 	public Vector3 getFogColor() {
-		float f = 1.0F - this.getStarBrightness(1.0F);
-		return new Vector3(20 / 255F * f, 27 / 255F * f, 45 / 255F * f);
+		float f = 1.1F - this.getStarBrightness(1.0F);
+		return new Vector3(1F / 255F * f, 1F / 255F * f, 82F / 255F * f);
 	}
 	
 	@Override
 	public Vector3 getSkyColor() {
-		return new Vector3(0, 0, 0);
+		float f = 1.05F - this.getStarBrightness(1.0F);
+		return new Vector3(1F / 255F * f, 4F / 255F * f, 128F / 255F * f);
 	}
 	
 	@Override

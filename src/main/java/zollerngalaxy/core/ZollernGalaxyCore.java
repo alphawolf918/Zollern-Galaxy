@@ -50,8 +50,9 @@ public class ZollernGalaxyCore {
 	@Mod.Instance(ZGInfo.MOD_ID)
 	private static ZollernGalaxyCore INSTANCE;
 	
-	// CHANGE THIS TO FALSE BEFORE DEPLOYMENT!!
+	// CHANGE THESE TO FALSE BEFORE DEPLOYMENT!!
 	private static final boolean DEV_MODE = false;
+	private static final boolean TEST_MODE = true;
 	
 	public static SimpleNetworkWrapper snw;
 	
@@ -68,6 +69,17 @@ public class ZollernGalaxyCore {
 	 */
 	public boolean isInDevMode() {
 		return DEV_MODE;
+	}
+	
+	/**
+	 * If the mod is in Test Mode, it will send a message to the user that
+	 * the copy is not genuine, thereby preventing it from being claimed as real.
+	 * This also allows for more control when testing.
+	 * 
+	 * @return Whether or not Testing Mode is active.
+	 */
+	public boolean isInTestMode() {
+		return TEST_MODE;
 	}
 	
 	static {

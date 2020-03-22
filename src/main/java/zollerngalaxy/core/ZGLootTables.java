@@ -22,4 +22,7 @@ public class ZGLootTables {
 	public static final ResourceLocation CHEST_BURIED_TREASURE = CommonZGRegisterHelper.registerChestLoot("buriedtreasure");
 	public static final ResourceLocation CHEST_OCEAN_TREASURE = CommonZGRegisterHelper.registerChestLoot("oceantreasure");
 	
+	// Gameplay
+	public static final ResourceLocation GAMEPLAY_FISHING = CommonZGRegisterHelper.registerGameplayLoot("zgfishing");
+	
 }

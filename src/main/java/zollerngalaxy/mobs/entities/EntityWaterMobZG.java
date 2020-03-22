@@ -22,6 +22,8 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 import zollerngalaxy.lib.helpers.ZGHelper;
+import zollerngalaxy.mobs.entities.ai.EntityAIFishPanic;
+import zollerngalaxy.mobs.entities.ai.EntityAIFishWander;
 
 public class EntityWaterMobZG extends EntityWaterMob {
 	
@@ -46,6 +48,7 @@ public class EntityWaterMobZG extends EntityWaterMob {
 	protected float fishSize = (this.fishEq + this.minSize);
 	
 	protected float seaLevel = (this.getEntityWorld().getSeaLevel() * 1.0F);
+	protected float acceptableLevel = (seaLevel - 5);
 	
 	protected double motionYStart;
 	protected double posYStart;
@@ -63,6 +66,8 @@ public class EntityWaterMobZG extends EntityWaterMob {
 	@Override
 	protected void initEntityAI() {
 		this.tasks.addTask(0, new EntityWaterMobZG.AIMoveRandom(this));
+		this.tasks.addTask(1, new EntityAIFishWander(this, this.randomMotionSpeed));
+		this.tasks.addTask(2, new EntityAIFishPanic(this, this.randomMotionSpeed));
 	}
 	
 	@Override
@@ -100,53 +105,41 @@ public class EntityWaterMobZG extends EntityWaterMob {
 		super.onLivingUpdate();
 		this.prevFishPitch = this.fishPitch;
 		this.prevFishYaw = this.fishYaw;
-		
-		if (this.inWater) {
-			if (!this.world.isRemote) {
-				if (motionY <= seaLevel) {
-					if (this.getRNG().nextFloat() > 0.75D) {
-						this.randomMotionSpeed = ZGHelper.rngFloat(0.1F, 1.0F);
-					} else {
-						this.randomMotionSpeed *= ZGHelper.rngFloat(0.1F, 0.9F);
-					}
+		float acceptableLevel = (this.seaLevel - 5);
+		if (!this.getEntityWorld().isRemote) {
+			this.randomMotionSpeed = (this.isInWater()) ? ZGHelper.rngFloat(0.1F, 2.0F) : 0.0F;
+			if (this.isInWater()) {
+				if (this.getRNG().nextFloat() == 0.75D) {
+					this.randomMotionSpeed = ZGHelper.rngFloat(0.1F, 0.4F);
 				}
-				
-				if (!this.world.isRemote) {
-					double motionYNew = this.randomMotionVecY + this.randomMotionSpeed;
-					if (motionYNew >= (seaLevel - 5)) {
-						motionYNew = (seaLevel - (seaLevel / 2));
-						this.posY = this.posYStart;
-						this.randomMotionSpeed = 0.1F;
-					}
-					
-					this.motionX = (this.randomMotionVecX * this.randomMotionSpeed);
+				this.randomMotionSpeed = (this.randomMotionSpeed > 2.0F) ? 2.0F : this.randomMotionSpeed;
+				float addYVector = (this.randomMotionVecY + this.randomMotionSpeed);
+				float subYVector = (this.randomMotionVecY - this.randomMotionSpeed);
+				double motionYNew = (this.getRNG().nextInt(10) == 1) ? addYVector : subYVector;
+				if (motionYNew >= acceptableLevel) {
+					motionYNew = (this.randomMotionVecY - this.randomMotionSpeed);
+					this.randomMotionSpeed = 0.1F;
+					this.randomMotionVecY = 0.1F;
+				}
+				this.motionX = (this.randomMotionVecX * this.randomMotionSpeed);
+				if (ZGHelper.getRNGChance(5, 20)) {
 					this.motionY = motionYNew;
-					this.motionZ = (this.randomMotionVecZ * this.randomMotionSpeed);
-					if (!this.inWater) {
-						this.motionY -= 2.08D;
-					}
 				}
-				
+				this.motionZ = (this.randomMotionVecZ * this.randomMotionSpeed);
 				float f1 = MathHelper.sqrt(this.motionX * this.motionX + this.motionZ * this.motionZ);
 				this.renderYawOffset += (-((float) MathHelper.atan2(this.motionX, this.motionZ)) * (180F / (float) Math.PI) - this.renderYawOffset) * 0.1F;
 				this.fishYaw = (float) (this.fishYaw + Math.PI * 1.5D);
-				this.fishPitch += (-((float) MathHelper.atan2(f1, this.motionY)) * (180F / (float) Math.PI) - this.fishPitch) * 0.1F;
-			}
-		} else {
-			if (!this.world.isRemote) {
+				this.fishPitch = (float) (this.fishPitch + (-90.0F - this.fishPitch) * 0.02D);
+			} else {
 				this.motionX = 0.0D;
 				this.motionZ = 0.0D;
-				
 				if (this.isPotionActive(MobEffects.LEVITATION)) {
 					this.motionY += 0.05D * (this.getActivePotionEffect(MobEffects.LEVITATION).getAmplifier() + 1) - this.motionY;
 				} else {
 					this.motionY -= 2.08D;
 				}
-				
 				this.motionY -= 1.9800000190734863D;
 			}
-			
-			this.fishPitch = (float) (this.fishPitch + (-90.0F - this.fishPitch) * 0.02D);
 		}
 	}
 	
@@ -189,6 +182,34 @@ public class EntityWaterMobZG extends EntityWaterMob {
 		} else {
 			return this.homePosition.distanceSq(pos) < this.maximumHomeDistance * this.maximumHomeDistance;
 		}
+	}
+	
+	public void setHomePosAndDistance(BlockPos pos, int distance) {
+		this.homePosition = pos;
+		this.maximumHomeDistance = distance;
+	}
+	
+	public BlockPos getHomePosition() {
+		return this.homePosition;
+	}
+	
+	public float getMaximumHomeDistance() {
+		return this.maximumHomeDistance;
+	}
+	
+	public void detachHome() {
+		this.maximumHomeDistance = -1.0F;
+	}
+	
+	/**
+	 * Returns whether a home area is defined for this entity.
+	 */
+	public boolean hasHome() {
+		return this.maximumHomeDistance != -1.0F;
+	}
+	
+	public float getBlockPathWeight(BlockPos pos) {
+		return 0.0F;
 	}
 	
 	protected static class AIMoveRandom extends EntityAIBase {

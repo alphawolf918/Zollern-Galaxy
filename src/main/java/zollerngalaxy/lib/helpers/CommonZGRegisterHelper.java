@@ -134,4 +134,8 @@ public class CommonZGRegisterHelper {
 	public static ResourceLocation registerChestLoot(String name) {
 		return LootTableList.register(new ResourceLocation(ZGInfo.MOD_ID + ":chests/" + name));
 	}
+	
+	public static ResourceLocation registerGameplayLoot(String name) {
+		return LootTableList.register(new ResourceLocation(ZGInfo.MOD_ID + ":gameplay/" + name));
+	}
 }

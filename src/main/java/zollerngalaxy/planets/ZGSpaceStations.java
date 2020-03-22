@@ -251,6 +251,14 @@ public class ZGSpaceStations {
 		inputMap.put(new ItemStack(ZGItems.perdGlowdust, 1, 0), 24);
 		inputMap.put(ZGItems.compressedEmerald, 24);
 		ZGRecipeHelper.addSpaceStationRecipe(ConfigManagerZG.spaceStationPerditaId, ConfigManagerZG.planetPerditaDimensionId, inputMap);
+		
+		// Sol-2 (Altum)
+		inputMap = new HashMap<Object, Integer>();
+		inputMap.put("ingotRhodium", 32);
+		inputMap.put("waferAdvanced", 1);
+		inputMap.put(new ItemStack(ZGItems.ascendium, 1, 0), 24);
+		inputMap.put(ZGItems.compressedZucrite, 24);
+		ZGRecipeHelper.addSpaceStationRecipe(ConfigManagerZG.spaceStationAltumId, ConfigManagerZG.planetAltumDimensionId, inputMap);
 	}
 	
 	private static void registerSpaceStation(ZGSpaceStation spaceStation, String stationName, String stationStringId,

@@ -1,0 +1,39 @@
+{
+    "pools": [
+        {
+            "name": "zgfishing",
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "zollerngalaxy:rawbladefish",
+                    "weight": 5
+                },
+                {
+                    "type": "item",
+                    "name": "zollerngalaxy:rawblubberfish",
+                    "weight": 25
+                },
+                {
+                    "type": "item",
+                    "name": "zollerngalaxy:rawgypsyfish",
+                    "weight": 20
+                },
+                {
+                    "type": "item",
+                    "name": "zollerngalaxy:shagreen",
+                    "weight": 10
+                },
+                {
+                    "type": "item",
+                    "name": "zollerngalaxy:sharktooth",
+                    "weight": 10
+                },
+                {
+                    "type": "empty",
+                    "weight": 30
+                }
+            ]
+        }
+    ]
+}

@@ -82,6 +82,7 @@ public class RandPosGen {
 			flag = d0 < d1 * d1;
 		} else {
 			flag = false;
+			// EntityCreature
 		}
 		
 		boolean flag1 = false;

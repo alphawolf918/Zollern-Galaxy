@@ -2,10 +2,11 @@
 Zollern Galaxy v2.0.13
 =====================
 
-* Created Planet Altum, an ocean planet.
+* Created planet Altum, an ocean planet.
 * Zucrite Dust can now be cooked into Zucrite Ingots.
 * Zucrite can now be crafted in the Galacticraft Compressor with Lost Diamonds and Etrium Ingots.
 * Updated Chinese translations by EndsM.
+* Updated Korean translations by mindy15963.
 * Added blocks and items for Planet Altum.
 * Added biomes for new planet.
 * Added extra ravine generation to Perdita.
@@ -28,7 +29,13 @@ Zollern Galaxy v2.0.13
 * Added Altum Space Station.
 * Slightly modified texture of Zucrite block.
 * Treasure chests generate in Altum's oceans and caves (possibly sometimes on the surface, too).
-* 
+* Custom fish added to fishing loot.
+    - Currently will apply to ALL destinations when fishing rather than just Altum.
+* Made changes to Zollus.
+    - Reduced overall temperature.
+    - Increased horizon spawn height.
+    - Readded Eden and Purgot back to sky provider.
+    - Modified Zolrock Bricks texture to be more blue.
 * Fixed Squidlus not spawning.
 * Fixed Squidlus animation weirdness.
 * Fixed Perdita Fueltonium Ore not pulverizing.
