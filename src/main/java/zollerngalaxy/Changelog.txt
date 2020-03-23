@@ -25,6 +25,7 @@ Zollern Galaxy v2.0.13
     - If a GC Alien Villager spawns on Altum, it will immediately turn into an Abyssal Villager.
     - Spawns on land and in water.
     - They have their own trade items from Zollern Galaxy.
+* Added the Wasp mob.
 * Added Rhodium metal.
 * Added Altum Space Station.
 * Slightly modified texture of Zucrite block.

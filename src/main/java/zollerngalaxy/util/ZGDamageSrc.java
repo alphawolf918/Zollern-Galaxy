@@ -20,6 +20,7 @@ public class ZGDamageSrc extends DamageSource {
 	public static final ZGDamageSrc deathBladeFish = new ZGDamageSrc("bladefish", 1.2F);
 	public static final ZGDamageSrc deathSharkAttack = new ZGDamageSrc("sharkattack", 6.0F);
 	public static final ZGDamageSrc deathJellyfish = new ZGDamageSrc("jellyfishsting", 4.5F);
+	public static final ZGDamageSrc deathWasp = new ZGDamageSrc("waspsting", 4.7F, true);
 	
 	public ZGDamageSrc(String par1, float baseDamage) {
 		super(par1);

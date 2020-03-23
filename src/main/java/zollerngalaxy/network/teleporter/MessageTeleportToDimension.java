@@ -122,32 +122,24 @@ public class MessageTeleportToDimension implements IMessage {
 				
 				worldObj.setBlockState(new BlockPos(x, y, z), airState);
 				worldObj.setBlockState(new BlockPos(x, y + 1, z), airState);
-				
 				worldObj.setBlockState(new BlockPos(x + 1, y, z + 1), airState);
 				worldObj.setBlockState(new BlockPos(x + 1, y + 1, z + 1), airState);
-				
 				worldObj.setBlockState(new BlockPos(x - 1, y, z - 1), airState);
 				worldObj.setBlockState(new BlockPos(x - 1, y + 1, z - 1), airState);
-				
 				worldObj.setBlockState(new BlockPos(x + 1, y, z - 1), airState);
 				worldObj.setBlockState(new BlockPos(x + 1, y + 1, z - 1), airState);
-				
 				worldObj.setBlockState(new BlockPos(x - 1, y, z + 1), airState);
 				worldObj.setBlockState(new BlockPos(x - 1, y + 1, z + 1), airState);
-				
 				worldObj.setBlockState(new BlockPos(x - 1, y, z), airState);
 				worldObj.setBlockState(new BlockPos(x - 1, y + 1, z), airState);
-				
 				worldObj.setBlockState(new BlockPos(x, y, z - 1), airState);
 				worldObj.setBlockState(new BlockPos(x, y + 1, z - 1), airState);
-				
 				worldObj.setBlockState(new BlockPos(x + 1, y, z), airState);
 				worldObj.setBlockState(new BlockPos(x + 1, y + 1, z), airState);
-				
 				worldObj.setBlockState(new BlockPos(x, y, z + 1), airState);
 				worldObj.setBlockState(new BlockPos(x, y + 1, z + 1), airState);
 				
-				player.fallDistance = 0.0f;
+				player.fallDistance = 0.0F;
 			}
 		}
 	}

@@ -30,6 +30,7 @@ import zollerngalaxy.mobs.entities.EntityOinkus;
 import zollerngalaxy.mobs.entities.EntityScorpion;
 import zollerngalaxy.mobs.entities.EntityShark;
 import zollerngalaxy.mobs.entities.EntitySquidlus;
+import zollerngalaxy.mobs.entities.EntityWasp;
 import com.google.common.base.CaseFormat;
 
 public class MobRegistry {
@@ -91,6 +92,10 @@ public class MobRegistry {
 		// Abyssal Villager
 		registerEntity("abyssalvillager", EntityAbyssalVillager.class, entityId++, 0x8b8b00, 0x0099ff);
 		EntitySpawnPlacementRegistry.setPlacementType(EntityAbyssalVillager.class, SpawnPlacementType.IN_WATER);
+		
+		// Wasp
+		registerEntity("wasp", EntityWasp.class, entityId++, 0x000000, 0x00ffff);
+		EntitySpawnPlacementRegistry.setPlacementType(EntityAbyssalVillager.class, SpawnPlacementType.IN_AIR);
 		
 		ZGHelper.Log("Loaded a total of " + totalMobs + " new mobs.");
 	}

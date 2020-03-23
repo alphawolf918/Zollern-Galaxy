@@ -501,6 +501,7 @@ entity.zollerngalaxy:bladefish.name=Blade Fish
 entity.zollerngalaxy:abyssalvillager.name=Abyssal Villager
 entity.zollerngalaxy:shark.name=Shark
 entity.zollerngalaxy:jellyfish.name=Jellyfish
+entity.zollerngalaxy:wasp.name=Wasp
 
 tooltips.hud=Shows all planetary and biome data.
 tooltips.hud2=Only works when held.
@@ -616,6 +617,10 @@ death.attack.deathhot.item=%1$s melted to death because of %2$s using %3$s.
 death.attack.toxic=%1$s died of toxicity.
 death.attack.toxic.player=%1$s died of toxicity because of %2$s.
 death.attack.toxic.item=%1$s died of toxicity because of %2$s using %3$s.
+
+death.attack.waspsting=%1$s died from wasp stings.
+death.attack.waspsting.player=%1$s died from wasp stings, thanks to %2$s.
+death.attack.waspsting.item=%1$s died from wasp stings, thanks to %2$s using %3$s.
 
 zollerngalaxy_infected=Infected
 zollerngalaxy_corruption=Corruption

@@ -25,6 +25,7 @@ import zollerngalaxy.mobs.entities.EntityOinkus;
 import zollerngalaxy.mobs.entities.EntityScorpion;
 import zollerngalaxy.mobs.entities.EntityShark;
 import zollerngalaxy.mobs.entities.EntitySquidlus;
+import zollerngalaxy.mobs.entities.EntityWasp;
 import zollerngalaxy.mobs.renders.RenderAbyssalVillager;
 import zollerngalaxy.mobs.renders.RenderBladeFish;
 import zollerngalaxy.mobs.renders.RenderBlubberFish;
@@ -40,6 +41,7 @@ import zollerngalaxy.mobs.renders.RenderOinkus;
 import zollerngalaxy.mobs.renders.RenderScorpion;
 import zollerngalaxy.mobs.renders.RenderShark;
 import zollerngalaxy.mobs.renders.RenderSquidlus;
+import zollerngalaxy.mobs.renders.RenderWasp;
 
 public final class MobRenders {
 	
@@ -59,6 +61,7 @@ public final class MobRenders {
 		RenderMob(EntityShark.class, RenderShark::new);
 		RenderMob(EntityJellyfish.class, RenderJellyfish::new);
 		RenderMob(EntityAbyssalVillager.class, RenderAbyssalVillager::new);
+		RenderMob(EntityWasp.class, RenderWasp::new);
 	}
 	
 	/**
