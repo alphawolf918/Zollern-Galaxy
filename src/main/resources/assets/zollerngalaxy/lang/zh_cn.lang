@@ -501,11 +501,12 @@ entity.zollerngalaxy:bladefish.name=剑鱼
 entity.zollerngalaxy:abyssalvillager.name=深渊村民
 entity.zollerngalaxy:shark.name=鲨鱼
 entity.zollerngalaxy:jellyfish.name=水母
+entity.zollerngalaxy:wasp.name=黄蜂
 
 tooltips.hud=显示所有行星及生物群系数据
 tooltips.hud2=仅在手持时生效
 tooltips.holdshift=按住 LSHIFT 显示更多信息
-tooltips.stargate两个世界之间的门径
+tooltips.stargate=两个世界之间的门径
 tooltips.stargate2=转移玩家中...
 tooltips.stargate3=穿越时空中...
 tooltips.loreblock=为玩家提供知识
@@ -620,6 +621,10 @@ death.attack.toxic.item=%1$s 因 %2$s 使用 %3$s 而死于有毒物质。
 death.attack.radioactive=%1$s 死于辐射。
 death.attack.radioactive.player=%1$s 因 %2$s 而死于辐射。
 death.attack.radioactive.item=%1$s 因 %2$s 使用 %3$s 而死于辐射。
+
+death.attack.waspsting=%1$s 死于马蜂蛰伤。
+death.attack.waspsting.player=%1$s 因 %2$s 而死于马蜂蛰伤。
+death.attack.waspsting.item=%1$s 因 %2$s 使用 %3$s 而死于马蜂蛰伤。
 
 zollerngalaxy_infected=感染
 zollerngalaxy_corruption=侵蚀
