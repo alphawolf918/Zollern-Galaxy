@@ -255,6 +255,7 @@ tile.altumamaranthore.name=阿尔图姆紫苋矿石
 tile.altumzollerniumore.name=阿尔图姆卓伦矿石
 tile.altumeveniumore.name=阿尔图姆伊文矿石
 tile.altumrhodiumore.name=阿尔图姆铑矿石
+tile.seaweed.name=海草
 
 tile.amaranthblock.name=紫苋块
 tile.azuriteblock.name=蓝铜块
@@ -418,8 +419,8 @@ item.perdpearl.name=失落之星珍珠
 item.perdglowstonedust.name=失落之星萤石粉
 item.perdreed.name=失落之星竹株
 
-item.rawblubberfish.name=Raw Blubber Fish
-item.cookedblubberfish.name=Cooked Blubber Fish
+item.rawblubberfish.name=生鲸脂鱼
+item.cookedblubberfish.name=熟鲸脂鱼
 item.rawgypsyfish.name=生吉普赛鱼
 item.cookedgypsyfish.name=熟吉普赛鱼
 item.rawbladefish.name=生剑鱼
@@ -495,7 +496,7 @@ entity.zollerngalaxy:slime.raspberry.name=星系史莱姆 (覆盆子)
 entity.zollerngalaxy:megacreeper.name=超级爬行者
 entity.zollerngalaxy:mummy.name=木乃伊
 entity.zollerngalaxy:scorpion.name=蝎子
-entity.zollerngalaxy:blubberfish.name=Blubber Fish
+entity.zollerngalaxy:blubberfish.name=鲸脂鱼
 entity.zollerngalaxy:gypsyfish.name=吉普赛鱼
 entity.zollerngalaxy:bladefish.name=剑鱼
 entity.zollerngalaxy:abyssalvillager.name=深渊村民
