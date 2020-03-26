@@ -34,7 +34,7 @@ import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.mobs.MobRegistry;
 import zollerngalaxy.network.teleporter.MessageTeleportToDimension;
 import zollerngalaxy.planets.ZGPlanets;
-import zollerngalaxy.planets.ZGSpaceStations;
+import zollerngalaxy.planets.satellites.ZGSpaceStations;
 import zollerngalaxy.proxy.CommonProxy;
 import zollerngalaxy.proxy.IProxy;
 import zollerngalaxy.recipes.ZGRecipeRegistry;

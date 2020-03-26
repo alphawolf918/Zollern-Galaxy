@@ -5,7 +5,7 @@
  * claim it as your own, and do not
  * redistribute it.
  */
-package zollerngalaxy.planets;
+package zollerngalaxy.planets.satellites;
 
 import java.util.HashMap;
 import micdoodle8.mods.galacticraft.api.GalacticraftRegistry;
@@ -29,7 +29,7 @@ import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitZoll
 import zollerngalaxy.items.ZGItems;
 import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.lib.helpers.ZGRecipeHelper;
-import zollerngalaxy.planets.satellites.ZGSpaceStation;
+import zollerngalaxy.planets.ZGPlanets;
 
 public class ZGSpaceStations {
 	
@@ -167,6 +167,10 @@ public class ZGSpaceStations {
 		// Sol-2 (Perdita)
 		ZGSpaceStations.registerSpaceStation(PERDITA_SPACE_STATION, "Perdita Space Station", "_perdita_orbit",
 				WorldProviderOrbitPerdita.class, ConfigManagerZG.spaceStationPerditaId, ConfigManagerZG.spaceStationPerditaStaticId);
+		
+		// Sol-2 (Altum)
+		ZGSpaceStations.registerSpaceStation(ALTUM_SPACE_STATION, "Altum Space Station", "_altum_orbit", WorldProviderOrbitAltum.class,
+				ConfigManagerZG.spaceStationAltumId, ConfigManagerZG.spaceStationAltumStaticId);
 	}
 	
 	public static void registerSpaceStationRecipes() {

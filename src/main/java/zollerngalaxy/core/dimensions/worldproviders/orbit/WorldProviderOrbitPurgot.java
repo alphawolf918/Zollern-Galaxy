@@ -21,7 +21,7 @@ import zollerngalaxy.core.dimensions.ZGDimensions;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderOrbitZG;
 import zollerngalaxy.planets.ZGPlanet;
 import zollerngalaxy.planets.ZGPlanets;
-import zollerngalaxy.planets.ZGSpaceStations;
+import zollerngalaxy.planets.satellites.ZGSpaceStations;
 
 public class WorldProviderOrbitPurgot extends WorldProviderOverworldOrbit {
 	

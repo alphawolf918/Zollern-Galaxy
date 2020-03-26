@@ -20,7 +20,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.core.dimensions.ZGDimensions;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderOrbitZG;
 import zollerngalaxy.planets.ZGPlanets;
-import zollerngalaxy.planets.ZGSpaceStations;
+import zollerngalaxy.planets.satellites.ZGSpaceStations;
 
 public class WorldProviderOrbitEden extends WorldProviderOverworldOrbit {
 	

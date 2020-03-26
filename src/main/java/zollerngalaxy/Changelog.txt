@@ -1,49 +1,6 @@
 ===== CHANGELOG =====
-Zollern Galaxy v2.0.13
+Zollern Galaxy v2.0.14 (Bugfix)
 =====================
 
-* Created planet Altum, an ocean planet.
-* Zucrite Dust can now be cooked into Zucrite Ingots.
-* Zucrite can now be crafted in the Galacticraft Compressor with Lost Diamonds and Etrium Ingots.
 * Updated Chinese translations by EndsM.
-* Updated Korean translations by mindy15963.
-* Added blocks and items for Planet Altum.
-* Added biomes for new planet.
-* Added extra ravine generation to Perdita.
-* Added support for translations for in-game descriptions.
-* Added support for underwater mobs.
-    - Behavior is currently a little derpy but it's hilarious.
-* Added the Blubber Fish, Gypsy Fish and Blade Fish mobs.
-    - Blade Fish will hurt you on contact.
-* Added Sharks.
-    - Chance to drop shagreen (shark leather) and shark teeth.
-* Added Jellyfish.
-    - Basically just tiny, mean squids. They hurt and are very fast.
-* Added the Abyssal Villager.
-    - Model by DabbingEevee.
-    - Fast Alien Villager that can breathe underwater.
-    - If a GC Alien Villager spawns on Altum, it will immediately turn into an Abyssal Villager.
-    - Spawns on land and in water.
-    - They have their own trade items from Zollern Galaxy.
-* Added support for bug mobs.
-* Added the Wasp mob.
-* Added Rhodium metal.
-* Added Altum Space Station.
-* Added 5 more lore books.
-* Slightly modified texture of Zucrite block.
-* Treasure chests generate in Altum's oceans and caves (possibly sometimes on the surface, too).
-* Custom fish added to fishing loot.
-    - Currently will apply to ALL destinations when fishing rather than just Altum.
-* Made changes to Zollus.
-    - Reduced overall temperature.
-    - Increased horizon spawn height.
-    - Readded Eden and Purgot back to sky provider (did the same thing to Kriffon).
-    - Modified Zolrock Bricks texture to be a deeper blue.
-* Explosive blocks can now be blown up by other explosions, possibly creating a chain reaction. Fun stuff.
-* Fixed Squidlus not spawning.
-* Fixed Squidlus animation weirdness.
-* Fixed Perdita Fueltonium Ore not pulverizing.
-* Fixed Perdita and Mummy Lore Books both being Lore Book #35.
-* Fixed hitboxes on Magmos and Frost Giant mobs.
-* Fixed Perdita treasure chests spawning in the air.
-* Fixed bug with ravines not generating correctly.
+* Fixed crash when attempting to create Altum space station.
