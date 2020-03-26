@@ -19,33 +19,33 @@ import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EntitySelectors;
 import net.minecraft.util.math.AxisAlignedBB;
-import zollerngalaxy.mobs.entities.EntityWasp;
+import zollerngalaxy.mobs.entities.EntityBugZG;
 import com.google.common.base.Function;
 import com.google.common.base.Predicate;
 
-public class EntityAIWaspNearestAttackableTarget<T extends EntityLivingBase> extends EntityAIWaspTarget {
+public class EntityAIBugNearestAttackableTarget<T extends EntityLivingBase> extends EntityAIBugTarget {
 	
 	protected final Class<T> targetClass;
 	private final int targetChance;
 	/** Instance of EntityAINearestAttackableTargetSorter. */
-	protected final EntityAIWaspNearestAttackableTarget.Sorter sorter;
+	protected final EntityAIBugNearestAttackableTarget.Sorter sorter;
 	protected final Predicate<? super T> targetEntitySelector;
 	protected T targetEntity;
 	
-	public EntityAIWaspNearestAttackableTarget(EntityWasp creature, Class<T> classTarget, boolean checkSight) {
+	public EntityAIBugNearestAttackableTarget(EntityBugZG creature, Class<T> classTarget, boolean checkSight) {
 		this(creature, classTarget, checkSight, false);
 	}
 	
-	public EntityAIWaspNearestAttackableTarget(EntityWasp creature, Class<T> classTarget, boolean checkSight, boolean onlyNearby) {
+	public EntityAIBugNearestAttackableTarget(EntityBugZG creature, Class<T> classTarget, boolean checkSight, boolean onlyNearby) {
 		this(creature, classTarget, 10, checkSight, onlyNearby, (Predicate) null);
 	}
 	
-	public EntityAIWaspNearestAttackableTarget(EntityWasp creature, Class<T> classTarget, int chance, boolean checkSight,
+	public EntityAIBugNearestAttackableTarget(EntityBugZG creature, Class<T> classTarget, int chance, boolean checkSight,
 			boolean onlyNearby, @Nullable final Predicate<? super T> targetSelector) {
 		super(creature, checkSight, onlyNearby);
 		this.targetClass = classTarget;
 		this.targetChance = chance;
-		this.sorter = new EntityAIWaspNearestAttackableTarget.Sorter(creature);
+		this.sorter = new EntityAIBugNearestAttackableTarget.Sorter(creature);
 		this.setMutexBits(1);
 		this.targetEntitySelector = new Predicate<T>() {
 			@Override
@@ -55,7 +55,7 @@ public class EntityAIWaspNearestAttackableTarget<T extends EntityLivingBase> ext
 				} else if (targetSelector != null && !targetSelector.apply(p_apply_1_)) {
 					return false;
 				} else {
-					return !EntitySelectors.NOT_SPECTATING.apply(p_apply_1_) ? false : EntityAIWaspNearestAttackableTarget.this
+					return !EntitySelectors.NOT_SPECTATING.apply(p_apply_1_) ? false : EntityAIBugNearestAttackableTarget.this
 							.isSuitableTarget(p_apply_1_, false);
 				}
 			}

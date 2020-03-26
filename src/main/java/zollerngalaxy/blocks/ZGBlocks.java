@@ -367,6 +367,7 @@ public class ZGBlocks {
 	public static final Block altumStone = new ZGPlanetStone("altumstone", 3.5F, ZGBlocks.altumCobble).setBlockHarvestLevel(
 			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
 	public static final Block altumGravel = new ZGGravel("altumgravel");
+	public static final Block altumSeaweed = new ZGWaterGrass("seaweed");
 	public static final Block altumCoalOre = new ZGOreGem("altumcoalore", 6.2F, Items.COAL).setBlockHarvestLevel(
 			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
 	public static final Block altumIronOre = new ZGBlockOre("altumironore", 5.2F).setBlockHarvestLevel(
@@ -487,8 +488,8 @@ public class ZGBlocks {
 				perdRockBricks, perdGravel, perdCreepDirt, perdSoil, perdDirt, perdTallGrass, perdGrass, perdCreepStone, perdGlowstone,
 				perdCaveStone, perdCaveStoneBricks, perdCactus, perdReeds, perdDeadBush, perdDiamondOre, perdEtriumOre, perdIronOre,
 				perdGoldOre, perdZollerniumOre, perdFueltoniumOre, perdTreeSapling, perdWoodLogs, perdWoodLeaves, perdWoodPlanks,
-				altumRock, altumSand, altumDirt, altumCobble, altumStone, altumGravel, altumCoalOre, altumIronOre, altumGoldOre,
-				altumRedstoneOre, altumDiamondOre, altumZollerniumOre, altumEveniumOre, altumRhodiumOre, altumAmaranthOre);
+				altumRock, altumSand, altumDirt, altumCobble, altumStone, altumGravel, altumSeaweed, altumCoalOre, altumIronOre,
+				altumGoldOre, altumRedstoneOre, altumDiamondOre, altumZollerniumOre, altumEveniumOre, altumRhodiumOre, altumAmaranthOre);
 		ZGHelper.Log("Loaded a total of " + totalBlocks + " new blocks.");
 	}
 	

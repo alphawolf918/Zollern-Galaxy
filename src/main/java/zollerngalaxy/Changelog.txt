@@ -12,10 +12,10 @@ Zollern Galaxy v2.0.13
 * Added extra ravine generation to Perdita.
 * Added support for translations for in-game descriptions.
 * Added support for underwater mobs.
+    - Behavior is currently a little derpy but it's hilarious.
 * Added the Blubber Fish, Gypsy Fish and Blade Fish mobs.
     - Blade Fish will hurt you on contact.
 * Added Sharks.
-    - Hostile mobs, but will still spawn on Peaceful. Be careful!
     - Chance to drop shagreen (shark leather) and shark teeth.
 * Added Jellyfish.
     - Basically just tiny, mean squids. They hurt and are very fast.
@@ -25,9 +25,11 @@ Zollern Galaxy v2.0.13
     - If a GC Alien Villager spawns on Altum, it will immediately turn into an Abyssal Villager.
     - Spawns on land and in water.
     - They have their own trade items from Zollern Galaxy.
+* Added support for bug mobs.
 * Added the Wasp mob.
 * Added Rhodium metal.
 * Added Altum Space Station.
+* Added 5 more lore books.
 * Slightly modified texture of Zucrite block.
 * Treasure chests generate in Altum's oceans and caves (possibly sometimes on the surface, too).
 * Custom fish added to fishing loot.
@@ -35,8 +37,9 @@ Zollern Galaxy v2.0.13
 * Made changes to Zollus.
     - Reduced overall temperature.
     - Increased horizon spawn height.
-    - Readded Eden and Purgot back to sky provider.
-    - Modified Zolrock Bricks texture to be more blue.
+    - Readded Eden and Purgot back to sky provider (did the same thing to Kriffon).
+    - Modified Zolrock Bricks texture to be a deeper blue.
+* Explosive blocks can now be blown up by other explosions, possibly creating a chain reaction. Fun stuff.
 * Fixed Squidlus not spawning.
 * Fixed Squidlus animation weirdness.
 * Fixed Perdita Fueltonium Ore not pulverizing.
@@ -44,4 +47,3 @@ Zollern Galaxy v2.0.13
 * Fixed hitboxes on Magmos and Frost Giant mobs.
 * Fixed Perdita treasure chests spawning in the air.
 * Fixed bug with ravines not generating correctly.
-* 

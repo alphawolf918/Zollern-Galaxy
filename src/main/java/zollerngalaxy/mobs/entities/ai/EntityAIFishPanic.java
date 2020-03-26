@@ -16,7 +16,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import zollerngalaxy.mobs.entities.EntityWaterMobZG;
-import zollerngalaxy.util.RandPosGen;
+import zollerngalaxy.util.RandPosGenWater;
 
 public class EntityAIFishPanic extends EntityAIBase {
 	
@@ -56,7 +56,7 @@ public class EntityAIFishPanic extends EntityAIBase {
 	}
 	
 	protected boolean findRandomPosition() {
-		Vec3d vec3d = RandPosGen.findRandomTarget(this.fish, 5, 4);
+		Vec3d vec3d = RandPosGenWater.findRandomTarget(this.fish, 5, 4);
 		
 		if (vec3d == null) {
 			return false;

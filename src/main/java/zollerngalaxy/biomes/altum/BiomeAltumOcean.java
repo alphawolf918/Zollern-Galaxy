@@ -27,6 +27,7 @@ public class BiomeAltumOcean extends BiomeAltumBase {
 		this.setBiomeType(EnumBiomeTypeZG.OCEAN);
 		this.clearAllNonMonsterSpawning();
 		this.addWaterSpawns();
+		this.biomeDecor.seaweedPerChunk = 16;
 		this.grassFoliageColor = 0x009f8b;
 		this.stoneBlock = ZGBlocks.altumStone;
 	}

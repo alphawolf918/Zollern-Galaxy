@@ -100,7 +100,7 @@ public class SkyProviderPurgot extends SkyProviderBaseZG {
 		GlStateManager.pushMatrix();
 		
 		// Zollus
-		scale = 2.0F;
+		scale = 2.5F;
 		GlStateManager.scale(0.6F, 0.6F, 0.6F);
 		GlStateManager.rotate(150.0F, 1.0F, 0.0F, 1.0F);
 		GlStateManager.rotate(-200F, 1.0F, 0.0F, 0.0F);

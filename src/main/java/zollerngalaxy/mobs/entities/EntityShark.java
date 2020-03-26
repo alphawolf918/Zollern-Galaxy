@@ -10,19 +10,20 @@ package zollerngalaxy.mobs.entities;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
+import net.minecraft.entity.monster.IMob;
 import net.minecraft.entity.passive.EntitySquid;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
 import zollerngalaxy.mobs.entities.ai.EntityAIFishNearestAttackableTarget;
 import zollerngalaxy.util.ZGDamageSrc;
 
-public class EntityShark extends EntityWaterMobZG {
+public class EntityShark extends EntityWaterMobZG implements IMob {
 	
 	protected float damageShark = ZGDamageSrc.deathSharkAttack.getDamageBase();
 	
 	public EntityShark(World worldIn) {
 		super(worldIn);
-		// this.setSize(4.6F, 4.6F);
+		this.setSize(4.6F, 4.6F);
 		this.rand.setSeed(1 + this.getEntityId());
 	}
 	

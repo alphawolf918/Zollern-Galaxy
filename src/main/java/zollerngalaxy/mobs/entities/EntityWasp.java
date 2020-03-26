@@ -9,46 +9,36 @@ package zollerngalaxy.mobs.entities;
 
 import javax.annotation.Nullable;
 import micdoodle8.mods.galacticraft.core.entities.EntityAlienVillager;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.MoverType;
 import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.ai.EntityAILeapAtTarget;
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.monster.IMob;
-import net.minecraft.entity.passive.EntityBat;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.SoundEvents;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
-import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import zollerngalaxy.mobs.entities.ai.EntityAIWaspNearestAttackableTarget;
+import zollerngalaxy.events.ZGSoundEvents;
+import zollerngalaxy.mobs.entities.ai.EntityAIBugNearestAttackableTarget;
 import zollerngalaxy.util.ZGDamageSrc;
 
-public class EntityWasp extends EntityBat implements IMob {
-	
-	protected float randomMotionVecX;
-	protected float randomMotionVecY;
-	protected float randomMotionVecZ;
-	protected float randomMotionSpeed = 0.1F;
-	
-	private BlockPos homePosition = BlockPos.ORIGIN;
-	private float maximumHomeDistance = -1.0F;
+public class EntityWasp extends EntityBugZG implements IMob {
 	
 	public EntityWasp(World worldIn) {
 		super(worldIn);
 		this.setSize(0.7F, 1.4F);
-		this.tasks.addTask(1, new EntityAIWatchClosest(this, EntityPlayer.class, 16.0F));
-		this.tasks.addTask(2, new EntityAILookIdle(this));
-		this.targetTasks.addTask(1, new EntityAIWaspNearestAttackableTarget(this, EntityPlayer.class, true));
-		this.targetTasks.addTask(2, new EntityAIWaspNearestAttackableTarget(this, EntityAlienVillager.class, true));
+		this.tasks.addTask(3, new EntityAIWatchClosest(this, EntityPlayer.class, 32.0F));
+		this.tasks.addTask(4, new EntityAILookIdle(this));
+		this.tasks.addTask(5, new EntityAILeapAtTarget(this, 0.4F));
+		this.targetTasks.addTask(1, new EntityAIBugNearestAttackableTarget(this, EntityPlayer.class, true));
+		this.targetTasks.addTask(2, new EntityAIBugNearestAttackableTarget(this, EntityAlienVillager.class, true));
 	}
 	
 	@Override
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.26D);
-		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(20.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.2631D);
+		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(45.0D);
 	}
 	
 	@Override
@@ -59,25 +49,17 @@ public class EntityWasp extends EntityBat implements IMob {
 	@Override
 	@Nullable
 	public SoundEvent getAmbientSound() {
-		return this.getIsBatHanging() && this.rand.nextInt(4) != 0 ? null : SoundEvents.ENTITY_BAT_AMBIENT;
+		return this.getIsBatHanging() && this.rand.nextInt(4) != 0 ? null : ZGSoundEvents.ENTITY_WASP_SAY;
 	}
 	
 	@Override
 	protected SoundEvent getHurtSound(DamageSource damageSourceIn) {
-		return SoundEvents.ENTITY_BAT_HURT;
+		return ZGSoundEvents.ENTITY_WASP_HURT;
 	}
 	
 	@Override
 	protected SoundEvent getDeathSound() {
-		return SoundEvents.ENTITY_BAT_DEATH;
-	}
-	
-	@Override
-	protected void collideWithEntity(Entity entityIn) {
-	}
-	
-	@Override
-	protected void collideWithNearbyEntities() {
+		return ZGSoundEvents.ENTITY_WASP_DEATH;
 	}
 	
 	@Override
@@ -87,55 +69,4 @@ public class EntityWasp extends EntityBat implements IMob {
 		}
 	}
 	
-	@Override
-	public void travel(float strafe, float vertical, float forward) {
-		this.move(MoverType.SELF, this.motionX, this.motionY, this.motionZ);
-	}
-	
-	public void setMovementVector(float randomMotionVecXIn, float randomMotionVecYIn, float randomMotionVecZIn) {
-		this.randomMotionVecX = randomMotionVecXIn;
-		this.randomMotionVecY = randomMotionVecYIn;
-		this.randomMotionVecZ = randomMotionVecZIn;
-	}
-	
-	public boolean hasMovementVector() {
-		return this.randomMotionVecX != 0.0F || this.randomMotionVecY != 0.0F || this.randomMotionVecZ != 0.0F;
-	}
-	
-	public boolean isWithinHomeDistanceCurrentPosition() {
-		return this.isWithinHomeDistanceFromPosition(new BlockPos(this));
-	}
-	
-	public boolean isWithinHomeDistanceFromPosition(BlockPos pos) {
-		if (this.maximumHomeDistance == -1.0F) {
-			return true;
-		} else {
-			return this.homePosition.distanceSq(pos) < this.maximumHomeDistance * this.maximumHomeDistance;
-		}
-	}
-	
-	public void setHomePosAndDistance(BlockPos pos, int distance) {
-		this.homePosition = pos;
-		this.maximumHomeDistance = distance;
-	}
-	
-	public BlockPos getHomePosition() {
-		return this.homePosition;
-	}
-	
-	public float getMaximumHomeDistance() {
-		return this.maximumHomeDistance;
-	}
-	
-	public void detachHome() {
-		this.maximumHomeDistance = -1.0F;
-	}
-	
-	public boolean hasHome() {
-		return this.maximumHomeDistance != -1.0F;
-	}
-	
-	public float getBlockPathWeight(BlockPos pos) {
-		return 0.0F;
-	}
 }

@@ -8,6 +8,7 @@
 package zollerngalaxy.blocks;
 
 import java.util.Random;
+import javax.annotation.Nullable;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -45,11 +46,12 @@ public class ZGBlockFlower extends ZGBlockBase {
 	}
 	
 	@Override
-	public Block.EnumOffsetType getOffsetType() {
-		return Block.EnumOffsetType.XZ;
+	public EnumOffsetType getOffsetType() {
+		return EnumOffsetType.XZ;
 	}
 	
 	@Override
+	@Nullable
 	public AxisAlignedBB getCollisionBoundingBox(IBlockState state, IBlockAccess world, BlockPos pos) {
 		return null;
 	}

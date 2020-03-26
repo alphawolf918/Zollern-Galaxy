@@ -148,6 +148,26 @@
          "zollerngalaxy:mob/shade/die"
       ]
    },
+   "mob.wasp.say":{
+      "category":"master",
+      "sounds":[
+         "zollerngalaxy:mob/wasp/say1",
+         "zollerngalaxy:mob/wasp/say2"
+      ]
+   },
+   "mob.wasp.hurt":{
+      "category":"master",
+      "sounds":[
+         "zollerngalaxy:mob/wasp/hurt1",
+         "zollerngalaxy:mob/wasp/hurt2"
+      ]
+   },
+   "mob.wasp.die":{
+      "category":"master",
+      "sounds":[
+         "zollerngalaxy:mob/wasp/death"
+      ]
+   },
   "dig.xeno": {
 	"category": "master",
 	"sounds": [

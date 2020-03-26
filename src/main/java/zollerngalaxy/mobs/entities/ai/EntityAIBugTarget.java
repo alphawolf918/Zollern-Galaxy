@@ -20,12 +20,12 @@ import net.minecraft.pathfinding.PathPoint;
 import net.minecraft.scoreboard.Team;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
-import zollerngalaxy.mobs.entities.EntityWasp;
+import zollerngalaxy.mobs.entities.EntityBugZG;
 
-public abstract class EntityAIWaspTarget extends EntityAIBase {
+public abstract class EntityAIBugTarget extends EntityAIBase {
 	
 	/** The entity that this task belongs to */
-	protected final EntityWasp taskOwner;
+	protected final EntityBugZG taskOwner;
 	/**
 	 * If true, EntityAI targets must be able to be seen (cannot be blocked by walls) to be suitable
 	 * targets.
@@ -49,11 +49,11 @@ public abstract class EntityAIWaspTarget extends EntityAIBase {
 	protected EntityLivingBase target;
 	protected int unseenMemoryTicks;
 	
-	public EntityAIWaspTarget(EntityWasp creature, boolean checkSight) {
+	public EntityAIBugTarget(EntityBugZG creature, boolean checkSight) {
 		this(creature, checkSight, false);
 	}
 	
-	public EntityAIWaspTarget(EntityWasp creature, boolean checkSight, boolean onlyNearby) {
+	public EntityAIBugTarget(EntityBugZG creature, boolean checkSight, boolean onlyNearby) {
 		this.unseenMemoryTicks = 60;
 		this.taskOwner = creature;
 		this.shouldCheckSight = checkSight;
@@ -214,7 +214,7 @@ public abstract class EntityAIWaspTarget extends EntityAIBase {
 		}
 	}
 	
-	public EntityAIWaspTarget setUnseenMemoryTicks(int p_190882_1_) {
+	public EntityAIBugTarget setUnseenMemoryTicks(int p_190882_1_) {
 		this.unseenMemoryTicks = p_190882_1_;
 		return this;
 	}

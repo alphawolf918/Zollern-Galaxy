@@ -115,21 +115,14 @@ public class ZGBlockTallGrass extends ZGBlockFlower implements IGrowable, IShear
 		return this.getDefaultState();
 	}
 	
-	/**
-	 * Convert the BlockState into the correct metadata value
-	 */
 	@Override
 	public int getMetaFromState(IBlockState state) {
 		return 0;
 	}
 	
-	/**
-	 * Get the OffsetType for this Block. Determines if the model is rendered
-	 * slightly offset.
-	 */
 	@Override
-	public Block.EnumOffsetType getOffsetType() {
-		return Block.EnumOffsetType.XYZ;
+	public EnumOffsetType getOffsetType() {
+		return EnumOffsetType.XYZ;
 	}
 	
 	@Override

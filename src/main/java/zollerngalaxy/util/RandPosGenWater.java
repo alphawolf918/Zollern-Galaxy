@@ -16,7 +16,7 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import zollerngalaxy.mobs.entities.EntityWaterMobZG;
 
-public class RandPosGen {
+public class RandPosGenWater {
 	
 	/**
 	 * used to store a driection when the user passes a point to move towards or away from. WARNING:

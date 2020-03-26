@@ -31,14 +31,19 @@ public class ZGSoundEvents {
 	public static final SoundEvent ENTITY_CRAWLER_SAY = regSound("mob.crawler.say");
 	public static final SoundEvent ENTITY_CRAWLER_HURT = regSound("mob.crawler.hurt");
 	
+	// Wasp
+	public static final SoundEvent ENTITY_WASP_SAY = regSound("mob.wasp.say");
+	public static final SoundEvent ENTITY_WASP_HURT = regSound("mob.wasp.hurt");
+	public static final SoundEvent ENTITY_WASP_DEATH = regSound("mob.wasp.die");
+	
 	// Xeno Material
 	public static final SoundEvent MATERIAL_XENO_DIG = regSound("dig.xeno");
 	public static final SoundEvent MATERIAL_XENO_STEP = regSound("step.xeno");
 	
 	public static void init() {
 		registerSounds(ENTITY_ALIEN_AMBIENT, ENTITY_ALIEN_HURT, ENTITY_MUMMY_AMBIENT, ENTITY_MUMMY_HURT, ENTITY_MUMMY_DEATH,
-				ENTITY_GALAXY_KNIGHT_SAY, ENTITY_GALAXY_KNIGHT_DEATH, ENTITY_CRAWLER_SAY, ENTITY_CRAWLER_HURT, MATERIAL_XENO_DIG,
-				MATERIAL_XENO_STEP);
+				ENTITY_GALAXY_KNIGHT_SAY, ENTITY_GALAXY_KNIGHT_DEATH, ENTITY_CRAWLER_SAY, ENTITY_CRAWLER_HURT, ENTITY_WASP_SAY,
+				ENTITY_WASP_HURT, ENTITY_WASP_DEATH, MATERIAL_XENO_DIG, MATERIAL_XENO_STEP);
 	}
 	
 	private static void registerSound(SoundEvent sound) {

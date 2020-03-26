@@ -46,6 +46,7 @@ public class BiomeAltumBase extends BiomeSpace {
 	protected static final IBlockState DIRT = ZGBlocks.altumDirt.getDefaultState();
 	protected static final IBlockState SAND = ZGBlocks.altumSand.getDefaultState();
 	protected static final IBlockState ICE = Blocks.ICE.getDefaultState();
+	protected static final IBlockState SEAWEED = ZGBlocks.altumSeaweed.getDefaultState();
 	protected static final IBlockState WATER = Blocks.WATER.getDefaultState();
 	protected static final IBlockState SPONGE = Blocks.SPONGE.getDefaultState();
 	
@@ -103,15 +104,18 @@ public class BiomeAltumBase extends BiomeSpace {
 								chunkPrimerIn.setBlockState(x2, (y + 2), (z2 + 1), GRAVEL);
 							}
 						}
-						if (rand.nextInt(40) == 3) {
+						if (rand.nextInt(300) == 3) {
 							for (int i2 = 0; i2 < ZGHelper.rngInt(1, 5); i2++) {
 								IBlockState blockToUse = (ZGHelper.getRNG().nextInt(5) == 1) ? DIRT : STONE;
 								chunkPrimerIn.setBlockState(x2, (y + i2), z2, blockToUse);
 							}
 						} else {
+							if (rand.nextInt(20) == 2) {
+								chunkPrimerIn.setBlockState(x2, (y + 1), z2, SEAWEED);
+							}
 							chunkPrimerIn.setBlockState(x2, y, z2, DIRT);
 						}
-						if (rand.nextInt(50) == 2) {
+						if (rand.nextInt(240) == 2) {
 							BlockPos chestPos = new BlockPos(x2, (y + 1), z2);
 							OCEAN_TREASURE_GEN.generate(worldIn, rand, chestPos);
 						}

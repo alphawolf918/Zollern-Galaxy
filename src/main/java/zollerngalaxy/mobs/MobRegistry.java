@@ -38,6 +38,9 @@ public class MobRegistry {
 	private static int entityId = -1;
 	private static int totalMobs = 0;
 	
+	private static CaseFormat caseFormLower = CaseFormat.LOWER_CAMEL;
+	private static CaseFormat caseFormUnder = CaseFormat.LOWER_UNDERSCORE;
+	
 	private static ZollernGalaxyCore coreInstance = ZollernGalaxyCore.instance();
 	
 	public static void init() {
@@ -94,24 +97,27 @@ public class MobRegistry {
 		EntitySpawnPlacementRegistry.setPlacementType(EntityAbyssalVillager.class, SpawnPlacementType.IN_WATER);
 		
 		// Wasp
-		registerEntity("wasp", EntityWasp.class, entityId++, 0x000000, 0x00ffff);
-		EntitySpawnPlacementRegistry.setPlacementType(EntityAbyssalVillager.class, SpawnPlacementType.IN_AIR);
+		registerEntity("wasp", EntityWasp.class, entityId++, 0x000000, 0xffff00);
+		EntitySpawnPlacementRegistry.setPlacementType(EntityWasp.class, SpawnPlacementType.IN_AIR);
 		
 		ZGHelper.Log("Loaded a total of " + totalMobs + " new mobs.");
 	}
 	
 	private static void registerEntity(String name, Class<? extends Entity> cls, int id) {
 		ResourceLocation registryName = new ResourceLocation(ZGInfo.MOD_ID + ":" + name);
-		EntityRegistry.registerModEntity(registryName, cls,
-				CaseFormat.LOWER_UNDERSCORE.to(CaseFormat.LOWER_CAMEL, registryName.toString()), id, coreInstance, 64, 1, true);
+		String strName = registryName.toString();
+		String entityName = caseFormUnder.to(caseFormLower, strName);
+		EntityRegistry.registerModEntity(registryName, cls, entityName, id, coreInstance, 64, 1, true);
 		totalMobs++;
 	}
 	
 	private static void registerEntity(String name, Class<? extends Entity> cls, int id, int primaryEggColor, int secondaryEggColor) {
 		ResourceLocation registryName = new ResourceLocation(ZGInfo.MOD_ID + ":" + name);
-		EntityRegistry.registerModEntity(registryName, cls,
-				CaseFormat.LOWER_UNDERSCORE.to(CaseFormat.LOWER_CAMEL, registryName.toString()), id, coreInstance, 64, 1, true,
-				primaryEggColor, secondaryEggColor);
+		String strName = registryName.toString();
+		int clrPrm = primaryEggColor;
+		int clrSec = secondaryEggColor;
+		String entityName = caseFormUnder.to(caseFormLower, strName);
+		EntityRegistry.registerModEntity(registryName, cls, entityName, id, coreInstance, 64, 1, true, clrPrm, clrSec);
 		totalMobs++;
 	}
 	

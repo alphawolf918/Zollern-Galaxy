@@ -24,6 +24,7 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.Explosion;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
@@ -206,6 +207,17 @@ public class ZGBlockBase extends Block implements ISingleZGBlockRender, IJSONBlo
 				EntityPlayer player = worldIn.getClosestPlayer(pos.getX(), pos.getY(), pos.getZ(), 2.5D, false);
 				if (player != null && this.blockPotionEffect != null) {
 					player.addPotionEffect(new PotionEffect(this.blockPotionEffect, 200));
+				}
+			}
+		}
+	}
+	
+	@Override
+	public void onBlockDestroyedByExplosion(World worldIn, BlockPos pos, Explosion explosionIn) {
+		if (!worldIn.isRemote) {
+			if (this.getShouldExplode()) {
+				if (rand.nextInt(this.getExplosionChance()) <= 6) {
+					worldIn.createExplosion(null, pos.getX(), pos.getY(), pos.getZ(), 2.5F, true);
 				}
 			}
 		}

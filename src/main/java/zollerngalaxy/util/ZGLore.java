@@ -301,6 +301,44 @@ public class ZGLore {
 				"What force could be strong enough to force planets to redesign themselves?",
 				"It's as if the galaxy knows what's coming, and is adapting itself to fight back. - Star Captain Hohen");
 		
+		BOOK_FOURTY = ZGLore.createLoreBook(40, "Planet Altum",
+				"Altum was the first ever encountered water planet. It is also filled with treasure: in its oceans; its caves.",
+				"The planet is also lush with unique fauna and minerals.",
+				"Perhaps most unique are its inhabitants, the Abyssal Villagers.");
+		
+		BOOK_FOURTYONE = ZGLore.createLoreBook(41, "Dark Arrival 1",
+				"\"Sir!\" the private called. \"What is it, Flinsky?\" Hohen barked back.",
+				"\"There is a vessel of some sort approaching. We hailed its captain.\" There was a long pause.",
+				"\"And?\" Flinsky sighed. \"She says she's from something called the Dark Galaxy. Her name is Ayanna.\"",
+				"Hohen's eyes widened, and his heart sank to his chest. \"My God... They're here.\"");
+		
+		BOOK_FOURTYTWO = ZGLore.createLoreBook(42, "Dark Arrival 2",
+				"\"That ship... it's unlike anything I've ever seen,\" Hohen said as he geared up to board the approaching craft.",
+				"\"Sir, I still don't think this is a good idea,\" one of his crew members stated.",
+				"\"If the rumors are true, you could be infected. The last thing we want is for this thing to spread across the galaxy.",
+				"Please, just, be careful. Don't go.\" She began to tear up, and he kissed her forehead.",
+				"\"Don't worry, Daisy. I'll be careful. You just do your part here. Remember what I taught you.",
+				"I'm coming back, and when I do,\" he chuckled, \"we're gonna have one heck of a party.\"",
+				"Daisy hugged him, and then he was off to board the vessel.");
+		
+		BOOK_FOURTYTHREE = ZGLore.createLoreBook(43, "Dark Arrival 3",
+				"Hohen landed his craft on top the ship wrecklessly, rocking it. \"Not my best,\" he said to himself.",
+				"He picked up his radio and spoke into it: \"This is Star Captain Hohen; I have boarded the Dark Vessel.",
+				"Also... I'm uh, pretty sure they know I'm here,\" he said with a chuckle. \"Going in now.\"",
+				"He found an entrance through the back of the ship and climbed aboard. What awaited him was far more than he anticipated.",
+				"\"Greetings, Traveler,\" a female voice echoed throughout the ship, as the Sentries stood guard.",
+				"\"A sailor among the stars, ever so entranced by their luminescence.",
+				"You seek answers to something that you could not possibly understand.",
+				"But if it is an audience that you desire, you shall have it.\" The Sentries began approaching him.");
+		
+		BOOK_FOURTYFOUR = ZGLore
+				.createLoreBook(44, "Dark Arrival 4", "\"What are these things?!\" Hohen asked the noncorporeal voice.",
+						"\"They are my servants, and my protectors. These Galactic Sentries do my bidding, ",
+						"as I have given purpose to each world I take them from.", "They were once as you are now: unawakened.",
+						"I think I can help you with that,\" spoke Ayanna, ",
+						"as she came into view, her red hair falling to the middle of her back, clutching the crystal necklace.",
+						"Her misty-pink dress shimmered as she walked. \"Then, maybe you can help me,\" she said, releasing dark essence from her fingertips.");
+		
 		ZGHelper.Log("Loaded a total of " + totalLoreBooks + " lore books.");
 	}
 	

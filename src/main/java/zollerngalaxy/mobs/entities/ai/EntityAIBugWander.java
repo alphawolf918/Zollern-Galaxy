@@ -10,12 +10,12 @@ package zollerngalaxy.mobs.entities.ai;
 import javax.annotation.Nullable;
 import net.minecraft.entity.ai.EntityAIBase;
 import net.minecraft.util.math.Vec3d;
-import zollerngalaxy.mobs.entities.EntityWaterMobZG;
-import zollerngalaxy.util.RandPosGenWater;
+import zollerngalaxy.mobs.entities.EntityBugZG;
+import zollerngalaxy.util.RandPosGenBug;
 
-public class EntityAIFishWander extends EntityAIBase {
+public class EntityAIBugWander extends EntityAIBase {
 	
-	protected final EntityWaterMobZG entity;
+	protected final EntityBugZG entity;
 	protected double x;
 	protected double y;
 	protected double z;
@@ -23,11 +23,11 @@ public class EntityAIFishWander extends EntityAIBase {
 	protected int executionChance;
 	protected boolean mustUpdate;
 	
-	public EntityAIFishWander(EntityWaterMobZG creatureIn, double speedIn) {
+	public EntityAIBugWander(EntityBugZG creatureIn, double speedIn) {
 		this(creatureIn, speedIn, 120);
 	}
 	
-	public EntityAIFishWander(EntityWaterMobZG creatureIn, double speedIn, int chance) {
+	public EntityAIBugWander(EntityBugZG creatureIn, double speedIn, int chance) {
 		this.entity = creatureIn;
 		this.speed = speedIn;
 		this.executionChance = chance;
@@ -64,7 +64,7 @@ public class EntityAIFishWander extends EntityAIBase {
 	
 	@Nullable
 	protected Vec3d getPosition() {
-		return RandPosGenWater.findRandomTarget(this.entity, 10, 7);
+		return RandPosGenBug.findRandomTarget(this.entity, 10, 7);
 	}
 	
 	/**

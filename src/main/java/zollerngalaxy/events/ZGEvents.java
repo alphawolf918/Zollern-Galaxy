@@ -74,7 +74,8 @@ public class ZGEvents {
 			RandomValueRange rng = new RandomValueRange(1.0F);
 			RandomValueRange rngBonus = new RandomValueRange(0.0F);
 			LootEntry entryZGFish = new LootEntryTable(ZGLootTables.GAMEPLAY_FISHING, 20, 10, conditions, "zgfishingentry");
-			LootPool pool = new LootPool(new LootEntry[] { entryZGFish }, conditions, rng, rngBonus, "zgfishingpool");
+			LootEntry[] entries = new LootEntry[] { entryZGFish };
+			LootPool pool = new LootPool(entries, conditions, rng, rngBonus, "zgfishingpool");
 			lootTbl.addPool(pool);
 		}
 	}

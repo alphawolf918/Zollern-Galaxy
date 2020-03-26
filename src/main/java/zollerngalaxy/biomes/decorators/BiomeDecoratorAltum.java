@@ -19,11 +19,14 @@ import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.event.terraingen.DecorateBiomeEvent;
 import net.minecraftforge.event.terraingen.TerrainGen;
 import zollerngalaxy.blocks.ZGBlocks;
+import zollerngalaxy.blocks.ZGWaterGrass;
 import zollerngalaxy.core.ZGLootTables;
+import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderAltum;
 import zollerngalaxy.core.enums.EnumOreGenZG;
 import zollerngalaxy.worldgen.WorldGenLakesZG;
 import zollerngalaxy.worldgen.WorldGenMinableZG;
 import zollerngalaxy.worldgen.WorldGenTreasure;
+import zollerngalaxy.worldgen.WorldGenWaterGrass;
 
 public class BiomeDecoratorAltum extends BiomeDecoratorZG {
 	
@@ -42,11 +45,15 @@ public class BiomeDecoratorAltum extends BiomeDecoratorZG {
 	
 	public int waterLakesPerChunk = 6;
 	public int treasurePerChunk = 4;
+	public int seaweedPerChunk = 2;
 	
 	private ResourceLocation oceanLootTable = ZGLootTables.CHEST_OCEAN_TREASURE;
 	
+	private int seaLevel = ChunkProviderAltum.SEA_LEVEL;
+	
 	private WorldGenerator waterLakeGen = new WorldGenLakesZG(Blocks.WATER, ZGBlocks.altumSand);
 	private WorldGenerator treasureGen = new WorldGenTreasure(oceanLootTable).setLootTable(oceanLootTable);
+	private WorldGenerator seaweedGen = new WorldGenWaterGrass((ZGWaterGrass) ZGBlocks.altumSeaweed);
 	
 	public BiomeDecoratorAltum() {
 		this.amaranthGen = new WorldGenMinableZG(ZGBlocks.altumAmaranthOre, STONE, EnumOreGenZG.AMARANTH);
@@ -106,6 +113,21 @@ public class BiomeDecoratorAltum extends BiomeDecoratorZG {
 						BlockPos chestPos = this.chunkPos.add(x1, y2, z1);
 						chestPos = chestPos.down();
 						this.treasureGen.generate(world, rand, chestPos);
+					}
+				}
+			}
+		}
+		
+		// Seaweed Gen
+		if (TerrainGen.decorate(world, rand, forgeChunkPos, DecorateBiomeEvent.Decorate.EventType.GRASS)) {
+			if (rand.nextInt(5) == 0) {
+				for (int i = 0; i < this.seaweedPerChunk; i++) {
+					int x1 = rand.nextInt(16) + 8;
+					int z1 = rand.nextInt(16) + 8;
+					int y1 = world.getHeight(this.chunkPos.add(x1, 0, z1)).getY() * 2;
+					if (y1 > 0) {
+						int y2 = rand.nextInt(y1);
+						this.seaweedGen.generate(world, rand, this.chunkPos.add(x1, y2, z1));
 					}
 				}
 			}
