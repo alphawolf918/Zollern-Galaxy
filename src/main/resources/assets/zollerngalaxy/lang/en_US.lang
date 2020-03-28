@@ -257,6 +257,54 @@ tile.altumeveniumore.name=Altum Evenium Ore
 tile.altumrhodiumore.name=Altum Rhodium Ore
 tile.seaweed.name=Seaweed
 
+tile.caligrosurfacerock.name=Caligro Surface Rock
+tile.caligrorock.name=Caligro Rock
+tile.witherrack.name=Witherrack
+tile.caligrodirt.name=Caligro Dirt
+tile.caligrostone.name=Caligro Stone
+tile.caligrocobblestone.name=Caligro Cobblestone
+tile.caligrocobblemossy.name=Caligro Mossy Cobblestone
+tile.caligrostonebricks.name=Caligro Stone Bricks
+tile.caligroshiniumore.name=Caligro Shinium Ore
+tile.caligrosilverore.name=Caligro Silver Ore
+tile.caligronickelore.name=Caligro Nickel Ore
+tile.caligroleadore.name=Caligro Lead Ore
+tile.caligrotinore.name=Caligro Tin Ore
+tile.caligrocopperore.name=Caligro Copper Ore
+tile.caligrotopazore.name=Caligro Topaz Ore
+tile.caligroamberore.name=Caligro Amber Ore
+tile.caligroopalore.name=Caligro Opal Ore
+tile.caligrogarnetore.name=Caligro Garnet Ore
+tile.caligroaquaore.name=Caligro Aquamarine Ore
+tile.caligroradiumore.name=Caligro Radium Ore
+tile.caligrorubyore.name=Caligro Ruby Ore
+tile.caligroredstoneore.name=Caligro Redstone Ore
+tile.caligrolapisore.name=Caligro Lapis Lazuli Ore
+tile.caligrofueltoniumore.name=Caligro Fueltonium Ore
+tile.caligrosuperchargedcoalore.name=Caligro Super Charged Coal Ore
+tile.caligrozincore.name=Caligro Zinc Ore
+tile.caligroamaranthore.name=Caligro Amaranth Ore
+tile.caligroironore.name=Caligro Iron Ore
+tile.caligrogoldore.name=Caligro Gold Ore
+tile.caligroemeraldore.name=Caligro Emerald Ore
+tile.caligrodiamondore.name=Caligro Diamond Ore
+tile.witheriteore.name=Witherite Ore
+tile.shadowspawner.name=Shadow Spawner
+tile.shadesapling.name=Shadewood Sapling
+tile.shadelog.name=Shadewood Log
+tile.shadeleaves.name=Shadewood Leaves
+tile.shadeplanks.name=Shadewood Planks
+tile.creepstone.name=Caligro Creepstone
+tile.creepdirt.name=Caligro Creepdirt
+tile.corruptrock.name=Corrupted Rock
+tile.corruptstone.name=Corrupted Stone
+tile.corruptascendiumore.name=Corrupted Ascendium Ore
+tile.corruptetriumore.name=Corrupted Etrium Ore
+tile.corruptchargiumore.name=Corrupted Chargium Ore
+tile.corruptcobble.name=Corrupted Cobblestone
+tile.corruptstonebricks.name=Corrupted Stone Bricks
+tile.corruptcreepstone.name=Corrupted Creepstone
+
 tile.amaranthblock.name=Block of Amaranth
 tile.azuriteblock.name=Block of Azurite
 tile.zollerniumblock.name=Block of Zollernium
@@ -264,6 +312,19 @@ tile.zincblock.name=Block of Zinc
 tile.perdetriumblock.name=Block of Etrium
 tile.zucriteblock.name=Block of Zucrite
 tile.rhodiumblock.name=Block of Rhodium
+tile.witheriteblock.name=Block of Witherite
+tile.rubyblock.name=Block of Ruby
+tile.garnetblock.name=Block of Garnet
+tile.opalblock.name=Block of Opal
+tile.topazblock.name=Block of Topaz
+tile.aquamarineblock.name=Block of Aquamarine
+tile.amberblock.name=Block of Amber
+tile.staticamberblock.name=Block of Static Amber
+tile.firegarnetblock.name=Block of Fiery Garnet
+tile.icyaquablock.name=Block of Icy Aquamarine
+tile.shadowboneblock.name=Block of Shadow Bone
+tile.shadowessenceblock.name=Block of Shadow Essence
+tile.radiumblock.name=Block of Radium
 
 tile.endrock.name=Endrock
 
@@ -344,6 +405,7 @@ item.plutoniumcrystal.name=Plutonium Crystal
 item.purgotessence.name=Oasis Gem
 
 item.shadowessence.name=Dark Matter Essence
+item.radium.name=Radium
 
 item.fueltoniumraw.name=Raw Fuelonite
 item.fueltoniumingot.name=Fueltonium Ingot
@@ -378,10 +440,21 @@ item.rhodiumingot.name=Rhodium Ingot
 item.rhodiumdust.name=Rhodium Dust
 
 item.rokkite.name=Rokkite
+item.amber.name=Amber
+item.topaz.name=Topaz
+item.garnet.name=Garnet
+item.ruby.name=Ruby
+item.opal.name=Opal
+item.aquamarine.name=Aquamarine
+item.firegarnet.name=Fiery Garnet
+item.icyaqua.name=Icy Aquamarine
+item.staticamber.name=Static Amber
+item.witherite.name=Witherite
 
 item.powerstick.name=Power Stick
 item.blackmarblestick.name=Black Marble Stick
 item.marblestick.name=Marble Stick
+item.shadekey.name=Shade Key
 
 item.blueprint_rad.name=Radiation Protection
 item.blueprint_tox.name=Toxicity Protection
@@ -445,6 +518,7 @@ item.stargate_tier10.name=Stargate (Protocol Ten)
 item.stargate_tier918.name=Stargate (Birthday Protocol)
 
 item.omnitool.name=Omnitool
+item.bedrockbreaker.name=Bedrock Breaker
 
 item.cobalt_pickaxe.name=Cobalt Pickaxe
 item.cobalt_sword.name=Cobalt Sword

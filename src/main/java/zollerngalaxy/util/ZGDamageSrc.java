@@ -8,10 +8,11 @@
 package zollerngalaxy.util;
 
 import net.minecraft.util.DamageSource;
+import zollerngalaxy.potions.ZGPotions;
 
-public class ZGDamageSrc extends DamageSource {
+public final class ZGDamageSrc extends DamageSource {
 	
-	protected float damageBase = 2.0F;
+	private float damageBase = 2.0F;
 	
 	public static final ZGDamageSrc deathTempCold = new ZGDamageSrc("deathcold", 1.5F, true);
 	public static final ZGDamageSrc deathTempHot = new ZGDamageSrc("deathhot", 2.5F, true);
@@ -21,13 +22,16 @@ public class ZGDamageSrc extends DamageSource {
 	public static final ZGDamageSrc deathSharkAttack = new ZGDamageSrc("sharkattack", 6.0F);
 	public static final ZGDamageSrc deathJellyfish = new ZGDamageSrc("jellyfishsting", 4.5F);
 	public static final ZGDamageSrc deathWasp = new ZGDamageSrc("waspsting", 4.7F, true);
+	public static final ZGDamageSrc deathShadows = new ZGDamageSrc("shadows", ZGPotions.shadowDamage, true);
+	public static final ZGDamageSrc deathInfection = new ZGDamageSrc("infection", ZGPotions.infectionDamage, true);
+	public static final ZGDamageSrc deathCorruption = new ZGDamageSrc("corruption", 5.0F, true);
 	
-	public ZGDamageSrc(String par1, float baseDamage) {
+	private ZGDamageSrc(String par1, float baseDamage) {
 		super(par1);
 		this.damageBase = baseDamage;
 	}
 	
-	public ZGDamageSrc(String par1, float baseDamage, boolean bypassesArmor) {
+	private ZGDamageSrc(String par1, float baseDamage, boolean bypassesArmor) {
 		this(par1, baseDamage);
 		if (bypassesArmor) {
 			this.setDamageBypassesArmor();

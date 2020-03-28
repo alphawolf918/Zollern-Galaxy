@@ -12,6 +12,7 @@ import java.util.List;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.color.BlockColors;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.potion.Potion;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
@@ -23,6 +24,8 @@ import zollerngalaxy.events.ZGSkyProviderHandler;
 import zollerngalaxy.gui.GuiHUD;
 import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.mobs.MobRenders;
+import zollerngalaxy.potions.ZGPotions;
+import zollerngalaxy.util.ZGDamageSrc;
 
 public class ClientProxy extends CommonProxy {
 	
@@ -84,5 +87,20 @@ public class ClientProxy extends CommonProxy {
 	@Override
 	public boolean addIModelRegister(IZGFluidModel model) {
 		return modelRegisters.add(model);
+	}
+	
+	@Override
+	public void doPotionEffect(EntityPlayer player, Potion potionId) {
+		if (potionId == ZGPotions.infected) {
+			player.attackEntityFrom(ZGDamageSrc.deathInfection, ZGDamageSrc.deathInfection.getDamageBase());
+		}
+		
+		if (potionId == ZGPotions.radiance) {
+			player.setAbsorptionAmount(20.0F);
+		}
+		
+		if (potionId == ZGPotions.antiCorruption) {
+			// TODO
+		}
 	}
 }

@@ -7,18 +7,27 @@
  */
 package zollerngalaxy.events;
 
+import java.util.List;
 import java.util.Random;
 import micdoodle8.mods.galacticraft.core.entities.EntityAlienVillager;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.potion.PotionEffect;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumHand;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundCategory;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
@@ -34,12 +43,16 @@ import net.minecraft.world.storage.loot.conditions.LootCondition;
 import net.minecraftforge.event.LootTableLoadEvent;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
+import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
+import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.event.entity.player.UseHoeEvent;
 import net.minecraftforge.fml.common.eventhandler.Event.Result;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import zollerngalaxy.blocks.ICorruptBlock;
 import zollerngalaxy.blocks.ZGBlockDirt;
 import zollerngalaxy.blocks.ZGBlockGrass;
+import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.ZGLootTables;
 import zollerngalaxy.core.ZollernGalaxyCore;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderAltum;
@@ -48,6 +61,7 @@ import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.mobs.entities.EntityAbyssalVillager;
 import zollerngalaxy.mobs.entities.EntityBladeFish;
 import zollerngalaxy.mobs.entities.EntityBlubberFish;
+import zollerngalaxy.mobs.entities.EntityGalaxyKnight;
 import zollerngalaxy.mobs.entities.EntityGrayAlien;
 import zollerngalaxy.mobs.entities.EntityMegaCreeper;
 import zollerngalaxy.mobs.entities.EntityMoolus;
@@ -56,13 +70,109 @@ import zollerngalaxy.mobs.entities.EntityOinkus;
 import zollerngalaxy.mobs.entities.EntityScorpion;
 import zollerngalaxy.mobs.entities.EntityShark;
 import zollerngalaxy.mobs.entities.interfaces.IShadeEntity;
+import zollerngalaxy.potions.ZGPotions;
 import zollerngalaxy.proxy.IProxy;
 import zollerngalaxy.util.CachedEnum;
+import zollerngalaxy.util.ZGDamageSrc;
 
 public class ZGEvents {
 	
 	private ZollernGalaxyCore core = ZollernGalaxyCore.instance();
 	private IProxy proxy = this.core.proxy;
+	
+	@SubscribeEvent(priority = EventPriority.HIGH, receiveCanceled = true)
+	public void onLivingUpdateEvent(LivingUpdateEvent event) {
+		EntityLivingBase entity = event.getEntityLiving();
+		Random rand = new Random();
+		if (entity instanceof EntityPlayer) {
+			EntityPlayer player = (EntityPlayer) entity;
+			InventoryPlayer playerInventory = player.inventory;
+			NonNullList<ItemStack> armorInventory = playerInventory.armorInventory;
+			BlockPos playerLocation = new BlockPos(player.posX, (player.posY - 1), player.posZ);
+			World world = player.getEntityWorld();
+			IBlockState blockState = world.getBlockState(playerLocation);
+			Block block = blockState.getBlock();
+			
+			boolean isCreativeMode = player.capabilities.isCreativeMode;
+			boolean isRadianceActive = player.isPotionActive(ZGPotions.radiance);
+			boolean isAntiCorruptActive = player.isPotionActive(ZGPotions.antiCorruption);
+			
+			if (player.dimension == ConfigManagerZG.planetCaligroDimensionId) {
+				// Radiance Protection
+				Item radium = ZGItems.radium;
+				ItemStack radiumStack = new ItemStack(radium, 1);
+				
+				boolean hasRadium = playerInventory.hasItemStack(radiumStack);
+				
+				if (hasRadium && !isCreativeMode && !isRadianceActive) {
+					PotionEffect radianceEffect = new PotionEffect(ZGPotions.radiance, ZGPotions.radianceTime, 1);
+					player.addPotionEffect(radianceEffect);
+					if (playerInventory.hasItemStack(radiumStack)) {
+						int invSlot = playerInventory.getSlotFor(radiumStack);
+						playerInventory.decrStackSize(invSlot, 1);
+					}
+					proxy.sendChatMessage(player, TextFormatting.GOLD + "You are irradiated with a brilliant light.");
+				}
+				
+				// Shadow Damage
+				if (!isCreativeMode && !isRadianceActive) {
+					player.attackEntityFrom(ZGDamageSrc.deathShadows, ZGDamageSrc.deathShadows.getDamageBase());
+				}
+				
+				// Infection
+				if (player.isPotionActive(ZGPotions.infected)) {
+					ZGPotions.infected.performEffect(player, 1);
+					World worldObj = player.getEntityWorld();
+					Class<? extends Entity> playerClass = EntityPlayer.class;
+					AxisAlignedBB boundingBox = player.getEntityBoundingBox();
+					AxisAlignedBB expandedBox = boundingBox.expand(5.0D, 2.0D, 5.0D);
+					List<? extends Entity> playerList = worldObj.<Entity> getEntitiesWithinAABB(playerClass, expandedBox);
+					Object[] playerArray = playerList.toArray();
+					for (Object o : playerArray) {
+						EntityPlayer currentPlayer = (EntityPlayer) o;
+						if (!currentPlayer.isPotionActive(ZGPotions.infected)) {
+							PotionEffect infectEffect = new PotionEffect(ZGPotions.infected, ZGPotions.infectionTime, 1);
+							currentPlayer.addPotionEffect(infectEffect);
+						}
+					}
+				}
+			}
+			
+			// Perform Radiance potion effect
+			if (isRadianceActive) {
+				ZGPotions.radiance.performEffect(player, 1);
+			}
+			
+			// Damage the player when they walk on Corrupt blocks.
+			// TODO: Add Anti-Corruption potion to prevent damage
+			if (block instanceof ICorruptBlock) {
+				ICorruptBlock corruptBlock = (ICorruptBlock) block;
+				if (corruptBlock.canCorrupt()) {
+					if (rand.nextInt(14) <= 4) {
+						player.attackEntityFrom(ZGDamageSrc.deathCorruption, ZGDamageSrc.deathCorruption.getDamageBase());
+					}
+				}
+			}
+		}
+	}
+	
+	@SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
+	public void onEntityDamaged(LivingHurtEvent event) {
+		EntityLivingBase ent = event.getEntityLiving();
+		if (ent instanceof EntityGrayAlien) {
+			EntityGrayAlien alien = (EntityGrayAlien) ent;
+			DamageSource src = event.getSource();
+			if (src.getTrueSource() instanceof EntityPlayer) {
+				EntityPlayer player = (EntityPlayer) src.getTrueSource();
+				BlockPos worldPos = alien.getPosition();
+				World world = alien.getEntityWorld();
+				EntityGalaxyKnight spaceKnight = new EntityGalaxyKnight(world);
+				spaceKnight.setPosition(worldPos.getX(), worldPos.getY(), worldPos.getZ());
+				spaceKnight.setAttackTarget(player);
+				world.spawnEntity(spaceKnight);
+			}
+		}
+	}
 	
 	@SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
 	public void onLootTableLoadEvent(LootTableLoadEvent event) {
@@ -206,9 +316,11 @@ public class ZGEvents {
 		
 		// Shade Entities
 		if (theEntity instanceof IShadeEntity) {
-			if (ZGHelper.getRNGChance(5, 10)) {
-				for (int i = 0; i < ZGHelper.rngInt(1, 2); i++) {
-					ZGHelper.dropItem(ZGItems.darkEssence, worldObj, theEntity);
+			if (((IShadeEntity) theEntity).shouldDropEssence()) {
+				if (ZGHelper.getRNGChance(5, 10)) {
+					for (int i = 0; i < ZGHelper.rngInt(1, 2); i++) {
+						ZGHelper.dropItem(ZGItems.darkEssence, worldObj, theEntity);
+					}
 				}
 			}
 		}

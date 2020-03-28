@@ -19,6 +19,7 @@ import zollerngalaxy.mobs.entities.EntityAbyssalVillager;
 import zollerngalaxy.mobs.entities.EntityBladeFish;
 import zollerngalaxy.mobs.entities.EntityBlubberFish;
 import zollerngalaxy.mobs.entities.EntityFrostGiant;
+import zollerngalaxy.mobs.entities.EntityGalaxyKnight;
 import zollerngalaxy.mobs.entities.EntityGrayAlien;
 import zollerngalaxy.mobs.entities.EntityGypsyFish;
 import zollerngalaxy.mobs.entities.EntityJellyfish;
@@ -62,6 +63,9 @@ public class MobRegistry {
 		
 		// Gray Alien
 		registerEntity("grayalien", EntityGrayAlien.class, entityId++, 0xeeeeee, 0x000000);
+		
+		// Galaxy Knight
+		registerEntity("galaxyknight", EntityGalaxyKnight.class, entityId++, 0x444444, 0x8b008b);
 		
 		// Mega Creeper
 		registerEntity("megacreeper", EntityMegaCreeper.class, entityId++, 0xee00ee, 0x00ee00);

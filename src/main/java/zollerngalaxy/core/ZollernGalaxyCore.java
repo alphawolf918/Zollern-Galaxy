@@ -35,6 +35,7 @@ import zollerngalaxy.mobs.MobRegistry;
 import zollerngalaxy.network.teleporter.MessageTeleportToDimension;
 import zollerngalaxy.planets.ZGPlanets;
 import zollerngalaxy.planets.satellites.ZGSpaceStations;
+import zollerngalaxy.potions.ZGPotions;
 import zollerngalaxy.proxy.CommonProxy;
 import zollerngalaxy.proxy.IProxy;
 import zollerngalaxy.recipes.ZGRecipeRegistry;
@@ -51,8 +52,8 @@ public class ZollernGalaxyCore {
 	private static ZollernGalaxyCore INSTANCE;
 	
 	// CHANGE THESE TO FALSE BEFORE DEPLOYMENT!!
-	private static final boolean DEV_MODE = false;
-	private static final boolean TEST_MODE = false;
+	private static final boolean DEV_MODE = true;
+	private static final boolean TEST_MODE = true;
 	
 	public static SimpleNetworkWrapper snw;
 	
@@ -97,6 +98,7 @@ public class ZollernGalaxyCore {
 		ZGCompats.init();
 		ZGInfo.init(event.getModMetadata());
 		ZGLore.init();
+		ZGPotions.init();
 		ZGItems.init();
 		ZGBlocks.init();
 		ZGFluids.init();

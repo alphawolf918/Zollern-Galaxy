@@ -8,7 +8,7 @@
 package zollerngalaxy.mobs.entities.interfaces;
 
 /**
- * An alien entity that is born in darkness.
+ * An alien entity that is born in darkness or infected by it.
  */
 public interface IShadeEntity {
 	

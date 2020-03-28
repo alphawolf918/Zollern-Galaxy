@@ -43,6 +43,7 @@ public class ConfigManagerZG {
 	public static int planetExodusDimensionId;
 	public static int planetPerditaDimensionId;
 	public static int planetAltumDimensionId;
+	public static int planetCaligroDimensionId;
 	
 	// Planets (Pantheon)
 	public static int planetMeztliDimensionId;
@@ -107,6 +108,9 @@ public class ConfigManagerZG {
 	
 	public static int spaceStationAltumId;
 	public static int spaceStationAltumStaticId;
+	
+	public static int spaceStationCaligroId;
+	public static int spaceStationCaligroStaticId;
 	
 	// Misc
 	public static boolean canEarthAnimalsSpawnOnEden;
@@ -182,6 +186,7 @@ public class ConfigManagerZG {
 	// Planet Tiers (Sol-2)
 	public static int planetPerditaTier;
 	public static int planetAltumTier;
+	public static int planetCaligroTier;
 	
 	public static void init(FMLPreInitializationEvent event) {
 		configuration = new Configuration(new File(event.getModConfigurationDirectory().getAbsolutePath() + "/ZollernGalaxy/core.cfg"));
@@ -207,6 +212,7 @@ public class ConfigManagerZG {
 		planetExodusDimensionId = configuration.get(CATEGORY_DIMENSIONS, "Planet Exodus Dimension ID", -7980).getInt();
 		planetPerditaDimensionId = configuration.get(CATEGORY_DIMENSIONS, "Planet Perdita Dimension ID", -7979).getInt();
 		planetAltumDimensionId = configuration.get(CATEGORY_DIMENSIONS, "Planet Altum Dimension ID", -7878).getInt();
+		planetCaligroDimensionId = configuration.get(CATEGORY_DIMENSIONS, "Planet Caligro Dimension ID", -7877).getInt();
 		
 		// Planets (Pantheon)
 		planetMeztliDimensionId = configuration.get(CATEGORY_DIMENSIONS, "Planet Meztli Dimension ID", -7991).getInt();
@@ -290,6 +296,10 @@ public class ConfigManagerZG {
 		spaceStationAltumId = configuration.get(CATEGORY_SATELLITES, "Altum Space Station ID", -6020).getInt();
 		spaceStationAltumStaticId = configuration.get(CATEGORY_SATELLITES, "Altum Space Station Static ID", -6021).getInt();
 		
+		// Caligro
+		spaceStationCaligroId = configuration.get(CATEGORY_SATELLITES, "Caligro Space Station ID", -6022).getInt();
+		spaceStationCaligroStaticId = configuration.get(CATEGORY_SATELLITES, "Caligro Space Station Static ID", -6023).getInt();
+		
 		// Misc (Can Earth animals spawn on Eden?)
 		canEarthAnimalsSpawnOnEden = configuration.get(CATEGORY_MISC, "Earth Animals Spawn On Eden", true,
 				"Should Earth animals spawn on Eden? (default: true)").getBoolean();
@@ -299,7 +309,7 @@ public class ConfigManagerZG {
 				CATEGORY_MISC,
 				"Disable use of Star Gates",
 				false,
-				"Set this to true if you want to ONLY access Zollern Galaxy " + "planets using rockets. "
+				"Set this to true if you want to ONLY access Zollern Galaxy planets using rockets. "
 						+ "WARNING: will not work without another add-on this way! (default: false)").getBoolean();
 		
 		hideUnusedStarSystems = configuration.get(CATEGORY_MISC, "Hide Stars with no Planets", true,
@@ -412,6 +422,7 @@ public class ConfigManagerZG {
 		// Planet Tiers (Sol-2)
 		planetPerditaTier = configuration.get(CATEGORY_TIERS, "Planet Perdita Tier", 9).getInt();
 		planetAltumTier = configuration.get(CATEGORY_TIERS, "Planet Altum Tier", 10).getInt();
+		planetCaligroTier = configuration.get(CATEGORY_TIERS, "Planet Caligro Tier", 11).getInt();
 		
 		configuration.save();
 	}

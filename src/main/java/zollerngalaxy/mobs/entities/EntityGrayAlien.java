@@ -45,8 +45,8 @@ public class EntityGrayAlien extends EntityMob implements IEntityBreathable {
 		this.tasks.addTask(9, new EntityAIWander(this, 15.6D));
 		this.tasks.addTask(10, new EntityAIWatchClosest(this, EntityLiving.class, 8.0F));
 		this.scoreValue = 70;
-		this.experienceValue = 80;
-		this.stepHeight = 2.0F;
+		this.experienceValue = 180;
+		this.stepHeight = 2.5F;
 	}
 	
 	@Override

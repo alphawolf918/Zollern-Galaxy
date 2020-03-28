@@ -1,6 +1,10 @@
 ===== CHANGELOG =====
-Zollern Galaxy v2.0.14 (Bugfix)
+Zollern Galaxy v2.0.15
 =====================
 
-* Updated Chinese translations by EndsM.
-* Fixed crash when attempting to create Altum space station.
+* Increased score value and step height of Gray Aliens.
+* Added the Galaxy Knight.
+    - Spawns when a Gray Alien is attacked and immediately targets the Player.
+    - Extremely powerful Dark Agent mob.
+* Added potion effects.
+* 
