@@ -3,8 +3,20 @@ Zollern Galaxy v2.0.15
 =====================
 
 * Increased score value and step height of Gray Aliens.
+* Updated Chinese translations by EndsM.
+* Added German translations by Eternal Wolf.
 * Added the Galaxy Knight.
     - Spawns when a Gray Alien is attacked and immediately targets the Player.
     - Extremely powerful Dark Agent mob.
 * Added potion effects.
+* Added a lot more items and blocks with new metals.
+* Added Caligro blocks and items.
+* Added more tooltip translations for Lore Blocks.
+* Added config options to disable rocket travel to Zollern Galaxy planets.
+    - This can be accomplished by an 'all' setting, or on a planet-by-planet basis.
+    - The 'all' setting WILL NOT affect Zollus - it will keep whatever tier you set it as.
+* Slightly increased light level of Candy Cube blocks.
+* 
+* Massively lowered spawn rate of ores in Xathius.
+* Fixed crash when creating an Altum space station (I'm sure this time).
 * 

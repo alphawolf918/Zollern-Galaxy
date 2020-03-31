@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BLB",
+    "RGR",
+    "BLB"
+  ],
+  "key": {
+    "B": {
+      "item": "minecraft:blaze_powder"
+    },
+    "R": {
+      "item": "minecraft:redstone"
+    },
+    "G": {
+      "item": "zollerngalaxy:garnetblock"
+    },
+    "L": {
+      "item": "minecraft:blaze_rod"
+    }
+  },
+  "result": {
+    "item": "zollerngalaxy:firegarnet"
+  }
+}

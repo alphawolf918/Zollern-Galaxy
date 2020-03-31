@@ -16,14 +16,14 @@ public class ConfigManagerZG {
 	public static Configuration configuration;
 	
 	// Categories
-	public static String CATEGORY_DIMENSIONS = "Dimensions";
-	public static String CATEGORY_MOONS = "Moons";
-	public static String CATEGORY_SATELLITES = "Space_Stations";
-	public static String CATEGORY_MISC = "Miscallenous";
-	public static String CATEGORY_COMPATIBILITY = "Compatibility";
-	public static String CATEGORY_COORDINATES = "Coordinates";
-	public static String CATEGORY_CUSTOMIZATIONS = "Customizations";
-	public static String CATEGORY_TIERS = "Planet Tiers";
+	public static final String CATEGORY_DIMENSIONS = "Dimensions";
+	public static final String CATEGORY_MOONS = "Moons";
+	public static final String CATEGORY_SATELLITES = "Space_Stations";
+	public static final String CATEGORY_MISC = "Miscallenous";
+	public static final String CATEGORY_COMPATIBILITY = "Compatibility";
+	public static final String CATEGORY_COORDINATES = "Coordinates";
+	public static final String CATEGORY_CUSTOMIZATIONS = "Customizations";
+	public static final String CATEGORY_TIERS = "Planet Tiers";
 	
 	// Planets (Psios)
 	public static int planetEdenDimensionId;
@@ -129,6 +129,21 @@ public class ConfigManagerZG {
 	// Customizations
 	public static int kriffonLavaLakesPerChunk;
 	public static int kriffonLavaLakesGenChance;
+	
+	public static boolean planetUnreachableAll;
+	
+	public static boolean planetUnreachableZollus;
+	public static boolean planetUnreachableKriffon;
+	public static boolean planetUnreachablePurgot;
+	public static boolean planetUnreachableEden;
+	public static boolean planetUnreachableXathius;
+	public static boolean planetUnreachableOasis;
+	public static boolean planetUnreachableXantheon;
+	public static boolean planetUnreachableCandora;
+	public static boolean planetUnreachableAtheon;
+	public static boolean planetUnreachablePerdita;
+	public static boolean planetUnreachableAltum;
+	public static boolean planetUnreachableCaligro;
 	
 	// Coords (Psios)
 	public static float psiosX;
@@ -356,15 +371,48 @@ public class ConfigManagerZG {
 				CATEGORY_COMPATIBILITY,
 				"Enable Planet Progressions compatibility",
 				true,
-				"If Planet Progressions is installed, " + " you will need to discover the Planet or Moon "
-						+ " before you can travel to it via Star Gates." + " Set this to false to disable that. (default: true)")
-				.getBoolean();
+				"If Planet Progressions is installed, you will need to discover the Planet or Moon "
+						+ " before you can travel to it via Star Gates. Set this to false to disable that. (default: true)").getBoolean();
 		
 		// Customization Options
 		kriffonLavaLakesPerChunk = configuration.get(CATEGORY_CUSTOMIZATIONS, "Kriffon Lava Lakes Per Chunk", 4,
 				"The amount of Lava Lakes to generate per chunk on planet Kriffon. (default: 4)").getInt();
 		kriffonLavaLakesGenChance = configuration.get(CATEGORY_CUSTOMIZATIONS, "Kriffon Lava Lakes Gen Percentage", 25,
 				"The chance (out of 100) for a lava lake to generate on planet Kriffon. (default: 25)").getInt();
+		
+		// Control unreachable planets (by rockets).
+		planetUnreachableAll = configuration.get(
+				CATEGORY_CUSTOMIZATIONS,
+				"Disable Rockets For All Planets",
+				false,
+				"Setting this to true disallows rocket travel to all Zollern Galaxy planets. "
+						+ "Note that when this is enabled, it will override the planet-by-planet settings, "
+						+ "with the exception of Zollus. (default: false)").getBoolean();
+		
+		planetUnreachableZollus = configuration.get(CATEGORY_CUSTOMIZATIONS, "Disable Rockets For Planet Zollus", false,
+				"Disable rocket travel for this planet. (default: false)").getBoolean();
+		planetUnreachableKriffon = configuration.get(CATEGORY_CUSTOMIZATIONS, "Disable Rockets For Planet Kriffon", false,
+				"Disable rocket travel for this planet. (default: false)").getBoolean();
+		planetUnreachablePurgot = configuration.get(CATEGORY_CUSTOMIZATIONS, "Disable Rockets For Planet Purgot", false,
+				"Disable rocket travel for this planet. (default: false)").getBoolean();
+		planetUnreachableEden = configuration.get(CATEGORY_CUSTOMIZATIONS, "Disable Rockets For Planet Eden", false,
+				"Disable rocket travel for this planet. (default: false)").getBoolean();
+		planetUnreachableXathius = configuration.get(CATEGORY_CUSTOMIZATIONS, "Disable Rockets For Planet Xathius", false,
+				"Disable rocket travel for this planet. (default: false)").getBoolean();
+		planetUnreachableOasis = configuration.get(CATEGORY_CUSTOMIZATIONS, "Disable Rockets For Planet Oasis", false,
+				"Disable rocket travel for this planet. (default: false)").getBoolean();
+		planetUnreachableXantheon = configuration.get(CATEGORY_CUSTOMIZATIONS, "Disable Rockets For Planet Xantheon", false,
+				"Disable rocket travel for this planet. (default: false)").getBoolean();
+		planetUnreachableCandora = configuration.get(CATEGORY_CUSTOMIZATIONS, "Disable Rockets For Planet Candora", false,
+				"Disable rocket travel for this planet. (default: false)").getBoolean();
+		planetUnreachableAtheon = configuration.get(CATEGORY_CUSTOMIZATIONS, "Disable Rockets For Planet Atheon", false,
+				"Disable rocket travel for this planet. (default: false)").getBoolean();
+		planetUnreachablePerdita = configuration.get(CATEGORY_CUSTOMIZATIONS, "Disable Rockets For Planet Perdita", false,
+				"Disable rocket travel for this planet. (default: false)").getBoolean();
+		planetUnreachableAltum = configuration.get(CATEGORY_CUSTOMIZATIONS, "Disable Rockets For Planet Altum", false,
+				"Disable rocket travel for this planet. (default: false)").getBoolean();
+		planetUnreachableCaligro = configuration.get(CATEGORY_CUSTOMIZATIONS, "Disable Rockets For Planet Caligro", false,
+				"Disable rocket travel for this planet. (default: false)").getBoolean();
 		
 		// Coords (Psios)
 		psiosX = (float) configuration.get(CATEGORY_COORDINATES, "Psios X", -2.5).getDouble();

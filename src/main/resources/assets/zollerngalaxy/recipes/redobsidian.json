@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BN ",
+    "NB ",
+    "   "
+  ],
+  "key": {
+    "B": {
+      "item": "minecraft:nether_wart_block"
+    },
+    "N": {
+      "item": "minecraft:obsidian"
+    }
+  },
+  "result": {
+    "item": "zollerngalaxy:redobsidian",
+    "count": 2
+  }
+}

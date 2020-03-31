@@ -24,7 +24,8 @@ public enum EnumPlanetClass {
 	ABANDONED("Abandoned"),
 	CONSTRUCTED("Constructed"),
 	DESERT("Desert"),
-	OCEAN("Ocean");
+	OCEAN("Ocean"),
+	DARK("Dark");
 	
 	private EnumPlanetClass planetClass;
 	private String planetClassStr;

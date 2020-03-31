@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BSB",
+    "LXL",
+    "VAV"
+  ],
+  "key": {
+    "A": {
+      "item": "zollerngalaxy:shadowbone"
+    },
+    "B": {
+      "item": "zollerngalaxy:shadowessence"
+    },
+    "S": {
+      "item": "zollerngalaxy:superchargedcoal"
+    },
+    "V": {
+      "item": "minecraft:blaze_powder"
+    },
+    "X": {
+      "item": "zollerngalaxy:witheriteblock"
+    },
+    "L": {
+      "item": "minecraft:obsidian"
+    }
+  },
+  "result": {
+    "item": "zollerngalaxy:netheridium"
+  }
+}

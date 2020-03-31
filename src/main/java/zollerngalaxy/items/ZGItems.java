@@ -127,8 +127,21 @@ public class ZGItems {
 	public static final Item perdDiamond = new ZGItemBase("perddiamond");
 	public static final Item perdEtrium = new ZGItemBase("etrium");
 	
+	public static final Item amber = new ZGItemBase("amber");
+	public static final Item topaz = new ZGItemBase("topaz");
+	public static final Item opal = new ZGItemBase("opal");
+	public static final Item aquamarine = new ZGItemBase("aquamarine");
+	public static final Item garnet = new ZGItemBase("garnet");
+	public static final Item ruby = new ZGItemBase("ruby");
+	public static final Item amberStatic = new ZGItemBase("staticamber");
+	public static final Item garnetFire = new ZGItemBase("firegarnet");
+	public static final Item aquamarineIcy = new ZGItemBase("icyaqua");
+	public static final Item witherite = new ZGItemBase("witherite");
+	public static final Item netheridium = new ZGItemBase("netheridium");
+	
 	public static final Item shagreen = new ZGItemBase("shagreen");
 	public static final Item sharkTooth = new ZGItemBase("sharktooth");
+	public static final Item shadowBone = new ZGItemBase("shadowbone");
 	
 	public static final Item starGateTier1 = new ItemStargate(1);
 	public static final Item starGateTier2 = new ItemStargate(2);
@@ -197,7 +210,8 @@ public class ZGItems {
 				compressedZucrite, compressedRhodium, rawAlienBacon, cookedAlienBacon, rawAlienBeef, cookedAlienBeef, edenFruit, perdBerry,
 				perdPeach, rawBlubberFish, cookedBlubberFish, rawBladeFish, cookedBladeFish, rawGypsyFish, cookedGypsyFish, creamBall,
 				chocolateRaw, chocolateBar, brownie, candyApple, iceCreamSandwich, iceCream, edenDungeonKey, perdGlowdust, perdDiamond,
-				perdEtrium, perdReed, shagreen, sharkTooth, darkEssence, radium, superChargedCoal, powerStick, starGateTier1,
+				perdEtrium, amber, topaz, opal, aquamarine, garnet, ruby, amberStatic, aquamarineIcy, garnetFire, witherite, netheridium,
+				perdReed, shagreen, sharkTooth, shadowBone, darkEssence, radium, superChargedCoal, powerStick, starGateTier1,
 				starGateTier2, starGateTier3, starGateTier4, starGateTier5, starGateTier6, starGateTier7, starGateTier8, starGateTier9,
 				starGateTier10, starGateCandy, OMNITOOL, pickaxeCobalt, pickaxeEvenium, pickaxeVirinium, pickaxeAmaranth, pickaxeAzurite,
 				pickaxeZollernium, shovelCobalt, shovelEvenium, shovelVirinium, shovelAmaranth, shovelAzurite, shovelZollernium, axeCobalt,

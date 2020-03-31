@@ -30,6 +30,7 @@ public enum EnumBlockType {
 	SWEET,
 	SPACE,
 	CACTUS,
-	REEDS;
-	
+	REEDS,
+	DARK,
+	CORRUPTED;
 }

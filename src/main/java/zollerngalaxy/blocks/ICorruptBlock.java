@@ -11,6 +11,6 @@ public interface ICorruptBlock {
 	
 	public default boolean canCorrupt() {
 		return true;
-	}
+	};
 	
 }

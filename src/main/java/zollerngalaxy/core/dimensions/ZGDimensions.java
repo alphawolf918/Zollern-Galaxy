@@ -12,6 +12,7 @@ import micdoodle8.mods.galacticraft.core.util.WorldUtil;
 import net.minecraft.world.DimensionType;
 import org.apache.logging.log4j.Level;
 import zollerngalaxy.config.ConfigManagerZG;
+import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitAltum;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitAtheon;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitCandora;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitEden;
@@ -148,6 +149,10 @@ public class ZGDimensions {
 		
 		// Sol-2 (Altum)
 		ZGDimensions.ALTUM = ZGDimensions.getDimType(ConfigManagerZG.planetAltumDimensionId);
+		ZGDimensions.ALTUM_ORBIT = DimensionType.register("Altum Space Station", "_altum_orbit", ConfigManagerZG.spaceStationAltumId,
+				WorldProviderOrbitAltum.class, false);
+		ZGDimensions.ALTUM_ORBIT_STATIC = DimensionType.register("Altum Space Station", "_altum_orbit",
+				ConfigManagerZG.spaceStationAltumStaticId, WorldProviderOrbitAltum.class, true);
 	}
 	
 	public static DimensionType getDimType(int dimId) {
@@ -178,11 +183,14 @@ public class ZGDimensions {
 			body = ZGPlanets.planetPerdita;
 		} else if (dimID == ConfigManagerZG.planetAltumDimensionId) {
 			body = ZGPlanets.planetAltum;
+		} else if (dimID == ConfigManagerZG.planetCaligroDimensionId) {
+			body = ZGPlanets.planetCaligro;
 		}
 		
 		if (body == null) {
 			ZGHelper.Log(Level.ERROR, "Celestial Body was null.");
 		}
+		
 		return body;
 	}
 }

@@ -19,7 +19,7 @@ public class CandyCubeBlock extends ZGBlockBase {
 	
 	public CandyCubeBlock(String colorIn) {
 		super("candycube_" + colorIn, 1.2F);
-		this.setLightLevel(0.4F);
+		this.setLightLevel(0.6F);
 		this.setBlockType(EnumBlockType.CANDY);
 		this.setHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.DIAMOND.getHarvestLevel());
 		this.setCandyColor(colorIn);

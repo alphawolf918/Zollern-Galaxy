@@ -1,0 +1,705 @@
+language.name=Deutsch
+language.region=DE
+language.code=de_DE
+
+tile.zolsurfacerock.name=Zolfels
+tile.zolstone.name=Zolstein
+tile.zolcobblerock.name=Zolfels Bruchstein
+tile.zolrockbricks.name=Zollus' Ziegelstein
+tile.zolcrystals.name=Zolnium Kristalle
+tile.zolcoalore.name=Zollus' Kohleerz
+tile.zolironore.name=Zollus' Eisenerz
+tile.zolgoldore.name=Zollus' Golderz
+tile.zoltinore.name=Zollus' Zinnerz
+tile.zolcopperore.name=Zollus' Kupfererz
+tile.zolheartore.name=Zollus' Heartiumerz
+tile.zoldirt.name=Zollus' Erde
+
+tile.edensurfacerock.name=Edens grÃ¼ner Stein
+tile.edengrass.name=Edens Gras
+tile.edengrass_snow.name=Edens eingeschneites Gras
+tile.edengoldengrass.name=Edens goldenes Gras
+tile.edenswampgrass.name=Edens Sumpfgras
+tile.edensoil.name=Edens Erde
+tile.edenrock.name=Edenfels
+tile.edencobblerock.name=Edenfels Bruchstein
+tile.edenrockbricks.name=Edenfels Ziegelstein
+tile.edenironore.name=Edens Eisenerz
+tile.edenmeteoricironore.name=Edens meteorisches Eisenerz
+tile.edengoldore.name=Edens Golderz
+tile.edendiamondore.name=Edens Diamanterz
+tile.edenemeraldore.name=Edens Smaragterz
+tile.edencoalore.name=Edens Kohleerz
+tile.edenredstoneore.name=Edens Redstoneerz
+tile.edenlapisore.name=Edens Lapislazulierz
+tile.edencopperore.name=Edens Kupfererz
+tile.edentinore.name=Edens Zinnerz
+tile.edennickleore.name=Edens Nickelerz
+tile.edensilverore.name=Edens Silbererz
+tile.edenleadore.name=Edens Bleierz
+tile.edendeshore.name=Edens Desherz
+tile.edenaluminumore.name=Edens Aluminiumerz
+tile.edenbronzeore.name=Edens Bronzeerz
+tile.edeninvarore.name=Edens Invarerz
+tile.edenelectrumore.name=Edens Elektrumerz
+tile.edensteelore.name=Edens Stahlerz
+tile.edenplatinumore.name=Edens Platinerz
+tile.edenuraniumore.name=Edens Uraniumerz
+tile.edencyaniteore.name=Edens Cyaniterz
+tile.edenludacriteore.name=Edens Ludacriterz
+tile.edenviriore.name=Edens Viriniumerz
+tile.edencobaltore.name=Edens Kobalterz
+tile.edeneveniumore.name=Edens Eveniumerz
+tile.edenheartiumore.name=Edens Heartiumerz
+tile.viriblock.name=Viriniumblock
+tile.edenflower.name=Edens Blume
+tile.edenflower_blue.name=Edens blaue Blume
+tile.edenflower_red.name=Edens rote Blume
+tile.edenflower_orange.name=Edens orange Blume
+tile.edenflower_yellow.name=Edens gelbe Blume
+tile.edenflower_purple.name=Edens lila Blume
+tile.edenflower_cyan.name=Edens türkise Blume
+tile.edenflower_green.name=Edens grüne Blume
+tile.edenflower_pink.name=Edens pinke Blume
+tile.edenflower_black.name=Edens schwarze Blume
+tile.edenflower_white.name=Edens weiße Blume
+tile.edentallgrass.name=Edens hohes Gras
+tile.bloodsand.name=Edens Blutsand
+tile.bloodstone.name=Edens Blutstein
+tile.bonestone.name=Edens Knochenstein
+tile.edensacredstone.name=Edens heiliger Stein
+tile.edenfruit.name=Edens Indigofrucht
+tile.edenglass.name=Edens Glas
+tile.edenwoodlog.name=Edens Holzstamm
+tile.edenwoodplanks.name=Edens Holzbretter
+tile.edenwoodleaves.name=Edens Blätter
+tile.edentreesapling.name=Edens Setzling
+tile.fruitofedenblock.name=Frucht Edens
+tile.edengravel.name=Edens Kies
+tile.edenwinterrock.name=Edens verschneiter Stein
+tile.brightstone.name=Edens Britestein
+tile.edentreasurechest.name=Edens Schatztruhe
+tile.edendungeonbricks.name=Edens heilige Ziegelsteine
+
+tile.crater_rock.name=Kraterstein
+
+tile.kriffrock.name=Krifffels
+tile.kriffstone.name=Kriffstein
+tile.kriffcobblerock.name=Kriffons Bruchstein
+tile.kriffrockbricks.name=Kriffons Felsziegelstein
+tile.kriffcoalore.name=Kriffons Kohleerz
+tile.kriffcopperore.name=Kriffons Kupfererz
+tile.kriffredstoneore.name=Kriffons Redstoneerz
+tile.kriffironore.name=Kriffons Eisenerz
+tile.kriffgoldore.name=Kriffons Golderz
+tile.kriffcobaltore.name=Kriffons Kobalterz
+tile.kriffdirt.name=Kriffons Erde
+tile.cobaltblock.name=Kobaltblock
+tile.magmarock.name=Magfels
+tile.blazerock.name=Lohenfels
+
+tile.purgrock.name=Purgots Feld
+tile.purgcobblerock.name=Purgots Bruchstein
+tile.purgrockbricks.name=Purgots Felsziegelstein
+tile.purgstone.name=Purgots Stein
+tile.purgdirt.name=Purgots Erde
+tile.purggravel.name=Purgots Kies
+tile.whiterock.name=Weißfels
+tile.blackrock.name=Schwarzfels
+tile.purgironore.name=Purgots Eisenerz
+tile.purggoldore.name=Purgots Golderz
+tile.purgcopperore.name=Purgots Kupfererz
+tile.purgdiamondore.name=Purgots Diamanterz
+tile.purgemeraldore.name=Purgots Smaragterz
+tile.purgeveniumore.name=Purgots Eveniumerz
+tile.purgcobaltore.name=Purgots Kobalterz
+tile.purgredstoneore.name=Purgots Redstoneerz
+tile.purgaluminumore.name=Purgots Aluminiumerz
+tile.purgtinore.name=Purgots Zinnerz
+tile.purgleadore.name=Purgots Bleierz
+tile.purgmeteoricironore.name=Purgots meteorisches Eisenerz
+tile.eveniumblock.name=Eveniumblock
+
+tile.xathrock.name=Xathius' Fels
+tile.xathstone.name=Xathius' Stein
+tile.xathrockbricks.name=Xathius' Felsziegelstein
+tile.xathcobblerock.name=Xathius' Bruchstein
+tile.xathdirt.name=Xathius' Erde
+tile.xathgrass.name=Xathius' Gras
+tile.xathgravel.name=Xathius' Kies
+tile.xathtallgrass.name=Xathius' hohes Gras
+tile.xathprometheanore.name=Xathius' Prometheumerz
+tile.xathemeraldore.name=Xathius' Smaragterz
+tile.xathdiamondore.name=Xathius' Diamanterz
+tile.xathgoldore.name=Xathius' Golderz
+tile.xathironore.name=Xathius' Eisenerz
+tile.xathtinore.name=Xathius' Zinnerz
+tile.xathredstoneore.name=Xathius' Redstoneerz
+tile.xathazuriteore.name=Xathius' Azuriterz
+tile.prometheanblock.name=Prometheumblock
+
+tile.oasisrock.name=Oasis' Fels
+tile.oasisgrass.name=Oasis' Gras
+tile.oasisstone.name=Oasis' Stein
+tile.oasiscobblerock.name=Oasis' Bruchstein
+tile.oasisrockbricks.name=Oasis' Felsziegelstein
+tile.oasisdirt.name=Oasis' Erde
+tile.oasistallgrass.name=Oasis' hohes Gras
+tile.oasisflower.name=Oasis' Blume
+tile.oasisgravel.name=Oasis' Kies
+tile.oasissuperchargedcoalore.name=Oasis' supergeladenes Kohleerz
+tile.oasiscoalore.name=Oasis' Kohleerz
+tile.oasisironore.name=Oasis' Eisenerz
+tile.oasisgoldore.name=Oasis' Golderz
+tile.oasisredstoneore.name=Oasis' Redstoneerz
+tile.oasisdiamondore.name=Oasis' Diamanterz
+tile.oasistinore.name=Oasis' Zinnerz
+tile.oasisleadore.name=Oasis' Bleierz
+tile.superchargedcoalblock.name=Supergeladener Kohleblock
+tile.chargiumblock.name=Leitender Chargiumblock
+tile.shiniumblock.name=Shiniumblock
+tile.shinestone.name=Shinestone
+tile.shinestonecrystal.name=Shinestonekristall
+tile.polishedshinestone.name=Polierter Shinestone
+tile.shinestonecrystalbricks.name=Shinestone Kristallziegelsteine
+
+tile.xantheonrock.name=Xantheons Oberfläcjenfels
+tile.xantheonstone.name=Xantheons Stein
+tile.xantheonchrome.name=Xantheons Chrom
+tile.xantheonplutoniumore.name=Xantheons Plutoniumerz
+tile.xantheonironore.name=Xantheons Eisenerz
+tile.xantheoncoalore.name=Xantheons Kohleerz
+tile.xantheonnickelore.name=Xantheons Nickelerz
+tile.xantheoncopperore.name=Xantheons Kupfererz
+tile.xantheonfueltoniumore.name=Xantheons Fueltoniumerz
+tile.xantheonamaranthore.name=Xantheons Amarantherz
+tile.plutoniumblock.name=Plutoniumblock
+tile.fueltoniumblock.name=Fueltoniumblock
+tile.constructblock.name=Konstruierter Block
+
+tile.candycube_white.name=Weißer Zuckerwürfel
+tile.candycube_black.name=Schwarzer Zuckerwürfel
+tile.candycube_gray.name=Grauer Zuckerwürfel
+tile.candycube_orange.name=Oranger Zuckerwürfel
+tile.candycube_brown.name=Brauner Zuckerwürfel
+tile.candycube_red.name=Roter Zuckerwürfel
+tile.candycube_blue.name=Blauer Zuckerwürfel
+tile.candycube_yellow.name=Gelber Zuckerwürfel
+tile.candycube_purple.name=Lila Zuckerwürfel
+tile.candycube_cyan.name=Türkiser Zuckerwürfel
+tile.candycube_pink.name=Pinker Zuckerwürfel
+tile.candycube_green.name=Grüner Zuckerwürfel
+tile.chocolateblock.name=Schokoladenblock
+tile.chocolatebricks.name=Schockoladenziegelsteine
+tile.cookieblock.name=Keksblock
+tile.brownieblock.name=Brownieblock
+tile.icecreamsandwichblock.name=Eissandwichblock
+tile.sugarcube.name=Zuckerwürfel
+
+tile.atheonamaranthore.name=Atheons Amarantherz
+tile.atheonredstoneore.name=Atheons Redstoneerz
+tile.atheontinore.name=Atheons Zinnerz
+tile.atheondiamondore.name=Atheons Diamanterz
+tile.atheonzollerniumore.name=Atheons Zollerniumerz
+tile.atheonzincore.name=Atheons Zinkerz
+tile.atheoncobble.name=Atheons Bruchstein
+tile.atheonstone.name=Atheons Stein
+tile.atheonluxrock.name=Atheons Luxfels
+tile.atheonrockbricks.name=Atheons Felsziegelstein
+tile.atheonrock.name=Atheons Goldfels
+tile.goldenconstructblock.name=Goldener konstruierter Block
+
+tile.perdsand.name=Verlorener Sand
+tile.perdrock.name=Verlorener Fels
+tile.perdstone.name=Verlorener Stein
+tile.perdrockbricks.name=Verlorener Felsziegelstein
+tile.perdcobble.name=Verlorener Bruchstein
+tile.perdgravel.name=Verlorenes Kies
+tile.perdcreepdirt.name=Verlorene Creeperde
+tile.perdcreepstone.name=Verlorener Creepstein
+tile.perdcavestone.name=Verlorener Höhlenstein
+tile.perdcavestonebricks.name=Verlorene Höhlenziegelsteine
+tile.perdglowstone.name=Verlorener Glowstone
+tile.perdcactus.name=Verlorener Kaktus
+tile.perdtorch.name=Verlorene Glühfackel
+tile.perddiamondblock.name=Verlorener Diamantblock
+tile.perddiamondore.name=Verlorenes Diamanterz
+tile.perdetriumore.name=Verlorenes Etriumerz
+tile.perdironore.name=Verlorenes Eisenerz
+tile.perdgoldore.name=Verlorenes Golderz
+tile.perdzollerniumore.name=Verlorenes Zollerniumerz
+tile.perdfueltoniumore.name=Verlorenes Fueltoniumerz
+tile.perdsoil.name=Verlorener Boden
+tile.perddeadbush.name=Verlorener toter Busch
+tile.perddirt.name=Verlorene Erde
+tile.perdgrass.name=Verlorenes Gras
+tile.perdtallgrass.name=Verlorenes hohes Gras
+tile.perdreeds.name=Verlorenes Bambus
+tile.palmtreesapling.name=Verlorener Palmensetzling
+tile.palmwoodlog.name=Verlorener Palmenholzstamm
+tile.palmwoodleaves.name=Verlorene Palmenblätter
+tile.palmwoodplanks.name=Verlorene Palmenholzbretter
+
+tile.altumrock.name=Altums Fels
+tile.altumstone.name=Altums Stein
+tile.altumcobble.name=Altums Bruchstein
+tile.altumdirt.name=Altums Erde
+tile.altumgravel.name=Altums Kies
+tile.altumsand.name=Altums Sand
+tile.altumcoalore.name=Altums Kohleerz
+tile.altumironore.name=Altums Eisenerz
+tile.altumgoldore.name=Altums Golderz
+tile.altumdiamondore.name=Altums Diamanterz
+tile.altumredstoneore.name=Altums Redstoneerz
+tile.altumamaranthore.name=Altums Amarantherz
+tile.altumzollerniumore.name=Altums Zollerniumerz
+tile.altumeveniumore.name=Altums Eveniumerz
+tile.altumrhodiumore.name=Altums Rhodiumerz
+tile.seaweed.name=Seegras
+
+tile.caligrosurfacerock.name=Caligros Oberflächenfels
+tile.caligrorock.name=Caligros Fels
+tile.witherrack.name=Witherstein
+tile.caligrodirt.name=Caligros Erde
+tile.caligrostone.name=Caligros Stein
+tile.caligrocobblestone.name=Caligros Bruchstein
+tile.caligrocobblemossy.name=Caligros bemooster Bruchstein
+tile.caligrostonebricks.name=Caligros Steinziegel
+tile.caligroshiniumore.name=Caligros Shiniumerz
+tile.caligrosilverore.name=Caligros Silbererz
+tile.caligronickelore.name=Caligros Nickelerz
+tile.caligroleadore.name=Caligros Bleierz
+tile.caligrotinore.name=Caligros Zinnerz
+tile.caligrocopperore.name=Caligros Kupfererz
+tile.caligrotopazore.name=Caligros Topaserz
+tile.caligroamberore.name=Caligros Bernsteinerz
+tile.caligroopalore.name=Caligros Opalerz
+tile.caligrogarnetore.name=Caligros Granaterz
+tile.caligroaquaore.name=Caligros Aquamarinerz
+tile.caligroradiumore.name=Caligros Radiumerz
+tile.caligrorubyore.name=Caligros Rubinerz
+tile.caligroredstoneore.name=Caligros Redstoneerz
+tile.caligrolapisore.name=Caligros Lapislazulierz
+tile.caligrofueltoniumore.name=Caligros Fueltoniumerz
+tile.caligrosuperchargedcoalore.name=Caligros supergeladenes Kohleerz
+tile.caligrozincore.name=Caligros Zinkerz
+tile.caligroamaranthore.name=Caligros Amarantherz
+tile.caligroironore.name=Caligros Eisenerz
+tile.caligrogoldore.name=Caligros Golderz
+tile.caligroemeraldore.name=Caligros Smaragterz
+tile.caligrodiamondore.name=Caligros Diamanterz
+tile.witheriteore.name=Witheriterz
+tile.shadowspawner.name=Schattenspawner
+tile.shadesapling.name=Schattenbaumsetzling
+tile.shadelog.name=Schattenbaumstamm
+tile.shadeleaves.name=Schattenbaumblätter
+tile.shadeplanks.name=Schattenbaumholzbretter
+tile.creepstone.name=Caligros Creepstein
+tile.creepdirt.name=Caligros Creeperde
+tile.corruptrock.name=Verdorbener Fels
+tile.corruptstone.name=Verdorbener Stein
+tile.corruptascendiumore.name=Verdorbenes Ascendiumerz
+tile.corruptetriumore.name=Verdorbenes Etriumerz
+tile.corruptchargiumore.name=Verdorbenes Chargiumerz
+tile.corruptcobble.name=Verdorbener Bruchstein
+tile.corruptstonebricks.name=Verdorbene Steinziegel
+tile.corruptcreepstone.name=Verdorbener Creepstein
+
+tile.amaranthblock.name=Amaranthblock
+tile.azuriteblock.name=Azuritblock
+tile.zollerniumblock.name=Zollerniumblock
+tile.zincblock.name=Zinkblock
+tile.perdetriumblock.name=Etriumblock
+tile.zucriteblock.name=Zucritblock
+tile.rhodiumblock.name=Rhodiumblock
+tile.witheriteblock.name=Witheritblock
+tile.rubyblock.name=Rubinblock
+tile.garnetblock.name=Granatblock
+tile.opalblock.name=Opalblock
+tile.topazblock.name=Topasblock
+tile.aquamarineblock.name=Aquamarinblock
+tile.amberblock.name=Bernsteinblock
+tile.staticamberblock.name=Rauschender Bernsteinblock
+tile.firegarnetblock.name=Glühender Granatblock
+tile.icyaquablock.name=Eisiger Aquamarinblock
+tile.shadowboneblock.name=Block des Schattenknochen
+tile.shadowessenceblock.name=Block der Schattenessenz
+tile.radiumblock.name=Radiumblock
+
+tile.endrock.name=Endfels
+
+tile.heartblock.name=Heilungsstation
+tile.blueprintblock.name=Entwurfsreparierstation
+
+tile.spacestationblock.name=Raumstationsblock
+tile.loreblock.name=Block der Sagen
+
+tile.compressedprometheanblock.name=Komprimierter Prometheumblock
+tile.compressedsuperchargedcoalblock.name=Komprimierter supergeladener Kohleblock
+tile.compressedviriniumblock.name=Komprimierter Viriniumblock
+tile.compressedeveniumblock.name=Komprimierter Eveniumblock
+tile.compressedcobaltblock.name=Komprimierter Kobaltblock
+tile.compressedheartiumblock.name=Komprimierter Heartiumblock
+tile.compressedrhodiumblock.name=Komprimierter Rhodiumblock
+tile.compressedzucriteblock.name=Komprimierter Zucritblock
+
+chargium=Leitendes Chargium
+tile.chargium.name=Leitendes Chargium
+fluid.chargium=Leitendes Chargium
+
+whitelava=Radiolaria
+tile.whitelava.name=Radiolaria
+fluid.whitelava=Radiolaria
+
+fueltonium=Geschmolzenes Fueltonium
+tile.fueltonium.name=Geschmolzenes Fueltonium
+fluid.fueltonium=Geschmolzenes Fueltonium
+
+chocolatemelted=Geschmolzene Schokolade
+tile.chocolatemelted.name=Geschmolzene Schokolade
+fluid.chocolatemelted=Geschmolzene Schokolade
+
+container.eden.treasurechest.name=Edens Schatztruhe
+
+item.zolluscrystal.name=Zolniumkristall
+item.heartofzol.name=Zollus' Heartium
+
+item.cobaltdust.name=Pulverisiertes Kobalt
+item.diamonddust.name=Pulverisierter Diamant
+item.emeralddust.name=Pulverisierter Smaragt
+item.eveniumdust.name=Pulverisiertes Evenium
+
+item.alienbeefraw.name=Rohes Alienrindfleisch
+item.alienbeefcooked.name=Aliensteak
+item.alienbaconraw.name=Roher Alienspeck
+item.alienbaconcooked.name=Gebratener Alienspeck
+item.fruitofeden.name=Edens Frucht
+item.perdberry.name=Verlorene Beere
+item.perdpeach.name=Verlorener Pfirsich
+
+item.creamball.name=Sahneball
+item.rawchocolate.name=Rohe Schokolade
+item.chocolatebar.name=Schokoladentafel
+item.brownie.name=Brownie
+item.candyapple.name=Zuckerapfel
+item.icecreamsandwich.name=Eiskremesandwich
+item.icecream.name=Eiskreme
+
+item.hud.name=Galaktische HUD
+item.brightstonedust.name=Britesteinstaub
+item.edendungeonkey.name=Edens Schatztruhenschlüssel
+item.rawviri.name=Rohes Virinium
+item.ingotviri.name=Viriniumbarren
+item.alienstone.name=Edens altertümliche Essenz
+item.edencrystal.name=Edens Kristall
+
+item.ingotcobalt.name=Kobaltbarren
+item.kriffoncrystal.name=Kriffons Kristall
+
+item.ingotevenium.name=Eveniumbarren
+item.purgotcrystal.name=Purgots Kristall
+
+item.prometheancrystal.name=Prometheumkristall
+item.plutoniumcrystal.name=Plutoniumkristall
+
+item.purgotessence.name=Oasis' Edelstein
+
+item.shadowessence.name=Essenz der dunklen Materie
+item.radium.name=Radium
+
+item.fueltoniumraw.name=Rohes Fuelonit
+item.fueltoniumingot.name=Fueltoniumbarren
+
+item.chargiumdust.name=Chargiummischung
+item.chargiumingot.name=Chargiumbarren
+
+item.shiniumdust.name=Shiniumstaub
+item.shiniumingot.name=Shiniumbarren
+
+item.shinestonedust.name=Shinestonestaub
+item.shinestoneingot.name=Shinestonebarren
+
+item.lapisingot.name=Lapisbarren
+item.lapisstick.name=Lapisstock
+
+item.amaranthingot.name=Amaranthbarren
+item.amaranthdust.name=Amaranthstaub
+item.amaranthnugget.name=Amaranthnugget
+
+item.ascendium.name=Ascendium
+item.azurite.name=Azurit
+item.ascendantamaranthingot.name=Ascendium Amaranthbarren
+
+item.zollerniumingot.name=Zollerniumbarren
+item.zollerniumdust.name=Zollerniumstaub
+
+item.zincingot.name=Zinkbarren
+item.zincdust.name=Zinkstaub
+
+item.rhodiumingot.name=Rhodiumbarren
+item.rhodiumdust.name=Rhodiumstaub
+
+item.rokkite.name=Rokkit
+item.amber.name=Bernstein
+item.topaz.name=Topas
+item.garnet.name=Granat
+item.ruby.name=Rubin
+item.opal.name=Opal
+item.aquamarine.name=Aquamarin
+item.firegarnet.name=Glühendes Granat
+item.icyaqua.name=Eisiges Aquamarin
+item.staticamber.name=Rauschender Bernstein
+item.witherite.name=Witherit
+
+item.powerstick.name=Machtstock
+item.blackmarblestick.name=Schwarzer Marmorstock
+item.marblestick.name=Marmorstock
+item.shadekey.name=Schattenschlüssel
+
+item.blueprint_rad.name=Strahlungsschutz
+item.blueprint_tox.name=Toxizitätsschutz
+item.blueprint_poison.name=Giftschutz
+item.blueprint_corruption.name=Verdorbener Schutz
+item.blueprint_radiance.name=Dunkelheitsschutz
+
+item.compressedemerald.name=Komprimierter Smaragt
+item.compresseddiamond.name=Komprimierter Diamant
+item.compressedgold.name=Komprimiertes Gold
+item.compressedevenium.name=Komprimiertes Evenium
+item.compressedcobalt.name=Komprimiertes Kobalt
+item.compressedkriffonium.name=Komprimiertes Kriffonium
+item.compressedvirinium.name=Komprimiertes Virinium
+item.compressedheartium.name=Komprimiertes Heartium
+item.compressedvyrex.name=Komprimiertes Vyrexit
+item.compressedpromethean.name=Komprimiertes Prometheum
+item.compressedsuperchargedcoal.name=Komprimierte supergeladene Kohle
+item.compressedriven.name=Komprimiertes Riven
+item.compressedamaranth.name=Komprimiertes Amaranth
+item.compressedazurite.name=Komprimiertes Azurit
+item.compressedzollernium.name=Komprimiertes Zollernium
+item.compressedrhodium.name=Komprimiertes Rhodium
+item.compressedzucrite.name=Komprimiertes Zucrit
+
+item.superchargedcoal.name=Supergeladene Kohle
+item.powerstick.name=Ascensionrute
+
+item.perddiamond.name=Verlorener Diamant
+item.etrium.name=Rohes Etrium
+item.etriumingot.name=Etriumbarren
+item.zucritedust.name=Zucritstaub
+item.zucriteingot.name=Zucritbarren
+item.perdpearl.name=Verlorene Perle
+item.perdglowstonedust.name=Verlorener Glühstaub
+item.perdreed.name=Verlorene Bambuspflanze
+
+item.rawblubberfish.name=Roher Blubberfisch
+item.cookedblubberfish.name=Gebratener Blubberfisch
+item.rawgypsyfish.name=Roher Zigeunerfisch
+item.cookedgypsyfish.name=Gebratener Zigeunerfisch
+item.rawbladefish.name=Roher Schwertfisch
+item.cookedbladefish.name=Gebratener Schwertfisch
+item.rawshark.name=Roher Hai
+item.cookedshark.name=Gebratener Hai
+
+item.shagreen.name=Shagreen
+item.sharktooth.name=Haizahn
+item.sharksword.name=Haischwert
+
+item.stargate_tier1.name=Sternentor (Protokoll Eins)
+item.stargate_tier2.name=Sternentor (Protokoll Zwei)
+item.stargate_tier3.name=Sternentor (Protokoll Drei)
+item.stargate_tier4.name=Sternentor (Protokoll Vier)
+item.stargate_tier5.name=Sternentor (Protokoll Fünf)
+item.stargate_tier6.name=Sternentor (Protokoll Sechs)
+item.stargate_tier7.name=Sternentor (Protokoll Sieben)
+item.stargate_tier8.name=Sternentor (Protokoll Acht)
+item.stargate_tier9.name=Sternentor (Protokoll Neun)
+item.stargate_tier10.name=Sternentor (Protokoll Zehn)
+item.stargate_tier918.name=Sternentor (Geburtstagsprotokoll)
+
+item.omnitool.name=Omniwerkzeug
+item.bedrockbreaker.name=Grundgesteinzerbrecher
+
+item.cobalt_pickaxe.name=Kobaldspitzhacke
+item.cobalt_sword.name=Kobaltschwert
+item.cobalt_shovel.name=Kobaltschaufel
+item.cobalt_axe.name=Kobaltaxt
+item.cobalt_hoe.name=Kobalthacke
+item.evenium_pickaxe.name=Eveniumspitzhacke
+item.evenium_sword.name=Eveniumschwert
+item.evenium_shovel.name=Eveniumschaufel
+item.evenium_axe.name=Eveniumaxt
+item.evenium_hoe.name=Eveniumhacke
+
+item.virinium_pickaxe.name=Viriniumspitzhacke
+item.virinium_sword.name=Viriniumschwert
+item.virinium_shovel.name=Viriniumschaufel
+item.virinium_axe.name=Viriniumaxt
+item.virinium_hoe.name=Viriniumhacke
+
+item.amaranth_pickaxe.name=Amaranthspitzhacke
+item.amaranth_sword.name=Amaranthschwert
+item.amaranth_shovel.name=Amaranthschaufel
+item.amaranth_axe.name=Amaranthaxt
+item.amaranth_hoe.name=Amaranthhacke
+
+item.bedrockbreaker.name=Grundgesteinzerbrecher
+
+item.azurite_pickaxe.name=Azuritspitzhacke
+item.azurite_sword.name=Azuritschwert
+item.azurite_shovel.name=Azuritschaufel
+item.azurite_axe.name=Azuritaxt
+item.azurite_hoe.name=Azurithacke
+
+item.zollernium_pickaxe.name=Zollerniumspitzhacke
+item.zollernium_sword.name=Zollerniumschwert
+item.zollernium_shovel.name=Zollerniumschaufel
+item.zollernium_axe.name=Zollerniumaxt
+item.zollernium_hoe.name=Zollerniumhacke
+
+entity.zollerngalaxy:moolus.name=Moolus
+entity.zollerngalaxy:oinkus.name=Oinkus
+entity.zollerngalaxy:squidlus.name=Squidlus
+entity.zollerngalaxy:grayalien.name=Graues Alien
+entity.zollerngalaxy:galaxyknight.name=Galaktische Wache
+entity.zollerngalaxy:crawler.name=Crawlerboss
+entity.zollerngalaxy:frostgiant.name=Frostriese
+entity.zollerngalaxy:magmos.name=Magmos
+entity.zollerngalaxy:slime.raspberry.name=Galaxienschleim (Raspberry)
+entity.zollerngalaxy:megacreeper.name=Mega Creeper
+entity.zollerngalaxy:mummy.name=Mumie
+entity.zollerngalaxy:scorpion.name=Skorpion
+entity.zollerngalaxy:blubberfish.name=Blubberfisch
+entity.zollerngalaxy:gypsyfish.name=Zigeunerfisch
+entity.zollerngalaxy:bladefish.name=Schwertfisch
+entity.zollerngalaxy:abyssalvillager.name=Abyssal Dorfbewohner
+entity.zollerngalaxy:shark.name=Hai
+entity.zollerngalaxy:jellyfish.name=Geleefisch
+entity.zollerngalaxy:wasp.name=Wespe
+
+tooltips.hud=Zeigt alle planetare und biomgebundene Informationen.
+tooltips.hud2=Funktioniert nur wenn es gehalten wird.
+tooltips.holdshift=Halte LSHIFT für mehr Informationen.
+tooltips.stargate=Ein Tor zwischen zwei Welten,
+tooltips.stargate2=welches einen Spieler
+tooltips.stargate3=durch Raum und Zeit bewegt.
+tooltips.loreblock=Bietet dem Spieler Storyelemente an.
+tooltips.loreblock2=Benötigt ein Omniwerkzeug, um zu funktionieren.
+tooltips.loreblock3=Kann nur auf Raumstationen gefunden werden.
+
+planet.zollus=Zollus
+planet.eden=Eden
+planet.purgot=Purgot
+planet.kriffus=Kriffon
+moon.astros=Astros
+
+planet.xathius=Xathius
+planet.oasis=Oasis
+planet.xantheon=Xantheon
+planet.candora=Candora
+planet.atheon=Atheon
+
+planet.exodus=Exodus
+planet.perdita=Perdita
+planet.altum=Altum
+planet.caligro=Caligro
+
+planet.meztli=Meztli
+planet.centotl=Centotl
+planet.toci=Toci
+planet.tlaloc=Tlaloc
+
+planet.ares=Ares
+planet.prometheus=Prometheus
+planet.icarus=Icarus
+planet.kronos=Kronos
+
+planet.asgard=Asgard
+planet.maveth=Maveth
+
+planet.meridian=Meridian
+planet.reach=Reach
+
+star.psion6=Psios
+star.praedyth=Praedyth
+star.sol2=Sol-2
+star.pantheon=Pantheon
+star.olympus=Olympus
+star.asgard=Asgard
+star.vega=Vega
+star.nova=Nova
+
+solarsystem.psion6=Psios
+solarsystem.praedyth=Praedyth
+solarsystem.sol2=Sol-2
+solarsystem.pantheon=Pantheon
+solarsystem.olympus=Olympus
+solarsystem.asgard=Asgard
+solarsystem.vega=Vega
+solarsystem.Nova=Nova
+
+satellite.space_station.zollus=Zollus Raumstation
+satellite.space_station.kriffon=Kriffon Raumstation
+satellite.space_station.purgot=Purgot Raumstation
+satellite.space_station.eden=Eden Raumstation
+satellite.space_station.xathius=Xathius Raumstation
+satellite.space_station.oasis=Oasis Raumstation
+satellite.space_station.xantheon=Xantheon Raumstation
+satellite.space_station.candora=Candora Raumstation
+satellite.space_station.atheon=Atheon Raumstation
+satellite.space_station.perdita=Perdita Raumstation
+satellite.space_station.altum=Altum Raumstation
+satellite.space_station.caligro=Caligro Raumstation
+satellite.space_station.exodus=Exodus Raumstation
+
+death.attack.bladefish=%1$s wurde zu Tode gestochen.
+death.attack.bladefish.player=%1$s wurde von %2$s zu Tode gestochen.
+death.attack.bladefish.item=%1$s wurde von %2$s durch %3$s zu Tode gestochen.
+
+death.attack.jellyfishsting=%1$s wurde von einem Geleefisch gestochen.
+death.attack.jellyfishsting.player=%1$s wurde dank %2$s von einem Geleefisch gestochen.
+death.attack.jellyfishsting.item=%1$s wurde dank %2$s durch %3$s von einem Geleefisch gestochen.
+
+death.attack.sharkattack=%1$s wurde von einem Hai gefressen. Lecker.
+death.attack.sharkattack.player=%1$s wurde dank %2$s von einem Hai gefressen, Verrat.
+death.attack.sharkattack.item=%1$s wurde dank %2$s durch %3$s von einem Hai gefressen. 
+
+death.attack.shadows=%1$s wurde vom Schattenreich verschlungen.
+death.attack.shadows.player=%1$s wurde aufgrund von %2$s vom Schattenreich verschlungen.
+death.attack.shadows.item=%1$s wurde aufgrund von %2$s durch %3$s vom Schattenreich verschlungen.
+
+death.attack.infection=%1$s wurde durch eine Virusinfektion ausradiert.
+death.attack.infection.player=%1$s wurde durch eine Virusinfektion, ausgelöst von %2$s, ausradiert.
+death.attack.infection.item=%1$s wurde durch eine Virusinfektion, ausgelöst von %2$s mithilfe von %3$s, ausradiert.
+
+death.attack.light=%1$s wurde durch das Licht geblendet.
+death.attack.light.player=%1$s wurde durch das Licht dank %2$s geblendet.
+death.attack.light.item=%1$s wurde durch das Licht danke %2$s durch %3$s geblendet.
+
+death.attack.corruption=%1$s wurde verdorben.
+death.attack.corruption.player=%1$s wurde von %2$s verdorben.
+death.attack.corruption.item=%1$s wurde von %2$s durch %3$s verdorben.
+
+death.attack.deathcold=%1$s erfror.
+death.attack.deathcold.player=%1$s erfror dank %2$s.
+death.attack.deathcold.item=%1$s erfror durch %2$s mithilfe von %3$s.
+
+death.attack.deathhot=%1$s verbrannte.
+death.attack.deathhot.player=%1$s verbrannte dank %2$s.
+death.attack.deathhot.item=%1$s verbrannte dank %2$s durch %3$s.
+
+death.attack.toxic=%1$s starb an zu hoher Toxizität.
+death.attack.toxic.player=%1$s starb dank %2$s an zu hoher Toxizität.
+death.attack.toxic.item=%1$s starb dank %2$s durch %3$s an zu hoher Toxizität.
+
+death.attack.waspsting=%1$s starb durch Wespenstiche.
+death.attack.waspsting.player=%1$s starb dank %2$s durch Wespenstiche.
+death.attack.waspsting.item=%1$s starb dank %2$s mithilfe von %3$s durch Wespenstiche.
+
+zollerngalaxy_infected=Infiziert
+zollerngalaxy_corruption=Verderbung
+zollerngalaxy_radiance=Strahlung
+zollerngalaxy_enlightened=Erleuchtet
+
+itemGroup.ZollernGalaxyBlocks=Zollern Galaxy Blöcke
+itemGroup.ZollernGalaxyItems=Zollern Galaxy Gegenstände

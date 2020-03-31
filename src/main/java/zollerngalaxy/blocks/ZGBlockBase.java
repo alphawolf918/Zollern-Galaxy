@@ -30,6 +30,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.core.enums.EnumBlockType;
+import zollerngalaxy.core.enums.EnumHarvestLevelZG;
 import zollerngalaxy.core.enums.EnumHarvestToolZG;
 import zollerngalaxy.creativetabs.ZGTabs;
 import zollerngalaxy.lib.helpers.json.JSONFactory;
@@ -39,17 +40,25 @@ public class ZGBlockBase extends Block implements ISingleZGBlockRender, IJSONBlo
 	protected static Material blockMaterial = Material.ROCK;
 	protected static SoundType blockSound = SoundType.STONE;
 	protected EnumBlockType blockType = EnumBlockType.NORMAL;
+	
 	protected boolean isExplosive = false;
 	protected int explosionWeight = 40;
+	
 	protected boolean hasPotionEffect = false;
 	protected Potion blockPotionEffect;
+	
 	protected boolean shouldAlwaysBurn = false;
 	protected boolean isHotFloorBlock = false;
+	
 	protected boolean hasInfo = false;
-	protected boolean shouldIgnore = false;
-	protected String blockInfo = "";
+	
+	protected boolean shouldJSONIgnore = false;
+	
+	protected String[] blockInfo;
 	protected static String name;
-	protected int harvestLvl = 3;
+	
+	protected int harvestLvl = EnumHarvestLevelZG.DIAMOND.getHarvestLevel();
+	
 	protected Random rand = new Random();
 	
 	public ZGBlockBase(String blockName, float hardResist) {
@@ -87,11 +96,11 @@ public class ZGBlockBase extends Block implements ISingleZGBlockRender, IJSONBlo
 		return this.hasInfo;
 	}
 	
-	public String getInfo() {
+	public String[] getInfo() {
 		return this.blockInfo;
 	}
 	
-	public Block setInfo(String info) {
+	public Block setInfo(String... info) {
 		this.blockInfo = info;
 		return this;
 	}
@@ -216,8 +225,8 @@ public class ZGBlockBase extends Block implements ISingleZGBlockRender, IJSONBlo
 	public void onBlockDestroyedByExplosion(World worldIn, BlockPos pos, Explosion explosionIn) {
 		if (!worldIn.isRemote) {
 			if (this.getShouldExplode()) {
-				if (rand.nextInt(this.getExplosionChance()) <= 6) {
-					worldIn.createExplosion(null, pos.getX(), pos.getY(), pos.getZ(), 2.5F, true);
+				if (rand.nextInt(this.getExplosionChance()) <= 8) {
+					worldIn.createExplosion(null, pos.getX(), pos.getY(), pos.getZ(), 3.2F, true);
 				}
 			}
 		}
@@ -256,7 +265,7 @@ public class ZGBlockBase extends Block implements ISingleZGBlockRender, IJSONBlo
 	}
 	
 	public Block setShouldJSONIgnore(boolean ignore) {
-		this.shouldIgnore = ignore;
+		this.shouldJSONIgnore = ignore;
 		return this;
 	}
 	

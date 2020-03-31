@@ -73,6 +73,18 @@ public class CraftingRecipes {
 		CraftingRecipes.addIngotMetal(ZGItems.ingotEtrium, ZGBlocks.blockPerdEtrium);
 		CraftingRecipes.addIngotMetal(ZGItems.ingotZucrite, ZGBlocks.blockZucrite);
 		CraftingRecipes.addIngotMetal(ZGItems.ingotRhodium, ZGBlocks.blockRhodium);
+		CraftingRecipes.addIngotMetal(ZGItems.amber, ZGBlocks.blockAmber);
+		CraftingRecipes.addIngotMetal(ZGItems.topaz, ZGBlocks.blockTopaz);
+		CraftingRecipes.addIngotMetal(ZGItems.opal, ZGBlocks.blockOpal);
+		CraftingRecipes.addIngotMetal(ZGItems.aquamarine, ZGBlocks.blockAquamarine);
+		CraftingRecipes.addIngotMetal(ZGItems.garnet, ZGBlocks.blockGarnet);
+		CraftingRecipes.addIngotMetal(ZGItems.ruby, ZGBlocks.blockRuby);
+		CraftingRecipes.addIngotMetal(ZGItems.amberStatic, ZGBlocks.blockAmberStatic);
+		CraftingRecipes.addIngotMetal(ZGItems.aquamarineIcy, ZGBlocks.blockAquamarineIcy);
+		CraftingRecipes.addIngotMetal(ZGItems.garnetFire, ZGBlocks.blockGarnetFire);
+		CraftingRecipes.addIngotMetal(ZGItems.witherite, ZGBlocks.blockWitherite);
+		CraftingRecipes.addIngotMetal(ZGItems.netheridium, ZGBlocks.blockNetheridium);
+		CraftingRecipes.addIngotMetal(ZGItems.shadowBone, ZGBlocks.blockShadowBone);
 		CraftingRecipes.addIngotMetal(Items.BLAZE_POWDER, ZGBlocks.kriffBlazeRock);
 		
 		// Compression
@@ -94,6 +106,40 @@ public class CraftingRecipes {
 		// Tree things
 		CraftingRecipes.addPlanks(ZGBlocks.edenWoodLog, ZGBlocks.edenWoodPlanks);
 		CraftingRecipes.addPlanks(ZGBlocks.perdWoodLogs, ZGBlocks.perdWoodPlanks);
+		
+		// Blood Obsidian
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGBlocks.blockRedObsidian, 2), new Object[] { "BN ", "NB ", "   ", 'B',
+				Blocks.NETHER_WART_BLOCK, 'N', Blocks.OBSIDIAN });
+		
+		// Netheridium (Gem Form)
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.netheridium, 1), new Object[] { "BSB", "LXL", "VAV", 'B', ZGItems.darkEssence, 'S',
+				ZGItems.superChargedCoal, 'V', ZGItems.garnet, 'X', ZGBlocks.blockWitherite, 'L', Blocks.OBSIDIAN, 'V', Items.BLAZE_POWDER,
+				'A', ZGItems.shadowBone });
+		
+		// Netherized Obsidian
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGBlocks.blockNetherizedObsidian, 1), new Object[] { "WNW", "NON", "SNS", 'N',
+				ZGBlocks.blockNetheridium, 'W', ZGBlocks.blockWitherite, 'O', ZGBlocks.blockRedObsidian, 'S', ZGItems.darkEssence });
+		
+		// Radium
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.radium, 2), new Object[] { "GSG", "GAG", "GSG", 'G', ZGBlocks.atheonConstructBlock,
+				'S', ZGBlocks.blockSuperChargedCoal, 'A', ZGBlocks.blockAzurite });
+		
+		// Bedrock Breaker
+		// ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.bedrockBreaker), new Object[] { "ZAZ",
+		// " M ", " M ", 'Z', ZGItems.ingotZucrite, 'A',
+		// ZGItems.ascendium, 'M', ZGItems.ingotAscendantAmaranth });
+		
+		// Firey Garnet (Gem Form)
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.garnetFire, 1), new Object[] { "BLB", "RGR", "BLB", 'B', Items.BLAZE_POWDER, 'G',
+				ZGBlocks.blockGarnet, 'R', Items.REDSTONE, 'L', Items.BLAZE_ROD });
+		
+		// Icy Aqua (Gem Form)
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.aquamarineIcy, 1), new Object[] { "SDS", "ZAZ", "AAA", 'S', ZGItems.ingotShinium,
+				'Z', ZGItems.dustShinestone, 'A', ZGBlocks.blockAquamarine, 'D', Items.DIAMOND });
+		
+		// Static Amber (Gem Form)
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.amberStatic, 1), new Object[] { "GTG", "UAU", "ZTZ", 'G', Items.GOLD_INGOT, 'T',
+				ZGItems.topaz, 'A', ZGBlocks.blockAmber, 'Z', ZGItems.ingotZinc, 'U', ZGItems.azurite });
 		
 		// Shinium
 		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.ingotShinium, 1), new Object[] { "DLD", "DSD", "DLD", 'D',

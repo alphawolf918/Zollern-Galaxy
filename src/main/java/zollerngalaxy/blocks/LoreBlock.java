@@ -78,12 +78,13 @@ public class LoreBlock extends ZGBlockBase {
 					
 					playerIn.addItemStackToInventory(book);
 					worldIn.setBlockState(pos, Blocks.AIR.getDefaultState());
-					proxy.sendChatMessage(playerIn, txtFormat + "You have discovered lore! Book: " + loreBook.getTitle());
+					proxy.sendChatMessage(playerIn, txtFormat + ZGUtils.translate("tooltips.loreblock6"));
+					proxy.sendChatMessage(playerIn, txtFormat + ZGUtils.translate("tooltips.loreblock7") + " " + loreBook.getTitle());
 				} catch (IllegalArgumentException ex) {
-					proxy.sendChatMessage(playerIn, TextFormatting.GRAY + "No lore was found..");
+					proxy.sendChatMessage(playerIn, TextFormatting.GRAY + ZGUtils.translate("tooltips.loreblock5"));
 				}
 			} else {
-				proxy.sendChatMessage(playerIn, TextFormatting.AQUA + "You will need an Omnitool to access this.");
+				proxy.sendChatMessage(playerIn, TextFormatting.AQUA + ZGUtils.translate("tooltips.loreblock4"));
 			}
 		}
 		return true;

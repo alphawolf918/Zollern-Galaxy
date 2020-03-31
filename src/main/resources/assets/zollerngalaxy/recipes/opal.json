@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "zollerngalaxy:opalblock"
+    }
+  ],
+  "result": {
+    "item": "zollerngalaxy:opal",
+    "count": 9
+  }
+}

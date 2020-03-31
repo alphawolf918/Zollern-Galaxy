@@ -116,6 +116,7 @@ public class ZGPlanets {
 	// Sol-2 Planets
 	public static ZGPlanet planetPerdita = new ZGPlanet("perdita");
 	public static ZGPlanet planetAltum = new ZGPlanet("altum");
+	public static ZGPlanet planetCaligro = new ZGPlanet("caligro");
 	
 	// Pantheon Planets
 	public static ZGPlanet planetMeztli;
@@ -218,6 +219,9 @@ public class ZGPlanets {
 		planetZollus.setRelativeOrbitTime(42.2F);
 		planetZollus.setDistanceFromCenter(1.9F);
 		planetZollus.setTierRequired(ConfigManagerZG.planetZollusTier);
+		if (ConfigManagerZG.planetUnreachableZollus) {
+			planetZollus.setDisableRockets();
+		}
 		planetZollus.setRelativeSize(10.876F);
 		planetZollus.setPlanetTemperature(-152.6F);
 		planetZollus.setPlanetToxicity(0.4F);
@@ -240,6 +244,9 @@ public class ZGPlanets {
 		planetKriffon.setRelativeOrbitTime(0.3F);
 		planetKriffon.setDistanceFromCenter(0.5F);
 		planetKriffon.setTierRequired(ConfigManagerZG.planetKriffonTier);
+		if (ConfigManagerZG.planetUnreachableAll || ConfigManagerZG.planetUnreachableKriffon) {
+			planetKriffon.setDisableRockets();
+		}
 		planetKriffon.setRelativeSize(20.0F);
 		planetKriffon.setPlanetTemperature(227.4F);
 		planetKriffon.setPlanetToxicity(14.1F);
@@ -261,6 +268,9 @@ public class ZGPlanets {
 		planetPurgot.setRelativeOrbitTime(10F);
 		planetPurgot.setDistanceFromCenter(1.0F);
 		planetPurgot.setTierRequired(ConfigManagerZG.planetPurgotTier);
+		if (ConfigManagerZG.planetUnreachableAll || ConfigManagerZG.planetUnreachablePurgot) {
+			planetPurgot.setDisableRockets();
+		}
 		planetPurgot.setRelativeSize(40.0F);
 		planetPurgot.setPlanetTemperature(-54.5F);
 		planetPurgot.setPlanetToxicity(15.2F);
@@ -286,6 +296,9 @@ public class ZGPlanets {
 		planetEden.setRelativeOrbitTime(8.0F);
 		planetEden.setDistanceFromCenter(0.6F);
 		planetEden.setTierRequired(ConfigManagerZG.planetEdenTier);
+		if (ConfigManagerZG.planetUnreachableAll || ConfigManagerZG.planetUnreachableEden) {
+			planetEden.setDisableRockets();
+		}
 		planetEden.setRelativeSize(50.0F);
 		planetEden.setPlanetTemperature(71.2F);
 		planetEden.setPlanetToxicity(0.0F);
@@ -312,6 +325,9 @@ public class ZGPlanets {
 		planetXathius.setRelativeOrbitTime(2.5F);
 		planetXathius.setDistanceFromCenter(1.4F);
 		planetXathius.setTierRequired(ConfigManagerZG.planetXathiusTier);
+		if (ConfigManagerZG.planetUnreachableAll || ConfigManagerZG.planetUnreachableXathius) {
+			planetXathius.setDisableRockets();
+		}
 		planetXathius.setRelativeSize(20.0F);
 		planetXathius.setPlanetTemperature(82.4f);
 		planetXathius.setPlanetToxicity(2.5f);
@@ -336,6 +352,9 @@ public class ZGPlanets {
 		planetOasis.setRelativeOrbitTime(6.2F);
 		planetOasis.setDistanceFromCenter(1.8f);
 		planetOasis.setTierRequired(ConfigManagerZG.planetOasisTier);
+		if (ConfigManagerZG.planetUnreachableAll || ConfigManagerZG.planetUnreachableOasis) {
+			planetOasis.setDisableRockets();
+		}
 		planetOasis.setRelativeSize(64.0f);
 		planetOasis.setPlanetTemperature(68.2F);
 		planetOasis.setPlanetToxicity(0.5f);
@@ -359,6 +378,9 @@ public class ZGPlanets {
 		planetXantheon.setRelativeOrbitTime(20.2F);
 		planetXantheon.setDistanceFromCenter(2.5F);
 		planetXantheon.setTierRequired(ConfigManagerZG.planetXantheonTier);
+		if (ConfigManagerZG.planetUnreachableAll || ConfigManagerZG.planetUnreachableXantheon) {
+			planetXantheon.setDisableRockets();
+		}
 		planetXantheon.setRelativeSize(96.0f);
 		planetXantheon.setPlanetTemperature(-31.2F);
 		planetXantheon.setPlanetToxicity(5.2f);
@@ -382,6 +404,9 @@ public class ZGPlanets {
 		planetCandora.setRelativeOrbitTime(10.5F);
 		planetCandora.setDistanceFromCenter(2.1F);
 		planetCandora.setTierRequired(ConfigManagerZG.planetCandoraTier);
+		if (ConfigManagerZG.planetUnreachableAll || ConfigManagerZG.planetUnreachableCandora) {
+			planetCandora.setDisableRockets();
+		}
 		planetCandora.setRelativeSize(102.9F);
 		planetCandora.setPlanetTemperature(67.5F);
 		planetCandora.setPlanetToxicity(0.0F);
@@ -407,6 +432,9 @@ public class ZGPlanets {
 		planetAtheon.setRelativeOrbitTime(0.6F);
 		planetAtheon.setDistanceFromCenter(0.4F);
 		planetAtheon.setTierRequired(ConfigManagerZG.planetAtheonTier);
+		if (ConfigManagerZG.planetUnreachableAll || ConfigManagerZG.planetUnreachableAtheon) {
+			planetAtheon.setDisableRockets();
+		}
 		planetAtheon.setRelativeSize(102.5F);
 		planetAtheon.setPlanetTemperature(57.2F);
 		planetAtheon.setPlanetToxicity(0.0F);
@@ -431,6 +459,9 @@ public class ZGPlanets {
 		planetPerdita.setRelativeOrbitTime(1.2F);
 		planetPerdita.setDistanceFromCenter(0.8F);
 		planetPerdita.setTierRequired(ConfigManagerZG.planetPerditaTier);
+		if (ConfigManagerZG.planetUnreachableAll || ConfigManagerZG.planetUnreachablePerdita) {
+			planetPerdita.setDisableRockets();
+		}
 		planetPerdita.setRelativeSize(204.6F);
 		planetPerdita.setPlanetTemperature(195.8F);
 		planetPerdita.setPlanetToxicity(1.2F);
@@ -456,6 +487,9 @@ public class ZGPlanets {
 		planetAltum.setRelativeOrbitTime(3.6F);
 		planetAltum.setDistanceFromCenter(1.0F);
 		planetAltum.setTierRequired(ConfigManagerZG.planetAltumTier);
+		if (ConfigManagerZG.planetUnreachableAll || ConfigManagerZG.planetUnreachableAltum) {
+			planetAltum.setDisableRockets();
+		}
 		planetAltum.setRelativeSize(80.6F);
 		planetAltum.setPlanetRadiation(0.6F);
 		planetAltum.setPlanetToxicity(0.2F);
@@ -472,7 +506,31 @@ public class ZGPlanets {
 		totalPlanets++;
 		
 		// Caligro
-		// TODO
+		// planetCaligro.setDimensionInfo(ConfigManagerZG.planetCaligroDimensionId,
+		// WorldProviderCaligro.class);
+		planetCaligro.setParentSolarSystem(systemSol2);
+		planetCaligro.setPlanetClass(EnumPlanetClass.DARK);
+		planetCaligro.setRingColorRGB(0.0F, 0.0F, 0.0F);
+		planetCaligro.setPhaseShift(100.0F);
+		planetCaligro.setRelativeOrbitTime(140.18F);
+		planetCaligro.setDistanceFromCenter(2.0F);
+		planetCaligro.setTierRequired(ConfigManagerZG.planetCaligroTier);
+		if (ConfigManagerZG.planetUnreachableAll || ConfigManagerZG.planetUnreachableCaligro) {
+			planetCaligro.setDisableRockets();
+		}
+		planetCaligro.setRelativeSize(160.0F);
+		planetCaligro.setPlanetTemperature(-165.62F);
+		planetCaligro.setPlanetToxicity(55.24F);
+		planetCaligro.setPlanetRadiation(32.21F);
+		planetCaligro.setWindLevel(60.58F);
+		planetCaligro.setDensity(100.32F);
+		planetCaligro.setHasRain(false);
+		planetCaligro.setPlanetGasses(EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.WATER, EnumAtmosphericGas.NITROGEN,
+				EnumAtmosphericGas.ARGON, EnumAtmosphericGas.METHANE, EnumAtmosphericGas.HYDROGEN);
+		planetCaligro.setPlanetIcon("caligro");
+		planetCaligro.setAtmosphere();
+		// planetCaligro.setBiomeInfo();
+		totalPlanets++;
 		
 		ZGHelper.Log("Loaded a total of " + totalPlanets + " new planets.");
 	}
@@ -511,6 +569,7 @@ public class ZGPlanets {
 		GalaxyRegistry.registerPlanet(planetAtheon);
 		GalaxyRegistry.registerPlanet(planetPerdita);
 		GalaxyRegistry.registerPlanet(planetAltum);
+		GalaxyRegistry.registerPlanet(planetCaligro);
 	}
 	
 	public static void registerTeleportTypes() {
@@ -530,5 +589,7 @@ public class ZGPlanets {
 		// Sol-2
 		GalacticraftRegistry.registerTeleportType(WorldProviderPerdita.class, new TeleportTypeVenus());
 		GalacticraftRegistry.registerTeleportType(WorldProviderAltum.class, new TeleportTypeVenus());
+		// GalacticraftRegistry.registerTeleportType(WorldProviderCaligro.class, new
+		// TeleportTypeVenus());
 	}
 }

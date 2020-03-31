@@ -190,6 +190,20 @@ public class ZGPlanet extends Planet implements IZollernPlanet {
 		return this;
 	}
 	
+	public Planet setDisableRockets(boolean disableRockets, int planetTier) {
+		if (disableRockets) {
+			this.setTierRequired(-1);
+		} else {
+			this.setTierRequired(planetTier);
+		}
+		return this;
+	}
+	
+	public Planet setDisableRockets() {
+		this.setTierRequired(-1);
+		return this;
+	}
+	
 	public ZGPlanet setDistanceFromCenter(float par1, float par2) {
 		this.setRelativeDistanceFromCenter(new ScalableDistance(par1, par2));
 		return this;

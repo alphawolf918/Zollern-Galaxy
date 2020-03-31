@@ -325,6 +325,9 @@ tile.icyaquablock.name=Block of Icy Aquamarine
 tile.shadowboneblock.name=Block of Shadow Bone
 tile.shadowessenceblock.name=Block of Shadow Essence
 tile.radiumblock.name=Block of Radium
+tile.netheridiumblock.name=Block of Netheridium
+tile.netherizedobsidian.name=Netherized Obsidian
+tile.redobsidian.name=Blood Obsidian
 
 tile.endrock.name=Endrock
 
@@ -450,6 +453,8 @@ item.firegarnet.name=Fiery Garnet
 item.icyaqua.name=Icy Aquamarine
 item.staticamber.name=Static Amber
 item.witherite.name=Witherite
+item.netheridium.name=Netheridium
+item.shadowbone.name=Shadow Bone
 
 item.powerstick.name=Power Stick
 item.blackmarblestick.name=Black Marble Stick
@@ -587,6 +592,10 @@ tooltips.stargate3=through space and time.
 tooltips.loreblock=Provides the Player with Lore.
 tooltips.loreblock2=Requires an Omnitool to work.
 tooltips.loreblock3=Only found on Space Stations.
+tooltips.loreblock4=You will need an Omnitool to access this.
+tooltips.loreblock5=No Lore was found..
+tooltips.loreblock6=You have discovered Lore!
+tooltips.loreblock7=Book:
 
 planet.zollus=Zollus
 planet.eden=Eden

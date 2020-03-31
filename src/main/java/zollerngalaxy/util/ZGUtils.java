@@ -13,6 +13,8 @@ import net.minecraft.util.text.translation.I18n;
 import net.minecraftforge.fml.client.FMLClientHandler;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
+import org.apache.logging.log4j.Level;
+import zollerngalaxy.lib.helpers.ZGHelper;
 
 public class ZGUtils {
 	
@@ -43,10 +45,9 @@ public class ZGUtils {
 		for (int i = 0; i < key.length(); ++i) {
 			Character c = key.charAt(i);
 			if (Character.isUpperCase(c)) {
-				System.err.println(ret);
+				ZGHelper.Log(Level.ERROR, ret);
 			}
 		}
 		return ret;
 	}
-	
 }

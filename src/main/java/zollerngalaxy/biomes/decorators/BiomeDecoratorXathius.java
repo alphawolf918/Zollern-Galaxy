@@ -55,12 +55,12 @@ public class BiomeDecoratorXathius extends BiomeDecoratorZG {
 		this.dirtGen = new WorldGenMinableZG(ZGBlocks.xathDirt, STONE, EnumOreGenZG.DIRT);
 		this.gravelGen = new WorldGenMinableZG(ZGBlocks.xathGravel, STONE, EnumOreGenZG.GRAVEL);
 		this.prometheanGen = new WorldGenMinableZG(ZGBlocks.xathPrometheanOre, STONE, EnumOreGenZG.PROMETHEAN);
-		this.emeraldGen = new WorldGenMinableZG(ZGBlocks.xathEmeraldOre, STONE, EnumOreGenZG.EMERALD.setGenCount(10));
-		this.diamondGen = new WorldGenMinableZG(ZGBlocks.xathDiamondOre, STONE, EnumOreGenZG.DIAMOND.setGenCount(15));
-		this.redstoneGen = new WorldGenMinableZG(ZGBlocks.xathRedstoneOre, STONE, EnumOreGenZG.REDSTONE.setGenCount(30));
-		this.ironGen = new WorldGenMinableZG(ZGBlocks.xathIronOre, STONE, EnumOreGenZG.IRON.setGenCount(25));
-		this.goldGen = new WorldGenMinableZG(ZGBlocks.xathGoldOre, STONE, EnumOreGenZG.GOLD.setGenCount(35));
-		this.tinGen = new WorldGenMinableZG(ZGBlocks.xathTinOre, STONE, EnumOreGenZG.TIN.setGenCount(45));
+		this.emeraldGen = new WorldGenMinableZG(ZGBlocks.xathEmeraldOre, STONE, EnumOreGenZG.EMERALD);
+		this.diamondGen = new WorldGenMinableZG(ZGBlocks.xathDiamondOre, STONE, EnumOreGenZG.DIAMOND);
+		this.redstoneGen = new WorldGenMinableZG(ZGBlocks.xathRedstoneOre, STONE, EnumOreGenZG.REDSTONE);
+		this.ironGen = new WorldGenMinableZG(ZGBlocks.xathIronOre, STONE, EnumOreGenZG.IRON);
+		this.goldGen = new WorldGenMinableZG(ZGBlocks.xathGoldOre, STONE, EnumOreGenZG.GOLD);
+		this.tinGen = new WorldGenMinableZG(ZGBlocks.xathTinOre, STONE, EnumOreGenZG.TIN);
 		this.azuriteGen = new WorldGenMinableZG(ZGBlocks.xathAzuriteOre, Blocks.OBSIDIAN, EnumOreGenZG.AZURITE);
 	}
 	

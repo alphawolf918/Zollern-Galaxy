@@ -388,6 +388,40 @@ public class ZGBlocks {
 			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
 	
 	// Caligro
+	public static final Block caligroSurfaceRock = new ZGBlockBase("caligrosurfacerock", 3.2F);
+	public static final Block caligroRock = new ZGBlockBase("caligrorock", 4.2F);
+	public static final Block caligroDirt = new ZGBlockDirt("caligrodirt");
+	public static final Block witherrack = new ZGBlockBase("witherrack", 3.5F);
+	public static final Block caligroCobblestone = new ZGBlockBase("caligrocobblestone").setBlockType(EnumBlockType.COBBLESTONE);
+	public static final Block caligroCobblestoneMossy = new ZGBlockBase("caligrocobblemossy").setBlockType(EnumBlockType.COBBLESTONE);
+	public static final Block caligroStone = new ZGPlanetStone("caligrostone", ZGBlocks.caligroCobblestone).setBlockHarvestLevel(
+			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
+	public static final Block caligroStoneBricks = new ZGBlockBase("caligrostonebricks");
+	public static final Block caligroCreepstone = new ZGBlockBase("creepstone");
+	public static final Block caligroCreepdirt = new ZGBlockDirt("creepdirt");
+	public static final Block caligroShiniumOre = new ZGBlockOre("caligroshiniumore", 5.6F).setBlockHarvestLevel(
+			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
+	public static final Block caligroSilverOre = new ZGBlockOre("caligrosilverore", 4.5F).setBlockHarvestLevel(
+			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
+	public static final Block caligroNickelOre = new ZGBlockOre("caligronickelore", 2.5F).setBlockHarvestLevel(
+			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
+	public static final Block caligroLeadOre = new ZGBlockOre("caligroleadore", 4.5F).setBlockHarvestLevel(
+			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
+	public static final Block caligroTinOre = new ZGBlockOre("caligrotinore", 1.5F).setBlockHarvestLevel(
+			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
+	public static final Block caligroCopperOre = new ZGBlockOre("caligrocopperore", 4.5F).setBlockHarvestLevel(
+			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
+	public static final Block caligroIronOre = new ZGBlockOre("caligroironore", 3.2F).setBlockHarvestLevel(
+			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
+	public static final Block caligroGoldOre = new ZGBlockOre("caligrogoldore", 2.F).setBlockHarvestLevel(
+			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
+	public static final Block caligroRedstoneOre = new ZGOreGem("caligroredstoneore", 6.2F, Items.REDSTONE).setBlockHarvestLevel(
+			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
+	
+	// TODO
+	
+	// Corruption
+	public static final Block corruptRock = new ZGCorruptBlock("corruptrock");
 	// TODO
 	
 	// Exodus
@@ -411,6 +445,20 @@ public class ZGBlocks {
 	public static final Block blockPerdEtrium = new ZGBlockMetal("perdetriumblock", 6.2F);
 	public static final Block blockZucrite = new ZGBlockMetal("zucriteblock", 8.4F);
 	public static final Block blockRhodium = new ZGBlockMetal("rhodiumblock", 9.2F);
+	public static final Block blockAmber = new ZGBlockMetal("amberblock");
+	public static final Block blockTopaz = new ZGBlockMetal("topazblock");
+	public static final Block blockOpal = new ZGBlockMetal("opalblock");
+	public static final Block blockAquamarine = new ZGBlockMetal("aquamarineblock");
+	public static final Block blockGarnet = new ZGBlockMetal("garnetblock");
+	public static final Block blockRuby = new ZGBlockMetal("rubyblock");
+	public static final Block blockAmberStatic = new ZGBlockMetalShine("staticamberblock");
+	public static final Block blockAquamarineIcy = new ZGBlockMetalShine("icyaquablock");
+	public static final Block blockGarnetFire = new ZGBlockMetalShine("firegarnetblock");
+	public static final Block blockWitherite = new ZGBlockMetal("witheriteblock");
+	public static final Block blockNetheridium = new ZGBlockMetal("netheridiumblock");
+	public static final Block blockNetherizedObsidian = new ZGBlockMetal("netherizedobsidian");
+	public static final Block blockRedObsidian = new ZGBlockMetalShine("redobsidian");
+	public static final Block blockShadowBone = new ZGBlockMetal("shadowboneblock");
 	
 	// Glow Blocks
 	public static final Block blockShinestone = new ZGShineBlock("shinestone", 1.6F, ZGItems.dustShinestone);
@@ -479,7 +527,9 @@ public class ZGBlocks {
 				atheonRedstoneOre, atheonTinOre, atheonDiamondOre, atheonZollerniumOre, atheonZincOre, atheonConstructBlock, blockViri,
 				blockCobalt, blockEve, blockPromethean, blockCrater, blockSuperChargedCoal, blockPlutonium, blockFueltonium, blockChargium,
 				blockShinium, blockAmaranth, blockAzurite, blockZollernium, blockZinc, blockPerdDiamond, blockPerdEtrium, blockZucrite,
-				blockRhodium, blockShinestone, blockShinestoneCrystal, blockShinestonePolished, blockShinestoneCrystalBricks,
+				blockRhodium, blockAmber, blockTopaz, blockOpal, blockAquamarine, blockGarnet, blockRuby, blockAmberStatic,
+				blockAquamarineIcy, blockGarnetFire, blockWitherite, blockNetheridium, blockNetherizedObsidian, blockRedObsidian,
+				blockShadowBone, blockShinestone, blockShinestoneCrystal, blockShinestonePolished, blockShinestoneCrystalBricks,
 				blockCompressedHeartium, blockCompressedViri, blockCompressedEve, blockCompressedCobalt, blockCompressedPromethean,
 				blockCompressedSuperChargedCoal, blockCompressedZucrite, blockCompressedRhodium, candyCubeWhite, candyCubeBlack,
 				candyCubeGray, candyCubeOrange, candyCubeBrown, candyCubeRed, candyCubeBlue, candyCubeYellow, candyCubePurple,
@@ -489,7 +539,10 @@ public class ZGBlocks {
 				perdCaveStone, perdCaveStoneBricks, perdCactus, perdReeds, perdDeadBush, perdDiamondOre, perdEtriumOre, perdIronOre,
 				perdGoldOre, perdZollerniumOre, perdFueltoniumOre, perdTreeSapling, perdWoodLogs, perdWoodLeaves, perdWoodPlanks,
 				altumRock, altumSand, altumDirt, altumCobble, altumStone, altumGravel, altumSeaweed, altumCoalOre, altumIronOre,
-				altumGoldOre, altumRedstoneOre, altumDiamondOre, altumZollerniumOre, altumEveniumOre, altumRhodiumOre, altumAmaranthOre);
+				altumGoldOre, altumRedstoneOre, altumDiamondOre, altumZollerniumOre, altumEveniumOre, altumRhodiumOre, altumAmaranthOre,
+				caligroSurfaceRock, caligroRock, caligroCobblestone, caligroCobblestoneMossy, caligroStone, caligroStoneBricks,
+				caligroDirt, witherrack, caligroCreepstone, caligroCreepdirt, caligroShiniumOre, caligroSilverOre, caligroNickelOre,
+				caligroLeadOre, caligroTinOre, caligroCopperOre, caligroIronOre, caligroGoldOre, caligroRedstoneOre, corruptRock);
 		ZGHelper.Log("Loaded a total of " + totalBlocks + " new blocks.");
 	}
 	
