@@ -325,6 +325,9 @@ tile.icyaquablock.name=雪蓝晶块
 tile.shadowboneblock.name=阴影骨块
 tile.shadowessenceblock.name=阴影精粹块
 tile.radiumblock.name=镭块
+tile.netheridiumblock.name=下界原素块
+tile.netherizedobsidian.name=下界化黑曜石
+tile.redobsidian.name=血色黑曜石
 
 tile.endrock.name=Endrock
 
@@ -450,6 +453,8 @@ item.firegarnet.name=火红石榴石
 item.icyaqua.name=雪蓝晶
 item.staticamber.name=凝固琥珀
 item.witherite.name=凋零元素
+item.netheridium.name=Netheridium
+item.shadowbone.name=阴影骨头
 
 item.powerstick.name=能量棒
 item.blackmarblestick.name=黑色大理石棒
@@ -587,6 +592,10 @@ tooltips.stargate3=穿越时空中...
 tooltips.loreblock=为玩家提供知识
 tooltips.loreblock2=需要一个多功能工具以运转
 tooltips.loreblock3=只可在宇宙空间站找到
+tooltips.loreblock4=你需要一个多功能工具以访问这个。
+tooltips.loreblock5=没有获得知识...
+tooltips.loreblock6=你发现了新的知识！
+tooltips.loreblock7=书：
 
 planet.zollus=卓洛斯
 planet.eden=伊甸
