@@ -15,8 +15,9 @@ Zollern Galaxy v2.0.15
 * Added config options to disable rocket travel to Zollern Galaxy planets.
     - This can be accomplished by an 'all' setting, or on a planet-by-planet basis.
     - The 'all' setting WILL NOT affect Zollus - it will keep whatever tier you set it as.
+* Added several new metals.
 * Slightly increased light level of Candy Cube blocks.
-* 
 * Massively lowered spawn rate of ores in Xathius.
+* 
 * Fixed crash when creating an Altum space station (I'm sure this time).
 * 

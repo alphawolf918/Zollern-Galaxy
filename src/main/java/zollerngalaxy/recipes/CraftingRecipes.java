@@ -52,6 +52,7 @@ public class CraftingRecipes {
 		CraftingRecipes.addRockBricks(ZGBlocks.blockChocolate, ZGBlocks.blockChocolateBricks);
 		CraftingRecipes.addRockBricks(ZGBlocks.xantheonChrome, ZGBlocks.xantheonConstructBlock);
 		CraftingRecipes.addRockBricks(ZGBlocks.perdRock, ZGBlocks.perdRockBricks);
+		CraftingRecipes.addRockBricks(ZGBlocks.caligroStone, ZGBlocks.caligroStoneBricks);
 		CraftingRecipes.addRockBricks(ZGBlocks.perdCaveStone, ZGBlocks.perdCaveStoneBricks);
 		
 		// Items -> Blocks
@@ -83,6 +84,7 @@ public class CraftingRecipes {
 		CraftingRecipes.addIngotMetal(ZGItems.aquamarineIcy, ZGBlocks.blockAquamarineIcy);
 		CraftingRecipes.addIngotMetal(ZGItems.garnetFire, ZGBlocks.blockGarnetFire);
 		CraftingRecipes.addIngotMetal(ZGItems.witherite, ZGBlocks.blockWitherite);
+		CraftingRecipes.addIngotMetal(ZGItems.radium, ZGBlocks.blockRadium);
 		CraftingRecipes.addIngotMetal(ZGItems.netheridium, ZGBlocks.blockNetheridium);
 		CraftingRecipes.addIngotMetal(ZGItems.shadowBone, ZGBlocks.blockShadowBone);
 		CraftingRecipes.addIngotMetal(Items.BLAZE_POWDER, ZGBlocks.kriffBlazeRock);
