@@ -28,49 +28,47 @@ public class FurnaceRecipes {
 	
 	public static void init() {
 		// Zollus
-		FurnaceRecipes.SmeltBlock(ZGBlocks.zolCobbleRock, ZGBlocks.zolStone, 1.5F); // Zolstone
-		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.zolIronOre, Items.IRON_INGOT, 2.1F); // Iron
-		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.zolGoldOre, Items.GOLD_INGOT, 2.4F); // Gold
-		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.zolCopperOre, new ItemStack(GCItems.basicItem, 1, 3), 2.4F); // Copper
-		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.zolTinOre, new ItemStack(GCItems.basicItem, 1, 4), 2.4F); // Tin
+		FurnaceRecipes.SmeltBlock(ZGBlocks.zolCobbleRock, ZGBlocks.zolStone, 1.5F);
+		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.zolIronOre, Items.IRON_INGOT, 2.1F);
+		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.zolGoldOre, Items.GOLD_INGOT, 2.4F);
+		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.zolCopperOre, new ItemStack(GCItems.basicItem, 1, 3), 2.4F);
+		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.zolTinOre, new ItemStack(GCItems.basicItem, 1, 4), 2.4F);
 		
 		// Kriffon
-		FurnaceRecipes.SmeltBlock(ZGBlocks.kriffCobbleRock, ZGBlocks.kriffStone, 1.5F); // Kriffstone
-		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.kriffIronOre, Items.IRON_INGOT, 2.1F); // Iron
-		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.kriffGoldOre, Items.GOLD_INGOT, 2.4F); // Gold
-		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.kriffCopperOre, new ItemStack(GCItems.basicItem, 1, 3), 2.4F); // Copper
-		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.kriffCobaltOre, ZGItems.ingotCobalt, 1.6F); // Cobalt
+		FurnaceRecipes.SmeltBlock(ZGBlocks.kriffCobbleRock, ZGBlocks.kriffStone, 1.5F);
+		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.kriffIronOre, Items.IRON_INGOT, 2.1F);
+		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.kriffGoldOre, Items.GOLD_INGOT, 2.4F);
+		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.kriffCopperOre, new ItemStack(GCItems.basicItem, 1, 3), 2.4F);
+		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.kriffCobaltOre, ZGItems.ingotCobalt, 1.6F);
 		
 		// Purgot
-		FurnaceRecipes.SmeltBlock(ZGBlocks.purgCobbleRock, ZGBlocks.purgStone, 1.5F); // Purgrock
-		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.purgIronOre, Items.IRON_INGOT, 2.1F); // Iron
-		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.purgGoldOre, Items.GOLD_INGOT, 2.4F); // Gold
-		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.purgLeadOre, new ItemStack(VenusItems.basicItem, 1, 1), 2.4F); // Lead
-		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.purgCopperOre, new ItemStack(GCItems.basicItem, 1, 3), 2.4F); // Copper
-		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.purgTinOre, new ItemStack(GCItems.basicItem, 1, 4), 2.4F); // Tin
-		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.purgAluminumOre, new ItemStack(GCItems.basicItem, 1, 5), 2.4F); // Aluminum
-		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.purgCobaltOre, ZGItems.ingotCobalt, 1.6F); // Cobalt
-		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.purgEveniumOre, ZGItems.ingotEvenium, 3.6F); // Evenium
+		FurnaceRecipes.SmeltBlock(ZGBlocks.purgCobbleRock, ZGBlocks.purgStone, 1.5F);
+		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.purgIronOre, Items.IRON_INGOT, 2.1F);
+		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.purgGoldOre, Items.GOLD_INGOT, 2.4F);
+		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.purgLeadOre, new ItemStack(VenusItems.basicItem, 1, 1), 2.4F);
+		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.purgCopperOre, new ItemStack(GCItems.basicItem, 1, 3), 2.4F);
+		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.purgTinOre, new ItemStack(GCItems.basicItem, 1, 4), 2.4F);
+		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.purgAluminumOre, new ItemStack(GCItems.basicItem, 1, 5), 2.4F);
+		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.purgCobaltOre, ZGItems.ingotCobalt, 1.6F);
+		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.purgEveniumOre, ZGItems.ingotEvenium, 3.6F);
 		
 		// Eden
-		FurnaceRecipes.SmeltBlock(ZGBlocks.edenCobbleRock, ZGBlocks.edenStone, 1.5F); // Eden
-																						// Stone
-		FurnaceRecipes.SmeltBlock(ZGBlocks.edenBloodSand, Blocks.GLASS, 0.5F); // Glass
-		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.edenIronOre, Items.IRON_INGOT, 2.1F); // Iron
-		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.edenGoldOre, Items.GOLD_INGOT, 2.4F); // Gold
-		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.edenCopperOre, new ItemStack(GCItems.basicItem, 1, 3), 2.4F); // Copper
-		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.edenTinOre, new ItemStack(GCItems.basicItem, 1, 4), 2.4F); // Tin
-		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.edenAluminumOre, new ItemStack(GCItems.basicItem, 1, 5), 2.4F); // Aluminum
-		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.edenLeadOre, new ItemStack(VenusItems.basicItem, 1, 1), 2.4F); // Lead
-		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.edenCobaltOre, ZGItems.ingotCobalt, 1.6F); // Cobalt
-		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.edenEveniumOre, ZGItems.ingotEvenium, 3.6F); // Evenium
+		FurnaceRecipes.SmeltBlock(ZGBlocks.edenCobbleRock, ZGBlocks.edenStone, 1.5F);
+		FurnaceRecipes.SmeltBlock(ZGBlocks.edenBloodSand, Blocks.GLASS, 0.5F);
+		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.edenIronOre, Items.IRON_INGOT, 2.1F);
+		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.edenGoldOre, Items.GOLD_INGOT, 2.4F);
+		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.edenCopperOre, new ItemStack(GCItems.basicItem, 1, 3), 2.4F);
+		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.edenTinOre, new ItemStack(GCItems.basicItem, 1, 4), 2.4F);
+		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.edenAluminumOre, new ItemStack(GCItems.basicItem, 1, 5), 2.4F);
+		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.edenLeadOre, new ItemStack(VenusItems.basicItem, 1, 1), 2.4F);
+		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.edenCobaltOre, ZGItems.ingotCobalt, 1.6F);
+		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.edenEveniumOre, ZGItems.ingotEvenium, 3.6F);
 		
 		// Xathius
-		FurnaceRecipes.SmeltBlock(ZGBlocks.xathCobble, ZGBlocks.xathStone, 1.5F); // Xath
-																					// Stone
-		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.xathIronOre, Items.IRON_INGOT, 2.1F); // Iron
-		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.xathGoldOre, Items.GOLD_INGOT, 2.4F); // Gold
-		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.xathTinOre, new ItemStack(GCItems.basicItem, 1, 4), 2.4F); // Tin
+		FurnaceRecipes.SmeltBlock(ZGBlocks.xathCobble, ZGBlocks.xathStone, 1.5F);
+		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.xathIronOre, Items.IRON_INGOT, 2.1F);
+		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.xathGoldOre, Items.GOLD_INGOT, 2.4F);
+		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.xathTinOre, new ItemStack(GCItems.basicItem, 1, 4), 2.4F);
 		
 		// Other mod metals
 		if (ModHelperBase.useCofh && ModHelperBase.useThermalFoundation) {
@@ -97,12 +95,11 @@ public class FurnaceRecipes {
 		}
 		
 		// Oasis
-		FurnaceRecipes.SmeltBlock(ZGBlocks.oasisCobble, ZGBlocks.oasisStone, 1.5F);// Oasis
-																					// Stone
-		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.oasisIronOre, Items.IRON_INGOT, 2.1F); // Iron
-		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.oasisGoldOre, Items.GOLD_INGOT, 2.4F); // Gold
-		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.oasisTinOre, new ItemStack(GCItems.basicItem, 1, 4), 2.4F); // Tin
-		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.oasisLeadOre, new ItemStack(VenusItems.basicItem, 1, 1), 2.4F); // Lead
+		FurnaceRecipes.SmeltBlock(ZGBlocks.oasisCobble, ZGBlocks.oasisStone, 1.5F);
+		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.oasisIronOre, Items.IRON_INGOT, 2.1F);
+		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.oasisGoldOre, Items.GOLD_INGOT, 2.4F);
+		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.oasisTinOre, new ItemStack(GCItems.basicItem, 1, 4), 2.4F);
+		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.oasisLeadOre, new ItemStack(VenusItems.basicItem, 1, 1), 2.4F);
 		
 		// Xantheon
 		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.xantheonIronOre, Items.IRON_INGOT, 3.2F);
@@ -134,7 +131,7 @@ public class FurnaceRecipes {
 		FurnaceRecipes.SmeltBlock(ZGBlocks.caligroCobblestone, ZGBlocks.caligroStone, 5.6F);
 		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.caligroIronOre, Items.IRON_INGOT, 5.8F);
 		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.caligroGoldOre, Items.GOLD_INGOT, 5.9F);
-		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.caligroCopperOre, new ItemStack(GCItems.basicItem, 1, 3), 2.4F); // Copper
+		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.caligroCopperOre, new ItemStack(GCItems.basicItem, 1, 3), 2.4F);
 		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.caligroTinOre, new ItemStack(GCItems.basicItem, 1, 4), 2.4F);
 		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.caligroLeadOre, new ItemStack(VenusItems.basicItem, 1, 1), 2.4F);
 		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.caligroAmaranthOre, ZGItems.ingotAmaranth, 4.2F);

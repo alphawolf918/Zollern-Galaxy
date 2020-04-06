@@ -18,5 +18,6 @@ public class ZGToolMats {
 	public static final ToolMaterial AMARANTH = EnumHelper.addToolMaterial("amaranth", 7, 5268, 13.6F, 7.7F, 22);
 	public static final ToolMaterial AZURITE = EnumHelper.addToolMaterial("azurite", 8, 6379, 15.7F, 8.8F, 26);
 	public static final ToolMaterial ZOLLERNIUM = EnumHelper.addToolMaterial("zollernium", 9, 7480, 16.7F, 9.4F, 30);
+	public static final ToolMaterial ASCENDANT = EnumHelper.addToolMaterial("ascendant", 10, 10480, 32.14F, 10.5F, 34);
 	
 }

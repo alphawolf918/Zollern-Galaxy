@@ -31,6 +31,7 @@ public class PulverizerRecipes {
 		PulverizerRecipes.addRecipe(ZGBlocks.purgCopperOre, TFItems.itemMaterial.dustCopper, 64);
 		PulverizerRecipes.addRecipe(ZGBlocks.edenCopperOre, TFItems.itemMaterial.dustCopper, 64);
 		PulverizerRecipes.addRecipe(ZGBlocks.xantheonCopperOre, TFItems.itemMaterial.dustCopper, 64);
+		PulverizerRecipes.addRecipe(ZGBlocks.caligroCopperOre, TFItems.itemMaterial.dustCopper, 64);
 		
 		// Tin
 		PulverizerRecipes.addRecipe(ZGBlocks.zolTinOre, TFItems.itemMaterial.dustTin, 65);
@@ -39,14 +40,17 @@ public class PulverizerRecipes {
 		PulverizerRecipes.addRecipe(ZGBlocks.xathTinOre, TFItems.itemMaterial.dustTin, 65);
 		PulverizerRecipes.addRecipe(ZGBlocks.oasisTinOre, TFItems.itemMaterial.dustTin, 65);
 		PulverizerRecipes.addRecipe(ZGBlocks.atheonTinOre, TFItems.itemMaterial.dustTin, 65);
+		PulverizerRecipes.addRecipe(ZGBlocks.caligroTinOre, TFItems.itemMaterial.dustTin, 65);
 		
 		// Silver
 		PulverizerRecipes.addRecipe(ZGBlocks.edenSilverOre, TFItems.itemMaterial.dustSilver, 66);
+		PulverizerRecipes.addRecipe(ZGBlocks.caligroSilverOre, TFItems.itemMaterial.dustSilver, 66);
 		
 		// Lead
 		PulverizerRecipes.addRecipe(ZGBlocks.purgLeadOre, TFItems.itemMaterial.dustLead, 67);
 		PulverizerRecipes.addRecipe(ZGBlocks.edenLeadOre, TFItems.itemMaterial.dustLead, 67);
 		PulverizerRecipes.addRecipe(ZGBlocks.oasisLeadOre, TFItems.itemMaterial.dustLead, 67);
+		PulverizerRecipes.addRecipe(ZGBlocks.caligroLeadOre, TFItems.itemMaterial.dustLead, 67);
 		
 		// Iron
 		PulverizerRecipes.addRecipe(ZGBlocks.zolIronOre, TFItems.itemMaterial.dustIron);
@@ -57,6 +61,7 @@ public class PulverizerRecipes {
 		PulverizerRecipes.addRecipe(ZGBlocks.oasisIronOre, TFItems.itemMaterial.dustIron);
 		PulverizerRecipes.addRecipe(ZGBlocks.perdIronOre, TFItems.itemMaterial.dustIron);
 		PulverizerRecipes.addRecipe(ZGBlocks.altumIronOre, TFItems.itemMaterial.dustIron);
+		PulverizerRecipes.addRecipe(ZGBlocks.caligroIronOre, TFItems.itemMaterial.dustIron);
 		
 		// Gold
 		PulverizerRecipes.addRecipe(ZGBlocks.zolGoldOre, TFItems.itemMaterial.dustGold, 1);
@@ -67,6 +72,7 @@ public class PulverizerRecipes {
 		PulverizerRecipes.addRecipe(ZGBlocks.oasisGoldOre, TFItems.itemMaterial.dustGold, 1);
 		PulverizerRecipes.addRecipe(ZGBlocks.perdGoldOre, TFItems.itemMaterial.dustGold, 1);
 		PulverizerRecipes.addRecipe(ZGBlocks.altumGoldOre, TFItems.itemMaterial.dustGold, 1);
+		PulverizerRecipes.addRecipe(ZGBlocks.caligroGoldOre, TFItems.itemMaterial.dustGold, 1);
 		
 		// Aluminum
 		PulverizerRecipes.addRecipe(ZGBlocks.purgAluminumOre, TFItems.itemMaterial.dustAluminum, 68);
@@ -75,9 +81,13 @@ public class PulverizerRecipes {
 		// Nickel
 		PulverizerRecipes.addRecipe(ZGBlocks.edenNickelOre, TFItems.itemMaterial.dustNickel, 69);
 		PulverizerRecipes.addRecipe(ZGBlocks.xantheonNickelOre, TFItems.itemMaterial.dustNickel, 69);
+		PulverizerRecipes.addRecipe(ZGBlocks.caligroNickelOre, TFItems.itemMaterial.dustNickel, 69);
 		
 		// Platinum
 		PulverizerRecipes.addRecipe(ZGBlocks.edenPlatinumOre, TFItems.itemMaterial.dustPlatinum, 70);
+		
+		// Shinium
+		PulverizerRecipes.addRecipe(ZGBlocks.caligroShiniumOre, ZGItems.dustShinium);
 		
 		// Steel
 		PulverizerRecipes.addRecipe(ZGBlocks.edenSteelOre, TFItems.itemMaterial.dustSteel, 96);
@@ -105,6 +115,7 @@ public class PulverizerRecipes {
 		PulverizerRecipes.addRecipe(ZGBlocks.xantheonAmaranthOre, ZGItems.dustAmaranth);
 		PulverizerRecipes.addRecipe(ZGBlocks.atheonAmaranthOre, ZGItems.dustAmaranth);
 		PulverizerRecipes.addRecipe(ZGBlocks.altumAmaranthOre, ZGItems.dustAmaranth);
+		PulverizerRecipes.addRecipe(ZGBlocks.caligroAmaranthOre, ZGItems.dustAmaranth);
 		
 		// Zollernium
 		PulverizerRecipes.addRecipe(ZGBlocks.atheonZollerniumOre, ZGItems.dustZollernium);
@@ -113,10 +124,12 @@ public class PulverizerRecipes {
 		
 		// Zinc
 		PulverizerRecipes.addRecipe(ZGBlocks.atheonZincOre, ZGItems.dustZinc);
+		PulverizerRecipes.addRecipe(ZGBlocks.caligroZincOre, ZGItems.dustZinc);
 		
 		// Fueltonium
 		PulverizerRecipes.addRecipe(ZGBlocks.xantheonFueltoniumOre, ZGItems.dustFueltonium);
 		PulverizerRecipes.addRecipe(ZGBlocks.perdFueltoniumOre, ZGItems.dustFueltonium);
+		PulverizerRecipes.addRecipe(ZGBlocks.caligroFueltoniumOre, ZGItems.dustFueltonium);
 		
 		// Rhodium
 		PulverizerRecipes.addRecipe(ZGBlocks.altumRhodiumOre, ZGItems.dustRhodium);

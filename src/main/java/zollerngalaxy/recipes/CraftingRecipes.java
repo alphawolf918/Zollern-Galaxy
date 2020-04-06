@@ -52,8 +52,8 @@ public class CraftingRecipes {
 		CraftingRecipes.addRockBricks(ZGBlocks.blockChocolate, ZGBlocks.blockChocolateBricks);
 		CraftingRecipes.addRockBricks(ZGBlocks.xantheonChrome, ZGBlocks.xantheonConstructBlock);
 		CraftingRecipes.addRockBricks(ZGBlocks.perdRock, ZGBlocks.perdRockBricks);
-		CraftingRecipes.addRockBricks(ZGBlocks.caligroStone, ZGBlocks.caligroStoneBricks);
 		CraftingRecipes.addRockBricks(ZGBlocks.perdCaveStone, ZGBlocks.perdCaveStoneBricks);
+		CraftingRecipes.addRockBricks(ZGBlocks.caligroStone, ZGBlocks.caligroStoneBricks);
 		
 		// Items -> Blocks
 		CraftingRecipes.addIngotMetal(ZGItems.ingotVirinium, ZGBlocks.blockViri);

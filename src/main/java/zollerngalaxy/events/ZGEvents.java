@@ -74,6 +74,7 @@ import zollerngalaxy.potions.ZGPotions;
 import zollerngalaxy.proxy.IProxy;
 import zollerngalaxy.util.CachedEnum;
 import zollerngalaxy.util.ZGDamageSrc;
+import zollerngalaxy.util.ZGUtils;
 
 public class ZGEvents {
 	
@@ -111,7 +112,7 @@ public class ZGEvents {
 						int invSlot = playerInventory.getSlotFor(radiumStack);
 						playerInventory.decrStackSize(invSlot, 1);
 					}
-					proxy.sendChatMessage(player, TextFormatting.GOLD + "You are irradiated with a brilliant light.");
+					proxy.sendChatMessage(player, TextFormatting.GOLD + ZGUtils.translate("tooltips.radiance"));
 				}
 				
 				// Shadow Damage
@@ -141,6 +142,35 @@ public class ZGEvents {
 			// Perform Radiance potion effect
 			if (isRadianceActive) {
 				ZGPotions.radiance.performEffect(player, 1);
+			}
+			
+			// Check what hand the Player is using, and check to see if it isn't
+			// null. Then, grab the item they're holding, and check to see if
+			// that's not equal to null. If it is the Bedrock Breaker, check the
+			// Player's inventory to see if they have any Ascendant Amaranth
+			// Ingots. If they do, then copy the original held item, set its
+			// damage to 0, and put it in the slot that the old one occupied.
+			// This also will decrease the stack size of the ingots. If none
+			// remain, then it will not be repaired.
+			EnumHand currentHand = player.getActiveHand();
+			if (currentHand != null) {
+				ItemStack heldItem = player.getHeldItem(currentHand);
+				if (heldItem != null) {
+					Item currentItem = heldItem.getItem();
+					if (currentItem == ZGItems.BEDROCK_BREAKER) {
+						int toolDamage = heldItem.getItemDamage();
+						if (toolDamage >= heldItem.getMaxDamage()) {
+							ItemStack repairItemStack = new ItemStack(ZGItems.ingotAscendantAmaranth);
+							if (playerInventory.hasItemStack(repairItemStack)) {
+								ItemStack repairedItem = heldItem.copy();
+								repairedItem.setItemDamage(0);
+								int invSlot = player.inventory.getSlotFor(heldItem);
+								playerInventory.setInventorySlotContents(invSlot, repairedItem);
+								playerInventory.decrStackSize(playerInventory.getSlotFor(repairItemStack), 1);
+							}
+						}
+					}
+				}
 			}
 			
 			// Damage the player when they walk on Corrupt blocks.

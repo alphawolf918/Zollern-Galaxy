@@ -13,6 +13,7 @@ import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.items.food.IceCream;
 import zollerngalaxy.items.food.ItemSweetFood;
 import zollerngalaxy.items.food.ZGItemFood;
+import zollerngalaxy.items.tools.ItemBedrockBreaker;
 import zollerngalaxy.items.tools.ItemOmnitool;
 import zollerngalaxy.items.tools.ZGItemAxe;
 import zollerngalaxy.items.tools.ZGItemHoe;
@@ -37,6 +38,7 @@ public class ZGItems {
 	public static final Item plutoniumCrystal = new ZGItemBase("plutoniumcrystal");
 	public static final Item azurite = new ZGItemBase("azurite");
 	public static final Item ascendium = new ZGItemBase("ascendium");
+	public static final Item rokkite = new ZGItemBase("rokkite");
 	
 	public static final Item dustVirinium = new ZGItemBase("rawviri");
 	public static final Item dustCobalt = new ZGItemBase("cobaltdust");
@@ -157,6 +159,7 @@ public class ZGItems {
 	
 	// Tools
 	public static final Item OMNITOOL = new ItemOmnitool();
+	public static final Item BEDROCK_BREAKER = new ItemBedrockBreaker();
 	
 	// Pickaxes
 	public static final Item pickaxeCobalt = new ZGItemPickaxe("cobalt", ZGToolMats.COBALT);
@@ -200,7 +203,7 @@ public class ZGItems {
 	
 	public static void init() {
 		ZGItems.registerItems(heartium, zolCrystal, kriffCrystal, purgCrystal, edenCrystal, purgEssence, prometheanCrystal,
-				plutoniumCrystal, azurite, ascendium, dustBrightstone, dustShinestone, dustVirinium, dustEvenium, dustCobalt,
+				plutoniumCrystal, azurite, ascendium, rokkite, dustBrightstone, dustShinestone, dustVirinium, dustEvenium, dustCobalt,
 				dustFueltonium, dustShinium, dustChargium, dustDiamond, dustEmerald, dustAmaranth, dustZollernium, dustZinc, dustZucrite,
 				dustRhodium, ingotVirinium, ingotCobalt, ingotEvenium, ingotShinestone, ingotShinium, ingotChargium, ingotFueltonium,
 				ingotLapis, ingotAmaranth, ingotAscendantAmaranth, ingotZollernium, ingotZinc, ingotEtrium, ingotZucrite, ingotRhodium,
@@ -213,10 +216,11 @@ public class ZGItems {
 				perdEtrium, amber, topaz, opal, aquamarine, garnet, ruby, amberStatic, aquamarineIcy, garnetFire, witherite, netheridium,
 				perdReed, shagreen, sharkTooth, shadowBone, darkEssence, radium, superChargedCoal, powerStick, starGateTier1,
 				starGateTier2, starGateTier3, starGateTier4, starGateTier5, starGateTier6, starGateTier7, starGateTier8, starGateTier9,
-				starGateTier10, starGateCandy, OMNITOOL, pickaxeCobalt, pickaxeEvenium, pickaxeVirinium, pickaxeAmaranth, pickaxeAzurite,
-				pickaxeZollernium, shovelCobalt, shovelEvenium, shovelVirinium, shovelAmaranth, shovelAzurite, shovelZollernium, axeCobalt,
-				axeEvenium, axeVirinium, axeAmaranth, axeAzurite, axeZollernium, hoeCobalt, hoeEvenium, hoeVirinium, hoeAmaranth,
-				hoeAzurite, hoeZollernium, swordCobalt, swordEvenium, swordVirinium, swordAmaranth, swordAzurite, swordZollernium);
+				starGateTier10, starGateCandy, OMNITOOL, BEDROCK_BREAKER, pickaxeCobalt, pickaxeEvenium, pickaxeVirinium, pickaxeAmaranth,
+				pickaxeAzurite, pickaxeZollernium, shovelCobalt, shovelEvenium, shovelVirinium, shovelAmaranth, shovelAzurite,
+				shovelZollernium, axeCobalt, axeEvenium, axeVirinium, axeAmaranth, axeAzurite, axeZollernium, hoeCobalt, hoeEvenium,
+				hoeVirinium, hoeAmaranth, hoeAzurite, hoeZollernium, swordCobalt, swordEvenium, swordVirinium, swordAmaranth, swordAzurite,
+				swordZollernium);
 		ZGHelper.Log("Loaded a total of " + totalItems + " new items.");
 	}
 	

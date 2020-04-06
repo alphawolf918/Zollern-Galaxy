@@ -597,6 +597,12 @@ tooltips.loreblock4=You will need an Omnitool to access this.
 tooltips.loreblock5=No Lore was found..
 tooltips.loreblock6=You have discovered Lore!
 tooltips.loreblock7=Book:
+tooltips.radiance=You are irradiated with a brilliant light.
+tooltips.bedrockbreaker1=Provides the power to
+tooltips.bedrockbreaker2=break Bedrock on right-click.
+tooltips.bedrockbreaker3=Recharge it with Ascendant
+tooltips.bedrockbreaker4=Amaranth Ingots, only works
+tooltips.bedrockbreaker5=when it's used up.
 
 planet.zollus=Zollus
 planet.eden=Eden
