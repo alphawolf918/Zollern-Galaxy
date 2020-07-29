@@ -223,7 +223,7 @@ public class ZGPlanets {
 			planetZollus.setDisableRockets();
 		}
 		planetZollus.setRelativeSize(10.876F);
-		planetZollus.setPlanetTemperature(-152.6F);
+		planetZollus.setPlanetTemperature(-92.6F);
 		planetZollus.setPlanetToxicity(0.4F);
 		planetZollus.setPlanetRadiation(0.5F);
 		planetZollus.setWindLevel(6.7F);
@@ -248,7 +248,7 @@ public class ZGPlanets {
 			planetKriffon.setDisableRockets();
 		}
 		planetKriffon.setRelativeSize(20.0F);
-		planetKriffon.setPlanetTemperature(227.4F);
+		planetKriffon.setPlanetTemperature(107.4F);
 		planetKriffon.setPlanetToxicity(14.1F);
 		planetKriffon.setPlanetRadiation(16.8F);
 		planetKriffon.setWindLevel(0.1F);

@@ -4,7 +4,7 @@ Zollern Galaxy v2.0.15
 
 * Increased score value and step height of Gray Aliens.
 * Updated Chinese translations by EndsM.
-* Added German translations by Eternal Wolf.
+* Added German translations by Eternal Wolf / Skaptic.
 * Added the Galaxy Knight.
     - Spawns when a Gray Alien is attacked and immediately targets the Player.
     - Extremely powerful Dark Agent mob.
@@ -20,9 +20,10 @@ Zollern Galaxy v2.0.15
 * Added the Bedrock Breaker.
     - Breaks Bedrock and gives the Player a special metal called Rokkite.
     - Recharged with Ascendant Amaranth Ingots.
-* 
+* Prepped for planet Caligro, but have not finished the planet yet.
 * Slightly increased light level of Candy Cube blocks.
 * Massively lowered spawn rate of ores in Xathius.
 * 
 * Fixed crash when creating an Altum space station (I'm sure this time).
-* 
+* Increased temperature of planet Zollus.
+* Decreased temperature of planet Kriffon.

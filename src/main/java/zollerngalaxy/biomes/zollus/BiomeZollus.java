@@ -20,7 +20,7 @@ public class BiomeZollus extends BiomeZollusBase {
 		props.setRainDisabled();
 		this.setBiomeHeight(45);
 		this.setBiomeType(EnumBiomeTypeZG.ICY);
-		this.setTemp(-54.2F);
+		this.setTemp(-10.2F);
 		this.enableSnow = true;
 		this.clearAllSpawning();
 		this.spawnableCreatureList.add(new SpawnListEntry(EntityAlienVillager.class, 5, 1, 2));
