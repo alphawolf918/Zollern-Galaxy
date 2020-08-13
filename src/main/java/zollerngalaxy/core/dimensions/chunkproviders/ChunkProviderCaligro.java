@@ -11,9 +11,7 @@ import java.util.List;
 import java.util.Random;
 import micdoodle8.mods.galacticraft.api.world.ChunkProviderBase;
 import micdoodle8.mods.galacticraft.core.perlin.generator.Gradient;
-import micdoodle8.mods.galacticraft.core.util.ConfigManagerCore;
 import micdoodle8.mods.galacticraft.core.world.gen.EnumCraterSize;
-import micdoodle8.mods.galacticraft.core.world.gen.MapGenVillageMoon;
 import net.minecraft.block.BlockFalling;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EnumCreatureType;
@@ -31,24 +29,25 @@ import net.minecraft.world.gen.NoiseGenerator;
 import net.minecraft.world.gen.NoiseGeneratorOctaves;
 import net.minecraft.world.gen.NoiseGeneratorPerlin;
 import net.minecraft.world.gen.structure.MapGenMineshaft;
-import zollerngalaxy.biomes.decorators.BiomeDecoratorAtheon;
+import zollerngalaxy.biomes.decorators.BiomeDecoratorCaligro;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.blocks.fluids.ZGFluids;
+import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.worldgen.mapgen.MapGenCavesZG;
 import zollerngalaxy.worldgen.mapgen.MapGenRavinesZG;
 
-public class ChunkProviderAtheon extends ChunkProviderBase {
+public class ChunkProviderCaligro extends ChunkProviderBase {
 	
-	public static final IBlockState STONE = ZGBlocks.atheonStone.getDefaultState();
-	public static final IBlockState RADIOLARIA = ZGFluids.blockWhiteLavaFluid.getDefaultState();
+	public static final IBlockState STONE = ZGBlocks.caligroStone.getDefaultState();
+	public static final IBlockState CHARGIUM = ZGFluids.blockChargiumFluid.getDefaultState();
 	
-	public static final double CHUNK_HEIGHT = 44.0D;
+	public static final double CHUNK_HEIGHT = 40.5D;
 	public static final int SEA_LEVEL = 57;
 	
 	private static final int CHUNK_SIZE_X = 16;
 	private static final int CHUNK_SIZE_Z = 16;
 	
-	private final BiomeDecoratorAtheon biomeDecoratorAtheon = new BiomeDecoratorAtheon();
+	private final BiomeDecoratorCaligro biomeDecoratorCaligro = new BiomeDecoratorCaligro();
 	private Random rand;
 	private NoiseGeneratorOctaves noiseGen1;
 	private NoiseGeneratorOctaves noiseGen2;
@@ -63,10 +62,10 @@ public class ChunkProviderAtheon extends ChunkProviderBase {
 	private final double[] terrainCalcs;
 	private final float[] parabolicField;
 	private double[] stoneNoise = new double[256];
-	private MapGenCavesZG caveGenerator = new MapGenCavesZG(ZGBlocks.atheonStone, ZGBlocks.atheonConstructBlock);
-	private MapGenCavesZG caveGenerator2 = new MapGenCavesZG(ZGBlocks.atheonStone);
-	private final MapGenRavinesZG ravineGenerator = new MapGenRavinesZG(ZGBlocks.atheonStone);
-	private final MapGenVillageMoon villageGenerator = new MapGenVillageMoon();
+	private MapGenCavesZG caveGenerator = new MapGenCavesZG(ZGBlocks.caligroStone, ZGFluids.blockChargiumFluid);
+	private MapGenCavesZG caveGenerator2 = new MapGenCavesZG(ZGBlocks.caligroStone);
+	private final MapGenRavinesZG ravineGenerator = new MapGenRavinesZG(ZGBlocks.caligroStone);
+	// private final MapGenVillageMoon villageGenerator = new MapGenVillageMoon();
 	private MapGenMineshaft mineshaftGenerator = new MapGenMineshaft();
 	private Biome[] biomesForGeneration;
 	private double[] octaves1;
@@ -74,9 +73,9 @@ public class ChunkProviderAtheon extends ChunkProviderBase {
 	private double[] octaves3;
 	private double[] octaves4;
 	
-	private static final int CRATER_PROB = 100;
+	private static final int CRATER_PROB = 200;
 	
-	public ChunkProviderAtheon(World worldIn, long seed, boolean mapFeaturesEnabled) {
+	public ChunkProviderCaligro(World worldIn, long seed, boolean mapFeaturesEnabled) {
 		this.world = worldIn;
 		this.worldType = worldIn.getWorldInfo().getTerrainType();
 		this.rand = new Random(seed);
@@ -152,11 +151,18 @@ public class ChunkProviderAtheon extends ChunkProviderBase {
 								int y = i2 * 8 + j2;
 								int z = l * 4 + l2;
 								
+								if (y <= 127 && y > (SEA_LEVEL + 10)) {
+									IBlockState topper = ZGBlocks.caligroCobblestone.getDefaultState();
+									if (ZGHelper.getRNGChance(8, 10)) {
+										primer.setBlockState(x, y, z, topper);
+									}
+								}
+								
 								if ((lvt_45_1_ += d16) > this.noiseGenSmooth1.getNoise(chunkX * 16 + x, chunkZ * 16 + z) * CHUNK_HEIGHT) {
 									primer.setBlockState(x, y, z, STONE);
 								} else if (y < SEA_LEVEL) {
 									Biome biome = world.getBiome(new BlockPos(x, y, z));
-									IBlockState blockToUse = RADIOLARIA;
+									IBlockState blockToUse = CHARGIUM;
 									primer.setBlockState(x, y, z, blockToUse);
 								}
 							}
@@ -200,7 +206,7 @@ public class ChunkProviderAtheon extends ChunkProviderBase {
 		this.caveGenerator.generate(this.world, x, z, chunkprimer);
 		this.caveGenerator2.generate(this.world, x, z, chunkprimer);
 		this.ravineGenerator.generate(this.world, x, z, chunkprimer);
-		this.villageGenerator.generate(this.world, x, z, chunkprimer);
+		// this.villageGenerator.generate(this.world, x, z, chunkprimer);
 		this.mineshaftGenerator.generate(this.world, x, z, chunkprimer);
 		
 		Chunk chunk = new Chunk(this.world, chunkprimer, x, z);
@@ -314,11 +320,11 @@ public class ChunkProviderAtheon extends ChunkProviderBase {
 	public void createCraters(int chunkX, int chunkZ, ChunkPrimer primer) {
 		for (int cx = chunkX - 2; cx <= chunkX + 2; cx++) {
 			for (int cz = chunkZ - 2; cz <= chunkZ + 2; cz++) {
-				for (int x = 0; x < ChunkProviderAtheon.CHUNK_SIZE_X; x++) {
-					for (int z = 0; z < ChunkProviderAtheon.CHUNK_SIZE_Z; z++) {
+				for (int x = 0; x < ChunkProviderCaligro.CHUNK_SIZE_X; x++) {
+					for (int z = 0; z < ChunkProviderCaligro.CHUNK_SIZE_Z; z++) {
 						if (Math.abs(this.randFromPoint(cx * 16 + x, (cz * 16 + z) * 1000)) < this.noiseGen4.getValue(x
-								* ChunkProviderAtheon.CHUNK_SIZE_X + x, cz * ChunkProviderAtheon.CHUNK_SIZE_Z + z)
-								/ ChunkProviderAtheon.CRATER_PROB) {
+								* ChunkProviderCaligro.CHUNK_SIZE_X + x, cz * ChunkProviderCaligro.CHUNK_SIZE_Z + z)
+								/ ChunkProviderCaligro.CRATER_PROB) {
 							final Random random = new Random(cx * 16 + x + (cz * 16 + z) * 5000);
 							final EnumCraterSize cSize = EnumCraterSize.sizeArray[random.nextInt(EnumCraterSize.sizeArray.length)];
 							final int size = random.nextInt(cSize.MAX_SIZE - cSize.MIN_SIZE) + cSize.MIN_SIZE;
@@ -331,8 +337,8 @@ public class ChunkProviderAtheon extends ChunkProviderBase {
 	}
 	
 	private void makeCrater(int craterX, int craterZ, int chunkX, int chunkZ, int size, ChunkPrimer primer) {
-		for (int x = 0; x < ChunkProviderAtheon.CHUNK_SIZE_X; x++) {
-			for (int z = 0; z < ChunkProviderAtheon.CHUNK_SIZE_Z; z++) {
+		for (int x = 0; x < ChunkProviderCaligro.CHUNK_SIZE_X; x++) {
+			for (int z = 0; z < ChunkProviderCaligro.CHUNK_SIZE_Z; z++) {
 				double xDev = craterX - (chunkX + x);
 				double zDev = craterZ - (chunkZ + z);
 				if (xDev * xDev + zDev * zDev < size * size) {
@@ -375,9 +381,9 @@ public class ChunkProviderAtheon extends ChunkProviderBase {
 		long l = this.rand.nextLong() / 2L * 2L + 1L;
 		this.rand.setSeed(x * k + z * l ^ this.world.getSeed());
 		
-		if (!ConfigManagerCore.disableMoonVillageGen) {
-			this.villageGenerator.generateStructure(this.world, this.rand, new ChunkPos(x, z));
-		}
+		// if (!ConfigManagerCore.disableMoonVillageGen) {
+		// this.villageGenerator.generateStructure(this.world, this.rand, new ChunkPos(x, z));
+		// }
 		
 		this.mineshaftGenerator.generateStructure(this.world, this.rand, new ChunkPos(x, z));
 		
@@ -397,8 +403,8 @@ public class ChunkProviderAtheon extends ChunkProviderBase {
 	public void recreateStructures(Chunk chunk, int x, int z) {
 		this.mineshaftGenerator.generate(this.world, x, z, null);
 		
-		if (!ConfigManagerCore.disableMoonVillageGen) {
-			this.villageGenerator.generate(this.world, x, z, null);
-		}
+		// if (!ConfigManagerCore.disableMoonVillageGen) {
+		// this.villageGenerator.generate(this.world, x, z, null);
+		// }
 	}
 }

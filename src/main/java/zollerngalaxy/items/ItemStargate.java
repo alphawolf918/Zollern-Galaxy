@@ -50,10 +50,10 @@ public class ItemStargate extends ZGItemBase {
 		if (!ConfigManagerZG.disableStarGates) {
 			switch (this.gateTier) {
 				default:
-					this.proxy.sendChatMessage(player, "Hmm. This Protocol isn't functional yet. Maybe it'll work in the future.");
+					this.proxy.sendChatMessage(player, ZGUtils.translate("tooltips.protocolnotfunctional"));
 					break;
 				case 0:
-					this.proxy.sendChatMessage(player, "Unknown Protocol detected; unable to transfer biological entity.");
+					this.proxy.sendChatMessage(player, ZGUtils.translate("tooltips.unknownprotocol"));
 					break;
 				case 1:
 					this.sendToPlanet(ConfigManagerZG.planetKriffonDimensionId, ConfigManagerZG.planetZollusDimensionId, player);
@@ -82,9 +82,9 @@ public class ItemStargate extends ZGItemBase {
 				case 9:
 					this.sendToPlanet(ConfigManagerZG.planetPerditaDimensionId, ConfigManagerZG.planetAltumDimensionId, player);
 					break;
-				// case 10:
-				// // TODO
-				// break;
+				case 10:
+					this.sendToPlanet(ConfigManagerZG.planetCaligroDimensionId, ConfigManagerZG.planetAltumDimensionId, player);
+					break;
 				case 918:
 					// TODO: Make other planet a random destination of previous
 					// planets.

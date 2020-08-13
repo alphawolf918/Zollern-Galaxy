@@ -12,11 +12,13 @@ import micdoodle8.mods.galacticraft.api.galaxies.GalaxyRegistry;
 import micdoodle8.mods.galacticraft.api.galaxies.Moon;
 import micdoodle8.mods.galacticraft.api.vector.Vector3;
 import micdoodle8.mods.galacticraft.api.world.EnumAtmosphericGas;
+import micdoodle8.mods.galacticraft.planets.mars.dimension.TeleportTypeMars;
 import micdoodle8.mods.galacticraft.planets.venus.dimension.TeleportTypeVenus;
 import zollerngalaxy.biomes.ZGBiomes;
 import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderAltum;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderAtheon;
+import zollerngalaxy.core.dimensions.worldproviders.WorldProviderCaligro;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderCandora;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderEden;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderKriffon;
@@ -506,11 +508,10 @@ public class ZGPlanets {
 		totalPlanets++;
 		
 		// Caligro
-		// planetCaligro.setDimensionInfo(ConfigManagerZG.planetCaligroDimensionId,
-		// WorldProviderCaligro.class);
+		planetCaligro.setDimensionInfo(ConfigManagerZG.planetCaligroDimensionId, WorldProviderCaligro.class);
 		planetCaligro.setParentSolarSystem(systemSol2);
 		planetCaligro.setPlanetClass(EnumPlanetClass.DARK);
-		planetCaligro.setRingColorRGB(0.0F, 0.0F, 0.0F);
+		planetCaligro.setRingColorRGB(0.0F, 10.0F, 0.0F);
 		planetCaligro.setPhaseShift(100.0F);
 		planetCaligro.setRelativeOrbitTime(140.18F);
 		planetCaligro.setDistanceFromCenter(2.0F);
@@ -529,7 +530,7 @@ public class ZGPlanets {
 				EnumAtmosphericGas.ARGON, EnumAtmosphericGas.METHANE, EnumAtmosphericGas.HYDROGEN);
 		planetCaligro.setPlanetIcon("caligro");
 		planetCaligro.setAtmosphere();
-		// planetCaligro.setBiomeInfo();
+		planetCaligro.setBiomeInfo(ZGBiomes.CALIGRO_UPSIDE_DOWN);
 		totalPlanets++;
 		
 		ZGHelper.Log("Loaded a total of " + totalPlanets + " new planets.");
@@ -589,7 +590,6 @@ public class ZGPlanets {
 		// Sol-2
 		GalacticraftRegistry.registerTeleportType(WorldProviderPerdita.class, new TeleportTypeVenus());
 		GalacticraftRegistry.registerTeleportType(WorldProviderAltum.class, new TeleportTypeVenus());
-		// GalacticraftRegistry.registerTeleportType(WorldProviderCaligro.class, new
-		// TeleportTypeVenus());
+		GalacticraftRegistry.registerTeleportType(WorldProviderCaligro.class, new TeleportTypeMars());
 	}
 }

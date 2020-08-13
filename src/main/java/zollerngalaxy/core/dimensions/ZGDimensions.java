@@ -76,6 +76,10 @@ public class ZGDimensions {
 	public static DimensionType ALTUM_ORBIT;
 	public static DimensionType ALTUM_ORBIT_STATIC;
 	
+	public static DimensionType CALIGRO;
+	public static DimensionType CALIGRO_ORBIT;
+	public static DimensionType CALIGRO_ORBIT_STATIC;
+	
 	public static void init() {
 		// Psion-6 (Zollus)
 		ZGDimensions.ZOLLUS = ZGDimensions.getDimType(ConfigManagerZG.planetZollusDimensionId);
@@ -153,6 +157,15 @@ public class ZGDimensions {
 				WorldProviderOrbitAltum.class, false);
 		ZGDimensions.ALTUM_ORBIT_STATIC = DimensionType.register("Altum Space Station", "_altum_orbit",
 				ConfigManagerZG.spaceStationAltumStaticId, WorldProviderOrbitAltum.class, true);
+		
+		// Sol-2 (Caligro)
+		ZGDimensions.CALIGRO = ZGDimensions.getDimType(ConfigManagerZG.planetCaligroDimensionId);
+		// ZGDimensions.CALIGRO_ORBIT = DimensionType.register("Caligro Space Station",
+		// "_caligro_orbit", ConfigManagerZG.spaceStationCaligroId,
+		// WorldProviderOrbitCaligro.class, false);
+		// ZGDimensions.CALIGRO_ORBIT_STATIC = DimensionType.register("Caligro Space Station",
+		// "_caligro_orbit",
+		// ConfigManagerZG.spaceStationCaligroStaticId, WorldProviderOrbitCaligro.class, true);
 	}
 	
 	public static DimensionType getDimType(int dimId) {

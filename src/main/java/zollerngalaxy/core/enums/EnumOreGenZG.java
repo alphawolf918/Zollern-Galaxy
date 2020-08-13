@@ -9,6 +9,7 @@ package zollerngalaxy.core.enums;
 
 public enum EnumOreGenZG {
 	
+	F(0, 0, 0, 0),
 	COAL(15, 25, 0, 256),
 	IRON(21, 20, 0, 256),
 	GOLD(16, 6, 0, 41),
@@ -54,7 +55,9 @@ public enum EnumOreGenZG {
 	ZINC(25, 6, 0, 26),
 	SPECIAL_STONE(25, 15, 0, 32),
 	PRISMARINE(20, 20, 0, 74),
-	RHODIUM(6, 4, 0, 20);
+	RHODIUM(6, 4, 0, 20),
+	RADIUM(10, 8, 0, 15),
+	POWER_GEM(25, 5, 0, 36);
 	
 	private int genCount;
 	private int blockCount;

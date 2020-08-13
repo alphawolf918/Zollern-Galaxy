@@ -1,29 +1,13 @@
 ===== CHANGELOG =====
-Zollern Galaxy v2.0.15
+Zollern Galaxy v2.0.16
 =====================
 
-* Increased score value and step height of Gray Aliens.
-* Updated Chinese translations by EndsM.
-* Added German translations by Eternal Wolf / Skaptic.
-* Added the Galaxy Knight.
-    - Spawns when a Gray Alien is attacked and immediately targets the Player.
-    - Extremely powerful Dark Agent mob.
-* Added potion effects.
-* Added a lot more items and blocks with new metals.
-* Added Caligro blocks and items.
-* Added more tooltip translations for Lore Blocks.
-* Added config options to disable rocket travel to Zollern Galaxy planets.
-    - This can be accomplished by an 'all' setting, or on a planet-by-planet basis.
-    - The 'all' setting WILL NOT affect Zollus - it will keep whatever tier you set it as.
-* Added several new metals.
-* Added the Ascendant tool type.
-* Added the Bedrock Breaker.
-    - Breaks Bedrock and gives the Player a special metal called Rokkite.
-    - Recharged with Ascendant Amaranth Ingots.
-* Prepped for planet Caligro, but have not finished the planet yet.
-* Slightly increased light level of Candy Cube blocks.
-* Massively lowered spawn rate of ores in Xathius.
+* Created planet Caligro and added its ores and mobs.
+    - Planet is heavily inspired by the Netflix web series, Stranger Things.
+    - This dimension was first featured in Zollern Extras before being ported over as a planet.
+    - Extremely dangerous planet with loads of resources and Dark Agent mobs.
+* Increased hitbox of Moolus mob.
+* Added the Krull mob.
+    - Infects Players within a 3-block radius, who can then infect other Players.
+    - Inspired by the Demogorgon.
 * 
-* Fixed crash when creating an Altum space station (I'm sure this time).
-* Increased temperature of planet Zollus.
-* Decreased temperature of planet Kriffon.

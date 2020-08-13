@@ -444,6 +444,10 @@ public class ZGBlocks {
 			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
 	public static final Block caligroLapisOre = ((ZGBlockBase) new ZGOreGem("caligrolapisore", 3.2F, Items.DYE).setDropMeta(4, true))
 			.setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
+	public static final Block caligroZollerniumOre = new ZGBlockOre("caligrozollerniumore", 3.5F).setBlockHarvestLevel(
+			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
+	public static final Block caligroRubyOre = new ZGOreGem("caligrorubyore", 2.5F, ZGItems.ruby).setBlockHarvestLevel(
+			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
 	// TODO
 	
 	// Corruption
@@ -572,7 +576,7 @@ public class ZGBlocks {
 				caligroSilverOre, caligroNickelOre, caligroLeadOre, caligroTinOre, caligroCopperOre, caligroIronOre, caligroGoldOre,
 				caligroRedstoneOre, caligroAmaranthOre, caligroZincOre, caligroAmberOre, caligroTopazOre, caligroOpalOre,
 				caligroAquamarineOre, caligroGarnetOre, caligroSuperChargedCoalOre, caligroFueltoniumOre, caligroDiamondOre,
-				caligroEmeraldOre, caligroRadiumOre, caligroLapisOre, corruptRock);
+				caligroEmeraldOre, caligroRadiumOre, caligroLapisOre, caligroZollerniumOre, caligroRubyOre, corruptRock);
 		ZGHelper.Log("Loaded a total of " + totalBlocks + " new blocks.");
 	}
 	

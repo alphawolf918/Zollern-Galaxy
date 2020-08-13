@@ -26,8 +26,9 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
 import zollerngalaxy.config.ConfigManagerZG;
+import zollerngalaxy.mobs.entities.interfaces.IShadeEntity;
 
-public class EntityMegaCreeper extends EntityCreeper implements IEntityBreathable {
+public class EntityMegaCreeper extends EntityCreeper implements IEntityBreathable, IShadeEntity {
 	
 	private int lastActiveTime;
 	

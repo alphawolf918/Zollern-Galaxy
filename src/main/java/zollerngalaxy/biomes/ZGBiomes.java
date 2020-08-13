@@ -34,6 +34,7 @@ import zollerngalaxy.biomes.altum.BiomeRockyShore;
 import zollerngalaxy.biomes.altum.BiomeSanctumBeach;
 import zollerngalaxy.biomes.atheon.BiomeGoldlands;
 import zollerngalaxy.biomes.atheon.BiomeRadiolarianLakes;
+import zollerngalaxy.biomes.caligro.BiomeCaligroUpsideDown;
 import zollerngalaxy.biomes.candora.BiomeBlueberryHills;
 import zollerngalaxy.biomes.candora.BiomeCandyMountain;
 import zollerngalaxy.biomes.candora.BiomeChocolateOcean;
@@ -136,6 +137,9 @@ public class ZGBiomes {
 	public static final Biome ALTUM_OCEAN = new BiomeAltumOcean(new BiomeProperties("The Abyss"));
 	public static final Biome ALTUM_ROCKY_SHORE = new BiomeRockyShore(new BiomeProperties("Rocky Shore"));
 	
+	// Caligro
+	public static final Biome CALIGRO_UPSIDE_DOWN = new BiomeCaligroUpsideDown(new BiomeProperties("Upside Down"));
+	
 	public static void init() {
 		// Zollus
 		ZGBiomes.addBiome(ZGBiomes.ZOLLUS, COLD, DEAD, DRY);
@@ -197,6 +201,9 @@ public class ZGBiomes {
 		ZGBiomes.addBiome(ZGBiomes.ALTUM_SANCTUM_BEACH, LUSH, WET, BEACH);
 		ZGBiomes.addBiome(ZGBiomes.ALTUM_OCEAN, WET, OCEAN);
 		ZGBiomes.addBiome(ZGBiomes.ALTUM_ROCKY_SHORE, LUSH, WET, MOUNTAIN);
+		
+		// Caligr
+		ZGBiomes.addBiome(ZGBiomes.CALIGRO_UPSIDE_DOWN, MOUNTAIN, SPOOKY, COLD, DEAD);
 		
 		ZGHelper.Log("Loaded a total of " + totalBiomes + " new biomes.");
 	}
