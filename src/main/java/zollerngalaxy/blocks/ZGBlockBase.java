@@ -264,6 +264,13 @@ public class ZGBlockBase extends Block implements ISingleZGBlockRender, IJSONBlo
 		return false;
 	}
 	
+	/**
+	 * Prevent the JSON generator from overwriting this block's files.
+	 * 
+	 * @param ignore
+	 *            Whether or not this block should be ignored by the JSON generator.
+	 * @return Block
+	 */
 	public Block setShouldJSONIgnore(boolean ignore) {
 		this.shouldJSONIgnore = ignore;
 		return this;

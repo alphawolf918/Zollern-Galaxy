@@ -51,7 +51,7 @@ import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import zollerngalaxy.blocks.ZGBlockDirt;
 import zollerngalaxy.blocks.ZGBlockGrass;
-import zollerngalaxy.blocks.corrupted.ICorruptBlock;
+import zollerngalaxy.blocks.caligro.corrupted.ICorruptBlock;
 import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.ZGLootTables;
 import zollerngalaxy.core.ZollernGalaxyCore;
@@ -68,6 +68,7 @@ import zollerngalaxy.mobs.entities.EntityMoolus;
 import zollerngalaxy.mobs.entities.EntityMummy;
 import zollerngalaxy.mobs.entities.EntityOinkus;
 import zollerngalaxy.mobs.entities.EntityScorpion;
+import zollerngalaxy.mobs.entities.EntityShadowSkeleton;
 import zollerngalaxy.mobs.entities.EntityShark;
 import zollerngalaxy.mobs.entities.interfaces.IShadeEntity;
 import zollerngalaxy.potions.ZGPotions;
@@ -121,6 +122,9 @@ public class ZGEvents {
 				}
 				
 				// Infection
+				// Spread to all Players within the radius by using the potion effect.
+				// You can find the potion effect's "performEffect" function in the
+				// ClientProxy class, under doPotionEffects.
 				if (player.isPotionActive(ZGPotions.infected)) {
 					ZGPotions.infected.performEffect(player, 1);
 					World worldObj = player.getEntityWorld();
@@ -174,12 +178,15 @@ public class ZGEvents {
 			}
 			
 			// Damage the player when they walk on Corrupt blocks.
-			// TODO: Add Anti-Corruption potion to prevent damage
+			// Anti-Corruption effect stops this.
+			// TODO: Make a repairable item that can take the damage instead.
 			if (block instanceof ICorruptBlock) {
 				ICorruptBlock corruptBlock = (ICorruptBlock) block;
 				if (corruptBlock.canCorrupt()) {
 					if (rand.nextInt(14) <= 4) {
-						player.attackEntityFrom(ZGDamageSrc.deathCorruption, ZGDamageSrc.deathCorruption.getDamageBase());
+						if (!player.isPotionActive(ZGPotions.antiCorruption)) {
+							player.attackEntityFrom(ZGDamageSrc.deathCorruption, ZGDamageSrc.deathCorruption.getDamageBase());
+						}
 					}
 				}
 			}
@@ -308,6 +315,15 @@ public class ZGEvents {
 			if (ZGHelper.getRNGChance(5, 20)) {
 				for (int i = 0; i < ZGHelper.rngInt(1, 2); i++) {
 					ZGHelper.dropItem(ZGItems.dustEmerald, worldObj, theEntity);
+				}
+			}
+		}
+		
+		// Shadow Skeleton
+		if (theEntity instanceof EntityShadowSkeleton) {
+			if (ZGHelper.getRNGChance(5, 10)) {
+				for (int i = 0; i < ZGHelper.rngInt(1, 4); i++) {
+					ZGHelper.dropItem(ZGItems.shadowBone, worldObj, theEntity);
 				}
 			}
 		}

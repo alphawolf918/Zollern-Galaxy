@@ -44,7 +44,7 @@ public class WorldProviderCaligro extends WorldProviderZG {
 	
 	@Override
 	public double getMeteorFrequency() {
-		return 0.1;
+		return 0;
 	}
 	
 	@Override

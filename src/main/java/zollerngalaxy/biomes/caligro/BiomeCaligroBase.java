@@ -30,6 +30,8 @@ import zollerngalaxy.mobs.entities.EntityKrull;
 import zollerngalaxy.mobs.entities.EntityMegaCreeper;
 import zollerngalaxy.mobs.entities.EntityMummy;
 import zollerngalaxy.mobs.entities.EntityScorpion;
+import zollerngalaxy.mobs.entities.EntityShadowSkeleton;
+import zollerngalaxy.mobs.entities.EntitySpiderling;
 import zollerngalaxy.planets.ZGPlanets;
 
 public class BiomeCaligroBase extends BiomeSpace {
@@ -46,24 +48,28 @@ public class BiomeCaligroBase extends BiomeSpace {
 	protected static final int SEA_FLOOR_LEVEL = 42;
 	protected static final int CORRUPTION_LAYER = ChunkProviderCaligro.CORRUPTION_LAYER;
 	
+	public BiomeDecoratorCaligro biomeDecor = this.getBiomeDecorator();
+	
 	public BiomeCaligroBase(String singleName, BiomeProperties props) {
 		super(singleName, props);
 		this.setTempCategory(TempCategory.COLD);
-		this.decorator.flowersPerChunk = -999;
-		this.decorator.treesPerChunk = -999;
-		this.decorator.grassPerChunk = -999;
-		this.decorator.mushroomsPerChunk = -999;
+		this.biomeDecor.flowersPerChunk = -999;
+		this.biomeDecor.treesPerChunk = -999;
+		this.biomeDecor.grassPerChunk = -999;
+		this.biomeDecor.mushroomsPerChunk = -999;
 		this.clearAllSpawning();
-		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedEnderman.class, 100, 4, 4));
+		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedEnderman.class, 100, 1, 4));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityEnderman.class, 100, 1, 4));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityScorpion.class, 100, 1, 4));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntitySpider.class, 100, 1, 4));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityCaveSpider.class, 100, 1, 4));
+		this.spawnableMonsterList.add(new SpawnListEntry(EntitySpiderling.class, 50, 1, 1));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityGrayAlien.class, 100, 1, 4));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityMummy.class, 100, 1, 4));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityZombie.class, 100, 1, 4));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityKrull.class, 50, 1, 1));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityMegaCreeper.class, 100, 1, 4));
+		this.spawnableMonsterList.add(new SpawnListEntry(EntityShadowSkeleton.class, 100, 1, 4));
 		this.setPlanetForBiome(ZGPlanets.planetCaligro);
 	}
 	

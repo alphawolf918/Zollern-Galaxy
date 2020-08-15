@@ -12,29 +12,29 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 
-public class BiomeCaligroUpsideDown extends BiomeCaligroBase {
+public class BiomeCaligroCreeplands extends BiomeCaligroBase {
 	
-	public BiomeCaligroUpsideDown(BiomeProperties props) {
-		super("upsidedown", props);
-		props.setBaseHeight(3.5F);
-		props.setHeightVariation(1.2F);
-		props.setTemperature(2.0F);
+	public BiomeCaligroCreeplands(BiomeProperties props) {
+		super("creeplands", props);
+		props.setBaseHeight(1.5F);
+		props.setHeightVariation(0.2F);
+		props.setTemperature(1.0F);
 		this.setTempCategory(TempCategory.COLD);
-		this.setTemp(2.0F);
-		this.setBiomeHeight(82);
+		this.setTemp(1.0F);
+		this.setBiomeHeight(76);
 		this.setBiomeType(EnumBiomeTypeZG.ABANDONED);
 		this.enableSnow = false;
 		this.biomeDecor.generateFalls = false;
 		this.grassFoliageColor = 0x000;
 		this.waterColor = 0x000;
-		this.topBlock = ZGBlocks.caligroSurfaceRock.getDefaultState();
-		this.fillerBlock = ZGBlocks.caligroDirt.getDefaultState();
+		this.topBlock = ZGBlocks.caligroCreepstone.getDefaultState();
+		this.fillerBlock = ZGBlocks.caligroCreepdirt.getDefaultState();
 		this.stoneBlock = ZGBlocks.caligroStone;
 	}
 	
 	@Override
 	@SideOnly(Side.CLIENT)
 	public int getSkyColorByTemp(float p_76731_1_) {
-		return 0x0d0;
+		return 0x0e0;
 	}
 }

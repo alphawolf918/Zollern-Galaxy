@@ -8,12 +8,17 @@
 package zollerngalaxy.biomes.decorators;
 
 import java.util.Random;
+import net.minecraft.block.Block;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.gen.feature.WorldGenerator;
+import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.blocks.ZGBlocks;
+import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderCaligro;
 import zollerngalaxy.core.enums.EnumOreGenZG;
 import zollerngalaxy.worldgen.WorldGenMinableZG;
+import zollerngalaxy.worldgen.caligro.WorldGenSpiderEgg;
 
 public class BiomeDecoratorCaligro extends BiomeDecoratorZG {
 	
@@ -42,42 +47,105 @@ public class BiomeDecoratorCaligro extends BiomeDecoratorZG {
 	private WorldGenerator zincGen;
 	private WorldGenerator amaranthGen;
 	private WorldGenerator zollerniumGen;
+	private WorldGenerator creepstoneGen;
+	private WorldGenerator creepstoneDirtGen;
 	
 	// Corruption Layer
 	private WorldGenerator corruptAscendiumGen;
 	private WorldGenerator corruptEtriumGen;
 	private WorldGenerator corruptChargiumGen;
+	private WorldGenerator corruptRockGen;
+	
+	private static final Block STONE = ZGBlocks.caligroStone;
+	private static final Block CORRUPTED_STONE = ZGBlocks.corruptStone;
+	
+	private static final int SEA_LEVEL = ChunkProviderCaligro.SEA_LEVEL;
+	private static final int CORRUPTION_LAYER = ChunkProviderCaligro.CORRUPTION_LAYER;
+	
+	private static final EnumOreGenZG TIN = EnumOreGenZG.TIN;
+	private static final EnumOreGenZG COPPER = EnumOreGenZG.COPPER;
+	private static final EnumOreGenZG IRON = EnumOreGenZG.IRON;
+	private static final EnumOreGenZG GOLD = EnumOreGenZG.GOLD;
+	private static final EnumOreGenZG LEAD = EnumOreGenZG.LEAD;
+	private static final EnumOreGenZG REDSTONE = EnumOreGenZG.REDSTONE;
+	private static final EnumOreGenZG DIAMOND = EnumOreGenZG.DIAMOND;
+	private static final EnumOreGenZG EMERALD = EnumOreGenZG.EMERALD;
+	private static final EnumOreGenZG PLATINUM = EnumOreGenZG.PLATINUM;
+	private static final EnumOreGenZG SILVER = EnumOreGenZG.SILVER;
+	private static final EnumOreGenZG NICKEL = EnumOreGenZG.NICKEL;
+	private static final EnumOreGenZG POWER_GEM = EnumOreGenZG.POWER_GEM;
+	private static final EnumOreGenZG LAPIS = EnumOreGenZG.LAPIS;
+	private static final EnumOreGenZG RADIUM = EnumOreGenZG.RADIUM;
+	private static final EnumOreGenZG FUELTONIUM = EnumOreGenZG.FUELTONIUM;
+	private static final EnumOreGenZG SUPER_CHARGED_COAL = EnumOreGenZG.SUPER_CHARGED_COAL;
+	private static final EnumOreGenZG ZINC = EnumOreGenZG.ZINC;
+	private static final EnumOreGenZG AMARANTH = EnumOreGenZG.AMARANTH;
+	private static final EnumOreGenZG ZOLLERNIUM = EnumOreGenZG.ZOLLERNIUM;
+	
+	public int spiderlingEggsPerChunk = 5;
+	
+	public boolean generateSpiderlingEggs = true;
+	public boolean generateCraters = true;
+	
+	private WorldGenSpiderEgg spiderEggGen = new WorldGenSpiderEgg();
 	
 	public BiomeDecoratorCaligro() {
+		this.modifyOreGens();
 		this.dirtGen = new WorldGenMinableZG(ZGBlocks.caligroDirt, ZGBlocks.caligroSurfaceRock, EnumOreGenZG.DIRT);
-		this.tinGen = new WorldGenMinableZG(ZGBlocks.caligroTinOre, ZGBlocks.caligroStone, EnumOreGenZG.TIN);
-		this.copperGen = new WorldGenMinableZG(ZGBlocks.caligroCopperOre, ZGBlocks.caligroStone, EnumOreGenZG.COPPER);
-		this.ironGen = new WorldGenMinableZG(ZGBlocks.caligroIronOre, ZGBlocks.caligroStone, EnumOreGenZG.IRON);
-		this.goldGen = new WorldGenMinableZG(ZGBlocks.caligroGoldOre, ZGBlocks.caligroStone, EnumOreGenZG.GOLD);
-		this.leadGen = new WorldGenMinableZG(ZGBlocks.caligroLeadOre, ZGBlocks.caligroStone, EnumOreGenZG.LEAD);
-		this.redstoneGen = new WorldGenMinableZG(ZGBlocks.caligroRedstoneOre, ZGBlocks.caligroStone, EnumOreGenZG.REDSTONE);
-		this.diamondGen = new WorldGenMinableZG(ZGBlocks.caligroDiamondOre, ZGBlocks.caligroStone, EnumOreGenZG.DIAMOND);
-		this.emeraldGen = new WorldGenMinableZG(ZGBlocks.caligroEmeraldOre, ZGBlocks.caligroStone, EnumOreGenZG.EMERALD);
-		this.shiniumGen = new WorldGenMinableZG(ZGBlocks.caligroShiniumOre, ZGBlocks.caligroStone, EnumOreGenZG.PLATINUM);
-		this.silverGen = new WorldGenMinableZG(ZGBlocks.caligroSilverOre, ZGBlocks.caligroStone, EnumOreGenZG.SILVER);
-		this.nickelGen = new WorldGenMinableZG(ZGBlocks.caligroNickelOre, ZGBlocks.caligroStone, EnumOreGenZG.NICKEL);
-		this.topazGen = new WorldGenMinableZG(ZGBlocks.caligroTopazOre, ZGBlocks.caligroStone, EnumOreGenZG.POWER_GEM);
-		this.amberGen = new WorldGenMinableZG(ZGBlocks.caligroAmberOre, ZGBlocks.caligroStone, EnumOreGenZG.POWER_GEM);
-		this.opalGen = new WorldGenMinableZG(ZGBlocks.caligroOpalOre, ZGBlocks.caligroStone, EnumOreGenZG.POWER_GEM);
-		this.aquamarineGen = new WorldGenMinableZG(ZGBlocks.caligroAquamarineOre, ZGBlocks.caligroStone, EnumOreGenZG.POWER_GEM);
-		this.garnetGen = new WorldGenMinableZG(ZGBlocks.caligroGarnetOre, ZGBlocks.caligroStone, EnumOreGenZG.POWER_GEM);
-		this.rubyGen = new WorldGenMinableZG(ZGBlocks.caligroRubyOre, ZGBlocks.caligroStone, EnumOreGenZG.POWER_GEM);
-		this.lapisGen = new WorldGenMinableZG(ZGBlocks.caligroLapisOre, ZGBlocks.caligroStone, EnumOreGenZG.LAPIS);
-		this.radiumGen = new WorldGenMinableZG(ZGBlocks.caligroRadiumOre, ZGBlocks.caligroStone, EnumOreGenZG.RADIUM);
-		this.fueltoniumGen = new WorldGenMinableZG(ZGBlocks.caligroFueltoniumOre, ZGBlocks.caligroStone, EnumOreGenZG.FUELTONIUM);
-		this.superChargedCoalGen = new WorldGenMinableZG(ZGBlocks.caligroSuperChargedCoalOre, ZGBlocks.caligroStone,
-				EnumOreGenZG.SUPER_CHARGED_COAL);
-		this.zincGen = new WorldGenMinableZG(ZGBlocks.caligroZincOre, ZGBlocks.caligroStone, EnumOreGenZG.ZINC);
-		this.amaranthGen = new WorldGenMinableZG(ZGBlocks.caligroAmaranthOre, ZGBlocks.caligroStone, EnumOreGenZG.AMARANTH);
-		this.zollerniumGen = new WorldGenMinableZG(ZGBlocks.caligroZollerniumOre, ZGBlocks.caligroStone, EnumOreGenZG.ZOLLERNIUM);
-		this.corruptAscendiumGen = new WorldGenMinableZG(ZGBlocks.corruptAscendiumOre, ZGBlocks.corruptStone, EnumOreGenZG.POWER_GEM);
-		this.corruptEtriumGen = new WorldGenMinableZG(ZGBlocks.corruptEtriumOre, ZGBlocks.corruptStone, EnumOreGenZG.POWER_GEM);
-		this.corruptChargiumGen = new WorldGenMinableZG(ZGBlocks.corruptChargiumOre, ZGBlocks.corruptStone, EnumOreGenZG.ZOLLERNIUM);
+		this.tinGen = new WorldGenMinableZG(ZGBlocks.caligroTinOre, STONE, TIN);
+		this.copperGen = new WorldGenMinableZG(ZGBlocks.caligroCopperOre, STONE, COPPER);
+		this.ironGen = new WorldGenMinableZG(ZGBlocks.caligroIronOre, STONE, IRON);
+		this.goldGen = new WorldGenMinableZG(ZGBlocks.caligroGoldOre, STONE, GOLD);
+		this.leadGen = new WorldGenMinableZG(ZGBlocks.caligroLeadOre, STONE, LEAD);
+		this.redstoneGen = new WorldGenMinableZG(ZGBlocks.caligroRedstoneOre, STONE, REDSTONE);
+		this.diamondGen = new WorldGenMinableZG(ZGBlocks.caligroDiamondOre, STONE, DIAMOND);
+		this.emeraldGen = new WorldGenMinableZG(ZGBlocks.caligroEmeraldOre, STONE, EMERALD);
+		this.shiniumGen = new WorldGenMinableZG(ZGBlocks.caligroShiniumOre, STONE, PLATINUM);
+		this.silverGen = new WorldGenMinableZG(ZGBlocks.caligroSilverOre, STONE, SILVER);
+		this.nickelGen = new WorldGenMinableZG(ZGBlocks.caligroNickelOre, STONE, NICKEL);
+		this.topazGen = new WorldGenMinableZG(ZGBlocks.caligroTopazOre, STONE, POWER_GEM);
+		this.amberGen = new WorldGenMinableZG(ZGBlocks.caligroAmberOre, STONE, POWER_GEM);
+		this.opalGen = new WorldGenMinableZG(ZGBlocks.caligroOpalOre, STONE, POWER_GEM);
+		this.aquamarineGen = new WorldGenMinableZG(ZGBlocks.caligroAquamarineOre, STONE, POWER_GEM);
+		this.garnetGen = new WorldGenMinableZG(ZGBlocks.caligroGarnetOre, STONE, POWER_GEM);
+		this.rubyGen = new WorldGenMinableZG(ZGBlocks.caligroRubyOre, STONE, POWER_GEM);
+		this.lapisGen = new WorldGenMinableZG(ZGBlocks.caligroLapisOre, STONE, LAPIS);
+		this.radiumGen = new WorldGenMinableZG(ZGBlocks.caligroRadiumOre, STONE, RADIUM);
+		this.fueltoniumGen = new WorldGenMinableZG(ZGBlocks.caligroFueltoniumOre, STONE, FUELTONIUM);
+		this.superChargedCoalGen = new WorldGenMinableZG(ZGBlocks.caligroSuperChargedCoalOre, STONE, SUPER_CHARGED_COAL);
+		this.zincGen = new WorldGenMinableZG(ZGBlocks.caligroZincOre, STONE, ZINC);
+		this.amaranthGen = new WorldGenMinableZG(ZGBlocks.caligroAmaranthOre, STONE, AMARANTH);
+		this.zollerniumGen = new WorldGenMinableZG(ZGBlocks.caligroZollerniumOre, STONE, ZOLLERNIUM);
+		this.creepstoneGen = new WorldGenMinableZG(ZGBlocks.caligroCreepstone, STONE, EnumOreGenZG.SPECIAL_STONE);
+		this.creepstoneDirtGen = new WorldGenMinableZG(ZGBlocks.caligroCreepdirt, STONE, EnumOreGenZG.DIRT.setMaxHeight(32));
+		this.corruptAscendiumGen = new WorldGenMinableZG(ZGBlocks.corruptAscendiumOre, CORRUPTED_STONE, EnumOreGenZG.POWER_GEM);
+		this.corruptEtriumGen = new WorldGenMinableZG(ZGBlocks.corruptEtriumOre, CORRUPTED_STONE, EnumOreGenZG.POWER_GEM);
+		this.corruptChargiumGen = new WorldGenMinableZG(ZGBlocks.corruptChargiumOre, CORRUPTED_STONE, EnumOreGenZG.ZOLLERNIUM);
+		this.corruptRockGen = new WorldGenMinableZG(ZGBlocks.corruptRock, CORRUPTED_STONE, EnumOreGenZG.MAGMA);
+	}
+	
+	private void modifyOreGens() {
+		this.setOreGenDataList(TIN, COPPER, IRON, GOLD, LEAD, REDSTONE, DIAMOND, EMERALD, PLATINUM, SILVER, NICKEL, POWER_GEM);
+		this.setOreGenDataList(LAPIS, RADIUM, FUELTONIUM, SUPER_CHARGED_COAL, ZINC, AMARANTH, ZOLLERNIUM);
+	}
+	
+	private void setOreGenData(EnumOreGenZG oreGen) {
+		oreGen.setMinHeight(CORRUPTION_LAYER);
+		if (oreGen.getGenCount() > 5) {
+			oreGen.setGenCount(5);
+		}
+		if (oreGen.getBlockCount() > 5) {
+			oreGen.setBlockCount(5);
+		}
+		if (oreGen.getMaxHeight() < 46) {
+			oreGen.setMaxHeight(46);
+		}
+	}
+	
+	private void setOreGenDataList(EnumOreGenZG... oreGens) {
+		for (EnumOreGenZG e : oreGens) {
+			this.setOreGenData(e);
+		}
 	}
 	
 	@Override
@@ -85,32 +153,69 @@ public class BiomeDecoratorCaligro extends BiomeDecoratorZG {
 		int x = rand.nextInt(16) + 8;
 		int z = rand.nextInt(16) + 8;
 		
+		ChunkPrimer chunkPrimer = new ChunkPrimer();
+		
 		this.generateOre(this.dirtGen, EnumOreGenZG.DIRT, world, rand);
-		this.generateOre(this.ironGen, EnumOreGenZG.IRON, world, rand);
-		this.generateOre(this.goldGen, EnumOreGenZG.GOLD, world, rand);
-		this.generateOre(this.tinGen, EnumOreGenZG.TIN, world, rand);
-		this.generateOre(this.copperGen, EnumOreGenZG.COPPER, world, rand);
-		this.generateOre(this.leadGen, EnumOreGenZG.LEAD, world, rand);
-		this.generateOre(this.redstoneGen, EnumOreGenZG.REDSTONE, world, rand);
-		this.generateOre(this.diamondGen, EnumOreGenZG.DIAMOND, world, rand);
-		this.generateOre(this.emeraldGen, EnumOreGenZG.EMERALD, world, rand);
-		this.generateOre(this.shiniumGen, EnumOreGenZG.PLATINUM, world, rand);
-		this.generateOre(this.silverGen, EnumOreGenZG.SILVER, world, rand);
-		this.generateOre(this.nickelGen, EnumOreGenZG.NICKEL, world, rand);
-		this.generateOre(this.topazGen, EnumOreGenZG.POWER_GEM, world, rand);
-		this.generateOre(this.opalGen, EnumOreGenZG.POWER_GEM, world, rand);
-		this.generateOre(this.aquamarineGen, EnumOreGenZG.POWER_GEM, world, rand);
-		this.generateOre(this.garnetGen, EnumOreGenZG.POWER_GEM, world, rand);
-		this.generateOre(this.rubyGen, EnumOreGenZG.POWER_GEM, world, rand);
-		this.generateOre(this.lapisGen, EnumOreGenZG.LAPIS, world, rand);
-		this.generateOre(this.radiumGen, EnumOreGenZG.RADIUM, world, rand);
-		this.generateOre(this.fueltoniumGen, EnumOreGenZG.FUELTONIUM, world, rand);
-		this.generateOre(this.superChargedCoalGen, EnumOreGenZG.SUPER_CHARGED_COAL, world, rand);
-		this.generateOre(this.zincGen, EnumOreGenZG.ZINC, world, rand);
-		this.generateOre(this.amaranthGen, EnumOreGenZG.AMARANTH, world, rand);
-		this.generateOre(this.zollerniumGen, EnumOreGenZG.ZOLLERNIUM, world, rand);
-		this.generateOre(this.corruptAscendiumGen, EnumOreGenZG.POWER_GEM, world, rand);
-		this.generateOre(this.corruptEtriumGen, EnumOreGenZG.POWER_GEM, world, rand);
-		this.generateOre(this.corruptChargiumGen, EnumOreGenZG.ZOLLERNIUM, world, rand);
+		this.generateOre(this.ironGen, IRON, world, rand);
+		this.generateOre(this.goldGen, GOLD, world, rand);
+		this.generateOre(this.tinGen, TIN, world, rand);
+		this.generateOre(this.copperGen, COPPER, world, rand);
+		this.generateOre(this.leadGen, LEAD, world, rand);
+		this.generateOre(this.redstoneGen, REDSTONE, world, rand);
+		this.generateOre(this.diamondGen, DIAMOND, world, rand);
+		this.generateOre(this.emeraldGen, EMERALD, world, rand);
+		this.generateOre(this.shiniumGen, PLATINUM, world, rand);
+		this.generateOre(this.silverGen, SILVER, world, rand);
+		this.generateOre(this.nickelGen, NICKEL, world, rand);
+		this.generateOre(this.topazGen, POWER_GEM, world, rand);
+		this.generateOre(this.opalGen, POWER_GEM, world, rand);
+		this.generateOre(this.aquamarineGen, POWER_GEM, world, rand);
+		this.generateOre(this.garnetGen, POWER_GEM, world, rand);
+		this.generateOre(this.rubyGen, POWER_GEM, world, rand);
+		this.generateOre(this.lapisGen, LAPIS, world, rand);
+		this.generateOre(this.radiumGen, RADIUM, world, rand);
+		this.generateOre(this.fueltoniumGen, FUELTONIUM, world, rand);
+		this.generateOre(this.superChargedCoalGen, SUPER_CHARGED_COAL, world, rand);
+		this.generateOre(this.zincGen, ZINC, world, rand);
+		this.generateOre(this.amaranthGen, AMARANTH, world, rand);
+		this.generateOre(this.zollerniumGen, ZOLLERNIUM, world, rand);
+		this.generateOre(this.creepstoneGen, EnumOreGenZG.SPECIAL_STONE, world, rand);
+		this.generateOre(this.creepstoneDirtGen, EnumOreGenZG.DIRT, world, rand);
+		this.generateOre(this.corruptAscendiumGen, POWER_GEM, world, rand);
+		this.generateOre(this.corruptEtriumGen, POWER_GEM, world, rand);
+		this.generateOre(this.corruptChargiumGen, ZOLLERNIUM, world, rand);
+		this.generateOre(this.corruptRockGen, EnumOreGenZG.MAGMA, world, rand);
+		
+		int genY = 248;
+		int y = genY;
+		
+		Block BLOCK_TOP = biome.topBlock.getBlock();
+		Block BLOCK_FILL = biome.fillerBlock.getBlock();
+		Block BLOCK_STONE = ZGBlocks.caligroStone;
+		Block CORRUPTED_STONE = ZGBlocks.corruptStone;
+		
+		if (biome instanceof BiomeSpace) {
+			BiomeSpace spaceBiome = (BiomeSpace) biome;
+			genY = spaceBiome.getBiomeHeight();
+		}
+		
+		// Spiderling Nest
+		if (this.generateSpiderlingEggs && this.spiderlingEggsPerChunk > 0) {
+			for (int i = 0; i < this.spiderlingEggsPerChunk; i++) {
+				y = rand.nextInt(rand.nextInt(genY) + 8);
+				if (rand.nextInt(152) <= 59) {
+					spiderEggGen.generate(world, rand, this.chunkPos.add(x, y, z));
+					spiderEggGen.generate(world, rand, this.chunkPos.add(x + 3, y, z));
+					spiderEggGen.generate(world, rand, this.chunkPos.add(x - 3, y, z));
+					spiderEggGen.generate(world, rand, this.chunkPos.add(x, y, z + 3));
+					spiderEggGen.generate(world, rand, this.chunkPos.add(x - 3, y, z + 3));
+					spiderEggGen.generate(world, rand, this.chunkPos.add(x + 3, y, z - 3));
+				}
+			}
+		}
+		
+		if (this.generateCraters) {
+			ChunkProviderCaligro.INSTANCE.createCraters(x, z, chunkPrimer);
+		}
 	}
 }

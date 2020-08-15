@@ -5,7 +5,7 @@
  * but do not claim it as your own, and
  * do not redistribute it.
  */
-package zollerngalaxy.blocks.corrupted;
+package zollerngalaxy.blocks.caligro.corrupted;
 
 public interface ICorruptBlock {
 	

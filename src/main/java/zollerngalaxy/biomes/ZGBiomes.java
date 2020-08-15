@@ -34,6 +34,8 @@ import zollerngalaxy.biomes.altum.BiomeRockyShore;
 import zollerngalaxy.biomes.altum.BiomeSanctumBeach;
 import zollerngalaxy.biomes.atheon.BiomeGoldlands;
 import zollerngalaxy.biomes.atheon.BiomeRadiolarianLakes;
+import zollerngalaxy.biomes.caligro.BiomeCaligroCreeplands;
+import zollerngalaxy.biomes.caligro.BiomeCaligroRockyVeins;
 import zollerngalaxy.biomes.caligro.BiomeCaligroUpsideDown;
 import zollerngalaxy.biomes.candora.BiomeBlueberryHills;
 import zollerngalaxy.biomes.candora.BiomeCandyMountain;
@@ -139,6 +141,8 @@ public class ZGBiomes {
 	
 	// Caligro
 	public static final Biome CALIGRO_UPSIDE_DOWN = new BiomeCaligroUpsideDown(new BiomeProperties("Upside Down"));
+	public static final Biome CALIGRO_CREEPLANDS = new BiomeCaligroCreeplands(new BiomeProperties("Creeplands"));
+	public static final Biome CALIGRO_ROCKY_VEINS = new BiomeCaligroRockyVeins(new BiomeProperties("Rocky Veins"));
 	
 	public static void init() {
 		// Zollus
@@ -202,8 +206,10 @@ public class ZGBiomes {
 		ZGBiomes.addBiome(ZGBiomes.ALTUM_OCEAN, WET, OCEAN);
 		ZGBiomes.addBiome(ZGBiomes.ALTUM_ROCKY_SHORE, LUSH, WET, MOUNTAIN);
 		
-		// Caligr
-		ZGBiomes.addBiome(ZGBiomes.CALIGRO_UPSIDE_DOWN, MOUNTAIN, SPOOKY, COLD, DEAD);
+		// Caligro
+		ZGBiomes.addBiome(ZGBiomes.CALIGRO_UPSIDE_DOWN, PLAINS, SPOOKY, COLD, DEAD);
+		ZGBiomes.addBiome(ZGBiomes.CALIGRO_CREEPLANDS, WASTELAND, SPOOKY, COLD, DEAD);
+		ZGBiomes.addBiome(ZGBiomes.CALIGRO_ROCKY_VEINS, MOUNTAIN, SPOOKY, COLD, DEAD);
 		
 		ZGHelper.Log("Loaded a total of " + totalBiomes + " new biomes.");
 	}

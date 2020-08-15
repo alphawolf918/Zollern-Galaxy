@@ -25,7 +25,9 @@ import zollerngalaxy.mobs.entities.EntityMoolus;
 import zollerngalaxy.mobs.entities.EntityMummy;
 import zollerngalaxy.mobs.entities.EntityOinkus;
 import zollerngalaxy.mobs.entities.EntityScorpion;
+import zollerngalaxy.mobs.entities.EntityShadowSkeleton;
 import zollerngalaxy.mobs.entities.EntityShark;
+import zollerngalaxy.mobs.entities.EntitySpiderling;
 import zollerngalaxy.mobs.entities.EntitySquidlus;
 import zollerngalaxy.mobs.entities.EntityWasp;
 import zollerngalaxy.mobs.renders.RenderAbyssalVillager;
@@ -43,7 +45,9 @@ import zollerngalaxy.mobs.renders.RenderMoolus;
 import zollerngalaxy.mobs.renders.RenderMummy;
 import zollerngalaxy.mobs.renders.RenderOinkus;
 import zollerngalaxy.mobs.renders.RenderScorpion;
+import zollerngalaxy.mobs.renders.RenderShadowSkeleton;
 import zollerngalaxy.mobs.renders.RenderShark;
+import zollerngalaxy.mobs.renders.RenderSpiderling;
 import zollerngalaxy.mobs.renders.RenderSquidlus;
 import zollerngalaxy.mobs.renders.RenderWasp;
 
@@ -68,6 +72,8 @@ public final class MobRenders {
 		RenderMob(EntityAbyssalVillager.class, RenderAbyssalVillager::new);
 		RenderMob(EntityWasp.class, RenderWasp::new);
 		RenderMob(EntityKrull.class, RenderKrull::new);
+		RenderMob(EntitySpiderling.class, RenderSpiderling::new);
+		RenderMob(EntityShadowSkeleton.class, RenderShadowSkeleton::new);
 	}
 	
 	/**

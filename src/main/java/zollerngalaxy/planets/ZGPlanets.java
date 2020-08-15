@@ -530,7 +530,7 @@ public class ZGPlanets {
 				EnumAtmosphericGas.ARGON, EnumAtmosphericGas.METHANE, EnumAtmosphericGas.HYDROGEN);
 		planetCaligro.setPlanetIcon("caligro");
 		planetCaligro.setAtmosphere();
-		planetCaligro.setBiomeInfo(ZGBiomes.CALIGRO_UPSIDE_DOWN);
+		planetCaligro.setBiomeInfo(ZGBiomes.CALIGRO_UPSIDE_DOWN, ZGBiomes.CALIGRO_CREEPLANDS, ZGBiomes.CALIGRO_ROCKY_VEINS);
 		totalPlanets++;
 		
 		ZGHelper.Log("Loaded a total of " + totalPlanets + " new planets.");

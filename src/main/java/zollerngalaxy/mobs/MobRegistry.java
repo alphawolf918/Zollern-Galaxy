@@ -30,7 +30,9 @@ import zollerngalaxy.mobs.entities.EntityMoolus;
 import zollerngalaxy.mobs.entities.EntityMummy;
 import zollerngalaxy.mobs.entities.EntityOinkus;
 import zollerngalaxy.mobs.entities.EntityScorpion;
+import zollerngalaxy.mobs.entities.EntityShadowSkeleton;
 import zollerngalaxy.mobs.entities.EntityShark;
+import zollerngalaxy.mobs.entities.EntitySpiderling;
 import zollerngalaxy.mobs.entities.EntitySquidlus;
 import zollerngalaxy.mobs.entities.EntityWasp;
 import com.google.common.base.CaseFormat;
@@ -77,8 +79,14 @@ public class MobRegistry {
 		// Scorpion
 		registerEntity("scorpion", EntityScorpion.class, entityId++, 0xf5eeb3, 0x8b9900);
 		
+		// Spiderling
+		registerEntity("spiderling", EntitySpiderling.class, entityId++, 0x000000, 0xff8b00);
+		
 		// Krull
 		registerEntity("krull", EntityKrull.class, entityId++, 0xf5eeb3, 0x444444);
+		
+		// Shadow Skeleton
+		registerEntity("shadowskeleton", EntityShadowSkeleton.class, entityId++, 0xeeeeee, 0x00009e);
 		
 		// Blubber Fish
 		registerEntity("blubberfish", EntityBlubberFish.class, entityId++, 0xffff00, 0x0099ff);

@@ -43,7 +43,7 @@ public class ChunkProviderCaligro extends ChunkProviderBase {
 	
 	public static final double CHUNK_HEIGHT = 40.5D;
 	public static final int SEA_LEVEL = 57;
-	public static final int CORRUPTION_LAYER = 21;
+	public static final int CORRUPTION_LAYER = 25;
 	
 	private static final int CHUNK_SIZE_X = 16;
 	private static final int CHUNK_SIZE_Z = 16;
@@ -64,8 +64,8 @@ public class ChunkProviderCaligro extends ChunkProviderBase {
 	private final float[] parabolicField;
 	private double[] stoneNoise = new double[256];
 	private MapGenCavesZG caveGenerator = new MapGenCavesZG(ZGBlocks.caligroStone, ZGFluids.blockChargiumFluid);
-	private MapGenCavesZG caveGenerator2 = new MapGenCavesZG(ZGBlocks.caligroStone);
-	private MapGenCavesZG caveGenerator3 = new MapGenCavesZG(ZGBlocks.corruptStone);
+	private MapGenCavesZG caveGenerator2 = new MapGenCavesZG(ZGBlocks.caligroStone, ZGFluids.blockChargiumFluid);
+	private MapGenCavesZG caveGenerator3 = new MapGenCavesZG(ZGBlocks.corruptStone, ZGFluids.blockChargiumFluid);
 	private final MapGenRavinesZG ravineGenerator = new MapGenRavinesZG(ZGBlocks.caligroStone);
 	private final MapGenRavinesZG ravineGenerator2 = new MapGenRavinesZG(ZGBlocks.corruptStone);
 	// private final MapGenVillageMoon villageGenerator = new MapGenVillageMoon();
@@ -77,6 +77,8 @@ public class ChunkProviderCaligro extends ChunkProviderBase {
 	private double[] octaves4;
 	
 	private static final int CRATER_PROB = 200;
+	
+	public static ChunkProviderCaligro INSTANCE;
 	
 	public ChunkProviderCaligro(World worldIn, long seed, boolean mapFeaturesEnabled) {
 		this.world = worldIn;
@@ -108,6 +110,7 @@ public class ChunkProviderCaligro extends ChunkProviderBase {
 		this.noiseGen5 = (NoiseGeneratorOctaves) noiseGens[4];
 		this.noiseGen6 = (NoiseGeneratorOctaves) noiseGens[5];
 		this.mobSpawnerNoise = (NoiseGeneratorOctaves) noiseGens[6];
+		INSTANCE = this;
 	}
 	
 	private void setBlocksInChunk(int chunkX, int chunkZ, ChunkPrimer primer) {

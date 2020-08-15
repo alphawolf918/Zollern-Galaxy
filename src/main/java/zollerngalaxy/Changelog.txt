@@ -6,9 +6,28 @@ Zollern Galaxy v2.0.16
     - Planet is heavily inspired by the Netflix web series, Stranger Things.
     - This dimension was first featured in Zollern Extras before being ported over as a planet.
     - Extremely dangerous planet with loads of resources and Dark Agent mobs.
+    - This is the first planet to not feature any Villages.
 * Increased hitbox of Moolus mob.
 * Added the Krull mob.
-    - Infects Players within a 3-block radius, who can then infect other Players.
+    - Infects Players within a 3 to 5 block radius, who can then infect other Players.
+        - Those Players can then infect others within that same radius, etc.
+        - The infection will rapidly kill the Player.
     - Inspired by the Demogorgon.
     - Model made by DabbingEevee.
+* Added the poisonous Spiderling mob.
+    - Hatches from egg sacs that are deposted in nests on planet Caligro.
+    - Will occasionally place cobwebs where it walks and can lay more eggs.
+        - Sometimes laying more eggs will actually kill the spider.
+        - When the egg proceeds closer to hatching, a heartbeat sound will play.
+* Added the Shadow Skeleton mob.
+    - Similar to a regular Skeleton, but a Dark Agent version that's been corrupted.
+    - Drops Shadow Bones.
+    - Has more health, speed and attack power than a regular Skeleton and is bigger.
+* Added the Corruption Layer to cave systems in Caligro.
+    - Will damage the Player without proper protection.
+    - Special ores can be found here.
+    - Spawns at layers 25 and below.
+* Removed "hurt2" from Wasp sound events as it doesn't exist.
+* Spiderling nests spawn throughout Caligro - be wary.
+* Increased temperature of Eden slightly to give it a more warm feel.
 * 

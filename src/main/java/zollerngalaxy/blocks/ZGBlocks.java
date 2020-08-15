@@ -16,10 +16,11 @@ import net.minecraft.init.Items;
 import net.minecraft.init.MobEffects;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import zollerngalaxy.biomes.xathius.ZGBlockGrassXath;
-import zollerngalaxy.blocks.corrupted.ZGBlockOreCorrupted;
-import zollerngalaxy.blocks.corrupted.ZGCorruptBlock;
-import zollerngalaxy.blocks.corrupted.ZGOreGemCorrupted;
-import zollerngalaxy.blocks.corrupted.ZGPlanetStoneCorrupted;
+import zollerngalaxy.blocks.caligro.BlockSpiderEgg;
+import zollerngalaxy.blocks.caligro.corrupted.ZGBlockOreCorrupted;
+import zollerngalaxy.blocks.caligro.corrupted.ZGCorruptBlock;
+import zollerngalaxy.blocks.caligro.corrupted.ZGOreGemCorrupted;
+import zollerngalaxy.blocks.caligro.corrupted.ZGPlanetStoneCorrupted;
 import zollerngalaxy.blocks.eden.EdenFlower;
 import zollerngalaxy.blocks.eden.EdenFruit;
 import zollerngalaxy.blocks.eden.ZGBlockGrassEden;
@@ -402,8 +403,10 @@ public class ZGBlocks {
 			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
 	public static final Block caligroStoneBricks = new ZGBlockBase("caligrostonebricks");
 	public static final Block caligroGravel = new ZGGravel("caligrogravel");
-	public static final Block caligroCreepstone = new ZGBlockBase("creepstone");
-	public static final Block caligroCreepdirt = new ZGBlockDirt("creepdirt");
+	public static final Block caligroCreepstone = ((ZGBlockBase) new ZGPlanetStone("creepstone").setBlockHarvestLevel(
+			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel())).setShouldExplode(true, 20);
+	public static final Block caligroCreepdirt = new ZGBlockDirt("creepdirt").setBlockHarvestLevel(
+			EnumHarvestToolZG.SHOVEL.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());;
 	public static final Block caligroShiniumOre = new ZGBlockOre("caligroshiniumore", 5.6F).setBlockHarvestLevel(
 			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
 	public static final Block caligroSilverOre = new ZGBlockOre("caligrosilverore", 4.5F).setBlockHarvestLevel(
@@ -452,7 +455,7 @@ public class ZGBlocks {
 			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
 	public static final Block caligroRubyOre = new ZGOreGem("caligrorubyore", 2.5F, ZGItems.ruby).setBlockHarvestLevel(
 			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
-	// TODO
+	public static final Block spiderlingEgg = new BlockSpiderEgg();
 	
 	// Caligro (Corruption)
 	public static final Block corruptRock = new ZGCorruptBlock("corruptrock");
@@ -466,7 +469,6 @@ public class ZGBlocks {
 	public static final Block corruptChargiumOre = new ZGBlockOreCorrupted("corruptchargiumore", 7.6F).setBlockHarvestLevel(
 			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
 	public static final Block corruptCreepstone = new ZGCorruptBlock("corruptcreepstone");
-	// TODO
 	
 	// Exodus
 	// TODO
@@ -590,8 +592,9 @@ public class ZGBlocks {
 				caligroSilverOre, caligroNickelOre, caligroLeadOre, caligroTinOre, caligroCopperOre, caligroIronOre, caligroGoldOre,
 				caligroRedstoneOre, caligroAmaranthOre, caligroZincOre, caligroAmberOre, caligroTopazOre, caligroOpalOre,
 				caligroAquamarineOre, caligroGarnetOre, caligroSuperChargedCoalOre, caligroFueltoniumOre, caligroDiamondOre,
-				caligroEmeraldOre, caligroRadiumOre, caligroLapisOre, caligroZollerniumOre, caligroRubyOre, corruptRock, corruptCobble,
-				corruptStone, corruptStoneBricks, corruptAscendiumOre, corruptEtriumOre, corruptChargiumOre, corruptCreepstone);
+				caligroEmeraldOre, caligroRadiumOre, caligroLapisOre, caligroZollerniumOre, caligroRubyOre, spiderlingEgg, corruptRock,
+				corruptCobble, corruptStone, corruptStoneBricks, corruptAscendiumOre, corruptEtriumOre, corruptChargiumOre,
+				corruptCreepstone);
 		ZGHelper.Log("Loaded a total of " + totalBlocks + " new blocks.");
 	}
 	

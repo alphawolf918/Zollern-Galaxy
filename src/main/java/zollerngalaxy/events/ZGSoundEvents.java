@@ -45,11 +45,14 @@ public class ZGSoundEvents {
 	public static final SoundEvent MATERIAL_XENO_DIG = regSound("dig.xeno");
 	public static final SoundEvent MATERIAL_XENO_STEP = regSound("step.xeno");
 	
+	// Spiderling Heartbeat
+	public static final SoundEvent SPIDERLING_EGG_HEARTBEAT = regSound("mob.spiderling.heartbeat");
+	
 	public static void init() {
 		registerSounds(ENTITY_ALIEN_AMBIENT, ENTITY_ALIEN_HURT, ENTITY_MUMMY_AMBIENT, ENTITY_MUMMY_HURT, ENTITY_MUMMY_DEATH,
 				ENTITY_GALAXY_KNIGHT_SAY, ENTITY_GALAXY_KNIGHT_DEATH, ENTITY_CRAWLER_SAY, ENTITY_CRAWLER_HURT, ENTITY_WASP_SAY,
 				ENTITY_WASP_HURT, ENTITY_WASP_DEATH, ENTITY_KRULL_AMBIENT, ENTITY_KRULL_HURT, ENTITY_KRULL_DEATH, MATERIAL_XENO_DIG,
-				MATERIAL_XENO_STEP);
+				MATERIAL_XENO_STEP, SPIDERLING_EGG_HEARTBEAT);
 	}
 	
 	private static void registerSound(SoundEvent sound) {
