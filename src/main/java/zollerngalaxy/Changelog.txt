@@ -10,4 +10,5 @@ Zollern Galaxy v2.0.16
 * Added the Krull mob.
     - Infects Players within a 3-block radius, who can then infect other Players.
     - Inspired by the Demogorgon.
+    - Model made by DabbingEevee.
 * 

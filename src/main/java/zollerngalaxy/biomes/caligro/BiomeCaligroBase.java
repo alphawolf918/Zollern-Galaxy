@@ -35,6 +35,7 @@ import zollerngalaxy.planets.ZGPlanets;
 public class BiomeCaligroBase extends BiomeSpace {
 	
 	protected static final IBlockState STONE = ZGBlocks.caligroStone.getDefaultState();
+	protected static final IBlockState CORRUPTED_STONE = ZGBlocks.corruptStone.getDefaultState();
 	protected static final IBlockState AIR = Blocks.AIR.getDefaultState();
 	protected static final IBlockState BEDROCK = Blocks.BEDROCK.getDefaultState();
 	protected static final IBlockState GRAVEL = ZGBlocks.caligroGravel.getDefaultState();
@@ -43,6 +44,7 @@ public class BiomeCaligroBase extends BiomeSpace {
 	
 	protected static final int SEA_LEVEL = ChunkProviderCaligro.SEA_LEVEL;
 	protected static final int SEA_FLOOR_LEVEL = 42;
+	protected static final int CORRUPTION_LAYER = ChunkProviderCaligro.CORRUPTION_LAYER;
 	
 	public BiomeCaligroBase(String singleName, BiomeProperties props) {
 		super(singleName, props);
@@ -94,11 +96,11 @@ public class BiomeCaligroBase extends BiomeSpace {
 				} else {
 					if (iblockstate2.getMaterial() == Material.AIR) {
 						j = -1;
-					} else if (iblockstate2.getBlock() == ZGBlocks.caligroStone) {
+					} else if (iblockstate2.getBlock() == ZGBlocks.caligroStone || iblockstate2.getBlock() == ZGBlocks.corruptStone) {
 						if (j == -1) {
 							if (k <= 0) {
 								topState = AIR;
-								fillState = STONE;
+								fillState = (j1 > CORRUPTION_LAYER) ? STONE : CORRUPTED_STONE;
 							} else if (j1 >= i - 4 && j1 <= i + 1) {
 								topState = this.topBlock;
 								fillState = this.fillerBlock;
@@ -114,7 +116,7 @@ public class BiomeCaligroBase extends BiomeSpace {
 								chunkPrimerIn.setBlockState(i1, j1, l, topState);
 							} else if (j1 < i - 7 - k) {
 								topState = AIR;
-								fillState = STONE;
+								fillState = (j1 > CORRUPTION_LAYER) ? STONE : CORRUPTED_STONE;
 								chunkPrimerIn.setBlockState(i1, j1, l, GRAVEL);
 							} else {
 								chunkPrimerIn.setBlockState(i1, j1, l, fillState);

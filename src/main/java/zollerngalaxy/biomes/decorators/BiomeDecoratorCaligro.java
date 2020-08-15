@@ -43,6 +43,11 @@ public class BiomeDecoratorCaligro extends BiomeDecoratorZG {
 	private WorldGenerator amaranthGen;
 	private WorldGenerator zollerniumGen;
 	
+	// Corruption Layer
+	private WorldGenerator corruptAscendiumGen;
+	private WorldGenerator corruptEtriumGen;
+	private WorldGenerator corruptChargiumGen;
+	
 	public BiomeDecoratorCaligro() {
 		this.dirtGen = new WorldGenMinableZG(ZGBlocks.caligroDirt, ZGBlocks.caligroSurfaceRock, EnumOreGenZG.DIRT);
 		this.tinGen = new WorldGenMinableZG(ZGBlocks.caligroTinOre, ZGBlocks.caligroStone, EnumOreGenZG.TIN);
@@ -70,6 +75,9 @@ public class BiomeDecoratorCaligro extends BiomeDecoratorZG {
 		this.zincGen = new WorldGenMinableZG(ZGBlocks.caligroZincOre, ZGBlocks.caligroStone, EnumOreGenZG.ZINC);
 		this.amaranthGen = new WorldGenMinableZG(ZGBlocks.caligroAmaranthOre, ZGBlocks.caligroStone, EnumOreGenZG.AMARANTH);
 		this.zollerniumGen = new WorldGenMinableZG(ZGBlocks.caligroZollerniumOre, ZGBlocks.caligroStone, EnumOreGenZG.ZOLLERNIUM);
+		this.corruptAscendiumGen = new WorldGenMinableZG(ZGBlocks.corruptAscendiumOre, ZGBlocks.corruptStone, EnumOreGenZG.POWER_GEM);
+		this.corruptEtriumGen = new WorldGenMinableZG(ZGBlocks.corruptEtriumOre, ZGBlocks.corruptStone, EnumOreGenZG.POWER_GEM);
+		this.corruptChargiumGen = new WorldGenMinableZG(ZGBlocks.corruptChargiumOre, ZGBlocks.corruptStone, EnumOreGenZG.ZOLLERNIUM);
 	}
 	
 	@Override
@@ -101,5 +109,8 @@ public class BiomeDecoratorCaligro extends BiomeDecoratorZG {
 		this.generateOre(this.zincGen, EnumOreGenZG.ZINC, world, rand);
 		this.generateOre(this.amaranthGen, EnumOreGenZG.AMARANTH, world, rand);
 		this.generateOre(this.zollerniumGen, EnumOreGenZG.ZOLLERNIUM, world, rand);
+		this.generateOre(this.corruptAscendiumGen, EnumOreGenZG.POWER_GEM, world, rand);
+		this.generateOre(this.corruptEtriumGen, EnumOreGenZG.POWER_GEM, world, rand);
+		this.generateOre(this.corruptChargiumGen, EnumOreGenZG.ZOLLERNIUM, world, rand);
 	}
 }

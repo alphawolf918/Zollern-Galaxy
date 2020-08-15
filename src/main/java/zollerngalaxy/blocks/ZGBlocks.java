@@ -16,6 +16,10 @@ import net.minecraft.init.Items;
 import net.minecraft.init.MobEffects;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import zollerngalaxy.biomes.xathius.ZGBlockGrassXath;
+import zollerngalaxy.blocks.corrupted.ZGBlockOreCorrupted;
+import zollerngalaxy.blocks.corrupted.ZGCorruptBlock;
+import zollerngalaxy.blocks.corrupted.ZGOreGemCorrupted;
+import zollerngalaxy.blocks.corrupted.ZGPlanetStoneCorrupted;
 import zollerngalaxy.blocks.eden.EdenFlower;
 import zollerngalaxy.blocks.eden.EdenFruit;
 import zollerngalaxy.blocks.eden.ZGBlockGrassEden;
@@ -450,8 +454,18 @@ public class ZGBlocks {
 			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
 	// TODO
 	
-	// Corruption
+	// Caligro (Corruption)
 	public static final Block corruptRock = new ZGCorruptBlock("corruptrock");
+	public static final Block corruptCobble = new ZGCorruptBlock("corruptcobble").setBlockType(EnumBlockType.COBBLESTONE);
+	public static final Block corruptStone = new ZGPlanetStoneCorrupted("corruptstone", corruptCobble);
+	public static final Block corruptStoneBricks = new ZGCorruptBlock("corruptstonebricks");
+	public static final Block corruptAscendiumOre = new ZGOreGemCorrupted("corruptascendiumore", 7.5F, ZGItems.perdEtrium)
+			.setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
+	public static final Block corruptEtriumOre = new ZGOreGemCorrupted("corruptetriumore", 7.5F, ZGItems.ascendium).setBlockHarvestLevel(
+			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
+	public static final Block corruptChargiumOre = new ZGBlockOreCorrupted("corruptchargiumore", 7.6F).setBlockHarvestLevel(
+			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
+	public static final Block corruptCreepstone = new ZGCorruptBlock("corruptcreepstone");
 	// TODO
 	
 	// Exodus
@@ -576,7 +590,8 @@ public class ZGBlocks {
 				caligroSilverOre, caligroNickelOre, caligroLeadOre, caligroTinOre, caligroCopperOre, caligroIronOre, caligroGoldOre,
 				caligroRedstoneOre, caligroAmaranthOre, caligroZincOre, caligroAmberOre, caligroTopazOre, caligroOpalOre,
 				caligroAquamarineOre, caligroGarnetOre, caligroSuperChargedCoalOre, caligroFueltoniumOre, caligroDiamondOre,
-				caligroEmeraldOre, caligroRadiumOre, caligroLapisOre, caligroZollerniumOre, caligroRubyOre, corruptRock);
+				caligroEmeraldOre, caligroRadiumOre, caligroLapisOre, caligroZollerniumOre, caligroRubyOre, corruptRock, corruptCobble,
+				corruptStone, corruptStoneBricks, corruptAscendiumOre, corruptEtriumOre, corruptChargiumOre, corruptCreepstone);
 		ZGHelper.Log("Loaded a total of " + totalBlocks + " new blocks.");
 	}
 	

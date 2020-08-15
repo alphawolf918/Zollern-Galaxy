@@ -158,8 +158,7 @@
    "mob.wasp.hurt":{
       "category":"master",
       "sounds":[
-         "zollerngalaxy:mob/wasp/hurt1",
-         "zollerngalaxy:mob/wasp/hurt2"
+         "zollerngalaxy:mob/wasp/hurt1"
       ]
    },
    "mob.wasp.die":{

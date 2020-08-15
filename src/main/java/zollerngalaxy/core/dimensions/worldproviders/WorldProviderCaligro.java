@@ -18,6 +18,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.DimensionType;
 import net.minecraft.world.biome.BiomeProvider;
+import net.minecraft.world.border.WorldBorder;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.gen.IChunkGenerator;
 import net.minecraftforge.fml.relauncher.Side;
@@ -165,8 +166,43 @@ public class WorldProviderCaligro extends WorldProviderZG {
 	}
 	
 	@Override
+	public double getMovementFactor() {
+		return 16.0D;
+	}
+	
+	@Override
 	public CelestialBody getCelestialBody() {
 		return ZGPlanets.planetCaligro;
+	}
+	
+	@Override
+	public float calculateCelestialAngle(long par1, float par3) {
+		return 0.5F;
+	}
+	
+	@Override
+	public WorldBorder createWorldBorder() {
+		return new WorldBorder() {
+			@Override
+			public double getCenterX() {
+				return super.getCenterX() / 8.0D;
+			}
+			
+			@Override
+			public double getCenterZ() {
+				return super.getCenterZ() / 8.0D;
+			}
+		};
+	}
+	
+	@Override
+	protected void generateLightBrightnessTable() {
+		float f = 0.1F;
+		
+		for (int i = 0; i <= 15; ++i) {
+			float f1 = 1.0F - i / 15.0F;
+			this.lightBrightnessTable[i] = (1.0F - f1) / (f1 * 3.0F + 1.0F) * 0.9F + 0.1F;
+		}
 	}
 	
 	@Override

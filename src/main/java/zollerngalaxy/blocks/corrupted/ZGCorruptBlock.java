@@ -5,7 +5,9 @@
  * but do not claim it as your own, and
  * do not redistribute it.
  */
-package zollerngalaxy.blocks;
+package zollerngalaxy.blocks.corrupted;
+
+import zollerngalaxy.blocks.ZGBlockBase;
 
 public class ZGCorruptBlock extends ZGBlockBase implements ICorruptBlock {
 	

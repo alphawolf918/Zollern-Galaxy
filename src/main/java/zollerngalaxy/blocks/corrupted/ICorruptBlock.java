@@ -5,12 +5,11 @@
  * but do not claim it as your own, and
  * do not redistribute it.
  */
-package zollerngalaxy.blocks;
+package zollerngalaxy.blocks.corrupted;
 
 public interface ICorruptBlock {
 	
 	public default boolean canCorrupt() {
 		return true;
 	};
-	
 }

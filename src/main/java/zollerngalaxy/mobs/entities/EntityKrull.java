@@ -20,7 +20,7 @@ public class EntityKrull extends EntityMob implements IShadeEntity {
 	
 	public EntityKrull(World worldIn) {
 		super(worldIn);
-		this.setSize(this.width * 0.5f, this.height * 0.5f);
+		this.setSize(this.width * 1.5f, this.height * 1.5f);
 		this.setCanPickUpLoot(true);
 	}
 	
@@ -32,8 +32,9 @@ public class EntityKrull extends EntityMob implements IShadeEntity {
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
 		AxisAlignedBB boundingBox = this.getEntityBoundingBox();
+		AxisAlignedBB expandedBox = boundingBox.expand(5.0D, 2.0D, 5.0D);
 		World worldObj = this.getEntityWorld();
-		List<? extends Entity> playerList = worldObj.<Entity> getEntitiesWithinAABB(EntityPlayer.class, boundingBox.expand(3D, 3D, 3D));
+		List<? extends Entity> playerList = worldObj.<Entity> getEntitiesWithinAABB(EntityPlayer.class, expandedBox);
 		Object[] players = playerList.toArray();
 		for (Object o : players) {
 			EntityPlayer currentPlayer = (EntityPlayer) o;

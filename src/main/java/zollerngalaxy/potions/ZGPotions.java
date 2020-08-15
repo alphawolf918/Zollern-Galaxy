@@ -47,7 +47,7 @@ public class ZGPotions extends Potion {
 	public static final float shadowDamage = 5.0f;
 	
 	// Infection variables.
-	public static final int infectionTime = 200;
+	public static final int infectionTime = 400;
 	public static final float infectionDamage = 2.0F;
 	
 	// Anti-Corruption variables.

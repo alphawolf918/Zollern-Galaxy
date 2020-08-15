@@ -584,6 +584,8 @@ entity.zollerngalaxy:abyssalvillager.name=Abyssal Villager
 entity.zollerngalaxy:shark.name=Shark
 entity.zollerngalaxy:jellyfish.name=Jellyfish
 entity.zollerngalaxy:wasp.name=Wasp
+entity.zollerngalaxy:krull.name=Krull
+entity.zollerngalaxy:shadowskeleton.name=Shadow Skeleton
 
 tooltips.hud=Shows all planetary and biome data.
 tooltips.hud2=Only works when held.

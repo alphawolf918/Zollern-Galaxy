@@ -32,17 +32,18 @@ import net.minecraft.world.gen.structure.MapGenMineshaft;
 import zollerngalaxy.biomes.decorators.BiomeDecoratorCaligro;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.blocks.fluids.ZGFluids;
-import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.worldgen.mapgen.MapGenCavesZG;
 import zollerngalaxy.worldgen.mapgen.MapGenRavinesZG;
 
 public class ChunkProviderCaligro extends ChunkProviderBase {
 	
 	public static final IBlockState STONE = ZGBlocks.caligroStone.getDefaultState();
+	public static final IBlockState CORRUPT_STONE = ZGBlocks.corruptStone.getDefaultState();
 	public static final IBlockState CHARGIUM = ZGFluids.blockChargiumFluid.getDefaultState();
 	
 	public static final double CHUNK_HEIGHT = 40.5D;
 	public static final int SEA_LEVEL = 57;
+	public static final int CORRUPTION_LAYER = 21;
 	
 	private static final int CHUNK_SIZE_X = 16;
 	private static final int CHUNK_SIZE_Z = 16;
@@ -64,7 +65,9 @@ public class ChunkProviderCaligro extends ChunkProviderBase {
 	private double[] stoneNoise = new double[256];
 	private MapGenCavesZG caveGenerator = new MapGenCavesZG(ZGBlocks.caligroStone, ZGFluids.blockChargiumFluid);
 	private MapGenCavesZG caveGenerator2 = new MapGenCavesZG(ZGBlocks.caligroStone);
+	private MapGenCavesZG caveGenerator3 = new MapGenCavesZG(ZGBlocks.corruptStone);
 	private final MapGenRavinesZG ravineGenerator = new MapGenRavinesZG(ZGBlocks.caligroStone);
+	private final MapGenRavinesZG ravineGenerator2 = new MapGenRavinesZG(ZGBlocks.corruptStone);
 	// private final MapGenVillageMoon villageGenerator = new MapGenVillageMoon();
 	private MapGenMineshaft mineshaftGenerator = new MapGenMineshaft();
 	private Biome[] biomesForGeneration;
@@ -151,19 +154,18 @@ public class ChunkProviderCaligro extends ChunkProviderBase {
 								int y = i2 * 8 + j2;
 								int z = l * 4 + l2;
 								
-								if (y <= 127 && y > (SEA_LEVEL + 10)) {
-									IBlockState topper = ZGBlocks.caligroCobblestone.getDefaultState();
-									if (ZGHelper.getRNGChance(8, 10)) {
-										primer.setBlockState(x, y, z, topper);
-									}
-								}
+								float noiseVal = this.noiseGenSmooth1.getNoise(chunkX * 16 + x, chunkZ * 16 + z);
 								
-								if ((lvt_45_1_ += d16) > this.noiseGenSmooth1.getNoise(chunkX * 16 + x, chunkZ * 16 + z) * CHUNK_HEIGHT) {
+								if ((lvt_45_1_ += d16) > noiseVal * CHUNK_HEIGHT) {
 									primer.setBlockState(x, y, z, STONE);
 								} else if (y < SEA_LEVEL) {
 									Biome biome = world.getBiome(new BlockPos(x, y, z));
 									IBlockState blockToUse = CHARGIUM;
 									primer.setBlockState(x, y, z, blockToUse);
+								}
+								
+								if (y <= CORRUPTION_LAYER && y > 0) {
+									primer.setBlockState(x, y, z, CORRUPT_STONE);
 								}
 							}
 							
@@ -205,7 +207,9 @@ public class ChunkProviderCaligro extends ChunkProviderBase {
 		
 		this.caveGenerator.generate(this.world, x, z, chunkprimer);
 		this.caveGenerator2.generate(this.world, x, z, chunkprimer);
+		this.caveGenerator3.generate(this.world, x, z, chunkprimer);
 		this.ravineGenerator.generate(this.world, x, z, chunkprimer);
+		this.ravineGenerator2.generate(this.world, x, z, chunkprimer);
 		// this.villageGenerator.generate(this.world, x, z, chunkprimer);
 		this.mineshaftGenerator.generate(this.world, x, z, chunkprimer);
 		
