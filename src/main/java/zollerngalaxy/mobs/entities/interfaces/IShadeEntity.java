@@ -22,6 +22,6 @@ public interface IShadeEntity {
 	
 	public default boolean shouldDropEssence() {
 		return true;
-	}
+	};
 	
 }

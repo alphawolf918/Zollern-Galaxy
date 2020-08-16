@@ -15,12 +15,15 @@ import net.minecraft.client.renderer.entity.layers.LayerHeldItem;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import org.lwjgl.opengl.GL11;
 import zollerngalaxy.lib.ZGInfo;
 import zollerngalaxy.mobs.entities.EntityShadowSkeleton;
 import zollerngalaxy.mobs.models.ModelShadowSkeleton;
 
 @SideOnly(Side.CLIENT)
 public class RenderShadowSkeleton extends RenderBiped<EntityShadowSkeleton> {
+	
+	private static final float f6 = 1.4F;
 	
 	private static final ResourceLocation SKELETON_TEXTURE = new ResourceLocation(ZGInfo.MOD_ID + ":textures/entity/shadowskeleton.png");
 	
@@ -34,6 +37,15 @@ public class RenderShadowSkeleton extends RenderBiped<EntityShadowSkeleton> {
 				this.modelArmor = new ModelShadowSkeleton(1.0F, true);
 			}
 		});
+	}
+	
+	@Override
+	protected void preRenderCallback(EntityShadowSkeleton entitylivingbaseIn, float partialTickTime) {
+		this.scaleShadowSkeleton(entitylivingbaseIn, partialTickTime);
+	}
+	
+	protected void scaleShadowSkeleton(EntityShadowSkeleton par1EntityShadowSkeleton, float par2) {
+		GL11.glScalef(f6, f6, f6);
 	}
 	
 	@Override

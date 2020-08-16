@@ -588,6 +588,8 @@ entity.zollerngalaxy:jellyfish.name=Jellyfish
 entity.zollerngalaxy:wasp.name=Wasp
 entity.zollerngalaxy:krull.name=Krull
 entity.zollerngalaxy:shadowskeleton.name=Shadow Skeleton
+entity.zollerngalaxy:shade.name=Shade
+entity.zollerngalaxy:shadowalien.name=Shadow of Darkness Boss
 
 tooltips.hud=Shows all planetary and biome data.
 tooltips.hud2=Only works when held.
@@ -610,6 +612,7 @@ tooltips.bedrockbreaker4=Amaranth Ingots; only charges
 tooltips.bedrockbreaker5=when it's used up.
 tooltips.protocolnotfunctional=Hmm. This Protocol isn't functional yet. Maybe it'll work in the future.
 tooltips.unknownprotocol=Unknown Protocol detected; unable to transfer biological entity.
+tooltips.shadowbossbeaten=The Beast has fallen!!
 
 planet.zollus=Zollus
 planet.eden=Eden

@@ -41,6 +41,16 @@ public class ZGSoundEvents {
 	public static final SoundEvent ENTITY_KRULL_HURT = regSound("mob.krull.hurt");
 	public static final SoundEvent ENTITY_KRULL_DEATH = regSound("mob.krull.die");
 	
+	// Shade
+	public static final SoundEvent ENTITY_SHADE_SAY = regSound("mob.shade.say");
+	public static final SoundEvent ENTITY_SHADE_HURT = regSound("mob.shade.hurt");
+	public static final SoundEvent ENTITY_SHADE_DEATH = regSound("mob.shade.die");
+	
+	// Shadow Alien
+	public static final SoundEvent ENTITY_SHADOW_ALIEN_SAY = regSound("mob.shadowalien.say");
+	public static final SoundEvent ENTITY_SHADOW_ALIEN_HURT = regSound("mob.shadowalien.hurt");
+	public static final SoundEvent ENTITY_SHADOW_ALIEN_DEATH = regSound("mob.shadowalien.death");
+	
 	// Xeno Material
 	public static final SoundEvent MATERIAL_XENO_DIG = regSound("dig.xeno");
 	public static final SoundEvent MATERIAL_XENO_STEP = regSound("step.xeno");
@@ -51,8 +61,9 @@ public class ZGSoundEvents {
 	public static void init() {
 		registerSounds(ENTITY_ALIEN_AMBIENT, ENTITY_ALIEN_HURT, ENTITY_MUMMY_AMBIENT, ENTITY_MUMMY_HURT, ENTITY_MUMMY_DEATH,
 				ENTITY_GALAXY_KNIGHT_SAY, ENTITY_GALAXY_KNIGHT_DEATH, ENTITY_CRAWLER_SAY, ENTITY_CRAWLER_HURT, ENTITY_WASP_SAY,
-				ENTITY_WASP_HURT, ENTITY_WASP_DEATH, ENTITY_KRULL_AMBIENT, ENTITY_KRULL_HURT, ENTITY_KRULL_DEATH, MATERIAL_XENO_DIG,
-				MATERIAL_XENO_STEP, SPIDERLING_EGG_HEARTBEAT);
+				ENTITY_WASP_HURT, ENTITY_WASP_DEATH, ENTITY_KRULL_AMBIENT, ENTITY_KRULL_HURT, ENTITY_KRULL_DEATH, ENTITY_SHADE_SAY,
+				ENTITY_SHADE_HURT, ENTITY_SHADE_DEATH, ENTITY_SHADOW_ALIEN_SAY, ENTITY_SHADOW_ALIEN_HURT, ENTITY_SHADOW_ALIEN_DEATH,
+				MATERIAL_XENO_DIG, MATERIAL_XENO_STEP, SPIDERLING_EGG_HEARTBEAT);
 	}
 	
 	private static void registerSound(SoundEvent sound) {

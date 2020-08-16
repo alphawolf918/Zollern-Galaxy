@@ -23,10 +23,17 @@ Zollern Galaxy v2.0.16
     - Similar to a regular Skeleton, but a Dark Agent version that's been corrupted.
     - Drops Shadow Bones.
     - Has more health, speed and attack power than a regular Skeleton and is bigger.
+* Added the Shade mob.
+    - A Dark Agent version of the Zombie.
 * Added the Corruption Layer to cave systems in Caligro.
     - Will damage the Player without proper protection.
     - Special ores can be found here.
     - Spawns at layers 25 and below.
+* Added the Shadow Boss mob.
+    - Zollern Galaxy's first "boss" mob since the 1.7.10 version.
+    - Once attacked, it has a chance to heal damage from anywhere between 10 - 20 hearts.
+    - When the beast reaches half of its health, it will start spawning Scorpions.
+        - Its attack damage will also increase.
 * Removed "hurt2" from Wasp sound events as it doesn't exist.
 * Spiderling nests spawn throughout Caligro - be wary.
 * Increased temperature of Eden slightly to give it a more warm feel.

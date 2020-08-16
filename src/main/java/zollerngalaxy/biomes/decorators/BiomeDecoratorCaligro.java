@@ -23,6 +23,7 @@ import zollerngalaxy.worldgen.caligro.WorldGenSpiderEgg;
 public class BiomeDecoratorCaligro extends BiomeDecoratorZG {
 	
 	private WorldGenerator dirtGen;
+	private WorldGenerator gravelGen;
 	private WorldGenerator ironGen;
 	private WorldGenerator goldGen;
 	private WorldGenerator tinGen;
@@ -55,6 +56,7 @@ public class BiomeDecoratorCaligro extends BiomeDecoratorZG {
 	private WorldGenerator corruptEtriumGen;
 	private WorldGenerator corruptChargiumGen;
 	private WorldGenerator corruptRockGen;
+	private WorldGenerator corruptCreepstoneGen;
 	
 	private static final Block STONE = ZGBlocks.caligroStone;
 	private static final Block CORRUPTED_STONE = ZGBlocks.corruptStone;
@@ -92,6 +94,7 @@ public class BiomeDecoratorCaligro extends BiomeDecoratorZG {
 	public BiomeDecoratorCaligro() {
 		this.modifyOreGens();
 		this.dirtGen = new WorldGenMinableZG(ZGBlocks.caligroDirt, ZGBlocks.caligroSurfaceRock, EnumOreGenZG.DIRT);
+		this.gravelGen = new WorldGenMinableZG(ZGBlocks.caligroGravel, ZGBlocks.caligroStone, EnumOreGenZG.GRAVEL);
 		this.tinGen = new WorldGenMinableZG(ZGBlocks.caligroTinOre, STONE, TIN);
 		this.copperGen = new WorldGenMinableZG(ZGBlocks.caligroCopperOre, STONE, COPPER);
 		this.ironGen = new WorldGenMinableZG(ZGBlocks.caligroIronOre, STONE, IRON);
@@ -122,6 +125,7 @@ public class BiomeDecoratorCaligro extends BiomeDecoratorZG {
 		this.corruptEtriumGen = new WorldGenMinableZG(ZGBlocks.corruptEtriumOre, CORRUPTED_STONE, EnumOreGenZG.POWER_GEM);
 		this.corruptChargiumGen = new WorldGenMinableZG(ZGBlocks.corruptChargiumOre, CORRUPTED_STONE, EnumOreGenZG.ZOLLERNIUM);
 		this.corruptRockGen = new WorldGenMinableZG(ZGBlocks.corruptRock, CORRUPTED_STONE, EnumOreGenZG.MAGMA);
+		this.corruptCreepstoneGen = new WorldGenMinableZG(ZGBlocks.corruptCreepstone, CORRUPTED_STONE, EnumOreGenZG.SPECIAL_STONE);
 	}
 	
 	private void modifyOreGens() {
@@ -131,14 +135,21 @@ public class BiomeDecoratorCaligro extends BiomeDecoratorZG {
 	
 	private void setOreGenData(EnumOreGenZG oreGen) {
 		oreGen.setMinHeight(CORRUPTION_LAYER);
-		if (oreGen.getGenCount() > 5) {
-			oreGen.setGenCount(5);
+		
+		int genCount = 5;
+		int blockCount = 5;
+		int maxHeight = 46;
+		
+		if (oreGen.getGenCount() > genCount) {
+			oreGen.setGenCount(genCount);
 		}
-		if (oreGen.getBlockCount() > 5) {
-			oreGen.setBlockCount(5);
+		
+		if (oreGen.getBlockCount() > genCount) {
+			oreGen.setBlockCount(genCount);
 		}
-		if (oreGen.getMaxHeight() < 46) {
-			oreGen.setMaxHeight(46);
+		
+		if (oreGen.getMaxHeight() < maxHeight) {
+			oreGen.setMaxHeight(maxHeight);
 		}
 	}
 	
@@ -156,6 +167,7 @@ public class BiomeDecoratorCaligro extends BiomeDecoratorZG {
 		ChunkPrimer chunkPrimer = new ChunkPrimer();
 		
 		this.generateOre(this.dirtGen, EnumOreGenZG.DIRT, world, rand);
+		this.generateOre(this.gravelGen, EnumOreGenZG.GRAVEL, world, rand);
 		this.generateOre(this.ironGen, IRON, world, rand);
 		this.generateOre(this.goldGen, GOLD, world, rand);
 		this.generateOre(this.tinGen, TIN, world, rand);
@@ -185,6 +197,7 @@ public class BiomeDecoratorCaligro extends BiomeDecoratorZG {
 		this.generateOre(this.corruptEtriumGen, POWER_GEM, world, rand);
 		this.generateOre(this.corruptChargiumGen, ZOLLERNIUM, world, rand);
 		this.generateOre(this.corruptRockGen, EnumOreGenZG.MAGMA, world, rand);
+		this.generateOre(this.corruptCreepstoneGen, EnumOreGenZG.SPECIAL_STONE, world, rand);
 		
 		int genY = 248;
 		int y = genY;
