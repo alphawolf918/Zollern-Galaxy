@@ -612,7 +612,11 @@ tooltips.bedrockbreaker4=Amaranth Ingots; only charges
 tooltips.bedrockbreaker5=when it's used up.
 tooltips.protocolnotfunctional=Hmm. This Protocol isn't functional yet. Maybe it'll work in the future.
 tooltips.unknownprotocol=Unknown Protocol detected; unable to transfer biological entity.
+tooltips.beastawoken=The Beast has awoken! Slay it, lest it consume you!
 tooltips.shadowbossbeaten=The Beast has fallen!!
+tooltips.shadekey=You need a Shade Key to spawn this boss!
+tooltips.mobnotpeaceful=Cannot spawn this Mob while on Peaceful difficulty.
+tooltips.treasurespawned=A treasure chest has spawned!
 
 planet.zollus=Zollus
 planet.eden=Eden

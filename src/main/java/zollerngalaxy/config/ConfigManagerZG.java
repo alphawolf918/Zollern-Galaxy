@@ -129,8 +129,8 @@ public class ConfigManagerZG {
 	// Customizations
 	public static int kriffonLavaLakesPerChunk;
 	public static int kriffonLavaLakesGenChance;
-	
 	public static boolean planetUnreachableAll;
+	public static boolean shouldExplosiveBlocksExplodeOtherBlocks;
 	
 	public static boolean planetUnreachableZollus;
 	public static boolean planetUnreachableKriffon;
@@ -388,6 +388,15 @@ public class ConfigManagerZG {
 				"Setting this to true disallows rocket travel to all Zollern Galaxy planets. "
 						+ "Note that when this is enabled, it will override the planet-by-planet settings, "
 						+ "with the exception of Zollus. (default: false)").getBoolean();
+		
+		// Control whether or not explosive blocks should cause other explosive blocks to explode in
+		// a chain reaction
+		shouldExplosiveBlocksExplodeOtherBlocks = configuration.get(
+				CATEGORY_CUSTOMIZATIONS,
+				"Explosive Blocks Cause Chain Reaction",
+				true,
+				"Disable this to prevent explosive blocks blowing up other explosive blocks when broken, "
+						+ "which can cause a chain reaction. (default: true)").getBoolean();
 		
 		planetUnreachableZollus = configuration.get(CATEGORY_CUSTOMIZATIONS, "Disable Rockets For Planet Zollus", false,
 				"Disable rocket travel for this planet. (default: false)").getBoolean();

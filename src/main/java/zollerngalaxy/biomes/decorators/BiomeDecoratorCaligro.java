@@ -18,6 +18,7 @@ import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderCaligro;
 import zollerngalaxy.core.enums.EnumOreGenZG;
 import zollerngalaxy.worldgen.WorldGenMinableZG;
+import zollerngalaxy.worldgen.caligro.WorldGenShadowShrine;
 import zollerngalaxy.worldgen.caligro.WorldGenSpiderEgg;
 
 public class BiomeDecoratorCaligro extends BiomeDecoratorZG {
@@ -85,11 +86,14 @@ public class BiomeDecoratorCaligro extends BiomeDecoratorZG {
 	private static final EnumOreGenZG ZOLLERNIUM = EnumOreGenZG.ZOLLERNIUM;
 	
 	public int spiderlingEggsPerChunk = 5;
+	public int shadowShrinesPerChunk = 1;
 	
 	public boolean generateSpiderlingEggs = true;
 	public boolean generateCraters = true;
+	public boolean generateShadowShrines = true;
 	
 	private WorldGenSpiderEgg spiderEggGen = new WorldGenSpiderEgg();
+	private WorldGenShadowShrine shadowShrineGen = new WorldGenShadowShrine();
 	
 	public BiomeDecoratorCaligro() {
 		this.modifyOreGens();
@@ -217,16 +221,29 @@ public class BiomeDecoratorCaligro extends BiomeDecoratorZG {
 			for (int i = 0; i < this.spiderlingEggsPerChunk; i++) {
 				y = rand.nextInt(rand.nextInt(genY) + 8);
 				if (rand.nextInt(152) <= 59) {
-					spiderEggGen.generate(world, rand, this.chunkPos.add(x, y, z));
-					spiderEggGen.generate(world, rand, this.chunkPos.add(x + 3, y, z));
-					spiderEggGen.generate(world, rand, this.chunkPos.add(x - 3, y, z));
-					spiderEggGen.generate(world, rand, this.chunkPos.add(x, y, z + 3));
-					spiderEggGen.generate(world, rand, this.chunkPos.add(x - 3, y, z + 3));
-					spiderEggGen.generate(world, rand, this.chunkPos.add(x + 3, y, z - 3));
+					this.spiderEggGen.generate(world, rand, this.chunkPos.add(x, y, z));
+					this.spiderEggGen.generate(world, rand, this.chunkPos.add(x + 3, y, z));
+					this.spiderEggGen.generate(world, rand, this.chunkPos.add(x - 3, y, z));
+					this.spiderEggGen.generate(world, rand, this.chunkPos.add(x, y, z + 3));
+					this.spiderEggGen.generate(world, rand, this.chunkPos.add(x - 3, y, z + 3));
+					this.spiderEggGen.generate(world, rand, this.chunkPos.add(x + 3, y, z - 3));
 				}
 			}
 		}
 		
+		// Shadow Shrine
+		if (this.generateShadowShrines && this.shadowShrinesPerChunk > 0) {
+			for (int i = 0; i < this.shadowShrinesPerChunk; i++) {
+				y = rand.nextInt(rand.nextInt(genY) + 8);
+				if (y >= SEA_LEVEL) {
+					if (rand.nextInt(2000) <= 42) {
+						this.shadowShrineGen.generate(world, rand, this.chunkPos.add(x, y, z));
+					}
+				}
+			}
+		}
+		
+		// Craters
 		if (this.generateCraters) {
 			ChunkProviderCaligro.INSTANCE.createCraters(x, z, chunkPrimer);
 		}

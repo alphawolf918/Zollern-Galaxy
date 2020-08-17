@@ -32,5 +32,6 @@ public enum EnumBlockType {
 	CACTUS,
 	REEDS,
 	DARK,
-	CORRUPTED;
+	CORRUPTED,
+	SPAWNER;
 }

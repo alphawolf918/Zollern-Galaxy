@@ -124,6 +124,7 @@ public class ZGItems {
 	public static final Item iceCream = new IceCream();
 	
 	public static final Item edenDungeonKey = new ZGItemBase("edendungeonkey");
+	public static final Item shadeKey = new ZGItemBase("shadekey");
 	
 	public static final Item perdGlowdust = new ZGItemBase("perdglowstonedust");
 	public static final Item perdDiamond = new ZGItemBase("perddiamond");
@@ -212,9 +213,9 @@ public class ZGItems {
 				compressedSuperChargedCoal, compressedRiven, compressedAmaranth, compressedAzurite, compressedZollernium,
 				compressedZucrite, compressedRhodium, rawAlienBacon, cookedAlienBacon, rawAlienBeef, cookedAlienBeef, edenFruit, perdBerry,
 				perdPeach, rawBlubberFish, cookedBlubberFish, rawBladeFish, cookedBladeFish, rawGypsyFish, cookedGypsyFish, creamBall,
-				chocolateRaw, chocolateBar, brownie, candyApple, iceCreamSandwich, iceCream, edenDungeonKey, perdGlowdust, perdDiamond,
-				perdEtrium, amber, topaz, opal, aquamarine, garnet, ruby, amberStatic, aquamarineIcy, garnetFire, witherite, netheridium,
-				perdReed, shagreen, sharkTooth, shadowBone, darkEssence, radium, superChargedCoal, powerStick, starGateTier1,
+				chocolateRaw, chocolateBar, brownie, candyApple, iceCreamSandwich, iceCream, edenDungeonKey, shadeKey, perdGlowdust,
+				perdDiamond, perdEtrium, amber, topaz, opal, aquamarine, garnet, ruby, amberStatic, aquamarineIcy, garnetFire, witherite,
+				netheridium, perdReed, shagreen, sharkTooth, shadowBone, darkEssence, radium, superChargedCoal, powerStick, starGateTier1,
 				starGateTier2, starGateTier3, starGateTier4, starGateTier5, starGateTier6, starGateTier7, starGateTier8, starGateTier9,
 				starGateTier10, starGateCandy, OMNITOOL, BEDROCK_BREAKER, pickaxeCobalt, pickaxeEvenium, pickaxeVirinium, pickaxeAmaranth,
 				pickaxeAzurite, pickaxeZollernium, shovelCobalt, shovelEvenium, shovelVirinium, shovelAmaranth, shovelAzurite,

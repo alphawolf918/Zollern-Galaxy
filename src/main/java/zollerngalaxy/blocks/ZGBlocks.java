@@ -16,6 +16,7 @@ import net.minecraft.init.Items;
 import net.minecraft.init.MobEffects;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import zollerngalaxy.biomes.xathius.ZGBlockGrassXath;
+import zollerngalaxy.blocks.caligro.BlockShadowBossSpawner;
 import zollerngalaxy.blocks.caligro.BlockSpiderEgg;
 import zollerngalaxy.blocks.caligro.corrupted.ZGBlockOreCorrupted;
 import zollerngalaxy.blocks.caligro.corrupted.ZGCorruptBlock;
@@ -456,6 +457,7 @@ public class ZGBlocks {
 	public static final Block caligroRubyOre = new ZGOreGem("caligrorubyore", 2.5F, ZGItems.ruby).setBlockHarvestLevel(
 			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
 	public static final Block spiderlingEgg = new BlockSpiderEgg();
+	public static final Block shadowBossSpawner = new BlockShadowBossSpawner();
 	
 	// Caligro (Corruption)
 	public static final Block corruptRock = new ZGCorruptBlock("corruptrock");
@@ -592,9 +594,9 @@ public class ZGBlocks {
 				caligroSilverOre, caligroNickelOre, caligroLeadOre, caligroTinOre, caligroCopperOre, caligroIronOre, caligroGoldOre,
 				caligroRedstoneOre, caligroAmaranthOre, caligroZincOre, caligroAmberOre, caligroTopazOre, caligroOpalOre,
 				caligroAquamarineOre, caligroGarnetOre, caligroSuperChargedCoalOre, caligroFueltoniumOre, caligroDiamondOre,
-				caligroEmeraldOre, caligroRadiumOre, caligroLapisOre, caligroZollerniumOre, caligroRubyOre, spiderlingEgg, corruptRock,
-				corruptCobble, corruptStone, corruptStoneBricks, corruptAscendiumOre, corruptEtriumOre, corruptChargiumOre,
-				corruptCreepstone);
+				caligroEmeraldOre, caligroRadiumOre, caligroLapisOre, caligroZollerniumOre, caligroRubyOre, spiderlingEgg,
+				shadowBossSpawner, corruptRock, corruptCobble, corruptStone, corruptStoneBricks, corruptAscendiumOre, corruptEtriumOre,
+				corruptChargiumOre, corruptCreepstone);
 		ZGHelper.Log("Loaded a total of " + totalBlocks + " new blocks.");
 	}
 	

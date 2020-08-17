@@ -30,11 +30,52 @@ import org.apache.logging.log4j.Logger;
 import zollerngalaxy.creativetabs.CreativeTabsHelper;
 import zollerngalaxy.creativetabs.ZGTabs;
 
-public class ZGHelper {
+public abstract class ZGHelper {
 	
 	private static final Logger LOGGER = LogManager.getLogger("Zollern Galaxy");
 	
 	private static Random rand = new Random();
+	
+	/**
+	 * Spawn an Entity into the world.
+	 * 
+	 * @param entityIn
+	 *            The Entity to spawn.
+	 * @param worldIn
+	 *            The World to spawn it in.
+	 * @param x
+	 *            X Coord
+	 * @param y
+	 *            Y Coord
+	 * @param z
+	 *            Z Coord
+	 */
+	public static void spawnEntity(Entity entityIn, World worldIn, double x, double y, double z) {
+		spawnEntity(entityIn, worldIn, x, y, z, 0, 0);
+	}
+	
+	/**
+	 * Spawn an Entity into the world.
+	 * 
+	 * @param entityIn
+	 *            The Entity to spawn.
+	 * @param worldIn
+	 *            The World to spawn it in.
+	 * @param x
+	 *            X Coord
+	 * @param y
+	 *            Y Coord
+	 * @param z
+	 *            Z Coord
+	 * @param pitch
+	 *            Entity pitch
+	 * @param yaw
+	 *            Entity yaw
+	 */
+	public static void spawnEntity(Entity entityIn, World worldIn, double x, double y, double z, float pitch, float yaw) {
+		entityIn.setLocationAndAngles(x, y, z, pitch, yaw);
+		worldIn.spawnEntity(entityIn);
+	}
 	
 	public static void dropItem(Item droppedItem, World worldObj, Entity theEntity) {
 		if (!worldObj.isRemote) {

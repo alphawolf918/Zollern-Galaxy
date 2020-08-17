@@ -8,7 +8,6 @@
 package zollerngalaxy.worldgen.caligro;
 
 import java.util.Random;
-import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
@@ -17,17 +16,6 @@ import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.worldgen.ZGWorldGenMaster;
 
 public class WorldGenSpiderEgg extends ZGWorldGenMaster {
-	
-	@Override
-	protected boolean isValidSpawn(World world, BlockPos pos) {
-		Block blockBelow = world.getBlockState(pos.down()).getBlock();
-		
-		if (blockBelow == Blocks.AIR) {
-			return false;
-		}
-		
-		return true;
-	}
 	
 	@Override
 	public boolean generate(World world, Random rand, BlockPos position) {

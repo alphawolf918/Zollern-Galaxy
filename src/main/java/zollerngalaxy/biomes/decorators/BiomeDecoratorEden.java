@@ -41,7 +41,7 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 	private WorldGenerator goldGen;
 	private WorldGenerator tinGen;
 	private WorldGenerator leadGen;
-	private WorldGenerator nickleGen;
+	private WorldGenerator nickelGen;
 	private WorldGenerator copperGen;
 	private WorldGenerator silverGen;
 	private WorldGenerator aluminumGen;
@@ -81,7 +81,7 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 		this.coalGen = new WorldGenMinableZG(ZGBlocks.edenCoalOre, ZGBlocks.edenStone, EnumOreGenZG.COAL);
 		this.tinGen = new WorldGenMinableZG(ZGBlocks.edenTinOre, ZGBlocks.edenStone, EnumOreGenZG.TIN);
 		this.leadGen = new WorldGenMinableZG(ZGBlocks.edenLeadOre, ZGBlocks.edenStone, EnumOreGenZG.LEAD);
-		this.nickleGen = new WorldGenMinableZG(ZGBlocks.edenNickelOre, ZGBlocks.edenStone, EnumOreGenZG.NICKEL);
+		this.nickelGen = new WorldGenMinableZG(ZGBlocks.edenNickelOre, ZGBlocks.edenStone, EnumOreGenZG.NICKEL);
 		this.copperGen = new WorldGenMinableZG(ZGBlocks.edenCopperOre, ZGBlocks.edenStone, EnumOreGenZG.COPPER);
 		this.silverGen = new WorldGenMinableZG(ZGBlocks.edenSilverOre, ZGBlocks.edenStone, EnumOreGenZG.SILVER);
 		this.ironGen = new WorldGenMinableZG(ZGBlocks.edenIronOre, ZGBlocks.edenStone, EnumOreGenZG.IRON);
@@ -118,7 +118,7 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 		this.generateOre(this.goldGen, EnumOreGenZG.GOLD, world, rand);
 		this.generateOre(this.tinGen, EnumOreGenZG.TIN, world, rand);
 		this.generateOre(this.leadGen, EnumOreGenZG.LEAD, world, rand);
-		this.generateOre(this.nickleGen, EnumOreGenZG.NICKEL, world, rand);
+		this.generateOre(this.nickelGen, EnumOreGenZG.NICKEL, world, rand);
 		this.generateOre(this.copperGen, EnumOreGenZG.COPPER, world, rand);
 		this.generateOre(this.silverGen, EnumOreGenZG.SILVER, world, rand);
 		this.generateOre(this.aluminumGen, EnumOreGenZG.ALUMINUM, world, rand);

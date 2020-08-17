@@ -32,9 +32,15 @@ Zollern Galaxy v2.0.16
 * Added the Shadow Boss mob.
     - Zollern Galaxy's first "boss" mob since the 1.7.10 version.
     - Once attacked, it has a chance to heal damage from anywhere between 10 - 20 hearts.
-    - When the beast reaches half of its health, it will start spawning Scorpions.
+    - When the beast reaches half of its health, it will start spawning Scorpions and Spiderlings.
         - Its attack damage will also increase.
 * Removed "hurt2" from Wasp sound events as it doesn't exist.
 * Spiderling nests spawn throughout Caligro - be wary.
 * Increased temperature of Eden slightly to give it a more warm feel.
+* Added a config option to disable chain reaction explosions (why though?!).
+* Added the Shadow Boss Spawner block.
+    - Right-clicking this with a findable Shade Key will spawn the Soul of Shadows boss.
+* Added the Shadow Shrine.
+    - Built to honor the Soul of Shadows, a dark, powerful entity that reigns over the Dark Agents.
+    - The Shadow Boss Spawner block can be found inside.
 * 

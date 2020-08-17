@@ -29,6 +29,7 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.enums.EnumBlockType;
 import zollerngalaxy.core.enums.EnumHarvestLevelZG;
 import zollerngalaxy.core.enums.EnumHarvestToolZG;
@@ -53,6 +54,8 @@ public class ZGBlockBase extends Block implements ISingleZGBlockRender, IJSONBlo
 	protected boolean hasInfo = false;
 	
 	protected boolean shouldJSONIgnore = false;
+	
+	protected boolean chainReactionEnabled = ConfigManagerZG.shouldExplosiveBlocksExplodeOtherBlocks;
 	
 	protected String[] blockInfo;
 	protected static String name;
@@ -224,7 +227,7 @@ public class ZGBlockBase extends Block implements ISingleZGBlockRender, IJSONBlo
 	@Override
 	public void onBlockDestroyedByExplosion(World worldIn, BlockPos pos, Explosion explosionIn) {
 		if (!worldIn.isRemote) {
-			if (this.getShouldExplode()) {
+			if (this.getShouldExplode() && this.chainReactionEnabled) {
 				if (rand.nextInt(this.getExplosionChance()) <= 8) {
 					worldIn.createExplosion(null, pos.getX(), pos.getY(), pos.getZ(), 3.2F, true);
 				}

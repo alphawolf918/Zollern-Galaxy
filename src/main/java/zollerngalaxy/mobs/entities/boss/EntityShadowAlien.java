@@ -25,31 +25,41 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.BossInfo;
 import net.minecraft.world.BossInfoServer;
 import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import zollerngalaxy.core.ZGLootTables;
 import zollerngalaxy.core.ZollernGalaxyCore;
 import zollerngalaxy.events.ZGSoundEvents;
+import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.mobs.entities.EntityScorpion;
+import zollerngalaxy.mobs.entities.EntitySpiderling;
 import zollerngalaxy.mobs.entities.interfaces.IShadeEntity;
+import zollerngalaxy.proxy.IProxy;
 import zollerngalaxy.util.ZGUtils;
 
 public class EntityShadowAlien extends EntityMob implements IShadeEntity {
 	
-	private int maxHealth = 1000;
+	private int maxHealth = 2000;
 	private int xp = 2000;
 	private double attackDamage = 8.0D;
+	
+	BlockPos entPos = this.getPosition();
+	
+	private IProxy proxy = ZollernGalaxyCore.instance().proxy;
 	
 	public EntityShadowAlien(World worldIn) {
 		super(worldIn);
 		this.setSize(this.width * 1.4F, this.height * 1.4F);
 		this.tasks.addTask(1, new EntityAISwimming(this));
 		this.tasks.addTask(2, new EntityAIWander(this, 1.0D));
-		this.tasks.addTask(3, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
-		this.tasks.addTask(3, new EntityAIWatchClosest(this, EntityGolem.class, 8.0F));
+		this.tasks.addTask(3, new EntityAIWatchClosest(this, EntityPlayer.class, 16.0F));
+		this.tasks.addTask(3, new EntityAIWatchClosest(this, EntityGolem.class, 16.0F));
 		this.tasks.addTask(4, new EntityAILookIdle(this));
 		this.tasks.addTask(5, new EntityAIAttackMelee(this, 2.5D, false));
 		this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
@@ -58,6 +68,8 @@ public class EntityShadowAlien extends EntityMob implements IShadeEntity {
 		this.experienceValue = this.xp;
 		this.scoreValue = this.xp;
 		this.stepHeight = 2F;
+		this.attackDamage = 8.0D;
+		this.entPos = this.getPosition();
 		this.setCanPickUpLoot(true);
 		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(8.0D);
 	}
@@ -88,6 +100,7 @@ public class EntityShadowAlien extends EntityMob implements IShadeEntity {
 	
 	@Override
 	public void onLivingUpdate() {
+		this.entPos = this.getPosition();
 		Random rand = new Random();
 		int randInt = rand.nextInt(900);
 		if (randInt <= 10) {
@@ -100,9 +113,13 @@ public class EntityShadowAlien extends EntityMob implements IShadeEntity {
 		
 		if (rand.nextInt(4632) <= 16 && this.getHealth() <= 500) {
 			if (!this.world.isRemote) {
-				EntityScorpion scorpion = new EntityScorpion(this.world);
-				scorpion.setLocationAndAngles(this.posX, this.posY, this.posZ, 0, 0);
-				this.world.spawnEntity(scorpion);
+				Entity entToSpawn;
+				if (ZGHelper.getRNGChance(5, 10)) {
+					entToSpawn = new EntityScorpion(this.world);
+				} else {
+					entToSpawn = new EntitySpiderling(this.world);
+				}
+				ZGHelper.spawnEntity(entToSpawn, world, this.posX, this.posY, this.posZ);
 			}
 		}
 		
@@ -114,6 +131,7 @@ public class EntityShadowAlien extends EntityMob implements IShadeEntity {
 				this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(this.attackDamage);
 			}
 		}
+		this.entPos = this.getPosition();
 		super.onLivingUpdate();
 	}
 	
@@ -137,7 +155,7 @@ public class EntityShadowAlien extends EntityMob implements IShadeEntity {
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(45.0D);
-		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(1000);
+		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(2000);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.2D);
 		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(this.attackDamage);
 	}
@@ -161,7 +179,8 @@ public class EntityShadowAlien extends EntityMob implements IShadeEntity {
 	public void onDeath(DamageSource par1) {
 		super.onDeath(par1);
 		if (attackingPlayer != null) {
-			ZollernGalaxyCore.proxy.sendChatMessage(attackingPlayer, ZGUtils.translate("tooltips.shadowbossbeaten"));
+			this.proxy.sendChatMessage(attackingPlayer, ZGUtils.translate("tooltips.shadowbossbeaten"));
+			this.onDefeat(attackingPlayer, world, entPos, rand);
 		}
 	}
 	
@@ -211,4 +230,15 @@ public class EntityShadowAlien extends EntityMob implements IShadeEntity {
 		this.bossInfo.setPercent(this.getHealth() / this.getMaxHealth());
 	}
 	
+	public void onDefeat(EntityPlayer player, World world, BlockPos chestPos, Random rand) {
+		ZGLootTables.generateChest(world, chestPos, rand, ZGLootTables.CHEST_SHADOW_BOSS);
+		String txtFormat = TextFormatting.GOLD + "" + TextFormatting.BOLD;
+		String primeMsg = txtFormat + ZGUtils.translate("tooltips.treasurespawned");
+		int chestX = chestPos.getX();
+		int chestY = chestPos.getY();
+		int chestZ = chestPos.getZ();
+		String chestPosStr = " (" + chestX + " " + chestY + " " + chestZ + ")";
+		String fullMsg = primeMsg + chestPosStr;
+		this.proxy.sendChatMessage(player, fullMsg);
+	}
 }
