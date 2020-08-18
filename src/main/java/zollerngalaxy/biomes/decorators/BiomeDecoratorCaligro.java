@@ -19,6 +19,7 @@ import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderCaligro;
 import zollerngalaxy.core.enums.EnumOreGenZG;
 import zollerngalaxy.worldgen.WorldGenMinableZG;
 import zollerngalaxy.worldgen.caligro.WorldGenShadowShrine;
+import zollerngalaxy.worldgen.caligro.WorldGenShadowSkull;
 import zollerngalaxy.worldgen.caligro.WorldGenSpiderEgg;
 
 public class BiomeDecoratorCaligro extends BiomeDecoratorZG {
@@ -49,6 +50,7 @@ public class BiomeDecoratorCaligro extends BiomeDecoratorZG {
 	private WorldGenerator zincGen;
 	private WorldGenerator amaranthGen;
 	private WorldGenerator zollerniumGen;
+	private WorldGenerator witheriteGen;
 	private WorldGenerator creepstoneGen;
 	private WorldGenerator creepstoneDirtGen;
 	
@@ -87,13 +89,16 @@ public class BiomeDecoratorCaligro extends BiomeDecoratorZG {
 	
 	public int spiderlingEggsPerChunk = 5;
 	public int shadowShrinesPerChunk = 1;
+	public int shadowSkullsPerChunk = 1;
 	
 	public boolean generateSpiderlingEggs = true;
 	public boolean generateCraters = true;
 	public boolean generateShadowShrines = true;
+	public boolean generateShadowSkulls = true;
 	
 	private WorldGenSpiderEgg spiderEggGen = new WorldGenSpiderEgg();
 	private WorldGenShadowShrine shadowShrineGen = new WorldGenShadowShrine();
+	private WorldGenShadowSkull shadowSkullGen = new WorldGenShadowSkull();
 	
 	public BiomeDecoratorCaligro() {
 		this.modifyOreGens();
@@ -123,6 +128,7 @@ public class BiomeDecoratorCaligro extends BiomeDecoratorZG {
 		this.zincGen = new WorldGenMinableZG(ZGBlocks.caligroZincOre, STONE, ZINC);
 		this.amaranthGen = new WorldGenMinableZG(ZGBlocks.caligroAmaranthOre, STONE, AMARANTH);
 		this.zollerniumGen = new WorldGenMinableZG(ZGBlocks.caligroZollerniumOre, STONE, ZOLLERNIUM);
+		this.witheriteGen = new WorldGenMinableZG(ZGBlocks.caligroWitheriteOre, STONE, EnumOreGenZG.POWER_GEM);
 		this.creepstoneGen = new WorldGenMinableZG(ZGBlocks.caligroCreepstone, STONE, EnumOreGenZG.SPECIAL_STONE);
 		this.creepstoneDirtGen = new WorldGenMinableZG(ZGBlocks.caligroCreepdirt, STONE, EnumOreGenZG.DIRT.setMaxHeight(32));
 		this.corruptAscendiumGen = new WorldGenMinableZG(ZGBlocks.corruptAscendiumOre, CORRUPTED_STONE, EnumOreGenZG.POWER_GEM);
@@ -140,9 +146,9 @@ public class BiomeDecoratorCaligro extends BiomeDecoratorZG {
 	private void setOreGenData(EnumOreGenZG oreGen) {
 		oreGen.setMinHeight(CORRUPTION_LAYER);
 		
-		int genCount = 5;
+		int genCount = 6;
 		int blockCount = 5;
-		int maxHeight = 46;
+		int maxHeight = 52;
 		
 		if (oreGen.getGenCount() > genCount) {
 			oreGen.setGenCount(genCount);
@@ -195,6 +201,7 @@ public class BiomeDecoratorCaligro extends BiomeDecoratorZG {
 		this.generateOre(this.zincGen, ZINC, world, rand);
 		this.generateOre(this.amaranthGen, AMARANTH, world, rand);
 		this.generateOre(this.zollerniumGen, ZOLLERNIUM, world, rand);
+		this.generateOre(this.witheriteGen, DIAMOND, world, rand);
 		this.generateOre(this.creepstoneGen, EnumOreGenZG.SPECIAL_STONE, world, rand);
 		this.generateOre(this.creepstoneDirtGen, EnumOreGenZG.DIRT, world, rand);
 		this.generateOre(this.corruptAscendiumGen, POWER_GEM, world, rand);
@@ -238,6 +245,18 @@ public class BiomeDecoratorCaligro extends BiomeDecoratorZG {
 				if (y >= SEA_LEVEL) {
 					if (rand.nextInt(2000) <= 42) {
 						this.shadowShrineGen.generate(world, rand, this.chunkPos.add(x, y, z));
+					}
+				}
+			}
+		}
+		
+		// Shadow Skull
+		if (this.generateShadowSkulls && this.shadowSkullsPerChunk > 0) {
+			for (int i = 0; i < this.shadowSkullsPerChunk; i++) {
+				y = rand.nextInt(rand.nextInt(genY) + 8);
+				if (y >= SEA_LEVEL) {
+					if (rand.nextInt(800) <= 52) {
+						this.shadowSkullGen.generate(world, rand, this.chunkPos.add(x, y, z));
 					}
 				}
 			}

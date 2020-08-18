@@ -459,7 +459,6 @@ item.witherite.name=Witherite
 item.netheridium.name=Netheridium
 item.shadowbone.name=Shadow Bone
 
-item.powerstick.name=Power Stick
 item.blackmarblestick.name=Black Marble Stick
 item.marblestick.name=Marble Stick
 item.shadekey.name=Shade Key
@@ -511,7 +510,9 @@ item.cookedshark.name=Cooked Shark
 
 item.shagreen.name=Shagreen
 item.sharktooth.name=Shark Tooth
-item.sharksword.name=Shark Sword
+item.shark_sword.name=Shark Sword
+
+item.wither_sword.name=Mortem
 
 item.stargate_tier1.name=Stargate (Protocol One)
 item.stargate_tier2.name=Stargate (Protocol Two)
@@ -552,8 +553,6 @@ item.amaranth_shovel.name=Amaranth Shovel
 item.amaranth_axe.name=Amaranth Axe
 item.amaranth_hoe.name=Amaranth Hoe
 
-item.bedrockbreaker.name=Bedrock Breaker
-
 item.azurite_pickaxe.name=Azurite Pickaxe
 item.azurite_sword.name=Azurite Sword
 item.azurite_shovel.name=Azurite Shovel
@@ -590,6 +589,7 @@ entity.zollerngalaxy:krull.name=Krull
 entity.zollerngalaxy:shadowskeleton.name=Shadow Skeleton
 entity.zollerngalaxy:shade.name=Shade
 entity.zollerngalaxy:shadowalien.name=Shadow of Darkness Boss
+entity.zollerngalaxy:faceless.name=Faceless
 
 tooltips.hud=Shows all planetary and biome data.
 tooltips.hud2=Only works when held.
@@ -617,6 +617,8 @@ tooltips.shadowbossbeaten=The Beast has fallen!!
 tooltips.shadekey=You need a Shade Key to spawn this boss!
 tooltips.mobnotpeaceful=Cannot spawn this Mob while on Peaceful difficulty.
 tooltips.treasurespawned=A treasure chest has spawned!
+tooltips.withersword1=A withering
+tooltips.withersword2=blade, touched with death.
 
 planet.zollus=Zollus
 planet.eden=Eden

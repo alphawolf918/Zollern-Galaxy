@@ -1,15 +1,15 @@
 {
     "pools": [
         {
-            "name": "shadowboss",
+            "name": "shadowskull",
             "rolls": {
-                "min": 5,
-                "max": 10
+                "min": 4,
+                "max": 8
             },
             "entries": [
                 {
                     "type": "item",
-                    "name": "zollerngalaxy:rokkite",
+                    "name": "zollerngalaxy:zucriteingot",
                     "weight": 5,
                     "functions": [
                         {
@@ -170,8 +170,8 @@
                 },
                 {
                     "type": "item",
-                    "name": "zollerngalaxy:zollerniumdust",
-                    "weight": 2,
+                    "name": "zollerngalaxy:shadekey",
+                    "weight": 5,
                     "functions": [
                         {
                             "function": "minecraft:set_count",

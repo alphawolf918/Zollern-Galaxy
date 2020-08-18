@@ -20,7 +20,11 @@ public class InductionSmelterRecipes {
 		
 		// 2 Etrium Ingot + 4 Lost Diamond = 2 Zucrite Ingots
 		ThermalExpansionHelper.addSmelterRecipe(8000, new ItemStack(ZGItems.ingotEtrium, 2), new ItemStack(ZGItems.dustChargium, 2),
-				new ItemStack(ZGItems.perdDiamond, 4));
+				new ItemStack(ZGItems.ingotZucrite, 2));
+		
+		// 2 Ascendium + 4 1 Amaranth = 2 Ascendant Amaranth Ingots
+		ThermalExpansionHelper.addSmelterRecipe(10000, new ItemStack(ZGItems.ascendium, 2), new ItemStack(ZGItems.ingotAmaranth, 1),
+				new ItemStack(ZGItems.ingotAscendantAmaranth, 2));
 	}
 	
 }

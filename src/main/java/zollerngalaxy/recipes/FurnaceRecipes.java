@@ -137,6 +137,7 @@ public class FurnaceRecipes {
 		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.caligroAmaranthOre, ZGItems.ingotAmaranth, 4.2F);
 		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.caligroShiniumOre, ZGItems.ingotShinium, 5.6F);
 		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.caligroZincOre, ZGItems.ingotZinc, 3.6F);
+		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.corruptChargiumOre, ZGItems.ingotChargium, 7.6F);
 		
 		// Dust -> Ingots/Gems
 		FurnaceRecipes.SmeltItem(ZGItems.dustDiamond, Items.DIAMOND, 2.6F);

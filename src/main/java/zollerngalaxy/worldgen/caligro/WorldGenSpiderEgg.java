@@ -30,15 +30,15 @@ public class WorldGenSpiderEgg extends ZGWorldGenMaster {
 		IBlockState spiderEgg = ZGBlocks.spiderlingEgg.getDefaultState();
 		IBlockState web = Blocks.WEB.getDefaultState();
 		
-		world.setBlockState(new BlockPos(x, y, z), spiderEgg);
-		world.setBlockState(new BlockPos(x + 1, y, z), web);
-		world.setBlockState(new BlockPos(x - 1, y, z), web);
-		world.setBlockState(new BlockPos(x + 1, y, z + 1), web);
-		world.setBlockState(new BlockPos(x - 1, y, z - 1), web);
-		world.setBlockState(new BlockPos(x, y, z + 1), web);
-		world.setBlockState(new BlockPos(x, y, z - 1), web);
-		world.setBlockState(new BlockPos(x - 1, y, z + 1), web);
-		world.setBlockState(new BlockPos(x + 1, y, z - 1), web);
+		setBlock(world, new BlockPos(x, y, z), spiderEgg);
+		setBlock(world, new BlockPos(x + 1, y, z), web);
+		setBlock(world, new BlockPos(x - 1, y, z), web);
+		setBlock(world, new BlockPos(x + 1, y, z + 1), web);
+		setBlock(world, new BlockPos(x - 1, y, z - 1), web);
+		setBlock(world, new BlockPos(x, y, z + 1), web);
+		setBlock(world, new BlockPos(x, y, z - 1), web);
+		setBlock(world, new BlockPos(x - 1, y, z + 1), web);
+		setBlock(world, new BlockPos(x + 1, y, z - 1), web);
 		
 		return true;
 	}

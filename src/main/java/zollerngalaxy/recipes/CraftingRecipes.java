@@ -54,6 +54,7 @@ public class CraftingRecipes {
 		CraftingRecipes.addRockBricks(ZGBlocks.perdRock, ZGBlocks.perdRockBricks);
 		CraftingRecipes.addRockBricks(ZGBlocks.perdCaveStone, ZGBlocks.perdCaveStoneBricks);
 		CraftingRecipes.addRockBricks(ZGBlocks.caligroStone, ZGBlocks.caligroStoneBricks);
+		CraftingRecipes.addRockBricks(ZGBlocks.corruptStone, ZGBlocks.corruptStoneBricks);
 		
 		// Items -> Blocks
 		CraftingRecipes.addIngotMetal(ZGItems.ingotVirinium, ZGBlocks.blockViri);
@@ -127,9 +128,8 @@ public class CraftingRecipes {
 				'S', ZGBlocks.blockSuperChargedCoal, 'A', ZGBlocks.blockAzurite });
 		
 		// Bedrock Breaker
-		// ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.bedrockBreaker), new Object[] { "ZAZ",
-		// " M ", " M ", 'Z', ZGItems.ingotZucrite, 'A',
-		// ZGItems.ascendium, 'M', ZGItems.ingotAscendantAmaranth });
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.BEDROCK_BREAKER), new Object[] { "ZAZ", " M ", " M ", 'Z', ZGItems.ingotZucrite,
+				'A', ZGItems.ascendium, 'M', ZGItems.ingotAscendantAmaranth });
 		
 		// Firey Garnet (Gem Form)
 		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.garnetFire, 1), new Object[] { "BLB", "RGR", "BLB", 'B', Items.BLAZE_POWDER, 'G',
@@ -253,6 +253,10 @@ public class CraftingRecipes {
 		CraftingRecipes.addSword(new ItemStack(ZGItems.swordAzurite), ZGItems.azurite);
 		CraftingRecipes.addSword(new ItemStack(ZGItems.swordZollernium), ZGItems.ingotZollernium);
 		
+		// Mortem
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.swordWither, 1), new Object[] { " W ", " W ", "RAX", 'W', ZGBlocks.blockNetheridium,
+				'R', ZGBlocks.blockWitherite, 'A', ZGItems.ingotLapis, 'X', ZGItems.darkEssence });
+		
 		// Ascendium
 		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.ascendium, 1), new Object[] { " Z ", " C ", " A ", 'Z',
 				ZGItems.compressedZollernium, 'C', ZGItems.compressedZucrite, 'A', ZGItems.compressedAmaranth });
@@ -321,7 +325,9 @@ public class CraftingRecipes {
 		totalCraftRecipes++;
 		
 		// Star Gate (Tier 10)
-		// TODO
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.starGateTier10, 1), new Object[] { "VCV", "HYH", "YCY", 'V',
+				ZGBlocks.blockCompressedRhodium, 'C', ZGItems.ascendium, 'H', ZGItems.darkEssence, 'Y', ZGItems.rokkite });
+		totalCraftRecipes++;
 		
 		// Star Gate (Birthday Protocol)
 		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.starGateCandy, 1), new Object[] { "VCV", "HYH", "YCY", 'V', ZGBlocks.xathCobble,

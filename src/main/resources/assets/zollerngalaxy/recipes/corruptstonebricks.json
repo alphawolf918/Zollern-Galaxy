@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SS",
+    "SS"
+  ],
+  "key": {
+    "S": {
+      "item": "zollerngalaxy:corruptstone"
+    }
+  },
+  "result": {
+    "item": "zollerngalaxy:corruptstonebricks",
+    "count": 4
+  }
+}

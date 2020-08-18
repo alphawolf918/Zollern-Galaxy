@@ -28,6 +28,7 @@ public class ZGLootTables {
 	public static final ResourceLocation CHEST_BURIED_TREASURE = CommonZGRegisterHelper.registerChestLoot("buriedtreasure");
 	public static final ResourceLocation CHEST_OCEAN_TREASURE = CommonZGRegisterHelper.registerChestLoot("oceantreasure");
 	public static final ResourceLocation CHEST_SHADOW_BOSS = CommonZGRegisterHelper.registerChestLoot("shadowboss");
+	public static final ResourceLocation CHEST_SHADOW_SKULL = CommonZGRegisterHelper.registerChestLoot("shadowskull");
 	
 	// Gameplay
 	public static final ResourceLocation GAMEPLAY_FISHING = CommonZGRegisterHelper.registerGameplayLoot("zgfishing");
@@ -39,13 +40,26 @@ public class ZGLootTables {
 	 * @param chestPos
 	 * @param rand
 	 * @param LOOT_TABLE
+	 * @param isBigChest
 	 */
-	public static void generateChest(World world, BlockPos chestPos, Random rand, ResourceLocation LOOT_TABLE) {
+	public static void generateChest(World world, BlockPos chestPos, Random rand, ResourceLocation LOOT_TABLE, boolean isBigChest) {
 		world.setBlockState(chestPos, Blocks.CHEST.correctFacing(world, chestPos, Blocks.CHEST.getDefaultState()), 2);
 		TileEntity tileentity1 = world.getTileEntity(chestPos);
 		
 		if (tileentity1 instanceof TileEntityChest) {
 			((TileEntityChest) tileentity1).setLootTable(LOOT_TABLE, rand.nextLong());
 		}
+	}
+	
+	/**
+	 * Generate a chest at the given coordinates with the supplied loot table.
+	 * 
+	 * @param world
+	 * @param chestPos
+	 * @param rand
+	 * @param LOOT_TABLE
+	 */
+	public static void generateChest(World world, BlockPos chestPos, Random rand, ResourceLocation LOOT_TABLE) {
+		generateChest(world, chestPos, rand, LOOT_TABLE, false);
 	}
 }

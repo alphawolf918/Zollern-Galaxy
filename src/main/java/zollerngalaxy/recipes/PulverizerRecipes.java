@@ -134,6 +134,9 @@ public class PulverizerRecipes {
 		// Rhodium
 		PulverizerRecipes.addRecipe(ZGBlocks.altumRhodiumOre, ZGItems.dustRhodium);
 		
+		// Chargium
+		PulverizerRecipes.addRecipe(ZGBlocks.corruptChargiumOre, ZGItems.dustChargium);
+		
 		ZGHelper.Log("Loaded a total of " + totalRecipes + " new Pulverizer recipes.");
 	}
 	

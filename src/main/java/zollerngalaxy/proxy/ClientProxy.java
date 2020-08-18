@@ -36,7 +36,6 @@ public class ClientProxy extends CommonProxy {
 	@Override
 	public void registerInitRendering() {
 		BlockColors colors = mc.getBlockColors();
-		
 		ZGItemRender.init();
 	}
 	
@@ -96,7 +95,7 @@ public class ClientProxy extends CommonProxy {
 		}
 		
 		if (potionId == ZGPotions.radiance) {
-			player.setAbsorptionAmount(20.0F);
+			player.setAbsorptionAmount(5.0F);
 		}
 		
 		if (potionId == ZGPotions.antiCorruption) {

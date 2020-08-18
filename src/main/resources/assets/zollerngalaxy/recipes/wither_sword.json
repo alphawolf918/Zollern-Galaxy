@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " W ",
+    " W ",
+    "RAX"
+  ],
+  "key": {
+    "A": {
+      "item": "zollerngalaxy:lapisingot"
+    },
+    "R": {
+      "item": "zollerngalaxy:witheriteblock"
+    },
+    "W": {
+      "item": "zollerngalaxy:netheridiumblock"
+    },
+    "X": {
+      "item": "zollerngalaxy:shadowessence"
+    }
+  },
+  "result": {
+    "item": "zollerngalaxy:wither_sword"
+  }
+}

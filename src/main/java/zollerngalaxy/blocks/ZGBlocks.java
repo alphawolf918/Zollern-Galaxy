@@ -407,7 +407,9 @@ public class ZGBlocks {
 	public static final Block caligroCreepstone = ((ZGBlockBase) new ZGPlanetStone("creepstone").setBlockHarvestLevel(
 			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel())).setShouldExplode(true, 20);
 	public static final Block caligroCreepdirt = new ZGBlockDirt("creepdirt").setBlockHarvestLevel(
-			EnumHarvestToolZG.SHOVEL.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());;
+			EnumHarvestToolZG.SHOVEL.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
+	public static final Block caligroWitheriteOre = new ZGOreGem("witheriteore", 6.2F, ZGItems.witherite).setBlockHarvestLevel(
+			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
 	public static final Block caligroShiniumOre = new ZGBlockOre("caligroshiniumore", 5.6F).setBlockHarvestLevel(
 			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
 	public static final Block caligroSilverOre = new ZGBlockOre("caligrosilverore", 4.5F).setBlockHarvestLevel(
@@ -464,9 +466,9 @@ public class ZGBlocks {
 	public static final Block corruptCobble = new ZGCorruptBlock("corruptcobble").setBlockType(EnumBlockType.COBBLESTONE);
 	public static final Block corruptStone = new ZGPlanetStoneCorrupted("corruptstone", corruptCobble);
 	public static final Block corruptStoneBricks = new ZGCorruptBlock("corruptstonebricks");
-	public static final Block corruptAscendiumOre = new ZGOreGemCorrupted("corruptascendiumore", 7.5F, ZGItems.perdEtrium)
+	public static final Block corruptAscendiumOre = new ZGOreGemCorrupted("corruptascendiumore", 7.5F, ZGItems.ascendium)
 			.setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
-	public static final Block corruptEtriumOre = new ZGOreGemCorrupted("corruptetriumore", 7.5F, ZGItems.ascendium).setBlockHarvestLevel(
+	public static final Block corruptEtriumOre = new ZGOreGemCorrupted("corruptetriumore", 7.5F, ZGItems.perdEtrium).setBlockHarvestLevel(
 			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
 	public static final Block corruptChargiumOre = new ZGBlockOreCorrupted("corruptchargiumore", 7.6F).setBlockHarvestLevel(
 			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
@@ -590,9 +592,9 @@ public class ZGBlocks {
 				perdWoodPlanks, altumRock, altumSand, altumDirt, altumCobble, altumStone, altumGravel, altumSeaweed, altumCoalOre,
 				altumIronOre, altumGoldOre, altumRedstoneOre, altumDiamondOre, altumZollerniumOre, altumEveniumOre, altumRhodiumOre,
 				altumAmaranthOre, caligroSurfaceRock, caligroRock, caligroCobblestone, caligroCobblestoneMossy, caligroStone,
-				caligroStoneBricks, caligroGravel, caligroDirt, witherrack, caligroCreepstone, caligroCreepdirt, caligroShiniumOre,
-				caligroSilverOre, caligroNickelOre, caligroLeadOre, caligroTinOre, caligroCopperOre, caligroIronOre, caligroGoldOre,
-				caligroRedstoneOre, caligroAmaranthOre, caligroZincOre, caligroAmberOre, caligroTopazOre, caligroOpalOre,
+				caligroStoneBricks, caligroGravel, caligroDirt, witherrack, caligroCreepstone, caligroCreepdirt, caligroWitheriteOre,
+				caligroShiniumOre, caligroSilverOre, caligroNickelOre, caligroLeadOre, caligroTinOre, caligroCopperOre, caligroIronOre,
+				caligroGoldOre, caligroRedstoneOre, caligroAmaranthOre, caligroZincOre, caligroAmberOre, caligroTopazOre, caligroOpalOre,
 				caligroAquamarineOre, caligroGarnetOre, caligroSuperChargedCoalOre, caligroFueltoniumOre, caligroDiamondOre,
 				caligroEmeraldOre, caligroRadiumOre, caligroLapisOre, caligroZollerniumOre, caligroRubyOre, spiderlingEgg,
 				shadowBossSpawner, corruptRock, corruptCobble, corruptStone, corruptStoneBricks, corruptAscendiumOre, corruptEtriumOre,

@@ -21,6 +21,7 @@ import zollerngalaxy.items.tools.ZGItemPickaxe;
 import zollerngalaxy.items.tools.ZGItemShovel;
 import zollerngalaxy.items.tools.ZGItemSword;
 import zollerngalaxy.items.tools.ZGToolMats;
+import zollerngalaxy.items.tools.power.ItemWitherSword;
 import zollerngalaxy.lib.helpers.CommonZGRegisterHelper;
 import zollerngalaxy.lib.helpers.ZGHelper;
 
@@ -201,6 +202,7 @@ public class ZGItems {
 	public static final Item swordAmaranth = new ZGItemSword("amaranth", ZGToolMats.AMARANTH);
 	public static final Item swordAzurite = new ZGItemSword("azurite", ZGToolMats.AZURITE);
 	public static final Item swordZollernium = new ZGItemSword("zollernium", ZGToolMats.ZOLLERNIUM);
+	public static final Item swordWither = new ItemWitherSword();
 	
 	public static void init() {
 		ZGItems.registerItems(heartium, zolCrystal, kriffCrystal, purgCrystal, edenCrystal, purgEssence, prometheanCrystal,
@@ -221,7 +223,7 @@ public class ZGItems {
 				pickaxeAzurite, pickaxeZollernium, shovelCobalt, shovelEvenium, shovelVirinium, shovelAmaranth, shovelAzurite,
 				shovelZollernium, axeCobalt, axeEvenium, axeVirinium, axeAmaranth, axeAzurite, axeZollernium, hoeCobalt, hoeEvenium,
 				hoeVirinium, hoeAmaranth, hoeAzurite, hoeZollernium, swordCobalt, swordEvenium, swordVirinium, swordAmaranth, swordAzurite,
-				swordZollernium);
+				swordZollernium, swordWither);
 		ZGHelper.Log("Loaded a total of " + totalItems + " new items.");
 	}
 	

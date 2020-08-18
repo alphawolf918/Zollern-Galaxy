@@ -13,7 +13,6 @@ import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import zollerngalaxy.blocks.ZGBlocks;
-import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.worldgen.ZGWorldGenMaster;
 
 public class WorldGenShadowShrine extends ZGWorldGenMaster {
@@ -28,9 +27,9 @@ public class WorldGenShadowShrine extends ZGWorldGenMaster {
 		int j = position.getY();
 		int k = position.getZ();
 		
-		ZGHelper.Log("Spawned one at: " + i + " " + j + " " + k);
-		
-		j -= 12;
+		// j -= 12;
+		// j -= 2;
+		j += 10;
 		
 		Block NETHERIZED_OBSIDIAN = ZGBlocks.blockNetherizedObsidian;
 		Block OBSIDIAN = Blocks.OBSIDIAN;
