@@ -7,7 +7,7 @@ Zollern Galaxy v2.0.16
     - Planet is heavily inspired by the Netflix web series, Stranger Things.
     - This dimension was first featured in Zollern Extras before being ported over as a planet.
     - Extremely dangerous planet with loads of resources and Dark Agent mobs.
-    - This is the first planet to not feature any Villages.
+    - This is the first planet to not feature any Villages or Space Stations (yet).
 * Increased hitbox of Moolus mob.
 * Added the Krull mob.
     - Infects Players within a 3 to 5 block radius, who can then infect other Players.
@@ -35,6 +35,7 @@ Zollern Galaxy v2.0.16
     - Once attacked, it has a chance to heal damage from anywhere between 10 - 20 hearts.
     - When the beast reaches half of its health, it will start spawning Scorpions and Spiderlings.
         - Its attack damage will also increase.
+    - Generates a treasure chest when defeated.
 * Removed "hurt2" from Wasp sound events as it doesn't exist.
 * Spiderling nests spawn throughout Caligro - be wary.
 * Increased temperature of Eden slightly to give it a more warm feel.
@@ -54,6 +55,10 @@ Zollern Galaxy v2.0.16
     - Right-clicking with this sword will shoot Wither Skulls where the Player is looking.
     - Hitting a living entity with this sword will give them a Wither effect.
     - Crafted using Witherite.
+* Added the Faceless mob.
+    - Model and texture by ZG 3D Modeler DabbingEevee.
+    - Powerful mob that spawns in the Corruption layer and sometimes on the surface.
+    - Deals Corruption damage on collision.
 * Ascendant Amaranth can now be formed in the Induction Smelter.
 * Fixed duplicate entries in en_us.lang file.
 * Fixed Zucrite not working with Induction Smelter correctly (Thermal Foundation).

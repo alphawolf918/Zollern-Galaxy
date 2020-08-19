@@ -3,13 +3,13 @@
         {
             "name": "shadowboss",
             "rolls": {
-                "min": 5,
-                "max": 10
+                "min": 6,
+                "max": 11
             },
             "entries": [
                 {
                     "type": "item",
-                    "name": "zollerngalaxy:rokkite",
+                    "name": "zollerngalaxy:netheridium",
                     "weight": 5,
                     "functions": [
                         {
@@ -65,14 +65,14 @@
                 },
                 {
                     "type": "item",
-                    "name": "zollerngalaxy:omnitool",
-                    "weight": 5,
+                    "name": "zollerngalaxy:wither_sword",
+                    "weight": 25,
                     "functions": [
                         {
                             "function": "minecraft:set_count",
                             "count": {
-                                "min": 0,
-                                "max": 1
+                                "min": 1,
+                                "max": 2
                             }
                         }
                     ]

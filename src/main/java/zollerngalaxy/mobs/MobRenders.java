@@ -13,6 +13,7 @@ import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import zollerngalaxy.mobs.entities.EntityAbyssalVillager;
 import zollerngalaxy.mobs.entities.EntityBladeFish;
 import zollerngalaxy.mobs.entities.EntityBlubberFish;
+import zollerngalaxy.mobs.entities.EntityFaceless;
 import zollerngalaxy.mobs.entities.EntityFrostGiant;
 import zollerngalaxy.mobs.entities.EntityGalaxyKnight;
 import zollerngalaxy.mobs.entities.EntityGrayAlien;
@@ -35,6 +36,7 @@ import zollerngalaxy.mobs.entities.boss.EntityShadowAlien;
 import zollerngalaxy.mobs.renders.RenderAbyssalVillager;
 import zollerngalaxy.mobs.renders.RenderBladeFish;
 import zollerngalaxy.mobs.renders.RenderBlubberFish;
+import zollerngalaxy.mobs.renders.RenderFaceless;
 import zollerngalaxy.mobs.renders.RenderFrostGiant;
 import zollerngalaxy.mobs.renders.RenderGalaxyKnight;
 import zollerngalaxy.mobs.renders.RenderGrayAlien;
@@ -80,6 +82,7 @@ public final class MobRenders {
 		RenderMob(EntityShadowSkeleton.class, RenderShadowSkeleton::new);
 		RenderMob(EntityShade.class, RenderShade::new);
 		RenderMob(EntityShadowAlien.class, RenderShadowAlien::new);
+		RenderMob(EntityFaceless.class, RenderFaceless::new);
 	}
 	
 	/**

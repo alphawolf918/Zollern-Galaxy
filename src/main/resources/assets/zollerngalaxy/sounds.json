@@ -167,6 +167,27 @@
          "zollerngalaxy:mob/wasp/death"
       ]
    },
+  "mob.faceless.say":{
+      "category":"master",
+      "sounds":[
+         "zollerngalaxy:mob/faceless/say1",
+         "zollerngalaxy:mob/faceless/say2",
+         "zollerngalaxy:mob/faceless/say3"
+      ]
+   },
+   "mob.faceless.hurt":{
+      "category":"master",
+      "sounds":[
+         "zollerngalaxy:mob/faceless/hurt1",
+		 "zollerngalaxy:mob/faceless/hurt2"
+      ]
+   },
+   "mob.faceless.die":{
+      "category":"master",
+      "sounds":[
+         "zollerngalaxy:mob/faceless/die"
+      ]
+   },
   "dig.xeno": {
 	"category": "master",
 	"sounds": [

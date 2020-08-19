@@ -14,6 +14,7 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.monster.EntityCaveSpider;
 import net.minecraft.entity.monster.EntityEnderman;
 import net.minecraft.entity.monster.EntitySpider;
+import net.minecraft.entity.monster.EntityWitherSkeleton;
 import net.minecraft.entity.monster.EntityZombie;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
@@ -71,6 +72,7 @@ public class BiomeCaligroBase extends BiomeSpace {
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityKrull.class, 50, 1, 1));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityMegaCreeper.class, 100, 1, 4));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityShadowSkeleton.class, 100, 1, 4));
+		this.spawnableMonsterList.add(new SpawnListEntry(EntityWitherSkeleton.class, 80, 1, 4));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityShade.class, 100, 1, 4));
 		this.setPlanetForBiome(ZGPlanets.planetCaligro);
 	}

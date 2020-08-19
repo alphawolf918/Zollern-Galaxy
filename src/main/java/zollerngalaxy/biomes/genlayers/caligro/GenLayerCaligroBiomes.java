@@ -46,8 +46,10 @@ public class GenLayerCaligroBiomes extends GenLayerCaligro {
 		ArrayList<BiomeEntry>[] currentBiomes = new ArrayList[CachedEnum.valuesBiomeCached().length];
 		List<BiomeEntry> list = new ArrayList<>();
 		list.add(new BiomeEntry(ZGBiomes.CALIGRO_UPSIDE_DOWN, 100));
-		list.add(new BiomeEntry(ZGBiomes.CALIGRO_CREEPLANDS, 90));
-		list.add(new BiomeEntry(ZGBiomes.CALIGRO_ROCKY_VEINS, 80));
+		list.add(new BiomeEntry(ZGBiomes.CALIGRO_WITHERLANDS, 80));
+		list.add(new BiomeEntry(ZGBiomes.CALIGRO_ROCKY_VEINS, 60));
+		list.add(new BiomeEntry(ZGBiomes.CALIGRO_CREEPLANDS, 40));
+		list.add(new BiomeEntry(ZGBiomes.CALIGRO_CORRUPTED_MESA, 20));
 		
 		currentBiomes[BiomeType.WARM.ordinal()] = new ArrayList<>(list);
 		return currentBiomes;

@@ -18,6 +18,7 @@ import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.mobs.entities.EntityAbyssalVillager;
 import zollerngalaxy.mobs.entities.EntityBladeFish;
 import zollerngalaxy.mobs.entities.EntityBlubberFish;
+import zollerngalaxy.mobs.entities.EntityFaceless;
 import zollerngalaxy.mobs.entities.EntityFrostGiant;
 import zollerngalaxy.mobs.entities.EntityGalaxyKnight;
 import zollerngalaxy.mobs.entities.EntityGrayAlien;
@@ -93,9 +94,12 @@ public class MobRegistry {
 		// Shade
 		registerEntity("shade", EntityShade.class, entityId++, 0x000000, 0xffffff);
 		
+		// Faceless
+		registerEntity("faceless", EntityFaceless.class, entityId++, 0x800080, 0xffa500);
+		
 		// ***** BEGIN BOSSES ***** //
 		// Shadow Alien
-		registerEntity("shadowalien", EntityShadowAlien.class, entityId++, 0xeeeeee, 0xffffff);
+		registerEntity("shadowalien", EntityShadowAlien.class, entityId++, 0x000000, 0xeeeeee);
 		// ***** END BOSSES ***** //
 		
 		// Blubber Fish

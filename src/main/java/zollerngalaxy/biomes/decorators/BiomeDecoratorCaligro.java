@@ -9,6 +9,7 @@ package zollerngalaxy.biomes.decorators;
 
 import java.util.Random;
 import net.minecraft.block.Block;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.ChunkPrimer;
@@ -17,6 +18,8 @@ import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderCaligro;
 import zollerngalaxy.core.enums.EnumOreGenZG;
+import zollerngalaxy.lib.helpers.ZGHelper;
+import zollerngalaxy.mobs.entities.EntityFaceless;
 import zollerngalaxy.worldgen.WorldGenMinableZG;
 import zollerngalaxy.worldgen.caligro.WorldGenShadowShrine;
 import zollerngalaxy.worldgen.caligro.WorldGenShadowSkull;
@@ -90,11 +93,13 @@ public class BiomeDecoratorCaligro extends BiomeDecoratorZG {
 	public int spiderlingEggsPerChunk = 5;
 	public int shadowShrinesPerChunk = 1;
 	public int shadowSkullsPerChunk = 1;
+	public int facelessPerChunk = 3;
 	
 	public boolean generateSpiderlingEggs = true;
 	public boolean generateCraters = true;
 	public boolean generateShadowShrines = true;
 	public boolean generateShadowSkulls = true;
+	public boolean spawnFaceless = true;
 	
 	private WorldGenSpiderEgg spiderEggGen = new WorldGenSpiderEgg();
 	private WorldGenShadowShrine shadowShrineGen = new WorldGenShadowShrine();
@@ -255,8 +260,22 @@ public class BiomeDecoratorCaligro extends BiomeDecoratorZG {
 			for (int i = 0; i < this.shadowSkullsPerChunk; i++) {
 				y = rand.nextInt(rand.nextInt(genY) + 8);
 				if (y >= SEA_LEVEL) {
-					if (rand.nextInt(800) <= 52) {
+					if (rand.nextInt(1000) <= 52) {
 						this.shadowSkullGen.generate(world, rand, this.chunkPos.add(x, y, z));
+					}
+				}
+			}
+		}
+		
+		// Spawn the Faceless
+		if (this.spawnFaceless && this.facelessPerChunk > 0) {
+			EntityFaceless faceless = new EntityFaceless(world);
+			for (int i = 0; i < this.facelessPerChunk; i++) {
+				y = rand.nextInt(rand.nextInt(genY) + 8);
+				if (y <= CORRUPTION_LAYER && faceless.getCanSpawnHere()) {
+					if (rand.nextInt(800) <= 15) {
+						BlockPos chunkPosMod = this.chunkPos.add(x, y, z);
+						ZGHelper.spawnEntity(faceless, world, chunkPosMod.getX(), chunkPosMod.getY(), chunkPosMod.getZ());
 					}
 				}
 			}

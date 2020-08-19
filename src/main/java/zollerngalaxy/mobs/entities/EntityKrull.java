@@ -26,8 +26,6 @@ public class EntityKrull extends EntityMob implements IShadeEntity {
 	
 	// This searches for Players around the entity's bounding box, and "infects"
 	// any that it finds, causing those Players to infect other Players as well.
-	// This code is more thoroughly explained in ZGEvents.java, under
-	// zollerngalaxy.events.
 	@Override
 	public void onLivingUpdate() {
 		super.onLivingUpdate();
