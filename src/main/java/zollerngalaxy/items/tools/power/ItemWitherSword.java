@@ -65,7 +65,7 @@ public class ItemWitherSword extends ZGItemSword {
 		super.onLeftClickEntity(par1ItemStack, par2EntityPlayer, entity);
 		if (entity instanceof EntityLivingBase) {
 			EntityLivingBase living = (EntityLivingBase) entity;
-			living.addPotionEffect(new PotionEffect(MobEffects.WITHER, 50, 2));
+			living.addPotionEffect(new PotionEffect(MobEffects.WITHER, 60, 2));
 			this.playWitherSound(living.getEntityWorld(), living.posX, living.posY, living.posZ);
 		}
 		return false;
@@ -84,6 +84,16 @@ public class ItemWitherSword extends ZGItemSword {
 	@Override
 	public EnumRarity getRarity(ItemStack p_77613_1_) {
 		return EnumRarity.EPIC;
+	}
+	
+	@Override
+	public int getItemEnchantability() {
+		return 80;
+	}
+	
+	@Override
+	public float getAttackDamage() {
+		return 20F;
 	}
 	
 	@Override

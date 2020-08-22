@@ -179,13 +179,33 @@ public class ZGEvents {
 			
 			// Damage the player when they walk on Corrupt blocks.
 			// Anti-Corruption effect stops this.
-			// TODO: Make a repairable item that can take the damage instead.
-			if (block instanceof ICorruptBlock) {
-				ICorruptBlock corruptBlock = (ICorruptBlock) block;
-				if (corruptBlock.canCorrupt()) {
-					if (rand.nextInt(14) <= 4) {
-						if (!player.isPotionActive(ZGPotions.antiCorruption)) {
-							player.attackEntityFrom(ZGDamageSrc.deathCorruption, ZGDamageSrc.deathCorruption.getDamageBase());
+			// Corruption blueprint stops this as well by taking the hit for the Player until it
+			// breaks.
+			// FIXME: Needs to damage the blueprint item... Currently if the item is damaged, the
+			// "hasItemStack" doesn't find it...
+			if (!isCreativeMode) {
+				if (block instanceof ICorruptBlock) {
+					ICorruptBlock corruptBlock = (ICorruptBlock) block;
+					if (corruptBlock.canCorrupt()) {
+						if (rand.nextInt(14) <= 4) {
+							ItemStack blueprintCorruption = new ItemStack(ZGItems.blueprintCorruption);
+							Item blueprintItem = blueprintCorruption.getItem();
+							int blueprintDamage = blueprintItem.getDamage(blueprintCorruption);
+							int blueprintMaxDamage = blueprintItem.getMaxDamage(blueprintCorruption);
+							int remDamage = (blueprintMaxDamage - blueprintDamage);
+							float corruptionDamage = ZGDamageSrc.deathCorruption.getDamageBase();
+							boolean blueprintIsUsable = (remDamage > 5);
+							if (!player.isPotionActive(ZGPotions.antiCorruption)) {
+								ItemStack blueprintStack = blueprintCorruption.copy();
+								if (playerInventory.hasItemStack(blueprintStack)) {
+									int invSlot = playerInventory.getSlotFor(blueprintCorruption);
+									// blueprintStack.setItemDamage(blueprintDamage + (int)
+									// corruptionDamage);
+									playerInventory.setInventorySlotContents(invSlot, blueprintStack);
+								} else {
+									player.attackEntityFrom(ZGDamageSrc.deathCorruption, corruptionDamage);
+								}
+							}
 						}
 					}
 				}

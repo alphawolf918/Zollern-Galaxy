@@ -55,7 +55,7 @@ public class ItemOmnitool extends ItemTool implements ISingleZGItemRender {
 	public float getDestroySpeed(ItemStack stack, IBlockState state) {
 		Material material = state.getMaterial();
 		return (material != Material.IRON && material != Material.ANVIL && material != Material.ROCK ? super.getDestroySpeed(stack, state)
-				: this.efficiency) * 0.9F;
+				: this.efficiency) * 1.9F;
 	}
 	
 	public void setItemName(final Item item, final String itemName) {

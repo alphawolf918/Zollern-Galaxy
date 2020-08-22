@@ -204,6 +204,9 @@ public class ZGItems {
 	public static final Item swordZollernium = new ZGItemSword("zollernium", ZGToolMats.ZOLLERNIUM);
 	public static final Item swordWither = new ItemWitherSword();
 	
+	// Blueprints
+	public static final Item blueprintCorruption = new ItemBlueprint("corruption").setTooltipText("tooltips.blueprint_corruption");
+	
 	public static void init() {
 		ZGItems.registerItems(heartium, zolCrystal, kriffCrystal, purgCrystal, edenCrystal, purgEssence, prometheanCrystal,
 				plutoniumCrystal, azurite, ascendium, rokkite, dustBrightstone, dustShinestone, dustVirinium, dustEvenium, dustCobalt,
@@ -223,7 +226,7 @@ public class ZGItems {
 				pickaxeAzurite, pickaxeZollernium, shovelCobalt, shovelEvenium, shovelVirinium, shovelAmaranth, shovelAzurite,
 				shovelZollernium, axeCobalt, axeEvenium, axeVirinium, axeAmaranth, axeAzurite, axeZollernium, hoeCobalt, hoeEvenium,
 				hoeVirinium, hoeAmaranth, hoeAzurite, hoeZollernium, swordCobalt, swordEvenium, swordVirinium, swordAmaranth, swordAzurite,
-				swordZollernium, swordWither);
+				swordZollernium, swordWither, blueprintCorruption);
 		ZGHelper.Log("Loaded a total of " + totalItems + " new items.");
 	}
 	

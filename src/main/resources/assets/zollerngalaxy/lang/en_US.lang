@@ -619,6 +619,8 @@ tooltips.mobnotpeaceful=Cannot spawn this Mob while on Peaceful difficulty.
 tooltips.treasurespawned=A treasure chest has spawned!
 tooltips.withersword1=A withering
 tooltips.withersword2=blade, touched with death.
+tooltips.blueprint=Protects the Player from certain elements.
+tooltips.blueprint_corruption=Protects the Player from Corruption damage.
 
 planet.zollus=Zollus
 planet.eden=Eden

@@ -1,65 +1,11 @@
 ===== CHANGELOG =====
-Zollern Galaxy v2.0.16
+Zollern Galaxy v2.0.17
 =====================
 
-* Added Russian translations by mMONTAGEe.
-* Created planet Caligro and added its ores and mobs.
-    - Planet is heavily inspired by the Netflix web series, Stranger Things.
-    - This dimension was first featured in Zollern Extras before being ported over as a planet.
-    - Extremely dangerous planet with loads of resources and Dark Agent mobs.
-    - This is the first planet to not feature any Villages or Space Stations (yet).
-* Increased hitbox of Moolus mob.
-* Added the Krull mob.
-    - Infects Players within a 3 to 5 block radius, who can then infect other Players.
-        - Those Players can then infect others within that same radius, etc.
-        - The infection will rapidly kill the Player.
-    - Inspired by the Demogorgon.
-    - Model made by DabbingEevee.
-* Added the poisonous Spiderling mob.
-    - Hatches from egg sacs that are deposted in nests on planet Caligro.
-    - Will occasionally place cobwebs where it walks and can lay more eggs.
-        - Sometimes laying more eggs will actually kill the spider.
-        - When the egg proceeds closer to hatching, a heartbeat sound will play.
-* Added the Shadow Skeleton mob.
-    - Similar to a regular Skeleton, but a Dark Agent version that's been corrupted.
-    - Drops Shadow Bones.
-    - Has more health, speed and attack power than a regular Skeleton and is bigger.
-* Added the Shade mob.
-    - A Dark Agent version of the Zombie.
-* Added the Corruption Layer to cave systems in Caligro.
-    - Will damage the Player without proper protection.
-    - Special ores can be found here.
-    - Spawns at layers 25 and below.
-* Added the Shadow Boss mob.
-    - Zollern Galaxy's first "boss" mob since the 1.7.10 version.
-    - Once attacked, it has a chance to heal damage from anywhere between 10 - 20 hearts.
-    - When the beast reaches half of its health, it will start spawning Scorpions and Spiderlings.
-        - Its attack damage will also increase.
-    - Generates a treasure chest when defeated.
-* Removed "hurt2" from Wasp sound events as it doesn't exist.
-* Spiderling nests spawn throughout Caligro - be wary.
-* Increased temperature of Eden slightly to give it a more warm feel.
-* Added a config option to disable chain reaction explosions (why though?!).
-* Added the Shadow Boss Spawner block.
-    - Right-clicking this with a findable Shade Key will spawn the Shadow of Darkness boss.
-* Added the Shadow Shrine structure.
-    - Built to honor the Soul of Shadows, a dark, powerful entity that reigns over the Dark Agents.
-    - The Shadow Boss Spawner block can be found inside.
-* Added the Shadow Skull structure.
-    - Made in honor of the Shadow Skeletons.
-    - Treasure awaits inside - you may even find a Shade Key!
-* Added new metals to the Ore Dictionary.
-* Added new metals to Pulverizers and Furnaces.
-* Added Ascendant Amaranth Ingots as a Compressor Recipe.
-* Added the Wither Sword.
-    - Right-clicking with this sword will shoot Wither Skulls where the Player is looking.
-    - Hitting a living entity with this sword will give them a Wither effect.
-    - Crafted using Witherite.
-* Added the Faceless mob.
-    - Model and texture by ZG 3D Modeler DabbingEevee.
-    - Powerful mob that spawns in the Corruption layer and sometimes on the surface.
-    - Deals Corruption damage on collision.
-* Ascendant Amaranth can now be formed in the Induction Smelter.
-* Fixed duplicate entries in en_us.lang file.
-* Fixed Zucrite not working with Induction Smelter correctly (Thermal Foundation).
+* Removed Absorption effect when Radiance is active.
+* Added craftable "blueprints."
+    - These will take certain types of damage for you until they break, as long as they are in your inventory.
+    - Added the Corruption Protection blueprint.
+* Increased destroy speed of the Omnitool.
+* Slightly increased duration of Wither effect when hitting an entity with Mortem.
 * 

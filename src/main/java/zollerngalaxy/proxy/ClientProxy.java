@@ -94,9 +94,9 @@ public class ClientProxy extends CommonProxy {
 			player.attackEntityFrom(ZGDamageSrc.deathInfection, ZGDamageSrc.deathInfection.getDamageBase());
 		}
 		
-		if (potionId == ZGPotions.radiance) {
-			player.setAbsorptionAmount(5.0F);
-		}
+		// if (potionId == ZGPotions.radiance) {
+		// player.setAbsorptionAmount(5.0F);
+		// }
 		
 		if (potionId == ZGPotions.antiCorruption) {
 			// TODO
