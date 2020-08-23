@@ -486,6 +486,7 @@ item.compressedazurite.name=Compressed Azurite
 item.compressedzollernium.name=Compressed Zollernium
 item.compressedrhodium.name=Compressed Rhodium
 item.compressedzucrite.name=Compressed Zucrite
+item.compressedascendantamaranth.name=Compressed Ascendant Amaranth
 
 item.superchargedcoal.name=Super Charged Coal
 item.powerstick.name=Rod of Ascension
@@ -565,6 +566,9 @@ item.zollernium_shovel.name=Zollernium Shovel
 item.zollernium_axe.name=Zollernium Axe
 item.zollernium_hoe.name=Zollernium Hoe
 
+item.heart.name=Healing Heart
+item.heartforce.name=Max Heartforce
+
 entity.zollerngalaxy:moolus.name=Moolus
 entity.zollerngalaxy:oinkus.name=Oinkus
 entity.zollerngalaxy:squidlus.name=Squidlus
@@ -621,6 +625,14 @@ tooltips.withersword1=A withering
 tooltips.withersword2=blade, touched with death.
 tooltips.blueprint=Protects the Player from certain elements.
 tooltips.blueprint_corruption=Protects the Player from Corruption damage.
+tooltips.heart=Restores the Player's health.
+tooltips.maxhealth=You're already at max health!
+tooltips.healthrestored=Your health has been restored.
+tooltips.healthincrease=Increases the max health of the Player.
+tooltips.maxhealthtoohigh=Max health cannot be higher than
+tooltips.newhealth=Max Health
+tooltips.newhealth2=Max Health Now:
+tooltips.hearts=hearts
 
 planet.zollus=Zollus
 planet.eden=Eden

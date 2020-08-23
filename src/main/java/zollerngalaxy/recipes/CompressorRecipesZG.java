@@ -113,6 +113,11 @@ public class CompressorRecipesZG {
 				new ItemStack(ZGItems.ingotAmaranth, 1));
 		totalCompressorRecipes++;
 		
+		// Compressed Ascendant Amaranth
+		CompressorRecipes.addShapelessRecipe(new ItemStack(ZGItems.compressedAscendantAmaranth, 2), new ItemStack(
+				ZGItems.ingotAscendantAmaranth, 1), new ItemStack(ZGItems.ingotAscendantAmaranth, 1));
+		totalCompressorRecipes++;
+		
 		ZGHelper.Log("Loaded a total of " + totalCompressorRecipes + " new compressor recipes.");
 	}
 	

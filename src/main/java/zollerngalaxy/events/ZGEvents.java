@@ -113,7 +113,7 @@ public class ZGEvents {
 						int invSlot = playerInventory.getSlotFor(radiumStack);
 						playerInventory.decrStackSize(invSlot, 1);
 					}
-					proxy.sendChatMessage(player, TextFormatting.GOLD + ZGUtils.translate("tooltips.radiance"));
+					this.proxy.sendChatMessage(player, TextFormatting.GOLD + ZGUtils.translate("tooltips.radiance"));
 				}
 				
 				// Shadow Damage
@@ -181,8 +181,6 @@ public class ZGEvents {
 			// Anti-Corruption effect stops this.
 			// Corruption blueprint stops this as well by taking the hit for the Player until it
 			// breaks.
-			// FIXME: Needs to damage the blueprint item... Currently if the item is damaged, the
-			// "hasItemStack" doesn't find it...
 			if (!isCreativeMode) {
 				if (block instanceof ICorruptBlock) {
 					ICorruptBlock corruptBlock = (ICorruptBlock) block;
@@ -190,17 +188,19 @@ public class ZGEvents {
 						if (rand.nextInt(14) <= 4) {
 							ItemStack blueprintCorruption = new ItemStack(ZGItems.blueprintCorruption);
 							Item blueprintItem = blueprintCorruption.getItem();
-							int blueprintDamage = blueprintItem.getDamage(blueprintCorruption);
+							int blueprintDamage = blueprintCorruption.getItemDamage();
 							int blueprintMaxDamage = blueprintItem.getMaxDamage(blueprintCorruption);
 							int remDamage = (blueprintMaxDamage - blueprintDamage);
 							float corruptionDamage = ZGDamageSrc.deathCorruption.getDamageBase();
 							boolean blueprintIsUsable = (remDamage > 5);
 							if (!player.isPotionActive(ZGPotions.antiCorruption)) {
-								ItemStack blueprintStack = blueprintCorruption.copy();
-								if (playerInventory.hasItemStack(blueprintStack)) {
+								boolean hasItemStack = playerInventory.hasItemStack(blueprintCorruption);
+								boolean hasItem = ZGHelper.checkInventoryForItem(blueprintItem, player);
+								if (hasItemStack || hasItem) {
 									int invSlot = playerInventory.getSlotFor(blueprintCorruption);
-									// blueprintStack.setItemDamage(blueprintDamage + (int)
-									// corruptionDamage);
+									int fullDmg = blueprintDamage + (int) corruptionDamage;
+									blueprintCorruption.setItemDamage(fullDmg);
+									ItemStack blueprintStack = blueprintCorruption.copy();
 									playerInventory.setInventorySlotContents(invSlot, blueprintStack);
 								} else {
 									player.attackEntityFrom(ZGDamageSrc.deathCorruption, corruptionDamage);
@@ -256,7 +256,7 @@ public class ZGEvents {
 			if (ent instanceof EntityPlayer) {
 				EntityPlayer player = (EntityPlayer) ent;
 				if (this.core.isInTestMode() || this.core.isInDevMode()) {
-					String txtFormat = TextFormatting.BOLD + "" + TextFormatting.RED;
+					String txtFormat = TextFormatting.BOLD + " " + TextFormatting.RED;
 					String msg = txtFormat + "WARNING: This is NOT a valid version of Zollern Galaxy! "
 							+ "Please uninstall the mod and install the correct version, or it will not operate correctly.";
 					this.proxy.sendChatMessage(player, msg);

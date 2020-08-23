@@ -145,6 +145,10 @@ public class ConfigManagerZG {
 	public static boolean planetUnreachableAltum;
 	public static boolean planetUnreachableCaligro;
 	
+	// Max Health Customization
+	public static double maxHealthAllowed;
+	public static double maxHealthIncreasedBy;
+	
 	// Coords (Psios)
 	public static float psiosX;
 	public static float psiosY;
@@ -422,6 +426,13 @@ public class ConfigManagerZG {
 				"Disable rocket travel for this planet. (default: false)").getBoolean();
 		planetUnreachableCaligro = configuration.get(CATEGORY_CUSTOMIZATIONS, "Disable Rockets For Planet Caligro", false,
 				"Disable rocket travel for this planet. (default: false)").getBoolean();
+		
+		//
+		maxHealthAllowed = configuration.get(CATEGORY_CUSTOMIZATIONS, "Max Health Allowed", 40,
+				"The max health that Players are allowed to have. (default: 40)").getInt();
+		maxHealthIncreasedBy = configuration.get(CATEGORY_CUSTOMIZATIONS, "Increase Max Health Amount", 10,
+				"The amount of hearts to add to the Player's health when using a Max Heartforce (default: 10).").getInt();
+		//
 		
 		// Coords (Psios)
 		psiosX = (float) configuration.get(CATEGORY_COORDINATES, "Psios X", -2.5).getDouble();

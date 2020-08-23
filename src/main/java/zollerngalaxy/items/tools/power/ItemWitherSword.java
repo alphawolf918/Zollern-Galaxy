@@ -52,6 +52,7 @@ public class ItemWitherSword extends ZGItemSword {
 			witherskull.accelerationY = look.y * 0.1;
 			witherskull.accelerationZ = look.z * 0.1;
 			worldIn.spawnEntity(witherskull);
+			this.playWitherSound(playerIn.getEntityWorld(), playerIn.posX, playerIn.posY, playerIn.posZ);
 			if (!playerIn.capabilities.isCreativeMode) {
 				par1ItemStack.damageItem(5, playerIn);
 			}
@@ -88,12 +89,12 @@ public class ItemWitherSword extends ZGItemSword {
 	
 	@Override
 	public int getItemEnchantability() {
-		return 80;
+		return 90;
 	}
 	
 	@Override
 	public float getAttackDamage() {
-		return 20F;
+		return 34F;
 	}
 	
 	@Override

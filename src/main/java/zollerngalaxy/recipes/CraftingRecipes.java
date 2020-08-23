@@ -255,7 +255,7 @@ public class CraftingRecipes {
 		
 		// Mortem
 		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.swordWither, 1), new Object[] { " W ", " W ", "RAX", 'W', ZGBlocks.blockNetheridium,
-				'R', ZGBlocks.blockWitherite, 'A', ZGItems.ingotLapis, 'X', ZGItems.darkEssence });
+				'R', ZGBlocks.blockWitherite, 'A', ZGItems.powerStick, 'X', ZGItems.darkEssence });
 		
 		// Ascendium
 		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.ascendium, 1), new Object[] { " Z ", " C ", " A ", 'Z',
@@ -263,7 +263,11 @@ public class CraftingRecipes {
 		
 		// Power Stick (Rod of Ascension)
 		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.powerStick, 2), new Object[] { " A ", " L ", " A ", 'A', ZGItems.compressedAmaranth,
-				'L', ZGItems.ingotLapis });
+				'L', ZGItems.lapisStick });
+		totalCraftRecipes++;
+		
+		// Lapis Stick
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.lapisStick, 4), new Object[] { " L ", " L ", " L ", 'L', ZGItems.ingotLapis });
 		totalCraftRecipes++;
 		
 		// Golden Construct Blocks
@@ -274,6 +278,11 @@ public class CraftingRecipes {
 		// Omnitool
 		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.OMNITOOL, 1), new Object[] { "ZZZ", "APA", " P ", 'Z', ZGItems.compressedZollernium,
 				'A', ZGItems.compressedAzurite, 'P', ZGItems.powerStick });
+		totalCraftRecipes++;
+		
+		// Corruption Protection
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.blueprintCorruption, 1), new Object[] { "ZZZ", "APA", " P ", 'Z',
+				ZGItems.compressedAscendantAmaranth, 'A', ZGItems.ascendium, 'P', ZGItems.ascendium });
 		totalCraftRecipes++;
 		
 		// Star Gate (Tier 1)

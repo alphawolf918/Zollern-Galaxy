@@ -5,7 +5,7 @@
  * claim it as your own, and do not
  * redistribute it.
  */
-package zollerngalaxy.util.capabilities;
+package zollerngalaxy.util.capabilities.lore;
 
 import net.minecraft.nbt.NBTBase;
 import net.minecraft.util.EnumFacing;

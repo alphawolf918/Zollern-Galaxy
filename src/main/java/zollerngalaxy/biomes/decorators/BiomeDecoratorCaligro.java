@@ -248,7 +248,7 @@ public class BiomeDecoratorCaligro extends BiomeDecoratorZG {
 			for (int i = 0; i < this.shadowShrinesPerChunk; i++) {
 				y = rand.nextInt(rand.nextInt(genY) + 8);
 				if (y >= SEA_LEVEL) {
-					if (rand.nextInt(2000) <= 42) {
+					if (rand.nextInt(3000) <= 32) {
 						this.shadowShrineGen.generate(world, rand, this.chunkPos.add(x, y, z));
 					}
 				}
@@ -260,7 +260,7 @@ public class BiomeDecoratorCaligro extends BiomeDecoratorZG {
 			for (int i = 0; i < this.shadowSkullsPerChunk; i++) {
 				y = rand.nextInt(rand.nextInt(genY) + 8);
 				if (y >= SEA_LEVEL) {
-					if (rand.nextInt(1000) <= 52) {
+					if (rand.nextInt(2000) <= 42) {
 						this.shadowSkullGen.generate(world, rand, this.chunkPos.add(x, y, z));
 					}
 				}

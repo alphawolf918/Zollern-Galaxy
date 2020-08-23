@@ -196,7 +196,10 @@ public abstract class ZGHelper {
 	 *            The message to send.
 	 */
 	public static void addChatMessage(EntityPlayer player, String text) {
-		player.sendMessage(new TextComponentString(text));
+		World world = player.world;
+		if (!world.isRemote) {
+			player.sendMessage(new TextComponentString(text));
+		}
 	}
 	
 	public static void Log(Level level, String strMessage) {
@@ -223,8 +226,32 @@ public abstract class ZGHelper {
 		}
 	}
 	
-	public static void repairItemStack(ItemStack item) {
-		item.setItemDamage(item.getMaxDamage());
+	/**
+	 * Checks a Player's inventory for an item by looping through it.
+	 * This way it shouldn't care about metadata.
+	 * Probably a better way to do it, but oh well.
+	 * 
+	 * @param itemIn
+	 *            The Item to check.
+	 * @param playerIn
+	 *            The Player to check the Inventory of.
+	 * @return True or False if the Item is present or not.
+	 */
+	public static boolean checkInventoryForItem(Item itemIn, EntityPlayer playerIn) {
+		InventoryPlayer matrix = playerIn.inventory;
+		for (int i = 0; i < matrix.getSizeInventory(); i++) {
+			if (matrix.getStackInSlot(i) != null) {
+				ItemStack matrixStack = matrix.getStackInSlot(i);
+				if (matrixStack != null && matrixStack.getItem().equals(itemIn)) {
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+	
+	public static void repairItemStack(ItemStack itemStack) {
+		itemStack.setItemDamage(0);
 	}
 	
 	public static DimensionType registerDimension(String dimName, String dimUnlocalizedName, int dimID,

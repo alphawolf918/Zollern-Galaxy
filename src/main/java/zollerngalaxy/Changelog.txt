@@ -6,6 +6,18 @@ Zollern Galaxy v2.0.17
 * Added craftable "blueprints."
     - These will take certain types of damage for you until they break, as long as they are in your inventory.
     - Added the Corruption Protection blueprint.
+        - Protects the Player from Corruption damage.
 * Increased destroy speed of the Omnitool.
 * Slightly increased duration of Wither effect when hitting an entity with Mortem.
+* Drastically increased attack damage of Mortem.
+* Added a few new items.
+* Lowered spawn rate of Caligro structures.
+* Tweaked a few mechanics.
+* Added the Healing Heart item.
+    - Fully restores the Player's health. Has five uses.
+* Added the Max Heartforce item.
+    - Increases the Player's max health temporarily for the game session and heals them completely.
+    - Customizable with config options.
+* Added two new config options to control how high a Player's health can be and how much to increase it by.
+* Fixed OpenGL render glitches with the Shadow Alien boss mob that caused a Post-Render Stack Overflow.
 * 

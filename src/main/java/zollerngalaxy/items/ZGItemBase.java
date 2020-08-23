@@ -14,8 +14,11 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.core.ZollernGalaxyCore;
 import zollerngalaxy.creativetabs.ZGTabs;
 import zollerngalaxy.lib.helpers.json.JSONFactory;
+import zollerngalaxy.proxy.IProxy;
 
 public class ZGItemBase extends Item implements ISingleZGItemRender {
+	
+	protected IProxy proxy = ZollernGalaxyCore.proxy;
 	
 	public ZGItemBase(String name) {
 		super();

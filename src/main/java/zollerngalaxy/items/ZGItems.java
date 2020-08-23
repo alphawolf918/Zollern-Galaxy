@@ -13,6 +13,8 @@ import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.items.food.IceCream;
 import zollerngalaxy.items.food.ItemSweetFood;
 import zollerngalaxy.items.food.ZGItemFood;
+import zollerngalaxy.items.healing.ItemHeart;
+import zollerngalaxy.items.healing.ItemHeartForce;
 import zollerngalaxy.items.tools.ItemBedrockBreaker;
 import zollerngalaxy.items.tools.ItemOmnitool;
 import zollerngalaxy.items.tools.ZGItemAxe;
@@ -78,6 +80,7 @@ public class ZGItems {
 	
 	public static final Item superChargedCoal = new ItemFuelBase("superchargedcoal", 6400);
 	public static final Item powerStick = new ZGItemBase("powerstick");
+	public static final Item lapisStick = new ZGItemBase("lapisstick");
 	
 	public static final Item compressedCobalt = new ZGItemBase("compressedcobalt");
 	public static final Item compressedDiamond = new ZGItemBase("compresseddiamond");
@@ -96,6 +99,7 @@ public class ZGItems {
 	public static final Item compressedZollernium = new ZGItemBase("compressedzollernium");
 	public static final Item compressedZucrite = new ZGItemBase("compressedzucrite");
 	public static final Item compressedRhodium = new ZGItemBase("compressedrhodium");
+	public static final Item compressedAscendantAmaranth = new ZGItemBase("compressedascendantamaranth");
 	
 	public static final Item rawAlienBacon = new ZGItemFood("alienbaconraw", 2, 1.5F, true);
 	public static final Item rawAlienBeef = new ZGItemFood("alienbeefraw", 2, 1.5F, true);
@@ -207,6 +211,10 @@ public class ZGItems {
 	// Blueprints
 	public static final Item blueprintCorruption = new ItemBlueprint("corruption").setTooltipText("tooltips.blueprint_corruption");
 	
+	// Healing Items
+	public static final Item healingHeart = new ItemHeart();
+	public static final Item healingHeartForce = new ItemHeartForce();
+	
 	public static void init() {
 		ZGItems.registerItems(heartium, zolCrystal, kriffCrystal, purgCrystal, edenCrystal, purgEssence, prometheanCrystal,
 				plutoniumCrystal, azurite, ascendium, rokkite, dustBrightstone, dustShinestone, dustVirinium, dustEvenium, dustCobalt,
@@ -216,17 +224,18 @@ public class ZGItems {
 				hud, alienStone, compressedCobalt, compressedDiamond, compressedEmerald, compressedEvenium, compressedGold,
 				compressedHeartium, compressedKriffonium, compressedVirinium, compressedVyrex, compressedPromethean,
 				compressedSuperChargedCoal, compressedRiven, compressedAmaranth, compressedAzurite, compressedZollernium,
-				compressedZucrite, compressedRhodium, rawAlienBacon, cookedAlienBacon, rawAlienBeef, cookedAlienBeef, edenFruit, perdBerry,
-				perdPeach, rawBlubberFish, cookedBlubberFish, rawBladeFish, cookedBladeFish, rawGypsyFish, cookedGypsyFish, creamBall,
-				chocolateRaw, chocolateBar, brownie, candyApple, iceCreamSandwich, iceCream, edenDungeonKey, shadeKey, perdGlowdust,
-				perdDiamond, perdEtrium, amber, topaz, opal, aquamarine, garnet, ruby, amberStatic, aquamarineIcy, garnetFire, witherite,
-				netheridium, perdReed, shagreen, sharkTooth, shadowBone, darkEssence, radium, superChargedCoal, powerStick, starGateTier1,
-				starGateTier2, starGateTier3, starGateTier4, starGateTier5, starGateTier6, starGateTier7, starGateTier8, starGateTier9,
-				starGateTier10, starGateCandy, OMNITOOL, BEDROCK_BREAKER, pickaxeCobalt, pickaxeEvenium, pickaxeVirinium, pickaxeAmaranth,
-				pickaxeAzurite, pickaxeZollernium, shovelCobalt, shovelEvenium, shovelVirinium, shovelAmaranth, shovelAzurite,
-				shovelZollernium, axeCobalt, axeEvenium, axeVirinium, axeAmaranth, axeAzurite, axeZollernium, hoeCobalt, hoeEvenium,
-				hoeVirinium, hoeAmaranth, hoeAzurite, hoeZollernium, swordCobalt, swordEvenium, swordVirinium, swordAmaranth, swordAzurite,
-				swordZollernium, swordWither, blueprintCorruption);
+				compressedZucrite, compressedRhodium, compressedAscendantAmaranth, rawAlienBacon, cookedAlienBacon, rawAlienBeef,
+				cookedAlienBeef, edenFruit, perdBerry, perdPeach, rawBlubberFish, cookedBlubberFish, rawBladeFish, cookedBladeFish,
+				rawGypsyFish, cookedGypsyFish, creamBall, chocolateRaw, chocolateBar, brownie, candyApple, iceCreamSandwich, iceCream,
+				edenDungeonKey, shadeKey, perdGlowdust, perdDiamond, perdEtrium, amber, topaz, opal, aquamarine, garnet, ruby, amberStatic,
+				aquamarineIcy, garnetFire, witherite, netheridium, perdReed, shagreen, sharkTooth, shadowBone, darkEssence, radium,
+				superChargedCoal, powerStick, lapisStick, starGateTier1, starGateTier2, starGateTier3, starGateTier4, starGateTier5,
+				starGateTier6, starGateTier7, starGateTier8, starGateTier9, starGateTier10, starGateCandy, OMNITOOL, BEDROCK_BREAKER,
+				pickaxeCobalt, pickaxeEvenium, pickaxeVirinium, pickaxeAmaranth, pickaxeAzurite, pickaxeZollernium, shovelCobalt,
+				shovelEvenium, shovelVirinium, shovelAmaranth, shovelAzurite, shovelZollernium, axeCobalt, axeEvenium, axeVirinium,
+				axeAmaranth, axeAzurite, axeZollernium, hoeCobalt, hoeEvenium, hoeVirinium, hoeAmaranth, hoeAzurite, hoeZollernium,
+				swordCobalt, swordEvenium, swordVirinium, swordAmaranth, swordAzurite, swordZollernium, swordWither, blueprintCorruption,
+				healingHeart, healingHeartForce);
 		ZGHelper.Log("Loaded a total of " + totalItems + " new items.");
 	}
 	

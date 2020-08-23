@@ -29,7 +29,7 @@ public class WorldGenShadowShrine extends ZGWorldGenMaster {
 		
 		// j -= 12;
 		// j -= 2;
-		j += 10;
+		// j += 10;
 		
 		Block NETHERIZED_OBSIDIAN = ZGBlocks.blockNetherizedObsidian;
 		Block OBSIDIAN = Blocks.OBSIDIAN;

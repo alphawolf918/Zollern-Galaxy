@@ -7,12 +7,8 @@
  */
 package zollerngalaxy.mobs.renders.boss;
 
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
-import net.minecraft.client.renderer.entity.layers.LayerCustomHead;
-import net.minecraft.client.renderer.entity.layers.LayerElytra;
-import net.minecraft.client.renderer.entity.layers.LayerHeldItem;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -30,14 +26,6 @@ public class RenderShadowAlien extends RenderLiving<EntityShadowAlien> {
 	
 	public RenderShadowAlien(RenderManager renderManagerIn) {
 		super(renderManagerIn, new ModelShadowAlien(), 0.5F);
-		this.addLayer(new LayerCustomHead(new ModelShadowAlien().head));
-		this.addLayer(new LayerElytra(this));
-		this.addLayer(new LayerHeldItem(this));
-	}
-	
-	@Override
-	public void transformHeldFull3DItemLayer() {
-		GlStateManager.translate(0.0F, 0.1875F, 0.0F);
 	}
 	
 	@Override

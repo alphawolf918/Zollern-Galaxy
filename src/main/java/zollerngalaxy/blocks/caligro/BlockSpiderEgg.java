@@ -51,15 +51,14 @@ public class BlockSpiderEgg extends ZGBlockBase {
 	@Override
 	public void onBlockAdded(World worldIn, BlockPos pos, IBlockState state) {
 		worldIn.scheduleUpdate(pos, this, this.tickRate(worldIn));
-		worldIn.playSound(null, pos, ZGSoundEvents.SPIDERLING_EGG_HEARTBEAT, SoundCategory.AMBIENT, 1.5F,
-				worldIn.rand.nextFloat() * 0.1F + 0.9F);
+		this.playHeartbeatSound(worldIn, pos);
+		this.ticksEggExisted += 10;
 	}
 	
 	@Override
 	public void neighborChanged(IBlockState state, World worldIn, BlockPos pos, Block blockIn, BlockPos fromPos) {
 		worldIn.scheduleUpdate(pos, this, this.tickRate(worldIn));
-		worldIn.playSound(null, pos, ZGSoundEvents.SPIDERLING_EGG_HEARTBEAT, SoundCategory.AMBIENT, 1.5F,
-				worldIn.rand.nextFloat() * 0.1F + 0.9F);
+		this.playHeartbeatSound(worldIn, pos);
 		this.ticksEggExisted += 10;
 	}
 	
@@ -71,8 +70,7 @@ public class BlockSpiderEgg extends ZGBlockBase {
 		int par4 = pos.getZ();
 		BlockPos soundPos = new BlockPos(par2 + 1.5D, par3 + 1.5D, par4 + 1.5D);
 		if (this.ticksEggExisted >= 500) {
-			worldIn.playSound(null, soundPos, ZGSoundEvents.SPIDERLING_EGG_HEARTBEAT, SoundCategory.AMBIENT, 1.5F,
-					worldIn.rand.nextFloat() * 0.1F + 0.9F);
+			this.playHeartbeatSound(worldIn, soundPos);
 			this.hatchSpider(worldIn, par2, par3, par4);
 			this.ticksEggExisted = 0;
 			worldIn.setBlockState(pos, Blocks.AIR.getDefaultState(), 0);
@@ -122,6 +120,7 @@ public class BlockSpiderEgg extends ZGBlockBase {
 	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand,
 			EnumFacing facing, float hitX, float hitY, float hitZ) {
 		super.onBlockActivated(worldIn, pos, state, playerIn, hand, facing, hitX, hitY, hitZ);
+		this.playHeartbeatSound(worldIn, pos);
 		this.ticksEggExisted += 10;
 		return true;
 	}
@@ -148,6 +147,11 @@ public class BlockSpiderEgg extends ZGBlockBase {
 				par1World.spawnEntity(spiderling);
 			}
 		}
+	}
+	
+	private void playHeartbeatSound(World worldIn, BlockPos pos) {
+		worldIn.playSound(null, pos, ZGSoundEvents.SPIDERLING_EGG_HEARTBEAT, SoundCategory.AMBIENT, 1.5F,
+				worldIn.rand.nextFloat() * 0.1F + 0.9F);
 	}
 	
 	@Override
