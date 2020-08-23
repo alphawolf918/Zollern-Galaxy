@@ -16,8 +16,9 @@ Zollern Galaxy v2.0.17
 * Added the Healing Heart item.
     - Fully restores the Player's health. Has five uses.
 * Added the Max Heartforce item.
-    - Increases the Player's max health temporarily for the game session and heals them completely.
+    - Increases the Player's max health and heals them completely.
     - Customizable with config options.
 * Added two new config options to control how high a Player's health can be and how much to increase it by.
+* 
 * Fixed OpenGL render glitches with the Shadow Alien boss mob that caused a Post-Render Stack Overflow.
 * 

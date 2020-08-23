@@ -188,7 +188,7 @@ public class ZGEvents {
 						if (rand.nextInt(14) <= 4) {
 							ItemStack blueprintCorruption = new ItemStack(ZGItems.blueprintCorruption);
 							Item blueprintItem = blueprintCorruption.getItem();
-							int blueprintDamage = blueprintCorruption.getItemDamage();
+							int blueprintDamage = blueprintItem.getDamage(blueprintCorruption);
 							int blueprintMaxDamage = blueprintItem.getMaxDamage(blueprintCorruption);
 							int remDamage = (blueprintMaxDamage - blueprintDamage);
 							float corruptionDamage = ZGDamageSrc.deathCorruption.getDamageBase();
@@ -199,9 +199,9 @@ public class ZGEvents {
 								if (hasItemStack || hasItem) {
 									int invSlot = playerInventory.getSlotFor(blueprintCorruption);
 									int fullDmg = blueprintDamage + (int) corruptionDamage;
-									blueprintCorruption.setItemDamage(fullDmg);
-									ItemStack blueprintStack = blueprintCorruption.copy();
-									playerInventory.setInventorySlotContents(invSlot, blueprintStack);
+									// blueprintCorruption.setItemDamage(fullDmg);
+									blueprintCorruption.damageItem(fullDmg, player);
+									playerInventory.setInventorySlotContents(invSlot, blueprintCorruption);
 								} else {
 									player.attackEntityFrom(ZGDamageSrc.deathCorruption, corruptionDamage);
 								}
