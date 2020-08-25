@@ -29,23 +29,7 @@ import com.google.common.collect.ImmutableMap;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-// You can include this in your mod/a pack/whatever you want, as long as that
-// work follows the Mojang EULA.
-// The original source is viewable at
-// https://gist.github.com/williewillus/a1a899ce5b0f0ba099078d46ae3dae6e
 public class JSONRecipeFactory {
-	// This is a janky JSON generator, for porting from below 1.12 to 1.12.
-	// Simply replace calls to GameRegistry.addShapeless/ShapedRecipe with these
-	// methods, which will dump it to a json in RECIPE_DIR
-	// Also works with OD, replace GameRegistry.addRecipe(new
-	// ShapedOreRecipe/ShapelessOreRecipe with the same calls
-	
-	// Credit 1:
-	// https://gist.github.com/P3pp3rF1y/ea85fa337c9082e95336b1b61d1c3cb5 - for
-	// NBT recipe support
-	// Credit 2:
-	// https://gist.github.com/Draco18s/6398d3b94a4c07ded26eb641639a2ce2 - for
-	// Advancements (recipes unlocked)
 	
 	private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
 	private static File RECIPE_DIR = null;

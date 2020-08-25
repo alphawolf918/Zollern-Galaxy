@@ -54,7 +54,7 @@ public class ItemHeartForce extends ItemHeart {
 				if (attrMaxHearts < maxHealthLimit) {
 					maxHealth += increaseAmount;
 					attrHeartMax.setBaseValue(maxHealth);
-					ZGHelper.damageItemStack(this, 2, playerIn);
+					ZGHelper.damageItemStack(this, 1, playerIn);
 					String tooltip1 = ZGUtils.translate("tooltips.newhealth");
 					String tooltip2 = ZGUtils.translate("tooltips.newhealth2");
 					String tooltip3 = ZGUtils.translate("tooltips.hearts");

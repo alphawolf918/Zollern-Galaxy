@@ -285,6 +285,14 @@ public class CraftingRecipes {
 				ZGItems.compressedAscendantAmaranth, 'A', ZGItems.ascendium, 'P', ZGItems.ascendium });
 		totalCraftRecipes++;
 		
+		// Healing Heart
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.healingHeart), new Object[] { "AZA", "AOA", "ARA", 'A', ZGItems.compressedHeartium,
+				'Z', ZGItems.ingotZollernium, 'R', ZGItems.ingotAmaranth, 'O', ZGItems.radium });
+		
+		// Max Heartforce
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.healingHeartForce), new Object[] { "ZSZ", "ZHZ", "ZZZ", 'Z', ZGItems.ingotZinc, 'S',
+				ZGItems.ingotZollernium, 'H', ZGItems.healingHeart });
+		
 		// Star Gate (Tier 1)
 		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.starGateTier1, 1), new Object[] { "VCV", "HYH", "YCY", 'V',
 				ZGItems.compressedDiamond, 'C', ZGItems.compressedHeartium, 'H', ZGItems.heartium, 'Y', ZGItems.zolCrystal });

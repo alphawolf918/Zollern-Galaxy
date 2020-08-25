@@ -185,25 +185,18 @@ public class ZGEvents {
 				if (block instanceof ICorruptBlock) {
 					ICorruptBlock corruptBlock = (ICorruptBlock) block;
 					if (corruptBlock.canCorrupt()) {
-						if (rand.nextInt(14) <= 4) {
-							ItemStack blueprintCorruption = new ItemStack(ZGItems.blueprintCorruption);
-							Item blueprintItem = blueprintCorruption.getItem();
-							int blueprintDamage = blueprintItem.getDamage(blueprintCorruption);
-							int blueprintMaxDamage = blueprintItem.getMaxDamage(blueprintCorruption);
-							int remDamage = (blueprintMaxDamage - blueprintDamage);
-							float corruptionDamage = ZGDamageSrc.deathCorruption.getDamageBase();
-							boolean blueprintIsUsable = (remDamage > 5);
+						if (rand.nextInt(28) <= 4) {
+							Item blueprintItem = ZGItems.blueprintCorruption;
+							ItemStack blueprintCorruption = ZGHelper.getItemStack(blueprintItem, player);
+							ZGDamageSrc dmgCorruption = ZGDamageSrc.deathCorruption;
+							float corruptionDamage = dmgCorruption.getDamageBase();
 							if (!player.isPotionActive(ZGPotions.antiCorruption)) {
 								boolean hasItemStack = playerInventory.hasItemStack(blueprintCorruption);
 								boolean hasItem = ZGHelper.checkInventoryForItem(blueprintItem, player);
-								if (hasItemStack || hasItem) {
-									int invSlot = playerInventory.getSlotFor(blueprintCorruption);
-									int fullDmg = blueprintDamage + (int) corruptionDamage;
-									// blueprintCorruption.setItemDamage(fullDmg);
-									blueprintCorruption.damageItem(fullDmg, player);
-									playerInventory.setInventorySlotContents(invSlot, blueprintCorruption);
+								if (blueprintCorruption != null && (hasItemStack || hasItem)) {
+									ZGHelper.damageItemStack(ZGItems.blueprintCorruption, (int) corruptionDamage, player);
 								} else {
-									player.attackEntityFrom(ZGDamageSrc.deathCorruption, corruptionDamage);
+									player.attackEntityFrom(dmgCorruption, corruptionDamage);
 								}
 							}
 						}

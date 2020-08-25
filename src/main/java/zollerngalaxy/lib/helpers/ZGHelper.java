@@ -205,11 +205,31 @@ public abstract class ZGHelper {
 	public static void Log(Level level, String strMessage) {
 		if (level == Level.INFO) {
 			LOGGER.info(strMessage);
+		} else if (level == level.ERROR) {
+			LOGGER.error(strMessage);
 		}
 	}
 	
 	public static void Log(String str) {
 		Log(Level.INFO, str);
+	}
+	
+	public static void LogErr(String strErr) {
+		Log(Level.ERROR, strErr);
+	}
+	
+	public static ItemStack getItemStack(Item item, EntityPlayer player) {
+		InventoryPlayer matrix = player.inventory;
+		for (int i = 0; i < matrix.getSizeInventory(); i++) {
+			if (matrix.getStackInSlot(i) != null) {
+				ItemStack stackNew = matrix.getStackInSlot(i);
+				if (stackNew != null && stackNew.getItem() == item) {
+					ItemStack k = new ItemStack(item);
+					return k;
+				}
+			}
+		}
+		return null;
 	}
 	
 	public static void damageItemStack(Item item, float damageAmount, EntityPlayer player) {
