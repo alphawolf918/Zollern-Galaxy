@@ -22,6 +22,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.items.ZGItemBase;
 import zollerngalaxy.lib.helpers.CommonZGRegisterHelper;
+import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.util.ZGUtils;
 
 public class ItemHeart extends ZGItemBase {
@@ -55,6 +56,7 @@ public class ItemHeart extends ZGItemBase {
 				float currentHealth = playerIn.getHealth();
 				if (currentHealth < maxHealth) {
 					playerIn.setHealth(maxHealth);
+					ZGHelper.damageItemStack(this, 1, playerIn);
 					this.proxy.sendChatMessage(playerIn, ZGUtils.translate("tooltips.healthrestored"));
 				} else {
 					this.proxy.sendChatMessage(playerIn, ZGUtils.translate("tooltips.maxhealth"));

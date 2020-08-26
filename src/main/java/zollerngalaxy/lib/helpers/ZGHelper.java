@@ -29,6 +29,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import zollerngalaxy.creativetabs.CreativeTabsHelper;
 import zollerngalaxy.creativetabs.ZGTabs;
+import zollerngalaxy.util.ZGDamageSrc;
 
 public abstract class ZGHelper {
 	
@@ -224,7 +225,7 @@ public abstract class ZGHelper {
 			if (matrix.getStackInSlot(i) != null) {
 				ItemStack stackNew = matrix.getStackInSlot(i);
 				if (stackNew != null && stackNew.getItem() == item) {
-					ItemStack k = new ItemStack(item);
+					ItemStack k = stackNew.copy();
 					return k;
 				}
 			}
@@ -272,6 +273,52 @@ public abstract class ZGHelper {
 	
 	public static void repairItemStack(ItemStack itemStack) {
 		itemStack.setItemDamage(0);
+	}
+	
+	/**
+	 * Check for the supplied Blueprint Protection item, and if it's there, damage it instead of the
+	 * Player.
+	 * 
+	 * @param rand
+	 *            The Random to pass.
+	 * @param blueprintItem
+	 *            The Blueprint Item to look for and damage if found.
+	 * @param player
+	 *            The Player to affect.
+	 * @param dSrc
+	 *            The DamageSource; must be a ZGDamageSrc instance.
+	 */
+	public static void performBlueprintCheck(Random rand, Item blueprintItem, EntityPlayer player, ZGDamageSrc dSrc) {
+		if (rand.nextInt(28) <= 4) {
+			float dmg = dSrc.getDamageBase();
+			if (!ZGHelper.checkInventoryForItem(blueprintItem, player)) {
+				player.attackEntityFrom(dSrc, dmg);
+			} else {
+				if (rand.nextInt(100) <= 10) {
+					int damage = (int) dmg;
+					ZGHelper.damageBlueprint(blueprintItem, player, damage);
+				}
+			}
+		}
+	}
+	
+	/**
+	 * Damage a Blueprint Protection item instead of the Player if it's available.
+	 * 
+	 * @param blueprintItem
+	 *            The Item to damage.
+	 * @param player
+	 *            The Player to protect.
+	 * @param damageAmount
+	 *            The amount of damage to do.
+	 */
+	public static void damageBlueprint(Item blueprintItem, EntityPlayer player, int damageAmount) {
+		ItemStack stack = ZGHelper.getItemStack(blueprintItem, player);
+		stack.damageItem(damageAmount, player);
+		ItemStack dmgStack = stack.copy();
+		InventoryPlayer playerInventory = player.inventory;
+		int invSlot = playerInventory.getSlotFor(stack);
+		playerInventory.setInventorySlotContents(invSlot, dmgStack);
 	}
 	
 	public static DimensionType registerDimension(String dimName, String dimUnlocalizedName, int dimID,

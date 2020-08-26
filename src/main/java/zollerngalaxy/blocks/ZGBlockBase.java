@@ -18,6 +18,7 @@ import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.Item;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.DamageSource;
@@ -29,12 +30,17 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import zollerngalaxy.blocks.caligro.corrupted.ICorruptBlock;
 import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.enums.EnumBlockType;
 import zollerngalaxy.core.enums.EnumHarvestLevelZG;
 import zollerngalaxy.core.enums.EnumHarvestToolZG;
 import zollerngalaxy.creativetabs.ZGTabs;
+import zollerngalaxy.items.ZGItems;
+import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.lib.helpers.json.JSONFactory;
+import zollerngalaxy.potions.ZGPotions;
+import zollerngalaxy.util.ZGDamageSrc;
 
 public class ZGBlockBase extends Block implements ISingleZGBlockRender, IJSONBlock, ITerraformableBlock {
 	
@@ -134,6 +140,21 @@ public class ZGBlockBase extends Block implements ISingleZGBlockRender, IJSONBlo
 		if (!entityIn.isImmuneToFire() && entityIn instanceof EntityLivingBase
 				&& !EnchantmentHelper.hasFrostWalkerEnchantment((EntityLivingBase) entityIn) && this.getIsHotBlock()) {
 			entityIn.attackEntityFrom(DamageSource.HOT_FLOOR, 4.5F);
+		}
+		
+		// Corruption Damage
+		if (entityIn instanceof EntityPlayer) {
+			EntityPlayer player = (EntityPlayer) entityIn;
+			if (!(player.capabilities.isCreativeMode) && (this instanceof ICorruptBlock)) {
+				ICorruptBlock corruptBlock = (ICorruptBlock) this;
+				if (corruptBlock.canCorrupt()) {
+					ZGDamageSrc corruption = ZGDamageSrc.deathCorruption;
+					if (!player.isPotionActive(ZGPotions.antiCorruption)) {
+						Item blueprintItem = ZGItems.blueprintCorruption;
+						ZGHelper.performBlueprintCheck(rand, blueprintItem, player, corruption);
+					}
+				}
+			}
 		}
 		
 		super.onEntityWalk(worldIn, pos, entityIn);

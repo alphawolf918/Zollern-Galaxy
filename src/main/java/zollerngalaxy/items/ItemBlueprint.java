@@ -27,7 +27,7 @@ public class ItemBlueprint extends ZGItemBase {
 	public ItemBlueprint(String blueprintName) {
 		super("blueprint_" + blueprintName);
 		this.setMaxStackSize(1);
-		this.setMaxDamage(1000);
+		this.setMaxDamage(2000);
 	}
 	
 	public Item setTooltipText(String textIn) {

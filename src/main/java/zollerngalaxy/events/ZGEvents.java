@@ -51,7 +51,6 @@ import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import zollerngalaxy.blocks.ZGBlockDirt;
 import zollerngalaxy.blocks.ZGBlockGrass;
-import zollerngalaxy.blocks.caligro.corrupted.ICorruptBlock;
 import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.ZGLootTables;
 import zollerngalaxy.core.ZollernGalaxyCore;
@@ -176,33 +175,7 @@ public class ZGEvents {
 					}
 				}
 			}
-			
-			// Damage the player when they walk on Corrupt blocks.
-			// Anti-Corruption effect stops this.
-			// Corruption blueprint stops this as well by taking the hit for the Player until it
-			// breaks.
-			if (!isCreativeMode) {
-				if (block instanceof ICorruptBlock) {
-					ICorruptBlock corruptBlock = (ICorruptBlock) block;
-					if (corruptBlock.canCorrupt()) {
-						if (rand.nextInt(28) <= 4) {
-							Item blueprintItem = ZGItems.blueprintCorruption;
-							ItemStack blueprintCorruption = ZGHelper.getItemStack(blueprintItem, player);
-							ZGDamageSrc dmgCorruption = ZGDamageSrc.deathCorruption;
-							float corruptionDamage = dmgCorruption.getDamageBase();
-							if (!player.isPotionActive(ZGPotions.antiCorruption)) {
-								boolean hasItemStack = playerInventory.hasItemStack(blueprintCorruption);
-								boolean hasItem = ZGHelper.checkInventoryForItem(blueprintItem, player);
-								if (blueprintCorruption != null && (hasItemStack || hasItem)) {
-									ZGHelper.damageItemStack(ZGItems.blueprintCorruption, (int) corruptionDamage, player);
-								} else {
-									player.attackEntityFrom(dmgCorruption, corruptionDamage);
-								}
-							}
-						}
-					}
-				}
-			}
+			//
 		}
 	}
 	
