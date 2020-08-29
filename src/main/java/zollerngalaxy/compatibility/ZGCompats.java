@@ -23,6 +23,9 @@ public class ZGCompats {
 		if (ModHelperBase.useThermalFoundation) {
 			ThermalFoundationCompatibility.init();
 		}
+		
+		if (ModHelperBase.useTinkerConstruct) {
+			TinkersConstructCompatibility.init();
+		}
 	}
-	
 }

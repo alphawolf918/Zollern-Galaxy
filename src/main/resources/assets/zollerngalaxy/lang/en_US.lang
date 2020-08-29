@@ -365,6 +365,10 @@ chocolatemelted=Melted Chocolate
 tile.chocolatemelted.name=Melted Chocolate
 fluid.chocolatemelted=Melted Chocolate
 
+radium=Radiance
+tile.radium.name=Radiance
+fluid.radium=Radiance
+
 container.eden.treasurechest.name=Eden's Treasure
 
 item.zolluscrystal.name=Zolnium Crystal
@@ -744,9 +748,16 @@ death.attack.waspsting.player=%1$s died from wasp stings, thanks to %2$s.
 death.attack.waspsting.item=%1$s died from wasp stings, thanks to %2$s using %3$s.
 
 zollerngalaxy_infected=Infected
+zollerngalaxy_anticorruption=Anti-Corruption
 zollerngalaxy_corruption=Corruption
 zollerngalaxy_radiance=Radiance
 zollerngalaxy_enlightened=Enlightened
+
+material.materialradium.name=Radium
+material.materialcorruption.name=Corruption
+
+modifier.trait_enlightened.name=Enlightened
+modifier.trait_corrupted.name=Corrupted
 
 itemGroup.ZollernGalaxyBlocks=Zollern Galaxy Blocks
 itemGroup.ZollernGalaxyItems=Zollern Galaxy Items

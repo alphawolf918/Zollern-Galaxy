@@ -36,6 +36,9 @@ public class ZGFluids {
 	public static Fluid fluidChocolate;
 	public static ZGFluidBase blockChocolateFluid;
 	
+	public static Fluid fluidRadium;
+	public static ZGFluidBase blockRadiumFluid;
+	
 	public static void init() {
 		ZGHelper.Log("Beginning Fluid Registry...");
 		ZGFluids.registerFluids();
@@ -54,13 +57,14 @@ public class ZGFluids {
 				ZGInfo.MOD_ID, "blocks/fueltonium"));
 		fluidChocolate = new Fluid("chocolatemelted", new ResourceLocation(ZGInfo.MOD_ID, "blocks/chocolatemelted"), new ResourceLocation(
 				ZGInfo.MOD_ID, "blocks/chocolatemelted"));
+		fluidRadium = new Fluid("radium", new ResourceLocation(ZGInfo.MOD_ID, "blocks/radiumfluid"), new ResourceLocation(ZGInfo.MOD_ID,
+				"blocks/radiumfluid"));
 		
-		FluidRegistry.registerFluid(fluidChargium);
-		FluidRegistry.registerFluid(fluidWhiteLava);
-		FluidRegistry.registerFluid(fluidFueltonium);
-		FluidRegistry.registerFluid(fluidChocolate);
-		
-		totalFluids += 4;
+		registerFluid(fluidChargium);
+		registerFluid(fluidWhiteLava);
+		registerFluid(fluidFueltonium);
+		registerFluid(fluidChocolate);
+		registerFluid(fluidRadium);
 	}
 	
 	private static void registerFluidBlocks() {
@@ -72,16 +76,20 @@ public class ZGFluids {
 				.setQuantaPerBlock(10).setLightLevel(1.0F)).setTemperature(10000);
 		blockChocolateFluid = (ZGFluidBase) new ZGFluidBase("chocolatemelted", fluidChocolate, Material.WATER, MapColor.BROWN)
 				.setQuantaPerBlock(9).setLightLevel(0.5F);
+		blockRadiumFluid = (ZGFluidBase) new ZGFluidBase("radium", fluidRadium, Material.WATER, MapColor.YELLOW).setQuantaPerBlock(6)
+				.setLightLevel(1.0F);
 		
 		ForgeRegistries.BLOCKS.register(blockChargiumFluid);
 		ForgeRegistries.BLOCKS.register(blockWhiteLavaFluid);
 		ForgeRegistries.BLOCKS.register(blockFueltoniumFluid);
 		ForgeRegistries.BLOCKS.register(blockChocolateFluid);
+		ForgeRegistries.BLOCKS.register(blockRadiumFluid);
 		
 		proxy.addIModelRegister(blockChargiumFluid);
 		proxy.addIModelRegister(blockWhiteLavaFluid);
 		proxy.addIModelRegister(blockFueltoniumFluid);
 		proxy.addIModelRegister(blockChocolateFluid);
+		proxy.addIModelRegister(blockRadiumFluid);
 	}
 	
 	public static void addBuckets() {
@@ -89,6 +97,7 @@ public class ZGFluids {
 		FluidRegistry.addBucketForFluid(fluidWhiteLava);
 		FluidRegistry.addBucketForFluid(fluidFueltonium);
 		FluidRegistry.addBucketForFluid(fluidChocolate);
+		FluidRegistry.addBucketForFluid(fluidRadium);
 	}
 	
 	public static void refreshReferences() {
@@ -96,6 +105,12 @@ public class ZGFluids {
 		fluidWhiteLava = FluidRegistry.getFluid("whitelava");
 		fluidFueltonium = FluidRegistry.getFluid("fueltonium");
 		fluidChocolate = FluidRegistry.getFluid("chocolatemelted");
+		fluidRadium = FluidRegistry.getFluid("radium");
+	}
+	
+	protected static void registerFluid(Fluid fluid) {
+		FluidRegistry.registerFluid(fluid);
+		totalFluids++;
 	}
 	
 }

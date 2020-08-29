@@ -1,26 +1,11 @@
 ===== CHANGELOG =====
-Zollern Galaxy v2.0.17
+Zollern Galaxy v2.0.18
 =====================
 
-* Now requires latest version of Galacticraft and Galacticraft Planets (build 261).
-* Removed Absorption effect when Radiance is active.
-* Added craftable "blueprints."
-    - These will take certain types of damage for you until they break, as long as they are in your inventory.
-    - Added the Corruption Protection blueprint.
-        - Protects the Player from Corruption damage.
-* Increased destroy speed of the Omnitool.
-* Slightly increased duration of Wither effect when hitting an entity with Mortem.
-* Drastically increased attack damage of Mortem.
-* Added a few new items.
-* Lowered spawn rate of Caligro structures.
-* Tweaked a few mechanics.
-* Added the Healing Heart item.
-    - Fully restores the Player's health. Has five uses.
-* Added the Max Heartforce item.
-    - Increases the Player's max health and heals them completely.
-    - Customizable with config options.
-* Added two new config options to control how high a Player's health can be and how much to increase it by.
-* Added recipes to craft the new heart items.
-* Added Tinker's Construct as a potential future mod compatibility.
-* Removed MCA from list of potential future mod compatibilities.
-* Fixed OpenGL render glitches with the Shadow Alien boss mob that caused a Post-Render Stack Overflow.
+* Added a little bit of compatbility with Tinker's Construct.
+    - Corruption weapons will deal Corruption damage to their targets.
+    - Radiance weapons will deal Radiance damage and apply the effect; useful for disspelling Dark Agent mobs.
+* Added the Radiance fluid.
+    - Can be created from Radium.
+* Fixed Infection being set as Anti-Corruption and vice-versa.
+* 

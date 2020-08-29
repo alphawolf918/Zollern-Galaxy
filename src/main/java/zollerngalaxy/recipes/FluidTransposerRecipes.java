@@ -25,6 +25,9 @@ public class FluidTransposerRecipes {
 		// Conductive Chargium
 		ThermalExpansionHelper.addTransposerFill(4200, new ItemStack(Items.BUCKET, 1), FluidUtil.getFilledBucket(new FluidStack(
 				ZGFluids.fluidChargium, ZGFluids.fluidChargium.BUCKET_VOLUME)), new FluidStack(ZGFluids.fluidChargium, 1000), true);
+		
+		// Radiance
+		ThermalExpansionHelper.addTransposerFill(8400, new ItemStack(Items.BUCKET, 1), FluidUtil.getFilledBucket(new FluidStack(
+				ZGFluids.fluidRadium, ZGFluids.fluidRadium.BUCKET_VOLUME)), new FluidStack(ZGFluids.fluidRadium, 4000), true);
 	}
-	
 }

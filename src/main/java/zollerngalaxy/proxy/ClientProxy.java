@@ -9,10 +9,12 @@ package zollerngalaxy.proxy;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.color.BlockColors;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.potion.Potion;
+import net.minecraftforge.client.model.obj.OBJLoader;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
@@ -22,6 +24,8 @@ import zollerngalaxy.blocks.fluids.IZGFluidModel;
 import zollerngalaxy.core.renderers.ZGItemRender;
 import zollerngalaxy.events.ZGSkyProviderHandler;
 import zollerngalaxy.gui.GuiHUD;
+import zollerngalaxy.items.ZGItems;
+import zollerngalaxy.lib.ZGInfo;
 import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.mobs.MobRenders;
 import zollerngalaxy.potions.ZGPotions;
@@ -49,6 +53,7 @@ public class ClientProxy extends CommonProxy {
 		}
 		
 		MinecraftForge.EVENT_BUS.register(new ZGSkyProviderHandler());
+		OBJLoader.INSTANCE.addDomain(ZGInfo.MOD_ID);
 	}
 	
 	@Override
@@ -94,12 +99,8 @@ public class ClientProxy extends CommonProxy {
 			player.attackEntityFrom(ZGDamageSrc.deathInfection, ZGDamageSrc.deathInfection.getDamageBase());
 		}
 		
-		// if (potionId == ZGPotions.radiance) {
-		// player.setAbsorptionAmount(5.0F);
-		// }
-		
-		if (potionId == ZGPotions.antiCorruption) {
-			// TODO
+		if (potionId == ZGPotions.corruption) {
+			ZGHelper.performBlueprintCheck(new Random(), ZGItems.blueprintCorruption, player, ZGDamageSrc.deathCorruption);
 		}
 	}
 }

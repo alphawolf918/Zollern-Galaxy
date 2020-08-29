@@ -42,6 +42,11 @@ public class ZGPotions extends Potion {
 	 */
 	public static Potion antiCorruption;
 	
+	/**
+	 * Causes Corruption damage.
+	 */
+	public static Potion corruption;
+	
 	// Radiance variables.
 	public static final int radianceTime = 6000;
 	public static final float shadowDamage = 5.0f;
@@ -52,6 +57,9 @@ public class ZGPotions extends Potion {
 	
 	// Anti-Corruption variables.
 	public static final int antiCorruptionTime = 6000;
+	
+	// Corruption variables
+	public static final int corruptionTime = 500;
 	
 	// The color of our Potion's liquid. Included here for convenience.
 	protected int potionColor = 0xffffff;
@@ -93,7 +101,8 @@ public class ZGPotions extends Potion {
 		
 		// Now let's actually initialize them.
 		radiance = new ZGPotions("radiance", false, 13458603, 0xeeee00);
-		infected = new ZGPotions("anticorruption", false, 13215621, 0xff00ff);
+		antiCorruption = new ZGPotions("anticorruption", false, 13215621, 0xff00ff);
+		corruption = new ZGPotions("corruption", false, 13584621, 0x8b008b);
 		infected = new ZGPotions("infected", true, 13615421, 0x000000);
 		
 		ZGHelper.Log("Successfully loaded " + totalEntries + " new Potion effects.");
