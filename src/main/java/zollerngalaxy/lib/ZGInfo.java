@@ -26,9 +26,9 @@ public class ZGInfo {
 	public static final String PROXY_SERVER = PROXY_LOCATION + "CommonProxy";
 	public static final String CHANNEL = ZGInfo.MOD_ID;
 	public static final String FORGE_MODS = "before:planetprogression@[1.12.2-0.3.8,]; " + "before:extraplanets; " + "before:powersuits;";
-	public static final String FORGE_VERSION = "after:forge@[14.23.5.2847,);";
-	public static final String DEPENDENCIES = "required-after:galacticraftcore@[4.0.2.244,); "
-			+ "required-after:galacticraftplanets@[4.0.2.244,); " + "required-after:micdoodlecore; " + ZGInfo.FORGE_VERSION
+	public static final String FORGE_VERSION = "after:forge@[14.23.5.2847,); after:tconstruct; ";
+	public static final String DEPENDENCIES = "required-after:galacticraftcore@[4.0.2.261,); "
+			+ "required-after:galacticraftplanets@[4.0.2.261,); " + "required-after:micdoodlecore; " + ZGInfo.FORGE_VERSION
 			+ ZGInfo.FORGE_MODS;
 	
 	public static void init(ModMetadata info) {
@@ -37,7 +37,7 @@ public class ZGInfo {
 		info.name = ZGInfo.NAME;
 		info.version = ZGInfo.MOD_VERSION;
 		info.description = "An adventurous space exploration add-on mod for Galacticraft.";
-		info.credits = "All credits to Galacticraft Sources/API, Steve KunG, and MJRLegends.";
+		info.credits = "All credits to Galacticraft Sources/API, Steve KunG, MJRLegends, DabbingEevee and Skaptic.";
 		info.authorList = Arrays.asList("Zollern Wolf");
 		
 		ZGHelper.Log("Mod information load completed.");

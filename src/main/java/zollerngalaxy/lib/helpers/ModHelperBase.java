@@ -20,7 +20,7 @@ public class ModHelperBase {
 	public static boolean useExtraPlanets = false;
 	public static boolean usePlanetProgression = false;
 	public static boolean useModularPowerSuits = false;
-	public static boolean useMCA = false;
+	public static boolean useTinkerConstruct = false;
 	
 	public static void detectMods() {
 		useCofh = isModLoaded("cofhcore");
@@ -32,7 +32,7 @@ public class ModHelperBase {
 		useExtraPlanets = isModLoaded("extraplanets");
 		usePlanetProgression = isModLoaded("planetprogression");
 		useModularPowerSuits = isModLoaded("powersuits");
-		useMCA = isModLoaded("mca");
+		useTinkerConstruct = isModLoaded("tconstruct");
 	}
 	
 	public static boolean isModLoaded(String modId) {

@@ -2,6 +2,7 @@
 Zollern Galaxy v2.0.17
 =====================
 
+* Now requires latest version of Galacticraft and Galacticraft Planets (build 261).
 * Removed Absorption effect when Radiance is active.
 * Added craftable "blueprints."
     - These will take certain types of damage for you until they break, as long as they are in your inventory.
@@ -20,6 +21,6 @@ Zollern Galaxy v2.0.17
     - Customizable with config options.
 * Added two new config options to control how high a Player's health can be and how much to increase it by.
 * Added recipes to craft the new heart items.
-* 
+* Added Tinker's Construct as a potential future mod compatibility.
+* Removed MCA from list of potential future mod compatibilities.
 * Fixed OpenGL render glitches with the Shadow Alien boss mob that caused a Post-Render Stack Overflow.
-* 

@@ -60,6 +60,7 @@ public class ItemHeartForce extends ItemHeart {
 					String tooltip3 = ZGUtils.translate("tooltips.hearts");
 					this.proxy.sendChatMessage(playerIn, "+" + (int) increaseAmount + " " + tooltip1 + "!");
 					this.proxy.sendChatMessage(playerIn, tooltip2 + (int) maxHealth + " " + tooltip3);
+					this.healPlayer(playerIn);
 				} else {
 					String tooltip4 = ZGUtils.translate("tooltips.maxhealthtoohigh");
 					this.proxy.sendChatMessage(playerIn, tooltip4 + " " + maxHealthLimit + ".");
@@ -72,7 +73,6 @@ public class ItemHeartForce extends ItemHeart {
 	public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn) {
 		ItemStack itemstack = playerIn.getHeldItem(handIn);
 		this.increasePlayerHealth(playerIn);
-		this.healPlayer(playerIn);
 		return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, itemstack);
 	}
 	
