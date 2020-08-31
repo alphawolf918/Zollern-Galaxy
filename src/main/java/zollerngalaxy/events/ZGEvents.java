@@ -9,7 +9,9 @@ package zollerngalaxy.events;
 
 import java.util.List;
 import java.util.Random;
+import micdoodle8.mods.galacticraft.api.prefab.world.gen.WorldProviderSpace;
 import micdoodle8.mods.galacticraft.core.entities.EntityAlienVillager;
+import micdoodle8.mods.galacticraft.core.util.DamageSourceGC;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.state.IBlockState;
@@ -182,9 +184,9 @@ public class ZGEvents {
 	@SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
 	public void onEntityDamaged(LivingHurtEvent event) {
 		EntityLivingBase ent = event.getEntityLiving();
+		DamageSource src = event.getSource();
 		if (ent instanceof EntityGrayAlien) {
 			EntityGrayAlien alien = (EntityGrayAlien) ent;
-			DamageSource src = event.getSource();
 			if (src.getTrueSource() instanceof EntityPlayer) {
 				EntityPlayer player = (EntityPlayer) src.getTrueSource();
 				BlockPos worldPos = alien.getPosition();
@@ -193,6 +195,30 @@ public class ZGEvents {
 				spaceKnight.setPosition(worldPos.getX(), worldPos.getY(), worldPos.getZ());
 				spaceKnight.setAttackTarget(player);
 				world.spawnEntity(spaceKnight);
+			}
+		}
+		
+		if (ent instanceof EntityPlayer) {
+			EntityPlayer player = (EntityPlayer) ent;
+			World world = player.world;
+			WorldProvider worldProvider = world.provider;
+			float dmg = event.getAmount();
+			Random rand = new Random();
+			if (src == DamageSourceGC.thermal) {
+				if (worldProvider instanceof WorldProviderSpace) {
+					WorldProviderSpace spaceProvider = (WorldProviderSpace) worldProvider;
+					float thermalLevel = spaceProvider.getCelestialBody().atmosphere.thermalLevel();
+					boolean isHot = (thermalLevel > 0F);
+					boolean isCold = (thermalLevel < 0F);
+					if (isHot) {
+						event.setCanceled(true);
+						ZGHelper.performBluePrintCheck(rand, ZGItems.blueprintThermalHot, player, DamageSourceGC.thermal, dmg);
+					}
+					if (isCold) {
+						event.setCanceled(true);
+						ZGHelper.performBluePrintCheck(rand, ZGItems.blueprintThermalCold, player, DamageSourceGC.thermal, dmg);
+					}
+				}
 			}
 		}
 	}

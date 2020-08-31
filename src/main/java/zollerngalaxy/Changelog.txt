@@ -7,5 +7,22 @@ Zollern Galaxy v2.0.18
     - Radiance weapons will deal Radiance damage and apply the effect; useful for disspelling Dark Agent mobs.
 * Added the Radiance fluid.
     - Can be created from Radium.
+* Increased duration of Wither effect from Mortem.
+* Increased stats of the Ascendant tool type.
+* Added the Diablo sword.
+    - Shoots fireballs at the target when right-clicked.
+    - When left-clicked on an entity, sets them on fire for 20 seconds.
+* Added the Thor sword.
+    - Spawns lightning bolts where the Player is looking when right-clicked.
+* Added the Ender sword.
+    - Teleports the Player to wherever they are looking (if that spot is spatially safe).
+* Added the Glacies sword.
+    - Spawns a small tower of ice where the Player is looking when right-clicked.
+    - Left-clicking any living entity will apply a Slowness effect to them.
+* Added the Archangel sword.
+    - Right-clicking with this sword will give the Player the Radiance effect required to survive Planet Caligro.
+    - Left-clicking an entity with this sword will kill any undead creature instantly, and will apply massive damage to Dark Agent mobs.
+* All of the new swords are craftable.
+* Added the Scorch and Freeze blueprints, but they don't currently work.
 * Fixed Infection being set as Anti-Corruption and vice-versa.
 * 

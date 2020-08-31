@@ -11,19 +11,14 @@ import java.util.List;
 import javax.annotation.Nullable;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.projectile.EntityWitherSkull;
-import net.minecraft.init.MobEffects;
-import net.minecraft.init.SoundEvents;
+import net.minecraft.entity.projectile.EntityLargeFireball;
 import net.minecraft.item.EnumAction;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
-import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
@@ -34,10 +29,10 @@ import zollerngalaxy.items.tools.ZGToolMats;
 import zollerngalaxy.lib.helpers.CommonZGRegisterHelper;
 import zollerngalaxy.util.ZGUtils;
 
-public class ItemWitherSword extends ZGItemSword {
+public class ItemFireSword extends ZGItemSword {
 	
-	public ItemWitherSword() {
-		super("wither", ZGToolMats.ASCENDANT);
+	public ItemFireSword() {
+		super("fire", ZGToolMats.ASCENDANT);
 	}
 	
 	@Override
@@ -46,35 +41,18 @@ public class ItemWitherSword extends ZGItemSword {
 		if (!worldIn.isRemote) {
 			ItemStack par1ItemStack = playerIn.getHeldItem(handIn);
 			Vec3d look = playerIn.getLookVec();
-			EntityWitherSkull witherskull = new EntityWitherSkull(worldIn);
-			witherskull.setPosition(playerIn.posX + look.x * 5, playerIn.posY + 1 + look.y * 5, playerIn.posZ + look.z * 5);
-			witherskull.accelerationX = look.x * 0.1;
-			witherskull.accelerationY = look.y * 0.1;
-			witherskull.accelerationZ = look.z * 0.1;
-			worldIn.spawnEntity(witherskull);
-			this.playWitherSound(playerIn.getEntityWorld(), playerIn.posX, playerIn.posY, playerIn.posZ);
+			EntityLargeFireball fireball = new EntityLargeFireball(worldIn);
+			fireball.setPosition(playerIn.posX + look.x * 5, playerIn.posY + 1 + look.y * 5, playerIn.posZ + look.z * 5);
+			fireball.accelerationX = look.x * 0.1;
+			fireball.accelerationY = look.y * 0.1;
+			fireball.accelerationZ = look.z * 0.1;
+			worldIn.spawnEntity(fireball);
 			if (!playerIn.capabilities.isCreativeMode) {
 				par1ItemStack.damageItem(5, playerIn);
 			}
 		}
 		playerIn.swingArm(handIn);
 		return new ActionResult(EnumActionResult.PASS, playerIn.getHeldItem(handIn));
-	}
-	
-	@Override
-	public boolean onLeftClickEntity(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, Entity entity) {
-		super.onLeftClickEntity(par1ItemStack, par2EntityPlayer, entity);
-		if (entity instanceof EntityLivingBase) {
-			EntityLivingBase living = (EntityLivingBase) entity;
-			living.addPotionEffect(new PotionEffect(MobEffects.WITHER, 120, 2));
-			this.playWitherSound(living.getEntityWorld(), living.posX, living.posY, living.posZ);
-		}
-		return false;
-	}
-	
-	private void playWitherSound(World world, double i, double j, double k) {
-		world.playSound(i + 5.0D, j + 5.0D, k + 5.0D, SoundEvents.ENTITY_WITHER_AMBIENT, SoundCategory.AMBIENT, 1.0F,
-				world.rand.nextFloat() * 0.1F + 0.9F, true);
 	}
 	
 	@Override
@@ -88,21 +66,18 @@ public class ItemWitherSword extends ZGItemSword {
 	}
 	
 	@Override
-	public int getItemEnchantability() {
-		return 90;
-	}
-	
-	@Override
-	public float getAttackDamage() {
-		return 34F;
+	public boolean onLeftClickEntity(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, Entity entity) {
+		super.onLeftClickEntity(par1ItemStack, par2EntityPlayer, entity);
+		entity.setFire(20);
+		return false;
 	}
 	
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
 		if (CommonZGRegisterHelper.isShiftKeyDown()) {
-			tooltip.add(TextFormatting.ITALIC + ZGUtils.translate("tooltips.withersword1"));
-			tooltip.add(TextFormatting.ITALIC + ZGUtils.translate("tooltips.withersword2"));
+			tooltip.add(TextFormatting.ITALIC + ZGUtils.translate("tooltips.firesword1"));
+			tooltip.add(TextFormatting.ITALIC + ZGUtils.translate("tooltips.firesword2"));
 		} else {
 			tooltip.add(ZGUtils.translate("tooltips.holdshift"));
 		}

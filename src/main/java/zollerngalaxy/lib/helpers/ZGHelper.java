@@ -9,6 +9,7 @@ package zollerngalaxy.lib.helpers;
 
 import java.io.File;
 import java.util.Random;
+import micdoodle8.mods.galacticraft.core.util.DamageSourceGC;
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
@@ -291,6 +292,19 @@ public abstract class ZGHelper {
 	public static void performBlueprintCheck(Random rand, Item blueprintItem, EntityPlayer player, ZGDamageSrc dSrc) {
 		if (rand.nextInt(28) <= 4) {
 			float dmg = dSrc.getDamageBase();
+			if (!ZGHelper.checkInventoryForItem(blueprintItem, player)) {
+				player.attackEntityFrom(dSrc, dmg);
+			} else {
+				if (rand.nextInt(100) <= 10) {
+					int damage = (int) dmg;
+					ZGHelper.damageBlueprint(blueprintItem, player, damage);
+				}
+			}
+		}
+	}
+	
+	public static void performBluePrintCheck(Random rand, Item blueprintItem, EntityPlayer player, DamageSourceGC dSrc, float dmg) {
+		if (rand.nextInt(28) <= 4) {
 			if (!ZGHelper.checkInventoryForItem(blueprintItem, player)) {
 				player.attackEntityFrom(dSrc, dmg);
 			} else {

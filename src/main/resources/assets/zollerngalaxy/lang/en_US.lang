@@ -472,6 +472,8 @@ item.blueprint_tox.name=Toxicity Protection
 item.blueprint_poison.name=Posion Protection
 item.blueprint_corruption.name=Corruption Protection
 item.blueprint_radiance.name=Darkness Protection
+item.blueprint_scorch.name=Scorch Protection
+item.blueprint_freeze.name=Freeze Protection
 
 item.compressedemerald.name=Compressed Emerald
 item.compresseddiamond.name=Compressed Diamond
@@ -518,6 +520,11 @@ item.sharktooth.name=Shark Tooth
 item.shark_sword.name=Shark Sword
 
 item.wither_sword.name=Mortem
+item.fire_sword.name=Diablo
+item.ice_sword.name=Glacies
+item.ender_sword.name=Ender
+item.thor_sword.name=Thor
+item.light_sword.name=Archangel
 
 item.stargate_tier1.name=Stargate (Protocol One)
 item.stargate_tier2.name=Stargate (Protocol Two)
@@ -625,10 +632,31 @@ tooltips.shadowbossbeaten=The Beast has fallen!!
 tooltips.shadekey=You need a Shade Key to spawn this boss!
 tooltips.mobnotpeaceful=Cannot spawn this Mob while on Peaceful difficulty.
 tooltips.treasurespawned=A treasure chest has spawned!
+
 tooltips.withersword1=A withering
 tooltips.withersword2=blade, touched with death.
+
+tooltips.firesword1=A sword of fire, said to match the
+tooltips.firesword2=power of the Nether itself.
+
+tooltips.thorsword1=Whosoever holds this blade,
+tooltips.thorsword2=should he be worthy,
+tooltips.thorsword3=shall possess the power of Thor.
+
+tooltips.endersword1=A sword forged from
+tooltips.endersword2=Enderman energy.
+
+tooltips.icesword1=A sword born from
+tooltips.icesword2=the lands of frost.
+
+tooltips.lightsword1=Light, forged
+tooltips.lightsword2=into a blade.
+
 tooltips.blueprint=Protects the Player from certain elements.
 tooltips.blueprint_corruption=Protects the Player from Corruption damage.
+tooltips.blueprint_scorch=Protects the Player from scorching thermal temperatures.
+tooltips.blueprint_freezing=Protects the Player from freezing thermal temperatures.
+
 tooltips.heart=Restores the Player's health.
 tooltips.maxhealth=You're already at max health!
 tooltips.healthrestored=Your health has been restored.

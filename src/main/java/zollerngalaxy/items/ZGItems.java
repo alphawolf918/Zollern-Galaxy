@@ -23,6 +23,11 @@ import zollerngalaxy.items.tools.ZGItemPickaxe;
 import zollerngalaxy.items.tools.ZGItemShovel;
 import zollerngalaxy.items.tools.ZGItemSword;
 import zollerngalaxy.items.tools.ZGToolMats;
+import zollerngalaxy.items.tools.power.ItemEnderSword;
+import zollerngalaxy.items.tools.power.ItemFireSword;
+import zollerngalaxy.items.tools.power.ItemIceSword;
+import zollerngalaxy.items.tools.power.ItemLightSword;
+import zollerngalaxy.items.tools.power.ItemThorSword;
 import zollerngalaxy.items.tools.power.ItemWitherSword;
 import zollerngalaxy.lib.helpers.CommonZGRegisterHelper;
 import zollerngalaxy.lib.helpers.ZGHelper;
@@ -207,9 +212,16 @@ public class ZGItems {
 	public static final Item swordAzurite = new ZGItemSword("azurite", ZGToolMats.AZURITE);
 	public static final Item swordZollernium = new ZGItemSword("zollernium", ZGToolMats.ZOLLERNIUM);
 	public static final Item swordWither = new ItemWitherSword();
+	public static final Item swordFire = new ItemFireSword();
+	public static final Item swordThor = new ItemThorSword();
+	public static final Item swordEnder = new ItemEnderSword();
+	public static final Item swordIce = new ItemIceSword();
+	public static final Item swordLight = new ItemLightSword();
 	
 	// Blueprints
 	public static final Item blueprintCorruption = new ItemBlueprint("corruption").setTooltipText("tooltips.blueprint_corruption");
+	public static final Item blueprintThermalHot = new ItemBlueprint("scorch").setTooltipText("tooltips.blueprint_scorch");
+	public static final Item blueprintThermalCold = new ItemBlueprint("freeze").setTooltipText("tooltips.blueprint_freeze");
 	
 	// Healing Items
 	public static final Item healingHeart = new ItemHeart();
@@ -234,8 +246,9 @@ public class ZGItems {
 				pickaxeCobalt, pickaxeEvenium, pickaxeVirinium, pickaxeAmaranth, pickaxeAzurite, pickaxeZollernium, shovelCobalt,
 				shovelEvenium, shovelVirinium, shovelAmaranth, shovelAzurite, shovelZollernium, axeCobalt, axeEvenium, axeVirinium,
 				axeAmaranth, axeAzurite, axeZollernium, hoeCobalt, hoeEvenium, hoeVirinium, hoeAmaranth, hoeAzurite, hoeZollernium,
-				swordCobalt, swordEvenium, swordVirinium, swordAmaranth, swordAzurite, swordZollernium, swordWither, blueprintCorruption,
-				healingHeart, healingHeartForce);
+				swordCobalt, swordEvenium, swordVirinium, swordAmaranth, swordAzurite, swordZollernium, swordWither, swordFire, swordThor,
+				swordEnder, swordIce, swordLight, blueprintCorruption, blueprintThermalHot, blueprintThermalCold, healingHeart,
+				healingHeartForce);
 		ZGHelper.Log("Loaded a total of " + totalItems + " new items.");
 	}
 	

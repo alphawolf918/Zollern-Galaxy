@@ -49,7 +49,7 @@ public class ZGPotions extends Potion {
 	
 	// Radiance variables.
 	public static final int radianceTime = 6000;
-	public static final float shadowDamage = 5.0f;
+	public static final float shadowDamage = 5.0F;
 	
 	// Infection variables.
 	public static final int infectionTime = 400;

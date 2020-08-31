@@ -16,13 +16,14 @@ public final class ZGDamageSrc extends DamageSource {
 	
 	public static final ZGDamageSrc deathTempCold = new ZGDamageSrc("deathcold", 1.5F, true);
 	public static final ZGDamageSrc deathTempHot = new ZGDamageSrc("deathhot", 2.5F, true);
-	public static final ZGDamageSrc deathRadiation = new ZGDamageSrc("radiation", 0.6F, true);
+	public static final ZGDamageSrc deathRadiation = new ZGDamageSrc("radiation", 4.6F, true);
 	public static final ZGDamageSrc deathToxic = new ZGDamageSrc("toxic", 0.5F, true);
 	public static final ZGDamageSrc deathBladeFish = new ZGDamageSrc("bladefish", 1.2F);
 	public static final ZGDamageSrc deathSharkAttack = new ZGDamageSrc("sharkattack", 6.0F);
 	public static final ZGDamageSrc deathJellyfish = new ZGDamageSrc("jellyfishsting", 4.5F);
 	public static final ZGDamageSrc deathWasp = new ZGDamageSrc("waspsting", 4.7F, true);
 	public static final ZGDamageSrc deathShadows = new ZGDamageSrc("shadows", ZGPotions.shadowDamage, true);
+	public static final ZGDamageSrc deathLight = new ZGDamageSrc("light", ZGPotions.shadowDamage, true);
 	public static final ZGDamageSrc deathInfection = new ZGDamageSrc("infection", ZGPotions.infectionDamage, true);
 	public static final ZGDamageSrc deathCorruption = new ZGDamageSrc("corruption", 5.0F, true);
 	
