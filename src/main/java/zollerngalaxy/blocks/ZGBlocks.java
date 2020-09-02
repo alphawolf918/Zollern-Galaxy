@@ -53,15 +53,21 @@ public class ZGBlocks {
 	private static WorldGenerator edenTreeGen = new WorldGenEdenTrees(true, ZGHelper.rngInt(5, 15), ZGBlocks.edenWoodLog.getDefaultState(),
 			ZGBlocks.edenWoodLeaves.getDefaultState(), false);
 	
+	public static final Block edenParadiseWoodLog = new ZGBlockLog("paradisewoodlog");
+	public static final Block edenParadiseWoodLeaves = new ZGBlockLeaves("paradisewoodleaves", ZGBlocks.edenParadiseWoodSapling);
+	private static WorldGenerator edenParadiseTreeGen = new WorldGenEdenTrees(true, ZGHelper.rngInt(5, 7),
+			ZGBlocks.edenParadiseWoodLog.getDefaultState(), ZGBlocks.edenParadiseWoodLeaves.getDefaultState(), false);
+	
 	public static final Block perdWoodLogs = new ZGBlockLog("palmwoodlog");
 	public static final Block perdWoodLeaves = new ZGFruitLeaves("palmwoodleaves", ZGBlocks.perdTreeSapling, ZGItems.perdPeach);
 	public static final Block perdWoodPlanks = new ZGBlockPlanks("palmwoodplanks");
 	private static WorldGenerator palmWoodTreeGen = new WorldGenPalmwoodTrees(true, ZGHelper.rngInt(5, 15),
 			ZGBlocks.perdWoodLogs.getDefaultState(), ZGBlocks.perdWoodLeaves.getDefaultState(), false);
 	
-	// These have to be declared up top or else weird things happen.
+	// These all have to be declared up top or else weird things happen.
 	public static final Block perdTreeSapling = new ZGBlockSapling("palmtreesapling", palmWoodTreeGen);
 	public static final Block edenWoodSapling = new ZGBlockSapling("edentreesapling", edenTreeGen);
+	public static final Block edenParadiseWoodSapling = new ZGBlockSapling("paradisewoodsapling", edenParadiseTreeGen);
 	public static final Block edenFruit = new EdenFruit();
 	public static final Block edenFlower = new EdenFlower();
 	public static final Block edenFlowerBlack = new EdenFlower("black");
@@ -160,6 +166,7 @@ public class ZGBlocks {
 	public static final Block edenSwampGrass = new ZGBlockGrassEden("edenswampgrass");
 	public static final Block edenSnow = new ZGBlockGrassEden("edengrass_snow").setSound(SoundType.SNOW);
 	public static final Block edenGoldenGrass = new ZGBlockGrassEden("edengoldengrass");
+	public static final Block edenFallGrass = new ZGBlockGrassEden("edengrass_autumn");
 	public static final Block edenCobbleRock = new ZGBlockBase("edencobblerock", 1.5F).setBlockType(EnumBlockType.COBBLESTONE);
 	public static final Block edenStone = new ZGPlanetStone("edenrock", 2.6F, ZGBlocks.edenCobbleRock);
 	public static final Block edenSacredStone = new ZGBlockBase("edensacredstone", 3.2F);
@@ -172,6 +179,7 @@ public class ZGBlocks {
 	public static final Block edenGravel = new ZGGravel("edengravel", 2.1F);
 	public static final Block edenBrightStone = new ZGShineBlock("brightstone", ZGItems.dustBrightstone);
 	public static final Block edenWoodPlanks = new ZGBlockPlanks("edenwoodplanks");
+	public static final Block edenParadiseWoodPlanks = new ZGBlockPlanks("paradisewoodplanks");
 	public static final Block blockCrater = new ZGBlockBase("crater_rock", 2.4F);
 	public static final Block edenAluminumOre = new ZGBlockOre("edenaluminumore", 1.5F).setBlockHarvestLevel(
 			EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.EVENIUM.getHarvestLevel());
@@ -555,50 +563,50 @@ public class ZGBlocks {
 	public static final Block blockLore = new LoreBlock();
 	
 	public static void init() {
-		ZGBlocks.registerBlocks(edenWoodSapling, edenFruit, edenFlower, edenFlowerBlack, edenFlowerBlue, edenFlowerCyan, edenFlowerGreen,
-				edenFlowerOrange, edenFlowerPink, edenFlowerPurple, edenFlowerRed, edenFlowerYellow, edenFlowerWhite, oasisFlower,
-				zolStone, zolCobbleRock, zolSurfaceRock, zolDirt, zolRockBricks, zolCoalOre, zolCopperOre, zolGoldOre, zolHeartOre,
-				zolTinOre, zolIronOre, zolCrystals, kriffSurfaceRock, kriffStone, kriffCobbleRock, kriffDirt, kriffRockBricks,
-				kriffMagmaRock, kriffBlazeRock, kriffCoalOre, kriffCopperOre, kriffIronOre, kriffGoldOre, kriffRedstoneOre, kriffCobaltOre,
-				purgCobbleRock, purgStone, purgRockBricks, purgWhiteRock, purgBlackRock, purgSurfaceRock, purgDirt, purgGravel,
-				purgMeteoricIronOre, purgCobaltOre, purgIronOre, purgGoldOre, purgCopperOre, purgDiamondOre, purgEmeraldOre,
-				purgEveniumOre, purgAluminumOre, purgTinOre, purgLeadOre, purgRedstoneOre, edenSurfaceRock, edenTallGrass, edenGrass,
-				edenSoil, edenStone, edenSacredStone, edenCobbleRock, edenRockBricks, edenGoldenGrass, edenSwampGrass, edenSnow,
-				edenWinterRock, edenBloodSand, edenBloodStone, edenBoneStone, edenGravel, edenBrightStone, edenWoodLog, edenWoodLeaves,
-				edenWoodPlanks, edenDungeonBricks, edenAluminumOre, edenSteelOre, edenBronzeOre, edenInvarOre, edenElectrumOre,
-				edenPlatinumOre, edenCoalOre, edenCopperOre, edenDeshOre, edenDiamondOre, edenEmeraldOre, edenGoldOre, edenSilverOre,
-				edenIronOre, edenLapisOre, edenMeteoricIronOre, edenRedstoneOre, edenTinOre, edenLeadOre, edenNickelOre, edenViriniumOre,
-				edenCobaltOre, edenEveniumOre, edenHeartiumOre, xathRock, xathCobble, xathStone, xathRockBricks, xathGrass, xathDirt,
-				xathGravel, xathTallGrass, xathPrometheanOre, xathEmeraldOre, xathDiamondOre, xathRedstoneOre, xathIronOre, xathGoldOre,
-				xathTinOre, xathAzuriteOre, oasisRock, oasisStone, oasisRockBricks, oasisCobble, oasisDirt, oasisTallGrass, oasisGrass,
-				oasisGravel, oasisSuperChargedCoalOre, oasisCoalOre, oasisIronOre, oasisGoldOre, oasisRedstoneOre, oasisDiamondOre,
-				oasisTinOre, oasisLeadOre, xantheonRock, xantheonChrome, xantheonStone, xantheonCoalOre, xantheonIronOre,
-				xantheonCopperOre, xantheonNickelOre, xantheonPlutoniumOre, xantheonFueltoniumOre, xantheonAmaranthOre,
-				xantheonConstructBlock, atheonRock, atheonLuxrock, atheonStone, atheonCobble, atheonRockBricks, atheonAmaranthOre,
-				atheonRedstoneOre, atheonTinOre, atheonDiamondOre, atheonZollerniumOre, atheonZincOre, atheonConstructBlock, blockViri,
-				blockCobalt, blockEve, blockPromethean, blockCrater, blockSuperChargedCoal, blockPlutonium, blockFueltonium, blockChargium,
-				blockShinium, blockAmaranth, blockAzurite, blockZollernium, blockZinc, blockPerdDiamond, blockPerdEtrium, blockZucrite,
-				blockRhodium, blockAmber, blockTopaz, blockOpal, blockAquamarine, blockGarnet, blockRuby, blockAmberStatic,
-				blockAquamarineIcy, blockGarnetFire, blockWitherite, blockRadium, blockNetheridium, blockNetherizedObsidian,
-				blockRedObsidian, blockShadowBone, blockShinestone, blockShinestoneCrystal, blockShinestonePolished,
-				blockShinestoneCrystalBricks, blockCompressedHeartium, blockCompressedViri, blockCompressedEve, blockCompressedCobalt,
-				blockCompressedPromethean, blockCompressedSuperChargedCoal, blockCompressedZucrite, blockCompressedRhodium, candyCubeWhite,
-				candyCubeBlack, candyCubeGray, candyCubeOrange, candyCubeBrown, candyCubeRed, candyCubeBlue, candyCubeYellow,
-				candyCubePurple, candyCubeCyan, candyCubePink, candyCubeGreen, blockChocolate, blockChocolateBricks, blockCookie,
-				blockBrownie, blockIceCreamSandwich, blockSugarCube, blockSpaceStation, blockLore, perdSand, perdRock, perdStone,
-				perdCobble, perdRockBricks, perdGravel, perdCreepDirt, perdSoil, perdDirt, perdTallGrass, perdGrass, perdCreepStone,
-				perdGlowstone, perdCaveStone, perdCaveStoneBricks, perdCactus, perdReeds, perdDeadBush, perdDiamondOre, perdEtriumOre,
-				perdIronOre, perdGoldOre, perdZollerniumOre, perdFueltoniumOre, perdTreeSapling, perdWoodLogs, perdWoodLeaves,
-				perdWoodPlanks, altumRock, altumSand, altumDirt, altumCobble, altumStone, altumGravel, altumSeaweed, altumCoalOre,
-				altumIronOre, altumGoldOre, altumRedstoneOre, altumDiamondOre, altumZollerniumOre, altumEveniumOre, altumRhodiumOre,
-				altumAmaranthOre, caligroSurfaceRock, caligroRock, caligroCobblestone, caligroCobblestoneMossy, caligroStone,
-				caligroStoneBricks, caligroGravel, caligroDirt, witherrack, caligroCreepstone, caligroCreepdirt, caligroWitheriteOre,
-				caligroShiniumOre, caligroSilverOre, caligroNickelOre, caligroLeadOre, caligroTinOre, caligroCopperOre, caligroIronOre,
-				caligroGoldOre, caligroRedstoneOre, caligroAmaranthOre, caligroZincOre, caligroAmberOre, caligroTopazOre, caligroOpalOre,
-				caligroAquamarineOre, caligroGarnetOre, caligroSuperChargedCoalOre, caligroFueltoniumOre, caligroDiamondOre,
-				caligroEmeraldOre, caligroRadiumOre, caligroLapisOre, caligroZollerniumOre, caligroRubyOre, spiderlingEgg,
-				shadowBossSpawner, corruptRock, corruptCobble, corruptStone, corruptStoneBricks, corruptAscendiumOre, corruptEtriumOre,
-				corruptChargiumOre, corruptCreepstone);
+		ZGBlocks.registerBlocks(edenParadiseWoodSapling, edenWoodSapling, edenFruit, edenFlower, edenFlowerBlack, edenFlowerBlue,
+				edenFlowerCyan, edenFlowerGreen, edenFlowerOrange, edenFlowerPink, edenFlowerPurple, edenFlowerRed, edenFlowerYellow,
+				edenFlowerWhite, oasisFlower, zolStone, zolCobbleRock, zolSurfaceRock, zolDirt, zolRockBricks, zolCoalOre, zolCopperOre,
+				zolGoldOre, zolHeartOre, zolTinOre, zolIronOre, zolCrystals, kriffSurfaceRock, kriffStone, kriffCobbleRock, kriffDirt,
+				kriffRockBricks, kriffMagmaRock, kriffBlazeRock, kriffCoalOre, kriffCopperOre, kriffIronOre, kriffGoldOre,
+				kriffRedstoneOre, kriffCobaltOre, purgCobbleRock, purgStone, purgRockBricks, purgWhiteRock, purgBlackRock, purgSurfaceRock,
+				purgDirt, purgGravel, purgMeteoricIronOre, purgCobaltOre, purgIronOre, purgGoldOre, purgCopperOre, purgDiamondOre,
+				purgEmeraldOre, purgEveniumOre, purgAluminumOre, purgTinOre, purgLeadOre, purgRedstoneOre, edenSurfaceRock, edenTallGrass,
+				edenGrass, edenSoil, edenStone, edenSacredStone, edenCobbleRock, edenRockBricks, edenGoldenGrass, edenFallGrass,
+				edenSwampGrass, edenSnow, edenWinterRock, edenBloodSand, edenBloodStone, edenBoneStone, edenGravel, edenBrightStone,
+				edenWoodLog, edenWoodLeaves, edenWoodPlanks, edenParadiseWoodLog, edenParadiseWoodLeaves, edenParadiseWoodPlanks,
+				edenDungeonBricks, edenAluminumOre, edenSteelOre, edenBronzeOre, edenInvarOre, edenElectrumOre, edenPlatinumOre,
+				edenCoalOre, edenCopperOre, edenDeshOre, edenDiamondOre, edenEmeraldOre, edenGoldOre, edenSilverOre, edenIronOre,
+				edenLapisOre, edenMeteoricIronOre, edenRedstoneOre, edenTinOre, edenLeadOre, edenNickelOre, edenViriniumOre, edenCobaltOre,
+				edenEveniumOre, edenHeartiumOre, xathRock, xathCobble, xathStone, xathRockBricks, xathGrass, xathDirt, xathGravel,
+				xathTallGrass, xathPrometheanOre, xathEmeraldOre, xathDiamondOre, xathRedstoneOre, xathIronOre, xathGoldOre, xathTinOre,
+				xathAzuriteOre, oasisRock, oasisStone, oasisRockBricks, oasisCobble, oasisDirt, oasisTallGrass, oasisGrass, oasisGravel,
+				oasisSuperChargedCoalOre, oasisCoalOre, oasisIronOre, oasisGoldOre, oasisRedstoneOre, oasisDiamondOre, oasisTinOre,
+				oasisLeadOre, xantheonRock, xantheonChrome, xantheonStone, xantheonCoalOre, xantheonIronOre, xantheonCopperOre,
+				xantheonNickelOre, xantheonPlutoniumOre, xantheonFueltoniumOre, xantheonAmaranthOre, xantheonConstructBlock, atheonRock,
+				atheonLuxrock, atheonStone, atheonCobble, atheonRockBricks, atheonAmaranthOre, atheonRedstoneOre, atheonTinOre,
+				atheonDiamondOre, atheonZollerniumOre, atheonZincOre, atheonConstructBlock, blockViri, blockCobalt, blockEve,
+				blockPromethean, blockCrater, blockSuperChargedCoal, blockPlutonium, blockFueltonium, blockChargium, blockShinium,
+				blockAmaranth, blockAzurite, blockZollernium, blockZinc, blockPerdDiamond, blockPerdEtrium, blockZucrite, blockRhodium,
+				blockAmber, blockTopaz, blockOpal, blockAquamarine, blockGarnet, blockRuby, blockAmberStatic, blockAquamarineIcy,
+				blockGarnetFire, blockWitherite, blockRadium, blockNetheridium, blockNetherizedObsidian, blockRedObsidian, blockShadowBone,
+				blockShinestone, blockShinestoneCrystal, blockShinestonePolished, blockShinestoneCrystalBricks, blockCompressedHeartium,
+				blockCompressedViri, blockCompressedEve, blockCompressedCobalt, blockCompressedPromethean, blockCompressedSuperChargedCoal,
+				blockCompressedZucrite, blockCompressedRhodium, candyCubeWhite, candyCubeBlack, candyCubeGray, candyCubeOrange,
+				candyCubeBrown, candyCubeRed, candyCubeBlue, candyCubeYellow, candyCubePurple, candyCubeCyan, candyCubePink,
+				candyCubeGreen, blockChocolate, blockChocolateBricks, blockCookie, blockBrownie, blockIceCreamSandwich, blockSugarCube,
+				blockSpaceStation, blockLore, perdSand, perdRock, perdStone, perdCobble, perdRockBricks, perdGravel, perdCreepDirt,
+				perdSoil, perdDirt, perdTallGrass, perdGrass, perdCreepStone, perdGlowstone, perdCaveStone, perdCaveStoneBricks,
+				perdCactus, perdReeds, perdDeadBush, perdDiamondOre, perdEtriumOre, perdIronOre, perdGoldOre, perdZollerniumOre,
+				perdFueltoniumOre, perdTreeSapling, perdWoodLogs, perdWoodLeaves, perdWoodPlanks, altumRock, altumSand, altumDirt,
+				altumCobble, altumStone, altumGravel, altumSeaweed, altumCoalOre, altumIronOre, altumGoldOre, altumRedstoneOre,
+				altumDiamondOre, altumZollerniumOre, altumEveniumOre, altumRhodiumOre, altumAmaranthOre, caligroSurfaceRock, caligroRock,
+				caligroCobblestone, caligroCobblestoneMossy, caligroStone, caligroStoneBricks, caligroGravel, caligroDirt, witherrack,
+				caligroCreepstone, caligroCreepdirt, caligroWitheriteOre, caligroShiniumOre, caligroSilverOre, caligroNickelOre,
+				caligroLeadOre, caligroTinOre, caligroCopperOre, caligroIronOre, caligroGoldOre, caligroRedstoneOre, caligroAmaranthOre,
+				caligroZincOre, caligroAmberOre, caligroTopazOre, caligroOpalOre, caligroAquamarineOre, caligroGarnetOre,
+				caligroSuperChargedCoalOre, caligroFueltoniumOre, caligroDiamondOre, caligroEmeraldOre, caligroRadiumOre, caligroLapisOre,
+				caligroZollerniumOre, caligroRubyOre, spiderlingEgg, shadowBossSpawner, corruptRock, corruptCobble, corruptStone,
+				corruptStoneBricks, corruptAscendiumOre, corruptEtriumOre, corruptChargiumOre, corruptCreepstone);
 		ZGHelper.Log("Loaded a total of " + totalBlocks + " new blocks.");
 	}
 	

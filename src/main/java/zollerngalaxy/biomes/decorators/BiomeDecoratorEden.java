@@ -64,6 +64,7 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 	public int edenTallGrassPerChunk = 4;
 	public int edenFlowersPerChunk = 2;
 	public int edenTreesPerChunk = 1;
+	public int edenFallTreesPerChunk = 3;
 	public int lavaLakesPerChunk = 1;
 	public int waterLakesPerChunk = 4;
 	
@@ -188,8 +189,8 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 		}
 		
 		if (this.edenTreesPerChunk > 0) {
-			WorldGenEdenTrees treeGen = new WorldGenEdenTrees(false, ZGHelper.rngInt(5, 10),
-					ZGBlocks.edenWoodLog.getDefaultState(), ZGBlocks.edenWoodLeaves.getDefaultState(), this.generateVines);
+			WorldGenEdenTrees treeGen = new WorldGenEdenTrees(false, ZGHelper.rngInt(5, 10), ZGBlocks.edenWoodLog.getDefaultState(),
+					ZGBlocks.edenWoodLeaves.getDefaultState(), this.generateVines);
 			for (int i = 0; i < this.edenTreesPerChunk; ++i) {
 				y = rand.nextInt(rand.nextInt(genY) + 8);
 				if (y < 64) {
@@ -197,6 +198,21 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 				}
 				
 				if (rand.nextInt(100) <= 50) {
+					treeGen.generate(world, rand, this.chunkPos.add(x, y, z));
+				}
+			}
+		}
+		
+		if (this.edenFallTreesPerChunk > 0) {
+			WorldGenEdenTrees treeGen = new WorldGenEdenTrees(false, ZGHelper.rngInt(5, 7), ZGBlocks.edenParadiseWoodLog.getDefaultState(),
+					ZGBlocks.edenParadiseWoodLeaves.getDefaultState(), this.generateVines);
+			for (int i = 0; i < this.edenFallTreesPerChunk; ++i) {
+				y = rand.nextInt(rand.nextInt(genY) + 8);
+				if (y < 64) {
+					y = ZGHelper.rngInt(64, 82);
+				}
+				
+				if (rand.nextInt(100) <= 75) {
 					treeGen.generate(world, rand, this.chunkPos.add(x, y, z));
 				}
 			}

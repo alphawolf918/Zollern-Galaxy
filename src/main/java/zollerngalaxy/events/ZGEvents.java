@@ -207,7 +207,7 @@ public class ZGEvents {
 			if (src == DamageSourceGC.thermal) {
 				if (worldProvider instanceof WorldProviderSpace) {
 					WorldProviderSpace spaceProvider = (WorldProviderSpace) worldProvider;
-					float thermalLevel = spaceProvider.getCelestialBody().atmosphere.thermalLevel();
+					float thermalLevel = spaceProvider.getThermalLevelModifier();
 					boolean isHot = (thermalLevel > 0F);
 					boolean isCold = (thermalLevel < 0F);
 					if (isHot) {

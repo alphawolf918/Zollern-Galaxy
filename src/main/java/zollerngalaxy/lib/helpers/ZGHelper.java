@@ -18,6 +18,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraft.world.DimensionType;
@@ -304,6 +305,19 @@ public abstract class ZGHelper {
 	}
 	
 	public static void performBluePrintCheck(Random rand, Item blueprintItem, EntityPlayer player, DamageSourceGC dSrc, float dmg) {
+		if (rand.nextInt(28) <= 4) {
+			if (!ZGHelper.checkInventoryForItem(blueprintItem, player)) {
+				player.attackEntityFrom(dSrc, dmg);
+			} else {
+				if (rand.nextInt(100) <= 10) {
+					int damage = (int) dmg;
+					ZGHelper.damageBlueprint(blueprintItem, player, damage);
+				}
+			}
+		}
+	}
+	
+	public static void performBluePrintCheck(Random rand, Item blueprintItem, EntityPlayer player, DamageSource dSrc, float dmg) {
 		if (rand.nextInt(28) <= 4) {
 			if (!ZGHelper.checkInventoryForItem(blueprintItem, player)) {
 				player.attackEntityFrom(dSrc, dmg);

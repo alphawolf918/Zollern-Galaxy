@@ -47,6 +47,7 @@ import zollerngalaxy.biomes.candora.BiomeJollyWatermelonPlains;
 import zollerngalaxy.biomes.eden.BiomeAsteroidCraters;
 import zollerngalaxy.biomes.eden.BiomeBloodDesert;
 import zollerngalaxy.biomes.eden.BiomeEdenOcean;
+import zollerngalaxy.biomes.eden.BiomeEdenParadiseWoods;
 import zollerngalaxy.biomes.eden.BiomeEdenwoodForest;
 import zollerngalaxy.biomes.eden.BiomeFlowerGarden;
 import zollerngalaxy.biomes.eden.BiomeGoldenMeadow;
@@ -97,6 +98,7 @@ public class ZGBiomes {
 	public static final Biome EDEN_TERRAN_VALLEY = new BiomeTerranValley(new BiomeProperties("Terran Valley"));
 	public static final Biome EDEN_SNOWY_PLAINS = new BiomeSnowyPlains(new BiomeProperties("Snowy Plains"));
 	public static final Biome EDEN_GOLDEN_MEADOW = new BiomeGoldenMeadow(new BiomeProperties("Golden Meadow"));
+	public static final Biome EDEN_PARADISE_WOODS = new BiomeEdenParadiseWoods(new BiomeProperties("Paradise Woods"));
 	public static final Biome EDEN_SWAMPLANDS = new BiomeSwamplands(new BiomeProperties("Swamplands"));
 	public static final Biome EDENWOOD_FOREST = new BiomeEdenwoodForest(new BiomeProperties("Edenwood Forest"));
 	public static final Biome EDEN_FLOWER_GARDEN = new BiomeFlowerGarden(new BiomeProperties("The Garden"));
@@ -166,6 +168,7 @@ public class ZGBiomes {
 		ZGBiomes.addBiome(ZGBiomes.EDEN_TERRAN_VALLEY, LUSH, WET, PLAINS);
 		ZGBiomes.addBiome(ZGBiomes.EDEN_SNOWY_PLAINS, PLAINS, COLD, SNOWY);
 		ZGBiomes.addBiome(ZGBiomes.EDEN_GOLDEN_MEADOW, LUSH, WET);
+		ZGBiomes.addBiome(ZGBiomes.EDEN_PARADISE_WOODS, LUSH, WET, FOREST);
 		ZGBiomes.addBiome(ZGBiomes.EDEN_SWAMPLANDS, LUSH, WET, SWAMP);
 		ZGBiomes.addBiome(ZGBiomes.EDENWOOD_FOREST, LUSH, WET, FOREST);
 		ZGBiomes.addBiome(ZGBiomes.EDEN_FLOWER_GARDEN, LUSH, WET, PLAINS);

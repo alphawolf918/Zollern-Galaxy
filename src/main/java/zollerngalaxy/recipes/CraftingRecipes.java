@@ -109,6 +109,7 @@ public class CraftingRecipes {
 		// Tree things
 		CraftingRecipes.addPlanks(ZGBlocks.edenWoodLog, ZGBlocks.edenWoodPlanks);
 		CraftingRecipes.addPlanks(ZGBlocks.perdWoodLogs, ZGBlocks.perdWoodPlanks);
+		CraftingRecipes.addPlanks(ZGBlocks.edenParadiseWoodLog, ZGBlocks.edenParadiseWoodPlanks);
 		
 		// Blood Obsidian
 		ZGRecipeHelper.addRecipe(new ItemStack(ZGBlocks.blockRedObsidian, 2), new Object[] { "BN ", "NB ", "   ", 'B',

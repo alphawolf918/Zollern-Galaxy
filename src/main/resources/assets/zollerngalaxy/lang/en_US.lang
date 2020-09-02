@@ -18,6 +18,7 @@ tile.zoldirt.name=Zollus Dirt
 tile.edensurfacerock.name=Eden's Greenrock
 tile.edengrass.name=Eden's Grass
 tile.edengrass_snow.name=Eden's Snowy Grass
+tile.edengrass_autumn.name=Eden's Paradise Grass
 tile.edengoldengrass.name=Eden's Golden Grass
 tile.edenswampgrass.name=Eden's Swamp Grass
 tile.edensoil.name=Eden's Soil
@@ -70,10 +71,17 @@ tile.bonestone.name=Eden's Bone Stone
 tile.edensacredstone.name=Eden's Sacred Stone
 tile.edenfruit.name=Eden's Indigo Fruit
 tile.edenglass.name=Eden's Glass
+
 tile.edenwoodlog.name=Edenwood Log
 tile.edenwoodplanks.name=Edenwood Planks
 tile.edenwoodleaves.name=Edenwood Leaves
 tile.edentreesapling.name=Edenwood Sapling
+
+tile.paradisewoodlog.name=Paradise Tree Log
+tile.paradisewoodplanks.name=Paradise Tree Planks
+tile.paradisewoodleaves.name=Paradise Tree Leaves
+tile.paradisewoodsapling.name=Paradise Tree Sapling
+
 tile.fruitofedenblock.name=Fruit of Eden
 tile.edengravel.name=Eden's Gravel
 tile.edenwinterrock.name=Eden's Snowrock

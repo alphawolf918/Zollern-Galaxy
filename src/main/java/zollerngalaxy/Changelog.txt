@@ -24,5 +24,8 @@ Zollern Galaxy v2.0.18
     - Left-clicking an entity with this sword will kill any undead creature instantly, and will apply massive damage to Dark Agent mobs.
 * All of the new swords are craftable.
 * Added the Scorch and Freeze blueprints, but they don't currently work.
+* Added the Paradise Woods biome to Eden.
+    - Filled with the new Paradise Wood trees.
+    - Based on autumn colors.
 * Fixed Infection being set as Anti-Corruption and vice-versa.
 * 
