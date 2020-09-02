@@ -365,6 +365,10 @@ chocolatemelted=Расплавленный Шоколад
 tile.chocolatemelted.name=Расплавленный Шоколад
 fluid.chocolatemelted=Расплавленный Шоколад
 
+radium=Сияние
+tile.radium.name=Сияние
+fluid.radium=Сияние
+
 container.eden.treasurechest.name=Сокровище Эден
 
 item.zolluscrystal.name=Золниум Кристал
@@ -468,6 +472,8 @@ item.blueprint_tox.name=Защита От Токсичности
 item.blueprint_poison.name=Защита От Отравления
 item.blueprint_corruption.name=Защита от повреждения
 item.blueprint_radiance.name=Защита от тьмы
+item.blueprint_scorch.name=Защита от Ожога
+item.blueprint_freeze.name=Защита от Замерзания
 
 item.compressedemerald.name=Сжатый Эмеральд
 item.compresseddiamond.name=Сжатый Алмаз
@@ -486,9 +492,10 @@ item.compressedazurite.name=Сжатый Азурит
 item.compressedzollernium.name=Сжатый Золлерниум
 item.compressedrhodium.name=Сжатый Рходиум
 item.compressedzucrite.name=Сжатый Зукрите
+item.compressedascendantamaranth.name=Сжатый восходящий амарант
 
 item.superchargedcoal.name=Супер Заряжений Уголь
-item.powerstick.name=Rod of Ascension
+item.powerstick.name=жезл вознесения
 
 item.perddiamond.name=Потерянный Алмаз
 item.etrium.name=Сырой Этриум
@@ -511,6 +518,12 @@ item.cookedshark.name=Приготовленная Акула
 item.shagreen.name=акулья кожа
 item.sharktooth.name=Зуб Акулы
 item.sharksword.name=Меч из Акулы
+item.wither_sword.name=Мортем
+item.fire_sword.name=Диабло
+item.ice_sword.name=Ледник
+item.ender_sword.name=Эндер
+item.thor_sword.name=Тор
+item.light_sword.name=Архангел
 
 item.stargate_tier1.name=Звёздные Врата (Протокол 1)
 item.stargate_tier2.name=Звёздные Врата (Протокол 2)
@@ -565,6 +578,9 @@ item.zollernium_shovel.name=Золлерниум Лопата
 item.zollernium_axe.name=Золлерниум Топор
 item.zollernium_hoe.name=Золлерниум Мотыга
 
+item.heart.name=Лечащий сердце
+item.heartforce.name=Макс Сила Сердца
+
 entity.zollerngalaxy:moolus.name=Мулус
 entity.zollerngalaxy:oinkus.name=Оинкус
 entity.zollerngalaxy:squidlus.name=Осминоглус
@@ -589,6 +605,7 @@ entity.zollerngalaxy:krull.name=Крулл
 entity.zollerngalaxy:shadowskeleton.name=Теневой Скелет
 entity.zollerngalaxy:shade.name=тень
 entity.zollerngalaxy:shadowalien.name=Тень Тёмного Босса
+entity.zollerngalaxy:faceless.name=Безликий
 
 tooltips.hud=Показывает Всю информацию про Планеты и Биомы.
 tooltips.hud2=Только работает когда в Руке.
@@ -616,6 +633,39 @@ tooltips.shadowbossbeaten=Зверь Пал!!
 tooltips.shadekey=Чтобы создать этого босса, вам понадобится ключ тени!
 tooltips.mobnotpeaceful=Невожможно Заспавнить Босса пока на Мирной сложности.
 tooltips.treasurespawned=Сундук с сокровищами заспавнился!
+
+tooltips.withersword1=Иссушитель
+tooltips.withersword2=Меч, Прикоснувшийся к смерти.
+
+tooltips.firesword1=Меч огня, Который сравнится
+tooltips.firesword2=с Нижним Миром.
+
+tooltips.thorsword1=Кто прикоснется к этому Мечу
+tooltips.thorsword2=Он должен быть Достойным,
+tooltips.thorsword3=Штобы иметь полную Силу ТОРА!.
+
+tooltips.endersword1=Меч Кованый  из
+tooltips.endersword2=Энергии эндермена.
+
+tooltips.icesword1=меч, рожденный из
+tooltips.icesword2=Долины Мерзлоты.
+
+tooltips.lightsword1=Лёгкий, Кованый
+tooltips.lightsword2=В меч
+
+tooltips.blueprint=Защищает игрока от определенных элементов.
+tooltips.blueprint_corruption=Защищает игрока от Повреждений.
+tooltips.blueprint_scorch=Защищает игрока от Ожогов.
+tooltips.blueprint_freezing=Защищает игрока оф Мерзлоты.
+
+tooltips.heart=Восстанавливает здоровье Игрока.
+tooltips.maxhealth=Ты уже здоров.
+tooltips.healthrestored=Твоё здоровье восстановлено.
+tooltips.healthincrease=Увеличивает максимальное здоровье игрока.
+tooltips.maxhealthtoohigh=Макс здоровье не может быть выше чем.
+tooltips.newhealth=Максимальное Здоровье
+tooltips.newhealth2=Максимальное Здоровье Сейчас.
+tooltips.hearts=Сердца
 
 planet.zollus=Zollus
 planet.eden=Eden
@@ -727,9 +777,16 @@ death.attack.waspsting.player=%1$s Умер от Укуса Осы, Спасиб
 death.attack.waspsting.item=%1$s Умер от Укуса Осы, Спасибо %2$s При Помощи %3$s.
 
 zollerngalaxy_infected=Заразился
+zollerngalaxy_anticorruption=Противо повреждения
 zollerngalaxy_corruption=Повредился
 zollerngalaxy_radiance=светимость
 zollerngalaxy_enlightened=просвещенный
+
+material.materialradium.name=Радий
+material.materialcorruption.name=Повреждения
+
+modifier.trait_enlightened.name=Просвещенный
+modifier.trait_corrupted.name=Поврежден
 
 itemGroup.ZollernGalaxyBlocks=Блоки Zollern Galaxy
 itemGroup.ZollernGalaxyItems=Предметы Zollern Galaxy 
