@@ -212,7 +212,7 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 					y = ZGHelper.rngInt(64, 82);
 				}
 				
-				if (rand.nextInt(100) <= 75) {
+				if (rand.nextInt(100) <= 85) {
 					treeGen.generate(world, rand, this.chunkPos.add(x, y, z));
 				}
 			}

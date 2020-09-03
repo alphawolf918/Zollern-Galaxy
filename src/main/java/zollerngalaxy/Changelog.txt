@@ -27,5 +27,9 @@ Zollern Galaxy v2.0.18
 * Added the Paradise Woods biome to Eden.
     - Filled with the new Paradise Wood trees.
     - Based on autumn colors.
+* Added basic flower breeding to Eden Flowers.
+    - Placing certain colors next to each other has a chance to generate a hybrid color flower nearby.
+* 
+* Slightly modified colors of Eden biomes.
 * Fixed Infection being set as Anti-Corruption and vice-versa.
 * 

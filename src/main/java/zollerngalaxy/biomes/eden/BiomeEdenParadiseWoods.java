@@ -30,9 +30,9 @@ public class BiomeEdenParadiseWoods extends BiomeEdenBase {
 		this.biomeDecor.waterLakesPerChunk = 1;
 		this.biomeDecor.lavaLakesPerChunk = 0;
 		this.biomeDecor.edenTallGrassPerChunk = 8;
-		this.biomeDecor.edenFlowersPerChunk = 2;
+		this.biomeDecor.edenFlowersPerChunk = 4;
 		this.biomeDecor.edenTreesPerChunk = 0;
-		this.biomeDecor.edenFallTreesPerChunk = 4;
+		this.biomeDecor.edenFallTreesPerChunk = 10;
 		this.grassFoilageColorMultiplier = 0x8b0000;
 		this.waterColor = 0x00008b;
 		this.topBlock = ZGBlocks.edenFallGrass.getDefaultState();

@@ -9,6 +9,7 @@ package zollerngalaxy.biomes.genlayers.eden;
 
 import java.util.ArrayList;
 import java.util.List;
+import com.google.common.collect.ImmutableList;
 import net.minecraft.util.WeightedRandom;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.layer.IntCache;
@@ -17,7 +18,6 @@ import net.minecraftforge.common.BiomeManager.BiomeEntry;
 import net.minecraftforge.common.BiomeManager.BiomeType;
 import zollerngalaxy.biomes.ZGBiomes;
 import zollerngalaxy.util.CachedEnum;
-import com.google.common.collect.ImmutableList;
 
 public class GenLayerEdenBiomes extends GenLayerEden {
 	
@@ -55,8 +55,8 @@ public class GenLayerEdenBiomes extends GenLayerEden {
 		list.add(new BiomeEntry(ZGBiomes.EDEN_GREEN_LANDS, 35));
 		list.add(new BiomeEntry(ZGBiomes.EDEN_SWAMPLANDS, 30));
 		list.add(new BiomeEntry(ZGBiomes.EDEN_BLOOD_DESERT, 25));
-		list.add(new BiomeEntry(ZGBiomes.EDEN_GOLDEN_MEADOW, 20));
-		list.add(new BiomeEntry(ZGBiomes.EDEN_SNOWY_PLAINS, 15));
+		list.add(new BiomeEntry(ZGBiomes.EDEN_GOLDEN_MEADOW, 24));
+		list.add(new BiomeEntry(ZGBiomes.EDEN_SNOWY_PLAINS, 20));
 		
 		currentBiomes[BiomeType.WARM.ordinal()] = new ArrayList<>(list);
 		return currentBiomes;
