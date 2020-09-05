@@ -17,7 +17,6 @@ import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 import zollerngalaxy.lib.helpers.json.JSONRecipeFactory;
 
 public class ZGRecipeHelper {
@@ -35,7 +34,7 @@ public class ZGRecipeHelper {
 	}
 	
 	public static void addSmeltingRecipe(ItemStack input, ItemStack output, float xp) {
-		GameRegistry.addSmelting(input, output, xp);
+		ZGRecipeHelper.addSmeltingRecipe(input, output, xp);
 	}
 	
 	public static void addCompressorRecipe(ItemStack output, Object... obj) {
@@ -65,6 +64,24 @@ public class ZGRecipeHelper {
 			// Sword
 		} else if (toolType.equals("sword")) {
 			ZGRecipeHelper.addRecipe(itemOutput, new Object[] { " R ", " R ", " S ", 'R', itemIngot, 'S', Items.STICK });
+		}
+	}
+	
+	public static void addArmorSet(Item itemInput, Item itemOutput, String armorType) {
+		armorType = armorType.toLowerCase();
+		if (armorType.equals("helmet")) {
+			// Helmet
+			ZGRecipeHelper.addRecipe(new ItemStack(itemOutput), new Object[] { "ZZZ", "Z Z", "   ", 'Z', new ItemStack(itemInput, 1) });
+			// Chestplate
+		} else if (armorType.equals("chest")) {
+			ZGRecipeHelper.addRecipe(new ItemStack(itemOutput), new Object[] { "Z Z", "ZZZ", "ZZZ", 'Z', new ItemStack(itemInput, 1) });
+			// Leggings
+		} else if (armorType.equals("legs")) {
+			ZGRecipeHelper.addRecipe(new ItemStack(itemOutput), new Object[] { "ZZZ", "Z Z", "Z Z", 'Z', new ItemStack(itemInput, 1) });
+			// Boots
+		} else if (armorType.equals("boots")) {
+			ZGRecipeHelper.addRecipe(new ItemStack(itemOutput), new Object[] { "   ", "Z Z", "Z Z", 'Z', new ItemStack(itemInput, 1) });
+			ZGRecipeHelper.addRecipe(new ItemStack(itemOutput), new Object[] { "Z Z", "Z Z", "   ", 'Z', new ItemStack(itemInput, 1) });
 		}
 	}
 	

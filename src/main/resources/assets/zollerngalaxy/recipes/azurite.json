@@ -1,12 +1,16 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "ingredients": [
-    {
-      "item": "zollerngalaxy:azuriteblock"
-    }
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "Z Z",
+    "Z Z",
+    "   "
   ],
+  "key": {
+    "Z": {
+      "item": "zollerngalaxy:azuriteboots"
+    }
+  },
   "result": {
-    "item": "zollerngalaxy:azurite",
-    "count": 9
+    "item": "zollerngalaxy:azurite"
   }
 }

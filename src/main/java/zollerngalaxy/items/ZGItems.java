@@ -8,8 +8,11 @@
 package zollerngalaxy.items;
 
 import net.minecraft.init.MobEffects;
+import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
 import zollerngalaxy.blocks.ZGBlocks;
+import zollerngalaxy.items.armor.ZGArmor;
+import zollerngalaxy.items.armor.ZGArmorMats;
 import zollerngalaxy.items.food.IceCream;
 import zollerngalaxy.items.food.ItemSweetFood;
 import zollerngalaxy.items.food.ZGItemFood;
@@ -219,6 +222,30 @@ public class ZGItems {
 	public static final Item swordIce = new ItemIceSword();
 	public static final Item swordLight = new ItemLightSword();
 	
+	// Armor (Helmets)
+	public static final Item helmetAmaranth = new ZGArmor(ZGArmorMats.AMARANTH, 1, EntityEquipmentSlot.HEAD, "amaranthhelmet");
+	public static final Item helmetZollernium = new ZGArmor(ZGArmorMats.ZOLLERNIUM, 1, EntityEquipmentSlot.HEAD, "zollerniumhelmet");
+	public static final Item helmetAzurite = new ZGArmor(ZGArmorMats.AZURITE, 1, EntityEquipmentSlot.HEAD, "azuritehelmet");
+	public static final Item helmetRadium = new ZGArmor(ZGArmorMats.RADIUM, 1, EntityEquipmentSlot.HEAD, "radiumhelmet");
+	
+	// Armor (Chestplates)
+	public static final Item chestAmaranth = new ZGArmor(ZGArmorMats.AMARANTH, 1, EntityEquipmentSlot.CHEST, "amaranthchestplate");
+	public static final Item chestZollernium = new ZGArmor(ZGArmorMats.ZOLLERNIUM, 1, EntityEquipmentSlot.CHEST, "zollerniumchestplate");
+	public static final Item chestAzurite = new ZGArmor(ZGArmorMats.AZURITE, 1, EntityEquipmentSlot.CHEST, "azuritechestplate");
+	public static final Item chestRadium = new ZGArmor(ZGArmorMats.RADIUM, 1, EntityEquipmentSlot.CHEST, "radiumchestplate");
+	
+	// Armor (Leggings)
+	public static final Item legsAmaranth = new ZGArmor(ZGArmorMats.AMARANTH, 2, EntityEquipmentSlot.LEGS, "amaranthleggings");
+	public static final Item legsZollernium = new ZGArmor(ZGArmorMats.ZOLLERNIUM, 2, EntityEquipmentSlot.LEGS, "zollerniumleggings");
+	public static final Item legsAzurite = new ZGArmor(ZGArmorMats.AZURITE, 2, EntityEquipmentSlot.LEGS, "azuriteleggings");
+	public static final Item legsRadium = new ZGArmor(ZGArmorMats.RADIUM, 2, EntityEquipmentSlot.LEGS, "radiumleggings");
+	
+	// Armor (Boots)
+	public static final Item bootsAmaranth = new ZGArmor(ZGArmorMats.AMARANTH, 1, EntityEquipmentSlot.FEET, "amaranthboots");
+	public static final Item bootsZollernium = new ZGArmor(ZGArmorMats.ZOLLERNIUM, 1, EntityEquipmentSlot.FEET, "zollerniumboots");
+	public static final Item bootsAzurite = new ZGArmor(ZGArmorMats.AZURITE, 1, EntityEquipmentSlot.FEET, "azuriteboots");
+	public static final Item bootsRadium = new ZGArmor(ZGArmorMats.RADIUM, 1, EntityEquipmentSlot.FEET, "radiumboots");
+	
 	// Blueprints
 	public static final Item blueprintCorruption = new ItemBlueprint("corruption").setTooltipText("tooltips.blueprint_corruption");
 	public static final Item blueprintThermalHot = new ItemBlueprint("scorch").setTooltipText("tooltips.blueprint_scorch");
@@ -248,6 +275,8 @@ public class ZGItems {
 				shovelAmaranth, shovelAzurite, shovelZollernium, axeCobalt, axeEvenium, axeVirinium, axeAmaranth, axeAzurite, axeZollernium,
 				hoeCobalt, hoeEvenium, hoeVirinium, hoeAmaranth, hoeAzurite, hoeZollernium, swordCobalt, swordEvenium, swordVirinium,
 				swordAmaranth, swordAzurite, swordZollernium, swordWither, swordFire, swordThor, swordEnder, swordIce, swordLight,
+				helmetAmaranth, helmetZollernium, helmetAzurite, helmetRadium, chestAmaranth, chestZollernium, chestAzurite, chestRadium,
+				legsAmaranth, legsZollernium, legsAzurite, legsRadium, bootsAmaranth, bootsZollernium, bootsAzurite, bootsRadium,
 				blueprintCorruption, blueprintThermalHot, blueprintThermalCold, healingHeart, healingHeartForce);
 		ZGHelper.Log("Loaded a total of " + totalItems + " new items.");
 	}

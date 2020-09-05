@@ -32,6 +32,11 @@ Zollern Galaxy v2.0.18
 * Added pumpkins to Paradise Woods biome on Eden.
 * Added the Radium Ingot.
     - Created from a cast in Tinker's Construct using the Radium fluid.
+* Added four armor sets.
+* Each set of armor provides a different effect when the full set is worn.
+    - Radium applies the Radiance potion effect and allows the Player to fly in Survival.
+    - Azurite boosts the Player's attack.
+    - Zollernium makes the Player fire-resistant and slightly increases step height.
+    - Amaranth boosts the Player's defense.
 * Slightly modified colors of Eden biomes.
 * Fixed Infection being set as Anti-Corruption and vice-versa.
-* 

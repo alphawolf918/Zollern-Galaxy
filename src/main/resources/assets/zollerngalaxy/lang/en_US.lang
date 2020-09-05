@@ -587,6 +587,26 @@ item.zollernium_shovel.name=Zollernium Shovel
 item.zollernium_axe.name=Zollernium Axe
 item.zollernium_hoe.name=Zollernium Hoe
 
+item.amaranthhelmet.name=Amaranth Helmet
+item.amaranthchestplate.name=Amaranth Chestplate
+item.amaranthleggings.name=Amaranth Leggings
+item.amaranthboots.name=Amaranth Boots
+
+item.zollerniumhelmet.name=Zollernium Helmet
+item.zollerniumchestplate.name=Zollernium Chestplate
+item.zollerniumleggings.name=Zollernium Leggings
+item.zollerniumboots.name=Zollernium Boots
+
+item.azuritehelmet.name=Azurite Helmet
+item.azuritechestplate.name=Azurite Chestplate
+item.azuriteleggings.name=Azurite Leggings
+item.azuriteboots.name=Azurite Boots
+
+item.radiumhelmet.name=Radium Helmet
+item.radiumchestplate.name=Radium Chestplate
+item.radiumleggings.name=Radium Leggings
+item.radiumboots.name=Radium Boots
+
 item.heart.name=Healing Heart
 item.heartforce.name=Max Heartforce
 

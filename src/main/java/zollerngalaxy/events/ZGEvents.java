@@ -21,6 +21,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
+import net.minecraft.init.MobEffects;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
@@ -47,6 +48,7 @@ import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
+import net.minecraftforge.event.entity.player.PlayerEvent.NameFormat;
 import net.minecraftforge.event.entity.player.UseHoeEvent;
 import net.minecraftforge.fml.common.eventhandler.Event.Result;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
@@ -58,6 +60,8 @@ import zollerngalaxy.core.ZGLootTables;
 import zollerngalaxy.core.ZollernGalaxyCore;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderAltum;
 import zollerngalaxy.items.ZGItems;
+import zollerngalaxy.items.armor.ZGArmor;
+import zollerngalaxy.items.armor.ZGArmorMats;
 import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.mobs.entities.EntityAbyssalVillager;
 import zollerngalaxy.mobs.entities.EntityBladeFish;
@@ -177,7 +181,81 @@ public class ZGEvents {
 					}
 				}
 			}
-			//
+			
+			// Initialize the count for each armor type.
+			int amArmorCount = 0;
+			int zArmorCount = 0;
+			int azArmorCount = 0;
+			int rArmorCount = 0;
+			
+			// Loop through the player's armor inventory, and check
+			// to see if it isn't null. If not, check that it's an
+			// instance of ZGArmor. For each material, check
+			// the type of armor, and increment the armor count
+			// variables for each one that it finds.
+			for (ItemStack armorStack : armorInventory) {
+				if (armorStack != null) {
+					if (armorStack.getItem() instanceof ZGArmor) {
+						ZGArmor armorItem = (ZGArmor) armorStack.getItem();
+						if (armorItem.getArmorMaterial() == ZGArmorMats.AMARANTH) {
+							amArmorCount++;
+						} else if (armorItem.getArmorMaterial() == ZGArmorMats.ZOLLERNIUM) {
+							zArmorCount++;
+						} else if (armorItem.getArmorMaterial() == ZGArmorMats.AZURITE) {
+							azArmorCount++;
+						} else if (armorItem.getArmorMaterial() == ZGArmorMats.RADIUM) {
+							rArmorCount++;
+						}
+					}
+				}
+			}
+			
+			// Loop through 0 to 4 and if an armor set's increment variable is
+			// equal to 4, add its respective potion effect.
+			for (int i = 0; i < 4; ++i) {
+				if (amArmorCount == 4) {
+					// Amaranth
+					player.addPotionEffect(new PotionEffect(MobEffects.RESISTANCE, 100, 1));
+				} else if (zArmorCount == 4) {
+					// Zollernium
+					player.addPotionEffect(new PotionEffect(MobEffects.FIRE_RESISTANCE, 100, 1));
+					player.stepHeight = 2F;
+				} else if (azArmorCount == 4) {
+					// Azurite
+					player.addPotionEffect(new PotionEffect(MobEffects.STRENGTH, 100, 1));
+				} else if (rArmorCount == 4) {
+					// Radium
+					player.addPotionEffect(new PotionEffect(ZGPotions.radiance, 100, 1));
+					player.capabilities.allowFlying = true;
+				} else {
+					// Disable all "extra" potion capabilities that have nothing
+					// to do with effects. If we don't do this, then the armor's
+					// effects (not the potion's, but the armor's) will last.
+					player.stepHeight = 0.5F;
+					if (!player.capabilities.isCreativeMode) {
+						player.capabilities.allowFlying = false;
+					}
+				}
+			}
+		}
+	}
+	
+	// Modifies names for Patrons, Contributors and my friends.
+	@SubscribeEvent(priority = EventPriority.HIGH, receiveCanceled = true)
+	public void onNameFormatEvent(NameFormat event) {
+		String username = event.getUsername();
+		if (username.toLowerCase().equals("alphawolf918")) {
+			event.setDisplayname(TextFormatting.GOLD + "Zollern Wolf" + TextFormatting.WHITE);
+		} else if (username.toLowerCase().equals("nascarmpfan")) {
+			event.setDisplayname(TextFormatting.RED + "Mike" + TextFormatting.WHITE);
+		} else if (username.toLowerCase().equals("applepiec00kie")) {
+			event.setDisplayname(TextFormatting.LIGHT_PURPLE + "Queen Apple" + TextFormatting.WHITE);
+		} else if (username.toLowerCase().equals("lazy_logic")) {
+			event.setDisplayname(TextFormatting.AQUA + "Logic" + TextFormatting.WHITE);
+		} else if (username.toLowerCase().equals("master_zane")) {
+			event.setDisplayname(TextFormatting.GOLD + "Master Zane" + TextFormatting.WHITE);
+		} else if (username.toLowerCase().equals("chronoxshift")) {
+			event.setDisplayname(TextFormatting.BLACK + "ChronoxShift" + TextFormatting.WHITE);
 		}
 	}
 	

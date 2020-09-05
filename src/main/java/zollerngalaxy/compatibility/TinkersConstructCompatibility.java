@@ -34,6 +34,7 @@ public class TinkersConstructCompatibility {
 	
 	public static Material materialRadium = new Material("materialRadium".toLowerCase(), 0xffff00);
 	public static Material materialCorruption = new Material("materialCorruption".toLowerCase(), 0x8b008b);
+	public static Material materialInfection = new Material("materialInfection".toLowerCase(), 0x000000);
 	
 	static {
 		materialRadium.addItem("oreRadium", 1, Material.VALUE_Ore());
