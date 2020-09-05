@@ -95,7 +95,6 @@ public class ZollernGalaxyCore {
 		ConfigManagerZG.init(event);
 		ZGSoundEvents.init();
 		ModHelperBase.detectMods();
-		ZGCompats.init();
 		ZGInfo.init(event.getModMetadata());
 		ZGLore.init();
 		ZGPotions.init();
@@ -106,6 +105,7 @@ public class ZollernGalaxyCore {
 		ZGPlanets.init();
 		ZGSpaceStations.init();
 		OreDictRegistry.init();
+		ZGCompats.init();
 		
 		instance().proxy.registerPreRendering();
 		instance().proxy.preInit(event);

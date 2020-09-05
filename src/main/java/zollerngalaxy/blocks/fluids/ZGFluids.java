@@ -49,16 +49,16 @@ public class ZGFluids {
 	}
 	
 	private static void registerFluids() {
-		fluidChargium = new Fluid("chargium", new ResourceLocation(ZGInfo.MOD_ID, "blocks/chargiumfluid"), new ResourceLocation(
-				ZGInfo.MOD_ID, "blocks/chargiumfluid"));
-		fluidWhiteLava = new Fluid("whitelava", new ResourceLocation(ZGInfo.MOD_ID, "blocks/whitelava"), new ResourceLocation(
-				ZGInfo.MOD_ID, "blocks/whitelava"));
-		fluidFueltonium = new Fluid("fueltonium", new ResourceLocation(ZGInfo.MOD_ID, "blocks/fueltonium"), new ResourceLocation(
-				ZGInfo.MOD_ID, "blocks/fueltonium"));
-		fluidChocolate = new Fluid("chocolatemelted", new ResourceLocation(ZGInfo.MOD_ID, "blocks/chocolatemelted"), new ResourceLocation(
-				ZGInfo.MOD_ID, "blocks/chocolatemelted"));
-		fluidRadium = new Fluid("radium", new ResourceLocation(ZGInfo.MOD_ID, "blocks/radiumfluid"), new ResourceLocation(ZGInfo.MOD_ID,
-				"blocks/radiumfluid"));
+		fluidChargium = new Fluid("chargium", new ResourceLocation(ZGInfo.MOD_ID, "blocks/chargiumfluid"),
+				new ResourceLocation(ZGInfo.MOD_ID, "blocks/chargiumfluid"));
+		fluidWhiteLava = new Fluid("whitelava", new ResourceLocation(ZGInfo.MOD_ID, "blocks/whitelava"),
+				new ResourceLocation(ZGInfo.MOD_ID, "blocks/whitelava"));
+		fluidFueltonium = new Fluid("fueltonium", new ResourceLocation(ZGInfo.MOD_ID, "blocks/fueltonium"),
+				new ResourceLocation(ZGInfo.MOD_ID, "blocks/fueltonium"));
+		fluidChocolate = new Fluid("chocolatemelted", new ResourceLocation(ZGInfo.MOD_ID, "blocks/chocolatemelted"),
+				new ResourceLocation(ZGInfo.MOD_ID, "blocks/chocolatemelted"));
+		fluidRadium = new Fluid("radium", new ResourceLocation(ZGInfo.MOD_ID, "blocks/radiumfluid"),
+				new ResourceLocation(ZGInfo.MOD_ID, "blocks/radiumfluid"));
 		
 		registerFluid(fluidChargium);
 		registerFluid(fluidWhiteLava);

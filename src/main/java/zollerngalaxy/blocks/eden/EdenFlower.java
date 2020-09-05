@@ -46,6 +46,16 @@ public class EdenFlower extends ZGBlockFlower {
 	}
 	
 	@Override
+	public void onBlockAdded(World worldIn, BlockPos pos, IBlockState state) {
+		worldIn.scheduleUpdate(pos, this, this.tickRate(worldIn));
+	}
+	
+	@Override
+	public void neighborChanged(IBlockState state, World worldIn, BlockPos pos, Block blockIn, BlockPos fromPos) {
+		worldIn.scheduleUpdate(pos, this, this.tickRate(worldIn));
+	}
+	
+	@Override
 	public int tickRate(World worldIn) {
 		return 20;
 	}
@@ -54,6 +64,7 @@ public class EdenFlower extends ZGBlockFlower {
 	public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
 		super.updateTick(worldIn, pos, state, rand);
 		String clr = this.getColor();
+		
 		Block blockX = worldIn.getBlockState(pos.add(1, 0, 0)).getBlock();
 		Block blockNX = worldIn.getBlockState(pos.add(-1, 0, 0)).getBlock();
 		Block blockZ = worldIn.getBlockState(pos.add(0, 0, 1)).getBlock();
@@ -62,6 +73,21 @@ public class EdenFlower extends ZGBlockFlower {
 		if (blockX instanceof EdenFlower) {
 			EdenFlower flowerX = (EdenFlower) blockX;
 			this.mateFlowers(worldIn, pos, clr, flowerX.getColor());
+		}
+		
+		if (blockNX instanceof EdenFlower) {
+			EdenFlower flowerNX = (EdenFlower) blockNX;
+			this.mateFlowers(worldIn, pos, clr, flowerNX.getColor());
+		}
+		
+		if (blockZ instanceof EdenFlower) {
+			EdenFlower flowerZ = (EdenFlower) blockZ;
+			this.mateFlowers(worldIn, pos, clr, flowerZ.getColor());
+		}
+		
+		if (blockNZ instanceof EdenFlower) {
+			EdenFlower flowerNZ = (EdenFlower) blockNZ;
+			this.mateFlowers(worldIn, pos, clr, flowerNZ.getColor());
 		}
 	}
 	
@@ -94,11 +120,15 @@ public class EdenFlower extends ZGBlockFlower {
 			BlockPos posX2 = pos.add(-1, 0, 0);
 			BlockPos posZ1 = pos.add(0, 0, 1);
 			BlockPos posZ2 = pos.add(0, 0, -1);
+			BlockPos posXZ1 = pos.add(1, 0, 1);
+			BlockPos posXZ2 = pos.add(-1, 0, -1);
 			
 			Block posBlockX1 = worldIn.getBlockState(posX1).getBlock();
 			Block posBlockX2 = worldIn.getBlockState(posX2).getBlock();
 			Block posBlockZ1 = worldIn.getBlockState(posZ1).getBlock();
 			Block posBlockZ2 = worldIn.getBlockState(posZ2).getBlock();
+			Block posBlockXZ1 = worldIn.getBlockState(posXZ1).getBlock();
+			Block posBlockXZ2 = worldIn.getBlockState(posXZ2).getBlock();
 			
 			if (ZGHelper.getRNGChance(5, 10)) {
 				this.plantFlower(worldIn, posX1, posBlockX1, flowerState);
@@ -114,6 +144,14 @@ public class EdenFlower extends ZGBlockFlower {
 			
 			if (ZGHelper.getRNGChance(5, 10)) {
 				this.plantFlower(worldIn, posZ2, posBlockZ2, flowerState);
+			}
+			
+			if (ZGHelper.getRNGChance(5, 10)) {
+				this.plantFlower(worldIn, posXZ1, posBlockXZ1, flowerState);
+			}
+			
+			if (ZGHelper.getRNGChance(5, 10)) {
+				this.plantFlower(worldIn, posXZ2, posBlockXZ2, flowerState);
 			}
 		}
 	}

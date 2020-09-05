@@ -29,7 +29,9 @@ Zollern Galaxy v2.0.18
     - Based on autumn colors.
 * Added basic flower breeding to Eden Flowers.
     - Placing certain colors next to each other has a chance to generate a hybrid color flower nearby.
-* 
+* Added pumpkins to Paradise Woods biome on Eden.
+* Added the Radium Ingot.
+    - Created from a cast in Tinker's Construct using the Radium fluid.
 * Slightly modified colors of Eden biomes.
 * Fixed Infection being set as Anti-Corruption and vice-versa.
 * 

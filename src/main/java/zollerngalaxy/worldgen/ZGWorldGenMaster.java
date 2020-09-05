@@ -83,6 +83,15 @@ public abstract class ZGWorldGenMaster extends WorldGenerator {
 		return "Spawned at: " + pos.getX() + " " + pos.getY() + " " + pos.getZ();
 	}
 	
+	/**
+	 * Checks if the spawn point is valid.
+	 * 
+	 * @param world
+	 *            World
+	 * @param pos
+	 *            Position in world
+	 * @return True/False
+	 */
 	protected boolean isValidSpawn(World world, BlockPos pos) {
 		Block blockBelow = world.getBlockState(pos.down()).getBlock();
 		
@@ -92,5 +101,4 @@ public abstract class ZGWorldGenMaster extends WorldGenerator {
 		
 		return true;
 	}
-	
 }

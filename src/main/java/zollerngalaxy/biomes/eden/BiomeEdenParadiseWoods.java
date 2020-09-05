@@ -26,6 +26,7 @@ public class BiomeEdenParadiseWoods extends BiomeEdenBase {
 		this.setBiomeHeight(62);
 		this.setBiomeType(EnumBiomeTypeZG.FOREST);
 		this.enableSnow = false;
+		this.biomeDecor.generatePumpkins = true;
 		this.biomeDecor.generateFalls = true;
 		this.biomeDecor.waterLakesPerChunk = 1;
 		this.biomeDecor.lavaLakesPerChunk = 0;
@@ -33,6 +34,7 @@ public class BiomeEdenParadiseWoods extends BiomeEdenBase {
 		this.biomeDecor.edenFlowersPerChunk = 4;
 		this.biomeDecor.edenTreesPerChunk = 0;
 		this.biomeDecor.edenFallTreesPerChunk = 10;
+		this.biomeDecor.edenPumpkinsPerChunk = 2;
 		this.grassFoilageColorMultiplier = 0x8b0000;
 		this.waterColor = 0x00008b;
 		this.topBlock = ZGBlocks.edenFallGrass.getDefaultState();
@@ -43,6 +45,6 @@ public class BiomeEdenParadiseWoods extends BiomeEdenBase {
 	@Override
 	@SideOnly(Side.CLIENT)
 	public int getSkyColorByTemp(float p_76731_1_) {
-		return 0xff8bbb;
+		return 0xff8b00;
 	}
 }

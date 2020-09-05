@@ -18,7 +18,7 @@ import slimeknights.tconstruct.library.materials.HeadMaterialStats;
 import slimeknights.tconstruct.library.materials.Material;
 import slimeknights.tconstruct.library.materials.ProjectileMaterialStats;
 import slimeknights.tconstruct.library.modifiers.IModifier;
-import zollerngalaxy.blocks.fluids.ZGFluids;
+import zollerngalaxy.compatibility.tconstruct.TCSmelteryManager;
 import zollerngalaxy.compatibility.tconstruct.traits.TraitCorrupted;
 import zollerngalaxy.compatibility.tconstruct.traits.TraitEnlightened;
 import zollerngalaxy.compatibility.tconstruct.traits.TraitInfection;
@@ -37,7 +37,7 @@ public class TinkersConstructCompatibility {
 	
 	static {
 		materialRadium.addItem("oreRadium", 1, Material.VALUE_Ore());
-		materialRadium.setFluid(ZGFluids.fluidRadium);
+		// materialRadium.setFluid(ZGFluids.fluidRadium);
 		materialRadium.addCommonItems("Radium");
 		materialRadium.setCastable(true);
 		materialRadium.setCraftable(true);
@@ -58,7 +58,7 @@ public class TinkersConstructCompatibility {
 		materialCorruption.setRepresentativeItem("gemAscendium");
 		materialCorruption.addTrait(traitCorrupted);
 		materialCorruption.addStats(new HeadMaterialStats(90, 8F, 16F, 8));
-		materialCorruption.addStats(new HandleMaterialStats(8F, 80));
+		materialCorruption.addStats(new HandleMaterialStats(10F, 90));
 		materialCorruption.addStats(new ExtraMaterialStats(90));
 		materialCorruption.addStats(new BowMaterialStats(27F, 8F, 11F));
 		materialCorruption.addStats(new ArrowShaftMaterialStats(9F, 26));
@@ -68,6 +68,8 @@ public class TinkersConstructCompatibility {
 	public static void init() {
 		TinkersConstructCompatibility.registerMaterials(materialRadium, "Radium");
 		TinkersConstructCompatibility.registerMaterials(materialCorruption, "Corruption");
+		
+		TCSmelteryManager.init();
 		
 		ZGHelper.Log("Loaded a total of " + totalMaterials + " new Tinker's Construct materials.");
 		ZGHelper.Log("Initialized IMC with Tinker's Construct.");
@@ -89,6 +91,10 @@ public class TinkersConstructCompatibility {
 		} else {
 			TinkerRegistry.addMaterial(material);
 		}
+	}
+	
+	public static void registerModifier(IModifier modifier) {
+		TinkerRegistry.registerModifier(modifier);
 	}
 	
 	private static MaterialIntegration add(MaterialIntegration integration) {

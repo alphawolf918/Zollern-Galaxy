@@ -22,6 +22,6 @@ public class TraitInfection extends AbstractTrait {
 	@Override
 	public void afterHit(ItemStack tool, EntityLivingBase player, EntityLivingBase target, float damageDealt, boolean wasCritical,
 			boolean wasHit) {
-		target.addPotionEffect(new PotionEffect(ZGPotions.infected, Math.round(damageDealt) * 8, 1));
+		target.addPotionEffect(new PotionEffect(ZGPotions.infected, Math.round(damageDealt) * 10, 1));
 	}
 }

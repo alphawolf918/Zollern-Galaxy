@@ -73,6 +73,7 @@ public class OreDictRegistry {
 		registerOre("blockRadium", ZGBlocks.blockRadium);
 		registerOre("oreRadium", ZGBlocks.caligroRadiumOre);
 		registerOre("gemRadium", ZGItems.radium);
+		registerOre("ingotRadium", ZGItems.ingotRadium);
 		
 		// Ascendium
 		registerOre("oreAscendium", ZGBlocks.corruptAscendiumOre);
@@ -111,8 +112,8 @@ public class OreDictRegistry {
 				ZGBlocks.altumGravel, ZGBlocks.caligroGravel);
 		
 		// Grass
-		registerOre("grass", ZGBlocks.edenGoldenGrass, ZGBlocks.edenGrass, ZGBlocks.edenSwampGrass, ZGBlocks.xathGrass,
-				ZGBlocks.oasisGrass, ZGBlocks.perdGrass);
+		registerOre("grass", ZGBlocks.edenGoldenGrass, ZGBlocks.edenGrass, ZGBlocks.edenSwampGrass, ZGBlocks.xathGrass, ZGBlocks.oasisGrass,
+				ZGBlocks.perdGrass);
 		
 		// Logs
 		registerOre("logWood", ZGBlocks.edenWoodLog, ZGBlocks.perdWoodLogs, ZGBlocks.edenParadiseWoodLog);
@@ -153,13 +154,12 @@ public class OreDictRegistry {
 				ZGBlocks.xantheonCoalOre, ZGBlocks.altumCoalOre);
 		
 		// Iron
-		registerOre("oreIron", ZGBlocks.edenIronOre, ZGBlocks.kriffIronOre, ZGBlocks.purgIronOre, ZGBlocks.zolIronOre,
-				ZGBlocks.xathIronOre, ZGBlocks.oasisIronOre, ZGBlocks.xantheonIronOre, ZGBlocks.perdIronOre, ZGBlocks.altumIronOre,
-				ZGBlocks.caligroIronOre);
+		registerOre("oreIron", ZGBlocks.edenIronOre, ZGBlocks.kriffIronOre, ZGBlocks.purgIronOre, ZGBlocks.zolIronOre, ZGBlocks.xathIronOre,
+				ZGBlocks.oasisIronOre, ZGBlocks.xantheonIronOre, ZGBlocks.perdIronOre, ZGBlocks.altumIronOre, ZGBlocks.caligroIronOre);
 		
 		// Gold
-		registerOre("oreGold", ZGBlocks.edenGoldOre, ZGBlocks.kriffGoldOre, ZGBlocks.purgGoldOre, ZGBlocks.zolGoldOre,
-				ZGBlocks.xathGoldOre, ZGBlocks.oasisGoldOre, ZGBlocks.perdGoldOre, ZGBlocks.altumGoldOre, ZGBlocks.caligroGoldOre);
+		registerOre("oreGold", ZGBlocks.edenGoldOre, ZGBlocks.kriffGoldOre, ZGBlocks.purgGoldOre, ZGBlocks.zolGoldOre, ZGBlocks.xathGoldOre,
+				ZGBlocks.oasisGoldOre, ZGBlocks.perdGoldOre, ZGBlocks.altumGoldOre, ZGBlocks.caligroGoldOre);
 		
 		// Nickel
 		registerOre("oreNickel", ZGBlocks.edenNickelOre, ZGBlocks.xantheonNickelOre, ZGBlocks.caligroNickelOre);

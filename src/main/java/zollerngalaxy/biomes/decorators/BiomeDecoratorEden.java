@@ -28,6 +28,7 @@ import zollerngalaxy.worldgen.WorldGenLakesZG;
 import zollerngalaxy.worldgen.WorldGenMinableZG;
 import zollerngalaxy.worldgen.WorldGenTallGrassZG;
 import zollerngalaxy.worldgen.eden.WorldGenEdenFlowers;
+import zollerngalaxy.worldgen.eden.WorldGenEdenPumpkins;
 import zollerngalaxy.worldgen.eden.WorldGenEdenTower;
 import zollerngalaxy.worldgen.eden.WorldGenEdenTrees;
 import zollerngalaxy.worldgen.eden.WorldGenGiantBone;
@@ -63,10 +64,17 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 	
 	public int edenTallGrassPerChunk = 4;
 	public int edenFlowersPerChunk = 2;
+	public int edenPumpkinsPerChunk = 0;
 	public int edenTreesPerChunk = 1;
-	public int edenFallTreesPerChunk = 3;
+	public int edenFallTreesPerChunk = 0;
 	public int lavaLakesPerChunk = 1;
 	public int waterLakesPerChunk = 4;
+	
+	private WorldGenerator pumpkinGen = new WorldGenEdenPumpkins();
+	private WorldGenerator treeGenEden = new WorldGenEdenTrees(false, ZGHelper.rngInt(5, 10), ZGBlocks.edenWoodLog.getDefaultState(),
+			ZGBlocks.edenWoodLeaves.getDefaultState(), this.generateVines);
+	private WorldGenerator treeGenFall = new WorldGenEdenTrees(false, ZGHelper.rngInt(5, 7), ZGBlocks.edenParadiseWoodLog.getDefaultState(),
+			ZGBlocks.edenParadiseWoodLeaves.getDefaultState(), this.generateVines);
 	
 	public boolean generateVines = false;
 	public boolean generateLakes = true;
@@ -75,6 +83,8 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 	public boolean generateTowers = true;
 	public boolean generateGiantBones = false;
 	public boolean generateMansions = false;
+	public boolean generateTrees = true;
+	public boolean generatePumpkins = false;
 	
 	public BiomeDecoratorEden() {
 		this.dirtGen = new WorldGenMinableZG(ZGBlocks.edenSoil, ZGBlocks.edenSurfaceRock, EnumOreGenZG.DIRT);
@@ -188,9 +198,7 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 			}
 		}
 		
-		if (this.edenTreesPerChunk > 0) {
-			WorldGenEdenTrees treeGen = new WorldGenEdenTrees(false, ZGHelper.rngInt(5, 10), ZGBlocks.edenWoodLog.getDefaultState(),
-					ZGBlocks.edenWoodLeaves.getDefaultState(), this.generateVines);
+		if (this.generateTrees && this.edenTreesPerChunk > 0) {
 			for (int i = 0; i < this.edenTreesPerChunk; ++i) {
 				y = rand.nextInt(rand.nextInt(genY) + 8);
 				if (y < 64) {
@@ -198,14 +206,12 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 				}
 				
 				if (rand.nextInt(100) <= 50) {
-					treeGen.generate(world, rand, this.chunkPos.add(x, y, z));
+					treeGenEden.generate(world, rand, this.chunkPos.add(x, y, z));
 				}
 			}
 		}
 		
-		if (this.edenFallTreesPerChunk > 0) {
-			WorldGenEdenTrees treeGen = new WorldGenEdenTrees(false, ZGHelper.rngInt(5, 7), ZGBlocks.edenParadiseWoodLog.getDefaultState(),
-					ZGBlocks.edenParadiseWoodLeaves.getDefaultState(), this.generateVines);
+		if (this.generateTrees && this.edenFallTreesPerChunk > 0) {
 			for (int i = 0; i < this.edenFallTreesPerChunk; ++i) {
 				y = rand.nextInt(rand.nextInt(genY) + 8);
 				if (y < 64) {
@@ -213,7 +219,20 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 				}
 				
 				if (rand.nextInt(100) <= 85) {
-					treeGen.generate(world, rand, this.chunkPos.add(x, y, z));
+					treeGenFall.generate(world, rand, this.chunkPos.add(x, y, z));
+				}
+			}
+		}
+		
+		if (this.generatePumpkins && this.edenPumpkinsPerChunk > 0) {
+			for (int i = 0; i < this.edenPumpkinsPerChunk; i++) {
+				y = rand.nextInt(rand.nextInt(genY) + 8);
+				if (y < 64) {
+					y = ZGHelper.rngInt(64, 82);
+				}
+				
+				if (rand.nextInt(100) <= 25) {
+					pumpkinGen.generate(world, rand, this.chunkPos.add(x, y, z));
 				}
 			}
 		}
@@ -247,7 +266,6 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 				}
 				
 				IBlockState flowerState = edenFlower.getDefaultState();
-				
 				ZGDecorateHelper.generatePlants(new WorldGenEdenFlowers(flowerState), world, rand, this.chunkPos);
 			}
 		}
