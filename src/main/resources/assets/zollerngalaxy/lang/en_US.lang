@@ -82,6 +82,11 @@ tile.paradisewoodplanks.name=Paradise Tree Planks
 tile.paradisewoodleaves.name=Paradise Tree Leaves
 tile.paradisewoodsapling.name=Paradise Tree Sapling
 
+tile.goldenwoodlog.name=Goldenwood Log
+tile.goldenwoodplanks.name=Goldenwood Planks
+tile.goldenwoodleaves.name=Goldenwood Leaves
+tile.goldenwoodsapling.name=Goldenwood Sapling
+
 tile.fruitofedenblock.name=Fruit of Eden
 tile.edengravel.name=Eden's Gravel
 tile.edenwinterrock.name=Eden's Snowrock

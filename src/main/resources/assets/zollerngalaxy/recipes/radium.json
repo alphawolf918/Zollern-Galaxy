@@ -1,16 +1,23 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "Z Z",
-    "Z Z",
-    "   "
+    "GSG",
+    "GAG",
+    "GSG"
   ],
   "key": {
-    "Z": {
-      "item": "zollerngalaxy:radiumboots"
+    "A": {
+      "item": "zollerngalaxy:azuriteblock"
+    },
+    "S": {
+      "item": "zollerngalaxy:superchargedcoalblock"
+    },
+    "G": {
+      "item": "zollerngalaxy:goldenconstructblock"
     }
   },
   "result": {
-    "item": "zollerngalaxy:radium"
+    "item": "zollerngalaxy:radium",
+    "count": 2
   }
 }

@@ -24,7 +24,9 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.IShearable;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import zollerngalaxy.core.ZollernGalaxyCore;
 import zollerngalaxy.core.enums.EnumBlockType;
+import zollerngalaxy.lib.helpers.json.JSONFactory;
 
 public class ZGBlockLeaves extends ZGBlockBase implements IShearable {
 	
@@ -42,6 +44,10 @@ public class ZGBlockLeaves extends ZGBlockBase implements IShearable {
 		this.setTickRandomly(true);
 		this.setLightOpacity(1);
 		this.droppedSapling = sapling;
+		this.setShouldJSONIgnore(true);
+		if (ZollernGalaxyCore.instance().isInDevMode()) {
+			JSONFactory.registerLeaves(blockName);
+		}
 	}
 	
 	public ZGBlockLeaves(String blockName, Block sapling) {
@@ -101,7 +107,8 @@ public class ZGBlockLeaves extends ZGBlockBase implements IShearable {
 								IBlockState iblockstate = worldIn.getBlockState(blockpos$mutableblockpos.setPos(k + i2, l + j2, i1 + k2));
 								Block block = iblockstate.getBlock();
 								
-								if (!block.canSustainLeaves(iblockstate, worldIn, blockpos$mutableblockpos.setPos(k + i2, l + j2, i1 + k2))) {
+								if (!block.canSustainLeaves(iblockstate, worldIn,
+										blockpos$mutableblockpos.setPos(k + i2, l + j2, i1 + k2))) {
 									if (block.isLeaves(iblockstate, worldIn, blockpos$mutableblockpos.setPos(k + i2, l + j2, i1 + k2))) {
 										this.surroundings[(i2 + 16) * 1024 + (j2 + 16) * 32 + k2 + 16] = -2;
 									} else {
@@ -201,7 +208,7 @@ public class ZGBlockLeaves extends ZGBlockBase implements IShearable {
 	
 	@Override
 	public boolean isOpaqueCube(IBlockState state) {
-		return !this.leavesFancy;
+		return false;
 	}
 	
 	@SideOnly(Side.CLIENT)
@@ -212,7 +219,7 @@ public class ZGBlockLeaves extends ZGBlockBase implements IShearable {
 	@Override
 	@SideOnly(Side.CLIENT)
 	public BlockRenderLayer getBlockLayer() {
-		return this.leavesFancy ? BlockRenderLayer.CUTOUT_MIPPED : BlockRenderLayer.SOLID;
+		return BlockRenderLayer.CUTOUT_MIPPED;
 	}
 	
 	@Override
@@ -233,7 +240,8 @@ public class ZGBlockLeaves extends ZGBlockBase implements IShearable {
 	}
 	
 	@Override
-	public void getDrops(net.minecraft.util.NonNullList<ItemStack> drops, IBlockAccess world, BlockPos pos, IBlockState state, int fortune) {
+	public void getDrops(net.minecraft.util.NonNullList<ItemStack> drops, IBlockAccess world, BlockPos pos, IBlockState state,
+			int fortune) {
 		Random rand = world instanceof World ? ((World) world).rand : new Random();
 		int chance = this.getSaplingDropChance(state);
 		
@@ -265,8 +273,8 @@ public class ZGBlockLeaves extends ZGBlockBase implements IShearable {
 	@Override
 	@SideOnly(Side.CLIENT)
 	public boolean shouldSideBeRendered(IBlockState blockState, IBlockAccess blockAccess, BlockPos pos, EnumFacing side) {
-		return !this.leavesFancy && blockAccess.getBlockState(pos.offset(side)).getBlock() == this ? false : super.shouldSideBeRendered(
-				blockState, blockAccess, pos, side);
+		return !this.leavesFancy && blockAccess.getBlockState(pos.offset(side)).getBlock() == this ? false
+				: super.shouldSideBeRendered(blockState, blockAccess, pos, side);
 	}
 	
 	@Override
@@ -278,5 +286,10 @@ public class ZGBlockLeaves extends ZGBlockBase implements IShearable {
 	public List<ItemStack> onSheared(ItemStack item, IBlockAccess world, BlockPos pos, int fortune) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+	
+	@Override
+	public boolean shouldJSONIgnore() {
+		return true;
 	}
 }

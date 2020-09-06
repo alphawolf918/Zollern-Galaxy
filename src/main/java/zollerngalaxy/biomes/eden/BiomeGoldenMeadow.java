@@ -27,6 +27,7 @@ public class BiomeGoldenMeadow extends BiomeEdenBase {
 		this.setBiomeType(EnumBiomeTypeZG.PLAINS);
 		this.enableSnow = false;
 		this.biomeDecor.generateFalls = true;
+		this.biomeDecor.edenGoldTreesPerChunk = 5;
 		this.biomeDecor.waterLakesPerChunk = 1;
 		this.biomeDecor.lavaLakesPerChunk = 0;
 		this.biomeDecor.edenTallGrassPerChunk = 5;

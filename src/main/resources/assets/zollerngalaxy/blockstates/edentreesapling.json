@@ -1,11 +1,10 @@
 {
-    "forge_marker": 1,
-     "defaults": {
-        "model": "zollerngalaxy:edentreesapling",
-        "uvlock": true
+  "variants": {
+    "stage\u003d0": {
+      "model": "zollerngalaxy:edentreesapling"
     },
-    "variants": {
-		"stage=0": { "model": "zollerngalaxy:edentreesapling" },
-        "stage=1": { "model": "zollerngalaxy:edentreesapling" }
+    "stage\u003d1": {
+      "model": "zollerngalaxy:edentreesapling"
     }
+  }
 }

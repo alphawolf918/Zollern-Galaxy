@@ -2,8 +2,8 @@
   "parent": "block/cube",
   "textures": {
     "all": "zollerngalaxy:blocks/palmwoodlog_top",
-	"top": "zollerngalaxy:blocks/palmwoodlog_top",
-	"right": "zollerngalaxy:blocks/palmwoodlog",
-	"left": "zollerngalaxy:blocks/palmwoodlog"
+    "top": "zollerngalaxy:blocks/palmwoodlog_top",
+    "right": "zollerngalaxy:blocks/palmwoodlog",
+    "left": "zollerngalaxy:blocks/palmwoodlog"
   }
 }

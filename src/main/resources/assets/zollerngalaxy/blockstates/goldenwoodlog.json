@@ -2,9 +2,9 @@
   "forge_marker": 1,
   "defaults": {
     "textures": {
-      "bottom": "zollerngalaxy:blocks/paradisewoodlog_top",
-      "top": "zollerngalaxy:blocks/paradisewoodlog_top",
-      "side": "zollerngalaxy:blocks/paradisewoodlog"
+      "bottom": "zollerngalaxy:blocks/goldenwoodlog_top",
+      "top": "zollerngalaxy:blocks/goldenwoodlog_top",
+      "side": "zollerngalaxy:blocks/goldenwoodlog"
     },
     "model": "cube_bottom_top"
   },

@@ -1,0 +1,9 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "all": "zollerngalaxy:blocks/goldenwoodlog_top",
+    "top": "zollerngalaxy:blocks/goldenwoodlog_top",
+    "right": "zollerngalaxy:blocks/goldenwoodlog",
+    "left": "zollerngalaxy:blocks/goldenwoodlog"
+  }
+}

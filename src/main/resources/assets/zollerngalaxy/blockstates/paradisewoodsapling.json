@@ -1,11 +1,10 @@
 {
-    "forge_marker": 1,
-     "defaults": {
-        "model": "zollerngalaxy:paradisewoodsapling",
-        "uvlock": true
+  "variants": {
+    "stage\u003d0": {
+      "model": "zollerngalaxy:paradisewoodsapling"
     },
-    "variants": {
-		"stage=0": { "model": "zollerngalaxy:paradisewoodsapling" },
-        "stage=1": { "model": "zollerngalaxy:paradisewoodsapling" }
+    "stage\u003d1": {
+      "model": "zollerngalaxy:paradisewoodsapling"
     }
+  }
 }

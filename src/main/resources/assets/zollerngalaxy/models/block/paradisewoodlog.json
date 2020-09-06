@@ -2,8 +2,8 @@
   "parent": "block/cube",
   "textures": {
     "all": "zollerngalaxy:blocks/paradisewoodlog_top",
-	"top": "zollerngalaxy:blocks/paradisewoodlog_top",
-	"right": "zollerngalaxy:blocks/paradisewoodlog",
-	"left": "zollerngalaxy:blocks/paradisewoodlog"
+    "top": "zollerngalaxy:blocks/paradisewoodlog_top",
+    "right": "zollerngalaxy:blocks/paradisewoodlog",
+    "left": "zollerngalaxy:blocks/paradisewoodlog"
   }
 }

@@ -67,24 +67,6 @@ public class ZGRecipeHelper {
 		}
 	}
 	
-	public static void addArmorSet(Item itemInput, Item itemOutput, String armorType) {
-		armorType = armorType.toLowerCase();
-		if (armorType.equals("helmet")) {
-			// Helmet
-			ZGRecipeHelper.addRecipe(new ItemStack(itemOutput), new Object[] { "ZZZ", "Z Z", "   ", 'Z', new ItemStack(itemInput, 1) });
-			// Chestplate
-		} else if (armorType.equals("chest")) {
-			ZGRecipeHelper.addRecipe(new ItemStack(itemOutput), new Object[] { "Z Z", "ZZZ", "ZZZ", 'Z', new ItemStack(itemInput, 1) });
-			// Leggings
-		} else if (armorType.equals("legs")) {
-			ZGRecipeHelper.addRecipe(new ItemStack(itemOutput), new Object[] { "ZZZ", "Z Z", "Z Z", 'Z', new ItemStack(itemInput, 1) });
-			// Boots
-		} else if (armorType.equals("boots")) {
-			ZGRecipeHelper.addRecipe(new ItemStack(itemOutput), new Object[] { "   ", "Z Z", "Z Z", 'Z', new ItemStack(itemInput, 1) });
-			ZGRecipeHelper.addRecipe(new ItemStack(itemOutput), new Object[] { "Z Z", "Z Z", "   ", 'Z', new ItemStack(itemInput, 1) });
-		}
-	}
-	
 	public static void addSpaceStationRecipe(int spaceStationID, int planetID, HashMap<Object, Integer> obj) {
 		GalacticraftRegistry.registerSpaceStation(new SpaceStationType(spaceStationID, planetID, new SpaceStationRecipe(obj)));
 	}

@@ -28,7 +28,6 @@ public class CraftingRecipes {
 	
 	public static void init() {
 		CraftingRecipes.addRecipes();
-		ArmorRecipes.init();
 		ZGHelper.Log("Loaded a total of " + totalCraftRecipes + " new crafting recipes.");
 	}
 	
@@ -111,6 +110,31 @@ public class CraftingRecipes {
 		CraftingRecipes.addPlanks(ZGBlocks.edenWoodLog, ZGBlocks.edenWoodPlanks);
 		CraftingRecipes.addPlanks(ZGBlocks.perdWoodLogs, ZGBlocks.perdWoodPlanks);
 		CraftingRecipes.addPlanks(ZGBlocks.edenParadiseWoodLog, ZGBlocks.edenParadiseWoodPlanks);
+		CraftingRecipes.addPlanks(ZGBlocks.edenGoldenWoodLog, ZGBlocks.edenGoldenWoodPlanks);
+		
+		// Helmet
+		CraftingRecipes.addArmorSet(ZGItems.helmetAmaranth, ZGItems.ingotAmaranth, "helmet");
+		CraftingRecipes.addArmorSet(ZGItems.helmetZollernium, ZGItems.ingotZollernium, "helmet");
+		CraftingRecipes.addArmorSet(ZGItems.helmetAzurite, ZGItems.azurite, "helmet");
+		CraftingRecipes.addArmorSet(ZGItems.helmetRadium, ZGItems.radium, "helmet");
+		
+		// Chest
+		CraftingRecipes.addArmorSet(ZGItems.chestAmaranth, ZGItems.ingotAmaranth, "chest");
+		CraftingRecipes.addArmorSet(ZGItems.chestZollernium, ZGItems.ingotZollernium, "chest");
+		CraftingRecipes.addArmorSet(ZGItems.chestAzurite, ZGItems.azurite, "chest");
+		CraftingRecipes.addArmorSet(ZGItems.chestRadium, ZGItems.radium, "chest");
+		
+		// Legs
+		CraftingRecipes.addArmorSet(ZGItems.legsAmaranth, ZGItems.ingotAmaranth, "legs");
+		CraftingRecipes.addArmorSet(ZGItems.legsZollernium, ZGItems.ingotZollernium, "legs");
+		CraftingRecipes.addArmorSet(ZGItems.legsAzurite, ZGItems.azurite, "legs");
+		CraftingRecipes.addArmorSet(ZGItems.legsRadium, ZGItems.radium, "legs");
+		
+		// Feets
+		CraftingRecipes.addArmorSet(ZGItems.bootsAmaranth, ZGItems.ingotAmaranth, "boots");
+		CraftingRecipes.addArmorSet(ZGItems.bootsZollernium, ZGItems.ingotZollernium, "boots");
+		CraftingRecipes.addArmorSet(ZGItems.bootsAzurite, ZGItems.azurite, "boots");
+		CraftingRecipes.addArmorSet(ZGItems.bootsRadium, ZGItems.radium, "boots");
 		
 		// Blood Obsidian
 		ZGRecipeHelper.addRecipe(new ItemStack(ZGBlocks.blockRedObsidian, 2),
@@ -421,6 +445,28 @@ public class CraftingRecipes {
 	private static void addToolSet(ItemStack itemOutput, Item itemIngot, String toolType) {
 		ZGRecipeHelper.addSimpleToolSet(itemOutput, itemIngot, toolType);
 		totalCraftRecipes++;
+	}
+	
+	public static void addArmorSet(Item itemInput, Item itemOutput, String armorType) {
+		armorType = armorType.toLowerCase();
+		if (armorType.equals("helmet")) {
+			// Helmet
+			ZGRecipeHelper.addRecipe(new ItemStack(itemOutput, 1), new Object[] { "ZZZ", "Z Z", "   ", 'Z', itemInput });
+			totalCraftRecipes++;
+			// Chestplate
+		} else if (armorType.equals("chest")) {
+			ZGRecipeHelper.addRecipe(new ItemStack(itemOutput, 1), new Object[] { "Z Z", "ZZZ", "ZZZ", 'Z', itemInput });
+			totalCraftRecipes++;
+			// Leggings
+		} else if (armorType.equals("legs")) {
+			ZGRecipeHelper.addRecipe(new ItemStack(itemOutput, 1), new Object[] { "ZZZ", "Z Z", "Z Z", 'Z', itemInput });
+			totalCraftRecipes++;
+			// Boots
+		} else if (armorType.equals("boots")) {
+			ZGRecipeHelper.addRecipe(new ItemStack(itemOutput, 1), new Object[] { "   ", "Z Z", "Z Z", 'Z', itemInput });
+			ZGRecipeHelper.addRecipe(new ItemStack(itemOutput, 1), new Object[] { "Z Z", "Z Z", "   ", 'Z', itemInput });
+			totalCraftRecipes += 2;
+		}
 	}
 	
 	private static void addPickaxe(ItemStack itemOutput, Item itemIngot) {

@@ -10,8 +10,10 @@ package zollerngalaxy.blocks;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import zollerngalaxy.core.ZollernGalaxyCore;
 import zollerngalaxy.core.enums.EnumHarvestLevelZG;
 import zollerngalaxy.core.enums.EnumHarvestToolZG;
+import zollerngalaxy.lib.helpers.json.JSONFactory;
 
 public class ZGBlockLog extends ZGBlockPlanks {
 	
@@ -19,6 +21,9 @@ public class ZGBlockLog extends ZGBlockPlanks {
 		super(blockName, hardResist);
 		this.setHarvestLevel("axe", EnumHarvestLevelZG.IRON.getHarvestLevel());
 		this.setShouldJSONIgnore(true);
+		if (ZollernGalaxyCore.instance().isInDevMode()) {
+			JSONFactory.registerLogBlock(blockName);
+		}
 	}
 	
 	public ZGBlockLog(String singleName) {

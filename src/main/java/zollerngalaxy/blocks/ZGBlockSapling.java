@@ -20,7 +20,9 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.event.terraingen.TerrainGen;
+import zollerngalaxy.core.ZollernGalaxyCore;
 import zollerngalaxy.core.enums.EnumBlockType;
+import zollerngalaxy.lib.helpers.json.JSONFactory;
 
 public class ZGBlockSapling extends ZGBlockFlower implements IGrowable {
 	
@@ -36,6 +38,9 @@ public class ZGBlockSapling extends ZGBlockFlower implements IGrowable {
 		this.setMaterial(Material.VINE);
 		this.setBlockType(EnumBlockType.SAPLING);
 		this.treeGen = genTree;
+		if (ZollernGalaxyCore.instance().isInDevMode()) {
+			JSONFactory.registerSapling(blockName);
+		}
 	}
 	
 	@Override

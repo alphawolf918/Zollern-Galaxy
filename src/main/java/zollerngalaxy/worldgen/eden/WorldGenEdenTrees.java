@@ -183,11 +183,8 @@ public class WorldGenEdenTrees extends WorldGenAbstractTree {
 	}
 	
 	private void placeFruit(World worldIn, int p_181652_2_, BlockPos pos, EnumFacing side) {
-		this.setBlockAndNotifyAdequately(
-				worldIn,
-				pos,
-				ZGBlocks.edenFruit.getDefaultState().withProperty(EdenFruit.AGE, Integer.valueOf(p_181652_2_))
-						.withProperty(EdenFruit.FACING, side));
+		this.setBlockAndNotifyAdequately(worldIn, pos, ZGBlocks.edenFruit.getDefaultState()
+				.withProperty(EdenFruit.AGE, Integer.valueOf(p_181652_2_)).withProperty(EdenFruit.FACING, side));
 	}
 	
 	private void addVine(World worldIn, BlockPos pos, PropertyBool prop) {

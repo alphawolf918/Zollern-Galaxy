@@ -1,6 +1,6 @@
 {
-    "parent": "block/cross",
-    "textures": {
-        "cross": "zollerngalaxy:blocks/paradisewoodsapling"
-    }
+  "parent": "block/cross",
+  "textures": {
+    "cross": "zollerngalaxy:blocks/paradisewoodsapling"
+  }
 }
