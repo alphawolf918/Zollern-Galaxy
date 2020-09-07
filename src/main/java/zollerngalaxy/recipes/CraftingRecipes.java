@@ -89,6 +89,7 @@ public class CraftingRecipes {
 		CraftingRecipes.addIngotMetal(ZGItems.netheridium, ZGBlocks.blockNetheridium);
 		CraftingRecipes.addIngotMetal(ZGItems.shadowBone, ZGBlocks.blockShadowBone);
 		CraftingRecipes.addIngotMetal(Items.BLAZE_POWDER, ZGBlocks.kriffBlazeRock);
+		CraftingRecipes.addIngotMetal(Blocks.RED_MUSHROOM, ZGBlocks.blockRedshroom);
 		
 		// Compression
 		CraftingRecipes.addIngotMetal(ZGItems.compressedCobalt, ZGBlocks.blockCompressedCobalt);
@@ -427,6 +428,12 @@ public class CraftingRecipes {
 		totalCraftRecipes += 2;
 	}
 	
+	private static void addIngotMetal(Block ingotIn, Block blockOut) {
+		ZGRecipeHelper.addRecipe(new ItemStack(blockOut, 1), new Object[] { "III", "III", "III", 'I', ingotIn });
+		ZGRecipeHelper.addShapelessRecipe(new ItemStack(ingotIn, 9), new ItemStack(blockOut));
+		totalCraftRecipes += 2;
+	}
+	
 	private static void addBriteStone(Item dustIn, Block blockOut) {
 		ZGRecipeHelper.addRecipe(new ItemStack(blockOut, 1), new Object[] { "DD", "DD", 'D', dustIn });
 		totalCraftRecipes++;
@@ -448,25 +455,7 @@ public class CraftingRecipes {
 	}
 	
 	public static void addArmorSet(Item itemInput, Item itemOutput, String armorType) {
-		armorType = armorType.toLowerCase();
-		if (armorType.equals("helmet")) {
-			// Helmet
-			ZGRecipeHelper.addRecipe(new ItemStack(itemOutput, 1), new Object[] { "ZZZ", "Z Z", "   ", 'Z', itemInput });
-			totalCraftRecipes++;
-			// Chestplate
-		} else if (armorType.equals("chest")) {
-			ZGRecipeHelper.addRecipe(new ItemStack(itemOutput, 1), new Object[] { "Z Z", "ZZZ", "ZZZ", 'Z', itemInput });
-			totalCraftRecipes++;
-			// Leggings
-		} else if (armorType.equals("legs")) {
-			ZGRecipeHelper.addRecipe(new ItemStack(itemOutput, 1), new Object[] { "ZZZ", "Z Z", "Z Z", 'Z', itemInput });
-			totalCraftRecipes++;
-			// Boots
-		} else if (armorType.equals("boots")) {
-			ZGRecipeHelper.addRecipe(new ItemStack(itemOutput, 1), new Object[] { "   ", "Z Z", "Z Z", 'Z', itemInput });
-			ZGRecipeHelper.addRecipe(new ItemStack(itemOutput, 1), new Object[] { "Z Z", "Z Z", "   ", 'Z', itemInput });
-			totalCraftRecipes += 2;
-		}
+		ZGRecipeHelper.addArmorSet(itemOutput, itemInput, armorType);
 	}
 	
 	private static void addPickaxe(ItemStack itemOutput, Item itemIngot) {

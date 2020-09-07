@@ -25,6 +25,7 @@ import zollerngalaxy.mobs.entities.EntityMegaCreeper;
 import zollerngalaxy.mobs.entities.EntityMoolus;
 import zollerngalaxy.mobs.entities.EntityMummy;
 import zollerngalaxy.mobs.entities.EntityOinkus;
+import zollerngalaxy.mobs.entities.EntityPigShroom;
 import zollerngalaxy.mobs.entities.EntityScorpion;
 import zollerngalaxy.mobs.entities.EntityShade;
 import zollerngalaxy.mobs.entities.EntityShadowSkeleton;
@@ -48,6 +49,7 @@ import zollerngalaxy.mobs.renders.RenderMegaCreeper;
 import zollerngalaxy.mobs.renders.RenderMoolus;
 import zollerngalaxy.mobs.renders.RenderMummy;
 import zollerngalaxy.mobs.renders.RenderOinkus;
+import zollerngalaxy.mobs.renders.RenderPigShroom;
 import zollerngalaxy.mobs.renders.RenderScorpion;
 import zollerngalaxy.mobs.renders.RenderShade;
 import zollerngalaxy.mobs.renders.RenderShadowSkeleton;
@@ -83,6 +85,7 @@ public final class MobRenders {
 		RenderMob(EntityShade.class, RenderShade::new);
 		RenderMob(EntityShadowAlien.class, RenderShadowAlien::new);
 		RenderMob(EntityFaceless.class, RenderFaceless::new);
+		RenderMob(EntityPigShroom.class, RenderPigShroom::new);
 	}
 	
 	/**

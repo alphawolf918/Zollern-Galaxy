@@ -1,16 +1,12 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "Z Z",
-    "Z Z",
-    "   "
-  ],
-  "key": {
-    "Z": {
-      "item": "zollerngalaxy:amaranthboots"
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "zollerngalaxy:amaranthblock"
     }
-  },
+  ],
   "result": {
-    "item": "zollerngalaxy:amaranthingot"
+    "item": "zollerngalaxy:amaranthingot",
+    "count": 9
   }
 }

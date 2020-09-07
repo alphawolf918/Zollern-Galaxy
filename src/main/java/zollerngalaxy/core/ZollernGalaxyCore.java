@@ -52,7 +52,7 @@ public class ZollernGalaxyCore {
 	private static ZollernGalaxyCore INSTANCE;
 	
 	// CHANGE THESE TO FALSE BEFORE DEPLOYMENT!!
-	private static final boolean DEV_MODE = true;
+	private static final boolean DEV_MODE = false;
 	private static final boolean TEST_MODE = true;
 	
 	public static SimpleNetworkWrapper snw;

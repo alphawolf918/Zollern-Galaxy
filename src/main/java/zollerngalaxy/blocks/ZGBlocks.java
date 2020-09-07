@@ -22,6 +22,7 @@ import zollerngalaxy.blocks.caligro.corrupted.ZGBlockOreCorrupted;
 import zollerngalaxy.blocks.caligro.corrupted.ZGCorruptBlock;
 import zollerngalaxy.blocks.caligro.corrupted.ZGOreGemCorrupted;
 import zollerngalaxy.blocks.caligro.corrupted.ZGPlanetStoneCorrupted;
+import zollerngalaxy.blocks.eden.BlockRedshroom;
 import zollerngalaxy.blocks.eden.EdenFlower;
 import zollerngalaxy.blocks.eden.EdenFruit;
 import zollerngalaxy.blocks.eden.ZGBlockGrassEden;
@@ -189,6 +190,8 @@ public class ZGBlocks {
 	public static final Block edenParadiseWoodPlanks = new ZGBlockPlanks("paradisewoodplanks");
 	public static final Block edenGoldenWoodPlanks = new ZGBlockPlanks("goldenwoodplanks");
 	public static final Block blockCrater = new ZGBlockBase("crater_rock", 2.4F);
+	public static final Block blockRedshroom = new BlockRedshroom();
+	public static final Block blockRedshroomStem = new ZGBlockBase("redshroomstem", 0.6F).setBlockType(EnumBlockType.MUSHROOM);
 	public static final Block edenAluminumOre = new ZGBlockOre("edenaluminumore", 1.5F)
 			.setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.EVENIUM.getHarvestLevel());
 	public static final Block edenSteelOre = new ZGBlockOre("edensteelore", 3.0F)
@@ -598,21 +601,21 @@ public class ZGBlocks {
 				xantheonStone, xantheonCoalOre, xantheonIronOre, xantheonCopperOre, xantheonNickelOre, xantheonPlutoniumOre,
 				xantheonFueltoniumOre, xantheonAmaranthOre, xantheonConstructBlock, atheonRock, atheonLuxrock, atheonStone, atheonCobble,
 				atheonRockBricks, atheonAmaranthOre, atheonRedstoneOre, atheonTinOre, atheonDiamondOre, atheonZollerniumOre, atheonZincOre,
-				atheonConstructBlock, blockViri, blockCobalt, blockEve, blockPromethean, blockCrater, blockSuperChargedCoal, blockPlutonium,
-				blockFueltonium, blockChargium, blockShinium, blockAmaranth, blockAzurite, blockZollernium, blockZinc, blockPerdDiamond,
-				blockPerdEtrium, blockZucrite, blockRhodium, blockAmber, blockTopaz, blockOpal, blockAquamarine, blockGarnet, blockRuby,
-				blockAmberStatic, blockAquamarineIcy, blockGarnetFire, blockWitherite, blockRadium, blockNetheridium,
-				blockNetherizedObsidian, blockRedObsidian, blockShadowBone, blockShinestone, blockShinestoneCrystal,
-				blockShinestonePolished, blockShinestoneCrystalBricks, blockCompressedHeartium, blockCompressedViri, blockCompressedEve,
-				blockCompressedCobalt, blockCompressedPromethean, blockCompressedSuperChargedCoal, blockCompressedZucrite,
-				blockCompressedRhodium, candyCubeWhite, candyCubeBlack, candyCubeGray, candyCubeOrange, candyCubeBrown, candyCubeRed,
-				candyCubeBlue, candyCubeYellow, candyCubePurple, candyCubeCyan, candyCubePink, candyCubeGreen, blockChocolate,
-				blockChocolateBricks, blockCookie, blockBrownie, blockIceCreamSandwich, blockSugarCube, blockSpaceStation, blockLore,
-				perdSand, perdRock, perdStone, perdCobble, perdRockBricks, perdGravel, perdCreepDirt, perdSoil, perdDirt, perdTallGrass,
-				perdGrass, perdCreepStone, perdGlowstone, perdCaveStone, perdCaveStoneBricks, perdCactus, perdReeds, perdDeadBush,
-				perdDiamondOre, perdEtriumOre, perdIronOre, perdGoldOre, perdZollerniumOre, perdFueltoniumOre, perdTreeSapling,
-				perdWoodLogs, perdWoodLeaves, perdWoodPlanks, altumRock, altumSand, altumDirt, altumCobble, altumStone, altumGravel,
-				altumSeaweed, altumCoalOre, altumIronOre, altumGoldOre, altumRedstoneOre, altumDiamondOre, altumZollerniumOre,
+				atheonConstructBlock, blockViri, blockCobalt, blockEve, blockPromethean, blockCrater, blockRedshroom, blockRedshroomStem,
+				blockSuperChargedCoal, blockPlutonium, blockFueltonium, blockChargium, blockShinium, blockAmaranth, blockAzurite,
+				blockZollernium, blockZinc, blockPerdDiamond, blockPerdEtrium, blockZucrite, blockRhodium, blockAmber, blockTopaz,
+				blockOpal, blockAquamarine, blockGarnet, blockRuby, blockAmberStatic, blockAquamarineIcy, blockGarnetFire, blockWitherite,
+				blockRadium, blockNetheridium, blockNetherizedObsidian, blockRedObsidian, blockShadowBone, blockShinestone,
+				blockShinestoneCrystal, blockShinestonePolished, blockShinestoneCrystalBricks, blockCompressedHeartium, blockCompressedViri,
+				blockCompressedEve, blockCompressedCobalt, blockCompressedPromethean, blockCompressedSuperChargedCoal,
+				blockCompressedZucrite, blockCompressedRhodium, candyCubeWhite, candyCubeBlack, candyCubeGray, candyCubeOrange,
+				candyCubeBrown, candyCubeRed, candyCubeBlue, candyCubeYellow, candyCubePurple, candyCubeCyan, candyCubePink, candyCubeGreen,
+				blockChocolate, blockChocolateBricks, blockCookie, blockBrownie, blockIceCreamSandwich, blockSugarCube, blockSpaceStation,
+				blockLore, perdSand, perdRock, perdStone, perdCobble, perdRockBricks, perdGravel, perdCreepDirt, perdSoil, perdDirt,
+				perdTallGrass, perdGrass, perdCreepStone, perdGlowstone, perdCaveStone, perdCaveStoneBricks, perdCactus, perdReeds,
+				perdDeadBush, perdDiamondOre, perdEtriumOre, perdIronOre, perdGoldOre, perdZollerniumOre, perdFueltoniumOre,
+				perdTreeSapling, perdWoodLogs, perdWoodLeaves, perdWoodPlanks, altumRock, altumSand, altumDirt, altumCobble, altumStone,
+				altumGravel, altumSeaweed, altumCoalOre, altumIronOre, altumGoldOre, altumRedstoneOre, altumDiamondOre, altumZollerniumOre,
 				altumEveniumOre, altumRhodiumOre, altumAmaranthOre, caligroSurfaceRock, caligroRock, caligroCobblestone,
 				caligroCobblestoneMossy, caligroStone, caligroStoneBricks, caligroGravel, caligroDirt, witherrack, caligroCreepstone,
 				caligroCreepdirt, caligroWitheriteOre, caligroShiniumOre, caligroSilverOre, caligroNickelOre, caligroLeadOre, caligroTinOre,

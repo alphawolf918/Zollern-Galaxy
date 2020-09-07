@@ -52,6 +52,7 @@ import zollerngalaxy.biomes.eden.BiomeEdenwoodForest;
 import zollerngalaxy.biomes.eden.BiomeFlowerGarden;
 import zollerngalaxy.biomes.eden.BiomeGoldenMeadow;
 import zollerngalaxy.biomes.eden.BiomeGreenLands;
+import zollerngalaxy.biomes.eden.BiomeShroomHills;
 import zollerngalaxy.biomes.eden.BiomeSnowyPlains;
 import zollerngalaxy.biomes.eden.BiomeStoneMountains;
 import zollerngalaxy.biomes.eden.BiomeSwamplands;
@@ -103,6 +104,7 @@ public class ZGBiomes {
 	public static final Biome EDENWOOD_FOREST = new BiomeEdenwoodForest(new BiomeProperties("Edenwood Forest"));
 	public static final Biome EDEN_FLOWER_GARDEN = new BiomeFlowerGarden(new BiomeProperties("The Garden"));
 	public static final Biome EDEN_CRATERS = new BiomeAsteroidCraters(new BiomeProperties("Asteroid Craters"));
+	public static final Biome EDEN_SHROOM_HILLS = new BiomeShroomHills(new BiomeProperties("Redshroom Hills"));
 	public static final Biome EDEN_OCEAN = new BiomeEdenOcean(new BiomeProperties("Ocean of Eden"));
 	
 	// Xathius
@@ -173,6 +175,7 @@ public class ZGBiomes {
 		ZGBiomes.addBiome(ZGBiomes.EDENWOOD_FOREST, LUSH, WET, FOREST);
 		ZGBiomes.addBiome(ZGBiomes.EDEN_FLOWER_GARDEN, LUSH, WET, PLAINS);
 		ZGBiomes.addBiome(ZGBiomes.EDEN_CRATERS, MOUNTAIN, DEAD, SPOOKY);
+		ZGBiomes.addBiome(ZGBiomes.EDEN_SHROOM_HILLS, MOUNTAIN, WET);
 		ZGBiomes.addBiome(ZGBiomes.EDEN_OCEAN, LUSH, WET, OCEAN);
 		
 		// Xathius

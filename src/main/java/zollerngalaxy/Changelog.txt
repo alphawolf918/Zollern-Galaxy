@@ -45,5 +45,9 @@ Zollern Galaxy v2.0.18
 * Made Eden tree leaves have some transparency.
 * Updated a couple of textures for Kriffon and Perdita.
 * Added log, leaf and sapling block generation to JSON Factory.
-* 
+* Added the Redshroom Hills biome.
+    - Features Redshroom Trees.
+* Added the Shroompig mob.
+    - Basically just tiny pigs covered in a mushroom texture.
+    - Spawns in the Redshroom Hills biome.
 * Fixed Infection being set as Anti-Corruption and vice-versa.

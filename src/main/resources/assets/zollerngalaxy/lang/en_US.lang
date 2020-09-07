@@ -71,6 +71,8 @@ tile.bonestone.name=Eden's Bone Stone
 tile.edensacredstone.name=Eden's Sacred Stone
 tile.edenfruit.name=Eden's Indigo Fruit
 tile.edenglass.name=Eden's Glass
+tile.redshroomblock.name=Redshroom
+tile.redshroomstem.name=Redshroom Stem
 
 tile.edenwoodlog.name=Edenwood Log
 tile.edenwoodplanks.name=Edenwood Planks
@@ -640,6 +642,7 @@ entity.zollerngalaxy:shadowskeleton.name=Shadow Skeleton
 entity.zollerngalaxy:shade.name=Shade
 entity.zollerngalaxy:shadowalien.name=Shadow of Darkness Boss
 entity.zollerngalaxy:faceless.name=Faceless
+entity.zollerngalaxy:pigshroom.name=Shroompig
 
 tooltips.hud=Shows all planetary and biome data.
 tooltips.hud2=Only works when held.

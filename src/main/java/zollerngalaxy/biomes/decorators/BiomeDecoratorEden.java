@@ -27,6 +27,7 @@ import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.worldgen.WorldGenLakesZG;
 import zollerngalaxy.worldgen.WorldGenMinableZG;
 import zollerngalaxy.worldgen.WorldGenTallGrassZG;
+import zollerngalaxy.worldgen.WorldGenZGMushroomTree;
 import zollerngalaxy.worldgen.eden.WorldGenEdenFlowers;
 import zollerngalaxy.worldgen.eden.WorldGenEdenPumpkins;
 import zollerngalaxy.worldgen.eden.WorldGenEdenTower;
@@ -68,16 +69,22 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 	public int edenTreesPerChunk = 1;
 	public int edenFallTreesPerChunk = 0;
 	public int edenGoldTreesPerChunk = 0;
+	public int mushroomTreesPerChunk = 0;
 	public int lavaLakesPerChunk = 1;
 	public int waterLakesPerChunk = 4;
 	
 	private WorldGenerator pumpkinGen = new WorldGenEdenPumpkins();
+	private WorldGenerator tallGrassGen = new WorldGenTallGrassZG((ZGBlockTallGrass) ZGBlocks.edenTallGrass);
+	private WorldGenerator waterLilyGen = new WorldGenWaterlily();
 	private WorldGenerator treeGenEden = new WorldGenEdenTrees(false, ZGHelper.rngInt(5, 10), ZGBlocks.edenWoodLog.getDefaultState(),
 			ZGBlocks.edenWoodLeaves.getDefaultState(), this.generateVines);
+	private WorldGenerator towerGen = new WorldGenEdenTower();
+	private WorldGenerator giantBoneGen = new WorldGenGiantBone();
 	private WorldGenerator treeGenFall = new WorldGenEdenTrees(false, ZGHelper.rngInt(5, 7), ZGBlocks.edenParadiseWoodLog.getDefaultState(),
 			ZGBlocks.edenParadiseWoodLeaves.getDefaultState(), this.generateVines);
 	private WorldGenerator treeGenGold = new WorldGenEdenTrees(false, ZGHelper.rngInt(4, 8), ZGBlocks.edenGoldenWoodLog.getDefaultState(),
 			ZGBlocks.edenGoldenWoodLeaves.getDefaultState(), this.generateVines);
+	private WorldGenerator treeGenMushroom = new WorldGenZGMushroomTree(false, ZGHelper.rngInt(3, 6));
 	
 	public boolean generateVines = false;
 	public boolean generateLakes = true;
@@ -87,6 +94,7 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 	public boolean generateGiantBones = false;
 	public boolean generateMansions = false;
 	public boolean generateTrees = true;
+	public boolean generateMushroomTrees = false;
 	public boolean generatePumpkins = false;
 	
 	public BiomeDecoratorEden() {
@@ -189,15 +197,14 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 			
 			if (this.waterlilyPerChunk > 0) {
 				for (int i = 0; i < this.waterlilyPerChunk; ++i) {
-					(new WorldGenWaterlily()).generate(world, rand, this.chunkPos.add(x, y, z));
+					waterLilyGen.generate(world, rand, this.chunkPos.add(x, y, z));
 				}
 			}
 		}
 		
 		if (this.edenTallGrassPerChunk > 0) {
 			for (int i = 0; i < this.edenTallGrassPerChunk + 4; ++i) {
-				ZGDecorateHelper.generatePlants(new WorldGenTallGrassZG((ZGBlockTallGrass) ZGBlocks.edenTallGrass), world, rand,
-						this.chunkPos);
+				ZGDecorateHelper.generatePlants(this.tallGrassGen, world, rand, this.chunkPos);
 			}
 		}
 		
@@ -234,8 +241,21 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 					y = ZGHelper.rngInt(64, 82);
 				}
 				
-				if (rand.nextInt(100) <= 85) {
+				if (rand.nextInt(100) <= 80) {
 					treeGenGold.generate(world, rand, this.chunkPos.add(x, y, z));
+				}
+			}
+		}
+		
+		if (this.generateTrees && this.mushroomTreesPerChunk > 0) {
+			for (int i = 0; i < this.mushroomTreesPerChunk; ++i) {
+				y = rand.nextInt(rand.nextInt(genY) + 8);
+				if (y < 64) {
+					y = ZGHelper.rngInt(64, 82);
+				}
+				
+				if (rand.nextInt(100) <= 65) {
+					treeGenMushroom.generate(world, rand, this.chunkPos.add(x, y, z));
 				}
 			}
 		}
@@ -303,7 +323,7 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 			if (y >= 63) {
 				if (rand.nextInt(1000) <= 25) {
 					y -= 10;
-					(new WorldGenEdenTower()).generate(world, rand, this.chunkPos.add(x, y, z));
+					towerGen.generate(world, rand, this.chunkPos.add(x, y, z));
 				}
 			}
 		}
@@ -312,7 +332,7 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 			y = rand.nextInt(rand.nextInt(genY) + 8);
 			if (y >= 62) {
 				if (rand.nextInt(700) <= 90) {
-					(new WorldGenGiantBone()).generate(world, rand, this.chunkPos.add(x, y, z));
+					giantBoneGen.generate(world, rand, this.chunkPos.add(x, y, z));
 				}
 			}
 		}

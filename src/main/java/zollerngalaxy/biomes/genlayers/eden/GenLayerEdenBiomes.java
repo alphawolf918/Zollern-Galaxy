@@ -50,13 +50,14 @@ public class GenLayerEdenBiomes extends GenLayerEden {
 		list.add(new BiomeEntry(ZGBiomes.EDENWOOD_FOREST, 65));
 		list.add(new BiomeEntry(ZGBiomes.EDEN_FLOWER_GARDEN, 55));
 		list.add(new BiomeEntry(ZGBiomes.EDEN_CRATERS, 50));
+		list.add(new BiomeEntry(ZGBiomes.EDEN_SHROOM_HILLS, 47));
 		list.add(new BiomeEntry(ZGBiomes.EDEN_PARADISE_WOODS, 46));
 		list.add(new BiomeEntry(ZGBiomes.EDEN_ROCK_MOUNTAINS, 45));
 		list.add(new BiomeEntry(ZGBiomes.EDEN_GREEN_LANDS, 35));
 		list.add(new BiomeEntry(ZGBiomes.EDEN_SWAMPLANDS, 30));
 		list.add(new BiomeEntry(ZGBiomes.EDEN_BLOOD_DESERT, 25));
 		list.add(new BiomeEntry(ZGBiomes.EDEN_GOLDEN_MEADOW, 24));
-		list.add(new BiomeEntry(ZGBiomes.EDEN_SNOWY_PLAINS, 20));
+		list.add(new BiomeEntry(ZGBiomes.EDEN_SNOWY_PLAINS, 22));
 		
 		currentBiomes[BiomeType.WARM.ordinal()] = new ArrayList<>(list);
 		return currentBiomes;

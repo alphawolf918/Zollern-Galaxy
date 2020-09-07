@@ -7,6 +7,7 @@
  */
 package zollerngalaxy.mobs;
 
+import com.google.common.base.CaseFormat;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving.SpawnPlacementType;
 import net.minecraft.entity.EntitySpawnPlacementRegistry;
@@ -30,6 +31,7 @@ import zollerngalaxy.mobs.entities.EntityMegaCreeper;
 import zollerngalaxy.mobs.entities.EntityMoolus;
 import zollerngalaxy.mobs.entities.EntityMummy;
 import zollerngalaxy.mobs.entities.EntityOinkus;
+import zollerngalaxy.mobs.entities.EntityPigShroom;
 import zollerngalaxy.mobs.entities.EntityScorpion;
 import zollerngalaxy.mobs.entities.EntityShade;
 import zollerngalaxy.mobs.entities.EntityShadowSkeleton;
@@ -38,7 +40,6 @@ import zollerngalaxy.mobs.entities.EntitySpiderling;
 import zollerngalaxy.mobs.entities.EntitySquidlus;
 import zollerngalaxy.mobs.entities.EntityWasp;
 import zollerngalaxy.mobs.entities.boss.EntityShadowAlien;
-import com.google.common.base.CaseFormat;
 
 public class MobRegistry {
 	
@@ -129,6 +130,9 @@ public class MobRegistry {
 		// Wasp
 		registerEntity("wasp", EntityWasp.class, entityId++, 0x000000, 0xffff00);
 		EntitySpawnPlacementRegistry.setPlacementType(EntityWasp.class, SpawnPlacementType.IN_AIR);
+		
+		// Pig Shroom
+		registerEntity("pigshroom", EntityPigShroom.class, entityId++, 0x990000, 0xeeeeee);
 		
 		ZGHelper.Log("Loaded a total of " + totalMobs + " new mobs.");
 	}

@@ -1,16 +1,12 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "Z Z",
-    "Z Z",
-    "   "
-  ],
-  "key": {
-    "Z": {
-      "item": "zollerngalaxy:zollerniumboots"
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "zollerngalaxy:zollerniumblock"
     }
-  },
+  ],
   "result": {
-    "item": "zollerngalaxy:zollerniumingot"
+    "item": "zollerngalaxy:zollerniumingot",
+    "count": 9
   }
 }

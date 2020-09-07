@@ -45,6 +45,24 @@ public class ZGRecipeHelper {
 		CompressorRecipes.addShapelessRecipe(output, obj);
 	}
 	
+	public static void addArmorSet(Item itemInput, Item itemOutput, String armorType) {
+		armorType = armorType.toLowerCase();
+		if (armorType.equals("helmet")) {
+			// Helmet
+			ZGRecipeHelper.addRecipe(new ItemStack(itemOutput, 1), new Object[] { "ZZZ", "Z Z", "   ", 'Z', itemInput });
+			// Chestplate
+		} else if (armorType.equals("chest")) {
+			ZGRecipeHelper.addRecipe(new ItemStack(itemOutput, 1), new Object[] { "Z Z", "ZZZ", "ZZZ", 'Z', itemInput });
+			// Leggings
+		} else if (armorType.equals("legs")) {
+			ZGRecipeHelper.addRecipe(new ItemStack(itemOutput, 1), new Object[] { "ZZZ", "Z Z", "Z Z", 'Z', itemInput });
+			// Boots
+		} else if (armorType.equals("boots")) {
+			ZGRecipeHelper.addRecipe(new ItemStack(itemOutput, 1), new Object[] { "   ", "Z Z", "Z Z", 'Z', itemInput });
+			ZGRecipeHelper.addRecipe(new ItemStack(itemOutput, 1), new Object[] { "Z Z", "Z Z", "   ", 'Z', itemInput });
+		}
+	}
+	
 	public static void addSimpleToolSet(ItemStack itemOutput, Item itemIngot, String toolType) {
 		toolType = toolType.toLowerCase();
 		// Pickaxe

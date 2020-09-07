@@ -2,11 +2,11 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "zollerngalaxy:azuriteblock"
+      "item": "zollerngalaxy:redshroomblock"
     }
   ],
   "result": {
-    "item": "zollerngalaxy:azurite",
+    "item": "minecraft:red_mushroom",
     "count": 9
   }
 }
