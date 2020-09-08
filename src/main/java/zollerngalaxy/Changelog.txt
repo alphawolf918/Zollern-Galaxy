@@ -50,4 +50,7 @@ Zollern Galaxy v2.0.18
 * Added the Shroompig mob.
     - Basically just tiny pigs covered in a mushroom texture.
     - Spawns in the Redshroom Hills biome.
+* Mooshroom mob now spawns on Eden if Earth animals are allowed to spawn there.
+    - Controllable in the config.
+* Added ice spike generation to Planet Zollus.
 * Fixed Infection being set as Anti-Corruption and vice-versa.

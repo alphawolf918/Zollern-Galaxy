@@ -7,9 +7,11 @@
  */
 package zollerngalaxy.biomes.eden;
 
+import net.minecraft.entity.passive.EntityMooshroom;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.blocks.ZGBlocks;
+import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 import zollerngalaxy.mobs.entities.EntityPigShroom;
 
@@ -27,6 +29,9 @@ public class BiomeShroomHills extends BiomeEdenBase {
 		this.setBiomeType(EnumBiomeTypeZG.WEIRD);
 		this.clearAllNonMonsterSpawning();
 		this.spawnableCreatureList.add(new SpawnListEntry(EntityPigShroom.class, 100, 1, 4));
+		if (ConfigManagerZG.canEarthAnimalsSpawnOnEden) {
+			this.spawnableCreatureList.add(new SpawnListEntry(EntityMooshroom.class, 100, 1, 4));
+		}
 		this.enableSnow = false;
 		this.biomeDecor.generateFalls = true;
 		this.biomeDecor.generateCraters = true;

@@ -13,7 +13,6 @@ import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Blocks;
 import net.minecraft.init.MobEffects;
 import net.minecraft.item.EnumAction;
 import net.minecraft.item.EnumRarity;
@@ -27,14 +26,20 @@ import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
+import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import zollerngalaxy.core.ZollernGalaxyCore;
 import zollerngalaxy.items.tools.ZGItemSword;
 import zollerngalaxy.items.tools.ZGToolMats;
 import zollerngalaxy.lib.helpers.CommonZGRegisterHelper;
+import zollerngalaxy.proxy.IProxy;
 import zollerngalaxy.util.ZGUtils;
+import zollerngalaxy.worldgen.zollus.WorldGenZGIceSpikes;
 
 public class ItemIceSword extends ZGItemSword {
+	
+	private static final IProxy PROXY = ZollernGalaxyCore.proxy;
 	
 	public ItemIceSword() {
 		super("ice", ZGToolMats.ASCENDANT);
@@ -51,8 +56,8 @@ public class ItemIceSword extends ZGItemSword {
 		
 		int length = 100;
 		Vec3d startPos = new Vec3d(playerIn.posX, playerIn.posY + playerIn.getEyeHeight(), playerIn.posZ);
-		Vec3d endPos = startPos.add(new Vec3d(playerIn.getLookVec().x * length, playerIn.getLookVec().y * length, playerIn.getLookVec().z
-				* length));
+		Vec3d endPos = startPos
+				.add(new Vec3d(playerIn.getLookVec().x * length, playerIn.getLookVec().y * length, playerIn.getLookVec().z * length));
 		RayTraceResult mop = worldIn.rayTraceBlocks(startPos, endPos);
 		if (mop == null) {
 			return new ActionResult(EnumActionResult.PASS, playerIn.getHeldItem(handIn));
@@ -63,12 +68,11 @@ public class ItemIceSword extends ZGItemSword {
 		int j = vecPos.getY();
 		int k = vecPos.getZ();
 		
-		for (int l = 0; l < 8; l++) {
-			int j2 = j + l;
-			worldIn.setBlockState(new BlockPos(i, j2, k), Blocks.PACKED_ICE.getDefaultState());
-			if (j2 < 256) {
-				worldIn.setBlockState(new BlockPos(i, (j2 + 1), k), Blocks.PACKED_ICE.getDefaultState());
-			}
+		if ((j + 16) < 256) {
+			WorldGenerator iceSpikeGen = new WorldGenZGIceSpikes();
+			iceSpikeGen.generate(worldIn, itemRand, vecPos);
+		} else {
+			PROXY.sendChatMessage(playerIn, ZGUtils.translate("tooltips.buildheight"));
 		}
 		
 		playerIn.swingArm(handIn);

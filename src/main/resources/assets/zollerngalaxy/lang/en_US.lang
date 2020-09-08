@@ -704,6 +704,8 @@ tooltips.newhealth=Max Health
 tooltips.newhealth2=Max Health Now:
 tooltips.hearts=hearts
 
+tooltips.buildheight=This would exceed the build height of 256.
+
 planet.zollus=Zollus
 planet.eden=Eden
 planet.purgot=Purgot

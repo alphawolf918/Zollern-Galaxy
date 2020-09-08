@@ -11,11 +11,15 @@ import java.util.Random;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.gen.feature.WorldGenerator;
+import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.core.enums.EnumOreGenZG;
 import zollerngalaxy.lib.helpers.ZGDecorateHelper;
+import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.worldgen.WorldGenMinableZG;
+import zollerngalaxy.worldgen.zollus.WorldGenZGIceSpikes;
 import zollerngalaxy.worldgen.zollus.WorldGenZolniumCrystals;
 
 public class BiomeDecoratorZollus extends BiomeDecoratorZG {
@@ -30,6 +34,12 @@ public class BiomeDecoratorZollus extends BiomeDecoratorZG {
 	private WorldGenerator coalGen;
 	
 	public int zolCrystalsPerChunk = 2;
+	public int iceSpikesPerChunk = 2;
+	
+	public boolean generateCrystals = true;
+	public boolean generateIceSpikes = true;
+	
+	private WorldGenerator iceSpikeGen = new WorldGenZGIceSpikes();
 	
 	public BiomeDecoratorZollus() {
 		this.dirtGen = new WorldGenMinableZG(ZGBlocks.zolDirt, ZGBlocks.zolSurfaceRock, EnumOreGenZG.DIRT);
@@ -47,6 +57,16 @@ public class BiomeDecoratorZollus extends BiomeDecoratorZG {
 		int x = rand.nextInt(16) + 8;
 		int z = rand.nextInt(16) + 8;
 		
+		ChunkPrimer chunkPrimer = new ChunkPrimer();
+		
+		int genY = 248;
+		int y = genY;
+		
+		if (biome instanceof BiomeSpace) {
+			BiomeSpace spaceBiome = (BiomeSpace) biome;
+			genY = spaceBiome.getBiomeHeight();
+		}
+		
 		this.generateOre(this.ironGen, EnumOreGenZG.IRON, world, rand);
 		this.generateOre(this.goldGen, EnumOreGenZG.GOLD, world, rand);
 		this.generateOre(this.tinGen, EnumOreGenZG.TIN, world, rand);
@@ -56,11 +76,24 @@ public class BiomeDecoratorZollus extends BiomeDecoratorZG {
 		this.generateOre(this.packedIceGen, EnumOreGenZG.PACKED_ICE, world, rand);
 		this.generateOre(this.coalGen, EnumOreGenZG.COAL, world, rand);
 		
-		int i;
-		boolean hasSpawned = false;
-		for (i = 0; i < this.zolCrystalsPerChunk; ++i) {
-			ZGDecorateHelper.generatePlants(new WorldGenZolniumCrystals(ZGBlocks.zolCrystals.getDefaultState()), world, rand,
-					this.chunkPos);
+		if (this.generateCrystals && this.zolCrystalsPerChunk > 0) {
+			for (int i = 0; i < this.zolCrystalsPerChunk; ++i) {
+				ZGDecorateHelper.generatePlants(new WorldGenZolniumCrystals(ZGBlocks.zolCrystals.getDefaultState()), world, rand,
+						this.chunkPos);
+			}
+		}
+		
+		// Ice Spikes
+		if (this.generateIceSpikes && this.iceSpikesPerChunk > 0) {
+			for (int i = 0; i < this.iceSpikesPerChunk; i++) {
+				y = rand.nextInt(rand.nextInt(genY) + 8);
+				if (y < 64) {
+					y = ZGHelper.rngInt(64, 82);
+				}
+				if (rand.nextInt(100) >= 42) {
+					iceSpikeGen.generate(world, rand, this.chunkPos.add(x, y, z));
+				}
+			}
 		}
 	}
 }
