@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "zollerngalaxy:lovetreelog"
+    }
+  ],
+  "result": {
+    "item": "zollerngalaxy:lovetreeplanks",
+    "count": 4
+  }
+}

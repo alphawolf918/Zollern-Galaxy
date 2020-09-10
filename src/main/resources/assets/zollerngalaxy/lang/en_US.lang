@@ -89,6 +89,11 @@ tile.goldenwoodplanks.name=Goldenwood Planks
 tile.goldenwoodleaves.name=Goldenwood Leaves
 tile.goldenwoodsapling.name=Goldenwood Sapling
 
+tile.lovetreelog.name=Lovetree Log
+tile.lovetreeplanks.name=Lovetree Planks
+tile.lovetreeleaves.name=Lovetree Leaves
+tile.lovetreesapling.name=Lovetree Sapling
+
 tile.fruitofedenblock.name=Fruit of Eden
 tile.edengravel.name=Eden's Gravel
 tile.edenwinterrock.name=Eden's Snowrock

@@ -36,6 +36,7 @@ public class BiomeEdenParadiseWoods extends BiomeEdenBase {
 		this.biomeDecor.edenTreesPerChunk = 0;
 		this.biomeDecor.edenFallTreesPerChunk = 10;
 		this.biomeDecor.edenGoldTreesPerChunk = 6;
+		this.biomeDecor.edenLoveTreesPerChunk = 4;
 		this.biomeDecor.edenPumpkinsPerChunk = 2;
 		this.grassFoilageColorMultiplier = 0x8b0000;
 		this.waterColor = 0x00008b;

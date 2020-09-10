@@ -129,6 +129,8 @@ public class ConfigManagerZG {
 	// Customizations
 	public static int kriffonLavaLakesPerChunk;
 	public static int kriffonLavaLakesGenChance;
+	public static int zollusIceSpikesPerChunk;
+	public static int zollusIceSpikesGenChance;
 	public static boolean planetUnreachableAll;
 	public static boolean shouldExplosiveBlocksExplodeOtherBlocks;
 	
@@ -264,8 +266,9 @@ public class ConfigManagerZG {
 		spaceStationGenAmount = (spaceStationGenAmount >= 1) ? spaceStationGenAmount : 1;
 		
 		// Whether or not Lore Blocks can spawn extra
-		canExtraLoreSpawn = configuration.get(CATEGORY_SATELLITES, "Spawn Extra Lore Blocks", true,
-				"Can additional Lore Blocks spawn? (default: true)").getBoolean();
+		canExtraLoreSpawn = configuration
+				.get(CATEGORY_SATELLITES, "Spawn Extra Lore Blocks", true, "Can additional Lore Blocks spawn? (default: true)")
+				.getBoolean();
 		
 		// Space Stations (Psios-6)
 		
@@ -320,19 +323,19 @@ public class ConfigManagerZG {
 		spaceStationCaligroStaticId = configuration.get(CATEGORY_SATELLITES, "Caligro Space Station Static ID", -6023).getInt();
 		
 		// Misc (Can Earth animals spawn on Eden?)
-		canEarthAnimalsSpawnOnEden = configuration.get(CATEGORY_MISC, "Earth Animals Spawn On Eden", true,
-				"Should Earth animals spawn on Eden? (default: true)").getBoolean();
+		canEarthAnimalsSpawnOnEden = configuration
+				.get(CATEGORY_MISC, "Earth Animals Spawn On Eden", true, "Should Earth animals spawn on Eden? (default: true)")
+				.getBoolean();
 		
 		// Misc (Should Star Gates be disabled?)
-		disableStarGates = configuration.get(
-				CATEGORY_MISC,
-				"Disable use of Star Gates",
-				false,
+		disableStarGates = configuration.get(CATEGORY_MISC, "Disable use of Star Gates", false,
 				"Set this to true if you want to ONLY access Zollern Galaxy planets using rockets. "
-						+ "WARNING: will not work without another add-on this way! (default: false)").getBoolean();
+						+ "WARNING: will not work without another add-on this way! (default: false)")
+				.getBoolean();
 		
-		hideUnusedStarSystems = configuration.get(CATEGORY_MISC, "Hide Stars with no Planets", true,
-				"Enable to see Stars that have no Planets yet. (default: true)").getBoolean();
+		hideUnusedStarSystems = configuration
+				.get(CATEGORY_MISC, "Hide Stars with no Planets", true, "Enable to see Stars that have no Planets yet. (default: true)")
+				.getBoolean();
 		
 		// Misc (Should Mega Creeper explosions harm terrain?)
 		enableMegaCreeperGriefing = configuration.get(CATEGORY_MISC, "Enable Mega Creeper Griefing", true,
@@ -345,62 +348,61 @@ public class ConfigManagerZG {
 		// Compatibility (Whether or not to use Thermal Foundation's Detabilized
 		// Redstone
 		// for the Red Sea in Oasis)
-		shouldOasisUseLiquidRedstone = configuration.get(
-				CATEGORY_COMPATIBILITY,
-				"Oasis uses Thermal Foundation's Destabilized Redstone",
-				true,
-				"Whether or not Oasis should use Detabilized Redstone for its Red Sea biome. WARNING: This can use a LOT of your PC's memory! "
-						+ "This can lead to severe LAG! Use at your own risk. (default: true)").getBoolean();
+		shouldOasisUseLiquidRedstone = configuration
+				.get(CATEGORY_COMPATIBILITY, "Oasis uses Thermal Foundation's Destabilized Redstone", true,
+						"Whether or not Oasis should use Detabilized Redstone for its Red Sea biome. WARNING: This can use a LOT of your PC's memory! "
+								+ "This can lead to severe LAG! Use at your own risk. (default: true)")
+				.getBoolean();
 		
 		// Compatibility (Whether or not Thermal Foundation Pulverizers should
 		// give extra
 		// (4) instead of normal (2))
-		enableExtraPulverizerOutput = configuration.get(
-				CATEGORY_COMPATIBILITY,
-				"Enable extra Pulverizer Output",
-				true,
+		enableExtraPulverizerOutput = configuration.get(CATEGORY_COMPATIBILITY, "Enable extra Pulverizer Output", true,
 				"Whether or not Zollern Galaxy ores give extra dust from Thermal Foundation's Pulverizers. "
-						+ "Disable if it causes compatibility issues (default: true).").getBoolean();
+						+ "Disable if it causes compatibility issues (default: true).")
+				.getBoolean();
 		
 		// Compat (Should Fueltonium register as Uranium?)
-		fueltoniumIsUranium = configuration.get(CATEGORY_COMPATIBILITY, "Fueltonium counts as Uranium", true,
-				"Should Fueltonium register as Uranium? (default: true)").getBoolean();
+		fueltoniumIsUranium = configuration
+				.get(CATEGORY_COMPATIBILITY, "Fueltonium counts as Uranium", true, "Should Fueltonium register as Uranium? (default: true)")
+				.getBoolean();
 		
 		// Compat (Should Cobalt register in the Ore Dictionary?)
-		registerCobaltOreDict = configuration.get(CATEGORY_COMPATIBILITY, "Register Cobalt in Ore Dictionary", true,
-				"Set this to false if there are any problems " + " with mods like Tinker's Construct. (default: true)").getBoolean();
+		registerCobaltOreDict = configuration
+				.get(CATEGORY_COMPATIBILITY, "Register Cobalt in Ore Dictionary", true,
+						"Set this to false if there are any problems " + " with mods like Tinker's Construct. (default: true)")
+				.getBoolean();
 		
 		// Compat (Should intergration with Planet Progressions be enabled?
-		enablePlanetProgressionsCompat = configuration.get(
-				CATEGORY_COMPATIBILITY,
-				"Enable Planet Progressions compatibility",
-				true,
-				"If Planet Progressions is installed, you will need to discover the Planet or Moon "
-						+ " before you can travel to it via Star Gates. Set this to false to disable that. (default: true)").getBoolean();
+		enablePlanetProgressionsCompat = configuration
+				.get(CATEGORY_COMPATIBILITY, "Enable Planet Progressions compatibility", true,
+						"If Planet Progressions is installed, you will need to discover the Planet or Moon "
+								+ " before you can travel to it via Star Gates. Set this to false to disable that. (default: true)")
+				.getBoolean();
 		
 		// Customization Options
 		kriffonLavaLakesPerChunk = configuration.get(CATEGORY_CUSTOMIZATIONS, "Kriffon Lava Lakes Per Chunk", 4,
 				"The amount of Lava Lakes to generate per chunk on planet Kriffon. (default: 4)").getInt();
 		kriffonLavaLakesGenChance = configuration.get(CATEGORY_CUSTOMIZATIONS, "Kriffon Lava Lakes Gen Percentage", 25,
 				"The chance (out of 100) for a lava lake to generate on planet Kriffon. (default: 25)").getInt();
+		zollusIceSpikesPerChunk = configuration.get(CATEGORY_CUSTOMIZATIONS, "Zollus Ice Spikes Per Chunk", 2,
+				"The amount of Ice Spikes to generate on " + "Zollus per chunk. (default: 2)").getInt();
+		zollusIceSpikesGenChance = configuration.get(CATEGORY_CUSTOMIZATIONS, "Zollus Ice Spikes Gen Percentage", 42,
+				"The chance (out of 100) for Ice Spikes to generate on planet Zollus. (default: 42)").getInt();
 		
 		// Control unreachable planets (by rockets).
-		planetUnreachableAll = configuration.get(
-				CATEGORY_CUSTOMIZATIONS,
-				"Disable Rockets For All Planets",
-				false,
+		planetUnreachableAll = configuration.get(CATEGORY_CUSTOMIZATIONS, "Disable Rockets For All Planets", false,
 				"Setting this to true disallows rocket travel to all Zollern Galaxy planets. "
 						+ "Note that when this is enabled, it will override the planet-by-planet settings, "
-						+ "with the exception of Zollus. (default: false)").getBoolean();
+						+ "with the exception of Zollus. (default: false)")
+				.getBoolean();
 		
 		// Control whether or not explosive blocks should cause other explosive blocks to explode in
 		// a chain reaction
-		shouldExplosiveBlocksExplodeOtherBlocks = configuration.get(
-				CATEGORY_CUSTOMIZATIONS,
-				"Explosive Blocks Cause Chain Reaction",
-				true,
+		shouldExplosiveBlocksExplodeOtherBlocks = configuration.get(CATEGORY_CUSTOMIZATIONS, "Explosive Blocks Cause Chain Reaction", true,
 				"Disable this to prevent explosive blocks blowing up other explosive blocks when broken, "
-						+ "which can cause a chain reaction. (default: true)").getBoolean();
+						+ "which can cause a chain reaction. (default: true)")
+				.getBoolean();
 		
 		planetUnreachableZollus = configuration.get(CATEGORY_CUSTOMIZATIONS, "Disable Rockets For Planet Zollus", false,
 				"Disable rocket travel for this planet. (default: false)").getBoolean();
@@ -428,8 +430,9 @@ public class ConfigManagerZG {
 				"Disable rocket travel for this planet. (default: false)").getBoolean();
 		
 		//
-		maxHealthAllowed = configuration.get(CATEGORY_CUSTOMIZATIONS, "Max Health Allowed", 40,
-				"The max health that Players are allowed to have. (default: 40)").getInt();
+		maxHealthAllowed = configuration
+				.get(CATEGORY_CUSTOMIZATIONS, "Max Health Allowed", 40, "The max health that Players are allowed to have. (default: 40)")
+				.getInt();
 		maxHealthIncreasedBy = configuration.get(CATEGORY_CUSTOMIZATIONS, "Increase Max Health Amount", 10,
 				"The amount of hearts to add to the Player's health when using a Max Heartforce (default: 10).").getInt();
 		//

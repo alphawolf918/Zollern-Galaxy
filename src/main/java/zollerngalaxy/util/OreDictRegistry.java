@@ -112,23 +112,24 @@ public class OreDictRegistry {
 				ZGBlocks.altumGravel, ZGBlocks.caligroGravel);
 		
 		// Grass
-		registerOre("grass", ZGBlocks.edenGoldenGrass, ZGBlocks.edenGrass, ZGBlocks.edenSwampGrass, ZGBlocks.xathGrass, ZGBlocks.oasisGrass,
-				ZGBlocks.perdGrass);
+		registerOre("grass", ZGBlocks.edenGoldenGrass, ZGBlocks.edenGrass, ZGBlocks.edenSwampGrass, ZGBlocks.edenFallGrass,
+				ZGBlocks.xathGrass, ZGBlocks.oasisGrass, ZGBlocks.perdGrass);
 		
 		// Logs
-		registerOre("logWood", ZGBlocks.edenWoodLog, ZGBlocks.perdWoodLogs, ZGBlocks.edenParadiseWoodLog, ZGBlocks.edenGoldenWoodLog);
+		registerOre("logWood", ZGBlocks.edenWoodLog, ZGBlocks.perdWoodLogs, ZGBlocks.edenParadiseWoodLog, ZGBlocks.edenGoldenWoodLog,
+				ZGBlocks.edenLovetreeLog);
 		
 		// Leaves
 		registerOre("treeLeaves", ZGBlocks.edenWoodLeaves, ZGBlocks.perdWoodLeaves, ZGBlocks.edenParadiseWoodLeaves,
-				ZGBlocks.edenGoldenWoodLeaves);
+				ZGBlocks.edenGoldenWoodLeaves, ZGBlocks.edenLovetreeLeaves);
 		
 		// Saplings
 		registerOre("treeSapling", ZGBlocks.edenWoodSapling, ZGBlocks.perdTreeSapling, ZGBlocks.edenParadiseWoodSapling,
-				ZGBlocks.edenGoldenWoodSapling);
+				ZGBlocks.edenGoldenWoodSapling, ZGBlocks.edenLovetreeSapling);
 		
 		// Planks
 		registerOre("plankWood", ZGBlocks.edenWoodPlanks, ZGBlocks.perdWoodPlanks, ZGBlocks.edenParadiseWoodPlanks,
-				ZGBlocks.edenGoldenWoodPlanks);
+				ZGBlocks.edenGoldenWoodPlanks, ZGBlocks.edenLovetreePlanks);
 		
 		// Stone
 		registerOre("stone", ZGBlocks.edenStone, ZGBlocks.kriffStone, ZGBlocks.purgStone, ZGBlocks.zolStone, ZGBlocks.xathStone,

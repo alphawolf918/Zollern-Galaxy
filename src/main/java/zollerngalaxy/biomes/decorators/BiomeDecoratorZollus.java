@@ -15,6 +15,7 @@ import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.blocks.ZGBlocks;
+import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.enums.EnumOreGenZG;
 import zollerngalaxy.lib.helpers.ZGDecorateHelper;
 import zollerngalaxy.lib.helpers.ZGHelper;
@@ -34,11 +35,12 @@ public class BiomeDecoratorZollus extends BiomeDecoratorZG {
 	private WorldGenerator coalGen;
 	
 	public int zolCrystalsPerChunk = 2;
-	public int iceSpikesPerChunk = 2;
+	public int iceSpikesPerChunk = ConfigManagerZG.zollusIceSpikesPerChunk;
 	
 	public boolean generateCrystals = true;
 	public boolean generateIceSpikes = true;
 	
+	private WorldGenerator zolCrystalGen = new WorldGenZolniumCrystals(ZGBlocks.zolCrystals.getDefaultState());
 	private WorldGenerator iceSpikeGen = new WorldGenZGIceSpikes();
 	
 	public BiomeDecoratorZollus() {
@@ -76,10 +78,10 @@ public class BiomeDecoratorZollus extends BiomeDecoratorZG {
 		this.generateOre(this.packedIceGen, EnumOreGenZG.PACKED_ICE, world, rand);
 		this.generateOre(this.coalGen, EnumOreGenZG.COAL, world, rand);
 		
+		// Zollus Crystals
 		if (this.generateCrystals && this.zolCrystalsPerChunk > 0) {
 			for (int i = 0; i < this.zolCrystalsPerChunk; ++i) {
-				ZGDecorateHelper.generatePlants(new WorldGenZolniumCrystals(ZGBlocks.zolCrystals.getDefaultState()), world, rand,
-						this.chunkPos);
+				ZGDecorateHelper.generatePlants(zolCrystalGen, world, rand, this.chunkPos);
 			}
 		}
 		
@@ -90,7 +92,7 @@ public class BiomeDecoratorZollus extends BiomeDecoratorZG {
 				if (y < 64) {
 					y = ZGHelper.rngInt(64, 82);
 				}
-				if (rand.nextInt(100) >= 42) {
+				if (rand.nextInt(100) <= ConfigManagerZG.zollusIceSpikesGenChance) {
 					iceSpikeGen.generate(world, rand, this.chunkPos.add(x, y, z));
 				}
 			}

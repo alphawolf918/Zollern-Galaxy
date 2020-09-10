@@ -53,4 +53,5 @@ Zollern Galaxy v2.0.18
 * Mooshroom mob now spawns on Eden if Earth animals are allowed to spawn there.
     - Controllable in the config.
 * Added ice spike generation to Planet Zollus.
+    - Amount per chunk and percentage of generation is controllable via config.
 * Fixed Infection being set as Anti-Corruption and vice-versa.

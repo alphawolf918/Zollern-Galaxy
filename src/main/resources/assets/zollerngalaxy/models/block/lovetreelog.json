@@ -1,0 +1,9 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "all": "zollerngalaxy:blocks/lovetreelog_top",
+    "top": "zollerngalaxy:blocks/lovetreelog_top",
+    "right": "zollerngalaxy:blocks/lovetreelog",
+    "left": "zollerngalaxy:blocks/lovetreelog"
+  }
+}

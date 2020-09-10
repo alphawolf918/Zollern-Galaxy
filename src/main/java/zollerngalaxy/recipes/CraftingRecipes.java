@@ -112,6 +112,7 @@ public class CraftingRecipes {
 		CraftingRecipes.addPlanks(ZGBlocks.perdWoodLogs, ZGBlocks.perdWoodPlanks);
 		CraftingRecipes.addPlanks(ZGBlocks.edenParadiseWoodLog, ZGBlocks.edenParadiseWoodPlanks);
 		CraftingRecipes.addPlanks(ZGBlocks.edenGoldenWoodLog, ZGBlocks.edenGoldenWoodPlanks);
+		CraftingRecipes.addPlanks(ZGBlocks.edenLovetreeLog, ZGBlocks.edenLovetreePlanks);
 		
 		// Helmet
 		CraftingRecipes.addArmorSet(ZGItems.helmetAmaranth, ZGItems.ingotAmaranth, "helmet");
