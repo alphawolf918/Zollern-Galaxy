@@ -1,3 +1,5 @@
+// mMONTAGEe was here :p
+
 language.name=Russian
 language.region=ru
 language.code=ru_ru
@@ -18,6 +20,7 @@ tile.zoldirt.name=Грязь Золлуса
 tile.edensurfacerock.name=Зелёный камень эдена
 tile.edengrass.name=Трава Эдена
 tile.edengrass_snow.name=Заснеженная трава Эдена
+tile.edengrass_autumn.name=Райская Трава Эдена
 tile.edengoldengrass.name=Золотая Трава Эдена
 tile.edenswampgrass.name=Болотная трава Эдена
 tile.edensoil.name=Почва Эдена
@@ -70,10 +73,24 @@ tile.bonestone.name=Костяной Камень Эдена
 tile.edensacredstone.name=Священный Камень Эдена
 tile.edenfruit.name=Индиго Фрукт Эдена
 tile.edenglass.name=Стекло Эдена
+tile.redshroomblock.name=Красногриб
+tile.redshroomstem.name=Стебель красного гриба
+
 tile.edenwoodlog.name= ЕденДерево Бревно
 tile.edenwoodplanks.name=ЕденДерево Доски
 tile.edenwoodleaves.name=ЕденДерево Листья
 tile.edentreesapling.name=Саженец ЕденДерева
+
+tile.paradisewoodlog.name=Бревно Райского Дерева
+tile.paradisewoodplanks.name=Доски Райского Дерева
+tile.paradisewoodleaves.name=Листья Райского Дерева
+tile.paradisewoodsapling.name=Саженец райского дерева
+
+tile.goldenwoodlog.name=Бревно золотого Дерево
+tile.goldenwoodplanks.name=Золотые деревянные доски
+tile.goldenwoodleaves.name=Листья золотого дерево
+tile.goldenwoodsapling.name=Саженец золотого дерево
+
 tile.fruitofedenblock.name=Фрукт Эдена
 tile.edengravel.name=Гравель Эдена
 tile.edenwinterrock.name=СнежноКамень  Эдена
@@ -448,6 +465,8 @@ item.zincdust.name=Цинковая Пыль
 item.rhodiumingot.name=Слиток Рходиум
 item.rhodiumdust.name=Рходиум Пыл
 
+item.radiumingot.name=Слиток Рходиум
+
 item.rokkite.name=Рокките
 item.amber.name=янтарь
 item.topaz.name=Топаз
@@ -578,6 +597,26 @@ item.zollernium_shovel.name=Золлерниум Лопата
 item.zollernium_axe.name=Золлерниум Топор
 item.zollernium_hoe.name=Золлерниум Мотыга
 
+item.amaranthhelmet.name=Амарант шлем
+item.amaranthchestplate.name=Амарант нагрудник
+item.amaranthleggings.name=Амарант леггинсы
+item.amaranthboots.name=Амарант сапоги
+
+item.zollerniumhelmet.name=Золлериум шлем
+item.zollerniumchestplate.name=Золлериум нагрудник
+item.zollerniumleggings.name=Золлериум леггинсы
+item.zollerniumboots.name=Золлериум cапоги
+
+item.azuritehelmet.name=Азуритовый Шлем
+item.azuritechestplate.name=Азурите нагрудник
+item.azuriteleggings.name=Азурите леггинсы
+item.azuriteboots.name=Азурите сапоги
+
+item.radiumhelmet.name=Радиум шлем
+item.radiumchestplate.name=Радиум нагрудник
+item.radiumleggings.name=Радиум леггинсы
+item.radiumboots.name=Радиум сапоги
+
 item.heart.name=Лечащий сердце
 item.heartforce.name=Макс Сила Сердца
 
@@ -606,6 +645,7 @@ entity.zollerngalaxy:shadowskeleton.name=Теневой Скелет
 entity.zollerngalaxy:shade.name=тень
 entity.zollerngalaxy:shadowalien.name=Тень Тёмного Босса
 entity.zollerngalaxy:faceless.name=Безликий
+entity.zollerngalaxy:pigshroom.name=Грибосвиня
 
 tooltips.hud=Показывает Всю информацию про Планеты и Биомы.
 tooltips.hud2=Только работает когда в Руке.
@@ -666,6 +706,8 @@ tooltips.maxhealthtoohigh=Макс здоровье не может быть в�
 tooltips.newhealth=Максимальное Здоровье
 tooltips.newhealth2=Максимальное Здоровье Сейчас.
 tooltips.hearts=Сердца
+
+tooltips.buildheight=Это пройдёт максимальную дистанцию стройки 256 блоков
 
 planet.zollus=Zollus
 planet.eden=Eden
