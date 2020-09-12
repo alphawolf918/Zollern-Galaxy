@@ -2,56 +2,5 @@
 Zollern Galaxy v2.0.18
 =====================
 
-* Added a little bit of compatbility with Tinker's Construct.
-    - Corruption weapons will deal Corruption damage to their targets.
-    - Radiance weapons will deal Radiance damage and apply the effect; useful for disspelling Dark Agent mobs.
-    - Radiance can be used in a cast on a Gold Ingot to make the Radium Ingot.
-* Added the Radiance fluid.
-    - Can be created from Radium.
-* Increased duration of Wither effect from Mortem.
-* Increased stats of the Ascendant tool type.
-* Added the Diablo sword.
-    - Shoots fireballs at the target when right-clicked.
-    - When left-clicked on an entity, sets them on fire for 20 seconds.
-* Added the Thor sword.
-    - Spawns lightning bolts where the Player is looking when right-clicked.
-* Added the Ender sword.
-    - Teleports the Player to wherever they are looking (if that spot is spatially safe).
-* Added the Glacies sword.
-    - Spawns a small tower of ice where the Player is looking when right-clicked.
-    - Left-clicking any living entity will apply a Slowness effect to them.
-* Added the Archangel sword.
-    - Right-clicking with this sword will give the Player the Radiance effect required to survive Planet Caligro.
-    - Left-clicking an entity with this sword will kill any undead creature instantly, and will apply massive damage to Dark Agent mobs.
-* All of the new swords are craftable.
-* Added the Scorch and Freeze blueprints, but they don't currently work.
-* Added the Paradise Woods biome to Eden.
-    - Filled with the new Paradise Wood trees.
-    - Based on autumn colors.
-* Added the Goldenwood Tree to the Golden Meadow and Paradise Woods biomes on Eden.
-* Added basic flower breeding to Eden Flowers.
-    - Placing certain colors next to each other has a chance to generate a hybrid color flower nearby.
-* Added pumpkins to Paradise Woods biome on Eden.
-* Added the Radium Ingot.
-    - Created from a cast in Tinker's Construct using the Radium fluid.
-* Added four armor sets.
-* Each set of armor provides a different effect when the full set is worn.
-    - Radium applies the Radiance potion effect and allows the Player to fly in Survival.
-    - Azurite boosts the Player's attack.
-    - Zollernium makes the Player fire-resistant and slightly increases step height.
-    - Amaranth boosts the Player's defense.
-* Slightly modified colors of Eden biomes.
-* Made Eden Grass a bit darker.
-* Made Eden tree leaves have some transparency.
-* Updated a couple of textures for Kriffon and Perdita.
-* Added log, leaf and sapling block generation to JSON Factory.
-* Added the Redshroom Hills biome.
-    - Features Redshroom Trees.
-* Added the Shroompig mob.
-    - Basically just tiny pigs covered in a mushroom texture.
-    - Spawns in the Redshroom Hills biome.
-* Mooshroom mob now spawns on Eden if Earth animals are allowed to spawn there.
-    - Controllable in the config.
-* Added ice spike generation to Planet Zollus.
-    - Amount per chunk and percentage of generation is controllable via config.
-* Fixed Infection being set as Anti-Corruption and vice-versa.
+* Updated Russian translations by mMONTAGEe.
+* Fixed "invalid version" visual bug.
