@@ -125,6 +125,9 @@ public class ConfigManagerZG {
 	public static boolean fueltoniumIsUranium;
 	public static boolean registerCobaltOreDict;
 	public static boolean enablePlanetProgressionsCompat;
+	public static boolean useTConRadium;
+	public static boolean useTConCorruption;
+	public static boolean enableRadianceFlying;
 	
 	// Customizations
 	public static int kriffonLavaLakesPerChunk;
@@ -133,6 +136,7 @@ public class ConfigManagerZG {
 	public static int zollusIceSpikesGenChance;
 	public static boolean planetUnreachableAll;
 	public static boolean shouldExplosiveBlocksExplodeOtherBlocks;
+	public static int outpostGenChance;
 	
 	public static boolean planetUnreachableZollus;
 	public static boolean planetUnreachableKriffon;
@@ -380,6 +384,22 @@ public class ConfigManagerZG {
 								+ " before you can travel to it via Star Gates. Set this to false to disable that. (default: true)")
 				.getBoolean();
 		
+		// Compat (Enable Radium Material for Tinker's Construct
+		useTConRadium = configuration.get(CATEGORY_COMPATIBILITY, "[TCONSTRUCT] Enable Radium Material (Tinker's Construct)", true,
+				"Set to false to disable (will cause issues with More TCon if true). (default: true)").getBoolean();
+		
+		// Compat (Enable Corruption Material for Tinker's Construct
+		useTConCorruption = configuration.get(CATEGORY_COMPATIBILITY, "[TCONSTRUCT] Enable Corruption Material (Tinker's Construct)", true,
+				"Set to false to disable. (default: true)").getBoolean();
+		
+		// Compat (Should flying be enabled and then disabled when applying and unapplying Radiance
+		// armor?
+		enableRadianceFlying = configuration.get(CATEGORY_COMPATIBILITY, "Enable Radiance Flying In Survival", true,
+				"Toggle whether a full set of Radiance armor allows the Player to fly in Survival. "
+						+ "Set to false to disable if this causes mod conflicts, compromises the safety of your server, "
+						+ "or if you just hate fun. (default: true)")
+				.getBoolean();
+		
 		// Customization Options
 		kriffonLavaLakesPerChunk = configuration.get(CATEGORY_CUSTOMIZATIONS, "Kriffon Lava Lakes Per Chunk", 4,
 				"The amount of Lava Lakes to generate per chunk on planet Kriffon. (default: 4)").getInt();
@@ -403,6 +423,10 @@ public class ConfigManagerZG {
 				"Disable this to prevent explosive blocks blowing up other explosive blocks when broken, "
 						+ "which can cause a chain reaction. (default: true)")
 				.getBoolean();
+		
+		// Outpost generation percentage (number out of 100)
+		outpostGenChance = configuration.get(CATEGORY_CUSTOMIZATIONS, "Outpost Gen Percentage", 35,
+				"The chance (out of 100) for Outpost buildings to generate on planets. (default: 35)").getInt();
 		
 		planetUnreachableZollus = configuration.get(CATEGORY_CUSTOMIZATIONS, "Disable Rockets For Planet Zollus", false,
 				"Disable rocket travel for this planet. (default: false)").getBoolean();

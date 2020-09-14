@@ -32,6 +32,8 @@ import zollerngalaxy.blocks.perdita.LostCactus;
 import zollerngalaxy.blocks.perdita.LostReeds;
 import zollerngalaxy.blocks.perdita.ZGBlockGrassPerdita;
 import zollerngalaxy.blocks.perdita.ZGDeadBush;
+import zollerngalaxy.blocks.stationblocks.BlockBlueprintStation;
+import zollerngalaxy.blocks.stationblocks.BlockHealingStation;
 import zollerngalaxy.blocks.sweetblocks.CandyCubeBlock;
 import zollerngalaxy.blocks.sweetblocks.CookieBlock;
 import zollerngalaxy.blocks.sweetblocks.IceCreamSandwichBlock;
@@ -583,7 +585,12 @@ public class ZGBlocks {
 	
 	// Space Station Blocks
 	public static final Block blockSpaceStation = new ZGBlockBase("spacestationblock", 1.5F).setBlockType(EnumBlockType.SPACE);
+	public static final Block blockOutpost = new ZGBlockBase("outpostblock", 2.8F).setBlockType(EnumBlockType.SPACE).setLightLevel(1.0F);
 	public static final Block blockLore = new LoreBlock();
+	
+	// Station Blocks
+	public static final Block blockBlueprintStation = new BlockBlueprintStation();
+	public static final Block blockHealingStation = new BlockHealingStation();
 	
 	public static void init() {
 		ZGBlocks.registerBlocks(edenLovetreeSapling, edenGoldenWoodSapling, edenParadiseWoodSapling, edenWoodSapling, edenFruit, edenFlower,
@@ -618,20 +625,20 @@ public class ZGBlocks {
 				blockCompressedPromethean, blockCompressedSuperChargedCoal, blockCompressedZucrite, blockCompressedRhodium, candyCubeWhite,
 				candyCubeBlack, candyCubeGray, candyCubeOrange, candyCubeBrown, candyCubeRed, candyCubeBlue, candyCubeYellow,
 				candyCubePurple, candyCubeCyan, candyCubePink, candyCubeGreen, blockChocolate, blockChocolateBricks, blockCookie,
-				blockBrownie, blockIceCreamSandwich, blockSugarCube, blockSpaceStation, blockLore, perdSand, perdRock, perdStone,
-				perdCobble, perdRockBricks, perdGravel, perdCreepDirt, perdSoil, perdDirt, perdTallGrass, perdGrass, perdCreepStone,
-				perdGlowstone, perdCaveStone, perdCaveStoneBricks, perdCactus, perdReeds, perdDeadBush, perdDiamondOre, perdEtriumOre,
-				perdIronOre, perdGoldOre, perdZollerniumOre, perdFueltoniumOre, perdTreeSapling, perdWoodLogs, perdWoodLeaves,
-				perdWoodPlanks, altumRock, altumSand, altumDirt, altumCobble, altumStone, altumGravel, altumSeaweed, altumCoalOre,
-				altumIronOre, altumGoldOre, altumRedstoneOre, altumDiamondOre, altumZollerniumOre, altumEveniumOre, altumRhodiumOre,
-				altumAmaranthOre, caligroSurfaceRock, caligroRock, caligroCobblestone, caligroCobblestoneMossy, caligroStone,
-				caligroStoneBricks, caligroGravel, caligroDirt, witherrack, caligroCreepstone, caligroCreepdirt, caligroWitheriteOre,
-				caligroShiniumOre, caligroSilverOre, caligroNickelOre, caligroLeadOre, caligroTinOre, caligroCopperOre, caligroIronOre,
-				caligroGoldOre, caligroRedstoneOre, caligroAmaranthOre, caligroZincOre, caligroAmberOre, caligroTopazOre, caligroOpalOre,
-				caligroAquamarineOre, caligroGarnetOre, caligroSuperChargedCoalOre, caligroFueltoniumOre, caligroDiamondOre,
+				blockBrownie, blockIceCreamSandwich, blockSugarCube, blockSpaceStation, blockOutpost, blockLore, perdSand, perdRock,
+				perdStone, perdCobble, perdRockBricks, perdGravel, perdCreepDirt, perdSoil, perdDirt, perdTallGrass, perdGrass,
+				perdCreepStone, perdGlowstone, perdCaveStone, perdCaveStoneBricks, perdCactus, perdReeds, perdDeadBush, perdDiamondOre,
+				perdEtriumOre, perdIronOre, perdGoldOre, perdZollerniumOre, perdFueltoniumOre, perdTreeSapling, perdWoodLogs,
+				perdWoodLeaves, perdWoodPlanks, altumRock, altumSand, altumDirt, altumCobble, altumStone, altumGravel, altumSeaweed,
+				altumCoalOre, altumIronOre, altumGoldOre, altumRedstoneOre, altumDiamondOre, altumZollerniumOre, altumEveniumOre,
+				altumRhodiumOre, altumAmaranthOre, caligroSurfaceRock, caligroRock, caligroCobblestone, caligroCobblestoneMossy,
+				caligroStone, caligroStoneBricks, caligroGravel, caligroDirt, witherrack, caligroCreepstone, caligroCreepdirt,
+				caligroWitheriteOre, caligroShiniumOre, caligroSilverOre, caligroNickelOre, caligroLeadOre, caligroTinOre, caligroCopperOre,
+				caligroIronOre, caligroGoldOre, caligroRedstoneOre, caligroAmaranthOre, caligroZincOre, caligroAmberOre, caligroTopazOre,
+				caligroOpalOre, caligroAquamarineOre, caligroGarnetOre, caligroSuperChargedCoalOre, caligroFueltoniumOre, caligroDiamondOre,
 				caligroEmeraldOre, caligroRadiumOre, caligroLapisOre, caligroZollerniumOre, caligroRubyOre, spiderlingEgg,
 				shadowBossSpawner, corruptRock, corruptCobble, corruptStone, corruptStoneBricks, corruptAscendiumOre, corruptEtriumOre,
-				corruptChargiumOre, corruptCreepstone);
+				corruptChargiumOre, corruptCreepstone, blockBlueprintStation, blockHealingStation);
 		ZGHelper.Log("Loaded a total of " + totalBlocks + " new blocks.");
 	}
 	

@@ -8,18 +8,47 @@
 package zollerngalaxy.biomes.decorators;
 
 import java.util.Random;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeDecorator;
 import net.minecraft.world.gen.feature.WorldGenerator;
+import zollerngalaxy.biomes.BiomeSpace;
+import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.core.enums.EnumOreGenZG;
+import zollerngalaxy.worldgen.WorldGenOutpost;
 
 public abstract class BiomeDecoratorZG extends BiomeDecorator {
+	
+	protected int outpostsPerChunk = 1;
+	protected boolean generateOutposts = true;
 	
 	@Override
 	protected void genDecorations(Biome biome, World world, Random rand) {
 		this.generate(biome, world, rand);
+		int x = rand.nextInt(16) + 8;
+		int z = rand.nextInt(16) + 8;
+		int genY = 248;
+		int y = genY;
+		
+		IBlockState BLOCK_TOP = biome.topBlock;
+		IBlockState BLOCK_FILL = biome.fillerBlock;
+		IBlockState BLOCK_STONE = ZGBlocks.blockSpaceStation.getDefaultState();
+		
+		if (biome instanceof BiomeSpace) {
+			BiomeSpace spaceBiome = (BiomeSpace) biome;
+			BLOCK_STONE = spaceBiome.getStoneBlock().getDefaultState();
+		}
+		
+		if (this.generateOutposts && this.outpostsPerChunk > 0) {
+			WorldGenerator outpostGen = new WorldGenOutpost(BLOCK_STONE, BLOCK_FILL);
+			for (int i = 0; i < this.outpostsPerChunk; i++) {
+				if (rand.nextInt(100) <= 25) {
+					outpostGen.generate(world, rand, this.chunkPos);
+				}
+			}
+		}
 	}
 	
 	@Override
@@ -44,8 +73,7 @@ public abstract class BiomeDecoratorZG extends BiomeDecorator {
 		}
 		
 		for (int j = 0; j < blockCount; ++j) {
-			BlockPos blockpos = this.chunkPos.add(rand.nextInt(16), rand.nextInt(maxHeight - minHeight) + minHeight,
-					rand.nextInt(16));
+			BlockPos blockpos = this.chunkPos.add(rand.nextInt(16), rand.nextInt(maxHeight - minHeight) + minHeight, rand.nextInt(16));
 			generator.generate(world, rand, blockpos);
 		}
 	}
@@ -56,8 +84,8 @@ public abstract class BiomeDecoratorZG extends BiomeDecorator {
 	
 	protected void generateLapis(WorldGenerator generator, int blockCount, int centerHeight, int spread, World world, Random rand) {
 		for (int i = 0; i < blockCount; ++i) {
-			BlockPos blockpos = this.chunkPos.add(rand.nextInt(16), rand.nextInt(spread) + rand.nextInt(spread) + centerHeight
-					- spread, rand.nextInt(16));
+			BlockPos blockpos = this.chunkPos.add(rand.nextInt(16), rand.nextInt(spread) + rand.nextInt(spread) + centerHeight - spread,
+					rand.nextInt(16));
 			generator.generate(world, rand, blockpos);
 		}
 	}

@@ -1,6 +1,15 @@
 ===== CHANGELOG =====
-Zollern Galaxy v2.0.18
+Zollern Galaxy v2.0.20
 =====================
 
-* Updated Russian translations by mMONTAGEe.
-* Fixed "invalid version" visual bug.
+* Added Outpost generation to Eden.
+    - Serves as a "safe house" that the Player can hide in.
+    - Will eventually be on all planets.
+    - Percentage of generation is controllable via config.
+* Modified block explosion mechanics.
+* Added a mechanic to change sand blocks to glass when they're struck by lightning.
+* Added config options to toggle enabling of Tinker's Construct materials to prevent mod compat issues.
+* Added the Blueprint Station and Healing Station blocks to Outposts.
+    - Blueprint Stations will repair the held Blueprint Item when right-clicked.
+    - Healing Stations will heal the Player's health completely.
+* 

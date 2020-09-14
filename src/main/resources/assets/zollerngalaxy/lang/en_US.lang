@@ -358,6 +358,7 @@ tile.heartblock.name=Healing Station
 tile.blueprintblock.name=Blueprint Repair Station
 
 tile.spacestationblock.name=Space Station Block
+tile.outpostblock.name=Outpost Block
 tile.loreblock.name=Lore Block
 
 tile.compressedprometheanblock.name=Block of Compressed Promethean
@@ -709,7 +710,15 @@ tooltips.newhealth=Max Health
 tooltips.newhealth2=Max Health Now:
 tooltips.hearts=hearts
 
+tooltips.blueprintrepaired=Your blueprint has been repaired.
+tooltips.blueprintfine=This blueprint is not damaged.
+
 tooltips.buildheight=This would exceed the build height of 256.
+
+tooltips.blueprintstation1=Right-click with a damaged
+tooltips.blueprintstation2=Blueprint to repair it.
+
+tooltips.healthstation=Right-click to heal yourself.
 
 planet.zollus=Zollus
 planet.eden=Eden

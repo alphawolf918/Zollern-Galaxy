@@ -26,6 +26,7 @@ import zollerngalaxy.lib.helpers.ZGDecorateHelper;
 import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.worldgen.WorldGenLakesZG;
 import zollerngalaxy.worldgen.WorldGenMinableZG;
+import zollerngalaxy.worldgen.WorldGenOutpost;
 import zollerngalaxy.worldgen.WorldGenTallGrassZG;
 import zollerngalaxy.worldgen.WorldGenZGMushroomTree;
 import zollerngalaxy.worldgen.eden.WorldGenEdenFlowers;
@@ -73,6 +74,7 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 	public int mushroomTreesPerChunk = 0;
 	public int lavaLakesPerChunk = 1;
 	public int waterLakesPerChunk = 4;
+	public int outpostsPerChunk = 1;
 	
 	private WorldGenerator pumpkinGen = new WorldGenEdenPumpkins();
 	private WorldGenerator tallGrassGen = new WorldGenTallGrassZG((ZGBlockTallGrass) ZGBlocks.edenTallGrass);
@@ -99,6 +101,7 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 	public boolean generateTrees = true;
 	public boolean generateMushroomTrees = false;
 	public boolean generatePumpkins = false;
+	public boolean generateOutposts = true;
 	
 	public BiomeDecoratorEden() {
 		this.dirtGen = new WorldGenMinableZG(ZGBlocks.edenSoil, ZGBlocks.edenSurfaceRock, EnumOreGenZG.DIRT);
@@ -349,6 +352,19 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 			if (y >= 62) {
 				if (rand.nextInt(700) <= 90) {
 					giantBoneGen.generate(world, rand, this.chunkPos.add(x, y, z));
+				}
+			}
+		}
+		
+		if (this.generateOutposts && this.outpostsPerChunk > 0) {
+			y = rand.nextInt(rand.nextInt(genY) + 8);
+			if (y >= 62) {
+				WorldGenerator outpostGen = new WorldGenOutpost(ZGBlocks.blockOutpost.getDefaultState(),
+						ZGBlocks.blockOutpost.getDefaultState());
+				for (int i = 0; i < this.outpostsPerChunk; i++) {
+					if (rand.nextInt(100) <= 35) {
+						outpostGen.generate(world, rand, this.chunkPos.add(x, y, z));
+					}
 				}
 			}
 		}

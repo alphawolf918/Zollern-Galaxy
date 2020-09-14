@@ -229,7 +229,7 @@ public class ZGBlockBase extends Block implements ISingleZGBlockRender, IJSONBlo
 	public void onBlockDestroyedByPlayer(World worldIn, BlockPos pos, IBlockState state) {
 		if (!worldIn.isRemote) {
 			if (this.getShouldExplode()) {
-				if (rand.nextInt(this.getExplosionChance()) <= 6) {
+				if (rand.nextInt(100) <= this.getExplosionChance()) {
 					worldIn.createExplosion(null, pos.getX(), pos.getY(), pos.getZ(), 2.5F, true);
 				}
 			}

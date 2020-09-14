@@ -13,16 +13,19 @@ import micdoodle8.mods.galacticraft.api.prefab.world.gen.WorldProviderSpace;
 import micdoodle8.mods.galacticraft.core.entities.EntityAlienVillager;
 import micdoodle8.mods.galacticraft.core.util.DamageSourceGC;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockSand;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.effect.EntityLightningBolt;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.init.MobEffects;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.DamageSource;
@@ -55,6 +58,7 @@ import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import zollerngalaxy.blocks.ZGBlockDirt;
 import zollerngalaxy.blocks.ZGBlockGrass;
+import zollerngalaxy.blocks.ZGSand;
 import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.ZGLootTables;
 import zollerngalaxy.core.ZollernGalaxyCore;
@@ -197,13 +201,14 @@ public class ZGEvents {
 				if (armorStack != null) {
 					if (armorStack.getItem() instanceof ZGArmor) {
 						ZGArmor armorItem = (ZGArmor) armorStack.getItem();
-						if (armorItem.getArmorMaterial() == ZGArmorMats.AMARANTH) {
+						ArmorMaterial armorMat = armorItem.getArmorMaterial();
+						if (armorMat == ZGArmorMats.AMARANTH) {
 							amArmorCount++;
-						} else if (armorItem.getArmorMaterial() == ZGArmorMats.ZOLLERNIUM) {
+						} else if (armorMat == ZGArmorMats.ZOLLERNIUM) {
 							zArmorCount++;
-						} else if (armorItem.getArmorMaterial() == ZGArmorMats.AZURITE) {
+						} else if (armorMat == ZGArmorMats.AZURITE) {
 							azArmorCount++;
-						} else if (armorItem.getArmorMaterial() == ZGArmorMats.RADIUM) {
+						} else if (armorMat == ZGArmorMats.RADIUM) {
 							rArmorCount++;
 						}
 					}
@@ -211,7 +216,7 @@ public class ZGEvents {
 			}
 			
 			// Loop through 0 to 4 and if an armor set's increment variable is
-			// equal to 4, add its respective potion effect.
+			// equal to 4; add its respective potion effect.
 			for (int i = 0; i < 4; ++i) {
 				if (amArmorCount == 4) {
 					// Amaranth
@@ -226,13 +231,15 @@ public class ZGEvents {
 				} else if (rArmorCount == 4) {
 					// Radium
 					player.addPotionEffect(new PotionEffect(ZGPotions.radiance, 100, 1));
-					player.capabilities.allowFlying = true;
+					if (ConfigManagerZG.enableRadianceFlying) {
+						player.capabilities.allowFlying = true;
+					}
 				} else {
 					// Disable all "extra" potion capabilities that have nothing
 					// to do with effects. If we don't do this, then the armor's
 					// effects (not the potion's, but the armor's) will last.
 					player.stepHeight = 0.5F;
-					if (!player.capabilities.isCreativeMode) {
+					if (!player.capabilities.isCreativeMode && ConfigManagerZG.enableRadianceFlying) {
 						player.capabilities.allowFlying = false;
 					}
 				}
@@ -244,18 +251,21 @@ public class ZGEvents {
 	@SubscribeEvent(priority = EventPriority.HIGH, receiveCanceled = true)
 	public void onNameFormatEvent(NameFormat event) {
 		String username = event.getUsername();
-		if (username.toLowerCase().equals("alphawolf918")) {
+		username = username.toLowerCase();
+		if (username.equals("alphawolf918")) {
 			event.setDisplayname(TextFormatting.GOLD + "Zollern Wolf" + TextFormatting.WHITE);
-		} else if (username.toLowerCase().equals("nascarmpfan")) {
+		} else if (username.equals("nascarmpfan")) {
 			event.setDisplayname(TextFormatting.RED + "Mike" + TextFormatting.WHITE);
-		} else if (username.toLowerCase().equals("applepiec00kie")) {
+		} else if (username.equals("applepiec00kie")) {
 			event.setDisplayname(TextFormatting.LIGHT_PURPLE + "Queen Apple" + TextFormatting.WHITE);
-		} else if (username.toLowerCase().equals("lazy_logic")) {
+		} else if (username.equals("lazy_logic")) {
 			event.setDisplayname(TextFormatting.AQUA + "Logic" + TextFormatting.WHITE);
-		} else if (username.toLowerCase().equals("master_zane")) {
+		} else if (username.equals("master_zane")) {
 			event.setDisplayname(TextFormatting.GOLD + "Master Zane" + TextFormatting.WHITE);
-		} else if (username.toLowerCase().equals("chronoxshift")) {
+		} else if (username.equals("chronoxshift")) {
 			event.setDisplayname(TextFormatting.BLACK + "ChronoxShift" + TextFormatting.WHITE);
+		} else if (username.equals("koalayucheng")) {
+			event.setDisplayname(TextFormatting.GOLD + "ExistingEevee" + TextFormatting.WHITE);
 		}
 	}
 	
@@ -328,8 +338,20 @@ public class ZGEvents {
 				if (this.core.isInTestMode() || this.core.isInDevMode()) {
 					String txtFormat = TextFormatting.BOLD + " " + TextFormatting.RED;
 					String msg = txtFormat + "WARNING: This is NOT a valid version of Zollern Galaxy! "
-							+ "Please uninstall the mod and install the correct version, or it will not operate correctly.";
+							+ "Please uninstall the mod and install the correct version, or it will not operate correctly. "
+							+ "Please also contact the mod author immediately!";
 					this.proxy.sendChatMessage(player, msg);
+				}
+			}
+			
+			// Turn sand blocks to glass when struck by lightning
+			if (ent instanceof EntityLightningBolt) {
+				EntityLightningBolt bolt = (EntityLightningBolt) ent;
+				BlockPos boltPos = bolt.getPosition();
+				IBlockState posState = world.getBlockState(boltPos);
+				Block stateBlock = posState.getBlock();
+				if (stateBlock instanceof BlockSand || stateBlock instanceof ZGSand) {
+					world.setBlockState(boltPos, Blocks.GLASS.getDefaultState());
 				}
 			}
 		}

@@ -9,6 +9,7 @@ package zollerngalaxy.items.tools.power;
 
 import java.util.List;
 import javax.annotation.Nullable;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.effect.EntityLightningBolt;
 import net.minecraft.entity.player.EntityPlayer;
@@ -52,6 +53,7 @@ public class ItemThorSword extends ZGItemSword {
 		BlockPos spawnPos = new BlockPos(vecPos.getX(), vecPos.getY(), vecPos.getZ());
 		for (int l = 0; l < 4; l += 4) {
 			worldIn.spawnEntity(new EntityLightningBolt(worldIn, vecPos.getX(), vecPos.getY(), vecPos.getZ() + l, false));
+			IBlockState state = worldIn.getBlockState(vecPos);
 		}
 		if (!playerIn.capabilities.isCreativeMode) {
 			itemstack.damageItem(5, playerIn);
