@@ -20,11 +20,13 @@ import net.minecraftforge.event.terraingen.DecorateBiomeEvent;
 import net.minecraftforge.event.terraingen.TerrainGen;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.blocks.ZGWaterGrass;
+import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.ZGLootTables;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderAltum;
 import zollerngalaxy.core.enums.EnumOreGenZG;
 import zollerngalaxy.worldgen.WorldGenLakesZG;
 import zollerngalaxy.worldgen.WorldGenMinableZG;
+import zollerngalaxy.worldgen.WorldGenOutpost;
 import zollerngalaxy.worldgen.WorldGenTreasure;
 import zollerngalaxy.worldgen.WorldGenWaterGrass;
 
@@ -72,6 +74,8 @@ public class BiomeDecoratorAltum extends BiomeDecoratorZG {
 	protected void generate(Biome biome, World world, Random rand) {
 		int x = rand.nextInt(16) + 8;
 		int z = rand.nextInt(16) + 8;
+		int genY = 248;
+		int y = genY;
 		
 		this.generateOre(this.amaranthGen, EnumOreGenZG.AMARANTH, world, rand);
 		this.generateOre(this.redstoneGen, EnumOreGenZG.REDSTONE, world, rand);
@@ -128,6 +132,19 @@ public class BiomeDecoratorAltum extends BiomeDecoratorZG {
 					if (y1 > 0) {
 						int y2 = rand.nextInt(y1);
 						this.seaweedGen.generate(world, rand, this.chunkPos.add(x1, y2, z1));
+					}
+				}
+			}
+		}
+		
+		if (this.generateOutposts && this.outpostsPerChunk > 0) {
+			y = rand.nextInt(rand.nextInt(genY) + 8);
+			if (y >= 62) {
+				WorldGenerator outpostGen = new WorldGenOutpost(ZGBlocks.blockOutpost.getDefaultState(),
+						ZGBlocks.blockOutpost.getDefaultState());
+				for (int i = 0; i < this.outpostsPerChunk; i++) {
+					if (rand.nextInt(100) <= ConfigManagerZG.outpostGenChance) {
+						outpostGen.generate(world, rand, this.chunkPos.add(x, y, z));
 					}
 				}
 			}

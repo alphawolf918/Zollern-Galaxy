@@ -14,8 +14,8 @@ import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeDecorator;
 import net.minecraft.world.gen.feature.WorldGenerator;
-import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.blocks.ZGBlocks;
+import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.enums.EnumOreGenZG;
 import zollerngalaxy.worldgen.WorldGenOutpost;
 
@@ -32,19 +32,12 @@ public abstract class BiomeDecoratorZG extends BiomeDecorator {
 		int genY = 248;
 		int y = genY;
 		
-		IBlockState BLOCK_TOP = biome.topBlock;
-		IBlockState BLOCK_FILL = biome.fillerBlock;
-		IBlockState BLOCK_STONE = ZGBlocks.blockSpaceStation.getDefaultState();
-		
-		if (biome instanceof BiomeSpace) {
-			BiomeSpace spaceBiome = (BiomeSpace) biome;
-			BLOCK_STONE = spaceBiome.getStoneBlock().getDefaultState();
-		}
+		IBlockState BLOCK_OUTPOST = ZGBlocks.blockOutpost.getDefaultState();
 		
 		if (this.generateOutposts && this.outpostsPerChunk > 0) {
-			WorldGenerator outpostGen = new WorldGenOutpost(BLOCK_STONE, BLOCK_FILL);
+			WorldGenerator outpostGen = new WorldGenOutpost(BLOCK_OUTPOST, BLOCK_OUTPOST);
 			for (int i = 0; i < this.outpostsPerChunk; i++) {
-				if (rand.nextInt(100) <= 25) {
+				if (rand.nextInt(100) <= ConfigManagerZG.outpostGenChance) {
 					outpostGen.generate(world, rand, this.chunkPos);
 				}
 			}

@@ -16,9 +16,11 @@ import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.blocks.fluids.ZGFluids;
+import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.enums.EnumOreGenZG;
 import zollerngalaxy.worldgen.WorldGenLakesZG;
 import zollerngalaxy.worldgen.WorldGenMinableZG;
+import zollerngalaxy.worldgen.WorldGenOutpost;
 
 public class BiomeDecoratorCandora extends BiomeDecoratorZG {
 	
@@ -47,24 +49,18 @@ public class BiomeDecoratorCandora extends BiomeDecoratorZG {
 		this.brownGen = new WorldGenMinableZG(ZGBlocks.candyCubeBrown, ZGBlocks.candyCubeGray, EnumOreGenZG.CANDY.setGenCount(35));
 		this.redGen = new WorldGenMinableZG(ZGBlocks.candyCubeRed, ZGBlocks.candyCubeGray, EnumOreGenZG.CANDY.setGenCount(45));
 		this.whiteGen = new WorldGenMinableZG(ZGBlocks.candyCubeWhite, ZGBlocks.candyCubeGray, EnumOreGenZG.CANDY.setGenCount(55));
-		this.orangeGen = new WorldGenMinableZG(ZGBlocks.candyCubeOrange, ZGBlocks.candyCubeGray,
-				EnumOreGenZG.CANDY.setGenCount(35));
+		this.orangeGen = new WorldGenMinableZG(ZGBlocks.candyCubeOrange, ZGBlocks.candyCubeGray, EnumOreGenZG.CANDY.setGenCount(35));
 		this.blackGen = new WorldGenMinableZG(ZGBlocks.candyCubeBlack, ZGBlocks.candyCubeGray, EnumOreGenZG.CANDY.setGenCount(30));
-		this.purpleGen = new WorldGenMinableZG(ZGBlocks.candyCubePurple, ZGBlocks.candyCubePurple,
-				EnumOreGenZG.CANDY.setGenCount(35));
+		this.purpleGen = new WorldGenMinableZG(ZGBlocks.candyCubePurple, ZGBlocks.candyCubePurple, EnumOreGenZG.CANDY.setGenCount(35));
 		this.blueGen = new WorldGenMinableZG(ZGBlocks.candyCubeBlue, ZGBlocks.candyCubeGray, EnumOreGenZG.CANDY.setGenCount(30));
-		this.yellowGen = new WorldGenMinableZG(ZGBlocks.candyCubeYellow, ZGBlocks.candyCubeGray,
-				EnumOreGenZG.CANDY.setGenCount(25));
+		this.yellowGen = new WorldGenMinableZG(ZGBlocks.candyCubeYellow, ZGBlocks.candyCubeGray, EnumOreGenZG.CANDY.setGenCount(25));
 		this.cyanGen = new WorldGenMinableZG(ZGBlocks.candyCubeCyan, ZGBlocks.candyCubeGray, EnumOreGenZG.CANDY.setGenCount(15));
 		this.greenGen = new WorldGenMinableZG(ZGBlocks.candyCubeGreen, ZGBlocks.candyCubeGray, EnumOreGenZG.CANDY.setGenCount(15));
 		this.pinkGen = new WorldGenMinableZG(ZGBlocks.candyCubePink, ZGBlocks.candyCubeGray, EnumOreGenZG.CANDY.setGenCount(35));
-		this.chocolateGen = new WorldGenMinableZG(ZGBlocks.blockCookie, ZGBlocks.candyCubeGray,
-				EnumOreGenZG.SWEET.setGenCount(25));
-		this.cookieGen = new WorldGenMinableZG(ZGBlocks.blockChocolate, ZGBlocks.candyCubeGray,
-				EnumOreGenZG.SWEET.setGenCount(16));
+		this.chocolateGen = new WorldGenMinableZG(ZGBlocks.blockCookie, ZGBlocks.candyCubeGray, EnumOreGenZG.SWEET.setGenCount(25));
+		this.cookieGen = new WorldGenMinableZG(ZGBlocks.blockChocolate, ZGBlocks.candyCubeGray, EnumOreGenZG.SWEET.setGenCount(16));
 		this.brownieGen = new WorldGenMinableZG(ZGBlocks.blockBrownie, ZGBlocks.candyCubeGray, EnumOreGenZG.SWEET.setGenCount(18));
-		this.sugarCubeGen = new WorldGenMinableZG(ZGBlocks.blockSugarCube, ZGBlocks.candyCubeGray,
-				EnumOreGenZG.SWEET.setGenCount(20));
+		this.sugarCubeGen = new WorldGenMinableZG(ZGBlocks.blockSugarCube, ZGBlocks.candyCubeGray, EnumOreGenZG.SWEET.setGenCount(20));
 		this.iceCreamSandwichGen = new WorldGenMinableZG(ZGBlocks.blockIceCreamSandwich, ZGBlocks.candyCubeGray,
 				EnumOreGenZG.SWEET.setGenCount(5));
 	}
@@ -103,10 +99,22 @@ public class BiomeDecoratorCandora extends BiomeDecoratorZG {
 			for (int i = 0; i < this.chocolateLakesPerChunk; ++i) {
 				y = rand.nextInt(rand.nextInt(genY) + 8);
 				
-				Block blockToUse = (biome.getTempCategory() == TempCategory.COLD) ? ZGBlocks.candyCubeCyan
-						: ZGFluids.blockChocolateFluid;
+				Block blockToUse = (biome.getTempCategory() == TempCategory.COLD) ? ZGBlocks.candyCubeCyan : ZGFluids.blockChocolateFluid;
 				
 				(new WorldGenLakesZG(blockToUse, BLOCK_TOP)).generate(world, rand, this.chunkPos.add(x, y, z));
+			}
+		}
+		
+		if (this.generateOutposts && this.outpostsPerChunk > 0) {
+			y = rand.nextInt(rand.nextInt(genY) + 8);
+			if (y >= 62) {
+				WorldGenerator outpostGen = new WorldGenOutpost(ZGBlocks.blockOutpost.getDefaultState(),
+						ZGBlocks.blockOutpost.getDefaultState());
+				for (int i = 0; i < this.outpostsPerChunk; i++) {
+					if (rand.nextInt(100) <= ConfigManagerZG.outpostGenChance) {
+						outpostGen.generate(world, rand, this.chunkPos.add(x, y, z));
+					}
+				}
 			}
 		}
 	}

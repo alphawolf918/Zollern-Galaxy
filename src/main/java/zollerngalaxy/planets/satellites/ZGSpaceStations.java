@@ -17,6 +17,7 @@ import net.minecraft.world.WorldProvider;
 import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitAltum;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitAtheon;
+import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitCaligro;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitCandora;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitEden;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitKriffon;
@@ -51,6 +52,7 @@ public class ZGSpaceStations {
 	// Sol-2
 	public static ZGSpaceStation PERDITA_SPACE_STATION;
 	public static ZGSpaceStation ALTUM_SPACE_STATION;
+	public static ZGSpaceStation CALIGRO_SPACE_STATION;
 	
 	public static void init() {
 		ZGSpaceStations.initSpaceStations();
@@ -125,6 +127,11 @@ public class ZGSpaceStations {
 		ALTUM_SPACE_STATION.setDimensionInfo(ConfigManagerZG.spaceStationAltumId, ConfigManagerZG.spaceStationAltumStaticId,
 				WorldProviderOrbitAltum.class);
 		totalSpaceStations++;
+		
+		// Sol-2 (Caligro)
+		CALIGRO_SPACE_STATION = new ZGSpaceStation("caligro", ZGPlanets.planetCaligro);
+		CALIGRO_SPACE_STATION.setDimensionInfo(ConfigManagerZG.spaceStationCaligroId, ConfigManagerZG.spaceStationCaligroStaticId,
+				WorldProviderOrbitCaligro.class);
 	}
 	
 	private static void registerSpaceStations() {
@@ -171,6 +178,10 @@ public class ZGSpaceStations {
 		// Sol-2 (Altum)
 		ZGSpaceStations.registerSpaceStation(ALTUM_SPACE_STATION, "Altum Space Station", "_altum_orbit", WorldProviderOrbitAltum.class,
 				ConfigManagerZG.spaceStationAltumId, ConfigManagerZG.spaceStationAltumStaticId);
+		
+		// Sol-2 (Caligro)
+		ZGSpaceStations.registerSpaceStation(CALIGRO_SPACE_STATION, "Caligro Space Station", "_caligro_orbit",
+				WorldProviderOrbitCaligro.class, ConfigManagerZG.spaceStationCaligroId, ConfigManagerZG.spaceStationCaligroStaticId);
 	}
 	
 	public static void registerSpaceStationRecipes() {
@@ -263,6 +274,15 @@ public class ZGSpaceStations {
 		inputMap.put(new ItemStack(ZGItems.ascendium, 1, 0), 24);
 		inputMap.put(ZGItems.compressedZucrite, 24);
 		ZGRecipeHelper.addSpaceStationRecipe(ConfigManagerZG.spaceStationAltumId, ConfigManagerZG.planetAltumDimensionId, inputMap);
+		
+		// Sol-2 (Caligro)
+		inputMap = new HashMap<Object, Integer>();
+		inputMap = new HashMap<Object, Integer>();
+		inputMap.put("ingotRhodium", 32);
+		inputMap.put("waferAdvanced", 1);
+		inputMap.put(new ItemStack(ZGItems.witherite, 4, 0), 24);
+		inputMap.put(ZGItems.compressedAscendantAmaranth, 24);
+		ZGRecipeHelper.addSpaceStationRecipe(ConfigManagerZG.spaceStationCaligroId, ConfigManagerZG.planetCaligroDimensionId, inputMap);
 	}
 	
 	private static void registerSpaceStation(ZGSpaceStation spaceStation, String stationName, String stationStringId,

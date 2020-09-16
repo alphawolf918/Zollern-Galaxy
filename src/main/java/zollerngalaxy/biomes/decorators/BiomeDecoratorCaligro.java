@@ -16,11 +16,13 @@ import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.blocks.ZGBlocks;
+import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderCaligro;
 import zollerngalaxy.core.enums.EnumOreGenZG;
 import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.mobs.entities.EntityFaceless;
 import zollerngalaxy.worldgen.WorldGenMinableZG;
+import zollerngalaxy.worldgen.WorldGenOutpost;
 import zollerngalaxy.worldgen.caligro.WorldGenShadowShrine;
 import zollerngalaxy.worldgen.caligro.WorldGenShadowSkull;
 import zollerngalaxy.worldgen.caligro.WorldGenSpiderEgg;
@@ -284,6 +286,19 @@ public class BiomeDecoratorCaligro extends BiomeDecoratorZG {
 		// Craters
 		if (this.generateCraters) {
 			ChunkProviderCaligro.INSTANCE.createCraters(x, z, chunkPrimer);
+		}
+		
+		if (this.generateOutposts && this.outpostsPerChunk > 0) {
+			y = rand.nextInt(rand.nextInt(genY) + 8);
+			if (y >= 62) {
+				WorldGenerator outpostGen = new WorldGenOutpost(ZGBlocks.blockOutpost.getDefaultState(),
+						ZGBlocks.blockOutpost.getDefaultState());
+				for (int i = 0; i < this.outpostsPerChunk; i++) {
+					if (rand.nextInt(100) <= ConfigManagerZG.outpostGenChance) {
+						outpostGen.generate(world, rand, this.chunkPos.add(x, y, z));
+					}
+				}
+			}
 		}
 	}
 }

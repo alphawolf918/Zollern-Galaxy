@@ -85,13 +85,11 @@ public class ZGLore {
 				"Since then, they simply wander planets, building villages and offering goods to anyone who will barter.",
 				"Oddly enough, they are known for their peacefulness.", "However, they still remain a target for many other alien races.");
 		
-		BOOK_TWO = ZGLore
-				.createLoreBook(2, "Nature Beings", "Magmos and Frost Giants are actually considered part of the planet itself.",
-						"Magmos thrive on the scalding hot temperatures in Kriffon, while Frost Giants"
-								+ " survive off of extreme cold on Zollus.",
-						"If a Magmos gets too cold, or a Frost Giant too hot, they will die.",
-						"Though sentient and very strong, they are nothing more than essentially the protectors of their planets.",
-						"They do not like things that do not belong, such as the Player, or the Vranor.");
+		BOOK_TWO = ZGLore.createLoreBook(2, "Nature Beings", "Magmos and Frost Giants are actually considered part of the planet itself.",
+				"Magmos thrive on the scalding hot temperatures in Kriffon, while Frost Giants" + " survive off of extreme cold on Zollus.",
+				"If a Magmos gets too cold, or a Frost Giant too hot, they will die.",
+				"Though sentient and very strong, they are nothing more than essentially the protectors of their planets.",
+				"They do not like things that do not belong, such as the Player, or the Vranor.");
 		
 		BOOK_THREE = ZGLore.createLoreBook(3, "Tech Planets",
 				"Planets Xantheon and Atheon are artificial planets that were created by the Grays.",
@@ -144,24 +142,29 @@ public class ZGLore {
 				"They grow as plants, stemming from deep into the ground.", "The Heart of Zol, or Heartium, can also be found here.",
 				"Zol was believed to be the first Frost Giant, and therefore the planet is named after him.");
 		
-		BOOK_NINE = ZGLore.createLoreBook(9, "Planet Kriffon", "Kriffon is a bright but gloomy hellscape, "
-				+ "populated by volcanic entities called the Magmos.", "The metal Cobalt can be found here.",
+		BOOK_NINE = ZGLore.createLoreBook(9, "Planet Kriffon",
+				"Kriffon is a bright but gloomy hellscape, " + "populated by volcanic entities called the Magmos.",
+				"The metal Cobalt can be found here.",
 				"The planet was named after the Kriff: "
 						+ "a race of red-skinned entities that drove their planet to extinction with their rapid evolution "
-						+ "and then had to escape.", "They are said to be a plague, conquering planet after planet within days.",
+						+ "and then had to escape.",
+				"They are said to be a plague, conquering planet after planet within days.",
 				"Kriffon is the closest to its star in the Psios-6 system.");
 		
 		BOOK_TEN = ZGLore.createLoreBook(10, "Planet Purgot", "Purgot was once believed to be a separate dimension called Purgatory.",
 				"This likely comes from the name of one of its biomes, " + "with another biome being called Limbo.",
-				"It is an icy planet, but it is rich with fauna.", "The primary metal here is Evenium, "
-						+ "and can be found deep inside of its caves.", "Ancient astronauts used to tell stories to "
-						+ "humans of how trapped souls would be sent here either to learn a lesson," + " or to await their judgment.");
+				"It is an icy planet, but it is rich with fauna.",
+				"The primary metal here is Evenium, " + "and can be found deep inside of its caves.",
+				"Ancient astronauts used to tell stories to " + "humans of how trapped souls would be sent here either to learn a lesson,"
+						+ " or to await their judgment.");
 		
-		BOOK_ELEVEN = ZGLore.createLoreBook(11, "Planet Xathius", "Xathius is a strange but beautiful planet, "
-				+ "located in the Praedyth system.", "Its colors are primarily purple and blue, "
-				+ "but there are also some yellows and occasional reds thrown in there as well.",
+		BOOK_ELEVEN = ZGLore.createLoreBook(11, "Planet Xathius",
+				"Xathius is a strange but beautiful planet, " + "located in the Praedyth system.",
+				"Its colors are primarily purple and blue, "
+						+ "but there are also some yellows and occasional reds thrown in there as well.",
 				"Xathius is primarily known for its abundance of Promethean Ore, "
-						+ "which is a very powerful metal in the creation of Star Gates.", "It also has some of the biggest oceans.");
+						+ "which is a very powerful metal in the creation of Star Gates.",
+				"It also has some of the biggest oceans.");
 		
 		BOOK_TWELVE = ZGLore.createLoreBook(12, "Planet Oasis", "Oasis is a paradise planet located in the Praedyth system.",
 				"Some adventurers have reported finding oceans of Destabilized Redstone, "
@@ -172,16 +175,16 @@ public class ZGLore {
 		
 		BOOK_THIRTEEN = ZGLore.createLoreBook(13, "Fueltonium",
 				"Fueltonium is a reactant metal that has been used inside of Big Reactors, " + "and as a replacement for Uranium.",
-				"It is believed to be a greener, cleaner alternative.", "It can also be melted down into a lava-like substance, "
-						+ "though its use is currently undocumented.",
+				"It is believed to be a greener, cleaner alternative.",
+				"It can also be melted down into a lava-like substance, " + "though its use is currently undocumented.",
 				"This metal can be found on the artificially-constructed planet, Xantheon, along with Amaranth Ore.",
 				"It can also be used inside of Turbines.");
 		
-		BOOK_FOURTEEN = ZGLore.createLoreBook(14, "Planet Candora", "Candora is considered an Exotic class planet, "
-				+ "which is a rare class that is usually only found by strange means.",
-				"It is often jokingly referred to as the Birthday Planet.", "It is filled with a Candy Cube landscape, "
-						+ "and has an ocean comprised entirely of melted chocolate.", "No one knows how this is even possible.",
-				"It usually is used as a partying planet, " + "and one of celebration.",
+		BOOK_FOURTEEN = ZGLore.createLoreBook(14, "Planet Candora",
+				"Candora is considered an Exotic class planet, " + "which is a rare class that is usually only found by strange means.",
+				"It is often jokingly referred to as the Birthday Planet.",
+				"It is filled with a Candy Cube landscape, " + "and has an ocean comprised entirely of melted chocolate.",
+				"No one knows how this is even possible.", "It usually is used as a partying planet, " + "and one of celebration.",
 				"Many sweets can be found here, as can many strange anomalies.");
 		
 		BOOK_FIFTEEN = ZGLore.createLoreBook(15, "Plutonium", "Plutonium, often used in Turbines, can be found on planet Xantheon.",
@@ -189,16 +192,17 @@ public class ZGLore {
 				"It also is used in the crafting of a Star Gate to get to planet Atheon, "
 						+ "where the super-metal Zollernium can be found.");
 		
-		BOOK_SIXTEEN = ZGLore.createLoreBook(16, "Ayanna's Father", "Ayanna called to her father in the stars, "
-				+ "but alas he could not hear her.", "He was entranced at the beauty of what he saw, " + "and what he felt.",
-				"\"There are so many of them,\" he had said to his daughter.",
-				"\"I think I'll go into one now, for I am tired, my dear.\"", "After that, he had vanished into a peaceful slumber.",
+		BOOK_SIXTEEN = ZGLore.createLoreBook(16, "Ayanna's Father",
+				"Ayanna called to her father in the stars, " + "but alas he could not hear her.",
+				"He was entranced at the beauty of what he saw, " + "and what he felt.",
+				"\"There are so many of them,\" he had said to his daughter.", "\"I think I'll go into one now, for I am tired, my dear.\"",
+				"After that, he had vanished into a peaceful slumber.",
 				"Legend says that Ayanna still searches for her father in the stars, " + "and that one day, she hopes to bring him home.");
 		
-		BOOK_SEVENTEEN = ZGLore.createLoreBook(17, "Dark Galaxy", "The Dark Galaxy is rumored to be at the center of the universe, "
-				+ "destroying or corrupting all things that it touches.", "Legend tells of adventurers that made it to this place, "
-				+ "but when they came back, they were somehow...different.", "They looked, sounded, acted differently, "
-				+ "as if they were given a task or some menacing purpose to fulfill.",
+		BOOK_SEVENTEEN = ZGLore.createLoreBook(17, "Dark Galaxy",
+				"The Dark Galaxy is rumored to be at the center of the universe, " + "destroying or corrupting all things that it touches.",
+				"Legend tells of adventurers that made it to this place, " + "but when they came back, they were somehow...different.",
+				"They looked, sounded, acted differently, " + "as if they were given a task or some menacing purpose to fulfill.",
 				"It's said that they serve whoever or whatever is inside of that galaxy: sentient dark matter.");
 		
 		BOOK_EIGHTEEN = ZGLore.createLoreBook(18, "Ayanna's Moon", "The moon spoke to Ayanna. It said sweet things to her.",
@@ -211,19 +215,17 @@ public class ZGLore {
 		BOOK_NINETEEN = ZGLore.createLoreBook(19, "Star Queen", "Ayanna's search ended bitterly, " + "for she did not find her father.",
 				"Instead, she came face-to-face with the Dark Galaxy: " + "a whole cluster of dark-matter stars.",
 				"They corrupted and changed her into something else.",
-				"She no longer went by Ayanna anymore, but by Mytra, the Star Queen.", "Every fifty years, "
-						+ "she ventures out of her galaxy to dispatch " + "darkness across the universe.",
+				"She no longer went by Ayanna anymore, but by Mytra, the Star Queen.",
+				"Every fifty years, " + "she ventures out of her galaxy to dispatch " + "darkness across the universe.",
 				"When an adventurer finds it, they too are transformed, "
 						+ "and they spread her will around even further. These are the Agents of Darkness.");
 		
-		BOOK_TWENTY = ZGLore
-				.createLoreBook(20, "Planet Caligro", "Caligro was once a paradise planet like Oasis.",
-						"It was full of beautiful, vibrant colors, "
-								+ "carving its own path in the universe as one of its most beautiful planets.",
-						"But, something had occurred on this planet.", "The darkness had consumed it entirely.",
-						"It was no longer a place of beauty, but of death and gloom.", "Its old name was Forma, named for its beauty.",
-						"But now... Now it brought death to all who set " + "foot upon it.",
-						"It is one of the few worlds where the Dark Agents have succeeded.");
+		BOOK_TWENTY = ZGLore.createLoreBook(20, "Planet Caligro", "Caligro was once a paradise planet like Oasis.",
+				"It was full of beautiful, vibrant colors, " + "carving its own path in the universe as one of its most beautiful planets.",
+				"But, something had occurred on this planet.", "The darkness had consumed it entirely.",
+				"It was no longer a place of beauty, but of death and gloom.", "Its old name was Forma, named for its beauty.",
+				"But now... Now it brought death to all who set " + "foot upon it.",
+				"It is one of the few worlds where the Dark Agents have succeeded.");
 		
 		BOOK_TWENTYONE = ZGLore.createLoreBook(21, "Class D Planets", "Class D planets are a small, rock-based body, "
 				+ "typically a heavily-cratered asteroid, moon, or planetoid with little or no atmosphere.");
@@ -232,14 +234,16 @@ public class ZGLore {
 				"Class H planets are a characteristically lifeless planet, uninhabitable by humans.",
 				"Could contain gasses Oxygen and Argon.");
 		
-		BOOK_TWENTYTHREE = ZGLore.createLoreBook(23, "Class J Planets", "Class J planets are typically a gas giant, "
-				+ "usually with wind speeds of over 10k kmph.", "Also should contain Fluorine gas in its atmosphere.");
+		BOOK_TWENTYTHREE = ZGLore.createLoreBook(23, "Class J Planets",
+				"Class J planets are typically a gas giant, " + "usually with wind speeds of over 10k kmph.",
+				"Also should contain Fluorine gas in its atmosphere.");
 		
-		BOOK_TWENTYFOUR = ZGLore.createLoreBook(24, "Class K Planets", "Class K planets are a typically uninhabitable world "
-				+ "made sustainable by pressure domes and life-support systems.");
+		BOOK_TWENTYFOUR = ZGLore.createLoreBook(24, "Class K Planets",
+				"Class K planets are a typically uninhabitable world " + "made sustainable by pressure domes and life-support systems.");
 		
-		BOOK_TWENTYFIVE = ZGLore.createLoreBook(25, "Class L Planets", "Class L planets are a barely habitable world or moon that usually "
-				+ "consists of an Oxygen/Argon atmosphere.", "Typically rich with flora, but no fauna.");
+		BOOK_TWENTYFIVE = ZGLore.createLoreBook(25, "Class L Planets",
+				"Class L planets are a barely habitable world or moon that usually " + "consists of an Oxygen/Argon atmosphere.",
+				"Typically rich with flora, but no fauna.");
 		
 		BOOK_TWENTYSIX = ZGLore.createLoreBook(26, "Class M Planets",
 				"Class M planets are a habitable world suitable for sustaining human life, " + "with little or no terraforming required.",
@@ -257,12 +261,14 @@ public class ZGLore {
 				"Class R planets are a lesser bioclassification of a Class M planet," + " these worlds are generally habitable, "
 						+ "however they lack some or most of the characteristics for a terrestrial planet.");
 		
-		BOOK_THIRTY = ZGLore.createLoreBook(30, "Class Y Planets", "Class Y planets are a world characterized by a toxic atmosphere, "
-				+ "thermionic radiation discharges and surface temperatures " + "at or above five hundred Kelvin, "
-				+ "nicknamed the \"demon class.\"", "Typically hazardous to both humans and starships.");
+		BOOK_THIRTY = ZGLore.createLoreBook(30, "Class Y Planets",
+				"Class Y planets are a world characterized by a toxic atmosphere, "
+						+ "thermionic radiation discharges and surface temperatures " + "at or above five hundred Kelvin, "
+						+ "nicknamed the \"demon class.\"",
+				"Typically hazardous to both humans and starships.");
 		
-		BOOK_THIRTYONE = ZGLore.createLoreBook(31, "Class 9 Planets", "Class NINE planets are another type of gas giant, "
-				+ "usually located in the home star system of a hostile race.");
+		BOOK_THIRTYONE = ZGLore.createLoreBook(31, "Class 9 Planets",
+				"Class NINE planets are another type of gas giant, " + "usually located in the home star system of a hostile race.");
 		
 		BOOK_THIRTYTWO = ZGLore.createLoreBook(32, "Exotic Planets",
 				"Class Exotic planets are a strange world that is uniquely proportioned " + "and makes no logical sense; an anomaly.");
@@ -270,8 +276,8 @@ public class ZGLore {
 		BOOK_THIRTYTHREE = ZGLore.createLoreBook(33, "Abandoned Planets",
 				"Class Abandoned planets are a desolate void, long abandoned due to catastrophe or other hostility.");
 		
-		BOOK_THIRTYFOUR = ZGLore.createLoreBook(34, "Metamorphasis 1", "At one point, for several months (Earth time), "
-				+ "all planets seemed to give off a uniquely intense thermal level.",
+		BOOK_THIRTYFOUR = ZGLore.createLoreBook(34, "Metamorphasis 1",
+				"At one point, for several months (Earth time), " + "all planets seemed to give off a uniquely intense thermal level.",
 				"It was as if the galaxy had somehow been supercharged, " + "and it is now cooling down.",
 				"While not yet known what caused it, " + "Earth's best scientists are trying to figure it out.",
 				"It should also be noted that drastic changes have affected Kriffon and Zollus.",
@@ -282,8 +288,9 @@ public class ZGLore {
 				"Many lost souls ended up in this world, and were converted to Dark Agents.",
 				"The planet's beauty is simply a lie; one that covers its darkest essence.", "Traveler, may you wander safely.");
 		
-		BOOK_THIRTYSIX = ZGLore.createLoreBook(36, "Mummies", "Mummies are Wanderers who were consumed by the darkness of the planet, "
-				+ "and then converted to darkness through its metamorphic abilities.",
+		BOOK_THIRTYSIX = ZGLore.createLoreBook(36, "Mummies",
+				"Mummies are Wanderers who were consumed by the darkness of the planet, "
+						+ "and then converted to darkness through its metamorphic abilities.",
 				"They are mindless, and will attack anything that they perceive to be a threat - which is everything.");
 		
 		BOOK_THIRTYSEVEN = ZGLore.createLoreBook(37, "Scorpions", "Scorpions are a new breed of spider evolution.",
@@ -331,13 +338,24 @@ public class ZGLore {
 				"You seek answers to something that you could not possibly understand.",
 				"But if it is an audience that you desire, you shall have it.\" The Sentries began approaching him.");
 		
-		BOOK_FOURTYFOUR = ZGLore
-				.createLoreBook(44, "Dark Arrival 4", "\"What are these things?!\" Hohen asked the noncorporeal voice.",
-						"\"They are my servants, and my protectors. These Galactic Sentries do my bidding, ",
-						"as I have given purpose to each world I take them from.", "They were once as you are now: unawakened.",
-						"I think I can help you with that,\" spoke Ayanna, ",
-						"as she came into view, her red hair falling to the middle of her back, clutching the crystal necklace.",
-						"Her misty-pink dress shimmered as she walked. \"Then, maybe you can help me,\" she said, releasing dark essence from her fingertips.");
+		BOOK_FOURTYFOUR = ZGLore.createLoreBook(44, "Dark Arrival 4", "\"What are these things?!\" Hohen asked the noncorporeal voice.",
+				"\"They are my servants, and my protectors. These Galactic Sentries do my bidding, ",
+				"as I have given purpose to each world I take them from.", "They were once as you are now: unawakened.",
+				"I think I can help you with that,\" spoke Ayanna, ",
+				"as she came into view, her red hair falling to the middle of her back, clutching the crystal necklace.",
+				"Her misty-pink dress shimmered as she walked. \"Then, maybe you can help me,\" she said, releasing dark essence from her fingertips.");
+		
+		BOOK_FOURTYFIVE = ZGLore.createLoreBook(45, "Diablo", "Diablo is one of the four Swords of Triumph. Each sword has a power.",
+				"For this one: fire! Shoot it at your enemies, or set them ablaze when they taste the fiery blade.");
+		
+		BOOK_FOURTYSIX = ZGLore.createLoreBook(46, "Thor", "Thor is one of the four Swords of Triumph. Each sword has a power.",
+				"For this one: thunder! Should you be worthy, you may summon it from the Heavens, and strike your enemies down!");
+		
+		BOOK_FOURTYSEVEN = ZGLore.createLoreBook(47, "Ender", "Ender is one of the four Swords of Triumph. Each sword has a power.",
+				"For this one: teleportation! Use it to be as an Enderman: teleport short distances in a single moment. Also good for climbing!");
+		
+		BOOK_FOURTYEIGHT = ZGLore.createLoreBook(48, "Glacies", "Glacies is one of the four Swords of Triumph. Each sword has a power.",
+				"For this one: ice! Freeze your enemies with a touch of the blade, or summon a beam of ice at whence you look.");
 		
 		ZGHelper.Log("Loaded a total of " + totalLoreBooks + " lore books.");
 	}

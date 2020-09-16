@@ -14,9 +14,11 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.blocks.fluids.ZGFluids;
+import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.enums.EnumOreGenZG;
 import zollerngalaxy.worldgen.WorldGenLakesZG;
 import zollerngalaxy.worldgen.WorldGenMinableZG;
+import zollerngalaxy.worldgen.WorldGenOutpost;
 
 public class BiomeDecoratorAtheon extends BiomeDecoratorZG {
 	
@@ -43,8 +45,7 @@ public class BiomeDecoratorAtheon extends BiomeDecoratorZG {
 		this.zollerniumGen = new WorldGenMinableZG(ZGBlocks.atheonZollerniumOre, STONE, EnumOreGenZG.ZOLLERNIUM);
 		this.zincGen = new WorldGenMinableZG(ZGBlocks.atheonZincOre, STONE, EnumOreGenZG.ZINC);
 		this.constructGen = new WorldGenMinableZG(ZGBlocks.xantheonConstructBlock, STONE, EnumOreGenZG.CONSTRUCTED);
-		this.goldenConstructGen = new WorldGenMinableZG(ZGBlocks.atheonConstructBlock, STONE,
-				EnumOreGenZG.CONSTRUCTED.setBlockCount(20));
+		this.goldenConstructGen = new WorldGenMinableZG(ZGBlocks.atheonConstructBlock, STONE, EnumOreGenZG.CONSTRUCTED.setBlockCount(20));
 	}
 	
 	@Override
@@ -70,8 +71,20 @@ public class BiomeDecoratorAtheon extends BiomeDecoratorZG {
 				
 				if (rand.nextInt(130) <= 10) {
 					if (y <= 72) {
-						(new WorldGenLakesZG(ZGFluids.blockWhiteLavaFluid, STONE)).generate(world, rand,
-								this.chunkPos.add(x, y, z));
+						(new WorldGenLakesZG(ZGFluids.blockWhiteLavaFluid, STONE)).generate(world, rand, this.chunkPos.add(x, y, z));
+					}
+				}
+			}
+		}
+		
+		if (this.generateOutposts && this.outpostsPerChunk > 0) {
+			y = rand.nextInt(rand.nextInt(genY) + 8);
+			if (y >= 62) {
+				WorldGenerator outpostGen = new WorldGenOutpost(ZGBlocks.blockOutpost.getDefaultState(),
+						ZGBlocks.blockOutpost.getDefaultState());
+				for (int i = 0; i < this.outpostsPerChunk; i++) {
+					if (rand.nextInt(100) <= ConfigManagerZG.outpostGenChance) {
+						outpostGen.generate(world, rand, this.chunkPos.add(x, y, z));
 					}
 				}
 			}

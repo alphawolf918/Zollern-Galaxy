@@ -590,8 +590,8 @@ public class ZGPlanets {
 		GalacticraftRegistry.registerTeleportType(WorldProviderAtheon.class, new TeleportTypeVenus());
 		
 		// Sol-2
-		GalacticraftRegistry.registerTeleportType(WorldProviderPerdita.class, new TeleportTypeVenus());
-		GalacticraftRegistry.registerTeleportType(WorldProviderAltum.class, new TeleportTypeVenus());
+		GalacticraftRegistry.registerTeleportType(WorldProviderPerdita.class, new TeleportTypeMars());
+		GalacticraftRegistry.registerTeleportType(WorldProviderAltum.class, new TeleportTypeMars());
 		GalacticraftRegistry.registerTeleportType(WorldProviderCaligro.class, new TeleportTypeMars());
 	}
 }

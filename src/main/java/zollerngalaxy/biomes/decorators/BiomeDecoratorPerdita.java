@@ -21,11 +21,13 @@ import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.blocks.ZGBlockTallGrass;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.blocks.fluids.ZGFluids;
+import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.ZGLootTables;
 import zollerngalaxy.core.enums.EnumOreGenZG;
 import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.worldgen.WorldGenLakesZG;
 import zollerngalaxy.worldgen.WorldGenMinableZG;
+import zollerngalaxy.worldgen.WorldGenOutpost;
 import zollerngalaxy.worldgen.WorldGenTallGrassZG;
 import zollerngalaxy.worldgen.WorldGenTreasure;
 import zollerngalaxy.worldgen.perdita.WorldGenLostCactus;
@@ -222,6 +224,19 @@ public class BiomeDecoratorPerdita extends BiomeDecoratorZG {
 						BlockPos chestPos = this.chunkPos.add(x1, y2, z1);
 						chestPos = chestPos.down();
 						this.lostTreasureGen.generate(world, rand, chestPos);
+					}
+				}
+			}
+		}
+		
+		if (this.generateOutposts && this.outpostsPerChunk > 0) {
+			y = rand.nextInt(rand.nextInt(genY) + 8);
+			if (y >= 62) {
+				WorldGenerator outpostGen = new WorldGenOutpost(ZGBlocks.blockOutpost.getDefaultState(),
+						ZGBlocks.blockOutpost.getDefaultState());
+				for (int i = 0; i < this.outpostsPerChunk; i++) {
+					if (rand.nextInt(100) <= ConfigManagerZG.outpostGenChance) {
+						outpostGen.generate(world, rand, this.chunkPos.add(x, y, z));
 					}
 				}
 			}

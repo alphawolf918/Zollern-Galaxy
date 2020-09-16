@@ -116,7 +116,7 @@ public class WorldProviderCaligro extends WorldProviderZG {
 	
 	@Override
 	public long getDayLength() {
-		return 84125L;
+		return 68010L;
 	}
 	
 	@Override

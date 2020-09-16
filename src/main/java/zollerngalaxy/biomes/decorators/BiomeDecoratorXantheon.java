@@ -14,9 +14,11 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.blocks.fluids.ZGFluids;
+import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.enums.EnumOreGenZG;
 import zollerngalaxy.worldgen.WorldGenLakesZG;
 import zollerngalaxy.worldgen.WorldGenMinableZG;
+import zollerngalaxy.worldgen.WorldGenOutpost;
 import zollerngalaxy.worldgen.xantheon.WorldGenRadiolariaSpouts;
 
 public class BiomeDecoratorXantheon extends BiomeDecoratorZG {
@@ -39,8 +41,7 @@ public class BiomeDecoratorXantheon extends BiomeDecoratorZG {
 	public int whiteLavaLakesPerChunk = 2;
 	
 	public BiomeDecoratorXantheon() {
-		this.chromeGen = new WorldGenMinableZG(ZGBlocks.xantheonChrome, ZGBlocks.xantheonRock,
-				EnumOreGenZG.DIRT.setBlockCount(45));
+		this.chromeGen = new WorldGenMinableZG(ZGBlocks.xantheonChrome, ZGBlocks.xantheonRock, EnumOreGenZG.DIRT.setBlockCount(45));
 		this.ironGen = new WorldGenMinableZG(ZGBlocks.xantheonIronOre, STONE, EnumOreGenZG.IRON);
 		this.copperGen = new WorldGenMinableZG(ZGBlocks.xantheonCopperOre, STONE, EnumOreGenZG.COPPER);
 		this.coalGen = new WorldGenMinableZG(ZGBlocks.xantheonCoalOre, STONE, EnumOreGenZG.COAL);
@@ -75,8 +76,7 @@ public class BiomeDecoratorXantheon extends BiomeDecoratorZG {
 				
 				if (rand.nextInt(150) <= 10) {
 					if (y <= 62) {
-						(new WorldGenLakesZG(ZGFluids.blockWhiteLavaFluid, STONE)).generate(world, rand,
-								this.chunkPos.add(x, y, z));
+						(new WorldGenLakesZG(ZGFluids.blockWhiteLavaFluid, STONE)).generate(world, rand, this.chunkPos.add(x, y, z));
 					}
 				}
 			}
@@ -88,6 +88,19 @@ public class BiomeDecoratorXantheon extends BiomeDecoratorZG {
 			if (rand.nextInt(300) == 0) {
 				if (y >= 70 && y <= 90) {
 					(new WorldGenRadiolariaSpouts()).generate(world, rand, this.chunkPos.add(x, y, z));
+				}
+			}
+		}
+		
+		if (this.generateOutposts && this.outpostsPerChunk > 0) {
+			y = rand.nextInt(rand.nextInt(genY) + 8);
+			if (y >= 62) {
+				WorldGenerator outpostGen = new WorldGenOutpost(ZGBlocks.blockOutpost.getDefaultState(),
+						ZGBlocks.blockOutpost.getDefaultState());
+				for (int i = 0; i < this.outpostsPerChunk; i++) {
+					if (rand.nextInt(100) <= ConfigManagerZG.outpostGenChance) {
+						outpostGen.generate(world, rand, this.chunkPos.add(x, y, z));
+					}
 				}
 			}
 		}

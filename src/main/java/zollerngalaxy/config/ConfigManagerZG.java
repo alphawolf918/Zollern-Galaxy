@@ -385,12 +385,13 @@ public class ConfigManagerZG {
 				.getBoolean();
 		
 		// Compat (Enable Radium Material for Tinker's Construct
-		useTConRadium = configuration.get(CATEGORY_COMPATIBILITY, "[TCONSTRUCT] Enable Radium Material (Tinker's Construct)", true,
+		useTConRadium = configuration.get(CATEGORY_COMPATIBILITY, "[TCONSTRUCT] Enable Radium Material", true,
 				"Set to false to disable (will cause issues with More TCon if true). (default: true)").getBoolean();
 		
 		// Compat (Enable Corruption Material for Tinker's Construct
-		useTConCorruption = configuration.get(CATEGORY_COMPATIBILITY, "[TCONSTRUCT] Enable Corruption Material (Tinker's Construct)", true,
-				"Set to false to disable. (default: true)").getBoolean();
+		useTConCorruption = configuration
+				.get(CATEGORY_COMPATIBILITY, "[TCONSTRUCT] Enable Corruption Material", true, "Set to false to disable. (default: true)")
+				.getBoolean();
 		
 		// Compat (Should flying be enabled and then disabled when applying and unapplying Radiance
 		// armor?
@@ -409,6 +410,8 @@ public class ConfigManagerZG {
 				"The amount of Ice Spikes to generate on " + "Zollus per chunk. (default: 2)").getInt();
 		zollusIceSpikesGenChance = configuration.get(CATEGORY_CUSTOMIZATIONS, "Zollus Ice Spikes Gen Percentage", 42,
 				"The chance (out of 100) for Ice Spikes to generate on planet Zollus. (default: 42)").getInt();
+		outpostGenChance = configuration.get(CATEGORY_CUSTOMIZATIONS, "Outpost Gen Percentage", 35,
+				"The chance (out of 100) for Outpost buildings to generate on planets. (default: 35)").getInt();
 		
 		// Control unreachable planets (by rockets).
 		planetUnreachableAll = configuration.get(CATEGORY_CUSTOMIZATIONS, "Disable Rockets For All Planets", false,
@@ -423,10 +426,6 @@ public class ConfigManagerZG {
 				"Disable this to prevent explosive blocks blowing up other explosive blocks when broken, "
 						+ "which can cause a chain reaction. (default: true)")
 				.getBoolean();
-		
-		// Outpost generation percentage (number out of 100)
-		outpostGenChance = configuration.get(CATEGORY_CUSTOMIZATIONS, "Outpost Gen Percentage", 35,
-				"The chance (out of 100) for Outpost buildings to generate on planets. (default: 35)").getInt();
 		
 		planetUnreachableZollus = configuration.get(CATEGORY_CUSTOMIZATIONS, "Disable Rockets For Planet Zollus", false,
 				"Disable rocket travel for this planet. (default: false)").getBoolean();

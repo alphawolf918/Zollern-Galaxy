@@ -7,13 +7,14 @@
  */
 package zollerngalaxy.core.dimensions;
 
+import org.apache.logging.log4j.Level;
 import micdoodle8.mods.galacticraft.api.galaxies.CelestialBody;
 import micdoodle8.mods.galacticraft.core.util.WorldUtil;
 import net.minecraft.world.DimensionType;
-import org.apache.logging.log4j.Level;
 import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitAltum;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitAtheon;
+import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitCaligro;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitCandora;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitEden;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitKriffon;
@@ -68,6 +69,7 @@ public class ZGDimensions {
 	public static DimensionType ATHEON_ORBIT;
 	public static DimensionType ATHEON_ORBIT_STATIC;
 	
+	// Sol-2
 	public static DimensionType PERDITA;
 	public static DimensionType PERDITA_ORBIT;
 	public static DimensionType PERDITA_ORBIT_STATIC;
@@ -160,12 +162,10 @@ public class ZGDimensions {
 		
 		// Sol-2 (Caligro)
 		ZGDimensions.CALIGRO = ZGDimensions.getDimType(ConfigManagerZG.planetCaligroDimensionId);
-		// ZGDimensions.CALIGRO_ORBIT = DimensionType.register("Caligro Space Station",
-		// "_caligro_orbit", ConfigManagerZG.spaceStationCaligroId,
-		// WorldProviderOrbitCaligro.class, false);
-		// ZGDimensions.CALIGRO_ORBIT_STATIC = DimensionType.register("Caligro Space Station",
-		// "_caligro_orbit",
-		// ConfigManagerZG.spaceStationCaligroStaticId, WorldProviderOrbitCaligro.class, true);
+		ZGDimensions.CALIGRO_ORBIT = DimensionType.register("Caligro Space Station", "_caligro_orbit",
+				ConfigManagerZG.spaceStationCaligroId, WorldProviderOrbitCaligro.class, false);
+		ZGDimensions.CALIGRO_ORBIT_STATIC = DimensionType.register("Caligro Space Station", "_caligro_orbit",
+				ConfigManagerZG.spaceStationCaligroStaticId, WorldProviderOrbitCaligro.class, true);
 	}
 	
 	public static DimensionType getDimType(int dimId) {
