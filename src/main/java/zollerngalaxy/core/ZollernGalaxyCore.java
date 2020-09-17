@@ -18,6 +18,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import net.minecraftforge.fml.relauncher.Side;
+import zollerngalaxy.api.ZollernGalaxyAPI;
 import zollerngalaxy.biomes.ZGBiomes;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.blocks.fluids.ZGFluids;
@@ -53,7 +54,7 @@ public class ZollernGalaxyCore {
 	
 	// CHANGE THESE TO FALSE BEFORE DEPLOYMENT!!
 	private static final boolean DEV_MODE = false;
-	private static final boolean TEST_MODE = true;
+	private static final boolean TEST_MODE = false;
 	
 	public static SimpleNetworkWrapper snw;
 	
@@ -129,6 +130,7 @@ public class ZollernGalaxyCore {
 		instance().proxy.init(event);
 		
 		NetworkRegistry.INSTANCE.registerGuiHandler(this, new CommonProxy());
+		ZollernGalaxyAPI.init();
 		ZGHelper.Log("Init phase complete.");
 	}
 	

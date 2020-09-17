@@ -9,8 +9,12 @@ package zollerngalaxy.lib.helpers;
 
 import java.io.File;
 import java.util.Random;
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import micdoodle8.mods.galacticraft.core.util.DamageSourceGC;
 import net.minecraft.block.Block;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.item.EntityItem;
@@ -26,9 +30,6 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldProvider;
 import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import org.apache.logging.log4j.Level;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import zollerngalaxy.creativetabs.CreativeTabsHelper;
 import zollerngalaxy.creativetabs.ZGTabs;
 import zollerngalaxy.util.ZGDamageSrc;
@@ -38,6 +39,14 @@ public abstract class ZGHelper {
 	private static final Logger LOGGER = LogManager.getLogger("Zollern Galaxy");
 	
 	private static Random rand = new Random();
+	
+	public static Block getBlock(World world, BlockPos pos) {
+		return ZGHelper.getBlockState(world, pos).getBlock();
+	}
+	
+	public static IBlockState getBlockState(World world, BlockPos pos) {
+		return world.getBlockState(pos);
+	}
 	
 	/**
 	 * Spawn an Entity into the world.
@@ -54,7 +63,7 @@ public abstract class ZGHelper {
 	 *            Z Coord
 	 */
 	public static void spawnEntity(Entity entityIn, World worldIn, double x, double y, double z) {
-		spawnEntity(entityIn, worldIn, x, y, z, 0, 0);
+		ZGHelper.spawnEntity(entityIn, worldIn, x, y, z, 0, 0);
 	}
 	
 	/**

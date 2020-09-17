@@ -208,9 +208,9 @@ public class MapGenCavesZG extends MapGenBase {
 		}
 	}
 	
-	public void setBlock(int x, int y, int z, ChunkPrimer chunk, Block block) {
+	protected void setBlock(int x, int y, int z, ChunkPrimer chunk, Block block) {
 		chunk.setBlockState(x, y, z, block.getDefaultState());
 		IBlockState state = chunk.getBlockState(x, y, z);
-		world.scheduleUpdate(new BlockPos(x, y, z), block, block.tickRate(world));
+		world.scheduleBlockUpdate(new BlockPos(x, y, z), block, block.tickRate(world), 1);
 	}
 }

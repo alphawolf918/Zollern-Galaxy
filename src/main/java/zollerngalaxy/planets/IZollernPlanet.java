@@ -7,6 +7,8 @@
  */
 package zollerngalaxy.planets;
 
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 import zollerngalaxy.core.enums.EnumPlanetClass;
 
 public interface IZollernPlanet {
@@ -32,6 +34,15 @@ public interface IZollernPlanet {
 	 * @return The planet's base temperature.
 	 */
 	public float getPlanetTemperature();
+	
+	/**
+	 * Determines the base temperature of the planet, affected by biome temps.
+	 * 
+	 * @param world
+	 * @param pos
+	 * @return The planet's base temperature, affected by biome temps.
+	 */
+	public float getPlanetTemperature(World world, BlockPos pos);
 	
 	/**
 	 * Determines if planet is breathable.

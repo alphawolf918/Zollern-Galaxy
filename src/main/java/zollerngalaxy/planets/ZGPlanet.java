@@ -8,11 +8,16 @@
 package zollerngalaxy.planets;
 
 import java.util.ArrayList;
+import java.util.Random;
 import micdoodle8.mods.galacticraft.api.galaxies.Planet;
 import micdoodle8.mods.galacticraft.api.galaxies.Star;
 import micdoodle8.mods.galacticraft.api.world.AtmosphereInfo;
 import micdoodle8.mods.galacticraft.api.world.EnumAtmosphericGas;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
+import net.minecraft.world.biome.Biome;
+import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderZG;
 import zollerngalaxy.core.enums.EnumPlanetClass;
 import zollerngalaxy.lib.ZGInfo;
@@ -390,7 +395,42 @@ public class ZGPlanet extends Planet implements IZollernPlanet {
 	@Override
 	public float getPlanetTemperature() {
 		float planetTemp = this.baseTemp;
-		// TODO: Factor in biome temps..
+		return planetTemp;
+	}
+	
+	@Override
+	public float getPlanetTemperature(World world, BlockPos pos) {
+		float planetTemp = this.baseTemp;
+		float maxTemp = (planetTemp * 4);
+		float minTemp = (planetTemp / 4);
+		Biome biome = world.getBiomeForCoordsBody(pos);
+		if (biome instanceof BiomeSpace) {
+			WorldProviderZG spaceProvider = (WorldProviderZG) world.provider;
+			boolean isDaytime = spaceProvider.isDaytime();
+			BiomeSpace spaceBiome = (BiomeSpace) biome;
+			float biomeTemp = spaceBiome.getBiomeTemp();
+			boolean isHotBiome = spaceBiome.getIsHotBiome();
+			boolean isColdBiome = spaceBiome.getIsColdBiome();
+			Random rand = new Random();
+			if (rand.nextInt(100) <= 32) {
+				if (isHotBiome) {
+					planetTemp += (biomeTemp * 1.5);
+				} else if (isColdBiome) {
+					planetTemp -= (biomeTemp * 1.5);
+				} else {
+					if (isDaytime) {
+						planetTemp += biomeTemp;
+					} else {
+						planetTemp -= biomeTemp;
+					}
+				}
+				if (planetTemp > maxTemp) {
+					planetTemp = maxTemp;
+				} else if (planetTemp < minTemp) {
+					planetTemp = minTemp;
+				}
+			}
+		}
 		return planetTemp;
 	}
 }

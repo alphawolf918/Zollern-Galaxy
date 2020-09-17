@@ -24,18 +24,23 @@ public class BiomeSpace extends ZGBiomeBase {
 	protected WorldProviderZG spaceProvider = null;
 	public static int grassFoliageColor = 0x00ff00;
 	
+	protected static BiomeSpace INSTANCE;
+	
 	public BiomeSpace(BiomeProperties properties) {
 		super(properties);
+		INSTANCE = this;
 		this.init();
 	}
 	
 	public BiomeSpace(String biomeName) {
 		super(new BiomeProperties(biomeName));
+		INSTANCE = this;
 		this.init();
 	}
 	
 	public BiomeSpace(String singleName, BiomeProperties props) {
 		super(singleName, props);
+		INSTANCE = this;
 		this.init();
 	}
 	
@@ -47,6 +52,10 @@ public class BiomeSpace extends ZGBiomeBase {
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedCreeper.class, 100, 4, 4));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedEnderman.class, 100, 4, 4));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedWitch.class, 100, 4, 4));
+	}
+	
+	public static BiomeSpace instance() {
+		return INSTANCE;
 	}
 	
 	/**

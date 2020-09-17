@@ -29,7 +29,7 @@ public abstract class ZGWorldGenMaster extends WorldGenerator {
 	 *            internally.
 	 */
 	protected void setBlock(World world, BlockPos pos, Block block) {
-		world.setBlockState(pos, block.getDefaultState());
+		world.setBlockState(pos, block.getDefaultState(), 3);
 	}
 	
 	/**
@@ -68,6 +68,23 @@ public abstract class ZGWorldGenMaster extends WorldGenerator {
 	 */
 	protected Block getBlock(World world, BlockPos pos) {
 		return world.getBlockState(pos).getBlock();
+	}
+	
+	/**
+	 * Gets the block at the specified coordinates.
+	 * 
+	 * @param world
+	 *            The world that you're searching in.
+	 * @param x
+	 *            Coord X
+	 * @param y
+	 *            Coord Y
+	 * @param z
+	 *            Coord Z
+	 * @return The block at that position.
+	 */
+	public Block getBlock(World world, int x, int y, int z) {
+		return this.getBlock(world, new BlockPos(x, y, z));
 	}
 	
 	/**

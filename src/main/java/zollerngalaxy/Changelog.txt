@@ -17,4 +17,4 @@ Zollern Galaxy v2.0.20
 * Finally added the Caligro Space Station.
 * General code cleanup and optimization.
 * Added 4 more Lore Books. Not much to them, but a good start to get back into the writing.
-* 
+* Began super simplistic implementation of a very basic API to support mod add-ons.

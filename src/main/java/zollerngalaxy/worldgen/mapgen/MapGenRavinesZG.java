@@ -204,12 +204,14 @@ public class MapGenRavinesZG extends MapGenBase {
 		IBlockState filler = biome.fillerBlock;
 		
 		if (state.getBlock() == this.stoneBlock || state.getBlock() == top.getBlock() || state.getBlock() == filler.getBlock()) {
+			Block stateBlock = state.getBlock();
 			data.setBlockState(x, y, z, AIR);
-			world.scheduleUpdate(new BlockPos(x, y, z), AIR.getBlock(), AIR.getBlock().tickRate(world));
+			world.scheduleBlockUpdate(new BlockPos(x, y, z), stateBlock, stateBlock.tickRate(world), 1);
 			
 			if (foundTop && data.getBlockState(x, y - 1, z).getBlock() == filler.getBlock()) {
+				Block block = data.getBlockState(x, y - 1, z).getBlock();
 				data.setBlockState(x, y - 1, z, top.getBlock().getDefaultState());
-				world.scheduleUpdate(new BlockPos(x, y - 1, z), AIR.getBlock(), AIR.getBlock().tickRate(world));
+				world.scheduleBlockUpdate(new BlockPos(x, y - 1, z), block, block.tickRate(world), 1);
 			}
 		}
 	}
