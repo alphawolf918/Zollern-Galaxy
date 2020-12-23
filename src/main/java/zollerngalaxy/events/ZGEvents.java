@@ -250,6 +250,9 @@ public class ZGEvents {
 	// Modifies names for Patrons, Contributors and my friends.
 	@SubscribeEvent(priority = EventPriority.HIGH, receiveCanceled = true)
 	public void onNameFormatEvent(NameFormat event) {
+		if (!ConfigManagerZG.changeContributorNames){
+			return;
+		}
 		String username = event.getUsername();
 		username = username.toLowerCase();
 		if (username.equals("alphawolf918")) {
@@ -273,7 +276,7 @@ public class ZGEvents {
 	public void onEntityDamaged(LivingHurtEvent event) {
 		EntityLivingBase ent = event.getEntityLiving();
 		DamageSource src = event.getSource();
-		if (ent instanceof EntityGrayAlien) {
+		if (ent instanceof EntityGrayAlien && ConfigManagerZG.spawnGalaxyKnight) {
 			EntityGrayAlien alien = (EntityGrayAlien) ent;
 			if (src.getTrueSource() instanceof EntityPlayer) {
 				EntityPlayer player = (EntityPlayer) src.getTrueSource();
