@@ -267,7 +267,7 @@ public class ZGEvents {
 			event.setDisplayname(TextFormatting.GOLD + "Master Zane" + TextFormatting.WHITE);
 		} else if (username.equals("chronoxshift")) {
 			event.setDisplayname(TextFormatting.BLACK + "ChronoxShift" + TextFormatting.WHITE);
-		} else if (username.equals("koalayucheng")) {
+		} else if (username.equals("actural_guy")) {
 			event.setDisplayname(TextFormatting.GOLD + "ExistingEevee" + TextFormatting.WHITE);
 		}
 	}
