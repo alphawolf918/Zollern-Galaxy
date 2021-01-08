@@ -118,6 +118,8 @@ public class ConfigManagerZG {
 	public static String temperatureType;
 	public static boolean hideUnusedStarSystems;
 	public static boolean enableMegaCreeperGriefing;
+	public static boolean changeContributorNames;
+	public static boolean spawnGalaxyKnight;
 	
 	// Compat
 	public static boolean shouldOasisUseLiquidRedstone;
@@ -345,9 +347,18 @@ public class ConfigManagerZG {
 		enableMegaCreeperGriefing = configuration.get(CATEGORY_MISC, "Enable Mega Creeper Griefing", true,
 				"Set to false if you don't want Mega Creepers to destroy terrain. (default: true)").getBoolean();
 		
-		// Misc (Temperatures shown in fahrenheit or celsius?)
+		// Misc (
+		eratures shown in fahrenheit or celsius?)
 		temperatureType = configuration.get(CATEGORY_MISC, "[HUD DISPLAY] Temperature Type (F or C only)", "F",
 				"Should temperatures be shown in Fahrenheit (F) or Celsius (C)? (default: F)").getString();
+
+		// Whether or not to change contributor's ingame names
+		changeContributorNames = configuration.get(CATEGORY_MISC, "Contributor name change", true,
+				"Whether or not to change contributor in-game names to more reconized formats (default: true)").getBoolean();
+
+		// Whether or not to allow Spawning of Galaxy Knights.
+		spawnGalaxyKnight = configuration.get(CATEGORY_MISC, "Spawn Galaxy Knight", true,
+				"Whether or not to allow Grey Aliens to summon Galaxy Knights when attacked (default: true)").getBoolean();
 		
 		// Compatibility (Whether or not to use Thermal Foundation's Detabilized
 		// Redstone
