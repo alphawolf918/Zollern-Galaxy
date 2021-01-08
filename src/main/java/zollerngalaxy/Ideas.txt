@@ -26,4 +26,5 @@
 * Mobs have a chance to drop treasure chests with specialized loot on death.
 * Still more of the lore.
 * Lightning planets.
+* More biomes.
 * 

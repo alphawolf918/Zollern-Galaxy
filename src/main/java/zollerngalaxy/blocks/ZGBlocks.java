@@ -592,6 +592,9 @@ public class ZGBlocks {
 	public static final Block blockBlueprintStation = new BlockBlueprintStation();
 	public static final Block blockHealingStation = new BlockHealingStation();
 	
+	// Crystal Blocks
+	public static final Block blockCrystalsPlutonium = new ZGCrystalBlock("plutoniumcrystals");
+	
 	public static void init() {
 		ZGBlocks.registerBlocks(edenLovetreeSapling, edenGoldenWoodSapling, edenParadiseWoodSapling, edenWoodSapling, edenFruit, edenFlower,
 				edenFlowerBlack, edenFlowerBlue, edenFlowerCyan, edenFlowerGreen, edenFlowerOrange, edenFlowerPink, edenFlowerPurple,
@@ -638,7 +641,7 @@ public class ZGBlocks {
 				caligroOpalOre, caligroAquamarineOre, caligroGarnetOre, caligroSuperChargedCoalOre, caligroFueltoniumOre, caligroDiamondOre,
 				caligroEmeraldOre, caligroRadiumOre, caligroLapisOre, caligroZollerniumOre, caligroRubyOre, spiderlingEgg,
 				shadowBossSpawner, corruptRock, corruptCobble, corruptStone, corruptStoneBricks, corruptAscendiumOre, corruptEtriumOre,
-				corruptChargiumOre, corruptCreepstone, blockBlueprintStation, blockHealingStation);
+				corruptChargiumOre, corruptCreepstone, blockBlueprintStation, blockHealingStation, blockCrystalsPlutonium);
 		ZGHelper.Log("Loaded a total of " + totalBlocks + " new blocks.");
 	}
 	

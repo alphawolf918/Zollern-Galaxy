@@ -37,7 +37,7 @@ public abstract class BiomeDecoratorZG extends BiomeDecorator {
 		if (this.generateOutposts && this.outpostsPerChunk > 0) {
 			WorldGenerator outpostGen = new WorldGenOutpost(BLOCK_OUTPOST, BLOCK_OUTPOST);
 			for (int i = 0; i < this.outpostsPerChunk; i++) {
-				if (rand.nextInt(100) <= ConfigManagerZG.outpostGenChance) {
+				if (rand.nextInt(500) <= ConfigManagerZG.outpostGenChance) {
 					outpostGen.generate(world, rand, this.chunkPos);
 				}
 			}

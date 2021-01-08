@@ -1,20 +1,14 @@
 ===== CHANGELOG =====
-Zollern Galaxy v2.0.20
+Zollern Galaxy v2.0.21
 =====================
 
-* Added Outpost generation to Eden.
-    - Serves as a "safe house" that the Player can hide in.
-    - Generates on all planets.
-    - Percentage of generation is controllable via config.
-* Modified block explosion mechanics.
-* Added a mechanic to change sand blocks to glass when they're struck by lightning.
-* Added config options to toggle enabling of Tinker's Construct materials to prevent mod compat issues.
-* Added a config option to toggle flying in Survival when wearing a full set of Radiance armor.
-* Added the Blueprint Station and Healing Station blocks to Outposts.
-    - Blueprint Stations will repair the held Blueprint Item when right-clicked.
-    - Healing Stations will heal the Player's health completely.
-* Updated Russian translations per mMONTAGEe.
-* Finally added the Caligro Space Station.
-* General code cleanup and optimization.
-* Added 4 more Lore Books. Not much to them, but a good start to get back into the writing.
-* Began super simplistic implementation of a very basic API to support mod add-ons.
+* Added dropship generation to Eden.
+* Added Plutonium Crystals, the start of Crystal-shaped blocks.
+    - JSON donated by ExistingEevee.
+* Updated Chinese and Russian translations as submitted through GitHub from community.
+* Updated config and events code with quality of life changes from ExistingEevee.
+* Lowered spawn rate of Outposts and Dropships.
+* Changed default dimension ID of Prometheus to -7281 (was in conflict with the moon Astros).
+* Changed nascarmpfan's translated name to Specter.
+* 
+* Fixed an issue with the loot in the buried treasure on Perdita.

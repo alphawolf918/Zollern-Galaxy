@@ -1,22 +1,22 @@
 {
     "pools": [
         {
-            "name": "buriedtreasure",
+            "name": "edendropship",
             "rolls": {
-                "min": 3,
-                "max": 6
+                "min": 4,
+                "max": 7
             },
             "entries": [
                 {
                     "type": "item",
-                    "name": "zollerngalaxy:etrium",
+                    "name": "zollerngalaxy:superchargedcoal",
                     "weight": 5,
                     "functions": [
                         {
                             "function": "minecraft:set_count",
                             "count": {
-                                "min": 3,
-                                "max": 6
+                                "min": 9,
+                                "max": 18
                             }
                         }
                     ]
@@ -37,7 +37,7 @@
                 },
                 {
                     "type": "item",
-                    "name": "zollerngalaxy:perddiamond",
+                    "name": "zollerngalaxy:azurite_sword",
                     "weight": 9,
                     "functions": [
                         {
@@ -65,14 +65,14 @@
                 },
                 {
                     "type": "item",
-                    "name": "zollerngalaxy:perdreed",
+                    "name": "zollerngalaxy:amaranth_pickaxe",
                     "weight": 5,
                     "functions": [
                         {
                             "function": "minecraft:set_count",
                             "count": {
-                                "min": 5,
-                                "max": 9
+                                "min": 1,
+                                "max": 1
                             }
                         }
                     ]
@@ -129,7 +129,7 @@
                 {
                     "type": "item",
                     "name": "zollerngalaxy:ingotevenium",
-                    "weight": 2,
+                    "weight": 4,
                     "functions": [
                         {
                             "function": "minecraft:set_count",
@@ -142,7 +142,7 @@
                 },
                 {
                     "type": "item",
-                    "name": "zollerngalaxy:perdberry",
+                    "name": "zollerngalaxy:diamonddust",
                     "weight": 24,
                     "functions": [
                         {
@@ -156,7 +156,7 @@
                 },
                 {
                     "type": "item",
-                    "name": "zollerngalaxy:perdglowstonedust",
+                    "name": "zollerngalaxy:opal",
                     "weight": 4,
                     "functions": [
                         {
@@ -170,7 +170,35 @@
                 },
                 {
                     "type": "item",
-                    "name": "zollerngalaxy:zollerniumdust",
+                    "name": "zollerngalaxy:aquamarine",
+                    "weight": 4,
+                    "functions": [
+                        {
+                            "function": "minecraft:set_count",
+                            "count": {
+                                "min": 1,
+                                "max": 2
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "zollerngalaxy:azurite",
+                    "weight": 4,
+                    "functions": [
+                        {
+                            "function": "minecraft:set_count",
+                            "count": {
+                                "min": 1,
+                                "max": 2
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "zollerngalaxy:garnet",
                     "weight": 2,
                     "functions": [
                         {

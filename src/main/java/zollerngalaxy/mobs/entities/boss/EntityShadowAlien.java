@@ -203,6 +203,18 @@ public class EntityShadowAlien extends EntityMob implements IShadeEntity {
 		}
 	}
 	
+	public void onDefeat(EntityPlayer player, World world, BlockPos chestPos, Random rand) {
+		ZGLootTables.generateChest(world, chestPos, rand, ZGLootTables.CHEST_SHADOW_BOSS);
+		String txtFormat = TextFormatting.GOLD + "" + TextFormatting.BOLD;
+		String primeMsg = txtFormat + ZGUtils.translate("tooltips.treasurespawned");
+		int chestX = chestPos.getX();
+		int chestY = chestPos.getY();
+		int chestZ = chestPos.getZ();
+		String chestPosStr = " (" + chestX + " " + chestY + " " + chestZ + ")";
+		String fullMsg = primeMsg + chestPosStr;
+		this.proxy.sendChatMessage(player, fullMsg);
+	}
+	
 	// Below code donated by DabbingEevee
 	
 	@Override
@@ -230,15 +242,4 @@ public class EntityShadowAlien extends EntityMob implements IShadeEntity {
 		this.bossInfo.setPercent(this.getHealth() / this.getMaxHealth());
 	}
 	
-	public void onDefeat(EntityPlayer player, World world, BlockPos chestPos, Random rand) {
-		ZGLootTables.generateChest(world, chestPos, rand, ZGLootTables.CHEST_SHADOW_BOSS);
-		String txtFormat = TextFormatting.GOLD + "" + TextFormatting.BOLD;
-		String primeMsg = txtFormat + ZGUtils.translate("tooltips.treasurespawned");
-		int chestX = chestPos.getX();
-		int chestY = chestPos.getY();
-		int chestZ = chestPos.getZ();
-		String chestPosStr = " (" + chestX + " " + chestY + " " + chestZ + ")";
-		String fullMsg = primeMsg + chestPosStr;
-		this.proxy.sendChatMessage(player, fullMsg);
-	}
 }

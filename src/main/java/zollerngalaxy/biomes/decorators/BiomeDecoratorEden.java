@@ -30,6 +30,7 @@ import zollerngalaxy.worldgen.WorldGenMinableZG;
 import zollerngalaxy.worldgen.WorldGenOutpost;
 import zollerngalaxy.worldgen.WorldGenTallGrassZG;
 import zollerngalaxy.worldgen.WorldGenZGMushroomTree;
+import zollerngalaxy.worldgen.eden.WorldGenDropship;
 import zollerngalaxy.worldgen.eden.WorldGenEdenFlowers;
 import zollerngalaxy.worldgen.eden.WorldGenEdenPumpkins;
 import zollerngalaxy.worldgen.eden.WorldGenEdenTower;
@@ -75,7 +76,7 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 	public int mushroomTreesPerChunk = 0;
 	public int lavaLakesPerChunk = 1;
 	public int waterLakesPerChunk = 4;
-	public int outpostsPerChunk = 1;
+	public int dropshipsPerChunk = 1;
 	
 	private WorldGenerator pumpkinGen = new WorldGenEdenPumpkins();
 	private WorldGenerator tallGrassGen = new WorldGenTallGrassZG((ZGBlockTallGrass) ZGBlocks.edenTallGrass);
@@ -91,6 +92,7 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 	private WorldGenerator treeGenLove = new WorldGenEdenTrees(true, 5, ZGBlocks.edenLovetreeLog.getDefaultState(),
 			ZGBlocks.edenLovetreeLeaves.getDefaultState(), this.generateVines);
 	private WorldGenerator treeGenMushroom = new WorldGenZGMushroomTree(false, ZGHelper.rngInt(3, 6));
+	private WorldGenerator dropshipGen = new WorldGenDropship();
 	
 	public boolean generateVines = false;
 	public boolean generateLakes = true;
@@ -103,6 +105,7 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 	public boolean generateMushroomTrees = false;
 	public boolean generatePumpkins = false;
 	public boolean generateOutposts = true;
+	public boolean generateDropships = true;
 	
 	public BiomeDecoratorEden() {
 		this.dirtGen = new WorldGenMinableZG(ZGBlocks.edenSoil, ZGBlocks.edenSurfaceRock, EnumOreGenZG.DIRT);
@@ -179,6 +182,7 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 			genY = spaceBiome.getBiomeHeight();
 		}
 		
+		// Lava Lakes
 		if (this.generateLakes && this.lavaLakesPerChunk > 0) {
 			for (int i = 0; i < this.lavaLakesPerChunk; ++i) {
 				y = rand.nextInt(rand.nextInt(genY) + 8);
@@ -189,10 +193,12 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 			}
 		}
 		
+		// Dead Bushes
 		if (this.deadBushPerChunk > 0) {
 			// TODO
 		}
 		
+		// Water Lakes
 		if (this.generateLakes && this.waterLakesPerChunk > 0) {
 			for (int i = 0; i < this.waterLakesPerChunk; ++i) {
 				y = rand.nextInt(rand.nextInt(genY) + 8);
@@ -202,6 +208,7 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 				(new WorldGenLakesZG(blockToUse, BLOCK_TOP)).generate(world, rand, this.chunkPos.add(x, y, z));
 			}
 			
+			// Water Lilies
 			if (this.waterlilyPerChunk > 0) {
 				for (int i = 0; i < this.waterlilyPerChunk; ++i) {
 					waterLilyGen.generate(world, rand, this.chunkPos.add(x, y, z));
@@ -209,12 +216,14 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 			}
 		}
 		
+		// Tall Grass
 		if (this.edenTallGrassPerChunk > 0) {
 			for (int i = 0; i < this.edenTallGrassPerChunk + 4; ++i) {
 				ZGDecorateHelper.generatePlants(this.tallGrassGen, world, rand, this.chunkPos);
 			}
 		}
 		
+		// Edenwood Trees
 		if (this.generateTrees && this.edenTreesPerChunk > 0) {
 			for (int i = 0; i < this.edenTreesPerChunk; ++i) {
 				y = rand.nextInt(rand.nextInt(genY) + 8);
@@ -228,6 +237,7 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 			}
 		}
 		
+		// Paradise Trees
 		if (this.generateTrees && this.edenFallTreesPerChunk > 0) {
 			for (int i = 0; i < this.edenFallTreesPerChunk; ++i) {
 				y = rand.nextInt(rand.nextInt(genY) + 8);
@@ -241,6 +251,7 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 			}
 		}
 		
+		// Goldenwood Trees
 		if (this.generateTrees && this.edenGoldTreesPerChunk > 0) {
 			for (int i = 0; i < this.edenGoldTreesPerChunk; ++i) {
 				y = rand.nextInt(rand.nextInt(genY) + 8);
@@ -254,6 +265,7 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 			}
 		}
 		
+		// Lovetree Trees
 		if (this.generateTrees && this.edenLoveTreesPerChunk > 0) {
 			for (int i = 0; i < this.edenLoveTreesPerChunk; ++i) {
 				y = rand.nextInt(rand.nextInt(genY) + 8);
@@ -267,6 +279,7 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 			}
 		}
 		
+		// Mushroom Trees
 		if (this.generateTrees && this.mushroomTreesPerChunk > 0) {
 			for (int i = 0; i < this.mushroomTreesPerChunk; ++i) {
 				y = rand.nextInt(rand.nextInt(genY) + 8);
@@ -280,6 +293,7 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 			}
 		}
 		
+		// Pumpkins
 		if (this.generatePumpkins && this.edenPumpkinsPerChunk > 0) {
 			for (int i = 0; i < this.edenPumpkinsPerChunk; i++) {
 				y = rand.nextInt(rand.nextInt(genY) + 8);
@@ -293,6 +307,7 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 			}
 		}
 		
+		// Flowers
 		if (this.edenFlowersPerChunk > 0) {
 			for (int i = 0; i <= this.edenFlowersPerChunk; ++i) {
 				Block edenFlower = ZGBlocks.edenFlower;
@@ -326,18 +341,22 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 			}
 		}
 		
+		// Craters
 		if (this.generateCraters) {
 			ChunkProviderEden.INSTANCE.createCraters(x, z, chunkPrimer);
 		}
 		
+		// Witch Huts
 		if (this.generateWitchHuts) {
 			// TODO
 		}
 		
+		// Woodland Mansions
 		if (this.generateMansions) {
 			// TODO
 		}
 		
+		// Crystal Towers
 		if (this.generateTowers) {
 			y = rand.nextInt(rand.nextInt(genY) + 8);
 			if (y >= 63) {
@@ -348,6 +367,7 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 			}
 		}
 		
+		// Giant Bones
 		if (this.generateGiantBones) {
 			y = rand.nextInt(rand.nextInt(genY) + 8);
 			if (y >= 62) {
@@ -357,6 +377,7 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 			}
 		}
 		
+		// Outposts
 		if (this.generateOutposts && this.outpostsPerChunk > 0) {
 			y = rand.nextInt(rand.nextInt(genY) + 8);
 			if (y >= 62) {
@@ -365,6 +386,18 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 				for (int i = 0; i < this.outpostsPerChunk; i++) {
 					if (rand.nextInt(100) <= ConfigManagerZG.outpostGenChance) {
 						outpostGen.generate(world, rand, this.chunkPos.add(x, y, z));
+					}
+				}
+			}
+		}
+		
+		// Dropships
+		if (this.generateDropships && this.dropshipsPerChunk > 0) {
+			y = rand.nextInt(rand.nextInt(genY) + 8);
+			if (y >= 50) {
+				for (int i = 0; i < this.dropshipsPerChunk; i++) {
+					if (rand.nextInt(800) <= 15) {
+						dropshipGen.generate(world, rand, this.chunkPos.add(x, y, z));
 					}
 				}
 			}

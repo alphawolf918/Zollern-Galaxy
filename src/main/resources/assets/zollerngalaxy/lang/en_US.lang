@@ -370,6 +370,8 @@ tile.compressedheartiumblock.name=Block of Compressed Heartium
 tile.compressedrhodiumblock.name=Block of Compressed Rhodium
 tile.compressedzucriteblock.name=Block of Compressed Zucrite
 
+tile.plutoniumcrystals.name=Plutonium Crystals
+
 chargium=Conductive Chargium
 tile.chargium.name=Conductive Chargium
 fluid.chargium=Conductive Chargium
@@ -736,6 +738,8 @@ planet.exodus=Exodus
 planet.perdita=Perdita
 planet.altum=Altum
 planet.caligro=Caligro
+
+planet.somnium=Somnium
 
 planet.meztli=Meztli
 planet.centotl=Centotl
