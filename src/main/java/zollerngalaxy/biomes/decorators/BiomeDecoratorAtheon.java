@@ -35,7 +35,7 @@ public class BiomeDecoratorAtheon extends BiomeDecoratorZG {
 	
 	public boolean generateLakes = true;
 	
-	public int whiteLavaLakesPerChunk = 1;
+	public int whiteLavaLakesPerChunk = (this.enableExtremeMode) ? 2 : 1;
 	
 	public BiomeDecoratorAtheon() {
 		this.amaranthGen = new WorldGenMinableZG(ZGBlocks.atheonAmaranthOre, STONE, EnumOreGenZG.AMARANTH);
@@ -69,7 +69,7 @@ public class BiomeDecoratorAtheon extends BiomeDecoratorZG {
 			for (int i = 0; i < this.whiteLavaLakesPerChunk; ++i) {
 				y = rand.nextInt(rand.nextInt(genY) + 8);
 				
-				if (rand.nextInt(130) <= 10) {
+				if (rand.nextInt((this.enableExtremeMode) ? 70 : 130) <= 10) {
 					if (y <= 72) {
 						(new WorldGenLakesZG(ZGFluids.blockWhiteLavaFluid, STONE)).generate(world, rand, this.chunkPos.add(x, y, z));
 					}
@@ -83,7 +83,7 @@ public class BiomeDecoratorAtheon extends BiomeDecoratorZG {
 				WorldGenerator outpostGen = new WorldGenOutpost(ZGBlocks.blockOutpost.getDefaultState(),
 						ZGBlocks.blockOutpost.getDefaultState());
 				for (int i = 0; i < this.outpostsPerChunk; i++) {
-					if (rand.nextInt(100) <= ConfigManagerZG.outpostGenChance) {
+					if (rand.nextInt((this.enableExtremeMode) ? 200 : 100) <= ConfigManagerZG.outpostGenChance) {
 						outpostGen.generate(world, rand, this.chunkPos.add(x, y, z));
 					}
 				}

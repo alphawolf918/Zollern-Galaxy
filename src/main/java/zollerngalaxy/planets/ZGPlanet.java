@@ -18,6 +18,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import zollerngalaxy.biomes.BiomeSpace;
+import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderZG;
 import zollerngalaxy.core.enums.EnumPlanetClass;
 import zollerngalaxy.lib.ZGInfo;
@@ -42,6 +43,8 @@ public class ZGPlanet extends Planet implements IZollernPlanet {
 	private ArrayList<EnumAtmosphericGas> planetGasses = new ArrayList<EnumAtmosphericGas>();
 	
 	private WorldProviderZG spaceProvider = null;
+	
+	protected boolean enableExtremeMode = ConfigManagerZG.enableExtremeMode;
 	
 	public ZGPlanet(String planetName) {
 		super(planetName);

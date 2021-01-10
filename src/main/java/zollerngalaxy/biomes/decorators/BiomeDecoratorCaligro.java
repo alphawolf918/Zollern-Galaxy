@@ -275,7 +275,7 @@ public class BiomeDecoratorCaligro extends BiomeDecoratorZG {
 			for (int i = 0; i < this.facelessPerChunk; i++) {
 				y = rand.nextInt(rand.nextInt(genY) + 8);
 				if (y <= CORRUPTION_LAYER && faceless.getCanSpawnHere()) {
-					if (rand.nextInt(800) <= 15) {
+					if (rand.nextInt((this.enableExtremeMode) ? 400 : 800) <= 15) {
 						BlockPos chunkPosMod = this.chunkPos.add(x, y, z);
 						ZGHelper.spawnEntity(faceless, world, chunkPosMod.getX(), chunkPosMod.getY(), chunkPosMod.getZ());
 					}
@@ -294,7 +294,7 @@ public class BiomeDecoratorCaligro extends BiomeDecoratorZG {
 				WorldGenerator outpostGen = new WorldGenOutpost(ZGBlocks.blockOutpost.getDefaultState(),
 						ZGBlocks.blockOutpost.getDefaultState());
 				for (int i = 0; i < this.outpostsPerChunk; i++) {
-					if (rand.nextInt(100) <= ConfigManagerZG.outpostGenChance) {
+					if (rand.nextInt((this.enableExtremeMode) ? 200 : 100) <= ConfigManagerZG.outpostGenChance) {
 						outpostGen.generate(world, rand, this.chunkPos.add(x, y, z));
 					}
 				}

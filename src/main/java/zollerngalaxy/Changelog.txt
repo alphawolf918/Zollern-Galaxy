@@ -1,14 +1,6 @@
 ===== CHANGELOG =====
-Zollern Galaxy v2.0.21
+Zollern Galaxy v2.0.22
 =====================
 
-* Added dropship generation to Eden.
-* Added Plutonium Crystals, the start of Crystal-shaped blocks.
-    - JSON donated by ExistingEevee.
-* Updated Chinese and Russian translations as submitted through GitHub from community.
-* Updated config and events code with quality of life changes from ExistingEevee.
-* Lowered spawn rate of Outposts and Dropships.
-* Changed default dimension ID of Prometheus to -7281 (was in conflict with the moon Astros).
-* Changed nascarmpfan's translated name to Specter.
+* Added an 'Extreme' mode to make the mod more challenging / rewarding.
 * 
-* Fixed an issue with the loot in the buried treasure on Perdita.

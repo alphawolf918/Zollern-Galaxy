@@ -23,6 +23,7 @@ public abstract class BiomeDecoratorZG extends BiomeDecorator {
 	
 	protected int outpostsPerChunk = 1;
 	protected boolean generateOutposts = true;
+	protected boolean enableExtremeMode = ConfigManagerZG.enableExtremeMode;
 	
 	@Override
 	protected void genDecorations(Biome biome, World world, Random rand) {
@@ -37,7 +38,8 @@ public abstract class BiomeDecoratorZG extends BiomeDecorator {
 		if (this.generateOutposts && this.outpostsPerChunk > 0) {
 			WorldGenerator outpostGen = new WorldGenOutpost(BLOCK_OUTPOST, BLOCK_OUTPOST);
 			for (int i = 0; i < this.outpostsPerChunk; i++) {
-				if (rand.nextInt(500) <= ConfigManagerZG.outpostGenChance) {
+				
+				if (rand.nextInt((this.enableExtremeMode) ? 800 : 500) <= ConfigManagerZG.outpostGenChance) {
 					outpostGen.generate(world, rand, this.chunkPos);
 				}
 			}

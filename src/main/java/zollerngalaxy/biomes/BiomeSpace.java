@@ -7,6 +7,7 @@
  */
 package zollerngalaxy.biomes;
 
+import java.util.List;
 import java.util.Random;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedCreeper;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedEnderman;
@@ -15,6 +16,7 @@ import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedSpider;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedWitch;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedZombie;
 import net.minecraft.block.Block;
+import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderZG;
 import zollerngalaxy.planets.ZGPlanet;
 
@@ -22,6 +24,7 @@ public class BiomeSpace extends ZGBiomeBase {
 	
 	protected ZGPlanet planetForBiome = null;
 	protected WorldProviderZG spaceProvider = null;
+	protected boolean enableExtremeMode = ConfigManagerZG.enableExtremeMode;
 	public static int grassFoliageColor = 0x00ff00;
 	
 	protected static BiomeSpace INSTANCE;
@@ -45,13 +48,16 @@ public class BiomeSpace extends ZGBiomeBase {
 	}
 	
 	private void init() {
+		int numSpawn = 4;
+		numSpawn *= (this.enableExtremeMode) ? 2 : 1;
 		this.clearAllSpawning();
-		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedZombie.class, 100, 4, 4));
-		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedSpider.class, 100, 4, 4));
-		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedSkeleton.class, 100, 4, 4));
-		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedCreeper.class, 100, 4, 4));
-		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedEnderman.class, 100, 4, 4));
-		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedWitch.class, 100, 4, 4));
+		List<SpawnListEntry> monsterList = this.spawnableMonsterList;
+		monsterList.add(new SpawnListEntry(EntityEvolvedZombie.class, 100, numSpawn, numSpawn));
+		monsterList.add(new SpawnListEntry(EntityEvolvedSpider.class, 100, numSpawn, numSpawn));
+		monsterList.add(new SpawnListEntry(EntityEvolvedSkeleton.class, 100, numSpawn, numSpawn));
+		monsterList.add(new SpawnListEntry(EntityEvolvedCreeper.class, 100, numSpawn, numSpawn));
+		monsterList.add(new SpawnListEntry(EntityEvolvedEnderman.class, 100, numSpawn, numSpawn));
+		monsterList.add(new SpawnListEntry(EntityEvolvedWitch.class, 100, numSpawn, numSpawn));
 	}
 	
 	public static BiomeSpace instance() {
@@ -149,8 +155,10 @@ public class BiomeSpace extends ZGBiomeBase {
 		float planetTemp = planet.getPlanetTemperature();
 		float flucTemp = planetTemp;
 		
-		float maxTemp = planetTemp + 25;
-		float minTemp = planetTemp - 25;
+		int tempChangeBy = (this.enableExtremeMode) ? 50 : 25;
+		
+		float maxTemp = planetTemp + tempChangeBy;
+		float minTemp = planetTemp - tempChangeBy;
 		
 		if (planet.getIsColdPlanet()) {
 			flucTemp -= biomeTemp;

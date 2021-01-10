@@ -120,6 +120,7 @@ public class ConfigManagerZG {
 	public static boolean enableMegaCreeperGriefing;
 	public static boolean changeContributorNames;
 	public static boolean spawnGalaxyKnight;
+	public static boolean enableExtremeMode;
 	
 	// Compat
 	public static boolean shouldOasisUseLiquidRedstone;
@@ -358,6 +359,12 @@ public class ConfigManagerZG {
 		// Whether or not to allow Spawning of Galaxy Knights.
 		spawnGalaxyKnight = configuration.get(CATEGORY_MISC, "Spawn Galaxy Knight", true,
 				"Whether or not to allow Grey Aliens to summon Galaxy Knights when attacked (default: true)").getBoolean();
+		
+		// Should Extreme Mode be enabled? Significantly increases the mod's difficulty.
+		enableExtremeMode = configuration
+				.get(CATEGORY_MISC, "Enable Extreme Mode", false,
+						"Toggle Extreme mode. " + "WARNING: This will SIGNIFICANTLY increase the mod's difficulty. (default: false)")
+				.getBoolean();
 		
 		// Compatibility (Whether or not to use Thermal Foundation's Detabilized
 		// Redstone

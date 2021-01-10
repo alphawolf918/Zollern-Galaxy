@@ -74,7 +74,7 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 	public int edenGoldTreesPerChunk = 0;
 	public int edenLoveTreesPerChunk = 0;
 	public int mushroomTreesPerChunk = 0;
-	public int lavaLakesPerChunk = 1;
+	public int lavaLakesPerChunk = (this.enableExtremeMode) ? 2 : 1;
 	public int waterLakesPerChunk = 4;
 	public int dropshipsPerChunk = 1;
 	
@@ -187,7 +187,7 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 			for (int i = 0; i < this.lavaLakesPerChunk; ++i) {
 				y = rand.nextInt(rand.nextInt(genY) + 8);
 				
-				if (rand.nextInt(100) <= 50) {
+				if (rand.nextInt((this.enableExtremeMode) ? 75 : 100) <= 50) {
 					(new WorldGenLakesZG(Blocks.LAVA, BLOCK_STONE)).generate(world, rand, this.chunkPos.add(x, y, z));
 				}
 			}
@@ -202,9 +202,7 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 		if (this.generateLakes && this.waterLakesPerChunk > 0) {
 			for (int i = 0; i < this.waterLakesPerChunk; ++i) {
 				y = rand.nextInt(rand.nextInt(genY) + 8);
-				
 				Block blockToUse = (biome.getTempCategory() == TempCategory.COLD) ? Blocks.ICE : Blocks.WATER;
-				
 				(new WorldGenLakesZG(blockToUse, BLOCK_TOP)).generate(world, rand, this.chunkPos.add(x, y, z));
 			}
 			
@@ -384,7 +382,7 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 				WorldGenerator outpostGen = new WorldGenOutpost(ZGBlocks.blockOutpost.getDefaultState(),
 						ZGBlocks.blockOutpost.getDefaultState());
 				for (int i = 0; i < this.outpostsPerChunk; i++) {
-					if (rand.nextInt(100) <= ConfigManagerZG.outpostGenChance) {
+					if (rand.nextInt((this.enableExtremeMode) ? 200 : 100) <= ConfigManagerZG.outpostGenChance) {
 						outpostGen.generate(world, rand, this.chunkPos.add(x, y, z));
 					}
 				}
@@ -396,7 +394,7 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 			y = rand.nextInt(rand.nextInt(genY) + 8);
 			if (y >= 50) {
 				for (int i = 0; i < this.dropshipsPerChunk; i++) {
-					if (rand.nextInt(800) <= 15) {
+					if (rand.nextInt((this.enableExtremeMode) ? 1000 : 800) <= 15) {
 						dropshipGen.generate(world, rand, this.chunkPos.add(x, y, z));
 					}
 				}
