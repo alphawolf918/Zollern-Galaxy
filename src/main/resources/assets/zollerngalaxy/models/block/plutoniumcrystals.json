@@ -1,0 +1,8 @@
+{
+  "parent": "zollerngalaxy:custom/plutoniumcrystalsblock",
+  "textures": {
+    "all": "zollerngalaxy:blocks/plutoniumblock",
+    "particle": "zollerngalaxy:blocks/plutoniumblock",
+    "0": "zollerngalaxy:blocks/plutoniumblock"
+  }
+}

@@ -98,9 +98,7 @@ public class BiomeDecoratorCandora extends BiomeDecoratorZG {
 		if (this.generateLakes && this.chocolateLakesPerChunk > 0) {
 			for (int i = 0; i < this.chocolateLakesPerChunk; ++i) {
 				y = rand.nextInt(rand.nextInt(genY) + 8);
-				
 				Block blockToUse = (biome.getTempCategory() == TempCategory.COLD) ? ZGBlocks.candyCubeCyan : ZGFluids.blockChocolateFluid;
-				
 				(new WorldGenLakesZG(blockToUse, BLOCK_TOP)).generate(world, rand, this.chunkPos.add(x, y, z));
 			}
 		}
@@ -111,7 +109,7 @@ public class BiomeDecoratorCandora extends BiomeDecoratorZG {
 				WorldGenerator outpostGen = new WorldGenOutpost(ZGBlocks.blockOutpost.getDefaultState(),
 						ZGBlocks.blockOutpost.getDefaultState());
 				for (int i = 0; i < this.outpostsPerChunk; i++) {
-					if (rand.nextInt(100) <= ConfigManagerZG.outpostGenChance) {
+					if (rand.nextInt((this.enableExtremeMode) ? 200 : 100) <= ConfigManagerZG.outpostGenChance) {
 						outpostGen.generate(world, rand, this.chunkPos.add(x, y, z));
 					}
 				}

@@ -120,6 +120,7 @@ public class ConfigManagerZG {
 	public static boolean enableMegaCreeperGriefing;
 	public static boolean changeContributorNames;
 	public static boolean spawnGalaxyKnight;
+	public static boolean enableExtremeMode;
 	
 	// Compat
 	public static boolean shouldOasisUseLiquidRedstone;
@@ -249,7 +250,7 @@ public class ConfigManagerZG {
 		
 		// Planets (Olympus)
 		planetAresDimensionId = configuration.get(CATEGORY_DIMENSIONS, "Planet Ares Dimension ID", -8000).getInt();
-		planetPrometheusDimensionId = configuration.get(CATEGORY_DIMENSIONS, "Planet Prometheus Dimension ID", -7981).getInt();
+		planetPrometheusDimensionId = configuration.get(CATEGORY_DIMENSIONS, "Planet Prometheus Dimension ID", -7281).getInt();
 		planetIcarusDimensionId = configuration.get(CATEGORY_DIMENSIONS, "Planet Icarus Dimension ID", -7995).getInt();
 		planetKronosDimensionId = configuration.get(CATEGORY_DIMENSIONS, "Planet Kronos Dimension ID", -7993).getInt();
 		
@@ -347,18 +348,23 @@ public class ConfigManagerZG {
 		enableMegaCreeperGriefing = configuration.get(CATEGORY_MISC, "Enable Mega Creeper Griefing", true,
 				"Set to false if you don't want Mega Creepers to destroy terrain. (default: true)").getBoolean();
 		
-		// Misc (
-		eratures shown in fahrenheit or celsius?)
+		// Misc (Tempratures shown in fahrenheit or celsius?)
 		temperatureType = configuration.get(CATEGORY_MISC, "[HUD DISPLAY] Temperature Type (F or C only)", "F",
 				"Should temperatures be shown in Fahrenheit (F) or Celsius (C)? (default: F)").getString();
-
-		// Whether or not to change contributor's ingame names
+		
+		// Whether or not to change contributor's in-game names
 		changeContributorNames = configuration.get(CATEGORY_MISC, "Contributor name change", true,
-				"Whether or not to change contributor in-game names to more reconized formats (default: true)").getBoolean();
-
+				"Whether or not to change contributor in-game names to more recognized formats (default: true)").getBoolean();
+		
 		// Whether or not to allow Spawning of Galaxy Knights.
 		spawnGalaxyKnight = configuration.get(CATEGORY_MISC, "Spawn Galaxy Knight", true,
 				"Whether or not to allow Grey Aliens to summon Galaxy Knights when attacked (default: true)").getBoolean();
+		
+		// Should Extreme Mode be enabled? Significantly increases the mod's difficulty.
+		enableExtremeMode = configuration
+				.get(CATEGORY_MISC, "Enable Extreme Mode", false,
+						"Toggle Extreme mode. " + "WARNING: This will SIGNIFICANTLY increase the mod's difficulty. (default: false)")
+				.getBoolean();
 		
 		// Compatibility (Whether or not to use Thermal Foundation's Detabilized
 		// Redstone
@@ -421,8 +427,8 @@ public class ConfigManagerZG {
 				"The amount of Ice Spikes to generate on " + "Zollus per chunk. (default: 2)").getInt();
 		zollusIceSpikesGenChance = configuration.get(CATEGORY_CUSTOMIZATIONS, "Zollus Ice Spikes Gen Percentage", 42,
 				"The chance (out of 100) for Ice Spikes to generate on planet Zollus. (default: 42)").getInt();
-		outpostGenChance = configuration.get(CATEGORY_CUSTOMIZATIONS, "Outpost Gen Percentage", 35,
-				"The chance (out of 100) for Outpost buildings to generate on planets. (default: 35)").getInt();
+		outpostGenChance = configuration.get(CATEGORY_CUSTOMIZATIONS, "Outpost Gen Percentage", 25,
+				"The chance (out of 100) for Outpost buildings to generate on planets. (default: 25)").getInt();
 		
 		// Control unreachable planets (by rockets).
 		planetUnreachableAll = configuration.get(CATEGORY_CUSTOMIZATIONS, "Disable Rockets For All Planets", false,

@@ -21,8 +21,8 @@ import zollerngalaxy.lib.helpers.ZGHelper;
 
 public class ZGOreGem extends ZGBlockOre {
 	
-	protected int minDropped = 2;
-	protected int maxDropped = 4;
+	protected int minDropped = (this.enableExtremeMode) ? 4 : 2;
+	protected int maxDropped = (this.enableExtremeMode) ? 8 : 4;
 	protected Item itemToDrop;
 	
 	protected int droppedMetadata = 0;
@@ -99,21 +99,22 @@ public class ZGOreGem extends ZGBlockOre {
 	@Override
 	public int quantityDropped(Random rand) {
 		int numDropped = 1;
+		int extMod = (this.enableExtremeMode) ? 1 : 0;
 		switch (this.getBlockTier()) {
 			default:
 				numDropped = ZGHelper.rngInt(1, 1);
 				break;
 			case ONE:
-				numDropped = ZGHelper.rngInt(minDropped, maxDropped);
+				numDropped = ZGHelper.rngInt(minDropped + extMod, maxDropped + extMod);
 				break;
 			case TWO:
-				numDropped = ZGHelper.rngInt(maxDropped, maxDropped + 2);
+				numDropped = ZGHelper.rngInt(maxDropped + extMod, maxDropped + 2 + extMod);
 				break;
 			case THREE:
-				numDropped = ZGHelper.rngInt(maxDropped + 2, maxDropped + 3);
+				numDropped = ZGHelper.rngInt(maxDropped + 2 + extMod, maxDropped + 3 + extMod);
 				break;
 			case FOUR:
-				numDropped = ZGHelper.rngInt(maxDropped + 4, maxDropped + 5);
+				numDropped = ZGHelper.rngInt(maxDropped + 4 + extMod, maxDropped + 5 + extMod);
 				break;
 		}
 		return numDropped;
@@ -121,9 +122,8 @@ public class ZGOreGem extends ZGBlockOre {
 	
 	@Override
 	public int quantityDroppedWithBonus(int fortune, Random random) {
-		if (fortune > 0
-				&& Item.getItemFromBlock(this) != this.getItemDropped(this.getBlockState().getValidStates().iterator().next(), random,
-						fortune)) {
+		if (fortune > 0 && Item.getItemFromBlock(this) != this.getItemDropped(this.getBlockState().getValidStates().iterator().next(),
+				random, fortune)) {
 			int i = random.nextInt(fortune + 2) - 1;
 			
 			if (i < 0) {
@@ -138,8 +138,9 @@ public class ZGOreGem extends ZGBlockOre {
 	
 	@Override
 	public int getExpDrop(IBlockState state, net.minecraft.world.IBlockAccess world, BlockPos pos, int fortune) {
+		int extMod = (this.enableExtremeMode) ? 2 : 0;
 		Random rand = world instanceof World ? ((World) world).rand : new Random();
-		return MathHelper.getInt(rand, 3, 7);
+		return MathHelper.getInt(rand, 3 + extMod, 7 + extMod);
 	}
 	
 }

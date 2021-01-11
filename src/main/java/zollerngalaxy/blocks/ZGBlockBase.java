@@ -48,8 +48,10 @@ public class ZGBlockBase extends Block implements ISingleZGBlockRender, IJSONBlo
 	protected static SoundType blockSound = SoundType.STONE;
 	protected EnumBlockType blockType = EnumBlockType.NORMAL;
 	
+	protected boolean enableExtremeMode = ConfigManagerZG.enableExtremeMode;
+	
 	protected boolean isExplosive = false;
-	protected int explosionWeight = 40;
+	protected int explosionWeight = (this.enableExtremeMode) ? 20 : 40;
 	
 	protected boolean hasPotionEffect = false;
 	protected Potion blockPotionEffect;
@@ -72,6 +74,7 @@ public class ZGBlockBase extends Block implements ISingleZGBlockRender, IJSONBlo
 	
 	public ZGBlockBase(String blockName, float hardResist) {
 		super(Material.ROCK);
+		hardResist *= (this.enableExtremeMode) ? 2 : 1;
 		this.name = blockName;
 		this.setBlockName(this, blockName);
 		this.setHardResist(hardResist);
@@ -137,9 +140,10 @@ public class ZGBlockBase extends Block implements ISingleZGBlockRender, IJSONBlo
 	
 	@Override
 	public void onEntityWalk(World worldIn, BlockPos pos, Entity entityIn) {
+		// Heat Damage
 		if (!entityIn.isImmuneToFire() && entityIn instanceof EntityLivingBase
 				&& !EnchantmentHelper.hasFrostWalkerEnchantment((EntityLivingBase) entityIn) && this.getIsHotBlock()) {
-			entityIn.attackEntityFrom(DamageSource.HOT_FLOOR, 4.5F);
+			entityIn.attackEntityFrom(DamageSource.HOT_FLOOR, (this.enableExtremeMode) ? 8.2F : 4.5F);
 		}
 		
 		// Corruption Damage
@@ -197,7 +201,10 @@ public class ZGBlockBase extends Block implements ISingleZGBlockRender, IJSONBlo
 	 * @return int
 	 */
 	public int getExplosionChance() {
-		return this.explosionWeight;
+		int scaleBy = (this.enableExtremeMode) ? 10 : 0;
+		int expWeight = (this.explosionWeight - scaleBy);
+		expWeight = (expWeight < 0) ? 1 : expWeight;
+		return expWeight;
 	}
 	
 	public Block setShouldExplode(boolean shouldExplode, int explodeChance) {
@@ -236,10 +243,12 @@ public class ZGBlockBase extends Block implements ISingleZGBlockRender, IJSONBlo
 		}
 		
 		if (this.getShouldGivePotionEffect()) {
-			if (rand.nextInt(10) <= 5) {
+			boolean determineCondition = (this.enableExtremeMode) ? (rand.nextInt(5) <= 2) : (rand.nextInt(10) <= 5);
+			if (determineCondition) {
 				EntityPlayer player = worldIn.getClosestPlayer(pos.getX(), pos.getY(), pos.getZ(), 2.5D, false);
 				if (player != null && this.blockPotionEffect != null) {
-					player.addPotionEffect(new PotionEffect(this.blockPotionEffect, 200));
+					int duration = (this.enableExtremeMode) ? 400 : 200;
+					player.addPotionEffect(new PotionEffect(this.blockPotionEffect, duration));
 				}
 			}
 		}
@@ -249,6 +258,7 @@ public class ZGBlockBase extends Block implements ISingleZGBlockRender, IJSONBlo
 	public void onBlockDestroyedByExplosion(World worldIn, BlockPos pos, Explosion explosionIn) {
 		if (!worldIn.isRemote) {
 			if (this.getShouldExplode() && this.chainReactionEnabled) {
+				int chainReactionChance = (this.enableExtremeMode) ? 4 : 8;
 				if (rand.nextInt(this.getExplosionChance()) <= 8) {
 					worldIn.createExplosion(null, pos.getX(), pos.getY(), pos.getZ(), 3.2F, true);
 				}

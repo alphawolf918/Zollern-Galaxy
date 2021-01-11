@@ -35,6 +35,8 @@ import zollerngalaxy.starsystems.ZGStarSystem;
 
 public class ZGPlanets {
 	
+	protected boolean enableExtremeMode = ConfigManagerZG.enableExtremeMode;
+	
 	private static int totalSystems = 0;
 	private static int totalPlanets = 0;
 	private static int totalMoons = 0;

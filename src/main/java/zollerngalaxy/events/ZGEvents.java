@@ -250,15 +250,15 @@ public class ZGEvents {
 	// Modifies names for Patrons, Contributors and my friends.
 	@SubscribeEvent(priority = EventPriority.HIGH, receiveCanceled = true)
 	public void onNameFormatEvent(NameFormat event) {
-		if (!ConfigManagerZG.changeContributorNames){
-			return;
+		if (!ConfigManagerZG.changeContributorNames) {
+			return; // ExistingEevee
 		}
 		String username = event.getUsername();
 		username = username.toLowerCase();
 		if (username.equals("alphawolf918")) {
 			event.setDisplayname(TextFormatting.GOLD + "Zollern Wolf" + TextFormatting.WHITE);
 		} else if (username.equals("nascarmpfan")) {
-			event.setDisplayname(TextFormatting.RED + "Mike" + TextFormatting.WHITE);
+			event.setDisplayname(TextFormatting.RED + "Specter" + TextFormatting.WHITE);
 		} else if (username.equals("applepiec00kie")) {
 			event.setDisplayname(TextFormatting.LIGHT_PURPLE + "Queen Apple" + TextFormatting.WHITE);
 		} else if (username.equals("lazy_logic")) {
