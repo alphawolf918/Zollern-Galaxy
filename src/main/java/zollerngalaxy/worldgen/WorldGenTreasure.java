@@ -17,6 +17,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
+import zollerngalaxy.config.ConfigManagerZG;
 
 public class WorldGenTreasure extends ZGWorldGenMaster {
 	
@@ -34,8 +35,10 @@ public class WorldGenTreasure extends ZGWorldGenMaster {
 		int j = pos.getY();
 		int k = pos.getZ();
 		
-		if (!this.isValidSpawn(worldIn, pos) || lootTable == null) {
-			return false;
+		if (ConfigManagerZG.enableChestValidation) {
+			if (!this.isValidSpawn(worldIn, pos) || lootTable == null) {
+				return false;
+			}
 		}
 		
 		BlockPos chestPos = pos.down();
