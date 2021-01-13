@@ -516,6 +516,16 @@ public class ZGBlocks {
 	public static final Block exodusStone = new ZGPlanetStone("exodusstone", 6.5F, ZGBlocks.exodusCobblestone)
 			.setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.AMARANTH.getHarvestLevel());
 	public static final Block exodusGravel = new ZGGravel("exodusgravel");
+	public static final Block exodusIronOre = new ZGBlockOre("exodusironore", 5.2F)
+			.setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.AMARANTH.getHarvestLevel());
+	public static final Block exodusGoldOre = new ZGBlockOre("exodusgoldore", 6.3F)
+			.setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.AMARANTH.getHarvestLevel());
+	public static final Block exodusDiamondOre = new ZGOreGem("exodusdiamondore", 7.2F, Items.DIAMOND)
+			.setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.AMARANTH.getHarvestLevel());
+	public static final Block exodusRedstoneOre = new ZGOreGem("exodusredstoneore", 4.1F, Items.REDSTONE)
+			.setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.AMARANTH.getHarvestLevel());
+	public static final Block exodusCopperOre = new ZGBlockOre("exoduscopperore", 3.2F)
+			.setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.AMARANTH.getHarvestLevel());
 	// TODO
 	
 	// Metals
@@ -650,7 +660,8 @@ public class ZGBlocks {
 				caligroEmeraldOre, caligroRadiumOre, caligroLapisOre, caligroZollerniumOre, caligroRubyOre, spiderlingEgg,
 				shadowBossSpawner, corruptRock, corruptCobble, corruptStone, corruptStoneBricks, corruptAscendiumOre, corruptEtriumOre,
 				corruptChargiumOre, corruptCreepstone, exodusTallGrass, exodusDirt, exodusGrass, exodusCobblestone, exodusStone,
-				exodusGravel, blockBlueprintStation, blockHealingStation, blockCrystalsPlutonium);
+				exodusGravel, exodusIronOre, exodusGoldOre, exodusDiamondOre, exodusRedstoneOre, exodusCopperOre, blockBlueprintStation,
+				blockHealingStation, blockCrystalsPlutonium);
 		ZGHelper.Log("Loaded a total of " + totalBlocks + " new blocks.");
 	}
 	

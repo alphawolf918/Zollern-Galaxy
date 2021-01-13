@@ -29,6 +29,7 @@ public class BiomeAzuralPlains extends BiomeExodusBase {
 		props.setBaseHeight(1.2F);
 		props.setHeightVariation(0.5F);
 		props.setTemperature(4.0F);
+		this.biomeDecor.exodusTallGrassPerChunk = 6;
 		this.setTemp(4F);
 		this.setBiomeHeight(52);
 		this.setBiomeType(EnumBiomeTypeZG.LUSH);

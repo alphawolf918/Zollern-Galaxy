@@ -81,7 +81,7 @@ public class OreDictRegistry {
 		
 		// Copper
 		registerOre("oreCopper", ZGBlocks.edenCopperOre, ZGBlocks.kriffCopperOre, ZGBlocks.purgCopperOre, ZGBlocks.zolCopperOre,
-				ZGBlocks.xantheonCopperOre, ZGBlocks.caligroCopperOre);
+				ZGBlocks.xantheonCopperOre, ZGBlocks.caligroCopperOre, ZGBlocks.exodusCopperOre);
 		
 		// Tin
 		registerOre("oreTin", ZGBlocks.edenTinOre, ZGBlocks.purgTinOre, ZGBlocks.zolTinOre, ZGBlocks.xathTinOre, ZGBlocks.oasisTinOre,
@@ -159,18 +159,20 @@ public class OreDictRegistry {
 		
 		// Iron
 		registerOre("oreIron", ZGBlocks.edenIronOre, ZGBlocks.kriffIronOre, ZGBlocks.purgIronOre, ZGBlocks.zolIronOre, ZGBlocks.xathIronOre,
-				ZGBlocks.oasisIronOre, ZGBlocks.xantheonIronOre, ZGBlocks.perdIronOre, ZGBlocks.altumIronOre, ZGBlocks.caligroIronOre);
+				ZGBlocks.oasisIronOre, ZGBlocks.xantheonIronOre, ZGBlocks.perdIronOre, ZGBlocks.altumIronOre, ZGBlocks.caligroIronOre,
+				ZGBlocks.exodusIronOre);
 		
 		// Gold
 		registerOre("oreGold", ZGBlocks.edenGoldOre, ZGBlocks.kriffGoldOre, ZGBlocks.purgGoldOre, ZGBlocks.zolGoldOre, ZGBlocks.xathGoldOre,
-				ZGBlocks.oasisGoldOre, ZGBlocks.perdGoldOre, ZGBlocks.altumGoldOre, ZGBlocks.caligroGoldOre);
+				ZGBlocks.oasisGoldOre, ZGBlocks.perdGoldOre, ZGBlocks.altumGoldOre, ZGBlocks.caligroGoldOre, ZGBlocks.exodusGoldOre);
 		
 		// Nickel
 		registerOre("oreNickel", ZGBlocks.edenNickelOre, ZGBlocks.xantheonNickelOre, ZGBlocks.caligroNickelOre);
 		
 		// Diamond
 		registerOre("oreDiamond", ZGBlocks.edenDiamondOre, ZGBlocks.purgDiamondOre, ZGBlocks.xathDiamondOre, ZGBlocks.oasisDiamondOre,
-				ZGBlocks.atheonDiamondOre, ZGBlocks.perdDiamondOre, ZGBlocks.altumDiamondOre, ZGBlocks.caligroDiamondOre);
+				ZGBlocks.atheonDiamondOre, ZGBlocks.perdDiamondOre, ZGBlocks.altumDiamondOre, ZGBlocks.caligroDiamondOre,
+				ZGBlocks.exodusDiamondOre);
 		registerOre("dustDiamond", ZGItems.dustDiamond);
 		
 		// Emerald
@@ -179,7 +181,8 @@ public class OreDictRegistry {
 		
 		// Redstone
 		registerOre("oreRedstone", ZGBlocks.edenRedstoneOre, ZGBlocks.kriffRedstoneOre, ZGBlocks.purgRedstoneOre, ZGBlocks.xathRedstoneOre,
-				ZGBlocks.oasisRedstoneOre, ZGBlocks.atheonRedstoneOre, ZGBlocks.altumRedstoneOre, ZGBlocks.caligroRedstoneOre);
+				ZGBlocks.oasisRedstoneOre, ZGBlocks.atheonRedstoneOre, ZGBlocks.altumRedstoneOre, ZGBlocks.caligroRedstoneOre,
+				ZGBlocks.exodusRedstoneOre);
 		
 		// Steel
 		registerOre("oreSteel", ZGBlocks.edenSteelOre);

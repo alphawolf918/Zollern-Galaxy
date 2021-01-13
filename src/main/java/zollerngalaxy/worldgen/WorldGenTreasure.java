@@ -17,6 +17,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
+import zollerngalaxy.config.ConfigManagerZG;
 
 public class WorldGenTreasure extends ZGWorldGenMaster {
 	
@@ -30,11 +31,15 @@ public class WorldGenTreasure extends ZGWorldGenMaster {
 	
 	@Override
 	public boolean generate(World worldIn, Random rand, BlockPos pos) {
-		int i = pos.getX();
-		int j = pos.getY();
-		int k = pos.getZ();
+		// Only validate chest gens if enabled in config (ExistingEevee).
+		if (ConfigManagerZG.enableChestValidation) {
+			if (!this.isValidSpawn(worldIn, pos)) {
+				return false;
+			}
+		}
 		
-		if (!this.isValidSpawn(worldIn, pos) || lootTable == null) {
+		// Don't generate an empty chest.
+		if (lootTable == null) {
 			return false;
 		}
 		

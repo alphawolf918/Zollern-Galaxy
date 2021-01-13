@@ -358,6 +358,11 @@ tile.exodusgravel.name=Exodus Gravel
 tile.exodustallgrass.name=Exodus Tall Grass
 tile.exoduscobblestone.name=Exodus Cobblestone
 tile.exodusstone.name=Exodus Stone
+tile.exodusironore.name=Exodus Iron Ore
+tile.exodusgoldore.name=Exodus Gold Ore
+tile.exodusdiamondore.name=Exodus Diamond Ore
+tile.exodusredstoneore.name=Exodus Redstone Ore
+tile.exoduscopperore.name=Exodus Copper Ore
 tile.exodusrock.name=Exodus Rock
 
 tile.endrock.name=Endrock

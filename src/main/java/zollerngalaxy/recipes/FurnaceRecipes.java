@@ -7,6 +7,8 @@
  */
 package zollerngalaxy.recipes;
 
+import cofh.core.util.helpers.ItemHelper;
+import cofh.thermalfoundation.init.TFItems;
 import micdoodle8.mods.galacticraft.core.GCItems;
 import micdoodle8.mods.galacticraft.planets.venus.VenusItems;
 import net.minecraft.block.Block;
@@ -19,8 +21,6 @@ import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.items.ZGItems;
 import zollerngalaxy.lib.helpers.ModHelperBase;
 import zollerngalaxy.lib.helpers.ZGHelper;
-import cofh.core.util.helpers.ItemHelper;
-import cofh.thermalfoundation.init.TFItems;
 
 public class FurnaceRecipes {
 	
@@ -138,6 +138,12 @@ public class FurnaceRecipes {
 		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.caligroShiniumOre, ZGItems.ingotShinium, 5.6F);
 		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.caligroZincOre, ZGItems.ingotZinc, 3.6F);
 		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.corruptChargiumOre, ZGItems.ingotChargium, 7.6F);
+		
+		// Exodus
+		FurnaceRecipes.SmeltBlock(ZGBlocks.exodusCobblestone, ZGBlocks.exodusStone, 5.6F);
+		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.exodusIronOre, Items.IRON_INGOT, 5.8F);
+		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.exodusGoldOre, Items.GOLD_INGOT, 5.9F);
+		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.exodusCopperOre, new ItemStack(GCItems.basicItem, 1, 3), 2.4F);
 		
 		// Dust -> Ingots/Gems
 		FurnaceRecipes.SmeltItem(ZGItems.dustDiamond, Items.DIAMOND, 2.6F);
