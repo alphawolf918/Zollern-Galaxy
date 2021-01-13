@@ -3,4 +3,11 @@ Zollern Galaxy v2.0.22
 =====================
 
 * Added an 'Extreme' mode to make the mod more challenging / rewarding.
+* Changed mechanics and lowered spawn rate of Altum treasure chests in the ocean.
+    - Should hopefully fix the Stack Overflow issue.
+* Modified and darkened Kriffon's planet surface texture.
+* Modified Pantheon star and Exodus planet textures to prep them.
+* Lowered default Outpost generation chance to 5%.
+* Added a new Earth-like planet called Exodus.
+    - This Planet can be reached via Tier 3 Rocketship.
 * 

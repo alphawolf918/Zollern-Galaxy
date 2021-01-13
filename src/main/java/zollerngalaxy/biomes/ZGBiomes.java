@@ -57,6 +57,7 @@ import zollerngalaxy.biomes.eden.BiomeSnowyPlains;
 import zollerngalaxy.biomes.eden.BiomeStoneMountains;
 import zollerngalaxy.biomes.eden.BiomeSwamplands;
 import zollerngalaxy.biomes.eden.BiomeTerranValley;
+import zollerngalaxy.biomes.exodus.BiomeAzuralPlains;
 import zollerngalaxy.biomes.kriffon.BiomeKriffon;
 import zollerngalaxy.biomes.oasis.BiomeOasisPlains;
 import zollerngalaxy.biomes.oasis.BiomeOasisRedSea;
@@ -152,6 +153,9 @@ public class ZGBiomes {
 	public static final Biome CALIGRO_WITHERLANDS = new BiomeCaligroWitherlands(new BiomeProperties("Witherlands"));
 	public static final Biome CALIGRO_CORRUPTED_MESA = new BiomeCaligroCorruptedMesa(new BiomeProperties("Corrupted Mesa"));
 	
+	// Exodus
+	public static final Biome EXODUS_AZURE_PLAINS = new BiomeAzuralPlains(new BiomeProperties("Azural Plains"));
+	
 	public static void init() {
 		// Zollus
 		ZGBiomes.addBiome(ZGBiomes.ZOLLUS, COLD, DEAD, DRY);
@@ -222,6 +226,9 @@ public class ZGBiomes {
 		ZGBiomes.addBiome(ZGBiomes.CALIGRO_ROCKY_VEINS, MOUNTAIN, SPOOKY, COLD, DEAD);
 		ZGBiomes.addBiome(ZGBiomes.CALIGRO_WITHERLANDS, WASTELAND, SPOOKY, COLD, DEAD);
 		ZGBiomes.addBiome(ZGBiomes.CALIGRO_CORRUPTED_MESA, MOUNTAIN, SPOOKY, COLD, DEAD);
+		
+		// Exodus
+		ZGBiomes.addBiome(ZGBiomes.EXODUS_AZURE_PLAINS, LUSH, WET, PLAINS);
 		
 		ZGHelper.Log("Loaded a total of " + totalBiomes + " new biomes.");
 	}

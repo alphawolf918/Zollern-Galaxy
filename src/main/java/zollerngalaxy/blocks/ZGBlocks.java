@@ -26,6 +26,7 @@ import zollerngalaxy.blocks.eden.BlockRedshroom;
 import zollerngalaxy.blocks.eden.EdenFlower;
 import zollerngalaxy.blocks.eden.EdenFruit;
 import zollerngalaxy.blocks.eden.ZGBlockGrassEden;
+import zollerngalaxy.blocks.exodus.ZGBlockGrassExodus;
 import zollerngalaxy.blocks.oasis.OasisFlower;
 import zollerngalaxy.blocks.oasis.ZGBlockGrassOasis;
 import zollerngalaxy.blocks.perdita.LostCactus;
@@ -508,6 +509,13 @@ public class ZGBlocks {
 	public static final Block corruptCreepstone = new ZGCorruptBlock("corruptcreepstone");
 	
 	// Exodus
+	public static final Block exodusTallGrass = new ZGBlockTallGrass("exodustallgrass");
+	public static final Block exodusDirt = new ZGBlockDirt("exodusdirt");
+	public static final Block exodusGrass = new ZGBlockGrassExodus("exodusgrass");
+	public static final Block exodusCobblestone = new ZGBlockBase("exoduscobblestone").setBlockType(EnumBlockType.COBBLESTONE);
+	public static final Block exodusStone = new ZGPlanetStone("exodusstone", 6.5F, ZGBlocks.exodusCobblestone)
+			.setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.AMARANTH.getHarvestLevel());
+	public static final Block exodusGravel = new ZGGravel("exodusgravel");
 	// TODO
 	
 	// Metals
@@ -641,7 +649,8 @@ public class ZGBlocks {
 				caligroOpalOre, caligroAquamarineOre, caligroGarnetOre, caligroSuperChargedCoalOre, caligroFueltoniumOre, caligroDiamondOre,
 				caligroEmeraldOre, caligroRadiumOre, caligroLapisOre, caligroZollerniumOre, caligroRubyOre, spiderlingEgg,
 				shadowBossSpawner, corruptRock, corruptCobble, corruptStone, corruptStoneBricks, corruptAscendiumOre, corruptEtriumOre,
-				corruptChargiumOre, corruptCreepstone, blockBlueprintStation, blockHealingStation, blockCrystalsPlutonium);
+				corruptChargiumOre, corruptCreepstone, exodusTallGrass, exodusDirt, exodusGrass, exodusCobblestone, exodusStone,
+				exodusGravel, blockBlueprintStation, blockHealingStation, blockCrystalsPlutonium);
 		ZGHelper.Log("Loaded a total of " + totalBlocks + " new blocks.");
 	}
 	

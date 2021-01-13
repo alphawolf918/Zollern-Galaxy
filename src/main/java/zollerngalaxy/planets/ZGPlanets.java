@@ -21,6 +21,7 @@ import zollerngalaxy.core.dimensions.worldproviders.WorldProviderAtheon;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderCaligro;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderCandora;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderEden;
+import zollerngalaxy.core.dimensions.worldproviders.WorldProviderExodus;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderKriffon;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderOasis;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderPerdita;
@@ -121,6 +122,7 @@ public class ZGPlanets {
 	public static ZGPlanet planetPerdita = new ZGPlanet("perdita");
 	public static ZGPlanet planetAltum = new ZGPlanet("altum");
 	public static ZGPlanet planetCaligro = new ZGPlanet("caligro");
+	public static ZGPlanet planetExodus = new ZGPlanet("exodus");
 	
 	// Pantheon Planets
 	public static ZGPlanet planetMeztli;
@@ -537,6 +539,32 @@ public class ZGPlanets {
 				ZGBiomes.CALIGRO_WITHERLANDS, ZGBiomes.CALIGRO_CORRUPTED_MESA);
 		totalPlanets++;
 		
+		// Exodus
+		planetExodus.setDimensionInfo(ConfigManagerZG.planetExodusDimensionId, WorldProviderExodus.class);
+		planetExodus.setParentSolarSystem(systemSol2);
+		planetExodus.setPlanetClass(EnumPlanetClass.M);
+		planetExodus.setRingColorRGB(10.0F, 10.0F, 10.0F);
+		planetExodus.setPhaseShift(50F);
+		planetExodus.setRelativeOrbitTime(4.5F);
+		planetExodus.setDistanceFromCenter(3.0F);
+		planetExodus.setTierRequired(ConfigManagerZG.planetExodusTier);
+		if (ConfigManagerZG.planetUnreachableAll || ConfigManagerZG.planetUnreachableExodus) {
+			planetExodus.setDisableRockets();
+		}
+		planetExodus.setRelativeSize(160.0F);
+		planetExodus.setPlanetTemperature(76.15F);
+		planetExodus.setPlanetToxicity(0.0F);
+		planetExodus.setPlanetRadiation(0.0F);
+		planetExodus.setWindLevel(125.67F);
+		planetExodus.setDensity(1.0F);
+		planetExodus.setHasRain(true);
+		planetExodus.setPlanetGasses(EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.CO2, EnumAtmosphericGas.NITROGEN,
+				EnumAtmosphericGas.WATER, EnumAtmosphericGas.HYDROGEN);
+		planetExodus.setPlanetIcon("exodus");
+		planetExodus.setAtmosphere();
+		planetExodus.setBiomeInfo(ZGBiomes.EXODUS_AZURE_PLAINS);
+		totalPlanets++;
+		
 		ZGHelper.Log("Loaded a total of " + totalPlanets + " new planets.");
 	}
 	
@@ -575,6 +603,7 @@ public class ZGPlanets {
 		GalaxyRegistry.registerPlanet(planetPerdita);
 		GalaxyRegistry.registerPlanet(planetAltum);
 		GalaxyRegistry.registerPlanet(planetCaligro);
+		GalaxyRegistry.registerPlanet(planetExodus);
 	}
 	
 	public static void registerTeleportTypes() {
@@ -595,5 +624,6 @@ public class ZGPlanets {
 		GalacticraftRegistry.registerTeleportType(WorldProviderPerdita.class, new TeleportTypeMars());
 		GalacticraftRegistry.registerTeleportType(WorldProviderAltum.class, new TeleportTypeMars());
 		GalacticraftRegistry.registerTeleportType(WorldProviderCaligro.class, new TeleportTypeMars());
+		GalacticraftRegistry.registerTeleportType(WorldProviderExodus.class, new TeleportTypeMars());
 	}
 }

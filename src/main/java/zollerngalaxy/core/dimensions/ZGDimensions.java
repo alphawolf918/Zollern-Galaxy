@@ -82,6 +82,10 @@ public class ZGDimensions {
 	public static DimensionType CALIGRO_ORBIT;
 	public static DimensionType CALIGRO_ORBIT_STATIC;
 	
+	public static DimensionType EXODUS;
+	public static DimensionType EXODUS_ORBIT;
+	public static DimensionType EXODUS_ORBIT_STATIC;
+	
 	public static void init() {
 		// Psion-6 (Zollus)
 		ZGDimensions.ZOLLUS = ZGDimensions.getDimType(ConfigManagerZG.planetZollusDimensionId);
@@ -166,6 +170,9 @@ public class ZGDimensions {
 				ConfigManagerZG.spaceStationCaligroId, WorldProviderOrbitCaligro.class, false);
 		ZGDimensions.CALIGRO_ORBIT_STATIC = DimensionType.register("Caligro Space Station", "_caligro_orbit",
 				ConfigManagerZG.spaceStationCaligroStaticId, WorldProviderOrbitCaligro.class, true);
+		
+		// Sol-2 (Exodus)
+		ZGDimensions.EXODUS = ZGDimensions.getDimType(ConfigManagerZG.planetExodusDimensionId);
 	}
 	
 	public static DimensionType getDimType(int dimId) {
@@ -198,6 +205,8 @@ public class ZGDimensions {
 			body = ZGPlanets.planetAltum;
 		} else if (dimID == ConfigManagerZG.planetCaligroDimensionId) {
 			body = ZGPlanets.planetCaligro;
+		} else if (dimID == ConfigManagerZG.planetExodusDimensionId) {
+			body = ZGPlanets.planetExodus;
 		}
 		
 		if (body == null) {

@@ -352,6 +352,14 @@ tile.netheridiumblock.name=Block of Netheridium
 tile.netherizedobsidian.name=Netherized Obsidian
 tile.redobsidian.name=Blood Obsidian
 
+tile.exodusgrass.name=Exodus Grass
+tile.exodusdirt.name=Exodus Dirt
+tile.exodusgravel.name=Exodus Gravel
+tile.exodustallgrass.name=Exodus Tall Grass
+tile.exoduscobblestone.name=Exodus Cobblestone
+tile.exodusstone.name=Exodus Stone
+tile.exodusrock.name=Exodus Rock
+
 tile.endrock.name=Endrock
 
 tile.heartblock.name=Healing Station

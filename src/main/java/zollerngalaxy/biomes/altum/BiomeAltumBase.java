@@ -115,10 +115,12 @@ public class BiomeAltumBase extends BiomeSpace {
 							}
 							chunkPrimerIn.setBlockState(x2, y, z2, DIRT);
 						}
-						if (rand.nextInt(240) == 2) {
+						//
+						if (rand.nextInt(1000) <= 10) {
 							BlockPos chestPos = new BlockPos(x2, (y + 1), z2);
 							OCEAN_TREASURE_GEN.generate(worldIn, rand, chestPos);
 						}
+						//
 					} else if (y >= SEA_LEVEL) {
 						chunkPrimerIn.setBlockState(x2, y, z2, AIR);
 					}

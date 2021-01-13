@@ -112,6 +112,9 @@ public class ConfigManagerZG {
 	public static int spaceStationCaligroId;
 	public static int spaceStationCaligroStaticId;
 	
+	public static int spaceStationExodusId;
+	public static int spaceStationExodusStaticId;
+	
 	// Misc
 	public static boolean canEarthAnimalsSpawnOnEden;
 	public static boolean disableStarGates;
@@ -153,6 +156,7 @@ public class ConfigManagerZG {
 	public static boolean planetUnreachablePerdita;
 	public static boolean planetUnreachableAltum;
 	public static boolean planetUnreachableCaligro;
+	public static boolean planetUnreachableExodus;
 	
 	// Max Health Customization
 	public static double maxHealthAllowed;
@@ -215,6 +219,7 @@ public class ConfigManagerZG {
 	public static int planetPerditaTier;
 	public static int planetAltumTier;
 	public static int planetCaligroTier;
+	public static int planetExodusTier;
 	
 	public static void init(FMLPreInitializationEvent event) {
 		configuration = new Configuration(new File(event.getModConfigurationDirectory().getAbsolutePath() + "/ZollernGalaxy/core.cfg"));
@@ -329,6 +334,10 @@ public class ConfigManagerZG {
 		spaceStationCaligroId = configuration.get(CATEGORY_SATELLITES, "Caligro Space Station ID", -6022).getInt();
 		spaceStationCaligroStaticId = configuration.get(CATEGORY_SATELLITES, "Caligro Space Station Static ID", -6023).getInt();
 		
+		// Exodus
+		spaceStationExodusId = configuration.get(CATEGORY_SATELLITES, "Exodus Space Station ID", -6024).getInt();
+		spaceStationExodusStaticId = configuration.get(CATEGORY_SATELLITES, "Exodus Space Station Static ID", -6025).getInt();
+		
 		// Misc (Can Earth animals spawn on Eden?)
 		canEarthAnimalsSpawnOnEden = configuration
 				.get(CATEGORY_MISC, "Earth Animals Spawn On Eden", true, "Should Earth animals spawn on Eden? (default: true)")
@@ -427,8 +436,8 @@ public class ConfigManagerZG {
 				"The amount of Ice Spikes to generate on " + "Zollus per chunk. (default: 2)").getInt();
 		zollusIceSpikesGenChance = configuration.get(CATEGORY_CUSTOMIZATIONS, "Zollus Ice Spikes Gen Percentage", 42,
 				"The chance (out of 100) for Ice Spikes to generate on planet Zollus. (default: 42)").getInt();
-		outpostGenChance = configuration.get(CATEGORY_CUSTOMIZATIONS, "Outpost Gen Percentage", 25,
-				"The chance (out of 100) for Outpost buildings to generate on planets. (default: 25)").getInt();
+		outpostGenChance = configuration.get(CATEGORY_CUSTOMIZATIONS, "Outpost Gen Percentage", 5,
+				"The chance (out of 100) for Outpost buildings to generate on planets. (default: 5)").getInt();
 		
 		// Control unreachable planets (by rockets).
 		planetUnreachableAll = configuration.get(CATEGORY_CUSTOMIZATIONS, "Disable Rockets For All Planets", false,
@@ -467,6 +476,8 @@ public class ConfigManagerZG {
 		planetUnreachableAltum = configuration.get(CATEGORY_CUSTOMIZATIONS, "Disable Rockets For Planet Altum", false,
 				"Disable rocket travel for this planet. (default: false)").getBoolean();
 		planetUnreachableCaligro = configuration.get(CATEGORY_CUSTOMIZATIONS, "Disable Rockets For Planet Caligro", false,
+				"Disable rocket travel for this planet. (default: false)").getBoolean();
+		planetUnreachableExodus = configuration.get(CATEGORY_CUSTOMIZATIONS, "Disable Rockets For Planet Exodus", false,
 				"Disable rocket travel for this planet. (default: false)").getBoolean();
 		
 		//
@@ -534,6 +545,7 @@ public class ConfigManagerZG {
 		planetPerditaTier = configuration.get(CATEGORY_TIERS, "Planet Perdita Tier", 9).getInt();
 		planetAltumTier = configuration.get(CATEGORY_TIERS, "Planet Altum Tier", 10).getInt();
 		planetCaligroTier = configuration.get(CATEGORY_TIERS, "Planet Caligro Tier", 11).getInt();
+		planetExodusTier = configuration.get(CATEGORY_TIERS, "Planet Exodus Tier", 3).getInt();
 		
 		configuration.save();
 	}
