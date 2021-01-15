@@ -352,6 +352,19 @@ tile.netheridiumblock.name=下界原素块
 tile.netherizedobsidian.name=下界化黑曜石
 tile.redobsidian.name=血色黑曜石
 
+tile.exodusgrass.name=Exodus Grass
+tile.exodusdirt.name=Exodus Dirt
+tile.exodusgravel.name=Exodus Gravel
+tile.exodustallgrass.name=Exodus Tall Grass
+tile.exoduscobblestone.name=Exodus Cobblestone
+tile.exodusstone.name=Exodus Stone
+tile.exodusironore.name=Exodus Iron Ore
+tile.exodusgoldore.name=Exodus Gold Ore
+tile.exodusdiamondore.name=Exodus Diamond Ore
+tile.exodusredstoneore.name=Exodus Redstone Ore
+tile.exoduscopperore.name=Exodus Copper Ore
+tile.exodusrock.name=Exodus Rock
+
 tile.endrock.name=Endrock
 
 tile.heartblock.name=医疗站
@@ -369,6 +382,8 @@ tile.compressedcobaltblock.name=致密钴块
 tile.compressedheartiumblock.name=致密红心块
 tile.compressedrhodiumblock.name=致密铑块
 tile.compressedzucriteblock.name=致密祖克合金块
+
+tile.plutoniumcrystals.name=Plutonium Crystals
 
 chargium=碳导体合金
 tile.chargium.name=碳导体合金
@@ -736,6 +751,8 @@ planet.exodus=出埃及记
 planet.perdita=珀迪塔
 planet.altum=阿尔图姆
 planet.caligro=卡里格罗
+
+planet.somnium=Somnium
 
 planet.meztli=梅兹特利
 planet.centotl=森特奥特尔
