@@ -45,7 +45,8 @@ public class GenLayerExodusBiomes extends GenLayerExodus {
 		@SuppressWarnings("unchecked")
 		ArrayList<BiomeEntry>[] currentBiomes = new ArrayList[CachedEnum.valuesBiomeCached().length];
 		List<BiomeEntry> list = new ArrayList<>();
-		list.add(new BiomeEntry(ZGBiomes.EXODUS_AZURE_PLAINS, 100));
+		list.add(new BiomeEntry(ZGBiomes.EXODUS_AZURE_PLAINS, 95));
+		list.add(new BiomeEntry(ZGBiomes.EXODUS_ROCKY_HILLS, 85));
 		
 		currentBiomes[BiomeType.WARM.ordinal()] = new ArrayList<>(list);
 		return currentBiomes;

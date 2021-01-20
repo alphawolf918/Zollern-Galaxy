@@ -289,6 +289,7 @@ public class ZGEvents {
 			}
 		}
 		
+		// This doesn't seem to work yet.
 		if (ent instanceof EntityPlayer) {
 			EntityPlayer player = (EntityPlayer) ent;
 			World world = player.world;

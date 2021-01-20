@@ -9,6 +9,7 @@ package zollerngalaxy.biomes.genlayers.kriffon;
 
 import java.util.ArrayList;
 import java.util.List;
+import com.google.common.collect.ImmutableList;
 import net.minecraft.util.WeightedRandom;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.layer.IntCache;
@@ -16,11 +17,9 @@ import net.minecraftforge.common.BiomeManager;
 import net.minecraftforge.common.BiomeManager.BiomeEntry;
 import net.minecraftforge.common.BiomeManager.BiomeType;
 import zollerngalaxy.biomes.ZGBiomes;
-import zollerngalaxy.biomes.genlayers.purgot.GenLayerPurgot;
 import zollerngalaxy.util.CachedEnum;
-import com.google.common.collect.ImmutableList;
 
-public class GenLayerKriffonBiomes extends GenLayerPurgot {
+public class GenLayerKriffonBiomes extends GenLayerKriffon {
 	
 	@SuppressWarnings("unchecked")
 	private List<BiomeEntry>[] biomes = new ArrayList[CachedEnum.valuesBiomeCached().length];
@@ -46,7 +45,8 @@ public class GenLayerKriffonBiomes extends GenLayerPurgot {
 		@SuppressWarnings("unchecked")
 		ArrayList<BiomeEntry>[] currentBiomes = new ArrayList[CachedEnum.valuesBiomeCached().length];
 		List<BiomeEntry> list = new ArrayList<>();
-		list.add(new BiomeEntry(ZGBiomes.KRIFFON, 100));
+		list.add(new BiomeEntry(ZGBiomes.KRIFFON, 95));
+		list.add(new BiomeEntry(ZGBiomes.KRIFFON_LAVA_OCEAN, 85));
 		
 		currentBiomes[BiomeType.WARM.ordinal()] = new ArrayList<>(list);
 		return currentBiomes;

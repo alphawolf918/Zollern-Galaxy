@@ -58,7 +58,7 @@ public abstract class BiomeExodusBase extends BiomeSpace {
 		this.decorator.mushroomsPerChunk = -999;
 		this.clearAllSpawning();
 		
-		this.spawnableCreatureList.add(new SpawnListEntry(EntityAlienVillager.class, 5, 1, 2));
+		this.spawnableCreatureList.add(new SpawnListEntry(EntityAlienVillager.class, 1, 1, 1));
 		
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedZombie.class, 100, 4, 4));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedSpider.class, 100, 4, 4));

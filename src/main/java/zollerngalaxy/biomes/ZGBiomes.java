@@ -58,7 +58,9 @@ import zollerngalaxy.biomes.eden.BiomeStoneMountains;
 import zollerngalaxy.biomes.eden.BiomeSwamplands;
 import zollerngalaxy.biomes.eden.BiomeTerranValley;
 import zollerngalaxy.biomes.exodus.BiomeAzuralPlains;
+import zollerngalaxy.biomes.exodus.BiomeExodusRockyHills;
 import zollerngalaxy.biomes.kriffon.BiomeKriffon;
+import zollerngalaxy.biomes.kriffon.BiomeKriffonLavaOcean;
 import zollerngalaxy.biomes.oasis.BiomeOasisPlains;
 import zollerngalaxy.biomes.oasis.BiomeOasisRedSea;
 import zollerngalaxy.biomes.oasis.BiomeRedlands;
@@ -88,6 +90,7 @@ public class ZGBiomes {
 	
 	// Kriffon
 	public static final Biome KRIFFON = new BiomeKriffon(new BiomeProperties("Kriffon"));
+	public static final Biome KRIFFON_LAVA_OCEAN = new BiomeKriffonLavaOcean(new BiomeProperties("Lake of Fire"));
 	
 	// Purgot
 	public static final Biome PURGOT_BASE = new BiomePurgot(new BiomeProperties("Purgotary"));
@@ -155,6 +158,7 @@ public class ZGBiomes {
 	
 	// Exodus
 	public static final Biome EXODUS_AZURE_PLAINS = new BiomeAzuralPlains(new BiomeProperties("Azural Plains"));
+	public static final Biome EXODUS_ROCKY_HILLS = new BiomeExodusRockyHills(new BiomeProperties("Rocky Hills"));
 	
 	public static void init() {
 		// Zollus
@@ -162,6 +166,7 @@ public class ZGBiomes {
 		
 		// Kriffon
 		ZGBiomes.addBiome(ZGBiomes.KRIFFON, HOT, DEAD, DRY);
+		ZGBiomes.addBiome(ZGBiomes.KRIFFON_LAVA_OCEAN, DEAD, SPOOKY, HOT, OCEAN);
 		
 		// Purgot
 		ZGBiomes.addBiome(ZGBiomes.PURGOT_BASE, DEAD, DRY);
@@ -229,6 +234,7 @@ public class ZGBiomes {
 		
 		// Exodus
 		ZGBiomes.addBiome(ZGBiomes.EXODUS_AZURE_PLAINS, LUSH, WET, PLAINS);
+		ZGBiomes.addBiome(ZGBiomes.EXODUS_ROCKY_HILLS, LUSH, WET, MOUNTAIN);
 		
 		ZGHelper.Log("Loaded a total of " + totalBiomes + " new biomes.");
 	}

@@ -263,7 +263,7 @@ public class ZGPlanets {
 		planetKriffon.setPlanetGasses(EnumAtmosphericGas.ARGON, EnumAtmosphericGas.METHANE, EnumAtmosphericGas.OXYGEN);
 		planetKriffon.setAtmosphere();
 		planetKriffon.setPlanetIcon("kriffus");
-		planetKriffon.setBiomeInfo(ZGBiomes.KRIFFON);
+		planetKriffon.setBiomeInfo(ZGBiomes.KRIFFON, ZGBiomes.KRIFFON_LAVA_OCEAN);
 		totalPlanets++;
 		
 		// Planet Purgot
@@ -562,7 +562,7 @@ public class ZGPlanets {
 				EnumAtmosphericGas.WATER, EnumAtmosphericGas.HYDROGEN);
 		planetExodus.setPlanetIcon("exodus");
 		planetExodus.setAtmosphere();
-		planetExodus.setBiomeInfo(ZGBiomes.EXODUS_AZURE_PLAINS);
+		planetExodus.setBiomeInfo(ZGBiomes.EXODUS_AZURE_PLAINS, ZGBiomes.EXODUS_ROCKY_HILLS);
 		totalPlanets++;
 		
 		ZGHelper.Log("Loaded a total of " + totalPlanets + " new planets.");
