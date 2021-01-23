@@ -451,7 +451,7 @@ item.plutoniumcrystal.name=钚水晶
 item.purgotessence.name=绿洲星宝石
 
 item.shadowessence.name=暗物质精粹
-item.radium.name=Radium
+item.radium.name=辐光物质
 
 item.fueltoniumraw.name=铀原矿
 item.fueltoniumingot.name=铀锭
@@ -719,7 +719,7 @@ tooltips.blueprint_freezing=Protects the Player from freezing thermal temperatur
 tooltips.heart=Restores the Player's health.
 tooltips.maxhealth=You're already at max health!
 tooltips.healthrestored=Your health has been restored.
-tooltips.healthincrease=Increases the max health of the Player.
+tooltips.healthincrease=提升玩家的生命最大值。
 tooltips.maxhealthtoohigh=Max health cannot be higher than
 tooltips.newhealth=Max Health
 tooltips.newhealth2=Max Health Now:
