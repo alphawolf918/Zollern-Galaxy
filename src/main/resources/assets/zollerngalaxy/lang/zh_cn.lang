@@ -18,7 +18,7 @@ tile.zoldirt.name=卓洛斯泥土
 tile.edensurfacerock.name=伊甸绿岩
 tile.edengrass.name=伊甸草方块
 tile.edengrass_snow.name=伊甸覆雪草方块
-tile.edengrass_autumn.name=Eden's Paradise Grass
+tile.edengrass_autumn.name=伊甸乐土草方块
 tile.edengoldengrass.name=伊甸金色草方块
 tile.edenswampgrass.name=伊甸沼泽草方块
 tile.edensoil.name=伊甸泥土
@@ -71,28 +71,28 @@ tile.bonestone.name=伊甸白骨石
 tile.edensacredstone.name=伊甸圣石
 tile.edenfruit.name=伊甸靛蓝水果
 tile.edenglass.name=伊甸玻璃
-tile.redshroomblock.name=Redshroom
-tile.redshroomstem.name=Redshroom Stem
+tile.redshroomblock.name=红蘑菇
+tile.redshroomstem.name=红蘑菇茎
 
 tile.edenwoodlog.name=伊甸树原木
 tile.edenwoodplanks.name=伊甸树木板
 tile.edenwoodleaves.name=伊甸树树叶
 tile.edentreesapling.name=伊甸树树苗
 
-tile.paradisewoodlog.name=Paradise Tree Log
-tile.paradisewoodplanks.name=Paradise Tree Planks
-tile.paradisewoodleaves.name=Paradise Tree Leaves
-tile.paradisewoodsapling.name=Paradise Tree Sapling
+tile.paradisewoodlog.name=乐土树原木
+tile.paradisewoodplanks.name=乐土树木板
+tile.paradisewoodleaves.name=乐土树树叶
+tile.paradisewoodsapling.name=乐土树树苗
 
-tile.goldenwoodlog.name=Goldenwood Log
-tile.goldenwoodplanks.name=Goldenwood Planks
-tile.goldenwoodleaves.name=Goldenwood Leaves
-tile.goldenwoodsapling.name=Goldenwood Sapling
+tile.goldenwoodlog.name=金黄树原木
+tile.goldenwoodplanks.name=金黄树木板
+tile.goldenwoodleaves.name=金黄树树叶
+tile.goldenwoodsapling.name=金黄树树苗
 
-tile.lovetreelog.name=Lovetree Log
-tile.lovetreeplanks.name=Lovetree Planks
-tile.lovetreeleaves.name=Lovetree Leaves
-tile.lovetreesapling.name=Lovetree Sapling
+tile.lovetreelog.name=爱情树原木
+tile.lovetreeplanks.name=爱情树木板
+tile.lovetreeleaves.name=爱情树树叶
+tile.lovetreesapling.name=爱情树树苗
 
 tile.fruitofedenblock.name=伊甸果
 tile.edengravel.name=伊甸砂砾
@@ -279,7 +279,7 @@ tile.seaweed.name=海草
 
 tile.caligrosurfacerock.name=卡里格罗表层岩
 tile.caligrorock.name=卡里格罗岩石
-tile.witherrack.name=凋零架
+tile.witherrack.name=凋零岩石
 tile.caligrodirt.name=卡里格罗泥土
 tile.caligrostone.name=卡里格罗石头
 tile.caligrocobblestone.name=卡里格罗圆石
@@ -309,8 +309,8 @@ tile.caligroironore.name=卡里格罗铁矿石
 tile.caligrogoldore.name=卡里格罗金矿石
 tile.caligroemeraldore.name=卡里格罗绿宝石矿石
 tile.caligrodiamondore.name=卡里格罗钻石矿石
-tile.caligrozollerniumore.name=Caligro Zollernium Ore
-tile.spider_egg.name=Spiderling Egg
+tile.caligrozollerniumore.name=卡里格罗卓伦矿石
+tile.spider_egg.name=小蜘蛛蛋
 tile.witheriteore.name=凋零元素矿石
 tile.shadowspawner.name=阴影生成
 tile.shadesapling.name=阴影木树苗
@@ -352,18 +352,18 @@ tile.netheridiumblock.name=下界原素块
 tile.netherizedobsidian.name=下界化黑曜石
 tile.redobsidian.name=血色黑曜石
 
-tile.exodusgrass.name=Exodus Grass
-tile.exodusdirt.name=Exodus Dirt
-tile.exodusgravel.name=Exodus Gravel
-tile.exodustallgrass.name=Exodus Tall Grass
-tile.exoduscobblestone.name=Exodus Cobblestone
-tile.exodusstone.name=Exodus Stone
-tile.exodusironore.name=Exodus Iron Ore
-tile.exodusgoldore.name=Exodus Gold Ore
-tile.exodusdiamondore.name=Exodus Diamond Ore
-tile.exodusredstoneore.name=Exodus Redstone Ore
-tile.exoduscopperore.name=Exodus Copper Ore
-tile.exodusrock.name=Exodus Rock
+tile.exodusgrass.name=出离星草方块
+tile.exodusdirt.name=出离星泥土
+tile.exodusgravel.name=出离星砂砾
+tile.exodustallgrass.name=出离星高草丛
+tile.exoduscobblestone.name=出离星圆石
+tile.exodusstone.name=出离星石头
+tile.exodusironore.name=出离星铁矿石
+tile.exodusgoldore.name=出离星金矿石
+tile.exodusdiamondore.name=出离星钻石矿石
+tile.exodusredstoneore.name=出离星红石矿石
+tile.exoduscopperore.name=出离星铜矿石
+tile.exodusrock.name=出离星岩石
 
 tile.endrock.name=Endrock
 
@@ -371,7 +371,7 @@ tile.heartblock.name=医疗站
 tile.blueprintblock.name=蓝图维修站
 
 tile.spacestationblock.name=空间站方块
-tile.outpostblock.name=Outpost Block
+tile.outpostblock.name=前哨站方块
 tile.loreblock.name=知识块
 
 tile.compressedprometheanblock.name=致密普罗米修斯块
@@ -383,7 +383,7 @@ tile.compressedheartiumblock.name=致密红心块
 tile.compressedrhodiumblock.name=致密铑块
 tile.compressedzucriteblock.name=致密祖克合金块
 
-tile.plutoniumcrystals.name=Plutonium Crystals
+tile.plutoniumcrystals.name=钚元素结晶
 
 chargium=碳导体合金
 tile.chargium.name=碳导体合金
@@ -400,10 +400,10 @@ fluid.fueltonium=熔融铀
 chocolatemelted=融化巧克力
 tile.chocolatemelted.name=融化巧克力
 fluid.chocolatemelted=融化巧克力
-
-radium=Radiance
-tile.radium.name=Radiance
-fluid.radium=Radiance
+#辐射系目前翻译为辐光
+radium=辐光
+tile.radium.name=辐光
+fluid.radium=辐光
 
 container.eden.treasurechest.name=伊甸宝箱
 
@@ -451,7 +451,7 @@ item.plutoniumcrystal.name=钚水晶
 item.purgotessence.name=绿洲星宝石
 
 item.shadowessence.name=暗物质精粹
-item.radium.name=Radium
+item.radium.name=辐光物质
 
 item.fueltoniumraw.name=铀原矿
 item.fueltoniumingot.name=铀锭
@@ -485,7 +485,7 @@ item.zincdust.name=锌粉
 item.rhodiumingot.name=铑锭
 item.rhodiumdust.name=铑粉
 
-item.radiumingot.name=Radium Ingot
+item.radiumingot.name=辐光锭
 
 item.rokkite.name=Rokkite
 item.amber.name=琥珀
@@ -498,7 +498,7 @@ item.firegarnet.name=火红石榴石
 item.icyaqua.name=雪蓝晶
 item.staticamber.name=凝固琥珀
 item.witherite.name=凋零元素
-item.netheridium.name=Netheridium
+item.netheridium.name=凋零元素
 item.shadowbone.name=阴影骨头
 
 item.blackmarblestick.name=黑色大理石棒
@@ -510,8 +510,8 @@ item.blueprint_tox.name=毒性保护
 item.blueprint_poison.name=毒防护
 item.blueprint_corruption.name=腐蚀防护
 item.blueprint_radiance.name=黑暗防护
-item.blueprint_scorch.name=Scorch Protection
-item.blueprint_freeze.name=Freeze Protection
+item.blueprint_scorch.name=灼烧防护
+item.blueprint_freeze.name=冻结防护
 
 item.compressedemerald.name=致密绿宝石板
 item.compresseddiamond.name=致密钻石板
@@ -530,7 +530,7 @@ item.compressedazurite.name=致密蓝铜板
 item.compressedzollernium.name=致密卓伦板
 item.compressedrhodium.name=致密铑板
 item.compressedzucrite.name=致密祖克合金板
-item.compressedascendantamaranth.name=Compressed Ascendant Amaranth
+item.compressedascendantamaranth.name=致密星位-紫水晶板
 
 item.superchargedcoal.name=超充能煤炭
 item.powerstick.name=星位之杖
@@ -615,28 +615,28 @@ item.zollernium_shovel.name=卓伦锹
 item.zollernium_axe.name=卓伦斧
 item.zollernium_hoe.name=卓伦锄
 
-item.amaranthhelmet.name=Amaranth Helmet
-item.amaranthchestplate.name=Amaranth Chestplate
-item.amaranthleggings.name=Amaranth Leggings
-item.amaranthboots.name=Amaranth Boots
+item.amaranthhelmet.name=紫苋头盔
+item.amaranthchestplate.name=紫苋胸甲
+item.amaranthleggings.name=紫苋护腿
+item.amaranthboots.name=紫苋靴子
 
-item.zollerniumhelmet.name=Zollernium Helmet
-item.zollerniumchestplate.name=Zollernium Chestplate
-item.zollerniumleggings.name=Zollernium Leggings
-item.zollerniumboots.name=Zollernium Boots
+item.zollerniumhelmet.name=卓伦头盔
+item.zollerniumchestplate.name=卓伦胸甲
+item.zollerniumleggings.name=卓伦护腿
+item.zollerniumboots.name=卓伦靴子
 
-item.azuritehelmet.name=Azurite Helmet
-item.azuritechestplate.name=Azurite Chestplate
-item.azuriteleggings.name=Azurite Leggings
-item.azuriteboots.name=Azurite Boots
+item.azuritehelmet.name=蓝铜头盔
+item.azuritechestplate.name=蓝铜胸甲
+item.azuriteleggings.name=蓝铜护腿
+item.azuriteboots.name=蓝铜靴子
 
-item.radiumhelmet.name=Radium Helmet
-item.radiumchestplate.name=Radium Chestplate
-item.radiumleggings.name=Radium Leggings
-item.radiumboots.name=Radium Boots
+item.radiumhelmet.name=辐光头盔
+item.radiumchestplate.name=辐光胸甲
+item.radiumleggings.name=辐光护腿
+item.radiumboots.name=辐光靴子
 
-item.heart.name=Healing Heart
-item.heartforce.name=Max Heartforce
+item.heart.name=治疗之心
+item.heartforce.name=心之力
 
 entity.zollerngalaxy:moolus.name=双头牛
 entity.zollerngalaxy:oinkus.name=三眼猪
@@ -644,7 +644,7 @@ entity.zollerngalaxy:squidlus.name=外星乌贼
 entity.zollerngalaxy:grayalien.name=小灰人
 entity.zollerngalaxy:galaxyknight.name=星系哨兵
 entity.zollerngalaxy:crawler.name=伏地魔蛛
-entity.zollerngalaxy:spiderling.name=Spiderling
+entity.zollerngalaxy:spiderling.name=小蜘蛛
 entity.zollerngalaxy:frostgiant.name=冰霜巨人
 entity.zollerngalaxy:magmos.name=熔岩人
 entity.zollerngalaxy:slime.raspberry.name=星系史莱姆 (覆盆子)
@@ -658,12 +658,12 @@ entity.zollerngalaxy:abyssalvillager.name=深渊村民
 entity.zollerngalaxy:shark.name=鲨鱼
 entity.zollerngalaxy:jellyfish.name=水母
 entity.zollerngalaxy:wasp.name=黄蜂
-entity.zollerngalaxy:krull.name=Krull
-entity.zollerngalaxy:shadowskeleton.name=Shadow Skeleton
-entity.zollerngalaxy:shade.name=Shade
-entity.zollerngalaxy:shadowalien.name=Shadow of Darkness Boss
-entity.zollerngalaxy:faceless.name=Faceless
-entity.zollerngalaxy:pigshroom.name=Shroompig
+entity.zollerngalaxy:krull.name=克鲁尔
+entity.zollerngalaxy:shadowskeleton.name=阴影骷髅
+entity.zollerngalaxy:shade.name=阴影
+entity.zollerngalaxy:shadowalien.name=黑暗BOSS之影
+entity.zollerngalaxy:faceless.name=无面者
+entity.zollerngalaxy:pigshroom.name=蘑菇猪
 
 tooltips.hud=显示所有行星及生物群系数据
 tooltips.hud2=仅在手持时生效
@@ -678,12 +678,12 @@ tooltips.loreblock4=你需要一个多功能工具以访问这个。
 tooltips.loreblock5=没有获得知识...
 tooltips.loreblock6=你发现了新的知识！
 tooltips.loreblock7=书：
-tooltips.radiance=You are irradiated with a brilliant light.
-tooltips.bedrockbreaker1=Provides the power to
-tooltips.bedrockbreaker2=break Bedrock on right-click.
-tooltips.bedrockbreaker3=Recharge it with Ascendant
-tooltips.bedrockbreaker4=Amaranth Ingots; only charges
-tooltips.bedrockbreaker5=when it's used up.
+tooltips.radiance=你被明灿的光所辐照着。
+tooltips.bedrockbreaker1=可以用于
+tooltips.bedrockbreaker2=右键破坏基岩方块。
+tooltips.bedrockbreaker3=可以使用
+tooltips.bedrockbreaker4=星位-紫水晶锭充能。
+tooltips.bedrockbreaker5=仅可以在完全用光后充能。
 tooltips.protocolnotfunctional=Hmm. This Protocol isn't functional yet. Maybe it'll work in the future.
 tooltips.unknownprotocol=Unknown Protocol detected; unable to transfer biological entity.
 tooltips.beastawoken=The Beast has awoken! Slay it, lest it consume you!
@@ -719,7 +719,7 @@ tooltips.blueprint_freezing=Protects the Player from freezing thermal temperatur
 tooltips.heart=Restores the Player's health.
 tooltips.maxhealth=You're already at max health!
 tooltips.healthrestored=Your health has been restored.
-tooltips.healthincrease=Increases the max health of the Player.
+tooltips.healthincrease=提升玩家的生命最大值。
 tooltips.maxhealthtoohigh=Max health cannot be higher than
 tooltips.newhealth=Max Health
 tooltips.newhealth2=Max Health Now:
@@ -733,7 +733,7 @@ tooltips.buildheight=This would exceed the build height of 256.
 tooltips.blueprintstation1=Right-click with a damaged
 tooltips.blueprintstation2=Blueprint to repair it.
 
-tooltips.healthstation=Right-click to heal yourself.
+tooltips.healthstation=右键以治疗自身。
 
 planet.zollus=卓洛斯
 planet.eden=伊甸
@@ -746,8 +746,8 @@ planet.oasis=绿洲星
 planet.xantheon=赞茜昂
 planet.candora=坎德拉
 planet.atheon=艾松星
-#暂时不确定的译名，第一个可以翻译为“出离”
-planet.exodus=出埃及记
+
+planet.exodus=出离星
 planet.perdita=珀迪塔
 planet.altum=阿尔图姆
 planet.caligro=卡里格罗
@@ -847,7 +847,7 @@ death.attack.waspsting.player=%1$s 因 %2$s 而死于马蜂蛰伤。
 death.attack.waspsting.item=%1$s 因 %2$s 使用 %3$s 而死于马蜂蛰伤。
 
 zollerngalaxy_infected=感染
-zollerngalaxy_anticorruption=Anti-Corruption
+zollerngalaxy_anticorruption=抗侵蚀
 zollerngalaxy_corruption=侵蚀
 zollerngalaxy_radiance=辐射
 zollerngalaxy_enlightened=启发
