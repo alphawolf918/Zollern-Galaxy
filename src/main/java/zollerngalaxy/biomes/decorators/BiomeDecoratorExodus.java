@@ -8,9 +8,12 @@
 package zollerngalaxy.biomes.decorators;
 
 import java.util.Random;
+import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.Biome.TempCategory;
 import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import zollerngalaxy.biomes.BiomeSpace;
@@ -19,6 +22,8 @@ import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.enums.EnumOreGenZG;
 import zollerngalaxy.lib.helpers.ZGDecorateHelper;
+import zollerngalaxy.worldgen.WorldGenFlowersZG;
+import zollerngalaxy.worldgen.WorldGenLakesZG;
 import zollerngalaxy.worldgen.WorldGenMinableZG;
 import zollerngalaxy.worldgen.WorldGenOutpost;
 import zollerngalaxy.worldgen.WorldGenTallGrassZG;
@@ -33,7 +38,14 @@ public class BiomeDecoratorExodus extends BiomeDecoratorZG {
 	private WorldGenerator redstoneOreGen;
 	private WorldGenerator copperOreGen;
 	
-	public int exodusTallGrassPerChunk = 4;
+	private WorldGenerator tallGrassGen = new WorldGenTallGrassZG((ZGBlockTallGrass) ZGBlocks.exodusTallGrass);
+	
+	public boolean generateLakes = true;
+	
+	public int exodusTallGrassPerChunk = 6;
+	public int waterLakesPerChunk = 2;
+	public int lavaLakesPerChunk = (this.enableExtremeMode) ? 12 : 6;
+	public int astersPerChunk = 5;
 	
 	public BiomeDecoratorExodus() {
 		this.dirtGen = new WorldGenMinableZG(ZGBlocks.exodusDirt, ZGBlocks.exodusGrass, EnumOreGenZG.DIRT);
@@ -55,6 +67,10 @@ public class BiomeDecoratorExodus extends BiomeDecoratorZG {
 		int genY = 248;
 		int y = genY;
 		
+		Block BLOCK_TOP = biome.topBlock.getBlock();
+		Block BLOCK_FILL = biome.fillerBlock.getBlock();
+		Block BLOCK_STONE = ZGBlocks.exodusStone;
+		
 		if (biome instanceof BiomeSpace) {
 			BiomeSpace spaceBiome = (BiomeSpace) biome;
 			genY = spaceBiome.getBiomeHeight();
@@ -71,10 +87,25 @@ public class BiomeDecoratorExodus extends BiomeDecoratorZG {
 		
 		// Tall Grass
 		if (this.exodusTallGrassPerChunk > 0) {
-			ZGBlockTallGrass exoTallGrass = (ZGBlockTallGrass) ZGBlocks.exodusTallGrass;
-			WorldGenTallGrassZG worldGen = new WorldGenTallGrassZG(exoTallGrass);
 			for (int i = 0; i < this.exodusTallGrassPerChunk; ++i) {
-				ZGDecorateHelper.generatePlants(worldGen, world, rand, this.chunkPos);
+				ZGDecorateHelper.generatePlants(this.tallGrassGen, world, rand, this.chunkPos);
+			}
+		}
+		
+		// Water Lakes
+		if (this.generateLakes && this.waterLakesPerChunk > 0) {
+			for (int i = 0; i < this.waterLakesPerChunk; ++i) {
+				y = rand.nextInt(rand.nextInt(genY) + 8);
+				Block blockToUse = (biome.getTempCategory() == TempCategory.COLD) ? Blocks.ICE : Blocks.WATER;
+				(new WorldGenLakesZG(blockToUse, BLOCK_TOP)).generate(world, rand, this.chunkPos.add(x, y, z));
+			}
+		}
+		
+		// Galaxy Asters
+		if (this.astersPerChunk > 0) {
+			for (int i = 0; i < this.astersPerChunk + 2; i++) {
+				IBlockState flowerState = ZGBlocks.exodusFlower.getDefaultState();
+				ZGDecorateHelper.generatePlants(new WorldGenFlowersZG(flowerState), world, rand, this.chunkPos);
 			}
 		}
 		

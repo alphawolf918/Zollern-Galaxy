@@ -17,18 +17,19 @@ import zollerngalaxy.blocks.ZGBlockFlower;
 import zollerngalaxy.blocks.ZGBlockGrass;
 import zollerngalaxy.lib.helpers.json.JSONFactory;
 
-public class OasisFlower extends ZGBlockFlower {
+public class ZGFlower extends ZGBlockFlower {
 	
-	private static String blockName = "oasisflower";
+	protected String flowerName;
 	
-	public OasisFlower() {
+	public ZGFlower(String blockName) {
 		super(blockName);
+		this.flowerName = blockName;
 		this.setupFlower();
 	}
 	
 	private void setupFlower() {
 		this.setMaterial(Material.VINE);
-		JSONFactory.registerFlowerBlock(blockName);
+		JSONFactory.registerFlowerBlock(this.flowerName);
 	}
 	
 	@Override
