@@ -1,0 +1,9 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "all": "zollerngalaxy:blocks/exoduswoodlog_top",
+    "top": "zollerngalaxy:blocks/exoduswoodlog_top",
+    "right": "zollerngalaxy:blocks/exoduswoodlog",
+    "left": "zollerngalaxy:blocks/exoduswoodlog"
+  }
+}

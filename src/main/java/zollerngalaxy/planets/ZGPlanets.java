@@ -562,7 +562,7 @@ public class ZGPlanets {
 				EnumAtmosphericGas.WATER, EnumAtmosphericGas.HYDROGEN);
 		planetExodus.setPlanetIcon("exodus");
 		planetExodus.setAtmosphere();
-		planetExodus.setBiomeInfo(ZGBiomes.EXODUS_AZURE_PLAINS, ZGBiomes.EXODUS_ROCKY_HILLS);
+		planetExodus.setBiomeInfo(ZGBiomes.EXODUS_AZURE_PLAINS, ZGBiomes.EXODUS_ROCKY_HILLS, ZGBiomes.EXODUS_OCEAN, ZGBiomes.EXODUS_FOREST);
 		totalPlanets++;
 		
 		ZGHelper.Log("Loaded a total of " + totalPlanets + " new planets.");

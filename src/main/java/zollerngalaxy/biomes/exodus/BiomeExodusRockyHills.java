@@ -31,6 +31,7 @@ public class BiomeExodusRockyHills extends BiomeExodusBase {
 		props.setTemperature(4.0F);
 		this.biomeDecor.exodusTallGrassPerChunk = 0;
 		this.biomeDecor.astersPerChunk = 0;
+		this.biomeDecor.lavaLakesPerChunk = 6;
 		this.setTemp(6F);
 		this.setBiomeHeight(72);
 		this.setBiomeType(EnumBiomeTypeZG.ROCKY);

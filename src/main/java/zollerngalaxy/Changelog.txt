@@ -17,5 +17,9 @@ Zollern Galaxy v2.0.22
 * Updated Exodus Redstone Ore texture.
 * Added the "Lake of Fire" biome to Kriffon.
 * Added the "Rocky Hills" biome to Exodus.
+* Added the "Exo Ocean" biome to Exodus.
+* Added the "Exo Forest" biome to Exodus.
 * Added "Galaxy Aster" flowers to Exodus.
+* 
+* Updated Blackrock and Whiterock textures for Purgot.
 * 

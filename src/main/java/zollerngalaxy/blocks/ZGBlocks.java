@@ -46,6 +46,7 @@ import zollerngalaxy.items.ZGItems;
 import zollerngalaxy.lib.helpers.CommonZGRegisterHelper;
 import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.worldgen.eden.WorldGenEdenTrees;
+import zollerngalaxy.worldgen.exodus.WorldGenExoTrees;
 import zollerngalaxy.worldgen.perdita.WorldGenPalmwoodTrees;
 
 public class ZGBlocks {
@@ -78,12 +79,19 @@ public class ZGBlocks {
 	private static WorldGenerator palmWoodTreeGen = new WorldGenPalmwoodTrees(true, ZGHelper.rngInt(5, 15),
 			ZGBlocks.perdWoodLogs.getDefaultState(), ZGBlocks.perdWoodLeaves.getDefaultState(), false);
 	
+	public static final Block exoWoodLogs = new ZGBlockLog("exoduswoodlog");
+	public static final Block exoWoodLeaves = new ZGBlockLeaves("exoduswoodleaves", ZGBlocks.exoWoodSapling);
+	public static final Block exoWoodPlanks = new ZGBlockPlanks("exoduswoodplanks");
+	public static final WorldGenerator exoWoodTreeGen = new WorldGenExoTrees(true, 5, ZGBlocks.exoWoodLogs.getDefaultState(),
+			ZGBlocks.exoWoodLeaves.getDefaultState(), false);;
+	
 	// These all have to be declared up top or else weird things happen.
 	public static final Block perdTreeSapling = new ZGBlockSapling("palmtreesapling", palmWoodTreeGen);
 	public static final Block edenWoodSapling = new ZGBlockSapling("edentreesapling", edenTreeGen);
 	public static final Block edenParadiseWoodSapling = new ZGBlockSapling("paradisewoodsapling", edenParadiseTreeGen);
 	public static final Block edenGoldenWoodSapling = new ZGBlockSapling("goldenwoodsapling", edenGoldenTreeGen);
 	public static final Block edenLovetreeSapling = new ZGBlockSapling("lovetreesapling", edenLovetreeGen);
+	public static final Block exoWoodSapling = new ZGBlockSapling("exoduswoodsapling", exoWoodTreeGen);
 	
 	public static final Block edenFruit = new EdenFruit();
 	public static final Block edenFlower = new EdenFlower();
@@ -139,7 +147,7 @@ public class ZGBlocks {
 	public static final Block purgDirt = new ZGBlockDirt("purgdirt");
 	public static final Block purgGravel = new ZGGravel("purggravel", 2.3F);
 	public static final Block purgBlackRock = new ZGBlockBase("blackrock", 1.2F);
-	public static final Block purgWhiteRock = new ZGBlockBase("whiterock", 1.2F);
+	public static final Block purgWhiteRock = new ZGBlockBase("whiterock", 1.2F).setTransparent();
 	public static final Block purgMeteoricIronOre = new ZGOreGem("purgmeteoricironore", 3.6F, GCItems.meteoricIronRaw)
 			.setShouldGivePotionEffect(true, MobEffects.LEVITATION);
 	public static final Block purgCobaltOre = ((ZGBlockBase) new ZGBlockOre("purgcobaltore", 2.8F).setShouldGivePotionEffect(true,
@@ -663,7 +671,8 @@ public class ZGBlocks {
 				spiderlingEgg, shadowBossSpawner, corruptRock, corruptCobble, corruptStone, corruptStoneBricks, corruptAscendiumOre,
 				corruptEtriumOre, corruptChargiumOre, corruptCreepstone, exodusTallGrass, exodusDirt, exodusGrass, exodusCobblestone,
 				exodusStone, exodusGravel, exodusRock, exodusIronOre, exodusGoldOre, exodusDiamondOre, exodusRedstoneOre, exodusCopperOre,
-				blockBlueprintStation, blockHealingStation, blockCrystalsPlutonium);
+				exoWoodLogs, exoWoodLeaves, exoWoodPlanks, exoWoodSapling, blockBlueprintStation, blockHealingStation,
+				blockCrystalsPlutonium);
 		ZGHelper.Log("Loaded a total of " + totalBlocks + " new blocks.");
 	}
 	

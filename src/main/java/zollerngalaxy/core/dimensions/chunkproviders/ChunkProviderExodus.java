@@ -25,6 +25,7 @@ import net.minecraft.world.gen.NoiseGenerator;
 import net.minecraft.world.gen.NoiseGeneratorOctaves;
 import net.minecraft.world.gen.NoiseGeneratorPerlin;
 import net.minecraft.world.gen.structure.MapGenMineshaft;
+import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.biomes.decorators.BiomeDecoratorExodus;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.worldgen.mapgen.MapGenCavesZG;
@@ -34,9 +35,10 @@ public class ChunkProviderExodus extends ChunkProviderBase {
 	
 	public static final IBlockState STONE = ZGBlocks.exodusStone.getDefaultState();
 	public static final IBlockState WATER = Blocks.WATER.getDefaultState();
+	public static final IBlockState LAVA = Blocks.LAVA.getDefaultState();
 	public static final IBlockState ICE = Blocks.ICE.getDefaultState();
 	
-	public static final double CHUNK_HEIGHT = 32.6D;
+	public static final double CHUNK_HEIGHT = 52.6D;
 	public static final int SEA_LEVEL = 63;
 	
 	private static final int CHUNK_SIZE_X = 16;
@@ -69,7 +71,7 @@ public class ChunkProviderExodus extends ChunkProviderBase {
 	
 	public static ChunkProviderExodus INSTANCE;
 	
-	private static final int CRATER_PROB = 100;
+	private static final int CRATER_PROB = 10;
 	
 	public ChunkProviderExodus(World worldIn, long seed, boolean mapFeaturesEnabled) {
 		this.world = worldIn;
@@ -139,7 +141,7 @@ public class ChunkProviderExodus extends ChunkProviderBase {
 						double d13 = (d4 - d2) * d9;
 						
 						for (int k2 = 0; k2 < 4; ++k2) {
-							double d14 = 0.25D;
+							double d14 = 0.35D; // 0.25D;
 							double d16 = (d11 - d10) * d14;
 							double lvt_45_1_ = d10 - d16;
 							
@@ -148,11 +150,25 @@ public class ChunkProviderExodus extends ChunkProviderBase {
 								int y = i2 * 8 + j2;
 								int z = l * 4 + l2;
 								
-								if ((lvt_45_1_ += d16) > this.noiseGenSmooth1.getNoise(chunkX * 16 + x, chunkZ * 16 + z) * CHUNK_HEIGHT) {
+								double chunkHeight = CHUNK_HEIGHT;
+								
+								Biome biome = world.getBiome(new BlockPos(x, y, z));
+								double heightMod = 0.0D;
+								
+								if (biome instanceof BiomeSpace) {
+									BiomeSpace spaceBiome = (BiomeSpace) biome;
+									heightMod = (spaceBiome.getBiomeHeight() / 2);
+								}
+								
+								if (heightMod > 0.0D) {
+									chunkHeight = (CHUNK_HEIGHT + heightMod);
+								}
+								
+								if ((lvt_45_1_ += d16) > this.noiseGenSmooth1.getNoise(chunkX * 16 + x, chunkZ * 16 + z) * chunkHeight) {
 									primer.setBlockState(x, y, z, STONE);
 								} else if (y < SEA_LEVEL) {
-									Biome biome = world.getBiome(new BlockPos(x, y, z));
 									IBlockState blockToUse = (biome.getTempCategory() == TempCategory.COLD) ? ICE : WATER;
+									blockToUse = (biome.getTempCategory() == TempCategory.WARM) ? LAVA : blockToUse;
 									primer.setBlockState(x, y, z, blockToUse);
 								}
 							}

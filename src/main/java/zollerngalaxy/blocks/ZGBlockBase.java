@@ -65,6 +65,8 @@ public class ZGBlockBase extends Block implements ISingleZGBlockRender, IJSONBlo
 	
 	protected boolean chainReactionEnabled = ConfigManagerZG.shouldExplosiveBlocksExplodeOtherBlocks;
 	
+	protected boolean isSolidColor = true;
+	
 	protected String[] blockInfo;
 	protected static String name;
 	
@@ -277,6 +279,16 @@ public class ZGBlockBase extends Block implements ISingleZGBlockRender, IJSONBlo
 		return this;
 	}
 	
+	public Block setTransparent() {
+		this.setIsOpaque(false);
+		return this;
+	}
+	
+	public Block setIsOpaque(boolean isSolidColorIn) {
+		this.isSolidColor = isSolidColorIn;
+		return this;
+	}
+	
 	@Override
 	public Material getMaterial(IBlockState block) {
 		return blockMaterial;
@@ -326,7 +338,7 @@ public class ZGBlockBase extends Block implements ISingleZGBlockRender, IJSONBlo
 	
 	@Override
 	public boolean isOpaqueCube(IBlockState state) {
-		return true;
+		return this.isSolidColor;
 	}
 	
 	@Override

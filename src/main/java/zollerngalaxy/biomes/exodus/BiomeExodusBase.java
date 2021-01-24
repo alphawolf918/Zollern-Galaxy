@@ -8,7 +8,6 @@
 package zollerngalaxy.biomes.exodus;
 
 import java.util.Random;
-import micdoodle8.mods.galacticraft.core.entities.EntityAlienVillager;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedCreeper;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedEnderman;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedSkeleton;
@@ -30,6 +29,7 @@ import net.minecraft.world.chunk.ChunkPrimer;
 import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.biomes.decorators.BiomeDecoratorExodus;
 import zollerngalaxy.blocks.ZGBlocks;
+import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderExodus;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 import zollerngalaxy.planets.ZGPlanets;
 
@@ -43,8 +43,8 @@ public abstract class BiomeExodusBase extends BiomeSpace {
 	protected static final IBlockState ICE = Blocks.ICE.getDefaultState();
 	protected static final IBlockState WATER = Blocks.WATER.getDefaultState();
 	
-	protected static final int SEA_LEVEL = 63;
-	protected static final int SEA_FLOOR_LEVEL = 42;
+	protected static final int SEA_LEVEL = ChunkProviderExodus.SEA_LEVEL;
+	protected static final int SEA_FLOOR_LEVEL = (SEA_LEVEL - 21);
 	
 	public BiomeDecoratorExodus biomeDecor = this.getBiomeDecorator();
 	
@@ -52,13 +52,14 @@ public abstract class BiomeExodusBase extends BiomeSpace {
 		super(singleName, props);
 		this.setTempCategory(TempCategory.MEDIUM);
 		this.setTemp(72.67F);
-		this.decorator.flowersPerChunk = -999;
-		this.decorator.treesPerChunk = -999;
-		this.decorator.grassPerChunk = -999;
-		this.decorator.mushroomsPerChunk = -999;
+		this.biomeDecor.flowersPerChunk = -999;
+		this.biomeDecor.treesPerChunk = -999;
+		this.biomeDecor.grassPerChunk = -999;
+		this.biomeDecor.mushroomsPerChunk = -999;
+		this.biomeDecor.exodusTreesPerChunk = 0;
 		this.clearAllSpawning();
 		
-		this.spawnableCreatureList.add(new SpawnListEntry(EntityAlienVillager.class, 1, 1, 1));
+		// this.spawnableCreatureList.add(new SpawnListEntry(EntityAlienVillager.class, 1, 1, 1));
 		
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedZombie.class, 100, 4, 4));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedSpider.class, 100, 4, 4));

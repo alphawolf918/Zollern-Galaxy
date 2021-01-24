@@ -20,13 +20,16 @@ import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.blocks.ZGBlockTallGrass;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.config.ConfigManagerZG;
+import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderExodus;
 import zollerngalaxy.core.enums.EnumOreGenZG;
 import zollerngalaxy.lib.helpers.ZGDecorateHelper;
+import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.worldgen.WorldGenFlowersZG;
 import zollerngalaxy.worldgen.WorldGenLakesZG;
 import zollerngalaxy.worldgen.WorldGenMinableZG;
 import zollerngalaxy.worldgen.WorldGenOutpost;
 import zollerngalaxy.worldgen.WorldGenTallGrassZG;
+import zollerngalaxy.worldgen.exodus.WorldGenExoTrees;
 
 public class BiomeDecoratorExodus extends BiomeDecoratorZG {
 	
@@ -38,14 +41,20 @@ public class BiomeDecoratorExodus extends BiomeDecoratorZG {
 	private WorldGenerator redstoneOreGen;
 	private WorldGenerator copperOreGen;
 	
-	private WorldGenerator tallGrassGen = new WorldGenTallGrassZG((ZGBlockTallGrass) ZGBlocks.exodusTallGrass);
-	
 	public boolean generateLakes = true;
+	public boolean generateVines = false;
+	public boolean generateTrees = true;
+	public boolean generateCraters = true;
 	
-	public int exodusTallGrassPerChunk = 6;
+	private WorldGenerator tallGrassGen = new WorldGenTallGrassZG((ZGBlockTallGrass) ZGBlocks.exodusTallGrass);
+	private WorldGenerator treeGenExo = new WorldGenExoTrees(false, ZGHelper.rngInt(5, 10), ZGBlocks.exoWoodLogs.getDefaultState(),
+			ZGBlocks.exoWoodLeaves.getDefaultState(), this.generateVines);
+	
+	public int exodusTallGrassPerChunk = 10;
+	public int exodusTreesPerChunk = 2;
 	public int waterLakesPerChunk = 2;
 	public int lavaLakesPerChunk = (this.enableExtremeMode) ? 12 : 6;
-	public int astersPerChunk = 5;
+	public int astersPerChunk = 10;
 	
 	public BiomeDecoratorExodus() {
 		this.dirtGen = new WorldGenMinableZG(ZGBlocks.exodusDirt, ZGBlocks.exodusGrass, EnumOreGenZG.DIRT);
@@ -87,7 +96,7 @@ public class BiomeDecoratorExodus extends BiomeDecoratorZG {
 		
 		// Tall Grass
 		if (this.exodusTallGrassPerChunk > 0) {
-			for (int i = 0; i < this.exodusTallGrassPerChunk; ++i) {
+			for (int i = 0; i < this.exodusTallGrassPerChunk + 4; ++i) {
 				ZGDecorateHelper.generatePlants(this.tallGrassGen, world, rand, this.chunkPos);
 			}
 		}
@@ -101,12 +110,42 @@ public class BiomeDecoratorExodus extends BiomeDecoratorZG {
 			}
 		}
 		
+		// Lava Lakes
+		if (this.generateLakes && this.lavaLakesPerChunk > 0) {
+			for (int i = 0; i < this.lavaLakesPerChunk; ++i) {
+				y = rand.nextInt(rand.nextInt(genY) + 8);
+				
+				if (rand.nextInt((this.enableExtremeMode) ? 75 : 100) <= 50) {
+					(new WorldGenLakesZG(Blocks.LAVA, BLOCK_STONE)).generate(world, rand, this.chunkPos.add(x, y, z));
+				}
+			}
+		}
+		
 		// Galaxy Asters
 		if (this.astersPerChunk > 0) {
 			for (int i = 0; i < this.astersPerChunk + 2; i++) {
 				IBlockState flowerState = ZGBlocks.exodusFlower.getDefaultState();
 				ZGDecorateHelper.generatePlants(new WorldGenFlowersZG(flowerState), world, rand, this.chunkPos);
 			}
+		}
+		
+		// Exowood Trees
+		if (this.generateTrees && this.exodusTreesPerChunk > 0) {
+			for (int i = 0; i < this.exodusTreesPerChunk; ++i) {
+				y = rand.nextInt(rand.nextInt(genY) + 8);
+				if (y < 64) {
+					y = ZGHelper.rngInt(64, 82);
+				}
+				
+				if (rand.nextInt(100) <= 50) {
+					treeGenExo.generate(world, rand, this.chunkPos.add(x, y, z));
+				}
+			}
+		}
+		
+		// Craters
+		if (this.generateCraters) {
+			ChunkProviderExodus.INSTANCE.createCraters(x, z, chunkPrimer);
 		}
 		
 		// Outposts

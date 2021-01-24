@@ -365,6 +365,10 @@ tile.exodusredstoneore.name=Exodus Redstone Ore
 tile.exoduscopperore.name=Exodus Copper Ore
 tile.exodusrock.name=Exodus Rock
 tile.aster.name=Galaxy Aster
+tile.exoduswoodlog.name=Exo Log
+tile.exoduswoodleaves.name=Exo Leaves
+tile.exoduswoodplanks.name=Exo Planks
+tile.exoduswoodsapling.name=Exo Sapling
 
 tile.endrock.name=Endrock
 

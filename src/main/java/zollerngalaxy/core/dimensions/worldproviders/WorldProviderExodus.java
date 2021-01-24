@@ -33,12 +33,12 @@ public class WorldProviderExodus extends WorldProviderZG {
 	
 	@Override
 	public float getGravity() {
-		return 0.064F;
+		return 0.070F;
 	}
 	
 	@Override
 	public float getSolarSize() {
-		return 1.5F;
+		return 1.8F;
 	}
 	
 	@Override
@@ -94,17 +94,17 @@ public class WorldProviderExodus extends WorldProviderZG {
 	@Override
 	public Vector3 getFogColor() {
 		float f = 1.1F - this.getStarBrightness(1.0F);
-		return new Vector3(6F / 255F * f, 6F / 255F * f, 248F / 255F * f);
+		return new Vector3(20F / 255F * f, 6F / 255F * f, 248F / 255F * f);
 	}
 	
 	@Override
 	public Vector3 getSkyColor() {
 		if (this.world.isRaining()) {
 			float f = 1.15F - this.getStarBrightness(1.0F);
-			return new Vector3(2 / 255F * f, 170 / 255F * f, 190 / 255F * f);
+			return new Vector3(120 / 255F * f, 170 / 255F * f, 190 / 255F * f);
 		}
 		float f = 1.15F - this.getStarBrightness(1.0F);
-		return new Vector3(120 / 255F * f, 161 / 255F * f, 255 / 255F * f);
+		return new Vector3(140 / 255F * f, 161 / 255F * f, 255 / 255F * f);
 	}
 	
 	@Override
@@ -149,7 +149,7 @@ public class WorldProviderExodus extends WorldProviderZG {
 		if (f2 > 1.0F) {
 			f2 = 1.0F;
 		}
-		return f2 * f2 * 1.2F;
+		return f2 * f2 * 1.4F;
 	}
 	
 	@Override
@@ -165,7 +165,7 @@ public class WorldProviderExodus extends WorldProviderZG {
 			f2 = 1.0F;
 		}
 		f2 = 1.0F - f2;
-		return f2 * 1.5F;
+		return f2 * 1.6F;
 	}
 	
 	@Override
@@ -175,12 +175,12 @@ public class WorldProviderExodus extends WorldProviderZG {
 	
 	@Override
 	public double getHorizon() {
-		return 62.0D;
+		return 72.0D;
 	}
 	
 	@Override
 	public int getAverageGroundLevel() {
-		return 67;
+		return 72;
 	}
 	
 	@Override
