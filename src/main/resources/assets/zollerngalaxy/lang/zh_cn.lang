@@ -364,6 +364,7 @@ tile.exodusdiamondore.name=出离星钻石矿石
 tile.exodusredstoneore.name=出离星红石矿石
 tile.exoduscopperore.name=出离星铜矿石
 tile.exodusrock.name=出离星岩石
+tile.aster.name=星系紫菀
 
 tile.endrock.name=Endrock
 
@@ -508,7 +509,7 @@ item.shadekey.name=阴影钥匙
 item.blueprint_rad.name=辐射保护
 item.blueprint_tox.name=毒性保护
 item.blueprint_poison.name=毒防护
-item.blueprint_corruption.name=腐蚀防护
+item.blueprint_corruption.name=侵蚀防护
 item.blueprint_radiance.name=黑暗防护
 item.blueprint_scorch.name=灼烧防护
 item.blueprint_freeze.name=冻结防护
@@ -556,7 +557,7 @@ item.cookedshark.name=熟鲨鱼
 item.shagreen.name=鲨鱼皮
 item.sharktooth.name=鲨鱼牙齿
 item.sharksword.name=鲨齿剑
-
+#下面是各种神器，暂时不进行翻译
 item.wither_sword.name=Mortem
 item.fire_sword.name=Diablo
 item.ice_sword.name=Glacies
@@ -684,13 +685,13 @@ tooltips.bedrockbreaker2=右键破坏基岩方块。
 tooltips.bedrockbreaker3=可以使用
 tooltips.bedrockbreaker4=星位-紫水晶锭充能。
 tooltips.bedrockbreaker5=仅可以在完全用光后充能。
-tooltips.protocolnotfunctional=Hmm. This Protocol isn't functional yet. Maybe it'll work in the future.
-tooltips.unknownprotocol=Unknown Protocol detected; unable to transfer biological entity.
-tooltips.beastawoken=The Beast has awoken! Slay it, lest it consume you!
-tooltips.shadowbossbeaten=The Beast has fallen!!
-tooltips.shadekey=You need a Shade Key to spawn this boss!
-tooltips.mobnotpeaceful=Cannot spawn this Mob while on Peaceful difficulty.
-tooltips.treasurespawned=A treasure chest has spawned!
+tooltips.protocolnotfunctional=emmmm，该协议尚无作用，也许以后会有用处。
+tooltips.unknownprotocol=发现未知协议，无法用于传输活体物质。
+tooltips.beastawoken=野兽已经苏醒！杀了它，免得它吃掉了你！
+tooltips.shadowbossbeaten=野兽倒下了！！
+tooltips.shadekey=你需要一个阴影钥匙来生成该BOSS！
+tooltips.mobnotpeaceful=无法在和平难度下生成该怪物。
+tooltips.treasurespawned=一个财宝箱生成了！
 
 tooltips.withersword1=A withering
 tooltips.withersword2=blade, touched with death.
@@ -711,27 +712,27 @@ tooltips.icesword2=the lands of frost.
 tooltips.lightsword1=Light, forged
 tooltips.lightsword2=into a blade.
 
-tooltips.blueprint=Protects the Player from certain elements.
-tooltips.blueprint_corruption=Protects the Player from Corruption damage.
-tooltips.blueprint_scorch=Protects the Player from scorching thermal temperatures.
-tooltips.blueprint_freezing=Protects the Player from freezing thermal temperatures.
+tooltips.blueprint=保护玩家免于特定元素的伤害。
+tooltips.blueprint_corruption=保护玩家免受侵蚀伤害。
+tooltips.blueprint_scorch=保护玩家免受高温灼伤。
+tooltips.blueprint_freezing=保护玩家免受低温冻结。
 
-tooltips.heart=Restores the Player's health.
-tooltips.maxhealth=You're already at max health!
-tooltips.healthrestored=Your health has been restored.
+tooltips.heart=恢复玩家的生命值。
+tooltips.maxhealth=你的生命值已满！
+tooltips.healthrestored=你的生命值已被恢复。
 tooltips.healthincrease=提升玩家的生命最大值。
-tooltips.maxhealthtoohigh=Max health cannot be higher than
-tooltips.newhealth=Max Health
-tooltips.newhealth2=Max Health Now:
-tooltips.hearts=hearts
+tooltips.maxhealthtoohigh=最大生命值无法高于
+tooltips.newhealth=最大生命值
+tooltips.newhealth2=目前最大生命值：
+tooltips.hearts=点
 
-tooltips.blueprintrepaired=Your blueprint has been repaired.
-tooltips.blueprintfine=This blueprint is not damaged.
+tooltips.blueprintrepaired=你的蓝图已被修复。
+tooltips.blueprintfine=该蓝图并未受损。
 
-tooltips.buildheight=This would exceed the build height of 256.
+tooltips.buildheight=这将会超过256的建筑高度限制。
 
-tooltips.blueprintstation1=Right-click with a damaged
-tooltips.blueprintstation2=Blueprint to repair it.
+tooltips.blueprintstation1=手持损坏的蓝图
+tooltips.blueprintstation2=右键以修复之。
 
 tooltips.healthstation=右键以治疗自身。
 
@@ -739,7 +740,7 @@ planet.zollus=卓洛斯
 planet.eden=伊甸
 planet.purgot=普高
 planet.kriffus=克里芬
-moon.astros=Astros
+moon.astros=阿斯特罗斯
 
 planet.xathius=夏提乌斯
 planet.oasis=绿洲星
@@ -849,14 +850,14 @@ death.attack.waspsting.item=%1$s 因 %2$s 使用 %3$s 而死于马蜂蛰伤。
 zollerngalaxy_infected=感染
 zollerngalaxy_anticorruption=抗侵蚀
 zollerngalaxy_corruption=侵蚀
-zollerngalaxy_radiance=辐射
+zollerngalaxy_radiance=辐照
 zollerngalaxy_enlightened=启发
 
-material.materialradium.name=Radium
-material.materialcorruption.name=Corruption
+material.materialradium.name=辐光物质
+material.materialcorruption.name=侵蚀
 
-modifier.trait_enlightened.name=Enlightened
-modifier.trait_corrupted.name=Corrupted
+modifier.trait_enlightened.name=启发
+modifier.trait_corrupted.name=被侵蚀
 
 itemGroup.ZollernGalaxyBlocks=卓伦星系|方块
 itemGroup.ZollernGalaxyItems=卓伦星系|物品
