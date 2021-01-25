@@ -297,7 +297,7 @@ tile.caligroamberore.name=卡里格罗琥珀矿石
 tile.caligroopalore.name=卡里格罗蛋白石矿石
 tile.caligrogarnetore.name=卡里格罗石榴石矿石
 tile.caligroaquaore.name=卡里格罗蓝晶矿石
-tile.caligroradiumore.name=卡里格罗镭矿石
+tile.caligroradiumore.name=卡里格罗辐光矿石
 tile.caligrorubyore.name=卡里格罗红宝石矿石
 tile.caligroredstoneore.name=卡里格罗红石矿石
 tile.caligrolapisore.name=卡里格罗青金石矿石
@@ -347,7 +347,7 @@ tile.firegarnetblock.name=火红石榴石块
 tile.icyaquablock.name=雪蓝晶块
 tile.shadowboneblock.name=阴影骨块
 tile.shadowessenceblock.name=阴影精粹块
-tile.radiumblock.name=镭块
+tile.radiumblock.name=辐光块
 tile.netheridiumblock.name=下界原素块
 tile.netherizedobsidian.name=下界化黑曜石
 tile.redobsidian.name=血色黑曜石
@@ -365,7 +365,11 @@ tile.exodusredstoneore.name=出离星红石矿石
 tile.exoduscopperore.name=出离星铜矿石
 tile.exodusrock.name=出离星岩石
 tile.aster.name=星系紫菀
-
+tile.exoduswoodlog.name=出离树原木
+tile.exoduswoodleaves.name=出离树树叶
+tile.exoduswoodplanks.name=出离树木板
+tile.exoduswoodsapling.name=出离树树苗
+#上面的树需要注意之后是否改名
 tile.endrock.name=Endrock
 
 tile.heartblock.name=医疗站
@@ -487,8 +491,8 @@ item.rhodiumingot.name=铑锭
 item.rhodiumdust.name=铑粉
 
 item.radiumingot.name=辐光锭
-
-item.rokkite.name=Rokkite
+#需要记住第一个其实是一种金属，以后想想有没有更好的名字
+item.rokkite.name=基岩金属
 item.amber.name=琥珀
 item.topaz.name=黄玉
 item.garnet.name=石榴石
@@ -505,7 +509,7 @@ item.shadowbone.name=阴影骨头
 item.blackmarblestick.name=黑色大理石棒
 item.marblestick.name=大理石棒
 item.shadekey.name=阴影钥匙
-#以下部分需要根据游戏内容进行性翻译
+
 item.blueprint_rad.name=辐射保护
 item.blueprint_tox.name=毒性保护
 item.blueprint_poison.name=毒防护
@@ -693,24 +697,24 @@ tooltips.shadekey=你需要一个阴影钥匙来生成该BOSS！
 tooltips.mobnotpeaceful=无法在和平难度下生成该怪物。
 tooltips.treasurespawned=一个财宝箱生成了！
 
-tooltips.withersword1=A withering
-tooltips.withersword2=blade, touched with death.
+tooltips.withersword1=一把凋零之剑
+tooltips.withersword2=触以敌人死亡之力。
 
-tooltips.firesword1=A sword of fire, said to match the
-tooltips.firesword2=power of the Nether itself.
+tooltips.firesword1=一把火焰之剑
+tooltips.firesword2=据说其伟力可匹敌整个下界。
 
-tooltips.thorsword1=Whosoever holds this blade,
-tooltips.thorsword2=should he be worthy,
-tooltips.thorsword3=shall possess the power of Thor.
+tooltips.thorsword1=谁持有此剑也罢
+tooltips.thorsword2=他是否有资格
+tooltips.thorsword3=拥有雷神托尔的力量。
 
-tooltips.endersword1=A sword forged from
-tooltips.endersword2=Enderman energy.
+tooltips.endersword1=一把以末影人力量
+tooltips.endersword2=铸造而成的剑。
 
-tooltips.icesword1=A sword born from
-tooltips.icesword2=the lands of frost.
+tooltips.icesword1=一把来自
+tooltips.icesword2=冰霜之地的剑。
 
-tooltips.lightsword1=Light, forged
-tooltips.lightsword2=into a blade.
+tooltips.lightsword1=光，熔铸
+tooltips.lightsword2=于此剑之中。
 
 tooltips.blueprint=保护玩家免于特定元素的伤害。
 tooltips.blueprint_corruption=保护玩家免受侵蚀伤害。
