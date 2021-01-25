@@ -38,7 +38,7 @@ public class BiomeZollusBase extends BiomeSpace {
 	protected static final IBlockState WATER = Blocks.WATER.getDefaultState();
 	
 	protected static final int SEA_LEVEL = ChunkProviderZollus.SEA_LEVEL;
-	protected static final int SEA_FLOOR_LEVEL = 42;
+	protected static final int SEA_FLOOR_LEVEL = (SEA_LEVEL - 21);
 	
 	public BiomeZollusBase(String singleName, BiomeProperties props) {
 		super(singleName, props);

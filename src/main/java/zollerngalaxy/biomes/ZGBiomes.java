@@ -79,6 +79,7 @@ import zollerngalaxy.biomes.xathius.BiomeBluelands;
 import zollerngalaxy.biomes.xathius.BiomeXathiusMountains;
 import zollerngalaxy.biomes.xathius.BiomeXathiusOcean;
 import zollerngalaxy.biomes.zollus.BiomeZollus;
+import zollerngalaxy.biomes.zollus.BiomeZollusIceOcean;
 import zollerngalaxy.lib.helpers.CommonZGRegisterHelper;
 import zollerngalaxy.lib.helpers.ZGHelper;
 
@@ -89,6 +90,7 @@ public class ZGBiomes {
 	
 	// Zollus
 	public static final Biome ZOLLUS = new BiomeZollus(new BiomeProperties("Zollus"));
+	public static final Biome ZOLLUS_OCEAN = new BiomeZollusIceOcean(new BiomeProperties("Zollus Ice Ocean"));
 	
 	// Kriffon
 	public static final Biome KRIFFON = new BiomeKriffon(new BiomeProperties("Kriffon"));
@@ -167,6 +169,7 @@ public class ZGBiomes {
 	public static void init() {
 		// Zollus
 		ZGBiomes.addBiome(ZGBiomes.ZOLLUS, COLD, DEAD, DRY);
+		ZGBiomes.addBiome(ZGBiomes.ZOLLUS_OCEAN, COLD, DEAD, WET, OCEAN);
 		
 		// Kriffon
 		ZGBiomes.addBiome(ZGBiomes.KRIFFON, HOT, DEAD, DRY);

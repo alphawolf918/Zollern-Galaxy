@@ -117,19 +117,19 @@ public class OreDictRegistry {
 		
 		// Logs
 		registerOre("logWood", ZGBlocks.edenWoodLog, ZGBlocks.perdWoodLogs, ZGBlocks.edenParadiseWoodLog, ZGBlocks.edenGoldenWoodLog,
-				ZGBlocks.edenLovetreeLog);
+				ZGBlocks.edenLovetreeLog, ZGBlocks.exoWoodLogs);
 		
 		// Leaves
 		registerOre("treeLeaves", ZGBlocks.edenWoodLeaves, ZGBlocks.perdWoodLeaves, ZGBlocks.edenParadiseWoodLeaves,
-				ZGBlocks.edenGoldenWoodLeaves, ZGBlocks.edenLovetreeLeaves);
+				ZGBlocks.edenGoldenWoodLeaves, ZGBlocks.edenLovetreeLeaves, ZGBlocks.exoWoodLeaves);
 		
 		// Saplings
 		registerOre("treeSapling", ZGBlocks.edenWoodSapling, ZGBlocks.perdTreeSapling, ZGBlocks.edenParadiseWoodSapling,
-				ZGBlocks.edenGoldenWoodSapling, ZGBlocks.edenLovetreeSapling);
+				ZGBlocks.edenGoldenWoodSapling, ZGBlocks.edenLovetreeSapling, ZGBlocks.exoWoodSapling);
 		
 		// Planks
 		registerOre("plankWood", ZGBlocks.edenWoodPlanks, ZGBlocks.perdWoodPlanks, ZGBlocks.edenParadiseWoodPlanks,
-				ZGBlocks.edenGoldenWoodPlanks, ZGBlocks.edenLovetreePlanks);
+				ZGBlocks.edenGoldenWoodPlanks, ZGBlocks.edenLovetreePlanks, ZGBlocks.exoWoodPlanks);
 		
 		// Stone
 		registerOre("stone", ZGBlocks.edenStone, ZGBlocks.kriffStone, ZGBlocks.purgStone, ZGBlocks.zolStone, ZGBlocks.xathStone,

@@ -338,7 +338,7 @@ public class ZGBlockBase extends Block implements ISingleZGBlockRender, IJSONBlo
 	
 	@Override
 	public boolean isOpaqueCube(IBlockState state) {
-		return this.isSolidColor;
+		return true;
 	}
 	
 	@Override

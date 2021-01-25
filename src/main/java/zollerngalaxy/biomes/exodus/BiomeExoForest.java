@@ -34,7 +34,7 @@ public class BiomeExoForest extends BiomeExodusBase {
 		this.biomeDecor.lavaLakesPerChunk = 1;
 		this.biomeDecor.generateFalls = true;
 		this.setTemp(5.2F);
-		this.setBiomeHeight(54);
+		this.setBiomeHeight(34);
 		this.setBiomeType(EnumBiomeTypeZG.LUSH);
 		this.enableSnow = false;
 		this.grassFoliageColor = 0xff008b;

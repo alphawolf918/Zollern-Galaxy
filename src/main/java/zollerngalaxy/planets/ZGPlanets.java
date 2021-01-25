@@ -238,7 +238,7 @@ public class ZGPlanets {
 		planetZollus.setPlanetGasses(EnumAtmosphericGas.NITROGEN, EnumAtmosphericGas.HELIUM);
 		planetZollus.setAtmosphere();
 		planetZollus.setPlanetIcon("zollus");
-		planetZollus.setBiomeInfo(ZGBiomes.ZOLLUS);
+		planetZollus.setBiomeInfo(ZGBiomes.ZOLLUS, ZGBiomes.ZOLLUS_OCEAN);
 		totalPlanets++;
 		
 		// Planet Kriffon
