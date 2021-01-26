@@ -756,7 +756,7 @@ planet.exodus=出离星
 planet.perdita=珀迪塔
 planet.altum=阿尔图姆
 planet.caligro=卡里格罗
-
+#有一个中文释义是“梦”
 planet.somnium=Somnium
 
 planet.meztli=梅兹特利
@@ -805,7 +805,7 @@ satellite.space_station.atheon=艾松星空间站
 satellite.space_station.perdita=珀迪塔空间站
 satellite.space_station.altum=阿尔图姆空间站
 satellite.space_station.caligro=卡里格罗空间站
-satellite.space_station.exodus=出埃及记空间站
+satellite.space_station.exodus=出离星空间站
 #以下内容暂未得到验证，准确性堪忧
 death.attack.bladefish=%1$s 被戳死了。
 death.attack.bladefish.player=%1$s 被 %2$s 戳死了。
