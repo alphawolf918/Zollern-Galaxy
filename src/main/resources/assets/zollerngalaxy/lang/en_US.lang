@@ -2,6 +2,8 @@ language.name=English
 language.region=US
 language.code=en_US
 
+## Blocks ##
+
 tile.zolsurfacerock.name=Zolrock
 tile.zolstone.name=Zolstone
 tile.zolcobblerock.name=Zolrock Cobblestone
@@ -369,6 +371,7 @@ tile.exoduswoodlog.name=Exo Log
 tile.exoduswoodleaves.name=Exo Leaves
 tile.exoduswoodplanks.name=Exo Planks
 tile.exoduswoodsapling.name=Exo Sapling
+tile.exosand.name=Exo Sand
 
 tile.endrock.name=Endrock
 
@@ -390,6 +393,8 @@ tile.compressedzucriteblock.name=Block of Compressed Zucrite
 
 tile.plutoniumcrystals.name=Plutonium Crystals
 
+## Fluids ##
+
 chargium=Conductive Chargium
 tile.chargium.name=Conductive Chargium
 fluid.chargium=Conductive Chargium
@@ -410,7 +415,11 @@ radium=Radiance
 tile.radium.name=Radiance
 fluid.radium=Radiance
 
+## Containers ##
+
 container.eden.treasurechest.name=Eden's Treasure
+
+## Items ##
 
 item.zolluscrystal.name=Zolnium Crystal
 item.heartofzol.name=Zollus Heartium
@@ -643,6 +652,8 @@ item.radiumboots.name=Radium Boots
 item.heart.name=Healing Heart
 item.heartforce.name=Max Heartforce
 
+## Mobs ##
+
 entity.zollerngalaxy:moolus.name=Moolus
 entity.zollerngalaxy:oinkus.name=Oinkus
 entity.zollerngalaxy:squidlus.name=Squidlus
@@ -669,6 +680,8 @@ entity.zollerngalaxy:shade.name=Shade
 entity.zollerngalaxy:shadowalien.name=Shadow of Darkness Boss
 entity.zollerngalaxy:faceless.name=Faceless
 entity.zollerngalaxy:pigshroom.name=Shroompig
+
+## Tooltips ##
 
 tooltips.hud=Shows all planetary and biome data.
 tooltips.hud2=Only works when held.
@@ -740,6 +753,8 @@ tooltips.blueprintstation2=Blueprint to repair it.
 
 tooltips.healthstation=Right-click to heal yourself.
 
+## Planets and Moons ##
+
 planet.zollus=Zollus
 planet.eden=Eden
 planet.purgot=Purgot
@@ -775,6 +790,8 @@ planet.maveth=Maveth
 planet.meridian=Meridian
 planet.reach=Reach
 
+## Stars ##
+
 star.psion6=Psios
 star.praedyth=Praedyth
 star.sol2=Sol-2
@@ -784,6 +801,8 @@ star.asgard=Asgard
 star.vega=Vega
 star.nova=Nova
 
+## Solar Systems ##
+
 solarsystem.psion6=Psios
 solarsystem.praedyth=Praedyth
 solarsystem.sol2=Sol-2
@@ -792,6 +811,8 @@ solarsystem.olympus=Olympus
 solarsystem.asgard=Asgard
 solarsystem.vega=Vega
 solarsystem.Nova=Nova
+
+## Space Stations ##
 
 satellite.space_station.zollus=Zollus Space Station
 satellite.space_station.kriffon=Kriffon Space Station
@@ -806,6 +827,8 @@ satellite.space_station.perdita=Perdita Space Station
 satellite.space_station.altum=Altum Space Station
 satellite.space_station.caligro=Caligro Space Station
 satellite.space_station.exodus=Exodus Space Station
+
+## Death Messages ##
 
 death.attack.bladefish=%1$s was stabbed to death.
 death.attack.bladefish.player=%1$s was stabbed to death because of %2$s.
@@ -851,17 +874,23 @@ death.attack.waspsting=%1$s died from wasp stings.
 death.attack.waspsting.player=%1$s died from wasp stings, thanks to %2$s.
 death.attack.waspsting.item=%1$s died from wasp stings, thanks to %2$s using %3$s.
 
+## Potion Effects ##
+
 zollerngalaxy_infected=Infected
 zollerngalaxy_anticorruption=Anti-Corruption
 zollerngalaxy_corruption=Corruption
 zollerngalaxy_radiance=Radiance
 zollerngalaxy_enlightened=Enlightened
 
+## Tinkerer's Construct ##
+
 material.materialradium.name=Radium
 material.materialcorruption.name=Corruption
 
 modifier.trait_enlightened.name=Enlightened
 modifier.trait_corrupted.name=Corrupted
+
+## Creative Tabs ##
 
 itemGroup.ZollernGalaxyBlocks=Zollern Galaxy Blocks
 itemGroup.ZollernGalaxyItems=Zollern Galaxy Items

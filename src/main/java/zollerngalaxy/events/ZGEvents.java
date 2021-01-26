@@ -258,14 +258,14 @@ public class ZGEvents {
 		if (username.equals("alphawolf918")) {
 			event.setDisplayname(TextFormatting.GOLD + "Zollern Wolf" + TextFormatting.WHITE);
 		} else if (username.equals("nascarmpfan")) {
-			event.setDisplayname(TextFormatting.RED + "Specter" + TextFormatting.WHITE);
+			event.setDisplayname(TextFormatting.RED + "Specter Fettel" + TextFormatting.WHITE);
 		} else if (username.equals("applepiec00kie")) {
 			event.setDisplayname(TextFormatting.LIGHT_PURPLE + "Queen Apple" + TextFormatting.WHITE);
 		} else if (username.equals("lazy_logic")) {
 			event.setDisplayname(TextFormatting.AQUA + "Logic" + TextFormatting.WHITE);
 		} else if (username.equals("master_zane")) {
 			event.setDisplayname(TextFormatting.GOLD + "Master Zane" + TextFormatting.WHITE);
-		} else if (username.equals("chronoxshift")) {
+		} else if (username.equals("chronoxshift") || username.equals("chrono_miles_")) {
 			event.setDisplayname(TextFormatting.BLACK + "ChronoxShift" + TextFormatting.WHITE);
 		} else if (username.equals("actural_guy")) {
 			event.setDisplayname(TextFormatting.GOLD + "ExistingEevee" + TextFormatting.WHITE);

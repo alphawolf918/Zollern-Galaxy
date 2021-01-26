@@ -49,6 +49,7 @@ public class GenLayerExodusBiomes extends GenLayerExodus {
 		list.add(new BiomeEntry(ZGBiomes.EXODUS_ROCKY_HILLS, 85));
 		list.add(new BiomeEntry(ZGBiomes.EXODUS_FOREST, 80));
 		list.add(new BiomeEntry(ZGBiomes.EXODUS_OCEAN, 75));
+		list.add(new BiomeEntry(ZGBiomes.EXODUS_BLACK_MESA, 70));
 		
 		currentBiomes[BiomeType.WARM.ordinal()] = new ArrayList<>(list);
 		return currentBiomes;

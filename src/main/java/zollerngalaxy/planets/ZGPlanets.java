@@ -284,8 +284,7 @@ public class ZGPlanets {
 		planetPurgot.setWindLevel(5.7F);
 		planetPurgot.setDensity(0.3F);
 		planetPurgot.setHasRain(false);
-		planetPurgot.setPlanetGasses(EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.WATER, EnumAtmosphericGas.NITROGEN,
-				EnumAtmosphericGas.ARGON);
+		planetPurgot.setPlanetGasses(EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.WATER, EnumAtmosphericGas.NITROGEN, EnumAtmosphericGas.ARGON);
 		planetPurgot.setPlanetIcon("purgot");
 		planetPurgot.setAtmosphere();
 		planetPurgot.setBiomeInfo(ZGBiomes.PURGOT_BASE, ZGBiomes.PURGOT_LIMBO);
@@ -313,14 +312,13 @@ public class ZGPlanets {
 		planetEden.setWindLevel(0.6F);
 		planetEden.setDensity(1.0F);
 		planetEden.setHasRain(true);
-		planetEden.setPlanetGasses(EnumAtmosphericGas.NITROGEN, EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.ARGON,
-				EnumAtmosphericGas.WATER, EnumAtmosphericGas.CO2);
+		planetEden.setPlanetGasses(EnumAtmosphericGas.NITROGEN, EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.ARGON, EnumAtmosphericGas.WATER,
+				EnumAtmosphericGas.CO2);
 		planetEden.setAtmosphere();
 		planetEden.setPlanetIcon("eden");
-		planetEden.setBiomeInfo(ZGBiomes.EDEN_GREEN_LANDS, ZGBiomes.EDEN_BLOOD_DESERT, ZGBiomes.EDEN_ROCK_MOUNTAINS,
-				ZGBiomes.EDEN_TERRAN_VALLEY, ZGBiomes.EDEN_SNOWY_PLAINS, ZGBiomes.EDEN_GOLDEN_MEADOW, ZGBiomes.EDEN_SWAMPLANDS,
-				ZGBiomes.EDENWOOD_FOREST, ZGBiomes.EDEN_PARADISE_WOODS, ZGBiomes.EDEN_FLOWER_GARDEN, ZGBiomes.EDEN_CRATERS,
-				ZGBiomes.EDEN_SHROOM_HILLS, ZGBiomes.EDEN_OCEAN);
+		planetEden.setBiomeInfo(ZGBiomes.EDEN_GREEN_LANDS, ZGBiomes.EDEN_BLOOD_DESERT, ZGBiomes.EDEN_ROCK_MOUNTAINS, ZGBiomes.EDEN_TERRAN_VALLEY,
+				ZGBiomes.EDEN_SNOWY_PLAINS, ZGBiomes.EDEN_GOLDEN_MEADOW, ZGBiomes.EDEN_SWAMPLANDS, ZGBiomes.EDENWOOD_FOREST, ZGBiomes.EDEN_PARADISE_WOODS,
+				ZGBiomes.EDEN_FLOWER_GARDEN, ZGBiomes.EDEN_CRATERS, ZGBiomes.EDEN_SHROOM_HILLS, ZGBiomes.EDEN_OCEAN);
 		totalPlanets++;
 		
 		// Planet Xathius
@@ -342,12 +340,10 @@ public class ZGPlanets {
 		planetXathius.setWindLevel(3.2F);
 		planetXathius.setDensity(1.1F);
 		planetXathius.setHasRain(true);
-		planetXathius.setPlanetGasses(EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.WATER, EnumAtmosphericGas.NITROGEN,
-				EnumAtmosphericGas.ARGON);
+		planetXathius.setPlanetGasses(EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.WATER, EnumAtmosphericGas.NITROGEN, EnumAtmosphericGas.ARGON);
 		planetXathius.setAtmosphere();
 		planetXathius.setPlanetIcon("xathius");
-		planetXathius.setBiomeInfo(ZGBiomes.XATHIUS_ABSTRACT_PLAINS, ZGBiomes.XATHIUS_OCEAN, ZGBiomes.XATHIUS_BLUELANDS,
-				ZGBiomes.XATHIUS_MOUNTAINS);
+		planetXathius.setBiomeInfo(ZGBiomes.XATHIUS_ABSTRACT_PLAINS, ZGBiomes.XATHIUS_OCEAN, ZGBiomes.XATHIUS_BLUELANDS, ZGBiomes.XATHIUS_MOUNTAINS);
 		totalPlanets++;
 		
 		// Planet Oasis
@@ -422,12 +418,11 @@ public class ZGPlanets {
 		planetCandora.setWindLevel(0.0F);
 		planetCandora.setDensity(0.1F);
 		planetCandora.setHasRain(false);
-		planetCandora.setPlanetGasses(EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.CO2, EnumAtmosphericGas.WATER,
-				EnumAtmosphericGas.HELIUM);
+		planetCandora.setPlanetGasses(EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.CO2, EnumAtmosphericGas.WATER, EnumAtmosphericGas.HELIUM);
 		planetCandora.setAtmosphere();
 		planetCandora.setPlanetIcon("candora");
-		planetCandora.setBiomeInfo(ZGBiomes.CANDY_MOUNTAIN, ZGBiomes.CANDY_OCEAN, ZGBiomes.CANDY_JOLLY_MELON_PLAINS,
-				ZGBiomes.CANDY_BLUEBERRY_HILLS, ZGBiomes.CANDY_COOKIE_LANDS);
+		planetCandora.setBiomeInfo(ZGBiomes.CANDY_MOUNTAIN, ZGBiomes.CANDY_OCEAN, ZGBiomes.CANDY_JOLLY_MELON_PLAINS, ZGBiomes.CANDY_BLUEBERRY_HILLS,
+				ZGBiomes.CANDY_COOKIE_LANDS);
 		totalPlanets++;
 		
 		// Atheon
@@ -450,8 +445,7 @@ public class ZGPlanets {
 		planetAtheon.setWindLevel(0.0F);
 		planetAtheon.setDensity(40.2F);
 		planetAtheon.setHasRain(false);
-		planetAtheon.setPlanetGasses(EnumAtmosphericGas.CO2, EnumAtmosphericGas.ARGON, EnumAtmosphericGas.HELIUM,
-				EnumAtmosphericGas.METHANE);
+		planetAtheon.setPlanetGasses(EnumAtmosphericGas.CO2, EnumAtmosphericGas.ARGON, EnumAtmosphericGas.HELIUM, EnumAtmosphericGas.METHANE);
 		planetAtheon.setAtmosphere();
 		planetAtheon.setPlanetIcon("atheon");
 		planetAtheon.setBiomeInfo(ZGBiomes.ATHEON_GOLDLANDS, ZGBiomes.ATHEON_LAVA_LAKES);
@@ -477,12 +471,11 @@ public class ZGPlanets {
 		planetPerdita.setWindLevel(16.16F);
 		planetPerdita.setDensity(20.4F);
 		planetPerdita.setHasRain(false);
-		planetPerdita.setPlanetGasses(EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.CO2, EnumAtmosphericGas.NITROGEN,
-				EnumAtmosphericGas.WATER);
+		planetPerdita.setPlanetGasses(EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.CO2, EnumAtmosphericGas.NITROGEN, EnumAtmosphericGas.WATER);
 		planetPerdita.setAtmosphere();
 		planetPerdita.setPlanetIcon("perdita");
-		planetPerdita.setBiomeInfo(ZGBiomes.PERDITA_DESERT, ZGBiomes.PERDITA_HALLOWS, ZGBiomes.PERDITA_OASIS,
-				ZGBiomes.PERDITA_FUELTONIUM_OCEAN, ZGBiomes.PERDITA_LOST_MOUNTAINS);
+		planetPerdita.setBiomeInfo(ZGBiomes.PERDITA_DESERT, ZGBiomes.PERDITA_HALLOWS, ZGBiomes.PERDITA_OASIS, ZGBiomes.PERDITA_FUELTONIUM_OCEAN,
+				ZGBiomes.PERDITA_LOST_MOUNTAINS);
 		totalPlanets++;
 		
 		// Altum
@@ -504,12 +497,11 @@ public class ZGPlanets {
 		planetAltum.setWindLevel(20.42F);
 		planetAltum.setDensity(0.3F);
 		planetAltum.setHasRain(true);
-		planetAltum.setPlanetGasses(EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.CO2, EnumAtmosphericGas.NITROGEN,
-				EnumAtmosphericGas.WATER, EnumAtmosphericGas.HYDROGEN);
+		planetAltum.setPlanetGasses(EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.CO2, EnumAtmosphericGas.NITROGEN, EnumAtmosphericGas.WATER,
+				EnumAtmosphericGas.HYDROGEN);
 		planetAltum.setAtmosphere();
 		planetAltum.setPlanetIcon("altum");
-		planetAltum.setBiomeInfo(ZGBiomes.ALTUM_ROCKY_ISLES, ZGBiomes.ALTUM_SANCTUM_BEACH, ZGBiomes.ALTUM_OCEAN,
-				ZGBiomes.ALTUM_ROCKY_SHORE);
+		planetAltum.setBiomeInfo(ZGBiomes.ALTUM_ROCKY_ISLES, ZGBiomes.ALTUM_SANCTUM_BEACH, ZGBiomes.ALTUM_OCEAN, ZGBiomes.ALTUM_ROCKY_SHORE);
 		totalPlanets++;
 		
 		// Caligro
@@ -531,12 +523,12 @@ public class ZGPlanets {
 		planetCaligro.setWindLevel(60.58F);
 		planetCaligro.setDensity(100.32F);
 		planetCaligro.setHasRain(false);
-		planetCaligro.setPlanetGasses(EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.WATER, EnumAtmosphericGas.NITROGEN,
-				EnumAtmosphericGas.ARGON, EnumAtmosphericGas.METHANE, EnumAtmosphericGas.HYDROGEN);
+		planetCaligro.setPlanetGasses(EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.WATER, EnumAtmosphericGas.NITROGEN, EnumAtmosphericGas.ARGON,
+				EnumAtmosphericGas.METHANE, EnumAtmosphericGas.HYDROGEN);
 		planetCaligro.setPlanetIcon("caligro");
 		planetCaligro.setAtmosphere();
-		planetCaligro.setBiomeInfo(ZGBiomes.CALIGRO_UPSIDE_DOWN, ZGBiomes.CALIGRO_CREEPLANDS, ZGBiomes.CALIGRO_ROCKY_VEINS,
-				ZGBiomes.CALIGRO_WITHERLANDS, ZGBiomes.CALIGRO_CORRUPTED_MESA);
+		planetCaligro.setBiomeInfo(ZGBiomes.CALIGRO_UPSIDE_DOWN, ZGBiomes.CALIGRO_CREEPLANDS, ZGBiomes.CALIGRO_ROCKY_VEINS, ZGBiomes.CALIGRO_WITHERLANDS,
+				ZGBiomes.CALIGRO_CORRUPTED_MESA);
 		totalPlanets++;
 		
 		// Exodus
@@ -558,11 +550,12 @@ public class ZGPlanets {
 		planetExodus.setWindLevel(125.67F);
 		planetExodus.setDensity(1.0F);
 		planetExodus.setHasRain(true);
-		planetExodus.setPlanetGasses(EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.CO2, EnumAtmosphericGas.NITROGEN,
-				EnumAtmosphericGas.WATER, EnumAtmosphericGas.HYDROGEN);
+		planetExodus.setPlanetGasses(EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.CO2, EnumAtmosphericGas.NITROGEN, EnumAtmosphericGas.WATER,
+				EnumAtmosphericGas.HYDROGEN);
 		planetExodus.setPlanetIcon("exodus");
 		planetExodus.setAtmosphere();
-		planetExodus.setBiomeInfo(ZGBiomes.EXODUS_AZURE_PLAINS, ZGBiomes.EXODUS_ROCKY_HILLS, ZGBiomes.EXODUS_OCEAN, ZGBiomes.EXODUS_FOREST);
+		planetExodus.setBiomeInfo(ZGBiomes.EXODUS_AZURE_PLAINS, ZGBiomes.EXODUS_ROCKY_HILLS, ZGBiomes.EXODUS_OCEAN, ZGBiomes.EXODUS_FOREST,
+				ZGBiomes.EXODUS_BLACK_MESA);
 		totalPlanets++;
 		
 		ZGHelper.Log("Loaded a total of " + totalPlanets + " new planets.");

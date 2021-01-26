@@ -58,6 +58,7 @@ import zollerngalaxy.biomes.eden.BiomeStoneMountains;
 import zollerngalaxy.biomes.eden.BiomeSwamplands;
 import zollerngalaxy.biomes.eden.BiomeTerranValley;
 import zollerngalaxy.biomes.exodus.BiomeAzuralPlains;
+import zollerngalaxy.biomes.exodus.BiomeBlackMesa;
 import zollerngalaxy.biomes.exodus.BiomeExoForest;
 import zollerngalaxy.biomes.exodus.BiomeExodusOcean;
 import zollerngalaxy.biomes.exodus.BiomeExodusRockyHills;
@@ -165,6 +166,7 @@ public class ZGBiomes {
 	public static final Biome EXODUS_ROCKY_HILLS = new BiomeExodusRockyHills(new BiomeProperties("Rocky Hills"));
 	public static final Biome EXODUS_OCEAN = new BiomeExodusOcean(new BiomeProperties("Exo Ocean"));
 	public static final Biome EXODUS_FOREST = new BiomeExoForest(new BiomeProperties("Exo Forest"));
+	public static final Biome EXODUS_BLACK_MESA = new BiomeBlackMesa(new BiomeProperties("Black Mesa"));
 	
 	public static void init() {
 		// Zollus
@@ -244,6 +246,7 @@ public class ZGBiomes {
 		ZGBiomes.addBiome(ZGBiomes.EXODUS_ROCKY_HILLS, LUSH, WET, MOUNTAIN);
 		ZGBiomes.addBiome(ZGBiomes.EXODUS_OCEAN, WET, OCEAN);
 		ZGBiomes.addBiome(ZGBiomes.EXODUS_FOREST, LUSH, WET, FOREST);
+		ZGBiomes.addBiome(ZGBiomes.EXODUS_BLACK_MESA, DEAD, HOT, DRY, MOUNTAIN, WASTELAND);
 		
 		ZGHelper.Log("Loaded a total of " + totalBiomes + " new biomes.");
 	}
