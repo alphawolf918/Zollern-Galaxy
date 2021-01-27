@@ -2,6 +2,8 @@
 #arrange and translate:godhidden z2zz2zz@yahoo.com
 
 
+## Blocks ##
+
 tile.zolsurfacerock.name=卓洛斯表层岩
 tile.zolstone.name=卓洛斯石头
 tile.zolcobblerock.name=卓洛斯原石
@@ -369,7 +371,8 @@ tile.exoduswoodlog.name=出离树原木
 tile.exoduswoodleaves.name=出离树树叶
 tile.exoduswoodplanks.name=出离树木板
 tile.exoduswoodsapling.name=出离树树苗
-#上面的树需要注意之后是否改名
+tile.exosand.name=出离星沙子
+
 tile.endrock.name=Endrock
 
 tile.heartblock.name=医疗站
@@ -389,6 +392,8 @@ tile.compressedrhodiumblock.name=致密铑块
 tile.compressedzucriteblock.name=致密祖克合金块
 
 tile.plutoniumcrystals.name=钚元素结晶
+
+## Fluids ##
 
 chargium=碳导体合金
 tile.chargium.name=碳导体合金
@@ -410,7 +415,11 @@ radium=辐光
 tile.radium.name=辐光
 fluid.radium=辐光
 
+## Containers ##
+
 container.eden.treasurechest.name=伊甸宝箱
+
+## Items ##
 
 item.zolluscrystal.name=卓洛斯水晶
 item.heartofzol.name=卓洛斯红心
@@ -643,6 +652,8 @@ item.radiumboots.name=辐光靴子
 item.heart.name=治疗之心
 item.heartforce.name=心之力
 
+## Mobs ##
+
 entity.zollerngalaxy:moolus.name=双头牛
 entity.zollerngalaxy:oinkus.name=三眼猪
 entity.zollerngalaxy:squidlus.name=外星乌贼
@@ -669,6 +680,8 @@ entity.zollerngalaxy:shade.name=阴影
 entity.zollerngalaxy:shadowalien.name=黑暗BOSS之影
 entity.zollerngalaxy:faceless.name=无面者
 entity.zollerngalaxy:pigshroom.name=蘑菇猪
+
+## Tooltips ##
 
 tooltips.hud=显示所有行星及生物群系数据
 tooltips.hud2=仅在手持时生效
@@ -740,6 +753,8 @@ tooltips.blueprintstation2=右键以修复之。
 
 tooltips.healthstation=右键以治疗自身。
 
+## Planets and Moons ##
+
 planet.zollus=卓洛斯
 planet.eden=伊甸
 planet.purgot=普高
@@ -775,6 +790,8 @@ planet.maveth=马维斯
 planet.meridian=默里迪恩
 planet.reach=致远星
 
+## Stars ##
+
 star.psion6=皮索斯
 star.praedyth=普莱迪斯
 star.sol2=Sol-2
@@ -784,6 +801,8 @@ star.asgard=阿斯加德
 star.vega=织女星
 star.nova=新星
 
+## Solar Systems ##
+
 solarsystem.psion6=皮索斯
 solarsystem.praedyth=普莱迪斯
 solarsystem.sol2=Sol-2
@@ -792,6 +811,8 @@ solarsystem.olympus=奥林匹斯
 solarsystem.asgard=阿斯加德
 solarsystem.vega=织女星
 solarsystem.Nova=新星
+
+## Space Stations ##
 
 satellite.space_station.zollus=卓洛斯空间站
 satellite.space_station.kriffon=克里芬空间站
@@ -806,7 +827,9 @@ satellite.space_station.perdita=珀迪塔空间站
 satellite.space_station.altum=阿尔图姆空间站
 satellite.space_station.caligro=卡里格罗空间站
 satellite.space_station.exodus=出离星空间站
-#以下内容暂未得到验证，准确性堪忧
+
+## Death Messages ##
+
 death.attack.bladefish=%1$s 被戳死了。
 death.attack.bladefish.player=%1$s 被 %2$s 戳死了。
 death.attack.bladefish.item=%1$s 被 %2$s 用 %3$s 戳死了。
@@ -851,17 +874,23 @@ death.attack.waspsting=%1$s 死于马蜂蛰伤。
 death.attack.waspsting.player=%1$s 因 %2$s 而死于马蜂蛰伤。
 death.attack.waspsting.item=%1$s 因 %2$s 使用 %3$s 而死于马蜂蛰伤。
 
+## Potion Effects ##
+
 zollerngalaxy_infected=感染
 zollerngalaxy_anticorruption=抗侵蚀
 zollerngalaxy_corruption=侵蚀
 zollerngalaxy_radiance=辐照
 zollerngalaxy_enlightened=启发
 
+## Tinkerer's Construct ##
+
 material.materialradium.name=辐光物质
 material.materialcorruption.name=侵蚀
 
 modifier.trait_enlightened.name=启发
 modifier.trait_corrupted.name=被侵蚀
+
+## Creative Tabs ##
 
 itemGroup.ZollernGalaxyBlocks=卓伦星系|方块
 itemGroup.ZollernGalaxyItems=卓伦星系|物品
