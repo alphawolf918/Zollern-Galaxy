@@ -9,6 +9,7 @@ package zollerngalaxy.mobs.entities;
 
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.world.World;
+import zollerngalaxy.mobs.entities.base.EntityWaterMobZG;
 
 public class EntityBlubberFish extends EntityWaterMobZG {
 	

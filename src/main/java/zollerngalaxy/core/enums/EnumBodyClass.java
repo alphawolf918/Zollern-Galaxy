@@ -7,7 +7,7 @@
  */
 package zollerngalaxy.core.enums;
 
-public enum EnumPlanetClass {
+public enum EnumBodyClass {
 	
 	D("D"),
 	H("H"),
@@ -27,14 +27,14 @@ public enum EnumPlanetClass {
 	OCEAN("Ocean"),
 	DARK("Dark");
 	
-	private EnumPlanetClass planetClass;
+	private EnumBodyClass planetClass;
 	private String planetClassStr;
 	
-	private EnumPlanetClass(String strClass) {
+	private EnumBodyClass(String strClass) {
 		this.planetClassStr = strClass;
 	}
 	
-	private EnumPlanetClass(EnumPlanetClass pClass) {
+	private EnumBodyClass(EnumBodyClass pClass) {
 		this.planetClass = pClass;
 	}
 	
@@ -42,7 +42,7 @@ public enum EnumPlanetClass {
 		this.planetClassStr = strClass;
 	}
 	
-	public void setPlanetClass(EnumPlanetClass pClass) {
+	public void setPlanetClass(EnumBodyClass pClass) {
 		this.planetClass = pClass;
 	}
 	
@@ -50,7 +50,7 @@ public enum EnumPlanetClass {
 		return this.planetClassStr;
 	}
 	
-	public EnumPlanetClass getPlanetClass() {
+	public EnumBodyClass getPlanetClass() {
 		return this.planetClass;
 	}
 }

@@ -9,7 +9,6 @@ package zollerngalaxy.biomes.altum;
 
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
-import zollerngalaxy.planets.ZGPlanets;
 
 public class BiomeRockyIsles extends BiomeAltumBase {
 	
@@ -24,6 +23,5 @@ public class BiomeRockyIsles extends BiomeAltumBase {
 		this.topBlock = ZGBlocks.altumRock.getDefaultState();
 		this.fillerBlock = ZGBlocks.altumDirt.getDefaultState();
 		this.stoneBlock = ZGBlocks.altumStone;
-		this.setPlanetForBiome(ZGPlanets.planetAltum);
 	}
 }

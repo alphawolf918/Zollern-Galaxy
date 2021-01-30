@@ -9,9 +9,9 @@ package zollerngalaxy.biomes.zollus;
 
 import net.minecraft.init.Blocks;
 import zollerngalaxy.blocks.ZGBlocks;
+import zollerngalaxy.celestial.ZGPlanets;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 import zollerngalaxy.mobs.entities.EntityFrostGiant;
-import zollerngalaxy.planets.ZGPlanets;
 
 public class BiomeZollusIceOcean extends BiomeZollusBase {
 	

@@ -5,7 +5,7 @@
  * but do not claim it as your own, and
  * do not redistribute it.
  */
-package zollerngalaxy.mobs.entities;
+package zollerngalaxy.mobs.entities.base;
 
 import javax.annotation.Nullable;
 import net.minecraft.entity.Entity;

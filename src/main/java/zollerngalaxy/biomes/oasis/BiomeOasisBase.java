@@ -8,6 +8,7 @@
 package zollerngalaxy.biomes.oasis;
 
 import java.util.Random;
+import cofh.thermalfoundation.init.TFFluids;
 import micdoodle8.mods.galacticraft.core.entities.EntityAlienVillager;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -18,12 +19,11 @@ import net.minecraft.world.chunk.ChunkPrimer;
 import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.biomes.decorators.BiomeDecoratorOasis;
 import zollerngalaxy.blocks.ZGBlocks;
+import zollerngalaxy.celestial.ZGPlanets;
 import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderOasis;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 import zollerngalaxy.lib.helpers.ModHelperBase;
-import zollerngalaxy.planets.ZGPlanets;
-import cofh.thermalfoundation.init.TFFluids;
 
 public abstract class BiomeOasisBase extends BiomeSpace {
 	

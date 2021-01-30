@@ -14,6 +14,7 @@ import micdoodle8.mods.galacticraft.core.dimension.TeleportTypeOrbit;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.WorldProvider;
+import zollerngalaxy.celestial.ZGPlanets;
 import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitAltum;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitAtheon;
@@ -30,7 +31,6 @@ import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitZoll
 import zollerngalaxy.items.ZGItems;
 import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.lib.helpers.ZGRecipeHelper;
-import zollerngalaxy.planets.ZGPlanets;
 
 public class ZGSpaceStations {
 	

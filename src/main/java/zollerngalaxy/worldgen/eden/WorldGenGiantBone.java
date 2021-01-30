@@ -20,6 +20,7 @@ import zollerngalaxy.worldgen.ZGWorldGenMaster;
 
 public class WorldGenGiantBone extends ZGWorldGenMaster {
 	
+	@Override
 	protected boolean isValidSpawn(World world, BlockPos pos) {
 		Block blockBelow = world.getBlockState(pos.down()).getBlock();
 		

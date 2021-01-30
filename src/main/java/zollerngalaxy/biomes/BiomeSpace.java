@@ -16,13 +16,14 @@ import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedSpider;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedWitch;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedZombie;
 import net.minecraft.block.Block;
+import zollerngalaxy.celestial.IZollernBody;
+import zollerngalaxy.celestial.ZGPlanetaryBody;
 import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderZG;
-import zollerngalaxy.planets.ZGPlanet;
 
 public class BiomeSpace extends ZGBiomeBase {
 	
-	protected ZGPlanet planetForBiome = null;
+	protected IZollernBody planetForBiome = null;
 	protected WorldProviderZG spaceProvider = null;
 	protected boolean enableExtremeMode = ConfigManagerZG.enableExtremeMode;
 	public static int grassFoliageColor = 0x00ff00;
@@ -65,23 +66,28 @@ public class BiomeSpace extends ZGBiomeBase {
 	}
 	
 	/**
-	 * Sets the Planet to be associated with this biome.
+	 * Sets the Body to be associated with this biome.
 	 * 
 	 * @param planet
-	 *            The Planet to associate with this biome.
-	 * @return The biome for the set Planet.
+	 *            The Body to associate with this biome.
+	 * @return The biome for the set Body.
 	 */
-	public BiomeSpace setPlanetForBiome(ZGPlanet planet) {
+	public BiomeSpace setPlanetForBiome(IZollernBody planet) {
 		this.planetForBiome = planet;
 		return this;
 	}
 	
+	public BiomeSpace setBodyForBiome(ZGPlanetaryBody planet) {
+		this.setPlanetForBiome(planet);
+		return this;
+	}
+	
 	/**
-	 * Gets the Planet associated with this biome.
+	 * Gets the Body associated with this biome.
 	 * 
-	 * @return The Planet associated with this biome.
+	 * @return The Body associated with this biome.
 	 */
-	public ZGPlanet getPlanetForBiome() {
+	public IZollernBody getBodyForBiome() {
 		return this.planetForBiome;
 	}
 	
@@ -100,7 +106,7 @@ public class BiomeSpace extends ZGBiomeBase {
 	 * @return True if the biome temp is >= 7.0f, otherwise false.
 	 */
 	public boolean getIsHotBiome() {
-		return (this.getBiomeTemp() >= 7F);
+		return (this.getBiomeTemp() >= 7F) || (this.getBodyForBiome().getIsHotBody());
 	}
 	
 	/**
@@ -109,7 +115,7 @@ public class BiomeSpace extends ZGBiomeBase {
 	 * @return True if the biome temp is <= 3.0f, otherwise false.
 	 */
 	public boolean getIsColdBiome() {
-		return (this.getBiomeTemp() <= 3F);
+		return (this.getBiomeTemp() <= 3F) || (this.getBodyForBiome().getIsColdBody());
 	}
 	
 	@Override
@@ -124,7 +130,7 @@ public class BiomeSpace extends ZGBiomeBase {
 	 * 
 	 * @param biomeTemp
 	 *            Biome temperature.
-	 * @return The Planet to apply this biome to.
+	 * @return The Body to apply this biome to.
 	 */
 	public BiomeSpace setTemp(float biomeTemp) {
 		this.temp = biomeTemp;
@@ -141,18 +147,18 @@ public class BiomeSpace extends ZGBiomeBase {
 	}
 	
 	/**
-	 * Returns the actual temperature of the Planet, taking biome temp into
+	 * Returns the actual temperature of the Body, taking biome temp into
 	 * account.
 	 * 
-	 * @return The current temperature of the Planet.
+	 * @return The current temperature of the Body.
 	 */
-	public float getPlanetTemp() {
-		ZGPlanet planet = this.getPlanetForBiome();
+	public float getBodyTemp() {
+		IZollernBody planet = this.getBodyForBiome();
 		
 		float biomeTemp = this.getBiomeTemp();
 		Random rand = new Random();
 		
-		float planetTemp = planet.getPlanetTemperature();
+		float planetTemp = planet.getBodyTemperature();
 		float flucTemp = planetTemp;
 		
 		int tempChangeBy = (this.enableExtremeMode) ? 50 : 25;
@@ -160,9 +166,9 @@ public class BiomeSpace extends ZGBiomeBase {
 		float maxTemp = planetTemp + tempChangeBy;
 		float minTemp = planetTemp - tempChangeBy;
 		
-		if (planet.getIsColdPlanet()) {
+		if (planet.getIsColdBody()) {
 			flucTemp -= biomeTemp;
-		} else if (planet.getIsHotPlanet()) {
+		} else if (planet.getIsHotBody()) {
 			flucTemp += biomeTemp;
 		} else {
 			flucTemp = planetTemp + biomeTemp;

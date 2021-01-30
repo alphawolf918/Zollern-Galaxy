@@ -10,7 +10,7 @@ package zollerngalaxy.planets.satellites;
 import micdoodle8.mods.galacticraft.api.galaxies.Satellite;
 import micdoodle8.mods.galacticraft.core.world.gen.BiomeOrbit;
 import net.minecraft.util.ResourceLocation;
-import zollerngalaxy.planets.ZGPlanet;
+import zollerngalaxy.celestial.ZGPlanet;
 
 public class ZGSpaceStation extends Satellite {
 	

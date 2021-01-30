@@ -5,14 +5,12 @@
  * claim it as your own, and do not
  * redistribute it.
  */
-package zollerngalaxy.moons;
+package zollerngalaxy.celestial;
 
-import micdoodle8.mods.galacticraft.api.galaxies.Moon;
-
-public class ZGMoon extends Moon {
+public class ZGPlanet extends ZGPlanetaryBody {
 	
-	public ZGMoon(String moonName) {
-		super(moonName);
+	public ZGPlanet(String planetName) {
+		super(planetName);
 	}
 	
 }

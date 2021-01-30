@@ -10,7 +10,7 @@ package zollerngalaxy.mobs.entities.ai;
 import javax.annotation.Nullable;
 import net.minecraft.entity.ai.EntityAIBase;
 import net.minecraft.util.math.Vec3d;
-import zollerngalaxy.mobs.entities.EntityWaterMobZG;
+import zollerngalaxy.mobs.entities.base.EntityWaterMobZG;
 import zollerngalaxy.util.RandPosGenWater;
 
 public class EntityAIFishWander extends EntityAIBase {

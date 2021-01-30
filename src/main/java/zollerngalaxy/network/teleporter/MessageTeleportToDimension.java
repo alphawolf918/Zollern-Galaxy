@@ -28,7 +28,7 @@ import net.minecraftforge.fml.common.network.simpleimpl.IMessage;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessageHandler;
 import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
 import zollerngalaxy.biomes.BiomeSpace;
-import zollerngalaxy.planets.ZGPlanet;
+import zollerngalaxy.celestial.ZGPlanet;
 
 public class MessageTeleportToDimension implements IMessage {
 	

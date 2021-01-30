@@ -5,7 +5,7 @@
  * claim it as your own, and do not
  * redistribute it.
  */
-package zollerngalaxy.planets;
+package zollerngalaxy.celestial;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -20,15 +20,15 @@ import net.minecraft.world.biome.Biome;
 import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderZG;
-import zollerngalaxy.core.enums.EnumPlanetClass;
+import zollerngalaxy.core.enums.EnumBodyClass;
 import zollerngalaxy.lib.ZGInfo;
 import zollerngalaxy.lib.helpers.ZGHelper;
 
-public class ZGPlanet extends Planet implements IZollernPlanet {
+public class ZGPlanetaryBody extends Planet implements IZollernBody {
 	
-	private EnumPlanetClass planetClass;
+	private EnumBodyClass bodyClass;
 	
-	private Star planetStar;
+	private Star bodyStar;
 	
 	private float baseTemp;
 	private float baseRadiation;
@@ -40,32 +40,35 @@ public class ZGPlanet extends Planet implements IZollernPlanet {
 	private boolean rains;
 	
 	private AtmosphereInfo atmosphere;
-	private ArrayList<EnumAtmosphericGas> planetGasses = new ArrayList<EnumAtmosphericGas>();
+	private ArrayList<EnumAtmosphericGas> bodyGasses = new ArrayList<EnumAtmosphericGas>();
 	
 	private WorldProviderZG spaceProvider = null;
 	
 	protected boolean enableExtremeMode = ConfigManagerZG.enableExtremeMode;
 	
-	public ZGPlanet(String planetName) {
-		super(planetName);
+	private String bodyName;
+	
+	public ZGPlanetaryBody(String bodyNameIn) {
+		super(bodyNameIn);
+		this.bodyName = bodyNameIn;
 		this.addChecklistKeys("thermal_padding", "equip_oxygen_suit", "equip_parachute");
 	}
 	
-	public ZGPlanet setPlanetStar(Star systemStar) {
-		this.planetStar = systemStar;
+	public ZGPlanetaryBody setBodyStar(Star systemStar) {
+		this.bodyStar = systemStar;
 		return this;
 	}
 	
 	/**
-	 * Sets the Planet's bioclassification. This is purely for classification
+	 * Sets the Body's bioclassification. This is purely for classification
 	 * and visual purposes.<br>
 	 * <br>
 	 * Categories:<br>
 	 * <br>
 	 * D: A small, rock-based body, typically a heavily-cratered asteroid, moon,
-	 * or planetoid with little or no atmosphere. <br>
+	 * or bodyoid with little or no atmosphere. <br>
 	 * <br>
-	 * H: A characteristically lifeless planet, uninhabitable by humans. Could
+	 * H: A characteristically lifeless body, uninhabitable by humans. Could
 	 * contain gasses Oxygen and Argon.<br>
 	 * <br>
 	 * J: Typically a gas giant, usually with wind speeds of over 10k kmph. Also
@@ -89,9 +92,9 @@ public class ZGPlanet extends Planet implements IZollernPlanet {
 	 * <br>
 	 * T: A type of gas giant, typically home to dark matter life. <br>
 	 * <br>
-	 * R: A lesser bioclassification of a Class M planet, these worlds are
+	 * R: A lesser bioclassification of a Class M body, these worlds are
 	 * generally habitable, however they lack some or most of the
-	 * characteristics for a terrestrial planet.<br>
+	 * characteristics for a terrestrial body.<br>
 	 * <br>
 	 * Y: A world characterized by a toxic atmosphere, thermionic radiation
 	 * discharges and surface temperatures at or above five hundred Kelvin,
@@ -108,126 +111,126 @@ public class ZGPlanet extends Planet implements IZollernPlanet {
 	 * hostility.<br>
 	 * 
 	 * @param pClass
-	 *            The bioclassification of the Planet.
-	 * @return The Planet to apply this bioclassification to.
+	 *            The bioclassification of the Body.
+	 * @return The Body to apply this bioclassification to.
 	 */
-	public ZGPlanet setPlanetClass(EnumPlanetClass pClass) {
-		this.planetClass = pClass;
+	public ZGPlanetaryBody setBodyClass(EnumBodyClass pClass) {
+		this.bodyClass = pClass;
 		return this;
 	}
 	
 	/**
-	 * Sets the planet's base temperature.
+	 * Sets the body's base temperature.
 	 * 
-	 * @param planetTemp
+	 * @param bodyTemp
 	 *            The temperature to set.
-	 * @return The Planet to apply this effect to.
+	 * @return The Body to apply this effect to.
 	 */
-	public Planet setPlanetTemperature(float planetTemp) {
-		this.baseTemp = planetTemp;
+	public IZollernBody setBodyTemperature(float bodyTemp) {
+		this.baseTemp = bodyTemp;
 		return this;
 	}
 	
 	/**
-	 * Sets the planet's base radiation level. Anything >= 10.0 requires the
+	 * Sets the body's base radiation level. Anything >= 10.0 requires the
 	 * radiation protection blueprint.
 	 * 
-	 * @param planetRad
+	 * @param bodyRad
 	 *            The radiation level to set.
-	 * @return The Planet to apply this effect to.
+	 * @return The Body to apply this effect to.
 	 */
-	public Planet setPlanetRadiation(float planetRad) {
-		this.baseRadiation = planetRad;
+	public IZollernBody setBodyRadiation(float bodyRad) {
+		this.baseRadiation = bodyRad;
 		return this;
 	}
 	
 	/**
-	 * Sets the planet's base toxicity level. Anything >= 15.0 requires the
+	 * Sets the body's base toxicity level. Anything >= 15.0 requires the
 	 * toxicity protection blueprint.
 	 * 
-	 * @param planetTox
-	 *            The toxicity level of the planet.
-	 * @return The Planet to apply this effect to.
+	 * @param bodyTox
+	 *            The toxicity level of the body.
+	 * @return The Body to apply this effect to.
 	 */
-	public Planet setPlanetToxicity(float planetTox) {
-		this.baseToxicity = planetTox;
+	public IZollernBody setBodyToxicity(float bodyTox) {
+		this.baseToxicity = bodyTox;
 		return this;
 	}
 	
-	public Planet setBreathable(boolean canBreathe) {
+	public IZollernBody setBreathable(boolean canBreathe) {
 		this.breathable = canBreathe;
 		return this;
 	}
 	
-	public Planet setHasRain(boolean hasRain) {
+	public IZollernBody setHasRain(boolean hasRain) {
 		this.rains = hasRain;
 		return this;
 	}
 	
-	public Planet setWindLevel(float windLvl) {
+	public IZollernBody setWindLevel(float windLvl) {
 		this.windLevel = windLvl;
 		return this;
 	}
 	
-	public Planet setDensity(float denseLvl) {
+	public IZollernBody setDensity(float denseLvl) {
 		this.density = denseLvl;
 		return this;
 	}
 	
 	/**
-	 * Sets the planet's atmosphere. Atmosphere is determined by several
-	 * factors: Is the planet breathable? Does the planet have rain? Is the
-	 * planet corrosive (radioactive or toxic)? What's the planet's temperature?
+	 * Sets the body's atmosphere. Atmosphere is determined by several
+	 * factors: Is the body breathable? Does the body have rain? Is the
+	 * body corrosive (radioactive or toxic)? What's the body's temperature?
 	 * How strong is the wind level? How strong is the density level?
 	 * 
-	 * @return The planet of the atmosphere being set on.
+	 * @return The body of the atmosphere being set on.
 	 */
-	public Planet setAtmosphere() {
-		this.atmosphere = new AtmosphereInfo(this.getIsBreathable(), this.getHasRain(), this.getIsCorrosive(), this.getPlanetTemperature(),
-				this.getWindLevel(), this.getAtmosphericDensity());
+	public IZollernBody setAtmosphere() {
+		this.atmosphere = new AtmosphereInfo(this.getIsBreathable(), this.getHasRain(), this.getIsCorrosive(), this.getBodyTemperature(), this.getWindLevel(),
+				this.getAtmosphericDensity());
 		return this;
 	}
 	
-	public Planet setPlanetGasses(EnumAtmosphericGas... gasses) {
+	public IZollernBody setBodyGasses(EnumAtmosphericGas... gasses) {
 		for (EnumAtmosphericGas gas : gasses) {
 			if (gas != null) {
 				this.atmosphereComponent(gas);
-				this.planetGasses.add(gas);
+				this.bodyGasses.add(gas);
 			}
 		}
 		return this;
 	}
 	
-	public Planet setDisableRockets(boolean disableRockets, int planetTier) {
+	public IZollernBody setDisableRockets(boolean disableRockets, int bodyTier) {
 		if (disableRockets) {
 			this.setTierRequired(-1);
 		} else {
-			this.setTierRequired(planetTier);
+			this.setTierRequired(bodyTier);
 		}
 		return this;
 	}
 	
-	public Planet setDisableRockets() {
+	public IZollernBody setDisableRockets() {
 		this.setTierRequired(-1);
 		return this;
 	}
 	
-	public ZGPlanet setDistanceFromCenter(float par1, float par2) {
+	public IZollernBody setDistanceFromCenter(float par1, float par2) {
 		this.setRelativeDistanceFromCenter(new ScalableDistance(par1, par2));
 		return this;
 	}
 	
-	public ZGPlanet setDistanceFromCenter(float par1) {
+	public IZollernBody setDistanceFromCenter(float par1) {
 		this.setDistanceFromCenter(par1, par1);
 		return this;
 	}
 	
-	public ZGPlanet setPlanetIcon(String planetTexture) {
-		this.setBodyIcon(new ResourceLocation(ZGInfo.MOD_ID + ":textures/gui/" + planetTexture + ".png"));
+	public IZollernBody setBodyIcon(String bodyTexture) {
+		this.setBodyIcon(new ResourceLocation(ZGInfo.MOD_ID + ":textures/gui/" + bodyTexture + ".png"));
 		return this;
 	}
 	
-	public ZGPlanet setSpaceProvider(WorldProviderZG provider) {
+	public IZollernBody setSpaceProvider(WorldProviderZG provider) {
 		this.spaceProvider = provider;
 		return this;
 	}
@@ -236,8 +239,8 @@ public class ZGPlanet extends Planet implements IZollernPlanet {
 		return this.spaceProvider;
 	}
 	
-	public Star getPlanetStar() {
-		return this.planetStar;
+	public Star getBodyStar() {
+		return this.bodyStar;
 	}
 	
 	@Override
@@ -251,15 +254,15 @@ public class ZGPlanet extends Planet implements IZollernPlanet {
 	}
 	
 	/**
-	 * Get the Planet's bioclassification. This is purely for classification and
+	 * Get the Body's bioclassification. This is purely for classification and
 	 * visual purposes.<br>
 	 * <br>
 	 * Categories:<br>
 	 * <br>
 	 * D: A small, rock-based body, typically a heavily-cratered asteroid, moon,
-	 * or planetoid with little or no atmosphere. <br>
+	 * or bodyoid with little or no atmosphere. <br>
 	 * <br>
-	 * H: A characteristically lifeless planet, uninhabitable by humans. Could
+	 * H: A characteristically lifeless body, uninhabitable by humans. Could
 	 * contain gasses Oxygen and Argon.<br>
 	 * <br>
 	 * J: Typically a gas giant, usually with wind speeds of over 10k kmph. Also
@@ -283,9 +286,9 @@ public class ZGPlanet extends Planet implements IZollernPlanet {
 	 * <br>
 	 * T: A type of gas giant, typically home to dark matter life. <br>
 	 * <br>
-	 * R: A lesser bioclassification of a Class M planet, these worlds are
+	 * R: A lesser bioclassification of a Class M body, these worlds are
 	 * generally habitable, however they lack some or most of the
-	 * characteristics for a terrestrial planet.<br>
+	 * characteristics for a terrestrial body.<br>
 	 * <br>
 	 * Y: A world characterized by a toxic atmosphere, thermionic radiation
 	 * discharges and surface temperatures at or above five hundred Kelvin,
@@ -301,31 +304,31 @@ public class ZGPlanet extends Planet implements IZollernPlanet {
 	 * Abandoned: A desolate void, long abandoned due to catastrophe or other
 	 * hostility.<br>
 	 * 
-	 * @return The bioclassification of the Planet.
+	 * @return The bioclassification of the Body.
 	 */
 	@Override
-	public EnumPlanetClass getPlanetClass() {
-		return this.planetClass;
+	public EnumBodyClass getBodyClass() {
+		return this.bodyClass;
 	}
 	
 	/**
-	 * Gets all gasses in a planet's atmosphere.
+	 * Gets all gasses in a body's atmosphere.
 	 * 
-	 * @return All gasses in a planet's atmosphere.
+	 * @return All gasses in a body's atmosphere.
 	 */
 	@Override
 	public String getGasses() {
 		String gasList = "";
-		ArrayList<EnumAtmosphericGas> planetAtmosphere = this.planetGasses;
+		ArrayList<EnumAtmosphericGas> bodyAtmosphere = this.bodyGasses;
 		int ch = 0;
-		for (EnumAtmosphericGas planetGas : planetAtmosphere) {
+		for (EnumAtmosphericGas bodyGas : bodyAtmosphere) {
 			ch++;
-			gasList += ZGHelper.capitalizeFirstLetter(planetGas.toString().substring(0, 3).toLowerCase());
-			if (ch < planetAtmosphere.size()) {
+			gasList += ZGHelper.capitalizeFirstLetter(bodyGas.toString().substring(0, 3).toLowerCase());
+			if (ch < bodyAtmosphere.size()) {
 				gasList += ", ";
 			}
 		}
-		planetAtmosphere = null;
+		bodyAtmosphere = null;
 		return gasList;
 	}
 	
@@ -334,7 +337,8 @@ public class ZGPlanet extends Planet implements IZollernPlanet {
 	 * 
 	 * @return
 	 */
-	public boolean getIsHotPlanet() {
+	@Override
+	public boolean getIsHotBody() {
 		return this.baseTemp >= 115.0F;
 	}
 	
@@ -343,7 +347,8 @@ public class ZGPlanet extends Planet implements IZollernPlanet {
 	 * 
 	 * @return
 	 */
-	public boolean getIsColdPlanet() {
+	@Override
+	public boolean getIsColdBody() {
 		return this.baseTemp <= -25.0F;
 	}
 	
@@ -352,7 +357,7 @@ public class ZGPlanet extends Planet implements IZollernPlanet {
 	 * 
 	 * @return
 	 */
-	public boolean getIsRadioactivePlanet() {
+	public boolean getIsRadioactiveBody() {
 		return this.baseRadiation >= 10.0F;
 	}
 	
@@ -361,7 +366,7 @@ public class ZGPlanet extends Planet implements IZollernPlanet {
 	 * 
 	 * @return
 	 */
-	public boolean getIsToxicPlanet() {
+	public boolean getIsToxicBody() {
 		return this.baseToxicity >= 15.0F;
 	}
 	
@@ -386,26 +391,26 @@ public class ZGPlanet extends Planet implements IZollernPlanet {
 	}
 	
 	/**
-	 * Whether or not the planet corrodes armor.
+	 * Whether or not the body corrodes armor.
 	 * 
 	 * @return True/False
 	 */
 	@Override
 	public boolean getIsCorrosive() {
-		return (this.getIsToxicPlanet() || this.getIsRadioactivePlanet());
+		return (this.getIsToxicBody() || this.getIsRadioactiveBody());
 	}
 	
 	@Override
-	public float getPlanetTemperature() {
-		float planetTemp = this.baseTemp;
-		return planetTemp;
+	public float getBodyTemperature() {
+		float bodyTemp = this.baseTemp;
+		return bodyTemp;
 	}
 	
 	@Override
-	public float getPlanetTemperature(World world, BlockPos pos) {
-		float planetTemp = this.baseTemp;
-		float maxTemp = (planetTemp * 4);
-		float minTemp = (planetTemp / 4);
+	public float getBodyTemperature(World world, BlockPos pos) {
+		float bodyTemp = this.baseTemp;
+		float maxTemp = (bodyTemp * 4);
+		float minTemp = (bodyTemp / 4);
 		Biome biome = world.getBiomeForCoordsBody(pos);
 		if (biome instanceof BiomeSpace) {
 			WorldProviderZG spaceProvider = (WorldProviderZG) world.provider;
@@ -417,23 +422,24 @@ public class ZGPlanet extends Planet implements IZollernPlanet {
 			Random rand = new Random();
 			if (rand.nextInt(100) <= 32) {
 				if (isHotBiome) {
-					planetTemp += (biomeTemp * 1.5);
+					bodyTemp += (biomeTemp * 1.5);
 				} else if (isColdBiome) {
-					planetTemp -= (biomeTemp * 1.5);
+					bodyTemp -= (biomeTemp * 1.5);
 				} else {
 					if (isDaytime) {
-						planetTemp += biomeTemp;
+						bodyTemp += biomeTemp;
 					} else {
-						planetTemp -= biomeTemp;
+						bodyTemp -= biomeTemp;
 					}
 				}
-				if (planetTemp > maxTemp) {
-					planetTemp = maxTemp;
-				} else if (planetTemp < minTemp) {
-					planetTemp = minTemp;
+				if (bodyTemp > maxTemp) {
+					bodyTemp = maxTemp;
+				} else if (bodyTemp < minTemp) {
+					bodyTemp = minTemp;
 				}
 			}
 		}
-		return planetTemp;
+		return bodyTemp;
 	}
+	
 }

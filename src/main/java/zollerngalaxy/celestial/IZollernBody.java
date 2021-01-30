@@ -5,13 +5,13 @@
  * claim it as your own, and do not
  * redistribute it.
  */
-package zollerngalaxy.planets;
+package zollerngalaxy.celestial;
 
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import zollerngalaxy.core.enums.EnumPlanetClass;
+import zollerngalaxy.core.enums.EnumBodyClass;
 
-public interface IZollernPlanet {
+public interface IZollernBody {
 	
 	/**
 	 * This only applies if the planet is radioactive. It returns the radiation
@@ -33,7 +33,7 @@ public interface IZollernPlanet {
 	 * 
 	 * @return The planet's base temperature.
 	 */
-	public float getPlanetTemperature();
+	public float getBodyTemperature();
 	
 	/**
 	 * Determines the base temperature of the planet, affected by biome temps.
@@ -42,7 +42,7 @@ public interface IZollernPlanet {
 	 * @param pos
 	 * @return The planet's base temperature, affected by biome temps.
 	 */
-	public float getPlanetTemperature(World world, BlockPos pos);
+	public float getBodyTemperature(World world, BlockPos pos);
 	
 	/**
 	 * Determines if planet is breathable.
@@ -73,9 +73,24 @@ public interface IZollernPlanet {
 	 */
 	public float getAtmosphericDensity();
 	
-	public EnumPlanetClass getPlanetClass();
+	public EnumBodyClass getBodyClass();
 	
 	public boolean getIsCorrosive();
 	
 	public String getGasses();
+	
+	/**
+	 * @return
+	 */
+	public boolean getIsHotBody();
+	
+	/**
+	 * @return
+	 */
+	public boolean getIsColdBody();
+	
+	/**
+	 * @return
+	 */
+	public String getName();
 }

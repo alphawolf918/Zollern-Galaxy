@@ -14,7 +14,7 @@ import net.minecraft.pathfinding.PathNavigate;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
-import zollerngalaxy.mobs.entities.EntityWaterMobZG;
+import zollerngalaxy.mobs.entities.base.EntityWaterMobZG;
 
 public class RandPosGenWater {
 	

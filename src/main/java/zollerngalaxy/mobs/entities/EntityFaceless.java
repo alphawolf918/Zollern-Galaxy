@@ -13,6 +13,7 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
 import zollerngalaxy.events.ZGSoundEvents;
+import zollerngalaxy.mobs.entities.base.EntityCorruptedMob;
 
 public class EntityFaceless extends EntityCorruptedMob {
 	

@@ -15,6 +15,7 @@ import net.minecraft.entity.passive.EntitySquid;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
 import zollerngalaxy.mobs.entities.ai.EntityAIFishNearestAttackableTarget;
+import zollerngalaxy.mobs.entities.base.EntityWaterMobZG;
 import zollerngalaxy.util.ZGDamageSrc;
 
 public class EntityShark extends EntityWaterMobZG implements IMob {

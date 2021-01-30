@@ -17,6 +17,7 @@ import zollerngalaxy.core.ZollernGalaxyCore;
 import zollerngalaxy.lib.ZGInfo;
 import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.mobs.entities.EntityAbyssalVillager;
+import zollerngalaxy.mobs.entities.EntityArcon;
 import zollerngalaxy.mobs.entities.EntityBladeFish;
 import zollerngalaxy.mobs.entities.EntityBlubberFish;
 import zollerngalaxy.mobs.entities.EntityFaceless;
@@ -133,6 +134,9 @@ public class MobRegistry {
 		
 		// Pig Shroom
 		registerEntity("pigshroom", EntityPigShroom.class, entityId++, 0x990000, 0xeeeeee);
+		
+		// Arcon
+		registerEntity("arcon", EntityArcon.class, entityId++, 0x0000ee, 0x0000cc);
 		
 		ZGHelper.Log("Loaded a total of " + totalMobs + " new mobs.");
 	}

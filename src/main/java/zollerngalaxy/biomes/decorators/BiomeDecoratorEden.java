@@ -89,8 +89,8 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 			ZGBlocks.edenParadiseWoodLeaves.getDefaultState(), this.generateVines);
 	private WorldGenerator treeGenGold = new WorldGenEdenTrees(false, ZGHelper.rngInt(4, 8), ZGBlocks.edenGoldenWoodLog.getDefaultState(),
 			ZGBlocks.edenGoldenWoodLeaves.getDefaultState(), this.generateVines);
-	private WorldGenerator treeGenLove = new WorldGenEdenTrees(true, 5, ZGBlocks.edenLovetreeLog.getDefaultState(),
-			ZGBlocks.edenLovetreeLeaves.getDefaultState(), this.generateVines);
+	private WorldGenerator treeGenLove = new WorldGenEdenTrees(true, 5, ZGBlocks.edenLovetreeLog.getDefaultState(), ZGBlocks.edenLovetreeLeaves.getDefaultState(),
+			this.generateVines);
 	private WorldGenerator treeGenMushroom = new WorldGenZGMushroomTree(false, ZGHelper.rngInt(3, 6));
 	private WorldGenerator dropshipGen = new WorldGenDropship();
 	
@@ -379,8 +379,7 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 		if (this.generateOutposts && this.outpostsPerChunk > 0) {
 			y = rand.nextInt(rand.nextInt(genY) + 8);
 			if (y >= 62) {
-				WorldGenerator outpostGen = new WorldGenOutpost(ZGBlocks.blockOutpost.getDefaultState(),
-						ZGBlocks.blockOutpost.getDefaultState());
+				WorldGenerator outpostGen = new WorldGenOutpost(ZGBlocks.blockOutpost.getDefaultState(), ZGBlocks.blockOutpost.getDefaultState());
 				for (int i = 0; i < this.outpostsPerChunk; i++) {
 					if (rand.nextInt((this.enableExtremeMode) ? 200 : 100) <= ConfigManagerZG.outpostGenChance) {
 						outpostGen.generate(world, rand, this.chunkPos.add(x, y, z));

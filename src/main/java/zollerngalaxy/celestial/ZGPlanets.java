@@ -5,11 +5,10 @@
  * claim it as your own, and do not
  * redistribute it.
  */
-package zollerngalaxy.planets;
+package zollerngalaxy.celestial;
 
 import micdoodle8.mods.galacticraft.api.GalacticraftRegistry;
 import micdoodle8.mods.galacticraft.api.galaxies.GalaxyRegistry;
-import micdoodle8.mods.galacticraft.api.galaxies.Moon;
 import micdoodle8.mods.galacticraft.api.vector.Vector3;
 import micdoodle8.mods.galacticraft.api.world.EnumAtmosphericGas;
 import micdoodle8.mods.galacticraft.planets.mars.dimension.TeleportTypeMars;
@@ -29,7 +28,7 @@ import zollerngalaxy.core.dimensions.worldproviders.WorldProviderPurgot;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderXantheon;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderXathius;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderZollus;
-import zollerngalaxy.core.enums.EnumPlanetClass;
+import zollerngalaxy.core.enums.EnumBodyClass;
 import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.starsystems.ZGStar;
 import zollerngalaxy.starsystems.ZGStarSystem;
@@ -104,52 +103,52 @@ public class ZGPlanets {
 	public static ZGStar starVega = new ZGStar("vega");
 	public static ZGStar starNova = new ZGStar("nova");
 	
-	// Psios Planets
+	// Psios Bodys
 	public static ZGPlanet planetEden = new ZGPlanet("eden");
 	public static ZGPlanet planetZollus = new ZGPlanet("zollus");
 	public static ZGPlanet planetKriffon = new ZGPlanet("kriffus");
 	public static ZGPlanet planetPurgot = new ZGPlanet("purgot");
-	public static Moon moonAstros;
+	public static ZGMoonBody moonAstros;
 	
-	// Praedyth Planets
+	// Praedyth Bodys
 	public static ZGPlanet planetXathius = new ZGPlanet("xathius");
 	public static ZGPlanet planetOasis = new ZGPlanet("oasis");
 	public static ZGPlanet planetXantheon = new ZGPlanet("xantheon");
 	public static ZGPlanet planetCandora = new ZGPlanet("candora");
 	public static ZGPlanet planetAtheon = new ZGPlanet("atheon");
 	
-	// Sol-2 Planets
+	// Sol-2 Bodys
 	public static ZGPlanet planetPerdita = new ZGPlanet("perdita");
 	public static ZGPlanet planetAltum = new ZGPlanet("altum");
 	public static ZGPlanet planetCaligro = new ZGPlanet("caligro");
 	public static ZGPlanet planetExodus = new ZGPlanet("exodus");
 	
-	// Pantheon Planets
+	// Pantheon Bodys
 	public static ZGPlanet planetMeztli;
 	public static ZGPlanet planetCentotl;
 	public static ZGPlanet planetToci;
 	public static ZGPlanet planetTlaloc;
 	
-	// Olympus Planets
+	// Olympus Bodys
 	public static ZGPlanet planetAres;
 	public static ZGPlanet planetPrometheus;
 	public static ZGPlanet planetIcarus;
 	public static ZGPlanet planetKronos;
 	
-	// Asgard Planets
+	// Asgard Bodys
 	public static ZGPlanet planetAsgard;
 	public static ZGPlanet planetMaveth;
 	
-	// Vega Planets
+	// Vega Bodys
 	public static ZGPlanet planetMeridian;
 	public static ZGPlanet planetRequiem;
 	
-	// Nova Planets
+	// Nova Bodys
 	public static ZGPlanet planetPrimor;
 	
 	public static void init() {
 		ZGPlanets.initStarSystems();
-		ZGPlanets.initPlanets();
+		ZGPlanets.initBodys();
 		ZGPlanets.initMoons();
 		ZGPlanets.registerSystems();
 		ZGPlanets.registerTeleportTypes();
@@ -215,11 +214,11 @@ public class ZGPlanets {
 		ZGHelper.Log("Loaded a total of " + totalSystems + " new star systems.");
 	}
 	
-	public static void initPlanets() {
-		// Planet Zollus
+	public static void initBodys() {
+		// Body Zollus
 		planetZollus.setDimensionInfo(ConfigManagerZG.planetZollusDimensionId, WorldProviderZollus.class);
 		planetZollus.setParentSolarSystem(systemPsios);
-		planetZollus.setPlanetClass(EnumPlanetClass.L);
+		planetZollus.setBodyClass(EnumBodyClass.L);
 		planetZollus.setRingColorRGB(0.1F, 0.9F, 2.6F);
 		planetZollus.setPhaseShift(0.0F);
 		planetZollus.setRelativeOrbitTime(42.2F);
@@ -229,22 +228,22 @@ public class ZGPlanets {
 			planetZollus.setDisableRockets();
 		}
 		planetZollus.setRelativeSize(10.876F);
-		planetZollus.setPlanetTemperature(-92.6F);
-		planetZollus.setPlanetToxicity(0.4F);
-		planetZollus.setPlanetRadiation(0.5F);
+		planetZollus.setBodyTemperature(-92.6F);
+		planetZollus.setBodyToxicity(0.4F);
+		planetZollus.setBodyRadiation(0.5F);
 		planetZollus.setWindLevel(6.7F);
 		planetZollus.setDensity(0.1F);
 		planetZollus.setHasRain(false);
-		planetZollus.setPlanetGasses(EnumAtmosphericGas.NITROGEN, EnumAtmosphericGas.HELIUM);
+		planetZollus.setBodyGasses(EnumAtmosphericGas.NITROGEN, EnumAtmosphericGas.HELIUM);
 		planetZollus.setAtmosphere();
-		planetZollus.setPlanetIcon("zollus");
+		planetZollus.setBodyIcon("zollus");
 		planetZollus.setBiomeInfo(ZGBiomes.ZOLLUS, ZGBiomes.ZOLLUS_OCEAN);
 		totalPlanets++;
 		
-		// Planet Kriffon
+		// Body Kriffon
 		planetKriffon.setDimensionInfo(ConfigManagerZG.planetKriffonDimensionId, WorldProviderKriffon.class);
 		planetKriffon.setParentSolarSystem(systemPsios);
-		planetKriffon.setPlanetClass(EnumPlanetClass.Y);
+		planetKriffon.setBodyClass(EnumBodyClass.Y);
 		planetKriffon.setRingColorRGB(0.1F, 0.9F, 2.6F);
 		planetKriffon.setPhaseShift(0.0F);
 		planetKriffon.setRelativeOrbitTime(0.3F);
@@ -254,21 +253,21 @@ public class ZGPlanets {
 			planetKriffon.setDisableRockets();
 		}
 		planetKriffon.setRelativeSize(20.0F);
-		planetKriffon.setPlanetTemperature(107.4F);
-		planetKriffon.setPlanetToxicity(14.1F);
-		planetKriffon.setPlanetRadiation(16.8F);
+		planetKriffon.setBodyTemperature(107.4F);
+		planetKriffon.setBodyToxicity(14.1F);
+		planetKriffon.setBodyRadiation(16.8F);
 		planetKriffon.setWindLevel(0.1F);
 		planetKriffon.setDensity(3.0F);
 		planetKriffon.setHasRain(false);
-		planetKriffon.setPlanetGasses(EnumAtmosphericGas.ARGON, EnumAtmosphericGas.METHANE, EnumAtmosphericGas.OXYGEN);
+		planetKriffon.setBodyGasses(EnumAtmosphericGas.ARGON, EnumAtmosphericGas.METHANE, EnumAtmosphericGas.OXYGEN);
 		planetKriffon.setAtmosphere();
-		planetKriffon.setPlanetIcon("kriffus");
+		planetKriffon.setBodyIcon("kriffus");
 		planetKriffon.setBiomeInfo(ZGBiomes.KRIFFON, ZGBiomes.KRIFFON_LAVA_OCEAN);
 		totalPlanets++;
 		
-		// Planet Purgot
+		// Body Purgot
 		planetPurgot.setParentSolarSystem(systemPsios);
-		planetPurgot.setPlanetClass(EnumPlanetClass.NINE);
+		planetPurgot.setBodyClass(EnumBodyClass.NINE);
 		planetPurgot.setRingColorRGB(0.1F, 0.9F, 2.6F);
 		planetPurgot.setPhaseShift(0.0F);
 		planetPurgot.setRelativeOrbitTime(10F);
@@ -278,24 +277,24 @@ public class ZGPlanets {
 			planetPurgot.setDisableRockets();
 		}
 		planetPurgot.setRelativeSize(40.0F);
-		planetPurgot.setPlanetTemperature(-54.5F);
-		planetPurgot.setPlanetToxicity(15.2F);
-		planetPurgot.setPlanetRadiation(2.2F);
+		planetPurgot.setBodyTemperature(-54.5F);
+		planetPurgot.setBodyToxicity(15.2F);
+		planetPurgot.setBodyRadiation(2.2F);
 		planetPurgot.setWindLevel(5.7F);
 		planetPurgot.setDensity(0.3F);
 		planetPurgot.setHasRain(false);
-		planetPurgot.setPlanetGasses(EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.WATER, EnumAtmosphericGas.NITROGEN, EnumAtmosphericGas.ARGON);
-		planetPurgot.setPlanetIcon("purgot");
+		planetPurgot.setBodyGasses(EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.WATER, EnumAtmosphericGas.NITROGEN, EnumAtmosphericGas.ARGON);
+		planetPurgot.setBodyIcon("purgot");
 		planetPurgot.setAtmosphere();
 		planetPurgot.setBiomeInfo(ZGBiomes.PURGOT_BASE, ZGBiomes.PURGOT_LIMBO);
 		planetPurgot.addChecklistKeys("equipOxygenSuit");
 		planetPurgot.setDimensionInfo(ConfigManagerZG.planetPurgotDimensionId, WorldProviderPurgot.class);
 		totalPlanets++;
 		
-		// Planet Eden
+		// Body Eden
 		planetEden.setDimensionInfo(ConfigManagerZG.planetEdenDimensionId, WorldProviderEden.class);
 		planetEden.setParentSolarSystem(systemPsios);
-		planetEden.setPlanetClass(EnumPlanetClass.M);
+		planetEden.setBodyClass(EnumBodyClass.M);
 		planetEden.setRingColorRGB(0.1F, 0.9F, 2.6F);
 		planetEden.setPhaseShift(0.0F);
 		planetEden.setRelativeOrbitTime(8.0F);
@@ -305,26 +304,25 @@ public class ZGPlanets {
 			planetEden.setDisableRockets();
 		}
 		planetEden.setRelativeSize(50.0F);
-		planetEden.setPlanetTemperature(75.4F);
-		planetEden.setPlanetToxicity(0.0F);
-		planetEden.setPlanetRadiation(0.0F);
+		planetEden.setBodyTemperature(75.4F);
+		planetEden.setBodyToxicity(0.0F);
+		planetEden.setBodyRadiation(0.0F);
 		planetEden.setBreathable(true);
 		planetEden.setWindLevel(0.6F);
 		planetEden.setDensity(1.0F);
 		planetEden.setHasRain(true);
-		planetEden.setPlanetGasses(EnumAtmosphericGas.NITROGEN, EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.ARGON, EnumAtmosphericGas.WATER,
-				EnumAtmosphericGas.CO2);
+		planetEden.setBodyGasses(EnumAtmosphericGas.NITROGEN, EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.ARGON, EnumAtmosphericGas.WATER, EnumAtmosphericGas.CO2);
 		planetEden.setAtmosphere();
-		planetEden.setPlanetIcon("eden");
+		planetEden.setBodyIcon("eden");
 		planetEden.setBiomeInfo(ZGBiomes.EDEN_GREEN_LANDS, ZGBiomes.EDEN_BLOOD_DESERT, ZGBiomes.EDEN_ROCK_MOUNTAINS, ZGBiomes.EDEN_TERRAN_VALLEY,
 				ZGBiomes.EDEN_SNOWY_PLAINS, ZGBiomes.EDEN_GOLDEN_MEADOW, ZGBiomes.EDEN_SWAMPLANDS, ZGBiomes.EDENWOOD_FOREST, ZGBiomes.EDEN_PARADISE_WOODS,
 				ZGBiomes.EDEN_FLOWER_GARDEN, ZGBiomes.EDEN_CRATERS, ZGBiomes.EDEN_SHROOM_HILLS, ZGBiomes.EDEN_OCEAN);
 		totalPlanets++;
 		
-		// Planet Xathius
+		// Body Xathius
 		planetXathius.setDimensionInfo(ConfigManagerZG.planetXathiusDimensionId, WorldProviderXathius.class);
 		planetXathius.setParentSolarSystem(systemPraedyth);
-		planetXathius.setPlanetClass(EnumPlanetClass.NINE);
+		planetXathius.setBodyClass(EnumBodyClass.NINE);
 		planetXathius.setRingColorRGB(0.1F, 0.9F, 1.4F);
 		planetXathius.setPhaseShift(0.0F);
 		planetXathius.setRelativeOrbitTime(2.5F);
@@ -334,22 +332,22 @@ public class ZGPlanets {
 			planetXathius.setDisableRockets();
 		}
 		planetXathius.setRelativeSize(20.0F);
-		planetXathius.setPlanetTemperature(82.4f);
-		planetXathius.setPlanetToxicity(2.5f);
-		planetXathius.setPlanetRadiation(16.5f);
+		planetXathius.setBodyTemperature(82.4f);
+		planetXathius.setBodyToxicity(2.5f);
+		planetXathius.setBodyRadiation(16.5f);
 		planetXathius.setWindLevel(3.2F);
 		planetXathius.setDensity(1.1F);
 		planetXathius.setHasRain(true);
-		planetXathius.setPlanetGasses(EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.WATER, EnumAtmosphericGas.NITROGEN, EnumAtmosphericGas.ARGON);
+		planetXathius.setBodyGasses(EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.WATER, EnumAtmosphericGas.NITROGEN, EnumAtmosphericGas.ARGON);
 		planetXathius.setAtmosphere();
-		planetXathius.setPlanetIcon("xathius");
+		planetXathius.setBodyIcon("xathius");
 		planetXathius.setBiomeInfo(ZGBiomes.XATHIUS_ABSTRACT_PLAINS, ZGBiomes.XATHIUS_OCEAN, ZGBiomes.XATHIUS_BLUELANDS, ZGBiomes.XATHIUS_MOUNTAINS);
 		totalPlanets++;
 		
-		// Planet Oasis
+		// Body Oasis
 		planetOasis.setDimensionInfo(ConfigManagerZG.planetOasisDimensionId, WorldProviderOasis.class);
 		planetOasis.setParentSolarSystem(systemPraedyth);
-		planetOasis.setPlanetClass(EnumPlanetClass.R);
+		planetOasis.setBodyClass(EnumBodyClass.R);
 		planetOasis.setRingColorRGB(2.0f, 5.4f, 3.2f);
 		planetOasis.setPhaseShift(0.0f);
 		planetOasis.setRelativeOrbitTime(6.2F);
@@ -359,23 +357,23 @@ public class ZGPlanets {
 			planetOasis.setDisableRockets();
 		}
 		planetOasis.setRelativeSize(64.0f);
-		planetOasis.setPlanetTemperature(68.2F);
-		planetOasis.setPlanetToxicity(0.5f);
-		planetOasis.setPlanetRadiation(4.0f);
+		planetOasis.setBodyTemperature(68.2F);
+		planetOasis.setBodyToxicity(0.5f);
+		planetOasis.setBodyRadiation(4.0f);
 		planetOasis.setBreathable(true);
 		planetOasis.setWindLevel(1.9F);
 		planetOasis.setDensity(1.6F);
 		planetOasis.setHasRain(true);
-		planetOasis.setPlanetGasses(EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.WATER);
+		planetOasis.setBodyGasses(EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.WATER);
 		planetOasis.setAtmosphere();
-		planetOasis.setPlanetIcon("oasis");
+		planetOasis.setBodyIcon("oasis");
 		planetOasis.setBiomeInfo(ZGBiomes.OASIS_PLAINS, ZGBiomes.OASIS_OCEAN, ZGBiomes.OASIS_REDLANDS);
 		totalPlanets++;
 		
-		// Planet Xantheon
+		// Body Xantheon
 		planetXantheon.setDimensionInfo(ConfigManagerZG.planetXantheonDimensionId, WorldProviderXantheon.class);
 		planetXantheon.setParentSolarSystem(systemPraedyth);
-		planetXantheon.setPlanetClass(EnumPlanetClass.CONSTRUCTED);
+		planetXantheon.setBodyClass(EnumBodyClass.CONSTRUCTED);
 		planetXantheon.setRingColorRGB(1.6f, 3.7f, 2.1f);
 		planetXantheon.setPhaseShift(4.0f);
 		planetXantheon.setRelativeOrbitTime(20.2F);
@@ -385,23 +383,23 @@ public class ZGPlanets {
 			planetXantheon.setDisableRockets();
 		}
 		planetXantheon.setRelativeSize(96.0f);
-		planetXantheon.setPlanetTemperature(-31.2F);
-		planetXantheon.setPlanetToxicity(5.2f);
-		planetXantheon.setPlanetRadiation(46.3f);
+		planetXantheon.setBodyTemperature(-31.2F);
+		planetXantheon.setBodyToxicity(5.2f);
+		planetXantheon.setBodyRadiation(46.3f);
 		planetXantheon.setBreathable(false);
 		planetXantheon.setWindLevel(0.0F);
 		planetXantheon.setDensity(20.6F);
 		planetXantheon.setHasRain(false);
-		planetXantheon.setPlanetGasses(EnumAtmosphericGas.CO2, EnumAtmosphericGas.ARGON, EnumAtmosphericGas.HELIUM);
+		planetXantheon.setBodyGasses(EnumAtmosphericGas.CO2, EnumAtmosphericGas.ARGON, EnumAtmosphericGas.HELIUM);
 		planetXantheon.setAtmosphere();
-		planetXantheon.setPlanetIcon("xantheon");
+		planetXantheon.setBodyIcon("xantheon");
 		planetXantheon.setBiomeInfo(ZGBiomes.XANTHEON);
 		totalPlanets++;
 		
 		// Candora
 		planetCandora.setDimensionInfo(ConfigManagerZG.planetCandoraDimensionId, WorldProviderCandora.class);
 		planetCandora.setParentSolarSystem(systemPraedyth);
-		planetCandora.setPlanetClass(EnumPlanetClass.EXOTIC);
+		planetCandora.setBodyClass(EnumBodyClass.EXOTIC);
 		planetCandora.setRingColorRGB(2.5F, 0.0F, 2.5F);
 		planetCandora.setPhaseShift(0.1F);
 		planetCandora.setRelativeOrbitTime(10.5F);
@@ -411,16 +409,16 @@ public class ZGPlanets {
 			planetCandora.setDisableRockets();
 		}
 		planetCandora.setRelativeSize(102.9F);
-		planetCandora.setPlanetTemperature(67.5F);
-		planetCandora.setPlanetToxicity(0.0F);
-		planetCandora.setPlanetRadiation(0.0F);
+		planetCandora.setBodyTemperature(67.5F);
+		planetCandora.setBodyToxicity(0.0F);
+		planetCandora.setBodyRadiation(0.0F);
 		planetCandora.setBreathable(true);
 		planetCandora.setWindLevel(0.0F);
 		planetCandora.setDensity(0.1F);
 		planetCandora.setHasRain(false);
-		planetCandora.setPlanetGasses(EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.CO2, EnumAtmosphericGas.WATER, EnumAtmosphericGas.HELIUM);
+		planetCandora.setBodyGasses(EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.CO2, EnumAtmosphericGas.WATER, EnumAtmosphericGas.HELIUM);
 		planetCandora.setAtmosphere();
-		planetCandora.setPlanetIcon("candora");
+		planetCandora.setBodyIcon("candora");
 		planetCandora.setBiomeInfo(ZGBiomes.CANDY_MOUNTAIN, ZGBiomes.CANDY_OCEAN, ZGBiomes.CANDY_JOLLY_MELON_PLAINS, ZGBiomes.CANDY_BLUEBERRY_HILLS,
 				ZGBiomes.CANDY_COOKIE_LANDS);
 		totalPlanets++;
@@ -428,7 +426,7 @@ public class ZGPlanets {
 		// Atheon
 		planetAtheon.setDimensionInfo(ConfigManagerZG.planetAtheonDimensionId, WorldProviderAtheon.class);
 		planetAtheon.setParentSolarSystem(systemPraedyth);
-		planetAtheon.setPlanetClass(EnumPlanetClass.CONSTRUCTED);
+		planetAtheon.setBodyClass(EnumBodyClass.CONSTRUCTED);
 		planetAtheon.setRingColorRGB(3.6F, 3.2F, 1.7F);
 		planetAtheon.setPhaseShift(10.2F);
 		planetAtheon.setRelativeOrbitTime(0.6F);
@@ -438,23 +436,23 @@ public class ZGPlanets {
 			planetAtheon.setDisableRockets();
 		}
 		planetAtheon.setRelativeSize(102.5F);
-		planetAtheon.setPlanetTemperature(57.2F);
-		planetAtheon.setPlanetToxicity(0.0F);
-		planetAtheon.setPlanetRadiation(96.7F);
+		planetAtheon.setBodyTemperature(57.2F);
+		planetAtheon.setBodyToxicity(0.0F);
+		planetAtheon.setBodyRadiation(96.7F);
 		planetAtheon.setBreathable(false);
 		planetAtheon.setWindLevel(0.0F);
 		planetAtheon.setDensity(40.2F);
 		planetAtheon.setHasRain(false);
-		planetAtheon.setPlanetGasses(EnumAtmosphericGas.CO2, EnumAtmosphericGas.ARGON, EnumAtmosphericGas.HELIUM, EnumAtmosphericGas.METHANE);
+		planetAtheon.setBodyGasses(EnumAtmosphericGas.CO2, EnumAtmosphericGas.ARGON, EnumAtmosphericGas.HELIUM, EnumAtmosphericGas.METHANE);
 		planetAtheon.setAtmosphere();
-		planetAtheon.setPlanetIcon("atheon");
+		planetAtheon.setBodyIcon("atheon");
 		planetAtheon.setBiomeInfo(ZGBiomes.ATHEON_GOLDLANDS, ZGBiomes.ATHEON_LAVA_LAKES);
 		totalPlanets++;
 		
 		// Perdita
 		planetPerdita.setDimensionInfo(ConfigManagerZG.planetPerditaDimensionId, WorldProviderPerdita.class);
 		planetPerdita.setParentSolarSystem(systemSol2);
-		planetPerdita.setPlanetClass(EnumPlanetClass.DESERT);
+		planetPerdita.setBodyClass(EnumBodyClass.DESERT);
 		planetPerdita.setRingColorRGB(4.6F, 2.2F, 6.7F);
 		planetPerdita.setPhaseShift(20.1F);
 		planetPerdita.setRelativeOrbitTime(1.2F);
@@ -464,16 +462,16 @@ public class ZGPlanets {
 			planetPerdita.setDisableRockets();
 		}
 		planetPerdita.setRelativeSize(204.6F);
-		planetPerdita.setPlanetTemperature(195.8F);
-		planetPerdita.setPlanetToxicity(1.2F);
-		planetPerdita.setPlanetRadiation(3.5F);
+		planetPerdita.setBodyTemperature(195.8F);
+		planetPerdita.setBodyToxicity(1.2F);
+		planetPerdita.setBodyRadiation(3.5F);
 		planetPerdita.setBreathable(true);
 		planetPerdita.setWindLevel(16.16F);
 		planetPerdita.setDensity(20.4F);
 		planetPerdita.setHasRain(false);
-		planetPerdita.setPlanetGasses(EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.CO2, EnumAtmosphericGas.NITROGEN, EnumAtmosphericGas.WATER);
+		planetPerdita.setBodyGasses(EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.CO2, EnumAtmosphericGas.NITROGEN, EnumAtmosphericGas.WATER);
 		planetPerdita.setAtmosphere();
-		planetPerdita.setPlanetIcon("perdita");
+		planetPerdita.setBodyIcon("perdita");
 		planetPerdita.setBiomeInfo(ZGBiomes.PERDITA_DESERT, ZGBiomes.PERDITA_HALLOWS, ZGBiomes.PERDITA_OASIS, ZGBiomes.PERDITA_FUELTONIUM_OCEAN,
 				ZGBiomes.PERDITA_LOST_MOUNTAINS);
 		totalPlanets++;
@@ -481,7 +479,7 @@ public class ZGPlanets {
 		// Altum
 		planetAltum.setDimensionInfo(ConfigManagerZG.planetAltumDimensionId, WorldProviderAltum.class);
 		planetAltum.setParentSolarSystem(systemSol2);
-		planetAltum.setPlanetClass(EnumPlanetClass.OCEAN);
+		planetAltum.setBodyClass(EnumBodyClass.OCEAN);
 		planetAltum.setRingColorRGB(7.7F, 7.7F, 7.7F);
 		planetAltum.setPhaseShift(5.6F);
 		planetAltum.setRelativeOrbitTime(3.6F);
@@ -491,23 +489,22 @@ public class ZGPlanets {
 			planetAltum.setDisableRockets();
 		}
 		planetAltum.setRelativeSize(80.6F);
-		planetAltum.setPlanetRadiation(0.6F);
-		planetAltum.setPlanetToxicity(0.2F);
+		planetAltum.setBodyRadiation(0.6F);
+		planetAltum.setBodyToxicity(0.2F);
 		planetAltum.setBreathable(true);
 		planetAltum.setWindLevel(20.42F);
 		planetAltum.setDensity(0.3F);
 		planetAltum.setHasRain(true);
-		planetAltum.setPlanetGasses(EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.CO2, EnumAtmosphericGas.NITROGEN, EnumAtmosphericGas.WATER,
-				EnumAtmosphericGas.HYDROGEN);
+		planetAltum.setBodyGasses(EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.CO2, EnumAtmosphericGas.NITROGEN, EnumAtmosphericGas.WATER, EnumAtmosphericGas.HYDROGEN);
 		planetAltum.setAtmosphere();
-		planetAltum.setPlanetIcon("altum");
+		planetAltum.setBodyIcon("altum");
 		planetAltum.setBiomeInfo(ZGBiomes.ALTUM_ROCKY_ISLES, ZGBiomes.ALTUM_SANCTUM_BEACH, ZGBiomes.ALTUM_OCEAN, ZGBiomes.ALTUM_ROCKY_SHORE);
 		totalPlanets++;
 		
 		// Caligro
 		planetCaligro.setDimensionInfo(ConfigManagerZG.planetCaligroDimensionId, WorldProviderCaligro.class);
 		planetCaligro.setParentSolarSystem(systemSol2);
-		planetCaligro.setPlanetClass(EnumPlanetClass.DARK);
+		planetCaligro.setBodyClass(EnumBodyClass.DARK);
 		planetCaligro.setRingColorRGB(0.0F, 10.0F, 0.0F);
 		planetCaligro.setPhaseShift(100.0F);
 		planetCaligro.setRelativeOrbitTime(140.18F);
@@ -517,15 +514,15 @@ public class ZGPlanets {
 			planetCaligro.setDisableRockets();
 		}
 		planetCaligro.setRelativeSize(160.0F);
-		planetCaligro.setPlanetTemperature(-165.62F);
-		planetCaligro.setPlanetToxicity(55.24F);
-		planetCaligro.setPlanetRadiation(32.21F);
+		planetCaligro.setBodyTemperature(-165.62F);
+		planetCaligro.setBodyToxicity(55.24F);
+		planetCaligro.setBodyRadiation(32.21F);
 		planetCaligro.setWindLevel(60.58F);
 		planetCaligro.setDensity(100.32F);
 		planetCaligro.setHasRain(false);
-		planetCaligro.setPlanetGasses(EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.WATER, EnumAtmosphericGas.NITROGEN, EnumAtmosphericGas.ARGON,
+		planetCaligro.setBodyGasses(EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.WATER, EnumAtmosphericGas.NITROGEN, EnumAtmosphericGas.ARGON,
 				EnumAtmosphericGas.METHANE, EnumAtmosphericGas.HYDROGEN);
-		planetCaligro.setPlanetIcon("caligro");
+		planetCaligro.setBodyIcon("caligro");
 		planetCaligro.setAtmosphere();
 		planetCaligro.setBiomeInfo(ZGBiomes.CALIGRO_UPSIDE_DOWN, ZGBiomes.CALIGRO_CREEPLANDS, ZGBiomes.CALIGRO_ROCKY_VEINS, ZGBiomes.CALIGRO_WITHERLANDS,
 				ZGBiomes.CALIGRO_CORRUPTED_MESA);
@@ -534,7 +531,7 @@ public class ZGPlanets {
 		// Exodus
 		planetExodus.setDimensionInfo(ConfigManagerZG.planetExodusDimensionId, WorldProviderExodus.class);
 		planetExodus.setParentSolarSystem(systemSol2);
-		planetExodus.setPlanetClass(EnumPlanetClass.M);
+		planetExodus.setBodyClass(EnumBodyClass.M);
 		planetExodus.setRingColorRGB(10.0F, 10.0F, 10.0F);
 		planetExodus.setPhaseShift(50F);
 		planetExodus.setRelativeOrbitTime(4.5F);
@@ -544,18 +541,16 @@ public class ZGPlanets {
 			planetExodus.setDisableRockets();
 		}
 		planetExodus.setRelativeSize(160.0F);
-		planetExodus.setPlanetTemperature(76.15F);
-		planetExodus.setPlanetToxicity(0.0F);
-		planetExodus.setPlanetRadiation(0.0F);
+		planetExodus.setBodyTemperature(76.15F);
+		planetExodus.setBodyToxicity(0.0F);
+		planetExodus.setBodyRadiation(0.0F);
 		planetExodus.setWindLevel(125.67F);
 		planetExodus.setDensity(1.0F);
 		planetExodus.setHasRain(true);
-		planetExodus.setPlanetGasses(EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.CO2, EnumAtmosphericGas.NITROGEN, EnumAtmosphericGas.WATER,
-				EnumAtmosphericGas.HYDROGEN);
-		planetExodus.setPlanetIcon("exodus");
+		planetExodus.setBodyGasses(EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.CO2, EnumAtmosphericGas.NITROGEN, EnumAtmosphericGas.WATER, EnumAtmosphericGas.HYDROGEN);
+		planetExodus.setBodyIcon("exodus");
 		planetExodus.setAtmosphere();
-		planetExodus.setBiomeInfo(ZGBiomes.EXODUS_AZURE_PLAINS, ZGBiomes.EXODUS_ROCKY_HILLS, ZGBiomes.EXODUS_OCEAN, ZGBiomes.EXODUS_FOREST,
-				ZGBiomes.EXODUS_BLACK_MESA);
+		planetExodus.setBiomeInfo(ZGBiomes.EXODUS_AZURE_PLAINS, ZGBiomes.EXODUS_ROCKY_HILLS, ZGBiomes.EXODUS_OCEAN, ZGBiomes.EXODUS_FOREST, ZGBiomes.EXODUS_BLACK_MESA);
 		totalPlanets++;
 		
 		ZGHelper.Log("Loaded a total of " + totalPlanets + " new planets.");
