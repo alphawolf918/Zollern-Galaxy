@@ -54,7 +54,7 @@ public class ZollernGalaxyCore {
 	
 	// CHANGE THESE TO FALSE BEFORE DEPLOYMENT!!
 	private static final boolean DEV_MODE = false; // Controls creating the JSON files.
-	private static final boolean TEST_MODE = true; // Set to True when developing!
+	private static final boolean TEST_MODE = false; // Set to True when developing!
 	
 	public static SimpleNetworkWrapper snw;
 	

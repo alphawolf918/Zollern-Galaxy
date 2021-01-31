@@ -66,6 +66,7 @@ import zollerngalaxy.core.dimensions.worldproviders.WorldProviderAltum;
 import zollerngalaxy.items.ZGItems;
 import zollerngalaxy.items.armor.ZGArmor;
 import zollerngalaxy.items.armor.ZGArmorMats;
+import zollerngalaxy.lib.helpers.ModHelperBase;
 import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.mobs.entities.EntityAbyssalVillager;
 import zollerngalaxy.mobs.entities.EntityBladeFish;
@@ -232,7 +233,9 @@ public class ZGEvents {
 					// Radium
 					player.addPotionEffect(new PotionEffect(ZGPotions.radiance, 100, 1));
 					if (ConfigManagerZG.enableRadianceFlying) {
-						player.capabilities.allowFlying = true;
+						if (!ModHelperBase.useDraconicEvolution) {
+							player.capabilities.allowFlying = true;
+						}
 					}
 				} else {
 					// Disable all "extra" potion capabilities that have nothing
@@ -240,7 +243,9 @@ public class ZGEvents {
 					// effects (not the potion's, but the armor's) will last.
 					player.stepHeight = 0.5F;
 					if (!player.capabilities.isCreativeMode && ConfigManagerZG.enableRadianceFlying) {
-						player.capabilities.allowFlying = false;
+						if (!ModHelperBase.useDraconicEvolution) {
+							player.capabilities.allowFlying = false;
+						}
 					}
 				}
 			}
@@ -509,8 +514,8 @@ public class ZGEvents {
 	private void setFarmland(UseHoeEvent event, World world, BlockPos pos, Block farmland) {
 		world.setBlockState(pos, farmland.getDefaultState());
 		event.setResult(Result.ALLOW);
-		world.playSound(null, pos.getX(), pos.getY(), pos.getZ(), SoundType.GROUND.getStepSound(), SoundCategory.BLOCKS,
-				(SoundType.GROUND.getVolume() + 1.0F) / 2.0F, SoundType.GROUND.getPitch() * 0.8F);
+		world.playSound(null, pos.getX(), pos.getY(), pos.getZ(), SoundType.GROUND.getStepSound(), SoundCategory.BLOCKS, (SoundType.GROUND.getVolume() + 1.0F) / 2.0F,
+				SoundType.GROUND.getPitch() * 0.8F);
 		
 		for (EnumHand hand : CachedEnum.valuesHandCached()) {
 			event.getEntityPlayer().swingArm(hand);

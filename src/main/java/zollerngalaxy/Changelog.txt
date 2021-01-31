@@ -1,34 +1,5 @@
 ===== CHANGELOG =====
-Zollern Galaxy v2.0.22
+Zollern Galaxy v2.0.23
 =====================
 
-* Changed mechanics and lowered spawn rate of Altum treasure chests in the ocean.
-    - Should hopefully fix the Stack Overflow issue.
-* Modified and darkened Kriffon's planet surface texture.
-* Modified Pantheon star and Exodus planet textures to prep them.
-* Lowered default Outpost generation chance to 5%.
-* Rewrote Xantheon entirely so that it's in line with the rest of the planets.
-    - This should fix most of the lag issues with it.
-* 
-* Added an 'Extreme' mode to make the mod more challenging / rewarding.
-    - This will have ongoing changes.
-* Added a new Earth-like planet called Exodus.
-    - This Planet can be reached via Tier 3 Rocketship.
-    - It will be worked on throughout multiple updates.
-* Added config option to disable validation on chest generation spawns. (ExistingEevee)
-* Added the "Lake of Fire" biome to Kriffon.
-* Added the "Zollus Ice Ocean" biome to Zollus.
-* Added the "Rocky Hills" biome to Exodus.
-* Added the "Exo Ocean" biome to Exodus.
-* Added the "Exo Forest" biome to Exodus.
-* Added the "Black Mesa" biome to Exodus.
-* Added "Galaxy Aster" flowers to Exodus.
-* Added the Arcon mob to Exodus.
-    - More mobs will be added to all planets in the future.
-* Updated Blackrock and Whiterock textures for Purgot.
-* Updated Chinese translations by EndsM.
-* Updated name stylings for Specter and Miles.
-* Updated Exodus ore textures by Skaptic.
-* Updated Exodus Redstone Ore texture.
-* Updated Celestial Body code to support moons in the near future.
-* Updated Xantheon surface block textures.
+* Fixed a bug that prevented Players from flying in survival when using Draconic Armor from Draconic Evolution.
