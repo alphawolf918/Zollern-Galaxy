@@ -680,6 +680,7 @@ entity.zollerngalaxy:shade.name=阴影
 entity.zollerngalaxy:shadowalien.name=黑暗BOSS之影
 entity.zollerngalaxy:faceless.name=无面者
 entity.zollerngalaxy:pigshroom.name=蘑菇猪
+entity.zollerngalaxy:arcon.name=阿克恩
 
 ## Tooltips ##
 
@@ -771,13 +772,13 @@ planet.exodus=出离星
 planet.perdita=珀迪塔
 planet.altum=阿尔图姆
 planet.caligro=卡里格罗
-#有一个中文释义是“梦”
-planet.somnium=Somnium
 
 planet.meztli=梅兹特利
 planet.centotl=森特奥特尔
 planet.toci=托奇
 planet.tlaloc=特拉洛克
+#有一个中文释义是“梦”
+planet.somnium=Somnium
 
 planet.ares=阿瑞斯
 planet.prometheus=普罗米修斯
