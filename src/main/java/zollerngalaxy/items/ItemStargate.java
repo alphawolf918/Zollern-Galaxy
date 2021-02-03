@@ -125,6 +125,9 @@ public class ItemStargate extends ZGItemBase {
 	private void sendToPlanet(int toDimensionId, int fromDimensionId, EntityPlayer player) {
 		int dim = player.dimension;
 		int sendToDim = (dim == fromDimensionId) ? toDimensionId : fromDimensionId;
+		if (toDimensionId == ConfigManagerZG.planetEdenDimensionId && dim == ConfigManagerZG.planetExodusDimensionId) {
+			sendToDim = ConfigManagerZG.planetVortexDimensionId;
+		}
 		this.sendToServer(sendToDim, player);
 	}
 	

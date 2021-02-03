@@ -74,6 +74,7 @@ import zollerngalaxy.biomes.perdita.BiomeLostMountains;
 import zollerngalaxy.biomes.perdita.BiomeLostOasis;
 import zollerngalaxy.biomes.purgot.BiomeLimbo;
 import zollerngalaxy.biomes.purgot.BiomePurgot;
+import zollerngalaxy.biomes.vortex.BiomeVortex;
 import zollerngalaxy.biomes.xantheon.BiomeXantheon;
 import zollerngalaxy.biomes.xathius.BiomeAbstractPlains;
 import zollerngalaxy.biomes.xathius.BiomeBluelands;
@@ -168,6 +169,9 @@ public class ZGBiomes {
 	public static final Biome EXODUS_FOREST = new BiomeExoForest(new BiomeProperties("Exo Forest"));
 	public static final Biome EXODUS_BLACK_MESA = new BiomeBlackMesa(new BiomeProperties("Black Mesa"));
 	
+	// Vortex
+	public static final Biome VORTEX_BASE = new BiomeVortex(new BiomeProperties("Vortex"));
+	
 	public static void init() {
 		// Zollus
 		ZGBiomes.addBiome(ZGBiomes.ZOLLUS, COLD, DEAD, DRY);
@@ -247,6 +251,9 @@ public class ZGBiomes {
 		ZGBiomes.addBiome(ZGBiomes.EXODUS_OCEAN, WET, OCEAN);
 		ZGBiomes.addBiome(ZGBiomes.EXODUS_FOREST, LUSH, WET, FOREST);
 		ZGBiomes.addBiome(ZGBiomes.EXODUS_BLACK_MESA, DEAD, HOT, DRY, MOUNTAIN, WASTELAND);
+		
+		// Vortex
+		ZGBiomes.addBiome(VORTEX_BASE, MOUNTAIN, HOT, WET);
 		
 		ZGHelper.Log("Loaded a total of " + totalBiomes + " new biomes.");
 	}

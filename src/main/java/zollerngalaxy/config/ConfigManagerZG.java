@@ -46,6 +46,7 @@ public class ConfigManagerZG {
 	public static int planetCaligroDimensionId;
 	
 	// Planets (Pantheon)
+	public static int planetVortexDimensionId;
 	public static int planetMeztliDimensionId;
 	public static int planetCentotlDimensionId;
 	public static int planetTociDimensionId;
@@ -115,6 +116,9 @@ public class ConfigManagerZG {
 	public static int spaceStationExodusId;
 	public static int spaceStationExodusStaticId;
 	
+	public static int spaceStationVortexId;
+	public static int spaceStationVortexStaticId;
+	
 	// Misc
 	public static boolean canEarthAnimalsSpawnOnEden;
 	public static boolean disableStarGates;
@@ -158,6 +162,7 @@ public class ConfigManagerZG {
 	public static boolean planetUnreachableAltum;
 	public static boolean planetUnreachableCaligro;
 	public static boolean planetUnreachableExodus;
+	public static boolean planetUnreachableVortex;
 	
 	// Max Health Customization
 	public static double maxHealthAllowed;
@@ -222,6 +227,9 @@ public class ConfigManagerZG {
 	public static int planetCaligroTier;
 	public static int planetExodusTier;
 	
+	// Planet Tiers (Pantheon)
+	public static int planetVortexTier;
+	
 	public static void init(FMLPreInitializationEvent event) {
 		configuration = new Configuration(new File(event.getModConfigurationDirectory().getAbsolutePath() + "/ZollernGalaxy/core.cfg"));
 		configuration.load();
@@ -232,7 +240,7 @@ public class ConfigManagerZG {
 		planetKriffonDimensionId = configuration.get(CATEGORY_DIMENSIONS, "Planet Kriffon Dimension ID", -7994).getInt();
 		planetPurgotDimensionId = configuration.get(CATEGORY_DIMENSIONS, "Planet Purgot Dimension ID", -7988).getInt();
 		
-		// Moons (Psios -> Purgot -> Astros)
+		// Moons (Psios -> Eden -> Astros)
 		moonAstrosDimensionId = configuration.get(CATEGORY_MOONS, "Moon Astros Dimension ID", -7981).getInt();
 		
 		// Planets (Praedyth)
@@ -249,6 +257,7 @@ public class ConfigManagerZG {
 		planetCaligroDimensionId = configuration.get(CATEGORY_DIMENSIONS, "Planet Caligro Dimension ID", -7877).getInt();
 		
 		// Planets (Pantheon)
+		planetVortexDimensionId = configuration.get(CATEGORY_DIMENSIONS, "Planet Vortex Dimension ID", -7675).getInt();
 		planetMeztliDimensionId = configuration.get(CATEGORY_DIMENSIONS, "Planet Meztli Dimension ID", -7991).getInt();
 		planetCentotlDimensionId = configuration.get(CATEGORY_DIMENSIONS, "Planet Centotl Dimension ID", -7997).getInt();
 		planetTociDimensionId = configuration.get(CATEGORY_DIMENSIONS, "Planet Toci Dimension ID", -7985).getInt();
@@ -273,15 +282,14 @@ public class ConfigManagerZG {
 		planetPrimorDimensionId = configuration.get(CATEGORY_DIMENSIONS, "Planet Primor Dimension ID", -7989).getInt();
 		
 		// Number of space stations to generate
-		spaceStationGenAmount = configuration.get(CATEGORY_SATELLITES, "Space Station Generation Count", 1,
-				"How many Space Stations should generate in orbit (between 1 to 5)? (default: 1)").getInt();
+		spaceStationGenAmount = configuration
+				.get(CATEGORY_SATELLITES, "Space Station Generation Count", 1, "How many Space Stations should generate in orbit (between 1 to 5)? (default: 1)")
+				.getInt();
 		spaceStationGenAmount = (spaceStationGenAmount <= 5) ? spaceStationGenAmount : 5;
 		spaceStationGenAmount = (spaceStationGenAmount >= 1) ? spaceStationGenAmount : 1;
 		
 		// Whether or not Lore Blocks can spawn extra
-		canExtraLoreSpawn = configuration
-				.get(CATEGORY_SATELLITES, "Spawn Extra Lore Blocks", true, "Can additional Lore Blocks spawn? (default: true)")
-				.getBoolean();
+		canExtraLoreSpawn = configuration.get(CATEGORY_SATELLITES, "Spawn Extra Lore Blocks", true, "Can additional Lore Blocks spawn? (default: true)").getBoolean();
 		
 		// Space Stations (Psios-6)
 		
@@ -339,56 +347,58 @@ public class ConfigManagerZG {
 		spaceStationExodusId = configuration.get(CATEGORY_SATELLITES, "Exodus Space Station ID", -6024).getInt();
 		spaceStationExodusStaticId = configuration.get(CATEGORY_SATELLITES, "Exodus Space Station Static ID", -6025).getInt();
 		
+		// Space Stations (Pantheon)
+		// Vortex
+		spaceStationVortexId = configuration.get(CATEGORY_SATELLITES, "Vortex Space Station ID", -6025).getInt();
+		spaceStationVortexStaticId = configuration.get(CATEGORY_SATELLITES, "Vortex Space Station Static ID", -6026).getInt();
+		
 		// Misc (Can Earth animals spawn on Eden?)
-		canEarthAnimalsSpawnOnEden = configuration
-				.get(CATEGORY_MISC, "Earth Animals Spawn On Eden", true, "Should Earth animals spawn on Eden? (default: true)")
+		canEarthAnimalsSpawnOnEden = configuration.get(CATEGORY_MISC, "Earth Animals Spawn On Eden", true, "Should Earth animals spawn on Eden? (default: true)")
 				.getBoolean();
 		
 		// Misc (Should Star Gates be disabled?)
-		disableStarGates = configuration.get(CATEGORY_MISC, "Disable use of Star Gates", false,
-				"Set this to true if you want to ONLY access Zollern Galaxy planets using rockets. "
+		disableStarGates = configuration
+				.get(CATEGORY_MISC, "Disable use of Star Gates", false, "Set this to true if you want to ONLY access Zollern Galaxy planets using rockets. "
 						+ "WARNING: will not work without another add-on this way! (default: false)")
 				.getBoolean();
 		
-		hideUnusedStarSystems = configuration
-				.get(CATEGORY_MISC, "Hide Stars with no Planets", true, "Enable to see Stars that have no Planets yet. (default: true)")
+		hideUnusedStarSystems = configuration.get(CATEGORY_MISC, "Hide Stars with no Planets", true, "Enable to see Stars that have no Planets yet. (default: true)")
 				.getBoolean();
 		
 		// Misc (Should Mega Creeper explosions harm terrain?)
-		enableMegaCreeperGriefing = configuration.get(CATEGORY_MISC, "Enable Mega Creeper Griefing", true,
-				"Set to false if you don't want Mega Creepers to destroy terrain. (default: true)").getBoolean();
+		enableMegaCreeperGriefing = configuration
+				.get(CATEGORY_MISC, "Enable Mega Creeper Griefing", true, "Set to false if you don't want Mega Creepers to destroy terrain. (default: true)")
+				.getBoolean();
 		
 		// Misc (Tempratures shown in fahrenheit or celsius?)
-		temperatureType = configuration.get(CATEGORY_MISC, "[HUD DISPLAY] Temperature Type (F or C only)", "F",
-				"Should temperatures be shown in Fahrenheit (F) or Celsius (C)? (default: F)").getString();
+		temperatureType = configuration
+				.get(CATEGORY_MISC, "[HUD DISPLAY] Temperature Type (F or C only)", "F", "Should temperatures be shown in Fahrenheit (F) or Celsius (C)? (default: F)")
+				.getString();
 		
 		// Whether or not to change contributor's in-game names
-		changeContributorNames = configuration.get(CATEGORY_MISC, "Contributor name change", true,
-				"Whether or not to change contributor in-game names to more recognized formats (default: true)").getBoolean();
+		changeContributorNames = configuration
+				.get(CATEGORY_MISC, "Contributor name change", true, "Whether or not to change contributor in-game names to more recognized formats (default: true)")
+				.getBoolean();
 		
 		// Whether or not to allow Spawning of Galaxy Knights.
-		spawnGalaxyKnight = configuration.get(CATEGORY_MISC, "Spawn Galaxy Knight", true,
-				"Whether or not to allow Grey Aliens to summon Galaxy Knights when attacked (default: true)").getBoolean();
+		spawnGalaxyKnight = configuration
+				.get(CATEGORY_MISC, "Spawn Galaxy Knight", true, "Whether or not to allow Grey Aliens to summon Galaxy Knights when attacked (default: true)")
+				.getBoolean();
 		
 		// Make sure chests are on the ground or not. (ExistingEevee)
-		enableChestValidation = configuration
-				.get(CATEGORY_MISC, "Chest Validation", true,
-						"Whether or not to validate chest spawns. " + "Disable if chest generation is causing a crash. (default: true)")
-				.getBoolean();
+		enableChestValidation = configuration.get(CATEGORY_MISC, "Chest Validation", true,
+				"Whether or not to validate chest spawns. " + "Disable if chest generation is causing a crash. (default: true)").getBoolean();
 		
 		// Should Extreme Mode be enabled? Significantly increases the mod's difficulty.
-		enableExtremeMode = configuration
-				.get(CATEGORY_MISC, "Enable Extreme Mode", false,
-						"Toggle Extreme mode. " + "WARNING: This will SIGNIFICANTLY increase the mod's difficulty. (default: false)")
-				.getBoolean();
+		enableExtremeMode = configuration.get(CATEGORY_MISC, "Enable Extreme Mode", false,
+				"Toggle Extreme mode. " + "WARNING: This will SIGNIFICANTLY increase the mod's difficulty. (default: false)").getBoolean();
 		
 		// Compatibility (Whether or not to use Thermal Foundation's Detabilized
 		// Redstone
 		// for the Red Sea in Oasis)
-		shouldOasisUseLiquidRedstone = configuration
-				.get(CATEGORY_COMPATIBILITY, "Oasis uses Thermal Foundation's Destabilized Redstone", true,
-						"Whether or not Oasis should use Detabilized Redstone for its Red Sea biome. WARNING: This can use a LOT of your PC's memory! "
-								+ "This can lead to severe LAG! Use at your own risk. (default: true)")
+		shouldOasisUseLiquidRedstone = configuration.get(CATEGORY_COMPATIBILITY, "Oasis uses Thermal Foundation's Destabilized Redstone", true,
+				"Whether or not Oasis should use Detabilized Redstone for its Red Sea biome. WARNING: This can use a LOT of your PC's memory! "
+						+ "This can lead to severe LAG! Use at your own risk. (default: true)")
 				.getBoolean();
 		
 		// Compatibility (Whether or not Thermal Foundation Pulverizers should
@@ -400,21 +410,17 @@ public class ConfigManagerZG {
 				.getBoolean();
 		
 		// Compat (Should Fueltonium register as Uranium?)
-		fueltoniumIsUranium = configuration
-				.get(CATEGORY_COMPATIBILITY, "Fueltonium counts as Uranium", true, "Should Fueltonium register as Uranium? (default: true)")
+		fueltoniumIsUranium = configuration.get(CATEGORY_COMPATIBILITY, "Fueltonium counts as Uranium", true, "Should Fueltonium register as Uranium? (default: true)")
 				.getBoolean();
 		
 		// Compat (Should Cobalt register in the Ore Dictionary?)
-		registerCobaltOreDict = configuration
-				.get(CATEGORY_COMPATIBILITY, "Register Cobalt in Ore Dictionary", true,
-						"Set this to false if there are any problems " + " with mods like Tinker's Construct. (default: true)")
-				.getBoolean();
+		registerCobaltOreDict = configuration.get(CATEGORY_COMPATIBILITY, "Register Cobalt in Ore Dictionary", true,
+				"Set this to false if there are any problems " + " with mods like Tinker's Construct. (default: true)").getBoolean();
 		
 		// Compat (Should intergration with Planet Progressions be enabled?
-		enablePlanetProgressionsCompat = configuration
-				.get(CATEGORY_COMPATIBILITY, "Enable Planet Progressions compatibility", true,
-						"If Planet Progressions is installed, you will need to discover the Planet or Moon "
-								+ " before you can travel to it via Star Gates. Set this to false to disable that. (default: true)")
+		enablePlanetProgressionsCompat = configuration.get(CATEGORY_COMPATIBILITY, "Enable Planet Progressions compatibility", true,
+				"If Planet Progressions is installed, you will need to discover the Planet or Moon "
+						+ " before you can travel to it via Star Gates. Set this to false to disable that. (default: true)")
 				.getBoolean();
 		
 		// Compat (Enable Radium Material for Tinker's Construct
@@ -422,74 +428,74 @@ public class ConfigManagerZG {
 				"Set to false to disable (will cause issues with More TCon if true). (default: true)").getBoolean();
 		
 		// Compat (Enable Corruption Material for Tinker's Construct
-		useTConCorruption = configuration
-				.get(CATEGORY_COMPATIBILITY, "[TCONSTRUCT] Enable Corruption Material", true, "Set to false to disable. (default: true)")
+		useTConCorruption = configuration.get(CATEGORY_COMPATIBILITY, "[TCONSTRUCT] Enable Corruption Material", true, "Set to false to disable. (default: true)")
 				.getBoolean();
 		
 		// Compat (Should flying be enabled and then disabled when applying and unapplying Radiance
 		// armor?
 		enableRadianceFlying = configuration.get(CATEGORY_COMPATIBILITY, "Enable Radiance Flying In Survival", true,
 				"Toggle whether a full set of Radiance armor allows the Player to fly in Survival. "
-						+ "Set to false to disable if this causes mod conflicts, compromises the safety of your server, "
-						+ "or if you just hate fun. (default: true)")
+						+ "Set to false to disable if this causes mod conflicts, compromises the safety of your server, " + "or if you just hate fun. (default: true)")
 				.getBoolean();
 		
 		// Customization Options
-		kriffonLavaLakesPerChunk = configuration.get(CATEGORY_CUSTOMIZATIONS, "Kriffon Lava Lakes Per Chunk", 4,
-				"The amount of Lava Lakes to generate per chunk on planet Kriffon. (default: 4)").getInt();
+		kriffonLavaLakesPerChunk = configuration
+				.get(CATEGORY_CUSTOMIZATIONS, "Kriffon Lava Lakes Per Chunk", 4, "The amount of Lava Lakes to generate per chunk on planet Kriffon. (default: 4)")
+				.getInt();
 		kriffonLavaLakesGenChance = configuration.get(CATEGORY_CUSTOMIZATIONS, "Kriffon Lava Lakes Gen Percentage", 25,
 				"The chance (out of 100) for a lava lake to generate on planet Kriffon. (default: 25)").getInt();
-		zollusIceSpikesPerChunk = configuration.get(CATEGORY_CUSTOMIZATIONS, "Zollus Ice Spikes Per Chunk", 2,
-				"The amount of Ice Spikes to generate on " + "Zollus per chunk. (default: 2)").getInt();
+		zollusIceSpikesPerChunk = configuration
+				.get(CATEGORY_CUSTOMIZATIONS, "Zollus Ice Spikes Per Chunk", 2, "The amount of Ice Spikes to generate on " + "Zollus per chunk. (default: 2)").getInt();
 		zollusIceSpikesGenChance = configuration.get(CATEGORY_CUSTOMIZATIONS, "Zollus Ice Spikes Gen Percentage", 42,
 				"The chance (out of 100) for Ice Spikes to generate on planet Zollus. (default: 42)").getInt();
-		outpostGenChance = configuration.get(CATEGORY_CUSTOMIZATIONS, "Outpost Gen Percentage", 5,
-				"The chance (out of 100) for Outpost buildings to generate on planets. (default: 5)").getInt();
+		outpostGenChance = configuration
+				.get(CATEGORY_CUSTOMIZATIONS, "Outpost Gen Percentage", 5, "The chance (out of 100) for Outpost buildings to generate on planets. (default: 5)").getInt();
 		
 		// Control unreachable planets (by rockets).
-		planetUnreachableAll = configuration.get(CATEGORY_CUSTOMIZATIONS, "Disable Rockets For All Planets", false,
-				"Setting this to true disallows rocket travel to all Zollern Galaxy planets. "
-						+ "Note that when this is enabled, it will override the planet-by-planet settings, "
-						+ "with the exception of Zollus. (default: false)")
+		planetUnreachableAll = configuration
+				.get(CATEGORY_CUSTOMIZATIONS, "Disable Rockets For All Planets", false,
+						"Setting this to true disallows rocket travel to all Zollern Galaxy planets. "
+								+ "Note that when this is enabled, it will override the planet-by-planet settings, " + "with the exception of Zollus. (default: false)")
 				.getBoolean();
 		
 		// Control whether or not explosive blocks should cause other explosive blocks to explode in
 		// a chain reaction
-		shouldExplosiveBlocksExplodeOtherBlocks = configuration.get(CATEGORY_CUSTOMIZATIONS, "Explosive Blocks Cause Chain Reaction", true,
-				"Disable this to prevent explosive blocks blowing up other explosive blocks when broken, "
-						+ "which can cause a chain reaction. (default: true)")
+		shouldExplosiveBlocksExplodeOtherBlocks = configuration
+				.get(CATEGORY_CUSTOMIZATIONS, "Explosive Blocks Cause Chain Reaction", true,
+						"Disable this to prevent explosive blocks blowing up other explosive blocks when broken, " + "which can cause a chain reaction. (default: true)")
 				.getBoolean();
 		
-		planetUnreachableZollus = configuration.get(CATEGORY_CUSTOMIZATIONS, "Disable Rockets For Planet Zollus", false,
-				"Disable rocket travel for this planet. (default: false)").getBoolean();
-		planetUnreachableKriffon = configuration.get(CATEGORY_CUSTOMIZATIONS, "Disable Rockets For Planet Kriffon", false,
-				"Disable rocket travel for this planet. (default: false)").getBoolean();
-		planetUnreachablePurgot = configuration.get(CATEGORY_CUSTOMIZATIONS, "Disable Rockets For Planet Purgot", false,
-				"Disable rocket travel for this planet. (default: false)").getBoolean();
-		planetUnreachableEden = configuration.get(CATEGORY_CUSTOMIZATIONS, "Disable Rockets For Planet Eden", false,
-				"Disable rocket travel for this planet. (default: false)").getBoolean();
-		planetUnreachableXathius = configuration.get(CATEGORY_CUSTOMIZATIONS, "Disable Rockets For Planet Xathius", false,
-				"Disable rocket travel for this planet. (default: false)").getBoolean();
-		planetUnreachableOasis = configuration.get(CATEGORY_CUSTOMIZATIONS, "Disable Rockets For Planet Oasis", false,
-				"Disable rocket travel for this planet. (default: false)").getBoolean();
-		planetUnreachableXantheon = configuration.get(CATEGORY_CUSTOMIZATIONS, "Disable Rockets For Planet Xantheon", false,
-				"Disable rocket travel for this planet. (default: false)").getBoolean();
-		planetUnreachableCandora = configuration.get(CATEGORY_CUSTOMIZATIONS, "Disable Rockets For Planet Candora", false,
-				"Disable rocket travel for this planet. (default: false)").getBoolean();
-		planetUnreachableAtheon = configuration.get(CATEGORY_CUSTOMIZATIONS, "Disable Rockets For Planet Atheon", false,
-				"Disable rocket travel for this planet. (default: false)").getBoolean();
-		planetUnreachablePerdita = configuration.get(CATEGORY_CUSTOMIZATIONS, "Disable Rockets For Planet Perdita", false,
-				"Disable rocket travel for this planet. (default: false)").getBoolean();
-		planetUnreachableAltum = configuration.get(CATEGORY_CUSTOMIZATIONS, "Disable Rockets For Planet Altum", false,
-				"Disable rocket travel for this planet. (default: false)").getBoolean();
-		planetUnreachableCaligro = configuration.get(CATEGORY_CUSTOMIZATIONS, "Disable Rockets For Planet Caligro", false,
-				"Disable rocket travel for this planet. (default: false)").getBoolean();
-		planetUnreachableExodus = configuration.get(CATEGORY_CUSTOMIZATIONS, "Disable Rockets For Planet Exodus", false,
-				"Disable rocket travel for this planet. (default: false)").getBoolean();
+		planetUnreachableZollus = configuration
+				.get(CATEGORY_CUSTOMIZATIONS, "Disable Rockets For Planet Zollus", false, "Disable rocket travel for this planet. (default: false)").getBoolean();
+		planetUnreachableKriffon = configuration
+				.get(CATEGORY_CUSTOMIZATIONS, "Disable Rockets For Planet Kriffon", false, "Disable rocket travel for this planet. (default: false)").getBoolean();
+		planetUnreachablePurgot = configuration
+				.get(CATEGORY_CUSTOMIZATIONS, "Disable Rockets For Planet Purgot", false, "Disable rocket travel for this planet. (default: false)").getBoolean();
+		planetUnreachableEden = configuration
+				.get(CATEGORY_CUSTOMIZATIONS, "Disable Rockets For Planet Eden", false, "Disable rocket travel for this planet. (default: false)").getBoolean();
+		planetUnreachableXathius = configuration
+				.get(CATEGORY_CUSTOMIZATIONS, "Disable Rockets For Planet Xathius", false, "Disable rocket travel for this planet. (default: false)").getBoolean();
+		planetUnreachableOasis = configuration
+				.get(CATEGORY_CUSTOMIZATIONS, "Disable Rockets For Planet Oasis", false, "Disable rocket travel for this planet. (default: false)").getBoolean();
+		planetUnreachableXantheon = configuration
+				.get(CATEGORY_CUSTOMIZATIONS, "Disable Rockets For Planet Xantheon", false, "Disable rocket travel for this planet. (default: false)").getBoolean();
+		planetUnreachableCandora = configuration
+				.get(CATEGORY_CUSTOMIZATIONS, "Disable Rockets For Planet Candora", false, "Disable rocket travel for this planet. (default: false)").getBoolean();
+		planetUnreachableAtheon = configuration
+				.get(CATEGORY_CUSTOMIZATIONS, "Disable Rockets For Planet Atheon", false, "Disable rocket travel for this planet. (default: false)").getBoolean();
+		planetUnreachablePerdita = configuration
+				.get(CATEGORY_CUSTOMIZATIONS, "Disable Rockets For Planet Perdita", false, "Disable rocket travel for this planet. (default: false)").getBoolean();
+		planetUnreachableAltum = configuration
+				.get(CATEGORY_CUSTOMIZATIONS, "Disable Rockets For Planet Altum", false, "Disable rocket travel for this planet. (default: false)").getBoolean();
+		planetUnreachableCaligro = configuration
+				.get(CATEGORY_CUSTOMIZATIONS, "Disable Rockets For Planet Caligro", false, "Disable rocket travel for this planet. (default: false)").getBoolean();
+		planetUnreachableExodus = configuration
+				.get(CATEGORY_CUSTOMIZATIONS, "Disable Rockets For Planet Exodus", false, "Disable rocket travel for this planet. (default: false)").getBoolean();
+		planetUnreachableVortex = configuration
+				.get(CATEGORY_CUSTOMIZATIONS, "Disable Rockets For Planet Vortex", false, "Disable rocket travel for this planet. (default: false)").getBoolean();
 		
 		//
-		maxHealthAllowed = configuration
-				.get(CATEGORY_CUSTOMIZATIONS, "Max Health Allowed", 40, "The max health that Players are allowed to have. (default: 40)")
+		maxHealthAllowed = configuration.get(CATEGORY_CUSTOMIZATIONS, "Max Health Allowed", 40, "The max health that Players are allowed to have. (default: 40)")
 				.getInt();
 		maxHealthIncreasedBy = configuration.get(CATEGORY_CUSTOMIZATIONS, "Increase Max Health Amount", 10,
 				"The amount of hearts to add to the Player's health when using a Max Heartforce (default: 10).").getInt();
@@ -553,6 +559,7 @@ public class ConfigManagerZG {
 		planetAltumTier = configuration.get(CATEGORY_TIERS, "Planet Altum Tier", 10).getInt();
 		planetCaligroTier = configuration.get(CATEGORY_TIERS, "Planet Caligro Tier", 11).getInt();
 		planetExodusTier = configuration.get(CATEGORY_TIERS, "Planet Exodus Tier", 3).getInt();
+		planetVortexTier = configuration.get(CATEGORY_TIERS, "Planet Vortex Tier", 4).getInt();
 		
 		configuration.save();
 	}

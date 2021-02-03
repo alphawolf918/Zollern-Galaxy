@@ -25,6 +25,7 @@ import zollerngalaxy.core.dimensions.worldproviders.WorldProviderKriffon;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderOasis;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderPerdita;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderPurgot;
+import zollerngalaxy.core.dimensions.worldproviders.WorldProviderVortex;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderXantheon;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderXathius;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderZollus;
@@ -103,55 +104,57 @@ public class ZGPlanets {
 	public static ZGStar starVega = new ZGStar("vega");
 	public static ZGStar starNova = new ZGStar("nova");
 	
-	// Psios Bodys
+	// Psios Planets
 	public static ZGPlanet planetEden = new ZGPlanet("eden");
 	public static ZGPlanet planetZollus = new ZGPlanet("zollus");
 	public static ZGPlanet planetKriffon = new ZGPlanet("kriffus");
 	public static ZGPlanet planetPurgot = new ZGPlanet("purgot");
 	public static ZGMoonBody moonAstros;
 	
-	// Praedyth Bodys
+	// Praedyth Planets
 	public static ZGPlanet planetXathius = new ZGPlanet("xathius");
 	public static ZGPlanet planetOasis = new ZGPlanet("oasis");
 	public static ZGPlanet planetXantheon = new ZGPlanet("xantheon");
 	public static ZGPlanet planetCandora = new ZGPlanet("candora");
 	public static ZGPlanet planetAtheon = new ZGPlanet("atheon");
 	
-	// Sol-2 Bodys
+	// Sol-2 Planets
 	public static ZGPlanet planetPerdita = new ZGPlanet("perdita");
 	public static ZGPlanet planetAltum = new ZGPlanet("altum");
 	public static ZGPlanet planetCaligro = new ZGPlanet("caligro");
 	public static ZGPlanet planetExodus = new ZGPlanet("exodus");
 	
-	// Pantheon Bodys
+	// Pantheon Planets
+	public static ZGPlanet planetVortex = new ZGPlanet("vortex");
 	public static ZGPlanet planetMeztli;
 	public static ZGPlanet planetCentotl;
 	public static ZGPlanet planetToci;
 	public static ZGPlanet planetTlaloc;
 	
-	// Olympus Bodys
+	// Olympus Planets
 	public static ZGPlanet planetAres;
 	public static ZGPlanet planetPrometheus;
 	public static ZGPlanet planetIcarus;
 	public static ZGPlanet planetKronos;
 	
-	// Asgard Bodys
+	// Asgard Planets
 	public static ZGPlanet planetAsgard;
 	public static ZGPlanet planetMaveth;
 	
-	// Vega Bodys
+	// Vega Planets
 	public static ZGPlanet planetMeridian;
 	public static ZGPlanet planetRequiem;
 	
-	// Nova Bodys
+	// Nova Planets
 	public static ZGPlanet planetPrimor;
 	
 	public static void init() {
 		ZGPlanets.initStarSystems();
-		ZGPlanets.initBodys();
+		ZGPlanets.initPlanets();
 		ZGPlanets.initMoons();
 		ZGPlanets.registerSystems();
 		ZGPlanets.registerTeleportTypes();
+		
 	}
 	
 	public static void initStarSystems() {
@@ -214,8 +217,8 @@ public class ZGPlanets {
 		ZGHelper.Log("Loaded a total of " + totalSystems + " new star systems.");
 	}
 	
-	public static void initBodys() {
-		// Body Zollus
+	public static void initPlanets() {
+		// Planet Zollus
 		planetZollus.setDimensionInfo(ConfigManagerZG.planetZollusDimensionId, WorldProviderZollus.class);
 		planetZollus.setParentSolarSystem(systemPsios);
 		planetZollus.setBodyClass(EnumBodyClass.L);
@@ -240,7 +243,7 @@ public class ZGPlanets {
 		planetZollus.setBiomeInfo(ZGBiomes.ZOLLUS, ZGBiomes.ZOLLUS_OCEAN);
 		totalPlanets++;
 		
-		// Body Kriffon
+		// Planet Kriffon
 		planetKriffon.setDimensionInfo(ConfigManagerZG.planetKriffonDimensionId, WorldProviderKriffon.class);
 		planetKriffon.setParentSolarSystem(systemPsios);
 		planetKriffon.setBodyClass(EnumBodyClass.Y);
@@ -265,7 +268,7 @@ public class ZGPlanets {
 		planetKriffon.setBiomeInfo(ZGBiomes.KRIFFON, ZGBiomes.KRIFFON_LAVA_OCEAN);
 		totalPlanets++;
 		
-		// Body Purgot
+		// Planet Purgot
 		planetPurgot.setParentSolarSystem(systemPsios);
 		planetPurgot.setBodyClass(EnumBodyClass.NINE);
 		planetPurgot.setRingColorRGB(0.1F, 0.9F, 2.6F);
@@ -291,7 +294,7 @@ public class ZGPlanets {
 		planetPurgot.setDimensionInfo(ConfigManagerZG.planetPurgotDimensionId, WorldProviderPurgot.class);
 		totalPlanets++;
 		
-		// Body Eden
+		// Planet Eden
 		planetEden.setDimensionInfo(ConfigManagerZG.planetEdenDimensionId, WorldProviderEden.class);
 		planetEden.setParentSolarSystem(systemPsios);
 		planetEden.setBodyClass(EnumBodyClass.M);
@@ -319,7 +322,7 @@ public class ZGPlanets {
 				ZGBiomes.EDEN_FLOWER_GARDEN, ZGBiomes.EDEN_CRATERS, ZGBiomes.EDEN_SHROOM_HILLS, ZGBiomes.EDEN_OCEAN);
 		totalPlanets++;
 		
-		// Body Xathius
+		// Planet Xathius
 		planetXathius.setDimensionInfo(ConfigManagerZG.planetXathiusDimensionId, WorldProviderXathius.class);
 		planetXathius.setParentSolarSystem(systemPraedyth);
 		planetXathius.setBodyClass(EnumBodyClass.NINE);
@@ -344,7 +347,7 @@ public class ZGPlanets {
 		planetXathius.setBiomeInfo(ZGBiomes.XATHIUS_ABSTRACT_PLAINS, ZGBiomes.XATHIUS_OCEAN, ZGBiomes.XATHIUS_BLUELANDS, ZGBiomes.XATHIUS_MOUNTAINS);
 		totalPlanets++;
 		
-		// Body Oasis
+		// Planet Oasis
 		planetOasis.setDimensionInfo(ConfigManagerZG.planetOasisDimensionId, WorldProviderOasis.class);
 		planetOasis.setParentSolarSystem(systemPraedyth);
 		planetOasis.setBodyClass(EnumBodyClass.R);
@@ -370,7 +373,7 @@ public class ZGPlanets {
 		planetOasis.setBiomeInfo(ZGBiomes.OASIS_PLAINS, ZGBiomes.OASIS_OCEAN, ZGBiomes.OASIS_REDLANDS);
 		totalPlanets++;
 		
-		// Body Xantheon
+		// Planet Xantheon
 		planetXantheon.setDimensionInfo(ConfigManagerZG.planetXantheonDimensionId, WorldProviderXantheon.class);
 		planetXantheon.setParentSolarSystem(systemPraedyth);
 		planetXantheon.setBodyClass(EnumBodyClass.CONSTRUCTED);
@@ -553,6 +556,31 @@ public class ZGPlanets {
 		planetExodus.setBiomeInfo(ZGBiomes.EXODUS_AZURE_PLAINS, ZGBiomes.EXODUS_ROCKY_HILLS, ZGBiomes.EXODUS_OCEAN, ZGBiomes.EXODUS_FOREST, ZGBiomes.EXODUS_BLACK_MESA);
 		totalPlanets++;
 		
+		// Vortex
+		planetVortex.setDimensionInfo(ConfigManagerZG.planetVortexDimensionId, WorldProviderVortex.class);
+		planetVortex.setParentSolarSystem(systemPantheon);
+		planetVortex.setBodyClass(EnumBodyClass.STORMY);
+		planetVortex.setRingColorRGB(1.0F, 0.1F, 0.9F);
+		planetVortex.setPhaseShift(50F);
+		planetVortex.setRelativeOrbitTime(4.5F);
+		planetVortex.setDistanceFromCenter(3.0F);
+		planetVortex.setTierRequired(ConfigManagerZG.planetExodusTier);
+		if (ConfigManagerZG.planetUnreachableAll || ConfigManagerZG.planetUnreachableVortex) {
+			planetVortex.setDisableRockets();
+		}
+		planetVortex.setRelativeSize(160.0F);
+		planetVortex.setBodyTemperature(76.15F);
+		planetVortex.setBodyToxicity(0.0F);
+		planetVortex.setBodyRadiation(0.0F);
+		planetVortex.setWindLevel(125.67F);
+		planetVortex.setDensity(1.0F);
+		planetVortex.setHasRain(true);
+		planetVortex.setBodyGasses(EnumAtmosphericGas.HELIUM, EnumAtmosphericGas.NITROGEN);
+		planetVortex.setBodyIcon("vortex");
+		planetVortex.setAtmosphere();
+		planetVortex.setBiomeInfo(ZGBiomes.VORTEX_BASE);
+		totalPlanets++;
+		
 		ZGHelper.Log("Loaded a total of " + totalPlanets + " new planets.");
 	}
 	
@@ -566,9 +594,9 @@ public class ZGPlanets {
 		GalaxyRegistry.registerSolarSystem(systemPsios);
 		GalaxyRegistry.registerSolarSystem(systemPraedyth);
 		GalaxyRegistry.registerSolarSystem(systemSol2);
+		GalaxyRegistry.registerSolarSystem(systemPantheon);
 		
 		if (!hideUnusedStarSystems) {
-			GalaxyRegistry.registerSolarSystem(systemPantheon);
 			GalaxyRegistry.registerSolarSystem(systemOlympus);
 			GalaxyRegistry.registerSolarSystem(systemAsgard);
 			GalaxyRegistry.registerSolarSystem(systemVega);
@@ -592,6 +620,7 @@ public class ZGPlanets {
 		GalaxyRegistry.registerPlanet(planetAltum);
 		GalaxyRegistry.registerPlanet(planetCaligro);
 		GalaxyRegistry.registerPlanet(planetExodus);
+		GalaxyRegistry.registerPlanet(planetVortex);
 	}
 	
 	public static void registerTeleportTypes() {
@@ -613,5 +642,9 @@ public class ZGPlanets {
 		GalacticraftRegistry.registerTeleportType(WorldProviderAltum.class, new TeleportTypeMars());
 		GalacticraftRegistry.registerTeleportType(WorldProviderCaligro.class, new TeleportTypeMars());
 		GalacticraftRegistry.registerTeleportType(WorldProviderExodus.class, new TeleportTypeMars());
+		
+		// Pantheon
+		GalacticraftRegistry.registerTeleportType(WorldProviderVortex.class, new TeleportTypeMars());
+		// TODO
 	}
 }

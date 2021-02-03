@@ -373,6 +373,19 @@ tile.exoduswoodplanks.name=Exo Planks
 tile.exoduswoodsapling.name=Exo Sapling
 tile.exosand.name=Exo Sand
 
+tile.vortexsurfacerock.name=Vortex Surface Rock
+tile.vortexvoltrock.name=Volt Rock
+tile.vortexcobblestone.name=Vortex Cobblestone
+tile.vortexstone.name=Vortex Stone
+tile.vortexironore.name=Vortex Iron Ore
+tile.vortexgoldore.name=Vortex Gold Ore
+tile.vortexdiamondore.name=Vortex Diamond Ore
+tile.vortexsuperchargedcoalore.name=Vortex Super Charged Coal Ore
+tile.vortexredstoneore.name=Vortex Redstone Ore
+tile.vortexcopperore.name=Vortex Copper Ore
+tile.vortexfueltoniumore.name=Vortex Fueltonium Ore
+tile.vortexeveniumore.name=Vortex Evenium Ore
+
 tile.endrock.name=Endrock
 
 tile.heartblock.name=Healing Station
@@ -773,6 +786,7 @@ planet.perdita=Perdita
 planet.altum=Altum
 planet.caligro=Caligro
 
+planet.vortex=Vortex
 planet.meztli=Meztli
 planet.centotl=Centotl
 planet.toci=Toci
@@ -828,6 +842,7 @@ satellite.space_station.perdita=Perdita Space Station
 satellite.space_station.altum=Altum Space Station
 satellite.space_station.caligro=Caligro Space Station
 satellite.space_station.exodus=Exodus Space Station
+satellite.space_station.vortex=Vortex Space Station
 
 ## Death Messages ##
 

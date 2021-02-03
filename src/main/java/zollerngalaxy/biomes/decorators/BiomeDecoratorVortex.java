@@ -18,32 +18,26 @@ import zollerngalaxy.core.enums.EnumOreGenZG;
 import zollerngalaxy.worldgen.WorldGenMinableZG;
 import zollerngalaxy.worldgen.WorldGenOutpost;
 
-public class BiomeDecoratorPurgot extends BiomeDecoratorZG {
+public class BiomeDecoratorVortex extends BiomeDecoratorZG {
 	
-	private WorldGenerator dirtGen;
 	private WorldGenerator ironGen;
 	private WorldGenerator goldGen;
-	private WorldGenerator tinGen;
 	private WorldGenerator copperGen;
-	private WorldGenerator leadGen;
-	private WorldGenerator aluminumGen;
 	private WorldGenerator redstoneGen;
 	private WorldGenerator diamondGen;
-	private WorldGenerator emeraldGen;
-	private WorldGenerator meteoricIronGen;
+	private WorldGenerator superChargedCoalGen;
+	private WorldGenerator fueltoniumGen;
+	private WorldGenerator eveniumGen;
 	
-	public BiomeDecoratorPurgot() {
-		this.dirtGen = new WorldGenMinableZG(ZGBlocks.purgDirt, ZGBlocks.purgSurfaceRock, EnumOreGenZG.DIRT);
-		this.tinGen = new WorldGenMinableZG(ZGBlocks.purgTinOre, ZGBlocks.purgStone, EnumOreGenZG.TIN);
-		this.copperGen = new WorldGenMinableZG(ZGBlocks.purgCopperOre, ZGBlocks.purgStone, EnumOreGenZG.COPPER);
-		this.ironGen = new WorldGenMinableZG(ZGBlocks.purgIronOre, ZGBlocks.purgStone, EnumOreGenZG.IRON);
-		this.goldGen = new WorldGenMinableZG(ZGBlocks.purgGoldOre, ZGBlocks.purgStone, EnumOreGenZG.GOLD);
-		this.leadGen = new WorldGenMinableZG(ZGBlocks.purgLeadOre, ZGBlocks.purgStone, EnumOreGenZG.LEAD);
-		this.aluminumGen = new WorldGenMinableZG(ZGBlocks.purgAluminumOre, ZGBlocks.purgStone, EnumOreGenZG.ALUMINUM);
-		this.redstoneGen = new WorldGenMinableZG(ZGBlocks.purgRedstoneOre, ZGBlocks.purgStone, EnumOreGenZG.REDSTONE);
-		this.diamondGen = new WorldGenMinableZG(ZGBlocks.purgDiamondOre, ZGBlocks.purgStone, EnumOreGenZG.DIAMOND);
-		this.emeraldGen = new WorldGenMinableZG(ZGBlocks.purgEmeraldOre, ZGBlocks.purgStone, EnumOreGenZG.EMERALD);
-		this.meteoricIronGen = new WorldGenMinableZG(ZGBlocks.purgMeteoricIronOre, ZGBlocks.purgStone, EnumOreGenZG.METEORIC_IRON);
+	public BiomeDecoratorVortex() {
+		this.ironGen = new WorldGenMinableZG(ZGBlocks.vortexIronOre, ZGBlocks.vortexStone, EnumOreGenZG.IRON);
+		this.goldGen = new WorldGenMinableZG(ZGBlocks.vortexGoldOre, ZGBlocks.vortexStone, EnumOreGenZG.GOLD);
+		this.copperGen = new WorldGenMinableZG(ZGBlocks.vortexCopperOre, ZGBlocks.vortexStone, EnumOreGenZG.COPPER);
+		this.redstoneGen = new WorldGenMinableZG(ZGBlocks.vortexRedstoneOre, ZGBlocks.vortexStone, EnumOreGenZG.REDSTONE);
+		this.diamondGen = new WorldGenMinableZG(ZGBlocks.vortexDiamondOre, ZGBlocks.vortexStone, EnumOreGenZG.DIAMOND);
+		this.superChargedCoalGen = new WorldGenMinableZG(ZGBlocks.vortexSuperChargedCoalOre, ZGBlocks.vortexStone, EnumOreGenZG.SUPER_CHARGED_COAL);
+		this.fueltoniumGen = new WorldGenMinableZG(ZGBlocks.vortexFueltoniumOre, ZGBlocks.vortexStone, EnumOreGenZG.FUELTONIUM);
+		this.eveniumGen = new WorldGenMinableZG(ZGBlocks.vortexEveniumOre, ZGBlocks.vortexStone, EnumOreGenZG.EVENIUM);
 	}
 	
 	@Override
@@ -52,17 +46,14 @@ public class BiomeDecoratorPurgot extends BiomeDecoratorZG {
 		int z = rand.nextInt(16) + 8;
 		int y = rand.nextInt(248) + 8;
 		
-		this.generateOre(this.dirtGen, EnumOreGenZG.DIRT, world, rand);
 		this.generateOre(this.ironGen, EnumOreGenZG.IRON, world, rand);
 		this.generateOre(this.goldGen, EnumOreGenZG.GOLD, world, rand);
-		this.generateOre(this.tinGen, EnumOreGenZG.TIN, world, rand);
 		this.generateOre(this.copperGen, EnumOreGenZG.COPPER, world, rand);
-		this.generateOre(this.leadGen, EnumOreGenZG.LEAD, world, rand);
-		this.generateOre(this.aluminumGen, EnumOreGenZG.ALUMINUM, world, rand);
 		this.generateOre(this.redstoneGen, EnumOreGenZG.REDSTONE, world, rand);
 		this.generateOre(this.diamondGen, EnumOreGenZG.DIAMOND, world, rand);
-		this.generateOre(this.emeraldGen, EnumOreGenZG.EMERALD, world, rand);
-		this.generateOre(this.meteoricIronGen, EnumOreGenZG.METEORIC_IRON, world, rand);
+		this.generateOre(this.superChargedCoalGen, EnumOreGenZG.DIAMOND, world, rand);
+		this.generateOre(this.fueltoniumGen, EnumOreGenZG.DIAMOND, world, rand);
+		this.generateOre(this.eveniumGen, EnumOreGenZG.DIAMOND, world, rand);
 		
 		int genY = y;
 		

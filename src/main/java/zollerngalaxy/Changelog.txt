@@ -1,5 +1,6 @@
 ===== CHANGELOG =====
-Zollern Galaxy v2.0.23
+Zollern Galaxy v2.0.24
 =====================
 
-* Fixed a bug that prevented Players from flying in survival when using Draconic Armor from Draconic Evolution.
+* Added planet Vortex, a super-storm planet.
+* 

@@ -25,7 +25,8 @@ public enum EnumBodyClass {
 	CONSTRUCTED("Constructed"),
 	DESERT("Desert"),
 	OCEAN("Ocean"),
-	DARK("Dark");
+	DARK("Dark"),
+	STORMY("X");
 	
 	private EnumBodyClass planetClass;
 	private String planetClassStr;
