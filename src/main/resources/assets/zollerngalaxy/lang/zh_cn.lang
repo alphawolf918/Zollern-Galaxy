@@ -373,6 +373,19 @@ tile.exoduswoodplanks.name=出离树木板
 tile.exoduswoodsapling.name=出离树树苗
 tile.exosand.name=出离星沙子
 
+tile.vortexsurfacerock.name=涡流星表层岩
+tile.vortexvoltrock.name=涡流星岩石
+tile.vortexcobblestone.name=涡流星圆石
+tile.vortexstone.name=涡流星石头
+tile.vortexironore.name=涡流星铁矿石
+tile.vortexgoldore.name=涡流星金矿石
+tile.vortexdiamondore.name=涡流星钻石矿石
+tile.vortexsuperchargedcoalore.name=涡流星超充能煤炭矿石
+tile.vortexredstoneore.name=涡流星红石矿石
+tile.vortexcopperore.name=涡流星铜矿石
+tile.vortexfueltoniumore.name=涡流星铀矿石
+tile.vortexeveniumore.name=涡流星伊文矿石
+
 tile.endrock.name=Endrock
 
 tile.heartblock.name=医疗站
@@ -680,6 +693,7 @@ entity.zollerngalaxy:shade.name=阴影
 entity.zollerngalaxy:shadowalien.name=黑暗BOSS之影
 entity.zollerngalaxy:faceless.name=无面者
 entity.zollerngalaxy:pigshroom.name=蘑菇猪
+entity.zollerngalaxy:arcon.name=阿克恩
 
 ## Tooltips ##
 
@@ -771,13 +785,14 @@ planet.exodus=出离星
 planet.perdita=珀迪塔
 planet.altum=阿尔图姆
 planet.caligro=卡里格罗
-#有一个中文释义是“梦”
-planet.somnium=Somnium
 
+planet.vortex=涡流星
 planet.meztli=梅兹特利
 planet.centotl=森特奥特尔
 planet.toci=托奇
 planet.tlaloc=特拉洛克
+#有一个中文释义是“梦”
+planet.somnium=Somnium
 
 planet.ares=阿瑞斯
 planet.prometheus=普罗米修斯
@@ -827,6 +842,7 @@ satellite.space_station.perdita=珀迪塔空间站
 satellite.space_station.altum=阿尔图姆空间站
 satellite.space_station.caligro=卡里格罗空间站
 satellite.space_station.exodus=出离星空间站
+satellite.space_station.vortex=涡流星空间站
 
 ## Death Messages ##
 
@@ -885,7 +901,7 @@ zollerngalaxy_enlightened=启发
 ## Tinkerer's Construct ##
 
 material.materialradium.name=辐光物质
-material.materialcorruption.name=侵蚀
+material.materialcorruption.name=星位
 
 modifier.trait_enlightened.name=启发
 modifier.trait_corrupted.name=被侵蚀
