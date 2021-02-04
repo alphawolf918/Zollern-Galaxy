@@ -19,6 +19,7 @@ import net.minecraft.world.WorldEntitySpawner;
 import net.minecraft.world.WorldType;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.Biome.TempCategory;
+import net.minecraft.world.biome.BiomeProvider;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.gen.NoiseGenerator;
@@ -37,8 +38,9 @@ public class ChunkProviderVortex extends ChunkProviderBase {
 	public static final IBlockState STONE = ZGBlocks.vortexStone.getDefaultState();
 	public static final IBlockState CHARGIUM = ZGFluids.blockChargiumFluid.getDefaultState();
 	public static final IBlockState FUELTONIUM = ZGFluids.blockFueltoniumFluid.getDefaultState();
+	public static final IBlockState AIR = Blocks.AIR.getDefaultState();
 	
-	public static final double CHUNK_HEIGHT = 62.4D;
+	public static final double CHUNK_HEIGHT = 54.6D;
 	public static final int SEA_LEVEL = 53;
 	
 	private static final int CHUNK_SIZE_X = 16;
@@ -71,7 +73,7 @@ public class ChunkProviderVortex extends ChunkProviderBase {
 	
 	public static ChunkProviderVortex INSTANCE;
 	
-	private static final int CRATER_PROB = 10;
+	private static final int CRATER_PROB = 50;
 	
 	public ChunkProviderVortex(World worldIn, long seed, boolean mapFeaturesEnabled) {
 		this.world = worldIn;
@@ -84,7 +86,7 @@ public class ChunkProviderVortex extends ChunkProviderBase {
 		this.noiseGen5 = new NoiseGeneratorOctaves(this.rand, 10);
 		this.noiseGen6 = new NoiseGeneratorOctaves(this.rand, 16);
 		this.mobSpawnerNoise = new NoiseGeneratorOctaves(this.rand, 8);
-		this.noiseGenSmooth1 = new Gradient(this.rand.nextLong(), 4, 0.25F);
+		this.noiseGenSmooth1 = new Gradient(this.rand.nextLong(), 4, 0.35F); // 0.25F
 		this.terrainCalcs = new double[825];
 		this.parabolicField = new float[25];
 		
@@ -108,7 +110,9 @@ public class ChunkProviderVortex extends ChunkProviderBase {
 	
 	private void setBlocksInChunk(int chunkX, int chunkZ, ChunkPrimer primer) {
 		this.noiseGenSmooth1.setFrequency(0.015F);
-		this.biomesForGeneration = this.world.getBiomeProvider().getBiomesForGeneration(this.biomesForGeneration, chunkX * 4 - 2, chunkZ * 4 - 2, 10, 10);
+		BiomeProvider biomeProvider = this.world.getBiomeProvider();
+		Biome[] biomesForGen = biomeProvider.getBiomesForGeneration(this.biomesForGeneration, chunkX * 4 - 2, chunkZ * 4 - 2, 10, 10);
+		this.biomesForGeneration = biomesForGen;
 		this.createLandPerBiome(chunkX * 4, chunkZ * 4);
 		
 		for (int i = 0; i < 4; ++i) {
@@ -161,6 +165,8 @@ public class ChunkProviderVortex extends ChunkProviderBase {
 								
 								if (heightMod > 0.0D) {
 									chunkHeight = (CHUNK_HEIGHT + heightMod);
+								} else if (heightMod < 0.0D) {
+									chunkHeight = (CHUNK_HEIGHT - heightMod);
 								}
 								
 								if ((lvt_45_1_ += d16) > this.noiseGenSmooth1.getNoise(chunkX * 16 + x, chunkZ * 16 + z) * chunkHeight) {
@@ -169,6 +175,8 @@ public class ChunkProviderVortex extends ChunkProviderBase {
 									IBlockState blockToUse = CHARGIUM;
 									blockToUse = (biome.getTempCategory() == TempCategory.WARM) ? FUELTONIUM : blockToUse;
 									primer.setBlockState(x, y, z, blockToUse);
+								} else if (y < 250) {
+									primer.setBlockState(x, y, z, AIR);
 								}
 							}
 							
@@ -351,7 +359,7 @@ public class ChunkProviderVortex extends ChunkProviderBase {
 					int helper = 0;
 					for (int y = 127; y > 0; y--) {
 						if (Blocks.AIR != primer.getBlockState(x, y, z).getBlock() && helper <= yDev) {
-							primer.setBlockState(x, y, z, Blocks.AIR.getDefaultState());
+							primer.setBlockState(x, y, z, AIR);
 							helper++;
 						}
 						if (helper > yDev) {

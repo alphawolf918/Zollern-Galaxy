@@ -49,7 +49,7 @@ public class WorldProviderVortex extends WorldProviderZG {
 	
 	@Override
 	public float getGravity() {
-		return 0.070F;
+		return 0.024F;
 	}
 	
 	@Override
@@ -69,7 +69,7 @@ public class WorldProviderVortex extends WorldProviderZG {
 	
 	@Override
 	public boolean hasBreathableAtmosphere() {
-		return true;
+		return false;
 	}
 	
 	@Override
@@ -79,7 +79,7 @@ public class WorldProviderVortex extends WorldProviderZG {
 	
 	@Override
 	public float getSoundVolReductionAmount() {
-		return 0F;
+		return -0.5F;
 	}
 	
 	@Override
@@ -115,12 +115,8 @@ public class WorldProviderVortex extends WorldProviderZG {
 	
 	@Override
 	public Vector3 getSkyColor() {
-		if (this.world.isRaining()) {
-			float f = 1.15F - this.getStarBrightness(1.0F);
-			return new Vector3(120 / 255F * f, 1F / 255F * f, 161 / 255F * f);
-		}
 		float f = 1.15F - this.getStarBrightness(1.0F);
-		return new Vector3(220 / 255F * f, 1F / 255F * f, 251 / 255F * f);
+		return new Vector3(10 / 255F * f, 1F / 255F * f, 251 / 255F * f);
 	}
 	
 	@Override
@@ -245,14 +241,20 @@ public class WorldProviderVortex extends WorldProviderZG {
 		}
 		
 		if (this.shouldDisablePrecipitation()) {
-			this.world.getWorldInfo().setRainTime(86400);
-			this.world.getWorldInfo().setRaining(true);
-			this.world.getWorldInfo().setThunderTime(86400);
-			this.world.getWorldInfo().setThundering(true);
-			this.world.rainingStrength = 10.0F;
-			this.world.thunderingStrength = 10.0F;
+			this.world.getWorldInfo().setRainTime(0);
+			this.world.getWorldInfo().setRaining(false);
+			this.world.getWorldInfo().setThunderTime(0);
+			this.world.getWorldInfo().setThundering(false);
+			this.world.rainingStrength = 0F;
+			this.world.thunderingStrength = 0F;
 		} else {
 			this.updateWeatherOverride();
+			this.world.getWorldInfo().setRainTime(20);
+			this.world.getWorldInfo().setRaining(true);
+			this.world.getWorldInfo().setThunderTime(20);
+			this.world.getWorldInfo().setThundering(true);
+			this.world.rainingStrength = 1.0F;
+			this.world.thunderingStrength = 1.0F;
 		}
 	}
 	
@@ -268,7 +270,7 @@ public class WorldProviderVortex extends WorldProviderZG {
 	
 	@Override
 	protected void updateWeatherOverride() {
-		// super.updateWeather();
+		super.updateWeatherOverride();
 	}
 	
 	@Override

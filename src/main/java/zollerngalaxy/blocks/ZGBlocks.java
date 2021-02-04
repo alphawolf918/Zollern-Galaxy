@@ -534,7 +534,7 @@ public class ZGBlocks {
 			EnumHarvestLevelZG.EVENIUM.getHarvestLevel());
 	public static final Block vortexRedstoneOre = new ZGOreGem("vortexredstoneore", 4.1F, Items.REDSTONE).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
 			EnumHarvestLevelZG.EVENIUM.getHarvestLevel());
-	public static final Block vortexSuperChargedCoalOre = ((ZGBlockBase) new ZGOreGem("vortexsuperchargedcoaloreore", 8.1F, ZGItems.superChargedCoal)
+	public static final Block vortexSuperChargedCoalOre = ((ZGBlockBase) new ZGOreGem("vortexsuperchargedcoalore", 8.1F, ZGItems.superChargedCoal)
 			.setBlockTier(EnumBlockTier.FOUR)).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.EVENIUM.getHarvestLevel());
 	public static final Block vortexCopperOre = new ZGBlockOre("vortexcopperore", 3.2F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
 			EnumHarvestLevelZG.EVENIUM.getHarvestLevel());

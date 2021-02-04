@@ -5,7 +5,7 @@
  * claim it as your own, and do not
  * redistribute it.
  */
-package zollerngalaxy.planets.satellites;
+package zollerngalaxy.celestial.spacestations;
 
 import java.util.HashMap;
 import micdoodle8.mods.galacticraft.api.GalacticraftRegistry;

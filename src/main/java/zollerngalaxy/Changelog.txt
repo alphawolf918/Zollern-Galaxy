@@ -2,5 +2,7 @@
 Zollern Galaxy v2.0.24
 =====================
 
-* Added planet Vortex, a super-storm planet.
+* Added new star system Pantheon, with new planet Vortex, a super-storm planet.
+    - To get to it, Players must use the Eden Star Gate while on Exodus.
+* Updated Chinese translations from EndsM.
 * 

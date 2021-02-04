@@ -21,7 +21,7 @@ import net.minecraftforge.fml.client.FMLClientHandler;
 
 public class SkyProviderVortex extends SkyProviderBaseZG {
 	
-	private ResourceLocation pantheonTexture = new ResourceLocation("zollerngalaxy:textures/gui/patheon.png");
+	private ResourceLocation pantheonTexture = new ResourceLocation("zollerngalaxy:textures/gui/pantheon.png");
 	private ResourceLocation edenTexture = new ResourceLocation("zollerngalaxy:textures/gui/exodus.png");
 	
 	public SkyProviderVortex(IGalacticraftWorldProvider provider) {

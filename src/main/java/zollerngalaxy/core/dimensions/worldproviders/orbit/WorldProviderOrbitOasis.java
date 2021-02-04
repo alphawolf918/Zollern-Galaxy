@@ -18,9 +18,9 @@ import net.minecraft.world.gen.IChunkGenerator;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.celestial.ZGPlanets;
+import zollerngalaxy.celestial.spacestations.ZGSpaceStations;
 import zollerngalaxy.core.dimensions.ZGDimensions;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderOrbitZG;
-import zollerngalaxy.planets.satellites.ZGSpaceStations;
 
 public class WorldProviderOrbitOasis extends WorldProviderOverworldOrbit {
 	

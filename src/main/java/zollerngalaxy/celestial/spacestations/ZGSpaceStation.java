@@ -5,7 +5,7 @@
  * claim it as your own, and do not
  * redistribute it.
  */
-package zollerngalaxy.planets.satellites;
+package zollerngalaxy.celestial.spacestations;
 
 import micdoodle8.mods.galacticraft.api.galaxies.Satellite;
 import micdoodle8.mods.galacticraft.core.world.gen.BiomeOrbit;
