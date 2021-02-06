@@ -23,6 +23,7 @@ import net.minecraft.world.DimensionType;
 import net.minecraft.world.biome.BiomeProvider;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.gen.IChunkGenerator;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.biomes.providers.BiomeProviderVortex;
@@ -31,6 +32,8 @@ import zollerngalaxy.celestial.ZGPlanets;
 import zollerngalaxy.core.dimensions.ZGDimensions;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderVortex;
 import zollerngalaxy.core.dimensions.skyproviders.SkyProviderVortex;
+import zollerngalaxy.events.WindBlowingEvent;
+import zollerngalaxy.lib.helpers.ZGHelper;
 
 public class WorldProviderVortex extends WorldProviderZG {
 	
@@ -217,7 +220,6 @@ public class WorldProviderVortex extends WorldProviderZG {
 		if (!this.world.isRemote) {
 			long newTime = world.getWorldInfo().getWorldTime();
 			if (this.preTickTime == Long.MIN_VALUE) {
-				// First tick: get the timeCurrentOffset from saved ticks in villages.dat :)
 				int savedTick = 0;
 				try {
 					tickCounter.setAccessible(true);
@@ -228,8 +230,6 @@ public class WorldProviderVortex extends WorldProviderZG {
 				}
 				this.timeCurrentOffset = savedTick - newTime;
 			} else {
-				// Detect jumps in world time (e.g. because of bed use on Overworld) and reverse
-				// them for this world
 				long diff = (newTime - this.preTickTime);
 				if (diff > 1L) {
 					this.timeCurrentOffset -= diff - 1L;
@@ -240,21 +240,15 @@ public class WorldProviderVortex extends WorldProviderZG {
 			this.saveTCO = 0L;
 		}
 		
-		if (this.shouldDisablePrecipitation()) {
-			this.world.getWorldInfo().setRainTime(0);
-			this.world.getWorldInfo().setRaining(false);
-			this.world.getWorldInfo().setThunderTime(0);
-			this.world.getWorldInfo().setThundering(false);
-			this.world.rainingStrength = 0F;
-			this.world.thunderingStrength = 0F;
-		} else {
-			this.updateWeatherOverride();
-			this.world.getWorldInfo().setRainTime(20);
-			this.world.getWorldInfo().setRaining(true);
-			this.world.getWorldInfo().setThunderTime(20);
-			this.world.getWorldInfo().setThundering(true);
-			this.world.rainingStrength = 1.0F;
-			this.world.thunderingStrength = 1.0F;
+		this.updateWeatherOverride();
+		this.world.getWorldInfo().setRainTime(20);
+		this.world.getWorldInfo().setRaining(true);
+		this.world.getWorldInfo().setThunderTime(10);
+		this.world.getWorldInfo().setThundering(true);
+		this.world.rainingStrength = 1.0F;
+		this.world.thunderingStrength = 1.0F;
+		if (ZGHelper.rngInt(1, 100) == 0) {
+			MinecraftForge.EVENT_BUS.post(new WindBlowingEvent(world));
 		}
 	}
 	

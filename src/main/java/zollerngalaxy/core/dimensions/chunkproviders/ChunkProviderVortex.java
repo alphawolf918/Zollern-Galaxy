@@ -175,7 +175,7 @@ public class ChunkProviderVortex extends ChunkProviderBase {
 									IBlockState blockToUse = CHARGIUM;
 									blockToUse = (biome.getTempCategory() == TempCategory.WARM) ? FUELTONIUM : blockToUse;
 									primer.setBlockState(x, y, z, blockToUse);
-								} else if (y < 250) {
+								} else if (y >= 250) {
 									primer.setBlockState(x, y, z, AIR);
 								}
 							}

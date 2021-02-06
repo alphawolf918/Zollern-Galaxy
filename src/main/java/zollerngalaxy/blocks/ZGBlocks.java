@@ -628,6 +628,7 @@ public class ZGBlocks {
 	
 	// Crystal Blocks
 	public static final Block blockCrystalsPlutonium = new ZGCrystalBlock("plutoniumcrystals");
+	public static final Block blockCrystalsStorm = new ZGCrystalBlock("stormcrystals");
 	
 	public static void init() {
 		ZGBlocks.registerBlocks(edenLovetreeSapling, edenGoldenWoodSapling, edenParadiseWoodSapling, edenWoodSapling, edenFruit, edenFlower, edenFlowerBlack,
@@ -670,7 +671,7 @@ public class ZGBlocks {
 				exodusGravel, exodusRock, exodusSand, exodusIronOre, exodusGoldOre, exodusDiamondOre, exodusRedstoneOre, exodusCopperOre, exoWoodLogs, exoWoodLeaves,
 				exoWoodPlanks, exoWoodSapling, vortexSurfaceRock, vortexCobblestone, vortexStone, vortexVoltRock, vortexIronOre, vortexGoldOre, vortexDiamondOre,
 				vortexRedstoneOre, vortexCopperOre, vortexSuperChargedCoalOre, vortexFueltoniumOre, vortexEveniumOre, blockBlueprintStation, blockHealingStation,
-				blockCrystalsPlutonium);
+				blockCrystalsPlutonium, blockCrystalsStorm);
 		ZGHelper.Log("Loaded a total of " + totalBlocks + " new blocks.");
 	}
 	

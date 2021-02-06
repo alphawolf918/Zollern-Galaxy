@@ -1,0 +1,8 @@
+{
+  "parent": "zollerngalaxy:custom/stormcrystalsblock",
+  "textures": {
+    "all": "zollerngalaxy:blocks/stormcrystalblock",
+    "particle": "zollerngalaxy:blocks/stormcrystalblock",
+    "0": "zollerngalaxy:blocks/stormcrystalblock"
+  }
+}

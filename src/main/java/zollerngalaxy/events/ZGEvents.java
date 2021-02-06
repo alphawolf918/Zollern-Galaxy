@@ -7,15 +7,22 @@
  */
 package zollerngalaxy.events;
 
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
+import com.google.common.collect.Maps;
 import micdoodle8.mods.galacticraft.api.prefab.world.gen.WorldProviderSpace;
 import micdoodle8.mods.galacticraft.core.entities.EntityAlienVillager;
+import micdoodle8.mods.galacticraft.core.proxy.ClientProxyCore;
 import micdoodle8.mods.galacticraft.core.util.DamageSourceGC;
+import micdoodle8.mods.galacticraft.planets.venus.client.FakeLightningBoltRenderer;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSand;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.effect.EntityLightningBolt;
@@ -24,6 +31,7 @@ import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.init.MobEffects;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraft.item.ItemStack;
@@ -46,6 +54,7 @@ import net.minecraft.world.storage.loot.LootTableList;
 import net.minecraft.world.storage.loot.LootTableManager;
 import net.minecraft.world.storage.loot.RandomValueRange;
 import net.minecraft.world.storage.loot.conditions.LootCondition;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.LootTableLoadEvent;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
@@ -56,6 +65,9 @@ import net.minecraftforge.event.entity.player.UseHoeEvent;
 import net.minecraftforge.fml.common.eventhandler.Event.Result;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.gameevent.TickEvent;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.blocks.ZGBlockDirt;
 import zollerngalaxy.blocks.ZGBlockGrass;
 import zollerngalaxy.blocks.ZGSand;
@@ -63,6 +75,7 @@ import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.ZGLootTables;
 import zollerngalaxy.core.ZollernGalaxyCore;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderAltum;
+import zollerngalaxy.core.dimensions.worldproviders.WorldProviderVortex;
 import zollerngalaxy.items.ZGItems;
 import zollerngalaxy.items.armor.ZGArmor;
 import zollerngalaxy.items.armor.ZGArmorMats;
@@ -91,6 +104,69 @@ public class ZGEvents {
 	
 	private ZollernGalaxyCore core = ZollernGalaxyCore.instance();
 	private IProxy proxy = this.core.proxy;
+	
+	private Map<BlockPos, Integer> lightning = Maps.newHashMap();
+	
+	@SubscribeEvent
+	public void onWindBlowingEvent(WindBlowingEvent event) {
+		ZGHelper.Log("**** WindBlowingEvent fired ****");
+	}
+	
+	@SubscribeEvent(priority = EventPriority.HIGH, receiveCanceled = true)
+	public void onWorldTickEvent(TickEvent.WorldTickEvent event) {
+		World world = event.world;
+		TickEvent.Type tickType = event.type;
+		if (ZGHelper.rngInt(1, 100) == 0) {
+			MinecraftForge.EVENT_BUS.post(new WindBlowingEvent(world));
+		}
+		// TODO: Wind
+	}
+	
+	@SideOnly(Side.CLIENT)
+	@SubscribeEvent
+	public void onPlayerTick(TickEvent.PlayerTickEvent event) {
+		final Minecraft minecraft = ZGUtils.getClient();
+		final EntityPlayerSP player = minecraft.player;
+		
+		if (player == event.player) {
+			Iterator<Map.Entry<BlockPos, Integer>> it = lightning.entrySet().iterator();
+			while (it.hasNext()) {
+				Map.Entry<BlockPos, Integer> entry = it.next();
+				int val = entry.getValue();
+				if (val - 1 <= 0) {
+					it.remove();
+				} else {
+					entry.setValue(val - 1);
+				}
+			}
+			
+			if (player.getRNG().nextInt(100) == 0 && minecraft.world.provider instanceof WorldProviderVortex) {
+				double freq = player.getRNG().nextDouble() * Math.PI * 2.0F;
+				double dist = 120.0F;
+				double dX = dist * Math.cos(freq);
+				double dZ = dist * Math.sin(freq);
+				double posX = player.posX + dX;
+				double posY = 70;
+				double posZ = player.posZ + dZ;
+				minecraft.world.playSound(player, posX, posY, posZ, SoundEvents.ENTITY_LIGHTNING_THUNDER, SoundCategory.WEATHER, 1000.0F,
+						5.0F + player.getRNG().nextFloat() * 0.2F);
+				lightning.put(new BlockPos(posX, posY, posZ), 20);
+			}
+		}
+	}
+	
+	@SubscribeEvent
+	public void renderLightning(ClientProxyCore.EventSpecialRender event) {
+		final Minecraft minecraft = ZGUtils.getClient();
+		final EntityPlayerSP player = minecraft.player;
+		Iterator<Map.Entry<BlockPos, Integer>> it = lightning.entrySet().iterator();
+		while (it.hasNext()) {
+			Map.Entry<BlockPos, Integer> entry = it.next();
+			long seed = entry.getValue() / 10 + entry.getKey().getX() + entry.getKey().getZ();
+			FakeLightningBoltRenderer.renderBolt(seed, entry.getKey().getX() - ClientProxyCore.playerPosX, entry.getKey().getY() - ClientProxyCore.playerPosY,
+					entry.getKey().getZ() - ClientProxyCore.playerPosZ);
+		}
+	}
 	
 	@SubscribeEvent(priority = EventPriority.HIGH, receiveCanceled = true)
 	public void onLivingUpdateEvent(LivingUpdateEvent event) {
