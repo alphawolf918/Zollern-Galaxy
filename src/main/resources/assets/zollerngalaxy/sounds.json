@@ -199,5 +199,11 @@
 	"sounds": [
       "zollerngalaxy:step/xeno"
 	]
+  },
+  "weather.wind": {
+	"category": "weather",
+	"sounds": [
+      "zollerngalaxy:weather/wind"
+	]
   }
 }

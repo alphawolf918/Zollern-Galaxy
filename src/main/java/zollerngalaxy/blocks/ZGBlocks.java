@@ -22,6 +22,8 @@ import zollerngalaxy.blocks.caligro.corrupted.ZGBlockOreCorrupted;
 import zollerngalaxy.blocks.caligro.corrupted.ZGCorruptBlock;
 import zollerngalaxy.blocks.caligro.corrupted.ZGOreGemCorrupted;
 import zollerngalaxy.blocks.caligro.corrupted.ZGPlanetStoneCorrupted;
+import zollerngalaxy.blocks.crystals.BlockStormCrystals;
+import zollerngalaxy.blocks.crystals.ZGCrystalBlock;
 import zollerngalaxy.blocks.eden.BlockRedshroom;
 import zollerngalaxy.blocks.eden.EdenFlower;
 import zollerngalaxy.blocks.eden.EdenFruit;
@@ -627,8 +629,8 @@ public class ZGBlocks {
 	public static final Block blockHealingStation = new BlockHealingStation();
 	
 	// Crystal Blocks
-	public static final Block blockCrystalsPlutonium = new ZGCrystalBlock("plutoniumcrystals");
-	public static final Block blockCrystalsStorm = new ZGCrystalBlock("stormcrystals");
+	public static final Block blockCrystalsPlutonium = new ZGCrystalBlock("plutoniumcrystals", ZGItems.plutoniumCrystal);
+	public static final Block blockCrystalsStorm = new BlockStormCrystals();
 	
 	public static void init() {
 		ZGBlocks.registerBlocks(edenLovetreeSapling, edenGoldenWoodSapling, edenParadiseWoodSapling, edenWoodSapling, edenFruit, edenFlower, edenFlowerBlack,

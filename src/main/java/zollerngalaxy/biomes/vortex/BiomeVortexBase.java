@@ -8,7 +8,6 @@
 package zollerngalaxy.biomes.vortex;
 
 import java.util.Random;
-import micdoodle8.mods.galacticraft.core.entities.EntityAlienVillager;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedCreeper;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedEnderman;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedSkeleton;
@@ -28,6 +27,7 @@ import zollerngalaxy.blocks.fluids.ZGFluids;
 import zollerngalaxy.celestial.ZGPlanets;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderVortex;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
+import zollerngalaxy.mobs.entities.EntityMegaCreeper;
 
 public class BiomeVortexBase extends BiomeSpace {
 	
@@ -58,11 +58,11 @@ public class BiomeVortexBase extends BiomeSpace {
 		this.decorator.grassPerChunk = -999;
 		this.decorator.mushroomsPerChunk = -999;
 		this.clearAllSpawning();
-		this.spawnableCreatureList.add(new SpawnListEntry(EntityAlienVillager.class, 5, 1, 2));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedZombie.class, 100, 4, 4));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedSpider.class, 100, 4, 4));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedSkeleton.class, 100, 4, 4));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedCreeper.class, 100, 4, 4));
+		this.spawnableMonsterList.add(new SpawnListEntry(EntityMegaCreeper.class, 100, 4, 4));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedEnderman.class, 100, 4, 4));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedWitch.class, 100, 4, 4));
 		this.setPlanetForBiome(ZGPlanets.planetVortex);
@@ -106,11 +106,6 @@ public class BiomeVortexBase extends BiomeSpace {
 								topState = this.topBlock;
 								fillState = this.fillerBlock;
 							}
-							
-							// if (j1 < i && (topState == null || topState.getMaterial() ==
-							// Material.AIR)) {
-							// topState = ICE;
-							// }
 							
 							j = k;
 							

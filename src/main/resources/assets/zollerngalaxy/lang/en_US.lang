@@ -481,6 +481,8 @@ item.purgotessence.name=Oasis Gem
 item.shadowessence.name=Dark Matter Essence
 item.radium.name=Radium
 
+item.stormcrystalgem.name=Storm Crystal Gem
+
 item.fueltoniumraw.name=Raw Fuelonite
 item.fueltoniumingot.name=Fueltonium Ingot
 

@@ -247,7 +247,8 @@ public class WorldProviderVortex extends WorldProviderZG {
 		this.world.getWorldInfo().setThundering(true);
 		this.world.rainingStrength = 1.0F;
 		this.world.thunderingStrength = 1.0F;
-		if (ZGHelper.rngInt(1, 100) == 0) {
+		
+		if (ZGHelper.rngInt(1, 700) <= 10) {
 			MinecraftForge.EVENT_BUS.post(new WindBlowingEvent(world));
 		}
 	}

@@ -54,7 +54,6 @@ import net.minecraft.world.storage.loot.LootTableList;
 import net.minecraft.world.storage.loot.LootTableManager;
 import net.minecraft.world.storage.loot.RandomValueRange;
 import net.minecraft.world.storage.loot.conditions.LootCondition;
-import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.LootTableLoadEvent;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
@@ -107,19 +106,12 @@ public class ZGEvents {
 	
 	private Map<BlockPos, Integer> lightning = Maps.newHashMap();
 	
-	@SubscribeEvent
-	public void onWindBlowingEvent(WindBlowingEvent event) {
-		ZGHelper.Log("**** WindBlowingEvent fired ****");
-	}
-	
 	@SubscribeEvent(priority = EventPriority.HIGH, receiveCanceled = true)
-	public void onWorldTickEvent(TickEvent.WorldTickEvent event) {
-		World world = event.world;
-		TickEvent.Type tickType = event.type;
-		if (ZGHelper.rngInt(1, 100) == 0) {
-			MinecraftForge.EVENT_BUS.post(new WindBlowingEvent(world));
+	public void onWindBlowingEvent(WindBlowingEvent event) {
+		World world = event.getWorld();
+		if (!world.isRemote) {
+			
 		}
-		// TODO: Wind
 	}
 	
 	@SideOnly(Side.CLIENT)
