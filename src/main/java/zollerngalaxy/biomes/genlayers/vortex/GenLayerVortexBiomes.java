@@ -46,6 +46,8 @@ public class GenLayerVortexBiomes extends GenLayerVortex {
 		ArrayList<BiomeEntry>[] currentBiomes = new ArrayList[CachedEnum.valuesBiomeCached().length];
 		List<BiomeEntry> list = new ArrayList<>();
 		list.add(new BiomeEntry(ZGBiomes.VORTEX_BASE, 100));
+		list.add(new BiomeEntry(ZGBiomes.VORTEX_MOUNTAINS, 90));
+		list.add(new BiomeEntry(ZGBiomes.VORTEX_CHARGIUM_SEA, 80));
 		currentBiomes[BiomeType.WARM.ordinal()] = new ArrayList<>(list);
 		return currentBiomes;
 	}

@@ -137,14 +137,14 @@ public class ChunkProviderVortex extends ChunkProviderBase {
 					double d8 = (this.terrainCalcs[l1 + i2 + 1] - d4) * d0;
 					
 					for (int j2 = 0; j2 < 8; ++j2) {
-						double d9 = 0.25D;
+						double d9 = 0.35D; // 0.25D
 						double d10 = d1;
 						double d11 = d2;
 						double d12 = (d3 - d1) * d9;
 						double d13 = (d4 - d2) * d9;
 						
 						for (int k2 = 0; k2 < 4; ++k2) {
-							double d14 = 0.35D; // 0.25D;
+							double d14 = 0.25D;
 							double d16 = (d11 - d10) * d14;
 							double lvt_45_1_ = d10 - d16;
 							

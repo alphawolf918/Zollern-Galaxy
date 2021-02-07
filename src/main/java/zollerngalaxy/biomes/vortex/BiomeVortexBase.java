@@ -36,7 +36,6 @@ public class BiomeVortexBase extends BiomeSpace {
 	protected static final IBlockState BEDROCK = Blocks.BEDROCK.getDefaultState();
 	protected static final IBlockState VOLTROCK = ZGBlocks.vortexVoltRock.getDefaultState();
 	protected static final IBlockState COBBLESTONE = ZGBlocks.vortexCobblestone.getDefaultState();
-	protected static final IBlockState ICE = Blocks.PACKED_ICE.getDefaultState();
 	protected static final IBlockState WATER = Blocks.WATER.getDefaultState();
 	
 	protected static final int SEA_LEVEL = ChunkProviderVortex.SEA_LEVEL;
@@ -52,19 +51,19 @@ public class BiomeVortexBase extends BiomeSpace {
 	}
 	
 	private void init() {
-		this.setTempCategory(TempCategory.COLD);
+		this.setTempCategory(TempCategory.WARM);
 		this.decorator.flowersPerChunk = -999;
 		this.decorator.treesPerChunk = -999;
 		this.decorator.grassPerChunk = -999;
 		this.decorator.mushroomsPerChunk = -999;
 		this.clearAllSpawning();
-		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedZombie.class, 100, 4, 4));
-		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedSpider.class, 100, 4, 4));
-		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedSkeleton.class, 100, 4, 4));
-		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedCreeper.class, 100, 4, 4));
-		this.spawnableMonsterList.add(new SpawnListEntry(EntityMegaCreeper.class, 100, 4, 4));
-		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedEnderman.class, 100, 4, 4));
-		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedWitch.class, 100, 4, 4));
+		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedZombie.class, 80, 1, 4));
+		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedSpider.class, 80, 1, 4));
+		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedSkeleton.class, 80, 1, 4));
+		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedCreeper.class, 80, 1, 4));
+		this.spawnableMonsterList.add(new SpawnListEntry(EntityMegaCreeper.class, 80, 1, 4));
+		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedEnderman.class, 80, 1, 4));
+		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedWitch.class, 80, 1, 4));
 		this.setPlanetForBiome(ZGPlanets.planetVortex);
 	}
 	
@@ -135,7 +134,7 @@ public class BiomeVortexBase extends BiomeSpace {
 	
 	@Override
 	public float getSpawningChance() {
-		return 0.01F;
+		return 0.001F;
 	}
 	
 	@Override

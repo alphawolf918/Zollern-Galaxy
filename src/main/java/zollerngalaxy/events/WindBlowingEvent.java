@@ -17,6 +17,7 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.eventhandler.Event;
+import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.lib.helpers.ZGHelper;
 
 public class WindBlowingEvent extends Event {
@@ -34,10 +35,14 @@ public class WindBlowingEvent extends Event {
 	public WindBlowingEvent(World worldIn) {
 		this.world = worldIn;
 		this.playerPos = new BlockPos(ClientProxyCore.playerPosX, ClientProxyCore.playerPosY, ClientProxyCore.playerPosZ);
+		
 		if (directionalChance <= 10) {
 			this.updateDirectionBasedOnChance();
 		}
-		if (ZGHelper.rngInt(1, 100) <= 25 && world.canBlockSeeSky(playerPos)) {
+		
+		int windBlowChance = ConfigManagerZG.windBlowChance;
+		
+		if (ZGHelper.rngInt(1, 100) <= windBlowChance && world.canBlockSeeSky(playerPos)) {
 			this.pushEntities();
 		}
 	}
@@ -47,14 +52,13 @@ public class WindBlowingEvent extends Event {
 		if (world.getBlockState(pos) == Blocks.AIR.getDefaultState() && world.canBlockSeeSky(pos)) {
 			this.playWindSound(world, player, posX, posY, posZ);
 			player.setPositionAndUpdate(posX, posY, posZ);
-			this.playWindSound(world, player, posX, posY, posZ);
 		} else {
 			this.checkBlockAt(posX, posY + 2, posZ, world, player);
 		}
 	}
 	
 	private void playWindSound(World worldIn, EntityPlayer player, double posX, double posY, double posZ) {
-		BlockPos soundPos = new BlockPos(posX + 0.5D, posY + 0.5D, posZ + 0.5D);
+		BlockPos soundPos = new BlockPos(posX, posY, posZ);
 		worldIn.playSound(player, soundPos, ZGSoundEvents.WEATHER_WIND, SoundCategory.WEATHER, 1000.0F, 5.0F + player.getRNG().nextFloat() * 0.2F);
 	}
 	

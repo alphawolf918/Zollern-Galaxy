@@ -7,12 +7,12 @@
  */
 package zollerngalaxy.recipes;
 
+import cofh.api.util.ThermalExpansionHelper;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.FluidUtil;
 import zollerngalaxy.blocks.fluids.ZGFluids;
-import cofh.api.util.ThermalExpansionHelper;
 
 public class FluidTransposerRecipes {
 	
@@ -23,11 +23,12 @@ public class FluidTransposerRecipes {
 				new FluidStack(ZGFluids.fluidFueltonium, 2000), true);
 		
 		// Conductive Chargium
-		ThermalExpansionHelper.addTransposerFill(4200, new ItemStack(Items.BUCKET, 1), FluidUtil.getFilledBucket(new FluidStack(
-				ZGFluids.fluidChargium, ZGFluids.fluidChargium.BUCKET_VOLUME)), new FluidStack(ZGFluids.fluidChargium, 1000), true);
+		ThermalExpansionHelper.addTransposerFill(4200, new ItemStack(Items.BUCKET, 1),
+				FluidUtil.getFilledBucket(new FluidStack(ZGFluids.fluidChargium, ZGFluids.fluidChargium.BUCKET_VOLUME)), new FluidStack(ZGFluids.fluidChargium, 1000),
+				true);
 		
 		// Radiance
-		ThermalExpansionHelper.addTransposerFill(8400, new ItemStack(Items.BUCKET, 1), FluidUtil.getFilledBucket(new FluidStack(
-				ZGFluids.fluidRadium, ZGFluids.fluidRadium.BUCKET_VOLUME)), new FluidStack(ZGFluids.fluidRadium, 4000), true);
+		ThermalExpansionHelper.addTransposerFill(8400, new ItemStack(Items.BUCKET, 1),
+				FluidUtil.getFilledBucket(new FluidStack(ZGFluids.fluidRadium, ZGFluids.fluidRadium.BUCKET_VOLUME)), new FluidStack(ZGFluids.fluidRadium, 4000), true);
 	}
 }

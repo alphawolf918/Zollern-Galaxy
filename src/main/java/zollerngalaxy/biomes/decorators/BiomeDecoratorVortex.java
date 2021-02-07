@@ -49,8 +49,8 @@ public class BiomeDecoratorVortex extends BiomeDecoratorZG {
 		this.copperGen = new WorldGenMinableZG(ZGBlocks.vortexCopperOre, ZGBlocks.vortexStone, EnumOreGenZG.COPPER);
 		this.redstoneGen = new WorldGenMinableZG(ZGBlocks.vortexRedstoneOre, ZGBlocks.vortexStone, EnumOreGenZG.REDSTONE);
 		this.diamondGen = new WorldGenMinableZG(ZGBlocks.vortexDiamondOre, ZGBlocks.vortexStone, EnumOreGenZG.DIAMOND);
-		this.superChargedCoalGen = new WorldGenMinableZG(ZGBlocks.vortexSuperChargedCoalOre, ZGBlocks.vortexStone, EnumOreGenZG.SUPER_CHARGED_COAL.setGenCount(45));
-		this.fueltoniumGen = new WorldGenMinableZG(ZGBlocks.vortexFueltoniumOre, ZGBlocks.vortexStone, EnumOreGenZG.FUELTONIUM.setBlockCount(36));
+		this.superChargedCoalGen = new WorldGenMinableZG(ZGBlocks.vortexSuperChargedCoalOre, ZGBlocks.vortexStone, EnumOreGenZG.SUPER_CHARGED_COAL.setGenCount(15));
+		this.fueltoniumGen = new WorldGenMinableZG(ZGBlocks.vortexFueltoniumOre, ZGBlocks.vortexStone, EnumOreGenZG.FUELTONIUM.setBlockCount(10));
 		this.eveniumGen = new WorldGenMinableZG(ZGBlocks.vortexEveniumOre, ZGBlocks.vortexStone, EnumOreGenZG.EVENIUM);
 	}
 	

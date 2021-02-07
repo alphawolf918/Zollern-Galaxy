@@ -8,6 +8,7 @@
 package zollerngalaxy.core.dimensions.skyproviders;
 
 import java.util.Random;
+import org.lwjgl.opengl.GL11;
 import micdoodle8.mods.galacticraft.core.Constants;
 import micdoodle8.mods.galacticraft.core.client.SkyProviderOrbit;
 import micdoodle8.mods.galacticraft.core.dimension.WorldProviderOverworldOrbit;
@@ -25,7 +26,6 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.WorldProvider;
 import net.minecraftforge.fml.client.FMLClientHandler;
-import org.lwjgl.opengl.GL11;
 import zollerngalaxy.lib.ZGInfo;
 
 public class SkyProviderOrbitZG extends SkyProviderOrbit {
@@ -97,10 +97,10 @@ public class SkyProviderOrbitZG extends SkyProviderOrbit {
 	public void render(float partialTicks, WorldClient world, Minecraft mc) {
 		final float var20 = 400.0F + (float) this.minecraft.player.posY / 2F;
 		
-		// if (this.minecraft.player.getRidingEntity() != null)
-		{
-			// var20 = (float) (this.minecraft.player.posY - 200.0F);
-		}
+		// // if (this.minecraft.player.getRidingEntity() != null)
+		// {
+		// // var20 = (float) (this.minecraft.player.posY - 200.0F);
+		// }
 		
 		GL11.glDisable(GL11.GL_TEXTURE_2D);
 		GlStateManager.disableRescaleNormal();
@@ -130,8 +130,7 @@ public class SkyProviderOrbitZG extends SkyProviderOrbit {
 		GL11.glEnable(GL11.GL_BLEND);
 		GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
 		RenderHelper.disableStandardItemLighting();
-		final float[] var24 = this.minecraft.world.provider.calcSunriseSunsetColors(
-				this.minecraft.world.getCelestialAngle(partialTicks), partialTicks);
+		final float[] var24 = this.minecraft.world.provider.calcSunriseSunsetColors(this.minecraft.world.getCelestialAngle(partialTicks), partialTicks);
 		float var9;
 		float var10;
 		float var11;
@@ -142,8 +141,7 @@ public class SkyProviderOrbitZG extends SkyProviderOrbit {
 			GL11.glShadeModel(GL11.GL_SMOOTH);
 			GL11.glPushMatrix();
 			GL11.glRotatef(90.0F, 1.0F, 0.0F, 0.0F);
-			GL11.glRotatef(MathHelper.sin(this.minecraft.world.getCelestialAngleRadians(partialTicks)) < 0.0F ? 180.0F : 0.0F,
-					0.0F, 0.0F, 1.0F);
+			GL11.glRotatef(MathHelper.sin(this.minecraft.world.getCelestialAngleRadians(partialTicks)) < 0.0F ? 180.0F : 0.0F, 0.0F, 0.0F, 1.0F);
 			GL11.glRotatef(90.0F, 0.0F, 0.0F, 1.0F);
 			var8 = var24[0];
 			var9 = var24[1];
@@ -168,8 +166,7 @@ public class SkyProviderOrbitZG extends SkyProviderOrbit {
 				var13 = var27 * Constants.twoPI / var26;
 				final float var14 = MathHelper.sin(var13);
 				final float var15 = MathHelper.cos(var13);
-				worldRenderer.pos(var14 * 120.0F, var15 * 120.0F, -var15 * 40.0F * var24[3])
-						.color(var24[0], var24[1], var24[2], 0.0F).endVertex();
+				worldRenderer.pos(var14 * 120.0F, var15 * 120.0F, -var15 * 40.0F * var24[3]).color(var24[0], var24[1], var24[2], 0.0F).endVertex();
 			}
 			
 			var23.draw();

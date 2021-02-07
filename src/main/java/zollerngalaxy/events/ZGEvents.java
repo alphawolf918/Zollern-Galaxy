@@ -110,7 +110,9 @@ public class ZGEvents {
 	public void onWindBlowingEvent(WindBlowingEvent event) {
 		World world = event.getWorld();
 		if (!world.isRemote) {
-			
+			if (ZGHelper.rngInt(1, 50) == 0) {
+				event.updateDirectionBasedOnChance();
+			}
 		}
 	}
 	

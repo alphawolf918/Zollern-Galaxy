@@ -148,6 +148,7 @@ public class ConfigManagerZG {
 	public static boolean planetUnreachableAll;
 	public static boolean shouldExplosiveBlocksExplodeOtherBlocks;
 	public static int outpostGenChance;
+	public static int windBlowChance;
 	
 	public static boolean planetUnreachableZollus;
 	public static boolean planetUnreachableKriffon;
@@ -349,8 +350,8 @@ public class ConfigManagerZG {
 		
 		// Space Stations (Pantheon)
 		// Vortex
-		spaceStationVortexId = configuration.get(CATEGORY_SATELLITES, "Vortex Space Station ID", -6025).getInt();
-		spaceStationVortexStaticId = configuration.get(CATEGORY_SATELLITES, "Vortex Space Station Static ID", -6026).getInt();
+		spaceStationVortexId = configuration.get(CATEGORY_SATELLITES, "Vortex Space Station ID", -6026).getInt();
+		spaceStationVortexStaticId = configuration.get(CATEGORY_SATELLITES, "Vortex Space Station Static ID", -6027).getInt();
 		
 		// Misc (Can Earth animals spawn on Eden?)
 		canEarthAnimalsSpawnOnEden = configuration.get(CATEGORY_MISC, "Earth Animals Spawn On Eden", true, "Should Earth animals spawn on Eden? (default: true)")
@@ -450,6 +451,7 @@ public class ConfigManagerZG {
 				"The chance (out of 100) for Ice Spikes to generate on planet Zollus. (default: 42)").getInt();
 		outpostGenChance = configuration
 				.get(CATEGORY_CUSTOMIZATIONS, "Outpost Gen Percentage", 5, "The chance (out of 100) for Outpost buildings to generate on planets. (default: 5)").getInt();
+		windBlowChance = configuration.get(CATEGORY_CUSTOMIZATIONS, "Wind Blow Chance", 25, "Percentage chance of how often storm wind blows. (default: 25)").getInt();
 		
 		// Control unreachable planets (by rockets).
 		planetUnreachableAll = configuration

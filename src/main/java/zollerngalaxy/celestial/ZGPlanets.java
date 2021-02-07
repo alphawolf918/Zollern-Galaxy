@@ -578,7 +578,7 @@ public class ZGPlanets {
 		planetVortex.setBodyGasses(EnumAtmosphericGas.HELIUM, EnumAtmosphericGas.NITROGEN);
 		planetVortex.setBodyIcon("vortex");
 		planetVortex.setAtmosphere();
-		planetVortex.setBiomeInfo(ZGBiomes.VORTEX_BASE);
+		planetVortex.setBiomeInfo(ZGBiomes.VORTEX_BASE, ZGBiomes.VORTEX_MOUNTAINS, ZGBiomes.VORTEX_CHARGIUM_SEA);
 		totalPlanets++;
 		
 		ZGHelper.Log("Loaded a total of " + totalPlanets + " new planets.");

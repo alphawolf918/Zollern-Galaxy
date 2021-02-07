@@ -17,10 +17,12 @@ import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitAthe
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitCaligro;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitCandora;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitEden;
+import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitExodus;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitKriffon;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitOasis;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitPerdita;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitPurgot;
+import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitVortex;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitXantheon;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitXathius;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitZollus;
@@ -175,9 +177,17 @@ public class ZGDimensions {
 		
 		// Sol-2 (Exodus)
 		ZGDimensions.EXODUS = ZGDimensions.getDimType(ConfigManagerZG.planetExodusDimensionId);
+		ZGDimensions.EXODUS_ORBIT = DimensionType.register("Exodus Space Station", "_exodus_orbit", ConfigManagerZG.spaceStationExodusId, WorldProviderOrbitExodus.class,
+				false);
+		ZGDimensions.EXODUS_ORBIT_STATIC = DimensionType.register("Exodus Space Station", "_exodus_orbit", ConfigManagerZG.spaceStationExodusStaticId,
+				WorldProviderOrbitExodus.class, true);
 		
 		// Pantheon (Vortex)
 		ZGDimensions.VORTEX = ZGDimensions.getDimType(ConfigManagerZG.planetVortexDimensionId);
+		ZGDimensions.VORTEX_ORBIT = DimensionType.register("Vortex Space Station", "_vortex_orbit", ConfigManagerZG.spaceStationVortexId, WorldProviderOrbitVortex.class,
+				false);
+		ZGDimensions.VORTEX_ORBIT_STATIC = DimensionType.register("Vortex Space Station", "_vortex_orbit", ConfigManagerZG.spaceStationVortexStaticId,
+				WorldProviderOrbitVortex.class, true);
 	}
 	
 	public static DimensionType getDimType(int dimId) {

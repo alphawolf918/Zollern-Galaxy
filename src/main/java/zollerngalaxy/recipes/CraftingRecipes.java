@@ -140,44 +140,42 @@ public class CraftingRecipes {
 		CraftingRecipes.addArmorSet(ZGItems.bootsRadium, ZGItems.radium, "boots");
 		
 		// Blood Obsidian
-		ZGRecipeHelper.addRecipe(new ItemStack(ZGBlocks.blockRedObsidian, 2),
-				new Object[] { "BN ", "NB ", "   ", 'B', Blocks.NETHER_WART_BLOCK, 'N', Blocks.OBSIDIAN });
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGBlocks.blockRedObsidian, 2), new Object[] { "BN ", "NB ", "   ", 'B', Blocks.NETHER_WART_BLOCK, 'N', Blocks.OBSIDIAN });
 		totalCraftRecipes++;
 		
 		// Netheridium (Gem Form)
-		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.netheridium, 1),
-				new Object[] { "BSB", "LXL", "VAV", 'B', ZGItems.darkEssence, 'S', ZGItems.superChargedCoal, 'V', ZGItems.garnet, 'X',
-						ZGBlocks.blockWitherite, 'L', Blocks.OBSIDIAN, 'V', Items.BLAZE_POWDER, 'A', ZGItems.shadowBone });
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.netheridium, 1), new Object[] { "BSB", "LXL", "VAV", 'B', ZGItems.darkEssence, 'S', ZGItems.superChargedCoal, 'V',
+				ZGItems.garnet, 'X', ZGBlocks.blockWitherite, 'L', Blocks.OBSIDIAN, 'V', Items.BLAZE_POWDER, 'A', ZGItems.shadowBone });
 		totalCraftRecipes++;
 		
 		// Netherized Obsidian
-		ZGRecipeHelper.addRecipe(new ItemStack(ZGBlocks.blockNetherizedObsidian, 1), new Object[] { "WNW", "NON", "SNS", 'N',
-				ZGBlocks.blockNetheridium, 'W', ZGBlocks.blockWitherite, 'O', ZGBlocks.blockRedObsidian, 'S', ZGItems.darkEssence });
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGBlocks.blockNetherizedObsidian, 1), new Object[] { "WNW", "NON", "SNS", 'N', ZGBlocks.blockNetheridium, 'W',
+				ZGBlocks.blockWitherite, 'O', ZGBlocks.blockRedObsidian, 'S', ZGItems.darkEssence });
 		totalCraftRecipes++;
 		
 		// Radium
-		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.radium, 2), new Object[] { "GSG", "GAG", "GSG", 'G', ZGBlocks.atheonConstructBlock,
-				'S', ZGBlocks.blockSuperChargedCoal, 'A', ZGBlocks.blockAzurite });
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.radium, 2),
+				new Object[] { "GSG", "GAG", "GSG", 'G', ZGBlocks.atheonConstructBlock, 'S', ZGBlocks.blockSuperChargedCoal, 'A', ZGBlocks.blockAzurite });
 		totalCraftRecipes++;
 		
 		// Bedrock Breaker
-		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.BEDROCK_BREAKER), new Object[] { "ZAZ", " M ", " M ", 'Z', ZGItems.ingotZucrite, 'A',
-				ZGItems.ascendium, 'M', ZGItems.ingotAscendantAmaranth });
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.BEDROCK_BREAKER),
+				new Object[] { "ZAZ", " M ", " M ", 'Z', ZGItems.ingotZucrite, 'A', ZGItems.ascendium, 'M', ZGItems.ingotAscendantAmaranth });
 		totalCraftRecipes++;
 		
 		// Firey Garnet (Gem Form)
-		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.garnetFire, 1), new Object[] { "BLB", "RGR", "BLB", 'B', Items.BLAZE_POWDER, 'G',
-				ZGBlocks.blockGarnet, 'R', Items.REDSTONE, 'L', Items.BLAZE_ROD });
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.garnetFire, 1),
+				new Object[] { "BLB", "RGR", "BLB", 'B', Items.BLAZE_POWDER, 'G', ZGBlocks.blockGarnet, 'R', Items.REDSTONE, 'L', Items.BLAZE_ROD });
 		totalCraftRecipes++;
 		
 		// Icy Aqua (Gem Form)
-		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.aquamarineIcy, 1), new Object[] { "SDS", "ZAZ", "AAA", 'S', ZGItems.ingotShinium,
-				'Z', ZGItems.dustShinestone, 'A', ZGBlocks.blockAquamarine, 'D', Items.DIAMOND });
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.aquamarineIcy, 1),
+				new Object[] { "SDS", "ZAZ", "AAA", 'S', ZGItems.ingotShinium, 'Z', ZGItems.dustShinestone, 'A', ZGBlocks.blockAquamarine, 'D', Items.DIAMOND });
 		totalCraftRecipes++;
 		
 		// Static Amber (Gem Form)
-		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.amberStatic, 1), new Object[] { "GTG", "UAU", "ZTZ", 'G', Items.GOLD_INGOT, 'T',
-				ZGItems.topaz, 'A', ZGBlocks.blockAmber, 'Z', ZGItems.ingotZinc, 'U', ZGItems.azurite });
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.amberStatic, 1),
+				new Object[] { "GTG", "UAU", "ZTZ", 'G', Items.GOLD_INGOT, 'T', ZGItems.topaz, 'A', ZGBlocks.blockAmber, 'Z', ZGItems.ingotZinc, 'U', ZGItems.azurite });
 		totalCraftRecipes++;
 		
 		// Diablo
@@ -191,8 +189,8 @@ public class CraftingRecipes {
 		totalCraftRecipes++;
 		
 		// Ender
-		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.swordEnder, 1), new Object[] { " E ", " E ", "OPM", 'E', ZGBlocks.blockPerdEtrium,
-				'O', ZGBlocks.blockPerdDiamond, 'M', ZGBlocks.blockOpal, 'P', ZGItems.powerStick });
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.swordEnder, 1),
+				new Object[] { " E ", " E ", "OPM", 'E', ZGBlocks.blockPerdEtrium, 'O', ZGBlocks.blockPerdDiamond, 'M', ZGBlocks.blockOpal, 'P', ZGItems.powerStick });
 		totalCraftRecipes++;
 		
 		// Glacies
@@ -201,23 +199,22 @@ public class CraftingRecipes {
 		totalCraftRecipes++;
 		
 		// Mortem
-		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.swordWither, 1), new Object[] { " W ", " W ", "RAX", 'W', ZGBlocks.blockNetheridium,
-				'R', ZGBlocks.blockWitherite, 'A', ZGItems.powerStick, 'X', ZGItems.darkEssence });
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.swordWither, 1),
+				new Object[] { " W ", " W ", "RAX", 'W', ZGBlocks.blockNetheridium, 'R', ZGBlocks.blockWitherite, 'A', ZGItems.powerStick, 'X', ZGItems.darkEssence });
 		totalCraftRecipes++;
 		
 		// Archangel
-		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.swordLight, 1), new Object[] { " W ", " W ", "RAX", 'W', ZGBlocks.blockRadium, 'R',
-				ZGBlocks.blockAmberStatic, 'A', ZGItems.powerStick, 'X', ZGItems.radium });
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.swordLight, 1),
+				new Object[] { " W ", " W ", "RAX", 'W', ZGBlocks.blockRadium, 'R', ZGBlocks.blockAmberStatic, 'A', ZGItems.powerStick, 'X', ZGItems.radium });
 		totalCraftRecipes++;
 		
 		// Shinium
-		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.ingotShinium, 1), new Object[] { "DLD", "DSD", "DLD", 'D', ZGItems.prometheanCrystal,
-				'S', ZGItems.ingotShinestone, 'L', ZGItems.ingotLapis });
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.ingotShinium, 1),
+				new Object[] { "DLD", "DSD", "DLD", 'D', ZGItems.prometheanCrystal, 'S', ZGItems.ingotShinestone, 'L', ZGItems.ingotLapis });
 		totalCraftRecipes++;
 		
 		// Chargium Fluid
-		ItemStack filledChargiumBucket = FluidUtil
-				.getFilledBucket(new FluidStack(ZGFluids.fluidChargium, ZGFluids.fluidChargium.BUCKET_VOLUME));
+		ItemStack filledChargiumBucket = FluidUtil.getFilledBucket(new FluidStack(ZGFluids.fluidChargium, ZGFluids.fluidChargium.BUCKET_VOLUME));
 		
 		// Chargium Dust
 		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.dustChargium, 8),
@@ -225,38 +222,33 @@ public class CraftingRecipes {
 		totalCraftRecipes++;
 		
 		// HUD
-		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.hud, 1),
-				new Object[] { "RXR", "SDS", "RXR", 'R', Items.REDSTONE, 'X', new ItemStack(GCItems.basicItem, 1, 3), 'S',
-						new ItemStack(GCItems.basicItem, 1, 5), 'D', new ItemStack(MarsItems.marsItemBasic, 1, 3) });
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.hud, 1), new Object[] { "RXR", "SDS", "RXR", 'R', Items.REDSTONE, 'X', new ItemStack(GCItems.basicItem, 1, 3), 'S',
+				new ItemStack(GCItems.basicItem, 1, 5), 'D', new ItemStack(MarsItems.marsItemBasic, 1, 3) });
 		totalCraftRecipes++;
 		
 		// Kriffon Crystal
-		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.kriffCrystal, 1),
-				new Object[] { "FZF", "CVC", "ERE", 'F', ZGItems.compressedKriffonium, 'Z', ZGItems.zolCrystal, 'C',
-						ZGItems.compressedCobalt, 'V', new ItemStack(MarsItems.marsItemBasic, 1, 3), 'E', ZGItems.compressedHeartium, 'R',
-						ZGItems.compressedEmerald });
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.kriffCrystal, 1), new Object[] { "FZF", "CVC", "ERE", 'F', ZGItems.compressedKriffonium, 'Z', ZGItems.zolCrystal,
+				'C', ZGItems.compressedCobalt, 'V', new ItemStack(MarsItems.marsItemBasic, 1, 3), 'E', ZGItems.compressedHeartium, 'R', ZGItems.compressedEmerald });
 		totalCraftRecipes++;
 		
 		// Purgot Crystal
-		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.purgCrystal, 1),
-				new Object[] { "E E", " R ", "E E", 'E', ZGItems.compressedEvenium, 'R', Items.REDSTONE });
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.purgCrystal, 1), new Object[] { "E E", " R ", "E E", 'E', ZGItems.compressedEvenium, 'R', Items.REDSTONE });
 		totalCraftRecipes++;
 		
 		// Eden Crystal
-		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.edenCrystal, 1), new Object[] { "EXE", "HRH", "EXE", 'E', ZGItems.compressedEmerald,
-				'R', ZGItems.kriffCrystal, 'X', ZGItems.purgCrystal, 'H', ZGItems.zolCrystal });
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.edenCrystal, 1),
+				new Object[] { "EXE", "HRH", "EXE", 'E', ZGItems.compressedEmerald, 'R', ZGItems.kriffCrystal, 'X', ZGItems.purgCrystal, 'H', ZGItems.zolCrystal });
 		totalCraftRecipes++;
 		
 		// Alien Stone
-		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.alienStone, 1), new Object[] { "CVC", "ZBZ", "CIC", 'C', ZGItems.edenCrystal, 'V',
-				ZGItems.compressedVyrex, 'Z', ZGBlocks.blockCompressedCobalt, 'B', ZGBlocks.blockViri, 'I', ZGBlocks.edenBrightStone });
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.alienStone, 1), new Object[] { "CVC", "ZBZ", "CIC", 'C', ZGItems.edenCrystal, 'V', ZGItems.compressedVyrex, 'Z',
+				ZGBlocks.blockCompressedCobalt, 'B', ZGBlocks.blockViri, 'I', ZGBlocks.edenBrightStone });
 		totalCraftRecipes++;
 		
 		// **** Begin Sweets ****
 		
 		// Raw Chocolate
-		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.chocolateRaw, 3),
-				new Object[] { "CCC", "CEC", "CCC", 'C', new ItemStack(Items.DYE, 1, 3), 'E', Items.EGG });
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.chocolateRaw, 3), new Object[] { "CCC", "CEC", "CCC", 'C', new ItemStack(Items.DYE, 1, 3), 'E', Items.EGG });
 		totalCraftRecipes++;
 		
 		// Brownie
@@ -272,12 +264,9 @@ public class CraftingRecipes {
 		totalCraftRecipes++;
 		
 		// Ice Cream Sandwich
-		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.iceCreamSandwich, 1),
-				new Object[] { "B  ", "C  ", "B  ", 'B', ZGItems.brownie, 'C', ZGItems.creamBall });
-		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.iceCreamSandwich, 1),
-				new Object[] { " B ", " C ", " B ", 'B', ZGItems.brownie, 'C', ZGItems.creamBall });
-		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.iceCreamSandwich, 1),
-				new Object[] { "  B", "  C", "  B", 'B', ZGItems.brownie, 'C', ZGItems.creamBall });
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.iceCreamSandwich, 1), new Object[] { "B  ", "C  ", "B  ", 'B', ZGItems.brownie, 'C', ZGItems.creamBall });
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.iceCreamSandwich, 1), new Object[] { " B ", " C ", " B ", 'B', ZGItems.brownie, 'C', ZGItems.creamBall });
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.iceCreamSandwich, 1), new Object[] { "  B", "  C", "  B", 'B', ZGItems.brownie, 'C', ZGItems.creamBall });
 		totalCraftRecipes += 3;
 		
 		// **** End Sweets ****
@@ -323,12 +312,11 @@ public class CraftingRecipes {
 		CraftingRecipes.addSword(new ItemStack(ZGItems.swordZollernium), ZGItems.ingotZollernium);
 		
 		// Ascendium
-		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.ascendium, 1), new Object[] { " Z ", " C ", " A ", 'Z', ZGItems.compressedZollernium,
-				'C', ZGItems.compressedZucrite, 'A', ZGItems.compressedAmaranth });
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.ascendium, 1),
+				new Object[] { " Z ", " C ", " A ", 'Z', ZGItems.compressedZollernium, 'C', ZGItems.compressedZucrite, 'A', ZGItems.compressedAmaranth });
 		
 		// Power Stick (Rod of Ascension)
-		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.powerStick, 2),
-				new Object[] { " A ", " L ", " A ", 'A', ZGItems.compressedAmaranth, 'L', ZGItems.lapisStick });
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.powerStick, 2), new Object[] { " A ", " L ", " A ", 'A', ZGItems.compressedAmaranth, 'L', ZGItems.lapisStick });
 		totalCraftRecipes++;
 		
 		// Lapis Stick
@@ -341,18 +329,18 @@ public class CraftingRecipes {
 		totalCraftRecipes++;
 		
 		// Omnitool
-		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.OMNITOOL, 1), new Object[] { "ZZZ", "APA", " P ", 'Z', ZGItems.compressedZollernium,
-				'A', ZGItems.compressedAzurite, 'P', ZGItems.powerStick });
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.OMNITOOL, 1),
+				new Object[] { "ZZZ", "APA", " P ", 'Z', ZGItems.compressedZollernium, 'A', ZGItems.compressedAzurite, 'P', ZGItems.powerStick });
 		totalCraftRecipes++;
 		
 		// Corruption Protection
-		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.blueprintCorruption, 1), new Object[] { "ZZZ", "APA", " P ", 'Z',
-				ZGItems.compressedAscendantAmaranth, 'A', ZGItems.ascendium, 'P', ZGItems.ascendium });
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.blueprintCorruption, 1),
+				new Object[] { "ZZZ", "APA", " P ", 'Z', ZGItems.compressedAscendantAmaranth, 'A', ZGItems.ascendium, 'P', ZGItems.ascendium });
 		totalCraftRecipes++;
 		
 		// Healing Heart
-		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.healingHeart), new Object[] { "AZA", "AOA", "ARA", 'A', ZGItems.compressedHeartium,
-				'Z', ZGItems.ingotZollernium, 'R', ZGItems.ingotAmaranth, 'O', ZGItems.radium });
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.healingHeart),
+				new Object[] { "AZA", "AOA", "ARA", 'A', ZGItems.compressedHeartium, 'Z', ZGItems.ingotZollernium, 'R', ZGItems.ingotAmaranth, 'O', ZGItems.radium });
 		totalCraftRecipes++;
 		
 		// Max Heartforce
@@ -361,61 +349,58 @@ public class CraftingRecipes {
 		totalCraftRecipes++;
 		
 		// Star Gate (Tier 1)
-		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.starGateTier1, 1), new Object[] { "VCV", "HYH", "YCY", 'V',
-				ZGItems.compressedDiamond, 'C', ZGItems.compressedHeartium, 'H', ZGItems.heartium, 'Y', ZGItems.zolCrystal });
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.starGateTier1, 1),
+				new Object[] { "VCV", "HYH", "YCY", 'V', ZGItems.compressedDiamond, 'C', ZGItems.compressedHeartium, 'H', ZGItems.heartium, 'Y', ZGItems.zolCrystal });
 		totalCraftRecipes++;
 		
 		// Star Gate (Tier 2)
-		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.starGateTier2, 1), new Object[] { "VCV", "HYH", "YCY", 'V', ZGItems.compressedCobalt,
-				'C', ZGItems.kriffCrystal, 'H', ZGItems.heartium, 'Y', ZGBlocks.blockCobalt });
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.starGateTier2, 1),
+				new Object[] { "VCV", "HYH", "YCY", 'V', ZGItems.compressedCobalt, 'C', ZGItems.kriffCrystal, 'H', ZGItems.heartium, 'Y', ZGBlocks.blockCobalt });
 		totalCraftRecipes++;
 		
 		// Star Gate (Tier 3)
-		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.starGateTier3, 1), new Object[] { "VCV", "HYH", "YCY", 'V',
-				ZGItems.compressedEvenium, 'C', ZGItems.compressedHeartium, 'H', ZGItems.compressedCobalt, 'Y', ZGItems.purgCrystal });
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.starGateTier3, 1), new Object[] { "VCV", "HYH", "YCY", 'V', ZGItems.compressedEvenium, 'C',
+				ZGItems.compressedHeartium, 'H', ZGItems.compressedCobalt, 'Y', ZGItems.purgCrystal });
 		totalCraftRecipes++;
 		
 		// Star Gate (Tier 4)
-		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.starGateTier4, 1), new Object[] { "VCV", "HYH", "YCY", 'V',
-				ZGBlocks.blockCompressedViri, 'C', ZGItems.compressedVyrex, 'H', ZGBlocks.blockCompressedCobalt, 'Y', ZGItems.alienStone });
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.starGateTier4, 1), new Object[] { "VCV", "HYH", "YCY", 'V', ZGBlocks.blockCompressedViri, 'C',
+				ZGItems.compressedVyrex, 'H', ZGBlocks.blockCompressedCobalt, 'Y', ZGItems.alienStone });
 		totalCraftRecipes++;
 		
 		// Star Gate (Tier 5)
-		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.starGateTier5, 1),
-				new Object[] { "VCV", "HYH", "YCY", 'V', ZGBlocks.blockCompressedPromethean, 'C', ZGItems.prometheanCrystal, 'H',
-						ZGBlocks.blockCompressedViri, 'Y', ZGItems.compressedPromethean });
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.starGateTier5, 1), new Object[] { "VCV", "HYH", "YCY", 'V', ZGBlocks.blockCompressedPromethean, 'C',
+				ZGItems.prometheanCrystal, 'H', ZGBlocks.blockCompressedViri, 'Y', ZGItems.compressedPromethean });
 		totalCraftRecipes++;
 		
 		// Star Gate (Tier 6)
-		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.starGateTier6, 1),
-				new Object[] { "VCV", "HYH", "YCY", 'V', ZGBlocks.blockCompressedSuperChargedCoal, 'C', ZGItems.compressedRiven, 'H',
-						ZGBlocks.blockCompressedPromethean, 'Y', ZGItems.compressedSuperChargedCoal });
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.starGateTier6, 1), new Object[] { "VCV", "HYH", "YCY", 'V', ZGBlocks.blockCompressedSuperChargedCoal, 'C',
+				ZGItems.compressedRiven, 'H', ZGBlocks.blockCompressedPromethean, 'Y', ZGItems.compressedSuperChargedCoal });
 		totalCraftRecipes++;
 		
 		// Star Gate (Tier 7)
-		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.starGateTier7, 1),
-				new Object[] { "VCV", "HYH", "YCY", 'V', ZGItems.compressedAmaranth, 'C', ZGItems.compressedAzurite, 'H',
-						ZGBlocks.xantheonConstructBlock, 'Y', ZGBlocks.blockFueltonium });
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.starGateTier7, 1), new Object[] { "VCV", "HYH", "YCY", 'V', ZGItems.compressedAmaranth, 'C',
+				ZGItems.compressedAzurite, 'H', ZGBlocks.xantheonConstructBlock, 'Y', ZGBlocks.blockFueltonium });
 		totalCraftRecipes++;
 		
 		// Star Gate (Tier 8)
-		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.starGateTier8, 1), new Object[] { "VCV", "HYH", "YCY", 'V', ZGItems.compressedGold,
-				'C', ZGItems.compressedAzurite, 'H', ZGBlocks.blockPlutonium, 'Y', ZGBlocks.blockCompressedPromethean });
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.starGateTier8, 1), new Object[] { "VCV", "HYH", "YCY", 'V', ZGItems.compressedGold, 'C', ZGItems.compressedAzurite,
+				'H', ZGBlocks.blockPlutonium, 'Y', ZGBlocks.blockCompressedPromethean });
 		totalCraftRecipes++;
 		
 		// Star Gate (Tier 9)
-		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.starGateTier9, 1), new Object[] { "VCV", "HYH", "YCY", 'V',
-				ZGBlocks.blockCompressedZucrite, 'C', ZGItems.ascendium, 'H', ZGItems.compressedZollernium, 'Y', ZGItems.alienStone });
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.starGateTier9, 1), new Object[] { "VCV", "HYH", "YCY", 'V', ZGBlocks.blockCompressedZucrite, 'C',
+				ZGItems.ascendium, 'H', ZGItems.compressedZollernium, 'Y', ZGItems.alienStone });
 		totalCraftRecipes++;
 		
 		// Star Gate (Tier 10)
-		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.starGateTier10, 1), new Object[] { "VCV", "HYH", "YCY", 'V',
-				ZGBlocks.blockCompressedRhodium, 'C', ZGItems.ascendium, 'H', ZGItems.darkEssence, 'Y', ZGItems.rokkite });
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.starGateTier10, 1),
+				new Object[] { "VCV", "HYH", "YCY", 'V', ZGBlocks.blockCompressedRhodium, 'C', ZGItems.ascendium, 'H', ZGItems.darkEssence, 'Y', ZGItems.rokkite });
 		totalCraftRecipes++;
 		
 		// Star Gate (Birthday Protocol)
-		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.starGateCandy, 1), new Object[] { "VCV", "HYH", "YCY", 'V', ZGBlocks.xathCobble, 'C',
-				ZGBlocks.oasisRock, 'H', ZGBlocks.atheonConstructBlock, 'Y', ZGBlocks.blockPlutonium });
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.starGateCandy, 1), new Object[] { "VCV", "HYH", "YCY", 'V', ZGBlocks.xathCobble, 'C', ZGBlocks.oasisRock, 'H',
+				ZGBlocks.atheonConstructBlock, 'Y', ZGBlocks.blockPlutonium });
 		totalCraftRecipes++;
 	}
 	
