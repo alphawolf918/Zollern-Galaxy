@@ -405,6 +405,7 @@ tile.compressedrhodiumblock.name=致密铑块
 tile.compressedzucriteblock.name=致密祖克合金块
 
 tile.plutoniumcrystals.name=钚元素结晶
+tile.stormcrystals.name=风暴结晶
 
 ## Fluids ##
 
@@ -479,6 +480,8 @@ item.purgotessence.name=绿洲星宝石
 
 item.shadowessence.name=暗物质精粹
 item.radium.name=辐光物质
+
+item.stormcrystalgem.name=风暴结晶宝石
 
 item.fueltoniumraw.name=铀原矿
 item.fueltoniumingot.name=铀锭
