@@ -7,9 +7,9 @@
  */
 package zollerngalaxy.compatibility;
 
-import zollerngalaxy.lib.helpers.ZGHelper;
 import erogenousbeef.bigreactors.api.registry.ReactorInterior;
 import erogenousbeef.bigreactors.api.registry.TurbineCoil;
+import zollerngalaxy.lib.helpers.ZGHelper;
 
 public class ExtremeReactorsCompatibility {
 	
@@ -38,8 +38,7 @@ public class ExtremeReactorsCompatibility {
 		ZGHelper.Log("Extreme Reactors: Loaded '" + oreDictName + "' as a Turbine Coil.");
 	}
 	
-	private static void registerReactorFluid(String fluidName, float absorption, float heatEfficiency, float moderation,
-			float heatConductivity) {
+	private static void registerReactorFluid(String fluidName, float absorption, float heatEfficiency, float moderation, float heatConductivity) {
 		ReactorInterior.registerFluid(fluidName, absorption, heatEfficiency, moderation, heatConductivity);
 		ZGHelper.Log("Extreme Reactors: Loaded '" + fluidName + "' as a Reactor Fluid.");
 	}

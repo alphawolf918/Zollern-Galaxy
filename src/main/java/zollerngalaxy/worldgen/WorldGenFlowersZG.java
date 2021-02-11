@@ -24,11 +24,9 @@ public class WorldGenFlowersZG extends ZGWorldGenMaster {
 	@Override
 	public boolean generate(World world, Random rand, BlockPos pos) {
 		for (int i = 0; i < 128; ++i) {
-			BlockPos pos1 = pos.add(rand.nextInt(8) - rand.nextInt(8), rand.nextInt(4) - rand.nextInt(4),
-					rand.nextInt(8) - rand.nextInt(8));
+			BlockPos pos1 = pos.add(rand.nextInt(8) - rand.nextInt(8), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(8) - rand.nextInt(8));
 			
-			if (world.isAirBlock(pos1) && (pos1.getY() < 255)
-					&& ((ZGFlower) this.flower.getBlock()).canBlockStay(world, pos1, this.flower)) {
+			if (world.isAirBlock(pos1) && (pos1.getY() < 255) && ((ZGFlower) this.flower.getBlock()).canBlockStay(world, pos1, this.flower)) {
 				world.setBlockState(pos1, this.flower, 2);
 			}
 		}

@@ -256,6 +256,9 @@ public class ZGItems {
 	public static final Item healingHeart = new ItemHeart();
 	public static final Item healingHeartForce = new ItemHeartForce();
 	
+	// Amulets
+	public static final Item amuletStorm = new ZGItemAmulet("storm");
+	
 	public static void init() {
 		ZGItems.registerItems(heartium, zolCrystal, kriffCrystal, purgCrystal, edenCrystal, purgEssence, prometheanCrystal, plutoniumCrystal, azurite, ascendium, rokkite,
 				stormCrystal, dustBrightstone, dustShinestone, dustVirinium, dustEvenium, dustCobalt, dustFueltonium, dustShinium, dustChargium, dustDiamond, dustEmerald,
@@ -274,7 +277,7 @@ public class ZGItems {
 				swordEvenium, swordVirinium, swordAmaranth, swordAzurite, swordZollernium, swordWither, swordFire, swordThor, swordEnder, swordIce, swordLight,
 				helmetAmaranth, helmetZollernium, helmetAzurite, helmetRadium, chestAmaranth, chestZollernium, chestAzurite, chestRadium, legsAmaranth, legsZollernium,
 				legsAzurite, legsRadium, bootsAmaranth, bootsZollernium, bootsAzurite, bootsRadium, blueprintCorruption, blueprintThermalHot, blueprintThermalCold,
-				healingHeart, healingHeartForce);
+				healingHeart, healingHeartForce, amuletStorm);
 		ZGHelper.Log("Loaded a total of " + totalItems + " new items.");
 	}
 	

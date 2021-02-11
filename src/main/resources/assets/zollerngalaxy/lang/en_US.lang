@@ -466,6 +466,7 @@ item.rawviri.name=Raw Virinium
 item.ingotviri.name=Virinium Ingot
 item.alienstone.name=Ancient Eden's Essence
 item.edencrystal.name=Eden's Crystal
+item.storm_amulet.name=Storm Amulet
 
 item.ingotcobalt.name=Cobalt Ingot
 item.kriffoncrystal.name=Kriffon Crystal
@@ -770,6 +771,8 @@ tooltips.blueprintstation2=Blueprint to repair it.
 
 tooltips.healthstation=Right-click to heal yourself.
 
+tooltips.amulet_storm=You are currently protected from the harsh winds!
+
 ## Planets and Moons ##
 
 planet.zollus=Zollus
@@ -790,7 +793,7 @@ planet.altum=Altum
 planet.caligro=Caligro
 
 planet.vortex=Vortex
-planet.meztli=Meztli
+planet.meztli=Metztli
 planet.centotl=Centotl
 planet.toci=Toci
 planet.tlaloc=Tlaloc
@@ -846,6 +849,7 @@ satellite.space_station.altum=Altum Space Station
 satellite.space_station.caligro=Caligro Space Station
 satellite.space_station.exodus=Exodus Space Station
 satellite.space_station.vortex=Vortex Space Station
+satellite.space_station.metztli=Metztli Space Station
 
 ## Death Messages ##
 
@@ -900,6 +904,7 @@ zollerngalaxy_anticorruption=Anti-Corruption
 zollerngalaxy_corruption=Corruption
 zollerngalaxy_radiance=Radiance
 zollerngalaxy_enlightened=Enlightened
+zollerngalaxy_stormprotection=Storm Protection
 
 ## Tinkerer's Construct ##
 

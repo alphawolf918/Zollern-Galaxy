@@ -91,7 +91,7 @@ public class BiomeDecoratorVortex extends BiomeDecoratorZG {
 		
 		// Storm Crystals
 		if (this.generateStormCrystals && this.stormCrystalsPerChunk > 0) {
-			if (ZGHelper.rngInt(1, 100) <= 65) {
+			if (ZGHelper.rngInt(1, 100) <= 75) {
 				for (int i = 0; i < this.stormCrystalsPerChunk; ++i) {
 					ZGDecorateHelper.generateCrystals(stormCrystalsGen, world, rand, this.chunkPos);
 				}

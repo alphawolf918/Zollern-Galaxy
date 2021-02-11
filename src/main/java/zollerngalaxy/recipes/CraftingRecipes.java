@@ -402,6 +402,10 @@ public class CraftingRecipes {
 		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.starGateCandy, 1), new Object[] { "VCV", "HYH", "YCY", 'V', ZGBlocks.xathCobble, 'C', ZGBlocks.oasisRock, 'H',
 				ZGBlocks.atheonConstructBlock, 'Y', ZGBlocks.blockPlutonium });
 		totalCraftRecipes++;
+		
+		// Storm Amulet
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.amuletStorm, 1), new Object[] { "SVS", "VSV", "SVS", 'S', ZGItems.stormCrystal, 'V', ZGItems.ingotVirinium });
+		totalCraftRecipes++;
 	}
 	
 	private static void addRockBricks(Block stoneIn, Block bricksOut) {

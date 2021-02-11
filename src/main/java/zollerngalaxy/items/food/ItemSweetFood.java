@@ -26,7 +26,7 @@ public class ItemSweetFood extends ZGItemFood {
 	@Override
 	protected void onFoodEaten(ItemStack stack, World worldIn, EntityPlayer player) {
 		if (!worldIn.isRemote && this.mobEffect != null) {
-			player.addPotionEffect(new PotionEffect(mobEffect, 360, 2, true, false));
+			player.addPotionEffect(new PotionEffect(mobEffect, 3600, 2, true, false));
 		}
 	}
 }

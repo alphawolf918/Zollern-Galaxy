@@ -22,8 +22,7 @@ public class TraitEnlightened extends AbstractTrait {
 	}
 	
 	@Override
-	public void afterHit(ItemStack tool, EntityLivingBase player, EntityLivingBase target, float damageDealt, boolean wasCritical,
-			boolean wasHit) {
+	public void afterHit(ItemStack tool, EntityLivingBase player, EntityLivingBase target, float damageDealt, boolean wasCritical, boolean wasHit) {
 		int dmg = Math.round(damageDealt) * 10;
 		dmg *= ((target instanceof IShadeEntity) || (target instanceof ICorruptEntity)) ? 4 : 1;
 		target.addPotionEffect(new PotionEffect(ZGPotions.radiance, dmg, 2));

@@ -11,16 +11,29 @@ import java.util.List;
 import micdoodle8.mods.galacticraft.core.proxy.ClientProxyCore;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.init.Blocks;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.eventhandler.Event;
 import zollerngalaxy.config.ConfigManagerZG;
+import zollerngalaxy.core.ZollernGalaxyCore;
+import zollerngalaxy.items.ZGItems;
 import zollerngalaxy.lib.helpers.ZGHelper;
+import zollerngalaxy.potions.ZGPotions;
+import zollerngalaxy.proxy.IProxy;
+import zollerngalaxy.util.ZGUtils;
 
-public class WindBlowingEvent extends Event {
+public final class WindBlowingEvent extends Event {
+	
+	private ZollernGalaxyCore core = ZollernGalaxyCore.instance();
+	IProxy proxy = core.proxy;
 	
 	public enum WindDirection {
 		NORTH, EAST, WEST, SOUTH;
@@ -36,7 +49,7 @@ public class WindBlowingEvent extends Event {
 		this.world = worldIn;
 		this.playerPos = new BlockPos(ClientProxyCore.playerPosX, ClientProxyCore.playerPosY, ClientProxyCore.playerPosZ);
 		
-		if (directionalChance <= 10) {
+		if (this.directionalChance <= 10) {
 			this.updateDirectionBasedOnChance();
 		}
 		
@@ -52,6 +65,7 @@ public class WindBlowingEvent extends Event {
 		if (world.getBlockState(pos) == Blocks.AIR.getDefaultState() && world.canBlockSeeSky(pos)) {
 			this.playWindSound(world, player, posX, posY, posZ);
 			player.setPositionAndUpdate(posX, posY, posZ);
+			this.playWindSound(world, player, posX, posY, posZ);
 		} else {
 			this.checkBlockAt(posX, posY + 2, posZ, world, player);
 		}
@@ -59,7 +73,7 @@ public class WindBlowingEvent extends Event {
 	
 	private void playWindSound(World worldIn, EntityPlayer player, double posX, double posY, double posZ) {
 		BlockPos soundPos = new BlockPos(posX, posY, posZ);
-		worldIn.playSound(player, soundPos, ZGSoundEvents.WEATHER_WIND, SoundCategory.WEATHER, 1000.0F, 5.0F + player.getRNG().nextFloat() * 0.2F);
+		worldIn.playSound(player, soundPos, ZGSoundEvents.WEATHER_WIND, SoundCategory.WEATHER, 1000.0F, 2.0F + player.getRNG().nextFloat() * 0.4F);
 	}
 	
 	public void pushEntities() {
@@ -73,6 +87,9 @@ public class WindBlowingEvent extends Event {
 			for (Object o : playerArray) {
 				if (o instanceof EntityPlayer) {
 					EntityPlayer currentPlayer = (EntityPlayer) o;
+					if (this.checkForAmulet(currentPlayer)) {
+						return;
+					}
 					BlockPos newPos = playerPos;
 					switch (this.getDirection()) {
 						case NORTH:
@@ -93,9 +110,29 @@ public class WindBlowingEvent extends Event {
 					}
 					this.playWindSound(world, currentPlayer, newPos.getX(), newPos.getY(), newPos.getZ());
 					this.checkBlockAt(newPos.getX(), newPos.getY(), newPos.getZ(), world, currentPlayer);
+					this.playWindSound(world, currentPlayer, newPos.getX(), newPos.getY(), newPos.getZ());
 				}
 			}
 		}
+	}
+	
+	private boolean checkForAmulet(EntityPlayer player) {
+		InventoryPlayer playerInventory = player.inventory;
+		Item item = ZGItems.amuletStorm;
+		ItemStack stack = new ItemStack(item, 1);
+		boolean hasStack = playerInventory.hasItemStack(stack);
+		boolean protectionActive = player.isPotionActive(ZGPotions.stormProtection);
+		boolean isCreativeMode = player.capabilities.isCreativeMode;
+		if (hasStack && !protectionActive && !isCreativeMode) {
+			PotionEffect stormProtectionEffect = new PotionEffect(ZGPotions.stormProtection, ZGPotions.protectionTime, 1);
+			player.addPotionEffect(stormProtectionEffect);
+			if (playerInventory.hasItemStack(stack)) {
+				int invSlot = playerInventory.getSlotFor(stack);
+				playerInventory.decrStackSize(invSlot, 1);
+			}
+			this.proxy.sendChatMessage(player, TextFormatting.GOLD + ZGUtils.translate("tooltips.amulet_storm"));
+		}
+		return player.isPotionActive(ZGPotions.stormProtection);
 	}
 	
 	public void setDirection(WindDirection dir) {
