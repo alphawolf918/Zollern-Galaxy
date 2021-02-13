@@ -466,6 +466,7 @@ item.rawviri.name=维尔因原矿
 item.ingotviri.name=维尔因锭
 item.alienstone.name=古伊甸精粹 
 item.edencrystal.name=伊甸水晶
+item.storm_amulet.name=风暴护符
 
 item.ingotcobalt.name=钴锭
 item.kriffoncrystal.name=克里芬水晶
@@ -770,6 +771,8 @@ tooltips.blueprintstation2=右键以修复之。
 
 tooltips.healthstation=右键以治疗自身。
 
+tooltips.amulet_storm=你现在已免受狂风的袭扰！
+
 ## Planets and Moons ##
 
 planet.zollus=卓洛斯
@@ -846,6 +849,7 @@ satellite.space_station.altum=阿尔图姆空间站
 satellite.space_station.caligro=卡里格罗空间站
 satellite.space_station.exodus=出离星空间站
 satellite.space_station.vortex=涡流星空间站
+satellite.space_station.metztli=梅兹特利空间站
 
 ## Death Messages ##
 
@@ -900,6 +904,7 @@ zollerngalaxy_anticorruption=抗侵蚀
 zollerngalaxy_corruption=侵蚀
 zollerngalaxy_radiance=辐照
 zollerngalaxy_enlightened=启发
+zollerngalaxy_stormprotection=风暴保护
 
 ## Tinkerer's Construct ##
 
