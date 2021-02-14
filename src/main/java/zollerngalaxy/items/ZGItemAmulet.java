@@ -15,7 +15,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class ZGItemAmulet extends ZGItemBase {
 	
 	public ZGItemAmulet(String name) {
-		super(name + " _amulet");
+		super(name + "_amulet");
 		this.setMaxStackSize(1);
 	}
 	

@@ -26,6 +26,7 @@ import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.effect.EntityLightningBolt;
+import net.minecraft.entity.monster.EntityZombie;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.init.Blocks;
@@ -56,6 +57,7 @@ import net.minecraft.world.storage.loot.RandomValueRange;
 import net.minecraft.world.storage.loot.conditions.LootCondition;
 import net.minecraftforge.event.LootTableLoadEvent;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
+import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
@@ -92,12 +94,15 @@ import zollerngalaxy.mobs.entities.EntityOinkus;
 import zollerngalaxy.mobs.entities.EntityScorpion;
 import zollerngalaxy.mobs.entities.EntityShadowSkeleton;
 import zollerngalaxy.mobs.entities.EntityShark;
+import zollerngalaxy.mobs.entities.base.EntityMutantZombie;
 import zollerngalaxy.mobs.entities.interfaces.IShadeEntity;
+import zollerngalaxy.mobs.entities.zombiemutations.EntityVolatile;
 import zollerngalaxy.potions.ZGPotions;
 import zollerngalaxy.proxy.IProxy;
 import zollerngalaxy.util.CachedEnum;
 import zollerngalaxy.util.ZGDamageSrc;
 import zollerngalaxy.util.ZGUtils;
+import zollerngalaxy.util.ZombieUtils;
 
 public class ZGEvents {
 	
@@ -159,6 +164,27 @@ public class ZGEvents {
 			long seed = entry.getValue() / 10 + entry.getKey().getX() + entry.getKey().getZ();
 			FakeLightningBoltRenderer.renderBolt(seed, entry.getKey().getX() - ClientProxyCore.playerPosX, entry.getKey().getY() - ClientProxyCore.playerPosY,
 					entry.getKey().getZ() - ClientProxyCore.playerPosZ);
+		}
+	}
+	
+	@SubscribeEvent
+	public void onPlayerDeath(LivingDeathEvent event) {
+		Entity entity = event.getEntityLiving();
+		World world = entity.world;
+		if (!world.isRemote) {
+			if (entity instanceof EntityPlayer) {
+				DamageSource damageSource = event.getSource();
+				Entity damageSourceEntity = damageSource.getImmediateSource();
+				EntityPlayer player = (EntityPlayer) entity;
+				if (damageSourceEntity instanceof EntityZombie) {
+					ZombieUtils.convertToZombie(player, world, EntityZombie.class, "Zombie");
+				} else if (damageSourceEntity instanceof EntityMutantZombie) {
+					String strMutantName = ((EntityMutantZombie) damageSourceEntity).getMutantName();
+					strMutantName = (strMutantName == "" || strMutantName == null) ? "Mutant" : strMutantName;
+					Class<? extends EntityMutantZombie> mutantZombieClass = (Class<? extends EntityMutantZombie>) damageSourceEntity.getClass();
+					ZombieUtils.convertToZombie(player, world, mutantZombieClass, strMutantName);
+				}
+			}
 		}
 	}
 	
@@ -316,6 +342,31 @@ public class ZGEvents {
 						if (!ModHelperBase.useDraconicEvolution) {
 							player.capabilities.allowFlying = false;
 						}
+					}
+				}
+			}
+		}
+		
+		// Handle Zombie mutations
+		if (entity instanceof EntityZombie) {
+			EntityZombie zombie = (EntityZombie) entity;
+			World world = entity.world;
+			if (!world.isRemote) {
+				// TODO: Change WorldProviderSpace to WorldProviderMetzli
+				if (world.provider instanceof WorldProviderSpace) {
+					// Volatile
+					if (rand.nextInt(400) == 0) {
+						zombie.setDead();
+						
+						EntityVolatile vzombie = new EntityVolatile(world);
+						vzombie.copyLocationAndAnglesFrom(zombie);
+						if (zombie.hasCustomName()) {
+							String zombieName = zombie.getCustomNameTag();
+							String vZombieName = zombieName.replace("Zombie", "Volatile");
+							vzombie.setCustomNameTag(vZombieName);
+						}
+						world.spawnEntity(vzombie);
+						ZombieUtils.playMutateSound(vzombie.posX, vzombie.posY, vzombie.posZ, world, rand);
 					}
 				}
 			}

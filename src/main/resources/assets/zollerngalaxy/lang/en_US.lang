@@ -698,6 +698,9 @@ entity.zollerngalaxy:shadowalien.name=Shadow of Darkness Boss
 entity.zollerngalaxy:faceless.name=Faceless
 entity.zollerngalaxy:pigshroom.name=Shroompig
 entity.zollerngalaxy:arcon.name=Arcon
+entity.zollerngalaxy:volatile.name=Volatile
+entity.zollerngalaxy:seeker.name=Seeker
+entity.zollerngalaxy:ghoul.name=Ghoul
 
 ## Tooltips ##
 

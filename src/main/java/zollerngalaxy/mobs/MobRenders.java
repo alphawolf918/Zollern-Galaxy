@@ -35,6 +35,7 @@ import zollerngalaxy.mobs.entities.EntitySpiderling;
 import zollerngalaxy.mobs.entities.EntitySquidlus;
 import zollerngalaxy.mobs.entities.EntityWasp;
 import zollerngalaxy.mobs.entities.boss.EntityShadowAlien;
+import zollerngalaxy.mobs.entities.zombiemutations.EntityVolatile;
 import zollerngalaxy.mobs.renders.RenderAbyssalVillager;
 import zollerngalaxy.mobs.renders.RenderArcon;
 import zollerngalaxy.mobs.renders.RenderBladeFish;
@@ -58,6 +59,7 @@ import zollerngalaxy.mobs.renders.RenderShadowSkeleton;
 import zollerngalaxy.mobs.renders.RenderShark;
 import zollerngalaxy.mobs.renders.RenderSpiderling;
 import zollerngalaxy.mobs.renders.RenderSquidlus;
+import zollerngalaxy.mobs.renders.RenderVolatile;
 import zollerngalaxy.mobs.renders.RenderWasp;
 import zollerngalaxy.mobs.renders.boss.RenderShadowAlien;
 
@@ -89,6 +91,7 @@ public final class MobRenders {
 		RenderMob(EntityFaceless.class, RenderFaceless::new);
 		RenderMob(EntityPigShroom.class, RenderPigShroom::new);
 		RenderMob(EntityArcon.class, RenderArcon::new);
+		RenderMob(EntityVolatile.class, RenderVolatile::new);
 	}
 	
 	/**

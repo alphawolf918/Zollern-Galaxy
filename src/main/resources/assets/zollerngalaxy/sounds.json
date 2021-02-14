@@ -23,19 +23,19 @@
          "zollerngalaxy:alarms/emeraldsiren"
       ]
    },
-   "mob.alien.say": {
-    "category": "master",
-    "sounds": [
-      "zollerngalaxy:mob/alien/say"
-    ]
-  },
-  "mob.alien.hurt": {
-	"category": "master",
-	"sounds": [
-      "zollerngalaxy:mob/alien/hurt"
-	]
-  },
-  "mob.mummy.say":{
+   "mob.alien.say":{
+      "category":"master",
+      "sounds":[
+         "zollerngalaxy:mob/alien/say"
+      ]
+   },
+   "mob.alien.hurt":{
+      "category":"master",
+      "sounds":[
+         "zollerngalaxy:mob/alien/hurt"
+      ]
+   },
+   "mob.mummy.say":{
       "category":"master",
       "sounds":[
          "zollerngalaxy:mob/mummy/say1",
@@ -56,34 +56,34 @@
          "zollerngalaxy:mob/mummy/die"
       ]
    },
-  "mob.galaxyknight.say": {
-	"category": "master",
-	"sounds": [
-      "zollerngalaxy:mob/galaxyknight/say"
-	]
-  },
-  "mob.galaxyknight.die": {
-	"category": "master",
-	"sounds": [
-      "zollerngalaxy:mob/galaxyknight/die"
-	]
-  },
-  "mob.crawler.hurt": {
-	"category": "master",
-	"sounds": [
-      "zollerngalaxy:mob/crawler/hurt1",
-      "zollerngalaxy:mob/crawler/hurt2"
-	]
-  },
-  "mob.crawler.say": {
-	"category": "master",
-	"sounds": [
-      "zollerngalaxy:mob/crawler/say1",
-      "zollerngalaxy:mob/crawler/say2",
-      "zollerngalaxy:mob/crawler/say3"
-	]
-  },
-  "mob.shadowalien.say":{
+   "mob.galaxyknight.say":{
+      "category":"master",
+      "sounds":[
+         "zollerngalaxy:mob/galaxyknight/say"
+      ]
+   },
+   "mob.galaxyknight.die":{
+      "category":"master",
+      "sounds":[
+         "zollerngalaxy:mob/galaxyknight/die"
+      ]
+   },
+   "mob.crawler.hurt":{
+      "category":"master",
+      "sounds":[
+         "zollerngalaxy:mob/crawler/hurt1",
+         "zollerngalaxy:mob/crawler/hurt2"
+      ]
+   },
+   "mob.crawler.say":{
+      "category":"master",
+      "sounds":[
+         "zollerngalaxy:mob/crawler/say1",
+         "zollerngalaxy:mob/crawler/say2",
+         "zollerngalaxy:mob/crawler/say3"
+      ]
+   },
+   "mob.shadowalien.say":{
       "category":"master",
       "sounds":[
          "zollerngalaxy:mob/shadowalien/say1",
@@ -167,7 +167,7 @@
          "zollerngalaxy:mob/wasp/death"
       ]
    },
-  "mob.faceless.say":{
+   "mob.faceless.say":{
       "category":"master",
       "sounds":[
          "zollerngalaxy:mob/faceless/say1",
@@ -179,7 +179,7 @@
       "category":"master",
       "sounds":[
          "zollerngalaxy:mob/faceless/hurt1",
-		 "zollerngalaxy:mob/faceless/hurt2"
+         "zollerngalaxy:mob/faceless/hurt2"
       ]
    },
    "mob.faceless.die":{
@@ -188,22 +188,47 @@
          "zollerngalaxy:mob/faceless/die"
       ]
    },
-  "dig.xeno": {
-	"category": "master",
-	"sounds": [
-      "zollerngalaxy:dig/xeno"
-	]
-  },
-  "step.xeno": {
-	"category": "master",
-	"sounds": [
-      "zollerngalaxy:step/xeno"
-	]
-  },
-  "weather.wind": {
-	"category": "weather",
-	"sounds": [
-      "zollerngalaxy:weather/wind"
-	]
-  }
+   "mob.volatile.say":{
+      "category":"master",
+      "sounds":[
+         "zollerngalaxy:mob/volatile/say1",
+         "zollerngalaxy:mob/volatile/say2"
+      ]
+   },
+   "mob.volatile.hurt":{
+      "category":"master",
+      "sounds":[
+         "zollerngalaxy:mob/volatile/hurt"
+      ]
+   },
+   "mob.volatile.die":{
+      "category":"master",
+      "sounds":[
+         "zollerngalaxy:mob/volatile/die"
+      ]
+   },
+   "mob.volatile.mutate":{
+      "category":"ambient",
+      "sounds":[
+         "zollerngalaxy:mob/volatile/mutate"
+      ]
+   },
+   "dig.xeno":{
+      "category":"master",
+      "sounds":[
+         "zollerngalaxy:dig/xeno"
+      ]
+   },
+   "step.xeno":{
+      "category":"master",
+      "sounds":[
+         "zollerngalaxy:step/xeno"
+      ]
+   },
+   "weather.wind":{
+      "category":"weather",
+      "sounds":[
+         "zollerngalaxy:weather/wind"
+      ]
+   }
 }

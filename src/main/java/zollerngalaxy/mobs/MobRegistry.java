@@ -41,6 +41,7 @@ import zollerngalaxy.mobs.entities.EntitySpiderling;
 import zollerngalaxy.mobs.entities.EntitySquidlus;
 import zollerngalaxy.mobs.entities.EntityWasp;
 import zollerngalaxy.mobs.entities.boss.EntityShadowAlien;
+import zollerngalaxy.mobs.entities.zombiemutations.EntityVolatile;
 
 public class MobRegistry {
 	
@@ -137,6 +138,13 @@ public class MobRegistry {
 		
 		// Arcon
 		registerEntity("arcon", EntityArcon.class, entityId++, 0x0000ee, 0x0000cc);
+		
+		// ** Zombie Mutations **
+		
+		// Volatile
+		registerEntity("volatile", EntityVolatile.class, entityId++, 0xeeeeee, 0xf00000);
+		
+		// ** End Mutations **
 		
 		ZGHelper.Log("Loaded a total of " + totalMobs + " new mobs.");
 	}

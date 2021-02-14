@@ -33,7 +33,7 @@ import zollerngalaxy.util.ZGUtils;
 public final class WindBlowingEvent extends Event {
 	
 	private ZollernGalaxyCore core = ZollernGalaxyCore.instance();
-	IProxy proxy = core.proxy;
+	private IProxy proxy = core.proxy;
 	
 	public enum WindDirection {
 		NORTH, EAST, WEST, SOUTH;
@@ -80,8 +80,8 @@ public final class WindBlowingEvent extends Event {
 		if (!this.world.isRemote) {
 			double expandBy = 25.0D;
 			AxisAlignedBB boundingBox = new AxisAlignedBB(this.playerPos);
-			Class<? extends Entity> playerClass = EntityPlayer.class;
 			AxisAlignedBB expandedBox = boundingBox.expand(expandBy, expandBy, expandBy);
+			Class<? extends Entity> playerClass = EntityPlayer.class;
 			List<? extends Entity> playerList = this.world.<Entity> getEntitiesWithinAABB(playerClass, expandedBox);
 			Object[] playerArray = playerList.toArray();
 			for (Object o : playerArray) {
