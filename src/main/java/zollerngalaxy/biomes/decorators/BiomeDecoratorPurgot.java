@@ -31,6 +31,7 @@ public class BiomeDecoratorPurgot extends BiomeDecoratorZG {
 	private WorldGenerator diamondGen;
 	private WorldGenerator emeraldGen;
 	private WorldGenerator meteoricIronGen;
+	private WorldGenerator eveniumGen;
 	
 	public BiomeDecoratorPurgot() {
 		this.dirtGen = new WorldGenMinableZG(ZGBlocks.purgDirt, ZGBlocks.purgSurfaceRock, EnumOreGenZG.DIRT);
@@ -44,6 +45,7 @@ public class BiomeDecoratorPurgot extends BiomeDecoratorZG {
 		this.diamondGen = new WorldGenMinableZG(ZGBlocks.purgDiamondOre, ZGBlocks.purgStone, EnumOreGenZG.DIAMOND);
 		this.emeraldGen = new WorldGenMinableZG(ZGBlocks.purgEmeraldOre, ZGBlocks.purgStone, EnumOreGenZG.EMERALD);
 		this.meteoricIronGen = new WorldGenMinableZG(ZGBlocks.purgMeteoricIronOre, ZGBlocks.purgStone, EnumOreGenZG.METEORIC_IRON);
+		this.eveniumGen = new WorldGenMinableZG(ZGBlocks.purgEveniumOre, ZGBlocks.purgStone, EnumOreGenZG.EVENIUM.setGenCount(6));
 	}
 	
 	@Override

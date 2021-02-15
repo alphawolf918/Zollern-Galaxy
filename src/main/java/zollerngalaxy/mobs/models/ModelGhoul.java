@@ -6,7 +6,7 @@ import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
 
-public class ModelZGHusk extends ModelBase {
+public class ModelGhoul extends ModelBase {
 	
 	private final ModelRenderer Shape3;
 	private final ModelRenderer Shape2;
@@ -23,7 +23,7 @@ public class ModelZGHusk extends ModelBase {
 	private final ModelRenderer Shape8;
 	private final ModelRenderer Shape7;
 	
-	public ModelZGHusk() {
+	public ModelGhoul() {
 		textureWidth = 64;
 		textureHeight = 64;
 		

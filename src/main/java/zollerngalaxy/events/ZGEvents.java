@@ -96,6 +96,8 @@ import zollerngalaxy.mobs.entities.EntityShadowSkeleton;
 import zollerngalaxy.mobs.entities.EntityShark;
 import zollerngalaxy.mobs.entities.base.EntityMutantZombie;
 import zollerngalaxy.mobs.entities.interfaces.IShadeEntity;
+import zollerngalaxy.mobs.entities.zombiemutations.EntityOverlord;
+import zollerngalaxy.mobs.entities.zombiemutations.EntitySeeker;
 import zollerngalaxy.mobs.entities.zombiemutations.EntityVolatile;
 import zollerngalaxy.potions.ZGPotions;
 import zollerngalaxy.proxy.IProxy;
@@ -348,7 +350,7 @@ public class ZGEvents {
 		}
 		
 		// Handle Zombie mutations
-		if (entity instanceof EntityZombie) {
+		if (entity instanceof EntityZombie && !(entity instanceof EntityMutantZombie)) {
 			EntityZombie zombie = (EntityZombie) entity;
 			World world = entity.world;
 			if (!world.isRemote) {
@@ -367,6 +369,32 @@ public class ZGEvents {
 						}
 						world.spawnEntity(vzombie);
 						ZombieUtils.playMutateSound(vzombie.posX, vzombie.posY, vzombie.posZ, world, rand);
+						// Seeker
+					} else if (rand.nextInt(400) == 0) {
+						zombie.setDead();
+						
+						EntitySeeker szombie = new EntitySeeker(world);
+						szombie.copyLocationAndAnglesFrom(zombie);
+						if (zombie.hasCustomName()) {
+							String zombieName = zombie.getCustomNameTag();
+							String sZombieName = zombieName.replace("Zombie", "Seeker");
+							szombie.setCustomNameTag(sZombieName);
+						}
+						world.spawnEntity(szombie);
+						ZombieUtils.playMutateSound(szombie.posX, szombie.posY, szombie.posZ, world, rand);
+						// Overlord
+					} else if (rand.nextInt(400) == 0) {
+						zombie.setDead();
+						
+						EntityOverlord ozombie = new EntityOverlord(world);
+						ozombie.copyLocationAndAnglesFrom(zombie);
+						if (zombie.hasCustomName()) {
+							String zombieName = zombie.getCustomNameTag();
+							String oZombieName = zombieName.replace("Zombie", "Overlord");
+							ozombie.setCustomNameTag(oZombieName);
+						}
+						world.spawnEntity(ozombie);
+						ZombieUtils.playMutateSound(ozombie.posX, ozombie.posY, ozombie.posZ, world, rand);
 					}
 				}
 			}

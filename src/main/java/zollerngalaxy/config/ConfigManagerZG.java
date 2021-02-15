@@ -149,6 +149,7 @@ public class ConfigManagerZG {
 	public static boolean shouldExplosiveBlocksExplodeOtherBlocks;
 	public static int outpostGenChance;
 	public static int windBlowChance;
+	public static boolean enableAlienVillagerSpawn;
 	
 	public static boolean planetUnreachableZollus;
 	public static boolean planetUnreachableKriffon;
@@ -452,6 +453,8 @@ public class ConfigManagerZG {
 		outpostGenChance = configuration
 				.get(CATEGORY_CUSTOMIZATIONS, "Outpost Gen Percentage", 5, "The chance (out of 100) for Outpost buildings to generate on planets. (default: 5)").getInt();
 		windBlowChance = configuration.get(CATEGORY_CUSTOMIZATIONS, "Wind Blow Chance", 25, "Percentage chance of how often storm wind blows. (default: 25)").getInt();
+		enableAlienVillagerSpawn = configuration.get(CATEGORY_CUSTOMIZATIONS, "Enable Alien Villager Spawn", true,
+				"Control whether Alien Villagers can spawn randomly outside of Alien Villages; disable if they're causing lag. (default: true). ").getBoolean();
 		
 		// Control unreachable planets (by rockets).
 		planetUnreachableAll = configuration

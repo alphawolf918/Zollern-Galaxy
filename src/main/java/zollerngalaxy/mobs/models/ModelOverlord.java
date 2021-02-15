@@ -6,6 +6,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import zollerngalaxy.mobs.entities.base.EntityMutantZombie;
 
 @SideOnly(Side.CLIENT)
 public class ModelOverlord extends ModelBase {
@@ -111,7 +112,7 @@ public class ModelOverlord extends ModelBase {
 	@Override
 	public void render(Entity par1Entity, float par2, float par3, float par4, float par5, float par6, float par7) {
 		super.render(par1Entity, par2, par3, par4, par5, par6, par7);
-		setRotationAngles(par2, par3, par4, par5, par6, par7, par1Entity);
+		this.setRotationAngles(par2, par3, par4, par5, par6, par7, par1Entity);
 		bipedArmLeft.render(par7);
 		bipedArmRight.render(par7);
 		bipedHead.render(par7);
@@ -134,9 +135,32 @@ public class ModelOverlord extends ModelBase {
 	}
 	
 	@Override
-	public void setRotationAngles(float par1, float par2, float par3, float par4, float par5, float par6, Entity par7Entity) {
+	public void setRotationAngles(float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch, float scaleFactor, Entity entityIn) {
 		float f = MathHelper.sin(this.swingProgress * (float) Math.PI);
 		float f1 = MathHelper.sin((1.0F - (1.0F - this.swingProgress) * (1.0F - this.swingProgress)) * (float) Math.PI);
+		boolean flag = entityIn instanceof EntityMutantZombie && ((EntityMutantZombie) entityIn).isArmsRaised();
+		this.bipedHead.rotateAngleY = netHeadYaw * 0.017453292F;
+		
+		if (flag) {
+			this.bipedHead.rotateAngleX = -((float) Math.PI / 4F);
+		} else {
+			this.bipedHead.rotateAngleX = headPitch * 0.017453292F;
+		}
+		
+		this.bipedBody.rotateAngleY = 0.0F;
+		this.bipedArmRight.rotateAngleZ = 0.0F;
+		this.bipedArmLeft.rotateAngleZ = 0.0F;
+		this.bipedArmRight.rotateAngleY = -(0.1F - f * 0.6F);
+		this.bipedArmLeft.rotateAngleY = 0.1F - f * 0.6F;
+		float f2 = -(float) Math.PI / (flag ? 1.5F : 2.25F);
+		this.bipedArmRight.rotateAngleX = f2;
+		this.bipedArmLeft.rotateAngleX = f2;
+		this.bipedArmRight.rotateAngleX += f * 1.2F - f1 * 0.4F;
+		this.bipedArmLeft.rotateAngleX += f * 1.2F - f1 * 0.4F;
+		this.bipedArmRight.rotateAngleZ += MathHelper.cos(ageInTicks * 0.09F) * 0.05F + 0.05F;
+		this.bipedArmLeft.rotateAngleZ -= MathHelper.cos(ageInTicks * 0.09F) * 0.05F + 0.05F;
+		this.bipedArmRight.rotateAngleX += MathHelper.sin(ageInTicks * 0.067F) * 0.05F;
+		this.bipedArmLeft.rotateAngleX -= MathHelper.sin(ageInTicks * 0.067F) * 0.05F;
 		this.bipedArmRight.rotateAngleZ = 0.0F;
 		this.bipedArmLeft.rotateAngleZ = 0.0F;
 		this.bipedArmRight.rotateAngleY = -(0.1F - f * 0.6F);
@@ -145,52 +169,52 @@ public class ModelOverlord extends ModelBase {
 		this.bipedArmLeft.rotateAngleX = -((float) Math.PI / 2F);
 		this.bipedArmRight.rotateAngleX -= f * 1.2F - f1 * 0.4F;
 		this.bipedArmLeft.rotateAngleX -= f * 1.2F - f1 * 0.4F;
-		this.bipedArmRight.rotateAngleZ += MathHelper.cos(par3 * 0.09F) * 0.05F + 0.05F;
-		this.bipedArmLeft.rotateAngleZ -= MathHelper.cos(par3 * 0.09F) * 0.05F + 0.05F;
-		this.bipedArmRight.rotateAngleX += MathHelper.sin(par3 * 0.067F) * 0.05F;
-		this.bipedArmLeft.rotateAngleX -= MathHelper.sin(par3 * 0.067F) * 0.05F;
-		float f6 = ((float) Math.PI / 4F);
-		this.Leg1.rotateAngleZ = -f6;
-		this.Leg2.rotateAngleZ = f6;
-		this.Leg3.rotateAngleZ = -f6 * 0.74F;
-		this.Leg4.rotateAngleZ = f6 * 0.74F;
-		this.Leg5.rotateAngleZ = -f6 * 0.74F;
-		this.Leg6.rotateAngleZ = f6 * 0.74F;
-		this.Leg7.rotateAngleZ = -f6;
-		this.Leg8.rotateAngleZ = f6;
-		float f7 = -0.0F;
-		float f8 = 0.3926991F;
-		this.Leg1.rotateAngleY = f8 * 2.0F + f7;
-		this.Leg2.rotateAngleY = -f8 * 2.0F - f7;
-		this.Leg3.rotateAngleY = f8 * 1.0F + f7;
-		this.Leg4.rotateAngleY = -f8 * 1.0F - f7;
-		this.Leg5.rotateAngleY = -f8 * 1.0F + f7;
-		this.Leg6.rotateAngleY = f8 * 1.0F - f7;
-		this.Leg7.rotateAngleY = -f8 * 2.0F + f7;
-		this.Leg8.rotateAngleY = f8 * 2.0F - f7;
-		float f9 = -(MathHelper.cos(par1 * 0.6662F * 2.0F + 0.0F) * 0.4F) * par2;
-		float f10 = -(MathHelper.cos(par1 * 0.6662F * 2.0F + (float) Math.PI) * 0.4F) * par2;
-		float f11 = -(MathHelper.cos(par1 * 0.6662F * 2.0F + ((float) Math.PI / 2F)) * 0.4F) * par2;
-		float f12 = -(MathHelper.cos(par1 * 0.6662F * 2.0F + ((float) Math.PI * 3F / 2F)) * 0.4F) * par2;
-		float f13 = Math.abs(MathHelper.sin(par1 * 0.6662F + 0.0F) * 0.4F) * par2;
-		float f14 = Math.abs(MathHelper.sin(par1 * 0.6662F + (float) Math.PI) * 0.4F) * par2;
-		float f15 = Math.abs(MathHelper.sin(par1 * 0.6662F + ((float) Math.PI / 2F)) * 0.4F) * par2;
-		float f16 = Math.abs(MathHelper.sin(par1 * 0.6662F + ((float) Math.PI * 3F / 2F)) * 0.4F) * par2;
-		this.Leg1.rotateAngleY += f9;
-		this.Leg2.rotateAngleY += -f9;
-		this.Leg3.rotateAngleY += f10;
-		this.Leg4.rotateAngleY += -f10;
-		this.Leg5.rotateAngleY += f11;
-		this.Leg6.rotateAngleY += -f11;
-		this.Leg7.rotateAngleY += f12;
-		this.Leg8.rotateAngleY += -f12;
-		this.Leg1.rotateAngleZ += f13;
-		this.Leg2.rotateAngleZ += -f13;
-		this.Leg3.rotateAngleZ += f14;
-		this.Leg4.rotateAngleZ += -f14;
-		this.Leg5.rotateAngleZ += f15;
-		this.Leg6.rotateAngleZ += -f15;
-		this.Leg7.rotateAngleZ += f16;
-		this.Leg8.rotateAngleZ += -f16;
+		this.bipedArmRight.rotateAngleZ += MathHelper.cos(ageInTicks * 0.09F) * 0.05F + 0.05F;
+		this.bipedArmLeft.rotateAngleZ -= MathHelper.cos(ageInTicks * 0.09F) * 0.05F + 0.05F;
+		this.bipedArmRight.rotateAngleX += MathHelper.sin(ageInTicks * 0.067F) * 0.05F;
+		this.bipedArmLeft.rotateAngleX -= MathHelper.sin(ageInTicks * 0.067F) * 0.05F;
+		f = ((float) Math.PI / 4F);
+		this.Leg1.rotateAngleZ = -((float) Math.PI / 4F);
+		this.Leg2.rotateAngleZ = ((float) Math.PI / 4F);
+		this.Leg3.rotateAngleZ = -0.58119464F;
+		this.Leg4.rotateAngleZ = 0.58119464F;
+		this.Leg5.rotateAngleZ = -0.58119464F;
+		this.Leg6.rotateAngleZ = 0.58119464F;
+		this.Leg7.rotateAngleZ = -((float) Math.PI / 4F);
+		this.Leg8.rotateAngleZ = ((float) Math.PI / 4F);
+		f1 = -0.0F;
+		f2 = 0.3926991F;
+		this.Leg1.rotateAngleY = ((float) Math.PI / 4F);
+		this.Leg2.rotateAngleY = -((float) Math.PI / 4F);
+		this.Leg3.rotateAngleY = 0.3926991F;
+		this.Leg4.rotateAngleY = -0.3926991F;
+		this.Leg5.rotateAngleY = -0.3926991F;
+		this.Leg6.rotateAngleY = 0.3926991F;
+		this.Leg7.rotateAngleY = -((float) Math.PI / 4F);
+		this.Leg8.rotateAngleY = ((float) Math.PI / 4F);
+		float f3 = -(MathHelper.cos(limbSwing * 0.6662F * 2.0F + 0.0F) * 0.4F) * limbSwingAmount;
+		float f4 = -(MathHelper.cos(limbSwing * 0.6662F * 2.0F + (float) Math.PI) * 0.4F) * limbSwingAmount;
+		float f5 = -(MathHelper.cos(limbSwing * 0.6662F * 2.0F + ((float) Math.PI / 2F)) * 0.4F) * limbSwingAmount;
+		float f6 = -(MathHelper.cos(limbSwing * 0.6662F * 2.0F + ((float) Math.PI * 3F / 2F)) * 0.4F) * limbSwingAmount;
+		float f7 = Math.abs(MathHelper.sin(limbSwing * 0.6662F + 0.0F) * 0.4F) * limbSwingAmount;
+		float f8 = Math.abs(MathHelper.sin(limbSwing * 0.6662F + (float) Math.PI) * 0.4F) * limbSwingAmount;
+		float f9 = Math.abs(MathHelper.sin(limbSwing * 0.6662F + ((float) Math.PI / 2F)) * 0.4F) * limbSwingAmount;
+		float f10 = Math.abs(MathHelper.sin(limbSwing * 0.6662F + ((float) Math.PI * 3F / 2F)) * 0.4F) * limbSwingAmount;
+		this.Leg1.rotateAngleY += f3;
+		this.Leg2.rotateAngleY += -f3;
+		this.Leg3.rotateAngleY += f4;
+		this.Leg4.rotateAngleY += -f4;
+		this.Leg5.rotateAngleY += f5;
+		this.Leg6.rotateAngleY += -f5;
+		this.Leg7.rotateAngleY += f6;
+		this.Leg8.rotateAngleY += -f6;
+		this.Leg1.rotateAngleZ += f7;
+		this.Leg2.rotateAngleZ += -f7;
+		this.Leg3.rotateAngleZ += f8;
+		this.Leg4.rotateAngleZ += -f8;
+		this.Leg5.rotateAngleZ += f9;
+		this.Leg6.rotateAngleZ += -f9;
+		this.Leg7.rotateAngleZ += f10;
+		this.Leg8.rotateAngleZ += -f10;
 	}
 }
