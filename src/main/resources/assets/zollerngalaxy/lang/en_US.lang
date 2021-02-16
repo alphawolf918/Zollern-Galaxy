@@ -701,8 +701,9 @@ entity.zollerngalaxy:arcon.name=Arcon
 entity.zollerngalaxy:volatile.name=Volatile
 entity.zollerngalaxy:seeker.name=Seeker
 entity.zollerngalaxy:overlord.name=Overlord
-entity.zollerngalaxy:lightwalker.name=Light Walker
 entity.zollerngalaxy:ghoul.name=Ghoul
+entity.zollerngalaxy:lightwalker.name=Light Walker
+entity.zollerngalaxy:hulk.name=Hulk
 
 ## Tooltips ##
 

@@ -96,6 +96,7 @@ import zollerngalaxy.mobs.entities.EntityShadowSkeleton;
 import zollerngalaxy.mobs.entities.EntityShark;
 import zollerngalaxy.mobs.entities.base.EntityMutantZombie;
 import zollerngalaxy.mobs.entities.interfaces.IShadeEntity;
+import zollerngalaxy.mobs.entities.zombiemutations.EntityGhoul;
 import zollerngalaxy.mobs.entities.zombiemutations.EntityOverlord;
 import zollerngalaxy.mobs.entities.zombiemutations.EntitySeeker;
 import zollerngalaxy.mobs.entities.zombiemutations.EntityVolatile;
@@ -356,45 +357,58 @@ public class ZGEvents {
 			if (!world.isRemote) {
 				// TODO: Change WorldProviderSpace to WorldProviderMetzli
 				if (world.provider instanceof WorldProviderSpace) {
-					// Volatile
 					if (rand.nextInt(400) == 0) {
-						zombie.setDead();
-						
-						EntityVolatile vzombie = new EntityVolatile(world);
-						vzombie.copyLocationAndAnglesFrom(zombie);
-						if (zombie.hasCustomName()) {
-							String zombieName = zombie.getCustomNameTag();
-							String vZombieName = zombieName.replace("Zombie", "Volatile");
-							vzombie.setCustomNameTag(vZombieName);
+						int mutantChance = rand.nextInt(100);
+						// Ghoul
+						if (mutantChance <= ZombieUtils.MUTATE_GHOUL_CHANCE) {
+							EntityGhoul gzombie = new EntityGhoul(world);
+							gzombie.copyLocationAndAnglesFrom(zombie);
+							if (zombie.hasCustomName()) {
+								String zombieName = zombie.getCustomNameTag();
+								String gZombieName = zombieName.replace("Zombie", "Ghoul");
+								gzombie.setCustomNameTag(gZombieName);
+							}
+							world.spawnEntity(gzombie);
+							ZombieUtils.playMutateSound(gzombie.posX, gzombie.posY, gzombie.posZ, world, rand);
+							// Overlord
+						} else if (mutantChance <= ZombieUtils.MUTATE_OVERLORD_CHANCE) {
+							zombie.setDead();
+							
+							EntityOverlord ozombie = new EntityOverlord(world);
+							ozombie.copyLocationAndAnglesFrom(zombie);
+							if (zombie.hasCustomName()) {
+								String zombieName = zombie.getCustomNameTag();
+								String oZombieName = zombieName.replace("Zombie", "Overlord");
+								ozombie.setCustomNameTag(oZombieName);
+							}
+							world.spawnEntity(ozombie);
+							ZombieUtils.playMutateSound(ozombie.posX, ozombie.posY, ozombie.posZ, world, rand);
+							// Seeker
+						} else if (mutantChance <= ZombieUtils.MUTATE_SEEKER_CHANCE) {
+							zombie.setDead();
+							
+							EntitySeeker szombie = new EntitySeeker(world);
+							szombie.copyLocationAndAnglesFrom(zombie);
+							if (zombie.hasCustomName()) {
+								String zombieName = zombie.getCustomNameTag();
+								String sZombieName = zombieName.replace("Zombie", "Seeker");
+								szombie.setCustomNameTag(sZombieName);
+							}
+							world.spawnEntity(szombie);
+							ZombieUtils.playMutateSound(szombie.posX, szombie.posY, szombie.posZ, world, rand);
+						} else if (mutantChance <= ZombieUtils.MUTATE_VOLATILE_CHANCE) {
+							zombie.setDead();
+							
+							EntityVolatile vzombie = new EntityVolatile(world);
+							vzombie.copyLocationAndAnglesFrom(zombie);
+							if (zombie.hasCustomName()) {
+								String zombieName = zombie.getCustomNameTag();
+								String vZombieName = zombieName.replace("Zombie", "Volatile");
+								vzombie.setCustomNameTag(vZombieName);
+							}
+							world.spawnEntity(vzombie);
+							ZombieUtils.playMutateSound(vzombie.posX, vzombie.posY, vzombie.posZ, world, rand);
 						}
-						world.spawnEntity(vzombie);
-						ZombieUtils.playMutateSound(vzombie.posX, vzombie.posY, vzombie.posZ, world, rand);
-						// Seeker
-					} else if (rand.nextInt(400) == 0) {
-						zombie.setDead();
-						
-						EntitySeeker szombie = new EntitySeeker(world);
-						szombie.copyLocationAndAnglesFrom(zombie);
-						if (zombie.hasCustomName()) {
-							String zombieName = zombie.getCustomNameTag();
-							String sZombieName = zombieName.replace("Zombie", "Seeker");
-							szombie.setCustomNameTag(sZombieName);
-						}
-						world.spawnEntity(szombie);
-						ZombieUtils.playMutateSound(szombie.posX, szombie.posY, szombie.posZ, world, rand);
-						// Overlord
-					} else if (rand.nextInt(400) == 0) {
-						zombie.setDead();
-						
-						EntityOverlord ozombie = new EntityOverlord(world);
-						ozombie.copyLocationAndAnglesFrom(zombie);
-						if (zombie.hasCustomName()) {
-							String zombieName = zombie.getCustomNameTag();
-							String oZombieName = zombieName.replace("Zombie", "Overlord");
-							ozombie.setCustomNameTag(oZombieName);
-						}
-						world.spawnEntity(ozombie);
-						ZombieUtils.playMutateSound(ozombie.posX, ozombie.posY, ozombie.posZ, world, rand);
 					}
 				}
 			}

@@ -5,7 +5,7 @@
  * but do not claim it as your own, and
  * do not redistribute it.
  */
-package zollerngalaxy.mobs.renders;
+package zollerngalaxy.mobs.renders.zombiemutations;
 
 import org.lwjgl.opengl.GL11;
 import net.minecraft.client.renderer.entity.RenderLiving;
@@ -15,7 +15,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.lib.ZGInfo;
 import zollerngalaxy.mobs.entities.zombiemutations.EntitySeeker;
-import zollerngalaxy.mobs.models.ModelSeeker;
+import zollerngalaxy.mobs.models.zombiemutations.ModelSeeker;
 
 @SideOnly(Side.CLIENT)
 public class RenderSeeker extends RenderLiving<EntitySeeker> {

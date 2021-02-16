@@ -18,6 +18,8 @@ import net.minecraft.entity.ai.EntityAIAttackMelee;
 import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.monster.EntitySkeleton;
+import net.minecraft.entity.passive.EntityVillager;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.MobEffects;
 import net.minecraft.init.SoundEvents;
@@ -31,6 +33,7 @@ import net.minecraft.pathfinding.PathNavigateClimber;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
@@ -57,8 +60,8 @@ public class EntityOverlord extends EntityMutantZombie {
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(70.0D);
-		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.18600000417232513D);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(5.5D);
+		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.32000001192092896D);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(15.5D);
 		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(85.0D);
 	}
 	
@@ -130,6 +133,33 @@ public class EntityOverlord extends EntityMutantZombie {
 	@Override
 	public boolean isOnLadder() {
 		return this.isBesideClimbableBlock();
+	}
+	
+	@Override
+	public void onKillEntity(EntityLivingBase entityLivingIn) {
+		super.onKillEntity(entityLivingIn);
+		
+		if ((this.world.getDifficulty() == EnumDifficulty.NORMAL || this.world.getDifficulty() == EnumDifficulty.HARD) && entityLivingIn instanceof EntityVillager) {
+			if (this.world.getDifficulty() != EnumDifficulty.HARD && this.rand.nextBoolean()) {
+				return;
+			}
+			
+			EntityVillager entityvillager = (EntityVillager) entityLivingIn;
+			EntityOverlord entityzombievillager = new EntityOverlord(this.world);
+			entityzombievillager.copyLocationAndAnglesFrom(entityvillager);
+			this.world.removeEntity(entityvillager);
+			entityzombievillager.onInitialSpawn(this.world.getDifficultyForLocation(new BlockPos(entityzombievillager)), new EntityOverlord.GroupData(false));
+			entityzombievillager.setChild(entityvillager.isChild());
+			entityzombievillager.setNoAI(entityvillager.isAIDisabled());
+			
+			if (entityvillager.hasCustomName()) {
+				entityzombievillager.setCustomNameTag(entityvillager.getCustomNameTag());
+				entityzombievillager.setAlwaysRenderNameTag(entityvillager.getAlwaysRenderNameTag());
+			}
+			
+			this.world.spawnEntity(entityzombievillager);
+			this.world.playEvent((EntityPlayer) null, 1026, new BlockPos(this), 0);
+		}
 	}
 	
 	@Override

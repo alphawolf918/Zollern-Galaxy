@@ -1,4 +1,4 @@
-package zollerngalaxy.mobs.models;
+package zollerngalaxy.mobs.models.zombiemutations;
 
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelBox;

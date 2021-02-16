@@ -45,7 +45,7 @@ public class BiomeDecoratorPurgot extends BiomeDecoratorZG {
 		this.diamondGen = new WorldGenMinableZG(ZGBlocks.purgDiamondOre, ZGBlocks.purgStone, EnumOreGenZG.DIAMOND);
 		this.emeraldGen = new WorldGenMinableZG(ZGBlocks.purgEmeraldOre, ZGBlocks.purgStone, EnumOreGenZG.EMERALD);
 		this.meteoricIronGen = new WorldGenMinableZG(ZGBlocks.purgMeteoricIronOre, ZGBlocks.purgStone, EnumOreGenZG.METEORIC_IRON);
-		this.eveniumGen = new WorldGenMinableZG(ZGBlocks.purgEveniumOre, ZGBlocks.purgStone, EnumOreGenZG.EVENIUM.setGenCount(6));
+		this.eveniumGen = new WorldGenMinableZG(ZGBlocks.purgEveniumOre, ZGBlocks.purgStone, EnumOreGenZG.EVENIUM.setGenCount(11));
 	}
 	
 	@Override
@@ -65,6 +65,7 @@ public class BiomeDecoratorPurgot extends BiomeDecoratorZG {
 		this.generateOre(this.diamondGen, EnumOreGenZG.DIAMOND, world, rand);
 		this.generateOre(this.emeraldGen, EnumOreGenZG.EMERALD, world, rand);
 		this.generateOre(this.meteoricIronGen, EnumOreGenZG.METEORIC_IRON, world, rand);
+		this.generateOre(this.eveniumGen, EnumOreGenZG.EVENIUM, world, rand);
 		
 		int genY = y;
 		

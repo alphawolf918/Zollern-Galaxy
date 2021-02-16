@@ -18,34 +18,31 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.DamageSource;
-import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ForgeModContainer;
-import zollerngalaxy.events.ZGSoundEvents;
 import zollerngalaxy.mobs.entities.base.EntityMutantZombie;
 
-public class EntityVolatile extends EntityMutantZombie {
+public class EntityGhoul extends EntityMutantZombie {
 	
-	public EntityVolatile(World worldIn) {
-		super(worldIn);
-		this.setMutantMultiplyChance(6);
-		this.setMutantName("Volatile");
-		this.setMutantFireTime(20);
-		this.setMutantScale(1.2F);
+	public EntityGhoul(World world) {
+		super(world);
+		this.setMutantMultiplyChance(2);
+		this.setMutantName("Ghoul");
+		this.setMutantFireTime(40);
+		this.setMutantScale(1.1F);
 		this.applyEntityAI();
 	}
 	
 	@Override
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(65.0D);
-		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.23000021517232513D);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(4.5D);
-		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(70.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(75.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.23000000517232513D);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(10.5D);
+		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(55.0D);
 	}
 	
 	@Override
@@ -65,21 +62,6 @@ public class EntityVolatile extends EntityMutantZombie {
 	}
 	
 	@Override
-	protected SoundEvent getAmbientSound() {
-		return ZGSoundEvents.ENTITY_VOLATILE_SAY;
-	}
-	
-	@Override
-	protected SoundEvent getHurtSound(DamageSource damageSourceIn) {
-		return ZGSoundEvents.ENTITY_VOLATILE_HURT;
-	}
-	
-	@Override
-	protected SoundEvent getDeathSound() {
-		return ZGSoundEvents.ENTITY_VOLATILE_DEATH;
-	}
-	
-	@Override
 	public void onKillEntity(EntityLivingBase entityLivingIn) {
 		super.onKillEntity(entityLivingIn);
 		
@@ -89,10 +71,10 @@ public class EntityVolatile extends EntityMutantZombie {
 			}
 			
 			EntityVillager entityvillager = (EntityVillager) entityLivingIn;
-			EntityVolatile entityzombievillager = new EntityVolatile(this.world);
+			EntityGhoul entityzombievillager = new EntityGhoul(this.world);
 			entityzombievillager.copyLocationAndAnglesFrom(entityvillager);
 			this.world.removeEntity(entityvillager);
-			entityzombievillager.onInitialSpawn(this.world.getDifficultyForLocation(new BlockPos(entityzombievillager)), new EntityVolatile.GroupData(false));
+			entityzombievillager.onInitialSpawn(this.world.getDifficultyForLocation(new BlockPos(entityzombievillager)), new EntityGhoul.GroupData(false));
 			entityzombievillager.setChild(entityvillager.isChild());
 			entityzombievillager.setNoAI(entityvillager.isAIDisabled());
 			
@@ -114,11 +96,11 @@ public class EntityVolatile extends EntityMutantZombie {
 		this.setCanPickUpLoot(this.rand.nextFloat() < 0.55F * f);
 		
 		if (livingdata == null) {
-			livingdata = new EntityVolatile.GroupData(this.world.rand.nextFloat() < ForgeModContainer.zombieBabyChance);
+			livingdata = new EntityGhoul.GroupData(this.world.rand.nextFloat() < ForgeModContainer.zombieBabyChance);
 		}
 		
-		if (livingdata instanceof EntityVolatile.GroupData) {
-			EntityVolatile.GroupData entityzombie$groupdata = (EntityVolatile.GroupData) livingdata;
+		if (livingdata instanceof EntityGhoul.GroupData) {
+			EntityGhoul.GroupData entityzombie$groupdata = (EntityGhoul.GroupData) livingdata;
 			
 			if (entityzombie$groupdata.isChild) {
 				this.setChild(true);

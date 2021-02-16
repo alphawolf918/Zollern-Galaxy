@@ -5,7 +5,7 @@
  * but do not claim it as your own, and
  * do not redistribute it.
  */
-package zollerngalaxy.mobs.models;
+package zollerngalaxy.mobs.models.zombiemutations;
 
 import net.minecraft.client.model.ModelBiped;
 import net.minecraftforge.fml.relauncher.Side;

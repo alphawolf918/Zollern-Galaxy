@@ -5,7 +5,7 @@
  * but do not claim it as your own, and
  * do not redistribute it.
  */
-package zollerngalaxy.mobs.renders;
+package zollerngalaxy.mobs.renders.zombiemutations;
 
 import org.lwjgl.opengl.GL11;
 import net.minecraft.client.renderer.entity.RenderBiped;
@@ -16,7 +16,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.lib.ZGInfo;
 import zollerngalaxy.mobs.entities.zombiemutations.EntityVolatile;
-import zollerngalaxy.mobs.models.ModelVolatile;
+import zollerngalaxy.mobs.models.zombiemutations.ModelVolatile;
 
 @SideOnly(Side.CLIENT)
 public class RenderVolatile extends RenderBiped<EntityVolatile> {

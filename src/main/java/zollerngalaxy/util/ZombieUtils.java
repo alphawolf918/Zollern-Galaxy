@@ -18,6 +18,13 @@ import zollerngalaxy.events.ZGSoundEvents;
 
 public abstract class ZombieUtils {
 	
+	public static final int MUTATE_VOLATILE_CHANCE = 50;
+	public static final int MUTATE_SEEKER_CHANCE = 32;
+	public static final int MUTATE_OVERLORD_CHANCE = 26;
+	public static final int MUTATE_GHOUL_CHANCE = 15;
+	public static final int MUTATE_LIGHTWALKER_CHANCE = 2;
+	public static final int HULK_CHANCE = 5;
+	
 	/**
 	 * Uses Java Reflection to "convert" (spawn) the Mutant that the Player was killed by.
 	 * 

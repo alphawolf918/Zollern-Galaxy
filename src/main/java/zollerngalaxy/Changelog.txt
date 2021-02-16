@@ -18,7 +18,7 @@ Zollern Galaxy v2.0.24
 * Added Vortex Space Station.
 * Added Zombie Mutations: localized (for now) to a single planet.
     - Zombies will have a chance to mutate into other "mutant" Zombies, each with varying traits.
-    - Current mutates: Volatile, Seeker, Overlord
+    - Current mutates: Volatile, Seeker, Overlord, Ghoul
 * Added a config option to control whether or not Alien Villagers spawn outside of Alien Villages.
 * * Updated Chinese translations from EndsM.
 * Increased amount of time Sweet Foods give potion effects.

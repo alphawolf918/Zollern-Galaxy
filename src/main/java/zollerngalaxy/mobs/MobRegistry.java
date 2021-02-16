@@ -41,6 +41,7 @@ import zollerngalaxy.mobs.entities.EntitySpiderling;
 import zollerngalaxy.mobs.entities.EntitySquidlus;
 import zollerngalaxy.mobs.entities.EntityWasp;
 import zollerngalaxy.mobs.entities.boss.EntityShadowAlien;
+import zollerngalaxy.mobs.entities.zombiemutations.EntityGhoul;
 import zollerngalaxy.mobs.entities.zombiemutations.EntityOverlord;
 import zollerngalaxy.mobs.entities.zombiemutations.EntitySeeker;
 import zollerngalaxy.mobs.entities.zombiemutations.EntityVolatile;
@@ -151,6 +152,12 @@ public class MobRegistry {
 		
 		// Overlord
 		registerEntity("overlord", EntityOverlord.class, entityId++, 0xeeeeee, 0x008b00);
+		
+		// Ghoul
+		registerEntity("ghoul", EntityGhoul.class, entityId++, 0x444444, 0xeeeeee);
+		
+		// Light Walker
+		// TODO
 		
 		// ** End Mutations **
 		

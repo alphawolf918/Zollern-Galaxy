@@ -5,7 +5,7 @@
  * but do not claim it as your own, and
  * do not redistribute it.
  */
-package zollerngalaxy.mobs.renders;
+package zollerngalaxy.mobs.renders.zombiemutations;
 
 import org.lwjgl.opengl.GL11;
 import net.minecraft.client.renderer.entity.RenderLiving;
@@ -15,7 +15,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.lib.ZGInfo;
 import zollerngalaxy.mobs.entities.zombiemutations.EntityOverlord;
-import zollerngalaxy.mobs.models.ModelOverlord;
+import zollerngalaxy.mobs.models.zombiemutations.ModelOverlord;
 
 @SideOnly(Side.CLIENT)
 public class RenderOverlord extends RenderLiving<EntityOverlord> {

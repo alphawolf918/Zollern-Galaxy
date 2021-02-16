@@ -5,7 +5,7 @@
  * but do not claim it as your own, and
  * do not redistribute it.
  */
-package zollerngalaxy.mobs.models;
+package zollerngalaxy.mobs.models.zombiemutations;
 
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelBox;
@@ -84,11 +84,14 @@ public class ModelSeeker extends ModelBase {
 		super.setRotationAngles(limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scaleFactor, entityIn);
 		boolean flag = entityIn instanceof EntityMutantZombie && ((EntityMutantZombie) entityIn).isArmsRaised();
 		this.bipedHead.rotateAngleY = netHeadYaw * 0.017453292F;
+		this.bipedHead2.rotateAngleY = netHeadYaw * 0.017453292F;
 		
 		if (flag) {
 			this.bipedHead.rotateAngleX = -((float) Math.PI / 4F);
+			this.bipedHead2.rotateAngleX = -((float) Math.PI / 4F);
 		} else {
 			this.bipedHead.rotateAngleX = headPitch * 0.017453292F;
+			this.bipedHead2.rotateAngleX = headPitch * 0.017453292F;
 		}
 		
 		this.bipedBody.rotateAngleY = 0.0F;
@@ -107,22 +110,9 @@ public class ModelSeeker extends ModelBase {
 		this.bipedLeftArm.rotateAngleZ -= MathHelper.cos(ageInTicks * 0.09F) * 0.05F + 0.05F;
 		this.bipedRightArm.rotateAngleX += MathHelper.sin(ageInTicks * 0.067F) * 0.05F;
 		this.bipedLeftArm.rotateAngleX -= MathHelper.sin(ageInTicks * 0.067F) * 0.05F;
-		this.bipedRightLeg.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F) * 1.4F * limbSwingAmount / f;
-		this.bipedLeftLeg.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F + (float) Math.PI) * 1.4F * limbSwingAmount / f;
+		this.bipedRightLeg.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F) * 1.4F * limbSwingAmount;
+		this.bipedLeftLeg.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F + (float) Math.PI) * 1.4F * limbSwingAmount;
 		this.bipedRightLeg.rotateAngleY = 0.0F;
 		this.bipedLeftLeg.rotateAngleY = 0.0F;
-		this.bipedRightLeg.rotateAngleZ = 0.0F;
-		this.bipedLeftLeg.rotateAngleZ = 0.0F;
-		
-		if (this.isRiding) {
-			this.bipedRightArm.rotateAngleX += -((float) Math.PI / 5F);
-			this.bipedLeftArm.rotateAngleX += -((float) Math.PI / 5F);
-			this.bipedRightLeg.rotateAngleX = -1.4137167F;
-			this.bipedRightLeg.rotateAngleY = ((float) Math.PI / 10F);
-			this.bipedRightLeg.rotateAngleZ = 0.07853982F;
-			this.bipedLeftLeg.rotateAngleX = -1.4137167F;
-			this.bipedLeftLeg.rotateAngleY = -((float) Math.PI / 10F);
-			this.bipedLeftLeg.rotateAngleZ = -0.07853982F;
-		}
 	}
 }
