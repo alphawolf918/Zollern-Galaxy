@@ -91,6 +91,10 @@ public class ZGDimensions {
 	public static DimensionType VORTEX_ORBIT;
 	public static DimensionType VORTEX_ORBIT_STATIC;
 	
+	public static DimensionType METZTLI;
+	public static DimensionType METZTLI_ORBIT;
+	public static DimensionType METZTLI_ORBIT_STATIC;
+	
 	public static void init() {
 		// Psion-6 (Zollus)
 		ZGDimensions.ZOLLUS = ZGDimensions.getDimType(ConfigManagerZG.planetZollusDimensionId);
@@ -188,6 +192,11 @@ public class ZGDimensions {
 				false);
 		ZGDimensions.VORTEX_ORBIT_STATIC = DimensionType.register("Vortex Space Station", "_vortex_orbit", ConfigManagerZG.spaceStationVortexStaticId,
 				WorldProviderOrbitVortex.class, true);
+		
+		// Pantheon (Metztli)
+		ZGDimensions.METZTLI = ZGDimensions.getDimType(ConfigManagerZG.planetMetztliDimensionId);
+		// No need for a space station yet until I can figure out why the planet isn't
+		// registering...
 	}
 	
 	public static DimensionType getDimType(int dimId) {
@@ -224,6 +233,8 @@ public class ZGDimensions {
 			body = ZGPlanets.planetExodus;
 		} else if (dimID == ConfigManagerZG.planetVortexDimensionId) {
 			body = ZGPlanets.planetVortex;
+		} else if (dimID == ConfigManagerZG.planetMetztliDimensionId) {
+			body = ZGPlanets.planetMetztli;
 		}
 		
 		if (body == null) {

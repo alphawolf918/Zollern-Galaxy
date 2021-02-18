@@ -64,6 +64,7 @@ import zollerngalaxy.biomes.exodus.BiomeExodusOcean;
 import zollerngalaxy.biomes.exodus.BiomeExodusRockyHills;
 import zollerngalaxy.biomes.kriffon.BiomeKriffon;
 import zollerngalaxy.biomes.kriffon.BiomeKriffonLavaOcean;
+import zollerngalaxy.biomes.metztli.BiomeHarran;
 import zollerngalaxy.biomes.oasis.BiomeOasisPlains;
 import zollerngalaxy.biomes.oasis.BiomeOasisRedSea;
 import zollerngalaxy.biomes.oasis.BiomeRedlands;
@@ -176,6 +177,9 @@ public class ZGBiomes {
 	public static final Biome VORTEX_MOUNTAINS = new BiomeVortexMountain(new BiomeProperties("Vortex Mountains"));
 	public static final Biome VORTEX_CHARGIUM_SEA = new BiomeVortexChargiumSea(new BiomeProperties("Vortex Chargium Sea"));
 	
+	// Metztli
+	public static final Biome METZTLI_HARRAN = new BiomeHarran(new BiomeProperties("Harran"));
+	
 	public static void init() {
 		// Zollus
 		ZGBiomes.addBiome(ZGBiomes.ZOLLUS, COLD, DEAD, DRY);
@@ -260,6 +264,9 @@ public class ZGBiomes {
 		ZGBiomes.addBiome(VORTEX_BASE, MOUNTAIN, HOT, WET);
 		ZGBiomes.addBiome(VORTEX_MOUNTAINS, MOUNTAIN, HOT, DEAD, DRY);
 		ZGBiomes.addBiome(VORTEX_CHARGIUM_SEA, DEAD, SPOOKY, HOT, OCEAN);
+		
+		// Metztli
+		ZGBiomes.addBiome(METZTLI_HARRAN, LUSH, WASTELAND, DEAD, WET);
 		
 		ZGHelper.Log("Loaded a total of " + totalBiomes + " new biomes.");
 	}

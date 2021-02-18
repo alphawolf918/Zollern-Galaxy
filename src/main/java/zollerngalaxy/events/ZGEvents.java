@@ -76,6 +76,7 @@ import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.ZGLootTables;
 import zollerngalaxy.core.ZollernGalaxyCore;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderAltum;
+import zollerngalaxy.core.dimensions.worldproviders.WorldProviderMetztli;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderVortex;
 import zollerngalaxy.items.ZGItems;
 import zollerngalaxy.items.armor.ZGArmor;
@@ -116,11 +117,22 @@ public class ZGEvents {
 	
 	@SubscribeEvent(priority = EventPriority.HIGH, receiveCanceled = true)
 	public void onWindBlowingEvent(WindBlowingEvent event) {
+		final Minecraft minecraft = ZGUtils.getClient();
+		final EntityPlayerSP player = minecraft.player;
+		
 		World world = event.getWorld();
-		if (!world.isRemote) {
-			if (ZGHelper.rngInt(1, 50) == 0) {
-				event.updateDirectionBasedOnChance();
-			}
+		
+		if (ZGHelper.rngInt(1, 50) == 0 && minecraft.world.provider instanceof WorldProviderVortex) {
+			double freq = player.getRNG().nextDouble() * Math.PI * 2.0F;
+			double dist = 120.0F;
+			double dX = dist * Math.cos(freq);
+			double dZ = dist * Math.sin(freq);
+			double posX = player.posX + dX;
+			double posY = 70;
+			double posZ = player.posZ + dZ;
+			float pitch = 5.0F + player.getRNG().nextFloat() * 0.2F;
+			event.updateDirectionBasedOnChance();
+			minecraft.world.playSound(player, posX, posY, posZ, ZGSoundEvents.WEATHER_WIND, SoundCategory.WEATHER, 1000.0F, pitch);
 		}
 	}
 	
@@ -150,8 +162,8 @@ public class ZGEvents {
 				double posX = player.posX + dX;
 				double posY = 70;
 				double posZ = player.posZ + dZ;
-				minecraft.world.playSound(player, posX, posY, posZ, SoundEvents.ENTITY_LIGHTNING_THUNDER, SoundCategory.WEATHER, 1000.0F,
-						5.0F + player.getRNG().nextFloat() * 0.2F);
+				float pitch = 5.0F + player.getRNG().nextFloat() * 0.2F;
+				minecraft.world.playSound(player, posX, posY, posZ, SoundEvents.ENTITY_LIGHTNING_THUNDER, SoundCategory.WEATHER, 1000.0F, pitch);
 				lightning.put(new BlockPos(posX, posY, posZ), 20);
 			}
 		}
@@ -355,8 +367,7 @@ public class ZGEvents {
 			EntityZombie zombie = (EntityZombie) entity;
 			World world = entity.world;
 			if (!world.isRemote) {
-				// TODO: Change WorldProviderSpace to WorldProviderMetzli
-				if (world.provider instanceof WorldProviderSpace) {
+				if (world.provider instanceof WorldProviderMetztli) {
 					if (rand.nextInt(400) == 0) {
 						int mutantChance = rand.nextInt(100);
 						// Ghoul
@@ -396,6 +407,7 @@ public class ZGEvents {
 							}
 							world.spawnEntity(szombie);
 							ZombieUtils.playMutateSound(szombie.posX, szombie.posY, szombie.posZ, world, rand);
+							// Volatile
 						} else if (mutantChance <= ZombieUtils.MUTATE_VOLATILE_CHANCE) {
 							zombie.setDead();
 							

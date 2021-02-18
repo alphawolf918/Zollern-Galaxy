@@ -799,12 +799,10 @@ planet.altum=Altum
 planet.caligro=Caligro
 
 planet.vortex=Vortex
-planet.meztli=Metztli
+planet.metztli=Metztli
 planet.centotl=Centotl
 planet.toci=Toci
 planet.tlaloc=Tlaloc
-
-planet.somnium=Somnium
 
 planet.ares=Ares
 planet.prometheus=Prometheus
@@ -816,6 +814,10 @@ planet.maveth=Maveth
 
 planet.meridian=Meridian
 planet.reach=Reach
+
+planet.somnium=Somnium
+planet.primor=Primor
+
 
 ## Stars ##
 

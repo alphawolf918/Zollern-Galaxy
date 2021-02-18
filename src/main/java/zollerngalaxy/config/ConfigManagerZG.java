@@ -47,7 +47,7 @@ public class ConfigManagerZG {
 	
 	// Planets (Pantheon)
 	public static int planetVortexDimensionId;
-	public static int planetMeztliDimensionId;
+	public static int planetMetztliDimensionId;
 	public static int planetCentotlDimensionId;
 	public static int planetTociDimensionId;
 	public static int planetTlalocDimensionId;
@@ -119,6 +119,9 @@ public class ConfigManagerZG {
 	public static int spaceStationVortexId;
 	public static int spaceStationVortexStaticId;
 	
+	public static int spaceStationMetztliId;
+	public static int spaceStationMetztliStaticId;
+	
 	// Misc
 	public static boolean canEarthAnimalsSpawnOnEden;
 	public static boolean disableStarGates;
@@ -165,6 +168,7 @@ public class ConfigManagerZG {
 	public static boolean planetUnreachableCaligro;
 	public static boolean planetUnreachableExodus;
 	public static boolean planetUnreachableVortex;
+	public static boolean planetUnreachableMetztli;
 	
 	// Max Health Customization
 	public static double maxHealthAllowed;
@@ -231,6 +235,7 @@ public class ConfigManagerZG {
 	
 	// Planet Tiers (Pantheon)
 	public static int planetVortexTier;
+	public static int planetMetztliTier;
 	
 	public static void init(FMLPreInitializationEvent event) {
 		configuration = new Configuration(new File(event.getModConfigurationDirectory().getAbsolutePath() + "/ZollernGalaxy/core.cfg"));
@@ -260,7 +265,7 @@ public class ConfigManagerZG {
 		
 		// Planets (Pantheon)
 		planetVortexDimensionId = configuration.get(CATEGORY_DIMENSIONS, "Planet Vortex Dimension ID", -7675).getInt();
-		planetMeztliDimensionId = configuration.get(CATEGORY_DIMENSIONS, "Planet Meztli Dimension ID", -7991).getInt();
+		planetMetztliDimensionId = configuration.get(CATEGORY_DIMENSIONS, "Planet Metztli Dimension ID", -7991).getInt();
 		planetCentotlDimensionId = configuration.get(CATEGORY_DIMENSIONS, "Planet Centotl Dimension ID", -7997).getInt();
 		planetTociDimensionId = configuration.get(CATEGORY_DIMENSIONS, "Planet Toci Dimension ID", -7985).getInt();
 		planetTlalocDimensionId = configuration.get(CATEGORY_DIMENSIONS, "Planet Tlaloc Dimension ID", -7986).getInt();
@@ -353,6 +358,10 @@ public class ConfigManagerZG {
 		// Vortex
 		spaceStationVortexId = configuration.get(CATEGORY_SATELLITES, "Vortex Space Station ID", -6026).getInt();
 		spaceStationVortexStaticId = configuration.get(CATEGORY_SATELLITES, "Vortex Space Station Static ID", -6027).getInt();
+		
+		// Metztli
+		spaceStationMetztliId = configuration.get(CATEGORY_SATELLITES, "Vortex Space Station ID", -6028).getInt();
+		spaceStationMetztliStaticId = configuration.get(CATEGORY_SATELLITES, "Vortex Space Station ID", -6029).getInt();
 		
 		// Misc (Can Earth animals spawn on Eden?)
 		canEarthAnimalsSpawnOnEden = configuration.get(CATEGORY_MISC, "Earth Animals Spawn On Eden", true, "Should Earth animals spawn on Eden? (default: true)")
@@ -498,6 +507,8 @@ public class ConfigManagerZG {
 				.get(CATEGORY_CUSTOMIZATIONS, "Disable Rockets For Planet Exodus", false, "Disable rocket travel for this planet. (default: false)").getBoolean();
 		planetUnreachableVortex = configuration
 				.get(CATEGORY_CUSTOMIZATIONS, "Disable Rockets For Planet Vortex", false, "Disable rocket travel for this planet. (default: false)").getBoolean();
+		planetUnreachableMetztli = configuration
+				.get(CATEGORY_CUSTOMIZATIONS, "Disable Rockets For Planet Metztli", false, "Disable rocket travel for this planet. (default: false)").getBoolean();
 		
 		//
 		maxHealthAllowed = configuration.get(CATEGORY_CUSTOMIZATIONS, "Max Health Allowed", 40, "The max health that Players are allowed to have. (default: 40)")
@@ -564,7 +575,10 @@ public class ConfigManagerZG {
 		planetAltumTier = configuration.get(CATEGORY_TIERS, "Planet Altum Tier", 10).getInt();
 		planetCaligroTier = configuration.get(CATEGORY_TIERS, "Planet Caligro Tier", 11).getInt();
 		planetExodusTier = configuration.get(CATEGORY_TIERS, "Planet Exodus Tier", 3).getInt();
+		
+		// Planet Tiers (Pantheon)
 		planetVortexTier = configuration.get(CATEGORY_TIERS, "Planet Vortex Tier", 4).getInt();
+		planetMetztliTier = configuration.get(CATEGORY_TIERS, "Planet Metztli Tier", 3).getInt();
 		
 		configuration.save();
 	}

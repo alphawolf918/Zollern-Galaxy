@@ -22,6 +22,7 @@ import zollerngalaxy.core.dimensions.worldproviders.WorldProviderCandora;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderEden;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderExodus;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderKriffon;
+import zollerngalaxy.core.dimensions.worldproviders.WorldProviderMetztli;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderOasis;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderPerdita;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderPurgot;
@@ -126,7 +127,7 @@ public class ZGPlanets {
 	
 	// Pantheon Planets
 	public static ZGPlanet planetVortex = new ZGPlanet("vortex");
-	public static ZGPlanet planetMeztli;
+	public static ZGPlanet planetMetztli = new ZGPlanet("metztli");
 	public static ZGPlanet planetCentotl;
 	public static ZGPlanet planetToci;
 	public static ZGPlanet planetTlaloc;
@@ -154,7 +155,6 @@ public class ZGPlanets {
 		ZGPlanets.initMoons();
 		ZGPlanets.registerSystems();
 		ZGPlanets.registerTeleportTypes();
-		
 	}
 	
 	public static void initStarSystems() {
@@ -564,7 +564,7 @@ public class ZGPlanets {
 		planetVortex.setPhaseShift(50F);
 		planetVortex.setRelativeOrbitTime(4.5F);
 		planetVortex.setDistanceFromCenter(3.0F);
-		planetVortex.setTierRequired(ConfigManagerZG.planetExodusTier);
+		planetVortex.setTierRequired(ConfigManagerZG.planetVortexTier);
 		if (ConfigManagerZG.planetUnreachableAll || ConfigManagerZG.planetUnreachableVortex) {
 			planetVortex.setDisableRockets();
 		}
@@ -579,6 +579,30 @@ public class ZGPlanets {
 		planetVortex.setBodyIcon("vortex");
 		planetVortex.setAtmosphere();
 		planetVortex.setBiomeInfo(ZGBiomes.VORTEX_BASE, ZGBiomes.VORTEX_MOUNTAINS, ZGBiomes.VORTEX_CHARGIUM_SEA);
+		totalPlanets++;
+		
+		// Metztli
+		planetMetztli.setDimensionInfo(ConfigManagerZG.planetMetztliTier, WorldProviderMetztli.class);
+		planetMetztli.setParentSolarSystem(systemPantheon);
+		planetMetztli.setBodyClass(EnumBodyClass.M);
+		planetMetztli.setRingColorRGB(1.0F, 1.0F, 1.9F);
+		planetMetztli.setPhaseShift(0.0F);
+		planetMetztli.setRelativeOrbitTime(8.0F);
+		planetMetztli.setDistanceFromCenter(4.0F);
+		planetMetztli.setTierRequired(ConfigManagerZG.planetMetztliTier);
+		if (ConfigManagerZG.planetUnreachableAll || ConfigManagerZG.planetUnreachableMetztli) {
+			planetMetztli.setDisableRockets();
+		}
+		planetMetztli.setRelativeSize(165.0F);
+		planetMetztli.setBodyTemperature(86.05F);
+		planetMetztli.setHasRain(true);
+		planetMetztli.setBodyToxicity(0.0F);
+		planetMetztli.setBodyRadiation(0.0F);
+		planetMetztli.setWindLevel(25.6F);
+		planetMetztli.setBodyGasses(EnumAtmosphericGas.NITROGEN, EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.ARGON, EnumAtmosphericGas.WATER);
+		planetMetztli.setBodyIcon("metztli");
+		planetMetztli.setAtmosphere();
+		planetMetztli.setBiomeInfo(ZGBiomes.METZTLI_HARRAN);
 		totalPlanets++;
 		
 		ZGHelper.Log("Loaded a total of " + totalPlanets + " new planets.");
@@ -621,6 +645,7 @@ public class ZGPlanets {
 		GalaxyRegistry.registerPlanet(planetCaligro);
 		GalaxyRegistry.registerPlanet(planetExodus);
 		GalaxyRegistry.registerPlanet(planetVortex);
+		GalaxyRegistry.registerPlanet(planetMetztli);
 	}
 	
 	public static void registerTeleportTypes() {
@@ -645,6 +670,6 @@ public class ZGPlanets {
 		
 		// Pantheon
 		GalacticraftRegistry.registerTeleportType(WorldProviderVortex.class, new TeleportTypeMars());
-		// TODO
+		GalacticraftRegistry.registerTeleportType(WorldProviderMetztli.class, new TeleportTypeMars());
 	}
 }

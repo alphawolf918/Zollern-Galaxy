@@ -19,14 +19,14 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.client.FMLClientHandler;
 
-public class SkyProviderVortex extends SkyProviderBaseZG {
+public class SkyProviderMetztli extends SkyProviderBaseZG {
 	
 	private ResourceLocation pantheonTexture = new ResourceLocation("zollerngalaxy:textures/gui/pantheon.png");
-	private ResourceLocation metztliTexture = new ResourceLocation("zollerngalaxy:textures/gui/metztli.png");
+	private ResourceLocation vortexTexture = new ResourceLocation("zollerngalaxy:textures/gui/vortex.png");
 	
-	public SkyProviderVortex(IGalacticraftWorldProvider provider) {
+	public SkyProviderMetztli(IGalacticraftWorldProvider provider) {
 		super();
-		this.sunSize = 1.5F * provider.getSolarSize();
+		this.sunSize = 0.9F * provider.getSolarSize();
 	}
 	
 	@Override
