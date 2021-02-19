@@ -360,8 +360,8 @@ public class ConfigManagerZG {
 		spaceStationVortexStaticId = configuration.get(CATEGORY_SATELLITES, "Vortex Space Station Static ID", -6027).getInt();
 		
 		// Metztli
-		spaceStationMetztliId = configuration.get(CATEGORY_SATELLITES, "Vortex Space Station ID", -6028).getInt();
-		spaceStationMetztliStaticId = configuration.get(CATEGORY_SATELLITES, "Vortex Space Station ID", -6029).getInt();
+		spaceStationMetztliId = configuration.get(CATEGORY_SATELLITES, "Metztli Space Station ID", -6028).getInt();
+		spaceStationMetztliStaticId = configuration.get(CATEGORY_SATELLITES, "Metztli Space Station ID", -6029).getInt();
 		
 		// Misc (Can Earth animals spawn on Eden?)
 		canEarthAnimalsSpawnOnEden = configuration.get(CATEGORY_MISC, "Earth Animals Spawn On Eden", true, "Should Earth animals spawn on Eden? (default: true)")

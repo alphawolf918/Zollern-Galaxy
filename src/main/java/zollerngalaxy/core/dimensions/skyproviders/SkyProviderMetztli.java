@@ -56,7 +56,7 @@ public class SkyProviderMetztli extends SkyProviderBaseZG {
 		// Pantheon
 		GlStateManager.disableTexture2D();
 		GlStateManager.blendFunc(770, 1);
-		GlStateManager.color(0.0F, 0.0F, 0.0F, 1.0F);
+		GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
 		
 		// Some blanking to conceal the stars
 		// scale = 1.5F;// this.sunSize / 3.5F;
@@ -89,7 +89,7 @@ public class SkyProviderMetztli extends SkyProviderBaseZG {
 	
 	@Override
 	protected float[] getStarBrightness() {
-		return new float[] { 0.35F, 0.55F };
+		return new float[] { 0.55F, 0.75F };
 	}
 	
 	@Override

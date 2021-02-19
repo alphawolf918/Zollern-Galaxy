@@ -582,7 +582,7 @@ public class ZGPlanets {
 		totalPlanets++;
 		
 		// Metztli
-		planetMetztli.setDimensionInfo(ConfigManagerZG.planetMetztliTier, WorldProviderMetztli.class);
+		planetMetztli.setDimensionInfo(ConfigManagerZG.planetMetztliDimensionId, WorldProviderMetztli.class);
 		planetMetztli.setParentSolarSystem(systemPantheon);
 		planetMetztli.setBodyClass(EnumBodyClass.M);
 		planetMetztli.setRingColorRGB(1.0F, 1.0F, 1.9F);
@@ -595,9 +595,10 @@ public class ZGPlanets {
 		}
 		planetMetztli.setRelativeSize(165.0F);
 		planetMetztli.setBodyTemperature(86.05F);
+		planetMetztli.setDensity(10.0F);
 		planetMetztli.setHasRain(true);
-		planetMetztli.setBodyToxicity(0.0F);
-		planetMetztli.setBodyRadiation(0.0F);
+		planetMetztli.setBodyToxicity(5.2F);
+		planetMetztli.setBodyRadiation(8.0F);
 		planetMetztli.setWindLevel(25.6F);
 		planetMetztli.setBodyGasses(EnumAtmosphericGas.NITROGEN, EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.ARGON, EnumAtmosphericGas.WATER);
 		planetMetztli.setBodyIcon("metztli");

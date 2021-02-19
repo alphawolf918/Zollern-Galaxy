@@ -19,6 +19,7 @@ import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitCand
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitEden;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitExodus;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitKriffon;
+import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitMetztli;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitOasis;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitPerdita;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitPurgot;
@@ -195,8 +196,10 @@ public class ZGDimensions {
 		
 		// Pantheon (Metztli)
 		ZGDimensions.METZTLI = ZGDimensions.getDimType(ConfigManagerZG.planetMetztliDimensionId);
-		// No need for a space station yet until I can figure out why the planet isn't
-		// registering...
+		ZGDimensions.METZTLI_ORBIT = DimensionType.register("Metztli Space Station", "_metztli_orbit", ConfigManagerZG.spaceStationMetztliId,
+				WorldProviderOrbitMetztli.class, false);
+		ZGDimensions.METZTLI_ORBIT_STATIC = DimensionType.register("Metztli Space Station", "_metztli_orbit", ConfigManagerZG.spaceStationMetztliStaticId,
+				WorldProviderOrbitMetztli.class, true);
 	}
 	
 	public static DimensionType getDimType(int dimId) {

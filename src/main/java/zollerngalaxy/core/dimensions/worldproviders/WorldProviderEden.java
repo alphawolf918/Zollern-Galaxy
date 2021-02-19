@@ -190,7 +190,6 @@ public class WorldProviderEden extends WorldProviderZG {
 	
 	@Override
 	public ResourceLocation getDungeonChestType() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 	

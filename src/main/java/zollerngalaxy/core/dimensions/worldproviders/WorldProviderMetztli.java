@@ -33,7 +33,7 @@ public class WorldProviderMetztli extends WorldProviderZG {
 	
 	@Override
 	public float getGravity() {
-		return 0.065F;
+		return 0.064F;
 	}
 	
 	@Override
@@ -48,7 +48,7 @@ public class WorldProviderMetztli extends WorldProviderZG {
 	
 	@Override
 	public double getFuelUsageMultiplier() {
-		return 6.2D;
+		return 4.2D;
 	}
 	
 	@Override
@@ -175,12 +175,12 @@ public class WorldProviderMetztli extends WorldProviderZG {
 	
 	@Override
 	public double getHorizon() {
-		return 58.0D;
+		return 54.0D;
 	}
 	
 	@Override
 	public int getAverageGroundLevel() {
-		return 64;
+		return 82;
 	}
 	
 	@Override

@@ -23,6 +23,7 @@ import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitCand
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitEden;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitExodus;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitKriffon;
+import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitMetztli;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitOasis;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitPerdita;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitPurgot;
@@ -59,6 +60,7 @@ public class ZGSpaceStations {
 	
 	// Pantheon
 	public static ZGSpaceStation VORTEX_SPACE_STATION;
+	public static ZGSpaceStation METZTLI_SPACE_STATION;
 	
 	public static void init() {
 		ZGSpaceStations.initSpaceStations();
@@ -137,6 +139,11 @@ public class ZGSpaceStations {
 		VORTEX_SPACE_STATION = new ZGSpaceStation("vortex", ZGPlanets.planetVortex);
 		VORTEX_SPACE_STATION.setDimensionInfo(ConfigManagerZG.spaceStationVortexId, ConfigManagerZG.spaceStationVortexStaticId, WorldProviderOrbitVortex.class);
 		totalSpaceStations++;
+		
+		// Pantheon (Metztli)
+		METZTLI_SPACE_STATION = new ZGSpaceStation("metztli", ZGPlanets.planetMetztli);
+		METZTLI_SPACE_STATION.setDimensionInfo(ConfigManagerZG.spaceStationMetztliId, ConfigManagerZG.spaceStationMetztliStaticId, WorldProviderOrbitMetztli.class);
+		totalSpaceStations++;
 	}
 	
 	private static void registerSpaceStations() {
@@ -195,6 +202,10 @@ public class ZGSpaceStations {
 		// Pantheon (Vortex)
 		ZGSpaceStations.registerSpaceStation(VORTEX_SPACE_STATION, "Vortex Space Station", "_vortex_orbit", WorldProviderOrbitVortex.class,
 				ConfigManagerZG.spaceStationVortexId, ConfigManagerZG.spaceStationVortexStaticId);
+		
+		// Pantheon (Metztli)
+		ZGSpaceStations.registerSpaceStation(METZTLI_SPACE_STATION, "Metztli Space Station", "_metztli_orbit", WorldProviderOrbitMetztli.class,
+				ConfigManagerZG.spaceStationMetztliId, ConfigManagerZG.spaceStationMetztliStaticId);
 	}
 	
 	public static void registerSpaceStationRecipes() {
@@ -293,7 +304,7 @@ public class ZGSpaceStations {
 		inputMap = new HashMap<Object, Integer>();
 		inputMap.put("ingotRhodium", 32);
 		inputMap.put("waferAdvanced", 1);
-		inputMap.put(new ItemStack(ZGItems.witherite, 4, 0), 24);
+		inputMap.put(new ItemStack(ZGItems.witherite, 1, 0), 24);
 		inputMap.put(ZGItems.compressedAscendantAmaranth, 24);
 		ZGRecipeHelper.addSpaceStationRecipe(ConfigManagerZG.spaceStationCaligroId, ConfigManagerZG.planetCaligroDimensionId, inputMap);
 		
@@ -302,7 +313,7 @@ public class ZGSpaceStations {
 		inputMap = new HashMap<Object, Integer>();
 		inputMap.put("ingotAmaranth", 32);
 		inputMap.put("waferAdvanced", 1);
-		inputMap.put(new ItemStack(ZGItems.edenCrystal, 4, 0), 24);
+		inputMap.put(new ItemStack(ZGItems.edenCrystal, 1, 0), 24);
 		inputMap.put(ZGItems.compressedGold, 24);
 		ZGRecipeHelper.addSpaceStationRecipe(ConfigManagerZG.spaceStationExodusId, ConfigManagerZG.planetExodusDimensionId, inputMap);
 		
@@ -311,9 +322,18 @@ public class ZGSpaceStations {
 		inputMap = new HashMap<Object, Integer>();
 		inputMap.put("ingotChargium", 32);
 		inputMap.put("waferAdvanced", 1);
-		inputMap.put(new ItemStack(ZGItems.stormCrystal, 4, 0), 24);
+		inputMap.put(new ItemStack(ZGItems.stormCrystal, 1, 0), 24);
 		inputMap.put(ZGItems.compressedSuperChargedCoal, 24);
 		ZGRecipeHelper.addSpaceStationRecipe(ConfigManagerZG.spaceStationVortexId, ConfigManagerZG.planetVortexDimensionId, inputMap);
+		
+		// Pantheon (Metztli)
+		inputMap = new HashMap<Object, Integer>();
+		inputMap = new HashMap<Object, Integer>();
+		inputMap.put("ingotChargium", 32);
+		inputMap.put("waferAdvanced", 1);
+		inputMap.put(new ItemStack(ZGItems.compressedCobalt, 1, 0), 24);
+		inputMap.put(ZGItems.compressedDiamond, 24);
+		ZGRecipeHelper.addSpaceStationRecipe(ConfigManagerZG.spaceStationMetztliId, ConfigManagerZG.planetMetztliDimensionId, inputMap);
 	}
 	
 	private static void registerSpaceStation(ZGSpaceStation spaceStation, String stationName, String stationStringId, Class<? extends WorldProvider> providerClass,
