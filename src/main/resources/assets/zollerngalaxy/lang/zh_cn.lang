@@ -698,6 +698,12 @@ entity.zollerngalaxy:shadowalien.name=黑暗BOSS之影
 entity.zollerngalaxy:faceless.name=无面者
 entity.zollerngalaxy:pigshroom.name=蘑菇猪
 entity.zollerngalaxy:arcon.name=阿克恩
+entity.zollerngalaxy:volatile.name=挥发气云
+entity.zollerngalaxy:seeker.name=搜寻者
+entity.zollerngalaxy:overlord.name=霸王
+entity.zollerngalaxy:ghoul.name=食尸鬼
+entity.zollerngalaxy:lightwalker.name=光明行走者
+entity.zollerngalaxy:hulk.name=Hulk
 
 ## Tooltips ##
 
@@ -797,8 +803,6 @@ planet.meztli=梅兹特利
 planet.centotl=森特奥特尔
 planet.toci=托奇
 planet.tlaloc=特拉洛克
-#有一个中文释义是“梦”
-planet.somnium=Somnium
 
 planet.ares=阿瑞斯
 planet.prometheus=普罗米修斯
@@ -810,6 +814,11 @@ planet.maveth=马维斯
 
 planet.meridian=默里迪恩
 planet.reach=致远星
+planet.requiem=安魂星
+
+planet.somnium=遥梦星
+planet.primor=原基星
+
 
 ## Stars ##
 
