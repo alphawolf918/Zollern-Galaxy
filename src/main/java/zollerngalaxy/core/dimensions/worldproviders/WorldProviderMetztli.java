@@ -33,7 +33,7 @@ public class WorldProviderMetztli extends WorldProviderZG {
 	
 	@Override
 	public float getGravity() {
-		return 0.064F;
+		return 0.024F;
 	}
 	
 	@Override
@@ -43,12 +43,12 @@ public class WorldProviderMetztli extends WorldProviderZG {
 	
 	@Override
 	public double getMeteorFrequency() {
-		return 10.0;
+		return 15.0;
 	}
 	
 	@Override
 	public double getFuelUsageMultiplier() {
-		return 4.2D;
+		return 6.2D;
 	}
 	
 	@Override
@@ -94,17 +94,17 @@ public class WorldProviderMetztli extends WorldProviderZG {
 	@Override
 	public Vector3 getFogColor() {
 		float f = 1.1F - this.getStarBrightness(1.0F);
-		return new Vector3(248F / 255F * f, 2F / 255F * f, 2F / 255F * f);
+		return new Vector3(248F / 255F * f, 2F / 255F * f, 246F / 255F * f);
 	}
 	
 	@Override
 	public Vector3 getSkyColor() {
 		if (this.world.isRaining()) {
 			float f = 1.15F - this.getStarBrightness(1.0F);
-			return new Vector3(4 / 255F * f, 16 / 255F * f, 20 / 255F * f);
+			return new Vector3(149 / 255F * f, 216 / 255F * f, 20 / 255F * f);
 		}
 		float f = 1.15F - this.getStarBrightness(1.0F);
-		return new Vector3(240 / 255F * f, 17 / 255F * f, 25 / 255F * f);
+		return new Vector3(240 / 255F * f, 230 / 255F * f, 25 / 255F * f);
 	}
 	
 	@Override
@@ -149,7 +149,7 @@ public class WorldProviderMetztli extends WorldProviderZG {
 		if (f2 > 1.0F) {
 			f2 = 1.0F;
 		}
-		return f2 * f2 * 0.8F;
+		return f2 * f2 * 0.9F;
 	}
 	
 	@Override
@@ -175,7 +175,7 @@ public class WorldProviderMetztli extends WorldProviderZG {
 	
 	@Override
 	public double getHorizon() {
-		return 54.0D;
+		return 74.0D;
 	}
 	
 	@Override
@@ -197,6 +197,7 @@ public class WorldProviderMetztli extends WorldProviderZG {
 	public List<Block> getSurfaceBlocks() {
 		ArrayList<Block> blockList = new ArrayList<Block>();
 		blockList.add(Blocks.GRASS);
+		blockList.add(Blocks.SAND);
 		return blockList;
 	}
 	

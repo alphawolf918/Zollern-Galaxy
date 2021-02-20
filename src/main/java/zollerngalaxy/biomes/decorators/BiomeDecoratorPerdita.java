@@ -65,8 +65,8 @@ public class BiomeDecoratorPerdita extends BiomeDecoratorZG {
 	private WorldGenerator lostLakeGen = new WorldGenLakesZG(Blocks.WATER, ZGBlocks.perdGrass);
 	private WorldGenerator lostTallGrassGen = new WorldGenTallGrassZG((ZGBlockTallGrass) ZGBlocks.perdTallGrass);
 	private WorldGenerator lostReedGen = new WorldGenLostReeds();
-	private WorldGenerator lostPalmWoodTreeGen = new WorldGenPalmwoodTrees(true, ZGHelper.rngInt(5, 15),
-			ZGBlocks.perdWoodLogs.getDefaultState(), ZGBlocks.perdWoodLeaves.getDefaultState(), false);
+	private WorldGenerator lostPalmWoodTreeGen = new WorldGenPalmwoodTrees(true, ZGHelper.rngInt(5, 15), ZGBlocks.perdWoodLogs.getDefaultState(),
+			ZGBlocks.perdWoodLeaves.getDefaultState(), false);
 	private WorldGenerator lostFueltoniumLakeGen = new WorldGenLakesZG(ZGFluids.blockFueltoniumFluid, ZGBlocks.perdSand);
 	private WorldGenerator lostTreasureGen = new WorldGenTreasure(ZGLootTables.CHEST_BURIED_TREASURE);
 	
@@ -229,11 +229,11 @@ public class BiomeDecoratorPerdita extends BiomeDecoratorZG {
 			}
 		}
 		
+		// Outposts
 		if (this.generateOutposts && this.outpostsPerChunk > 0) {
 			y = rand.nextInt(rand.nextInt(genY) + 8);
 			if (y >= 62) {
-				WorldGenerator outpostGen = new WorldGenOutpost(ZGBlocks.blockOutpost.getDefaultState(),
-						ZGBlocks.blockOutpost.getDefaultState());
+				WorldGenerator outpostGen = new WorldGenOutpost(ZGBlocks.blockOutpost.getDefaultState(), ZGBlocks.blockOutpost.getDefaultState());
 				for (int i = 0; i < this.outpostsPerChunk; i++) {
 					if (rand.nextInt((this.enableExtremeMode) ? 200 : 100) <= ConfigManagerZG.outpostGenChance) {
 						outpostGen.generate(world, rand, this.chunkPos.add(x, y, z));

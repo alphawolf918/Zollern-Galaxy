@@ -57,9 +57,9 @@ public class EntityMutantZombie extends EntityZombie implements IEntityBreathabl
 		super(worldIn);
 		((PathNavigateGround) this.getNavigator()).setBreakDoors(true);
 		this.tasks.addTask(0, new EntityAISwimming(this));
-		this.tasks.addTask(2, new EntityAIMutantAttack(this, 0.5D, false));
-		this.tasks.addTask(5, new EntityAIMoveTowardsRestriction(this, 1.2D));
-		this.tasks.addTask(7, new EntityAIWander(this, 1.0D));
+		this.tasks.addTask(2, new EntityAIMutantAttack(this, 2.5D, true));
+		this.tasks.addTask(5, new EntityAIMoveTowardsRestriction(this, 2.2D));
+		this.tasks.addTask(7, new EntityAIWander(this, 2.0D));
 		this.tasks.addTask(8, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
 		this.tasks.addTask(8, new EntityAILookIdle(this));
 		this.setMutantName("Mutant");

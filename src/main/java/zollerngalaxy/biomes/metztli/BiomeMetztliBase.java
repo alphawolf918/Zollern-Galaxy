@@ -16,6 +16,7 @@ import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedSpider;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedWitch;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedZombie;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.monster.EntityCreeper;
 import net.minecraft.entity.monster.EntityEnderman;
@@ -40,9 +41,14 @@ public abstract class BiomeMetztliBase extends BiomeSpace {
 	protected static final IBlockState AIR = Blocks.AIR.getDefaultState();
 	protected static final IBlockState BEDROCK = Blocks.BEDROCK.getDefaultState();
 	protected static final IBlockState GRAVEL = Blocks.GRAVEL.getDefaultState();
+	protected static final IBlockState GRASS = Blocks.GRASS.getDefaultState();
 	protected static final IBlockState DIRT = Blocks.DIRT.getDefaultState();
 	protected static final IBlockState ICE = Blocks.ICE.getDefaultState();
 	protected static final IBlockState WATER = Blocks.WATER.getDefaultState();
+	
+	protected static final PropertyBool SNOWY = PropertyBool.create("snowy");
+	
+	protected static final IBlockState SNOWY_GRASS = GRASS.withProperty(SNOWY, Boolean.valueOf(true));
 	
 	protected static final int SEA_LEVEL = ChunkProviderMetztli.SEA_LEVEL;
 	protected static final int SEA_FLOOR_LEVEL = (SEA_LEVEL - 21);

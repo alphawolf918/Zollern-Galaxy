@@ -65,6 +65,10 @@ import zollerngalaxy.biomes.exodus.BiomeExodusRockyHills;
 import zollerngalaxy.biomes.kriffon.BiomeKriffon;
 import zollerngalaxy.biomes.kriffon.BiomeKriffonLavaOcean;
 import zollerngalaxy.biomes.metztli.BiomeHarran;
+import zollerngalaxy.biomes.metztli.BiomeHarranDunes;
+import zollerngalaxy.biomes.metztli.BiomeHarranOcean;
+import zollerngalaxy.biomes.metztli.BiomeHarranSwamp;
+import zollerngalaxy.biomes.metztli.BiomeHarranTundra;
 import zollerngalaxy.biomes.oasis.BiomeOasisPlains;
 import zollerngalaxy.biomes.oasis.BiomeOasisRedSea;
 import zollerngalaxy.biomes.oasis.BiomeRedlands;
@@ -178,7 +182,11 @@ public class ZGBiomes {
 	public static final Biome VORTEX_CHARGIUM_SEA = new BiomeVortexChargiumSea(new BiomeProperties("Vortex Chargium Sea"));
 	
 	// Metztli
-	public static final Biome METZTLI_HARRAN = new BiomeHarran(new BiomeProperties("Harran"));
+	public static final Biome METZTLI_HARRAN_PRIME = new BiomeHarran(new BiomeProperties("Harran Plains"));
+	public static final Biome METZTLI_HARRAN_DUNES = new BiomeHarranDunes(new BiomeProperties("Harran Dunes"));
+	public static final Biome METZTLI_HARRAN_OCEAN = new BiomeHarranOcean(new BiomeProperties("Harran Ocean"));
+	public static final Biome METZTLI_HARRAN_SWAMP = new BiomeHarranSwamp(new BiomeProperties("Harran Swamp"));
+	public static final Biome METZTLI_HARRAN_TUNDRA = new BiomeHarranTundra(new BiomeProperties("Harran Tundra"), BiomeHarranTundra.Type.MEGA_SPRUCE);
 	
 	public static void init() {
 		// Zollus
@@ -261,12 +269,16 @@ public class ZGBiomes {
 		ZGBiomes.addBiome(ZGBiomes.EXODUS_BLACK_MESA, DEAD, HOT, DRY, MOUNTAIN, WASTELAND);
 		
 		// Vortex
-		ZGBiomes.addBiome(VORTEX_BASE, MOUNTAIN, HOT, WET);
-		ZGBiomes.addBiome(VORTEX_MOUNTAINS, MOUNTAIN, HOT, DEAD, DRY);
-		ZGBiomes.addBiome(VORTEX_CHARGIUM_SEA, DEAD, SPOOKY, HOT, OCEAN);
+		ZGBiomes.addBiome(ZGBiomes.VORTEX_BASE, MOUNTAIN, HOT, WET);
+		ZGBiomes.addBiome(ZGBiomes.VORTEX_MOUNTAINS, MOUNTAIN, HOT, DEAD, DRY);
+		ZGBiomes.addBiome(ZGBiomes.VORTEX_CHARGIUM_SEA, DEAD, SPOOKY, HOT, OCEAN);
 		
 		// Metztli
-		ZGBiomes.addBiome(METZTLI_HARRAN, LUSH, WASTELAND, DEAD, WET);
+		ZGBiomes.addBiome(ZGBiomes.METZTLI_HARRAN_PRIME, LUSH, WASTELAND, DEAD, WET);
+		ZGBiomes.addBiome(ZGBiomes.METZTLI_HARRAN_DUNES, DEAD, HOT, DRY, MOUNTAIN, WASTELAND);
+		ZGBiomes.addBiome(ZGBiomes.METZTLI_HARRAN_OCEAN, DEAD, WET, OCEAN);
+		ZGBiomes.addBiome(ZGBiomes.METZTLI_HARRAN_SWAMP, DEAD, LUSH, WET, SWAMP);
+		ZGBiomes.addBiome(ZGBiomes.METZTLI_HARRAN_TUNDRA, DEAD, PLAINS, COLD, SNOWY);
 		
 		ZGHelper.Log("Loaded a total of " + totalBiomes + " new biomes.");
 	}
