@@ -115,6 +115,7 @@ public class ZGEvents {
 	
 	private Map<BlockPos, Integer> lightning = Maps.newHashMap();
 	
+	@SideOnly(Side.CLIENT)
 	@SubscribeEvent(priority = EventPriority.HIGH, receiveCanceled = true)
 	public void onWindBlowingEvent(WindBlowingEvent event) {
 		final Minecraft minecraft = ZGUtils.getClient();
@@ -139,7 +140,7 @@ public class ZGEvents {
 	@SideOnly(Side.CLIENT)
 	@SubscribeEvent
 	public void onPlayerTick(TickEvent.PlayerTickEvent event) {
-		final Minecraft minecraft = ZGUtils.getClient();
+		final Minecraft minecraft = ZGUtils.getMinecraft();
 		final EntityPlayerSP player = minecraft.player;
 		
 		if (player == event.player) {

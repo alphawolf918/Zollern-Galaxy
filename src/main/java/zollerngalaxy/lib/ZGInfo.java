@@ -16,7 +16,7 @@ public class ZGInfo {
 	public static final String MOD_ID = "zollerngalaxy";
 	public static final String vMAJOR = "2";
 	public static final String vMINOR = "0";
-	public static final String vBUILD = "23";
+	public static final String vBUILD = "25";
 	public static final String MOD_VERSION = vMAJOR + "." + vMINOR + "." + vBUILD;
 	public static final String MINECRAFT_VERSION = "1.12.2";
 	public static final String OFFICIAL_NAME = "Zollern Galaxy";

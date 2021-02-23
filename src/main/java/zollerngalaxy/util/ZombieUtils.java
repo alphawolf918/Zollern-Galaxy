@@ -39,7 +39,7 @@ public abstract class ZombieUtils {
 		double y = player.posY;
 		double z = player.posZ;
 		Random rand = new Random();
-		EntityMob zombie = new EntityZombie(world); // Zombie by default; prevents nulls
+		EntityMob zombie = new EntityZombie(world); // Zombie by default; prevents nulls.
 		if (entityName != "Zombie") {
 			try {
 				zombie = entityMutant.getDeclaredConstructor(World.class).newInstance(world);
@@ -65,7 +65,7 @@ public abstract class ZombieUtils {
 	}
 	
 	/**
-	 * For playing the Mutation sound.
+	 * For playing the Mutation sound. Seems to have issues playing though.
 	 * 
 	 * @param x
 	 * @param y
