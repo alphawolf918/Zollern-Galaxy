@@ -170,6 +170,7 @@ public class ZGEvents {
 		}
 	}
 	
+	@SideOnly(Side.CLIENT) 
 	@SubscribeEvent
 	public void renderLightning(ClientProxyCore.EventSpecialRender event) {
 		final Minecraft minecraft = ZGUtils.getClient();
