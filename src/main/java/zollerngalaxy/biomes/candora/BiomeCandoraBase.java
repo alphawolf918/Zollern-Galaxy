@@ -20,9 +20,9 @@ import zollerngalaxy.biomes.decorators.BiomeDecoratorCandora;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.blocks.fluids.ZGFluids;
 import zollerngalaxy.blocks.sweetblocks.CandyCubeBlock;
+import zollerngalaxy.celestial.ZGPlanets;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderCandora;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
-import zollerngalaxy.planets.ZGPlanets;
 
 public class BiomeCandoraBase extends BiomeSpace {
 	

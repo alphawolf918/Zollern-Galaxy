@@ -31,6 +31,7 @@ public class BiomeDecoratorPurgot extends BiomeDecoratorZG {
 	private WorldGenerator diamondGen;
 	private WorldGenerator emeraldGen;
 	private WorldGenerator meteoricIronGen;
+	private WorldGenerator eveniumGen;
 	
 	public BiomeDecoratorPurgot() {
 		this.dirtGen = new WorldGenMinableZG(ZGBlocks.purgDirt, ZGBlocks.purgSurfaceRock, EnumOreGenZG.DIRT);
@@ -44,6 +45,7 @@ public class BiomeDecoratorPurgot extends BiomeDecoratorZG {
 		this.diamondGen = new WorldGenMinableZG(ZGBlocks.purgDiamondOre, ZGBlocks.purgStone, EnumOreGenZG.DIAMOND);
 		this.emeraldGen = new WorldGenMinableZG(ZGBlocks.purgEmeraldOre, ZGBlocks.purgStone, EnumOreGenZG.EMERALD);
 		this.meteoricIronGen = new WorldGenMinableZG(ZGBlocks.purgMeteoricIronOre, ZGBlocks.purgStone, EnumOreGenZG.METEORIC_IRON);
+		this.eveniumGen = new WorldGenMinableZG(ZGBlocks.purgEveniumOre, ZGBlocks.purgStone, EnumOreGenZG.EVENIUM.setGenCount(11));
 	}
 	
 	@Override
@@ -63,6 +65,7 @@ public class BiomeDecoratorPurgot extends BiomeDecoratorZG {
 		this.generateOre(this.diamondGen, EnumOreGenZG.DIAMOND, world, rand);
 		this.generateOre(this.emeraldGen, EnumOreGenZG.EMERALD, world, rand);
 		this.generateOre(this.meteoricIronGen, EnumOreGenZG.METEORIC_IRON, world, rand);
+		this.generateOre(this.eveniumGen, EnumOreGenZG.EVENIUM, world, rand);
 		
 		int genY = y;
 		
@@ -74,23 +77,9 @@ public class BiomeDecoratorPurgot extends BiomeDecoratorZG {
 		if (this.generateOutposts && this.outpostsPerChunk > 0) {
 			y = rand.nextInt(rand.nextInt(genY) + 8);
 			if (y >= 62) {
-				WorldGenerator outpostGen = new WorldGenOutpost(ZGBlocks.blockOutpost.getDefaultState(),
-						ZGBlocks.blockOutpost.getDefaultState());
+				WorldGenerator outpostGen = new WorldGenOutpost(ZGBlocks.blockOutpost.getDefaultState(), ZGBlocks.blockOutpost.getDefaultState());
 				for (int i = 0; i < this.outpostsPerChunk; i++) {
 					if (rand.nextInt(100) <= ConfigManagerZG.outpostGenChance) {
-						outpostGen.generate(world, rand, this.chunkPos.add(x, y, z));
-					}
-				}
-			}
-		}
-		
-		if (this.generateOutposts && this.outpostsPerChunk > 0) {
-			y = rand.nextInt(rand.nextInt(genY) + 8);
-			if (y >= 62) {
-				WorldGenerator outpostGen = new WorldGenOutpost(ZGBlocks.blockOutpost.getDefaultState(),
-						ZGBlocks.blockOutpost.getDefaultState());
-				for (int i = 0; i < this.outpostsPerChunk; i++) {
-					if (rand.nextInt((this.enableExtremeMode) ? 200 : 100) <= ConfigManagerZG.outpostGenChance) {
 						outpostGen.generate(world, rand, this.chunkPos.add(x, y, z));
 					}
 				}

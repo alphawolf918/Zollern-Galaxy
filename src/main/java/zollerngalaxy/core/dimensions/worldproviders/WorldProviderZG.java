@@ -21,7 +21,7 @@ import net.minecraft.world.storage.WorldInfo;
 import net.minecraftforge.client.IRenderHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import zollerngalaxy.planets.ZGPlanet;
+import zollerngalaxy.celestial.ZGPlanet;
 
 public abstract class WorldProviderZG extends WorldProviderSpace implements ISolarLevel, IExitHeight {
 	
@@ -67,7 +67,7 @@ public abstract class WorldProviderZG extends WorldProviderSpace implements ISol
 	
 	@Override
 	public boolean canBlockFreeze(BlockPos pos, boolean byWater) {
-		return this.getPlanet().getIsColdPlanet();
+		return this.getPlanet().getIsColdBody();
 	}
 	
 	@Override
@@ -175,12 +175,12 @@ public abstract class WorldProviderZG extends WorldProviderSpace implements ISol
 	
 	public float getPlanetTemp() {
 		ZGPlanet planet = this.getPlanet();
-		float planetTemp = planet.getPlanetTemperature();
+		float planetTemp = planet.getBodyTemperature();
 		
 		if (this.isDaytime()) {
 			planetTemp /= 2.2F;
 		} else {
-			planetTemp = planet.getPlanetTemperature();
+			planetTemp = planet.getBodyTemperature();
 		}
 		
 		return planetTemp;
@@ -188,12 +188,12 @@ public abstract class WorldProviderZG extends WorldProviderSpace implements ISol
 	
 	public float getPlanetTemp(World world, BlockPos pos) {
 		ZGPlanet planet = this.getPlanet();
-		float planetTemp = planet.getPlanetTemperature(world, pos);
+		float planetTemp = planet.getBodyTemperature(world, pos);
 		
 		if (this.isDaytime()) {
 			planetTemp /= 2.2F;
 		} else {
-			planetTemp = planet.getPlanetTemperature(world, pos);
+			planetTemp = planet.getBodyTemperature(world, pos);
 		}
 		
 		return planetTemp;

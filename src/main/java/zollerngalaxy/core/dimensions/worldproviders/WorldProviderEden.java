@@ -24,10 +24,10 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.biomes.providers.BiomeProviderEden;
 import zollerngalaxy.blocks.ZGBlocks;
+import zollerngalaxy.celestial.ZGPlanets;
 import zollerngalaxy.core.dimensions.ZGDimensions;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderEden;
 import zollerngalaxy.core.dimensions.skyproviders.SkyProviderEden;
-import zollerngalaxy.planets.ZGPlanets;
 
 public class WorldProviderEden extends WorldProviderZG {
 	
@@ -190,7 +190,6 @@ public class WorldProviderEden extends WorldProviderZG {
 	
 	@Override
 	public ResourceLocation getDungeonChestType() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 	

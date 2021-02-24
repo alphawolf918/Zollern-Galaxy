@@ -17,6 +17,7 @@ import zollerngalaxy.core.ZollernGalaxyCore;
 import zollerngalaxy.lib.ZGInfo;
 import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.mobs.entities.EntityAbyssalVillager;
+import zollerngalaxy.mobs.entities.EntityArcon;
 import zollerngalaxy.mobs.entities.EntityBladeFish;
 import zollerngalaxy.mobs.entities.EntityBlubberFish;
 import zollerngalaxy.mobs.entities.EntityFaceless;
@@ -40,6 +41,10 @@ import zollerngalaxy.mobs.entities.EntitySpiderling;
 import zollerngalaxy.mobs.entities.EntitySquidlus;
 import zollerngalaxy.mobs.entities.EntityWasp;
 import zollerngalaxy.mobs.entities.boss.EntityShadowAlien;
+import zollerngalaxy.mobs.entities.zombiemutations.EntityGhoul;
+import zollerngalaxy.mobs.entities.zombiemutations.EntityOverlord;
+import zollerngalaxy.mobs.entities.zombiemutations.EntitySeeker;
+import zollerngalaxy.mobs.entities.zombiemutations.EntityVolatile;
 
 public class MobRegistry {
 	
@@ -133,6 +138,28 @@ public class MobRegistry {
 		
 		// Pig Shroom
 		registerEntity("pigshroom", EntityPigShroom.class, entityId++, 0x990000, 0xeeeeee);
+		
+		// Arcon
+		registerEntity("arcon", EntityArcon.class, entityId++, 0x0000ee, 0x0000cc);
+		
+		// ** Zombie Mutations **
+		
+		// Volatile
+		registerEntity("volatile", EntityVolatile.class, entityId++, 0xeeeeee, 0xf00000);
+		
+		// Seeker
+		registerEntity("seeker", EntitySeeker.class, entityId++, 0x009900, 0x00008b);
+		
+		// Overlord
+		registerEntity("overlord", EntityOverlord.class, entityId++, 0xeeeeee, 0x008b00);
+		
+		// Ghoul
+		registerEntity("ghoul", EntityGhoul.class, entityId++, 0x444444, 0xeeeeee);
+		
+		// Light Walker
+		// TODO
+		
+		// ** End Mutations **
 		
 		ZGHelper.Log("Loaded a total of " + totalMobs + " new mobs.");
 	}

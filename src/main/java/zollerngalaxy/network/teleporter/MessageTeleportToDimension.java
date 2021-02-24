@@ -28,7 +28,7 @@ import net.minecraftforge.fml.common.network.simpleimpl.IMessage;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessageHandler;
 import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
 import zollerngalaxy.biomes.BiomeSpace;
-import zollerngalaxy.planets.ZGPlanet;
+import zollerngalaxy.celestial.ZGPlanetaryBody;
 
 public class MessageTeleportToDimension implements IMessage {
 	
@@ -93,12 +93,12 @@ public class MessageTeleportToDimension implements IMessage {
 					WorldProviderSpace spaceProvider = (WorldProviderSpace) worldProvider;
 					y = spaceProvider.getAverageGroundLevel();
 					CelestialBody cb = spaceProvider.getCelestialBody();
-					if (cb instanceof ZGPlanet) {
-						ZGPlanet planet = (ZGPlanet) cb;
+					if (cb instanceof ZGPlanetaryBody) {
+						ZGPlanetaryBody planet = (ZGPlanetaryBody) cb;
 						BlockPos blockPos = new BlockPos(player.posX, player.getEntityBoundingBox().minY, player.posZ);
 						Chunk chunk = worldObj.getChunkFromBlockCoords(blockPos);
 						Biome biome = chunk.getBiome(blockPos, worldObj.getBiomeProvider());
-						if (biome instanceof BiomeSpace) {
+						if (biome != null && biome instanceof BiomeSpace) {
 							BiomeSpace spaceBiome = (BiomeSpace) biome;
 							blockStone = spaceBiome.getStoneBlock();
 						}
@@ -108,6 +108,7 @@ public class MessageTeleportToDimension implements IMessage {
 				IBlockState airState = blockAir.getDefaultState();
 				IBlockState stoneState = blockStone.getDefaultState();
 				
+				// Create the landing platform.
 				if (worldObj.getBlockState(new BlockPos(x, y - 1, z)) == airState) {
 					worldObj.setBlockState(new BlockPos(x, y - 1, z), stoneState);
 					worldObj.setBlockState(new BlockPos(x + 1, y - 1, z + 1), stoneState);
@@ -120,6 +121,7 @@ public class MessageTeleportToDimension implements IMessage {
 					worldObj.setBlockState(new BlockPos(x, y - 1, z + 1), stoneState);
 				}
 				
+				// Create the airbox (in case they teleport inside of a cave).
 				worldObj.setBlockState(new BlockPos(x, y, z), airState);
 				worldObj.setBlockState(new BlockPos(x, y + 1, z), airState);
 				worldObj.setBlockState(new BlockPos(x + 1, y, z + 1), airState);
@@ -139,7 +141,7 @@ public class MessageTeleportToDimension implements IMessage {
 				worldObj.setBlockState(new BlockPos(x, y, z + 1), airState);
 				worldObj.setBlockState(new BlockPos(x, y + 1, z + 1), airState);
 				
-				player.fallDistance = 0.0F;
+				player.fallDistance = 0.0F; // Attempt to cancel fall damage.
 			}
 		}
 	}

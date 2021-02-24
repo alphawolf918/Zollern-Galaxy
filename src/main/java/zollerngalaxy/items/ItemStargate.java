@@ -62,7 +62,11 @@ public class ItemStargate extends ZGItemBase {
 					this.sendToPlanet(ConfigManagerZG.planetPurgotDimensionId, ConfigManagerZG.planetKriffonDimensionId, player);
 					break;
 				case 3:
-					this.sendToPlanet(ConfigManagerZG.planetPurgotDimensionId, ConfigManagerZG.planetEdenDimensionId, player);
+					if (player.dimension == ConfigManagerZG.planetExodusDimensionId) {
+						this.sendToPlanet(ConfigManagerZG.planetVortexDimensionId, ConfigManagerZG.planetExodusDimensionId, player);
+					} else {
+						this.sendToPlanet(ConfigManagerZG.planetPurgotDimensionId, ConfigManagerZG.planetEdenDimensionId, player);
+					}
 					break;
 				case 4:
 					this.sendToPlanet(ConfigManagerZG.planetXathiusDimensionId, ConfigManagerZG.planetEdenDimensionId, player);
@@ -125,6 +129,9 @@ public class ItemStargate extends ZGItemBase {
 	private void sendToPlanet(int toDimensionId, int fromDimensionId, EntityPlayer player) {
 		int dim = player.dimension;
 		int sendToDim = (dim == fromDimensionId) ? toDimensionId : fromDimensionId;
+		if (toDimensionId == ConfigManagerZG.planetEdenDimensionId && dim == ConfigManagerZG.planetExodusDimensionId) {
+			sendToDim = ConfigManagerZG.planetVortexDimensionId;
+		}
 		this.sendToServer(sendToDim, player);
 	}
 	

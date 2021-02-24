@@ -20,6 +20,7 @@ import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
 import zollerngalaxy.events.ZGSoundEvents;
 import zollerngalaxy.mobs.entities.ai.EntityAIBugNearestAttackableTarget;
+import zollerngalaxy.mobs.entities.base.EntityBugZG;
 import zollerngalaxy.util.ZGDamageSrc;
 
 public class EntityWasp extends EntityBugZG implements IMob {

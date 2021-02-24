@@ -1,0 +1,9 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "all": "zollerngalaxy:blocks/exodusdirt",
+    "top": "zollerngalaxy:blocks/exodusgrass",
+    "right": "zollerngalaxy:blocks/exodusgrass_side",
+    "left": "zollerngalaxy:blocks/exodusgrass_side"
+  }
+}

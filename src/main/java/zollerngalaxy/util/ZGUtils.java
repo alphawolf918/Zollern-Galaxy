@@ -7,13 +7,13 @@
  */
 package zollerngalaxy.util;
 
+import org.apache.logging.log4j.Level;
 import net.minecraft.client.Minecraft;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.text.translation.I18n;
 import net.minecraftforge.fml.client.FMLClientHandler;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
-import org.apache.logging.log4j.Level;
 import zollerngalaxy.lib.helpers.ZGHelper;
 
 public class ZGUtils {

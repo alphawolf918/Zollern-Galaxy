@@ -24,7 +24,7 @@ import net.minecraft.world.gen.layer.IntCache;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.biomes.genlayers.kriffon.GenLayerKriffon;
-import zollerngalaxy.planets.ZGPlanets;
+import zollerngalaxy.celestial.ZGPlanets;
 
 public class BiomeProviderKriffon extends BiomeProvider {
 	

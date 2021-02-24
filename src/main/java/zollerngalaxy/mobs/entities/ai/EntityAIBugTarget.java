@@ -20,7 +20,7 @@ import net.minecraft.pathfinding.PathPoint;
 import net.minecraft.scoreboard.Team;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
-import zollerngalaxy.mobs.entities.EntityBugZG;
+import zollerngalaxy.mobs.entities.base.EntityBugZG;
 
 public abstract class EntityAIBugTarget extends EntityAIBase {
 	

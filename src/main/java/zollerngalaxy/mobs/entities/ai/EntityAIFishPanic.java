@@ -15,7 +15,7 @@ import net.minecraft.entity.ai.EntityAIBase;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
-import zollerngalaxy.mobs.entities.EntityWaterMobZG;
+import zollerngalaxy.mobs.entities.base.EntityWaterMobZG;
 import zollerngalaxy.util.RandPosGenWater;
 
 public class EntityAIFishPanic extends EntityAIBase {

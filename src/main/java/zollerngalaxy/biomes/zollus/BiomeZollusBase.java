@@ -8,6 +8,7 @@
 package zollerngalaxy.biomes.zollus;
 
 import java.util.Random;
+import micdoodle8.mods.galacticraft.core.entities.EntityAlienVillager;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedCreeper;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedEnderman;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedSkeleton;
@@ -23,9 +24,10 @@ import net.minecraft.world.chunk.ChunkPrimer;
 import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.biomes.decorators.BiomeDecoratorZollus;
 import zollerngalaxy.blocks.ZGBlocks;
+import zollerngalaxy.celestial.ZGPlanets;
+import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderZollus;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
-import zollerngalaxy.planets.ZGPlanets;
 
 public class BiomeZollusBase extends BiomeSpace {
 	
@@ -38,7 +40,7 @@ public class BiomeZollusBase extends BiomeSpace {
 	protected static final IBlockState WATER = Blocks.WATER.getDefaultState();
 	
 	protected static final int SEA_LEVEL = ChunkProviderZollus.SEA_LEVEL;
-	protected static final int SEA_FLOOR_LEVEL = 42;
+	protected static final int SEA_FLOOR_LEVEL = (SEA_LEVEL - 21);
 	
 	public BiomeZollusBase(String singleName, BiomeProperties props) {
 		super(singleName, props);
@@ -48,6 +50,11 @@ public class BiomeZollusBase extends BiomeSpace {
 		this.decorator.grassPerChunk = -999;
 		this.decorator.mushroomsPerChunk = -999;
 		this.clearAllSpawning();
+		
+		if (ConfigManagerZG.enableAlienVillagerSpawn) {
+			this.spawnableCreatureList.add(new SpawnListEntry(EntityAlienVillager.class, 5, 1, 2));
+		}
+		
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedZombie.class, 100, 4, 4));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedSpider.class, 100, 4, 4));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedSkeleton.class, 100, 4, 4));

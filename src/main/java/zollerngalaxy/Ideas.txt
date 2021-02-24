@@ -1,30 +1,4 @@
 [IDEAS]
 
-* Exotic planets.
-    - Will have unique properties, landscapes, features, ores, mobs, resources, etc., and will be "weird."
-* Easter eggs.
-    - A chance that using a Star Gate will have a 1 in 10,000 chance of teleporting the Player to one of two places:
-        - A deep, desolate void in the middle of space.
-        - A rare planet that can only be reached by meeting certain criteria.
-* Different temperatures for day and night.
-* Random alien encounters that cause various things to happen.
-* Interaction with Modular Powersuits.
-* Interaction with Forestry.
-    - Special hives that generate on a certain planet. Space bees!
-* Planet LV-426 with Facehuggers from Alien.
-* Pizza Planet?
-* Transparent planet.
-* Partially-procedural worlds.
-* Advancements.
-* Gas planets.
-* LOOT!
-* Dungeons.
-* 3D "crystal" blocks, similar to No Man's Sky.
-* More lore.
-* Installable "blueprint technology" that can withstand the planet hazards for you.
-    - Can be recharged with special metals automatically.
-* Mobs have a chance to drop treasure chests with specialized loot on death.
-* Still more of the lore.
-* Lightning planets.
-* More biomes.
-* 
+* View and comment on ideas at the mod's Trello board:
+    - https://trello.com/b/4xdlsLz1/zollern-galaxy-galacticraft-add-on-mod

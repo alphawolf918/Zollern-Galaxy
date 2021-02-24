@@ -7,6 +7,8 @@
  */
 package zollerngalaxy.recipes;
 
+import cofh.core.util.helpers.ItemHelper;
+import cofh.thermalfoundation.init.TFItems;
 import micdoodle8.mods.galacticraft.core.GCItems;
 import micdoodle8.mods.galacticraft.planets.venus.VenusItems;
 import net.minecraft.block.Block;
@@ -19,8 +21,6 @@ import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.items.ZGItems;
 import zollerngalaxy.lib.helpers.ModHelperBase;
 import zollerngalaxy.lib.helpers.ZGHelper;
-import cofh.core.util.helpers.ItemHelper;
-import cofh.thermalfoundation.init.TFItems;
 
 public class FurnaceRecipes {
 	
@@ -72,26 +72,16 @@ public class FurnaceRecipes {
 		
 		// Other mod metals
 		if (ModHelperBase.useCofh && ModHelperBase.useThermalFoundation) {
-			FurnaceRecipes.SmeltBlockToItem(ZGBlocks.edenSilverOre,
-					new ItemStack(ItemHelper.getItemFromStack(TFItems.itemMaterial.ingotSilver), 1, 130), 3.7F);
-			FurnaceRecipes.SmeltBlockToItem(ZGBlocks.caligroSilverOre,
-					new ItemStack(ItemHelper.getItemFromStack(TFItems.itemMaterial.ingotSilver), 1, 130), 3.7F);
-			FurnaceRecipes.SmeltBlockToItem(ZGBlocks.edenNickelOre,
-					new ItemStack(ItemHelper.getItemFromStack(TFItems.itemMaterial.ingotNickel), 1, 133), 3.5F);
-			FurnaceRecipes.SmeltBlockToItem(ZGBlocks.xantheonNickelOre,
-					new ItemStack(ItemHelper.getItemFromStack(TFItems.itemMaterial.ingotNickel), 1, 133), 3.5F);
-			FurnaceRecipes.SmeltBlockToItem(ZGBlocks.caligroNickelOre,
-					new ItemStack(ItemHelper.getItemFromStack(TFItems.itemMaterial.ingotNickel), 1, 133), 3.5F);
-			FurnaceRecipes.SmeltBlockToItem(ZGBlocks.edenSteelOre,
-					new ItemStack(ItemHelper.getItemFromStack(TFItems.itemMaterial.ingotSteel), 1, 160), 4.2F);
-			FurnaceRecipes.SmeltBlockToItem(ZGBlocks.edenBronzeOre,
-					new ItemStack(ItemHelper.getItemFromStack(TFItems.itemMaterial.ingotBronze), 1, 163), 4.2F);
-			FurnaceRecipes.SmeltBlockToItem(ZGBlocks.edenElectrumOre,
-					new ItemStack(ItemHelper.getItemFromStack(TFItems.itemMaterial.ingotElectrum), 1, 161), 4.2F);
-			FurnaceRecipes.SmeltBlockToItem(ZGBlocks.edenInvarOre,
-					new ItemStack(ItemHelper.getItemFromStack(TFItems.itemMaterial.ingotInvar), 1, 162), 4.2F);
-			FurnaceRecipes.SmeltBlockToItem(ZGBlocks.edenPlatinumOre,
-					new ItemStack(ItemHelper.getItemFromStack(TFItems.itemMaterial.ingotPlatinum), 1, 134), 4.2F);
+			FurnaceRecipes.SmeltBlockToItem(ZGBlocks.edenSilverOre, new ItemStack(ItemHelper.getItemFromStack(TFItems.itemMaterial.ingotSilver), 1, 130), 3.7F);
+			FurnaceRecipes.SmeltBlockToItem(ZGBlocks.caligroSilverOre, new ItemStack(ItemHelper.getItemFromStack(TFItems.itemMaterial.ingotSilver), 1, 130), 3.7F);
+			FurnaceRecipes.SmeltBlockToItem(ZGBlocks.edenNickelOre, new ItemStack(ItemHelper.getItemFromStack(TFItems.itemMaterial.ingotNickel), 1, 133), 3.5F);
+			FurnaceRecipes.SmeltBlockToItem(ZGBlocks.xantheonNickelOre, new ItemStack(ItemHelper.getItemFromStack(TFItems.itemMaterial.ingotNickel), 1, 133), 3.5F);
+			FurnaceRecipes.SmeltBlockToItem(ZGBlocks.caligroNickelOre, new ItemStack(ItemHelper.getItemFromStack(TFItems.itemMaterial.ingotNickel), 1, 133), 3.5F);
+			FurnaceRecipes.SmeltBlockToItem(ZGBlocks.edenSteelOre, new ItemStack(ItemHelper.getItemFromStack(TFItems.itemMaterial.ingotSteel), 1, 160), 4.2F);
+			FurnaceRecipes.SmeltBlockToItem(ZGBlocks.edenBronzeOre, new ItemStack(ItemHelper.getItemFromStack(TFItems.itemMaterial.ingotBronze), 1, 163), 4.2F);
+			FurnaceRecipes.SmeltBlockToItem(ZGBlocks.edenElectrumOre, new ItemStack(ItemHelper.getItemFromStack(TFItems.itemMaterial.ingotElectrum), 1, 161), 4.2F);
+			FurnaceRecipes.SmeltBlockToItem(ZGBlocks.edenInvarOre, new ItemStack(ItemHelper.getItemFromStack(TFItems.itemMaterial.ingotInvar), 1, 162), 4.2F);
+			FurnaceRecipes.SmeltBlockToItem(ZGBlocks.edenPlatinumOre, new ItemStack(ItemHelper.getItemFromStack(TFItems.itemMaterial.ingotPlatinum), 1, 134), 4.2F);
 		}
 		
 		// Oasis
@@ -138,6 +128,19 @@ public class FurnaceRecipes {
 		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.caligroShiniumOre, ZGItems.ingotShinium, 5.6F);
 		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.caligroZincOre, ZGItems.ingotZinc, 3.6F);
 		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.corruptChargiumOre, ZGItems.ingotChargium, 7.6F);
+		
+		// Exodus
+		FurnaceRecipes.SmeltBlock(ZGBlocks.exodusCobblestone, ZGBlocks.exodusStone, 5.6F);
+		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.exodusIronOre, Items.IRON_INGOT, 5.8F);
+		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.exodusGoldOre, Items.GOLD_INGOT, 5.9F);
+		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.exodusCopperOre, new ItemStack(GCItems.basicItem, 1, 3), 2.4F);
+		
+		// Vortex
+		FurnaceRecipes.SmeltBlock(ZGBlocks.vortexCobblestone, ZGBlocks.vortexStone, 5.6F);
+		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.vortexIronOre, Items.IRON_INGOT, 5.8F);
+		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.vortexGoldOre, Items.GOLD_INGOT, 5.9F);
+		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.vortexCopperOre, new ItemStack(GCItems.basicItem, 1, 3), 2.4F);
+		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.vortexEveniumOre, ZGItems.ingotEvenium, 3.6F);
 		
 		// Dust -> Ingots/Gems
 		FurnaceRecipes.SmeltItem(ZGItems.dustDiamond, Items.DIAMOND, 2.6F);

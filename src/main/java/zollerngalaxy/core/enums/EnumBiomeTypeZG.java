@@ -29,5 +29,6 @@ public enum EnumBiomeTypeZG {
 	ISLAND,
 	BEACH,
 	INFECTED,
-	CORRUPTED;
+	CORRUPTED,
+	STORMY;
 }

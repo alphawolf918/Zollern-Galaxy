@@ -22,6 +22,8 @@ import zollerngalaxy.api.ZollernGalaxyAPI;
 import zollerngalaxy.biomes.ZGBiomes;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.blocks.fluids.ZGFluids;
+import zollerngalaxy.celestial.ZGPlanets;
+import zollerngalaxy.celestial.spacestations.ZGSpaceStations;
 import zollerngalaxy.compatibility.ZGCompats;
 import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.ZGDimensions;
@@ -34,8 +36,6 @@ import zollerngalaxy.lib.helpers.ZGHandlers;
 import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.mobs.MobRegistry;
 import zollerngalaxy.network.teleporter.MessageTeleportToDimension;
-import zollerngalaxy.planets.ZGPlanets;
-import zollerngalaxy.planets.satellites.ZGSpaceStations;
 import zollerngalaxy.potions.ZGPotions;
 import zollerngalaxy.proxy.CommonProxy;
 import zollerngalaxy.proxy.IProxy;
@@ -54,7 +54,7 @@ public class ZollernGalaxyCore {
 	
 	// CHANGE THESE TO FALSE BEFORE DEPLOYMENT!!
 	private static final boolean DEV_MODE = false; // Controls creating the JSON files.
-	private static final boolean TEST_MODE = true; // Set to True when developing!
+	private static final boolean TEST_MODE = false; // Set to True when developing!
 	
 	public static SimpleNetworkWrapper snw;
 	

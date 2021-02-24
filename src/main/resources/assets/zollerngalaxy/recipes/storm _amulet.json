@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SVS",
+    "VSV",
+    "SVS"
+  ],
+  "key": {
+    "S": {
+      "item": "zollerngalaxy:stormcrystalgem"
+    },
+    "V": {
+      "item": "zollerngalaxy:ingotviri"
+    }
+  },
+  "result": {
+    "item": "zollerngalaxy:storm _amulet"
+  }
+}

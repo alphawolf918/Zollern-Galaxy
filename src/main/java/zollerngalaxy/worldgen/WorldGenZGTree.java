@@ -79,8 +79,7 @@ public class WorldGenZGTree extends WorldGenAbstractTree {
 										BlockPos blockpos = new BlockPos(k1, i3, i2);
 										state = worldIn.getBlockState(blockpos);
 										
-										if (state.getBlock().isAir(state, worldIn, blockpos)
-												|| state.getBlock().isLeaves(state, worldIn, blockpos)
+										if (state.getBlock().isAir(state, worldIn, blockpos) || state.getBlock().isLeaves(state, worldIn, blockpos)
 												|| state.getMaterial() == Material.VINE) {
 											this.setBlockAndNotifyAdequately(worldIn, blockpos, this.blockLeaves);
 										}
@@ -93,8 +92,7 @@ public class WorldGenZGTree extends WorldGenAbstractTree {
 							BlockPos upN = position.up(j3);
 							state = worldIn.getBlockState(upN);
 							
-							if (state.getBlock().isAir(state, worldIn, upN) || state.getBlock().isLeaves(state, worldIn, upN)
-									|| state.getMaterial() == Material.VINE) {
+							if (state.getBlock().isAir(state, worldIn, upN) || state.getBlock().isLeaves(state, worldIn, upN) || state.getMaterial() == Material.VINE) {
 								this.setBlockAndNotifyAdequately(worldIn, position.up(j3), this.blockLog);
 								
 								if (this.vinesGrow && j3 > 0) {

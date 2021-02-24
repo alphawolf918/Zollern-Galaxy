@@ -24,11 +24,11 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.biomes.providers.BiomeProviderAtheon;
 import zollerngalaxy.blocks.ZGBlocks;
+import zollerngalaxy.celestial.IZollernBody;
+import zollerngalaxy.celestial.ZGPlanets;
 import zollerngalaxy.core.dimensions.ZGDimensions;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderAtheon;
 import zollerngalaxy.core.dimensions.skyproviders.SkyProviderAtheon;
-import zollerngalaxy.planets.ZGPlanet;
-import zollerngalaxy.planets.ZGPlanets;
 
 public class WorldProviderAtheon extends WorldProviderZG {
 	
@@ -74,13 +74,13 @@ public class WorldProviderAtheon extends WorldProviderZG {
 	
 	@Override
 	public float getPlanetTemp() {
-		ZGPlanet planet = this.getPlanet();
-		float planetTemp = planet.getPlanetTemperature();
+		IZollernBody planet = this.getPlanet();
+		float planetTemp = planet.getBodyTemperature();
 		
 		if (this.isDaytime()) {
 			planetTemp *= 4.5F;
 		} else {
-			planetTemp = planet.getPlanetTemperature();
+			planetTemp = planet.getBodyTemperature();
 		}
 		return planetTemp;
 	}

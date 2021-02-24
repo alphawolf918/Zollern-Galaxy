@@ -7,13 +7,13 @@
  */
 package zollerngalaxy.recipes;
 
+import cofh.api.util.ThermalExpansionHelper;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidStack;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.blocks.fluids.ZGFluids;
 import zollerngalaxy.items.ZGItems;
-import cofh.api.util.ThermalExpansionHelper;
 
 public class MagmaCrucibleRecipes {
 	

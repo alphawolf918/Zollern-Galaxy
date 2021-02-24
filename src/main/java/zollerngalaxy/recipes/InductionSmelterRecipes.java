@@ -7,9 +7,9 @@
  */
 package zollerngalaxy.recipes;
 
+import cofh.api.util.ThermalExpansionHelper;
 import net.minecraft.item.ItemStack;
 import zollerngalaxy.items.ZGItems;
-import cofh.api.util.ThermalExpansionHelper;
 
 public class InductionSmelterRecipes {
 	

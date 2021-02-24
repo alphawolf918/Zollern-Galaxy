@@ -24,7 +24,7 @@ import net.minecraft.world.gen.layer.IntCache;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.biomes.genlayers.zollus.GenLayerZollus;
-import zollerngalaxy.planets.ZGPlanets;
+import zollerngalaxy.celestial.ZGPlanets;
 
 public class BiomeProviderZollus extends BiomeProvider {
 	

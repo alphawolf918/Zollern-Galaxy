@@ -39,7 +39,7 @@ import zollerngalaxy.worldgen.mapgen.MapGenRavinesZG;
 public class ChunkProviderKriffon extends ChunkProviderBase {
 	
 	public static final IBlockState STONE = ZGBlocks.kriffStone.getDefaultState();
-	public static final IBlockState WATER = Blocks.LAVA.getDefaultState();
+	public static final IBlockState LAVA = Blocks.LAVA.getDefaultState();
 	
 	public static final double CHUNK_HEIGHT = 54.0D;
 	public static final int SEA_LEVEL = 57;
@@ -154,7 +154,7 @@ public class ChunkProviderKriffon extends ChunkProviderBase {
 									primer.setBlockState(x, y, z, STONE);
 								} else if (y < SEA_LEVEL) {
 									Biome biome = world.getBiome(new BlockPos(x, y, z));
-									IBlockState blockToUse = WATER;
+									IBlockState blockToUse = LAVA;
 									primer.setBlockState(x, y, z, blockToUse);
 								}
 							}

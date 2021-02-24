@@ -10,7 +10,7 @@ package zollerngalaxy.mobs.entities.ai;
 import javax.annotation.Nullable;
 import net.minecraft.entity.ai.EntityAIBase;
 import net.minecraft.util.math.Vec3d;
-import zollerngalaxy.mobs.entities.EntityBugZG;
+import zollerngalaxy.mobs.entities.base.EntityBugZG;
 import zollerngalaxy.util.RandPosGenBug;
 
 public class EntityAIBugWander extends EntityAIBase {

@@ -1,0 +1,27 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "textures": {
+      "bottom": "zollerngalaxy:blocks/exoduswoodlog_top",
+      "top": "zollerngalaxy:blocks/exoduswoodlog_top",
+      "side": "zollerngalaxy:blocks/exoduswoodlog"
+    },
+    "model": "cube_bottom_top"
+  },
+  "variants": {
+    "normal": [
+      {
+        "y": 90
+      },
+      {
+        "y": 180
+      },
+      {
+        "y": 270
+      }
+    ],
+    "inventory": [
+      {}
+    ]
+  }
+}

@@ -27,12 +27,12 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.biomes.BiomeSpace;
+import zollerngalaxy.celestial.IZollernBody;
 import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderZG;
-import zollerngalaxy.core.enums.EnumPlanetClass;
+import zollerngalaxy.core.enums.EnumBodyClass;
 import zollerngalaxy.items.ZGItems;
 import zollerngalaxy.lib.helpers.ZGHelper;
-import zollerngalaxy.planets.ZGPlanet;
 
 @SideOnly(Side.CLIENT)
 public class GuiHUD extends Gui {
@@ -112,7 +112,7 @@ public class GuiHUD extends Gui {
 					}
 					
 					// Planet Name
-					ZGPlanet planet = biomeSpace.getPlanetForBiome();
+					IZollernBody planet = biomeSpace.getBodyForBiome();
 					if (planet != null) {
 						String planetName = ZGHelper.capitalizeFirstLetter(planet.getName());
 						String p = "Planet: " + planetName;
@@ -121,7 +121,7 @@ public class GuiHUD extends Gui {
 					}
 					
 					// Planet Class
-					EnumPlanetClass planetClass = planet.getPlanetClass();
+					EnumBodyClass planetClass = planet.getBodyClass();
 					String pClass = planetClass.getPlanetStrClass();
 					String pc = "Class " + pClass + " Planet";
 					fontRendererObj.drawString(pc, 2, 56, i3);

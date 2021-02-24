@@ -9,9 +9,9 @@ package zollerngalaxy.biomes.zollus;
 
 import micdoodle8.mods.galacticraft.core.entities.EntityAlienVillager;
 import zollerngalaxy.blocks.ZGBlocks;
+import zollerngalaxy.celestial.ZGPlanets;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 import zollerngalaxy.mobs.entities.EntityFrostGiant;
-import zollerngalaxy.planets.ZGPlanets;
 
 public class BiomeZollus extends BiomeZollusBase {
 	

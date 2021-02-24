@@ -57,7 +57,18 @@ import zollerngalaxy.biomes.eden.BiomeSnowyPlains;
 import zollerngalaxy.biomes.eden.BiomeStoneMountains;
 import zollerngalaxy.biomes.eden.BiomeSwamplands;
 import zollerngalaxy.biomes.eden.BiomeTerranValley;
+import zollerngalaxy.biomes.exodus.BiomeAzuralPlains;
+import zollerngalaxy.biomes.exodus.BiomeBlackMesa;
+import zollerngalaxy.biomes.exodus.BiomeExoForest;
+import zollerngalaxy.biomes.exodus.BiomeExodusOcean;
+import zollerngalaxy.biomes.exodus.BiomeExodusRockyHills;
 import zollerngalaxy.biomes.kriffon.BiomeKriffon;
+import zollerngalaxy.biomes.kriffon.BiomeKriffonLavaOcean;
+import zollerngalaxy.biomes.metztli.BiomeHarran;
+import zollerngalaxy.biomes.metztli.BiomeHarranDunes;
+import zollerngalaxy.biomes.metztli.BiomeHarranOcean;
+import zollerngalaxy.biomes.metztli.BiomeHarranSwamp;
+import zollerngalaxy.biomes.metztli.BiomeHarranTundra;
 import zollerngalaxy.biomes.oasis.BiomeOasisPlains;
 import zollerngalaxy.biomes.oasis.BiomeOasisRedSea;
 import zollerngalaxy.biomes.oasis.BiomeRedlands;
@@ -68,12 +79,16 @@ import zollerngalaxy.biomes.perdita.BiomeLostMountains;
 import zollerngalaxy.biomes.perdita.BiomeLostOasis;
 import zollerngalaxy.biomes.purgot.BiomeLimbo;
 import zollerngalaxy.biomes.purgot.BiomePurgot;
+import zollerngalaxy.biomes.vortex.BiomeVortex;
+import zollerngalaxy.biomes.vortex.BiomeVortexChargiumSea;
+import zollerngalaxy.biomes.vortex.BiomeVortexMountain;
 import zollerngalaxy.biomes.xantheon.BiomeXantheon;
 import zollerngalaxy.biomes.xathius.BiomeAbstractPlains;
 import zollerngalaxy.biomes.xathius.BiomeBluelands;
 import zollerngalaxy.biomes.xathius.BiomeXathiusMountains;
 import zollerngalaxy.biomes.xathius.BiomeXathiusOcean;
 import zollerngalaxy.biomes.zollus.BiomeZollus;
+import zollerngalaxy.biomes.zollus.BiomeZollusIceOcean;
 import zollerngalaxy.lib.helpers.CommonZGRegisterHelper;
 import zollerngalaxy.lib.helpers.ZGHelper;
 
@@ -84,9 +99,11 @@ public class ZGBiomes {
 	
 	// Zollus
 	public static final Biome ZOLLUS = new BiomeZollus(new BiomeProperties("Zollus"));
+	public static final Biome ZOLLUS_OCEAN = new BiomeZollusIceOcean(new BiomeProperties("Zollus Ice Ocean"));
 	
 	// Kriffon
 	public static final Biome KRIFFON = new BiomeKriffon(new BiomeProperties("Kriffon"));
+	public static final Biome KRIFFON_LAVA_OCEAN = new BiomeKriffonLavaOcean(new BiomeProperties("Lake of Fire"));
 	
 	// Purgot
 	public static final Biome PURGOT_BASE = new BiomePurgot(new BiomeProperties("Purgotary"));
@@ -152,12 +169,33 @@ public class ZGBiomes {
 	public static final Biome CALIGRO_WITHERLANDS = new BiomeCaligroWitherlands(new BiomeProperties("Witherlands"));
 	public static final Biome CALIGRO_CORRUPTED_MESA = new BiomeCaligroCorruptedMesa(new BiomeProperties("Corrupted Mesa"));
 	
+	// Exodus
+	public static final Biome EXODUS_AZURE_PLAINS = new BiomeAzuralPlains(new BiomeProperties("Azural Plains"));
+	public static final Biome EXODUS_ROCKY_HILLS = new BiomeExodusRockyHills(new BiomeProperties("Rocky Hills"));
+	public static final Biome EXODUS_OCEAN = new BiomeExodusOcean(new BiomeProperties("Exo Ocean"));
+	public static final Biome EXODUS_FOREST = new BiomeExoForest(new BiomeProperties("Exo Forest"));
+	public static final Biome EXODUS_BLACK_MESA = new BiomeBlackMesa(new BiomeProperties("Black Mesa"));
+	
+	// Vortex
+	public static final Biome VORTEX_BASE = new BiomeVortex(new BiomeProperties("Vortex"));
+	public static final Biome VORTEX_MOUNTAINS = new BiomeVortexMountain(new BiomeProperties("Vortex Mountains"));
+	public static final Biome VORTEX_CHARGIUM_SEA = new BiomeVortexChargiumSea(new BiomeProperties("Vortex Chargium Sea"));
+	
+	// Metztli
+	public static final Biome METZTLI_HARRAN_PRIME = new BiomeHarran(new BiomeProperties("Harran Plains"));
+	public static final Biome METZTLI_HARRAN_DUNES = new BiomeHarranDunes(new BiomeProperties("Harran Dunes"));
+	public static final Biome METZTLI_HARRAN_OCEAN = new BiomeHarranOcean(new BiomeProperties("Harran Ocean"));
+	public static final Biome METZTLI_HARRAN_SWAMP = new BiomeHarranSwamp(new BiomeProperties("Harran Swamp"));
+	public static final Biome METZTLI_HARRAN_TUNDRA = new BiomeHarranTundra(new BiomeProperties("Harran Tundra"), BiomeHarranTundra.Type.MEGA_SPRUCE);
+	
 	public static void init() {
 		// Zollus
 		ZGBiomes.addBiome(ZGBiomes.ZOLLUS, COLD, DEAD, DRY);
+		ZGBiomes.addBiome(ZGBiomes.ZOLLUS_OCEAN, COLD, DEAD, WET, OCEAN);
 		
 		// Kriffon
 		ZGBiomes.addBiome(ZGBiomes.KRIFFON, HOT, DEAD, DRY);
+		ZGBiomes.addBiome(ZGBiomes.KRIFFON_LAVA_OCEAN, DEAD, SPOOKY, HOT, OCEAN);
 		
 		// Purgot
 		ZGBiomes.addBiome(ZGBiomes.PURGOT_BASE, DEAD, DRY);
@@ -222,6 +260,25 @@ public class ZGBiomes {
 		ZGBiomes.addBiome(ZGBiomes.CALIGRO_ROCKY_VEINS, MOUNTAIN, SPOOKY, COLD, DEAD);
 		ZGBiomes.addBiome(ZGBiomes.CALIGRO_WITHERLANDS, WASTELAND, SPOOKY, COLD, DEAD);
 		ZGBiomes.addBiome(ZGBiomes.CALIGRO_CORRUPTED_MESA, MOUNTAIN, SPOOKY, COLD, DEAD);
+		
+		// Exodus
+		ZGBiomes.addBiome(ZGBiomes.EXODUS_AZURE_PLAINS, LUSH, WET, PLAINS);
+		ZGBiomes.addBiome(ZGBiomes.EXODUS_ROCKY_HILLS, LUSH, WET, MOUNTAIN);
+		ZGBiomes.addBiome(ZGBiomes.EXODUS_OCEAN, WET, OCEAN);
+		ZGBiomes.addBiome(ZGBiomes.EXODUS_FOREST, LUSH, WET, FOREST);
+		ZGBiomes.addBiome(ZGBiomes.EXODUS_BLACK_MESA, DEAD, HOT, DRY, MOUNTAIN, WASTELAND);
+		
+		// Vortex
+		ZGBiomes.addBiome(ZGBiomes.VORTEX_BASE, MOUNTAIN, HOT, WET);
+		ZGBiomes.addBiome(ZGBiomes.VORTEX_MOUNTAINS, MOUNTAIN, HOT, DEAD, DRY);
+		ZGBiomes.addBiome(ZGBiomes.VORTEX_CHARGIUM_SEA, DEAD, SPOOKY, HOT, OCEAN);
+		
+		// Metztli
+		ZGBiomes.addBiome(ZGBiomes.METZTLI_HARRAN_PRIME, LUSH, WASTELAND, DEAD, WET);
+		ZGBiomes.addBiome(ZGBiomes.METZTLI_HARRAN_DUNES, DEAD, HOT, DRY, MOUNTAIN, WASTELAND);
+		ZGBiomes.addBiome(ZGBiomes.METZTLI_HARRAN_OCEAN, DEAD, WET, OCEAN);
+		ZGBiomes.addBiome(ZGBiomes.METZTLI_HARRAN_SWAMP, DEAD, LUSH, WET, SWAMP);
+		ZGBiomes.addBiome(ZGBiomes.METZTLI_HARRAN_TUNDRA, DEAD, PLAINS, COLD, SNOWY);
 		
 		ZGHelper.Log("Loaded a total of " + totalBiomes + " new biomes.");
 	}

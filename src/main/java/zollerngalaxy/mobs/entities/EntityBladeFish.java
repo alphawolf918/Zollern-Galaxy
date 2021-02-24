@@ -10,6 +10,7 @@ package zollerngalaxy.mobs.entities;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
+import zollerngalaxy.mobs.entities.base.EntityWaterMobZG;
 import zollerngalaxy.util.ZGDamageSrc;
 
 public class EntityBladeFish extends EntityWaterMobZG {

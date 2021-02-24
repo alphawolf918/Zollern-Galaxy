@@ -8,6 +8,7 @@
 package zollerngalaxy.biomes.altum;
 
 import java.util.Random;
+import micdoodle8.mods.galacticraft.core.entities.EntityAlienVillager;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.state.IBlockState;
@@ -22,6 +23,8 @@ import net.minecraft.world.gen.feature.WorldGenerator;
 import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.biomes.decorators.BiomeDecoratorAltum;
 import zollerngalaxy.blocks.ZGBlocks;
+import zollerngalaxy.celestial.ZGPlanets;
+import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.ZGLootTables;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderAltum;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
@@ -33,7 +36,6 @@ import zollerngalaxy.mobs.entities.EntityGypsyFish;
 import zollerngalaxy.mobs.entities.EntityJellyfish;
 import zollerngalaxy.mobs.entities.EntityShark;
 import zollerngalaxy.mobs.entities.EntitySquidlus;
-import zollerngalaxy.planets.ZGPlanets;
 import zollerngalaxy.worldgen.WorldGenTreasure;
 
 public class BiomeAltumBase extends BiomeSpace {
@@ -115,10 +117,12 @@ public class BiomeAltumBase extends BiomeSpace {
 							}
 							chunkPrimerIn.setBlockState(x2, y, z2, DIRT);
 						}
-						if (rand.nextInt(240) == 2) {
+						//
+						if (rand.nextInt(1000) <= 10) {
 							BlockPos chestPos = new BlockPos(x2, (y + 1), z2);
 							OCEAN_TREASURE_GEN.generate(worldIn, rand, chestPos);
 						}
+						//
 					} else if (y >= SEA_LEVEL) {
 						chunkPrimerIn.setBlockState(x2, y, z2, AIR);
 					}
@@ -199,6 +203,10 @@ public class BiomeAltumBase extends BiomeSpace {
 		this.spawnableWaterCreatureList.add(new SpawnListEntry(EntityShark.class, 45, 1, 2));
 		this.spawnableWaterCreatureList.add(new SpawnListEntry(EntityAbyssalVillager.class, 40, 1, 2));
 		this.spawnableCreatureList.add(new SpawnListEntry(EntityAbyssalVillager.class, 40, 1, 2));
+		
+		if (ConfigManagerZG.enableAlienVillagerSpawn) {
+			this.spawnableCreatureList.add(new SpawnListEntry(EntityAlienVillager.class, 5, 1, 2));
+		}
 	}
 	
 }

@@ -9,6 +9,7 @@ package zollerngalaxy.biomes.genlayers.zollus;
 
 import java.util.ArrayList;
 import java.util.List;
+import com.google.common.collect.ImmutableList;
 import net.minecraft.util.WeightedRandom;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.layer.IntCache;
@@ -17,7 +18,6 @@ import net.minecraftforge.common.BiomeManager.BiomeEntry;
 import net.minecraftforge.common.BiomeManager.BiomeType;
 import zollerngalaxy.biomes.ZGBiomes;
 import zollerngalaxy.util.CachedEnum;
-import com.google.common.collect.ImmutableList;
 
 public class GenLayerZollusBiomes extends GenLayerZollus {
 	
@@ -46,6 +46,7 @@ public class GenLayerZollusBiomes extends GenLayerZollus {
 		ArrayList<BiomeEntry>[] currentBiomes = new ArrayList[CachedEnum.valuesBiomeCached().length];
 		List<BiomeEntry> list = new ArrayList<>();
 		list.add(new BiomeEntry(ZGBiomes.ZOLLUS, 100));
+		list.add(new BiomeEntry(ZGBiomes.ZOLLUS_OCEAN, 75));
 		
 		currentBiomes[BiomeType.WARM.ordinal()] = new ArrayList<>(list);
 		return currentBiomes;

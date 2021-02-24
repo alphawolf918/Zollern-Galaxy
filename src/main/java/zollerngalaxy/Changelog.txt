@@ -1,6 +1,7 @@
 ===== CHANGELOG =====
-Zollern Galaxy v2.0.22
+Zollern Galaxy v2.0.25 - SERVER-SIDE BUG FIX
 =====================
 
-* Added an 'Extreme' mode to make the mod more challenging / rewarding.
-* 
+* Fixed a server-side bug where the WindBlowingEvent was attempting to fire on the client-side.
+* Fixed the version being wrong in the code.
+* Fixed an issue where a biome could be null the MessageTeleporter context.

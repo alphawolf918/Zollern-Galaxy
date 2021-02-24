@@ -23,8 +23,7 @@ public class TraitCorrupted extends AbstractTrait {
 	}
 	
 	@Override
-	public void afterHit(ItemStack tool, EntityLivingBase player, EntityLivingBase target, float damageDealt, boolean wasCritical,
-			boolean wasHit) {
+	public void afterHit(ItemStack tool, EntityLivingBase player, EntityLivingBase target, float damageDealt, boolean wasCritical, boolean wasHit) {
 		int dmg = Math.round(damageDealt) * 10;
 		dmg = (target instanceof ICorruptEntity) ? 0 : dmg;
 		target.addPotionEffect(new PotionEffect(ZGPotions.corruption, dmg, 2));

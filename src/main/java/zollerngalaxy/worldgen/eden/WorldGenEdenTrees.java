@@ -81,8 +81,7 @@ public class WorldGenEdenTrees extends WorldGenAbstractTree {
 										BlockPos blockpos = new BlockPos(k1, i3, i2);
 										state = worldIn.getBlockState(blockpos);
 										
-										if (state.getBlock().isAir(state, worldIn, blockpos)
-												|| state.getBlock().isLeaves(state, worldIn, blockpos)
+										if (state.getBlock().isAir(state, worldIn, blockpos) || state.getBlock().isLeaves(state, worldIn, blockpos)
 												|| state.getMaterial() == Material.VINE) {
 											this.setBlockAndNotifyAdequately(worldIn, blockpos, this.blockLeaves);
 										}
@@ -95,8 +94,7 @@ public class WorldGenEdenTrees extends WorldGenAbstractTree {
 							BlockPos upN = position.up(j3);
 							state = worldIn.getBlockState(upN);
 							
-							if (state.getBlock().isAir(state, worldIn, upN) || state.getBlock().isLeaves(state, worldIn, upN)
-									|| state.getMaterial() == Material.VINE) {
+							if (state.getBlock().isAir(state, worldIn, upN) || state.getBlock().isLeaves(state, worldIn, upN) || state.getMaterial() == Material.VINE) {
 								this.setBlockAndNotifyAdequately(worldIn, position.up(j3), this.blockLog);
 								
 								if (this.vinesGrow && j3 > 0) {
@@ -162,8 +160,7 @@ public class WorldGenEdenTrees extends WorldGenAbstractTree {
 								for (EnumFacing enumfacing : EnumFacing.Plane.HORIZONTAL) {
 									if (rand.nextInt(8 - l3) == 0) {
 										EnumFacing enumfacing1 = enumfacing.getOpposite();
-										this.placeFruit(worldIn, rand.nextInt(3),
-												position.add(enumfacing1.getFrontOffsetX(), i - 5 + l3, enumfacing1.getFrontOffsetZ()),
+										this.placeFruit(worldIn, rand.nextInt(3), position.add(enumfacing1.getFrontOffsetX(), i - 5 + l3, enumfacing1.getFrontOffsetZ()),
 												enumfacing);
 									}
 								}
@@ -183,8 +180,8 @@ public class WorldGenEdenTrees extends WorldGenAbstractTree {
 	}
 	
 	private void placeFruit(World worldIn, int p_181652_2_, BlockPos pos, EnumFacing side) {
-		this.setBlockAndNotifyAdequately(worldIn, pos, ZGBlocks.edenFruit.getDefaultState()
-				.withProperty(EdenFruit.AGE, Integer.valueOf(p_181652_2_)).withProperty(EdenFruit.FACING, side));
+		this.setBlockAndNotifyAdequately(worldIn, pos,
+				ZGBlocks.edenFruit.getDefaultState().withProperty(EdenFruit.AGE, Integer.valueOf(p_181652_2_)).withProperty(EdenFruit.FACING, side));
 	}
 	
 	private void addVine(World worldIn, BlockPos pos, PropertyBool prop) {

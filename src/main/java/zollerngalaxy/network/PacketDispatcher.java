@@ -36,8 +36,11 @@ public class PacketDispatcher {
 	public static final void registerPackets() {
 		ZGHelper.Log("Registering packets..");
 		
-		PacketDispatcher.dispatcher.registerMessage(MessageTeleportToDimension.TeleportHandler.class, MessageTeleportToDimension.class, 1,
-				Side.SERVER);
+		// Server Messages
+		PacketDispatcher.dispatcher.registerMessage(MessageTeleportToDimension.TeleportHandler.class, MessageTeleportToDimension.class, 1, Side.SERVER);
+		
+		// Client Messages
+		// --None yet
 		
 		ZGHelper.Log("Packets regsitered.");
 	}

@@ -10,6 +10,7 @@ package zollerngalaxy.core.dimensions.worldproviders;
 import java.util.ArrayList;
 import java.util.List;
 import micdoodle8.mods.galacticraft.api.galaxies.CelestialBody;
+import micdoodle8.mods.galacticraft.api.prefab.world.gen.BiomeAdaptive;
 import micdoodle8.mods.galacticraft.api.vector.Vector3;
 import micdoodle8.mods.galacticraft.core.client.CloudRenderer;
 import net.minecraft.block.Block;
@@ -22,11 +23,11 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.biomes.providers.BiomeProviderXantheon;
 import zollerngalaxy.blocks.ZGBlocks;
+import zollerngalaxy.celestial.IZollernBody;
+import zollerngalaxy.celestial.ZGPlanets;
 import zollerngalaxy.core.dimensions.ZGDimensions;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderXantheon;
 import zollerngalaxy.core.dimensions.skyproviders.SkyProviderXantheon;
-import zollerngalaxy.planets.ZGPlanet;
-import zollerngalaxy.planets.ZGPlanets;
 
 public class WorldProviderXantheon extends WorldProviderZG {
 	
@@ -62,8 +63,8 @@ public class WorldProviderXantheon extends WorldProviderZG {
 	
 	@Override
 	public float getPlanetTemp() {
-		ZGPlanet planet = this.getPlanet();
-		float planetTemp = planet.getPlanetTemperature();
+		IZollernBody planet = this.getPlanet();
+		float planetTemp = planet.getBodyTemperature();
 		if (!this.isDaytime()) {
 			planetTemp /= 3.4F;
 		}
@@ -175,8 +176,9 @@ public class WorldProviderXantheon extends WorldProviderZG {
 	}
 	
 	@Override
-	public void init() {
-		this.biomeProvider = new BiomeProviderXantheon();
+	public Class<? extends BiomeProvider> getBiomeProviderClass() {
+		BiomeAdaptive.setBodyMultiBiome(ZGPlanets.planetXantheon);
+		return BiomeProviderXantheon.class;
 	}
 	
 	@Override
@@ -192,11 +194,6 @@ public class WorldProviderXantheon extends WorldProviderZG {
 	@Override
 	public boolean isSkyColored() {
 		return true;
-	}
-	
-	@Override
-	public BiomeProvider getBiomeProvider() {
-		return new BiomeProviderXantheon();
 	}
 	
 	@Override

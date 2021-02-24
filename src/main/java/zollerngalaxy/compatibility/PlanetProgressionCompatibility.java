@@ -7,10 +7,10 @@
  */
 package zollerngalaxy.compatibility;
 
+import com.mjr.planetprogression.api.research.ResearchHooksMP;
 import micdoodle8.mods.galacticraft.api.galaxies.CelestialBody;
 import net.minecraft.entity.player.EntityPlayerMP;
 import zollerngalaxy.lib.helpers.ZGHelper;
-import com.mjr.planetprogression.api.research.ResearchHooksMP;
 
 /**
  * Thank you MJRLegends

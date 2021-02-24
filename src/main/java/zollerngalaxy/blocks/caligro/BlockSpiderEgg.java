@@ -19,6 +19,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.SoundCategory;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
@@ -83,8 +84,8 @@ public class BlockSpiderEgg extends ZGBlockBase {
 			int i = 32;
 			
 			if (!BlockFalling.fallInstantly && worldIn.isAreaLoaded(pos.add(-32, -32, -32), pos.add(32, 32, 32))) {
-				worldIn.spawnEntity(new EntityFallingBlock(worldIn, pos.getX() + 0.5F, pos.getY(), pos.getZ() + 0.5F, this
-						.getDefaultState()));
+				worldIn.spawnEntity(
+						new EntityFallingBlock(worldIn, pos.getX() + 0.5F, pos.getY(), pos.getZ() + 0.5F, this.getDefaultState()));
 			} else {
 				worldIn.setBlockToAir(pos);
 				BlockPos blockpos;
@@ -108,17 +109,14 @@ public class BlockSpiderEgg extends ZGBlockBase {
 	
 	@Override
 	public void onBlockDestroyedByPlayer(World worldIn, BlockPos pos, IBlockState state) {
-		int par2 = pos.getX();
-		int par3 = pos.getY();
-		int par4 = pos.getZ();
-		this.hatchSpider(worldIn, par2, par3, par4);
+		this.hatchSpider(worldIn, pos);
 		this.ticksEggExisted = 0;
 		worldIn.setBlockState(pos, Blocks.AIR.getDefaultState(), 0);
 	}
 	
 	@Override
-	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand,
-			EnumFacing facing, float hitX, float hitY, float hitZ) {
+	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing,
+			float hitX, float hitY, float hitZ) {
 		super.onBlockActivated(worldIn, pos, state, playerIn, hand, facing, hitX, hitY, hitZ);
 		this.playHeartbeatSound(worldIn, pos);
 		this.ticksEggExisted += 10;
@@ -149,9 +147,25 @@ public class BlockSpiderEgg extends ZGBlockBase {
 		}
 	}
 	
+	/**
+	 * Hatch a Spiderling mob at this location.
+	 * 
+	 * @param par1World
+	 *            The world object to use.
+	 * @param pos
+	 *            The position in the world to spawn it.
+	 */
+	public void hatchSpider(World par1World, BlockPos pos) {
+		int posX = pos.getX();
+		int posY = pos.getY();
+		int posZ = pos.getZ();
+		this.hatchSpider(par1World, posX, posY, posZ);
+	}
+	
 	private void playHeartbeatSound(World worldIn, BlockPos pos) {
-		worldIn.playSound(null, pos, ZGSoundEvents.SPIDERLING_EGG_HEARTBEAT, SoundCategory.AMBIENT, 1.5F,
-				worldIn.rand.nextFloat() * 0.1F + 0.9F);
+		float soundPitch = worldIn.rand.nextFloat() * 0.1F + 0.9F;
+		SoundEvent soundEvent = ZGSoundEvents.SPIDERLING_EGG_HEARTBEAT;
+		worldIn.playSound(null, pos, soundEvent, SoundCategory.AMBIENT, 1.5F, soundPitch);
 	}
 	
 	@Override

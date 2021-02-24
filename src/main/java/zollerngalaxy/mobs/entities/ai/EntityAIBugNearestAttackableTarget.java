@@ -19,7 +19,7 @@ import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EntitySelectors;
 import net.minecraft.util.math.AxisAlignedBB;
-import zollerngalaxy.mobs.entities.EntityBugZG;
+import zollerngalaxy.mobs.entities.base.EntityBugZG;
 import com.google.common.base.Function;
 import com.google.common.base.Predicate;
 

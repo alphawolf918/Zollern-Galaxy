@@ -14,7 +14,7 @@ import net.minecraft.pathfinding.PathNavigate;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
-import zollerngalaxy.mobs.entities.EntityWaterMobZG;
+import zollerngalaxy.mobs.entities.base.EntityWaterMobZG;
 
 public class RandPosGenWater {
 	
@@ -69,8 +69,7 @@ public class RandPosGenWater {
 	}
 	
 	@Nullable
-	private static Vec3d generateRandomPos(EntityWaterMobZG p_191379_0_, int p_191379_1_, int p_191379_2_, @Nullable Vec3d p_191379_3_,
-			boolean p_191379_4_) {
+	private static Vec3d generateRandomPos(EntityWaterMobZG p_191379_0_, int p_191379_1_, int p_191379_2_, @Nullable Vec3d p_191379_3_, boolean p_191379_4_) {
 		PathNavigate pathnavigate = p_191379_0_.getNavigator();
 		Random random = p_191379_0_.getRNG();
 		boolean flag;

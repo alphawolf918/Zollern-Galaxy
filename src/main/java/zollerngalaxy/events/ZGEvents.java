@@ -7,23 +7,32 @@
  */
 package zollerngalaxy.events;
 
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
+import com.google.common.collect.Maps;
 import micdoodle8.mods.galacticraft.api.prefab.world.gen.WorldProviderSpace;
 import micdoodle8.mods.galacticraft.core.entities.EntityAlienVillager;
+import micdoodle8.mods.galacticraft.core.proxy.ClientProxyCore;
 import micdoodle8.mods.galacticraft.core.util.DamageSourceGC;
+import micdoodle8.mods.galacticraft.planets.venus.client.FakeLightningBoltRenderer;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSand;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.effect.EntityLightningBolt;
+import net.minecraft.entity.monster.EntityZombie;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.init.MobEffects;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraft.item.ItemStack;
@@ -48,6 +57,7 @@ import net.minecraft.world.storage.loot.RandomValueRange;
 import net.minecraft.world.storage.loot.conditions.LootCondition;
 import net.minecraftforge.event.LootTableLoadEvent;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
+import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
@@ -56,6 +66,9 @@ import net.minecraftforge.event.entity.player.UseHoeEvent;
 import net.minecraftforge.fml.common.eventhandler.Event.Result;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.gameevent.TickEvent;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.blocks.ZGBlockDirt;
 import zollerngalaxy.blocks.ZGBlockGrass;
 import zollerngalaxy.blocks.ZGSand;
@@ -63,9 +76,12 @@ import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.ZGLootTables;
 import zollerngalaxy.core.ZollernGalaxyCore;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderAltum;
+import zollerngalaxy.core.dimensions.worldproviders.WorldProviderMetztli;
+import zollerngalaxy.core.dimensions.worldproviders.WorldProviderVortex;
 import zollerngalaxy.items.ZGItems;
 import zollerngalaxy.items.armor.ZGArmor;
 import zollerngalaxy.items.armor.ZGArmorMats;
+import zollerngalaxy.lib.helpers.ModHelperBase;
 import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.mobs.entities.EntityAbyssalVillager;
 import zollerngalaxy.mobs.entities.EntityBladeFish;
@@ -79,17 +95,114 @@ import zollerngalaxy.mobs.entities.EntityOinkus;
 import zollerngalaxy.mobs.entities.EntityScorpion;
 import zollerngalaxy.mobs.entities.EntityShadowSkeleton;
 import zollerngalaxy.mobs.entities.EntityShark;
+import zollerngalaxy.mobs.entities.base.EntityMutantZombie;
 import zollerngalaxy.mobs.entities.interfaces.IShadeEntity;
+import zollerngalaxy.mobs.entities.zombiemutations.EntityGhoul;
+import zollerngalaxy.mobs.entities.zombiemutations.EntityOverlord;
+import zollerngalaxy.mobs.entities.zombiemutations.EntitySeeker;
+import zollerngalaxy.mobs.entities.zombiemutations.EntityVolatile;
 import zollerngalaxy.potions.ZGPotions;
 import zollerngalaxy.proxy.IProxy;
 import zollerngalaxy.util.CachedEnum;
 import zollerngalaxy.util.ZGDamageSrc;
 import zollerngalaxy.util.ZGUtils;
+import zollerngalaxy.util.ZombieUtils;
 
 public class ZGEvents {
 	
 	private ZollernGalaxyCore core = ZollernGalaxyCore.instance();
 	private IProxy proxy = this.core.proxy;
+	
+	private Map<BlockPos, Integer> lightning = Maps.newHashMap();
+	
+	@SideOnly(Side.CLIENT)
+	@SubscribeEvent(priority = EventPriority.HIGH, receiveCanceled = true)
+	public void onWindBlowingEvent(WindBlowingEvent event) {
+		final Minecraft minecraft = ZGUtils.getClient();
+		final EntityPlayerSP player = minecraft.player;
+		
+		World world = event.getWorld();
+		
+		if (ZGHelper.rngInt(1, 50) == 0 && minecraft.world.provider instanceof WorldProviderVortex) {
+			double freq = player.getRNG().nextDouble() * Math.PI * 2.0F;
+			double dist = 120.0F;
+			double dX = dist * Math.cos(freq);
+			double dZ = dist * Math.sin(freq);
+			double posX = player.posX + dX;
+			double posY = 70;
+			double posZ = player.posZ + dZ;
+			float pitch = 5.0F + player.getRNG().nextFloat() * 0.2F;
+			event.updateDirectionBasedOnChance();
+			minecraft.world.playSound(player, posX, posY, posZ, ZGSoundEvents.WEATHER_WIND, SoundCategory.WEATHER, 1000.0F, pitch);
+		}
+	}
+	
+	@SideOnly(Side.CLIENT)
+	@SubscribeEvent
+	public void onPlayerTick(TickEvent.PlayerTickEvent event) {
+		final Minecraft minecraft = ZGUtils.getMinecraft();
+		final EntityPlayerSP player = minecraft.player;
+		
+		if (player == event.player) {
+			Iterator<Map.Entry<BlockPos, Integer>> it = lightning.entrySet().iterator();
+			while (it.hasNext()) {
+				Map.Entry<BlockPos, Integer> entry = it.next();
+				int val = entry.getValue();
+				if (val - 1 <= 0) {
+					it.remove();
+				} else {
+					entry.setValue(val - 1);
+				}
+			}
+			
+			if (player.getRNG().nextInt(100) == 0 && minecraft.world.provider instanceof WorldProviderVortex) {
+				double freq = player.getRNG().nextDouble() * Math.PI * 2.0F;
+				double dist = 120.0F;
+				double dX = dist * Math.cos(freq);
+				double dZ = dist * Math.sin(freq);
+				double posX = player.posX + dX;
+				double posY = 70;
+				double posZ = player.posZ + dZ;
+				float pitch = 5.0F + player.getRNG().nextFloat() * 0.2F;
+				minecraft.world.playSound(player, posX, posY, posZ, SoundEvents.ENTITY_LIGHTNING_THUNDER, SoundCategory.WEATHER, 1000.0F, pitch);
+				lightning.put(new BlockPos(posX, posY, posZ), 20);
+			}
+		}
+	}
+	
+	@SubscribeEvent
+	public void renderLightning(ClientProxyCore.EventSpecialRender event) {
+		final Minecraft minecraft = ZGUtils.getClient();
+		final EntityPlayerSP player = minecraft.player;
+		Iterator<Map.Entry<BlockPos, Integer>> it = lightning.entrySet().iterator();
+		while (it.hasNext()) {
+			Map.Entry<BlockPos, Integer> entry = it.next();
+			long seed = entry.getValue() / 10 + entry.getKey().getX() + entry.getKey().getZ();
+			FakeLightningBoltRenderer.renderBolt(seed, entry.getKey().getX() - ClientProxyCore.playerPosX, entry.getKey().getY() - ClientProxyCore.playerPosY,
+					entry.getKey().getZ() - ClientProxyCore.playerPosZ);
+		}
+	}
+	
+	@SubscribeEvent
+	public void onPlayerDeath(LivingDeathEvent event) {
+		Entity entity = event.getEntityLiving();
+		World world = entity.world;
+		if (!world.isRemote) {
+			if (entity instanceof EntityPlayer) {
+				DamageSource damageSource = event.getSource();
+				Entity damageSourceEntity = damageSource.getImmediateSource();
+				EntityPlayer player = (EntityPlayer) entity;
+				if (damageSourceEntity instanceof EntityZombie) {
+					ZombieUtils.convertToZombie(player, world, EntityZombie.class, "Zombie");
+				} else if (damageSourceEntity instanceof EntityMutantZombie) {
+					String strMutantName = ((EntityMutantZombie) damageSourceEntity).getMutantName();
+					strMutantName = (strMutantName == "" || strMutantName == null) ? "Mutant" : strMutantName;
+					Class<? extends EntityMutantZombie> mutantZombieClass = (Class<? extends EntityMutantZombie>) damageSourceEntity.getClass();
+					ZombieUtils.convertToZombie(player, world, mutantZombieClass, strMutantName);
+				}
+			}
+		}
+	}
 	
 	@SubscribeEvent(priority = EventPriority.HIGH, receiveCanceled = true)
 	public void onLivingUpdateEvent(LivingUpdateEvent event) {
@@ -232,7 +345,9 @@ public class ZGEvents {
 					// Radium
 					player.addPotionEffect(new PotionEffect(ZGPotions.radiance, 100, 1));
 					if (ConfigManagerZG.enableRadianceFlying) {
-						player.capabilities.allowFlying = true;
+						if (!ModHelperBase.useDraconicEvolution) {
+							player.capabilities.allowFlying = true;
+						}
 					}
 				} else {
 					// Disable all "extra" potion capabilities that have nothing
@@ -240,7 +355,73 @@ public class ZGEvents {
 					// effects (not the potion's, but the armor's) will last.
 					player.stepHeight = 0.5F;
 					if (!player.capabilities.isCreativeMode && ConfigManagerZG.enableRadianceFlying) {
-						player.capabilities.allowFlying = false;
+						if (!ModHelperBase.useDraconicEvolution) {
+							player.capabilities.allowFlying = false;
+						}
+					}
+				}
+			}
+		}
+		
+		// Handle Zombie mutations
+		if (entity instanceof EntityZombie && !(entity instanceof EntityMutantZombie)) {
+			EntityZombie zombie = (EntityZombie) entity;
+			World world = entity.world;
+			if (!world.isRemote) {
+				if (world.provider instanceof WorldProviderMetztli) {
+					if (rand.nextInt(400) == 0) {
+						int mutantChance = rand.nextInt(100);
+						// Ghoul
+						if (mutantChance <= ZombieUtils.MUTATE_GHOUL_CHANCE) {
+							EntityGhoul gzombie = new EntityGhoul(world);
+							gzombie.copyLocationAndAnglesFrom(zombie);
+							if (zombie.hasCustomName()) {
+								String zombieName = zombie.getCustomNameTag();
+								String gZombieName = zombieName.replace("Zombie", "Ghoul");
+								gzombie.setCustomNameTag(gZombieName);
+							}
+							world.spawnEntity(gzombie);
+							ZombieUtils.playMutateSound(gzombie.posX, gzombie.posY, gzombie.posZ, world, rand);
+							// Overlord
+						} else if (mutantChance <= ZombieUtils.MUTATE_OVERLORD_CHANCE) {
+							zombie.setDead();
+							
+							EntityOverlord ozombie = new EntityOverlord(world);
+							ozombie.copyLocationAndAnglesFrom(zombie);
+							if (zombie.hasCustomName()) {
+								String zombieName = zombie.getCustomNameTag();
+								String oZombieName = zombieName.replace("Zombie", "Overlord");
+								ozombie.setCustomNameTag(oZombieName);
+							}
+							world.spawnEntity(ozombie);
+							ZombieUtils.playMutateSound(ozombie.posX, ozombie.posY, ozombie.posZ, world, rand);
+							// Seeker
+						} else if (mutantChance <= ZombieUtils.MUTATE_SEEKER_CHANCE) {
+							zombie.setDead();
+							
+							EntitySeeker szombie = new EntitySeeker(world);
+							szombie.copyLocationAndAnglesFrom(zombie);
+							if (zombie.hasCustomName()) {
+								String zombieName = zombie.getCustomNameTag();
+								String sZombieName = zombieName.replace("Zombie", "Seeker");
+								szombie.setCustomNameTag(sZombieName);
+							}
+							world.spawnEntity(szombie);
+							ZombieUtils.playMutateSound(szombie.posX, szombie.posY, szombie.posZ, world, rand);
+							// Volatile
+						} else if (mutantChance <= ZombieUtils.MUTATE_VOLATILE_CHANCE) {
+							zombie.setDead();
+							
+							EntityVolatile vzombie = new EntityVolatile(world);
+							vzombie.copyLocationAndAnglesFrom(zombie);
+							if (zombie.hasCustomName()) {
+								String zombieName = zombie.getCustomNameTag();
+								String vZombieName = zombieName.replace("Zombie", "Volatile");
+								vzombie.setCustomNameTag(vZombieName);
+							}
+							world.spawnEntity(vzombie);
+							ZombieUtils.playMutateSound(vzombie.posX, vzombie.posY, vzombie.posZ, world, rand);
+						}
 					}
 				}
 			}
@@ -258,14 +439,14 @@ public class ZGEvents {
 		if (username.equals("alphawolf918")) {
 			event.setDisplayname(TextFormatting.GOLD + "Zollern Wolf" + TextFormatting.WHITE);
 		} else if (username.equals("nascarmpfan")) {
-			event.setDisplayname(TextFormatting.RED + "Specter" + TextFormatting.WHITE);
+			event.setDisplayname(TextFormatting.RED + "Specter Fettel" + TextFormatting.WHITE);
 		} else if (username.equals("applepiec00kie")) {
 			event.setDisplayname(TextFormatting.LIGHT_PURPLE + "Queen Apple" + TextFormatting.WHITE);
 		} else if (username.equals("lazy_logic")) {
 			event.setDisplayname(TextFormatting.AQUA + "Logic" + TextFormatting.WHITE);
 		} else if (username.equals("master_zane")) {
 			event.setDisplayname(TextFormatting.GOLD + "Master Zane" + TextFormatting.WHITE);
-		} else if (username.equals("chronoxshift")) {
+		} else if (username.equals("chronoxshift") || username.equals("chrono_miles_")) {
 			event.setDisplayname(TextFormatting.BLACK + "ChronoxShift" + TextFormatting.WHITE);
 		} else if (username.equals("actural_guy")) {
 			event.setDisplayname(TextFormatting.GOLD + "ExistingEevee" + TextFormatting.WHITE);
@@ -289,6 +470,7 @@ public class ZGEvents {
 			}
 		}
 		
+		// This doesn't seem to work yet.
 		if (ent instanceof EntityPlayer) {
 			EntityPlayer player = (EntityPlayer) ent;
 			World world = player.world;
@@ -508,8 +690,8 @@ public class ZGEvents {
 	private void setFarmland(UseHoeEvent event, World world, BlockPos pos, Block farmland) {
 		world.setBlockState(pos, farmland.getDefaultState());
 		event.setResult(Result.ALLOW);
-		world.playSound(null, pos.getX(), pos.getY(), pos.getZ(), SoundType.GROUND.getStepSound(), SoundCategory.BLOCKS,
-				(SoundType.GROUND.getVolume() + 1.0F) / 2.0F, SoundType.GROUND.getPitch() * 0.8F);
+		world.playSound(null, pos.getX(), pos.getY(), pos.getZ(), SoundType.GROUND.getStepSound(), SoundCategory.BLOCKS, (SoundType.GROUND.getVolume() + 1.0F) / 2.0F,
+				SoundType.GROUND.getPitch() * 0.8F);
 		
 		for (EnumHand hand : CachedEnum.valuesHandCached()) {
 			event.getEntityPlayer().swingArm(hand);

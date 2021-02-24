@@ -46,7 +46,7 @@ public class BiomeDecoratorAltum extends BiomeDecoratorZG {
 	private WorldGenerator prismarineGen;
 	
 	public int waterLakesPerChunk = 6;
-	public int treasurePerChunk = 4;
+	public int treasurePerChunk = 1;
 	public int seaweedPerChunk = 2;
 	
 	private ResourceLocation oceanLootTable = ZGLootTables.CHEST_OCEAN_TREASURE;
@@ -111,10 +111,10 @@ public class BiomeDecoratorAltum extends BiomeDecoratorZG {
 				for (int i = 0; i < this.treasurePerChunk; i++) {
 					int x1 = rand.nextInt(16) + 8;
 					int z1 = rand.nextInt(16) + 8;
-					int y1 = world.getHeight(this.chunkPos.add(x1, 0, z1)).getY() * 2;
-					if (y1 > 0) {
-						int y2 = rand.nextInt(y1);
-						BlockPos chestPos = this.chunkPos.add(x1, y2, z1);
+					y = rand.nextInt(rand.nextInt(genY) + 8);
+					// int y1 = world.getHeight(this.chunkPos.add(x1, 0, z1)).getY();
+					if (y > 0) {
+						BlockPos chestPos = this.chunkPos.add(x1, y, z1);
 						chestPos = chestPos.down();
 						this.treasureGen.generate(world, rand, chestPos);
 					}

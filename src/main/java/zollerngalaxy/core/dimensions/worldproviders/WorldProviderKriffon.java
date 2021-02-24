@@ -24,11 +24,11 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.biomes.providers.BiomeProviderKriffon;
 import zollerngalaxy.blocks.ZGBlocks;
+import zollerngalaxy.celestial.IZollernBody;
+import zollerngalaxy.celestial.ZGPlanets;
 import zollerngalaxy.core.dimensions.ZGDimensions;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderKriffon;
 import zollerngalaxy.core.dimensions.skyproviders.SkyProviderKriffon;
-import zollerngalaxy.planets.ZGPlanet;
-import zollerngalaxy.planets.ZGPlanets;
 
 public class WorldProviderKriffon extends WorldProviderZG {
 	
@@ -74,8 +74,8 @@ public class WorldProviderKriffon extends WorldProviderZG {
 	
 	@Override
 	public float getPlanetTemp() {
-		ZGPlanet planet = this.getPlanet();
-		float planetTemp = planet.getPlanetTemperature();
+		IZollernBody planet = this.getPlanet();
+		float planetTemp = planet.getBodyTemperature();
 		if (this.isDaytime()) {
 			planetTemp += 10.1F;
 		} else {

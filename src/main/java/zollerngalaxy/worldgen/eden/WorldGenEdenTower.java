@@ -20,6 +20,7 @@ import zollerngalaxy.worldgen.ZGWorldGenMaster;
 
 public class WorldGenEdenTower extends ZGWorldGenMaster {
 	
+	@Override
 	protected boolean isValidSpawn(World world, BlockPos pos) {
 		Block blockBelow = world.getBlockState(pos.down()).getBlock();
 		
@@ -36,7 +37,7 @@ public class WorldGenEdenTower extends ZGWorldGenMaster {
 		int j = pos.getY();
 		int k = pos.getZ();
 		
-		j -= 10;
+		j -= 15;
 		pos = new BlockPos(pos.getX(), j, pos.getZ());
 		
 		this.setBlock(world, pos.add(4, 2, 10), ZGBlocks.edenSacredStone);
