@@ -1,7 +1,8 @@
 ===== CHANGELOG =====
-Zollern Galaxy v2.0.25 - SERVER-SIDE BUG FIX
+Zollern Galaxy v2.0.26 - SERVER-SIDE BUG FIX (Take 2)
 =====================
 
-* Fixed a server-side bug where the WindBlowingEvent was attempting to fire on the client-side.
-* Fixed the version being wrong in the code.
-* Fixed an issue where a biome could be null the MessageTeleporter context.
+* Fixed Vortex client-side lightning render attempting to run on server-side.
+* Fixed Vortex WindBlowingEvent mechanic using ClientProxyCore.
+    - Instead opted to use EntityPlayer variable when firing in the MinecraftForge event bus.
+* Changed Caligro from checking for dimension ID to check for WorldProviderCaligro instead.

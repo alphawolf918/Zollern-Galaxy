@@ -23,7 +23,6 @@ import net.minecraft.world.DimensionType;
 import net.minecraft.world.biome.BiomeProvider;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.gen.IChunkGenerator;
-import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.biomes.providers.BiomeProviderVortex;
@@ -32,8 +31,6 @@ import zollerngalaxy.celestial.ZGPlanets;
 import zollerngalaxy.core.dimensions.ZGDimensions;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderVortex;
 import zollerngalaxy.core.dimensions.skyproviders.SkyProviderVortex;
-import zollerngalaxy.events.WindBlowingEvent;
-import zollerngalaxy.lib.helpers.ZGHelper;
 
 public class WorldProviderVortex extends WorldProviderZG {
 	
@@ -248,9 +245,9 @@ public class WorldProviderVortex extends WorldProviderZG {
 		this.world.rainingStrength = 1.0F;
 		this.world.thunderingStrength = 1.0F;
 		
-		if (ZGHelper.rngInt(1, 700) <= 10) {
-			MinecraftForge.EVENT_BUS.post(new WindBlowingEvent(world));
-		}
+		// if (ZGHelper.rngInt(1, 700) <= 10) {
+		// MinecraftForge.EVENT_BUS.post(new WindBlowingEvent(world));
+		// }
 	}
 	
 	private void saveTime() {

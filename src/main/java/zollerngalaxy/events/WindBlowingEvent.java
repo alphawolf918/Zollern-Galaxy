@@ -8,7 +8,6 @@
 package zollerngalaxy.events;
 
 import java.util.List;
-import micdoodle8.mods.galacticraft.core.proxy.ClientProxyCore;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
@@ -45,9 +44,9 @@ public final class WindBlowingEvent extends Event {
 	private World world;
 	private BlockPos playerPos;
 	
-	public WindBlowingEvent(World worldIn) {
+	public WindBlowingEvent(World worldIn, EntityPlayer player) {
 		this.world = worldIn;
-		this.playerPos = new BlockPos(ClientProxyCore.playerPosX, ClientProxyCore.playerPosY, ClientProxyCore.playerPosZ);
+		this.playerPos = new BlockPos(player.posX, player.posY, player.posZ);
 		
 		if (this.directionalChance <= 10) {
 			this.updateDirectionBasedOnChance();

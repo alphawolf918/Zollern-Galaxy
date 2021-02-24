@@ -55,6 +55,7 @@ import net.minecraft.world.storage.loot.LootTableList;
 import net.minecraft.world.storage.loot.LootTableManager;
 import net.minecraft.world.storage.loot.RandomValueRange;
 import net.minecraft.world.storage.loot.conditions.LootCondition;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.LootTableLoadEvent;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
@@ -76,6 +77,7 @@ import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.ZGLootTables;
 import zollerngalaxy.core.ZollernGalaxyCore;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderAltum;
+import zollerngalaxy.core.dimensions.worldproviders.WorldProviderCaligro;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderMetztli;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderVortex;
 import zollerngalaxy.items.ZGItems;
@@ -170,6 +172,7 @@ public class ZGEvents {
 		}
 	}
 	
+	@SideOnly(Side.CLIENT)
 	@SubscribeEvent
 	public void renderLightning(ClientProxyCore.EventSpecialRender event) {
 		final Minecraft minecraft = ZGUtils.getClient();
@@ -221,7 +224,7 @@ public class ZGEvents {
 			boolean isRadianceActive = player.isPotionActive(ZGPotions.radiance);
 			boolean isAntiCorruptActive = player.isPotionActive(ZGPotions.antiCorruption);
 			
-			if (player.dimension == ConfigManagerZG.planetCaligroDimensionId) {
+			if (world.provider instanceof WorldProviderCaligro) {
 				// Radiance Protection
 				Item radium = ZGItems.radium;
 				ItemStack radiumStack = new ItemStack(radium, 1);
@@ -262,6 +265,10 @@ public class ZGEvents {
 							currentPlayer.addPotionEffect(infectEffect);
 						}
 					}
+				}
+			} else if (world.provider instanceof WorldProviderVortex) {
+				if (ZGHelper.rngInt(1, 700) <= 15) {
+					MinecraftForge.EVENT_BUS.post(new WindBlowingEvent(world, player));
 				}
 			}
 			
