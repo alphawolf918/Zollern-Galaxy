@@ -9,6 +9,7 @@ package zollerngalaxy.biomes.altum;
 
 import java.util.Random;
 import micdoodle8.mods.galacticraft.core.entities.EntityAlienVillager;
+import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.state.IBlockState;
@@ -118,9 +119,19 @@ public class BiomeAltumBase extends BiomeSpace {
 							chunkPrimerIn.setBlockState(x2, y, z2, DIRT);
 						}
 						//
-						if (rand.nextInt(1000) <= 10) {
+						if (rand.nextInt(1000) <= 5) {
 							BlockPos chestPos = new BlockPos(x2, (y + 1), z2);
-							OCEAN_TREASURE_GEN.generate(worldIn, rand, chestPos);
+							
+							int posX = chestPos.getX();
+							int posY = chestPos.getY();
+							int posZ = chestPos.getZ();
+							
+							IBlockState state = chunkPrimerIn.getBlockState(posX, posY, posZ);
+							Block block = state.getBlock();
+							
+							if (chestPos != null && chestPos != null && block != null) {
+								OCEAN_TREASURE_GEN.generate(worldIn, rand, chestPos);
+							}
 						}
 						//
 					} else if (y >= SEA_LEVEL) {

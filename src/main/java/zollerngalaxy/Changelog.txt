@@ -1,8 +1,9 @@
 ===== CHANGELOG =====
-Zollern Galaxy v2.0.26 - SERVER-SIDE BUG FIX (Take 2)
+Zollern Galaxy v2.0.27
 =====================
 
-* Fixed Vortex client-side lightning render attempting to run on server-side.
-* Fixed Vortex WindBlowingEvent mechanic using ClientProxyCore.
-    - Instead opted to use EntityPlayer variable when firing in the MinecraftForge event bus.
-* Changed Caligro from checking for dimension ID to check for WorldProviderCaligro instead.
+* Added several null checks to chest validation to hopefully help fix weird Altum crash.
+* Halved spawn chance of chests on Altum to help with crash.
+* Temporarily removed chest generation code for Altum.
+* Removed check for thermal blueprints in event subscriber code.
+* 

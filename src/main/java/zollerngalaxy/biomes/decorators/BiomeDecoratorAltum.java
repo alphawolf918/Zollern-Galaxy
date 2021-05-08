@@ -11,7 +11,6 @@ import java.util.Random;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
@@ -106,21 +105,22 @@ public class BiomeDecoratorAltum extends BiomeDecoratorZG {
 		}
 		
 		// Chest Gen
-		if (TerrainGen.decorate(world, rand, forgeChunkPos, DecorateBiomeEvent.Decorate.EventType.FOSSIL)) {
-			if (rand.nextInt(15) == 0) {
-				for (int i = 0; i < this.treasurePerChunk; i++) {
-					int x1 = rand.nextInt(16) + 8;
-					int z1 = rand.nextInt(16) + 8;
-					y = rand.nextInt(rand.nextInt(genY) + 8);
-					// int y1 = world.getHeight(this.chunkPos.add(x1, 0, z1)).getY();
-					if (y > 0) {
-						BlockPos chestPos = this.chunkPos.add(x1, y, z1);
-						chestPos = chestPos.down();
-						this.treasureGen.generate(world, rand, chestPos);
-					}
-				}
-			}
-		}
+		// if (TerrainGen.decorate(world, rand, forgeChunkPos,
+		// DecorateBiomeEvent.Decorate.EventType.FOSSIL)) {
+		// // if (rand.nextInt(50) == 0) {
+		// // for (int i = 0; i < this.treasurePerChunk; i++) {
+		// // int x1 = rand.nextInt(16) + 8;
+		// // int z1 = rand.nextInt(16) + 8;
+		// // y = rand.nextInt(rand.nextInt(genY) + 8);
+		// // // int y1 = world.getHeight(this.chunkPos.add(x1, 0, z1)).getY();
+		// // if (y > 40) {
+		// // BlockPos chestPos = this.chunkPos.add(x1, y, z1);
+		// // chestPos = chestPos.down();
+		// // this.treasureGen.generate(world, rand, chestPos);
+		// // }
+		// // }
+		// // }
+		// }
 		
 		// Seaweed Gen
 		if (TerrainGen.decorate(world, rand, forgeChunkPos, DecorateBiomeEvent.Decorate.EventType.GRASS)) {
@@ -137,11 +137,11 @@ public class BiomeDecoratorAltum extends BiomeDecoratorZG {
 			}
 		}
 		
+		// Outposts
 		if (this.generateOutposts && this.outpostsPerChunk > 0) {
 			y = rand.nextInt(rand.nextInt(genY) + 8);
 			if (y >= 62) {
-				WorldGenerator outpostGen = new WorldGenOutpost(ZGBlocks.blockOutpost.getDefaultState(),
-						ZGBlocks.blockOutpost.getDefaultState());
+				WorldGenerator outpostGen = new WorldGenOutpost(ZGBlocks.blockOutpost.getDefaultState(), ZGBlocks.blockOutpost.getDefaultState());
 				for (int i = 0; i < this.outpostsPerChunk; i++) {
 					if (rand.nextInt((this.enableExtremeMode) ? 200 : 100) <= ConfigManagerZG.outpostGenChance) {
 						outpostGen.generate(world, rand, this.chunkPos.add(x, y, z));

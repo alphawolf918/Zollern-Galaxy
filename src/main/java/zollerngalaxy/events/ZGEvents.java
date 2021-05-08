@@ -12,10 +12,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 import com.google.common.collect.Maps;
-import micdoodle8.mods.galacticraft.api.prefab.world.gen.WorldProviderSpace;
 import micdoodle8.mods.galacticraft.core.entities.EntityAlienVillager;
 import micdoodle8.mods.galacticraft.core.proxy.ClientProxyCore;
-import micdoodle8.mods.galacticraft.core.util.DamageSourceGC;
 import micdoodle8.mods.galacticraft.planets.venus.client.FakeLightningBoltRenderer;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSand;
@@ -478,29 +476,31 @@ public class ZGEvents {
 		}
 		
 		// This doesn't seem to work yet.
-		if (ent instanceof EntityPlayer) {
-			EntityPlayer player = (EntityPlayer) ent;
-			World world = player.world;
-			WorldProvider worldProvider = world.provider;
-			float dmg = event.getAmount();
-			Random rand = new Random();
-			if (src == DamageSourceGC.thermal) {
-				if (worldProvider instanceof WorldProviderSpace) {
-					WorldProviderSpace spaceProvider = (WorldProviderSpace) worldProvider;
-					float thermalLevel = spaceProvider.getThermalLevelModifier();
-					boolean isHot = (thermalLevel > 0F);
-					boolean isCold = (thermalLevel < 0F);
-					if (isHot) {
-						event.setCanceled(true);
-						ZGHelper.performBluePrintCheck(rand, ZGItems.blueprintThermalHot, player, DamageSourceGC.thermal, dmg);
-					}
-					if (isCold) {
-						event.setCanceled(true);
-						ZGHelper.performBluePrintCheck(rand, ZGItems.blueprintThermalCold, player, DamageSourceGC.thermal, dmg);
-					}
-				}
-			}
-		}
+		// if (ent instanceof EntityPlayer) {
+		// EntityPlayer player = (EntityPlayer) ent;
+		// World world = player.world;
+		// WorldProvider worldProvider = world.provider;
+		// float dmg = event.getAmount();
+		// Random rand = new Random();
+		// if (src == DamageSourceGC.thermal) {
+		// if (worldProvider instanceof WorldProviderSpace) {
+		// WorldProviderSpace spaceProvider = (WorldProviderSpace) worldProvider;
+		// float thermalLevel = spaceProvider.getThermalLevelModifier();
+		// boolean isHot = (thermalLevel > 0F);
+		// boolean isCold = (thermalLevel < 0F);
+		// if (isHot) {
+		// event.setCanceled(true);
+		// ZGHelper.performBluePrintCheck(rand, ZGItems.blueprintThermalHot, player,
+		// DamageSourceGC.thermal, dmg);
+		// }
+		// if (isCold) {
+		// event.setCanceled(true);
+		// ZGHelper.performBluePrintCheck(rand, ZGItems.blueprintThermalCold, player,
+		// DamageSourceGC.thermal, dmg);
+		// }
+		// }
+		// }
+		// }
 	}
 	
 	@SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
