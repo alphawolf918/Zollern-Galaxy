@@ -20,7 +20,7 @@ public class EntitySpiderling extends EntityCaveSpider implements IShadeEntity {
 	
 	public EntitySpiderling(World worldIn) {
 		super(worldIn);
-		this.setSize(this.width / 0.4f, this.height / 0.4f);
+		this.setSize(this.width * 0.4F, this.height * 0.4F);
 	}
 	
 	@Override
@@ -32,8 +32,7 @@ public class EntitySpiderling extends EntityCaveSpider implements IShadeEntity {
 		}
 		if (this.ticksExisted >= 2000) {
 			if (rand.nextInt(1000) <= 5 && !this.isDead) {
-				this.world.setBlockState(new BlockPos((int) this.posX, (int) this.posY, (int) this.posZ),
-						ZGBlocks.spiderlingEgg.getDefaultState());
+				this.world.setBlockState(new BlockPos((int) this.posX, (int) this.posY, (int) this.posZ), ZGBlocks.spiderlingEgg.getDefaultState());
 				if (new Random().nextInt(100) <= 50) {
 					this.killSpider();
 				}

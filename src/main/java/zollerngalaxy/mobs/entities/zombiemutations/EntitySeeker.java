@@ -33,6 +33,7 @@ public class EntitySeeker extends EntityMutantZombie {
 		this.setMutantName("Seeker");
 		this.setMutantFireTime(0);
 		this.setMutantScale(0.8F);
+		this.setSize(this.width * 0.8F, this.height * 0.8F);
 	}
 	
 	@Override

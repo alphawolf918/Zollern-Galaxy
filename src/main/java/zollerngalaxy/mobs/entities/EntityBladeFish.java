@@ -17,6 +17,7 @@ public class EntityBladeFish extends EntityWaterMobZG {
 	
 	public EntityBladeFish(World worldIn) {
 		super(worldIn);
+		this.setSize(this.width * 1.6F, this.height * 1.6F);
 		this.rand.setSeed(1 + this.getEntityId());
 	}
 	

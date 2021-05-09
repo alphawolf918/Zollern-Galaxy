@@ -53,6 +53,7 @@ public class EntityOverlord extends EntityMutantZombie {
 		this.setMutantName("Overlord");
 		this.setMutantFireTime(2);
 		this.setMutantScale(2.0F);
+		this.setSize(this.width * 2.0F, this.height * 2.0F);
 		this.applyEntityAI();
 	}
 	

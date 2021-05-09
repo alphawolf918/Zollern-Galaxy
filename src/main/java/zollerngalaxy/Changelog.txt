@@ -6,4 +6,10 @@ Zollern Galaxy v2.0.27
 * Halved spawn chance of chests on Altum to help with crash.
 * Temporarily removed chest generation code for Altum.
 * Removed check for thermal blueprints in event subscriber code.
+* Added three new tunneling tools to improve mining.
+    - Each one has its own durability.
+* Added a config option to toggle Ore Dictionary registration of Zinc.
+    - Should fix mod compatability issues similar to Cobalt.
 * 
+* Fixed hitboxes on several mobs.
+* Fixed (hopefully) several Altum crashes. WORK, DARNIT!

@@ -42,6 +42,7 @@ public class EntityGalaxyKnight extends EntityMob implements IEntityBreathable, 
 	
 	public EntityGalaxyKnight(World worldIn) {
 		super(worldIn);
+		this.setSize(this.width * 1.4F, this.height * 1.4F);
 		((PathNavigateGround) this.getNavigator()).setBreakDoors(true);
 		this.tasks.addTask(0, new EntityAISwimming(this));
 		this.tasks.addTask(1, new EntityAIBreakDoor(this));

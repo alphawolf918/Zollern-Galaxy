@@ -15,6 +15,7 @@ public class EntitySquidlus extends EntitySquid {
 	
 	public EntitySquidlus(World worldIn) {
 		super(worldIn);
+		this.setSize(this.width * 2.5F, this.height * 2.5F);
 		this.rand.setSeed(1 + this.getEntityId());
 	}
 	

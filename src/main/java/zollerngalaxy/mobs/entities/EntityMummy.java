@@ -45,6 +45,7 @@ public class EntityMummy extends EntityZombie implements IShadeEntity {
 	
 	public EntityMummy(World worldIn) {
 		super(worldIn);
+		this.setSize(this.width * 1.4F, this.height * 1.4F);
 	}
 	
 	@Override
@@ -59,8 +60,7 @@ public class EntityMummy extends EntityZombie implements IShadeEntity {
 	public void onKillEntity(EntityLivingBase entityLivingIn) {
 		super.onKillEntity(entityLivingIn);
 		
-		if ((this.world.getDifficulty() == EnumDifficulty.NORMAL || this.world.getDifficulty() == EnumDifficulty.HARD)
-				&& entityLivingIn instanceof EntityVillager) {
+		if ((this.world.getDifficulty() == EnumDifficulty.NORMAL || this.world.getDifficulty() == EnumDifficulty.HARD) && entityLivingIn instanceof EntityVillager) {
 			if (this.world.getDifficulty() != EnumDifficulty.HARD && this.rand.nextBoolean()) {
 				return;
 			}
@@ -157,8 +157,7 @@ public class EntityMummy extends EntityZombie implements IShadeEntity {
 		this.setCanPickUpLoot(this.rand.nextFloat() < 0.55F * f);
 		
 		if (livingdata == null) {
-			livingdata = new EntityMummy.GroupData(
-					this.world.rand.nextFloat() < net.minecraftforge.common.ForgeModContainer.zombieBabyChance);
+			livingdata = new EntityMummy.GroupData(this.world.rand.nextFloat() < net.minecraftforge.common.ForgeModContainer.zombieBabyChance);
 		}
 		
 		if (livingdata instanceof EntityMummy.GroupData) {
@@ -177,26 +176,23 @@ public class EntityMummy extends EntityZombie implements IShadeEntity {
 			Calendar calendar = this.world.getCurrentDate();
 			
 			if (calendar.get(2) + 1 == 10 && calendar.get(5) == 31 && this.rand.nextFloat() < 0.25F) {
-				this.setItemStackToSlot(EntityEquipmentSlot.HEAD, new ItemStack(this.rand.nextFloat() < 0.1F ? Blocks.LIT_PUMPKIN
-						: Blocks.PUMPKIN));
+				this.setItemStackToSlot(EntityEquipmentSlot.HEAD, new ItemStack(this.rand.nextFloat() < 0.1F ? Blocks.LIT_PUMPKIN : Blocks.PUMPKIN));
 				this.inventoryArmorDropChances[EntityEquipmentSlot.HEAD.getIndex()] = 0.0F;
 			}
 		}
 		
-		this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE).applyModifier(
-				new AttributeModifier("Random spawn bonus", this.rand.nextDouble() * 0.05000000074505806D, 0));
+		this.getEntityAttribute(SharedMonsterAttributes.KNOCKBACK_RESISTANCE)
+				.applyModifier(new AttributeModifier("Random spawn bonus", this.rand.nextDouble() * 0.05000000074505806D, 0));
 		double d0 = this.rand.nextDouble() * 1.5D * f;
 		
 		if (d0 > 1.0D) {
-			this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).applyModifier(
-					new AttributeModifier("Random zombie-spawn bonus", d0, 2));
+			this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).applyModifier(new AttributeModifier("Random zombie-spawn bonus", d0, 2));
 		}
 		
 		if (this.rand.nextFloat() < f * 0.05F) {
-			this.getEntityAttribute(SPAWN_REINFORCEMENTS_CHANCE).applyModifier(
-					new AttributeModifier("Leader zombie bonus", this.rand.nextDouble() * 0.25D + 0.5D, 0));
-			this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).applyModifier(
-					new AttributeModifier("Leader zombie bonus", this.rand.nextDouble() * 3.0D + 1.0D, 2));
+			this.getEntityAttribute(SPAWN_REINFORCEMENTS_CHANCE).applyModifier(new AttributeModifier("Leader zombie bonus", this.rand.nextDouble() * 0.25D + 0.5D, 0));
+			this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH)
+					.applyModifier(new AttributeModifier("Leader zombie bonus", this.rand.nextDouble() * 3.0D + 1.0D, 2));
 			this.setBreakDoorsAItask(true);
 		}
 		

@@ -138,6 +138,7 @@ public class ConfigManagerZG {
 	public static boolean enableExtraPulverizerOutput;
 	public static boolean fueltoniumIsUranium;
 	public static boolean registerCobaltOreDict;
+	public static boolean registerZincOreDict;
 	public static boolean enablePlanetProgressionsCompat;
 	public static boolean useTConRadium;
 	public static boolean useTConCorruption;
@@ -427,6 +428,10 @@ public class ConfigManagerZG {
 		// Compat (Should Cobalt register in the Ore Dictionary?)
 		registerCobaltOreDict = configuration.get(CATEGORY_COMPATIBILITY, "Register Cobalt in Ore Dictionary", true,
 				"Set this to false if there are any problems " + " with mods like Tinker's Construct. (default: true)").getBoolean();
+		
+		// Compat (Should Zinc register in the Ore Dictionary?)
+		registerZincOreDict = configuration.get(CATEGORY_COMPATIBILITY, "Register Zinc in Ore Dictionary", true,
+				"Set this to false if there are any problems " + " with other mods. (default: true)").getBoolean();
 		
 		// Compat (Should intergration with Planet Progressions be enabled?
 		enablePlanetProgressionsCompat = configuration.get(CATEGORY_COMPATIBILITY, "Enable Planet Progressions compatibility", true,

@@ -27,7 +27,7 @@ public class EntityWasp extends EntityBugZG implements IMob {
 	
 	public EntityWasp(World worldIn) {
 		super(worldIn);
-		this.setSize(0.7F, 1.4F);
+		this.setSize(this.width * 0.6F, this.height * 0.6F);
 		this.tasks.addTask(3, new EntityAIWatchClosest(this, EntityPlayer.class, 32.0F));
 		this.tasks.addTask(4, new EntityAILookIdle(this));
 		this.tasks.addTask(5, new EntityAILeapAtTarget(this, 0.4F));

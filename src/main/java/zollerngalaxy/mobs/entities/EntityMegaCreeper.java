@@ -39,7 +39,7 @@ public class EntityMegaCreeper extends EntityCreeper implements IEntityBreathabl
 	
 	public EntityMegaCreeper(World par1World) {
 		super(par1World);
-		this.setSize(0.6F, 1.7F);
+		this.setSize(this.width * 1.6F, this.height * 1.6F);
 	}
 	
 	@Override

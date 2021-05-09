@@ -19,6 +19,7 @@ public class EntityFaceless extends EntityCorruptedMob {
 	
 	public EntityFaceless(World worldIn) {
 		super(worldIn);
+		this.setSize(this.width, this.height);
 	}
 	
 	@Override

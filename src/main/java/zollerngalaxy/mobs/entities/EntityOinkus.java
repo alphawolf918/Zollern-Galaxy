@@ -22,6 +22,7 @@ public class EntityOinkus extends EntityPig implements IEntityBreathable {
 	
 	public EntityOinkus(World worldIn) {
 		super(worldIn);
+		this.setSize(this.width * 1.7F, this.height * 1.7F);
 	}
 	
 	@Override

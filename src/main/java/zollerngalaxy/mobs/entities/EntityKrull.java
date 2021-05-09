@@ -20,7 +20,7 @@ public class EntityKrull extends EntityMob implements IShadeEntity {
 	
 	public EntityKrull(World worldIn) {
 		super(worldIn);
-		this.setSize(this.width * 1.5f, this.height * 1.5f);
+		this.setSize(this.width * 1.4F, this.height * 1.4F);
 		this.setCanPickUpLoot(true);
 	}
 	

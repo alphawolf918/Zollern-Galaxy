@@ -18,7 +18,7 @@ public class EntityPigShroom extends EntityOinkus {
 	
 	public EntityPigShroom(World worldIn) {
 		super(worldIn);
-		this.setSize(this.width, this.height);
+		this.setSize(this.width * 0.6F, this.height * 0.6F);
 	}
 	
 	@Override

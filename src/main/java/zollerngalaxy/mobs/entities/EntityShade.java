@@ -19,6 +19,7 @@ public class EntityShade extends EntityZombie implements IShadeEntity {
 	
 	public EntityShade(World worldIn) {
 		super(worldIn);
+		this.setSize(this.width * 1.4F, this.height * 1.4F);
 	}
 	
 	@Override

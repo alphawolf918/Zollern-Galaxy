@@ -26,7 +26,7 @@ public class EntityArcon extends EntityCreature implements IEntityBreathable {
 	
 	public EntityArcon(World worldIn) {
 		super(worldIn);
-		this.setSize(this.width, this.height);
+		this.setSize(this.width * 1.5F, this.height * 1.5F);
 		this.tasks.addTask(0, new EntityAISwimming(this));
 		this.tasks.addTask(2, new EntityAIMoveIndoors(this));
 		this.tasks.addTask(3, new EntityAIRestrictOpenDoor(this));

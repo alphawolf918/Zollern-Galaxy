@@ -15,7 +15,7 @@ public class EntityGypsyFish extends EntityWaterMobZG {
 	
 	public EntityGypsyFish(World worldIn) {
 		super(worldIn);
-		// this.setSize(3.4F, 3.4F);
+		this.setSize(this.width * 1.8F, this.height * 1.8F);
 		this.rand.setSeed(1 + this.getEntityId());
 	}
 	

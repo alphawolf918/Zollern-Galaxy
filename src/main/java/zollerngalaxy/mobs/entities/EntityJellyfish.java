@@ -17,6 +17,7 @@ public class EntityJellyfish extends EntitySquid {
 	
 	public EntityJellyfish(World worldIn) {
 		super(worldIn);
+		this.setSize(this.width * 0.5F, this.height * 0.5F);
 		this.rand.setSeed(1 + this.getEntityId());
 	}
 	

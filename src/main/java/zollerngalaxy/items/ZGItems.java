@@ -20,6 +20,7 @@ import zollerngalaxy.items.healing.ItemHeart;
 import zollerngalaxy.items.healing.ItemHeartForce;
 import zollerngalaxy.items.tools.ItemBedrockBreaker;
 import zollerngalaxy.items.tools.ItemOmnitool;
+import zollerngalaxy.items.tools.ItemTunneler;
 import zollerngalaxy.items.tools.ZGItemAxe;
 import zollerngalaxy.items.tools.ZGItemHoe;
 import zollerngalaxy.items.tools.ZGItemPickaxe;
@@ -223,6 +224,11 @@ public class ZGItems {
 	public static final Item swordIce = new ItemIceSword();
 	public static final Item swordLight = new ItemLightSword();
 	
+	// Tunnelers
+	public static final Item tunnelerCopper = new ItemTunneler("copper", 1000);
+	public static final Item tunnelerGold = new ItemTunneler("gold", 2000);
+	public static final Item tunnelerAmaranth = new ItemTunneler("amaranth", 4000);
+	
 	// Armor (Helmets)
 	public static final Item helmetAmaranth = new ZGArmor(ZGArmorMats.AMARANTH, 1, EntityEquipmentSlot.HEAD, "amaranthhelmet");
 	public static final Item helmetZollernium = new ZGArmor(ZGArmorMats.ZOLLERNIUM, 1, EntityEquipmentSlot.HEAD, "zollerniumhelmet");
@@ -275,9 +281,9 @@ public class ZGItems {
 				pickaxeAzurite, pickaxeZollernium, shovelCobalt, shovelEvenium, shovelVirinium, shovelAmaranth, shovelAzurite, shovelZollernium, axeCobalt, axeEvenium,
 				axeVirinium, axeAmaranth, axeAzurite, axeZollernium, hoeCobalt, hoeEvenium, hoeVirinium, hoeAmaranth, hoeAzurite, hoeZollernium, swordCobalt,
 				swordEvenium, swordVirinium, swordAmaranth, swordAzurite, swordZollernium, swordWither, swordFire, swordThor, swordEnder, swordIce, swordLight,
-				helmetAmaranth, helmetZollernium, helmetAzurite, helmetRadium, chestAmaranth, chestZollernium, chestAzurite, chestRadium, legsAmaranth, legsZollernium,
-				legsAzurite, legsRadium, bootsAmaranth, bootsZollernium, bootsAzurite, bootsRadium, blueprintCorruption, blueprintThermalHot, blueprintThermalCold,
-				healingHeart, healingHeartForce, amuletStorm);
+				tunnelerCopper, tunnelerGold, tunnelerAmaranth, helmetAmaranth, helmetZollernium, helmetAzurite, helmetRadium, chestAmaranth, chestZollernium,
+				chestAzurite, chestRadium, legsAmaranth, legsZollernium, legsAzurite, legsRadium, bootsAmaranth, bootsZollernium, bootsAzurite, bootsRadium,
+				blueprintCorruption, blueprintThermalHot, blueprintThermalCold, healingHeart, healingHeartForce, amuletStorm);
 		ZGHelper.Log("Loaded a total of " + totalItems + " new items.");
 	}
 	

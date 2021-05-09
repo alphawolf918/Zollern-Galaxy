@@ -86,8 +86,7 @@ public class EntityAbyssalVillager extends EntityAgeable implements IMerchant, I
 	private boolean isLookingForHome;
 	private InventoryBasic villagerInventory;
 	
-	private static final ITradeList[] DEFAULT_TRADE_LIST_MAP = new ITradeList[] {
-			new ListItemForEmeralds(new ItemStack(ZGItems.alienStone, 1), new PriceInfo(1, 2)),
+	private static final ITradeList[] DEFAULT_TRADE_LIST_MAP = new ITradeList[] { new ListItemForEmeralds(new ItemStack(ZGItems.alienStone, 1), new PriceInfo(1, 2)),
 			new ListItemForEmeralds(new ItemStack(ZGItems.axeAmaranth, 1), new PriceInfo(3, 4)),
 			new ListItemForEmeralds(new ItemStack(ZGItems.darkEssence, 1), new PriceInfo(3, 4)),
 			new ListItemForEmeralds(new ItemStack(ZGItems.sharkTooth, 1), new PriceInfo(3, 4)),
@@ -106,7 +105,7 @@ public class EntityAbyssalVillager extends EntityAgeable implements IMerchant, I
 		super(worldIn);
 		this.villagerInventory = new InventoryBasic("Items", false, 16);
 		this.stepHeight = 3F;
-		this.setSize(0.9F, 2.2F);
+		this.setSize(this.width * 1.5375F, this.height * 1.5375F);
 		((PathNavigateGround) this.getNavigator()).setBreakDoors(true);
 		this.tasks.addTask(1, new EntityAIAvoidEntity<>(this, EntityZombie.class, 8.0F, 0.6D, 0.6D));
 		this.tasks.addTask(1, new EntityAITradePlayerZG(this));
@@ -455,9 +454,8 @@ public class EntityAbyssalVillager extends EntityAgeable implements IMerchant, I
 			double d0 = this.rand.nextGaussian() * 0.02D;
 			double d1 = this.rand.nextGaussian() * 0.02D;
 			double d2 = this.rand.nextGaussian() * 0.02D;
-			this.world.spawnParticle(particleType, this.posX + this.rand.nextFloat() * this.width * 2.0F - this.width, this.posY + 1.0D
-					+ this.rand.nextFloat() * this.height, this.posZ + this.rand.nextFloat() * this.width * 2.0F - this.width, d0, d1, d2,
-					new int[0]);
+			this.world.spawnParticle(particleType, this.posX + this.rand.nextFloat() * this.width * 2.0F - this.width,
+					this.posY + 1.0D + this.rand.nextFloat() * this.height, this.posZ + this.rand.nextFloat() * this.width * 2.0F - this.width, d0, d1, d2, new int[0]);
 		}
 	}
 	
@@ -528,8 +526,7 @@ public class EntityAbyssalVillager extends EntityAgeable implements IMerchant, I
 	}
 	
 	private boolean canVillagerPickupItem(Item itemIn) {
-		return itemIn == Items.BREAD || itemIn == Items.POTATO || itemIn == Items.CARROT || itemIn == Items.WHEAT
-				|| itemIn == Items.WHEAT_SEEDS;
+		return itemIn == Items.BREAD || itemIn == Items.POTATO || itemIn == Items.CARROT || itemIn == Items.WHEAT || itemIn == Items.WHEAT_SEEDS;
 	}
 	
 	public boolean func_175553_cp() {
@@ -549,9 +546,9 @@ public class EntityAbyssalVillager extends EntityAgeable implements IMerchant, I
 			ItemStack itemstack = this.villagerInventory.getStackInSlot(i);
 			
 			if (!itemstack.isEmpty()) {
-				if (itemstack.getItem() == Items.BREAD && itemstack.getCount() >= 3 * multiplier || itemstack.getItem() == Items.POTATO
-						&& itemstack.getCount() >= 12 * multiplier || itemstack.getItem() == Items.CARROT
-						&& itemstack.getCount() >= 12 * multiplier) {
+				if (itemstack.getItem() == Items.BREAD && itemstack.getCount() >= 3 * multiplier
+						|| itemstack.getItem() == Items.POTATO && itemstack.getCount() >= 12 * multiplier
+						|| itemstack.getItem() == Items.CARROT && itemstack.getCount() >= 12 * multiplier) {
 					return true;
 				}
 				
@@ -648,8 +645,7 @@ public class EntityAbyssalVillager extends EntityAgeable implements IMerchant, I
 				i = this.field_179409_b.getPrice(random);
 			}
 			
-			recipeList.add(new MerchantRecipe(this.field_179411_a.copy(), new ItemStack(GCItems.itemBasicMoon, i, 2), this.field_179410_c
-					.copy()));
+			recipeList.add(new MerchantRecipe(this.field_179411_a.copy(), new ItemStack(GCItems.itemBasicMoon, i, 2), this.field_179410_c.copy()));
 		}
 	}
 	
@@ -691,8 +687,8 @@ public class EntityAbyssalVillager extends EntityAgeable implements IMerchant, I
 		}
 		
 		public int getPrice(Random rand) {
-			return this.getFirst().intValue() >= this.getSecond().intValue() ? this.getFirst().intValue() : this.getFirst().intValue()
-					+ rand.nextInt(this.getSecond().intValue() - this.getFirst().intValue() + 1);
+			return this.getFirst().intValue() >= this.getSecond().intValue() ? this.getFirst().intValue()
+					: this.getFirst().intValue() + rand.nextInt(this.getSecond().intValue() - this.getFirst().intValue() + 1);
 		}
 	}
 }

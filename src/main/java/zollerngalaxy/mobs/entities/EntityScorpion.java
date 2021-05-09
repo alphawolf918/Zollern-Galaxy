@@ -20,7 +20,7 @@ public class EntityScorpion extends EntityCaveSpider implements IEntityBreathabl
 	
 	public EntityScorpion(World par1World) {
 		super(par1World);
-		this.setSize(1.2F, 0.9F);
+		this.setSize(this.width * 0.5F, this.height * 0.5F);
 		this.setHealth(65.2F);
 		this.setAIMoveSpeed(3.2F);
 		this.experienceValue = 80;

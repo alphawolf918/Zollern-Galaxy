@@ -24,7 +24,7 @@ public class EntityShark extends EntityWaterMobZG implements IMob {
 	
 	public EntityShark(World worldIn) {
 		super(worldIn);
-		this.setSize(4.6F, 4.6F);
+		this.setSize(this.width * 2.2F, this.height * 2.2F);
 		this.rand.setSeed(1 + this.getEntityId());
 	}
 	

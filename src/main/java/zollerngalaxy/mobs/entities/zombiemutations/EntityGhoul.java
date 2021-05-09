@@ -33,6 +33,7 @@ public class EntityGhoul extends EntityMutantZombie {
 		this.setMutantName("Ghoul");
 		this.setMutantFireTime(40);
 		this.setMutantScale(1.1F);
+		this.setSize(this.width * 1.1F, this.height * 1.1F);
 		this.applyEntityAI();
 	}
 	

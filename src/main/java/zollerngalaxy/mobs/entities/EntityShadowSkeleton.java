@@ -25,6 +25,7 @@ public class EntityShadowSkeleton extends EntitySkeleton implements IShadeEntity
 	
 	public EntityShadowSkeleton(World worldIn) {
 		super(worldIn);
+		this.setSize(this.width * 1.4F, this.height * 1.4F);
 		this.setHealth(40.0F);
 		this.setAIMoveSpeed(2.8F);
 		this.setCanPickUpLoot(true);

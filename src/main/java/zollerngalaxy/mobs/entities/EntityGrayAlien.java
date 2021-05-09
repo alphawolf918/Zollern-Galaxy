@@ -33,7 +33,7 @@ public class EntityGrayAlien extends EntityMob implements IEntityBreathable {
 	
 	public EntityGrayAlien(World worldIn) {
 		super(worldIn);
-		this.setSize(this.width, this.height);
+		this.setSize(this.width * 0.6F, this.height * 0.6F);
 		this.tasks.addTask(0, new EntityAISwimming(this));
 		this.tasks.addTask(2, new EntityAIMoveIndoors(this));
 		this.tasks.addTask(3, new EntityAIRestrictOpenDoor(this));

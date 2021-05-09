@@ -36,6 +36,7 @@ public class EntityVolatile extends EntityMutantZombie {
 		this.setMutantName("Volatile");
 		this.setMutantFireTime(20);
 		this.setMutantScale(1.2F);
+		this.setSize(this.width * 1.4F, this.attackedAtYaw * 1.4F);
 		this.applyEntityAI();
 	}
 	

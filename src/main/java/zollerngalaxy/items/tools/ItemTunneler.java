@@ -5,19 +5,15 @@
  * but do not claim it as your own, and
  * do not redistribute it.
  */
-package zollerngalaxy.items.tools.power;
+package zollerngalaxy.items.tools;
 
 import java.util.List;
+import java.util.Random;
 import javax.annotation.Nullable;
 import net.minecraft.client.util.ITooltipFlag;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.MobEffects;
-import net.minecraft.item.EnumAction;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
@@ -30,19 +26,29 @@ import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.core.ZollernGalaxyCore;
-import zollerngalaxy.items.tools.ZGItemSword;
-import zollerngalaxy.items.tools.ZGToolMats;
+import zollerngalaxy.items.ZGItemBase;
 import zollerngalaxy.lib.helpers.CommonZGRegisterHelper;
 import zollerngalaxy.proxy.IProxy;
 import zollerngalaxy.util.ZGUtils;
-import zollerngalaxy.worldgen.zollus.WorldGenZGIceSpikes;
+import zollerngalaxy.worldgen.WorldGenTunnel;
 
-public class ItemIceSword extends ZGItemSword {
+public class ItemTunneler extends ZGItemBase {
 	
 	private static final IProxy PROXY = ZollernGalaxyCore.proxy;
 	
-	public ItemIceSword() {
-		super("ice", ZGToolMats.ASCENDANT);
+	public ItemTunneler(String toolType, int maxDamage) {
+		super(toolType + "_tunneler");
+		this.setMaxStackSize(1);
+		this.setMaxDamage(maxDamage);
+	}
+	
+	/**
+	 * Creates a mining tunnel.
+	 * Different tool types should have different-sized tunnels.
+	 */
+	protected void createTunnel(World world, Random rand, BlockPos vecPos) {
+		WorldGenerator tunnelGen = new WorldGenTunnel();
+		tunnelGen.generate(world, rand, vecPos);
 	}
 	
 	@Override
@@ -50,30 +56,34 @@ public class ItemIceSword extends ZGItemSword {
 		super.onItemRightClick(worldIn, playerIn, handIn);
 		ItemStack itemstack = playerIn.getHeldItem(handIn);
 		
+		Random rand = new Random();
+		
 		if (!playerIn.capabilities.isCreativeMode) {
 			itemstack.damageItem(5, playerIn);
 		}
 		
-		int length = 100;
+		int length = 25;
+		
 		Vec3d startPos = new Vec3d(playerIn.posX, playerIn.posY + playerIn.getEyeHeight(), playerIn.posZ);
+		
 		double x = playerIn.getLookVec().x;
 		double y = playerIn.getLookVec().y;
 		double z = playerIn.getLookVec().z;
+		
 		Vec3d addVec = new Vec3d(x * length, y * length, z * length);
+		
 		Vec3d endPos = startPos.add(addVec);
 		RayTraceResult mop = worldIn.rayTraceBlocks(startPos, endPos);
+		
 		if (mop == null) {
 			return new ActionResult(EnumActionResult.PASS, playerIn.getHeldItem(handIn));
 		}
+		
 		BlockPos vecPos = new BlockPos(mop.getBlockPos());
-		
-		int i = vecPos.getX();
 		int j = vecPos.getY();
-		int k = vecPos.getZ();
 		
-		if ((j + 16) < 256) {
-			WorldGenerator iceSpikeGen = new WorldGenZGIceSpikes();
-			iceSpikeGen.generate(worldIn, itemRand, vecPos);
+		if (j < 256) {
+			this.createTunnel(worldIn, rand, vecPos);
 		} else {
 			PROXY.sendChatMessage(playerIn, ZGUtils.translate("tooltips.buildheight"));
 		}
@@ -83,31 +93,16 @@ public class ItemIceSword extends ZGItemSword {
 	}
 	
 	@Override
-	public EnumAction getItemUseAction(ItemStack p_77661_1_) {
-		return EnumAction.BLOCK;
-	}
-	
-	@Override
 	public EnumRarity getRarity(ItemStack p_77613_1_) {
 		return EnumRarity.EPIC;
-	}
-	
-	@Override
-	public boolean onLeftClickEntity(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, Entity entity) {
-		super.onLeftClickEntity(par1ItemStack, par2EntityPlayer, entity);
-		if (entity instanceof EntityLiving) {
-			EntityLiving ent = (EntityLiving) entity;
-			ent.addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 300, 5));
-		}
-		return false;
 	}
 	
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
 		if (CommonZGRegisterHelper.isShiftKeyDown()) {
-			tooltip.add(TextFormatting.ITALIC + ZGUtils.translate("tooltips.icesword1"));
-			tooltip.add(TextFormatting.ITALIC + ZGUtils.translate("tooltips.icesword2"));
+			tooltip.add(TextFormatting.ITALIC + ZGUtils.translate("tooltips.tunneling_tool"));
+			tooltip.add(TextFormatting.ITALIC + ZGUtils.translate("tooltips.tunneling_tool2"));
 		} else {
 			tooltip.add(ZGUtils.translate("tooltips.holdshift"));
 		}

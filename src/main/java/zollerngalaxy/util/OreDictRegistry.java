@@ -315,10 +315,17 @@ public class OreDictRegistry {
 		registerOre("swordZollernium", ZGItems.swordZollernium);
 		
 		// Zinc
-		registerOre("oreZinc", ZGBlocks.atheonZincOre, ZGBlocks.caligroZincOre);
-		registerOre("dustZinc", ZGItems.dustZinc);
-		registerOre("ingotZinc", ZGItems.ingotZinc);
-		registerOre("blockZinc", ZGBlocks.blockZinc);
+		if (ConfigManagerZG.registerZincOreDict) {
+			registerOre("oreZinc", ZGBlocks.atheonZincOre, ZGBlocks.caligroZincOre);
+			registerOre("dustZinc", ZGItems.dustZinc);
+			registerOre("ingotZinc", ZGItems.ingotZinc);
+			registerOre("blockZinc", ZGBlocks.blockZinc);
+		} else {
+			registerOre("oreZincium", ZGBlocks.atheonZincOre, ZGBlocks.caligroZincOre);
+			registerOre("dustZincium", ZGItems.dustZinc);
+			registerOre("ingotZincium", ZGItems.ingotZinc);
+			registerOre("blockZincium", ZGBlocks.blockZinc);
+		}
 		
 		// Promethean
 		registerOre("orePromethean", ZGBlocks.xathPrometheanOre);

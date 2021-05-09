@@ -39,6 +39,7 @@ public class EntityFrostGiant extends EntityMob implements IEntityBreathable {
 	
 	public EntityFrostGiant(World worldIn) {
 		super(worldIn);
+		this.setSize(this.width * 3.6F, this.height * 3.6F);
 	}
 	
 	@Override

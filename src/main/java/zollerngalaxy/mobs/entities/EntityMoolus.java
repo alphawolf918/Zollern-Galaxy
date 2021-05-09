@@ -37,7 +37,7 @@ public class EntityMoolus extends EntityCow implements IEntityBreathable {
 	
 	public EntityMoolus(World worldIn) {
 		super(worldIn);
-		this.setSize(this.width * 0.8F, this.height * 0.4F);
+		this.setSize(this.width * 1.7F, this.height * 1.7F);
 	}
 	
 	public static void registerFixesCow(DataFixer fixer) {
