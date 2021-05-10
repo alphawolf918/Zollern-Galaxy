@@ -50,6 +50,7 @@ public class GenLayerMetztliBiomes extends GenLayerMetztli {
 		list.add(new BiomeEntry(ZGBiomes.METZTLI_HARRAN_SWAMP, 60));
 		list.add(new BiomeEntry(ZGBiomes.METZTLI_HARRAN_TUNDRA, 50));
 		list.add(new BiomeEntry(ZGBiomes.METZTLI_HARRAN_OCEAN, 40));
+		list.add(new BiomeEntry(ZGBiomes.METZTLI_HARRAN_SHROOMS, 30));
 		
 		currentBiomes[BiomeType.WARM.ordinal()] = new ArrayList<>(list);
 		return currentBiomes;

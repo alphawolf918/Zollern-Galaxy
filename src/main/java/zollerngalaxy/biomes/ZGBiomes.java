@@ -67,6 +67,7 @@ import zollerngalaxy.biomes.kriffon.BiomeKriffonLavaOcean;
 import zollerngalaxy.biomes.metztli.BiomeHarran;
 import zollerngalaxy.biomes.metztli.BiomeHarranDunes;
 import zollerngalaxy.biomes.metztli.BiomeHarranOcean;
+import zollerngalaxy.biomes.metztli.BiomeHarranShroomlands;
 import zollerngalaxy.biomes.metztli.BiomeHarranSwamp;
 import zollerngalaxy.biomes.metztli.BiomeHarranTundra;
 import zollerngalaxy.biomes.oasis.BiomeOasisPlains;
@@ -187,6 +188,7 @@ public class ZGBiomes {
 	public static final Biome METZTLI_HARRAN_OCEAN = new BiomeHarranOcean(new BiomeProperties("Harran Ocean"));
 	public static final Biome METZTLI_HARRAN_SWAMP = new BiomeHarranSwamp(new BiomeProperties("Harran Swamp"));
 	public static final Biome METZTLI_HARRAN_TUNDRA = new BiomeHarranTundra(new BiomeProperties("Harran Tundra"), BiomeHarranTundra.Type.MEGA_SPRUCE);
+	public static final Biome METZTLI_HARRAN_SHROOMS = new BiomeHarranShroomlands(new BiomeProperties("Harran Shroomlands"));
 	
 	public static void init() {
 		// Zollus
@@ -279,6 +281,7 @@ public class ZGBiomes {
 		ZGBiomes.addBiome(ZGBiomes.METZTLI_HARRAN_OCEAN, DEAD, WET, OCEAN);
 		ZGBiomes.addBiome(ZGBiomes.METZTLI_HARRAN_SWAMP, DEAD, LUSH, WET, SWAMP);
 		ZGBiomes.addBiome(ZGBiomes.METZTLI_HARRAN_TUNDRA, DEAD, PLAINS, COLD, SNOWY);
+		ZGBiomes.addBiome(ZGBiomes.METZTLI_HARRAN_SHROOMS, DEAD, LUSH, WET, SWAMP);
 		
 		ZGHelper.Log("Loaded a total of " + totalBiomes + " new biomes.");
 	}

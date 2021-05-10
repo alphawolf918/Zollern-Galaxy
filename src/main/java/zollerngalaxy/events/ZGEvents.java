@@ -13,6 +13,7 @@ import java.util.Map;
 import java.util.Random;
 import com.google.common.collect.Maps;
 import micdoodle8.mods.galacticraft.core.entities.EntityAlienVillager;
+import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedZombie;
 import micdoodle8.mods.galacticraft.core.proxy.ClientProxyCore;
 import micdoodle8.mods.galacticraft.planets.venus.client.FakeLightningBoltRenderer;
 import net.minecraft.block.Block;
@@ -426,6 +427,32 @@ public class ZGEvents {
 							}
 							world.spawnEntity(vzombie);
 							ZombieUtils.playMutateSound(vzombie.posX, vzombie.posY, vzombie.posZ, world, rand);
+						}
+					}
+				}
+			}
+		}
+		
+		// Allow Alien Villagers to mutate into Zombies, but only on Metztli.
+		if (entity instanceof EntityAlienVillager) {
+			EntityAlienVillager villager = (EntityAlienVillager) entity;
+			World world = villager.getEntityWorld();
+			if (!world.isRemote) {
+				WorldProvider provider = world.provider;
+				
+				if (provider instanceof WorldProviderMetztli) {
+					if (!provider.isDaytime()) {
+						if (rand.nextInt(500) == 0) {
+							villager.setDead();
+							EntityEvolvedZombie zombie = new EntityEvolvedZombie(world);
+							zombie.copyLocationAndAnglesFrom(villager);
+							if (villager.hasCustomName()) {
+								String zombieName = zombie.getCustomNameTag();
+								String nZombieName = zombieName.replace(zombieName, "Alien Villager Zombie");
+							}
+							world.spawnEntity(zombie);
+							ZombieUtils.playMutateSound(zombie.posX, zombie.posY, zombie.posZ, world, rand);
+							ZombieUtils.playMutateSound(villager.posX, villager.posY, villager.posZ, world, rand);
 						}
 					}
 				}

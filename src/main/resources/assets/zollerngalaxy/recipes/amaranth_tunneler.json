@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SMS",
+    " M ",
+    "SMS"
+  ],
+  "key": {
+    "S": {
+      "item": "zollerngalaxy:perddiamond"
+    },
+    "M": {
+      "item": "zollerngalaxy:compressedamaranth"
+    }
+  },
+  "result": {
+    "item": "zollerngalaxy:amaranth_tunneler"
+  }
+}

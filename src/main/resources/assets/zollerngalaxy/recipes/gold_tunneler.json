@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SMS",
+    " M ",
+    "SMS"
+  ],
+  "key": {
+    "S": {
+      "item": "zollerngalaxy:radium"
+    },
+    "M": {
+      "item": "zollerngalaxy:compressedgold"
+    }
+  },
+  "result": {
+    "item": "zollerngalaxy:gold_tunneler"
+  }
+}

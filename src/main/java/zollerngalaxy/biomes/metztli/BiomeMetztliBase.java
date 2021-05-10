@@ -34,6 +34,12 @@ import zollerngalaxy.celestial.ZGPlanets;
 import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderMetztli;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
+import zollerngalaxy.mobs.entities.EntityMegaCreeper;
+import zollerngalaxy.mobs.entities.EntityShadowSkeleton;
+import zollerngalaxy.mobs.entities.zombiemutations.EntityGhoul;
+import zollerngalaxy.mobs.entities.zombiemutations.EntityOverlord;
+import zollerngalaxy.mobs.entities.zombiemutations.EntitySeeker;
+import zollerngalaxy.mobs.entities.zombiemutations.EntityVolatile;
 
 public abstract class BiomeMetztliBase extends BiomeSpace {
 	
@@ -65,7 +71,7 @@ public abstract class BiomeMetztliBase extends BiomeSpace {
 		this.clearAllSpawning();
 		
 		if (ConfigManagerZG.enableAlienVillagerSpawn) {
-			this.spawnableCreatureList.add(new SpawnListEntry(EntityAlienVillager.class, 5, 1, 2));
+			this.spawnableCreatureList.add(new SpawnListEntry(EntityAlienVillager.class, 2, 1, 2));
 		}
 		
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedZombie.class, 100, 1, 4));
@@ -75,9 +81,15 @@ public abstract class BiomeMetztliBase extends BiomeSpace {
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedEnderman.class, 5, 1, 4));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedWitch.class, 5, 1, 4));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityZombie.class, 100, 1, 4));
+		this.spawnableMonsterList.add(new SpawnListEntry(EntityGhoul.class, 100, 1, 4));
+		this.spawnableMonsterList.add(new SpawnListEntry(EntityOverlord.class, 100, 1, 4));
+		this.spawnableMonsterList.add(new SpawnListEntry(EntitySeeker.class, 100, 1, 4));
+		this.spawnableMonsterList.add(new SpawnListEntry(EntityVolatile.class, 100, 1, 4));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntitySpider.class, 100, 1, 4));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntitySkeleton.class, 5, 1, 4));
+		this.spawnableMonsterList.add(new SpawnListEntry(EntityShadowSkeleton.class, 5, 1, 4));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityCreeper.class, 5, 1, 4));
+		this.spawnableMonsterList.add(new SpawnListEntry(EntityMegaCreeper.class, 5, 1, 4));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityEnderman.class, 5, 1, 4));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityWitch.class, 5, 1, 1));
 		

@@ -43,10 +43,10 @@ public class WorldProviderOrbitMetztli extends WorldProviderOverworldOrbit {
 	public Vector3 getSkyColor() {
 		if (this.world.isRaining()) {
 			float f = 1.15F - this.getStarBrightness(1.0F);
-			return new Vector3(4 / 255F * f, 16 / 255F * f, 20 / 255F * f);
+			return new Vector3(2 / 255F * f, 170 / 255F * f, 190 / 255F * f);
 		}
 		float f = 1.15F - this.getStarBrightness(1.0F);
-		return new Vector3(240 / 255F * f, 17 / 255F * f, 25 / 255F * f);
+		return new Vector3(120 / 255F * f, 161 / 255F * f, 255 / 255F * f);
 	}
 	
 	@Override

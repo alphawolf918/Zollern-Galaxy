@@ -31,6 +31,7 @@ import zollerngalaxy.creativetabs.ZGTabs;
 import zollerngalaxy.events.ZGSoundEvents;
 import zollerngalaxy.items.ZGItems;
 import zollerngalaxy.lib.ZGInfo;
+import zollerngalaxy.lib.ZGStructures;
 import zollerngalaxy.lib.helpers.ModHelperBase;
 import zollerngalaxy.lib.helpers.ZGHandlers;
 import zollerngalaxy.lib.helpers.ZGHelper;
@@ -53,7 +54,7 @@ public class ZollernGalaxyCore {
 	private static ZollernGalaxyCore INSTANCE;
 	
 	// CHANGE THESE TO FALSE BEFORE DEPLOYMENT!!
-	private static final boolean DEV_MODE = true; // Controls creating the JSON files.
+	private static final boolean DEV_MODE = false; // Controls creating the JSON files.
 	private static final boolean TEST_MODE = true; // Set to True when developing!
 	
 	public static SimpleNetworkWrapper snw;
@@ -103,6 +104,7 @@ public class ZollernGalaxyCore {
 		ZGBlocks.init();
 		ZGFluids.init();
 		ZGBiomes.init();
+		ZGStructures.init();
 		ZGPlanets.init();
 		ZGSpaceStations.init();
 		OreDictRegistry.init();

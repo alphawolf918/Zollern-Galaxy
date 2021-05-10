@@ -30,5 +30,6 @@ public enum EnumBiomeTypeZG {
 	BEACH,
 	INFECTED,
 	CORRUPTED,
-	STORMY;
+	STORMY,
+	MUSHROOM;
 }

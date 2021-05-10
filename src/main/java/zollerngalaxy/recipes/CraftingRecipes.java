@@ -311,6 +311,11 @@ public class CraftingRecipes {
 		CraftingRecipes.addSword(new ItemStack(ZGItems.swordAzurite), ZGItems.azurite);
 		CraftingRecipes.addSword(new ItemStack(ZGItems.swordZollernium), ZGItems.ingotZollernium);
 		
+		// Tunnelers
+		CraftingRecipes.addTunneler(new ItemStack(ZGItems.tunnelerCopper), new ItemStack(GCItems.basicItem, 1, 3), new ItemStack(Items.BLAZE_POWDER, 1));
+		CraftingRecipes.addTunneler(new ItemStack(ZGItems.tunnelerGold), ZGItems.compressedGold, ZGItems.radium);
+		CraftingRecipes.addTunneler(new ItemStack(ZGItems.tunnelerAmaranth), ZGItems.compressedAmaranth, ZGItems.perdDiamond);
+		
 		// Ascendium
 		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.ascendium, 1),
 				new Object[] { " Z ", " C ", " A ", 'Z', ZGItems.compressedZollernium, 'C', ZGItems.compressedZucrite, 'A', ZGItems.compressedAmaranth });
@@ -467,5 +472,15 @@ public class CraftingRecipes {
 	
 	private static void addHoe(ItemStack itemOutput, Item itemIngot) {
 		CraftingRecipes.addToolSet(itemOutput, itemIngot, "hoe");
+	}
+	
+	private static void addTunneler(ItemStack itemOutput, Item itemMain, Item itemSecondary) {
+		ZGRecipeHelper.addRecipe(itemOutput, new Object[] { "SMS", " M ", "SMS", 'M', itemMain, 'S', itemSecondary });
+		totalCraftRecipes++;
+	}
+	
+	private static void addTunneler(ItemStack itemOutput, ItemStack itemMain, ItemStack itemSecondary) {
+		ZGRecipeHelper.addRecipe(itemOutput, new Object[] { "SMS", " M ", "SMS", 'M', itemMain, 'S', itemSecondary });
+		totalCraftRecipes++;
 	}
 }

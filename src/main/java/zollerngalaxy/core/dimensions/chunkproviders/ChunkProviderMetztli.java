@@ -2,6 +2,7 @@ package zollerngalaxy.core.dimensions.chunkproviders;
 
 import java.util.List;
 import java.util.Random;
+import javax.annotation.Nullable;
 import micdoodle8.mods.galacticraft.api.world.ChunkProviderBase;
 import micdoodle8.mods.galacticraft.core.perlin.generator.Gradient;
 import micdoodle8.mods.galacticraft.core.util.ConfigManagerCore;
@@ -25,8 +26,11 @@ import net.minecraft.world.gen.NoiseGenerator;
 import net.minecraft.world.gen.NoiseGeneratorOctaves;
 import net.minecraft.world.gen.NoiseGeneratorPerlin;
 import net.minecraft.world.gen.structure.MapGenMineshaft;
+import net.minecraftforge.event.terraingen.InitMapGenEvent;
+import net.minecraftforge.event.terraingen.TerrainGen;
 import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.biomes.decorators.BiomeDecoratorMetztli;
+import zollerngalaxy.worldgen.ZGWoodlandMansion;
 import zollerngalaxy.worldgen.mapgen.MapGenCavesZG;
 import zollerngalaxy.worldgen.mapgen.MapGenRavinesZG;
 
@@ -61,6 +65,7 @@ public class ChunkProviderMetztli extends ChunkProviderBase {
 	private final MapGenRavinesZG ravineGenerator = new MapGenRavinesZG(Blocks.STONE);
 	private final MapGenVillageMoon villageGenerator = new MapGenVillageMoon();
 	private MapGenMineshaft mineshaftGenerator = new MapGenMineshaft();
+	private ZGWoodlandMansion woodlandMansionGenerator = new ZGWoodlandMansion(this);
 	private Biome[] biomesForGeneration;
 	private double[] octaves1;
 	private double[] octaves2;
@@ -74,6 +79,9 @@ public class ChunkProviderMetztli extends ChunkProviderBase {
 	public ChunkProviderMetztli(World worldIn, long seed, boolean mapFeaturesEnabled) {
 		this.world = worldIn;
 		this.worldType = worldIn.getWorldInfo().getTerrainType();
+		{
+			this.woodlandMansionGenerator = (ZGWoodlandMansion) TerrainGen.getModdedMapGen(woodlandMansionGenerator, InitMapGenEvent.EventType.WOODLAND_MANSION);
+		}
 		this.rand = new Random(seed);
 		this.noiseGen1 = new NoiseGeneratorOctaves(this.rand, 16);
 		this.noiseGen2 = new NoiseGeneratorOctaves(this.rand, 16);
@@ -102,6 +110,10 @@ public class ChunkProviderMetztli extends ChunkProviderBase {
 		this.noiseGen6 = (NoiseGeneratorOctaves) noiseGens[5];
 		this.mobSpawnerNoise = (NoiseGeneratorOctaves) noiseGens[6];
 		this.INSTANCE = this;
+	}
+	
+	public void callSetBlocks(int chunkX, int chunkZ, ChunkPrimer primer) {
+		INSTANCE.setBlocksInChunk(chunkZ, chunkZ, primer);
 	}
 	
 	private void setBlocksInChunk(int chunkX, int chunkZ, ChunkPrimer primer) {
@@ -204,6 +216,7 @@ public class ChunkProviderMetztli extends ChunkProviderBase {
 		
 		this.replaceBlocksForBiome(x, z, chunkprimer, this.biomesForGeneration);
 		
+		this.woodlandMansionGenerator.generate(this.world, x, z, chunkprimer);
 		this.caveGenerator.generate(this.world, x, z, chunkprimer);
 		this.ravineGenerator.generate(this.world, x, z, chunkprimer);
 		this.villageGenerator.generate(this.world, x, z, chunkprimer);
@@ -384,6 +397,7 @@ public class ChunkProviderMetztli extends ChunkProviderBase {
 		}
 		
 		this.mineshaftGenerator.generateStructure(this.world, this.rand, new ChunkPos(x, z));
+		this.woodlandMansionGenerator.generateStructure(this.world, this.rand, new ChunkPos(x, z));
 		
 		biomegenbase.decorate(this.world, this.rand, new BlockPos(i, 0, j));
 		WorldEntitySpawner.performWorldGenSpawning(this.world, biomegenbase, i + 8, j + 8, 16, 16, this.rand);
@@ -398,11 +412,30 @@ public class ChunkProviderMetztli extends ChunkProviderBase {
 	}
 	
 	@Override
+	public boolean isInsideStructure(World worldIn, String structureName, BlockPos pos) {
+		if ("HarranMansion".equals(structureName) && this.woodlandMansionGenerator != null) {
+			return this.woodlandMansionGenerator.isInsideStructure(pos);
+		}
+		return false;
+	}
+	
+	@Override
+	@Nullable
+	public BlockPos getNearestStructurePos(World worldIn, String structureName, BlockPos position, boolean findUnexplored) {
+		if ("HarranMansion".equals(structureName) && this.woodlandMansionGenerator != null) {
+			return this.woodlandMansionGenerator.getNearestStructurePos(worldIn, position, findUnexplored);
+		}
+		return null;
+	}
+	
+	@Override
 	public void recreateStructures(Chunk chunk, int x, int z) {
 		this.mineshaftGenerator.generate(this.world, x, z, null);
 		
 		if (!ConfigManagerCore.disableMoonVillageGen) {
 			this.villageGenerator.generate(this.world, x, z, null);
 		}
+		
+		this.woodlandMansionGenerator.generate(this.world, x, z, (ChunkPrimer) null);
 	}
 }

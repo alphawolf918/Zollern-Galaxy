@@ -11,6 +11,8 @@ import net.minecraft.init.Blocks;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
+import zollerngalaxy.mobs.entities.EntityMummy;
+import zollerngalaxy.mobs.entities.EntityScorpion;
 
 public class BiomeHarranDunes extends BiomeMetztliBase {
 	
@@ -32,6 +34,8 @@ public class BiomeHarranDunes extends BiomeMetztliBase {
 		this.setTemp(18F);
 		this.setBiomeHeight(62);
 		this.setBiomeType(EnumBiomeTypeZG.DESERT);
+		this.spawnableMonsterList.add(new SpawnListEntry(EntityMummy.class, 100, 1, 4));
+		this.spawnableMonsterList.add(new SpawnListEntry(EntityScorpion.class, 100, 1, 4));
 		this.enableSnow = false;
 		this.biomeDecor.generateFalls = true;
 		this.biomeDecor.generateCacti = true;
