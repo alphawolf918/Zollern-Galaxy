@@ -588,12 +588,12 @@ item.shagreen.name=鲨鱼皮
 item.sharktooth.name=鲨鱼牙齿
 item.sharksword.name=鲨齿剑
 #下面是各种神器，暂时不进行翻译
-item.wither_sword.name=Mortem
-item.fire_sword.name=Diablo
-item.ice_sword.name=Glacies
-item.ender_sword.name=Ender
-item.thor_sword.name=Thor
-item.light_sword.name=Archangel
+item.wither_sword.name=死亡
+item.fire_sword.name=魔王
+item.ice_sword.name=冰川
+item.ender_sword.name=终末
+item.thor_sword.name=雷神
+item.light_sword.name=天使
 
 item.stargate_tier1.name=星门 (协议 一)
 item.stargate_tier2.name=星门 (协议 二)
@@ -668,6 +668,10 @@ item.radiumboots.name=辐光靴子
 
 item.heart.name=治疗之心
 item.heartforce.name=心之力
+
+item.copper_tunneler.name=铜隧洞机
+item.gold_tunneler.name=金隧洞机
+item.amaranth_tunneler.name=紫苋隧洞机
 
 ## Mobs ##
 
@@ -778,6 +782,9 @@ tooltips.blueprintstation2=右键以修复之。
 tooltips.healthstation=右键以治疗自身。
 
 tooltips.amulet_storm=你现在已免受狂风的袭扰！
+
+tooltips.tunneling_tool=一种特殊的采掘工具。
+tooltips.tunneling_tool2=右键以创建采矿隧道。
 
 ## Planets and Moons ##
 
@@ -906,7 +913,7 @@ death.attack.waspsting=%1$s 死于马蜂蛰伤。
 death.attack.waspsting.player=%1$s 因 %2$s 而死于马蜂蛰伤。
 death.attack.waspsting.item=%1$s 因 %2$s 使用 %3$s 而死于马蜂蛰伤。
 
-## Potion Effects ##
+## 药水效果 ##
 
 zollerngalaxy_infected=感染
 zollerngalaxy_anticorruption=抗侵蚀
@@ -915,7 +922,7 @@ zollerngalaxy_radiance=辐照
 zollerngalaxy_enlightened=启发
 zollerngalaxy_stormprotection=风暴保护
 
-## Tinkerer's Construct ##
+## 匠魂联动 ##
 
 material.materialradium.name=辐光物质
 material.materialcorruption.name=星位
@@ -923,7 +930,7 @@ material.materialcorruption.name=星位
 modifier.trait_enlightened.name=启发
 modifier.trait_corrupted.name=被侵蚀
 
-## Creative Tabs ##
+## 创造模式分栏 ##
 
 itemGroup.ZollernGalaxyBlocks=卓伦星系|方块
 itemGroup.ZollernGalaxyItems=卓伦星系|物品
