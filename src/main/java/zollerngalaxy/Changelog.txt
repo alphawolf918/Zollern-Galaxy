@@ -19,6 +19,9 @@ Zollern Galaxy v2.0.27
 * Added Mega Creepers, Mummies, Scorpions and Shadow Skeletons to Metztli spawns.
     - Mummies and Scorpions only spawn in the Dunes.
 * Added all Zombie Mutation mobs to Metztli spawns.
+* Added a converter for star's Z coordinates that will make them 0.1 when 0.
+    - Should fix the issue with the Galacticraft bug.
+* Slightly increased size of Space Stations.
 * Updated Chinese translation from EndsM.
 * Updated texture for Blackrock block.
 * Lowered spawn rate of Alien Villagers on Metztli from 5 to 2.

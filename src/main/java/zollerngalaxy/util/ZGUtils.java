@@ -50,4 +50,8 @@ public class ZGUtils {
 		}
 		return ret;
 	}
+	
+	public static float ConvertFromZero(float valIn) {
+		return ((valIn <= 0F) ? 0.1F : valIn);
+	}
 }

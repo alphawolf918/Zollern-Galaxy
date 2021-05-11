@@ -34,6 +34,7 @@ import zollerngalaxy.core.enums.EnumBodyClass;
 import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.starsystems.ZGStar;
 import zollerngalaxy.starsystems.ZGStarSystem;
+import zollerngalaxy.util.ZGUtils;
 
 public class ZGPlanets {
 	
@@ -46,42 +47,42 @@ public class ZGPlanets {
 	// Coords (Psios)
 	private static float PSIOS_X = ConfigManagerZG.psiosX;
 	private static float PSIOS_Y = ConfigManagerZG.psiosY;
-	private static float PSIOS_Z = ConfigManagerZG.psiosZ;
+	private static float PSIOS_Z = ZGUtils.ConvertFromZero(ConfigManagerZG.psiosZ);
 	
 	// Coords (Praedyth)
 	private static float PRAEDYTH_X = ConfigManagerZG.praedythX;
 	private static float PRAEDYTH_Y = ConfigManagerZG.praedythY;
-	private static float PRAEDYTH_Z = ConfigManagerZG.praedythZ;
+	private static float PRAEDYTH_Z = ZGUtils.ConvertFromZero(ConfigManagerZG.praedythZ);
 	
 	// Coords (Sol-2)
 	private static float SOL2_X = ConfigManagerZG.sol2X;
 	private static float SOL2_Y = ConfigManagerZG.sol2Y;
-	private static float SOL2_Z = ConfigManagerZG.sol2Z;
+	private static float SOL2_Z = ZGUtils.ConvertFromZero(ConfigManagerZG.sol2Z);
 	
 	// Coords (Pantheon)
 	private static float PANTHEON_X = ConfigManagerZG.pantheonX;
 	private static float PANTHEON_Y = ConfigManagerZG.pantheonY;
-	private static float PANTHEON_Z = ConfigManagerZG.pantheonZ;
+	private static float PANTHEON_Z = ZGUtils.ConvertFromZero(ConfigManagerZG.pantheonZ);
 	
 	// Coords (Olympus)
 	private static float OLYMPUS_X = ConfigManagerZG.olympusX;
 	private static float OLYMPUS_Y = ConfigManagerZG.olympusY;
-	private static float OLYMPUS_Z = ConfigManagerZG.olympusZ;
+	private static float OLYMPUS_Z = ZGUtils.ConvertFromZero(ConfigManagerZG.olympusZ);
 	
 	// Coords (Asgard)
 	private static float ASGARD_X = ConfigManagerZG.asgardX;
 	private static float ASGARD_Y = ConfigManagerZG.asgardY;
-	private static float ASGARD_Z = ConfigManagerZG.asgardZ;
+	private static float ASGARD_Z = ZGUtils.ConvertFromZero(ConfigManagerZG.asgardZ);
 	
 	// Coords (Vega)
 	private static float VEGA_X = ConfigManagerZG.vegaX;
 	private static float VEGA_Y = ConfigManagerZG.vegaY;
-	private static float VEGA_Z = ConfigManagerZG.vegaZ;
+	private static float VEGA_Z = ZGUtils.ConvertFromZero(ConfigManagerZG.vegaZ);
 	
 	// Coords (Nova)
 	private static float NOVA_X = ConfigManagerZG.novaX;
 	private static float NOVA_Y = ConfigManagerZG.novaY;
-	private static float NOVA_Z = ConfigManagerZG.novaZ;
+	private static float NOVA_Z = ZGUtils.ConvertFromZero(ConfigManagerZG.novaZ);
 	
 	private static boolean hideUnusedStarSystems = ConfigManagerZG.hideUnusedStarSystems;
 	

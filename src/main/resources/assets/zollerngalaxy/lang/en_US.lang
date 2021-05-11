@@ -404,6 +404,8 @@ tile.compressedheartiumblock.name=Block of Compressed Heartium
 tile.compressedrhodiumblock.name=Block of Compressed Rhodium
 tile.compressedzucriteblock.name=Block of Compressed Zucrite
 
+## Crystals ##
+
 tile.plutoniumcrystals.name=Plutonium Crystals
 tile.stormcrystals.name=Storm Crystals
 
