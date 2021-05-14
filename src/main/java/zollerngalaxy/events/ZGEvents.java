@@ -434,7 +434,7 @@ public class ZGEvents {
 		}
 		
 		// Allow Alien Villagers to mutate into Zombies, but only on Metztli.
-		if (entity instanceof EntityAlienVillager) {
+		if (entity instanceof EntityAlienVillager && ConfigManagerZG.enableAlienVillagerMutation) {
 			EntityAlienVillager villager = (EntityAlienVillager) entity;
 			World world = villager.getEntityWorld();
 			if (!world.isRemote) {
@@ -446,10 +446,7 @@ public class ZGEvents {
 							villager.setDead();
 							EntityEvolvedZombie zombie = new EntityEvolvedZombie(world);
 							zombie.copyLocationAndAnglesFrom(villager);
-							if (villager.hasCustomName()) {
-								String zombieName = zombie.getCustomNameTag();
-								String nZombieName = zombieName.replace(zombieName, "Alien Villager Zombie");
-							}
+							zombie.setCustomNameTag("Alien Villager Mutant");
 							world.spawnEntity(zombie);
 							ZombieUtils.playMutateSound(zombie.posX, zombie.posY, zombie.posZ, world, rand);
 							ZombieUtils.playMutateSound(villager.posX, villager.posY, villager.posZ, world, rand);
@@ -501,33 +498,6 @@ public class ZGEvents {
 				world.spawnEntity(spaceKnight);
 			}
 		}
-		
-		// This doesn't seem to work yet.
-		// if (ent instanceof EntityPlayer) {
-		// EntityPlayer player = (EntityPlayer) ent;
-		// World world = player.world;
-		// WorldProvider worldProvider = world.provider;
-		// float dmg = event.getAmount();
-		// Random rand = new Random();
-		// if (src == DamageSourceGC.thermal) {
-		// if (worldProvider instanceof WorldProviderSpace) {
-		// WorldProviderSpace spaceProvider = (WorldProviderSpace) worldProvider;
-		// float thermalLevel = spaceProvider.getThermalLevelModifier();
-		// boolean isHot = (thermalLevel > 0F);
-		// boolean isCold = (thermalLevel < 0F);
-		// if (isHot) {
-		// event.setCanceled(true);
-		// ZGHelper.performBluePrintCheck(rand, ZGItems.blueprintThermalHot, player,
-		// DamageSourceGC.thermal, dmg);
-		// }
-		// if (isCold) {
-		// event.setCanceled(true);
-		// ZGHelper.performBluePrintCheck(rand, ZGItems.blueprintThermalCold, player,
-		// DamageSourceGC.thermal, dmg);
-		// }
-		// }
-		// }
-		// }
 	}
 	
 	@SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)

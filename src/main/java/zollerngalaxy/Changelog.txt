@@ -1,33 +1,6 @@
 ===== CHANGELOG =====
-Zollern Galaxy v2.0.27
+Zollern Galaxy v2.0.28
 =====================
 
-* Added several null checks to chest validation to hopefully help fix weird Altum crash.
-* Halved spawn chance of chests on Altum to help with crash.
-* Temporarily removed chest generation code for Altum.
-* Removed check for thermal blueprints in event subscriber code.
-* Added three new tunneling tools to improve mining.
-    - Each one has its own durability.
-* Added a config option to toggle Ore Dictionary registration of Zinc.
-    - Will register as Zincium if disabled.
-    - Should fix mod compatability issues similar to Cobalt.
-* Added new biomes to Metztli.
-    - Harran Shroomlands.
-* Added "Woodland Mansion" structures to Metztli.
-    - Generate in Harran Swamps and Harran Shroomlands.
-    - Can be found by using the "/locate" command; search for "HarranMansion."
-* Added Mega Creepers, Mummies, Scorpions and Shadow Skeletons to Metztli spawns.
-    - Mummies and Scorpions only spawn in the Dunes.
-* Added all Zombie Mutation mobs to Metztli spawns.
-* Added a converter for star's Z coordinates that will make them 0.1 when 0.
-    - Should fix the issue with the Galacticraft bug.
-* Slightly increased size of Space Stations.
-* Updated Chinese translation from EndsM.
-* Updated texture for Blackrock block.
-* Lowered spawn rate of Alien Villagers on Metztli from 5 to 2.
-* Alien Villagers now have a chance to mutate into Evolved Zombies on Metztli.
-    - This does not apply to other planets, moons or space stations.
-* Changed sky color of Metztli from yellow to blue.
-* Fixed invalid recipe spam error.
-* Fixed hitboxes on most mobs.
-* Fixed (hopefully) several Altum crashes. WORK, DARNIT!
+* Added a config option to toggle Alien Villagers mutating into Zombies on Metztli.
+* Fixed Volatile Mutant mob hitbox.
