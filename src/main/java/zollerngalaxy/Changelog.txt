@@ -1,6 +1,10 @@
 ===== CHANGELOG =====
-Zollern Galaxy v2.0.28
+Zollern Galaxy v2.0.29
 =====================
 
-* Added a config option to toggle Alien Villagers mutating into Zombies on Metztli.
-* Fixed Volatile Mutant mob hitbox.
+* Added four alarm siren blocks, each with their own sound.
+    - Iron, Gold, Diamond and Emerald
+    - Powered with Redstone
+* Began adding subtitles for sounds.
+    - The first step in accessibility features.
+* 

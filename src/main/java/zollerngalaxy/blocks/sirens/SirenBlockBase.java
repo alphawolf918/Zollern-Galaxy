@@ -10,76 +10,74 @@ package zollerngalaxy.blocks.sirens;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.state.IBlockState;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.blocks.ZGBlockBase;
-import zollerngalaxy.core.enums.State;
+import zollerngalaxy.core.enums.EnumHarvestLevelZG;
+import zollerngalaxy.core.enums.EnumHarvestToolZG;
+import zollerngalaxy.creativetabs.ZGTabs;
 
 public class SirenBlockBase extends ZGBlockBase {
 	
-	public static State state = State.OFF;
+	protected SoundEvent sound = null;
+	protected boolean isOn = false;
 	
-	protected SoundEvent sirenSound = null;
-	protected Block sirenON = null;
-	
-	public SirenBlockBase(State state, String sirenType) {
-		super(sirenType + "siren" + ((state == State.ON) ? "_ON" : ""));
-		this.setMaterial(Material.IRON);
-		this.state = State.OFF;
-		if (this.state == State.ON) {
+	public SirenBlockBase(String blockName, SoundEvent sirenSound, boolean stateIn) {
+		super(blockName);
+		this.setIsOn(stateIn);
+		
+		if (stateIn) {
 			this.setLightLevel(1.0F);
-		} else {
-			this.setLightLevel(0.0F);
 		}
+		
+		this.setMaterial(Material.IRON);
+		this.setHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.IRON.getHarvestLevel());
 		this.setHardness(2F);
-		this.setResistance(10);
+		this.setResistance(10F);
 		this.setSound(SoundType.METAL);
+		this.setSirenBlockSound(sirenSound);
 		this.setTickRandomly(true);
 	}
 	
-	public Block setSirenBlocks(Block sirenOnIn) {
-		this.sirenON = sirenOnIn;
-		return this;
-	}
-	
-	@Override
-	public void onBlockAdded(World worldIn, BlockPos pos, IBlockState state) {
-		this.stateCheck(worldIn, pos);
-	}
-	
-	public void stateCheck(World par1World, BlockPos pos) {
-		if (!par1World.isRemote) {
-			if (state == State.ON && par1World.isBlockIndirectlyGettingPowered(pos) > 0) {
-				par1World.scheduleBlockUpdate(pos, this, 2, 2);
-				par1World.setBlockState(pos, this.sirenON.getDefaultState()); // On
-			} else if (this.state == State.OFF && par1World.isBlockIndirectlyGettingPowered(pos) > 0) {
-				par1World.setBlockState(pos, this.sirenON.getDefaultState()); // On
-			}
-			if (this.state == State.OFF && !(par1World.isBlockIndirectlyGettingPowered(pos) > 0)) {
-				par1World.setBlockState(pos, this.getDefaultState()); // Off
-			}
-		}
-	}
-	
-	public Block setSirenBlockSound(SoundEvent soundEventIn) {
-		this.sirenSound = soundEventIn;
+	public Block setSirenBlockSound(SoundEvent par1) {
+		this.sound = par1;
 		return this;
 	}
 	
 	public SoundEvent getSirenBlockSound() {
-		return this.sirenSound;
+		return this.sound;
 	}
 	
-	public void playAlarm(World par1World, BlockPos pos) {
-		if (state == State.ON && par1World.isBlockIndirectlyGettingPowered(pos) > 0) {
-			double amp = 1.5D;
-			double x = pos.getX() + amp;
-			double y = pos.getY() + amp;
-			double z = pos.getZ() + amp;
-			par1World.playSound(x, y, z, this.sirenSound, SoundCategory.MASTER, 10.0F, 2.5F, true);
+	public Block setIsOn(boolean stateIn) {
+		this.isOn = stateIn;
+		return this;
+	}
+	
+	public boolean getIsOn() {
+		return this.isOn;
+	}
+	
+	public void playAlarm(World worldIn, BlockPos pos) {
+		if (this.isOn && worldIn.isBlockPowered(pos)) {
+			float soundPitch = worldIn.rand.nextFloat() * 0.1F + 0.9F;
+			worldIn.playSound(null, pos, this.getSirenBlockSound(), SoundCategory.AMBIENT, 1.5F, soundPitch);
 		}
+	}
+	
+	@Override
+	@SideOnly(Side.CLIENT)
+	public CreativeTabs getCreativeTabToDisplayOn() {
+		CreativeTabs blocksTab = ZGTabs.zgBlocksTab;
+		
+		if (this.isOn) {
+			return null;
+		}
+		
+		return blocksTab;
 	}
 }

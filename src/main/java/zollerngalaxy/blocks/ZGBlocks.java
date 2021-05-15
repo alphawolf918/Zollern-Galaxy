@@ -35,6 +35,10 @@ import zollerngalaxy.blocks.perdita.LostCactus;
 import zollerngalaxy.blocks.perdita.LostReeds;
 import zollerngalaxy.blocks.perdita.ZGBlockGrassPerdita;
 import zollerngalaxy.blocks.perdita.ZGDeadBush;
+import zollerngalaxy.blocks.sirens.BlockDiamondSiren;
+import zollerngalaxy.blocks.sirens.BlockEmeraldSiren;
+import zollerngalaxy.blocks.sirens.BlockGoldSiren;
+import zollerngalaxy.blocks.sirens.BlockIronSiren;
 import zollerngalaxy.blocks.stationblocks.BlockBlueprintStation;
 import zollerngalaxy.blocks.stationblocks.BlockHealingStation;
 import zollerngalaxy.blocks.sweetblocks.CandyCubeBlock;
@@ -45,6 +49,7 @@ import zollerngalaxy.core.enums.EnumBlockTier;
 import zollerngalaxy.core.enums.EnumBlockType;
 import zollerngalaxy.core.enums.EnumHarvestLevelZG;
 import zollerngalaxy.core.enums.EnumHarvestToolZG;
+import zollerngalaxy.events.ZGSoundEvents;
 import zollerngalaxy.items.ZGItems;
 import zollerngalaxy.lib.helpers.CommonZGRegisterHelper;
 import zollerngalaxy.lib.helpers.ZGHelper;
@@ -520,7 +525,6 @@ public class ZGBlocks {
 			EnumHarvestLevelZG.AMARANTH.getHarvestLevel());
 	public static final Block exodusCopperOre = new ZGBlockOre("exoduscopperore", 3.2F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
 			EnumHarvestLevelZG.AMARANTH.getHarvestLevel());
-	// TODO
 	
 	// Vortex
 	public static final Block vortexSurfaceRock = new ZGBlockBase("vortexsurfacerock", 3.2F);
@@ -544,7 +548,6 @@ public class ZGBlocks {
 			.setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.EVENIUM.getHarvestLevel());
 	public static final Block vortexEveniumOre = new ZGBlockOre("vortexeveniumore", 7.2F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
 			EnumHarvestLevelZG.EVENIUM.getHarvestLevel());
-	// TODO
 	
 	// Metals
 	public static final Block blockViri = new ZGBlockMetal("viriblock");
@@ -632,6 +635,19 @@ public class ZGBlocks {
 	public static final Block blockCrystalsPlutonium = new ZGCrystalBlock("plutoniumcrystals", ZGItems.plutoniumCrystal);
 	public static final Block blockCrystalsStorm = new BlockStormCrystals();
 	
+	// Sirens
+	public static final Block ironSirenON = new BlockIronSiren("ironsiren_on", ZGSoundEvents.ALARM_IRON, true);
+	public static final Block ironSiren = new BlockIronSiren("ironsiren", ZGSoundEvents.ALARM_IRON, false);
+	
+	public static final Block goldSirenON = new BlockGoldSiren("goldsiren_on", ZGSoundEvents.ALARM_GOLD, true);
+	public static final Block goldSiren = new BlockGoldSiren("goldsiren", ZGSoundEvents.ALARM_GOLD, false);
+	
+	public static final Block diamondSirenON = new BlockDiamondSiren("diamondsiren_on", ZGSoundEvents.ALARM_DIAMOND, true);
+	public static final Block diamondSiren = new BlockDiamondSiren("diamondsiren", ZGSoundEvents.ALARM_DIAMOND, false);
+	
+	public static final Block emeraldSirenON = new BlockEmeraldSiren("emeraldsiren_on", ZGSoundEvents.ALARM_EMERALD, true);
+	public static final Block emeraldSiren = new BlockEmeraldSiren("emeraldsiren", ZGSoundEvents.ALARM_EMERALD, false);
+	
 	public static void init() {
 		ZGBlocks.registerBlocks(edenLovetreeSapling, edenGoldenWoodSapling, edenParadiseWoodSapling, edenWoodSapling, edenFruit, edenFlower, edenFlowerBlack,
 				edenFlowerBlue, edenFlowerCyan, edenFlowerGreen, edenFlowerOrange, edenFlowerPink, edenFlowerPurple, edenFlowerRed, edenFlowerYellow, edenFlowerWhite,
@@ -673,7 +689,7 @@ public class ZGBlocks {
 				exodusGravel, exodusRock, exodusSand, exodusIronOre, exodusGoldOre, exodusDiamondOre, exodusRedstoneOre, exodusCopperOre, exoWoodLogs, exoWoodLeaves,
 				exoWoodPlanks, exoWoodSapling, vortexSurfaceRock, vortexCobblestone, vortexStone, vortexVoltRock, vortexIronOre, vortexGoldOre, vortexDiamondOre,
 				vortexRedstoneOre, vortexCopperOre, vortexSuperChargedCoalOre, vortexFueltoniumOre, vortexEveniumOre, blockBlueprintStation, blockHealingStation,
-				blockCrystalsPlutonium, blockCrystalsStorm);
+				blockCrystalsPlutonium, blockCrystalsStorm, ironSirenON, goldSirenON, diamondSirenON, emeraldSirenON, ironSiren, goldSiren, diamondSiren, emeraldSiren);
 		ZGHelper.Log("Loaded a total of " + totalBlocks + " new blocks.");
 	}
 	

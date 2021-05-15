@@ -411,6 +411,12 @@ public class CraftingRecipes {
 		// Storm Amulet
 		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.amuletStorm, 1), new Object[] { "SVS", "VSV", "SVS", 'S', ZGItems.stormCrystal, 'V', ZGItems.ingotVirinium });
 		totalCraftRecipes++;
+		
+		// Sirens
+		CraftingRecipes.addSiren(ZGBlocks.ironSiren, Items.IRON_INGOT);
+		CraftingRecipes.addSiren(ZGBlocks.goldSiren, Items.GOLD_INGOT);
+		CraftingRecipes.addSiren(ZGBlocks.diamondSiren, Items.DIAMOND);
+		CraftingRecipes.addSiren(ZGBlocks.emeraldSiren, Items.EMERALD);
 	}
 	
 	private static void addRockBricks(Block stoneIn, Block bricksOut) {
@@ -481,6 +487,11 @@ public class CraftingRecipes {
 	
 	private static void addTunneler(ItemStack itemOutput, ItemStack itemMain, ItemStack itemSecondary) {
 		ZGRecipeHelper.addRecipe(itemOutput, new Object[] { "SMS", " M ", "SMS", 'M', itemMain, 'S', itemSecondary });
+		totalCraftRecipes++;
+	}
+	
+	private static void addSiren(Block sirenBlock, Item ingotIn) {
+		ZGRecipeHelper.addRecipe(new ItemStack(sirenBlock, 1), new Object[] { "OIO", "IRI", "OIO", 'O', Blocks.OBSIDIAN, 'I', ingotIn, 'R', Items.REDSTONE });
 		totalCraftRecipes++;
 	}
 }

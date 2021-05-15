@@ -1,0 +1,36 @@
+## Subtitles ##
+
+zollerngalaxy.subtitle.iron_siren=IRON ALARM PLAYING
+zollerngalaxy.subtitle.gold_siren=GOLD ALARM PLAYING
+zollerngalaxy.subtitle.diamond_siren=DIAMOND ALARM PLAYING
+zollerngalaxy.subtitle.emerald_siren=EMERALD ALARM PLAYING
+
+zollerngalaxy.subtitle.grayalien.say=Gray Alien screeches
+zollerngalaxy.subtitle.grayalien.hurt=Gray Alien screams in pain
+zollerngalaxy.subtitle.mummy.say=Mummy grumbles about brains
+zollerngalaxy.subtitle.mummy.hurt=Mummy cries in agony
+zollerngalaxy.subtitle.mummy.die=Mummy dies dramatically
+zollerngalaxy.subtitle.galaxyknight.say=Galaxy Knight speaks with authority
+zollerngalaxy.subtitle.galaxyknight.die=Galaxy Knight dies
+zollerngalaxy.subtitle.shadowalien.say=Shadow Alien moans
+zollerngalaxy.subtitle.shadowalien.hurt=Shadow Alien is damaged
+zollerngalaxy.subtitle.shadowalien.die=Shadow Alien is destroyed
+zollerngalaxy.subtitle.spiderling.heartbeat=An egg is stirring nearby
+zollerngalaxy.subtitle.krull.say=A Krull asks you to join it in darkness
+zollerngalaxy.subtitle.krull.hurt=Krull screams in pain
+zollerngalaxy.subtitle.krull.die=Krull gasps its final breath
+zollerngalaxy.subtitle.shade.say=Shade mumbles
+zollerngalaxy.subtitle.shade.hurt=Shade groans in pain
+zollerngalaxy.subtitle.shade.die=Shade dies
+zollerngalaxy.subtitle.wasp.say=Wasp buzzes
+zollerngalaxy.subtitle.wasp.hurt=Wasp takes damage
+zollerngalaxy.subtitle.wasp.die=Wasp dies
+zollerngalaxy.subtitle.faceless.say=Faceless menaces at you
+zollerngalaxy.subtitle.faceless.hurt=Faceless screeches in pain
+zollerngalaxy.subtitle.faceless.die=Faceless dies
+zollerngalaxy.subtitle.volatile.say=Volatile cries in hunger
+zollerngalaxy.subtitle.volatile.hurt=Volatile is hurt
+zollerngalaxy.subtitle.volatile.die=Volatile dies
+
+zollerngalaxy.subtitle.mutate=A Zombie has mutated nearby
+zollerngalaxy.subtitle.windblowing=The wind howls around you
