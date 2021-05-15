@@ -404,6 +404,8 @@ tile.compressedheartiumblock.name=致密红心块
 tile.compressedrhodiumblock.name=致密铑块
 tile.compressedzucriteblock.name=致密祖克合金块
 
+## Crystals ##
+
 tile.plutoniumcrystals.name=钚元素结晶
 tile.stormcrystals.name=风暴结晶
 
