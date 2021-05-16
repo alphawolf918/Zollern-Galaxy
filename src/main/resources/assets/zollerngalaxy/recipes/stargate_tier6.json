@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "VCV",
+    "HYH",
+    "YCY"
+  ],
+  "key": {
+    "C": {
+      "item": "zollerngalaxy:compressedriven"
+    },
+    "V": {
+      "item": "zollerngalaxy:compressedsuperchargedcoalblock"
+    },
+    "H": {
+      "item": "zollerngalaxy:compressedprometheanblock"
+    },
+    "Y": {
+      "item": "zollerngalaxy:compressedsuperchargedcoal"
+    }
+  },
+  "result": {
+    "item": "zollerngalaxy:stargate_tier6"
+  }
+}

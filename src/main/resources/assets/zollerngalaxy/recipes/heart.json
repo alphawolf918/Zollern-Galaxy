@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AZA",
+    "AOA",
+    "ARA"
+  ],
+  "key": {
+    "A": {
+      "item": "zollerngalaxy:compressedheartium"
+    },
+    "R": {
+      "item": "zollerngalaxy:amaranthingot"
+    },
+    "Z": {
+      "item": "zollerngalaxy:zollerniumingot"
+    },
+    "O": {
+      "item": "zollerngalaxy:radium"
+    }
+  },
+  "result": {
+    "item": "zollerngalaxy:heart"
+  }
+}

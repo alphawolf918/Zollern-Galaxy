@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " R ",
+    " S ",
+    " S "
+  ],
+  "key": {
+    "R": {
+      "item": "zollerngalaxy:azurite"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "zollerngalaxy:azurite_shovel"
+  }
+}

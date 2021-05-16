@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ZAZ",
+    " M ",
+    " M "
+  ],
+  "key": {
+    "A": {
+      "item": "zollerngalaxy:ascendium"
+    },
+    "Z": {
+      "item": "zollerngalaxy:zucriteingot"
+    },
+    "M": {
+      "item": "zollerngalaxy:ascendantamaranthingot"
+    }
+  },
+  "result": {
+    "item": "zollerngalaxy:bedrockbreaker"
+  }
+}

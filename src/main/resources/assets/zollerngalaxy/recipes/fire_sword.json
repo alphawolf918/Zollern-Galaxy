@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " F ",
+    " F ",
+    "GPG"
+  ],
+  "key": {
+    "P": {
+      "item": "zollerngalaxy:powerstick"
+    },
+    "F": {
+      "item": "zollerngalaxy:firegarnetblock"
+    },
+    "G": {
+      "item": "zollerngalaxy:garnet"
+    }
+  },
+  "result": {
+    "item": "zollerngalaxy:fire_sword"
+  }
+}

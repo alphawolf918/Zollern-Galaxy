@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SS",
+    "SS"
+  ],
+  "key": {
+    "S": {
+      "item": "zollerngalaxy:chocolateblock"
+    }
+  },
+  "result": {
+    "item": "zollerngalaxy:chocolatebricks",
+    "count": 4
+  }
+}

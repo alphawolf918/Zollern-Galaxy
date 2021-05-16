@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SDS",
+    "ZAZ",
+    "AAA"
+  ],
+  "key": {
+    "A": {
+      "item": "zollerngalaxy:aquamarineblock"
+    },
+    "S": {
+      "item": "zollerngalaxy:shiniumingot"
+    },
+    "D": {
+      "item": "minecraft:diamond"
+    },
+    "Z": {
+      "item": "zollerngalaxy:shinestonedust"
+    }
+  },
+  "result": {
+    "item": "zollerngalaxy:icyaqua"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "VCV",
+    "HYH",
+    "YCY"
+  ],
+  "key": {
+    "C": {
+      "item": "zollerngalaxy:compressedheartium"
+    },
+    "V": {
+      "item": "zollerngalaxy:compresseddiamond"
+    },
+    "H": {
+      "item": "zollerngalaxy:heartofzol"
+    },
+    "Y": {
+      "item": "zollerngalaxy:zolluscrystal"
+    }
+  },
+  "result": {
+    "item": "zollerngalaxy:stargate_tier1"
+  }
+}

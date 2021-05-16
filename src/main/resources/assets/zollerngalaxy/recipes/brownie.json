@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CC ",
+    "CC ",
+    "   "
+  ],
+  "key": {
+    "C": {
+      "item": "zollerngalaxy:rawchocolate"
+    }
+  },
+  "result": {
+    "item": "zollerngalaxy:brownie",
+    "count": 4
+  }
+}

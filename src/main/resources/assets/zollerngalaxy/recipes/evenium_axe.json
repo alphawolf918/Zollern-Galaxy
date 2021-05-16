@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "RR ",
+    "RS ",
+    " S "
+  ],
+  "key": {
+    "R": {
+      "item": "zollerngalaxy:ingotevenium"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "zollerngalaxy:evenium_axe"
+  }
+}

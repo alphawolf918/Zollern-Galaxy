@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "FZF",
+    "CVC",
+    "ERE"
+  ],
+  "key": {
+    "R": {
+      "item": "zollerngalaxy:compressedemerald"
+    },
+    "C": {
+      "item": "zollerngalaxy:compressedcobalt"
+    },
+    "E": {
+      "item": "zollerngalaxy:compressedheartium"
+    },
+    "F": {
+      "item": "zollerngalaxy:compressedkriffonium"
+    },
+    "V": {
+      "item": "galacticraftplanets:item_basic_mars",
+      "data": 3
+    },
+    "Z": {
+      "item": "zollerngalaxy:zolluscrystal"
+    }
+  },
+  "result": {
+    "item": "zollerngalaxy:kriffoncrystal"
+  }
+}

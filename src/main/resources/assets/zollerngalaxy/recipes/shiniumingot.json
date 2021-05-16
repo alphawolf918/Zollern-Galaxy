@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "DLD",
+    "DSD",
+    "DLD"
+  ],
+  "key": {
+    "S": {
+      "item": "zollerngalaxy:shinestoneingot"
+    },
+    "D": {
+      "item": "zollerngalaxy:prometheancrystal"
+    },
+    "L": {
+      "item": "zollerngalaxy:lapisingot"
+    }
+  },
+  "result": {
+    "item": "zollerngalaxy:shiniumingot"
+  }
+}

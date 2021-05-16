@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " R ",
+    " S ",
+    " S "
+  ],
+  "key": {
+    "R": {
+      "item": "zollerngalaxy:zollerniumingot"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "zollerngalaxy:zollernium_shovel"
+  }
+}

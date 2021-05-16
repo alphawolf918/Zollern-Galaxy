@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "zollerngalaxy:chargiumblock"
+    }
+  ],
+  "result": {
+    "item": "zollerngalaxy:chargiumingot",
+    "count": 9
+  }
+}

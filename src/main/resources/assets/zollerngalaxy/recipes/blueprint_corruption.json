@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ZZZ",
+    "APA",
+    " P "
+  ],
+  "key": {
+    "P": {
+      "item": "zollerngalaxy:ascendium"
+    },
+    "A": {
+      "item": "zollerngalaxy:ascendium"
+    },
+    "Z": {
+      "item": "zollerngalaxy:compressedascendantamaranth"
+    }
+  },
+  "result": {
+    "item": "zollerngalaxy:blueprint_corruption"
+  }
+}

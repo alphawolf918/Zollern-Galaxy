@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "zollerngalaxy:amaranthblock"
+    }
+  ],
+  "result": {
+    "item": "zollerngalaxy:amaranthingot",
+    "count": 9
+  }
+}

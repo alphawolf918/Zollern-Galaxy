@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " W ",
+    " W ",
+    "RAX"
+  ],
+  "key": {
+    "A": {
+      "item": "zollerngalaxy:powerstick"
+    },
+    "R": {
+      "item": "zollerngalaxy:staticamberblock"
+    },
+    "W": {
+      "item": "zollerngalaxy:radiumblock"
+    },
+    "X": {
+      "item": "zollerngalaxy:radium"
+    }
+  },
+  "result": {
+    "item": "zollerngalaxy:light_sword"
+  }
+}

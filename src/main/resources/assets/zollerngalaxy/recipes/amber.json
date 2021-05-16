@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "zollerngalaxy:amberblock"
+    }
+  ],
+  "result": {
+    "item": "zollerngalaxy:amber",
+    "count": 9
+  }
+}
