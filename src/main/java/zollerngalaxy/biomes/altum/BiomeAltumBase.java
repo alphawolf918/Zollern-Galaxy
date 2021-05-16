@@ -30,13 +30,13 @@ import zollerngalaxy.core.ZGLootTables;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderAltum;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 import zollerngalaxy.lib.helpers.ZGHelper;
-import zollerngalaxy.mobs.entities.EntityAbyssalVillager;
 import zollerngalaxy.mobs.entities.EntityBladeFish;
 import zollerngalaxy.mobs.entities.EntityBlubberFish;
 import zollerngalaxy.mobs.entities.EntityGypsyFish;
 import zollerngalaxy.mobs.entities.EntityJellyfish;
 import zollerngalaxy.mobs.entities.EntityShark;
 import zollerngalaxy.mobs.entities.EntitySquidlus;
+import zollerngalaxy.mobs.entities.villagers.EntityAbyssalVillager;
 import zollerngalaxy.worldgen.WorldGenTreasure;
 
 public class BiomeAltumBase extends BiomeSpace {

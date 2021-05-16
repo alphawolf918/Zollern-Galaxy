@@ -36,6 +36,7 @@ import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderMetztli;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 import zollerngalaxy.mobs.entities.EntityMegaCreeper;
 import zollerngalaxy.mobs.entities.EntityShadowSkeleton;
+import zollerngalaxy.mobs.entities.villagers.EntityHarranVillager;
 import zollerngalaxy.mobs.entities.zombiemutations.EntityGhoul;
 import zollerngalaxy.mobs.entities.zombiemutations.EntityOverlord;
 import zollerngalaxy.mobs.entities.zombiemutations.EntitySeeker;
@@ -72,6 +73,7 @@ public abstract class BiomeMetztliBase extends BiomeSpace {
 		
 		if (ConfigManagerZG.enableAlienVillagerSpawn) {
 			this.spawnableCreatureList.add(new SpawnListEntry(EntityAlienVillager.class, 2, 1, 2));
+			this.spawnableCreatureList.add(new SpawnListEntry(EntityHarranVillager.class, 2, 1, 2));
 		}
 		
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedZombie.class, 100, 1, 4));

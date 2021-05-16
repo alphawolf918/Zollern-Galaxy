@@ -37,6 +37,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.events.ZGSoundEvents;
 import zollerngalaxy.items.ZGItems;
 import zollerngalaxy.mobs.entities.interfaces.IShadeEntity;
+import zollerngalaxy.mobs.entities.villagers.EntityAbyssalVillager;
 
 public class EntityGalaxyKnight extends EntityMob implements IEntityBreathable, IShadeEntity {
 	

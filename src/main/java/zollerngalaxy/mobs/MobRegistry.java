@@ -16,7 +16,6 @@ import net.minecraftforge.fml.common.registry.EntityRegistry;
 import zollerngalaxy.core.ZollernGalaxyCore;
 import zollerngalaxy.lib.ZGInfo;
 import zollerngalaxy.lib.helpers.ZGHelper;
-import zollerngalaxy.mobs.entities.EntityAbyssalVillager;
 import zollerngalaxy.mobs.entities.EntityArcon;
 import zollerngalaxy.mobs.entities.EntityBladeFish;
 import zollerngalaxy.mobs.entities.EntityBlubberFish;
@@ -41,6 +40,8 @@ import zollerngalaxy.mobs.entities.EntitySpiderling;
 import zollerngalaxy.mobs.entities.EntitySquidlus;
 import zollerngalaxy.mobs.entities.EntityWasp;
 import zollerngalaxy.mobs.entities.boss.EntityShadowAlien;
+import zollerngalaxy.mobs.entities.villagers.EntityAbyssalVillager;
+import zollerngalaxy.mobs.entities.villagers.EntityHarranVillager;
 import zollerngalaxy.mobs.entities.zombiemutations.EntityGhoul;
 import zollerngalaxy.mobs.entities.zombiemutations.EntityOverlord;
 import zollerngalaxy.mobs.entities.zombiemutations.EntitySeeker;
@@ -131,6 +132,9 @@ public class MobRegistry {
 		// Abyssal Villager
 		registerEntity("abyssalvillager", EntityAbyssalVillager.class, entityId++, 0x8b8b00, 0x0099ff);
 		EntitySpawnPlacementRegistry.setPlacementType(EntityAbyssalVillager.class, SpawnPlacementType.IN_WATER);
+		
+		// Harran Villager
+		registerEntity("harranvillager", EntityHarranVillager.class, entityId++, 0x8b4d8b, 0xffff4d);
 		
 		// Wasp
 		registerEntity("wasp", EntityWasp.class, entityId++, 0x000000, 0xffff00);

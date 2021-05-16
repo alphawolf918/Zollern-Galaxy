@@ -84,7 +84,6 @@ import zollerngalaxy.items.armor.ZGArmor;
 import zollerngalaxy.items.armor.ZGArmorMats;
 import zollerngalaxy.lib.helpers.ModHelperBase;
 import zollerngalaxy.lib.helpers.ZGHelper;
-import zollerngalaxy.mobs.entities.EntityAbyssalVillager;
 import zollerngalaxy.mobs.entities.EntityBladeFish;
 import zollerngalaxy.mobs.entities.EntityBlubberFish;
 import zollerngalaxy.mobs.entities.EntityGalaxyKnight;
@@ -98,6 +97,8 @@ import zollerngalaxy.mobs.entities.EntityShadowSkeleton;
 import zollerngalaxy.mobs.entities.EntityShark;
 import zollerngalaxy.mobs.entities.base.EntityMutantZombie;
 import zollerngalaxy.mobs.entities.interfaces.IShadeEntity;
+import zollerngalaxy.mobs.entities.villagers.EntityAbyssalVillager;
+import zollerngalaxy.mobs.entities.villagers.EntityHarranVillager;
 import zollerngalaxy.mobs.entities.zombiemutations.EntityGhoul;
 import zollerngalaxy.mobs.entities.zombiemutations.EntityOverlord;
 import zollerngalaxy.mobs.entities.zombiemutations.EntitySeeker;
@@ -434,8 +435,8 @@ public class ZGEvents {
 		}
 		
 		// Allow Alien Villagers to mutate into Zombies, but only on Metztli.
-		if (entity instanceof EntityAlienVillager && ConfigManagerZG.enableAlienVillagerMutation) {
-			EntityAlienVillager villager = (EntityAlienVillager) entity;
+		if (entity instanceof EntityHarranVillager && ConfigManagerZG.enableAlienVillagerMutation) {
+			EntityHarranVillager villager = (EntityHarranVillager) entity;
 			World world = villager.getEntityWorld();
 			if (!world.isRemote) {
 				WorldProvider provider = world.provider;
@@ -446,7 +447,7 @@ public class ZGEvents {
 							villager.setDead();
 							EntityEvolvedZombie zombie = new EntityEvolvedZombie(world);
 							zombie.copyLocationAndAnglesFrom(villager);
-							zombie.setCustomNameTag("Alien Villager Mutant");
+							zombie.setCustomNameTag("Harran Villager Mutant");
 							world.spawnEntity(zombie);
 							ZombieUtils.playMutateSound(zombie.posX, zombie.posY, zombie.posZ, world, rand);
 							ZombieUtils.playMutateSound(villager.posX, villager.posY, villager.posZ, world, rand);
@@ -545,7 +546,7 @@ public class ZGEvents {
 			}
 		}
 		
-		// Convert Alien Villagers to Abyssal Villagers
+		// Convert Alien Villagers to planet-specific Villagers
 		if (provider instanceof WorldProviderAltum) {
 			if (!world.isRemote) {
 				Entity entity = event.getEntity();
@@ -556,6 +557,18 @@ public class ZGEvents {
 					EntityAbyssalVillager abyssalVillager = new EntityAbyssalVillager(world);
 					abyssalVillager.setPosition(worldPos.getX(), worldPos.getY(), worldPos.getZ());
 					world.spawnEntity(abyssalVillager);
+				}
+			}
+		} else if (provider instanceof WorldProviderMetztli) {
+			if (!world.isRemote) {
+				Entity entity = event.getEntity();
+				if (entity instanceof EntityHarranVillager) {
+					EntityHarranVillager alienVillager = (EntityHarranVillager) entity;
+					BlockPos worldPos = alienVillager.getPos();
+					alienVillager.setDead();
+					EntityAbyssalVillager harranVillager = new EntityAbyssalVillager(world);
+					harranVillager.setPosition(worldPos.getX(), worldPos.getY(), worldPos.getZ());
+					world.spawnEntity(harranVillager);
 				}
 			}
 		}

@@ -9,15 +9,15 @@ package zollerngalaxy.mobs.entities.ai;
 
 import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.player.EntityPlayer;
-import zollerngalaxy.mobs.entities.EntityAbyssalVillager;
+import zollerngalaxy.mobs.entities.base.EntityZGVillagerBase;
 
 public class EntityAILookAtTradePlayerZG extends EntityAIWatchClosest {
 	
-	private final EntityAbyssalVillager theMerchant;
+	private final EntityZGVillagerBase theMerchant;
 	
-	public EntityAILookAtTradePlayerZG(EntityAbyssalVillager theMerchantIn) {
-		super(theMerchantIn, EntityPlayer.class, 8.0F);
-		this.theMerchant = theMerchantIn;
+	public EntityAILookAtTradePlayerZG(EntityZGVillagerBase entityZGVillagerBase) {
+		super(entityZGVillagerBase, EntityPlayer.class, 8.0F);
+		this.theMerchant = entityZGVillagerBase;
 	}
 	
 	/**

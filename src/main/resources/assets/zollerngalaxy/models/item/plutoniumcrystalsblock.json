@@ -1,6 +1,0 @@
-{
-  "parent": "zollerngalaxy:block/plutoniumcrystalsblock",
-  "textures": {
-        "layer0": "zollerngalaxy:plutoniumblock"
-    }
-}

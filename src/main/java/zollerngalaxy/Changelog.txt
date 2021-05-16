@@ -5,6 +5,9 @@ Zollern Galaxy v2.0.29
 * Added four alarm siren blocks, each with their own sound.
     - Iron, Gold, Diamond and Emerald
     - Powered with Redstone
+* Added the Harran Villager to Metztli.
+    - Replaces Alien Villager spawns.
+    - Alien Villagers will auto-convert into Harran Villagers.
 * Began adding subtitles for sounds.
     - The first step in accessibility features.
 * 
