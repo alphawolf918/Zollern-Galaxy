@@ -409,6 +409,57 @@ tile.compressedzucriteblock.name=致密祖克合金块
 tile.plutoniumcrystals.name=钚元素结晶
 tile.stormcrystals.name=风暴结晶
 
+## Sirens ##
+
+tile.ironsiren.name=铁警报器
+tile.ironsiren_on.name=铁警报器
+
+tile.goldsiren.name=金警报器
+tile.goldsiren_on.name=金警报器
+
+tile.diamondsiren.name=钻石警报器
+tile.diamondsiren_on.name=钻石警报器
+
+tile.emeraldsiren.name=绿宝石警报器
+tile.emeraldsiren_on.name=绿宝石警报器
+
+## Subtitles ##
+
+zollerngalaxy.subtitle.iron_siren=IRON ALARM PLAYING
+zollerngalaxy.subtitle.gold_siren=GOLD ALARM PLAYING
+zollerngalaxy.subtitle.diamond_siren=DIAMOND ALARM PLAYING
+zollerngalaxy.subtitle.emerald_siren=EMERALD ALARM PLAYING
+
+zollerngalaxy.subtitle.grayalien.say=Gray Alien screeches
+zollerngalaxy.subtitle.grayalien.hurt=Gray Alien screams in pain
+zollerngalaxy.subtitle.mummy.say=Mummy grumbles about brains
+zollerngalaxy.subtitle.mummy.hurt=Mummy cries in agony
+zollerngalaxy.subtitle.mummy.die=Mummy dies dramatically
+zollerngalaxy.subtitle.galaxyknight.say=Galaxy Knight speaks with authority
+zollerngalaxy.subtitle.galaxyknight.die=Galaxy Knight dies
+zollerngalaxy.subtitle.shadowalien.say=Shadow Alien moans
+zollerngalaxy.subtitle.shadowalien.hurt=Shadow Alien is damaged
+zollerngalaxy.subtitle.shadowalien.die=Shadow Alien is destroyed
+zollerngalaxy.subtitle.spiderling.heartbeat=An egg is stirring nearby
+zollerngalaxy.subtitle.krull.say=A Krull asks you to join it in darkness
+zollerngalaxy.subtitle.krull.hurt=Krull screams in pain
+zollerngalaxy.subtitle.krull.die=Krull gasps its final breath
+zollerngalaxy.subtitle.shade.say=Shade mumbles
+zollerngalaxy.subtitle.shade.hurt=Shade groans in pain
+zollerngalaxy.subtitle.shade.die=Shade dies
+zollerngalaxy.subtitle.wasp.say=Wasp buzzes
+zollerngalaxy.subtitle.wasp.hurt=Wasp takes damage
+zollerngalaxy.subtitle.wasp.die=Wasp dies
+zollerngalaxy.subtitle.faceless.say=Faceless menaces at you
+zollerngalaxy.subtitle.faceless.hurt=Faceless screeches in pain
+zollerngalaxy.subtitle.faceless.die=Faceless dies
+zollerngalaxy.subtitle.volatile.say=Volatile cries in hunger
+zollerngalaxy.subtitle.volatile.hurt=Volatile is hurt
+zollerngalaxy.subtitle.volatile.die=Volatile dies
+
+zollerngalaxy.subtitle.mutate=一个附近的丧尸突变了
+zollerngalaxy.subtitle.windblowing=风在你周身呼啸
+
 ## Fluids ##
 
 chargium=碳导体合金
@@ -694,6 +745,7 @@ entity.zollerngalaxy:blubberfish.name=鲸脂鱼
 entity.zollerngalaxy:gypsyfish.name=吉普赛鱼
 entity.zollerngalaxy:bladefish.name=剑鱼
 entity.zollerngalaxy:abyssalvillager.name=深渊村民
+entity.zollerngalaxy:harranvillager.name=Harran Villager
 entity.zollerngalaxy:shark.name=鲨鱼
 entity.zollerngalaxy:jellyfish.name=水母
 entity.zollerngalaxy:wasp.name=黄蜂
