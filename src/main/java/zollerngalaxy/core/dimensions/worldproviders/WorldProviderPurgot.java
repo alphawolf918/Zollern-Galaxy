@@ -25,6 +25,7 @@ import zollerngalaxy.biomes.providers.BiomeProviderPurgot;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.celestial.IZollernBody;
 import zollerngalaxy.celestial.ZGPlanets;
+import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.ZGDimensions;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderPurgot;
 import zollerngalaxy.core.dimensions.skyproviders.SkyProviderPurgot;
@@ -38,7 +39,7 @@ public class WorldProviderPurgot extends WorldProviderZG {
 	
 	@Override
 	public double getMeteorFrequency() {
-		return 2.0;
+		return ConfigManagerZG.meteorGenPurgot;
 	}
 	
 	@Override

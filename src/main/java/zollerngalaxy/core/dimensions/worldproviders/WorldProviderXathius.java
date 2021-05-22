@@ -26,6 +26,7 @@ import zollerngalaxy.biomes.providers.BiomeProviderXathius;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.celestial.IZollernBody;
 import zollerngalaxy.celestial.ZGPlanets;
+import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.ZGDimensions;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderXathius;
 import zollerngalaxy.core.dimensions.skyproviders.SkyProviderXathius;
@@ -44,7 +45,7 @@ public class WorldProviderXathius extends WorldProviderZG {
 	
 	@Override
 	public double getMeteorFrequency() {
-		return 5.0;
+		return ConfigManagerZG.meteorGenXathius;
 	}
 	
 	@Override

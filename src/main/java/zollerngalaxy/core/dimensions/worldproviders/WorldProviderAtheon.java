@@ -26,6 +26,7 @@ import zollerngalaxy.biomes.providers.BiomeProviderAtheon;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.celestial.IZollernBody;
 import zollerngalaxy.celestial.ZGPlanets;
+import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.ZGDimensions;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderAtheon;
 import zollerngalaxy.core.dimensions.skyproviders.SkyProviderAtheon;
@@ -44,7 +45,7 @@ public class WorldProviderAtheon extends WorldProviderZG {
 	
 	@Override
 	public double getMeteorFrequency() {
-		return 2.0;
+		return ConfigManagerZG.meteorGenAtheon;
 	}
 	
 	@Override

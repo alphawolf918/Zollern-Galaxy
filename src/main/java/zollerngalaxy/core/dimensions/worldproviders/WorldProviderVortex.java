@@ -28,6 +28,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.biomes.providers.BiomeProviderVortex;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.celestial.ZGPlanets;
+import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.ZGDimensions;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderVortex;
 import zollerngalaxy.core.dimensions.skyproviders.SkyProviderVortex;
@@ -59,7 +60,7 @@ public class WorldProviderVortex extends WorldProviderZG {
 	
 	@Override
 	public double getMeteorFrequency() {
-		return 15.0;
+		return ConfigManagerZG.meteorGenVortex;
 	}
 	
 	@Override

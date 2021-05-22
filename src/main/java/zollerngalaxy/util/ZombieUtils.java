@@ -13,6 +13,8 @@ import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.monster.EntityZombie;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.SoundCategory;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.EnumSkyBlock;
 import net.minecraft.world.World;
 import zollerngalaxy.events.ZGSoundEvents;
 
@@ -81,6 +83,25 @@ public abstract class ZombieUtils {
 		y += extendBy;
 		z += extendBy;
 		world.playSound(x, y, z, ZGSoundEvents.ENTITY_VOLATILE_MUTATE, SoundCategory.AMBIENT, randFloat, randFloat2, false);
+	}
+	
+	public static boolean isValidLightLevel(World world, EntityZombie zombieIn, Random rand) {
+		BlockPos blockpos = new BlockPos(zombieIn.posX, zombieIn.getEntityBoundingBox().minY, zombieIn.posZ);
+		
+		if (world.getLightFor(EnumSkyBlock.SKY, blockpos) > rand.nextInt(32)) {
+			return false;
+		} else {
+			int i = world.getLightFromNeighbors(blockpos);
+			
+			if (world.isThundering()) {
+				int j = world.getSkylightSubtracted();
+				world.setSkylightSubtracted(10);
+				i = world.getLightFromNeighbors(blockpos);
+				world.setSkylightSubtracted(j);
+			}
+			
+			return i <= rand.nextInt(8);
+		}
 	}
 	
 }

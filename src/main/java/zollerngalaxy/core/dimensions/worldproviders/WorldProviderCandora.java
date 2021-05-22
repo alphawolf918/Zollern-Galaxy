@@ -26,6 +26,7 @@ import zollerngalaxy.biomes.providers.BiomeProviderCandora;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.celestial.IZollernBody;
 import zollerngalaxy.celestial.ZGPlanets;
+import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.ZGDimensions;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderCandora;
 import zollerngalaxy.core.dimensions.skyproviders.SkyProviderCandora;
@@ -44,7 +45,7 @@ public class WorldProviderCandora extends WorldProviderZG {
 	
 	@Override
 	public double getMeteorFrequency() {
-		return 0.0;
+		return ConfigManagerZG.meteorGenCandora;
 	}
 	
 	@Override

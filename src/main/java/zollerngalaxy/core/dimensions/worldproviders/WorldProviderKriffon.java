@@ -26,6 +26,7 @@ import zollerngalaxy.biomes.providers.BiomeProviderKriffon;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.celestial.IZollernBody;
 import zollerngalaxy.celestial.ZGPlanets;
+import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.ZGDimensions;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderKriffon;
 import zollerngalaxy.core.dimensions.skyproviders.SkyProviderKriffon;
@@ -44,7 +45,7 @@ public class WorldProviderKriffon extends WorldProviderZG {
 	
 	@Override
 	public double getMeteorFrequency() {
-		return 8.0;
+		return ConfigManagerZG.meteorGenKriffon;
 	}
 	
 	@Override
@@ -69,7 +70,7 @@ public class WorldProviderKriffon extends WorldProviderZG {
 	
 	@Override
 	public float getThermalLevelModifier() {
-		return 5.2F;
+		return 3.2F;
 	}
 	
 	@Override
@@ -77,9 +78,9 @@ public class WorldProviderKriffon extends WorldProviderZG {
 		IZollernBody planet = this.getPlanet();
 		float planetTemp = planet.getBodyTemperature();
 		if (this.isDaytime()) {
-			planetTemp += 10.1F;
+			planetTemp += 3.1F;
 		} else {
-			planetTemp -= 4.2F;
+			planetTemp -= 3.2F;
 		}
 		return planetTemp;
 	}

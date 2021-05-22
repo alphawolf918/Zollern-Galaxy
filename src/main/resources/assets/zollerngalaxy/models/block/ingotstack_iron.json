@@ -1,0 +1,8 @@
+{
+  "parent": "zollerngalaxy:custom/ingotstack_iron",
+  "textures": {
+    "all": "minecraft:blocks/iron_block",
+    "particle": "minecraft:blocks/iron_block",
+    "0": "minecraft:blocks/iron_block"
+  }
+}

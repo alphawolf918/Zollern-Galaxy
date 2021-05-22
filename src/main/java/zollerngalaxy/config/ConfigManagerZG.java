@@ -156,6 +156,24 @@ public class ConfigManagerZG {
 	public static boolean enableAlienVillagerSpawn;
 	public static boolean enableAlienVillagerMutation;
 	
+	/////////////////////////////////////////////////
+	public static double meteorGenZollus;
+	public static double meteorGenKriffon;
+	public static double meteorGenPurgot;
+	public static double meteorGenEden;
+	public static double meteorGenXathius;
+	public static double meteorGenOasis;
+	public static double meteorGenXantheon;
+	public static double meteorGenCandora;
+	public static double meteorGenAtheon;
+	public static double meteorGenExodus;
+	public static double meteorGenPerdita;
+	public static double meteorGenAltum;
+	public static double meteorGenCaligro;
+	public static double meteorGenVortex;
+	public static double meteorGenMetztli;
+	////////////////////////////////////////////////
+	
 	public static boolean planetUnreachableZollus;
 	public static boolean planetUnreachableKriffon;
 	public static boolean planetUnreachablePurgot;
@@ -474,6 +492,26 @@ public class ConfigManagerZG {
 				.getBoolean();
 		enableAlienVillagerMutation = configuration.get(CATEGORY_CUSTOMIZATIONS, "Enable Alien Villagers To Mutate", true,
 				"Set whether or not Alien Villagers can mutate into Zombies on Metztli (default: true). ").getBoolean();
+		
+		//
+		//
+		meteorGenZollus = configuration.get(CATEGORY_CUSTOMIZATIONS, "Meteor Gen Zollus", 2, "Percentage chance for meteors to fall. (default: 2)").getInt();
+		meteorGenKriffon = configuration.get(CATEGORY_CUSTOMIZATIONS, "Meteor Gen Kriffon", 8, "Percentage chance for meteors to fall. (default: 8)").getInt();
+		meteorGenPurgot = configuration.get(CATEGORY_CUSTOMIZATIONS, "Meteor Gen Purgot", 2, "Percentage chance for meteors to fall. (default: 2)").getInt();
+		meteorGenEden = configuration.get(CATEGORY_CUSTOMIZATIONS, "Meteor Gen Eden", 10, "Percentage chance for meteors to fall. (default: 10)").getInt();
+		meteorGenXathius = configuration.get(CATEGORY_CUSTOMIZATIONS, "Meteor Gen Xathius", 5, "Percentage chance for meteors to fall. (default: 5)").getInt();
+		meteorGenOasis = configuration.get(CATEGORY_CUSTOMIZATIONS, "Meteor Gen Oasis", 15, "Percentage chance for meteors to fall. (default: 15)").getInt();
+		meteorGenXantheon = configuration.get(CATEGORY_CUSTOMIZATIONS, "Meteor Gen Xantheon", 4, "Percentage chance for meteors to fall. (default: 4)").getInt();
+		meteorGenCandora = configuration.get(CATEGORY_CUSTOMIZATIONS, "Meteor Gen Candora", 0, "Percentage chance for meteors to fall. (default: 0)").getInt();
+		meteorGenAtheon = configuration.get(CATEGORY_CUSTOMIZATIONS, "Meteor Gen Atheon", 2, "Percentage chance for meteors to fall. (default: 2)").getInt();
+		meteorGenExodus = configuration.get(CATEGORY_CUSTOMIZATIONS, "Meteor Gen Exodus", 15, "Percentage chance for meteors to fall. (default: 15)").getInt();
+		meteorGenPerdita = configuration.get(CATEGORY_CUSTOMIZATIONS, "Meteor Gen Perdita", 15, "Percentage chance for meteors to fall. (default: 15)").getInt();
+		meteorGenAltum = configuration.get(CATEGORY_CUSTOMIZATIONS, "Meteor Gen Altum", 4, "Percentage chance for meteors to fall. (default: 4)").getInt();
+		meteorGenCaligro = configuration.get(CATEGORY_CUSTOMIZATIONS, "Meteor Gen Caligro", 0, "Percentage chance for meteors to fall. (default: 0)").getInt();
+		meteorGenVortex = configuration.get(CATEGORY_CUSTOMIZATIONS, "Meteor Gen Vortex", 15, "Percentage chance for meteors to fall. (default: 15)").getInt();
+		meteorGenMetztli = configuration.get(CATEGORY_CUSTOMIZATIONS, "Meteor Gen Metztli", 15, "Percentage chance for meteors to fall. (default: 15)").getInt();
+		//
+		//
 		
 		// Control unreachable planets (by rockets).
 		planetUnreachableAll = configuration

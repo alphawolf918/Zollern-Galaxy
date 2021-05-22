@@ -409,6 +409,9 @@ tile.compressedzucriteblock.name=Block of Compressed Zucrite
 tile.plutoniumcrystals.name=Plutonium Crystals
 tile.stormcrystals.name=Storm Crystals
 
+## Ingot Stacks
+tile.ingotstack_iron.name=Iron Ingot Stack
+
 ## Sirens ##
 
 tile.ironsiren.name=Iron Siren
@@ -879,7 +882,6 @@ planet.requiem=Requiem
 
 planet.somnium=Somnium
 planet.primor=Primor
-
 
 ## Stars ##
 

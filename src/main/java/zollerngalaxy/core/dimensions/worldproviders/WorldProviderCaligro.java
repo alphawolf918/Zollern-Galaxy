@@ -26,6 +26,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.biomes.providers.BiomeProviderCaligro;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.celestial.ZGPlanets;
+import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.ZGDimensions;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderCaligro;
 import zollerngalaxy.core.dimensions.skyproviders.SkyProviderCaligro;
@@ -44,7 +45,7 @@ public class WorldProviderCaligro extends WorldProviderZG {
 	
 	@Override
 	public double getMeteorFrequency() {
-		return 0;
+		return ConfigManagerZG.meteorGenCaligro;
 	}
 	
 	@Override

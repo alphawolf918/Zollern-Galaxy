@@ -25,6 +25,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.biomes.providers.BiomeProviderMetztli;
 import zollerngalaxy.celestial.ZGPlanets;
+import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.ZGDimensions;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderMetztli;
 import zollerngalaxy.core.dimensions.skyproviders.SkyProviderMetztli;
@@ -43,7 +44,7 @@ public class WorldProviderMetztli extends WorldProviderZG {
 	
 	@Override
 	public double getMeteorFrequency() {
-		return 15.0;
+		return ConfigManagerZG.meteorGenMetztli;
 	}
 	
 	@Override

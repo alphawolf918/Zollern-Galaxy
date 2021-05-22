@@ -25,6 +25,7 @@ import zollerngalaxy.biomes.providers.BiomeProviderZollus;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.celestial.IZollernBody;
 import zollerngalaxy.celestial.ZGPlanets;
+import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.ZGDimensions;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderZollus;
 import zollerngalaxy.core.dimensions.skyproviders.SkyProviderZollus;
@@ -38,7 +39,7 @@ public class WorldProviderZollus extends WorldProviderZG {
 	
 	@Override
 	public double getMeteorFrequency() {
-		return 2.0;
+		return ConfigManagerZG.meteorGenZollus;
 	}
 	
 	@Override
@@ -63,7 +64,7 @@ public class WorldProviderZollus extends WorldProviderZG {
 	
 	@Override
 	public float getThermalLevelModifier() {
-		return -12.2F;
+		return -3.2F;
 	}
 	
 	@Override
@@ -71,7 +72,7 @@ public class WorldProviderZollus extends WorldProviderZG {
 		IZollernBody planet = this.getPlanet();
 		float planetTemp = planet.getBodyTemperature();
 		if (!this.isDaytime()) {
-			planetTemp /= 2.4F;
+			planetTemp /= 1.2F;
 		}
 		return planetTemp;
 	}

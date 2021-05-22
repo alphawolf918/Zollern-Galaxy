@@ -3,11 +3,17 @@ Zollern Galaxy v2.0.29
 =====================
 
 * Added four alarm siren blocks, each with their own sound.
-    - Iron, Gold, Diamond and Emerald
-    - Powered with Redstone
+    - Iron, Gold, Diamond and Emerald.
+    - Powered with Redstone.
 * Added the Harran Villager to Metztli.
     - Replaces Alien Villager spawns.
     - Alien Villagers will auto-convert into Harran Villagers.
-* Began adding subtitles for sounds.
+    - This is the start of adding specific Villagers per-planet.
+* Added config options (per planet) to control meteor fall chances.
+* Added subtitles for sounds.
     - The first step in accessibility features.
+* Added an Iron Ingot Stack as a Creative-Only block, but is only a proof-of-concept at this time.
+    - This will be expanded on in the future.
+* MASSIVELY increased temperature of Zollus to combat thermal damage.
+* Slightly decreased temperature of Kriffon to combat thermal damage.
 * 

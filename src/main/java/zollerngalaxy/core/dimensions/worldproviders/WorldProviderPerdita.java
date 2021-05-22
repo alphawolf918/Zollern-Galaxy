@@ -25,6 +25,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.biomes.providers.BiomeProviderPerdita;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.celestial.ZGPlanets;
+import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.ZGDimensions;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderPerdita;
 import zollerngalaxy.core.dimensions.skyproviders.SkyProviderPerdita;
@@ -43,7 +44,7 @@ public class WorldProviderPerdita extends WorldProviderZG {
 	
 	@Override
 	public double getMeteorFrequency() {
-		return 15.0;
+		return ConfigManagerZG.meteorGenPerdita;
 	}
 	
 	@Override

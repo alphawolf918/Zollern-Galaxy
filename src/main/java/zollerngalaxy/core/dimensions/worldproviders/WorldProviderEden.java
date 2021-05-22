@@ -25,6 +25,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.biomes.providers.BiomeProviderEden;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.celestial.ZGPlanets;
+import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.ZGDimensions;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderEden;
 import zollerngalaxy.core.dimensions.skyproviders.SkyProviderEden;
@@ -43,7 +44,7 @@ public class WorldProviderEden extends WorldProviderZG {
 	
 	@Override
 	public double getMeteorFrequency() {
-		return 10.0;
+		return ConfigManagerZG.meteorGenEden;
 	}
 	
 	@Override

@@ -25,6 +25,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.biomes.providers.BiomeProviderAltum;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.celestial.ZGPlanets;
+import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.ZGDimensions;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderAltum;
 import zollerngalaxy.core.dimensions.skyproviders.SkyProviderAltum;
@@ -43,7 +44,7 @@ public class WorldProviderAltum extends WorldProviderZG {
 	
 	@Override
 	public double getMeteorFrequency() {
-		return 4.0;
+		return ConfigManagerZG.meteorGenAltum;
 	}
 	
 	@Override

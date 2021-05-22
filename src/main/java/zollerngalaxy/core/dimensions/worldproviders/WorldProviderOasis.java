@@ -25,6 +25,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.biomes.providers.BiomeProviderOasis;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.celestial.ZGPlanets;
+import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.ZGDimensions;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderOasis;
 import zollerngalaxy.core.dimensions.skyproviders.SkyProviderOasis;
@@ -43,7 +44,7 @@ public class WorldProviderOasis extends WorldProviderZG {
 	
 	@Override
 	public double getMeteorFrequency() {
-		return 15.0;
+		return ConfigManagerZG.meteorGenOasis;
 	}
 	
 	@Override

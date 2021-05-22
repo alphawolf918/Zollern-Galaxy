@@ -442,10 +442,10 @@ public class ZGEvents {
 				WorldProvider provider = world.provider;
 				
 				if (provider instanceof WorldProviderMetztli) {
+					EntityEvolvedZombie zombie = new EntityEvolvedZombie(world);
 					if (!provider.isDaytime()) {
 						if (rand.nextInt(500) == 0) {
 							villager.setDead();
-							EntityEvolvedZombie zombie = new EntityEvolvedZombie(world);
 							zombie.copyLocationAndAnglesFrom(villager);
 							zombie.setCustomNameTag("Harran Villager Mutant");
 							world.spawnEntity(zombie);
@@ -562,11 +562,11 @@ public class ZGEvents {
 		} else if (provider instanceof WorldProviderMetztli) {
 			if (!world.isRemote) {
 				Entity entity = event.getEntity();
-				if (entity instanceof EntityHarranVillager) {
-					EntityHarranVillager alienVillager = (EntityHarranVillager) entity;
+				if (entity instanceof EntityAlienVillager) {
+					EntityAlienVillager alienVillager = (EntityAlienVillager) entity;
 					BlockPos worldPos = alienVillager.getPos();
 					alienVillager.setDead();
-					EntityAbyssalVillager harranVillager = new EntityAbyssalVillager(world);
+					EntityHarranVillager harranVillager = new EntityHarranVillager(world);
 					harranVillager.setPosition(worldPos.getX(), worldPos.getY(), worldPos.getZ());
 					world.spawnEntity(harranVillager);
 				}
