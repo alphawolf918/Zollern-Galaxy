@@ -14,6 +14,9 @@ Zollern Galaxy v2.0.29
     - The first step in accessibility features.
 * Added an Iron Ingot Stack as a Creative-Only block, but is only a proof-of-concept at this time.
     - This will be expanded on in the future.
+* Added the Harran Clay Mesa biome to Metztli.
+* Added Stronghold structure generation to Metztli.
+* Added Mob Spawning Dungeons to Metztli.
 * MASSIVELY increased temperature of Zollus to combat thermal damage.
 * Slightly decreased temperature of Kriffon to combat thermal damage.
 * 

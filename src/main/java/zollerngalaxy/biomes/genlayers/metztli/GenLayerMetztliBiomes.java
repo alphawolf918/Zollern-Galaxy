@@ -46,11 +46,12 @@ public class GenLayerMetztliBiomes extends GenLayerMetztli {
 		ArrayList<BiomeEntry>[] currentBiomes = new ArrayList[CachedEnum.valuesBiomeCached().length];
 		List<BiomeEntry> list = new ArrayList<>();
 		list.add(new BiomeEntry(ZGBiomes.METZTLI_HARRAN_PRIME, 100));
-		list.add(new BiomeEntry(ZGBiomes.METZTLI_HARRAN_DUNES, 70));
-		list.add(new BiomeEntry(ZGBiomes.METZTLI_HARRAN_SWAMP, 60));
-		list.add(new BiomeEntry(ZGBiomes.METZTLI_HARRAN_TUNDRA, 50));
-		list.add(new BiomeEntry(ZGBiomes.METZTLI_HARRAN_OCEAN, 40));
-		list.add(new BiomeEntry(ZGBiomes.METZTLI_HARRAN_SHROOMS, 30));
+		list.add(new BiomeEntry(ZGBiomes.METZTLI_HARRAN_DUNES, 90));
+		list.add(new BiomeEntry(ZGBiomes.METZTLI_HARRAN_SWAMP, 80));
+		list.add(new BiomeEntry(ZGBiomes.METZTLI_HARRAN_TUNDRA, 70));
+		list.add(new BiomeEntry(ZGBiomes.METZTLI_HARRAN_OCEAN, 60));
+		list.add(new BiomeEntry(ZGBiomes.METZTLI_HARRAN_SHROOMS, 50));
+		list.add(new BiomeEntry(ZGBiomes.METZTLI_HARRAN_CLAY_MESA, 40));
 		
 		currentBiomes[BiomeType.WARM.ordinal()] = new ArrayList<>(list);
 		return currentBiomes;
