@@ -729,6 +729,17 @@ item.copper_tunneler.name=Copper Cave Tunneler
 item.gold_tunneler.name=Gold Cave Tunneler
 item.amaranth_tunneler.name=Amaranth Tunneler
 
+item.oxygentank_tier4.name=Oxygen Tank (Tier 4)
+item.oxygentank_tier5.name=Oxygen Tank (Tier 5)
+item.oxygentank_tier6.name=Oxygen Tank (Tier 6)
+
+item.thermal_cloth_t3.name=Thermal Cloth (Tier 3)
+item.zgthermal_helm_t3.name=Thermal Helmet (Tier 3)
+item.zgthermal_chestplate_t3.name=Thermal Chestplate (Tier 3)
+item.zgthermal_leggings_t3.name=Thermal Leggings (Tier 3)
+item.zgthermal_boots_t3.name=Thermal Boots (Tier 3)
+item.zgthermal_padding_t3.name=Thermal Padding (Tier 3)
+
 ## Mobs ##
 
 entity.zollerngalaxy:moolus.name=Moolus
@@ -842,6 +853,8 @@ tooltips.amulet_storm=You are currently protected from the harsh winds!
 
 tooltips.tunneling_tool=A special tool for mining.
 tooltips.tunneling_tool2=Creates mining tunnels on right-click.
+
+tooltips.thermal_armor_t3=Protects against advanced, extreme thermal damage.
 
 ## Planets and Moons ##
 

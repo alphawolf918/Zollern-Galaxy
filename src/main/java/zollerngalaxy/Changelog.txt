@@ -17,6 +17,7 @@ Zollern Galaxy v2.0.29
 * Added the Harran Clay Mesa biome to Metztli.
 * Added Stronghold structure generation to Metztli.
 * Added Mob Spawning Dungeons to Metztli.
+* Added three new tiers of Oxygen Tanks with increasingly higher oxygen storage.
 * MASSIVELY increased temperature of Zollus to combat thermal damage.
 * Slightly decreased temperature of Kriffon to combat thermal damage.
 * 
