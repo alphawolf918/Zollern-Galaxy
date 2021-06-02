@@ -35,6 +35,7 @@ import zollerngalaxy.mobs.entities.EntitySquidlus;
 import zollerngalaxy.mobs.entities.EntityWasp;
 import zollerngalaxy.mobs.entities.boss.EntityShadowAlien;
 import zollerngalaxy.mobs.entities.villagers.EntityAbyssalVillager;
+import zollerngalaxy.mobs.entities.villagers.EntityEdenVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityHarranVillager;
 import zollerngalaxy.mobs.entities.zombiemutations.EntityGhoul;
 import zollerngalaxy.mobs.entities.zombiemutations.EntityOverlord;
@@ -65,6 +66,7 @@ import zollerngalaxy.mobs.renders.RenderSquidlus;
 import zollerngalaxy.mobs.renders.RenderWasp;
 import zollerngalaxy.mobs.renders.boss.RenderShadowAlien;
 import zollerngalaxy.mobs.renders.villagers.RenderAbyssalVillager;
+import zollerngalaxy.mobs.renders.villagers.RenderEdenVillager;
 import zollerngalaxy.mobs.renders.villagers.RenderHarranVillager;
 import zollerngalaxy.mobs.renders.zombiemutations.RenderGhoul;
 import zollerngalaxy.mobs.renders.zombiemutations.RenderOverlord;
@@ -104,6 +106,7 @@ public final class MobRenders {
 		RenderMob(EntityOverlord.class, RenderOverlord::new);
 		RenderMob(EntityGhoul.class, RenderGhoul::new);
 		RenderMob(EntityHarranVillager.class, RenderHarranVillager::new);
+		RenderMob(EntityEdenVillager.class, RenderEdenVillager::new);
 	}
 	
 	/**
@@ -112,9 +115,9 @@ public final class MobRenders {
 	 * @param entityClass
 	 *            The .class file of the entity (mob).
 	 * @param renderFactory
-	 *            the IRenderFactory.
+	 *            The IRenderFactory.
 	 */
-	public static <T extends Entity> void RenderMob(Class<T> entityClass, IRenderFactory<? super T> renderFactory) {
+	private static <T extends Entity> void RenderMob(Class<T> entityClass, IRenderFactory<? super T> renderFactory) {
 		RenderingRegistry.registerEntityRenderingHandler(entityClass, renderFactory);
 	}
 	

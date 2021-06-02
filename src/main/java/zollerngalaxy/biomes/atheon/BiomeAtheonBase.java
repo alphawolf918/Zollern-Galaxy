@@ -8,7 +8,6 @@
 package zollerngalaxy.biomes.atheon;
 
 import java.util.Random;
-import micdoodle8.mods.galacticraft.core.entities.EntityAlienVillager;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
@@ -20,7 +19,6 @@ import zollerngalaxy.biomes.decorators.BiomeDecoratorAtheon;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.blocks.fluids.ZGFluids;
 import zollerngalaxy.celestial.ZGPlanets;
-import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderAtheon;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 import zollerngalaxy.mobs.entities.EntityGrayAlien;
@@ -47,12 +45,7 @@ public abstract class BiomeAtheonBase extends BiomeSpace {
 		this.biomeDecor.treesPerChunk = -999;
 		this.biomeDecor.grassPerChunk = -999;
 		this.biomeDecor.mushroomsPerChunk = -999;
-		
-		if (ConfigManagerZG.enableAlienVillagerSpawn) {
-			this.spawnableCreatureList.add(new SpawnListEntry(EntityAlienVillager.class, 5, 1, 2));
-		}
-		
-		this.spawnableMonsterList.add(new SpawnListEntry(EntityGrayAlien.class, 80, 2, 4));
+		this.spawnableMonsterList.add(new SpawnListEntry(EntityGrayAlien.class, 2, 1, 4));
 		this.setStoneBlock(ZGBlocks.atheonStone);
 		this.setPlanetForBiome(ZGPlanets.planetAtheon);
 	}

@@ -8,7 +8,6 @@
 package zollerngalaxy.biomes.altum;
 
 import java.util.Random;
-import micdoodle8.mods.galacticraft.core.entities.EntityAlienVillager;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyBool;
@@ -213,10 +212,9 @@ public class BiomeAltumBase extends BiomeSpace {
 		this.spawnableWaterCreatureList.add(new SpawnListEntry(EntityBladeFish.class, 55, 1, 3));
 		this.spawnableWaterCreatureList.add(new SpawnListEntry(EntityShark.class, 45, 1, 2));
 		this.spawnableWaterCreatureList.add(new SpawnListEntry(EntityAbyssalVillager.class, 40, 1, 2));
-		this.spawnableCreatureList.add(new SpawnListEntry(EntityAbyssalVillager.class, 40, 1, 2));
 		
 		if (ConfigManagerZG.enableAlienVillagerSpawn) {
-			this.spawnableCreatureList.add(new SpawnListEntry(EntityAlienVillager.class, 5, 1, 2));
+			this.spawnableCreatureList.add(new SpawnListEntry(EntityAbyssalVillager.class, 1, 1, 2));
 		}
 	}
 	

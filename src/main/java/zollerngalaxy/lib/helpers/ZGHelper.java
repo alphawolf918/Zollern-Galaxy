@@ -32,14 +32,22 @@ import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import zollerngalaxy.creativetabs.CreativeTabsHelper;
 import zollerngalaxy.creativetabs.ZGTabs;
+import zollerngalaxy.lib.ZGInfo;
 import zollerngalaxy.util.ZGDamageSrc;
 
 public abstract class ZGHelper {
 	
-	private static final Logger LOGGER = LogManager.getLogger("Zollern Galaxy");
+	private static final Logger LOGGER = LogManager.getLogger(ZGInfo.OFFICIAL_NAME);
 	
 	private static Random rand = new Random();
 	
+	/**
+	 * Get block at this position.
+	 * 
+	 * @param world
+	 * @param pos
+	 * @return
+	 */
 	public static Block getBlock(World world, BlockPos pos) {
 		return ZGHelper.getBlockState(world, pos).getBlock();
 	}
@@ -86,6 +94,32 @@ public abstract class ZGHelper {
 	 */
 	public static void spawnEntity(Entity entityIn, World worldIn, double x, double y, double z, float pitch, float yaw) {
 		entityIn.setLocationAndAngles(x, y, z, pitch, yaw);
+		worldIn.spawnEntity(entityIn);
+	}
+	
+	/**
+	 * Spawn an Entity into the world.
+	 * 
+	 * @param entityIn
+	 * @param worldIn
+	 * @param pos
+	 */
+	public static void spawnEntity(Entity entityIn, World worldIn, BlockPos pos) {
+		entityIn.setLocationAndAngles(pos.getX(), pos.getY(), pos.getZ(), 0, 0);
+		worldIn.spawnEntity(entityIn);
+	}
+	
+	/**
+	 * Spawn an Entity into the world.
+	 * 
+	 * @param entityIn
+	 * @param worldIn
+	 * @param pos
+	 * @param pitch
+	 * @param yaw
+	 */
+	public static void spawnEntity(Entity entityIn, World worldIn, BlockPos pos, float pitch, float yaw) {
+		entityIn.setLocationAndAngles(pos.getX(), pos.getY(), pos.getZ(), pitch, yaw);
 		worldIn.spawnEntity(entityIn);
 	}
 	
@@ -358,8 +392,7 @@ public abstract class ZGHelper {
 		playerInventory.setInventorySlotContents(invSlot, dmgStack);
 	}
 	
-	public static DimensionType registerDimension(String dimName, String dimUnlocalizedName, int dimID,
-			Class<? extends WorldProvider> worldProvider) {
+	public static DimensionType registerDimension(String dimName, String dimUnlocalizedName, int dimID, Class<? extends WorldProvider> worldProvider) {
 		DimensionType dim = DimensionType.register(dimName, dimUnlocalizedName, dimID, worldProvider, false);
 		DimensionManager.registerDimension(dimID, dim);
 		return dim;

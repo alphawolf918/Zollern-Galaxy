@@ -8,7 +8,6 @@
 package zollerngalaxy.biomes.exodus;
 
 import java.util.Random;
-import micdoodle8.mods.galacticraft.core.entities.EntityAlienVillager;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedCreeper;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedEnderman;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedSkeleton;
@@ -31,7 +30,6 @@ import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.biomes.decorators.BiomeDecoratorExodus;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.celestial.ZGPlanets;
-import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderExodus;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 import zollerngalaxy.mobs.entities.EntityArcon;
@@ -61,13 +59,7 @@ public abstract class BiomeExodusBase extends BiomeSpace {
 		this.biomeDecor.mushroomsPerChunk = -999;
 		this.biomeDecor.exodusTreesPerChunk = 0;
 		this.clearAllSpawning();
-		
-		if (ConfigManagerZG.enableAlienVillagerSpawn) {
-			this.spawnableCreatureList.add(new SpawnListEntry(EntityAlienVillager.class, 5, 1, 2));
-		}
-		
 		this.spawnableCreatureList.add(new SpawnListEntry(EntityArcon.class, 2, 2, 2));
-		
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedZombie.class, 100, 4, 4));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedSpider.class, 100, 4, 4));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedSkeleton.class, 100, 4, 4));

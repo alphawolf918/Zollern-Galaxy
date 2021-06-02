@@ -13,7 +13,6 @@ import net.minecraft.item.Item;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.items.armor.ZGArmor;
 import zollerngalaxy.items.armor.ZGArmorMats;
-import zollerngalaxy.items.armor.ZGThermalArmor;
 import zollerngalaxy.items.food.IceCream;
 import zollerngalaxy.items.food.ItemSweetFood;
 import zollerngalaxy.items.food.ZGItemFood;
@@ -272,8 +271,8 @@ public class ZGItems {
 	public static final Item oxygenTankTier6 = new ZGOxygenTank("oxygentank_tier6", 6);
 	
 	// Thermal Armor
-	public static final Item thermalClothTier3 = new ZGItemBase("thermal_cloth_t3");
-	public static final Item thermalArmorTier3 = new ZGThermalArmor("zgthermal_padding_t3");
+	// public static final Item thermalClothTier3 = new ZGItemBase("thermal_cloth_t3");
+	// public static final Item thermalArmorTier3 = new ZGThermalArmor("zgthermal_padding_t3");
 	
 	public static void init() {
 		ZGItems.registerItems(heartium, zolCrystal, kriffCrystal, purgCrystal, edenCrystal, purgEssence, prometheanCrystal, plutoniumCrystal, azurite, ascendium, rokkite,
@@ -294,7 +293,7 @@ public class ZGItems {
 				tunnelerCopper, tunnelerGold, tunnelerAmaranth, helmetAmaranth, helmetZollernium, helmetAzurite, helmetRadium, chestAmaranth, chestZollernium,
 				chestAzurite, chestRadium, legsAmaranth, legsZollernium, legsAzurite, legsRadium, bootsAmaranth, bootsZollernium, bootsAzurite, bootsRadium,
 				blueprintCorruption, blueprintThermalHot, blueprintThermalCold, healingHeart, healingHeartForce, amuletStorm, oxygenTankTier4, oxygenTankTier5,
-				oxygenTankTier6, thermalClothTier3, thermalArmorTier3);
+				oxygenTankTier6);
 		ZGHelper.Log("Loaded a total of " + totalItems + " new items.");
 	}
 	

@@ -8,7 +8,6 @@
 package zollerngalaxy.biomes.candora;
 
 import java.util.Random;
-import micdoodle8.mods.galacticraft.core.entities.EntityAlienVillager;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
@@ -47,7 +46,6 @@ public class BiomeCandoraBase extends BiomeSpace {
 		this.decorator.grassPerChunk = -999;
 		this.decorator.mushroomsPerChunk = -999;
 		this.clearAllSpawning();
-		this.spawnableCreatureList.add(new SpawnListEntry(EntityAlienVillager.class, 5, 1, 2));
 		this.setPlanetForBiome(ZGPlanets.planetCandora);
 	}
 	

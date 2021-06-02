@@ -77,6 +77,7 @@ import zollerngalaxy.core.ZGLootTables;
 import zollerngalaxy.core.ZollernGalaxyCore;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderAltum;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderCaligro;
+import zollerngalaxy.core.dimensions.worldproviders.WorldProviderEden;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderMetztli;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderVortex;
 import zollerngalaxy.items.ZGItems;
@@ -98,6 +99,7 @@ import zollerngalaxy.mobs.entities.EntityShark;
 import zollerngalaxy.mobs.entities.base.EntityMutantZombie;
 import zollerngalaxy.mobs.entities.interfaces.IShadeEntity;
 import zollerngalaxy.mobs.entities.villagers.EntityAbyssalVillager;
+import zollerngalaxy.mobs.entities.villagers.EntityEdenVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityHarranVillager;
 import zollerngalaxy.mobs.entities.zombiemutations.EntityGhoul;
 import zollerngalaxy.mobs.entities.zombiemutations.EntityOverlord;
@@ -378,6 +380,7 @@ public class ZGEvents {
 				if (world.provider instanceof WorldProviderMetztli) {
 					if (rand.nextInt(400) == 0) {
 						int mutantChance = rand.nextInt(100);
+						
 						// Ghoul
 						if (mutantChance <= ZombieUtils.MUTATE_GHOUL_CHANCE) {
 							EntityGhoul gzombie = new EntityGhoul(world);
@@ -389,6 +392,7 @@ public class ZGEvents {
 							}
 							world.spawnEntity(gzombie);
 							ZombieUtils.playMutateSound(gzombie.posX, gzombie.posY, gzombie.posZ, world, rand);
+							
 							// Overlord
 						} else if (mutantChance <= ZombieUtils.MUTATE_OVERLORD_CHANCE) {
 							zombie.setDead();
@@ -402,6 +406,7 @@ public class ZGEvents {
 							}
 							world.spawnEntity(ozombie);
 							ZombieUtils.playMutateSound(ozombie.posX, ozombie.posY, ozombie.posZ, world, rand);
+							
 							// Seeker
 						} else if (mutantChance <= ZombieUtils.MUTATE_SEEKER_CHANCE) {
 							zombie.setDead();
@@ -415,6 +420,7 @@ public class ZGEvents {
 							}
 							world.spawnEntity(szombie);
 							ZombieUtils.playMutateSound(szombie.posX, szombie.posY, szombie.posZ, world, rand);
+							
 							// Volatile
 						} else if (mutantChance <= ZombieUtils.MUTATE_VOLATILE_CHANCE) {
 							zombie.setDead();
@@ -569,6 +575,18 @@ public class ZGEvents {
 					EntityHarranVillager harranVillager = new EntityHarranVillager(world);
 					harranVillager.setPosition(worldPos.getX(), worldPos.getY(), worldPos.getZ());
 					world.spawnEntity(harranVillager);
+				}
+			}
+		} else if (provider instanceof WorldProviderEden) {
+			if (!world.isRemote) {
+				Entity entity = event.getEntity();
+				if (entity instanceof EntityAlienVillager) {
+					EntityAlienVillager alienVillager = (EntityAlienVillager) entity;
+					BlockPos worldPos = alienVillager.getPos();
+					alienVillager.setDead();
+					EntityEdenVillager edenVillager = new EntityEdenVillager(world);
+					edenVillager.setPosition(worldPos.getX(), worldPos.getY(), worldPos.getZ());
+					world.spawnEntity(edenVillager);
 				}
 			}
 		}

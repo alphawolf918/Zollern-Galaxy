@@ -84,8 +84,7 @@ public class BlockSpiderEgg extends ZGBlockBase {
 			int i = 32;
 			
 			if (!BlockFalling.fallInstantly && worldIn.isAreaLoaded(pos.add(-32, -32, -32), pos.add(32, 32, 32))) {
-				worldIn.spawnEntity(
-						new EntityFallingBlock(worldIn, pos.getX() + 0.5F, pos.getY(), pos.getZ() + 0.5F, this.getDefaultState()));
+				worldIn.spawnEntity(new EntityFallingBlock(worldIn, pos.getX() + 0.5F, pos.getY(), pos.getZ() + 0.5F, this.getDefaultState()));
 			} else {
 				worldIn.setBlockToAir(pos);
 				BlockPos blockpos;
@@ -115,8 +114,8 @@ public class BlockSpiderEgg extends ZGBlockBase {
 	}
 	
 	@Override
-	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing,
-			float hitX, float hitY, float hitZ) {
+	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY,
+			float hitZ) {
 		super.onBlockActivated(worldIn, pos, state, playerIn, hand, facing, hitX, hitY, hitZ);
 		this.playHeartbeatSound(worldIn, pos);
 		this.ticksEggExisted += 10;

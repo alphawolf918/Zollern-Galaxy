@@ -9,6 +9,7 @@ package zollerngalaxy.biomes;
 
 import java.util.List;
 import java.util.Random;
+import micdoodle8.mods.galacticraft.core.entities.EntityAlienVillager;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedCreeper;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedEnderman;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedSkeleton;
@@ -17,7 +18,6 @@ import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedWitch;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedZombie;
 import net.minecraft.block.Block;
 import zollerngalaxy.celestial.IZollernBody;
-import zollerngalaxy.celestial.ZGPlanetaryBody;
 import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderZG;
 
@@ -59,6 +59,10 @@ public class BiomeSpace extends ZGBiomeBase {
 		monsterList.add(new SpawnListEntry(EntityEvolvedCreeper.class, 100, numSpawn, numSpawn));
 		monsterList.add(new SpawnListEntry(EntityEvolvedEnderman.class, 100, numSpawn, numSpawn));
 		monsterList.add(new SpawnListEntry(EntityEvolvedWitch.class, 100, numSpawn, numSpawn));
+		
+		if (ConfigManagerZG.enableAlienVillagerSpawn) {
+			this.spawnableCreatureList.add(new SpawnListEntry(EntityAlienVillager.class, 1, 1, 1));
+		}
 	}
 	
 	public static BiomeSpace instance() {
@@ -77,7 +81,7 @@ public class BiomeSpace extends ZGBiomeBase {
 		return this;
 	}
 	
-	public BiomeSpace setBodyForBiome(ZGPlanetaryBody planet) {
+	public BiomeSpace setBodyForBiome(IZollernBody planet) {
 		this.setPlanetForBiome(planet);
 		return this;
 	}

@@ -8,7 +8,6 @@
 package zollerngalaxy.biomes.eden;
 
 import java.util.Random;
-import micdoodle8.mods.galacticraft.core.entities.EntityAlienVillager;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedCreeper;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedEnderman;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedSkeleton;
@@ -41,6 +40,7 @@ import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 import zollerngalaxy.mobs.entities.EntityMoolus;
 import zollerngalaxy.mobs.entities.EntityOinkus;
+import zollerngalaxy.mobs.entities.villagers.EntityEdenVillager;
 
 public abstract class BiomeEdenBase extends BiomeSpace {
 	
@@ -79,12 +79,8 @@ public abstract class BiomeEdenBase extends BiomeSpace {
 			this.spawnableCreatureList.add(new SpawnListEntry(EntityHorse.class, 100, 1, 3));
 		}
 		
-		if (ConfigManagerZG.enableAlienVillagerSpawn) {
-			this.spawnableCreatureList.add(new SpawnListEntry(EntityAlienVillager.class, 5, 1, 2));
-		}
 		this.spawnableCreatureList.add(new SpawnListEntry(EntityMoolus.class, 80, 2, 4));
 		this.spawnableCreatureList.add(new SpawnListEntry(EntityOinkus.class, 80, 2, 4));
-		
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedZombie.class, 100, 4, 4));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedSpider.class, 100, 4, 4));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedSkeleton.class, 100, 4, 4));
@@ -97,6 +93,10 @@ public abstract class BiomeEdenBase extends BiomeSpace {
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityCreeper.class, 100, 4, 4));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityEnderman.class, 100, 1, 4));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityWitch.class, 5, 1, 1));
+		
+		if (ConfigManagerZG.enableAlienVillagerSpawn) {
+			this.spawnableCreatureList.add(new SpawnListEntry(EntityEdenVillager.class, 1, 1, 2));
+		}
 		
 		this.setStoneBlock(ZGBlocks.edenStone);
 		this.setPlanetForBiome(ZGPlanets.planetEden);
