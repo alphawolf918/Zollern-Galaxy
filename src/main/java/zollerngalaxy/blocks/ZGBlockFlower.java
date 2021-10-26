@@ -45,10 +45,10 @@ public class ZGBlockFlower extends ZGBlockBase {
 		return BlockRenderLayer.CUTOUT;
 	}
 	
-	@Override
-	public EnumOffsetType getOffsetType() {
-		return EnumOffsetType.XZ;
-	}
+	// @Override
+	// public EnumOffsetType getOffsetType() {
+	// return EnumOffsetType.NONE;
+	// }
 	
 	@Override
 	@Nullable
@@ -67,8 +67,8 @@ public class ZGBlockFlower extends ZGBlockBase {
 	}
 	
 	@Override
-	public IBlockState getStateForPlacement(World world, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta,
-			EntityLivingBase placer, EnumHand hand) {
+	public IBlockState getStateForPlacement(World world, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer,
+			EnumHand hand) {
 		if (world.getBlockState(pos).getBlock().isReplaceable(world, pos) && this.canBlockStay(world, pos, this.getDefaultState())) {
 			return super.getStateForPlacement(world, pos, facing, hitX, hitY, hitZ, meta, placer, hand);
 		}

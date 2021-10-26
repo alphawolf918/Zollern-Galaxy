@@ -1,27 +1,11 @@
 ===== CHANGELOG =====
-Zollern Galaxy v2.0.29
+Zollern Galaxy v2.0.30
 =====================
 
-* Added four alarm siren blocks, each with their own sound.
-    - Iron, Gold, Diamond and Emerald.
-    - Powered with Redstone.
-* Added the Harran Villager to Metztli.
-    - Replaces Alien Villager spawns.
-    - Alien Villagers will auto-convert into Harran Villagers.
-    - This is the start of adding specific Villagers per-planet.
-* Added config options (per planet) to control meteor fall chances.
-* Added subtitles for sounds.
-    - The first step in accessibility features.
-* Added an Iron Ingot Stack as a Creative-Only block, but is only a proof-of-concept at this time.
-    - This will be expanded on in the future.
-* Added the Harran Clay Mesa biome to Metztli.
-* Added Stronghold structure generation to Metztli.
-* Added Mob Spawning Dungeons to Metztli.
-* Added three new tiers of Oxygen Tanks with increasingly higher oxygen storage.
-* Added the Eden Villager.
-    - Replaces Alien Villager spawns.
-    - Alien Villagers will auto-convert into Eden Villagers.
-* MASSIVELY increased temperature of Zollus to combat thermal damage.
-* Slightly decreased temperature of Kriffon to combat thermal damage.
-* Lowered spawn rates of Gray Alien mobs.
-* Massively lowered spawn rates of Alien Villagers.
+* Updated Russian translations by mMONTAGEm.
+* Added a config option to toggle step height.
+    - Introduced a control variable to determine if a full set was worn; step height will now be modified accordingly.
+* Added a config option to disable the Wind Blowing event on Vortex.
+* Fixed a major bug that caused saplings from this mod to spread like wildfire in the Overworld.
+    - Players will now need to bring back grass/dirt/soil from the planets of origin if they bring back a sapling.
+* Fixed flowers and saplings being offset; they are now centered as they should be.

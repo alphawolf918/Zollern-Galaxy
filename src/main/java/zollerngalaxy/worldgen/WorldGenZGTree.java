@@ -35,14 +35,13 @@ public class WorldGenZGTree extends WorldGenAbstractTree {
 		this.vinesGrow = growVines;
 	}
 	
-	@SuppressWarnings("unused")
 	@Override
 	public boolean generate(World worldIn, Random rand, BlockPos position) {
 		int i = rand.nextInt(3) + this.minTreeHeight;
 		boolean flag = true;
 		
 		if (position.getY() >= 1 && position.getY() + i + 1 <= worldIn.getHeight()) {
-			for (int j = position.getY(); j <= position.getY() + 1 + i; ++j) {
+			for (int j = position.getY(); j <= position.getY() + 1 + i;) {
 				int k = 1;
 				
 				if (j == position.getY()) {

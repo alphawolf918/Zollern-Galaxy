@@ -8,6 +8,7 @@
 package zollerngalaxy.blocks;
 
 import java.util.Random;
+import net.minecraft.block.Block;
 import net.minecraft.block.IGrowable;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyInteger;
@@ -19,16 +20,22 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
+import net.minecraftforge.common.EnumPlantType;
+import net.minecraftforge.common.IPlantable;
 import net.minecraftforge.event.terraingen.TerrainGen;
 import zollerngalaxy.core.ZollernGalaxyCore;
 import zollerngalaxy.core.enums.EnumBlockType;
 import zollerngalaxy.lib.helpers.json.JSONFactory;
 
-public class ZGBlockSapling extends ZGBlockFlower implements IGrowable {
+public class ZGBlockSapling extends ZGBlockFlower implements IGrowable, IPlantable {
 	
 	public static final PropertyInteger STAGE = PropertyInteger.create("stage", 0, 1);
-	protected static final AxisAlignedBB SAPLING_AABB = new AxisAlignedBB(0.09999999403953552D, 0.0D, 0.09999999403953552D,
-			0.8999999761581421D, 0.800000011920929D, 0.8999999761581421D);
+	protected static double val1 = 0.09999999403953552D;
+	protected static double val2 = val1;
+	protected static double val3 = 0.8999999761581421D;
+	protected static double val4 = val3;
+	protected static double val5 = 0.800000011920929D;
+	protected static final AxisAlignedBB SAPLING_AABB = new AxisAlignedBB(val1, 0.0D, val2, val3, val5, val4);
 	
 	protected WorldGenerator treeGen;
 	
@@ -37,10 +44,12 @@ public class ZGBlockSapling extends ZGBlockFlower implements IGrowable {
 		this.setDefaultState(this.blockState.getBaseState().withProperty(STAGE, Integer.valueOf(0)));
 		this.setMaterial(Material.VINE);
 		this.setBlockType(EnumBlockType.SAPLING);
+		this.setTickRandomly(true);
 		this.treeGen = genTree;
 		if (ZollernGalaxyCore.instance().isInDevMode()) {
 			JSONFactory.registerSapling(blockName);
 		}
+		// BlockSapling
 	}
 	
 	@Override
@@ -69,10 +78,11 @@ public class ZGBlockSapling extends ZGBlockFlower implements IGrowable {
 	public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
 		if (!worldIn.isRemote) {
 			super.updateTick(worldIn, pos, state, rand);
-			
-			if (!worldIn.isAreaLoaded(pos, 1))
+			this.checkAndDropBlock(worldIn, pos, state);
+			if (!worldIn.isAreaLoaded(pos, 1)) {
 				return;
-			if (worldIn.getLightFromNeighbors(pos.up()) >= 6 && rand.nextInt(5) == 0) {
+			}
+			if (worldIn.getLightFromNeighbors(pos.up()) >= 9 && rand.nextInt(7) == 0) {
 				this.grow(worldIn, pos, state, rand);
 			}
 		}
@@ -86,9 +96,42 @@ public class ZGBlockSapling extends ZGBlockFlower implements IGrowable {
 		}
 	}
 	
+	public boolean isSoil(Block soilBlock) {
+		return (soilBlock instanceof ZGBlockGrass || soilBlock instanceof ZGBlockDirt);
+	}
+	
+	@Override
+	public boolean canPlaceBlockAt(World worldIn, BlockPos pos) {
+		IBlockState soil = worldIn.getBlockState(pos.down());
+		Block soilBlock = soil.getBlock();
+		return this.isSoil(soilBlock);
+	}
+	
+	@Override
+	protected void checkAndDropBlock(World world, BlockPos pos, IBlockState state) {
+		if (!this.canBlockStay(world, pos, state)) {
+			this.dropBlockAsItem(world, pos, state, 0);
+			world.setBlockState(pos, Blocks.AIR.getDefaultState(), 3);
+		}
+	}
+	
+	@Override
+	public void neighborChanged(IBlockState state, World world, BlockPos pos, Block block, BlockPos fromPos) {
+		this.checkAndDropBlock(world, pos, state);
+	}
+	
+	@Override
+	public boolean canBlockStay(World worldIn, BlockPos pos, IBlockState state) {
+		IBlockState soil = worldIn.getBlockState(pos.down());
+		Block soilBlock = soil.getBlock();
+		return (this.isSoil(soilBlock));
+	}
+	
 	public void generateTree(World worldIn, BlockPos pos, IBlockState state, Random rand) {
-		if (!TerrainGen.saplingGrowTree(worldIn, rand, pos))
+		if (!TerrainGen.saplingGrowTree(worldIn, rand, pos)) {
 			return;
+		}
+		
 		WorldGenerator worldgenerator = this.treeGen;
 		int i = 0;
 		int j = 0;
@@ -125,11 +168,25 @@ public class ZGBlockSapling extends ZGBlockFlower implements IGrowable {
 	
 	@Override
 	public boolean canUseBonemeal(World worldIn, Random rand, BlockPos pos, IBlockState state) {
-		return true;
+		return (worldIn.rand.nextFloat() < 0.45D);
 	}
 	
 	@Override
 	public void grow(World worldIn, Random rand, BlockPos pos, IBlockState state) {
 		this.grow(worldIn, pos, state, rand);
+	}
+	
+	@Override
+	public EnumPlantType getPlantType(IBlockAccess world, BlockPos pos) {
+		return EnumPlantType.Plains;
+	}
+	
+	@Override
+	public IBlockState getPlant(net.minecraft.world.IBlockAccess world, BlockPos pos) {
+		IBlockState state = world.getBlockState(pos);
+		if (state.getBlock() != this) {
+			return getDefaultState();
+		}
+		return state;
 	}
 }

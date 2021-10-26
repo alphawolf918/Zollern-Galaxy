@@ -122,22 +122,24 @@ public class ZGEvents {
 	@SideOnly(Side.CLIENT)
 	@SubscribeEvent(priority = EventPriority.HIGH, receiveCanceled = true)
 	public void onWindBlowingEvent(WindBlowingEvent event) {
-		final Minecraft minecraft = ZGUtils.getClient();
-		final EntityPlayerSP player = minecraft.player;
-		
-		World world = event.getWorld();
-		
-		if (ZGHelper.rngInt(1, 50) == 0 && minecraft.world.provider instanceof WorldProviderVortex) {
-			double freq = player.getRNG().nextDouble() * Math.PI * 2.0F;
-			double dist = 120.0F;
-			double dX = dist * Math.cos(freq);
-			double dZ = dist * Math.sin(freq);
-			double posX = player.posX + dX;
-			double posY = 70;
-			double posZ = player.posZ + dZ;
-			float pitch = 5.0F + player.getRNG().nextFloat() * 0.2F;
-			event.updateDirectionBasedOnChance();
-			minecraft.world.playSound(player, posX, posY, posZ, ZGSoundEvents.WEATHER_WIND, SoundCategory.WEATHER, 1000.0F, pitch);
+		if (ConfigManagerZG.enableWindBlowEvent) {
+			final Minecraft minecraft = ZGUtils.getClient();
+			final EntityPlayerSP player = minecraft.player;
+			
+			World world = event.getWorld();
+			
+			if (ZGHelper.rngInt(1, 50) == 0 && minecraft.world.provider instanceof WorldProviderVortex) {
+				double freq = player.getRNG().nextDouble() * Math.PI * 2.0F;
+				double dist = 120.0F;
+				double dX = dist * Math.cos(freq);
+				double dZ = dist * Math.sin(freq);
+				double posX = player.posX + dX;
+				double posY = 70;
+				double posZ = player.posZ + dZ;
+				float pitch = 5.0F + player.getRNG().nextFloat() * 0.2F;
+				event.updateDirectionBasedOnChance();
+				minecraft.world.playSound(player, posX, posY, posZ, ZGSoundEvents.WEATHER_WIND, SoundCategory.WEATHER, 1000.0F, pitch);
+			}
 		}
 	}
 	
@@ -159,17 +161,20 @@ public class ZGEvents {
 				}
 			}
 			
-			if (player.getRNG().nextInt(100) == 0 && minecraft.world.provider instanceof WorldProviderVortex) {
-				double freq = player.getRNG().nextDouble() * Math.PI * 2.0F;
-				double dist = 120.0F;
-				double dX = dist * Math.cos(freq);
-				double dZ = dist * Math.sin(freq);
-				double posX = player.posX + dX;
-				double posY = 70;
-				double posZ = player.posZ + dZ;
-				float pitch = 5.0F + player.getRNG().nextFloat() * 0.2F;
-				minecraft.world.playSound(player, posX, posY, posZ, SoundEvents.ENTITY_LIGHTNING_THUNDER, SoundCategory.WEATHER, 1000.0F, pitch);
-				lightning.put(new BlockPos(posX, posY, posZ), 20);
+			double freq = player.getRNG().nextDouble() * Math.PI * 2.0F;
+			double dist = 120.0F;
+			double dX = dist * Math.cos(freq);
+			double dZ = dist * Math.sin(freq);
+			double posX = player.posX + dX;
+			double posY = 70;
+			double posZ = player.posZ + dZ;
+			float pitch = 5.0F + player.getRNG().nextFloat() * 0.2F;
+			lightning.put(new BlockPos(posX, posY, posZ), 20);
+			
+			if (ConfigManagerZG.enableWindBlowEvent) {
+				if (player.getRNG().nextInt(100) == 0 && minecraft.world.provider instanceof WorldProviderVortex) {
+					minecraft.world.playSound(player, posX, posY, posZ, SoundEvents.ENTITY_LIGHTNING_THUNDER, SoundCategory.WEATHER, 1000.0F, pitch);
+				}
 			}
 		}
 	}
@@ -339,6 +344,7 @@ public class ZGEvents {
 			
 			// Loop through 0 to 4 and if an armor set's increment variable is
 			// equal to 4; add its respective potion effect.
+			boolean fullSetWorn = false;
 			for (int i = 0; i < 4; ++i) {
 				if (amArmorCount == 4) {
 					// Amaranth
@@ -346,7 +352,10 @@ public class ZGEvents {
 				} else if (zArmorCount == 4) {
 					// Zollernium
 					player.addPotionEffect(new PotionEffect(MobEffects.FIRE_RESISTANCE, 100, 1));
-					player.stepHeight = 2F;
+					if (ConfigManagerZG.enableStepHeight) {
+						player.stepHeight = 2F;
+						fullSetWorn = true;
+					}
 				} else if (azArmorCount == 4) {
 					// Azurite
 					player.addPotionEffect(new PotionEffect(MobEffects.STRENGTH, 100, 1));
@@ -362,7 +371,10 @@ public class ZGEvents {
 					// Disable all "extra" potion capabilities that have nothing
 					// to do with effects. If we don't do this, then the armor's
 					// effects (not the potion's, but the armor's) will last.
-					player.stepHeight = 0.5F;
+					if (ConfigManagerZG.enableStepHeight && fullSetWorn) {
+						player.stepHeight = 0.5F;
+						fullSetWorn = false;
+					}
 					if (!player.capabilities.isCreativeMode && ConfigManagerZG.enableRadianceFlying) {
 						if (!ModHelperBase.useDraconicEvolution) {
 							player.capabilities.allowFlying = false;

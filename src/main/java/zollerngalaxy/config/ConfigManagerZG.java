@@ -143,6 +143,7 @@ public class ConfigManagerZG {
 	public static boolean useTConRadium;
 	public static boolean useTConCorruption;
 	public static boolean enableRadianceFlying;
+	public static boolean enableStepHeight;
 	
 	// Customizations
 	public static int kriffonLavaLakesPerChunk;
@@ -153,6 +154,7 @@ public class ConfigManagerZG {
 	public static boolean shouldExplosiveBlocksExplodeOtherBlocks;
 	public static int outpostGenChance;
 	public static int windBlowChance;
+	public static boolean enableWindBlowEvent;
 	public static boolean enableAlienVillagerSpawn;
 	public static boolean enableAlienVillagerMutation;
 	
@@ -473,6 +475,10 @@ public class ConfigManagerZG {
 						+ "Set to false to disable if this causes mod conflicts, compromises the safety of your server, " + "or if you just hate fun. (default: true)")
 				.getBoolean();
 		
+		// Compat (Should increased step height be enabled when using certain armor?)
+		enableStepHeight = configuration.get(CATEGORY_COMPATIBILITY, "Enable Increased Step Height", true,
+				"Toggle whether Zollernium armor increases step height. Disable if there are compatability issues. (default: true)").getBoolean();
+		
 		// Customization Options
 		kriffonLavaLakesPerChunk = configuration
 				.get(CATEGORY_CUSTOMIZATIONS, "Kriffon Lava Lakes Per Chunk", 4, "The amount of Lava Lakes to generate per chunk on planet Kriffon. (default: 4)")
@@ -486,6 +492,9 @@ public class ConfigManagerZG {
 		outpostGenChance = configuration
 				.get(CATEGORY_CUSTOMIZATIONS, "Outpost Gen Percentage", 5, "The chance (out of 100) for Outpost buildings to generate on planets. (default: 5)").getInt();
 		windBlowChance = configuration.get(CATEGORY_CUSTOMIZATIONS, "Wind Blow Chance", 25, "Percentage chance of how often storm wind blows. (default: 25)").getInt();
+		enableWindBlowEvent = configuration
+				.get(CATEGORY_CUSTOMIZATIONS, "Enable Wind Blowing Event", true, "Allow the wind blowing event to move Players around on Vortex (default: true). ")
+				.getBoolean();
 		enableAlienVillagerSpawn = configuration
 				.get(CATEGORY_CUSTOMIZATIONS, "Enable Alien Villager Spawn", true,
 						"Control whether Alien Villagers can spawn randomly outside of Alien Villages; disable if they're causing lag or being annoying. (default: true). ")
