@@ -176,6 +176,7 @@ public class ConfigManagerZG {
 	public static double meteorGenMetztli;
 	////////////////////////////////////////////////
 	
+	// Set as unreachable with rockets by planet
 	public static boolean planetUnreachableZollus;
 	public static boolean planetUnreachableKriffon;
 	public static boolean planetUnreachablePurgot;
@@ -191,6 +192,7 @@ public class ConfigManagerZG {
 	public static boolean planetUnreachableExodus;
 	public static boolean planetUnreachableVortex;
 	public static boolean planetUnreachableMetztli;
+	////////////////////////////////////////////////
 	
 	// Max Health Customization
 	public static double maxHealthAllowed;
