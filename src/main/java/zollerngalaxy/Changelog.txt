@@ -1,11 +1,5 @@
 ===== CHANGELOG =====
-Zollern Galaxy v2.0.30
+Zollern Galaxy v2.0.31 Lightning Fix
 =====================
 
-* Updated Russian translations by mMONTAGEm.
-* Added a config option to toggle step height.
-    - Introduced a control variable to determine if a full set was worn; step height will now be modified accordingly.
-* Added a config option to disable the Wind Blowing event on Vortex.
-* Fixed a major bug that caused saplings from this mod to spread like wildfire in the Overworld.
-    - Players will now need to bring back grass/dirt/soil from the planets of origin if they bring back a sapling.
-* Fixed flowers and saplings being offset; they are now centered as they should be.
+* Fixed lightning CONSTANTLY FREAKING STRIKING ACROSS THE ENTIRE GALAXY.

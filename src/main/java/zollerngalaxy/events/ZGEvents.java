@@ -161,18 +161,17 @@ public class ZGEvents {
 				}
 			}
 			
-			double freq = player.getRNG().nextDouble() * Math.PI * 2.0F;
-			double dist = 120.0F;
-			double dX = dist * Math.cos(freq);
-			double dZ = dist * Math.sin(freq);
-			double posX = player.posX + dX;
-			double posY = 70;
-			double posZ = player.posZ + dZ;
-			float pitch = 5.0F + player.getRNG().nextFloat() * 0.2F;
-			lightning.put(new BlockPos(posX, posY, posZ), 20);
-			
 			if (ConfigManagerZG.enableWindBlowEvent) {
 				if (player.getRNG().nextInt(100) == 0 && minecraft.world.provider instanceof WorldProviderVortex) {
+					double freq = player.getRNG().nextDouble() * Math.PI * 2.0F;
+					double dist = 120.0F;
+					double dX = dist * Math.cos(freq);
+					double dZ = dist * Math.sin(freq);
+					double posX = player.posX + dX;
+					double posY = 70;
+					double posZ = player.posZ + dZ;
+					float pitch = 5.0F + player.getRNG().nextFloat() * 0.2F;
+					lightning.put(new BlockPos(posX, posY, posZ), 20);
 					minecraft.world.playSound(player, posX, posY, posZ, SoundEvents.ENTITY_LIGHTNING_THUNDER, SoundCategory.WEATHER, 1000.0F, pitch);
 				}
 			}
