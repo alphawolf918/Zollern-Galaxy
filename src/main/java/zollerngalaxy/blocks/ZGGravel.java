@@ -34,5 +34,4 @@ public class ZGGravel extends ZGBlockFalling {
 		
 		return rand.nextInt(10 - fortune * 3) == 0 ? Items.FLINT : super.getItemDropped(state, rand, fortune);
 	}
-	
 }

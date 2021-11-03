@@ -16,6 +16,7 @@ import micdoodle8.mods.galacticraft.planets.venus.dimension.TeleportTypeVenus;
 import zollerngalaxy.biomes.ZGBiomes;
 import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderAltum;
+import zollerngalaxy.core.dimensions.worldproviders.WorldProviderAstros;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderAtheon;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderCaligro;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderCandora;
@@ -111,7 +112,7 @@ public class ZGPlanets {
 	public static ZGPlanet planetZollus = new ZGPlanet("zollus");
 	public static ZGPlanet planetKriffon = new ZGPlanet("kriffus");
 	public static ZGPlanet planetPurgot = new ZGPlanet("purgot");
-	public static ZGMoonBody moonAstros;
+	public static ZGMoonBody moonAstros = new ZGMoonBody("astros");
 	
 	// Praedyth Planets
 	public static ZGPlanet planetXathius = new ZGPlanet("xathius");
@@ -612,8 +613,29 @@ public class ZGPlanets {
 	}
 	
 	public static void initMoons() {
-		// TODO
-		// totalMoons++;
+		moonAstros.setDimensionInfo(ConfigManagerZG.moonAstrosDimensionId, WorldProviderAstros.class);
+		moonAstros.setParentPlanet(planetEden);
+		moonAstros.setBodyClass(EnumBodyClass.L);
+		moonAstros.setRingColorRGB(1.0F, 1.0F, 1.9F);
+		moonAstros.setPhaseShift(0.0F);
+		moonAstros.setRelativeOrbitTime(24.0F);
+		moonAstros.setDistanceFromCenter(planetEden.getRelativeDistanceFromCenter().scaledDistance + 1.0F);
+		moonAstros.setTierRequired(ConfigManagerZG.planetEdenTier);
+		if (ConfigManagerZG.planetUnreachableAll || ConfigManagerZG.planetUnreachableEden) {
+			moonAstros.setDisableRockets();
+		}
+		moonAstros.setRelativeSize(25.0F);
+		moonAstros.setBodyTemperature(36.5F);
+		moonAstros.setDensity(10.0F);
+		moonAstros.setHasRain(false);
+		moonAstros.setBodyToxicity(0.0F);
+		moonAstros.setBodyRadiation(0.0F);
+		moonAstros.setWindLevel(16.5F);
+		moonAstros.setBodyGasses(EnumAtmosphericGas.NITROGEN, EnumAtmosphericGas.ARGON, EnumAtmosphericGas.HELIUM);
+		moonAstros.setBodyIcon("astros");
+		moonAstros.setAtmosphere();
+		moonAstros.setBiomeInfo(ZGBiomes.ASTROS_BASE);
+		totalMoons++;
 		ZGHelper.Log("Loaded a total of " + totalMoons + " new moons.");
 	}
 	
@@ -631,6 +653,7 @@ public class ZGPlanets {
 		}
 		
 		ZGPlanets.registerPlanets();
+		ZGPlanets.registerMoons();
 	}
 	
 	public static void registerPlanets() {
@@ -651,12 +674,17 @@ public class ZGPlanets {
 		GalaxyRegistry.registerPlanet(planetMetztli);
 	}
 	
+	public static void registerMoons() {
+		GalaxyRegistry.registerMoon(moonAstros);
+	}
+	
 	public static void registerTeleportTypes() {
 		// Psios-6
 		GalacticraftRegistry.registerTeleportType(WorldProviderZollus.class, new TeleportTypeVenus());
 		GalacticraftRegistry.registerTeleportType(WorldProviderKriffon.class, new TeleportTypeVenus());
 		GalacticraftRegistry.registerTeleportType(WorldProviderPurgot.class, new TeleportTypeVenus());
 		GalacticraftRegistry.registerTeleportType(WorldProviderEden.class, new TeleportTypeVenus());
+		GalacticraftRegistry.registerTeleportType(WorldProviderAstros.class, new TeleportTypeVenus());
 		
 		// Praedyth
 		GalacticraftRegistry.registerTeleportType(WorldProviderXathius.class, new TeleportTypeVenus());

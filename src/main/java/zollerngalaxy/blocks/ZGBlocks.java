@@ -549,6 +549,15 @@ public class ZGBlocks {
 	public static final Block vortexEveniumOre = new ZGBlockOre("vortexeveniumore", 7.2F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
 			EnumHarvestLevelZG.EVENIUM.getHarvestLevel());
 	
+	// Astros (Moon)
+	public static final Block astrosRock = new ZGBlockBase("astrosrock", 2.4F);
+	public static final Block astrosDirt = new ZGBlockDirt("astrosdirt");
+	public static final Block astrosGravel = new ZGGravel("astrosgravel", 3.4F);
+	public static final Block astrosCobblestone = new ZGBlockBase("astroscobblestone").setBlockType(EnumBlockType.COBBLESTONE);
+	public static final Block astrosStone = new ZGPlanetStone("astrosstone", 4.5F, ZGBlocks.astrosCobblestone);
+	public static final Block astrosIronOre = new ZGBlockOre("astrosironore", 3.2F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
+			EnumHarvestLevelZG.COBALT.getHarvestLevel());
+	
 	// Metals
 	public static final Block blockViri = new ZGBlockMetal("viriblock");
 	public static final Block blockEve = new ZGBlockMetal("eveniumblock");
@@ -693,7 +702,7 @@ public class ZGBlocks {
 				exoWoodPlanks, exoWoodSapling, vortexSurfaceRock, vortexCobblestone, vortexStone, vortexVoltRock, vortexIronOre, vortexGoldOre, vortexDiamondOre,
 				vortexRedstoneOre, vortexCopperOre, vortexSuperChargedCoalOre, vortexFueltoniumOre, vortexEveniumOre, blockBlueprintStation, blockHealingStation,
 				blockCrystalsPlutonium, blockCrystalsStorm, blockIngotStackIron, ironSirenON, goldSirenON, diamondSirenON, emeraldSirenON, ironSiren, goldSiren,
-				diamondSiren, emeraldSiren);
+				diamondSiren, emeraldSiren, astrosRock, astrosDirt, astrosGravel, astrosCobblestone, astrosStone, astrosIronOre);
 		ZGHelper.Log("Loaded a total of " + totalBlocks + " new blocks.");
 	}
 	

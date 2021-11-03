@@ -30,7 +30,7 @@ import zollerngalaxy.core.dimensions.ZGDimensions;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderPurgot;
 import zollerngalaxy.core.dimensions.skyproviders.SkyProviderPurgot;
 
-public class WorldProviderPurgot extends WorldProviderZG {
+public class WorldProviderPurgot extends WorldProviderPlanetZG {
 	
 	@Override
 	public float getGravity() {

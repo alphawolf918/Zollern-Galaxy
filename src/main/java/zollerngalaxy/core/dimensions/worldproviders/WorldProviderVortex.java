@@ -33,7 +33,7 @@ import zollerngalaxy.core.dimensions.ZGDimensions;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderVortex;
 import zollerngalaxy.core.dimensions.skyproviders.SkyProviderVortex;
 
-public class WorldProviderVortex extends WorldProviderZG {
+public class WorldProviderVortex extends WorldProviderPlanetZG {
 	
 	private long timeCurrentOffset = 0L;
 	public long preTickTime = Long.MIN_VALUE;

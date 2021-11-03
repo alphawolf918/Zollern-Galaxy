@@ -17,7 +17,7 @@ public class ZGSpaceStation extends Satellite {
 	public ZGSpaceStation(String stationName, ZGPlanet parentBody) {
 		super("space_station." + stationName);
 		this.setParentBody(parentBody);
-		this.setRelativeSize(0.2767F);
+		this.setRelativeSize(10.2767F);
 		this.setRelativeDistanceFromCenter(new ScalableDistance(5.5F, 5.5F));
 		this.setRelativeOrbitTime(20.0F);
 		this.setTierRequired(parentBody.getTierRequirement());

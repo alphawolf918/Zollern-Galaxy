@@ -30,7 +30,7 @@ import zollerngalaxy.core.dimensions.ZGDimensions;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderMetztli;
 import zollerngalaxy.core.dimensions.skyproviders.SkyProviderMetztli;
 
-public class WorldProviderMetztli extends WorldProviderZG {
+public class WorldProviderMetztli extends WorldProviderPlanetZG {
 	
 	@Override
 	public float getGravity() {

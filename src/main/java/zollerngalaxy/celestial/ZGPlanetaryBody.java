@@ -19,7 +19,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.config.ConfigManagerZG;
-import zollerngalaxy.core.dimensions.worldproviders.WorldProviderZG;
+import zollerngalaxy.core.dimensions.worldproviders.WorldProviderPlanetZG;
 import zollerngalaxy.core.enums.EnumBodyClass;
 import zollerngalaxy.lib.ZGInfo;
 import zollerngalaxy.lib.helpers.ZGHelper;
@@ -42,7 +42,7 @@ public class ZGPlanetaryBody extends Planet implements IZollernBody {
 	private AtmosphereInfo atmosphere;
 	private ArrayList<EnumAtmosphericGas> bodyGasses = new ArrayList<EnumAtmosphericGas>();
 	
-	private WorldProviderZG spaceProvider = null;
+	private WorldProviderPlanetZG spaceProvider = null;
 	
 	protected boolean enableExtremeMode = ConfigManagerZG.enableExtremeMode;
 	
@@ -230,12 +230,12 @@ public class ZGPlanetaryBody extends Planet implements IZollernBody {
 		return this;
 	}
 	
-	public IZollernBody setSpaceProvider(WorldProviderZG provider) {
+	public IZollernBody setSpaceProvider(WorldProviderPlanetZG provider) {
 		this.spaceProvider = provider;
 		return this;
 	}
 	
-	public WorldProviderZG getSpaceProvider() {
+	public WorldProviderPlanetZG getSpaceProvider() {
 		return this.spaceProvider;
 	}
 	
@@ -413,7 +413,7 @@ public class ZGPlanetaryBody extends Planet implements IZollernBody {
 		float minTemp = (bodyTemp / 4);
 		Biome biome = world.getBiomeForCoordsBody(pos);
 		if (biome instanceof BiomeSpace) {
-			WorldProviderZG spaceProvider = (WorldProviderZG) world.provider;
+			WorldProviderPlanetZG spaceProvider = (WorldProviderPlanetZG) world.provider;
 			boolean isDaytime = spaceProvider.isDaytime();
 			BiomeSpace spaceBiome = (BiomeSpace) biome;
 			float biomeTemp = spaceBiome.getBiomeTemp();

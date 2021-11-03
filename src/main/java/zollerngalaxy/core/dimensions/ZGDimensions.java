@@ -48,7 +48,7 @@ public class ZGDimensions {
 	public static DimensionType PURGOT_ORBIT;
 	public static DimensionType PURGOT_ORBIT_STATIC;
 	
-	public static DimensionType ASTROS; // Unused
+	public static DimensionType ASTROS;
 	
 	// Praedyth
 	public static DimensionType XATHIUS;
@@ -200,6 +200,9 @@ public class ZGDimensions {
 				WorldProviderOrbitMetztli.class, false);
 		ZGDimensions.METZTLI_ORBIT_STATIC = DimensionType.register("Metztli Space Station", "_metztli_orbit", ConfigManagerZG.spaceStationMetztliStaticId,
 				WorldProviderOrbitMetztli.class, true);
+		
+		// Astros (Eden -> Psios-6)
+		ZGDimensions.ASTROS = ZGDimensions.getDimType(ConfigManagerZG.moonAstrosDimensionId);
 	}
 	
 	public static DimensionType getDimType(int dimId) {
@@ -238,6 +241,8 @@ public class ZGDimensions {
 			body = ZGPlanets.planetVortex;
 		} else if (dimID == ConfigManagerZG.planetMetztliDimensionId) {
 			body = ZGPlanets.planetMetztli;
+		} else if (dimID == ConfigManagerZG.moonAstrosDimensionId) {
+			body = ZGPlanets.moonAstros;
 		}
 		
 		if (body == null) {

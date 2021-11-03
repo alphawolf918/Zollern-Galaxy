@@ -31,7 +31,7 @@ import zollerngalaxy.core.dimensions.ZGDimensions;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderCaligro;
 import zollerngalaxy.core.dimensions.skyproviders.SkyProviderCaligro;
 
-public class WorldProviderCaligro extends WorldProviderZG {
+public class WorldProviderCaligro extends WorldProviderPlanetZG {
 	
 	@Override
 	public float getGravity() {

@@ -1,5 +1,8 @@
 ===== CHANGELOG =====
-Zollern Galaxy v2.0.31 Lightning Fix
+Zollern Galaxy v2.0.32
 =====================
 
-* Fixed lightning CONSTANTLY FREAKING STRIKING ACROSS THE ENTIRE GALAXY.
+* Added Astros as a moon of Eden, the mod's first moon.
+* 
+* Fixed Purgot Dirt showing up on Zollus.
+* 

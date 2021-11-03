@@ -35,7 +35,7 @@ public class BiomeZollusBase extends BiomeSpace {
 	protected static final IBlockState AIR = Blocks.AIR.getDefaultState();
 	protected static final IBlockState BEDROCK = Blocks.BEDROCK.getDefaultState();
 	protected static final IBlockState GRAVEL = ZGBlocks.zolCobbleRock.getDefaultState();
-	protected static final IBlockState DIRT = ZGBlocks.purgDirt.getDefaultState();
+	protected static final IBlockState DIRT = ZGBlocks.zolDirt.getDefaultState();
 	protected static final IBlockState ICE = Blocks.PACKED_ICE.getDefaultState();
 	protected static final IBlockState WATER = Blocks.WATER.getDefaultState();
 	

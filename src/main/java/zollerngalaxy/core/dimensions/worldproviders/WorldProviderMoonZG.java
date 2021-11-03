@@ -21,23 +21,23 @@ import net.minecraft.world.storage.WorldInfo;
 import net.minecraftforge.client.IRenderHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import zollerngalaxy.celestial.ZGPlanet;
+import zollerngalaxy.celestial.ZGMoonBody;
 
-public abstract class WorldProviderZG extends WorldProviderSpace implements ISolarLevel, IExitHeight {
+public abstract class WorldProviderMoonZG extends WorldProviderSpace implements ISolarLevel, IExitHeight {
 	
-	private static WorldProviderZG instance;
+	private static WorldProviderMoonZG instance;
 	
-	public WorldProviderZG() {
+	public WorldProviderMoonZG() {
 		instance = this;
 	}
 	
-	public static WorldProviderZG instance() {
+	public static WorldProviderMoonZG instance() {
 		return instance;
 	}
 	
 	@Override
 	public String getSaveFolder() {
-		return "planets/" + this.getPlanet().getName();
+		return "moons/" + this.getMoon().getName();
 	}
 	
 	public World getWorldObj() {
@@ -49,10 +49,10 @@ public abstract class WorldProviderZG extends WorldProviderSpace implements ISol
 		return !ConfigManagerCore.forceOverworldRespawn;
 	}
 	
-	public ZGPlanet getPlanet() {
-		CelestialBody planet = this.getCelestialBody();
-		ZGPlanet planetNova = (ZGPlanet) planet;
-		return planetNova;
+	public ZGMoonBody getMoon() {
+		CelestialBody moon = this.getCelestialBody();
+		ZGMoonBody moonNova = (ZGMoonBody) moon;
+		return moonNova;
 	}
 	
 	@Override
@@ -67,7 +67,7 @@ public abstract class WorldProviderZG extends WorldProviderSpace implements ISol
 	
 	@Override
 	public boolean canBlockFreeze(BlockPos pos, boolean byWater) {
-		return this.getPlanet().getIsColdBody();
+		return this.getMoon().getIsColdBody();
 	}
 	
 	@Override
@@ -88,7 +88,7 @@ public abstract class WorldProviderZG extends WorldProviderSpace implements ISol
 	
 	@Override
 	public float getWindLevel() {
-		return this.getPlanet().getWindLevel();
+		return this.getMoon().getWindLevel();
 	}
 	
 	@Override
@@ -112,7 +112,7 @@ public abstract class WorldProviderZG extends WorldProviderSpace implements ISol
 	
 	@Override
 	public double getMeteorFrequency() {
-		return this.getPlanet().getAtmosphericDensity();
+		return this.getMoon().getAtmosphericDensity();
 	}
 	
 	@Override
@@ -127,12 +127,12 @@ public abstract class WorldProviderZG extends WorldProviderSpace implements ISol
 	
 	@Override
 	public boolean hasBreathableAtmosphere() {
-		return this.getPlanet().getIsBreathable();
+		return this.getMoon().getIsBreathable();
 	}
 	
 	@Override
 	public boolean canSpaceshipTierPass(int tier) {
-		return tier >= this.getPlanet().getTierRequirement();
+		return tier >= this.getMoon().getTierRequirement();
 	}
 	
 	@Override
@@ -173,27 +173,27 @@ public abstract class WorldProviderZG extends WorldProviderSpace implements ISol
 	
 	protected abstract void renderWeather();
 	
-	public float getPlanetTemp() {
-		ZGPlanet planet = this.getPlanet();
-		float planetTemp = planet.getBodyTemperature();
+	public float getMoonTemp() {
+		ZGMoonBody moon = this.getMoon();
+		float planetTemp = moon.getBodyTemperature();
 		
 		if (this.isDaytime()) {
 			planetTemp /= 2.2F;
 		} else {
-			planetTemp = planet.getBodyTemperature();
+			planetTemp = moon.getBodyTemperature();
 		}
 		
 		return planetTemp;
 	}
 	
-	public float getPlanetTemp(World world, BlockPos pos) {
-		ZGPlanet planet = this.getPlanet();
-		float planetTemp = planet.getBodyTemperature(world, pos);
+	public float getMoonTemp(World world, BlockPos pos) {
+		ZGMoonBody moon = this.getMoon();
+		float planetTemp = moon.getBodyTemperature(world, pos);
 		
 		if (this.isDaytime()) {
 			planetTemp /= 2.2F;
 		} else {
-			planetTemp = planet.getBodyTemperature(world, pos);
+			planetTemp = moon.getBodyTemperature(world, pos);
 		}
 		
 		return planetTemp;

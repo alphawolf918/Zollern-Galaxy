@@ -45,8 +45,7 @@ public class ItemEnderSword extends ZGItemSword {
 		ItemStack itemstack = playerIn.getHeldItem(handIn);
 		int length = 100;
 		Vec3d startPos = new Vec3d(playerIn.posX, playerIn.posY + playerIn.getEyeHeight(), playerIn.posZ);
-		Vec3d endPos = startPos.add(new Vec3d(playerIn.getLookVec().x * length, playerIn.getLookVec().y * length, playerIn.getLookVec().z
-				* length));
+		Vec3d endPos = startPos.add(new Vec3d(playerIn.getLookVec().x * length, playerIn.getLookVec().y * length, playerIn.getLookVec().z * length));
 		RayTraceResult mop = worldIn.rayTraceBlocks(startPos, endPos);
 		if (mop == null) {
 			return new ActionResult(EnumActionResult.PASS, playerIn.getHeldItem(handIn));
@@ -78,8 +77,8 @@ public class ItemEnderSword extends ZGItemSword {
 	}
 	
 	private void playEnderSound(World world, EntityPlayer entityPlayer, double posX, double posY, double posZ) {
-		world.playSound(entityPlayer, new BlockPos(posX + 0.5D, posY + 0.5D, posZ + 0.5D), SoundEvents.ENTITY_ENDERMEN_TELEPORT,
-				SoundCategory.MASTER, 2.0F, world.rand.nextFloat() * 0.1F + 0.9F);
+		world.playSound(entityPlayer, new BlockPos(posX + 0.5D, posY + 0.5D, posZ + 0.5D), SoundEvents.ENTITY_ENDERMEN_TELEPORT, SoundCategory.MASTER, 2.0F,
+				world.rand.nextFloat() * 0.1F + 0.9F);
 	}
 	
 	@Override

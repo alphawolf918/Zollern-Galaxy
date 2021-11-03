@@ -21,12 +21,18 @@ import zollerngalaxy.celestial.ZGPlanets;
 import zollerngalaxy.celestial.spacestations.ZGSpaceStations;
 import zollerngalaxy.core.dimensions.ZGDimensions;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderOrbitZG;
+import zollerngalaxy.lib.ZGInfo;
 
 public class WorldProviderOrbitEden extends WorldProviderOverworldOrbit {
 	
 	@Override
 	public CelestialBody getCelestialBody() {
 		return ZGSpaceStations.EDEN_SPACE_STATION;
+	}
+	
+	@Override
+	public int getYCoordToTeleportToPlanet() {
+		return ZGInfo.SPACE_STATION_LOWER_Y_LIMIT;
 	}
 	
 	@Override

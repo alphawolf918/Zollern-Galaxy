@@ -31,7 +31,7 @@ import zollerngalaxy.core.dimensions.ZGDimensions;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderKriffon;
 import zollerngalaxy.core.dimensions.skyproviders.SkyProviderKriffon;
 
-public class WorldProviderKriffon extends WorldProviderZG {
+public class WorldProviderKriffon extends WorldProviderPlanetZG {
 	
 	@Override
 	public float getGravity() {

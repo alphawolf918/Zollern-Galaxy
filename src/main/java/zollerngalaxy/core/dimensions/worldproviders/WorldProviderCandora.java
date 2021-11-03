@@ -31,7 +31,7 @@ import zollerngalaxy.core.dimensions.ZGDimensions;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderCandora;
 import zollerngalaxy.core.dimensions.skyproviders.SkyProviderCandora;
 
-public class WorldProviderCandora extends WorldProviderZG {
+public class WorldProviderCandora extends WorldProviderPlanetZG {
 	
 	@Override
 	public float getGravity() {

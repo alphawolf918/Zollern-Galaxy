@@ -29,7 +29,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.celestial.IZollernBody;
 import zollerngalaxy.config.ConfigManagerZG;
-import zollerngalaxy.core.dimensions.worldproviders.WorldProviderZG;
+import zollerngalaxy.core.dimensions.worldproviders.WorldProviderPlanetZG;
 import zollerngalaxy.core.enums.EnumBodyClass;
 import zollerngalaxy.items.ZGItems;
 import zollerngalaxy.lib.helpers.ZGHelper;
@@ -74,9 +74,10 @@ public class GuiHUD extends Gui {
 				Biome biome = chunk.getBiome(blockPos, this.mc.world.getBiomeProvider());
 				WorldProvider worldProvider = this.mc.world.provider;
 				
-				if (biome instanceof BiomeSpace) {
+				// Moons will not show this data for now
+				if (biome instanceof BiomeSpace && worldProvider instanceof WorldProviderPlanetZG) {
 					BiomeSpace biomeSpace = (BiomeSpace) biome;
-					WorldProviderZG spaceProvider = (WorldProviderZG) worldProvider;
+					WorldProviderPlanetZG spaceProvider = (WorldProviderPlanetZG) worldProvider;
 					
 					// Biome Name
 					String biomeName = biome.getBiomeName();

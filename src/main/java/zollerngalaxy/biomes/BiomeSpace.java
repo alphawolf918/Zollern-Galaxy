@@ -18,13 +18,14 @@ import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedWitch;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedZombie;
 import net.minecraft.block.Block;
 import zollerngalaxy.celestial.IZollernBody;
+import zollerngalaxy.celestial.ZGMoonBody;
 import zollerngalaxy.config.ConfigManagerZG;
-import zollerngalaxy.core.dimensions.worldproviders.WorldProviderZG;
+import zollerngalaxy.core.dimensions.worldproviders.WorldProviderPlanetZG;
 
 public class BiomeSpace extends ZGBiomeBase {
 	
 	protected IZollernBody planetForBiome = null;
-	protected WorldProviderZG spaceProvider = null;
+	protected WorldProviderPlanetZG spaceProvider = null;
 	protected boolean enableExtremeMode = ConfigManagerZG.enableExtremeMode;
 	public static int grassFoliageColor = 0x00ff00;
 	
@@ -86,6 +87,11 @@ public class BiomeSpace extends ZGBiomeBase {
 		return this;
 	}
 	
+	public BiomeSpace setMoonForBiome(ZGMoonBody moon) {
+		this.setPlanetForBiome(moon);
+		return this;
+	}
+	
 	/**
 	 * Gets the Body associated with this biome.
 	 * 
@@ -95,12 +101,12 @@ public class BiomeSpace extends ZGBiomeBase {
 		return this.planetForBiome;
 	}
 	
-	public BiomeSpace setSpaceProvider(WorldProviderZG provider) {
+	public BiomeSpace setSpaceProvider(WorldProviderPlanetZG provider) {
 		this.spaceProvider = provider;
 		return this;
 	}
 	
-	public WorldProviderZG getSpaceProvider() {
+	public WorldProviderPlanetZG getSpaceProvider() {
 		return this.spaceProvider;
 	}
 	

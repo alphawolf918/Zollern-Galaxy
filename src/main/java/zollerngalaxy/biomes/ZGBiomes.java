@@ -32,6 +32,7 @@ import zollerngalaxy.biomes.altum.BiomeAltumOcean;
 import zollerngalaxy.biomes.altum.BiomeRockyIsles;
 import zollerngalaxy.biomes.altum.BiomeRockyShore;
 import zollerngalaxy.biomes.altum.BiomeSanctumBeach;
+import zollerngalaxy.biomes.astros.BiomeAstros;
 import zollerngalaxy.biomes.atheon.BiomeGoldlands;
 import zollerngalaxy.biomes.atheon.BiomeRadiolarianLakes;
 import zollerngalaxy.biomes.caligro.BiomeCaligroCorruptedMesa;
@@ -192,6 +193,9 @@ public class ZGBiomes {
 	public static final Biome METZTLI_HARRAN_SHROOMS = new BiomeHarranShroomlands(new BiomeProperties("Harran Shroomlands"));
 	public static final Biome METZTLI_HARRAN_CLAY_MESA = new BiomeHarranClayMesa(new BiomeProperties("Harran Clay Mesa"));
 	
+	// Astros
+	public static final Biome ASTROS_BASE = new BiomeAstros(new BiomeProperties("Astros"));
+	
 	public static void init() {
 		// Zollus
 		ZGBiomes.addBiome(ZGBiomes.ZOLLUS, COLD, DEAD, DRY);
@@ -285,6 +289,9 @@ public class ZGBiomes {
 		ZGBiomes.addBiome(ZGBiomes.METZTLI_HARRAN_TUNDRA, DEAD, PLAINS, COLD, SNOWY);
 		ZGBiomes.addBiome(ZGBiomes.METZTLI_HARRAN_SHROOMS, DEAD, LUSH, WET, SWAMP);
 		ZGBiomes.addBiome(ZGBiomes.METZTLI_HARRAN_CLAY_MESA, DEAD, WASTELAND, WET, SWAMP);
+		
+		// Astros
+		ZGBiomes.addBiome(ZGBiomes.ASTROS_BASE, COLD, WET, SNOWY);
 		
 		ZGHelper.Log("Loaded a total of " + totalBiomes + " new biomes.");
 	}
