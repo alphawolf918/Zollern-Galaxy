@@ -66,6 +66,7 @@ public class PulverizerRecipes {
 		PulverizerRecipes.addRecipe(ZGBlocks.caligroIronOre, TFItems.itemMaterial.dustIron);
 		PulverizerRecipes.addRecipe(ZGBlocks.exodusIronOre, TFItems.itemMaterial.dustIron);
 		PulverizerRecipes.addRecipe(ZGBlocks.vortexIronOre, TFItems.itemMaterial.dustIron);
+		PulverizerRecipes.addRecipe(ZGBlocks.astrosIronOre, TFItems.itemMaterial.dustIron);
 		
 		// Gold
 		PulverizerRecipes.addRecipe(ZGBlocks.zolGoldOre, TFItems.itemMaterial.dustGold, 1);
@@ -79,6 +80,7 @@ public class PulverizerRecipes {
 		PulverizerRecipes.addRecipe(ZGBlocks.caligroGoldOre, TFItems.itemMaterial.dustGold, 1);
 		PulverizerRecipes.addRecipe(ZGBlocks.exodusGoldOre, TFItems.itemMaterial.dustGold, 1);
 		PulverizerRecipes.addRecipe(ZGBlocks.vortexGoldOre, TFItems.itemMaterial.dustGold, 1);
+		PulverizerRecipes.addRecipe(ZGBlocks.astrosGoldOre, TFItems.itemMaterial.dustGold, 1);
 		
 		// Aluminum
 		PulverizerRecipes.addRecipe(ZGBlocks.purgAluminumOre, TFItems.itemMaterial.dustAluminum, 68);

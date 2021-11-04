@@ -8,6 +8,7 @@
 package zollerngalaxy.core.dimensions.skyproviders;
 
 import java.util.Random;
+import org.lwjgl.opengl.GL11;
 import micdoodle8.mods.galacticraft.api.world.IGalacticraftWorldProvider;
 import micdoodle8.mods.galacticraft.core.Constants;
 import micdoodle8.mods.galacticraft.core.util.ConfigManagerCore;
@@ -27,12 +28,11 @@ import net.minecraftforge.client.IRenderHandler;
 import net.minecraftforge.fml.client.FMLClientHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import org.lwjgl.opengl.GL11;
 
 @SideOnly(Side.CLIENT)
 public class SkyProviderEden extends IRenderHandler {
 	
-	private static ResourceLocation purgotTexture = new ResourceLocation("zollerngalaxy:textures/gui/purgot.png");
+	private static ResourceLocation astrosTexture = new ResourceLocation("zollerngalaxy:textures/gui/astros.png");
 	private static ResourceLocation psios6Texture = new ResourceLocation("zollerngalaxy:textures/gui/psion6.png");
 	
 	public int starList;
@@ -230,13 +230,13 @@ public class SkyProviderEden extends IRenderHandler {
 		worldRenderer1.pos(-f10, 100.0D, f10).tex(0.0D, 1.0D).endVertex();
 		tessellator1.draw();
 		
-		// Render Purgot
-		f10 = 2.2F;
-		GL11.glScalef(0.4F, 0.4F, 0.4F);
+		// Render Astros
+		f10 = 10.24F;
+		// GL11.glScalef(0.4F, 0.4F, 0.4F);
 		GL11.glRotatef(0.0F, 0.0F, 0.0F, 1.0F);
-		GL11.glRotatef(world.getCelestialAngle(partialTicks) * -360.0F, 1.0F, 0.0F, 0.0F);
+		GL11.glRotatef(world.getCelestialAngle(partialTicks) * 90.0F, 1.0F, 0.0F, 1.0F);
 		// GL11.glColor4f(0.0F, 0.0F, 0.0F, 1F);
-		FMLClientHandler.instance().getClient().renderEngine.bindTexture(SkyProviderEden.purgotTexture);
+		FMLClientHandler.instance().getClient().renderEngine.bindTexture(SkyProviderEden.astrosTexture);
 		worldRenderer1.begin(GL11.GL_QUADS, DefaultVertexFormats.POSITION_TEX);
 		worldRenderer1.pos(-f10, -100.0D, f10).tex(0, 1.0).endVertex();
 		worldRenderer1.pos(f10, -100.0D, f10).tex(1.0, 1.0).endVertex();
@@ -300,9 +300,9 @@ public class SkyProviderEden extends IRenderHandler {
 		GL11.glEnable(GL11.GL_TEXTURE_2D);
 		GlStateManager.enableRescaleNormal();
 		GL11.glEnable(GL11.GL_COLOR_MATERIAL);
-		OpenGlHelper.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA, GL11.GL_ONE, GL11.GL_ZERO);
+		OpenGlHelper.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE, GL11.GL_ONE, GL11.GL_ONE);
 		GL11.glDepthMask(true);
-		GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
+		GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE);
 		GL11.glDisable(GL11.GL_BLEND);
 	}
 	

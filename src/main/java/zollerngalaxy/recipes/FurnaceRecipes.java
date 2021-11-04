@@ -142,6 +142,11 @@ public class FurnaceRecipes {
 		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.vortexCopperOre, new ItemStack(GCItems.basicItem, 1, 3), 2.4F);
 		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.vortexEveniumOre, ZGItems.ingotEvenium, 3.6F);
 		
+		// Astros
+		FurnaceRecipes.SmeltBlock(ZGBlocks.astrosCobblestone, ZGBlocks.astrosStone, 5.6F);
+		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.astrosIronOre, Items.IRON_INGOT, 5.8F);
+		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.astrosGoldOre, Items.GOLD_INGOT, 5.9F);
+		
 		// Dust -> Ingots/Gems
 		FurnaceRecipes.SmeltItem(ZGItems.dustDiamond, Items.DIAMOND, 2.6F);
 		FurnaceRecipes.SmeltItem(ZGItems.dustEmerald, Items.EMERALD, 3.2F);

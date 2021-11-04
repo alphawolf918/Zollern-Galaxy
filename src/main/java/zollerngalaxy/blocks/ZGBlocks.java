@@ -557,6 +557,8 @@ public class ZGBlocks {
 	public static final Block astrosStone = new ZGPlanetStone("astrosstone", 4.5F, ZGBlocks.astrosCobblestone);
 	public static final Block astrosIronOre = new ZGBlockOre("astrosironore", 3.2F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
 			EnumHarvestLevelZG.COBALT.getHarvestLevel());
+	public static final Block astrosGoldOre = new ZGBlockOre("astrosgoldore", 3.4F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
+			EnumHarvestLevelZG.COBALT.getHarvestLevel());
 	
 	// Metals
 	public static final Block blockViri = new ZGBlockMetal("viriblock");
@@ -702,7 +704,7 @@ public class ZGBlocks {
 				exoWoodPlanks, exoWoodSapling, vortexSurfaceRock, vortexCobblestone, vortexStone, vortexVoltRock, vortexIronOre, vortexGoldOre, vortexDiamondOre,
 				vortexRedstoneOre, vortexCopperOre, vortexSuperChargedCoalOre, vortexFueltoniumOre, vortexEveniumOre, blockBlueprintStation, blockHealingStation,
 				blockCrystalsPlutonium, blockCrystalsStorm, blockIngotStackIron, ironSirenON, goldSirenON, diamondSirenON, emeraldSirenON, ironSiren, goldSiren,
-				diamondSiren, emeraldSiren, astrosRock, astrosDirt, astrosGravel, astrosCobblestone, astrosStone, astrosIronOre);
+				diamondSiren, emeraldSiren, astrosRock, astrosDirt, astrosGravel, astrosCobblestone, astrosStone, astrosIronOre, astrosGoldOre);
 		ZGHelper.Log("Loaded a total of " + totalBlocks + " new blocks.");
 	}
 	

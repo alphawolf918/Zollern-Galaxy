@@ -8,13 +8,6 @@
 package zollerngalaxy.biomes.astros;
 
 import java.util.Random;
-import micdoodle8.mods.galacticraft.core.entities.EntityAlienVillager;
-import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedCreeper;
-import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedEnderman;
-import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedSkeleton;
-import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedSpider;
-import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedWitch;
-import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedZombie;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
@@ -25,7 +18,7 @@ import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.biomes.decorators.BiomeDecoratorAstros;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.celestial.ZGPlanets;
-import zollerngalaxy.config.ConfigManagerZG;
+import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderAstros;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 
 public class BiomeAstrosBase extends BiomeSpace {
@@ -38,7 +31,7 @@ public class BiomeAstrosBase extends BiomeSpace {
 	protected static final IBlockState ICE = Blocks.PACKED_ICE.getDefaultState();
 	protected static final IBlockState WATER = Blocks.WATER.getDefaultState();
 	
-	protected static final int SEA_LEVEL = 62;
+	protected static final int SEA_LEVEL = ChunkProviderAstros.SEA_LEVEL;
 	protected static final int SEA_FLOOR_LEVEL = (SEA_LEVEL - 21);
 	
 	public BiomeAstrosBase(String singleName, BiomeProperties props) {
@@ -49,17 +42,6 @@ public class BiomeAstrosBase extends BiomeSpace {
 		this.decorator.grassPerChunk = -999;
 		this.decorator.mushroomsPerChunk = -999;
 		this.clearAllSpawning();
-		
-		if (ConfigManagerZG.enableAlienVillagerSpawn) {
-			this.spawnableCreatureList.add(new SpawnListEntry(EntityAlienVillager.class, 5, 1, 2));
-		}
-		
-		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedZombie.class, 100, 4, 4));
-		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedSpider.class, 100, 4, 4));
-		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedSkeleton.class, 100, 4, 4));
-		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedCreeper.class, 100, 4, 4));
-		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedEnderman.class, 100, 4, 4));
-		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedWitch.class, 100, 4, 4));
 		this.setBodyForBiome(ZGPlanets.moonAstros);
 	}
 	
@@ -69,7 +51,7 @@ public class BiomeAstrosBase extends BiomeSpace {
 		IBlockState topState = this.topBlock;
 		IBlockState fillState = this.fillerBlock;
 		int j = -1;
-		int k = (int) (noiseVal / 3.0D + 3.0D + rand.nextDouble() * 0.25D);
+		int k = (int) (noiseVal / 3.0D + 3.5D + rand.nextDouble() * 0.25D);
 		int l = x & 15;
 		int i1 = z & 15;
 		

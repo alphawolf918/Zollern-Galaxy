@@ -392,6 +392,13 @@ tile.astrosstone.name=Astros Moonstone
 tile.astroscobblestone.name=Astros Mooncobble
 tile.astrosgravel.name=Astros Moongravel
 tile.astrosironore.name=Astros Iron Ore
+tile.astrostinore.name=Astros Tin Ore
+tile.astrosgoldore.name=Astros Gold Ore
+tile.astrosdiamondore.name=Astros Diamond Ore
+tile.astrosemeraldore.name=Astros Emerald Ore
+tile.astrosredstoneore.name=Astros Redstone Ore
+tile.astroscoalore.name=Astros Coal Ore
+tile.astrossuperchargedcoalore.name=Astros Super Charged Coal Ore
 
 tile.endrock.name=Endrock
 

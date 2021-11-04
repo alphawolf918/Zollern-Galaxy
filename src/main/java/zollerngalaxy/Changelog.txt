@@ -3,6 +3,8 @@ Zollern Galaxy v2.0.32
 =====================
 
 * Added Astros as a moon of Eden, the mod's first moon.
+    - The moon appears in Eden's night sky, and Eden appears in Astros's night sky.
+* Sugar can now be crafted into Sugar Blocks and vice versa.
 * 
-* Fixed Purgot Dirt showing up on Zollus.
+* Fixed Purgot Dirt potentially showing up on Zollus.
 * 

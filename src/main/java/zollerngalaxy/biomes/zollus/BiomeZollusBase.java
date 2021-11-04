@@ -155,5 +155,4 @@ public class BiomeZollusBase extends BiomeSpace {
 	public int getModdedBiomeGrassColor(int original) {
 		return this.grassFoliageColor;
 	}
-	
 }

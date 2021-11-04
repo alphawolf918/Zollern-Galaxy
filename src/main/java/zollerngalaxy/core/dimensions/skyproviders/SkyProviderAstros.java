@@ -41,7 +41,7 @@ public class SkyProviderAstros extends IRenderHandler {
 	private float sunSize;
 	
 	public SkyProviderAstros(IGalacticraftWorldProvider worldProvider) {
-		this.sunSize = 5.5F * worldProvider.getSolarSize();
+		this.sunSize = 10.56F * worldProvider.getSolarSize();
 		
 		int displayLists = GLAllocation.generateDisplayLists(3);
 		this.starList = displayLists;
@@ -160,7 +160,7 @@ public class SkyProviderAstros extends IRenderHandler {
 		a = 0.0F;
 		
 		// Render sun aura
-		f10 = 30.0F;
+		f10 = 15.0F;
 		worldRenderer1.pos(-f10, 100.0D, -f10).color(r, g, b, a).endVertex();
 		worldRenderer1.pos(0, 100.0D, (double) -f10 * 1.5F).color(r, g, b, a).endVertex();
 		worldRenderer1.pos(f10, 100.0D, -f10).color(r, g, b, a).endVertex();
@@ -184,7 +184,7 @@ public class SkyProviderAstros extends IRenderHandler {
 		a = 0.0F;
 		
 		// Render larger sun aura
-		f10 = 35.0F;
+		f10 = 20.0F;
 		worldRenderer1.pos(-f10, 100.0D, -f10).color(r, g, b, a).endVertex();
 		worldRenderer1.pos(0, 100.0D, (double) -f10 * 1.5F).color(r, g, b, a).endVertex();
 		worldRenderer1.pos(f10, 100.0D, -f10).color(r, g, b, a).endVertex();
@@ -234,7 +234,7 @@ public class SkyProviderAstros extends IRenderHandler {
 		f10 = 40.24F;
 		// GL11.glScalef(0.4F, 0.4F, 0.4F);
 		GL11.glRotatef(0.0F, 0.0F, 0.0F, 1.0F);
-		GL11.glRotatef(world.getCelestialAngle(partialTicks) * 180.0F, 1.0F, 0.0F, 1.0F);
+		GL11.glRotatef(world.getCelestialAngle(partialTicks) * 90.0F, 1.0F, 0.0F, 1.0F);
 		// GL11.glColor4f(0.0F, 0.0F, 0.0F, 1F);
 		FMLClientHandler.instance().getClient().renderEngine.bindTexture(SkyProviderAstros.edenTexture);
 		worldRenderer1.begin(GL11.GL_QUADS, DefaultVertexFormats.POSITION_TEX);
@@ -360,7 +360,7 @@ public class SkyProviderAstros extends IRenderHandler {
 		float var3 = 1.0F - (MathHelper.sin(var2 * Constants.twoPI) * 2.0F + 0.25F);
 		
 		if (var3 < 0.0F) {
-			var3 = 0.2F;
+			var3 = 0.1F;
 		}
 		
 		if (var3 > 1.0F) {

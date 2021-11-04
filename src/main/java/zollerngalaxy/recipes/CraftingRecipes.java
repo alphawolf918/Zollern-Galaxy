@@ -90,6 +90,7 @@ public class CraftingRecipes {
 		CraftingRecipes.addIngotMetal(ZGItems.shadowBone, ZGBlocks.blockShadowBone);
 		CraftingRecipes.addIngotMetal(Items.BLAZE_POWDER, ZGBlocks.kriffBlazeRock);
 		CraftingRecipes.addIngotMetal(Blocks.RED_MUSHROOM, ZGBlocks.blockRedshroom);
+		CraftingRecipes.addIngotMetal(Items.SUGAR, ZGBlocks.blockSugarCube);
 		
 		// Compression
 		CraftingRecipes.addIngotMetal(ZGItems.compressedCobalt, ZGBlocks.blockCompressedCobalt);

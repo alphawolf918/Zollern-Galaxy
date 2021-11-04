@@ -31,6 +31,7 @@ import net.minecraft.world.gen.NoiseGenerator;
 import net.minecraft.world.gen.NoiseGeneratorOctaves;
 import net.minecraft.world.gen.NoiseGeneratorPerlin;
 import net.minecraft.world.gen.structure.MapGenMineshaft;
+import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.biomes.decorators.BiomeDecoratorAstros;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.worldgen.mapgen.MapGenCavesZG;
@@ -42,8 +43,8 @@ public class ChunkProviderAstros extends ChunkProviderBase {
 	public static final IBlockState WATER = Blocks.WATER.getDefaultState();
 	public static final IBlockState ICE = Blocks.PACKED_ICE.getDefaultState();
 	
-	public static final double CHUNK_HEIGHT = 35.0D;
-	public static final int SEA_LEVEL = 60;
+	public static final double CHUNK_HEIGHT = 25.0D;
+	public static final int SEA_LEVEL = 57;
 	
 	private static final int CHUNK_SIZE_X = 16;
 	private static final int CHUNK_SIZE_Z = 16;
@@ -82,7 +83,7 @@ public class ChunkProviderAstros extends ChunkProviderBase {
 		this.noiseGen1 = new NoiseGeneratorOctaves(this.rand, 16);
 		this.noiseGen2 = new NoiseGeneratorOctaves(this.rand, 16);
 		this.noiseGen3 = new NoiseGeneratorOctaves(this.rand, 8);
-		this.noiseGen4 = new NoiseGeneratorPerlin(this.rand, 4);
+		this.noiseGen4 = new NoiseGeneratorPerlin(this.rand, 5);
 		this.noiseGen5 = new NoiseGeneratorOctaves(this.rand, 10);
 		this.noiseGen6 = new NoiseGeneratorOctaves(this.rand, 16);
 		this.mobSpawnerNoise = new NoiseGeneratorOctaves(this.rand, 8);
@@ -150,10 +151,26 @@ public class ChunkProviderAstros extends ChunkProviderBase {
 								int y = i2 * 8 + j2;
 								int z = l * 4 + l2;
 								
-								if ((lvt_45_1_ += d16) > this.noiseGenSmooth1.getNoise(chunkX * 16 + x, chunkZ * 16 + z) * CHUNK_HEIGHT) {
+								double chunkHeight = CHUNK_HEIGHT;
+								
+								Biome biome = world.getBiome(new BlockPos(x, y, z));
+								double heightMod = 0.0D;
+								
+								if (biome instanceof BiomeSpace) {
+									BiomeSpace spaceBiome = (BiomeSpace) biome;
+									heightMod = (spaceBiome.getBiomeHeight() / 1.5);
+								}
+								
+								if (heightMod > 0.0D) {
+									chunkHeight = (CHUNK_HEIGHT + heightMod);
+								} else if (heightMod < 0.0D) {
+									chunkHeight = (CHUNK_HEIGHT - heightMod);
+								}
+								
+								if ((lvt_45_1_ += d16) > this.noiseGenSmooth1.getNoise(chunkX * 16 + x, chunkZ * 16 + z) * chunkHeight) {
 									primer.setBlockState(x, y, z, STONE);
 								} else if (y < SEA_LEVEL) {
-									Biome biome = world.getBiome(new BlockPos(x, y, z));
+									Biome biome2 = world.getBiome(new BlockPos(x, y, z));
 									IBlockState blockToUse = ICE;
 									primer.setBlockState(x, y, z, blockToUse);
 								}

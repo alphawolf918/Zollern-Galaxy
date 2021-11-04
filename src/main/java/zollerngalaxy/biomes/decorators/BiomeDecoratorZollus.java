@@ -102,8 +102,7 @@ public class BiomeDecoratorZollus extends BiomeDecoratorZG {
 		if (this.generateOutposts && this.outpostsPerChunk > 0) {
 			y = rand.nextInt(rand.nextInt(genY) + 8);
 			if (y >= 62) {
-				WorldGenerator outpostGen = new WorldGenOutpost(ZGBlocks.blockOutpost.getDefaultState(),
-						ZGBlocks.blockOutpost.getDefaultState());
+				WorldGenerator outpostGen = new WorldGenOutpost(ZGBlocks.blockOutpost.getDefaultState(), ZGBlocks.blockOutpost.getDefaultState());
 				for (int i = 0; i < this.outpostsPerChunk; i++) {
 					if (rand.nextInt((this.enableExtremeMode) ? 200 : 100) <= ConfigManagerZG.outpostGenChance) {
 						outpostGen.generate(world, rand, this.chunkPos.add(x, y, z));
