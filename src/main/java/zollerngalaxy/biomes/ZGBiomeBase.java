@@ -42,11 +42,23 @@ public class ZGBiomeBase extends BiomeGenBaseGC {
 		this.singleName = singleName;
 	}
 	
+	/**
+	 * Set ChunkProvider height for this biome.
+	 * 
+	 * @param biomeHeight
+	 *            The height value.
+	 * @return Instance of Biome.
+	 */
 	public Biome setBiomeHeight(int biomeHeight) {
 		this.BIOME_HEIGHT = biomeHeight;
 		return this;
 	}
 	
+	/**
+	 * Get ChunkProvider height for the requested biome.
+	 * 
+	 * @return
+	 */
 	public int getBiomeHeight() {
 		return this.BIOME_HEIGHT;
 	}
@@ -138,46 +150,106 @@ public class ZGBiomeBase extends BiomeGenBaseGC {
 		return this;
 	}
 	
+	public Biome clearMonsterSpawning() {
+		this.spawnableMonsterList.clear();
+		return this;
+	}
+	
+	/**
+	 * Completely prevents rain in this biome.
+	 * 
+	 * @param props
+	 * @return
+	 */
 	public Biome setNoRain(Biome.BiomeProperties props) {
 		props.setRainfall(0.0F);
 		props.setRainDisabled();
 		return this;
 	}
 	
+	/**
+	 * Set top and bottom blocks as the same block.
+	 * 
+	 * @param block
+	 * @return
+	 */
 	public Biome setBlocks(Block block) {
 		this.setBlocks(block, block);
 		return this;
 	}
 	
+	/**
+	 * Set top and bottom blocks for this biome.
+	 * 
+	 * @param topBlock
+	 * @param fillerBlock
+	 * @return
+	 */
 	public Biome setBlocks(Block topBlock, Block fillerBlock) {
 		this.setTopBlock(topBlock);
 		this.setFillerBlock(fillerBlock);
 		return this;
 	}
 	
+	/**
+	 * Set bottom block for this biome.
+	 * 
+	 * @param b
+	 * @return
+	 */
 	public Biome setFillerBlock(Block b) {
 		this.fillerBlock = b.getDefaultState();
 		return this;
 	}
 	
+	/**
+	 * Get bottom block for this biome.
+	 * 
+	 * @return
+	 */
 	public Block getFillerBlock() {
 		return this.fillerBlock.getBlock();
 	}
 	
+	/**
+	 * Set top block for this biome.
+	 * 
+	 * @param b
+	 * @return
+	 */
 	public Biome setTopBlock(Block b) {
 		this.topBlock = b.getDefaultState();
 		return this;
 	}
 	
+	/**
+	 * Get the top block for this biome.
+	 * 
+	 * @return
+	 */
 	public Block getTopBlock() {
 		return this.topBlock.getBlock();
 	}
 	
+	/**
+	 * Set the stone block for this biome. Should be the same for all biomes on a planet, but
+	 * sometimes the
+	 * inheritance doesn't work correctly.
+	 * 
+	 * @param b
+	 * @return
+	 */
 	public Biome setStoneBlock(Block b) {
 		this.stoneBlock = b;
 		return this;
 	}
 	
+	/**
+	 * Get the stone block for this biome. Should be the same for all biomes on a planet, but
+	 * sometimes the inheritance doesn't work correctly.
+	 * 
+	 * @return
+	 */
 	public Block getStoneBlock() {
 		return this.stoneBlock;
 	}
@@ -200,5 +272,4 @@ public class ZGBiomeBase extends BiomeGenBaseGC {
 		this.biomeType = t;
 		return this;
 	}
-	
 }

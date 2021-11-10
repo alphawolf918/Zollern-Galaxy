@@ -12,5 +12,4 @@ public class ZGPlanet extends ZGPlanetaryBody {
 	public ZGPlanet(String planetName) {
 		super(planetName);
 	}
-	
 }

@@ -246,7 +246,7 @@ public class ZGSkyProviderHandler {
 			// Pantheon (Metztli)
 			if (world.provider instanceof WorldProviderOrbitMetztli) {
 				if (world.provider.getSkyRenderer() == null || world.provider.getSkyRenderer() instanceof SkyProviderOrbit) {
-					SkyProviderOrbitZG sky = new SkyProviderOrbitZG(new ResourceLocation(ZGInfo.MOD_ID + ":textures/gui/metztli.png"), "pantheon", world.provider);
+					SkyProviderOrbitZG sky = new SkyProviderOrbitZG(new ResourceLocation(ZGInfo.MOD_ID + ":textures/gui/metztli.png"), "metztli", world.provider);
 					WorldProviderOrbitMetztli provider = (WorldProviderOrbitMetztli) world.provider;
 					provider.setSpinDeltaPerTick(provider.getSpinManager().getSpinRate());
 					world.provider.setSkyRenderer(sky);

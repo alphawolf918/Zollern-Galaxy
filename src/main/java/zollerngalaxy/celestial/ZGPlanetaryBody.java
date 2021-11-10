@@ -51,6 +51,7 @@ public class ZGPlanetaryBody extends Planet implements IZollernBody {
 	public ZGPlanetaryBody(String bodyNameIn) {
 		super(bodyNameIn);
 		this.bodyName = bodyNameIn;
+		this.setRingColorRGB(0.1F, 0.9F, 0.6F);
 		this.addChecklistKeys("thermal_padding", "equip_oxygen_suit", "equip_parachute");
 	}
 	

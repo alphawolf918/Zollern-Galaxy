@@ -218,6 +218,7 @@ public class ZGSpaceStations {
 		inputMap.put(new ItemStack(ZGItems.heartium, 1, 0), 24);
 		inputMap.put(Items.IRON_INGOT, 24);
 		ZGRecipeHelper.addSpaceStationRecipe(ConfigManagerZG.spaceStationZollusId, ConfigManagerZG.planetZollusDimensionId, inputMap);
+		inputMap.clear();
 		
 		// Psios-6 (Kriffon)
 		inputMap = new HashMap<Object, Integer>();
@@ -226,6 +227,7 @@ public class ZGSpaceStations {
 		inputMap.put(new ItemStack(ZGItems.ingotCobalt, 1, 0), 24);
 		inputMap.put(Items.IRON_INGOT, 24);
 		ZGRecipeHelper.addSpaceStationRecipe(ConfigManagerZG.spaceStationKriffonId, ConfigManagerZG.planetKriffonDimensionId, inputMap);
+		inputMap.clear();
 		
 		// Psios-6 (Purgot)
 		inputMap = new HashMap<Object, Integer>();
@@ -234,6 +236,7 @@ public class ZGSpaceStations {
 		inputMap.put(new ItemStack(ZGItems.ingotEvenium, 1, 0), 24);
 		inputMap.put(Items.IRON_INGOT, 24);
 		ZGRecipeHelper.addSpaceStationRecipe(ConfigManagerZG.spaceStationPurgotId, ConfigManagerZG.planetPurgotDimensionId, inputMap);
+		inputMap.clear();
 		
 		// Psios-6 (Eden)
 		inputMap = new HashMap<Object, Integer>();
@@ -242,6 +245,7 @@ public class ZGSpaceStations {
 		inputMap.put(new ItemStack(ZGItems.ingotVirinium, 1, 0), 24);
 		inputMap.put(Items.IRON_INGOT, 24);
 		ZGRecipeHelper.addSpaceStationRecipe(ConfigManagerZG.spaceStationEdenId, ConfigManagerZG.planetEdenDimensionId, inputMap);
+		inputMap.clear();
 		
 		// Praedyth (Xathius)
 		inputMap = new HashMap<Object, Integer>();
@@ -250,6 +254,7 @@ public class ZGSpaceStations {
 		inputMap.put(new ItemStack(ZGItems.prometheanCrystal, 1, 0), 24);
 		inputMap.put(Items.GOLD_INGOT, 24);
 		ZGRecipeHelper.addSpaceStationRecipe(ConfigManagerZG.spaceStationXathiusId, ConfigManagerZG.planetXathiusDimensionId, inputMap);
+		inputMap.clear();
 		
 		// Praedyth (Oasis)
 		inputMap = new HashMap<Object, Integer>();
@@ -258,6 +263,7 @@ public class ZGSpaceStations {
 		inputMap.put(new ItemStack(ZGItems.superChargedCoal, 1, 0), 24);
 		inputMap.put(Items.GOLD_INGOT, 24);
 		ZGRecipeHelper.addSpaceStationRecipe(ConfigManagerZG.spaceStationOasisId, ConfigManagerZG.planetOasisDimensionId, inputMap);
+		inputMap.clear();
 		
 		// Praedyth (Xantheon)
 		inputMap = new HashMap<Object, Integer>();
@@ -266,6 +272,7 @@ public class ZGSpaceStations {
 		inputMap.put(new ItemStack(ZGItems.plutoniumCrystal, 1, 0), 24);
 		inputMap.put(Items.GOLD_INGOT, 24);
 		ZGRecipeHelper.addSpaceStationRecipe(ConfigManagerZG.spaceStationXantheonId, ConfigManagerZG.planetXantheonDimensionId, inputMap);
+		inputMap.clear();
 		
 		// Praedyth (Candora)
 		inputMap = new HashMap<Object, Integer>();
@@ -274,6 +281,7 @@ public class ZGSpaceStations {
 		inputMap.put(new ItemStack(ZGItems.iceCreamSandwich, 1, 0), 24);
 		inputMap.put(Items.SUGAR, 24);
 		ZGRecipeHelper.addSpaceStationRecipe(ConfigManagerZG.spaceStationCandoraId, ConfigManagerZG.planetCandoraDimensionId, inputMap);
+		inputMap.clear();
 		
 		// Praedyth (Atheon)
 		inputMap = new HashMap<Object, Integer>();
@@ -282,6 +290,7 @@ public class ZGSpaceStations {
 		inputMap.put(new ItemStack(ZGItems.ingotZollernium, 1, 0), 24);
 		inputMap.put(ZGItems.ingotAmaranth, 24);
 		ZGRecipeHelper.addSpaceStationRecipe(ConfigManagerZG.spaceStationAtheonId, ConfigManagerZG.planetAtheonDimensionId, inputMap);
+		inputMap.clear();
 		
 		// Sol-2 (Perdita)
 		inputMap = new HashMap<Object, Integer>();
@@ -290,6 +299,7 @@ public class ZGSpaceStations {
 		inputMap.put(new ItemStack(ZGItems.perdGlowdust, 1, 0), 24);
 		inputMap.put(ZGItems.compressedEmerald, 24);
 		ZGRecipeHelper.addSpaceStationRecipe(ConfigManagerZG.spaceStationPerditaId, ConfigManagerZG.planetPerditaDimensionId, inputMap);
+		inputMap.clear();
 		
 		// Sol-2 (Altum)
 		inputMap = new HashMap<Object, Integer>();
@@ -298,42 +308,44 @@ public class ZGSpaceStations {
 		inputMap.put(new ItemStack(ZGItems.ascendium, 1, 0), 24);
 		inputMap.put(ZGItems.compressedZucrite, 24);
 		ZGRecipeHelper.addSpaceStationRecipe(ConfigManagerZG.spaceStationAltumId, ConfigManagerZG.planetAltumDimensionId, inputMap);
+		inputMap.clear();
 		
 		// Sol-2 (Caligro)
-		inputMap = new HashMap<Object, Integer>();
 		inputMap = new HashMap<Object, Integer>();
 		inputMap.put("ingotRhodium", 32);
 		inputMap.put("waferAdvanced", 1);
 		inputMap.put(new ItemStack(ZGItems.witherite, 1, 0), 24);
 		inputMap.put(ZGItems.compressedAscendantAmaranth, 24);
 		ZGRecipeHelper.addSpaceStationRecipe(ConfigManagerZG.spaceStationCaligroId, ConfigManagerZG.planetCaligroDimensionId, inputMap);
+		inputMap.clear();
 		
 		// Sol-2 (Exodus)
-		inputMap = new HashMap<Object, Integer>();
 		inputMap = new HashMap<Object, Integer>();
 		inputMap.put("ingotAmaranth", 32);
 		inputMap.put("waferAdvanced", 1);
 		inputMap.put(new ItemStack(ZGItems.edenCrystal, 1, 0), 24);
 		inputMap.put(ZGItems.compressedGold, 24);
 		ZGRecipeHelper.addSpaceStationRecipe(ConfigManagerZG.spaceStationExodusId, ConfigManagerZG.planetExodusDimensionId, inputMap);
+		inputMap.clear();
 		
 		// Pantheon (Vortex)
-		inputMap = new HashMap<Object, Integer>();
 		inputMap = new HashMap<Object, Integer>();
 		inputMap.put("ingotChargium", 32);
 		inputMap.put("waferAdvanced", 1);
 		inputMap.put(new ItemStack(ZGItems.stormCrystal, 1, 0), 24);
 		inputMap.put(ZGItems.compressedSuperChargedCoal, 24);
 		ZGRecipeHelper.addSpaceStationRecipe(ConfigManagerZG.spaceStationVortexId, ConfigManagerZG.planetVortexDimensionId, inputMap);
+		inputMap.clear();
 		
 		// Pantheon (Metztli)
-		inputMap = new HashMap<Object, Integer>();
 		inputMap = new HashMap<Object, Integer>();
 		inputMap.put("ingotChargium", 32);
 		inputMap.put("waferAdvanced", 1);
 		inputMap.put(new ItemStack(ZGItems.compressedCobalt, 1, 0), 24);
 		inputMap.put(ZGItems.compressedDiamond, 24);
 		ZGRecipeHelper.addSpaceStationRecipe(ConfigManagerZG.spaceStationMetztliId, ConfigManagerZG.planetMetztliDimensionId, inputMap);
+		inputMap.clear();
+		// ExtraPlanets
 	}
 	
 	private static void registerSpaceStation(ZGSpaceStation spaceStation, String stationName, String stationStringId, Class<? extends WorldProvider> providerClass,

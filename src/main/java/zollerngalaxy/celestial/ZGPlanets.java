@@ -129,7 +129,7 @@ public class ZGPlanets {
 	
 	// Pantheon Planets
 	public static ZGPlanet planetVortex = new ZGPlanet("vortex");
-	public static ZGPlanet planetMetztli = new ZGPlanet("metztli");
+	public static ZGPlanet planetMetztli = new ZGPlanet("metztli");// GalacticraftCore
 	public static ZGPlanet planetCentotl;
 	public static ZGPlanet planetToci;
 	public static ZGPlanet planetTlaloc;
@@ -163,56 +163,48 @@ public class ZGPlanets {
 		// Psios System
 		systemPsios.setMapPosition(new Vector3(PSIOS_X, PSIOS_Y, PSIOS_Z));
 		starPsios.setParentSolarSystem(systemPsios);
-		starPsios.setRelativeSize(35.0F);
 		systemPsios.setMainStar(starPsios);
 		totalSystems++;
 		
 		// Praedyth System
 		systemPraedyth.setMapPosition(new Vector3(PRAEDYTH_X, PRAEDYTH_Y, PRAEDYTH_Z));
 		starPraedyth.setParentSolarSystem(systemPraedyth);
-		starPraedyth.setRelativeSize(40.0F);
 		systemPraedyth.setMainStar(starPraedyth);
 		totalSystems++;
 		
 		// Sol-2 System
 		systemSol2.setMapPosition(new Vector3(SOL2_X, SOL2_Y, SOL2_Z));
 		starSol2.setParentSolarSystem(systemSol2);
-		starSol2.setRelativeSize(80.0F);
 		systemSol2.setMainStar(starSol2);
 		totalSystems++;
 		
 		// Pantheon System
 		systemPantheon.setMapPosition(new Vector3(PANTHEON_X, PANTHEON_Y, PANTHEON_Z));
 		starPantheon.setParentSolarSystem(systemPantheon);
-		starPantheon.setRelativeSize(20.0F);
 		systemPantheon.setMainStar(starPantheon);
 		totalSystems++;
 		
 		// Olympus System
 		systemOlympus.setMapPosition(new Vector3(OLYMPUS_X, OLYMPUS_Y, OLYMPUS_Z));
 		starOlympus.setParentSolarSystem(systemOlympus);
-		starOlympus.setRelativeSize(45.0F);
 		systemOlympus.setMainStar(starOlympus);
 		totalSystems++;
 		
 		// Asgard System
 		systemAsgard.setMapPosition(new Vector3(ASGARD_X, ASGARD_Y, ASGARD_Z));
 		starAsgard.setParentSolarSystem(systemAsgard);
-		starAsgard.setRelativeSize(16.0F);
 		systemAsgard.setMainStar(starAsgard);
 		totalSystems++;
 		
 		// Vega System
 		systemVega.setMapPosition(new Vector3(VEGA_X, VEGA_Y, VEGA_Z));
 		starVega.setParentSolarSystem(systemVega);
-		starVega.setRelativeSize(5.0F);
 		systemVega.setMainStar(starVega);
 		totalSystems++;
 		
 		// Nova System
 		systemNova.setMapPosition(new Vector3(NOVA_X, NOVA_Y, NOVA_Z));
 		starNova.setParentSolarSystem(systemNova);
-		starNova.setRelativeSize(5.0F);
 		systemNova.setMainStar(starNova);
 		totalSystems++;
 		
@@ -224,15 +216,12 @@ public class ZGPlanets {
 		planetZollus.setDimensionInfo(ConfigManagerZG.planetZollusDimensionId, WorldProviderZollus.class);
 		planetZollus.setParentSolarSystem(systemPsios);
 		planetZollus.setBodyClass(EnumBodyClass.L);
-		planetZollus.setRingColorRGB(0.1F, 0.9F, 2.6F);
-		planetZollus.setPhaseShift(0.0F);
 		planetZollus.setRelativeOrbitTime(42.2F);
 		planetZollus.setDistanceFromCenter(1.9F);
 		planetZollus.setTierRequired(ConfigManagerZG.planetZollusTier);
 		if (ConfigManagerZG.planetUnreachableZollus) {
 			planetZollus.setDisableRockets();
 		}
-		planetZollus.setRelativeSize(10.876F);
 		planetZollus.setBodyTemperature(-92.6F);
 		planetZollus.setBodyToxicity(0.4F);
 		planetZollus.setBodyRadiation(0.5F);
@@ -249,15 +238,12 @@ public class ZGPlanets {
 		planetKriffon.setDimensionInfo(ConfigManagerZG.planetKriffonDimensionId, WorldProviderKriffon.class);
 		planetKriffon.setParentSolarSystem(systemPsios);
 		planetKriffon.setBodyClass(EnumBodyClass.Y);
-		planetKriffon.setRingColorRGB(0.1F, 0.9F, 2.6F);
-		planetKriffon.setPhaseShift(0.0F);
 		planetKriffon.setRelativeOrbitTime(0.3F);
 		planetKriffon.setDistanceFromCenter(0.5F);
 		planetKriffon.setTierRequired(ConfigManagerZG.planetKriffonTier);
 		if (ConfigManagerZG.planetUnreachableAll || ConfigManagerZG.planetUnreachableKriffon) {
 			planetKriffon.setDisableRockets();
 		}
-		planetKriffon.setRelativeSize(20.0F);
 		planetKriffon.setBodyTemperature(107.4F);
 		planetKriffon.setBodyToxicity(14.1F);
 		planetKriffon.setBodyRadiation(16.8F);
@@ -273,15 +259,12 @@ public class ZGPlanets {
 		// Planet Purgot
 		planetPurgot.setParentSolarSystem(systemPsios);
 		planetPurgot.setBodyClass(EnumBodyClass.NINE);
-		planetPurgot.setRingColorRGB(0.1F, 0.9F, 2.6F);
-		planetPurgot.setPhaseShift(0.0F);
 		planetPurgot.setRelativeOrbitTime(10F);
 		planetPurgot.setDistanceFromCenter(1.0F);
 		planetPurgot.setTierRequired(ConfigManagerZG.planetPurgotTier);
 		if (ConfigManagerZG.planetUnreachableAll || ConfigManagerZG.planetUnreachablePurgot) {
 			planetPurgot.setDisableRockets();
 		}
-		planetPurgot.setRelativeSize(40.0F);
 		planetPurgot.setBodyTemperature(-54.5F);
 		planetPurgot.setBodyToxicity(15.2F);
 		planetPurgot.setBodyRadiation(2.2F);
@@ -300,15 +283,12 @@ public class ZGPlanets {
 		planetEden.setDimensionInfo(ConfigManagerZG.planetEdenDimensionId, WorldProviderEden.class);
 		planetEden.setParentSolarSystem(systemPsios);
 		planetEden.setBodyClass(EnumBodyClass.M);
-		planetEden.setRingColorRGB(0.1F, 0.9F, 2.6F);
-		planetEden.setPhaseShift(0.0F);
 		planetEden.setRelativeOrbitTime(8.0F);
 		planetEden.setDistanceFromCenter(0.6F);
 		planetEden.setTierRequired(ConfigManagerZG.planetEdenTier);
 		if (ConfigManagerZG.planetUnreachableAll || ConfigManagerZG.planetUnreachableEden) {
 			planetEden.setDisableRockets();
 		}
-		planetEden.setRelativeSize(50.0F);
 		planetEden.setBodyTemperature(75.4F);
 		planetEden.setBodyToxicity(0.0F);
 		planetEden.setBodyRadiation(0.0F);
@@ -328,15 +308,12 @@ public class ZGPlanets {
 		planetXathius.setDimensionInfo(ConfigManagerZG.planetXathiusDimensionId, WorldProviderXathius.class);
 		planetXathius.setParentSolarSystem(systemPraedyth);
 		planetXathius.setBodyClass(EnumBodyClass.NINE);
-		planetXathius.setRingColorRGB(0.1F, 0.9F, 1.4F);
-		planetXathius.setPhaseShift(0.0F);
 		planetXathius.setRelativeOrbitTime(2.5F);
 		planetXathius.setDistanceFromCenter(1.4F);
 		planetXathius.setTierRequired(ConfigManagerZG.planetXathiusTier);
 		if (ConfigManagerZG.planetUnreachableAll || ConfigManagerZG.planetUnreachableXathius) {
 			planetXathius.setDisableRockets();
 		}
-		planetXathius.setRelativeSize(20.0F);
 		planetXathius.setBodyTemperature(82.4f);
 		planetXathius.setBodyToxicity(2.5f);
 		planetXathius.setBodyRadiation(16.5f);
@@ -353,15 +330,12 @@ public class ZGPlanets {
 		planetOasis.setDimensionInfo(ConfigManagerZG.planetOasisDimensionId, WorldProviderOasis.class);
 		planetOasis.setParentSolarSystem(systemPraedyth);
 		planetOasis.setBodyClass(EnumBodyClass.R);
-		planetOasis.setRingColorRGB(2.0f, 5.4f, 3.2f);
-		planetOasis.setPhaseShift(0.0f);
 		planetOasis.setRelativeOrbitTime(6.2F);
 		planetOasis.setDistanceFromCenter(1.8f);
 		planetOasis.setTierRequired(ConfigManagerZG.planetOasisTier);
 		if (ConfigManagerZG.planetUnreachableAll || ConfigManagerZG.planetUnreachableOasis) {
 			planetOasis.setDisableRockets();
 		}
-		planetOasis.setRelativeSize(64.0f);
 		planetOasis.setBodyTemperature(68.2F);
 		planetOasis.setBodyToxicity(0.5f);
 		planetOasis.setBodyRadiation(4.0f);
@@ -379,15 +353,12 @@ public class ZGPlanets {
 		planetXantheon.setDimensionInfo(ConfigManagerZG.planetXantheonDimensionId, WorldProviderXantheon.class);
 		planetXantheon.setParentSolarSystem(systemPraedyth);
 		planetXantheon.setBodyClass(EnumBodyClass.CONSTRUCTED);
-		planetXantheon.setRingColorRGB(1.6f, 3.7f, 2.1f);
-		planetXantheon.setPhaseShift(4.0f);
 		planetXantheon.setRelativeOrbitTime(20.2F);
 		planetXantheon.setDistanceFromCenter(2.5F);
 		planetXantheon.setTierRequired(ConfigManagerZG.planetXantheonTier);
 		if (ConfigManagerZG.planetUnreachableAll || ConfigManagerZG.planetUnreachableXantheon) {
 			planetXantheon.setDisableRockets();
 		}
-		planetXantheon.setRelativeSize(96.0f);
 		planetXantheon.setBodyTemperature(-31.2F);
 		planetXantheon.setBodyToxicity(5.2f);
 		planetXantheon.setBodyRadiation(46.3f);
@@ -405,15 +376,12 @@ public class ZGPlanets {
 		planetCandora.setDimensionInfo(ConfigManagerZG.planetCandoraDimensionId, WorldProviderCandora.class);
 		planetCandora.setParentSolarSystem(systemPraedyth);
 		planetCandora.setBodyClass(EnumBodyClass.EXOTIC);
-		planetCandora.setRingColorRGB(2.5F, 0.0F, 2.5F);
-		planetCandora.setPhaseShift(0.1F);
 		planetCandora.setRelativeOrbitTime(10.5F);
 		planetCandora.setDistanceFromCenter(2.1F);
 		planetCandora.setTierRequired(ConfigManagerZG.planetCandoraTier);
 		if (ConfigManagerZG.planetUnreachableAll || ConfigManagerZG.planetUnreachableCandora) {
 			planetCandora.setDisableRockets();
 		}
-		planetCandora.setRelativeSize(102.9F);
 		planetCandora.setBodyTemperature(67.5F);
 		planetCandora.setBodyToxicity(0.0F);
 		planetCandora.setBodyRadiation(0.0F);
@@ -432,15 +400,12 @@ public class ZGPlanets {
 		planetAtheon.setDimensionInfo(ConfigManagerZG.planetAtheonDimensionId, WorldProviderAtheon.class);
 		planetAtheon.setParentSolarSystem(systemPraedyth);
 		planetAtheon.setBodyClass(EnumBodyClass.CONSTRUCTED);
-		planetAtheon.setRingColorRGB(3.6F, 3.2F, 1.7F);
-		planetAtheon.setPhaseShift(10.2F);
 		planetAtheon.setRelativeOrbitTime(0.6F);
 		planetAtheon.setDistanceFromCenter(0.4F);
 		planetAtheon.setTierRequired(ConfigManagerZG.planetAtheonTier);
 		if (ConfigManagerZG.planetUnreachableAll || ConfigManagerZG.planetUnreachableAtheon) {
 			planetAtheon.setDisableRockets();
 		}
-		planetAtheon.setRelativeSize(102.5F);
 		planetAtheon.setBodyTemperature(57.2F);
 		planetAtheon.setBodyToxicity(0.0F);
 		planetAtheon.setBodyRadiation(96.7F);
@@ -458,15 +423,12 @@ public class ZGPlanets {
 		planetPerdita.setDimensionInfo(ConfigManagerZG.planetPerditaDimensionId, WorldProviderPerdita.class);
 		planetPerdita.setParentSolarSystem(systemSol2);
 		planetPerdita.setBodyClass(EnumBodyClass.DESERT);
-		planetPerdita.setRingColorRGB(4.6F, 2.2F, 6.7F);
-		planetPerdita.setPhaseShift(20.1F);
 		planetPerdita.setRelativeOrbitTime(1.2F);
 		planetPerdita.setDistanceFromCenter(0.8F);
 		planetPerdita.setTierRequired(ConfigManagerZG.planetPerditaTier);
 		if (ConfigManagerZG.planetUnreachableAll || ConfigManagerZG.planetUnreachablePerdita) {
 			planetPerdita.setDisableRockets();
 		}
-		planetPerdita.setRelativeSize(204.6F);
 		planetPerdita.setBodyTemperature(195.8F);
 		planetPerdita.setBodyToxicity(1.2F);
 		planetPerdita.setBodyRadiation(3.5F);
@@ -485,15 +447,12 @@ public class ZGPlanets {
 		planetAltum.setDimensionInfo(ConfigManagerZG.planetAltumDimensionId, WorldProviderAltum.class);
 		planetAltum.setParentSolarSystem(systemSol2);
 		planetAltum.setBodyClass(EnumBodyClass.OCEAN);
-		planetAltum.setRingColorRGB(7.7F, 7.7F, 7.7F);
-		planetAltum.setPhaseShift(5.6F);
 		planetAltum.setRelativeOrbitTime(3.6F);
 		planetAltum.setDistanceFromCenter(1.0F);
 		planetAltum.setTierRequired(ConfigManagerZG.planetAltumTier);
 		if (ConfigManagerZG.planetUnreachableAll || ConfigManagerZG.planetUnreachableAltum) {
 			planetAltum.setDisableRockets();
 		}
-		planetAltum.setRelativeSize(80.6F);
 		planetAltum.setBodyRadiation(0.6F);
 		planetAltum.setBodyToxicity(0.2F);
 		planetAltum.setBreathable(true);
@@ -510,15 +469,12 @@ public class ZGPlanets {
 		planetCaligro.setDimensionInfo(ConfigManagerZG.planetCaligroDimensionId, WorldProviderCaligro.class);
 		planetCaligro.setParentSolarSystem(systemSol2);
 		planetCaligro.setBodyClass(EnumBodyClass.DARK);
-		planetCaligro.setRingColorRGB(0.0F, 10.0F, 0.0F);
-		planetCaligro.setPhaseShift(100.0F);
 		planetCaligro.setRelativeOrbitTime(140.18F);
 		planetCaligro.setDistanceFromCenter(2.0F);
 		planetCaligro.setTierRequired(ConfigManagerZG.planetCaligroTier);
 		if (ConfigManagerZG.planetUnreachableAll || ConfigManagerZG.planetUnreachableCaligro) {
 			planetCaligro.setDisableRockets();
 		}
-		planetCaligro.setRelativeSize(160.0F);
 		planetCaligro.setBodyTemperature(-165.62F);
 		planetCaligro.setBodyToxicity(55.24F);
 		planetCaligro.setBodyRadiation(32.21F);
@@ -537,15 +493,12 @@ public class ZGPlanets {
 		planetExodus.setDimensionInfo(ConfigManagerZG.planetExodusDimensionId, WorldProviderExodus.class);
 		planetExodus.setParentSolarSystem(systemSol2);
 		planetExodus.setBodyClass(EnumBodyClass.M);
-		planetExodus.setRingColorRGB(10.0F, 10.0F, 10.0F);
-		planetExodus.setPhaseShift(50F);
 		planetExodus.setRelativeOrbitTime(4.5F);
 		planetExodus.setDistanceFromCenter(3.0F);
 		planetExodus.setTierRequired(ConfigManagerZG.planetExodusTier);
 		if (ConfigManagerZG.planetUnreachableAll || ConfigManagerZG.planetUnreachableExodus) {
 			planetExodus.setDisableRockets();
 		}
-		planetExodus.setRelativeSize(160.0F);
 		planetExodus.setBodyTemperature(76.15F);
 		planetExodus.setBodyToxicity(0.0F);
 		planetExodus.setBodyRadiation(0.0F);
@@ -562,15 +515,12 @@ public class ZGPlanets {
 		planetVortex.setDimensionInfo(ConfigManagerZG.planetVortexDimensionId, WorldProviderVortex.class);
 		planetVortex.setParentSolarSystem(systemPantheon);
 		planetVortex.setBodyClass(EnumBodyClass.STORMY);
-		planetVortex.setRingColorRGB(1.0F, 0.1F, 0.9F);
-		planetVortex.setPhaseShift(50F);
 		planetVortex.setRelativeOrbitTime(4.5F);
 		planetVortex.setDistanceFromCenter(3.0F);
 		planetVortex.setTierRequired(ConfigManagerZG.planetVortexTier);
 		if (ConfigManagerZG.planetUnreachableAll || ConfigManagerZG.planetUnreachableVortex) {
 			planetVortex.setDisableRockets();
 		}
-		planetVortex.setRelativeSize(160.0F);
 		planetVortex.setBodyTemperature(76.15F);
 		planetVortex.setBodyToxicity(0.0F);
 		planetVortex.setBodyRadiation(0.0F);
@@ -587,15 +537,12 @@ public class ZGPlanets {
 		planetMetztli.setDimensionInfo(ConfigManagerZG.planetMetztliDimensionId, WorldProviderMetztli.class);
 		planetMetztli.setParentSolarSystem(systemPantheon);
 		planetMetztli.setBodyClass(EnumBodyClass.M);
-		planetMetztli.setRingColorRGB(1.0F, 1.0F, 1.9F);
-		planetMetztli.setPhaseShift(0.0F);
 		planetMetztli.setRelativeOrbitTime(8.0F);
 		planetMetztli.setDistanceFromCenter(4.0F);
 		planetMetztli.setTierRequired(ConfigManagerZG.planetMetztliTier);
 		if (ConfigManagerZG.planetUnreachableAll || ConfigManagerZG.planetUnreachableMetztli) {
 			planetMetztli.setDisableRockets();
 		}
-		planetMetztli.setRelativeSize(165.0F);
 		planetMetztli.setBodyTemperature(86.05F);
 		planetMetztli.setDensity(10.0F);
 		planetMetztli.setHasRain(true);
@@ -614,17 +561,14 @@ public class ZGPlanets {
 	
 	public static void initMoons() {
 		moonAstros.setDimensionInfo(ConfigManagerZG.moonAstrosDimensionId, WorldProviderAstros.class);
-		moonAstros.setParentPlanet(planetEden);
+		moonAstros.setParentPlanet(ZGPlanets.planetEden);
 		moonAstros.setBodyClass(EnumBodyClass.L);
-		moonAstros.setRingColorRGB(1.0F, 1.0F, 1.9F);
-		moonAstros.setPhaseShift(0.0F);
-		moonAstros.setRelativeOrbitTime(24.0F);
-		moonAstros.setDistanceFromCenter(planetEden.getRelativeDistanceFromCenter().scaledDistance + 1.0F);
-		moonAstros.setTierRequired(ConfigManagerZG.planetEdenTier);
+		moonAstros.setRelativeOrbitTime(1 / 0.01F);
+		moonAstros.setDistanceFromCenter(13F);
+		moonAstros.setTierRequired(ZGPlanets.planetEden.getTierRequirement());
 		if (ConfigManagerZG.planetUnreachableAll || ConfigManagerZG.planetUnreachableEden) {
 			moonAstros.setDisableRockets();
 		}
-		moonAstros.setRelativeSize(25.0F);
 		moonAstros.setBodyTemperature(36.5F);
 		moonAstros.setDensity(10.0F);
 		moonAstros.setHasRain(false);
@@ -653,7 +597,6 @@ public class ZGPlanets {
 		}
 		
 		ZGPlanets.registerPlanets();
-		ZGPlanets.registerMoons();
 	}
 	
 	public static void registerPlanets() {
@@ -672,6 +615,7 @@ public class ZGPlanets {
 		GalaxyRegistry.registerPlanet(planetExodus);
 		GalaxyRegistry.registerPlanet(planetVortex);
 		GalaxyRegistry.registerPlanet(planetMetztli);
+		ZGPlanets.registerMoons();
 	}
 	
 	public static void registerMoons() {

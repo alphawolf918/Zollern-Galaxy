@@ -34,6 +34,7 @@ import net.minecraft.world.gen.structure.MapGenMineshaft;
 import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.biomes.decorators.BiomeDecoratorAstros;
 import zollerngalaxy.blocks.ZGBlocks;
+import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.worldgen.mapgen.MapGenCavesZG;
 import zollerngalaxy.worldgen.mapgen.MapGenRavinesZG;
 
@@ -42,6 +43,7 @@ public class ChunkProviderAstros extends ChunkProviderBase {
 	public static final IBlockState STONE = ZGBlocks.astrosStone.getDefaultState();
 	public static final IBlockState WATER = Blocks.WATER.getDefaultState();
 	public static final IBlockState ICE = Blocks.PACKED_ICE.getDefaultState();
+	public static final IBlockState AIR = Blocks.AIR.getDefaultState();
 	
 	public static final double CHUNK_HEIGHT = 25.0D;
 	public static final int SEA_LEVEL = 57;
@@ -64,8 +66,8 @@ public class ChunkProviderAstros extends ChunkProviderBase {
 	private final double[] terrainCalcs;
 	private final float[] parabolicField;
 	private double[] stoneNoise = new double[256];
-	private MapGenCavesZG caveGenerator = new MapGenCavesZG(ZGBlocks.astrosStone);
-	private final MapGenRavinesZG ravineGenerator = new MapGenRavinesZG(ZGBlocks.astrosStone);
+	private MapGenCavesZG caveGenerator = new MapGenCavesZG(STONE.getBlock());
+	private final MapGenRavinesZG ravineGenerator = new MapGenRavinesZG(STONE.getBlock());
 	private final MapGenVillageMoon villageGenerator = new MapGenVillageMoon();
 	private MapGenMineshaft mineshaftGenerator = new MapGenMineshaft();
 	private Biome[] biomesForGeneration;
@@ -87,7 +89,7 @@ public class ChunkProviderAstros extends ChunkProviderBase {
 		this.noiseGen5 = new NoiseGeneratorOctaves(this.rand, 10);
 		this.noiseGen6 = new NoiseGeneratorOctaves(this.rand, 16);
 		this.mobSpawnerNoise = new NoiseGeneratorOctaves(this.rand, 8);
-		this.noiseGenSmooth1 = new Gradient(this.rand.nextLong(), 4, 0.25F);
+		this.noiseGenSmooth1 = new Gradient(this.rand.nextLong(), 4, ZGHelper.rngFloat(0.25F, 0.30F));
 		this.terrainCalcs = new double[825];
 		this.parabolicField = new float[25];
 		
@@ -165,6 +167,8 @@ public class ChunkProviderAstros extends ChunkProviderBase {
 									chunkHeight = (CHUNK_HEIGHT + heightMod);
 								} else if (heightMod < 0.0D) {
 									chunkHeight = (CHUNK_HEIGHT - heightMod);
+								} else if (y >= 250) {
+									primer.setBlockState(x, y, z, AIR);
 								}
 								
 								if ((lvt_45_1_ += d16) > this.noiseGenSmooth1.getNoise(chunkX * 16 + x, chunkZ * 16 + z) * chunkHeight) {

@@ -14,5 +14,4 @@ public class ZGStarSystem extends SolarSystem {
 	public ZGStarSystem(String solarSystem) {
 		super(solarSystem, "milky_way");
 	}
-	
 }

@@ -12,6 +12,7 @@ import java.util.Random;
 import micdoodle8.mods.galacticraft.api.prefab.world.gen.BiomeAdaptive;
 import micdoodle8.mods.galacticraft.api.world.ChunkProviderBase;
 import net.minecraft.block.BlockFalling;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -28,6 +29,8 @@ public class ChunkProviderOrbitZG extends ChunkProviderBase {
 	
 	private final Random rand;
 	private final World world;
+	
+	private static final IBlockState LORE_BLOCK = ZGBlocks.blockLore.getDefaultState();
 	
 	public ChunkProviderOrbitZG(World par1World, long par2, boolean par4) {
 		this.rand = new Random(par2);
@@ -62,37 +65,37 @@ public class ChunkProviderOrbitZG extends ChunkProviderBase {
 		this.rand.setSeed(x * i1 + z * j1 ^ this.world.getSeed());
 		if (k == 0 && l == 0) {
 			BlockPos pos = new BlockPos(k, 64, l);
-			this.world.setBlockState(pos, ZGBlocks.blockLore.getDefaultState(), 2);
+			this.world.setBlockState(pos, LORE_BLOCK, 2);
 			
 			if (rand.nextInt(100) <= 50) {
 				BlockPos pos2 = new BlockPos(k, pos.getY() + 1, l);
-				this.world.setBlockState(pos2, ZGBlocks.blockLore.getDefaultState(), 2);
+				this.world.setBlockState(pos2, LORE_BLOCK, 2);
 			}
 			
 			if (ConfigManagerZG.canExtraLoreSpawn) {
 				if (rand.nextInt(100) <= 50) {
 					BlockPos pos3 = new BlockPos(k + 1, pos.getY(), l);
-					this.world.setBlockState(pos3, ZGBlocks.blockLore.getDefaultState(), 2);
+					this.world.setBlockState(pos3, LORE_BLOCK, 2);
 				}
 				
 				if (rand.nextInt(100) <= 50) {
 					BlockPos pos4 = new BlockPos(k, pos.getY(), l + 1);
-					this.world.setBlockState(pos4, ZGBlocks.blockLore.getDefaultState(), 2);
+					this.world.setBlockState(pos4, LORE_BLOCK, 2);
 				}
 				
 				if (rand.nextInt(100) <= 50) {
 					BlockPos pos2 = new BlockPos(k, pos.getY() - 1, l);
-					this.world.setBlockState(pos2, ZGBlocks.blockLore.getDefaultState(), 2);
+					this.world.setBlockState(pos2, LORE_BLOCK, 2);
 				}
 				
 				if (rand.nextInt(100) <= 50) {
 					BlockPos pos3 = new BlockPos(k - 1, pos.getY(), l);
-					this.world.setBlockState(pos3, ZGBlocks.blockLore.getDefaultState(), 2);
+					this.world.setBlockState(pos3, LORE_BLOCK, 2);
 				}
 				
 				if (rand.nextInt(100) <= 50) {
 					BlockPos pos4 = new BlockPos(k, pos.getY(), l - 1);
-					this.world.setBlockState(pos4, ZGBlocks.blockLore.getDefaultState(), 2);
+					this.world.setBlockState(pos4, LORE_BLOCK, 2);
 				}
 			}
 			
