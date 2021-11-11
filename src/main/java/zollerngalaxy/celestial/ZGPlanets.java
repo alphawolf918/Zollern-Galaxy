@@ -108,10 +108,10 @@ public class ZGPlanets {
 	public static ZGStar starNova = new ZGStar("nova");
 	
 	// Psios Planets
-	public static ZGPlanet planetEden = new ZGPlanet("eden");
 	public static ZGPlanet planetZollus = new ZGPlanet("zollus");
 	public static ZGPlanet planetKriffon = new ZGPlanet("kriffus");
 	public static ZGPlanet planetPurgot = new ZGPlanet("purgot");
+	public static ZGPlanet planetEden = new ZGPlanet("eden");
 	public static ZGMoonBody moonAstros = new ZGMoonBody("astros");
 	
 	// Praedyth Planets
@@ -129,7 +129,7 @@ public class ZGPlanets {
 	
 	// Pantheon Planets
 	public static ZGPlanet planetVortex = new ZGPlanet("vortex");
-	public static ZGPlanet planetMetztli = new ZGPlanet("metztli");// GalacticraftCore
+	public static ZGPlanet planetMetztli = new ZGPlanet("metztli");
 	public static ZGPlanet planetCentotl;
 	public static ZGPlanet planetToci;
 	public static ZGPlanet planetTlaloc;
@@ -215,9 +215,10 @@ public class ZGPlanets {
 		// Planet Zollus
 		planetZollus.setDimensionInfo(ConfigManagerZG.planetZollusDimensionId, WorldProviderZollus.class);
 		planetZollus.setParentSolarSystem(systemPsios);
+		planetZollus.setPhaseShift(4.0F);
 		planetZollus.setBodyClass(EnumBodyClass.L);
-		planetZollus.setRelativeOrbitTime(42.2F);
-		planetZollus.setDistanceFromCenter(1.9F);
+		planetZollus.setRelativeOrbitTime(32.2F);
+		planetZollus.setDistanceFromCenter(1.4F);
 		planetZollus.setTierRequired(ConfigManagerZG.planetZollusTier);
 		if (ConfigManagerZG.planetUnreachableZollus) {
 			planetZollus.setDisableRockets();
@@ -237,6 +238,7 @@ public class ZGPlanets {
 		// Planet Kriffon
 		planetKriffon.setDimensionInfo(ConfigManagerZG.planetKriffonDimensionId, WorldProviderKriffon.class);
 		planetKriffon.setParentSolarSystem(systemPsios);
+		planetKriffon.setPhaseShift(0.0F);
 		planetKriffon.setBodyClass(EnumBodyClass.Y);
 		planetKriffon.setRelativeOrbitTime(0.3F);
 		planetKriffon.setDistanceFromCenter(0.5F);
@@ -259,6 +261,7 @@ public class ZGPlanets {
 		// Planet Purgot
 		planetPurgot.setParentSolarSystem(systemPsios);
 		planetPurgot.setBodyClass(EnumBodyClass.NINE);
+		planetPurgot.setPhaseShift(3.25F);
 		planetPurgot.setRelativeOrbitTime(10F);
 		planetPurgot.setDistanceFromCenter(1.0F);
 		planetPurgot.setTierRequired(ConfigManagerZG.planetPurgotTier);
@@ -282,6 +285,7 @@ public class ZGPlanets {
 		// Planet Eden
 		planetEden.setDimensionInfo(ConfigManagerZG.planetEdenDimensionId, WorldProviderEden.class);
 		planetEden.setParentSolarSystem(systemPsios);
+		planetEden.setPhaseShift(2.0F);
 		planetEden.setBodyClass(EnumBodyClass.M);
 		planetEden.setRelativeOrbitTime(8.0F);
 		planetEden.setDistanceFromCenter(0.6F);

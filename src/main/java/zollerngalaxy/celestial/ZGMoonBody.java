@@ -49,6 +49,8 @@ public class ZGMoonBody extends Moon implements IZollernBody {
 	
 	public ZGMoonBody(String moonName) {
 		super(moonName);
+		this.setPhaseShift(0.0F);
+		this.setRelativeSize(1.0F);
 		this.addChecklistKeys("thermal_padding", "equip_oxygen_suit", "equip_parachute");
 	}
 	
@@ -210,7 +212,6 @@ public class ZGMoonBody extends Moon implements IZollernBody {
 	 *            to apply this
 	 *            bioclassification to.
 	 */
-	
 	public ZGMoonBody setBodyClass(EnumBodyClass pClass) {
 		this.bodyClass = pClass;
 		return this;
