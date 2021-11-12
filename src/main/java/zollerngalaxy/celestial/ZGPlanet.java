@@ -7,9 +7,12 @@
  */
 package zollerngalaxy.celestial;
 
+import zollerngalaxy.lib.ZGInfo;
+
 public class ZGPlanet extends ZGPlanetaryBody {
 	
 	public ZGPlanet(String planetName) {
 		super(planetName);
+		this.setPhaseShift(ZGInfo.floatPI);
 	}
 }

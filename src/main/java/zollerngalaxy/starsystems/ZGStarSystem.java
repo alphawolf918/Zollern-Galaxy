@@ -8,10 +8,15 @@
 package zollerngalaxy.starsystems;
 
 import micdoodle8.mods.galacticraft.api.galaxies.SolarSystem;
+import zollerngalaxy.celestial.GalaxyListZG;
 
 public class ZGStarSystem extends SolarSystem {
 	
 	public ZGStarSystem(String solarSystem) {
-		super(solarSystem, "milky_way");
+		super(solarSystem, GalaxyListZG.MILKY_WAY);
+	}
+	
+	public ZGStarSystem(String solarSystem, String galaxy) {
+		super(solarSystem, galaxy);
 	}
 }

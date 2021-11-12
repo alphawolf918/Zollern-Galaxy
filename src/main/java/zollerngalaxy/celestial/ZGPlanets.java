@@ -87,15 +87,19 @@ public class ZGPlanets {
 	
 	private static boolean hideUnusedStarSystems = ConfigManagerZG.hideUnusedStarSystems;
 	
+	// Galaxies
+	public static Galaxy gxAndromeda = new Galaxy("andromeda");
+	
 	// Solar Systems
 	public static ZGStarSystem systemPsios = new ZGStarSystem("psion6");
 	public static ZGStarSystem systemPraedyth = new ZGStarSystem("praedyth");
 	public static ZGStarSystem systemSol2 = new ZGStarSystem("sol2");
 	public static ZGStarSystem systemPantheon = new ZGStarSystem("pantheon");
-	public static ZGStarSystem systemOlympus = new ZGStarSystem("olympus");
-	public static ZGStarSystem systemAsgard = new ZGStarSystem("asgard");
-	public static ZGStarSystem systemVega = new ZGStarSystem("vega");
-	public static ZGStarSystem systemNova = new ZGStarSystem("nova");
+	public static ZGStarSystem systemOlympus = new ZGStarSystem("olympus", ZGPlanets.gxAndromeda.getGalaxyName());
+	public static ZGStarSystem systemAsgard = new ZGStarSystem("asgard", ZGPlanets.gxAndromeda.getGalaxyName());
+	public static ZGStarSystem systemVega = new ZGStarSystem("vega", ZGPlanets.gxAndromeda.getGalaxyName());
+	public static ZGStarSystem systemNova = new ZGStarSystem("nova", ZGPlanets.gxAndromeda.getGalaxyName());
+	// MPPlanets
 	
 	// Stars
 	public static ZGStar starPsios = new ZGStar("psion6");
@@ -162,8 +166,8 @@ public class ZGPlanets {
 	public static void initStarSystems() {
 		// Psios System
 		systemPsios.setMapPosition(new Vector3(PSIOS_X, PSIOS_Y, PSIOS_Z));
-		starPsios.setParentSolarSystem(systemPsios);
 		systemPsios.setMainStar(starPsios);
+		starPsios.setParentSolarSystem(systemPsios);
 		totalSystems++;
 		
 		// Praedyth System
@@ -285,7 +289,7 @@ public class ZGPlanets {
 		// Planet Eden
 		planetEden.setDimensionInfo(ConfigManagerZG.planetEdenDimensionId, WorldProviderEden.class);
 		planetEden.setParentSolarSystem(systemPsios);
-		planetEden.setPhaseShift(2.0F);
+		// planetEden.setPhaseShift(2.0F);
 		planetEden.setBodyClass(EnumBodyClass.M);
 		planetEden.setRelativeOrbitTime(8.0F);
 		planetEden.setDistanceFromCenter(0.6F);

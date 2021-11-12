@@ -603,17 +603,17 @@ public class ConfigManagerZG {
 		
 		// Coords (Asgard)
 		asgardX = (float) configuration.get(CATEGORY_COORDINATES, "Asgard X", 3.0).getDouble();
-		asgardY = (float) configuration.get(CATEGORY_COORDINATES, "Asgard Y", 1.2).getDouble();
+		asgardY = (float) configuration.get(CATEGORY_COORDINATES, "Asgard Y", 1.8).getDouble();
 		asgardZ = (float) configuration.get(CATEGORY_COORDINATES, "Asgard Z", 0.0).getDouble();
 		
 		// Coords (Vega)
-		vegaX = (float) configuration.get(CATEGORY_COORDINATES, "Vega X", -1.0).getDouble();
-		vegaY = (float) configuration.get(CATEGORY_COORDINATES, "Vega Y", 2.5).getDouble();
+		vegaX = (float) configuration.get(CATEGORY_COORDINATES, "Vega X", -0.5).getDouble();
+		vegaY = (float) configuration.get(CATEGORY_COORDINATES, "Vega Y", 1.5).getDouble();
 		vegaZ = (float) configuration.get(CATEGORY_COORDINATES, "Vega Z", 0.0).getDouble();
 		
 		// Coords (Nova)
-		novaX = (float) configuration.get(CATEGORY_COORDINATES, "Nova X", 1.5).getDouble();
-		novaY = (float) configuration.get(CATEGORY_COORDINATES, "Nova Y", 1.2).getDouble();
+		novaX = (float) configuration.get(CATEGORY_COORDINATES, "Nova X", 0.0).getDouble();
+		novaY = (float) configuration.get(CATEGORY_COORDINATES, "Nova Y", 0.0).getDouble();
 		novaZ = (float) configuration.get(CATEGORY_COORDINATES, "Nova Z", 0.0).getDouble();
 		
 		// Planet Tiers (Psios-6)

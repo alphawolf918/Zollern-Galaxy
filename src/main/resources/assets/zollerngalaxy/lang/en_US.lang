@@ -931,25 +931,29 @@ solarsystem.pantheon=Pantheon
 solarsystem.olympus=Olympus
 solarsystem.asgard=Asgard
 solarsystem.vega=Vega
-solarsystem.Nova=Nova
+solarsystem.nova=Nova
+
+## Galaxies ##
+galaxy.andromeda=Andromeda
 
 ## Space Stations ##
 
-satellite.space_station.zollus=Zollus Space Station
-satellite.space_station.kriffon=Kriffon Space Station
-satellite.space_station.purgot=Purgot Space Station
-satellite.space_station.eden=Eden Space Station
-satellite.space_station.xathius=Xathius Space Station
-satellite.space_station.oasis=Oasis Space Station
-satellite.space_station.xantheon=Xantheon Space Station
-satellite.space_station.candora=Candora Space Station
-satellite.space_station.atheon=Atheon Space Station
-satellite.space_station.perdita=Perdita Space Station
-satellite.space_station.altum=Altum Space Station
-satellite.space_station.caligro=Caligro Space Station
-satellite.space_station.exodus=Exodus Space Station
-satellite.space_station.vortex=Vortex Space Station
-satellite.space_station.metztli=Metztli Space Station
+satellite.spacestation.zollus=Zollus Space Station
+satellite.spacestation.kriffon=Kriffon Space Station
+satellite.spacestation.purgot=Purgot Space Station
+satellite.spacestation.eden=Eden Space Station
+satellite.spacestation.xathius=Xathius Space Station
+satellite.spacestation.oasis=Oasis Space Station
+satellite.spacestation.xantheon=Xantheon Space Station
+satellite.spacestation.candora=Candora Space Station
+satellite.spacestation.atheon=Atheon Space Station
+satellite.spacestation.perdita=Perdita Space Station
+satellite.spacestation.altum=Altum Space Station
+satellite.spacestation.caligro=Caligro Space Station
+satellite.spacestation.exodus=Exodus Space Station
+satellite.spacestation.vortex=Vortex Space Station
+satellite.spacestation.metztli=Metztli Space Station
+satellite.spacestation.astros.name=Astros Space Station
 
 ## Death Messages ##
 

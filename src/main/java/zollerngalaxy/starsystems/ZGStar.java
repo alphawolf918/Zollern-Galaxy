@@ -17,5 +17,7 @@ public class ZGStar extends Star {
 		super(starName);
 		this.setBodyIcon(new ResourceLocation(ZGInfo.MOD_ID, "textures/gui/" + starName + ".png"));
 		this.setTierRequired(-1);
+		this.setPhaseShift(0.0F);
+		this.setRelativeSize(1.0F);
 	}
 }

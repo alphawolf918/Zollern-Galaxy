@@ -45,7 +45,6 @@ public class ZGPlanetaryBody extends Planet implements IZollernBody {
 	private WorldProviderPlanetZG spaceProvider = null;
 	
 	protected boolean enableExtremeMode = ConfigManagerZG.enableExtremeMode;
-	
 	private String bodyName;
 	
 	public ZGPlanetaryBody(String bodyNameIn) {
