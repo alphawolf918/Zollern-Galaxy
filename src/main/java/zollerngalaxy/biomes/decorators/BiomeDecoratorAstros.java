@@ -8,6 +8,7 @@
 package zollerngalaxy.biomes.decorators;
 
 import java.util.Random;
+import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
@@ -15,23 +16,40 @@ import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.blocks.ZGBlocks;
-import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.enums.EnumOreGenZG;
 import zollerngalaxy.worldgen.WorldGenMinableZG;
-import zollerngalaxy.worldgen.WorldGenOutpost;
 
 public class BiomeDecoratorAstros extends BiomeDecoratorZG {
 	
 	private WorldGenerator dirtGen;
 	private WorldGenerator packedIceGen;
+	private WorldGenerator gravelGen;
 	private WorldGenerator ironGen;
 	private WorldGenerator goldGen;
+	private WorldGenerator diamondGen;
+	private WorldGenerator emeraldGen;
+	private WorldGenerator coalGen;
+	private WorldGenerator superChargedCoalGen;
+	private WorldGenerator redstoneGen;
+	private WorldGenerator tinGen;
+	private WorldGenerator zollerniumGen;
+	
+	private static final Block STONE = ZGBlocks.astrosStone;
+	private static final Block ROCK = ZGBlocks.astrosRock;
 	
 	public BiomeDecoratorAstros() {
-		this.dirtGen = new WorldGenMinableZG(ZGBlocks.astrosDirt, ZGBlocks.astrosRock, EnumOreGenZG.DIRT);
-		this.packedIceGen = new WorldGenMinableZG(Blocks.PACKED_ICE, ZGBlocks.astrosRock, EnumOreGenZG.PACKED_ICE);
-		this.ironGen = new WorldGenMinableZG(ZGBlocks.astrosIronOre, ZGBlocks.astrosStone, EnumOreGenZG.IRON);
-		this.goldGen = new WorldGenMinableZG(ZGBlocks.astrosGoldOre, ZGBlocks.astrosStone, EnumOreGenZG.GOLD);
+		this.dirtGen = new WorldGenMinableZG(ZGBlocks.astrosDirt, ROCK, EnumOreGenZG.DIRT);
+		this.gravelGen = new WorldGenMinableZG(ZGBlocks.astrosGravel, ROCK, EnumOreGenZG.GRAVEL);
+		this.packedIceGen = new WorldGenMinableZG(Blocks.PACKED_ICE, ROCK, EnumOreGenZG.PACKED_ICE);
+		this.ironGen = new WorldGenMinableZG(ZGBlocks.astrosIronOre, STONE, EnumOreGenZG.IRON);
+		this.goldGen = new WorldGenMinableZG(ZGBlocks.astrosGoldOre, STONE, EnumOreGenZG.GOLD);
+		this.diamondGen = new WorldGenMinableZG(ZGBlocks.astrosDiamondOre, STONE, EnumOreGenZG.DIAMOND);
+		this.emeraldGen = new WorldGenMinableZG(ZGBlocks.astrosEmeraldOre, STONE, EnumOreGenZG.EMERALD);
+		this.coalGen = new WorldGenMinableZG(ZGBlocks.astrosCoalOre, STONE, EnumOreGenZG.COAL);
+		this.superChargedCoalGen = new WorldGenMinableZG(ZGBlocks.astrosSuperChargedCoalOre, STONE, EnumOreGenZG.SUPER_CHARGED_COAL);
+		this.redstoneGen = new WorldGenMinableZG(ZGBlocks.astrosRedstoneOre, STONE, EnumOreGenZG.REDSTONE);
+		this.tinGen = new WorldGenMinableZG(ZGBlocks.astrosTinOre, STONE, EnumOreGenZG.TIN);
+		this.zollerniumGen = new WorldGenMinableZG(ZGBlocks.astrosZollerniumOre, STONE, EnumOreGenZG.ZOLLERNIUM);
 	}
 	
 	@Override
@@ -51,19 +69,15 @@ public class BiomeDecoratorAstros extends BiomeDecoratorZG {
 		
 		this.generateOre(this.ironGen, EnumOreGenZG.IRON, world, rand);
 		this.generateOre(this.goldGen, EnumOreGenZG.GOLD, world, rand);
+		this.generateOre(this.diamondGen, EnumOreGenZG.DIAMOND, world, rand);
+		this.generateOre(this.emeraldGen, EnumOreGenZG.EMERALD, world, rand);
+		this.generateOre(this.coalGen, EnumOreGenZG.COAL, world, rand);
+		this.generateOre(this.superChargedCoalGen, EnumOreGenZG.SUPER_CHARGED_COAL, world, rand);
+		this.generateOre(this.redstoneGen, EnumOreGenZG.REDSTONE, world, rand);
+		this.generateOre(this.tinGen, EnumOreGenZG.TIN, world, rand);
+		this.generateOre(this.zollerniumGen, EnumOreGenZG.ZOLLERNIUM, world, rand);
 		this.generateOre(this.dirtGen, EnumOreGenZG.DIRT, world, rand);
+		this.generateOre(this.gravelGen, EnumOreGenZG.GRAVEL, world, rand);
 		this.generateOre(this.packedIceGen, EnumOreGenZG.PACKED_ICE, world, rand);
-		
-		if (this.generateOutposts && this.outpostsPerChunk > 0) {
-			y = rand.nextInt(rand.nextInt(genY) + 8);
-			if (y >= 62) {
-				WorldGenerator outpostGen = new WorldGenOutpost(ZGBlocks.blockOutpost.getDefaultState(), ZGBlocks.blockOutpost.getDefaultState());
-				for (int i = 0; i < this.outpostsPerChunk; i++) {
-					if (rand.nextInt((this.enableExtremeMode) ? 200 : 100) <= ConfigManagerZG.outpostGenChance) {
-						outpostGen.generate(world, rand, this.chunkPos.add(x, y, z));
-					}
-				}
-			}
-		}
 	}
 }

@@ -8,10 +8,7 @@
 package zollerngalaxy.core.dimensions.worldproviders;
 
 import micdoodle8.mods.galacticraft.api.galaxies.CelestialBody;
-import micdoodle8.mods.galacticraft.api.prefab.world.gen.WorldProviderSpace;
 import micdoodle8.mods.galacticraft.api.vector.Vector3;
-import micdoodle8.mods.galacticraft.api.world.IExitHeight;
-import micdoodle8.mods.galacticraft.api.world.ISolarLevel;
 import micdoodle8.mods.galacticraft.core.event.EventHandlerGC;
 import micdoodle8.mods.galacticraft.core.util.ConfigManagerCore;
 import net.minecraft.util.math.BlockPos;
@@ -21,10 +18,9 @@ import net.minecraft.world.storage.WorldInfo;
 import net.minecraftforge.client.IRenderHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import zollerngalaxy.celestial.ZGMoonBody;
 import zollerngalaxy.celestial.ZGPlanet;
 
-public abstract class WorldProviderPlanetZG extends WorldProviderSpace implements ISolarLevel, IExitHeight {
+public abstract class WorldProviderPlanetZG extends WorldProviderZG {
 	
 	private static WorldProviderPlanetZG instance;
 	
@@ -41,6 +37,7 @@ public abstract class WorldProviderPlanetZG extends WorldProviderSpace implement
 		return "planets/" + this.getPlanet().getName();
 	}
 	
+	@Override
 	public World getWorldObj() {
 		return this.world;
 	}
@@ -54,12 +51,6 @@ public abstract class WorldProviderPlanetZG extends WorldProviderSpace implement
 		CelestialBody planet = this.getCelestialBody();
 		ZGPlanet planetNova = (ZGPlanet) planet;
 		return planetNova;
-	}
-	
-	public ZGMoonBody getMoon() {
-		CelestialBody moon = this.getCelestialBody();
-		ZGMoonBody moonNova = (ZGMoonBody) moon;
-		return moonNova;
 	}
 	
 	@Override
@@ -174,10 +165,13 @@ public abstract class WorldProviderPlanetZG extends WorldProviderSpace implement
 		return true;
 	}
 	
+	@Override
 	protected abstract void renderSky();
 	
+	@Override
 	protected abstract void renderCloud();
 	
+	@Override
 	protected abstract void renderWeather();
 	
 	public float getPlanetTemp() {

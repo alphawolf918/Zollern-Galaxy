@@ -14,6 +14,7 @@ import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.ScaledResolution;
 import net.minecraft.client.renderer.RenderHelper;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.util.math.BlockPos;
@@ -29,7 +30,9 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.celestial.IZollernBody;
 import zollerngalaxy.config.ConfigManagerZG;
+import zollerngalaxy.core.dimensions.worldproviders.WorldProviderMoonZG;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderPlanetZG;
+import zollerngalaxy.core.dimensions.worldproviders.WorldProviderZG;
 import zollerngalaxy.core.enums.EnumBodyClass;
 import zollerngalaxy.items.ZGItems;
 import zollerngalaxy.lib.helpers.ZGHelper;
@@ -55,8 +58,8 @@ public class GuiHUD extends Gui {
 		}
 		
 		int i3 = 14737632;
-		BlockPos blockPos = new BlockPos(this.mc.getRenderViewEntity().posX, this.mc.getRenderViewEntity().getEntityBoundingBox().minY,
-				this.mc.getRenderViewEntity().posZ);
+		Entity rvEntity = this.mc.getRenderViewEntity();
+		BlockPos blockPos = new BlockPos(rvEntity.posX, rvEntity.getEntityBoundingBox().minY, rvEntity.posZ);
 		ScaledResolution scaledresolution = new ScaledResolution(this.mc);
 		int k = scaledresolution.getScaledWidth();
 		int l = scaledresolution.getScaledHeight();
@@ -73,13 +76,18 @@ public class GuiHUD extends Gui {
 				GL11.glDisable(GL11.GL_LIGHTING);
 				Biome biome = chunk.getBiome(blockPos, this.mc.world.getBiomeProvider());
 				WorldProvider worldProvider = this.mc.world.provider;
+				boolean isZGWorld = (worldProvider instanceof WorldProviderPlanetZG || worldProvider instanceof WorldProviderMoonZG);
 				
-				// Moons will not show this data for now
-				if (biome instanceof BiomeSpace && worldProvider instanceof WorldProviderPlanetZG) {
+				if (biome instanceof BiomeSpace && isZGWorld) {
 					BiomeSpace biomeSpace = (BiomeSpace) biome;
-					WorldProviderPlanetZG spaceProvider = (WorldProviderPlanetZG) worldProvider;
+					WorldProviderZG spaceProvider = (WorldProviderZG) worldProvider;
+					float xTemp1 = -99.99F;
+					boolean isPlanet = (worldProvider instanceof WorldProviderPlanetZG);
+					boolean isMoon = (worldProvider instanceof WorldProviderMoonZG);
+					float xTemp = (isPlanet) ? ((WorldProviderPlanetZG) spaceProvider).getPlanetTemp() : xTemp1;
+					xTemp = (isMoon) ? ((WorldProviderMoonZG) spaceProvider).getMoonTemp() : xTemp1;
 					
-					// Biome Name
+					// Celestial Biome Name
 					String biomeName = biome.getBiomeName();
 					String s = "Biome: " + biomeName;
 					fontRendererObj.drawString(s, 2, 26, i3);
@@ -87,22 +95,21 @@ public class GuiHUD extends Gui {
 					
 					World world = spaceProvider.getWorldObj();
 					
-					// Planet Temp (Displays in either F or C)
+					// Celestial Temp (Displays in either F or C)
 					String tempType = ConfigManagerZG.temperatureType;
 					float biomeTemp = biomeSpace.getBiomeTemp();
-					float planetTemp = spaceProvider.getPlanetTemp(); // spaceProvider.getPlanetTemp(world,
-																		// blockPos);
-					planetTemp = (spaceProvider.isDaytime()) ? planetTemp + biomeTemp : planetTemp - biomeTemp;
+					float celestialTemp = xTemp;
+					celestialTemp = (spaceProvider.isDaytime()) ? celestialTemp + biomeTemp : celestialTemp - biomeTemp;
 					tempType = (tempType != "F" && tempType != "C") ? "F" : tempType;
 					if (tempType == "F") {
-						String strTemp = "" + Math.round(planetTemp * 1.0f);
+						String strTemp = "" + Math.round(celestialTemp * 1.0F);
 						strTemp = (strTemp.length() > 4) ? strTemp.substring(0, 4) : strTemp;
 						String temp = "Temp: " + strTemp + " F";
 						fontRendererObj.drawString(temp, 2, 36, i3);
 						fontRendererObj.drawString(temp, 26, yPos - 30, i3);
 					} else if (tempType == "C") {
-						float planetTempCelsius = Math.round(((planetTemp - 32) * 5) / 9);
-						String strTemp = "" + (planetTempCelsius * 1.0f);
+						float celestialTempCelsius = Math.round(((celestialTemp - 32) * 5) / 9);
+						String strTemp = "" + (celestialTempCelsius * 1.0f);
 						String temp = "Temp: " + strTemp + " C";
 						fontRendererObj.drawString(temp, 2, 36, i3);
 						fontRendererObj.drawString(temp, 26, yPos - 30, i3);
@@ -112,45 +119,47 @@ public class GuiHUD extends Gui {
 						fontRendererObj.drawString(s2, 26, yPos - 30, i3);
 					}
 					
-					// Planet Name
-					IZollernBody planet = biomeSpace.getBodyForBiome();
-					if (planet != null) {
-						String planetName = ZGHelper.capitalizeFirstLetter(planet.getName());
-						String p = "Planet: " + planetName;
+					String celestialStr = (isPlanet) ? "Planet" : "Moon";
+					
+					// Celestial Name
+					IZollernBody celestial = biomeSpace.getBodyForBiome();
+					if (celestial != null) {
+						String celestialName = ZGHelper.capitalizeFirstLetter(celestial.getName());
+						String p = celestialStr + ": " + celestialName;
 						fontRendererObj.drawString(p, 2, 46, i3);
 						fontRendererObj.drawString(p, 26, yPos - 40, i3);
 					}
 					
-					// Planet Class
-					EnumBodyClass planetClass = planet.getBodyClass();
+					// Celestial Class
+					EnumBodyClass planetClass = celestial.getBodyClass();
 					String pClass = planetClass.getPlanetStrClass();
-					String pc = "Class " + pClass + " Planet";
+					String pc = "Class " + pClass + " " + celestialStr;
 					fontRendererObj.drawString(pc, 2, 56, i3);
 					fontRendererObj.drawString(pc, 26, yPos - 54, i3);
 					
-					// Gasses
+					// Celestial Gasses
 					String strGasses = "Gasses: ";
-					String gasses = planet.getGasses();
+					String gasses = celestial.getGasses();
 					fontRendererObj.drawString(strGasses, 2, 66, i3);
 					fontRendererObj.drawString(strGasses, 26, yPos - 64, i3);
 					String actualGasses = gasses.toString();
 					fontRendererObj.drawString(actualGasses, 2, 76, i3);
 					fontRendererObj.drawString(actualGasses, 26, yPos - 74, i3);
 					
-					// Radioactivity
-					float planetRadLevel = planet.getRadiationLevel();
+					// Celestial Radioactivity
+					float planetRadLevel = celestial.getRadiationLevel();
 					String strRad = "Radiation: " + planetRadLevel + "%";
 					fontRendererObj.drawString(strRad, 2, 86, i3);
 					fontRendererObj.drawString(strRad, 26, yPos - 84, i3);
 					
-					// Toxicity
-					float planetToxLevel = planet.getToxicLevel();
+					// Celestial Toxicity
+					float planetToxLevel = celestial.getToxicLevel();
 					String strTox = "Toxicity: " + planetToxLevel + "%";
 					fontRendererObj.drawString(strTox, 2, 96, i3);
 					fontRendererObj.drawString(strTox, 26, yPos - 94, i3);
 					
-					// Wind Level
-					float planetWindLevel = planet.getWindLevel();
+					// Celestial Wind Level
+					float planetWindLevel = celestial.getWindLevel();
 					String strWind = "Wind Level: " + planetWindLevel + "%";
 					fontRendererObj.drawString(strWind, 2, 106, i3);
 					fontRendererObj.drawString(strWind, 26, yPos - 104, i3);

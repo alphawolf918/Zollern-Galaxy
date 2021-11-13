@@ -6,11 +6,15 @@ Zollern Galaxy v2.0.32
     - The moon appears in Eden's night sky.
     - Eden's SkyProvider has been adjusted to show the Astros moon in its night skies.
 * Added the Andromeda galaxy.
+* Added the Astros Villager.
+    - Regular Alien Villagers will convert into Astros Villagers when on the moon.
+* 
 * Sugar can now be crafted into Sugar Blocks and vice versa.
 * Adjusted relative orbit times and distance from center.
 * Four unused star systems have been moved to the new Andromeda galaxy.
     - So far, it seems that the only way to access these is through MJRLegend's Extra Planets mod.
         - This will be tested further in the future.
+* Updated Galactic HUD to interpret moons as well as planets.
 * 
 * Fixed Purgot Dirt potentially showing up on Zollus.
 * 

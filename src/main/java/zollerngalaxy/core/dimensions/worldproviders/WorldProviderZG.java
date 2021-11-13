@@ -7,37 +7,31 @@
  */
 package zollerngalaxy.core.dimensions.worldproviders;
 
-import micdoodle8.mods.galacticraft.api.galaxies.CelestialBody;
+import micdoodle8.mods.galacticraft.api.prefab.world.gen.WorldProviderSpace;
 import micdoodle8.mods.galacticraft.api.vector.Vector3;
+import micdoodle8.mods.galacticraft.api.world.IExitHeight;
+import micdoodle8.mods.galacticraft.api.world.ISolarLevel;
 import micdoodle8.mods.galacticraft.core.event.EventHandlerGC;
 import micdoodle8.mods.galacticraft.core.util.ConfigManagerCore;
-import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.IChunkGenerator;
 import net.minecraft.world.storage.WorldInfo;
 import net.minecraftforge.client.IRenderHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import zollerngalaxy.celestial.ZGMoonBody;
 
-public abstract class WorldProviderMoonZG extends WorldProviderZG {
+public abstract class WorldProviderZG extends WorldProviderSpace implements ISolarLevel, IExitHeight {
 	
-	private static WorldProviderMoonZG instance;
+	private static WorldProviderZG instance;
 	
-	public WorldProviderMoonZG() {
+	public WorldProviderZG() {
 		instance = this;
 	}
 	
-	public static WorldProviderMoonZG instance() {
+	public static WorldProviderZG instance() {
 		return instance;
 	}
 	
-	@Override
-	public String getSaveFolder() {
-		return "moons/" + this.getMoon().getName();
-	}
-	
-	@Override
 	public World getWorldObj() {
 		return this.world;
 	}
@@ -45,12 +39,6 @@ public abstract class WorldProviderMoonZG extends WorldProviderZG {
 	@Override
 	public boolean shouldForceRespawn() {
 		return !ConfigManagerCore.forceOverworldRespawn;
-	}
-	
-	public ZGMoonBody getMoon() {
-		CelestialBody moon = this.getCelestialBody();
-		ZGMoonBody moonNova = (ZGMoonBody) moon;
-		return moonNova;
 	}
 	
 	@Override
@@ -61,11 +49,6 @@ public abstract class WorldProviderMoonZG extends WorldProviderZG {
 	@Override
 	public Vector3 getFogColor() {
 		return new Vector3(0, 0, 0);
-	}
-	
-	@Override
-	public boolean canBlockFreeze(BlockPos pos, boolean byWater) {
-		return this.getMoon().getIsColdBody();
 	}
 	
 	@Override
@@ -82,11 +65,6 @@ public abstract class WorldProviderMoonZG extends WorldProviderZG {
 			worldObj.rainingStrength = 0.0F;
 			worldObj.thunderingStrength = 0.0F;
 		}
-	}
-	
-	@Override
-	public float getWindLevel() {
-		return this.getMoon().getWindLevel();
 	}
 	
 	@Override
@@ -110,7 +88,7 @@ public abstract class WorldProviderMoonZG extends WorldProviderZG {
 	
 	@Override
 	public double getMeteorFrequency() {
-		return this.getMoon().getAtmosphericDensity();
+		return 0.0D;
 	}
 	
 	@Override
@@ -125,12 +103,12 @@ public abstract class WorldProviderMoonZG extends WorldProviderZG {
 	
 	@Override
 	public boolean hasBreathableAtmosphere() {
-		return this.getMoon().getIsBreathable();
+		return false;
 	}
 	
 	@Override
 	public boolean canSpaceshipTierPass(int tier) {
-		return tier >= this.getMoon().getTierRequirement();
+		return (tier >= this.getCelestialBody().getTierRequirement());
 	}
 	
 	@Override
@@ -165,40 +143,11 @@ public abstract class WorldProviderMoonZG extends WorldProviderZG {
 		return true;
 	}
 	
-	@Override
 	protected abstract void renderSky();
 	
-	@Override
 	protected abstract void renderCloud();
 	
-	@Override
 	protected abstract void renderWeather();
-	
-	public float getMoonTemp() {
-		ZGMoonBody moon = this.getMoon();
-		float planetTemp = moon.getBodyTemperature();
-		
-		if (this.isDaytime()) {
-			planetTemp /= 2.2F;
-		} else {
-			planetTemp = moon.getBodyTemperature();
-		}
-		
-		return planetTemp;
-	}
-	
-	public float getMoonTemp(World world, BlockPos pos) {
-		ZGMoonBody moon = this.getMoon();
-		float planetTemp = moon.getBodyTemperature(world, pos);
-		
-		if (this.isDaytime()) {
-			planetTemp /= 2.2F;
-		} else {
-			planetTemp = moon.getBodyTemperature(world, pos);
-		}
-		
-		return planetTemp;
-	}
 	
 	@Override
 	public abstract Class<? extends IChunkGenerator> getChunkProviderClass();

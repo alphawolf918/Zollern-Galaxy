@@ -16,14 +16,14 @@ import zollerngalaxy.creativetabs.ZGTabs;
 import zollerngalaxy.lib.helpers.json.JSONFactory;
 import zollerngalaxy.proxy.IProxy;
 
-public class ZGItemBase extends Item implements ISingleZGItemRender {
+public class ZGItemBase extends Item implements ISingleZGItemRender, IJSONtem {
 	
 	protected IProxy proxy = ZollernGalaxyCore.proxy;
 	
 	public ZGItemBase(String name) {
 		super();
 		this.setItemName(this, name);
-		if (ZollernGalaxyCore.instance().isInDevMode()) {
+		if (ZollernGalaxyCore.instance().isInDevMode() && !this.shouldJSONIgnore()) {
 			JSONFactory.registerItem(name);
 		}
 	}

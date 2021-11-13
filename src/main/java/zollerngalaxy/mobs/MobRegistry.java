@@ -41,6 +41,7 @@ import zollerngalaxy.mobs.entities.EntitySquidlus;
 import zollerngalaxy.mobs.entities.EntityWasp;
 import zollerngalaxy.mobs.entities.boss.EntityShadowAlien;
 import zollerngalaxy.mobs.entities.villagers.EntityAbyssalVillager;
+import zollerngalaxy.mobs.entities.villagers.EntityAstrosVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityEdenVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityHarranVillager;
 import zollerngalaxy.mobs.entities.zombiemutations.EntityGhoul;
@@ -139,6 +140,9 @@ public class MobRegistry {
 		
 		// Eden Villager
 		registerEntity("edenvillager", EntityEdenVillager.class, entityId++, 0x0099ff, 0x008b00);
+		
+		// Astros Villager
+		registerEntity("astrosvillager", EntityAstrosVillager.class, entityId++, 0xeeeeee, 0xeeffee);
 		
 		// Wasp
 		registerEntity("wasp", EntityWasp.class, entityId++, 0x000000, 0xffff00);

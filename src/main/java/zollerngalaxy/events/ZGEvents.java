@@ -76,6 +76,7 @@ import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.ZGLootTables;
 import zollerngalaxy.core.ZollernGalaxyCore;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderAltum;
+import zollerngalaxy.core.dimensions.worldproviders.WorldProviderAstros;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderCaligro;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderEden;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderMetztli;
@@ -99,6 +100,7 @@ import zollerngalaxy.mobs.entities.EntityShark;
 import zollerngalaxy.mobs.entities.base.EntityMutantZombie;
 import zollerngalaxy.mobs.entities.interfaces.IShadeEntity;
 import zollerngalaxy.mobs.entities.villagers.EntityAbyssalVillager;
+import zollerngalaxy.mobs.entities.villagers.EntityAstrosVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityEdenVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityHarranVillager;
 import zollerngalaxy.mobs.entities.zombiemutations.EntityGhoul;
@@ -598,6 +600,18 @@ public class ZGEvents {
 					EntityEdenVillager edenVillager = new EntityEdenVillager(world);
 					edenVillager.setPosition(worldPos.getX(), worldPos.getY(), worldPos.getZ());
 					world.spawnEntity(edenVillager);
+				}
+			}
+		} else if (provider instanceof WorldProviderAstros) {
+			if (!world.isRemote) {
+				Entity entity = event.getEntity();
+				if (entity instanceof EntityAlienVillager) {
+					EntityAlienVillager alienVillager = (EntityAlienVillager) entity;
+					BlockPos worldPos = alienVillager.getPos();
+					alienVillager.setDead();
+					EntityAstrosVillager astrosVillager = new EntityAstrosVillager(world);
+					astrosVillager.setPosition(worldPos.getX(), worldPos.getY(), worldPos.getZ());
+					world.spawnEntity(astrosVillager);
 				}
 			}
 		}

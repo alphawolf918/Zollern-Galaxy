@@ -559,6 +559,20 @@ public class ZGBlocks {
 			EnumHarvestLevelZG.COBALT.getHarvestLevel());
 	public static final Block astrosGoldOre = new ZGBlockOre("astrosgoldore", 3.4F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
 			EnumHarvestLevelZG.COBALT.getHarvestLevel());
+	public static final Block astrosDiamondOre = new ZGOreGem("astrosdiamondore", 6.2F, Items.DIAMOND).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
+			EnumHarvestLevelZG.COBALT.getHarvestLevel());
+	public static final Block astrosEmeraldOre = new ZGOreGem("astrosemeraldore", 6.2F, Items.EMERALD).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
+			EnumHarvestLevelZG.COBALT.getHarvestLevel());
+	public static final Block astrosRedstoneOre = new ZGOreGem("astrosredstoneore", 4.1F, Items.REDSTONE).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
+			EnumHarvestLevelZG.COBALT.getHarvestLevel());
+	public static final Block astrosCoalOre = new ZGOreGem("astroscoalore", 6.2F, Items.COAL).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
+			EnumHarvestLevelZG.COBALT.getHarvestLevel());
+	public static final Block astrosSuperChargedCoalOre = new ZGOreGem("astrossuperchargedcoalore", 8.2F, Items.COAL)
+			.setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.COBALT.getHarvestLevel());
+	public static final Block astrosTinOre = new ZGBlockOre("astrostinore", 1.5F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
+			EnumHarvestLevelZG.COBALT.getHarvestLevel());
+	public static final Block astrosZollerniumOre = new ZGBlockOre("astroszollerniumore", 3.5F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
+			EnumHarvestLevelZG.COBALT.getHarvestLevel());
 	
 	// Metals
 	public static final Block blockViri = new ZGBlockMetal("viriblock");
@@ -704,7 +718,8 @@ public class ZGBlocks {
 				exoWoodPlanks, exoWoodSapling, vortexSurfaceRock, vortexCobblestone, vortexStone, vortexVoltRock, vortexIronOre, vortexGoldOre, vortexDiamondOre,
 				vortexRedstoneOre, vortexCopperOre, vortexSuperChargedCoalOre, vortexFueltoniumOre, vortexEveniumOre, blockBlueprintStation, blockHealingStation,
 				blockCrystalsPlutonium, blockCrystalsStorm, blockIngotStackIron, ironSirenON, goldSirenON, diamondSirenON, emeraldSirenON, ironSiren, goldSiren,
-				diamondSiren, emeraldSiren, astrosRock, astrosDirt, astrosGravel, astrosCobblestone, astrosStone, astrosIronOre, astrosGoldOre);
+				diamondSiren, emeraldSiren, astrosRock, astrosDirt, astrosGravel, astrosCobblestone, astrosStone, astrosIronOre, astrosGoldOre, astrosDiamondOre,
+				astrosEmeraldOre, astrosCoalOre, astrosSuperChargedCoalOre, astrosTinOre, astrosZollerniumOre);
 		ZGHelper.Log("Loaded a total of " + totalBlocks + " new blocks.");
 	}
 	

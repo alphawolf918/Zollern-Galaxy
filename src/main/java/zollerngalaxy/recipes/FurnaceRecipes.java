@@ -146,6 +146,8 @@ public class FurnaceRecipes {
 		FurnaceRecipes.SmeltBlock(ZGBlocks.astrosCobblestone, ZGBlocks.astrosStone, 5.6F);
 		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.astrosIronOre, Items.IRON_INGOT, 5.8F);
 		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.astrosGoldOre, Items.GOLD_INGOT, 5.9F);
+		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.astrosTinOre, new ItemStack(GCItems.basicItem, 1, 4), 2.4F);
+		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.astrosZollerniumOre, ZGItems.ingotZollernium, 7.2F);
 		
 		// Dust -> Ingots/Gems
 		FurnaceRecipes.SmeltItem(ZGItems.dustDiamond, Items.DIAMOND, 2.6F);
@@ -210,5 +212,4 @@ public class FurnaceRecipes {
 		GameRegistry.addSmelting(blockIn, stackOut, xp);
 		totalSmeltRecipes++;
 	}
-	
 }

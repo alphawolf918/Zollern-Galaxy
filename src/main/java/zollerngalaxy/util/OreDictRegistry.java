@@ -85,7 +85,7 @@ public class OreDictRegistry {
 		
 		// Tin
 		registerOre("oreTin", ZGBlocks.edenTinOre, ZGBlocks.purgTinOre, ZGBlocks.zolTinOre, ZGBlocks.xathTinOre, ZGBlocks.oasisTinOre, ZGBlocks.atheonTinOre,
-				ZGBlocks.caligroTinOre);
+				ZGBlocks.caligroTinOre, ZGBlocks.astrosTinOre);
 		
 		// Lead
 		registerOre("oreLead", ZGBlocks.edenLeadOre, ZGBlocks.purgLeadOre, ZGBlocks.oasisLeadOre, ZGBlocks.caligroLeadOre);
@@ -153,7 +153,8 @@ public class OreDictRegistry {
 				ZGBlocks.corruptCobble, ZGBlocks.exodusCobblestone, ZGBlocks.vortexCobblestone, ZGBlocks.astrosCobblestone);
 		
 		// Coal
-		registerOre("oreCoal", ZGBlocks.edenCoalOre, ZGBlocks.kriffCoalOre, ZGBlocks.zolCoalOre, ZGBlocks.oasisCoalOre, ZGBlocks.xantheonCoalOre, ZGBlocks.altumCoalOre);
+		registerOre("oreCoal", ZGBlocks.edenCoalOre, ZGBlocks.kriffCoalOre, ZGBlocks.zolCoalOre, ZGBlocks.oasisCoalOre, ZGBlocks.xantheonCoalOre, ZGBlocks.altumCoalOre,
+				ZGBlocks.astrosCoalOre);
 		
 		// Iron
 		registerOre("oreIron", ZGBlocks.edenIronOre, ZGBlocks.kriffIronOre, ZGBlocks.purgIronOre, ZGBlocks.zolIronOre, ZGBlocks.xathIronOre, ZGBlocks.oasisIronOre,
@@ -162,23 +163,25 @@ public class OreDictRegistry {
 		
 		// Gold
 		registerOre("oreGold", ZGBlocks.edenGoldOre, ZGBlocks.kriffGoldOre, ZGBlocks.purgGoldOre, ZGBlocks.zolGoldOre, ZGBlocks.xathGoldOre, ZGBlocks.oasisGoldOre,
-				ZGBlocks.perdGoldOre, ZGBlocks.altumGoldOre, ZGBlocks.caligroGoldOre, ZGBlocks.exodusGoldOre, ZGBlocks.vortexGoldOre);
+				ZGBlocks.perdGoldOre, ZGBlocks.altumGoldOre, ZGBlocks.caligroGoldOre, ZGBlocks.exodusGoldOre, ZGBlocks.vortexGoldOre, ZGBlocks.astrosGoldOre);
 		
 		// Nickel
 		registerOre("oreNickel", ZGBlocks.edenNickelOre, ZGBlocks.xantheonNickelOre, ZGBlocks.caligroNickelOre);
 		
 		// Diamond
 		registerOre("oreDiamond", ZGBlocks.edenDiamondOre, ZGBlocks.purgDiamondOre, ZGBlocks.xathDiamondOre, ZGBlocks.oasisDiamondOre, ZGBlocks.atheonDiamondOre,
-				ZGBlocks.perdDiamondOre, ZGBlocks.altumDiamondOre, ZGBlocks.caligroDiamondOre, ZGBlocks.exodusDiamondOre, ZGBlocks.vortexDiamondOre);
+				ZGBlocks.perdDiamondOre, ZGBlocks.altumDiamondOre, ZGBlocks.caligroDiamondOre, ZGBlocks.exodusDiamondOre, ZGBlocks.vortexDiamondOre,
+				ZGBlocks.astrosDiamondOre);
 		registerOre("dustDiamond", ZGItems.dustDiamond);
 		
 		// Emerald
-		registerOre("oreEmerald", ZGBlocks.edenEmeraldOre, ZGBlocks.purgEmeraldOre, ZGBlocks.xathEmeraldOre, ZGBlocks.caligroEmeraldOre);
+		registerOre("oreEmerald", ZGBlocks.edenEmeraldOre, ZGBlocks.purgEmeraldOre, ZGBlocks.xathEmeraldOre, ZGBlocks.caligroEmeraldOre, ZGBlocks.astrosEmeraldOre);
 		registerOre("dustEmerald", ZGItems.dustEmerald);
 		
 		// Redstone
 		registerOre("oreRedstone", ZGBlocks.edenRedstoneOre, ZGBlocks.kriffRedstoneOre, ZGBlocks.purgRedstoneOre, ZGBlocks.xathRedstoneOre, ZGBlocks.oasisRedstoneOre,
-				ZGBlocks.atheonRedstoneOre, ZGBlocks.altumRedstoneOre, ZGBlocks.caligroRedstoneOre, ZGBlocks.exodusRedstoneOre, ZGBlocks.vortexRedstoneOre);
+				ZGBlocks.atheonRedstoneOre, ZGBlocks.altumRedstoneOre, ZGBlocks.caligroRedstoneOre, ZGBlocks.exodusRedstoneOre, ZGBlocks.vortexRedstoneOre,
+				ZGBlocks.astrosRedstoneOre);
 		
 		// Steel
 		registerOre("oreSteel", ZGBlocks.edenSteelOre);
@@ -306,7 +309,7 @@ public class OreDictRegistry {
 		registerOre("swordAzurite", ZGItems.swordAzurite);
 		
 		// Zollernium
-		registerOre("oreZollernium", ZGBlocks.atheonZollerniumOre, ZGBlocks.perdZollerniumOre, ZGBlocks.altumZollerniumOre);
+		registerOre("oreZollernium", ZGBlocks.atheonZollerniumOre, ZGBlocks.perdZollerniumOre, ZGBlocks.altumZollerniumOre, ZGBlocks.astrosZollerniumOre);
 		registerOre("dustZollernium", ZGItems.dustZollernium);
 		registerOre("ingotZollernium", ZGItems.ingotZollernium);
 		registerOre("blockZollernium", ZGBlocks.blockZollernium);
@@ -335,7 +338,8 @@ public class OreDictRegistry {
 		registerOre("blockPromethean", ZGBlocks.blockPromethean);
 		
 		// Super Charged Coal
-		registerOre("oreSuperChargedCoal", ZGBlocks.oasisSuperChargedCoalOre, ZGBlocks.caligroSuperChargedCoalOre, ZGBlocks.vortexSuperChargedCoalOre);
+		registerOre("oreSuperChargedCoal", ZGBlocks.oasisSuperChargedCoalOre, ZGBlocks.caligroSuperChargedCoalOre, ZGBlocks.vortexSuperChargedCoalOre,
+				ZGBlocks.astrosSuperChargedCoalOre);
 		registerOre("gemSuperChargedCoal", ZGItems.superChargedCoal);
 		registerOre("blockSuperChargedCoal", ZGBlocks.blockSuperChargedCoal);
 		

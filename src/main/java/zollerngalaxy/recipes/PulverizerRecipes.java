@@ -43,6 +43,7 @@ public class PulverizerRecipes {
 		PulverizerRecipes.addRecipe(ZGBlocks.oasisTinOre, TFItems.itemMaterial.dustTin, 65);
 		PulverizerRecipes.addRecipe(ZGBlocks.atheonTinOre, TFItems.itemMaterial.dustTin, 65);
 		PulverizerRecipes.addRecipe(ZGBlocks.caligroTinOre, TFItems.itemMaterial.dustTin, 65);
+		PulverizerRecipes.addRecipe(ZGBlocks.astrosTinOre, TFItems.itemMaterial.dustTin, 65);
 		
 		// Silver
 		PulverizerRecipes.addRecipe(ZGBlocks.edenSilverOre, TFItems.itemMaterial.dustSilver, 66);
@@ -130,6 +131,7 @@ public class PulverizerRecipes {
 		PulverizerRecipes.addRecipe(ZGBlocks.atheonZollerniumOre, ZGItems.dustZollernium);
 		PulverizerRecipes.addRecipe(ZGBlocks.perdZollerniumOre, ZGItems.dustZollernium);
 		PulverizerRecipes.addRecipe(ZGBlocks.altumZollerniumOre, ZGItems.dustZollernium);
+		PulverizerRecipes.addRecipe(ZGBlocks.astrosZollerniumOre, ZGItems.dustZollernium);
 		
 		// Zinc
 		PulverizerRecipes.addRecipe(ZGBlocks.atheonZincOre, ZGItems.dustZinc);
@@ -158,7 +160,9 @@ public class PulverizerRecipes {
 	
 	public static void addRecipe(int energy, Block oreIn, ItemStack itemStackOut, int metadata) {
 		int numResult = (ConfigManagerZG.enableExtraPulverizerOutput) ? 4 : 2;
-		ThermalExpansionHelper.addPulverizerRecipe(energy, new ItemStack(oreIn), new ItemStack(ItemHelper.getItemFromStack(itemStackOut), numResult, metadata));
+		ItemStack stackIn = new ItemStack(oreIn);
+		ItemStack stackOut = new ItemStack(ItemHelper.getItemFromStack(itemStackOut), numResult, metadata);
+		ThermalExpansionHelper.addPulverizerRecipe(energy, stackIn, stackOut);
 		totalRecipes++;
 	}
 	

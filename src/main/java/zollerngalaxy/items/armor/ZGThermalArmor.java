@@ -146,4 +146,9 @@ public class ZGThermalArmor extends ZGItemBase implements ISingleZGItemRender, I
 		}
 		return new ActionResult<>(EnumActionResult.SUCCESS, itemStack);
 	}
+	
+	@Override
+	public boolean shouldJSONIgnore() {
+		return true;
+	}
 }
