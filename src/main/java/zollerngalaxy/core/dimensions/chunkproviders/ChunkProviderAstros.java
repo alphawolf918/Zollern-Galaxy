@@ -66,7 +66,7 @@ public class ChunkProviderAstros extends ChunkProviderBase {
 	private final double[] terrainCalcs;
 	private final float[] parabolicField;
 	private double[] stoneNoise = new double[256];
-	private MapGenCavesZG caveGenerator = new MapGenCavesZG(STONE.getBlock());
+	private MapGenCavesZG caveGenerator = new MapGenCavesZG(STONE.getBlock(), ICE.getBlock());
 	private final MapGenRavinesZG ravineGenerator = new MapGenRavinesZG(STONE.getBlock());
 	private final MapGenVillageMoon villageGenerator = new MapGenVillageMoon();
 	private MapGenMineshaft mineshaftGenerator = new MapGenMineshaft();
@@ -76,9 +76,12 @@ public class ChunkProviderAstros extends ChunkProviderBase {
 	private double[] octaves3;
 	private double[] octaves4;
 	
-	private static final int CRATER_PROB = 100;
+	private static final int CRATER_PROB = 80;
+	
+	public static ChunkProviderAstros INSTANCE;
 	
 	public ChunkProviderAstros(World worldIn, long seed, boolean mapFeaturesEnabled) {
+		INSTANCE = this;
 		this.world = worldIn;
 		this.worldType = worldIn.getWorldInfo().getTerrainType();
 		this.rand = new Random(seed);
@@ -95,7 +98,7 @@ public class ChunkProviderAstros extends ChunkProviderBase {
 		
 		for (int i = -2; i <= 2; ++i) {
 			for (int j = -2; j <= 2; ++j) {
-				float f = 10.0F / MathHelper.sqrt(i * i + j * j + 0.2F);
+				float f = 10.0F / MathHelper.sqrt(i * i + j * j + 0.4F); // 0.2F
 				this.parabolicField[i + 2 + (j + 2) * 5] = f;
 			}
 		}
@@ -160,7 +163,7 @@ public class ChunkProviderAstros extends ChunkProviderBase {
 								
 								if (biome instanceof BiomeSpace) {
 									BiomeSpace spaceBiome = (BiomeSpace) biome;
-									heightMod = (spaceBiome.getBiomeHeight() / 1.5);
+									heightMod = (spaceBiome.getBiomeHeight() / 1.2);
 								}
 								
 								if (heightMod > 0.0D) {
@@ -357,8 +360,8 @@ public class ChunkProviderAstros extends ChunkProviderBase {
 					yDev = 5 - yDev;
 					int helper = 0;
 					for (int y = 127; y > 0; y--) {
-						if (Blocks.AIR != primer.getBlockState(x, y, z).getBlock() && helper <= yDev) {
-							primer.setBlockState(x, y, z, Blocks.AIR.getDefaultState());
+						if (AIR.getBlock() != primer.getBlockState(x, y, z).getBlock() && helper <= yDev) {
+							primer.setBlockState(x, y, z, AIR);
 							helper++;
 						}
 						if (helper > yDev) {

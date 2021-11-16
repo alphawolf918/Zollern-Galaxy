@@ -572,17 +572,19 @@ public class ZGPlanets {
 		moonAstros.setParentPlanet(ZGPlanets.planetEden);
 		moonAstros.setBodyClass(EnumBodyClass.L);
 		moonAstros.setRelativeOrbitTime(1 / 0.01F);
+		moonAstros.setPhaseShift(1.0F);
+		moonAstros.setRelativeSize(1.0F);
 		moonAstros.setDistanceFromCenter(13F);
 		moonAstros.setTierRequired(ZGPlanets.planetEden.getTierRequirement());
 		if (ConfigManagerZG.planetUnreachableAll || ConfigManagerZG.planetUnreachableEden) {
 			moonAstros.setDisableRockets();
 		}
-		moonAstros.setBodyTemperature(36.5F);
+		moonAstros.setBodyTemperature(36.54F);
 		moonAstros.setDensity(10.0F);
 		moonAstros.setHasRain(false);
 		moonAstros.setBodyToxicity(0.0F);
 		moonAstros.setBodyRadiation(0.0F);
-		moonAstros.setWindLevel(16.5F);
+		moonAstros.setWindLevel(16.51F);
 		moonAstros.setBodyGasses(EnumAtmosphericGas.NITROGEN, EnumAtmosphericGas.ARGON, EnumAtmosphericGas.HELIUM);
 		moonAstros.setBodyIcon("astros");
 		moonAstros.setAtmosphere();

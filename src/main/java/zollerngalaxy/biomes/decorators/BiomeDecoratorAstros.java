@@ -16,8 +16,15 @@ import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.blocks.ZGBlocks;
+import zollerngalaxy.config.ConfigManagerZG;
+import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderAstros;
 import zollerngalaxy.core.enums.EnumOreGenZG;
+import zollerngalaxy.lib.helpers.ZGDecorateHelper;
+import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.worldgen.WorldGenMinableZG;
+import zollerngalaxy.worldgen.WorldGenOutpost;
+import zollerngalaxy.worldgen.WorldGenTunnel;
+import zollerngalaxy.worldgen.WorldGenZGCrystals;
 
 public class BiomeDecoratorAstros extends BiomeDecoratorZG {
 	
@@ -36,6 +43,17 @@ public class BiomeDecoratorAstros extends BiomeDecoratorZG {
 	
 	private static final Block STONE = ZGBlocks.astrosStone;
 	private static final Block ROCK = ZGBlocks.astrosRock;
+	private static final Block OUTPOST = ZGBlocks.blockOutpost;
+	
+	public int edenCrystalsPerChunk = 2;
+	public int tunnelsPerChunk = 4;
+	
+	public boolean generateEdenCrystals = true;
+	public boolean generateCraters = true;
+	public boolean generateTunnels = true;
+	
+	private WorldGenerator edenCrystalsGen = new WorldGenZGCrystals(ZGBlocks.blockCrystalsEden.getDefaultState());
+	private WorldGenerator tunnelGen = new WorldGenTunnel();
 	
 	public BiomeDecoratorAstros() {
 		this.dirtGen = new WorldGenMinableZG(ZGBlocks.astrosDirt, ROCK, EnumOreGenZG.DIRT);
@@ -59,14 +77,6 @@ public class BiomeDecoratorAstros extends BiomeDecoratorZG {
 		
 		ChunkPrimer chunkPrimer = new ChunkPrimer();
 		
-		int genY = 248;
-		int y = genY;
-		
-		if (biome instanceof BiomeSpace) {
-			BiomeSpace spaceBiome = (BiomeSpace) biome;
-			genY = spaceBiome.getBiomeHeight();
-		}
-		
 		this.generateOre(this.ironGen, EnumOreGenZG.IRON, world, rand);
 		this.generateOre(this.goldGen, EnumOreGenZG.GOLD, world, rand);
 		this.generateOre(this.diamondGen, EnumOreGenZG.DIAMOND, world, rand);
@@ -79,5 +89,55 @@ public class BiomeDecoratorAstros extends BiomeDecoratorZG {
 		this.generateOre(this.dirtGen, EnumOreGenZG.DIRT, world, rand);
 		this.generateOre(this.gravelGen, EnumOreGenZG.GRAVEL, world, rand);
 		this.generateOre(this.packedIceGen, EnumOreGenZG.PACKED_ICE, world, rand);
+		
+		int genY = 248;
+		int y = genY;
+		
+		if (biome instanceof BiomeSpace) {
+			BiomeSpace spaceBiome = (BiomeSpace) biome;
+			genY = spaceBiome.getBiomeHeight();
+		}
+		
+		// Eden Crystals
+		if (this.generateEdenCrystals && this.edenCrystalsPerChunk > 0) {
+			if (ZGHelper.rngInt(1, 100) <= 65) {
+				y = rand.nextInt(rand.nextInt(genY) + 8);
+				for (int i = 0; i < this.edenCrystalsPerChunk; ++i) {
+					if (y <= 60) {
+						ZGDecorateHelper.generateCrystals(this.edenCrystalsGen, world, rand, this.chunkPos.add(x, y, z));
+					}
+				}
+			}
+		}
+		
+		// Tunnels
+		if (this.generateTunnels && this.tunnelsPerChunk > 0) {
+			if (ZGHelper.rngInt(1, 100) <= 35) {
+				y = rand.nextInt(rand.nextInt(genY) + 8);
+				for (int i = 0; i < this.tunnelsPerChunk; ++i) {
+					if (y <= 60) {
+						tunnelGen.generate(world, rand, this.chunkPos.add(x, y, z));
+					}
+				}
+			}
+		}
+		
+		// Craters
+		if (this.generateCraters) {
+			ChunkProviderAstros.INSTANCE.createCraters(x, z, chunkPrimer);
+		}
+		
+		// Outposts
+		if (this.generateOutposts && this.outpostsPerChunk > 0) {
+			y = rand.nextInt(rand.nextInt(genY) + 8);
+			if (y >= 62) {
+				WorldGenerator outpostGen = new WorldGenOutpost(OUTPOST.getDefaultState(), OUTPOST.getDefaultState());
+				for (int i = 0; i < this.outpostsPerChunk; i++) {
+					if (rand.nextInt(100) <= ConfigManagerZG.outpostGenChance) {
+						outpostGen.generate(world, rand, this.chunkPos.add(x, y, z));
+					}
+				}
+			}
+		}
 	}
 }

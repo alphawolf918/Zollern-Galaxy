@@ -66,6 +66,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.blocks.ZGBlocks;
+import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.items.ZGItems;
 import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.mobs.entities.ai.EntityAILookAtTradePlayerZG;
@@ -268,7 +269,9 @@ public class EntityZGVillagerBase extends EntityAgeable implements IMerchant, IN
 	
 	@Override
 	protected SoundEvent getAmbientSound() {
-		return this.isTrading() ? SoundEvents.ENTITY_VILLAGER_TRADING : SoundEvents.ENTITY_VILLAGER_AMBIENT;
+		SoundEvent villagerSound = this.isTrading() ? SoundEvents.ENTITY_VILLAGER_TRADING : SoundEvents.ENTITY_VILLAGER_AMBIENT;
+		boolean disableVillagerNoise = ConfigManagerZG.enableQuietVillagers;
+		return (disableVillagerNoise) ? null : villagerSound;
 	}
 	
 	@Override

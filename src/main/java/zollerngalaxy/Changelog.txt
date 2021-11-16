@@ -8,6 +8,9 @@ Zollern Galaxy v2.0.32
 * Added the Andromeda galaxy.
 * Added the Astros Villager.
     - Regular Alien Villagers will convert into Astros Villagers when on the moon.
+* Added a config option to make this mod's custom Alien Villagers stop going "HNGH!!"
+    - Does not affect the GC Alien Villagers.
+* Added Eden Crystal gen to Astros.
 * 
 * Sugar can now be crafted into Sugar Blocks and vice versa.
 * Adjusted relative orbit times and distance from center.
@@ -15,6 +18,8 @@ Zollern Galaxy v2.0.32
     - So far, it seems that the only way to access these is through MJRLegend's Extra Planets mod.
         - This will be tested further in the future.
 * Updated Galactic HUD to interpret moons as well as planets.
-* 
+* Mining tunnels will now generate on Astros.
 * Fixed Purgot Dirt potentially showing up on Zollus.
+* 
+* Fixed (mostly) ravines not generating correctly.
 * 

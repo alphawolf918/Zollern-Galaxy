@@ -29,9 +29,8 @@ public class MapGenRavinesZG extends MapGenBase {
 		this.stoneBlock = stoneBlockIn.getDefaultState();
 	}
 	
-	protected void addTunnel(long p_180707_1_, int p_180707_3_, int p_180707_4_, ChunkPrimer p_180707_5_, double p_180707_6_,
-			double p_180707_8_, double p_180707_10_, float p_180707_12_, float p_180707_13_, float p_180707_14_, int p_180707_15_,
-			int p_180707_16_, double p_180707_17_) {
+	protected void addTunnel(long p_180707_1_, int p_180707_3_, int p_180707_4_, ChunkPrimer p_180707_5_, double p_180707_6_, double p_180707_8_, double p_180707_10_,
+			float p_180707_12_, float p_180707_13_, float p_180707_14_, int p_180707_15_, int p_180707_16_, double p_180707_17_) {
 		Random random = new Random(p_180707_1_);
 		double d0 = p_180707_3_ * 16 + 8;
 		double d1 = p_180707_4_ * 16 + 8;
@@ -170,7 +169,7 @@ public class MapGenRavinesZG extends MapGenBase {
 	
 	@Override
 	protected void recursiveGenerate(World worldIn, int chunkX, int chunkZ, int originalX, int originalZ, ChunkPrimer chunkPrimerIn) {
-		if (this.rand.nextInt(20) == 0) {
+		if (this.rand.nextInt(15) == 0) {
 			double d0 = chunkX * 16 + this.rand.nextInt(16);
 			double d1 = this.rand.nextInt(this.rand.nextInt(40) + 8) + 20;
 			double d2 = chunkZ * 16 + this.rand.nextInt(16);
@@ -210,7 +209,8 @@ public class MapGenRavinesZG extends MapGenBase {
 			
 			if (foundTop && data.getBlockState(x, y - 1, z).getBlock() == filler.getBlock()) {
 				Block block = data.getBlockState(x, y - 1, z).getBlock();
-				data.setBlockState(x, y - 1, z, top.getBlock().getDefaultState());
+				// data.setBlockState(x, y - 1, z, top.getBlock().getDefaultState());
+				data.setBlockState(x, y - 1, z, AIR);
 				world.scheduleBlockUpdate(new BlockPos(x, y - 1, z), block, block.tickRate(world), 1);
 			}
 		}

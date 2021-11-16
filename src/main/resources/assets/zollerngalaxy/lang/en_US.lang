@@ -424,6 +424,7 @@ tile.compressedzucriteblock.name=Block of Compressed Zucrite
 
 tile.plutoniumcrystals.name=Plutonium Crystals
 tile.stormcrystals.name=Storm Crystals
+tile.edencrystals.name=Eden Crystals
 
 ## Ingot Stacks
 tile.ingotstack_iron.name=Iron Ingot Stack

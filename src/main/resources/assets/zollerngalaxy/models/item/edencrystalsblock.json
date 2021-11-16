@@ -1,0 +1,6 @@
+{
+  "parent": "zollerngalaxy:block/edencrystalsblock",
+  "textures": {
+        "layer0": "zollerngalaxy:edenblock"
+    }
+}

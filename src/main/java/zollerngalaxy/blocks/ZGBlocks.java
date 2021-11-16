@@ -659,6 +659,7 @@ public class ZGBlocks {
 	// Crystal Blocks
 	public static final Block blockCrystalsPlutonium = new ZGCrystalBlock("plutoniumcrystals", ZGItems.plutoniumCrystal);
 	public static final Block blockCrystalsStorm = new BlockStormCrystals();
+	public static final Block blockCrystalsEden = new ZGCrystalBlock("edencrystals", ZGItems.edenCrystal);
 	
 	// Ingot Stacks
 	public static final Block blockIngotStackIron = new BlockIngotStack("iron", Items.IRON_INGOT);
@@ -717,9 +718,9 @@ public class ZGBlocks {
 				exodusGravel, exodusRock, exodusSand, exodusIronOre, exodusGoldOre, exodusDiamondOre, exodusRedstoneOre, exodusCopperOre, exoWoodLogs, exoWoodLeaves,
 				exoWoodPlanks, exoWoodSapling, vortexSurfaceRock, vortexCobblestone, vortexStone, vortexVoltRock, vortexIronOre, vortexGoldOre, vortexDiamondOre,
 				vortexRedstoneOre, vortexCopperOre, vortexSuperChargedCoalOre, vortexFueltoniumOre, vortexEveniumOre, blockBlueprintStation, blockHealingStation,
-				blockCrystalsPlutonium, blockCrystalsStorm, blockIngotStackIron, ironSirenON, goldSirenON, diamondSirenON, emeraldSirenON, ironSiren, goldSiren,
-				diamondSiren, emeraldSiren, astrosRock, astrosDirt, astrosGravel, astrosCobblestone, astrosStone, astrosIronOre, astrosGoldOre, astrosDiamondOre,
-				astrosEmeraldOre, astrosCoalOre, astrosSuperChargedCoalOre, astrosTinOre, astrosZollerniumOre);
+				blockCrystalsPlutonium, blockCrystalsStorm, blockCrystalsEden, blockIngotStackIron, ironSirenON, goldSirenON, diamondSirenON, emeraldSirenON, ironSiren,
+				goldSiren, diamondSiren, emeraldSiren, astrosRock, astrosDirt, astrosGravel, astrosCobblestone, astrosStone, astrosIronOre, astrosGoldOre,
+				astrosDiamondOre, astrosEmeraldOre, astrosCoalOre, astrosSuperChargedCoalOre, astrosTinOre, astrosZollerniumOre);
 		ZGHelper.Log("Loaded a total of " + totalBlocks + " new blocks.");
 	}
 	

@@ -132,6 +132,7 @@ public class ConfigManagerZG {
 	public static boolean enableChestValidation;
 	public static boolean spawnGalaxyKnight;
 	public static boolean enableExtremeMode;
+	public static boolean enableQuietVillagers;
 	
 	// Compat
 	public static boolean shouldOasisUseLiquidRedstone;
@@ -427,6 +428,12 @@ public class ConfigManagerZG {
 		// Should Extreme Mode be enabled? Significantly increases the mod's difficulty.
 		enableExtremeMode = configuration.get(CATEGORY_MISC, "Enable Extreme Mode", false,
 				"Toggle Extreme mode. " + "WARNING: This will SIGNIFICANTLY increase the mod's difficulty. (default: false)").getBoolean();
+		
+		//
+		enableQuietVillagers = configuration
+				.get(CATEGORY_MISC, "Enable Quiet Alien Villagers", false,
+						"Enable to shut up at least the Zollern Galaxy Alien Villagers. NOTE: Does not affect Galacticraft's Alien Villagers. (default: false)")
+				.getBoolean();
 		
 		// Compatibility (Whether or not to use Thermal Foundation's Detabilized
 		// Redstone
