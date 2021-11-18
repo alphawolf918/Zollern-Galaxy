@@ -143,8 +143,8 @@ public class ZGBlockBase extends Block implements ISingleZGBlockRender, IJSONBlo
 	@Override
 	public void onEntityWalk(World worldIn, BlockPos pos, Entity entityIn) {
 		// Heat Damage
-		if (!entityIn.isImmuneToFire() && entityIn instanceof EntityLivingBase
-				&& !EnchantmentHelper.hasFrostWalkerEnchantment((EntityLivingBase) entityIn) && this.getIsHotBlock()) {
+		if (!entityIn.isImmuneToFire() && entityIn instanceof EntityLivingBase && !EnchantmentHelper.hasFrostWalkerEnchantment((EntityLivingBase) entityIn)
+				&& this.getIsHotBlock()) {
 			entityIn.attackEntityFrom(DamageSource.HOT_FLOOR, (this.enableExtremeMode) ? 8.2F : 4.5F);
 		}
 		
@@ -329,6 +329,11 @@ public class ZGBlockBase extends Block implements ISingleZGBlockRender, IJSONBlo
 	
 	public EnumBlockType getBlockType() {
 		return this.blockType;
+	}
+	
+	public Block setSlipperiness(float slipRate) {
+		this.slipperiness = slipRate;
+		return this;
 	}
 	
 	@Override

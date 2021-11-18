@@ -35,5 +35,6 @@ public enum EnumBlockType {
 	CORRUPTED,
 	SPAWNER,
 	STATION,
-	MUSHROOM;
+	MUSHROOM,
+	ICE;
 }

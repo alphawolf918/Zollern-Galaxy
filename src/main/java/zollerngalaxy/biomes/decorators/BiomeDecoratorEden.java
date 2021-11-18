@@ -375,6 +375,18 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 			}
 		}
 		
+		// Dropships
+		if (this.generateDropships && this.dropshipsPerChunk > 0) {
+			y = rand.nextInt(rand.nextInt(genY) + 8);
+			if (y >= 50) {
+				for (int i = 0; i < this.dropshipsPerChunk; i++) {
+					if (rand.nextInt((this.enableExtremeMode) ? 1000 : 800) <= 15) {
+						dropshipGen.generate(world, rand, this.chunkPos.add(x, y, z));
+					}
+				}
+			}
+		}
+		
 		// Outposts
 		if (this.generateOutposts && this.outpostsPerChunk > 0) {
 			y = rand.nextInt(rand.nextInt(genY) + 8);
@@ -383,18 +395,6 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 				for (int i = 0; i < this.outpostsPerChunk; i++) {
 					if (rand.nextInt((this.enableExtremeMode) ? 200 : 100) <= ConfigManagerZG.outpostGenChance) {
 						outpostGen.generate(world, rand, this.chunkPos.add(x, y, z));
-					}
-				}
-			}
-		}
-		
-		// Dropships
-		if (this.generateDropships && this.dropshipsPerChunk > 0) {
-			y = rand.nextInt(rand.nextInt(genY) + 8);
-			if (y >= 50) {
-				for (int i = 0; i < this.dropshipsPerChunk; i++) {
-					if (rand.nextInt((this.enableExtremeMode) ? 1000 : 800) <= 15) {
-						dropshipGen.generate(world, rand, this.chunkPos.add(x, y, z));
 					}
 				}
 			}

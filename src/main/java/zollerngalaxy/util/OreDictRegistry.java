@@ -114,6 +114,9 @@ public class OreDictRegistry {
 		registerOre("grass", ZGBlocks.edenGoldenGrass, ZGBlocks.edenGrass, ZGBlocks.edenSwampGrass, ZGBlocks.edenFallGrass, ZGBlocks.xathGrass, ZGBlocks.oasisGrass,
 				ZGBlocks.perdGrass, ZGBlocks.exodusGrass);
 		
+		// Ice
+		registerOre("ice", ZGBlocks.astrosIce);
+		
 		// Logs
 		registerOre("logWood", ZGBlocks.edenWoodLog, ZGBlocks.perdWoodLogs, ZGBlocks.edenParadiseWoodLog, ZGBlocks.edenGoldenWoodLog, ZGBlocks.edenLovetreeLog,
 				ZGBlocks.exoWoodLogs);

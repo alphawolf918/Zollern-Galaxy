@@ -588,7 +588,7 @@ public class ZGPlanets {
 		moonAstros.setBodyGasses(EnumAtmosphericGas.NITROGEN, EnumAtmosphericGas.ARGON, EnumAtmosphericGas.HELIUM);
 		moonAstros.setBodyIcon("astros");
 		moonAstros.setAtmosphere();
-		moonAstros.setBiomeInfo(ZGBiomes.ASTROS_BASE, ZGBiomes.ASTROS_ROCKIES);
+		moonAstros.setBiomeInfo(ZGBiomes.ASTROS_BASE, ZGBiomes.ASTROS_ROCKIES, ZGBiomes.ASTROS_GLACIERS);
 		totalMoons++;
 		ZGHelper.Log("Loaded a total of " + totalMoons + " new moons.");
 	}

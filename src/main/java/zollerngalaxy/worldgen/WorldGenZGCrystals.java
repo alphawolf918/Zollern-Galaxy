@@ -16,9 +16,15 @@ import zollerngalaxy.blocks.crystals.ZGCrystalBlock;
 public class WorldGenZGCrystals extends ZGWorldGenMaster {
 	
 	private IBlockState crystal;
+	private int maxHeightForGen = 255;
 	
 	public WorldGenZGCrystals(IBlockState crystal) {
 		this.crystal = crystal;
+	}
+	
+	public WorldGenZGCrystals(IBlockState crystal, int maxHeight) {
+		this(crystal);
+		this.maxHeightForGen = maxHeight;
 	}
 	
 	@Override
@@ -26,7 +32,7 @@ public class WorldGenZGCrystals extends ZGWorldGenMaster {
 		for (int i = 0; i < 128; ++i) {
 			BlockPos pos1 = pos.add(rand.nextInt(8) - rand.nextInt(8), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(8) - rand.nextInt(8));
 			
-			if (world.isAirBlock(pos1) && (pos1.getY() < 255) && ((ZGCrystalBlock) this.crystal.getBlock()).canBlockStay(world, pos1, this.crystal)) {
+			if (world.isAirBlock(pos1) && (pos1.getY() < maxHeightForGen) && ((ZGCrystalBlock) this.crystal.getBlock()).canBlockStay(world, pos1, this.crystal)) {
 				world.setBlockState(pos1, this.crystal, 2);
 			}
 		}

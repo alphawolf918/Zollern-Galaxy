@@ -11,17 +11,16 @@ import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.celestial.ZGPlanets;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 
-public class BiomeAstrosRockies extends BiomeAstrosBase {
+public class BiomeAstrosGlaciers extends BiomeAstrosBase {
 	
-	public BiomeAstrosRockies(BiomeProperties props) {
-		super("astros_rockies", props);
+	public BiomeAstrosGlaciers(BiomeProperties props) {
+		super("astros_glaciers", props);
 		props.setRainDisabled();
-		this.setBiomeHeight(40);
-		this.setBiomeType(EnumBiomeTypeZG.ROCKY);
-		this.setTemp(5.2F);
+		this.setBiomeHeight(52);
+		this.setBiomeType(EnumBiomeTypeZG.ICY);
+		this.setTemp(-2.4F);
+		this.setBlocks(ZGBlocks.astrosIce);
 		this.enableSnow = false;
-		this.topBlock = ZGBlocks.astrosStone.getDefaultState();
-		this.fillerBlock = ZGBlocks.astrosCobblestone.getDefaultState();
 		this.stoneBlock = ZGBlocks.astrosStone;
 		this.setMoonForBiome(ZGPlanets.moonAstros);
 	}

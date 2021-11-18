@@ -42,7 +42,7 @@ public class ChunkProviderAstros extends ChunkProviderBase {
 	
 	public static final IBlockState STONE = ZGBlocks.astrosStone.getDefaultState();
 	public static final IBlockState WATER = Blocks.WATER.getDefaultState();
-	public static final IBlockState ICE = Blocks.PACKED_ICE.getDefaultState();
+	public static final IBlockState ICE = ZGBlocks.astrosIce.getDefaultState();
 	public static final IBlockState AIR = Blocks.AIR.getDefaultState();
 	
 	public static final double CHUNK_HEIGHT = 25.0D;

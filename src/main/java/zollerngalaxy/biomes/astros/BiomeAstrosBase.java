@@ -8,6 +8,7 @@
 package zollerngalaxy.biomes.astros;
 
 import java.util.Random;
+import micdoodle8.mods.galacticraft.core.GCBlocks;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedCreeper;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedEnderman;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedSkeleton;
@@ -36,7 +37,7 @@ public class BiomeAstrosBase extends BiomeSpace {
 	protected static final IBlockState BEDROCK = Blocks.BEDROCK.getDefaultState();
 	protected static final IBlockState GRAVEL = ZGBlocks.astrosGravel.getDefaultState();
 	protected static final IBlockState DIRT = ZGBlocks.astrosDirt.getDefaultState();
-	protected static final IBlockState ICE = Blocks.PACKED_ICE.getDefaultState();
+	protected static final IBlockState ICE = ZGBlocks.astrosIce.getDefaultState();
 	protected static final IBlockState WATER = Blocks.WATER.getDefaultState();
 	
 	protected static final int SEA_LEVEL = ChunkProviderAstros.SEA_LEVEL;
@@ -57,7 +58,7 @@ public class BiomeAstrosBase extends BiomeSpace {
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedEnderman.class, 100, 4, 4));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedWitch.class, 100, 4, 4));
 		if (ConfigManagerZG.enableAlienVillagerSpawn) {
-			this.spawnableCreatureList.add(new SpawnListEntry(EntityAstrosVillager.class, 5, 1, 2));
+			this.spawnableCreatureList.add(new SpawnListEntry(EntityAstrosVillager.class, 2, 1, 2));
 		}
 		this.setBodyForBiome(ZGPlanets.moonAstros);
 	}
@@ -119,6 +120,8 @@ public class BiomeAstrosBase extends BiomeSpace {
 							--j;
 							chunkPrimerIn.setBlockState(i1, j1, l, fillState);
 						}
+					} else if (iblockstate2 == GCBlocks.basicBlock.getDefaultState()) {
+						chunkPrimerIn.setBlockState(i1, j1, l, STONE);
 					}
 				}
 			}

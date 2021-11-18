@@ -9,7 +9,6 @@ package zollerngalaxy.biomes.decorators;
 
 import java.util.Random;
 import net.minecraft.block.Block;
-import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.ChunkPrimer;
@@ -44,21 +43,22 @@ public class BiomeDecoratorAstros extends BiomeDecoratorZG {
 	private static final Block STONE = ZGBlocks.astrosStone;
 	private static final Block ROCK = ZGBlocks.astrosRock;
 	private static final Block OUTPOST = ZGBlocks.blockOutpost;
+	private static final Block ICE = ZGBlocks.astrosIce;
 	
-	public int edenCrystalsPerChunk = 2;
+	public int edenCrystalsPerChunk = 1;
 	public int tunnelsPerChunk = 4;
 	
 	public boolean generateEdenCrystals = true;
 	public boolean generateCraters = true;
 	public boolean generateTunnels = true;
 	
-	private WorldGenerator edenCrystalsGen = new WorldGenZGCrystals(ZGBlocks.blockCrystalsEden.getDefaultState());
+	private WorldGenerator edenCrystalsGen = new WorldGenZGCrystals(ZGBlocks.blockCrystalsEden.getDefaultState(), 60);
 	private WorldGenerator tunnelGen = new WorldGenTunnel();
 	
 	public BiomeDecoratorAstros() {
 		this.dirtGen = new WorldGenMinableZG(ZGBlocks.astrosDirt, ROCK, EnumOreGenZG.DIRT);
 		this.gravelGen = new WorldGenMinableZG(ZGBlocks.astrosGravel, ROCK, EnumOreGenZG.GRAVEL);
-		this.packedIceGen = new WorldGenMinableZG(Blocks.PACKED_ICE, ROCK, EnumOreGenZG.PACKED_ICE);
+		this.packedIceGen = new WorldGenMinableZG(ICE, ROCK, EnumOreGenZG.PACKED_ICE);
 		this.ironGen = new WorldGenMinableZG(ZGBlocks.astrosIronOre, STONE, EnumOreGenZG.IRON);
 		this.goldGen = new WorldGenMinableZG(ZGBlocks.astrosGoldOre, STONE, EnumOreGenZG.GOLD);
 		this.diamondGen = new WorldGenMinableZG(ZGBlocks.astrosDiamondOre, STONE, EnumOreGenZG.DIAMOND);
@@ -100,7 +100,7 @@ public class BiomeDecoratorAstros extends BiomeDecoratorZG {
 		
 		// Eden Crystals
 		if (this.generateEdenCrystals && this.edenCrystalsPerChunk > 0) {
-			if (ZGHelper.rngInt(1, 100) <= 65) {
+			if (ZGHelper.rngInt(1, 100) <= 45) {
 				y = rand.nextInt(rand.nextInt(genY) + 8);
 				for (int i = 0; i < this.edenCrystalsPerChunk; ++i) {
 					if (y <= 60) {

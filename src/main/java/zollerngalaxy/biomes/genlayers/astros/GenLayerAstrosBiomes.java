@@ -47,6 +47,7 @@ public class GenLayerAstrosBiomes extends GenLayerAstros {
 		List<BiomeEntry> list = new ArrayList<>();
 		list.add(new BiomeEntry(ZGBiomes.ASTROS_BASE, 100));
 		list.add(new BiomeEntry(ZGBiomes.ASTROS_ROCKIES, 90));
+		list.add(new BiomeEntry(ZGBiomes.ASTROS_GLACIERS, 80));
 		
 		currentBiomes[BiomeType.WARM.ordinal()] = new ArrayList<>(list);
 		return currentBiomes;

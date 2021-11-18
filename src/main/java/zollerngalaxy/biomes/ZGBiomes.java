@@ -33,6 +33,7 @@ import zollerngalaxy.biomes.altum.BiomeRockyIsles;
 import zollerngalaxy.biomes.altum.BiomeRockyShore;
 import zollerngalaxy.biomes.altum.BiomeSanctumBeach;
 import zollerngalaxy.biomes.astros.BiomeAstros;
+import zollerngalaxy.biomes.astros.BiomeAstrosGlaciers;
 import zollerngalaxy.biomes.astros.BiomeAstrosRockies;
 import zollerngalaxy.biomes.atheon.BiomeGoldlands;
 import zollerngalaxy.biomes.atheon.BiomeRadiolarianLakes;
@@ -197,6 +198,7 @@ public class ZGBiomes {
 	// Astros
 	public static final Biome ASTROS_BASE = new BiomeAstros(new BiomeProperties("Astros"));
 	public static final Biome ASTROS_ROCKIES = new BiomeAstrosRockies(new BiomeProperties("Astros Moonrocks"));
+	public static final Biome ASTROS_GLACIERS = new BiomeAstrosGlaciers(new BiomeProperties("Astros Glaciers"));
 	
 	public static void init() {
 		// Zollus
@@ -295,6 +297,7 @@ public class ZGBiomes {
 		// Astros
 		ZGBiomes.addBiome(ZGBiomes.ASTROS_BASE, COLD, WET, SNOWY);
 		ZGBiomes.addBiome(ZGBiomes.ASTROS_ROCKIES, COLD, WET, SNOWY, MOUNTAIN, DEAD);
+		ZGBiomes.addBiome(ZGBiomes.ASTROS_GLACIERS, COLD, WET, SNOWY, MOUNTAIN, DEAD);
 		
 		ZGHelper.Log("Loaded a total of " + totalBiomes + " new biomes.");
 	}
