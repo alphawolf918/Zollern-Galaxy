@@ -35,7 +35,6 @@ import net.minecraft.entity.ai.EntityAIWatchClosest2;
 import net.minecraft.entity.effect.EntityLightningBolt;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.item.EntityXPOrb;
-import net.minecraft.entity.monster.EntityWitch;
 import net.minecraft.entity.monster.EntityZombie;
 import net.minecraft.entity.monster.IMob;
 import net.minecraft.entity.player.EntityPlayer;
@@ -79,7 +78,7 @@ public class EntityZGVillagerBase extends EntityAgeable implements IMerchant, IN
 	private boolean isPlaying;
 	private Village villageObj;
 	private EntityPlayer buyingPlayer;
-	private MerchantRecipeList buyingList;
+	protected MerchantRecipeList buyingList;
 	private int timeUntilReset;
 	private boolean needsInitilization;
 	private int wealth;
@@ -493,7 +492,7 @@ public class EntityZGVillagerBase extends EntityAgeable implements IMerchant, IN
 	@Override
 	public void onStruckByLightning(EntityLightningBolt lightningBolt) {
 		if (!this.world.isRemote && !this.isDead) {
-			EntityWitch entitywitch = new EntityEvolvedWitch(this.world);
+			EntityEvolvedWitch entitywitch = new EntityEvolvedWitch(this.world);
 			entitywitch.setLocationAndAngles(this.posX, this.posY, this.posZ, this.rotationYaw, this.rotationPitch);
 			entitywitch.onInitialSpawn(this.world.getDifficultyForLocation(new BlockPos(entitywitch)), (IEntityLivingData) null);
 			entitywitch.setNoAI(this.isAIDisabled());

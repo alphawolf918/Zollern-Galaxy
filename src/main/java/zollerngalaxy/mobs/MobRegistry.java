@@ -42,6 +42,7 @@ import zollerngalaxy.mobs.entities.EntityWasp;
 import zollerngalaxy.mobs.entities.boss.EntityShadowAlien;
 import zollerngalaxy.mobs.entities.villagers.EntityAbyssalVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityAstrosVillager;
+import zollerngalaxy.mobs.entities.villagers.EntityCaligroVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityEdenVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityHarranVillager;
 import zollerngalaxy.mobs.entities.zombiemutations.EntityGhoul;
@@ -131,6 +132,8 @@ public class MobRegistry {
 		registerEntity("jellyfish", EntityJellyfish.class, entityId++, 0x00008b, 0x008b00);
 		EntitySpawnPlacementRegistry.setPlacementType(EntityJellyfish.class, SpawnPlacementType.IN_WATER);
 		
+		/** BEGIN VILLAGERS **/
+		
 		// Abyssal Villager
 		registerEntity("abyssalvillager", EntityAbyssalVillager.class, entityId++, 0x8b8b00, 0x0099ff);
 		EntitySpawnPlacementRegistry.setPlacementType(EntityAbyssalVillager.class, SpawnPlacementType.IN_WATER);
@@ -143,6 +146,11 @@ public class MobRegistry {
 		
 		// Astros Villager
 		registerEntity("astrosvillager", EntityAstrosVillager.class, entityId++, 0xeeeeee, 0xeeffee);
+		
+		// Caligro Villager
+		registerEntity("caligrovillager", EntityCaligroVillager.class, entityId++, 0x000000, 0xff0000);
+		
+		/** END VILLAGERS **/
 		
 		// Wasp
 		registerEntity("wasp", EntityWasp.class, entityId++, 0x000000, 0xffff00);

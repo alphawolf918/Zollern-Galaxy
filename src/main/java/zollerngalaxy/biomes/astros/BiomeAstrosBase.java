@@ -8,7 +8,6 @@
 package zollerngalaxy.biomes.astros;
 
 import java.util.Random;
-import micdoodle8.mods.galacticraft.core.GCBlocks;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedCreeper;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedEnderman;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedSkeleton;
@@ -120,8 +119,6 @@ public class BiomeAstrosBase extends BiomeSpace {
 							--j;
 							chunkPrimerIn.setBlockState(i1, j1, l, fillState);
 						}
-					} else if (iblockstate2 == GCBlocks.basicBlock.getDefaultState()) {
-						chunkPrimerIn.setBlockState(i1, j1, l, STONE);
 					}
 				}
 			}

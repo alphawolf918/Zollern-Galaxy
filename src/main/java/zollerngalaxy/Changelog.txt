@@ -8,6 +8,8 @@ Zollern Galaxy v2.0.32
 * Added the Andromeda galaxy.
 * Added the Astros Villager.
     - Regular Alien Villagers will convert into Astros Villagers when on the moon.
+* Added the Caligro Villager.
+    - Regular Alien Villagers will convert into Caligro Villagers when on that planet.
 * Added a config option to make this mod's custom Alien Villagers stop going "HNGH!!"
     - Does not affect the GC Alien Villagers.
 * Added Eden Crystal gen to Astros.

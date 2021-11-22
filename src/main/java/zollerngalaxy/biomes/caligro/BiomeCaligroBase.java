@@ -25,6 +25,7 @@ import zollerngalaxy.biomes.decorators.BiomeDecoratorCaligro;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.blocks.fluids.ZGFluids;
 import zollerngalaxy.celestial.ZGPlanets;
+import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderCaligro;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 import zollerngalaxy.mobs.entities.EntityGrayAlien;
@@ -35,6 +36,7 @@ import zollerngalaxy.mobs.entities.EntityScorpion;
 import zollerngalaxy.mobs.entities.EntityShade;
 import zollerngalaxy.mobs.entities.EntityShadowSkeleton;
 import zollerngalaxy.mobs.entities.EntitySpiderling;
+import zollerngalaxy.mobs.entities.villagers.EntityCaligroVillager;
 
 public class BiomeCaligroBase extends BiomeSpace {
 	
@@ -74,6 +76,9 @@ public class BiomeCaligroBase extends BiomeSpace {
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityShadowSkeleton.class, 100, 1, 4));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityWitherSkeleton.class, 80, 1, 4));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityShade.class, 100, 1, 4));
+		if (ConfigManagerZG.enableAlienVillagerSpawn) {
+			this.spawnableCreatureList.add(new SpawnListEntry(EntityCaligroVillager.class, 2, 1, 2));
+		}
 		this.setPlanetForBiome(ZGPlanets.planetCaligro);
 	}
 	
