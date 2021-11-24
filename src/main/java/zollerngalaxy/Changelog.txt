@@ -22,6 +22,7 @@ Zollern Galaxy v2.0.32
 * Updated Galactic HUD to interpret moons as well as planets.
 * Mining tunnels will now generate on Astros.
 * Fixed Purgot Dirt potentially showing up on Zollus.
-* 
 * Fixed (mostly) ravines not generating correctly.
+* Fixed HUD temperature not converting to Celsius from Fahrenheit when toggled in config.
+    - Changed config option to True/False instead of F/C.
 * 

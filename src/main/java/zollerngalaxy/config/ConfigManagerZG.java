@@ -125,7 +125,7 @@ public class ConfigManagerZG {
 	// Misc
 	public static boolean canEarthAnimalsSpawnOnEden;
 	public static boolean disableStarGates;
-	public static String temperatureType;
+	public static boolean temperatureType;
 	public static boolean hideUnusedStarSystems;
 	public static boolean enableMegaCreeperGriefing;
 	public static boolean changeContributorNames;
@@ -407,9 +407,8 @@ public class ConfigManagerZG {
 				.getBoolean();
 		
 		// Misc (Tempratures shown in fahrenheit or celsius?)
-		temperatureType = configuration
-				.get(CATEGORY_MISC, "[HUD DISPLAY] Temperature Type (F or C only)", "F", "Should temperatures be shown in Fahrenheit (F) or Celsius (C)? (default: F)")
-				.getString();
+		temperatureType = configuration.get(CATEGORY_MISC, "[HUD DISPLAY] Temperature Type: Use Celsius instead of Fahrenheit", false,
+				"Set this to true to show temperature in Celsius (default: false).").getBoolean();
 		
 		// Whether or not to change contributor's in-game names
 		changeContributorNames = configuration

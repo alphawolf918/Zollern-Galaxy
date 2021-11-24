@@ -96,7 +96,8 @@ public class GuiHUD extends Gui {
 					World world = spaceProvider.getWorldObj();
 					
 					// Celestial Temp (Displays in either F or C)
-					String tempType = ConfigManagerZG.temperatureType;
+					boolean useCelsius = ConfigManagerZG.temperatureType;
+					String tempType = (useCelsius) ? "C" : "F";
 					float biomeTemp = biomeSpace.getBiomeTemp();
 					float celestialTemp = xTemp;
 					celestialTemp = (spaceProvider.isDaytime()) ? celestialTemp + biomeTemp : celestialTemp - biomeTemp;

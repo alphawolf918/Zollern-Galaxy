@@ -507,8 +507,9 @@ public class ZGMoonBody extends Moon implements IZollernBody {
 	@Override
 	public float getBodyTemperature(World world, BlockPos pos) {
 		float bodyTemp = this.baseTemp;
-		float maxTemp = (bodyTemp * 4);
-		float minTemp = (bodyTemp / 4);
+		int multiplier = 6;
+		float maxTemp = (bodyTemp * multiplier);
+		float minTemp = (bodyTemp / multiplier);
 		Biome biome = world.getBiomeForCoordsBody(pos);
 		if (biome instanceof BiomeSpace) {
 			WorldProviderMoonZG spaceProvider = (WorldProviderMoonZG) world.provider;
