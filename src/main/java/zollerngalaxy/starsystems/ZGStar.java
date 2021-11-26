@@ -7,6 +7,7 @@
  */
 package zollerngalaxy.starsystems;
 
+import micdoodle8.mods.galacticraft.api.galaxies.CelestialBody;
 import micdoodle8.mods.galacticraft.api.galaxies.Star;
 import net.minecraft.util.ResourceLocation;
 import zollerngalaxy.lib.ZGInfo;
@@ -19,5 +20,15 @@ public class ZGStar extends Star {
 		this.setTierRequired(-1);
 		this.setPhaseShift(0.0F);
 		this.setRelativeSize(1.0F);
+	}
+	
+	public CelestialBody setRelativeDistanceFromCenter(float scaledDistance) {
+		this.setRelativeDistanceFromCenter(new ScalableDistance(scaledDistance, scaledDistance));
+		return this;
+	}
+	
+	public CelestialBody setRelativeDistanceFromCenter(float scaledDistance1, float scaledDistance2) {
+		this.setRelativeDistanceFromCenter(new ScalableDistance(scaledDistance1, scaledDistance2));
+		return this;
 	}
 }

@@ -200,44 +200,44 @@ public class ConfigManagerZG {
 	public static double maxHealthIncreasedBy;
 	
 	// Coords (Psios)
-	public static float psiosX;
-	public static float psiosY;
-	public static float psiosZ;
+	public static float psiosXOffset;
+	public static float psiosYOffset;
+	public static float psiosZOffset;
 	
 	// Coords (Praedyth)
-	public static float praedythX;
-	public static float praedythY;
-	public static float praedythZ;
+	public static float praedythXOffset;
+	public static float praedythYOffset;
+	public static float praedythZOffset;
 	
 	// Coords (Sol-2)
-	public static float sol2X;
-	public static float sol2Y;
-	public static float sol2Z;
+	public static float sol2XOffset;
+	public static float sol2YOffset;
+	public static float sol2ZOffset;
 	
 	// Coords (Pantheon)
-	public static float pantheonX;
-	public static float pantheonY;
-	public static float pantheonZ;
+	public static float pantheonXOffset;
+	public static float pantheonYOffset;
+	public static float pantheonZOffset;
 	
 	// Coords (Olympus)
-	public static float olympusX;
-	public static float olympusY;
-	public static float olympusZ;
+	public static float olympusXOffset;
+	public static float olympusYOffset;
+	public static float olympusZOffset;
 	
 	// Coords (Asgard)
-	public static float asgardX;
-	public static float asgardY;
-	public static float asgardZ;
+	public static float asgardXOffset;
+	public static float asgardYOffset;
+	public static float asgardZOffset;
 	
 	// Coords (Vega)
-	public static float vegaX;
-	public static float vegaY;
-	public static float vegaZ;
+	public static float vegaXOffset;
+	public static float vegaYOffset;
+	public static float vegaZOffset;
 	
 	// Coords (Nova)
-	public static float novaX;
-	public static float novaY;
-	public static float novaZ;
+	public static float novaXOffset;
+	public static float novaYOffset;
+	public static float novaZOffset;
 	
 	// Planet Tiers (Psios-6)
 	public static int planetZollusTier;
@@ -583,44 +583,43 @@ public class ConfigManagerZG {
 		//
 		
 		// Coords (Psios)
-		psiosX = (float) configuration.get(CATEGORY_COORDINATES, "Psios X", -2.5).getDouble();
-		psiosY = (float) configuration.get(CATEGORY_COORDINATES, "Psios Y", 1.2).getDouble();
-		psiosZ = (float) configuration.get(CATEGORY_COORDINATES, "Psios Z", 0.0).getDouble();
+		psiosXOffset = (float) configuration.get(CATEGORY_COORDINATES, "Psios X Offset", 0.0, "(default: 0.0)").getDouble();
+		psiosYOffset = (float) configuration.get(CATEGORY_COORDINATES, "Psios Y Offset", 0.0, "(default: 0.0)").getDouble();
+		psiosZOffset = (float) configuration.get(CATEGORY_COORDINATES, "Psios Z Offset", 0.0, "(default: 0.0)").getDouble();
 		
 		// Coords (Praedyth)
-		praedythX = (float) configuration.get(CATEGORY_COORDINATES, "Praedyth X", -1.2).getDouble();
-		praedythY = (float) configuration.get(CATEGORY_COORDINATES, "Praedyth Y", 1.4).getDouble();
-		praedythZ = (float) configuration.get(CATEGORY_COORDINATES, "Praedyth Z", 0.0).getDouble();
+		praedythXOffset = (float) configuration.get(CATEGORY_COORDINATES, "Praedyth X Offset", 0.0, "(default: 0.0)").getDouble();
+		praedythYOffset = (float) configuration.get(CATEGORY_COORDINATES, "Praedyth Y Offset", 0.0, "(default: 0.0)").getDouble();
+		praedythZOffset = (float) configuration.get(CATEGORY_COORDINATES, "Praedyth Z Offset", 0.0, "(default: 0.0)").getDouble();
 		
 		// Coords (Sol-2)
-		sol2X = (float) configuration.get(CATEGORY_COORDINATES, "Sol-2 X", 1.2).getDouble();
-		sol2Y = (float) configuration.get(CATEGORY_COORDINATES, "Sol-2 Y", -1.2).getDouble();
-		sol2Z = (float) configuration.get(CATEGORY_COORDINATES, "Sol-2 Z", 0.0).getDouble();
+		sol2XOffset = (float) configuration.get(CATEGORY_COORDINATES, "Sol-2 X Offset", 0.0, "(default: 0.0)").getDouble();
+		sol2YOffset = (float) configuration.get(CATEGORY_COORDINATES, "Sol-2 Y Offset", 0.0, "(default: 0.0)").getDouble();
+		sol2ZOffset = (float) configuration.get(CATEGORY_COORDINATES, "Sol-2 Z Offset", 0.0, "(default: 0.0)").getDouble();
 		
 		// Coords (Pantheon)
-		pantheonX = (float) configuration.get(CATEGORY_COORDINATES, "Pantheon X", 2.0).getDouble();
-		pantheonY = (float) configuration.get(CATEGORY_COORDINATES, "Pantheon Y", 1.2).getDouble();
-		pantheonZ = (float) configuration.get(CATEGORY_COORDINATES, "Pantheon Z", 0.0).getDouble();
+		pantheonXOffset = (float) configuration.get(CATEGORY_COORDINATES, "Pantheon X Offset", 0.0, "(default: 0.0)").getDouble();
+		pantheonYOffset = (float) configuration.get(CATEGORY_COORDINATES, "Pantheon Y Offset", 0.0, "(default: 0.0)").getDouble();
+		pantheonZOffset = (float) configuration.get(CATEGORY_COORDINATES, "Pantheon Z Offset", 0.0, "(default: 0.0)").getDouble();
 		
 		// Coords (Olympus)
-		olympusX = (float) configuration.get(CATEGORY_COORDINATES, "Olympus X", 1.5).getDouble();
-		olympusY = (float) configuration.get(CATEGORY_COORDINATES, "Olympus Y", 1.5).getDouble();
-		olympusZ = (float) configuration.get(CATEGORY_COORDINATES, "Olympus Z", 0.0).getDouble();
+		olympusXOffset = (float) configuration.get(CATEGORY_COORDINATES, "Olympus X Offset", 0.0, "(default: 0.0)").getDouble();
+		olympusZOffset = (float) configuration.get(CATEGORY_COORDINATES, "Olympus Z Offset", 0.0, "(default: 0.0)").getDouble();
 		
 		// Coords (Asgard)
-		asgardX = (float) configuration.get(CATEGORY_COORDINATES, "Asgard X", 3.0).getDouble();
-		asgardY = (float) configuration.get(CATEGORY_COORDINATES, "Asgard Y", 1.8).getDouble();
-		asgardZ = (float) configuration.get(CATEGORY_COORDINATES, "Asgard Z", 0.0).getDouble();
+		asgardXOffset = (float) configuration.get(CATEGORY_COORDINATES, "Asgard X Offset", 0.0, "(default: 0.0)").getDouble();
+		asgardYOffset = (float) configuration.get(CATEGORY_COORDINATES, "Asgard Y Offset", 0.0, "(default: 0.0)").getDouble();
+		asgardZOffset = (float) configuration.get(CATEGORY_COORDINATES, "Asgard Z Offset", 0.0, "(default: 0.0)").getDouble();
 		
 		// Coords (Vega)
-		vegaX = (float) configuration.get(CATEGORY_COORDINATES, "Vega X", -0.5).getDouble();
-		vegaY = (float) configuration.get(CATEGORY_COORDINATES, "Vega Y", 1.5).getDouble();
-		vegaZ = (float) configuration.get(CATEGORY_COORDINATES, "Vega Z", 0.0).getDouble();
+		vegaXOffset = (float) configuration.get(CATEGORY_COORDINATES, "Vega X Offset", 0.0, "(default: 0.0)").getDouble();
+		vegaYOffset = (float) configuration.get(CATEGORY_COORDINATES, "Vega Y Offset", 0.0, "(default: 0.0)").getDouble();
+		vegaZOffset = (float) configuration.get(CATEGORY_COORDINATES, "Vega Z Offset", 0.0, "(default: 0.0)").getDouble();
 		
 		// Coords (Nova)
-		novaX = (float) configuration.get(CATEGORY_COORDINATES, "Nova X", 0.0).getDouble();
-		novaY = (float) configuration.get(CATEGORY_COORDINATES, "Nova Y", 0.0).getDouble();
-		novaZ = (float) configuration.get(CATEGORY_COORDINATES, "Nova Z", 0.0).getDouble();
+		novaXOffset = (float) configuration.get(CATEGORY_COORDINATES, "Nova X Offset", 0.0, "(default: 0.0)").getDouble();
+		novaYOffset = (float) configuration.get(CATEGORY_COORDINATES, "Nova Y Offset", 0.0, "(default: 0.0)").getDouble();
+		novaZOffset = (float) configuration.get(CATEGORY_COORDINATES, "Nova Z Offset", 0.0, "(default: 0.0)").getDouble();
 		
 		// Planet Tiers (Psios-6)
 		planetZollusTier = configuration.get(CATEGORY_TIERS, "Planet Zollus Tier", 3).getInt();

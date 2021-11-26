@@ -23,7 +23,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.biomes.providers.BiomeProviderAstros;
 import zollerngalaxy.blocks.ZGBlocks;
-import zollerngalaxy.celestial.ZGMoonBody;
+import zollerngalaxy.celestial.ZGMoon;
 import zollerngalaxy.celestial.ZGPlanets;
 import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.ZGDimensions;
@@ -69,7 +69,7 @@ public class WorldProviderAstros extends WorldProviderMoonZG {
 	
 	@Override
 	public float getMoonTemp() {
-		ZGMoonBody moon = this.getMoon();
+		ZGMoon moon = this.getMoon();
 		float moonTemp = moon.getBodyTemperature();
 		if (!this.isDaytime()) {
 			moonTemp /= 1.5F;

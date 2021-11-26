@@ -18,7 +18,7 @@ import net.minecraft.world.storage.WorldInfo;
 import net.minecraftforge.client.IRenderHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import zollerngalaxy.celestial.ZGMoonBody;
+import zollerngalaxy.celestial.ZGMoon;
 
 public abstract class WorldProviderMoonZG extends WorldProviderZG {
 	
@@ -47,9 +47,9 @@ public abstract class WorldProviderMoonZG extends WorldProviderZG {
 		return !ConfigManagerCore.forceOverworldRespawn;
 	}
 	
-	public ZGMoonBody getMoon() {
+	public ZGMoon getMoon() {
 		CelestialBody moon = this.getCelestialBody();
-		ZGMoonBody moonNova = (ZGMoonBody) moon;
+		ZGMoon moonNova = (ZGMoon) moon;
 		return moonNova;
 	}
 	
@@ -175,7 +175,7 @@ public abstract class WorldProviderMoonZG extends WorldProviderZG {
 	protected abstract void renderWeather();
 	
 	public float getMoonTemp() {
-		ZGMoonBody moon = this.getMoon();
+		ZGMoon moon = this.getMoon();
 		float planetTemp = moon.getBodyTemperature();
 		
 		if (this.isDaytime()) {
@@ -188,7 +188,7 @@ public abstract class WorldProviderMoonZG extends WorldProviderZG {
 	}
 	
 	public float getMoonTemp(World world, BlockPos pos) {
-		ZGMoonBody moon = this.getMoon();
+		ZGMoon moon = this.getMoon();
 		float planetTemp = moon.getBodyTemperature(world, pos);
 		
 		if (this.isDaytime()) {

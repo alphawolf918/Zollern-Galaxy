@@ -5,7 +5,7 @@ Zollern Galaxy v2.0.32
 * Added Astros as a moon of Eden, the mod's first moon.
     - The moon appears in Eden's night sky.
     - Eden's SkyProvider has been adjusted to show the Astros moon in its night skies.
-* Added the Andromeda galaxy.
+* Added the Eissentam galaxy.
 * Added the Astros Villager.
     - Regular Alien Villagers will convert into Astros Villagers when on the moon.
 * Added the Caligro Villager.
@@ -25,4 +25,5 @@ Zollern Galaxy v2.0.32
 * Fixed (mostly) ravines not generating correctly.
 * Fixed HUD temperature not converting to Celsius from Fahrenheit when toggled in config.
     - Changed config option to True/False instead of F/C.
-* 
+* Fixed - FINALLY, FINALLY, FINALLY, FINALLY!!!!!!!!! - fixed the zoom-in issue!!!!!!
+    - Config will be updated to use offsets instead of setting coordinates directly.

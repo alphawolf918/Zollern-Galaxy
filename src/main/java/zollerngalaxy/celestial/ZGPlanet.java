@@ -7,12 +7,22 @@
  */
 package zollerngalaxy.celestial;
 
-import zollerngalaxy.lib.ZGInfo;
+import micdoodle8.mods.galacticraft.api.galaxies.CelestialBody;
 
 public class ZGPlanet extends ZGPlanetaryBody {
 	
 	public ZGPlanet(String planetName) {
 		super(planetName);
-		this.setPhaseShift(ZGInfo.floatPI);
+		// this.setPhaseShift(ZGInfo.floatPI);
+	}
+	
+	public CelestialBody setRelativeDistanceFromCenter(float scaledDistance) {
+		this.setRelativeDistanceFromCenter(new ScalableDistance(scaledDistance, scaledDistance));
+		return this;
+	}
+	
+	public CelestialBody setRelativeDistanceFromCenter(float scaledDistance1, float scaledDistance2) {
+		this.setRelativeDistanceFromCenter(new ScalableDistance(scaledDistance1, scaledDistance2));
+		return this;
 	}
 }

@@ -18,7 +18,7 @@ import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedWitch;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedZombie;
 import net.minecraft.block.Block;
 import zollerngalaxy.celestial.IZollernBody;
-import zollerngalaxy.celestial.ZGMoonBody;
+import zollerngalaxy.celestial.ZGMoon;
 import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderPlanetZG;
 
@@ -87,7 +87,7 @@ public class BiomeSpace extends ZGBiomeBase {
 		return this;
 	}
 	
-	public BiomeSpace setMoonForBiome(ZGMoonBody moon) {
+	public BiomeSpace setMoonForBiome(ZGMoon moon) {
 		this.setPlanetForBiome(moon);
 		return this;
 	}

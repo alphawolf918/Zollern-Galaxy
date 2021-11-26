@@ -54,4 +54,8 @@ public class ZGUtils {
 	public static float ConvertFromZero(float valIn) {
 		return ((valIn <= 0F) ? 0.1F : valIn);
 	}
+	
+	public static double ConvertFromZero(double valIn) {
+		return ((valIn <= 0D) ? 0.1D : valIn);
+	}
 }

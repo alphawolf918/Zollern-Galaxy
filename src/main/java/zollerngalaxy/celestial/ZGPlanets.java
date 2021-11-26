@@ -35,7 +35,6 @@ import zollerngalaxy.core.enums.EnumBodyClass;
 import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.starsystems.ZGStar;
 import zollerngalaxy.starsystems.ZGStarSystem;
-import zollerngalaxy.util.ZGUtils;
 
 public class ZGPlanets {
 	
@@ -46,59 +45,59 @@ public class ZGPlanets {
 	private static int totalMoons = 0;
 	
 	// Coords (Psios)
-	private static float PSIOS_X = ConfigManagerZG.psiosX;
-	private static float PSIOS_Y = ConfigManagerZG.psiosY;
-	private static float PSIOS_Z = ZGUtils.ConvertFromZero(ConfigManagerZG.psiosZ);
+	private static float PSIOS_X = -2.0F + ConfigManagerZG.psiosXOffset;
+	private static float PSIOS_Y = 0.5F + ConfigManagerZG.psiosYOffset;
+	private static float PSIOS_Z = 0.0F + ConfigManagerZG.psiosZOffset;
 	
 	// Coords (Praedyth)
-	private static float PRAEDYTH_X = ConfigManagerZG.praedythX;
-	private static float PRAEDYTH_Y = ConfigManagerZG.praedythY;
-	private static float PRAEDYTH_Z = ZGUtils.ConvertFromZero(ConfigManagerZG.praedythZ);
+	private static float PRAEDYTH_X = -1.2F + ConfigManagerZG.praedythXOffset;
+	private static float PRAEDYTH_Y = 1.6F + ConfigManagerZG.praedythYOffset;
+	private static float PRAEDYTH_Z = 0.0F + ConfigManagerZG.praedythZOffset;
 	
 	// Coords (Sol-2)
-	private static float SOL2_X = ConfigManagerZG.sol2X;
-	private static float SOL2_Y = ConfigManagerZG.sol2Y;
-	private static float SOL2_Z = ZGUtils.ConvertFromZero(ConfigManagerZG.sol2Z);
+	private static float SOL2_X = 1.2F + ConfigManagerZG.sol2XOffset;
+	private static float SOL2_Y = -1.2F + ConfigManagerZG.sol2YOffset;
+	private static float SOL2_Z = 0.0F + ConfigManagerZG.sol2ZOffset;
 	
 	// Coords (Pantheon)
-	private static float PANTHEON_X = ConfigManagerZG.pantheonX;
-	private static float PANTHEON_Y = ConfigManagerZG.pantheonY;
-	private static float PANTHEON_Z = ZGUtils.ConvertFromZero(ConfigManagerZG.pantheonZ);
+	private static float PANTHEON_X = 2.0F + ConfigManagerZG.pantheonXOffset;
+	private static float PANTHEON_Y = 1.2F + ConfigManagerZG.pantheonYOffset;
+	private static float PANTHEON_Z = 0.0F + ConfigManagerZG.pantheonZOffset;
 	
 	// Coords (Olympus)
-	private static float OLYMPUS_X = ConfigManagerZG.olympusX;
-	private static float OLYMPUS_Y = ConfigManagerZG.olympusY;
-	private static float OLYMPUS_Z = ZGUtils.ConvertFromZero(ConfigManagerZG.olympusZ);
+	private static float OLYMPUS_X = 1.5F + ConfigManagerZG.olympusXOffset;
+	private static float OLYMPUS_Y = 1.5F + ConfigManagerZG.olympusYOffset;
+	private static float OLYMPUS_Z = 0.0F + ConfigManagerZG.olympusZOffset;
 	
 	// Coords (Asgard)
-	private static float ASGARD_X = ConfigManagerZG.asgardX;
-	private static float ASGARD_Y = ConfigManagerZG.asgardY;
-	private static float ASGARD_Z = ZGUtils.ConvertFromZero(ConfigManagerZG.asgardZ);
+	private static float ASGARD_X = 3.0F + ConfigManagerZG.asgardXOffset;
+	private static float ASGARD_Y = 1.8F + ConfigManagerZG.asgardYOffset;
+	private static float ASGARD_Z = 0.0F + ConfigManagerZG.asgardZOffset;
 	
 	// Coords (Vega)
-	private static float VEGA_X = ConfigManagerZG.vegaX;
-	private static float VEGA_Y = ConfigManagerZG.vegaY;
-	private static float VEGA_Z = ZGUtils.ConvertFromZero(ConfigManagerZG.vegaZ);
+	private static float VEGA_X = -0.5F + ConfigManagerZG.vegaXOffset;
+	private static float VEGA_Y = 1.5F + ConfigManagerZG.vegaYOffset;
+	private static float VEGA_Z = 0.0F + ConfigManagerZG.vegaZOffset;
 	
 	// Coords (Nova)
-	private static float NOVA_X = ConfigManagerZG.novaX;
-	private static float NOVA_Y = ConfigManagerZG.novaY;
-	private static float NOVA_Z = ZGUtils.ConvertFromZero(ConfigManagerZG.novaZ);
+	private static float NOVA_X = 0.0F + ConfigManagerZG.novaXOffset;
+	private static float NOVA_Y = 0.0F + ConfigManagerZG.novaYOffset;
+	private static float NOVA_Z = 0.0F + ConfigManagerZG.novaZOffset;
 	
 	private static boolean hideUnusedStarSystems = ConfigManagerZG.hideUnusedStarSystems;
 	
 	// Galaxies
-	public static Galaxy gxAndromeda = new Galaxy("andromeda");
+	public static Galaxy gxEissentam = new Galaxy("eissentam");
 	
 	// Solar Systems
 	public static ZGStarSystem systemPsios = new ZGStarSystem("psion6");
 	public static ZGStarSystem systemPraedyth = new ZGStarSystem("praedyth");
 	public static ZGStarSystem systemSol2 = new ZGStarSystem("sol2");
 	public static ZGStarSystem systemPantheon = new ZGStarSystem("pantheon");
-	public static ZGStarSystem systemOlympus = new ZGStarSystem("olympus", ZGPlanets.gxAndromeda.getGalaxyName());
-	public static ZGStarSystem systemAsgard = new ZGStarSystem("asgard", ZGPlanets.gxAndromeda.getGalaxyName());
-	public static ZGStarSystem systemVega = new ZGStarSystem("vega", ZGPlanets.gxAndromeda.getGalaxyName());
-	public static ZGStarSystem systemNova = new ZGStarSystem("nova", ZGPlanets.gxAndromeda.getGalaxyName());
+	public static ZGStarSystem systemOlympus = new ZGStarSystem("olympus", ZGPlanets.gxEissentam.getGalaxyName());
+	public static ZGStarSystem systemAsgard = new ZGStarSystem("asgard", ZGPlanets.gxEissentam.getGalaxyName());
+	public static ZGStarSystem systemVega = new ZGStarSystem("vega", ZGPlanets.gxEissentam.getGalaxyName());
+	public static ZGStarSystem systemNova = new ZGStarSystem("nova", ZGPlanets.gxEissentam.getGalaxyName());
 	// MPPlanets
 	
 	// Stars
@@ -116,7 +115,7 @@ public class ZGPlanets {
 	public static ZGPlanet planetKriffon = new ZGPlanet("kriffus");
 	public static ZGPlanet planetPurgot = new ZGPlanet("purgot");
 	public static ZGPlanet planetEden = new ZGPlanet("eden");
-	public static ZGMoonBody moonAstros = new ZGMoonBody("astros");
+	public static ZGMoon moonAstros = new ZGMoon("astros");
 	
 	// Praedyth Planets
 	public static ZGPlanet planetXathius = new ZGPlanet("xathius");
@@ -165,7 +164,7 @@ public class ZGPlanets {
 	
 	public static void initStarSystems() {
 		// Psios System
-		systemPsios.setMapPosition(new Vector3(PSIOS_X, PSIOS_Y, PSIOS_Z));
+		systemPsios.setMapPosition(new Vector3(ZGPlanets.PSIOS_X, PSIOS_Y, PSIOS_Z));
 		systemPsios.setMainStar(starPsios);
 		starPsios.setParentSolarSystem(systemPsios);
 		totalSystems++;
@@ -219,10 +218,10 @@ public class ZGPlanets {
 		// Planet Zollus
 		planetZollus.setDimensionInfo(ConfigManagerZG.planetZollusDimensionId, WorldProviderZollus.class);
 		planetZollus.setParentSolarSystem(systemPsios);
-		planetZollus.setPhaseShift(4.0F);
+		planetZollus.setPhaseShift(2.0F);
+		planetZollus.setDistanceFromCenter(2.0F);
 		planetZollus.setBodyClass(EnumBodyClass.L);
 		planetZollus.setRelativeOrbitTime(32.2F);
-		planetZollus.setDistanceFromCenter(1.4F);
 		planetZollus.setTierRequired(ConfigManagerZG.planetZollusTier);
 		if (ConfigManagerZG.planetUnreachableZollus) {
 			planetZollus.setDisableRockets();
@@ -265,9 +264,9 @@ public class ZGPlanets {
 		// Planet Purgot
 		planetPurgot.setParentSolarSystem(systemPsios);
 		planetPurgot.setBodyClass(EnumBodyClass.NINE);
-		planetPurgot.setPhaseShift(3.25F);
+		planetPurgot.setPhaseShift(1.5F);
 		planetPurgot.setRelativeOrbitTime(10F);
-		planetPurgot.setDistanceFromCenter(1.0F);
+		planetPurgot.setDistanceFromCenter(1.5F);
 		planetPurgot.setTierRequired(ConfigManagerZG.planetPurgotTier);
 		if (ConfigManagerZG.planetUnreachableAll || ConfigManagerZG.planetUnreachablePurgot) {
 			planetPurgot.setDisableRockets();
@@ -289,10 +288,10 @@ public class ZGPlanets {
 		// Planet Eden
 		planetEden.setDimensionInfo(ConfigManagerZG.planetEdenDimensionId, WorldProviderEden.class);
 		planetEden.setParentSolarSystem(systemPsios);
-		// planetEden.setPhaseShift(2.0F);
+		planetEden.setPhaseShift(1.0F);
 		planetEden.setBodyClass(EnumBodyClass.M);
 		planetEden.setRelativeOrbitTime(8.0F);
-		planetEden.setDistanceFromCenter(0.6F);
+		planetEden.setDistanceFromCenter(1.0F);
 		planetEden.setTierRequired(ConfigManagerZG.planetEdenTier);
 		if (ConfigManagerZG.planetUnreachableAll || ConfigManagerZG.planetUnreachableEden) {
 			planetEden.setDisableRockets();
