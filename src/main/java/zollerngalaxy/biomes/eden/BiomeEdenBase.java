@@ -61,22 +61,22 @@ public abstract class BiomeEdenBase extends BiomeSpace {
 		super(singleName, props);
 		this.setTempCategory(TempCategory.MEDIUM);
 		this.setTemp(62.4F);
-		this.decorator.flowersPerChunk = -999;
-		this.decorator.treesPerChunk = -999;
-		this.decorator.grassPerChunk = -999;
-		this.decorator.mushroomsPerChunk = -999;
+		this.biomeDecor.flowersPerChunk = -999;
+		this.biomeDecor.treesPerChunk = -999;
+		this.biomeDecor.grassPerChunk = -999;
+		this.biomeDecor.mushroomsPerChunk = -999;
 		this.biomeDecor.edenFlowersPerChunk = 4;
 		this.biomeDecor.edenTallGrassPerChunk = 2;
 		this.biomeDecor.edenTreesPerChunk = 1;
 		this.clearAllSpawning();
 		
 		if (ConfigManagerZG.canEarthAnimalsSpawnOnEden) {
-			this.spawnableCreatureList.add(new SpawnListEntry(EntityChicken.class, 100, 1, 2));
-			this.spawnableCreatureList.add(new SpawnListEntry(EntitySheep.class, 100, 3, 5));
-			this.spawnableCreatureList.add(new SpawnListEntry(EntityWolf.class, 100, 5, 8));
-			this.spawnableCreatureList.add(new SpawnListEntry(EntityCow.class, 100, 2, 4));
-			this.spawnableCreatureList.add(new SpawnListEntry(EntityPig.class, 100, 1, 3));
-			this.spawnableCreatureList.add(new SpawnListEntry(EntityHorse.class, 100, 1, 3));
+			this.spawnableCreatureList.add(new SpawnListEntry(EntityChicken.class, 100, 1, 1));
+			this.spawnableCreatureList.add(new SpawnListEntry(EntitySheep.class, 100, 3, 4));
+			this.spawnableCreatureList.add(new SpawnListEntry(EntityWolf.class, 100, 5, 7));
+			this.spawnableCreatureList.add(new SpawnListEntry(EntityCow.class, 100, 2, 3));
+			this.spawnableCreatureList.add(new SpawnListEntry(EntityPig.class, 100, 1, 2));
+			this.spawnableCreatureList.add(new SpawnListEntry(EntityHorse.class, 100, 1, 2));
 		}
 		
 		this.spawnableCreatureList.add(new SpawnListEntry(EntityMoolus.class, 80, 2, 4));
@@ -95,7 +95,7 @@ public abstract class BiomeEdenBase extends BiomeSpace {
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityWitch.class, 5, 1, 1));
 		
 		if (ConfigManagerZG.enableAlienVillagerSpawn) {
-			this.spawnableCreatureList.add(new SpawnListEntry(EntityEdenVillager.class, 1, 1, 2));
+			this.spawnableCreatureList.add(new SpawnListEntry(EntityEdenVillager.class, this.villagerSpawnRate, 1, 1));
 		}
 		
 		this.setStoneBlock(ZGBlocks.edenStone);

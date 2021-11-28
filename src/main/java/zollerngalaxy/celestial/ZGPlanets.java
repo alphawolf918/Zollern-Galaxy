@@ -14,6 +14,8 @@ import micdoodle8.mods.galacticraft.api.world.EnumAtmosphericGas;
 import micdoodle8.mods.galacticraft.planets.mars.dimension.TeleportTypeMars;
 import micdoodle8.mods.galacticraft.planets.venus.dimension.TeleportTypeVenus;
 import zollerngalaxy.biomes.ZGBiomes;
+import zollerngalaxy.celestial.starsystems.ZGStar;
+import zollerngalaxy.celestial.starsystems.ZGStarSystem;
 import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderAltum;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderAstros;
@@ -33,8 +35,6 @@ import zollerngalaxy.core.dimensions.worldproviders.WorldProviderXathius;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderZollus;
 import zollerngalaxy.core.enums.EnumBodyClass;
 import zollerngalaxy.lib.helpers.ZGHelper;
-import zollerngalaxy.starsystems.ZGStar;
-import zollerngalaxy.starsystems.ZGStarSystem;
 
 public class ZGPlanets {
 	
@@ -87,18 +87,17 @@ public class ZGPlanets {
 	private static boolean hideUnusedStarSystems = ConfigManagerZG.hideUnusedStarSystems;
 	
 	// Galaxies
-	public static Galaxy gxEissentam = new Galaxy("eissentam");
+	public static Galaxy gxEissentam = GalaxyListZG.EISSENTAM;
 	
 	// Solar Systems
 	public static ZGStarSystem systemPsios = new ZGStarSystem("psion6");
 	public static ZGStarSystem systemPraedyth = new ZGStarSystem("praedyth");
 	public static ZGStarSystem systemSol2 = new ZGStarSystem("sol2");
 	public static ZGStarSystem systemPantheon = new ZGStarSystem("pantheon");
-	public static ZGStarSystem systemOlympus = new ZGStarSystem("olympus", ZGPlanets.gxEissentam.getGalaxyName());
-	public static ZGStarSystem systemAsgard = new ZGStarSystem("asgard", ZGPlanets.gxEissentam.getGalaxyName());
-	public static ZGStarSystem systemVega = new ZGStarSystem("vega", ZGPlanets.gxEissentam.getGalaxyName());
-	public static ZGStarSystem systemNova = new ZGStarSystem("nova", ZGPlanets.gxEissentam.getGalaxyName());
-	// MPPlanets
+	public static ZGStarSystem systemOlympus = new ZGStarSystem("olympus", gxEissentam);
+	public static ZGStarSystem systemAsgard = new ZGStarSystem("asgard", gxEissentam);
+	public static ZGStarSystem systemVega = new ZGStarSystem("vega", gxEissentam);
+	public static ZGStarSystem systemNova = new ZGStarSystem("nova", gxEissentam);
 	
 	// Stars
 	public static ZGStar starPsios = new ZGStar("psion6");

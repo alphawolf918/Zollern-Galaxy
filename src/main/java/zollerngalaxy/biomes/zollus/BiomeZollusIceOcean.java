@@ -24,7 +24,7 @@ public class BiomeZollusIceOcean extends BiomeZollusBase {
 		this.setTemp(-14.2F);
 		this.enableSnow = true;
 		this.clearAllSpawning();
-		this.spawnableMonsterList.add(new SpawnListEntry(EntityFrostGiant.class, 15, 1, 1));
+		this.spawnableMonsterList.add(new SpawnListEntry(EntityFrostGiant.class, 10, 1, 1));
 		this.stoneBlock = ZGBlocks.zolStone;
 		this.setPlanetForBiome(ZGPlanets.planetZollus);
 	}

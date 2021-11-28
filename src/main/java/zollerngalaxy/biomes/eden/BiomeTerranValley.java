@@ -43,8 +43,8 @@ public class BiomeTerranValley extends BiomeEdenBase {
 		this.biomeDecor.edenTreesPerChunk = 1;
 		this.grassFoliageColor = 0x00008b;
 		this.waterColor = 0x00008b;
-		this.spawnableCreatureList.add(new SpawnListEntry(EntityMoolus.class, 100, 4, 6));
-		this.spawnableCreatureList.add(new SpawnListEntry(EntityOinkus.class, 100, 4, 6));
+		this.spawnableCreatureList.add(new SpawnListEntry(EntityMoolus.class, 100, 2, 3));
+		this.spawnableCreatureList.add(new SpawnListEntry(EntityOinkus.class, 100, 2, 3));
 		this.topBlock = ZGBlocks.edenGrass.getDefaultState();
 		this.fillerBlock = ZGBlocks.edenSoil.getDefaultState();
 		this.stoneBlock = ZGBlocks.edenStone;

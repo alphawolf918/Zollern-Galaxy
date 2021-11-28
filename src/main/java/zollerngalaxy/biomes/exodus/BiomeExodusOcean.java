@@ -29,8 +29,8 @@ public class BiomeExodusOcean extends BiomeExodusBase {
 		this.setBlocks(Blocks.AIR);
 		this.setBiomeType(EnumBiomeTypeZG.OCEAN);
 		this.clearAllNonMonsterSpawning();
-		this.spawnableWaterCreatureList.add(new SpawnListEntry(EntitySquid.class, 100, 1, 4));
-		this.spawnableWaterCreatureList.add(new SpawnListEntry(EntityJellyfish.class, 100, 1, 4));
+		this.spawnableWaterCreatureList.add(new SpawnListEntry(EntitySquid.class, 100, 1, 2));
+		this.spawnableWaterCreatureList.add(new SpawnListEntry(EntityJellyfish.class, 100, 1, 2));
 		this.biomeDecor.exodusTallGrassPerChunk = 6;
 		this.biomeDecor.astersPerChunk = 5;
 		this.biomeDecor.generateFalls = true;

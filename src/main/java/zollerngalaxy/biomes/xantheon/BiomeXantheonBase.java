@@ -55,10 +55,10 @@ public class BiomeXantheonBase extends BiomeSpace {
 		this.clearAllNonMonsterSpawning();
 		
 		if (ConfigManagerZG.enableAlienVillagerSpawn) {
-			this.spawnableCreatureList.add(new SpawnListEntry(EntityAlienVillager.class, 5, 1, 2));
+			this.spawnableCreatureList.add(new SpawnListEntry(EntityAlienVillager.class, this.villagerSpawnRate, 1, 1));
 		}
 		
-		this.spawnableMonsterList.add(new SpawnListEntry(EntityGrayAlien.class, 25, 1, 3));
+		this.spawnableMonsterList.add(new SpawnListEntry(EntityGrayAlien.class, 15, 1, 1));
 		this.topBlock = ZGBlocks.xantheonRock.getDefaultState();
 		this.fillerBlock = ZGBlocks.xantheonChrome.getDefaultState();
 		this.stoneBlock = ZGBlocks.xantheonStone;

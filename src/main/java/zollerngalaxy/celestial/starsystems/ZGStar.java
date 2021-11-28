@@ -5,7 +5,7 @@
  * claim it as your own, and do not
  * redistribute it.
  */
-package zollerngalaxy.starsystems;
+package zollerngalaxy.celestial.starsystems;
 
 import micdoodle8.mods.galacticraft.api.galaxies.CelestialBody;
 import micdoodle8.mods.galacticraft.api.galaxies.Star;

@@ -54,7 +54,7 @@ public abstract class BiomePerditaBase extends BiomeSpace {
 		this.biomeDecor.mushroomsPerChunk = -999;
 		
 		if (ConfigManagerZG.enableAlienVillagerSpawn) {
-			this.spawnableCreatureList.add(new SpawnListEntry(EntityAlienVillager.class, 5, 1, 2));
+			this.spawnableCreatureList.add(new SpawnListEntry(EntityAlienVillager.class, this.villagerSpawnRate, 1, 1));
 		}
 		
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityGrayAlien.class, 25, 2, 4));

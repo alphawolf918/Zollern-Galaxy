@@ -9,6 +9,7 @@ package zollerngalaxy.biomes.decorators;
 
 import java.util.Random;
 import net.minecraft.block.Block;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
@@ -16,10 +17,12 @@ import net.minecraft.world.biome.Biome.TempCategory;
 import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.gen.feature.WorldGenWaterlily;
 import net.minecraft.world.gen.feature.WorldGenerator;
+import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.biomes.ZGBiomes;
 import zollerngalaxy.blocks.ZGBlockTallGrass;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.config.ConfigManagerZG;
+import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 import zollerngalaxy.core.enums.EnumOreGenZG;
 import zollerngalaxy.lib.helpers.ZGDecorateHelper;
 import zollerngalaxy.worldgen.WorldGenLakesZG;
@@ -142,10 +145,18 @@ public class BiomeDecoratorXathius extends BiomeDecoratorZG {
 			}
 		}
 		
+		// Outposts
 		if (this.generateOutposts && this.outpostsPerChunk > 0) {
+			if (biome instanceof BiomeSpace) {
+				BiomeSpace spaceBiome = (BiomeSpace) biome;
+				if (spaceBiome.getBiomeType() == EnumBiomeTypeZG.OCEAN) {
+					return;
+				}
+			}
 			y = rand.nextInt(rand.nextInt(genY) + 8);
 			if (y >= 62) {
-				WorldGenerator outpostGen = new WorldGenOutpost(ZGBlocks.blockOutpost.getDefaultState(), ZGBlocks.blockOutpost.getDefaultState());
+				IBlockState OUTPOST_STATE = ZGBlocks.blockOutpost.getDefaultState();
+				WorldGenerator outpostGen = new WorldGenOutpost(OUTPOST_STATE, OUTPOST_STATE);
 				for (int i = 0; i < this.outpostsPerChunk; i++) {
 					if (rand.nextInt((this.enableExtremeMode) ? 200 : 100) <= ConfigManagerZG.outpostGenChance) {
 						outpostGen.generate(world, rand, this.chunkPos.add(x, y, z));

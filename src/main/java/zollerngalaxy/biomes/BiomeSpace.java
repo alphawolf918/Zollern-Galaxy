@@ -28,6 +28,7 @@ public class BiomeSpace extends ZGBiomeBase {
 	protected WorldProviderPlanetZG spaceProvider = null;
 	protected boolean enableExtremeMode = ConfigManagerZG.enableExtremeMode;
 	public static int grassFoliageColor = 0x00ff00;
+	protected int villagerSpawnRate = ConfigManagerZG.alienVillagerSpawnRate;
 	
 	protected static BiomeSpace INSTANCE;
 	
@@ -62,7 +63,7 @@ public class BiomeSpace extends ZGBiomeBase {
 		monsterList.add(new SpawnListEntry(EntityEvolvedWitch.class, 100, numSpawn, numSpawn));
 		
 		if (ConfigManagerZG.enableAlienVillagerSpawn) {
-			this.spawnableCreatureList.add(new SpawnListEntry(EntityAlienVillager.class, 1, 1, 1));
+			this.spawnableCreatureList.add(new SpawnListEntry(EntityAlienVillager.class, this.villagerSpawnRate, 1, 1));
 		}
 	}
 	

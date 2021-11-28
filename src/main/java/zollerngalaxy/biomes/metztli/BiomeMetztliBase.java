@@ -8,7 +8,6 @@
 package zollerngalaxy.biomes.metztli;
 
 import java.util.Random;
-import micdoodle8.mods.galacticraft.core.entities.EntityAlienVillager;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedCreeper;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedEnderman;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedSkeleton;
@@ -72,8 +71,7 @@ public abstract class BiomeMetztliBase extends BiomeSpace {
 		this.clearAllSpawning();
 		
 		if (ConfigManagerZG.enableAlienVillagerSpawn) {
-			this.spawnableCreatureList.add(new SpawnListEntry(EntityAlienVillager.class, 2, 1, 2));
-			this.spawnableCreatureList.add(new SpawnListEntry(EntityHarranVillager.class, 2, 1, 2));
+			this.spawnableCreatureList.add(new SpawnListEntry(EntityHarranVillager.class, this.villagerSpawnRate, 1, 1));
 		}
 		
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedZombie.class, 100, 1, 4));
@@ -94,7 +92,6 @@ public abstract class BiomeMetztliBase extends BiomeSpace {
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityMegaCreeper.class, 5, 1, 4));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityEnderman.class, 5, 1, 4));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityWitch.class, 5, 1, 1));
-		
 		this.setStoneBlock(Blocks.STONE);
 		this.setPlanetForBiome(ZGPlanets.planetMetztli);
 	}

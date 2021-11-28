@@ -5,7 +5,7 @@
  * claim it as your own, and do not
  * redistribute it.
  */
-package zollerngalaxy.biomes.xathius;
+package zollerngalaxy.blocks.xathius;
 
 import net.minecraft.block.Block;
 import zollerngalaxy.blocks.ZGBlockGrass;

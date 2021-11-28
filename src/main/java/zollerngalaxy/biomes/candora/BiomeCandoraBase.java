@@ -41,10 +41,10 @@ public class BiomeCandoraBase extends BiomeSpace {
 		super(singleName, props);
 		this.setTempCategory(TempCategory.COLD);
 		this.setTemp(3.2F);
-		this.decorator.flowersPerChunk = -999;
-		this.decorator.treesPerChunk = -999;
-		this.decorator.grassPerChunk = -999;
-		this.decorator.mushroomsPerChunk = -999;
+		this.biomeDecor.flowersPerChunk = -999;
+		this.biomeDecor.treesPerChunk = -999;
+		this.biomeDecor.grassPerChunk = -999;
+		this.biomeDecor.mushroomsPerChunk = -999;
 		this.clearAllSpawning();
 		this.setPlanetForBiome(ZGPlanets.planetCandora);
 	}

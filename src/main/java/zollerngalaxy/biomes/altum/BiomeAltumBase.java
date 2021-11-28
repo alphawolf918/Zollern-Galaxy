@@ -204,6 +204,7 @@ public class BiomeAltumBase extends BiomeSpace {
 	}
 	
 	public void addWaterSpawns() {
+		this.clearAllSpawning();
 		this.spawnableWaterCreatureList.add(new SpawnListEntry(EntitySquidlus.class, 75, 2, 4));
 		this.spawnableWaterCreatureList.add(new SpawnListEntry(EntitySquid.class, 70, 2, 4));
 		this.spawnableWaterCreatureList.add(new SpawnListEntry(EntityJellyfish.class, 65, 1, 4));
@@ -214,8 +215,7 @@ public class BiomeAltumBase extends BiomeSpace {
 		this.spawnableWaterCreatureList.add(new SpawnListEntry(EntityAbyssalVillager.class, 40, 1, 2));
 		
 		if (ConfigManagerZG.enableAlienVillagerSpawn) {
-			this.spawnableCreatureList.add(new SpawnListEntry(EntityAbyssalVillager.class, 1, 1, 2));
+			this.spawnableCreatureList.add(new SpawnListEntry(EntityAbyssalVillager.class, this.villagerSpawnRate, 1, 1));
 		}
 	}
-	
 }

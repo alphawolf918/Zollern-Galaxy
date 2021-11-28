@@ -56,5 +56,4 @@ public class ZGWaterGrass extends ZGBlockTallGrass {
 	public boolean isFullCube(IBlockState state) {
 		return false;
 	}
-	
 }

@@ -45,7 +45,7 @@ public abstract class BiomeAtheonBase extends BiomeSpace {
 		this.biomeDecor.treesPerChunk = -999;
 		this.biomeDecor.grassPerChunk = -999;
 		this.biomeDecor.mushroomsPerChunk = -999;
-		this.spawnableMonsterList.add(new SpawnListEntry(EntityGrayAlien.class, 2, 1, 4));
+		this.spawnableMonsterList.add(new SpawnListEntry(EntityGrayAlien.class, 1, 1, 1));
 		this.setStoneBlock(ZGBlocks.atheonStone);
 		this.setPlanetForBiome(ZGPlanets.planetAtheon);
 	}

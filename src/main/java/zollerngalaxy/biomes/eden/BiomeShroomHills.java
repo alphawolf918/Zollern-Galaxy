@@ -28,9 +28,9 @@ public class BiomeShroomHills extends BiomeEdenBase {
 		this.setBiomeHeight(52);
 		this.setBiomeType(EnumBiomeTypeZG.WEIRD);
 		this.clearAllNonMonsterSpawning();
-		this.spawnableCreatureList.add(new SpawnListEntry(EntityPigShroom.class, 100, 1, 4));
+		this.spawnableCreatureList.add(new SpawnListEntry(EntityPigShroom.class, 100, 1, 2));
 		if (ConfigManagerZG.canEarthAnimalsSpawnOnEden) {
-			this.spawnableCreatureList.add(new SpawnListEntry(EntityMooshroom.class, 100, 1, 4));
+			this.spawnableCreatureList.add(new SpawnListEntry(EntityMooshroom.class, 100, 1, 2));
 		}
 		this.enableSnow = false;
 		this.biomeDecor.generateFalls = true;

@@ -9,5 +9,6 @@ package zollerngalaxy.celestial;
 
 public class GalaxyListZG {
 	
-	public static final String MILKY_WAY = "milky_way";
+	public static final Galaxy MILKY_WAY = new Galaxy("milky_way");
+	public static final Galaxy EISSENTAM = new Galaxy("eissentam");
 }

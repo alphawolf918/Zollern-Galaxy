@@ -158,6 +158,7 @@ public class ConfigManagerZG {
 	public static boolean enableWindBlowEvent;
 	public static boolean enableAlienVillagerSpawn;
 	public static boolean enableAlienVillagerMutation;
+	public static int alienVillagerSpawnRate;
 	
 	/////////////////////////////////////////////////
 	public static double meteorGenZollus;
@@ -509,6 +510,9 @@ public class ConfigManagerZG {
 				.getBoolean();
 		enableAlienVillagerMutation = configuration.get(CATEGORY_CUSTOMIZATIONS, "Enable Alien Villagers To Mutate", true,
 				"Set whether or not Alien Villagers can mutate into Zombies on Metztli (default: true). ").getBoolean();
+		alienVillagerSpawnRate = configuration
+				.get(CATEGORY_CUSTOMIZATIONS, "Alien Villager Ambient Spawn Rate", 1, "Spawn rate of all Alien Villager types, affects all planets. (default: 1)")
+				.getInt();
 		
 		//
 		//
@@ -623,25 +627,25 @@ public class ConfigManagerZG {
 		
 		// Planet Tiers (Psios-6)
 		planetZollusTier = configuration.get(CATEGORY_TIERS, "Planet Zollus Tier", 3).getInt();
-		planetKriffonTier = configuration.get(CATEGORY_TIERS, "Planet Kriffon Tier", 4).getInt();
-		planetPurgotTier = configuration.get(CATEGORY_TIERS, "Planet Purgot Tier", 5).getInt();
-		planetEdenTier = configuration.get(CATEGORY_TIERS, "Planet Eden Tier", 5).getInt();
+		planetKriffonTier = configuration.get(CATEGORY_TIERS, "Planet Kriffon Tier", 3).getInt();
+		planetPurgotTier = configuration.get(CATEGORY_TIERS, "Planet Purgot Tier", 3).getInt();
+		planetEdenTier = configuration.get(CATEGORY_TIERS, "Planet Eden Tier", 3).getInt();
 		
 		// Planet Tiers (Praedyth)
-		planetXathiusTier = configuration.get(CATEGORY_TIERS, "Planet Xathius Tier", 6).getInt();
-		planetOasisTier = configuration.get(CATEGORY_TIERS, "Planet Oasis Tier", 6).getInt();
-		planetXantheonTier = configuration.get(CATEGORY_TIERS, "Planet Xantheon Tier", 7).getInt();
-		planetCandoraTier = configuration.get(CATEGORY_TIERS, "Planet Candora Tier", 8).getInt();
-		planetAtheonTier = configuration.get(CATEGORY_TIERS, "Planet Atheon Tier", 8).getInt();
+		planetXathiusTier = configuration.get(CATEGORY_TIERS, "Planet Xathius Tier", 3).getInt();
+		planetOasisTier = configuration.get(CATEGORY_TIERS, "Planet Oasis Tier", 3).getInt();
+		planetXantheonTier = configuration.get(CATEGORY_TIERS, "Planet Xantheon Tier", 3).getInt();
+		planetCandoraTier = configuration.get(CATEGORY_TIERS, "Planet Candora Tier", 3).getInt();
+		planetAtheonTier = configuration.get(CATEGORY_TIERS, "Planet Atheon Tier", 3).getInt();
 		
 		// Planet Tiers (Sol-2)
-		planetPerditaTier = configuration.get(CATEGORY_TIERS, "Planet Perdita Tier", 9).getInt();
-		planetAltumTier = configuration.get(CATEGORY_TIERS, "Planet Altum Tier", 10).getInt();
-		planetCaligroTier = configuration.get(CATEGORY_TIERS, "Planet Caligro Tier", 11).getInt();
+		planetPerditaTier = configuration.get(CATEGORY_TIERS, "Planet Perdita Tier", 3).getInt();
+		planetAltumTier = configuration.get(CATEGORY_TIERS, "Planet Altum Tier", 3).getInt();
+		planetCaligroTier = configuration.get(CATEGORY_TIERS, "Planet Caligro Tier", 3).getInt();
 		planetExodusTier = configuration.get(CATEGORY_TIERS, "Planet Exodus Tier", 3).getInt();
 		
 		// Planet Tiers (Pantheon)
-		planetVortexTier = configuration.get(CATEGORY_TIERS, "Planet Vortex Tier", 4).getInt();
+		planetVortexTier = configuration.get(CATEGORY_TIERS, "Planet Vortex Tier", 3).getInt();
 		planetMetztliTier = configuration.get(CATEGORY_TIERS, "Planet Metztli Tier", 3).getInt();
 		
 		configuration.save();

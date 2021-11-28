@@ -24,7 +24,7 @@ public class BiomeOasisPlains extends BiomeOasisBase {
 		this.setBiomeHeight(53);
 		this.setBiomeType(EnumBiomeTypeZG.LUSH);
 		this.enableSnow = false;
-		this.decorator.generateFalls = true;
+		this.biomeDecor.generateFalls = true;
 		this.biomeDecor.waterLakesPerChunk = 2;
 		this.grassFoliageColor = 0x9f0000;
 		this.waterColor = 0x8b2cff;

@@ -24,7 +24,7 @@ public class BiomeCaligroCorruptedMesa extends BiomeCaligroBase {
 		this.setTemp(0.1F);
 		this.setBiomeHeight(92);
 		this.setBiomeType(EnumBiomeTypeZG.ABANDONED);
-		this.spawnableMonsterList.add(new SpawnListEntry(EntityFaceless.class, 40, 1, 4));
+		this.spawnableMonsterList.add(new SpawnListEntry(EntityFaceless.class, 40, 1, 2));
 		this.enableSnow = false;
 		this.biomeDecor.generateFalls = false;
 		this.grassFoliageColor = 0x000;
