@@ -15,32 +15,31 @@ import zollerngalaxy.items.ZGItems;
 import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.mobs.entities.base.EntityZGVillagerBase;
 
-public class EntityAstrosVillager extends EntityZGVillagerBase {
+public class EntityZollusVillager extends EntityZGVillagerBase {
 	
-	public EntityAstrosVillager(World worldIn) {
+	public EntityZollusVillager(World worldIn) {
 		super(worldIn);
 		this.setSize(this.width * 1.5375F, this.height * 1.5375F);
-		this.setMainPriceItem(new ItemStack(ZGItems.ingotZollernium, ZGHelper.rngInt(1, 8)));
+		this.setPriceItem(new ItemStack(ZGItems.zolCrystal, ZGHelper.rngInt(1, 4)), new ItemStack(ZGItems.heartium, ZGHelper.rngInt(1, 4)));
 	}
 	
 	@Override
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.5D);
-		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(40.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.325165798D);
+		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(45.50D);
 	}
 	
 	@Override
 	protected float getSoundPitch() {
-		return (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F;
+		return (this.rand.nextFloat() - this.rand.nextFloat()) * 0.1F - 0.2F;
 	}
 	
 	@Override
 	protected ITradeList[] getTradeList() {
-		ITradeList[] TRADE_LIST = new ITradeList[] { new ListVillagerItems(new ItemStack(ZGItems.compressedCobalt, 1), new PriceInfo(1, 2)),
-				new ListVillagerItems(new ItemStack(ZGItems.dustChargium, 2), new PriceInfo(1, 2)),
-				new ListVillagerItems(new ItemStack(ZGItems.garnet, 1), new PriceInfo(1, 2)),
-				new ListVillagerItems(new ItemStack(ZGItems.ingotShinium, 1), new PriceInfo(1, 2)) };
+		ITradeList[] TRADE_LIST = new ITradeList[] { new ListVillagerItems(new ItemStack(ZGItems.compressedHeartium, 1), new PriceInfo(1, 2)),
+				new ListVillagerItems(new ItemStack(ZGItems.zolCrystal, 1), new PriceInfo(1, 2)),
+				new ListVillagerItems(new ItemStack(ZGItems.heartium, 1), new PriceInfo(1, 2)) };
 		return TRADE_LIST;
 	}
 	

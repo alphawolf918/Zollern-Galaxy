@@ -8,7 +8,6 @@
 package zollerngalaxy.biomes.zollus;
 
 import java.util.Random;
-import micdoodle8.mods.galacticraft.core.entities.EntityAlienVillager;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedCreeper;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedEnderman;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedSkeleton;
@@ -28,6 +27,7 @@ import zollerngalaxy.celestial.ZGPlanets;
 import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderZollus;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
+import zollerngalaxy.mobs.entities.villagers.EntityZollusVillager;
 
 public class BiomeZollusBase extends BiomeSpace {
 	
@@ -52,7 +52,7 @@ public class BiomeZollusBase extends BiomeSpace {
 		this.clearAllSpawning();
 		
 		if (ConfigManagerZG.enableAlienVillagerSpawn) {
-			this.spawnableCreatureList.add(new SpawnListEntry(EntityAlienVillager.class, this.villagerSpawnRate, 1, 1));
+			this.spawnableCreatureList.add(new SpawnListEntry(EntityZollusVillager.class, this.villagerSpawnRate, 1, 1));
 		}
 		
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedZombie.class, 100, 4, 4));

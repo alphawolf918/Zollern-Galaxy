@@ -20,6 +20,7 @@ import zollerngalaxy.celestial.ZGPlanets;
 import zollerngalaxy.celestial.spacestations.ZGSpaceStations;
 import zollerngalaxy.core.dimensions.ZGDimensions;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderOrbitZG;
+import zollerngalaxy.lib.ZGInfo;
 
 public class WorldProviderOrbitCaligro extends WorldProviderOverworldOrbit {
 	
@@ -137,7 +138,7 @@ public class WorldProviderOrbitCaligro extends WorldProviderOverworldOrbit {
 	
 	@Override
 	public String getSaveFolder() {
-		return "space_stations/caligro";
+		return ZGInfo.SPACE_STATION_PFX + "/caligro";
 	}
 	
 	@Override

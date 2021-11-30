@@ -21,6 +21,7 @@ import zollerngalaxy.celestial.ZGPlanets;
 import zollerngalaxy.celestial.spacestations.ZGSpaceStations;
 import zollerngalaxy.core.dimensions.ZGDimensions;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderOrbitZG;
+import zollerngalaxy.lib.ZGInfo;
 
 public class WorldProviderOrbitOasis extends WorldProviderOverworldOrbit {
 	
@@ -141,7 +142,7 @@ public class WorldProviderOrbitOasis extends WorldProviderOverworldOrbit {
 	
 	@Override
 	public String getSaveFolder() {
-		return "space_stations/oasis";
+		return ZGInfo.SPACE_STATION_PFX + "/oasis";
 	}
 	
 	@Override

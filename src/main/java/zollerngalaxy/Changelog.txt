@@ -10,6 +10,8 @@ Zollern Galaxy v2.0.32
     - Regular Alien Villagers will convert into Astros Villagers when on the moon.
 * Added the Caligro Villager.
     - Regular Alien Villagers will convert into Caligro Villagers when on that planet.
+* Added the Zollus Villager.
+    - Regular Alien Villagers will convert into Zollus Villagers when on that planet.
 * Added a config option to make this mod's custom Alien Villagers stop going "HNGH!!"
     - Does not affect the GC Alien Villagers.
 * Added Eden Crystal gen to Astros.
@@ -25,6 +27,7 @@ Zollern Galaxy v2.0.32
 * Changed all Planet and Moon tiers to be 3 by default (customizable via config file).
      - This makes accessing them easier, and not necessarily limited to Star Gates.
 * Outposts should no longer generate in ocean-type biomes.
+* Every custom Alien Villager now has their own trade goods.
 * 
 * Fixed Purgot Dirt potentially showing up on Zollus.
 * Fixed (mostly) ravines not generating correctly.

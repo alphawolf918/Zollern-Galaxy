@@ -16,6 +16,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.SoundCategory;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextFormatting;
@@ -72,7 +73,11 @@ public final class WindBlowingEvent extends Event {
 	
 	private void playWindSound(World worldIn, EntityPlayer player, double posX, double posY, double posZ) {
 		BlockPos soundPos = new BlockPos(posX, posY, posZ);
-		worldIn.playSound(player, soundPos, ZGSoundEvents.WEATHER_WIND, SoundCategory.WEATHER, 1000.0F, 2.0F + player.getRNG().nextFloat() * 0.4F);
+		SoundEvent windSoundEvent = ZGSoundEvents.WEATHER_WIND;
+		SoundCategory soundCtg = SoundCategory.WEATHER;
+		float volume = 1000.0F;
+		float pitch = 2.0F + player.getRNG().nextFloat() * 0.4F;
+		worldIn.playSound(player, soundPos, windSoundEvent, soundCtg, volume, pitch);
 	}
 	
 	public void pushEntities() {
@@ -185,5 +190,4 @@ public final class WindBlowingEvent extends Event {
 	public World getWorld() {
 		return this.world;
 	}
-	
 }

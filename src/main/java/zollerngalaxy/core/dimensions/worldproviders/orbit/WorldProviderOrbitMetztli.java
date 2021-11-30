@@ -20,6 +20,7 @@ import zollerngalaxy.celestial.ZGPlanets;
 import zollerngalaxy.celestial.spacestations.ZGSpaceStations;
 import zollerngalaxy.core.dimensions.ZGDimensions;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderOrbitZG;
+import zollerngalaxy.lib.ZGInfo;
 
 public class WorldProviderOrbitMetztli extends WorldProviderOverworldOrbit {
 	
@@ -157,7 +158,7 @@ public class WorldProviderOrbitMetztli extends WorldProviderOverworldOrbit {
 	
 	@Override
 	public String getSaveFolder() {
-		return "space_stations/metztli";
+		return ZGInfo.SPACE_STATION_PFX + "/metztli";
 	}
 	
 	@Override

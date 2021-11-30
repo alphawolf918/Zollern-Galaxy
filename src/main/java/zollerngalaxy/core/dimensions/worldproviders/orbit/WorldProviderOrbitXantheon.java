@@ -21,6 +21,7 @@ import zollerngalaxy.celestial.ZGPlanets;
 import zollerngalaxy.celestial.spacestations.ZGSpaceStations;
 import zollerngalaxy.core.dimensions.ZGDimensions;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderOrbitZG;
+import zollerngalaxy.lib.ZGInfo;
 
 public class WorldProviderOrbitXantheon extends WorldProviderOverworldOrbit {
 	
@@ -140,7 +141,7 @@ public class WorldProviderOrbitXantheon extends WorldProviderOverworldOrbit {
 	
 	@Override
 	public String getSaveFolder() {
-		return "space_stations/xantheon";
+		return ZGInfo.SPACE_STATION_PFX + "/xantheon";
 	}
 	
 	@Override

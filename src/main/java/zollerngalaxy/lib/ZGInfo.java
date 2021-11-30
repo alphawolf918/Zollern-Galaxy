@@ -33,6 +33,7 @@ public class ZGInfo {
 	
 	public static final int SPACE_STATION_LOWER_Y_LIMIT = 10;
 	public static final int SPACE_STATION_HIGHER_Y_LIMIT = 1200;
+	public static final String SPACE_STATION_PFX = "space_stations";
 	
 	public static final float RADIANS_TO_DEGREES = 180F / 3.1415927F;
 	public static final double RADIANS_TO_DEGREES_D = 180D / Math.PI;

@@ -81,6 +81,7 @@ import zollerngalaxy.core.dimensions.worldproviders.WorldProviderCaligro;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderEden;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderMetztli;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderVortex;
+import zollerngalaxy.core.dimensions.worldproviders.WorldProviderZollus;
 import zollerngalaxy.items.ZGItems;
 import zollerngalaxy.items.armor.ZGArmor;
 import zollerngalaxy.items.armor.ZGArmorMats;
@@ -104,6 +105,7 @@ import zollerngalaxy.mobs.entities.villagers.EntityAstrosVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityCaligroVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityEdenVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityHarranVillager;
+import zollerngalaxy.mobs.entities.villagers.EntityZollusVillager;
 import zollerngalaxy.mobs.entities.zombiemutations.EntityGhoul;
 import zollerngalaxy.mobs.entities.zombiemutations.EntityOverlord;
 import zollerngalaxy.mobs.entities.zombiemutations.EntitySeeker;
@@ -165,9 +167,9 @@ public class ZGEvents {
 			}
 			
 			if (ConfigManagerZG.enableWindBlowEvent) {
-				if (player.getRNG().nextInt(100) == 0 && minecraft.world.provider instanceof WorldProviderVortex) {
+				if (player.getRNG().nextInt(150) == 0 && minecraft.world.provider instanceof WorldProviderVortex) {
 					double freq = player.getRNG().nextDouble() * Math.PI * 2.0F;
-					double dist = 120.0F;
+					double dist = 60.0F;
 					double dX = dist * Math.cos(freq);
 					double dZ = dist * Math.sin(freq);
 					double posX = player.posX + dX;
@@ -625,6 +627,18 @@ public class ZGEvents {
 					EntityCaligroVillager caligroVillager = new EntityCaligroVillager(world);
 					caligroVillager.setPosition(worldPos.getX(), worldPos.getY(), worldPos.getZ());
 					world.spawnEntity(caligroVillager);
+				}
+			}
+		} else if (provider instanceof WorldProviderZollus) {
+			if (!world.isRemote) {
+				Entity entity = event.getEntity();
+				if (entity instanceof EntityAlienVillager) {
+					EntityAlienVillager alienVillager = (EntityAlienVillager) entity;
+					BlockPos worldPos = alienVillager.getPos();
+					alienVillager.setDead();
+					EntityZollusVillager zollusVillager = new EntityZollusVillager(world);
+					zollusVillager.setPosition(worldPos.getX(), worldPos.getY(), worldPos.getZ());
+					world.spawnEntity(zollusVillager);
 				}
 			}
 		}

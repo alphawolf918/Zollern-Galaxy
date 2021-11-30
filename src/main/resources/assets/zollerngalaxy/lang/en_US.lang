@@ -776,11 +776,15 @@ entity.zollerngalaxy:scorpion.name=Scorpion
 entity.zollerngalaxy:blubberfish.name=Blubber Fish
 entity.zollerngalaxy:gypsyfish.name=Gypsy Fish
 entity.zollerngalaxy:bladefish.name=Blade Fish
+
+
 entity.zollerngalaxy:abyssalvillager.name=Abyssal Villager
 entity.zollerngalaxy:harranvillager.name=Harran Villager
 entity.zollerngalaxy:edenvillager.name=Eden Villager
 entity.zollerngalaxy:astrosvillager.name=Astros Villager
 entity.zollerngalaxy:caligrovillager.name=Caligro Villager
+entity.zollerngalaxy:zollusvillager.name=Zollus Villager
+
 entity.zollerngalaxy:shark.name=Shark
 entity.zollerngalaxy:jellyfish.name=Jellyfish
 entity.zollerngalaxy:wasp.name=Wasp

@@ -147,7 +147,7 @@ public class WorldProviderOrbitEden extends WorldProviderOverworldOrbit {
 	
 	@Override
 	public String getSaveFolder() {
-		return "space_stations/eden";
+		return ZGInfo.SPACE_STATION_PFX + "/eden";
 	}
 	
 	@Override

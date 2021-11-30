@@ -85,21 +85,8 @@ public class EntityZGVillagerBase extends EntityAgeable implements IMerchant, IN
 	private String lastBuyingPlayer;
 	private boolean isLookingForHome;
 	private InventoryBasic villagerInventory;
-	
-	private static final ITradeList[] DEFAULT_TRADE_LIST_MAP = new ITradeList[] { new ListItemForEmeralds(new ItemStack(ZGItems.alienStone, 1), new PriceInfo(1, 2)),
-			new ListItemForEmeralds(new ItemStack(ZGItems.axeAmaranth, 1), new PriceInfo(3, 4)),
-			new ListItemForEmeralds(new ItemStack(ZGItems.darkEssence, 1), new PriceInfo(3, 4)),
-			new ListItemForEmeralds(new ItemStack(ZGItems.sharkTooth, 1), new PriceInfo(3, 4)),
-			new ListItemForEmeralds(new ItemStack(ZGItems.compressedVyrex, 1), new PriceInfo(1, 2)),
-			new ListItemForEmeralds(new ItemStack(ZGItems.azurite, 1), new PriceInfo(2, 4)),
-			new ItemAndEmeraldToItem(new ItemStack(ZGItems.rawBlubberFish, 1), new PriceInfo(1, 1), new ItemStack(ZGItems.edenFruit, 1)),
-			new ListItemForEmeralds(new ItemStack(ZGItems.brownie, 1), new PriceInfo(3, 4)),
-			new ItemAndEmeraldToItem(new ItemStack(ZGItems.creamBall, 1), new PriceInfo(3, 5), new ItemStack(GCItems.schematic, 1, 1)),
-			new ItemAndEmeraldToItem(new ItemStack(ZGItems.compressedCobalt, 1), new PriceInfo(3, 5), new ItemStack(ZGBlocks.blockLore, 1)),
-			new ItemAndEmeraldToItem(new ItemStack(ZGBlocks.blockLore, 2), new PriceInfo(1, 1), new ItemStack(ZGItems.heartium, 1)),
-			new ItemAndEmeraldToItem(new ItemStack(ZGBlocks.blockPerdDiamond, 2), new PriceInfo(1, 1), new ItemStack(ZGBlocks.blockLore, 1)),
-			new EmeraldForItems(new ItemStack(ZGBlocks.perdTreeSapling, 1), new PriceInfo(11, 39)),
-			new EmeraldForItems(new ItemStack(ZGItems.superChargedCoal, ZGHelper.rngInt(2, 4)), new PriceInfo(11, 39)) };
+	protected static ItemStack mainPriceItem = new ItemStack(GCItems.itemBasicMoon, 1, 2);
+	protected static ItemStack secondaryPriceItem = new ItemStack(GCItems.itemBasicMoon, 1, 2);
 	
 	public EntityZGVillagerBase(World worldIn) {
 		super(worldIn);
@@ -118,6 +105,24 @@ public class EntityZGVillagerBase extends EntityAgeable implements IMerchant, IN
 		this.tasks.addTask(9, new EntityAIWander(this, 1.6D));
 		this.tasks.addTask(10, new EntityAIWatchClosest(this, EntityLiving.class, 7.0F));
 		this.setCanPickUpLoot(true);
+	}
+	
+	protected ITradeList[] getTradeList() {
+		ITradeList[] TRADE_LIST = new ITradeList[] { new ListVillagerItems(new ItemStack(ZGItems.alienStone, 1), new PriceInfo(1, 2)),
+				new ListVillagerItems(new ItemStack(ZGItems.axeAmaranth, 1), new PriceInfo(3, 4)),
+				new ListVillagerItems(new ItemStack(ZGItems.darkEssence, 1), new PriceInfo(3, 4)),
+				new ListVillagerItems(new ItemStack(ZGItems.sharkTooth, 1), new PriceInfo(3, 4)),
+				new ListVillagerItems(new ItemStack(ZGItems.compressedVyrex, 1), new PriceInfo(1, 2)),
+				new ListVillagerItems(new ItemStack(ZGItems.azurite, 1), new PriceInfo(2, 4)),
+				new ItemAndEmeraldToItem(new ItemStack(ZGItems.rawBlubberFish, 1), new PriceInfo(1, 1), new ItemStack(ZGItems.edenFruit, 1)),
+				new ListVillagerItems(new ItemStack(ZGItems.brownie, 1), new PriceInfo(3, 4)),
+				new ItemAndEmeraldToItem(new ItemStack(ZGItems.creamBall, 1), new PriceInfo(3, 5), new ItemStack(GCItems.schematic, 1, 1)),
+				new ItemAndEmeraldToItem(new ItemStack(ZGItems.compressedCobalt, 1), new PriceInfo(3, 5), new ItemStack(ZGBlocks.blockLore, 1)),
+				new ItemAndEmeraldToItem(new ItemStack(ZGBlocks.blockLore, 2), new PriceInfo(1, 1), new ItemStack(ZGItems.heartium, 1)),
+				new ItemAndEmeraldToItem(new ItemStack(ZGBlocks.blockPerdDiamond, 2), new PriceInfo(1, 1), new ItemStack(ZGBlocks.blockLore, 1)),
+				new TradeGoodsForItems(new ItemStack(ZGBlocks.perdTreeSapling, 1), new PriceInfo(11, 39)),
+				new TradeGoodsForItems(new ItemStack(ZGItems.superChargedCoal, ZGHelper.rngInt(2, 4)), new PriceInfo(11, 39)) };
+		return TRADE_LIST;
 	}
 	
 	@Override
@@ -379,7 +384,7 @@ public class EntityZGVillagerBase extends EntityAgeable implements IMerchant, IN
 			i += 5;
 		}
 		
-		if (recipe.getItemToBuy().getItem() == Items.EMERALD) {
+		if (recipe.getItemToBuy() == this.getMainPriceItemStack()) {
 			this.wealth += recipe.getItemToBuy().getCount();
 		}
 		
@@ -415,7 +420,7 @@ public class EntityZGVillagerBase extends EntityAgeable implements IMerchant, IN
 			this.buyingList = new MerchantRecipeList();
 		}
 		
-		for (EntityZGVillagerBase.ITradeList tradeList : DEFAULT_TRADE_LIST_MAP) {
+		for (EntityZGVillagerBase.ITradeList tradeList : this.getTradeList()) {
 			tradeList.modifyMerchantRecipeList(this.buyingList, this.rand);
 		}
 	}
@@ -507,6 +512,36 @@ public class EntityZGVillagerBase extends EntityAgeable implements IMerchant, IN
 		}
 	}
 	
+	protected void setPriceItem(ItemStack mainPriceItemIn) {
+		EntityZGVillagerBase.mainPriceItem = mainPriceItemIn;
+		EntityZGVillagerBase.secondaryPriceItem = mainPriceItemIn;
+	}
+	
+	protected void setPriceItem(ItemStack mainPriceItemIn, ItemStack secondaryPriceItemIn) {
+		EntityZGVillagerBase.mainPriceItem = mainPriceItemIn;
+		EntityZGVillagerBase.secondaryPriceItem = secondaryPriceItemIn;
+	}
+	
+	protected void setMainPriceItem(ItemStack mainPriceItemIn) {
+		EntityZGVillagerBase.mainPriceItem = mainPriceItemIn;
+	}
+	
+	protected void setSecondaryPriceItem(ItemStack secondaryPriceItemIn) {
+		EntityZGVillagerBase.secondaryPriceItem = secondaryPriceItemIn;
+	}
+	
+	protected ItemStack getMainPriceItemStack() {
+		return this.mainPriceItem;
+	}
+	
+	protected ItemStack getSecondaryItemStack() {
+		return this.secondaryPriceItem;
+	}
+	
+	protected ItemStack getPriceItemStack() {
+		return this.mainPriceItem;
+	}
+	
 	public InventoryBasic getVillagerInventory() {
 		return this.villagerInventory;
 	}
@@ -594,11 +629,11 @@ public class EntityZGVillagerBase extends EntityAgeable implements IMerchant, IN
 		return false;
 	}
 	
-	public static class EmeraldForItems implements EntityZGVillagerBase.ITradeList {
+	public static class TradeGoodsForItems implements EntityZGVillagerBase.ITradeList {
 		public ItemStack sellItem;
 		public EntityZGVillagerBase.PriceInfo price;
 		
-		public EmeraldForItems(ItemStack itemStack, EntityZGVillagerBase.PriceInfo priceIn) {
+		public TradeGoodsForItems(ItemStack itemStack, EntityZGVillagerBase.PriceInfo priceIn) {
 			this.sellItem = itemStack;
 			this.price = priceIn;
 		}
@@ -614,7 +649,7 @@ public class EntityZGVillagerBase extends EntityAgeable implements IMerchant, IN
 			ItemStack tradeStack = this.sellItem.copy();
 			tradeStack.setCount(i);
 			
-			recipeList.add(new MerchantRecipe(tradeStack, new ItemStack(GCItems.itemBasicMoon, 1, 2)));
+			recipeList.add(new MerchantRecipe(tradeStack, mainPriceItem));
 		}
 	}
 	
@@ -647,15 +682,15 @@ public class EntityZGVillagerBase extends EntityAgeable implements IMerchant, IN
 				i = this.field_179409_b.getPrice(random);
 			}
 			
-			recipeList.add(new MerchantRecipe(this.field_179411_a.copy(), new ItemStack(GCItems.itemBasicMoon, i, 2), this.field_179410_c.copy()));
+			recipeList.add(new MerchantRecipe(this.field_179411_a.copy(), mainPriceItem, this.field_179410_c.copy()));
 		}
 	}
 	
-	public static class ListItemForEmeralds implements EntityZGVillagerBase.ITradeList {
+	public static class ListVillagerItems implements EntityZGVillagerBase.ITradeList {
 		public ItemStack itemToBuy;
 		public EntityZGVillagerBase.PriceInfo priceInfo;
 		
-		public ListItemForEmeralds(ItemStack stack, EntityZGVillagerBase.PriceInfo priceInfo) {
+		public ListVillagerItems(ItemStack stack, EntityZGVillagerBase.PriceInfo priceInfo) {
 			this.itemToBuy = stack;
 			this.priceInfo = priceInfo;
 		}
@@ -672,10 +707,10 @@ public class EntityZGVillagerBase extends EntityAgeable implements IMerchant, IN
 			ItemStack itemstack1;
 			
 			if (i < 0) {
-				itemstack = new ItemStack(GCItems.itemBasicMoon, 1, 2);
+				itemstack = mainPriceItem;
 				itemstack1 = new ItemStack(this.itemToBuy.getItem(), -i, this.itemToBuy.getMetadata());
 			} else {
-				itemstack = new ItemStack(GCItems.itemBasicMoon, i, 2);
+				itemstack = secondaryPriceItem;
 				itemstack1 = new ItemStack(this.itemToBuy.getItem(), 1, this.itemToBuy.getMetadata());
 			}
 			

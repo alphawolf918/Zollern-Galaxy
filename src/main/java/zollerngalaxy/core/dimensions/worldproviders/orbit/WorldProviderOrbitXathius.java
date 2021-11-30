@@ -21,6 +21,7 @@ import zollerngalaxy.celestial.ZGPlanets;
 import zollerngalaxy.celestial.spacestations.ZGSpaceStations;
 import zollerngalaxy.core.dimensions.ZGDimensions;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderOrbitZG;
+import zollerngalaxy.lib.ZGInfo;
 
 public class WorldProviderOrbitXathius extends WorldProviderOverworldOrbit {
 	
@@ -141,7 +142,7 @@ public class WorldProviderOrbitXathius extends WorldProviderOverworldOrbit {
 	
 	@Override
 	public String getSaveFolder() {
-		return "space_stations/xathius";
+		return ZGInfo.SPACE_STATION_PFX + "/xathius";
 	}
 	
 	@Override
