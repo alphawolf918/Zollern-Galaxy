@@ -339,6 +339,7 @@ tile.zucriteblock.name=Block of Zucrite
 tile.rhodiumblock.name=Block of Rhodium
 tile.witheriteblock.name=Block of Witherite
 tile.rubyblock.name=Block of Ruby
+tile.sapphireblock.name=Block of Sapphire
 tile.garnetblock.name=Block of Garnet
 tile.opalblock.name=Block of Opal
 tile.topazblock.name=Block of Topaz
@@ -402,6 +403,7 @@ tile.astroscoalore.name=Astros Coal Ore
 tile.astrossuperchargedcoalore.name=Astros Super Charged Coal Ore
 tile.astrostinore.name=Astros Tin Ore
 tile.astroszollerniumore.name=Astros Zollernium Ore
+tile.astrossapphireore.name=Astros Sapphire Ore
 
 tile.endrock.name=Endrock
 
@@ -597,6 +599,7 @@ item.amber.name=Amber
 item.topaz.name=Topaz
 item.garnet.name=Garnet
 item.ruby.name=Ruby
+item.sapphire.name=Sapphire
 item.opal.name=Opal
 item.aquamarine.name=Aquamarine
 item.firegarnet.name=Fiery Garnet

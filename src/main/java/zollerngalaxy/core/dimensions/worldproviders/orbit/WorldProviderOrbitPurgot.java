@@ -20,6 +20,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.celestial.ZGPlanet;
 import zollerngalaxy.celestial.ZGPlanets;
 import zollerngalaxy.celestial.spacestations.ZGSpaceStations;
+import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.ZGDimensions;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderOrbitZG;
 import zollerngalaxy.lib.ZGInfo;
@@ -183,5 +184,10 @@ public class WorldProviderOrbitPurgot extends WorldProviderOverworldOrbit {
 	@Override
 	public DimensionType getDimensionType() {
 		return ZGDimensions.PURGOT_ORBIT;
+	}
+	
+	@Override
+	public int getPlanetIdToOrbit() {
+		return ConfigManagerZG.planetPurgotDimensionId;
 	}
 }

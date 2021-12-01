@@ -132,7 +132,7 @@ public class GuiHUD extends Gui {
 					}
 					
 					// Celestial Class
-					EnumBodyClass planetClass = celestial.getBodyClass();
+					EnumBodyClass planetClass = celestial.getMoonClass();
 					String pClass = planetClass.getPlanetStrClass();
 					String pc = "Class " + pClass + " " + celestialStr;
 					fontRendererObj.drawString(pc, 2, 56, i3);

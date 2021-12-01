@@ -17,6 +17,7 @@ public enum EnumOreGenZG {
 	LAPIS(7, 7, 16, 26),
 	DIAMOND(8, 4, 0, 16),
 	EMERALD(4, 6, 0, 12),
+	SAPPHIRE(16, 8, 0, 32),
 	HEARTIUM(10, 8, 0, 16),
 	VIRINIUM(10, 7, 0, 20),
 	EVENIUM(5, 6, 0, 12),

@@ -70,7 +70,7 @@ public class WorldProviderAstros extends WorldProviderMoonZG {
 	@Override
 	public float getMoonTemp() {
 		ZGMoon moon = this.getMoon();
-		float moonTemp = moon.getBodyTemperature();
+		float moonTemp = moon.getMoonTemperature();
 		if (!this.isDaytime()) {
 			moonTemp /= 1.5F;
 		}

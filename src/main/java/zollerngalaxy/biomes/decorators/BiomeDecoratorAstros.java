@@ -41,6 +41,7 @@ public class BiomeDecoratorAstros extends BiomeDecoratorZG {
 	private WorldGenerator redstoneGen;
 	private WorldGenerator tinGen;
 	private WorldGenerator zollerniumGen;
+	private WorldGenerator sapphireGen;
 	
 	private static final Block STONE = ZGBlocks.astrosStone;
 	private static final Block ROCK = ZGBlocks.astrosRock;
@@ -70,6 +71,7 @@ public class BiomeDecoratorAstros extends BiomeDecoratorZG {
 		this.redstoneGen = new WorldGenMinableZG(ZGBlocks.astrosRedstoneOre, STONE, EnumOreGenZG.REDSTONE);
 		this.tinGen = new WorldGenMinableZG(ZGBlocks.astrosTinOre, STONE, EnumOreGenZG.TIN);
 		this.zollerniumGen = new WorldGenMinableZG(ZGBlocks.astrosZollerniumOre, STONE, EnumOreGenZG.ZOLLERNIUM);
+		this.sapphireGen = new WorldGenMinableZG(ZGBlocks.astrosSapphireOre, STONE, EnumOreGenZG.SAPPHIRE);
 	}
 	
 	@Override
@@ -88,6 +90,7 @@ public class BiomeDecoratorAstros extends BiomeDecoratorZG {
 		this.generateOre(this.redstoneGen, EnumOreGenZG.REDSTONE, world, rand);
 		this.generateOre(this.tinGen, EnumOreGenZG.TIN, world, rand);
 		this.generateOre(this.zollerniumGen, EnumOreGenZG.ZOLLERNIUM, world, rand);
+		this.generateOre(this.sapphireGen, EnumOreGenZG.SAPPHIRE, world, rand);
 		this.generateOre(this.dirtGen, EnumOreGenZG.DIRT, world, rand);
 		this.generateOre(this.gravelGen, EnumOreGenZG.GRAVEL, world, rand);
 		this.generateOre(this.packedIceGen, EnumOreGenZG.PACKED_ICE, world, rand);

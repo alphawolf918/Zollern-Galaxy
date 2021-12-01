@@ -152,6 +152,7 @@ public class ZGItems {
 	public static final Item aquamarine = new ZGItemBase("aquamarine");
 	public static final Item garnet = new ZGItemBase("garnet");
 	public static final Item ruby = new ZGItemBase("ruby");
+	public static final Item sapphire = new ZGItemBase("sapphire");
 	public static final Item amberStatic = new ZGItemBase("staticamber");
 	public static final Item garnetFire = new ZGItemBase("firegarnet");
 	public static final Item aquamarineIcy = new ZGItemBase("icyaqua");
@@ -284,13 +285,13 @@ public class ZGItems {
 				compressedZollernium, compressedZucrite, compressedRhodium, compressedAscendantAmaranth, rawAlienBacon, cookedAlienBacon, rawAlienBeef, cookedAlienBeef,
 				edenFruit, perdBerry, perdPeach, rawBlubberFish, cookedBlubberFish, rawBladeFish, cookedBladeFish, rawGypsyFish, cookedGypsyFish, creamBall, chocolateRaw,
 				chocolateBar, brownie, candyApple, iceCreamSandwich, iceCream, edenDungeonKey, shadeKey, perdGlowdust, perdDiamond, perdEtrium, amber, topaz, opal,
-				aquamarine, garnet, ruby, amberStatic, aquamarineIcy, garnetFire, witherite, netheridium, perdReed, shagreen, sharkTooth, shadowBone, darkEssence, radium,
-				superChargedCoal, powerStick, lapisStick, starGateTier1, starGateTier2, starGateTier3, starGateTier4, starGateTier5, starGateTier6, starGateTier7,
-				starGateTier8, starGateTier9, starGateTier10, starGateCandy, OMNITOOL, BEDROCK_BREAKER, pickaxeCobalt, pickaxeEvenium, pickaxeVirinium, pickaxeAmaranth,
-				pickaxeAzurite, pickaxeZollernium, shovelCobalt, shovelEvenium, shovelVirinium, shovelAmaranth, shovelAzurite, shovelZollernium, axeCobalt, axeEvenium,
-				axeVirinium, axeAmaranth, axeAzurite, axeZollernium, hoeCobalt, hoeEvenium, hoeVirinium, hoeAmaranth, hoeAzurite, hoeZollernium, swordCobalt,
-				swordEvenium, swordVirinium, swordAmaranth, swordAzurite, swordZollernium, swordWither, swordFire, swordThor, swordEnder, swordIce, swordLight,
-				tunnelerCopper, tunnelerGold, tunnelerAmaranth, helmetAmaranth, helmetZollernium, helmetAzurite, helmetRadium, chestAmaranth, chestZollernium,
+				aquamarine, garnet, ruby, sapphire, amberStatic, aquamarineIcy, garnetFire, witherite, netheridium, perdReed, shagreen, sharkTooth, shadowBone,
+				darkEssence, radium, superChargedCoal, powerStick, lapisStick, starGateTier1, starGateTier2, starGateTier3, starGateTier4, starGateTier5, starGateTier6,
+				starGateTier7, starGateTier8, starGateTier9, starGateTier10, starGateCandy, OMNITOOL, BEDROCK_BREAKER, pickaxeCobalt, pickaxeEvenium, pickaxeVirinium,
+				pickaxeAmaranth, pickaxeAzurite, pickaxeZollernium, shovelCobalt, shovelEvenium, shovelVirinium, shovelAmaranth, shovelAzurite, shovelZollernium,
+				axeCobalt, axeEvenium, axeVirinium, axeAmaranth, axeAzurite, axeZollernium, hoeCobalt, hoeEvenium, hoeVirinium, hoeAmaranth, hoeAzurite, hoeZollernium,
+				swordCobalt, swordEvenium, swordVirinium, swordAmaranth, swordAzurite, swordZollernium, swordWither, swordFire, swordThor, swordEnder, swordIce,
+				swordLight, tunnelerCopper, tunnelerGold, tunnelerAmaranth, helmetAmaranth, helmetZollernium, helmetAzurite, helmetRadium, chestAmaranth, chestZollernium,
 				chestAzurite, chestRadium, legsAmaranth, legsZollernium, legsAzurite, legsRadium, bootsAmaranth, bootsZollernium, bootsAzurite, bootsRadium,
 				blueprintCorruption, blueprintThermalHot, blueprintThermalCold, healingHeart, healingHeartForce, amuletStorm, oxygenTankTier4, oxygenTankTier5,
 				oxygenTankTier6);

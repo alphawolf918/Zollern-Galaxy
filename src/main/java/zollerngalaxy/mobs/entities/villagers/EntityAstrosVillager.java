@@ -20,7 +20,7 @@ public class EntityAstrosVillager extends EntityZGVillagerBase {
 	public EntityAstrosVillager(World worldIn) {
 		super(worldIn);
 		this.setSize(this.width * 1.5375F, this.height * 1.5375F);
-		this.setMainPriceItem(new ItemStack(ZGItems.ingotZollernium, ZGHelper.rngInt(1, 8)));
+		this.setPriceItem(new ItemStack(ZGItems.sapphire, ZGHelper.rngInt(1, 4)));
 	}
 	
 	@Override

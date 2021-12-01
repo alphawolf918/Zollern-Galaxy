@@ -21,7 +21,6 @@ import net.minecraft.world.biome.Biome;
 import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderMoonZG;
-import zollerngalaxy.core.dimensions.worldproviders.WorldProviderPlanetZG;
 import zollerngalaxy.core.enums.EnumBodyClass;
 import zollerngalaxy.lib.ZGInfo;
 import zollerngalaxy.lib.helpers.ZGHelper;
@@ -44,7 +43,7 @@ public class ZGMoon extends Moon implements IZollernBody {
 	private AtmosphereInfo atmosphere;
 	private ArrayList<EnumAtmosphericGas> bodyGasses = new ArrayList<EnumAtmosphericGas>();
 	
-	private WorldProviderPlanetZG spaceProvider = null;
+	private WorldProviderMoonZG spaceProvider = null;
 	
 	protected boolean enableExtremeMode = ConfigManagerZG.enableExtremeMode;
 	
@@ -65,7 +64,7 @@ public class ZGMoon extends Moon implements IZollernBody {
 		return this;
 	}
 	
-	public ZGMoon setBodyStar(Star systemStar) {
+	public ZGMoon setMoonStar(Star systemStar) {
 		this.bodyStar = systemStar;
 		return this;
 	}
@@ -223,7 +222,7 @@ public class ZGMoon extends Moon implements IZollernBody {
 	 *            to apply this
 	 *            bioclassification to.
 	 */
-	public ZGMoon setBodyClass(EnumBodyClass pClass) {
+	public ZGMoon setMoonClass(EnumBodyClass pClass) {
 		this.bodyClass = pClass;
 		return this;
 	}
@@ -235,7 +234,7 @@ public class ZGMoon extends Moon implements IZollernBody {
 	 *            The temperature to set.
 	 * @return The Body to apply this effect to.
 	 */
-	public ZGMoon setBodyTemperature(float bodyTemp) {
+	public ZGMoon setMoonTemperature(float bodyTemp) {
 		this.baseTemp = bodyTemp;
 		return this;
 	}
@@ -248,7 +247,7 @@ public class ZGMoon extends Moon implements IZollernBody {
 	 *            The radiation level to set.
 	 * @return The Body to apply this effect to.
 	 */
-	public ZGMoon setBodyRadiation(float bodyRad) {
+	public ZGMoon setMoonRadiation(float bodyRad) {
 		this.baseRadiation = bodyRad;
 		return this;
 	}
@@ -261,7 +260,7 @@ public class ZGMoon extends Moon implements IZollernBody {
 	 *            The toxicity level of the body.
 	 * @return The Body to apply this effect to.
 	 */
-	public ZGMoon setBodyToxicity(float bodyTox) {
+	public ZGMoon setMoonToxicity(float bodyTox) {
 		this.baseToxicity = bodyTox;
 		return this;
 	}
@@ -295,12 +294,12 @@ public class ZGMoon extends Moon implements IZollernBody {
 	 * @return The body of the atmosphere being set on.
 	 */
 	public ZGMoon setAtmosphere() {
-		this.atmosphere = new AtmosphereInfo(this.getIsBreathable(), this.getHasRain(), this.getIsCorrosive(), this.getBodyTemperature(), this.getWindLevel(),
+		this.atmosphere = new AtmosphereInfo(this.getIsBreathable(), this.getHasRain(), this.getIsCorrosive(), this.getMoonTemperature(), this.getWindLevel(),
 				this.getAtmosphericDensity());
 		return this;
 	}
 	
-	public ZGMoon setBodyGasses(EnumAtmosphericGas... gasses) {
+	public ZGMoon setMoonGasses(EnumAtmosphericGas... gasses) {
 		for (EnumAtmosphericGas gas : gasses) {
 			if (gas != null) {
 				this.atmosphereComponent(gas);
@@ -334,21 +333,21 @@ public class ZGMoon extends Moon implements IZollernBody {
 		return this;
 	}
 	
-	public ZGMoon setBodyIcon(String bodyTexture) {
+	public ZGMoon setMoonIcon(String bodyTexture) {
 		this.setBodyIcon(new ResourceLocation(ZGInfo.MOD_ID + ":textures/gui/" + bodyTexture + ".png"));
 		return this;
 	}
 	
-	public ZGMoon setSpaceProvider(WorldProviderPlanetZG provider) {
+	public ZGMoon setSpaceProvider(WorldProviderMoonZG provider) {
 		this.spaceProvider = provider;
 		return this;
 	}
 	
-	public WorldProviderPlanetZG getSpaceProvider() {
+	public WorldProviderMoonZG getSpaceProvider() {
 		return this.spaceProvider;
 	}
 	
-	public Star getBodyStar() {
+	public Star getMoonStar() {
 		return this.bodyStar;
 	}
 	
@@ -416,7 +415,7 @@ public class ZGMoon extends Moon implements IZollernBody {
 	 * @return The bioclassification of the Body.
 	 */
 	@Override
-	public EnumBodyClass getBodyClass() {
+	public EnumBodyClass getMoonClass() {
 		return this.bodyClass;
 	}
 	
@@ -447,7 +446,7 @@ public class ZGMoon extends Moon implements IZollernBody {
 	 * @return
 	 */
 	@Override
-	public boolean getIsHotBody() {
+	public boolean getIsHotMoon() {
 		return this.baseTemp >= 115.0F;
 	}
 	
@@ -457,7 +456,7 @@ public class ZGMoon extends Moon implements IZollernBody {
 	 * @return
 	 */
 	@Override
-	public boolean getIsColdBody() {
+	public boolean getIsColdMoon() {
 		return this.baseTemp <= -25.0F;
 	}
 	
@@ -466,7 +465,7 @@ public class ZGMoon extends Moon implements IZollernBody {
 	 * 
 	 * @return
 	 */
-	public boolean getIsRadioactiveBody() {
+	public boolean getIsRadioactiveMoon() {
 		return this.baseRadiation >= 10.0F;
 	}
 	
@@ -475,7 +474,7 @@ public class ZGMoon extends Moon implements IZollernBody {
 	 * 
 	 * @return
 	 */
-	public boolean getIsToxicBody() {
+	public boolean getIsToxicMoon() {
 		return this.baseToxicity >= 15.0F;
 	}
 	
@@ -506,17 +505,17 @@ public class ZGMoon extends Moon implements IZollernBody {
 	 */
 	@Override
 	public boolean getIsCorrosive() {
-		return (this.getIsToxicBody() || this.getIsRadioactiveBody());
+		return (this.getIsToxicMoon() || this.getIsRadioactiveMoon());
 	}
 	
 	@Override
-	public float getBodyTemperature() {
+	public float getMoonTemperature() {
 		float bodyTemp = this.baseTemp;
 		return bodyTemp;
 	}
 	
 	@Override
-	public float getBodyTemperature(World world, BlockPos pos) {
+	public float getMoonTemperature(World world, BlockPos pos) {
 		float bodyTemp = this.baseTemp;
 		int multiplier = 6;
 		float maxTemp = (bodyTemp * multiplier);
@@ -530,7 +529,7 @@ public class ZGMoon extends Moon implements IZollernBody {
 			boolean isHotBiome = spaceBiome.getIsHotBiome();
 			boolean isColdBiome = spaceBiome.getIsColdBiome();
 			Random rand = new Random();
-			if (rand.nextInt(100) <= 32) {
+			if (rand.nextInt(100) <= 46) {
 				if (isHotBiome) {
 					bodyTemp += (biomeTemp * 1.5);
 				} else if (isColdBiome) {

@@ -19,6 +19,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.celestial.ZGPlanets;
 import zollerngalaxy.celestial.spacestations.ZGSpaceStations;
+import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.ZGDimensions;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderOrbitZG;
 import zollerngalaxy.lib.ZGInfo;
@@ -177,5 +178,10 @@ public class WorldProviderOrbitZollus extends WorldProviderOverworldOrbit {
 	@Override
 	public DimensionType getDimensionType() {
 		return ZGDimensions.ZOLLUS_ORBIT;
+	}
+	
+	@Override
+	public int getPlanetIdToOrbit() {
+		return ConfigManagerZG.planetZollusDimensionId;
 	}
 }

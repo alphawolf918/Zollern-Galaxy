@@ -15,5 +15,4 @@ public class ZGStructures {
 	public static void init() {
 		MapGenStructureIO.registerStructure(ZGWoodlandMansion.Start.class, "HarranMansion");
 	}
-	
 }

@@ -16,7 +16,8 @@ Zollern Galaxy v2.0.32
     - Does not affect the GC Alien Villagers.
 * Added Eden Crystal gen to Astros.
 * Added a config option to control the spawn rate of all Alien Villagers and their variants on all Planets and Moons.
-*
+* Added custom Sapphires for trading. Sapphire Ores will now spawn on Astros.
+* 
 * Sugar can now be crafted into Sugar Blocks and vice versa.
 * Adjusted relative orbit times and distance from center.
 * Four unused star systems have been moved to the new Eissentam galaxy.
@@ -27,7 +28,8 @@ Zollern Galaxy v2.0.32
 * Changed all Planet and Moon tiers to be 3 by default (customizable via config file).
      - This makes accessing them easier, and not necessarily limited to Star Gates.
 * Outposts should no longer generate in ocean-type biomes.
-* Every custom Alien Villager now has their own trade goods.
+* Every custom Alien Villager now has their own trade goods and item prices.
+* Updated Space Station block texture.
 * 
 * Fixed Purgot Dirt potentially showing up on Zollus.
 * Fixed (mostly) ravines not generating correctly.
@@ -36,4 +38,5 @@ Zollern Galaxy v2.0.32
 * Fixed - FINALLY, FINALLY, FINALLY, FINALLY!!!!!!!!! - fixed the zoom-in issue!!!!!!
     - Config has been updated to use offsets instead of setting coordinates directly.
 * Fixed Mega Creeper having some missing texture areas.
+* Fixed Space Stations sending the Player to the Overworld instead of the parent planet when they fell off.
 * 

@@ -76,12 +76,12 @@ public class WorldProviderCandora extends WorldProviderPlanetZG {
 	@Override
 	public float getPlanetTemp() {
 		IZollernBody planet = this.getPlanet();
-		float planetTemp = planet.getBodyTemperature();
+		float planetTemp = planet.getMoonTemperature();
 		
 		if (this.isDaytime()) {
 			planetTemp *= 0.2F;
 		} else {
-			planetTemp = planet.getBodyTemperature();
+			planetTemp = planet.getMoonTemperature();
 		}
 		return planetTemp;
 	}

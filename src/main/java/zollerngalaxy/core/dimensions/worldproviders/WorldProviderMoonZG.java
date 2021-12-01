@@ -65,7 +65,7 @@ public abstract class WorldProviderMoonZG extends WorldProviderZG {
 	
 	@Override
 	public boolean canBlockFreeze(BlockPos pos, boolean byWater) {
-		return this.getMoon().getIsColdBody();
+		return this.getMoon().getIsColdMoon();
 	}
 	
 	@Override
@@ -176,12 +176,12 @@ public abstract class WorldProviderMoonZG extends WorldProviderZG {
 	
 	public float getMoonTemp() {
 		ZGMoon moon = this.getMoon();
-		float planetTemp = moon.getBodyTemperature();
+		float planetTemp = moon.getMoonTemperature();
 		
 		if (this.isDaytime()) {
 			planetTemp /= 2.2F;
 		} else {
-			planetTemp = moon.getBodyTemperature();
+			planetTemp = moon.getMoonTemperature();
 		}
 		
 		return planetTemp;
@@ -189,12 +189,12 @@ public abstract class WorldProviderMoonZG extends WorldProviderZG {
 	
 	public float getMoonTemp(World world, BlockPos pos) {
 		ZGMoon moon = this.getMoon();
-		float planetTemp = moon.getBodyTemperature(world, pos);
+		float planetTemp = moon.getMoonTemperature(world, pos);
 		
 		if (this.isDaytime()) {
 			planetTemp /= 2.2F;
 		} else {
-			planetTemp = moon.getBodyTemperature(world, pos);
+			planetTemp = moon.getMoonTemperature(world, pos);
 		}
 		
 		return planetTemp;

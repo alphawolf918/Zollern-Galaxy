@@ -43,10 +43,15 @@ public class OreDictRegistry {
 		registerOre("oreGarnet", ZGBlocks.caligroGarnetOre);
 		registerOre("gemGarnet", ZGItems.garnet);
 		
-		// Garnet
+		// Ruby
 		registerOre("blockRuby", ZGBlocks.blockRuby);
 		registerOre("oreRuby", ZGBlocks.caligroRubyOre);
 		registerOre("gemRuby", ZGItems.ruby);
+		
+		// Sapphire
+		registerOre("blockSapphire", ZGBlocks.blockSapphire);
+		registerOre("oreSapphire", ZGBlocks.astrosSapphireOre);
+		registerOre("gemSapphire", ZGItems.sapphire);
 		
 		// Static Amber
 		registerOre("blockAmberStatic", ZGBlocks.blockAmberStatic);

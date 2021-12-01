@@ -12,6 +12,9 @@ public class ModelAstrosVillager extends ModelBase {
 	
 	private final ModelRenderer villager;
 	private final ModelRenderer Head;
+	private final ModelRenderer HeadPiece3_r1;
+	private final ModelRenderer HeadPiece2_r1;
+	private final ModelRenderer HeadPiece_r1;
 	private final ModelRenderer Body;
 	private final ModelRenderer RightArm;
 	private final ModelRenderer LeftArm;
@@ -29,6 +32,24 @@ public class ModelAstrosVillager extends ModelBase {
 		Head.setRotationPoint(0.0F, -24.0F, 0.0F);
 		villager.addChild(Head);
 		Head.cubeList.add(new ModelBox(Head, 0, 0, -4.0F, -10.0F, -4.0F, 8, 10, 8, 0.0F, false));
+		
+		HeadPiece3_r1 = new ModelRenderer(this);
+		HeadPiece3_r1.setRotationPoint(0.0F, 24.0F, 0.0F);
+		Head.addChild(HeadPiece3_r1);
+		setRotationAngle(HeadPiece3_r1, -0.5672F, 0.0F, 0.0F);
+		HeadPiece3_r1.cubeList.add(new ModelBox(HeadPiece3_r1, 28, 47, -3.0F, -33.0F, 0.0F, 6, 6, 8, 0.0F, false));
+		
+		HeadPiece2_r1 = new ModelRenderer(this);
+		HeadPiece2_r1.setRotationPoint(0.0F, 24.0F, 0.0F);
+		Head.addChild(HeadPiece2_r1);
+		setRotationAngle(HeadPiece2_r1, -0.3927F, 0.0F, 0.0F);
+		HeadPiece2_r1.cubeList.add(new ModelBox(HeadPiece2_r1, 28, 47, -4.0F, -33.0F, -2.0F, 8, 6, 8, 0.0F, false));
+		
+		HeadPiece_r1 = new ModelRenderer(this);
+		HeadPiece_r1.setRotationPoint(0.0F, 24.0F, 0.0F);
+		Head.addChild(HeadPiece_r1);
+		setRotationAngle(HeadPiece_r1, -0.2182F, 0.0F, 0.0F);
+		HeadPiece_r1.cubeList.add(new ModelBox(HeadPiece_r1, 28, 47, -4.0F, -34.0F, -4.0F, 8, 8, 8, 0.0F, false));
 		
 		Body = new ModelRenderer(this);
 		Body.setRotationPoint(0.0F, -24.0F, 0.0F);
@@ -48,12 +69,12 @@ public class ModelAstrosVillager extends ModelBase {
 		RightLeg = new ModelRenderer(this);
 		RightLeg.setRotationPoint(-1.9F, -12.0F, 0.0F);
 		villager.addChild(RightLeg);
-		RightLeg.cubeList.add(new ModelBox(RightLeg, 15, 50, -2.1F, 0.0F, -1.0F, 4, 12, 2, 0.0F, true));
+		RightLeg.cubeList.add(new ModelBox(RightLeg, 15, 48, -2.1F, 0.0F, -1.0F, 4, 12, 2, 0.0F, true));
 		
 		LeftLeg = new ModelRenderer(this);
 		LeftLeg.setRotationPoint(1.9F, -12.0F, 0.0F);
 		villager.addChild(LeftLeg);
-		LeftLeg.cubeList.add(new ModelBox(LeftLeg, 15, 49, -2.0F, 0.0F, -1.0F, 4, 12, 2, 0.0F, false));
+		LeftLeg.cubeList.add(new ModelBox(LeftLeg, 15, 47, -2.0F, 0.0F, -1.0F, 4, 12, 2, 0.0F, false));
 	}
 	
 	@Override

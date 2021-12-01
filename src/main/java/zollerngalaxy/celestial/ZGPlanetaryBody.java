@@ -188,7 +188,7 @@ public class ZGPlanetaryBody extends Planet implements IZollernBody {
 	 * @return The body of the atmosphere being set on.
 	 */
 	public IZollernBody setAtmosphere() {
-		this.atmosphere = new AtmosphereInfo(this.getIsBreathable(), this.getHasRain(), this.getIsCorrosive(), this.getBodyTemperature(), this.getWindLevel(),
+		this.atmosphere = new AtmosphereInfo(this.getIsBreathable(), this.getHasRain(), this.getIsCorrosive(), this.getMoonTemperature(), this.getWindLevel(),
 				this.getAtmosphericDensity());
 		return this;
 	}
@@ -309,7 +309,7 @@ public class ZGPlanetaryBody extends Planet implements IZollernBody {
 	 * @return The bioclassification of the Body.
 	 */
 	@Override
-	public EnumBodyClass getBodyClass() {
+	public EnumBodyClass getMoonClass() {
 		return this.bodyClass;
 	}
 	
@@ -340,7 +340,7 @@ public class ZGPlanetaryBody extends Planet implements IZollernBody {
 	 * @return
 	 */
 	@Override
-	public boolean getIsHotBody() {
+	public boolean getIsHotMoon() {
 		return this.baseTemp >= 115.0F;
 	}
 	
@@ -350,7 +350,7 @@ public class ZGPlanetaryBody extends Planet implements IZollernBody {
 	 * @return
 	 */
 	@Override
-	public boolean getIsColdBody() {
+	public boolean getIsColdMoon() {
 		return this.baseTemp <= -25.0F;
 	}
 	
@@ -403,13 +403,13 @@ public class ZGPlanetaryBody extends Planet implements IZollernBody {
 	}
 	
 	@Override
-	public float getBodyTemperature() {
+	public float getMoonTemperature() {
 		float bodyTemp = this.baseTemp;
 		return bodyTemp;
 	}
 	
 	@Override
-	public float getBodyTemperature(World world, BlockPos pos) {
+	public float getMoonTemperature(World world, BlockPos pos) {
 		float bodyTemp = this.baseTemp;
 		float maxTemp = (bodyTemp * 4);
 		float minTemp = (bodyTemp / 4);

@@ -568,7 +568,7 @@ public class ZGPlanets {
 	public static void initMoons() {
 		moonAstros.setDimensionInfo(ConfigManagerZG.moonAstrosDimensionId, WorldProviderAstros.class);
 		moonAstros.setParentPlanet(ZGPlanets.planetEden);
-		moonAstros.setBodyClass(EnumBodyClass.L);
+		moonAstros.setMoonClass(EnumBodyClass.L);
 		moonAstros.setRelativeOrbitTime(1 / 0.01F);
 		moonAstros.setPhaseShift(1.0F);
 		moonAstros.setRelativeSize(1.0F);
@@ -577,14 +577,14 @@ public class ZGPlanets {
 		if (ConfigManagerZG.planetUnreachableAll || ConfigManagerZG.planetUnreachableEden) {
 			moonAstros.setDisableRockets();
 		}
-		moonAstros.setBodyTemperature(36.54F);
+		moonAstros.setMoonTemperature(26.54F);
 		moonAstros.setDensity(10.0F);
 		moonAstros.setHasRain(false);
-		moonAstros.setBodyToxicity(0.0F);
-		moonAstros.setBodyRadiation(0.0F);
+		moonAstros.setMoonToxicity(0.0F);
+		moonAstros.setMoonRadiation(0.0F);
 		moonAstros.setWindLevel(16.51F);
-		moonAstros.setBodyGasses(EnumAtmosphericGas.NITROGEN, EnumAtmosphericGas.ARGON, EnumAtmosphericGas.HELIUM);
-		moonAstros.setBodyIcon("astros");
+		moonAstros.setMoonGasses(EnumAtmosphericGas.NITROGEN, EnumAtmosphericGas.ARGON, EnumAtmosphericGas.HELIUM);
+		moonAstros.setMoonIcon("astros");
 		moonAstros.setAtmosphere();
 		moonAstros.setBiomeInfo(ZGBiomes.ASTROS_BASE, ZGBiomes.ASTROS_ROCKIES, ZGBiomes.ASTROS_GLACIERS);
 		totalMoons++;

@@ -556,24 +556,16 @@ public class ZGBlocks {
 	public static final Block astrosCobblestone = new ZGBlockBase("astroscobblestone").setBlockType(EnumBlockType.COBBLESTONE);
 	public static final Block astrosStone = new ZGPlanetStone("astrosstone", 4.5F, ZGBlocks.astrosCobblestone);
 	public static final Block astrosIce = new ZGBlockIce("astrosice");
-	public static final Block astrosIronOre = new ZGBlockOre("astrosironore", 3.2F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
-			EnumHarvestLevelZG.COBALT.getHarvestLevel());
-	public static final Block astrosGoldOre = new ZGBlockOre("astrosgoldore", 3.4F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
-			EnumHarvestLevelZG.COBALT.getHarvestLevel());
-	public static final Block astrosDiamondOre = new ZGOreGem("astrosdiamondore", 6.2F, Items.DIAMOND).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
-			EnumHarvestLevelZG.COBALT.getHarvestLevel());
-	public static final Block astrosEmeraldOre = new ZGOreGem("astrosemeraldore", 6.2F, Items.EMERALD).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
-			EnumHarvestLevelZG.COBALT.getHarvestLevel());
-	public static final Block astrosRedstoneOre = new ZGOreGem("astrosredstoneore", 4.1F, Items.REDSTONE).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
-			EnumHarvestLevelZG.COBALT.getHarvestLevel());
-	public static final Block astrosCoalOre = new ZGOreGem("astroscoalore", 6.2F, Items.COAL).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
-			EnumHarvestLevelZG.COBALT.getHarvestLevel());
-	public static final Block astrosSuperChargedCoalOre = new ZGOreGem("astrossuperchargedcoalore", 8.2F, Items.COAL)
-			.setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.COBALT.getHarvestLevel());
-	public static final Block astrosTinOre = new ZGBlockOre("astrostinore", 1.5F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
-			EnumHarvestLevelZG.COBALT.getHarvestLevel());
-	public static final Block astrosZollerniumOre = new ZGBlockOre("astroszollerniumore", 3.5F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
-			EnumHarvestLevelZG.COBALT.getHarvestLevel());
+	public static final Block astrosIronOre = new ZGBlockOre("astrosironore", 3.2F);
+	public static final Block astrosGoldOre = new ZGBlockOre("astrosgoldore", 3.4F);
+	public static final Block astrosDiamondOre = new ZGOreGem("astrosdiamondore", 6.2F, Items.DIAMOND);
+	public static final Block astrosEmeraldOre = new ZGOreGem("astrosemeraldore", 6.2F, Items.EMERALD);
+	public static final Block astrosRedstoneOre = new ZGOreGem("astrosredstoneore", 4.1F, Items.REDSTONE);
+	public static final Block astrosCoalOre = new ZGOreGem("astroscoalore", 6.2F, Items.COAL);
+	public static final Block astrosSuperChargedCoalOre = new ZGOreGem("astrossuperchargedcoalore", 8.2F, ZGItems.superChargedCoal);
+	public static final Block astrosSapphireOre = new ZGOreGem("astrossapphireore", 5.2F, ZGItems.sapphire);
+	public static final Block astrosTinOre = new ZGBlockOre("astrostinore", 1.5F);
+	public static final Block astrosZollerniumOre = new ZGBlockOre("astroszollerniumore", 3.5F);
 	
 	// Metals
 	public static final Block blockViri = new ZGBlockMetal("viriblock");
@@ -599,6 +591,7 @@ public class ZGBlocks {
 	public static final Block blockAquamarine = new ZGBlockMetal("aquamarineblock");
 	public static final Block blockGarnet = new ZGBlockMetal("garnetblock");
 	public static final Block blockRuby = new ZGBlockMetal("rubyblock");
+	public static final Block blockSapphire = new ZGBlockMetal("sapphireblock");
 	public static final Block blockAmberStatic = new ZGBlockMetalShine("staticamberblock");
 	public static final Block blockAquamarineIcy = new ZGBlockMetalShine("icyaquablock");
 	public static final Block blockGarnetFire = new ZGBlockMetalShine("firegarnetblock");
@@ -700,28 +693,29 @@ public class ZGBlocks {
 				atheonZollerniumOre, atheonZincOre, atheonConstructBlock, blockViri, blockCobalt, blockEve, blockPromethean, blockCrater, blockRedshroom,
 				blockRedshroomStem, blockSuperChargedCoal, blockPlutonium, blockFueltonium, blockChargium, blockShinium, blockAmaranth, blockAzurite, blockZollernium,
 				blockZinc, blockPerdDiamond, blockPerdEtrium, blockZucrite, blockRhodium, blockAmber, blockTopaz, blockOpal, blockAquamarine, blockGarnet, blockRuby,
-				blockAmberStatic, blockAquamarineIcy, blockGarnetFire, blockWitherite, blockRadium, blockNetheridium, blockNetherizedObsidian, blockRedObsidian,
-				blockShadowBone, blockShinestone, blockShinestoneCrystal, blockShinestonePolished, blockShinestoneCrystalBricks, blockCompressedHeartium,
-				blockCompressedViri, blockCompressedEve, blockCompressedCobalt, blockCompressedPromethean, blockCompressedSuperChargedCoal, blockCompressedZucrite,
-				blockCompressedRhodium, candyCubeWhite, candyCubeBlack, candyCubeGray, candyCubeOrange, candyCubeBrown, candyCubeRed, candyCubeBlue, candyCubeYellow,
-				candyCubePurple, candyCubeCyan, candyCubePink, candyCubeGreen, blockChocolate, blockChocolateBricks, blockCookie, blockBrownie, blockIceCreamSandwich,
-				blockSugarCube, blockSpaceStation, blockOutpost, blockLore, perdSand, perdRock, perdStone, perdCobble, perdRockBricks, perdGravel, perdCreepDirt,
-				perdSoil, perdDirt, perdTallGrass, perdGrass, perdCreepStone, perdGlowstone, perdCaveStone, perdCaveStoneBricks, perdCactus, perdReeds, perdDeadBush,
-				perdDiamondOre, perdEtriumOre, perdIronOre, perdGoldOre, perdZollerniumOre, perdFueltoniumOre, perdTreeSapling, perdWoodLogs, perdWoodLeaves,
-				perdWoodPlanks, altumRock, altumSand, altumDirt, altumCobble, altumStone, altumGravel, altumSeaweed, altumCoalOre, altumIronOre, altumGoldOre,
-				altumRedstoneOre, altumDiamondOre, altumZollerniumOre, altumEveniumOre, altumRhodiumOre, altumAmaranthOre, caligroSurfaceRock, caligroRock,
-				caligroCobblestone, caligroCobblestoneMossy, caligroStone, caligroStoneBricks, caligroGravel, caligroDirt, witherrack, caligroCreepstone,
-				caligroCreepdirt, caligroWitheriteOre, caligroShiniumOre, caligroSilverOre, caligroNickelOre, caligroLeadOre, caligroTinOre, caligroCopperOre,
-				caligroIronOre, caligroGoldOre, caligroRedstoneOre, caligroAmaranthOre, caligroZincOre, caligroAmberOre, caligroTopazOre, caligroOpalOre,
-				caligroAquamarineOre, caligroGarnetOre, caligroSuperChargedCoalOre, caligroFueltoniumOre, caligroDiamondOre, caligroEmeraldOre, caligroRadiumOre,
-				caligroLapisOre, caligroZollerniumOre, caligroRubyOre, spiderlingEgg, shadowBossSpawner, corruptRock, corruptCobble, corruptStone, corruptStoneBricks,
-				corruptAscendiumOre, corruptEtriumOre, corruptChargiumOre, corruptCreepstone, exodusTallGrass, exodusDirt, exodusGrass, exodusCobblestone, exodusStone,
-				exodusGravel, exodusRock, exodusSand, exodusIronOre, exodusGoldOre, exodusDiamondOre, exodusRedstoneOre, exodusCopperOre, exoWoodLogs, exoWoodLeaves,
-				exoWoodPlanks, exoWoodSapling, vortexSurfaceRock, vortexCobblestone, vortexStone, vortexVoltRock, vortexIronOre, vortexGoldOre, vortexDiamondOre,
-				vortexRedstoneOre, vortexCopperOre, vortexSuperChargedCoalOre, vortexFueltoniumOre, vortexEveniumOre, blockBlueprintStation, blockHealingStation,
-				blockCrystalsPlutonium, blockCrystalsStorm, blockCrystalsEden, blockIngotStackIron, ironSirenON, goldSirenON, diamondSirenON, emeraldSirenON, ironSiren,
-				goldSiren, diamondSiren, emeraldSiren, astrosRock, astrosDirt, astrosGravel, astrosCobblestone, astrosStone, astrosIce, astrosIronOre, astrosGoldOre,
-				astrosDiamondOre, astrosEmeraldOre, astrosCoalOre, astrosSuperChargedCoalOre, astrosTinOre, astrosZollerniumOre);
+				blockSapphire, blockAmberStatic, blockAquamarineIcy, blockGarnetFire, blockWitherite, blockRadium, blockNetheridium, blockNetherizedObsidian,
+				blockRedObsidian, blockShadowBone, blockShinestone, blockShinestoneCrystal, blockShinestonePolished, blockShinestoneCrystalBricks,
+				blockCompressedHeartium, blockCompressedViri, blockCompressedEve, blockCompressedCobalt, blockCompressedPromethean, blockCompressedSuperChargedCoal,
+				blockCompressedZucrite, blockCompressedRhodium, candyCubeWhite, candyCubeBlack, candyCubeGray, candyCubeOrange, candyCubeBrown, candyCubeRed,
+				candyCubeBlue, candyCubeYellow, candyCubePurple, candyCubeCyan, candyCubePink, candyCubeGreen, blockChocolate, blockChocolateBricks, blockCookie,
+				blockBrownie, blockIceCreamSandwich, blockSugarCube, blockSpaceStation, blockOutpost, blockLore, perdSand, perdRock, perdStone, perdCobble,
+				perdRockBricks, perdGravel, perdCreepDirt, perdSoil, perdDirt, perdTallGrass, perdGrass, perdCreepStone, perdGlowstone, perdCaveStone,
+				perdCaveStoneBricks, perdCactus, perdReeds, perdDeadBush, perdDiamondOre, perdEtriumOre, perdIronOre, perdGoldOre, perdZollerniumOre, perdFueltoniumOre,
+				perdTreeSapling, perdWoodLogs, perdWoodLeaves, perdWoodPlanks, altumRock, altumSand, altumDirt, altumCobble, altumStone, altumGravel, altumSeaweed,
+				altumCoalOre, altumIronOre, altumGoldOre, altumRedstoneOre, altumDiamondOre, altumZollerniumOre, altumEveniumOre, altumRhodiumOre, altumAmaranthOre,
+				caligroSurfaceRock, caligroRock, caligroCobblestone, caligroCobblestoneMossy, caligroStone, caligroStoneBricks, caligroGravel, caligroDirt, witherrack,
+				caligroCreepstone, caligroCreepdirt, caligroWitheriteOre, caligroShiniumOre, caligroSilverOre, caligroNickelOre, caligroLeadOre, caligroTinOre,
+				caligroCopperOre, caligroIronOre, caligroGoldOre, caligroRedstoneOre, caligroAmaranthOre, caligroZincOre, caligroAmberOre, caligroTopazOre,
+				caligroOpalOre, caligroAquamarineOre, caligroGarnetOre, caligroSuperChargedCoalOre, caligroFueltoniumOre, caligroDiamondOre, caligroEmeraldOre,
+				caligroRadiumOre, caligroLapisOre, caligroZollerniumOre, caligroRubyOre, spiderlingEgg, shadowBossSpawner, corruptRock, corruptCobble, corruptStone,
+				corruptStoneBricks, corruptAscendiumOre, corruptEtriumOre, corruptChargiumOre, corruptCreepstone, exodusTallGrass, exodusDirt, exodusGrass,
+				exodusCobblestone, exodusStone, exodusGravel, exodusRock, exodusSand, exodusIronOre, exodusGoldOre, exodusDiamondOre, exodusRedstoneOre, exodusCopperOre,
+				exoWoodLogs, exoWoodLeaves, exoWoodPlanks, exoWoodSapling, vortexSurfaceRock, vortexCobblestone, vortexStone, vortexVoltRock, vortexIronOre,
+				vortexGoldOre, vortexDiamondOre, vortexRedstoneOre, vortexCopperOre, vortexSuperChargedCoalOre, vortexFueltoniumOre, vortexEveniumOre,
+				blockBlueprintStation, blockHealingStation, blockCrystalsPlutonium, blockCrystalsStorm, blockCrystalsEden, blockIngotStackIron, ironSirenON, goldSirenON,
+				diamondSirenON, emeraldSirenON, ironSiren, goldSiren, diamondSiren, emeraldSiren, astrosRock, astrosDirt, astrosGravel, astrosCobblestone, astrosStone,
+				astrosIce, astrosIronOre, astrosGoldOre, astrosDiamondOre, astrosEmeraldOre, astrosCoalOre, astrosSuperChargedCoalOre, astrosTinOre, astrosZollerniumOre,
+				astrosSapphireOre);
 		ZGHelper.Log("Loaded a total of " + totalBlocks + " new blocks.");
 	}
 	

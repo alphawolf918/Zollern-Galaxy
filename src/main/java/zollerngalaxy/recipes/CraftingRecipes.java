@@ -81,6 +81,7 @@ public class CraftingRecipes {
 		CraftingRecipes.addIngotMetal(ZGItems.aquamarine, ZGBlocks.blockAquamarine);
 		CraftingRecipes.addIngotMetal(ZGItems.garnet, ZGBlocks.blockGarnet);
 		CraftingRecipes.addIngotMetal(ZGItems.ruby, ZGBlocks.blockRuby);
+		CraftingRecipes.addIngotMetal(ZGItems.sapphire, ZGBlocks.blockSapphire);
 		CraftingRecipes.addIngotMetal(ZGItems.amberStatic, ZGBlocks.blockAmberStatic);
 		CraftingRecipes.addIngotMetal(ZGItems.aquamarineIcy, ZGBlocks.blockAquamarineIcy);
 		CraftingRecipes.addIngotMetal(ZGItems.garnetFire, ZGBlocks.blockGarnetFire);

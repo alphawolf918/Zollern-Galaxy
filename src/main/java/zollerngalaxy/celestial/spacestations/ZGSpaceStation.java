@@ -8,7 +8,6 @@
 package zollerngalaxy.celestial.spacestations;
 
 import micdoodle8.mods.galacticraft.api.galaxies.CelestialBody;
-import micdoodle8.mods.galacticraft.api.galaxies.Planet;
 import micdoodle8.mods.galacticraft.api.galaxies.Satellite;
 import micdoodle8.mods.galacticraft.core.world.gen.BiomeOrbit;
 import net.minecraft.util.ResourceLocation;
@@ -32,8 +31,8 @@ public class ZGSpaceStation extends Satellite {
 		this.setBiomeInfo(BiomeOrbit.space);
 	}
 	
-	@Override
-	public Planet getParentPlanet() {
-		return this.parentCelestialBody;
+	public ZGSpaceStation setParentPlanet(ZGPlanet planet) {
+		this.setParentBody(planet);
+		return this;
 	}
 }
