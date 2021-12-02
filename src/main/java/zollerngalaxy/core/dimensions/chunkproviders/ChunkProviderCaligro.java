@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.Random;
 import micdoodle8.mods.galacticraft.api.world.ChunkProviderBase;
 import micdoodle8.mods.galacticraft.core.perlin.generator.Gradient;
+import micdoodle8.mods.galacticraft.core.util.ConfigManagerCore;
 import micdoodle8.mods.galacticraft.core.world.gen.EnumCraterSize;
 import net.minecraft.block.BlockFalling;
 import net.minecraft.block.state.IBlockState;
@@ -35,6 +36,7 @@ import zollerngalaxy.blocks.fluids.ZGFluids;
 import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.worldgen.mapgen.MapGenCavesZG;
 import zollerngalaxy.worldgen.mapgen.MapGenRavinesZG;
+import zollerngalaxy.worldgen.structures.villages.MapGenVillageZG;
 
 public class ChunkProviderCaligro extends ChunkProviderBase {
 	
@@ -69,7 +71,7 @@ public class ChunkProviderCaligro extends ChunkProviderBase {
 	private MapGenCavesZG caveGenerator3 = new MapGenCavesZG(ZGBlocks.corruptStone, ZGFluids.blockChargiumFluid);
 	private final MapGenRavinesZG ravineGenerator = new MapGenRavinesZG(ZGBlocks.caligroStone);
 	private final MapGenRavinesZG ravineGenerator2 = new MapGenRavinesZG(ZGBlocks.corruptStone);
-	// private final MapGenVillageMoon villageGenerator = new MapGenVillageMoon();
+	private final MapGenVillageZG villageGenerator = new MapGenVillageZG("Caligro", ZGBlocks.caligroCobblestone);
 	private MapGenMineshaft mineshaftGenerator = new MapGenMineshaft();
 	private Biome[] biomesForGeneration;
 	private double[] octaves1;
@@ -385,9 +387,9 @@ public class ChunkProviderCaligro extends ChunkProviderBase {
 		long l = this.rand.nextLong() / 2L * 2L + 1L;
 		this.rand.setSeed(x * k + z * l ^ this.world.getSeed());
 		
-		// if (!ConfigManagerCore.disableMoonVillageGen) {
-		// this.villageGenerator.generateStructure(this.world, this.rand, new ChunkPos(x, z));
-		// }
+		if (!ConfigManagerCore.disableMoonVillageGen) {
+			this.villageGenerator.generateStructure(this.world, this.rand, new ChunkPos(x, z));
+		}
 		
 		this.mineshaftGenerator.generateStructure(this.world, this.rand, new ChunkPos(x, z));
 		
@@ -407,8 +409,8 @@ public class ChunkProviderCaligro extends ChunkProviderBase {
 	public void recreateStructures(Chunk chunk, int x, int z) {
 		this.mineshaftGenerator.generate(this.world, x, z, null);
 		
-		// if (!ConfigManagerCore.disableMoonVillageGen) {
-		// this.villageGenerator.generate(this.world, x, z, null);
-		// }
+		if (!ConfigManagerCore.disableMoonVillageGen) {
+			this.villageGenerator.generate(this.world, x, z, null);
+		}
 	}
 }

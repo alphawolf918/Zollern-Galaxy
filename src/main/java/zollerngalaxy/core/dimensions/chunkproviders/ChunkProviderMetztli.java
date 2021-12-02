@@ -7,7 +7,6 @@ import micdoodle8.mods.galacticraft.api.world.ChunkProviderBase;
 import micdoodle8.mods.galacticraft.core.perlin.generator.Gradient;
 import micdoodle8.mods.galacticraft.core.util.ConfigManagerCore;
 import micdoodle8.mods.galacticraft.core.world.gen.EnumCraterSize;
-import micdoodle8.mods.galacticraft.core.world.gen.MapGenVillageMoon;
 import net.minecraft.block.BlockFalling;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EnumCreatureType;
@@ -36,6 +35,7 @@ import zollerngalaxy.biomes.decorators.BiomeDecoratorMetztli;
 import zollerngalaxy.worldgen.ZGWoodlandMansion;
 import zollerngalaxy.worldgen.mapgen.MapGenCavesZG;
 import zollerngalaxy.worldgen.mapgen.MapGenRavinesZG;
+import zollerngalaxy.worldgen.structures.villages.MapGenVillageZG;
 
 public class ChunkProviderMetztli extends ChunkProviderBase {
 	
@@ -66,7 +66,7 @@ public class ChunkProviderMetztli extends ChunkProviderBase {
 	private double[] stoneNoise = new double[256];
 	private MapGenCavesZG caveGenerator = new MapGenCavesZG(Blocks.STONE);
 	private final MapGenRavinesZG ravineGenerator = new MapGenRavinesZG(Blocks.STONE);
-	private final MapGenVillageMoon villageGenerator = new MapGenVillageMoon();
+	private final MapGenVillageZG villageGenerator = new MapGenVillageZG("Metztli");
 	private MapGenMineshaft mineshaftGenerator = new MapGenMineshaft();
 	private ZGWoodlandMansion woodlandMansionGenerator = new ZGWoodlandMansion(this);
 	private MapGenStronghold strongholdGenerator = new MapGenStronghold();

@@ -13,7 +13,6 @@ import micdoodle8.mods.galacticraft.api.world.ChunkProviderBase;
 import micdoodle8.mods.galacticraft.core.perlin.generator.Gradient;
 import micdoodle8.mods.galacticraft.core.util.ConfigManagerCore;
 import micdoodle8.mods.galacticraft.core.world.gen.EnumCraterSize;
-import micdoodle8.mods.galacticraft.core.world.gen.MapGenVillageMoon;
 import net.minecraft.block.BlockFalling;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EnumCreatureType;
@@ -37,6 +36,7 @@ import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.worldgen.mapgen.MapGenCavesZG;
 import zollerngalaxy.worldgen.mapgen.MapGenRavinesZG;
+import zollerngalaxy.worldgen.structures.villages.MapGenVillageZG;
 
 public class ChunkProviderAstros extends ChunkProviderBase {
 	
@@ -68,7 +68,7 @@ public class ChunkProviderAstros extends ChunkProviderBase {
 	private double[] stoneNoise = new double[256];
 	private MapGenCavesZG caveGenerator = new MapGenCavesZG(STONE.getBlock(), ICE.getBlock());
 	private final MapGenRavinesZG ravineGenerator = new MapGenRavinesZG(STONE.getBlock());
-	private final MapGenVillageMoon villageGenerator = new MapGenVillageMoon();
+	private final MapGenVillageZG villageGenerator = new MapGenVillageZG("Astros", ZGBlocks.blockShinestoneCrystalBricks);
 	private MapGenMineshaft mineshaftGenerator = new MapGenMineshaft();
 	private Biome[] biomesForGeneration;
 	private double[] octaves1;
@@ -76,7 +76,7 @@ public class ChunkProviderAstros extends ChunkProviderBase {
 	private double[] octaves3;
 	private double[] octaves4;
 	
-	private static final int CRATER_PROB = 80;
+	private static final int CRATER_PROB = 40;
 	
 	public static ChunkProviderAstros INSTANCE;
 	

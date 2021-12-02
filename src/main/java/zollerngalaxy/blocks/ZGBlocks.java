@@ -15,6 +15,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.init.Items;
 import net.minecraft.init.MobEffects;
 import net.minecraft.world.gen.feature.WorldGenerator;
+import zollerngalaxy.blocks.astros.AstrosSapphireOre;
 import zollerngalaxy.blocks.caligro.BlockShadowBossSpawner;
 import zollerngalaxy.blocks.caligro.BlockSpiderEgg;
 import zollerngalaxy.blocks.caligro.corrupted.ZGBlockOreCorrupted;
@@ -91,7 +92,7 @@ public class ZGBlocks {
 	public static final Block exoWoodLeaves = new ZGBlockLeaves("exoduswoodleaves", ZGBlocks.exoWoodSapling);
 	public static final Block exoWoodPlanks = new ZGBlockPlanks("exoduswoodplanks");
 	public static final WorldGenerator exoWoodTreeGen = new WorldGenExoTrees(true, 5, ZGBlocks.exoWoodLogs.getDefaultState(), ZGBlocks.exoWoodLeaves.getDefaultState(),
-			false);;
+			false);
 	
 	// These all have to be declared up top or else weird things happen.
 	public static final Block perdTreeSapling = new ZGBlockSapling("palmtreesapling", palmWoodTreeGen);
@@ -556,16 +557,25 @@ public class ZGBlocks {
 	public static final Block astrosCobblestone = new ZGBlockBase("astroscobblestone").setBlockType(EnumBlockType.COBBLESTONE);
 	public static final Block astrosStone = new ZGPlanetStone("astrosstone", 4.5F, ZGBlocks.astrosCobblestone);
 	public static final Block astrosIce = new ZGBlockIce("astrosice");
-	public static final Block astrosIronOre = new ZGBlockOre("astrosironore", 3.2F);
-	public static final Block astrosGoldOre = new ZGBlockOre("astrosgoldore", 3.4F);
-	public static final Block astrosDiamondOre = new ZGOreGem("astrosdiamondore", 6.2F, Items.DIAMOND);
-	public static final Block astrosEmeraldOre = new ZGOreGem("astrosemeraldore", 6.2F, Items.EMERALD);
-	public static final Block astrosRedstoneOre = new ZGOreGem("astrosredstoneore", 4.1F, Items.REDSTONE);
-	public static final Block astrosCoalOre = new ZGOreGem("astroscoalore", 6.2F, Items.COAL);
-	public static final Block astrosSuperChargedCoalOre = new ZGOreGem("astrossuperchargedcoalore", 8.2F, ZGItems.superChargedCoal);
-	public static final Block astrosSapphireOre = new ZGOreGem("astrossapphireore", 5.2F, ZGItems.sapphire);
-	public static final Block astrosTinOre = new ZGBlockOre("astrostinore", 1.5F);
-	public static final Block astrosZollerniumOre = new ZGBlockOre("astroszollerniumore", 3.5F);
+	public static final Block astrosIronOre = new ZGBlockOre("astrosironore", 3.2F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
+			EnumHarvestLevelZG.COBALT.getHarvestLevel());
+	public static final Block astrosGoldOre = new ZGBlockOre("astrosgoldore", 3.4F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
+			EnumHarvestLevelZG.COBALT.getHarvestLevel());
+	public static final Block astrosDiamondOre = new ZGOreGem("astrosdiamondore", 6.2F, Items.DIAMOND).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
+			EnumHarvestLevelZG.COBALT.getHarvestLevel());
+	public static final Block astrosEmeraldOre = new ZGOreGem("astrosemeraldore", 6.2F, Items.EMERALD).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
+			EnumHarvestLevelZG.COBALT.getHarvestLevel());
+	public static final Block astrosRedstoneOre = new ZGOreGem("astrosredstoneore", 4.1F, Items.REDSTONE).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
+			EnumHarvestLevelZG.COBALT.getHarvestLevel());
+	public static final Block astrosCoalOre = new ZGOreGem("astroscoalore", 6.2F, Items.COAL).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
+			EnumHarvestLevelZG.COBALT.getHarvestLevel());
+	public static final Block astrosSuperChargedCoalOre = new ZGOreGem("astrossuperchargedcoalore", 8.2F, ZGItems.superChargedCoal)
+			.setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.COBALT.getHarvestLevel());
+	public static final Block astrosSapphireOre = new AstrosSapphireOre();
+	public static final Block astrosTinOre = new ZGBlockOre("astrostinore", 1.5F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
+			EnumHarvestLevelZG.COBALT.getHarvestLevel());
+	public static final Block astrosZollerniumOre = new ZGBlockOre("astroszollerniumore", 3.5F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
+			EnumHarvestLevelZG.COBALT.getHarvestLevel());
 	
 	// Metals
 	public static final Block blockViri = new ZGBlockMetal("viriblock");

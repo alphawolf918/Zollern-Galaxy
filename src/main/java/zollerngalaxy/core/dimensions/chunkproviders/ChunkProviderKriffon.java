@@ -13,7 +13,6 @@ import micdoodle8.mods.galacticraft.api.world.ChunkProviderBase;
 import micdoodle8.mods.galacticraft.core.perlin.generator.Gradient;
 import micdoodle8.mods.galacticraft.core.util.ConfigManagerCore;
 import micdoodle8.mods.galacticraft.core.world.gen.EnumCraterSize;
-import micdoodle8.mods.galacticraft.core.world.gen.MapGenVillageMoon;
 import net.minecraft.block.BlockFalling;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EnumCreatureType;
@@ -35,6 +34,7 @@ import zollerngalaxy.biomes.decorators.BiomeDecoratorKriffon;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.worldgen.mapgen.MapGenCavesZG;
 import zollerngalaxy.worldgen.mapgen.MapGenRavinesZG;
+import zollerngalaxy.worldgen.structures.villages.MapGenVillageZG;
 
 public class ChunkProviderKriffon extends ChunkProviderBase {
 	
@@ -64,7 +64,7 @@ public class ChunkProviderKriffon extends ChunkProviderBase {
 	private double[] stoneNoise = new double[256];
 	private MapGenCavesZG caveGenerator = new MapGenCavesZG(ZGBlocks.kriffStone);
 	private final MapGenRavinesZG ravineGenerator = new MapGenRavinesZG(ZGBlocks.kriffStone);
-	private final MapGenVillageMoon villageGenerator = new MapGenVillageMoon();
+	private final MapGenVillageZG villageGenerator = new MapGenVillageZG("Kriffon", ZGBlocks.kriffRockBricks);
 	private MapGenMineshaft mineshaftGenerator = new MapGenMineshaft();
 	private Biome[] biomesForGeneration;
 	private double[] octaves1;
@@ -108,8 +108,7 @@ public class ChunkProviderKriffon extends ChunkProviderBase {
 	
 	private void setBlocksInChunk(int chunkX, int chunkZ, ChunkPrimer primer) {
 		this.noiseGenSmooth1.setFrequency(0.015F);
-		this.biomesForGeneration = this.world.getBiomeProvider().getBiomesForGeneration(this.biomesForGeneration, chunkX * 4 - 2,
-				chunkZ * 4 - 2, 10, 10);
+		this.biomesForGeneration = this.world.getBiomeProvider().getBiomesForGeneration(this.biomesForGeneration, chunkX * 4 - 2, chunkZ * 4 - 2, 10, 10);
 		this.createLandPerBiome(chunkX * 4, chunkZ * 4);
 		
 		for (int i = 0; i < 4; ++i) {
@@ -180,8 +179,7 @@ public class ChunkProviderKriffon extends ChunkProviderBase {
 		for (int i = 0; i < 16; ++i) {
 			for (int j = 0; j < 16; ++j) {
 				Biome biomegenbase = p_180517_4_[j + i * 16];
-				biomegenbase.genTerrainBlocks(this.world, this.rand, p_180517_3_, p_180517_1_ * 16 + i, p_180517_2_ * 16 + j,
-						this.stoneNoise[j + i * 16]);
+				biomegenbase.genTerrainBlocks(this.world, this.rand, p_180517_3_, p_180517_1_ * 16 + i, p_180517_2_ * 16 + j, this.stoneNoise[j + i * 16]);
 			}
 		}
 	}
@@ -213,8 +211,7 @@ public class ChunkProviderKriffon extends ChunkProviderBase {
 	
 	private void createLandPerBiome(int x, int z) {
 		this.octaves4 = this.noiseGen6.generateNoiseOctaves(this.octaves4, x, z, 5, 5, 2000.0, 2000.0, 0.5);
-		this.octaves1 = this.noiseGen3.generateNoiseOctaves(this.octaves1, x, 0, z, 5, 33, 5, 8.555150000000001D, 4.277575000000001D,
-				8.555150000000001D);
+		this.octaves1 = this.noiseGen3.generateNoiseOctaves(this.octaves1, x, 0, z, 5, 33, 5, 8.555150000000001D, 4.277575000000001D, 8.555150000000001D);
 		this.octaves2 = this.noiseGen1.generateNoiseOctaves(this.octaves2, x, 0, z, 5, 33, 5, 684.412D, 684.412D, 684.412D);
 		this.octaves3 = this.noiseGen2.generateNoiseOctaves(this.octaves3, x, 0, z, 5, 33, 5, 684.412D, 684.412D, 684.412D);
 		int i = 0;
@@ -313,9 +310,8 @@ public class ChunkProviderKriffon extends ChunkProviderBase {
 			for (int cz = chunkZ - 2; cz <= chunkZ + 2; cz++) {
 				for (int x = 0; x < ChunkProviderKriffon.CHUNK_SIZE_X; x++) {
 					for (int z = 0; z < ChunkProviderKriffon.CHUNK_SIZE_Z; z++) {
-						if (Math.abs(this.randFromPoint(cx * 16 + x, (cz * 16 + z) * 1000)) < this.noiseGen4.getValue(x
-								* ChunkProviderKriffon.CHUNK_SIZE_X + x, cz * ChunkProviderKriffon.CHUNK_SIZE_Z + z)
-								/ ChunkProviderKriffon.CRATER_PROB) {
+						if (Math.abs(this.randFromPoint(cx * 16 + x, (cz * 16 + z) * 1000)) < this.noiseGen4.getValue(x * ChunkProviderKriffon.CHUNK_SIZE_X + x,
+								cz * ChunkProviderKriffon.CHUNK_SIZE_Z + z) / ChunkProviderKriffon.CRATER_PROB) {
 							final Random random = new Random(cx * 16 + x + (cz * 16 + z) * 5000);
 							final EnumCraterSize cSize = EnumCraterSize.sizeArray[random.nextInt(EnumCraterSize.sizeArray.length)];
 							final int size = random.nextInt(cSize.MAX_SIZE - cSize.MIN_SIZE) + cSize.MIN_SIZE;

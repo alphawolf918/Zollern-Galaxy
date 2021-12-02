@@ -6,7 +6,6 @@ import micdoodle8.mods.galacticraft.api.world.ChunkProviderBase;
 import micdoodle8.mods.galacticraft.core.perlin.generator.Gradient;
 import micdoodle8.mods.galacticraft.core.util.ConfigManagerCore;
 import micdoodle8.mods.galacticraft.core.world.gen.EnumCraterSize;
-import micdoodle8.mods.galacticraft.core.world.gen.MapGenVillageMoon;
 import net.minecraft.block.BlockFalling;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EnumCreatureType;
@@ -32,6 +31,7 @@ import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.blocks.fluids.ZGFluids;
 import zollerngalaxy.worldgen.mapgen.MapGenCavesZG;
 import zollerngalaxy.worldgen.mapgen.MapGenRavinesZG;
+import zollerngalaxy.worldgen.structures.villages.MapGenVillageZG;
 
 public class ChunkProviderVortex extends ChunkProviderBase {
 	
@@ -63,7 +63,7 @@ public class ChunkProviderVortex extends ChunkProviderBase {
 	private double[] stoneNoise = new double[256];
 	private MapGenCavesZG caveGenerator = new MapGenCavesZG(ZGBlocks.vortexStone, ZGFluids.blockChargiumFluid);
 	private final MapGenRavinesZG ravineGenerator = new MapGenRavinesZG(ZGBlocks.vortexStone);
-	private final MapGenVillageMoon villageGenerator = new MapGenVillageMoon();
+	private final MapGenVillageZG villageGenerator = new MapGenVillageZG("Vortex", ZGBlocks.vortexVoltRock);
 	private MapGenMineshaft mineshaftGenerator = new MapGenMineshaft();
 	private Biome[] biomesForGeneration;
 	private double[] octaves1;

@@ -9,10 +9,12 @@ package zollerngalaxy.lib;
 
 import net.minecraft.world.gen.structure.MapGenStructureIO;
 import zollerngalaxy.worldgen.ZGWoodlandMansion;
+import zollerngalaxy.worldgen.structures.villages.StructureVillageStartZG;
 
 public class ZGStructures {
 	
 	public static void init() {
 		MapGenStructureIO.registerStructure(ZGWoodlandMansion.Start.class, "HarranMansion");
+		MapGenStructureIO.registerStructure(StructureVillageStartZG.class, "ZGVillage");
 	}
 }
