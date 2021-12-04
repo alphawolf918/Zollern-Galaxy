@@ -21,7 +21,7 @@ public class BiomeAsteroidCraters extends BiomeEdenBase {
 		props.setHeightVariation(0.1F);
 		props.setTemperature(6.5F);
 		this.setTempCategory(TempCategory.MEDIUM);
-		this.setTemp(6.5F);
+		this.setTemp(6.52F);
 		this.setBiomeHeight(42);
 		this.setBiomeType(EnumBiomeTypeZG.ABANDONED);
 		this.enableSnow = false;

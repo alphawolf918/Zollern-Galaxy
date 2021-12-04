@@ -19,6 +19,7 @@ public class BiomeEdenwoodForest extends BiomeEdenBase {
 		props.setBaseHeight(1.5F);
 		props.setHeightVariation(0.2F);
 		props.setTemperature(5.5F);
+		this.setTemp(5.4F);
 		this.setBiomeHeight(72);
 		this.setBiomeType(EnumBiomeTypeZG.FOREST);
 		this.decorator.generateFalls = true;

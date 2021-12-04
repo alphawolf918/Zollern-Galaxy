@@ -21,7 +21,7 @@ public class BiomeEdenParadiseWoods extends BiomeEdenBase {
 		this.setTempCategory(TempCategory.MEDIUM);
 		props.setBaseHeight(1.6F);
 		props.setHeightVariation(2.5F);
-		props.setTemperature(4.0F);
+		props.setTemperature(1.0F);
 		this.setTemp(4F);
 		this.setBiomeHeight(62);
 		this.setBiomeType(EnumBiomeTypeZG.FOREST);

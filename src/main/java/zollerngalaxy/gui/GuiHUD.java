@@ -76,16 +76,23 @@ public class GuiHUD extends Gui {
 				GL11.glDisable(GL11.GL_LIGHTING);
 				Biome biome = chunk.getBiome(blockPos, this.mc.world.getBiomeProvider());
 				WorldProvider worldProvider = this.mc.world.provider;
-				boolean isZGWorld = (worldProvider instanceof WorldProviderPlanetZG || worldProvider instanceof WorldProviderMoonZG);
+				boolean isZGWorld = (worldProvider instanceof WorldProviderZG);
 				
 				if (biome instanceof BiomeSpace && isZGWorld) {
 					BiomeSpace biomeSpace = (BiomeSpace) biome;
 					WorldProviderZG spaceProvider = (WorldProviderZG) worldProvider;
-					float xTemp1 = -99.99F;
 					boolean isPlanet = (worldProvider instanceof WorldProviderPlanetZG);
 					boolean isMoon = (worldProvider instanceof WorldProviderMoonZG);
-					float xTemp = (isPlanet) ? ((WorldProviderPlanetZG) spaceProvider).getPlanetTemp() : xTemp1;
-					xTemp = (isMoon) ? ((WorldProviderMoonZG) spaceProvider).getMoonTemp() : xTemp1;
+					float xTemp1 = 99999F;
+					float xTemp;
+					
+					if (isPlanet) {
+						xTemp = ((WorldProviderPlanetZG) spaceProvider).getBodyTemp();
+					} else if (isMoon) {
+						xTemp = ((WorldProviderMoonZG) spaceProvider).getBodyTemp();
+					} else {
+						xTemp = xTemp1;
+					}
 					
 					// Celestial Biome Name
 					String biomeName = biome.getBiomeName();
@@ -132,7 +139,7 @@ public class GuiHUD extends Gui {
 					}
 					
 					// Celestial Class
-					EnumBodyClass planetClass = celestial.getMoonClass();
+					EnumBodyClass planetClass = celestial.getBodyClass();
 					String pClass = planetClass.getPlanetStrClass();
 					String pc = "Class " + pClass + " " + celestialStr;
 					fontRendererObj.drawString(pc, 2, 56, i3);

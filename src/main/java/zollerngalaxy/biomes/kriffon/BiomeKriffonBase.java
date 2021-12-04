@@ -8,7 +8,6 @@
 package zollerngalaxy.biomes.kriffon;
 
 import java.util.Random;
-import micdoodle8.mods.galacticraft.core.entities.EntityAlienVillager;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
@@ -22,6 +21,7 @@ import zollerngalaxy.celestial.ZGPlanets;
 import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderKriffon;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
+import zollerngalaxy.mobs.entities.villagers.EntityKriffonVillager;
 
 public abstract class BiomeKriffonBase extends BiomeSpace {
 	
@@ -47,7 +47,7 @@ public abstract class BiomeKriffonBase extends BiomeSpace {
 		this.biomeDecor.mushroomsPerChunk = -999;
 		
 		if (ConfigManagerZG.enableAlienVillagerSpawn) {
-			this.spawnableCreatureList.add(new SpawnListEntry(EntityAlienVillager.class, this.villagerSpawnRate, 1, 1));
+			this.spawnableCreatureList.add(new SpawnListEntry(EntityKriffonVillager.class, this.villagerSpawnRate, 1, 1));
 		}
 		
 		this.setStoneBlock(ZGBlocks.kriffStone);

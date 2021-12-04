@@ -74,9 +74,9 @@ public class WorldProviderKriffon extends WorldProviderPlanetZG {
 	}
 	
 	@Override
-	public float getPlanetTemp() {
+	public float getBodyTemp() {
 		IZollernBody planet = this.getPlanet();
-		float planetTemp = planet.getMoonTemperature();
+		float planetTemp = planet.getBodyTemperature();
 		if (this.isDaytime()) {
 			planetTemp += 3.1F;
 		} else {

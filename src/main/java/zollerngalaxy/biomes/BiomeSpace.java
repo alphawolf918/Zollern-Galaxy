@@ -117,7 +117,7 @@ public class BiomeSpace extends ZGBiomeBase {
 	 * @return True if the biome temp is >= 7.0f, otherwise false.
 	 */
 	public boolean getIsHotBiome() {
-		return (this.getBiomeTemp() >= 7F) || (this.getBodyForBiome().getIsHotMoon());
+		return (this.getBiomeTemp() >= 7F) || (this.getBodyForBiome().getIsHotBody());
 	}
 	
 	/**
@@ -126,7 +126,7 @@ public class BiomeSpace extends ZGBiomeBase {
 	 * @return True if the biome temp is <= 3.0f, otherwise false.
 	 */
 	public boolean getIsColdBiome() {
-		return (this.getBiomeTemp() <= 3F) || (this.getBodyForBiome().getIsColdMoon());
+		return (this.getBiomeTemp() <= 3F) || (this.getBodyForBiome().getIsColdBody());
 	}
 	
 	@Override
@@ -169,7 +169,7 @@ public class BiomeSpace extends ZGBiomeBase {
 		float biomeTemp = this.getBiomeTemp();
 		Random rand = new Random();
 		
-		float planetTemp = planet.getMoonTemperature();
+		float planetTemp = planet.getBodyTemperature();
 		float flucTemp = planetTemp;
 		
 		int tempChangeBy = (this.enableExtremeMode) ? 50 : 25;
@@ -177,9 +177,9 @@ public class BiomeSpace extends ZGBiomeBase {
 		float maxTemp = planetTemp + tempChangeBy;
 		float minTemp = planetTemp - tempChangeBy;
 		
-		if (planet.getIsColdMoon()) {
+		if (planet.getIsColdBody()) {
 			flucTemp -= biomeTemp;
-		} else if (planet.getIsHotMoon()) {
+		} else if (planet.getIsHotBody()) {
 			flucTemp += biomeTemp;
 		} else {
 			flucTemp = planetTemp + biomeTemp;

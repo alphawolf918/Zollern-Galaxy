@@ -294,7 +294,7 @@ public class ZGMoon extends Moon implements IZollernBody {
 	 * @return The body of the atmosphere being set on.
 	 */
 	public ZGMoon setAtmosphere() {
-		this.atmosphere = new AtmosphereInfo(this.getIsBreathable(), this.getHasRain(), this.getIsCorrosive(), this.getMoonTemperature(), this.getWindLevel(),
+		this.atmosphere = new AtmosphereInfo(this.getIsBreathable(), this.getHasRain(), this.getIsCorrosive(), this.getBodyTemperature(), this.getWindLevel(),
 				this.getAtmosphericDensity());
 		return this;
 	}
@@ -415,7 +415,7 @@ public class ZGMoon extends Moon implements IZollernBody {
 	 * @return The bioclassification of the Body.
 	 */
 	@Override
-	public EnumBodyClass getMoonClass() {
+	public EnumBodyClass getBodyClass() {
 		return this.bodyClass;
 	}
 	
@@ -446,7 +446,7 @@ public class ZGMoon extends Moon implements IZollernBody {
 	 * @return
 	 */
 	@Override
-	public boolean getIsHotMoon() {
+	public boolean getIsHotBody() {
 		return this.baseTemp >= 115.0F;
 	}
 	
@@ -456,7 +456,7 @@ public class ZGMoon extends Moon implements IZollernBody {
 	 * @return
 	 */
 	@Override
-	public boolean getIsColdMoon() {
+	public boolean getIsColdBody() {
 		return this.baseTemp <= -25.0F;
 	}
 	
@@ -509,15 +509,15 @@ public class ZGMoon extends Moon implements IZollernBody {
 	}
 	
 	@Override
-	public float getMoonTemperature() {
+	public float getBodyTemperature() {
 		float bodyTemp = this.baseTemp;
 		return bodyTemp;
 	}
 	
 	@Override
-	public float getMoonTemperature(World world, BlockPos pos) {
+	public float getBodyTemperature(World world, BlockPos pos) {
 		float bodyTemp = this.baseTemp;
-		int multiplier = 6;
+		int multiplier = 4;
 		float maxTemp = (bodyTemp * multiplier);
 		float minTemp = (bodyTemp / multiplier);
 		Biome biome = world.getBiomeForCoordsBody(pos);
@@ -549,5 +549,15 @@ public class ZGMoon extends Moon implements IZollernBody {
 			}
 		}
 		return bodyTemp;
+	}
+	
+	/*
+	 * (non-Javadoc)
+	 * @see zollerngalaxy.celestial.IZollernBody#getBodyTemp()
+	 */
+	@Override
+	public float getBodyTemp() {
+		// TODO
+		return 0;
 	}
 }

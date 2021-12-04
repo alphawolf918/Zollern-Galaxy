@@ -25,6 +25,7 @@ public class BiomeSwamplands extends BiomeEdenBase {
 		props.setBaseHeight(0.5F);
 		props.setHeightVariation(0.2F);
 		props.setTemperature(6.5F);
+		this.setTemp(6.5F);
 		this.setBiomeHeight(65);
 		this.setBiomeType(EnumBiomeTypeZG.SWAMP);
 		this.biomeDecor.generateLakes = true;

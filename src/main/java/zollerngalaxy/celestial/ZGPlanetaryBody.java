@@ -188,7 +188,7 @@ public class ZGPlanetaryBody extends Planet implements IZollernBody {
 	 * @return The body of the atmosphere being set on.
 	 */
 	public IZollernBody setAtmosphere() {
-		this.atmosphere = new AtmosphereInfo(this.getIsBreathable(), this.getHasRain(), this.getIsCorrosive(), this.getMoonTemperature(), this.getWindLevel(),
+		this.atmosphere = new AtmosphereInfo(this.getIsBreathable(), this.getHasRain(), this.getIsCorrosive(), this.getBodyTemperature(), this.getWindLevel(),
 				this.getAtmosphericDensity());
 		return this;
 	}
@@ -309,7 +309,7 @@ public class ZGPlanetaryBody extends Planet implements IZollernBody {
 	 * @return The bioclassification of the Body.
 	 */
 	@Override
-	public EnumBodyClass getMoonClass() {
+	public EnumBodyClass getBodyClass() {
 		return this.bodyClass;
 	}
 	
@@ -340,7 +340,7 @@ public class ZGPlanetaryBody extends Planet implements IZollernBody {
 	 * @return
 	 */
 	@Override
-	public boolean getIsHotMoon() {
+	public boolean getIsHotBody() {
 		return this.baseTemp >= 115.0F;
 	}
 	
@@ -350,7 +350,7 @@ public class ZGPlanetaryBody extends Planet implements IZollernBody {
 	 * @return
 	 */
 	@Override
-	public boolean getIsColdMoon() {
+	public boolean getIsColdBody() {
 		return this.baseTemp <= -25.0F;
 	}
 	
@@ -403,13 +403,13 @@ public class ZGPlanetaryBody extends Planet implements IZollernBody {
 	}
 	
 	@Override
-	public float getMoonTemperature() {
+	public float getBodyTemperature() {
 		float bodyTemp = this.baseTemp;
 		return bodyTemp;
 	}
 	
 	@Override
-	public float getMoonTemperature(World world, BlockPos pos) {
+	public float getBodyTemperature(World world, BlockPos pos) {
 		float bodyTemp = this.baseTemp;
 		float maxTemp = (bodyTemp * 4);
 		float minTemp = (bodyTemp / 4);
@@ -444,4 +444,13 @@ public class ZGPlanetaryBody extends Planet implements IZollernBody {
 		return bodyTemp;
 	}
 	
+	/*
+	 * (non-Javadoc)
+	 * @see zollerngalaxy.celestial.IZollernBody#getBodyTemp()
+	 */
+	@Override
+	public float getBodyTemp() {
+		// TODO
+		return 0;
+	}
 }

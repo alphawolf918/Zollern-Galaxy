@@ -33,7 +33,7 @@ public interface IZollernBody {
 	 * 
 	 * @return The planet's base temperature.
 	 */
-	public float getMoonTemperature();
+	public float getBodyTemperature();
 	
 	/**
 	 * Determines the base temperature of the planet, affected by biome temps.
@@ -42,7 +42,7 @@ public interface IZollernBody {
 	 * @param pos
 	 * @return The planet's base temperature, affected by biome temps.
 	 */
-	public float getMoonTemperature(World world, BlockPos pos);
+	public float getBodyTemperature(World world, BlockPos pos);
 	
 	/**
 	 * Determines if planet is breathable.
@@ -73,7 +73,7 @@ public interface IZollernBody {
 	 */
 	public float getAtmosphericDensity();
 	
-	public EnumBodyClass getMoonClass();
+	public EnumBodyClass getBodyClass();
 	
 	public boolean getIsCorrosive();
 	
@@ -82,15 +82,16 @@ public interface IZollernBody {
 	/**
 	 * @return
 	 */
-	public boolean getIsHotMoon();
+	public boolean getIsHotBody();
 	
 	/**
 	 * @return
 	 */
-	public boolean getIsColdMoon();
+	public boolean getIsColdBody();
 	
 	/**
 	 * @return
 	 */
 	public String getName();
+	
 }

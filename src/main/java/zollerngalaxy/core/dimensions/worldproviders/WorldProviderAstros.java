@@ -68,9 +68,9 @@ public class WorldProviderAstros extends WorldProviderMoonZG {
 	}
 	
 	@Override
-	public float getMoonTemp() {
+	public float getBodyTemp() {
 		ZGMoon moon = this.getMoon();
-		float moonTemp = moon.getMoonTemperature();
+		float moonTemp = moon.getBodyTemperature();
 		if (!this.isDaytime()) {
 			moonTemp /= 1.5F;
 		}
@@ -213,5 +213,4 @@ public class WorldProviderAstros extends WorldProviderMoonZG {
 	public Class<? extends IChunkGenerator> getChunkProviderClass() {
 		return ChunkProviderAstros.class;
 	}
-	
 }

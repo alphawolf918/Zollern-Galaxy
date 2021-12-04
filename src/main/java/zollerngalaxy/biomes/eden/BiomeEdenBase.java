@@ -60,7 +60,7 @@ public abstract class BiomeEdenBase extends BiomeSpace {
 	public BiomeEdenBase(String singleName, BiomeProperties props) {
 		super(singleName, props);
 		this.setTempCategory(TempCategory.MEDIUM);
-		this.setTemp(62.4F);
+		this.setTemp(62.46F);
 		this.biomeDecor.flowersPerChunk = -999;
 		this.biomeDecor.treesPerChunk = -999;
 		this.biomeDecor.grassPerChunk = -999;

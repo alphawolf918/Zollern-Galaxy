@@ -22,7 +22,7 @@ public class BiomeGoldenMeadow extends BiomeEdenBase {
 		props.setBaseHeight(1.6F);
 		props.setHeightVariation(2.5F);
 		props.setTemperature(4.0F);
-		this.setTemp(4F);
+		this.setTemp(4.7F);
 		this.setBiomeHeight(52);
 		this.setBiomeType(EnumBiomeTypeZG.PLAINS);
 		this.enableSnow = false;

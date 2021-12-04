@@ -74,14 +74,14 @@ public class WorldProviderAtheon extends WorldProviderPlanetZG {
 	}
 	
 	@Override
-	public float getPlanetTemp() {
+	public float getBodyTemp() {
 		IZollernBody planet = this.getPlanet();
-		float planetTemp = planet.getMoonTemperature();
+		float planetTemp = planet.getBodyTemperature();
 		
 		if (this.isDaytime()) {
 			planetTemp *= 4.5F;
 		} else {
-			planetTemp = planet.getMoonTemperature();
+			planetTemp = planet.getBodyTemperature();
 		}
 		return planetTemp;
 	}

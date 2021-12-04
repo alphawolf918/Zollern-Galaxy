@@ -79,6 +79,7 @@ import zollerngalaxy.core.dimensions.worldproviders.WorldProviderAltum;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderAstros;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderCaligro;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderEden;
+import zollerngalaxy.core.dimensions.worldproviders.WorldProviderKriffon;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderMetztli;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderVortex;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderZollus;
@@ -105,6 +106,7 @@ import zollerngalaxy.mobs.entities.villagers.EntityAstrosVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityCaligroVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityEdenVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityHarranVillager;
+import zollerngalaxy.mobs.entities.villagers.EntityKriffonVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityZollusVillager;
 import zollerngalaxy.mobs.entities.zombiemutations.EntityGhoul;
 import zollerngalaxy.mobs.entities.zombiemutations.EntityOverlord;
@@ -639,6 +641,18 @@ public class ZGEvents {
 					EntityZollusVillager zollusVillager = new EntityZollusVillager(world);
 					zollusVillager.setPosition(worldPos.getX(), worldPos.getY(), worldPos.getZ());
 					world.spawnEntity(zollusVillager);
+				}
+			}
+		} else if (provider instanceof WorldProviderKriffon) {
+			if (!world.isRemote) {
+				Entity entity = event.getEntity();
+				if (entity instanceof EntityAlienVillager) {
+					EntityAlienVillager alienVillager = (EntityAlienVillager) entity;
+					BlockPos worldPos = alienVillager.getPos();
+					alienVillager.setDead();
+					EntityKriffonVillager kriffonVillager = new EntityKriffonVillager(world);
+					kriffonVillager.setPosition(worldPos.getX(), worldPos.getY(), worldPos.getZ());
+					world.spawnEntity(kriffonVillager);
 				}
 			}
 		}

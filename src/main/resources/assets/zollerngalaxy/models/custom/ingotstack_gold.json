@@ -1,0 +1,76 @@
+{
+  "textures": {
+    "n0": "zollerngalaxy:ingotstack_gold",
+    "particle": "zollerngalaxy:ingotstack_gold"
+  },
+  "elements": {
+    "name": "Shape1",
+    "from": [
+      5,
+      0,
+      2
+    ],
+    "to": [
+      11,
+      2,
+      5
+    ],
+    "shade": false,
+    "faces": {
+      "north": {
+        "uv": [
+          9,
+          3,
+          3,
+          5
+        ],
+        "texture": "#0"
+      },
+      "east": {
+        "uv": [
+          12,
+          3,
+          9,
+          5
+        ],
+        "texture": "#0"
+      },
+      "south": {
+        "uv": [
+          18,
+          3,
+          12,
+          5
+        ],
+        "texture": "#0"
+      },
+      "west": {
+        "uv": [
+          3,
+          3,
+          0,
+          5
+        ],
+        "texture": "#0"
+      },
+      "up": {
+        "uv": [
+          3,
+          3,
+          9,
+          0
+        ],
+        "texture": "#0"
+      },
+      "down": {
+        "uv": [
+          3,
+          3,
+          9,
+          0
+        ],
+        "texture": "#0"
+      }
+    }
+  }
+}

@@ -68,9 +68,9 @@ public class WorldProviderZollus extends WorldProviderPlanetZG {
 	}
 	
 	@Override
-	public float getPlanetTemp() {
+	public float getBodyTemp() {
 		IZollernBody planet = this.getPlanet();
-		float planetTemp = planet.getMoonTemperature();
+		float planetTemp = planet.getBodyTemperature();
 		if (!this.isDaytime()) {
 			planetTemp /= 1.2F;
 		}
