@@ -47,6 +47,7 @@ import zollerngalaxy.biomes.candora.BiomeCandyMountain;
 import zollerngalaxy.biomes.candora.BiomeChocolateOcean;
 import zollerngalaxy.biomes.candora.BiomeCookieLands;
 import zollerngalaxy.biomes.candora.BiomeJollyWatermelonPlains;
+import zollerngalaxy.biomes.cento.BiomeCento;
 import zollerngalaxy.biomes.eden.BiomeAsteroidCraters;
 import zollerngalaxy.biomes.eden.BiomeBloodDesert;
 import zollerngalaxy.biomes.eden.BiomeEdenOcean;
@@ -200,6 +201,9 @@ public class ZGBiomes {
 	public static final Biome ASTROS_ROCKIES = new BiomeAstrosRockies(new BiomeProperties("Astros Moonrocks"));
 	public static final Biome ASTROS_GLACIERS = new BiomeAstrosGlaciers(new BiomeProperties("Astros Glaciers"));
 	
+	// Centotl
+	public static final Biome CENTOTL_BASE = new BiomeCento(new BiomeProperties("Centotl"));
+	
 	public static void init() {
 		// Zollus
 		ZGBiomes.addBiome(ZGBiomes.ZOLLUS, COLD, DEAD, DRY);
@@ -298,6 +302,9 @@ public class ZGBiomes {
 		ZGBiomes.addBiome(ZGBiomes.ASTROS_BASE, COLD, WET, SNOWY);
 		ZGBiomes.addBiome(ZGBiomes.ASTROS_ROCKIES, COLD, WET, SNOWY, MOUNTAIN, DEAD);
 		ZGBiomes.addBiome(ZGBiomes.ASTROS_GLACIERS, COLD, WET, SNOWY, MOUNTAIN, DEAD);
+		
+		// Centotl
+		ZGBiomes.addBiome(ZGBiomes.CENTOTL_BASE, HOT, DEAD, SPOOKY, WASTELAND);
 		
 		ZGHelper.Log("Loaded a total of " + totalBiomes + " new biomes.");
 	}

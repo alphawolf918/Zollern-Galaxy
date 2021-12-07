@@ -47,6 +47,7 @@ public class BiomeAstrosBase extends BiomeSpace {
 	public BiomeAstrosBase(String singleName, BiomeProperties props) {
 		super(singleName, props);
 		this.setTempCategory(TempCategory.COLD);
+		this.setTemp(23.56F);
 		this.biomeDecor.flowersPerChunk = -999;
 		this.biomeDecor.treesPerChunk = -999;
 		this.biomeDecor.grassPerChunk = -999;

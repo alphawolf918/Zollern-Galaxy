@@ -43,6 +43,7 @@ public enum EnumOreGenZG {
 	INVAR(8, 6, 0, 24),
 	ELECTRUM(6, 6, 0, 24),
 	PLATINUM(4, 4, 0, 24),
+	SHINIUM(25, 8, 0, 44),
 	PROMETHEAN(4, 16, 0, 45),
 	OBSIDIAN(20, 25, 0, 45),
 	SUPER_CHARGED_COAL(8, 25, 0, 35),

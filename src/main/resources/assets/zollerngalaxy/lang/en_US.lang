@@ -405,6 +405,17 @@ tile.astrostinore.name=Astros Tin Ore
 tile.astroszollerniumore.name=Astros Zollernium Ore
 tile.astrossapphireore.name=Astros Sapphire Ore
 
+tile.centorock.name=Centotl Rock
+tile.centodirt.name=Centotl Dirt
+tile.centogravel.name=Centotl Gravel
+tile.centostone.name=Centotl Stone
+tile.centocobblestone.name=Centotl Cobblestone
+tile.centoshiniumore.name=Centotl Shinium Ore
+tile.centogoldore.name=Centotl Gold Ore
+tile.centofueltoniumore.name=Centotl Fueltonium Ore
+tile.centoironore.name=Centotl Iron Ore
+tile.centozollerniumore.name=Centotl Zollernium Ore
+
 tile.endrock.name=Endrock
 
 tile.heartblock.name=Healing Station
@@ -780,6 +791,7 @@ entity.zollerngalaxy:blubberfish.name=Blubber Fish
 entity.zollerngalaxy:gypsyfish.name=Gypsy Fish
 entity.zollerngalaxy:bladefish.name=Blade Fish
 
+## Villagers ##
 
 entity.zollerngalaxy:abyssalvillager.name=Abyssal Villager
 entity.zollerngalaxy:harranvillager.name=Harran Villager
@@ -788,6 +800,18 @@ entity.zollerngalaxy:astrosvillager.name=Astros Villager
 entity.zollerngalaxy:caligrovillager.name=Caligro Villager
 entity.zollerngalaxy:kriffonvillager.name=Kriffon Villager
 entity.zollerngalaxy:zollusvillager.name=Zollus Villager
+entity.zollerngalaxy:purgotvillager.name=Purgot Villager
+entity.zollerngalaxy:centotlvillager.name=Centotl Villager
+entity.zollerngalaxy:oasisvillager.name=Oasis Villager
+entity.zollerngalaxy:candoravillager.name=Candora Villager
+entity.zollerngalaxy:vortexvillager.name=Vortex Villager
+entity.zollerngalaxy:xathiusvillager.name=Xathius Villager
+entity.zollerngalaxy:xantheonvillager.name=Xantheon Villager
+entity.zollerngalaxy:atheonvillager.name=Atheon Villager
+entity.zollerngalaxy:exodusvillager.name=Exodus Villager
+entity.zollerngalaxy:lostvillager.name=Lost Villager
+
+################
 
 entity.zollerngalaxy:shark.name=Shark
 entity.zollerngalaxy:jellyfish.name=Jellyfish
@@ -805,6 +829,10 @@ entity.zollerngalaxy:overlord.name=Overlord
 entity.zollerngalaxy:ghoul.name=Ghoul
 entity.zollerngalaxy:lightwalker.name=Light Walker
 entity.zollerngalaxy:hulk.name=Hulk
+
+entity.zollerngalaxy:facehugger.name=Facehugger
+entity.zollerngalaxy:xenomorph.name=Xenomorph
+entity.zollerngalaxy:xenomorphqueen.name=Xenomorph Queen
 
 ## Tooltips ##
 
@@ -948,7 +976,6 @@ solarsystem.vega=Vega
 solarsystem.nova=Nova
 
 ## Galaxies ##
-galaxy.andromeda=Andromeda
 galaxy.eissentam=Eissentam
 
 ## Space Stations ##
@@ -968,7 +995,7 @@ satellite.spacestation.caligro=Caligro Space Station
 satellite.spacestation.exodus=Exodus Space Station
 satellite.spacestation.vortex=Vortex Space Station
 satellite.spacestation.metztli=Metztli Space Station
-satellite.spacestation.astros.name=Astros Space Station
+sattelite.spacestation.centotl=Centotl Space Station
 
 ## Death Messages ##
 

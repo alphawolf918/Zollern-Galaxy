@@ -96,6 +96,8 @@ public class ZGDimensions {
 	public static DimensionType METZTLI_ORBIT;
 	public static DimensionType METZTLI_ORBIT_STATIC;
 	
+	public static DimensionType CENTOTL;
+	
 	public static void init() {
 		// Psion-6 (Zollus)
 		ZGDimensions.ZOLLUS = ZGDimensions.getDimType(ConfigManagerZG.planetZollusDimensionId);
@@ -203,6 +205,9 @@ public class ZGDimensions {
 		
 		// Astros (Eden -> Psios-6)
 		ZGDimensions.ASTROS = ZGDimensions.getDimType(ConfigManagerZG.moonAstrosDimensionId);
+		
+		// Pantheon (Centotl)
+		ZGDimensions.CENTOTL = ZGDimensions.getDimType(ConfigManagerZG.planetCentotlDimensionId);
 	}
 	
 	public static DimensionType getDimType(int dimId) {
@@ -243,6 +248,8 @@ public class ZGDimensions {
 			body = ZGPlanets.planetMetztli;
 		} else if (dimID == ConfigManagerZG.moonAstrosDimensionId) {
 			body = ZGPlanets.moonAstros;
+		} else if (dimID == ConfigManagerZG.planetCentotlDimensionId) {
+			body = ZGPlanets.planetCentotl;
 		}
 		
 		if (body == null) {

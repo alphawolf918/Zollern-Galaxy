@@ -41,6 +41,7 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundCategory;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextFormatting;
@@ -81,6 +82,7 @@ import zollerngalaxy.core.dimensions.worldproviders.WorldProviderCaligro;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderEden;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderKriffon;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderMetztli;
+import zollerngalaxy.core.dimensions.worldproviders.WorldProviderPurgot;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderVortex;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderZollus;
 import zollerngalaxy.items.ZGItems;
@@ -107,6 +109,7 @@ import zollerngalaxy.mobs.entities.villagers.EntityCaligroVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityEdenVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityHarranVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityKriffonVillager;
+import zollerngalaxy.mobs.entities.villagers.EntityPurgotVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityZollusVillager;
 import zollerngalaxy.mobs.entities.zombiemutations.EntityGhoul;
 import zollerngalaxy.mobs.entities.zombiemutations.EntityOverlord;
@@ -655,6 +658,18 @@ public class ZGEvents {
 					world.spawnEntity(kriffonVillager);
 				}
 			}
+		} else if (provider instanceof WorldProviderPurgot) {
+			if (!world.isRemote) {
+				Entity entity = event.getEntity();
+				if (entity instanceof EntityAlienVillager) {
+					EntityAlienVillager alienVillager = (EntityAlienVillager) entity;
+					BlockPos worldPos = alienVillager.getPos();
+					alienVillager.setDead();
+					EntityPurgotVillager purgotVillager = new EntityPurgotVillager(world);
+					purgotVillager.setPosition(worldPos.getX(), worldPos.getY(), worldPos.getZ());
+					world.spawnEntity(purgotVillager);
+				}
+			}
 		}
 	}
 	
@@ -788,11 +803,22 @@ public class ZGEvents {
 		}
 	}
 	
+	/**
+	 * Set the block at the passed position to farmland.
+	 * 
+	 * @param event
+	 * @param world
+	 * @param pos
+	 * @param farmland
+	 */
 	private void setFarmland(UseHoeEvent event, World world, BlockPos pos, Block farmland) {
 		world.setBlockState(pos, farmland.getDefaultState());
 		event.setResult(Result.ALLOW);
-		world.playSound(null, pos.getX(), pos.getY(), pos.getZ(), SoundType.GROUND.getStepSound(), SoundCategory.BLOCKS, (SoundType.GROUND.getVolume() + 1.0F) / 2.0F,
-				SoundType.GROUND.getPitch() * 0.8F);
+		SoundEvent stepSound = SoundType.GROUND.getStepSound();
+		SoundCategory soundCategory = SoundCategory.BLOCKS;
+		float soundVolume = (SoundType.GROUND.getVolume() + 1.0F) / 2.0F;
+		float soundPitch = SoundType.GROUND.getPitch() * 0.8F;
+		world.playSound(null, pos.getX(), pos.getY(), pos.getZ(), stepSound, soundCategory, soundVolume, soundPitch);
 		
 		for (EnumHand hand : CachedEnum.valuesHandCached()) {
 			event.getEntityPlayer().swingArm(hand);

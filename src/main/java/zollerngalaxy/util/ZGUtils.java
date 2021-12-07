@@ -9,8 +9,12 @@ package zollerngalaxy.util;
 
 import org.apache.logging.log4j.Level;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.entity.EntityPlayerSP;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.text.translation.I18n;
+import net.minecraft.world.World;
+import net.minecraft.world.WorldProvider;
 import net.minecraftforge.fml.client.FMLClientHandler;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
@@ -36,6 +40,22 @@ public class ZGUtils {
 	
 	public static Minecraft getMinecraft() {
 		return Minecraft.getMinecraft();
+	}
+	
+	public static EntityPlayerSP getPlayer() {
+		final Minecraft mc = ZGUtils.getMinecraft();
+		final EntityPlayerSP player = mc.player;
+		return player;
+	}
+	
+	public static World getWorld() {
+		EntityPlayer player = ZGUtils.getPlayer();
+		return player.world;
+	}
+	
+	public static WorldProvider getWorldProvider() {
+		World world = ZGUtils.getWorld();
+		return world.provider;
 	}
 	
 	public static String translate(String key) {

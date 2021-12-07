@@ -46,6 +46,7 @@ import zollerngalaxy.mobs.entities.villagers.EntityCaligroVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityEdenVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityHarranVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityKriffonVillager;
+import zollerngalaxy.mobs.entities.villagers.EntityPurgotVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityZollusVillager;
 import zollerngalaxy.mobs.entities.zombiemutations.EntityGhoul;
 import zollerngalaxy.mobs.entities.zombiemutations.EntityOverlord;
@@ -157,6 +158,9 @@ public class MobRegistry {
 		
 		// Kriffon Villager
 		registerEntity("kriffonvillager", EntityKriffonVillager.class, entityId++, 0xff0000, 0x8b0000);
+		
+		// Purgot Villager
+		registerEntity("purgotvillager", EntityPurgotVillager.class, entityId++, 0x964b00, 0xff4b00);
 		
 		/** END VILLAGERS **/
 		

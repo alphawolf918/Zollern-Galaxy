@@ -122,6 +122,9 @@ public class ConfigManagerZG {
 	public static int spaceStationMetztliId;
 	public static int spaceStationMetztliStaticId;
 	
+	public static int spaceStationCentotlId;
+	public static int spaceStationCentolStaticId;
+	
 	// Misc
 	public static boolean canEarthAnimalsSpawnOnEden;
 	public static boolean disableStarGates;
@@ -176,6 +179,7 @@ public class ConfigManagerZG {
 	public static double meteorGenCaligro;
 	public static double meteorGenVortex;
 	public static double meteorGenMetztli;
+	public static double meteorGenCentotl;
 	////////////////////////////////////////////////
 	
 	// Set as unreachable with rockets by planet
@@ -194,6 +198,7 @@ public class ConfigManagerZG {
 	public static boolean planetUnreachableExodus;
 	public static boolean planetUnreachableVortex;
 	public static boolean planetUnreachableMetztli;
+	public static boolean planetUnreachableCentotl;
 	////////////////////////////////////////////////
 	
 	// Max Health Customization
@@ -262,6 +267,7 @@ public class ConfigManagerZG {
 	// Planet Tiers (Pantheon)
 	public static int planetVortexTier;
 	public static int planetMetztliTier;
+	public static int planetCentotlTier;
 	
 	public static void init(FMLPreInitializationEvent event) {
 		configuration = new Configuration(new File(event.getModConfigurationDirectory().getAbsolutePath() + "/ZollernGalaxy/core.cfg"));
@@ -292,7 +298,7 @@ public class ConfigManagerZG {
 		// Planets (Pantheon)
 		planetVortexDimensionId = configuration.get(CATEGORY_DIMENSIONS, "Planet Vortex Dimension ID", -7675).getInt();
 		planetMetztliDimensionId = configuration.get(CATEGORY_DIMENSIONS, "Planet Metztli Dimension ID", -7991).getInt();
-		planetCentotlDimensionId = configuration.get(CATEGORY_DIMENSIONS, "Planet Centotl Dimension ID", -7997).getInt();
+		planetCentotlDimensionId = configuration.get(CATEGORY_DIMENSIONS, "Planet Centotl Dimension ID", -5214).getInt();
 		planetTociDimensionId = configuration.get(CATEGORY_DIMENSIONS, "Planet Toci Dimension ID", -7985).getInt();
 		planetTlalocDimensionId = configuration.get(CATEGORY_DIMENSIONS, "Planet Tlaloc Dimension ID", -7986).getInt();
 		
@@ -388,6 +394,10 @@ public class ConfigManagerZG {
 		// Metztli
 		spaceStationMetztliId = configuration.get(CATEGORY_SATELLITES, "Metztli Space Station ID", -6028).getInt();
 		spaceStationMetztliStaticId = configuration.get(CATEGORY_SATELLITES, "Metztli Space Station Static ID", -6029).getInt();
+		
+		// Centotl
+		spaceStationCentotlId = configuration.get(CATEGORY_SATELLITES, "Centotl Space Station ID", -6030).getInt();
+		spaceStationCentolStaticId = configuration.get(CATEGORY_SATELLITES, "Metztli Space Station Static ID", -6031).getInt();
 		
 		// Misc (Can Earth animals spawn on Eden?)
 		canEarthAnimalsSpawnOnEden = configuration.get(CATEGORY_MISC, "Earth Animals Spawn On Eden", true, "Should Earth animals spawn on Eden? (default: true)")
@@ -531,6 +541,7 @@ public class ConfigManagerZG {
 		meteorGenCaligro = configuration.get(CATEGORY_CUSTOMIZATIONS, "Meteor Gen Caligro", 0, "Percentage chance for meteors to fall. (default: 0)").getInt();
 		meteorGenVortex = configuration.get(CATEGORY_CUSTOMIZATIONS, "Meteor Gen Vortex", 15, "Percentage chance for meteors to fall. (default: 15)").getInt();
 		meteorGenMetztli = configuration.get(CATEGORY_CUSTOMIZATIONS, "Meteor Gen Metztli", 15, "Percentage chance for meteors to fall. (default: 15)").getInt();
+		meteorGenCentotl = configuration.get(CATEGORY_CUSTOMIZATIONS, "Meteor Gen Centotl", 30, "Percentage chance for meteors to fall. (default: 15)").getInt();
 		//
 		//
 		
@@ -578,6 +589,8 @@ public class ConfigManagerZG {
 				.get(CATEGORY_CUSTOMIZATIONS, "Disable Rockets For Planet Vortex", false, "Disable rocket travel for this planet. (default: false)").getBoolean();
 		planetUnreachableMetztli = configuration
 				.get(CATEGORY_CUSTOMIZATIONS, "Disable Rockets For Planet Metztli", false, "Disable rocket travel for this planet. (default: false)").getBoolean();
+		planetUnreachableCentotl = configuration
+				.get(CATEGORY_CUSTOMIZATIONS, "Disable Rockets For Planet Centotl", false, "Disable rocket travel for this planet. (default: false)").getBoolean();
 		
 		//
 		maxHealthAllowed = configuration.get(CATEGORY_CUSTOMIZATIONS, "Max Health Allowed", 40, "The max health that Players are allowed to have. (default: 40)")
@@ -647,6 +660,7 @@ public class ConfigManagerZG {
 		// Planet Tiers (Pantheon)
 		planetVortexTier = configuration.get(CATEGORY_TIERS, "Planet Vortex Tier", 3).getInt();
 		planetMetztliTier = configuration.get(CATEGORY_TIERS, "Planet Metztli Tier", 3).getInt();
+		planetCentotlTier = configuration.get(CATEGORY_TIERS, "Planet Centotl Tier", 3).getInt();
 		
 		configuration.save();
 	}

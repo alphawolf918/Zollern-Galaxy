@@ -53,7 +53,7 @@ public abstract class BiomeEdenBase extends BiomeSpace {
 	protected static final IBlockState WATER = Blocks.WATER.getDefaultState();
 	
 	protected static final int SEA_LEVEL = 63;
-	protected static final int SEA_FLOOR_LEVEL = 42;
+	protected static final int SEA_FLOOR_LEVEL = (SEA_LEVEL - 21);
 	
 	public BiomeDecoratorEden biomeDecor = this.getBiomeDecorator();
 	

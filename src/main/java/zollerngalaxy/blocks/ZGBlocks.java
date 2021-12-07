@@ -575,7 +575,24 @@ public class ZGBlocks {
 	public static final Block astrosTinOre = new ZGBlockOre("astrostinore", 1.5F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
 			EnumHarvestLevelZG.COBALT.getHarvestLevel());
 	public static final Block astrosZollerniumOre = new ZGBlockOre("astroszollerniumore", 3.5F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
-			EnumHarvestLevelZG.COBALT.getHarvestLevel());
+			EnumHarvestLevelZG.AMARANTH.getHarvestLevel());
+	
+	// Centotl
+	public static final Block centoRock = new ZGBlockBase("centorock", 6.8F);
+	public static final Block centoCobblestone = new ZGBlockBase("centocobblestone", 4.6F).setBlockType(EnumBlockType.COBBLESTONE);
+	public static final Block centoStone = new ZGPlanetStone("centostone", ZGBlocks.centoCobblestone);
+	public static final Block centoDirt = new ZGBlockDirt("centodirt", 3.2F);
+	public static final Block centoGravel = new ZGGravel("centogravel", 2.1F);
+	public static final Block centoShiniumOre = new ZGBlockOre("centoshiniumore", 8.5F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
+			EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
+	public static final Block centoGoldOre = new ZGBlockOre("centogoldore", 5.7F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
+			EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
+	public static final Block centoIronOre = new ZGBlockOre("centoironore", 4.2F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
+			EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
+	public static final Block centoFueltoniumOre = new ZGBlockOre("centofueltoniumore", 7.8F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
+			EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
+	public static final Block centoZollerniumOre = new ZGBlockOre("centozollerniumore", 6.4F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
+			EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
 	
 	// Metals
 	public static final Block blockViri = new ZGBlockMetal("viriblock");
@@ -725,7 +742,8 @@ public class ZGBlocks {
 				blockBlueprintStation, blockHealingStation, blockCrystalsPlutonium, blockCrystalsStorm, blockCrystalsEden, blockIngotStackIron, ironSirenON, goldSirenON,
 				diamondSirenON, emeraldSirenON, ironSiren, goldSiren, diamondSiren, emeraldSiren, astrosRock, astrosDirt, astrosGravel, astrosCobblestone, astrosStone,
 				astrosIce, astrosIronOre, astrosGoldOre, astrosDiamondOre, astrosEmeraldOre, astrosCoalOre, astrosSuperChargedCoalOre, astrosTinOre, astrosZollerniumOre,
-				astrosSapphireOre);
+				astrosSapphireOre, centoRock, centoCobblestone, centoStone, centoDirt, centoGravel, centoShiniumOre, centoGoldOre, centoIronOre, centoFueltoniumOre,
+				centoZollerniumOre);
 		ZGHelper.Log("Loaded a total of " + totalBlocks + " new blocks.");
 	}
 	

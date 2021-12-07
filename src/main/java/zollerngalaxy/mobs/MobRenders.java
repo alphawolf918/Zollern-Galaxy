@@ -40,6 +40,7 @@ import zollerngalaxy.mobs.entities.villagers.EntityCaligroVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityEdenVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityHarranVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityKriffonVillager;
+import zollerngalaxy.mobs.entities.villagers.EntityPurgotVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityZollusVillager;
 import zollerngalaxy.mobs.entities.zombiemutations.EntityGhoul;
 import zollerngalaxy.mobs.entities.zombiemutations.EntityOverlord;
@@ -75,6 +76,7 @@ import zollerngalaxy.mobs.renders.villagers.RenderCaligroVillager;
 import zollerngalaxy.mobs.renders.villagers.RenderEdenVillager;
 import zollerngalaxy.mobs.renders.villagers.RenderHarranVillager;
 import zollerngalaxy.mobs.renders.villagers.RenderKriffonVillager;
+import zollerngalaxy.mobs.renders.villagers.RenderPurgotVillager;
 import zollerngalaxy.mobs.renders.villagers.RenderZollusVillager;
 import zollerngalaxy.mobs.renders.zombiemutations.RenderGhoul;
 import zollerngalaxy.mobs.renders.zombiemutations.RenderOverlord;
@@ -119,6 +121,7 @@ public final class MobRenders {
 		RenderMob(EntityCaligroVillager.class, RenderCaligroVillager::new);
 		RenderMob(EntityZollusVillager.class, RenderZollusVillager::new);
 		RenderMob(EntityKriffonVillager.class, RenderKriffonVillager::new);
+		RenderMob(EntityPurgotVillager.class, RenderPurgotVillager::new);
 	}
 	
 	/**
@@ -132,5 +135,4 @@ public final class MobRenders {
 	private static <T extends Entity> void RenderMob(Class<T> entityClass, IRenderFactory<? super T> renderFactory) {
 		RenderingRegistry.registerEntityRenderingHandler(entityClass, renderFactory);
 	}
-	
 }

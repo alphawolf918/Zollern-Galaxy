@@ -5,6 +5,8 @@ Zollern Galaxy v2.0.33
 ** NEW **
 * Added the Kriffon Villager.
     - Regular Alien Villagers will conert into Kriffon Villagers when on that planet.
+* Added the Purgot Villager.
+    - Regular Alien Villagers will conert into Purgot Villagers when on that planet.
 * 
 ** CHANGES **
 *

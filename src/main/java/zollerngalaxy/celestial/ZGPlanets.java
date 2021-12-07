@@ -22,6 +22,7 @@ import zollerngalaxy.core.dimensions.worldproviders.WorldProviderAstros;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderAtheon;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderCaligro;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderCandora;
+import zollerngalaxy.core.dimensions.worldproviders.WorldProviderCentotl;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderEden;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderExodus;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderKriffon;
@@ -132,7 +133,7 @@ public class ZGPlanets {
 	// Pantheon Planets
 	public static ZGPlanet planetVortex = new ZGPlanet("vortex");
 	public static ZGPlanet planetMetztli = new ZGPlanet("metztli");
-	public static ZGPlanet planetCentotl;
+	public static ZGPlanet planetCentotl = new ZGPlanet("centotl");
 	public static ZGPlanet planetToci;
 	public static ZGPlanet planetTlaloc;
 	
@@ -562,6 +563,28 @@ public class ZGPlanets {
 				ZGBiomes.METZTLI_HARRAN_TUNDRA, ZGBiomes.METZTLI_HARRAN_SHROOMS, ZGBiomes.METZTLI_HARRAN_CLAY_MESA);
 		totalPlanets++;
 		
+		// Centotl
+		planetCentotl.setDimensionInfo(ConfigManagerZG.planetCentotlDimensionId, WorldProviderCentotl.class);
+		planetCentotl.setParentSolarSystem(systemPantheon);
+		planetCentotl.setBodyClass(EnumBodyClass.ABANDONED);
+		planetCentotl.setRelativeOrbitTime(25.0F);
+		planetCentotl.setDistanceFromCenter(2.0F);
+		planetCentotl.setTierRequired(ConfigManagerZG.planetCentotlDimensionId);
+		if (ConfigManagerZG.planetUnreachableAll || ConfigManagerZG.planetUnreachableCentotl) {
+			planetCentotl.setDisableRockets();
+		}
+		planetCentotl.setBodyTemperature(86.59F);
+		planetCentotl.setDensity(20.0F);
+		planetCentotl.setHasRain(false);
+		planetCentotl.setBodyToxicity(35.67F);
+		planetCentotl.setBodyRadiation(0.0F);
+		planetCentotl.setWindLevel(0.0F);
+		planetCentotl.setBodyGasses(EnumAtmosphericGas.ARGON, EnumAtmosphericGas.METHANE, EnumAtmosphericGas.NITROGEN, EnumAtmosphericGas.HELIUM);
+		planetCentotl.setBodyIcon("centotl");
+		planetCentotl.setAtmosphere();
+		planetCentotl.setBiomeInfo(ZGBiomes.CENTOTL_BASE);
+		totalPlanets++;
+		
 		ZGHelper.Log("Loaded a total of " + totalPlanets + " new planets.");
 	}
 	
@@ -623,6 +646,7 @@ public class ZGPlanets {
 		GalaxyRegistry.registerPlanet(planetExodus);
 		GalaxyRegistry.registerPlanet(planetVortex);
 		GalaxyRegistry.registerPlanet(planetMetztli);
+		GalaxyRegistry.registerPlanet(planetCentotl);
 		ZGPlanets.registerMoons();
 	}
 	
@@ -654,5 +678,6 @@ public class ZGPlanets {
 		// Pantheon
 		GalacticraftRegistry.registerTeleportType(WorldProviderVortex.class, new TeleportTypeMars());
 		GalacticraftRegistry.registerTeleportType(WorldProviderMetztli.class, new TeleportTypeMars());
+		GalacticraftRegistry.registerTeleportType(WorldProviderCentotl.class, new TeleportTypeMars());
 	}
 }
