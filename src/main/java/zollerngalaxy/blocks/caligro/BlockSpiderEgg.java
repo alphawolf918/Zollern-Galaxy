@@ -61,11 +61,6 @@ public class BlockSpiderEgg extends ZGBlockEgg {
 	}
 	
 	@Override
-	public int tickRate(World worldIn) {
-		return 5;
-	}
-	
-	@Override
 	public void onBlockDestroyedByPlayer(World worldIn, BlockPos pos, IBlockState state) {
 		this.hatchSpider(worldIn, pos);
 		this.ticksEggExisted = 0;

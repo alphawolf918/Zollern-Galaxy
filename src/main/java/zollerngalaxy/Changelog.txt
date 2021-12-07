@@ -7,6 +7,17 @@ Zollern Galaxy v2.0.33
     - Regular Alien Villagers will conert into Kriffon Villagers when on that planet.
 * Added the Purgot Villager.
     - Regular Alien Villagers will conert into Purgot Villagers when on that planet.
+* Added the next new planet, Centotl.
+    - Planet is themed after LV-426 from Alien. Shares similarities, but has its own take on it.
+    - Random "Facehugger Eggs" spawn throughout the planet. Try interacting with one.
+* Added the Facehugger mob.
+    - Almost a one-hit K.O. if it attacks you, so exercise caution.
+        - This might end up as a config option later.
+    - If killed by a Facehugger, a Xenomoprh is spawned where the entity (or Player) was killed.
+* Added the Xenomorph mob.
+    - Usually only spawns when a Player or entity is killed by a Facehugger, but has been known to spawn elsewhere.
+        - There is a chance that it could be a Queen Xenomorph.
+            - These can lay more Facehugger Eggs.
 * 
 ** CHANGES **
 *

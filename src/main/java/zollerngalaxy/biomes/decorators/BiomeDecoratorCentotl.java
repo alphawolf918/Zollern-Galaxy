@@ -24,6 +24,7 @@ import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.worldgen.WorldGenMinableZG;
 import zollerngalaxy.worldgen.WorldGenOutpost;
 import zollerngalaxy.worldgen.WorldGenTunnel;
+import zollerngalaxy.worldgen.centotl.WorldGenFacehuggerEgg;
 
 public class BiomeDecoratorCentotl extends BiomeDecoratorZG {
 	
@@ -38,11 +39,14 @@ public class BiomeDecoratorCentotl extends BiomeDecoratorZG {
 	private WorldGenerator zollerniumGen;
 	
 	public int tunnelsPerChunk = 4;
+	public int eggsPerChunk = 5;
 	
 	public boolean generateCraters = true;
 	public boolean generateTunnels = true;
+	public boolean generateEggs = true;
 	
 	private WorldGenerator tunnelGen = new WorldGenTunnel();
+	private WorldGenerator eggGen = new WorldGenFacehuggerEgg();
 	
 	public BiomeDecoratorCentotl() {
 		this.dirtGen = new WorldGenMinableZG(ZGBlocks.centoDirt, ROCK, EnumOreGenZG.DIRT);
@@ -83,6 +87,24 @@ public class BiomeDecoratorCentotl extends BiomeDecoratorZG {
 					if (y <= 60) {
 						tunnelGen.generate(world, rand, this.chunkPos.add(x, y, z));
 					}
+				}
+			}
+		}
+		
+		// Facehugger Eggs
+		if (this.generateEggs && this.eggsPerChunk > 0) {
+			for (int i = 0; i < this.eggsPerChunk; i++) {
+				y = rand.nextInt(rand.nextInt(genY) + 8);
+				if (y <= 10) {
+					y += ZGHelper.rngInt(0, 75);
+				}
+				if (rand.nextInt(100) <= 25) {
+					this.eggGen.generate(world, rand, this.chunkPos.add(x, y, z));
+					this.eggGen.generate(world, rand, this.chunkPos.add(x + 3, y, z));
+					this.eggGen.generate(world, rand, this.chunkPos.add(x - 3, y, z));
+					this.eggGen.generate(world, rand, this.chunkPos.add(x, y, z + 3));
+					this.eggGen.generate(world, rand, this.chunkPos.add(x - 3, y, z + 3));
+					this.eggGen.generate(world, rand, this.chunkPos.add(x + 3, y, z - 3));
 				}
 			}
 		}

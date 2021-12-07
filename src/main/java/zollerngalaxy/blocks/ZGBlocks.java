@@ -22,6 +22,7 @@ import zollerngalaxy.blocks.caligro.corrupted.ZGBlockOreCorrupted;
 import zollerngalaxy.blocks.caligro.corrupted.ZGCorruptBlock;
 import zollerngalaxy.blocks.caligro.corrupted.ZGOreGemCorrupted;
 import zollerngalaxy.blocks.caligro.corrupted.ZGPlanetStoneCorrupted;
+import zollerngalaxy.blocks.centotl.BlockFacehuggerEgg;
 import zollerngalaxy.blocks.crystals.BlockStormCrystals;
 import zollerngalaxy.blocks.crystals.ZGCrystalBlock;
 import zollerngalaxy.blocks.eden.BlockRedshroom;
@@ -593,6 +594,7 @@ public class ZGBlocks {
 			EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
 	public static final Block centoZollerniumOre = new ZGBlockOre("centozollerniumore", 6.4F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
 			EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
+	public static final Block facehuggerEgg = new BlockFacehuggerEgg();
 	
 	// Metals
 	public static final Block blockViri = new ZGBlockMetal("viriblock");
@@ -743,7 +745,7 @@ public class ZGBlocks {
 				diamondSirenON, emeraldSirenON, ironSiren, goldSiren, diamondSiren, emeraldSiren, astrosRock, astrosDirt, astrosGravel, astrosCobblestone, astrosStone,
 				astrosIce, astrosIronOre, astrosGoldOre, astrosDiamondOre, astrosEmeraldOre, astrosCoalOre, astrosSuperChargedCoalOre, astrosTinOre, astrosZollerniumOre,
 				astrosSapphireOre, centoRock, centoCobblestone, centoStone, centoDirt, centoGravel, centoShiniumOre, centoGoldOre, centoIronOre, centoFueltoniumOre,
-				centoZollerniumOre);
+				centoZollerniumOre, facehuggerEgg);
 		ZGHelper.Log("Loaded a total of " + totalBlocks + " new blocks.");
 	}
 	

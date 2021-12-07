@@ -13,6 +13,7 @@ import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import zollerngalaxy.mobs.entities.EntityArcon;
 import zollerngalaxy.mobs.entities.EntityBladeFish;
 import zollerngalaxy.mobs.entities.EntityBlubberFish;
+import zollerngalaxy.mobs.entities.EntityFacehugger;
 import zollerngalaxy.mobs.entities.EntityFaceless;
 import zollerngalaxy.mobs.entities.EntityFrostGiant;
 import zollerngalaxy.mobs.entities.EntityGalaxyKnight;
@@ -33,6 +34,7 @@ import zollerngalaxy.mobs.entities.EntityShark;
 import zollerngalaxy.mobs.entities.EntitySpiderling;
 import zollerngalaxy.mobs.entities.EntitySquidlus;
 import zollerngalaxy.mobs.entities.EntityWasp;
+import zollerngalaxy.mobs.entities.EntityXenomorph;
 import zollerngalaxy.mobs.entities.boss.EntityShadowAlien;
 import zollerngalaxy.mobs.entities.villagers.EntityAbyssalVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityAstrosVillager;
@@ -49,6 +51,7 @@ import zollerngalaxy.mobs.entities.zombiemutations.EntityVolatile;
 import zollerngalaxy.mobs.renders.RenderArcon;
 import zollerngalaxy.mobs.renders.RenderBladeFish;
 import zollerngalaxy.mobs.renders.RenderBlubberFish;
+import zollerngalaxy.mobs.renders.RenderFacehugger;
 import zollerngalaxy.mobs.renders.RenderFaceless;
 import zollerngalaxy.mobs.renders.RenderFrostGiant;
 import zollerngalaxy.mobs.renders.RenderGalaxyKnight;
@@ -69,6 +72,7 @@ import zollerngalaxy.mobs.renders.RenderShark;
 import zollerngalaxy.mobs.renders.RenderSpiderling;
 import zollerngalaxy.mobs.renders.RenderSquidlus;
 import zollerngalaxy.mobs.renders.RenderWasp;
+import zollerngalaxy.mobs.renders.RenderXenomorph;
 import zollerngalaxy.mobs.renders.boss.RenderShadowAlien;
 import zollerngalaxy.mobs.renders.villagers.RenderAbyssalVillager;
 import zollerngalaxy.mobs.renders.villagers.RenderAstrosVillager;
@@ -122,6 +126,8 @@ public final class MobRenders {
 		RenderMob(EntityZollusVillager.class, RenderZollusVillager::new);
 		RenderMob(EntityKriffonVillager.class, RenderKriffonVillager::new);
 		RenderMob(EntityPurgotVillager.class, RenderPurgotVillager::new);
+		RenderMob(EntityFacehugger.class, RenderFacehugger::new);
+		RenderMob(EntityXenomorph.class, RenderXenomorph::new);
 	}
 	
 	/**

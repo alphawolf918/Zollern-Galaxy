@@ -39,7 +39,7 @@ public class WorldProviderCentotl extends WorldProviderPlanetZG {
 	
 	@Override
 	public float getSolarSize() {
-		return 1.0F;
+		return 1.5F;
 	}
 	
 	@Override
@@ -49,7 +49,7 @@ public class WorldProviderCentotl extends WorldProviderPlanetZG {
 	
 	@Override
 	public double getFuelUsageMultiplier() {
-		return 6.2D;
+		return 7.7D;
 	}
 	
 	@Override
@@ -94,14 +94,14 @@ public class WorldProviderCentotl extends WorldProviderPlanetZG {
 	
 	@Override
 	public Vector3 getFogColor() {
-		float f = 1.1F - this.getStarBrightness(1.0F);
-		return new Vector3(2F / 255F * f, 2F / 255F * f, 2F / 255F * f);
+		float f = 0.8F - this.getStarBrightness(1.0F);
+		return new Vector3(105F / 255F * f, 50F / 255F * f, 215F / 255F * f);
 	}
 	
 	@Override
 	public Vector3 getSkyColor() {
-		float f = 1.15F - this.getStarBrightness(1.0F);
-		return new Vector3(4F / 255F * f, 4F / 255F * f, 4F / 255F * f);
+		float f = 1.05F - this.getStarBrightness(1.0F);
+		return new Vector3(125F / 255F * f, 1F / 255F * f, 255F / 255F * f);
 	}
 	
 	@Override
@@ -146,7 +146,7 @@ public class WorldProviderCentotl extends WorldProviderPlanetZG {
 		if (f2 > 1.0F) {
 			f2 = 1.0F;
 		}
-		return f2 * f2 * 0.9F;
+		return f2 * f2 * 0.4F;
 	}
 	
 	@Override
@@ -172,12 +172,12 @@ public class WorldProviderCentotl extends WorldProviderPlanetZG {
 	
 	@Override
 	public double getHorizon() {
-		return 52.0D;
+		return 60.0D;
 	}
 	
 	@Override
 	public int getAverageGroundLevel() {
-		return 82;
+		return 71;
 	}
 	
 	@Override

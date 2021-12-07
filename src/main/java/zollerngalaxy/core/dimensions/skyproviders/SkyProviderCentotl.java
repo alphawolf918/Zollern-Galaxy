@@ -41,7 +41,7 @@ public class SkyProviderCentotl extends IRenderHandler {
 	private float sunSize;
 	
 	public SkyProviderCentotl(IGalacticraftWorldProvider worldProvider) {
-		this.sunSize = 7.5F * worldProvider.getSolarSize();
+		this.sunSize = 5.5F * worldProvider.getSolarSize();
 		
 		int displayLists = GLAllocation.generateDisplayLists(3);
 		this.starList = displayLists;
@@ -160,7 +160,7 @@ public class SkyProviderCentotl extends IRenderHandler {
 		a = 0.0F;
 		
 		// Render sun aura
-		f10 = 20.0F;
+		f10 = 15.0F;
 		worldRenderer1.pos(-f10, 100.0D, -f10).color(r, g, b, a).endVertex();
 		worldRenderer1.pos(0, 100.0D, (double) -f10 * 1.5F).color(r, g, b, a).endVertex();
 		worldRenderer1.pos(f10, 100.0D, -f10).color(r, g, b, a).endVertex();
@@ -184,7 +184,7 @@ public class SkyProviderCentotl extends IRenderHandler {
 		a = 0.0F;
 		
 		// Render larger sun aura
-		f10 = 40.0F;
+		f10 = 20.0F;
 		worldRenderer1.pos(-f10, 100.0D, -f10).color(r, g, b, a).endVertex();
 		worldRenderer1.pos(0, 100.0D, (double) -f10 * 1.5F).color(r, g, b, a).endVertex();
 		worldRenderer1.pos(f10, 100.0D, -f10).color(r, g, b, a).endVertex();
@@ -230,11 +230,11 @@ public class SkyProviderCentotl extends IRenderHandler {
 		worldRenderer1.pos(-f10, 100.0D, f10).tex(0.0D, 1.0D).endVertex();
 		tessellator1.draw();
 		
-		// Render Vortex
-		f10 = 2.2F;
+		// Render Metztli
+		f10 = 4.2F;
 		GL11.glScalef(0.8F, 0.8F, 0.8F);
 		GL11.glRotatef(0.0F, 0.0F, 0.0F, 1.0F);
-		GL11.glRotatef(world.getCelestialAngle(partialTicks) * -360.0F, 1.0F, 0.0F, 0.0F);
+		GL11.glRotatef(world.getCelestialAngle(partialTicks) * -180.0F, 1.0F, 0.0F, 0.0F);
 		// GL11.glColor4f(0.0F, 0.0F, 0.0F, 1F);
 		FMLClientHandler.instance().getClient().renderEngine.bindTexture(SkyProviderCentotl.metztliTexture);
 		worldRenderer1.begin(GL11.GL_QUADS, DefaultVertexFormats.POSITION_TEX);
@@ -356,7 +356,7 @@ public class SkyProviderCentotl extends IRenderHandler {
 	}
 	
 	private Vec3d getCustomSkyColor() {
-		return new Vec3d(5.0D, 5.0D, 5.0D);
+		return new Vec3d(40.0D, 0.0D, 80.0D);
 	}
 	
 	public float getSkyBrightness(float par1) {

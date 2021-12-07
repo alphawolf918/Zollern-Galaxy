@@ -19,6 +19,7 @@ import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.mobs.entities.EntityArcon;
 import zollerngalaxy.mobs.entities.EntityBladeFish;
 import zollerngalaxy.mobs.entities.EntityBlubberFish;
+import zollerngalaxy.mobs.entities.EntityFacehugger;
 import zollerngalaxy.mobs.entities.EntityFaceless;
 import zollerngalaxy.mobs.entities.EntityFrostGiant;
 import zollerngalaxy.mobs.entities.EntityGalaxyKnight;
@@ -39,6 +40,7 @@ import zollerngalaxy.mobs.entities.EntityShark;
 import zollerngalaxy.mobs.entities.EntitySpiderling;
 import zollerngalaxy.mobs.entities.EntitySquidlus;
 import zollerngalaxy.mobs.entities.EntityWasp;
+import zollerngalaxy.mobs.entities.EntityXenomorph;
 import zollerngalaxy.mobs.entities.boss.EntityShadowAlien;
 import zollerngalaxy.mobs.entities.villagers.EntityAbyssalVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityAstrosVillager;
@@ -191,7 +193,16 @@ public class MobRegistry {
 		// Light Walker
 		// TODO
 		
+		// Hulk Beast
+		// TODO
+		
 		// ** End Mutations **
+		
+		// Facehugger
+		registerEntity("facehugger", EntityFacehugger.class, entityId++, 0xa76bc1, 0x964b00);
+		
+		// Xenomorph
+		registerEntity("xenomorph", EntityXenomorph.class, entityId++, 0xeeeeee, 0xcccccc);
 		
 		ZGHelper.Log("Loaded a total of " + totalMobs + " new mobs.");
 	}
