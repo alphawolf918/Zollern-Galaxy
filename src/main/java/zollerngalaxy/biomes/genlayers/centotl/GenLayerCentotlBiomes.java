@@ -46,6 +46,9 @@ public class GenLayerCentotlBiomes extends GenLayerCentotl {
 		ArrayList<BiomeEntry>[] currentBiomes = new ArrayList[CachedEnum.valuesBiomeCached().length];
 		List<BiomeEntry> list = new ArrayList<>();
 		list.add(new BiomeEntry(ZGBiomes.CENTOTL_BASE, 100));
+		list.add(new BiomeEntry(ZGBiomes.CENTOTL_ROCKY_MOUNTAINS, 90));
+		list.add(new BiomeEntry(ZGBiomes.CENTOTL_ENGINEERING_PLAINS, 80));
+		list.add(new BiomeEntry(ZGBiomes.CENTOTL_CONSTRUCTS, 70));
 		
 		currentBiomes[BiomeType.WARM.ordinal()] = new ArrayList<>(list);
 		return currentBiomes;

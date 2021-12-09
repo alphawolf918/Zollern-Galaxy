@@ -215,8 +215,6 @@ public class EntityShadowAlien extends EntityMob implements IShadeEntity {
 		this.proxy.sendChatMessage(player, fullMsg);
 	}
 	
-	// Below code donated by DabbingEevee
-	
 	@Override
 	public boolean isNonBoss() {
 		return false;

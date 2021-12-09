@@ -8,20 +8,29 @@ Zollern Galaxy v2.0.33
 * Added the Purgot Villager.
     - Regular Alien Villagers will conert into Purgot Villagers when on that planet.
 * Added the next new planet, Centotl.
-    - Planet is themed after LV-426 from Alien. Shares similarities, but has its own take on it.
+    - Planet is themed after LV-426 from Alien (1979). Shares similarities, but has its own take on it.
     - Random "Facehugger Eggs" spawn throughout the planet. Try interacting with one.
+* Added the Facehugger Egg block.
+    - Similar to the Spiderling Egg, breaking one spawns 1 to 4 of the creatures.
+    - Facehuggers and Xenomorphs have the capability to hatch these eggs if they come into contact with them.
 * Added the Facehugger mob.
     - Almost a one-hit K.O. if it attacks you, so exercise caution.
         - This might end up as a config option later.
     - If killed by a Facehugger, a Xenomoprh is spawned where the entity (or Player) was killed.
+        - There is a 5% chance that it will be a Queen.
 * Added the Xenomorph mob.
     - Usually only spawns when a Player or entity is killed by a Facehugger, but has been known to spawn elsewhere.
-        - There is a chance that it could be a Queen Xenomorph.
-            - These can lay more Facehugger Eggs.
-* 
+        - They mostly come at night. Mostly.
+        - There is a 25% chance that it could be a Queen Xenomorph when an entity is killed by a Facehugger.
+            - These can lay more Facehugger Eggs, each with a 25% chance to hatch immediately.
+* Added the Queen Xenomorph mob.
+    - This is the mod's second boss mob, and is by far the deadliest ever added. Serious firepower will be required.
+        - Probably best to nuke it from orbit. It's the only way to be sure.
+        
 ** CHANGES **
-*
+* Updated a few block textures.
+* 
 
 ** FIXES **
-* Fixed glitch with Galactic HUD regarding F/C temperatures.
+* Fixed glitch with Galactic HUD regarding F/C temperatures. There was a logic error with type-casting and variable referencing.
 * 

@@ -158,19 +158,17 @@ public class ChunkProviderCentotl extends ChunkProviderBase {
 								double chunkHeight = CHUNK_HEIGHT;
 								
 								Biome biome = world.getBiome(new BlockPos(x, y, z));
-								double heightMod = 0.1D;
+								double heightMod = 0.5D;
 								
 								if (biome instanceof BiomeSpace) {
 									BiomeSpace spaceBiome = (BiomeSpace) biome;
-									heightMod = (spaceBiome.getBiomeHeight() / 1.2);
+									heightMod = (spaceBiome.getBiomeHeight() / 0.5);
 								}
 								
 								if (heightMod > 0.0D) {
 									chunkHeight = (CHUNK_HEIGHT + heightMod);
 								} else if (heightMod < 0.0D) {
 									chunkHeight = (CHUNK_HEIGHT - heightMod);
-								} else if (y >= 250) {
-									primer.setBlockState(x, y, z, AIR);
 								}
 								
 								if ((lvt_45_1_ += d16) > this.noiseGenSmooth1.getNoise(chunkX * 16 + x, chunkZ * 16 + z) * chunkHeight) {
@@ -179,6 +177,8 @@ public class ChunkProviderCentotl extends ChunkProviderBase {
 									Biome biome2 = world.getBiome(new BlockPos(x, y, z));
 									IBlockState blockToUse = ZGFluids.blockWhiteLavaFluid.getDefaultState();
 									primer.setBlockState(x, y, z, blockToUse);
+								} else if (y >= 250) {
+									primer.setBlockState(x, y, z, AIR);
 								}
 							}
 							

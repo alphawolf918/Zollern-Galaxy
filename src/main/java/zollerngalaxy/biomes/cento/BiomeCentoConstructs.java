@@ -11,17 +11,17 @@ import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.celestial.ZGPlanets;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 
-public class BiomeCento extends BiomeCentoBase {
+public class BiomeCentoConstructs extends BiomeCentoBase {
 	
-	public BiomeCento(BiomeProperties props) {
-		super("centotl", props);
+	public BiomeCentoConstructs(BiomeProperties props) {
+		super("centotl_constructs", props);
 		props.setRainDisabled();
-		this.setBiomeHeight(25);
+		this.setBiomeHeight(75);
 		this.setBiomeType(EnumBiomeTypeZG.ABANDONED);
-		this.setTemp(9.8F);
+		this.setTemp(2.8F);
 		this.enableSnow = false;
-		this.topBlock = ZGBlocks.centoRock.getDefaultState();
-		this.fillerBlock = ZGBlocks.centoDirt.getDefaultState();
+		this.topBlock = ZGBlocks.xantheonConstructBlock.getDefaultState();
+		this.fillerBlock = ZGBlocks.blockCrater.getDefaultState();
 		this.stoneBlock = ZGBlocks.centoStone;
 		this.setPlanetForBiome(ZGPlanets.planetCentotl);
 	}

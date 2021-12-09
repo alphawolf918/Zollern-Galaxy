@@ -9,6 +9,7 @@ package zollerngalaxy.mobs.entities;
 
 import javax.annotation.Nullable;
 import micdoodle8.mods.galacticraft.api.entity.IEntityBreathable;
+import micdoodle8.mods.galacticraft.core.entities.EntityAlienVillager;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -23,7 +24,6 @@ import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.ai.EntityAIWanderAvoidWater;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
-import net.minecraft.entity.monster.EntityIronGolem;
 import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
@@ -54,7 +54,12 @@ public class EntityXenomorph extends EntityMob implements IShadeEntity, IEntityB
 	
 	public EntityXenomorph(World worldIn) {
 		super(worldIn);
-		this.setSize(0.6F * 2.5F, 1.95F * 3.5F);
+		this.setSize(0.6F * 2.5F, 1.95F * 4.5F);
+		this.isImmuneToFire = true;
+	}
+	
+	@Override
+	public void fall(float par1, float par2) {
 	}
 	
 	@Override
@@ -64,6 +69,8 @@ public class EntityXenomorph extends EntityMob implements IShadeEntity, IEntityB
 		this.tasks.addTask(5, new EntityAIMoveTowardsRestriction(this, 1.5D));
 		this.tasks.addTask(7, new EntityAIWanderAvoidWater(this, 1.5D));
 		this.tasks.addTask(8, new EntityAIWatchClosest(this, EntityPlayer.class, 8.5F));
+		this.tasks.addTask(8, new EntityAIWatchClosest(this, EntityZGVillagerBase.class, 8.5F));
+		this.tasks.addTask(8, new EntityAIWatchClosest(this, EntityAlienVillager.class, 8.5F));
 		this.tasks.addTask(8, new EntityAILookIdle(this));
 		this.applyEntityAI();
 	}
@@ -71,13 +78,14 @@ public class EntityXenomorph extends EntityMob implements IShadeEntity, IEntityB
 	protected void applyEntityAI() {
 		this.tasks.addTask(6, new EntityAIMoveThroughVillage(this, 1.0D, false));
 		this.targetTasks.addTask(1, new EntityAINearestAttackableTarget(this, EntityPlayer.class, true));
-		this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityZGVillagerBase.class, false));
-		this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityIronGolem.class, true));
+		this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityZGVillagerBase.class, true));
+		this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityAlienVillager.class, true));
 	}
 	
 	@Override
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
+		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(85.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(35.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.34257213517232513D);
 		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(15.0D);
@@ -153,7 +161,7 @@ public class EntityXenomorph extends EntityMob implements IShadeEntity, IEntityB
 		super.onKillEntity(entityLivingIn);
 		World world = this.world;
 		BlockPos pos = new BlockPos(this.posX, this.posY, this.posZ);
-		if (ZGHelper.rngInt(0, 100) <= 25) {
+		if (ZGHelper.rngInt(0, 100) <= 5) {
 			if (world.getBlockState(pos) == Blocks.AIR.getDefaultState()) {
 				BlockFacehuggerEgg egg = (BlockFacehuggerEgg) ZGBlocks.facehuggerEgg;
 				world.setBlockState(pos, egg.getDefaultState());

@@ -34,7 +34,6 @@ public class BlockSpiderEgg extends ZGBlockEgg {
 	public void onBlockAdded(World worldIn, BlockPos pos, IBlockState state) {
 		worldIn.scheduleUpdate(pos, this, this.tickRate(worldIn));
 		this.playHeartbeatSound(worldIn, pos);
-		this.ticksEggExisted += 10;
 	}
 	
 	@Override
@@ -61,18 +60,10 @@ public class BlockSpiderEgg extends ZGBlockEgg {
 	}
 	
 	@Override
-	public void onBlockDestroyedByPlayer(World worldIn, BlockPos pos, IBlockState state) {
-		this.hatchSpider(worldIn, pos);
-		this.ticksEggExisted = 0;
-		worldIn.setBlockState(pos, Blocks.AIR.getDefaultState(), 0);
-	}
-	
-	@Override
 	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY,
 			float hitZ) {
 		super.onBlockActivated(worldIn, pos, state, playerIn, hand, facing, hitX, hitY, hitZ);
 		this.playHeartbeatSound(worldIn, pos);
-		this.ticksEggExisted += 10;
 		return true;
 	}
 	
@@ -108,7 +99,8 @@ public class BlockSpiderEgg extends ZGBlockEgg {
 	 * @param pos
 	 *            The position in the world to spawn it.
 	 */
-	public void hatchSpider(World par1World, BlockPos pos) {
+	@Override
+	public void hatchEgg(World par1World, BlockPos pos) {
 		int posX = pos.getX();
 		int posY = pos.getY();
 		int posZ = pos.getZ();

@@ -36,6 +36,7 @@ import zollerngalaxy.mobs.entities.EntitySquidlus;
 import zollerngalaxy.mobs.entities.EntityWasp;
 import zollerngalaxy.mobs.entities.EntityXenomorph;
 import zollerngalaxy.mobs.entities.boss.EntityShadowAlien;
+import zollerngalaxy.mobs.entities.boss.EntityXenomorphQueen;
 import zollerngalaxy.mobs.entities.villagers.EntityAbyssalVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityAstrosVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityCaligroVillager;
@@ -74,6 +75,7 @@ import zollerngalaxy.mobs.renders.RenderSquidlus;
 import zollerngalaxy.mobs.renders.RenderWasp;
 import zollerngalaxy.mobs.renders.RenderXenomorph;
 import zollerngalaxy.mobs.renders.boss.RenderShadowAlien;
+import zollerngalaxy.mobs.renders.boss.RenderXenomorphQueen;
 import zollerngalaxy.mobs.renders.villagers.RenderAbyssalVillager;
 import zollerngalaxy.mobs.renders.villagers.RenderAstrosVillager;
 import zollerngalaxy.mobs.renders.villagers.RenderCaligroVillager;
@@ -128,6 +130,7 @@ public final class MobRenders {
 		RenderMob(EntityPurgotVillager.class, RenderPurgotVillager::new);
 		RenderMob(EntityFacehugger.class, RenderFacehugger::new);
 		RenderMob(EntityXenomorph.class, RenderXenomorph::new);
+		RenderMob(EntityXenomorphQueen.class, RenderXenomorphQueen::new);
 	}
 	
 	/**

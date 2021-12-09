@@ -48,6 +48,9 @@ import zollerngalaxy.biomes.candora.BiomeChocolateOcean;
 import zollerngalaxy.biomes.candora.BiomeCookieLands;
 import zollerngalaxy.biomes.candora.BiomeJollyWatermelonPlains;
 import zollerngalaxy.biomes.cento.BiomeCento;
+import zollerngalaxy.biomes.cento.BiomeCentoConstructs;
+import zollerngalaxy.biomes.cento.BiomeCentoEngineeringPlains;
+import zollerngalaxy.biomes.cento.BiomeCentoRockyMountains;
 import zollerngalaxy.biomes.eden.BiomeAsteroidCraters;
 import zollerngalaxy.biomes.eden.BiomeBloodDesert;
 import zollerngalaxy.biomes.eden.BiomeEdenOcean;
@@ -202,7 +205,10 @@ public class ZGBiomes {
 	public static final Biome ASTROS_GLACIERS = new BiomeAstrosGlaciers(new BiomeProperties("Astros Glaciers"));
 	
 	// Centotl
-	public static final Biome CENTOTL_BASE = new BiomeCento(new BiomeProperties("Centotl"));
+	public static final Biome CENTOTL_BASE = new BiomeCento(new BiomeProperties("LV-426"));
+	public static final Biome CENTOTL_ROCKY_MOUNTAINS = new BiomeCentoRockyMountains(new BiomeProperties("Xeno Mountains"));
+	public static final Biome CENTOTL_ENGINEERING_PLAINS = new BiomeCentoEngineeringPlains(new BiomeProperties("Xeno Plains"));
+	public static final Biome CENTOTL_CONSTRUCTS = new BiomeCentoConstructs(new BiomeProperties("Xeno Constructs"));
 	
 	public static void init() {
 		// Zollus
@@ -305,6 +311,9 @@ public class ZGBiomes {
 		
 		// Centotl
 		ZGBiomes.addBiome(ZGBiomes.CENTOTL_BASE, HOT, DEAD, SPOOKY, WASTELAND);
+		ZGBiomes.addBiome(ZGBiomes.CENTOTL_ROCKY_MOUNTAINS, HOT, DEAD, SPOOKY, MOUNTAIN);
+		ZGBiomes.addBiome(ZGBiomes.CENTOTL_ENGINEERING_PLAINS, HOT, DEAD, SPOOKY, PLAINS);
+		ZGBiomes.addBiome(ZGBiomes.CENTOTL_CONSTRUCTS, HOT, DEAD, SPOOKY);
 		
 		ZGHelper.Log("Loaded a total of " + totalBiomes + " new biomes.");
 	}

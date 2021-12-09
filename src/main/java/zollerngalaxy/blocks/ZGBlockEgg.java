@@ -7,12 +7,16 @@
  */
 package zollerngalaxy.blocks;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockFalling;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.item.EntityFallingBlock;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
@@ -32,6 +36,40 @@ public class ZGBlockEgg extends ZGBlockBase {
 		this.setLightLevel(0.1F);
 		this.setTickRandomly(true);
 		this.setShouldJSONIgnore(true);
+	}
+	
+	@Override
+	public void onBlockAdded(World worldIn, BlockPos pos, IBlockState state) {
+		worldIn.scheduleUpdate(pos, this, this.tickRate(worldIn));
+		this.checkFall(worldIn, pos);
+		this.ticksEggExisted += 10;
+	}
+	
+	@Override
+	public void neighborChanged(IBlockState state, World worldIn, BlockPos pos, Block blockIn, BlockPos fromPos) {
+		worldIn.scheduleUpdate(pos, this, this.tickRate(worldIn));
+		this.checkFall(worldIn, fromPos);
+		this.ticksEggExisted += 10;
+	}
+	
+	@Override
+	public void onBlockDestroyedByPlayer(World worldIn, BlockPos pos, IBlockState state) {
+		this.hatchEgg(worldIn, pos);
+		this.ticksEggExisted = 0;
+		worldIn.setBlockState(pos, Blocks.AIR.getDefaultState(), 0);
+	}
+	
+	public void hatchEgg(World worldIn, BlockPos pos) {
+		// Override in child classes
+	}
+	
+	@Override
+	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY,
+			float hitZ) {
+		super.onBlockActivated(worldIn, pos, state, playerIn, hand, facing, hitX, hitY, hitZ);
+		this.checkFall(worldIn, pos);
+		this.ticksEggExisted += 10;
+		return true;
 	}
 	
 	@Override

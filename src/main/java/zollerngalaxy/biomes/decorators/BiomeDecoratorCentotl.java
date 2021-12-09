@@ -32,13 +32,15 @@ public class BiomeDecoratorCentotl extends BiomeDecoratorZG {
 	private static final Block ROCK = ZGBlocks.centoRock;
 	
 	private WorldGenerator dirtGen;
+	private WorldGenerator constructGen1;
+	private WorldGenerator constructGen2;
 	private WorldGenerator ironGen;
 	private WorldGenerator goldGen;
 	private WorldGenerator shiniumGen;
 	private WorldGenerator fueltoniumGen;
 	private WorldGenerator zollerniumGen;
 	
-	public int tunnelsPerChunk = 4;
+	public int tunnelsPerChunk = 5;
 	public int eggsPerChunk = 5;
 	
 	public boolean generateCraters = true;
@@ -50,6 +52,8 @@ public class BiomeDecoratorCentotl extends BiomeDecoratorZG {
 	
 	public BiomeDecoratorCentotl() {
 		this.dirtGen = new WorldGenMinableZG(ZGBlocks.centoDirt, ROCK, EnumOreGenZG.DIRT);
+		this.constructGen1 = new WorldGenMinableZG(ZGBlocks.xantheonConstructBlock, ROCK, EnumOreGenZG.CONSTRUCTED);
+		this.constructGen2 = new WorldGenMinableZG(ZGBlocks.xantheonConstructBlock, ROCK, EnumOreGenZG.CONSTRUCTED);
 		this.ironGen = new WorldGenMinableZG(ZGBlocks.centoIronOre, STONE, EnumOreGenZG.IRON);
 		this.goldGen = new WorldGenMinableZG(ZGBlocks.centoGoldOre, STONE, EnumOreGenZG.GOLD);
 		this.shiniumGen = new WorldGenMinableZG(ZGBlocks.centoShiniumOre, STONE, EnumOreGenZG.SHINIUM);
@@ -78,6 +82,8 @@ public class BiomeDecoratorCentotl extends BiomeDecoratorZG {
 		this.generateOre(this.fueltoniumGen, EnumOreGenZG.FUELTONIUM, world, rand);
 		this.generateOre(this.zollerniumGen, EnumOreGenZG.ZOLLERNIUM, world, rand);
 		this.generateOre(this.dirtGen, EnumOreGenZG.DIRT, world, rand);
+		this.generateOre(this.constructGen1, EnumOreGenZG.CONSTRUCTED, world, rand);
+		this.generateOre(this.constructGen2, EnumOreGenZG.CONSTRUCTED, world, rand);
 		
 		// Tunnels
 		if (this.generateTunnels && this.tunnelsPerChunk > 0) {

@@ -10,6 +10,8 @@ package zollerngalaxy.mobs.entities;
 import java.util.Random;
 import javax.annotation.Nullable;
 import micdoodle8.mods.galacticraft.api.entity.IEntityBreathable;
+import micdoodle8.mods.galacticraft.core.entities.EntityAlienVillager;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -23,7 +25,6 @@ import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
 import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.ai.EntityAIWanderAvoidWater;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
-import net.minecraft.entity.monster.EntityIronGolem;
 import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.MobEffects;
@@ -41,8 +42,11 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.living.PotionEvent.PotionApplicableEvent;
 import net.minecraftforge.fml.common.eventhandler.Event.Result;
+import zollerngalaxy.blocks.ZGBlocks;
+import zollerngalaxy.blocks.centotl.BlockFacehuggerEgg;
 import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.mobs.entities.base.EntityZGVillagerBase;
+import zollerngalaxy.mobs.entities.boss.EntityXenomorphQueen;
 import zollerngalaxy.mobs.entities.interfaces.IShadeEntity;
 
 public class EntityFacehugger extends EntityMob implements IShadeEntity, IEntityBreathable {
@@ -52,6 +56,10 @@ public class EntityFacehugger extends EntityMob implements IShadeEntity, IEntity
 	public EntityFacehugger(World worldIn) {
 		super(worldIn);
 		this.setSize(this.width * 0.8F, this.height * 0.8F);
+	}
+	
+	@Override
+	public void fall(float par1, float par2) {
 	}
 	
 	@Override
@@ -65,18 +73,24 @@ public class EntityFacehugger extends EntityMob implements IShadeEntity, IEntity
 		this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false, new Class[0]));
 		this.targetTasks.addTask(2, new EntityFacehugger.AIFacehuggerTarget(this, EntityPlayer.class));
 		this.targetTasks.addTask(3, new EntityFacehugger.AIFacehuggerTarget(this, EntityZGVillagerBase.class));
-		this.targetTasks.addTask(4, new EntityFacehugger.AIFacehuggerTarget(this, EntityIronGolem.class));
+		this.targetTasks.addTask(4, new EntityFacehugger.AIFacehuggerTarget(this, EntityAlienVillager.class));
 		this.targetTasks.addTask(5, new EntityAINearestAttackableTarget(this, EntityPlayer.class, true));
 		this.targetTasks.addTask(6, new EntityAINearestAttackableTarget(this, EntityZGVillagerBase.class, true));
+		this.targetTasks.addTask(7, new EntityAINearestAttackableTarget(this, EntityAlienVillager.class, true));
 	}
 	
 	@Override
 	public void onKillEntity(EntityLivingBase entityLivingIn) {
 		super.onKillEntity(entityLivingIn);
 		BlockPos pos = new BlockPos(entityLivingIn.posX, entityLivingIn.posY, entityLivingIn.posZ);
-		EntityXenomorph xeno = new EntityXenomorph(this.world);
-		ZGHelper.spawnEntity(xeno, world, pos);
-		// TODO: Make a Queen Xenomorph that routinely lays eggs
+		if (this.rand.nextInt(100) <= 5) {
+			EntityXenomorphQueen xeno = new EntityXenomorphQueen(this.world);
+			ZGHelper.spawnEntity(xeno, world, pos);
+		} else {
+			EntityXenomorph xeno = new EntityXenomorph(this.world);
+			ZGHelper.spawnEntity(xeno, world, pos);
+		}
+		this.killFacehugger();
 	}
 	
 	@Override
@@ -93,7 +107,6 @@ public class EntityFacehugger extends EntityMob implements IShadeEntity, IEntity
 	@Override
 	public void onUpdate() {
 		super.onUpdate();
-		
 		if (!this.world.isRemote) {
 			this.setBesideClimbableBlock(this.collidedHorizontally);
 		}
@@ -102,8 +115,8 @@ public class EntityFacehugger extends EntityMob implements IShadeEntity, IEntity
 	@Override
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(8.0D);
-		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.35621341192092896D);
+		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(10.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.29621341192092896D);
 		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(10.0F);
 	}
 	
@@ -111,7 +124,7 @@ public class EntityFacehugger extends EntityMob implements IShadeEntity, IEntity
 	public boolean attackEntityAsMob(Entity entityIn) {
 		if (super.attackEntityAsMob(entityIn)) {
 			if (entityIn instanceof EntityLivingBase) {
-				int i = 0;
+				int i = 1;
 				
 				if (this.world.getDifficulty() == EnumDifficulty.NORMAL) {
 					i = 7;
@@ -127,6 +140,38 @@ public class EntityFacehugger extends EntityMob implements IShadeEntity, IEntity
 			return true;
 		} else {
 			return false;
+		}
+	}
+	
+	@Override
+	public void onLivingUpdate() {
+		if (rand.nextInt(500) <= 25) {
+			BlockPos entPos = new BlockPos(this.posX, this.posY, this.posZ);
+			BlockPos entPosUp = entPos.up();
+			BlockPos entPosDown = entPos.down();
+			World world = this.world;
+			IBlockState state = world.getBlockState(entPos);
+			IBlockState stateUp = world.getBlockState(entPosUp);
+			IBlockState stateDown = world.getBlockState(entPosDown);
+			boolean hasHatchedEgg = false;
+			if (state == ZGBlocks.facehuggerEgg.getDefaultState() && !hasHatchedEgg) {
+				((BlockFacehuggerEgg) state.getBlock()).hatchEgg(world, entPos);
+			} else if (stateUp == ZGBlocks.facehuggerEgg.getDefaultState() && !hasHatchedEgg) {
+				((BlockFacehuggerEgg) stateUp.getBlock()).hatchEgg(world, entPosUp);
+			} else if (stateDown == ZGBlocks.facehuggerEgg.getDefaultState() && !hasHatchedEgg) {
+				((BlockFacehuggerEgg) stateDown.getBlock()).hatchEgg(world, entPosDown);
+			}
+			if (hasHatchedEgg) {
+				this.killFacehugger();
+			}
+		}
+		super.onLivingUpdate();
+	}
+	
+	public void killFacehugger() {
+		if (!this.world.isRemote) {
+			this.setDead();
+			this.ticksExisted = 0;
 		}
 	}
 	

@@ -30,8 +30,7 @@ public class BiomeCentoBase extends BiomeSpace {
 	protected static final IBlockState BEDROCK = Blocks.BEDROCK.getDefaultState();
 	protected static final IBlockState GRAVEL = ZGBlocks.centoGravel.getDefaultState();
 	protected static final IBlockState DIRT = ZGBlocks.centoDirt.getDefaultState();
-	protected static final IBlockState BLAZEROCK = ZGBlocks.kriffBlazeRock.getDefaultState();
-	protected static final IBlockState WATER = Blocks.WATER.getDefaultState();
+	protected static final IBlockState CONSTRUCT_BLOCK = ZGBlocks.xantheonConstructBlock.getDefaultState();
 	
 	protected static final int SEA_LEVEL = ChunkProviderCentotl.SEA_LEVEL;
 	protected static final int SEA_FLOOR_LEVEL = (SEA_LEVEL - 21);
@@ -41,7 +40,7 @@ public class BiomeCentoBase extends BiomeSpace {
 	public BiomeCentoBase(String singleName, BiomeProperties props) {
 		super(singleName, props);
 		this.setTempCategory(TempCategory.WARM);
-		this.setTemp(85.42F);
+		this.setTemp(8.42F);
 		this.biomeDecor.flowersPerChunk = -999;
 		this.biomeDecor.treesPerChunk = -999;
 		this.biomeDecor.grassPerChunk = -999;
@@ -71,7 +70,7 @@ public class BiomeCentoBase extends BiomeSpace {
 				IBlockState iblockstate2 = chunkPrimerIn.getBlockState(i1, j1, l);
 				if (this.getBiomeType() == EnumBiomeTypeZG.OCEAN) {
 					if ((j1 < SEA_LEVEL) && (j1 > SEA_FLOOR_LEVEL)) {
-						chunkPrimerIn.setBlockState(i1, j1, l, BLAZEROCK);
+						chunkPrimerIn.setBlockState(i1, j1, l, CONSTRUCT_BLOCK);
 					} else if (j1 < SEA_FLOOR_LEVEL) {
 						chunkPrimerIn.setBlockState(i1, j1, l, STONE);
 					} else if (j1 == SEA_FLOOR_LEVEL) {
@@ -93,7 +92,7 @@ public class BiomeCentoBase extends BiomeSpace {
 							}
 							
 							if (j1 < i && (topState == null || topState.getMaterial() == Material.AIR)) {
-								topState = BLAZEROCK;
+								topState = CONSTRUCT_BLOCK;
 							}
 							
 							j = k;

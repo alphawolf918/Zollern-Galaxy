@@ -573,7 +573,7 @@ public class ZGPlanets {
 		if (ConfigManagerZG.planetUnreachableAll || ConfigManagerZG.planetUnreachableCentotl) {
 			planetCentotl.setDisableRockets();
 		}
-		planetCentotl.setBodyTemperature(86.59F);
+		planetCentotl.setBodyTemperature(96.59F);
 		planetCentotl.setDensity(20.0F);
 		planetCentotl.setHasRain(false);
 		planetCentotl.setBodyToxicity(35.67F);
@@ -582,7 +582,7 @@ public class ZGPlanets {
 		planetCentotl.setBodyGasses(EnumAtmosphericGas.ARGON, EnumAtmosphericGas.METHANE, EnumAtmosphericGas.NITROGEN, EnumAtmosphericGas.HELIUM);
 		planetCentotl.setBodyIcon("centotl");
 		planetCentotl.setAtmosphere();
-		planetCentotl.setBiomeInfo(ZGBiomes.CENTOTL_BASE);
+		planetCentotl.setBiomeInfo(ZGBiomes.CENTOTL_BASE, ZGBiomes.CENTOTL_ROCKY_MOUNTAINS, ZGBiomes.CENTOTL_ENGINEERING_PLAINS, ZGBiomes.CENTOTL_CONSTRUCTS);
 		totalPlanets++;
 		
 		ZGHelper.Log("Loaded a total of " + totalPlanets + " new planets.");

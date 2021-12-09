@@ -53,8 +53,16 @@ public class WorldGenFacehuggerEgg extends ZGWorldGenMaster {
 		this.setBlock(world, new BlockPos(x, y + 1, z - 1), air);
 		this.setBlock(world, new BlockPos(x - 1, y + 1, z + 1), air);
 		this.setBlock(world, new BlockPos(x + 1, y + 1, z - 1), air);
-		
-		// ZGHelper.Log(this.getSpawnedAtString(pos));
+		this.setBlock(world, new BlockPos(x, y + 2, z), air);
+		this.setBlock(world, new BlockPos(x, y + 2, z), air);
+		this.setBlock(world, new BlockPos(x + 1, y + 2, z), air);
+		this.setBlock(world, new BlockPos(x - 1, y + 2, z), air);
+		this.setBlock(world, new BlockPos(x + 1, y + 2, z + 1), air);
+		this.setBlock(world, new BlockPos(x - 1, y + 2, z - 1), air);
+		this.setBlock(world, new BlockPos(x, y + 2, z + 1), air);
+		this.setBlock(world, new BlockPos(x, y + 2, z - 1), air);
+		this.setBlock(world, new BlockPos(x - 1, y + 2, z + 1), air);
+		this.setBlock(world, new BlockPos(x + 1, y + 2, z - 1), air);
 		
 		return true;
 	}

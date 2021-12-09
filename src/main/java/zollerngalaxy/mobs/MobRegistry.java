@@ -42,6 +42,7 @@ import zollerngalaxy.mobs.entities.EntitySquidlus;
 import zollerngalaxy.mobs.entities.EntityWasp;
 import zollerngalaxy.mobs.entities.EntityXenomorph;
 import zollerngalaxy.mobs.entities.boss.EntityShadowAlien;
+import zollerngalaxy.mobs.entities.boss.EntityXenomorphQueen;
 import zollerngalaxy.mobs.entities.villagers.EntityAbyssalVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityAstrosVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityCaligroVillager;
@@ -115,6 +116,9 @@ public class MobRegistry {
 		// ***** BEGIN BOSSES ***** //
 		// Shadow Alien
 		registerEntity("shadowalien", EntityShadowAlien.class, entityId++, 0x000000, 0xeeeeee);
+		
+		// Xenomorph Queen
+		registerEntity("xenomorphqueen", EntityXenomorphQueen.class, entityId++, 0xeeeeee, 0x8bc4fc);
 		// ***** END BOSSES ***** //
 		
 		// Blubber Fish
