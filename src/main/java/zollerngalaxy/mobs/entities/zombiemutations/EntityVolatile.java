@@ -25,6 +25,7 @@ import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ForgeModContainer;
+import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.events.ZGSoundEvents;
 import zollerngalaxy.mobs.entities.base.EntityMutantZombie;
 
@@ -36,7 +37,7 @@ public class EntityVolatile extends EntityMutantZombie {
 		this.setMutantName("Volatile");
 		this.setMutantFireTime(20);
 		this.setMutantScale(1.2F);
-		this.setSize(this.width * 1.4F, this.height * 1.4F);
+		this.setSize(this.width * 2.0F, this.height * 2.0F);
 		this.applyEntityAI();
 	}
 	
@@ -51,7 +52,7 @@ public class EntityVolatile extends EntityMutantZombie {
 	
 	@Override
 	public float getEyeHeight() {
-		float f = 1.0F;
+		float f = 1.5F;
 		
 		if (this.isChild()) {
 			f = (float) (f - 0.81D);
@@ -99,7 +100,7 @@ public class EntityVolatile extends EntityMutantZombie {
 			
 			if (entityvillager.hasCustomName()) {
 				entityzombievillager.setCustomNameTag(entityvillager.getCustomNameTag());
-				entityzombievillager.setAlwaysRenderNameTag(entityvillager.getAlwaysRenderNameTag());
+				entityzombievillager.setAlwaysRenderNameTag(ConfigManagerZG.enableMutantNameTags);
 			}
 			
 			this.world.spawnEntity(entityzombievillager);

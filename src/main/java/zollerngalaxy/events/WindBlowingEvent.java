@@ -46,17 +46,19 @@ public final class WindBlowingEvent extends Event {
 	private BlockPos playerPos;
 	
 	public WindBlowingEvent(World worldIn, EntityPlayer player) {
-		this.world = worldIn;
-		this.playerPos = new BlockPos(player.posX, player.posY, player.posZ);
-		
-		if (this.directionalChance <= 10) {
-			this.updateDirectionBasedOnChance();
-		}
-		
-		int windBlowChance = ConfigManagerZG.windBlowChance;
-		
-		if (ZGHelper.rngInt(1, 100) <= windBlowChance && world.canBlockSeeSky(playerPos)) {
-			this.pushEntities();
+		if (ConfigManagerZG.enableWindBlowEvent) {
+			this.world = worldIn;
+			this.playerPos = new BlockPos(player.posX, player.posY, player.posZ);
+			
+			if (this.directionalChance <= 10) {
+				this.updateDirectionBasedOnChance();
+			}
+			
+			int windBlowChance = ConfigManagerZG.windBlowChance;
+			
+			if (ZGHelper.rngInt(1, 150) <= windBlowChance && world.canBlockSeeSky(playerPos)) {
+				this.pushEntities();
+			}
 		}
 	}
 	
@@ -82,7 +84,7 @@ public final class WindBlowingEvent extends Event {
 	
 	public void pushEntities() {
 		if (!this.world.isRemote) {
-			double expandBy = 25.0D;
+			double expandBy = 15.0D;
 			AxisAlignedBB boundingBox = new AxisAlignedBB(this.playerPos);
 			AxisAlignedBB expandedBox = boundingBox.expand(expandBy, expandBy, expandBy);
 			Class<? extends Entity> playerClass = EntityPlayer.class;
@@ -127,10 +129,10 @@ public final class WindBlowingEvent extends Event {
 		boolean hasStack = playerInventory.hasItemStack(stack);
 		boolean protectionActive = player.isPotionActive(ZGPotions.stormProtection);
 		boolean isCreativeMode = player.capabilities.isCreativeMode;
-		if (hasStack && !protectionActive && !isCreativeMode) {
+		if (hasStack && !protectionActive) {
 			PotionEffect stormProtectionEffect = new PotionEffect(ZGPotions.stormProtection, ZGPotions.protectionTime, 1);
 			player.addPotionEffect(stormProtectionEffect);
-			if (playerInventory.hasItemStack(stack)) {
+			if (playerInventory.hasItemStack(stack) && !isCreativeMode) {
 				int invSlot = playerInventory.getSlotFor(stack);
 				playerInventory.decrStackSize(invSlot, 1);
 			}

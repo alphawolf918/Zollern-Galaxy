@@ -39,6 +39,7 @@ import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.items.ZGItems;
 import zollerngalaxy.mobs.entities.EntityGrayAlien;
 import zollerngalaxy.mobs.entities.ai.EntityAIMutantAttack;
@@ -72,7 +73,8 @@ public class EntityMutantZombie extends EntityZombie implements IEntityBreathabl
 	@Override
 	@SideOnly(Side.CLIENT)
 	public boolean getAlwaysRenderNameTagForRender() {
-		return true;
+		boolean showNameTags = ConfigManagerZG.enableMutantNameTags;
+		return showNameTags;
 	}
 	
 	@Override

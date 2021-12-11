@@ -132,7 +132,7 @@ public class WorldProviderVortex extends WorldProviderPlanetZG {
 	
 	@Override
 	public long getDayLength() {
-		return 16000L;
+		return 20000L;
 	}
 	
 	@Override
@@ -178,7 +178,7 @@ public class WorldProviderVortex extends WorldProviderPlanetZG {
 			f2 = 1.0F;
 		}
 		f2 = 1.0F - f2;
-		return f2 * 0.6F;
+		return f2 * 0.8F;
 	}
 	
 	@Override
@@ -222,8 +222,9 @@ public class WorldProviderVortex extends WorldProviderPlanetZG {
 				try {
 					tickCounter.setAccessible(true);
 					savedTick = tickCounter.getInt(this.world.villageCollection);
-					if (savedTick < 0)
+					if (savedTick < 0) {
 						savedTick = 0;
+					}
 				} catch (Exception ignore) {
 				}
 				this.timeCurrentOffset = savedTick - newTime;
@@ -239,16 +240,12 @@ public class WorldProviderVortex extends WorldProviderPlanetZG {
 		}
 		
 		this.updateWeatherOverride();
-		this.world.getWorldInfo().setRainTime(20);
+		this.world.getWorldInfo().setRainTime(10);
 		this.world.getWorldInfo().setRaining(true);
 		this.world.getWorldInfo().setThunderTime(10);
 		this.world.getWorldInfo().setThundering(true);
-		this.world.rainingStrength = 1.0F;
-		this.world.thunderingStrength = 1.0F;
-		
-		// if (ZGHelper.rngInt(1, 700) <= 10) {
-		// MinecraftForge.EVENT_BUS.post(new WindBlowingEvent(world));
-		// }
+		this.world.rainingStrength = 0.5F;
+		this.world.thunderingStrength = 0.5F;
 	}
 	
 	private void saveTime() {

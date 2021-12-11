@@ -15,6 +15,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.BossInfo;
@@ -27,6 +28,7 @@ import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.blocks.centotl.BlockFacehuggerEgg;
 import zollerngalaxy.core.ZGLootTables;
 import zollerngalaxy.core.ZollernGalaxyCore;
+import zollerngalaxy.events.ZGSoundEvents;
 import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.mobs.entities.EntityXenomorph;
 import zollerngalaxy.proxy.IProxy;
@@ -49,6 +51,21 @@ public class EntityXenomorphQueen extends EntityXenomorph {
 		this.experienceValue = this.xp;
 		this.scoreValue = this.xp;
 		this.stepHeight = 4F;
+	}
+	
+	@Override
+	protected SoundEvent getAmbientSound() {
+		return ZGSoundEvents.ENTITY_XENO_QUEEN_SAY;
+	}
+	
+	@Override
+	protected SoundEvent getHurtSound(DamageSource damageSourceIn) {
+		return ZGSoundEvents.ENTITY_XENO_QUEEN_HURT;
+	}
+	
+	@Override
+	protected SoundEvent getDeathSound() {
+		return ZGSoundEvents.ENTITY_XENO_QUEEN_DEATH;
 	}
 	
 	@Override
@@ -113,7 +130,7 @@ public class EntityXenomorphQueen extends EntityXenomorph {
 	@Override
 	@SideOnly(Side.CLIENT)
 	public int getBrightnessForRender() {
-		return 16828890;
+		return 18828890;
 	}
 	
 	@Override

@@ -41,6 +41,7 @@ import net.minecraftforge.common.ForgeModContainer;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.living.PotionEvent.PotionApplicableEvent;
 import net.minecraftforge.fml.common.eventhandler.Event.Result;
+import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.mobs.entities.base.EntityMutantZombie;
 
 public class EntityOverlord extends EntityMutantZombie {
@@ -155,7 +156,7 @@ public class EntityOverlord extends EntityMutantZombie {
 			
 			if (entityvillager.hasCustomName()) {
 				entityzombievillager.setCustomNameTag(entityvillager.getCustomNameTag());
-				entityzombievillager.setAlwaysRenderNameTag(entityvillager.getAlwaysRenderNameTag());
+				entityzombievillager.setAlwaysRenderNameTag(ConfigManagerZG.enableMutantNameTags);
 			}
 			
 			this.world.spawnEntity(entityzombievillager);

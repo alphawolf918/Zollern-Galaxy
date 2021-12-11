@@ -249,6 +249,53 @@
       "stream":true,
       "subtitle":"zollerngalaxy.subtitle.mutate"
    },
+   "mob.xenomorph.say":{
+      "category":"master",
+      "sounds":[
+         "zollerngalaxy:mob/xenomorph/say1",
+         "zollerngalaxy:mob/xenomorph/say2"
+      ],
+      "subtitle":"zollerngalaxy.subtitle.xenomorph.say"
+   },
+   "mob.xenomorph.hurt":{
+      "category":"master",
+      "sounds":[
+         "zollerngalaxy:mob/xenomorph/hurt1",
+         "zollerngalaxy:mob/xenomorph/hurt2"
+      ],
+      "subtitle":"zollerngalaxy.subtitle.xenomorph.hurt"
+   },
+   "mob.xenomorph.die":{
+      "category":"master",
+      "sounds":[
+         "zollerngalaxy:mob/xenomorph/die"
+      ],
+      "subtitle":"zollerngalaxy.subtitle.xenomorph.die"
+   },
+   "mob.xenomorph.queen.say":{
+      "category":"master",
+      "sounds":[
+         "zollerngalaxy:mob/xenomorph/queen/say1",
+         "zollerngalaxy:mob/xenomorph/queen/say2"
+      ],
+      "subtitle":"zollerngalaxy.subtitle.xenomorph.queen.say"
+   },
+   "mob.xenomorph.queen.hurt":{
+      "category":"master",
+      "sounds":[
+         "zollerngalaxy:mob/xenomorph/queen/hurt1",
+         "zollerngalaxy:mob/xenomorph/queen/hurt2"
+      ],
+      "subtitle":"zollerngalaxy.subtitle.xenomorph.queen.hurt"
+   },
+   "mob.xenomorph.queen.die":{
+      "category":"master",
+      "sounds":[
+         "zollerngalaxy:mob/xenomorph/queen/die"
+      ],
+	  "stream":true,
+      "subtitle":"zollerngalaxy.subtitle.xenomorph.queen.die"
+   },
    "dig.xeno":{
       "category":"master",
       "sounds":[

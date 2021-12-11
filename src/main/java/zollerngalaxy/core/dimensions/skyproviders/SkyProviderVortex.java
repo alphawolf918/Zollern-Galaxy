@@ -99,7 +99,7 @@ public class SkyProviderVortex extends SkyProviderBaseZG {
 	
 	@Override
 	protected float getRainStrength(World world, float partialTicks) {
-		return 100.0F;
+		return 90.0F;
 	}
 	
 	public float getSkyBrightness(float par1) {

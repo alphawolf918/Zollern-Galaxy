@@ -23,6 +23,7 @@ import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ForgeModContainer;
+import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.mobs.entities.base.EntityMutantZombie;
 
 public class EntitySeeker extends EntityMutantZombie {
@@ -79,7 +80,7 @@ public class EntitySeeker extends EntityMutantZombie {
 			
 			if (entityvillager.hasCustomName()) {
 				entityzombievillager.setCustomNameTag(entityvillager.getCustomNameTag());
-				entityzombievillager.setAlwaysRenderNameTag(entityvillager.getAlwaysRenderNameTag());
+				entityzombievillager.setAlwaysRenderNameTag(ConfigManagerZG.enableMutantNameTags);
 			}
 			
 			this.world.spawnEntity(entityzombievillager);

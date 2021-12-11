@@ -40,7 +40,7 @@ public class ChunkProviderVortex extends ChunkProviderBase {
 	public static final IBlockState FUELTONIUM = ZGFluids.blockFueltoniumFluid.getDefaultState();
 	public static final IBlockState AIR = Blocks.AIR.getDefaultState();
 	
-	public static final double CHUNK_HEIGHT = 54.6D;
+	public static final double CHUNK_HEIGHT = 34.6D;
 	public static final int SEA_LEVEL = 53;
 	
 	private static final int CHUNK_SIZE_X = 16;
@@ -156,11 +156,11 @@ public class ChunkProviderVortex extends ChunkProviderBase {
 								double chunkHeight = CHUNK_HEIGHT;
 								
 								Biome biome = world.getBiome(new BlockPos(x, y, z));
-								double heightMod = 0.0D;
+								double heightMod = 0.3D;
 								
 								if (biome instanceof BiomeSpace) {
 									BiomeSpace spaceBiome = (BiomeSpace) biome;
-									heightMod = (spaceBiome.getBiomeHeight() / 1.5);
+									heightMod = (spaceBiome.getBiomeHeight() / 0.5);
 								}
 								
 								if (heightMod > 0.0D) {

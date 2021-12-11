@@ -11,8 +11,10 @@ import java.util.Random;
 import javax.annotation.Nullable;
 import micdoodle8.mods.galacticraft.api.entity.IEntityBreathable;
 import micdoodle8.mods.galacticraft.core.entities.EntityAlienVillager;
+import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.IEntityLivingData;
@@ -25,9 +27,14 @@ import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
 import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.ai.EntityAIWanderAvoidWater;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
+import net.minecraft.entity.monster.EntityCreeper;
+import net.minecraft.entity.monster.EntityEnderman;
 import net.minecraft.entity.monster.EntityMob;
+import net.minecraft.entity.monster.EntitySpider;
+import net.minecraft.entity.monster.EntityZombie;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.MobEffects;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
@@ -55,7 +62,7 @@ public class EntityFacehugger extends EntityMob implements IShadeEntity, IEntity
 	
 	public EntityFacehugger(World worldIn) {
 		super(worldIn);
-		this.setSize(this.width * 0.8F, this.height * 0.8F);
+		this.setSize(this.width * 0.6F, this.height * 0.6F);
 	}
 	
 	@Override
@@ -77,6 +84,11 @@ public class EntityFacehugger extends EntityMob implements IShadeEntity, IEntity
 		this.targetTasks.addTask(5, new EntityAINearestAttackableTarget(this, EntityPlayer.class, true));
 		this.targetTasks.addTask(6, new EntityAINearestAttackableTarget(this, EntityZGVillagerBase.class, true));
 		this.targetTasks.addTask(7, new EntityAINearestAttackableTarget(this, EntityAlienVillager.class, true));
+		this.targetTasks.addTask(8, new EntityAINearestAttackableTarget(this, EntityZombie.class, true));
+		this.targetTasks.addTask(9, new EntityAINearestAttackableTarget(this, EntitySpider.class, true));
+		this.targetTasks.addTask(10, new EntityAINearestAttackableTarget(this, EntityCreeper.class, true));
+		this.targetTasks.addTask(11, new EntityAINearestAttackableTarget(this, EntityEnderman.class, true));
+		this.targetTasks.addTask(12, new EntityAINearestAttackableTarget(this, EntityAgeable.class, true));
 	}
 	
 	@Override
@@ -96,6 +108,11 @@ public class EntityFacehugger extends EntityMob implements IShadeEntity, IEntity
 	@Override
 	protected PathNavigate createNavigator(World worldIn) {
 		return new PathNavigateClimber(this, worldIn);
+	}
+	
+	@Override
+	protected void playStepSound(BlockPos pos, Block blockIn) {
+		this.playSound(SoundEvents.ENTITY_SPIDER_STEP, 0.15F, 1.0F);
 	}
 	
 	@Override

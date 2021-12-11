@@ -20,7 +20,9 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.structure.MapGenStructure;
 import net.minecraft.world.gen.structure.MapGenStructureIO;
 import net.minecraft.world.gen.structure.StructureStart;
+import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.blocks.ZGBlocks;
+import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 
 public class MapGenVillageZG extends MapGenStructure {
 	
@@ -35,7 +37,7 @@ public class MapGenVillageZG extends MapGenStructure {
 		try {
 			MapGenVillageZG.initiateStructures();
 		} catch (Throwable e) {
-			
+			// ducked
 		}
 	}
 	
@@ -77,6 +79,16 @@ public class MapGenVillageZG extends MapGenStructure {
 		final int oldi = i;
 		final int oldj = j;
 		
+		//////////////////////////////////////////////////////////////
+		Biome biome = world.getBiome(new BlockPos(i, 0, j));
+		if (biome instanceof BiomeSpace) {
+			BiomeSpace spaceBiome = (BiomeSpace) biome;
+			if (spaceBiome.getBiomeType() == EnumBiomeTypeZG.OCEAN) {
+				return false;
+			}
+		}
+		//////////////////////////////////////////////////////////////
+		
 		if (i < 0) {
 			i -= numChunks - 1;
 		}
@@ -93,7 +105,7 @@ public class MapGenVillageZG extends MapGenStructure {
 		randX += var7.nextInt(numChunks - offsetChunks);
 		randZ += var7.nextInt(numChunks - offsetChunks);
 		
-		return oldi == randX && oldj == randZ;
+		return ((oldi == randX) && (oldj == randZ));
 	}
 	
 	@Override

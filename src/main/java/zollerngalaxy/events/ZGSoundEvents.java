@@ -62,6 +62,16 @@ public class ZGSoundEvents {
 	public static final SoundEvent ENTITY_VOLATILE_DEATH = regSound("mob.volatile.die");
 	public static final SoundEvent ENTITY_VOLATILE_MUTATE = regSound("mob.volatile.mutate");
 	
+	// Xenomorph Mob
+	public static final SoundEvent ENTITY_XENO_SAY = regSound("mob.xenomorph.say");
+	public static final SoundEvent ENTITY_XENO_HURT = regSound("mob.xenomorph.hurt");
+	public static final SoundEvent ENTITY_XENO_DEATH = regSound("mob.xenomorph.die");
+	
+	// Xenomorph Queen Mob
+	public static final SoundEvent ENTITY_XENO_QUEEN_SAY = regSound("mob.xenomorph.queen.say");
+	public static final SoundEvent ENTITY_XENO_QUEEN_HURT = regSound("mob.xenomorph.queen.hurt");
+	public static final SoundEvent ENTITY_XENO_QUEEN_DEATH = regSound("mob.xenomorph.queen.die");
+	
 	// Xeno Material
 	public static final SoundEvent MATERIAL_XENO_DIG = regSound("dig.xeno");
 	public static final SoundEvent MATERIAL_XENO_STEP = regSound("step.xeno");
@@ -83,8 +93,9 @@ public class ZGSoundEvents {
 				ENTITY_GALAXY_KNIGHT_DEATH, ENTITY_CRAWLER_SAY, ENTITY_CRAWLER_HURT, ENTITY_WASP_SAY, ENTITY_WASP_HURT, ENTITY_WASP_DEATH, ENTITY_KRULL_AMBIENT,
 				ENTITY_KRULL_HURT, ENTITY_KRULL_DEATH, ENTITY_SHADE_SAY, ENTITY_SHADE_HURT, ENTITY_SHADE_DEATH, ENTITY_SHADOW_ALIEN_SAY, ENTITY_SHADOW_ALIEN_HURT,
 				ENTITY_SHADOW_ALIEN_DEATH, ENTITY_FACELESS_AMBIENT, ENTITY_FACELESS_HURT, ENTITY_FACELESS_DEATH, ENTITY_VOLATILE_SAY, ENTITY_VOLATILE_HURT,
-				ENTITY_VOLATILE_DEATH, ENTITY_VOLATILE_MUTATE, MATERIAL_XENO_DIG, MATERIAL_XENO_STEP, SPIDERLING_EGG_HEARTBEAT, WEATHER_WIND, ALARM_IRON, ALARM_GOLD,
-				ALARM_DIAMOND, ALARM_EMERALD);
+				ENTITY_VOLATILE_DEATH, ENTITY_VOLATILE_MUTATE, ENTITY_XENO_SAY, ENTITY_XENO_HURT, ENTITY_XENO_DEATH, ENTITY_XENO_QUEEN_SAY, ENTITY_XENO_QUEEN_HURT,
+				ENTITY_XENO_QUEEN_DEATH, MATERIAL_XENO_DIG, MATERIAL_XENO_STEP, SPIDERLING_EGG_HEARTBEAT, WEATHER_WIND, ALARM_IRON, ALARM_GOLD, ALARM_DIAMOND,
+				ALARM_EMERALD);
 	}
 	
 	private static void registerSound(SoundEvent sound) {
@@ -102,5 +113,4 @@ public class ZGSoundEvents {
 			registerSound(s);
 		}
 	}
-	
 }

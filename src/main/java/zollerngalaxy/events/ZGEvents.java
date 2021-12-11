@@ -12,8 +12,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 import com.google.common.collect.Maps;
-import micdoodle8.mods.galacticraft.core.entities.EntityAlienVillager;
-import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedZombie;
 import micdoodle8.mods.galacticraft.core.proxy.ClientProxyCore;
 import micdoodle8.mods.galacticraft.planets.venus.client.FakeLightningBoltRenderer;
 import net.minecraft.block.Block;
@@ -76,15 +74,9 @@ import zollerngalaxy.blocks.ZGSand;
 import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.ZGLootTables;
 import zollerngalaxy.core.ZollernGalaxyCore;
-import zollerngalaxy.core.dimensions.worldproviders.WorldProviderAltum;
-import zollerngalaxy.core.dimensions.worldproviders.WorldProviderAstros;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderCaligro;
-import zollerngalaxy.core.dimensions.worldproviders.WorldProviderEden;
-import zollerngalaxy.core.dimensions.worldproviders.WorldProviderKriffon;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderMetztli;
-import zollerngalaxy.core.dimensions.worldproviders.WorldProviderPurgot;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderVortex;
-import zollerngalaxy.core.dimensions.worldproviders.WorldProviderZollus;
 import zollerngalaxy.items.ZGItems;
 import zollerngalaxy.items.armor.ZGArmor;
 import zollerngalaxy.items.armor.ZGArmorMats;
@@ -103,21 +95,10 @@ import zollerngalaxy.mobs.entities.EntityShadowSkeleton;
 import zollerngalaxy.mobs.entities.EntityShark;
 import zollerngalaxy.mobs.entities.base.EntityMutantZombie;
 import zollerngalaxy.mobs.entities.interfaces.IShadeEntity;
-import zollerngalaxy.mobs.entities.villagers.EntityAbyssalVillager;
-import zollerngalaxy.mobs.entities.villagers.EntityAstrosVillager;
-import zollerngalaxy.mobs.entities.villagers.EntityCaligroVillager;
-import zollerngalaxy.mobs.entities.villagers.EntityEdenVillager;
-import zollerngalaxy.mobs.entities.villagers.EntityHarranVillager;
-import zollerngalaxy.mobs.entities.villagers.EntityKriffonVillager;
-import zollerngalaxy.mobs.entities.villagers.EntityPurgotVillager;
-import zollerngalaxy.mobs.entities.villagers.EntityZollusVillager;
-import zollerngalaxy.mobs.entities.zombiemutations.EntityGhoul;
-import zollerngalaxy.mobs.entities.zombiemutations.EntityOverlord;
-import zollerngalaxy.mobs.entities.zombiemutations.EntitySeeker;
-import zollerngalaxy.mobs.entities.zombiemutations.EntityVolatile;
 import zollerngalaxy.potions.ZGPotions;
 import zollerngalaxy.proxy.IProxy;
 import zollerngalaxy.util.CachedEnum;
+import zollerngalaxy.util.VillageUtils;
 import zollerngalaxy.util.ZGDamageSrc;
 import zollerngalaxy.util.ZGUtils;
 import zollerngalaxy.util.ZombieUtils;
@@ -138,9 +119,9 @@ public class ZGEvents {
 			
 			World world = event.getWorld();
 			
-			if (ZGHelper.rngInt(1, 50) == 0 && minecraft.world.provider instanceof WorldProviderVortex) {
+			if (ZGHelper.rngInt(1, 150) == 0 && minecraft.world.provider instanceof WorldProviderVortex) {
 				double freq = player.getRNG().nextDouble() * Math.PI * 2.0F;
-				double dist = 120.0F;
+				double dist = 60.0F;
 				double dX = dist * Math.cos(freq);
 				double dZ = dist * Math.sin(freq);
 				double posX = player.posX + dX;
@@ -171,19 +152,20 @@ public class ZGEvents {
 				}
 			}
 			
-			if (ConfigManagerZG.enableWindBlowEvent) {
-				if (player.getRNG().nextInt(150) == 0 && minecraft.world.provider instanceof WorldProviderVortex) {
-					double freq = player.getRNG().nextDouble() * Math.PI * 2.0F;
-					double dist = 60.0F;
-					double dX = dist * Math.cos(freq);
-					double dZ = dist * Math.sin(freq);
-					double posX = player.posX + dX;
-					double posY = 70;
-					double posZ = player.posZ + dZ;
-					float pitch = 5.0F + player.getRNG().nextFloat() * 0.2F;
-					lightning.put(new BlockPos(posX, posY, posZ), 20);
-					minecraft.world.playSound(player, posX, posY, posZ, SoundEvents.ENTITY_LIGHTNING_THUNDER, SoundCategory.WEATHER, 1000.0F, pitch);
-				}
+			if (player.getRNG().nextInt(550) == 0 && minecraft.world.provider instanceof WorldProviderVortex) {
+				double freq = player.getRNG().nextDouble() * Math.PI * 2.0F;
+				double dist = 60.0F;
+				double dX = dist * Math.cos(freq);
+				double dZ = dist * Math.sin(freq);
+				double posX = player.posX + dX;
+				double posY = 70;
+				double posZ = player.posZ + dZ;
+				float volume = 1000.0F;
+				float pitch = 5.0F + player.getRNG().nextFloat() * 0.2F;
+				lightning.put(new BlockPos(posX, posY, posZ), 20);
+				SoundEvent thunder = SoundEvents.ENTITY_LIGHTNING_THUNDER;
+				SoundCategory category = SoundCategory.WEATHER;
+				minecraft.world.playSound(player, posX, posY, posZ, thunder, category, volume, pitch);
 			}
 		}
 	}
@@ -197,8 +179,10 @@ public class ZGEvents {
 		while (it.hasNext()) {
 			Map.Entry<BlockPos, Integer> entry = it.next();
 			long seed = entry.getValue() / 10 + entry.getKey().getX() + entry.getKey().getZ();
-			FakeLightningBoltRenderer.renderBolt(seed, entry.getKey().getX() - ClientProxyCore.playerPosX, entry.getKey().getY() - ClientProxyCore.playerPosY,
-					entry.getKey().getZ() - ClientProxyCore.playerPosZ);
+			double x = entry.getKey().getX() - ClientProxyCore.playerPosX;
+			double y = entry.getKey().getY() - ClientProxyCore.playerPosY;
+			double z = entry.getKey().getZ() - ClientProxyCore.playerPosZ;
+			FakeLightningBoltRenderer.renderBolt(seed, x, y, z);
 		}
 	}
 	
@@ -206,7 +190,8 @@ public class ZGEvents {
 	public void onPlayerDeath(LivingDeathEvent event) {
 		Entity entity = event.getEntityLiving();
 		World world = entity.world;
-		if (!world.isRemote) {
+		WorldProvider provider = world.provider;
+		if (!world.isRemote && provider instanceof WorldProviderMetztli) {
 			if (entity instanceof EntityPlayer) {
 				DamageSource damageSource = event.getSource();
 				Entity damageSourceEntity = damageSource.getImmediateSource();
@@ -283,7 +268,7 @@ public class ZGEvents {
 					}
 				}
 			} else if (world.provider instanceof WorldProviderVortex) {
-				if (ZGHelper.rngInt(1, 700) <= 15) {
+				if (ZGHelper.rngInt(1, 700) <= 15 && ConfigManagerZG.enableWindBlowEvent) {
 					MinecraftForge.EVENT_BUS.post(new WindBlowingEvent(world, player));
 				}
 			}
@@ -392,104 +377,18 @@ public class ZGEvents {
 				}
 			}
 		}
-		
-		// Handle Zombie mutations
-		if (entity instanceof EntityZombie && !(entity instanceof EntityMutantZombie)) {
-			EntityZombie zombie = (EntityZombie) entity;
-			World world = entity.world;
-			if (!world.isRemote) {
-				if (world.provider instanceof WorldProviderMetztli) {
-					if (rand.nextInt(400) == 0) {
-						int mutantChance = rand.nextInt(100);
-						
-						// Ghoul
-						if (mutantChance <= ZombieUtils.MUTATE_GHOUL_CHANCE) {
-							EntityGhoul gzombie = new EntityGhoul(world);
-							gzombie.copyLocationAndAnglesFrom(zombie);
-							if (zombie.hasCustomName()) {
-								String zombieName = zombie.getCustomNameTag();
-								String gZombieName = zombieName.replace("Zombie", "Ghoul");
-								gzombie.setCustomNameTag(gZombieName);
-							}
-							world.spawnEntity(gzombie);
-							ZombieUtils.playMutateSound(gzombie.posX, gzombie.posY, gzombie.posZ, world, rand);
-							
-							// Overlord
-						} else if (mutantChance <= ZombieUtils.MUTATE_OVERLORD_CHANCE) {
-							zombie.setDead();
-							
-							EntityOverlord ozombie = new EntityOverlord(world);
-							ozombie.copyLocationAndAnglesFrom(zombie);
-							if (zombie.hasCustomName()) {
-								String zombieName = zombie.getCustomNameTag();
-								String oZombieName = zombieName.replace("Zombie", "Overlord");
-								ozombie.setCustomNameTag(oZombieName);
-							}
-							world.spawnEntity(ozombie);
-							ZombieUtils.playMutateSound(ozombie.posX, ozombie.posY, ozombie.posZ, world, rand);
-							
-							// Seeker
-						} else if (mutantChance <= ZombieUtils.MUTATE_SEEKER_CHANCE) {
-							zombie.setDead();
-							
-							EntitySeeker szombie = new EntitySeeker(world);
-							szombie.copyLocationAndAnglesFrom(zombie);
-							if (zombie.hasCustomName()) {
-								String zombieName = zombie.getCustomNameTag();
-								String sZombieName = zombieName.replace("Zombie", "Seeker");
-								szombie.setCustomNameTag(sZombieName);
-							}
-							world.spawnEntity(szombie);
-							ZombieUtils.playMutateSound(szombie.posX, szombie.posY, szombie.posZ, world, rand);
-							
-							// Volatile
-						} else if (mutantChance <= ZombieUtils.MUTATE_VOLATILE_CHANCE) {
-							zombie.setDead();
-							
-							EntityVolatile vzombie = new EntityVolatile(world);
-							vzombie.copyLocationAndAnglesFrom(zombie);
-							if (zombie.hasCustomName()) {
-								String zombieName = zombie.getCustomNameTag();
-								String vZombieName = zombieName.replace("Zombie", "Volatile");
-								vzombie.setCustomNameTag(vZombieName);
-							}
-							world.spawnEntity(vzombie);
-							ZombieUtils.playMutateSound(vzombie.posX, vzombie.posY, vzombie.posZ, world, rand);
-						}
-					}
-				}
-			}
-		}
+		// Handle Alien Mutations
+		ZombieUtils.HandleMutations(entity, rand);
 		
 		// Allow Alien Villagers to mutate into Zombies, but only on Metztli.
-		if (entity instanceof EntityHarranVillager && ConfigManagerZG.enableAlienVillagerMutation) {
-			EntityHarranVillager villager = (EntityHarranVillager) entity;
-			World world = villager.getEntityWorld();
-			if (!world.isRemote) {
-				WorldProvider provider = world.provider;
-				
-				if (provider instanceof WorldProviderMetztli) {
-					EntityEvolvedZombie zombie = new EntityEvolvedZombie(world);
-					if (!provider.isDaytime()) {
-						if (rand.nextInt(500) == 0) {
-							villager.setDead();
-							zombie.copyLocationAndAnglesFrom(villager);
-							zombie.setCustomNameTag("Harran Villager Mutant");
-							world.spawnEntity(zombie);
-							ZombieUtils.playMutateSound(zombie.posX, zombie.posY, zombie.posZ, world, rand);
-							ZombieUtils.playMutateSound(villager.posX, villager.posY, villager.posZ, world, rand);
-						}
-					}
-				}
-			}
-		}
+		ZombieUtils.doMutation(entity, rand);
 	}
 	
 	// Modifies names for Patrons, Contributors and my friends.
 	@SubscribeEvent(priority = EventPriority.HIGH, receiveCanceled = true)
 	public void onNameFormatEvent(NameFormat event) {
 		if (!ConfigManagerZG.changeContributorNames) {
-			return; // ExistingEevee
+			return;
 		}
 		String username = event.getUsername();
 		username = username.toLowerCase();
@@ -574,103 +473,7 @@ public class ZGEvents {
 		}
 		
 		// Convert Alien Villagers to planet-specific Villagers
-		if (provider instanceof WorldProviderAltum) {
-			if (!world.isRemote) {
-				Entity entity = event.getEntity();
-				if (entity instanceof EntityAlienVillager) {
-					EntityAlienVillager alienVillager = (EntityAlienVillager) entity;
-					BlockPos worldPos = alienVillager.getPos();
-					alienVillager.setDead();
-					EntityAbyssalVillager abyssalVillager = new EntityAbyssalVillager(world);
-					abyssalVillager.setPosition(worldPos.getX(), worldPos.getY(), worldPos.getZ());
-					world.spawnEntity(abyssalVillager);
-				}
-			}
-		} else if (provider instanceof WorldProviderMetztli) {
-			if (!world.isRemote) {
-				Entity entity = event.getEntity();
-				if (entity instanceof EntityAlienVillager) {
-					EntityAlienVillager alienVillager = (EntityAlienVillager) entity;
-					BlockPos worldPos = alienVillager.getPos();
-					alienVillager.setDead();
-					EntityHarranVillager harranVillager = new EntityHarranVillager(world);
-					harranVillager.setPosition(worldPos.getX(), worldPos.getY(), worldPos.getZ());
-					world.spawnEntity(harranVillager);
-				}
-			}
-		} else if (provider instanceof WorldProviderEden) {
-			if (!world.isRemote) {
-				Entity entity = event.getEntity();
-				if (entity instanceof EntityAlienVillager) {
-					EntityAlienVillager alienVillager = (EntityAlienVillager) entity;
-					BlockPos worldPos = alienVillager.getPos();
-					alienVillager.setDead();
-					EntityEdenVillager edenVillager = new EntityEdenVillager(world);
-					edenVillager.setPosition(worldPos.getX(), worldPos.getY(), worldPos.getZ());
-					world.spawnEntity(edenVillager);
-				}
-			}
-		} else if (provider instanceof WorldProviderAstros) {
-			if (!world.isRemote) {
-				Entity entity = event.getEntity();
-				if (entity instanceof EntityAlienVillager) {
-					EntityAlienVillager alienVillager = (EntityAlienVillager) entity;
-					BlockPos worldPos = alienVillager.getPos();
-					alienVillager.setDead();
-					EntityAstrosVillager astrosVillager = new EntityAstrosVillager(world);
-					astrosVillager.setPosition(worldPos.getX(), worldPos.getY(), worldPos.getZ());
-					world.spawnEntity(astrosVillager);
-				}
-			}
-		} else if (provider instanceof WorldProviderCaligro) {
-			if (!world.isRemote) {
-				Entity entity = event.getEntity();
-				if (entity instanceof EntityAlienVillager) {
-					EntityAlienVillager alienVillager = (EntityAlienVillager) entity;
-					BlockPos worldPos = alienVillager.getPos();
-					alienVillager.setDead();
-					EntityCaligroVillager caligroVillager = new EntityCaligroVillager(world);
-					caligroVillager.setPosition(worldPos.getX(), worldPos.getY(), worldPos.getZ());
-					world.spawnEntity(caligroVillager);
-				}
-			}
-		} else if (provider instanceof WorldProviderZollus) {
-			if (!world.isRemote) {
-				Entity entity = event.getEntity();
-				if (entity instanceof EntityAlienVillager) {
-					EntityAlienVillager alienVillager = (EntityAlienVillager) entity;
-					BlockPos worldPos = alienVillager.getPos();
-					alienVillager.setDead();
-					EntityZollusVillager zollusVillager = new EntityZollusVillager(world);
-					zollusVillager.setPosition(worldPos.getX(), worldPos.getY(), worldPos.getZ());
-					world.spawnEntity(zollusVillager);
-				}
-			}
-		} else if (provider instanceof WorldProviderKriffon) {
-			if (!world.isRemote) {
-				Entity entity = event.getEntity();
-				if (entity instanceof EntityAlienVillager) {
-					EntityAlienVillager alienVillager = (EntityAlienVillager) entity;
-					BlockPos worldPos = alienVillager.getPos();
-					alienVillager.setDead();
-					EntityKriffonVillager kriffonVillager = new EntityKriffonVillager(world);
-					kriffonVillager.setPosition(worldPos.getX(), worldPos.getY(), worldPos.getZ());
-					world.spawnEntity(kriffonVillager);
-				}
-			}
-		} else if (provider instanceof WorldProviderPurgot) {
-			if (!world.isRemote) {
-				Entity entity = event.getEntity();
-				if (entity instanceof EntityAlienVillager) {
-					EntityAlienVillager alienVillager = (EntityAlienVillager) entity;
-					BlockPos worldPos = alienVillager.getPos();
-					alienVillager.setDead();
-					EntityPurgotVillager purgotVillager = new EntityPurgotVillager(world);
-					purgotVillager.setPosition(worldPos.getX(), worldPos.getY(), worldPos.getZ());
-					world.spawnEntity(purgotVillager);
-				}
-			}
-		}
+		VillageUtils.ConvertVillagers(event);
 	}
 	
 	@SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
@@ -777,7 +580,7 @@ public class ZGEvents {
 		if (theEntity instanceof IShadeEntity) {
 			if (((IShadeEntity) theEntity).shouldDropEssence()) {
 				if (ZGHelper.getRNGChance(5, 10)) {
-					for (int i = 0; i < ZGHelper.rngInt(1, 2); i++) {
+					for (int i = 0; i < ZGHelper.rngInt(1, 4); i++) {
 						ZGHelper.dropItem(ZGItems.darkEssence, worldObj, theEntity);
 					}
 				}

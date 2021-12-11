@@ -11,6 +11,7 @@ import java.util.Random;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.blocks.ZGBlocks;
@@ -40,7 +41,7 @@ public class BiomeDecoratorVortex extends BiomeDecoratorZG {
 	public int chargiumLakesPerChunk = (this.enableExtremeMode) ? 2 : 1;
 	
 	public boolean generateStormCrystals = true;
-	public boolean generateChargiumLakes = true;
+	public boolean generateChargiumLakes = ConfigManagerZG.enableChargiumLakesOnVortex;
 	
 	private WorldGenerator stormCrystalsGen = new WorldGenZGCrystals(ZGBlocks.blockCrystalsStorm.getDefaultState());
 	private WorldGenerator chargiumLakeGen = new WorldGenLakesZG(ZGFluids.blockChargiumFluid, ZGBlocks.vortexStone);
@@ -60,7 +61,11 @@ public class BiomeDecoratorVortex extends BiomeDecoratorZG {
 	protected void generate(Biome biome, World world, Random rand) {
 		int x = rand.nextInt(16) + 8;
 		int z = rand.nextInt(16) + 8;
-		int y = rand.nextInt(248) + 8;
+		
+		ChunkPrimer chunkPrimer = new ChunkPrimer();
+		
+		int genY = 248;
+		int y = genY;
 		
 		this.generateOre(this.ironGen, EnumOreGenZG.IRON, world, rand);
 		this.generateOre(this.goldGen, EnumOreGenZG.GOLD, world, rand);
@@ -70,8 +75,6 @@ public class BiomeDecoratorVortex extends BiomeDecoratorZG {
 		this.generateOre(this.superChargedCoalGen, EnumOreGenZG.SUPER_CHARGED_COAL, world, rand);
 		this.generateOre(this.fueltoniumGen, EnumOreGenZG.FUELTONIUM, world, rand);
 		this.generateOre(this.eveniumGen, EnumOreGenZG.EVENIUM, world, rand);
-		
-		int genY = y;
 		
 		if (biome instanceof BiomeSpace) {
 			BiomeSpace spaceBiome = (BiomeSpace) biome;
@@ -93,7 +96,7 @@ public class BiomeDecoratorVortex extends BiomeDecoratorZG {
 		
 		// Storm Crystals
 		if (this.generateStormCrystals && this.stormCrystalsPerChunk > 0) {
-			if (ZGHelper.rngInt(1, 100) <= 75) {
+			if (ZGHelper.rngInt(1, 100) <= 55) {
 				for (int i = 0; i < this.stormCrystalsPerChunk; ++i) {
 					ZGDecorateHelper.generateCrystals(stormCrystalsGen, world, rand, this.chunkPos);
 				}

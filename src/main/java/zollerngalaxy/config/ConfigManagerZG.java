@@ -136,6 +136,7 @@ public class ConfigManagerZG {
 	public static boolean spawnGalaxyKnight;
 	public static boolean enableExtremeMode;
 	public static boolean enableQuietVillagers;
+	public static boolean enableMutantNameTags;
 	
 	// Compat
 	public static boolean shouldOasisUseLiquidRedstone;
@@ -162,6 +163,7 @@ public class ConfigManagerZG {
 	public static boolean enableAlienVillagerSpawn;
 	public static boolean enableAlienVillagerMutation;
 	public static int alienVillagerSpawnRate;
+	public static boolean enableChargiumLakesOnVortex;
 	
 	/////////////////////////////////////////////////
 	public static double meteorGenZollus;
@@ -439,10 +441,14 @@ public class ConfigManagerZG {
 		enableExtremeMode = configuration.get(CATEGORY_MISC, "Enable Extreme Mode", false,
 				"Toggle Extreme mode. " + "WARNING: This will SIGNIFICANTLY increase the mod's difficulty. (default: false)").getBoolean();
 		
-		//
+		// Make ZG's Alien Villagers stop going "HNNGH!!"
 		enableQuietVillagers = configuration
 				.get(CATEGORY_MISC, "Enable Quiet Alien Villagers", false,
-						"Enable to shut up at least the Zollern Galaxy Alien Villagers. NOTE: Does not affect Galacticraft's Alien Villagers. (default: false)")
+						"Enable to shut up at least the Zollern Galaxy Alien Villagers. NOTE: Does NOT affect Galacticraft's Alien Villagers. (default: false)")
+				.getBoolean();
+		
+		// Enable/Disable showing of mutant name tags
+		enableMutantNameTags = configuration.get(CATEGORY_MISC, "Enable Mutant Name Tags", true, "Should Mutant Zombies show their name tags? (default: true)")
 				.getBoolean();
 		
 		// Compatibility (Whether or not to use Thermal Foundation's Detabilized
@@ -523,6 +529,9 @@ public class ConfigManagerZG {
 		alienVillagerSpawnRate = configuration
 				.get(CATEGORY_CUSTOMIZATIONS, "Alien Villager Ambient Spawn Rate", 1, "Spawn rate of all Alien Villager types, affects all planets. (default: 1)")
 				.getInt();
+		enableChargiumLakesOnVortex = configuration
+				.get(CATEGORY_CUSTOMIZATIONS, "Enable Chargium Lakes on Vortex", true, "Set to false to make Chargium Lakes not spawn on Vortex (default: true). ")
+				.getBoolean();
 		
 		//
 		//

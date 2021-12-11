@@ -2,7 +2,7 @@
 Zollern Galaxy v2.0.33
 =====================
 
-** NEW **
+[NEW]
 * Added the Kriffon Villager.
     - Regular Alien Villagers will conert into Kriffon Villagers when on that planet.
 * Added the Purgot Villager.
@@ -26,11 +26,26 @@ Zollern Galaxy v2.0.33
 * Added the Queen Xenomorph mob.
     - This is the mod's second boss mob, and is by far the deadliest ever added. Serious firepower will be required.
         - Probably best to nuke it from orbit. It's the only way to be sure.
-        
-** CHANGES **
-* Updated a few block textures.
+* Added a config option to toggle showing of Mutant Zombie name tags.
+* Added a config option to disable Chargium Lakes on Vortex.
 * 
 
-** FIXES **
+[CHANGES]
+* Updated a few block textures.
+* Slightly decreased chance of Wind Blowing event to fire on Vortex.
+* Slightly decreased size of bounding box in Wind Blowing event on Vortex.
+* Slightly lowered rain strength and thunder strength on Vortex.
+* Slightly increased day length on Vortex.
+* Slightly increased sun brightness on Vortex.
+* Greatly decreased chance of lightning striking in Player ticks on Vortex.
+* Greatly decreased chunk size on Vortex.
+* Halved the total number of blocks that the Wind Blowing event could push the Player on Vortex.
+* 
+
+[FIXES]
 * Fixed glitch with Galactic HUD regarding F/C temperatures. There was a logic error with type-casting and variable referencing.
+* Fixed Wind Blowing event still firing even when the config option was turned off.
+* Fixed Storm Amulet not stopping Wind Blowing event when in Creative Mode.
+* Fixed (hopefully) ZG Alien Villages spawning in ocean-type biomes.
+* Fixed Player deaths sometimes spawning Zombies when not on Metztli.
 * 

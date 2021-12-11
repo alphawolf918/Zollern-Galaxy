@@ -491,6 +491,12 @@ zollerngalaxy.subtitle.faceless.die=Faceless dies
 zollerngalaxy.subtitle.volatile.say=Volatile cries in hunger
 zollerngalaxy.subtitle.volatile.hurt=Volatile is hurt
 zollerngalaxy.subtitle.volatile.die=Volatile dies
+zollerngalaxy.subtitle.xenomorph.say=Xenomorph growls
+zollerngalaxy.subtitle.xenomorph.hurt=Xenomorph hurts
+zollerngalaxy.subtitle.xenomorph.die=Xenomorph dies
+zollerngalaxy.subtitle.xenomorph.queen.say=Xenomorph Queen hisses
+zollerngalaxy.subtitle.xenomorph.queen.hurt=Xenomorph Queen hurts
+zollerngalaxy.subtitle.xenomorph.queen.die=Xenomorph Queen perishes
 
 zollerngalaxy.subtitle.mutate=A Zombie has mutated nearby
 zollerngalaxy.subtitle.windblowing=The wind howls around you

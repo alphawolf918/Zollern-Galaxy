@@ -7,12 +7,16 @@
  */
 package zollerngalaxy.celestial;
 
+import com.mjr.extraplanets.util.GCRegisterUtilities;
 import micdoodle8.mods.galacticraft.api.GalacticraftRegistry;
+import micdoodle8.mods.galacticraft.api.galaxies.CelestialBody.ScalableDistance;
 import micdoodle8.mods.galacticraft.api.galaxies.GalaxyRegistry;
+import micdoodle8.mods.galacticraft.api.galaxies.Planet;
 import micdoodle8.mods.galacticraft.api.vector.Vector3;
 import micdoodle8.mods.galacticraft.api.world.EnumAtmosphericGas;
 import micdoodle8.mods.galacticraft.planets.mars.dimension.TeleportTypeMars;
 import micdoodle8.mods.galacticraft.planets.venus.dimension.TeleportTypeVenus;
+import net.minecraft.util.ResourceLocation;
 import zollerngalaxy.biomes.ZGBiomes;
 import zollerngalaxy.celestial.starsystems.ZGStar;
 import zollerngalaxy.celestial.starsystems.ZGStarSystem;
@@ -35,6 +39,7 @@ import zollerngalaxy.core.dimensions.worldproviders.WorldProviderXantheon;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderXathius;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderZollus;
 import zollerngalaxy.core.enums.EnumBodyClass;
+import zollerngalaxy.lib.ZGInfo;
 import zollerngalaxy.lib.helpers.ZGHelper;
 
 public class ZGPlanets {
@@ -134,8 +139,8 @@ public class ZGPlanets {
 	public static ZGPlanet planetVortex = new ZGPlanet("vortex");
 	public static ZGPlanet planetMetztli = new ZGPlanet("metztli");
 	public static ZGPlanet planetCentotl = new ZGPlanet("centotl");
-	public static ZGPlanet planetToci;
-	public static ZGPlanet planetTlaloc;
+	public static Planet planetToci = GCRegisterUtilities.registerUnreachablePlanet("toci", ZGPlanets.systemPantheon);
+	public static Planet planetTlaloc = GCRegisterUtilities.registerUnreachablePlanet("tlaloc", ZGPlanets.systemPantheon);
 	
 	// Olympus Planets
 	public static ZGPlanet planetAres;
@@ -522,7 +527,7 @@ public class ZGPlanets {
 		planetVortex.setDimensionInfo(ConfigManagerZG.planetVortexDimensionId, WorldProviderVortex.class);
 		planetVortex.setParentSolarSystem(systemPantheon);
 		planetVortex.setBodyClass(EnumBodyClass.STORMY);
-		planetVortex.setRelativeOrbitTime(4.5F);
+		planetVortex.setRelativeOrbitTime(4.8F);
 		planetVortex.setDistanceFromCenter(3.0F);
 		planetVortex.setTierRequired(ConfigManagerZG.planetVortexTier);
 		if (ConfigManagerZG.planetUnreachableAll || ConfigManagerZG.planetUnreachableVortex) {
@@ -584,6 +589,24 @@ public class ZGPlanets {
 		planetCentotl.setAtmosphere();
 		planetCentotl.setBiomeInfo(ZGBiomes.CENTOTL_BASE, ZGBiomes.CENTOTL_ROCKY_MOUNTAINS, ZGBiomes.CENTOTL_ENGINEERING_PLAINS, ZGBiomes.CENTOTL_CONSTRUCTS);
 		totalPlanets++;
+		
+		// Toci
+		// TODO
+		if (planetToci != null) {
+			planetToci.setRingColorRGB(0.1F, 0.9F, 0.6F);
+			planetToci.setRelativeDistanceFromCenter(new ScalableDistance(1.0F, 1.0F));
+			planetToci.setPhaseShift(1.0F);
+			planetToci.setBodyIcon(new ResourceLocation(ZGInfo.MOD_ID + ":textures/gui/toci.png"));
+		}
+		
+		// Tlaloc
+		// TODO
+		if (planetTlaloc != null) {
+			planetTlaloc.setRingColorRGB(0.1F, 0.9F, 0.6F);
+			planetTlaloc.setRelativeDistanceFromCenter(new ScalableDistance(2.0F, 2.0F));
+			planetTlaloc.setPhaseShift(2.0F);
+			planetTlaloc.setBodyIcon(new ResourceLocation(ZGInfo.MOD_ID + ":textures/gui/tlaloc.png"));
+		}
 		
 		ZGHelper.Log("Loaded a total of " + totalPlanets + " new planets.");
 	}
@@ -647,6 +670,8 @@ public class ZGPlanets {
 		GalaxyRegistry.registerPlanet(planetVortex);
 		GalaxyRegistry.registerPlanet(planetMetztli);
 		GalaxyRegistry.registerPlanet(planetCentotl);
+		// GalaxyRegistry.registerPlanet(planetToci);
+		// GalaxyRegistry.registerPlanet(planetTlaloc);
 		ZGPlanets.registerMoons();
 	}
 	
