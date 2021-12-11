@@ -20,6 +20,7 @@ import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitAltu
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitAtheon;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitCaligro;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitCandora;
+import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitCentotl;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitEden;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitExodus;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitKriffon;
@@ -61,6 +62,7 @@ public class ZGSpaceStations {
 	// Pantheon
 	public static ZGSpaceStation VORTEX_SPACE_STATION;
 	public static ZGSpaceStation METZTLI_SPACE_STATION;
+	public static ZGSpaceStation CENTOTL_SPACE_STATION;
 	
 	public static void init() {
 		ZGSpaceStations.initSpaceStations();
@@ -144,6 +146,11 @@ public class ZGSpaceStations {
 		METZTLI_SPACE_STATION = new ZGSpaceStation("metztli", ZGPlanets.planetMetztli);
 		METZTLI_SPACE_STATION.setDimensionInfo(ConfigManagerZG.spaceStationMetztliId, ConfigManagerZG.spaceStationMetztliStaticId, WorldProviderOrbitMetztli.class);
 		totalSpaceStations++;
+		
+		// Pantheon (Centotl)
+		CENTOTL_SPACE_STATION = new ZGSpaceStation("centotl", ZGPlanets.planetCentotl);
+		CENTOTL_SPACE_STATION.setDimensionInfo(ConfigManagerZG.spaceStationCentotlId, ConfigManagerZG.spaceStationCentotlStaticId, WorldProviderOrbitCentotl.class);
+		totalSpaceStations++;
 	}
 	
 	private static void registerSpaceStations() {
@@ -206,6 +213,10 @@ public class ZGSpaceStations {
 		// Pantheon (Metztli)
 		ZGSpaceStations.registerSpaceStation(METZTLI_SPACE_STATION, "Metztli Space Station", "_metztli_orbit", WorldProviderOrbitMetztli.class,
 				ConfigManagerZG.spaceStationMetztliId, ConfigManagerZG.spaceStationMetztliStaticId);
+		
+		// Pantheon (Centotl)
+		ZGSpaceStations.registerSpaceStation(CENTOTL_SPACE_STATION, "Centotl Space Station", "_centotl_orbit", WorldProviderOrbitCentotl.class,
+				ConfigManagerZG.spaceStationCentotlId, ConfigManagerZG.spaceStationCentotlStaticId);
 	}
 	
 	public static void registerSpaceStationRecipes() {
@@ -345,7 +356,15 @@ public class ZGSpaceStations {
 		inputMap.put(ZGItems.compressedDiamond, 24);
 		ZGRecipeHelper.addSpaceStationRecipe(ConfigManagerZG.spaceStationMetztliId, ConfigManagerZG.planetMetztliDimensionId, inputMap);
 		inputMap.clear();
-		// ExtraPlanets
+		
+		// Pantheon (Centotl)
+		inputMap = new HashMap<Object, Integer>();
+		inputMap.put("ingotChargium", 32);
+		inputMap.put("waferAdvanced", 1);
+		inputMap.put(new ItemStack(ZGItems.compressedZucrite, 1, 0), 24);
+		inputMap.put(ZGItems.compressedAscendantAmaranth, 24);
+		ZGRecipeHelper.addSpaceStationRecipe(ConfigManagerZG.spaceStationCentotlId, ConfigManagerZG.planetCentotlDimensionId, inputMap);
+		inputMap.clear();
 	}
 	
 	private static void registerSpaceStation(ZGSpaceStation spaceStation, String stationName, String stationStringId, Class<? extends WorldProvider> providerClass,

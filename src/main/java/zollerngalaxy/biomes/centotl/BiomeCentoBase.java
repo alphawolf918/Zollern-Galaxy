@@ -5,10 +5,9 @@
  * claim it as your own, and do not
  * redistribute it.
  */
-package zollerngalaxy.biomes.cento;
+package zollerngalaxy.biomes.centotl;
 
 import java.util.Random;
-import micdoodle8.mods.galacticraft.core.entities.EntityAlienVillager;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
@@ -22,6 +21,7 @@ import zollerngalaxy.celestial.ZGPlanets;
 import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderCentotl;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
+import zollerngalaxy.mobs.entities.villagers.EntityCentotlVillager;
 
 public class BiomeCentoBase extends BiomeSpace {
 	
@@ -47,7 +47,7 @@ public class BiomeCentoBase extends BiomeSpace {
 		this.biomeDecor.mushroomsPerChunk = -999;
 		this.clearAllSpawning();
 		if (ConfigManagerZG.enableAlienVillagerSpawn) {
-			this.spawnableCreatureList.add(new SpawnListEntry(EntityAlienVillager.class, this.villagerSpawnRate, 1, 1));
+			this.spawnableCreatureList.add(new SpawnListEntry(EntityCentotlVillager.class, this.villagerSpawnRate, 1, 1));
 		}
 		this.setBodyForBiome(ZGPlanets.planetCentotl);
 	}

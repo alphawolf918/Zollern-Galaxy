@@ -16,6 +16,7 @@ import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitAltu
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitAtheon;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitCaligro;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitCandora;
+import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitCentotl;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitEden;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitExodus;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitKriffon;
@@ -97,6 +98,8 @@ public class ZGDimensions {
 	public static DimensionType METZTLI_ORBIT_STATIC;
 	
 	public static DimensionType CENTOTL;
+	public static DimensionType CENTOTL_ORBIT;
+	public static DimensionType CENTOTL_ORBIT_STATIC;
 	
 	public static void init() {
 		// Psion-6 (Zollus)
@@ -208,6 +211,10 @@ public class ZGDimensions {
 		
 		// Pantheon (Centotl)
 		ZGDimensions.CENTOTL = ZGDimensions.getDimType(ConfigManagerZG.planetCentotlDimensionId);
+		ZGDimensions.CENTOTL_ORBIT = DimensionType.register("Centotl Space Station", "_centotl_orbit", ConfigManagerZG.spaceStationCentotlId,
+				WorldProviderOrbitCentotl.class, false);
+		ZGDimensions.CENTOTL_ORBIT_STATIC = DimensionType.register("Centotl Space Station", "_centotl_orbit", ConfigManagerZG.spaceStationCentotlStaticId,
+				WorldProviderOrbitCentotl.class, true);
 	}
 	
 	public static DimensionType getDimType(int dimId) {
@@ -250,6 +257,10 @@ public class ZGDimensions {
 			body = ZGPlanets.moonAstros;
 		} else if (dimID == ConfigManagerZG.planetCentotlDimensionId) {
 			body = ZGPlanets.planetCentotl;
+		} else if (dimID == ConfigManagerZG.planetTociDimensionId) {
+			body = ZGPlanets.planetToci;
+		} else if (dimID == ConfigManagerZG.planetTlalocDimensionId) {
+			body = ZGPlanets.planetTlaloc;
 		}
 		
 		if (body == null) {

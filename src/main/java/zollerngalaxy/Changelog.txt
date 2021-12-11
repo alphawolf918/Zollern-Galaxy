@@ -7,7 +7,7 @@ Zollern Galaxy v2.0.33
     - Regular Alien Villagers will conert into Kriffon Villagers when on that planet.
 * Added the Purgot Villager.
     - Regular Alien Villagers will conert into Purgot Villagers when on that planet.
-* Added the next new planet, Centotl.
+* Added the first new planet, Centotl.
     - Planet is themed after LV-426 from Alien (1979). Shares similarities, but has its own take on it.
     - Random "Facehugger Eggs" spawn throughout the planet. Try interacting with one.
 * Added the Facehugger Egg block.
@@ -28,7 +28,9 @@ Zollern Galaxy v2.0.33
         - Probably best to nuke it from orbit. It's the only way to be sure.
 * Added a config option to toggle showing of Mutant Zombie name tags.
 * Added a config option to disable Chargium Lakes on Vortex.
-* 
+* Added a config option to enable or disable Extra Planets compatibility.
+    - If enabled, the mods will work together (on ZG's end).
+* Added the Euclid galaxy.
 
 [CHANGES]
 * Updated a few block textures.

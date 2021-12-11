@@ -123,7 +123,13 @@ public class ConfigManagerZG {
 	public static int spaceStationMetztliStaticId;
 	
 	public static int spaceStationCentotlId;
-	public static int spaceStationCentolStaticId;
+	public static int spaceStationCentotlStaticId;
+	
+	public static int spaceStationTociId;
+	public static int spaceStationTociStaticId;
+	
+	public static int spaceStationTlalocId;
+	public static int spaceStationTlalocStaticId;
 	
 	// Misc
 	public static boolean canEarthAnimalsSpawnOnEden;
@@ -149,6 +155,7 @@ public class ConfigManagerZG {
 	public static boolean useTConCorruption;
 	public static boolean enableRadianceFlying;
 	public static boolean enableStepHeight;
+	public static boolean enableExtraPlanetsCompat;
 	
 	// Customizations
 	public static int kriffonLavaLakesPerChunk;
@@ -182,6 +189,8 @@ public class ConfigManagerZG {
 	public static double meteorGenVortex;
 	public static double meteorGenMetztli;
 	public static double meteorGenCentotl;
+	public static double meteorGenToci;
+	public static double meteorGenTlaloc;
 	////////////////////////////////////////////////
 	
 	// Set as unreachable with rockets by planet
@@ -201,6 +210,8 @@ public class ConfigManagerZG {
 	public static boolean planetUnreachableVortex;
 	public static boolean planetUnreachableMetztli;
 	public static boolean planetUnreachableCentotl;
+	public static boolean planetUnreachableToci;
+	public static boolean planetUnreachableTlaloc;
 	////////////////////////////////////////////////
 	
 	// Max Health Customization
@@ -270,6 +281,8 @@ public class ConfigManagerZG {
 	public static int planetVortexTier;
 	public static int planetMetztliTier;
 	public static int planetCentotlTier;
+	public static int planetTociTier;
+	public static int planetTlalocTier;
 	
 	public static void init(FMLPreInitializationEvent event) {
 		configuration = new Configuration(new File(event.getModConfigurationDirectory().getAbsolutePath() + "/ZollernGalaxy/core.cfg"));
@@ -399,7 +412,15 @@ public class ConfigManagerZG {
 		
 		// Centotl
 		spaceStationCentotlId = configuration.get(CATEGORY_SATELLITES, "Centotl Space Station ID", -6030).getInt();
-		spaceStationCentolStaticId = configuration.get(CATEGORY_SATELLITES, "Metztli Space Station Static ID", -6031).getInt();
+		spaceStationCentotlStaticId = configuration.get(CATEGORY_SATELLITES, "Centotl Space Station Static ID", -6031).getInt();
+		
+		// Toci
+		spaceStationTociId = configuration.get(CATEGORY_SATELLITES, "Toci Space Station ID", -6032).getInt();
+		spaceStationTociStaticId = configuration.get(CATEGORY_SATELLITES, "Toci Space Station Static ID", -6033).getInt();
+		
+		// Tlaloc
+		spaceStationTlalocId = configuration.get(CATEGORY_SATELLITES, "Tlaloc Space Station ID", -6034).getInt();
+		spaceStationTlalocStaticId = configuration.get(CATEGORY_SATELLITES, "Tlaloc Space Station Static ID", -6035).getInt();
 		
 		// Misc (Can Earth animals spawn on Eden?)
 		canEarthAnimalsSpawnOnEden = configuration.get(CATEGORY_MISC, "Earth Animals Spawn On Eden", true, "Should Earth animals spawn on Eden? (default: true)")
@@ -504,6 +525,10 @@ public class ConfigManagerZG {
 		enableStepHeight = configuration.get(CATEGORY_COMPATIBILITY, "Enable Increased Step Height", true,
 				"Toggle whether Zollernium armor increases step height. Disable if there are compatability issues. (default: true)").getBoolean();
 		
+		// Compat (Extra Planets)
+		enableExtraPlanetsCompat = configuration.get(CATEGORY_COMPATIBILITY, "Enable Extra Planets Compatibility", true,
+				"If enabled, these mods will work together. Disable if needed or desired. (default: true)").getBoolean();
+		
 		// Customization Options
 		kriffonLavaLakesPerChunk = configuration
 				.get(CATEGORY_CUSTOMIZATIONS, "Kriffon Lava Lakes Per Chunk", 4, "The amount of Lava Lakes to generate per chunk on planet Kriffon. (default: 4)")
@@ -551,6 +576,8 @@ public class ConfigManagerZG {
 		meteorGenVortex = configuration.get(CATEGORY_CUSTOMIZATIONS, "Meteor Gen Vortex", 15, "Percentage chance for meteors to fall. (default: 15)").getInt();
 		meteorGenMetztli = configuration.get(CATEGORY_CUSTOMIZATIONS, "Meteor Gen Metztli", 15, "Percentage chance for meteors to fall. (default: 15)").getInt();
 		meteorGenCentotl = configuration.get(CATEGORY_CUSTOMIZATIONS, "Meteor Gen Centotl", 30, "Percentage chance for meteors to fall. (default: 15)").getInt();
+		meteorGenToci = configuration.get(CATEGORY_CUSTOMIZATIONS, "Meteor Gen Toci", 30, "Percentage chance for meteors to fall. (default: 30)").getInt();
+		meteorGenTlaloc = configuration.get(CATEGORY_CUSTOMIZATIONS, "Meteor Gen Tlaloc", 0, "Percentage chance for meteors to fall. (default: 0)").getInt();
 		//
 		//
 		
@@ -600,6 +627,10 @@ public class ConfigManagerZG {
 				.get(CATEGORY_CUSTOMIZATIONS, "Disable Rockets For Planet Metztli", false, "Disable rocket travel for this planet. (default: false)").getBoolean();
 		planetUnreachableCentotl = configuration
 				.get(CATEGORY_CUSTOMIZATIONS, "Disable Rockets For Planet Centotl", false, "Disable rocket travel for this planet. (default: false)").getBoolean();
+		planetUnreachableToci = configuration
+				.get(CATEGORY_CUSTOMIZATIONS, "Disable Rockets For Planet Toci", false, "Disable rocket travel for this planet. (default: false)").getBoolean();
+		planetUnreachableTlaloc = configuration
+				.get(CATEGORY_CUSTOMIZATIONS, "Disable Rockets For Planet Tlaloc", false, "Disable rocket travel for this planet. (default: false)").getBoolean();
 		
 		//
 		maxHealthAllowed = configuration.get(CATEGORY_CUSTOMIZATIONS, "Max Health Allowed", 40, "The max health that Players are allowed to have. (default: 40)")
@@ -670,6 +701,8 @@ public class ConfigManagerZG {
 		planetVortexTier = configuration.get(CATEGORY_TIERS, "Planet Vortex Tier", 3).getInt();
 		planetMetztliTier = configuration.get(CATEGORY_TIERS, "Planet Metztli Tier", 3).getInt();
 		planetCentotlTier = configuration.get(CATEGORY_TIERS, "Planet Centotl Tier", 3).getInt();
+		planetTociTier = configuration.get(CATEGORY_TIERS, "Planet Toci Tier", 3).getInt();
+		planetTlalocTier = configuration.get(CATEGORY_TIERS, "Planet Tlaloc Tier", 3).getInt();
 		
 		configuration.save();
 	}

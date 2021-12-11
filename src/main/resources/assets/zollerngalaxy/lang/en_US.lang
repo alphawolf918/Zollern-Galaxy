@@ -817,6 +817,8 @@ entity.zollerngalaxy:xantheonvillager.name=Xantheon Villager
 entity.zollerngalaxy:atheonvillager.name=Atheon Villager
 entity.zollerngalaxy:exodusvillager.name=Exodus Villager
 entity.zollerngalaxy:lostvillager.name=Lost Villager
+entity.zollerngalaxy:tocivillager.name=Toci Villager
+entity.zollerngalaxy:tlalocvillager.name=Tlaloc Villager
 
 ################
 
@@ -985,6 +987,7 @@ solarsystem.nova=Nova
 
 ## Galaxies ##
 galaxy.eissentam=Eissentam
+galaxy.euclid=Euclid
 
 ## Space Stations ##
 

@@ -16,6 +16,7 @@ import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderAltum;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderAstros;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderCaligro;
+import zollerngalaxy.core.dimensions.worldproviders.WorldProviderCentotl;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderEden;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderKriffon;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderMetztli;
@@ -24,6 +25,7 @@ import zollerngalaxy.core.dimensions.worldproviders.WorldProviderZollus;
 import zollerngalaxy.mobs.entities.villagers.EntityAbyssalVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityAstrosVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityCaligroVillager;
+import zollerngalaxy.mobs.entities.villagers.EntityCentotlVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityEdenVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityHarranVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityKriffonVillager;
@@ -138,6 +140,18 @@ public class VillageUtils {
 						EntityPurgotVillager purgotVillager = new EntityPurgotVillager(world);
 						purgotVillager.setPosition(worldPos.getX(), worldPos.getY(), worldPos.getZ());
 						world.spawnEntity(purgotVillager);
+					}
+				}
+			} else if (provider instanceof WorldProviderCentotl) {
+				if (!world.isRemote) {
+					Entity entity = event.getEntity();
+					if (entity instanceof EntityAlienVillager) {
+						EntityAlienVillager alienVillager = (EntityAlienVillager) entity;
+						BlockPos worldPos = alienVillager.getPos();
+						alienVillager.setDead();
+						EntityCentotlVillager centotlVillager = new EntityCentotlVillager(world);
+						centotlVillager.setPosition(worldPos.getX(), worldPos.getY(), worldPos.getZ());
+						world.spawnEntity(centotlVillager);
 					}
 				}
 			}

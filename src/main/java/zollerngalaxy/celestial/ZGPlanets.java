@@ -7,16 +7,12 @@
  */
 package zollerngalaxy.celestial;
 
-import com.mjr.extraplanets.util.GCRegisterUtilities;
 import micdoodle8.mods.galacticraft.api.GalacticraftRegistry;
-import micdoodle8.mods.galacticraft.api.galaxies.CelestialBody.ScalableDistance;
 import micdoodle8.mods.galacticraft.api.galaxies.GalaxyRegistry;
-import micdoodle8.mods.galacticraft.api.galaxies.Planet;
 import micdoodle8.mods.galacticraft.api.vector.Vector3;
 import micdoodle8.mods.galacticraft.api.world.EnumAtmosphericGas;
 import micdoodle8.mods.galacticraft.planets.mars.dimension.TeleportTypeMars;
 import micdoodle8.mods.galacticraft.planets.venus.dimension.TeleportTypeVenus;
-import net.minecraft.util.ResourceLocation;
 import zollerngalaxy.biomes.ZGBiomes;
 import zollerngalaxy.celestial.starsystems.ZGStar;
 import zollerngalaxy.celestial.starsystems.ZGStarSystem;
@@ -39,12 +35,13 @@ import zollerngalaxy.core.dimensions.worldproviders.WorldProviderXantheon;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderXathius;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderZollus;
 import zollerngalaxy.core.enums.EnumBodyClass;
-import zollerngalaxy.lib.ZGInfo;
+import zollerngalaxy.lib.helpers.ModHelperBase;
 import zollerngalaxy.lib.helpers.ZGHelper;
 
 public class ZGPlanets {
 	
 	protected boolean enableExtremeMode = ConfigManagerZG.enableExtremeMode;
+	protected static boolean enableExtraGalaxies = (ConfigManagerZG.enableExtraPlanetsCompat && ModHelperBase.useExtraPlanets);
 	
 	private static int totalSystems = 0;
 	private static int totalPlanets = 0;
@@ -66,13 +63,13 @@ public class ZGPlanets {
 	private static float SOL2_Z = 0.0F + ConfigManagerZG.sol2ZOffset;
 	
 	// Coords (Pantheon)
-	private static float PANTHEON_X = 2.0F + ConfigManagerZG.pantheonXOffset;
-	private static float PANTHEON_Y = 1.2F + ConfigManagerZG.pantheonYOffset;
+	private static float PANTHEON_X = 2.5F + ConfigManagerZG.pantheonXOffset;
+	private static float PANTHEON_Y = 0.8F + ConfigManagerZG.pantheonYOffset;
 	private static float PANTHEON_Z = 0.0F + ConfigManagerZG.pantheonZOffset;
 	
 	// Coords (Olympus)
-	private static float OLYMPUS_X = 1.5F + ConfigManagerZG.olympusXOffset;
-	private static float OLYMPUS_Y = 1.5F + ConfigManagerZG.olympusYOffset;
+	private static float OLYMPUS_X = (float) (((enableExtraGalaxies) ? 0.0F : 0.5) + ConfigManagerZG.olympusXOffset);
+	private static float OLYMPUS_Y = (float) (((enableExtraGalaxies) ? 0.0F : 1.5) + ConfigManagerZG.olympusYOffset);
 	private static float OLYMPUS_Z = 0.0F + ConfigManagerZG.olympusZOffset;
 	
 	// Coords (Asgard)
@@ -86,24 +83,26 @@ public class ZGPlanets {
 	private static float VEGA_Z = 0.0F + ConfigManagerZG.vegaZOffset;
 	
 	// Coords (Nova)
-	private static float NOVA_X = 0.0F + ConfigManagerZG.novaXOffset;
-	private static float NOVA_Y = 0.0F + ConfigManagerZG.novaYOffset;
+	private static float NOVA_X = (float) (((enableExtraGalaxies) ? 0.0F : 1.5) + ConfigManagerZG.novaXOffset);
+	private static float NOVA_Y = (float) (((enableExtraGalaxies) ? 0.0F : 1.2) + ConfigManagerZG.novaYOffset);
 	private static float NOVA_Z = 0.0F + ConfigManagerZG.novaZOffset;
 	
 	private static boolean hideUnusedStarSystems = ConfigManagerZG.hideUnusedStarSystems;
 	
 	// Galaxies
+	public static Galaxy gxMilkyWay = GalaxyListZG.MILKY_WAY;
 	public static Galaxy gxEissentam = GalaxyListZG.EISSENTAM;
+	public static Galaxy gxEuclid = GalaxyListZG.EUCLID;
 	
 	// Solar Systems
 	public static ZGStarSystem systemPsios = new ZGStarSystem("psion6");
 	public static ZGStarSystem systemPraedyth = new ZGStarSystem("praedyth");
 	public static ZGStarSystem systemSol2 = new ZGStarSystem("sol2");
 	public static ZGStarSystem systemPantheon = new ZGStarSystem("pantheon");
-	public static ZGStarSystem systemOlympus = new ZGStarSystem("olympus", gxEissentam);
-	public static ZGStarSystem systemAsgard = new ZGStarSystem("asgard", gxEissentam);
-	public static ZGStarSystem systemVega = new ZGStarSystem("vega", gxEissentam);
-	public static ZGStarSystem systemNova = new ZGStarSystem("nova", gxEissentam);
+	public static ZGStarSystem systemOlympus = new ZGStarSystem("olympus");
+	public static ZGStarSystem systemAsgard = new ZGStarSystem("asgard");
+	public static ZGStarSystem systemVega = new ZGStarSystem("vega");
+	public static ZGStarSystem systemNova = new ZGStarSystem("nova");
 	
 	// Stars
 	public static ZGStar starPsios = new ZGStar("psion6");
@@ -139,8 +138,8 @@ public class ZGPlanets {
 	public static ZGPlanet planetVortex = new ZGPlanet("vortex");
 	public static ZGPlanet planetMetztli = new ZGPlanet("metztli");
 	public static ZGPlanet planetCentotl = new ZGPlanet("centotl");
-	public static Planet planetToci = GCRegisterUtilities.registerUnreachablePlanet("toci", ZGPlanets.systemPantheon);
-	public static Planet planetTlaloc = GCRegisterUtilities.registerUnreachablePlanet("tlaloc", ZGPlanets.systemPantheon);
+	public static ZGPlanet planetToci = new ZGPlanet("toci");
+	public static ZGPlanet planetTlaloc = new ZGPlanet("tlaloc");
 	
 	// Olympus Planets
 	public static ZGPlanet planetAres;
@@ -194,24 +193,36 @@ public class ZGPlanets {
 		
 		// Olympus System
 		systemOlympus.setMapPosition(new Vector3(OLYMPUS_X, OLYMPUS_Y, OLYMPUS_Z));
+		if (ConfigManagerZG.enableExtraPlanetsCompat && ModHelperBase.useExtraPlanets) {
+			systemOlympus.setGalaxy(gxEissentam);
+		}
 		starOlympus.setParentSolarSystem(systemOlympus);
 		systemOlympus.setMainStar(starOlympus);
 		totalSystems++;
 		
 		// Asgard System
 		systemAsgard.setMapPosition(new Vector3(ASGARD_X, ASGARD_Y, ASGARD_Z));
+		if (ConfigManagerZG.enableExtraPlanetsCompat && ModHelperBase.useExtraPlanets) {
+			systemAsgard.setGalaxy(gxEissentam);
+		}
 		starAsgard.setParentSolarSystem(systemAsgard);
 		systemAsgard.setMainStar(starAsgard);
 		totalSystems++;
 		
 		// Vega System
 		systemVega.setMapPosition(new Vector3(VEGA_X, VEGA_Y, VEGA_Z));
+		if (ConfigManagerZG.enableExtraPlanetsCompat && ModHelperBase.useExtraPlanets) {
+			systemVega.setGalaxy(gxEissentam);
+		}
 		starVega.setParentSolarSystem(systemVega);
 		systemVega.setMainStar(starVega);
 		totalSystems++;
 		
 		// Nova System
 		systemNova.setMapPosition(new Vector3(NOVA_X, NOVA_Y, NOVA_Z));
+		if (ConfigManagerZG.enableExtraPlanetsCompat && ModHelperBase.useExtraPlanets) {
+			systemNova.setGalaxy(gxEuclid);
+		}
 		starNova.setParentSolarSystem(systemNova);
 		systemNova.setMainStar(starNova);
 		totalSystems++;
@@ -592,21 +603,21 @@ public class ZGPlanets {
 		
 		// Toci
 		// TODO
-		if (planetToci != null) {
-			planetToci.setRingColorRGB(0.1F, 0.9F, 0.6F);
-			planetToci.setRelativeDistanceFromCenter(new ScalableDistance(1.0F, 1.0F));
-			planetToci.setPhaseShift(1.0F);
-			planetToci.setBodyIcon(new ResourceLocation(ZGInfo.MOD_ID + ":textures/gui/toci.png"));
-		}
+		planetToci.setParentSolarSystem(systemPantheon);
+		planetToci.setRelativeSize(1.0F);
+		planetToci.setDistanceFromCenter(1.0F);
+		planetToci.setRelativeOrbitTime(4.0F);
+		planetToci.setPhaseShift(1.0F);
+		planetToci.setBodyIcon("toci");
 		
 		// Tlaloc
 		// TODO
-		if (planetTlaloc != null) {
-			planetTlaloc.setRingColorRGB(0.1F, 0.9F, 0.6F);
-			planetTlaloc.setRelativeDistanceFromCenter(new ScalableDistance(2.0F, 2.0F));
-			planetTlaloc.setPhaseShift(2.0F);
-			planetTlaloc.setBodyIcon(new ResourceLocation(ZGInfo.MOD_ID + ":textures/gui/tlaloc.png"));
-		}
+		planetTlaloc.setParentSolarSystem(systemPantheon);
+		planetTlaloc.setRelativeSize(1.0F);
+		planetTlaloc.setDistanceFromCenter(2.0F);
+		planetTlaloc.setPhaseShift(2.0F);
+		planetTlaloc.setRelativeOrbitTime(5.0F);
+		planetTlaloc.setBodyIcon("tlaloc");
 		
 		ZGHelper.Log("Loaded a total of " + totalPlanets + " new planets.");
 	}
@@ -670,8 +681,8 @@ public class ZGPlanets {
 		GalaxyRegistry.registerPlanet(planetVortex);
 		GalaxyRegistry.registerPlanet(planetMetztli);
 		GalaxyRegistry.registerPlanet(planetCentotl);
-		// GalaxyRegistry.registerPlanet(planetToci);
-		// GalaxyRegistry.registerPlanet(planetTlaloc);
+		GalaxyRegistry.registerPlanet(planetToci);
+		GalaxyRegistry.registerPlanet(planetTlaloc);
 		ZGPlanets.registerMoons();
 	}
 	
@@ -704,5 +715,17 @@ public class ZGPlanets {
 		GalacticraftRegistry.registerTeleportType(WorldProviderVortex.class, new TeleportTypeMars());
 		GalacticraftRegistry.registerTeleportType(WorldProviderMetztli.class, new TeleportTypeMars());
 		GalacticraftRegistry.registerTeleportType(WorldProviderCentotl.class, new TeleportTypeMars());
+		
+		// Olympus
+		// TODO
+		
+		// Asgard
+		// TODO
+		
+		// Vega
+		// TODO
+		
+		// Nova
+		// TODO
 	}
 }

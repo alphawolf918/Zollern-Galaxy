@@ -11,4 +11,6 @@ public class GalaxyListZG {
 	
 	public static final Galaxy MILKY_WAY = new Galaxy("milky_way");
 	public static final Galaxy EISSENTAM = new Galaxy("eissentam");
+	public static final Galaxy EUCLID = new Galaxy("euclid");
+	
 }

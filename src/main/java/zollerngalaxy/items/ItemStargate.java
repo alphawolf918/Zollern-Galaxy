@@ -23,7 +23,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import zollerngalaxy.compatibility.PlanetProgressionCompatibility;
+import zollerngalaxy.compatibility.PlanetProgressionCompat;
 import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.ZollernGalaxyCore;
 import zollerngalaxy.core.dimensions.ZGDimensions;
@@ -114,7 +114,7 @@ public class ItemStargate extends ZGItemBase {
 		if (ModHelperBase.usePlanetProgression && ConfigManagerZG.enablePlanetProgressionsCompat) {
 			if (player instanceof EntityPlayerMP) {
 				EntityPlayerMP playerMP = (EntityPlayerMP) player;
-				if (!PlanetProgressionCompatibility.hasResearched(playerMP, destination)) {
+				if (!PlanetProgressionCompat.hasResearched(playerMP, destination)) {
 					canTP = false;
 					proxy.sendChatMessage(player, msg);
 				}

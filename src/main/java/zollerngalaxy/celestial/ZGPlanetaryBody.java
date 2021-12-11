@@ -443,14 +443,4 @@ public class ZGPlanetaryBody extends Planet implements IZollernBody {
 		}
 		return bodyTemp;
 	}
-	
-	/*
-	 * (non-Javadoc)
-	 * @see zollerngalaxy.celestial.IZollernBody#getBodyTemp()
-	 */
-	@Override
-	public float getBodyTemp() {
-		// TODO
-		return 0;
-	}
 }

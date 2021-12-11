@@ -15,7 +15,7 @@ import zollerngalaxy.lib.helpers.ZGHelper;
 /**
  * Thank you MJRLegends
  */
-public class PlanetProgressionCompatibility {
+public class PlanetProgressionCompat {
 	
 	public static void init() {
 		ZGHelper.Log("Initialized IMC with Planet Progressions.");

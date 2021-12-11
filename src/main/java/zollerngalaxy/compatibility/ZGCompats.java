@@ -13,19 +13,23 @@ public class ZGCompats {
 	
 	public static void init() {
 		if (ModHelperBase.useExtremeReactors) {
-			ExtremeReactorsCompatibility.init();
+			ExtremeReactorsCompat.init();
 		}
 		
 		if (ModHelperBase.usePlanetProgression) {
-			PlanetProgressionCompatibility.init();
+			PlanetProgressionCompat.init();
 		}
 		
 		if (ModHelperBase.useThermalFoundation) {
-			ThermalFoundationCompatibility.init();
+			ThermalFoundationCompat.init();
 		}
 		
 		if (ModHelperBase.useTinkerConstruct) {
-			TinkersConstructCompatibility.init();
+			TinkersConstructCompat.init();
+		}
+		
+		if (ModHelperBase.useExtraPlanets) {
+			ExtraPlanetsCompat.init();
 		}
 	}
 }

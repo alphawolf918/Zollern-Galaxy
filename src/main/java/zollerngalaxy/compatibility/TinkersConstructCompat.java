@@ -25,7 +25,7 @@ import zollerngalaxy.compatibility.tconstruct.traits.TraitInfection;
 import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.lib.helpers.ZGHelper;
 
-public class TinkersConstructCompatibility {
+public class TinkersConstructCompat {
 	
 	public static int totalMaterials;
 	
@@ -73,11 +73,11 @@ public class TinkersConstructCompatibility {
 	
 	public static void init() {
 		if (ConfigManagerZG.useTConRadium) {
-			TinkersConstructCompatibility.registerMaterials(materialRadium, "Radium");
+			TinkersConstructCompat.registerMaterials(materialRadium, "Radium");
 		}
 		
 		if (ConfigManagerZG.useTConCorruption) {
-			TinkersConstructCompatibility.registerMaterials(materialCorruption, "Corruption");
+			TinkersConstructCompat.registerMaterials(materialCorruption, "Corruption");
 		}
 		
 		TCSmelteryManager.init();
@@ -88,17 +88,17 @@ public class TinkersConstructCompatibility {
 	
 	private static void registerModifier(IModifier... mod) {
 		for (IModifier i : mod) {
-			TinkersConstructCompatibility.registerModifier(i);
+			TinkersConstructCompat.registerModifier(i);
 		}
 	}
 	
 	private static void registerMaterials(Material Material, String suffix) {
-		TinkersConstructCompatibility.addMaterial(Material, Material.getFluid(), suffix);
+		TinkersConstructCompat.addMaterial(Material, Material.getFluid(), suffix);
 	}
 	
 	public static void registerMaterial(Material material, Fluid fluid, String suffix) {
 		if (fluid != null) {
-			TinkersConstructCompatibility.integrate(material, fluid, suffix);
+			TinkersConstructCompat.integrate(material, fluid, suffix);
 		} else {
 			TinkerRegistry.addMaterial(material);
 		}
@@ -113,11 +113,11 @@ public class TinkersConstructCompatibility {
 	}
 	
 	private static MaterialIntegration integrate(Material material, Fluid fluid, String suffix) {
-		return TinkersConstructCompatibility.add(new MaterialIntegration(material, fluid, suffix));
+		return TinkersConstructCompat.add(new MaterialIntegration(material, fluid, suffix));
 	}
 	
 	private static void addMaterial(Material material, Fluid fluid, String suffix) {
-		TinkersConstructCompatibility.registerMaterial(material, fluid, suffix);
+		TinkersConstructCompat.registerMaterial(material, fluid, suffix);
 		totalMaterials++;
 	}
 }

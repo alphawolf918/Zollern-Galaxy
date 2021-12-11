@@ -40,6 +40,7 @@ import zollerngalaxy.mobs.entities.boss.EntityXenomorphQueen;
 import zollerngalaxy.mobs.entities.villagers.EntityAbyssalVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityAstrosVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityCaligroVillager;
+import zollerngalaxy.mobs.entities.villagers.EntityCentotlVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityEdenVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityHarranVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityKriffonVillager;
@@ -79,6 +80,7 @@ import zollerngalaxy.mobs.renders.boss.RenderXenomorphQueen;
 import zollerngalaxy.mobs.renders.villagers.RenderAbyssalVillager;
 import zollerngalaxy.mobs.renders.villagers.RenderAstrosVillager;
 import zollerngalaxy.mobs.renders.villagers.RenderCaligroVillager;
+import zollerngalaxy.mobs.renders.villagers.RenderCentotlVillager;
 import zollerngalaxy.mobs.renders.villagers.RenderEdenVillager;
 import zollerngalaxy.mobs.renders.villagers.RenderHarranVillager;
 import zollerngalaxy.mobs.renders.villagers.RenderKriffonVillager;
@@ -131,6 +133,7 @@ public final class MobRenders {
 		RenderMob(EntityFacehugger.class, RenderFacehugger::new);
 		RenderMob(EntityXenomorph.class, RenderXenomorph::new);
 		RenderMob(EntityXenomorphQueen.class, RenderXenomorphQueen::new);
+		RenderMob(EntityCentotlVillager.class, RenderCentotlVillager::new);
 	}
 	
 	/**

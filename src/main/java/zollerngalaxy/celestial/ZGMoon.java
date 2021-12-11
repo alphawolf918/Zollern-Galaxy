@@ -550,14 +550,4 @@ public class ZGMoon extends Moon implements IZollernBody {
 		}
 		return bodyTemp;
 	}
-	
-	/*
-	 * (non-Javadoc)
-	 * @see zollerngalaxy.celestial.IZollernBody#getBodyTemp()
-	 */
-	@Override
-	public float getBodyTemp() {
-		// TODO
-		return 0;
-	}
 }
