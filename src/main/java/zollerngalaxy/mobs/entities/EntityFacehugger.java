@@ -72,11 +72,11 @@ public class EntityFacehugger extends EntityMob implements IShadeEntity, IEntity
 	@Override
 	protected void initEntityAI() {
 		this.tasks.addTask(1, new EntityAISwimming(this));
-		this.tasks.addTask(3, new EntityAILeapAtTarget(this, 1.4F));
-		this.tasks.addTask(4, new EntityFacehugger.AIFacehuggerAttack(this));
-		this.tasks.addTask(5, new EntityAIWanderAvoidWater(this, 1.8D));
-		this.tasks.addTask(6, new EntityAIWatchClosest(this, EntityPlayer.class, 1.4F));
-		this.tasks.addTask(6, new EntityAILookIdle(this));
+		this.tasks.addTask(2, new EntityAILeapAtTarget(this, 1.4F));
+		this.tasks.addTask(3, new EntityFacehugger.AIFacehuggerAttack(this));
+		this.tasks.addTask(4, new EntityAIWanderAvoidWater(this, 1.8D));
+		this.tasks.addTask(5, new EntityAIWatchClosest(this, EntityPlayer.class, 1.4F));
+		this.tasks.addTask(5, new EntityAILookIdle(this));
 		this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false, new Class[0]));
 		this.targetTasks.addTask(2, new EntityFacehugger.AIFacehuggerTarget(this, EntityPlayer.class));
 		this.targetTasks.addTask(3, new EntityFacehugger.AIFacehuggerTarget(this, EntityZGVillagerBase.class));

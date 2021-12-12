@@ -32,6 +32,7 @@ import net.minecraftforge.event.terraingen.PopulateChunkEvent;
 import net.minecraftforge.event.terraingen.TerrainGen;
 import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.biomes.decorators.BiomeDecoratorMetztli;
+import zollerngalaxy.util.BiomeUtils;
 import zollerngalaxy.worldgen.ZGWoodlandMansion;
 import zollerngalaxy.worldgen.mapgen.MapGenCavesZG;
 import zollerngalaxy.worldgen.mapgen.MapGenRavinesZG;
@@ -78,7 +79,7 @@ public class ChunkProviderMetztli extends ChunkProviderBase {
 	
 	public static ChunkProviderMetztli INSTANCE;
 	
-	private static final int CRATER_PROB = 100;
+	private static final int CRATER_PROB = 40;
 	
 	public ChunkProviderMetztli(World worldIn, long seed, boolean mapFeaturesEnabled) {
 		this.world = worldIn;
@@ -401,7 +402,7 @@ public class ChunkProviderMetztli extends ChunkProviderBase {
 		this.rand.setSeed(x * k + z * l ^ this.world.getSeed());
 		boolean flag = false;
 		
-		if (!ConfigManagerCore.disableMoonVillageGen) {
+		if (!ConfigManagerCore.disableMoonVillageGen && !BiomeUtils.isOceanBiome(biomegenbase)) {
 			flag = this.villageGenerator.generateStructure(this.world, this.rand, new ChunkPos(x, z));
 		}
 		
@@ -460,8 +461,8 @@ public class ChunkProviderMetztli extends ChunkProviderBase {
 	@Override
 	public void recreateStructures(Chunk chunk, int x, int z) {
 		this.mineshaftGenerator.generate(this.world, x, z, null);
-		
-		if (!ConfigManagerCore.disableMoonVillageGen) {
+		Biome biome = chunk.getWorld().getBiome(new BlockPos(x, 0, z));
+		if (!ConfigManagerCore.disableMoonVillageGen && !BiomeUtils.isOceanBiome(biome)) {
 			this.villageGenerator.generate(this.world, x, z, null);
 		}
 		

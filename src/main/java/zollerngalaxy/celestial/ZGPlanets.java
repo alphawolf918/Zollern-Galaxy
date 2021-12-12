@@ -11,11 +11,10 @@ import micdoodle8.mods.galacticraft.api.GalacticraftRegistry;
 import micdoodle8.mods.galacticraft.api.galaxies.GalaxyRegistry;
 import micdoodle8.mods.galacticraft.api.vector.Vector3;
 import micdoodle8.mods.galacticraft.api.world.EnumAtmosphericGas;
-import micdoodle8.mods.galacticraft.planets.mars.dimension.TeleportTypeMars;
-import micdoodle8.mods.galacticraft.planets.venus.dimension.TeleportTypeVenus;
 import zollerngalaxy.biomes.ZGBiomes;
 import zollerngalaxy.celestial.starsystems.ZGStar;
 import zollerngalaxy.celestial.starsystems.ZGStarSystem;
+import zollerngalaxy.celestial.teleporttypes.TeleportTypeBaseZG;
 import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderAltum;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderAstros;
@@ -692,29 +691,29 @@ public class ZGPlanets {
 	
 	public static void registerTeleportTypes() {
 		// Psios-6
-		GalacticraftRegistry.registerTeleportType(WorldProviderZollus.class, new TeleportTypeVenus());
-		GalacticraftRegistry.registerTeleportType(WorldProviderKriffon.class, new TeleportTypeVenus());
-		GalacticraftRegistry.registerTeleportType(WorldProviderPurgot.class, new TeleportTypeVenus());
-		GalacticraftRegistry.registerTeleportType(WorldProviderEden.class, new TeleportTypeVenus());
-		GalacticraftRegistry.registerTeleportType(WorldProviderAstros.class, new TeleportTypeVenus());
+		GalacticraftRegistry.registerTeleportType(WorldProviderZollus.class, new TeleportTypeBaseZG());
+		GalacticraftRegistry.registerTeleportType(WorldProviderKriffon.class, new TeleportTypeBaseZG());
+		GalacticraftRegistry.registerTeleportType(WorldProviderPurgot.class, new TeleportTypeBaseZG());
+		GalacticraftRegistry.registerTeleportType(WorldProviderEden.class, new TeleportTypeBaseZG());
+		GalacticraftRegistry.registerTeleportType(WorldProviderAstros.class, new TeleportTypeBaseZG());
 		
 		// Praedyth
-		GalacticraftRegistry.registerTeleportType(WorldProviderXathius.class, new TeleportTypeVenus());
-		GalacticraftRegistry.registerTeleportType(WorldProviderOasis.class, new TeleportTypeVenus());
-		GalacticraftRegistry.registerTeleportType(WorldProviderXantheon.class, new TeleportTypeVenus());
-		GalacticraftRegistry.registerTeleportType(WorldProviderCandora.class, new TeleportTypeVenus());
-		GalacticraftRegistry.registerTeleportType(WorldProviderAtheon.class, new TeleportTypeVenus());
+		GalacticraftRegistry.registerTeleportType(WorldProviderXathius.class, new TeleportTypeBaseZG());
+		GalacticraftRegistry.registerTeleportType(WorldProviderOasis.class, new TeleportTypeBaseZG());
+		GalacticraftRegistry.registerTeleportType(WorldProviderXantheon.class, new TeleportTypeBaseZG());
+		GalacticraftRegistry.registerTeleportType(WorldProviderCandora.class, new TeleportTypeBaseZG());
+		GalacticraftRegistry.registerTeleportType(WorldProviderAtheon.class, new TeleportTypeBaseZG());
 		
 		// Sol-2
-		GalacticraftRegistry.registerTeleportType(WorldProviderPerdita.class, new TeleportTypeMars());
-		GalacticraftRegistry.registerTeleportType(WorldProviderAltum.class, new TeleportTypeMars());
-		GalacticraftRegistry.registerTeleportType(WorldProviderCaligro.class, new TeleportTypeMars());
-		GalacticraftRegistry.registerTeleportType(WorldProviderExodus.class, new TeleportTypeMars());
+		GalacticraftRegistry.registerTeleportType(WorldProviderPerdita.class, new TeleportTypeBaseZG());
+		GalacticraftRegistry.registerTeleportType(WorldProviderAltum.class, new TeleportTypeBaseZG());
+		GalacticraftRegistry.registerTeleportType(WorldProviderCaligro.class, new TeleportTypeBaseZG());
+		GalacticraftRegistry.registerTeleportType(WorldProviderExodus.class, new TeleportTypeBaseZG());
 		
 		// Pantheon
-		GalacticraftRegistry.registerTeleportType(WorldProviderVortex.class, new TeleportTypeMars());
-		GalacticraftRegistry.registerTeleportType(WorldProviderMetztli.class, new TeleportTypeMars());
-		GalacticraftRegistry.registerTeleportType(WorldProviderCentotl.class, new TeleportTypeMars());
+		GalacticraftRegistry.registerTeleportType(WorldProviderVortex.class, new TeleportTypeBaseZG());
+		GalacticraftRegistry.registerTeleportType(WorldProviderMetztli.class, new TeleportTypeBaseZG());
+		GalacticraftRegistry.registerTeleportType(WorldProviderCentotl.class, new TeleportTypeBaseZG());
 		
 		// Olympus
 		// TODO

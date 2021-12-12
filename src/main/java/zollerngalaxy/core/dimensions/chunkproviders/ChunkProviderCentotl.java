@@ -35,6 +35,7 @@ import zollerngalaxy.biomes.decorators.BiomeDecoratorCentotl;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.blocks.fluids.ZGFluids;
 import zollerngalaxy.lib.helpers.ZGHelper;
+import zollerngalaxy.util.BiomeUtils;
 import zollerngalaxy.worldgen.mapgen.MapGenCavesZG;
 import zollerngalaxy.worldgen.mapgen.MapGenRavinesZG;
 import zollerngalaxy.worldgen.structures.villages.MapGenVillageZG;
@@ -391,7 +392,7 @@ public class ChunkProviderCentotl extends ChunkProviderBase {
 		long l = this.rand.nextLong() / 2L * 2L + 1L;
 		this.rand.setSeed(x * k + z * l ^ this.world.getSeed());
 		
-		if (!ConfigManagerCore.disableMoonVillageGen) {
+		if (!ConfigManagerCore.disableMoonVillageGen && !BiomeUtils.isOceanBiome(biomegenbase)) {
 			this.villageGenerator.generateStructure(this.world, this.rand, new ChunkPos(x, z));
 		}
 		
@@ -412,8 +413,8 @@ public class ChunkProviderCentotl extends ChunkProviderBase {
 	@Override
 	public void recreateStructures(Chunk chunk, int x, int z) {
 		this.mineshaftGenerator.generate(this.world, x, z, null);
-		
-		if (!ConfigManagerCore.disableMoonVillageGen) {
+		Biome biome = chunk.getWorld().getBiome(new BlockPos(x, 0, z));
+		if (!ConfigManagerCore.disableMoonVillageGen && !BiomeUtils.isOceanBiome(biome)) {
 			this.villageGenerator.generate(this.world, x, z, null);
 		}
 	}

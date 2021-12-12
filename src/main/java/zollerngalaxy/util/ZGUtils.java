@@ -15,6 +15,7 @@ import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldProvider;
+import net.minecraftforge.client.model.obj.OBJLoader;
 import net.minecraftforge.fml.client.FMLClientHandler;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
@@ -77,5 +78,9 @@ public class ZGUtils {
 	
 	public static double ConvertFromZero(double valIn) {
 		return ((valIn <= 0D) ? 0.1D : valIn);
+	}
+	
+	public static void registerOBJInstance(String modID) {
+		OBJLoader.INSTANCE.addDomain(modID);
 	}
 }

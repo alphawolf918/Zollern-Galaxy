@@ -33,7 +33,7 @@ public class BiomeRadiolarianLakes extends BiomeAtheonBase {
 		this.enableSnow = false;
 		this.grassFoliageColor = 0x009f00;
 		this.waterColor = 0x00009f;
-		this.stoneBlock = ZGBlocks.edenStone;
+		this.stoneBlock = ZGBlocks.atheonStone;
 	}
 	
 	@Override

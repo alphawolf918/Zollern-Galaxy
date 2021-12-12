@@ -33,6 +33,7 @@ import net.minecraft.world.gen.structure.MapGenMineshaft;
 import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.biomes.decorators.BiomeDecoratorAltum;
 import zollerngalaxy.blocks.ZGBlocks;
+import zollerngalaxy.util.BiomeUtils;
 import zollerngalaxy.worldgen.mapgen.MapGenCavesZG;
 import zollerngalaxy.worldgen.mapgen.MapGenRavinesZG;
 import zollerngalaxy.worldgen.structures.villages.MapGenVillageZG;
@@ -71,7 +72,7 @@ public class ChunkProviderAltum extends ChunkProviderBase {
 	private MapGenCavesZG caveGenerator = new MapGenCavesZG(ZGBlocks.altumStone);
 	private MapGenCavesZG caveGenerator2 = new MapGenCavesZG(ZGBlocks.altumStone);
 	private final MapGenRavinesZG ravineGenerator = new MapGenRavinesZG(ZGBlocks.altumStone);
-	private final MapGenVillageZG villageGenerator = new MapGenVillageZG("Altum", ZGBlocks.altumSand);
+	private final MapGenVillageZG villageGenerator = new MapGenVillageZG("Altum", ZGBlocks.altumRock);
 	private MapGenMineshaft mineshaftGenerator = new MapGenMineshaft();
 	private Biome[] biomesForGeneration;
 	private double[] octaves1;
@@ -394,7 +395,7 @@ public class ChunkProviderAltum extends ChunkProviderBase {
 		long l = this.rand.nextLong() / 2L * 2L + 1L;
 		this.rand.setSeed(x * k + z * l ^ this.world.getSeed());
 		
-		if (!ConfigManagerCore.disableMoonVillageGen) {
+		if (!ConfigManagerCore.disableMoonVillageGen && !BiomeUtils.isOceanBiome(biomegenbase)) {
 			this.villageGenerator.generateStructure(this.world, this.rand, new ChunkPos(x, z));
 		}
 		
@@ -415,8 +416,8 @@ public class ChunkProviderAltum extends ChunkProviderBase {
 	@Override
 	public void recreateStructures(Chunk chunk, int x, int z) {
 		this.mineshaftGenerator.generate(this.world, x, z, null);
-		
-		if (!ConfigManagerCore.disableMoonVillageGen) {
+		Biome biome = chunk.getWorld().getBiome(new BlockPos(x, 0, z));
+		if (!ConfigManagerCore.disableMoonVillageGen && !BiomeUtils.isOceanBiome(biome)) {
 			this.villageGenerator.generate(this.world, x, z, null);
 		}
 	}

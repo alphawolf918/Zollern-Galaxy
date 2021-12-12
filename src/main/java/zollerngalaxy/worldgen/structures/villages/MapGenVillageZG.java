@@ -18,11 +18,11 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.structure.MapGenStructure;
+import net.minecraft.world.gen.structure.MapGenStructureData;
 import net.minecraft.world.gen.structure.MapGenStructureIO;
 import net.minecraft.world.gen.structure.StructureStart;
-import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.blocks.ZGBlocks;
-import zollerngalaxy.core.enums.EnumBiomeTypeZG;
+import zollerngalaxy.util.BiomeUtils;
 
 public class MapGenVillageZG extends MapGenStructure {
 	
@@ -32,6 +32,7 @@ public class MapGenVillageZG extends MapGenStructure {
 	private String worldName;
 	private IBlockState VILLAGE_BLOCK;
 	private static MapGenVillageZG INSTANCE;
+	private MapGenStructureData structureData;
 	
 	static {
 		try {
@@ -81,11 +82,8 @@ public class MapGenVillageZG extends MapGenStructure {
 		
 		//////////////////////////////////////////////////////////////
 		Biome biome = world.getBiome(new BlockPos(i, 0, j));
-		if (biome instanceof BiomeSpace) {
-			BiomeSpace spaceBiome = (BiomeSpace) biome;
-			if (spaceBiome.getBiomeType() == EnumBiomeTypeZG.OCEAN) {
-				return false;
-			}
+		if (BiomeUtils.isOceanBiome(biome)) {
+			return false;
 		}
 		//////////////////////////////////////////////////////////////
 		

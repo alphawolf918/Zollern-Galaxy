@@ -334,7 +334,7 @@ public abstract class ZGHelper {
 	 *            The DamageSource; must be a ZGDamageSrc instance.
 	 */
 	public static void performBlueprintCheck(Random rand, Item blueprintItem, EntityPlayer player, ZGDamageSrc dSrc) {
-		if (rand.nextInt(28) <= 4) {
+		if (rand.nextInt(100) <= 5) {
 			float dmg = dSrc.getDamageBase();
 			if (!ZGHelper.checkInventoryForItem(blueprintItem, player)) {
 				player.attackEntityFrom(dSrc, dmg);
@@ -348,7 +348,7 @@ public abstract class ZGHelper {
 	}
 	
 	public static void performBluePrintCheck(Random rand, Item blueprintItem, EntityPlayer player, DamageSourceGC dSrc, float dmg) {
-		if (rand.nextInt(28) <= 4) {
+		if (rand.nextInt(100) <= 5) {
 			if (!ZGHelper.checkInventoryForItem(blueprintItem, player)) {
 				player.attackEntityFrom(dSrc, dmg);
 			} else {
@@ -361,7 +361,7 @@ public abstract class ZGHelper {
 	}
 	
 	public static void performBluePrintCheck(Random rand, Item blueprintItem, EntityPlayer player, DamageSource dSrc, float dmg) {
-		if (rand.nextInt(28) <= 4) {
+		if (rand.nextInt(100) <= 5) {
 			if (!ZGHelper.checkInventoryForItem(blueprintItem, player)) {
 				player.attackEntityFrom(dSrc, dmg);
 			} else {
@@ -396,5 +396,9 @@ public abstract class ZGHelper {
 		DimensionType dim = DimensionType.register(dimName, dimUnlocalizedName, dimID, worldProvider, false);
 		DimensionManager.registerDimension(dimID, dim);
 		return dim;
+	}
+	
+	public static Logger getLogger() {
+		return LOGGER;
 	}
 }
