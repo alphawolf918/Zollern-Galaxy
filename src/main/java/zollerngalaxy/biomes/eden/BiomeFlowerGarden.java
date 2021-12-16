@@ -27,7 +27,7 @@ public class BiomeFlowerGarden extends BiomeEdenBase {
 		props.setTemperature(4.0F);
 		this.setTempCategory(TempCategory.MEDIUM);
 		this.setTemp(4.0F);
-		this.setBiomeHeight(42);
+		this.setBiomeHeight(72);
 		this.setBiomeType(EnumBiomeTypeZG.LUSH);
 		this.enableSnow = false;
 		this.decorator.generateFalls = true;

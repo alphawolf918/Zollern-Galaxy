@@ -24,8 +24,6 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.blocks.fluids.ZGFluidBase;
-import zollerngalaxy.core.ZollernGalaxyCore;
-import zollerngalaxy.lib.helpers.json.JSONFactory;
 
 public class BlockIngotStack2 extends ZGBlockBase {
 	
@@ -40,9 +38,9 @@ public class BlockIngotStack2 extends ZGBlockBase {
 		this.droppedItem = ingotIn;
 		this.setHardResist(6.0F, 10.0F);
 		this.setMaterial(Material.IRON);
-		if (ZollernGalaxyCore.instance().isInDevMode()) {
-			JSONFactory.registerIngotStack("ingotstack_" + blockName);
-		}
+		// if (ZollernGalaxyCore.instance().isInDevMode()) {
+		// JSONFactory.registerIngotStack("ingotstack_" + blockName);
+		// }
 	}
 	
 	public boolean canBlockStay(World world, BlockPos pos, IBlockState state) {

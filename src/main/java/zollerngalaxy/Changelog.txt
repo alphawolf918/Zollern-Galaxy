@@ -1,50 +1,17 @@
 ===== CHANGELOG =====
-Zollern Galaxy v2.0.33
+Zollern Galaxy v2.0.34
 =====================
 
 [NEW]
-* Added the next new planet, Centotl.
-* Added the Kriffon, Purgot and Centotl Villagers.
-    - Planet is themed after LV-426 from Alien (1979). Shares similarities, but has its own take on it.
-    - Random "Facehugger Eggs" spawn throughout the planet. Try interacting with one.
-* Added the Facehugger Egg block.
-    - Similar to the Spiderling Egg, breaking one spawns 1 to 4 of the creatures.
-    - Facehuggers and Xenomorphs have the capability to hatch these eggs if they come into contact with them.
-* Added the Facehugger mob.
-    - Almost a one-hit K.O. if it attacks you, so exercise caution.
-        - This might end up as a config option later.
-    - If killed by a Facehugger, a Xenomoprh is spawned where the entity (or Player) was killed.
-        - There is a 5% chance that it will be a Queen.
-* Added the Xenomorph mob.
-    - Usually only spawns when a Player or entity is killed by a Facehugger, but has been known to spawn elsewhere.
-        - They mostly come at night. Mostly.
-    - There is a 25% chance that it could be a Queen Xenomorph when an entity is killed by a Facehugger.
-    - When anything is killed by a Xenomorph, another one is spawned.
-* Added the Queen Xenomorph mob.
-    - This is the mod's second boss mob, and is by far the deadliest ever added. Serious firepower will be required.
-        - Probably best to nuke it from orbit. It's the only way to be sure.
-* Added a config option to toggle showing of Mutant Zombie name tags.
-* Added a config option to disable Chargium Lakes on Vortex.
-* Added a config option to enable or disable Extra Planets compatibility.
-    - If enabled, the mods will work together (on ZG's end).
-* Added the Euclid galaxy.
-* Added a custom Teleport Type to hopefully prevent the Player from teleporting into an ocean of any sort.
-    - This uses the Lunar Lander.
+* 
 
 [CHANGES]
-* Updated a few block textures.
-* Slightly decreased chance of Wind Blowing event to fire on Vortex.
-* Slightly decreased size of bounding box in Wind Blowing event on Vortex.
-* Slightly lowered rain strength and thunder strength on Vortex.
-* Slightly increased day length on Vortex.
-* Slightly increased sun brightness on Vortex.
-* Greatly decreased chance of lightning striking in Player ticks on Vortex.
-* Greatly decreased chunk size on Vortex.
-* Halved the total number of blocks that the Wind Blowing event could push the Player on Vortex.
+* Updated texture for Pantheon star.
+* Updated texture for Oasis rock.
+* Updated texture for Outpost Block.
+* 
 
 [FIXES]
-* Fixed glitch with Galactic HUD regarding F/C temperatures. There was a logic error with type-casting and variable referencing.
-* Fixed Wind Blowing event still firing even when the config option was turned off.
-* Fixed Storm Amulet not stopping Wind Blowing event when in Creative Mode.
-* Fixed (hopefully) ZG Alien Villages spawning in ocean-type biomes.
-* Fixed Player deaths sometimes spawning Zombies when not on Metztli.
+* Fixed Xenomorphs not attacking.
+* Fixed Astros Redstone Ore missing from block registration.
+* 

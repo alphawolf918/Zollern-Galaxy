@@ -17,7 +17,6 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldEntitySpawner;
 import net.minecraft.world.WorldType;
 import net.minecraft.world.biome.Biome;
-import net.minecraft.world.biome.Biome.TempCategory;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.gen.NoiseGenerator;
@@ -154,7 +153,7 @@ public class ChunkProviderEden extends ChunkProviderBase {
 									primer.setBlockState(x, y, z, STONE);
 								} else if (y < SEA_LEVEL) {
 									Biome biome = world.getBiome(new BlockPos(x, y, z));
-									IBlockState blockToUse = (biome.getTempCategory() == TempCategory.COLD) ? ICE : WATER;
+									IBlockState blockToUse = (BiomeUtils.isColdBiome(biome)) ? ICE : WATER;
 									primer.setBlockState(x, y, z, blockToUse);
 								}
 							}

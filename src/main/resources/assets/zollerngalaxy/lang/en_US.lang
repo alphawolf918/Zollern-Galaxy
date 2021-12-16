@@ -417,6 +417,30 @@ tile.centoironore.name=Centotl Iron Ore
 tile.centozollerniumore.name=Centotl Zollernium Ore
 tile.facehugger_egg.name=Facehugger Egg
 
+tile.tocisand.name=Toci Sand
+tile.tocistarsand.name=Toci Star Sand
+tile.tocicobblestone.name=Toci Cobblestone
+tile.tocicobblestonemossy.name=Toci Mossy Cobblestone
+tile.tocistone.name=Toci Stone
+tile.tocistonebrick.name=Toci Stone Bricks
+tile.tocigravel.name=Toci Gravel
+tile.tocinickelore.name=Toci Nickel Ore
+tile.tocitinore.name=Toci Tin Ore
+tile.tocibronzeore.name=Toci Bronze Ore
+tile.tocisilverore.name=Toci Silver Ore
+tile.tocileadore.name=Toci Lead Ore
+tile.tocicopperore.name=Toci Copper Ore
+tile.tocizincore.name=Toci Zinc Ore
+tile.tocisupercoalore.name=Toci Super Charged Coal Ore
+tile.tociredstoneore.name=Toci Redstone Ore
+tile.tocigoldore.name=Toci Gold Ore
+tile.tociamaranthore.name=Toci Amaranth Ore
+tile.tociemeraldore.name=Toci Emerald Ore
+tile.tocicoalore.name=Toci Coal Ore
+tile.tocifueltoniumore.name=Toci Fueltonium Ore
+tile.tociironore.name=Toci Iron Ore
+tile.tocidiamondore.name=Toci Diamond Ore
+
 tile.endrock.name=Endrock
 
 tile.heartblock.name=Healing Station

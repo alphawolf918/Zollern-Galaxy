@@ -16,8 +16,6 @@ import java.util.List;
 import java.util.Map;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonPrimitive;
 import net.minecraftforge.common.config.Configuration;
 import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.ZollernGalaxyCore;
@@ -44,9 +42,11 @@ public final class JSONFactory {
 	// Shouldn't need to edit below this line
 	private static final String ASSETS_PATH = "../../../../src/main/resources/assets/";
 	private static final String FULL_PATH = ASSETS_PATH + MOD_ID;
-	private static final String JSON_TEMPLATE_PATH = "../../../../JSON_Templates/";
+	private static final String MAIN_PATH = "../../../../";
+	private static final String JSON_TEMPLATE_PATH = "C:\\Forge1-12-2-ZollernGalaxy\\JSON_Templates\\";
 	
 	private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
+	
 	private static File ITEM_DIR = null;
 	private static File BLOCK_DIR = null;
 	private static File BLOCK_STATES_DIR = null;
@@ -334,137 +334,44 @@ public final class JSONFactory {
 			return;
 		}
 		
-		String jsonFileName = blockName + ".json";
-		JSONFactory.setupBlockDirs();
-		
-		Map<String, Object> json = new LinkedHashMap<>();
-		Map<String, Object> textures = new LinkedHashMap<>();
-		Map<String, Object> n0 = new LinkedHashMap<>();
-		Map<String, Object> particle = new LinkedHashMap<>();
-		Map<String, Object> elements = new LinkedHashMap<>();
-		Map<String, Object> groups = new LinkedHashMap<>();
-		
-		// Textures
-		textures.put("n0", MOD_ID + ":" + blockName);
-		textures.put("particle", MOD_ID + ":" + blockName);
-		json.put("textures", textures);
-		
-		// Elements
-		JsonArray from1 = new JsonArray();
-		from1.add(new JsonPrimitive(5));
-		from1.add(new JsonPrimitive(0));
-		from1.add(new JsonPrimitive(2));
-		JsonArray to1 = new JsonArray();
-		to1.add(new JsonPrimitive(11));
-		to1.add(new JsonPrimitive(2));
-		to1.add(new JsonPrimitive(5));
-		elements.put("name", "Shape1");
-		elements.put("from", from1);
-		elements.put("to", to1);
-		elements.put("shade", false);
-		
+		// String jsonFileName = blockName + ".json";
+		// JSONFactory.setupBlockDirs();
 		//
-		Map<String, Object> faces1 = new LinkedHashMap<>();
+		// File file = new File(BLOCK_CUSTOM_DIR, jsonFileName);
+		// while (file.exists()) {
+		// file.delete();
+		// }
 		//
+		// Map<String, Object> json = new LinkedHashMap<>();
 		//
-		Map<String, Object> north1 = new LinkedHashMap<>();
-		Map<String, Object> uv1 = new LinkedHashMap<>();
-		JsonArray uv1A = new JsonArray();
-		uv1A.add(new JsonPrimitive(9));
-		uv1A.add(new JsonPrimitive(3));
-		uv1A.add(new JsonPrimitive(3));
-		uv1A.add(new JsonPrimitive(5));
-		north1.put("uv", uv1A);
-		north1.put("texture", "#0");
+		// // TODO
 		//
+		// Path src = Paths.get(JSON_TEMPLATE_PATH + "IngotStack.json");
+		// Path target = Paths.get(BLOCK_CUSTOM_DIR + "/" + jsonFileName);
 		//
-		Map<String, Object> east1 = new LinkedHashMap<>();
-		Map<String, Object> uv2 = new LinkedHashMap<>();
-		JsonArray uv1B = new JsonArray();
-		uv1B.add(new JsonPrimitive(12));
-		uv1B.add(new JsonPrimitive(3));
-		uv1B.add(new JsonPrimitive(9));
-		uv1B.add(new JsonPrimitive(5));
-		east1.put("uv", uv1B);
-		east1.put("texture", "#0");
+		// try {
+		// Files.copy(src.toFile(), target.toFile());
+		// BufferedReader reader = Files.newReader(target.toFile(), Charset.defaultCharset());
+		// Map<String, Object> map = GSON.fromJson(reader, Map.class);
+		// for (Map.Entry<String, Object> entry : map.entrySet()) {
+		// ZGHelper.Log(entry.getKey() + "=" + entry.getValue());
+		// }
+		// reader.close();
+		// } catch (IOException e) {
+		// ZGHelper.LogErr("Error when attempting to copy " + src + " to " + target);
+		// e.printStackTrace();
+		// }
 		//
-		//
-		Map<String, Object> south1 = new LinkedHashMap<>();
-		Map<String, Object> uv3 = new LinkedHashMap<>();
-		JsonArray uv1C = new JsonArray();
-		uv1C.add(new JsonPrimitive(18));
-		uv1C.add(new JsonPrimitive(3));
-		uv1C.add(new JsonPrimitive(12));
-		uv1C.add(new JsonPrimitive(5));
-		south1.put("uv", uv1C);
-		south1.put("texture", "#0");
-		//
-		//
-		Map<String, Object> west1 = new LinkedHashMap<>();
-		Map<String, Object> uv4 = new LinkedHashMap<>();
-		JsonArray uv1D = new JsonArray();
-		uv1D.add(new JsonPrimitive(3));
-		uv1D.add(new JsonPrimitive(3));
-		uv1D.add(new JsonPrimitive(0));
-		uv1D.add(new JsonPrimitive(5));
-		west1.put("uv", uv1D);
-		west1.put("texture", "#0");
-		//
-		//
-		Map<String, Object> up1 = new LinkedHashMap<>();
-		Map<String, Object> uv5 = new LinkedHashMap<>();
-		JsonArray uv1E = new JsonArray();
-		uv1E.add(new JsonPrimitive(3));
-		uv1E.add(new JsonPrimitive(3));
-		uv1E.add(new JsonPrimitive(9));
-		uv1E.add(new JsonPrimitive(0));
-		up1.put("uv", uv1E);
-		up1.put("texture", "#0");
-		//
-		//
-		Map<String, Object> down1 = new LinkedHashMap<>();
-		Map<String, Object> uv6 = new LinkedHashMap<>();
-		JsonArray uv1F = new JsonArray();
-		uv1F.add(new JsonPrimitive(9));
-		uv1F.add(new JsonPrimitive(0));
-		uv1F.add(new JsonPrimitive(15));
-		uv1F.add(new JsonPrimitive(3));
-		down1.put("uv", uv1E);
-		down1.put("texture", "#0");
-		//
-		//
-		//
-		//
-		faces1.put("north", north1);
-		faces1.put("east", east1);
-		faces1.put("south", south1);
-		faces1.put("west", west1);
-		faces1.put("up", up1);
-		faces1.put("down", down1);
-		//
-		//
-		//
-		//
-		JsonArray f1 = new JsonArray();
-		elements.put("faces", faces1);
-		json.put("elements", elements);
-		
-		// Groups
+		// JSONFactory.registerIngotStackBlockState(blockName);
+	}
+	
+	private static void registerIngotStackBlockState(String blockName) {
 		// TODO
-		
-		// Write
-		File file = new File(BLOCK_CUSTOM_DIR, jsonFileName);
-		
-		while (file.exists()) {
-			file.delete();
-			file = new File(BLOCK_CUSTOM_DIR, jsonFileName);
-		}
-		
-		try (FileWriter writer = new FileWriter(file)) {
-			GSON.toJson(json, writer);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		JSONFactory.registerIngotStackBlockItem(blockName);
+	}
+	
+	private static void registerIngotStackBlockItem(String blockName) {
+		// TODO
 	}
 	
 	private static void registerSaplingBlockState(String blockName) {

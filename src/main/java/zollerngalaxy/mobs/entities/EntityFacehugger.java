@@ -112,7 +112,7 @@ public class EntityFacehugger extends EntityMob implements IShadeEntity, IEntity
 	
 	@Override
 	protected void playStepSound(BlockPos pos, Block blockIn) {
-		this.playSound(SoundEvents.ENTITY_SPIDER_STEP, 0.15F, 1.0F);
+		this.playSound(SoundEvents.ENTITY_SPIDER_STEP, 0.3F, 0.5F);
 	}
 	
 	@Override
@@ -135,6 +135,7 @@ public class EntityFacehugger extends EntityMob implements IShadeEntity, IEntity
 		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(10.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.29621341192092896D);
 		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(10.0F);
+		this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(55.0D);
 	}
 	
 	@Override

@@ -24,7 +24,7 @@ public class BiomeBloodDesert extends BiomeEdenBase {
 		props.setTemperature(8.0F);
 		this.setTempCategory(TempCategory.WARM);
 		this.setTemp(8.9F);
-		this.setBiomeHeight(102);
+		this.setBiomeHeight(62);
 		this.setBiomeType(EnumBiomeTypeZG.DESERT);
 		this.biomeDecor.edenTallGrassPerChunk = 0;
 		this.biomeDecor.edenFlowersPerChunk = 0;

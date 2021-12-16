@@ -95,7 +95,7 @@ public class SkyProviderOrbitZG extends SkyProviderOrbit {
 	
 	@Override
 	public void render(float partialTicks, WorldClient world, Minecraft mc) {
-		final float var20 = 400.0F + (float) this.minecraft.player.posY / 2F;
+		final float var20 = 200.0F + (float) this.minecraft.player.posY / 2F;
 		
 		// // if (this.minecraft.player.getRidingEntity() != null)
 		// {
@@ -278,7 +278,7 @@ public class SkyProviderOrbitZG extends SkyProviderOrbit {
 	}
 	
 	private void renderStars() {
-		final Random var1 = new Random(10842L);
+		final Random var1 = new Random(1084L);
 		final Tessellator var2 = Tessellator.getInstance();
 		var2.getBuffer().begin(GL11.GL_QUADS, DefaultVertexFormats.POSITION);
 		

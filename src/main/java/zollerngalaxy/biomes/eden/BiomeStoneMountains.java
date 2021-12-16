@@ -24,7 +24,7 @@ public class BiomeStoneMountains extends BiomeEdenBase {
 		props.setTemperature(7.2F);
 		this.setTempCategory(TempCategory.WARM);
 		this.setTemp(7.2F);
-		this.setBiomeHeight(120);
+		this.setBiomeHeight(81);
 		this.setBiomeType(EnumBiomeTypeZG.ROCKY);
 		this.enableSnow = false;
 		this.decorator.generateFalls = true;

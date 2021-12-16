@@ -55,6 +55,7 @@ public class CraftingRecipes {
 		CraftingRecipes.addRockBricks(ZGBlocks.perdCaveStone, ZGBlocks.perdCaveStoneBricks);
 		CraftingRecipes.addRockBricks(ZGBlocks.caligroStone, ZGBlocks.caligroStoneBricks);
 		CraftingRecipes.addRockBricks(ZGBlocks.corruptStone, ZGBlocks.corruptStoneBricks);
+		CraftingRecipes.addRockBricks(ZGBlocks.tociStone, ZGBlocks.tociStoneBricks);
 		
 		// Items -> Blocks
 		CraftingRecipes.addIngotMetal(ZGItems.ingotVirinium, ZGBlocks.blockViri);
@@ -322,7 +323,7 @@ public class CraftingRecipes {
 		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.ascendium, 1),
 				new Object[] { " Z ", " C ", " A ", 'Z', ZGItems.compressedZollernium, 'C', ZGItems.compressedZucrite, 'A', ZGItems.compressedAmaranth });
 		
-		// Power Stick (Rod of Ascension)
+		// Power Stick (Staff of Ascension)
 		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.powerStick, 2), new Object[] { " A ", " L ", " A ", 'A', ZGItems.compressedAmaranth, 'L', ZGItems.lapisStick });
 		totalCraftRecipes++;
 		

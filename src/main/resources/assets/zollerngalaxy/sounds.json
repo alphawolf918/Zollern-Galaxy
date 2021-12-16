@@ -283,8 +283,7 @@
    "mob.xenomorph.queen.hurt":{
       "category":"master",
       "sounds":[
-         "zollerngalaxy:mob/xenomorph/queen/hurt1",
-         "zollerngalaxy:mob/xenomorph/queen/hurt2"
+         "zollerngalaxy:mob/xenomorph/queen/hurt1"
       ],
       "subtitle":"zollerngalaxy.subtitle.xenomorph.queen.hurt"
    },

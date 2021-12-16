@@ -30,6 +30,7 @@ import net.minecraft.world.gen.NoiseGenerator;
 import net.minecraft.world.gen.NoiseGeneratorOctaves;
 import net.minecraft.world.gen.NoiseGeneratorPerlin;
 import net.minecraft.world.gen.structure.MapGenMineshaft;
+import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.biomes.decorators.BiomeDecoratorOasis;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.util.BiomeUtils;
@@ -73,7 +74,7 @@ public class ChunkProviderOasis extends ChunkProviderBase {
 	private double[] octaves3;
 	private double[] octaves4;
 	
-	private static final int CRATER_PROB = 100;
+	private static final int CRATER_PROB = 40;
 	
 	public ChunkProviderOasis(World worldIn, long seed, boolean mapFeaturesEnabled) {
 		this.world = worldIn;
@@ -150,10 +151,23 @@ public class ChunkProviderOasis extends ChunkProviderBase {
 								int y = i2 * 8 + j2;
 								int z = l * 4 + l2;
 								
+								double chunkHeight = CHUNK_HEIGHT;
+								
+								Biome biome = world.getBiome(new BlockPos(x, y, z));
+								double heightMod = 0.0D;
+								
+								if (biome instanceof BiomeSpace) {
+									BiomeSpace spaceBiome = (BiomeSpace) biome;
+									heightMod = (spaceBiome.getBiomeHeight());
+								}
+								
+								if (heightMod > 0.0D) {
+									chunkHeight = (CHUNK_HEIGHT + heightMod);
+								}
+								
 								if ((lvt_45_1_ += d16) > this.noiseGenSmooth1.getNoise(chunkX * 16 + x, chunkZ * 16 + z) * CHUNK_HEIGHT) {
 									primer.setBlockState(x, y, z, STONE);
 								} else if (y < SEA_LEVEL) {
-									Biome biome = world.getBiome(new BlockPos(x, y, z));
 									IBlockState blockToUse = WATER;
 									primer.setBlockState(x, y, z, blockToUse);
 								}

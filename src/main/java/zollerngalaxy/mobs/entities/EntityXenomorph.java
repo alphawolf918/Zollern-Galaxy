@@ -18,13 +18,11 @@ import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIBreakDoor;
 import net.minecraft.entity.ai.EntityAILeapAtTarget;
-import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAIMoveThroughVillage;
 import net.minecraft.entity.ai.EntityAIMoveTowardsRestriction;
 import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
 import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.ai.EntityAIWanderAvoidWater;
-import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.monster.EntityCreeper;
 import net.minecraft.entity.monster.EntityEnderman;
@@ -56,8 +54,6 @@ public class EntityXenomorph extends EntityMob implements IShadeEntity, IEntityB
 	protected static final DataParameter<Boolean> ARMS_RAISED = EntityDataManager.<Boolean> createKey(EntityXenomorph.class, DataSerializers.BOOLEAN);
 	protected final EntityAIBreakDoor breakDoor = new EntityAIBreakDoor(this);
 	protected boolean isBreakDoorsTaskSet;
-	protected double moveSpeed = 1.5D;
-	protected float watchDistance = 8.5F;
 	
 	public EntityXenomorph(World worldIn) {
 		super(worldIn);
@@ -70,32 +66,24 @@ public class EntityXenomorph extends EntityMob implements IShadeEntity, IEntityB
 	
 	@Override
 	protected void initEntityAI() {
-		this.tasks.addTask(0, new EntityAISwimming(this));
-		this.tasks.addTask(1, new EntityAIXenomorphAttack(this, this.moveSpeed, false));
-		this.tasks.addTask(2, new EntityAIMoveTowardsRestriction(this, this.moveSpeed));
-		this.tasks.addTask(3, new EntityAILeapAtTarget(this, (float) this.moveSpeed));
-		this.tasks.addTask(3, new EntityAIWanderAvoidWater(this, this.moveSpeed));
-		this.tasks.addTask(3, new EntityAIWatchClosest(this, EntityPlayer.class, this.watchDistance));
-		this.tasks.addTask(3, new EntityAIWatchClosest(this, EntityZGVillagerBase.class, this.watchDistance));
-		this.tasks.addTask(3, new EntityAIWatchClosest(this, EntityAlienVillager.class, this.watchDistance));
-		this.tasks.addTask(3, new EntityAIWatchClosest(this, EntityZombie.class, this.watchDistance));
-		this.tasks.addTask(3, new EntityAIWatchClosest(this, EntitySpider.class, this.watchDistance));
-		this.tasks.addTask(3, new EntityAIWatchClosest(this, EntityEnderman.class, this.watchDistance));
-		this.tasks.addTask(3, new EntityAIWatchClosest(this, EntityAgeable.class, this.watchDistance));
-		this.tasks.addTask(3, new EntityAILookIdle(this));
+		this.tasks.addTask(1, new EntityAISwimming(this));
+		this.tasks.addTask(2, new EntityAILeapAtTarget(this, 1.4F));
+		this.tasks.addTask(3, new EntityAIXenomorphAttack(this, 1.4F, true));
+		this.tasks.addTask(4, new EntityAIMoveTowardsRestriction(this, 1.8F));
+		this.tasks.addTask(5, new EntityAIWanderAvoidWater(this, 1.4F));
 		this.applyEntityAI();
 	}
 	
 	protected void applyEntityAI() {
-		this.tasks.addTask(4, new EntityAIMoveThroughVillage(this, this.moveSpeed, false));
-		this.targetTasks.addTask(1, new EntityAINearestAttackableTarget(this, EntityPlayer.class, true));
-		this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityZGVillagerBase.class, true));
-		this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityAlienVillager.class, true));
-		this.targetTasks.addTask(4, new EntityAINearestAttackableTarget(this, EntityZombie.class, true));
-		this.targetTasks.addTask(5, new EntityAINearestAttackableTarget(this, EntitySpider.class, true));
-		this.targetTasks.addTask(6, new EntityAINearestAttackableTarget(this, EntityCreeper.class, true));
-		this.targetTasks.addTask(7, new EntityAINearestAttackableTarget(this, EntityEnderman.class, true));
-		this.targetTasks.addTask(8, new EntityAINearestAttackableTarget(this, EntityAgeable.class, true));
+		this.tasks.addTask(6, new EntityAIMoveThroughVillage(this, 1.8F, false));
+		this.targetTasks.addTask(6, new EntityAINearestAttackableTarget(this, EntityPlayer.class, true));
+		this.targetTasks.addTask(7, new EntityAINearestAttackableTarget(this, EntityZGVillagerBase.class, true));
+		this.targetTasks.addTask(8, new EntityAINearestAttackableTarget(this, EntityAlienVillager.class, true));
+		this.targetTasks.addTask(9, new EntityAINearestAttackableTarget(this, EntityZombie.class, true));
+		this.targetTasks.addTask(10, new EntityAINearestAttackableTarget(this, EntitySpider.class, true));
+		this.targetTasks.addTask(11, new EntityAINearestAttackableTarget(this, EntityCreeper.class, true));
+		this.targetTasks.addTask(12, new EntityAINearestAttackableTarget(this, EntityEnderman.class, true));
+		this.targetTasks.addTask(13, new EntityAINearestAttackableTarget(this, EntityAgeable.class, true));
 	}
 	
 	@Override

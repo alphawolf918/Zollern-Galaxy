@@ -602,12 +602,27 @@ public class ZGPlanets {
 		
 		// Toci
 		// TODO
+		// planetToci.setDimensionInfo(ConfigManagerZG.planetTociDimensionId,
+		// WorldProviderToci.class);
 		planetToci.setParentSolarSystem(systemPantheon);
-		planetToci.setRelativeSize(1.0F);
-		planetToci.setDistanceFromCenter(1.0F);
+		planetToci.setBodyClass(EnumBodyClass.DESERT);
 		planetToci.setRelativeOrbitTime(4.0F);
-		planetToci.setPhaseShift(1.0F);
+		planetToci.setDistanceFromCenter(1.5F);
+		planetToci.setTierRequired(ConfigManagerZG.planetTociDimensionId);
+		if (ConfigManagerZG.planetUnreachableToci || ConfigManagerZG.planetUnreachableAll) {
+			planetToci.setDisableRockets();
+		}
+		planetToci.setBodyTemperature(76.35F);
+		planetToci.setDensity(0.1F);
+		planetToci.setHasRain(false);
+		planetToci.setBodyToxicity(0.01F);
+		planetToci.setBodyRadiation(0.01F);
+		planetToci.setWindLevel(0.0F);
+		planetToci.setBodyGasses(EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.CO2, EnumAtmosphericGas.NITROGEN, EnumAtmosphericGas.WATER);
+		planetToci.setBreathable(true);
+		planetToci.setAtmosphere();
 		planetToci.setBodyIcon("toci");
+		totalPlanets++;
 		
 		// Tlaloc
 		// TODO
@@ -714,6 +729,10 @@ public class ZGPlanets {
 		GalacticraftRegistry.registerTeleportType(WorldProviderVortex.class, new TeleportTypeBaseZG());
 		GalacticraftRegistry.registerTeleportType(WorldProviderMetztli.class, new TeleportTypeBaseZG());
 		GalacticraftRegistry.registerTeleportType(WorldProviderCentotl.class, new TeleportTypeBaseZG());
+		// GalacticraftRegistry.registerTeleportType(WorldProviderToci.class, new
+		// TeleportTypeBaseZG());
+		// GalacticraftRegistry.registerTeleportType(WorldProviderTlaloc.class, new
+		// TeleportTypeBaseZG());
 		
 		// Olympus
 		// TODO

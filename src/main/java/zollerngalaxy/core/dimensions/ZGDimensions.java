@@ -101,6 +101,8 @@ public class ZGDimensions {
 	public static DimensionType CENTOTL_ORBIT;
 	public static DimensionType CENTOTL_ORBIT_STATIC;
 	
+	public static DimensionType TOCI;
+	
 	public static void init() {
 		// Psion-6 (Zollus)
 		ZGDimensions.ZOLLUS = ZGDimensions.getDimType(ConfigManagerZG.planetZollusDimensionId);
@@ -215,6 +217,9 @@ public class ZGDimensions {
 				WorldProviderOrbitCentotl.class, false);
 		ZGDimensions.CENTOTL_ORBIT_STATIC = DimensionType.register("Centotl Space Station", "_centotl_orbit", ConfigManagerZG.spaceStationCentotlStaticId,
 				WorldProviderOrbitCentotl.class, true);
+		
+		// Pantheon (Toci)
+		ZGDimensions.TOCI = ZGDimensions.getDimType(ConfigManagerZG.planetTociDimensionId);
 	}
 	
 	public static DimensionType getDimType(int dimId) {

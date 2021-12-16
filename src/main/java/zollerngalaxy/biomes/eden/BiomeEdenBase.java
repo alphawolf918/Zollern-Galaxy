@@ -41,6 +41,7 @@ import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 import zollerngalaxy.mobs.entities.EntityMoolus;
 import zollerngalaxy.mobs.entities.EntityOinkus;
 import zollerngalaxy.mobs.entities.villagers.EntityEdenVillager;
+import zollerngalaxy.util.BiomeUtils;
 
 public abstract class BiomeEdenBase extends BiomeSpace {
 	
@@ -139,7 +140,7 @@ public abstract class BiomeEdenBase extends BiomeSpace {
 				} else {
 					if (iblockstate2.getMaterial() == Material.AIR) {
 						j = -1;
-					} else if (iblockstate2.getBlock() == ZGBlocks.edenStone) {
+					} else if (iblockstate2.getBlock() == STONE.getBlock()) {
 						if (j == -1) {
 							if (k <= 0) {
 								topState = AIR;
@@ -150,7 +151,7 @@ public abstract class BiomeEdenBase extends BiomeSpace {
 							}
 							
 							if (j1 < i && (topState == null || topState.getMaterial() == Material.AIR)) {
-								topState = (this.getIsColdBiome()) ? ICE : WATER;
+								topState = (BiomeUtils.isColdBiome(this)) ? ICE : WATER;
 							}
 							
 							j = k;
@@ -188,5 +189,4 @@ public abstract class BiomeEdenBase extends BiomeSpace {
 	public int getModdedBiomeGrassColor(int original) {
 		return this.grassFoliageColor;
 	}
-	
 }

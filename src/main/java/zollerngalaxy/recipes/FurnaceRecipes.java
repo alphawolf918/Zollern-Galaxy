@@ -74,11 +74,14 @@ public class FurnaceRecipes {
 		if (ModHelperBase.useCofh && ModHelperBase.useThermalFoundation) {
 			FurnaceRecipes.SmeltBlockToItem(ZGBlocks.edenSilverOre, new ItemStack(ItemHelper.getItemFromStack(TFItems.itemMaterial.ingotSilver), 1, 130), 3.7F);
 			FurnaceRecipes.SmeltBlockToItem(ZGBlocks.caligroSilverOre, new ItemStack(ItemHelper.getItemFromStack(TFItems.itemMaterial.ingotSilver), 1, 130), 3.7F);
+			FurnaceRecipes.SmeltBlockToItem(ZGBlocks.tociSilverOre, new ItemStack(ItemHelper.getItemFromStack(TFItems.itemMaterial.ingotSilver), 1, 130), 3.7F);
 			FurnaceRecipes.SmeltBlockToItem(ZGBlocks.edenNickelOre, new ItemStack(ItemHelper.getItemFromStack(TFItems.itemMaterial.ingotNickel), 1, 133), 3.5F);
 			FurnaceRecipes.SmeltBlockToItem(ZGBlocks.xantheonNickelOre, new ItemStack(ItemHelper.getItemFromStack(TFItems.itemMaterial.ingotNickel), 1, 133), 3.5F);
 			FurnaceRecipes.SmeltBlockToItem(ZGBlocks.caligroNickelOre, new ItemStack(ItemHelper.getItemFromStack(TFItems.itemMaterial.ingotNickel), 1, 133), 3.5F);
+			FurnaceRecipes.SmeltBlockToItem(ZGBlocks.tociNickelOre, new ItemStack(ItemHelper.getItemFromStack(TFItems.itemMaterial.ingotNickel), 1, 133), 3.5F);
 			FurnaceRecipes.SmeltBlockToItem(ZGBlocks.edenSteelOre, new ItemStack(ItemHelper.getItemFromStack(TFItems.itemMaterial.ingotSteel), 1, 160), 4.2F);
 			FurnaceRecipes.SmeltBlockToItem(ZGBlocks.edenBronzeOre, new ItemStack(ItemHelper.getItemFromStack(TFItems.itemMaterial.ingotBronze), 1, 163), 4.2F);
+			FurnaceRecipes.SmeltBlockToItem(ZGBlocks.tociBronzeOre, new ItemStack(ItemHelper.getItemFromStack(TFItems.itemMaterial.ingotBronze), 1, 163), 4.2F);
 			FurnaceRecipes.SmeltBlockToItem(ZGBlocks.edenElectrumOre, new ItemStack(ItemHelper.getItemFromStack(TFItems.itemMaterial.ingotElectrum), 1, 161), 4.2F);
 			FurnaceRecipes.SmeltBlockToItem(ZGBlocks.edenInvarOre, new ItemStack(ItemHelper.getItemFromStack(TFItems.itemMaterial.ingotInvar), 1, 162), 4.2F);
 			FurnaceRecipes.SmeltBlockToItem(ZGBlocks.edenPlatinumOre, new ItemStack(ItemHelper.getItemFromStack(TFItems.itemMaterial.ingotPlatinum), 1, 134), 4.2F);
@@ -156,6 +159,20 @@ public class FurnaceRecipes {
 		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.centoShiniumOre, ZGItems.ingotShinium, 5.6F);
 		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.centoFueltoniumOre, ZGItems.ingotFueltonium, 5.6F);
 		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.centoZollerniumOre, ZGItems.ingotZollernium, 7.2F);
+		
+		// Toci
+		FurnaceRecipes.SmeltBlock(ZGBlocks.tociCobblestone, ZGBlocks.tociStone, 5.7F);
+		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.tociIronOre, Items.IRON_INGOT, 5.9F);
+		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.tociGoldOre, Items.GOLD_INGOT, 6.0F);
+		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.tociFueltoniumOre, ZGItems.ingotFueltonium, 5.7F);
+		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.tociTinOre, new ItemStack(GCItems.basicItem, 1, 4), 2.5F);
+		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.tociLeadOre, new ItemStack(VenusItems.basicItem, 1, 1), 2.6F);
+		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.tociCopperOre, new ItemStack(GCItems.basicItem, 1, 3), 2.4F);
+		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.tociZincOre, ZGItems.ingotZinc, 3.7F);
+		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.tociAmaranthOre, ZGItems.ingotAmaranth, 4.3F);
+		
+		// Tlaloc
+		// TODO
 		
 		// Dust -> Ingots/Gems
 		FurnaceRecipes.SmeltItem(ZGItems.dustDiamond, Items.DIAMOND, 2.6F);

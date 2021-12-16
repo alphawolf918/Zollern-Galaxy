@@ -42,6 +42,10 @@ public class ZGBiomeBase extends BiomeGenBaseGC {
 		this.singleName = singleName;
 	}
 	
+	public ZGBiomeBase(String singleName) {
+		this(new BiomeProperties(singleName));
+	}
+	
 	/**
 	 * Set ChunkProvider height for this biome.
 	 * 
@@ -127,7 +131,7 @@ public class ZGBiomeBase extends BiomeGenBaseGC {
 	
 	@Override
 	public boolean isMutation() {
-		return hasMutation;
+		return this.hasMutation;
 	}
 	
 	public Biome setHasMutation(boolean isMutated) {
@@ -264,10 +268,24 @@ public class ZGBiomeBase extends BiomeGenBaseGC {
 		return this.tempBiomeCtg;
 	}
 	
+	/**
+	 * Get what type of Biome this is.
+	 * Used for conditional operations.
+	 * 
+	 * @return Biome Type
+	 */
 	public EnumBiomeTypeZG getBiomeType() {
 		return this.biomeType;
 	}
 	
+	/**
+	 * Set Biome Type for Biome.
+	 * Used for conditional operations.
+	 * 
+	 * @param t
+	 *            Biome Type
+	 * @return Biome
+	 */
 	public Biome setBiomeType(EnumBiomeTypeZG t) {
 		this.biomeType = t;
 		return this;

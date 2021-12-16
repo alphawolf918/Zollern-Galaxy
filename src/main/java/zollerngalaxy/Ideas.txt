@@ -1,4 +1,4 @@
 [IDEAS]
 
-* View and comment on ideas at the mod's Trello board:
+* View ideas at the mod's Trello board:
     - https://trello.com/b/4xdlsLz1/zollern-galaxy-galacticraft-add-on-mod

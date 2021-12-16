@@ -9,7 +9,6 @@ package zollerngalaxy.util;
 
 import org.apache.logging.log4j.Level;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.text.translation.I18n;
@@ -43,9 +42,9 @@ public class ZGUtils {
 		return Minecraft.getMinecraft();
 	}
 	
-	public static EntityPlayerSP getPlayer() {
+	public static EntityPlayer getPlayer() {
 		final Minecraft mc = ZGUtils.getMinecraft();
-		final EntityPlayerSP player = mc.player;
+		final EntityPlayer player = mc.player;
 		return player;
 	}
 	

@@ -87,8 +87,7 @@ public class BiomeDecoratorXantheon extends BiomeDecoratorZG {
 		
 		if (this.generateSpouts) {
 			y = rand.nextInt(rand.nextInt(genY) + 8);
-			
-			if (rand.nextInt(300) == 0) {
+			if (rand.nextInt(100) <= 5) {
 				if (y >= 70 && y <= 90) {
 					(new WorldGenRadiolariaSpouts()).generate(world, rand, this.chunkPos.add(x, y, z));
 				}

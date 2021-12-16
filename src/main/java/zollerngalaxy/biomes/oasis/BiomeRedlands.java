@@ -21,7 +21,7 @@ public class BiomeRedlands extends BiomeOasisBase {
 		props.setTemperature(4.0F);
 		this.setTempCategory(TempCategory.MEDIUM);
 		this.setTemp(4.0F);
-		this.setBiomeHeight(62);
+		this.setBiomeHeight(10);
 		this.setBiomeType(EnumBiomeTypeZG.LUSH);
 		this.enableSnow = false;
 		this.decorator.generateFalls = true;

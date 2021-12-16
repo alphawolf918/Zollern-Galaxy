@@ -25,7 +25,7 @@ public class BiomeShroomHills extends BiomeEdenBase {
 		props.setTemperature(5.5F);
 		this.setTempCategory(TempCategory.MEDIUM);
 		this.setTemp(5.5F);
-		this.setBiomeHeight(52);
+		this.setBiomeHeight(72);
 		this.setBiomeType(EnumBiomeTypeZG.WEIRD);
 		this.clearAllNonMonsterSpawning();
 		this.spawnableCreatureList.add(new SpawnListEntry(EntityPigShroom.class, 100, 1, 2));

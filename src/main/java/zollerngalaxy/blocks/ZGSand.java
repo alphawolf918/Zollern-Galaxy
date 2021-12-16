@@ -18,4 +18,7 @@ public class ZGSand extends ZGBlockFalling {
 		this.setBlockType(EnumBlockType.SAND);
 	}
 	
+	public ZGSand(String strTexture) {
+		this(strTexture, 2.6F);
+	}
 }

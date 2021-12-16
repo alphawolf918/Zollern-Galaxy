@@ -25,7 +25,7 @@ public class BiomeOasisRedSea extends BiomeOasisBase {
 		props.setTemperature(7.0F);
 		this.setTempCategory(TempCategory.OCEAN);
 		this.setTemp(7.0F);
-		this.setBiomeHeight(72);
+		this.setBiomeHeight(0);
 		this.setBlocks(Blocks.AIR);
 		this.setBiomeType(EnumBiomeTypeZG.OCEAN);
 		this.clearAllNonMonsterSpawning();

@@ -24,9 +24,9 @@ public class BiomeSnowyPlains extends BiomeEdenBase {
 		props.setHeightVariation(0.5F);
 		props.setTemperature(1.0F);
 		this.setTempCategory(TempCategory.COLD);
-		this.setTemp(-4.0F);
+		this.setTemp(-8.0F);
 		this.setEnableSnow(true);
-		this.setBiomeHeight(46);
+		this.setBiomeHeight(52);
 		this.setBiomeType(EnumBiomeTypeZG.ICY);
 		this.spawnableCreatureList.add(new SpawnListEntry(EntityPolarBear.class, 100, 2, 3));
 		this.enableSnow = true;
