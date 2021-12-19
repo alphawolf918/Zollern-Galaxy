@@ -88,6 +88,11 @@ import zollerngalaxy.biomes.perdita.BiomeLostMountains;
 import zollerngalaxy.biomes.perdita.BiomeLostOasis;
 import zollerngalaxy.biomes.purgot.BiomeLimbo;
 import zollerngalaxy.biomes.purgot.BiomePurgot;
+import zollerngalaxy.biomes.toci.BiomeToci;
+import zollerngalaxy.biomes.toci.BiomeTociDesert;
+import zollerngalaxy.biomes.toci.BiomeTociMountains;
+import zollerngalaxy.biomes.toci.BiomeTociStarDesert;
+import zollerngalaxy.biomes.toci.BiomeTociValley;
 import zollerngalaxy.biomes.vortex.BiomeVortex;
 import zollerngalaxy.biomes.vortex.BiomeVortexChargiumSea;
 import zollerngalaxy.biomes.vortex.BiomeVortexMountain;
@@ -210,6 +215,13 @@ public class ZGBiomes {
 	public static final Biome CENTOTL_ENGINEERING_PLAINS = new BiomeCentoEngineeringPlains(new BiomeProperties("Xeno Plains"));
 	public static final Biome CENTOTL_CONSTRUCTS = new BiomeCentoConstructs(new BiomeProperties("Xeno Constructs"));
 	
+	// Toci
+	public static final Biome TOCI_BASE = new BiomeToci(new BiomeProperties("Toci"));
+	public static final Biome TOCI_DESERT = new BiomeTociDesert(new BiomeProperties("Toci Desert"));
+	public static final Biome TOCI_STAR_DESERT = new BiomeTociStarDesert(new BiomeProperties("Toci Star Desert"));
+	public static final Biome TOCI_VALLEY = new BiomeTociValley(new BiomeProperties("Toci Valley"));
+	public static final Biome TOCI_MOUNTAINS = new BiomeTociMountains(new BiomeProperties("Toci Mountains"));
+	
 	public static void init() {
 		// Zollus
 		ZGBiomes.addBiome(ZGBiomes.ZOLLUS, COLD, DEAD, DRY);
@@ -314,6 +326,13 @@ public class ZGBiomes {
 		ZGBiomes.addBiome(ZGBiomes.CENTOTL_ROCKY_MOUNTAINS, HOT, DEAD, SPOOKY, MOUNTAIN);
 		ZGBiomes.addBiome(ZGBiomes.CENTOTL_ENGINEERING_PLAINS, HOT, DEAD, SPOOKY, PLAINS);
 		ZGBiomes.addBiome(ZGBiomes.CENTOTL_CONSTRUCTS, HOT, DEAD, SPOOKY);
+		
+		// Toci
+		ZGBiomes.addBiome(ZGBiomes.TOCI_BASE, HOT, DRY, MOUNTAIN, WASTELAND);
+		ZGBiomes.addBiome(ZGBiomes.TOCI_DESERT, HOT, DRY, MOUNTAIN, WASTELAND);
+		ZGBiomes.addBiome(ZGBiomes.TOCI_STAR_DESERT, HOT, DRY, MOUNTAIN, WASTELAND);
+		ZGBiomes.addBiome(ZGBiomes.TOCI_VALLEY, PLAINS, DRY);
+		ZGBiomes.addBiome(ZGBiomes.TOCI_MOUNTAINS, HOT, DRY, MOUNTAIN, WASTELAND);
 		
 		ZGHelper.Log("Loaded a total of " + totalBiomes + " new biomes.");
 	}

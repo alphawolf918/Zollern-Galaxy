@@ -178,7 +178,7 @@ public class EntityShadowAlien extends EntityMob implements IShadeEntity {
 	@Override
 	public void onDeath(DamageSource par1) {
 		super.onDeath(par1);
-		if (attackingPlayer != null) {
+		if (this.attackingPlayer != null) {
 			this.proxy.sendChatMessage(attackingPlayer, ZGUtils.translate("tooltips.shadowbossbeaten"));
 			this.onDefeat(attackingPlayer, world, entPos, rand);
 		}

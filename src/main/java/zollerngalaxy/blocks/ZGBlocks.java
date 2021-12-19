@@ -599,10 +599,12 @@ public class ZGBlocks {
 	// Toci
 	public static final Block tociSand = new ZGSand("tocisand", 6.4F);
 	public static final Block tociStarSand = new ZGSand("tocistarsand", 4.6F);
+	public static final Block tociDirt = new ZGBlockDirt("tocidirt");
+	public static final Block tociRock = new ZGBlockBase("tocirock", 2.4F);
 	public static final Block tociCobblestone = new ZGBlockCobble("tocicobblestone");
 	public static final Block tociMossyCobblestone = new ZGBlockCobble("tocicobblestonemossy");
 	public static final Block tociStone = new ZGPlanetStone("tocistone", ZGBlocks.tociCobblestone);
-	public static final Block tociStoneBricks = new ZGBlockBase("tocistonebrick", 2.1F);
+	public static final Block tociStoneBricks = new ZGShineBlock("tocistonebrick", 2.1F);
 	public static final Block tociGravel = new ZGGravel("tocigravel", 4.5F);
 	public static final Block tociNickelOre = new ZGBlockOre("tocinickelore", 4.5F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
 			EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
@@ -793,8 +795,8 @@ public class ZGBlocks {
 				astrosSuperChargedCoalOre, astrosTinOre, astrosZollerniumOre, astrosSapphireOre, centoRock, centoCobblestone, centoStone, centoDirt, centoGravel,
 				centoShiniumOre, centoGoldOre, centoIronOre, centoFueltoniumOre, centoZollerniumOre, facehuggerEgg);
 		//
-		ZGBlocks.registerBlocks(tociSand, tociStarSand, tociCobblestone, tociMossyCobblestone, tociStone, tociStoneBricks, tociGravel, tociNickelOre, tociTinOre,
-				tociBronzeOre, tociSilverOre, tociLeadOre, tociCopperOre, tociZincOre, tociSuperChargedCoalOre, tociRedstoneOre, tociGoldOre, tociAmaranthOre,
+		ZGBlocks.registerBlocks(tociSand, tociStarSand, tociDirt, tociRock, tociCobblestone, tociMossyCobblestone, tociStone, tociStoneBricks, tociGravel, tociNickelOre,
+				tociTinOre, tociBronzeOre, tociSilverOre, tociLeadOre, tociCopperOre, tociZincOre, tociSuperChargedCoalOre, tociRedstoneOre, tociGoldOre, tociAmaranthOre,
 				tociIronOre, tociEmeraldOre, tociCoalOre, tociFueltoniumOre, tociDiamondOre);
 		//
 		ZGHelper.Log("Loaded a total of " + totalBlocks + " new blocks.");

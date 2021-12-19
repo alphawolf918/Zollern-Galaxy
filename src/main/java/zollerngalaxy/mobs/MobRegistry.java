@@ -39,6 +39,7 @@ import zollerngalaxy.mobs.entities.EntityShadowSkeleton;
 import zollerngalaxy.mobs.entities.EntityShark;
 import zollerngalaxy.mobs.entities.EntitySpiderling;
 import zollerngalaxy.mobs.entities.EntitySquidlus;
+import zollerngalaxy.mobs.entities.EntityWanderer;
 import zollerngalaxy.mobs.entities.EntityWasp;
 import zollerngalaxy.mobs.entities.EntityXenomorph;
 import zollerngalaxy.mobs.entities.boss.EntityShadowAlien;
@@ -173,6 +174,9 @@ public class MobRegistry {
 		registerEntity("centotlvillager", EntityCentotlVillager.class, entityId++, 0x000000, 0xffffff);
 		
 		/** END VILLAGERS **/
+		
+		// Wanderer
+		registerEntity("wanderer", EntityWanderer.class, entityId++, 0x00dd00, 0x8b21de);
 		
 		// Wasp
 		registerEntity("wasp", EntityWasp.class, entityId++, 0x000000, 0xffff00);

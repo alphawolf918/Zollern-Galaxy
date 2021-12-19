@@ -1,8 +1,6 @@
 {
-  "parent": "zollerngalaxy:custom/ingotstack_gold",
+  "parent": "block/cube_all",
   "textures": {
-    "all": "minecraft:blocks/gold_block",
-    "particle": "minecraft:blocks/gold_block",
-    "0": "minecraft:blocks/gold_block"
+    "all": "zollerngalaxy:blocks/ingotstack_gold"
   }
 }

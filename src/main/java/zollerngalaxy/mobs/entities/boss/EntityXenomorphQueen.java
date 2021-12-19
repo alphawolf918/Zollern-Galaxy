@@ -100,14 +100,16 @@ public class EntityXenomorphQueen extends EntityXenomorph {
 	}
 	
 	protected void layEgg(World world, BlockPos pos) {
-		IBlockState posDown = world.getBlockState(pos.down());
-		IBlockState AIR = Blocks.AIR.getDefaultState();
-		IBlockState blockState = world.getBlockState(pos);
-		if (blockState == AIR && posDown != AIR && posDown != ZGBlocks.facehuggerEgg.getDefaultState()) {
-			BlockFacehuggerEgg egg = (BlockFacehuggerEgg) ZGBlocks.facehuggerEgg;
-			world.setBlockState(pos, egg.getDefaultState());
-			if (ZGHelper.rngInt(0, 100) <= 25) {
-				egg.hatchEgg(world, pos);
+		if (!world.isRemote) {
+			IBlockState posDown = world.getBlockState(pos.down());
+			IBlockState AIR = Blocks.AIR.getDefaultState();
+			IBlockState blockState = world.getBlockState(pos);
+			if (blockState == AIR && posDown != AIR && posDown != ZGBlocks.facehuggerEgg.getDefaultState()) {
+				BlockFacehuggerEgg egg = (BlockFacehuggerEgg) ZGBlocks.facehuggerEgg;
+				world.setBlockState(pos, egg.getDefaultState());
+				if (ZGHelper.rngInt(0, 100) <= 25) {
+					egg.hatchEgg(world, pos);
+				}
 			}
 		}
 	}
@@ -162,7 +164,7 @@ public class EntityXenomorphQueen extends EntityXenomorph {
 	@Override
 	public void onDeath(DamageSource par1) {
 		super.onDeath(par1);
-		if (attackingPlayer != null) {
+		if (this.attackingPlayer != null) {
 			this.proxy.sendChatMessage(attackingPlayer, ZGUtils.translate("tooltips.xenobossbeaten"));
 			this.onDefeat(attackingPlayer, world, entPos, rand);
 		}

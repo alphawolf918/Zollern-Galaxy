@@ -1,17 +1,19 @@
 ===== CHANGELOG =====
-Zollern Galaxy v2.0.34
+Zollern Galaxy v2.0.35
 =====================
 
 [NEW]
+* Added the next new planet, Toci - planet of the Wanderers.
+* Added the Wanderer mob to Toci.
+    - At night, they have a danger meter which increases as the night goes on.
+        - If this meter gets too high, they will build a "home" if they do not have one already.
+            - This can be turned off in the config, as can Wanderer spawns in general.
 * 
 
 [CHANGES]
-* Updated texture for Pantheon star.
-* Updated texture for Oasis rock.
-* Updated texture for Outpost Block.
 * 
 
 [FIXES]
-* Fixed Xenomorphs not attacking.
-* Fixed Astros Redstone Ore missing from block registration.
+* Fixed Xenomorph Queen laying 'ghost eggs' on server-side.
+* Fixed the Arcon mob looking and acting derpy.
 * 

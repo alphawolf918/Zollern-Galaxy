@@ -29,6 +29,7 @@ import zollerngalaxy.core.dimensions.worldproviders.WorldProviderMetztli;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderOasis;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderPerdita;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderPurgot;
+import zollerngalaxy.core.dimensions.worldproviders.WorldProviderToci;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderVortex;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderXantheon;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderXathius;
@@ -601,18 +602,16 @@ public class ZGPlanets {
 		totalPlanets++;
 		
 		// Toci
-		// TODO
-		// planetToci.setDimensionInfo(ConfigManagerZG.planetTociDimensionId,
-		// WorldProviderToci.class);
+		planetToci.setDimensionInfo(ConfigManagerZG.planetTociDimensionId, WorldProviderToci.class);
 		planetToci.setParentSolarSystem(systemPantheon);
 		planetToci.setBodyClass(EnumBodyClass.DESERT);
-		planetToci.setRelativeOrbitTime(4.0F);
-		planetToci.setDistanceFromCenter(1.5F);
+		planetToci.setRelativeOrbitTime(3.5F);
+		planetToci.setDistanceFromCenter(1.0F);
 		planetToci.setTierRequired(ConfigManagerZG.planetTociDimensionId);
 		if (ConfigManagerZG.planetUnreachableToci || ConfigManagerZG.planetUnreachableAll) {
 			planetToci.setDisableRockets();
 		}
-		planetToci.setBodyTemperature(76.35F);
+		planetToci.setBodyTemperature(98.42F);
 		planetToci.setDensity(0.1F);
 		planetToci.setHasRain(false);
 		planetToci.setBodyToxicity(0.01F);
@@ -621,15 +620,14 @@ public class ZGPlanets {
 		planetToci.setBodyGasses(EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.CO2, EnumAtmosphericGas.NITROGEN, EnumAtmosphericGas.WATER);
 		planetToci.setBreathable(true);
 		planetToci.setAtmosphere();
+		planetToci.setBiomeInfo(ZGBiomes.TOCI_BASE, ZGBiomes.TOCI_DESERT, ZGBiomes.TOCI_STAR_DESERT, ZGBiomes.TOCI_VALLEY, ZGBiomes.TOCI_MOUNTAINS);
 		planetToci.setBodyIcon("toci");
 		totalPlanets++;
 		
 		// Tlaloc
 		// TODO
 		planetTlaloc.setParentSolarSystem(systemPantheon);
-		planetTlaloc.setRelativeSize(1.0F);
-		planetTlaloc.setDistanceFromCenter(2.0F);
-		planetTlaloc.setPhaseShift(2.0F);
+		planetTlaloc.setDistanceFromCenter(1.5F);
 		planetTlaloc.setRelativeOrbitTime(5.0F);
 		planetTlaloc.setBodyIcon("tlaloc");
 		
@@ -729,8 +727,7 @@ public class ZGPlanets {
 		GalacticraftRegistry.registerTeleportType(WorldProviderVortex.class, new TeleportTypeBaseZG());
 		GalacticraftRegistry.registerTeleportType(WorldProviderMetztli.class, new TeleportTypeBaseZG());
 		GalacticraftRegistry.registerTeleportType(WorldProviderCentotl.class, new TeleportTypeBaseZG());
-		// GalacticraftRegistry.registerTeleportType(WorldProviderToci.class, new
-		// TeleportTypeBaseZG());
+		GalacticraftRegistry.registerTeleportType(WorldProviderToci.class, new TeleportTypeBaseZG());
 		// GalacticraftRegistry.registerTeleportType(WorldProviderTlaloc.class, new
 		// TeleportTypeBaseZG());
 		

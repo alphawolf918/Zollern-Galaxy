@@ -17,6 +17,7 @@ import net.minecraft.world.gen.feature.WorldGenerator;
 import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.config.ConfigManagerZG;
+import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderToci;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 import zollerngalaxy.core.enums.EnumOreGenZG;
 import zollerngalaxy.lib.helpers.ZGHelper;
@@ -111,7 +112,7 @@ public class BiomeDecoratorToci extends BiomeDecoratorZG {
 		
 		// Tunnels
 		if (this.generateTunnels && this.tunnelsPerChunk > 0) {
-			if (ZGHelper.rngInt(1, 100) <= 35) {
+			if (ZGHelper.rngInt(1, 100) <= 45) {
 				y = rand.nextInt(rand.nextInt(genY) + 8);
 				for (int i = 0; i < this.tunnelsPerChunk; ++i) {
 					if (y <= 60) {
@@ -123,7 +124,7 @@ public class BiomeDecoratorToci extends BiomeDecoratorZG {
 		
 		// Craters
 		if (this.generateCraters) {
-			// ChunkProviderToci.INSTANCE.createCraters(x, z, chunkPrimer);
+			ChunkProviderToci.INSTANCE.createCraters(x, z, chunkPrimer);
 		}
 		
 		// Outposts

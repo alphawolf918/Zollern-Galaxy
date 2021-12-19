@@ -419,6 +419,8 @@ tile.facehugger_egg.name=Facehugger Egg
 
 tile.tocisand.name=Toci Sand
 tile.tocistarsand.name=Toci Star Sand
+tile.tocirock.name=Toci Rock
+tile.tocidirt.name=Toci Dirt
 tile.tocicobblestone.name=Toci Cobblestone
 tile.tocicobblestonemossy.name=Toci Mossy Cobblestone
 tile.tocistone.name=Toci Stone
@@ -844,6 +846,7 @@ entity.zollerngalaxy:lostvillager.name=Lost Villager
 entity.zollerngalaxy:tocivillager.name=Toci Villager
 entity.zollerngalaxy:tlalocvillager.name=Tlaloc Villager
 
+entity.zollerngalaxy:wanderer.name=Wanderer
 ################
 
 entity.zollerngalaxy:shark.name=Shark

@@ -37,8 +37,7 @@ public class ZGItemSpecial extends ZGItemBase {
 	 * Called when a Block is right-clicked with this Item
 	 */
 	@Override
-	public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing,
-			float hitX, float hitY, float hitZ) {
+	public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
 		IBlockState iblockstate = worldIn.getBlockState(pos);
 		Block block = iblockstate.getBlock();
 		
@@ -50,8 +49,7 @@ public class ZGItemSpecial extends ZGItemBase {
 		
 		ItemStack itemstack = player.getHeldItem(hand);
 		
-		if (!itemstack.isEmpty() && player.canPlayerEdit(pos, facing, itemstack)
-				&& worldIn.mayPlace(this.block, pos, false, facing, player)) {
+		if (!itemstack.isEmpty() && player.canPlayerEdit(pos, facing, itemstack) && worldIn.mayPlace(this.block, pos, false, facing, player)) {
 			IBlockState iblockstate1 = this.block.getStateForPlacement(worldIn, pos, facing, hitX, hitY, hitZ, 0, player, hand);
 			
 			if (!worldIn.setBlockState(pos, iblockstate1, 11)) {
@@ -69,8 +67,7 @@ public class ZGItemSpecial extends ZGItemBase {
 				}
 				
 				SoundType soundtype = iblockstate1.getBlock().getSoundType(iblockstate1, worldIn, pos, player);
-				worldIn.playSound(player, pos, soundtype.getPlaceSound(), SoundCategory.BLOCKS,
-						(soundtype.getVolume() + 1.0F) / 2.0F, soundtype.getPitch() * 0.8F);
+				worldIn.playSound(player, pos, soundtype.getPlaceSound(), SoundCategory.BLOCKS, (soundtype.getVolume() + 1.0F) / 2.0F, soundtype.getPitch() * 0.8F);
 				itemstack.shrink(1);
 				return EnumActionResult.SUCCESS;
 			}
