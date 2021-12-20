@@ -46,6 +46,7 @@ import zollerngalaxy.mobs.entities.villagers.EntityEdenVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityHarranVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityKriffonVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityPurgotVillager;
+import zollerngalaxy.mobs.entities.villagers.EntityTociVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityZollusVillager;
 import zollerngalaxy.mobs.entities.zombiemutations.EntityGhoul;
 import zollerngalaxy.mobs.entities.zombiemutations.EntityOverlord;
@@ -87,6 +88,7 @@ import zollerngalaxy.mobs.renders.villagers.RenderEdenVillager;
 import zollerngalaxy.mobs.renders.villagers.RenderHarranVillager;
 import zollerngalaxy.mobs.renders.villagers.RenderKriffonVillager;
 import zollerngalaxy.mobs.renders.villagers.RenderPurgotVillager;
+import zollerngalaxy.mobs.renders.villagers.RenderTociVillager;
 import zollerngalaxy.mobs.renders.villagers.RenderZollusVillager;
 import zollerngalaxy.mobs.renders.zombiemutations.RenderGhoul;
 import zollerngalaxy.mobs.renders.zombiemutations.RenderOverlord;
@@ -137,6 +139,7 @@ public final class MobRenders {
 		RenderMob(EntityXenomorphQueen.class, RenderXenomorphQueen::new);
 		RenderMob(EntityCentotlVillager.class, RenderCentotlVillager::new);
 		RenderMob(EntityWanderer.class, RenderWanderer::new);
+		RenderMob(EntityTociVillager.class, RenderTociVillager::new);
 	}
 	
 	/**

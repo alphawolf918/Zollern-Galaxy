@@ -550,7 +550,7 @@ public class ConfigManagerZG {
 		enableChargiumLakesOnVortex = configuration
 				.get(CTG_CUSTOMS, "Enable Chargium Lakes on Vortex", true, "Set to false to make Chargium Lakes not spawn on Vortex (default: true). ").getBoolean();
 		enableWandererSpawn = configuration.get(CTG_CUSTOMS, "Enable Alien Wanderer Spawn", true, "Set to false to disable Wanderer spawn (default: true). ").getBoolean();
-		enableWandererHouses = configuration.get(CTG_CUSTOMS, "Enable Alien Wanderer Houses", true, "Set to false to disable Wanderers spawning houses entirely (default: true). ")
+		enableWandererHouses = configuration.get(CTG_CUSTOMS, "Enable Alien Wanderer Houses", false, "Set to true to enable Wanderers to spawn houses (default: false). ")
 				.getBoolean();
 		
 		//

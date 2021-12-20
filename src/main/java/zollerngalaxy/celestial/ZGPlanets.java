@@ -73,12 +73,12 @@ public class ZGPlanets {
 	private static float OLYMPUS_Z = 0.0F + ConfigManagerZG.olympusZOffset;
 	
 	// Coords (Asgard)
-	private static float ASGARD_X = 3.0F + ConfigManagerZG.asgardXOffset;
+	private static float ASGARD_X = 1.5F + ConfigManagerZG.asgardXOffset;
 	private static float ASGARD_Y = 1.8F + ConfigManagerZG.asgardYOffset;
 	private static float ASGARD_Z = 0.0F + ConfigManagerZG.asgardZOffset;
 	
 	// Coords (Vega)
-	private static float VEGA_X = -0.5F + ConfigManagerZG.vegaXOffset;
+	private static float VEGA_X = 0.5F + ConfigManagerZG.vegaXOffset;
 	private static float VEGA_Y = 1.5F + ConfigManagerZG.vegaYOffset;
 	private static float VEGA_Z = 0.0F + ConfigManagerZG.vegaZOffset;
 	
@@ -142,10 +142,10 @@ public class ZGPlanets {
 	public static ZGPlanet planetTlaloc = new ZGPlanet("tlaloc");
 	
 	// Olympus Planets
-	public static ZGPlanet planetAres;
-	public static ZGPlanet planetPrometheus;
-	public static ZGPlanet planetIcarus;
-	public static ZGPlanet planetKronos;
+	public static ZGPlanet planetAres = new ZGPlanet("ares");
+	public static ZGPlanet planetPrometheus = new ZGPlanet("prometheus");
+	public static ZGPlanet planetIcarus = new ZGPlanet("icarus");
+	public static ZGPlanet planetKronos = new ZGPlanet("kronos");
 	
 	// Asgard Planets
 	public static ZGPlanet planetAsgard;
@@ -193,7 +193,7 @@ public class ZGPlanets {
 		
 		// Olympus System
 		systemOlympus.setMapPosition(new Vector3(OLYMPUS_X, OLYMPUS_Y, OLYMPUS_Z));
-		if (ConfigManagerZG.enableExtraPlanetsCompat && ModHelperBase.useExtraPlanets) {
+		if (ZGPlanets.enableExtraGalaxies) {
 			systemOlympus.setGalaxy(gxEissentam);
 		}
 		starOlympus.setParentSolarSystem(systemOlympus);
@@ -202,7 +202,7 @@ public class ZGPlanets {
 		
 		// Asgard System
 		systemAsgard.setMapPosition(new Vector3(ASGARD_X, ASGARD_Y, ASGARD_Z));
-		if (ConfigManagerZG.enableExtraPlanetsCompat && ModHelperBase.useExtraPlanets) {
+		if (ZGPlanets.enableExtraGalaxies) {
 			systemAsgard.setGalaxy(gxEissentam);
 		}
 		starAsgard.setParentSolarSystem(systemAsgard);
@@ -211,7 +211,7 @@ public class ZGPlanets {
 		
 		// Vega System
 		systemVega.setMapPosition(new Vector3(VEGA_X, VEGA_Y, VEGA_Z));
-		if (ConfigManagerZG.enableExtraPlanetsCompat && ModHelperBase.useExtraPlanets) {
+		if (ZGPlanets.enableExtraGalaxies) {
 			systemVega.setGalaxy(gxEissentam);
 		}
 		starVega.setParentSolarSystem(systemVega);
@@ -220,7 +220,7 @@ public class ZGPlanets {
 		
 		// Nova System
 		systemNova.setMapPosition(new Vector3(NOVA_X, NOVA_Y, NOVA_Z));
-		if (ConfigManagerZG.enableExtraPlanetsCompat && ModHelperBase.useExtraPlanets) {
+		if (ZGPlanets.enableExtraGalaxies) {
 			systemNova.setGalaxy(gxEuclid);
 		}
 		starNova.setParentSolarSystem(systemNova);
@@ -322,9 +322,9 @@ public class ZGPlanets {
 		planetEden.setBodyGasses(EnumAtmosphericGas.NITROGEN, EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.ARGON, EnumAtmosphericGas.WATER, EnumAtmosphericGas.CO2);
 		planetEden.setAtmosphere();
 		planetEden.setBodyIcon("eden");
-		planetEden.setBiomeInfo(ZGBiomes.EDEN_GREEN_LANDS, ZGBiomes.EDEN_BLOOD_DESERT, ZGBiomes.EDEN_ROCK_MOUNTAINS, ZGBiomes.EDEN_TERRAN_VALLEY,
-				ZGBiomes.EDEN_SNOWY_PLAINS, ZGBiomes.EDEN_GOLDEN_MEADOW, ZGBiomes.EDEN_SWAMPLANDS, ZGBiomes.EDENWOOD_FOREST, ZGBiomes.EDEN_PARADISE_WOODS,
-				ZGBiomes.EDEN_FLOWER_GARDEN, ZGBiomes.EDEN_CRATERS, ZGBiomes.EDEN_SHROOM_HILLS, ZGBiomes.EDEN_OCEAN);
+		planetEden.setBiomeInfo(ZGBiomes.EDEN_GREEN_LANDS, ZGBiomes.EDEN_BLOOD_DESERT, ZGBiomes.EDEN_ROCK_MOUNTAINS, ZGBiomes.EDEN_TERRAN_VALLEY, ZGBiomes.EDEN_SNOWY_PLAINS,
+				ZGBiomes.EDEN_GOLDEN_MEADOW, ZGBiomes.EDEN_SWAMPLANDS, ZGBiomes.EDENWOOD_FOREST, ZGBiomes.EDEN_PARADISE_WOODS, ZGBiomes.EDEN_FLOWER_GARDEN, ZGBiomes.EDEN_CRATERS,
+				ZGBiomes.EDEN_SHROOM_HILLS, ZGBiomes.EDEN_OCEAN);
 		totalPlanets++;
 		
 		// Planet Xathius
@@ -415,8 +415,7 @@ public class ZGPlanets {
 		planetCandora.setBodyGasses(EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.CO2, EnumAtmosphericGas.WATER, EnumAtmosphericGas.HELIUM);
 		planetCandora.setAtmosphere();
 		planetCandora.setBodyIcon("candora");
-		planetCandora.setBiomeInfo(ZGBiomes.CANDY_MOUNTAIN, ZGBiomes.CANDY_OCEAN, ZGBiomes.CANDY_JOLLY_MELON_PLAINS, ZGBiomes.CANDY_BLUEBERRY_HILLS,
-				ZGBiomes.CANDY_COOKIE_LANDS);
+		planetCandora.setBiomeInfo(ZGBiomes.CANDY_MOUNTAIN, ZGBiomes.CANDY_OCEAN, ZGBiomes.CANDY_JOLLY_MELON_PLAINS, ZGBiomes.CANDY_BLUEBERRY_HILLS, ZGBiomes.CANDY_COOKIE_LANDS);
 		totalPlanets++;
 		
 		// Atheon
@@ -462,8 +461,7 @@ public class ZGPlanets {
 		planetPerdita.setBodyGasses(EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.CO2, EnumAtmosphericGas.NITROGEN, EnumAtmosphericGas.WATER);
 		planetPerdita.setAtmosphere();
 		planetPerdita.setBodyIcon("perdita");
-		planetPerdita.setBiomeInfo(ZGBiomes.PERDITA_DESERT, ZGBiomes.PERDITA_HALLOWS, ZGBiomes.PERDITA_OASIS, ZGBiomes.PERDITA_FUELTONIUM_OCEAN,
-				ZGBiomes.PERDITA_LOST_MOUNTAINS);
+		planetPerdita.setBiomeInfo(ZGBiomes.PERDITA_DESERT, ZGBiomes.PERDITA_HALLOWS, ZGBiomes.PERDITA_OASIS, ZGBiomes.PERDITA_FUELTONIUM_OCEAN, ZGBiomes.PERDITA_LOST_MOUNTAINS);
 		totalPlanets++;
 		
 		// Altum
@@ -504,8 +502,8 @@ public class ZGPlanets {
 		planetCaligro.setWindLevel(60.58F);
 		planetCaligro.setDensity(100.32F);
 		planetCaligro.setHasRain(false);
-		planetCaligro.setBodyGasses(EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.WATER, EnumAtmosphericGas.NITROGEN, EnumAtmosphericGas.ARGON,
-				EnumAtmosphericGas.METHANE, EnumAtmosphericGas.HYDROGEN);
+		planetCaligro.setBodyGasses(EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.WATER, EnumAtmosphericGas.NITROGEN, EnumAtmosphericGas.ARGON, EnumAtmosphericGas.METHANE,
+				EnumAtmosphericGas.HYDROGEN);
 		planetCaligro.setBodyIcon("caligro");
 		planetCaligro.setAtmosphere();
 		planetCaligro.setBiomeInfo(ZGBiomes.CALIGRO_UPSIDE_DOWN, ZGBiomes.CALIGRO_CREEPLANDS, ZGBiomes.CALIGRO_ROCKY_VEINS, ZGBiomes.CALIGRO_WITHERLANDS,
@@ -611,7 +609,7 @@ public class ZGPlanets {
 		if (ConfigManagerZG.planetUnreachableToci || ConfigManagerZG.planetUnreachableAll) {
 			planetToci.setDisableRockets();
 		}
-		planetToci.setBodyTemperature(98.42F);
+		planetToci.setBodyTemperature(128.42F);
 		planetToci.setDensity(0.1F);
 		planetToci.setHasRain(false);
 		planetToci.setBodyToxicity(0.01F);
@@ -630,6 +628,34 @@ public class ZGPlanets {
 		planetTlaloc.setDistanceFromCenter(1.5F);
 		planetTlaloc.setRelativeOrbitTime(5.0F);
 		planetTlaloc.setBodyIcon("tlaloc");
+		
+		// Ares
+		// TODO
+		planetAres.setParentSolarSystem(systemOlympus);
+		planetAres.setDistanceFromCenter(2.0F);
+		planetAres.setRelativeOrbitTime(24.46F);
+		planetAres.setBodyIcon("ares");
+		
+		// Prometheus
+		// TODO
+		planetPrometheus.setParentSolarSystem(systemOlympus);
+		planetPrometheus.setDistanceFromCenter(3.0F);
+		planetPrometheus.setRelativeOrbitTime(36.76F);
+		planetPrometheus.setBodyIcon("prometheus");
+		
+		// Icarus
+		// TODO
+		planetIcarus.setParentSolarSystem(systemOlympus);
+		planetIcarus.setDistanceFromCenter(0.5F);
+		planetIcarus.setRelativeOrbitTime(1.5F);
+		planetIcarus.setBodyIcon("icarus");
+		
+		// Kronos
+		// TODO
+		planetKronos.setParentSolarSystem(systemOlympus);
+		planetKronos.setDistanceFromCenter(2.5F);
+		planetKronos.setRelativeOrbitTime(24.46F);
+		planetKronos.setBodyIcon("kronos");
 		
 		ZGHelper.Log("Loaded a total of " + totalPlanets + " new planets.");
 	}
@@ -665,9 +691,9 @@ public class ZGPlanets {
 		GalaxyRegistry.registerSolarSystem(systemPraedyth);
 		GalaxyRegistry.registerSolarSystem(systemSol2);
 		GalaxyRegistry.registerSolarSystem(systemPantheon);
+		GalaxyRegistry.registerSolarSystem(systemOlympus);
 		
 		if (!hideUnusedStarSystems) {
-			GalaxyRegistry.registerSolarSystem(systemOlympus);
 			GalaxyRegistry.registerSolarSystem(systemAsgard);
 			GalaxyRegistry.registerSolarSystem(systemVega);
 			GalaxyRegistry.registerSolarSystem(systemNova);
@@ -681,20 +707,28 @@ public class ZGPlanets {
 		GalaxyRegistry.registerPlanet(planetEden);
 		GalaxyRegistry.registerPlanet(planetKriffon);
 		GalaxyRegistry.registerPlanet(planetPurgot);
+		//
 		GalaxyRegistry.registerPlanet(planetXathius);
 		GalaxyRegistry.registerPlanet(planetOasis);
 		GalaxyRegistry.registerPlanet(planetXantheon);
 		GalaxyRegistry.registerPlanet(planetCandora);
 		GalaxyRegistry.registerPlanet(planetAtheon);
+		//
 		GalaxyRegistry.registerPlanet(planetPerdita);
 		GalaxyRegistry.registerPlanet(planetAltum);
 		GalaxyRegistry.registerPlanet(planetCaligro);
 		GalaxyRegistry.registerPlanet(planetExodus);
+		//
 		GalaxyRegistry.registerPlanet(planetVortex);
 		GalaxyRegistry.registerPlanet(planetMetztli);
 		GalaxyRegistry.registerPlanet(planetCentotl);
 		GalaxyRegistry.registerPlanet(planetToci);
 		GalaxyRegistry.registerPlanet(planetTlaloc);
+		//
+		GalaxyRegistry.registerPlanet(planetAres);
+		GalaxyRegistry.registerPlanet(planetPrometheus);
+		GalaxyRegistry.registerPlanet(planetIcarus);
+		GalaxyRegistry.registerPlanet(planetKronos);
 		ZGPlanets.registerMoons();
 	}
 	
@@ -733,6 +767,14 @@ public class ZGPlanets {
 		
 		// Olympus
 		// TODO
+		// GalacticraftRegistry.registerTeleportType(WorldProviderAres.class, new
+		// TeleportTypeBaseZG());
+		// GalacticraftRegistry.registerTeleportType(WorldProviderPrometheus.class, new
+		// TeleportTypeBaseZG());
+		// GalacticraftRegistry.registerTeleportType(WorldProviderIcarus.class, new
+		// TeleportTypeBaseZG());
+		// GalacticraftRegistry.registerTeleportType(WorldProviderKronos.class, new
+		// TeleportTypeBaseZG());
 		
 		// Asgard
 		// TODO

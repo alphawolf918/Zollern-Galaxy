@@ -7,7 +7,8 @@ Zollern Galaxy v2.0.35
 * Added the Wanderer mob to Toci.
     - At night, they have a danger meter which increases as the night goes on.
         - If this meter gets too high, they will build a "home" if they do not have one already.
-            - This can be turned off in the config, as can Wanderer spawns in general.
+            - This is turned off by default in the config, and Wanderers can be turned off as well.
+* Added the Toci Villager.
 * 
 
 [CHANGES]

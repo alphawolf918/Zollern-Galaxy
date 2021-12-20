@@ -24,7 +24,6 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldEntitySpawner;
 import net.minecraft.world.WorldType;
 import net.minecraft.world.biome.Biome;
-import net.minecraft.world.biome.Biome.SpawnListEntry;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.gen.NoiseGenerator;
@@ -35,8 +34,6 @@ import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.biomes.decorators.BiomeDecoratorToci;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.blocks.fluids.ZGFluids;
-import zollerngalaxy.config.ConfigManagerZG;
-import zollerngalaxy.mobs.entities.EntityWanderer;
 import zollerngalaxy.util.BiomeUtils;
 import zollerngalaxy.worldgen.mapgen.MapGenCavesZG;
 import zollerngalaxy.worldgen.mapgen.MapGenRavinesZG;
@@ -412,9 +409,6 @@ public class ChunkProviderToci extends ChunkProviderBase {
 	@Override
 	public List<Biome.SpawnListEntry> getPossibleCreatures(EnumCreatureType creatureType, BlockPos pos) {
 		Biome biomegenbase = this.world.getBiome(pos);
-		if (ConfigManagerZG.enableWandererSpawn) {
-			biomegenbase.getSpawnableList(EnumCreatureType.CREATURE).add(new SpawnListEntry(EntityWanderer.class, 1, 1, 1));
-		}
 		return biomegenbase.getSpawnableList(creatureType);
 	}
 	

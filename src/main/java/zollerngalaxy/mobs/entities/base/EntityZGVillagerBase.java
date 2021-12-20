@@ -110,8 +110,7 @@ public class EntityZGVillagerBase extends EntityAgeable implements IMerchant, IN
 	protected ITradeList[] getTradeList() {
 		ITradeList[] TRADE_LIST = new ITradeList[] { new ListVillagerItems(new ItemStack(ZGItems.alienStone, 1), new PriceInfo(1, 2)),
 				new ListVillagerItems(new ItemStack(ZGItems.axeAmaranth, 1), new PriceInfo(3, 4)),
-				new ListVillagerItems(new ItemStack(ZGItems.darkEssence, 1), new PriceInfo(3, 4)),
-				new ListVillagerItems(new ItemStack(ZGItems.sharkTooth, 1), new PriceInfo(3, 4)),
+				new ListVillagerItems(new ItemStack(ZGItems.darkEssence, 1), new PriceInfo(3, 4)), new ListVillagerItems(new ItemStack(ZGItems.sharkTooth, 1), new PriceInfo(3, 4)),
 				new ListVillagerItems(new ItemStack(ZGItems.compressedVyrex, 1), new PriceInfo(1, 2)),
 				new ListVillagerItems(new ItemStack(ZGItems.azurite, 1), new PriceInfo(2, 4)),
 				new ItemAndEmeraldToItem(new ItemStack(ZGItems.rawBlubberFish, 1), new PriceInfo(1, 1), new ItemStack(ZGItems.edenFruit, 1)),
@@ -461,8 +460,8 @@ public class EntityZGVillagerBase extends EntityAgeable implements IMerchant, IN
 			double d0 = this.rand.nextGaussian() * 0.02D;
 			double d1 = this.rand.nextGaussian() * 0.02D;
 			double d2 = this.rand.nextGaussian() * 0.02D;
-			this.world.spawnParticle(particleType, this.posX + this.rand.nextFloat() * this.width * 2.0F - this.width,
-					this.posY + 1.0D + this.rand.nextFloat() * this.height, this.posZ + this.rand.nextFloat() * this.width * 2.0F - this.width, d0, d1, d2, new int[0]);
+			this.world.spawnParticle(particleType, this.posX + this.rand.nextFloat() * this.width * 2.0F - this.width, this.posY + 1.0D + this.rand.nextFloat() * this.height,
+					this.posZ + this.rand.nextFloat() * this.width * 2.0F - this.width, d0, d1, d2, new int[0]);
 		}
 	}
 	
@@ -583,8 +582,7 @@ public class EntityZGVillagerBase extends EntityAgeable implements IMerchant, IN
 			ItemStack itemstack = this.villagerInventory.getStackInSlot(i);
 			
 			if (!itemstack.isEmpty()) {
-				if (itemstack.getItem() == Items.BREAD && itemstack.getCount() >= 3 * multiplier
-						|| itemstack.getItem() == Items.POTATO && itemstack.getCount() >= 12 * multiplier
+				if (itemstack.getItem() == Items.BREAD && itemstack.getCount() >= 3 * multiplier || itemstack.getItem() == Items.POTATO && itemstack.getCount() >= 12 * multiplier
 						|| itemstack.getItem() == Items.CARROT && itemstack.getCount() >= 12 * multiplier) {
 					return true;
 				}
@@ -719,8 +717,11 @@ public class EntityZGVillagerBase extends EntityAgeable implements IMerchant, IN
 	}
 	
 	public static class PriceInfo extends Tuple<Integer, Integer> {
-		public PriceInfo(int p_i45810_1_, int p_i45810_2_) {
-			super(Integer.valueOf(p_i45810_1_), Integer.valueOf(p_i45810_2_));
+		
+		protected static Random rand = new Random();
+		
+		public PriceInfo(int par1, int par2) {
+			super(rand.nextInt(Integer.valueOf(par1)), rand.nextInt(Integer.valueOf(par2)));
 		}
 		
 		public int getPrice(Random rand) {

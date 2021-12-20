@@ -8,7 +8,6 @@
 package zollerngalaxy.biomes.toci;
 
 import java.util.Random;
-import micdoodle8.mods.galacticraft.core.entities.EntityAlienVillager;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedCreeper;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedEnderman;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedSkeleton;
@@ -28,6 +27,9 @@ import zollerngalaxy.celestial.ZGPlanets;
 import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderToci;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
+import zollerngalaxy.lib.helpers.ZGHelper;
+import zollerngalaxy.mobs.entities.EntityWanderer;
+import zollerngalaxy.mobs.entities.villagers.EntityTociVillager;
 
 public class BiomeTociBase extends BiomeSpace {
 	
@@ -45,13 +47,12 @@ public class BiomeTociBase extends BiomeSpace {
 	public BiomeTociBase(String singleName, BiomeProperties props) {
 		super(singleName, props);
 		this.setTempCategory(TempCategory.WARM);
-		this.decorator.flowersPerChunk = -999;
-		this.decorator.treesPerChunk = -999;
-		this.decorator.grassPerChunk = -999;
-		this.decorator.mushroomsPerChunk = -999;
 		this.clearAllSpawning();
 		if (ConfigManagerZG.enableAlienVillagerSpawn) {
-			this.spawnableCreatureList.add(new SpawnListEntry(EntityAlienVillager.class, this.villagerSpawnRate, 1, 1));
+			this.spawnableCreatureList.add(new SpawnListEntry(EntityTociVillager.class, this.villagerSpawnRate, 1, 1));
+		}
+		if (ConfigManagerZG.enableWandererSpawn) {
+			this.spawnableCreatureList.add(new SpawnListEntry(EntityWanderer.class, 1, 0, 1));
 		}
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedZombie.class, 100, 4, 4));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedSpider.class, 100, 4, 4));
@@ -69,7 +70,7 @@ public class BiomeTociBase extends BiomeSpace {
 		IBlockState fillState = this.fillerBlock;
 		int j = -1;
 		// int k = (int) (noiseVal / 3.0D + 3.0D + rand.nextDouble() * 0.25D);
-		int k = (int) (noiseVal / 3.5D + 4.0D + rand.nextDouble() * 0.45D);
+		int k = (int) (noiseVal / 3.5D + 4.0D + rand.nextDouble() * ZGHelper.rngDbl(0.25D, 0.45D));
 		int l = x & 15;
 		int i1 = z & 15;
 		
@@ -135,7 +136,7 @@ public class BiomeTociBase extends BiomeSpace {
 	
 	@Override
 	public float getSpawningChance() {
-		return 0.1F;
+		return 0.01F;
 	}
 	
 	@Override
