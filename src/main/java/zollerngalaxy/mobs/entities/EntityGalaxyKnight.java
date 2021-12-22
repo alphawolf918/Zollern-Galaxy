@@ -36,8 +36,8 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.events.ZGSoundEvents;
 import zollerngalaxy.items.ZGItems;
+import zollerngalaxy.mobs.entities.base.EntityZGVillagerBase;
 import zollerngalaxy.mobs.entities.interfaces.IShadeEntity;
-import zollerngalaxy.mobs.entities.villagers.EntityAbyssalVillager;
 
 public class EntityGalaxyKnight extends EntityMob implements IEntityBreathable, IShadeEntity {
 	
@@ -55,7 +55,7 @@ public class EntityGalaxyKnight extends EntityMob implements IEntityBreathable, 
 		this.tasks.addTask(7, new EntityAILookIdle(this));
 		this.targetTasks.addTask(1, new EntityAINearestAttackableTarget(this, EntityPlayer.class, true));
 		this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityAlienVillager.class, false));
-		this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityAbyssalVillager.class, false));
+		this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityZGVillagerBase.class, false));
 		this.scoreValue = 170;
 		this.experienceValue = 360;
 		this.stepHeight = 2.5F;

@@ -112,7 +112,7 @@ public class EntityWanderer extends EntityAgeable {
 	}
 	
 	public void avoidDanger() {
-		if (!this.hasHome()) {
+		if (!this.hasHome() && ConfigManagerZG.enableWandererHouses) {
 			this.buildHouse(this.world, this.rand, this);
 		}
 	}

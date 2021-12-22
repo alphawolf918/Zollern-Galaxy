@@ -39,6 +39,7 @@ import net.minecraft.world.World;
 import zollerngalaxy.events.ZGSoundEvents;
 import zollerngalaxy.items.ZGItems;
 import zollerngalaxy.mobs.entities.ai.EntityAIMummyAttack;
+import zollerngalaxy.mobs.entities.base.EntityZGVillagerBase;
 import zollerngalaxy.mobs.entities.interfaces.IShadeEntity;
 
 public class EntityMummy extends EntityZombie implements IShadeEntity {
@@ -132,19 +133,20 @@ public class EntityMummy extends EntityZombie implements IShadeEntity {
 	@Override
 	protected void initEntityAI() {
 		this.tasks.addTask(0, new EntityAISwimming(this));
-		this.tasks.addTask(2, new EntityAIMummyAttack(this, 2.4D, false));
-		this.tasks.addTask(5, new EntityAIMoveTowardsRestriction(this, 1.6D));
-		this.tasks.addTask(7, new EntityAIWanderAvoidWater(this, 3.0D));
-		this.tasks.addTask(8, new EntityAIWatchClosest(this, EntityPlayer.class, 16.0F));
-		this.tasks.addTask(8, new EntityAILookIdle(this));
+		this.tasks.addTask(1, new EntityAIMummyAttack(this, 2.4D, true));
+		this.tasks.addTask(2, new EntityAIMoveTowardsRestriction(this, 1.6D));
+		this.tasks.addTask(3, new EntityAIWanderAvoidWater(this, 3.0D));
+		this.tasks.addTask(4, new EntityAIWatchClosest(this, EntityPlayer.class, 16.0F));
+		this.tasks.addTask(4, new EntityAILookIdle(this));
 		this.applyEntityAI();
 	}
 	
 	@Override
 	protected void applyEntityAI() {
-		this.tasks.addTask(6, new EntityAIMoveThroughVillage(this, 1.0D, false));
+		this.tasks.addTask(5, new EntityAIMoveThroughVillage(this, 1.0D, false));
 		this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, true, new Class[] { EntityPigZombie.class }));
 		this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, true));
+		this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityZGVillagerBase.class, false));
 		this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityAlienVillager.class, false));
 		this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityGrayAlien.class, true));
 	}
@@ -191,8 +193,7 @@ public class EntityMummy extends EntityZombie implements IShadeEntity {
 		
 		if (this.rand.nextFloat() < f * 0.05F) {
 			this.getEntityAttribute(SPAWN_REINFORCEMENTS_CHANCE).applyModifier(new AttributeModifier("Leader zombie bonus", this.rand.nextDouble() * 0.25D + 0.5D, 0));
-			this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH)
-					.applyModifier(new AttributeModifier("Leader zombie bonus", this.rand.nextDouble() * 3.0D + 1.0D, 2));
+			this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).applyModifier(new AttributeModifier("Leader zombie bonus", this.rand.nextDouble() * 3.0D + 1.0D, 2));
 			this.setBreakDoorsAItask(true);
 		}
 		

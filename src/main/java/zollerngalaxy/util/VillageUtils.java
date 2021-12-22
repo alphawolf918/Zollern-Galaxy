@@ -20,6 +20,7 @@ import zollerngalaxy.core.dimensions.worldproviders.WorldProviderCentotl;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderEden;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderKriffon;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderMetztli;
+import zollerngalaxy.core.dimensions.worldproviders.WorldProviderPerdita;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderPurgot;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderToci;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderZollus;
@@ -30,6 +31,7 @@ import zollerngalaxy.mobs.entities.villagers.EntityCentotlVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityEdenVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityHarranVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityKriffonVillager;
+import zollerngalaxy.mobs.entities.villagers.EntityPerditaVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityPurgotVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityTociVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityZollusVillager;
@@ -166,6 +168,18 @@ public class VillageUtils {
 						EntityTociVillager tociVillager = new EntityTociVillager(world);
 						tociVillager.setPosition(worldPos.getX(), worldPos.getY(), worldPos.getZ());
 						world.spawnEntity(tociVillager);
+					}
+				}
+			} else if (provider instanceof WorldProviderPerdita) {
+				if (!world.isRemote) {
+					Entity entity = event.getEntity();
+					if (entity instanceof EntityAlienVillager) {
+						EntityAlienVillager alienVillager = (EntityAlienVillager) entity;
+						BlockPos worldPos = alienVillager.getPos();
+						alienVillager.setDead();
+						EntityPerditaVillager perditaVillager = new EntityPerditaVillager(world);
+						perditaVillager.setPosition(worldPos.getX(), worldPos.getY(), worldPos.getZ());
+						world.spawnEntity(perditaVillager);
 					}
 				}
 			}

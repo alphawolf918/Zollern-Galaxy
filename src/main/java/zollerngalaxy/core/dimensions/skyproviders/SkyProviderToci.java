@@ -10,7 +10,6 @@ package zollerngalaxy.core.dimensions.skyproviders;
 import java.util.Random;
 import org.lwjgl.opengl.GL11;
 import micdoodle8.mods.galacticraft.api.world.IGalacticraftWorldProvider;
-import micdoodle8.mods.galacticraft.core.Constants;
 import micdoodle8.mods.galacticraft.core.util.ConfigManagerCore;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.WorldClient;
@@ -22,7 +21,6 @@ import net.minecraft.client.renderer.RenderHelper;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraftforge.client.IRenderHandler;
 import net.minecraftforge.fml.client.FMLClientHandler;
@@ -352,20 +350,5 @@ public class SkyProviderToci extends IRenderHandler {
 		}
 		
 		var2.draw();
-	}
-	
-	public float getSkyBrightness(float par1) {
-		final float var2 = FMLClientHandler.instance().getClient().world.getCelestialAngle(par1);
-		float var3 = 1.0F - (MathHelper.sin(var2 * Constants.twoPI) * 2.0F + 0.25F);
-		
-		if (var3 < 0.0F) {
-			var3 = 0.0F;
-		}
-		
-		if (var3 > 1.0F) {
-			var3 = 1.0F;
-		}
-		
-		return var3 * var3 * 1F;
 	}
 }

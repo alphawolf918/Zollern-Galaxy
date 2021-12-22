@@ -728,7 +728,8 @@ public class ZGBlocks {
 	
 	// Ingot Stacks
 	public static final Block blockIngotStackIron = new BlockIngotStack("iron", Items.IRON_INGOT);
-	public static final Block blockIngotStackGold = new BlockIngotStack2("gold", Items.GOLD_INGOT);
+	// public static final Block blockIngotStackGold = new BlockIngotStack2("gold",
+	// Items.GOLD_INGOT);
 	
 	// Sirens
 	public static final Block ironSirenON = new BlockIronSiren("ironsiren_on", ZGSoundEvents.ALARM_IRON, true);
@@ -781,11 +782,11 @@ public class ZGBlocks {
 				corruptCreepstone, exodusTallGrass, exodusDirt, exodusGrass, exodusCobblestone, exodusStone, exodusGravel, exodusRock, exodusSand, exodusIronOre, exodusGoldOre,
 				exodusDiamondOre, exodusRedstoneOre, exodusCopperOre, exoWoodLogs, exoWoodLeaves, exoWoodPlanks, exoWoodSapling, vortexSurfaceRock, vortexCobblestone, vortexStone,
 				vortexVoltRock, vortexIronOre, vortexGoldOre, vortexDiamondOre, vortexRedstoneOre, vortexCopperOre, vortexSuperChargedCoalOre, vortexFueltoniumOre,
-				vortexEveniumOre, blockBlueprintStation, blockHealingStation, blockCrystalsPlutonium, blockCrystalsStorm, blockCrystalsEden, blockIngotStackIron,
-				blockIngotStackGold, ironSirenON, goldSirenON, diamondSirenON, emeraldSirenON, ironSiren, goldSiren, diamondSiren, emeraldSiren, astrosRock, astrosDirt,
-				astrosGravel, astrosCobblestone, astrosStone, astrosIce, astrosIronOre, astrosGoldOre, astrosDiamondOre, astrosEmeraldOre, astrosRedstoneOre, astrosCoalOre,
-				astrosSuperChargedCoalOre, astrosTinOre, astrosZollerniumOre, astrosSapphireOre, centoRock, centoCobblestone, centoStone, centoDirt, centoGravel, centoShiniumOre,
-				centoGoldOre, centoIronOre, centoFueltoniumOre, centoZollerniumOre, facehuggerEgg);
+				vortexEveniumOre, blockBlueprintStation, blockHealingStation, blockCrystalsPlutonium, blockCrystalsStorm, blockCrystalsEden, blockIngotStackIron, ironSirenON,
+				goldSirenON, diamondSirenON, emeraldSirenON, ironSiren, goldSiren, diamondSiren, emeraldSiren, astrosRock, astrosDirt, astrosGravel, astrosCobblestone, astrosStone,
+				astrosIce, astrosIronOre, astrosGoldOre, astrosDiamondOre, astrosEmeraldOre, astrosRedstoneOre, astrosCoalOre, astrosSuperChargedCoalOre, astrosTinOre,
+				astrosZollerniumOre, astrosSapphireOre, centoRock, centoCobblestone, centoStone, centoDirt, centoGravel, centoShiniumOre, centoGoldOre, centoIronOre,
+				centoFueltoniumOre, centoZollerniumOre, facehuggerEgg);
 		//
 		ZGBlocks.registerBlocks(tociSand, tociStarSand, tociDirt, tociRock, tociCobblestone, tociMossyCobblestone, tociStone, tociStoneBricks, tociGravel, tociNickelOre,
 				tociTinOre, tociBronzeOre, tociSilverOre, tociLeadOre, tociCopperOre, tociZincOre, tociSuperChargedCoalOre, tociRedstoneOre, tociGoldOre, tociAmaranthOre,

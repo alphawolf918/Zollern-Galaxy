@@ -871,6 +871,8 @@ entity.zollerngalaxy:facehugger.name=Facehugger
 entity.zollerngalaxy:xenomorph.name=Xenomorph
 entity.zollerngalaxy:xenomorphqueen.name=Xenomorph Queen
 
+entity.zollerngalaxy:dragon.name=Galaxy Dragon
+
 ## Tooltips ##
 
 tooltips.hud=Shows all planetary and biome data.

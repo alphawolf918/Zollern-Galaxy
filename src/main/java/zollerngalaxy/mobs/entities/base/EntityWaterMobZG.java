@@ -8,7 +8,6 @@
 package zollerngalaxy.mobs.entities.base;
 
 import java.util.Random;
-import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.MoverType;
 import net.minecraft.entity.ai.EntityAIBase;
 import net.minecraft.entity.passive.EntityWaterMob;
@@ -17,7 +16,6 @@ import net.minecraft.init.SoundEvents;
 import net.minecraft.pathfinding.PathNodeType;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
-import net.minecraft.util.datafix.DataFixer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
@@ -57,10 +55,6 @@ public class EntityWaterMobZG extends EntityWaterMob {
 		super(worldIn);
 		this.motionYStart = this.motionY;
 		this.posYStart = this.posY;
-	}
-	
-	public static void registerFixesSquid(DataFixer fixer) {
-		EntityLiving.registerFixesMob(fixer, EntityWaterMobZG.class);
 	}
 	
 	@Override

@@ -35,6 +35,7 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.Biome.TempCategory;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import zollerngalaxy.mobs.entities.base.EntityZGVillagerBase;
 import zollerngalaxy.util.ZGDamageSrc;
 
 public class EntityMagmos extends EntityMob implements IEntityBreathable {
@@ -48,12 +49,12 @@ public class EntityMagmos extends EntityMob implements IEntityBreathable {
 	@Override
 	protected void initEntityAI() {
 		this.tasks.addTask(0, new EntityAISwimming(this));
-		this.tasks.addTask(2, new EntityAIAttackMelee(this, 1.0D, false));
-		this.tasks.addTask(3, new EntityAILeapAtTarget(this, 0.4F));
-		this.tasks.addTask(5, new EntityAIMoveTowardsRestriction(this, 1.0D));
-		this.tasks.addTask(7, new EntityAIWanderAvoidWater(this, 1.0D));
-		this.tasks.addTask(8, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
-		this.tasks.addTask(8, new EntityAILookIdle(this));
+		this.tasks.addTask(1, new EntityAIAttackMelee(this, 1.0D, false));
+		this.tasks.addTask(2, new EntityAILeapAtTarget(this, 0.4F));
+		this.tasks.addTask(3, new EntityAIMoveTowardsRestriction(this, 1.0D));
+		this.tasks.addTask(4, new EntityAIWanderAvoidWater(this, 1.0D));
+		this.tasks.addTask(5, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
+		this.tasks.addTask(5, new EntityAILookIdle(this));
 		this.applyEntityAI();
 	}
 	
@@ -62,6 +63,7 @@ public class EntityMagmos extends EntityMob implements IEntityBreathable {
 		this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, true, new Class[] { EntitySkeleton.class }));
 		this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, true));
 		this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityAlienVillager.class, false));
+		this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityZGVillagerBase.class, false));
 		this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityIronGolem.class, true));
 	}
 	
@@ -115,8 +117,8 @@ public class EntityMagmos extends EntityMob implements IEntityBreathable {
 			}
 			
 			for (int i = 0; i < 2; ++i) {
-				this.world.spawnParticle(EnumParticleTypes.SMOKE_LARGE, this.posX + (this.rand.nextDouble() - 0.5D) * this.width,
-						this.posY + this.rand.nextDouble() * this.height, this.posZ + (this.rand.nextDouble() - 0.5D) * this.width, 0.0D, 0.0D, 0.0D);
+				this.world.spawnParticle(EnumParticleTypes.SMOKE_LARGE, this.posX + (this.rand.nextDouble() - 0.5D) * this.width, this.posY + this.rand.nextDouble() * this.height,
+						this.posZ + (this.rand.nextDouble() - 0.5D) * this.width, 0.0D, 0.0D, 0.0D);
 			}
 		}
 	}

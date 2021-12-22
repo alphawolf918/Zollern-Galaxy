@@ -13,6 +13,7 @@ import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import zollerngalaxy.mobs.entities.EntityArcon;
 import zollerngalaxy.mobs.entities.EntityBladeFish;
 import zollerngalaxy.mobs.entities.EntityBlubberFish;
+import zollerngalaxy.mobs.entities.EntityGalaxyDragon;
 import zollerngalaxy.mobs.entities.EntityFacehugger;
 import zollerngalaxy.mobs.entities.EntityFaceless;
 import zollerngalaxy.mobs.entities.EntityFrostGiant;
@@ -45,6 +46,7 @@ import zollerngalaxy.mobs.entities.villagers.EntityCentotlVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityEdenVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityHarranVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityKriffonVillager;
+import zollerngalaxy.mobs.entities.villagers.EntityPerditaVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityPurgotVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityTociVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityZollusVillager;
@@ -55,6 +57,7 @@ import zollerngalaxy.mobs.entities.zombiemutations.EntityVolatile;
 import zollerngalaxy.mobs.renders.RenderArcon;
 import zollerngalaxy.mobs.renders.RenderBladeFish;
 import zollerngalaxy.mobs.renders.RenderBlubberFish;
+import zollerngalaxy.mobs.renders.RenderGalaxyDragon;
 import zollerngalaxy.mobs.renders.RenderFacehugger;
 import zollerngalaxy.mobs.renders.RenderFaceless;
 import zollerngalaxy.mobs.renders.RenderFrostGiant;
@@ -87,6 +90,7 @@ import zollerngalaxy.mobs.renders.villagers.RenderCentotlVillager;
 import zollerngalaxy.mobs.renders.villagers.RenderEdenVillager;
 import zollerngalaxy.mobs.renders.villagers.RenderHarranVillager;
 import zollerngalaxy.mobs.renders.villagers.RenderKriffonVillager;
+import zollerngalaxy.mobs.renders.villagers.RenderPerditaVillager;
 import zollerngalaxy.mobs.renders.villagers.RenderPurgotVillager;
 import zollerngalaxy.mobs.renders.villagers.RenderTociVillager;
 import zollerngalaxy.mobs.renders.villagers.RenderZollusVillager;
@@ -140,6 +144,8 @@ public final class MobRenders {
 		RenderMob(EntityCentotlVillager.class, RenderCentotlVillager::new);
 		RenderMob(EntityWanderer.class, RenderWanderer::new);
 		RenderMob(EntityTociVillager.class, RenderTociVillager::new);
+		RenderMob(EntityPerditaVillager.class, RenderPerditaVillager::new);
+		RenderMob(EntityGalaxyDragon.class, RenderGalaxyDragon::new);
 	}
 	
 	/**

@@ -21,6 +21,7 @@ import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderToci;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 import zollerngalaxy.core.enums.EnumOreGenZG;
 import zollerngalaxy.lib.helpers.ZGHelper;
+import zollerngalaxy.worldgen.WorldGenCraterZG;
 import zollerngalaxy.worldgen.WorldGenMinableZG;
 import zollerngalaxy.worldgen.WorldGenOutpost;
 import zollerngalaxy.worldgen.WorldGenTunnel;
@@ -51,11 +52,13 @@ public class BiomeDecoratorToci extends BiomeDecoratorZG {
 	private WorldGenerator gravelGen;
 	
 	public int tunnelsPerChunk = 8;
+	public int cratersPerChunk = 4;
 	
 	public boolean generateCraters = true;
 	public boolean generateTunnels = true;
 	
 	private WorldGenerator tunnelGen = new WorldGenTunnel();
+	private WorldGenerator craterGen = new WorldGenCraterZG();
 	
 	public BiomeDecoratorToci() {
 		this.nickelGen = new WorldGenMinableZG(ZGBlocks.tociNickelOre, STONE, EnumOreGenZG.NICKEL);
@@ -74,7 +77,7 @@ public class BiomeDecoratorToci extends BiomeDecoratorZG {
 		this.fueltoniumGen = new WorldGenMinableZG(ZGBlocks.tociFueltoniumOre, STONE, EnumOreGenZG.FUELTONIUM);
 		this.ironGen = new WorldGenMinableZG(ZGBlocks.tociIronOre, STONE, EnumOreGenZG.IRON);
 		this.diamondGen = new WorldGenMinableZG(ZGBlocks.tociBronzeOre, STONE, EnumOreGenZG.DIAMOND);
-		this.gravelGen = new WorldGenMinableZG(ZGBlocks.tociBronzeOre, STONE, EnumOreGenZG.GRAVEL.setGenCount(10));
+		this.gravelGen = new WorldGenMinableZG(ZGBlocks.tociGravel, STONE, EnumOreGenZG.GRAVEL.setGenCount(10));
 	}
 	
 	@Override
@@ -116,15 +119,23 @@ public class BiomeDecoratorToci extends BiomeDecoratorZG {
 				y = rand.nextInt(rand.nextInt(genY) + 8);
 				for (int i = 0; i < this.tunnelsPerChunk; ++i) {
 					if (y <= 60) {
-						tunnelGen.generate(world, rand, this.chunkPos.add(x, y, z));
+						this.tunnelGen.generate(world, rand, this.chunkPos.add(x, y, z));
 					}
 				}
 			}
 		}
 		
 		// Craters
-		if (this.generateCraters) {
+		if (this.generateCraters && this.cratersPerChunk > 0) {
 			ChunkProviderToci.INSTANCE.createCraters(x, z, chunkPrimer);
+			if (ZGHelper.rngInt(1, 100) <= 50) {
+				y = rand.nextInt(rand.nextInt(genY) + 8);
+				for (int i = 0; i < this.cratersPerChunk; ++i) {
+					if (y <= 80) {
+						this.craterGen.generate(world, rand, this.chunkPos.add(x, y, z));
+					}
+				}
+			}
 		}
 		
 		// Outposts

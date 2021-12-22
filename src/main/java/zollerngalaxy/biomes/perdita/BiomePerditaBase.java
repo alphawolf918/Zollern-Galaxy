@@ -9,7 +9,6 @@
 package zollerngalaxy.biomes.perdita;
 
 import java.util.Random;
-import micdoodle8.mods.galacticraft.core.entities.EntityAlienVillager;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
@@ -28,6 +27,7 @@ import zollerngalaxy.mobs.entities.EntityGrayAlien;
 import zollerngalaxy.mobs.entities.EntityMegaCreeper;
 import zollerngalaxy.mobs.entities.EntityMummy;
 import zollerngalaxy.mobs.entities.EntityScorpion;
+import zollerngalaxy.mobs.entities.villagers.EntityPerditaVillager;
 
 public abstract class BiomePerditaBase extends BiomeSpace {
 	
@@ -52,11 +52,9 @@ public abstract class BiomePerditaBase extends BiomeSpace {
 		this.biomeDecor.treesPerChunk = -999;
 		this.biomeDecor.grassPerChunk = -999;
 		this.biomeDecor.mushroomsPerChunk = -999;
-		
 		if (ConfigManagerZG.enableAlienVillagerSpawn) {
-			this.spawnableCreatureList.add(new SpawnListEntry(EntityAlienVillager.class, this.villagerSpawnRate, 1, 1));
+			this.spawnableCreatureList.add(new SpawnListEntry(EntityPerditaVillager.class, this.villagerSpawnRate, 1, 1));
 		}
-		
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityGrayAlien.class, 25, 2, 4));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityMummy.class, 35, 2, 4));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityScorpion.class, 25, 2, 4));

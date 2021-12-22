@@ -62,6 +62,7 @@ import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent.NameFormat;
 import net.minecraftforge.event.entity.player.UseHoeEvent;
+import net.minecraftforge.event.world.BlockEvent.BreakEvent;
 import net.minecraftforge.fml.common.eventhandler.Event.Result;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -84,6 +85,7 @@ import zollerngalaxy.lib.helpers.ModHelperBase;
 import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.mobs.entities.EntityBladeFish;
 import zollerngalaxy.mobs.entities.EntityBlubberFish;
+import zollerngalaxy.mobs.entities.EntityGalaxyDragon;
 import zollerngalaxy.mobs.entities.EntityGalaxyKnight;
 import zollerngalaxy.mobs.entities.EntityGrayAlien;
 import zollerngalaxy.mobs.entities.EntityMegaCreeper;
@@ -109,6 +111,18 @@ public class ZGEvents {
 	private IProxy proxy = this.core.proxy;
 	
 	private Map<BlockPos, Integer> lightning = Maps.newHashMap();
+	
+	public void onBlockBrokenEvent(BreakEvent event) {
+		World world = event.getWorld();
+		if (!world.isRemote) {
+			BlockPos pos = event.getPos();
+			IBlockState state = world.getBlockState(pos);
+			if (state.getBlock() == Blocks.DRAGON_EGG) {
+				EntityGalaxyDragon galaxyDragon = new EntityGalaxyDragon(world);
+				ZGHelper.spawnEntity(galaxyDragon, world, pos);
+			}
+		}
+	}
 	
 	@SideOnly(Side.CLIENT)
 	@SubscribeEvent(priority = EventPriority.HIGH, receiveCanceled = true)
@@ -454,8 +468,7 @@ public class ZGEvents {
 				if (this.core.isInTestMode() || this.core.isInDevMode()) {
 					String txtFormat = TextFormatting.BOLD + " " + TextFormatting.RED;
 					String msg = txtFormat + "WARNING: This is NOT a valid version of Zollern Galaxy! "
-							+ "Please uninstall the mod and install the correct version, or it will not operate correctly. "
-							+ "Please also contact the mod author immediately!";
+							+ "Please uninstall the mod and install the correct version, or it will not operate correctly. " + "Please also contact the mod author immediately!";
 					this.proxy.sendChatMessage(player, msg);
 				}
 			}

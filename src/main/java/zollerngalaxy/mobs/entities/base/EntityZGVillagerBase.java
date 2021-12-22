@@ -441,6 +441,11 @@ public class EntityZGVillagerBase extends EntityAgeable implements IMerchant, IN
 	}
 	
 	@Override
+	public int getMaxSpawnedInChunk() {
+		return 4;
+	}
+	
+	@Override
 	@SideOnly(Side.CLIENT)
 	public void handleStatusUpdate(byte id) {
 		if (id == 12) {

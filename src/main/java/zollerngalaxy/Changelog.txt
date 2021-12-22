@@ -8,13 +8,21 @@ Zollern Galaxy v2.0.35
     - At night, they have a danger meter which increases as the night goes on.
         - If this meter gets too high, they will build a "home" if they do not have one already.
             - This is turned off by default in the config, and Wanderers can be turned off as well.
-* Added the Toci Villager.
+* Added the Toci and Perdita Villagers.
+* Added the Galaxy Dragon mob, akin to a Baby Ender Dragon. This mob is tameable using a bone.
+    - You can also tempt it / make it breed by giving it a Lost Peach or a Lost Berry.
+    - At this time, they cannot be ridden, but that is planned for the future.
+    - These do not spawn naturally, and instead, they spawn when the Dragon Egg is broken.
+        - Obtained after fighting the Ender Dragon.
 * 
 
 [CHANGES]
+* Slightly increased strength of Facehugger.
+* Updated Wasp model, texture and behavior.
 * 
 
 [FIXES]
 * Fixed Xenomorph Queen laying 'ghost eggs' on server-side.
 * Fixed the Arcon mob looking and acting derpy.
+* Removed missing texture block, was only meant to be there as a test.
 * 

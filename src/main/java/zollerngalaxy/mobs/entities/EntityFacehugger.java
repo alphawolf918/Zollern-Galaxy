@@ -72,7 +72,7 @@ public class EntityFacehugger extends EntityMob implements IShadeEntity, IEntity
 	@Override
 	protected void initEntityAI() {
 		this.tasks.addTask(1, new EntityAISwimming(this));
-		this.tasks.addTask(2, new EntityAILeapAtTarget(this, 1.4F));
+		this.tasks.addTask(2, new EntityAILeapAtTarget(this, 0.6F));
 		this.tasks.addTask(3, new EntityFacehugger.AIFacehuggerAttack(this));
 		this.tasks.addTask(4, new EntityAIWanderAvoidWater(this, 1.8D));
 		this.tasks.addTask(5, new EntityAIWatchClosest(this, EntityPlayer.class, 1.4F));
@@ -134,7 +134,7 @@ public class EntityFacehugger extends EntityMob implements IShadeEntity, IEntity
 		super.applyEntityAttributes();
 		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(10.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.29621341192092896D);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(10.0F);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(15.0F);
 		this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(55.0D);
 	}
 	
