@@ -143,6 +143,7 @@ public class ConfigManagerZG {
 	public static boolean enableExtremeMode;
 	public static boolean enableQuietVillagers;
 	public static boolean enableMutantNameTags;
+	public static boolean enableStackChanges;
 	
 	// Compat
 	public static boolean shouldOasisUseLiquidRedstone;
@@ -466,6 +467,10 @@ public class ConfigManagerZG {
 		
 		// Enable/Disable showing of mutant name tags
 		enableMutantNameTags = configuration.get(CTG_MISC, "Enable Mutant Name Tags", true, "Should Mutant Zombies show their name tags? (default: true)").getBoolean();
+		
+		// Enable stack increase changes
+		enableStackChanges = configuration
+				.get(CTG_MISC, "Enable Item Stack Increase Changes", true, "Increases stack height from 16 to 64 for some items when activated (default: true)").getBoolean();
 		
 		// Compatibility (Whether or not to use Thermal Foundation's Detabilized
 		// Redstone

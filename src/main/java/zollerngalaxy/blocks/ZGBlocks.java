@@ -633,9 +633,12 @@ public class ZGBlocks {
 			EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
 	public static final Block tociDiamondOre = new ZGOreGem("tocidiamondore", 6.4F, Items.EMERALD).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
 			EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
-	// TODO
+	public static final Block tociQuartzOre = new ZGOreGem("tociquartzore", 7.5F, Items.QUARTZ).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
+			EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());// ZGPlanetStone
 	
 	// Tlaloc
+	public static final Block tlalocRock = new ZGBlockBase("tlalocrock", 9.4F);
+	public static final Block tlalocChrome = new ZGBlockBase("tlalocchrome", 9.6F);
 	// TODO
 	
 	// Metals
@@ -790,7 +793,9 @@ public class ZGBlocks {
 		//
 		ZGBlocks.registerBlocks(tociSand, tociStarSand, tociDirt, tociRock, tociCobblestone, tociMossyCobblestone, tociStone, tociStoneBricks, tociGravel, tociNickelOre,
 				tociTinOre, tociBronzeOre, tociSilverOre, tociLeadOre, tociCopperOre, tociZincOre, tociSuperChargedCoalOre, tociRedstoneOre, tociGoldOre, tociAmaranthOre,
-				tociIronOre, tociEmeraldOre, tociCoalOre, tociFueltoniumOre, tociDiamondOre);
+				tociIronOre, tociEmeraldOre, tociCoalOre, tociFueltoniumOre, tociDiamondOre, tociQuartzOre);
+		//
+		ZGBlocks.registerBlocks(tlalocRock, tlalocChrome);
 		//
 		ZGHelper.Log("Loaded a total of " + totalBlocks + " new blocks.");
 	}

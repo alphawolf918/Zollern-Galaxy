@@ -14,6 +14,8 @@ Zollern Galaxy v2.0.35
     - At this time, they cannot be ridden, but that is planned for the future.
     - These do not spawn naturally, and instead, they spawn when the Dragon Egg is broken.
         - Obtained after fighting the Ender Dragon.
+* Added a stack increase helper for Saddles, Ender Pearls, Signs, Buckets and Snowballs from 16 to 64.
+    - This can be disabled in the config.
 * 
 
 [CHANGES]

@@ -41,4 +41,9 @@ public class ZGPlanetStone extends ZGBlockBase {
 		return Item.getItemFromBlock(this.droppedBlock);
 	}
 	
+	public Block setItemDropped(Block droppedBlockIn) {
+		this.droppedBlock = droppedBlockIn;
+		return this;
+	}
+	
 }

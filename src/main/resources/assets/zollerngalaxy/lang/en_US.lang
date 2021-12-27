@@ -442,6 +442,19 @@ tile.tocicoalore.name=Toci Coal Ore
 tile.tocifueltoniumore.name=Toci Fueltonium Ore
 tile.tociironore.name=Toci Iron Ore
 tile.tocidiamondore.name=Toci Diamond Ore
+tile.tociquartzore.name=Toci Quartz Ore
+
+tile.tlalocrock.name=Tlaloc Rock
+tile.tlalocchrome.name=Tlaloc Chrome
+tile.tlaloccobblestone.name=Tlaloc Cobblestone
+tile.tlalocstone.name=Tlaloc Stone
+tile.tlaloccertusquartzore.name=Tlaloc Certus Quartz Ore
+tile.tlalocfluixore.name=Tlaloc Fluix Ore
+tile.tlalocredstoneore.name=Tlaloc Redstone Ore
+tile.tlalocsuperchargedcoalore.name=Tlaloc Super Charged Coal Ore
+tile.tlalocfueltoniumore.name=Tlaloc Fueltonium Ore
+tile.tlaloczollerniumore.name=Tlaloc Zollernium Ore
+tile.tlalocshiniumore.name=Tlaloc Shinium Ore
 
 tile.endrock.name=Endrock
 

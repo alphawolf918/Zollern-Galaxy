@@ -112,6 +112,7 @@ public class ZGEvents {
 	
 	private Map<BlockPos, Integer> lightning = Maps.newHashMap();
 	
+	@SubscribeEvent(priority = EventPriority.HIGH, receiveCanceled = true)
 	public void onBlockBrokenEvent(BreakEvent event) {
 		World world = event.getWorld();
 		if (!world.isRemote) {
@@ -231,7 +232,7 @@ public class ZGEvents {
 			InventoryPlayer playerInventory = player.inventory;
 			NonNullList<ItemStack> armorInventory = playerInventory.armorInventory;
 			BlockPos playerLocation = new BlockPos(player.posX, (player.posY - 1), player.posZ);
-			World world = player.getEntityWorld();
+			World world = player.world;
 			IBlockState blockState = world.getBlockState(playerLocation);
 			Block block = blockState.getBlock();
 			
@@ -267,7 +268,7 @@ public class ZGEvents {
 				// ClientProxy class, under doPotionEffects.
 				if (player.isPotionActive(ZGPotions.infected)) {
 					ZGPotions.infected.performEffect(player, 1);
-					World worldObj = player.getEntityWorld();
+					World worldObj = player.world;
 					Class<? extends Entity> playerClass = EntityPlayer.class;
 					AxisAlignedBB boundingBox = player.getEntityBoundingBox();
 					AxisAlignedBB expandedBox = boundingBox.expand(5.0D, 2.0D, 5.0D);
@@ -404,6 +405,7 @@ public class ZGEvents {
 		if (!ConfigManagerZG.changeContributorNames) {
 			return;
 		}
+		
 		String username = event.getUsername();
 		username = username.toLowerCase();
 		if (username.equals("alphawolf918")) {
@@ -417,7 +419,7 @@ public class ZGEvents {
 		} else if (username.equals("master_zane")) {
 			event.setDisplayname(TextFormatting.GOLD + "Master Zane" + TextFormatting.WHITE);
 		} else if (username.equals("chronoxshift") || username.equals("chrono_miles_")) {
-			event.setDisplayname(TextFormatting.BLACK + "ChronoxShift" + TextFormatting.WHITE);
+			event.setDisplayname(TextFormatting.AQUA + "ChronoxShift" + TextFormatting.WHITE);
 		} else if (username.equals("actural_guy")) {
 			event.setDisplayname(TextFormatting.GOLD + "ExistingEevee" + TextFormatting.WHITE);
 		}
@@ -467,8 +469,8 @@ public class ZGEvents {
 				EntityPlayer player = (EntityPlayer) ent;
 				if (this.core.isInTestMode() || this.core.isInDevMode()) {
 					String txtFormat = TextFormatting.BOLD + " " + TextFormatting.RED;
-					String msg = txtFormat + "WARNING: This is NOT a valid version of Zollern Galaxy! "
-							+ "Please uninstall the mod and install the correct version, or it will not operate correctly. " + "Please also contact the mod author immediately!";
+					String msg = txtFormat
+							+ "WARNING: This is NOT a valid version of Zollern Galaxy! Please uninstall the mod and install the correct version, or it will not operate correctly. Please also contact the mod author immediately!";
 					this.proxy.sendChatMessage(player, msg);
 				}
 			}

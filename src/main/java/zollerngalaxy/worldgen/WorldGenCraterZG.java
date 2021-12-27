@@ -20,10 +20,6 @@ public class WorldGenCraterZG extends ZGWorldGenMaster {
 	
 	@Override
 	public boolean generate(World world, Random rand, BlockPos position) {
-		if (!this.isValidSpawn(world, position)) {
-			return false;
-		}
-		
 		this.setBlock(world, position.add(2, 9, 5), Blocks.AIR);
 		this.setBlock(world, position.add(2, 9, 6), Blocks.AIR);
 		this.setBlock(world, position.add(2, 9, 7), Blocks.AIR);

@@ -7,6 +7,7 @@
  */
 package zollerngalaxy.compatibility;
 
+import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.lib.helpers.ModHelperBase;
 
 public class ZGCompats {
@@ -16,7 +17,7 @@ public class ZGCompats {
 			ExtremeReactorsCompat.init();
 		}
 		
-		if (ModHelperBase.usePlanetProgression) {
+		if (ModHelperBase.usePlanetProgression && ConfigManagerZG.enablePlanetProgressionsCompat) {
 			PlanetProgressionCompat.init();
 		}
 		
@@ -28,8 +29,12 @@ public class ZGCompats {
 			TinkersConstructCompat.init();
 		}
 		
-		if (ModHelperBase.useExtraPlanets) {
+		if (ModHelperBase.useExtraPlanets && ConfigManagerZG.enableExtraPlanetsCompat) {
 			ExtraPlanetsCompat.init();
+		}
+		
+		if (ModHelperBase.useAppliedEnergistics2) {
+			AE2Compat.init();
 		}
 	}
 }
