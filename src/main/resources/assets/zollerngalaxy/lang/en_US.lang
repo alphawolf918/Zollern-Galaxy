@@ -2,7 +2,7 @@ language.name=English
 language.region=US
 language.code=en_US
 
-## Blocks ##
+## Blocks ##f
 
 tile.zolsurfacerock.name=Zolrock
 tile.zolstone.name=Zolstone
@@ -446,8 +446,8 @@ tile.tociquartzore.name=Toci Quartz Ore
 
 tile.tlalocrock.name=Tlaloc Rock
 tile.tlalocchrome.name=Tlaloc Chrome
-tile.tlaloccobblestone.name=Tlaloc Cobblestone
 tile.tlalocstone.name=Tlaloc Stone
+tile.tlalocquartzore.name=Tlaloc Quartz Ore
 tile.tlaloccertusquartzore.name=Tlaloc Certus Quartz Ore
 tile.tlalocfluixore.name=Tlaloc Fluix Ore
 tile.tlalocredstoneore.name=Tlaloc Redstone Ore

@@ -89,7 +89,7 @@ public class ZGItems {
 	public static final Item hud = new ItemHUD();
 	public static final Item alienStone = new ZGItemBase("alienstone");
 	
-	public static final Item superChargedCoal = new ItemFuelBase("superchargedcoal", 6400);
+	public static final Item superChargedCoal = new ItemFuelBase("superchargedcoal", 12800);
 	public static final Item powerStick = new ZGItemBase("powerstick");
 	public static final Item lapisStick = new ZGItemBase("lapisstick");
 	

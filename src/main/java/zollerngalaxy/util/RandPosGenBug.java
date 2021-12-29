@@ -75,13 +75,11 @@ public class RandPosGenBug {
 		boolean flag;
 		
 		if (p_191379_0_.hasHome()) {
-			double d0 = p_191379_0_.getHomePosition().distanceSq(MathHelper.floor(p_191379_0_.posX), MathHelper.floor(p_191379_0_.posY),
-					MathHelper.floor(p_191379_0_.posZ)) + 4.0D;
+			double d0 = p_191379_0_.getHomePosition().distanceSq(MathHelper.floor(p_191379_0_.posX), MathHelper.floor(p_191379_0_.posY), MathHelper.floor(p_191379_0_.posZ)) + 4.0D;
 			double d1 = p_191379_0_.getMaximumHomeDistance() + p_191379_1_;
 			flag = d0 < d1 * d1;
 		} else {
 			flag = false;
-			// EntityCreature
 		}
 		
 		boolean flag1 = false;

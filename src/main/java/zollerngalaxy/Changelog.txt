@@ -21,6 +21,7 @@ Zollern Galaxy v2.0.35
 [CHANGES]
 * Slightly increased strength of Facehugger.
 * Updated Wasp model, texture and behavior.
+* Greatly increased burn time of Super Charged Coal.
 * 
 
 [FIXES]

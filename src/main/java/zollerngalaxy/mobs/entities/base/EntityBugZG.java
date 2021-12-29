@@ -7,22 +7,18 @@
  */
 package zollerngalaxy.mobs.entities.base;
 
-import javax.annotation.Nullable;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.MoverType;
+import net.minecraft.entity.EntityFlying;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.passive.EntityBat;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.SoundEvents;
-import net.minecraft.util.DamageSource;
-import net.minecraft.util.SoundEvent;
+import net.minecraft.entity.ai.EntityFlyHelper;
+import net.minecraft.pathfinding.PathNavigate;
+import net.minecraft.pathfinding.PathNavigateFlying;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import zollerngalaxy.mobs.entities.ai.EntityAIBugAvoidWater;
 import zollerngalaxy.mobs.entities.ai.EntityAIBugWander;
-import zollerngalaxy.util.ZGDamageSrc;
+import zollerngalaxy.mobs.entities.ai.EntityAIBugWanderAvoidWaterFlying;
 
-public class EntityBugZG extends EntityBat {
+public class EntityBugZG extends EntityFlying implements net.minecraft.entity.passive.EntityFlying {
 	
 	protected float randomMotionVecX;
 	protected float randomMotionVecY;
@@ -36,13 +32,17 @@ public class EntityBugZG extends EntityBat {
 		this.setSize(0.7F, 1.4F);
 		this.tasks.addTask(1, new EntityAIBugWander(this, 0.8D));
 		this.tasks.addTask(2, new EntityAIBugAvoidWater(this, 0.8D));
+		this.tasks.addTask(3, new EntityAIBugWanderAvoidWaterFlying(this, 1.0D));
+		this.moveHelper = new EntityFlyHelper(this);
 	}
 	
 	@Override
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.26D);
-		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(20.0D);
+		this.getAttributeMap().registerAttribute(SharedMonsterAttributes.FLYING_SPEED);
+		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.28D);
+		this.getEntityAttribute(SharedMonsterAttributes.FLYING_SPEED).setBaseValue(0.4800000059604645D);
+		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(45.0D);
 	}
 	
 	@Override
@@ -56,39 +56,21 @@ public class EntityBugZG extends EntityBat {
 	}
 	
 	@Override
-	@Nullable
-	public SoundEvent getAmbientSound() {
-		return this.getIsBatHanging() && this.rand.nextInt(4) != 0 ? null : SoundEvents.ENTITY_BAT_AMBIENT;
+	protected PathNavigate createNavigator(World worldIn) {
+		PathNavigateFlying pathnavigateflying = new PathNavigateFlying(this, worldIn);
+		pathnavigateflying.setCanOpenDoors(false);
+		pathnavigateflying.setCanFloat(true);
+		pathnavigateflying.setCanEnterDoors(true);
+		return pathnavigateflying;
 	}
 	
 	@Override
-	protected SoundEvent getHurtSound(DamageSource damageSourceIn) {
-		return SoundEvents.ENTITY_BAT_HURT;
+	public boolean canBePushed() {
+		return true;
 	}
 	
-	@Override
-	protected SoundEvent getDeathSound() {
-		return SoundEvents.ENTITY_BAT_DEATH;
-	}
-	
-	@Override
-	protected void collideWithEntity(Entity entityIn) {
-	}
-	
-	@Override
-	protected void collideWithNearbyEntities() {
-	}
-	
-	@Override
-	public void onCollideWithPlayer(EntityPlayer playerIn) {
-		if (!this.getEntityWorld().isRemote) {
-			playerIn.attackEntityFrom(ZGDamageSrc.deathWasp, ZGDamageSrc.deathWasp.getDamageBase());
-		}
-	}
-	
-	@Override
-	public void travel(float strafe, float vertical, float forward) {
-		this.move(MoverType.SELF, this.motionX, this.motionY, this.motionZ);
+	public boolean isFlying() {
+		return !this.onGround;
 	}
 	
 	public void setMovementVector(float randomMotionVecXIn, float randomMotionVecYIn, float randomMotionVecZIn) {

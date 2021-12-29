@@ -99,10 +99,10 @@ public class BiomeDecoratorToci extends BiomeDecoratorZG {
 		int genY = 248;
 		int y = genY;
 		
-		// if (biome instanceof BiomeSpace) {
-		// BiomeSpace spaceBiome = (BiomeSpace) biome;
-		// genY = spaceBiome.getBiomeHeight();
-		// }
+		if (biome instanceof BiomeSpace) {
+			BiomeSpace spaceBiome = (BiomeSpace) biome;
+			genY = spaceBiome.getBiomeHeight();
+		}
 		
 		this.generateOre(this.nickelGen, EnumOreGenZG.NICKEL, world, rand);
 		this.generateOre(this.tinGen, EnumOreGenZG.TIN, world, rand);
@@ -126,8 +126,8 @@ public class BiomeDecoratorToci extends BiomeDecoratorZG {
 		// Tunnels
 		if (this.generateTunnels && this.tunnelsPerChunk > 0) {
 			if (ZGHelper.rngInt(1, 100) <= 45) {
-				y = rand.nextInt(rand.nextInt(genY) + 8);
 				for (int i = 0; i < this.tunnelsPerChunk; ++i) {
+					y = rand.nextInt(rand.nextInt(genY) + 8);
 					if (y <= 60) {
 						this.tunnelGen.generate(world, rand, this.chunkPos.add(x, y, z));
 					}

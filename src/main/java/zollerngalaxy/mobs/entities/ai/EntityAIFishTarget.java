@@ -133,8 +133,7 @@ public abstract class EntityAIFishTarget extends EntityAIBase {
 	/**
 	 * A static method used to see if an entity is a suitable target through a number of checks.
 	 */
-	public static boolean isSuitableTarget(EntityLiving attacker, @Nullable EntityLivingBase target, boolean includeInvincibles,
-			boolean checkSight) {
+	public static boolean isSuitableTarget(EntityLiving attacker, @Nullable EntityLivingBase target, boolean includeInvincibles, boolean checkSight) {
 		if (target == null) {
 			return false;
 		} else if (target == attacker) {
@@ -147,8 +146,7 @@ public abstract class EntityAIFishTarget extends EntityAIBase {
 			return false;
 		} else {
 			if (attacker instanceof IEntityOwnable && ((IEntityOwnable) attacker).getOwnerId() != null) {
-				if (target instanceof IEntityOwnable
-						&& ((IEntityOwnable) attacker).getOwnerId().equals(((IEntityOwnable) target).getOwnerId())) {
+				if (target instanceof IEntityOwnable && ((IEntityOwnable) attacker).getOwnerId().equals(((IEntityOwnable) target).getOwnerId())) {
 					return false;
 				}
 				

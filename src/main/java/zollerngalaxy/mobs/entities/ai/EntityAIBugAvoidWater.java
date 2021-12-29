@@ -32,8 +32,7 @@ public class EntityAIBugAvoidWater extends EntityAIBugWander {
 			Vec3d vec3d = RandPosGenBug.getLandPos(this.entity, 15, 7);
 			return vec3d == null ? super.getPosition() : vec3d;
 		} else {
-			return this.entity.getRNG().nextFloat() >= this.probability ? RandPosGenBug.getLandPos(this.entity, 10, 7) : super
-					.getPosition();
+			return this.entity.getRNG().nextFloat() >= this.probability ? RandPosGenBug.getLandPos(this.entity, 10, 7) : super.getPosition();
 		}
 	}
 }

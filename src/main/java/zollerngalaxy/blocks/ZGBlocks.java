@@ -615,8 +615,8 @@ public class ZGBlocks {
 			EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
 	public static final Block tociZincOre = new ZGBlockOre("tocizincore", 8.4F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
 			EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
-	public static final Block tociSuperChargedCoalOre = new ZGBlockOre("tocisupercoalore", 4.2F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
-			EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
+	public static final Block tociSuperChargedCoalOre = new ZGOreGem("tocisupercoalore", 4.2F, ZGItems.superChargedCoal)
+			.setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
 	public static final Block tociRedstoneOre = new ZGBlockOre("tociredstoneore", 3.1F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
 			EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
 	public static final Block tociGoldOre = new ZGBlockOre("tocigoldore", 2.4F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
@@ -634,11 +634,37 @@ public class ZGBlocks {
 	public static final Block tociDiamondOre = new ZGOreGem("tocidiamondore", 6.4F, Items.EMERALD).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
 			EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
 	public static final Block tociQuartzOre = new ZGOreGem("tociquartzore", 7.5F, Items.QUARTZ).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
-			EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());// ZGPlanetStone
+			EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
 	
 	// Tlaloc
 	public static final Block tlalocRock = new ZGBlockBase("tlalocrock", 9.4F);
 	public static final Block tlalocChrome = new ZGBlockBase("tlalocchrome", 9.6F);
+	public static final Block tlalocStone = new ZGPlanetStone("tlalocstone", 6.4F);
+	public static final Block tlalocRedstoneOre = new ZGBlockOre("tlalocredstoneore", 3.1F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
+			EnumHarvestLevelZG.AMARANTH.getHarvestLevel());
+	public static final Block tlalocZollerniumOre = new ZGBlockOre("tlaloczollerniumore", 7.1F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
+			EnumHarvestLevelZG.AMARANTH.getHarvestLevel());
+	public static final Block tlalocShiniumOre = new ZGBlockOre("tlalocshiniumore", 4.1F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
+			EnumHarvestLevelZG.AMARANTH.getHarvestLevel());
+	public static final Block tlalocSuperChargedCoalOre = ((ZGBlockOre) new ZGOreGem("tlalocsuperchargedcoalore", 4.2F, ZGItems.superChargedCoal)
+			.setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.AMARANTH.getHarvestLevel())).setBlockTier(EnumBlockTier.FOUR);
+	public static final Block tlalocFueltoniumOre = ((ZGBlockOre) new ZGOreGem("tlalocfueltoniumore", 8.2F, ZGItems.dustFueltonium)
+			.setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.AMARANTH.getHarvestLevel())).setBlockTier(EnumBlockTier.FOUR);
+	public static final Block tlalocQuartzOre = ((ZGBlockOre) new ZGOreGem("tlalocquartzore", 6.8F, Items.QUARTZ).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
+			EnumHarvestLevelZG.AMARANTH.getHarvestLevel())).setBlockTier(EnumBlockTier.FOUR);
+	
+	// TODO
+	
+	// Ares
+	// TODO
+	
+	// Prometheus
+	// TODO
+	
+	// Icarus
+	// TODO
+	
+	// Kronos
 	// TODO
 	
 	// Metals
@@ -795,7 +821,8 @@ public class ZGBlocks {
 				tociTinOre, tociBronzeOre, tociSilverOre, tociLeadOre, tociCopperOre, tociZincOre, tociSuperChargedCoalOre, tociRedstoneOre, tociGoldOre, tociAmaranthOre,
 				tociIronOre, tociEmeraldOre, tociCoalOre, tociFueltoniumOre, tociDiamondOre, tociQuartzOre);
 		//
-		ZGBlocks.registerBlocks(tlalocRock, tlalocChrome);
+		ZGBlocks.registerBlocks(tlalocRock, tlalocChrome, tlalocRedstoneOre, tlalocFueltoniumOre, tlalocShiniumOre, tlalocZollerniumOre, tlalocSuperChargedCoalOre,
+				tlalocQuartzOre);
 		//
 		ZGHelper.Log("Loaded a total of " + totalBlocks + " new blocks.");
 	}

@@ -13,6 +13,8 @@ public enum EnumOreGenZG {
 	COAL(15, 25, 0, 256),
 	IRON(21, 20, 0, 256),
 	QUARTZ(16, 10, 0, 46),
+	CERTUS_QUARTZ(10, 6, 0, 36),
+	FLUIX(5, 4, 0, 24),
 	GOLD(16, 6, 0, 41),
 	REDSTONE(10, 15, 0, 26),
 	LAPIS(7, 7, 16, 26),
