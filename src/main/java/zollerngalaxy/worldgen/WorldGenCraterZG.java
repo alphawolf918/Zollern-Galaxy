@@ -760,8 +760,8 @@ public class WorldGenCraterZG extends ZGWorldGenMaster {
 		this.setBlock(world, position.add(12, 13, 6), Blocks.AIR);
 		this.setBlock(world, position.add(12, 13, 7), Blocks.AIR);
 		
-		if (position.getY() > 10) {
-			if (rand.nextInt(100) >= 25) {
+		if (position.getY() > 20) {
+			if (rand.nextInt(100) >= 15) {
 				this.generate(world, rand, position.add(0, -5, 0));
 			}
 		}

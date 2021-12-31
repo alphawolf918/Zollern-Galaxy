@@ -65,8 +65,7 @@ public class ZGBlocks {
 	
 	public static final Block edenWoodLog = new ZGBlockLog("edenwoodlog");
 	public static final Block edenWoodLeaves = new ZGBlockLeaves("edenwoodleaves", ZGBlocks.edenWoodSapling);
-	private static WorldGenerator edenTreeGen = new WorldGenEdenTrees(true, ZGHelper.rngInt(5, 15), ZGBlocks.edenWoodLog.getDefaultState(),
-			ZGBlocks.edenWoodLeaves.getDefaultState(), false);
+	private static WorldGenerator edenTreeGen = new WorldGenEdenTrees(true, ZGHelper.rngInt(5, 15), ZGBlocks.edenWoodLog.getDefaultState(), ZGBlocks.edenWoodLeaves.getDefaultState(), false);
 	
 	public static final Block edenParadiseWoodLog = new ZGBlockLog("paradisewoodlog");
 	public static final Block edenParadiseWoodLeaves = new ZGBlockLeaves("paradisewoodleaves", ZGBlocks.edenParadiseWoodSapling);
@@ -75,8 +74,8 @@ public class ZGBlocks {
 	
 	public static final Block edenGoldenWoodLog = new ZGBlockLog("goldenwoodlog");
 	public static final Block edenGoldenWoodLeaves = new ZGBlockLeaves("goldenwoodleaves", ZGBlocks.edenGoldenWoodSapling);
-	private static WorldGenerator edenGoldenTreeGen = new WorldGenEdenTrees(true, ZGHelper.rngInt(4, 8), ZGBlocks.edenGoldenWoodLog.getDefaultState(),
-			ZGBlocks.edenGoldenWoodLeaves.getDefaultState(), false);
+	private static WorldGenerator edenGoldenTreeGen = new WorldGenEdenTrees(true, ZGHelper.rngInt(4, 8), ZGBlocks.edenGoldenWoodLog.getDefaultState(), ZGBlocks.edenGoldenWoodLeaves.getDefaultState(),
+			false);
 	
 	public static final Block edenLovetreeLog = new ZGBlockLog("lovetreelog");
 	public static final Block edenLovetreeLeaves = new ZGBlockLeaves("lovetreeleaves", ZGBlocks.edenLovetreeSapling);
@@ -85,8 +84,7 @@ public class ZGBlocks {
 	public static final Block perdWoodLogs = new ZGBlockLog("palmwoodlog");
 	public static final Block perdWoodLeaves = new ZGFruitLeaves("palmwoodleaves", ZGBlocks.perdTreeSapling, ZGItems.perdPeach);
 	public static final Block perdWoodPlanks = new ZGBlockPlanks("palmwoodplanks");
-	private static WorldGenerator palmWoodTreeGen = new WorldGenPalmwoodTrees(true, ZGHelper.rngInt(5, 15), ZGBlocks.perdWoodLogs.getDefaultState(),
-			ZGBlocks.perdWoodLeaves.getDefaultState(), false);
+	private static WorldGenerator palmWoodTreeGen = new WorldGenPalmwoodTrees(true, ZGHelper.rngInt(5, 15), ZGBlocks.perdWoodLogs.getDefaultState(), ZGBlocks.perdWoodLeaves.getDefaultState(), false);
 	
 	public static final Block exoWoodLogs = new ZGBlockLog("exoduswoodlog");
 	public static final Block exoWoodLeaves = new ZGBlockLeaves("exoduswoodleaves", ZGBlocks.exoWoodSapling);
@@ -205,52 +203,37 @@ public class ZGBlocks {
 	public static final Block blockCrater = new ZGBlockBase("crater_rock", 2.4F);
 	public static final Block blockRedshroom = new BlockRedshroom();
 	public static final Block blockRedshroomStem = new ZGBlockBase("redshroomstem", 0.6F).setBlockType(EnumBlockType.MUSHROOM);
-	public static final Block edenAluminumOre = new ZGBlockOre("edenaluminumore", 1.5F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
-			EnumHarvestLevelZG.EVENIUM.getHarvestLevel());
-	public static final Block edenSteelOre = new ZGBlockOre("edensteelore", 3.0F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
-			EnumHarvestLevelZG.EVENIUM.getHarvestLevel());
-	public static final Block edenBronzeOre = new ZGBlockOre("edenbronzeore", 2.8F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
-			EnumHarvestLevelZG.EVENIUM.getHarvestLevel());
-	public static final Block edenInvarOre = new ZGBlockOre("edeninvarore", 2.8F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
-			EnumHarvestLevelZG.EVENIUM.getHarvestLevel());
-	public static final Block edenElectrumOre = new ZGBlockOre("edenelectrumore", 2.8F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
-			EnumHarvestLevelZG.EVENIUM.getHarvestLevel());
-	public static final Block edenPlatinumOre = new ZGBlockOre("edenplatinumore", 4.2F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
-			EnumHarvestLevelZG.EVENIUM.getHarvestLevel());
+	public static final Block edenAluminumOre = new ZGBlockOre("edenaluminumore", 1.5F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.EVENIUM.getHarvestLevel());
+	public static final Block edenSteelOre = new ZGBlockOre("edensteelore", 3.0F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.EVENIUM.getHarvestLevel());
+	public static final Block edenBronzeOre = new ZGBlockOre("edenbronzeore", 2.8F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.EVENIUM.getHarvestLevel());
+	public static final Block edenInvarOre = new ZGBlockOre("edeninvarore", 2.8F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.EVENIUM.getHarvestLevel());
+	public static final Block edenElectrumOre = new ZGBlockOre("edenelectrumore", 2.8F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.EVENIUM.getHarvestLevel());
+	public static final Block edenPlatinumOre = new ZGBlockOre("edenplatinumore", 4.2F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.EVENIUM.getHarvestLevel());
 	public static final Block edenCoalOre = new ZGOreGem("edencoalore", 1.5F, Items.COAL).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
 			EnumHarvestLevelZG.EVENIUM.getHarvestLevel());
-	public static final Block edenCopperOre = new ZGBlockOre("edencopperore", 1.4F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
-			EnumHarvestLevelZG.EVENIUM.getHarvestLevel());
+	public static final Block edenCopperOre = new ZGBlockOre("edencopperore", 1.4F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.EVENIUM.getHarvestLevel());
 	public static final Block edenDeshOre = new ZGOreGem("edendeshore", 2.4F, MarsItems.marsItemBasic).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
 			EnumHarvestLevelZG.EVENIUM.getHarvestLevel());
 	public static final Block edenDiamondOre = new ZGOreGem("edendiamondore", 2.0F, Items.DIAMOND).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
 			EnumHarvestLevelZG.EVENIUM.getHarvestLevel());
 	public static final Block edenEmeraldOre = new ZGOreGem("edenemeraldore", 2.5F, Items.EMERALD).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
 			EnumHarvestLevelZG.EVENIUM.getHarvestLevel());
-	public static final Block edenGoldOre = new ZGBlockOre("edengoldore", 1.5F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
+	public static final Block edenGoldOre = new ZGBlockOre("edengoldore", 1.5F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.EVENIUM.getHarvestLevel());
+	public static final Block edenSilverOre = new ZGBlockOre("edensilverore", 1.6F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.EVENIUM.getHarvestLevel());
+	public static final Block edenIronOre = new ZGBlockOre("edenironore", 1.4F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.EVENIUM.getHarvestLevel());
+	public static final Block edenLapisOre = ((ZGBlockBase) new ZGOreGem("edenlapisore", 1.2F, Items.DYE).setDropMeta(4, true)).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
 			EnumHarvestLevelZG.EVENIUM.getHarvestLevel());
-	public static final Block edenSilverOre = new ZGBlockOre("edensilverore", 1.6F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
+	public static final Block edenMeteoricIronOre = new ZGOreGem("edenmeteoricironore", 3.4F, GCItems.meteoricIronRaw).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
 			EnumHarvestLevelZG.EVENIUM.getHarvestLevel());
-	public static final Block edenIronOre = new ZGBlockOre("edenironore", 1.4F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
-			EnumHarvestLevelZG.EVENIUM.getHarvestLevel());
-	public static final Block edenLapisOre = ((ZGBlockBase) new ZGOreGem("edenlapisore", 1.2F, Items.DYE).setDropMeta(4, true))
-			.setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.EVENIUM.getHarvestLevel());
-	public static final Block edenMeteoricIronOre = new ZGOreGem("edenmeteoricironore", 3.4F, GCItems.meteoricIronRaw)
-			.setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.EVENIUM.getHarvestLevel());
 	public static final Block edenRedstoneOre = new ZGOreGem("edenredstoneore", 1.6F, Items.REDSTONE).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
 			EnumHarvestLevelZG.EVENIUM.getHarvestLevel());
-	public static final Block edenTinOre = new ZGBlockOre("edentinore", 1.2F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
-			EnumHarvestLevelZG.EVENIUM.getHarvestLevel());
-	public static final Block edenLeadOre = new ZGBlockOre("edenleadore", 1.2F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
-			EnumHarvestLevelZG.EVENIUM.getHarvestLevel());
-	public static final Block edenNickelOre = new ZGBlockOre("edennickleore", 1.2F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
-			EnumHarvestLevelZG.EVENIUM.getHarvestLevel());
+	public static final Block edenTinOre = new ZGBlockOre("edentinore", 1.2F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.EVENIUM.getHarvestLevel());
+	public static final Block edenLeadOre = new ZGBlockOre("edenleadore", 1.2F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.EVENIUM.getHarvestLevel());
+	public static final Block edenNickelOre = new ZGBlockOre("edennickleore", 1.2F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.EVENIUM.getHarvestLevel());
 	public static final Block edenViriniumOre = new ZGOreGem("edenviriore", 2.6F, ZGItems.dustVirinium).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
 			EnumHarvestLevelZG.EVENIUM.getHarvestLevel());
-	public static final Block edenCobaltOre = new ZGBlockOre("edencobaltore", 2.6F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
-			EnumHarvestLevelZG.EVENIUM.getHarvestLevel());
-	public static final Block edenEveniumOre = new ZGBlockOre("edeneveniumore", 2.8F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
-			EnumHarvestLevelZG.EVENIUM.getHarvestLevel());
+	public static final Block edenCobaltOre = new ZGBlockOre("edencobaltore", 2.6F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.EVENIUM.getHarvestLevel());
+	public static final Block edenEveniumOre = new ZGBlockOre("edeneveniumore", 2.8F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.EVENIUM.getHarvestLevel());
 	public static final Block edenHeartiumOre = new ZGOreGem("edenheartiumore", 2.8F, ZGItems.heartium).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
 			EnumHarvestLevelZG.EVENIUM.getHarvestLevel());
 	
@@ -263,8 +246,8 @@ public class ZGBlocks {
 	public static final Block xathTallGrass = new ZGBlockTallGrass("xathtallgrass");
 	public static final Block xathGrass = new ZGBlockGrassXath("xathgrass");
 	public static final Block xathGravel = new ZGGravel("xathgravel");
-	public static final Block xathPrometheanOre = ((ZGBlockOre) new ZGOreGem("xathprometheanore", 3.6F, ZGItems.prometheanCrystal)
-			.setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.VIRINIUM.getHarvestLevel())).setShouldExplode(true, 15);
+	public static final Block xathPrometheanOre = ((ZGBlockOre) new ZGOreGem("xathprometheanore", 3.6F, ZGItems.prometheanCrystal).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
+			EnumHarvestLevelZG.VIRINIUM.getHarvestLevel())).setShouldExplode(true, 15);
 	public static final Block xathEmeraldOre = ((ZGBlockOre) new ZGOreGem("xathemeraldore", 3.4F, Items.EMERALD).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
 			EnumHarvestLevelZG.VIRINIUM.getHarvestLevel())).setShouldGivePotionEffect(true, MobEffects.INVISIBILITY);
 	public static final Block xathDiamondOre = ((ZGBlockOre) new ZGOreGem("xathdiamondore", 3.2F, Items.DIAMOND).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
@@ -289,22 +272,18 @@ public class ZGBlocks {
 	public static final Block oasisTallGrass = new ZGBlockTallGrass("oasistallgrass");
 	public static final Block oasisGrass = new ZGBlockGrassOasis("oasisgrass");
 	public static final Block oasisGravel = new ZGGravel("oasisgravel", 2.4F);
-	public static final Block oasisSuperChargedCoalOre = new ZGOreGem("oasissuperchargedcoalore", 4.6F, ZGItems.superChargedCoal)
-			.setBlockHarvestLevel(EnumHarvestToolZG.OMNITOOL.getHarvestTool(), EnumHarvestLevelZG.VIRINIUM.getHarvestLevel());
+	public static final Block oasisSuperChargedCoalOre = new ZGOreGem("oasissuperchargedcoalore", 4.6F, ZGItems.superChargedCoal).setBlockHarvestLevel(EnumHarvestToolZG.OMNITOOL.getHarvestTool(),
+			EnumHarvestLevelZG.VIRINIUM.getHarvestLevel());
 	public static final Block oasisCoalOre = new ZGOreGem("oasiscoalore", 2.1F, Items.COAL).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
 			EnumHarvestLevelZG.VIRINIUM.getHarvestLevel());
-	public static final Block oasisIronOre = new ZGBlockOre("oasisironore", 2.5F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
-			EnumHarvestLevelZG.VIRINIUM.getHarvestLevel());
-	public static final Block oasisGoldOre = new ZGBlockOre("oasisgoldore", 2.3F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
-			EnumHarvestLevelZG.VIRINIUM.getHarvestLevel());
+	public static final Block oasisIronOre = new ZGBlockOre("oasisironore", 2.5F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.VIRINIUM.getHarvestLevel());
+	public static final Block oasisGoldOre = new ZGBlockOre("oasisgoldore", 2.3F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.VIRINIUM.getHarvestLevel());
 	public static final Block oasisRedstoneOre = new ZGOreGem("oasisredstoneore", 3.5F, Items.REDSTONE).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
 			EnumHarvestLevelZG.VIRINIUM.getHarvestLevel());
 	public static final Block oasisDiamondOre = new ZGOreGem("oasisdiamondore", 4.2F, Items.DIAMOND).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
 			EnumHarvestLevelZG.VIRINIUM.getHarvestLevel());
-	public static final Block oasisTinOre = new ZGBlockOre("oasistinore", 2.3F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
-			EnumHarvestLevelZG.VIRINIUM.getHarvestLevel());
-	public static final Block oasisLeadOre = new ZGBlockOre("oasisleadore", 2.9F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
-			EnumHarvestLevelZG.VIRINIUM.getHarvestLevel());
+	public static final Block oasisTinOre = new ZGBlockOre("oasistinore", 2.3F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.VIRINIUM.getHarvestLevel());
+	public static final Block oasisLeadOre = new ZGBlockOre("oasisleadore", 2.9F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.VIRINIUM.getHarvestLevel());
 	
 	// Xantheon
 	public static final Block xantheonRock = new ZGBlockBase("xantheonrock", 5.1F);
@@ -312,16 +291,15 @@ public class ZGBlocks {
 	public static final Block xantheonStone = new ZGBlockBase("xantheonstone", 5.6F);
 	public static final Block xantheonCoalOre = new ZGOreGem("xantheoncoalore", 5.6F, Items.COAL).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
 			EnumHarvestLevelZG.VIRINIUM.getHarvestLevel());
-	public static final Block xantheonIronOre = new ZGBlockOre("xantheonironore", 5.7F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
-			EnumHarvestLevelZG.VIRINIUM.getHarvestLevel());
+	public static final Block xantheonIronOre = new ZGBlockOre("xantheonironore", 5.7F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.VIRINIUM.getHarvestLevel());
 	public static final Block xantheonCopperOre = new ZGBlockOre("xantheoncopperore", 5.3F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
 			EnumHarvestLevelZG.VIRINIUM.getHarvestLevel());
 	public static final Block xantheonNickelOre = new ZGBlockOre("xantheonnickelore", 5.7F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
 			EnumHarvestLevelZG.VIRINIUM.getHarvestLevel());
-	public static final Block xantheonPlutoniumOre = new ZGOreGem("xantheonplutoniumore", 6.0F, ZGItems.plutoniumCrystal)
-			.setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.VIRINIUM.getHarvestLevel());
-	public static final Block xantheonFueltoniumOre = new ZGOreGem("xantheonfueltoniumore", 6.1F, ZGItems.dustFueltonium)
-			.setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.AMARANTH.getHarvestLevel());
+	public static final Block xantheonPlutoniumOre = new ZGOreGem("xantheonplutoniumore", 6.0F, ZGItems.plutoniumCrystal).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
+			EnumHarvestLevelZG.VIRINIUM.getHarvestLevel());
+	public static final Block xantheonFueltoniumOre = new ZGOreGem("xantheonfueltoniumore", 6.1F, ZGItems.dustFueltonium).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
+			EnumHarvestLevelZG.AMARANTH.getHarvestLevel());
 	public static final Block xantheonAmaranthOre = new ZGBlockOre("xantheonamaranthore", 6.2F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
 			EnumHarvestLevelZG.VIRINIUM.getHarvestLevel());
 	public static final Block xantheonConstructBlock = new ZGBlockMetal("constructblock", 8.2F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
@@ -337,44 +315,36 @@ public class ZGBlocks {
 			EnumHarvestLevelZG.AMARANTH.getHarvestLevel());
 	public static final Block atheonRedstoneOre = new ZGOreGem("atheonredstoneore", 5.6F, Items.REDSTONE).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
 			EnumHarvestLevelZG.AMARANTH.getHarvestLevel());
-	public static final Block atheonTinOre = new ZGBlockOre("atheontinore", 5.4F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
-			EnumHarvestLevelZG.AMARANTH.getHarvestLevel());
+	public static final Block atheonTinOre = new ZGBlockOre("atheontinore", 5.4F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.AMARANTH.getHarvestLevel());
 	public static final Block atheonDiamondOre = new ZGOreGem("atheondiamondore", 6.2F, Items.DIAMOND).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
 			EnumHarvestLevelZG.AMARANTH.getHarvestLevel());
 	public static final Block atheonZollerniumOre = new ZGBlockOre("atheonzollerniumore", 7.2F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
 			EnumHarvestLevelZG.AMARANTH.getHarvestLevel());
-	public static final Block atheonZincOre = new ZGBlockOre("atheonzincore", 6.7F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
-			EnumHarvestLevelZG.AMARANTH.getHarvestLevel());
+	public static final Block atheonZincOre = new ZGBlockOre("atheonzincore", 6.7F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.AMARANTH.getHarvestLevel());
 	public static final Block atheonConstructBlock = new ZGBlockMetal("goldenconstructblock", 10.4F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
 			EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
 	
 	// Perdita
-	public static final Block perdSand = new ZGSand("perdsand", 2.4F).setBlockHarvestLevel(EnumHarvestToolZG.SHOVEL.getHarvestTool(),
-			EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
-	public static final Block perdRock = new ZGBlockBase("perdrock").setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
-			EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
+	public static final Block perdSand = new ZGSand("perdsand", 2.4F).setBlockHarvestLevel(EnumHarvestToolZG.SHOVEL.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
+	public static final Block perdRock = new ZGBlockBase("perdrock").setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
 	public static final Block perdTallGrass = new ZGBlockTallGrass("perdtallgrass");
 	public static final Block perdDirt = ((ZGBlockBase) new ZGBlockDirt("perddirt").setLightLevel(0.5F)).setBlockHarvestLevel(EnumHarvestToolZG.SHOVEL.getHarvestTool(),
 			EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
 	public static final Block perdGrass = ((ZGBlockBase) new ZGBlockGrassPerdita("perdgrass").setLightLevel(0.7F)).setBlockHarvestLevel(EnumHarvestToolZG.SHOVEL.getHarvestTool(),
 			EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
 	public static final Block perdCobble = new ZGBlockBase("perdcobble").setBlockType(EnumBlockType.COBBLESTONE);
-	public static final Block perdStone = ((ZGBlockBase) new ZGPlanetStone("perdstone", 3.4F, ZGBlocks.perdCobble).setLightLevel(0.7F))
-			.setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
-	public static final Block perdRockBricks = ((ZGBlockBase) new ZGBlockBase("perdrockbricks", 3.6F).setLightLevel(1.0F))
-			.setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
-	public static final Block perdGravel = new ZGGravel("perdgravel").setBlockHarvestLevel(EnumHarvestToolZG.SHOVEL.getHarvestTool(),
+	public static final Block perdStone = ((ZGBlockBase) new ZGPlanetStone("perdstone", 3.4F, ZGBlocks.perdCobble).setLightLevel(0.7F)).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
 			EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
-	public static final Block perdCreepDirt = new ZGBlockDirt("perdcreepdirt").setBlockHarvestLevel(EnumHarvestToolZG.SHOVEL.getHarvestTool(),
+	public static final Block perdRockBricks = ((ZGBlockBase) new ZGBlockBase("perdrockbricks", 3.6F).setLightLevel(1.0F)).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
 			EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
-	public static final Block perdSoil = new ZGBlockDirt("perdsoil").setBlockHarvestLevel(EnumHarvestToolZG.SHOVEL.getHarvestTool(),
-			EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
+	public static final Block perdGravel = new ZGGravel("perdgravel").setBlockHarvestLevel(EnumHarvestToolZG.SHOVEL.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
+	public static final Block perdCreepDirt = new ZGBlockDirt("perdcreepdirt").setBlockHarvestLevel(EnumHarvestToolZG.SHOVEL.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
+	public static final Block perdSoil = new ZGBlockDirt("perdsoil").setBlockHarvestLevel(EnumHarvestToolZG.SHOVEL.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
 	public static final Block perdCreepStone = ((ZGBlockBase) new ZGPlanetStone("perdcreepstone").setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
 			EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel())).setShouldExplode(true, 20);
 	public static final Block perdGlowstone = new ZGShineBlock("perdglowstone", ZGItems.perdGlowdust).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
 			EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
-	public static final Block perdCaveStone = new ZGPlanetStone("perdcavestone").setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
-			EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
+	public static final Block perdCaveStone = new ZGPlanetStone("perdcavestone").setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
 	public static final Block perdCaveStoneBricks = new ZGBlockBase("perdcavestonebricks", 3.6F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
 			EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
 	public static final Block perdCactus = new LostCactus();
@@ -384,10 +354,8 @@ public class ZGBlocks {
 			EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
 	public static final Block perdEtriumOre = new ZGOreGem("perdetriumore", 7.5F, ZGItems.perdEtrium).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
 			EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
-	public static final Block perdIronOre = new ZGBlockOre("perdironore", 6.7F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
-			EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
-	public static final Block perdGoldOre = new ZGBlockOre("perdgoldore", 5.7F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
-			EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
+	public static final Block perdIronOre = new ZGBlockOre("perdironore", 6.7F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
+	public static final Block perdGoldOre = new ZGBlockOre("perdgoldore", 5.7F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
 	public static final Block perdZollerniumOre = new ZGBlockOre("perdzollerniumore", 6.2F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
 			EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
 	public static final Block perdFueltoniumOre = new ZGOreGem("perdfueltoniumore", 7.2F, ZGItems.dustFueltonium).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
@@ -404,10 +372,8 @@ public class ZGBlocks {
 	public static final Block altumSeaweed = new ZGWaterGrass("seaweed");
 	public static final Block altumCoalOre = new ZGOreGem("altumcoalore", 6.2F, Items.COAL).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
 			EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
-	public static final Block altumIronOre = new ZGBlockOre("altumironore", 5.2F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
-			EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
-	public static final Block altumGoldOre = new ZGBlockOre("altumgoldore", 5.2F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
-			EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
+	public static final Block altumIronOre = new ZGBlockOre("altumironore", 5.2F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
+	public static final Block altumGoldOre = new ZGBlockOre("altumgoldore", 5.2F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
 	public static final Block altumRedstoneOre = new ZGOreGem("altumredstoneore", 6.2F, Items.REDSTONE).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
 			EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
 	public static final Block altumDiamondOre = new ZGOreGem("altumdiamondore", 6.2F, Items.DIAMOND).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
@@ -434,8 +400,7 @@ public class ZGBlocks {
 	public static final Block caligroGravel = new ZGGravel("caligrogravel");
 	public static final Block caligroCreepstone = ((ZGBlockBase) new ZGPlanetStone("creepstone").setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
 			EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel())).setShouldExplode(true, 20);
-	public static final Block caligroCreepdirt = new ZGBlockDirt("creepdirt").setBlockHarvestLevel(EnumHarvestToolZG.SHOVEL.getHarvestTool(),
-			EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
+	public static final Block caligroCreepdirt = new ZGBlockDirt("creepdirt").setBlockHarvestLevel(EnumHarvestToolZG.SHOVEL.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
 	public static final Block caligroWitheriteOre = new ZGOreGem("witheriteore", 6.2F, ZGItems.witherite).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
 			EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
 	public static final Block caligroShiniumOre = new ZGBlockOre("caligroshiniumore", 5.6F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
@@ -444,20 +409,15 @@ public class ZGBlocks {
 			EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
 	public static final Block caligroNickelOre = new ZGBlockOre("caligronickelore", 2.5F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
 			EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
-	public static final Block caligroLeadOre = new ZGBlockOre("caligroleadore", 4.5F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
-			EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
-	public static final Block caligroTinOre = new ZGBlockOre("caligrotinore", 1.5F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
-			EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
+	public static final Block caligroLeadOre = new ZGBlockOre("caligroleadore", 4.5F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
+	public static final Block caligroTinOre = new ZGBlockOre("caligrotinore", 1.5F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
 	public static final Block caligroCopperOre = new ZGBlockOre("caligrocopperore", 4.5F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
 			EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
-	public static final Block caligroIronOre = new ZGBlockOre("caligroironore", 3.2F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
-			EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
-	public static final Block caligroGoldOre = new ZGBlockOre("caligrogoldore", 2.4F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
-			EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
+	public static final Block caligroIronOre = new ZGBlockOre("caligroironore", 3.2F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
+	public static final Block caligroGoldOre = new ZGBlockOre("caligrogoldore", 2.4F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
 	public static final Block caligroAmaranthOre = new ZGBlockOre("caligroamaranthore", 2.F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
 			EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
-	public static final Block caligroZincOre = new ZGBlockOre("caligrozincore", 2.4F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
-			EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
+	public static final Block caligroZincOre = new ZGBlockOre("caligrozincore", 2.4F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
 	public static final Block caligroRedstoneOre = new ZGOreGem("caligroredstoneore", 3.2F, Items.REDSTONE).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
 			EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
 	public static final Block caligroAmberOre = new ZGOreGem("caligroamberore", 6.2F, ZGItems.amber).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
@@ -470,18 +430,18 @@ public class ZGBlocks {
 			EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
 	public static final Block caligroGarnetOre = new ZGOreGem("caligrogarnetore", 6.2F, ZGItems.garnet).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
 			EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
-	public static final Block caligroSuperChargedCoalOre = new ZGOreGem("caligrosuperchargedcoalore", 6.2F, ZGItems.superChargedCoal)
-			.setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
-	public static final Block caligroFueltoniumOre = new ZGOreGem("caligrofueltoniumore", 6.2F, ZGItems.dustFueltonium)
-			.setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
+	public static final Block caligroSuperChargedCoalOre = new ZGOreGem("caligrosuperchargedcoalore", 6.2F, ZGItems.superChargedCoal).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
+			EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
+	public static final Block caligroFueltoniumOre = new ZGOreGem("caligrofueltoniumore", 6.2F, ZGItems.dustFueltonium).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
+			EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
 	public static final Block caligroDiamondOre = new ZGOreGem("caligrodiamondore", 3.2F, Items.DIAMOND).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
 			EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
 	public static final Block caligroEmeraldOre = new ZGOreGem("caligroemeraldore", 3.2F, Items.EMERALD).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
 			EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
 	public static final Block caligroRadiumOre = new ZGOreGem("caligroradiumore", 8.2F, ZGItems.radium).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
 			EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
-	public static final Block caligroLapisOre = ((ZGBlockBase) new ZGOreGem("caligrolapisore", 3.2F, Items.DYE).setDropMeta(4, true))
-			.setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
+	public static final Block caligroLapisOre = ((ZGBlockBase) new ZGOreGem("caligrolapisore", 3.2F, Items.DYE).setDropMeta(4, true)).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
+			EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
 	public static final Block caligroZollerniumOre = new ZGBlockOre("caligrozollerniumore", 3.5F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
 			EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
 	public static final Block caligroRubyOre = new ZGOreGem("caligrorubyore", 2.5F, ZGItems.ruby).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
@@ -494,10 +454,10 @@ public class ZGBlocks {
 	public static final Block corruptCobble = new ZGCorruptBlock("corruptcobble").setBlockType(EnumBlockType.COBBLESTONE);
 	public static final Block corruptStone = new ZGPlanetStoneCorrupted("corruptstone", corruptCobble);
 	public static final Block corruptStoneBricks = new ZGCorruptBlock("corruptstonebricks");
-	public static final Block corruptAscendiumOre = new ZGOreGemCorrupted("corruptascendiumore", 7.5F, ZGItems.ascendium)
-			.setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
-	public static final Block corruptEtriumOre = new ZGOreGemCorrupted("corruptetriumore", 7.5F, ZGItems.perdEtrium)
-			.setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
+	public static final Block corruptAscendiumOre = new ZGOreGemCorrupted("corruptascendiumore", 7.5F, ZGItems.ascendium).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
+			EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
+	public static final Block corruptEtriumOre = new ZGOreGemCorrupted("corruptetriumore", 7.5F, ZGItems.perdEtrium).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
+			EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
 	public static final Block corruptChargiumOre = new ZGBlockOreCorrupted("corruptchargiumore", 7.6F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
 			EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
 	public static final Block corruptCreepstone = new ZGCorruptBlock("corruptcreepstone");
@@ -512,16 +472,13 @@ public class ZGBlocks {
 	public static final Block exodusGravel = new ZGGravel("exodusgravel");
 	public static final Block exodusRock = new ZGBlockBase("exodusrock", 1.2F);
 	public static final Block exodusSand = new ZGSand("exosand", 2.4F);
-	public static final Block exodusIronOre = new ZGBlockOre("exodusironore", 5.2F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
-			EnumHarvestLevelZG.AMARANTH.getHarvestLevel());
-	public static final Block exodusGoldOre = new ZGBlockOre("exodusgoldore", 6.3F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
-			EnumHarvestLevelZG.AMARANTH.getHarvestLevel());
+	public static final Block exodusIronOre = new ZGBlockOre("exodusironore", 5.2F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.AMARANTH.getHarvestLevel());
+	public static final Block exodusGoldOre = new ZGBlockOre("exodusgoldore", 6.3F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.AMARANTH.getHarvestLevel());
 	public static final Block exodusDiamondOre = new ZGOreGem("exodusdiamondore", 7.2F, Items.DIAMOND).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
 			EnumHarvestLevelZG.AMARANTH.getHarvestLevel());
 	public static final Block exodusRedstoneOre = new ZGOreGem("exodusredstoneore", 4.1F, Items.REDSTONE).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
 			EnumHarvestLevelZG.AMARANTH.getHarvestLevel());
-	public static final Block exodusCopperOre = new ZGBlockOre("exoduscopperore", 3.2F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
-			EnumHarvestLevelZG.AMARANTH.getHarvestLevel());
+	public static final Block exodusCopperOre = new ZGBlockOre("exoduscopperore", 3.2F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.AMARANTH.getHarvestLevel());
 	
 	// Vortex
 	public static final Block vortexSurfaceRock = new ZGBlockBase("vortexsurfacerock", 3.2F);
@@ -529,20 +486,17 @@ public class ZGBlocks {
 	public static final Block vortexStone = new ZGPlanetStone("vortexstone", 6.5F, ZGBlocks.vortexCobblestone).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
 			EnumHarvestLevelZG.EVENIUM.getHarvestLevel());
 	public static final Block vortexVoltRock = new ZGBlockBase("vortexvoltrock", 6.5F);
-	public static final Block vortexIronOre = new ZGBlockOre("vortexironore", 5.2F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
-			EnumHarvestLevelZG.EVENIUM.getHarvestLevel());
-	public static final Block vortexGoldOre = new ZGBlockOre("vortexgoldore", 6.3F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
-			EnumHarvestLevelZG.EVENIUM.getHarvestLevel());
+	public static final Block vortexIronOre = new ZGBlockOre("vortexironore", 5.2F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.EVENIUM.getHarvestLevel());
+	public static final Block vortexGoldOre = new ZGBlockOre("vortexgoldore", 6.3F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.EVENIUM.getHarvestLevel());
 	public static final Block vortexDiamondOre = new ZGOreGem("vortexdiamondore", 7.2F, Items.DIAMOND).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
 			EnumHarvestLevelZG.EVENIUM.getHarvestLevel());
 	public static final Block vortexRedstoneOre = new ZGOreGem("vortexredstoneore", 4.1F, Items.REDSTONE).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
 			EnumHarvestLevelZG.EVENIUM.getHarvestLevel());
 	public static final Block vortexSuperChargedCoalOre = ((ZGBlockBase) new ZGOreGem("vortexsuperchargedcoalore", 8.1F, ZGItems.superChargedCoal).setBlockTier(EnumBlockTier.FOUR))
 			.setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.EVENIUM.getHarvestLevel());
-	public static final Block vortexCopperOre = new ZGBlockOre("vortexcopperore", 3.2F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
+	public static final Block vortexCopperOre = new ZGBlockOre("vortexcopperore", 3.2F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.EVENIUM.getHarvestLevel());
+	public static final Block vortexFueltoniumOre = new ZGOreGem("vortexfueltoniumore", 6.2F, ZGItems.dustFueltonium).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
 			EnumHarvestLevelZG.EVENIUM.getHarvestLevel());
-	public static final Block vortexFueltoniumOre = new ZGOreGem("vortexfueltoniumore", 6.2F, ZGItems.dustFueltonium)
-			.setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.EVENIUM.getHarvestLevel());
 	public static final Block vortexEveniumOre = new ZGBlockOre("vortexeveniumore", 7.2F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
 			EnumHarvestLevelZG.EVENIUM.getHarvestLevel());
 	
@@ -553,10 +507,8 @@ public class ZGBlocks {
 	public static final Block astrosCobblestone = new ZGBlockBase("astroscobblestone").setBlockType(EnumBlockType.COBBLESTONE);
 	public static final Block astrosStone = new ZGPlanetStone("astrosstone", 4.5F, ZGBlocks.astrosCobblestone);
 	public static final Block astrosIce = new ZGBlockIce("astrosice");
-	public static final Block astrosIronOre = new ZGBlockOre("astrosironore", 3.2F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
-			EnumHarvestLevelZG.COBALT.getHarvestLevel());
-	public static final Block astrosGoldOre = new ZGBlockOre("astrosgoldore", 3.4F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
-			EnumHarvestLevelZG.COBALT.getHarvestLevel());
+	public static final Block astrosIronOre = new ZGBlockOre("astrosironore", 3.2F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.COBALT.getHarvestLevel());
+	public static final Block astrosGoldOre = new ZGBlockOre("astrosgoldore", 3.4F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.COBALT.getHarvestLevel());
 	public static final Block astrosDiamondOre = new ZGOreGem("astrosdiamondore", 6.2F, Items.DIAMOND).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
 			EnumHarvestLevelZG.COBALT.getHarvestLevel());
 	public static final Block astrosEmeraldOre = new ZGOreGem("astrosemeraldore", 6.2F, Items.EMERALD).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
@@ -565,11 +517,10 @@ public class ZGBlocks {
 			EnumHarvestLevelZG.COBALT.getHarvestLevel());
 	public static final Block astrosCoalOre = new ZGOreGem("astroscoalore", 6.2F, Items.COAL).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
 			EnumHarvestLevelZG.COBALT.getHarvestLevel());
-	public static final Block astrosSuperChargedCoalOre = new ZGOreGem("astrossuperchargedcoalore", 8.2F, ZGItems.superChargedCoal)
-			.setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.COBALT.getHarvestLevel());
-	public static final Block astrosSapphireOre = new AstrosSapphireOre();
-	public static final Block astrosTinOre = new ZGBlockOre("astrostinore", 1.5F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
+	public static final Block astrosSuperChargedCoalOre = new ZGOreGem("astrossuperchargedcoalore", 8.2F, ZGItems.superChargedCoal).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
 			EnumHarvestLevelZG.COBALT.getHarvestLevel());
+	public static final Block astrosSapphireOre = new AstrosSapphireOre();
+	public static final Block astrosTinOre = new ZGBlockOre("astrostinore", 1.5F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.COBALT.getHarvestLevel());
 	public static final Block astrosZollerniumOre = new ZGBlockOre("astroszollerniumore", 3.5F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
 			EnumHarvestLevelZG.AMARANTH.getHarvestLevel());
 	
@@ -581,10 +532,8 @@ public class ZGBlocks {
 	public static final Block centoGravel = new ZGGravel("centogravel", 2.1F);
 	public static final Block centoShiniumOre = new ZGBlockOre("centoshiniumore", 8.5F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
 			EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
-	public static final Block centoGoldOre = new ZGBlockOre("centogoldore", 5.7F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
-			EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
-	public static final Block centoIronOre = new ZGBlockOre("centoironore", 4.2F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
-			EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
+	public static final Block centoGoldOre = new ZGBlockOre("centogoldore", 5.7F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
+	public static final Block centoIronOre = new ZGBlockOre("centoironore", 4.2F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
 	public static final Block centoFueltoniumOre = new ZGBlockOre("centofueltoniumore", 7.8F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
 			EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
 	public static final Block centoZollerniumOre = new ZGBlockOre("centozollerniumore", 6.4F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
@@ -601,30 +550,21 @@ public class ZGBlocks {
 	public static final Block tociStone = new ZGPlanetStone("tocistone", ZGBlocks.tociCobblestone);
 	public static final Block tociStoneBricks = new ZGShineBlock("tocistonebrick", 2.1F);
 	public static final Block tociGravel = new ZGGravel("tocigravel", 4.5F);
-	public static final Block tociNickelOre = new ZGBlockOre("tocinickelore", 4.5F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
+	public static final Block tociNickelOre = new ZGBlockOre("tocinickelore", 4.5F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
+	public static final Block tociTinOre = new ZGBlockOre("tocitinore", 1.5F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
+	public static final Block tociBronzeOre = new ZGBlockOre("tocibronzeore", 6.5F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
+	public static final Block tociSilverOre = new ZGBlockOre("tocisilverore", 5.6F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
+	public static final Block tociLeadOre = new ZGBlockOre("tocileadore", 4.2F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
+	public static final Block tociCopperOre = new ZGBlockOre("tocicopperore", 1.2F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
+	public static final Block tociZincOre = new ZGBlockOre("tocizincore", 8.4F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
+	public static final Block tociSuperChargedCoalOre = new ZGOreGem("tocisupercoalore", 4.2F, ZGItems.superChargedCoal).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
 			EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
-	public static final Block tociTinOre = new ZGBlockOre("tocitinore", 1.5F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
-			EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
-	public static final Block tociBronzeOre = new ZGBlockOre("tocibronzeore", 6.5F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
-			EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
-	public static final Block tociSilverOre = new ZGBlockOre("tocisilverore", 5.6F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
-			EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
-	public static final Block tociLeadOre = new ZGBlockOre("tocileadore", 4.2F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
-			EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
-	public static final Block tociCopperOre = new ZGBlockOre("tocicopperore", 1.2F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
-			EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
-	public static final Block tociZincOre = new ZGBlockOre("tocizincore", 8.4F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
-			EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
-	public static final Block tociSuperChargedCoalOre = new ZGOreGem("tocisupercoalore", 4.2F, ZGItems.superChargedCoal)
-			.setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
 	public static final Block tociRedstoneOre = new ZGBlockOre("tociredstoneore", 3.1F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
 			EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
-	public static final Block tociGoldOre = new ZGBlockOre("tocigoldore", 2.4F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
-			EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
+	public static final Block tociGoldOre = new ZGBlockOre("tocigoldore", 2.4F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
 	public static final Block tociAmaranthOre = new ZGBlockOre("tociamaranthore", 4.4F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
 			EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
-	public static final Block tociIronOre = new ZGBlockOre("tociironore", 2.0F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
-			EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
+	public static final Block tociIronOre = new ZGBlockOre("tociironore", 2.0F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
 	public static final Block tociEmeraldOre = new ZGOreGem("tociemeraldore", 6.2F, Items.EMERALD).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
 			EnumHarvestLevelZG.ZOLLERNIUM.getHarvestLevel());
 	public static final Block tociCoalOre = new ZGOreGem("tocicoalore", 1.4F, Items.COAL).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
@@ -639,6 +579,7 @@ public class ZGBlocks {
 	// Tlaloc
 	public static final Block tlalocRock = new ZGBlockBase("tlalocrock", 9.4F);
 	public static final Block tlalocChrome = new ZGBlockBase("tlalocchrome", 9.6F);
+	public static final Block tlalocMechRock = new ZGBlockBase("tlalocmechrock", 9.2F);
 	public static final Block tlalocStone = new ZGPlanetStone("tlalocstone", 6.4F);
 	public static final Block tlalocRedstoneOre = new ZGBlockOre("tlalocredstoneore", 3.1F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
 			EnumHarvestLevelZG.AMARANTH.getHarvestLevel());
@@ -648,10 +589,13 @@ public class ZGBlocks {
 			EnumHarvestLevelZG.AMARANTH.getHarvestLevel());
 	public static final Block tlalocSuperChargedCoalOre = ((ZGBlockOre) new ZGOreGem("tlalocsuperchargedcoalore", 4.2F, ZGItems.superChargedCoal)
 			.setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.AMARANTH.getHarvestLevel())).setBlockTier(EnumBlockTier.FOUR);
-	public static final Block tlalocFueltoniumOre = ((ZGBlockOre) new ZGOreGem("tlalocfueltoniumore", 8.2F, ZGItems.dustFueltonium)
-			.setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.AMARANTH.getHarvestLevel())).setBlockTier(EnumBlockTier.FOUR);
+	public static final Block tlalocFueltoniumOre = ((ZGBlockOre) new ZGOreGem("tlalocfueltoniumore", 8.2F, ZGItems.dustFueltonium).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
+			EnumHarvestLevelZG.AMARANTH.getHarvestLevel())).setBlockTier(EnumBlockTier.FOUR);
 	public static final Block tlalocQuartzOre = ((ZGBlockOre) new ZGOreGem("tlalocquartzore", 6.8F, Items.QUARTZ).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
 			EnumHarvestLevelZG.AMARANTH.getHarvestLevel())).setBlockTier(EnumBlockTier.FOUR);
+	public static final Block tlalocCertusQuartzOre = new ZGBlockOre("tlaloccertusquartzore", 5.2F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
+			EnumHarvestLevelZG.AMARANTH.getHarvestLevel());
+	public static final Block tlalocFluixOre = new ZGBlockOre("tlalocfluixore", 6.4F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.AMARANTH.getHarvestLevel());
 	
 	// TODO
 	
@@ -774,55 +718,50 @@ public class ZGBlocks {
 	public static final Block emeraldSiren = new BlockEmeraldSiren("emeraldsiren", ZGSoundEvents.ALARM_EMERALD, false);
 	
 	public static void init() {
-		ZGBlocks.registerBlocks(edenLovetreeSapling, edenGoldenWoodSapling, edenParadiseWoodSapling, edenWoodSapling, edenFruit, edenFlower, edenFlowerBlack, edenFlowerBlue,
-				edenFlowerCyan, edenFlowerGreen, edenFlowerOrange, edenFlowerPink, edenFlowerPurple, edenFlowerRed, edenFlowerYellow, edenFlowerWhite, oasisFlower, exodusFlower,
-				zolStone, zolCobbleRock, zolSurfaceRock, zolDirt, zolRockBricks, zolCoalOre, zolCopperOre, zolGoldOre, zolHeartOre, zolTinOre, zolIronOre, zolCrystals,
-				kriffSurfaceRock, kriffStone, kriffCobbleRock, kriffDirt, kriffRockBricks, kriffMagmaRock, kriffBlazeRock, kriffCoalOre, kriffCopperOre, kriffIronOre, kriffGoldOre,
-				kriffRedstoneOre, kriffCobaltOre, purgCobbleRock, purgStone, purgRockBricks, purgWhiteRock, purgBlackRock, purgSurfaceRock, purgDirt, purgGravel,
-				purgMeteoricIronOre, purgCobaltOre, purgIronOre, purgGoldOre, purgCopperOre, purgDiamondOre, purgEmeraldOre, purgEveniumOre, purgAluminumOre, purgTinOre,
-				purgLeadOre, purgRedstoneOre, edenSurfaceRock, edenTallGrass, edenGrass, edenSoil, edenStone, edenSacredStone, edenCobbleRock, edenRockBricks, edenGoldenGrass,
-				edenFallGrass, edenSwampGrass, edenSnow, edenWinterRock, edenBloodSand, edenBloodStone, edenBoneStone, edenGravel, edenBrightStone, edenWoodLog, edenWoodLeaves,
-				edenWoodPlanks, edenParadiseWoodLog, edenParadiseWoodLeaves, edenParadiseWoodPlanks, edenGoldenWoodLog, edenGoldenWoodLeaves, edenGoldenWoodPlanks, edenLovetreeLog,
-				edenLovetreeLeaves, edenLovetreePlanks, edenDungeonBricks, edenAluminumOre, edenSteelOre, edenBronzeOre, edenInvarOre, edenElectrumOre, edenPlatinumOre,
-				edenCoalOre, edenCopperOre, edenDeshOre, edenDiamondOre, edenEmeraldOre, edenGoldOre, edenSilverOre, edenIronOre, edenLapisOre, edenMeteoricIronOre,
-				edenRedstoneOre, edenTinOre, edenLeadOre, edenNickelOre, edenViriniumOre, edenCobaltOre, edenEveniumOre, edenHeartiumOre, xathRock, xathCobble, xathStone,
-				xathRockBricks, xathGrass, xathDirt, xathGravel, xathTallGrass, xathPrometheanOre, xathEmeraldOre, xathDiamondOre, xathRedstoneOre, xathIronOre, xathGoldOre,
-				xathTinOre, xathAzuriteOre, oasisRock, oasisStone, oasisRockBricks, oasisCobble, oasisDirt, oasisTallGrass, oasisGrass, oasisGravel, oasisSuperChargedCoalOre,
-				oasisCoalOre, oasisIronOre, oasisGoldOre, oasisRedstoneOre, oasisDiamondOre, oasisTinOre, oasisLeadOre, xantheonRock, xantheonChrome, xantheonStone,
-				xantheonCoalOre, xantheonIronOre, xantheonCopperOre, xantheonNickelOre, xantheonPlutoniumOre, xantheonFueltoniumOre, xantheonAmaranthOre, xantheonConstructBlock,
-				atheonRock, atheonLuxrock, atheonStone, atheonCobble, atheonRockBricks, atheonAmaranthOre, atheonRedstoneOre, atheonTinOre, atheonDiamondOre, atheonZollerniumOre,
-				atheonZincOre, atheonConstructBlock, blockViri, blockCobalt, blockEve, blockPromethean, blockCrater, blockRedshroom, blockRedshroomStem, blockSuperChargedCoal,
-				blockPlutonium, blockFueltonium, blockChargium, blockShinium, blockAmaranth, blockAzurite, blockZollernium, blockZinc, blockPerdDiamond, blockPerdEtrium,
-				blockZucrite, blockRhodium, blockAmber, blockTopaz, blockOpal, blockAquamarine, blockGarnet, blockRuby, blockSapphire, blockAmberStatic, blockAquamarineIcy,
-				blockGarnetFire, blockWitherite, blockRadium, blockNetheridium, blockNetherizedObsidian, blockRedObsidian, blockShadowBone, blockShinestone, blockShinestoneCrystal,
-				blockShinestonePolished, blockShinestoneCrystalBricks, blockCompressedHeartium, blockCompressedViri, blockCompressedEve, blockCompressedCobalt,
-				blockCompressedPromethean, blockCompressedSuperChargedCoal, blockCompressedZucrite, blockCompressedRhodium, candyCubeWhite, candyCubeBlack, candyCubeGray,
-				candyCubeOrange, candyCubeBrown, candyCubeRed, candyCubeBlue, candyCubeYellow, candyCubePurple, candyCubeCyan, candyCubePink, candyCubeGreen, blockChocolate,
-				blockChocolateBricks, blockCookie, blockBrownie, blockIceCreamSandwich, blockSugarCube, blockSpaceStation, blockOutpost, blockLore, perdSand, perdRock, perdStone,
-				perdCobble, perdRockBricks, perdGravel, perdCreepDirt, perdSoil, perdDirt, perdTallGrass, perdGrass, perdCreepStone, perdGlowstone, perdCaveStone,
-				perdCaveStoneBricks, perdCactus, perdReeds, perdDeadBush, perdDiamondOre, perdEtriumOre, perdIronOre, perdGoldOre, perdZollerniumOre, perdFueltoniumOre,
-				perdTreeSapling, perdWoodLogs, perdWoodLeaves, perdWoodPlanks, altumRock, altumSand, altumDirt, altumCobble, altumStone, altumGravel, altumSeaweed, altumCoalOre,
-				altumIronOre, altumGoldOre, altumRedstoneOre, altumDiamondOre, altumZollerniumOre, altumEveniumOre, altumRhodiumOre, altumAmaranthOre, caligroSurfaceRock,
-				caligroRock, caligroCobblestone, caligroCobblestoneMossy, caligroStone, caligroStoneBricks, caligroGravel, caligroDirt, witherrack, caligroCreepstone,
-				caligroCreepdirt, caligroWitheriteOre, caligroShiniumOre, caligroSilverOre, caligroNickelOre, caligroLeadOre, caligroTinOre, caligroCopperOre, caligroIronOre,
-				caligroGoldOre, caligroRedstoneOre, caligroAmaranthOre, caligroZincOre, caligroAmberOre, caligroTopazOre, caligroOpalOre, caligroAquamarineOre, caligroGarnetOre,
-				caligroSuperChargedCoalOre, caligroFueltoniumOre, caligroDiamondOre, caligroEmeraldOre, caligroRadiumOre, caligroLapisOre, caligroZollerniumOre, caligroRubyOre,
-				spiderlingEgg, shadowBossSpawner, corruptRock, corruptCobble, corruptStone, corruptStoneBricks, corruptAscendiumOre, corruptEtriumOre, corruptChargiumOre,
-				corruptCreepstone, exodusTallGrass, exodusDirt, exodusGrass, exodusCobblestone, exodusStone, exodusGravel, exodusRock, exodusSand, exodusIronOre, exodusGoldOre,
-				exodusDiamondOre, exodusRedstoneOre, exodusCopperOre, exoWoodLogs, exoWoodLeaves, exoWoodPlanks, exoWoodSapling, vortexSurfaceRock, vortexCobblestone, vortexStone,
-				vortexVoltRock, vortexIronOre, vortexGoldOre, vortexDiamondOre, vortexRedstoneOre, vortexCopperOre, vortexSuperChargedCoalOre, vortexFueltoniumOre,
-				vortexEveniumOre, blockBlueprintStation, blockHealingStation, blockCrystalsPlutonium, blockCrystalsStorm, blockCrystalsEden, blockIngotStackIron, ironSirenON,
-				goldSirenON, diamondSirenON, emeraldSirenON, ironSiren, goldSiren, diamondSiren, emeraldSiren, astrosRock, astrosDirt, astrosGravel, astrosCobblestone, astrosStone,
-				astrosIce, astrosIronOre, astrosGoldOre, astrosDiamondOre, astrosEmeraldOre, astrosRedstoneOre, astrosCoalOre, astrosSuperChargedCoalOre, astrosTinOre,
-				astrosZollerniumOre, astrosSapphireOre, centoRock, centoCobblestone, centoStone, centoDirt, centoGravel, centoShiniumOre, centoGoldOre, centoIronOre,
-				centoFueltoniumOre, centoZollerniumOre, facehuggerEgg);
+		ZGBlocks.registerBlocks(edenLovetreeSapling, edenGoldenWoodSapling, edenParadiseWoodSapling, edenWoodSapling, edenFruit, edenFlower, edenFlowerBlack, edenFlowerBlue, edenFlowerCyan,
+				edenFlowerGreen, edenFlowerOrange, edenFlowerPink, edenFlowerPurple, edenFlowerRed, edenFlowerYellow, edenFlowerWhite, oasisFlower, exodusFlower, zolStone, zolCobbleRock,
+				zolSurfaceRock, zolDirt, zolRockBricks, zolCoalOre, zolCopperOre, zolGoldOre, zolHeartOre, zolTinOre, zolIronOre, zolCrystals, kriffSurfaceRock, kriffStone, kriffCobbleRock, kriffDirt,
+				kriffRockBricks, kriffMagmaRock, kriffBlazeRock, kriffCoalOre, kriffCopperOre, kriffIronOre, kriffGoldOre, kriffRedstoneOre, kriffCobaltOre, purgCobbleRock, purgStone, purgRockBricks,
+				purgWhiteRock, purgBlackRock, purgSurfaceRock, purgDirt, purgGravel, purgMeteoricIronOre, purgCobaltOre, purgIronOre, purgGoldOre, purgCopperOre, purgDiamondOre, purgEmeraldOre,
+				purgEveniumOre, purgAluminumOre, purgTinOre, purgLeadOre, purgRedstoneOre, edenSurfaceRock, edenTallGrass, edenGrass, edenSoil, edenStone, edenSacredStone, edenCobbleRock,
+				edenRockBricks, edenGoldenGrass, edenFallGrass, edenSwampGrass, edenSnow, edenWinterRock, edenBloodSand, edenBloodStone, edenBoneStone, edenGravel, edenBrightStone, edenWoodLog,
+				edenWoodLeaves, edenWoodPlanks, edenParadiseWoodLog, edenParadiseWoodLeaves, edenParadiseWoodPlanks, edenGoldenWoodLog, edenGoldenWoodLeaves, edenGoldenWoodPlanks, edenLovetreeLog,
+				edenLovetreeLeaves, edenLovetreePlanks, edenDungeonBricks, edenAluminumOre, edenSteelOre, edenBronzeOre, edenInvarOre, edenElectrumOre, edenPlatinumOre, edenCoalOre, edenCopperOre,
+				edenDeshOre, edenDiamondOre, edenEmeraldOre, edenGoldOre, edenSilverOre, edenIronOre, edenLapisOre, edenMeteoricIronOre, edenRedstoneOre, edenTinOre, edenLeadOre, edenNickelOre,
+				edenViriniumOre, edenCobaltOre, edenEveniumOre, edenHeartiumOre, xathRock, xathCobble, xathStone, xathRockBricks, xathGrass, xathDirt, xathGravel, xathTallGrass, xathPrometheanOre,
+				xathEmeraldOre, xathDiamondOre, xathRedstoneOre, xathIronOre, xathGoldOre, xathTinOre, xathAzuriteOre, oasisRock, oasisStone, oasisRockBricks, oasisCobble, oasisDirt, oasisTallGrass,
+				oasisGrass, oasisGravel, oasisSuperChargedCoalOre, oasisCoalOre, oasisIronOre, oasisGoldOre, oasisRedstoneOre, oasisDiamondOre, oasisTinOre, oasisLeadOre, xantheonRock, xantheonChrome,
+				xantheonStone, xantheonCoalOre, xantheonIronOre, xantheonCopperOre, xantheonNickelOre, xantheonPlutoniumOre, xantheonFueltoniumOre, xantheonAmaranthOre, xantheonConstructBlock,
+				atheonRock, atheonLuxrock, atheonStone, atheonCobble, atheonRockBricks, atheonAmaranthOre, atheonRedstoneOre, atheonTinOre, atheonDiamondOre, atheonZollerniumOre, atheonZincOre,
+				atheonConstructBlock, blockViri, blockCobalt, blockEve, blockPromethean, blockCrater, blockRedshroom, blockRedshroomStem, blockSuperChargedCoal, blockPlutonium, blockFueltonium,
+				blockChargium, blockShinium, blockAmaranth, blockAzurite, blockZollernium, blockZinc, blockPerdDiamond, blockPerdEtrium, blockZucrite, blockRhodium, blockAmber, blockTopaz, blockOpal,
+				blockAquamarine, blockGarnet, blockRuby, blockSapphire, blockAmberStatic, blockAquamarineIcy, blockGarnetFire, blockWitherite, blockRadium, blockNetheridium, blockNetherizedObsidian,
+				blockRedObsidian, blockShadowBone, blockShinestone, blockShinestoneCrystal, blockShinestonePolished, blockShinestoneCrystalBricks, blockCompressedHeartium, blockCompressedViri,
+				blockCompressedEve, blockCompressedCobalt, blockCompressedPromethean, blockCompressedSuperChargedCoal, blockCompressedZucrite, blockCompressedRhodium, candyCubeWhite, candyCubeBlack,
+				candyCubeGray, candyCubeOrange, candyCubeBrown, candyCubeRed, candyCubeBlue, candyCubeYellow, candyCubePurple, candyCubeCyan, candyCubePink, candyCubeGreen, blockChocolate,
+				blockChocolateBricks, blockCookie, blockBrownie, blockIceCreamSandwich, blockSugarCube, blockSpaceStation, blockOutpost, blockLore, perdSand, perdRock, perdStone, perdCobble,
+				perdRockBricks, perdGravel, perdCreepDirt, perdSoil, perdDirt, perdTallGrass, perdGrass, perdCreepStone, perdGlowstone, perdCaveStone, perdCaveStoneBricks, perdCactus, perdReeds,
+				perdDeadBush, perdDiamondOre, perdEtriumOre, perdIronOre, perdGoldOre, perdZollerniumOre, perdFueltoniumOre, perdTreeSapling, perdWoodLogs, perdWoodLeaves, perdWoodPlanks, altumRock,
+				altumSand, altumDirt, altumCobble, altumStone, altumGravel, altumSeaweed, altumCoalOre, altumIronOre, altumGoldOre, altumRedstoneOre, altumDiamondOre, altumZollerniumOre,
+				altumEveniumOre, altumRhodiumOre, altumAmaranthOre, caligroSurfaceRock, caligroRock, caligroCobblestone, caligroCobblestoneMossy, caligroStone, caligroStoneBricks, caligroGravel,
+				caligroDirt, witherrack, caligroCreepstone, caligroCreepdirt, caligroWitheriteOre, caligroShiniumOre, caligroSilverOre, caligroNickelOre, caligroLeadOre, caligroTinOre,
+				caligroCopperOre, caligroIronOre, caligroGoldOre, caligroRedstoneOre, caligroAmaranthOre, caligroZincOre, caligroAmberOre, caligroTopazOre, caligroOpalOre, caligroAquamarineOre,
+				caligroGarnetOre, caligroSuperChargedCoalOre, caligroFueltoniumOre, caligroDiamondOre, caligroEmeraldOre, caligroRadiumOre, caligroLapisOre, caligroZollerniumOre, caligroRubyOre,
+				spiderlingEgg, shadowBossSpawner, corruptRock, corruptCobble, corruptStone, corruptStoneBricks, corruptAscendiumOre, corruptEtriumOre, corruptChargiumOre, corruptCreepstone,
+				exodusTallGrass, exodusDirt, exodusGrass, exodusCobblestone, exodusStone, exodusGravel, exodusRock, exodusSand, exodusIronOre, exodusGoldOre, exodusDiamondOre, exodusRedstoneOre,
+				exodusCopperOre, exoWoodLogs, exoWoodLeaves, exoWoodPlanks, exoWoodSapling, vortexSurfaceRock, vortexCobblestone, vortexStone, vortexVoltRock, vortexIronOre, vortexGoldOre,
+				vortexDiamondOre, vortexRedstoneOre, vortexCopperOre, vortexSuperChargedCoalOre, vortexFueltoniumOre, vortexEveniumOre, blockBlueprintStation, blockHealingStation,
+				blockCrystalsPlutonium, blockCrystalsStorm, blockCrystalsEden, blockIngotStackIron, ironSirenON, goldSirenON, diamondSirenON, emeraldSirenON, ironSiren, goldSiren, diamondSiren,
+				emeraldSiren, astrosRock, astrosDirt, astrosGravel, astrosCobblestone, astrosStone, astrosIce, astrosIronOre, astrosGoldOre, astrosDiamondOre, astrosEmeraldOre, astrosRedstoneOre,
+				astrosCoalOre, astrosSuperChargedCoalOre, astrosTinOre, astrosZollerniumOre, astrosSapphireOre, centoRock, centoCobblestone, centoStone, centoDirt, centoGravel, centoShiniumOre,
+				centoGoldOre, centoIronOre, centoFueltoniumOre, centoZollerniumOre, facehuggerEgg);
 		//
-		ZGBlocks.registerBlocks(tociSand, tociStarSand, tociDirt, tociRock, tociCobblestone, tociMossyCobblestone, tociStone, tociStoneBricks, tociGravel, tociNickelOre,
-				tociTinOre, tociBronzeOre, tociSilverOre, tociLeadOre, tociCopperOre, tociZincOre, tociSuperChargedCoalOre, tociRedstoneOre, tociGoldOre, tociAmaranthOre,
-				tociIronOre, tociEmeraldOre, tociCoalOre, tociFueltoniumOre, tociDiamondOre, tociQuartzOre);
+		ZGBlocks.registerBlocks(tociSand, tociStarSand, tociDirt, tociRock, tociCobblestone, tociMossyCobblestone, tociStone, tociStoneBricks, tociGravel, tociNickelOre, tociTinOre, tociBronzeOre,
+				tociSilverOre, tociLeadOre, tociCopperOre, tociZincOre, tociSuperChargedCoalOre, tociRedstoneOre, tociGoldOre, tociAmaranthOre, tociIronOre, tociEmeraldOre, tociCoalOre,
+				tociFueltoniumOre, tociDiamondOre, tociQuartzOre);
 		//
-		ZGBlocks.registerBlocks(tlalocRock, tlalocChrome, tlalocRedstoneOre, tlalocFueltoniumOre, tlalocShiniumOre, tlalocZollerniumOre, tlalocSuperChargedCoalOre,
-				tlalocQuartzOre);
+		ZGBlocks.registerBlocks(tlalocRock, tlalocChrome, tlalocMechRock, tlalocStone, tlalocRedstoneOre, tlalocFueltoniumOre, tlalocShiniumOre, tlalocZollerniumOre, tlalocSuperChargedCoalOre,
+				tlalocQuartzOre, tlalocCertusQuartzOre, tlalocFluixOre);
 		//
 		ZGHelper.Log("Loaded a total of " + totalBlocks + " new blocks.");
 	}

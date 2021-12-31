@@ -24,6 +24,7 @@ import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitMetz
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitOasis;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitPerdita;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitPurgot;
+import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitToci;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitVortex;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitXantheon;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitXathius;
@@ -102,26 +103,26 @@ public class ZGDimensions {
 	public static DimensionType CENTOTL_ORBIT_STATIC;
 	
 	public static DimensionType TOCI;
+	public static DimensionType TOCI_ORBIT;
+	public static DimensionType TOCI_ORBIT_STATIC;
+	
+	public static DimensionType TLALOC;
 	
 	public static void init() {
 		// Psion-6 (Zollus)
 		ZGDimensions.ZOLLUS = ZGDimensions.getDimType(ConfigManagerZG.planetZollusDimensionId);
 		ZGDimensions.ZOLLUS_ORBIT = DimensionType.register("Zollus Space Station", "_zollus_orbit", ConfigManagerZG.spaceStationZollusId, WorldProviderOrbitZollus.class, false);
-		ZGDimensions.ZOLLUS_ORBIT_STATIC = DimensionType.register("Zollus Space Station", "_zollus_orbit", ConfigManagerZG.spaceStationZollusStaticId,
-				WorldProviderOrbitZollus.class, true);
+		ZGDimensions.ZOLLUS_ORBIT_STATIC = DimensionType.register("Zollus Space Station", "_zollus_orbit", ConfigManagerZG.spaceStationZollusStaticId, WorldProviderOrbitZollus.class, true);
 		
 		// Psion-6 (Kriffon)
 		ZGDimensions.KRIFFON = ZGDimensions.getDimType(ConfigManagerZG.planetKriffonDimensionId);
-		ZGDimensions.KRIFFON_ORBIT = DimensionType.register("Kriffon Space Station", "_kriffon_orbit", ConfigManagerZG.spaceStationKriffonId, WorldProviderOrbitKriffon.class,
-				false);
-		ZGDimensions.KRIFFON_ORBIT_STATIC = DimensionType.register("Kriffon Space Station", "_kriffon_orbit", ConfigManagerZG.spaceStationKriffonStaticId,
-				WorldProviderOrbitKriffon.class, true);
+		ZGDimensions.KRIFFON_ORBIT = DimensionType.register("Kriffon Space Station", "_kriffon_orbit", ConfigManagerZG.spaceStationKriffonId, WorldProviderOrbitKriffon.class, false);
+		ZGDimensions.KRIFFON_ORBIT_STATIC = DimensionType.register("Kriffon Space Station", "_kriffon_orbit", ConfigManagerZG.spaceStationKriffonStaticId, WorldProviderOrbitKriffon.class, true);
 		
 		// Psion-6 (Purgot)
 		ZGDimensions.PURGOT = ZGDimensions.getDimType(ConfigManagerZG.planetPurgotDimensionId);
 		ZGDimensions.PURGOT_ORBIT = DimensionType.register("Purgot Space Station", "_purgot_orbit", ConfigManagerZG.spaceStationPurgotId, WorldProviderOrbitPurgot.class, false);
-		ZGDimensions.PURGOT_ORBIT_STATIC = DimensionType.register("Purgot Space Station", "_purgot_orbit", ConfigManagerZG.spaceStationPurgotStaticId,
-				WorldProviderOrbitPurgot.class, true);
+		ZGDimensions.PURGOT_ORBIT_STATIC = DimensionType.register("Purgot Space Station", "_purgot_orbit", ConfigManagerZG.spaceStationPurgotStaticId, WorldProviderOrbitPurgot.class, true);
 		
 		// Psion-6 (Eden)
 		ZGDimensions.EDEN = ZGDimensions.getDimType(ConfigManagerZG.planetEdenDimensionId);
@@ -130,88 +131,74 @@ public class ZGDimensions {
 		
 		// Praedyth (Xathius)
 		ZGDimensions.XATHIUS = ZGDimensions.getDimType(ConfigManagerZG.planetXathiusDimensionId);
-		ZGDimensions.XATHIUS_ORBIT = DimensionType.register("Xathius Space Station", "_xathius_orbit", ConfigManagerZG.spaceStationXathiusId, WorldProviderOrbitXathius.class,
-				false);
-		ZGDimensions.XATHIUS_ORBIT_STATIC = DimensionType.register("Xathius Space Station", "_xathius_orbit", ConfigManagerZG.spaceStationXathiusStaticId,
-				WorldProviderOrbitXathius.class, true);
+		ZGDimensions.XATHIUS_ORBIT = DimensionType.register("Xathius Space Station", "_xathius_orbit", ConfigManagerZG.spaceStationXathiusId, WorldProviderOrbitXathius.class, false);
+		ZGDimensions.XATHIUS_ORBIT_STATIC = DimensionType.register("Xathius Space Station", "_xathius_orbit", ConfigManagerZG.spaceStationXathiusStaticId, WorldProviderOrbitXathius.class, true);
 		
 		// Praedyth (Oasis)
 		ZGDimensions.OASIS = ZGDimensions.getDimType(ConfigManagerZG.planetOasisDimensionId);
 		ZGDimensions.OASIS_ORBIT = DimensionType.register("Oasis Space Station", "_oasis_orbit", ConfigManagerZG.spaceStationOasisId, WorldProviderOrbitOasis.class, false);
-		ZGDimensions.OASIS_ORBIT_STATIC = DimensionType.register("Oasis Space Station", "_oasis_orbit", ConfigManagerZG.spaceStationOasisStaticId, WorldProviderOrbitOasis.class,
-				true);
+		ZGDimensions.OASIS_ORBIT_STATIC = DimensionType.register("Oasis Space Station", "_oasis_orbit", ConfigManagerZG.spaceStationOasisStaticId, WorldProviderOrbitOasis.class, true);
 		
 		// Praedyth (Xantheon)
 		ZGDimensions.XANTHEON = ZGDimensions.getDimType(ConfigManagerZG.planetXantheonDimensionId);
-		ZGDimensions.XANTHEON_ORBIT = DimensionType.register("Xantheon Space Station", "_xantheon_orbit", ConfigManagerZG.spaceStationXantheonId, WorldProviderOrbitXantheon.class,
-				false);
-		ZGDimensions.XANTHEON_ORBIT_STATIC = DimensionType.register("Xantheon Space Station", "_xantheon_orbit", ConfigManagerZG.spaceStationXantheonStaticId,
-				WorldProviderOrbitXantheon.class, true);
+		ZGDimensions.XANTHEON_ORBIT = DimensionType.register("Xantheon Space Station", "_xantheon_orbit", ConfigManagerZG.spaceStationXantheonId, WorldProviderOrbitXantheon.class, false);
+		ZGDimensions.XANTHEON_ORBIT_STATIC = DimensionType.register("Xantheon Space Station", "_xantheon_orbit", ConfigManagerZG.spaceStationXantheonStaticId, WorldProviderOrbitXantheon.class, true);
 		
 		// Praedyth (Candora)
 		ZGDimensions.CANDORA = ZGDimensions.getDimType(ConfigManagerZG.planetCandoraDimensionId);
-		ZGDimensions.CANDORA_ORBIT = DimensionType.register("Candora Space Station", "_candora_orbit", ConfigManagerZG.spaceStationCandoraId, WorldProviderOrbitCandora.class,
-				false);
-		ZGDimensions.CANDORA_ORBIT_STATIC = DimensionType.register("Candora Space Station", "_candora_orbit", ConfigManagerZG.spaceStationCandoraStaticId,
-				WorldProviderOrbitCandora.class, true);
+		ZGDimensions.CANDORA_ORBIT = DimensionType.register("Candora Space Station", "_candora_orbit", ConfigManagerZG.spaceStationCandoraId, WorldProviderOrbitCandora.class, false);
+		ZGDimensions.CANDORA_ORBIT_STATIC = DimensionType.register("Candora Space Station", "_candora_orbit", ConfigManagerZG.spaceStationCandoraStaticId, WorldProviderOrbitCandora.class, true);
 		
 		// Praedyth (Atheon)
 		ZGDimensions.ATHEON = ZGDimensions.getDimType(ConfigManagerZG.planetAtheonDimensionId);
 		ZGDimensions.ATHEON_ORBIT = DimensionType.register("Atheon Space Station", "_atheon_orbit", ConfigManagerZG.spaceStationAtheonId, WorldProviderOrbitAtheon.class, false);
-		ZGDimensions.ATHEON_ORBIT_STATIC = DimensionType.register("Atheon Space Station", "_atheon_orbit", ConfigManagerZG.spaceStationAtheonStaticId,
-				WorldProviderOrbitAtheon.class, true);
+		ZGDimensions.ATHEON_ORBIT_STATIC = DimensionType.register("Atheon Space Station", "_atheon_orbit", ConfigManagerZG.spaceStationAtheonStaticId, WorldProviderOrbitAtheon.class, true);
 		
 		// Sol-2 (Perdita)
 		ZGDimensions.PERDITA = ZGDimensions.getDimType(ConfigManagerZG.planetPerditaDimensionId);
-		ZGDimensions.PERDITA_ORBIT = DimensionType.register("Perdita Space Station", "_perdita_orbit", ConfigManagerZG.spaceStationPerditaId, WorldProviderOrbitPerdita.class,
-				false);
-		ZGDimensions.PERDITA_ORBIT_STATIC = DimensionType.register("Perdita Space Station", "_perdita_orbit", ConfigManagerZG.spaceStationPerditaStaticId,
-				WorldProviderOrbitPerdita.class, true);
+		ZGDimensions.PERDITA_ORBIT = DimensionType.register("Perdita Space Station", "_perdita_orbit", ConfigManagerZG.spaceStationPerditaId, WorldProviderOrbitPerdita.class, false);
+		ZGDimensions.PERDITA_ORBIT_STATIC = DimensionType.register("Perdita Space Station", "_perdita_orbit", ConfigManagerZG.spaceStationPerditaStaticId, WorldProviderOrbitPerdita.class, true);
 		
 		// Sol-2 (Altum)
 		ZGDimensions.ALTUM = ZGDimensions.getDimType(ConfigManagerZG.planetAltumDimensionId);
 		ZGDimensions.ALTUM_ORBIT = DimensionType.register("Altum Space Station", "_altum_orbit", ConfigManagerZG.spaceStationAltumId, WorldProviderOrbitAltum.class, false);
-		ZGDimensions.ALTUM_ORBIT_STATIC = DimensionType.register("Altum Space Station", "_altum_orbit", ConfigManagerZG.spaceStationAltumStaticId, WorldProviderOrbitAltum.class,
-				true);
+		ZGDimensions.ALTUM_ORBIT_STATIC = DimensionType.register("Altum Space Station", "_altum_orbit", ConfigManagerZG.spaceStationAltumStaticId, WorldProviderOrbitAltum.class, true);
 		
 		// Sol-2 (Caligro)
 		ZGDimensions.CALIGRO = ZGDimensions.getDimType(ConfigManagerZG.planetCaligroDimensionId);
-		ZGDimensions.CALIGRO_ORBIT = DimensionType.register("Caligro Space Station", "_caligro_orbit", ConfigManagerZG.spaceStationCaligroId, WorldProviderOrbitCaligro.class,
-				false);
-		ZGDimensions.CALIGRO_ORBIT_STATIC = DimensionType.register("Caligro Space Station", "_caligro_orbit", ConfigManagerZG.spaceStationCaligroStaticId,
-				WorldProviderOrbitCaligro.class, true);
+		ZGDimensions.CALIGRO_ORBIT = DimensionType.register("Caligro Space Station", "_caligro_orbit", ConfigManagerZG.spaceStationCaligroId, WorldProviderOrbitCaligro.class, false);
+		ZGDimensions.CALIGRO_ORBIT_STATIC = DimensionType.register("Caligro Space Station", "_caligro_orbit", ConfigManagerZG.spaceStationCaligroStaticId, WorldProviderOrbitCaligro.class, true);
 		
 		// Sol-2 (Exodus)
 		ZGDimensions.EXODUS = ZGDimensions.getDimType(ConfigManagerZG.planetExodusDimensionId);
 		ZGDimensions.EXODUS_ORBIT = DimensionType.register("Exodus Space Station", "_exodus_orbit", ConfigManagerZG.spaceStationExodusId, WorldProviderOrbitExodus.class, false);
-		ZGDimensions.EXODUS_ORBIT_STATIC = DimensionType.register("Exodus Space Station", "_exodus_orbit", ConfigManagerZG.spaceStationExodusStaticId,
-				WorldProviderOrbitExodus.class, true);
+		ZGDimensions.EXODUS_ORBIT_STATIC = DimensionType.register("Exodus Space Station", "_exodus_orbit", ConfigManagerZG.spaceStationExodusStaticId, WorldProviderOrbitExodus.class, true);
 		
 		// Pantheon (Vortex)
 		ZGDimensions.VORTEX = ZGDimensions.getDimType(ConfigManagerZG.planetVortexDimensionId);
 		ZGDimensions.VORTEX_ORBIT = DimensionType.register("Vortex Space Station", "_vortex_orbit", ConfigManagerZG.spaceStationVortexId, WorldProviderOrbitVortex.class, false);
-		ZGDimensions.VORTEX_ORBIT_STATIC = DimensionType.register("Vortex Space Station", "_vortex_orbit", ConfigManagerZG.spaceStationVortexStaticId,
-				WorldProviderOrbitVortex.class, true);
+		ZGDimensions.VORTEX_ORBIT_STATIC = DimensionType.register("Vortex Space Station", "_vortex_orbit", ConfigManagerZG.spaceStationVortexStaticId, WorldProviderOrbitVortex.class, true);
 		
 		// Pantheon (Metztli)
 		ZGDimensions.METZTLI = ZGDimensions.getDimType(ConfigManagerZG.planetMetztliDimensionId);
-		ZGDimensions.METZTLI_ORBIT = DimensionType.register("Metztli Space Station", "_metztli_orbit", ConfigManagerZG.spaceStationMetztliId, WorldProviderOrbitMetztli.class,
-				false);
-		ZGDimensions.METZTLI_ORBIT_STATIC = DimensionType.register("Metztli Space Station", "_metztli_orbit", ConfigManagerZG.spaceStationMetztliStaticId,
-				WorldProviderOrbitMetztli.class, true);
+		ZGDimensions.METZTLI_ORBIT = DimensionType.register("Metztli Space Station", "_metztli_orbit", ConfigManagerZG.spaceStationMetztliId, WorldProviderOrbitMetztli.class, false);
+		ZGDimensions.METZTLI_ORBIT_STATIC = DimensionType.register("Metztli Space Station", "_metztli_orbit", ConfigManagerZG.spaceStationMetztliStaticId, WorldProviderOrbitMetztli.class, true);
 		
 		// Astros (Eden -> Psios-6)
 		ZGDimensions.ASTROS = ZGDimensions.getDimType(ConfigManagerZG.moonAstrosDimensionId);
 		
 		// Pantheon (Centotl)
 		ZGDimensions.CENTOTL = ZGDimensions.getDimType(ConfigManagerZG.planetCentotlDimensionId);
-		ZGDimensions.CENTOTL_ORBIT = DimensionType.register("Centotl Space Station", "_centotl_orbit", ConfigManagerZG.spaceStationCentotlId, WorldProviderOrbitCentotl.class,
-				false);
-		ZGDimensions.CENTOTL_ORBIT_STATIC = DimensionType.register("Centotl Space Station", "_centotl_orbit", ConfigManagerZG.spaceStationCentotlStaticId,
-				WorldProviderOrbitCentotl.class, true);
+		ZGDimensions.CENTOTL_ORBIT = DimensionType.register("Centotl Space Station", "_centotl_orbit", ConfigManagerZG.spaceStationCentotlId, WorldProviderOrbitCentotl.class, false);
+		ZGDimensions.CENTOTL_ORBIT_STATIC = DimensionType.register("Centotl Space Station", "_centotl_orbit", ConfigManagerZG.spaceStationCentotlStaticId, WorldProviderOrbitCentotl.class, true);
 		
 		// Pantheon (Toci)
 		ZGDimensions.TOCI = ZGDimensions.getDimType(ConfigManagerZG.planetTociDimensionId);
+		ZGDimensions.TOCI_ORBIT = DimensionType.register("Toci Space Station", "_toci_orbit", ConfigManagerZG.spaceStationTociId, WorldProviderOrbitToci.class, false);
+		ZGDimensions.TOCI_ORBIT_STATIC = DimensionType.register("Toci Space Station", "_toci_orbit", ConfigManagerZG.spaceStationCentotlStaticId, WorldProviderOrbitToci.class, true);
+		
+		// Pantheon (Tlaloc)
+		ZGDimensions.TLALOC = ZGDimensions.getDimType(ConfigManagerZG.planetTlalocDimensionId);
 	}
 	
 	public static DimensionType getDimType(int dimId) {

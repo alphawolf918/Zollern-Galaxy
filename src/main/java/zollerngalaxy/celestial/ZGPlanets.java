@@ -29,6 +29,7 @@ import zollerngalaxy.core.dimensions.worldproviders.WorldProviderMetztli;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderOasis;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderPerdita;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderPurgot;
+import zollerngalaxy.core.dimensions.worldproviders.WorldProviderTlaloc;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderToci;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderVortex;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderXantheon;
@@ -506,8 +507,7 @@ public class ZGPlanets {
 				EnumAtmosphericGas.HYDROGEN);
 		planetCaligro.setBodyIcon("caligro");
 		planetCaligro.setAtmosphere();
-		planetCaligro.setBiomeInfo(ZGBiomes.CALIGRO_UPSIDE_DOWN, ZGBiomes.CALIGRO_CREEPLANDS, ZGBiomes.CALIGRO_ROCKY_VEINS, ZGBiomes.CALIGRO_WITHERLANDS,
-				ZGBiomes.CALIGRO_CORRUPTED_MESA);
+		planetCaligro.setBiomeInfo(ZGBiomes.CALIGRO_UPSIDE_DOWN, ZGBiomes.CALIGRO_CREEPLANDS, ZGBiomes.CALIGRO_ROCKY_VEINS, ZGBiomes.CALIGRO_WITHERLANDS, ZGBiomes.CALIGRO_CORRUPTED_MESA);
 		totalPlanets++;
 		
 		// Exodus
@@ -573,8 +573,8 @@ public class ZGPlanets {
 		planetMetztli.setBodyGasses(EnumAtmosphericGas.NITROGEN, EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.ARGON, EnumAtmosphericGas.WATER);
 		planetMetztli.setBodyIcon("metztli");
 		planetMetztli.setAtmosphere();
-		planetMetztli.setBiomeInfo(ZGBiomes.METZTLI_HARRAN_PRIME, ZGBiomes.METZTLI_HARRAN_DUNES, ZGBiomes.METZTLI_HARRAN_OCEAN, ZGBiomes.METZTLI_HARRAN_SWAMP,
-				ZGBiomes.METZTLI_HARRAN_TUNDRA, ZGBiomes.METZTLI_HARRAN_SHROOMS, ZGBiomes.METZTLI_HARRAN_CLAY_MESA);
+		planetMetztli.setBiomeInfo(ZGBiomes.METZTLI_HARRAN_PRIME, ZGBiomes.METZTLI_HARRAN_DUNES, ZGBiomes.METZTLI_HARRAN_OCEAN, ZGBiomes.METZTLI_HARRAN_SWAMP, ZGBiomes.METZTLI_HARRAN_TUNDRA,
+				ZGBiomes.METZTLI_HARRAN_SHROOMS, ZGBiomes.METZTLI_HARRAN_CLAY_MESA);
 		totalPlanets++;
 		
 		// Centotl
@@ -614,7 +614,7 @@ public class ZGPlanets {
 		planetToci.setHasRain(false);
 		planetToci.setBodyToxicity(0.01F);
 		planetToci.setBodyRadiation(0.01F);
-		planetToci.setWindLevel(0.0F);
+		planetToci.setWindLevel(5.0F);
 		planetToci.setBodyGasses(EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.CO2, EnumAtmosphericGas.NITROGEN, EnumAtmosphericGas.WATER);
 		planetToci.setBreathable(true);
 		planetToci.setAtmosphere();
@@ -623,11 +623,25 @@ public class ZGPlanets {
 		totalPlanets++;
 		
 		// Tlaloc
-		// TODO
+		planetTlaloc.setDimensionInfo(ConfigManagerZG.planetTlalocDimensionId, WorldProviderTlaloc.class);
 		planetTlaloc.setParentSolarSystem(systemPantheon);
+		planetTlaloc.setBodyClass(EnumBodyClass.CONSTRUCTED);
+		planetTlaloc.setRelativeOrbitTime(2.5F);
 		planetTlaloc.setDistanceFromCenter(1.5F);
 		planetTlaloc.setRelativeOrbitTime(5.0F);
+		planetTlaloc.setTierRequired(ConfigManagerZG.planetTlalocDimensionId);
+		if (ConfigManagerZG.planetUnreachableTlaloc || ConfigManagerZG.planetUnreachableAll) {
+			planetTlaloc.setDisableRockets();
+		}
+		planetTlaloc.setBodyTemperature(20.0F);
+		planetTlaloc.setDensity(10.0F);
+		planetTlaloc.setWindLevel(0.0F);
+		planetTlaloc.setBodyGasses(EnumAtmosphericGas.ARGON, EnumAtmosphericGas.HELIUM, EnumAtmosphericGas.NITROGEN, EnumAtmosphericGas.METHANE);
+		planetTlaloc.setBreathable(false);
+		planetTlaloc.setAtmosphere();
+		planetTlaloc.setBiomeInfo(ZGBiomes.TLALOC_BASE);
 		planetTlaloc.setBodyIcon("tlaloc");
+		totalPlanets++;
 		
 		// Ares
 		// TODO
@@ -762,8 +776,7 @@ public class ZGPlanets {
 		GalacticraftRegistry.registerTeleportType(WorldProviderMetztli.class, new TeleportTypeBaseZG());
 		GalacticraftRegistry.registerTeleportType(WorldProviderCentotl.class, new TeleportTypeBaseZG());
 		GalacticraftRegistry.registerTeleportType(WorldProviderToci.class, new TeleportTypeBaseZG());
-		// GalacticraftRegistry.registerTeleportType(WorldProviderTlaloc.class, new
-		// TeleportTypeBaseZG());
+		GalacticraftRegistry.registerTeleportType(WorldProviderTlaloc.class, new TeleportTypeBaseZG());
 		
 		// Olympus
 		// TODO

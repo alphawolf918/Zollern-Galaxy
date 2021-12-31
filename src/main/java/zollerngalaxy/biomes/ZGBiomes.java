@@ -88,6 +88,7 @@ import zollerngalaxy.biomes.perdita.BiomeLostMountains;
 import zollerngalaxy.biomes.perdita.BiomeLostOasis;
 import zollerngalaxy.biomes.purgot.BiomeLimbo;
 import zollerngalaxy.biomes.purgot.BiomePurgot;
+import zollerngalaxy.biomes.tlaloc.BiomeTlaloc;
 import zollerngalaxy.biomes.toci.BiomeToci;
 import zollerngalaxy.biomes.toci.BiomeTociDesert;
 import zollerngalaxy.biomes.toci.BiomeTociMountains;
@@ -222,6 +223,9 @@ public class ZGBiomes {
 	public static final Biome TOCI_VALLEY = new BiomeTociValley(new BiomeProperties("Toci Valley"));
 	public static final Biome TOCI_MOUNTAINS = new BiomeTociMountains(new BiomeProperties("Toci Mountains"));
 	
+	// Tlaloc
+	public static final Biome TLALOC_BASE = new BiomeTlaloc(new BiomeProperties("Tlaloc"));
+	
 	public static void init() {
 		// Zollus
 		ZGBiomes.addBiome(ZGBiomes.ZOLLUS, COLD, DEAD, DRY);
@@ -333,6 +337,9 @@ public class ZGBiomes {
 		ZGBiomes.addBiome(ZGBiomes.TOCI_STAR_DESERT, HOT, DRY, MOUNTAIN, WASTELAND);
 		ZGBiomes.addBiome(ZGBiomes.TOCI_VALLEY, PLAINS, DRY);
 		ZGBiomes.addBiome(ZGBiomes.TOCI_MOUNTAINS, HOT, DRY, MOUNTAIN, WASTELAND);
+		
+		// Tlaloc
+		ZGBiomes.addBiome(ZGBiomes.TLALOC_BASE, MOUNTAIN, COLD, DEAD, SPOOKY);
 		
 		ZGHelper.Log("Loaded a total of " + totalBiomes + " new biomes.");
 	}
