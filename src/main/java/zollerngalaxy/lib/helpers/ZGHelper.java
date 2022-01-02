@@ -35,7 +35,7 @@ import zollerngalaxy.creativetabs.ZGTabs;
 import zollerngalaxy.lib.ZGInfo;
 import zollerngalaxy.util.ZGDamageSrc;
 
-public abstract class ZGHelper {
+public final class ZGHelper {
 	
 	private static final Logger LOGGER = LogManager.getLogger(ZGInfo.OFFICIAL_NAME);
 	
@@ -253,6 +253,8 @@ public abstract class ZGHelper {
 			LOGGER.info(strMessage);
 		} else if (level == level.ERROR) {
 			LOGGER.error(strMessage);
+		} else if (level == level.WARN) {
+			LOGGER.warn(strMessage);
 		}
 	}
 	
@@ -262,6 +264,10 @@ public abstract class ZGHelper {
 	
 	public static void LogErr(String strErr) {
 		Log(Level.ERROR, strErr);
+	}
+	
+	public static void LogWarn(String strErr) {
+		Log(Level.WARN, strErr);
 	}
 	
 	public static ItemStack getItemStack(Item item, EntityPlayer player) {
@@ -278,6 +284,16 @@ public abstract class ZGHelper {
 		return null;
 	}
 	
+	/**
+	 * Set damage to the item.
+	 * 
+	 * @param item
+	 *            The item of the stack to damage.
+	 * @param damageAmount
+	 *            The amount of damage.
+	 * @param player
+	 *            The EntityPlayer instance (the one playing the game).
+	 */
 	public static void damageItemStack(Item item, float damageAmount, EntityPlayer player) {
 		InventoryPlayer matrix = player.inventory;
 		for (int i = 0; i < matrix.getSizeInventory(); i++) {
@@ -316,6 +332,12 @@ public abstract class ZGHelper {
 		return false;
 	}
 	
+	/**
+	 * Repair a damaged ItemStack, such as a Blueprint.
+	 * 
+	 * @param itemStack
+	 *            The ItemStack instance to repair.
+	 */
 	public static void repairItemStack(ItemStack itemStack) {
 		itemStack.setItemDamage(0);
 	}
@@ -347,6 +369,21 @@ public abstract class ZGHelper {
 		}
 	}
 	
+	/**
+	 * Check for the supplied Blueprint Protection item, and if it's there, damage it instead of the
+	 * Player.
+	 * 
+	 * @param rand
+	 *            The Random to pass.
+	 * @param blueprintItem
+	 *            The Blueprint Item to look for and damage if found.
+	 * @param player
+	 *            The Player to affect.
+	 * @param dSrc
+	 *            The DamageSource; must be a DamageSourceGC instance.
+	 * @param dmg
+	 *            The amount of damage.
+	 */
 	public static void performBluePrintCheck(Random rand, Item blueprintItem, EntityPlayer player, DamageSourceGC dSrc, float dmg) {
 		if (rand.nextInt(100) <= 5) {
 			if (!ZGHelper.checkInventoryForItem(blueprintItem, player)) {
@@ -360,6 +397,21 @@ public abstract class ZGHelper {
 		}
 	}
 	
+	/**
+	 * Check for the supplied Blueprint Protection item, and if it's there, damage it instead of the
+	 * Player.
+	 * 
+	 * @param rand
+	 *            The Random to pass.
+	 * @param blueprintItem
+	 *            The Blueprint Item to look for and damage if found.
+	 * @param player
+	 *            The Player to affect.
+	 * @param dSrc
+	 *            The DamageSource; must be a ZGDamageSrc instance.
+	 * @param dmg
+	 *            The amount of damage.
+	 */
 	public static void performBluePrintCheck(Random rand, Item blueprintItem, EntityPlayer player, DamageSource dSrc, float dmg) {
 		if (rand.nextInt(100) <= 5) {
 			if (!ZGHelper.checkInventoryForItem(blueprintItem, player)) {

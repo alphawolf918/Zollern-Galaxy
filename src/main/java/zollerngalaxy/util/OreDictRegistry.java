@@ -374,8 +374,10 @@ public class OreDictRegistry {
 		registerOre("blockFueltonium", ZGBlocks.blockFueltonium);
 		
 		// Plutonium
-		registerOre("orePlutonium", ZGBlocks.xantheonPlutoniumOre);
+		registerOre("orePlutonium", ZGBlocks.xantheonPlutoniumOre, ZGBlocks.tlalocPlutoniumOre);
 		registerOre("gemPlutonium", ZGItems.plutoniumCrystal);
+		registerOre("ingotPlutonium", ZGItems.ingotPlutonium);
+		registerOre("dustPlutonium", ZGItems.dustPlutonium);
 		registerOre("blockPlutonium", ZGBlocks.blockPlutonium);
 		
 		// Zucrite

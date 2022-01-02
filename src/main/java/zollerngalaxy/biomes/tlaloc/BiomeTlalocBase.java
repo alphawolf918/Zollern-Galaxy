@@ -8,7 +8,6 @@
 package zollerngalaxy.biomes.tlaloc;
 
 import java.util.Random;
-import micdoodle8.mods.galacticraft.core.entities.EntityAlienVillager;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
@@ -24,6 +23,7 @@ import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderTlaloc;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 import zollerngalaxy.lib.helpers.ZGHelper;
+import zollerngalaxy.mobs.entities.villagers.EntityTlalocVillager;
 
 public class BiomeTlalocBase extends BiomeSpace {
 	
@@ -43,7 +43,7 @@ public class BiomeTlalocBase extends BiomeSpace {
 		this.setTempCategory(TempCategory.COLD);
 		this.clearAllSpawning();
 		if (ConfigManagerZG.enableAlienVillagerSpawn) {
-			this.spawnableCreatureList.add(new SpawnListEntry(EntityAlienVillager.class, this.villagerSpawnRate, 0, 1));
+			this.spawnableCreatureList.add(new SpawnListEntry(EntityTlalocVillager.class, this.villagerSpawnRate, 0, 1));
 		}
 		this.setPlanetForBiome(ZGPlanets.planetTlaloc);
 	}

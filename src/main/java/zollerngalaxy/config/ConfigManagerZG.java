@@ -157,6 +157,7 @@ public class ConfigManagerZG {
 	public static boolean enableRadianceFlying;
 	public static boolean enableStepHeight;
 	public static boolean enableExtraPlanetsCompat;
+	public static boolean enableExtremeReactorsCompat;
 	
 	// Customizations
 	public static int kriffonLavaLakesPerChunk;
@@ -339,8 +340,7 @@ public class ConfigManagerZG {
 		planetPrimorDimensionId = configuration.get(CTG_DIMS, "Planet Primor Dimension ID", -7989).getInt();
 		
 		// Number of space stations to generate
-		spaceStationGenAmount = configuration.get(CTG_SATS, "Space Station Generation Count", 1, "How many Space Stations should generate in orbit (between 1 to 5)? (default: 1)")
-				.getInt();
+		spaceStationGenAmount = configuration.get(CTG_SATS, "Space Station Generation Count", 1, "How many Space Stations should generate in orbit (between 1 to 5)? (default: 1)").getInt();
 		spaceStationGenAmount = (spaceStationGenAmount <= 5) ? spaceStationGenAmount : 5;
 		spaceStationGenAmount = (spaceStationGenAmount >= 1) ? spaceStationGenAmount : 1;
 		
@@ -429,36 +429,30 @@ public class ConfigManagerZG {
 		
 		// Misc (Should Star Gates be disabled?)
 		disableStarGates = configuration.get(CTG_MISC, "Disable use of Star Gates", false,
-				"Set this to true if you want to ONLY access Zollern Galaxy planets using rockets. " + "WARNING: will not work without another add-on this way! (default: false)")
-				.getBoolean();
+				"Set this to true if you want to ONLY access Zollern Galaxy planets using rockets. " + "WARNING: will not work without another add-on this way! (default: false)").getBoolean();
 		
 		hideUnusedStarSystems = configuration.get(CTG_MISC, "Hide Stars with no Planets", true, "Enable to see Stars that have no Planets yet. (default: true)").getBoolean();
 		
 		// Misc (Should Mega Creeper explosions harm terrain?)
-		enableMegaCreeperGriefing = configuration
-				.get(CTG_MISC, "Enable Mega Creeper Griefing", true, "Set to false if you don't want Mega Creepers to destroy terrain. (default: true)").getBoolean();
+		enableMegaCreeperGriefing = configuration.get(CTG_MISC, "Enable Mega Creeper Griefing", true, "Set to false if you don't want Mega Creepers to destroy terrain. (default: true)").getBoolean();
 		
 		// Misc (Tempratures shown in fahrenheit or celsius?)
-		temperatureType = configuration
-				.get(CTG_MISC, "[HUD DISPLAY] Temperature Type: Use Celsius instead of Fahrenheit", false, "Set this to true to show temperature in Celsius (default: false).")
+		temperatureType = configuration.get(CTG_MISC, "[HUD DISPLAY] Temperature Type: Use Celsius instead of Fahrenheit", false, "Set this to true to show temperature in Celsius (default: false).")
 				.getBoolean();
 		
 		// Whether or not to change contributor's in-game names
-		changeContributorNames = configuration
-				.get(CTG_MISC, "Contributor name change", true, "Whether or not to change contributor in-game names to more recognized formats (default: true)").getBoolean();
-		
-		// Whether or not to allow Spawning of Galaxy Knights.
-		spawnGalaxyKnight = configuration.get(CTG_MISC, "Spawn Galaxy Knight", true, "Whether or not to allow Grey Aliens to summon Galaxy Knights when attacked (default: true)")
+		changeContributorNames = configuration.get(CTG_MISC, "Contributor name change", true, "Whether or not to change contributor in-game names to more recognized formats (default: true)")
 				.getBoolean();
 		
+		// Whether or not to allow Spawning of Galaxy Knights.
+		spawnGalaxyKnight = configuration.get(CTG_MISC, "Spawn Galaxy Knight", true, "Whether or not to allow Grey Aliens to summon Galaxy Knights when attacked (default: true)").getBoolean();
+		
 		// Make sure chests are on the ground or not. (ExistingEevee)
-		enableChestValidation = configuration
-				.get(CTG_MISC, "Chest Validation", true, "Whether or not to validate chest spawns. " + "Disable if chest generation is causing a crash. (default: true)")
+		enableChestValidation = configuration.get(CTG_MISC, "Chest Validation", true, "Whether or not to validate chest spawns. " + "Disable if chest generation is causing a crash. (default: true)")
 				.getBoolean();
 		
 		// Should Extreme Mode be enabled? Significantly increases the mod's difficulty.
-		enableExtremeMode = configuration
-				.get(CTG_MISC, "Enable Extreme Mode", false, "Toggle Extreme mode. " + "WARNING: This will SIGNIFICANTLY increase the mod's difficulty. (default: false)")
+		enableExtremeMode = configuration.get(CTG_MISC, "Enable Extreme Mode", false, "Toggle Extreme mode. " + "WARNING: This will SIGNIFICANTLY increase the mod's difficulty. (default: false)")
 				.getBoolean();
 		
 		// Make ZG's Alien Villagers stop going "HNNGH!!"
@@ -469,36 +463,29 @@ public class ConfigManagerZG {
 		enableMutantNameTags = configuration.get(CTG_MISC, "Enable Mutant Name Tags", true, "Should Mutant Zombies show their name tags? (default: true)").getBoolean();
 		
 		// Enable stack increase changes
-		enableStackChanges = configuration
-				.get(CTG_MISC, "Enable Item Stack Increase Changes", true, "Increases stack height from 16 to 64 for some items when activated (default: true)").getBoolean();
+		enableStackChanges = configuration.get(CTG_MISC, "Enable Item Stack Increase Changes", true, "Increases stack height from 16 to 64 for some items when activated (default: true)").getBoolean();
 		
-		// Compatibility (Whether or not to use Thermal Foundation's Detabilized
-		// Redstone
-		// for the Red Sea in Oasis)
-		shouldOasisUseLiquidRedstone = configuration.get(CTG_COMPAT, "Oasis uses Thermal Foundation's Destabilized Redstone", true,
-				"Whether or not Oasis should use Detabilized Redstone for its Red Sea biome. WARNING: This can use a LOT of your PC's memory! "
-						+ "This can lead to severe LAG! Use at your own risk. (default: true)")
+		// Compat (Whether or not to use Thermal Foundation's Detabilized Redstone for the Red Sea
+		// in Oasis)
+		shouldOasisUseLiquidRedstone = configuration
+				.get(CTG_COMPAT, "Oasis uses Thermal Foundation's Destabilized Redstone", true, "Whether or not Oasis should use Detabilized Redstone for its Red Sea biome. (default: true)")
 				.getBoolean();
 		
-		// Compatibility (Whether or not Thermal Foundation Pulverizers should
+		// Compat (Whether or not Thermal Foundation Pulverizers should
 		// give extra
 		// (4) instead of normal (2))
-		enableExtraPulverizerOutput = configuration
-				.get(CTG_COMPAT, "Enable extra Pulverizer Output", true,
-						"Whether or not Zollern Galaxy ores give extra dust from Thermal Foundation's Pulverizers. " + "Disable if it causes compatibility issues (default: true).")
-				.getBoolean();
+		enableExtraPulverizerOutput = configuration.get(CTG_COMPAT, "Enable extra Pulverizer Output", true,
+				"Whether or not Zollern Galaxy ores give extra dust from Thermal Foundation's Pulverizers. " + "Disable if it causes compatibility issues (default: true).").getBoolean();
 		
 		// Compat (Should Fueltonium register as Uranium?)
 		fueltoniumIsUranium = configuration.get(CTG_COMPAT, "Fueltonium counts as Uranium", true, "Should Fueltonium register as Uranium? (default: true)").getBoolean();
 		
 		// Compat (Should Cobalt register in the Ore Dictionary?)
 		registerCobaltOreDict = configuration
-				.get(CTG_COMPAT, "Register Cobalt in Ore Dictionary", true, "Set this to false if there are any problems " + " with mods like Tinker's Construct. (default: true)")
-				.getBoolean();
+				.get(CTG_COMPAT, "Register Cobalt in Ore Dictionary", true, "Set this to false if there are any problems " + " with mods like Tinker's Construct. (default: true)").getBoolean();
 		
 		// Compat (Should Zinc register in the Ore Dictionary?)
-		registerZincOreDict = configuration
-				.get(CTG_COMPAT, "Register Zinc in Ore Dictionary", true, "Set this to false if there are any problems " + " with other mods. (default: true)").getBoolean();
+		registerZincOreDict = configuration.get(CTG_COMPAT, "Register Zinc in Ore Dictionary", true, "Set this to false if there are any problems " + " with other mods. (default: true)").getBoolean();
 		
 		// Compat (Should intergration with Planet Progressions be enabled?
 		enablePlanetProgressionsCompat = configuration
@@ -507,56 +494,47 @@ public class ConfigManagerZG {
 				.getBoolean();
 		
 		// Compat (Enable Radium Material for Tinker's Construct
-		useTConRadium = configuration
-				.get(CTG_COMPAT, "[TCONSTRUCT] Enable Radium Material", true, "Set to false to disable (will cause issues with More TCon if true). (default: true)").getBoolean();
+		useTConRadium = configuration.get(CTG_COMPAT, "[TCONSTRUCT] Enable Radium Material", true, "Set to false to disable (will cause issues with More TCon if true). (default: true)").getBoolean();
 		
 		// Compat (Enable Corruption Material for Tinker's Construct
 		useTConCorruption = configuration.get(CTG_COMPAT, "[TCONSTRUCT] Enable Corruption Material", true, "Set to false to disable. (default: true)").getBoolean();
 		
 		// Compat (Should flying be enabled and then disabled when applying and unapplying Radiance
 		// armor?
-		enableRadianceFlying = configuration
-				.get(CTG_COMPAT, "Enable Radiance Flying In Survival", true,
-						"Toggle whether a full set of Radiance armor allows the Player to fly in Survival. "
-								+ "Set to false to disable if this causes mod conflicts, compromises the safety of your server, " + "or if you just hate fun. (default: true)")
-				.getBoolean();
+		enableRadianceFlying = configuration.get(CTG_COMPAT, "Enable Radiance Flying In Survival", true, "Toggle whether a full set of Radiance armor allows the Player to fly in Survival. "
+				+ "Set to false to disable if this causes mod conflicts, compromises the safety of your server, " + "or if you just hate fun. (default: true)").getBoolean();
 		
 		// Compat (Should increased step height be enabled when using certain armor?)
-		enableStepHeight = configuration.get(CTG_COMPAT, "Enable Increased Step Height", true,
-				"Toggle whether Zollernium armor increases step height. Disable if there are compatability issues. (default: true)").getBoolean();
+		enableStepHeight = configuration
+				.get(CTG_COMPAT, "Enable Increased Step Height", true, "Toggle whether Zollernium armor increases step height. Disable if there are compatability issues. (default: true)")
+				.getBoolean();
 		
 		// Compat (Extra Planets)
-		enableExtraPlanetsCompat = configuration
-				.get(CTG_COMPAT, "Enable Extra Planets Compatibility", true, "If enabled, these mods will work together. Disable if needed or desired. (default: true)")
+		enableExtraPlanetsCompat = configuration.get(CTG_COMPAT, "Enable Extra Planets Compatibility", true, "If enabled, these mods will work together. Disable if needed or desired. (default: true)")
 				.getBoolean();
 		
+		// Compat
+		enableExtremeReactorsCompat = configuration
+				.get(CTG_COMPAT, "Enable Extreme Reactors Compatibility", true, "If enabled, some of this mod's metals and fluids can be used in Turbines and Reactors. (default: true)").getBoolean();
+		
 		// Customization Options
-		kriffonLavaLakesPerChunk = configuration
-				.get(CTG_CUSTOMS, "Kriffon Lava Lakes Per Chunk", 4, "The amount of Lava Lakes to generate per chunk on planet Kriffon. (default: 4)").getInt();
-		kriffonLavaLakesGenChance = configuration
-				.get(CTG_CUSTOMS, "Kriffon Lava Lakes Gen Percentage", 25, "The chance (out of 100) for a lava lake to generate on planet Kriffon. (default: 25)").getInt();
-		zollusIceSpikesPerChunk = configuration.get(CTG_CUSTOMS, "Zollus Ice Spikes Per Chunk", 2, "The amount of Ice Spikes to generate on " + "Zollus per chunk. (default: 2)")
+		kriffonLavaLakesPerChunk = configuration.get(CTG_CUSTOMS, "Kriffon Lava Lakes Per Chunk", 4, "The amount of Lava Lakes to generate per chunk on planet Kriffon. (default: 4)").getInt();
+		kriffonLavaLakesGenChance = configuration.get(CTG_CUSTOMS, "Kriffon Lava Lakes Gen Percentage", 25, "The chance (out of 100) for a lava lake to generate on planet Kriffon. (default: 25)")
 				.getInt();
-		zollusIceSpikesGenChance = configuration
-				.get(CTG_CUSTOMS, "Zollus Ice Spikes Gen Percentage", 42, "The chance (out of 100) for Ice Spikes to generate on planet Zollus. (default: 42)").getInt();
-		outpostGenChance = configuration.get(CTG_CUSTOMS, "Outpost Gen Percentage", 5, "The chance (out of 100) for Outpost buildings to generate on planets. (default: 5)")
+		zollusIceSpikesPerChunk = configuration.get(CTG_CUSTOMS, "Zollus Ice Spikes Per Chunk", 2, "The amount of Ice Spikes to generate on " + "Zollus per chunk. (default: 2)").getInt();
+		zollusIceSpikesGenChance = configuration.get(CTG_CUSTOMS, "Zollus Ice Spikes Gen Percentage", 42, "The chance (out of 100) for Ice Spikes to generate on planet Zollus. (default: 42)")
 				.getInt();
+		outpostGenChance = configuration.get(CTG_CUSTOMS, "Outpost Gen Percentage", 5, "The chance (out of 100) for Outpost buildings to generate on planets. (default: 5)").getInt();
 		windBlowChance = configuration.get(CTG_CUSTOMS, "Wind Blow Chance", 25, "Percentage chance of how often storm wind blows. (default: 25)").getInt();
-		enableWindBlowEvent = configuration.get(CTG_CUSTOMS, "Enable Wind Blowing Event", true, "Allow the wind blowing event to move Players around on Vortex (default: true). ")
-				.getBoolean();
-		enableAlienVillagerSpawn = configuration
-				.get(CTG_CUSTOMS, "Enable Alien Villager Spawn", true,
-						"Control whether Alien Villagers can spawn randomly outside of Alien Villages; disable if they're causing lag or being annoying. (default: true). ")
-				.getBoolean();
+		enableWindBlowEvent = configuration.get(CTG_CUSTOMS, "Enable Wind Blowing Event", true, "Allow the wind blowing event to move Players around on Vortex (default: true). ").getBoolean();
+		enableAlienVillagerSpawn = configuration.get(CTG_CUSTOMS, "Enable Alien Villager Spawn", true,
+				"Control whether Alien Villagers can spawn randomly outside of Alien Villages; disable if they're causing lag or being annoying. (default: true). ").getBoolean();
 		enableAlienVillagerMutation = configuration
 				.get(CTG_CUSTOMS, "Enable Alien Villagers To Mutate", true, "Set whether or not Alien Villagers can mutate into Zombies on Metztli (default: true). ").getBoolean();
-		alienVillagerSpawnRate = configuration.get(CTG_CUSTOMS, "Alien Villager Ambient Spawn Rate", 1, "Spawn rate of all Alien Villager types, affects all planets. (default: 1)")
-				.getInt();
-		enableChargiumLakesOnVortex = configuration
-				.get(CTG_CUSTOMS, "Enable Chargium Lakes on Vortex", true, "Set to false to make Chargium Lakes not spawn on Vortex (default: true). ").getBoolean();
+		alienVillagerSpawnRate = configuration.get(CTG_CUSTOMS, "Alien Villager Ambient Spawn Rate", 1, "Spawn rate of all Alien Villager types, affects all planets. (default: 1)").getInt();
+		enableChargiumLakesOnVortex = configuration.get(CTG_CUSTOMS, "Enable Chargium Lakes on Vortex", true, "Set to false to make Chargium Lakes not spawn on Vortex (default: true). ").getBoolean();
 		enableWandererSpawn = configuration.get(CTG_CUSTOMS, "Enable Alien Wanderer Spawn", true, "Set to false to disable Wanderer spawn (default: true). ").getBoolean();
-		enableWandererHouses = configuration.get(CTG_CUSTOMS, "Enable Alien Wanderer Houses", false, "Set to true to enable Wanderers to spawn houses (default: false). ")
-				.getBoolean();
+		enableWandererHouses = configuration.get(CTG_CUSTOMS, "Enable Alien Wanderer Houses", false, "Set to true to enable Wanderers to spawn houses (default: false). ").getBoolean();
 		
 		//
 		//
@@ -582,56 +560,37 @@ public class ConfigManagerZG {
 		//
 		
 		// Control unreachable planets (by rockets).
-		planetUnreachableAll = configuration
-				.get(CTG_CUSTOMS, "Disable Rockets For All Planets", false,
-						"Setting this to true disallows rocket travel to all Zollern Galaxy planets. "
-								+ "Note that when this is enabled, it will override the planet-by-planet settings, " + "with the exception of Zollus. (default: false)")
-				.getBoolean();
+		planetUnreachableAll = configuration.get(CTG_CUSTOMS, "Disable Rockets For All Planets", false, "Setting this to true disallows rocket travel to all Zollern Galaxy planets. "
+				+ "Note that when this is enabled, it will override the planet-by-planet settings, " + "with the exception of Zollus. (default: false)").getBoolean();
 		
 		// Control whether or not explosive blocks should cause other explosive blocks to explode in
 		// a chain reaction
-		shouldExplosiveBlocksExplodeOtherBlocks = configuration
-				.get(CTG_CUSTOMS, "Explosive Blocks Cause Chain Reaction", true,
-						"Disable this to prevent explosive blocks blowing up other explosive blocks when broken, " + "which can cause a chain reaction. (default: true)")
-				.getBoolean();
+		shouldExplosiveBlocksExplodeOtherBlocks = configuration.get(CTG_CUSTOMS, "Explosive Blocks Cause Chain Reaction", true,
+				"Disable this to prevent explosive blocks blowing up other explosive blocks when broken, " + "which can cause a chain reaction. (default: true)").getBoolean();
 		
-		planetUnreachableZollus = configuration.get(CTG_CUSTOMS, "Disable Rockets For Planet Zollus", false, "Disable rocket travel for this planet. (default: false)")
-				.getBoolean();
-		planetUnreachableKriffon = configuration.get(CTG_CUSTOMS, "Disable Rockets For Planet Kriffon", false, "Disable rocket travel for this planet. (default: false)")
-				.getBoolean();
-		planetUnreachablePurgot = configuration.get(CTG_CUSTOMS, "Disable Rockets For Planet Purgot", false, "Disable rocket travel for this planet. (default: false)")
-				.getBoolean();
+		planetUnreachableZollus = configuration.get(CTG_CUSTOMS, "Disable Rockets For Planet Zollus", false, "Disable rocket travel for this planet. (default: false)").getBoolean();
+		planetUnreachableKriffon = configuration.get(CTG_CUSTOMS, "Disable Rockets For Planet Kriffon", false, "Disable rocket travel for this planet. (default: false)").getBoolean();
+		planetUnreachablePurgot = configuration.get(CTG_CUSTOMS, "Disable Rockets For Planet Purgot", false, "Disable rocket travel for this planet. (default: false)").getBoolean();
 		planetUnreachableEden = configuration.get(CTG_CUSTOMS, "Disable Rockets For Planet Eden", false, "Disable rocket travel for this planet. (default: false)").getBoolean();
-		planetUnreachableXathius = configuration.get(CTG_CUSTOMS, "Disable Rockets For Planet Xathius", false, "Disable rocket travel for this planet. (default: false)")
-				.getBoolean();
+		planetUnreachableXathius = configuration.get(CTG_CUSTOMS, "Disable Rockets For Planet Xathius", false, "Disable rocket travel for this planet. (default: false)").getBoolean();
 		planetUnreachableOasis = configuration.get(CTG_CUSTOMS, "Disable Rockets For Planet Oasis", false, "Disable rocket travel for this planet. (default: false)").getBoolean();
-		planetUnreachableXantheon = configuration.get(CTG_CUSTOMS, "Disable Rockets For Planet Xantheon", false, "Disable rocket travel for this planet. (default: false)")
-				.getBoolean();
-		planetUnreachableCandora = configuration.get(CTG_CUSTOMS, "Disable Rockets For Planet Candora", false, "Disable rocket travel for this planet. (default: false)")
-				.getBoolean();
-		planetUnreachableAtheon = configuration.get(CTG_CUSTOMS, "Disable Rockets For Planet Atheon", false, "Disable rocket travel for this planet. (default: false)")
-				.getBoolean();
-		planetUnreachablePerdita = configuration.get(CTG_CUSTOMS, "Disable Rockets For Planet Perdita", false, "Disable rocket travel for this planet. (default: false)")
-				.getBoolean();
+		planetUnreachableXantheon = configuration.get(CTG_CUSTOMS, "Disable Rockets For Planet Xantheon", false, "Disable rocket travel for this planet. (default: false)").getBoolean();
+		planetUnreachableCandora = configuration.get(CTG_CUSTOMS, "Disable Rockets For Planet Candora", false, "Disable rocket travel for this planet. (default: false)").getBoolean();
+		planetUnreachableAtheon = configuration.get(CTG_CUSTOMS, "Disable Rockets For Planet Atheon", false, "Disable rocket travel for this planet. (default: false)").getBoolean();
+		planetUnreachablePerdita = configuration.get(CTG_CUSTOMS, "Disable Rockets For Planet Perdita", false, "Disable rocket travel for this planet. (default: false)").getBoolean();
 		planetUnreachableAltum = configuration.get(CTG_CUSTOMS, "Disable Rockets For Planet Altum", false, "Disable rocket travel for this planet. (default: false)").getBoolean();
-		planetUnreachableCaligro = configuration.get(CTG_CUSTOMS, "Disable Rockets For Planet Caligro", false, "Disable rocket travel for this planet. (default: false)")
-				.getBoolean();
-		planetUnreachableExodus = configuration.get(CTG_CUSTOMS, "Disable Rockets For Planet Exodus", false, "Disable rocket travel for this planet. (default: false)")
-				.getBoolean();
-		planetUnreachableVortex = configuration.get(CTG_CUSTOMS, "Disable Rockets For Planet Vortex", false, "Disable rocket travel for this planet. (default: false)")
-				.getBoolean();
-		planetUnreachableMetztli = configuration.get(CTG_CUSTOMS, "Disable Rockets For Planet Metztli", false, "Disable rocket travel for this planet. (default: false)")
-				.getBoolean();
-		planetUnreachableCentotl = configuration.get(CTG_CUSTOMS, "Disable Rockets For Planet Centotl", false, "Disable rocket travel for this planet. (default: false)")
-				.getBoolean();
+		planetUnreachableCaligro = configuration.get(CTG_CUSTOMS, "Disable Rockets For Planet Caligro", false, "Disable rocket travel for this planet. (default: false)").getBoolean();
+		planetUnreachableExodus = configuration.get(CTG_CUSTOMS, "Disable Rockets For Planet Exodus", false, "Disable rocket travel for this planet. (default: false)").getBoolean();
+		planetUnreachableVortex = configuration.get(CTG_CUSTOMS, "Disable Rockets For Planet Vortex", false, "Disable rocket travel for this planet. (default: false)").getBoolean();
+		planetUnreachableMetztli = configuration.get(CTG_CUSTOMS, "Disable Rockets For Planet Metztli", false, "Disable rocket travel for this planet. (default: false)").getBoolean();
+		planetUnreachableCentotl = configuration.get(CTG_CUSTOMS, "Disable Rockets For Planet Centotl", false, "Disable rocket travel for this planet. (default: false)").getBoolean();
 		planetUnreachableToci = configuration.get(CTG_CUSTOMS, "Disable Rockets For Planet Toci", false, "Disable rocket travel for this planet. (default: false)").getBoolean();
-		planetUnreachableTlaloc = configuration.get(CTG_CUSTOMS, "Disable Rockets For Planet Tlaloc", false, "Disable rocket travel for this planet. (default: false)")
-				.getBoolean();
+		planetUnreachableTlaloc = configuration.get(CTG_CUSTOMS, "Disable Rockets For Planet Tlaloc", false, "Disable rocket travel for this planet. (default: false)").getBoolean();
 		
 		//
 		maxHealthAllowed = configuration.get(CTG_CUSTOMS, "Max Health Allowed", 40, "The max health that Players are allowed to have. (default: 40)").getInt();
-		maxHealthIncreasedBy = configuration
-				.get(CTG_CUSTOMS, "Increase Max Health Amount", 10, "The amount of hearts to add to the Player's health when using a Max Heartforce (default: 10).").getInt();
+		maxHealthIncreasedBy = configuration.get(CTG_CUSTOMS, "Increase Max Health Amount", 10, "The amount of hearts to add to the Player's health when using a Max Heartforce (default: 10).")
+				.getInt();
 		//
 		
 		// Coords (Psios)

@@ -13,10 +13,10 @@ import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import zollerngalaxy.mobs.entities.EntityArcon;
 import zollerngalaxy.mobs.entities.EntityBladeFish;
 import zollerngalaxy.mobs.entities.EntityBlubberFish;
-import zollerngalaxy.mobs.entities.EntityGalaxyDragon;
 import zollerngalaxy.mobs.entities.EntityFacehugger;
 import zollerngalaxy.mobs.entities.EntityFaceless;
 import zollerngalaxy.mobs.entities.EntityFrostGiant;
+import zollerngalaxy.mobs.entities.EntityGalaxyDragon;
 import zollerngalaxy.mobs.entities.EntityGalaxyKnight;
 import zollerngalaxy.mobs.entities.EntityGrayAlien;
 import zollerngalaxy.mobs.entities.EntityGypsyFish;
@@ -48,6 +48,7 @@ import zollerngalaxy.mobs.entities.villagers.EntityHarranVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityKriffonVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityPerditaVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityPurgotVillager;
+import zollerngalaxy.mobs.entities.villagers.EntityTlalocVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityTociVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityZollusVillager;
 import zollerngalaxy.mobs.entities.zombiemutations.EntityGhoul;
@@ -57,10 +58,10 @@ import zollerngalaxy.mobs.entities.zombiemutations.EntityVolatile;
 import zollerngalaxy.mobs.renders.RenderArcon;
 import zollerngalaxy.mobs.renders.RenderBladeFish;
 import zollerngalaxy.mobs.renders.RenderBlubberFish;
-import zollerngalaxy.mobs.renders.RenderGalaxyDragon;
 import zollerngalaxy.mobs.renders.RenderFacehugger;
 import zollerngalaxy.mobs.renders.RenderFaceless;
 import zollerngalaxy.mobs.renders.RenderFrostGiant;
+import zollerngalaxy.mobs.renders.RenderGalaxyDragon;
 import zollerngalaxy.mobs.renders.RenderGalaxyKnight;
 import zollerngalaxy.mobs.renders.RenderGrayAlien;
 import zollerngalaxy.mobs.renders.RenderGypsyFish;
@@ -92,6 +93,7 @@ import zollerngalaxy.mobs.renders.villagers.RenderHarranVillager;
 import zollerngalaxy.mobs.renders.villagers.RenderKriffonVillager;
 import zollerngalaxy.mobs.renders.villagers.RenderPerditaVillager;
 import zollerngalaxy.mobs.renders.villagers.RenderPurgotVillager;
+import zollerngalaxy.mobs.renders.villagers.RenderTlalocVillager;
 import zollerngalaxy.mobs.renders.villagers.RenderTociVillager;
 import zollerngalaxy.mobs.renders.villagers.RenderZollusVillager;
 import zollerngalaxy.mobs.renders.zombiemutations.RenderGhoul;
@@ -146,6 +148,7 @@ public final class MobRenders {
 		RenderMob(EntityTociVillager.class, RenderTociVillager::new);
 		RenderMob(EntityPerditaVillager.class, RenderPerditaVillager::new);
 		RenderMob(EntityGalaxyDragon.class, RenderGalaxyDragon::new);
+		RenderMob(EntityTlalocVillager.class, RenderTlalocVillager::new);
 	}
 	
 	/**

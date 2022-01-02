@@ -109,16 +109,15 @@ public class EntityZGVillagerBase extends EntityAgeable implements IMerchant, IN
 	
 	protected ITradeList[] getTradeList() {
 		ITradeList[] TRADE_LIST = new ITradeList[] { new ListVillagerItems(new ItemStack(ZGItems.alienStone, 1), new PriceInfo(1, 2)),
-				new ListVillagerItems(new ItemStack(ZGItems.axeAmaranth, 1), new PriceInfo(3, 4)),
-				new ListVillagerItems(new ItemStack(ZGItems.darkEssence, 1), new PriceInfo(3, 4)), new ListVillagerItems(new ItemStack(ZGItems.sharkTooth, 1), new PriceInfo(3, 4)),
-				new ListVillagerItems(new ItemStack(ZGItems.compressedVyrex, 1), new PriceInfo(1, 2)),
+				new ListVillagerItems(new ItemStack(ZGItems.axeAmaranth, 1), new PriceInfo(3, 4)), new ListVillagerItems(new ItemStack(ZGItems.darkEssence, 1), new PriceInfo(3, 4)),
+				new ListVillagerItems(new ItemStack(ZGItems.sharkTooth, 1), new PriceInfo(3, 4)), new ListVillagerItems(new ItemStack(ZGItems.compressedVyrex, 1), new PriceInfo(1, 2)),
 				new ListVillagerItems(new ItemStack(ZGItems.azurite, 1), new PriceInfo(2, 4)),
-				new ItemAndEmeraldToItem(new ItemStack(ZGItems.rawBlubberFish, 1), new PriceInfo(1, 1), new ItemStack(ZGItems.edenFruit, 1)),
+				new ItemAndSapphireToItem(new ItemStack(ZGItems.rawBlubberFish, 1), new PriceInfo(1, 1), new ItemStack(ZGItems.edenFruit, 1)),
 				new ListVillagerItems(new ItemStack(ZGItems.brownie, 1), new PriceInfo(3, 4)),
-				new ItemAndEmeraldToItem(new ItemStack(ZGItems.creamBall, 1), new PriceInfo(3, 5), new ItemStack(GCItems.schematic, 1, 1)),
-				new ItemAndEmeraldToItem(new ItemStack(ZGItems.compressedCobalt, 1), new PriceInfo(3, 5), new ItemStack(ZGBlocks.blockLore, 1)),
-				new ItemAndEmeraldToItem(new ItemStack(ZGBlocks.blockLore, 2), new PriceInfo(1, 1), new ItemStack(ZGItems.heartium, 1)),
-				new ItemAndEmeraldToItem(new ItemStack(ZGBlocks.blockPerdDiamond, 2), new PriceInfo(1, 1), new ItemStack(ZGBlocks.blockLore, 1)),
+				new ItemAndSapphireToItem(new ItemStack(ZGItems.creamBall, 1), new PriceInfo(3, 5), new ItemStack(GCItems.schematic, 1, 1)),
+				new ItemAndSapphireToItem(new ItemStack(ZGItems.compressedCobalt, 1), new PriceInfo(3, 5), new ItemStack(ZGBlocks.blockLore, 1)),
+				new ItemAndSapphireToItem(new ItemStack(ZGBlocks.blockLore, 2), new PriceInfo(1, 1), new ItemStack(ZGItems.heartium, 1)),
+				new ItemAndSapphireToItem(new ItemStack(ZGBlocks.blockPerdDiamond, 2), new PriceInfo(1, 1), new ItemStack(ZGBlocks.blockLore, 1)),
 				new TradeGoodsForItems(new ItemStack(ZGBlocks.perdTreeSapling, 1), new PriceInfo(11, 39)),
 				new TradeGoodsForItems(new ItemStack(ZGItems.superChargedCoal, ZGHelper.rngInt(2, 4)), new PriceInfo(11, 39)) };
 		return TRADE_LIST;
@@ -660,18 +659,18 @@ public class EntityZGVillagerBase extends EntityAgeable implements IMerchant, IN
 		void modifyMerchantRecipeList(MerchantRecipeList recipeList, Random random);
 	}
 	
-	public static class ItemAndEmeraldToItem implements EntityZGVillagerBase.ITradeList {
+	public static class ItemAndSapphireToItem implements EntityZGVillagerBase.ITradeList {
 		public ItemStack field_179411_a;
 		public EntityZGVillagerBase.PriceInfo field_179409_b;
 		public ItemStack field_179410_c;
 		
-		public ItemAndEmeraldToItem(Item p_i45813_1_, EntityZGVillagerBase.PriceInfo p_i45813_2_, Item p_i45813_3_) {
+		public ItemAndSapphireToItem(Item p_i45813_1_, EntityZGVillagerBase.PriceInfo p_i45813_2_, Item p_i45813_3_) {
 			this.field_179411_a = new ItemStack(p_i45813_1_);
 			this.field_179409_b = p_i45813_2_;
 			this.field_179410_c = new ItemStack(p_i45813_3_);
 		}
 		
-		public ItemAndEmeraldToItem(ItemStack p_i45813_1_, EntityZGVillagerBase.PriceInfo p_i45813_2_, ItemStack p_i45813_3_) {
+		public ItemAndSapphireToItem(ItemStack p_i45813_1_, EntityZGVillagerBase.PriceInfo p_i45813_2_, ItemStack p_i45813_3_) {
 			this.field_179411_a = p_i45813_1_;
 			this.field_179409_b = p_i45813_2_;
 			this.field_179410_c = p_i45813_3_;

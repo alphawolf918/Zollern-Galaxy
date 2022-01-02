@@ -189,6 +189,7 @@ public class FurnaceRecipes {
 		FurnaceRecipes.SmeltItem(ZGItems.dustZucrite, ZGItems.ingotZucrite, 5.6F);
 		FurnaceRecipes.SmeltItem(ZGItems.dustRhodium, ZGItems.ingotRhodium, 5.6F);
 		FurnaceRecipes.SmeltItem(ZGItems.perdEtrium, ZGItems.ingotEtrium, 5.6F);
+		FurnaceRecipes.SmeltItem(ZGItems.dustPlutonium, ZGItems.ingotPlutonium, 8.4F);
 		
 		// Lapis Dust -> Lapis Ingot
 		FurnaceRecipes.SmeltItem(new ItemStack(Items.DYE, 1, 4), new ItemStack(ZGItems.ingotLapis, 1), 1.0F);

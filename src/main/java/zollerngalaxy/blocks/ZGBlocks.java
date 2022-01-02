@@ -596,8 +596,8 @@ public class ZGBlocks {
 	public static final Block tlalocCertusQuartzOre = new ZGBlockOre("tlaloccertusquartzore", 5.2F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
 			EnumHarvestLevelZG.AMARANTH.getHarvestLevel());
 	public static final Block tlalocFluixOre = new ZGBlockOre("tlalocfluixore", 6.4F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.AMARANTH.getHarvestLevel());
-	
-	// TODO
+	public static final Block tlalocPlutoniumOre = new ZGBlockOre("tlalocplutoniumore", 7.8F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
+			EnumHarvestLevelZG.AMARANTH.getHarvestLevel());
 	
 	// Ares
 	// TODO
@@ -761,7 +761,7 @@ public class ZGBlocks {
 				tociFueltoniumOre, tociDiamondOre, tociQuartzOre);
 		//
 		ZGBlocks.registerBlocks(tlalocRock, tlalocChrome, tlalocMechRock, tlalocStone, tlalocRedstoneOre, tlalocFueltoniumOre, tlalocShiniumOre, tlalocZollerniumOre, tlalocSuperChargedCoalOre,
-				tlalocQuartzOre, tlalocCertusQuartzOre, tlalocFluixOre);
+				tlalocQuartzOre, tlalocCertusQuartzOre, tlalocFluixOre, tlalocPlutoniumOre);
 		//
 		ZGHelper.Log("Loaded a total of " + totalBlocks + " new blocks.");
 	}

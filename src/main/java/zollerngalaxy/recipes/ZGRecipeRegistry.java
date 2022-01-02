@@ -15,6 +15,7 @@ public class ZGRecipeRegistry {
 		CraftingRecipes.init();
 		FurnaceRecipes.init();
 		CompressorRecipesZG.init();
+		CircuitFabricatorRecipesZG.init();
 		if (ModHelperBase.useCofh && ModHelperBase.useThermalFoundation) {
 			PulverizerRecipes.init();
 			InductionSmelterRecipes.init();

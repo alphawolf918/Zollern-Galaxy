@@ -2,7 +2,8 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "zollerngalaxy:plutoniumblock"
+      "item": "zollerngalaxy:plutoniumingot",
+      "count": 9
     }
   ],
   "result": {

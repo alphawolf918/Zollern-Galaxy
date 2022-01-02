@@ -24,7 +24,7 @@ import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.blocks.fluids.ZGFluids;
 import zollerngalaxy.celestial.ZGPlanets;
 import zollerngalaxy.celestial.spacestations.ZGSpaceStations;
-import zollerngalaxy.compatibility.ZGCompats;
+import zollerngalaxy.compat.ZGCompats;
 import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.ZGDimensions;
 import zollerngalaxy.creativetabs.ZGTabs;

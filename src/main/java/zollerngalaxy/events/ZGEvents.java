@@ -422,6 +422,8 @@ public class ZGEvents {
 			event.setDisplayname(TextFormatting.AQUA + "ChronoxShift" + TextFormatting.WHITE);
 		} else if (username.equals("actural_guy")) {
 			event.setDisplayname(TextFormatting.GOLD + "ExistingEevee" + TextFormatting.WHITE);
+		} else if (username.equals("autumnstarfire")) {
+			event.setDisplayname(TextFormatting.LIGHT_PURPLE + "AutumnStarFire" + TextFormatting.WHITE);
 		}
 	}
 	

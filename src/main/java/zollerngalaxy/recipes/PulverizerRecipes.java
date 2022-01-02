@@ -165,12 +165,23 @@ public class PulverizerRecipes {
 		// Chargium
 		PulverizerRecipes.addRecipe(ZGBlocks.corruptChargiumOre, ZGItems.dustChargium);
 		
+		// Plutonium
+		PulverizerRecipes.addRecipe(ZGBlocks.xantheonPlutoniumOre, ZGItems.dustPlutonium);
+		PulverizerRecipes.addRecipe(ZGBlocks.tlalocPlutoniumOre, ZGItems.dustPlutonium);
+		PulverizerRecipes.addRecipe(ZGItems.ingotPlutonium, ZGItems.dustPlutonium);
+		
 		ZGHelper.Log("Loaded a total of " + totalRecipes + " new Pulverizer recipes.");
 	}
 	
 	public static void addRecipe(int energy, Block oreIn, Item itemOut, int metadata) {
 		int numResult = (ConfigManagerZG.enableExtraPulverizerOutput) ? 4 : 2;
 		ThermalExpansionHelper.addPulverizerRecipe(energy, new ItemStack(oreIn), new ItemStack(itemOut, numResult, metadata));
+		totalRecipes++;
+	}
+	
+	public static void addRecipe(int energy, Item itemIn, Item itemOut, int metadata) {
+		int numResult = (ConfigManagerZG.enableExtraPulverizerOutput) ? 4 : 2;
+		ThermalExpansionHelper.addPulverizerRecipe(energy, new ItemStack(itemIn), new ItemStack(itemOut, numResult, metadata));
 		totalRecipes++;
 	}
 	
@@ -194,8 +205,16 @@ public class PulverizerRecipes {
 		PulverizerRecipes.addRecipe(energy, oreIn, itemOut, 0);
 	}
 	
+	public static void addRecipe(int energy, Item itemIn, Item itemOut) {
+		PulverizerRecipes.addRecipe(energy, itemIn, itemOut, 0);
+	}
+	
 	public static void addRecipe(Block oreIn, Item itemOut) {
 		PulverizerRecipes.addRecipe(5400, oreIn, itemOut);
+	}
+	
+	public static void addRecipe(Item itemIn, Item itemOut) {
+		PulverizerRecipes.addRecipe(5400, itemIn, itemOut);
 	}
 	
 	public static void addRecipe(Block oreIn, Item itemOut, int metadata) {

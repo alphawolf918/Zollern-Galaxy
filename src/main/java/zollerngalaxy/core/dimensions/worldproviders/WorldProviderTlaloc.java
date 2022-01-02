@@ -95,13 +95,13 @@ public class WorldProviderTlaloc extends WorldProviderPlanetZG {
 	@Override
 	public Vector3 getFogColor() {
 		float f = 1.1F - this.getStarBrightness(1.0F);
-		return new Vector3(2F / 255F * f, 2F / 255F * f, 72F / 255F * f);
+		return new Vector3(80F / 255F * f, 80F / 255F * f, 88F / 255F * f);
 	}
 	
 	@Override
 	public Vector3 getSkyColor() {
 		float f = 1.15F - this.getStarBrightness(1.0F);
-		return new Vector3(2F / 255F * f, 2F / 255F * f, 92F / 255F * f);
+		return new Vector3(100F / 255F * f, 100F / 255F * f, 100F / 255F * f);
 	}
 	
 	@Override

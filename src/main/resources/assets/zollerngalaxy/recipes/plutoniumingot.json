@@ -7,10 +7,10 @@
   ],
   "key": {
     "I": {
-      "item": "zollerngalaxy:plutoniumingot"
+      "item": "zollerngalaxy:plutoniumcrystal"
     }
   },
   "result": {
-    "item": "zollerngalaxy:plutoniumblock"
+    "item": "zollerngalaxy:plutoniumingot"
   }
 }

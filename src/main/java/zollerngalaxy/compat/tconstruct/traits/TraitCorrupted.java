@@ -5,7 +5,7 @@
  * but do not claim it as your own, and
  * do not redistribute it.
  */
-package zollerngalaxy.compatibility.tconstruct.traits;
+package zollerngalaxy.compat.tconstruct.traits;
 
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;

@@ -43,12 +43,12 @@ public class EntityTociVillager extends EntityZGVillagerBase {
 				new ListVillagerItems(new ItemStack(ZGItems.oxygenTankTier5, 1), new PriceInfo(3, 4)),
 				new ListVillagerItems(new ItemStack(ZGItems.ascendium, 1), new PriceInfo(3, 4)), new ListVillagerItems(new ItemStack(ZGItems.ingotEtrium, 4), new PriceInfo(1, 2)),
 				new ListVillagerItems(new ItemStack(ZGItems.dustZucrite, 5), new PriceInfo(2, 4)),
-				new ItemAndEmeraldToItem(new ItemStack(ZGItems.perdBerry, 1), new PriceInfo(1, 1), new ItemStack(ZGItems.edenFruit, 64)),
+				new ItemAndSapphireToItem(new ItemStack(ZGItems.perdBerry, 1), new PriceInfo(1, 1), new ItemStack(ZGItems.edenFruit, 64)),
 				new ListVillagerItems(new ItemStack(ZGItems.aquamarine, 1), new PriceInfo(3, 4)),
-				new ItemAndEmeraldToItem(new ItemStack(ZGItems.compressedVyrex, 1), new PriceInfo(3, 5), new ItemStack(ZGItems.garnet, 1)),
-				new ItemAndEmeraldToItem(new ItemStack(ZGItems.purgEssence, 1), new PriceInfo(3, 5), new ItemStack(ZGBlocks.blockLore, 1)),
-				new ItemAndEmeraldToItem(new ItemStack(ZGItems.healingHeart, 4), new PriceInfo(1, 1), new ItemStack(ZGItems.opal, 1)),
-				new ItemAndEmeraldToItem(new ItemStack(ZGItems.healingHeartForce, 2), new PriceInfo(1, 1), new ItemStack(ZGItems.topaz, 1)),
+				new ItemAndSapphireToItem(new ItemStack(ZGItems.compressedVyrex, 1), new PriceInfo(3, 5), new ItemStack(ZGItems.garnet, 1)),
+				new ItemAndSapphireToItem(new ItemStack(ZGItems.purgEssence, 1), new PriceInfo(3, 5), new ItemStack(ZGBlocks.blockLore, 1)),
+				new ItemAndSapphireToItem(new ItemStack(ZGItems.healingHeart, 4), new PriceInfo(1, 1), new ItemStack(ZGItems.opal, 1)),
+				new ItemAndSapphireToItem(new ItemStack(ZGItems.healingHeartForce, 2), new PriceInfo(1, 1), new ItemStack(ZGItems.topaz, 1)),
 				new TradeGoodsForItems(new ItemStack(ZGItems.amber, 1), new PriceInfo(11, 39)),
 				new TradeGoodsForItems(new ItemStack(ZGItems.superChargedCoal, ZGHelper.rngInt(4, 6)), new PriceInfo(11, 39)) };
 		return TRADE_LIST;

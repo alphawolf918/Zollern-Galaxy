@@ -9,7 +9,7 @@ package zollerngalaxy.lib.helpers;
 
 import net.minecraftforge.fml.common.Loader;
 
-public class ModHelperBase {
+public final class ModHelperBase {
 	
 	public static boolean useCofh = false;
 	public static boolean useThermalExpansion = false;

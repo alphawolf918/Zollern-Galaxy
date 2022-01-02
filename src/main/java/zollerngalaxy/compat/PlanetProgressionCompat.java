@@ -5,7 +5,7 @@
  * claim it as your own, and do not
  * redistribute it.
  */
-package zollerngalaxy.compatibility;
+package zollerngalaxy.compat;
 
 import com.mjr.planetprogression.api.research.ResearchHooksMP;
 import micdoodle8.mods.galacticraft.api.galaxies.CelestialBody;

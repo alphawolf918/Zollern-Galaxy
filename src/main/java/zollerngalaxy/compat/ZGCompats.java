@@ -5,7 +5,7 @@
  * claim it as your own, and do not
  * redistribute it.
  */
-package zollerngalaxy.compatibility;
+package zollerngalaxy.compat;
 
 import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.lib.helpers.ModHelperBase;
@@ -13,7 +13,7 @@ import zollerngalaxy.lib.helpers.ModHelperBase;
 public class ZGCompats {
 	
 	public static void init() {
-		if (ModHelperBase.useExtremeReactors) {
+		if (ModHelperBase.useExtremeReactors && ConfigManagerZG.enableExtremeReactorsCompat) {
 			ExtremeReactorsCompat.init();
 		}
 		

@@ -3,12 +3,12 @@ Zollern Galaxy v2.0.35
 =====================
 
 [NEW]
-* Added a new planet, Toci - planet of the Wanderers.
+* Added two new planets: Toci - planet of the Wanderers, and Tlaloc, the robotic planet.
 * Added the Wanderer mob to Toci.
     - At night, they have a danger meter which increases as the night goes on.
         - If this meter gets too high, they will build a "home" if they do not have one already.
-            - This is turned off by default in the config, and Wanderers can be turned off as well.
-* Added the Toci and Perdita Villagers.
+            - This is turned off by default in the config, and Wanderers themselves can be turned off as well.
+* Added the Toci, Perdita and Tlaloc Villagers.
 * Added the Galaxy Dragon mob, akin to a Baby Ender Dragon. This mob is tameable using a bone.
     - You can also tempt it / make it breed by giving it a Lost Peach or a Lost Berry.
     - At this time, they cannot be ridden, but that is planned for the future.
@@ -16,6 +16,14 @@ Zollern Galaxy v2.0.35
         - Obtained after fighting the Ender Dragon.
 * Added a stack increase helper for Saddles, Ender Pearls, Signs, Buckets and Snowballs from 16 to 64.
     - This can be disabled in the config.
+* Added Plutonium and Fueltonium Ingots as solid fuel for Extreme Reactors.
+* Added new Enrichment Dust item as a Circuit Fabricator recipe.
+    - Used to 'enrich' certain items via different types of recipes, usually used in conjunction with other mods.
+    - Will have some use in this mod as well.
+* Added new Induction Smelter (Thermal Expansion) Recipe: 2 Cyanite Ingots + 2 Enrichment Dust = 2 Blutonium Ingots.
+    - Extreme Reactors will need to be present for this to work, and the compatibility config option will need to be set to true.
+* Added new Crafting Recipe: 1 Poisonous Potato + 1 Enrichment Dust = 2 Regular Potatoes.
+    - The increase in output is to make up for the "bad luck" of getting a poisonous crop.
 * 
 
 [CHANGES]

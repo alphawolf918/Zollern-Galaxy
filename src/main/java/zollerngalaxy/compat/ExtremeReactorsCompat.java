@@ -5,13 +5,23 @@
  * claim it as your own, and do not
  * redistribute it.
  */
-package zollerngalaxy.compatibility;
+package zollerngalaxy.compat;
 
+import erogenousbeef.bigreactors.api.registry.Reactants;
 import erogenousbeef.bigreactors.api.registry.ReactorInterior;
 import erogenousbeef.bigreactors.api.registry.TurbineCoil;
 import zollerngalaxy.lib.helpers.ZGHelper;
 
 public class ExtremeReactorsCompat {
+	
+	public static final int fueltoniumReactantAmount = 2000;
+	public static final int plutoniumReactantAmount = 4000;
+	
+	protected static final int FUEL = 0;
+	protected static final int WASTE = 1;
+	
+	protected static final int fueltoniumColor = 0x00ff00;
+	protected static final int plutoniumColor = 0xffd700;
 	
 	public static void init() {
 		ZGHelper.Log("Initializing IMC with Extreme Reactors...");
@@ -30,6 +40,10 @@ public class ExtremeReactorsCompat {
 		ExtremeReactorsCompat.registerReactorFluid("fueltonium", 0.92F, 3.95F, 6.50F, 5.6F);
 		ExtremeReactorsCompat.registerReactorFluid("chargium", 1.92F, 5.00F, 6.50F, 6.7F);
 		
+		// Reactor Solids
+		ExtremeReactorsCompat.registerReactorSolid("ingotFueltonium", "fueltonium", fueltoniumReactantAmount, FUEL, fueltoniumColor);
+		ExtremeReactorsCompat.registerReactorSolid("ingotPlutonium", "plutonium", plutoniumReactantAmount, FUEL, plutoniumColor);
+		
 		ZGHelper.Log("Extreme Reactors IMC: Done!");
 	}
 	
@@ -41,5 +55,12 @@ public class ExtremeReactorsCompat {
 	private static void registerReactorFluid(String fluidName, float absorption, float heatEfficiency, float moderation, float heatConductivity) {
 		ReactorInterior.registerFluid(fluidName, absorption, heatEfficiency, moderation, heatConductivity);
 		ZGHelper.Log("Extreme Reactors: Loaded '" + fluidName + "' as a Reactor Fluid.");
+	}
+	
+	private static void registerReactorSolid(String oreDictName, String reactantName, int qty, int type, int clr) {
+		Reactants.registerReactant(reactantName, type, clr);
+		ZGHelper.Log("Extreme Reactors: Registered '" + reactantName + "' (" + oreDictName + ") as a Reactant.");
+		Reactants.registerSolid(oreDictName, reactantName, qty);
+		ZGHelper.Log("Extreme Reactors: Loaded '" + reactantName + "' (" + oreDictName + ") as a Reactor solid.");
 	}
 }

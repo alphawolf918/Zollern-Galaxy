@@ -45,12 +45,12 @@ public class EntityCentotlVillager extends EntityZGVillagerBase {
 				new ListVillagerItems(new ItemStack(ZGItems.chestZollernium, 1), new PriceInfo(3, 4)),
 				new ListVillagerItems(new ItemStack(ZGItems.ingotChargium, 4), new PriceInfo(1, 2)),
 				new ListVillagerItems(new ItemStack(ZGItems.dustEvenium, 5), new PriceInfo(2, 4)),
-				new ItemAndEmeraldToItem(new ItemStack(ZGItems.perdPeach, 1), new PriceInfo(1, 1), new ItemStack(ZGItems.edenFruit, 1)),
+				new ItemAndSapphireToItem(new ItemStack(ZGItems.perdPeach, 1), new PriceInfo(1, 1), new ItemStack(ZGItems.edenFruit, 1)),
 				new ListVillagerItems(new ItemStack(ZGItems.starGateTier4, 1), new PriceInfo(3, 4)),
-				new ItemAndEmeraldToItem(new ItemStack(ZGItems.compressedZucrite, 1), new PriceInfo(3, 5), new ItemStack(GCItems.schematic, 1, 1)),
-				new ItemAndEmeraldToItem(new ItemStack(ZGItems.dustZucrite, 1), new PriceInfo(3, 5), new ItemStack(ZGBlocks.blockLore, 1)),
-				new ItemAndEmeraldToItem(new ItemStack(ZGItems.healingHeart, 4), new PriceInfo(1, 1), new ItemStack(ZGItems.garnet, 1)),
-				new ItemAndEmeraldToItem(new ItemStack(ZGItems.healingHeartForce, 2), new PriceInfo(1, 1), new ItemStack(ZGBlocks.blockChargium, 1)),
+				new ItemAndSapphireToItem(new ItemStack(ZGItems.compressedZucrite, 1), new PriceInfo(3, 5), new ItemStack(GCItems.schematic, 1, 1)),
+				new ItemAndSapphireToItem(new ItemStack(ZGItems.dustZucrite, 1), new PriceInfo(3, 5), new ItemStack(ZGBlocks.blockLore, 1)),
+				new ItemAndSapphireToItem(new ItemStack(ZGItems.healingHeart, 4), new PriceInfo(1, 1), new ItemStack(ZGItems.garnet, 1)),
+				new ItemAndSapphireToItem(new ItemStack(ZGItems.healingHeartForce, 2), new PriceInfo(1, 1), new ItemStack(ZGBlocks.blockChargium, 1)),
 				new TradeGoodsForItems(new ItemStack(ZGItems.amberStatic, 1), new PriceInfo(11, 39)),
 				new TradeGoodsForItems(new ItemStack(ZGItems.superChargedCoal, ZGHelper.rngInt(4, 6)), new PriceInfo(11, 39)) };
 		return TRADE_LIST;

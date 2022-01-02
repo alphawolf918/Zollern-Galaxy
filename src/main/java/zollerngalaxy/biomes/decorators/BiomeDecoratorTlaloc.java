@@ -20,11 +20,13 @@ import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderTlaloc;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 import zollerngalaxy.core.enums.EnumOreGenZG;
+import zollerngalaxy.lib.helpers.ZGDecorateHelper;
 import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.worldgen.WorldGenCraterZG;
 import zollerngalaxy.worldgen.WorldGenMinableZG;
 import zollerngalaxy.worldgen.WorldGenOutpost;
 import zollerngalaxy.worldgen.WorldGenTunnel;
+import zollerngalaxy.worldgen.WorldGenZGCrystals;
 
 public class BiomeDecoratorTlaloc extends BiomeDecoratorZG {
 	
@@ -44,15 +46,19 @@ public class BiomeDecoratorTlaloc extends BiomeDecoratorZG {
 	private WorldGenerator fluixGen;
 	private WorldGenerator shiniumGen;
 	private WorldGenerator zollerniumGen;
+	private WorldGenerator plutoniumGen;
 	
 	public int tunnelsPerChunk = 10;
 	public int cratersPerChunk = 6;
+	public int plutoniumCrystalsPerChunk = 2;
 	
 	public boolean generateCraters = true;
 	public boolean generateTunnels = true;
+	public boolean generatePlutoniumCrystals = true;
 	
 	private WorldGenerator tunnelGen = new WorldGenTunnel();
 	private WorldGenerator craterGen = new WorldGenCraterZG();
+	private WorldGenerator plutoniumCrystalsGen = new WorldGenZGCrystals(ZGBlocks.blockCrystalsPlutonium.getDefaultState(), 60);
 	
 	public BiomeDecoratorTlaloc() {
 		this.constructGen = new WorldGenMinableZG(ZGBlocks.xantheonConstructBlock, ROCK, EnumOreGenZG.CONSTRUCTED);
@@ -67,6 +73,7 @@ public class BiomeDecoratorTlaloc extends BiomeDecoratorZG {
 		this.fluixGen = new WorldGenMinableZG(ZGBlocks.tlalocFluixOre, STONE, EnumOreGenZG.FLUIX);
 		this.shiniumGen = new WorldGenMinableZG(ZGBlocks.tlalocShiniumOre, STONE, EnumOreGenZG.SHINIUM);
 		this.zollerniumGen = new WorldGenMinableZG(ZGBlocks.tlalocZollerniumOre, STONE, EnumOreGenZG.ZOLLERNIUM);
+		this.plutoniumGen = new WorldGenMinableZG(ZGBlocks.tlalocPlutoniumOre, STONE, EnumOreGenZG.PLUTONIUM.setGenCount(15));
 	}
 	
 	@Override
@@ -96,6 +103,7 @@ public class BiomeDecoratorTlaloc extends BiomeDecoratorZG {
 		this.generateOre(this.fluixGen, EnumOreGenZG.FLUIX, world, rand);
 		this.generateOre(this.shiniumGen, EnumOreGenZG.SHINIUM, world, rand);
 		this.generateOre(this.zollerniumGen, EnumOreGenZG.ZOLLERNIUM, world, rand);
+		this.generateOre(this.plutoniumGen, EnumOreGenZG.PLUTONIUM, world, rand);
 		
 		// Tunnels
 		if (this.generateTunnels && this.tunnelsPerChunk > 0) {
@@ -113,10 +121,22 @@ public class BiomeDecoratorTlaloc extends BiomeDecoratorZG {
 		if (this.generateCraters && this.cratersPerChunk > 0) {
 			ChunkProviderTlaloc.INSTANCE.createCraters(x, z, chunkPrimer);
 			y = rand.nextInt(rand.nextInt(genY) + 8);
-			if (ZGHelper.rngInt(1, 100) <= 50) {
+			if (ZGHelper.rngInt(1, 100) <= 40) {
 				for (int i = 0; i < this.cratersPerChunk; ++i) {
-					if (y <= 80) {
+					if (y <= 70) {
 						this.craterGen.generate(world, rand, this.chunkPos.add(x, y, z));
+					}
+				}
+			}
+		}
+		
+		// Plutonium Crystals
+		if (this.generatePlutoniumCrystals && this.plutoniumCrystalsPerChunk > 0) {
+			if (ZGHelper.rngInt(1, 100) <= 45) {
+				y = rand.nextInt(rand.nextInt(genY) + 8);
+				for (int i = 0; i < this.plutoniumCrystalsPerChunk; ++i) {
+					if (y <= 60) {
+						ZGDecorateHelper.generateCrystals(this.plutoniumCrystalsGen, world, rand, this.chunkPos.add(x, y, z));
 					}
 				}
 			}

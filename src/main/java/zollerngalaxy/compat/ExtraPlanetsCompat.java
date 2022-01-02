@@ -5,7 +5,7 @@
  * but do not claim it as your own, and
  * do not redistribute it.
  */
-package zollerngalaxy.compatibility;
+package zollerngalaxy.compat;
 
 import zollerngalaxy.config.ConfigManagerZG;
 

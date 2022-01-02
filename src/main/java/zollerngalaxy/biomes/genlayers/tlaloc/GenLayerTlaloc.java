@@ -25,7 +25,7 @@ public abstract class GenLayerTlaloc extends GenLayer {
 		biomes = new GenLayerZoom(1003L, biomes);
 		biomes = new GenLayerZoom(1004L, biomes);
 		biomes = new GenLayerZoom(1005L, biomes);
-		GenLayer genLayerVoronoiZoom = new GenLayerVoronoiZoom(10L, biomes);
+		GenLayer genLayerVoronoiZoom = new GenLayerVoronoiZoom(14L, biomes);
 		biomes.initWorldGenSeed(l);
 		genLayerVoronoiZoom.initWorldGenSeed(l);
 		

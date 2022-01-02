@@ -5,7 +5,7 @@
  * but do not claim it as your own, and
  * do not redistribute it.
  */
-package zollerngalaxy.compatibility;
+package zollerngalaxy.compat;
 
 import net.minecraftforge.fluids.Fluid;
 import slimeknights.tconstruct.library.MaterialIntegration;
@@ -18,10 +18,10 @@ import slimeknights.tconstruct.library.materials.HeadMaterialStats;
 import slimeknights.tconstruct.library.materials.Material;
 import slimeknights.tconstruct.library.materials.ProjectileMaterialStats;
 import slimeknights.tconstruct.library.modifiers.IModifier;
-import zollerngalaxy.compatibility.tconstruct.TCSmelteryManager;
-import zollerngalaxy.compatibility.tconstruct.traits.TraitCorrupted;
-import zollerngalaxy.compatibility.tconstruct.traits.TraitEnlightened;
-import zollerngalaxy.compatibility.tconstruct.traits.TraitInfection;
+import zollerngalaxy.compat.tconstruct.TCSmelteryManager;
+import zollerngalaxy.compat.tconstruct.traits.TraitCorrupted;
+import zollerngalaxy.compat.tconstruct.traits.TraitEnlightened;
+import zollerngalaxy.compat.tconstruct.traits.TraitInfection;
 import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.lib.helpers.ZGHelper;
 

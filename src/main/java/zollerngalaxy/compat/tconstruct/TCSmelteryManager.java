@@ -5,7 +5,7 @@
  * but do not claim it as your own, and
  * do not redistribute it.
  */
-package zollerngalaxy.compatibility.tconstruct;
+package zollerngalaxy.compat.tconstruct;
 
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;

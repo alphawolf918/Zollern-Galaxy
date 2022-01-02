@@ -2,7 +2,7 @@ language.name=English
 language.region=US
 language.code=en_US
 
-## Blocks ##f
+## Blocks ##
 
 tile.zolsurfacerock.name=Zolrock
 tile.zolstone.name=Zolstone
@@ -456,6 +456,7 @@ tile.tlalocsuperchargedcoalore.name=Tlaloc Super Charged Coal Ore
 tile.tlalocfueltoniumore.name=Tlaloc Fueltonium Ore
 tile.tlaloczollerniumore.name=Tlaloc Zollernium Ore
 tile.tlalocshiniumore.name=Tlaloc Shinium Ore
+tile.tlalocplutoniumore.name=Tlaloc Plutonium Ore
 
 tile.endrock.name=Endrock
 
@@ -610,6 +611,8 @@ item.purgotcrystal.name=Purgot Crystal
 
 item.prometheancrystal.name=Promethean Crystal
 item.plutoniumcrystal.name=Plutonium Crystal
+item.plutoniumingot.name=Plutonium Ingot
+item.plutoniumdust.name=Plutonium Dust
 
 item.purgotessence.name=Oasis Gem
 
@@ -818,6 +821,8 @@ item.zgthermal_chestplate_t3.name=Thermal Chestplate (Tier 3)
 item.zgthermal_leggings_t3.name=Thermal Leggings (Tier 3)
 item.zgthermal_boots_t3.name=Thermal Boots (Tier 3)
 item.zgthermal_padding_t3.name=Thermal Padding (Tier 3)
+
+item.enrichmentdust.name=Enrichment Dust
 
 ## Mobs ##
 

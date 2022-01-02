@@ -45,12 +45,12 @@ public class EntityCaligroVillager extends EntityZGVillagerBase {
 				new ListVillagerItems(new ItemStack(ZGItems.chestAmaranth, 1), new PriceInfo(3, 4)),
 				new ListVillagerItems(new ItemStack(ZGItems.ingotChargium, 1), new PriceInfo(1, 2)),
 				new ListVillagerItems(new ItemStack(ZGItems.azurite, 5), new PriceInfo(2, 4)),
-				new ItemAndEmeraldToItem(new ItemStack(ZGItems.cookedAlienBeef, 1), new PriceInfo(1, 1), new ItemStack(ZGItems.edenFruit, 1)),
+				new ItemAndSapphireToItem(new ItemStack(ZGItems.cookedAlienBeef, 1), new PriceInfo(1, 1), new ItemStack(ZGItems.edenFruit, 1)),
 				new ListVillagerItems(new ItemStack(ZGItems.starGateCandy, 1), new PriceInfo(3, 4)),
-				new ItemAndEmeraldToItem(new ItemStack(ZGItems.compressedRiven, 1), new PriceInfo(3, 5), new ItemStack(GCItems.schematic, 1, 1)),
-				new ItemAndEmeraldToItem(new ItemStack(ZGItems.dustZinc, 1), new PriceInfo(3, 5), new ItemStack(ZGBlocks.blockLore, 1)),
-				new ItemAndEmeraldToItem(new ItemStack(ZGBlocks.blockLore, 2), new PriceInfo(1, 1), new ItemStack(ZGItems.healingHeart, 1)),
-				new ItemAndEmeraldToItem(new ItemStack(ZGItems.healingHeartForce, 2), new PriceInfo(1, 1), new ItemStack(ZGBlocks.blockLore, 1)),
+				new ItemAndSapphireToItem(new ItemStack(ZGItems.compressedRiven, 1), new PriceInfo(3, 5), new ItemStack(GCItems.schematic, 1, 1)),
+				new ItemAndSapphireToItem(new ItemStack(ZGItems.dustZinc, 1), new PriceInfo(3, 5), new ItemStack(ZGBlocks.blockLore, 1)),
+				new ItemAndSapphireToItem(new ItemStack(ZGBlocks.blockLore, 2), new PriceInfo(1, 1), new ItemStack(ZGItems.healingHeart, 1)),
+				new ItemAndSapphireToItem(new ItemStack(ZGItems.healingHeartForce, 2), new PriceInfo(1, 1), new ItemStack(ZGBlocks.blockLore, 1)),
 				new TradeGoodsForItems(new ItemStack(ZGItems.aquamarineIcy, 1), new PriceInfo(11, 39)),
 				new TradeGoodsForItems(new ItemStack(ZGItems.superChargedCoal, ZGHelper.rngInt(4, 6)), new PriceInfo(11, 39)) };
 		return TRADE_LIST;
