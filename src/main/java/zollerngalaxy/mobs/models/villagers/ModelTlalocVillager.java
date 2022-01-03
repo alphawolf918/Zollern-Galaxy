@@ -69,24 +69,22 @@ public class ModelTlalocVillager extends ModelBase {
 		RightArm = new ModelRenderer(this);
 		RightArm.setRotationPoint(-7.0F, -22.0F, 0.0F);
 		villager.addChild(RightArm);
-		RightArm.cubeList.add(new ModelBox(RightArm, 0, 22, -3.0F, -2.0F, -2.0F, 4, 12, 4, 0.0F, false));
-		RightArm.cubeList.add(new ModelBox(RightArm, 57, 10, 1.0F, -2.0F, -2.0F, 2, 5, 3, 0.0F, false));
+		RightArm.cubeList.add(new ModelBox(RightArm, 0, 22, -1.0F, -2.0F, -2.0F, 4, 12, 4, 0.0F, false));
 		
 		LeftArm = new ModelRenderer(this);
 		LeftArm.setRotationPoint(5.0F, -22.0F, 0.0F);
 		villager.addChild(LeftArm);
-		LeftArm.cubeList.add(new ModelBox(LeftArm, 1, 22, 1.0F, -2.0F, -2.0F, 4, 12, 4, 0.0F, false));
-		LeftArm.cubeList.add(new ModelBox(LeftArm, 57, 10, -1.0F, -2.0F, -2.0F, 2, 5, 3, 0.0F, false));
+		LeftArm.cubeList.add(new ModelBox(LeftArm, 0, 22, -1.0F, -2.0F, -2.0F, 4, 12, 4, 0.0F, false));
 		
 		RightLeg = new ModelRenderer(this);
 		RightLeg.setRotationPoint(-1.9F, -12.0F, 0.0F);
 		villager.addChild(RightLeg);
-		RightLeg.cubeList.add(new ModelBox(RightLeg, 11, 42, -2.1F, 0.0F, -3.0F, 3, 15, 5, 0.0F, true));
+		RightLeg.cubeList.add(new ModelBox(RightLeg, 11, 42, -2.1F, 0.0F, -3.0F, 3, 15, 6, 0.0F, true));
 		
 		LeftLeg = new ModelRenderer(this);
 		LeftLeg.setRotationPoint(1.9F, -12.0F, 0.0F);
 		villager.addChild(LeftLeg);
-		LeftLeg.cubeList.add(new ModelBox(LeftLeg, 11, 44, -1.0F, 0.0F, -3.0F, 3, 15, 5, 0.0F, false));
+		LeftLeg.cubeList.add(new ModelBox(LeftLeg, 11, 44, -1.0F, 0.0F, -3.0F, 3, 15, 6, 0.0F, false));
 	}
 	
 	@Override

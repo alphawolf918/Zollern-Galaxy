@@ -43,7 +43,7 @@ public class JSONRecipeFactory {
 	
 	private static void setupDir() {
 		if (RECIPE_DIR == null) {
-			RECIPE_DIR = ConfigManagerZG.configuration.getConfigFile().toPath().resolve(FULL_PATH + "/recipes/").toFile();
+			RECIPE_DIR = ConfigManagerZG.config.getConfigFile().toPath().resolve(FULL_PATH + "/recipes/").toFile();
 		}
 		if (!RECIPE_DIR.exists()) {
 			RECIPE_DIR.mkdir();
@@ -52,7 +52,7 @@ public class JSONRecipeFactory {
 	
 	private static void setupAdvDir() {
 		if (ADVANCE_DIR == null) {
-			ADVANCE_DIR = ConfigManagerZG.configuration.getConfigFile().toPath().resolve(FULL_PATH + "/advancements/").toFile();
+			ADVANCE_DIR = ConfigManagerZG.config.getConfigFile().toPath().resolve(FULL_PATH + "/advancements/").toFile();
 		}
 		if (!ADVANCE_DIR.exists()) {
 			ADVANCE_DIR.mkdir();

@@ -31,6 +31,7 @@ public class ZGLootTables {
 	public static final ResourceLocation CHEST_XENO_BOSS = CommonZGRegisterHelper.registerChestLoot("xenoqueen");
 	public static final ResourceLocation CHEST_SHADOW_SKULL = CommonZGRegisterHelper.registerChestLoot("shadowskull");
 	public static final ResourceLocation CHEST_DROPSHIP = CommonZGRegisterHelper.registerChestLoot("edendropship");
+	public static final ResourceLocation CHEST_UFO = CommonZGRegisterHelper.registerChestLoot("ufotreasure");
 	
 	// Gameplay
 	public static final ResourceLocation GAMEPLAY_FISHING = CommonZGRegisterHelper.registerGameplayLoot("zgfishing");

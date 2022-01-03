@@ -292,8 +292,31 @@
       "sounds":[
          "zollerngalaxy:mob/xenomorph/queen/die"
       ],
-	  "stream":true,
+      "stream":true,
       "subtitle":"zollerngalaxy.subtitle.xenomorph.queen.die"
+   },
+   "mob.vexbot.say":{
+      "category":"master",
+      "sounds":[
+         "zollerngalaxy:mob/vexbot/say1",
+         "zollerngalaxy:mob/vexbot/say2"
+      ],
+      "subtitle":"zollerngalaxy.subtitle.vexbot.say"
+   },
+   "mob.vexbot.hurt":{
+      "category":"master",
+      "sounds":[
+         "zollerngalaxy:mob/vexbot/hurt1",
+         "zollerngalaxy:mob/vexbot/hurt2"
+      ],
+      "subtitle":"zollerngalaxy.subtitle.vexbot.hurt"
+   },
+   "mob.vexbot.die":{
+      "category":"master",
+      "sounds":[
+         "zollerngalaxy:mob/vexbot/die"
+      ],
+      "subtitle":"zollerngalaxy.subtitle.vexbot.die"
    },
    "dig.xeno":{
       "category":"master",

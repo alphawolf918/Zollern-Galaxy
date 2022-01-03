@@ -40,6 +40,7 @@ import zollerngalaxy.mobs.entities.EntityShadowSkeleton;
 import zollerngalaxy.mobs.entities.EntityShark;
 import zollerngalaxy.mobs.entities.EntitySpiderling;
 import zollerngalaxy.mobs.entities.EntitySquidlus;
+import zollerngalaxy.mobs.entities.EntityVexBot;
 import zollerngalaxy.mobs.entities.EntityWanderer;
 import zollerngalaxy.mobs.entities.EntityWasp;
 import zollerngalaxy.mobs.entities.EntityXenomorph;
@@ -231,6 +232,9 @@ public class MobRegistry {
 		
 		// Dragon
 		registerEntity("dragon", EntityGalaxyDragon.class, entityId++, 0x000000, 0x990099);
+		
+		// Vexbot
+		registerEntity("vexbot", EntityVexBot.class, entityId++, 0xeeeeee, 0xbebebe);
 		
 		ZGHelper.Log("Loaded a total of " + totalMobs + " new mobs.");
 	}

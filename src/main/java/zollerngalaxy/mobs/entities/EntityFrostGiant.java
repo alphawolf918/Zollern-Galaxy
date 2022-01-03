@@ -105,17 +105,6 @@ public class EntityFrostGiant extends EntityMob implements IEntityBreathable {
 	}
 	
 	@Override
-	public int getTotalArmorValue() {
-		int i = super.getTotalArmorValue() + 4;
-		
-		if (i > 20) {
-			i = 20;
-		}
-		
-		return i;
-	}
-	
-	@Override
 	protected SoundEvent getHurtSound(DamageSource damageSourceIn) {
 		return SoundEvents.ENTITY_BLAZE_HURT;
 	}

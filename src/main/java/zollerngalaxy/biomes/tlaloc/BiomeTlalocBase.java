@@ -23,6 +23,7 @@ import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderTlaloc;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 import zollerngalaxy.lib.helpers.ZGHelper;
+import zollerngalaxy.mobs.entities.EntityVexBot;
 import zollerngalaxy.mobs.entities.villagers.EntityTlalocVillager;
 
 public class BiomeTlalocBase extends BiomeSpace {
@@ -45,6 +46,7 @@ public class BiomeTlalocBase extends BiomeSpace {
 		if (ConfigManagerZG.enableAlienVillagerSpawn) {
 			this.spawnableCreatureList.add(new SpawnListEntry(EntityTlalocVillager.class, this.villagerSpawnRate, 0, 1));
 		}
+		this.spawnableMonsterList.add(new SpawnListEntry(EntityVexBot.class, 100, 1, 2));
 		this.setPlanetForBiome(ZGPlanets.planetTlaloc);
 	}
 	

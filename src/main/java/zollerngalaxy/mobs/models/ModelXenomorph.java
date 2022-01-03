@@ -242,7 +242,6 @@ public class ModelXenomorph extends ModelBase {
 		Tail.addChild(TailPiece3_r1);
 		setRotationAngle(TailPiece3_r1, -0.2182F, 0.0F, 0.0F);
 		TailPiece3_r1.cubeList.add(new ModelBox(TailPiece3_r1, 0, 0, -3.0F, -19.6252F, 1.3095F, 6, 3, 4, 0.0F, false));
-		// ModelZombie
 	}
 	
 	@Override

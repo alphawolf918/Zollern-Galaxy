@@ -50,7 +50,7 @@ public class EntityXenomorphQueen extends EntityXenomorph {
 		this.entPos = this.getPosition();
 		this.experienceValue = this.xp;
 		this.scoreValue = this.xp;
-		this.stepHeight = 4F;
+		this.stepHeight = 2F;
 	}
 	
 	@Override

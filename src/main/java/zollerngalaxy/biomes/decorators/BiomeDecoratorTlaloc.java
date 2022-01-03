@@ -26,6 +26,7 @@ import zollerngalaxy.worldgen.WorldGenCraterZG;
 import zollerngalaxy.worldgen.WorldGenMinableZG;
 import zollerngalaxy.worldgen.WorldGenOutpost;
 import zollerngalaxy.worldgen.WorldGenTunnel;
+import zollerngalaxy.worldgen.WorldGenUFO;
 import zollerngalaxy.worldgen.WorldGenZGCrystals;
 
 public class BiomeDecoratorTlaloc extends BiomeDecoratorZG {
@@ -33,6 +34,13 @@ public class BiomeDecoratorTlaloc extends BiomeDecoratorZG {
 	private static final Block ROCK = ZGBlocks.tlalocRock;
 	private static final Block STONE = ZGBlocks.tlalocStone;
 	private static final Block CHROME = ZGBlocks.tlalocChrome;
+	private static final Block MECH_ROCK = ZGBlocks.tlalocMechRock;
+	
+	private static final IBlockState ROCK_STATE = ROCK.getDefaultState();
+	private static final IBlockState STONE_STATE = STONE.getDefaultState();
+	private static final IBlockState MECH_ROCK_STATE = MECH_ROCK.getDefaultState();
+	private static final IBlockState CHROME_STATE = CHROME.getDefaultState();
+	private static final IBlockState GLOW_STATE = ZGBlocks.perdGlowstone.getDefaultState();
 	
 	private WorldGenerator constructGen;
 	private WorldGenerator constructGen2;
@@ -51,14 +59,17 @@ public class BiomeDecoratorTlaloc extends BiomeDecoratorZG {
 	public int tunnelsPerChunk = 10;
 	public int cratersPerChunk = 6;
 	public int plutoniumCrystalsPerChunk = 2;
+	public int ufosPerChunk = 2;
 	
 	public boolean generateCraters = true;
 	public boolean generateTunnels = true;
 	public boolean generatePlutoniumCrystals = true;
+	public boolean generateUFOs = true;
 	
 	private WorldGenerator tunnelGen = new WorldGenTunnel();
 	private WorldGenerator craterGen = new WorldGenCraterZG();
-	private WorldGenerator plutoniumCrystalsGen = new WorldGenZGCrystals(ZGBlocks.blockCrystalsPlutonium.getDefaultState(), 60);
+	private WorldGenerator plutoniumCrystalsGen = new WorldGenZGCrystals(ZGBlocks.blockCrystalsPlutonium.getDefaultState(), 65);
+	private WorldGenerator ufoGen = new WorldGenUFO(MECH_ROCK_STATE, CHROME_STATE, STONE_STATE, GLOW_STATE);
 	
 	public BiomeDecoratorTlaloc() {
 		this.constructGen = new WorldGenMinableZG(ZGBlocks.xantheonConstructBlock, ROCK, EnumOreGenZG.CONSTRUCTED);
@@ -105,6 +116,18 @@ public class BiomeDecoratorTlaloc extends BiomeDecoratorZG {
 		this.generateOre(this.zollerniumGen, EnumOreGenZG.ZOLLERNIUM, world, rand);
 		this.generateOre(this.plutoniumGen, EnumOreGenZG.PLUTONIUM, world, rand);
 		
+		// UFOs
+		if (this.generateUFOs && this.ufosPerChunk > 0) {
+			if (ZGHelper.rngInt(1, 100) <= 65) {
+				for (int i = 0; i < this.ufosPerChunk; ++i) {
+					y = rand.nextInt(rand.nextInt(genY) + 8);
+					if (y >= 70 && y <= 128) {
+						this.ufoGen.generate(world, rand, this.chunkPos.add(x, y, z));
+					}
+				}
+			}
+		}
+		
 		// Tunnels
 		if (this.generateTunnels && this.tunnelsPerChunk > 0) {
 			if (ZGHelper.rngInt(1, 100) <= 45) {
@@ -135,7 +158,7 @@ public class BiomeDecoratorTlaloc extends BiomeDecoratorZG {
 			if (ZGHelper.rngInt(1, 100) <= 45) {
 				y = rand.nextInt(rand.nextInt(genY) + 8);
 				for (int i = 0; i < this.plutoniumCrystalsPerChunk; ++i) {
-					if (y <= 60) {
+					if (y <= 65) {
 						ZGDecorateHelper.generateCrystals(this.plutoniumCrystalsGen, world, rand, this.chunkPos.add(x, y, z));
 					}
 				}

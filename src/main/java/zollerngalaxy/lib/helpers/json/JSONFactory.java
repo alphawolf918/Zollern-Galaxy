@@ -37,7 +37,7 @@ public final class JSONFactory {
 	private static final String MOD_ID = ZGInfo.MOD_ID;
 	
 	// Change to your config file
-	private static final Configuration config = ConfigManagerZG.configuration;
+	private static final Configuration config = ConfigManagerZG.config;
 	
 	// Shouldn't need to edit below this line
 	private static final String ASSETS_PATH = "../../../../src/main/resources/assets/";

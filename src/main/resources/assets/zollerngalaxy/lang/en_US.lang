@@ -538,6 +538,9 @@ zollerngalaxy.subtitle.xenomorph.die=Xenomorph dies
 zollerngalaxy.subtitle.xenomorph.queen.say=Xenomorph Queen hisses
 zollerngalaxy.subtitle.xenomorph.queen.hurt=Xenomorph Queen hurts
 zollerngalaxy.subtitle.xenomorph.queen.die=Xenomorph Queen perishes
+zollerngalaxy.subtitle.vexbot.say=Vexbot calculates existence
+zollerngalaxy.subtitle.vexbot.hurt=Vexbox is damaged
+zollerngalaxy.subtitle.vexbot.die=Vexbot expires
 
 zollerngalaxy.subtitle.mutate=A Zombie has mutated nearby
 zollerngalaxy.subtitle.windblowing=The wind howls around you
@@ -891,6 +894,8 @@ entity.zollerngalaxy:xenomorph.name=Xenomorph
 entity.zollerngalaxy:xenomorphqueen.name=Xenomorph Queen
 
 entity.zollerngalaxy:dragon.name=Galaxy Dragon
+
+entity.zollerngalaxy:vexbot.name=Vexbot
 
 ## Tooltips ##
 

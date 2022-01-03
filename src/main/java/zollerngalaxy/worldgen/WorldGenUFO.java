@@ -12,6 +12,9 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import zollerngalaxy.core.ZGLootTables;
+import zollerngalaxy.lib.helpers.ZGHelper;
+import zollerngalaxy.mobs.entities.EntityVexBot;
 
 public class WorldGenUFO extends ZGWorldGenMaster {
 	
@@ -33,10 +36,6 @@ public class WorldGenUFO extends ZGWorldGenMaster {
 	
 	@Override
 	public boolean generate(World world, Random rand, BlockPos position) {
-		if (!this.isValidSpawn(world, position)) {
-			return false;
-		}
-		
 		this.setBlock(world, position.add(0, 20, 24), this.casingState);
 		this.setBlock(world, position.add(0, 20, 25), this.casingState);
 		this.setBlock(world, position.add(0, 20, 26), this.casingState);
@@ -905,8 +904,11 @@ public class WorldGenUFO extends ZGWorldGenMaster {
 		this.setBlock(world, position.add(10, 12, 19), this.casingState);
 		this.setBlock(world, position.add(10, 12, 20), this.casingState);
 		this.setBlock(world, position.add(10, 12, 21), this.casingState);
-		this.setBlock(world, position.add(10, 12, 27), this.cobbleState);
-		this.setBlock(world, position.add(10, 12, 33), this.casingState);
+		this.setBlock(world, position.add(10, 12, 27), this.cobbleState);//
+		// CHEST
+		ZGLootTables.generateChest(world, position.add(10, 13, 27), rand, ZGLootTables.CHEST_UFO);
+		//
+		this.setBlock(world, position.add(10, 12, 33), this.casingState);//
 		this.setBlock(world, position.add(10, 12, 34), this.casingState);
 		this.setBlock(world, position.add(10, 12, 35), this.casingState);
 		this.setBlock(world, position.add(10, 13, 17), this.casingState);
@@ -1504,7 +1506,14 @@ public class WorldGenUFO extends ZGWorldGenMaster {
 		this.setBlock(world, position.add(16, 10, 34), this.casingState);
 		this.setBlock(world, position.add(16, 11, 18), this.casingState);
 		this.setBlock(world, position.add(16, 11, 19), this.casingState);
-		this.setBlock(world, position.add(16, 11, 33), this.barsState);
+		this.setBlock(world, position.add(16, 11, 33), this.barsState);//
+		// SPAWN VEXBOTS
+		BlockPos spawnPos = position.add(16, 11, 33);
+		EntityVexBot vexBot = new EntityVexBot(world);
+		for (int i = 0; i < 4; i++) {
+			ZGHelper.spawnEntity(vexBot, world, spawnPos.add(0, 0, 0));
+		}
+		//
 		this.setBlock(world, position.add(16, 11, 34), this.barsState);
 		this.setBlock(world, position.add(16, 11, 35), this.casingState);
 		this.setBlock(world, position.add(16, 11, 36), this.casingState);
@@ -1513,6 +1522,13 @@ public class WorldGenUFO extends ZGWorldGenMaster {
 		this.setBlock(world, position.add(16, 12, 33), this.barsState);
 		this.setBlock(world, position.add(16, 12, 34), this.barsState);
 		this.setBlock(world, position.add(16, 12, 35), this.barsState);
+		// SPAWN VEXBOTS
+		BlockPos spawnPos2 = position.add(16, 13, 35);
+		EntityVexBot vexBot2 = new EntityVexBot(world);
+		for (int i = 0; i < 2; i++) {
+			ZGHelper.spawnEntity(vexBot2, world, spawnPos.add(0, i, 0));
+		}
+		//
 		this.setBlock(world, position.add(16, 12, 37), this.casingState);
 		this.setBlock(world, position.add(16, 12, 38), this.casingState);
 		this.setBlock(world, position.add(16, 13, 15), this.casingState);

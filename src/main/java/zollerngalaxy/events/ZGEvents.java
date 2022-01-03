@@ -95,6 +95,7 @@ import zollerngalaxy.mobs.entities.EntityOinkus;
 import zollerngalaxy.mobs.entities.EntityScorpion;
 import zollerngalaxy.mobs.entities.EntityShadowSkeleton;
 import zollerngalaxy.mobs.entities.EntityShark;
+import zollerngalaxy.mobs.entities.EntityVexBot;
 import zollerngalaxy.mobs.entities.base.EntityMutantZombie;
 import zollerngalaxy.mobs.entities.interfaces.IShadeEntity;
 import zollerngalaxy.potions.ZGPotions;
@@ -600,6 +601,33 @@ public class ZGEvents {
 					for (int i = 0; i < ZGHelper.rngInt(1, 4); i++) {
 						ZGHelper.dropItem(ZGItems.darkEssence, worldObj, theEntity);
 					}
+				}
+			}
+		}
+		
+		// Xenomorph
+		// TODO
+		
+		// Vexbot
+		if (theEntity instanceof EntityVexBot) {
+			// Raw Virinium
+			if (ZGHelper.getRNGChance(5, 10)) {
+				for (int i = 0; i < ZGHelper.rngInt(1, 2); i++) {
+					ZGHelper.dropItem(ZGItems.dustVirinium, worldObj, theEntity);
+				}
+			}
+			
+			// Rhodium Ingot
+			if (ZGHelper.getRNGChance(5, 10)) {
+				for (int i = 0; i < ZGHelper.rngInt(1, 2); i++) {
+					ZGHelper.dropItem(ZGItems.ingotRhodium, worldObj, theEntity);
+				}
+			}
+			
+			// Zinc Ingot
+			if (ZGHelper.getRNGChance(5, 10)) {
+				for (int i = 0; i < ZGHelper.rngInt(1, 2); i++) {
+					ZGHelper.dropItem(ZGItems.ingotZinc, worldObj, theEntity);
 				}
 			}
 		}
