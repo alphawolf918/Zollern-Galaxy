@@ -13,6 +13,7 @@ import micdoodle8.mods.galacticraft.api.world.ChunkProviderBase;
 import micdoodle8.mods.galacticraft.core.perlin.generator.Gradient;
 import micdoodle8.mods.galacticraft.core.util.ConfigManagerCore;
 import micdoodle8.mods.galacticraft.core.world.gen.EnumCraterSize;
+import micdoodle8.mods.galacticraft.core.world.gen.dungeon.DungeonConfiguration;
 import net.minecraft.block.BlockFalling;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EnumCreatureType;
@@ -37,6 +38,9 @@ import zollerngalaxy.blocks.fluids.ZGFluids;
 import zollerngalaxy.util.BiomeUtils;
 import zollerngalaxy.worldgen.mapgen.MapGenCavesZG;
 import zollerngalaxy.worldgen.mapgen.MapGenRavinesZG;
+import zollerngalaxy.worldgen.structures.dungeons.MapGenDungeonZG;
+import zollerngalaxy.worldgen.structures.dungeons.RoomBossZG;
+import zollerngalaxy.worldgen.structures.dungeons.RoomTreasureZG;
 import zollerngalaxy.worldgen.structures.villages.MapGenVillageZG;
 
 public class ChunkProviderTlaloc extends ChunkProviderBase {
@@ -77,7 +81,10 @@ public class ChunkProviderTlaloc extends ChunkProviderBase {
 	private double[] octaves3;
 	private double[] octaves4;
 	
-	private static final int CRATER_PROB = 40;
+	private static final int CRATER_PROB = 300;
+	
+	private final MapGenDungeonZG dungeonGeneratorZG = new MapGenDungeonZG(
+			new DungeonConfiguration(ZGBlocks.tlalocDungeonBricks.getDefaultState(), 25, 8, 16, 5, 6, RoomBossZG.class, RoomTreasureZG.class));
 	
 	public static ChunkProviderTlaloc INSTANCE;
 	
@@ -222,6 +229,8 @@ public class ChunkProviderTlaloc extends ChunkProviderBase {
 		this.ravineGenerator2.generate(this.world, x, z, chunkprimer);
 		this.villageGenerator.generate(this.world, x, z, chunkprimer);
 		this.mineshaftGenerator.generate(this.world, x, z, chunkprimer);
+		
+		this.dungeonGeneratorZG.generate(this.world, x, z, chunkprimer);
 		
 		Chunk chunk = new Chunk(this.world, chunkprimer, x, z);
 		byte[] abyte = chunk.getBiomeArray();
@@ -399,6 +408,7 @@ public class ChunkProviderTlaloc extends ChunkProviderBase {
 		}
 		
 		this.mineshaftGenerator.generateStructure(this.world, this.rand, new ChunkPos(x, z));
+		this.dungeonGeneratorZG.generateStructure(this.world, this.rand, new ChunkPos(x, z));
 		
 		biomegenbase.decorate(this.world, this.rand, new BlockPos(i, 0, j));
 		WorldEntitySpawner.performWorldGenSpawning(this.world, biomegenbase, i + 8, j + 8, 16, 16, this.rand);
@@ -419,5 +429,6 @@ public class ChunkProviderTlaloc extends ChunkProviderBase {
 		if (!ConfigManagerCore.disableMoonVillageGen && !BiomeUtils.isOceanBiome(biome)) {
 			this.villageGenerator.generate(this.world, x, z, null);
 		}
+		this.dungeonGeneratorZG.generate(this.world, x, z, null);
 	}
 }

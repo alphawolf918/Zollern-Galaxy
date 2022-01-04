@@ -457,6 +457,9 @@ tile.tlalocfueltoniumore.name=Tlaloc Fueltonium Ore
 tile.tlaloczollerniumore.name=Tlaloc Zollernium Ore
 tile.tlalocshiniumore.name=Tlaloc Shinium Ore
 tile.tlalocplutoniumore.name=Tlaloc Plutonium Ore
+tile.treasure_chest_t1.name=Tlaloc Dungeon Treasure Chest
+tile.boss_spawner_t1.name=Tlaloc Boss Spawner
+tile.tlalocdungeonbricks.name=Tlaloc Dungeon Bricks
 
 tile.endrock.name=Endrock
 
@@ -539,7 +542,7 @@ zollerngalaxy.subtitle.xenomorph.queen.say=Xenomorph Queen hisses
 zollerngalaxy.subtitle.xenomorph.queen.hurt=Xenomorph Queen hurts
 zollerngalaxy.subtitle.xenomorph.queen.die=Xenomorph Queen perishes
 zollerngalaxy.subtitle.vexbot.say=Vexbot calculates existence
-zollerngalaxy.subtitle.vexbot.hurt=Vexbox is damaged
+zollerngalaxy.subtitle.vexbot.hurt=Vexbot is damaged
 zollerngalaxy.subtitle.vexbot.die=Vexbot expires
 
 zollerngalaxy.subtitle.mutate=A Zombie has mutated nearby
@@ -600,6 +603,7 @@ item.icecream.name=Ice Cream
 item.hud.name=Galactic HUD
 item.brightstonedust.name=Britestone Dust
 item.edendungeonkey.name=Eden's Treasure Key
+item.tlalocdungeonkey.name=Tlaloc's Dungeon Key
 item.rawviri.name=Raw Virinium
 item.ingotviri.name=Virinium Ingot
 item.alienstone.name=Ancient Eden's Essence
@@ -896,6 +900,7 @@ entity.zollerngalaxy:xenomorphqueen.name=Xenomorph Queen
 entity.zollerngalaxy:dragon.name=Galaxy Dragon
 
 entity.zollerngalaxy:vexbot.name=Vexbot
+entity.zollerngalaxy:vexbotboss.name=Vexbot Boss
 
 ## Tooltips ##
 
@@ -976,6 +981,8 @@ tooltips.tunneling_tool=A special tool for mining.
 tooltips.tunneling_tool2=Creates mining tunnels on right-click.
 
 tooltips.thermal_armor_t3=Protects against advanced, extreme thermal damage.
+
+tooltips.chest_t1.description=A victorious reward for besting the robots!
 
 ## Planets and Moons ##
 

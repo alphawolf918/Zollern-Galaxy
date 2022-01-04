@@ -39,6 +39,7 @@ import zollerngalaxy.mobs.entities.EntityWanderer;
 import zollerngalaxy.mobs.entities.EntityWasp;
 import zollerngalaxy.mobs.entities.EntityXenomorph;
 import zollerngalaxy.mobs.entities.boss.EntityShadowAlien;
+import zollerngalaxy.mobs.entities.boss.EntityVexBotBoss;
 import zollerngalaxy.mobs.entities.boss.EntityXenomorphQueen;
 import zollerngalaxy.mobs.entities.villagers.EntityAbyssalVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityAstrosVillager;
@@ -85,6 +86,7 @@ import zollerngalaxy.mobs.renders.RenderWanderer;
 import zollerngalaxy.mobs.renders.RenderWasp;
 import zollerngalaxy.mobs.renders.RenderXenomorph;
 import zollerngalaxy.mobs.renders.boss.RenderShadowAlien;
+import zollerngalaxy.mobs.renders.boss.RenderVexbotBoss;
 import zollerngalaxy.mobs.renders.boss.RenderXenomorphQueen;
 import zollerngalaxy.mobs.renders.villagers.RenderAbyssalVillager;
 import zollerngalaxy.mobs.renders.villagers.RenderAstrosVillager;
@@ -152,6 +154,7 @@ public final class MobRenders {
 		RenderMob(EntityGalaxyDragon.class, RenderGalaxyDragon::new);
 		RenderMob(EntityTlalocVillager.class, RenderTlalocVillager::new);
 		RenderMob(EntityVexBot.class, RenderVexbot::new);
+		RenderMob(EntityVexBotBoss.class, RenderVexbotBoss::new);
 	}
 	
 	/**

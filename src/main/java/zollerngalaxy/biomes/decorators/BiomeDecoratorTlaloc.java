@@ -141,10 +141,11 @@ public class BiomeDecoratorTlaloc extends BiomeDecoratorZG {
 		}
 		
 		// Craters
-		if (this.generateCraters && this.cratersPerChunk > 0) {
+		int craterSpawnChance = ConfigManagerZG.craterSpawnChanceTlaloc;
+		if (this.generateCraters && this.cratersPerChunk > 0 && craterSpawnChance > 0) {
 			ChunkProviderTlaloc.INSTANCE.createCraters(x, z, chunkPrimer);
 			y = rand.nextInt(rand.nextInt(genY) + 8);
-			if (ZGHelper.rngInt(1, 100) <= 40) {
+			if (ZGHelper.rngInt(1, 100) <= craterSpawnChance) {
 				for (int i = 0; i < this.cratersPerChunk; ++i) {
 					if (y <= 70) {
 						this.craterGen.generate(world, rand, this.chunkPos.add(x, y, z));

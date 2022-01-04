@@ -7,6 +7,8 @@
  */
 package zollerngalaxy.blocks;
 
+import java.lang.reflect.Constructor;
+import com.google.common.collect.ObjectArrays;
 import micdoodle8.mods.galacticraft.core.GCItems;
 import micdoodle8.mods.galacticraft.planets.mars.items.MarsItems;
 import net.minecraft.block.Block;
@@ -14,6 +16,7 @@ import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Items;
 import net.minecraft.init.MobEffects;
+import net.minecraft.item.ItemBlock;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import zollerngalaxy.blocks.astros.AstrosSapphireOre;
 import zollerngalaxy.blocks.caligro.BlockShadowBossSpawner;
@@ -23,6 +26,7 @@ import zollerngalaxy.blocks.caligro.corrupted.ZGCorruptBlock;
 import zollerngalaxy.blocks.caligro.corrupted.ZGOreGemCorrupted;
 import zollerngalaxy.blocks.caligro.corrupted.ZGPlanetStoneCorrupted;
 import zollerngalaxy.blocks.centotl.BlockFacehuggerEgg;
+import zollerngalaxy.blocks.containers.ZGBlockTreasureChest;
 import zollerngalaxy.blocks.crystals.BlockStormCrystals;
 import zollerngalaxy.blocks.crystals.ZGCrystalBlock;
 import zollerngalaxy.blocks.eden.BlockRedshroom;
@@ -40,6 +44,7 @@ import zollerngalaxy.blocks.sirens.BlockDiamondSiren;
 import zollerngalaxy.blocks.sirens.BlockEmeraldSiren;
 import zollerngalaxy.blocks.sirens.BlockGoldSiren;
 import zollerngalaxy.blocks.sirens.BlockIronSiren;
+import zollerngalaxy.blocks.spawners.ZGBlockBossSpawner;
 import zollerngalaxy.blocks.stationblocks.BlockBlueprintStation;
 import zollerngalaxy.blocks.stationblocks.BlockHealingStation;
 import zollerngalaxy.blocks.sweetblocks.CandyCubeBlock;
@@ -47,19 +52,25 @@ import zollerngalaxy.blocks.sweetblocks.CookieBlock;
 import zollerngalaxy.blocks.sweetblocks.IceCreamSandwichBlock;
 import zollerngalaxy.blocks.xathius.ZGBlockGrassXath;
 import zollerngalaxy.blocks.zollus.ZolniumCrystals;
+import zollerngalaxy.core.ZollernGalaxyCore;
 import zollerngalaxy.core.enums.EnumBlockTier;
 import zollerngalaxy.core.enums.EnumBlockType;
 import zollerngalaxy.core.enums.EnumHarvestLevelZG;
 import zollerngalaxy.core.enums.EnumHarvestToolZG;
 import zollerngalaxy.events.ZGSoundEvents;
 import zollerngalaxy.items.ZGItems;
+import zollerngalaxy.lib.ZGInfo;
 import zollerngalaxy.lib.helpers.CommonZGRegisterHelper;
 import zollerngalaxy.lib.helpers.ZGHelper;
+import zollerngalaxy.tileentities.TileEntityDungeonSpawnerZG;
+import zollerngalaxy.util.RegisterUtilsZG;
 import zollerngalaxy.worldgen.eden.WorldGenEdenTrees;
 import zollerngalaxy.worldgen.exodus.WorldGenExoTrees;
 import zollerngalaxy.worldgen.perdita.WorldGenPalmwoodTrees;
 
 public class ZGBlocks {
+	
+	private static ZollernGalaxyCore core = ZollernGalaxyCore.instance();
 	
 	private static int totalBlocks = 0;
 	
@@ -580,6 +591,7 @@ public class ZGBlocks {
 	public static final Block tlalocRock = new ZGBlockBase("tlalocrock", 9.4F);
 	public static final Block tlalocChrome = new ZGBlockBase("tlalocchrome", 9.6F);
 	public static final Block tlalocMechRock = new ZGBlockBase("tlalocmechrock", 9.2F);
+	public static final Block tlalocDungeonBricks = new ZGBlockBase("tlalocdungeonbricks");
 	public static final Block tlalocStone = new ZGPlanetStone("tlalocstone", 6.4F);
 	public static final Block tlalocRedstoneOre = new ZGBlockOre("tlalocredstoneore", 3.1F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
 			EnumHarvestLevelZG.AMARANTH.getHarvestLevel());
@@ -717,7 +729,20 @@ public class ZGBlocks {
 	public static final Block emeraldSirenON = new BlockEmeraldSiren("emeraldsiren_on", ZGSoundEvents.ALARM_EMERALD, true);
 	public static final Block emeraldSiren = new BlockEmeraldSiren("emeraldsiren", ZGSoundEvents.ALARM_EMERALD, false);
 	
+	// Chests
+	public static final Block treasureChestT1 = new ZGBlockTreasureChest("treasure_chest_t1");
+	
+	// Boss Spawners
+	public static final Block TLALOC_SPAWNER = new ZGBlockBossSpawner("boss_spawner_t1");
+	
 	public static void init() {
+		ZGBlocks.registerTileEntities();
+		try {
+			ZGBlocks.initSpawnerBlocks();
+		} catch (NoSuchMethodException e) {
+			ZGHelper.LogErr("Error initializing spawner blocks!");
+			e.printStackTrace();
+		}
 		ZGBlocks.registerBlocks(edenLovetreeSapling, edenGoldenWoodSapling, edenParadiseWoodSapling, edenWoodSapling, edenFruit, edenFlower, edenFlowerBlack, edenFlowerBlue, edenFlowerCyan,
 				edenFlowerGreen, edenFlowerOrange, edenFlowerPink, edenFlowerPurple, edenFlowerRed, edenFlowerYellow, edenFlowerWhite, oasisFlower, exodusFlower, zolStone, zolCobbleRock,
 				zolSurfaceRock, zolDirt, zolRockBricks, zolCoalOre, zolCopperOre, zolGoldOre, zolHeartOre, zolTinOre, zolIronOre, zolCrystals, kriffSurfaceRock, kriffStone, kriffCobbleRock, kriffDirt,
@@ -760,10 +785,16 @@ public class ZGBlocks {
 				tociSilverOre, tociLeadOre, tociCopperOre, tociZincOre, tociSuperChargedCoalOre, tociRedstoneOre, tociGoldOre, tociAmaranthOre, tociIronOre, tociEmeraldOre, tociCoalOre,
 				tociFueltoniumOre, tociDiamondOre, tociQuartzOre);
 		//
-		ZGBlocks.registerBlocks(tlalocRock, tlalocChrome, tlalocMechRock, tlalocStone, tlalocRedstoneOre, tlalocFueltoniumOre, tlalocShiniumOre, tlalocZollerniumOre, tlalocSuperChargedCoalOre,
-				tlalocQuartzOre, tlalocCertusQuartzOre, tlalocFluixOre, tlalocPlutoniumOre);
+		ZGBlocks.registerBlocks(tlalocRock, tlalocChrome, tlalocMechRock, tlalocDungeonBricks, tlalocStone, tlalocRedstoneOre, tlalocFueltoniumOre, tlalocShiniumOre, tlalocZollerniumOre,
+				tlalocSuperChargedCoalOre, tlalocQuartzOre, tlalocCertusQuartzOre, tlalocFluixOre, tlalocPlutoniumOre);
+		//
+		ZGBlocks.registerBlocks(treasureChestT1);
 		//
 		ZGHelper.Log("Loaded a total of " + totalBlocks + " new blocks.");
+	}
+	
+	public static void initSpawnerBlocks() throws NoSuchMethodException {
+		registerSpecialBlock(TLALOC_SPAWNER, ItemBlockDefaultZG.class, "boss_spawner_t1");
 	}
 	
 	private static void addBlock(Block block) {
@@ -775,5 +806,35 @@ public class ZGBlocks {
 		for (Block b : blocks) {
 			ZGBlocks.addBlock(b);
 		}
+	}
+	
+	public static void registerSpecialBlock(Block block, Class<? extends ItemBlock> itemclass, String name, Object... itemCtorArgs) throws NoSuchMethodException {
+		if (block.getRegistryName() == null) {
+			block.setRegistryName(name);
+		}
+		core.blocksList.add(block);
+		if (itemclass != null) {
+			ItemBlock item = null;
+			Class<?>[] ctorArgClasses = new Class<?>[itemCtorArgs.length + 1];
+			ctorArgClasses[0] = Block.class;
+			for (int idx = 1; idx < ctorArgClasses.length; idx++) {
+				ctorArgClasses[idx] = itemCtorArgs[idx - 1].getClass();
+			}
+			
+			try {
+				Constructor<? extends ItemBlock> constructor = itemclass.getConstructor(ctorArgClasses);
+				item = constructor.newInstance(ObjectArrays.concat(block, itemCtorArgs));
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			core.itemList.add(item);
+			if (item.getRegistryName() == null) {
+				item.setRegistryName(name);
+			}
+		}
+	}
+	
+	private static void registerTileEntities() {
+		RegisterUtilsZG.registerTileEntity(TileEntityDungeonSpawnerZG.class, ZGInfo.MOD_ID + "ZG Dungeon Spawner");
 	}
 }

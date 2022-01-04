@@ -9,6 +9,7 @@ package zollerngalaxy.recipes;
 
 import cofh.api.util.ThermalExpansionHelper;
 import erogenousbeef.bigreactors.init.BrItems;
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.items.ZGItems;
@@ -34,6 +35,9 @@ public final class InductionSmelterRecipes {
 			// 8 Cyanite + 2 Enrichment Dust = 2 Blutonium Ingots
 			InductionSmelterRecipes.addRecipe(20000, new ItemStack(BrItems.ingotCyanite, 9), new ItemStack(ZGItems.dustEnrichment, 2), new ItemStack(BrItems.ingotBlutonium, 2));
 		}
+		
+		// 1 Coal + 2 Enrichment Dust = 2 Super Charged Coal
+		InductionSmelterRecipes.addRecipe(25000, new ItemStack(Items.COAL, 1), new ItemStack(ZGItems.dustEnrichment, 2), new ItemStack(ZGItems.superChargedCoal, 2));
 		
 		ZGHelper.Log("Loaded " + totalRecipes + " new Induction Smelter recipes.");
 	}

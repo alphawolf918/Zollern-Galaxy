@@ -7,7 +7,12 @@
  */
 package zollerngalaxy.core;
 
+import java.util.ArrayList;
+import java.util.List;
 import micdoodle8.mods.galacticraft.api.world.BiomeGenBaseGC;
+import net.minecraft.block.Block;
+import net.minecraft.item.Item;
+import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -15,6 +20,7 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import net.minecraftforge.fml.relauncher.Side;
@@ -42,6 +48,7 @@ import zollerngalaxy.proxy.CommonProxy;
 import zollerngalaxy.proxy.IProxy;
 import zollerngalaxy.recipes.ZGRecipeRegistry;
 import zollerngalaxy.util.OreDictRegistry;
+import zollerngalaxy.util.RegisterUtilsZG;
 import zollerngalaxy.util.ZGLore;
 
 @Mod(modid = ZGInfo.MOD_ID, version = ZGInfo.MOD_VERSION, name = ZGInfo.NAME, dependencies = ZGInfo.DEPENDENCIES)
@@ -57,8 +64,18 @@ public class ZollernGalaxyCore {
 	private static final boolean DEV_MODE = false; // Controls creating the JSON files.
 	private static final boolean TEST_MODE = true; // Set to True when developing!
 	
+	// Block/Item Registering Lists
+	public static List<Item> itemList = new ArrayList<>();
+	public static List<Block> blocksList = new ArrayList<>();
+	
+	// Network Wrapper
 	public static SimpleNetworkWrapper snw;
 	
+	/**
+	 * Use to access static variables and/or grab an instance of this class.
+	 * 
+	 * @return An instance of ZollernGalaxyCore.
+	 */
 	public static ZollernGalaxyCore instance() {
 		return INSTANCE;
 	}
@@ -100,6 +117,7 @@ public class ZollernGalaxyCore {
 		ZGInfo.init(event.getModMetadata());
 		ZGLore.init();
 		ZGPotions.init();
+		RegisterUtilsZG.registerEventHandler(new RegistrationHandlerZG());
 		ZGItems.init();
 		ZGBlocks.init();
 		ZGFluids.init();
@@ -146,4 +164,21 @@ public class ZollernGalaxyCore {
 		ZGHelper.Log("Post-Init phase complete.");
 	}
 	
+	@Mod.EventBusSubscriber(modid = ZGInfo.MOD_ID)
+	public static class RegistrationHandlerZG {
+		
+		@SubscribeEvent
+		public static void registerBlocksEvent(RegistryEvent.Register<Block> event) {
+			for (Block block : ZollernGalaxyCore.blocksList) {
+				event.getRegistry().register(block);
+			}
+		}
+		
+		@SubscribeEvent
+		public static void registerItemsEvent(RegistryEvent.Register<Item> event) {
+			for (Item item : ZollernGalaxyCore.itemList) {
+				event.getRegistry().register(item);
+			}
+		}
+	}
 }

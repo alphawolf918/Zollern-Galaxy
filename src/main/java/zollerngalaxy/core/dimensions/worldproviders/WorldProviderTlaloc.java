@@ -26,6 +26,7 @@ import zollerngalaxy.biomes.providers.BiomeProviderTlaloc;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.celestial.ZGPlanets;
 import zollerngalaxy.config.ConfigManagerZG;
+import zollerngalaxy.core.ZGLootTables;
 import zollerngalaxy.core.dimensions.ZGDimensions;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderTlaloc;
 import zollerngalaxy.core.dimensions.skyproviders.SkyProviderTlaloc;
@@ -187,13 +188,19 @@ public class WorldProviderTlaloc extends WorldProviderPlanetZG {
 	
 	@Override
 	public ResourceLocation getDungeonChestType() {
-		return null;
+		return ZGLootTables.CHEST_DUNGEON_TIER1;
+	}
+	
+	@Override
+	public int getDungeonSpacing() {
+		return 500;
 	}
 	
 	@Override
 	public List<Block> getSurfaceBlocks() {
 		ArrayList<Block> blockList = new ArrayList<Block>();
 		blockList.add(ZGBlocks.tlalocRock);
+		blockList.add(ZGBlocks.tlalocChrome);
 		return blockList;
 	}
 	
@@ -232,5 +239,4 @@ public class WorldProviderTlaloc extends WorldProviderPlanetZG {
 	public Class<? extends IChunkGenerator> getChunkProviderClass() {
 		return ChunkProviderTlaloc.class;
 	}
-	
 }

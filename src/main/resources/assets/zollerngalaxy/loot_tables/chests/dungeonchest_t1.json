@@ -1,9 +1,9 @@
 {
    "pools":[
       {
-         "name":"ufotreasure",
+         "name":"dungeonchest_t1",
          "rolls":{
-            "min":4,
+            "min":5,
             "max":10
          },
          "entries":[
@@ -23,8 +23,8 @@
             },
             {
                "type":"item",
-               "name":"galacticraftcore:heavy_plating",
-               "weight":2,
+               "name":"zollerngalaxy:sapphire",
+               "weight":4,
                "functions":[
                   {
                      "function":"minecraft:set_count",
@@ -51,7 +51,7 @@
             },
             {
                "type":"item",
-               "name":"zollerngalaxy:compressedvirinium",
+               "name":"zollerngalaxy:enrichmentdust",
                "weight":7,
                "functions":[
                   {
@@ -100,14 +100,14 @@
             },
             {
                "type":"item",
-               "name":"zollerngalaxy:shiniumingot",
+               "name":"zollerngalaxy:stargate_tier10",
                "weight":2,
                "functions":[
                   {
                      "function":"minecraft:set_count",
                      "count":{
                         "min":1,
-                        "max":4
+                        "max":1
                      }
                   }
                ]
@@ -142,7 +142,7 @@
             },
             {
                "type":"item",
-               "name":"zollerngalaxy:perdberry",
+               "name":"zollerngalaxy:oxygentank_tier6",
                "weight":24,
                "functions":[
                   {
@@ -170,14 +170,14 @@
             },
             {
                "type":"item",
-               "name":"zollerngalaxy:enrichmentdust",
+               "name":"zollerngalaxy:omnitool",
                "weight":2,
                "functions":[
                   {
                      "function":"minecraft:set_count",
                      "count":{
                         "min":1,
-                        "max":2
+                        "max":1
                      }
                   }
                ]

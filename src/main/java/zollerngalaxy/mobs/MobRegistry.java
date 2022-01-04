@@ -45,6 +45,7 @@ import zollerngalaxy.mobs.entities.EntityWanderer;
 import zollerngalaxy.mobs.entities.EntityWasp;
 import zollerngalaxy.mobs.entities.EntityXenomorph;
 import zollerngalaxy.mobs.entities.boss.EntityShadowAlien;
+import zollerngalaxy.mobs.entities.boss.EntityVexBotBoss;
 import zollerngalaxy.mobs.entities.boss.EntityXenomorphQueen;
 import zollerngalaxy.mobs.entities.villagers.EntityAbyssalVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityAstrosVillager;
@@ -126,6 +127,9 @@ public class MobRegistry {
 		
 		// Xenomorph Queen
 		registerEntity("xenomorphqueen", EntityXenomorphQueen.class, entityId++, 0xeeeeee, 0x8bc4fc);
+		
+		// Vexbot Boss
+		registerEntity("vexbotboss", EntityVexBotBoss.class, entityId++, 0xeeddea, 0x8b009f);
 		// ***** END BOSSES ***** //
 		
 		// Blubber Fish

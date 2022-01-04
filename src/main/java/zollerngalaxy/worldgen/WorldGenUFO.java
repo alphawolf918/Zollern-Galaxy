@@ -1293,8 +1293,11 @@ public class WorldGenUFO extends ZGWorldGenMaster {
 		this.setBlock(world, position.add(14, 10, 22), this.casingState);
 		this.setBlock(world, position.add(14, 10, 23), this.casingState);
 		this.setBlock(world, position.add(14, 10, 24), this.casingState);
-		this.setBlock(world, position.add(14, 10, 27), this.cobbleState);
-		this.setBlock(world, position.add(14, 10, 30), this.casingState);
+		this.setBlock(world, position.add(14, 10, 27), this.cobbleState);//
+		// CHEST
+		ZGLootTables.generateChest(world, position.add(14, 11, 27), rand, ZGLootTables.CHEST_UFO);
+		//
+		this.setBlock(world, position.add(14, 10, 30), this.casingState);//
 		this.setBlock(world, position.add(14, 10, 31), this.casingState);
 		this.setBlock(world, position.add(14, 10, 32), this.casingState);
 		this.setBlock(world, position.add(14, 10, 33), this.casingState);
@@ -1510,8 +1513,8 @@ public class WorldGenUFO extends ZGWorldGenMaster {
 		// SPAWN VEXBOTS
 		BlockPos spawnPos = position.add(16, 11, 33);
 		EntityVexBot vexBot = new EntityVexBot(world);
-		for (int i = 0; i < 4; i++) {
-			ZGHelper.spawnEntity(vexBot, world, spawnPos.add(0, 0, 0));
+		for (int i = 0; i < 2; i++) {
+			ZGHelper.spawnEntity(vexBot, world, spawnPos.add(0, i, 0));
 		}
 		//
 		this.setBlock(world, position.add(16, 11, 34), this.barsState);
