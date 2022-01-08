@@ -16,6 +16,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.structure.StructureBoundingBox;
+import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.lib.ZGInfo;
 
 public class RoomSpawnerZG extends RoomEmptyZG {
@@ -34,7 +35,7 @@ public class RoomSpawnerZG extends RoomEmptyZG {
 				for (int j = 1; j <= this.sizeY - 1; ++j) {
 					for (int k = 1; k <= this.sizeZ - 1; ++k) {
 						if (random.nextFloat() < 0.05F) {
-							this.setBlockState(worldIn, Blocks.WEB.getDefaultState(), i, j, k, boundingBox);
+							this.setBlockState(worldIn, ZGBlocks.xantheonConstructBlock.getDefaultState(), i, j, k, boundingBox);
 						}
 					}
 				}

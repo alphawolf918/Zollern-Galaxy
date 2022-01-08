@@ -63,6 +63,7 @@ import zollerngalaxy.lib.ZGInfo;
 import zollerngalaxy.lib.helpers.CommonZGRegisterHelper;
 import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.tileentities.TileEntityDungeonSpawnerZG;
+import zollerngalaxy.tileentities.TileEntityTier10TreasureChestZG;
 import zollerngalaxy.util.RegisterUtilsZG;
 import zollerngalaxy.worldgen.eden.WorldGenEdenTrees;
 import zollerngalaxy.worldgen.exodus.WorldGenExoTrees;
@@ -730,7 +731,7 @@ public class ZGBlocks {
 	public static final Block emeraldSiren = new BlockEmeraldSiren("emeraldsiren", ZGSoundEvents.ALARM_EMERALD, false);
 	
 	// Chests
-	public static final Block treasureChestT1 = new ZGBlockTreasureChest("treasure_chest_t1");
+	public static final Block treasureChestT10 = new ZGBlockTreasureChest("treasure_chest_t1");
 	
 	// Boss Spawners
 	public static final Block TLALOC_SPAWNER = new ZGBlockBossSpawner("boss_spawner_t1");
@@ -788,13 +789,15 @@ public class ZGBlocks {
 		ZGBlocks.registerBlocks(tlalocRock, tlalocChrome, tlalocMechRock, tlalocDungeonBricks, tlalocStone, tlalocRedstoneOre, tlalocFueltoniumOre, tlalocShiniumOre, tlalocZollerniumOre,
 				tlalocSuperChargedCoalOre, tlalocQuartzOre, tlalocCertusQuartzOre, tlalocFluixOre, tlalocPlutoniumOre);
 		//
-		ZGBlocks.registerBlocks(treasureChestT1);
+		ZGBlocks.registerBlocks(treasureChestT10);
 		//
 		ZGHelper.Log("Loaded a total of " + totalBlocks + " new blocks.");
 	}
 	
 	public static void initSpawnerBlocks() throws NoSuchMethodException {
 		registerSpecialBlock(TLALOC_SPAWNER, ItemBlockDefaultZG.class, "boss_spawner_t1");
+		// registerSpecialBlock(treasureChestT10, ItemBlockDesc.class,
+		// treasureChestT10.getUnlocalizedName().substring(5));
 	}
 	
 	private static void addBlock(Block block) {
@@ -832,9 +835,11 @@ public class ZGBlocks {
 				item.setRegistryName(name);
 			}
 		}
+		totalBlocks++;
 	}
 	
 	private static void registerTileEntities() {
 		RegisterUtilsZG.registerTileEntity(TileEntityDungeonSpawnerZG.class, ZGInfo.MOD_ID + "ZG Dungeon Spawner");
+		RegisterUtilsZG.registerTileEntity(TileEntityTier10TreasureChestZG.class, ZGInfo.MOD_ID + "Tier 10 Treasure Chest ZG");
 	}
 }

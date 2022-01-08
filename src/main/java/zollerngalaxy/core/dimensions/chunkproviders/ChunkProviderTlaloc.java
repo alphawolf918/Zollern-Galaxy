@@ -86,7 +86,7 @@ public class ChunkProviderTlaloc extends ChunkProviderBase {
 	private final MapGenDungeonZG dungeonGeneratorZG = new MapGenDungeonZG(
 			new DungeonConfiguration(ZGBlocks.tlalocDungeonBricks.getDefaultState(), 25, 8, 16, 5, 6, RoomBossZG.class, RoomTreasureZG.class));
 	
-	public static ChunkProviderTlaloc INSTANCE;
+	public static ChunkProviderTlaloc INSTANCE;// ChunkProviderMoon
 	
 	public ChunkProviderTlaloc(World worldIn, long seed, boolean mapFeaturesEnabled) {
 		this.world = worldIn;

@@ -12,6 +12,7 @@ import micdoodle8.mods.galacticraft.api.entity.IEntityBreathable;
 import micdoodle8.mods.galacticraft.core.entities.EntityAlienVillager;
 import micdoodle8.mods.galacticraft.core.entities.EntityBossBase;
 import micdoodle8.mods.galacticraft.core.util.ConfigManagerCore;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -55,6 +56,10 @@ public class EntityVexBotBoss extends EntityBossBase implements IEntityBreathabl
 		this.tasks.addTask(3, new EntityAILookIdle(this));
 		this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
 		this.targetTasks.addTask(2, new EntityAINearestAttackableTarget<>(this, EntityPlayer.class, false, true));
+	}
+	
+	@Override
+	public void knockBack(Entity par1Entity, float par2, double par3, double par5) {
 	}
 	
 	@SuppressWarnings("incomplete-switch")
@@ -109,12 +114,12 @@ public class EntityVexBotBoss extends EntityBossBase implements IEntityBreathabl
 	@Override
 	@SideOnly(Side.CLIENT)
 	public int getBrightnessForRender() {
-		return 15728890;
+		return 16728890;
 	}
 	
 	@Override
 	public float getBrightness() {
-		return 4.0F;
+		return 5.0F;
 	}
 	
 	@Override

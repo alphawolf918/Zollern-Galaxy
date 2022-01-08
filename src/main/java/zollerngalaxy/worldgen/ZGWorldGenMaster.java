@@ -7,9 +7,15 @@
  */
 package zollerngalaxy.worldgen;
 
+import java.util.Random;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockChest;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.tileentity.TileEntityChest;
+import net.minecraft.util.EnumFacing;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
@@ -40,7 +46,7 @@ public abstract class ZGWorldGenMaster extends WorldGenerator {
 	 * @param blockState
 	 */
 	protected void setBlock(World world, BlockPos pos, IBlockState blockState) {
-		world.setBlockState(pos, blockState);
+		world.setBlockState(pos, blockState, 3);
 	}
 	
 	/**
@@ -88,6 +94,28 @@ public abstract class ZGWorldGenMaster extends WorldGenerator {
 	}
 	
 	/**
+	 * Replaces the first specified block with the second one, but only if that block is a match at
+	 * the given position.
+	 * 
+	 * @param world
+	 *            The world to search in.
+	 * @param pos
+	 *            The position to check.
+	 * @param replaceIn
+	 *            The IBlockState to look for.
+	 * @param replaceWithIn
+	 *            The IBlockState to set.
+	 * @return If the replacement was successful.
+	 */
+	protected boolean replaceBlock(World world, BlockPos pos, IBlockState replaceIn, IBlockState replaceWithIn) {
+		if (this.getBlock(world, pos).getDefaultState() == replaceIn) {
+			this.setBlock(world, pos, replaceWithIn);
+			return true;
+		}
+		return false;
+	}
+	
+	/**
 	 * Prints where the structure spawned at. Useful for printing to the
 	 * console.
 	 * 
@@ -122,10 +150,40 @@ public abstract class ZGWorldGenMaster extends WorldGenerator {
 			return false;
 		}
 		
-		if (blockBelow == Blocks.AIR) {
+		if (blockBelow == Blocks.AIR || blockBelow == Blocks.WATER) {
 			return false;
 		}
 		
 		return true;
+	}
+	
+	/**
+	 * Generate a chest at the given coordinates with the supplied loot table.
+	 * 
+	 * @param world
+	 * @param chestPos
+	 * @param rand
+	 * @param LOOT_TABLE
+	 * @param isBigChest
+	 */
+	public static void generateChest(World world, BlockPos chestPos, Random rand, ResourceLocation LOOT_TABLE, boolean isBigChest) {
+		world.setBlockState(chestPos, Blocks.CHEST.correctFacing(world, chestPos, Blocks.CHEST.getDefaultState().withProperty(BlockChest.FACING, EnumFacing.NORTH)), 2);
+		TileEntity tileentity1 = world.getTileEntity(chestPos);
+		
+		if (tileentity1 instanceof TileEntityChest) {
+			((TileEntityChest) tileentity1).setLootTable(LOOT_TABLE, rand.nextLong());
+		}
+	}
+	
+	/**
+	 * Generate a chest at the given coordinates with the supplied loot table.
+	 * 
+	 * @param world
+	 * @param chestPos
+	 * @param rand
+	 * @param LOOT_TABLE
+	 */
+	public static void generateChest(World world, BlockPos chestPos, Random rand, ResourceLocation LOOT_TABLE) {
+		ZGWorldGenMaster.generateChest(world, chestPos, rand, LOOT_TABLE, false);
 	}
 }

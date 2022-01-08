@@ -15,7 +15,7 @@ import net.minecraft.item.EnumDyeColor;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumFacing.Axis;
 import net.minecraft.util.IStringSerializable;
-import zollerngalaxy.util.CachedEnum;
+import zollerngalaxy.util.CachedEnumZG;
 
 public class ZGBlockStateHelper {
 	
@@ -84,7 +84,7 @@ public class ZGBlockStateHelper {
 	
 	public static class SwitchAxis {
 		
-		static int[] AXIS_LOOKUP = new int[CachedEnum.valuesAxisCached().length];
+		static int[] AXIS_LOOKUP = new int[CachedEnumZG.valuesAxisCached().length];
 		
 		static {
 			try {

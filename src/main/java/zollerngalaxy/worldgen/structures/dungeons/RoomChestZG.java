@@ -40,7 +40,7 @@ public class RoomChestZG extends RoomEmptyZG {
 			TileEntityChest chest = (TileEntityChest) worldIn.getTileEntity(blockpos);
 			
 			if (chest != null) {
-				ResourceLocation chesttype = RoomTreasureZG.TABLE_TIER_1_DUNGEON;
+				ResourceLocation chesttype = RoomTreasureZG.TLALOC_DUNGEON;
 				if (worldIn.provider instanceof IGalacticraftWorldProvider) {
 					chesttype = ((IGalacticraftWorldProvider) worldIn.provider).getDungeonChestType();
 				}

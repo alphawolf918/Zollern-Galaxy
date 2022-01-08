@@ -18,7 +18,7 @@ public class BiomeTlaloc extends BiomeTlalocBase {
 		props.setRainDisabled();
 		props.setTemperature(4.2F);
 		this.setBiomeHeight(65);
-		this.setBiomeType(EnumBiomeTypeZG.DESERT);
+		this.setBiomeType(EnumBiomeTypeZG.TECHY);
 		this.setTemp(5.45F);
 		this.enableSnow = false;
 		this.topBlock = ZGBlocks.tlalocRock.getDefaultState();

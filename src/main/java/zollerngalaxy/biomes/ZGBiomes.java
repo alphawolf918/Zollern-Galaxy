@@ -89,6 +89,9 @@ import zollerngalaxy.biomes.perdita.BiomeLostOasis;
 import zollerngalaxy.biomes.purgot.BiomeLimbo;
 import zollerngalaxy.biomes.purgot.BiomePurgot;
 import zollerngalaxy.biomes.tlaloc.BiomeTlaloc;
+import zollerngalaxy.biomes.tlaloc.BiomeTlalocChromeForest;
+import zollerngalaxy.biomes.tlaloc.BiomeTlalocConstructs;
+import zollerngalaxy.biomes.tlaloc.BiomeTlalocGoldenConstructs;
 import zollerngalaxy.biomes.toci.BiomeToci;
 import zollerngalaxy.biomes.toci.BiomeTociDesert;
 import zollerngalaxy.biomes.toci.BiomeTociMountains;
@@ -225,6 +228,9 @@ public class ZGBiomes {
 	
 	// Tlaloc
 	public static final Biome TLALOC_BASE = new BiomeTlaloc(new BiomeProperties("Tlaloc"));
+	public static final Biome TLALOC_CONSTRUCTS = new BiomeTlalocConstructs(new BiomeProperties("Tlaloc Constructs"));
+	public static final Biome TLALOC_CHROME_FOREST = new BiomeTlalocChromeForest(new BiomeProperties("Tlaloc Chrome Forest"));
+	public static final Biome TLALOC_GOLDEN_CONSTRUCTS = new BiomeTlalocGoldenConstructs(new BiomeProperties("Tlaloc Golden Constructs"));
 	
 	public static void init() {
 		// Zollus
@@ -340,6 +346,9 @@ public class ZGBiomes {
 		
 		// Tlaloc
 		ZGBiomes.addBiome(ZGBiomes.TLALOC_BASE, MOUNTAIN, COLD, DEAD, SPOOKY);
+		ZGBiomes.addBiome(ZGBiomes.TLALOC_CONSTRUCTS, WASTELAND, DEAD, SPOOKY);
+		ZGBiomes.addBiome(ZGBiomes.TLALOC_CHROME_FOREST, FOREST, DEAD, SPOOKY);
+		ZGBiomes.addBiome(ZGBiomes.TLALOC_GOLDEN_CONSTRUCTS, MOUNTAIN, WASTELAND, DEAD, SPOOKY);
 		
 		ZGHelper.Log("Loaded a total of " + totalBiomes + " new biomes.");
 	}

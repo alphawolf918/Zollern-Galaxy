@@ -8,7 +8,7 @@
 package zollerngalaxy.worldgen.structures.dungeons;
 
 import java.util.Random;
-import micdoodle8.mods.galacticraft.api.world.IGalacticraftWorldProvider;
+import micdoodle8.mods.galacticraft.core.blocks.BlockTier1TreasureChest;
 import micdoodle8.mods.galacticraft.core.tile.TileEntityTreasureChest;
 import micdoodle8.mods.galacticraft.core.world.gen.dungeon.DungeonConfiguration;
 import net.minecraft.init.Blocks;
@@ -19,12 +19,12 @@ import net.minecraft.world.World;
 import net.minecraft.world.gen.structure.StructureBoundingBox;
 import net.minecraft.world.gen.structure.StructureComponent;
 import zollerngalaxy.blocks.ZGBlocks;
-import zollerngalaxy.blocks.containers.ZGBlockTreasureChest;
 import zollerngalaxy.core.ZGLootTables;
+import zollerngalaxy.core.dimensions.worldproviders.WorldProviderTlaloc;
 
 public class RoomTreasureZG extends SizedPieceZG {
 	
-	public static final ResourceLocation TABLE_TIER_1_DUNGEON = ZGLootTables.CHEST_DUNGEON_TIER1;
+	public static final ResourceLocation TLALOC_DUNGEON = ZGLootTables.CHEST_DUNGEON_TIER10;
 	
 	public RoomTreasureZG() {
 	}
@@ -79,12 +79,12 @@ public class RoomTreasureZG extends SizedPieceZG {
 					} else if (i == this.sizeX / 2 && j == 1 && k == this.sizeZ / 2) {
 						BlockPos blockpos = new BlockPos(this.getXWithOffset(i, k), this.getYWithOffset(j), this.getZWithOffset(i, k));
 						if (chunkBox.isVecInside(blockpos)) {
-							worldIn.setBlockState(blockpos, ZGBlocks.treasureChestT1.getDefaultState().withProperty(ZGBlockTreasureChest.FACING, this.getDirection().getOpposite()), 2);
+							worldIn.setBlockState(blockpos, ZGBlocks.treasureChestT10.getDefaultState().withProperty(BlockTier1TreasureChest.FACING, this.getDirection().getOpposite()), 2);
 							TileEntityTreasureChest treasureChest = (TileEntityTreasureChest) worldIn.getTileEntity(blockpos);
 							if (treasureChest != null) {
-								ResourceLocation chesttype = TABLE_TIER_1_DUNGEON;
-								if (worldIn.provider instanceof IGalacticraftWorldProvider) {
-									chesttype = ((IGalacticraftWorldProvider) worldIn.provider).getDungeonChestType();
+								ResourceLocation chesttype = TLALOC_DUNGEON;
+								if (worldIn.provider instanceof WorldProviderTlaloc) {
+									chesttype = ((WorldProviderTlaloc) worldIn.provider).getDungeonChestType();
 								}
 								treasureChest.setLootTable(chesttype, random.nextLong());
 							}

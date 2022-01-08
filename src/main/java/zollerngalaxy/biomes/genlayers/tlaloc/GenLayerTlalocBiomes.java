@@ -17,18 +17,18 @@ import net.minecraftforge.common.BiomeManager;
 import net.minecraftforge.common.BiomeManager.BiomeEntry;
 import net.minecraftforge.common.BiomeManager.BiomeType;
 import zollerngalaxy.biomes.ZGBiomes;
-import zollerngalaxy.util.CachedEnum;
+import zollerngalaxy.util.CachedEnumZG;
 
 public class GenLayerTlalocBiomes extends GenLayerTlaloc {
 	
 	@SuppressWarnings("unchecked")
-	private List<BiomeEntry>[] biomes = new ArrayList[CachedEnum.valuesBiomeCached().length];
+	private List<BiomeEntry>[] biomes = new ArrayList[CachedEnumZG.valuesBiomeCached().length];
 	private ArrayList<BiomeEntry>[] biomesList = this.setupBiomes();
 	
 	public GenLayerTlalocBiomes(long seed) {
 		super(seed);
 		
-		for (BiomeType type : CachedEnum.valuesBiomeCached()) {
+		for (BiomeType type : CachedEnumZG.valuesBiomeCached()) {
 			ImmutableList<BiomeEntry> biomesToAdd = this.getBiomes(type);
 			int idx = type.ordinal();
 			
@@ -43,9 +43,12 @@ public class GenLayerTlalocBiomes extends GenLayerTlaloc {
 	
 	private ArrayList<BiomeEntry>[] setupBiomes() {
 		@SuppressWarnings("unchecked")
-		ArrayList<BiomeEntry>[] currentBiomes = new ArrayList[CachedEnum.valuesBiomeCached().length];
+		ArrayList<BiomeEntry>[] currentBiomes = new ArrayList[CachedEnumZG.valuesBiomeCached().length];
 		List<BiomeEntry> list = new ArrayList<>();
 		list.add(new BiomeEntry(ZGBiomes.TLALOC_BASE, 100));
+		list.add(new BiomeEntry(ZGBiomes.TLALOC_CONSTRUCTS, 90));
+		list.add(new BiomeEntry(ZGBiomes.TLALOC_CHROME_FOREST, 80));
+		list.add(new BiomeEntry(ZGBiomes.TLALOC_GOLDEN_CONSTRUCTS, 70));
 		
 		currentBiomes[BiomeType.WARM.ordinal()] = new ArrayList<>(list);
 		return currentBiomes;

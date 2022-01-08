@@ -86,4 +86,7 @@ public class CommonProxy implements IProxy, IGuiHandler {
 	public boolean addIModelRegister(IZGFluidModel model) {
 		return false;
 	}
+	
+	public void renderBlocksTileEntitySpecialRenderers() {
+	}
 }

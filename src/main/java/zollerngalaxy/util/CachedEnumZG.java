@@ -14,7 +14,7 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraftforge.common.BiomeManager.BiomeType;
 
-public class CachedEnum {
+public class CachedEnumZG {
 	
 	private static EnumHand[] handValues = EnumHand.values();
 	private static EnumDyeColor[] dyeColorValues = EnumDyeColor.values();
@@ -24,26 +24,26 @@ public class CachedEnum {
 	private static TextFormatting[] textFormatValues = TextFormatting.values();
 	
 	public static EnumHand[] valuesHandCached() {
-		return CachedEnum.handValues;
+		return CachedEnumZG.handValues;
 	}
 	
 	public static EnumDyeColor[] valuesDyeCached() {
-		return CachedEnum.dyeColorValues;
+		return CachedEnumZG.dyeColorValues;
 	}
 	
 	public static IRocketType.EnumRocketType[] valuesRocketCached() {
-		return CachedEnum.rocketValues;
+		return CachedEnumZG.rocketValues;
 	}
 	
 	public static BiomeType[] valuesBiomeCached() {
-		return CachedEnum.biomeValues;
+		return CachedEnumZG.biomeValues;
 	}
 	
 	public static Axis[] valuesAxisCached() {
-		return CachedEnum.axisValues;
+		return CachedEnumZG.axisValues;
 	}
 	
 	public static TextFormatting[] valuesTextFormattingCached() {
-		return CachedEnum.textFormatValues;
+		return CachedEnumZG.textFormatValues;
 	}
 }

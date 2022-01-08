@@ -13,7 +13,6 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
-import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
@@ -78,8 +77,7 @@ public class WorldGenZGTree extends WorldGenAbstractTree {
 										BlockPos blockpos = new BlockPos(k1, i3, i2);
 										state = worldIn.getBlockState(blockpos);
 										
-										if (state.getBlock().isAir(state, worldIn, blockpos) || state.getBlock().isLeaves(state, worldIn, blockpos)
-												|| state.getMaterial() == Material.VINE) {
+										if (state.getBlock().isAir(state, worldIn, blockpos) || state.getBlock().isLeaves(state, worldIn, blockpos) || state.getMaterial() == Material.VINE) {
 											this.setBlockAndNotifyAdequately(worldIn, blockpos, this.blockLeaves);
 										}
 									}
@@ -113,22 +111,6 @@ public class WorldGenZGTree extends WorldGenAbstractTree {
 								}
 							}
 						}
-						
-						// if (rand.nextInt(3) == 0 && i > 4) {
-						// for (int l3 = 0; l3 < 2; ++l3) {
-						// for (EnumFacing enumfacing : EnumFacing.Plane.HORIZONTAL) {
-						// if (rand.nextInt(8 - l3) == 0) {
-						// EnumFacing enumfacing1 = enumfacing.getOpposite();
-						// this.placeFruit(
-						// worldIn,
-						// rand.nextInt(3),
-						// position.add(enumfacing1.getFrontOffsetX(), i - 5 + l3,
-						// enumfacing1.getFrontOffsetZ()), enumfacing);
-						// }
-						// }
-						// }
-						// }
-						
 						return true;
 					} else {
 						return false;
@@ -139,16 +121,6 @@ public class WorldGenZGTree extends WorldGenAbstractTree {
 			return false;
 		}
 		return flag;
-	}
-	
-	private void placeFruit(World worldIn, int p_181652_2_, BlockPos pos, EnumFacing side) {
-		// this.setBlockAndNotifyAdequately(
-		// worldIn,
-		// pos,
-		// ZGBlocks.edenFruit.getDefaultState().withProperty(EdenFruit.AGE,
-		// Integer.valueOf(p_181652_2_))
-		// .withProperty(EdenFruit.FACING, side));
-		// TODO: Peaches?
 	}
 	
 	private void addVine(World worldIn, BlockPos pos, PropertyBool prop) {

@@ -4,4 +4,4 @@ world\.setBlock\(
 
 setBlock\(world, position.add\(i$1, j$2, k$3\),
 position.add\($1, $2, $3\)
-setBlock(world, 
+this\.setBlock\(world, 

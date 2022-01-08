@@ -28,6 +28,7 @@ import zollerngalaxy.worldgen.WorldGenOutpost;
 import zollerngalaxy.worldgen.WorldGenTunnel;
 import zollerngalaxy.worldgen.WorldGenUFO;
 import zollerngalaxy.worldgen.WorldGenZGCrystals;
+import zollerngalaxy.worldgen.tlaloc.WorldGenMechTree;
 
 public class BiomeDecoratorTlaloc extends BiomeDecoratorZG {
 	
@@ -35,12 +36,14 @@ public class BiomeDecoratorTlaloc extends BiomeDecoratorZG {
 	private static final Block STONE = ZGBlocks.tlalocStone;
 	private static final Block CHROME = ZGBlocks.tlalocChrome;
 	private static final Block MECH_ROCK = ZGBlocks.tlalocMechRock;
+	private static final Block CONSTRUCT = ZGBlocks.xantheonConstructBlock;
 	
 	private static final IBlockState ROCK_STATE = ROCK.getDefaultState();
 	private static final IBlockState STONE_STATE = STONE.getDefaultState();
 	private static final IBlockState MECH_ROCK_STATE = MECH_ROCK.getDefaultState();
 	private static final IBlockState CHROME_STATE = CHROME.getDefaultState();
 	private static final IBlockState GLOW_STATE = ZGBlocks.perdGlowstone.getDefaultState();
+	private static final IBlockState CONSTRUCT_STATE = CONSTRUCT.getDefaultState();
 	
 	private WorldGenerator constructGen;
 	private WorldGenerator constructGen2;
@@ -60,21 +63,24 @@ public class BiomeDecoratorTlaloc extends BiomeDecoratorZG {
 	public int cratersPerChunk = 6;
 	public int plutoniumCrystalsPerChunk = 2;
 	public int ufosPerChunk = 2;
+	public int mechTreesPerChunk = 0;
 	
 	public boolean generateCraters = true;
 	public boolean generateTunnels = true;
 	public boolean generatePlutoniumCrystals = true;
 	public boolean generateUFOs = true;
+	public boolean generateMechTrees = true;
 	
 	private WorldGenerator tunnelGen = new WorldGenTunnel();
 	private WorldGenerator craterGen = new WorldGenCraterZG();
 	private WorldGenerator plutoniumCrystalsGen = new WorldGenZGCrystals(ZGBlocks.blockCrystalsPlutonium.getDefaultState(), 65);
 	private WorldGenerator ufoGen = new WorldGenUFO(MECH_ROCK_STATE, CHROME_STATE, STONE_STATE, GLOW_STATE);
+	private WorldGenerator mechTreeGen = new WorldGenMechTree();
 	
 	public BiomeDecoratorTlaloc() {
-		this.constructGen = new WorldGenMinableZG(ZGBlocks.xantheonConstructBlock, ROCK, EnumOreGenZG.CONSTRUCTED);
-		this.constructGen2 = new WorldGenMinableZG(ZGBlocks.xantheonConstructBlock, CHROME, EnumOreGenZG.CONSTRUCTED);
-		this.constructGen3 = new WorldGenMinableZG(ZGBlocks.xantheonConstructBlock, STONE, EnumOreGenZG.CONSTRUCTED);
+		this.constructGen = new WorldGenMinableZG(CONSTRUCT, ROCK, EnumOreGenZG.CONSTRUCTED);
+		this.constructGen2 = new WorldGenMinableZG(CONSTRUCT, CHROME, EnumOreGenZG.CONSTRUCTED);
+		this.constructGen3 = new WorldGenMinableZG(CONSTRUCT, STONE, EnumOreGenZG.CONSTRUCTED);
 		this.mechRockGen = new WorldGenMinableZG(ZGBlocks.tlalocMechRock, STONE, EnumOreGenZG.CONSTRUCTED);
 		this.superChargedCoalGen = new WorldGenMinableZG(ZGBlocks.tlalocSuperChargedCoalOre, STONE, EnumOreGenZG.SUPER_CHARGED_COAL);
 		this.redstoneGen = new WorldGenMinableZG(ZGBlocks.tlalocRedstoneOre, STONE, EnumOreGenZG.REDSTONE);
@@ -118,7 +124,7 @@ public class BiomeDecoratorTlaloc extends BiomeDecoratorZG {
 		
 		// UFOs
 		if (this.generateUFOs && this.ufosPerChunk > 0) {
-			if (ZGHelper.rngInt(1, 100) <= 65) {
+			if (ZGHelper.rngInt(1, 100) <= 45) {
 				for (int i = 0; i < this.ufosPerChunk; ++i) {
 					y = rand.nextInt(rand.nextInt(genY) + 8);
 					if (y >= 70 && y <= 128) {
@@ -140,7 +146,7 @@ public class BiomeDecoratorTlaloc extends BiomeDecoratorZG {
 			}
 		}
 		
-		// Craters
+		// Craters (Small)
 		int craterSpawnChance = ConfigManagerZG.craterSpawnChanceTlaloc;
 		if (this.generateCraters && this.cratersPerChunk > 0 && craterSpawnChance > 0) {
 			ChunkProviderTlaloc.INSTANCE.createCraters(x, z, chunkPrimer);
@@ -162,6 +168,20 @@ public class BiomeDecoratorTlaloc extends BiomeDecoratorZG {
 					if (y <= 65) {
 						ZGDecorateHelper.generateCrystals(this.plutoniumCrystalsGen, world, rand, this.chunkPos.add(x, y, z));
 					}
+				}
+			}
+		}
+		
+		// Mech Trees
+		if (this.generateMechTrees && this.mechTreesPerChunk > 0) {
+			for (int i = 0; i < this.mechTreesPerChunk; ++i) {
+				y = rand.nextInt(rand.nextInt(genY) + 8);
+				if (y < 64) {
+					y = ZGHelper.rngInt(64, 82);
+				}
+				
+				if (rand.nextInt(100) <= 25) {
+					mechTreeGen.generate(world, rand, this.chunkPos.add(x, y, z));
 				}
 			}
 		}

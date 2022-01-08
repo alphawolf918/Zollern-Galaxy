@@ -16,19 +16,19 @@ import net.minecraftforge.common.BiomeManager;
 import net.minecraftforge.common.BiomeManager.BiomeEntry;
 import net.minecraftforge.common.BiomeManager.BiomeType;
 import zollerngalaxy.biomes.ZGBiomes;
-import zollerngalaxy.util.CachedEnum;
+import zollerngalaxy.util.CachedEnumZG;
 import com.google.common.collect.ImmutableList;
 
 public class GenLayerCaligroBiomes extends GenLayerCaligro {
 	
 	@SuppressWarnings("unchecked")
-	private List<BiomeEntry>[] biomes = new ArrayList[CachedEnum.valuesBiomeCached().length];
+	private List<BiomeEntry>[] biomes = new ArrayList[CachedEnumZG.valuesBiomeCached().length];
 	private ArrayList<BiomeEntry>[] biomesList = this.setupBiomes();
 	
 	public GenLayerCaligroBiomes(long seed) {
 		super(seed);
 		
-		for (BiomeType type : CachedEnum.valuesBiomeCached()) {
+		for (BiomeType type : CachedEnumZG.valuesBiomeCached()) {
 			ImmutableList<BiomeEntry> biomesToAdd = this.getBiomes(type);
 			int idx = type.ordinal();
 			
@@ -43,7 +43,7 @@ public class GenLayerCaligroBiomes extends GenLayerCaligro {
 	
 	private ArrayList<BiomeEntry>[] setupBiomes() {
 		@SuppressWarnings("unchecked")
-		ArrayList<BiomeEntry>[] currentBiomes = new ArrayList[CachedEnum.valuesBiomeCached().length];
+		ArrayList<BiomeEntry>[] currentBiomes = new ArrayList[CachedEnumZG.valuesBiomeCached().length];
 		List<BiomeEntry> list = new ArrayList<>();
 		list.add(new BiomeEntry(ZGBiomes.CALIGRO_UPSIDE_DOWN, 100));
 		list.add(new BiomeEntry(ZGBiomes.CALIGRO_WITHERLANDS, 80));

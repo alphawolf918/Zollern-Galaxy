@@ -633,13 +633,13 @@ public class ZGPlanets {
 		if (ConfigManagerZG.planetUnreachableTlaloc || ConfigManagerZG.planetUnreachableAll) {
 			planetTlaloc.setDisableRockets();
 		}
-		planetTlaloc.setBodyTemperature(20.0F);
+		planetTlaloc.setBodyTemperature(25.62F);
 		planetTlaloc.setDensity(10.0F);
 		planetTlaloc.setWindLevel(0.0F);
 		planetTlaloc.setBodyGasses(EnumAtmosphericGas.ARGON, EnumAtmosphericGas.HELIUM, EnumAtmosphericGas.NITROGEN, EnumAtmosphericGas.METHANE);
 		planetTlaloc.setBreathable(false);
 		planetTlaloc.setAtmosphere();
-		planetTlaloc.setBiomeInfo(ZGBiomes.TLALOC_BASE);
+		planetTlaloc.setBiomeInfo(ZGBiomes.TLALOC_BASE, ZGBiomes.TLALOC_CONSTRUCTS, ZGBiomes.TLALOC_CHROME_FOREST, ZGBiomes.TLALOC_GOLDEN_CONSTRUCTS);
 		planetTlaloc.setBodyIcon("tlaloc");
 		totalPlanets++;
 		

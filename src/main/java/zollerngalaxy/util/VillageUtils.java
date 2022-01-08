@@ -7,6 +7,7 @@
  */
 package zollerngalaxy.util;
 
+import java.lang.reflect.InvocationTargetException;
 import micdoodle8.mods.galacticraft.core.entities.EntityAlienVillager;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.BlockPos;
@@ -20,11 +21,14 @@ import zollerngalaxy.core.dimensions.worldproviders.WorldProviderCentotl;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderEden;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderKriffon;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderMetztli;
+import zollerngalaxy.core.dimensions.worldproviders.WorldProviderOasis;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderPerdita;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderPurgot;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderTlaloc;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderToci;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderZollus;
+import zollerngalaxy.lib.helpers.ZGHelper;
+import zollerngalaxy.mobs.entities.base.EntityZGVillagerBase;
 import zollerngalaxy.mobs.entities.villagers.EntityAbyssalVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityAstrosVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityCaligroVillager;
@@ -32,6 +36,7 @@ import zollerngalaxy.mobs.entities.villagers.EntityCentotlVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityEdenVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityHarranVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityKriffonVillager;
+import zollerngalaxy.mobs.entities.villagers.EntityOasisVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityPerditaVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityPurgotVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityTlalocVillager;
@@ -52,149 +57,61 @@ public class VillageUtils {
 		World world = event.getWorld();
 		if (!world.isRemote) {
 			WorldProvider provider = world.provider;
+			Entity entity = event.getEntity();
 			if (provider instanceof WorldProviderAltum) {
-				if (!world.isRemote) {
-					Entity entity = event.getEntity();
-					if (entity instanceof EntityAlienVillager) {
-						EntityAlienVillager alienVillager = (EntityAlienVillager) entity;
-						BlockPos worldPos = alienVillager.getPos();
-						alienVillager.setDead();
-						EntityAbyssalVillager abyssalVillager = new EntityAbyssalVillager(world);
-						abyssalVillager.setPosition(worldPos.getX(), worldPos.getY(), worldPos.getZ());
-						world.spawnEntity(abyssalVillager);
-					}
-				}
+				VillageUtils.transformIntoVillager(world, entity, EntityAbyssalVillager.class);
 			} else if (provider instanceof WorldProviderMetztli) {
-				if (!world.isRemote) {
-					Entity entity = event.getEntity();
-					if (entity instanceof EntityAlienVillager) {
-						EntityAlienVillager alienVillager = (EntityAlienVillager) entity;
-						BlockPos worldPos = alienVillager.getPos();
-						alienVillager.setDead();
-						EntityHarranVillager harranVillager = new EntityHarranVillager(world);
-						harranVillager.setPosition(worldPos.getX(), worldPos.getY(), worldPos.getZ());
-						world.spawnEntity(harranVillager);
-					}
-				}
+				VillageUtils.transformIntoVillager(world, entity, EntityHarranVillager.class);
 			} else if (provider instanceof WorldProviderEden) {
-				if (!world.isRemote) {
-					Entity entity = event.getEntity();
-					if (entity instanceof EntityAlienVillager) {
-						EntityAlienVillager alienVillager = (EntityAlienVillager) entity;
-						BlockPos worldPos = alienVillager.getPos();
-						alienVillager.setDead();
-						EntityEdenVillager edenVillager = new EntityEdenVillager(world);
-						edenVillager.setPosition(worldPos.getX(), worldPos.getY(), worldPos.getZ());
-						world.spawnEntity(edenVillager);
-					}
-				}
+				VillageUtils.transformIntoVillager(world, entity, EntityEdenVillager.class);
 			} else if (provider instanceof WorldProviderAstros) {
-				if (!world.isRemote) {
-					Entity entity = event.getEntity();
-					if (entity instanceof EntityAlienVillager) {
-						EntityAlienVillager alienVillager = (EntityAlienVillager) entity;
-						BlockPos worldPos = alienVillager.getPos();
-						alienVillager.setDead();
-						EntityAstrosVillager astrosVillager = new EntityAstrosVillager(world);
-						astrosVillager.setPosition(worldPos.getX(), worldPos.getY(), worldPos.getZ());
-						world.spawnEntity(astrosVillager);
-					}
-				}
+				VillageUtils.transformIntoVillager(world, entity, EntityAstrosVillager.class);
 			} else if (provider instanceof WorldProviderCaligro) {
-				if (!world.isRemote) {
-					Entity entity = event.getEntity();
-					if (entity instanceof EntityAlienVillager) {
-						EntityAlienVillager alienVillager = (EntityAlienVillager) entity;
-						BlockPos worldPos = alienVillager.getPos();
-						alienVillager.setDead();
-						EntityCaligroVillager caligroVillager = new EntityCaligroVillager(world);
-						caligroVillager.setPosition(worldPos.getX(), worldPos.getY(), worldPos.getZ());
-						world.spawnEntity(caligroVillager);
-					}
-				}
+				VillageUtils.transformIntoVillager(world, entity, EntityCaligroVillager.class);
 			} else if (provider instanceof WorldProviderZollus) {
-				if (!world.isRemote) {
-					Entity entity = event.getEntity();
-					if (entity instanceof EntityAlienVillager) {
-						EntityAlienVillager alienVillager = (EntityAlienVillager) entity;
-						BlockPos worldPos = alienVillager.getPos();
-						alienVillager.setDead();
-						EntityZollusVillager zollusVillager = new EntityZollusVillager(world);
-						zollusVillager.setPosition(worldPos.getX(), worldPos.getY(), worldPos.getZ());
-						world.spawnEntity(zollusVillager);
-					}
-				}
+				VillageUtils.transformIntoVillager(world, entity, EntityZollusVillager.class);
 			} else if (provider instanceof WorldProviderKriffon) {
-				if (!world.isRemote) {
-					Entity entity = event.getEntity();
-					if (entity instanceof EntityAlienVillager) {
-						EntityAlienVillager alienVillager = (EntityAlienVillager) entity;
-						BlockPos worldPos = alienVillager.getPos();
-						alienVillager.setDead();
-						EntityKriffonVillager kriffonVillager = new EntityKriffonVillager(world);
-						kriffonVillager.setPosition(worldPos.getX(), worldPos.getY(), worldPos.getZ());
-						world.spawnEntity(kriffonVillager);
-					}
-				}
+				VillageUtils.transformIntoVillager(world, entity, EntityKriffonVillager.class);
 			} else if (provider instanceof WorldProviderPurgot) {
-				if (!world.isRemote) {
-					Entity entity = event.getEntity();
-					if (entity instanceof EntityAlienVillager) {
-						EntityAlienVillager alienVillager = (EntityAlienVillager) entity;
-						BlockPos worldPos = alienVillager.getPos();
-						alienVillager.setDead();
-						EntityPurgotVillager purgotVillager = new EntityPurgotVillager(world);
-						purgotVillager.setPosition(worldPos.getX(), worldPos.getY(), worldPos.getZ());
-						world.spawnEntity(purgotVillager);
-					}
-				}
+				VillageUtils.transformIntoVillager(world, entity, EntityPurgotVillager.class);
 			} else if (provider instanceof WorldProviderCentotl) {
-				if (!world.isRemote) {
-					Entity entity = event.getEntity();
-					if (entity instanceof EntityAlienVillager) {
-						EntityAlienVillager alienVillager = (EntityAlienVillager) entity;
-						BlockPos worldPos = alienVillager.getPos();
-						alienVillager.setDead();
-						EntityCentotlVillager centotlVillager = new EntityCentotlVillager(world);
-						centotlVillager.setPosition(worldPos.getX(), worldPos.getY(), worldPos.getZ());
-						world.spawnEntity(centotlVillager);
-					}
-				}
+				VillageUtils.transformIntoVillager(world, entity, EntityCentotlVillager.class);
 			} else if (provider instanceof WorldProviderToci) {
-				if (!world.isRemote) {
-					Entity entity = event.getEntity();
-					if (entity instanceof EntityAlienVillager) {
-						EntityAlienVillager alienVillager = (EntityAlienVillager) entity;
-						BlockPos worldPos = alienVillager.getPos();
-						alienVillager.setDead();
-						EntityTociVillager tociVillager = new EntityTociVillager(world);
-						tociVillager.setPosition(worldPos.getX(), worldPos.getY(), worldPos.getZ());
-						world.spawnEntity(tociVillager);
-					}
-				}
+				VillageUtils.transformIntoVillager(world, entity, EntityTociVillager.class);
 			} else if (provider instanceof WorldProviderPerdita) {
-				if (!world.isRemote) {
-					Entity entity = event.getEntity();
-					if (entity instanceof EntityAlienVillager) {
-						EntityAlienVillager alienVillager = (EntityAlienVillager) entity;
-						BlockPos worldPos = alienVillager.getPos();
-						alienVillager.setDead();
-						EntityPerditaVillager perditaVillager = new EntityPerditaVillager(world);
-						perditaVillager.setPosition(worldPos.getX(), worldPos.getY(), worldPos.getZ());
-						world.spawnEntity(perditaVillager);
-					}
-				}
+				VillageUtils.transformIntoVillager(world, entity, EntityPerditaVillager.class);
 			} else if (provider instanceof WorldProviderTlaloc) {
-				if (!world.isRemote) {
-					Entity entity = event.getEntity();
-					if (entity instanceof EntityAlienVillager) {
-						EntityAlienVillager alienVillager = (EntityAlienVillager) entity;
-						BlockPos worldPos = alienVillager.getPos();
-						alienVillager.setDead();
-						EntityTlalocVillager tlalocVillager = new EntityTlalocVillager(world);
-						tlalocVillager.setPosition(worldPos.getX(), worldPos.getY(), worldPos.getZ());
-						world.spawnEntity(tlalocVillager);
-					}
+				VillageUtils.transformIntoVillager(world, entity, EntityTlalocVillager.class);
+			} else if (provider instanceof WorldProviderOasis) {
+				VillageUtils.transformIntoVillager(world, entity, EntityOasisVillager.class);
+			}
+		}
+		
+	}
+	
+	/**
+	 * Uses Java Reflection to convert GC's default Alien Villagers to the planet-appropriate ones.
+	 * 
+	 * @param worldIn
+	 *            The current World.
+	 * @param entity
+	 *            The Alien Villager entity to convert.
+	 * @param villagerIn
+	 *            The ZG Villager class of the entity to convert this Villager to.
+	 */
+	private static void transformIntoVillager(World worldIn, Entity entity, Class<? extends EntityZGVillagerBase> villagerIn) {
+		if (!worldIn.isRemote) {
+			if (entity instanceof EntityAlienVillager) {
+				EntityAlienVillager alienVillager = (EntityAlienVillager) entity;
+				BlockPos worldPos = alienVillager.getPos();
+				alienVillager.setDead();
+				try {
+					EntityZGVillagerBase zgVillager = villagerIn.getDeclaredConstructor(World.class).newInstance(worldIn);
+					zgVillager.setPosition(worldPos.getX(), worldPos.getY(), worldPos.getZ());
+					worldIn.spawnEntity(zgVillager);
+				} catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException | NoSuchMethodException | SecurityException e) {
+					ZGHelper.LogErr("There was an error in trying to convert an Alien Villager!");
+					e.printStackTrace();
 				}
 			}
 		}

@@ -188,7 +188,7 @@ public class WorldProviderTlaloc extends WorldProviderPlanetZG {
 	
 	@Override
 	public ResourceLocation getDungeonChestType() {
-		return ZGLootTables.CHEST_DUNGEON_TIER1;
+		return ZGLootTables.CHEST_DUNGEON_TIER10;
 	}
 	
 	@Override

@@ -21,7 +21,6 @@ import com.google.common.collect.Lists;
 import micdoodle8.mods.galacticraft.api.world.IGalacticraftWorldProvider;
 import micdoodle8.mods.galacticraft.core.util.GCCoreUtil;
 import micdoodle8.mods.galacticraft.core.world.gen.dungeon.DungeonConfiguration;
-import micdoodle8.mods.galacticraft.core.world.gen.dungeon.DungeonStart;
 import micdoodle8.mods.galacticraft.core.world.gen.dungeon.RoomBoss;
 import micdoodle8.mods.galacticraft.core.world.gen.dungeon.RoomTreasure;
 import net.minecraft.util.math.BlockPos;
@@ -144,7 +143,7 @@ public class MapGenDungeonZG extends MapGenStructure {
 	
 	public static class Start extends StructureStart {
 		private DungeonConfiguration configuration;
-		DungeonStart startPiece;
+		DungeonStartZG startPiece;
 		
 		public Start() {
 		}
@@ -152,7 +151,7 @@ public class MapGenDungeonZG extends MapGenStructure {
 		public Start(World worldIn, Random rand, int chunkX, int chunkZ, DungeonConfiguration configuration) {
 			super(chunkX, chunkZ);
 			this.configuration = configuration;
-			startPiece = new DungeonStart(worldIn, configuration, rand, (chunkX << 4) + 2, (chunkZ << 4) + 2);
+			startPiece = new DungeonStartZG(worldIn, configuration, rand, (chunkX << 4) + 2, (chunkZ << 4) + 2);
 			startPiece.buildComponent(startPiece, this.components, rand);
 			List<StructureComponent> list = startPiece.attachedComponents;
 			

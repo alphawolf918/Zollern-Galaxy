@@ -17,18 +17,18 @@ import net.minecraftforge.common.BiomeManager;
 import net.minecraftforge.common.BiomeManager.BiomeEntry;
 import net.minecraftforge.common.BiomeManager.BiomeType;
 import zollerngalaxy.biomes.ZGBiomes;
-import zollerngalaxy.util.CachedEnum;
+import zollerngalaxy.util.CachedEnumZG;
 
 public class GenLayerMetztliBiomes extends GenLayerMetztli {
 	
 	@SuppressWarnings("unchecked")
-	private List<BiomeEntry>[] biomes = new ArrayList[CachedEnum.valuesBiomeCached().length];
+	private List<BiomeEntry>[] biomes = new ArrayList[CachedEnumZG.valuesBiomeCached().length];
 	private ArrayList<BiomeEntry>[] biomesList = this.setupBiomes();
 	
 	public GenLayerMetztliBiomes(long seed) {
 		super(seed);
 		
-		for (BiomeType type : CachedEnum.valuesBiomeCached()) {
+		for (BiomeType type : CachedEnumZG.valuesBiomeCached()) {
 			ImmutableList<BiomeEntry> biomesToAdd = this.getBiomes(type);
 			int idx = type.ordinal();
 			
@@ -43,7 +43,7 @@ public class GenLayerMetztliBiomes extends GenLayerMetztli {
 	
 	private ArrayList<BiomeEntry>[] setupBiomes() {
 		@SuppressWarnings("unchecked")
-		ArrayList<BiomeEntry>[] currentBiomes = new ArrayList[CachedEnum.valuesBiomeCached().length];
+		ArrayList<BiomeEntry>[] currentBiomes = new ArrayList[CachedEnumZG.valuesBiomeCached().length];
 		List<BiomeEntry> list = new ArrayList<>();
 		list.add(new BiomeEntry(ZGBiomes.METZTLI_HARRAN_PRIME, 100));
 		list.add(new BiomeEntry(ZGBiomes.METZTLI_HARRAN_DUNES, 90));

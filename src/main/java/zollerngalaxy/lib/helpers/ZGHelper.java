@@ -20,9 +20,12 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.tileentity.TileEntityMobSpawner;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraft.world.DimensionType;
@@ -452,5 +455,13 @@ public final class ZGHelper {
 	
 	public static Logger getLogger() {
 		return LOGGER;
+	}
+	
+	public static void setupMobSpawner(World world, Random rand, BlockPos pos, ResourceLocation mob) {
+		world.setBlockState(pos, Blocks.MOB_SPAWNER.getDefaultState(), 2);
+		TileEntityMobSpawner spawner = (TileEntityMobSpawner) world.getTileEntity(pos);
+		if (spawner != null) {
+			spawner.getSpawnerBaseLogic().setEntityId(mob);
+		}
 	}
 }

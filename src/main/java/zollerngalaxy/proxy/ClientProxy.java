@@ -14,12 +14,16 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.color.BlockColors;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.potion.Potion;
+import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.obj.OBJLoader;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.blocks.fluids.IZGFluidModel;
 import zollerngalaxy.core.renderers.ZGItemRender;
 import zollerngalaxy.events.ZGSkyProviderHandler;
@@ -29,6 +33,9 @@ import zollerngalaxy.lib.ZGInfo;
 import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.mobs.MobRenders;
 import zollerngalaxy.potions.ZGPotions;
+import zollerngalaxy.tileentities.TileEntityTier10TreasureChestZG;
+import zollerngalaxy.tileentities.renderers.TileEntityTier10TreasureChestZGRenderer;
+import zollerngalaxy.util.ClientUtilsZG;
 import zollerngalaxy.util.ZGDamageSrc;
 
 public class ClientProxy extends CommonProxy {
@@ -102,5 +109,17 @@ public class ClientProxy extends CommonProxy {
 		if (potionId == ZGPotions.corruption) {
 			ZGHelper.performBlueprintCheck(new Random(), ZGItems.blueprintCorruption, player, ZGDamageSrc.deathCorruption);
 		}
+	}
+	
+	@Override
+	@SideOnly(Side.CLIENT)
+	public void renderBlocksTileEntitySpecialRenderers() {
+		ClientUtilsZG.registerTileEntityRenderer(TileEntityTier10TreasureChestZG.class, new TileEntityTier10TreasureChestZGRenderer());
+	}
+	
+	@SubscribeEvent
+	public void registerModels(ModelRegistryEvent event) {
+		// Register TileEntity Special Renderers
+		this.renderBlocksTileEntitySpecialRenderers();
 	}
 }

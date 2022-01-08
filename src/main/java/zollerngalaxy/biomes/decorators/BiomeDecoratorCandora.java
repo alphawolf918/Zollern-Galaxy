@@ -97,6 +97,7 @@ public class BiomeDecoratorCandora extends BiomeDecoratorZG {
 		
 		ChunkPrimer chunkPrimer = new ChunkPrimer();
 		
+		// Chocolate Lakes
 		if (this.generateLakes && this.chocolateLakesPerChunk > 0) {
 			for (int i = 0; i < this.chocolateLakesPerChunk; ++i) {
 				y = rand.nextInt(rand.nextInt(genY) + 8);

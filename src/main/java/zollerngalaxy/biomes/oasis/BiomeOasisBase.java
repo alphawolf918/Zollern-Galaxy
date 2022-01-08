@@ -9,7 +9,6 @@ package zollerngalaxy.biomes.oasis;
 
 import java.util.Random;
 import cofh.thermalfoundation.init.TFFluids;
-import micdoodle8.mods.galacticraft.core.entities.EntityAlienVillager;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
@@ -24,6 +23,7 @@ import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderOasis;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 import zollerngalaxy.lib.helpers.ModHelperBase;
+import zollerngalaxy.mobs.entities.villagers.EntityOasisVillager;
 
 public abstract class BiomeOasisBase extends BiomeSpace {
 	
@@ -51,7 +51,7 @@ public abstract class BiomeOasisBase extends BiomeSpace {
 		this.biomeDecor.mushroomsPerChunk = -999;
 		
 		if (ConfigManagerZG.enableAlienVillagerSpawn) {
-			this.spawnableCreatureList.add(new SpawnListEntry(EntityAlienVillager.class, this.villagerSpawnRate, 1, 1));
+			this.spawnableCreatureList.add(new SpawnListEntry(EntityOasisVillager.class, this.villagerSpawnRate, 0, 1));
 		}
 		
 		this.setStoneBlock(ZGBlocks.oasisStone);

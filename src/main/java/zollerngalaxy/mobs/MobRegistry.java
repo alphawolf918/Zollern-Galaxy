@@ -41,6 +41,7 @@ import zollerngalaxy.mobs.entities.EntityShark;
 import zollerngalaxy.mobs.entities.EntitySpiderling;
 import zollerngalaxy.mobs.entities.EntitySquidlus;
 import zollerngalaxy.mobs.entities.EntityVexBot;
+import zollerngalaxy.mobs.entities.EntityVexBotGold;
 import zollerngalaxy.mobs.entities.EntityWanderer;
 import zollerngalaxy.mobs.entities.EntityWasp;
 import zollerngalaxy.mobs.entities.EntityXenomorph;
@@ -54,6 +55,7 @@ import zollerngalaxy.mobs.entities.villagers.EntityCentotlVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityEdenVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityHarranVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityKriffonVillager;
+import zollerngalaxy.mobs.entities.villagers.EntityOasisVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityPerditaVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityPurgotVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityTlalocVillager;
@@ -191,6 +193,9 @@ public class MobRegistry {
 		// Tlaloc Villager
 		registerEntity("tlalocvillager", EntityTlalocVillager.class, entityId++, 0xeeeeee, 0xbbbbbb);
 		
+		// Oasis Villager
+		registerEntity("oasisvillager", EntityOasisVillager.class, entityId++, 0xff0000, 0xffd700);
+		
 		/** END VILLAGERS **/
 		
 		// Wanderer
@@ -234,11 +239,14 @@ public class MobRegistry {
 		// Xenomorph
 		registerEntity("xenomorph", EntityXenomorph.class, entityId++, 0xeeeeee, 0xcccccc);
 		
-		// Dragon
+		// Galaxy Dragon
 		registerEntity("dragon", EntityGalaxyDragon.class, entityId++, 0x000000, 0x990099);
 		
 		// Vexbot
 		registerEntity("vexbot", EntityVexBot.class, entityId++, 0xeeeeee, 0xbebebe);
+		
+		// Golden Vexbot
+		registerEntity("vexbotgold", EntityVexBotGold.class, entityId++, 0xffff00, 0xbe0000);
 		
 		ZGHelper.Log("Loaded a total of " + totalMobs + " new mobs.");
 	}

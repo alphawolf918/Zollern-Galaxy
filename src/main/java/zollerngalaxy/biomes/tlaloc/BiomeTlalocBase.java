@@ -39,9 +39,13 @@ public class BiomeTlalocBase extends BiomeSpace {
 	protected static final int SEA_LEVEL = ChunkProviderTlaloc.SEA_LEVEL;
 	protected static final int SEA_FLOOR_LEVEL = (SEA_LEVEL - 21);
 	
+	public BiomeDecoratorTlaloc biomeDecor = this.getBiomeDecorator();
+	
 	public BiomeTlalocBase(String singleName, BiomeProperties props) {
 		super(singleName, props);
-		this.setTempCategory(TempCategory.COLD);
+		this.setTempCategory(TempCategory.MEDIUM);
+		this.setGrassAndFoliageColor(0xeeeeee);
+		this.setWaterColor(0xffffff);
 		this.clearAllSpawning();
 		if (ConfigManagerZG.enableAlienVillagerSpawn) {
 			this.spawnableCreatureList.add(new SpawnListEntry(EntityTlalocVillager.class, this.villagerSpawnRate, 0, 1));

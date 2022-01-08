@@ -35,6 +35,7 @@ import zollerngalaxy.mobs.entities.EntityShark;
 import zollerngalaxy.mobs.entities.EntitySpiderling;
 import zollerngalaxy.mobs.entities.EntitySquidlus;
 import zollerngalaxy.mobs.entities.EntityVexBot;
+import zollerngalaxy.mobs.entities.EntityVexBotGold;
 import zollerngalaxy.mobs.entities.EntityWanderer;
 import zollerngalaxy.mobs.entities.EntityWasp;
 import zollerngalaxy.mobs.entities.EntityXenomorph;
@@ -48,6 +49,7 @@ import zollerngalaxy.mobs.entities.villagers.EntityCentotlVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityEdenVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityHarranVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityKriffonVillager;
+import zollerngalaxy.mobs.entities.villagers.EntityOasisVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityPerditaVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityPurgotVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityTlalocVillager;
@@ -82,6 +84,7 @@ import zollerngalaxy.mobs.renders.RenderShark;
 import zollerngalaxy.mobs.renders.RenderSpiderling;
 import zollerngalaxy.mobs.renders.RenderSquidlus;
 import zollerngalaxy.mobs.renders.RenderVexbot;
+import zollerngalaxy.mobs.renders.RenderVexbotGold;
 import zollerngalaxy.mobs.renders.RenderWanderer;
 import zollerngalaxy.mobs.renders.RenderWasp;
 import zollerngalaxy.mobs.renders.RenderXenomorph;
@@ -95,6 +98,7 @@ import zollerngalaxy.mobs.renders.villagers.RenderCentotlVillager;
 import zollerngalaxy.mobs.renders.villagers.RenderEdenVillager;
 import zollerngalaxy.mobs.renders.villagers.RenderHarranVillager;
 import zollerngalaxy.mobs.renders.villagers.RenderKriffonVillager;
+import zollerngalaxy.mobs.renders.villagers.RenderOasisVillager;
 import zollerngalaxy.mobs.renders.villagers.RenderPerditaVillager;
 import zollerngalaxy.mobs.renders.villagers.RenderPurgotVillager;
 import zollerngalaxy.mobs.renders.villagers.RenderTlalocVillager;
@@ -108,53 +112,83 @@ import zollerngalaxy.mobs.renders.zombiemutations.RenderVolatile;
 public final class MobRenders {
 	
 	public static void init() {
-		RenderMob(EntityMoolus.class, RenderMoolus::new);
-		RenderMob(EntityOinkus.class, RenderOinkus::new);
-		RenderMob(EntitySquidlus.class, RenderSquidlus::new);
-		RenderMob(EntityFrostGiant.class, RenderFrostGiant::new);
-		RenderMob(EntityMagmos.class, RenderMagmos::new);
-		RenderMob(EntityGrayAlien.class, RenderGrayAlien::new);
-		RenderMob(EntityMegaCreeper.class, RenderMegaCreeper::new);
-		RenderMob(EntityGalaxyKnight.class, RenderGalaxyKnight::new);
-		RenderMob(EntityMummy.class, RenderMummy::new);
-		RenderMob(EntityScorpion.class, RenderScorpion::new);
-		RenderMob(EntityBlubberFish.class, RenderBlubberFish::new);
-		RenderMob(EntityGypsyFish.class, RenderGypsyFish::new);
-		RenderMob(EntityBladeFish.class, RenderBladeFish::new);
-		RenderMob(EntityShark.class, RenderShark::new);
-		RenderMob(EntityJellyfish.class, RenderJellyfish::new);
-		RenderMob(EntityAbyssalVillager.class, RenderAbyssalVillager::new);
-		RenderMob(EntityWasp.class, RenderWasp::new);
-		RenderMob(EntityKrull.class, RenderKrull::new);
-		RenderMob(EntitySpiderling.class, RenderSpiderling::new);
-		RenderMob(EntityShadowSkeleton.class, RenderShadowSkeleton::new);
-		RenderMob(EntityShade.class, RenderShade::new);
-		RenderMob(EntityShadowAlien.class, RenderShadowAlien::new);
-		RenderMob(EntityFaceless.class, RenderFaceless::new);
-		RenderMob(EntityPigShroom.class, RenderPigShroom::new);
-		RenderMob(EntityArcon.class, RenderArcon::new);
-		RenderMob(EntityVolatile.class, RenderVolatile::new);
-		RenderMob(EntitySeeker.class, RenderSeeker::new);
-		RenderMob(EntityOverlord.class, RenderOverlord::new);
-		RenderMob(EntityGhoul.class, RenderGhoul::new);
-		RenderMob(EntityHarranVillager.class, RenderHarranVillager::new);
-		RenderMob(EntityEdenVillager.class, RenderEdenVillager::new);
-		RenderMob(EntityAstrosVillager.class, RenderAstrosVillager::new);
-		RenderMob(EntityCaligroVillager.class, RenderCaligroVillager::new);
-		RenderMob(EntityZollusVillager.class, RenderZollusVillager::new);
-		RenderMob(EntityKriffonVillager.class, RenderKriffonVillager::new);
-		RenderMob(EntityPurgotVillager.class, RenderPurgotVillager::new);
-		RenderMob(EntityFacehugger.class, RenderFacehugger::new);
-		RenderMob(EntityXenomorph.class, RenderXenomorph::new);
-		RenderMob(EntityXenomorphQueen.class, RenderXenomorphQueen::new);
-		RenderMob(EntityCentotlVillager.class, RenderCentotlVillager::new);
-		RenderMob(EntityWanderer.class, RenderWanderer::new);
-		RenderMob(EntityTociVillager.class, RenderTociVillager::new);
-		RenderMob(EntityPerditaVillager.class, RenderPerditaVillager::new);
-		RenderMob(EntityGalaxyDragon.class, RenderGalaxyDragon::new);
-		RenderMob(EntityTlalocVillager.class, RenderTlalocVillager::new);
-		RenderMob(EntityVexBot.class, RenderVexbot::new);
-		RenderMob(EntityVexBotBoss.class, RenderVexbotBoss::new);
+		MobRenders.renderFish();
+		MobRenders.renderBugs();
+		MobRenders.renderAnimals();
+		MobRenders.renderPassiveAliens();
+		MobRenders.renderVillagers();
+		MobRenders.renderEnemies();
+		MobRenders.renderBosses();
+	}
+	
+	private static void renderFish() {
+		MobRenders.renderMob(EntitySquidlus.class, RenderSquidlus::new);
+		MobRenders.renderMob(EntityBlubberFish.class, RenderBlubberFish::new);
+		MobRenders.renderMob(EntityGypsyFish.class, RenderGypsyFish::new);
+		MobRenders.renderMob(EntityBladeFish.class, RenderBladeFish::new);
+		MobRenders.renderMob(EntityShark.class, RenderShark::new);
+		MobRenders.renderMob(EntityJellyfish.class, RenderJellyfish::new);
+	}
+	
+	private static void renderBugs() {
+		renderMob(EntityWasp.class, RenderWasp::new);
+	}
+	
+	private static void renderAnimals() {
+		MobRenders.renderMob(EntityMoolus.class, RenderMoolus::new);
+		MobRenders.renderMob(EntityOinkus.class, RenderOinkus::new);
+		MobRenders.renderMob(EntityPigShroom.class, RenderPigShroom::new);
+		MobRenders.renderMob(EntityGalaxyDragon.class, RenderGalaxyDragon::new);
+	}
+	
+	private static void renderPassiveAliens() {
+		MobRenders.renderMob(EntityArcon.class, RenderArcon::new);
+		MobRenders.renderMob(EntityWanderer.class, RenderWanderer::new);
+	}
+	
+	private static void renderVillagers() {
+		renderMob(EntityHarranVillager.class, RenderHarranVillager::new);
+		renderMob(EntityAbyssalVillager.class, RenderAbyssalVillager::new);
+		renderMob(EntityEdenVillager.class, RenderEdenVillager::new);
+		renderMob(EntityAstrosVillager.class, RenderAstrosVillager::new);
+		renderMob(EntityCaligroVillager.class, RenderCaligroVillager::new);
+		renderMob(EntityZollusVillager.class, RenderZollusVillager::new);
+		renderMob(EntityKriffonVillager.class, RenderKriffonVillager::new);
+		renderMob(EntityPurgotVillager.class, RenderPurgotVillager::new);
+		renderMob(EntityTociVillager.class, RenderTociVillager::new);
+		renderMob(EntityPerditaVillager.class, RenderPerditaVillager::new);
+		renderMob(EntityTlalocVillager.class, RenderTlalocVillager::new);
+		renderMob(EntityCentotlVillager.class, RenderCentotlVillager::new);
+		renderMob(EntityOasisVillager.class, RenderOasisVillager::new);
+	}
+	
+	private static void renderEnemies() {
+		MobRenders.renderMob(EntityFrostGiant.class, RenderFrostGiant::new);
+		MobRenders.renderMob(EntityMagmos.class, RenderMagmos::new);
+		MobRenders.renderMob(EntityGrayAlien.class, RenderGrayAlien::new);
+		MobRenders.renderMob(EntityMegaCreeper.class, RenderMegaCreeper::new);
+		MobRenders.renderMob(EntityGalaxyKnight.class, RenderGalaxyKnight::new);
+		MobRenders.renderMob(EntityMummy.class, RenderMummy::new);
+		MobRenders.renderMob(EntityScorpion.class, RenderScorpion::new);
+		MobRenders.renderMob(EntityKrull.class, RenderKrull::new);
+		MobRenders.renderMob(EntitySpiderling.class, RenderSpiderling::new);
+		MobRenders.renderMob(EntityShadowSkeleton.class, RenderShadowSkeleton::new);
+		MobRenders.renderMob(EntityShade.class, RenderShade::new);
+		MobRenders.renderMob(EntityFaceless.class, RenderFaceless::new);
+		MobRenders.renderMob(EntityVexBot.class, RenderVexbot::new);
+		MobRenders.renderMob(EntityVexBotGold.class, RenderVexbotGold::new);
+		MobRenders.renderMob(EntityVolatile.class, RenderVolatile::new);
+		MobRenders.renderMob(EntitySeeker.class, RenderSeeker::new);
+		MobRenders.renderMob(EntityOverlord.class, RenderOverlord::new);
+		MobRenders.renderMob(EntityGhoul.class, RenderGhoul::new);
+		MobRenders.renderMob(EntityFacehugger.class, RenderFacehugger::new);
+		MobRenders.renderMob(EntityXenomorph.class, RenderXenomorph::new);
+	}
+	
+	private static void renderBosses() {
+		MobRenders.renderMob(EntityShadowAlien.class, RenderShadowAlien::new);
+		MobRenders.renderMob(EntityXenomorphQueen.class, RenderXenomorphQueen::new);
+		MobRenders.renderMob(EntityVexBotBoss.class, RenderVexbotBoss::new);
 	}
 	
 	/**
@@ -165,7 +199,7 @@ public final class MobRenders {
 	 * @param renderFactory
 	 *            The IRenderFactory.
 	 */
-	private static <T extends Entity> void RenderMob(Class<T> entityClass, IRenderFactory<? super T> renderFactory) {
+	private static <T extends Entity> void renderMob(Class<T> entityClass, IRenderFactory<? super T> renderFactory) {
 		RenderingRegistry.registerEntityRenderingHandler(entityClass, renderFactory);
 	}
 }

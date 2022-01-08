@@ -23,6 +23,7 @@ import net.minecraft.world.WorldProvider;
 import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderMetztli;
 import zollerngalaxy.events.ZGSoundEvents;
+import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.mobs.entities.base.EntityMutantZombie;
 import zollerngalaxy.mobs.entities.villagers.EntityHarranVillager;
 import zollerngalaxy.mobs.entities.zombiemutations.EntityGhoul;
@@ -57,18 +58,8 @@ public abstract class ZombieUtils {
 		if (entityName != "Zombie") {
 			try {
 				zombie = entityMutant.getDeclaredConstructor(World.class).newInstance(world);
-			} catch (InstantiationException e) {
-				zombie.setWorld(world);
-				e.printStackTrace();
-			} catch (IllegalAccessException e) {
-				e.printStackTrace();
-			} catch (IllegalArgumentException e) {
-				e.printStackTrace();
-			} catch (InvocationTargetException e) {
-				e.printStackTrace();
-			} catch (NoSuchMethodException e) {
-				e.printStackTrace();
-			} catch (SecurityException e) {
+			} catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException | NoSuchMethodException | SecurityException e) {
+				ZGHelper.LogErr("There was an error when trying to mutate a Zombie!");
 				e.printStackTrace();
 			}
 		}

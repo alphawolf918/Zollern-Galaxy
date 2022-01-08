@@ -48,7 +48,6 @@ public class EntityShadowSkeleton extends EntitySkeleton implements IShadeEntity
 	// Prevent the Shadow Skeleton from catching on fire in the sun.
 	@Override
 	public void setFire(int par1) {
-		// nothing
 	}
 	
 	@Override

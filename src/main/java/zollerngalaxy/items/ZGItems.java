@@ -145,7 +145,7 @@ public class ZGItems {
 	
 	public static final Item edenDungeonKey = new ZGItemBase("edendungeonkey");
 	public static final Item shadeKey = new ZGItemBase("shadekey");
-	public static final Item tlalocDungeonKey = new ItemKeyZG("tlalocdungeonkey", 1);
+	public static final Item tlalocDungeonKey = new ItemKeyZG("tlalocdungeonkey", 10);
 	
 	public static final Item perdGlowdust = new ZGItemBase("perdglowstonedust");
 	public static final Item perdDiamond = new ZGItemBase("perddiamond");

@@ -10,9 +10,6 @@ package zollerngalaxy.worldgen.structures.dungeons;
 import java.util.Random;
 import micdoodle8.mods.galacticraft.api.vector.Vector3;
 import micdoodle8.mods.galacticraft.core.world.gen.dungeon.DungeonConfiguration;
-import micdoodle8.mods.galacticraft.core.world.gen.dungeon.DungeonStart;
-import micdoodle8.mods.galacticraft.core.world.gen.dungeon.Piece;
-import micdoodle8.mods.galacticraft.core.world.gen.dungeon.SizedPiece;
 import net.minecraft.init.Blocks;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.EnumFacing;
@@ -24,7 +21,7 @@ import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.blocks.fluids.ZGFluids;
 import zollerngalaxy.tileentities.TileEntityDungeonSpawnerZG;
 
-public class RoomBossZG extends SizedPiece {
+public class RoomBossZG extends SizedPieceZG {
 	
 	private BlockPos chestPos;
 	
@@ -131,7 +128,7 @@ public class RoomBossZG extends SizedPiece {
 	}
 	
 	@Override
-	public Piece getNextPiece(DungeonStart startPiece, Random rand) {
+	public PieceZG getNextPiece(DungeonStartZG startPiece, Random rand) {
 		return getCorridor(rand, startPiece, 10, true);
 	}
 	

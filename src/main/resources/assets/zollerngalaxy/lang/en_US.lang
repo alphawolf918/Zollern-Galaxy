@@ -872,6 +872,16 @@ entity.zollerngalaxy:perditavillager.name=Perdita Villager
 entity.zollerngalaxy:tocivillager.name=Toci Villager
 entity.zollerngalaxy:tlalocvillager.name=Tlaloc Villager
 entity.zollerngalaxy:aresvillager.name=Ares Villager
+entity.zollerngalaxy:prometheusvillager.name=Promethean Villager
+entity.zollerngalaxy:kronosvillager.name=Kronos Villager
+entity.zollerngalaxy:icarusvillager.name=Icarus Villager
+entity.zollerngalaxy:asgardvillager.name=Asgard Villager
+entity.zollerngalaxy:mavethvillager.name=Maveth Villager
+entity.zollerngalaxy:meridianvillager.name=Meridian Villager
+entity.zollerngalaxy:reachvillager.name=Reach Villager
+entity.zollerngalaxy:requiemvillager.name=Reclaimer Villager
+entity.zollerngalaxy:somniumvillager.name=Somnium Villager
+entity.zollerngalaxy:primorvillager.name=Primor Villager
 
 entity.zollerngalaxy:wanderer.name=Wanderer
 ################
@@ -900,6 +910,7 @@ entity.zollerngalaxy:xenomorphqueen.name=Xenomorph Queen
 entity.zollerngalaxy:dragon.name=Galaxy Dragon
 
 entity.zollerngalaxy:vexbot.name=Vexbot
+entity.zollerngalaxy:vexbotgold.name=Golden Vexbot
 entity.zollerngalaxy:vexbotboss.name=Vexbot Boss
 
 ## Tooltips ##
@@ -1067,7 +1078,20 @@ satellite.spacestation.caligro=Caligro Space Station
 satellite.spacestation.exodus=Exodus Space Station
 satellite.spacestation.vortex=Vortex Space Station
 satellite.spacestation.metztli=Metztli Space Station
-sattelite.spacestation.centotl=Centotl Space Station
+satellite.spacestation.centotl=Centotl Space Station
+satellite.spacestation.toci=Toci Space Station
+satellite.spacestation.tlaloc=Tlaloc Space Station
+satellite.spacestation.ares=Ares Space Station
+satellite.spacestation.prometheus=Promethean Space Station
+satellite.spacestation.kronos=Kronos Space Station
+satellite.spacestation.icarus=Icarus Space Station
+satellite.spacestation.asgard=Asgard Space Station
+satellite.spacestation.maveth=Maveth Space Station
+satellite.spacestation.meridian=Meridian Space Station
+satellite.spacestation.reach=Reach Space Station
+satellite.spacestation.requiem=Reclaimer Space Station
+satellite.spacestation.somnium=Somnium Space Station
+satellite.spacestation.primor=Primor Space Station
 
 ## Death Messages ##
 

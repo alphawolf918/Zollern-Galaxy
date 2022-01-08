@@ -16,19 +16,19 @@ import net.minecraftforge.common.BiomeManager;
 import net.minecraftforge.common.BiomeManager.BiomeEntry;
 import net.minecraftforge.common.BiomeManager.BiomeType;
 import zollerngalaxy.biomes.ZGBiomes;
-import zollerngalaxy.util.CachedEnum;
+import zollerngalaxy.util.CachedEnumZG;
 import com.google.common.collect.ImmutableList;
 
 public class GenLayerPurgotBiomes extends GenLayerPurgot {
 	
 	@SuppressWarnings("unchecked")
-	private List<BiomeEntry>[] biomes = new ArrayList[CachedEnum.valuesBiomeCached().length];
+	private List<BiomeEntry>[] biomes = new ArrayList[CachedEnumZG.valuesBiomeCached().length];
 	private ArrayList<BiomeEntry>[] biomesList = this.setupBiomes();
 	
 	public GenLayerPurgotBiomes(long seed) {
 		super(seed);
 		
-		for (BiomeType type : CachedEnum.valuesBiomeCached()) {
+		for (BiomeType type : CachedEnumZG.valuesBiomeCached()) {
 			ImmutableList<BiomeEntry> biomesToAdd = this.getBiomes(type);
 			int idx = type.ordinal();
 			
@@ -43,7 +43,7 @@ public class GenLayerPurgotBiomes extends GenLayerPurgot {
 	
 	private ArrayList<BiomeEntry>[] setupBiomes() {
 		@SuppressWarnings("unchecked")
-		ArrayList<BiomeEntry>[] currentBiomes = new ArrayList[CachedEnum.valuesBiomeCached().length];
+		ArrayList<BiomeEntry>[] currentBiomes = new ArrayList[CachedEnumZG.valuesBiomeCached().length];
 		List<BiomeEntry> list = new ArrayList<>();
 		list.add(new BiomeEntry(ZGBiomes.PURGOT_BASE, 75));
 		list.add(new BiomeEntry(ZGBiomes.PURGOT_LIMBO, 70));

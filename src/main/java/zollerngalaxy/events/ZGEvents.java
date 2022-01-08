@@ -28,15 +28,12 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
-import net.minecraft.init.MobEffects;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumHand;
-import net.minecraft.util.NonNullList;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvent;
@@ -79,9 +76,6 @@ import zollerngalaxy.core.dimensions.worldproviders.WorldProviderCaligro;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderMetztli;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderVortex;
 import zollerngalaxy.items.ZGItems;
-import zollerngalaxy.items.armor.ZGArmor;
-import zollerngalaxy.items.armor.ZGArmorMats;
-import zollerngalaxy.lib.helpers.ModHelperBase;
 import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.mobs.entities.EntityBladeFish;
 import zollerngalaxy.mobs.entities.EntityBlubberFish;
@@ -100,7 +94,8 @@ import zollerngalaxy.mobs.entities.base.EntityMutantZombie;
 import zollerngalaxy.mobs.entities.interfaces.IShadeEntity;
 import zollerngalaxy.potions.ZGPotions;
 import zollerngalaxy.proxy.IProxy;
-import zollerngalaxy.util.CachedEnum;
+import zollerngalaxy.util.ArmorUtils;
+import zollerngalaxy.util.CachedEnumZG;
 import zollerngalaxy.util.VillageUtils;
 import zollerngalaxy.util.ZGDamageSrc;
 import zollerngalaxy.util.ZGUtils;
@@ -134,8 +129,9 @@ public class ZGEvents {
 			final EntityPlayerSP player = minecraft.player;
 			
 			World world = event.getWorld();
+			WorldProvider provider = world.provider;
 			
-			if (ZGHelper.rngInt(1, 150) == 0 && minecraft.world.provider instanceof WorldProviderVortex) {
+			if (ZGHelper.rngInt(1, 150) == 0 && provider instanceof WorldProviderVortex) {
 				double freq = player.getRNG().nextDouble() * Math.PI * 2.0F;
 				double dist = 60.0F;
 				double dX = dist * Math.cos(freq);
@@ -151,58 +147,106 @@ public class ZGEvents {
 	}
 	
 	@SideOnly(Side.CLIENT)
-	@SubscribeEvent
+	@SubscribeEvent(priority = EventPriority.HIGH, receiveCanceled = true)
 	public void onPlayerTick(TickEvent.PlayerTickEvent event) {
-		final Minecraft minecraft = ZGUtils.getMinecraft();
-		final EntityPlayerSP player = minecraft.player;
+		EntityPlayer player = event.player;
+		InventoryPlayer playerInventory = player.inventory;
+		World world = player.world;
+		WorldProvider provider = world.provider;
 		
-		if (player == event.player) {
-			Iterator<Map.Entry<BlockPos, Integer>> it = lightning.entrySet().iterator();
-			while (it.hasNext()) {
-				Map.Entry<BlockPos, Integer> entry = it.next();
-				int val = entry.getValue();
-				if (val - 1 <= 0) {
-					it.remove();
-				} else {
-					entry.setValue(val - 1);
-				}
+		boolean isCreativeMode = player.capabilities.isCreativeMode;
+		boolean isRadianceActive = player.isPotionActive(ZGPotions.radiance);
+		boolean isAntiCorruptActive = player.isPotionActive(ZGPotions.antiCorruption);
+		
+		Iterator<Map.Entry<BlockPos, Integer>> it = lightning.entrySet().iterator();
+		while (it.hasNext()) {
+			Map.Entry<BlockPos, Integer> entry = it.next();
+			int val = entry.getValue();
+			if (val - 1 <= 0) {
+				it.remove();
+			} else {
+				entry.setValue(val - 1);
 			}
+		}
+		
+		if (player.getRNG().nextInt(550) == 0 && provider instanceof WorldProviderVortex) {
+			double freq = player.getRNG().nextDouble() * Math.PI * 2.0F;
+			double dist = 60.0F;
+			double dX = dist * Math.cos(freq);
+			double dZ = dist * Math.sin(freq);
+			double posX = player.posX + dX;
+			double posY = 70;
+			double posZ = player.posZ + dZ;
+			float volume = 1000.0F;
+			float pitch = 5.0F + player.getRNG().nextFloat() * 0.2F;
+			lightning.put(new BlockPos(posX, posY, posZ), 20);
+			SoundEvent thunder = SoundEvents.ENTITY_LIGHTNING_THUNDER;
+			SoundCategory category = SoundCategory.WEATHER;
+			world.playSound(player, posX, posY, posZ, thunder, category, volume, pitch);
+		} else if (provider instanceof WorldProviderCaligro) {
+			// Radiance Protection
+			Item radium = ZGItems.radium;
+			ItemStack radiumStack = new ItemStack(radium);
+			boolean hasRadium = playerInventory.hasItemStack(radiumStack);
 			
-			if (player.getRNG().nextInt(550) == 0 && minecraft.world.provider instanceof WorldProviderVortex) {
-				double freq = player.getRNG().nextDouble() * Math.PI * 2.0F;
-				double dist = 60.0F;
-				double dX = dist * Math.cos(freq);
-				double dZ = dist * Math.sin(freq);
-				double posX = player.posX + dX;
-				double posY = 70;
-				double posZ = player.posZ + dZ;
-				float volume = 1000.0F;
-				float pitch = 5.0F + player.getRNG().nextFloat() * 0.2F;
-				lightning.put(new BlockPos(posX, posY, posZ), 20);
-				SoundEvent thunder = SoundEvents.ENTITY_LIGHTNING_THUNDER;
-				SoundCategory category = SoundCategory.WEATHER;
-				minecraft.world.playSound(player, posX, posY, posZ, thunder, category, volume, pitch);
+			// Radiance Check
+			if (hasRadium && !isCreativeMode && !isRadianceActive) {
+				PotionEffect radianceEffect = new PotionEffect(ZGPotions.radiance, ZGPotions.radianceTime, 1);
+				player.addPotionEffect(radianceEffect);
+				if (playerInventory.hasItemStack(radiumStack)) {
+					int invSlot = playerInventory.getSlotFor(radiumStack);
+					playerInventory.decrStackSize(invSlot, 1);
+				}
+				this.proxy.sendChatMessage(player, TextFormatting.GOLD + ZGUtils.translate("tooltips.radiance"));
+			}
+		}
+		
+		// Check what hand the Player is using, and check to see if it isn't
+		// null. Then, grab the item they're holding, and check to see if
+		// that's not equal to null. If it is the Bedrock Breaker, check the
+		// Player's inventory to see if they have any Ascendant Amaranth
+		// Ingots. If they do, then copy the original held item, set its
+		// damage to 0, and put it in the slot that the old one occupied.
+		// This also will decrease the stack size of the ingots. If none
+		// remain, then it will not be repaired.
+		EnumHand currentHand = player.getActiveHand();
+		if (currentHand != null) {
+			ItemStack heldItem = player.getHeldItem(currentHand);
+			if (heldItem != null) {
+				Item currentItem = heldItem.getItem();
+				if (currentItem == ZGItems.BEDROCK_BREAKER) {
+					int toolDamage = heldItem.getItemDamage();
+					if (toolDamage >= heldItem.getMaxDamage()) {
+						ItemStack repairItemStack = new ItemStack(ZGItems.ingotAscendantAmaranth);
+						if (playerInventory.hasItemStack(repairItemStack)) {
+							ItemStack repairedItem = heldItem.copy();
+							repairedItem.setItemDamage(0);
+							int invSlot = playerInventory.getSlotFor(heldItem);
+							playerInventory.setInventorySlotContents(invSlot, repairedItem);
+							playerInventory.decrStackSize(playerInventory.getSlotFor(repairItemStack), 1);
+						}
+					}
+				}
 			}
 		}
 	}
 	
 	@SideOnly(Side.CLIENT)
-	@SubscribeEvent
+	@SubscribeEvent(priority = EventPriority.HIGH, receiveCanceled = true)
 	public void renderLightning(ClientProxyCore.EventSpecialRender event) {
-		final Minecraft minecraft = ZGUtils.getClient();
-		final EntityPlayerSP player = minecraft.player;
 		Iterator<Map.Entry<BlockPos, Integer>> it = lightning.entrySet().iterator();
 		while (it.hasNext()) {
 			Map.Entry<BlockPos, Integer> entry = it.next();
-			long seed = entry.getValue() / 10 + entry.getKey().getX() + entry.getKey().getZ();
-			double x = entry.getKey().getX() - ClientProxyCore.playerPosX;
-			double y = entry.getKey().getY() - ClientProxyCore.playerPosY;
-			double z = entry.getKey().getZ() - ClientProxyCore.playerPosZ;
+			BlockPos entryKey = entry.getKey();
+			long seed = entry.getValue() / 10 + entryKey.getX() + entryKey.getZ();
+			double x = entryKey.getX() - ClientProxyCore.playerPosX;
+			double y = entryKey.getY() - ClientProxyCore.playerPosY;
+			double z = entryKey.getZ() - ClientProxyCore.playerPosZ;
 			FakeLightningBoltRenderer.renderBolt(seed, x, y, z);
 		}
 	}
 	
-	@SubscribeEvent
+	@SubscribeEvent(priority = EventPriority.HIGH, receiveCanceled = true)
 	public void onPlayerDeath(LivingDeathEvent event) {
 		Entity entity = event.getEntityLiving();
 		World world = entity.world;
@@ -231,7 +275,6 @@ public class ZGEvents {
 		if (entity instanceof EntityPlayer) {
 			EntityPlayer player = (EntityPlayer) entity;
 			InventoryPlayer playerInventory = player.inventory;
-			NonNullList<ItemStack> armorInventory = playerInventory.armorInventory;
 			BlockPos playerLocation = new BlockPos(player.posX, (player.posY - 1), player.posZ);
 			World world = player.world;
 			IBlockState blockState = world.getBlockState(playerLocation);
@@ -241,51 +284,14 @@ public class ZGEvents {
 			boolean isRadianceActive = player.isPotionActive(ZGPotions.radiance);
 			boolean isAntiCorruptActive = player.isPotionActive(ZGPotions.antiCorruption);
 			
-			if (world.provider instanceof WorldProviderCaligro) {
-				// Radiance Protection
-				Item radium = ZGItems.radium;
-				ItemStack radiumStack = new ItemStack(radium, 1);
-				
-				boolean hasRadium = playerInventory.hasItemStack(radiumStack);
-				
-				if (hasRadium && !isCreativeMode && !isRadianceActive) {
-					PotionEffect radianceEffect = new PotionEffect(ZGPotions.radiance, ZGPotions.radianceTime, 1);
-					player.addPotionEffect(radianceEffect);
-					if (playerInventory.hasItemStack(radiumStack)) {
-						int invSlot = playerInventory.getSlotFor(radiumStack);
-						playerInventory.decrStackSize(invSlot, 1);
-					}
-					this.proxy.sendChatMessage(player, TextFormatting.GOLD + ZGUtils.translate("tooltips.radiance"));
+			if (world.provider instanceof WorldProviderVortex) {
+				if (ZGHelper.rngInt(1, 700) <= 15 && ConfigManagerZG.enableWindBlowEvent) {
+					MinecraftForge.EVENT_BUS.post(new WindBlowingEvent(world, player));
 				}
-				
+			} else if (world.provider instanceof WorldProviderCaligro) {
 				// Shadow Damage
 				if (!isCreativeMode && !isRadianceActive) {
 					player.attackEntityFrom(ZGDamageSrc.deathShadows, ZGDamageSrc.deathShadows.getDamageBase());
-				}
-				
-				// Infection
-				// Spread to all Players within the radius by using the potion effect.
-				// You can find the potion effect's "performEffect" function in the
-				// ClientProxy class, under doPotionEffects.
-				if (player.isPotionActive(ZGPotions.infected)) {
-					ZGPotions.infected.performEffect(player, 1);
-					World worldObj = player.world;
-					Class<? extends Entity> playerClass = EntityPlayer.class;
-					AxisAlignedBB boundingBox = player.getEntityBoundingBox();
-					AxisAlignedBB expandedBox = boundingBox.expand(5.0D, 2.0D, 5.0D);
-					List<? extends Entity> playerList = worldObj.<Entity> getEntitiesWithinAABB(playerClass, expandedBox);
-					Object[] playerArray = playerList.toArray();
-					for (Object o : playerArray) {
-						EntityPlayer currentPlayer = (EntityPlayer) o;
-						if (!currentPlayer.isPotionActive(ZGPotions.infected)) {
-							PotionEffect infectEffect = new PotionEffect(ZGPotions.infected, ZGPotions.infectionTime, 1);
-							currentPlayer.addPotionEffect(infectEffect);
-						}
-					}
-				}
-			} else if (world.provider instanceof WorldProviderVortex) {
-				if (ZGHelper.rngInt(1, 700) <= 15 && ConfigManagerZG.enableWindBlowEvent) {
-					MinecraftForge.EVENT_BUS.post(new WindBlowingEvent(world, player));
 				}
 			}
 			
@@ -294,105 +300,30 @@ public class ZGEvents {
 				ZGPotions.radiance.performEffect(player, 1);
 			}
 			
-			// Check what hand the Player is using, and check to see if it isn't
-			// null. Then, grab the item they're holding, and check to see if
-			// that's not equal to null. If it is the Bedrock Breaker, check the
-			// Player's inventory to see if they have any Ascendant Amaranth
-			// Ingots. If they do, then copy the original held item, set its
-			// damage to 0, and put it in the slot that the old one occupied.
-			// This also will decrease the stack size of the ingots. If none
-			// remain, then it will not be repaired.
-			EnumHand currentHand = player.getActiveHand();
-			if (currentHand != null) {
-				ItemStack heldItem = player.getHeldItem(currentHand);
-				if (heldItem != null) {
-					Item currentItem = heldItem.getItem();
-					if (currentItem == ZGItems.BEDROCK_BREAKER) {
-						int toolDamage = heldItem.getItemDamage();
-						if (toolDamage >= heldItem.getMaxDamage()) {
-							ItemStack repairItemStack = new ItemStack(ZGItems.ingotAscendantAmaranth);
-							if (playerInventory.hasItemStack(repairItemStack)) {
-								ItemStack repairedItem = heldItem.copy();
-								repairedItem.setItemDamage(0);
-								int invSlot = player.inventory.getSlotFor(heldItem);
-								playerInventory.setInventorySlotContents(invSlot, repairedItem);
-								playerInventory.decrStackSize(playerInventory.getSlotFor(repairItemStack), 1);
-							}
-						}
+			// Infection
+			// Spread to all Players within the radius by using the potion effect.
+			// You can find the potion effect's "performEffect" function in the
+			// ClientProxy class, under doPotionEffects.
+			if (player.isPotionActive(ZGPotions.infected)) {
+				ZGPotions.infected.performEffect(player, 1);
+				Class<? extends Entity> playerClass = EntityPlayer.class;
+				AxisAlignedBB boundingBox = player.getEntityBoundingBox();
+				AxisAlignedBB expandedBox = boundingBox.expand(5.0D, 2.0D, 5.0D);
+				List<? extends Entity> playerList = world.<Entity> getEntitiesWithinAABB(playerClass, expandedBox);
+				Object[] playerArray = playerList.toArray();
+				for (Object o : playerArray) {
+					EntityPlayer currentPlayer = (EntityPlayer) o;
+					if (!currentPlayer.isPotionActive(ZGPotions.infected)) {
+						PotionEffect infectEffect = new PotionEffect(ZGPotions.infected, ZGPotions.infectionTime, 1);
+						currentPlayer.addPotionEffect(infectEffect);
 					}
 				}
 			}
 			
-			// Initialize the count for each armor type.
-			int amArmorCount = 0;
-			int zArmorCount = 0;
-			int azArmorCount = 0;
-			int rArmorCount = 0;
-			
-			// Loop through the player's armor inventory, and check
-			// to see if it isn't null. If not, check that it's an
-			// instance of ZGArmor. For each material, check
-			// the type of armor, and increment the armor count
-			// variables for each one that it finds.
-			for (ItemStack armorStack : armorInventory) {
-				if (armorStack != null) {
-					if (armorStack.getItem() instanceof ZGArmor) {
-						ZGArmor armorItem = (ZGArmor) armorStack.getItem();
-						ArmorMaterial armorMat = armorItem.getArmorMaterial();
-						if (armorMat == ZGArmorMats.AMARANTH) {
-							amArmorCount++;
-						} else if (armorMat == ZGArmorMats.ZOLLERNIUM) {
-							zArmorCount++;
-						} else if (armorMat == ZGArmorMats.AZURITE) {
-							azArmorCount++;
-						} else if (armorMat == ZGArmorMats.RADIUM) {
-							rArmorCount++;
-						}
-					}
-				}
-			}
-			
-			// Loop through 0 to 4 and if an armor set's increment variable is
-			// equal to 4; add its respective potion effect.
-			boolean fullSetWorn = false;
-			for (int i = 0; i < 4; ++i) {
-				if (amArmorCount == 4) {
-					// Amaranth
-					player.addPotionEffect(new PotionEffect(MobEffects.RESISTANCE, 100, 1));
-				} else if (zArmorCount == 4) {
-					// Zollernium
-					player.addPotionEffect(new PotionEffect(MobEffects.FIRE_RESISTANCE, 100, 1));
-					if (ConfigManagerZG.enableStepHeight) {
-						player.stepHeight = 2F;
-						fullSetWorn = true;
-					}
-				} else if (azArmorCount == 4) {
-					// Azurite
-					player.addPotionEffect(new PotionEffect(MobEffects.STRENGTH, 100, 1));
-				} else if (rArmorCount == 4) {
-					// Radium
-					player.addPotionEffect(new PotionEffect(ZGPotions.radiance, 100, 1));
-					if (ConfigManagerZG.enableRadianceFlying) {
-						if (!ModHelperBase.useDraconicEvolution) {
-							player.capabilities.allowFlying = true;
-						}
-					}
-				} else {
-					// Disable all "extra" potion capabilities that have nothing
-					// to do with effects. If we don't do this, then the armor's
-					// effects (not the potion's, but the armor's) will last.
-					if (ConfigManagerZG.enableStepHeight && fullSetWorn) {
-						player.stepHeight = 0.5F;
-						fullSetWorn = false;
-					}
-					if (!player.capabilities.isCreativeMode && ConfigManagerZG.enableRadianceFlying) {
-						if (!ModHelperBase.useDraconicEvolution) {
-							player.capabilities.allowFlying = false;
-						}
-					}
-				}
-			}
+			// Handle Armor Checks
+			ArmorUtils.performArmorCheck(player);
 		}
+		
 		// Handle Alien Mutations
 		ZombieUtils.HandleMutations(entity, rand);
 		
@@ -425,6 +356,8 @@ public class ZGEvents {
 			event.setDisplayname(TextFormatting.GOLD + "ExistingEevee" + TextFormatting.WHITE);
 		} else if (username.equals("autumnstarfire")) {
 			event.setDisplayname(TextFormatting.LIGHT_PURPLE + "AutumnStarFire" + TextFormatting.WHITE);
+		} else if (username.equals("snorlaxdacat")) {
+			event.setDisplayname(TextFormatting.GREEN + "SnorlaxDaCat" + TextFormatting.WHITE);
 		}
 	}
 	
@@ -668,7 +601,7 @@ public class ZGEvents {
 		float soundPitch = SoundType.GROUND.getPitch() * 0.8F;
 		world.playSound(null, pos.getX(), pos.getY(), pos.getZ(), stepSound, soundCategory, soundVolume, soundPitch);
 		
-		for (EnumHand hand : CachedEnum.valuesHandCached()) {
+		for (EnumHand hand : CachedEnumZG.valuesHandCached()) {
 			event.getEntityPlayer().swingArm(hand);
 		}
 	}

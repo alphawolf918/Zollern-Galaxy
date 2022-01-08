@@ -24,6 +24,9 @@ import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 import zollerngalaxy.core.enums.EnumOreGenZG;
 import zollerngalaxy.lib.helpers.ZGDecorateHelper;
+import zollerngalaxy.lib.helpers.ZGHelper;
+import zollerngalaxy.util.BiomeUtils;
+import zollerngalaxy.worldgen.WorldGenBattleTower;
 import zollerngalaxy.worldgen.WorldGenLakesZG;
 import zollerngalaxy.worldgen.WorldGenMinableZG;
 import zollerngalaxy.worldgen.WorldGenOutpost;
@@ -47,15 +50,19 @@ public class BiomeDecoratorOasis extends BiomeDecoratorZG {
 	private WorldGenerator leadGen;
 	private WorldGenerator shinestoneGen;
 	
+	public WorldGenerator battleTowerGen = new WorldGenBattleTower(ZGBlocks.oasisCobble.getDefaultState(), ZGBlocks.blockOutpost.getDefaultState());
+	
 	public int waterLakesPerChunk = 4;
 	public int lavaLakesPerChunk = (this.enableExtremeMode) ? 12 : 6;
 	public int oilLakesPerChunk = 4;
 	public int oasisTallGrassPerChunk = 3;
 	public int oasisFlowersPerChunk = 4;
+	public int battleTowersPerChunk = 1;
 	
 	public boolean generateLakes = true;
 	public boolean generateVines = false;
 	public boolean generateCraters = false;
+	public boolean generateBattleTowers = true;
 	
 	public BiomeDecoratorOasis() {
 		this.dirtGen = new WorldGenMinableZG(ZGBlocks.oasisDirt, STONE, EnumOreGenZG.DIRT);
@@ -96,6 +103,7 @@ public class BiomeDecoratorOasis extends BiomeDecoratorZG {
 		
 		ChunkPrimer chunkPrimer = new ChunkPrimer();
 		
+		// Water Lakes
 		if (this.generateLakes && this.waterLakesPerChunk > 0) {
 			for (int i = 0; i < this.waterLakesPerChunk; ++i) {
 				y = rand.nextInt(rand.nextInt(genY) + 8);
@@ -103,6 +111,7 @@ public class BiomeDecoratorOasis extends BiomeDecoratorZG {
 				(new WorldGenLakesZG(blockToUse, BLOCK_TOP)).generate(world, rand, this.chunkPos.add(x, y, z));
 			}
 			
+			// Lilypads
 			if (this.waterlilyPerChunk > 0) {
 				for (int i = 0; i < this.waterlilyPerChunk; ++i) {
 					(new WorldGenWaterlily()).generate(world, rand, this.chunkPos.add(x, y, z));
@@ -110,26 +119,40 @@ public class BiomeDecoratorOasis extends BiomeDecoratorZG {
 			}
 		}
 		
+		// Lava Lakes
 		if (this.generateLakes && this.lavaLakesPerChunk > 0) {
 			for (int i = 0; i < this.lavaLakesPerChunk; ++i) {
 				y = rand.nextInt(rand.nextInt(genY) + 8);
-				
 				if (rand.nextInt(100) <= 5) {
 					(new WorldGenLakesZG(Blocks.LAVA, STONE)).generate(world, rand, this.chunkPos.add(x, y, z));
 				}
 			}
 		}
 		
+		// Tall Grass
 		if (this.oasisTallGrassPerChunk > 0) {
 			for (int i = 0; i < this.oasisTallGrassPerChunk + 4; ++i) {
 				ZGDecorateHelper.generatePlants(new WorldGenTallGrassZG((ZGBlockTallGrass) ZGBlocks.oasisTallGrass), world, rand, this.chunkPos);
 			}
 		}
 		
+		// Flowers
 		if (this.oasisFlowersPerChunk > 0) {
 			for (int i = 0; i < this.oasisFlowersPerChunk + 2; i++) {
 				IBlockState flowerState = ZGBlocks.oasisFlower.getDefaultState();
 				ZGDecorateHelper.generatePlants(new WorldGenOasisFlowers(flowerState), world, rand, this.chunkPos);
+			}
+		}
+		
+		// Battle Towers
+		if (this.generateBattleTowers && this.battleTowersPerChunk > 0 && !BiomeUtils.isOceanBiome(biome)) {
+			if (ZGHelper.rngInt(1, 200) <= 25) {
+				for (int i = 0; i < this.battleTowersPerChunk; ++i) {
+					y = rand.nextInt(rand.nextInt(genY) + 8);
+					if (y >= 67) {
+						this.battleTowerGen.generate(world, rand, this.chunkPos.add(x, y, z));
+					}
+				}
 			}
 		}
 		

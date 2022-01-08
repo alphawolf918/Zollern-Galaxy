@@ -36,6 +36,7 @@ public class WorldGenUFO extends ZGWorldGenMaster {
 	
 	@Override
 	public boolean generate(World world, Random rand, BlockPos position) {
+		position = position.add(0, 20, 0);
 		this.setBlock(world, position.add(0, 20, 24), this.casingState);
 		this.setBlock(world, position.add(0, 20, 25), this.casingState);
 		this.setBlock(world, position.add(0, 20, 26), this.casingState);
