@@ -31,6 +31,7 @@ import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitMetz
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitOasis;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitPerdita;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitPurgot;
+import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitTlaloc;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitToci;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitVortex;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitXantheon;
@@ -278,6 +279,20 @@ public class ZGSkyProviderHandler {
 				if (world.provider.getSkyRenderer() == null || world.provider.getSkyRenderer() instanceof SkyProviderOrbit) {
 					SkyProviderOrbitZG sky = new SkyProviderOrbitZG(new ResourceLocation(ZGInfo.MOD_ID + ":textures/gui/toci.png"), "toci", world.provider);
 					WorldProviderOrbitToci provider = (WorldProviderOrbitToci) world.provider;
+					provider.setSpinDeltaPerTick(provider.getSpinManager().getSpinRate());
+					world.provider.setSkyRenderer(sky);
+				}
+				
+				if (world.provider.getCloudRenderer() == null) {
+					world.provider.setCloudRenderer(new CloudRenderer());
+				}
+			}
+			
+			// Pantheon (Tlaloc)
+			if (world.provider instanceof WorldProviderOrbitTlaloc) {
+				if (world.provider.getSkyRenderer() == null || world.provider.getSkyRenderer() instanceof SkyProviderOrbit) {
+					SkyProviderOrbitZG sky = new SkyProviderOrbitZG(new ResourceLocation(ZGInfo.MOD_ID + ":textures/gui/tlaloc.png"), "tlaloc", world.provider);
+					WorldProviderOrbitTlaloc provider = (WorldProviderOrbitTlaloc) world.provider;
 					provider.setSpinDeltaPerTick(provider.getSpinManager().getSpinRate());
 					world.provider.setSkyRenderer(sky);
 				}

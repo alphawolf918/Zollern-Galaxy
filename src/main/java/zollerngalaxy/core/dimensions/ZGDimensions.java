@@ -24,6 +24,7 @@ import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitMetz
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitOasis;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitPerdita;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitPurgot;
+import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitTlaloc;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitToci;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitVortex;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitXantheon;
@@ -90,6 +91,7 @@ public class ZGDimensions {
 	public static DimensionType EXODUS_ORBIT;
 	public static DimensionType EXODUS_ORBIT_STATIC;
 	
+	// Pantheon
 	public static DimensionType VORTEX;
 	public static DimensionType VORTEX_ORBIT;
 	public static DimensionType VORTEX_ORBIT_STATIC;
@@ -107,6 +109,8 @@ public class ZGDimensions {
 	public static DimensionType TOCI_ORBIT_STATIC;
 	
 	public static DimensionType TLALOC;
+	public static DimensionType TLALOC_ORBIT;
+	public static DimensionType TLALOC_ORBIT_STATIC;
 	
 	public static void init() {
 		// Psion-6 (Zollus)
@@ -195,10 +199,12 @@ public class ZGDimensions {
 		// Pantheon (Toci)
 		ZGDimensions.TOCI = ZGDimensions.getDimType(ConfigManagerZG.planetTociDimensionId);
 		ZGDimensions.TOCI_ORBIT = DimensionType.register("Toci Space Station", "_toci_orbit", ConfigManagerZG.spaceStationTociId, WorldProviderOrbitToci.class, false);
-		ZGDimensions.TOCI_ORBIT_STATIC = DimensionType.register("Toci Space Station", "_toci_orbit", ConfigManagerZG.spaceStationCentotlStaticId, WorldProviderOrbitToci.class, true);
+		ZGDimensions.TOCI_ORBIT_STATIC = DimensionType.register("Toci Space Station", "_toci_orbit", ConfigManagerZG.spaceStationTlalocStaticId, WorldProviderOrbitToci.class, true);
 		
 		// Pantheon (Tlaloc)
 		ZGDimensions.TLALOC = ZGDimensions.getDimType(ConfigManagerZG.planetTlalocDimensionId);
+		ZGDimensions.TLALOC_ORBIT = DimensionType.register("Tlaloc Space Station", "_tlaloc_orbit", ConfigManagerZG.spaceStationTlalocId, WorldProviderOrbitTlaloc.class, false);
+		ZGDimensions.TLALOC_ORBIT_STATIC = DimensionType.register("Tlaloc Space Station", "_tlaloc_orbit", ConfigManagerZG.spaceStationTlalocStaticId, WorldProviderOrbitTlaloc.class, true);
 	}
 	
 	public static DimensionType getDimType(int dimId) {

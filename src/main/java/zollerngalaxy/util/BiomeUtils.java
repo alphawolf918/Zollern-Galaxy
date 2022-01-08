@@ -27,7 +27,7 @@ public class BiomeUtils {
 	public static boolean isOceanBiome(Biome biome) {
 		if (BiomeUtils.isSpaceBiome(biome)) {
 			BiomeSpace spaceBiome = (BiomeSpace) biome;
-			if (spaceBiome.getBiomeType() == EnumBiomeTypeZG.OCEAN) {
+			if (spaceBiome.getBiomeType() == EnumBiomeTypeZG.OCEAN || spaceBiome.getTempCategory() == TempCategory.OCEAN) {
 				return true;
 			}
 		}

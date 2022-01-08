@@ -73,6 +73,7 @@ public class MessageTeleportToDimension implements IMessage {
 				int y = (int) player.posY;
 				int z = (int) player.posZ;
 				int dim = message.dim;
+				
 				MinecraftServer server = player.getEntityWorld().getMinecraftServer();
 				WorldServer worldServ = server.getWorld(dim);
 				MinecraftServer serverWorld = worldServ.getMinecraftServer();

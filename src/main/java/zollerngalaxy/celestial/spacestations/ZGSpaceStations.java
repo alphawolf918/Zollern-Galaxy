@@ -28,6 +28,7 @@ import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitMetz
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitOasis;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitPerdita;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitPurgot;
+import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitTlaloc;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitToci;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitVortex;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitXantheon;
@@ -159,6 +160,11 @@ public class ZGSpaceStations {
 		TOCI_SPACE_STATION = new ZGSpaceStation("toci", ZGPlanets.planetToci);
 		TOCI_SPACE_STATION.setDimensionInfo(ConfigManagerZG.spaceStationTociId, ConfigManagerZG.spaceStationTociStaticId, WorldProviderOrbitToci.class);
 		totalSpaceStations++;
+		
+		// Pantheon (Tlaloc)
+		TLALOC_SPACE_STATION = new ZGSpaceStation("tlaloc", ZGPlanets.planetTlaloc);
+		TLALOC_SPACE_STATION.setDimensionInfo(ConfigManagerZG.spaceStationTlalocId, ConfigManagerZG.spaceStationTlalocStaticId, WorldProviderOrbitTlaloc.class);
+		totalSpaceStations++;
 	}
 	
 	private static void registerSpaceStations() {
@@ -229,6 +235,10 @@ public class ZGSpaceStations {
 		// Pantheon (Toci)
 		ZGSpaceStations.registerSpaceStation(TOCI_SPACE_STATION, "Toci Space Station", "_toci_orbit", WorldProviderOrbitToci.class, ConfigManagerZG.spaceStationTociId,
 				ConfigManagerZG.spaceStationTociStaticId);
+		
+		// Pantheon (Tlaloc)
+		ZGSpaceStations.registerSpaceStation(TLALOC_SPACE_STATION, "Tlaloc Space Station", "_tlaloc_orbit", WorldProviderOrbitTlaloc.class, ConfigManagerZG.spaceStationTlalocId,
+				ConfigManagerZG.spaceStationTlalocStaticId);
 	}
 	
 	public static void registerSpaceStationRecipes() {
@@ -382,9 +392,18 @@ public class ZGSpaceStations {
 		inputMap = new HashMap<Object, Integer>();
 		inputMap.put("gemSapphire", 32);
 		inputMap.put("waferAdvanced", 1);
-		inputMap.put(new ItemStack(Items.QUARTZ, 8, 0), 24);
+		inputMap.put(new ItemStack(Items.QUARTZ, 8), 24);
 		inputMap.put(ZGItems.purgCrystal, 24);
 		ZGRecipeHelper.addSpaceStationRecipe(ConfigManagerZG.spaceStationTociId, ConfigManagerZG.planetTociDimensionId, inputMap);
+		inputMap.clear();
+		
+		// Pantheon (Tlaloc)
+		inputMap = new HashMap<Object, Integer>();
+		inputMap.put("ingotRhodium", 32);
+		inputMap.put("waferAdvanced", 1);
+		inputMap.put(new ItemStack(ZGItems.compressedRhodium, 8), 24);
+		inputMap.put(ZGItems.rokkite, 24);
+		ZGRecipeHelper.addSpaceStationRecipe(ConfigManagerZG.spaceStationTlalocId, ConfigManagerZG.planetTlalocDimensionId, inputMap);
 		inputMap.clear();
 	}
 	
@@ -395,5 +414,4 @@ public class ZGSpaceStations {
 		GalacticraftRegistry.registerDimension(stationName, stationStringId, stationId, providerClass, false);
 		GalacticraftRegistry.registerDimension(stationName, stationStringId, stationStaticId, providerClass, true);
 	}
-	
 }

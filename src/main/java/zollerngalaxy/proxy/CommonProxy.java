@@ -87,6 +87,7 @@ public class CommonProxy implements IProxy, IGuiHandler {
 		return false;
 	}
 	
+	@Override
 	public void renderBlocksTileEntitySpecialRenderers() {
 	}
 }

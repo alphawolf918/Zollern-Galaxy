@@ -1,7 +1,7 @@
 {
 "parent": "block/block",
 "textures": {
-    "particle": "zollerngalaxy:blocks/treasure_chest_t1",
+    "particle": "galacticraftplanets:blocks/treasure_chest_mars",
     "texture": "zollerngalaxy:models/treasure_chest_t1"
 },
 "elements": [ 

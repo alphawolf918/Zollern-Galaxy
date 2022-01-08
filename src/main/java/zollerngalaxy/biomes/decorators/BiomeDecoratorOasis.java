@@ -146,10 +146,10 @@ public class BiomeDecoratorOasis extends BiomeDecoratorZG {
 		
 		// Battle Towers
 		if (this.generateBattleTowers && this.battleTowersPerChunk > 0 && !BiomeUtils.isOceanBiome(biome)) {
-			if (ZGHelper.rngInt(1, 200) <= 25) {
+			if (ZGHelper.rngInt(1, 200) <= 55) {
 				for (int i = 0; i < this.battleTowersPerChunk; ++i) {
 					y = rand.nextInt(rand.nextInt(genY) + 8);
-					if (y >= 67) {
+					if (y >= 60 && y < 80) {
 						this.battleTowerGen.generate(world, rand, this.chunkPos.add(x, y, z));
 					}
 				}

@@ -11,6 +11,7 @@ Zollern Galaxy v2.0.35
 * Added Vexbots to Tlaloc.
     - Spawn Radiolaria (White Lava) when they die (can be disabled in config).
     - Can't we stay here with the murderous robots?
+    - There is a stronger "Golden" variation as well.
 * Added the Vexbot Boss.
     - Similar to the regular Vexbot, but much bigger, faster, and stronger.
     - Only appears in Tlaloc Dungeons.
@@ -38,8 +39,8 @@ Zollern Galaxy v2.0.35
     - Chance to spawn can be modified in config file or disabled altogether by setting it to 0.
 * Added UFO generation with a chest inside of it and up to 4 Vexbots can spawn.
 * Added Mech Trees to Tlaloc.
-    - Everything is chrome in the FFUUUUTTTUUURRRREEEE!
 * Added Battle Towers with Mob Spawners and Treasure Chests to Oasis.
+    - WARNING: These are incredibly dangerous!
 * 
 
 [CHANGES]
@@ -48,6 +49,8 @@ Zollern Galaxy v2.0.35
 * Greatly increased burn time of Super Charged Coal.
 * Modified some spawn rates, chances and min/max heights of certain generations on Eden.
 * Enhanced custom villager replacements.
+* Galaxy Knights now only have a 10% chance to spawn (if they're enabled in the config) when Gray Aliens are attacked.
+* Greatly lowered health, resistance and strength of Galaxy Knights.
 * 
 
 [FIXES]
@@ -56,5 +59,4 @@ Zollern Galaxy v2.0.35
 * Fixed missing texture block by removing it; was only meant to be there as a test.
 * Fixed Centotl Space Station registration typos.
 * Fixed server crash issues with Bedrock Breaker and Radiance items.
-    - These have been moved from LivingUpdateEvent to PlayerTickEvent.
 * 

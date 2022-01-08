@@ -41,4 +41,6 @@ public interface IProxy {
 	public EntityPlayer getPlayerEntity(MessageContext ctx);
 	
 	public boolean addIModelRegister(IZGFluidModel model);
+	
+	public void renderBlocksTileEntitySpecialRenderers();
 }

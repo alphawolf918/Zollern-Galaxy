@@ -274,11 +274,8 @@ public class ZGEvents {
 		Random rand = new Random();
 		if (entity instanceof EntityPlayer) {
 			EntityPlayer player = (EntityPlayer) entity;
-			InventoryPlayer playerInventory = player.inventory;
 			BlockPos playerLocation = new BlockPos(player.posX, (player.posY - 1), player.posZ);
 			World world = player.world;
-			IBlockState blockState = world.getBlockState(playerLocation);
-			Block block = blockState.getBlock();
 			
 			boolean isCreativeMode = player.capabilities.isCreativeMode;
 			boolean isRadianceActive = player.isPotionActive(ZGPotions.radiance);
@@ -357,7 +354,7 @@ public class ZGEvents {
 		} else if (username.equals("autumnstarfire")) {
 			event.setDisplayname(TextFormatting.LIGHT_PURPLE + "AutumnStarFire" + TextFormatting.WHITE);
 		} else if (username.equals("snorlaxdacat")) {
-			event.setDisplayname(TextFormatting.GREEN + "SnorlaxDaCat" + TextFormatting.WHITE);
+			event.setDisplayname(TextFormatting.RED + "SnorlaxDaCat" + TextFormatting.WHITE);
 		}
 	}
 	
@@ -365,7 +362,8 @@ public class ZGEvents {
 	public void onEntityDamaged(LivingHurtEvent event) {
 		EntityLivingBase ent = event.getEntityLiving();
 		DamageSource src = event.getSource();
-		if (ent instanceof EntityGrayAlien && ConfigManagerZG.spawnGalaxyKnight) {
+		Random rand = ZGHelper.getRNG();
+		if (ent instanceof EntityGrayAlien && ConfigManagerZG.spawnGalaxyKnight && rand.nextInt(100) <= 10) {
 			EntityGrayAlien alien = (EntityGrayAlien) ent;
 			if (src.getTrueSource() instanceof EntityPlayer) {
 				EntityPlayer player = (EntityPlayer) src.getTrueSource();

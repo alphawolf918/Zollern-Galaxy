@@ -17,6 +17,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import zollerngalaxy.core.ZGLootTables;
+import zollerngalaxy.core.ZollernGalaxyCore;
 import zollerngalaxy.lib.ZGInfo;
 import zollerngalaxy.lib.helpers.ZGHelper;
 
@@ -2028,13 +2029,17 @@ public class WorldGenBattleTower extends ZGWorldGenMaster {
 		this.setBlock(world, position.add(9, 17, 9), this.glassState);
 		this.setBlock(world, position.add(9, 17, 10), this.glassState);
 		
+		if (ZollernGalaxyCore.instance().isInTestMode()) {
+			ZGHelper.Log("BATTLE TOWER: " + this.getSpawnedAtString(position));
+		}
+		
 		return true;
 	}
 	
 	private static ResourceLocation getMob(Random rand) {
 		String mobName = "evolved_zombie";
 		String modId = Constants.MOD_ID_CORE;
-		switch (rand.nextInt(13)) {
+		switch (rand.nextInt(14)) {
 			default:
 				mobName = "evolved_zombie";
 				modId = Constants.MOD_ID_CORE;
@@ -2060,7 +2065,7 @@ public class WorldGenBattleTower extends ZGWorldGenMaster {
 				modId = Constants.MOD_ID_CORE;
 				break;
 			case 5:
-				mobName = "galaxyknight";
+				mobName = "vexbot";
 				modId = ZGInfo.MOD_ID;
 				break;
 			case 6:
@@ -2093,6 +2098,10 @@ public class WorldGenBattleTower extends ZGWorldGenMaster {
 				break;
 			case 13:
 				mobName = "ghoul";
+				modId = ZGInfo.MOD_ID;
+				break;
+			case 14:
+				mobName = "vexbotgold";
 				modId = ZGInfo.MOD_ID;
 				break;
 		}

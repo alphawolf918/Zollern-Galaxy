@@ -26,10 +26,10 @@ import zollerngalaxy.biomes.providers.BiomeProviderTlaloc;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.celestial.ZGPlanets;
 import zollerngalaxy.config.ConfigManagerZG;
-import zollerngalaxy.core.ZGLootTables;
 import zollerngalaxy.core.dimensions.ZGDimensions;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderTlaloc;
 import zollerngalaxy.core.dimensions.skyproviders.SkyProviderTlaloc;
+import zollerngalaxy.worldgen.structures.dungeons.RoomTreasureZG;
 
 public class WorldProviderTlaloc extends WorldProviderPlanetZG {
 	
@@ -188,12 +188,12 @@ public class WorldProviderTlaloc extends WorldProviderPlanetZG {
 	
 	@Override
 	public ResourceLocation getDungeonChestType() {
-		return ZGLootTables.CHEST_DUNGEON_TIER10;
+		return RoomTreasureZG.MOONCHEST;
 	}
 	
 	@Override
 	public int getDungeonSpacing() {
-		return 500;
+		return 800;
 	}
 	
 	@Override

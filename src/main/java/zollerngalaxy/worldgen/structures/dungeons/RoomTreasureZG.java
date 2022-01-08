@@ -8,8 +8,7 @@
 package zollerngalaxy.worldgen.structures.dungeons;
 
 import java.util.Random;
-import micdoodle8.mods.galacticraft.core.blocks.BlockTier1TreasureChest;
-import micdoodle8.mods.galacticraft.core.tile.TileEntityTreasureChest;
+import micdoodle8.mods.galacticraft.api.world.IGalacticraftWorldProvider;
 import micdoodle8.mods.galacticraft.core.world.gen.dungeon.DungeonConfiguration;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.EnumFacing;
@@ -18,13 +17,16 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.structure.StructureBoundingBox;
 import net.minecraft.world.gen.structure.StructureComponent;
+import net.minecraft.world.storage.loot.LootTableList;
 import zollerngalaxy.blocks.ZGBlocks;
-import zollerngalaxy.core.ZGLootTables;
-import zollerngalaxy.core.dimensions.worldproviders.WorldProviderTlaloc;
+import zollerngalaxy.blocks.containers.ZGBlockTreasureChest;
+import zollerngalaxy.lib.ZGInfo;
+import zollerngalaxy.tileentities.TileEntityTier10TreasureChestZG;
 
 public class RoomTreasureZG extends SizedPieceZG {
 	
-	public static final ResourceLocation TLALOC_DUNGEON = ZGLootTables.CHEST_DUNGEON_TIER10;
+	public static ResourceLocation MOONCHEST = new ResourceLocation(ZGInfo.MOD_ID, "dungeonchest_t1");
+	public static final ResourceLocation TLALOC_DUNGEON = LootTableList.register(MOONCHEST);
 	
 	public RoomTreasureZG() {
 	}
@@ -79,12 +81,12 @@ public class RoomTreasureZG extends SizedPieceZG {
 					} else if (i == this.sizeX / 2 && j == 1 && k == this.sizeZ / 2) {
 						BlockPos blockpos = new BlockPos(this.getXWithOffset(i, k), this.getYWithOffset(j), this.getZWithOffset(i, k));
 						if (chunkBox.isVecInside(blockpos)) {
-							worldIn.setBlockState(blockpos, ZGBlocks.treasureChestT10.getDefaultState().withProperty(BlockTier1TreasureChest.FACING, this.getDirection().getOpposite()), 2);
-							TileEntityTreasureChest treasureChest = (TileEntityTreasureChest) worldIn.getTileEntity(blockpos);
+							worldIn.setBlockState(blockpos, ZGBlocks.treasureChestT10.getDefaultState().withProperty(ZGBlockTreasureChest.FACING, this.getDirection().getOpposite()), 2);
+							TileEntityTier10TreasureChestZG treasureChest = (TileEntityTier10TreasureChestZG) worldIn.getTileEntity(blockpos);
 							if (treasureChest != null) {
-								ResourceLocation chesttype = TLALOC_DUNGEON;
-								if (worldIn.provider instanceof WorldProviderTlaloc) {
-									chesttype = ((WorldProviderTlaloc) worldIn.provider).getDungeonChestType();
+								ResourceLocation chesttype = RoomTreasureZG.TLALOC_DUNGEON;
+								if (worldIn.provider instanceof IGalacticraftWorldProvider) {
+									chesttype = ((IGalacticraftWorldProvider) worldIn.provider).getDungeonChestType();
 								}
 								treasureChest.setLootTable(chesttype, random.nextLong());
 							}

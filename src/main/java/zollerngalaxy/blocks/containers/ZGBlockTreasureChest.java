@@ -46,5 +46,6 @@ public class ZGBlockTreasureChest extends BlockTier1TreasureChest implements ISi
 	@Override
 	public TileEntity createNewTileEntity(World worldIn, int meta) {
 		return new TileEntityTier10TreasureChestZG();
+		// WorldProviderTlaloc
 	}
 }
