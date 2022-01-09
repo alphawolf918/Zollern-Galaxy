@@ -7,7 +7,7 @@
  */
 package zollerngalaxy.core.dimensions.worldproviders;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import micdoodle8.mods.galacticraft.api.galaxies.CelestialBody;
 import micdoodle8.mods.galacticraft.api.prefab.world.gen.BiomeAdaptive;
@@ -198,9 +198,10 @@ public class WorldProviderTlaloc extends WorldProviderPlanetZG {
 	
 	@Override
 	public List<Block> getSurfaceBlocks() {
-		ArrayList<Block> blockList = new ArrayList<Block>();
+		List<Block> blockList = new LinkedList<>();
 		blockList.add(ZGBlocks.tlalocRock);
 		blockList.add(ZGBlocks.tlalocChrome);
+		blockList.add(ZGBlocks.atheonConstructBlock);
 		return blockList;
 	}
 	

@@ -21,7 +21,7 @@ import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderToci;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 import zollerngalaxy.core.enums.EnumOreGenZG;
 import zollerngalaxy.lib.helpers.ZGHelper;
-import zollerngalaxy.worldgen.WorldGenCraterZG;
+import zollerngalaxy.worldgen.WorldGenSmallCraterZG;
 import zollerngalaxy.worldgen.WorldGenMinableZG;
 import zollerngalaxy.worldgen.WorldGenOutpost;
 import zollerngalaxy.worldgen.WorldGenSmallHouse;
@@ -65,7 +65,7 @@ public class BiomeDecoratorToci extends BiomeDecoratorZG {
 	public boolean generateHouses = true;
 	
 	private WorldGenerator tunnelGen = new WorldGenTunnel();
-	private WorldGenerator craterGen = new WorldGenCraterZG();
+	private WorldGenerator craterGen = new WorldGenSmallCraterZG();
 	private WorldGenerator houseGen = new WorldGenSmallHouse(COBBLESTONE.getDefaultState(), STONE_BRICKS.getDefaultState(), WOOD_PLANKS.getDefaultState());
 	
 	public BiomeDecoratorToci() {

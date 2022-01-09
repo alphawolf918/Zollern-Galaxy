@@ -18,6 +18,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.structure.StructureBoundingBox;
 import zollerngalaxy.blocks.containers.ZGBlockTreasureChest;
+import zollerngalaxy.core.ZGLootTables;
 
 public class RoomChestZG extends RoomEmptyZG {
 	
@@ -40,7 +41,7 @@ public class RoomChestZG extends RoomEmptyZG {
 			TileEntityChest chest = (TileEntityChest) worldIn.getTileEntity(blockpos);
 			
 			if (chest != null) {
-				ResourceLocation chesttype = RoomTreasureZG.TLALOC_DUNGEON;
+				ResourceLocation chesttype = ZGLootTables.CHEST_DUNGEON_TIER10_DEFAULT;
 				if (worldIn.provider instanceof IGalacticraftWorldProvider) {
 					chesttype = ((IGalacticraftWorldProvider) worldIn.provider).getDungeonChestType();
 				}

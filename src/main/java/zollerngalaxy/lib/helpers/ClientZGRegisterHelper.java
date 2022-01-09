@@ -85,8 +85,7 @@ public class ClientZGRegisterHelper {
 	}
 	
 	public static void registerModelRender(Item item, int meta, String variantName) {
-		Minecraft.getMinecraft().getRenderItem().getItemModelMesher()
-				.register(item, meta, new ModelResourceLocation("zollerngalaxy:" + variantName, "inventory"));
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, meta, new ModelResourceLocation("zollerngalaxy:" + variantName, "inventory"));
 	}
 	
 	public static void registerModelRender(Item item, Class<? extends Enum> enumClass) {

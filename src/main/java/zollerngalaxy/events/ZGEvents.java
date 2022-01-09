@@ -186,7 +186,7 @@ public class ZGEvents {
 		} else if (provider instanceof WorldProviderCaligro) {
 			// Radiance Protection
 			Item radium = ZGItems.radium;
-			ItemStack radiumStack = new ItemStack(radium);
+			ItemStack radiumStack = new ItemStack(radium, 1);
 			boolean hasRadium = playerInventory.hasItemStack(radiumStack);
 			
 			// Radiance Check

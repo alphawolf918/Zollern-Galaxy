@@ -8,7 +8,6 @@
 package zollerngalaxy.worldgen.structures.dungeons;
 
 import java.util.Random;
-import micdoodle8.mods.galacticraft.api.world.IGalacticraftWorldProvider;
 import micdoodle8.mods.galacticraft.core.world.gen.dungeon.DungeonConfiguration;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.EnumFacing;
@@ -25,7 +24,7 @@ import zollerngalaxy.tileentities.TileEntityTier10TreasureChestZG;
 
 public class RoomTreasureZG extends SizedPieceZG {
 	
-	public static ResourceLocation MOONCHEST = new ResourceLocation(ZGInfo.MOD_ID, "dungeonchest_t1");
+	public static ResourceLocation MOONCHEST = new ResourceLocation(ZGInfo.MOD_ID, "chests/dungeonchest_t10");
 	public static final ResourceLocation TLALOC_DUNGEON = LootTableList.register(MOONCHEST);
 	
 	public RoomTreasureZG() {
@@ -84,10 +83,7 @@ public class RoomTreasureZG extends SizedPieceZG {
 							worldIn.setBlockState(blockpos, ZGBlocks.treasureChestT10.getDefaultState().withProperty(ZGBlockTreasureChest.FACING, this.getDirection().getOpposite()), 2);
 							TileEntityTier10TreasureChestZG treasureChest = (TileEntityTier10TreasureChestZG) worldIn.getTileEntity(blockpos);
 							if (treasureChest != null) {
-								ResourceLocation chesttype = RoomTreasureZG.TLALOC_DUNGEON;
-								if (worldIn.provider instanceof IGalacticraftWorldProvider) {
-									chesttype = ((IGalacticraftWorldProvider) worldIn.provider).getDungeonChestType();
-								}
+								ResourceLocation chesttype = TLALOC_DUNGEON;
 								treasureChest.setLootTable(chesttype, random.nextLong());
 							}
 						}

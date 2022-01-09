@@ -22,7 +22,7 @@ import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 import zollerngalaxy.core.enums.EnumOreGenZG;
 import zollerngalaxy.lib.helpers.ZGDecorateHelper;
 import zollerngalaxy.lib.helpers.ZGHelper;
-import zollerngalaxy.worldgen.WorldGenCraterZG;
+import zollerngalaxy.worldgen.WorldGenSmallCraterZG;
 import zollerngalaxy.worldgen.WorldGenMinableZG;
 import zollerngalaxy.worldgen.WorldGenOutpost;
 import zollerngalaxy.worldgen.WorldGenTunnel;
@@ -72,7 +72,7 @@ public class BiomeDecoratorTlaloc extends BiomeDecoratorZG {
 	public boolean generateMechTrees = true;
 	
 	private WorldGenerator tunnelGen = new WorldGenTunnel();
-	private WorldGenerator craterGen = new WorldGenCraterZG();
+	private WorldGenerator craterGen = new WorldGenSmallCraterZG();
 	private WorldGenerator plutoniumCrystalsGen = new WorldGenZGCrystals(ZGBlocks.blockCrystalsPlutonium.getDefaultState(), 65);
 	private WorldGenerator ufoGen = new WorldGenUFO(MECH_ROCK_STATE, CHROME_STATE, STONE_STATE, GLOW_STATE);
 	private WorldGenerator mechTreeGen = new WorldGenMechTree();

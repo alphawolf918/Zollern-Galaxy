@@ -10,6 +10,7 @@ package zollerngalaxy.blocks;
 import java.lang.reflect.Constructor;
 import com.google.common.collect.ObjectArrays;
 import micdoodle8.mods.galacticraft.core.GCItems;
+import micdoodle8.mods.galacticraft.core.items.ItemBlockDesc;
 import micdoodle8.mods.galacticraft.planets.mars.items.MarsItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
@@ -789,19 +790,22 @@ public class ZGBlocks {
 		ZGBlocks.registerBlocks(tlalocRock, tlalocChrome, tlalocMechRock, tlalocDungeonBricks, tlalocStone, tlalocRedstoneOre, tlalocFueltoniumOre, tlalocShiniumOre, tlalocZollerniumOre,
 				tlalocSuperChargedCoalOre, tlalocQuartzOre, tlalocCertusQuartzOre, tlalocFluixOre, tlalocPlutoniumOre);
 		//
-		ZGBlocks.registerBlocks(treasureChestT10);
+		ZGBlocks.addBlockItemDesc(treasureChestT10);
 		//
 		ZGHelper.Log("Loaded a total of " + totalBlocks + " new blocks.");
 	}
 	
 	public static void initSpawnerBlocks() throws NoSuchMethodException {
 		registerSpecialBlock(TLALOC_SPAWNER, ItemBlockDefaultZG.class, "boss_spawner_t1");
-		// registerSpecialBlock(treasureChestT10, ItemBlockDesc.class,
-		// treasureChestT10.getUnlocalizedName().substring(5));
 	}
 	
 	private static void addBlock(Block block) {
 		CommonZGRegisterHelper.registerBlock(block);
+		totalBlocks++;
+	}
+	
+	private static void addBlockItemDesc(Block block) {
+		CommonZGRegisterHelper.registerBlock(block, ItemBlockDesc::new);
 		totalBlocks++;
 	}
 	
