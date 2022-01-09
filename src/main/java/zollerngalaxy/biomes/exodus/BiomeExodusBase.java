@@ -72,7 +72,6 @@ public abstract class BiomeExodusBase extends BiomeSpace {
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityCreeper.class, 100, 4, 4));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityEnderman.class, 100, 1, 4));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityWitch.class, 5, 1, 1));
-		
 		this.setStoneBlock(ZGBlocks.exodusStone);
 		this.setPlanetForBiome(ZGPlanets.planetExodus);
 	}
@@ -99,6 +98,8 @@ public abstract class BiomeExodusBase extends BiomeSpace {
 		for (int j1 = 255; j1 >= 0; --j1) {
 			if (j1 == 0) {
 				chunkPrimerIn.setBlockState(i1, j1, l, BEDROCK);
+			} else if (j1 >= 128) {
+				chunkPrimerIn.setBlockState(i1, j1, l, AIR);
 			} else {
 				IBlockState iblockstate2 = chunkPrimerIn.getBlockState(i1, j1, l);
 				if (this.getBiomeType() == EnumBiomeTypeZG.OCEAN) {

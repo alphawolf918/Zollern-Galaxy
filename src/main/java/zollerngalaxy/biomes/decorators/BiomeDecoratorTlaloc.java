@@ -22,9 +22,11 @@ import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 import zollerngalaxy.core.enums.EnumOreGenZG;
 import zollerngalaxy.lib.helpers.ZGDecorateHelper;
 import zollerngalaxy.lib.helpers.ZGHelper;
-import zollerngalaxy.worldgen.WorldGenSmallCraterZG;
+import zollerngalaxy.util.BiomeUtils;
+import zollerngalaxy.worldgen.WorldGenBattleTower;
 import zollerngalaxy.worldgen.WorldGenMinableZG;
 import zollerngalaxy.worldgen.WorldGenOutpost;
+import zollerngalaxy.worldgen.WorldGenSmallCraterZG;
 import zollerngalaxy.worldgen.WorldGenTunnel;
 import zollerngalaxy.worldgen.WorldGenUFO;
 import zollerngalaxy.worldgen.WorldGenZGCrystals;
@@ -64,18 +66,21 @@ public class BiomeDecoratorTlaloc extends BiomeDecoratorZG {
 	public int plutoniumCrystalsPerChunk = 2;
 	public int ufosPerChunk = 2;
 	public int mechTreesPerChunk = 0;
+	public int battleTowersPerChunk = 1;
 	
 	public boolean generateCraters = true;
 	public boolean generateTunnels = true;
 	public boolean generatePlutoniumCrystals = true;
 	public boolean generateUFOs = true;
 	public boolean generateMechTrees = true;
+	public boolean generateBattleTowers = true;
 	
 	private WorldGenerator tunnelGen = new WorldGenTunnel();
 	private WorldGenerator craterGen = new WorldGenSmallCraterZG();
 	private WorldGenerator plutoniumCrystalsGen = new WorldGenZGCrystals(ZGBlocks.blockCrystalsPlutonium.getDefaultState(), 65);
 	private WorldGenerator ufoGen = new WorldGenUFO(MECH_ROCK_STATE, CHROME_STATE, STONE_STATE, GLOW_STATE);
 	private WorldGenerator mechTreeGen = new WorldGenMechTree();
+	public WorldGenerator battleTowerGen = new WorldGenBattleTower(ZGBlocks.xantheonConstructBlock.getDefaultState(), ZGBlocks.tlalocChrome.getDefaultState());
 	
 	public BiomeDecoratorTlaloc() {
 		this.constructGen = new WorldGenMinableZG(CONSTRUCT, ROCK, EnumOreGenZG.CONSTRUCTED);
@@ -182,6 +187,18 @@ public class BiomeDecoratorTlaloc extends BiomeDecoratorZG {
 				
 				if (rand.nextInt(100) <= 25) {
 					mechTreeGen.generate(world, rand, this.chunkPos.add(x, y, z));
+				}
+			}
+		}
+		
+		// Battle Towers
+		if (this.generateBattleTowers && this.battleTowersPerChunk > 0 && !BiomeUtils.isOceanBiome(biome)) {
+			if (ZGHelper.rngInt(1, 250) <= 25) {
+				for (int i = 0; i < this.battleTowersPerChunk; ++i) {
+					y = rand.nextInt(rand.nextInt(genY) + 8);
+					if (y >= 60 && y < 80) {
+						this.battleTowerGen.generate(world, rand, this.chunkPos.add(x, y, z));
+					}
 				}
 			}
 		}

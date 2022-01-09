@@ -69,7 +69,6 @@ public class BiomeTociBase extends BiomeSpace {
 		IBlockState topState = this.topBlock;
 		IBlockState fillState = this.fillerBlock;
 		int j = -1;
-		// int k = (int) (noiseVal / 3.0D + 3.0D + rand.nextDouble() * 0.25D);
 		int k = (int) (noiseVal / 3.5D + 4.0D + rand.nextDouble() * ZGHelper.rngDbl(0.25D, 0.45D));
 		int l = x & 15;
 		int i1 = z & 15;

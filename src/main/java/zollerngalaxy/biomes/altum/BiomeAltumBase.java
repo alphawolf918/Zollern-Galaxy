@@ -87,6 +87,8 @@ public class BiomeAltumBase extends BiomeSpace {
 		for (int y = 255; y >= 0; --y) {
 			if (y == 0) {
 				chunkPrimerIn.setBlockState(x2, y, z2, BEDROCK);
+			} else if (y >= 128) {
+				chunkPrimerIn.setBlockState(x2, y, z2, AIR);
 			} else {
 				IBlockState iblockstate2 = chunkPrimerIn.getBlockState(x2, y, z2);
 				if (this.getBiomeType() == EnumBiomeTypeZG.OCEAN) {

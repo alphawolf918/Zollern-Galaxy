@@ -77,6 +77,8 @@ public class BiomeZollusBase extends BiomeSpace {
 		for (int j1 = 255; j1 >= 0; --j1) {
 			if (j1 == 0) {
 				chunkPrimerIn.setBlockState(i1, j1, l, BEDROCK);
+			} else if (j1 >= 128) {
+				chunkPrimerIn.setBlockState(i1, j1, l, AIR);
 			} else {
 				IBlockState iblockstate2 = chunkPrimerIn.getBlockState(i1, j1, l);
 				if (this.getBiomeType() == EnumBiomeTypeZG.OCEAN) {

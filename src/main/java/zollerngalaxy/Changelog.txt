@@ -39,9 +39,9 @@ Zollern Galaxy v2.0.35
     - Chance to spawn can be modified in config file or disabled altogether by setting it to 0.
 * Added UFO generation with a chest inside of it and up to 4 Vexbots can spawn.
 * Added Mech Trees to Tlaloc.
-* Added Battle Towers with Mob Spawners and Treasure Chests to Oasis.
+* Added Battle Towers with Mob Spawners and Treasure Chests to Oasis and Tlaloc.
     - WARNING: These are incredibly dangerous!
-* 
+    - Will eventually be added to every planet.
 
 [CHANGES]
 * Slightly increased strength of Facehugger.
@@ -51,7 +51,6 @@ Zollern Galaxy v2.0.35
 * Enhanced custom villager replacements.
 * Galaxy Knights now only have a 10% chance to spawn (if they're enabled in the config) when Gray Aliens are attacked.
 * Greatly lowered health, resistance and strength of Galaxy Knights.
-* 
 
 [FIXES]
 * Fixed Xenomorph Queen laying 'ghost eggs' on server-side.
@@ -59,4 +58,4 @@ Zollern Galaxy v2.0.35
 * Fixed missing texture block by removing it; was only meant to be there as a test.
 * Fixed Centotl Space Station registration typos.
 * Fixed server crash issues with Bedrock Breaker and Radiance items.
-* 
+* Fixed random "platforms" spawning way up in the air on every ZG world.

@@ -17,7 +17,7 @@ public class ZGInfo {
 	public static final String MOD_ID = "zollerngalaxy";
 	public static final String vMAJOR = "2";
 	public static final String vMINOR = "0";
-	public static final String vBUILD = "34";
+	public static final String vBUILD = "35";
 	public static final String MOD_VERSION = vMAJOR + "." + vMINOR + "." + vBUILD;
 	public static final String MINECRAFT_VERSION = "1.12.2";
 	public static final String OFFICIAL_NAME = "Zollern Galaxy";
@@ -28,8 +28,8 @@ public class ZGInfo {
 	public static final String CHANNEL = ZGInfo.MOD_ID;
 	public static final String FORGE_MODS = "before:planetprogression@[1.12.2-0.3.8,]; " + "before:extraplanets; " + "before:powersuits;";
 	public static final String FORGE_VERSION = "after:forge@[14.23.5.2847,); after:tconstruct; ";
-	public static final String DEPENDENCIES = "required-after:galacticraftcore@[4.0.2.261,); " + "required-after:galacticraftplanets@[4.0.2.261,); "
-			+ "required-after:micdoodlecore; " + ZGInfo.FORGE_VERSION + ZGInfo.FORGE_MODS;
+	public static final String DEPENDENCIES = "required-after:galacticraftcore@[4.0.2.261,); " + "required-after:galacticraftplanets@[4.0.2.261,); " + "required-after:micdoodlecore; "
+			+ ZGInfo.FORGE_VERSION + ZGInfo.FORGE_MODS;
 	
 	public static final int SPACE_STATION_LOWER_Y_LIMIT = 10;
 	public static final int SPACE_STATION_HIGHER_Y_LIMIT = 1200;
