@@ -11,6 +11,8 @@ import cofh.api.util.ThermalExpansionHelper;
 import cofh.core.util.helpers.ItemHelper;
 import cofh.thermalfoundation.init.TFItems;
 import net.minecraft.block.Block;
+import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import zollerngalaxy.blocks.ZGBlocks;
@@ -107,6 +109,7 @@ public class PulverizerRecipes {
 		// Shinium
 		PulverizerRecipes.addRecipe(ZGBlocks.caligroShiniumOre, ZGItems.dustShinium);
 		PulverizerRecipes.addRecipe(ZGBlocks.centoShiniumOre, ZGItems.dustShinium);
+		PulverizerRecipes.addRecipe(ZGBlocks.tlalocShiniumOre, ZGItems.dustShinium);
 		
 		// Steel
 		PulverizerRecipes.addRecipe(ZGBlocks.edenSteelOre, TFItems.itemMaterial.dustSteel, 96);
@@ -145,6 +148,7 @@ public class PulverizerRecipes {
 		PulverizerRecipes.addRecipe(ZGBlocks.altumZollerniumOre, ZGItems.dustZollernium);
 		PulverizerRecipes.addRecipe(ZGBlocks.astrosZollerniumOre, ZGItems.dustZollernium);
 		PulverizerRecipes.addRecipe(ZGBlocks.centoZollerniumOre, ZGItems.dustZollernium);
+		PulverizerRecipes.addRecipe(ZGBlocks.tlalocZollerniumOre, ZGItems.dustZollernium);
 		
 		// Zinc
 		PulverizerRecipes.addRecipe(ZGBlocks.atheonZincOre, ZGItems.dustZinc);
@@ -158,6 +162,7 @@ public class PulverizerRecipes {
 		PulverizerRecipes.addRecipe(ZGBlocks.vortexFueltoniumOre, ZGItems.dustFueltonium);
 		PulverizerRecipes.addRecipe(ZGBlocks.centoFueltoniumOre, ZGItems.dustFueltonium);
 		PulverizerRecipes.addRecipe(ZGBlocks.tociFueltoniumOre, ZGItems.dustFueltonium);
+		PulverizerRecipes.addRecipe(ZGBlocks.tlalocFueltoniumOre, ZGItems.dustFueltonium);
 		
 		// Rhodium
 		PulverizerRecipes.addRecipe(ZGBlocks.altumRhodiumOre, ZGItems.dustRhodium);
@@ -169,6 +174,12 @@ public class PulverizerRecipes {
 		PulverizerRecipes.addRecipe(ZGBlocks.xantheonPlutoniumOre, ZGItems.dustPlutonium);
 		PulverizerRecipes.addRecipe(ZGBlocks.tlalocPlutoniumOre, ZGItems.dustPlutonium);
 		PulverizerRecipes.addRecipe(ZGItems.ingotPlutonium, ZGItems.dustPlutonium);
+		
+		// Obsidian
+		PulverizerRecipes.addRecipe(Blocks.OBSIDIAN, new ItemStack(ZGItems.dustObsidian, 9));
+		
+		// Wheat -> Flour
+		ThermalExpansionHelper.addPulverizerRecipe(400, new ItemStack(Items.WHEAT), new ItemStack(ZGItems.flour, 2));
 		
 		ZGHelper.Log("Loaded a total of " + totalRecipes + " new Pulverizer recipes.");
 	}

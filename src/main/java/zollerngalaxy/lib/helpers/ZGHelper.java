@@ -33,6 +33,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldProvider;
 import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.creativetabs.CreativeTabsHelper;
 import zollerngalaxy.creativetabs.ZGTabs;
 import zollerngalaxy.lib.ZGInfo;
@@ -462,6 +463,23 @@ public final class ZGHelper {
 		TileEntityMobSpawner spawner = (TileEntityMobSpawner) world.getTileEntity(pos);
 		if (spawner != null) {
 			spawner.getSpawnerBaseLogic().setEntityId(mob);
+		}
+	}
+	
+	public static Block getRandomCrop(Random par1Random) {
+		switch (par1Random.nextInt(5)) {
+			case 0:
+				return ZGBlocks.cropBlueberry;
+			case 1:
+				return ZGBlocks.cropBlackberry;
+			case 2:
+				return ZGBlocks.cropStrawberry;
+			case 3:
+				return ZGBlocks.cropGrape;
+			case 4:
+				return ZGBlocks.cropTomato;
+			default:
+				return Blocks.WHEAT;
 		}
 	}
 }

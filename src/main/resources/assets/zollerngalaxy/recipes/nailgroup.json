@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " NN",
+    " NN",
+    "   "
+  ],
+  "key": {
+    "N": {
+      "item": "zollerngalaxy:nail"
+    }
+  },
+  "result": {
+    "item": "zollerngalaxy:nailgroup"
+  }
+}

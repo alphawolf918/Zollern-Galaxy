@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "age\u003d0": {
+      "model": "zollerngalaxy:grape_stage_0"
+    },
+    "age\u003d1": {
+      "model": "zollerngalaxy:grape_stage_0"
+    },
+    "age\u003d2": {
+      "model": "zollerngalaxy:grape_stage_1"
+    },
+    "age\u003d3": {
+      "model": "zollerngalaxy:grape_stage_1"
+    },
+    "age\u003d4": {
+      "model": "zollerngalaxy:grape_stage_2"
+    },
+    "age\u003d5": {
+      "model": "zollerngalaxy:grape_stage_2"
+    },
+    "age\u003d6": {
+      "model": "zollerngalaxy:grape_stage_3"
+    },
+    "age\u003d7": {
+      "model": "zollerngalaxy:grape_stage_3"
+    }
+  }
+}

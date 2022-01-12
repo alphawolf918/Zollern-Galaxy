@@ -297,6 +297,35 @@ public final class JSONFactory {
 		JSONFactory.registerFlowerBlockState(blockName);
 	}
 	
+	public static void registerCrop(String blockName) {
+		if (!ENABLE) {
+			return;
+		}
+		
+		String jsonFileName = blockName + ".json";
+		JSONFactory.setupBlockDirs();
+		
+		Map<String, Object> json = new LinkedHashMap<>();
+		Map<String, Object> crop = new LinkedHashMap<>();
+		
+		crop.put("crop", MOD_ID + ":blocks/" + blockName);
+		json.put("parent", "block/crop");
+		json.put("textures", crop);
+		
+		File file = new File(BLOCK_DIR, jsonFileName);
+		
+		while (file.exists()) {
+			file.delete();
+			file = new File(BLOCK_DIR, jsonFileName);
+		}
+		
+		try (FileWriter writer = new FileWriter(file)) {
+			GSON.toJson(json, writer);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
 	public static void registerSapling(String blockName) {
 		if (!ENABLE) {
 			return;
@@ -329,51 +358,6 @@ public final class JSONFactory {
 		JSONFactory.registerSaplingBlockState(blockName);
 	}
 	
-	public static void registerIngotStack(String blockName) {
-		if (!ENABLE) {
-			return;
-		}
-		
-		// String jsonFileName = blockName + ".json";
-		// JSONFactory.setupBlockDirs();
-		//
-		// File file = new File(BLOCK_CUSTOM_DIR, jsonFileName);
-		// while (file.exists()) {
-		// file.delete();
-		// }
-		//
-		// Map<String, Object> json = new LinkedHashMap<>();
-		//
-		// // TODO
-		//
-		// Path src = Paths.get(JSON_TEMPLATE_PATH + "IngotStack.json");
-		// Path target = Paths.get(BLOCK_CUSTOM_DIR + "/" + jsonFileName);
-		//
-		// try {
-		// Files.copy(src.toFile(), target.toFile());
-		// BufferedReader reader = Files.newReader(target.toFile(), Charset.defaultCharset());
-		// Map<String, Object> map = GSON.fromJson(reader, Map.class);
-		// for (Map.Entry<String, Object> entry : map.entrySet()) {
-		// ZGHelper.Log(entry.getKey() + "=" + entry.getValue());
-		// }
-		// reader.close();
-		// } catch (IOException e) {
-		// ZGHelper.LogErr("Error when attempting to copy " + src + " to " + target);
-		// e.printStackTrace();
-		// }
-		//
-		// JSONFactory.registerIngotStackBlockState(blockName);
-	}
-	
-	private static void registerIngotStackBlockState(String blockName) {
-		// TODO
-		JSONFactory.registerIngotStackBlockItem(blockName);
-	}
-	
-	private static void registerIngotStackBlockItem(String blockName) {
-		// TODO
-	}
-	
 	private static void registerSaplingBlockState(String blockName) {
 		String jsonFileName = blockName + ".json";
 		Map<String, Object> json = new LinkedHashMap<>();
@@ -399,6 +383,55 @@ public final class JSONFactory {
 		}
 		
 		JSONFactory.registerBlockAsItem(blockName);
+	}
+	
+	public static void registerCropBlockState(String blockName) {
+		String jsonFileName = blockName + ".json";
+		Map<String, Object> json = new LinkedHashMap<>();
+		Map<String, Object> ages = new LinkedHashMap<>();
+		Map<String, Object> model0 = new LinkedHashMap<>();
+		Map<String, Object> model1 = new LinkedHashMap<>();
+		Map<String, Object> model2 = new LinkedHashMap<>();
+		Map<String, Object> model3 = new LinkedHashMap<>();
+		Map<String, Object> model4 = new LinkedHashMap<>();
+		Map<String, Object> model5 = new LinkedHashMap<>();
+		Map<String, Object> model6 = new LinkedHashMap<>();
+		Map<String, Object> model7 = new LinkedHashMap<>();
+		
+		blockName = blockName.replace("_crop", "");
+		
+		model0.put("model", MOD_ID + ":" + blockName + "_stage_0");
+		model1.put("model", MOD_ID + ":" + blockName + "_stage_0");
+		model2.put("model", MOD_ID + ":" + blockName + "_stage_1");
+		model3.put("model", MOD_ID + ":" + blockName + "_stage_1");
+		model4.put("model", MOD_ID + ":" + blockName + "_stage_2");
+		model5.put("model", MOD_ID + ":" + blockName + "_stage_2");
+		model6.put("model", MOD_ID + ":" + blockName + "_stage_3");
+		model7.put("model", MOD_ID + ":" + blockName + "_stage_3");
+		
+		ages.put("age=0", model0);
+		ages.put("age=1", model1);
+		ages.put("age=2", model2);
+		ages.put("age=3", model3);
+		ages.put("age=4", model4);
+		ages.put("age=5", model5);
+		ages.put("age=6", model6);
+		ages.put("age=7", model7);
+		
+		json.put("variants", ages);
+		
+		File file = new File(BLOCK_STATES_DIR, jsonFileName);
+		
+		while (file.exists()) {
+			file.delete();
+			file = new File(BLOCK_STATES_DIR, jsonFileName);
+		}
+		
+		try (FileWriter writer = new FileWriter(file)) {
+			GSON.toJson(json, writer);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	private static void registerFlowerBlockState(String blockName) {
@@ -611,6 +644,51 @@ public final class JSONFactory {
 		}
 		
 		JSONFactory.registerBlockItem(blockName);
+	}
+	
+	public static void registerIngotStack(String blockName) {
+		if (!ENABLE) {
+			return;
+		}
+		
+		// String jsonFileName = blockName + ".json";
+		// JSONFactory.setupBlockDirs();
+		//
+		// File file = new File(BLOCK_CUSTOM_DIR, jsonFileName);
+		// while (file.exists()) {
+		// file.delete();
+		// }
+		//
+		// Map<String, Object> json = new LinkedHashMap<>();
+		//
+		// // TODO
+		//
+		// Path src = Paths.get(JSON_TEMPLATE_PATH + "IngotStack.json");
+		// Path target = Paths.get(BLOCK_CUSTOM_DIR + "/" + jsonFileName);
+		//
+		// try {
+		// Files.copy(src.toFile(), target.toFile());
+		// BufferedReader reader = Files.newReader(target.toFile(), Charset.defaultCharset());
+		// Map<String, Object> map = GSON.fromJson(reader, Map.class);
+		// for (Map.Entry<String, Object> entry : map.entrySet()) {
+		// ZGHelper.Log(entry.getKey() + "=" + entry.getValue());
+		// }
+		// reader.close();
+		// } catch (IOException e) {
+		// ZGHelper.LogErr("Error when attempting to copy " + src + " to " + target);
+		// e.printStackTrace();
+		// }
+		//
+		// JSONFactory.registerIngotStackBlockState(blockName);
+	}
+	
+	private static void registerIngotStackBlockState(String blockName) {
+		// TODO
+		JSONFactory.registerIngotStackBlockItem(blockName);
+	}
+	
+	private static void registerIngotStackBlockItem(String blockName) {
+		// TODO
 	}
 	
 	protected static class InnerArray {

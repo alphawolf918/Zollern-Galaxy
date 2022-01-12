@@ -33,6 +33,9 @@ import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 import zollerngalaxy.core.enums.EnumOreGenZG;
 import zollerngalaxy.lib.helpers.ZGDecorateHelper;
 import zollerngalaxy.lib.helpers.ZGHelper;
+import zollerngalaxy.util.BiomeUtils;
+import zollerngalaxy.worldgen.WorldGenBattleTower;
+import zollerngalaxy.worldgen.WorldGenCrops;
 import zollerngalaxy.worldgen.WorldGenLakesZG;
 import zollerngalaxy.worldgen.WorldGenMinableZG;
 import zollerngalaxy.worldgen.WorldGenOutpost;
@@ -48,11 +51,17 @@ public class BiomeDecoratorMetztli extends BiomeDecoratorZG {
 	private WorldGenerator emeraldGen;
 	
 	private WorldGenerator tallGrassGen = new WorldGenTallGrass(BlockTallGrass.EnumType.GRASS);
-	private WorldGenerator treeGenMushroom = new WorldGenZGMushroomTree(false, ZGHelper.rngInt(3, 6));
+	private WorldGenerator treeGenMushroom = new WorldGenZGMushroomTree(false, ZGHelper.rngInt(3, 8));
 	private WorldGenerator waterLilyGen = new WorldGenWaterlily();
 	private WorldGenerator treeGen = new WorldGenBigTree(true);
 	private WorldGenerator cactusGen = new WorldGenCactus();
 	private WorldGenerator deadBushGen = new WorldGenDeadBush();
+	public WorldGenerator battleTowerGen = new WorldGenBattleTower(Blocks.COBBLESTONE.getDefaultState(), Blocks.GLOWSTONE.getDefaultState());
+	public WorldGenerator strawberryGen = new WorldGenCrops(ZGBlocks.cropStrawberry.getDefaultState());
+	public WorldGenerator blackberryGen = new WorldGenCrops(ZGBlocks.cropBlackberry.getDefaultState());
+	public WorldGenerator blueberryGen = new WorldGenCrops(ZGBlocks.cropBlueberry.getDefaultState());
+	public WorldGenerator grapeGen = new WorldGenCrops(ZGBlocks.cropGrape.getDefaultState());
+	public WorldGenerator tomatoGen = new WorldGenCrops(ZGBlocks.cropTomato.getDefaultState());
 	
 	public int waterLakesPerChunk = 3;
 	public int lavaLakesPerChunk = 4;
@@ -63,6 +72,8 @@ public class BiomeDecoratorMetztli extends BiomeDecoratorZG {
 	public int cactiPerChunk = 5;
 	public int deadBushesPerChunk = 4;
 	public int reedsPerChunk = 4;
+	public int battleTowersPerChunk = 2;
+	public int cropsPerChunk = 2;
 	
 	public boolean generateLakes = true;
 	public boolean generateWaterLilies = true;
@@ -74,6 +85,8 @@ public class BiomeDecoratorMetztli extends BiomeDecoratorZG {
 	public boolean generateDeadBushes = false;
 	public boolean generateReeds = true;
 	public boolean generateVines = false;
+	public boolean generateBattleTowers = true;
+	public boolean generateCrops = true;
 	
 	public BiomeDecoratorMetztli() {
 		this.dirtGen = new WorldGenMinableZG(Blocks.DIRT, Blocks.GRASS, EnumOreGenZG.DIRT);
@@ -142,6 +155,78 @@ public class BiomeDecoratorMetztli extends BiomeDecoratorZG {
 		if (this.generateTallGrass && this.tallGrassPerChunk > 0) {
 			for (int i = 0; i < this.tallGrassPerChunk + 4; ++i) {
 				ZGDecorateHelper.generatePlants(this.tallGrassGen, world, rand, this.chunkPos);
+			}
+		}
+		
+		// Battle Towers
+		if (this.generateBattleTowers && this.battleTowersPerChunk > 0 && !BiomeUtils.isOceanBiome(biome)) {
+			if (ZGHelper.rngInt(1, 250) <= 35) {
+				for (int i = 0; i < this.battleTowersPerChunk; ++i) {
+					y = rand.nextInt(rand.nextInt(genY) + 8);
+					if (y >= 60 && y < 80) {
+						this.battleTowerGen.generate(world, rand, this.chunkPos.add(x, y, z));
+					}
+				}
+			}
+		}
+		
+		// Crops (Strawberries)
+		if (this.generateCrops && this.cropsPerChunk > 0 && !BiomeUtils.isOceanBiome(biome)) {
+			if (ZGHelper.rngInt(1, 100) <= 35) {
+				for (int i = 0; i < this.cropsPerChunk; ++i) {
+					y = rand.nextInt(rand.nextInt(genY) + 8);
+					if (y >= 60) {
+						this.strawberryGen.generate(world, rand, this.chunkPos.add(x, y, z));
+					}
+				}
+			}
+		}
+		
+		// Crops (Blackberries)
+		if (this.generateCrops && this.cropsPerChunk > 0 && !BiomeUtils.isOceanBiome(biome)) {
+			if (ZGHelper.rngInt(1, 100) <= 35) {
+				for (int i = 0; i < this.cropsPerChunk; ++i) {
+					y = rand.nextInt(rand.nextInt(genY) + 8);
+					if (y >= 60) {
+						this.blackberryGen.generate(world, rand, this.chunkPos.add(x, y, z));
+					}
+				}
+			}
+		}
+		
+		// Crops (Blueberries)
+		if (this.generateCrops && this.cropsPerChunk > 0 && !BiomeUtils.isOceanBiome(biome)) {
+			if (ZGHelper.rngInt(1, 100) <= 35) {
+				for (int i = 0; i < this.cropsPerChunk; ++i) {
+					y = rand.nextInt(rand.nextInt(genY) + 8);
+					if (y >= 60) {
+						this.blueberryGen.generate(world, rand, this.chunkPos.add(x, y, z));
+					}
+				}
+			}
+		}
+		
+		// Crops (Grapes)
+		if (this.generateCrops && this.cropsPerChunk > 0 && !BiomeUtils.isOceanBiome(biome)) {
+			if (ZGHelper.rngInt(1, 100) <= 35) {
+				for (int i = 0; i < this.cropsPerChunk; ++i) {
+					y = rand.nextInt(rand.nextInt(genY) + 8);
+					if (y >= 60) {
+						this.grapeGen.generate(world, rand, this.chunkPos.add(x, y, z));
+					}
+				}
+			}
+		}
+		
+		// Crops (Tomato)
+		if (this.generateCrops && this.cropsPerChunk > 0 && !BiomeUtils.isOceanBiome(biome)) {
+			if (ZGHelper.rngInt(1, 100) <= 35) {
+				for (int i = 0; i < this.cropsPerChunk; ++i) {
+					y = rand.nextInt(rand.nextInt(genY) + 8);
+					if (y >= 60) {
+						this.tomatoGen.generate(world, rand, this.chunkPos.add(x, y, z));
+					}
+				}
 			}
 		}
 		

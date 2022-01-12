@@ -9,6 +9,7 @@ package zollerngalaxy.biomes.genlayers.oasis;
 
 import java.util.ArrayList;
 import java.util.List;
+import com.google.common.collect.ImmutableList;
 import net.minecraft.util.WeightedRandom;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.layer.IntCache;
@@ -17,7 +18,6 @@ import net.minecraftforge.common.BiomeManager.BiomeEntry;
 import net.minecraftforge.common.BiomeManager.BiomeType;
 import zollerngalaxy.biomes.ZGBiomes;
 import zollerngalaxy.util.CachedEnumZG;
-import com.google.common.collect.ImmutableList;
 
 public class GenLayerOasisBiomes extends GenLayerOasis {
 	
@@ -48,6 +48,7 @@ public class GenLayerOasisBiomes extends GenLayerOasis {
 		list.add(new BiomeEntry(ZGBiomes.OASIS_PLAINS, 95));
 		list.add(new BiomeEntry(ZGBiomes.OASIS_OCEAN, 85));
 		list.add(new BiomeEntry(ZGBiomes.OASIS_REDLANDS, 75));
+		list.add(new BiomeEntry(ZGBiomes.OASIS_MUDSWAMP, 65));
 		currentBiomes[BiomeType.WARM.ordinal()] = new ArrayList<>(list);
 		return currentBiomes;
 	}

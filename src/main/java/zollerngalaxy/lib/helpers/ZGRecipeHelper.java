@@ -8,15 +8,16 @@
 package zollerngalaxy.lib.helpers;
 
 import java.util.HashMap;
+import java.util.List;
 import micdoodle8.mods.galacticraft.api.GalacticraftRegistry;
 import micdoodle8.mods.galacticraft.api.recipe.CircuitFabricatorRecipes;
 import micdoodle8.mods.galacticraft.api.recipe.CompressorRecipes;
 import micdoodle8.mods.galacticraft.api.recipe.SpaceStationRecipe;
 import micdoodle8.mods.galacticraft.api.world.SpaceStationType;
+import net.minecraft.block.Block;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.NonNullList;
 import zollerngalaxy.lib.helpers.json.JSONRecipeFactory;
 
 public class ZGRecipeHelper {
@@ -63,6 +64,24 @@ public class ZGRecipeHelper {
 		}
 	}
 	
+	public static void addArmorSet(Item itemOutput, Block blockInput, String armorType) {
+		armorType = armorType.toLowerCase();
+		if (armorType.equals("helmet")) {
+			// Helmet
+			ZGRecipeHelper.addRecipe(new ItemStack(itemOutput, 1), new Object[] { "ZZZ", "Z Z", "   ", 'Z', blockInput });
+			// Chestplate
+		} else if (armorType.equals("chest")) {
+			ZGRecipeHelper.addRecipe(new ItemStack(itemOutput, 1), new Object[] { "Z Z", "ZZZ", "ZZZ", 'Z', blockInput });
+			// Leggings
+		} else if (armorType.equals("legs")) {
+			ZGRecipeHelper.addRecipe(new ItemStack(itemOutput, 1), new Object[] { "ZZZ", "Z Z", "Z Z", 'Z', blockInput });
+			// Boots
+		} else if (armorType.equals("boots")) {
+			ZGRecipeHelper.addRecipe(new ItemStack(itemOutput, 1), new Object[] { "   ", "Z Z", "Z Z", 'Z', blockInput });
+			ZGRecipeHelper.addRecipe(new ItemStack(itemOutput, 1), new Object[] { "Z Z", "Z Z", "   ", 'Z', blockInput });
+		}
+	}
+	
 	public static void addSimpleToolSet(ItemStack itemOutput, Item itemIngot, String toolType) {
 		toolType = toolType.toLowerCase();
 		// Pickaxe
@@ -97,7 +116,7 @@ public class ZGRecipeHelper {
 		CompressorRecipes.addRecipe(output, inputs);
 	}
 	
-	public static void addCircuitFabricatorRecipe(ItemStack output, NonNullList<Object> inputs) {
+	public static void addCircuitFabricatorRecipe(ItemStack output, List<Object> inputs) {
 		CircuitFabricatorRecipes.addRecipe(output, inputs);
 	}
 }

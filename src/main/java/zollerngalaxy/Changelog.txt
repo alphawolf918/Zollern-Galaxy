@@ -1,61 +1,30 @@
 ===== CHANGELOG =====
-Zollern Galaxy v2.0.35
+Zollern Galaxy v2.0.36
 =====================
 
 [NEW]
-* Added two new planets: Toci - planet of the Wanderers, and Tlaloc, the robotic planet.
-* Added the Wanderer mob to Toci.
-    - At night, they have a danger meter which increases as the night goes on.
-        - If this meter gets too high, they will build a "home" if they do not have one already.
-            - This is turned off by default in the config, and Wanderers themselves can be turned off as well.
-* Added Vexbots to Tlaloc.
-    - Spawn Radiolaria (White Lava) when they die (can be disabled in config).
-    - Can't we stay here with the murderous robots?
-    - There is a stronger "Golden" variation as well.
-* Added the Vexbot Boss.
-    - Similar to the regular Vexbot, but much bigger, faster, and stronger.
-    - Only appears in Tlaloc Dungeons.
-* Added Tlaloc Dungeons to Tlaloc. These spawn hundreds of blocks away from each other, awaiting with rewards.
-    - This is the mod's first attempt at a boss dungeon; please report any bugs or issues.
-* Added the Toci, Perdita, Tlaloc and Oasis Villagers.
-* Added the Galaxy Dragon mob, akin to a Baby Ender Dragon. This mob is tameable using a bone.
-    - You can also tempt it / make it breed by giving it a Lost Peach or a Lost Berry.
-    - At this time, they cannot be ridden, but that is planned for the future.
-    - These do not spawn naturally, and instead, they spawn when the Dragon Egg is broken.
-        - Obtained after fighting the Ender Dragon.
-* Added a stack increase helper for Saddles, Ender Pearls, Signs, Buckets and Snowballs from 16 to 64.
-    - This can be disabled in the config.
-* Added Plutonium and Fueltonium Ingots as solid fuel for Extreme Reactors.
-* Added new Enrichment Dust item as a Circuit Fabricator recipe.
-    - Used to 'enrich' certain items via different types of recipes, usually used in conjunction with other mods.
-    - Will have some use in this mod as well.
-* Added new Induction Smelter (Thermal Expansion) Recipe: 2 Cyanite Ingots + 2 Enrichment Dust = 2 Blutonium Ingots.
-    - Extreme Reactors will need to be present for this to work, and the compatibility config option will need to be set to true.
-* Added new Crafting Recipe: 1 Poisonous Potato + 1 Enrichment Dust = 2 Regular Potatoes.
-    - The increase in output is to make up for the "bad luck" of getting a poisonous crop.
-* Added new Induction Smelter recipe (for Thermal Foundation compat).
-    - 1 Coal + 2 Enrichment Dust = 2 Super Charged Coal.
-* Added random, small crater spawns to Tlaloc. Who knows how deep they go?
-    - Chance to spawn can be modified in config file or disabled altogether by setting it to 0.
-* Added UFO generation with a chest inside of it and up to 4 Vexbots can spawn.
-* Added Mech Trees to Tlaloc.
-* Added Battle Towers with Mob Spawners and Treasure Chests to Oasis and Tlaloc.
-    - WARNING: These are incredibly dangerous!
-    - Will eventually be added to every planet.
+* Added several new crafting items and tools:
+    - Medkit, Gauze, Nail, Nail Group, Wooden Box, Metal Parts
+* Added a way to get more bread from Wheat: 1 Wheat pulverizes into into 2 Flour, each of which smelt into 2 Bread.
+    - Dough can also be crafted to maximize Bread output.
+* Added Obsidian Dust and Obsidian Ingots.
+    - Obsidian can be pulverized into 9 Obsidian Dust, which can then be cooked into Obsidian Ingots.
+    - 9 Obsidian Ingots can be crafted into 1 Block of Obsidian and back.
+* Added Mud Swamp biome to Oasis, which consists of Mud Clay blocks.
+    - When broken, these drop up to 4 Mud Clay Balls, each of which can be cooked into 2 regular Brick Ingots.
+        - Can also be used in place of regular Clay.
+* Added the "Enlightened" Enchantment.
+    - Can be applied to Swords and Bows.
+    - Deals extra damage to Shade Mobs (any mob that drops Dark Matter Essence).
+* Added Wooden and Stone armor.
+* Added farmable food crops.
+    - Can be found in Villages.
+    - Also rarely spawn on planets.
+    - Strawberries, Blackberries, Blueberries, Tomatoes
+* 
 
 [CHANGES]
-* Slightly increased strength of Facehugger.
-* Updated Wasp model, texture and behavior.
-* Greatly increased burn time of Super Charged Coal.
-* Modified some spawn rates, chances and min/max heights of certain generations on Eden.
-* Enhanced custom villager replacements.
-* Galaxy Knights now only have a 10% chance to spawn (if they're enabled in the config) when Gray Aliens are attacked.
-* Greatly lowered health, resistance and strength of Galaxy Knights.
+*
 
 [FIXES]
-* Fixed Xenomorph Queen laying 'ghost eggs' on server-side.
-* Fixed the Arcon mob looking and acting derpy.
-* Fixed missing texture block by removing it; was only meant to be there as a test.
-* Fixed Centotl Space Station registration typos.
-* Fixed server crash issues with Bedrock Breaker and Radiance items.
-* Fixed random "platforms" spawning way up in the air on every ZG world.
+* 

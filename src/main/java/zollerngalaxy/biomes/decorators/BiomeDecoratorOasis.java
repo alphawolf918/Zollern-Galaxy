@@ -27,6 +27,7 @@ import zollerngalaxy.lib.helpers.ZGDecorateHelper;
 import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.util.BiomeUtils;
 import zollerngalaxy.worldgen.WorldGenBattleTower;
+import zollerngalaxy.worldgen.WorldGenCrops;
 import zollerngalaxy.worldgen.WorldGenLakesZG;
 import zollerngalaxy.worldgen.WorldGenMinableZG;
 import zollerngalaxy.worldgen.WorldGenOutpost;
@@ -51,18 +52,21 @@ public class BiomeDecoratorOasis extends BiomeDecoratorZG {
 	private WorldGenerator shinestoneGen;
 	
 	public WorldGenerator battleTowerGen = new WorldGenBattleTower(ZGBlocks.oasisCobble.getDefaultState(), ZGBlocks.blockOutpost.getDefaultState());
+	public WorldGenerator strawberryGen = new WorldGenCrops(ZGBlocks.cropStrawberry.getDefaultState());
 	
 	public int waterLakesPerChunk = 4;
 	public int lavaLakesPerChunk = (this.enableExtremeMode) ? 12 : 6;
 	public int oilLakesPerChunk = 4;
 	public int oasisTallGrassPerChunk = 3;
 	public int oasisFlowersPerChunk = 4;
-	public int battleTowersPerChunk = 1;
+	public int battleTowersPerChunk = 2;
+	public int cropsPerChunk = 2;
 	
 	public boolean generateLakes = true;
 	public boolean generateVines = false;
 	public boolean generateCraters = false;
 	public boolean generateBattleTowers = true;
+	public boolean generateCrops = true;
 	
 	public BiomeDecoratorOasis() {
 		this.dirtGen = new WorldGenMinableZG(ZGBlocks.oasisDirt, STONE, EnumOreGenZG.DIRT);
@@ -102,6 +106,11 @@ public class BiomeDecoratorOasis extends BiomeDecoratorZG {
 		this.generateOre(this.shinestoneGen, EnumOreGenZG.SHINESTONE, world, rand);
 		
 		ChunkPrimer chunkPrimer = new ChunkPrimer();
+		
+		if (biome instanceof BiomeSpace) {
+			BiomeSpace spaceBiome = (BiomeSpace) biome;
+			genY = spaceBiome.getBiomeHeight();
+		}
 		
 		// Water Lakes
 		if (this.generateLakes && this.waterLakesPerChunk > 0) {
@@ -146,11 +155,23 @@ public class BiomeDecoratorOasis extends BiomeDecoratorZG {
 		
 		// Battle Towers
 		if (this.generateBattleTowers && this.battleTowersPerChunk > 0 && !BiomeUtils.isOceanBiome(biome)) {
-			if (ZGHelper.rngInt(1, 250) <= 25) {
+			if (ZGHelper.rngInt(1, 200) <= 55) {
 				for (int i = 0; i < this.battleTowersPerChunk; ++i) {
 					y = rand.nextInt(rand.nextInt(genY) + 8);
 					if (y >= 60 && y < 80) {
 						this.battleTowerGen.generate(world, rand, this.chunkPos.add(x, y, z));
+					}
+				}
+			}
+		}
+		
+		// Crops (Strawberries)
+		if (this.generateCrops && this.cropsPerChunk > 0 && !BiomeUtils.isOceanBiome(biome)) {
+			if (ZGHelper.rngInt(1, 100) <= 35) {
+				for (int i = 0; i < this.cropsPerChunk; ++i) {
+					y = rand.nextInt(rand.nextInt(genY) + 8);
+					if (y >= 60) {
+						this.strawberryGen.generate(world, rand, this.chunkPos.add(x, y, z));
 					}
 				}
 			}

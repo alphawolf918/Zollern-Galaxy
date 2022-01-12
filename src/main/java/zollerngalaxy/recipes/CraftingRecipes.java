@@ -94,6 +94,7 @@ public class CraftingRecipes {
 		CraftingRecipes.addIngotMetal(Items.BLAZE_POWDER, ZGBlocks.kriffBlazeRock);
 		CraftingRecipes.addIngotMetal(Blocks.RED_MUSHROOM, ZGBlocks.blockRedshroom);
 		CraftingRecipes.addIngotMetal(Items.SUGAR, ZGBlocks.blockSugarCube);
+		CraftingRecipes.addIngotMetal(ZGItems.ingotObsidian, Blocks.OBSIDIAN);
 		
 		// Compression
 		CraftingRecipes.addIngotMetal(ZGItems.compressedCobalt, ZGBlocks.blockCompressedCobalt);
@@ -120,24 +121,32 @@ public class CraftingRecipes {
 		CraftingRecipes.addPlanks(ZGBlocks.exoWoodLogs, ZGBlocks.exoWoodPlanks);
 		
 		// Helmet
+		CraftingRecipes.addArmorSet(ZGItems.helmetWood, Blocks.PLANKS, "helmet");
+		CraftingRecipes.addArmorSet(ZGItems.helmetStone, Blocks.STONE, "helmet");
 		CraftingRecipes.addArmorSet(ZGItems.helmetAmaranth, ZGItems.ingotAmaranth, "helmet");
 		CraftingRecipes.addArmorSet(ZGItems.helmetZollernium, ZGItems.ingotZollernium, "helmet");
 		CraftingRecipes.addArmorSet(ZGItems.helmetAzurite, ZGItems.azurite, "helmet");
 		CraftingRecipes.addArmorSet(ZGItems.helmetRadium, ZGItems.radium, "helmet");
 		
 		// Chest
+		CraftingRecipes.addArmorSet(ZGItems.chestWood, Blocks.PLANKS, "chest");
+		CraftingRecipes.addArmorSet(ZGItems.chestStone, Blocks.STONE, "chest");
 		CraftingRecipes.addArmorSet(ZGItems.chestAmaranth, ZGItems.ingotAmaranth, "chest");
 		CraftingRecipes.addArmorSet(ZGItems.chestZollernium, ZGItems.ingotZollernium, "chest");
 		CraftingRecipes.addArmorSet(ZGItems.chestAzurite, ZGItems.azurite, "chest");
 		CraftingRecipes.addArmorSet(ZGItems.chestRadium, ZGItems.radium, "chest");
 		
 		// Legs
+		CraftingRecipes.addArmorSet(ZGItems.legsWood, Blocks.PLANKS, "legs");
+		CraftingRecipes.addArmorSet(ZGItems.legsStone, Blocks.STONE, "legs");
 		CraftingRecipes.addArmorSet(ZGItems.legsAmaranth, ZGItems.ingotAmaranth, "legs");
 		CraftingRecipes.addArmorSet(ZGItems.legsZollernium, ZGItems.ingotZollernium, "legs");
 		CraftingRecipes.addArmorSet(ZGItems.legsAzurite, ZGItems.azurite, "legs");
 		CraftingRecipes.addArmorSet(ZGItems.legsRadium, ZGItems.radium, "legs");
 		
 		// Feets
+		CraftingRecipes.addArmorSet(ZGItems.bootsWood, Blocks.PLANKS, "boots");
+		CraftingRecipes.addArmorSet(ZGItems.bootsStone, Blocks.STONE, "boots");
 		CraftingRecipes.addArmorSet(ZGItems.bootsAmaranth, ZGItems.ingotAmaranth, "boots");
 		CraftingRecipes.addArmorSet(ZGItems.bootsZollernium, ZGItems.ingotZollernium, "boots");
 		CraftingRecipes.addArmorSet(ZGItems.bootsAzurite, ZGItems.azurite, "boots");
@@ -410,11 +419,56 @@ public class CraftingRecipes {
 		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.amuletStorm, 1), new Object[] { "SVS", "VSV", "SVS", 'S', ZGItems.stormCrystal, 'V', ZGItems.ingotVirinium });
 		totalCraftRecipes++;
 		
+		// Medkit
+		ZGRecipeHelper.addShapelessRecipe(new ItemStack(ZGItems.medkit, 2), new Object[] { ZGItems.alcohol, ZGItems.gauze });
+		totalCraftRecipes++;
+		
+		// Gauze
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.gauze, 1), new Object[] { "S S", " P ", "S S", 'S', Items.STRING, 'P', Items.PAPER });
+		totalCraftRecipes++;
+		
+		// Alcohol
+		ZGRecipeHelper.addShapelessRecipe(new ItemStack(ZGItems.alcohol, 1), new Object[] { Items.GLASS_BOTTLE, Items.WATER_BUCKET, Items.WHEAT_SEEDS, Items.CLAY_BALL });
+		totalCraftRecipes++;
+		
+		// Nail
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.nail, 2), new Object[] { " I ", " I ", "   ", 'I', Items.IRON_INGOT });
+		totalCraftRecipes++;
+		
+		// Nail Group
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.nailGroup, 1), new Object[] { "NN ", "NN ", "   ", 'N', ZGItems.nail });
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.nailGroup, 1), new Object[] { " NN", " NN", "   ", 'N', ZGItems.nail });
+		totalCraftRecipes += 2;
+		
+		// Swamp Clay
+		
+		// Woodbox
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.woodBox, 1), new Object[] { "W W", " W ", "   ", 'W', Blocks.PLANKS });
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.woodBox, 1), new Object[] { "   ", "W W", " W ", 'W', Blocks.PLANKS });
+		totalCraftRecipes += 2;
+		
+		// Metal Parts
+		ZGRecipeHelper.addShapelessRecipe(new ItemStack(ZGItems.metalParts, 1), new Object[] { ZGItems.woodBox, ZGItems.nailGroup });
+		totalCraftRecipes++;
+		
+		// Dough
+		ZGRecipeHelper.addShapelessRecipe(new ItemStack(ZGItems.dough, 2), new Object[] { ZGItems.flour, Items.EGG, Items.MILK_BUCKET });
+		totalCraftRecipes++;
+		
+		// Mud Clay
+		CraftingRecipes.addBricks(ZGItems.mudClayBall, ZGBlocks.mudClayBlock);
+		
 		// Sirens
 		CraftingRecipes.addSiren(ZGBlocks.ironSiren, Items.IRON_INGOT);
 		CraftingRecipes.addSiren(ZGBlocks.goldSiren, Items.GOLD_INGOT);
 		CraftingRecipes.addSiren(ZGBlocks.diamondSiren, Items.DIAMOND);
 		CraftingRecipes.addSiren(ZGBlocks.emeraldSiren, Items.EMERALD);
+	}
+	
+	public static void addBricks(Item coloredBrick, Block coloredBlock) {
+		ZGRecipeHelper.addRecipe(new ItemStack(coloredBlock, 1), new Object[] { "CC ", "CC ", "   ", 'C', coloredBrick });
+		ZGRecipeHelper.addShapelessRecipe(new ItemStack(coloredBrick, 4), new Object[] { coloredBlock });
+		totalCraftRecipes++;
 	}
 	
 	private static void addRockBricks(Block stoneIn, Block bricksOut) {
@@ -474,6 +528,10 @@ public class CraftingRecipes {
 	
 	public static void addArmorSet(Item itemInput, Item itemOutput, String armorType) {
 		ZGRecipeHelper.addArmorSet(itemOutput, itemInput, armorType);
+	}
+	
+	private static void addArmorSet(Item itemInput, Block blockInput, String armorType) {
+		ZGRecipeHelper.addArmorSet(itemInput, blockInput, armorType);
 	}
 	
 	private static void addPickaxe(ItemStack itemOutput, Item itemIngot) {

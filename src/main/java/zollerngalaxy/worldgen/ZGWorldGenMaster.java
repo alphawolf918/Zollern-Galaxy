@@ -46,7 +46,7 @@ public abstract class ZGWorldGenMaster extends WorldGenerator {
 	 * @param blockState
 	 */
 	protected void setBlock(World world, BlockPos pos, IBlockState blockState) {
-		world.setBlockState(pos, blockState, 3);
+		world.setBlockState(pos, blockState, 2);
 	}
 	
 	/**

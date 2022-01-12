@@ -18,6 +18,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.gen.structure.StructureBoundingBox;
 import net.minecraft.world.gen.structure.StructureComponent;
 import net.minecraft.world.gen.structure.template.TemplateManager;
+import zollerngalaxy.lib.helpers.ZGHelper;
 
 public class StructureComponentVillageField2ZG extends StructureComponentVillageZG {
 	
@@ -31,15 +32,15 @@ public class StructureComponentVillageField2ZG extends StructureComponentVillage
 	public StructureComponentVillageField2ZG() {
 	}
 	
-	public StructureComponentVillageField2ZG(StructureComponentVillageStartPieceZG par1ComponentVillageStartPiece, int par2, Random par3Random,
-			StructureBoundingBox par4StructureBoundingBox, EnumFacing par5) {
+	public StructureComponentVillageField2ZG(StructureComponentVillageStartPieceZG par1ComponentVillageStartPiece, int par2, Random par3Random, StructureBoundingBox par4StructureBoundingBox,
+			EnumFacing par5) {
 		super(par1ComponentVillageStartPiece, par2);
 		this.setCoordBaseMode(par5);
 		this.boundingBox = par4StructureBoundingBox;
-		this.cropTypeA = this.getRandomCrop(par3Random);
-		this.cropTypeB = this.getRandomCrop(par3Random);
-		this.cropTypeC = this.getRandomCrop(par3Random);
-		this.cropTypeD = this.getRandomCrop(par3Random);
+		this.cropTypeA = ZGHelper.getRandomCrop(par3Random);
+		this.cropTypeB = ZGHelper.getRandomCrop(par3Random);
+		this.cropTypeC = ZGHelper.getRandomCrop(par3Random);
+		this.cropTypeD = ZGHelper.getRandomCrop(par3Random);
 	}
 	
 	@Override
@@ -64,19 +65,8 @@ public class StructureComponentVillageField2ZG extends StructureComponentVillage
 		this.cropTypeD = Block.getBlockById(nbt.getInteger("CropTypeD"));
 	}
 	
-	private Block getRandomCrop(Random par1Random) {
-		switch (par1Random.nextInt(5)) {
-			case 0:
-				return Blocks.CARROTS;
-			case 1:
-				return Blocks.POTATOES;
-			default:
-				return Blocks.WHEAT;
-		}
-	}
-	
-	public static StructureComponentVillageField2ZG func_74900_a(StructureComponentVillageStartPieceZG par0ComponentVillageStartPiece, List<StructureComponent> par1List,
-			Random par2Random, int par3, int par4, int par5, EnumFacing par6, int par7) {
+	public static StructureComponentVillageField2ZG func_74900_a(StructureComponentVillageStartPieceZG par0ComponentVillageStartPiece, List<StructureComponent> par1List, Random par2Random, int par3,
+			int par4, int par5, EnumFacing par6, int par7) {
 		final StructureBoundingBox structureboundingbox = StructureBoundingBox.getComponentToAddBoundingBox(par3, par4, par5, 0, 0, 0, 13, 4, 9, par6);
 		return StructureComponentVillageZG.canVillageGoDeeper(structureboundingbox) && StructureComponent.findIntersecting(par1List, structureboundingbox) == null
 				? new StructureComponentVillageField2ZG(par0ComponentVillageStartPiece, par7, par2Random, structureboundingbox, par6) : null;

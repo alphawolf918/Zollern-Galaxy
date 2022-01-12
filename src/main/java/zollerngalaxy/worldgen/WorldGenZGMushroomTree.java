@@ -34,7 +34,7 @@ public class WorldGenZGMushroomTree extends WorldGenAbstractTree {
 		int i = rand.nextInt(3) + this.minTreeHeight;
 		boolean flag = true;
 		
-		if (worldIn.getBlockState(position.down()) == Blocks.AIR.getDefaultState()) {
+		if (worldIn.getBlockState(position.down()) == Blocks.AIR.getDefaultState() || worldIn.getBlockState(position.down()) == ZGBlocks.blockRedshroom.getDefaultState()) {
 			return false;
 		}
 		

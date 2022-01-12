@@ -26,6 +26,7 @@ public class BiomeHarranClayMesa extends BiomeMetztliBase {
 		props.setBaseHeight(0.5F);
 		props.setHeightVariation(0.4F);
 		props.setTemperature(6.0F);
+		this.setTemp(65.42F);
 		this.setBiomeHeight(25);
 		this.setBiomeType(EnumBiomeTypeZG.SWAMP);
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityWitch.class, 25, 1, 1));

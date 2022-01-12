@@ -36,5 +36,6 @@ public enum EnumBlockType {
 	SPAWNER,
 	STATION,
 	MUSHROOM,
-	ICE;
+	ICE,
+	CLAY;
 }

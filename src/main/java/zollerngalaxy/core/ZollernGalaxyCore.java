@@ -34,6 +34,7 @@ import zollerngalaxy.compat.ZGCompats;
 import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.ZGDimensions;
 import zollerngalaxy.creativetabs.ZGTabs;
+import zollerngalaxy.enchantments.EnchantmentListZG;
 import zollerngalaxy.events.ZGSoundEvents;
 import zollerngalaxy.items.ZGItems;
 import zollerngalaxy.lib.ZGInfo;
@@ -61,8 +62,8 @@ public class ZollernGalaxyCore {
 	private static ZollernGalaxyCore INSTANCE;
 	
 	// CHANGE THESE TO FALSE BEFORE DEPLOYMENT!!
-	private static final boolean DEV_MODE = false; // Controls creating the JSON files.
-	private static final boolean TEST_MODE = false; // Set to True when developing!
+	private static final boolean DEV_MODE = true; // Controls creating the JSON files.
+	private static final boolean TEST_MODE = true; // Set to True when developing!
 	
 	// Block/Item Registering Lists
 	public static List<Item> itemList = new ArrayList<>();
@@ -117,6 +118,7 @@ public class ZollernGalaxyCore {
 		ZGInfo.init(event.getModMetadata());
 		ZGLore.init();
 		ZGPotions.init();
+		EnchantmentListZG.init();
 		RegisterUtilsZG.registerEventHandler(new RegistrationHandlerZG());
 		ZGItems.init();
 		ZGBlocks.init();

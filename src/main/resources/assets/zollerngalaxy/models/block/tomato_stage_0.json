@@ -1,0 +1,6 @@
+{
+  "parent": "block/crop",
+  "textures": {
+    "crop": "zollerngalaxy:blocks/tomato_stage_0"
+  }
+}

@@ -26,6 +26,7 @@ public class BiomeOasisPlains extends BiomeOasisBase {
 		this.enableSnow = false;
 		this.biomeDecor.generateFalls = true;
 		this.biomeDecor.waterLakesPerChunk = 2;
+		this.biomeDecor.cropsPerChunk = 4;
 		this.grassFoliageColor = 0x9f0000;
 		this.waterColor = 0x8b2cff;
 		this.topBlock = ZGBlocks.oasisGrass.getDefaultState();

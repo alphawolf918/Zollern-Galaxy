@@ -8,6 +8,7 @@
 package zollerngalaxy.util;
 
 import net.minecraft.block.Block;
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraftforge.oredict.OreDictionary;
@@ -165,6 +166,11 @@ public class OreDictRegistry {
 		registerOre("cobblestone", ZGBlocks.edenCobbleRock, ZGBlocks.kriffCobbleRock, ZGBlocks.purgCobbleRock, ZGBlocks.zolCobbleRock, ZGBlocks.xathCobble, ZGBlocks.oasisCobble, ZGBlocks.atheonCobble,
 				ZGBlocks.perdCobble, ZGBlocks.altumCobble, ZGBlocks.caligroCobblestone, ZGBlocks.caligroCobblestoneMossy, ZGBlocks.corruptCobble, ZGBlocks.exodusCobblestone,
 				ZGBlocks.vortexCobblestone, ZGBlocks.astrosCobblestone, ZGBlocks.centoCobblestone, ZGBlocks.tociCobblestone, ZGBlocks.tociMossyCobblestone);
+		
+		// Obsidian
+		registerOre("dustObsidian", ZGItems.dustObsidian);
+		registerOre("ingotObsidian", ZGItems.ingotObsidian);
+		registerOre("blockObsidian", Blocks.OBSIDIAN);
 		
 		// Coal
 		registerOre("oreCoal", ZGBlocks.edenCoalOre, ZGBlocks.kriffCoalOre, ZGBlocks.zolCoalOre, ZGBlocks.oasisCoalOre, ZGBlocks.xantheonCoalOre, ZGBlocks.altumCoalOre, ZGBlocks.astrosCoalOre,
@@ -404,6 +410,30 @@ public class OreDictRegistry {
 		
 		// Reeds
 		registerOre("reeds", ZGBlocks.perdReeds);
+		
+		// Clay
+		registerOre("blockClay", Blocks.CLAY, ZGBlocks.mudClayBlock);
+		registerOre("clay", Items.CLAY_BALL, ZGItems.mudClayBall);
+		
+		// Strawberry
+		registerOre("cropStrawberry", ZGBlocks.cropStrawberry);
+		registerOre("strawberry", ZGItems.strawberry);
+		
+		// Blackberry
+		registerOre("cropBlackberry", ZGBlocks.cropBlackberry);
+		registerOre("blackberry", ZGItems.blackberry);
+		
+		// Blueberry
+		registerOre("cropBlueberry", ZGBlocks.cropBlueberry);
+		registerOre("blueberry", ZGItems.blueberry);
+		
+		// Grape
+		registerOre("cropGrape", ZGBlocks.cropGrape);
+		registerOre("grape", ZGItems.grape);
+		
+		// Tomato
+		registerOre("cropTomato", ZGBlocks.cropTomato);
+		registerOre("tomato", ZGItems.tomato);
 	}
 	
 	private static void registerOre(String strName, Item... items) {

@@ -457,10 +457,12 @@ tile.tlalocfueltoniumore.name=Tlaloc Fueltonium Ore
 tile.tlaloczollerniumore.name=Tlaloc Zollernium Ore
 tile.tlalocshiniumore.name=Tlaloc Shinium Ore
 tile.tlalocplutoniumore.name=Tlaloc Plutonium Ore
-tile.treasure_chest_t1.name=Tlaloc Dungeon Treasure Chest
+tile.treasure_chest_tlaloc.name=Tlaloc Dungeon Treasure Chest
+tile.treasure_chest_tlaloc.description=A glorious victory of loot! Requires Tier 10 Dungeon Key.
 tile.boss_spawner_t1.name=Tlaloc Boss Spawner
 tile.tlalocdungeonbricks.name=Tlaloc Dungeon Bricks
 
+tile.mudclayblock.name=Mud Clay
 tile.endrock.name=Endrock
 
 tile.heartblock.name=Healing Station
@@ -501,6 +503,13 @@ tile.diamondsiren_on.name=Diamond Siren
 
 tile.emeraldsiren.name=Emerald Siren
 tile.emeraldsiren_on.name=Emerald Siren
+
+## Crops ##
+tile.strawberry_crop.name=Strawberries
+tile.blackberry_crop.name=Blackberries
+tile.blueberry_crop.name=Blueberries
+tile.grape_crop.name=Grapes
+tile.tomato_crop.name=Tomatoes
 
 ## Subtitles ##
 
@@ -573,6 +582,7 @@ fluid.radium=Radiance
 ## Containers ##
 
 container.eden.treasurechest.name=Eden's Treasure
+container.tlaloc.treasurechest.name=Tlaloc Chest
 
 ## Items ##
 
@@ -661,6 +671,9 @@ item.rhodiumingot.name=Rhodium Ingot
 item.rhodiumdust.name=Rhodium Dust
 
 item.radiumingot.name=Radium Ingot
+
+item.obsidianingot.name=Obsidian Ingot
+item.obsidiandust.name=Obsidian Dust
 
 item.rokkite.name=Rokkite
 item.amber.name=Amber
@@ -791,6 +804,16 @@ item.zollernium_shovel.name=Zollernium Shovel
 item.zollernium_axe.name=Zollernium Axe
 item.zollernium_hoe.name=Zollernium Hoe
 
+item.woodhelmet.name=Wooden Helmet
+item.woodchestplate.name=Wooden Chestplate
+item.woodleggings.name=Wooden Leggings
+item.woodboots.name=Wooden Boots
+
+item.stonehelmet.name=Stone Helmet
+item.stonechestplate.name=Stone Chestplate
+item.stoneleggings.name=Stone Leggings
+item.stoneboots.name=Stone Boots
+
 item.amaranthhelmet.name=Amaranth Helmet
 item.amaranthchestplate.name=Amaranth Chestplate
 item.amaranthleggings.name=Amaranth Leggings
@@ -813,6 +836,14 @@ item.radiumboots.name=Radium Boots
 
 item.heart.name=Healing Heart
 item.heartforce.name=Max Heartforce
+item.alcohol.name=Alcohol
+item.gauze.name=Gauze
+item.medkit.name=Medkit
+item.nail.name=Nail
+item.nailgroup.name=Nail Group
+item.woodbox.name=Wooden Box
+item.metalparts.name=Metal Parts
+item.mudclayball.name=Mud Clay Ball
 
 item.copper_tunneler.name=Copper Cave Tunneler
 item.gold_tunneler.name=Gold Cave Tunneler
@@ -830,6 +861,16 @@ item.zgthermal_boots_t3.name=Thermal Boots (Tier 3)
 item.zgthermal_padding_t3.name=Thermal Padding (Tier 3)
 
 item.enrichmentdust.name=Enrichment Dust
+
+item.flour.name=Flour
+item.dough.name=Dough
+
+## Crop Items ##
+item.strawberry.name=Strawberry
+item.blackberry.name=Blackberry
+item.blueberry.name=Blueberry
+item.grape.name=Grape
+item.tomato.name=Tomato
 
 ## Mobs ##
 
@@ -1144,9 +1185,13 @@ death.attack.waspsting.item=%1$s died from wasp stings, thanks to %2$s using %3$
 zollerngalaxy_infected=Infected
 zollerngalaxy_anticorruption=Anti-Corruption
 zollerngalaxy_corruption=Corruption
-zollerngalaxy_radiance=Radiance
 zollerngalaxy_enlightened=Enlightened
+zollerngalaxy_radiance=Radiance
 zollerngalaxy_stormprotection=Storm Protection
+
+## Enchantments ##
+
+enchantment.zollerngalaxy_enlightened=Enlightened
 
 ## Tinkerer's Construct ##
 

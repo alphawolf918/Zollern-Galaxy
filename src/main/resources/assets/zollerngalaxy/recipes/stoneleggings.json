@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ZZZ",
+    "Z Z",
+    "Z Z"
+  ],
+  "key": {
+    "Z": {
+      "item": "minecraft:stone",
+      "data": 0
+    }
+  },
+  "result": {
+    "item": "zollerngalaxy:stoneleggings"
+  }
+}

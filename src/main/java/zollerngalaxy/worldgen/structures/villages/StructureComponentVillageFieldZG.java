@@ -17,6 +17,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.gen.structure.StructureBoundingBox;
 import net.minecraft.world.gen.structure.StructureComponent;
 import net.minecraft.world.gen.structure.template.TemplateManager;
+import zollerngalaxy.lib.helpers.ZGHelper;
 
 public class StructureComponentVillageFieldZG extends StructureComponentVillageZG {
 	
@@ -25,8 +26,8 @@ public class StructureComponentVillageFieldZG extends StructureComponentVillageZ
 	public StructureComponentVillageFieldZG() {
 	}
 	
-	public StructureComponentVillageFieldZG(StructureComponentVillageStartPieceZG par1ComponentVillageStartPiece, int par2, Random par3Random,
-			StructureBoundingBox par4StructureBoundingBox, EnumFacing par5) {
+	public StructureComponentVillageFieldZG(StructureComponentVillageStartPieceZG par1ComponentVillageStartPiece, int par2, Random par3Random, StructureBoundingBox par4StructureBoundingBox,
+			EnumFacing par5) {
 		super(par1ComponentVillageStartPiece, par2);
 		this.setCoordBaseMode(par5);
 		this.boundingBox = par4StructureBoundingBox;
@@ -46,11 +47,10 @@ public class StructureComponentVillageFieldZG extends StructureComponentVillageZ
 		this.averageGroundLevel = nbt.getInteger("AvgGroundLevel");
 	}
 	
-	public static StructureComponentVillageFieldZG func_74900_a(StructureComponentVillageStartPieceZG par0ComponentVillageStartPiece, List<StructureComponent> par1List,
-			Random par2Random, int par3, int par4, int par5, EnumFacing par6, int par7) {
+	public static StructureComponentVillageFieldZG func_74900_a(StructureComponentVillageStartPieceZG par0ComponentVillageStartPiece, List<StructureComponent> par1List, Random par2Random, int par3,
+			int par4, int par5, EnumFacing par6, int par7) {
 		final StructureBoundingBox var8 = StructureBoundingBox.getComponentToAddBoundingBox(par3, par4, par5, 0, 0, 0, 13, 4, 9, par6);
-		return StructureComponent.findIntersecting(par1List, var8) == null
-				? new StructureComponentVillageFieldZG(par0ComponentVillageStartPiece, par7, par2Random, var8, par6) : null;
+		return StructureComponent.findIntersecting(par1List, var8) == null ? new StructureComponentVillageFieldZG(par0ComponentVillageStartPiece, par7, par2Random, var8, par6) : null;
 	}
 	
 	@Override
@@ -66,10 +66,10 @@ public class StructureComponentVillageFieldZG extends StructureComponentVillageZ
 		}
 		
 		this.fillWithBlocks(par1World, par3StructureBoundingBox, 0, 1, 0, 12, 4, 8, Blocks.AIR.getDefaultState(), Blocks.AIR.getDefaultState(), false);
-		this.fillWithBlocks(par1World, par3StructureBoundingBox, 1, 0, 1, 2, 0, 7, Blocks.DIRT.getDefaultState(), Blocks.DIRT.getDefaultState(), false);
-		this.fillWithBlocks(par1World, par3StructureBoundingBox, 4, 0, 1, 5, 0, 7, Blocks.DIRT.getDefaultState(), Blocks.DIRT.getDefaultState(), false);
-		this.fillWithBlocks(par1World, par3StructureBoundingBox, 7, 0, 1, 8, 0, 7, Blocks.DIRT.getDefaultState(), Blocks.DIRT.getDefaultState(), false);
-		this.fillWithBlocks(par1World, par3StructureBoundingBox, 10, 0, 1, 11, 0, 7, Blocks.DIRT.getDefaultState(), Blocks.DIRT.getDefaultState(), false);
+		this.fillWithBlocks(par1World, par3StructureBoundingBox, 1, 0, 1, 2, 0, 7, Blocks.FARMLAND.getDefaultState(), Blocks.FARMLAND.getDefaultState(), false);
+		this.fillWithBlocks(par1World, par3StructureBoundingBox, 4, 0, 1, 5, 0, 7, Blocks.FARMLAND.getDefaultState(), Blocks.FARMLAND.getDefaultState(), false);
+		this.fillWithBlocks(par1World, par3StructureBoundingBox, 7, 0, 1, 8, 0, 7, Blocks.FARMLAND.getDefaultState(), Blocks.FARMLAND.getDefaultState(), false);
+		this.fillWithBlocks(par1World, par3StructureBoundingBox, 10, 0, 1, 11, 0, 7, Blocks.FARMLAND.getDefaultState(), Blocks.FARMLAND.getDefaultState(), false);
 		this.fillWithBlocks(par1World, par3StructureBoundingBox, 0, 0, 0, 0, 0, 8, Blocks.LOG.getDefaultState(), Blocks.LOG.getDefaultState(), false);
 		this.fillWithBlocks(par1World, par3StructureBoundingBox, 6, 0, 0, 6, 0, 8, Blocks.LOG.getDefaultState(), Blocks.LOG.getDefaultState(), false);
 		this.fillWithBlocks(par1World, par3StructureBoundingBox, 12, 0, 0, 12, 0, 8, Blocks.LOG.getDefaultState(), Blocks.LOG.getDefaultState(), false);
@@ -82,8 +82,8 @@ public class StructureComponentVillageFieldZG extends StructureComponentVillageZ
 		for (var4 = 1; var4 <= 7; ++var4) {
 			for (int i = 1; i < 12; i++) {
 				if (i % 3 != 0) {
-					if (par2Random.nextInt(3) == 0) {
-						this.setBlockState(par1World, Blocks.SAPLING.getStateFromMeta(MathHelper.getInt(par2Random, 0, 2)), i, 1, var4, par3StructureBoundingBox);
+					if (par2Random.nextInt(1) == 0) {
+						this.setBlockState(par1World, ZGHelper.getRandomCrop(par2Random).getStateFromMeta(MathHelper.getInt(par2Random, 0, 2)), i, 1, var4, par3StructureBoundingBox);
 					}
 				}
 			}
@@ -92,7 +92,7 @@ public class StructureComponentVillageFieldZG extends StructureComponentVillageZ
 		for (var4 = 0; var4 < 9; ++var4) {
 			for (int var5 = 0; var5 < 13; ++var5) {
 				this.clearCurrentPositionBlocksUpwards(par1World, var5, 4, var4, par3StructureBoundingBox);
-				this.replaceAirAndLiquidDownwards(par1World, Blocks.DIRT.getDefaultState(), var5, -1, var4, par3StructureBoundingBox);
+				this.replaceAirAndLiquidDownwards(par1World, Blocks.FARMLAND.getDefaultState(), var5, -1, var4, par3StructureBoundingBox);
 			}
 		}
 		

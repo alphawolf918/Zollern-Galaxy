@@ -74,7 +74,7 @@ public class ItemHeart extends ZGItemBase {
 	
 	@Override
 	public EnumRarity getRarity(ItemStack stack) {
-		return EnumRarity.UNCOMMON;
+		return EnumRarity.RARE;
 	}
 	
 	@Override

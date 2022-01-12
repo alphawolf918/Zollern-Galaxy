@@ -28,6 +28,11 @@ import zollerngalaxy.blocks.caligro.corrupted.ZGOreGemCorrupted;
 import zollerngalaxy.blocks.caligro.corrupted.ZGPlanetStoneCorrupted;
 import zollerngalaxy.blocks.centotl.BlockFacehuggerEgg;
 import zollerngalaxy.blocks.containers.ZGBlockTreasureChest;
+import zollerngalaxy.blocks.crops.BlockCropBlackberry;
+import zollerngalaxy.blocks.crops.BlockCropBlueberry;
+import zollerngalaxy.blocks.crops.BlockCropGrape;
+import zollerngalaxy.blocks.crops.BlockCropStrawberry;
+import zollerngalaxy.blocks.crops.BlockCropTomato;
 import zollerngalaxy.blocks.crystals.BlockStormCrystals;
 import zollerngalaxy.blocks.crystals.ZGCrystalBlock;
 import zollerngalaxy.blocks.eden.BlockRedshroom;
@@ -35,6 +40,7 @@ import zollerngalaxy.blocks.eden.EdenFlower;
 import zollerngalaxy.blocks.eden.EdenFruit;
 import zollerngalaxy.blocks.eden.ZGBlockGrassEden;
 import zollerngalaxy.blocks.exodus.ZGBlockGrassExodus;
+import zollerngalaxy.blocks.oasis.BlockMudClay;
 import zollerngalaxy.blocks.oasis.ZGBlockGrassOasis;
 import zollerngalaxy.blocks.oasis.ZGFlower;
 import zollerngalaxy.blocks.perdita.LostCactus;
@@ -732,19 +738,31 @@ public class ZGBlocks {
 	public static final Block emeraldSiren = new BlockEmeraldSiren("emeraldsiren", ZGSoundEvents.ALARM_EMERALD, false);
 	
 	// Chests
-	public static final Block treasureChestT10 = new ZGBlockTreasureChest("treasure_chest_t1");
+	public static final Block treasureChestT10 = new ZGBlockTreasureChest("treasure_chest_tlaloc");
 	
 	// Boss Spawners
 	public static final Block TLALOC_SPAWNER = new ZGBlockBossSpawner("boss_spawner_t1");
 	
+	//
+	public static final Block mudClayBlock = new BlockMudClay();
+	
+	// Crops
+	public static final Block cropStrawberry = new BlockCropStrawberry();
+	public static final Block cropBlackberry = new BlockCropBlackberry();
+	public static final Block cropBlueberry = new BlockCropBlueberry();
+	public static final Block cropGrape = new BlockCropGrape();
+	public static final Block cropTomato = new BlockCropTomato();
+	
 	public static void init() {
 		ZGBlocks.registerTileEntities();
+		
 		try {
 			ZGBlocks.initSpawnerBlocks();
 		} catch (NoSuchMethodException e) {
 			ZGHelper.LogErr("Error initializing spawner blocks!");
 			e.printStackTrace();
 		}
+		
 		ZGBlocks.registerBlocks(edenLovetreeSapling, edenGoldenWoodSapling, edenParadiseWoodSapling, edenWoodSapling, edenFruit, edenFlower, edenFlowerBlack, edenFlowerBlue, edenFlowerCyan,
 				edenFlowerGreen, edenFlowerOrange, edenFlowerPink, edenFlowerPurple, edenFlowerRed, edenFlowerYellow, edenFlowerWhite, oasisFlower, exodusFlower, zolStone, zolCobbleRock,
 				zolSurfaceRock, zolDirt, zolRockBricks, zolCoalOre, zolCopperOre, zolGoldOre, zolHeartOre, zolTinOre, zolIronOre, zolCrystals, kriffSurfaceRock, kriffStone, kriffCobbleRock, kriffDirt,
@@ -788,7 +806,8 @@ public class ZGBlocks {
 				tociFueltoniumOre, tociDiamondOre, tociQuartzOre);
 		//
 		ZGBlocks.registerBlocks(tlalocRock, tlalocChrome, tlalocMechRock, tlalocDungeonBricks, tlalocStone, tlalocRedstoneOre, tlalocFueltoniumOre, tlalocShiniumOre, tlalocZollerniumOre,
-				tlalocSuperChargedCoalOre, tlalocQuartzOre, tlalocCertusQuartzOre, tlalocFluixOre, tlalocPlutoniumOre);
+				tlalocSuperChargedCoalOre, tlalocQuartzOre, tlalocCertusQuartzOre, tlalocFluixOre, tlalocPlutoniumOre, mudClayBlock, cropStrawberry, cropBlackberry, cropBlueberry, cropGrape,
+				cropTomato);
 		//
 		ZGBlocks.addBlockItemDesc(treasureChestT10);
 		//

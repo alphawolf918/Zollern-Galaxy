@@ -172,7 +172,9 @@ public class FurnaceRecipes {
 		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.tociAmaranthOre, ZGItems.ingotAmaranth, 4.3F);
 		
 		// Tlaloc
-		// TODO
+		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.tlalocFueltoniumOre, ZGItems.ingotFueltonium, 5.7F);
+		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.tlalocZollerniumOre, ZGItems.ingotZollernium, 7.2F);
+		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.tlalocShiniumOre, ZGItems.ingotShinium, 5.6F);
 		
 		// Dust -> Ingots/Gems
 		FurnaceRecipes.SmeltItem(ZGItems.dustDiamond, Items.DIAMOND, 2.6F);
@@ -190,6 +192,7 @@ public class FurnaceRecipes {
 		FurnaceRecipes.SmeltItem(ZGItems.dustRhodium, ZGItems.ingotRhodium, 5.6F);
 		FurnaceRecipes.SmeltItem(ZGItems.perdEtrium, ZGItems.ingotEtrium, 5.6F);
 		FurnaceRecipes.SmeltItem(ZGItems.dustPlutonium, ZGItems.ingotPlutonium, 8.4F);
+		FurnaceRecipes.SmeltItem(ZGItems.dustObsidian, ZGItems.ingotObsidian, 9.6F);
 		
 		// Lapis Dust -> Lapis Ingot
 		FurnaceRecipes.SmeltItem(new ItemStack(Items.DYE, 1, 4), new ItemStack(ZGItems.ingotLapis, 1), 1.0F);
@@ -201,6 +204,11 @@ public class FurnaceRecipes {
 		FurnaceRecipes.SmeltItem(ZGItems.rawBladeFish, ZGItems.cookedBladeFish, 1.2F);
 		FurnaceRecipes.SmeltItem(ZGItems.rawGypsyFish, ZGItems.cookedGypsyFish, 1.2F);
 		FurnaceRecipes.SmeltItem(ZGItems.chocolateRaw, ZGItems.chocolateBar, 1.5F);
+		FurnaceRecipes.SmeltItem(ZGItems.flour, new ItemStack(Items.BREAD, 2), 5.5F);
+		FurnaceRecipes.SmeltItem(ZGItems.dough, new ItemStack(Items.BREAD, 4), 10.5F);
+		
+		// Clay
+		FurnaceRecipes.SmeltItem(ZGItems.mudClayBall, new ItemStack(Items.BRICK, 2), 2.0F);
 		
 		ZGHelper.Log("Loaded a total of " + totalSmeltRecipes + " new smelting recipes.");
 	}

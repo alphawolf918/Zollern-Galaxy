@@ -18,12 +18,13 @@ import zollerngalaxy.proxy.IProxy;
 
 public class ZGItemBase extends Item implements ISingleZGItemRender, IJSONtem {
 	
-	protected IProxy proxy = ZollernGalaxyCore.proxy;
+	protected ZollernGalaxyCore core = ZollernGalaxyCore.instance();
+	protected IProxy proxy = core.proxy;
 	
 	public ZGItemBase(String name) {
 		super();
 		this.setItemName(this, name);
-		if (ZollernGalaxyCore.instance().isInDevMode() && !this.shouldJSONIgnore()) {
+		if (core.isInDevMode() && !this.shouldJSONIgnore()) {
 			JSONFactory.registerItem(name);
 		}
 	}

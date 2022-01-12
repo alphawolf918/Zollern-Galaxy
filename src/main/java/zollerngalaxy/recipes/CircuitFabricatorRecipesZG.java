@@ -9,11 +9,11 @@ package zollerngalaxy.recipes;
 
 import java.util.Arrays;
 import java.util.List;
-import micdoodle8.mods.galacticraft.api.recipe.CircuitFabricatorRecipes;
 import micdoodle8.mods.galacticraft.core.GCItems;
 import net.minecraft.item.ItemStack;
 import zollerngalaxy.items.ZGItems;
 import zollerngalaxy.lib.helpers.ZGHelper;
+import zollerngalaxy.lib.helpers.ZGRecipeHelper;
 
 public final class CircuitFabricatorRecipesZG {
 	
@@ -40,7 +40,7 @@ public final class CircuitFabricatorRecipesZG {
 	}
 	
 	private static void addCircuitFabrication(ItemStack itemStackOut, List<Object> list) {
-		CircuitFabricatorRecipes.addRecipe(itemStackOut, list);
+		ZGRecipeHelper.addCircuitFabricatorRecipe(itemStackOut, list);
 		totalRecipes++;
 	}
 }
