@@ -21,37 +21,37 @@ public class OreDictRegistry {
 	public static void init() {
 		// Amber
 		registerOre("blockAmber", ZGBlocks.blockAmber);
-		registerOre("oreAmber", ZGBlocks.caligroAmberOre);
+		registerOre("oreAmber", ZGBlocks.caligroAmberOre, ZGBlocks.harranAmberOre);
 		registerOre("gemAmber", ZGItems.amber);
 		
 		// Topaz
 		registerOre("blockTopaz", ZGBlocks.blockTopaz);
-		registerOre("oreTopaz", ZGBlocks.caligroTopazOre);
+		registerOre("oreTopaz", ZGBlocks.caligroTopazOre, ZGBlocks.harranTopazOre);
 		registerOre("gemTopaz", ZGItems.topaz);
 		
 		// Opal
 		registerOre("blockOpal", ZGBlocks.blockOpal);
-		registerOre("oreOpal", ZGBlocks.caligroOpalOre);
+		registerOre("oreOpal", ZGBlocks.caligroOpalOre, ZGBlocks.harranOpalOre);
 		registerOre("gemOpal", ZGItems.opal);
 		
 		// Aquamarine
 		registerOre("blockAquamarine", ZGBlocks.blockAquamarine);
-		registerOre("oreAquamarine", ZGBlocks.caligroAquamarineOre);
+		registerOre("oreAquamarine", ZGBlocks.caligroAquamarineOre, ZGBlocks.harranAquamarineOre);
 		registerOre("gemAquamarine", ZGItems.aquamarine);
 		
 		// Garnet
 		registerOre("blockGarnet", ZGBlocks.blockGarnet);
-		registerOre("oreGarnet", ZGBlocks.caligroGarnetOre);
+		registerOre("oreGarnet", ZGBlocks.caligroGarnetOre, ZGBlocks.harranGarnetOre);
 		registerOre("gemGarnet", ZGItems.garnet);
 		
 		// Ruby
 		registerOre("blockRuby", ZGBlocks.blockRuby);
-		registerOre("oreRuby", ZGBlocks.caligroRubyOre);
+		registerOre("oreRuby", ZGBlocks.caligroRubyOre, ZGBlocks.harranRubyOre);
 		registerOre("gemRuby", ZGItems.ruby);
 		
 		// Sapphire
 		registerOre("blockSapphire", ZGBlocks.blockSapphire);
-		registerOre("oreSapphire", ZGBlocks.astrosSapphireOre);
+		registerOre("oreSapphire", ZGBlocks.astrosSapphireOre, ZGBlocks.harranSapphireOre);
 		registerOre("gemSapphire", ZGItems.sapphire);
 		
 		// Static Amber
@@ -308,7 +308,8 @@ public class OreDictRegistry {
 		registerOre("swordVirinium", ZGItems.swordVirinium);
 		
 		// Amaranth
-		registerOre("oreAmaranth", ZGBlocks.xantheonAmaranthOre, ZGBlocks.atheonAmaranthOre, ZGBlocks.altumAmaranthOre, ZGBlocks.caligroAmaranthOre, ZGBlocks.tociAmaranthOre);
+		registerOre("oreAmaranth", ZGBlocks.xantheonAmaranthOre, ZGBlocks.atheonAmaranthOre, ZGBlocks.altumAmaranthOre, ZGBlocks.caligroAmaranthOre, ZGBlocks.tociAmaranthOre,
+				ZGBlocks.harranAmaranthOre);
 		registerOre("dustAmaranth", ZGItems.dustAmaranth);
 		registerOre("ingotAmaranth", ZGItems.ingotAmaranth);
 		registerOre("blockAmaranth", ZGBlocks.blockAmaranth);
@@ -342,12 +343,12 @@ public class OreDictRegistry {
 		
 		// Zinc
 		if (ConfigManagerZG.registerZincOreDict) {
-			registerOre("oreZinc", ZGBlocks.atheonZincOre, ZGBlocks.caligroZincOre, ZGBlocks.tociZincOre);
+			registerOre("oreZinc", ZGBlocks.atheonZincOre, ZGBlocks.caligroZincOre, ZGBlocks.tociZincOre, ZGBlocks.harranZincOre);
 			registerOre("dustZinc", ZGItems.dustZinc);
 			registerOre("ingotZinc", ZGItems.ingotZinc);
 			registerOre("blockZinc", ZGBlocks.blockZinc);
 		} else {
-			registerOre("oreZincium", ZGBlocks.atheonZincOre, ZGBlocks.caligroZincOre, ZGBlocks.tociZincOre);
+			registerOre("oreZincium", ZGBlocks.atheonZincOre, ZGBlocks.caligroZincOre, ZGBlocks.tociZincOre, ZGBlocks.harranZincOre);
 			registerOre("dustZincium", ZGItems.dustZinc);
 			registerOre("ingotZincium", ZGItems.ingotZinc);
 			registerOre("blockZincium", ZGBlocks.blockZinc);
@@ -360,14 +361,14 @@ public class OreDictRegistry {
 		
 		// Super Charged Coal
 		registerOre("oreSuperChargedCoal", ZGBlocks.oasisSuperChargedCoalOre, ZGBlocks.caligroSuperChargedCoalOre, ZGBlocks.vortexSuperChargedCoalOre, ZGBlocks.astrosSuperChargedCoalOre,
-				ZGBlocks.tociSuperChargedCoalOre, ZGBlocks.tlalocSuperChargedCoalOre);
+				ZGBlocks.tociSuperChargedCoalOre, ZGBlocks.tlalocSuperChargedCoalOre, ZGBlocks.harranSuperChargedCoalOre);
 		registerOre("gemSuperChargedCoal", ZGItems.superChargedCoal);
 		registerOre("blockSuperChargedCoal", ZGBlocks.blockSuperChargedCoal);
 		
 		// Uranium
 		if (ConfigManagerZG.fueltoniumIsUranium) {
 			registerOre("oreUranium", ZGBlocks.xantheonFueltoniumOre, ZGBlocks.perdFueltoniumOre, ZGBlocks.caligroFueltoniumOre, ZGBlocks.vortexFueltoniumOre, ZGBlocks.centoFueltoniumOre,
-					ZGBlocks.tociFueltoniumOre, ZGBlocks.tlalocFueltoniumOre);
+					ZGBlocks.tociFueltoniumOre, ZGBlocks.tlalocFueltoniumOre, ZGBlocks.harranFueltoniumOre);
 			registerOre("ingotUranium", ZGItems.ingotFueltonium);
 			registerOre("dustUranium", ZGItems.dustFueltonium);
 			registerOre("blockUranium", ZGBlocks.blockFueltonium);
@@ -375,7 +376,7 @@ public class OreDictRegistry {
 		
 		// Fueltonium
 		registerOre("oreFueltonium", ZGBlocks.xantheonFueltoniumOre, ZGBlocks.perdFueltoniumOre, ZGBlocks.caligroFueltoniumOre, ZGBlocks.vortexFueltoniumOre, ZGBlocks.centoFueltoniumOre,
-				ZGBlocks.tociFueltoniumOre, ZGBlocks.tlalocFueltoniumOre);
+				ZGBlocks.tociFueltoniumOre, ZGBlocks.tlalocFueltoniumOre, ZGBlocks.harranFueltoniumOre);
 		registerOre("ingotFueltonium", ZGItems.ingotFueltonium);
 		registerOre("dustFueltonium", ZGItems.dustFueltonium);
 		registerOre("blockFueltonium", ZGBlocks.blockFueltonium);
@@ -416,24 +417,25 @@ public class OreDictRegistry {
 		registerOre("clay", Items.CLAY_BALL, ZGItems.mudClayBall);
 		
 		// Strawberry
-		registerOre("cropStrawberry", ZGBlocks.cropStrawberry);
-		registerOre("strawberry", ZGItems.strawberry);
+		registerOre("cropStrawberry", ZGItems.strawberry);
 		
 		// Blackberry
-		registerOre("cropBlackberry", ZGBlocks.cropBlackberry);
-		registerOre("blackberry", ZGItems.blackberry);
+		registerOre("cropBlackberry", ZGItems.blackberry);
 		
 		// Blueberry
-		registerOre("cropBlueberry", ZGBlocks.cropBlueberry);
-		registerOre("blueberry", ZGItems.blueberry);
+		registerOre("cropBlueberry", ZGItems.blueberry);
 		
 		// Grape
-		registerOre("cropGrape", ZGBlocks.cropGrape);
-		registerOre("grape", ZGItems.grape);
+		registerOre("cropGrape", ZGItems.grape);
 		
 		// Tomato
-		registerOre("cropTomato", ZGBlocks.cropTomato);
-		registerOre("tomato", ZGItems.tomato);
+		registerOre("cropTomato", ZGItems.tomato);
+		
+		// Corn
+		registerOre("cropCorn", ZGItems.corn);
+		
+		// Cucumber
+		registerOre("cropCucumber", ZGItems.cucumber);
 	}
 	
 	private static void registerOre(String strName, Item... items) {

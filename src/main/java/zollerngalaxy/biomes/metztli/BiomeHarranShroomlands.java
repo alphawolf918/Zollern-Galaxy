@@ -13,7 +13,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 
-public class BiomeHarranShroomlands extends BiomeMetztliBase {
+public class BiomeHarranShroomlands extends BiomeHarranBase {
 	
 	public BiomeHarranShroomlands(BiomeProperties props) {
 		super("harran_shrooms", props);

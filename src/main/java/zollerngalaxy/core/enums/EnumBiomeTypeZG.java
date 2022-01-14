@@ -23,6 +23,7 @@ public enum EnumBiomeTypeZG {
 	ABANDONED,
 	ROCKY,
 	PLAINS,
+	HILLS,
 	SWAMP,
 	TECHY,
 	SWEET,
@@ -31,5 +32,7 @@ public enum EnumBiomeTypeZG {
 	INFECTED,
 	CORRUPTED,
 	STORMY,
-	MUSHROOM;
+	MUSHROOM,
+	CONIFEROUS,
+	MARSH;
 }

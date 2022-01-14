@@ -9,7 +9,6 @@ package zollerngalaxy.biomes;
 
 import java.util.List;
 import java.util.Random;
-import micdoodle8.mods.galacticraft.core.entities.EntityAlienVillager;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedCreeper;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedEnderman;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedSkeleton;
@@ -28,7 +27,9 @@ public class BiomeSpace extends ZGBiomeBase {
 	protected WorldProviderPlanetZG spaceProvider = null;
 	protected boolean enableExtremeMode = ConfigManagerZG.enableExtremeMode;
 	public static int grassFoliageColor = 0x00ff00;
-	protected int villagerSpawnRate = ConfigManagerZG.alienVillagerSpawnRate;
+	protected int villagerSpawnRate = ConfigManagerZG.alienVillagerSpawnChance;
+	protected int villagerMinSpawnRate = ConfigManagerZG.alienVillagerMinSpawnRate;
+	protected int villagerMaxSpawnRate = ConfigManagerZG.alienVillagerMaxSpawnRate;
 	
 	protected static BiomeSpace INSTANCE;
 	
@@ -61,10 +62,6 @@ public class BiomeSpace extends ZGBiomeBase {
 		monsterList.add(new SpawnListEntry(EntityEvolvedCreeper.class, 100, numSpawn, numSpawn));
 		monsterList.add(new SpawnListEntry(EntityEvolvedEnderman.class, 100, numSpawn, numSpawn));
 		monsterList.add(new SpawnListEntry(EntityEvolvedWitch.class, 100, numSpawn, numSpawn));
-		
-		if (ConfigManagerZG.enableAlienVillagerSpawn) {
-			this.spawnableCreatureList.add(new SpawnListEntry(EntityAlienVillager.class, this.villagerSpawnRate, 0, 1));
-		}
 	}
 	
 	public static BiomeSpace instance() {

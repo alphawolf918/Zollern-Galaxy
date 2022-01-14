@@ -41,7 +41,7 @@ import zollerngalaxy.mobs.entities.zombiemutations.EntityOverlord;
 import zollerngalaxy.mobs.entities.zombiemutations.EntitySeeker;
 import zollerngalaxy.mobs.entities.zombiemutations.EntityVolatile;
 
-public abstract class BiomeMetztliBase extends BiomeSpace {
+public abstract class BiomeHarranBase extends BiomeSpace {
 	
 	protected static final IBlockState STONE = Blocks.STONE.getDefaultState();
 	protected static final IBlockState AIR = Blocks.AIR.getDefaultState();
@@ -61,17 +61,17 @@ public abstract class BiomeMetztliBase extends BiomeSpace {
 	
 	public BiomeDecoratorMetztli biomeDecor = this.getBiomeDecorator();
 	
-	public BiomeMetztliBase(String singleName, BiomeProperties props) {
+	public BiomeHarranBase(String singleName, BiomeProperties props) {
 		super(singleName, props);
-		this.setTempCategory(TempCategory.MEDIUM);
-		this.setTemp(62.4F);
+		this.setTempCategory(TempCategory.OCEAN);
+		this.setTemp(62.45F);
 		this.biomeDecor.flowersPerChunk = 4;
 		this.biomeDecor.grassPerChunk = 2;
 		this.biomeDecor.treesPerChunk = 1;
 		this.clearAllSpawning();
 		
 		if (ConfigManagerZG.enableAlienVillagerSpawn) {
-			this.spawnableCreatureList.add(new SpawnListEntry(EntityHarranVillager.class, this.villagerSpawnRate, 1, 1));
+			this.spawnableCreatureList.add(new SpawnListEntry(EntityHarranVillager.class, this.villagerSpawnRate, this.villagerMinSpawnRate, this.villagerMaxSpawnRate));
 		}
 		
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedZombie.class, 100, 1, 4));

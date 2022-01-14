@@ -370,7 +370,7 @@ public class ZGPlanets {
 		planetOasis.setBodyGasses(EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.WATER);
 		planetOasis.setAtmosphere();
 		planetOasis.setBodyIcon("oasis");
-		planetOasis.setBiomeInfo(ZGBiomes.OASIS_PLAINS, ZGBiomes.OASIS_OCEAN, ZGBiomes.OASIS_REDLANDS);
+		planetOasis.setBiomeInfo(ZGBiomes.OASIS_PLAINS, ZGBiomes.OASIS_RED_OCEAN, ZGBiomes.OASIS_REDLANDS);
 		totalPlanets++;
 		
 		// Planet Xantheon
@@ -574,7 +574,7 @@ public class ZGPlanets {
 		planetMetztli.setBodyIcon("metztli");
 		planetMetztli.setAtmosphere();
 		planetMetztli.setBiomeInfo(ZGBiomes.METZTLI_HARRAN_PRIME, ZGBiomes.METZTLI_HARRAN_DUNES, ZGBiomes.METZTLI_HARRAN_OCEAN, ZGBiomes.METZTLI_HARRAN_SWAMP, ZGBiomes.METZTLI_HARRAN_TUNDRA,
-				ZGBiomes.METZTLI_HARRAN_SHROOMS, ZGBiomes.METZTLI_HARRAN_CLAY_MESA);
+				ZGBiomes.METZTLI_HARRAN_SHROOMS, ZGBiomes.METZTLI_HARRAN_CLAY_MESA, ZGBiomes.METZTLI_HARRAN_JUNGLE_HILLS);
 		totalPlanets++;
 		
 		// Centotl

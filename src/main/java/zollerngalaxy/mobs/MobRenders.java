@@ -45,6 +45,7 @@ import zollerngalaxy.mobs.entities.boss.EntityXenomorphQueen;
 import zollerngalaxy.mobs.entities.villagers.EntityAbyssalVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityAstrosVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityCaligroVillager;
+import zollerngalaxy.mobs.entities.villagers.EntityCandoraVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityCentotlVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityEdenVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityHarranVillager;
@@ -94,6 +95,7 @@ import zollerngalaxy.mobs.renders.boss.RenderXenomorphQueen;
 import zollerngalaxy.mobs.renders.villagers.RenderAbyssalVillager;
 import zollerngalaxy.mobs.renders.villagers.RenderAstrosVillager;
 import zollerngalaxy.mobs.renders.villagers.RenderCaligroVillager;
+import zollerngalaxy.mobs.renders.villagers.RenderCandoraVillager;
 import zollerngalaxy.mobs.renders.villagers.RenderCentotlVillager;
 import zollerngalaxy.mobs.renders.villagers.RenderEdenVillager;
 import zollerngalaxy.mobs.renders.villagers.RenderHarranVillager;
@@ -160,6 +162,7 @@ public final class MobRenders {
 		renderMob(EntityTlalocVillager.class, RenderTlalocVillager::new);
 		renderMob(EntityCentotlVillager.class, RenderCentotlVillager::new);
 		renderMob(EntityOasisVillager.class, RenderOasisVillager::new);
+		renderMob(EntityCandoraVillager.class, RenderCandoraVillager::new);
 	}
 	
 	private static void renderEnemies() {

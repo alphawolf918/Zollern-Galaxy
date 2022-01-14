@@ -10,33 +10,42 @@ package zollerngalaxy.biomes.metztli;
 import java.util.Random;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedWitch;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.monster.EntityWitch;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.ChunkPrimer;
+import net.minecraft.world.gen.feature.WorldGenAbstractTree;
+import net.minecraft.world.gen.feature.WorldGenFossils;
+import net.minecraftforge.event.terraingen.DecorateBiomeEvent;
+import net.minecraftforge.event.terraingen.TerrainGen;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 
-public class BiomeHarranSwamp extends BiomeMetztliBase {
+public class BiomeHarranSwamp extends BiomeHarranBase {
+	
+	protected static final IBlockState WATER_LILY = Blocks.WATERLILY.getDefaultState();
 	
 	public BiomeHarranSwamp(BiomeProperties props) {
 		super("harran_swamp", props);
 		props.setBaseHeight(0.5F);
 		props.setHeightVariation(0.2F);
 		props.setTemperature(6.5F);
-		this.setBiomeHeight(65);
+		this.setTemp(46F);
+		this.setBiomeHeight(45);
 		this.setBiomeType(EnumBiomeTypeZG.SWAMP);
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityWitch.class, 25, 1, 1));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedWitch.class, 25, 1, 1));
 		this.biomeDecor.generateFalls = true;
 		this.biomeDecor.generateLakes = true;
 		this.biomeDecor.generateVines = true;
-		this.biomeDecor.treesPerChunk = 16;
-		this.biomeDecor.waterLakesPerChunk = 16;
+		this.biomeDecor.treesPerChunk = 4;
+		this.biomeDecor.waterLakesPerChunk = 24;
 		this.biomeDecor.waterlilyPerChunk = 16;
-		this.biomeDecor.deadBushPerChunk = 2;
+		this.biomeDecor.deadBushPerChunk = 4;
 		this.biomeDecor.tallGrassPerChunk = 4;
 		this.biomeDecor.mushroomsPerChunk = 15;
 		this.enableSnow = false;
@@ -45,6 +54,11 @@ public class BiomeHarranSwamp extends BiomeMetztliBase {
 		this.topBlock = Blocks.GRASS.getDefaultState();
 		this.fillerBlock = Blocks.DIRT.getDefaultState();
 		this.stoneBlock = Blocks.STONE;
+	}
+	
+	@Override
+	public WorldGenAbstractTree getRandomTreeFeature(Random rand) {
+		return SWAMP_FEATURE;
 	}
 	
 	@Override
@@ -71,6 +85,16 @@ public class BiomeHarranSwamp extends BiomeMetztliBase {
 		}
 		
 		this.generateMetztliTerrain(worldIn, rand, chunkPrimerIn, x, z, noiseVal);
+	}
+	
+	@Override
+	public void decorate(World worldIn, Random rand, BlockPos pos) {
+		super.decorate(worldIn, rand, pos);
+		
+		if (TerrainGen.decorate(worldIn, rand, new ChunkPos(pos), DecorateBiomeEvent.Decorate.EventType.FOSSIL))
+			if (rand.nextInt(64) == 0) {
+				(new WorldGenFossils()).generate(worldIn, rand, pos);
+			}
 	}
 	
 	@Override

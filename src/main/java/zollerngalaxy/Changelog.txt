@@ -20,7 +20,10 @@ Zollern Galaxy v2.0.36
 * Added farmable food crops.
     - Can be found in Villages.
     - Also rarely spawn on planets.
-    - Strawberries, Blackberries, Blueberries, Tomatoes
+    - Strawberries, Blackberries, Blueberries, Tomatoes, Corn, Cucumbers
+* Added config options for min and max spawn rates for all ZG Alien Villagers.
+* Added more ores to Metztli.
+* Added the Candora Villager.
 * 
 
 [CHANGES]

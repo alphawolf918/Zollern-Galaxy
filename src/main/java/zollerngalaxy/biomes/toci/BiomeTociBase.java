@@ -49,7 +49,7 @@ public class BiomeTociBase extends BiomeSpace {
 		this.setTempCategory(TempCategory.WARM);
 		this.clearAllSpawning();
 		if (ConfigManagerZG.enableAlienVillagerSpawn) {
-			this.spawnableCreatureList.add(new SpawnListEntry(EntityTociVillager.class, this.villagerSpawnRate, 1, 1));
+			this.spawnableCreatureList.add(new SpawnListEntry(EntityTociVillager.class, this.villagerSpawnRate, this.villagerMinSpawnRate, this.villagerMaxSpawnRate));
 		}
 		if (ConfigManagerZG.enableWandererSpawn) {
 			this.spawnableCreatureList.add(new SpawnListEntry(EntityWanderer.class, 1, 0, 1));

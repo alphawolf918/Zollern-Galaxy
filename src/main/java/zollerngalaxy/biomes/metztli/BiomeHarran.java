@@ -12,7 +12,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 
-public class BiomeHarran extends BiomeMetztliBase {
+public class BiomeHarran extends BiomeHarranBase {
 	
 	public BiomeHarran(BiomeProperties props) {
 		super("harran", props);
@@ -26,11 +26,11 @@ public class BiomeHarran extends BiomeMetztliBase {
 	
 	private void setupBiome(BiomeProperties props) {
 		this.setTempCategory(TempCategory.MEDIUM);
-		props.setBaseHeight(1.2F);
-		props.setHeightVariation(0.5F);
+		props.setBaseHeight(0.5F);
+		props.setHeightVariation(0.2F);
 		props.setTemperature(4.0F);
-		this.setTemp(4F);
-		this.setBiomeHeight(52);
+		this.setTemp(24F);
+		this.setBiomeHeight(32);
 		this.setBiomeType(EnumBiomeTypeZG.LUSH);
 		this.enableSnow = false;
 		this.decorator.generateFalls = true;
@@ -38,7 +38,7 @@ public class BiomeHarran extends BiomeMetztliBase {
 		this.biomeDecor.lavaLakesPerChunk = 0;
 		this.biomeDecor.grassPerChunk = 14;
 		this.biomeDecor.flowersPerChunk = 8;
-		this.biomeDecor.treesPerChunk = 1;
+		this.biomeDecor.treesPerChunk = 2;
 		this.grassFoliageColor = 0x00008b;
 		this.waterColor = 0x8b008b;
 		this.topBlock = Blocks.GRASS.getDefaultState();

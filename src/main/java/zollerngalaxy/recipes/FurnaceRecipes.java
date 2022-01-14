@@ -138,6 +138,10 @@ public class FurnaceRecipes {
 		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.exodusGoldOre, Items.GOLD_INGOT, 5.9F);
 		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.exodusCopperOre, new ItemStack(GCItems.basicItem, 1, 3), 2.4F);
 		
+		// Metztli
+		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.harranZincOre, ZGItems.ingotZinc, 4.6F);
+		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.harranAmaranthOre, ZGItems.ingotAmaranth, 4.6F);
+		
 		// Vortex
 		FurnaceRecipes.SmeltBlock(ZGBlocks.vortexCobblestone, ZGBlocks.vortexStone, 5.6F);
 		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.vortexIronOre, Items.IRON_INGOT, 5.8F);

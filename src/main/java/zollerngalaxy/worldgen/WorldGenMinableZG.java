@@ -33,6 +33,14 @@ public class WorldGenMinableZG extends ZGWorldGenMaster {
 		this.fillBlock = fillBlock.getDefaultState();
 	}
 	
+	public WorldGenMinableZG(IBlockState oreBlockState, IBlockState fillBlockState, EnumOreGenZG oreGen) {
+		this(oreBlockState.getBlock(), fillBlockState.getBlock(), oreGen);
+	}
+	
+	public WorldGenMinableZG(IBlockState oreBlockState, Block fillBlock, EnumOreGenZG oreGen) {
+		this(oreBlockState.getBlock(), fillBlock, oreGen);
+	}
+	
 	@Override
 	public boolean generate(World world, Random rand, BlockPos pos) {
 		float f = rand.nextFloat() * (float) Math.PI;

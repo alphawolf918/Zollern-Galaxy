@@ -51,7 +51,7 @@ public abstract class BiomeOasisBase extends BiomeSpace {
 		this.biomeDecor.mushroomsPerChunk = -999;
 		
 		if (ConfigManagerZG.enableAlienVillagerSpawn) {
-			this.spawnableCreatureList.add(new SpawnListEntry(EntityOasisVillager.class, this.villagerSpawnRate, 0, 1));
+			this.spawnableCreatureList.add(new SpawnListEntry(EntityOasisVillager.class, this.villagerSpawnRate, this.villagerMinSpawnRate, this.villagerMaxSpawnRate));
 		}
 		
 		this.setStoneBlock(ZGBlocks.oasisStone);
@@ -98,7 +98,7 @@ public abstract class BiomeOasisBase extends BiomeSpace {
 				} else {
 					if (iblockstate2.getMaterial() == Material.AIR) {
 						j = -1;
-					} else if (iblockstate2.getBlock() == ZGBlocks.oasisStone) {
+					} else if (iblockstate2.getBlock() == STONE.getBlock()) {
 						if (j == -1) {
 							if (k <= 0) {
 								topState = AIR;

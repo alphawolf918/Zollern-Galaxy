@@ -48,7 +48,7 @@ public class BiomeTlalocBase extends BiomeSpace {
 		this.setWaterColor(0xffffff);
 		this.clearAllSpawning();
 		if (ConfigManagerZG.enableAlienVillagerSpawn) {
-			this.spawnableCreatureList.add(new SpawnListEntry(EntityTlalocVillager.class, this.villagerSpawnRate, 0, 1));
+			this.spawnableCreatureList.add(new SpawnListEntry(EntityTlalocVillager.class, this.villagerSpawnRate, this.villagerMinSpawnRate, this.villagerMaxSpawnRate));
 		}
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityVexBot.class, 100, 1, 2));
 		this.setPlanetForBiome(ZGPlanets.planetTlaloc);

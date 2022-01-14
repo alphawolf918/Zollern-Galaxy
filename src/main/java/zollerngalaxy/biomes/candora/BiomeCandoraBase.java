@@ -20,8 +20,10 @@ import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.blocks.fluids.ZGFluids;
 import zollerngalaxy.blocks.sweetblocks.CandyCubeBlock;
 import zollerngalaxy.celestial.ZGPlanets;
+import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderCandora;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
+import zollerngalaxy.mobs.entities.villagers.EntityCandoraVillager;
 
 public class BiomeCandoraBase extends BiomeSpace {
 	
@@ -46,6 +48,9 @@ public class BiomeCandoraBase extends BiomeSpace {
 		this.biomeDecor.grassPerChunk = -999;
 		this.biomeDecor.mushroomsPerChunk = -999;
 		this.clearAllSpawning();
+		if (ConfigManagerZG.enableAlienVillagerSpawn) {
+			this.spawnableCreatureList.add(new SpawnListEntry(EntityCandoraVillager.class, this.villagerSpawnRate, this.villagerMinSpawnRate, this.villagerMaxSpawnRate));
+		}
 		this.setPlanetForBiome(ZGPlanets.planetCandora);
 	}
 	

@@ -39,6 +39,12 @@ public final class InductionSmelterRecipes {
 		// 1 Coal + 2 Enrichment Dust = 2 Super Charged Coal
 		InductionSmelterRecipes.addRecipe(25000, new ItemStack(Items.COAL, 1), new ItemStack(ZGItems.dustEnrichment, 2), new ItemStack(ZGItems.superChargedCoal, 2));
 		
+		// 2 Amaranth Ingots + 1 Zinc Ingot = 2 Zollernium Ingots
+		InductionSmelterRecipes.addRecipe(10000, new ItemStack(ZGItems.ingotAmaranth, 2), new ItemStack(ZGItems.ingotZinc, 1), new ItemStack(ZGItems.ingotZollernium, 1));
+		
+		// 2 Amaranth Dusts + 1 Zinc Dust = 1 Zollernium Dust
+		InductionSmelterRecipes.addRecipe(5000, new ItemStack(ZGItems.dustAmaranth, 2), new ItemStack(ZGItems.dustZinc, 1), new ItemStack(ZGItems.dustZollernium, 1));
+		
 		ZGHelper.Log("Loaded " + totalRecipes + " new Induction Smelter recipes.");
 	}
 	

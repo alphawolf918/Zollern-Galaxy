@@ -47,7 +47,7 @@ public class BiomeCentoBase extends BiomeSpace {
 		this.biomeDecor.mushroomsPerChunk = -999;
 		this.clearAllSpawning();
 		if (ConfigManagerZG.enableAlienVillagerSpawn) {
-			this.spawnableCreatureList.add(new SpawnListEntry(EntityCentotlVillager.class, this.villagerSpawnRate, 1, 1));
+			this.spawnableCreatureList.add(new SpawnListEntry(EntityCentotlVillager.class, this.villagerSpawnRate, this.villagerMinSpawnRate, this.villagerMaxSpawnRate));
 		}
 		this.setBodyForBiome(ZGPlanets.planetCentotl);
 	}

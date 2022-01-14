@@ -141,6 +141,7 @@ public class PulverizerRecipes {
 		PulverizerRecipes.addRecipe(ZGBlocks.altumAmaranthOre, ZGItems.dustAmaranth);
 		PulverizerRecipes.addRecipe(ZGBlocks.caligroAmaranthOre, ZGItems.dustAmaranth);
 		PulverizerRecipes.addRecipe(ZGBlocks.tociAmaranthOre, ZGItems.dustAmaranth);
+		PulverizerRecipes.addRecipe(ZGBlocks.harranAmaranthOre, ZGItems.dustAmaranth);
 		
 		// Zollernium
 		PulverizerRecipes.addRecipe(ZGBlocks.atheonZollerniumOre, ZGItems.dustZollernium);
@@ -154,6 +155,7 @@ public class PulverizerRecipes {
 		PulverizerRecipes.addRecipe(ZGBlocks.atheonZincOre, ZGItems.dustZinc);
 		PulverizerRecipes.addRecipe(ZGBlocks.caligroZincOre, ZGItems.dustZinc);
 		PulverizerRecipes.addRecipe(ZGBlocks.tociZincOre, ZGItems.dustZinc);
+		PulverizerRecipes.addRecipe(ZGBlocks.harranZincOre, ZGItems.dustZinc);
 		
 		// Fueltonium
 		PulverizerRecipes.addRecipe(ZGBlocks.xantheonFueltoniumOre, ZGItems.dustFueltonium);

@@ -170,8 +170,10 @@ public class ConfigManagerZG {
 	public static int windBlowChance;
 	public static boolean enableWindBlowEvent;
 	public static boolean enableAlienVillagerSpawn;
+	public static int alienVillagerMinSpawnRate;
+	public static int alienVillagerMaxSpawnRate;
 	public static boolean enableAlienVillagerMutation;
-	public static int alienVillagerSpawnRate;
+	public static int alienVillagerSpawnChance;
 	public static boolean enableChargiumLakesOnVortex;
 	public static boolean enableWandererSpawn;
 	public static boolean enableWandererHouses;
@@ -528,9 +530,11 @@ public class ConfigManagerZG {
 		enableWindBlowEvent = config.get(CTG_CUSTOMS, "Enable Wind Blowing Event", true, "Allow the wind blowing event to move Players around on Vortex (default: true). ").getBoolean();
 		enableAlienVillagerSpawn = config.get(CTG_CUSTOMS, "Enable Alien Villager Spawn", true,
 				"Control whether Alien Villagers can spawn randomly outside of Alien Villages; disable if they're causing lag or being annoying. (default: true). ").getBoolean();
+		alienVillagerMinSpawnRate = config.get(CTG_CUSTOMS, "Alien Villager Spawn Rate Min", 0, "Min rate for Alien Villagers to spawn naturally. (default: 0)").getInt();
+		alienVillagerMaxSpawnRate = config.get(CTG_CUSTOMS, "Alien Villager Spawn Rate Max", 1, "Max rate for Alien Villagers to spawn naturally. (default: 1)").getInt();
 		enableAlienVillagerMutation = config.get(CTG_CUSTOMS, "Enable Alien Villagers To Mutate", true, "Set whether or not Alien Villagers can mutate into Zombies on Metztli (default: true). ")
 				.getBoolean();
-		alienVillagerSpawnRate = config.get(CTG_CUSTOMS, "Alien Villager Ambient Spawn Rate", 1, "Spawn rate of all Alien Villager types, affects all planets. (default: 1)").getInt();
+		alienVillagerSpawnChance = config.get(CTG_CUSTOMS, "Alien Villager Ambient Spawn Chance", 1, "Spawn chance of all Alien Villager types, affects all planets. (default: 1)").getInt();
 		enableChargiumLakesOnVortex = config.get(CTG_CUSTOMS, "Enable Chargium Lakes on Vortex", true, "Set to false to make Chargium Lakes not spawn on Vortex (default: true). ").getBoolean();
 		enableWandererSpawn = config.get(CTG_CUSTOMS, "Enable Alien Wanderer Spawn", true, "Set to false to disable Wanderer spawn (default: true). ").getBoolean();
 		enableWandererHouses = config.get(CTG_CUSTOMS, "Enable Alien Wanderer Houses", false, "Set to true to enable Wanderers to spawn houses (default: false). ").getBoolean();

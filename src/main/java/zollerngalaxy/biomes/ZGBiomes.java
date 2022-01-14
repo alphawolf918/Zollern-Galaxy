@@ -14,6 +14,7 @@ import static net.minecraftforge.common.BiomeDictionary.Type.DRY;
 import static net.minecraftforge.common.BiomeDictionary.Type.FOREST;
 import static net.minecraftforge.common.BiomeDictionary.Type.HILLS;
 import static net.minecraftforge.common.BiomeDictionary.Type.HOT;
+import static net.minecraftforge.common.BiomeDictionary.Type.JUNGLE;
 import static net.minecraftforge.common.BiomeDictionary.Type.LUSH;
 import static net.minecraftforge.common.BiomeDictionary.Type.MOUNTAIN;
 import static net.minecraftforge.common.BiomeDictionary.Type.OCEAN;
@@ -75,6 +76,7 @@ import zollerngalaxy.biomes.kriffon.BiomeKriffonLavaOcean;
 import zollerngalaxy.biomes.metztli.BiomeHarran;
 import zollerngalaxy.biomes.metztli.BiomeHarranClayMesa;
 import zollerngalaxy.biomes.metztli.BiomeHarranDunes;
+import zollerngalaxy.biomes.metztli.BiomeHarranMarsh;
 import zollerngalaxy.biomes.metztli.BiomeHarranOcean;
 import zollerngalaxy.biomes.metztli.BiomeHarranShroomlands;
 import zollerngalaxy.biomes.metztli.BiomeHarranSwamp;
@@ -152,7 +154,7 @@ public class ZGBiomes {
 	
 	// Oasis
 	public static final Biome OASIS_PLAINS = new BiomeOasisPlains(new BiomeProperties("Oasis Plains"));
-	public static final Biome OASIS_OCEAN = new BiomeOasisRedSea(new BiomeProperties("Red Sea"));
+	public static final Biome OASIS_RED_OCEAN = new BiomeOasisRedSea(new BiomeProperties("Red Sea"));
 	public static final Biome OASIS_REDLANDS = new BiomeOasisRedlands(new BiomeProperties("Redlands"));
 	public static final Biome OASIS_MUDSWAMP = new BiomeOasisMudSwamp(new BiomeProperties("Muddy Mesa"));
 	
@@ -210,6 +212,7 @@ public class ZGBiomes {
 	public static final Biome METZTLI_HARRAN_TUNDRA = new BiomeHarranTundra(new BiomeProperties("Harran Tundra"), BiomeHarranTundra.Type.MEGA_SPRUCE);
 	public static final Biome METZTLI_HARRAN_SHROOMS = new BiomeHarranShroomlands(new BiomeProperties("Harran Shroomlands"));
 	public static final Biome METZTLI_HARRAN_CLAY_MESA = new BiomeHarranClayMesa(new BiomeProperties("Harran Clay Mesa"));
+	public static final Biome METZTLI_HARRAN_JUNGLE_HILLS = new BiomeHarranMarsh(new BiomeProperties("Harran Marsh"));
 	
 	// Astros
 	public static final Biome ASTROS_BASE = new BiomeAstros(new BiomeProperties("Astros"));
@@ -271,7 +274,7 @@ public class ZGBiomes {
 		
 		// Oasis
 		ZGBiomes.addBiome(ZGBiomes.OASIS_PLAINS, LUSH, WET, PLAINS);
-		ZGBiomes.addBiome(ZGBiomes.OASIS_OCEAN, LUSH, WET, OCEAN);
+		ZGBiomes.addBiome(ZGBiomes.OASIS_RED_OCEAN, LUSH, WET, OCEAN);
 		ZGBiomes.addBiome(ZGBiomes.OASIS_REDLANDS, LUSH, MOUNTAIN);
 		ZGBiomes.addBiome(ZGBiomes.OASIS_MUDSWAMP, LUSH, SWAMP, WET, HILLS);
 		
@@ -329,6 +332,7 @@ public class ZGBiomes {
 		ZGBiomes.addBiome(ZGBiomes.METZTLI_HARRAN_TUNDRA, DEAD, PLAINS, COLD, SNOWY);
 		ZGBiomes.addBiome(ZGBiomes.METZTLI_HARRAN_SHROOMS, DEAD, LUSH, WET, SWAMP);
 		ZGBiomes.addBiome(ZGBiomes.METZTLI_HARRAN_CLAY_MESA, DEAD, WASTELAND, WET, SWAMP);
+		ZGBiomes.addBiome(ZGBiomes.METZTLI_HARRAN_JUNGLE_HILLS, DEAD, WASTELAND, WET, SWAMP, JUNGLE);
 		
 		// Astros
 		ZGBiomes.addBiome(ZGBiomes.ASTROS_BASE, COLD, WET, SNOWY);

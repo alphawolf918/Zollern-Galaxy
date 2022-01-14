@@ -30,6 +30,8 @@ import zollerngalaxy.blocks.centotl.BlockFacehuggerEgg;
 import zollerngalaxy.blocks.containers.ZGBlockTreasureChest;
 import zollerngalaxy.blocks.crops.BlockCropBlackberry;
 import zollerngalaxy.blocks.crops.BlockCropBlueberry;
+import zollerngalaxy.blocks.crops.BlockCropCorn;
+import zollerngalaxy.blocks.crops.BlockCropCucumber;
 import zollerngalaxy.blocks.crops.BlockCropGrape;
 import zollerngalaxy.blocks.crops.BlockCropStrawberry;
 import zollerngalaxy.blocks.crops.BlockCropTomato;
@@ -746,12 +748,37 @@ public class ZGBlocks {
 	//
 	public static final Block mudClayBlock = new BlockMudClay();
 	
+	// Harran Ores
+	public static final Block harranAquamarineOre = new ZGOreGem("harranaquamarineore", 6.2F, ZGItems.aquamarine).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
+			EnumHarvestLevelZG.DIAMOND.getHarvestLevel());
+	public static final Block harranAmberOre = new ZGOreGem("harranamberore", 6.2F, ZGItems.amber).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
+			EnumHarvestLevelZG.DIAMOND.getHarvestLevel());
+	public static final Block harranZincOre = new ZGBlockOre("harranzincore", 6.4F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.DIAMOND.getHarvestLevel());
+	public static final Block harranGarnetOre = new ZGOreGem("harrangarnetore", 6.2F, ZGItems.garnet).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
+			EnumHarvestLevelZG.DIAMOND.getHarvestLevel());
+	public static final Block harranSuperChargedCoalOre = new ZGOreGem("harransuperchargedcoalore", 5.8F, ZGItems.superChargedCoal).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
+			EnumHarvestLevelZG.DIAMOND.getHarvestLevel());
+	public static final Block harranSapphireOre = new ZGOreGem("harransapphireore", 3.2F, ZGItems.sapphire).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
+			EnumHarvestLevelZG.DIAMOND.getHarvestLevel());
+	public static final Block harranOpalOre = new ZGOreGem("harranopalore", 6.2F, ZGItems.opal).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
+			EnumHarvestLevelZG.DIAMOND.getHarvestLevel());
+	public static final Block harranRubyOre = new ZGOreGem("harranrubyore", 6.2F, ZGItems.ruby).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
+			EnumHarvestLevelZG.DIAMOND.getHarvestLevel());
+	public static final Block harranAmaranthOre = new ZGBlockOre("harranamaranthore", 4.4F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
+			EnumHarvestLevelZG.DIAMOND.getHarvestLevel());
+	public static final Block harranTopazOre = new ZGOreGem("harrantopazore", 6.2F, ZGItems.topaz).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
+			EnumHarvestLevelZG.DIAMOND.getHarvestLevel());
+	public static final Block harranFueltoniumOre = new ZGOreGem("harranfueltoniumore", 8.2F, ZGItems.dustFueltonium).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
+			EnumHarvestLevelZG.DIAMOND.getHarvestLevel());
+	
 	// Crops
 	public static final Block cropStrawberry = new BlockCropStrawberry();
 	public static final Block cropBlackberry = new BlockCropBlackberry();
 	public static final Block cropBlueberry = new BlockCropBlueberry();
 	public static final Block cropGrape = new BlockCropGrape();
 	public static final Block cropTomato = new BlockCropTomato();
+	public static final Block cropCorn = new BlockCropCorn();
+	public static final Block cropCucumber = new BlockCropCucumber();
 	
 	public static void init() {
 		ZGBlocks.registerTileEntities();
@@ -805,9 +832,12 @@ public class ZGBlocks {
 				tociSilverOre, tociLeadOre, tociCopperOre, tociZincOre, tociSuperChargedCoalOre, tociRedstoneOre, tociGoldOre, tociAmaranthOre, tociIronOre, tociEmeraldOre, tociCoalOre,
 				tociFueltoniumOre, tociDiamondOre, tociQuartzOre);
 		//
+		ZGBlocks.registerBlocks(harranAquamarineOre, harranAmberOre, harranZincOre, harranGarnetOre, harranSuperChargedCoalOre, harranSapphireOre, harranOpalOre, harranRubyOre, harranAmaranthOre,
+				harranTopazOre, harranFueltoniumOre);
+		//
 		ZGBlocks.registerBlocks(tlalocRock, tlalocChrome, tlalocMechRock, tlalocDungeonBricks, tlalocStone, tlalocRedstoneOre, tlalocFueltoniumOre, tlalocShiniumOre, tlalocZollerniumOre,
 				tlalocSuperChargedCoalOre, tlalocQuartzOre, tlalocCertusQuartzOre, tlalocFluixOre, tlalocPlutoniumOre, mudClayBlock, cropStrawberry, cropBlackberry, cropBlueberry, cropGrape,
-				cropTomato);
+				cropTomato, cropCorn, cropCucumber);
 		//
 		ZGBlocks.addBlockItemDesc(treasureChestT10);
 		//

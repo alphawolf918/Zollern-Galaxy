@@ -19,7 +19,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 
-public class BiomeHarranClayMesa extends BiomeMetztliBase {
+public class BiomeHarranClayMesa extends BiomeHarranBase {
 	
 	public BiomeHarranClayMesa(BiomeProperties props) {
 		super("harran_clay_mesa", props);

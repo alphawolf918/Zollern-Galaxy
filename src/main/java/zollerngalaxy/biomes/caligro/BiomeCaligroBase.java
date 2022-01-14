@@ -77,7 +77,7 @@ public class BiomeCaligroBase extends BiomeSpace {
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityWitherSkeleton.class, 80, 1, 4));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityShade.class, 100, 1, 4));
 		if (ConfigManagerZG.enableAlienVillagerSpawn) {
-			this.spawnableCreatureList.add(new SpawnListEntry(EntityCaligroVillager.class, this.villagerSpawnRate, 1, 1));
+			this.spawnableCreatureList.add(new SpawnListEntry(EntityCaligroVillager.class, this.villagerSpawnRate, this.villagerMinSpawnRate, this.villagerMaxSpawnRate));
 		}
 		this.setPlanetForBiome(ZGPlanets.planetCaligro);
 	}

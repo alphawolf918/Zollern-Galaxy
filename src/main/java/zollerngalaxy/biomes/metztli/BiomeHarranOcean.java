@@ -12,7 +12,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 
-public class BiomeHarranOcean extends BiomeMetztliBase {
+public class BiomeHarranOcean extends BiomeHarranBase {
 	
 	public BiomeHarranOcean(BiomeProperties props) {
 		super("harran_ocean", props);
@@ -25,7 +25,7 @@ public class BiomeHarranOcean extends BiomeMetztliBase {
 	}
 	
 	private void setupBiome(BiomeProperties props) {
-		this.setTempCategory(TempCategory.MEDIUM);
+		this.setTempCategory(TempCategory.OCEAN);
 		props.setBaseHeight(1.2F);
 		props.setHeightVariation(0.5F);
 		props.setTemperature(4.0F);
@@ -41,7 +41,7 @@ public class BiomeHarranOcean extends BiomeMetztliBase {
 		this.biomeDecor.treesPerChunk = 4;
 		this.grassFoliageColor = 0x00ff00;
 		this.waterColor = 0x00008b;
-		this.setBlocks(Blocks.AIR);
+		this.setBlocks(Blocks.DIRT, Blocks.CLAY);
 		this.stoneBlock = Blocks.STONE;
 	}
 	

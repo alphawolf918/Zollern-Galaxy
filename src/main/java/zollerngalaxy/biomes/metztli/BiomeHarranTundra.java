@@ -34,7 +34,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 
-public class BiomeHarranTundra extends BiomeMetztliBase {
+public class BiomeHarranTundra extends BiomeHarranBase {
 	
 	public static enum Type {
 		NORMAL, MEGA, MEGA_SPRUCE;
@@ -42,7 +42,7 @@ public class BiomeHarranTundra extends BiomeMetztliBase {
 	
 	private final boolean superIcy = true;
 	private final WorldGenIceSpike iceSpike = new WorldGenIceSpike();
-	private final WorldGenIcePath icePatch = new WorldGenIcePath(4);
+	private final WorldGenIcePath icePath = new WorldGenIcePath(4);
 	private static final WorldGenTaiga1 PINE_GENERATOR = new WorldGenTaiga1();
 	private static final WorldGenTaiga2 SPRUCE_GENERATOR = new WorldGenTaiga2(false);
 	private static final WorldGenMegaPineTree MEGA_PINE_GENERATOR = new WorldGenMegaPineTree(false, false);
@@ -60,10 +60,10 @@ public class BiomeHarranTundra extends BiomeMetztliBase {
 		this.setTempCategory(TempCategory.COLD);
 		props.setBaseHeight(0.4F);
 		props.setHeightVariation(0.5F);
-		props.setTemperature(-0.5F);
+		props.setTemperature(-1.5F);
 		props.setSnowEnabled();
 		this.setEnableSnow(true);
-		this.setTemp(-0.5F);
+		this.setTemp(-1.5F);
 		this.setBiomeHeight(32);
 		this.setBiomeType(EnumBiomeTypeZG.ICY);
 		this.spawnableCreatureList.add(new Biome.SpawnListEntry(EntityWolf.class, 8, 4, 4));
@@ -100,7 +100,7 @@ public class BiomeHarranTundra extends BiomeMetztliBase {
 			for (int l = 0; l < 2; ++l) {
 				int i1 = rand.nextInt(16) + 8;
 				int j1 = rand.nextInt(16) + 8;
-				this.icePatch.generate(worldIn, rand, worldIn.getHeight(pos.add(i1, 0, j1)));
+				this.icePath.generate(worldIn, rand, worldIn.getHeight(pos.add(i1, 0, j1)));
 			}
 		}
 		

@@ -17,6 +17,7 @@ import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderAltum;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderAstros;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderCaligro;
+import zollerngalaxy.core.dimensions.worldproviders.WorldProviderCandora;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderCentotl;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderEden;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderKriffon;
@@ -32,6 +33,7 @@ import zollerngalaxy.mobs.entities.base.EntityZGVillagerBase;
 import zollerngalaxy.mobs.entities.villagers.EntityAbyssalVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityAstrosVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityCaligroVillager;
+import zollerngalaxy.mobs.entities.villagers.EntityCandoraVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityCentotlVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityEdenVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityHarranVillager;
@@ -84,6 +86,8 @@ public class VillageUtils {
 				VillageUtils.transformIntoVillager(world, entity, EntityTlalocVillager.class);
 			} else if (provider instanceof WorldProviderOasis) {
 				VillageUtils.transformIntoVillager(world, entity, EntityOasisVillager.class);
+			} else if (provider instanceof WorldProviderCandora) {
+				VillageUtils.transformIntoVillager(world, entity, EntityCandoraVillager.class);
 			}
 		}
 		

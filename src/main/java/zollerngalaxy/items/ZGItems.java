@@ -316,6 +316,8 @@ public class ZGItems {
 	public static final Item blueberry = new ZGItemSeedFood("blueberry", 4, 0.5F, ZGBlocks.cropBlueberry);
 	public static final Item grape = new ZGItemSeedFood("grape", 5, 0.8F, ZGBlocks.cropGrape);
 	public static final Item tomato = new ZGItemSeedFood("tomato", 14, 2.0F, ZGBlocks.cropTomato);
+	public static final Item corn = new ZGItemSeedFood("corn", 20, 4.0F, ZGBlocks.cropCorn);
+	public static final Item cucumber = new ZGItemSeedFood("cucumber", 16, 4.5F, ZGBlocks.cropCucumber);
 	
 	// Thermal Armor
 	// public static final Item thermalClothTier3 = new ZGItemBase("thermal_cloth_t3");
@@ -338,9 +340,9 @@ public class ZGItems {
 				swordWither, swordFire, swordThor, swordEnder, swordIce, swordLight, tunnelerCopper, tunnelerGold, tunnelerAmaranth, helmetWood, helmetStone, helmetAmaranth, helmetZollernium,
 				helmetAzurite, helmetRadium, chestWood, chestStone, chestAmaranth, chestZollernium, chestAzurite, chestRadium, legsWood, legsStone, legsAmaranth, legsZollernium, legsAzurite,
 				legsRadium, bootsWood, bootsStone, bootsAmaranth, bootsZollernium, bootsAzurite, bootsRadium, blueprintCorruption, blueprintThermalHot, blueprintThermalCold, healingHeart,
-				healingHeartForce, amuletStorm, oxygenTankTier4, oxygenTankTier5, oxygenTankTier6, sapphire, mudClayBall);
+				healingHeartForce, amuletStorm, oxygenTankTier4, oxygenTankTier5, oxygenTankTier6, sapphire);
 		//
-		ZGItems.registerItems(alcohol, gauze, medkit, nail, nailGroup, woodBox, metalParts, dough, flour, strawberry, blackberry, blueberry, grape, tomato);
+		ZGItems.registerItems(mudClayBall, alcohol, gauze, medkit, nail, nailGroup, woodBox, metalParts, dough, flour, strawberry, blackberry, blueberry, grape, tomato, corn, cucumber);
 		//
 		ZGHelper.Log("Loaded a total of " + totalItems + " new items.");
 	}

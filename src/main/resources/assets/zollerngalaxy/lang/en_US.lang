@@ -374,6 +374,18 @@ tile.exoduswoodplanks.name=Exo Planks
 tile.exoduswoodsapling.name=Exo Sapling
 tile.exosand.name=Exo Sand
 
+tile.harranaquamarineore.name=Aquamarine Ore
+tile.harranamberore.name=Amber Ore
+tile.harranzincore.name=Zinc Ore
+tile.harrangarnetore.name=Garnet Ore
+tile.harransuperchargedcoalore.name=Super Charged Coal
+tile.harransapphireore.name=Sapphire Ore
+tile.harranopalore.name=Opal Ore
+tile.harranrubyore.name=Ruby Ore
+tile.harranamaranthore.name=Amaranth Ore
+tile.harrantopazore.name=Topaz Ore
+tile.harranfueltoniumore.name=Fueltonium Ore
+
 tile.vortexsurfacerock.name=Vortex Surface Rock
 tile.vortexvoltrock.name=Volt Rock
 tile.vortexcobblestone.name=Vortex Cobblestone
@@ -510,6 +522,8 @@ tile.blackberry_crop.name=Blackberries
 tile.blueberry_crop.name=Blueberries
 tile.grape_crop.name=Grapes
 tile.tomato_crop.name=Tomatoes
+tile.corn_crop.name=Corn
+tile.cucumber_crop.name=Cucumbers
 
 ## Subtitles ##
 
@@ -871,6 +885,8 @@ item.blackberry.name=Blackberry
 item.blueberry.name=Blueberry
 item.grape.name=Grape
 item.tomato.name=Tomato
+item.corn.name=Corn
+item.cucumber.name=Cucumber
 
 ## Mobs ##
 
