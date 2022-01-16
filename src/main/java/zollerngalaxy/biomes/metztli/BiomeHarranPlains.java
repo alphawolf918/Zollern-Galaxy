@@ -12,14 +12,14 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 
-public class BiomeHarran extends BiomeHarranBase {
+public class BiomeHarranPlains extends BiomeHarranBase {
 	
-	public BiomeHarran(BiomeProperties props) {
+	public BiomeHarranPlains(BiomeProperties props) {
 		super("harran", props);
 		this.setupBiome(props);
 	}
 	
-	public BiomeHarran(String singleName, BiomeProperties props) {
+	public BiomeHarranPlains(String singleName, BiomeProperties props) {
 		super(singleName, props);
 		this.setupBiome(props);
 	}

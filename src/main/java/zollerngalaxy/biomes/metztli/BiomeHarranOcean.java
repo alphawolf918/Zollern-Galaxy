@@ -26,11 +26,11 @@ public class BiomeHarranOcean extends BiomeHarranBase {
 	
 	private void setupBiome(BiomeProperties props) {
 		this.setTempCategory(TempCategory.OCEAN);
-		props.setBaseHeight(1.2F);
-		props.setHeightVariation(0.5F);
+		props.setBaseHeight(0.0F);
+		props.setHeightVariation(0.0F);
 		props.setTemperature(4.0F);
 		this.setTemp(4F);
-		this.setBiomeHeight(52);
+		this.setBiomeHeight(10);
 		this.setBiomeType(EnumBiomeTypeZG.OCEAN);
 		this.enableSnow = false;
 		this.decorator.generateFalls = true;
@@ -41,7 +41,7 @@ public class BiomeHarranOcean extends BiomeHarranBase {
 		this.biomeDecor.treesPerChunk = 4;
 		this.grassFoliageColor = 0x00ff00;
 		this.waterColor = 0x00008b;
-		this.setBlocks(Blocks.DIRT, Blocks.CLAY);
+		this.setBlocks(Blocks.SAND, Blocks.CLAY);
 		this.stoneBlock = Blocks.STONE;
 	}
 	

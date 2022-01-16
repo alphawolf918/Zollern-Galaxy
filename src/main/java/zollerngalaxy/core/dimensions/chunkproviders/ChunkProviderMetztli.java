@@ -18,7 +18,6 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldEntitySpawner;
 import net.minecraft.world.WorldType;
 import net.minecraft.world.biome.Biome;
-import net.minecraft.world.biome.Biome.TempCategory;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.gen.NoiseGenerator;
@@ -26,7 +25,9 @@ import net.minecraft.world.gen.NoiseGeneratorOctaves;
 import net.minecraft.world.gen.NoiseGeneratorPerlin;
 import net.minecraft.world.gen.feature.WorldGenDungeons;
 import net.minecraft.world.gen.structure.MapGenMineshaft;
+import net.minecraft.world.gen.structure.MapGenScatteredFeature;
 import net.minecraft.world.gen.structure.MapGenStronghold;
+import net.minecraftforge.event.ForgeEventFactory;
 import net.minecraftforge.event.terraingen.InitMapGenEvent;
 import net.minecraftforge.event.terraingen.PopulateChunkEvent;
 import net.minecraftforge.event.terraingen.TerrainGen;
@@ -36,6 +37,7 @@ import zollerngalaxy.util.BiomeUtils;
 import zollerngalaxy.worldgen.ZGWoodlandMansion;
 import zollerngalaxy.worldgen.mapgen.MapGenCavesZG;
 import zollerngalaxy.worldgen.mapgen.MapGenRavinesZG;
+import zollerngalaxy.worldgen.structures.villages.MapGenVillageHarran;
 import zollerngalaxy.worldgen.structures.villages.MapGenVillageZG;
 
 public class ChunkProviderMetztli extends ChunkProviderBase {
@@ -67,10 +69,12 @@ public class ChunkProviderMetztli extends ChunkProviderBase {
 	private double[] stoneNoise = new double[256];
 	private MapGenCavesZG caveGenerator = new MapGenCavesZG(Blocks.STONE);
 	private final MapGenRavinesZG ravineGenerator = new MapGenRavinesZG(Blocks.STONE);
-	private final MapGenVillageZG villageGenerator = new MapGenVillageZG("Metztli");
+	private final MapGenVillageZG planetVillageGenerator = new MapGenVillageZG("Metztli");
+	public MapGenVillageHarran villageGenerator = new MapGenVillageHarran();
 	private MapGenMineshaft mineshaftGenerator = new MapGenMineshaft();
 	private ZGWoodlandMansion woodlandMansionGenerator = new ZGWoodlandMansion(this);
 	private MapGenStronghold strongholdGenerator = new MapGenStronghold();
+	private MapGenScatteredFeature scatteredFeatureGenerator = new MapGenScatteredFeature();
 	private Biome[] biomesForGeneration;
 	private double[] octaves1;
 	private double[] octaves2;
@@ -88,6 +92,7 @@ public class ChunkProviderMetztli extends ChunkProviderBase {
 		{
 			this.woodlandMansionGenerator = (ZGWoodlandMansion) TerrainGen.getModdedMapGen(woodlandMansionGenerator, InitMapGenEvent.EventType.WOODLAND_MANSION);
 			this.strongholdGenerator = (MapGenStronghold) TerrainGen.getModdedMapGen(strongholdGenerator, InitMapGenEvent.EventType.STRONGHOLD);
+			this.villageGenerator = (MapGenVillageHarran) TerrainGen.getModdedMapGen(villageGenerator, InitMapGenEvent.EventType.VILLAGE);
 		}
 		
 		this.rand = new Random(seed);
@@ -170,11 +175,16 @@ public class ChunkProviderMetztli extends ChunkProviderBase {
 								double chunkHeight = CHUNK_HEIGHT;
 								
 								Biome biome = world.getBiome(new BlockPos(x, y, z));
+								
+								if (BiomeUtils.isOceanBiome(biome)) {
+									chunkHeight = 10D;
+								}
+								
 								double heightMod = 0.0D;
 								
 								if (biome instanceof BiomeSpace) {
 									BiomeSpace spaceBiome = (BiomeSpace) biome;
-									heightMod = (spaceBiome.getBiomeHeight() / 2);
+									heightMod = (spaceBiome.getBiomeHeight());
 								}
 								
 								if (heightMod > 0.0D) {
@@ -184,8 +194,14 @@ public class ChunkProviderMetztli extends ChunkProviderBase {
 								if ((lvt_45_1_ += d16) > this.noiseGenSmooth1.getNoise(chunkX * 16 + x, chunkZ * 16 + z) * chunkHeight) {
 									primer.setBlockState(x, y, z, STONE);
 								} else if (y < SEA_LEVEL) {
-									IBlockState blockToUse = (biome.getTempCategory() == TempCategory.COLD) ? ICE : WATER;
+									// IBlockState state = world.getBlockState(new BlockPos(x, y,
+									// z));
+									// Block stateBlock = state.getBlock();
+									IBlockState blockToUse = (BiomeUtils.isColdBiome(biome)) ? ICE : WATER;
+									// int tickRate = blockToUse.getBlock().tickRate(world);
 									primer.setBlockState(x, y, z, blockToUse);
+									// world.scheduleBlockUpdate(new BlockPos(x, y, z),
+									// blockToUse.getBlock(), tickRate, 1);
 								}
 							}
 							
@@ -228,8 +244,9 @@ public class ChunkProviderMetztli extends ChunkProviderBase {
 		this.strongholdGenerator.generate(this.world, x, z, chunkprimer);
 		this.caveGenerator.generate(this.world, x, z, chunkprimer);
 		this.ravineGenerator.generate(this.world, x, z, chunkprimer);
-		this.villageGenerator.generate(this.world, x, z, chunkprimer);
+		this.planetVillageGenerator.generate(this.world, x, z, chunkprimer);
 		this.mineshaftGenerator.generate(this.world, x, z, chunkprimer);
+		this.villageGenerator.generate(this.world, x, z, chunkprimer);
 		
 		Chunk chunk = new Chunk(this.world, chunkprimer, x, z);
 		byte[] abyte = chunk.getBiomeArray();
@@ -403,13 +420,16 @@ public class ChunkProviderMetztli extends ChunkProviderBase {
 		this.rand.setSeed(x * k + z * l ^ this.world.getSeed());
 		boolean flag = false;
 		
+		ForgeEventFactory.onChunkPopulate(true, this, this.world, this.rand, x, z, flag);
+		
 		if (!ConfigManagerCore.disableMoonVillageGen && !BiomeUtils.isOceanBiome(biomegenbase)) {
-			flag = this.villageGenerator.generateStructure(this.world, this.rand, new ChunkPos(x, z));
+			flag = this.planetVillageGenerator.generateStructure(this.world, this.rand, new ChunkPos(x, z));
 		}
 		
 		this.mineshaftGenerator.generateStructure(this.world, this.rand, new ChunkPos(x, z));
 		this.woodlandMansionGenerator.generateStructure(this.world, this.rand, new ChunkPos(x, z));
 		this.strongholdGenerator.generateStructure(this.world, this.rand, new ChunkPos(x, z));
+		flag = this.villageGenerator.generateStructure(this.world, this.rand, new ChunkPos(x, z));
 		
 		if (TerrainGen.populate(this, this.world, this.rand, x, z, flag, PopulateChunkEvent.Populate.EventType.DUNGEON)) {
 			for (int j2 = 0; j2 < 8; ++j2) {
@@ -417,6 +437,23 @@ public class ChunkProviderMetztli extends ChunkProviderBase {
 				int l3 = this.rand.nextInt(256);
 				int l1 = this.rand.nextInt(16) + 8;
 				(new WorldGenDungeons()).generate(this.world, this.rand, blockpos.add(i3, l3, l1));
+			}
+		}
+		
+		if (TerrainGen.populate(this, this.world, this.rand, x, z, flag, PopulateChunkEvent.Populate.EventType.ICE)) {
+			for (int k2 = 0; k2 < 16; ++k2) {
+				for (int j3 = 0; j3 < 16; ++j3) {
+					BlockPos blockpos1 = this.world.getPrecipitationHeight(blockpos.add(k2, 0, j3));
+					BlockPos blockpos2 = blockpos1.down();
+					
+					if (this.world.canBlockFreezeWater(blockpos2)) {
+						this.world.setBlockState(blockpos2, Blocks.ICE.getDefaultState(), 2);
+					}
+					
+					if (this.world.canSnowAt(blockpos1, true)) {
+						this.world.setBlockState(blockpos1, Blocks.SNOW_LAYER.getDefaultState(), 2);
+					}
+				}
 			}
 		}
 		
@@ -440,6 +477,8 @@ public class ChunkProviderMetztli extends ChunkProviderBase {
 			return this.strongholdGenerator.isInsideStructure(pos);
 		} else if ("Mineshaft".equals(structureName) && this.mineshaftGenerator != null) {
 			return this.mineshaftGenerator.isInsideStructure(pos);
+		} else if ("HarranVillage".equals(structureName) && this.villageGenerator != null) {
+			return this.villageGenerator.isInsideStructure(pos);
 		}
 		
 		return false;
@@ -454,6 +493,8 @@ public class ChunkProviderMetztli extends ChunkProviderBase {
 			return this.strongholdGenerator.getNearestStructurePos(worldIn, position, findUnexplored);
 		} else if ("Mineshaft".equals(structureName) && this.mineshaftGenerator != null) {
 			return this.mineshaftGenerator.getNearestStructurePos(worldIn, position, findUnexplored);
+		} else if ("HarranVillage".equals(structureName) && this.villageGenerator != null) {
+			return this.villageGenerator.getNearestStructurePos(worldIn, position, findUnexplored);
 		}
 		
 		return null;
@@ -463,11 +504,13 @@ public class ChunkProviderMetztli extends ChunkProviderBase {
 	public void recreateStructures(Chunk chunk, int x, int z) {
 		this.mineshaftGenerator.generate(this.world, x, z, null);
 		Biome biome = chunk.getWorld().getBiome(new BlockPos(x, 0, z));
+		
 		if (!ConfigManagerCore.disableMoonVillageGen && !BiomeUtils.isOceanBiome(biome)) {
-			this.villageGenerator.generate(this.world, x, z, null);
+			this.planetVillageGenerator.generate(this.world, x, z, null);
 		}
 		
 		this.woodlandMansionGenerator.generate(this.world, x, z, (ChunkPrimer) null);
 		this.strongholdGenerator.generate(this.world, x, z, (ChunkPrimer) null);
+		this.villageGenerator.generate(this.world, x, z, (ChunkPrimer) null);
 	}
 }

@@ -30,7 +30,7 @@ import zollerngalaxy.mobs.entities.EntityJellyfish;
 import zollerngalaxy.mobs.entities.EntityKrull;
 import zollerngalaxy.mobs.entities.EntityMagmos;
 import zollerngalaxy.mobs.entities.EntityMegaCreeper;
-import zollerngalaxy.mobs.entities.EntityMoolus;
+import zollerngalaxy.mobs.entities.EntityEdenCow;
 import zollerngalaxy.mobs.entities.EntityMummy;
 import zollerngalaxy.mobs.entities.EntityOinkus;
 import zollerngalaxy.mobs.entities.EntityPigShroom;
@@ -79,7 +79,7 @@ public class MobRegistry {
 	
 	public static void init() {
 		// Moolus
-		registerEntity("moolus", EntityMoolus.class, entityId++, 0x008b00, 0xeeeeee);
+		registerEntity("moolus", EntityEdenCow.class, entityId++, 0x008b00, 0xeeeeee);
 		
 		// Oinkus
 		registerEntity("oinkus", EntityOinkus.class, entityId++, 0x009f00, 0xeeffee);

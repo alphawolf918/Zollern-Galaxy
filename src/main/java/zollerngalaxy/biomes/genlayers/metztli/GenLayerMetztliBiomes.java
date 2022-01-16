@@ -45,14 +45,17 @@ public class GenLayerMetztliBiomes extends GenLayerMetztli {
 		@SuppressWarnings("unchecked")
 		ArrayList<BiomeEntry>[] currentBiomes = new ArrayList[CachedEnumZG.valuesBiomeCached().length];
 		List<BiomeEntry> list = new ArrayList<>();
-		list.add(new BiomeEntry(ZGBiomes.METZTLI_HARRAN_PRIME, 100));
+		list.add(new BiomeEntry(ZGBiomes.METZTLI_HARRAN_PLAINS, 100));
 		list.add(new BiomeEntry(ZGBiomes.METZTLI_HARRAN_DUNES, 90));
+		list.add(new BiomeEntry(ZGBiomes.METZTLI_HARRAN_RED_DESERT, 85));
 		list.add(new BiomeEntry(ZGBiomes.METZTLI_HARRAN_SWAMP, 80));
-		list.add(new BiomeEntry(ZGBiomes.METZTLI_HARRAN_JUNGLE_HILLS, 75));
-		list.add(new BiomeEntry(ZGBiomes.METZTLI_HARRAN_TUNDRA, 70));
-		list.add(new BiomeEntry(ZGBiomes.METZTLI_HARRAN_OCEAN, 60));
-		list.add(new BiomeEntry(ZGBiomes.METZTLI_HARRAN_SHROOMS, 50));
-		list.add(new BiomeEntry(ZGBiomes.METZTLI_HARRAN_CLAY_MESA, 40));
+		list.add(new BiomeEntry(ZGBiomes.METZTLI_HARRAN_MARSH, 75));
+		list.add(new BiomeEntry(ZGBiomes.METZTLI_HARRAN_CLAY_MESA, 70));
+		list.add(new BiomeEntry(ZGBiomes.METZTLI_HARRAN_HILLS, 65));
+		list.add(new BiomeEntry(ZGBiomes.METZTLI_HARRAN_FOREST, 55));
+		list.add(new BiomeEntry(ZGBiomes.METZTLI_HARRAN_OCEAN, 50));
+		list.add(new BiomeEntry(ZGBiomes.METZTLI_HARRAN_SHROOMS, 40));
+		list.add(new BiomeEntry(ZGBiomes.METZTLI_HARRAN_TUNDRA, 30));
 		
 		currentBiomes[BiomeType.WARM.ordinal()] = new ArrayList<>(list);
 		return currentBiomes;

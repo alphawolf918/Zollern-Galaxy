@@ -9,12 +9,14 @@ package zollerngalaxy.biomes.decorators;
 
 import java.util.Random;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockFlower;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockOldLeaf;
 import net.minecraft.block.BlockOldLog;
 import net.minecraft.block.BlockPlanks;
 import net.minecraft.block.BlockStone;
 import net.minecraft.block.BlockTallGrass;
+import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
@@ -249,12 +251,18 @@ public class BiomeDecoratorMetztli extends BiomeDecoratorZG {
 					}
 				}
 			}
+			
+		}
+		int k1 = this.treesPerChunk;
+		
+		if (rand.nextFloat() < this.extraTreeChance) {
+			++k1;
 		}
 		
 		// Trees
 		if (TerrainGen.decorate(world, rand, forgeChunkPos, DecorateBiomeEvent.Decorate.EventType.TREE)) {
 			if (this.generateTrees && this.treesPerChunk > 0) {
-				for (int i = 0; i < this.treesPerChunk; ++i) {
+				for (int i = 0; i < k1; ++i) {
 					y = rand.nextInt(rand.nextInt(genY) + 8);
 					if (y < 64) {
 						y = ZGHelper.rngInt(64, 82);
@@ -300,7 +308,7 @@ public class BiomeDecoratorMetztli extends BiomeDecoratorZG {
 					}
 					
 					if (rand.nextInt(100) <= 45) {
-						this.treeGenMushroom.generate(world, rand, this.chunkPos.add(x, 0, z));
+						this.treeGenMushroom.generate(world, rand, this.chunkPos.add(x, y, z));
 					}
 				}
 			}
@@ -341,6 +349,26 @@ public class BiomeDecoratorMetztli extends BiomeDecoratorZG {
 			}
 		}
 		
+		if (TerrainGen.decorate(world, rand, forgeChunkPos, DecorateBiomeEvent.Decorate.EventType.FLOWERS)) {
+			for (int l2 = 0; l2 < this.flowersPerChunk; ++l2) {
+				int i7 = rand.nextInt(16) + 8;
+				int l10 = rand.nextInt(16) + 8;
+				int j14 = world.getHeight(this.chunkPos.add(i7, 0, l10)).getY() + 32;
+				
+				if (j14 > 0) {
+					int k17 = rand.nextInt(j14);
+					BlockPos blockpos1 = this.chunkPos.add(i7, k17, l10);
+					BlockFlower.EnumFlowerType blockflower$enumflowertype = biome.pickRandomFlower(rand, blockpos1);
+					BlockFlower blockflower = blockflower$enumflowertype.getBlockType().getBlock();
+					
+					if (blockflower.getDefaultState().getMaterial() != Material.AIR) {
+						this.flowerGen.setGeneratedBlock(blockflower, blockflower$enumflowertype);
+						this.flowerGen.generate(world, rand, blockpos1);
+					}
+				}
+			}
+		}
+		
 		// Reeds
 		if (TerrainGen.decorate(world, rand, forgeChunkPos, DecorateBiomeEvent.Decorate.EventType.REED)) {
 			if (rand.nextInt(4) == 0) {
@@ -376,7 +404,7 @@ public class BiomeDecoratorMetztli extends BiomeDecoratorZG {
 		
 		// Random Tree Feature
 		if (TerrainGen.decorate(world, rand, forgeChunkPos, DecorateBiomeEvent.Decorate.EventType.TREE)) {
-			if (rand.nextInt(6) == 0) {
+			if (rand.nextInt(5) == 0) {
 				for (int j2 = 0; j2 < y; ++j2) {
 					int k6 = rand.nextInt(16) + 8;
 					int l = rand.nextInt(16) + 8;

@@ -82,11 +82,11 @@ public class BiomeHarranMarsh extends BiomeHarranBase {
 		this.biomeDecor.generateWaterLilies = true;
 		this.biomeDecor.generateLakes = true;
 		this.biomeDecor.waterLakesPerChunk = 24;
-		this.biomeDecor.lavaLakesPerChunk = 0;// BiomeIceTundra
+		this.biomeDecor.lavaLakesPerChunk = 0;
 		this.biomeDecor.jungleTreesPerChunk = 55;
 		this.biomeDecor.tallGrassPerChunk = 15;
 		this.biomeDecor.fernsPerChunk = 15;
-		this.grassFoliageColor = 0x008b00;
+		this.grassFoliageColor = 0x00ff00;
 		this.waterColor = 0x008b5c;
 		this.topBlock = Blocks.DIRT.getDefaultState().withProperty(BlockDirt.VARIANT, DirtType.PODZOL);
 		this.fillerBlock = Blocks.DIRT.getDefaultState().withProperty(BlockDirt.VARIANT, DirtType.COARSE_DIRT);
@@ -165,17 +165,17 @@ public class BiomeHarranMarsh extends BiomeHarranBase {
 	public int getSkyColorByTemp(float p_76731_1_) {
 		return 0xcc3a4b;
 	}
-	
-	@Override
-	@SideOnly(Side.CLIENT)
-	public int getGrassColorAtPos(BlockPos pos) {
-		double d0 = GRASS_COLOR_NOISE.getValue(pos.getX() * 0.0225D, pos.getZ() * 0.0225D);
-		return getModdedBiomeGrassColor(d0 < -0.1D ? 5011004 : 6975545);
-	}
-	
-	@Override
-	@SideOnly(Side.CLIENT)
-	public int getFoliageColorAtPos(BlockPos pos) {
-		return getModdedBiomeFoliageColor(this.grassFoliageColor);
-	}
+	//
+	// @Override
+	// @SideOnly(Side.CLIENT)
+	// public int getGrassColorAtPos(BlockPos pos) {
+	// double d0 = GRASS_COLOR_NOISE.getValue(pos.getX() * 0.0225D, pos.getZ() * 0.0225D);
+	// return getModdedBiomeGrassColor(d0 < -0.1D ? 5011004 : 6975545);
+	// }
+	//
+	// @Override
+	// @SideOnly(Side.CLIENT)
+	// public int getFoliageColorAtPos(BlockPos pos) {
+	// return getModdedBiomeFoliageColor(this.grassFoliageColor);
+	// }
 }

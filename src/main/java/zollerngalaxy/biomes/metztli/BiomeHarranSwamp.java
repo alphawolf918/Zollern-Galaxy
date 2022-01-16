@@ -21,8 +21,6 @@ import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 import net.minecraft.world.gen.feature.WorldGenFossils;
 import net.minecraftforge.event.terraingen.DecorateBiomeEvent;
 import net.minecraftforge.event.terraingen.TerrainGen;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 
 public class BiomeHarranSwamp extends BiomeHarranBase {
@@ -97,16 +95,16 @@ public class BiomeHarranSwamp extends BiomeHarranBase {
 			}
 	}
 	
-	@Override
-	@SideOnly(Side.CLIENT)
-	public int getGrassColorAtPos(BlockPos pos) {
-		double d0 = GRASS_COLOR_NOISE.getValue(pos.getX() * 0.0225D, pos.getZ() * 0.0225D);
-		return getModdedBiomeGrassColor(d0 < -0.1D ? 5011004 : 6975545);
-	}
-	
-	@Override
-	@SideOnly(Side.CLIENT)
-	public int getFoliageColorAtPos(BlockPos pos) {
-		return getModdedBiomeFoliageColor(this.grassFoliageColor);
-	}
+	// @Override
+	// @SideOnly(Side.CLIENT)
+	// public int getGrassColorAtPos(BlockPos pos) {
+	// double d0 = GRASS_COLOR_NOISE.getValue(pos.getX() * 0.0225D, pos.getZ() * 0.0225D);
+	// return getModdedBiomeGrassColor(d0 < -0.1D ? 5011004 : 6975545);
+	// }
+	//
+	// @Override
+	// @SideOnly(Side.CLIENT)
+	// public int getFoliageColorAtPos(BlockPos pos) {
+	// return getModdedBiomeFoliageColor(this.grassFoliageColor);
+	// }
 }

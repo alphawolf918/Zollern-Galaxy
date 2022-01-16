@@ -38,6 +38,13 @@
 					"fluid": "radium"
 				}
 			}
+		],
+		"spacemilk": [
+			{
+				"custom": {
+					"fluid": "spacemilk"
+				}
+			}
 		]
 	}
 }

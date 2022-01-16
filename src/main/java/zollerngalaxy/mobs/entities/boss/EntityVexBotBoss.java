@@ -149,7 +149,7 @@ public class EntityVexBotBoss extends EntityBossBase implements IEntityBreathabl
 	
 	@Override
 	public int getChestTier() {
-		return 1;
+		return 10;
 	}
 	
 	@Override

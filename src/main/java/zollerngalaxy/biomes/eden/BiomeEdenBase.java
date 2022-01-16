@@ -38,7 +38,7 @@ import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.celestial.ZGPlanets;
 import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
-import zollerngalaxy.mobs.entities.EntityMoolus;
+import zollerngalaxy.mobs.entities.EntityEdenCow;
 import zollerngalaxy.mobs.entities.EntityOinkus;
 import zollerngalaxy.mobs.entities.villagers.EntityEdenVillager;
 import zollerngalaxy.util.BiomeUtils;
@@ -80,7 +80,7 @@ public abstract class BiomeEdenBase extends BiomeSpace {
 			this.spawnableCreatureList.add(new SpawnListEntry(EntityHorse.class, 100, 1, 2));
 		}
 		
-		this.spawnableCreatureList.add(new SpawnListEntry(EntityMoolus.class, 80, 2, 4));
+		this.spawnableCreatureList.add(new SpawnListEntry(EntityEdenCow.class, 80, 2, 4));
 		this.spawnableCreatureList.add(new SpawnListEntry(EntityOinkus.class, 80, 2, 4));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedZombie.class, 100, 4, 4));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedSpider.class, 100, 4, 4));

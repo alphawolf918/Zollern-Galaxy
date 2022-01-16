@@ -593,9 +593,13 @@ radium=Radiance
 tile.radium.name=Radiance
 fluid.radium=Radiance
 
+spacemilk=Space Milk
+tile.spacemilk.name=Space Milk
+fluid.spacemilk=Space Milk
+
 ## Containers ##
 
-container.eden.treasurechest.name=Eden's Treasure
+container.eden.treasurechest.name=Eden Chest
 container.tlaloc.treasurechest.name=Tlaloc Chest
 
 ## Items ##
@@ -890,9 +894,9 @@ item.cucumber.name=Cucumber
 
 ## Mobs ##
 
-entity.zollerngalaxy:moolus.name=Moolus
-entity.zollerngalaxy:oinkus.name=Oinkus
-entity.zollerngalaxy:squidlus.name=Squidlus
+entity.zollerngalaxy:moolus.name=Eden Cow
+entity.zollerngalaxy:oinkus.name=Eden Pig
+entity.zollerngalaxy:squidlus.name=Eden Squid
 entity.zollerngalaxy:grayalien.name=Gray Alien
 entity.zollerngalaxy:galaxyknight.name=Galactic Sentry
 entity.zollerngalaxy:crawler.name=Crawler Boss
@@ -1208,6 +1212,7 @@ zollerngalaxy_stormprotection=Storm Protection
 ## Enchantments ##
 
 enchantment.zollerngalaxy_enlightened=Enlightened
+enchantment.zollerngalaxy.enlightened.desc=Deals extra damage to Shadow mobs.
 
 ## Tinkerer's Construct ##
 

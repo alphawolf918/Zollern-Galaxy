@@ -11,7 +11,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
-import zollerngalaxy.mobs.entities.EntityMoolus;
+import zollerngalaxy.mobs.entities.EntityEdenCow;
 import zollerngalaxy.mobs.entities.EntityOinkus;
 
 public class BiomeFlowerGarden extends BiomeEdenBase {
@@ -38,7 +38,7 @@ public class BiomeFlowerGarden extends BiomeEdenBase {
 		this.biomeDecor.edenTreesPerChunk = 0;
 		this.grassFoliageColor = 0x00228b;
 		this.waterColor = 0x00228b;
-		this.spawnableCreatureList.add(new SpawnListEntry(EntityMoolus.class, 100, 4, 6));
+		this.spawnableCreatureList.add(new SpawnListEntry(EntityEdenCow.class, 100, 4, 6));
 		this.spawnableCreatureList.add(new SpawnListEntry(EntityOinkus.class, 100, 4, 6));
 		this.topBlock = ZGBlocks.edenGrass.getDefaultState();
 		this.fillerBlock = ZGBlocks.edenSoil.getDefaultState();

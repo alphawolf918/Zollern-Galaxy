@@ -569,12 +569,13 @@ public class ZGPlanets {
 		planetMetztli.setHasRain(true);
 		planetMetztli.setBodyToxicity(5.2F);
 		planetMetztli.setBodyRadiation(8.0F);
-		planetMetztli.setWindLevel(25.6F);
+		planetMetztli.setWindLevel(25.64F);
 		planetMetztli.setBodyGasses(EnumAtmosphericGas.NITROGEN, EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.ARGON, EnumAtmosphericGas.WATER);
 		planetMetztli.setBodyIcon("metztli");
 		planetMetztli.setAtmosphere();
-		planetMetztli.setBiomeInfo(ZGBiomes.METZTLI_HARRAN_PRIME, ZGBiomes.METZTLI_HARRAN_DUNES, ZGBiomes.METZTLI_HARRAN_OCEAN, ZGBiomes.METZTLI_HARRAN_SWAMP, ZGBiomes.METZTLI_HARRAN_TUNDRA,
-				ZGBiomes.METZTLI_HARRAN_SHROOMS, ZGBiomes.METZTLI_HARRAN_CLAY_MESA, ZGBiomes.METZTLI_HARRAN_JUNGLE_HILLS);
+		planetMetztli.setBiomeInfo(ZGBiomes.METZTLI_HARRAN_PLAINS, ZGBiomes.METZTLI_HARRAN_DUNES, ZGBiomes.METZTLI_HARRAN_OCEAN, ZGBiomes.METZTLI_HARRAN_SWAMP, ZGBiomes.METZTLI_HARRAN_TUNDRA,
+				ZGBiomes.METZTLI_HARRAN_SHROOMS, ZGBiomes.METZTLI_HARRAN_CLAY_MESA, ZGBiomes.METZTLI_HARRAN_MARSH, ZGBiomes.METZTLI_HARRAN_FOREST, ZGBiomes.METZTLI_HARRAN_RED_DESERT,
+				ZGBiomes.METZTLI_HARRAN_HILLS);
 		totalPlanets++;
 		
 		// Centotl

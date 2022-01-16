@@ -63,7 +63,7 @@ public class BiomeHarranTundra extends BiomeHarranBase {
 		props.setTemperature(-1.5F);
 		props.setSnowEnabled();
 		this.setEnableSnow(true);
-		this.setTemp(-1.5F);
+		this.setTemp(-20.52F);
 		this.setBiomeHeight(32);
 		this.setBiomeType(EnumBiomeTypeZG.ICY);
 		this.spawnableCreatureList.add(new Biome.SpawnListEntry(EntityWolf.class, 8, 4, 4));

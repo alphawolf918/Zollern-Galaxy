@@ -14,11 +14,11 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import org.lwjgl.opengl.GL11;
 import zollerngalaxy.lib.ZGInfo;
-import zollerngalaxy.mobs.entities.EntityMoolus;
+import zollerngalaxy.mobs.entities.EntityEdenCow;
 import zollerngalaxy.mobs.models.ModelMoolus;
 
 @SideOnly(Side.CLIENT)
-public class RenderMoolus extends RenderLiving<EntityMoolus> {
+public class RenderMoolus extends RenderLiving<EntityEdenCow> {
 	
 	private ModelMoolus model;
 	private static float f6 = 1.7F;
@@ -28,16 +28,16 @@ public class RenderMoolus extends RenderLiving<EntityMoolus> {
 	}
 	
 	@Override
-	protected void preRenderCallback(EntityMoolus entitylivingbaseIn, float partialTickTime) {
+	protected void preRenderCallback(EntityEdenCow entitylivingbaseIn, float partialTickTime) {
 		this.scaleMoolus(entitylivingbaseIn, partialTickTime);
 	}
 	
-	protected void scaleMoolus(EntityMoolus par1EntityMoolus, float par2) {
+	protected void scaleMoolus(EntityEdenCow par1EntityMoolus, float par2) {
 		GL11.glScalef(f6, f6, f6);
 	}
 	
 	@Override
-	protected ResourceLocation getEntityTexture(EntityMoolus entity) {
+	protected ResourceLocation getEntityTexture(EntityEdenCow entity) {
 		return new ResourceLocation(ZGInfo.MOD_ID + ":textures/entity/moolus.png");
 	}
 	

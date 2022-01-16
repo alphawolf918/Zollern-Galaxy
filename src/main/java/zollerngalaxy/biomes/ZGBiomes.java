@@ -73,11 +73,13 @@ import zollerngalaxy.biomes.exodus.BiomeExodusOcean;
 import zollerngalaxy.biomes.exodus.BiomeExodusRockyHills;
 import zollerngalaxy.biomes.kriffon.BiomeKriffon;
 import zollerngalaxy.biomes.kriffon.BiomeKriffonLavaOcean;
-import zollerngalaxy.biomes.metztli.BiomeHarran;
 import zollerngalaxy.biomes.metztli.BiomeHarranClayMesa;
 import zollerngalaxy.biomes.metztli.BiomeHarranDunes;
+import zollerngalaxy.biomes.metztli.BiomeHarranForest;
+import zollerngalaxy.biomes.metztli.BiomeHarranHills;
 import zollerngalaxy.biomes.metztli.BiomeHarranMarsh;
 import zollerngalaxy.biomes.metztli.BiomeHarranOcean;
+import zollerngalaxy.biomes.metztli.BiomeHarranPlains;
 import zollerngalaxy.biomes.metztli.BiomeHarranShroomlands;
 import zollerngalaxy.biomes.metztli.BiomeHarranSwamp;
 import zollerngalaxy.biomes.metztli.BiomeHarranTundra;
@@ -205,14 +207,17 @@ public class ZGBiomes {
 	public static final Biome VORTEX_CHARGIUM_SEA = new BiomeVortexChargiumSea(new BiomeProperties("Vortex Chargium Sea"));
 	
 	// Metztli
-	public static final Biome METZTLI_HARRAN_PRIME = new BiomeHarran(new BiomeProperties("Harran Plains"));
-	public static final Biome METZTLI_HARRAN_DUNES = new BiomeHarranDunes(new BiomeProperties("Harran Dunes"));
+	public static final Biome METZTLI_HARRAN_PLAINS = new BiomeHarranPlains(new BiomeProperties("Harran Plains"));
+	public static final Biome METZTLI_HARRAN_DUNES = new BiomeHarranDunes(BiomeHarranDunes.Type.NORMAL, new BiomeProperties("Harran Dunes"));
 	public static final Biome METZTLI_HARRAN_OCEAN = new BiomeHarranOcean(new BiomeProperties("Harran Ocean"));
 	public static final Biome METZTLI_HARRAN_SWAMP = new BiomeHarranSwamp(new BiomeProperties("Harran Swamp"));
 	public static final Biome METZTLI_HARRAN_TUNDRA = new BiomeHarranTundra(new BiomeProperties("Harran Tundra"), BiomeHarranTundra.Type.MEGA_SPRUCE);
 	public static final Biome METZTLI_HARRAN_SHROOMS = new BiomeHarranShroomlands(new BiomeProperties("Harran Shroomlands"));
 	public static final Biome METZTLI_HARRAN_CLAY_MESA = new BiomeHarranClayMesa(new BiomeProperties("Harran Clay Mesa"));
-	public static final Biome METZTLI_HARRAN_JUNGLE_HILLS = new BiomeHarranMarsh(new BiomeProperties("Harran Marsh"));
+	public static final Biome METZTLI_HARRAN_MARSH = new BiomeHarranMarsh(new BiomeProperties("Harran Marsh"));
+	public static final Biome METZTLI_HARRAN_FOREST = new BiomeHarranForest(BiomeHarranForest.Type.BIRCH, new BiomeProperties("Harran Birch Forest"));
+	public static final Biome METZTLI_HARRAN_RED_DESERT = new BiomeHarranDunes(BiomeHarranDunes.Type.RED, "harran_heat_desert", new BiomeProperties("Harran Red Desert"));
+	public static final Biome METZTLI_HARRAN_HILLS = new BiomeHarranHills(new BiomeProperties("Harran Hills"));
 	
 	// Astros
 	public static final Biome ASTROS_BASE = new BiomeAstros(new BiomeProperties("Astros"));
@@ -325,14 +330,17 @@ public class ZGBiomes {
 		ZGBiomes.addBiome(ZGBiomes.VORTEX_CHARGIUM_SEA, DEAD, SPOOKY, HOT, OCEAN);
 		
 		// Metztli
-		ZGBiomes.addBiome(ZGBiomes.METZTLI_HARRAN_PRIME, LUSH, WASTELAND, DEAD, WET);
+		ZGBiomes.addBiome(ZGBiomes.METZTLI_HARRAN_PLAINS, LUSH, WASTELAND, DEAD, WET);
 		ZGBiomes.addBiome(ZGBiomes.METZTLI_HARRAN_DUNES, DEAD, HOT, DRY, MOUNTAIN, WASTELAND);
 		ZGBiomes.addBiome(ZGBiomes.METZTLI_HARRAN_OCEAN, DEAD, WET, OCEAN);
 		ZGBiomes.addBiome(ZGBiomes.METZTLI_HARRAN_SWAMP, DEAD, LUSH, WET, SWAMP);
 		ZGBiomes.addBiome(ZGBiomes.METZTLI_HARRAN_TUNDRA, DEAD, PLAINS, COLD, SNOWY);
 		ZGBiomes.addBiome(ZGBiomes.METZTLI_HARRAN_SHROOMS, DEAD, LUSH, WET, SWAMP);
 		ZGBiomes.addBiome(ZGBiomes.METZTLI_HARRAN_CLAY_MESA, DEAD, WASTELAND, WET, SWAMP);
-		ZGBiomes.addBiome(ZGBiomes.METZTLI_HARRAN_JUNGLE_HILLS, DEAD, WASTELAND, WET, SWAMP, JUNGLE);
+		ZGBiomes.addBiome(ZGBiomes.METZTLI_HARRAN_MARSH, DEAD, WASTELAND, WET, SWAMP, JUNGLE);
+		ZGBiomes.addBiome(ZGBiomes.METZTLI_HARRAN_FOREST, LUSH, PLAINS, WET, FOREST);
+		ZGBiomes.addBiome(ZGBiomes.METZTLI_HARRAN_RED_DESERT, DEAD, HOT, DRY, MOUNTAIN, WASTELAND);
+		ZGBiomes.addBiome(ZGBiomes.METZTLI_HARRAN_HILLS, LUSH, COLD, DRY, MOUNTAIN);
 		
 		// Astros
 		ZGBiomes.addBiome(ZGBiomes.ASTROS_BASE, COLD, WET, SNOWY);

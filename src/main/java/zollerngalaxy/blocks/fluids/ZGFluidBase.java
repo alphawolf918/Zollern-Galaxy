@@ -7,12 +7,14 @@
  */
 package zollerngalaxy.blocks.fluids;
 
+import micdoodle8.mods.galacticraft.core.wrappers.IFluidHandlerWrapper;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelBakery;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.item.Item;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
@@ -27,6 +29,8 @@ import zollerngalaxy.lib.ZGMapper;
 public class ZGFluidBase extends BlockFluidClassic implements IZGFluidModel {
 	
 	protected String name;
+	public IFluidHandlerWrapper wrapper;
+	public EnumFacing side;
 	
 	public ZGFluidBase(String fluidName, Fluid fluid, Material material) {
 		super(fluid, material);

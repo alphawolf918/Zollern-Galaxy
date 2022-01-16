@@ -83,7 +83,7 @@ import zollerngalaxy.mobs.entities.EntityGalaxyDragon;
 import zollerngalaxy.mobs.entities.EntityGalaxyKnight;
 import zollerngalaxy.mobs.entities.EntityGrayAlien;
 import zollerngalaxy.mobs.entities.EntityMegaCreeper;
-import zollerngalaxy.mobs.entities.EntityMoolus;
+import zollerngalaxy.mobs.entities.EntityEdenCow;
 import zollerngalaxy.mobs.entities.EntityMummy;
 import zollerngalaxy.mobs.entities.EntityOinkus;
 import zollerngalaxy.mobs.entities.EntityScorpion;
@@ -433,7 +433,7 @@ public class ZGEvents {
 		int randInt = rand.nextInt(100);
 		
 		// Moolus (Alien Cow)
-		if (theEntity instanceof EntityMoolus) {
+		if (theEntity instanceof EntityEdenCow) {
 			for (int i = 0; i < ZGHelper.rngInt(1, 4); i++) {
 				ZGHelper.dropItem(ZGItems.rawAlienBeef, worldObj, theEntity);
 			}

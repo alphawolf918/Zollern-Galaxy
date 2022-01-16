@@ -24,7 +24,7 @@ import zollerngalaxy.mobs.entities.EntityJellyfish;
 import zollerngalaxy.mobs.entities.EntityKrull;
 import zollerngalaxy.mobs.entities.EntityMagmos;
 import zollerngalaxy.mobs.entities.EntityMegaCreeper;
-import zollerngalaxy.mobs.entities.EntityMoolus;
+import zollerngalaxy.mobs.entities.EntityEdenCow;
 import zollerngalaxy.mobs.entities.EntityMummy;
 import zollerngalaxy.mobs.entities.EntityOinkus;
 import zollerngalaxy.mobs.entities.EntityPigShroom;
@@ -137,7 +137,7 @@ public final class MobRenders {
 	}
 	
 	private static void renderAnimals() {
-		MobRenders.renderMob(EntityMoolus.class, RenderMoolus::new);
+		MobRenders.renderMob(EntityEdenCow.class, RenderMoolus::new);
 		MobRenders.renderMob(EntityOinkus.class, RenderOinkus::new);
 		MobRenders.renderMob(EntityPigShroom.class, RenderPigShroom::new);
 		MobRenders.renderMob(EntityGalaxyDragon.class, RenderGalaxyDragon::new);
