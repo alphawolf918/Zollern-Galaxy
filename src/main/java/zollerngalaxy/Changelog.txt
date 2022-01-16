@@ -26,14 +26,12 @@ Zollern Galaxy v2.0.36
 * Added the Candora Villager.
 * Added several new biomes on Metztli.
 * Added Space Milk.
-* 
 
 [CHANGES]
 * Reworked and improved chunk generation on Metztli.
 * Moolus (Alien Cows) can now be tempted with strawberries.
 * Renamed Moolus to Eden Cow, and Oinkus to Eden Pigs.
 * Eden Cows can now be milked with buckets to get Space Milk.
-* 
 
 [FIXES]
-* 
+* Fixed compatibility crash when Extreme Reactors was missing.

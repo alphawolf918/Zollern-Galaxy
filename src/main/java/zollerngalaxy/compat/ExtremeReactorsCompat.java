@@ -10,7 +10,13 @@ package zollerngalaxy.compat;
 import erogenousbeef.bigreactors.api.registry.Reactants;
 import erogenousbeef.bigreactors.api.registry.ReactorInterior;
 import erogenousbeef.bigreactors.api.registry.TurbineCoil;
+import erogenousbeef.bigreactors.init.BrItems;
+import net.minecraft.item.ItemStack;
+import zollerngalaxy.config.ConfigManagerZG;
+import zollerngalaxy.items.ZGItems;
+import zollerngalaxy.lib.helpers.ModHelperBase;
 import zollerngalaxy.lib.helpers.ZGHelper;
+import zollerngalaxy.recipes.InductionSmelterRecipes;
 
 public class ExtremeReactorsCompat {
 	
@@ -43,6 +49,15 @@ public class ExtremeReactorsCompat {
 		// Reactor Solids
 		ExtremeReactorsCompat.registerReactorSolid("ingotFueltonium", "fueltonium", fueltoniumReactantAmount, FUEL, fueltoniumColor);
 		ExtremeReactorsCompat.registerReactorSolid("ingotPlutonium", "plutonium", plutoniumReactantAmount, FUEL, plutoniumColor);
+		
+		// Extreme Reactors + Thermal Foundation
+		if (ModHelperBase.useThermalFoundation) {
+			// Blutonium
+			if (ModHelperBase.useExtremeReactors && ConfigManagerZG.enableExtremeReactorsCompat) {
+				// 8 Cyanite + 2 Enrichment Dust = 2 Blutonium Ingots
+				InductionSmelterRecipes.addRecipe(20000, new ItemStack(BrItems.ingotCyanite, 9), new ItemStack(ZGItems.dustEnrichment, 2), new ItemStack(BrItems.ingotBlutonium, 2));
+			}
+		}
 		
 		ZGHelper.Log("Extreme Reactors IMC: Done!");
 	}
