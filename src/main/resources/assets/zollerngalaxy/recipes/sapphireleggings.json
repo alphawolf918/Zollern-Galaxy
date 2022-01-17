@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ZZZ",
+    "Z Z",
+    "Z Z"
+  ],
+  "key": {
+    "Z": {
+      "item": "zollerngalaxy:sapphire"
+    }
+  },
+  "result": {
+    "item": "zollerngalaxy:sapphireleggings"
+  }
+}

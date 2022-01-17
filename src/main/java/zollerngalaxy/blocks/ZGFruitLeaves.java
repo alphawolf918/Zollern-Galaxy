@@ -30,14 +30,14 @@ public class ZGFruitLeaves extends ZGBlockLeaves {
 	}
 	
 	@Override
-	protected void dropApple(World worldIn, BlockPos pos, IBlockState state, int chance) {
-		super.dropApple(worldIn, pos, state, chance);
+	protected void dropFruit(World worldIn, BlockPos pos, IBlockState state, int chance) {
+		super.dropFruit(worldIn, pos, state, chance);
 		this.dropFruit(worldIn, pos);
 	}
 	
 	protected void dropFruit(World worldIn, BlockPos pos) {
 		if (!worldIn.isRemote) {
-			if (ZGHelper.getRNGChance(4, 10)) {
+			if (ZGHelper.getRNGChance(4, 8)) {
 				int randInt = ZGHelper.rngInt(1, 2);
 				for (int i = 0; i < randInt; i++) {
 					ZGHelper.dropItem(droppedFood, worldIn, pos);

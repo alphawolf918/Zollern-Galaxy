@@ -31,11 +31,11 @@ public class BiomeExodusOcean extends BiomeExodusBase {
 		this.clearAllNonMonsterSpawning();
 		this.spawnableWaterCreatureList.add(new SpawnListEntry(EntitySquid.class, 100, 1, 2));
 		this.spawnableWaterCreatureList.add(new SpawnListEntry(EntityJellyfish.class, 100, 1, 2));
-		this.biomeDecor.exodusTallGrassPerChunk = 6;
-		this.biomeDecor.astersPerChunk = 5;
+		this.biomeDecor.tallGrassPerChunk = 6;
+		this.biomeDecor.flowersPerChunk = 5;
 		this.biomeDecor.generateFalls = true;
 		this.biomeDecor.generateLakes = true;
-		this.biomeDecor.lavaLakesPerChunk = 0;
+		this.biomeDecor.lavaLakesPerChunk = 4;
 		this.biomeDecor.deadBushPerChunk = 0;
 		this.biomeDecor.waterLakesPerChunk = 6;
 		this.enableSnow = false;

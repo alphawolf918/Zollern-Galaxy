@@ -40,6 +40,7 @@ public class BiomeHarranSwamp extends BiomeHarranBase {
 		this.biomeDecor.generateFalls = true;
 		this.biomeDecor.generateLakes = true;
 		this.biomeDecor.generateVines = true;
+		this.biomeDecor.generateMushroomTrees = true;
 		this.biomeDecor.treesPerChunk = 4;
 		this.biomeDecor.waterLakesPerChunk = 24;
 		this.biomeDecor.waterlilyPerChunk = 16;

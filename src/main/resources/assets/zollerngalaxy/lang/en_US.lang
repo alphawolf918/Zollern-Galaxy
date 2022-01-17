@@ -96,6 +96,11 @@ tile.lovetreeplanks.name=Lovetree Planks
 tile.lovetreeleaves.name=Lovetree Leaves
 tile.lovetreesapling.name=Lovetree Sapling
 
+tile.cherrylog.name=Cherrywood Log
+tile.cherryplanks.name=Cherrywood Planks
+tile.cherryleaves.name=Cherrywood Leaves
+tile.cherrysapling.name=Cherrywood Sapling
+
 tile.fruitofedenblock.name=Fruit of Eden
 tile.edengravel.name=Eden's Gravel
 tile.edenwinterrock.name=Eden's Snowrock
@@ -524,6 +529,8 @@ tile.grape_crop.name=Grapes
 tile.tomato_crop.name=Tomatoes
 tile.corn_crop.name=Corn
 tile.cucumber_crop.name=Cucumbers
+tile.radish_crop.name=Radishes
+tile.onion_crop.name=Onions
 
 ## Subtitles ##
 
@@ -627,6 +634,8 @@ item.brownie.name=Brownie
 item.candyapple.name=Candy Apple
 item.icecreamsandwich.name=Ice Cream Sandwich
 item.icecream.name=Ice Cream
+item.strawberry_chocolate.name=Chocolate-Covered Strawberry
+item.strawberry_spaceshake.name=Strawberry Space Milkshake
 
 item.hud.name=Galactic HUD
 item.brightstonedust.name=Britestone Dust
@@ -822,6 +831,18 @@ item.zollernium_shovel.name=Zollernium Shovel
 item.zollernium_axe.name=Zollernium Axe
 item.zollernium_hoe.name=Zollernium Hoe
 
+item.ruby_pickaxe.name=Ruby Pickaxe
+item.ruby_sword.name=Ruby Sword
+item.ruby_shovel.name=Ruby Shovel
+item.ruby_axe.name=Ruby Axe
+item.ruby_hoe.name=Ruby Hoe
+
+item.sapphire_pickaxe.name=Sapphire Pickaxe
+item.sapphire_sword.name=Sapphire Sword
+item.sapphire_shovel.name=Sapphire Shovel
+item.sapphire_axe.name=Sapphire Axe
+item.sapphire_hoe.name=Sapphire Hoe
+
 item.woodhelmet.name=Wooden Helmet
 item.woodchestplate.name=Wooden Chestplate
 item.woodleggings.name=Wooden Leggings
@@ -851,6 +872,16 @@ item.radiumhelmet.name=Radium Helmet
 item.radiumchestplate.name=Radium Chestplate
 item.radiumleggings.name=Radium Leggings
 item.radiumboots.name=Radium Boots
+
+item.rubyhelmet.name=Ruby Helmet
+item.rubychestplate.name=Ruby Chestplate
+item.rubyleggings.name=Ruby Leggings
+item.rubyboots.name=Ruby Boots
+
+item.sapphirehelmet.name=Sapphire Helmet
+item.sapphirechestplate.name=Sapphire Chestplate
+item.sapphireleggings.name=Sapphire Leggings
+item.sapphireboots.name=Sapphire Boots
 
 item.heart.name=Healing Heart
 item.heartforce.name=Max Heartforce
@@ -882,6 +913,7 @@ item.enrichmentdust.name=Enrichment Dust
 
 item.flour.name=Flour
 item.dough.name=Dough
+item.cookeddough.name=Cooked Dough
 
 ## Crop Items ##
 item.strawberry.name=Strawberry
@@ -891,6 +923,9 @@ item.grape.name=Grape
 item.tomato.name=Tomato
 item.corn.name=Corn
 item.cucumber.name=Cucumber
+item.radish.name=Radish
+item.onion.name=Onion
+item.cherry.name=Cherry
 
 ## Mobs ##
 

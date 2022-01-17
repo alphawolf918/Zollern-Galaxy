@@ -1,0 +1,9 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "all": "zollerngalaxy:blocks/cherrylog_top",
+    "top": "zollerngalaxy:blocks/cherrylog_top",
+    "right": "zollerngalaxy:blocks/cherrylog",
+    "left": "zollerngalaxy:blocks/cherrylog"
+  }
+}

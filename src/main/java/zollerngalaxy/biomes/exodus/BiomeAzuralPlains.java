@@ -27,16 +27,17 @@ public class BiomeAzuralPlains extends BiomeExodusBase {
 	private void setupBiome(BiomeProperties props) {
 		this.setTempCategory(TempCategory.MEDIUM);
 		props.setBaseHeight(1.2F);
-		props.setHeightVariation(0.5F);
+		props.setHeightVariation(0.2F);
 		props.setTemperature(4.0F);
-		this.biomeDecor.exodusTallGrassPerChunk = 14;
-		this.biomeDecor.exodusTreesPerChunk = 2;
+		this.biomeDecor.generateFalls = true;
+		this.biomeDecor.tallGrassPerChunk = 14;
+		this.biomeDecor.treesPerChunk = 2;
 		this.biomeDecor.lavaLakesPerChunk = 1;
+		this.biomeDecor.flowersPerChunk = 8;
+		this.enableSnow = false;
 		this.setTemp(4F);
 		this.setBiomeHeight(52);
 		this.setBiomeType(EnumBiomeTypeZG.LUSH);
-		this.enableSnow = false;
-		this.decorator.generateFalls = true;
 		this.grassFoliageColor = 0xff008b;
 		this.waterColor = 0x8b008b;
 		this.topBlock = ZGBlocks.exodusGrass.getDefaultState();

@@ -253,6 +253,7 @@ public class BiomeDecoratorMetztli extends BiomeDecoratorZG {
 			}
 			
 		}
+		
 		int k1 = this.treesPerChunk;
 		
 		if (rand.nextFloat() < this.extraTreeChance) {
@@ -349,6 +350,7 @@ public class BiomeDecoratorMetztli extends BiomeDecoratorZG {
 			}
 		}
 		
+		// Flowers
 		if (TerrainGen.decorate(world, rand, forgeChunkPos, DecorateBiomeEvent.Decorate.EventType.FLOWERS)) {
 			for (int l2 = 0; l2 < this.flowersPerChunk; ++l2) {
 				int i7 = rand.nextInt(16) + 8;

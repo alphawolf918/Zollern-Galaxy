@@ -1,37 +1,22 @@
 ===== CHANGELOG =====
-Zollern Galaxy v2.0.36
+Zollern Galaxy v2.0.38
 =====================
 
 [NEW]
-* Added several new crafting items and tools:
-    - Medkit, Gauze, Nail, Nail Group, Wooden Box, Metal Parts
-* Added a way to get more bread from Wheat: 1 Wheat pulverizes into into 2 Flour, each of which smelt into 2 Bread.
-    - Dough can also be crafted to maximize Bread output.
-* Added Obsidian Dust and Obsidian Ingots.
-    - Obsidian can be pulverized into 9 Obsidian Dust, which can then be cooked into Obsidian Ingots.
-    - 9 Obsidian Ingots can be crafted into 1 Block of Obsidian and back.
-* Added Mud Swamp biome to Oasis, which consists of Mud Clay blocks.
-    - When broken, these drop up to 4 Mud Clay Balls, each of which can be cooked into 2 regular Brick Ingots.
-        - Can also be used in place of regular Clay.
-* Added the "Enlightened" Enchantment.
-    - Can be applied to Swords and Bows.
-    - Deals extra damage to Shade Mobs (any mob that drops Dark Matter Essence).
-* Added Wooden and Stone armor.
-* Added farmable food crops.
-    - Can be found in Villages.
-    - Also rarely spawn on planets.
-    - Strawberries, Blackberries, Blueberries, Tomatoes, Corn, Cucumbers
-* Added config options for min and max spawn rates for all ZG Alien Villagers.
-* Added more ores to Metztli.
-* Added the Candora Villager.
-* Added several new biomes on Metztli.
-* Added Space Milk.
+* Added new armor and tools:
+    - Ruby, Sapphire
+* Added more crops:
+    - Radishes
+* Added Cooked Dough.
+    - Three pieces of Cooked Dough can be used to craft 16 Bread each.
+* 
 
 [CHANGES]
-* Reworked and improved chunk generation on Metztli.
-* Moolus (Alien Cows) can now be tempted with strawberries.
-* Renamed Moolus to Eden Cow, and Oinkus to Eden Pigs.
-* Eden Cows can now be milked with buckets to get Space Milk.
+* Dough cooking has been changed to maximize Bread output.
+    - One piece of raw Dough gives 4 Cooked Dough pieces.
+* Slightly increased chance for fruit to drop from applicable trees.
+* 
 
 [FIXES]
-* Fixed compatibility crash when Extreme Reactors was missing.
+* Fixed some gem ores not actually dropping gems.
+* 

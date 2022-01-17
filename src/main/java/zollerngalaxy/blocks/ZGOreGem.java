@@ -17,13 +17,14 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import zollerngalaxy.items.ZGItems;
 import zollerngalaxy.lib.helpers.ZGHelper;
 
 public class ZGOreGem extends ZGBlockOre {
 	
 	protected int minDropped = (this.enableExtremeMode) ? 4 : 2;
 	protected int maxDropped = (this.enableExtremeMode) ? 8 : 4;
-	protected Item itemToDrop;
+	protected Item itemToDrop = ZGItems.sapphire;
 	
 	protected int droppedMetadata = 0;
 	protected boolean itemHasMetadata = false;
@@ -31,6 +32,7 @@ public class ZGOreGem extends ZGBlockOre {
 	public ZGOreGem(String blockName, float hardResist, Item gemItem) {
 		super(blockName, hardResist);
 		this.itemToDrop = gemItem;
+		this.setDroppedItemHasMetadata(this.itemHasMetadata);
 	}
 	
 	public Block setDropMeta(int droppedMeta, boolean hasMeta) {
@@ -126,17 +128,17 @@ public class ZGOreGem extends ZGBlockOre {
 			int i = random.nextInt(fortune + 2) - 1;
 			
 			if (i < 0) {
-				i = 0;
+				i = 1;
 			}
 			
-			return this.quantityDropped(random) * (i + 1);
+			return this.quantityDropped(random) * i;
 		} else {
 			return this.quantityDropped(random);
 		}
 	}
 	
 	@Override
-	public int getExpDrop(IBlockState state, net.minecraft.world.IBlockAccess world, BlockPos pos, int fortune) {
+	public int getExpDrop(IBlockState state, IBlockAccess world, BlockPos pos, int fortune) {
 		int extMod = (this.enableExtremeMode) ? 2 : 0;
 		Random rand = world instanceof World ? ((World) world).rand : new Random();
 		return MathHelper.getInt(rand, 3 + extMod, 7 + extMod);

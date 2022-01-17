@@ -10,6 +10,7 @@ package zollerngalaxy.biomes.metztli;
 import java.util.Random;
 import net.minecraft.block.BlockDoublePlant;
 import net.minecraft.block.BlockFlower;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.passive.EntityRabbit;
 import net.minecraft.entity.passive.EntityWolf;
 import net.minecraft.init.Blocks;
@@ -26,13 +27,20 @@ import net.minecraftforge.event.terraingen.DecorateBiomeEvent;
 import net.minecraftforge.event.terraingen.TerrainGen;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
+import zollerngalaxy.worldgen.WorldGenZGTree;
 
 public class BiomeHarranForest extends BiomeHarranBase {
+	
+	protected static final IBlockState CHERRY_LOG = ZGBlocks.cherryWoodLog.getDefaultState();
+	protected static final IBlockState CHERRY_LEAVES = ZGBlocks.cherryWoodLeaves.getDefaultState();
 	
 	protected static final WorldGenBirchTree SUPER_BIRCH_TREE = new WorldGenBirchTree(false, true);
 	protected static final WorldGenBirchTree BIRCH_TREE = new WorldGenBirchTree(false, false);
 	protected static final WorldGenCanopyTree ROOF_TREE = new WorldGenCanopyTree(false);
+	protected static final WorldGenAbstractTree CHERRY_TREE = new WorldGenZGTree(false, 4, CHERRY_LOG, CHERRY_LEAVES, false);
+	
 	private final BiomeHarranForest.Type type;
 	
 	public BiomeHarranForest(BiomeHarranForest.Type typeIn, BiomeProperties props) {
@@ -53,7 +61,7 @@ public class BiomeHarranForest extends BiomeHarranBase {
 		props.setHeightVariation(0.6F);
 		props.setTemperature(5.6F);
 		this.setTemp(24F);
-		this.setBiomeHeight(38);
+		this.setBiomeHeight(28);
 		this.setBiomeType(EnumBiomeTypeZG.FOREST);
 		this.enableSnow = false;
 		this.biomeDecor.generateFalls = true;
@@ -63,7 +71,11 @@ public class BiomeHarranForest extends BiomeHarranBase {
 		this.biomeDecor.tallGrassPerChunk = 6;
 		this.biomeDecor.flowersPerChunk = 4;
 		this.biomeDecor.treesPerChunk = 10;
-		this.grassFoliageColor = 0x00cc00;
+		if (this.type == Type.CHERRY) {
+			this.grassFoliageColor = 0xf741cb;
+		} else {
+			this.grassFoliageColor = 0x00cc00;
+		}
 		this.waterColor = 0x0000ff;
 		this.topBlock = Blocks.GRASS.getDefaultState();
 		this.fillerBlock = Blocks.DIRT.getDefaultState();
@@ -102,6 +114,8 @@ public class BiomeHarranForest extends BiomeHarranBase {
 			return ROOF_TREE;
 		} else if (this.type != BiomeHarranForest.Type.BIRCH && rand.nextInt(5) != 0) {
 			return rand.nextInt(10) == 0 ? BIG_TREE_FEATURE : TREE_FEATURE;
+		} else if (this.type == BiomeHarranForest.Type.CHERRY && rand.nextInt(3) == 0) {
+			return CHERRY_TREE;
 		} else {
 			return BIRCH_TREE;
 		}
@@ -137,7 +151,6 @@ public class BiomeHarranForest extends BiomeHarranBase {
 	}
 	
 	public void addMushrooms(World world, Random rand, BlockPos pos) {
-		
 		for (int i = 0; i < 4; ++i) {
 			for (int j = 0; j < 4; ++j) {
 				int k = i * 4 + 1 + 8 + rand.nextInt(3);
@@ -197,6 +210,6 @@ public class BiomeHarranForest extends BiomeHarranBase {
 	}
 	
 	public static enum Type {
-		NORMAL, FLOWER, BIRCH, ROOFED;
+		NORMAL, FLOWER, BIRCH, ROOFED, CHERRY;
 	}
 }

@@ -53,6 +53,7 @@ public class GenLayerMetztliBiomes extends GenLayerMetztli {
 		list.add(new BiomeEntry(ZGBiomes.METZTLI_HARRAN_CLAY_MESA, 70));
 		list.add(new BiomeEntry(ZGBiomes.METZTLI_HARRAN_HILLS, 65));
 		list.add(new BiomeEntry(ZGBiomes.METZTLI_HARRAN_FOREST, 55));
+		list.add(new BiomeEntry(ZGBiomes.METZTLI_HARRAN_CHERRY_FOREST, 54));
 		list.add(new BiomeEntry(ZGBiomes.METZTLI_HARRAN_OCEAN, 50));
 		list.add(new BiomeEntry(ZGBiomes.METZTLI_HARRAN_SHROOMS, 40));
 		list.add(new BiomeEntry(ZGBiomes.METZTLI_HARRAN_TUNDRA, 30));

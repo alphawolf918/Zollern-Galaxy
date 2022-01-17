@@ -12,11 +12,8 @@ import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedWitch;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.monster.EntityWitch;
 import net.minecraft.init.Blocks;
-import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.ChunkPrimer;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 
 public class BiomeHarranClayMesa extends BiomeHarranBase {
@@ -72,18 +69,5 @@ public class BiomeHarranClayMesa extends BiomeHarranBase {
 		}
 		
 		this.generateMetztliTerrain(worldIn, rand, chunkPrimerIn, x, z, noiseVal);
-	}
-	
-	@Override
-	@SideOnly(Side.CLIENT)
-	public int getGrassColorAtPos(BlockPos pos) {
-		double d0 = GRASS_COLOR_NOISE.getValue(pos.getX() * 0.0225D, pos.getZ() * 0.0225D);
-		return getModdedBiomeGrassColor(d0 < -0.1D ? 5011004 : 6975545);
-	}
-	
-	@Override
-	@SideOnly(Side.CLIENT)
-	public int getFoliageColorAtPos(BlockPos pos) {
-		return getModdedBiomeFoliageColor(this.grassFoliageColor);
 	}
 }

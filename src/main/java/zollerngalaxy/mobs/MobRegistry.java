@@ -19,6 +19,7 @@ import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.mobs.entities.EntityArcon;
 import zollerngalaxy.mobs.entities.EntityBladeFish;
 import zollerngalaxy.mobs.entities.EntityBlubberFish;
+import zollerngalaxy.mobs.entities.EntityEdenCow;
 import zollerngalaxy.mobs.entities.EntityFacehugger;
 import zollerngalaxy.mobs.entities.EntityFaceless;
 import zollerngalaxy.mobs.entities.EntityFrostGiant;
@@ -30,7 +31,6 @@ import zollerngalaxy.mobs.entities.EntityJellyfish;
 import zollerngalaxy.mobs.entities.EntityKrull;
 import zollerngalaxy.mobs.entities.EntityMagmos;
 import zollerngalaxy.mobs.entities.EntityMegaCreeper;
-import zollerngalaxy.mobs.entities.EntityEdenCow;
 import zollerngalaxy.mobs.entities.EntityMummy;
 import zollerngalaxy.mobs.entities.EntityOinkus;
 import zollerngalaxy.mobs.entities.EntityPigShroom;
@@ -54,6 +54,7 @@ import zollerngalaxy.mobs.entities.villagers.EntityCaligroVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityCandoraVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityCentotlVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityEdenVillager;
+import zollerngalaxy.mobs.entities.villagers.EntityExodusVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityHarranVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityKriffonVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityOasisVillager;
@@ -199,6 +200,9 @@ public class MobRegistry {
 		
 		// Candora Villager
 		registerEntity("candoravillager", EntityCandoraVillager.class, entityId++, 0xa76bc1, 0x00008b);
+		
+		// Exodus Villager
+		registerEntity("exodusvillager", EntityExodusVillager.class, entityId++, 0x008b00, 0x00ffce);
 		
 		/** END VILLAGERS **/
 		

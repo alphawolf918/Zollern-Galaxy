@@ -13,6 +13,7 @@ import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import zollerngalaxy.mobs.entities.EntityArcon;
 import zollerngalaxy.mobs.entities.EntityBladeFish;
 import zollerngalaxy.mobs.entities.EntityBlubberFish;
+import zollerngalaxy.mobs.entities.EntityEdenCow;
 import zollerngalaxy.mobs.entities.EntityFacehugger;
 import zollerngalaxy.mobs.entities.EntityFaceless;
 import zollerngalaxy.mobs.entities.EntityFrostGiant;
@@ -24,7 +25,6 @@ import zollerngalaxy.mobs.entities.EntityJellyfish;
 import zollerngalaxy.mobs.entities.EntityKrull;
 import zollerngalaxy.mobs.entities.EntityMagmos;
 import zollerngalaxy.mobs.entities.EntityMegaCreeper;
-import zollerngalaxy.mobs.entities.EntityEdenCow;
 import zollerngalaxy.mobs.entities.EntityMummy;
 import zollerngalaxy.mobs.entities.EntityOinkus;
 import zollerngalaxy.mobs.entities.EntityPigShroom;
@@ -48,6 +48,7 @@ import zollerngalaxy.mobs.entities.villagers.EntityCaligroVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityCandoraVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityCentotlVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityEdenVillager;
+import zollerngalaxy.mobs.entities.villagers.EntityExodusVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityHarranVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityKriffonVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityOasisVillager;
@@ -98,6 +99,7 @@ import zollerngalaxy.mobs.renders.villagers.RenderCaligroVillager;
 import zollerngalaxy.mobs.renders.villagers.RenderCandoraVillager;
 import zollerngalaxy.mobs.renders.villagers.RenderCentotlVillager;
 import zollerngalaxy.mobs.renders.villagers.RenderEdenVillager;
+import zollerngalaxy.mobs.renders.villagers.RenderExodusVillager;
 import zollerngalaxy.mobs.renders.villagers.RenderHarranVillager;
 import zollerngalaxy.mobs.renders.villagers.RenderKriffonVillager;
 import zollerngalaxy.mobs.renders.villagers.RenderOasisVillager;
@@ -163,6 +165,7 @@ public final class MobRenders {
 		renderMob(EntityCentotlVillager.class, RenderCentotlVillager::new);
 		renderMob(EntityOasisVillager.class, RenderOasisVillager::new);
 		renderMob(EntityCandoraVillager.class, RenderCandoraVillager::new);
+		renderMob(EntityExodusVillager.class, RenderExodusVillager::new);
 	}
 	
 	private static void renderEnemies() {

@@ -29,14 +29,14 @@ public class BiomeExodusRockyHills extends BiomeExodusBase {
 		props.setBaseHeight(1.2F);
 		props.setHeightVariation(0.5F);
 		props.setTemperature(4.0F);
-		this.biomeDecor.exodusTallGrassPerChunk = 0;
-		this.biomeDecor.astersPerChunk = 0;
+		this.biomeDecor.tallGrassPerChunk = 0;
+		this.biomeDecor.flowersPerChunk = 0;
 		this.biomeDecor.lavaLakesPerChunk = 6;
+		this.biomeDecor.generateFalls = true;
+		this.enableSnow = false;
 		this.setTemp(6F);
 		this.setBiomeHeight(72);
 		this.setBiomeType(EnumBiomeTypeZG.ROCKY);
-		this.enableSnow = false;
-		this.decorator.generateFalls = true;
 		this.grassFoliageColor = 0xff008b;
 		this.waterColor = 0x8b008b;
 		this.topBlock = ZGBlocks.exodusRock.getDefaultState();

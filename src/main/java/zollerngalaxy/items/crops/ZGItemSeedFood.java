@@ -23,13 +23,12 @@ import zollerngalaxy.proxy.IProxy;
 
 public class ZGItemSeedFood extends ItemSeedFood implements ISingleZGItemRender, IJSONtem {
 	
-	protected ZollernGalaxyCore core = ZollernGalaxyCore.instance();
-	protected IProxy proxy = core.proxy;
+	protected IProxy proxy = ZollernGalaxyCore.instance().proxy;
 	
 	public ZGItemSeedFood(String name, int healAmount, float saturation, Block crops) {
 		super(healAmount, saturation, crops, Blocks.FARMLAND);
 		this.setItemName(this, name);
-		if (core.isInDevMode() && !this.shouldJSONIgnore()) {
+		if (ZollernGalaxyCore.instance().isInDevMode() && !this.shouldJSONIgnore()) {
 			JSONFactory.registerItem(name);
 		}
 	}

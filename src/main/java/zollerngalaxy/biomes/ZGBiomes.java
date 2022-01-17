@@ -218,6 +218,7 @@ public class ZGBiomes {
 	public static final Biome METZTLI_HARRAN_FOREST = new BiomeHarranForest(BiomeHarranForest.Type.BIRCH, new BiomeProperties("Harran Birch Forest"));
 	public static final Biome METZTLI_HARRAN_RED_DESERT = new BiomeHarranDunes(BiomeHarranDunes.Type.RED, "harran_heat_desert", new BiomeProperties("Harran Red Desert"));
 	public static final Biome METZTLI_HARRAN_HILLS = new BiomeHarranHills(new BiomeProperties("Harran Hills"));
+	public static final Biome METZTLI_HARRAN_CHERRY_FOREST = new BiomeHarranForest("harran_forest_cherry", BiomeHarranForest.Type.CHERRY, new BiomeProperties("Harran Cherry Forest"));
 	
 	// Astros
 	public static final Biome ASTROS_BASE = new BiomeAstros(new BiomeProperties("Astros"));
@@ -341,6 +342,7 @@ public class ZGBiomes {
 		ZGBiomes.addBiome(ZGBiomes.METZTLI_HARRAN_FOREST, LUSH, PLAINS, WET, FOREST);
 		ZGBiomes.addBiome(ZGBiomes.METZTLI_HARRAN_RED_DESERT, DEAD, HOT, DRY, MOUNTAIN, WASTELAND);
 		ZGBiomes.addBiome(ZGBiomes.METZTLI_HARRAN_HILLS, LUSH, COLD, DRY, MOUNTAIN);
+		ZGBiomes.addBiome(ZGBiomes.METZTLI_HARRAN_CHERRY_FOREST, LUSH, PLAINS, WET, FOREST);
 		
 		// Astros
 		ZGBiomes.addBiome(ZGBiomes.ASTROS_BASE, COLD, WET, SNOWY);

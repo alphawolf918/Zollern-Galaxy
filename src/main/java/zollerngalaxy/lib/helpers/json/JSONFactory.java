@@ -432,6 +432,8 @@ public final class JSONFactory {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		
+		JSONFactory.registerBlockItem(blockName);
 	}
 	
 	private static void registerFlowerBlockState(String blockName) {

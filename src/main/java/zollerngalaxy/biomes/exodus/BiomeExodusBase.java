@@ -30,9 +30,11 @@ import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.biomes.decorators.BiomeDecoratorExodus;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.celestial.ZGPlanets;
+import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderExodus;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 import zollerngalaxy.mobs.entities.EntityArcon;
+import zollerngalaxy.mobs.entities.villagers.EntityExodusVillager;
 
 public abstract class BiomeExodusBase extends BiomeSpace {
 	
@@ -54,10 +56,9 @@ public abstract class BiomeExodusBase extends BiomeSpace {
 		this.setTempCategory(TempCategory.MEDIUM);
 		this.setTemp(82.67F);
 		this.biomeDecor.flowersPerChunk = -999;
-		this.biomeDecor.treesPerChunk = -999;
 		this.biomeDecor.grassPerChunk = -999;
 		this.biomeDecor.mushroomsPerChunk = -999;
-		this.biomeDecor.exodusTreesPerChunk = 0;
+		this.biomeDecor.treesPerChunk = 0;
 		this.clearAllSpawning();
 		this.spawnableCreatureList.add(new SpawnListEntry(EntityArcon.class, 2, 2, 2));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedZombie.class, 100, 4, 4));
@@ -72,6 +73,9 @@ public abstract class BiomeExodusBase extends BiomeSpace {
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityCreeper.class, 100, 4, 4));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityEnderman.class, 100, 1, 4));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityWitch.class, 5, 1, 1));
+		if (ConfigManagerZG.enableAlienVillagerSpawn) {
+			this.spawnableCreatureList.add(new SpawnListEntry(EntityExodusVillager.class, this.villagerSpawnRate, this.villagerMinSpawnRate, this.villagerMaxSpawnRate));
+		}
 		this.setStoneBlock(ZGBlocks.exodusStone);
 		this.setPlanetForBiome(ZGPlanets.planetExodus);
 	}
@@ -115,7 +119,7 @@ public abstract class BiomeExodusBase extends BiomeSpace {
 				} else {
 					if (iblockstate2.getMaterial() == Material.AIR) {
 						j = -1;
-					} else if (iblockstate2.getBlock() == ZGBlocks.exodusStone) {
+					} else if (iblockstate2.getBlock() == STONE.getBlock()) {
 						if (j == -1) {
 							if (k <= 0) {
 								topState = AIR;

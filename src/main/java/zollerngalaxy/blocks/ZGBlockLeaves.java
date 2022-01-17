@@ -18,6 +18,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumParticleTypes;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
@@ -34,6 +35,7 @@ public class ZGBlockLeaves extends ZGBlockBase implements IShearable {
 	protected boolean DECAYABLE = true;
 	protected boolean leavesFancy;
 	protected Block droppedSapling;
+	protected Item droppedFruit = null;
 	int[] surroundings;
 	
 	public ZGBlockLeaves(String blockName, float hardResist, Block sapling) {
@@ -107,8 +109,7 @@ public class ZGBlockLeaves extends ZGBlockBase implements IShearable {
 								IBlockState iblockstate = worldIn.getBlockState(blockpos$mutableblockpos.setPos(k + i2, l + j2, i1 + k2));
 								Block block = iblockstate.getBlock();
 								
-								if (!block.canSustainLeaves(iblockstate, worldIn,
-										blockpos$mutableblockpos.setPos(k + i2, l + j2, i1 + k2))) {
+								if (!block.canSustainLeaves(iblockstate, worldIn, blockpos$mutableblockpos.setPos(k + i2, l + j2, i1 + k2))) {
 									if (block.isLeaves(iblockstate, worldIn, blockpos$mutableblockpos.setPos(k + i2, l + j2, i1 + k2))) {
 										this.surroundings[(i2 + 16) * 1024 + (j2 + 16) * 32 + k2 + 16] = -2;
 									} else {
@@ -199,7 +200,8 @@ public class ZGBlockLeaves extends ZGBlockBase implements IShearable {
 		super.dropBlockAsItemWithChance(worldIn, pos, state, chance, fortune);
 	}
 	
-	protected void dropApple(World worldIn, BlockPos pos, IBlockState state, int chance) {
+	protected void dropFruit(World worldIn, BlockPos pos, IBlockState state, int chance) {
+		// TODO
 	}
 	
 	protected int getSaplingDropChance(IBlockState state) {
@@ -234,15 +236,14 @@ public class ZGBlockLeaves extends ZGBlockBase implements IShearable {
 	
 	@Override
 	public void beginLeavesDecay(IBlockState state, World world, BlockPos pos) {
-		if (!CHECK_DECAY) {
+		if (!this.CHECK_DECAY) {
 			world.setBlockState(pos, state, 4);
 		}
 	}
 	
 	@Override
-	public void getDrops(net.minecraft.util.NonNullList<ItemStack> drops, IBlockAccess world, BlockPos pos, IBlockState state,
-			int fortune) {
-		Random rand = world instanceof World ? ((World) world).rand : new Random();
+	public void getDrops(NonNullList<ItemStack> drops, IBlockAccess world, BlockPos pos, IBlockState state, int fortune) {
+		Random rand = (world instanceof World) ? ((World) world).rand : new Random();
 		int chance = this.getSaplingDropChance(state);
 		
 		if (fortune > 0) {
@@ -265,16 +266,16 @@ public class ZGBlockLeaves extends ZGBlockBase implements IShearable {
 		}
 		
 		this.captureDrops(true);
-		if (world instanceof World)
-			this.dropApple((World) world, pos, state, chance); // Dammet mojang
+		if (world instanceof World) {
+			this.dropFruit((World) world, pos, state, chance);
+		}
 		drops.addAll(this.captureDrops(false));
 	}
 	
 	@Override
 	@SideOnly(Side.CLIENT)
 	public boolean shouldSideBeRendered(IBlockState blockState, IBlockAccess blockAccess, BlockPos pos, EnumFacing side) {
-		return !this.leavesFancy && blockAccess.getBlockState(pos.offset(side)).getBlock() == this ? false
-				: super.shouldSideBeRendered(blockState, blockAccess, pos, side);
+		return !this.leavesFancy && blockAccess.getBlockState(pos.offset(side)).getBlock() == this ? false : super.shouldSideBeRendered(blockState, blockAccess, pos, side);
 	}
 	
 	@Override

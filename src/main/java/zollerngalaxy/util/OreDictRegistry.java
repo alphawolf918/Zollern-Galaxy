@@ -436,6 +436,12 @@ public class OreDictRegistry {
 		
 		// Cucumber
 		registerOre("cropCucumber", ZGItems.cucumber);
+		
+		// Radish
+		registerOre("cropRadish", ZGItems.radish);
+		
+		// Onion
+		registerOre("cropOnion", ZGItems.onion);
 	}
 	
 	private static void registerOre(String strName, Item... items) {
