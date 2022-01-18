@@ -1,0 +1,9 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "all": "zollerngalaxy:blocks/harransoil",
+    "top": "zollerngalaxy:blocks/harrancherrygrass",
+    "right": "zollerngalaxy:blocks/harrancherrygrass_side",
+    "left": "zollerngalaxy:blocks/harrancherrygrass_side"
+  }
+}

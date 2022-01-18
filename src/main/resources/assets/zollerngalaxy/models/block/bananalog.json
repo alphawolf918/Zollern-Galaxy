@@ -1,0 +1,9 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "all": "zollerngalaxy:blocks/bananalog_top",
+    "top": "zollerngalaxy:blocks/bananalog_top",
+    "right": "zollerngalaxy:blocks/bananalog",
+    "left": "zollerngalaxy:blocks/bananalog"
+  }
+}

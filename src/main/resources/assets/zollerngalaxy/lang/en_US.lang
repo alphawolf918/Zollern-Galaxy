@@ -96,11 +96,6 @@ tile.lovetreeplanks.name=Lovetree Planks
 tile.lovetreeleaves.name=Lovetree Leaves
 tile.lovetreesapling.name=Lovetree Sapling
 
-tile.cherrylog.name=Cherrywood Log
-tile.cherryplanks.name=Cherrywood Planks
-tile.cherryleaves.name=Cherrywood Leaves
-tile.cherrysapling.name=Cherrywood Sapling
-
 tile.fruitofedenblock.name=Fruit of Eden
 tile.edengravel.name=Eden's Gravel
 tile.edenwinterrock.name=Eden's Snowrock
@@ -379,6 +374,59 @@ tile.exoduswoodplanks.name=Exo Planks
 tile.exoduswoodsapling.name=Exo Sapling
 tile.exosand.name=Exo Sand
 
+tile.cherrylog.name=Cherrywood Log
+tile.cherryplanks.name=Cherrywood Planks
+tile.cherryleaves.name=Cherrywood Leaves
+tile.cherrysapling.name=Cherrywood Sapling
+
+tile.bananalog.name=Banana Log
+tile.bananaplanks.name=Banana Planks
+tile.bananaleaves.name=Banana Leaves
+tile.bananasapling.name=Banana Sapling
+
+tile.guavalog.name=Guava Log
+tile.guavaplanks.name=Guava Planks
+tile.guavaleaves.name=Guava Leaves
+tile.guavasapling.name=Guava Sapling
+
+tile.peachlog.name=Peach Log
+tile.peachplanks.name=Peach Planks
+tile.peachleaves.name=Peach Leaves
+tile.peachsapling.name=Peach Sapling
+
+tile.grapefruitlog.name=Grapefruit Log
+tile.grapefruitplanks.name=Grapefruit Planks
+tile.grapefruitleaves.name=Grapefruit Leaves
+tile.grapefruitsapling.name=Grapefruit Sapling
+
+tile.orangelog.name=Orange Log
+tile.orangeplanks.name=Orange Planks
+tile.orangeleaves.name=Orange Leaves
+tile.orangesapling.name=Orange Sapling
+
+tile.lemonlog.name=Lemon Log
+tile.lemonplanks.name=Lemon Planks
+tile.lemonleaves.name=Lemon Leaves
+tile.lemonsapling.name=Lemon Sapling
+
+tile.limelog.name=Lime Log
+tile.limeplanks.name=Lime Planks
+tile.limeleaves.name=Lime Leaves
+tile.limesapling.name=Lime Sapling
+
+tile.limonlog.name=Limon Log
+tile.limonplanks.name=Limon Planks
+tile.limonleaves.name=Limon Leaves
+tile.limonsapling.name=Limon Sapling
+
+tile.shadelog.name=Shade Log
+tile.shadeplanks.name=Shade Planks
+tile.shadeleaves.name=Shade Leaves
+tile.shadesapling.name=Shade Saplings
+
+tile.harrancherrygrass.name=Harran Cherry Grass
+tile.harrangrass.name=Harran Grass
+tile.harransoil.name=Harran Soil
 tile.harranaquamarineore.name=Aquamarine Ore
 tile.harranamberore.name=Amber Ore
 tile.harranzincore.name=Zinc Ore
@@ -915,7 +963,7 @@ item.flour.name=Flour
 item.dough.name=Dough
 item.cookeddough.name=Cooked Dough
 
-## Crop Items ##
+## Farmable Crop Items ##
 item.strawberry.name=Strawberry
 item.blackberry.name=Blackberry
 item.blueberry.name=Blueberry
@@ -925,7 +973,17 @@ item.corn.name=Corn
 item.cucumber.name=Cucumber
 item.radish.name=Radish
 item.onion.name=Onion
+
+## Tree Fruit Items ##
 item.cherry.name=Cherry
+item.banana.name=Banana
+item.guava.name=Guava
+item.peach.name=Peach
+item.grapefruit.name=Grapefruit
+item.orange.name=Orange
+item.lemon.name=Lemon
+item.lime.name=Lime
+item.limon.name=Limon
 
 ## Mobs ##
 

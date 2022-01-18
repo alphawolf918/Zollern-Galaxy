@@ -30,7 +30,7 @@ import zollerngalaxy.worldgen.WorldGenSmallCraterZG;
 import zollerngalaxy.worldgen.WorldGenTunnel;
 import zollerngalaxy.worldgen.WorldGenUFO;
 import zollerngalaxy.worldgen.WorldGenZGCrystals;
-import zollerngalaxy.worldgen.tlaloc.WorldGenMechTree;
+import zollerngalaxy.worldgen.WorldGenZGTree;
 
 public class BiomeDecoratorTlaloc extends BiomeDecoratorZG {
 	
@@ -79,7 +79,7 @@ public class BiomeDecoratorTlaloc extends BiomeDecoratorZG {
 	private WorldGenerator craterGen = new WorldGenSmallCraterZG();
 	private WorldGenerator plutoniumCrystalsGen = new WorldGenZGCrystals(ZGBlocks.blockCrystalsPlutonium.getDefaultState(), 65);
 	private WorldGenerator ufoGen = new WorldGenUFO(MECH_ROCK_STATE, CHROME_STATE, STONE_STATE, GLOW_STATE);
-	private WorldGenerator mechTreeGen = new WorldGenMechTree();
+	private WorldGenerator mechTreeGen = new WorldGenZGTree(false, 4, ZGBlocks.tlalocChrome.getDefaultState(), ZGBlocks.tlalocMechRock.getDefaultState(), false);
 	public WorldGenerator battleTowerGen = new WorldGenBattleTower(ZGBlocks.xantheonConstructBlock.getDefaultState(), ZGBlocks.tlalocChrome.getDefaultState());
 	
 	public BiomeDecoratorTlaloc() {

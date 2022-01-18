@@ -406,7 +406,7 @@ public class BiomeDecoratorMetztli extends BiomeDecoratorZG {
 		
 		// Random Tree Feature
 		if (TerrainGen.decorate(world, rand, forgeChunkPos, DecorateBiomeEvent.Decorate.EventType.TREE)) {
-			if (rand.nextInt(5) == 0) {
+			if (rand.nextInt(4) == 0) {
 				for (int j2 = 0; j2 < y; ++j2) {
 					int k6 = rand.nextInt(16) + 8;
 					int l = rand.nextInt(16) + 8;

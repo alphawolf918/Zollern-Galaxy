@@ -1,0 +1,9 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "all": "zollerngalaxy:blocks/grapefruitlog_top",
+    "top": "zollerngalaxy:blocks/grapefruitlog_top",
+    "right": "zollerngalaxy:blocks/grapefruitlog",
+    "left": "zollerngalaxy:blocks/grapefruitlog"
+  }
+}

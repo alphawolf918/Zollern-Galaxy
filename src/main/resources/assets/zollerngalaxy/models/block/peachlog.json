@@ -1,0 +1,9 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "all": "zollerngalaxy:blocks/peachlog_top",
+    "top": "zollerngalaxy:blocks/peachlog_top",
+    "right": "zollerngalaxy:blocks/peachlog",
+    "left": "zollerngalaxy:blocks/peachlog"
+  }
+}

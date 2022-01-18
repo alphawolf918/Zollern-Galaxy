@@ -119,6 +119,15 @@ public class CraftingRecipes {
 		CraftingRecipes.addPlanks(ZGBlocks.edenGoldenWoodLog, ZGBlocks.edenGoldenWoodPlanks);
 		CraftingRecipes.addPlanks(ZGBlocks.edenLovetreeLog, ZGBlocks.edenLovetreePlanks);
 		CraftingRecipes.addPlanks(ZGBlocks.exoWoodLogs, ZGBlocks.exoWoodPlanks);
+		CraftingRecipes.addPlanks(ZGBlocks.cherryWoodLog, ZGBlocks.cherryWoodPlanks);
+		CraftingRecipes.addPlanks(ZGBlocks.bananaLog, ZGBlocks.bananaPlanks);
+		CraftingRecipes.addPlanks(ZGBlocks.guavaLog, ZGBlocks.guavaPlanks);
+		CraftingRecipes.addPlanks(ZGBlocks.peachLog, ZGBlocks.peachPlanks);
+		CraftingRecipes.addPlanks(ZGBlocks.grapefruitLog, ZGBlocks.grapefruitPlanks);
+		CraftingRecipes.addPlanks(ZGBlocks.orangeLog, ZGBlocks.orangePlanks);
+		CraftingRecipes.addPlanks(ZGBlocks.lemonLog, ZGBlocks.lemonPlanks);
+		CraftingRecipes.addPlanks(ZGBlocks.limeLog, ZGBlocks.limePlanks);
+		CraftingRecipes.addPlanks(ZGBlocks.limonLog, ZGBlocks.limonPlanks);
 		
 		// Helmet
 		CraftingRecipes.addArmorSet(ZGItems.helmetWood, Blocks.PLANKS, "helmet");

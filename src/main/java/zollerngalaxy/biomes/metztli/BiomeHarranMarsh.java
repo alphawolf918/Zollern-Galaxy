@@ -95,7 +95,7 @@ public class BiomeHarranMarsh extends BiomeHarranBase {
 	
 	@Override
 	public WorldGenAbstractTree getRandomTreeFeature(Random rand) {
-		if (rand.nextInt(5) == 0) {
+		if (rand.nextInt(10) == 0) {
 			return BIG_TREE_FEATURE;
 		} else if (rand.nextInt(2) == 0) {
 			return new WorldGenShrub(JUNGLE_LOG, OAK_LEAF);

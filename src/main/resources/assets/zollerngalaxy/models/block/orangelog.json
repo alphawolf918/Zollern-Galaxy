@@ -1,0 +1,9 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "all": "zollerngalaxy:blocks/orangelog_top",
+    "top": "zollerngalaxy:blocks/orangelog_top",
+    "right": "zollerngalaxy:blocks/orangelog",
+    "left": "zollerngalaxy:blocks/orangelog"
+  }
+}

@@ -113,7 +113,7 @@ public class OreDictRegistry {
 		
 		// Dirt
 		registerOre("dirt", ZGBlocks.edenSoil, ZGBlocks.kriffDirt, ZGBlocks.purgDirt, ZGBlocks.zolDirt, ZGBlocks.xathDirt, ZGBlocks.oasisDirt, ZGBlocks.perdCreepDirt, ZGBlocks.perdSoil,
-				ZGBlocks.altumDirt, ZGBlocks.caligroDirt, ZGBlocks.caligroCreepdirt, ZGBlocks.exodusDirt, ZGBlocks.astrosDirt, ZGBlocks.centoDirt, ZGBlocks.tociDirt);
+				ZGBlocks.altumDirt, ZGBlocks.caligroDirt, ZGBlocks.caligroCreepdirt, ZGBlocks.exodusDirt, ZGBlocks.astrosDirt, ZGBlocks.centoDirt, ZGBlocks.tociDirt, ZGBlocks.harranSoil);
 		
 		// Constructed
 		registerOre("blockConstructed", ZGBlocks.xantheonConstructBlock, ZGBlocks.atheonConstructBlock);
@@ -127,24 +127,29 @@ public class OreDictRegistry {
 		
 		// Grass
 		registerOre("grass", ZGBlocks.edenGoldenGrass, ZGBlocks.edenGrass, ZGBlocks.edenSwampGrass, ZGBlocks.edenFallGrass, ZGBlocks.xathGrass, ZGBlocks.oasisGrass, ZGBlocks.perdGrass,
-				ZGBlocks.exodusGrass);
+				ZGBlocks.exodusGrass, ZGBlocks.harranGrassCherry, ZGBlocks.harranGrass);
 		
 		// Ice
 		registerOre("ice", ZGBlocks.astrosIce);
 		
 		// Logs
-		registerOre("logWood", ZGBlocks.edenWoodLog, ZGBlocks.perdWoodLogs, ZGBlocks.edenParadiseWoodLog, ZGBlocks.edenGoldenWoodLog, ZGBlocks.edenLovetreeLog, ZGBlocks.exoWoodLogs);
+		registerOre("logWood", ZGBlocks.edenWoodLog, ZGBlocks.perdWoodLogs, ZGBlocks.edenParadiseWoodLog, ZGBlocks.edenGoldenWoodLog, ZGBlocks.edenLovetreeLog, ZGBlocks.exoWoodLogs,
+				ZGBlocks.cherryWoodLog, ZGBlocks.bananaLog, ZGBlocks.guavaLog, ZGBlocks.peachLog, ZGBlocks.grapefruitLog, ZGBlocks.orangeLog, ZGBlocks.lemonLog, ZGBlocks.limeLog, ZGBlocks.limonLog);
+		
+		// Planks
+		registerOre("plankWood", ZGBlocks.edenWoodPlanks, ZGBlocks.perdWoodPlanks, ZGBlocks.edenParadiseWoodPlanks, ZGBlocks.edenGoldenWoodPlanks, ZGBlocks.edenLovetreePlanks, ZGBlocks.exoWoodPlanks,
+				ZGBlocks.cherryWoodPlanks, ZGBlocks.bananaPlanks, ZGBlocks.guavaPlanks, ZGBlocks.peachPlanks, ZGBlocks.grapefruitPlanks, ZGBlocks.orangePlanks, ZGBlocks.lemonPlanks,
+				ZGBlocks.limePlanks, ZGBlocks.limonPlanks);
 		
 		// Leaves
-		registerOre("treeLeaves", ZGBlocks.edenWoodLeaves, ZGBlocks.perdWoodLeaves, ZGBlocks.edenParadiseWoodLeaves, ZGBlocks.edenGoldenWoodLeaves, ZGBlocks.edenLovetreeLeaves,
-				ZGBlocks.exoWoodLeaves);
+		registerOre("treeLeaves", ZGBlocks.edenWoodLeaves, ZGBlocks.perdWoodLeaves, ZGBlocks.edenParadiseWoodLeaves, ZGBlocks.edenGoldenWoodLeaves, ZGBlocks.edenLovetreeLeaves, ZGBlocks.exoWoodLeaves,
+				ZGBlocks.cherryWoodLeaves, ZGBlocks.bananaLeaves, ZGBlocks.guavaLeaves, ZGBlocks.peachLeaves, ZGBlocks.grapefruitLeaves, ZGBlocks.orangeLeaves, ZGBlocks.lemonLeaves,
+				ZGBlocks.limeLeaves, ZGBlocks.limonLeaves);
 		
 		// Saplings
 		registerOre("treeSapling", ZGBlocks.edenWoodSapling, ZGBlocks.perdTreeSapling, ZGBlocks.edenParadiseWoodSapling, ZGBlocks.edenGoldenWoodSapling, ZGBlocks.edenLovetreeSapling,
-				ZGBlocks.exoWoodSapling);
-		
-		// Planks
-		registerOre("plankWood", ZGBlocks.edenWoodPlanks, ZGBlocks.perdWoodPlanks, ZGBlocks.edenParadiseWoodPlanks, ZGBlocks.edenGoldenWoodPlanks, ZGBlocks.edenLovetreePlanks, ZGBlocks.exoWoodPlanks);
+				ZGBlocks.exoWoodSapling, ZGBlocks.cherryWoodSapling, ZGBlocks.bananaSapling, ZGBlocks.guavaSapling, ZGBlocks.peachSapling, ZGBlocks.grapefruitSapling, ZGBlocks.orangeSapling,
+				ZGBlocks.lemonSapling, ZGBlocks.limeSapling, ZGBlocks.limonSapling);
 		
 		// Stone
 		registerOre("stone", ZGBlocks.edenStone, ZGBlocks.kriffStone, ZGBlocks.purgStone, ZGBlocks.zolStone, ZGBlocks.xathStone, ZGBlocks.oasisStone, ZGBlocks.xantheonStone, ZGBlocks.atheonStone,
@@ -416,32 +421,26 @@ public class OreDictRegistry {
 		registerOre("blockClay", Blocks.CLAY, ZGBlocks.mudClayBlock);
 		registerOre("clay", Items.CLAY_BALL, ZGItems.mudClayBall);
 		
-		// Strawberry
+		// Crops (Farmable)
 		registerOre("cropStrawberry", ZGItems.strawberry);
-		
-		// Blackberry
 		registerOre("cropBlackberry", ZGItems.blackberry);
-		
-		// Blueberry
 		registerOre("cropBlueberry", ZGItems.blueberry);
-		
-		// Grape
 		registerOre("cropGrape", ZGItems.grape);
-		
-		// Tomato
 		registerOre("cropTomato", ZGItems.tomato);
-		
-		// Corn
 		registerOre("cropCorn", ZGItems.corn);
-		
-		// Cucumber
-		registerOre("cropCucumber", ZGItems.cucumber);
-		
-		// Radish
 		registerOre("cropRadish", ZGItems.radish);
-		
-		// Onion
 		registerOre("cropOnion", ZGItems.onion);
+		
+		// Crops (Trees)
+		registerOre("cropCherry", ZGItems.cherry);
+		registerOre("cropBanana", ZGItems.banana);
+		registerOre("cropGuava", ZGItems.guava);
+		registerOre("cropPeach", ZGItems.peach);
+		registerOre("cropGrapefruit", ZGItems.grapefruit);
+		registerOre("cropOrange", ZGItems.orange);
+		registerOre("cropLemon", ZGItems.lemon);
+		registerOre("cropLime", ZGItems.lime);
+		registerOre("cropLimon", ZGItems.limon);
 	}
 	
 	private static void registerOre(String strName, Item... items) {

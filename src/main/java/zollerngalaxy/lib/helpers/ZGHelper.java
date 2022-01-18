@@ -143,6 +143,14 @@ public final class ZGHelper {
 		}
 	}
 	
+	public static void dropItem(Block droppedBlock, World worldObj, BlockPos pos) {
+		if (!worldObj.isRemote) {
+			ItemStack itemStack = new ItemStack(droppedBlock, rngInt(1, 2));
+			EntityItem itemEntity = new EntityItem(worldObj, pos.getX(), pos.getY(), pos.getZ(), itemStack);
+			worldObj.spawnEntity(itemEntity);
+		}
+	}
+	
 	public static void dropItem(ItemStack itemStack, World worldObj, Entity theEntity) {
 		if (!worldObj.isRemote) {
 			EntityItem itemEntity = new EntityItem(worldObj, theEntity.posX, theEntity.posY, theEntity.posZ, itemStack);

@@ -152,7 +152,17 @@ public class ZGItems {
 	public static final Item edenFruit = new ZGItemFood("fruitofeden", 4, 2.5F, false);
 	public static final Item perdBerry = new ZGItemFood("perdberry", 8, 3.6F, false);
 	public static final Item perdPeach = new ZGItemFood("perdpeach", 13, 8.2F, false);
+	//
 	public static final Item cherry = new ZGItemFood("cherry", 4, 4.2F, false);
+	public static final Item banana = new ZGItemFood("banana", 6, 8.4F, false);
+	public static final Item guava = new ZGItemFood("guava", 8, 10.4F, false);
+	public static final Item peach = new ZGItemFood("peach", 10, 8.4F, false);
+	public static final Item grapefruit = new ZGItemFood("grapefruit", 14, 13.4F, false);
+	public static final Item orange = new ZGItemFood("orange", 7, 6.5F, false);
+	public static final Item lemon = new ZGItemFood("lemon", 6, 7.5F, false);
+	public static final Item lime = new ZGItemFood("lime", 6, 7.5F, false);
+	public static final Item limon = new ZGItemFood("limon", 8, 9.2F, false);
+	//
 	public static final Item rawBlubberFish = new ZGItemFood("rawblubberfish", 1, 0.2F, false);
 	public static final Item rawBladeFish = new ZGItemFood("rawbladefish", 1, 0.2F, false);
 	public static final Item rawGypsyFish = new ZGItemFood("rawgypsyfish", 1, 0.2F, false);
@@ -355,7 +365,7 @@ public class ZGItems {
 				ingotFueltonium, ingotLapis, ingotAmaranth, ingotAscendantAmaranth, ingotZollernium, ingotZinc, ingotEtrium, ingotZucrite, ingotRhodium, ingotRadium, ingotPlutonium, ingotObsidian,
 				hud, alienStone, compressedCobalt, compressedDiamond, compressedEmerald, compressedEvenium, compressedGold, compressedHeartium, compressedKriffonium, compressedVirinium,
 				compressedVyrex, compressedPromethean, compressedSuperChargedCoal, compressedRiven, compressedAmaranth, compressedAzurite, compressedZollernium, compressedZucrite, compressedRhodium,
-				compressedAscendantAmaranth, rawAlienBacon, cookedAlienBacon, rawAlienBeef, cookedAlienBeef, edenFruit, perdBerry, perdPeach, cherry, rawBlubberFish, cookedBlubberFish, rawBladeFish,
+				compressedAscendantAmaranth, rawAlienBacon, cookedAlienBacon, rawAlienBeef, cookedAlienBeef, edenFruit, perdBerry, perdPeach, rawBlubberFish, cookedBlubberFish, rawBladeFish,
 				cookedBladeFish, rawGypsyFish, cookedGypsyFish, creamBall, chocolateRaw, chocolateBar, brownie, candyApple, iceCreamSandwich, iceCream, chocolateStrawberry, edenDungeonKey, shadeKey,
 				tlalocDungeonKey, perdReed, shagreen, sharkTooth, shadowBone, darkEssence, radium, superChargedCoal, powerStick, lapisStick, starGateTier1, starGateTier2, starGateTier3, starGateTier4,
 				starGateTier5, starGateTier6, starGateTier7, starGateTier8, starGateTier9, starGateTier10, starGateCandy, OMNITOOL, BEDROCK_BREAKER, pickaxeCobalt, pickaxeEvenium, pickaxeVirinium,
@@ -367,7 +377,12 @@ public class ZGItems {
 				legsZollernium, legsAzurite, legsRadium, legsRuby, legsSapphire, bootsWood, bootsStone, bootsAmaranth, bootsZollernium, bootsAzurite, bootsRadium, bootsRuby, bootsSapphire,
 				blueprintCorruption, blueprintThermalHot, blueprintThermalCold, healingHeart, healingHeartForce, amuletStorm, oxygenTankTier4, oxygenTankTier5, oxygenTankTier6);
 		//
-		ZGItems.registerItems(alcohol, gauze, medkit, nail, nailGroup, woodBox, metalParts, dough, doughCooked, flour, strawberry, blackberry, blueberry, grape, tomato, corn, cucumber, radish, onion);
+		//
+		ZGItems.registerItems(alcohol, gauze, medkit, nail, nailGroup, woodBox, metalParts, dough, doughCooked, flour);
+		//
+		// Crops & Fruits
+		ZGItems.registerItems(strawberry, blackberry, blueberry, grape, tomato, corn, cucumber, radish, onion, cherry, banana, guava, peach, grapefruit, orange, lemon, lime, limon);
+		//
 		//
 		ZGHelper.Log("Loaded a total of " + totalItems + " new items.");
 	}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "zollerngalaxy:guavalog"
+    }
+  ],
+  "result": {
+    "item": "zollerngalaxy:guavaplanks",
+    "count": 4
+  }
+}

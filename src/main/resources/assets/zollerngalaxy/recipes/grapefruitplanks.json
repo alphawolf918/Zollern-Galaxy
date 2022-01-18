@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "zollerngalaxy:grapefruitlog"
+    }
+  ],
+  "result": {
+    "item": "zollerngalaxy:grapefruitplanks",
+    "count": 4
+  }
+}

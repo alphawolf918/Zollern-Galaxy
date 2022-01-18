@@ -1,0 +1,9 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "all": "zollerngalaxy:blocks/limonlog_top",
+    "top": "zollerngalaxy:blocks/limonlog_top",
+    "right": "zollerngalaxy:blocks/limonlog",
+    "left": "zollerngalaxy:blocks/limonlog"
+  }
+}

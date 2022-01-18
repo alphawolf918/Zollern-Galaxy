@@ -29,7 +29,6 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
-import zollerngalaxy.worldgen.WorldGenZGTree;
 
 public class BiomeHarranForest extends BiomeHarranBase {
 	
@@ -39,7 +38,7 @@ public class BiomeHarranForest extends BiomeHarranBase {
 	protected static final WorldGenBirchTree SUPER_BIRCH_TREE = new WorldGenBirchTree(false, true);
 	protected static final WorldGenBirchTree BIRCH_TREE = new WorldGenBirchTree(false, false);
 	protected static final WorldGenCanopyTree ROOF_TREE = new WorldGenCanopyTree(false);
-	protected static final WorldGenAbstractTree CHERRY_TREE = new WorldGenZGTree(false, 4, CHERRY_LOG, CHERRY_LEAVES, false);
+	protected static final WorldGenAbstractTree CHERRY_TREE = ZGBlocks.cherryWoodGen;
 	
 	private final BiomeHarranForest.Type type;
 	
@@ -57,11 +56,11 @@ public class BiomeHarranForest extends BiomeHarranBase {
 	
 	private void setupBiome(BiomeProperties props, BiomeHarranForest.Type typeIn) {
 		this.setTempCategory(TempCategory.MEDIUM);
-		props.setBaseHeight(1.0F);
-		props.setHeightVariation(0.6F);
+		props.setBaseHeight(0.6F);
+		props.setHeightVariation(0.2F);
 		props.setTemperature(5.6F);
 		this.setTemp(24F);
-		this.setBiomeHeight(28);
+		this.setBiomeHeight(18);
 		this.setBiomeType(EnumBiomeTypeZG.FOREST);
 		this.enableSnow = false;
 		this.biomeDecor.generateFalls = true;
@@ -70,15 +69,18 @@ public class BiomeHarranForest extends BiomeHarranBase {
 		this.biomeDecor.grassPerChunk = 8;
 		this.biomeDecor.tallGrassPerChunk = 6;
 		this.biomeDecor.flowersPerChunk = 4;
-		this.biomeDecor.treesPerChunk = 10;
-		if (this.type == Type.CHERRY) {
+		if (typeIn == BiomeHarranForest.Type.CHERRY) {
 			this.grassFoliageColor = 0xf741cb;
+			this.grassColor = 0xf741cb;
+			this.biomeDecor.treesPerChunk = 75;
 		} else {
 			this.grassFoliageColor = 0x00cc00;
+			this.grassColor = 0x00cc00;
+			this.biomeDecor.treesPerChunk = 10;
 		}
 		this.waterColor = 0x0000ff;
-		this.topBlock = Blocks.GRASS.getDefaultState();
-		this.fillerBlock = Blocks.DIRT.getDefaultState();
+		this.topBlock = (typeIn != BiomeHarranForest.Type.CHERRY) ? Blocks.GRASS.getDefaultState() : ZGBlocks.harranGrassCherry.getDefaultState();
+		this.fillerBlock = (typeIn != BiomeHarranForest.Type.CHERRY) ? Blocks.DIRT.getDefaultState() : ZGBlocks.harranSoil.getDefaultState();
 		this.stoneBlock = Blocks.STONE;
 		
 		if (this.type == BiomeHarranForest.Type.FLOWER) {
@@ -99,10 +101,12 @@ public class BiomeHarranForest extends BiomeHarranBase {
 		if (this.type == BiomeHarranForest.Type.FLOWER) {
 			this.flowers.clear();
 			for (BlockFlower.EnumFlowerType type : BlockFlower.EnumFlowerType.values()) {
-				if (type.getBlockType() == BlockFlower.EnumFlowerColor.YELLOW)
+				if (type.getBlockType() == BlockFlower.EnumFlowerColor.YELLOW) {
 					continue;
-				if (type == BlockFlower.EnumFlowerType.BLUE_ORCHID)
+				}
+				if (type == BlockFlower.EnumFlowerType.BLUE_ORCHID) {
 					type = BlockFlower.EnumFlowerType.POPPY;
+				}
 				addFlower(Blocks.RED_FLOWER.getDefaultState().withProperty(Blocks.RED_FLOWER.getTypeProperty(), type), 10);
 			}
 		}
@@ -206,7 +210,8 @@ public class BiomeHarranForest extends BiomeHarranBase {
 	@SideOnly(Side.CLIENT)
 	public int getGrassColorAtPos(BlockPos pos) {
 		int i = super.getGrassColorAtPos(pos);
-		return this.type == BiomeHarranForest.Type.ROOFED ? (i & 16711422) + 2634762 >> 1 : i;
+		int j = (this.type == BiomeHarranForest.Type.ROOFED) ? (i & 16711422) + 2634762 >> 1 : i;
+		return (this.type == BiomeHarranForest.Type.CHERRY) ? this.grassFoliageColor : j;
 	}
 	
 	public static enum Type {

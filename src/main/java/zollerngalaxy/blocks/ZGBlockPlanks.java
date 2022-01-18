@@ -11,6 +11,7 @@ import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockAccess;
 import zollerngalaxy.core.enums.EnumBlockType;
 import zollerngalaxy.core.enums.EnumHarvestLevelZG;
 import zollerngalaxy.core.enums.EnumHarvestToolZG;
@@ -25,11 +26,11 @@ public class ZGBlockPlanks extends ZGBlockBase {
 	}
 	
 	public ZGBlockPlanks(String blockName) {
-		this(blockName, 1.8F);
+		this(blockName, 2.8F);
 	}
 	
 	@Override
-	public boolean isWood(net.minecraft.world.IBlockAccess world, BlockPos pos) {
+	public boolean isWood(IBlockAccess world, BlockPos pos) {
 		return true;
 	}
 	

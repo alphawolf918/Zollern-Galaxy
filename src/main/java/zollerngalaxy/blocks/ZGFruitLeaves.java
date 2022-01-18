@@ -21,6 +21,7 @@ public class ZGFruitLeaves extends ZGBlockLeaves {
 	public ZGFruitLeaves(String blockName, Block sapling, Item itemFood) {
 		super(blockName, sapling);
 		this.droppedFood = itemFood;
+		this.droppedSapling = sapling;
 	}
 	
 	@Override
@@ -40,7 +41,13 @@ public class ZGFruitLeaves extends ZGBlockLeaves {
 			if (ZGHelper.getRNGChance(4, 8)) {
 				int randInt = ZGHelper.rngInt(1, 2);
 				for (int i = 0; i < randInt; i++) {
-					ZGHelper.dropItem(droppedFood, worldIn, pos);
+					ZGHelper.dropItem(this.droppedFood, worldIn, pos);
+				}
+			}
+			if (ZGHelper.getRNGChance(1, 4)) {
+				int randInt = ZGHelper.rngInt(1, 2);
+				for (int i = 0; i < randInt; i++) {
+					ZGHelper.dropItem(this.droppedSapling, worldIn, pos);
 				}
 			}
 		}

@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "stage\u003d0": {
+      "model": "zollerngalaxy:limonsapling"
+    },
+    "stage\u003d1": {
+      "model": "zollerngalaxy:limonsapling"
+    }
+  }
+}

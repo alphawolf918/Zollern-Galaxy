@@ -1,0 +1,9 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "all": "zollerngalaxy:blocks/guavalog_top",
+    "top": "zollerngalaxy:blocks/guavalog_top",
+    "right": "zollerngalaxy:blocks/guavalog",
+    "left": "zollerngalaxy:blocks/guavalog"
+  }
+}

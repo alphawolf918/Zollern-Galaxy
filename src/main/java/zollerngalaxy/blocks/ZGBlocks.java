@@ -18,6 +18,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.init.Items;
 import net.minecraft.init.MobEffects;
 import net.minecraft.item.ItemBlock;
+import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import zollerngalaxy.blocks.astros.AstrosSapphireOre;
 import zollerngalaxy.blocks.caligro.BlockShadowBossSpawner;
@@ -44,6 +45,8 @@ import zollerngalaxy.blocks.eden.EdenFlower;
 import zollerngalaxy.blocks.eden.EdenFruit;
 import zollerngalaxy.blocks.eden.ZGBlockGrassEden;
 import zollerngalaxy.blocks.exodus.ZGBlockGrassExodus;
+import zollerngalaxy.blocks.harran.ZGBlockCherryGrassHarran;
+import zollerngalaxy.blocks.harran.ZGBlockGrassHarran;
 import zollerngalaxy.blocks.oasis.BlockMudClay;
 import zollerngalaxy.blocks.oasis.ZGBlockGrassOasis;
 import zollerngalaxy.blocks.oasis.ZGFlower;
@@ -76,7 +79,7 @@ import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.tileentities.TileEntityDungeonSpawnerZG;
 import zollerngalaxy.tileentities.TileEntityTier10TreasureChestZG;
 import zollerngalaxy.util.RegisterUtilsZG;
-import zollerngalaxy.worldgen.WorldGenZGTree2;
+import zollerngalaxy.worldgen.WorldGenZGTree;
 import zollerngalaxy.worldgen.eden.WorldGenEdenTrees;
 import zollerngalaxy.worldgen.exodus.WorldGenExoTrees;
 import zollerngalaxy.worldgen.perdita.WorldGenPalmwoodTrees;
@@ -119,7 +122,55 @@ public class ZGBlocks {
 	public static final Block cherryWoodLog = new ZGBlockLog("cherrylog");
 	public static final Block cherryWoodLeaves = new ZGFruitLeaves("cherryleaves", ZGBlocks.cherryWoodSapling, ZGItems.cherry);
 	public static final Block cherryWoodPlanks = new ZGBlockPlanks("cherryplanks");
-	public static final WorldGenerator cherryWoodGen = new WorldGenZGTree2(ZGBlocks.cherryWoodLog.getDefaultState(), ZGBlocks.cherryWoodLeaves.getDefaultState());
+	public static final WorldGenAbstractTree cherryWoodGen = new WorldGenZGTree(true, 6, ZGBlocks.cherryWoodLog.getDefaultState(), ZGBlocks.cherryWoodLeaves.getDefaultState(), false);
+	
+	// Fruit Trees (Banana)
+	public static final Block bananaLog = new ZGBlockLog("bananalog");
+	public static final Block bananaLeaves = new ZGFruitLeaves("bananaleaves", ZGBlocks.bananaSapling, ZGItems.banana);
+	public static final Block bananaPlanks = new ZGBlockPlanks("bananaplanks");
+	public static final WorldGenAbstractTree bananaGen = new WorldGenZGTree(true, 8, ZGBlocks.bananaLog.getDefaultState(), ZGBlocks.bananaLeaves.getDefaultState(), false);
+	
+	// Fruit Trees (Guava)
+	public static final Block guavaLog = new ZGBlockLog("guavalog");
+	public static final Block guavaLeaves = new ZGFruitLeaves("guavaleaves", ZGBlocks.guavaSapling, ZGItems.guava);
+	public static final Block guavaPlanks = new ZGBlockPlanks("guavaplanks");
+	public static final WorldGenAbstractTree guavaGen = new WorldGenZGTree(true, 4, ZGBlocks.guavaLog.getDefaultState(), ZGBlocks.guavaLeaves.getDefaultState(), false);
+	
+	// Fruit Trees (Peach)
+	public static final Block peachLog = new ZGBlockLog("peachlog");
+	public static final Block peachLeaves = new ZGFruitLeaves("peachleaves", ZGBlocks.peachSapling, ZGItems.peach);
+	public static final Block peachPlanks = new ZGBlockPlanks("peachplanks");
+	public static final WorldGenAbstractTree peachGen = new WorldGenZGTree(true, 2, ZGBlocks.peachLog.getDefaultState(), ZGBlocks.peachLeaves.getDefaultState(), false);
+	
+	// Fruit Trees (Grapefruit)
+	public static final Block grapefruitLog = new ZGBlockLog("grapefruitlog");
+	public static final Block grapefruitLeaves = new ZGFruitLeaves("grapefruitleaves", ZGBlocks.grapefruitSapling, ZGItems.grapefruit);
+	public static final Block grapefruitPlanks = new ZGBlockPlanks("grapefruitplanks");
+	public static final WorldGenAbstractTree grapefruitGen = new WorldGenZGTree(true, 6, ZGBlocks.grapefruitLog.getDefaultState(), ZGBlocks.grapefruitLeaves.getDefaultState(), false);
+	
+	// Fruit Trees (Orange)
+	public static final Block orangeLog = new ZGBlockLog("orangelog");
+	public static final Block orangeLeaves = new ZGFruitLeaves("orangeleaves", ZGBlocks.orangeSapling, ZGItems.orange);
+	public static final Block orangePlanks = new ZGBlockPlanks("orangeplanks");
+	public static final WorldGenAbstractTree orangeGen = new WorldGenZGTree(true, 4, ZGBlocks.orangeLog.getDefaultState(), ZGBlocks.orangeLeaves.getDefaultState(), false);
+	
+	// Fruit Trees (Lemon)
+	public static final Block lemonLog = new ZGBlockLog("lemonlog");
+	public static final Block lemonLeaves = new ZGFruitLeaves("lemonleaves", ZGBlocks.lemonSapling, ZGItems.lemon);
+	public static final Block lemonPlanks = new ZGBlockPlanks("lemonplanks");
+	public static final WorldGenAbstractTree lemonGen = new WorldGenZGTree(true, 4, ZGBlocks.lemonLog.getDefaultState(), ZGBlocks.lemonLeaves.getDefaultState(), false);
+	
+	// Fruit Trees (Lime)
+	public static final Block limeLog = new ZGBlockLog("limelog");
+	public static final Block limeLeaves = new ZGFruitLeaves("limeleaves", ZGBlocks.limeSapling, ZGItems.lime);
+	public static final Block limePlanks = new ZGBlockPlanks("limeplanks");
+	public static final WorldGenAbstractTree limeGen = new WorldGenZGTree(true, 4, ZGBlocks.limeLog.getDefaultState(), ZGBlocks.limeLeaves.getDefaultState(), false);
+	
+	// Fruit Trees (Limon)
+	public static final Block limonLog = new ZGBlockLog("limonlog");
+	public static final Block limonLeaves = new ZGFruitLeaves("limonleaves", ZGBlocks.limonSapling, ZGItems.limon);
+	public static final Block limonPlanks = new ZGBlockPlanks("limonplanks");
+	public static final WorldGenAbstractTree limonGen = new WorldGenZGTree(true, 4, ZGBlocks.limonLog.getDefaultState(), ZGBlocks.limonLeaves.getDefaultState(), false);
 	
 	// These all have to be declared up top or else weird things happen.
 	public static final Block perdTreeSapling = new ZGBlockSapling("palmtreesapling", palmWoodTreeGen);
@@ -129,6 +180,14 @@ public class ZGBlocks {
 	public static final Block edenLovetreeSapling = new ZGBlockSapling("lovetreesapling", edenLovetreeGen);
 	public static final Block exoWoodSapling = new ZGBlockSapling("exoduswoodsapling", exoWoodTreeGen);
 	public static final Block cherryWoodSapling = new ZGBlockSapling("cherrysapling", cherryWoodGen);
+	public static final Block bananaSapling = new ZGBlockSapling("bananasapling", bananaGen);
+	public static final Block guavaSapling = new ZGBlockSapling("guavasapling", guavaGen);
+	public static final Block peachSapling = new ZGBlockSapling("peachsapling", peachGen);
+	public static final Block grapefruitSapling = new ZGBlockSapling("grapefruitsapling", grapefruitGen);
+	public static final Block orangeSapling = new ZGBlockSapling("orangesapling", orangeGen);
+	public static final Block lemonSapling = new ZGBlockSapling("lemonsapling", lemonGen);
+	public static final Block limeSapling = new ZGBlockSapling("limesapling", limeGen);
+	public static final Block limonSapling = new ZGBlockSapling("limonsapling", limonGen);
 	
 	public static final Block edenFruit = new EdenFruit();
 	public static final Block edenFlower = new EdenFlower();
@@ -531,6 +590,32 @@ public class ZGBlocks {
 	public static final Block vortexEveniumOre = new ZGBlockOre("vortexeveniumore", 7.2F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
 			EnumHarvestLevelZG.EVENIUM.getHarvestLevel());
 	
+	// Harran / Metztli
+	public static final Block harranSoil = new ZGBlockDirt("harransoil");
+	public static final Block harranGrass = new ZGBlockGrassHarran("harrangrass");
+	public static final Block harranGrassCherry = new ZGBlockCherryGrassHarran("harrancherrygrass");
+	public static final Block harranAquamarineOre = new ZGOreGem("harranaquamarineore", 6.2F, ZGItems.aquamarine).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
+			EnumHarvestLevelZG.DIAMOND.getHarvestLevel());
+	public static final Block harranAmberOre = new ZGOreGem("harranamberore", 6.2F, ZGItems.amber).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
+			EnumHarvestLevelZG.DIAMOND.getHarvestLevel());
+	public static final Block harranZincOre = new ZGBlockOre("harranzincore", 6.4F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.DIAMOND.getHarvestLevel());
+	public static final Block harranGarnetOre = new ZGOreGem("harrangarnetore", 6.2F, ZGItems.garnet).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
+			EnumHarvestLevelZG.DIAMOND.getHarvestLevel());
+	public static final Block harranSuperChargedCoalOre = new ZGOreGem("harransuperchargedcoalore", 5.8F, ZGItems.superChargedCoal).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
+			EnumHarvestLevelZG.DIAMOND.getHarvestLevel());
+	public static final Block harranSapphireOre = new ZGOreGem("harransapphireore", 3.2F, ZGItems.sapphire).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
+			EnumHarvestLevelZG.DIAMOND.getHarvestLevel());
+	public static final Block harranOpalOre = new ZGOreGem("harranopalore", 6.2F, ZGItems.opal).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
+			EnumHarvestLevelZG.DIAMOND.getHarvestLevel());
+	public static final Block harranRubyOre = new ZGOreGem("harranrubyore", 6.2F, ZGItems.ruby).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
+			EnumHarvestLevelZG.DIAMOND.getHarvestLevel());
+	public static final Block harranAmaranthOre = new ZGBlockOre("harranamaranthore", 4.4F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
+			EnumHarvestLevelZG.DIAMOND.getHarvestLevel());
+	public static final Block harranTopazOre = new ZGOreGem("harrantopazore", 6.2F, ZGItems.topaz).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
+			EnumHarvestLevelZG.DIAMOND.getHarvestLevel());
+	public static final Block harranFueltoniumOre = new ZGOreGem("harranfueltoniumore", 8.2F, ZGItems.dustFueltonium).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
+			EnumHarvestLevelZG.DIAMOND.getHarvestLevel());
+	
 	// Astros (Moon)
 	public static final Block astrosRock = new ZGBlockBase("astrosrock", 2.4F);
 	public static final Block astrosDirt = new ZGBlockDirt("astrosdirt");
@@ -758,29 +843,6 @@ public class ZGBlocks {
 	//
 	public static final Block mudClayBlock = new BlockMudClay();
 	
-	// Harran Ores
-	public static final Block harranAquamarineOre = new ZGOreGem("harranaquamarineore", 6.2F, ZGItems.aquamarine).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
-			EnumHarvestLevelZG.DIAMOND.getHarvestLevel());
-	public static final Block harranAmberOre = new ZGOreGem("harranamberore", 6.2F, ZGItems.amber).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
-			EnumHarvestLevelZG.DIAMOND.getHarvestLevel());
-	public static final Block harranZincOre = new ZGBlockOre("harranzincore", 6.4F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.DIAMOND.getHarvestLevel());
-	public static final Block harranGarnetOre = new ZGOreGem("harrangarnetore", 6.2F, ZGItems.garnet).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
-			EnumHarvestLevelZG.DIAMOND.getHarvestLevel());
-	public static final Block harranSuperChargedCoalOre = new ZGOreGem("harransuperchargedcoalore", 5.8F, ZGItems.superChargedCoal).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
-			EnumHarvestLevelZG.DIAMOND.getHarvestLevel());
-	public static final Block harranSapphireOre = new ZGOreGem("harransapphireore", 3.2F, ZGItems.sapphire).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
-			EnumHarvestLevelZG.DIAMOND.getHarvestLevel());
-	public static final Block harranOpalOre = new ZGOreGem("harranopalore", 6.2F, ZGItems.opal).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
-			EnumHarvestLevelZG.DIAMOND.getHarvestLevel());
-	public static final Block harranRubyOre = new ZGOreGem("harranrubyore", 6.2F, ZGItems.ruby).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
-			EnumHarvestLevelZG.DIAMOND.getHarvestLevel());
-	public static final Block harranAmaranthOre = new ZGBlockOre("harranamaranthore", 4.4F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
-			EnumHarvestLevelZG.DIAMOND.getHarvestLevel());
-	public static final Block harranTopazOre = new ZGOreGem("harrantopazore", 6.2F, ZGItems.topaz).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
-			EnumHarvestLevelZG.DIAMOND.getHarvestLevel());
-	public static final Block harranFueltoniumOre = new ZGOreGem("harranfueltoniumore", 8.2F, ZGItems.dustFueltonium).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
-			EnumHarvestLevelZG.DIAMOND.getHarvestLevel());
-	
 	// Crops
 	public static final Block cropStrawberry = new BlockCropStrawberry();
 	public static final Block cropBlackberry = new BlockCropBlackberry();
@@ -833,13 +895,16 @@ public class ZGBlocks {
 				caligroGarnetOre, caligroSuperChargedCoalOre, caligroFueltoniumOre, caligroDiamondOre, caligroEmeraldOre, caligroRadiumOre, caligroLapisOre, caligroZollerniumOre, caligroRubyOre,
 				spiderlingEgg, shadowBossSpawner, corruptRock, corruptCobble, corruptStone, corruptStoneBricks, corruptAscendiumOre, corruptEtriumOre, corruptChargiumOre, corruptCreepstone,
 				exodusTallGrass, exodusDirt, exodusGrass, exodusCobblestone, exodusStone, exodusGravel, exodusRock, exodusSand, exodusIronOre, exodusGoldOre, exodusDiamondOre, exodusRedstoneOre,
-				exodusCopperOre, exoWoodLogs, exoWoodLeaves, exoWoodPlanks, exoWoodSapling, cherryWoodLog, cherryWoodLeaves, cherryWoodPlanks, cherryWoodSapling, vortexSurfaceRock, vortexCobblestone,
-				vortexStone, vortexVoltRock, vortexIronOre, vortexGoldOre, astrosRock, astrosDirt, astrosGravel, astrosCobblestone, astrosStone, astrosIce, astrosIronOre, astrosGoldOre,
-				astrosDiamondOre, astrosEmeraldOre, astrosRedstoneOre, astrosCoalOre, astrosSuperChargedCoalOre, astrosTinOre, astrosZollerniumOre, astrosSapphireOre, centoRock, centoCobblestone,
-				centoStone, centoDirt, centoGravel, centoShiniumOre, centoGoldOre, centoIronOre, centoFueltoniumOre, centoZollerniumOre, vortexDiamondOre, vortexRedstoneOre, vortexCopperOre,
-				vortexSuperChargedCoalOre, vortexFueltoniumOre, vortexEveniumOre, harranAquamarineOre, harranAmberOre, harranZincOre, harranGarnetOre, harranSuperChargedCoalOre, harranSapphireOre,
-				harranOpalOre, harranRubyOre, harranAmaranthOre, harranTopazOre, harranFueltoniumOre, blockBlueprintStation, blockHealingStation, blockCrystalsPlutonium, blockCrystalsStorm,
-				blockCrystalsEden, blockIngotStackIron, ironSirenON, goldSirenON, diamondSirenON, emeraldSirenON, ironSiren, goldSiren, diamondSiren, emeraldSiren, facehuggerEgg);
+				exodusCopperOre, exoWoodLogs, exoWoodLeaves, exoWoodPlanks, exoWoodSapling, cherryWoodLog, bananaLog, guavaLog, peachLog, grapefruitLog, orangeLog, lemonLog, limeLog, limonLog,
+				cherryWoodLeaves, bananaLeaves, guavaLeaves, peachLeaves, grapefruitLeaves, orangeLeaves, lemonLeaves, limeLeaves, limonLeaves, cherryWoodPlanks, bananaPlanks, guavaPlanks,
+				peachPlanks, orangePlanks, grapefruitPlanks, lemonPlanks, limePlanks, limonPlanks, cherryWoodSapling, bananaSapling, guavaSapling, peachSapling, grapefruitSapling, orangeSapling,
+				lemonSapling, limeSapling, limonSapling, vortexSurfaceRock, vortexCobblestone, vortexStone, vortexVoltRock, vortexIronOre, vortexGoldOre, astrosRock, astrosDirt, astrosGravel,
+				astrosCobblestone, astrosStone, astrosIce, astrosIronOre, astrosGoldOre, astrosDiamondOre, astrosEmeraldOre, astrosRedstoneOre, astrosCoalOre, astrosSuperChargedCoalOre, astrosTinOre,
+				astrosZollerniumOre, astrosSapphireOre, centoRock, centoCobblestone, centoStone, centoDirt, centoGravel, centoShiniumOre, centoGoldOre, centoIronOre, centoFueltoniumOre,
+				centoZollerniumOre, vortexDiamondOre, vortexRedstoneOre, vortexCopperOre, vortexSuperChargedCoalOre, vortexFueltoniumOre, vortexEveniumOre, harranGrass, harranGrassCherry, harranSoil,
+				harranAquamarineOre, harranAmberOre, harranZincOre, harranGarnetOre, harranSuperChargedCoalOre, harranSapphireOre, harranOpalOre, harranRubyOre, harranAmaranthOre, harranTopazOre,
+				harranFueltoniumOre, blockBlueprintStation, blockHealingStation, blockCrystalsPlutonium, blockCrystalsStorm, blockCrystalsEden, blockIngotStackIron, ironSirenON, goldSirenON,
+				diamondSirenON, emeraldSirenON, ironSiren, goldSiren, diamondSiren, emeraldSiren, facehuggerEgg);
 		//
 		ZGBlocks.registerBlocks(tociSand, tociStarSand, tociDirt, tociRock, tociCobblestone, tociMossyCobblestone, tociStone, tociStoneBricks, tociGravel, tociNickelOre, tociTinOre, tociBronzeOre,
 				tociSilverOre, tociLeadOre, tociCopperOre, tociZincOre, tociSuperChargedCoalOre, tociRedstoneOre, tociGoldOre, tociAmaranthOre, tociIronOre, tociEmeraldOre, tociCoalOre,

@@ -76,6 +76,7 @@ import zollerngalaxy.biomes.kriffon.BiomeKriffonLavaOcean;
 import zollerngalaxy.biomes.metztli.BiomeHarranClayMesa;
 import zollerngalaxy.biomes.metztli.BiomeHarranDunes;
 import zollerngalaxy.biomes.metztli.BiomeHarranForest;
+import zollerngalaxy.biomes.metztli.BiomeHarranFruitForest;
 import zollerngalaxy.biomes.metztli.BiomeHarranHills;
 import zollerngalaxy.biomes.metztli.BiomeHarranMarsh;
 import zollerngalaxy.biomes.metztli.BiomeHarranOcean;
@@ -219,6 +220,7 @@ public class ZGBiomes {
 	public static final Biome METZTLI_HARRAN_RED_DESERT = new BiomeHarranDunes(BiomeHarranDunes.Type.RED, "harran_heat_desert", new BiomeProperties("Harran Red Desert"));
 	public static final Biome METZTLI_HARRAN_HILLS = new BiomeHarranHills(new BiomeProperties("Harran Hills"));
 	public static final Biome METZTLI_HARRAN_CHERRY_FOREST = new BiomeHarranForest("harran_forest_cherry", BiomeHarranForest.Type.CHERRY, new BiomeProperties("Harran Cherry Forest"));
+	public static final Biome METZTLI_HARRAN_FRUIT_FOREST = new BiomeHarranFruitForest(new BiomeProperties("Harran Fruit Forest"));
 	
 	// Astros
 	public static final Biome ASTROS_BASE = new BiomeAstros(new BiomeProperties("Astros"));
@@ -343,6 +345,7 @@ public class ZGBiomes {
 		ZGBiomes.addBiome(ZGBiomes.METZTLI_HARRAN_RED_DESERT, DEAD, HOT, DRY, MOUNTAIN, WASTELAND);
 		ZGBiomes.addBiome(ZGBiomes.METZTLI_HARRAN_HILLS, LUSH, COLD, DRY, MOUNTAIN);
 		ZGBiomes.addBiome(ZGBiomes.METZTLI_HARRAN_CHERRY_FOREST, LUSH, PLAINS, WET, FOREST);
+		ZGBiomes.addBiome(ZGBiomes.METZTLI_HARRAN_FRUIT_FOREST, LUSH, PLAINS, WET, FOREST);
 		
 		// Astros
 		ZGBiomes.addBiome(ZGBiomes.ASTROS_BASE, COLD, WET, SNOWY);

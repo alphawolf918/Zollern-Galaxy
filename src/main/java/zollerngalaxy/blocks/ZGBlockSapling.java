@@ -49,7 +49,6 @@ public class ZGBlockSapling extends ZGBlockFlower implements IGrowable, IPlantab
 		if (ZollernGalaxyCore.instance().isInDevMode()) {
 			JSONFactory.registerSapling(blockName);
 		}
-		// BlockSapling
 	}
 	
 	@Override

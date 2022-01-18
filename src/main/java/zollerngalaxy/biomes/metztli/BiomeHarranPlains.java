@@ -39,7 +39,7 @@ public class BiomeHarranPlains extends BiomeHarranBase {
 		this.biomeDecor.grassPerChunk = 14;
 		this.biomeDecor.flowersPerChunk = 8;
 		this.biomeDecor.treesPerChunk = 2;
-		this.grassFoliageColor = 0x00008b;
+		this.grassFoliageColor = 0x00ff00;
 		this.waterColor = 0x8b008b;
 		this.topBlock = Blocks.GRASS.getDefaultState();
 		this.fillerBlock = Blocks.DIRT.getDefaultState();
