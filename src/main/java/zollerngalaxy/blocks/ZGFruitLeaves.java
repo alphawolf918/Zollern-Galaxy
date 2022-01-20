@@ -28,12 +28,16 @@ public class ZGFruitLeaves extends ZGBlockLeaves {
 	public void onBlockDestroyedByPlayer(World worldIn, BlockPos pos, IBlockState state) {
 		super.onBlockDestroyedByPlayer(worldIn, pos, state);
 		this.dropFruit(worldIn, pos);
+		this.dropSapling(worldIn, pos);
 	}
 	
 	@Override
 	protected void dropFruit(World worldIn, BlockPos pos, IBlockState state, int chance) {
 		super.dropFruit(worldIn, pos, state, chance);
 		this.dropFruit(worldIn, pos);
+		if (ZGHelper.getRNGChance(2, 1)) {
+			this.dropSapling(worldIn, pos);
+		}
 	}
 	
 	protected void dropFruit(World worldIn, BlockPos pos) {
@@ -44,11 +48,14 @@ public class ZGFruitLeaves extends ZGBlockLeaves {
 					ZGHelper.dropItem(this.droppedFood, worldIn, pos);
 				}
 			}
-			if (ZGHelper.getRNGChance(1, 4)) {
-				int randInt = ZGHelper.rngInt(1, 2);
-				for (int i = 0; i < randInt; i++) {
-					ZGHelper.dropItem(this.droppedSapling, worldIn, pos);
-				}
+		}
+	}
+	
+	protected void dropSapling(World worldIn, BlockPos pos) {
+		if (ZGHelper.getRNGChance(1, 4)) {
+			int randInt = ZGHelper.rngInt(1, 2);
+			for (int i = 0; i < randInt; i++) {
+				ZGHelper.dropItem(Item.getItemFromBlock(this.droppedSapling), worldIn, pos);
 			}
 		}
 	}

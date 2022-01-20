@@ -16,6 +16,7 @@ import zollerngalaxy.items.armor.ZGArmorMats;
 import zollerngalaxy.items.crops.ZGItemSeedFood;
 import zollerngalaxy.items.food.IceCream;
 import zollerngalaxy.items.food.ItemSweetFood;
+import zollerngalaxy.items.food.PopcornBowl;
 import zollerngalaxy.items.food.ZGItemFood;
 import zollerngalaxy.items.healing.ItemHeart;
 import zollerngalaxy.items.healing.ItemHeartForce;
@@ -162,6 +163,10 @@ public class ZGItems {
 	public static final Item lemon = new ZGItemFood("lemon", 6, 7.5F, false);
 	public static final Item lime = new ZGItemFood("lime", 6, 7.5F, false);
 	public static final Item limon = new ZGItemFood("limon", 8, 9.2F, false);
+	public static final Item pea = new ZGItemFood("pea", 2, 0.5F, false);
+	public static final Item cornKernel = new ZGItemFood("cornkernel", 1, 0.3F, false);
+	public static final Item popcorn = new ZGItemFood("popcorn", 3, 0.9F, false);
+	public static final Item popcornBowl = new PopcornBowl();
 	//
 	public static final Item rawBlubberFish = new ZGItemFood("rawblubberfish", 1, 0.2F, false);
 	public static final Item rawBladeFish = new ZGItemFood("rawbladefish", 1, 0.2F, false);
@@ -351,6 +356,8 @@ public class ZGItems {
 	public static final Item cucumber = new ZGItemSeedFood("cucumber", 16, 4.5F, ZGBlocks.cropCucumber);
 	public static final Item radish = new ZGItemSeedFood("radish", 10, 3.6F, ZGBlocks.cropRadish);
 	public static final Item onion = new ZGItemSeedFood("onion", 14, 3.8F, ZGBlocks.cropOnion);
+	public static final Item peas = new ZGItemSeedFood("peas", 5, 2.6F, ZGBlocks.cropPea);
+	public static final Item garlic = new ZGItemSeedFood("garlic", 10, 1.5F, ZGBlocks.cropGarlic);
 	
 	// Thermal Armor
 	// public static final Item thermalClothTier3 = new ZGItemBase("thermal_cloth_t3");
@@ -381,7 +388,8 @@ public class ZGItems {
 		ZGItems.registerItems(alcohol, gauze, medkit, nail, nailGroup, woodBox, metalParts, dough, doughCooked, flour);
 		//
 		// Crops & Fruits
-		ZGItems.registerItems(strawberry, blackberry, blueberry, grape, tomato, corn, cucumber, radish, onion, cherry, banana, guava, peach, grapefruit, orange, lemon, lime, limon);
+		ZGItems.registerItems(strawberry, blackberry, blueberry, grape, tomato, corn, cucumber, radish, onion, peas, garlic, cherry, banana, guava, peach, grapefruit, orange, lemon, lime, limon, pea,
+				cornKernel, popcorn, popcornBowl);
 		//
 		//
 		ZGHelper.Log("Loaded a total of " + totalItems + " new items.");

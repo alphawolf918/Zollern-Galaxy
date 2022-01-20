@@ -117,7 +117,7 @@ public class BiomeHarranForest extends BiomeHarranBase {
 		if (this.type == BiomeHarranForest.Type.ROOFED && rand.nextInt(3) > 0) {
 			return ROOF_TREE;
 		} else if (this.type != BiomeHarranForest.Type.BIRCH && rand.nextInt(5) != 0) {
-			return rand.nextInt(10) == 0 ? BIG_TREE_FEATURE : TREE_FEATURE;
+			return rand.nextInt(5) == 0 ? BIG_TREE_FEATURE : TREE_FEATURE;
 		} else if (this.type == BiomeHarranForest.Type.CHERRY && rand.nextInt(3) == 0) {
 			return CHERRY_TREE;
 		} else {

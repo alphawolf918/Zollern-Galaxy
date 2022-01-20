@@ -9,7 +9,7 @@ package zollerngalaxy.core.enums;
 
 public enum EnumHarvestToolZG {
 	
-	PICKAXE("pickaxe"), SHOVEL("shovel"), AXE("axe"), OMNITOOL("omnitool");
+	PICKAXE("pickaxe"), SHOVEL("shovel"), AXE("axe"), PLOW("hoe"), OMNITOOL("omnitool");
 	
 	private String harvestTool = "pickaxe";
 	

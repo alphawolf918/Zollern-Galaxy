@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "zollerngalaxy:peas"
+    }
+  ],
+  "result": {
+    "item": "zollerngalaxy:pea",
+    "count": 4
+  }
+}

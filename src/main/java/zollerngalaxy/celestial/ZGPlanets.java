@@ -25,6 +25,7 @@ import zollerngalaxy.core.dimensions.worldproviders.WorldProviderCentotl;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderEden;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderExodus;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderKriffon;
+import zollerngalaxy.core.dimensions.worldproviders.WorldProviderKronos;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderMetztli;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderOasis;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderPerdita;
@@ -627,10 +628,9 @@ public class ZGPlanets {
 		planetTlaloc.setDimensionInfo(ConfigManagerZG.planetTlalocDimensionId, WorldProviderTlaloc.class);
 		planetTlaloc.setParentSolarSystem(systemPantheon);
 		planetTlaloc.setBodyClass(EnumBodyClass.CONSTRUCTED);
-		planetTlaloc.setRelativeOrbitTime(2.5F);
 		planetTlaloc.setDistanceFromCenter(1.5F);
 		planetTlaloc.setRelativeOrbitTime(5.0F);
-		planetTlaloc.setTierRequired(ConfigManagerZG.planetTlalocDimensionId);
+		planetTlaloc.setTierRequired(ConfigManagerZG.planetTlalocTier);
 		if (ConfigManagerZG.planetUnreachableTlaloc || ConfigManagerZG.planetUnreachableAll) {
 			planetTlaloc.setDisableRockets();
 		}
@@ -642,6 +642,27 @@ public class ZGPlanets {
 		planetTlaloc.setAtmosphere();
 		planetTlaloc.setBiomeInfo(ZGBiomes.TLALOC_BASE, ZGBiomes.TLALOC_CONSTRUCTS, ZGBiomes.TLALOC_CHROME_FOREST, ZGBiomes.TLALOC_GOLDEN_CONSTRUCTS);
 		planetTlaloc.setBodyIcon("tlaloc");
+		totalPlanets++;
+		
+		// Kronos
+		planetKronos.setDimensionInfo(ConfigManagerZG.planetKronosDimensionId, WorldProviderKronos.class);
+		planetKronos.setParentSolarSystem(systemOlympus);
+		planetKronos.setBodyClass(EnumBodyClass.Y);
+		planetKronos.setRelativeOrbitTime(10000.56F);
+		planetKronos.setDistanceFromCenter(2.5F);
+		planetKronos.setRelativeOrbitTime(24.46F);
+		planetKronos.setTierRequired(ConfigManagerZG.planetKronosTier);
+		if (ConfigManagerZG.planetUnreachableKronos || ConfigManagerZG.planetUnreachableAll) {
+			planetKronos.setDisableRockets();
+		}
+		planetKronos.setBodyTemperature(140.0F);
+		planetKronos.setDensity(20.0F);
+		planetKronos.setWindLevel(0.0F);
+		planetKronos.setBodyGasses(EnumAtmosphericGas.NITROGEN, EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.ARGON, EnumAtmosphericGas.WATER);
+		planetKronos.setBreathable(true);
+		planetKronos.setAtmosphere();
+		planetKronos.setBiomeInfo(ZGBiomes.KRONOS_BASE);
+		planetKronos.setBodyIcon("kronos");
 		totalPlanets++;
 		
 		// Ares
@@ -664,13 +685,6 @@ public class ZGPlanets {
 		planetIcarus.setDistanceFromCenter(0.5F);
 		planetIcarus.setRelativeOrbitTime(1.5F);
 		planetIcarus.setBodyIcon("icarus");
-		
-		// Kronos
-		// TODO
-		planetKronos.setParentSolarSystem(systemOlympus);
-		planetKronos.setDistanceFromCenter(2.5F);
-		planetKronos.setRelativeOrbitTime(24.46F);
-		planetKronos.setBodyIcon("kronos");
 		
 		ZGHelper.Log("Loaded a total of " + totalPlanets + " new planets.");
 	}
@@ -740,10 +754,10 @@ public class ZGPlanets {
 		GalaxyRegistry.registerPlanet(planetToci);
 		GalaxyRegistry.registerPlanet(planetTlaloc);
 		//
+		GalaxyRegistry.registerPlanet(planetKronos);
 		GalaxyRegistry.registerPlanet(planetAres);
 		GalaxyRegistry.registerPlanet(planetPrometheus);
 		GalaxyRegistry.registerPlanet(planetIcarus);
-		GalaxyRegistry.registerPlanet(planetKronos);
 		ZGPlanets.registerMoons();
 	}
 	
@@ -781,13 +795,12 @@ public class ZGPlanets {
 		
 		// Olympus
 		// TODO
+		GalacticraftRegistry.registerTeleportType(WorldProviderKronos.class, new TeleportTypeBaseZG());
 		// GalacticraftRegistry.registerTeleportType(WorldProviderAres.class, new
 		// TeleportTypeBaseZG());
 		// GalacticraftRegistry.registerTeleportType(WorldProviderPrometheus.class, new
 		// TeleportTypeBaseZG());
 		// GalacticraftRegistry.registerTeleportType(WorldProviderIcarus.class, new
-		// TeleportTypeBaseZG());
-		// GalacticraftRegistry.registerTeleportType(WorldProviderKronos.class, new
 		// TeleportTypeBaseZG());
 		
 		// Asgard

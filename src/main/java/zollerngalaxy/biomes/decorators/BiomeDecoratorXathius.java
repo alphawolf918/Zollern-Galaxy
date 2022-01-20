@@ -81,13 +81,13 @@ public class BiomeDecoratorXathius extends BiomeDecoratorZG {
 		Block BLOCK_FILL = biome.fillerBlock.getBlock();
 		
 		if (biome.equals(ZGBiomes.XATHIUS_MOUNTAINS)) {
-			EnumOreGenZG.GRAVEL.setMaxHeight(256);
-			EnumOreGenZG.EMERALD.setMaxHeight(256);
-			EnumOreGenZG.DIAMOND.setMaxHeight(256);
-			EnumOreGenZG.REDSTONE.setMaxHeight(256);
-			EnumOreGenZG.IRON.setMaxHeight(256);
-			EnumOreGenZG.GOLD.setMaxHeight(256);
-			EnumOreGenZG.TIN.setMaxHeight(256);
+			EnumOreGenZG.GRAVEL.setMaxHeight(128);
+			EnumOreGenZG.EMERALD.setMaxHeight(128);
+			EnumOreGenZG.DIAMOND.setMaxHeight(128);
+			EnumOreGenZG.REDSTONE.setMaxHeight(128);
+			EnumOreGenZG.IRON.setMaxHeight(128);
+			EnumOreGenZG.GOLD.setMaxHeight(128);
+			EnumOreGenZG.TIN.setMaxHeight(128);
 		}
 		
 		this.generateOre(this.dirtGen, EnumOreGenZG.DIRT, world, rand);
@@ -103,12 +103,11 @@ public class BiomeDecoratorXathius extends BiomeDecoratorZG {
 		
 		ChunkPrimer chunkPrimer = new ChunkPrimer();
 		
+		// Lakes (Water)
 		if (this.generateLakes && this.waterLakesPerChunk > 0) {
 			for (int i = 0; i < this.waterLakesPerChunk; ++i) {
 				y = rand.nextInt(rand.nextInt(genY) + 8);
-				
 				Block blockToUse = (biome.getTempCategory() == TempCategory.COLD) ? Blocks.ICE : Blocks.WATER;
-				
 				(new WorldGenLakesZG(blockToUse, BLOCK_TOP)).generate(world, rand, this.chunkPos.add(x, y, z));
 			}
 			
@@ -119,6 +118,7 @@ public class BiomeDecoratorXathius extends BiomeDecoratorZG {
 			}
 		}
 		
+		// Lakes (Lava)
 		if (this.generateLakes && this.lavaLakesPerChunk > 0) {
 			for (int i = 0; i < this.lavaLakesPerChunk; ++i) {
 				y = rand.nextInt(rand.nextInt(genY) + 8);
@@ -129,6 +129,7 @@ public class BiomeDecoratorXathius extends BiomeDecoratorZG {
 			}
 		}
 		
+		// Lakes (Obsidian)
 		if (this.generateLakes && this.obsidianLakesPerChunk > 0) {
 			for (int i = 0; i < this.obsidianLakesPerChunk; ++i) {
 				y = rand.nextInt(rand.nextInt(genY) + 8);
@@ -139,6 +140,7 @@ public class BiomeDecoratorXathius extends BiomeDecoratorZG {
 			}
 		}
 		
+		// Tall Grass
 		if (this.xathTallGrassPerChunk > 0) {
 			for (int i = 0; i < this.xathTallGrassPerChunk + 4; ++i) {
 				ZGDecorateHelper.generatePlants(new WorldGenTallGrassZG((ZGBlockTallGrass) ZGBlocks.xathTallGrass), world, rand, this.chunkPos);

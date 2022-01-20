@@ -11,7 +11,7 @@ tile.zolrockbricks.name=Zollus Rock Bricks
 tile.zolcrystals.name=Zolnium Crystals
 tile.zolcoalore.name=Zollus Coal Ore
 tile.zolironore.name=Zollus Iron Ore
-tile.zolgoldore.name=Zollus Gold Ore
+tile.zolgoldore.name=Zollus Gold Oref
 tile.zoltinore.name=Zollus Tin Ore
 tile.zolcopperore.name=Zollus Copper Ore
 tile.zolheartore.name=Zollus Heartium Ore
@@ -527,6 +527,28 @@ tile.treasure_chest_tlaloc.description=A glorious victory of loot! Requires Tier
 tile.boss_spawner_t1.name=Tlaloc Boss Spawner
 tile.tlalocdungeonbricks.name=Tlaloc Dungeon Bricks
 
+tile.netherdirt.name=Kronos Dirt
+tile.nethercoalore.name=Kronos Coal Ore
+tile.netherfueltoniumore.name=Kronos Fueltonium Ore
+tile.netherironore.name=Kronos Iron Ore
+tile.nethershiniumore.name=Kronos Shinium Ore
+tile.nethersilverore.name=Kronos Silver Ore
+tile.nethernickelore.name=Kronos Nickle Ore
+tile.netherleadore.name=Kronos Lead Ore
+tile.nethertinore.name=Kronos Tin Ore
+tile.nethercopperore.name=Kronos Copper Ore
+tile.netherlapisore.name=Kronos Lapis Ore
+tile.netherdiamondore.name=Kronos Diamond Ore
+tile.netheremeraldore.name=Kronos Emerald Ore
+tile.netherredstoneore.name=Kronos Redstone Ore
+tile.nethergoldore.name=Kronos Gold Ore
+tile.nethersteelore.name=Kronos Steel Ore
+tile.nethersapphireore.name=Kronos Sapphire Ore
+tile.netherrubyore.name=Kronos Ruby Ore
+tile.netherzincore.name=Kronos Zinc Ore
+tile.netheramaranthore.name=Kronos Amaranth Ore
+tile.nethersuperchargedcoalore.name=Kronos Super Charged Coal Ore
+
 tile.mudclayblock.name=Mud Clay
 tile.endrock.name=Endrock
 
@@ -579,6 +601,8 @@ tile.corn_crop.name=Corn
 tile.cucumber_crop.name=Cucumbers
 tile.radish_crop.name=Radishes
 tile.onion_crop.name=Onions
+tile.pea_crop.name=Peas
+tile.garlic_crop.name=Garlic
 
 ## Subtitles ##
 
@@ -970,9 +994,15 @@ item.blueberry.name=Blueberry
 item.grape.name=Grape
 item.tomato.name=Tomato
 item.corn.name=Corn
+item.cornkernel.name=Corn Kernel
+item.popcorn.name=Popcorn
+item.popcornbowl.name=Bowl of Popcorn
 item.cucumber.name=Cucumber
 item.radish.name=Radish
 item.onion.name=Onion
+item.peas.name=Pea Pod
+item.pea.name=Pea
+item.garlic.name=Garlic
 
 ## Tree Fruit Items ##
 item.cherry.name=Cherry

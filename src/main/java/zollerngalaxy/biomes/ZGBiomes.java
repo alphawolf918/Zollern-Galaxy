@@ -17,6 +17,7 @@ import static net.minecraftforge.common.BiomeDictionary.Type.HOT;
 import static net.minecraftforge.common.BiomeDictionary.Type.JUNGLE;
 import static net.minecraftforge.common.BiomeDictionary.Type.LUSH;
 import static net.minecraftforge.common.BiomeDictionary.Type.MOUNTAIN;
+import static net.minecraftforge.common.BiomeDictionary.Type.NETHER;
 import static net.minecraftforge.common.BiomeDictionary.Type.OCEAN;
 import static net.minecraftforge.common.BiomeDictionary.Type.PLAINS;
 import static net.minecraftforge.common.BiomeDictionary.Type.SNOWY;
@@ -73,6 +74,7 @@ import zollerngalaxy.biomes.exodus.BiomeExodusOcean;
 import zollerngalaxy.biomes.exodus.BiomeExodusRockyHills;
 import zollerngalaxy.biomes.kriffon.BiomeKriffon;
 import zollerngalaxy.biomes.kriffon.BiomeKriffonLavaOcean;
+import zollerngalaxy.biomes.kronos.BiomeKronos;
 import zollerngalaxy.biomes.metztli.BiomeHarranClayMesa;
 import zollerngalaxy.biomes.metztli.BiomeHarranDunes;
 import zollerngalaxy.biomes.metztli.BiomeHarranForest;
@@ -246,6 +248,9 @@ public class ZGBiomes {
 	public static final Biome TLALOC_CHROME_FOREST = new BiomeTlalocChromeForest(new BiomeProperties("Tlaloc Chrome Forest"));
 	public static final Biome TLALOC_GOLDEN_CONSTRUCTS = new BiomeTlalocGoldenConstructs(new BiomeProperties("Tlaloc Golden Constructs"));
 	
+	// Kronos
+	public static final Biome KRONOS_BASE = new BiomeKronos(new BiomeProperties("Kronos"));
+	
 	public static void init() {
 		// Zollus
 		ZGBiomes.addBiome(ZGBiomes.ZOLLUS, COLD, DEAD, DRY);
@@ -370,6 +375,9 @@ public class ZGBiomes {
 		ZGBiomes.addBiome(ZGBiomes.TLALOC_CONSTRUCTS, WASTELAND, DEAD, SPOOKY);
 		ZGBiomes.addBiome(ZGBiomes.TLALOC_CHROME_FOREST, FOREST, DEAD, SPOOKY);
 		ZGBiomes.addBiome(ZGBiomes.TLALOC_GOLDEN_CONSTRUCTS, MOUNTAIN, WASTELAND, DEAD, SPOOKY);
+		
+		// Kronos
+		ZGBiomes.addBiome(ZGBiomes.KRONOS_BASE, NETHER, HOT, DEAD, DRY, SPOOKY, WASTELAND);
 		
 		ZGHelper.Log("Loaded a total of " + totalBiomes + " new biomes.");
 	}

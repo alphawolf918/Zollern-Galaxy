@@ -9,7 +9,7 @@ package zollerngalaxy.core.enums;
 
 public enum EnumHarvestLevelZG {
 	
-	WOOD(0), STONE(1), IRON(2), DIAMOND(3), COBALT(4), EVENIUM(5), VIRINIUM(6), AMARANTH(7), AZURITE(8), ZOLLERNIUM(9), OMNI(10);
+	WOOD(0), STONE(1), IRON(2), RUBY(2), DIAMOND(3), SAPPHIRE(3), COBALT(4), EVENIUM(5), VIRINIUM(6), AMARANTH(7), AZURITE(8), ZOLLERNIUM(9), OMNI(10);
 	
 	protected int harvestLevel = 2;
 	
@@ -20,5 +20,4 @@ public enum EnumHarvestLevelZG {
 	public int getHarvestLevel() {
 		return this.harvestLevel;
 	}
-	
 }

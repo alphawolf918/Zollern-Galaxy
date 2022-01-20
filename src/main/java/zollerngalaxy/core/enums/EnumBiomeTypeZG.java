@@ -34,5 +34,6 @@ public enum EnumBiomeTypeZG {
 	STORMY,
 	MUSHROOM,
 	CONIFEROUS,
-	MARSH;
+	MARSH,
+	NETHER;
 }

@@ -83,8 +83,8 @@ public class ZGBlockLeaves extends ZGBlockBase implements IShearable {
 	@Override
 	public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
 		if (!worldIn.isRemote) {
-			CHECK_DECAY = true;
-			if (CHECK_DECAY && DECAYABLE) {
+			this.CHECK_DECAY = true;
+			if (this.CHECK_DECAY && this.DECAYABLE) {
 				int i = 4;
 				int j = 5;
 				int k = pos.getX();
@@ -165,7 +165,7 @@ public class ZGBlockLeaves extends ZGBlockBase implements IShearable {
 					this.destroy(worldIn, pos);
 				}
 			}
-			CHECK_DECAY = false;
+			this.CHECK_DECAY = false;
 		}
 	}
 	
@@ -205,7 +205,7 @@ public class ZGBlockLeaves extends ZGBlockBase implements IShearable {
 	}
 	
 	protected int getSaplingDropChance(IBlockState state) {
-		return 40;
+		return 60;
 	}
 	
 	@Override
@@ -253,7 +253,7 @@ public class ZGBlockLeaves extends ZGBlockBase implements IShearable {
 		}
 		
 		if (rand.nextInt(chance) == 0) {
-			ItemStack drop = new ItemStack(getItemDropped(state, rand, fortune), 1, damageDropped(state));
+			ItemStack drop = new ItemStack(this.getItemDropped(state, rand, fortune), 1, this.damageDropped(state));
 			if (!drop.isEmpty())
 				drops.add(drop);
 		}

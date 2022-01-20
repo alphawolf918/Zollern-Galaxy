@@ -131,6 +131,9 @@ public class ConfigManagerZG {
 	public static int spaceStationTlalocId;
 	public static int spaceStationTlalocStaticId;
 	
+	public static int spaceStationKronosId;
+	public static int spaceStationKronosStaticId;
+	
 	// Misc
 	public static boolean canEarthAnimalsSpawnOnEden;
 	public static boolean disableStarGates;
@@ -178,6 +181,8 @@ public class ConfigManagerZG {
 	public static boolean enableWandererSpawn;
 	public static boolean enableWandererHouses;
 	public static boolean disableVexbotRadiolaria;
+	public static boolean enableExplosiveOres;
+	public static boolean enablePotionEffectOres;
 	
 	/////////////////////////////////////////////////
 	public static double meteorGenZollus;
@@ -198,6 +203,7 @@ public class ConfigManagerZG {
 	public static double meteorGenCentotl;
 	public static double meteorGenToci;
 	public static double meteorGenTlaloc;
+	public static double meteorGenKronos;
 	////////////////////////////////////////////////
 	
 	// Set as unreachable with rockets by planet
@@ -219,6 +225,7 @@ public class ConfigManagerZG {
 	public static boolean planetUnreachableCentotl;
 	public static boolean planetUnreachableToci;
 	public static boolean planetUnreachableTlaloc;
+	public static boolean planetUnreachableKronos;
 	////////////////////////////////////////////////
 	
 	// Max Health Customization
@@ -293,6 +300,9 @@ public class ConfigManagerZG {
 	public static int planetCentotlTier;
 	public static int planetTociTier;
 	public static int planetTlalocTier;
+	
+	// Planet Tiers (Olympus)
+	public static int planetKronosTier;
 	
 	public static void init(FMLPreInitializationEvent event) {
 		config = new Configuration(new File(event.getModConfigurationDirectory().getAbsolutePath() + "/ZollernGalaxy/core.cfg"));
@@ -430,6 +440,10 @@ public class ConfigManagerZG {
 		spaceStationTlalocId = config.get(CTG_SATS, "Tlaloc Space Station ID", -6034).getInt();
 		spaceStationTlalocStaticId = config.get(CTG_SATS, "Tlaloc Space Station Static ID", -6035).getInt();
 		
+		// Kronos
+		spaceStationKronosId = config.get(CTG_SATS, "Kronos Space Station ID", -6036).getInt();
+		spaceStationKronosStaticId = config.get(CTG_SATS, "Kronos Space Station Static ID", -6037).getInt();
+		
 		// Misc (Can Earth animals spawn on Eden?)
 		canEarthAnimalsSpawnOnEden = config.get(CTG_MISC, "Earth Animals Spawn On Eden", true, "Should Earth animals spawn on Eden? (default: true)").getBoolean();
 		
@@ -541,6 +555,8 @@ public class ConfigManagerZG {
 		disableVexbotRadiolaria = config
 				.get(CTG_CUSTOMS, "Disable Vexbots spawning Radiolaria (White Lava) on death.", false, "Set to true to prevent Vexbots from spawning White Lava blocks on death (default: false). ")
 				.getBoolean();
+		enableExplosiveOres = config.get(CTG_CUSTOMS, "Enable Explosive Ores", true, "Disable to prevent ores from exploding. (default: true). ").getBoolean();
+		enablePotionEffectOres = config.get(CTG_CUSTOMS, "Enable Potion Effect Ores", true, "Disable to prevent ores from giving potion effects. (default: true). ").getBoolean();
 		
 		//
 		//
@@ -562,6 +578,7 @@ public class ConfigManagerZG {
 		meteorGenCentotl = config.get(CTG_CUSTOMS, "Meteor Gen Centotl", 30, "Percentage chance for meteors to fall. (default: 15)").getInt();
 		meteorGenToci = config.get(CTG_CUSTOMS, "Meteor Gen Toci", 30, "Percentage chance for meteors to fall. (default: 30)").getInt();
 		meteorGenTlaloc = config.get(CTG_CUSTOMS, "Meteor Gen Tlaloc", 0, "Percentage chance for meteors to fall. (default: 0)").getInt();
+		meteorGenKronos = config.get(CTG_CUSTOMS, "Meteor Gen Kronos", 0, "Percentage chance co meteors to fall. (default: 0)").getInt();
 		//
 		//
 		
@@ -592,6 +609,7 @@ public class ConfigManagerZG {
 		planetUnreachableCentotl = config.get(CTG_CUSTOMS, "Disable Rockets For Planet Centotl", false, "Disable rocket travel for this planet. (default: false)").getBoolean();
 		planetUnreachableToci = config.get(CTG_CUSTOMS, "Disable Rockets For Planet Toci", false, "Disable rocket travel for this planet. (default: false)").getBoolean();
 		planetUnreachableTlaloc = config.get(CTG_CUSTOMS, "Disable Rockets For Planet Tlaloc", false, "Disable rocket travel for this planet. (default: false)").getBoolean();
+		planetUnreachableKronos = config.get(CTG_CUSTOMS, "Disable Rockets For Planet Kronos", false, "Disable rocket travel for this planet. (default: false)").getBoolean();
 		
 		//
 		maxHealthAllowed = config.get(CTG_CUSTOMS, "Max Health Allowed", 40, "The max health that Players are allowed to have. (default: 40)").getInt();
@@ -664,6 +682,9 @@ public class ConfigManagerZG {
 		planetCentotlTier = config.get(CTG_TIERS, "Planet Centotl Tier", 3).getInt();
 		planetTociTier = config.get(CTG_TIERS, "Planet Toci Tier", 3).getInt();
 		planetTlalocTier = config.get(CTG_TIERS, "Planet Tlaloc Tier", 3).getInt();
+		
+		// Planet Tiers (Olympus)
+		planetKronosTier = config.get(CTG_TIERS, "Planet Kronos Tier", 3).getInt();
 		
 		config.save();
 	}

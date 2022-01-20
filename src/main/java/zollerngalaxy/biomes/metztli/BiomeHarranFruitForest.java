@@ -8,8 +8,11 @@
 package zollerngalaxy.biomes.metztli;
 
 import java.util.Random;
+import net.minecraft.block.BlockTallGrass;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
+import net.minecraft.world.gen.feature.WorldGenTallGrass;
+import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.blocks.ZGBlocks;
@@ -39,22 +42,25 @@ public class BiomeHarranFruitForest extends BiomeHarranBase {
 	
 	private void setupBiome(BiomeProperties props) {
 		this.setTempCategory(TempCategory.MEDIUM);
-		props.setBaseHeight(0.5F);
-		props.setHeightVariation(0.2F);
+		props.setBaseHeight(0.2F);
+		props.setHeightVariation(0.1F);
 		props.setTemperature(4.0F);
-		this.setTemp(24F);
-		this.setBiomeHeight(32);
+		props.setRainfall(10F);
+		props.setWaterColor(0x0000ff);
+		this.setTemp(15F);
+		this.setBiomeHeight(24);
 		this.setBiomeType(EnumBiomeTypeZG.LUSH);
 		this.setBlocks(ZGBlocks.harranGrass, ZGBlocks.harranSoil);
 		this.enableSnow = false;
 		this.decorator.generateFalls = true;
-		this.biomeDecor.waterLakesPerChunk = 6;
+		this.biomeDecor.generateTallGrass = true;
+		this.biomeDecor.tallGrassPerChunk = 15;
+		this.biomeDecor.waterLakesPerChunk = 8;
 		this.biomeDecor.lavaLakesPerChunk = 0;
 		this.biomeDecor.grassPerChunk = 14;
 		this.biomeDecor.flowersPerChunk = 2;
 		this.biomeDecor.treesPerChunk = 55;
 		this.grassFoliageColor = 0x00ff00;
-		this.waterColor = 0x0000ff;
 		this.stoneBlock = Blocks.STONE;
 	}
 	
@@ -81,6 +87,11 @@ public class BiomeHarranFruitForest extends BiomeHarranBase {
 			case 8:
 				return LIMON_TREE;
 		}
+	}
+	
+	@Override
+	public WorldGenerator getRandomWorldGenForGrass(Random rand) {
+		return rand.nextInt(2) == 0 ? new WorldGenTallGrass(BlockTallGrass.EnumType.FERN) : new WorldGenTallGrass(BlockTallGrass.EnumType.GRASS);
 	}
 	
 	@Override

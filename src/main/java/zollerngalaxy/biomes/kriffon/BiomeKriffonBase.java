@@ -30,7 +30,7 @@ public abstract class BiomeKriffonBase extends BiomeSpace {
 	protected static final IBlockState BEDROCK = Blocks.BEDROCK.getDefaultState();
 	protected static final IBlockState MAGMA = ZGBlocks.kriffMagmaRock.getDefaultState();
 	protected static final IBlockState DIRT = ZGBlocks.kriffDirt.getDefaultState();
-	protected static final IBlockState BLAZE_ROCK = ZGBlocks.kriffBlazeRock.getDefaultState();
+	protected static final IBlockState BLAZE_ROCK = ZGBlocks.blazeRock.getDefaultState();
 	protected static final IBlockState LAVA = Blocks.LAVA.getDefaultState();
 	
 	protected static final int SEA_LEVEL = ChunkProviderKriffon.SEA_LEVEL;

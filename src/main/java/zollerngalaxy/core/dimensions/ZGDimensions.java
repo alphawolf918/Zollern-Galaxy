@@ -112,6 +112,8 @@ public class ZGDimensions {
 	public static DimensionType TLALOC_ORBIT;
 	public static DimensionType TLALOC_ORBIT_STATIC;
 	
+	public static DimensionType KRONOS;
+	
 	public static void init() {
 		// Psion-6 (Zollus)
 		ZGDimensions.ZOLLUS = ZGDimensions.getDimType(ConfigManagerZG.planetZollusDimensionId);
@@ -205,6 +207,9 @@ public class ZGDimensions {
 		ZGDimensions.TLALOC = ZGDimensions.getDimType(ConfigManagerZG.planetTlalocDimensionId);
 		ZGDimensions.TLALOC_ORBIT = DimensionType.register("Tlaloc Space Station", "_tlaloc_orbit", ConfigManagerZG.spaceStationTlalocId, WorldProviderOrbitTlaloc.class, false);
 		ZGDimensions.TLALOC_ORBIT_STATIC = DimensionType.register("Tlaloc Space Station", "_tlaloc_orbit", ConfigManagerZG.spaceStationTlalocStaticId, WorldProviderOrbitTlaloc.class, true);
+		
+		// Olympus (Kronos)
+		ZGDimensions.KRONOS = ZGDimensions.getDimType(ConfigManagerZG.planetKronosDimensionId);
 	}
 	
 	public static DimensionType getDimType(int dimId) {
@@ -251,6 +256,8 @@ public class ZGDimensions {
 			body = ZGPlanets.planetToci;
 		} else if (dimID == ConfigManagerZG.planetTlalocDimensionId) {
 			body = ZGPlanets.planetTlaloc;
+		} else if (dimID == ConfigManagerZG.planetKronosDimensionId) {
+			body = ZGPlanets.planetKronos;
 		}
 		
 		if (body == null) {

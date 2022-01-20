@@ -433,7 +433,7 @@ public final class JSONFactory {
 			e.printStackTrace();
 		}
 		
-		JSONFactory.registerBlockItem(blockName);
+		JSONFactory.registerBlockAsItem(blockName);
 	}
 	
 	private static void registerFlowerBlockState(String blockName) {

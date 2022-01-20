@@ -210,6 +210,7 @@ public class FurnaceRecipes {
 		FurnaceRecipes.SmeltItem(ZGItems.chocolateRaw, ZGItems.chocolateBar, 1.5F);
 		FurnaceRecipes.SmeltItem(ZGItems.flour, new ItemStack(Items.BREAD, 2), 5.5F);
 		FurnaceRecipes.SmeltItem(ZGItems.dough, new ItemStack(ZGItems.doughCooked, 4), 10.5F);
+		FurnaceRecipes.SmeltItem(ZGItems.cornKernel, ZGItems.popcorn, 0.5F);
 		
 		// Clay
 		FurnaceRecipes.SmeltItem(ZGItems.mudClayBall, new ItemStack(Items.BRICK, 2), 2.0F);

@@ -91,7 +91,7 @@ public class CraftingRecipes {
 		CraftingRecipes.addIngotMetal(ZGItems.radium, ZGBlocks.blockRadium);
 		CraftingRecipes.addIngotMetal(ZGItems.netheridium, ZGBlocks.blockNetheridium);
 		CraftingRecipes.addIngotMetal(ZGItems.shadowBone, ZGBlocks.blockShadowBone);
-		CraftingRecipes.addIngotMetal(Items.BLAZE_POWDER, ZGBlocks.kriffBlazeRock);
+		CraftingRecipes.addIngotMetal(Items.BLAZE_POWDER, ZGBlocks.blazeRock);
 		CraftingRecipes.addIngotMetal(Blocks.RED_MUSHROOM, ZGBlocks.blockRedshroom);
 		CraftingRecipes.addIngotMetal(Items.SUGAR, ZGBlocks.blockSugarCube);
 		CraftingRecipes.addIngotMetal(ZGItems.ingotObsidian, Blocks.OBSIDIAN);
@@ -308,6 +308,15 @@ public class CraftingRecipes {
 		
 		// Enrichment Dust + Poisonous Potato = Regular Potatoes
 		ZGRecipeHelper.addShapelessRecipe(new ItemStack(Items.POTATO, 2), new Object[] { Items.POISONOUS_POTATO, ZGItems.dustEnrichment });
+		
+		// Pea Pods -> 4 Peas
+		ZGRecipeHelper.addShapelessRecipe(new ItemStack(ZGItems.pea, 4), new Object[] { ZGItems.peas });
+		
+		// Corn Cob -> 32 Corn Kernels
+		ZGRecipeHelper.addShapelessRecipe(new ItemStack(ZGItems.cornKernel, 32), new Object[] { ZGItems.corn });
+		
+		// Popcorn Bowl
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.popcornBowl, 1), new Object[] { "CCC", "CBC", "CCC", 'C', ZGItems.cornKernel, 'B', Items.BOWL });
 		
 		// Pickaxes
 		CraftingRecipes.addPickaxe(new ItemStack(ZGItems.pickaxeCobalt), ZGItems.ingotCobalt);

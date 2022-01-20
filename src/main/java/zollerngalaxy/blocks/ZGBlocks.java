@@ -33,8 +33,10 @@ import zollerngalaxy.blocks.crops.BlockCropBlackberry;
 import zollerngalaxy.blocks.crops.BlockCropBlueberry;
 import zollerngalaxy.blocks.crops.BlockCropCorn;
 import zollerngalaxy.blocks.crops.BlockCropCucumber;
+import zollerngalaxy.blocks.crops.BlockCropGarlic;
 import zollerngalaxy.blocks.crops.BlockCropGrape;
 import zollerngalaxy.blocks.crops.BlockCropOnion;
+import zollerngalaxy.blocks.crops.BlockCropPeas;
 import zollerngalaxy.blocks.crops.BlockCropRadish;
 import zollerngalaxy.blocks.crops.BlockCropStrawberry;
 import zollerngalaxy.blocks.crops.BlockCropTomato;
@@ -225,7 +227,7 @@ public class ZGBlocks {
 	public static final Block kriffDirt = new ZGBlockDirt("kriffdirt");
 	public static final Block kriffRockBricks = new ZGBlockBase("kriffrockbricks", 1.4F);
 	public static final Block kriffMagmaRock = ((ZGBlockBase) new ZGBlockBase("magmarock", 2.6F).setIsHotBlock(true).setLightLevel(1.0F)).setShouldAlwaysBurn(true);
-	public static final Block kriffBlazeRock = ((ZGBlockBase) new ZGBlockBase("blazerock", 3.4F).setIsHotBlock(true).setLightLevel(1.0F)).setShouldAlwaysBurn(true);
+	public static final Block blazeRock = ((ZGBlockBase) new ZGBlockBase("blazerock", 3.4F).setIsHotBlock(true).setLightLevel(1.0F)).setShouldAlwaysBurn(true);
 	public static final Block kriffCoalOre = new ZGOreGem("kriffcoalore", 1.6F, Items.COAL).setShouldExplode(true, 90);
 	public static final Block kriffCopperOre = new ZGBlockOre("kriffcopperore", 1.7F).setShouldExplode(true, 80);
 	public static final Block kriffIronOre = new ZGBlockOre("kriffironore", 1.4F).setShouldExplode(true, 70);
@@ -716,16 +718,56 @@ public class ZGBlocks {
 	public static final Block tlalocPlutoniumOre = new ZGBlockOre("tlalocplutoniumore", 7.8F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
 			EnumHarvestLevelZG.AMARANTH.getHarvestLevel());
 	
-	// Ares
-	// TODO
+	// Kronos
+	public static final Block netherDirt = new ZGBlockDirt("netherdirt", 4.2F);
+	public static final Block netherCoalOre = ((ZGBlockOre) new ZGOreGem("nethercoalore", 6.2F, Items.COAL).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
+			EnumHarvestLevelZG.VIRINIUM.getHarvestLevel())).setBlockTier(EnumBlockTier.FIVE);
+	public static final Block netherFueltoniumOre = ((ZGBlockOre) new ZGOreGem("netherfueltoniumore", 8.2F, ZGItems.dustFueltonium).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
+			EnumHarvestLevelZG.VIRINIUM.getHarvestLevel())).setBlockTier(EnumBlockTier.FIVE);
+	public static final Block netherIronOre = ((ZGBlockOre) new ZGBlockOre("netherironore", 4.1F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
+			EnumHarvestLevelZG.VIRINIUM.getHarvestLevel())).setBlockTier(EnumBlockTier.FIVE);
+	public static final Block netherShiniumOre = ((ZGBlockOre) new ZGBlockOre("nethershiniumore", 8.2F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
+			EnumHarvestLevelZG.VIRINIUM.getHarvestLevel())).setBlockTier(EnumBlockTier.FIVE);
+	public static final Block netherSilverOre = ((ZGBlockOre) new ZGBlockOre("nethersilverore", 4.5F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
+			EnumHarvestLevelZG.VIRINIUM.getHarvestLevel())).setBlockTier(EnumBlockTier.FIVE);
+	public static final Block netherNickleOre = ((ZGBlockOre) new ZGBlockOre("nethernickelore", 6.4F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
+			EnumHarvestLevelZG.VIRINIUM.getHarvestLevel())).setBlockTier(EnumBlockTier.FIVE);
+	public static final Block netherLeadOre = ((ZGBlockOre) new ZGBlockOre("netherleadore", 7.2F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
+			EnumHarvestLevelZG.VIRINIUM.getHarvestLevel())).setBlockTier(EnumBlockTier.FIVE);
+	public static final Block netherTinOre = ((ZGBlockOre) new ZGBlockOre("nethertinore", 3.4F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
+			EnumHarvestLevelZG.VIRINIUM.getHarvestLevel())).setBlockTier(EnumBlockTier.FIVE);
+	public static final Block netherCopperOre = ((ZGBlockOre) new ZGBlockOre("nethercopperore", 3.5F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
+			EnumHarvestLevelZG.VIRINIUM.getHarvestLevel())).setBlockTier(EnumBlockTier.FIVE);
+	public static final Block netherLapisOre = ((ZGBlockOre) ((ZGBlockBase) new ZGOreGem("netherlapisore", 3.2F, Items.DYE).setDropMeta(4, true))
+			.setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.VIRINIUM.getHarvestLevel())).setBlockTier(EnumBlockTier.FIVE);
+	public static final Block netherDiamondOre = ((ZGBlockOre) new ZGOreGem("netherdiamondore", 7.2F, Items.DIAMOND).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
+			EnumHarvestLevelZG.VIRINIUM.getHarvestLevel())).setBlockTier(EnumBlockTier.FIVE);
+	public static final Block netherEmeraldOre = ((ZGBlockOre) new ZGOreGem("netheremeraldore", 7.8F, Items.DIAMOND).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
+			EnumHarvestLevelZG.VIRINIUM.getHarvestLevel())).setBlockTier(EnumBlockTier.FIVE);
+	public static final Block netherRedstoneOre = ((ZGBlockOre) new ZGOreGem("netherredstoneore", 4.1F, Items.REDSTONE).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
+			EnumHarvestLevelZG.VIRINIUM.getHarvestLevel())).setBlockTier(EnumBlockTier.FIVE);
+	public static final Block netherGoldOre = ((ZGBlockOre) new ZGBlockOre("nethergoldore", 4.5F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
+			EnumHarvestLevelZG.VIRINIUM.getHarvestLevel())).setBlockTier(EnumBlockTier.FIVE);
+	public static final Block netherSteelOre = ((ZGBlockOre) new ZGBlockOre("nethersteelore", 7.8F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
+			EnumHarvestLevelZG.VIRINIUM.getHarvestLevel())).setBlockTier(EnumBlockTier.FIVE);
+	public static final Block netherRubyOre = ((ZGBlockOre) new ZGOreGem("netherrubyore", 2.2F, ZGItems.ruby).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
+			EnumHarvestLevelZG.VIRINIUM.getHarvestLevel())).setBlockTier(EnumBlockTier.FIVE);
+	public static final Block netherSapphireOre = ((ZGBlockOre) new ZGOreGem("nethersapphireore", 2.4F, ZGItems.sapphire).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
+			EnumHarvestLevelZG.VIRINIUM.getHarvestLevel())).setBlockTier(EnumBlockTier.FIVE);
+	public static final Block netherZincOre = ((ZGBlockOre) new ZGBlockOre("netherzincore", 4.5F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
+			EnumHarvestLevelZG.VIRINIUM.getHarvestLevel())).setBlockTier(EnumBlockTier.FIVE);
+	public static final Block netherAmaranthOre = ((ZGBlockOre) new ZGBlockOre("netheramaranthore", 6.7F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(),
+			EnumHarvestLevelZG.VIRINIUM.getHarvestLevel())).setBlockTier(EnumBlockTier.FIVE);
+	public static final Block netherSuperChargedCoalOre = ((ZGBlockOre) new ZGOreGem("nethersuperchargedcoalore", 8.2F, ZGItems.superChargedCoal)
+			.setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.VIRINIUM.getHarvestLevel())).setBlockTier(EnumBlockTier.FIVE);
 	
-	// Prometheus
+	// Ares
 	// TODO
 	
 	// Icarus
 	// TODO
 	
-	// Kronos
+	// Prometheus
 	// TODO
 	
 	// Metals
@@ -853,6 +895,8 @@ public class ZGBlocks {
 	public static final Block cropCucumber = new BlockCropCucumber();
 	public static final Block cropRadish = new BlockCropRadish();
 	public static final Block cropOnion = new BlockCropOnion();
+	public static final Block cropPea = new BlockCropPeas();
+	public static final Block cropGarlic = new BlockCropGarlic();
 	
 	public static void init() {
 		ZGBlocks.registerTileEntities();
@@ -867,7 +911,7 @@ public class ZGBlocks {
 		ZGBlocks.registerBlocks(edenLovetreeSapling, edenGoldenWoodSapling, edenParadiseWoodSapling, edenWoodSapling, edenFruit, edenFlower, edenFlowerBlack, edenFlowerBlue, edenFlowerCyan,
 				edenFlowerGreen, edenFlowerOrange, edenFlowerPink, edenFlowerPurple, edenFlowerRed, edenFlowerYellow, edenFlowerWhite, oasisFlower, exodusFlower, zolStone, zolCobbleRock,
 				zolSurfaceRock, zolDirt, zolRockBricks, zolCoalOre, zolCopperOre, zolGoldOre, zolHeartOre, zolTinOre, zolIronOre, zolCrystals, kriffSurfaceRock, kriffStone, kriffCobbleRock, kriffDirt,
-				kriffRockBricks, kriffMagmaRock, kriffBlazeRock, kriffCoalOre, kriffCopperOre, kriffIronOre, kriffGoldOre, kriffRedstoneOre, kriffCobaltOre, purgCobbleRock, purgStone, purgRockBricks,
+				kriffRockBricks, kriffMagmaRock, blazeRock, kriffCoalOre, kriffCopperOre, kriffIronOre, kriffGoldOre, kriffRedstoneOre, kriffCobaltOre, purgCobbleRock, purgStone, purgRockBricks,
 				purgWhiteRock, purgBlackRock, purgSurfaceRock, purgDirt, purgGravel, purgMeteoricIronOre, purgCobaltOre, purgIronOre, purgGoldOre, purgCopperOre, purgDiamondOre, purgEmeraldOre,
 				purgEveniumOre, purgAluminumOre, purgTinOre, purgLeadOre, purgRedstoneOre, edenSurfaceRock, edenTallGrass, edenGrass, edenSoil, edenStone, edenSacredStone, edenCobbleRock,
 				edenRockBricks, edenGoldenGrass, edenFallGrass, edenSwampGrass, edenSnow, edenWinterRock, edenBloodSand, edenBloodStone, edenBoneStone, edenGravel, edenBrightStone, edenWoodLog,
@@ -910,9 +954,18 @@ public class ZGBlocks {
 				tociSilverOre, tociLeadOre, tociCopperOre, tociZincOre, tociSuperChargedCoalOre, tociRedstoneOre, tociGoldOre, tociAmaranthOre, tociIronOre, tociEmeraldOre, tociCoalOre,
 				tociFueltoniumOre, tociDiamondOre, tociQuartzOre);
 		//
+		//
 		ZGBlocks.registerBlocks(tlalocRock, tlalocChrome, tlalocMechRock, tlalocDungeonBricks, tlalocStone, tlalocRedstoneOre, tlalocFueltoniumOre, tlalocShiniumOre, tlalocZollerniumOre,
-				tlalocSuperChargedCoalOre, tlalocQuartzOre, tlalocCertusQuartzOre, tlalocFluixOre, tlalocPlutoniumOre, mudClayBlock, cropStrawberry, cropBlackberry, cropBlueberry, cropGrape,
-				cropTomato, cropCorn, cropCucumber, cropRadish, cropOnion);
+				tlalocSuperChargedCoalOre, tlalocQuartzOre, tlalocCertusQuartzOre, tlalocFluixOre, tlalocPlutoniumOre, mudClayBlock);
+		//
+		//
+		ZGBlocks.registerBlocks(netherDirt, netherCoalOre, netherFueltoniumOre, netherIronOre, netherShiniumOre, netherNickleOre, netherSilverOre, netherLeadOre, netherTinOre, netherCopperOre,
+				netherLapisOre, netherDiamondOre, netherEmeraldOre, netherRedstoneOre, netherGoldOre, netherSteelOre, netherRubyOre, netherSapphireOre, netherZincOre, netherAmaranthOre,
+				netherSuperChargedCoalOre);
+		//
+		// Farmable Crops
+		ZGBlocks.registerBlocks(cropStrawberry, cropBlackberry, cropBlueberry, cropGrape, cropTomato, cropCorn, cropCucumber, cropRadish, cropOnion, cropPea, cropGarlic);
+		//
 		//
 		ZGBlocks.addBlockItemDesc(treasureChestT10);
 		//

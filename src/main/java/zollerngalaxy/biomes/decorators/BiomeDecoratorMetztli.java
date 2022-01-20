@@ -124,9 +124,9 @@ public class BiomeDecoratorMetztli extends BiomeDecoratorZG {
 	
 	public BiomeDecoratorMetztli() {
 		this.dirtGen = new WorldGenMinableZG(Blocks.DIRT, GRASS, EnumOreGenZG.DIRT);
-		this.graniteGen = new WorldGenMinableZG(STONE.getDefaultState().withProperty(BlockStone.VARIANT, BlockStone.EnumType.GRANITE), STONE, EnumOreGenZG.STONE);
-		this.dioriteGen = new WorldGenMinableZG(STONE.getDefaultState().withProperty(BlockStone.VARIANT, BlockStone.EnumType.DIORITE), STONE, EnumOreGenZG.STONE);
-		this.andesiteGen = new WorldGenMinableZG(STONE.getDefaultState().withProperty(BlockStone.VARIANT, BlockStone.EnumType.ANDESITE), STONE, EnumOreGenZG.STONE);
+		this.graniteGen = new WorldGenMinableZG(STONE.getDefaultState().withProperty(BlockStone.VARIANT, BlockStone.EnumType.GRANITE), STONE.getDefaultState(), EnumOreGenZG.STONE);
+		this.dioriteGen = new WorldGenMinableZG(STONE.getDefaultState().withProperty(BlockStone.VARIANT, BlockStone.EnumType.DIORITE), STONE.getDefaultState(), EnumOreGenZG.STONE);
+		this.andesiteGen = new WorldGenMinableZG(STONE.getDefaultState().withProperty(BlockStone.VARIANT, BlockStone.EnumType.ANDESITE), STONE.getDefaultState(), EnumOreGenZG.STONE);
 		this.ironGen = new WorldGenMinableZG(Blocks.IRON_ORE, STONE, EnumOreGenZG.IRON);
 		this.goldGen = new WorldGenMinableZG(Blocks.GOLD_ORE, STONE, EnumOreGenZG.GOLD);
 		this.redstoneGen = new WorldGenMinableZG(Blocks.REDSTONE_ORE, STONE, EnumOreGenZG.REDSTONE);

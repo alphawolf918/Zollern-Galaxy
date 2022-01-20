@@ -25,5 +25,4 @@ public class IceCream extends ItemSweetFood {
 		super.onItemUseFinish(stack, worldIn, entityLiving);
 		return new ItemStack(Items.BOWL);
 	}
-	
 }

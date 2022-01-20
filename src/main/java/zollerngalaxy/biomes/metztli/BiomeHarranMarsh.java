@@ -29,7 +29,6 @@ import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 import net.minecraft.world.gen.feature.WorldGenMegaJungle;
 import net.minecraft.world.gen.feature.WorldGenMelon;
-import net.minecraft.world.gen.feature.WorldGenShrub;
 import net.minecraft.world.gen.feature.WorldGenTallGrass;
 import net.minecraft.world.gen.feature.WorldGenTrees;
 import net.minecraft.world.gen.feature.WorldGenVines;
@@ -95,13 +94,7 @@ public class BiomeHarranMarsh extends BiomeHarranBase {
 	
 	@Override
 	public WorldGenAbstractTree getRandomTreeFeature(Random rand) {
-		if (rand.nextInt(10) == 0) {
-			return BIG_TREE_FEATURE;
-		} else if (rand.nextInt(2) == 0) {
-			return new WorldGenShrub(JUNGLE_LOG, OAK_LEAF);
-		} else {
-			return rand.nextInt(2) == 0 ? new WorldGenMegaJungle(false, 10, 20, JUNGLE_LOG, JUNGLE_LEAF) : new WorldGenTrees(false, 4 + rand.nextInt(7), JUNGLE_LOG, JUNGLE_LEAF, true);
-		}
+		return rand.nextInt(2) == 0 ? new WorldGenMegaJungle(false, 10, 20, JUNGLE_LOG, JUNGLE_LEAF) : new WorldGenTrees(false, 4 + rand.nextInt(7), JUNGLE_LOG, JUNGLE_LEAF, true);
 	}
 	
 	@Override
@@ -165,17 +158,4 @@ public class BiomeHarranMarsh extends BiomeHarranBase {
 	public int getSkyColorByTemp(float p_76731_1_) {
 		return 0xcc3a4b;
 	}
-	//
-	// @Override
-	// @SideOnly(Side.CLIENT)
-	// public int getGrassColorAtPos(BlockPos pos) {
-	// double d0 = GRASS_COLOR_NOISE.getValue(pos.getX() * 0.0225D, pos.getZ() * 0.0225D);
-	// return getModdedBiomeGrassColor(d0 < -0.1D ? 5011004 : 6975545);
-	// }
-	//
-	// @Override
-	// @SideOnly(Side.CLIENT)
-	// public int getFoliageColorAtPos(BlockPos pos) {
-	// return getModdedBiomeFoliageColor(this.grassFoliageColor);
-	// }
 }

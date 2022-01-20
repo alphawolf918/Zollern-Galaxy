@@ -47,7 +47,7 @@ public class BiomeDecoratorKriffon extends BiomeDecoratorZG {
 		// this.magmaGen = new WorldGenMinableZG(MAGMA, SURFACE,
 		// EnumOreGenZG.MAGMA);
 		this.magmaGen2 = new WorldGenMinableZG(MAGMA, STONE, EnumOreGenZG.MAGMA.setGenCount(15));
-		this.blazeGen = new WorldGenMinableZG(ZGBlocks.kriffBlazeRock, STONE, EnumOreGenZG.BLAZE);
+		this.blazeGen = new WorldGenMinableZG(ZGBlocks.blazeRock, STONE, EnumOreGenZG.BLAZE);
 		this.copperGen = new WorldGenMinableZG(ZGBlocks.kriffCopperOre, STONE, EnumOreGenZG.COPPER);
 		this.ironGen = new WorldGenMinableZG(ZGBlocks.kriffIronOre, STONE, EnumOreGenZG.IRON);
 		this.goldGen = new WorldGenMinableZG(ZGBlocks.kriffGoldOre, STONE, EnumOreGenZG.GOLD);

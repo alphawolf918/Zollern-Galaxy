@@ -6,12 +6,18 @@ Zollern Galaxy v2.0.38
 * Added new armor and tools:
     - Ruby, Sapphire
 * Added more crops:
-    - Radishes, Onions
+    - Radishes, Onions, Peas, Garlic
 * Added fruit trees:
     - Cherry, Banana, Guava, Peach, Grapefruit, Orange, Lemon, Lime, Limon
 * Added chocolate-covered strawberries.
 * Added Cooked Dough.
     - Three pieces of Cooked Dough can be used to craft 16 Bread each.
+* Added more biomes to Metztli.
+* Added more food items.
+* Added two config options.
+    - Ore explosions can now be turned off.
+    - Ore potion effects can now be turned off.
+* If Extreme Mode is enabled, ores with explosions will be much stronger (when enabled).
 * 
 
 [CHANGES]
@@ -22,4 +28,5 @@ Zollern Galaxy v2.0.38
 
 [FIXES]
 * Fixed some gem ores not actually dropping gems.
+* Fixed Tlaloc having the wrong tier.
 * 

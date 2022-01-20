@@ -404,7 +404,7 @@ public class OreDictRegistry {
 		registerOre("dustRhodium", ZGItems.dustRhodium);
 		
 		// Blazerock
-		registerOre("blockBlazePowder", ZGBlocks.kriffBlazeRock);
+		registerOre("blockBlazePowder", ZGBlocks.blazeRock);
 		registerOre("gemBlazePowder", Items.BLAZE_POWDER);
 		
 		// Perdita Glowstone
@@ -430,6 +430,9 @@ public class OreDictRegistry {
 		registerOre("cropCorn", ZGItems.corn);
 		registerOre("cropRadish", ZGItems.radish);
 		registerOre("cropOnion", ZGItems.onion);
+		registerOre("cropPeas", ZGItems.peas);
+		registerOre("cropPea", ZGItems.peas);
+		registerOre("cropGarlic", ZGItems.garlic);
 		
 		// Crops (Trees)
 		registerOre("cropCherry", ZGItems.cherry);
@@ -441,6 +444,9 @@ public class OreDictRegistry {
 		registerOre("cropLemon", ZGItems.lemon);
 		registerOre("cropLime", ZGItems.lime);
 		registerOre("cropLimon", ZGItems.limon);
+		
+		// Food (listAll)
+		registerOre("listAllIceCream", ZGItems.iceCream);
 	}
 	
 	private static void registerOre(String strName, Item... items) {

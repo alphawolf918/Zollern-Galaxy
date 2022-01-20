@@ -475,7 +475,8 @@ public final class ZGHelper {
 	}
 	
 	public static Block getRandomCrop(Random par1Random) {
-		switch (par1Random.nextInt(9)) {
+		switch (par1Random.nextInt(11)) {
+			default:
 			case 0:
 				return ZGBlocks.cropBlueberry;
 			case 1:
@@ -494,8 +495,10 @@ public final class ZGHelper {
 				return ZGBlocks.cropRadish;
 			case 8:
 				return ZGBlocks.cropOnion;
-			default:
-				return Blocks.WHEAT;
+			case 9:
+				return ZGBlocks.cropPea;
+			case 10:
+				return ZGBlocks.cropGarlic;
 		}
 	}
 }
