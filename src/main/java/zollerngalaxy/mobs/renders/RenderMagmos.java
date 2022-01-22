@@ -32,7 +32,7 @@ public class RenderMagmos extends RenderLiving<EntityMagmos> {
 		this.scaleMagmos(entitylivingbaseIn, partialTickTime);
 	}
 	
-	protected void scaleMagmos(EntityMagmos par1EntityCaveSpider, float par2) {
+	protected void scaleMagmos(EntityMagmos par1EntityMagmos, float par2) {
 		GL11.glScalef(f6, f6, f6);
 	}
 	

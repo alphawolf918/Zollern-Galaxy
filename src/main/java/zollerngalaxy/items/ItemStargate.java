@@ -35,9 +35,9 @@ import zollerngalaxy.util.ZGUtils;
 
 public class ItemStargate extends ZGItemBase {
 	
-	private int gateTier = 0;
-	private SimpleNetworkWrapper snw = ZollernGalaxyCore.snw;
-	private IProxy proxy = ZollernGalaxyCore.proxy;
+	protected int gateTier = 0;
+	protected SimpleNetworkWrapper snw = ZollernGalaxyCore.snw;
+	protected IProxy proxy = ZollernGalaxyCore.proxy;
 	
 	public ItemStargate(int tier) {
 		super("stargate_tier" + tier);

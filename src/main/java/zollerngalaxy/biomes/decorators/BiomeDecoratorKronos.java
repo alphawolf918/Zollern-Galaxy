@@ -23,18 +23,28 @@ import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.enums.EnumOreGenZG;
+import zollerngalaxy.lib.helpers.ZGDecorateHelper;
+import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.util.BiomeUtils;
+import zollerngalaxy.worldgen.WorldGenBattleTower;
 import zollerngalaxy.worldgen.WorldGenLakesZG;
 import zollerngalaxy.worldgen.WorldGenMinableZG;
 import zollerngalaxy.worldgen.WorldGenOutpost;
+import zollerngalaxy.worldgen.WorldGenTunnel;
+import zollerngalaxy.worldgen.kronos.WorldGenNetherWarts;
 
 public class BiomeDecoratorKronos extends BiomeDecoratorZG {
 	
 	private static final Block NETHERRACK = Blocks.NETHERRACK;
 	private static final Block SOUL_SAND = Blocks.SOUL_SAND;
+	private static final Block OBSIDIAN = Blocks.OBSIDIAN;
+	private static final Block NETHER_BRICK = Blocks.NETHER_BRICK;
+	private static final Block GLOWSTONE = Blocks.GLOWSTONE;
+	private static final Block LAVA = Blocks.LAVA;
 	
 	private WorldGenerator dirtGen;
 	private WorldGenerator sandGen;
+	private WorldGenerator obsidianGen;
 	private WorldGenerator coalGen;
 	private WorldGenerator fueltoniumGen;
 	private WorldGenerator ironGen;
@@ -56,16 +66,29 @@ public class BiomeDecoratorKronos extends BiomeDecoratorZG {
 	private WorldGenerator amaranthGen;
 	private WorldGenerator superChargedCoalGen;
 	
+	private WorldGenerator netherWartGen = new WorldGenNetherWarts();
+	private WorldGenerator battleTowerGen = new WorldGenBattleTower(NETHER_BRICK.getDefaultState(), GLOWSTONE.getDefaultState());
+	private WorldGenerator tunnelGen = new WorldGenTunnel();
+	
 	public boolean generateLakes = true;
 	public boolean generateMushrooms = true;
 	public boolean generateCraters = true;
+	public boolean generateNetherWarts = false;
+	public boolean generateBattleTowers = true;
+	public boolean generateTunnels = true;
 	
 	public int lavaLakesPerChunk = 10;
+	public int obsidianLakesPerChunk = 2;
 	public int mushroomsPerChunk = 5;
+	public int sandPatchesPerChunk = 4;
+	public int netherWartsPerChunk = 0;
+	public int battleTowersPerChunk = 1;
+	public int tunnelsPerChunk = 4;
 	
 	public BiomeDecoratorKronos() {
 		this.dirtGen = new WorldGenMinableZG(ZGBlocks.netherDirt, NETHERRACK, EnumOreGenZG.DIRT);
 		this.sandGen = new WorldGenMinableZG(SOUL_SAND, NETHERRACK, EnumOreGenZG.SAND);
+		this.obsidianGen = new WorldGenMinableZG(OBSIDIAN, NETHERRACK, EnumOreGenZG.OBSIDIAN);
 		this.coalGen = new WorldGenMinableZG(ZGBlocks.netherCoalOre, NETHERRACK, EnumOreGenZG.COAL);
 		this.fueltoniumGen = new WorldGenMinableZG(ZGBlocks.netherFueltoniumOre, NETHERRACK, EnumOreGenZG.FUELTONIUM);
 		this.ironGen = new WorldGenMinableZG(ZGBlocks.netherIronOre, NETHERRACK, EnumOreGenZG.IRON);
@@ -95,11 +118,35 @@ public class BiomeDecoratorKronos extends BiomeDecoratorZG {
 		int y = rand.nextInt(120) + 8;
 		
 		ChunkPrimer chunkPrimer = new ChunkPrimer();
-		ChunkPos forgeChunkPos = new ChunkPos(chunkPos);
+		ChunkPos forgeChunkPos = new ChunkPos(this.chunkPos);
 		
 		Block BLOCK_TOP = biome.topBlock.getBlock();
 		Block BLOCK_FILL = biome.fillerBlock.getBlock();
 		
+		//
+		EnumOreGenZG.DIRT.setMaxHeight(128);
+		EnumOreGenZG.SAND.setMaxHeight(128);
+		EnumOreGenZG.OBSIDIAN.setMaxHeight(128);
+		EnumOreGenZG.COAL.setMaxHeight(128);
+		EnumOreGenZG.FUELTONIUM.setMaxHeight(128);
+		EnumOreGenZG.IRON.setMaxHeight(128);
+		EnumOreGenZG.SHINIUM.setMaxHeight(128);
+		EnumOreGenZG.SILVER.setMaxHeight(128);
+		EnumOreGenZG.NICKEL.setMaxHeight(128);
+		EnumOreGenZG.LEAD.setMaxHeight(128);
+		EnumOreGenZG.TIN.setMaxHeight(128);
+		EnumOreGenZG.COPPER.setMaxHeight(128);
+		EnumOreGenZG.LAPIS.setMaxHeight(128);
+		EnumOreGenZG.DIAMOND.setMaxHeight(128);
+		EnumOreGenZG.EMERALD.setMaxHeight(128);
+		EnumOreGenZG.REDSTONE.setMaxHeight(128);
+		EnumOreGenZG.GOLD.setMaxHeight(128);
+		EnumOreGenZG.STEEL.setMaxHeight(128);
+		EnumOreGenZG.RUBY.setMaxHeight(128);
+		EnumOreGenZG.SAPPHIRE.setMaxHeight(128);
+		EnumOreGenZG.ZINC.setMaxHeight(128);
+		EnumOreGenZG.AMARANTH.setMaxHeight(128);
+		EnumOreGenZG.SUPER_CHARGED_COAL.setMaxHeight(128);
 		//
 		
 		this.generateOre(this.dirtGen, EnumOreGenZG.DIRT, world, rand);
@@ -133,13 +180,26 @@ public class BiomeDecoratorKronos extends BiomeDecoratorZG {
 		}
 		
 		// Lava Lakes
-		if (this.generateLakes && this.lavaLakesPerChunk > 0) {
+		if (TerrainGen.decorate(world, rand, forgeChunkPos, DecorateBiomeEvent.Decorate.EventType.LAKE_LAVA)) {
+			if (this.generateLakes && this.lavaLakesPerChunk > 0) {
+				for (int i = 0; i < this.lavaLakesPerChunk + 4; ++i) {
+					y = rand.nextInt(rand.nextInt(genY) + 8);
+					
+					if (rand.nextInt((this.enableExtremeMode) ? 75 : 100) <= 50) {
+						(new WorldGenLakesZG(LAVA, NETHERRACK)).generate(world, rand, this.chunkPos.add(x, y, z));
+					}
+				}
+			}
+		}
+		
+		// Obsidian Lakes
+		if (this.generateLakes && this.obsidianLakesPerChunk > 0) {
 			for (int i = 0; i < this.lavaLakesPerChunk + 4; ++i) {
 				y = rand.nextInt(rand.nextInt(genY) + 8);
-				
-				if (rand.nextInt((this.enableExtremeMode) ? 75 : 100) <= 50) {
-					(new WorldGenLakesZG(Blocks.LAVA, NETHERRACK)).generate(world, rand, this.chunkPos.add(x, y, z));
-				}
+			}
+			
+			if (rand.nextInt(100) <= 50 && rand.nextInt(3) == 0) {
+				(new WorldGenLakesZG(OBSIDIAN, NETHERRACK)).generate(world, rand, this.chunkPos.add(x, y, z));
 			}
 		}
 		
@@ -191,12 +251,43 @@ public class BiomeDecoratorKronos extends BiomeDecoratorZG {
 			}
 		}
 		
-		// Sand
+		// Soul Sand
 		if (TerrainGen.decorate(world, rand, forgeChunkPos, DecorateBiomeEvent.Decorate.EventType.SAND)) {
 			for (int i = 0; i < this.sandPatchesPerChunk; ++i) {
 				int j = rand.nextInt(16) + 8;
 				int k = rand.nextInt(16) + 8;
 				this.sandGen.generate(world, rand, world.getTopSolidOrLiquidBlock(this.chunkPos.add(j, 0, k)));
+			}
+		}
+		
+		// Nether Warts
+		if (this.netherWartsPerChunk > 0) {
+			for (int i = 0; i < this.netherWartsPerChunk + 4; ++i) {
+				ZGDecorateHelper.generatePlants(this.netherWartGen, world, rand, this.chunkPos);
+			}
+		}
+		
+		// Battle Towers
+		if (this.generateBattleTowers && this.battleTowersPerChunk > 0 && !BiomeUtils.isOceanBiome(biome)) {
+			if (ZGHelper.rngInt(1, 250) <= 35) {
+				for (int i = 0; i < this.battleTowersPerChunk; ++i) {
+					y = rand.nextInt(rand.nextInt(genY) + 8);
+					if (y >= 20 && y < 128) {
+						this.battleTowerGen.generate(world, rand, this.chunkPos.add(x, y, z));
+					}
+				}
+			}
+		}
+		
+		// Tunnels
+		if (this.generateTunnels && this.tunnelsPerChunk > 0) {
+			if (ZGHelper.rngInt(1, 100) <= 45) {
+				y = rand.nextInt(rand.nextInt(genY) + 8);
+				for (int i = 0; i < this.tunnelsPerChunk; ++i) {
+					if (y <= 90) {
+						tunnelGen.generate(world, rand, this.chunkPos.add(x, y, z));
+					}
+				}
 			}
 		}
 		

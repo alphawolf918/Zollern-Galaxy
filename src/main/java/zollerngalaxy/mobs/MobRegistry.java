@@ -27,6 +27,7 @@ import zollerngalaxy.mobs.entities.EntityGalaxyDragon;
 import zollerngalaxy.mobs.entities.EntityGalaxyKnight;
 import zollerngalaxy.mobs.entities.EntityGrayAlien;
 import zollerngalaxy.mobs.entities.EntityGypsyFish;
+import zollerngalaxy.mobs.entities.EntityHelleton;
 import zollerngalaxy.mobs.entities.EntityJellyfish;
 import zollerngalaxy.mobs.entities.EntityKrull;
 import zollerngalaxy.mobs.entities.EntityMagmos;
@@ -57,6 +58,7 @@ import zollerngalaxy.mobs.entities.villagers.EntityEdenVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityExodusVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityHarranVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityKriffonVillager;
+import zollerngalaxy.mobs.entities.villagers.EntityKronosVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityOasisVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityPerditaVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityPurgotVillager;
@@ -118,6 +120,9 @@ public class MobRegistry {
 		
 		// Shadow Skeleton
 		registerEntity("shadowskeleton", EntityShadowSkeleton.class, entityId++, 0xeeeeee, 0x00009e);
+		
+		// Helleton
+		registerEntity("helleton", EntityHelleton.class, entityId++, 0x8b0000, 0xaa0000);
 		
 		// Shade
 		registerEntity("shade", EntityShade.class, entityId++, 0x000000, 0xffffff);
@@ -203,6 +208,9 @@ public class MobRegistry {
 		
 		// Exodus Villager
 		registerEntity("exodusvillager", EntityExodusVillager.class, entityId++, 0x008b00, 0x00ffce);
+		
+		// Kronos Villager
+		registerEntity("kronosvillager", EntityKronosVillager.class, entityId++, 0x0099ff, 0x8b00ff);
 		
 		/** END VILLAGERS **/
 		

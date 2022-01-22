@@ -21,6 +21,7 @@ import zollerngalaxy.mobs.entities.EntityGalaxyDragon;
 import zollerngalaxy.mobs.entities.EntityGalaxyKnight;
 import zollerngalaxy.mobs.entities.EntityGrayAlien;
 import zollerngalaxy.mobs.entities.EntityGypsyFish;
+import zollerngalaxy.mobs.entities.EntityHelleton;
 import zollerngalaxy.mobs.entities.EntityJellyfish;
 import zollerngalaxy.mobs.entities.EntityKrull;
 import zollerngalaxy.mobs.entities.EntityMagmos;
@@ -51,6 +52,7 @@ import zollerngalaxy.mobs.entities.villagers.EntityEdenVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityExodusVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityHarranVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityKriffonVillager;
+import zollerngalaxy.mobs.entities.villagers.EntityKronosVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityOasisVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityPerditaVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityPurgotVillager;
@@ -71,6 +73,7 @@ import zollerngalaxy.mobs.renders.RenderGalaxyDragon;
 import zollerngalaxy.mobs.renders.RenderGalaxyKnight;
 import zollerngalaxy.mobs.renders.RenderGrayAlien;
 import zollerngalaxy.mobs.renders.RenderGypsyFish;
+import zollerngalaxy.mobs.renders.RenderHelleton;
 import zollerngalaxy.mobs.renders.RenderJellyfish;
 import zollerngalaxy.mobs.renders.RenderKrull;
 import zollerngalaxy.mobs.renders.RenderMagmos;
@@ -102,6 +105,7 @@ import zollerngalaxy.mobs.renders.villagers.RenderEdenVillager;
 import zollerngalaxy.mobs.renders.villagers.RenderExodusVillager;
 import zollerngalaxy.mobs.renders.villagers.RenderHarranVillager;
 import zollerngalaxy.mobs.renders.villagers.RenderKriffonVillager;
+import zollerngalaxy.mobs.renders.villagers.RenderKronosVillager;
 import zollerngalaxy.mobs.renders.villagers.RenderOasisVillager;
 import zollerngalaxy.mobs.renders.villagers.RenderPerditaVillager;
 import zollerngalaxy.mobs.renders.villagers.RenderPurgotVillager;
@@ -166,6 +170,7 @@ public final class MobRenders {
 		renderMob(EntityOasisVillager.class, RenderOasisVillager::new);
 		renderMob(EntityCandoraVillager.class, RenderCandoraVillager::new);
 		renderMob(EntityExodusVillager.class, RenderExodusVillager::new);
+		renderMob(EntityKronosVillager.class, RenderKronosVillager::new);
 	}
 	
 	private static void renderEnemies() {
@@ -179,6 +184,7 @@ public final class MobRenders {
 		MobRenders.renderMob(EntityKrull.class, RenderKrull::new);
 		MobRenders.renderMob(EntitySpiderling.class, RenderSpiderling::new);
 		MobRenders.renderMob(EntityShadowSkeleton.class, RenderShadowSkeleton::new);
+		MobRenders.renderMob(EntityHelleton.class, RenderHelleton::new);
 		MobRenders.renderMob(EntityShade.class, RenderShade::new);
 		MobRenders.renderMob(EntityFaceless.class, RenderFaceless::new);
 		MobRenders.renderMob(EntityVexBot.class, RenderVexbot::new);

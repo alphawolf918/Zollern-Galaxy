@@ -55,6 +55,7 @@ import zollerngalaxy.util.ZGLore;
 @Mod(modid = ZGInfo.MOD_ID, version = ZGInfo.MOD_VERSION, name = ZGInfo.NAME, dependencies = ZGInfo.DEPENDENCIES)
 public class ZollernGalaxyCore {
 	
+	
 	@SidedProxy(clientSide = ZGInfo.PROXY_CLIENT, serverSide = ZGInfo.PROXY_SERVER)
 	public static IProxy proxy;
 	
@@ -168,6 +169,7 @@ public class ZollernGalaxyCore {
 	
 	@Mod.EventBusSubscriber(modid = ZGInfo.MOD_ID)
 	public static class RegistrationHandlerZG {
+		
 		
 		@SubscribeEvent
 		public static void registerBlocksEvent(RegistryEvent.Register<Block> event) {

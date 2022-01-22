@@ -21,6 +21,7 @@ import zollerngalaxy.proxy.IProxy;
 
 public class ZGFluids {
 	
+	
 	private static int totalFluids = 0;
 	
 	private static IProxy proxy = ZollernGalaxyCore.proxy;
@@ -70,10 +71,8 @@ public class ZGFluids {
 	
 	private static void registerFluidBlocks() {
 		blockChargiumFluid = (ZGFluidBase) new ZGFluidBase("chargium", fluidChargium, Material.LAVA, MapColor.LIGHT_BLUE).setQuantaPerBlock(3).setLightLevel(1.0F);
-		blockWhiteLavaFluid = (ZGFluidBase) ((ZGFluidBase) new ZGFluidBase("whitelava", fluidWhiteLava, Material.LAVA, MapColor.WHITE_STAINED_HARDENED_CLAY).setQuantaPerBlock(6).setLightLevel(1.0F))
-				.setTemperature(5000);
-		blockFueltoniumFluid = (ZGFluidBase) ((ZGFluidBase) new ZGFluidBase("fueltonium", fluidFueltonium, Material.LAVA, MapColor.GREEN).setQuantaPerBlock(10).setLightLevel(1.0F))
-				.setTemperature(10000);
+		blockWhiteLavaFluid = (ZGFluidBase) ((ZGFluidBase) new ZGFluidBase("whitelava", fluidWhiteLava, Material.LAVA, MapColor.WHITE_STAINED_HARDENED_CLAY).setQuantaPerBlock(6).setLightLevel(1.0F)).setTemperature(5000);
+		blockFueltoniumFluid = (ZGFluidBase) ((ZGFluidBase) new ZGFluidBase("fueltonium", fluidFueltonium, Material.LAVA, MapColor.GREEN).setQuantaPerBlock(10).setLightLevel(1.0F)).setTemperature(10000);
 		blockChocolateFluid = (ZGFluidBase) new ZGFluidBase("chocolatemelted", fluidChocolate, Material.WATER, MapColor.BROWN).setQuantaPerBlock(9).setLightLevel(0.5F);
 		blockRadiumFluid = (ZGFluidBase) new ZGFluidBase("radium", fluidRadium, Material.WATER, MapColor.YELLOW).setQuantaPerBlock(6).setLightLevel(1.0F);
 		blockSpaceMilk = (ZGFluidBase) new ZGFluidBase("spaceMilk", fluidSpaceMilk, new MaterialSpaceMilk(), MapColor.PINK).setQuantaPerBlock(8).setLightLevel(0.6F);

@@ -15,24 +15,24 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.lib.ZGInfo;
-import zollerngalaxy.mobs.entities.villagers.EntityExodusVillager;
-import zollerngalaxy.mobs.models.villagers.ModelExodusVillager;
+import zollerngalaxy.mobs.entities.villagers.EntityKronosVillager;
+import zollerngalaxy.mobs.models.villagers.ModelKronosVillager;
 
 @SideOnly(Side.CLIENT)
-public class RenderExodusVillager extends RenderLiving<EntityExodusVillager> {
+public class RenderKronosVillager extends RenderLiving<EntityKronosVillager> {
 	
-	private static final ResourceLocation villagerTexture = new ResourceLocation(ZGInfo.MOD_ID, "textures/entity/villagers/exodusvillager.png");
+	private static final ResourceLocation villagerTexture = new ResourceLocation(ZGInfo.MOD_ID, "textures/entity/villagers/kronosvillager.png");
 	private boolean texSwitch;
 	
-	protected ModelExodusVillager villagerModel;
+	protected ModelKronosVillager villagerModel;
 	
-	public RenderExodusVillager(RenderManager manager) {
-		super(manager, new ModelExodusVillager(), 0.5F);
-		this.villagerModel = (ModelExodusVillager) this.mainModel;
+	public RenderKronosVillager(RenderManager manager) {
+		super(manager, new ModelKronosVillager(), 0.5F);
+		this.villagerModel = (ModelKronosVillager) this.mainModel;
 	}
 	
 	@Override
-	protected void preRenderCallback(EntityExodusVillager villager, float par2) {
+	protected void preRenderCallback(EntityKronosVillager villager, float par2) {
 		float f1 = 1.0F;
 		
 		if (villager.getGrowingAge() < 0) {
@@ -50,12 +50,12 @@ public class RenderExodusVillager extends RenderLiving<EntityExodusVillager> {
 	}
 	
 	@Override
-	protected ResourceLocation getEntityTexture(EntityExodusVillager par1Entity) {
-		return texSwitch ? OverlaySensorGlasses.altTexture : RenderExodusVillager.villagerTexture;
+	protected ResourceLocation getEntityTexture(EntityKronosVillager par1Entity) {
+		return texSwitch ? OverlaySensorGlasses.altTexture : RenderKronosVillager.villagerTexture;
 	}
 	
 	@Override
-	public void doRender(EntityExodusVillager villager, double par2, double par4, double par6, float par8, float par9) {
+	public void doRender(EntityKronosVillager villager, double par2, double par4, double par6, float par8, float par9) {
 		super.doRender(villager, par2, par4, par6, par8, par9);
 		if (OverlaySensorGlasses.overrideMobTexture()) {
 			texSwitch = true;

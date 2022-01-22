@@ -7,18 +7,19 @@
  */
 package zollerngalaxy.biomes.kronos;
 
+import net.minecraft.init.Blocks;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 
-public class BiomeKronos extends BiomeKronosBase {
+public class BiomeKronosBlackMountain extends BiomeKronosBase {
 	
-	public BiomeKronos(BiomeProperties props) {
-		super("kronos_main", props);
+	public BiomeKronosBlackMountain(BiomeProperties props) {
+		super("kronos_black_mountain", props);
 		props.setRainDisabled();
-		this.setBiomeHeight(120);
+		this.setBiomeHeight(124);
 		this.setTempCategory(TempCategory.WARM);
-		this.setTemp(40F);
+		this.setTemp(80F);
 		this.setBiomeType(EnumBiomeTypeZG.NETHER);
-		this.setBlocks(STONE.getBlock());
+		this.setBlocks(Blocks.OBSIDIAN);
 		this.enableSnow = false;
 		this.stoneBlock = STONE.getBlock();
 	}

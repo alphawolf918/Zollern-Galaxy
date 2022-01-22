@@ -10,6 +10,11 @@ package zollerngalaxy.biomes.kronos;
 import java.util.Random;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.monster.EntityBlaze;
+import net.minecraft.entity.monster.EntityGhast;
+import net.minecraft.entity.monster.EntityMagmaCube;
+import net.minecraft.entity.monster.EntityPigZombie;
+import net.minecraft.entity.monster.EntityWitherSkeleton;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeDecorator;
@@ -18,8 +23,12 @@ import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.biomes.decorators.BiomeDecoratorKronos;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.celestial.ZGPlanets;
+import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderKronos;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
+import zollerngalaxy.mobs.entities.EntityHelleton;
+import zollerngalaxy.mobs.entities.EntityMagmos;
+import zollerngalaxy.mobs.entities.villagers.EntityKronosVillager;
 import zollerngalaxy.util.BiomeUtils;
 
 public abstract class BiomeKronosBase extends BiomeSpace {
@@ -42,6 +51,17 @@ public abstract class BiomeKronosBase extends BiomeSpace {
 		this.setTempCategory(TempCategory.WARM);
 		this.setStoneBlock(STONE.getBlock());
 		this.clearAllSpawning();
+		this.setTemp(100.0F);
+		this.spawnableMonsterList.add(new SpawnListEntry(EntityMagmos.class, 25, 1, 2));
+		this.spawnableMonsterList.add(new SpawnListEntry(EntityBlaze.class, 25, 1, 2));
+		this.spawnableMonsterList.add(new SpawnListEntry(EntityMagmaCube.class, 25, 1, 2));
+		this.spawnableMonsterList.add(new SpawnListEntry(EntityWitherSkeleton.class, 25, 1, 2));
+		this.spawnableMonsterList.add(new SpawnListEntry(EntityGhast.class, 35, 1, 2));
+		this.spawnableMonsterList.add(new SpawnListEntry(EntityPigZombie.class, 25, 1, 2));
+		this.spawnableMonsterList.add(new SpawnListEntry(EntityHelleton.class, 25, 1, 4));
+		if (ConfigManagerZG.enableAlienVillagerSpawn) {
+			this.spawnableCreatureList.add(new SpawnListEntry(EntityKronosVillager.class, this.villagerSpawnRate, this.villagerMinSpawnRate, this.villagerMaxSpawnRate));
+		}
 		this.setPlanetForBiome(ZGPlanets.planetKronos);
 	}
 	

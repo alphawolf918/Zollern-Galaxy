@@ -7,18 +7,19 @@
  */
 package zollerngalaxy.biomes.kronos;
 
+import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 
-public class BiomeKronos extends BiomeKronosBase {
+public class BiomeKronosBlazingHills extends BiomeKronosBase {
 	
-	public BiomeKronos(BiomeProperties props) {
-		super("kronos_main", props);
+	public BiomeKronosBlazingHills(BiomeProperties props) {
+		super("kronos_blazing_hills", props);
 		props.setRainDisabled();
-		this.setBiomeHeight(120);
+		this.setBiomeHeight(90);
 		this.setTempCategory(TempCategory.WARM);
-		this.setTemp(40F);
+		this.setTemp(135F);
 		this.setBiomeType(EnumBiomeTypeZG.NETHER);
-		this.setBlocks(STONE.getBlock());
+		this.setBlocks(ZGBlocks.blazeRock);
 		this.enableSnow = false;
 		this.stoneBlock = STONE.getBlock();
 	}

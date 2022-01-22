@@ -11,6 +11,8 @@ import java.util.HashMap;
 import java.util.Map;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+import org.lwjgl.input.Keyboard;
+import com.google.common.base.Function;
 import net.minecraft.block.Block;
 import net.minecraft.entity.monster.EntityEnderman;
 import net.minecraft.init.Blocks;
@@ -27,11 +29,9 @@ import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.oredict.OreDictionary;
-import org.lwjgl.input.Keyboard;
 import zollerngalaxy.blocks.ISingleZGBlockRender;
 import zollerngalaxy.items.ISingleZGItemRender;
 import zollerngalaxy.lib.ZGInfo;
-import com.google.common.base.Function;
 
 public class CommonZGRegisterHelper {
 	

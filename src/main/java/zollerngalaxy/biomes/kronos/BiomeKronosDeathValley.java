@@ -7,18 +7,19 @@
  */
 package zollerngalaxy.biomes.kronos;
 
+import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 
-public class BiomeKronos extends BiomeKronosBase {
+public class BiomeKronosDeathValley extends BiomeKronosBase {
 	
-	public BiomeKronos(BiomeProperties props) {
-		super("kronos_main", props);
+	public BiomeKronosDeathValley(BiomeProperties props) {
+		super("kronos_death_valley", props);
 		props.setRainDisabled();
-		this.setBiomeHeight(120);
+		this.setBiomeHeight(124);
 		this.setTempCategory(TempCategory.WARM);
-		this.setTemp(40F);
+		this.setTemp(80F);
 		this.setBiomeType(EnumBiomeTypeZG.NETHER);
-		this.setBlocks(STONE.getBlock());
+		this.setBlocks(ZGBlocks.netherDirt);
 		this.enableSnow = false;
 		this.stoneBlock = STONE.getBlock();
 	}

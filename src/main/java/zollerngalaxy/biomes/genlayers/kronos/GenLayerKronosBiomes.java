@@ -46,6 +46,10 @@ public class GenLayerKronosBiomes extends GenLayerKronos {
 		ArrayList<BiomeEntry>[] currentBiomes = new ArrayList[CachedEnumZG.valuesBiomeCached().length];
 		List<BiomeEntry> list = new ArrayList<>();
 		list.add(new BiomeEntry(ZGBiomes.KRONOS_BASE, 100));
+		list.add(new BiomeEntry(ZGBiomes.KRONOS_SOUL_DESERT, 90));
+		list.add(new BiomeEntry(ZGBiomes.KRONOS_BLACK_MOUNTAIN, 80));
+		list.add(new BiomeEntry(ZGBiomes.KRONOS_DEATH_VALLEY, 70));
+		list.add(new BiomeEntry(ZGBiomes.KRONOS_BLAZING_HILLS, 60));
 		
 		currentBiomes[BiomeType.WARM.ordinal()] = new ArrayList<>(list);
 		return currentBiomes;

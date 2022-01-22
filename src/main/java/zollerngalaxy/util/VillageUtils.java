@@ -21,6 +21,7 @@ import zollerngalaxy.core.dimensions.worldproviders.WorldProviderCentotl;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderEden;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderExodus;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderKriffon;
+import zollerngalaxy.core.dimensions.worldproviders.WorldProviderKronos;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderMetztli;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderOasis;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderPerdita;
@@ -40,6 +41,7 @@ import zollerngalaxy.mobs.entities.villagers.EntityEdenVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityExodusVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityHarranVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityKriffonVillager;
+import zollerngalaxy.mobs.entities.villagers.EntityKronosVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityOasisVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityPerditaVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityPurgotVillager;
@@ -76,11 +78,13 @@ public class VillageUtils {
 			VillageUtils.transformIntoVillager(world, entity, EntityOasisVillager.class, WorldProviderOasis.class);
 			VillageUtils.transformIntoVillager(world, entity, EntityCandoraVillager.class, WorldProviderCandora.class);
 			VillageUtils.transformIntoVillager(world, entity, EntityExodusVillager.class, WorldProviderExodus.class);
+			VillageUtils.transformIntoVillager(world, entity, EntityKronosVillager.class, WorldProviderKronos.class);
 		}
 	}
 	
 	/**
-	 * Uses Java Reflection to convert GC's default Alien Villagers to the world-appropriate ones.
+	 * Uses basic Java Reflection to convert GC's default Alien Villagers to the world-appropriate
+	 * ones.
 	 * 
 	 * @param worldIn
 	 *            The current World.

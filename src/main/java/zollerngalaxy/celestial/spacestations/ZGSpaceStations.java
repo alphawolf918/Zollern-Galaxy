@@ -40,6 +40,7 @@ import zollerngalaxy.lib.helpers.ZGRecipeHelper;
 
 public class ZGSpaceStations {
 	
+	
 	private static int totalSpaceStations = 0;
 	
 	// Psios-6
@@ -67,6 +68,9 @@ public class ZGSpaceStations {
 	public static ZGSpaceStation CENTOTL_SPACE_STATION;
 	public static ZGSpaceStation TOCI_SPACE_STATION;
 	public static ZGSpaceStation TLALOC_SPACE_STATION;
+	
+	// Olympus
+	// TODO
 	
 	public static void init() {
 		ZGSpaceStations.initSpaceStations();
@@ -169,76 +173,58 @@ public class ZGSpaceStations {
 	
 	private static void registerSpaceStations() {
 		// Psios-6 (Zollus)
-		ZGSpaceStations.registerSpaceStation(ZOLLUS_SPACE_STATION, "Zollus Space Station", "_zollus_orbit", WorldProviderOrbitZollus.class, ConfigManagerZG.spaceStationZollusId,
-				ConfigManagerZG.spaceStationZollusStaticId);
+		ZGSpaceStations.registerSpaceStation(ZOLLUS_SPACE_STATION, "Zollus Space Station", "_zollus_orbit", WorldProviderOrbitZollus.class, ConfigManagerZG.spaceStationZollusId, ConfigManagerZG.spaceStationZollusStaticId);
 		
 		// Psios-6 (Kriffon)
-		ZGSpaceStations.registerSpaceStation(KRIFFON_SPACE_STATION, "Kriffon Space Station", "_kriffon_orbit", WorldProviderOrbitKriffon.class, ConfigManagerZG.spaceStationKriffonId,
-				ConfigManagerZG.spaceStationKriffonStaticId);
+		ZGSpaceStations.registerSpaceStation(KRIFFON_SPACE_STATION, "Kriffon Space Station", "_kriffon_orbit", WorldProviderOrbitKriffon.class, ConfigManagerZG.spaceStationKriffonId, ConfigManagerZG.spaceStationKriffonStaticId);
 		
 		// Psios-6 (Purgot)
-		ZGSpaceStations.registerSpaceStation(PURGOT_SPACE_STATION, "Purgot Space Station", "_purgot_orbit", WorldProviderOrbitPurgot.class, ConfigManagerZG.spaceStationPurgotId,
-				ConfigManagerZG.spaceStationPurgotStaticId);
+		ZGSpaceStations.registerSpaceStation(PURGOT_SPACE_STATION, "Purgot Space Station", "_purgot_orbit", WorldProviderOrbitPurgot.class, ConfigManagerZG.spaceStationPurgotId, ConfigManagerZG.spaceStationPurgotStaticId);
 		
 		// Psios-6 (Eden)
-		ZGSpaceStations.registerSpaceStation(EDEN_SPACE_STATION, "Eden Space Station", "_eden_orbit", WorldProviderOrbitEden.class, ConfigManagerZG.spaceStationEdenId,
-				ConfigManagerZG.spaceStationEdenStaticId);
+		ZGSpaceStations.registerSpaceStation(EDEN_SPACE_STATION, "Eden Space Station", "_eden_orbit", WorldProviderOrbitEden.class, ConfigManagerZG.spaceStationEdenId, ConfigManagerZG.spaceStationEdenStaticId);
 		
 		// Praedyth (Xathius)
-		ZGSpaceStations.registerSpaceStation(XATHIUS_SPACE_STATION, "Xathius Space Station", "_xathius_orbit", WorldProviderOrbitXathius.class, ConfigManagerZG.spaceStationXathiusId,
-				ConfigManagerZG.spaceStationXathiusStaticId);
+		ZGSpaceStations.registerSpaceStation(XATHIUS_SPACE_STATION, "Xathius Space Station", "_xathius_orbit", WorldProviderOrbitXathius.class, ConfigManagerZG.spaceStationXathiusId, ConfigManagerZG.spaceStationXathiusStaticId);
 		
 		// Praedyth (Oasis)
-		ZGSpaceStations.registerSpaceStation(OASIS_SPACE_STATION, "Oasis Space Station", "_oasis_orbit", WorldProviderOrbitOasis.class, ConfigManagerZG.spaceStationOasisId,
-				ConfigManagerZG.spaceStationOasisStaticId);
+		ZGSpaceStations.registerSpaceStation(OASIS_SPACE_STATION, "Oasis Space Station", "_oasis_orbit", WorldProviderOrbitOasis.class, ConfigManagerZG.spaceStationOasisId, ConfigManagerZG.spaceStationOasisStaticId);
 		
 		// Praedyth (Xantheon)
-		ZGSpaceStations.registerSpaceStation(XANTHEON_SPACE_STATION, "Xantheon Space Station", "_xantheon_orbit", WorldProviderOrbitXantheon.class, ConfigManagerZG.spaceStationXantheonId,
-				ConfigManagerZG.spaceStationXantheonStaticId);
+		ZGSpaceStations.registerSpaceStation(XANTHEON_SPACE_STATION, "Xantheon Space Station", "_xantheon_orbit", WorldProviderOrbitXantheon.class, ConfigManagerZG.spaceStationXantheonId, ConfigManagerZG.spaceStationXantheonStaticId);
 		
 		// Praedyth (Candora)
-		ZGSpaceStations.registerSpaceStation(CANDORA_SPACE_STATION, "Candora Space Station", "_candora_orbit", WorldProviderOrbitCandora.class, ConfigManagerZG.spaceStationCandoraId,
-				ConfigManagerZG.spaceStationCandoraStaticId);
+		ZGSpaceStations.registerSpaceStation(CANDORA_SPACE_STATION, "Candora Space Station", "_candora_orbit", WorldProviderOrbitCandora.class, ConfigManagerZG.spaceStationCandoraId, ConfigManagerZG.spaceStationCandoraStaticId);
 		
 		// Praedyth (Atheon)
-		ZGSpaceStations.registerSpaceStation(ATHEON_SPACE_STATION, "Atheon Space Station", "_atheon_orbit", WorldProviderOrbitAtheon.class, ConfigManagerZG.spaceStationAtheonId,
-				ConfigManagerZG.spaceStationAtheonStaticId);
+		ZGSpaceStations.registerSpaceStation(ATHEON_SPACE_STATION, "Atheon Space Station", "_atheon_orbit", WorldProviderOrbitAtheon.class, ConfigManagerZG.spaceStationAtheonId, ConfigManagerZG.spaceStationAtheonStaticId);
 		
 		// Sol-2 (Perdita)
-		ZGSpaceStations.registerSpaceStation(PERDITA_SPACE_STATION, "Perdita Space Station", "_perdita_orbit", WorldProviderOrbitPerdita.class, ConfigManagerZG.spaceStationPerditaId,
-				ConfigManagerZG.spaceStationPerditaStaticId);
+		ZGSpaceStations.registerSpaceStation(PERDITA_SPACE_STATION, "Perdita Space Station", "_perdita_orbit", WorldProviderOrbitPerdita.class, ConfigManagerZG.spaceStationPerditaId, ConfigManagerZG.spaceStationPerditaStaticId);
 		
 		// Sol-2 (Altum)
-		ZGSpaceStations.registerSpaceStation(ALTUM_SPACE_STATION, "Altum Space Station", "_altum_orbit", WorldProviderOrbitAltum.class, ConfigManagerZG.spaceStationAltumId,
-				ConfigManagerZG.spaceStationAltumStaticId);
+		ZGSpaceStations.registerSpaceStation(ALTUM_SPACE_STATION, "Altum Space Station", "_altum_orbit", WorldProviderOrbitAltum.class, ConfigManagerZG.spaceStationAltumId, ConfigManagerZG.spaceStationAltumStaticId);
 		
 		// Sol-2 (Caligro)
-		ZGSpaceStations.registerSpaceStation(CALIGRO_SPACE_STATION, "Caligro Space Station", "_caligro_orbit", WorldProviderOrbitCaligro.class, ConfigManagerZG.spaceStationCaligroId,
-				ConfigManagerZG.spaceStationCaligroStaticId);
+		ZGSpaceStations.registerSpaceStation(CALIGRO_SPACE_STATION, "Caligro Space Station", "_caligro_orbit", WorldProviderOrbitCaligro.class, ConfigManagerZG.spaceStationCaligroId, ConfigManagerZG.spaceStationCaligroStaticId);
 		
 		// Sol-2 (Exodus)
-		ZGSpaceStations.registerSpaceStation(EXODUS_SPACE_STATION, "Exodus Space Station", "_exodus_orbit", WorldProviderOrbitExodus.class, ConfigManagerZG.spaceStationExodusId,
-				ConfigManagerZG.spaceStationExodusStaticId);
+		ZGSpaceStations.registerSpaceStation(EXODUS_SPACE_STATION, "Exodus Space Station", "_exodus_orbit", WorldProviderOrbitExodus.class, ConfigManagerZG.spaceStationExodusId, ConfigManagerZG.spaceStationExodusStaticId);
 		
 		// Pantheon (Vortex)
-		ZGSpaceStations.registerSpaceStation(VORTEX_SPACE_STATION, "Vortex Space Station", "_vortex_orbit", WorldProviderOrbitVortex.class, ConfigManagerZG.spaceStationVortexId,
-				ConfigManagerZG.spaceStationVortexStaticId);
+		ZGSpaceStations.registerSpaceStation(VORTEX_SPACE_STATION, "Vortex Space Station", "_vortex_orbit", WorldProviderOrbitVortex.class, ConfigManagerZG.spaceStationVortexId, ConfigManagerZG.spaceStationVortexStaticId);
 		
 		// Pantheon (Metztli)
-		ZGSpaceStations.registerSpaceStation(METZTLI_SPACE_STATION, "Metztli Space Station", "_metztli_orbit", WorldProviderOrbitMetztli.class, ConfigManagerZG.spaceStationMetztliId,
-				ConfigManagerZG.spaceStationMetztliStaticId);
+		ZGSpaceStations.registerSpaceStation(METZTLI_SPACE_STATION, "Metztli Space Station", "_metztli_orbit", WorldProviderOrbitMetztli.class, ConfigManagerZG.spaceStationMetztliId, ConfigManagerZG.spaceStationMetztliStaticId);
 		
 		// Pantheon (Centotl)
-		ZGSpaceStations.registerSpaceStation(CENTOTL_SPACE_STATION, "Centotl Space Station", "_centotl_orbit", WorldProviderOrbitCentotl.class, ConfigManagerZG.spaceStationCentotlId,
-				ConfigManagerZG.spaceStationCentotlStaticId);
+		ZGSpaceStations.registerSpaceStation(CENTOTL_SPACE_STATION, "Centotl Space Station", "_centotl_orbit", WorldProviderOrbitCentotl.class, ConfigManagerZG.spaceStationCentotlId, ConfigManagerZG.spaceStationCentotlStaticId);
 		
 		// Pantheon (Toci)
-		ZGSpaceStations.registerSpaceStation(TOCI_SPACE_STATION, "Toci Space Station", "_toci_orbit", WorldProviderOrbitToci.class, ConfigManagerZG.spaceStationTociId,
-				ConfigManagerZG.spaceStationTociStaticId);
+		ZGSpaceStations.registerSpaceStation(TOCI_SPACE_STATION, "Toci Space Station", "_toci_orbit", WorldProviderOrbitToci.class, ConfigManagerZG.spaceStationTociId, ConfigManagerZG.spaceStationTociStaticId);
 		
 		// Pantheon (Tlaloc)
-		ZGSpaceStations.registerSpaceStation(TLALOC_SPACE_STATION, "Tlaloc Space Station", "_tlaloc_orbit", WorldProviderOrbitTlaloc.class, ConfigManagerZG.spaceStationTlalocId,
-				ConfigManagerZG.spaceStationTlalocStaticId);
+		ZGSpaceStations.registerSpaceStation(TLALOC_SPACE_STATION, "Tlaloc Space Station", "_tlaloc_orbit", WorldProviderOrbitTlaloc.class, ConfigManagerZG.spaceStationTlalocId, ConfigManagerZG.spaceStationTlalocStaticId);
 	}
 	
 	public static void registerSpaceStationRecipes() {
@@ -407,8 +393,7 @@ public class ZGSpaceStations {
 		inputMap.clear();
 	}
 	
-	private static void registerSpaceStation(ZGSpaceStation spaceStation, String stationName, String stationStringId, Class<? extends WorldProvider> providerClass, int stationId,
-			int stationStaticId) {
+	private static void registerSpaceStation(ZGSpaceStation spaceStation, String stationName, String stationStringId, Class<? extends WorldProvider> providerClass, int stationId, int stationStaticId) {
 		GalaxyRegistry.registerSatellite(spaceStation);
 		GalacticraftRegistry.registerTeleportType(providerClass, new TeleportTypeOrbit());
 		GalacticraftRegistry.registerDimension(stationName, stationStringId, stationId, providerClass, false);

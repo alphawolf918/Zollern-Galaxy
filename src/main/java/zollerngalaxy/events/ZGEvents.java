@@ -79,11 +79,11 @@ import zollerngalaxy.items.ZGItems;
 import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.mobs.entities.EntityBladeFish;
 import zollerngalaxy.mobs.entities.EntityBlubberFish;
+import zollerngalaxy.mobs.entities.EntityEdenCow;
 import zollerngalaxy.mobs.entities.EntityGalaxyDragon;
 import zollerngalaxy.mobs.entities.EntityGalaxyKnight;
 import zollerngalaxy.mobs.entities.EntityGrayAlien;
 import zollerngalaxy.mobs.entities.EntityMegaCreeper;
-import zollerngalaxy.mobs.entities.EntityEdenCow;
 import zollerngalaxy.mobs.entities.EntityMummy;
 import zollerngalaxy.mobs.entities.EntityOinkus;
 import zollerngalaxy.mobs.entities.EntityScorpion;
@@ -403,8 +403,7 @@ public class ZGEvents {
 				EntityPlayer player = (EntityPlayer) ent;
 				if (this.core.isInTestMode() || this.core.isInDevMode()) {
 					String txtFormat = TextFormatting.BOLD + " " + TextFormatting.RED;
-					String msg = txtFormat
-							+ "WARNING: This is NOT a valid version of Zollern Galaxy! Please uninstall the mod and install the correct version, or it will not operate correctly. Please also contact the mod author immediately!";
+					String msg = txtFormat + "WARNING: This is NOT a valid version of Zollern Galaxy! Please uninstall the mod and install the correct version, or it will not operate correctly. Please also contact the mod author immediately!";
 					this.proxy.sendChatMessage(player, msg);
 				}
 			}

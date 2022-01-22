@@ -75,8 +75,7 @@ public class RandPosGenWater {
 		boolean flag;
 		
 		if (p_191379_0_.hasHome()) {
-			double d0 = p_191379_0_.getHomePosition().distanceSq(MathHelper.floor(p_191379_0_.posX), MathHelper.floor(p_191379_0_.posY),
-					MathHelper.floor(p_191379_0_.posZ)) + 4.0D;
+			double d0 = p_191379_0_.getHomePosition().distanceSq(MathHelper.floor(p_191379_0_.posX), MathHelper.floor(p_191379_0_.posY), MathHelper.floor(p_191379_0_.posZ)) + 4.0D;
 			double d1 = p_191379_0_.getMaximumHomeDistance() + p_191379_1_;
 			flag = d0 < d1 * d1;
 		} else {
@@ -149,8 +148,7 @@ public class RandPosGenWater {
 		} else {
 			BlockPos blockpos;
 			
-			for (blockpos = p_191378_0_.up(); blockpos.getY() < p_191378_1_.world.getHeight()
-					&& p_191378_1_.world.getBlockState(blockpos).getMaterial().isSolid(); blockpos = blockpos.up()) {
+			for (blockpos = p_191378_0_.up(); blockpos.getY() < p_191378_1_.world.getHeight() && p_191378_1_.world.getBlockState(blockpos).getMaterial().isSolid(); blockpos = blockpos.up()) {
 				;
 			}
 			

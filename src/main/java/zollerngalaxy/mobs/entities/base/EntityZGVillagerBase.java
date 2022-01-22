@@ -108,18 +108,12 @@ public class EntityZGVillagerBase extends EntityAgeable implements IMerchant, IN
 	}
 	
 	protected ITradeList[] getTradeList() {
-		ITradeList[] TRADE_LIST = new ITradeList[] { new ListVillagerItems(new ItemStack(ZGItems.alienStone, 1), new PriceInfo(1, 2)),
-				new ListVillagerItems(new ItemStack(ZGItems.axeAmaranth, 1), new PriceInfo(3, 4)), new ListVillagerItems(new ItemStack(ZGItems.darkEssence, 1), new PriceInfo(3, 4)),
-				new ListVillagerItems(new ItemStack(ZGItems.sharkTooth, 1), new PriceInfo(3, 4)), new ListVillagerItems(new ItemStack(ZGItems.compressedVyrex, 1), new PriceInfo(1, 2)),
-				new ListVillagerItems(new ItemStack(ZGItems.azurite, 1), new PriceInfo(2, 4)),
-				new ItemAndSapphireToItem(new ItemStack(ZGItems.rawBlubberFish, 1), new PriceInfo(1, 1), new ItemStack(ZGItems.edenFruit, 1)),
-				new ListVillagerItems(new ItemStack(ZGItems.brownie, 1), new PriceInfo(3, 4)),
-				new ItemAndSapphireToItem(new ItemStack(ZGItems.creamBall, 1), new PriceInfo(3, 5), new ItemStack(GCItems.schematic, 1, 1)),
-				new ItemAndSapphireToItem(new ItemStack(ZGItems.compressedCobalt, 1), new PriceInfo(3, 5), new ItemStack(ZGBlocks.blockLore, 1)),
-				new ItemAndSapphireToItem(new ItemStack(ZGBlocks.blockLore, 2), new PriceInfo(1, 1), new ItemStack(ZGItems.heartium, 1)),
-				new ItemAndSapphireToItem(new ItemStack(ZGBlocks.blockPerdDiamond, 2), new PriceInfo(1, 1), new ItemStack(ZGBlocks.blockLore, 1)),
-				new TradeGoodsForItems(new ItemStack(ZGBlocks.perdTreeSapling, 1), new PriceInfo(11, 39)),
-				new TradeGoodsForItems(new ItemStack(ZGItems.superChargedCoal, ZGHelper.rngInt(2, 4)), new PriceInfo(11, 39)) };
+		ITradeList[] TRADE_LIST = new ITradeList[] { new ListVillagerItems(new ItemStack(ZGItems.alienStone, 1), new PriceInfo(1, 2)), new ListVillagerItems(new ItemStack(ZGItems.axeAmaranth, 1), new PriceInfo(3, 4)), new ListVillagerItems(new ItemStack(ZGItems.darkEssence, 1), new PriceInfo(3, 4)),
+				new ListVillagerItems(new ItemStack(ZGItems.sharkTooth, 1), new PriceInfo(3, 4)), new ListVillagerItems(new ItemStack(ZGItems.compressedVyrex, 1), new PriceInfo(1, 2)), new ListVillagerItems(new ItemStack(ZGItems.azurite, 1), new PriceInfo(2, 4)),
+				new ItemAndSapphireToItem(new ItemStack(ZGItems.rawBlubberFish, 1), new PriceInfo(1, 1), new ItemStack(ZGItems.edenFruit, 1)), new ListVillagerItems(new ItemStack(ZGItems.brownie, 1), new PriceInfo(3, 4)),
+				new ItemAndSapphireToItem(new ItemStack(ZGItems.creamBall, 1), new PriceInfo(3, 5), new ItemStack(GCItems.schematic, 1, 1)), new ItemAndSapphireToItem(new ItemStack(ZGItems.compressedCobalt, 1), new PriceInfo(3, 5), new ItemStack(ZGBlocks.blockLore, 1)),
+				new ItemAndSapphireToItem(new ItemStack(ZGBlocks.blockLore, 2), new PriceInfo(1, 1), new ItemStack(ZGItems.heartium, 1)), new ItemAndSapphireToItem(new ItemStack(ZGBlocks.blockPerdDiamond, 2), new PriceInfo(1, 1), new ItemStack(ZGBlocks.blockLore, 1)),
+				new TradeGoodsForItems(new ItemStack(ZGBlocks.perdTreeSapling, 1), new PriceInfo(11, 39)), new TradeGoodsForItems(new ItemStack(ZGItems.superChargedCoal, ZGHelper.rngInt(2, 4)), new PriceInfo(11, 39)) };
 		return TRADE_LIST;
 	}
 	
@@ -464,8 +458,7 @@ public class EntityZGVillagerBase extends EntityAgeable implements IMerchant, IN
 			double d0 = this.rand.nextGaussian() * 0.02D;
 			double d1 = this.rand.nextGaussian() * 0.02D;
 			double d2 = this.rand.nextGaussian() * 0.02D;
-			this.world.spawnParticle(particleType, this.posX + this.rand.nextFloat() * this.width * 2.0F - this.width, this.posY + 1.0D + this.rand.nextFloat() * this.height,
-					this.posZ + this.rand.nextFloat() * this.width * 2.0F - this.width, d0, d1, d2, new int[0]);
+			this.world.spawnParticle(particleType, this.posX + this.rand.nextFloat() * this.width * 2.0F - this.width, this.posY + 1.0D + this.rand.nextFloat() * this.height, this.posZ + this.rand.nextFloat() * this.width * 2.0F - this.width, d0, d1, d2, new int[0]);
 		}
 	}
 	
@@ -586,8 +579,7 @@ public class EntityZGVillagerBase extends EntityAgeable implements IMerchant, IN
 			ItemStack itemstack = this.villagerInventory.getStackInSlot(i);
 			
 			if (!itemstack.isEmpty()) {
-				if (itemstack.getItem() == Items.BREAD && itemstack.getCount() >= 3 * multiplier || itemstack.getItem() == Items.POTATO && itemstack.getCount() >= 12 * multiplier
-						|| itemstack.getItem() == Items.CARROT && itemstack.getCount() >= 12 * multiplier) {
+				if (itemstack.getItem() == Items.BREAD && itemstack.getCount() >= 3 * multiplier || itemstack.getItem() == Items.POTATO && itemstack.getCount() >= 12 * multiplier || itemstack.getItem() == Items.CARROT && itemstack.getCount() >= 12 * multiplier) {
 					return true;
 				}
 				
@@ -729,8 +721,7 @@ public class EntityZGVillagerBase extends EntityAgeable implements IMerchant, IN
 		}
 		
 		public int getPrice(Random rand) {
-			return this.getFirst().intValue() >= this.getSecond().intValue() ? this.getFirst().intValue()
-					: this.getFirst().intValue() + rand.nextInt(this.getSecond().intValue() - this.getFirst().intValue() + 1);
+			return this.getFirst().intValue() >= this.getSecond().intValue() ? this.getFirst().intValue() : this.getFirst().intValue() + rand.nextInt(this.getSecond().intValue() - this.getFirst().intValue() + 1);
 		}
 	}
 }

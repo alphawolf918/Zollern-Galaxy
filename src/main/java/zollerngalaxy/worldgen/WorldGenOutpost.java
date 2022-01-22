@@ -16,8 +16,8 @@ import zollerngalaxy.blocks.ZGBlocks;
 
 public class WorldGenOutpost extends ZGWorldGenMaster {
 	
-	IBlockState wallBlockState = null;
-	IBlockState floorBlockState = null;
+	private IBlockState wallBlockState = null;
+	private IBlockState floorBlockState = null;
 	
 	public WorldGenOutpost(IBlockState wallBlockStateIn, IBlockState floorBlockStateIn) {
 		this.wallBlockState = wallBlockStateIn;

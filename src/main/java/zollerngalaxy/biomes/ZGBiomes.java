@@ -75,6 +75,10 @@ import zollerngalaxy.biomes.exodus.BiomeExodusRockyHills;
 import zollerngalaxy.biomes.kriffon.BiomeKriffon;
 import zollerngalaxy.biomes.kriffon.BiomeKriffonLavaOcean;
 import zollerngalaxy.biomes.kronos.BiomeKronos;
+import zollerngalaxy.biomes.kronos.BiomeKronosBlackMountain;
+import zollerngalaxy.biomes.kronos.BiomeKronosBlazingHills;
+import zollerngalaxy.biomes.kronos.BiomeKronosDeathValley;
+import zollerngalaxy.biomes.kronos.BiomeKronosSoulDesert;
 import zollerngalaxy.biomes.metztli.BiomeHarranClayMesa;
 import zollerngalaxy.biomes.metztli.BiomeHarranDunes;
 import zollerngalaxy.biomes.metztli.BiomeHarranForest;
@@ -250,6 +254,10 @@ public class ZGBiomes {
 	
 	// Kronos
 	public static final Biome KRONOS_BASE = new BiomeKronos(new BiomeProperties("Kronos"));
+	public static final Biome KRONOS_SOUL_DESERT = new BiomeKronosSoulDesert(new BiomeProperties("Kronos Desert of Souls"));
+	public static final Biome KRONOS_BLACK_MOUNTAIN = new BiomeKronosBlackMountain(new BiomeProperties("Kronos Black Mountain"));
+	public static final Biome KRONOS_DEATH_VALLEY = new BiomeKronosDeathValley(new BiomeProperties("Kronos Death Valley"));
+	public static final Biome KRONOS_BLAZING_HILLS = new BiomeKronosBlazingHills(new BiomeProperties("Kronos Blazing Hills"));
 	
 	public static void init() {
 		// Zollus
@@ -378,6 +386,10 @@ public class ZGBiomes {
 		
 		// Kronos
 		ZGBiomes.addBiome(ZGBiomes.KRONOS_BASE, NETHER, HOT, DEAD, DRY, SPOOKY, WASTELAND);
+		ZGBiomes.addBiome(ZGBiomes.KRONOS_SOUL_DESERT, NETHER, HOT, DEAD, DRY, SPOOKY, WASTELAND);
+		ZGBiomes.addBiome(ZGBiomes.KRONOS_BLACK_MOUNTAIN, NETHER, HOT, DEAD, DRY, SPOOKY, WASTELAND, MOUNTAIN);
+		ZGBiomes.addBiome(ZGBiomes.KRONOS_DEATH_VALLEY, NETHER, HOT, DEAD, DRY, SPOOKY, WASTELAND);
+		ZGBiomes.addBiome(ZGBiomes.KRONOS_BLAZING_HILLS, NETHER, HOT, DEAD, DRY, SPOOKY, WASTELAND);
 		
 		ZGHelper.Log("Loaded a total of " + totalBiomes + " new biomes.");
 	}

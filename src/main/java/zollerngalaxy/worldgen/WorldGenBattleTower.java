@@ -8,7 +8,6 @@
 package zollerngalaxy.worldgen;
 
 import java.util.Random;
-import micdoodle8.mods.galacticraft.core.Constants;
 import net.minecraft.block.BlockStairs;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
@@ -18,7 +17,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import zollerngalaxy.core.ZGLootTables;
 import zollerngalaxy.core.ZollernGalaxyCore;
-import zollerngalaxy.lib.ZGInfo;
 import zollerngalaxy.lib.helpers.ZGHelper;
 
 public class WorldGenBattleTower extends ZGWorldGenMaster {
@@ -2037,74 +2035,6 @@ public class WorldGenBattleTower extends ZGWorldGenMaster {
 	}
 	
 	private static ResourceLocation getMob(Random rand) {
-		String mobName = "evolved_zombie";
-		String modId = Constants.MOD_ID_CORE;
-		switch (rand.nextInt(14)) {
-			default:
-				mobName = "evolved_zombie";
-				modId = Constants.MOD_ID_CORE;
-				break;
-			case 0:
-				mobName = "evolved_spider";
-				modId = Constants.MOD_ID_CORE;
-				break;
-			case 1:
-				mobName = "evolved_creeper";
-				modId = Constants.MOD_ID_CORE;
-				break;
-			case 2:
-				mobName = "evolved_skeleton";
-				modId = Constants.MOD_ID_CORE;
-				break;
-			case 3:
-				mobName = "evolved_witch";
-				modId = Constants.MOD_ID_CORE;
-				break;
-			case 4:
-				mobName = "evolved_enderman";
-				modId = Constants.MOD_ID_CORE;
-				break;
-			case 5:
-				mobName = "vexbot";
-				modId = ZGInfo.MOD_ID;
-				break;
-			case 6:
-				mobName = "mummy";
-				modId = ZGInfo.MOD_ID;
-				break;
-			case 7:
-				mobName = "scorpion";
-				modId = ZGInfo.MOD_ID;
-				break;
-			case 8:
-				mobName = "shadowskeleton";
-				modId = ZGInfo.MOD_ID;
-				break;
-			case 9:
-				mobName = "shade";
-				modId = ZGInfo.MOD_ID;
-				break;
-			case 10:
-				mobName = "volatile";
-				modId = ZGInfo.MOD_ID;
-				break;
-			case 11:
-				mobName = "overlord";
-				modId = ZGInfo.MOD_ID;
-				break;
-			case 12:
-				mobName = "seeker";
-				modId = ZGInfo.MOD_ID;
-				break;
-			case 13:
-				mobName = "ghoul";
-				modId = ZGInfo.MOD_ID;
-				break;
-			case 14:
-				mobName = "vexbotgold";
-				modId = ZGInfo.MOD_ID;
-				break;
-		}
-		return new ResourceLocation(modId, mobName);
+		return ZGHelper.getMob(rand);
 	}
 }

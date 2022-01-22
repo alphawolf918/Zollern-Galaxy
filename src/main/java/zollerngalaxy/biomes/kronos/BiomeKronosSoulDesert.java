@@ -7,19 +7,22 @@
  */
 package zollerngalaxy.biomes.kronos;
 
+import net.minecraft.init.Blocks;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 
-public class BiomeKronos extends BiomeKronosBase {
+public class BiomeKronosSoulDesert extends BiomeKronosBase {
 	
-	public BiomeKronos(BiomeProperties props) {
-		super("kronos_main", props);
+	public BiomeKronosSoulDesert(BiomeProperties props) {
+		super("kronos_desert_soul", props);
 		props.setRainDisabled();
-		this.setBiomeHeight(120);
+		this.setBiomeHeight(60);
 		this.setTempCategory(TempCategory.WARM);
-		this.setTemp(40F);
+		this.setTemp(60F);
 		this.setBiomeType(EnumBiomeTypeZG.NETHER);
-		this.setBlocks(STONE.getBlock());
+		this.setBlocks(Blocks.SOUL_SAND);
 		this.enableSnow = false;
+		this.biomeDecor.generateNetherWarts = true;
+		this.biomeDecor.netherWartsPerChunk = 8;
 		this.stoneBlock = STONE.getBlock();
 	}
 }

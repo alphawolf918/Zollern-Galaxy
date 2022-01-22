@@ -51,6 +51,8 @@ import net.minecraftforge.event.terraingen.TerrainGen;
 import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.biomes.decorators.BiomeDecoratorKronos;
 import zollerngalaxy.util.BiomeUtils;
+import zollerngalaxy.worldgen.kronos.WorldGenFireZG;
+import zollerngalaxy.worldgen.kronos.WorldGenKronosDungeons;
 import zollerngalaxy.worldgen.mapgen.MapGenCavesZG;
 import zollerngalaxy.worldgen.mapgen.MapGenRavinesZG;
 import zollerngalaxy.worldgen.structures.villages.MapGenVillageZG;
@@ -89,6 +91,7 @@ public class ChunkProviderKronos extends ChunkProviderBase {
 	private final MapGenVillageZG villageGenerator = new MapGenVillageZG("Kronos", Blocks.NETHER_BRICK);
 	private MapGenMineshaft mineshaftGenerator = new MapGenMineshaft();
 	private final WorldGenFire fireFeature = new WorldGenFire();
+	private final WorldGenFireZG fireFeatureZG = new WorldGenFireZG();
 	private final WorldGenerator quartzGen = new WorldGenMinable(Blocks.QUARTZ_ORE.getDefaultState(), 14, BlockMatcher.forBlock(Blocks.NETHERRACK));
 	private final WorldGenerator magmaGen = new WorldGenMinable(Blocks.MAGMA.getDefaultState(), 33, BlockMatcher.forBlock(Blocks.NETHERRACK));
 	private final WorldGenGlowStone1 lightGemGen = new WorldGenGlowStone1();
@@ -433,18 +436,25 @@ public class ChunkProviderKronos extends ChunkProviderBase {
 		this.mineshaftGenerator.generateStructure(this.world, this.rand, new ChunkPos(x, z));
 		this.genNetherBridge.generateStructure(this.world, this.rand, chunkPos);
 		
+		// Lava
 		if (TerrainGen.populate(this, this.world, this.rand, x, z, false, PopulateChunkEvent.Populate.EventType.NETHER_LAVA)) {
 			for (int t = 0; t < 8; ++t) {
 				this.hellSpringGen.generate(this.world, this.rand, blockpos.add(this.rand.nextInt(16) + 8, this.rand.nextInt(120) + 4, this.rand.nextInt(16) + 8));
 			}
 		}
 		
+		// Fire
 		if (TerrainGen.populate(this, this.world, this.rand, x, z, false, PopulateChunkEvent.Populate.EventType.FIRE)) {
 			for (int i1 = 0; i1 < this.rand.nextInt(this.rand.nextInt(10) + 1) + 1; ++i1) {
 				this.fireFeature.generate(this.world, this.rand, blockpos.add(this.rand.nextInt(16) + 8, this.rand.nextInt(120) + 4, this.rand.nextInt(16) + 8));
 			}
+			
+			for (int i1 = 0; i1 < this.rand.nextInt(this.rand.nextInt(10) + 1) + 1; ++i1) {
+				this.fireFeatureZG.generate(this.world, this.rand, blockpos.add(this.rand.nextInt(16) + 8, this.rand.nextInt(120) + 4, this.rand.nextInt(16) + 8));
+			}
 		}
 		
+		// Glowstone
 		if (TerrainGen.populate(this, this.world, this.rand, x, z, false, PopulateChunkEvent.Populate.EventType.GLOWSTONE)) {
 			for (int j1 = 0; j1 < this.rand.nextInt(this.rand.nextInt(10) + 1); ++j1) {
 				this.lightGemGen.generate(this.world, this.rand, blockpos.add(this.rand.nextInt(16) + 8, this.rand.nextInt(120) + 4, this.rand.nextInt(16) + 8));
@@ -458,6 +468,7 @@ public class ChunkProviderKronos extends ChunkProviderBase {
 		ForgeEventFactory.onChunkPopulate(false, this, this.world, this.rand, x, z, false);
 		MinecraftForge.EVENT_BUS.post(new DecorateBiomeEvent.Pre(this.world, this.rand, new ChunkPos(x, z)));
 		
+		// Mushrooms
 		if (TerrainGen.decorate(this.world, this.rand, chunkPos, DecorateBiomeEvent.Decorate.EventType.SHROOM)) {
 			if (this.rand.nextBoolean()) {
 				this.brownMushroomFeature.generate(this.world, this.rand, blockpos.add(this.rand.nextInt(16) + 8, this.rand.nextInt(128), this.rand.nextInt(16) + 8));
@@ -468,6 +479,7 @@ public class ChunkProviderKronos extends ChunkProviderBase {
 			}
 		}
 		
+		// Quartz Ore
 		if (TerrainGen.generateOre(this.world, this.rand, quartzGen, blockpos, OreGenEvent.GenerateMinable.EventType.QUARTZ)) {
 			for (int l1 = 0; l1 < 16; ++l1) {
 				this.quartzGen.generate(this.world, this.rand, blockpos.add(this.rand.nextInt(16), this.rand.nextInt(108) + 10, this.rand.nextInt(16)));
@@ -476,12 +488,14 @@ public class ChunkProviderKronos extends ChunkProviderBase {
 		
 		int i2 = this.world.getSeaLevel() / 2 + 1;
 		
+		// Magma Rock
 		if (TerrainGen.populate(this, this.world, this.rand, x, z, false, PopulateChunkEvent.Populate.EventType.NETHER_MAGMA)) {
 			for (int u = 0; u < 4; ++u) {
 				this.magmaGen.generate(this.world, this.rand, blockpos.add(this.rand.nextInt(16), i2 - 5 + this.rand.nextInt(10), this.rand.nextInt(16)));
 			}
 		}
 		
+		// Lava
 		if (TerrainGen.populate(this, this.world, this.rand, x, z, false, PopulateChunkEvent.Populate.EventType.NETHER_LAVA2)) {
 			for (int j2 = 0; j2 < 16; ++j2) {
 				int offset = ForgeModContainer.fixVanillaCascading ? 8 : 0; // MC-117810
@@ -489,12 +503,19 @@ public class ChunkProviderKronos extends ChunkProviderBase {
 			}
 		}
 		
+		// Dungeons
+		if (TerrainGen.populate(this, this.world, this.rand, x, z, false, PopulateChunkEvent.Populate.EventType.DUNGEON)) {
+			for (int j2 = 0; j2 < 8; ++j2) {
+				int i3 = this.rand.nextInt(16) + 8;
+				int l3 = this.rand.nextInt(128);
+				int l1 = this.rand.nextInt(16) + 8;
+				(new WorldGenKronosDungeons()).generate(this.world, this.rand, blockpos.add(i3, l3, l1));
+			}
+		}
+		
 		biomegenbase.decorate(this.world, this.rand, new BlockPos(i, 0, j));
-		
 		MinecraftForge.EVENT_BUS.post(new DecorateBiomeEvent.Post(this.world, this.rand, blockpos));
-		
 		WorldEntitySpawner.performWorldGenSpawning(this.world, biomegenbase, i + 8, j + 8, 16, 16, this.rand);
-		
 		BlockFalling.fallInstantly = false;
 	}
 	

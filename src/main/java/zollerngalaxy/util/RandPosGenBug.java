@@ -147,8 +147,7 @@ public class RandPosGenBug {
 		} else {
 			BlockPos blockpos;
 			
-			for (blockpos = p_191378_0_.up(); blockpos.getY() < p_191378_1_.world.getHeight()
-					&& p_191378_1_.world.getBlockState(blockpos).getMaterial().isSolid(); blockpos = blockpos.up()) {
+			for (blockpos = p_191378_0_.up(); blockpos.getY() < p_191378_1_.world.getHeight() && p_191378_1_.world.getBlockState(blockpos).getMaterial().isSolid(); blockpos = blockpos.up()) {
 				;
 			}
 			

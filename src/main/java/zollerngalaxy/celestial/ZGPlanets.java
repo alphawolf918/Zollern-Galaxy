@@ -70,8 +70,8 @@ public class ZGPlanets {
 	private static float PANTHEON_Z = 0.0F + ConfigManagerZG.pantheonZOffset;
 	
 	// Coords (Olympus)
-	private static float OLYMPUS_X = (float) (((enableExtraGalaxies) ? 0.0F : 0.5) + ConfigManagerZG.olympusXOffset);
-	private static float OLYMPUS_Y = (float) (((enableExtraGalaxies) ? 0.0F : 1.5) + ConfigManagerZG.olympusYOffset);
+	private static float OLYMPUS_X = (float) (((enableExtraGalaxies) ? 0.0F : 0.9) + ConfigManagerZG.olympusXOffset);
+	private static float OLYMPUS_Y = (float) (((enableExtraGalaxies) ? 0.0F : 1.8) + ConfigManagerZG.olympusYOffset);
 	private static float OLYMPUS_Z = 0.0F + ConfigManagerZG.olympusZOffset;
 	
 	// Coords (Asgard)
@@ -324,9 +324,8 @@ public class ZGPlanets {
 		planetEden.setBodyGasses(EnumAtmosphericGas.NITROGEN, EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.ARGON, EnumAtmosphericGas.WATER, EnumAtmosphericGas.CO2);
 		planetEden.setAtmosphere();
 		planetEden.setBodyIcon("eden");
-		planetEden.setBiomeInfo(ZGBiomes.EDEN_GREEN_LANDS, ZGBiomes.EDEN_BLOOD_DESERT, ZGBiomes.EDEN_ROCK_MOUNTAINS, ZGBiomes.EDEN_TERRAN_VALLEY, ZGBiomes.EDEN_SNOWY_PLAINS,
-				ZGBiomes.EDEN_GOLDEN_MEADOW, ZGBiomes.EDEN_SWAMPLANDS, ZGBiomes.EDENWOOD_FOREST, ZGBiomes.EDEN_PARADISE_WOODS, ZGBiomes.EDEN_FLOWER_GARDEN, ZGBiomes.EDEN_CRATERS,
-				ZGBiomes.EDEN_SHROOM_HILLS, ZGBiomes.EDEN_OCEAN);
+		planetEden.setBiomeInfo(ZGBiomes.EDEN_GREEN_LANDS, ZGBiomes.EDEN_BLOOD_DESERT, ZGBiomes.EDEN_ROCK_MOUNTAINS, ZGBiomes.EDEN_TERRAN_VALLEY, ZGBiomes.EDEN_SNOWY_PLAINS, ZGBiomes.EDEN_GOLDEN_MEADOW, ZGBiomes.EDEN_SWAMPLANDS, ZGBiomes.EDENWOOD_FOREST, ZGBiomes.EDEN_PARADISE_WOODS, ZGBiomes.EDEN_FLOWER_GARDEN, ZGBiomes.EDEN_CRATERS, ZGBiomes.EDEN_SHROOM_HILLS,
+				ZGBiomes.EDEN_OCEAN);
 		totalPlanets++;
 		
 		// Planet Xathius
@@ -504,8 +503,7 @@ public class ZGPlanets {
 		planetCaligro.setWindLevel(60.58F);
 		planetCaligro.setDensity(100.32F);
 		planetCaligro.setHasRain(false);
-		planetCaligro.setBodyGasses(EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.WATER, EnumAtmosphericGas.NITROGEN, EnumAtmosphericGas.ARGON, EnumAtmosphericGas.METHANE,
-				EnumAtmosphericGas.HYDROGEN);
+		planetCaligro.setBodyGasses(EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.WATER, EnumAtmosphericGas.NITROGEN, EnumAtmosphericGas.ARGON, EnumAtmosphericGas.METHANE, EnumAtmosphericGas.HYDROGEN);
 		planetCaligro.setBodyIcon("caligro");
 		planetCaligro.setAtmosphere();
 		planetCaligro.setBiomeInfo(ZGBiomes.CALIGRO_UPSIDE_DOWN, ZGBiomes.CALIGRO_CREEPLANDS, ZGBiomes.CALIGRO_ROCKY_VEINS, ZGBiomes.CALIGRO_WITHERLANDS, ZGBiomes.CALIGRO_CORRUPTED_MESA);
@@ -574,8 +572,7 @@ public class ZGPlanets {
 		planetMetztli.setBodyGasses(EnumAtmosphericGas.NITROGEN, EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.ARGON, EnumAtmosphericGas.WATER);
 		planetMetztli.setBodyIcon("metztli");
 		planetMetztli.setAtmosphere();
-		planetMetztli.setBiomeInfo(ZGBiomes.METZTLI_HARRAN_PLAINS, ZGBiomes.METZTLI_HARRAN_DUNES, ZGBiomes.METZTLI_HARRAN_OCEAN, ZGBiomes.METZTLI_HARRAN_SWAMP, ZGBiomes.METZTLI_HARRAN_TUNDRA,
-				ZGBiomes.METZTLI_HARRAN_SHROOMS, ZGBiomes.METZTLI_HARRAN_CLAY_MESA, ZGBiomes.METZTLI_HARRAN_MARSH, ZGBiomes.METZTLI_HARRAN_FOREST, ZGBiomes.METZTLI_HARRAN_RED_DESERT,
+		planetMetztli.setBiomeInfo(ZGBiomes.METZTLI_HARRAN_PLAINS, ZGBiomes.METZTLI_HARRAN_DUNES, ZGBiomes.METZTLI_HARRAN_OCEAN, ZGBiomes.METZTLI_HARRAN_SWAMP, ZGBiomes.METZTLI_HARRAN_TUNDRA, ZGBiomes.METZTLI_HARRAN_SHROOMS, ZGBiomes.METZTLI_HARRAN_CLAY_MESA, ZGBiomes.METZTLI_HARRAN_MARSH, ZGBiomes.METZTLI_HARRAN_FOREST, ZGBiomes.METZTLI_HARRAN_RED_DESERT,
 				ZGBiomes.METZTLI_HARRAN_HILLS, ZGBiomes.METZTLI_HARRAN_CHERRY_FOREST, ZGBiomes.METZTLI_HARRAN_FRUIT_FOREST);
 		totalPlanets++;
 		
@@ -655,13 +652,14 @@ public class ZGPlanets {
 		if (ConfigManagerZG.planetUnreachableKronos || ConfigManagerZG.planetUnreachableAll) {
 			planetKronos.setDisableRockets();
 		}
-		planetKronos.setBodyTemperature(140.0F);
+		planetKronos.setBodyTemperature(160.0F);
 		planetKronos.setDensity(20.0F);
 		planetKronos.setWindLevel(0.0F);
 		planetKronos.setBodyGasses(EnumAtmosphericGas.NITROGEN, EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.ARGON, EnumAtmosphericGas.WATER);
 		planetKronos.setBreathable(true);
+		planetKronos.setHasRain(false);
 		planetKronos.setAtmosphere();
-		planetKronos.setBiomeInfo(ZGBiomes.KRONOS_BASE);
+		planetKronos.setBiomeInfo(ZGBiomes.KRONOS_BASE, ZGBiomes.KRONOS_SOUL_DESERT, ZGBiomes.KRONOS_BLACK_MOUNTAIN, ZGBiomes.KRONOS_DEATH_VALLEY, ZGBiomes.KRONOS_BLAZING_HILLS);
 		planetKronos.setBodyIcon("kronos");
 		totalPlanets++;
 		

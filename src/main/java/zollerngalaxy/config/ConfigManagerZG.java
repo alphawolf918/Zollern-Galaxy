@@ -448,8 +448,7 @@ public class ConfigManagerZG {
 		canEarthAnimalsSpawnOnEden = config.get(CTG_MISC, "Earth Animals Spawn On Eden", true, "Should Earth animals spawn on Eden? (default: true)").getBoolean();
 		
 		// Misc (Should Star Gates be disabled?)
-		disableStarGates = config.get(CTG_MISC, "Disable use of Star Gates", false,
-				"Set this to true if you want to ONLY access Zollern Galaxy planets using rockets. " + "WARNING: will not work without another add-on this way! (default: false)").getBoolean();
+		disableStarGates = config.get(CTG_MISC, "Disable use of Star Gates", false, "Set this to true if you want to ONLY access Zollern Galaxy planets using rockets. " + "WARNING: will not work without another add-on this way! (default: false)").getBoolean();
 		
 		hideUnusedStarSystems = config.get(CTG_MISC, "Hide Stars with no Planets", true, "Enable to see Stars that have no Planets yet. (default: true)").getBoolean();
 		
@@ -457,8 +456,7 @@ public class ConfigManagerZG {
 		enableMegaCreeperGriefing = config.get(CTG_MISC, "Enable Mega Creeper Griefing", true, "Set to false if you don't want Mega Creepers to destroy terrain. (default: true)").getBoolean();
 		
 		// Misc (Tempratures shown in fahrenheit or celsius?)
-		temperatureType = config.get(CTG_MISC, "[HUD DISPLAY] Temperature Type: Use Celsius instead of Fahrenheit", false, "Set this to true to show temperature in Celsius (default: false).")
-				.getBoolean();
+		temperatureType = config.get(CTG_MISC, "[HUD DISPLAY] Temperature Type: Use Celsius instead of Fahrenheit", false, "Set this to true to show temperature in Celsius (default: false).").getBoolean();
 		
 		// Whether or not to change contributor's in-game names
 		changeContributorNames = config.get(CTG_MISC, "Contributor name change", true, "Whether or not to change contributor in-game names to more recognized formats (default: true)").getBoolean();
@@ -467,16 +465,13 @@ public class ConfigManagerZG {
 		spawnGalaxyKnight = config.get(CTG_MISC, "Spawn Galaxy Knight", true, "Whether or not to allow Grey Aliens to summon Galaxy Knights when attacked (default: true)").getBoolean();
 		
 		// Make sure chests are on the ground or not. (ExistingEevee)
-		enableChestValidation = config.get(CTG_MISC, "Chest Validation", true, "Whether or not to validate chest spawns. " + "Disable if chest generation is causing a crash. (default: true)")
-				.getBoolean();
+		enableChestValidation = config.get(CTG_MISC, "Chest Validation", true, "Whether or not to validate chest spawns. " + "Disable if chest generation is causing a crash. (default: true)").getBoolean();
 		
 		// Should Extreme Mode be enabled? Significantly increases the mod's difficulty.
-		enableExtremeMode = config.get(CTG_MISC, "Enable Extreme Mode", false, "Toggle Extreme mode. " + "WARNING: This will SIGNIFICANTLY increase the mod's difficulty. (default: false)")
-				.getBoolean();
+		enableExtremeMode = config.get(CTG_MISC, "Enable Extreme Mode", false, "Toggle Extreme mode. " + "WARNING: This will SIGNIFICANTLY increase the mod's difficulty. (default: false)").getBoolean();
 		
 		// Make ZG's Alien Villagers stop going "HNNGH!!"
-		enableQuietVillagers = config.get(CTG_MISC, "Enable Quiet Alien Villagers", false,
-				"Enable to shut up at least the Zollern Galaxy Alien Villagers. NOTE: Does NOT affect Galacticraft's Alien Villagers. (default: false)").getBoolean();
+		enableQuietVillagers = config.get(CTG_MISC, "Enable Quiet Alien Villagers", false, "Enable to shut up at least the Zollern Galaxy Alien Villagers. NOTE: Does NOT affect Galacticraft's Alien Villagers. (default: false)").getBoolean();
 		
 		// Enable/Disable showing of mutant name tags
 		enableMutantNameTags = config.get(CTG_MISC, "Enable Mutant Name Tags", true, "Should Mutant Zombies show their name tags? (default: true)").getBoolean();
@@ -486,29 +481,24 @@ public class ConfigManagerZG {
 		
 		// Compat (Whether or not to use Thermal Foundation's Detabilized Redstone for the Red Sea
 		// in Oasis)
-		shouldOasisUseLiquidRedstone = config
-				.get(CTG_COMPAT, "Oasis uses Thermal Foundation's Destabilized Redstone", true, "Whether or not Oasis should use Detabilized Redstone for its Red Sea biome. (default: true)")
-				.getBoolean();
+		shouldOasisUseLiquidRedstone = config.get(CTG_COMPAT, "Oasis uses Thermal Foundation's Destabilized Redstone", true, "Whether or not Oasis should use Detabilized Redstone for its Red Sea biome. (default: true)").getBoolean();
 		
 		// Compat (Whether or not Thermal Foundation Pulverizers should
 		// give extra
 		// (4) instead of normal (2))
-		enableExtraPulverizerOutput = config.get(CTG_COMPAT, "Enable extra Pulverizer Output", true,
-				"Whether or not Zollern Galaxy ores give extra dust from Thermal Foundation's Pulverizers. " + "Disable if it causes compatibility issues (default: true).").getBoolean();
+		enableExtraPulverizerOutput = config.get(CTG_COMPAT, "Enable extra Pulverizer Output", true, "Whether or not Zollern Galaxy ores give extra dust from Thermal Foundation's Pulverizers. " + "Disable if it causes compatibility issues (default: true).").getBoolean();
 		
 		// Compat (Should Fueltonium register as Uranium?)
 		fueltoniumIsUranium = config.get(CTG_COMPAT, "Fueltonium counts as Uranium", true, "Should Fueltonium register as Uranium? (default: true)").getBoolean();
 		
 		// Compat (Should Cobalt register in the Ore Dictionary?)
-		registerCobaltOreDict = config
-				.get(CTG_COMPAT, "Register Cobalt in Ore Dictionary", true, "Set this to false if there are any problems " + " with mods like Tinker's Construct. (default: true)").getBoolean();
+		registerCobaltOreDict = config.get(CTG_COMPAT, "Register Cobalt in Ore Dictionary", true, "Set this to false if there are any problems " + " with mods like Tinker's Construct. (default: true)").getBoolean();
 		
 		// Compat (Should Zinc register in the Ore Dictionary?)
 		registerZincOreDict = config.get(CTG_COMPAT, "Register Zinc in Ore Dictionary", true, "Set this to false if there are any problems " + " with other mods. (default: true)").getBoolean();
 		
 		// Compat (Should intergration with Planet Progressions be enabled?
-		enablePlanetProgressionsCompat = config.get(CTG_COMPAT, "Enable Planet Progressions compatibility", true, "If Planet Progressions is installed, you will need to discover the Planet or Moon "
-				+ " before you can travel to it via Star Gates. Set this to false to disable that. (default: true)").getBoolean();
+		enablePlanetProgressionsCompat = config.get(CTG_COMPAT, "Enable Planet Progressions compatibility", true, "If Planet Progressions is installed, you will need to discover the Planet or Moon " + " before you can travel to it via Star Gates. Set this to false to disable that. (default: true)").getBoolean();
 		
 		// Compat (Enable Radium Material for Tinker's Construct
 		useTConRadium = config.get(CTG_COMPAT, "[TCONSTRUCT] Enable Radium Material", true, "Set to false to disable (will cause issues with More TCon if true). (default: true)").getBoolean();
@@ -518,21 +508,16 @@ public class ConfigManagerZG {
 		
 		// Compat (Should flying be enabled and then disabled when applying and unapplying Radiance
 		// armor?
-		enableRadianceFlying = config.get(CTG_COMPAT, "Enable Radiance Flying In Survival", true, "Toggle whether a full set of Radiance armor allows the Player to fly in Survival. "
-				+ "Set to false to disable if this causes mod conflicts, compromises the safety of your server, " + "or if you just hate fun. (default: true)").getBoolean();
+		enableRadianceFlying = config.get(CTG_COMPAT, "Enable Radiance Flying In Survival", true, "Toggle whether a full set of Radiance armor allows the Player to fly in Survival. " + "Set to false to disable if this causes mod conflicts, compromises the safety of your server, " + "or if you just hate fun. (default: true)").getBoolean();
 		
 		// Compat (Should increased step height be enabled when using certain armor?)
-		enableStepHeight = config
-				.get(CTG_COMPAT, "Enable Increased Step Height", true, "Toggle whether Zollernium armor increases step height. Disable if there are compatability issues. (default: true)")
-				.getBoolean();
+		enableStepHeight = config.get(CTG_COMPAT, "Enable Increased Step Height", true, "Toggle whether Zollernium armor increases step height. Disable if there are compatability issues. (default: true)").getBoolean();
 		
 		// Compat (Extra Planets)
-		enableExtraPlanetsCompat = config.get(CTG_COMPAT, "Enable Extra Planets Compatibility", true, "If enabled, these mods will work together. Disable if needed or desired. (default: true)")
-				.getBoolean();
+		enableExtraPlanetsCompat = config.get(CTG_COMPAT, "Enable Extra Planets Compatibility", true, "If enabled, these mods will work together. Disable if needed or desired. (default: true)").getBoolean();
 		
 		// Compat
-		enableExtremeReactorsCompat = config
-				.get(CTG_COMPAT, "Enable Extreme Reactors Compatibility", true, "If enabled, some of this mod's metals and fluids can be used in Turbines and Reactors. (default: true)").getBoolean();
+		enableExtremeReactorsCompat = config.get(CTG_COMPAT, "Enable Extreme Reactors Compatibility", true, "If enabled, some of this mod's metals and fluids can be used in Turbines and Reactors. (default: true)").getBoolean();
 		
 		// Customization Options
 		kriffonLavaLakesPerChunk = config.get(CTG_CUSTOMS, "Kriffon Lava Lakes Per Chunk", 4, "The amount of Lava Lakes to generate per chunk on planet Kriffon. (default: 4)").getInt();
@@ -542,19 +527,15 @@ public class ConfigManagerZG {
 		outpostGenChance = config.get(CTG_CUSTOMS, "Outpost Gen Percentage", 5, "The chance (out of 100) for Outpost buildings to generate on planets. (default: 5)").getInt();
 		windBlowChance = config.get(CTG_CUSTOMS, "Wind Blow Chance", 25, "Percentage chance of how often storm wind blows. (default: 25)").getInt();
 		enableWindBlowEvent = config.get(CTG_CUSTOMS, "Enable Wind Blowing Event", true, "Allow the wind blowing event to move Players around on Vortex (default: true). ").getBoolean();
-		enableAlienVillagerSpawn = config.get(CTG_CUSTOMS, "Enable Alien Villager Spawn", true,
-				"Control whether Alien Villagers can spawn randomly outside of Alien Villages; disable if they're causing lag or being annoying. (default: true). ").getBoolean();
+		enableAlienVillagerSpawn = config.get(CTG_CUSTOMS, "Enable Alien Villager Spawn", true, "Control whether Alien Villagers can spawn randomly outside of Alien Villages; disable if they're causing lag or being annoying. (default: true). ").getBoolean();
 		alienVillagerMinSpawnRate = config.get(CTG_CUSTOMS, "Alien Villager Spawn Rate Min", 0, "Min rate for Alien Villagers to spawn naturally. (default: 0)").getInt();
 		alienVillagerMaxSpawnRate = config.get(CTG_CUSTOMS, "Alien Villager Spawn Rate Max", 1, "Max rate for Alien Villagers to spawn naturally. (default: 1)").getInt();
-		enableAlienVillagerMutation = config.get(CTG_CUSTOMS, "Enable Alien Villagers To Mutate", true, "Set whether or not Alien Villagers can mutate into Zombies on Metztli (default: true). ")
-				.getBoolean();
+		enableAlienVillagerMutation = config.get(CTG_CUSTOMS, "Enable Alien Villagers To Mutate", true, "Set whether or not Alien Villagers can mutate into Zombies on Metztli (default: true). ").getBoolean();
 		alienVillagerSpawnChance = config.get(CTG_CUSTOMS, "Alien Villager Ambient Spawn Chance", 1, "Spawn chance of all Alien Villager types, affects all planets. (default: 1)").getInt();
 		enableChargiumLakesOnVortex = config.get(CTG_CUSTOMS, "Enable Chargium Lakes on Vortex", true, "Set to false to make Chargium Lakes not spawn on Vortex (default: true). ").getBoolean();
 		enableWandererSpawn = config.get(CTG_CUSTOMS, "Enable Alien Wanderer Spawn", true, "Set to false to disable Wanderer spawn (default: true). ").getBoolean();
 		enableWandererHouses = config.get(CTG_CUSTOMS, "Enable Alien Wanderer Houses", false, "Set to true to enable Wanderers to spawn houses (default: false). ").getBoolean();
-		disableVexbotRadiolaria = config
-				.get(CTG_CUSTOMS, "Disable Vexbots spawning Radiolaria (White Lava) on death.", false, "Set to true to prevent Vexbots from spawning White Lava blocks on death (default: false). ")
-				.getBoolean();
+		disableVexbotRadiolaria = config.get(CTG_CUSTOMS, "Disable Vexbots spawning Radiolaria (White Lava) on death.", false, "Set to true to prevent Vexbots from spawning White Lava blocks on death (default: false). ").getBoolean();
 		enableExplosiveOres = config.get(CTG_CUSTOMS, "Enable Explosive Ores", true, "Disable to prevent ores from exploding. (default: true). ").getBoolean();
 		enablePotionEffectOres = config.get(CTG_CUSTOMS, "Enable Potion Effect Ores", true, "Disable to prevent ores from giving potion effects. (default: true). ").getBoolean();
 		
@@ -583,13 +564,11 @@ public class ConfigManagerZG {
 		//
 		
 		// Control unreachable planets (by rockets).
-		planetUnreachableAll = config.get(CTG_CUSTOMS, "Disable Rockets For All Planets", false, "Setting this to true disallows rocket travel to all Zollern Galaxy planets. "
-				+ "Note that when this is enabled, it will override the planet-by-planet settings, " + "with the exception of Zollus. (default: false)").getBoolean();
+		planetUnreachableAll = config.get(CTG_CUSTOMS, "Disable Rockets For All Planets", false, "Setting this to true disallows rocket travel to all Zollern Galaxy planets. " + "Note that when this is enabled, it will override the planet-by-planet settings, " + "with the exception of Zollus. (default: false)").getBoolean();
 		
 		// Control whether or not explosive blocks should cause other explosive blocks to explode in
 		// a chain reaction
-		shouldExplosiveBlocksExplodeOtherBlocks = config.get(CTG_CUSTOMS, "Explosive Blocks Cause Chain Reaction", true,
-				"Disable this to prevent explosive blocks blowing up other explosive blocks when broken, " + "which can cause a chain reaction. (default: true)").getBoolean();
+		shouldExplosiveBlocksExplodeOtherBlocks = config.get(CTG_CUSTOMS, "Explosive Blocks Cause Chain Reaction", true, "Disable this to prevent explosive blocks blowing up other explosive blocks when broken, " + "which can cause a chain reaction. (default: true)").getBoolean();
 		
 		planetUnreachableZollus = config.get(CTG_CUSTOMS, "Disable Rockets For Planet Zollus", false, "Disable rocket travel for this planet. (default: false)").getBoolean();
 		planetUnreachableKriffon = config.get(CTG_CUSTOMS, "Disable Rockets For Planet Kriffon", false, "Disable rocket travel for this planet. (default: false)").getBoolean();

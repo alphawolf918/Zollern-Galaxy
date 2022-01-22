@@ -18,6 +18,12 @@ Zollern Galaxy v2.0.38
     - Ore explosions can now be turned off.
     - Ore potion effects can now be turned off.
 * If Extreme Mode is enabled, ores with explosions will be much stronger (when enabled).
+* Added Kronos, the Hell planet. Reminiscent of the Nether, but with unique touches.
+    - The ores here have a high chance to explode (unless Enable Explosive Ores is disabled in the config).
+* Added the Kronos Villager.
+    - This Villager variant is immune to fire!
+* Added the Helleton mob.
+    - Similar to the Wither Skeleton, but a fire version. Drown it with water!
 * 
 
 [CHANGES]
@@ -29,4 +35,5 @@ Zollern Galaxy v2.0.38
 [FIXES]
 * Fixed some gem ores not actually dropping gems.
 * Fixed Tlaloc having the wrong tier.
+* Fixed *potential* requirement of having Thermal Foundation installed, this will no longer be an issue.
 * 
