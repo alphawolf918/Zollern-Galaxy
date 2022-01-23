@@ -40,6 +40,7 @@ public abstract class BiomeKronosBase extends BiomeSpace {
 	protected static final IBlockState DIRT = ZGBlocks.netherDirt.getDefaultState();
 	protected static final IBlockState BLAZE_ROCK = ZGBlocks.blazeRock.getDefaultState();
 	protected static final IBlockState LAVA = Blocks.LAVA.getDefaultState();
+	protected static final IBlockState SOUL_SAND = Blocks.SOUL_SAND.getDefaultState();
 	
 	protected static final int SEA_LEVEL = ChunkProviderKronos.SEA_LEVEL;
 	protected static final int SEA_FLOOR_LEVEL = (SEA_LEVEL - 21);

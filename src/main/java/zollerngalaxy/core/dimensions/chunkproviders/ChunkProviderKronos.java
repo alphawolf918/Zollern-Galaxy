@@ -59,9 +59,9 @@ import zollerngalaxy.worldgen.structures.villages.MapGenVillageZG;
 
 public class ChunkProviderKronos extends ChunkProviderBase {
 	
-	public static final IBlockState AIR = Blocks.AIR.getDefaultState();
-	public static final IBlockState NETHERRACK = Blocks.NETHERRACK.getDefaultState();
-	public static final IBlockState LAVA = Blocks.LAVA.getDefaultState();
+	protected static final IBlockState AIR = Blocks.AIR.getDefaultState();
+	protected static final IBlockState NETHERRACK = Blocks.NETHERRACK.getDefaultState();
+	protected static final IBlockState LAVA = Blocks.LAVA.getDefaultState();
 	
 	public static final double CHUNK_HEIGHT = 64.0D;
 	public static final int SEA_LEVEL = 47;
@@ -88,7 +88,7 @@ public class ChunkProviderKronos extends ChunkProviderBase {
 	private MapGenCavesZG caveGenerator2 = new MapGenCavesZG(NETHERRACK.getBlock());
 	private MapGenCavesZG caveGenerator3 = new MapGenCavesZG(NETHERRACK.getBlock());
 	private final MapGenRavinesZG ravineGenerator = new MapGenRavinesZG(NETHERRACK.getBlock());
-	private final MapGenVillageZG villageGenerator = new MapGenVillageZG("Kronos", Blocks.NETHER_BRICK);
+	private final MapGenVillageZG villageGenerator = new MapGenVillageZG("Kronos", Blocks.RED_NETHER_BRICK);
 	private MapGenMineshaft mineshaftGenerator = new MapGenMineshaft();
 	private final WorldGenFire fireFeature = new WorldGenFire();
 	private final WorldGenFireZG fireFeatureZG = new WorldGenFireZG();

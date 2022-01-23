@@ -183,6 +183,7 @@ public class ConfigManagerZG {
 	public static boolean disableVexbotRadiolaria;
 	public static boolean enableExplosiveOres;
 	public static boolean enablePotionEffectOres;
+	public static boolean enableOilLakes;
 	
 	/////////////////////////////////////////////////
 	public static double meteorGenZollus;
@@ -538,6 +539,7 @@ public class ConfigManagerZG {
 		disableVexbotRadiolaria = config.get(CTG_CUSTOMS, "Disable Vexbots spawning Radiolaria (White Lava) on death.", false, "Set to true to prevent Vexbots from spawning White Lava blocks on death (default: false). ").getBoolean();
 		enableExplosiveOres = config.get(CTG_CUSTOMS, "Enable Explosive Ores", true, "Disable to prevent ores from exploding. (default: true). ").getBoolean();
 		enablePotionEffectOres = config.get(CTG_CUSTOMS, "Enable Potion Effect Ores", true, "Disable to prevent ores from giving potion effects. (default: true). ").getBoolean();
+		enableOilLakes = config.get(CTG_CUSTOMS, "Enable Oil Lake Generation on ZG Planets", true, "Enables the generation of lakes of Galacticraft's Crude Oil to generate on planets and moons from this mod. (default: true). ").getBoolean();
 		
 		//
 		//

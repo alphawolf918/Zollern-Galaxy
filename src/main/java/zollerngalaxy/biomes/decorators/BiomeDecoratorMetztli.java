@@ -8,6 +8,8 @@
 package zollerngalaxy.biomes.decorators;
 
 import java.util.Random;
+import micdoodle8.mods.galacticraft.core.GCBlocks;
+import micdoodle8.mods.galacticraft.core.event.EventHandlerGC;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFlower;
 import net.minecraft.block.BlockLeaves;
@@ -92,6 +94,7 @@ public class BiomeDecoratorMetztli extends BiomeDecoratorZG {
 	
 	public int waterLakesPerChunk = 3;
 	public int lavaLakesPerChunk = 4;
+	public int oilPerChunk = 3;
 	public int waterLilyPerChunk = 4;
 	public int tallGrassPerChunk = 6;
 	public int treesPerChunk = 4;
@@ -121,6 +124,7 @@ public class BiomeDecoratorMetztli extends BiomeDecoratorZG {
 	public boolean generateFerns = true;
 	public boolean generateJungleTrees = false;
 	public boolean generateMushrooms = true;
+	public boolean generateOil = true;
 	
 	public BiomeDecoratorMetztli() {
 		this.dirtGen = new WorldGenMinableZG(Blocks.DIRT, GRASS, EnumOreGenZG.DIRT);
@@ -214,6 +218,17 @@ public class BiomeDecoratorMetztli extends BiomeDecoratorZG {
 			}
 		}
 		
+		// Oil Lakes
+		if (TerrainGen.decorate(world, rand, forgeChunkPos, DecorateBiomeEvent.Decorate.EventType.CUSTOM)) {
+			if (this.generateOil && this.oilPerChunk > 0 && ConfigManagerZG.enableOilLakes) {
+				for (int i = 0; i < this.oilPerChunk; ++i) {
+					y = rand.nextInt(rand.nextInt(genY) + 8);
+					(new WorldGenLakesZG(GCBlocks.crudeOil, BLOCK_STONE)).generate(world, rand, this.chunkPos.add(x, y, z));
+					EventHandlerGC.generateOil(world, rand, x, z, false);
+				}
+			}
+		}
+		
 		// Tall Grass
 		if (this.generateTallGrass && this.tallGrassPerChunk > 0) {
 			for (int i = 0; i < this.tallGrassPerChunk + 4; ++i) {
@@ -286,13 +301,11 @@ public class BiomeDecoratorMetztli extends BiomeDecoratorZG {
 					}
 					
 					IBlockState JUNGLE_LOG = Blocks.LOG.getDefaultState().withProperty(BlockOldLog.VARIANT, BlockPlanks.EnumType.JUNGLE);
-					IBlockState JUNGLE_LEAF = Blocks.LEAVES.getDefaultState().withProperty(BlockOldLeaf.VARIANT, BlockPlanks.EnumType.JUNGLE).withProperty(BlockLeaves.CHECK_DECAY,
-							Boolean.valueOf(false));
+					IBlockState JUNGLE_LEAF = Blocks.LEAVES.getDefaultState().withProperty(BlockOldLeaf.VARIANT, BlockPlanks.EnumType.JUNGLE).withProperty(BlockLeaves.CHECK_DECAY, Boolean.valueOf(false));
 					IBlockState OAK_LEAF = Blocks.LEAVES.getDefaultState().withProperty(BlockOldLeaf.VARIANT, BlockPlanks.EnumType.OAK).withProperty(BlockLeaves.CHECK_DECAY, Boolean.valueOf(false));
 					
 					if (rand.nextInt(100) <= 85) {
-						this.jungleTreeGen = rand.nextInt(2) == 0 ? new WorldGenMegaJungle(false, 10, 20, JUNGLE_LOG, JUNGLE_LEAF)
-								: new WorldGenTrees(false, 4 + rand.nextInt(7), JUNGLE_LOG, JUNGLE_LEAF, true);
+						this.jungleTreeGen = rand.nextInt(2) == 0 ? new WorldGenMegaJungle(false, 10, 20, JUNGLE_LOG, JUNGLE_LEAF) : new WorldGenTrees(false, 4 + rand.nextInt(7), JUNGLE_LOG, JUNGLE_LEAF, true);
 						this.jungleTreeGen.generate(world, rand, this.chunkPos.add(x, y, z));
 					}
 				}

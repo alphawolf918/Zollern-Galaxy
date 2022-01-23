@@ -318,6 +318,37 @@
       ],
       "subtitle":"zollerngalaxy.subtitle.vexbot.die"
    },
+   "mob.bloodworm.say":{
+	   "category":"master",
+	   "sounds":[
+		 "zollerngalaxy:mob/bloodworm/say"
+	   ],
+	   "subtitle":"zollerngalaxy.subtitle.bloodworm.say"
+   },
+   "mob.bloodworm.step":{
+	   "category":"master",
+	   "sounds":[
+		 "zollerngalaxy:mob/bloodworm/step1",
+		 "zollerngalaxy:mob/bloodworm/step2",
+		 "zollerngalaxy:mob/bloodworm/step3",
+		 "zollerngalaxy:mob/bloodworm/step4"
+	   ],
+	   "subtitle":"zollerngalaxy.subtitle.bloodworm.step"
+   },
+   "mob.bloodworm.hurt":{
+	   "category":"master",
+	   "sounds":[
+		 "zollerngalaxy:mob/bloodworm/hurt"
+	   ],
+	   "subtitle":"zollerngalaxy.subtitle.bloodworm.hurt"
+   },
+   "mob.bloodworm.death":{
+	   "category":"master",
+	   "sounds":[
+		 "zollerngalaxy:mob/bloodworm/death"
+	   ],
+	   "subtitle":"zollerngalaxy.subtitle.bloodworm.death"
+   },
    "dig.xeno":{
       "category":"master",
       "sounds":[

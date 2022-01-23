@@ -24,12 +24,15 @@ Zollern Galaxy v2.0.38
     - This Villager variant is immune to fire!
 * Added the Helleton mob.
     - Similar to the Wither Skeleton, but a fire version. Drown it with water!
+* Added a config option to disable Crude Oil lakes generating on ZG planets.
+* Added the Bloodworm mob to Perdita.
 * 
 
 [CHANGES]
 * Dough cooking has been changed to maximize Bread output.
     - One piece of raw Dough gives 4 Cooked Dough pieces.
 * Slightly increased chance for fruit to drop from applicable trees.
+* Crude Oil lakes now generate on Metztli unless disabled in the config.
 * 
 
 [FIXES]

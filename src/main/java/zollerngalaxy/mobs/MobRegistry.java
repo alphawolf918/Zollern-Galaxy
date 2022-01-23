@@ -18,6 +18,7 @@ import zollerngalaxy.lib.ZGInfo;
 import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.mobs.entities.EntityArcon;
 import zollerngalaxy.mobs.entities.EntityBladeFish;
+import zollerngalaxy.mobs.entities.EntityBloodWorm;
 import zollerngalaxy.mobs.entities.EntityBlubberFish;
 import zollerngalaxy.mobs.entities.EntityEdenCow;
 import zollerngalaxy.mobs.entities.EntityFacehugger;
@@ -263,6 +264,9 @@ public class MobRegistry {
 		
 		// Golden Vexbot
 		registerEntity("vexbotgold", EntityVexBotGold.class, entityId++, 0xffff00, 0xbe0000);
+		
+		// Blood Worm
+		registerEntity("bloodworm", EntityBloodWorm.class, entityId++, 0x8b008b, 0x8b008b);
 		
 		ZGHelper.Log("Loaded a total of " + totalMobs + " new mobs.");
 	}

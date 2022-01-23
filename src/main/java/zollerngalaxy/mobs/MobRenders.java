@@ -12,6 +12,7 @@ import net.minecraftforge.fml.client.registry.IRenderFactory;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import zollerngalaxy.mobs.entities.EntityArcon;
 import zollerngalaxy.mobs.entities.EntityBladeFish;
+import zollerngalaxy.mobs.entities.EntityBloodWorm;
 import zollerngalaxy.mobs.entities.EntityBlubberFish;
 import zollerngalaxy.mobs.entities.EntityEdenCow;
 import zollerngalaxy.mobs.entities.EntityFacehugger;
@@ -65,6 +66,7 @@ import zollerngalaxy.mobs.entities.zombiemutations.EntitySeeker;
 import zollerngalaxy.mobs.entities.zombiemutations.EntityVolatile;
 import zollerngalaxy.mobs.renders.RenderArcon;
 import zollerngalaxy.mobs.renders.RenderBladeFish;
+import zollerngalaxy.mobs.renders.RenderBloodWorm;
 import zollerngalaxy.mobs.renders.RenderBlubberFish;
 import zollerngalaxy.mobs.renders.RenderFacehugger;
 import zollerngalaxy.mobs.renders.RenderFaceless;
@@ -195,6 +197,7 @@ public final class MobRenders {
 		MobRenders.renderMob(EntityGhoul.class, RenderGhoul::new);
 		MobRenders.renderMob(EntityFacehugger.class, RenderFacehugger::new);
 		MobRenders.renderMob(EntityXenomorph.class, RenderXenomorph::new);
+		MobRenders.renderMob(EntityBloodWorm.class, RenderBloodWorm::new);
 	}
 	
 	private static void renderBosses() {

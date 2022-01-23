@@ -41,9 +41,11 @@ public class BiomeDecoratorKronos extends BiomeDecoratorZG {
 	private static final Block NETHER_BRICK = Blocks.NETHER_BRICK;
 	private static final Block GLOWSTONE = Blocks.GLOWSTONE;
 	private static final Block LAVA = Blocks.LAVA;
+	private static final Block GRAVEL = Blocks.GRAVEL;
 	
 	private WorldGenerator dirtGen;
 	private WorldGenerator sandGen;
+	private WorldGenerator gravelGen;
 	private WorldGenerator obsidianGen;
 	private WorldGenerator coalGen;
 	private WorldGenerator fueltoniumGen;
@@ -88,6 +90,7 @@ public class BiomeDecoratorKronos extends BiomeDecoratorZG {
 	public BiomeDecoratorKronos() {
 		this.dirtGen = new WorldGenMinableZG(ZGBlocks.netherDirt, NETHERRACK, EnumOreGenZG.DIRT);
 		this.sandGen = new WorldGenMinableZG(SOUL_SAND, NETHERRACK, EnumOreGenZG.SAND);
+		this.gravelGen = new WorldGenMinableZG(GRAVEL, NETHERRACK, EnumOreGenZG.SAND);
 		this.obsidianGen = new WorldGenMinableZG(OBSIDIAN, NETHERRACK, EnumOreGenZG.OBSIDIAN);
 		this.coalGen = new WorldGenMinableZG(ZGBlocks.netherCoalOre, NETHERRACK, EnumOreGenZG.COAL);
 		this.fueltoniumGen = new WorldGenMinableZG(ZGBlocks.netherFueltoniumOre, NETHERRACK, EnumOreGenZG.FUELTONIUM);
@@ -126,6 +129,7 @@ public class BiomeDecoratorKronos extends BiomeDecoratorZG {
 		//
 		EnumOreGenZG.DIRT.setMaxHeight(128);
 		EnumOreGenZG.SAND.setMaxHeight(128);
+		EnumOreGenZG.GRAVEL.setMaxHeight(128);
 		EnumOreGenZG.OBSIDIAN.setMaxHeight(128);
 		EnumOreGenZG.COAL.setMaxHeight(128);
 		EnumOreGenZG.FUELTONIUM.setMaxHeight(128);
@@ -151,6 +155,8 @@ public class BiomeDecoratorKronos extends BiomeDecoratorZG {
 		
 		this.generateOre(this.dirtGen, EnumOreGenZG.DIRT, world, rand);
 		this.generateOre(this.sandGen, EnumOreGenZG.SAND, world, rand);
+		this.generateOre(this.gravelGen, EnumOreGenZG.SAND, world, rand);
+		this.generateOre(this.obsidianGen, EnumOreGenZG.SAND, world, rand);
 		this.generateOre(this.coalGen, EnumOreGenZG.COAL, world, rand);
 		this.generateOre(this.fueltoniumGen, EnumOreGenZG.FUELTONIUM, world, rand);
 		this.generateOre(this.ironGen, EnumOreGenZG.IRON, world, rand);
@@ -198,7 +204,7 @@ public class BiomeDecoratorKronos extends BiomeDecoratorZG {
 				y = rand.nextInt(rand.nextInt(genY) + 8);
 			}
 			
-			if (rand.nextInt(100) <= 50 && rand.nextInt(3) == 0) {
+			if (rand.nextInt(100) <= 50 && rand.nextInt(2) == 0) {
 				(new WorldGenLakesZG(OBSIDIAN, NETHERRACK)).generate(world, rand, this.chunkPos.add(x, y, z));
 			}
 		}

@@ -652,10 +652,10 @@ public class ZGPlanets {
 		if (ConfigManagerZG.planetUnreachableKronos || ConfigManagerZG.planetUnreachableAll) {
 			planetKronos.setDisableRockets();
 		}
-		planetKronos.setBodyTemperature(160.0F);
-		planetKronos.setDensity(20.0F);
+		planetKronos.setBodyTemperature(260.0F);
+		planetKronos.setDensity(10.0F);
 		planetKronos.setWindLevel(0.0F);
-		planetKronos.setBodyGasses(EnumAtmosphericGas.NITROGEN, EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.ARGON, EnumAtmosphericGas.WATER);
+		planetKronos.setBodyGasses(EnumAtmosphericGas.NITROGEN, EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.ARGON, EnumAtmosphericGas.WATER, EnumAtmosphericGas.METHANE);
 		planetKronos.setBreathable(true);
 		planetKronos.setHasRain(false);
 		planetKronos.setAtmosphere();

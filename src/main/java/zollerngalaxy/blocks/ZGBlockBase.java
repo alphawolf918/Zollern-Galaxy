@@ -23,6 +23,7 @@ import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Explosion;
@@ -60,6 +61,8 @@ public class ZGBlockBase extends Block implements ISingleZGBlockRender, IJSONBlo
 	protected boolean hasInfo = false;
 	protected boolean shouldJSONIgnore = false;
 	protected boolean isSolidColor = true;
+	protected boolean hasParticles = false;
+	protected EnumParticleTypes particleType = EnumParticleTypes.SMOKE_NORMAL;
 	protected String[] blockInfo;
 	protected static String name;
 	protected int harvestLvl = EnumHarvestLevelZG.DIAMOND.getHarvestLevel();
@@ -73,6 +76,7 @@ public class ZGBlockBase extends Block implements ISingleZGBlockRender, IJSONBlo
 		this.setHardResist(hardResist);
 		this.setSoundType(blockSound);
 		this.setBlockType(blockType);
+		this.setTickRandomly(true);
 		this.translucent = false;
 		
 		if (!this.shouldJSONIgnore()) {
@@ -377,5 +381,74 @@ public class ZGBlockBase extends Block implements ISingleZGBlockRender, IJSONBlo
 	@Override
 	public boolean isTerraformable(World world, BlockPos pos) {
 		return true;
+	}
+	
+	public Block setHasParticles(boolean hasParticlesIn) {
+		this.hasParticles = hasParticlesIn;
+		return this;
+	}
+	
+	public Block setHasParticles(boolean hasParticlesIn, EnumParticleTypes particleTypeIn) {
+		this.setHasParticles(hasParticlesIn);
+		this.particleType = particleTypeIn;
+		return this;
+	}
+	
+	public boolean getHasParticles() {
+		return this.hasParticles;
+	}
+	
+	@Override
+	@SideOnly(Side.CLIENT)
+	public void randomDisplayTick(IBlockState stateIn, World worldIn, BlockPos pos, Random rand) {
+		if (this.getHasParticles()) {
+			this.spawnParticles(worldIn, pos);
+		}
+	}
+	
+	@Override
+	public int tickRate(World worldIn) {
+		return 30;
+	}
+	
+	private void spawnParticles(World worldIn, BlockPos pos) {
+		if (this.getHasParticles()) {
+			Random random = worldIn.rand;
+			double d0 = 0.0625D;
+			
+			for (int i = 0; i < 6; ++i) {
+				double d1 = pos.getX() + random.nextFloat();
+				double d2 = pos.getY() + random.nextFloat();
+				double d3 = pos.getZ() + random.nextFloat();
+				
+				if (i == 0 && !worldIn.getBlockState(pos.up()).isOpaqueCube()) {
+					d2 = pos.getY() + 0.0625D + 1.0D;
+				}
+				
+				if (i == 1 && !worldIn.getBlockState(pos.down()).isOpaqueCube()) {
+					d2 = pos.getY() - 0.0625D;
+				}
+				
+				if (i == 2 && !worldIn.getBlockState(pos.south()).isOpaqueCube()) {
+					d3 = pos.getZ() + 0.0625D + 1.0D;
+				}
+				
+				if (i == 3 && !worldIn.getBlockState(pos.north()).isOpaqueCube()) {
+					d3 = pos.getZ() - 0.0625D;
+				}
+				
+				if (i == 4 && !worldIn.getBlockState(pos.east()).isOpaqueCube()) {
+					d1 = pos.getX() + 0.0625D + 1.0D;
+				}
+				
+				if (i == 5 && !worldIn.getBlockState(pos.west()).isOpaqueCube()) {
+					d1 = pos.getX() - 0.0625D;
+				}
+				
+				if (d1 < pos.getX() || d1 > pos.getX() + 1 || d2 < 0.0D || d2 > pos.getY() + 1 || d3 < pos.getZ() || d3 > pos.getZ() + 1) {
+					worldIn.spawnParticle(EnumParticleTypes.REDSTONE, d1, d2, d3, 0.0D, 0.0D, 0.0D);
+				}
+			}
+		}
 	}
 }
