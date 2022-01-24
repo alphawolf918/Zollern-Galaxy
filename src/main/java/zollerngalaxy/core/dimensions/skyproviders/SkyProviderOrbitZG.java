@@ -110,14 +110,14 @@ public class SkyProviderOrbitZG extends SkyProviderOrbit {
 		float var5 = (float) var2.z;
 		float var8;
 		
-		if (this.minecraft.gameSettings.anaglyph) {
-			final float var6 = (var3 * 30.0F + var4 * 59.0F + var5 * 11.0F) / 100.0F;
-			final float var7 = (var3 * 30.0F + var4 * 70.0F) / 100.0F;
-			var8 = (var3 * 30.0F + var5 * 70.0F) / 100.0F;
-			var3 = var6;
-			var4 = var7;
-			var5 = var8;
-		}
+		// if (this.minecraft.gameSettings.anaglyph) {
+		// final float var6 = (var3 * 30.0F + var4 * 59.0F + var5 * 11.0F) / 100.0F;
+		// final float var7 = (var3 * 30.0F + var4 * 70.0F) / 100.0F;
+		// var8 = (var3 * 30.0F + var5 * 70.0F) / 100.0F;
+		// var3 = var6;
+		// var4 = var7;
+		// var5 = var8;
+		// }
 		
 		GL11.glColor3f(var3, var4, var5);
 		final Tessellator var23 = Tessellator.getInstance();

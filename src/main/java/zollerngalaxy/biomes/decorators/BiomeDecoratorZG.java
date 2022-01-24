@@ -19,8 +19,13 @@ import zollerngalaxy.core.enums.EnumOreGenZG;
 public abstract class BiomeDecoratorZG extends BiomeDecorator {
 	
 	protected int outpostsPerChunk = 1;
+	protected int oilPerChunk = 2;
+	
 	protected boolean generateOutposts = true;
+	protected boolean generateOil = true;
+	
 	protected boolean enableExtremeMode = ConfigManagerZG.enableExtremeMode;
+	protected boolean enableOilGen = ConfigManagerZG.enableOilLakes;
 	
 	@Override
 	protected void genDecorations(Biome biome, World world, Random rand) {
@@ -43,7 +48,7 @@ public abstract class BiomeDecoratorZG extends BiomeDecorator {
 			minHeight = maxHeight;
 			maxHeight = i;
 		} else if (maxHeight == minHeight) {
-			if (minHeight < 255) {
+			if (minHeight < 128) {
 				++maxHeight;
 			} else {
 				--minHeight;

@@ -26,10 +26,10 @@ public class BiomeSpace extends ZGBiomeBase {
 	protected IZollernBody planetForBiome = null;
 	protected WorldProviderPlanetZG spaceProvider = null;
 	protected boolean enableExtremeMode = ConfigManagerZG.enableExtremeMode;
-	public static int grassFoliageColor = 0x00ff00;
 	protected int villagerSpawnRate = ConfigManagerZG.alienVillagerSpawnChance;
 	protected int villagerMinSpawnRate = ConfigManagerZG.alienVillagerMinSpawnRate;
 	protected int villagerMaxSpawnRate = ConfigManagerZG.alienVillagerMaxSpawnRate;
+	public static int grassFoliageColor = 0x00ff00;
 	
 	protected static BiomeSpace INSTANCE;
 	

@@ -40,6 +40,7 @@ import zollerngalaxy.blocks.crops.BlockCropPeas;
 import zollerngalaxy.blocks.crops.BlockCropRadish;
 import zollerngalaxy.blocks.crops.BlockCropStrawberry;
 import zollerngalaxy.blocks.crops.BlockCropTomato;
+import zollerngalaxy.blocks.crops.nether.BlockNetherCropGhostPepper;
 import zollerngalaxy.blocks.crystals.BlockStormCrystals;
 import zollerngalaxy.blocks.crystals.ZGCrystalBlock;
 import zollerngalaxy.blocks.eden.BlockRedshroom;
@@ -586,6 +587,7 @@ public class ZGBlocks {
 	
 	// Kronos
 	public static final Block netherDirt = new ZGBlockDirt("netherdirt", 4.2F).setShouldAlwaysBurn(true);
+	public static final Block magmaSlimeBlock = new ZGBlockMagmaSlime();
 	public static final Block netherCoalOre = (((ZGBlockBase) ((ZGBlockBase) ((ZGBlockOre) new ZGOreGem("nethercoalore", 6.2F, Items.COAL).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.VIRINIUM.getHarvestLevel())).setBlockTier(EnumBlockTier.FIVE)).setShouldAlwaysBurn(true)).setShouldExplode(true, 65));
 	public static final Block netherFueltoniumOre = ((ZGBlockBase) ((ZGBlockBase) ((ZGBlockOre) new ZGOreGem("netherfueltoniumore", 8.2F, ZGItems.dustFueltonium).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.VIRINIUM.getHarvestLevel())).setBlockTier(EnumBlockTier.FIVE)).setShouldAlwaysBurn(true)).setShouldExplode(true, 85);
 	public static final Block netherIronOre = ((ZGBlockBase) ((ZGBlockBase) ((ZGBlockOre) new ZGBlockOre("netherironore", 4.1F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.VIRINIUM.getHarvestLevel())).setBlockTier(EnumBlockTier.FIVE)).setShouldAlwaysBurn(true)).setShouldExplode(true, 25);
@@ -742,6 +744,7 @@ public class ZGBlocks {
 	public static final Block cropOnion = new BlockCropOnion();
 	public static final Block cropPea = new BlockCropPeas();
 	public static final Block cropGarlic = new BlockCropGarlic();
+	public static final Block cropGhostPepper = new BlockNetherCropGhostPepper();
 	
 	public static void init() {
 		ZGBlocks.registerTileEntities();
@@ -782,11 +785,11 @@ public class ZGBlocks {
 		ZGBlocks.registerBlocks(tlalocRock, tlalocChrome, tlalocMechRock, tlalocDungeonBricks, tlalocStone, tlalocRedstoneOre, tlalocFueltoniumOre, tlalocShiniumOre, tlalocZollerniumOre, tlalocSuperChargedCoalOre, tlalocQuartzOre, tlalocCertusQuartzOre, tlalocFluixOre, tlalocPlutoniumOre, mudClayBlock);
 		//
 		//
-		ZGBlocks.registerBlocks(netherDirt, netherCoalOre, netherFueltoniumOre, netherIronOre, netherShiniumOre, netherNickleOre, netherSilverOre, netherLeadOre, netherTinOre, netherCopperOre, netherLapisOre, netherDiamondOre, netherEmeraldOre, netherRedstoneOre, netherGoldOre, netherSteelOre, netherRubyOre, netherSapphireOre, netherZincOre, netherAmaranthOre,
+		ZGBlocks.registerBlocks(netherDirt, magmaSlimeBlock, netherCoalOre, netherFueltoniumOre, netherIronOre, netherShiniumOre, netherNickleOre, netherSilverOre, netherLeadOre, netherTinOre, netherCopperOre, netherLapisOre, netherDiamondOre, netherEmeraldOre, netherRedstoneOre, netherGoldOre, netherSteelOre, netherRubyOre, netherSapphireOre, netherZincOre, netherAmaranthOre,
 				netherSuperChargedCoalOre);
 		//
 		// Farmable Crops
-		ZGBlocks.registerBlocks(cropStrawberry, cropBlackberry, cropBlueberry, cropGrape, cropTomato, cropCorn, cropCucumber, cropRadish, cropOnion, cropPea, cropGarlic);
+		ZGBlocks.registerBlocks(cropStrawberry, cropBlackberry, cropBlueberry, cropGrape, cropTomato, cropCorn, cropCucumber, cropRadish, cropOnion, cropPea, cropGarlic, cropGhostPepper);
 		//
 		//
 		ZGBlocks.addBlockItemDesc(treasureChestT10);

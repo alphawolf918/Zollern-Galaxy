@@ -266,7 +266,6 @@ public class BiomeDecoratorMetztli extends BiomeDecoratorZG {
 					}
 				}
 			}
-			
 		}
 		
 		int k1 = this.treesPerChunk;

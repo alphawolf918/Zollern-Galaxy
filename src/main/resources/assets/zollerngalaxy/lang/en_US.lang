@@ -354,6 +354,7 @@ tile.radiumblock.name=Block of Radium
 tile.netheridiumblock.name=Block of Netheridium
 tile.netherizedobsidian.name=Netherized Obsidian
 tile.redobsidian.name=Blood Obsidian
+tile.magmaslimeblock.name=Magma Slime Block
 
 tile.exodusgrass.name=Exodus Grass
 tile.exodusdirt.name=Exodus Dirt
@@ -603,6 +604,10 @@ tile.radish_crop.name=Radishes
 tile.onion_crop.name=Onions
 tile.pea_crop.name=Peas
 tile.garlic_crop.name=Garlic
+tile.ghostpepper_crop.name=Ghost Peppers
+tile.greenbean_crop.name=Green Beans
+tile.pepper_crop.name=Peppers
+tile.sweet_potatoes_crop.name=Sweet Potatoes
 
 ## Subtitles ##
 
@@ -1007,6 +1012,10 @@ item.onion.name=Onion
 item.peas.name=Pea Pod
 item.pea.name=Pea
 item.garlic.name=Garlic
+item.ghostpepper.name=Ghost Pepper
+item.greenbean.name=Green Bean
+item.pepper.name=Pepper
+item.sweetpotato.name=Sweet Potato
 
 ## Tree Fruit Items ##
 item.cherry.name=Cherry

@@ -6,7 +6,8 @@ Zollern Galaxy v2.0.38
 * Added new armor and tools:
     - Ruby, Sapphire
 * Added more crops:
-    - Radishes, Onions, Peas, Garlic
+    - Radishes, Onions, Peas, Garlic, Ghost Peppers
+        - Ghost Peppers can only grow on Soul Sand or Kronos Dirt.
 * Added fruit trees:
     - Cherry, Banana, Guava, Peach, Grapefruit, Orange, Lemon, Lime, Limon
 * Added chocolate-covered strawberries.
@@ -20,23 +21,29 @@ Zollern Galaxy v2.0.38
 * If Extreme Mode is enabled, ores with explosions will be much stronger (when enabled).
 * Added Kronos, the Hell planet. Reminiscent of the Nether, but with unique touches.
     - The ores here have a high chance to explode (unless Enable Explosive Ores is disabled in the config).
+    - Water does not work here.
 * Added the Kronos Villager.
     - This Villager variant is immune to fire!
 * Added the Helleton mob.
-    - Similar to the Wither Skeleton, but a fire version. Drown it with water!
+    - Similar to the Wither Skeleton, but a fire version. Drown it with water, but you'll have to get creative.
 * Added a config option to disable Crude Oil lakes generating on ZG planets.
 * Added the Bloodworm mob to Perdita.
+    - Is a space snek.
+* Added the Magma Slime Block.
+    - When broken, drops Magma Cream, and has a 50% chance to spawn a Magma Cube.
 * 
 
 [CHANGES]
 * Dough cooking has been changed to maximize Bread output.
     - One piece of raw Dough gives 4 Cooked Dough pieces.
 * Slightly increased chance for fruit to drop from applicable trees.
-* Crude Oil lakes now generate on Metztli unless disabled in the config.
+* Crude Oil lakes now generate on Metztli and Kronos unless disabled in the config.
+    - Oil will generate on other planets in the future.
+* Battle Towers now generate on Kronos.
 * 
 
 [FIXES]
 * Fixed some gem ores not actually dropping gems.
-* Fixed Tlaloc having the wrong tier.
+* Fixed Tlaloc having the wrong planet tier.
 * Fixed *potential* requirement of having Thermal Foundation installed, this will no longer be an issue.
 * 

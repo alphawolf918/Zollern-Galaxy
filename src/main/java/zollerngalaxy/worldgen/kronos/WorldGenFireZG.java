@@ -12,7 +12,7 @@ public class WorldGenFireZG extends WorldGenerator {
 	
 	@Override
 	public boolean generate(World worldIn, Random rand, BlockPos position) {
-		for (int i = 0; i < 64; ++i) {
+		for (int i = 0; i < 68; ++i) {
 			BlockPos blockpos = position.add(rand.nextInt(8) - rand.nextInt(8), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(8) - rand.nextInt(8));
 			Block block = worldIn.getBlockState(blockpos.down()).getBlock();
 			if ((worldIn.isAirBlock(blockpos) && (block == Blocks.NETHERRACK)) || (block instanceof ZGBlockBase && ((ZGBlockBase) block).getShouldAlwaysBurn())) {

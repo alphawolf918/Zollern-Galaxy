@@ -24,6 +24,16 @@ public class BiomeUtils {
 		return false;
 	}
 	
+	public static boolean isHotBiome(Biome biome) {
+		if (BiomeUtils.isSpaceBiome(biome)) {
+			BiomeSpace spaceBiome = (BiomeSpace) biome;
+			if (spaceBiome.getTempCategory() == TempCategory.WARM || spaceBiome.getIsHotBiome() || spaceBiome.getBiomeType() == EnumBiomeTypeZG.NETHER) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
 	public static boolean isOceanBiome(Biome biome) {
 		if (BiomeUtils.isSpaceBiome(biome)) {
 			BiomeSpace spaceBiome = (BiomeSpace) biome;

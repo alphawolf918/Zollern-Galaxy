@@ -268,6 +268,8 @@ public final class ZGHelper {
 			LOGGER.error(strMessage);
 		} else if (level == level.WARN) {
 			LOGGER.warn(strMessage);
+		} else if (level == level.DEBUG) {
+			LOGGER.debug(strMessage);
 		}
 	}
 	
@@ -281,6 +283,10 @@ public final class ZGHelper {
 	
 	public static void LogWarn(String strErr) {
 		Log(Level.WARN, strErr);
+	}
+	
+	public static void LogDebug(String strErr) {
+		Log(Level.DEBUG, strErr);
 	}
 	
 	public static ItemStack getItemStack(Item item, EntityPlayer player) {
@@ -506,7 +512,7 @@ public final class ZGHelper {
 	public static ResourceLocation getMob(Random rand) {
 		String mobName = "evolved_zombie";
 		String modId = Constants.MOD_ID_CORE;
-		switch (rand.nextInt(15)) {
+		switch (rand.nextInt(16)) {
 			default:
 				mobName = "evolved_zombie";
 				modId = Constants.MOD_ID_CORE;
@@ -573,6 +579,10 @@ public final class ZGHelper {
 				break;
 			case 15:
 				mobName = "helleton";
+				modId = ZGInfo.MOD_ID;
+				break;
+			case 16:
+				mobName = "bloodworm";
 				modId = ZGInfo.MOD_ID;
 				break;
 		}

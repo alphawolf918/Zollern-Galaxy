@@ -63,6 +63,7 @@ public abstract class BiomeKronosBase extends BiomeSpace {
 		if (ConfigManagerZG.enableAlienVillagerSpawn) {
 			this.spawnableCreatureList.add(new SpawnListEntry(EntityKronosVillager.class, this.villagerSpawnRate, this.villagerMinSpawnRate, this.villagerMaxSpawnRate));
 		}
+		this.grassFoliageColor = 0x000000;
 		this.setPlanetForBiome(ZGPlanets.planetKronos);
 	}
 	
@@ -81,7 +82,7 @@ public abstract class BiomeKronosBase extends BiomeSpace {
 		IBlockState topState = this.topBlock;
 		IBlockState fillState = this.fillerBlock;
 		int j = -1;
-		int k = (int) (noiseVal / 3.0D + 3.0D + rand.nextDouble() * 0.25D);
+		int k = (int) (noiseVal / 2.0D + 2.5D + rand.nextDouble() * 0.35D);
 		int l = x & 15;
 		int i1 = z & 15;
 		
@@ -116,7 +117,7 @@ public abstract class BiomeKronosBase extends BiomeSpace {
 							}
 							
 							if (j1 < i && (topState == null || topState.getMaterial() == Material.AIR)) {
-								topState = (BiomeUtils.isColdBiome(this)) ? BLAZE_ROCK : LAVA;
+								topState = (BiomeUtils.isHotBiome(this)) ? BLAZE_ROCK : LAVA;
 							}
 							
 							j = k;

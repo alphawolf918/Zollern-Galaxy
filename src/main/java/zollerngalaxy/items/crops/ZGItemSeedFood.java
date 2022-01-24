@@ -25,12 +25,16 @@ public class ZGItemSeedFood extends ItemSeedFood implements ISingleZGItemRender,
 	
 	protected IProxy proxy = ZollernGalaxyCore.instance().proxy;
 	
-	public ZGItemSeedFood(String name, int healAmount, float saturation, Block crops) {
-		super(healAmount, saturation, crops, Blocks.FARMLAND);
+	public ZGItemSeedFood(String name, int healAmount, float saturation, Block crops, Block soil) {
+		super(healAmount, saturation, crops, soil);
 		this.setItemName(this, name);
 		if (ZollernGalaxyCore.instance().isInDevMode() && !this.shouldJSONIgnore()) {
 			JSONFactory.registerItem(name);
 		}
+	}
+	
+	public ZGItemSeedFood(String name, int healAmount, float saturation, Block crops) {
+		this(name, healAmount, saturation, crops, Blocks.FARMLAND);
 	}
 	
 	public void setItemName(final Item item, final String itemName) {

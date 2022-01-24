@@ -32,6 +32,11 @@ public class EntityHelleton extends EntityWitherSkeleton implements IEntityBreat
 	}
 	
 	@Override
+	public boolean canRenderOnFire() {
+		return true;
+	}
+	
+	@Override
 	protected void setEquipmentBasedOnDifficulty(DifficultyInstance difficulty) {
 		this.setItemStackToSlot(EntityEquipmentSlot.MAINHAND, new ItemStack(ZGItems.swordZollernium));
 	}
@@ -66,7 +71,9 @@ public class EntityHelleton extends EntityWitherSkeleton implements IEntityBreat
 	@Override
 	public void onLivingUpdate() {
 		if (this.isInWater()) {
-			this.attackEntityFrom(DamageSource.DROWN, 10.0F);
+			this.attackEntityFrom(DamageSource.DROWN, 5.0F);
+		} else {
+			this.setFire(60);
 		}
 		super.onLivingUpdate();
 	}

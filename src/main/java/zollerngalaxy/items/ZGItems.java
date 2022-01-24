@@ -14,6 +14,7 @@ import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.items.armor.ZGArmor;
 import zollerngalaxy.items.armor.ZGArmorMats;
 import zollerngalaxy.items.crops.ZGItemSeedFood;
+import zollerngalaxy.items.crops.ZGNetherItemSeedFood;
 import zollerngalaxy.items.food.IceCream;
 import zollerngalaxy.items.food.ItemSweetFood;
 import zollerngalaxy.items.food.PopcornBowl;
@@ -358,6 +359,7 @@ public class ZGItems {
 	public static final Item onion = new ZGItemSeedFood("onion", 14, 3.8F, ZGBlocks.cropOnion);
 	public static final Item peas = new ZGItemSeedFood("peas", 5, 2.6F, ZGBlocks.cropPea);
 	public static final Item garlic = new ZGItemSeedFood("garlic", 10, 1.5F, ZGBlocks.cropGarlic);
+	public static final Item ghostPepper = new ZGNetherItemSeedFood("ghostpepper", 11, 4.5F, ZGBlocks.cropGhostPepper);
 	
 	// Thermal Armor
 	// public static final Item thermalClothTier3 = new ZGItemBase("thermal_cloth_t3");
@@ -379,7 +381,7 @@ public class ZGItems {
 		ZGItems.registerItems(alcohol, gauze, medkit, nail, nailGroup, woodBox, metalParts, dough, doughCooked, flour);
 		//
 		// Crops & Fruits
-		ZGItems.registerItems(strawberry, blackberry, blueberry, grape, tomato, corn, cucumber, radish, onion, peas, garlic, cherry, banana, guava, peach, grapefruit, orange, lemon, lime, limon, pea, cornKernel, popcorn, popcornBowl);
+		ZGItems.registerItems(strawberry, blackberry, blueberry, grape, tomato, corn, cucumber, radish, onion, peas, garlic, ghostPepper, cherry, banana, guava, peach, grapefruit, orange, lemon, lime, limon, pea, cornKernel, popcorn, popcornBowl);
 		//
 		//
 		ZGHelper.Log("Loaded a total of " + totalItems + " new items.");

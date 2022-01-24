@@ -120,8 +120,7 @@ public class OreDictRegistry {
 		registerOre("oreLapis", ZGBlocks.edenLapisOre, ZGBlocks.caligroLapisOre, ZGBlocks.netherLapisOre);
 		
 		// Dirt
-		registerOre("dirt", ZGBlocks.edenSoil, ZGBlocks.kriffDirt, ZGBlocks.purgDirt, ZGBlocks.zolDirt, ZGBlocks.xathDirt, ZGBlocks.oasisDirt, ZGBlocks.perdCreepDirt, ZGBlocks.perdSoil, ZGBlocks.altumDirt, ZGBlocks.caligroDirt, ZGBlocks.caligroCreepdirt, ZGBlocks.exodusDirt, ZGBlocks.astrosDirt, ZGBlocks.centoDirt, ZGBlocks.tociDirt,
-				ZGBlocks.harranSoil, ZGBlocks.netherDirt);
+		registerOre("dirt", ZGBlocks.edenSoil, ZGBlocks.kriffDirt, ZGBlocks.purgDirt, ZGBlocks.zolDirt, ZGBlocks.xathDirt, ZGBlocks.oasisDirt, ZGBlocks.perdCreepDirt, ZGBlocks.perdSoil, ZGBlocks.altumDirt, ZGBlocks.caligroDirt, ZGBlocks.caligroCreepdirt, ZGBlocks.exodusDirt, ZGBlocks.astrosDirt, ZGBlocks.centoDirt, ZGBlocks.tociDirt, ZGBlocks.harranSoil, ZGBlocks.netherDirt);
 		
 		// Constructed
 		registerOre("blockConstructed", ZGBlocks.xantheonConstructBlock, ZGBlocks.atheonConstructBlock);
@@ -139,28 +138,27 @@ public class OreDictRegistry {
 		registerOre("ice", ZGBlocks.astrosIce);
 		
 		// Logs
-		registerOre("logWood", ZGBlocks.edenWoodLog, ZGBlocks.perdWoodLogs, ZGBlocks.edenParadiseWoodLog, ZGBlocks.edenGoldenWoodLog, ZGBlocks.edenLovetreeLog, ZGBlocks.exoWoodLogs, ZGBlocks.cherryWoodLog, ZGBlocks.bananaLog, ZGBlocks.guavaLog, ZGBlocks.peachLog, ZGBlocks.grapefruitLog, ZGBlocks.orangeLog, ZGBlocks.lemonLog,
-				ZGBlocks.limeLog, ZGBlocks.limonLog);
+		registerOre("logWood", ZGBlocks.edenWoodLog, ZGBlocks.perdWoodLogs, ZGBlocks.edenParadiseWoodLog, ZGBlocks.edenGoldenWoodLog, ZGBlocks.edenLovetreeLog, ZGBlocks.exoWoodLogs, ZGBlocks.cherryWoodLog, ZGBlocks.bananaLog, ZGBlocks.guavaLog, ZGBlocks.peachLog, ZGBlocks.grapefruitLog, ZGBlocks.orangeLog, ZGBlocks.lemonLog, ZGBlocks.limeLog, ZGBlocks.limonLog);
 		
 		// Planks
-		registerOre("plankWood", ZGBlocks.edenWoodPlanks, ZGBlocks.perdWoodPlanks, ZGBlocks.edenParadiseWoodPlanks, ZGBlocks.edenGoldenWoodPlanks, ZGBlocks.edenLovetreePlanks, ZGBlocks.exoWoodPlanks, ZGBlocks.cherryWoodPlanks, ZGBlocks.bananaPlanks, ZGBlocks.guavaPlanks, ZGBlocks.peachPlanks, ZGBlocks.grapefruitPlanks,
-				ZGBlocks.orangePlanks, ZGBlocks.lemonPlanks, ZGBlocks.limePlanks, ZGBlocks.limonPlanks);
+		registerOre("plankWood", ZGBlocks.edenWoodPlanks, ZGBlocks.perdWoodPlanks, ZGBlocks.edenParadiseWoodPlanks, ZGBlocks.edenGoldenWoodPlanks, ZGBlocks.edenLovetreePlanks, ZGBlocks.exoWoodPlanks, ZGBlocks.cherryWoodPlanks, ZGBlocks.bananaPlanks, ZGBlocks.guavaPlanks, ZGBlocks.peachPlanks, ZGBlocks.grapefruitPlanks, ZGBlocks.orangePlanks, ZGBlocks.lemonPlanks,
+				ZGBlocks.limePlanks, ZGBlocks.limonPlanks);
 		
 		// Leaves
-		registerOre("treeLeaves", ZGBlocks.edenWoodLeaves, ZGBlocks.perdWoodLeaves, ZGBlocks.edenParadiseWoodLeaves, ZGBlocks.edenGoldenWoodLeaves, ZGBlocks.edenLovetreeLeaves, ZGBlocks.exoWoodLeaves, ZGBlocks.cherryWoodLeaves, ZGBlocks.bananaLeaves, ZGBlocks.guavaLeaves, ZGBlocks.peachLeaves, ZGBlocks.grapefruitLeaves,
-				ZGBlocks.orangeLeaves, ZGBlocks.lemonLeaves, ZGBlocks.limeLeaves, ZGBlocks.limonLeaves);
+		registerOre("treeLeaves", ZGBlocks.edenWoodLeaves, ZGBlocks.perdWoodLeaves, ZGBlocks.edenParadiseWoodLeaves, ZGBlocks.edenGoldenWoodLeaves, ZGBlocks.edenLovetreeLeaves, ZGBlocks.exoWoodLeaves, ZGBlocks.cherryWoodLeaves, ZGBlocks.bananaLeaves, ZGBlocks.guavaLeaves, ZGBlocks.peachLeaves, ZGBlocks.grapefruitLeaves, ZGBlocks.orangeLeaves, ZGBlocks.lemonLeaves,
+				ZGBlocks.limeLeaves, ZGBlocks.limonLeaves);
 		
 		// Saplings
-		registerOre("treeSapling", ZGBlocks.edenWoodSapling, ZGBlocks.perdTreeSapling, ZGBlocks.edenParadiseWoodSapling, ZGBlocks.edenGoldenWoodSapling, ZGBlocks.edenLovetreeSapling, ZGBlocks.exoWoodSapling, ZGBlocks.cherryWoodSapling, ZGBlocks.bananaSapling, ZGBlocks.guavaSapling, ZGBlocks.peachSapling, ZGBlocks.grapefruitSapling,
-				ZGBlocks.orangeSapling, ZGBlocks.lemonSapling, ZGBlocks.limeSapling, ZGBlocks.limonSapling);
+		registerOre("treeSapling", ZGBlocks.edenWoodSapling, ZGBlocks.perdTreeSapling, ZGBlocks.edenParadiseWoodSapling, ZGBlocks.edenGoldenWoodSapling, ZGBlocks.edenLovetreeSapling, ZGBlocks.exoWoodSapling, ZGBlocks.cherryWoodSapling, ZGBlocks.bananaSapling, ZGBlocks.guavaSapling, ZGBlocks.peachSapling, ZGBlocks.grapefruitSapling, ZGBlocks.orangeSapling, ZGBlocks.lemonSapling,
+				ZGBlocks.limeSapling, ZGBlocks.limonSapling);
 		
 		// Stone
-		registerOre("stone", ZGBlocks.edenStone, ZGBlocks.kriffStone, ZGBlocks.purgStone, ZGBlocks.zolStone, ZGBlocks.xathStone, ZGBlocks.oasisStone, ZGBlocks.xantheonStone, ZGBlocks.atheonStone, ZGBlocks.perdStone, ZGBlocks.perdCreepStone, ZGBlocks.perdCaveStone, ZGBlocks.altumStone, ZGBlocks.caligroStone, ZGBlocks.caligroCreepstone,
-				ZGBlocks.corruptStone, ZGBlocks.corruptCreepstone, ZGBlocks.exodusStone, ZGBlocks.vortexStone, ZGBlocks.astrosStone, ZGBlocks.centoStone, ZGBlocks.tociStone, ZGBlocks.tlalocStone);
+		registerOre("stone", ZGBlocks.edenStone, ZGBlocks.kriffStone, ZGBlocks.purgStone, ZGBlocks.zolStone, ZGBlocks.xathStone, ZGBlocks.oasisStone, ZGBlocks.xantheonStone, ZGBlocks.atheonStone, ZGBlocks.perdStone, ZGBlocks.perdCreepStone, ZGBlocks.perdCaveStone, ZGBlocks.altumStone, ZGBlocks.caligroStone, ZGBlocks.caligroCreepstone, ZGBlocks.corruptStone,
+				ZGBlocks.corruptCreepstone, ZGBlocks.exodusStone, ZGBlocks.vortexStone, ZGBlocks.astrosStone, ZGBlocks.centoStone, ZGBlocks.tociStone, ZGBlocks.tlalocStone);
 		
 		// Stone Bricks
-		registerOre("stonebrick", ZGBlocks.edenRockBricks, ZGBlocks.kriffRockBricks, ZGBlocks.purgRockBricks, ZGBlocks.zolRockBricks, ZGBlocks.xathRockBricks, ZGBlocks.oasisRockBricks, ZGBlocks.blockShinestoneCrystalBricks, ZGBlocks.atheonRockBricks, ZGBlocks.perdRockBricks, ZGBlocks.perdCaveStoneBricks, ZGBlocks.caligroStoneBricks,
-				ZGBlocks.corruptStoneBricks, ZGBlocks.tociStoneBricks);
+		registerOre("stonebrick", ZGBlocks.edenRockBricks, ZGBlocks.kriffRockBricks, ZGBlocks.purgRockBricks, ZGBlocks.zolRockBricks, ZGBlocks.xathRockBricks, ZGBlocks.oasisRockBricks, ZGBlocks.blockShinestoneCrystalBricks, ZGBlocks.atheonRockBricks, ZGBlocks.perdRockBricks, ZGBlocks.perdCaveStoneBricks, ZGBlocks.caligroStoneBricks, ZGBlocks.corruptStoneBricks,
+				ZGBlocks.tociStoneBricks);
 		
 		// Glowstone
 		registerOre("glowstone", ZGBlocks.edenBrightStone, ZGBlocks.blockShinestone, ZGBlocks.perdGlowstone);
@@ -169,8 +167,8 @@ public class OreDictRegistry {
 		registerOre("sand", ZGBlocks.edenBloodSand, ZGBlocks.perdSand, ZGBlocks.altumSand, ZGBlocks.exodusSand, ZGBlocks.tociSand, ZGBlocks.tociStarSand);
 		
 		// Cobblestone
-		registerOre("cobblestone", ZGBlocks.edenCobbleRock, ZGBlocks.kriffCobbleRock, ZGBlocks.purgCobbleRock, ZGBlocks.zolCobbleRock, ZGBlocks.xathCobble, ZGBlocks.oasisCobble, ZGBlocks.atheonCobble, ZGBlocks.perdCobble, ZGBlocks.altumCobble, ZGBlocks.caligroCobblestone, ZGBlocks.caligroCobblestoneMossy, ZGBlocks.corruptCobble,
-				ZGBlocks.exodusCobblestone, ZGBlocks.vortexCobblestone, ZGBlocks.astrosCobblestone, ZGBlocks.centoCobblestone, ZGBlocks.tociCobblestone, ZGBlocks.tociMossyCobblestone);
+		registerOre("cobblestone", ZGBlocks.edenCobbleRock, ZGBlocks.kriffCobbleRock, ZGBlocks.purgCobbleRock, ZGBlocks.zolCobbleRock, ZGBlocks.xathCobble, ZGBlocks.oasisCobble, ZGBlocks.atheonCobble, ZGBlocks.perdCobble, ZGBlocks.altumCobble, ZGBlocks.caligroCobblestone, ZGBlocks.caligroCobblestoneMossy, ZGBlocks.corruptCobble, ZGBlocks.exodusCobblestone,
+				ZGBlocks.vortexCobblestone, ZGBlocks.astrosCobblestone, ZGBlocks.centoCobblestone, ZGBlocks.tociCobblestone, ZGBlocks.tociMossyCobblestone);
 		
 		// Obsidian
 		registerOre("dustObsidian", ZGItems.dustObsidian);
@@ -182,19 +180,17 @@ public class OreDictRegistry {
 		registerOre("coal", ZGItems.superChargedCoal);
 		
 		// Iron
-		registerOre("oreIron", ZGBlocks.edenIronOre, ZGBlocks.kriffIronOre, ZGBlocks.purgIronOre, ZGBlocks.zolIronOre, ZGBlocks.xathIronOre, ZGBlocks.oasisIronOre, ZGBlocks.xantheonIronOre, ZGBlocks.perdIronOre, ZGBlocks.altumIronOre, ZGBlocks.caligroIronOre, ZGBlocks.exodusIronOre, ZGBlocks.vortexIronOre, ZGBlocks.astrosIronOre,
-				ZGBlocks.centoIronOre, ZGBlocks.tociIronOre, ZGBlocks.netherIronOre);
+		registerOre("oreIron", ZGBlocks.edenIronOre, ZGBlocks.kriffIronOre, ZGBlocks.purgIronOre, ZGBlocks.zolIronOre, ZGBlocks.xathIronOre, ZGBlocks.oasisIronOre, ZGBlocks.xantheonIronOre, ZGBlocks.perdIronOre, ZGBlocks.altumIronOre, ZGBlocks.caligroIronOre, ZGBlocks.exodusIronOre, ZGBlocks.vortexIronOre, ZGBlocks.astrosIronOre, ZGBlocks.centoIronOre, ZGBlocks.tociIronOre,
+				ZGBlocks.netherIronOre);
 		
 		// Gold
-		registerOre("oreGold", ZGBlocks.edenGoldOre, ZGBlocks.kriffGoldOre, ZGBlocks.purgGoldOre, ZGBlocks.zolGoldOre, ZGBlocks.xathGoldOre, ZGBlocks.oasisGoldOre, ZGBlocks.perdGoldOre, ZGBlocks.altumGoldOre, ZGBlocks.caligroGoldOre, ZGBlocks.exodusGoldOre, ZGBlocks.vortexGoldOre, ZGBlocks.astrosGoldOre, ZGBlocks.centoGoldOre,
-				ZGBlocks.tociGoldOre, ZGBlocks.netherGoldOre);
+		registerOre("oreGold", ZGBlocks.edenGoldOre, ZGBlocks.kriffGoldOre, ZGBlocks.purgGoldOre, ZGBlocks.zolGoldOre, ZGBlocks.xathGoldOre, ZGBlocks.oasisGoldOre, ZGBlocks.perdGoldOre, ZGBlocks.altumGoldOre, ZGBlocks.caligroGoldOre, ZGBlocks.exodusGoldOre, ZGBlocks.vortexGoldOre, ZGBlocks.astrosGoldOre, ZGBlocks.centoGoldOre, ZGBlocks.tociGoldOre, ZGBlocks.netherGoldOre);
 		
 		// Nickel
 		registerOre("oreNickel", ZGBlocks.edenNickelOre, ZGBlocks.xantheonNickelOre, ZGBlocks.caligroNickelOre, ZGBlocks.tociNickelOre, ZGBlocks.netherNickleOre);
 		
 		// Diamond
-		registerOre("oreDiamond", ZGBlocks.edenDiamondOre, ZGBlocks.purgDiamondOre, ZGBlocks.xathDiamondOre, ZGBlocks.oasisDiamondOre, ZGBlocks.atheonDiamondOre, ZGBlocks.perdDiamondOre, ZGBlocks.altumDiamondOre, ZGBlocks.caligroDiamondOre, ZGBlocks.exodusDiamondOre, ZGBlocks.vortexDiamondOre, ZGBlocks.astrosDiamondOre,
-				ZGBlocks.tociDiamondOre, ZGBlocks.netherDiamondOre);
+		registerOre("oreDiamond", ZGBlocks.edenDiamondOre, ZGBlocks.purgDiamondOre, ZGBlocks.xathDiamondOre, ZGBlocks.oasisDiamondOre, ZGBlocks.atheonDiamondOre, ZGBlocks.perdDiamondOre, ZGBlocks.altumDiamondOre, ZGBlocks.caligroDiamondOre, ZGBlocks.exodusDiamondOre, ZGBlocks.vortexDiamondOre, ZGBlocks.astrosDiamondOre, ZGBlocks.tociDiamondOre, ZGBlocks.netherDiamondOre);
 		registerOre("dustDiamond", ZGItems.dustDiamond);
 		
 		// Emerald
@@ -202,8 +198,8 @@ public class OreDictRegistry {
 		registerOre("dustEmerald", ZGItems.dustEmerald);
 		
 		// Redstone
-		registerOre("oreRedstone", ZGBlocks.edenRedstoneOre, ZGBlocks.kriffRedstoneOre, ZGBlocks.purgRedstoneOre, ZGBlocks.xathRedstoneOre, ZGBlocks.oasisRedstoneOre, ZGBlocks.atheonRedstoneOre, ZGBlocks.altumRedstoneOre, ZGBlocks.caligroRedstoneOre, ZGBlocks.exodusRedstoneOre, ZGBlocks.vortexRedstoneOre, ZGBlocks.astrosRedstoneOre,
-				ZGBlocks.tociRedstoneOre, ZGBlocks.tlalocRedstoneOre, ZGBlocks.netherRedstoneOre);
+		registerOre("oreRedstone", ZGBlocks.edenRedstoneOre, ZGBlocks.kriffRedstoneOre, ZGBlocks.purgRedstoneOre, ZGBlocks.xathRedstoneOre, ZGBlocks.oasisRedstoneOre, ZGBlocks.atheonRedstoneOre, ZGBlocks.altumRedstoneOre, ZGBlocks.caligroRedstoneOre, ZGBlocks.exodusRedstoneOre, ZGBlocks.vortexRedstoneOre, ZGBlocks.astrosRedstoneOre, ZGBlocks.tociRedstoneOre,
+				ZGBlocks.tlalocRedstoneOre, ZGBlocks.netherRedstoneOre);
 		
 		// Steel
 		registerOre("oreSteel", ZGBlocks.edenSteelOre, ZGBlocks.netherSteelOre);
@@ -425,6 +421,8 @@ public class OreDictRegistry {
 		registerOre("cropPeas", ZGItems.peas);
 		registerOre("cropPea", ZGItems.peas);
 		registerOre("cropGarlic", ZGItems.garlic);
+		registerOre("cropGhostPepper", ZGItems.ghostPepper);
+		registerOre("cropPepper", ZGItems.ghostPepper);
 		
 		// Crops (Trees)
 		registerOre("cropCherry", ZGItems.cherry);

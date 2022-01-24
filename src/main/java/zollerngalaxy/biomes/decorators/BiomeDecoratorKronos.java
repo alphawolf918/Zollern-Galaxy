@@ -8,6 +8,8 @@
 package zollerngalaxy.biomes.decorators;
 
 import java.util.Random;
+import micdoodle8.mods.galacticraft.core.GCBlocks;
+import micdoodle8.mods.galacticraft.core.event.EventHandlerGC;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
@@ -31,6 +33,7 @@ import zollerngalaxy.worldgen.WorldGenLakesZG;
 import zollerngalaxy.worldgen.WorldGenMinableZG;
 import zollerngalaxy.worldgen.WorldGenOutpost;
 import zollerngalaxy.worldgen.WorldGenTunnel;
+import zollerngalaxy.worldgen.kronos.WorldGenKronosCrops;
 import zollerngalaxy.worldgen.kronos.WorldGenNetherWarts;
 
 public class BiomeDecoratorKronos extends BiomeDecoratorZG {
@@ -42,11 +45,13 @@ public class BiomeDecoratorKronos extends BiomeDecoratorZG {
 	private static final Block GLOWSTONE = Blocks.GLOWSTONE;
 	private static final Block LAVA = Blocks.LAVA;
 	private static final Block GRAVEL = Blocks.GRAVEL;
+	private static final Block MAGROCK = ZGBlocks.kriffMagmaRock;
 	
 	private WorldGenerator dirtGen;
 	private WorldGenerator sandGen;
 	private WorldGenerator gravelGen;
 	private WorldGenerator obsidianGen;
+	private WorldGenerator magrockGen;
 	private WorldGenerator coalGen;
 	private WorldGenerator fueltoniumGen;
 	private WorldGenerator ironGen;
@@ -71,6 +76,7 @@ public class BiomeDecoratorKronos extends BiomeDecoratorZG {
 	private WorldGenerator netherWartGen = new WorldGenNetherWarts();
 	private WorldGenerator battleTowerGen = new WorldGenBattleTower(NETHER_BRICK.getDefaultState(), GLOWSTONE.getDefaultState());
 	private WorldGenerator tunnelGen = new WorldGenTunnel();
+	private WorldGenerator cropGen = new WorldGenKronosCrops(ZGBlocks.cropGhostPepper.getDefaultState());
 	
 	public boolean generateLakes = true;
 	public boolean generateMushrooms = true;
@@ -78,20 +84,25 @@ public class BiomeDecoratorKronos extends BiomeDecoratorZG {
 	public boolean generateNetherWarts = false;
 	public boolean generateBattleTowers = true;
 	public boolean generateTunnels = true;
+	public boolean generateOil = true;
+	public boolean generateCrops = true;
 	
-	public int lavaLakesPerChunk = 10;
+	public int lavaLakesPerChunk = 15;
 	public int obsidianLakesPerChunk = 2;
 	public int mushroomsPerChunk = 5;
 	public int sandPatchesPerChunk = 4;
 	public int netherWartsPerChunk = 0;
 	public int battleTowersPerChunk = 1;
 	public int tunnelsPerChunk = 4;
+	public int oilPerChunk = 1;
+	public int cropsPerChunk = 1;
 	
 	public BiomeDecoratorKronos() {
 		this.dirtGen = new WorldGenMinableZG(ZGBlocks.netherDirt, NETHERRACK, EnumOreGenZG.DIRT);
 		this.sandGen = new WorldGenMinableZG(SOUL_SAND, NETHERRACK, EnumOreGenZG.SAND);
-		this.gravelGen = new WorldGenMinableZG(GRAVEL, NETHERRACK, EnumOreGenZG.SAND);
+		this.gravelGen = new WorldGenMinableZG(GRAVEL, NETHERRACK, EnumOreGenZG.GRAVEL);
 		this.obsidianGen = new WorldGenMinableZG(OBSIDIAN, NETHERRACK, EnumOreGenZG.OBSIDIAN);
+		this.magrockGen = new WorldGenMinableZG(ZGBlocks.kriffMagmaRock, NETHERRACK, EnumOreGenZG.MAGMA);
 		this.coalGen = new WorldGenMinableZG(ZGBlocks.netherCoalOre, NETHERRACK, EnumOreGenZG.COAL);
 		this.fueltoniumGen = new WorldGenMinableZG(ZGBlocks.netherFueltoniumOre, NETHERRACK, EnumOreGenZG.FUELTONIUM);
 		this.ironGen = new WorldGenMinableZG(ZGBlocks.netherIronOre, NETHERRACK, EnumOreGenZG.IRON);
@@ -131,6 +142,7 @@ public class BiomeDecoratorKronos extends BiomeDecoratorZG {
 		EnumOreGenZG.SAND.setMaxHeight(128);
 		EnumOreGenZG.GRAVEL.setMaxHeight(128);
 		EnumOreGenZG.OBSIDIAN.setMaxHeight(128);
+		EnumOreGenZG.MAGMA.setMaxHeight(128);
 		EnumOreGenZG.COAL.setMaxHeight(128);
 		EnumOreGenZG.FUELTONIUM.setMaxHeight(128);
 		EnumOreGenZG.IRON.setMaxHeight(128);
@@ -153,10 +165,12 @@ public class BiomeDecoratorKronos extends BiomeDecoratorZG {
 		EnumOreGenZG.SUPER_CHARGED_COAL.setMaxHeight(128);
 		//
 		
+		//
 		this.generateOre(this.dirtGen, EnumOreGenZG.DIRT, world, rand);
 		this.generateOre(this.sandGen, EnumOreGenZG.SAND, world, rand);
-		this.generateOre(this.gravelGen, EnumOreGenZG.SAND, world, rand);
-		this.generateOre(this.obsidianGen, EnumOreGenZG.SAND, world, rand);
+		this.generateOre(this.gravelGen, EnumOreGenZG.GRAVEL, world, rand);
+		this.generateOre(this.obsidianGen, EnumOreGenZG.OBSIDIAN, world, rand);
+		this.generateOre(this.magrockGen, EnumOreGenZG.MAGMA, world, rand);
 		this.generateOre(this.coalGen, EnumOreGenZG.COAL, world, rand);
 		this.generateOre(this.fueltoniumGen, EnumOreGenZG.FUELTONIUM, world, rand);
 		this.generateOre(this.ironGen, EnumOreGenZG.IRON, world, rand);
@@ -177,6 +191,7 @@ public class BiomeDecoratorKronos extends BiomeDecoratorZG {
 		this.generateOre(this.zincGen, EnumOreGenZG.ZINC, world, rand);
 		this.generateOre(this.amaranthGen, EnumOreGenZG.AMARANTH, world, rand);
 		this.generateOre(this.superChargedCoalGen, EnumOreGenZG.SUPER_CHARGED_COAL, world, rand);
+		//
 		
 		int genY = y;
 		
@@ -204,8 +219,19 @@ public class BiomeDecoratorKronos extends BiomeDecoratorZG {
 				y = rand.nextInt(rand.nextInt(genY) + 8);
 			}
 			
-			if (rand.nextInt(100) <= 50 && rand.nextInt(2) == 0) {
+			if (rand.nextInt(100) <= 50 && rand.nextInt(3) == 0) {
 				(new WorldGenLakesZG(OBSIDIAN, NETHERRACK)).generate(world, rand, this.chunkPos.add(x, y, z));
+			}
+		}
+		
+		// Oil Lakes
+		if (TerrainGen.decorate(world, rand, forgeChunkPos, DecorateBiomeEvent.Decorate.EventType.CUSTOM)) {
+			if (this.generateOil && this.oilPerChunk > 0 && this.enableOilGen) {
+				for (int i = 0; i < this.oilPerChunk; ++i) {
+					y = rand.nextInt(rand.nextInt(genY) + 8);
+					(new WorldGenLakesZG(GCBlocks.crudeOil, NETHERRACK)).generate(world, rand, this.chunkPos.add(x, y, z));
+					EventHandlerGC.generateOil(world, rand, x, z, false);
+				}
 			}
 		}
 		
@@ -275,10 +301,10 @@ public class BiomeDecoratorKronos extends BiomeDecoratorZG {
 		
 		// Battle Towers
 		if (this.generateBattleTowers && this.battleTowersPerChunk > 0 && !BiomeUtils.isOceanBiome(biome)) {
-			if (ZGHelper.rngInt(1, 250) <= 35) {
+			if (ZGHelper.rngInt(1, 100) <= 35 && rand.nextInt(6) == 0) {
 				for (int i = 0; i < this.battleTowersPerChunk; ++i) {
 					y = rand.nextInt(rand.nextInt(genY) + 8);
-					if (y >= 20 && y < 128) {
+					if (y >= 20 && y < 90) {
 						this.battleTowerGen.generate(world, rand, this.chunkPos.add(x, y, z));
 					}
 				}
@@ -292,6 +318,18 @@ public class BiomeDecoratorKronos extends BiomeDecoratorZG {
 				for (int i = 0; i < this.tunnelsPerChunk; ++i) {
 					if (y <= 90) {
 						tunnelGen.generate(world, rand, this.chunkPos.add(x, y, z));
+					}
+				}
+			}
+		}
+		
+		// Crops
+		if (this.generateCrops && this.cropsPerChunk > 0 && !BiomeUtils.isOceanBiome(biome)) {
+			if (ZGHelper.rngInt(1, 100) <= 45 && rand.nextInt(4) == 0) {
+				for (int i = 0; i < this.cropsPerChunk; ++i) {
+					y = rand.nextInt(rand.nextInt(genY) + 8);
+					if (y >= 10) {
+						this.cropGen.generate(world, rand, this.chunkPos.add(x, y, z));
 					}
 				}
 			}

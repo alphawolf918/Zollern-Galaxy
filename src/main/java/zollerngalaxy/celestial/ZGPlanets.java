@@ -659,7 +659,7 @@ public class ZGPlanets {
 		planetKronos.setBreathable(true);
 		planetKronos.setHasRain(false);
 		planetKronos.setAtmosphere();
-		planetKronos.setBiomeInfo(ZGBiomes.KRONOS_BASE, ZGBiomes.KRONOS_SOUL_DESERT, ZGBiomes.KRONOS_BLACK_MOUNTAIN, ZGBiomes.KRONOS_DEATH_VALLEY, ZGBiomes.KRONOS_BLAZING_HILLS);
+		planetKronos.setBiomeInfo(ZGBiomes.KRONOS_BASE, ZGBiomes.KRONOS_SOUL_DESERT, ZGBiomes.KRONOS_BLACK_MOUNTAIN, ZGBiomes.KRONOS_DEATH_VALLEY, ZGBiomes.KRONOS_BLAZING_HILLS, ZGBiomes.KRONOS_LAVA_OCEAN, ZGBiomes.KRONOS_MAGMA_SLIMELANDS);
 		planetKronos.setBodyIcon("kronos");
 		totalPlanets++;
 		
