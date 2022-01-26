@@ -351,6 +351,10 @@ tile.icyaquablock.name=Block of Icy Aquamarine
 tile.shadowboneblock.name=Block of Shadow Bone
 tile.shadowessenceblock.name=Block of Shadow Essence
 tile.radiumblock.name=Block of Radium
+tile.zaniumblock.name=Block of Zanium
+tile.raditeblock.name=Block of Radite
+tile.zogiteblock.name=Block of Zogite
+tile.zograditeblock.name=Block of Zogradite
 tile.netheridiumblock.name=Block of Netheridium
 tile.netherizedobsidian.name=Netherized Obsidian
 tile.redobsidian.name=Blood Obsidian
@@ -549,6 +553,12 @@ tile.netherrubyore.name=Kronos Ruby Ore
 tile.netherzincore.name=Kronos Zinc Ore
 tile.netheramaranthore.name=Kronos Amaranth Ore
 tile.nethersuperchargedcoalore.name=Kronos Super Charged Coal Ore
+tile.zaniumore.name=Kronos Zanium Ore
+tile.raditeore.name=Kronos Radite Ore
+tile.zogiteore.name=Kronos Zogite Ore
+
+tile.raditeore.name=Radite Ore
+tile.zogiteore.name=Zogite Ore
 
 tile.mudclayblock.name=Mud Clay
 tile.endrock.name=Endrock
@@ -685,6 +695,10 @@ spacemilk=Space Milk
 tile.spacemilk.name=Space Milk
 fluid.spacemilk=Space Milk
 
+raditefluid=Molten Radite
+tile.raditefluid.name=Molten Radite
+fluid.raditefluid=Molten Radite
+
 ## Containers ##
 
 container.eden.treasurechest.name=Eden Chest
@@ -699,6 +713,14 @@ item.cobaltdust.name=Pulverized Cobalt
 item.diamonddust.name=Pulverized Diamond
 item.emeralddust.name=Pulverized Emerald
 item.eveniumdust.name=Pulverized Evenium
+
+item.raditedust.name=Radite Dust
+item.zogitedust.name=Zogite Dust
+item.zograditeblend.name=Zogradite Blend
+
+item.raditeingot.name=Radite Ingot
+item.zogiteingot.name=Zogite Ingot
+item.zograditeingot.name=Zogradite Ingot
 
 item.alienbeefraw.name=Raw Alien Beef
 item.alienbeefcooked.name=Cooked Alien Beef
@@ -743,6 +765,7 @@ item.purgotessence.name=Oasis Gem
 
 item.shadowessence.name=Dark Matter Essence
 item.radium.name=Radium
+item.zanium.name=Zanium
 
 item.stormcrystalgem.name=Storm Crystal Gem
 
@@ -828,6 +851,7 @@ item.compressedzollernium.name=Compressed Zollernium
 item.compressedrhodium.name=Compressed Rhodium
 item.compressedzucrite.name=Compressed Zucrite
 item.compressedascendantamaranth.name=Compressed Ascendant Amaranth
+item.compressedzanium.name=Compressed Zanium
 
 item.superchargedcoal.name=Super Charged Coal
 item.powerstick.name=Rod of Ascension
@@ -924,6 +948,26 @@ item.sapphire_shovel.name=Sapphire Shovel
 item.sapphire_axe.name=Sapphire Axe
 item.sapphire_hoe.name=Sapphire Hoe
 
+item.zanium_pickaxe.name=Zanium Pickaxe
+item.zanium_sword.name=Zanium Sword
+item.zanium_shovel.name=Zanium Shovel
+item.zanium_axe.name=Zanium Axe
+item.zanium_hoe.name=Zanium Hoe
+
+item.radite_pickaxe.name=Radite Pickaxe
+item.radite_sword.name=Radite Sword
+item.radite_shovel.name=Radite Shovel
+item.radite_axe.name=Radite Axe
+item.radite_hoe.name=Radite Hoe
+
+item.zogite_pickaxe.name=Zogite Pickaxe
+item.zogite_sword.name=Zogite Sword
+item.zogite_shovel.name=Zogite Shovel
+item.zogite_axe.name=Zogite Axe
+item.zogite_hoe.name=Zogite Hoe
+
+item.zogradite_scyte.name=Zogradite Scythe
+
 item.woodhelmet.name=Wooden Helmet
 item.woodchestplate.name=Wooden Chestplate
 item.woodleggings.name=Wooden Leggings
@@ -963,6 +1007,21 @@ item.sapphirehelmet.name=Sapphire Helmet
 item.sapphirechestplate.name=Sapphire Chestplate
 item.sapphireleggings.name=Sapphire Leggings
 item.sapphireboots.name=Sapphire Boots
+
+item.zaniumhelmet.name=Zanium Helmet
+item.zaniumchestplate.name=Zanium Chestplate
+item.zaniumleggings.name=Zanium Leggings
+item.zaniumboots.name=Zanium Boots
+
+item.raditehelmet.name=Radite Helmet
+item.raditechestplate.name=Radite Chestplate
+item.raditeleggings.name=Radite Leggings
+item.raditeboots.name=Radite Boots
+
+item.zogitehelmet.name=Zogite Helmet
+item.zogitechestplate.name=Zogite Chestplate
+item.zogiteleggings.name=Zogite Leggings
+item.zogiteboots.name=Zogite Boots
 
 item.heart.name=Healing Heart
 item.heartforce.name=Max Heartforce
@@ -1104,7 +1163,7 @@ entity.zollerngalaxy:hulk.name=Hulk
 
 entity.zollerngalaxy:facehugger.name=Facehugger
 entity.zollerngalaxy:xenomorph.name=Xenomorph
-entity.zollerngalaxy:xenomorphqueen.name=Xenomorph Queen
+entity.zollerngalaxy:xenomorphqueen.name=Xenomorph Queen Boss
 
 entity.zollerngalaxy:dragon.name=Galaxy Dragon
 

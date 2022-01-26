@@ -20,13 +20,11 @@ public class CompressorRecipesZG {
 	
 	public static void init() {
 		// Compressed Virinium
-		CompressorRecipes.addShapelessRecipe(new ItemStack(ZGItems.compressedVirinium, 2), new ItemStack(ZGItems.ingotVirinium, 1, 0),
-				new ItemStack(ZGItems.ingotVirinium, 1, 0));
+		CompressorRecipes.addShapelessRecipe(new ItemStack(ZGItems.compressedVirinium, 2), new ItemStack(ZGItems.ingotVirinium, 1, 0), new ItemStack(ZGItems.ingotVirinium, 1, 0));
 		totalCompressorRecipes++;
 		
 		// Compressed Evenium
-		CompressorRecipes.addShapelessRecipe(new ItemStack(ZGItems.compressedEvenium, 2), new ItemStack(ZGItems.ingotEvenium, 1, 0),
-				new ItemStack(ZGItems.ingotEvenium, 1, 0));
+		CompressorRecipes.addShapelessRecipe(new ItemStack(ZGItems.compressedEvenium, 2), new ItemStack(ZGItems.ingotEvenium, 1, 0), new ItemStack(ZGItems.ingotEvenium, 1, 0));
 		totalCompressorRecipes++;
 		
 		// Compressed Heartium
@@ -34,18 +32,15 @@ public class CompressorRecipesZG {
 		totalCompressorRecipes++;
 		
 		// Compressed Vyrex
-		CompressorRecipes.addShapelessRecipe(new ItemStack(ZGItems.compressedVyrex, 1), new ItemStack(ZGBlocks.blockCompressedViri, 1, 0),
-				new ItemStack(ZGBlocks.blockCompressedHeartium, 1, 0));
+		CompressorRecipes.addShapelessRecipe(new ItemStack(ZGItems.compressedVyrex, 1), new ItemStack(ZGBlocks.blockCompressedViri, 1, 0), new ItemStack(ZGBlocks.blockCompressedHeartium, 1, 0));
 		totalCompressorRecipes++;
 		
 		// Compressed Cobalt
-		CompressorRecipes.addShapelessRecipe(new ItemStack(ZGItems.compressedCobalt, 2), new ItemStack(ZGItems.ingotCobalt, 1, 0),
-				new ItemStack(ZGItems.ingotCobalt, 1, 0));
+		CompressorRecipes.addShapelessRecipe(new ItemStack(ZGItems.compressedCobalt, 2), new ItemStack(ZGItems.ingotCobalt, 1, 0), new ItemStack(ZGItems.ingotCobalt, 1, 0));
 		totalCompressorRecipes++;
 		
 		// Compressed Kriffonium
-		CompressorRecipes.addShapelessRecipe(new ItemStack(ZGItems.compressedKriffonium, 2), new ItemStack(ZGItems.compressedGold, 1),
-				new ItemStack(ZGItems.compressedCobalt, 1, 0));
+		CompressorRecipes.addShapelessRecipe(new ItemStack(ZGItems.compressedKriffonium, 2), new ItemStack(ZGItems.compressedGold, 1), new ItemStack(ZGItems.compressedCobalt, 1, 0));
 		totalCompressorRecipes++;
 		
 		// Compressed Emerald
@@ -65,8 +60,7 @@ public class CompressorRecipesZG {
 		totalCompressorRecipes++;
 		
 		// Compressed Super Charged Coal
-		CompressorRecipes.addShapelessRecipe(new ItemStack(ZGItems.compressedSuperChargedCoal, 1), new ItemStack(ZGBlocks.blockSuperChargedCoal, 1),
-				ZGBlocks.blockSuperChargedCoal);
+		CompressorRecipes.addShapelessRecipe(new ItemStack(ZGItems.compressedSuperChargedCoal, 1), new ItemStack(ZGBlocks.blockSuperChargedCoal, 1), ZGBlocks.blockSuperChargedCoal);
 		totalCompressorRecipes++;
 		
 		// Compressed Riven
@@ -97,14 +91,19 @@ public class CompressorRecipesZG {
 		totalCompressorRecipes++;
 		
 		// Ascendant Amaranth Ingot
-		CompressorRecipes.addShapelessRecipe(new ItemStack(ZGItems.ingotAscendantAmaranth, 2), new ItemStack(ZGItems.ascendium, 2),
-				new ItemStack(ZGItems.ingotAmaranth, 1));
+		CompressorRecipes.addShapelessRecipe(new ItemStack(ZGItems.ingotAscendantAmaranth, 2), new ItemStack(ZGItems.ascendium, 2), new ItemStack(ZGItems.ingotAmaranth, 1));
 		totalCompressorRecipes++;
 		
 		// Compressed Ascendant Amaranth
-		CompressorRecipes.addShapelessRecipe(new ItemStack(ZGItems.compressedAscendantAmaranth, 2), new ItemStack(ZGItems.ingotAscendantAmaranth, 1),
-				new ItemStack(ZGItems.ingotAscendantAmaranth, 1));
+		CompressorRecipes.addShapelessRecipe(new ItemStack(ZGItems.compressedAscendantAmaranth, 2), new ItemStack(ZGItems.ingotAscendantAmaranth, 1), new ItemStack(ZGItems.ingotAscendantAmaranth, 1));
 		totalCompressorRecipes++;
+		
+		// Compressed Zanium
+		CompressorRecipes.addShapelessRecipe(new ItemStack(ZGItems.compressedZanium, 1), new ItemStack(ZGItems.zanium, 1), new ItemStack(ZGItems.zanium, 1));
+		totalCompressorRecipes++;
+		
+		// Zogradite Ingot
+		CompressorRecipes.addShapelessRecipe(new ItemStack(ZGItems.ingotRadite, 1), new ItemStack(ZGItems.ingotZogite, 1), new ItemStack(ZGItems.ingotZogite, 1));
 		
 		ZGHelper.Log("Loaded a total of " + totalCompressorRecipes + " new compressor recipes.");
 	}

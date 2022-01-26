@@ -66,7 +66,7 @@ public abstract class ZombieUtils {
 		zombie.setLocationAndAngles(x, y, z, player.rotationYaw, player.rotationPitch);
 		zombie.setCustomNameTag(entityName + " " + playerName);
 		world.spawnEntity(zombie);
-		ZombieUtils.playMutateSound(zombie.posX, zombie.posY, zombie.posY, world, rand);
+		ZombieUtils.playMutateSound(zombie.posX, zombie.posY, zombie.posZ, world, rand);
 	}
 	
 	/**

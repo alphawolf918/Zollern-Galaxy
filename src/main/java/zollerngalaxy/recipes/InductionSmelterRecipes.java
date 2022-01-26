@@ -36,6 +36,12 @@ public final class InductionSmelterRecipes {
 		// 2 Amaranth Dusts + 1 Zinc Dust = 1 Zollernium Dust
 		InductionSmelterRecipes.addRecipe(5000, new ItemStack(ZGItems.dustAmaranth, 2), new ItemStack(ZGItems.dustZinc, 1), new ItemStack(ZGItems.dustZollernium, 1));
 		
+		// 1 Radite Ingot + 1 Zogite Ingot = 1 Zogradite Ingot
+		InductionSmelterRecipes.addRecipe(15000, new ItemStack(ZGItems.ingotRadite, 1), new ItemStack(ZGItems.ingotZogite, 1), new ItemStack(ZGItems.ingotZogradite, 1));
+		
+		// 1 Radite Dust + 1 Zogite Dust = 1 Zogradite Dust
+		InductionSmelterRecipes.addRecipe(8000, new ItemStack(ZGItems.dustRadite, 1), new ItemStack(ZGItems.dustZogite, 1), new ItemStack(ZGItems.dustZogradite, 1));
+		
 		ZGHelper.Log("Loaded " + totalRecipes + " new Induction Smelter recipes.");
 	}
 	

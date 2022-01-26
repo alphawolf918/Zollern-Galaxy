@@ -192,8 +192,15 @@ public class PulverizerRecipes {
 		// Obsidian
 		PulverizerRecipes.addRecipe(Blocks.OBSIDIAN, new ItemStack(ZGItems.dustObsidian, 9));
 		
+		// Radite
+		PulverizerRecipes.addRecipe(ZGBlocks.netherRaditeOre, ZGItems.dustRadite);
+		
+		// Zogite
+		PulverizerRecipes.addRecipe(ZGBlocks.netherZogiteOre, ZGItems.dustZogite);
+		
 		// Wheat -> Flour
 		ThermalExpansionHelper.addPulverizerRecipe(400, new ItemStack(Items.WHEAT), new ItemStack(ZGItems.flour, 2));
+		totalRecipes++;
 		
 		ZGHelper.Log("Loaded a total of " + totalRecipes + " new Pulverizer recipes.");
 	}

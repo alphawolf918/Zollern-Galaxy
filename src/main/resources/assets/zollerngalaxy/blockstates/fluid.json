@@ -45,6 +45,13 @@
 					"fluid": "spacemilk"
 				}
 			}
+		],
+		"raditefluid": [
+			{
+				"custom": {
+					"fluid": "raditefluid"
+				}
+			}
 		]
 	}
 }

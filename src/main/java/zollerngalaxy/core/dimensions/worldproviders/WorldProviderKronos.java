@@ -63,7 +63,7 @@ public class WorldProviderKronos extends WorldProviderPlanetZG {
 	
 	@Override
 	public double getFuelUsageMultiplier() {
-		return 21.2D;
+		return 8.2D;
 	}
 	
 	@Override
@@ -73,7 +73,7 @@ public class WorldProviderKronos extends WorldProviderPlanetZG {
 	
 	@Override
 	public float getFallDamageModifier() {
-		return 0.36F;
+		return 0.34F;
 	}
 	
 	@Override
@@ -120,14 +120,14 @@ public class WorldProviderKronos extends WorldProviderPlanetZG {
 	
 	@Override
 	public Vector3 getSkyColor() {
-		float f = 0.6F - this.getStarBrightness(1.0F);
+		float f = 0.8F - this.getStarBrightness(1.0F);
 		return new Vector3(80 / 255F * f, 0 / 255F * f, 0 / 255F * f);
 	}
 	
 	@Override
 	@SideOnly(Side.CLIENT)
 	public Vec3d getFogColor(float p_76562_1_, float p_76562_2_) {
-		return new Vec3d(0.20000000298023224D, 0.029999999329447746D, 0.029999999329447746D);
+		return new Vec3d(1.23000000298023224D, 0.029999999329447746D, 0.029999999329447746D);
 	}
 	
 	@Override
@@ -184,7 +184,7 @@ public class WorldProviderKronos extends WorldProviderPlanetZG {
 	@SideOnly(Side.CLIENT)
 	public float getSunBrightness(float par1) {
 		float f1 = this.world.getCelestialAngle(1.0F);
-		float f2 = 0.5F - (MathHelper.cos(f1 * (float) Math.PI * 2.0F) * 2.0F + 0.2F);
+		float f2 = 0.7F - (MathHelper.cos(f1 * (float) Math.PI * 2.0F) * 2.0F + 0.2F);
 		
 		if (f2 < 0.0F) {
 			f2 = 0.0F;
@@ -193,7 +193,7 @@ public class WorldProviderKronos extends WorldProviderPlanetZG {
 			f2 = 1.0F;
 		}
 		f2 = 1.0F - f2;
-		return f2 * 0.1F;
+		return f2 * 0.2F;
 	}
 	
 	@Override
@@ -203,7 +203,7 @@ public class WorldProviderKronos extends WorldProviderPlanetZG {
 	
 	@Override
 	public float calculateCelestialAngle(long par1, float par3) {
-		return 0.5F;
+		return 0.6F;
 	}
 	
 	@Override
@@ -223,7 +223,7 @@ public class WorldProviderKronos extends WorldProviderPlanetZG {
 	
 	@Override
 	protected void generateLightBrightnessTable() {
-		float f = 0.1F;
+		float f = 0.2F;
 		
 		for (int i = 0; i <= 15; ++i) {
 			float f1 = 1.0F - i / 15.0F;
@@ -266,7 +266,7 @@ public class WorldProviderKronos extends WorldProviderPlanetZG {
 	
 	@Override
 	protected void renderCloud() {
-		this.setCloudRenderer(new CloudRenderer());// WorldProviderHell
+		this.setCloudRenderer(new CloudRenderer());
 	}
 	
 	@Override

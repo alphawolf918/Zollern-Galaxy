@@ -98,6 +98,10 @@ public class CraftingRecipes {
 		CraftingRecipes.addIngotMetal(Blocks.RED_MUSHROOM, ZGBlocks.blockRedshroom);
 		CraftingRecipes.addIngotMetal(Items.SUGAR, ZGBlocks.blockSugarCube);
 		CraftingRecipes.addIngotMetal(ZGItems.ingotObsidian, Blocks.OBSIDIAN);
+		CraftingRecipes.addIngotMetal(ZGItems.zanium, ZGBlocks.blockZanium);
+		CraftingRecipes.addIngotMetal(ZGItems.ingotRadite, ZGBlocks.blockRadite);
+		CraftingRecipes.addIngotMetal(ZGItems.ingotZogite, ZGBlocks.blockZogite);
+		CraftingRecipes.addIngotMetal(ZGItems.ingotZogradite, ZGBlocks.blockZogradite);
 		
 		// Compression
 		CraftingRecipes.addIngotMetal(ZGItems.compressedCobalt, ZGBlocks.blockCompressedCobalt);
@@ -141,6 +145,9 @@ public class CraftingRecipes {
 		CraftingRecipes.addArmorSet(ZGItems.helmetRadium, ZGItems.radium, "helmet");
 		CraftingRecipes.addArmorSet(ZGItems.helmetRuby, ZGItems.ruby, "helmet");
 		CraftingRecipes.addArmorSet(ZGItems.helmetSapphire, ZGItems.sapphire, "helmet");
+		CraftingRecipes.addArmorSet(ZGItems.helmetZanium, ZGItems.zanium, "helmet");
+		CraftingRecipes.addArmorSet(ZGItems.helmetRadite, ZGItems.ingotRadite, "helmet");
+		CraftingRecipes.addArmorSet(ZGItems.helmetZogite, ZGItems.ingotZogite, "helmet");
 		
 		// Chest
 		CraftingRecipes.addArmorSet(ZGItems.chestWood, Blocks.PLANKS, "chest");
@@ -151,6 +158,9 @@ public class CraftingRecipes {
 		CraftingRecipes.addArmorSet(ZGItems.chestRadium, ZGItems.radium, "chest");
 		CraftingRecipes.addArmorSet(ZGItems.chestRuby, ZGItems.ruby, "chest");
 		CraftingRecipes.addArmorSet(ZGItems.chestSapphire, ZGItems.sapphire, "chest");
+		CraftingRecipes.addArmorSet(ZGItems.chestZanium, ZGItems.zanium, "chest");
+		CraftingRecipes.addArmorSet(ZGItems.chestRadite, ZGItems.ingotRadite, "chest");
+		CraftingRecipes.addArmorSet(ZGItems.chestZogite, ZGItems.ingotZogite, "chest");
 		
 		// Legs
 		CraftingRecipes.addArmorSet(ZGItems.legsWood, Blocks.PLANKS, "legs");
@@ -161,6 +171,9 @@ public class CraftingRecipes {
 		CraftingRecipes.addArmorSet(ZGItems.legsRadium, ZGItems.radium, "legs");
 		CraftingRecipes.addArmorSet(ZGItems.legsRuby, ZGItems.ruby, "legs");
 		CraftingRecipes.addArmorSet(ZGItems.legsSapphire, ZGItems.sapphire, "legs");
+		CraftingRecipes.addArmorSet(ZGItems.legsZanium, ZGItems.zanium, "legs");
+		CraftingRecipes.addArmorSet(ZGItems.legsRadite, ZGItems.ingotRadite, "legs");
+		CraftingRecipes.addArmorSet(ZGItems.legsZogite, ZGItems.ingotZogite, "legs");
 		
 		// Feets
 		CraftingRecipes.addArmorSet(ZGItems.bootsWood, Blocks.PLANKS, "boots");
@@ -171,6 +184,9 @@ public class CraftingRecipes {
 		CraftingRecipes.addArmorSet(ZGItems.bootsRadium, ZGItems.radium, "boots");
 		CraftingRecipes.addArmorSet(ZGItems.bootsRuby, ZGItems.ruby, "boots");
 		CraftingRecipes.addArmorSet(ZGItems.bootsSapphire, ZGItems.sapphire, "boots");
+		CraftingRecipes.addArmorSet(ZGItems.bootsZanium, ZGItems.zanium, "boots");
+		CraftingRecipes.addArmorSet(ZGItems.bootsRadite, ZGItems.ingotRadite, "boots");
+		CraftingRecipes.addArmorSet(ZGItems.bootsZogite, ZGItems.ingotZogite, "boots");
 		
 		// Blood Obsidian
 		ZGRecipeHelper.addRecipe(new ItemStack(ZGBlocks.blockRedObsidian, 2), new Object[] { "BN ", "NB ", "   ", 'B', Blocks.NETHER_WART_BLOCK, 'N', Blocks.OBSIDIAN });
@@ -317,6 +333,7 @@ public class CraftingRecipes {
 		CraftingRecipes.addPickaxe(new ItemStack(ZGItems.pickaxeZollernium), ZGItems.ingotZollernium);
 		CraftingRecipes.addPickaxe(new ItemStack(ZGItems.pickaxeRuby), ZGItems.ruby);
 		CraftingRecipes.addPickaxe(new ItemStack(ZGItems.pickaxeSapphire), ZGItems.sapphire);
+		CraftingRecipes.addPickaxe(new ItemStack(ZGItems.pickaxeZanium), ZGItems.zanium);
 		
 		// Shovels
 		CraftingRecipes.addShovel(new ItemStack(ZGItems.shovelCobalt), ZGItems.ingotCobalt);
@@ -327,6 +344,7 @@ public class CraftingRecipes {
 		CraftingRecipes.addShovel(new ItemStack(ZGItems.shovelZollernium), ZGItems.ingotZollernium);
 		CraftingRecipes.addShovel(new ItemStack(ZGItems.shovelRuby), ZGItems.ruby);
 		CraftingRecipes.addShovel(new ItemStack(ZGItems.shovelSapphire), ZGItems.sapphire);
+		CraftingRecipes.addShovel(new ItemStack(ZGItems.shovelZanium), ZGItems.zanium);
 		
 		// Axes
 		CraftingRecipes.addAxe(new ItemStack(ZGItems.axeCobalt), ZGItems.ingotCobalt);
@@ -337,6 +355,7 @@ public class CraftingRecipes {
 		CraftingRecipes.addAxe(new ItemStack(ZGItems.axeZollernium), ZGItems.ingotZollernium);
 		CraftingRecipes.addAxe(new ItemStack(ZGItems.axeRuby), ZGItems.ruby);
 		CraftingRecipes.addAxe(new ItemStack(ZGItems.axeSapphire), ZGItems.sapphire);
+		CraftingRecipes.addAxe(new ItemStack(ZGItems.axeZanium), ZGItems.zanium);
 		
 		// Hoes
 		CraftingRecipes.addHoe(new ItemStack(ZGItems.hoeCobalt), ZGItems.ingotCobalt);
@@ -347,6 +366,7 @@ public class CraftingRecipes {
 		CraftingRecipes.addHoe(new ItemStack(ZGItems.hoeZollernium), ZGItems.ingotZollernium);
 		CraftingRecipes.addHoe(new ItemStack(ZGItems.hoeRuby), ZGItems.ruby);
 		CraftingRecipes.addHoe(new ItemStack(ZGItems.hoeSapphire), ZGItems.sapphire);
+		CraftingRecipes.addHoe(new ItemStack(ZGItems.hoeZanium), ZGItems.zanium);
 		
 		// Swords
 		CraftingRecipes.addSword(new ItemStack(ZGItems.swordCobalt), ZGItems.ingotCobalt);
@@ -357,6 +377,7 @@ public class CraftingRecipes {
 		CraftingRecipes.addSword(new ItemStack(ZGItems.swordZollernium), ZGItems.ingotZollernium);
 		CraftingRecipes.addSword(new ItemStack(ZGItems.swordRuby), ZGItems.ruby);
 		CraftingRecipes.addSword(new ItemStack(ZGItems.swordSapphire), ZGItems.sapphire);
+		CraftingRecipes.addSword(new ItemStack(ZGItems.swordZanium), ZGItems.zanium);
 		
 		// Tunnelers
 		CraftingRecipes.addTunneler(new ItemStack(ZGItems.tunnelerCopper), new ItemStack(GCItems.basicItem, 1, 3), new ItemStack(Items.BLAZE_POWDER, 1));

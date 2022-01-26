@@ -176,6 +176,8 @@ public class FurnaceRecipes {
 		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.netherZincOre, ZGItems.ingotZinc, 3.7F);
 		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.netherAmaranthOre, ZGItems.ingotAmaranth, 4.3F);
 		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.netherShiniumOre, ZGItems.ingotShinium, 5.6F);
+		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.netherRaditeOre, ZGItems.ingotRadite, 8.6F);
+		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.netherZogiteOre, ZGItems.ingotZogite, 8.6F);
 		
 		// Dust -> Ingots/Gems
 		FurnaceRecipes.SmeltItem(ZGItems.dustDiamond, Items.DIAMOND, 2.6F);

@@ -20,6 +20,7 @@ import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitCent
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitEden;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitExodus;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitKriffon;
+import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitKronos;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitMetztli;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitOasis;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitPerdita;
@@ -113,6 +114,8 @@ public class ZGDimensions {
 	public static DimensionType TLALOC_ORBIT_STATIC;
 	
 	public static DimensionType KRONOS;
+	public static DimensionType KRONOS_ORBIT;
+	public static DimensionType KRONOS_ORBIT_STATIC;
 	
 	public static void init() {
 		// Psion-6 (Zollus)
@@ -210,6 +213,8 @@ public class ZGDimensions {
 		
 		// Olympus (Kronos)
 		ZGDimensions.KRONOS = ZGDimensions.getDimType(ConfigManagerZG.planetKronosDimensionId);
+		ZGDimensions.KRONOS_ORBIT = DimensionType.register("Kronos Space Station", "_kronos_orbit", ConfigManagerZG.spaceStationKronosId, WorldProviderOrbitKronos.class, false);
+		ZGDimensions.KRONOS_ORBIT_STATIC = DimensionType.register("Kronos Space Station", "_kronos_orbit", ConfigManagerZG.spaceStationKronosStaticId, WorldProviderOrbitKronos.class, true);
 	}
 	
 	public static DimensionType getDimType(int dimId) {

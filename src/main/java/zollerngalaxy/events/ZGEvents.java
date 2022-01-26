@@ -96,7 +96,7 @@ import zollerngalaxy.potions.ZGPotions;
 import zollerngalaxy.proxy.IProxy;
 import zollerngalaxy.util.ArmorUtils;
 import zollerngalaxy.util.CachedEnumZG;
-import zollerngalaxy.util.VillageUtils;
+import zollerngalaxy.util.VillagerUtils;
 import zollerngalaxy.util.ZGDamageSrc;
 import zollerngalaxy.util.ZGUtils;
 import zollerngalaxy.util.ZombieUtils;
@@ -318,7 +318,9 @@ public class ZGEvents {
 			}
 			
 			// Handle Armor Checks
-			ArmorUtils.performArmorCheck(player);
+			if (ConfigManagerZG.enableArmorEffects) {
+				ArmorUtils.performArmorCheck(player);
+			}
 		}
 		
 		// Handle Alien Mutations
@@ -421,7 +423,7 @@ public class ZGEvents {
 		}
 		
 		// Convert Alien Villagers to planet-specific Villagers
-		VillageUtils.ConvertVillagers(event);
+		VillagerUtils.ConvertVillagers(event);
 	}
 	
 	@SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
@@ -454,7 +456,7 @@ public class ZGEvents {
 		
 		// Mega Creeper
 		if (theEntity instanceof EntityMegaCreeper) {
-			for (int i = 0; i < ZGHelper.rngInt(1, 3); i++) {
+			for (int i = 0; i < ZGHelper.rngInt(1, 4); i++) {
 				ZGHelper.dropItem(ZGItems.superChargedCoal, worldObj, theEntity);
 			}
 		}

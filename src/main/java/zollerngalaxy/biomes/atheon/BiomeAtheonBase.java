@@ -19,9 +19,12 @@ import zollerngalaxy.biomes.decorators.BiomeDecoratorAtheon;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.blocks.fluids.ZGFluids;
 import zollerngalaxy.celestial.ZGPlanets;
+import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderAtheon;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 import zollerngalaxy.mobs.entities.EntityGrayAlien;
+import zollerngalaxy.mobs.entities.EntityVexBotGold;
+import zollerngalaxy.mobs.entities.villagers.EntityAtheonVillager;
 
 public abstract class BiomeAtheonBase extends BiomeSpace {
 	
@@ -41,11 +44,11 @@ public abstract class BiomeAtheonBase extends BiomeSpace {
 	public BiomeAtheonBase(String singleName, BiomeProperties props) {
 		super(singleName, props);
 		this.setTempCategory(TempCategory.MEDIUM);
-		this.biomeDecor.flowersPerChunk = -999;
-		this.biomeDecor.treesPerChunk = -999;
-		this.biomeDecor.grassPerChunk = -999;
-		this.biomeDecor.mushroomsPerChunk = -999;
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityGrayAlien.class, 1, 1, 1));
+		this.spawnableMonsterList.add(new SpawnListEntry(EntityVexBotGold.class, 100, 1, 2));
+		if (ConfigManagerZG.enableAlienVillagerSpawn) {
+			this.spawnableCreatureList.add(new SpawnListEntry(EntityAtheonVillager.class, this.villagerSpawnRate, this.villagerMinSpawnRate, this.villagerMaxSpawnRate));
+		}
 		this.setStoneBlock(ZGBlocks.atheonStone);
 		this.setPlanetForBiome(ZGPlanets.planetAtheon);
 	}
@@ -139,5 +142,4 @@ public abstract class BiomeAtheonBase extends BiomeSpace {
 	public int getModdedBiomeGrassColor(int original) {
 		return this.grassFoliageColor;
 	}
-	
 }

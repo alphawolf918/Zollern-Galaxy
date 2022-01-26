@@ -52,6 +52,7 @@ import zollerngalaxy.mobs.entities.boss.EntityVexBotBoss;
 import zollerngalaxy.mobs.entities.boss.EntityXenomorphQueen;
 import zollerngalaxy.mobs.entities.villagers.EntityAbyssalVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityAstrosVillager;
+import zollerngalaxy.mobs.entities.villagers.EntityAtheonVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityCaligroVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityCandoraVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityCentotlVillager;
@@ -212,6 +213,9 @@ public class MobRegistry {
 		
 		// Kronos Villager
 		registerEntity("kronosvillager", EntityKronosVillager.class, entityId++, 0x0099ff, 0x8b00ff);
+		
+		// Atheon Villager
+		registerEntity("atheonvillager", EntityAtheonVillager.class, entityId++, 0x00ffff, 0x008b8b);
 		
 		/** END VILLAGERS **/
 		

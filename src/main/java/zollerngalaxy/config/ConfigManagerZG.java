@@ -147,6 +147,7 @@ public class ConfigManagerZG {
 	public static boolean enableQuietVillagers;
 	public static boolean enableMutantNameTags;
 	public static boolean enableStackChanges;
+	public static boolean enableArmorEffects;
 	
 	// Compat
 	public static boolean shouldOasisUseLiquidRedstone;
@@ -184,6 +185,7 @@ public class ConfigManagerZG {
 	public static boolean enableExplosiveOres;
 	public static boolean enablePotionEffectOres;
 	public static boolean enableOilLakes;
+	public static boolean showCompanionNameTags;
 	
 	/////////////////////////////////////////////////
 	public static double meteorGenZollus;
@@ -478,15 +480,17 @@ public class ConfigManagerZG {
 		enableMutantNameTags = config.get(CTG_MISC, "Enable Mutant Name Tags", true, "Should Mutant Zombies show their name tags? (default: true)").getBoolean();
 		
 		// Enable stack increase changes
-		enableStackChanges = config.get(CTG_MISC, "Enable Item Stack Increase Changes", true, "Increases stack height from 16 to 64 for some items when activated (default: true)").getBoolean();
+		enableStackChanges = config.get(CTG_MISC, "Enable Item Stack Increase Changes", true, "Increases stack height from 16 to 64 for some items when activated. (default: true)").getBoolean();
+		
+		// Enable armor to give effects when a full set is worn
+		enableArmorEffects = config.get(CTG_MISC, "Enable Armor Effects", true, "Enable armor sets giving effects when a full set is worn. (default: true)").getBoolean();
 		
 		// Compat (Whether or not to use Thermal Foundation's Detabilized Redstone for the Red Sea
 		// in Oasis)
 		shouldOasisUseLiquidRedstone = config.get(CTG_COMPAT, "Oasis uses Thermal Foundation's Destabilized Redstone", true, "Whether or not Oasis should use Detabilized Redstone for its Red Sea biome. (default: true)").getBoolean();
 		
-		// Compat (Whether or not Thermal Foundation Pulverizers should
-		// give extra
-		// (4) instead of normal (2))
+		// Compat (Whether or not Thermal Foundation Pulverizers should give extra (4) instead of
+		// normal (2))
 		enableExtraPulverizerOutput = config.get(CTG_COMPAT, "Enable extra Pulverizer Output", true, "Whether or not Zollern Galaxy ores give extra dust from Thermal Foundation's Pulverizers. " + "Disable if it causes compatibility issues (default: true).").getBoolean();
 		
 		// Compat (Should Fueltonium register as Uranium?)
@@ -540,6 +544,7 @@ public class ConfigManagerZG {
 		enableExplosiveOres = config.get(CTG_CUSTOMS, "Enable Explosive Ores", true, "Disable to prevent ores from exploding. (default: true). ").getBoolean();
 		enablePotionEffectOres = config.get(CTG_CUSTOMS, "Enable Potion Effect Ores", true, "Disable to prevent ores from giving potion effects. (default: true). ").getBoolean();
 		enableOilLakes = config.get(CTG_CUSTOMS, "Enable Oil Lake Generation on ZG Planets", true, "Enables the generation of lakes of Galacticraft's Crude Oil to generate on planets and moons from this mod. (default: true). ").getBoolean();
+		showCompanionNameTags = config.get(CTG_CUSTOMS, "Show Companion Name Tags", true, "Shows the name tag of companion mobs. (default: true). ").getBoolean();
 		
 		//
 		//

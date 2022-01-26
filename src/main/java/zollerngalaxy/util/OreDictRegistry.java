@@ -391,6 +391,33 @@ public class OreDictRegistry {
 		registerOre("ingotRhodium", ZGItems.ingotRhodium);
 		registerOre("dustRhodium", ZGItems.dustRhodium);
 		
+		// Zanium
+		registerOre("oreZanium", ZGBlocks.netherZaniumOre);
+		registerOre("blockZanium", ZGBlocks.blockZanium);
+		registerOre("gemZanium", ZGItems.zanium);
+		registerOre("pickaxeZanium", ZGItems.pickaxeZanium);
+		registerOre("shovelZanium", ZGItems.shovelZanium);
+		registerOre("hoeZanium", ZGItems.hoeZanium);
+		registerOre("axeZanium", ZGItems.axeZanium);
+		registerOre("swordZanium", ZGItems.swordZanium);
+		
+		// Radite
+		registerOre("oreRadite", ZGBlocks.netherRaditeOre);
+		registerOre("blockRadite", ZGBlocks.blockRadite);
+		registerOre("ingotRadite", ZGItems.ingotRadite);
+		registerOre("dustRadite", ZGItems.dustRadite);
+		
+		// Zogite
+		registerOre("oreZogite", ZGBlocks.netherZogiteOre);
+		registerOre("blockZogite", ZGBlocks.blockZogite);
+		registerOre("ingotZogite", ZGItems.ingotZogite);
+		registerOre("dustZogite", ZGItems.dustZogite);
+		
+		// Zogradite
+		registerOre("blockZogradite", ZGBlocks.blockZogradite);
+		registerOre("ingotZogradite", ZGItems.ingotZogradite);
+		registerOre("dustZogradite", ZGItems.dustZogradite);
+		
 		// Blazerock
 		registerOre("blockBlazePowder", ZGBlocks.blazeRock);
 		registerOre("gemBlazePowder", Items.BLAZE_POWDER);

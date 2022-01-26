@@ -15,6 +15,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderAltum;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderAstros;
+import zollerngalaxy.core.dimensions.worldproviders.WorldProviderAtheon;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderCaligro;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderCandora;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderCentotl;
@@ -34,6 +35,7 @@ import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.mobs.entities.base.EntityZGVillagerBase;
 import zollerngalaxy.mobs.entities.villagers.EntityAbyssalVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityAstrosVillager;
+import zollerngalaxy.mobs.entities.villagers.EntityAtheonVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityCaligroVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityCandoraVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityCentotlVillager;
@@ -49,7 +51,7 @@ import zollerngalaxy.mobs.entities.villagers.EntityTlalocVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityTociVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityZollusVillager;
 
-public class VillageUtils {
+public class VillagerUtils {
 	
 	/**
 	 * Convert Alien Villagers to planet-specific Villagers.
@@ -63,22 +65,23 @@ public class VillageUtils {
 		World world = event.getWorld();
 		if (!world.isRemote) {
 			Entity entity = event.getEntity();
-			VillageUtils.transformIntoVillager(world, entity, EntityAbyssalVillager.class, WorldProviderAltum.class);
-			VillageUtils.transformIntoVillager(world, entity, EntityHarranVillager.class, WorldProviderMetztli.class);
-			VillageUtils.transformIntoVillager(world, entity, EntityEdenVillager.class, WorldProviderEden.class);
-			VillageUtils.transformIntoVillager(world, entity, EntityAstrosVillager.class, WorldProviderAstros.class);
-			VillageUtils.transformIntoVillager(world, entity, EntityCaligroVillager.class, WorldProviderCaligro.class);
-			VillageUtils.transformIntoVillager(world, entity, EntityZollusVillager.class, WorldProviderZollus.class);
-			VillageUtils.transformIntoVillager(world, entity, EntityKriffonVillager.class, WorldProviderKriffon.class);
-			VillageUtils.transformIntoVillager(world, entity, EntityPurgotVillager.class, WorldProviderPurgot.class);
-			VillageUtils.transformIntoVillager(world, entity, EntityCentotlVillager.class, WorldProviderCentotl.class);
-			VillageUtils.transformIntoVillager(world, entity, EntityTociVillager.class, WorldProviderToci.class);
-			VillageUtils.transformIntoVillager(world, entity, EntityPerditaVillager.class, WorldProviderPerdita.class);
-			VillageUtils.transformIntoVillager(world, entity, EntityTlalocVillager.class, WorldProviderTlaloc.class);
-			VillageUtils.transformIntoVillager(world, entity, EntityOasisVillager.class, WorldProviderOasis.class);
-			VillageUtils.transformIntoVillager(world, entity, EntityCandoraVillager.class, WorldProviderCandora.class);
-			VillageUtils.transformIntoVillager(world, entity, EntityExodusVillager.class, WorldProviderExodus.class);
-			VillageUtils.transformIntoVillager(world, entity, EntityKronosVillager.class, WorldProviderKronos.class);
+			VillagerUtils.transformIntoVillager(world, entity, EntityAbyssalVillager.class, WorldProviderAltum.class);
+			VillagerUtils.transformIntoVillager(world, entity, EntityHarranVillager.class, WorldProviderMetztli.class);
+			VillagerUtils.transformIntoVillager(world, entity, EntityEdenVillager.class, WorldProviderEden.class);
+			VillagerUtils.transformIntoVillager(world, entity, EntityAstrosVillager.class, WorldProviderAstros.class);
+			VillagerUtils.transformIntoVillager(world, entity, EntityCaligroVillager.class, WorldProviderCaligro.class);
+			VillagerUtils.transformIntoVillager(world, entity, EntityZollusVillager.class, WorldProviderZollus.class);
+			VillagerUtils.transformIntoVillager(world, entity, EntityKriffonVillager.class, WorldProviderKriffon.class);
+			VillagerUtils.transformIntoVillager(world, entity, EntityPurgotVillager.class, WorldProviderPurgot.class);
+			VillagerUtils.transformIntoVillager(world, entity, EntityCentotlVillager.class, WorldProviderCentotl.class);
+			VillagerUtils.transformIntoVillager(world, entity, EntityTociVillager.class, WorldProviderToci.class);
+			VillagerUtils.transformIntoVillager(world, entity, EntityPerditaVillager.class, WorldProviderPerdita.class);
+			VillagerUtils.transformIntoVillager(world, entity, EntityTlalocVillager.class, WorldProviderTlaloc.class);
+			VillagerUtils.transformIntoVillager(world, entity, EntityOasisVillager.class, WorldProviderOasis.class);
+			VillagerUtils.transformIntoVillager(world, entity, EntityCandoraVillager.class, WorldProviderCandora.class);
+			VillagerUtils.transformIntoVillager(world, entity, EntityExodusVillager.class, WorldProviderExodus.class);
+			VillagerUtils.transformIntoVillager(world, entity, EntityKronosVillager.class, WorldProviderKronos.class);
+			VillagerUtils.transformIntoVillager(world, entity, EntityAtheonVillager.class, WorldProviderAtheon.class);
 		}
 	}
 	
@@ -104,7 +107,7 @@ public class VillageUtils {
 					alienVillager.setDead();
 					try {
 						EntityZGVillagerBase zgVillager = villagerIn.getDeclaredConstructor(World.class).newInstance(worldIn);
-						zgVillager.setPosition(worldPos.getX(), worldPos.getY(), worldPos.getZ());
+						zgVillager.copyLocationAndAnglesFrom(alienVillager);
 						worldIn.spawnEntity(zgVillager);
 					} catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException | NoSuchMethodException | SecurityException e) {
 						ZGHelper.LogErr("There was an error in trying to convert an Alien Villager!");

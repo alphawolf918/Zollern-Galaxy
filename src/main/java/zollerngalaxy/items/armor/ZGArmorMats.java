@@ -26,5 +26,8 @@ public abstract class ZGArmorMats {
 	public static final ArmorMaterial AZURITE = EnumHelper.addArmorMaterial("Azurite", ZGInfo.MOD_ID + ":azurite", 70, new int[] { 5, 9, 6, 4 }, 41, DIAMOND_EQUIP, 3.8F);
 	public static final ArmorMaterial ZOLLERNIUM = EnumHelper.addArmorMaterial("Zollernium", ZGInfo.MOD_ID + ":zollernium", 80, new int[] { 7, 9, 8, 6 }, 61, DIAMOND_EQUIP, 4.2F);
 	public static final ArmorMaterial RADIUM = EnumHelper.addArmorMaterial("Radium", ZGInfo.MOD_ID + ":radium", 90, new int[] { 9, 9, 9, 9 }, 71, DIAMOND_EQUIP, 4.6F);
+	public static final ArmorMaterial ZANIUM = EnumHelper.addArmorMaterial("Zanium", ZGInfo.MOD_ID + ":zanium", 100, new int[] { 10, 10, 10, 10 }, 82, DIAMOND_EQUIP, 5.7F);
+	public static final ArmorMaterial RADITE = EnumHelper.addArmorMaterial("Radite", ZGInfo.MOD_ID + ":radite", 110, new int[] { 10, 10, 10, 10 }, 85, DIAMOND_EQUIP, 6.7F);
+	public static final ArmorMaterial ZOGITE = EnumHelper.addArmorMaterial("Zogite", ZGInfo.MOD_ID + ":zogite", 115, new int[] { 10, 10, 10, 10 }, 87, DIAMOND_EQUIP, 7.8F);
 	
 }

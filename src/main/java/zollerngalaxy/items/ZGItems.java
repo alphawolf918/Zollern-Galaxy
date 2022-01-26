@@ -76,6 +76,7 @@ public class ZGItems {
 	public static final Item witherite = new ZGItemBase("witherite");
 	public static final Item netheridium = new ZGItemBase("netheridium");
 	public static final Item radium = new ZGItemBase("radium");
+	public static final Item zanium = new ZGItemBase("zanium");
 	
 	// Dust
 	public static final Item dustVirinium = new ZGItemBase("rawviri");
@@ -96,6 +97,9 @@ public class ZGItems {
 	public static final Item dustPlutonium = new ZGItemBase("plutoniumdust");
 	public static final Item dustEnrichment = new ZGItemBase("enrichmentdust");
 	public static final Item dustObsidian = new ZGItemBase("obsidiandust");
+	public static final Item dustRadite = new ZGItemBase("raditedust");
+	public static final Item dustZogite = new ZGItemBase("zogitedust");
+	public static final Item dustZogradite = new ZGItemBase("zograditeblend");
 	
 	// Ingots
 	public static final Item ingotVirinium = new ZGItemBase("ingotviri");
@@ -116,6 +120,9 @@ public class ZGItems {
 	public static final Item ingotRadium = new ZGItemBase("radiumingot");
 	public static final Item ingotPlutonium = new ZGItemBase("plutoniumingot");
 	public static final Item ingotObsidian = new ZGItemBase("obsidianingot");
+	public static final Item ingotRadite = new ZGItemBase("raditeingot");
+	public static final Item ingotZogite = new ZGItemBase("zogiteingot");
+	public static final Item ingotZogradite = new ZGItemBase("zograditeingot");
 	
 	public static final Item hud = new ItemHUD();
 	public static final Item alienStone = new ZGItemBase("alienstone");
@@ -145,6 +152,7 @@ public class ZGItems {
 	public static final Item compressedZucrite = new ZGItemBase("compressedzucrite");
 	public static final Item compressedRhodium = new ZGItemBase("compressedrhodium");
 	public static final Item compressedAscendantAmaranth = new ZGItemBase("compressedascendantamaranth");
+	public static final Item compressedZanium = new ZGItemBase("compressedzanium");
 	
 	// Foods
 	public static final Item rawAlienBacon = new ZGItemFood("alienbaconraw", 2, 1.5F, true);
@@ -226,6 +234,7 @@ public class ZGItems {
 	public static final Item pickaxeZollernium = new ZGItemPickaxe("zollernium", ZGToolMats.ZOLLERNIUM);
 	public static final Item pickaxeRuby = new ZGItemPickaxe("ruby", ZGToolMats.RUBY);
 	public static final Item pickaxeSapphire = new ZGItemPickaxe("sapphire", ZGToolMats.SAPPHIRE);
+	public static final Item pickaxeZanium = new ZGItemPickaxe("zanium", ZGToolMats.ZANIUM);
 	
 	// Shovels
 	public static final Item shovelCobalt = new ZGItemShovel("cobalt", ZGToolMats.COBALT);
@@ -236,6 +245,7 @@ public class ZGItems {
 	public static final Item shovelZollernium = new ZGItemShovel("zollernium", ZGToolMats.ZOLLERNIUM);
 	public static final Item shovelRuby = new ZGItemShovel("ruby", ZGToolMats.RUBY);
 	public static final Item shovelSapphire = new ZGItemShovel("sapphire", ZGToolMats.SAPPHIRE);
+	public static final Item shovelZanium = new ZGItemShovel("zanium", ZGToolMats.ZANIUM);
 	
 	// Axes
 	public static final Item axeCobalt = new ZGItemAxe("cobalt", ZGToolMats.COBALT);
@@ -246,6 +256,7 @@ public class ZGItems {
 	public static final Item axeZollernium = new ZGItemAxe("zollernium", ZGToolMats.ZOLLERNIUM);
 	public static final Item axeRuby = new ZGItemAxe("ruby", ZGToolMats.RUBY);
 	public static final Item axeSapphire = new ZGItemAxe("sapphire", ZGToolMats.SAPPHIRE);
+	public static final Item axeZanium = new ZGItemAxe("zanium", ZGToolMats.ZANIUM);
 	
 	// Hoes
 	public static final Item hoeCobalt = new ZGItemHoe("cobalt", ZGToolMats.COBALT);
@@ -256,6 +267,7 @@ public class ZGItems {
 	public static final Item hoeZollernium = new ZGItemHoe("zollernium", ZGToolMats.ZOLLERNIUM);
 	public static final Item hoeRuby = new ZGItemHoe("ruby", ZGToolMats.RUBY);
 	public static final Item hoeSapphire = new ZGItemHoe("sapphire", ZGToolMats.SAPPHIRE);
+	public static final Item hoeZanium = new ZGItemHoe("zanium", ZGToolMats.ZANIUM);
 	
 	// Swords
 	public static final Item swordCobalt = new ZGItemSword("cobalt", ZGToolMats.COBALT);
@@ -266,6 +278,7 @@ public class ZGItems {
 	public static final Item swordZollernium = new ZGItemSword("zollernium", ZGToolMats.ZOLLERNIUM);
 	public static final Item swordRuby = new ZGItemSword("ruby", ZGToolMats.RUBY);
 	public static final Item swordSapphire = new ZGItemSword("sapphire", ZGToolMats.SAPPHIRE);
+	public static final Item swordZanium = new ZGItemSword("zanium", ZGToolMats.ZANIUM);
 	public static final Item swordWither = new ItemWitherSword();
 	public static final Item swordFire = new ItemFireSword();
 	public static final Item swordThor = new ItemThorSword();
@@ -287,6 +300,9 @@ public class ZGItems {
 	public static final Item helmetRadium = new ZGArmor(ZGArmorMats.RADIUM, 1, EntityEquipmentSlot.HEAD, "radiumhelmet");
 	public static final Item helmetRuby = new ZGArmor(ZGArmorMats.RUBY, 1, EntityEquipmentSlot.HEAD, "rubyhelmet");
 	public static final Item helmetSapphire = new ZGArmor(ZGArmorMats.SAPPHIRE, 1, EntityEquipmentSlot.HEAD, "sapphirehelmet");
+	public static final Item helmetZanium = new ZGArmor(ZGArmorMats.ZANIUM, 1, EntityEquipmentSlot.HEAD, "zaniumhelmet");
+	public static final Item helmetRadite = new ZGArmor(ZGArmorMats.RADITE, 1, EntityEquipmentSlot.HEAD, "raditehelmet");
+	public static final Item helmetZogite = new ZGArmor(ZGArmorMats.ZOGITE, 1, EntityEquipmentSlot.HEAD, "zogitehelmet");
 	
 	// Armor (Chestplates)
 	public static final Item chestWood = new ZGArmor(ZGArmorMats.WOOD, 1, EntityEquipmentSlot.CHEST, "woodchestplate");
@@ -297,6 +313,9 @@ public class ZGItems {
 	public static final Item chestRadium = new ZGArmor(ZGArmorMats.RADIUM, 1, EntityEquipmentSlot.CHEST, "radiumchestplate");
 	public static final Item chestRuby = new ZGArmor(ZGArmorMats.RUBY, 1, EntityEquipmentSlot.CHEST, "rubychestplate");
 	public static final Item chestSapphire = new ZGArmor(ZGArmorMats.SAPPHIRE, 1, EntityEquipmentSlot.CHEST, "sapphirechestplate");
+	public static final Item chestZanium = new ZGArmor(ZGArmorMats.ZANIUM, 1, EntityEquipmentSlot.CHEST, "zaniumchestplate");
+	public static final Item chestRadite = new ZGArmor(ZGArmorMats.RADITE, 1, EntityEquipmentSlot.CHEST, "raditechestplate");
+	public static final Item chestZogite = new ZGArmor(ZGArmorMats.ZOGITE, 1, EntityEquipmentSlot.CHEST, "zogitechestplate");
 	
 	// Armor (Leggings)
 	public static final Item legsWood = new ZGArmor(ZGArmorMats.WOOD, 2, EntityEquipmentSlot.LEGS, "woodleggings");
@@ -307,6 +326,9 @@ public class ZGItems {
 	public static final Item legsRadium = new ZGArmor(ZGArmorMats.RADIUM, 2, EntityEquipmentSlot.LEGS, "radiumleggings");
 	public static final Item legsRuby = new ZGArmor(ZGArmorMats.RUBY, 2, EntityEquipmentSlot.LEGS, "rubyleggings");
 	public static final Item legsSapphire = new ZGArmor(ZGArmorMats.SAPPHIRE, 2, EntityEquipmentSlot.LEGS, "sapphireleggings");
+	public static final Item legsZanium = new ZGArmor(ZGArmorMats.ZANIUM, 2, EntityEquipmentSlot.LEGS, "zaniumleggings");
+	public static final Item legsRadite = new ZGArmor(ZGArmorMats.RADITE, 2, EntityEquipmentSlot.LEGS, "raditeleggings");
+	public static final Item legsZogite = new ZGArmor(ZGArmorMats.ZOGITE, 2, EntityEquipmentSlot.LEGS, "zogiteleggings");
 	
 	// Armor (Boots)
 	public static final Item bootsWood = new ZGArmor(ZGArmorMats.WOOD, 1, EntityEquipmentSlot.FEET, "woodboots");
@@ -316,7 +338,10 @@ public class ZGItems {
 	public static final Item bootsAzurite = new ZGArmor(ZGArmorMats.AZURITE, 1, EntityEquipmentSlot.FEET, "azuriteboots");
 	public static final Item bootsRadium = new ZGArmor(ZGArmorMats.RADIUM, 1, EntityEquipmentSlot.FEET, "radiumboots");
 	public static final Item bootsRuby = new ZGArmor(ZGArmorMats.RUBY, 1, EntityEquipmentSlot.FEET, "rubyboots");
-	public static final Item bootsSapphire = new ZGArmor(ZGArmorMats.SAPPHIRE, 2, EntityEquipmentSlot.LEGS, "sapphireboots");
+	public static final Item bootsSapphire = new ZGArmor(ZGArmorMats.SAPPHIRE, 2, EntityEquipmentSlot.FEET, "sapphireboots");
+	public static final Item bootsZanium = new ZGArmor(ZGArmorMats.ZANIUM, 2, EntityEquipmentSlot.FEET, "zaniumboots");
+	public static final Item bootsRadite = new ZGArmor(ZGArmorMats.RADITE, 2, EntityEquipmentSlot.FEET, "raditeboots");
+	public static final Item bootsZogite = new ZGArmor(ZGArmorMats.ZOGITE, 2, EntityEquipmentSlot.FEET, "zogiteboots");
 	
 	// Blueprints
 	public static final Item blueprintCorruption = new ItemBlueprint("corruption").setTooltipText("tooltips.blueprint_corruption");
@@ -368,14 +393,15 @@ public class ZGItems {
 	public static void init() {
 		ZGItems.registerItems(heartium, zolCrystal, kriffCrystal, purgCrystal, edenCrystal, purgEssence, prometheanCrystal, plutoniumCrystal, azurite, ascendium, rokkite, perdGlowdust, perdDiamond, perdEtrium, amber, topaz, opal, aquamarine, garnet, ruby, amberStatic, aquamarineIcy, garnetFire, witherite, netheridium, sapphire, stormCrystal, mudClayBall);
 		//
-		ZGItems.registerItems(dustBrightstone, dustShinestone, dustVirinium, dustEvenium, dustCobalt, dustFueltonium, dustShinium, dustChargium, dustDiamond, dustEmerald, dustAmaranth, dustZollernium, dustZinc, dustZucrite, dustRhodium, dustPlutonium, dustEnrichment, dustObsidian, ingotVirinium, ingotCobalt, ingotEvenium, ingotShinestone, ingotShinium, ingotChargium,
-				ingotFueltonium, ingotLapis, ingotAmaranth, ingotAscendantAmaranth, ingotZollernium, ingotZinc, ingotEtrium, ingotZucrite, ingotRhodium, ingotRadium, ingotPlutonium, ingotObsidian, hud, alienStone, compressedCobalt, compressedDiamond, compressedEmerald, compressedEvenium, compressedGold, compressedHeartium, compressedKriffonium, compressedVirinium,
-				compressedVyrex, compressedPromethean, compressedSuperChargedCoal, compressedRiven, compressedAmaranth, compressedAzurite, compressedZollernium, compressedZucrite, compressedRhodium, compressedAscendantAmaranth, rawAlienBacon, cookedAlienBacon, rawAlienBeef, cookedAlienBeef, edenFruit, perdBerry, perdPeach, rawBlubberFish, cookedBlubberFish, rawBladeFish,
-				cookedBladeFish, rawGypsyFish, cookedGypsyFish, creamBall, chocolateRaw, chocolateBar, brownie, candyApple, iceCreamSandwich, iceCream, chocolateStrawberry, edenDungeonKey, shadeKey, tlalocDungeonKey, perdReed, shagreen, sharkTooth, shadowBone, darkEssence, radium, superChargedCoal, powerStick, lapisStick, starGateTier1, starGateTier2, starGateTier3,
-				starGateTier4, starGateTier5, starGateTier6, starGateTier7, starGateTier8, starGateTier9, starGateTier10, starGateCandy, OMNITOOL, BEDROCK_BREAKER, pickaxeCobalt, pickaxeEvenium, pickaxeVirinium, pickaxeAmaranth, pickaxeAzurite, pickaxeZollernium, pickaxeRuby, pickaxeSapphire, shovelCobalt, shovelEvenium, shovelVirinium, shovelAmaranth, shovelAzurite,
-				shovelZollernium, shovelRuby, shovelSapphire, axeCobalt, axeEvenium, axeVirinium, axeAmaranth, axeAzurite, axeZollernium, axeRuby, axeSapphire, hoeCobalt, hoeEvenium, hoeVirinium, hoeAmaranth, hoeAzurite, hoeZollernium, hoeRuby, hoeSapphire, swordCobalt, swordEvenium, swordVirinium, swordAmaranth, swordAzurite, swordZollernium, swordRuby, swordSapphire,
-				swordWither, swordFire, swordThor, swordEnder, swordIce, swordLight, tunnelerCopper, tunnelerGold, tunnelerAmaranth, helmetWood, helmetStone, helmetAmaranth, helmetZollernium, helmetAzurite, helmetRadium, helmetRuby, helmetSapphire, chestWood, chestStone, chestAmaranth, chestZollernium, chestAzurite, chestRadium, chestRuby, chestSapphire, legsWood, legsStone,
-				legsAmaranth, legsZollernium, legsAzurite, legsRadium, legsRuby, legsSapphire, bootsWood, bootsStone, bootsAmaranth, bootsZollernium, bootsAzurite, bootsRadium, bootsRuby, bootsSapphire, blueprintCorruption, blueprintThermalHot, blueprintThermalCold, healingHeart, healingHeartForce, amuletStorm, oxygenTankTier4, oxygenTankTier5, oxygenTankTier6);
+		ZGItems.registerItems(dustBrightstone, dustShinestone, dustVirinium, dustEvenium, dustCobalt, dustFueltonium, dustShinium, dustChargium, dustDiamond, dustEmerald, dustAmaranth, dustZollernium, dustZinc, dustZucrite, dustRhodium, dustPlutonium, dustEnrichment, dustObsidian, dustRadite, dustZogite, dustZogradite, ingotVirinium, ingotCobalt, ingotEvenium, ingotShinestone,
+				ingotShinium, ingotChargium, ingotFueltonium, ingotLapis, ingotAmaranth, ingotAscendantAmaranth, ingotZollernium, ingotZinc, ingotEtrium, ingotZucrite, ingotRhodium, ingotRadium, ingotPlutonium, ingotObsidian, ingotRadite, ingotZogite, ingotZogradite, hud, alienStone, compressedCobalt, compressedDiamond, compressedEmerald, compressedEvenium, compressedGold,
+				compressedHeartium, compressedKriffonium, compressedVirinium, compressedVyrex, compressedPromethean, compressedSuperChargedCoal, compressedRiven, compressedAmaranth, compressedAzurite, compressedZollernium, compressedZucrite, compressedRhodium, compressedAscendantAmaranth, compressedZanium, rawAlienBacon, cookedAlienBacon, rawAlienBeef, cookedAlienBeef,
+				edenFruit, perdBerry, perdPeach, rawBlubberFish, cookedBlubberFish, rawBladeFish, cookedBladeFish, rawGypsyFish, cookedGypsyFish, creamBall, chocolateRaw, chocolateBar, brownie, candyApple, iceCreamSandwich, iceCream, chocolateStrawberry, edenDungeonKey, shadeKey, tlalocDungeonKey, perdReed, shagreen, sharkTooth, shadowBone, darkEssence, radium, zanium,
+				superChargedCoal, powerStick, lapisStick, starGateTier1, starGateTier2, starGateTier3, starGateTier4, starGateTier5, starGateTier6, starGateTier7, starGateTier8, starGateTier9, starGateTier10, starGateCandy, OMNITOOL, BEDROCK_BREAKER, pickaxeCobalt, pickaxeEvenium, pickaxeVirinium, pickaxeAmaranth, pickaxeAzurite, pickaxeZollernium, pickaxeRuby, pickaxeSapphire,
+				pickaxeZanium, shovelCobalt, shovelEvenium, shovelVirinium, shovelAmaranth, shovelAzurite, shovelZollernium, shovelRuby, shovelSapphire, shovelZanium, axeCobalt, axeEvenium, axeVirinium, axeAmaranth, axeAzurite, axeZollernium, axeRuby, axeSapphire, axeZanium, hoeCobalt, hoeEvenium, hoeVirinium, hoeAmaranth, hoeAzurite, hoeZollernium, hoeRuby, hoeSapphire,
+				hoeZanium, swordCobalt, swordEvenium, swordVirinium, swordAmaranth, swordAzurite, swordZollernium, swordRuby, swordSapphire, swordZanium, swordWither, swordFire, swordThor, swordEnder, swordIce, swordLight, tunnelerCopper, tunnelerGold, tunnelerAmaranth, helmetWood, helmetStone, helmetAmaranth, helmetZollernium, helmetAzurite, helmetRadium, helmetRuby,
+				helmetSapphire, helmetZanium, helmetRadite, helmetZogite, chestWood, chestStone, chestAmaranth, chestZollernium, chestAzurite, chestRadium, chestRuby, chestSapphire, chestZanium, chestRadite, chestZogite, legsWood, legsStone, legsAmaranth, legsZollernium, legsAzurite, legsRadium, legsRuby, legsSapphire, legsZanium, legsRadite, legsZogite, bootsWood, bootsStone,
+				bootsAmaranth, bootsZollernium, bootsAzurite, bootsRadium, bootsRuby, bootsSapphire, bootsZanium, bootsRadite, bootsZogite, blueprintCorruption, blueprintThermalHot, blueprintThermalCold, healingHeart, healingHeartForce, amuletStorm, oxygenTankTier4, oxygenTankTier5, oxygenTankTier6);
 		//
 		//
 		ZGItems.registerItems(alcohol, gauze, medkit, nail, nailGroup, woodBox, metalParts, dough, doughCooked, flour);

@@ -61,20 +61,20 @@ public class ArmorUtils {
 		for (int i = 0; i < 4; ++i) {
 			if (amArmorCount == 4) {
 				// Amaranth
-				player.addPotionEffect(new PotionEffect(MobEffects.RESISTANCE, 100, 1));
+				player.addPotionEffect(new PotionEffect(MobEffects.RESISTANCE, 100, 1, false, false));
 			} else if (zArmorCount == 4) {
 				// Zollernium
-				player.addPotionEffect(new PotionEffect(MobEffects.FIRE_RESISTANCE, 100, 1));
+				player.addPotionEffect(new PotionEffect(MobEffects.FIRE_RESISTANCE, 100, 1, false, false));
 				if (ConfigManagerZG.enableStepHeight) {
 					player.stepHeight = 2F;
 					fullSetWorn = true;
 				}
 			} else if (azArmorCount == 4) {
 				// Azurite
-				player.addPotionEffect(new PotionEffect(MobEffects.STRENGTH, 100, 1));
+				player.addPotionEffect(new PotionEffect(MobEffects.STRENGTH, 100, 2, false, false));
 			} else if (rArmorCount == 4) {
 				// Radium
-				player.addPotionEffect(new PotionEffect(ZGPotions.radiance, 100, 1));
+				player.addPotionEffect(new PotionEffect(ZGPotions.radiance, 100, 1, false, false));
 				if (ConfigManagerZG.enableRadianceFlying) {
 					if (!ModHelperBase.useDraconicEvolution) {
 						player.capabilities.allowFlying = true;

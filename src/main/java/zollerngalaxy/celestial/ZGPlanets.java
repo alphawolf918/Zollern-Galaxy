@@ -70,8 +70,8 @@ public class ZGPlanets {
 	private static float PANTHEON_Z = 0.0F + ConfigManagerZG.pantheonZOffset;
 	
 	// Coords (Olympus)
-	private static float OLYMPUS_X = (float) (((enableExtraGalaxies) ? 0.0F : 0.9) + ConfigManagerZG.olympusXOffset);
-	private static float OLYMPUS_Y = (float) (((enableExtraGalaxies) ? 0.0F : 1.8) + ConfigManagerZG.olympusYOffset);
+	private static float OLYMPUS_X = (float) (((enableExtraGalaxies) ? 0.0F : 1.2) + ConfigManagerZG.olympusXOffset);
+	private static float OLYMPUS_Y = (float) (((enableExtraGalaxies) ? 0.0F : 2.4) + ConfigManagerZG.olympusYOffset);
 	private static float OLYMPUS_Z = 0.0F + ConfigManagerZG.olympusZOffset;
 	
 	// Coords (Asgard)

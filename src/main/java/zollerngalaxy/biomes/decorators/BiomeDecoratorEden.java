@@ -8,14 +8,19 @@
 package zollerngalaxy.biomes.decorators;
 
 import java.util.Random;
+import micdoodle8.mods.galacticraft.core.GCBlocks;
+import micdoodle8.mods.galacticraft.core.event.EventHandlerGC;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.gen.feature.WorldGenWaterlily;
 import net.minecraft.world.gen.feature.WorldGenerator;
+import net.minecraftforge.event.terraingen.DecorateBiomeEvent;
+import net.minecraftforge.event.terraingen.TerrainGen;
 import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.blocks.ZGBlockTallGrass;
 import zollerngalaxy.blocks.ZGBlocks;
@@ -85,10 +90,8 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 	private WorldGenerator treeGenEden = new WorldGenEdenTrees(false, ZGHelper.rngInt(5, 10), ZGBlocks.edenWoodLog.getDefaultState(), ZGBlocks.edenWoodLeaves.getDefaultState(), this.generateVines);
 	private WorldGenerator towerGen = new WorldGenEdenTower();
 	private WorldGenerator giantBoneGen = new WorldGenGiantBone();
-	private WorldGenerator treeGenFall = new WorldGenEdenTrees(false, ZGHelper.rngInt(5, 7), ZGBlocks.edenParadiseWoodLog.getDefaultState(), ZGBlocks.edenParadiseWoodLeaves.getDefaultState(),
-			this.generateVines);
-	private WorldGenerator treeGenGold = new WorldGenEdenTrees(false, ZGHelper.rngInt(4, 8), ZGBlocks.edenGoldenWoodLog.getDefaultState(), ZGBlocks.edenGoldenWoodLeaves.getDefaultState(),
-			this.generateVines);
+	private WorldGenerator treeGenFall = new WorldGenEdenTrees(false, ZGHelper.rngInt(5, 7), ZGBlocks.edenParadiseWoodLog.getDefaultState(), ZGBlocks.edenParadiseWoodLeaves.getDefaultState(), this.generateVines);
+	private WorldGenerator treeGenGold = new WorldGenEdenTrees(false, ZGHelper.rngInt(4, 8), ZGBlocks.edenGoldenWoodLog.getDefaultState(), ZGBlocks.edenGoldenWoodLeaves.getDefaultState(), this.generateVines);
 	private WorldGenerator treeGenLove = new WorldGenEdenTrees(true, 5, ZGBlocks.edenLovetreeLog.getDefaultState(), ZGBlocks.edenLovetreeLeaves.getDefaultState(), this.generateVines);
 	private WorldGenerator treeGenMushroom = new WorldGenZGMushroomTree(false, ZGHelper.rngInt(3, 6));
 	private WorldGenerator dropshipGen = new WorldGenDropship();
@@ -141,6 +144,7 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 		int z = rand.nextInt(16) + 8;
 		
 		ChunkPrimer chunkPrimer = new ChunkPrimer();
+		ChunkPos forgeChunkPos = new ChunkPos(this.chunkPos);
 		
 		this.generateOre(this.dirtGen, EnumOreGenZG.DIRT, world, rand);
 		this.generateOre(this.gravelGen, EnumOreGenZG.GRAVEL, world, rand);
@@ -382,6 +386,17 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 					if (rand.nextInt((this.enableExtremeMode) ? 1000 : 600) <= 15) {
 						dropshipGen.generate(world, rand, this.chunkPos.add(x, y, z));
 					}
+				}
+			}
+		}
+		
+		// Oil Lakes
+		if (TerrainGen.decorate(world, rand, forgeChunkPos, DecorateBiomeEvent.Decorate.EventType.CUSTOM)) {
+			if (this.generateOil && this.oilPerChunk > 0 && this.enableOilGen) {
+				for (int i = 0; i < this.oilPerChunk; ++i) {
+					y = rand.nextInt(rand.nextInt(genY) + 8);
+					(new WorldGenLakesZG(GCBlocks.crudeOil, ZGBlocks.edenStone)).generate(world, rand, this.chunkPos.add(x, y, z));
+					EventHandlerGC.generateOil(world, rand, x, z, false);
 				}
 			}
 		}

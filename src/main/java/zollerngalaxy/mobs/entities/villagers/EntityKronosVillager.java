@@ -18,7 +18,6 @@ import zollerngalaxy.mobs.entities.base.EntityZGVillagerBase;
 
 public class EntityKronosVillager extends EntityZGVillagerBase {
 	
-	
 	public EntityKronosVillager(World worldIn) {
 		super(worldIn);
 		this.setSize(this.width * 1.0F, this.height * 1.0F);
@@ -43,7 +42,6 @@ public class EntityKronosVillager extends EntityZGVillagerBase {
 		ITradeList[] TRADE_LIST = new ITradeList[] { new ListVillagerItems(new ItemStack(Items.MAGMA_CREAM, 1), new PriceInfo(1, 2)), new ListVillagerItems(new ItemStack(ZGItems.garnetFire, 2), new PriceInfo(1, 2)), new ListVillagerItems(new ItemStack(Items.QUARTZ, ZGHelper.rngInt(1, 64)), new PriceInfo(1, 2)),
 				new ListVillagerItems(new ItemStack(Items.BLAZE_POWDER, 4), new PriceInfo(1, 2)), new ListVillagerItems(new ItemStack(ZGItems.ingotObsidian, 1), new PriceInfo(1, 2)) };
 		return TRADE_LIST;
-		
 	}
 	
 	private void populateBuyingList() {

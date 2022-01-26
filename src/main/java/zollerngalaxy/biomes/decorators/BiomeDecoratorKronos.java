@@ -72,6 +72,9 @@ public class BiomeDecoratorKronos extends BiomeDecoratorZG {
 	private WorldGenerator zincGen;
 	private WorldGenerator amaranthGen;
 	private WorldGenerator superChargedCoalGen;
+	private WorldGenerator zaniumGen;
+	private WorldGenerator raditeGen;
+	private WorldGenerator zogiteGen;
 	
 	private WorldGenerator netherWartGen = new WorldGenNetherWarts();
 	private WorldGenerator battleTowerGen = new WorldGenBattleTower(NETHER_BRICK.getDefaultState(), GLOWSTONE.getDefaultState());
@@ -123,6 +126,9 @@ public class BiomeDecoratorKronos extends BiomeDecoratorZG {
 		this.zincGen = new WorldGenMinableZG(ZGBlocks.netherZincOre, NETHERRACK, EnumOreGenZG.ZINC);
 		this.amaranthGen = new WorldGenMinableZG(ZGBlocks.netherAmaranthOre, NETHERRACK, EnumOreGenZG.AMARANTH);
 		this.superChargedCoalGen = new WorldGenMinableZG(ZGBlocks.netherSuperChargedCoalOre, NETHERRACK, EnumOreGenZG.SUPER_CHARGED_COAL);
+		this.zaniumGen = new WorldGenMinableZG(ZGBlocks.netherZaniumOre, NETHERRACK, EnumOreGenZG.ZANIUM);
+		this.raditeGen = new WorldGenMinableZG(ZGBlocks.netherRaditeOre, NETHERRACK, EnumOreGenZG.RADITE);
+		this.zogiteGen = new WorldGenMinableZG(ZGBlocks.netherZogiteOre, NETHERRACK, EnumOreGenZG.ZOGITE);
 	}
 	
 	@Override
@@ -163,6 +169,9 @@ public class BiomeDecoratorKronos extends BiomeDecoratorZG {
 		EnumOreGenZG.ZINC.setMaxHeight(128);
 		EnumOreGenZG.AMARANTH.setMaxHeight(128);
 		EnumOreGenZG.SUPER_CHARGED_COAL.setMaxHeight(128);
+		EnumOreGenZG.ZANIUM.setMaxHeight(128);
+		EnumOreGenZG.RADITE.setMaxHeight(128);
+		EnumOreGenZG.ZOGITE.setMaxHeight(128);
 		//
 		
 		//
@@ -191,6 +200,9 @@ public class BiomeDecoratorKronos extends BiomeDecoratorZG {
 		this.generateOre(this.zincGen, EnumOreGenZG.ZINC, world, rand);
 		this.generateOre(this.amaranthGen, EnumOreGenZG.AMARANTH, world, rand);
 		this.generateOre(this.superChargedCoalGen, EnumOreGenZG.SUPER_CHARGED_COAL, world, rand);
+		this.generateOre(this.zaniumGen, EnumOreGenZG.ZANIUM, world, rand);
+		this.generateOre(this.raditeGen, EnumOreGenZG.RADITE, world, rand);
+		this.generateOre(this.zogiteGen, EnumOreGenZG.ZOGITE, world, rand);
 		//
 		
 		int genY = y;

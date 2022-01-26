@@ -30,8 +30,9 @@ import net.minecraft.entity.ai.EntityAISit;
 import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.ai.EntityAIWanderAvoidWater;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
-import net.minecraft.entity.monster.AbstractSkeleton;
+import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.monster.EntityCreeper;
+import net.minecraft.entity.monster.EntityEnderman;
 import net.minecraft.entity.monster.EntityGhast;
 import net.minecraft.entity.passive.AbstractHorse;
 import net.minecraft.entity.passive.EntityAnimal;
@@ -41,10 +42,12 @@ import net.minecraft.entity.projectile.EntityArrow;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.init.SoundEvents;
+import net.minecraft.inventory.InventoryBasic;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.nbt.NBTTagList;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
@@ -56,8 +59,10 @@ import net.minecraft.world.World;
 import net.minecraftforge.event.ForgeEventFactory;
 import zollerngalaxy.items.ZGItems;
 import zollerngalaxy.mobs.entities.ai.EntityAIDragonBeg;
+import zollerngalaxy.mobs.entities.companions.EnumCompanionType;
+import zollerngalaxy.mobs.entities.interfaces.ICompanionEntity;
 
-public class EntityGalaxyDragon extends EntityTameable {
+public class EntityGalaxyDragon extends EntityTameable implements ICompanionEntity {
 	
 	private static final DataParameter<Boolean> SADDLED = EntityDataManager.<Boolean> createKey(EntityGalaxyDragon.class, DataSerializers.BOOLEAN);
 	private static final DataParameter<Integer> BOOST_TIME = EntityDataManager.<Integer> createKey(EntityGalaxyDragon.class, DataSerializers.VARINT);
@@ -70,10 +75,13 @@ public class EntityGalaxyDragon extends EntityTameable {
 	private int boostTime;
 	private int totalBoostTime;
 	
+	private InventoryBasic companionInventory;
+	
 	public EntityGalaxyDragon(World worldIn) {
 		super(worldIn);
 		this.setSize(this.width * 2.0F, this.height * 2.0F);
 		this.setTamed(false);
+		this.companionInventory = new InventoryBasic("Items", false, 32);
 	}
 	
 	@Override
@@ -92,7 +100,7 @@ public class EntityGalaxyDragon extends EntityTameable {
 		this.targetTasks.addTask(1, new EntityAIOwnerHurtByTarget(this));
 		this.targetTasks.addTask(2, new EntityAIOwnerHurtTarget(this));
 		this.targetTasks.addTask(3, new EntityAIHurtByTarget(this, true, new Class[0]));
-		this.targetTasks.addTask(4, new EntityAINearestAttackableTarget(this, AbstractSkeleton.class, false));
+		this.targetTasks.addTask(4, new EntityAINearestAttackableTarget(this, EntityEnderman.class, false));
 	}
 	
 	@Override
@@ -148,7 +156,7 @@ public class EntityGalaxyDragon extends EntityTameable {
 			return false;
 		} else {
 			EntityPlayer entityplayer = (EntityPlayer) entity;
-			return entityplayer.getHeldItemMainhand().getItem() == ZGItems.perdBerry || entityplayer.getHeldItemOffhand().getItem() == ZGItems.perdBerry;
+			return entityplayer.getHeldItemMainhand().getItem() == this.getFavoriteFood() || entityplayer.getHeldItemOffhand().getItem() == this.getFavoriteFood();
 		}
 	}
 	
@@ -182,6 +190,18 @@ public class EntityGalaxyDragon extends EntityTameable {
 		super.writeEntityToNBT(compound);
 		compound.setBoolean("Saddle", this.getSaddled());
 		compound.setBoolean("Angry", this.isAngry());
+		
+		NBTTagList nbttaglist = new NBTTagList();
+		
+		for (int i = 0; i < this.companionInventory.getSizeInventory(); ++i) {
+			ItemStack itemstack = this.companionInventory.getStackInSlot(i);
+			
+			if (!itemstack.isEmpty()) {
+				nbttaglist.appendTag(itemstack.writeToNBT(new NBTTagCompound()));
+			}
+		}
+		
+		compound.setTag("Inventory", nbttaglist);
 	}
 	
 	@Override
@@ -189,6 +209,18 @@ public class EntityGalaxyDragon extends EntityTameable {
 		super.readEntityFromNBT(compound);
 		this.setSaddled(compound.getBoolean("Saddle"));
 		this.setAngry(compound.getBoolean("Angry"));
+		
+		NBTTagList nbttaglist = compound.getTagList("Inventory", 10);
+		
+		for (int i = 0; i < nbttaglist.tagCount(); ++i) {
+			ItemStack itemstack = new ItemStack(nbttaglist.getCompoundTagAt(i));
+			
+			if (!itemstack.isEmpty()) {
+				this.companionInventory.addItem(itemstack);
+			}
+		}
+		
+		this.setCanPickUpLoot(this.canCollectItems());
 	}
 	
 	public boolean getSaddled() {
@@ -196,7 +228,7 @@ public class EntityGalaxyDragon extends EntityTameable {
 	}
 	
 	public void setSaddled(boolean saddled) {
-		if (saddled) {
+		if (saddled && this.canBeRidden()) {
 			this.dataManager.set(SADDLED, Boolean.valueOf(true));
 		} else {
 			this.dataManager.set(SADDLED, Boolean.valueOf(false));
@@ -209,7 +241,7 @@ public class EntityGalaxyDragon extends EntityTameable {
 		if (itemstack.getItem() == Items.NAME_TAG) {
 			itemstack.interactWithEntity(player, this, hand);
 			return true;
-		} else if (this.getSaddled() && !this.isBeingRidden()) {
+		} else if (this.getSaddled() && !this.isBeingRidden() && this.canBeRidden()) {
 			if (!this.world.isRemote) {
 				player.startRiding(this);
 			}
@@ -241,7 +273,7 @@ public class EntityGalaxyDragon extends EntityTameable {
 				this.navigator.clearPath();
 				this.setAttackTarget((EntityLivingBase) null);
 			}
-		} else if (itemstack.getItem() == Items.BONE && !this.isAngry()) {
+		} else if (itemstack.getItem() == this.getTamingItem() && !this.isAngry()) {
 			if (!player.capabilities.isCreativeMode) {
 				itemstack.shrink(1);
 			}
@@ -271,7 +303,7 @@ public class EntityGalaxyDragon extends EntityTameable {
 		super.onDeath(cause);
 		
 		if (!this.world.isRemote) {
-			if (this.getSaddled()) {
+			if (this.getSaddled() && this.canBeRidden()) {
 				this.dropItem(Items.SADDLE, 1);
 			}
 		}
@@ -294,7 +326,7 @@ public class EntityGalaxyDragon extends EntityTameable {
 	public void travel(float strafe, float vertical, float forward) {
 		Entity entity = this.getPassengers().isEmpty() ? null : (Entity) this.getPassengers().get(0);
 		
-		if (this.isBeingRidden() && this.canBeSteered()) {
+		if (this.isBeingRidden() && this.canBeSteered() && this.canBeRidden()) {
 			this.rotationYaw = entity.rotationYaw;
 			this.prevRotationYaw = this.rotationYaw;
 			this.rotationPitch = entity.rotationPitch * 0.5F;
@@ -464,7 +496,7 @@ public class EntityGalaxyDragon extends EntityTameable {
 	
 	@Override
 	public boolean shouldAttackEntity(EntityLivingBase target, EntityLivingBase owner) {
-		if (!(target instanceof EntityCreeper) && !(target instanceof EntityGhast)) {
+		if (!(target instanceof EntityCreeper) && !(target instanceof EntityGhast) && (this.shouldDefendOwner())) {
 			if (target instanceof EntityGalaxyDragon) {
 				EntityGalaxyDragon entitydragon = (EntityGalaxyDragon) target;
 				
@@ -485,6 +517,75 @@ public class EntityGalaxyDragon extends EntityTameable {
 	
 	@Override
 	public boolean canBeLeashedTo(EntityPlayer player) {
-		return !this.isAngry() && super.canBeLeashedTo(player);
+		return !this.isAngry() && this.canBeLeashed() && super.canBeLeashedTo(player);
+	}
+	
+	@Override
+	protected void updateEquipmentIfNeeded(EntityItem itemEntity) {
+		ItemStack itemstack = itemEntity.getItem();
+		Item item = itemstack.getItem();
+		
+		if (this.canCollectItems()) {
+			ItemStack itemstack1 = this.companionInventory.addItem(itemstack);
+			
+			if (itemstack1.isEmpty()) {
+				itemEntity.setDead();
+			} else {
+				itemstack.setCount(itemstack1.getCount());
+			}
+		}
+	}
+	
+	private boolean hasEnoughItems(int multiplier) {
+		for (int i = 0; i < this.companionInventory.getSizeInventory(); ++i) {
+			ItemStack itemstack = this.companionInventory.getStackInSlot(i);
+			
+			if (itemstack.getCount() >= 64) {
+				return true;
+			}
+		}
+		
+		return false;
+	}
+	
+	@Override
+	public boolean replaceItemInInventory(int inventorySlot, ItemStack itemStackIn) {
+		if (super.replaceItemInInventory(inventorySlot, itemStackIn)) {
+			return true;
+		} else {
+			int i = inventorySlot - 300;
+			
+			if (i >= 0 && i < this.companionInventory.getSizeInventory()) {
+				this.companionInventory.setInventorySlotContents(i, itemStackIn);
+				return true;
+			} else {
+				return false;
+			}
+		}
+	}
+	
+	@Override
+	public InventoryBasic getCompanionInventory() {
+		return this.companionInventory;
+	}
+	
+	@Override
+	public Item getFavoriteFood() {
+		return ZGItems.perdBerry;
+	}
+	
+	@Override
+	public Item getTamingItem() {
+		return Items.ENDER_PEARL;
+	}
+	
+	@Override
+	public EnumCompanionType getCompanionType() {
+		return EnumCompanionType.GROUND;
+	}
+	
+	@Override
+	public boolean canBeRidden() {
+		return false;
 	}
 }

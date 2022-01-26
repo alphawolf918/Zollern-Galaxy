@@ -24,6 +24,7 @@ import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitCent
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitEden;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitExodus;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitKriffon;
+import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitKronos;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitMetztli;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitOasis;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitPerdita;
@@ -39,7 +40,6 @@ import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.lib.helpers.ZGRecipeHelper;
 
 public class ZGSpaceStations {
-	
 	
 	private static int totalSpaceStations = 0;
 	
@@ -70,6 +70,7 @@ public class ZGSpaceStations {
 	public static ZGSpaceStation TLALOC_SPACE_STATION;
 	
 	// Olympus
+	public static ZGSpaceStation KRONOS_SPACE_STATION;
 	// TODO
 	
 	public static void init() {
@@ -169,6 +170,11 @@ public class ZGSpaceStations {
 		TLALOC_SPACE_STATION = new ZGSpaceStation("tlaloc", ZGPlanets.planetTlaloc);
 		TLALOC_SPACE_STATION.setDimensionInfo(ConfigManagerZG.spaceStationTlalocId, ConfigManagerZG.spaceStationTlalocStaticId, WorldProviderOrbitTlaloc.class);
 		totalSpaceStations++;
+		
+		// Olympus (Kronos)
+		KRONOS_SPACE_STATION = new ZGSpaceStation("kronos", ZGPlanets.planetKronos);
+		KRONOS_SPACE_STATION.setDimensionInfo(ConfigManagerZG.spaceStationKronosId, ConfigManagerZG.spaceStationKronosStaticId, WorldProviderOrbitKronos.class);
+		totalSpaceStations++;
 	}
 	
 	private static void registerSpaceStations() {
@@ -225,6 +231,9 @@ public class ZGSpaceStations {
 		
 		// Pantheon (Tlaloc)
 		ZGSpaceStations.registerSpaceStation(TLALOC_SPACE_STATION, "Tlaloc Space Station", "_tlaloc_orbit", WorldProviderOrbitTlaloc.class, ConfigManagerZG.spaceStationTlalocId, ConfigManagerZG.spaceStationTlalocStaticId);
+		
+		// Olympus (Kronos)
+		ZGSpaceStations.registerSpaceStation(KRONOS_SPACE_STATION, "Kronos Space Station", "_kronos_orbit", WorldProviderOrbitKronos.class, ConfigManagerZG.spaceStationKronosId, ConfigManagerZG.spaceStationKronosStaticId);
 	}
 	
 	public static void registerSpaceStationRecipes() {
@@ -234,7 +243,7 @@ public class ZGSpaceStations {
 		inputMap = new HashMap<Object, Integer>();
 		inputMap.put("ingotTin", 32);
 		inputMap.put("waferAdvanced", 1);
-		inputMap.put(new ItemStack(ZGItems.heartium, 1, 0), 24);
+		inputMap.put(new ItemStack(ZGItems.heartium, 1), 24);
 		inputMap.put(Items.IRON_INGOT, 24);
 		ZGRecipeHelper.addSpaceStationRecipe(ConfigManagerZG.spaceStationZollusId, ConfigManagerZG.planetZollusDimensionId, inputMap);
 		inputMap.clear();
@@ -243,7 +252,7 @@ public class ZGSpaceStations {
 		inputMap = new HashMap<Object, Integer>();
 		inputMap.put("ingotTin", 32);
 		inputMap.put("waferAdvanced", 1);
-		inputMap.put(new ItemStack(ZGItems.ingotCobalt, 1, 0), 24);
+		inputMap.put(new ItemStack(ZGItems.ingotCobalt, 1), 24);
 		inputMap.put(Items.IRON_INGOT, 24);
 		ZGRecipeHelper.addSpaceStationRecipe(ConfigManagerZG.spaceStationKriffonId, ConfigManagerZG.planetKriffonDimensionId, inputMap);
 		inputMap.clear();
@@ -252,7 +261,7 @@ public class ZGSpaceStations {
 		inputMap = new HashMap<Object, Integer>();
 		inputMap.put("ingotTin", 32);
 		inputMap.put("waferAdvanced", 1);
-		inputMap.put(new ItemStack(ZGItems.ingotEvenium, 1, 0), 24);
+		inputMap.put(new ItemStack(ZGItems.ingotEvenium, 1), 24);
 		inputMap.put(Items.IRON_INGOT, 24);
 		ZGRecipeHelper.addSpaceStationRecipe(ConfigManagerZG.spaceStationPurgotId, ConfigManagerZG.planetPurgotDimensionId, inputMap);
 		inputMap.clear();
@@ -261,7 +270,7 @@ public class ZGSpaceStations {
 		inputMap = new HashMap<Object, Integer>();
 		inputMap.put("ingotTin", 32);
 		inputMap.put("waferAdvanced", 1);
-		inputMap.put(new ItemStack(ZGItems.ingotVirinium, 1, 0), 24);
+		inputMap.put(new ItemStack(ZGItems.ingotVirinium, 1), 24);
 		inputMap.put(Items.IRON_INGOT, 24);
 		ZGRecipeHelper.addSpaceStationRecipe(ConfigManagerZG.spaceStationEdenId, ConfigManagerZG.planetEdenDimensionId, inputMap);
 		inputMap.clear();
@@ -270,7 +279,7 @@ public class ZGSpaceStations {
 		inputMap = new HashMap<Object, Integer>();
 		inputMap.put("ingotLead", 32);
 		inputMap.put("waferAdvanced", 1);
-		inputMap.put(new ItemStack(ZGItems.prometheanCrystal, 1, 0), 24);
+		inputMap.put(new ItemStack(ZGItems.prometheanCrystal, 1), 24);
 		inputMap.put(Items.GOLD_INGOT, 24);
 		ZGRecipeHelper.addSpaceStationRecipe(ConfigManagerZG.spaceStationXathiusId, ConfigManagerZG.planetXathiusDimensionId, inputMap);
 		inputMap.clear();
@@ -279,7 +288,7 @@ public class ZGSpaceStations {
 		inputMap = new HashMap<Object, Integer>();
 		inputMap.put("ingotLead", 32);
 		inputMap.put("waferAdvanced", 1);
-		inputMap.put(new ItemStack(ZGItems.superChargedCoal, 1, 0), 24);
+		inputMap.put(new ItemStack(ZGItems.superChargedCoal, 1), 24);
 		inputMap.put(Items.GOLD_INGOT, 24);
 		ZGRecipeHelper.addSpaceStationRecipe(ConfigManagerZG.spaceStationOasisId, ConfigManagerZG.planetOasisDimensionId, inputMap);
 		inputMap.clear();
@@ -288,7 +297,7 @@ public class ZGSpaceStations {
 		inputMap = new HashMap<Object, Integer>();
 		inputMap.put("ingotLead", 32);
 		inputMap.put("waferAdvanced", 1);
-		inputMap.put(new ItemStack(ZGItems.plutoniumCrystal, 1, 0), 24);
+		inputMap.put(new ItemStack(ZGItems.plutoniumCrystal, 1), 24);
 		inputMap.put(Items.GOLD_INGOT, 24);
 		ZGRecipeHelper.addSpaceStationRecipe(ConfigManagerZG.spaceStationXantheonId, ConfigManagerZG.planetXantheonDimensionId, inputMap);
 		inputMap.clear();
@@ -297,7 +306,7 @@ public class ZGSpaceStations {
 		inputMap = new HashMap<Object, Integer>();
 		inputMap.put("ingotLead", 32);
 		inputMap.put("waferAdvanced", 1);
-		inputMap.put(new ItemStack(ZGItems.iceCreamSandwich, 1, 0), 24);
+		inputMap.put(new ItemStack(ZGItems.iceCreamSandwich, 1), 24);
 		inputMap.put(Items.SUGAR, 24);
 		ZGRecipeHelper.addSpaceStationRecipe(ConfigManagerZG.spaceStationCandoraId, ConfigManagerZG.planetCandoraDimensionId, inputMap);
 		inputMap.clear();
@@ -306,7 +315,7 @@ public class ZGSpaceStations {
 		inputMap = new HashMap<Object, Integer>();
 		inputMap.put("ingotLead", 32);
 		inputMap.put("waferAdvanced", 1);
-		inputMap.put(new ItemStack(ZGItems.ingotZollernium, 1, 0), 24);
+		inputMap.put(new ItemStack(ZGItems.ingotZollernium, 1), 24);
 		inputMap.put(ZGItems.ingotAmaranth, 24);
 		ZGRecipeHelper.addSpaceStationRecipe(ConfigManagerZG.spaceStationAtheonId, ConfigManagerZG.planetAtheonDimensionId, inputMap);
 		inputMap.clear();
@@ -315,7 +324,7 @@ public class ZGSpaceStations {
 		inputMap = new HashMap<Object, Integer>();
 		inputMap.put("ingotZucrite", 32);
 		inputMap.put("waferAdvanced", 1);
-		inputMap.put(new ItemStack(ZGItems.perdGlowdust, 1, 0), 24);
+		inputMap.put(new ItemStack(ZGItems.perdGlowdust, 1), 24);
 		inputMap.put(ZGItems.compressedEmerald, 24);
 		ZGRecipeHelper.addSpaceStationRecipe(ConfigManagerZG.spaceStationPerditaId, ConfigManagerZG.planetPerditaDimensionId, inputMap);
 		inputMap.clear();
@@ -324,7 +333,7 @@ public class ZGSpaceStations {
 		inputMap = new HashMap<Object, Integer>();
 		inputMap.put("ingotRhodium", 32);
 		inputMap.put("waferAdvanced", 1);
-		inputMap.put(new ItemStack(ZGItems.ascendium, 1, 0), 24);
+		inputMap.put(new ItemStack(ZGItems.ascendium, 1), 24);
 		inputMap.put(ZGItems.compressedZucrite, 24);
 		ZGRecipeHelper.addSpaceStationRecipe(ConfigManagerZG.spaceStationAltumId, ConfigManagerZG.planetAltumDimensionId, inputMap);
 		inputMap.clear();
@@ -333,7 +342,7 @@ public class ZGSpaceStations {
 		inputMap = new HashMap<Object, Integer>();
 		inputMap.put("ingotRhodium", 32);
 		inputMap.put("waferAdvanced", 1);
-		inputMap.put(new ItemStack(ZGItems.witherite, 1, 0), 24);
+		inputMap.put(new ItemStack(ZGItems.witherite, 1), 24);
 		inputMap.put(ZGItems.compressedAscendantAmaranth, 24);
 		ZGRecipeHelper.addSpaceStationRecipe(ConfigManagerZG.spaceStationCaligroId, ConfigManagerZG.planetCaligroDimensionId, inputMap);
 		inputMap.clear();
@@ -342,7 +351,7 @@ public class ZGSpaceStations {
 		inputMap = new HashMap<Object, Integer>();
 		inputMap.put("ingotAmaranth", 32);
 		inputMap.put("waferAdvanced", 1);
-		inputMap.put(new ItemStack(ZGItems.edenCrystal, 1, 0), 24);
+		inputMap.put(new ItemStack(ZGItems.edenCrystal, 1), 24);
 		inputMap.put(ZGItems.compressedGold, 24);
 		ZGRecipeHelper.addSpaceStationRecipe(ConfigManagerZG.spaceStationExodusId, ConfigManagerZG.planetExodusDimensionId, inputMap);
 		inputMap.clear();
@@ -351,7 +360,7 @@ public class ZGSpaceStations {
 		inputMap = new HashMap<Object, Integer>();
 		inputMap.put("ingotChargium", 32);
 		inputMap.put("waferAdvanced", 1);
-		inputMap.put(new ItemStack(ZGItems.stormCrystal, 1, 0), 24);
+		inputMap.put(new ItemStack(ZGItems.stormCrystal, 1), 24);
 		inputMap.put(ZGItems.compressedSuperChargedCoal, 24);
 		ZGRecipeHelper.addSpaceStationRecipe(ConfigManagerZG.spaceStationVortexId, ConfigManagerZG.planetVortexDimensionId, inputMap);
 		inputMap.clear();
@@ -360,7 +369,7 @@ public class ZGSpaceStations {
 		inputMap = new HashMap<Object, Integer>();
 		inputMap.put("ingotChargium", 32);
 		inputMap.put("waferAdvanced", 1);
-		inputMap.put(new ItemStack(ZGItems.compressedCobalt, 1, 0), 24);
+		inputMap.put(new ItemStack(ZGItems.compressedCobalt, 1), 24);
 		inputMap.put(ZGItems.compressedDiamond, 24);
 		ZGRecipeHelper.addSpaceStationRecipe(ConfigManagerZG.spaceStationMetztliId, ConfigManagerZG.planetMetztliDimensionId, inputMap);
 		inputMap.clear();
@@ -369,7 +378,7 @@ public class ZGSpaceStations {
 		inputMap = new HashMap<Object, Integer>();
 		inputMap.put("ingotZollernium", 32);
 		inputMap.put("waferAdvanced", 1);
-		inputMap.put(new ItemStack(ZGItems.compressedZucrite, 1, 0), 24);
+		inputMap.put(new ItemStack(ZGItems.compressedZucrite, 1), 24);
 		inputMap.put(ZGItems.compressedAscendantAmaranth, 24);
 		ZGRecipeHelper.addSpaceStationRecipe(ConfigManagerZG.spaceStationCentotlId, ConfigManagerZG.planetCentotlDimensionId, inputMap);
 		inputMap.clear();
@@ -390,6 +399,15 @@ public class ZGSpaceStations {
 		inputMap.put(new ItemStack(ZGItems.compressedRhodium, 8), 24);
 		inputMap.put(ZGItems.rokkite, 24);
 		ZGRecipeHelper.addSpaceStationRecipe(ConfigManagerZG.spaceStationTlalocId, ConfigManagerZG.planetTlalocDimensionId, inputMap);
+		inputMap.clear();
+		
+		// Olympus (Kronos)
+		inputMap = new HashMap<Object, Integer>();
+		inputMap.put("gemZanium", 32);
+		inputMap.put("waferAdvanced", 1);
+		inputMap.put(new ItemStack(ZGItems.compressedZanium, 8), 24);
+		inputMap.put(ZGItems.netheridium, 24);
+		ZGRecipeHelper.addSpaceStationRecipe(ConfigManagerZG.spaceStationKronosId, ConfigManagerZG.planetKronosDimensionId, inputMap);
 		inputMap.clear();
 	}
 	

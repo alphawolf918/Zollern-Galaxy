@@ -21,7 +21,6 @@ import zollerngalaxy.proxy.IProxy;
 
 public class ZGFluids {
 	
-	
 	private static int totalFluids = 0;
 	
 	private static IProxy proxy = ZollernGalaxyCore.proxy;
@@ -44,6 +43,9 @@ public class ZGFluids {
 	public static Fluid fluidSpaceMilk;
 	public static ZGFluidBase blockSpaceMilk;
 	
+	public static Fluid fluidRadite;
+	public static ZGFluidBase blockFluidRadite;
+	
 	public static void init() {
 		ZGHelper.Log("Beginning Fluid Registry...");
 		ZGFluids.registerFluids();
@@ -60,6 +62,7 @@ public class ZGFluids {
 		fluidChocolate = new Fluid("chocolatemelted", new ResourceLocation(ZGInfo.MOD_ID, "blocks/chocolatemelted"), new ResourceLocation(ZGInfo.MOD_ID, "blocks/chocolatemelted"));
 		fluidRadium = new Fluid("radium", new ResourceLocation(ZGInfo.MOD_ID, "blocks/radiumfluid"), new ResourceLocation(ZGInfo.MOD_ID, "blocks/radiumfluid"));
 		fluidSpaceMilk = new Fluid("spacemilk", new ResourceLocation(ZGInfo.MOD_ID, "blocks/spacemilk"), new ResourceLocation(ZGInfo.MOD_ID, "blocks/spacemilk"));
+		fluidRadite = new Fluid("raditefluid", new ResourceLocation(ZGInfo.MOD_ID, "blocks/raditefluid"), new ResourceLocation(ZGInfo.MOD_ID, "blocks/raditefluid"));
 		
 		registerFluid(fluidChargium);
 		registerFluid(fluidWhiteLava);
@@ -67,6 +70,7 @@ public class ZGFluids {
 		registerFluid(fluidChocolate);
 		registerFluid(fluidRadium);
 		registerFluid(fluidSpaceMilk);
+		registerFluid(fluidRadite);
 	}
 	
 	private static void registerFluidBlocks() {
@@ -76,6 +80,7 @@ public class ZGFluids {
 		blockChocolateFluid = (ZGFluidBase) new ZGFluidBase("chocolatemelted", fluidChocolate, Material.WATER, MapColor.BROWN).setQuantaPerBlock(9).setLightLevel(0.5F);
 		blockRadiumFluid = (ZGFluidBase) new ZGFluidBase("radium", fluidRadium, Material.WATER, MapColor.YELLOW).setQuantaPerBlock(6).setLightLevel(1.0F);
 		blockSpaceMilk = (ZGFluidBase) new ZGFluidBase("spaceMilk", fluidSpaceMilk, new MaterialSpaceMilk(), MapColor.PINK).setQuantaPerBlock(8).setLightLevel(0.6F);
+		blockFluidRadite = (ZGFluidBase) new ZGFluidBase("raditefluid", fluidRadite, Material.LAVA, MapColor.RED).setQuantaPerBlock(4).setLightLevel(1.0F);
 		
 		ForgeRegistries.BLOCKS.register(blockChargiumFluid);
 		ForgeRegistries.BLOCKS.register(blockWhiteLavaFluid);
@@ -83,6 +88,7 @@ public class ZGFluids {
 		ForgeRegistries.BLOCKS.register(blockChocolateFluid);
 		ForgeRegistries.BLOCKS.register(blockRadiumFluid);
 		ForgeRegistries.BLOCKS.register(blockSpaceMilk);
+		ForgeRegistries.BLOCKS.register(blockFluidRadite);
 		
 		proxy.addIModelRegister(blockChargiumFluid);
 		proxy.addIModelRegister(blockWhiteLavaFluid);
@@ -90,6 +96,7 @@ public class ZGFluids {
 		proxy.addIModelRegister(blockChocolateFluid);
 		proxy.addIModelRegister(blockRadiumFluid);
 		proxy.addIModelRegister(blockSpaceMilk);
+		proxy.addIModelRegister(blockFluidRadite);
 	}
 	
 	public static void addBuckets() {
@@ -99,6 +106,7 @@ public class ZGFluids {
 		FluidRegistry.addBucketForFluid(fluidChocolate);
 		FluidRegistry.addBucketForFluid(fluidRadium);
 		FluidRegistry.addBucketForFluid(fluidSpaceMilk);
+		FluidRegistry.addBucketForFluid(fluidRadite);
 	}
 	
 	public static void refreshReferences() {
@@ -108,6 +116,7 @@ public class ZGFluids {
 		fluidChocolate = FluidRegistry.getFluid("chocolatemelted");
 		fluidRadium = FluidRegistry.getFluid("radium");
 		fluidSpaceMilk = FluidRegistry.getFluid("spacemilk");
+		fluidRadite = FluidRegistry.getFluid("raditefluid");
 	}
 	
 	protected static void registerFluid(Fluid fluid) {
