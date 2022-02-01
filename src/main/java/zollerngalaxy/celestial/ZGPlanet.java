@@ -8,12 +8,13 @@
 package zollerngalaxy.celestial;
 
 import micdoodle8.mods.galacticraft.api.galaxies.CelestialBody;
+import zollerngalaxy.lib.ZGInfo;
 
 public class ZGPlanet extends ZGPlanetaryBody {
 	
 	public ZGPlanet(String planetName) {
 		super(planetName);
-		// this.setPhaseShift(ZGInfo.floatPI);
+		this.setPhaseShift(ZGInfo.floatPI);
 	}
 	
 	public CelestialBody setRelativeDistanceFromCenter(float scaledDistance) {

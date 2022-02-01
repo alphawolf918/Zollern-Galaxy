@@ -1,52 +1,24 @@
 ===== CHANGELOG =====
-Zollern Galaxy v2.0.38
+Zollern Galaxy v2.0.39
 =====================
 
 [NEW]
-* Added new armor and tools:
-    - Ruby, Sapphire, Zanium, Radite, Zogite
-* Added more crops:
-    - Radishes, Onions, Peas, Garlic, Ghost Peppers
-        - Ghost Peppers can only grow on Soul Sand.
-* Added fruit trees:
-    - Cherry, Banana, Guava, Peach, Grapefruit, Orange, Lemon, Lime, Limon
-* Added chocolate-covered strawberries.
-* Added Cooked Dough.
-    - Three pieces of Cooked Dough can be used to craft 16 Bread each.
-* Added more biomes to Metztli.
-* Added more food items.
-* Added three new config options.
-    - Ore explosions can now be turned off.
-    - Ore potion effects can now be turned off.
-    - Armor effects can now be turned off.
-* If Extreme Mode is enabled, ores with explosions will be much stronger (when enabled).
-* Added Kronos, the Hell planet. Reminiscent of the Nether, but with unique touches.
-    - The ores here have a high chance to explode (unless Enable Explosive Ores is disabled in the config).
-    - Water does not work here.
-* Added the Kronos Villager.
-    - This Villager variant is immune to fire.
-* Added the Atheon Villager.
-* Added the Helleton mob.
-    - Similar to the Wither Skeleton, but a fire version. Drown it with water, but you'll have to get creative.
-* Added a config option to disable Crude Oil lakes generating on ZG planets.
-* Added the Bloodworm mob to Perdita.
-    - Is a space snek.
-* Added the Magma Slime Block.
-    - When broken, drops Magma Cream, and has a 50% chance to spawn a Magma Cube.
-* Added Radite fluid for future use.
+* Added a config option to enable Mineshafts to spawn on Kronos.
+    - Set to false by default.
+* Added a config option to disable Sweet Foods giving Potion Effects.
+* Added Azurite Ore gen to Kronos.
+    - These ores will only spawn in Obsidian veins, and do not explode.
+* Added fruit tree generation to Oasis.
+* 
 
 [CHANGES]
-* Dough cooking has been changed to maximize Bread output.
-    - One piece of raw Dough gives 4 Cooked Dough pieces.
-* Slightly increased chance for fruit to drop from applicable trees.
-* Crude Oil lakes now generate on Metztli, Eden and Kronos unless disabled in the config.
-    - Oil will generate on other planets in the future.
-* Battle Towers now generate on Kronos.
-* Galaxy Dragons can now be tamed with Ender Pearls.
-* Galaxy Dragons can now heal by being fed Lost Berries from Perdita.
+* Radite Ingots and Blocks can now be used inside of a Magma Crucible to make Radite Fluid.
+* Registered fluids to the Ore Dictionary.
+* Oil lakes will now generate on Oasis unless disabled in the config.
+* Reworked Oasis biome decoration.
+* Oasis' "Red Sea" ocean biome is now no longer completely flat under the water.
+    - This is not perfect, but it is a step in the right direction.
+* 
 
 [FIXES]
-* Fixed some gem ores not actually dropping gems.
-* Fixed Tlaloc having the wrong planet tier.
-* Fixed *potential* requirement of having Thermal Foundation installed, this will no longer be an issue.
-* Fixed zombie mutation sound playing at incorrect position.
+* 

@@ -132,6 +132,6 @@ public class WorldGenKronosDungeons extends ZGWorldGenMaster {
 	}
 	
 	private ResourceLocation pickMobSpawner(Random rand) {
-		return ZGHelper.getMob(rand);
+		return ZGHelper.getRandomMob(rand);
 	}
 }

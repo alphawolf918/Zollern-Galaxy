@@ -45,10 +45,11 @@ public class GenLayerOasisBiomes extends GenLayerOasis {
 		@SuppressWarnings("unchecked")
 		ArrayList<BiomeEntry>[] currentBiomes = new ArrayList[CachedEnumZG.valuesBiomeCached().length];
 		List<BiomeEntry> list = new ArrayList<>();
-		list.add(new BiomeEntry(ZGBiomes.OASIS_PLAINS, 95));
-		list.add(new BiomeEntry(ZGBiomes.OASIS_RED_OCEAN, 85));
-		list.add(new BiomeEntry(ZGBiomes.OASIS_REDLANDS, 75));
-		list.add(new BiomeEntry(ZGBiomes.OASIS_MUDSWAMP, 65));
+		list.add(new BiomeEntry(ZGBiomes.OASIS_PLAINS, 100));
+		list.add(new BiomeEntry(ZGBiomes.OASIS_RED_OCEAN, 90));
+		list.add(new BiomeEntry(ZGBiomes.OASIS_BEACH, 85));
+		list.add(new BiomeEntry(ZGBiomes.OASIS_REDLANDS, 80));
+		list.add(new BiomeEntry(ZGBiomes.OASIS_MUDSWAMP, 70));
 		currentBiomes[BiomeType.WARM.ordinal()] = new ArrayList<>(list);
 		return currentBiomes;
 	}

@@ -2035,6 +2035,6 @@ public class WorldGenBattleTower extends ZGWorldGenMaster {
 	}
 	
 	private static ResourceLocation getMob(Random rand) {
-		return ZGHelper.getMob(rand);
+		return ZGHelper.getRandomMob(rand);
 	}
 }

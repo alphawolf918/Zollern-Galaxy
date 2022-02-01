@@ -92,6 +92,7 @@ import zollerngalaxy.biomes.metztli.BiomeHarranPlains;
 import zollerngalaxy.biomes.metztli.BiomeHarranShroomlands;
 import zollerngalaxy.biomes.metztli.BiomeHarranSwamp;
 import zollerngalaxy.biomes.metztli.BiomeHarranTundra;
+import zollerngalaxy.biomes.oasis.BiomeOasisBeach;
 import zollerngalaxy.biomes.oasis.BiomeOasisMudSwamp;
 import zollerngalaxy.biomes.oasis.BiomeOasisPlains;
 import zollerngalaxy.biomes.oasis.BiomeOasisRedSea;
@@ -168,6 +169,7 @@ public class ZGBiomes {
 	public static final Biome OASIS_RED_OCEAN = new BiomeOasisRedSea(new BiomeProperties("Red Sea"));
 	public static final Biome OASIS_REDLANDS = new BiomeOasisRedlands(new BiomeProperties("Redlands"));
 	public static final Biome OASIS_MUDSWAMP = new BiomeOasisMudSwamp(new BiomeProperties("Muddy Mesa"));
+	public static final Biome OASIS_BEACH = new BiomeOasisBeach(new BiomeProperties("Oasis Beach"));
 	
 	// Xantheon
 	public static final Biome XANTHEON = new BiomeXantheon(new BiomeProperties("Xantheon"));
@@ -300,6 +302,7 @@ public class ZGBiomes {
 		// Oasis
 		ZGBiomes.addBiome(ZGBiomes.OASIS_PLAINS, LUSH, WET, PLAINS);
 		ZGBiomes.addBiome(ZGBiomes.OASIS_RED_OCEAN, LUSH, WET, OCEAN);
+		ZGBiomes.addBiome(ZGBiomes.OASIS_BEACH, LUSH, WET, BEACH);
 		ZGBiomes.addBiome(ZGBiomes.OASIS_REDLANDS, LUSH, MOUNTAIN);
 		ZGBiomes.addBiome(ZGBiomes.OASIS_MUDSWAMP, LUSH, SWAMP, WET, HILLS);
 		

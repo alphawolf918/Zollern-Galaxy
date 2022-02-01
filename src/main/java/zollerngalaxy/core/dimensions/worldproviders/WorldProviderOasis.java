@@ -95,7 +95,7 @@ public class WorldProviderOasis extends WorldProviderPlanetZG {
 	@Override
 	public Vector3 getFogColor() {
 		float f = 1.1F - this.getStarBrightness(1.0F);
-		return new Vector3(128F / 255F * f, 2F / 255F * f, 100F / 255F * f);
+		return new Vector3(126F / 255F * f, 2F / 255F * f, 120F / 255F * f);
 	}
 	
 	@Override
@@ -105,7 +105,7 @@ public class WorldProviderOasis extends WorldProviderPlanetZG {
 			return new Vector3(170 / 255F * f, 100 / 255F * f, 1 / 255F * f);
 		}
 		float f = 1.15F - this.getStarBrightness(1.0F);
-		return new Vector3(170 / 255F * f, 20 / 255F * f, 1 / 255F * f);
+		return new Vector3(170F / 255F * f, 80F / 255F * f, 20F / 255F * f);
 	}
 	
 	@Override
@@ -238,5 +238,4 @@ public class WorldProviderOasis extends WorldProviderPlanetZG {
 	public Class<? extends IChunkGenerator> getChunkProviderClass() {
 		return ChunkProviderOasis.class;
 	}
-	
 }

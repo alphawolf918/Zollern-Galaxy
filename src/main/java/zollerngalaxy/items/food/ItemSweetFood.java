@@ -12,6 +12,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
+import zollerngalaxy.config.ConfigManagerZG;
 
 public class ItemSweetFood extends ZGItemFood {
 	
@@ -25,7 +26,7 @@ public class ItemSweetFood extends ZGItemFood {
 	
 	@Override
 	protected void onFoodEaten(ItemStack stack, World worldIn, EntityPlayer player) {
-		if (!worldIn.isRemote && this.mobEffect != null) {
+		if (!worldIn.isRemote && this.mobEffect != null && ConfigManagerZG.enableSweetFoodPotionEffects) {
 			player.addPotionEffect(new PotionEffect(mobEffect, 3600, 2, true, false));
 		}
 	}

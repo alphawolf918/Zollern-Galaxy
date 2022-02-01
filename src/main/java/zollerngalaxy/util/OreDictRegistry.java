@@ -13,6 +13,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraftforge.oredict.OreDictionary;
 import zollerngalaxy.blocks.ZGBlocks;
+import zollerngalaxy.blocks.fluids.ZGFluids;
 import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.items.ZGItems;
 
@@ -97,6 +98,7 @@ public class OreDictRegistry {
 		// Radium
 		registerOre("blockRadium", ZGBlocks.blockRadium);
 		registerOre("oreRadium", ZGBlocks.caligroRadiumOre);
+		registerOre("fluidRadium", ZGFluids.blockRadiumFluid);
 		registerOre("gemRadium", ZGItems.radium);
 		registerOre("ingotRadium", ZGItems.ingotRadium);
 		
@@ -118,6 +120,7 @@ public class OreDictRegistry {
 		
 		// Lapis
 		registerOre("oreLapis", ZGBlocks.edenLapisOre, ZGBlocks.caligroLapisOre, ZGBlocks.netherLapisOre);
+		registerOre("ingotLapis", ZGItems.ingotLapis);
 		
 		// Dirt
 		registerOre("dirt", ZGBlocks.edenSoil, ZGBlocks.kriffDirt, ZGBlocks.purgDirt, ZGBlocks.zolDirt, ZGBlocks.xathDirt, ZGBlocks.oasisDirt, ZGBlocks.perdCreepDirt, ZGBlocks.perdSoil, ZGBlocks.altumDirt, ZGBlocks.caligroDirt, ZGBlocks.caligroCreepdirt, ZGBlocks.exodusDirt, ZGBlocks.astrosDirt, ZGBlocks.centoDirt, ZGBlocks.tociDirt, ZGBlocks.harranSoil, ZGBlocks.netherDirt);
@@ -164,7 +167,7 @@ public class OreDictRegistry {
 		registerOre("glowstone", ZGBlocks.edenBrightStone, ZGBlocks.blockShinestone, ZGBlocks.perdGlowstone);
 		
 		// Sand
-		registerOre("sand", ZGBlocks.edenBloodSand, ZGBlocks.perdSand, ZGBlocks.altumSand, ZGBlocks.exodusSand, ZGBlocks.tociSand, ZGBlocks.tociStarSand);
+		registerOre("sand", ZGBlocks.edenBloodSand, ZGBlocks.perdSand, ZGBlocks.altumSand, ZGBlocks.exodusSand, ZGBlocks.tociSand, ZGBlocks.tociStarSand, ZGBlocks.oasisSand);
 		
 		// Cobblestone
 		registerOre("cobblestone", ZGBlocks.edenCobbleRock, ZGBlocks.kriffCobbleRock, ZGBlocks.purgCobbleRock, ZGBlocks.zolCobbleRock, ZGBlocks.xathCobble, ZGBlocks.oasisCobble, ZGBlocks.atheonCobble, ZGBlocks.perdCobble, ZGBlocks.altumCobble, ZGBlocks.caligroCobblestone, ZGBlocks.caligroCobblestoneMossy, ZGBlocks.corruptCobble, ZGBlocks.exodusCobblestone,
@@ -217,10 +220,11 @@ public class OreDictRegistry {
 		registerOre("blockShinium", ZGBlocks.blockShinium);
 		
 		// Chargium
-		registerOre("dustChargium", ZGItems.dustChargium);
-		registerOre("ingotChargium", ZGItems.ingotChargium);
 		registerOre("oreChargium", ZGBlocks.corruptChargiumOre);
 		registerOre("blockChargium", ZGBlocks.blockChargium);
+		registerOre("fluidChargium", ZGFluids.blockChargiumFluid);
+		registerOre("dustChargium", ZGItems.dustChargium);
+		registerOre("ingotChargium", ZGItems.ingotChargium);
 		
 		// Shinestone
 		registerOre("dustShinestone", ZGItems.dustShinestone);
@@ -317,7 +321,7 @@ public class OreDictRegistry {
 		registerOre("swordAmaranth", ZGItems.swordAmaranth);
 		
 		// Azurite
-		registerOre("oreAzurite", ZGBlocks.xathAzuriteOre);
+		registerOre("oreAzurite", ZGBlocks.xathAzuriteOre, ZGBlocks.azuriteOre);
 		registerOre("gemAzurite", ZGItems.azurite);
 		registerOre("blockAzurite", ZGBlocks.blockAzurite);
 		registerOre("pickaxeAzurite", ZGItems.pickaxeAzurite);
@@ -366,6 +370,7 @@ public class OreDictRegistry {
 			registerOre("ingotUranium", ZGItems.ingotFueltonium);
 			registerOre("dustUranium", ZGItems.dustFueltonium);
 			registerOre("blockUranium", ZGBlocks.blockFueltonium);
+			registerOre("fluidUranium", ZGFluids.blockFueltoniumFluid);
 		}
 		
 		// Fueltonium
@@ -373,6 +378,7 @@ public class OreDictRegistry {
 		registerOre("ingotFueltonium", ZGItems.ingotFueltonium);
 		registerOre("dustFueltonium", ZGItems.dustFueltonium);
 		registerOre("blockFueltonium", ZGBlocks.blockFueltonium);
+		registerOre("fluidFueltonium", ZGFluids.blockFueltoniumFluid);
 		
 		// Plutonium
 		registerOre("orePlutonium", ZGBlocks.xantheonPlutoniumOre, ZGBlocks.tlalocPlutoniumOre);
@@ -404,6 +410,7 @@ public class OreDictRegistry {
 		// Radite
 		registerOre("oreRadite", ZGBlocks.netherRaditeOre);
 		registerOre("blockRadite", ZGBlocks.blockRadite);
+		registerOre("fluidRadite", ZGFluids.blockFluidRadite);
 		registerOre("ingotRadite", ZGItems.ingotRadite);
 		registerOre("dustRadite", ZGItems.dustRadite);
 		
@@ -464,6 +471,11 @@ public class OreDictRegistry {
 		
 		// Food (listAll)
 		registerOre("listAllIceCream", ZGItems.iceCream);
+		
+		// Other Fluids
+		registerOre("fluidSpaceMilk", ZGFluids.blockSpaceMilk);
+		registerOre("fluidWhiteLava", ZGFluids.blockWhiteLavaFluid);
+		registerOre("fluidChocolate", ZGFluids.blockChocolateFluid);
 	}
 	
 	private static void registerOre(String strName, Item... items) {

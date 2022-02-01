@@ -49,7 +49,7 @@ public class ZGMoon extends Moon implements IZollernBody {
 	
 	public ZGMoon(String moonName) {
 		super(moonName);
-		this.setPhaseShift(0.0F);
+		this.setPhaseShift(ZGInfo.floatPI);
 		this.setRelativeSize(1.0F);
 		this.addChecklistKeys("thermal_padding", "equip_oxygen_suit", "equip_parachute");
 	}
@@ -294,8 +294,7 @@ public class ZGMoon extends Moon implements IZollernBody {
 	 * @return The body of the atmosphere being set on.
 	 */
 	public ZGMoon setAtmosphere() {
-		this.atmosphere = new AtmosphereInfo(this.getIsBreathable(), this.getHasRain(), this.getIsCorrosive(), this.getBodyTemperature(), this.getWindLevel(),
-				this.getAtmosphericDensity());
+		this.atmosphere = new AtmosphereInfo(this.getIsBreathable(), this.getHasRain(), this.getIsCorrosive(), this.getBodyTemperature(), this.getWindLevel(), this.getAtmosphericDensity());
 		return this;
 	}
 	

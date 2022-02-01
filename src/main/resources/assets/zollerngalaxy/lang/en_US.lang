@@ -169,6 +169,7 @@ tile.oasisdirt.name=Oasis Dirt
 tile.oasistallgrass.name=Oasis Tall Grass
 tile.oasisflower.name=Oasis Flower
 tile.oasisgravel.name=Oasis Gravel
+tile.oasissand.name=Oasis Sand
 tile.oasissuperchargedcoalore.name=Oasis Super Charged Coal Ore
 tile.oasiscoalore.name=Oasis Coal Ore
 tile.oasisironore.name=Oasis Iron Ore
@@ -556,6 +557,7 @@ tile.nethersuperchargedcoalore.name=Kronos Super Charged Coal Ore
 tile.zaniumore.name=Kronos Zanium Ore
 tile.raditeore.name=Kronos Radite Ore
 tile.zogiteore.name=Kronos Zogite Ore
+tile.azuriteore.name=Azurite Ore
 
 tile.raditeore.name=Radite Ore
 tile.zogiteore.name=Zogite Ore

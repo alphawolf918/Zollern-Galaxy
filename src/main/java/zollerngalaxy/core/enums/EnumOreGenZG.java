@@ -70,11 +70,15 @@ public enum EnumOreGenZG {
 	RADIUM(10, 8, 0, 15),
 	POWER_GEM(25, 5, 0, 36);
 	
-	private int genCount;
-	private int blockCount;
-	private int minHeight;
-	private int maxHeight;
+	private int genCount = 5;
+	private int blockCount = 4;
+	private int minHeight = 0;
+	private int maxHeight = 64;
 	
+	/**
+	 * Set generation chance percentage, amount of blocks to spawn, minimum height, and maximum
+	 * height.
+	 */
 	private EnumOreGenZG(int genCount, int blockCount, int minHeight, int maxHeight) {
 		this.genCount = genCount;
 		this.blockCount = blockCount;
@@ -82,6 +86,15 @@ public enum EnumOreGenZG {
 		this.maxHeight = maxHeight;
 	}
 	
+	/**
+	 * Set gen percentage, block count, min height and max height.
+	 * 
+	 * @param genCount
+	 * @param blockCount
+	 * @param minHeight
+	 * @param maxHeight
+	 * @return
+	 */
 	public EnumOreGenZG FactoryOreGen(int genCount, int blockCount, int minHeight, int maxHeight) {
 		this.setGenCount(genCount);
 		this.setBlockCount(blockCount);
@@ -90,6 +103,14 @@ public enum EnumOreGenZG {
 		return this;
 	}
 	
+	/**
+	 * Set gen percentage, block count and max height.
+	 * 
+	 * @param genCount
+	 * @param blockCount
+	 * @param minMaxHeight
+	 * @return
+	 */
 	public EnumOreGenZG FactoryOreGen(int genCount, int blockCount, int minMaxHeight) {
 		this.setGenCount(genCount);
 		this.setBlockCount(blockCount);
@@ -97,51 +118,111 @@ public enum EnumOreGenZG {
 		return this;
 	}
 	
+	/**
+	 * Get spawn generation percentage.
+	 * 
+	 * @return
+	 */
 	public int getGenCount() {
 		return this.genCount;
 	}
 	
+	/**
+	 * Get amount of blocks allowed to spawn per vein.
+	 * 
+	 * @return
+	 */
 	public int getBlockCount() {
 		return this.blockCount;
 	}
 	
+	/**
+	 * Get the min height for this ore to spawn.
+	 * 
+	 * @return
+	 */
 	public int getMinHeight() {
 		return this.minHeight;
 	}
 	
+	/**
+	 * Get the max height for this ore to spawn.
+	 * 
+	 * @return
+	 */
 	public int getMaxHeight() {
 		return this.maxHeight;
 	}
 	
+	/**
+	 * Set generation precentage.
+	 * 
+	 * @param genCount
+	 * @return
+	 */
 	public int setGenCount(int genCount) {
 		this.blockCount = genCount;
 		return genCount;
 	}
 	
+	/**
+	 * Set minimum spawn height.
+	 * 
+	 * @param minHeight
+	 * @return
+	 */
 	public int setMinHeight(int minHeight) {
 		this.minHeight = minHeight;
 		return minHeight;
 	}
 	
+	/**
+	 * Set maximum spawn height.
+	 * 
+	 * @param maxHeight
+	 * @return
+	 */
 	public int setMaxHeight(int maxHeight) {
 		this.maxHeight = maxHeight;
 		return maxHeight;
 	}
 	
+	/**
+	 * Set minimum AND maximum spawn height.
+	 * 
+	 * @param minHeight
+	 * @param maxHeight
+	 */
 	public void setMinMaxHeight(int minHeight, int maxHeight) {
 		this.setMaxHeight(maxHeight);
 		this.setMinHeight(minHeight);
 	}
 	
+	/**
+	 * Set minimum AND maximum spawn height.
+	 * 
+	 * @param height
+	 */
 	public void setMinMaxHeight(int height) {
 		this.setMinMaxHeight(height);
 	}
 	
+	/**
+	 * Set max amount of blocks to spawn per vein.
+	 * 
+	 * @param countBlock
+	 * @return
+	 */
 	public int setBlockCount(int countBlock) {
 		this.blockCount = countBlock;
 		return blockCount;
 	}
 	
+	/**
+	 * Instance of EnumOreGenZG.
+	 * 
+	 * @return An instance of EnumOreGenZG.
+	 */
 	public EnumOreGenZG instance() {
 		return this;
 	}

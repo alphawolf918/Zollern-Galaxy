@@ -77,8 +77,10 @@ public class BiomeHarranHills extends BiomeHarranBase {
 		
 		MinecraftForge.ORE_GEN_BUS.post(new OreGenEvent.Pre(worldIn, rand, pos));
 		WorldGenerator emeralds = new EmeraldGenerator();
-		if (TerrainGen.generateOre(worldIn, rand, emeralds, pos, OreGenEvent.GenerateMinable.EventType.EMERALD))
+		
+		if (TerrainGen.generateOre(worldIn, rand, emeralds, pos, OreGenEvent.GenerateMinable.EventType.EMERALD)) {
 			emeralds.generate(worldIn, rand, pos);
+		}
 		
 		for (int j1 = 0; j1 < 7; ++j1) {
 			int k1 = rand.nextInt(16);

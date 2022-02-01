@@ -32,6 +32,7 @@ import net.minecraft.util.text.TextComponentString;
 import net.minecraft.world.DimensionType;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldProvider;
+import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import zollerngalaxy.blocks.ZGBlocks;
@@ -509,7 +510,7 @@ public final class ZGHelper {
 		}
 	}
 	
-	public static ResourceLocation getMob(Random rand) {
+	public static ResourceLocation getRandomMob(Random rand) {
 		String mobName = "evolved_zombie";
 		String modId = Constants.MOD_ID_CORE;
 		switch (rand.nextInt(16)) {
@@ -587,5 +588,39 @@ public final class ZGHelper {
 				break;
 		}
 		return new ResourceLocation(modId, mobName);
+	}
+	
+	public static WorldGenAbstractTree getRandomFruitTree(Random rand) {
+		WorldGenAbstractTree CHERRY_TREE = ZGBlocks.cherryWoodGen;
+		WorldGenAbstractTree BANANA_TREE = ZGBlocks.bananaGen;
+		WorldGenAbstractTree GUAVA_TREE = ZGBlocks.guavaGen;
+		WorldGenAbstractTree PEACH_TREE = ZGBlocks.peachGen;
+		WorldGenAbstractTree GRAPEFRUIT_TREE = ZGBlocks.grapefruitGen;
+		WorldGenAbstractTree ORANGE_TREE = ZGBlocks.orangeGen;
+		WorldGenAbstractTree LEMON_TREE = ZGBlocks.lemonGen;
+		WorldGenAbstractTree LIME_TREE = ZGBlocks.limeGen;
+		WorldGenAbstractTree LIMON_TREE = ZGBlocks.limonGen;
+		
+		switch (rand.nextInt(10)) {
+			default:
+			case 0:
+				return BANANA_TREE;
+			case 1:
+				return CHERRY_TREE;
+			case 2:
+				return GUAVA_TREE;
+			case 3:
+				return PEACH_TREE;
+			case 4:
+				return GRAPEFRUIT_TREE;
+			case 5:
+				return ORANGE_TREE;
+			case 6:
+				return LEMON_TREE;
+			case 7:
+				return LIME_TREE;
+			case 8:
+				return LIMON_TREE;
+		}
 	}
 }

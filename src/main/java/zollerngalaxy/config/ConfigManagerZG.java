@@ -148,6 +148,7 @@ public class ConfigManagerZG {
 	public static boolean enableMutantNameTags;
 	public static boolean enableStackChanges;
 	public static boolean enableArmorEffects;
+	public static boolean enableSweetFoodPotionEffects;
 	
 	// Compat
 	public static boolean shouldOasisUseLiquidRedstone;
@@ -186,6 +187,7 @@ public class ConfigManagerZG {
 	public static boolean enablePotionEffectOres;
 	public static boolean enableOilLakes;
 	public static boolean showCompanionNameTags;
+	public static boolean enableMineshaftsOnKronos;
 	
 	/////////////////////////////////////////////////
 	public static double meteorGenZollus;
@@ -312,51 +314,51 @@ public class ConfigManagerZG {
 		config.load();
 		
 		// Planets (Psios)
-		planetEdenDimensionId = config.get(CTG_DIMS, "Planet Eden Dimension ID", -7996).getInt();
-		planetZollusDimensionId = config.get(CTG_DIMS, "Planet Zollus Dimension ID", -7982).getInt();
-		planetKriffonDimensionId = config.get(CTG_DIMS, "Planet Kriffon Dimension ID", -7994).getInt();
-		planetPurgotDimensionId = config.get(CTG_DIMS, "Planet Purgot Dimension ID", -7988).getInt();
+		planetEdenDimensionId = config.get(CTG_DIMS, "Planet Eden Dimension ID", -7996, "Dimension ID for planet Eden. (default: -7996)").getInt();
+		planetZollusDimensionId = config.get(CTG_DIMS, "Planet Zollus Dimension ID", -7982, "Dimension ID for planet Zollus. (default: -7982)").getInt();
+		planetKriffonDimensionId = config.get(CTG_DIMS, "Planet Kriffon Dimension ID", -7994, "Dimension ID for planet Kriffon. (default: -7994)").getInt();
+		planetPurgotDimensionId = config.get(CTG_DIMS, "Planet Purgot Dimension ID", -7988, "Dimension ID for planet Purgot. (default: -7988)").getInt();
 		
 		// Moons (Psios -> Eden -> Astros)
-		moonAstrosDimensionId = config.get(CTG_MOONS, "Moon Astros Dimension ID", -7981).getInt();
+		moonAstrosDimensionId = config.get(CTG_MOONS, "Moon Astros Dimension ID", -7981, "Dimension ID for Eden's moon, Astros. (default: -7981)").getInt();
 		
 		// Planets (Praedyth)
-		planetXathiusDimensionId = config.get(CTG_DIMS, "Planet Xathius Dimension ID", -7983).getInt();
-		planetOasisDimensionId = config.get(CTG_DIMS, "Planet Oasis Dimension ID", -7990).getInt();
-		planetXantheonDimensionId = config.get(CTG_DIMS, "Planet Xantheon Dimension ID", -7984).getInt();
-		planetCandoraDimensionId = config.get(CTG_DIMS, "Planet Candora Dimension ID", -7777).getInt();
-		planetAtheonDimensionId = config.get(CTG_DIMS, "Planet Atheon Dimension ID", -7998).getInt();
+		planetXathiusDimensionId = config.get(CTG_DIMS, "Planet Xathius Dimension ID", -7983, "Dimension ID for planet Xathius. (default: -7983)").getInt();
+		planetOasisDimensionId = config.get(CTG_DIMS, "Planet Oasis Dimension ID", -7990, "Dimension ID for planet Oasis. (default: -7990)").getInt();
+		planetXantheonDimensionId = config.get(CTG_DIMS, "Planet Xantheon Dimension ID", -7984, "Dimension ID for planet Xantheon. (default: -7984)").getInt();
+		planetCandoraDimensionId = config.get(CTG_DIMS, "Planet Candora Dimension ID", -7777, "Dimension ID for planet Candora. (default: -7777)").getInt();
+		planetAtheonDimensionId = config.get(CTG_DIMS, "Planet Atheon Dimension ID", -7998, "Dimension ID for planet Atheon. (default: -7998)").getInt();
 		
 		// Planets (Sol-2)
-		planetExodusDimensionId = config.get(CTG_DIMS, "Planet Exodus Dimension ID", -7980).getInt();
-		planetPerditaDimensionId = config.get(CTG_DIMS, "Planet Perdita Dimension ID", -7979).getInt();
-		planetAltumDimensionId = config.get(CTG_DIMS, "Planet Altum Dimension ID", -7878).getInt();
-		planetCaligroDimensionId = config.get(CTG_DIMS, "Planet Caligro Dimension ID", -7877).getInt();
+		planetExodusDimensionId = config.get(CTG_DIMS, "Planet Exodus Dimension ID", -7980, "Dimension ID for planet Exodus. (default: -7980)").getInt();
+		planetPerditaDimensionId = config.get(CTG_DIMS, "Planet Perdita Dimension ID", -7979, "Dimension ID for planet Perdita. (default: -7979)").getInt();
+		planetAltumDimensionId = config.get(CTG_DIMS, "Planet Altum Dimension ID", -7878, "Dimension ID for planet Altum. (default: -7878)").getInt();
+		planetCaligroDimensionId = config.get(CTG_DIMS, "Planet Caligro Dimension ID", -7877, "Dimension ID for planet Caligro. (default: -7877)").getInt();
 		
 		// Planets (Pantheon)
-		planetVortexDimensionId = config.get(CTG_DIMS, "Planet Vortex Dimension ID", -7675).getInt();
-		planetMetztliDimensionId = config.get(CTG_DIMS, "Planet Metztli Dimension ID", -7991).getInt();
-		planetCentotlDimensionId = config.get(CTG_DIMS, "Planet Centotl Dimension ID", -5214).getInt();
-		planetTociDimensionId = config.get(CTG_DIMS, "Planet Toci Dimension ID", -7985).getInt();
-		planetTlalocDimensionId = config.get(CTG_DIMS, "Planet Tlaloc Dimension ID", -7986).getInt();
+		planetVortexDimensionId = config.get(CTG_DIMS, "Planet Vortex Dimension ID", -7675, "Dimension ID for planet Vortex. (default: -7675)").getInt();
+		planetMetztliDimensionId = config.get(CTG_DIMS, "Planet Metztli Dimension ID", -7991, "Dimension ID for planet Metztli. (default: -7991)").getInt();
+		planetCentotlDimensionId = config.get(CTG_DIMS, "Planet Centotl Dimension ID", -5214, "Dimension ID for planet Centotl. (default: -5214)").getInt();
+		planetTociDimensionId = config.get(CTG_DIMS, "Planet Toci Dimension ID", -7985, "Dimension ID for planet Toci. (default: -7985)").getInt();
+		planetTlalocDimensionId = config.get(CTG_DIMS, "Planet Tlaloc Dimension ID", -7986, "Dimension ID for planet Tlaloc. (default: -7986)").getInt();
 		
 		// Planets (Olympus)
-		planetAresDimensionId = config.get(CTG_DIMS, "Planet Ares Dimension ID", -8000).getInt();
-		planetPrometheusDimensionId = config.get(CTG_DIMS, "Planet Prometheus Dimension ID", -7281).getInt();
-		planetIcarusDimensionId = config.get(CTG_DIMS, "Planet Icarus Dimension ID", -7995).getInt();
-		planetKronosDimensionId = config.get(CTG_DIMS, "Planet Kronos Dimension ID", -7993).getInt();
+		planetAresDimensionId = config.get(CTG_DIMS, "Planet Ares Dimension ID", -8000, "Dimension ID for planet Ares. (default: -8000)").getInt();
+		planetPrometheusDimensionId = config.get(CTG_DIMS, "Planet Prometheus Dimension ID", -7281, "Dimension ID for planet Prometheus. (default: -7281)").getInt();
+		planetIcarusDimensionId = config.get(CTG_DIMS, "Planet Icarus Dimension ID", -7995, "Dimension ID for planet Icarus. (default: -7995)").getInt();
+		planetKronosDimensionId = config.get(CTG_DIMS, "Planet Kronos Dimension ID", -7993, "Dimension ID for planet Kronos. (default: -7993)").getInt();
 		
 		// Planets (Asgard)
-		planetAsgardDimensionId = config.get(CTG_DIMS, "Planet Asgard Dimension ID", -7999).getInt();
-		planetMavethDimensionId = config.get(CTG_DIMS, "Planet Maveth Dimension ID", -4552).getInt();
+		planetAsgardDimensionId = config.get(CTG_DIMS, "Planet Asgard Dimension ID", -7999, "Dimension ID for planet Asgard. (default: -7999)").getInt();
+		planetMavethDimensionId = config.get(CTG_DIMS, "Planet Maveth Dimension ID", -4552, "Dimension ID for planet Maveth. (default: -4552)").getInt();
 		
 		// Planets (Vega)
-		planetMeridianDimensionId = config.get(CTG_DIMS, "Planet Meridian Dimension ID", -7992).getInt();
-		planetReachDimensionId = config.get(CTG_DIMS, "Planet Reach Dimension ID", -7676).getInt();
-		planetRequiemDimensionId = config.get(CTG_DIMS, "Planet Requiem Dimension ID", -7987).getInt();
+		planetMeridianDimensionId = config.get(CTG_DIMS, "Planet Meridian Dimension ID", -7992, "Dimension ID for planet Meridian. (default: -7992)").getInt();
+		planetReachDimensionId = config.get(CTG_DIMS, "Planet Reach Dimension ID", -2552, "Dimension ID for planet Reach. (default: -2552)").getInt();
+		planetRequiemDimensionId = config.get(CTG_DIMS, "Planet Requiem Dimension ID", -7987, "Dimension ID for planet Requiem. (default: -7987)").getInt();
 		
 		// Planets (Nova)
-		planetPrimorDimensionId = config.get(CTG_DIMS, "Planet Primor Dimension ID", -7989).getInt();
+		planetPrimorDimensionId = config.get(CTG_DIMS, "Planet Primor Dimension ID", -7989, "Dimension ID for planet Primor. (default: -7989)").getInt();
 		
 		// Number of space stations to generate
 		spaceStationGenAmount = config.get(CTG_SATS, "Space Station Generation Count", 1, "How many Space Stations should generate in orbit (between 1 to 5)? (default: 1)").getInt();
@@ -369,83 +371,83 @@ public class ConfigManagerZG {
 		// Space Stations (Psios-6)
 		
 		// Zollus
-		spaceStationZollusId = config.get(CTG_SATS, "Zollus Space Station ID", -6000).getInt();
-		spaceStationZollusStaticId = config.get(CTG_SATS, "Zollus Space Station Static ID", -6001).getInt();
+		spaceStationZollusId = config.get(CTG_SATS, "Zollus Space Station ID", -6000, "Dimension ID for Zollus Space Station. (default: -6000)").getInt();
+		spaceStationZollusStaticId = config.get(CTG_SATS, "Zollus Space Station Static ID", -6001, "Dimension static ID for Zollus Space Station. (default: -6001)").getInt();
 		
 		// Kriffon
-		spaceStationKriffonId = config.get(CTG_SATS, "Kriffon Space Station ID", -6002).getInt();
-		spaceStationKriffonStaticId = config.get(CTG_SATS, "Kriffon Space Station Static ID", -6003).getInt();
+		spaceStationKriffonId = config.get(CTG_SATS, "Kriffon Space Station ID", -6002, "Dimension ID for Kriffon Space Station. (default: -6002)").getInt();
+		spaceStationKriffonStaticId = config.get(CTG_SATS, "Kriffon Space Station Static ID", -6003, "Dimension static ID for Kriffon Space Station. (default: -6003)").getInt();
 		
 		// Purgot
-		spaceStationPurgotId = config.get(CTG_SATS, "Purgot Space Station ID", -6004).getInt();
-		spaceStationPurgotStaticId = config.get(CTG_SATS, "Purgot Space Station Static ID", -6005).getInt();
+		spaceStationPurgotId = config.get(CTG_SATS, "Purgot Space Station ID", -6004, "Dimension ID for Purgot Space Station. (default: -6004)").getInt();
+		spaceStationPurgotStaticId = config.get(CTG_SATS, "Purgot Space Station Static ID", -6005, "Dimension static ID for Purgot Space Station. (default: -6005)").getInt();
 		
 		// Eden
-		spaceStationEdenId = config.get(CTG_SATS, "Eden Space Station ID", -6006).getInt();
-		spaceStationEdenStaticId = config.get(CTG_SATS, "Eden Space Station Static ID", -6007).getInt();
+		spaceStationEdenId = config.get(CTG_SATS, "Eden Space Station ID", -6006, "Dimension ID for Eden Space Station. (default: -6006)").getInt();
+		spaceStationEdenStaticId = config.get(CTG_SATS, "Eden Space Station Static ID", -6007, "Dimension static ID for Eden Space Station. (default: -6007)").getInt();
 		
 		// Space Stations (Praedyth)
 		// Xathius
-		spaceStationXathiusId = config.get(CTG_SATS, "Xathius Space Station ID", -6008).getInt();
-		spaceStationXathiusStaticId = config.get(CTG_SATS, "Xathius Space Station Static ID", -6009).getInt();
+		spaceStationXathiusId = config.get(CTG_SATS, "Xathius Space Station ID", -6008, "Dimension ID for Xathius Space Station. (default: -6008)").getInt();
+		spaceStationXathiusStaticId = config.get(CTG_SATS, "Xathius Space Station Static ID", -6009, "Dimension static ID for Xathius Space Station. (default: -6009)").getInt();
 		
 		// Oasis
-		spaceStationOasisId = config.get(CTG_SATS, "Oasis Space Station ID", -6010).getInt();
-		spaceStationOasisStaticId = config.get(CTG_SATS, "Oasis Space Station Static ID", -6011).getInt();
+		spaceStationOasisId = config.get(CTG_SATS, "Oasis Space Station ID", -6010, "Dimension ID for Oasis Space Station. (default: -6010)").getInt();
+		spaceStationOasisStaticId = config.get(CTG_SATS, "Oasis Space Station Static ID", -6011, "Dimension static ID for Oasis Space Station. (default: -6011)").getInt();
 		
 		// Xantheon
-		spaceStationXantheonId = config.get(CTG_SATS, "Xantheon Space Station ID", -6012).getInt();
-		spaceStationXantheonStaticId = config.get(CTG_SATS, "Xantheon Space Station Static Id", -6013).getInt();
+		spaceStationXantheonId = config.get(CTG_SATS, "Xantheon Space Station ID", -6012, "Dimension ID for Xantheon Space Station. (default: -6012)").getInt();
+		spaceStationXantheonStaticId = config.get(CTG_SATS, "Xantheon Space Station Static Id", -6013, "Dimension static ID for Xantheon Space Station. (default: -6013)").getInt();
 		
 		// Candora
-		spaceStationCandoraId = config.get(CTG_SATS, "Candora Space Station ID", -6014).getInt();
-		spaceStationCandoraStaticId = config.get(CTG_SATS, "Candora Space Station Static Id", -6015).getInt();
+		spaceStationCandoraId = config.get(CTG_SATS, "Candora Space Station ID", -6014, "Dimension ID for Candora Space Station. (default: -6014)").getInt();
+		spaceStationCandoraStaticId = config.get(CTG_SATS, "Candora Space Station Static Id", -6015, "Dimension static ID for Candora Space Station. (default: -6015)").getInt();
 		
 		// Atheon
-		spaceStationAtheonId = config.get(CTG_SATS, "Atheon Space Station ID", -6016).getInt();
-		spaceStationAtheonStaticId = config.get(CTG_SATS, "Atheon Space Station Static ID", -6017).getInt();
+		spaceStationAtheonId = config.get(CTG_SATS, "Atheon Space Station ID", -6016, "Dimension ID for Atheon Space Station. (default: -6016)").getInt();
+		spaceStationAtheonStaticId = config.get(CTG_SATS, "Atheon Space Station Static ID", -6017, "Dimension static ID for Atheon Space Station. (default: -6017)").getInt();
 		
 		// Space Stations (Sol-2)
 		// Perdita
-		spaceStationPerditaId = config.get(CTG_SATS, "Perdita Space Station ID", -6018).getInt();
-		spaceStationPerditaStaticId = config.get(CTG_SATS, "Perdita Space Station Static ID", -6019).getInt();
+		spaceStationPerditaId = config.get(CTG_SATS, "Perdita Space Station ID", -6018, "Dimension ID for Perdita Space Station. (default: -6018)").getInt();
+		spaceStationPerditaStaticId = config.get(CTG_SATS, "Perdita Space Station Static ID", -6019, "Dimension static ID for Perdita Space Station. (default: -6019)").getInt();
 		
 		// Altum
-		spaceStationAltumId = config.get(CTG_SATS, "Altum Space Station ID", -6020).getInt();
-		spaceStationAltumStaticId = config.get(CTG_SATS, "Altum Space Station Static ID", -6021).getInt();
+		spaceStationAltumId = config.get(CTG_SATS, "Altum Space Station ID", -6020, "Dimension ID for Altum Space Station. (default: -6020)").getInt();
+		spaceStationAltumStaticId = config.get(CTG_SATS, "Altum Space Station Static ID", -6021, "Dimension static ID for Altum Space Station. (default: -6021)").getInt();
 		
 		// Caligro
-		spaceStationCaligroId = config.get(CTG_SATS, "Caligro Space Station ID", -6022).getInt();
-		spaceStationCaligroStaticId = config.get(CTG_SATS, "Caligro Space Station Static ID", -6023).getInt();
+		spaceStationCaligroId = config.get(CTG_SATS, "Caligro Space Station ID", -6022, "Dimension ID for Caligro Space Station. (default: -6022)").getInt();
+		spaceStationCaligroStaticId = config.get(CTG_SATS, "Caligro Space Station Static ID", -6023, "Dimension static ID for Caligro Space Station. (default: -6023)").getInt();
 		
 		// Exodus
-		spaceStationExodusId = config.get(CTG_SATS, "Exodus Space Station ID", -6024).getInt();
-		spaceStationExodusStaticId = config.get(CTG_SATS, "Exodus Space Station Static ID", -6025).getInt();
+		spaceStationExodusId = config.get(CTG_SATS, "Exodus Space Station ID", -6024, "Dimension ID for Exodus Space Station. (default: -6024)").getInt();
+		spaceStationExodusStaticId = config.get(CTG_SATS, "Exodus Space Station Static ID", -6025, "Dimension static ID for Exodus Space Station. (default: -6025)").getInt();
 		
 		// Space Stations (Pantheon)
 		// Vortex
-		spaceStationVortexId = config.get(CTG_SATS, "Vortex Space Station ID", -6026).getInt();
-		spaceStationVortexStaticId = config.get(CTG_SATS, "Vortex Space Station Static ID", -6027).getInt();
+		spaceStationVortexId = config.get(CTG_SATS, "Vortex Space Station ID", -6026, "Dimension ID for Vortex Space Station. (default: -6026)").getInt();
+		spaceStationVortexStaticId = config.get(CTG_SATS, "Vortex Space Station Static ID", -6027, "Dimension static ID for Vortex Space Station. (default: -6027)").getInt();
 		
 		// Metztli
-		spaceStationMetztliId = config.get(CTG_SATS, "Metztli Space Station ID", -6028).getInt();
-		spaceStationMetztliStaticId = config.get(CTG_SATS, "Metztli Space Station Static ID", -6029).getInt();
+		spaceStationMetztliId = config.get(CTG_SATS, "Metztli Space Station ID", -6028, "Dimension ID for Metztli Space Station. (default: -6028)").getInt();
+		spaceStationMetztliStaticId = config.get(CTG_SATS, "Metztli Space Station Static ID", -6029, "Dimension static ID for Metztli Space Station. (default: -6029)").getInt();
 		
 		// Centotl
-		spaceStationCentotlId = config.get(CTG_SATS, "Centotl Space Station ID", -6030).getInt();
-		spaceStationCentotlStaticId = config.get(CTG_SATS, "Centotl Space Station Static ID", -6031).getInt();
+		spaceStationCentotlId = config.get(CTG_SATS, "Centotl Space Station ID", -6030, "Dimension ID for Centotl Space Station. (default: -6030)").getInt();
+		spaceStationCentotlStaticId = config.get(CTG_SATS, "Centotl Space Station Static ID", -6031, "Dimension static ID for Centotl Space Station. (default: -6031)").getInt();
 		
 		// Toci
-		spaceStationTociId = config.get(CTG_SATS, "Toci Space Station ID", -6032).getInt();
-		spaceStationTociStaticId = config.get(CTG_SATS, "Toci Space Station Static ID", -6033).getInt();
+		spaceStationTociId = config.get(CTG_SATS, "Toci Space Station ID", -6032, "Dimension ID for Toci Space Station. (default: -6032)").getInt();
+		spaceStationTociStaticId = config.get(CTG_SATS, "Toci Space Station Static ID", -6033, "Dimension static ID for Toci Space Station. (default: -6033)").getInt();
 		
 		// Tlaloc
-		spaceStationTlalocId = config.get(CTG_SATS, "Tlaloc Space Station ID", -6034).getInt();
-		spaceStationTlalocStaticId = config.get(CTG_SATS, "Tlaloc Space Station Static ID", -6035).getInt();
+		spaceStationTlalocId = config.get(CTG_SATS, "Tlaloc Space Station ID", -6034, "Dimension ID for Tlaloc Space Station. (default: -6034)").getInt();
+		spaceStationTlalocStaticId = config.get(CTG_SATS, "Tlaloc Space Station Static ID", -6035, "Dimension static ID for Tlaloc Space Station. (default: -6035)").getInt();
 		
 		// Kronos
-		spaceStationKronosId = config.get(CTG_SATS, "Kronos Space Station ID", -6036).getInt();
-		spaceStationKronosStaticId = config.get(CTG_SATS, "Kronos Space Station Static ID", -6037).getInt();
+		spaceStationKronosId = config.get(CTG_SATS, "Kronos Space Station ID", -6036, "Dimension ID for Kronos Space Station. (default: -6036)").getInt();
+		spaceStationKronosStaticId = config.get(CTG_SATS, "Kronos Space Station Static ID", -6037, "Dimension static ID for Kronos Space Station. (default: -6037)").getInt();
 		
 		// Misc (Can Earth animals spawn on Eden?)
 		canEarthAnimalsSpawnOnEden = config.get(CTG_MISC, "Earth Animals Spawn On Eden", true, "Should Earth animals spawn on Eden? (default: true)").getBoolean();
@@ -484,6 +486,9 @@ public class ConfigManagerZG {
 		
 		// Enable armor to give effects when a full set is worn
 		enableArmorEffects = config.get(CTG_MISC, "Enable Armor Effects", true, "Enable armor sets giving effects when a full set is worn. (default: true)").getBoolean();
+		
+		// Enable Sweet Food potion effects
+		enableSweetFoodPotionEffects = config.get(CTG_MISC, "Enable Sweet Food Potion Effects", true, "Enable sweet foods from this mod to give Potion Effects. (default: true)").getBoolean();
 		
 		// Compat (Whether or not to use Thermal Foundation's Detabilized Redstone for the Red Sea
 		// in Oasis)
@@ -545,6 +550,7 @@ public class ConfigManagerZG {
 		enablePotionEffectOres = config.get(CTG_CUSTOMS, "Enable Potion Effect Ores", true, "Disable to prevent ores from giving potion effects. (default: true). ").getBoolean();
 		enableOilLakes = config.get(CTG_CUSTOMS, "Enable Oil Lake Generation on ZG Planets", true, "Enables the generation of lakes of Galacticraft's Crude Oil to generate on planets and moons from this mod. (default: true). ").getBoolean();
 		showCompanionNameTags = config.get(CTG_CUSTOMS, "Show Companion Name Tags", true, "Shows the name tag of companion mobs. (default: true). ").getBoolean();
+		enableMineshaftsOnKronos = config.get(CTG_CUSTOMS, "Enable Kronos Mineshafts", false, "Enable to allow Mineshafts to spawn on Kronos. (default: false). ").getBoolean();
 		
 		//
 		//
@@ -644,33 +650,33 @@ public class ConfigManagerZG {
 		novaZOffset = (float) config.get(CTG_COORDS, "Nova Z Offset", 0.0, "(default: 0.0)").getDouble();
 		
 		// Planet Tiers (Psios-6)
-		planetZollusTier = config.get(CTG_TIERS, "Planet Zollus Tier", 3).getInt();
-		planetKriffonTier = config.get(CTG_TIERS, "Planet Kriffon Tier", 3).getInt();
-		planetPurgotTier = config.get(CTG_TIERS, "Planet Purgot Tier", 3).getInt();
-		planetEdenTier = config.get(CTG_TIERS, "Planet Eden Tier", 3).getInt();
+		planetZollusTier = config.get(CTG_TIERS, "Planet Zollus Tier", 3, "Zollus Planet Tier. (default: 3)").getInt();
+		planetKriffonTier = config.get(CTG_TIERS, "Planet Kriffon Tier", 3, "Kriffon Planet Tier. (default: 3)").getInt();
+		planetPurgotTier = config.get(CTG_TIERS, "Planet Purgot Tier", 3, "Purgot Planet Tier. (default: 3)").getInt();
+		planetEdenTier = config.get(CTG_TIERS, "Planet Eden Tier", 3, "Eden Planet Tier. (default: 3)").getInt();
 		
 		// Planet Tiers (Praedyth)
-		planetXathiusTier = config.get(CTG_TIERS, "Planet Xathius Tier", 3).getInt();
-		planetOasisTier = config.get(CTG_TIERS, "Planet Oasis Tier", 3).getInt();
-		planetXantheonTier = config.get(CTG_TIERS, "Planet Xantheon Tier", 3).getInt();
-		planetCandoraTier = config.get(CTG_TIERS, "Planet Candora Tier", 3).getInt();
-		planetAtheonTier = config.get(CTG_TIERS, "Planet Atheon Tier", 3).getInt();
+		planetXathiusTier = config.get(CTG_TIERS, "Planet Xathius Tier", 3, "Xathius Planet Tier. (default: 3)").getInt();
+		planetOasisTier = config.get(CTG_TIERS, "Planet Oasis Tier", 3, "Oasis Planet Tier. (default: 3)").getInt();
+		planetXantheonTier = config.get(CTG_TIERS, "Planet Xantheon Tier", 3, "Xantheon Planet Tier. (default: 3)").getInt();
+		planetCandoraTier = config.get(CTG_TIERS, "Planet Candora Tier", 3, "Candora Planet Tier. (default: 3)").getInt();
+		planetAtheonTier = config.get(CTG_TIERS, "Planet Atheon Tier", 3, "Atheon Planet Tier. (default: 3)").getInt();
 		
 		// Planet Tiers (Sol-2)
-		planetPerditaTier = config.get(CTG_TIERS, "Planet Perdita Tier", 3).getInt();
-		planetAltumTier = config.get(CTG_TIERS, "Planet Altum Tier", 3).getInt();
-		planetCaligroTier = config.get(CTG_TIERS, "Planet Caligro Tier", 3).getInt();
-		planetExodusTier = config.get(CTG_TIERS, "Planet Exodus Tier", 3).getInt();
+		planetPerditaTier = config.get(CTG_TIERS, "Planet Perdita Tier", 3, "Perdita Planet Tier. (default: 3)").getInt();
+		planetAltumTier = config.get(CTG_TIERS, "Planet Altum Tier", 3, "Altum Planet Tier. (default: 3)").getInt();
+		planetCaligroTier = config.get(CTG_TIERS, "Planet Caligro Tier", 3, "Caligro Planet Tier. (default: 3)").getInt();
+		planetExodusTier = config.get(CTG_TIERS, "Planet Exodus Tier", 3, "Exodus Planet Tier. (default: 3)").getInt();
 		
 		// Planet Tiers (Pantheon)
-		planetVortexTier = config.get(CTG_TIERS, "Planet Vortex Tier", 3).getInt();
-		planetMetztliTier = config.get(CTG_TIERS, "Planet Metztli Tier", 3).getInt();
-		planetCentotlTier = config.get(CTG_TIERS, "Planet Centotl Tier", 3).getInt();
-		planetTociTier = config.get(CTG_TIERS, "Planet Toci Tier", 3).getInt();
-		planetTlalocTier = config.get(CTG_TIERS, "Planet Tlaloc Tier", 3).getInt();
+		planetVortexTier = config.get(CTG_TIERS, "Planet Vortex Tier", 3, "Vortex Planet Tier. (default: 3)").getInt();
+		planetMetztliTier = config.get(CTG_TIERS, "Planet Metztli Tier", 3, "Metztli Planet Tier. (default: 3)").getInt();
+		planetCentotlTier = config.get(CTG_TIERS, "Planet Centotl Tier", 3, "Centotl Planet Tier. (default: 3)").getInt();
+		planetTociTier = config.get(CTG_TIERS, "Planet Toci Tier", 3, "Toci Planet Tier. (default: 3)").getInt();
+		planetTlalocTier = config.get(CTG_TIERS, "Planet Tlaloc Tier", 3, "Tlaloc Planet Tier. (default: 3)").getInt();
 		
 		// Planet Tiers (Olympus)
-		planetKronosTier = config.get(CTG_TIERS, "Planet Kronos Tier", 3).getInt();
+		planetKronosTier = config.get(CTG_TIERS, "Planet Kronos Tier", 3, "Kronos Planet Tier. (default: 3)").getInt();
 		
 		config.save();
 	}

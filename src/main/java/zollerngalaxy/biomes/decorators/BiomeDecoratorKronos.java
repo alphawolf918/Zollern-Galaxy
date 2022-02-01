@@ -75,6 +75,7 @@ public class BiomeDecoratorKronos extends BiomeDecoratorZG {
 	private WorldGenerator zaniumGen;
 	private WorldGenerator raditeGen;
 	private WorldGenerator zogiteGen;
+	private WorldGenerator azuriteGen;
 	
 	private WorldGenerator netherWartGen = new WorldGenNetherWarts();
 	private WorldGenerator battleTowerGen = new WorldGenBattleTower(NETHER_BRICK.getDefaultState(), GLOWSTONE.getDefaultState());
@@ -129,6 +130,7 @@ public class BiomeDecoratorKronos extends BiomeDecoratorZG {
 		this.zaniumGen = new WorldGenMinableZG(ZGBlocks.netherZaniumOre, NETHERRACK, EnumOreGenZG.ZANIUM);
 		this.raditeGen = new WorldGenMinableZG(ZGBlocks.netherRaditeOre, NETHERRACK, EnumOreGenZG.RADITE);
 		this.zogiteGen = new WorldGenMinableZG(ZGBlocks.netherZogiteOre, NETHERRACK, EnumOreGenZG.ZOGITE);
+		this.azuriteGen = new WorldGenMinableZG(ZGBlocks.azuriteOre, OBSIDIAN, EnumOreGenZG.AZURITE);
 	}
 	
 	@Override
@@ -172,6 +174,7 @@ public class BiomeDecoratorKronos extends BiomeDecoratorZG {
 		EnumOreGenZG.ZANIUM.setMaxHeight(128);
 		EnumOreGenZG.RADITE.setMaxHeight(128);
 		EnumOreGenZG.ZOGITE.setMaxHeight(128);
+		EnumOreGenZG.AZURITE.FactoryOreGen(25, 10, 128);
 		//
 		
 		//
@@ -203,6 +206,7 @@ public class BiomeDecoratorKronos extends BiomeDecoratorZG {
 		this.generateOre(this.zaniumGen, EnumOreGenZG.ZANIUM, world, rand);
 		this.generateOre(this.raditeGen, EnumOreGenZG.RADITE, world, rand);
 		this.generateOre(this.zogiteGen, EnumOreGenZG.ZOGITE, world, rand);
+		this.generateOre(this.azuriteGen, EnumOreGenZG.AZURITE, world, rand);
 		//
 		
 		int genY = y;

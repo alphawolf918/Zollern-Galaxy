@@ -53,8 +53,7 @@ public class ZGBlockFalling extends ZGBlockBase {
 			
 			if (!fallInstantly && worldIn.isAreaLoaded(pos.add(-32, -32, -32), pos.add(32, 32, 32))) {
 				if (!worldIn.isRemote) {
-					EntityFallingBlock entityfallingblock = new EntityFallingBlock(worldIn, pos.getX() + 0.5D, pos.getY(),
-							pos.getZ() + 0.5D, worldIn.getBlockState(pos));
+					EntityFallingBlock entityfallingblock = new EntityFallingBlock(worldIn, pos.getX() + 0.5D, pos.getY(), pos.getZ() + 0.5D, worldIn.getBlockState(pos));
 					this.onStartFalling(entityfallingblock);
 					worldIn.spawnEntity(entityfallingblock);
 				}
@@ -63,8 +62,7 @@ public class ZGBlockFalling extends ZGBlockBase {
 				worldIn.setBlockToAir(pos);
 				BlockPos blockpos;
 				
-				for (blockpos = pos.down(); (worldIn.isAirBlock(blockpos) || canFallThrough(worldIn.getBlockState(blockpos)))
-						&& blockpos.getY() > 0; blockpos = blockpos.down()) {
+				for (blockpos = pos.down(); (worldIn.isAirBlock(blockpos) || canFallThrough(worldIn.getBlockState(blockpos))) && blockpos.getY() > 0; blockpos = blockpos.down()) {
 					;
 				}
 				
@@ -133,5 +131,4 @@ public class ZGBlockFalling extends ZGBlockBase {
 	public String getHarvestTool(IBlockState state) {
 		return EnumHarvestToolZG.SHOVEL.getHarvestTool();
 	}
-	
 }

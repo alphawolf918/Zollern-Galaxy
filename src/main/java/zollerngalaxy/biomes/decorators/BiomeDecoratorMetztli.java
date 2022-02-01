@@ -108,6 +108,8 @@ public class BiomeDecoratorMetztli extends BiomeDecoratorZG {
 	public int jungleTreesPerChunk = 0;
 	public int mushroomsPerChunk = 20;
 	public int clayPerChunk = 3;
+	public int gravelPatchesPerChunk = 2;
+	public int sandPatchesPerChunk = 3;
 	
 	public boolean generateLakes = true;
 	public boolean generateWaterLilies = true;

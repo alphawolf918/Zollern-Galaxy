@@ -16,6 +16,6 @@ public class Galaxy {
 	}
 	
 	public String getGalaxyName() {
-		return galaxyName;
+		return this.galaxyName;
 	}
 }
