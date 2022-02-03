@@ -50,6 +50,7 @@ public class GenLayerOasisBiomes extends GenLayerOasis {
 		list.add(new BiomeEntry(ZGBiomes.OASIS_BEACH, 85));
 		list.add(new BiomeEntry(ZGBiomes.OASIS_REDLANDS, 80));
 		list.add(new BiomeEntry(ZGBiomes.OASIS_MUDSWAMP, 70));
+		list.add(new BiomeEntry(ZGBiomes.OASIS_DESERT, 60));
 		currentBiomes[BiomeType.WARM.ordinal()] = new ArrayList<>(list);
 		return currentBiomes;
 	}

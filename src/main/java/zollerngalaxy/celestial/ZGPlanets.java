@@ -360,7 +360,7 @@ public class ZGPlanets {
 		if (ConfigManagerZG.planetUnreachableAll || ConfigManagerZG.planetUnreachableOasis) {
 			planetOasis.setDisableRockets();
 		}
-		planetOasis.setBodyTemperature(68.2F);
+		planetOasis.setBodyTemperature(84.26F);
 		planetOasis.setBodyToxicity(0.5F);
 		planetOasis.setBodyRadiation(4.0F);
 		planetOasis.setBreathable(true);
@@ -370,7 +370,7 @@ public class ZGPlanets {
 		planetOasis.setBodyGasses(EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.WATER);
 		planetOasis.setAtmosphere();
 		planetOasis.setBodyIcon("oasis");
-		planetOasis.setBiomeInfo(ZGBiomes.OASIS_PLAINS, ZGBiomes.OASIS_RED_OCEAN, ZGBiomes.OASIS_BEACH, ZGBiomes.OASIS_REDLANDS);
+		planetOasis.setBiomeInfo(ZGBiomes.OASIS_PLAINS, ZGBiomes.OASIS_RED_OCEAN, ZGBiomes.OASIS_BEACH, ZGBiomes.OASIS_REDLANDS, ZGBiomes.OASIS_MUDSWAMP, ZGBiomes.OASIS_DESERT);
 		totalPlanets++;
 		
 		// Planet Xantheon

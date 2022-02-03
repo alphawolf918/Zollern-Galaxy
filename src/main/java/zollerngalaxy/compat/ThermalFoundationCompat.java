@@ -7,16 +7,23 @@
  */
 package zollerngalaxy.compat;
 
-import net.minecraft.block.Block;
-import zollerngalaxy.lib.helpers.ZGHelper;
 import cofh.thermalfoundation.init.TFFluids;
+import net.minecraft.block.state.IBlockState;
+import net.minecraft.init.Blocks;
+import zollerngalaxy.config.ConfigManagerZG;
+import zollerngalaxy.lib.helpers.ModHelperBase;
+import zollerngalaxy.lib.helpers.ZGHelper;
 
 public class ThermalFoundationCompat {
 	
-	public static Block RED_SEA_BLOCK = TFFluids.blockFluidRedstone;
+	protected static boolean shouldUseRedstone = (ModHelperBase.useThermalFoundation && ConfigManagerZG.shouldOasisUseLiquidRedstone);
 	
 	public static void init() {
 		ZGHelper.Log("Initialized IMC with Thermal Foundation.");
+	}
+	
+	public static IBlockState getOasisWaterState() {
+		return (shouldUseRedstone) ? TFFluids.blockFluidRedstone.getDefaultState() : Blocks.WATER.getDefaultState();
 	}
 	
 }

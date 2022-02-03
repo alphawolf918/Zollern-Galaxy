@@ -165,7 +165,7 @@ public class ChunkProviderOasis extends ChunkProviderBase {
 									chunkHeight = (CHUNK_HEIGHT + heightMod);
 								}
 								
-								if ((lvt_45_1_ += d16) > this.noiseGenSmooth1.getNoise(chunkX * 16 + x, chunkZ * 16 + z) * CHUNK_HEIGHT) {
+								if ((lvt_45_1_ += d16) > this.noiseGenSmooth1.getNoise(chunkX * 16 + x, chunkZ * 16 + z) * chunkHeight) {
 									primer.setBlockState(x, y, z, STONE);
 								} else if (y < SEA_LEVEL) {
 									IBlockState blockToUse = WATER;
@@ -325,8 +325,7 @@ public class ChunkProviderOasis extends ChunkProviderBase {
 			for (int cz = chunkZ - 2; cz <= chunkZ + 2; cz++) {
 				for (int x = 0; x < ChunkProviderOasis.CHUNK_SIZE_X; x++) {
 					for (int z = 0; z < ChunkProviderOasis.CHUNK_SIZE_Z; z++) {
-						if (Math.abs(this.randFromPoint(cx * 16 + x, (cz * 16 + z) * 1000)) < this.noiseGen4.getValue(x * ChunkProviderOasis.CHUNK_SIZE_X + x, cz * ChunkProviderOasis.CHUNK_SIZE_Z + z)
-								/ ChunkProviderOasis.CRATER_PROB) {
+						if (Math.abs(this.randFromPoint(cx * 16 + x, (cz * 16 + z) * 1000)) < this.noiseGen4.getValue(x * ChunkProviderOasis.CHUNK_SIZE_X + x, cz * ChunkProviderOasis.CHUNK_SIZE_Z + z) / ChunkProviderOasis.CRATER_PROB) {
 							final Random random = new Random(cx * 16 + x + (cz * 16 + z) * 5000);
 							final EnumCraterSize cSize = EnumCraterSize.sizeArray[random.nextInt(EnumCraterSize.sizeArray.length)];
 							final int size = random.nextInt(cSize.MAX_SIZE - cSize.MIN_SIZE) + cSize.MIN_SIZE;

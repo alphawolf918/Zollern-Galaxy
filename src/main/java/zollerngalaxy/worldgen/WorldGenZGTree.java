@@ -58,7 +58,7 @@ public class WorldGenZGTree extends WorldGenAbstractTree {
 				} else {
 					IBlockState state = worldIn.getBlockState(position.down());
 					
-					if (state.getBlock() instanceof ZGBlockGrass || state.getBlock() instanceof ZGBlockDirt) {
+					if (state.getBlock() instanceof ZGBlockGrass || state.getBlock() instanceof ZGBlockDirt && state != Blocks.WATER.getDefaultState()) {
 						state.getBlock().onPlantGrow(state, worldIn, position.down(), position);
 						int k2 = 3;
 						int l2 = 0;

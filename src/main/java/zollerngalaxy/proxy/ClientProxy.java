@@ -36,6 +36,7 @@ import zollerngalaxy.potions.ZGPotions;
 import zollerngalaxy.tileentities.TileEntityTier10TreasureChestZG;
 import zollerngalaxy.tileentities.renderers.TileEntityTier10TreasureChestZGRenderer;
 import zollerngalaxy.util.ClientUtilsZG;
+import zollerngalaxy.util.RegisterUtilsZG;
 import zollerngalaxy.util.ZGDamageSrc;
 
 public class ClientProxy extends CommonProxy {
@@ -60,6 +61,7 @@ public class ClientProxy extends CommonProxy {
 		}
 		
 		MinecraftForge.EVENT_BUS.register(new ZGSkyProviderHandler());
+		RegisterUtilsZG.registerEventHandler(this);
 		OBJLoader.INSTANCE.addDomain(ZGInfo.MOD_ID);
 	}
 	
@@ -119,7 +121,6 @@ public class ClientProxy extends CommonProxy {
 	
 	@SubscribeEvent
 	public void registerModels(ModelRegistryEvent event) {
-		// Register TileEntity Special Renderers
 		this.renderBlocksTileEntitySpecialRenderers();
 	}
 }

@@ -9,6 +9,7 @@ Zollern Galaxy v2.0.39
 * Added Azurite Ore gen to Kronos.
     - These ores will only spawn in Obsidian veins, and do not explode.
 * Added fruit tree generation to Oasis.
+* Added more biomes to Oasis.
 * 
 
 [CHANGES]
@@ -16,9 +17,13 @@ Zollern Galaxy v2.0.39
 * Registered fluids to the Ore Dictionary.
 * Oil lakes will now generate on Oasis unless disabled in the config.
 * Reworked Oasis biome decoration.
-* Oasis' "Red Sea" ocean biome is now no longer completely flat under the water.
+* Oasis' "Red Sea" ocean biome has been completely reworked and is now no longer completely flat under the water.
     - This is not perfect, but it is a step in the right direction.
+* Increased amount of oxygen per tank tier.
+* Oxygen Tanks from this mod are now craftable.
+* ZG Village farms will now generate with Obsidian instead of Logs.
 * 
 
 [FIXES]
+* Fixed Tlaloc Dungeon Chest having the wrong render texture (thank you MJRLegends).
 * 

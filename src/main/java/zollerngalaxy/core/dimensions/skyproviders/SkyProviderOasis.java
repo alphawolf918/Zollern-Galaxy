@@ -8,6 +8,7 @@
 package zollerngalaxy.core.dimensions.skyproviders;
 
 import java.util.Random;
+import org.lwjgl.opengl.GL11;
 import micdoodle8.mods.galacticraft.api.world.IGalacticraftWorldProvider;
 import micdoodle8.mods.galacticraft.core.Constants;
 import micdoodle8.mods.galacticraft.core.util.ConfigManagerCore;
@@ -27,7 +28,6 @@ import net.minecraftforge.client.IRenderHandler;
 import net.minecraftforge.fml.client.FMLClientHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import org.lwjgl.opengl.GL11;
 
 @SideOnly(Side.CLIENT)
 public class SkyProviderOasis extends IRenderHandler {
@@ -43,7 +43,7 @@ public class SkyProviderOasis extends IRenderHandler {
 	private IGalacticraftWorldProvider provider;
 	
 	public SkyProviderOasis(IGalacticraftWorldProvider worldProvider) {
-		this.sunSize = 6.4F * worldProvider.getSolarSize();
+		this.sunSize = 6.8F * worldProvider.getSolarSize();
 		
 		int displayLists = GLAllocation.generateDisplayLists(3);
 		this.starList = displayLists;

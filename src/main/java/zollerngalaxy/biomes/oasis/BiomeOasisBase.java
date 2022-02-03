@@ -8,7 +8,6 @@
 package zollerngalaxy.biomes.oasis;
 
 import java.util.Random;
-import cofh.thermalfoundation.init.TFFluids;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
@@ -19,11 +18,12 @@ import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.biomes.decorators.BiomeDecoratorOasis;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.celestial.ZGPlanets;
+import zollerngalaxy.compat.ThermalFoundationCompat;
 import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderOasis;
-import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 import zollerngalaxy.lib.helpers.ModHelperBase;
 import zollerngalaxy.mobs.entities.villagers.EntityOasisVillager;
+import zollerngalaxy.util.BiomeUtils;
 
 public abstract class BiomeOasisBase extends BiomeSpace {
 	
@@ -67,9 +67,11 @@ public abstract class BiomeOasisBase extends BiomeSpace {
 		IBlockState topState = this.topBlock;
 		IBlockState fillState = this.fillerBlock;
 		int j = -1;
-		int k = (int) (noiseVal / 3.0D + 3.0D + rand.nextDouble() * 0.25D);
+		int k = (int) (noiseVal / 2.5D + 3.0D + rand.nextDouble() * 0.25D);
 		int l = x & 15;
 		int i1 = z & 15;
+		
+		int seaLevelMod = 0;
 		
 		for (int j1 = 255; j1 >= 0; --j1) {
 			if (j1 == 0) {
@@ -78,12 +80,11 @@ public abstract class BiomeOasisBase extends BiomeSpace {
 				chunkPrimerIn.setBlockState(i1, j1, l, AIR);
 			} else {
 				IBlockState iblockstate2 = chunkPrimerIn.getBlockState(i1, j1, l);
-				if (this.getBiomeType() == EnumBiomeTypeZG.OCEAN) {
-					// int seaLevelMod = (SEA_LEVEL + 4);
+				IBlockState blockToUse = ThermalFoundationCompat.getOasisWaterState();
+				if (BiomeUtils.isOceanBiome(this)) {
 					if ((j1 < SEA_LEVEL) && (j1 > SEA_FLOOR_LEVEL)) {
-						IBlockState blockToUse = (shouldUseRedstone) ? TFFluids.blockFluidRedstone.getDefaultState() : WATER;
 						chunkPrimerIn.setBlockState(i1, j1, l, blockToUse);
-					} else if (j1 >= SEA_LEVEL) {
+					} else if (j1 >= (SEA_LEVEL + seaLevelMod)) {
 						chunkPrimerIn.setBlockState(i1, j1, l, AIR);
 					}
 				}
@@ -119,8 +120,16 @@ public abstract class BiomeOasisBase extends BiomeSpace {
 						chunkPrimerIn.setBlockState(i1, j1, l, fillState);
 					}
 				}
-				if ((this.getBiomeType() == EnumBiomeTypeZG.OCEAN) && (j1 >= (SEA_LEVEL + 0)) && (chunkPrimerIn.getBlockState(i1, j1, l).getBlock() != WATER)) {
+				if ((BiomeUtils.isOceanBiome(this)) && (j1 >= (SEA_LEVEL + seaLevelMod)) && (chunkPrimerIn.getBlockState(i1, j1, l).getBlock() != WATER)) {
 					chunkPrimerIn.setBlockState(i1, j1, l, AIR);
+					if (j1 < (SEA_LEVEL - rand.nextInt(21)) && j1 > SEA_FLOOR_LEVEL) {
+						chunkPrimerIn.setBlockState(i1, j1, l, blockToUse);
+					} else if (j1 > SEA_LEVEL) {
+						chunkPrimerIn.setBlockState(i1, j1, l, AIR);
+					}
+					if (j1 == SEA_LEVEL) {
+						chunkPrimerIn.setBlockState(i1, j1, l, blockToUse);
+					}
 				}
 			}
 		}

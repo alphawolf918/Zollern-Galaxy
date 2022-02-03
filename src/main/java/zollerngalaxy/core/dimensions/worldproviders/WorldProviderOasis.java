@@ -176,7 +176,7 @@ public class WorldProviderOasis extends WorldProviderPlanetZG {
 	
 	@Override
 	public double getHorizon() {
-		return 68.0D;
+		return 58.0D;
 	}
 	
 	@Override

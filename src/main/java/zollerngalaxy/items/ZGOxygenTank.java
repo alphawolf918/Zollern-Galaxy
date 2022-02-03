@@ -20,7 +20,7 @@ public class ZGOxygenTank extends ItemOxygenTank implements ISingleZGItemRender 
 	
 	public ZGOxygenTank(String name, int tier) {
 		super(tier, name);
-		this.setMaxDamage(tier * 1200);
+		this.setMaxDamage(tier * 2400);
 		this.setItemName(this, name);
 		if (ZollernGalaxyCore.instance().isInDevMode()) {
 			JSONFactory.registerItem(name);

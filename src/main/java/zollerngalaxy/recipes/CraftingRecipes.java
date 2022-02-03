@@ -505,6 +505,11 @@ public class CraftingRecipes {
 		CraftingRecipes.addSiren(ZGBlocks.goldSiren, Items.GOLD_INGOT);
 		CraftingRecipes.addSiren(ZGBlocks.diamondSiren, Items.DIAMOND);
 		CraftingRecipes.addSiren(ZGBlocks.emeraldSiren, Items.EMERALD);
+		
+		// Oxygen Tanks
+		CraftingRecipes.addOxygenTank(ZGItems.oxygenTankTier4, ZGItems.ingotLapis, ZGItems.compressedVirinium);
+		CraftingRecipes.addOxygenTank(ZGItems.oxygenTankTier5, ZGItems.ingotAmaranth, ZGItems.compressedRhodium);
+		CraftingRecipes.addOxygenTank(ZGItems.oxygenTankTier6, ZGItems.ingotPlutonium, ZGItems.compressedZanium);
 	}
 	
 	public static void addBricks(Item coloredBrick, Block coloredBlock) {
@@ -608,6 +613,11 @@ public class CraftingRecipes {
 	
 	private static void addSiren(Block sirenBlock, Item ingotIn) {
 		ZGRecipeHelper.addRecipe(new ItemStack(sirenBlock, 1), new Object[] { "OIO", "IRI", "OIO", 'O', Blocks.OBSIDIAN, 'I', ingotIn, 'R', Items.REDSTONE });
+		totalCraftRecipes++;
+	}
+	
+	private static void addOxygenTank(Item oxygenTankOut, Item ingotItemIn, Item compressedItemIn) {
+		ZGRecipeHelper.addRecipe(new ItemStack(oxygenTankOut, 1), new Object[] { "XXX", "YYY", "ZZZ", 'X', ingotItemIn, 'Y', GCItems.oxTankHeavy, 'Z', compressedItemIn });
 		totalCraftRecipes++;
 	}
 }

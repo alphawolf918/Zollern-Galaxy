@@ -49,7 +49,7 @@ public class BiomeDecoratorOasis extends BiomeDecoratorZG {
 	public static final Block SURFACE_ROCK = ZGBlocks.oasisRock;
 	public static final Block STONE = ZGBlocks.oasisStone;
 	
-	private WorldGenerator dirtGen;
+	private WorldGenerator dirtOreGen;
 	private WorldGenerator gravelOreGen;
 	private WorldGenerator superChargedCoalGen;
 	private WorldGenerator diamondGen;
@@ -65,7 +65,7 @@ public class BiomeDecoratorOasis extends BiomeDecoratorZG {
 	public WorldGenerator clayGen = new WorldGenClayZG(ZGBlocks.mudClayBlock, 8);
 	public WorldGenerator gravelGen = new WorldGenSandZG(ZGBlocks.oasisGravel, 6);
 	public WorldGenerator sandGen = new WorldGenSandZG(ZGBlocks.oasisSand, 7);
-	private WorldGenerator flowerGen = new WorldGenFlowersZG(ZGBlocks.oasisFlower.getDefaultState());
+	public WorldGenerator flowerGen = new WorldGenFlowersZG(ZGBlocks.oasisFlower.getDefaultState());
 	public WorldGenerator treeGen;
 	public WorldGenerator cropGen;
 	
@@ -80,6 +80,8 @@ public class BiomeDecoratorOasis extends BiomeDecoratorZG {
 	public int gravelPatchesPerChunk = 2;
 	public int sandPatchesPerChunk = 3;
 	public int treesPerChunk = 1;
+	public int flowersPerChunk = 6;
+	public int waterlilyPerChunk = 0;
 	
 	public boolean generateLakes = true;
 	public boolean generateVines = false;
@@ -89,9 +91,13 @@ public class BiomeDecoratorOasis extends BiomeDecoratorZG {
 	public boolean generateClay = true;
 	public boolean generateFalls = true;
 	public boolean generateTrees = true;
+	public boolean generateTallGrass = true;
+	public boolean generateFlowers = true;
+	public boolean generateGravel = true;
+	public boolean generateSand = true;
 	
 	public BiomeDecoratorOasis() {
-		this.dirtGen = new WorldGenMinableZG(ZGBlocks.oasisDirt, STONE, EnumOreGenZG.DIRT);
+		this.dirtOreGen = new WorldGenMinableZG(ZGBlocks.oasisDirt, STONE, EnumOreGenZG.DIRT);
 		this.gravelOreGen = new WorldGenMinableZG(ZGBlocks.oasisGravel, STONE, EnumOreGenZG.GRAVEL);
 		this.superChargedCoalGen = new WorldGenMinableZG(ZGBlocks.oasisSuperChargedCoalOre, STONE, EnumOreGenZG.SUPER_CHARGED_COAL);
 		this.diamondGen = new WorldGenMinableZG(ZGBlocks.oasisDiamondOre, STONE, EnumOreGenZG.DIAMOND);
@@ -116,7 +122,7 @@ public class BiomeDecoratorOasis extends BiomeDecoratorZG {
 		Block BLOCK_FILL = biome.fillerBlock.getBlock();
 		Block BLOCK_STONE = STONE;
 		
-		this.generateOre(this.dirtGen, EnumOreGenZG.DIRT, world, rand);
+		this.generateOre(this.dirtOreGen, EnumOreGenZG.DIRT, world, rand);
 		this.generateOre(this.gravelOreGen, EnumOreGenZG.GRAVEL, world, rand);
 		this.generateOre(this.superChargedCoalGen, EnumOreGenZG.SUPER_CHARGED_COAL, world, rand);
 		this.generateOre(this.diamondGen, EnumOreGenZG.DIAMOND, world, rand);
@@ -174,7 +180,7 @@ public class BiomeDecoratorOasis extends BiomeDecoratorZG {
 		}
 		
 		// Tall Grass
-		if (this.oasisTallGrassPerChunk > 0) {
+		if (this.generateTallGrass && this.oasisTallGrassPerChunk > 0) {
 			for (int i = 0; i < this.oasisTallGrassPerChunk + 4; ++i) {
 				ZGDecorateHelper.generatePlants(new WorldGenTallGrassZG((ZGBlockTallGrass) ZGBlocks.oasisTallGrass), world, rand, this.chunkPos);
 			}
@@ -182,18 +188,20 @@ public class BiomeDecoratorOasis extends BiomeDecoratorZG {
 		
 		// Flowers
 		if (TerrainGen.decorate(world, rand, forgeChunkPos, DecorateBiomeEvent.Decorate.EventType.FLOWERS)) {
-			for (int l2 = 0; l2 < this.flowersPerChunk; ++l2) {
-				int i7 = rand.nextInt(16) + 8;
-				int l10 = rand.nextInt(16) + 8;
-				int j14 = world.getHeight(this.chunkPos.add(i7, 0, l10)).getY() + 32;
-				
-				if (j14 > 0) {
-					int k17 = rand.nextInt(j14);
-					BlockPos blockpos1 = this.chunkPos.add(i7, k17, l10);
-					Block blockflower = ZGBlocks.oasisFlower;
+			if (this.generateFlowers && this.flowersPerChunk > 0) {
+				for (int l2 = 0; l2 < this.flowersPerChunk; ++l2) {
+					int i7 = rand.nextInt(16) + 8;
+					int l10 = rand.nextInt(16) + 8;
+					int j14 = world.getHeight(this.chunkPos.add(i7, 0, l10)).getY() + 32;
 					
-					if (blockflower.getDefaultState().getMaterial() != Material.AIR) {
-						this.flowerGen.generate(world, rand, blockpos1);
+					if (j14 > 0) {
+						int k17 = rand.nextInt(j14);
+						BlockPos blockpos1 = this.chunkPos.add(i7, k17, l10);
+						Block blockflower = ZGBlocks.oasisFlower;
+						
+						if (blockflower.getDefaultState().getMaterial() != Material.AIR) {
+							this.flowerGen.generate(world, rand, blockpos1);
+						}
 					}
 				}
 			}
@@ -212,19 +220,23 @@ public class BiomeDecoratorOasis extends BiomeDecoratorZG {
 		
 		// Gravel
 		if (TerrainGen.decorate(world, rand, forgeChunkPos, DecorateBiomeEvent.Decorate.EventType.SAND_PASS2)) {
-			for (int j1 = 0; j1 < this.gravelPatchesPerChunk; ++j1) {
-				int i2 = rand.nextInt(16) + 8;
-				int j6 = rand.nextInt(16) + 8;
-				this.gravelGen.generate(world, rand, world.getTopSolidOrLiquidBlock(this.chunkPos.add(i2, 0, j6)));
+			if (this.generateGravel && this.gravelPatchesPerChunk > 0) {
+				for (int j1 = 0; j1 < this.gravelPatchesPerChunk; ++j1) {
+					int i2 = rand.nextInt(16) + 8;
+					int j6 = rand.nextInt(16) + 8;
+					this.gravelGen.generate(world, rand, world.getTopSolidOrLiquidBlock(this.chunkPos.add(i2, 0, j6)));
+				}
 			}
 		}
 		
 		// Sand
 		if (TerrainGen.decorate(world, rand, forgeChunkPos, DecorateBiomeEvent.Decorate.EventType.SAND)) {
-			for (int i = 0; i < this.sandPatchesPerChunk; ++i) {
-				int j = rand.nextInt(16) + 8;
-				int k = rand.nextInt(16) + 8;
-				this.sandGen.generate(world, rand, world.getTopSolidOrLiquidBlock(this.chunkPos.add(j, 0, k)));
+			if (this.generateSand && this.sandPatchesPerChunk > 0) {
+				for (int i = 0; i < this.sandPatchesPerChunk; ++i) {
+					int j = rand.nextInt(16) + 8;
+					int k = rand.nextInt(16) + 8;
+					this.sandGen.generate(world, rand, world.getTopSolidOrLiquidBlock(this.chunkPos.add(j, 0, k)));
+				}
 			}
 		}
 		
@@ -253,7 +265,7 @@ public class BiomeDecoratorOasis extends BiomeDecoratorZG {
 		
 		// Battle Towers
 		if (this.generateBattleTowers && this.battleTowersPerChunk > 0 && !BiomeUtils.isOceanBiome(biome)) {
-			if (ZGHelper.rngInt(1, 200) <= 55) {
+			if (ZGHelper.rngInt(1, 100) <= 35) {
 				for (int i = 0; i < this.battleTowersPerChunk; ++i) {
 					y = rand.nextInt(rand.nextInt(genY) + 8);
 					if (y >= 60 && y < 80) {
@@ -278,7 +290,7 @@ public class BiomeDecoratorOasis extends BiomeDecoratorZG {
 		
 		// Falls
 		if (this.generateFalls) {
-			if (TerrainGen.decorate(world, rand, forgeChunkPos, DecorateBiomeEvent.Decorate.EventType.LAKE_WATER))
+			if (TerrainGen.decorate(world, rand, forgeChunkPos, DecorateBiomeEvent.Decorate.EventType.LAKE_WATER)) {
 				for (int k5 = 0; k5 < 50; ++k5) {
 					int i10 = rand.nextInt(16) + 8;
 					int l13 = rand.nextInt(16) + 8;
@@ -290,8 +302,9 @@ public class BiomeDecoratorOasis extends BiomeDecoratorZG {
 						(new WorldGenLiquids(Blocks.FLOWING_WATER)).generate(world, rand, blockpos6);
 					}
 				}
+			}
 			
-			if (TerrainGen.decorate(world, rand, forgeChunkPos, DecorateBiomeEvent.Decorate.EventType.LAKE_LAVA))
+			if (TerrainGen.decorate(world, rand, forgeChunkPos, DecorateBiomeEvent.Decorate.EventType.LAKE_LAVA)) {
 				for (int l5 = 0; l5 < 20; ++l5) {
 					int j10 = rand.nextInt(16) + 8;
 					int i14 = rand.nextInt(16) + 8;
@@ -299,6 +312,7 @@ public class BiomeDecoratorOasis extends BiomeDecoratorZG {
 					BlockPos blockpos3 = this.chunkPos.add(j10, j17, i14);
 					(new WorldGenLiquids(Blocks.FLOWING_LAVA)).generate(world, rand, blockpos3);
 				}
+			}
 		}
 		
 		// Outposts

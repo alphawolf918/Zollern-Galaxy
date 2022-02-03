@@ -12,25 +12,25 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 
-public class BiomeOasisBeach extends BiomeOasisBase {
+public class BiomeOasisDesert extends BiomeOasisBase {
 	
-	public BiomeOasisBeach(BiomeProperties props) {
-		super("oasisbeach", props);
-		props.setBaseHeight(0.1F);
-		props.setHeightVariation(0.1F);
-		props.setTemperature(6.0F);
+	public BiomeOasisDesert(BiomeProperties props) {
+		super("oasis_desert", props);
+		props.setBaseHeight(2.2F);
+		props.setHeightVariation(1.6F);
+		props.setTemperature(9.5F);
 		this.setTempCategory(TempCategory.MEDIUM);
-		this.setTemp(6.0F);
-		this.setBiomeHeight(2);
+		this.setTemp(56.0F);
+		this.setBiomeHeight(56);
 		this.setBiomeType(EnumBiomeTypeZG.BEACH);
-		this.setBlocks(ZGBlocks.oasisSand, ZGBlocks.mudClayBlock);
+		this.setBlocks(ZGBlocks.oasisSand, ZGBlocks.oasisRock);
 		this.enableSnow = false;
 		this.biomeDecor.generateFalls = true;
 		this.biomeDecor.generateTrees = false;
 		this.biomeDecor.generateCrops = true;
 		this.biomeDecor.waterLakesPerChunk = 2;
 		this.biomeDecor.cropsPerChunk = 2;
-		this.biomeDecor.oilLakesPerChunk = 6;
+		this.biomeDecor.oilLakesPerChunk = 10;
 		this.grassFoliageColor = 0x9f0000;
 		this.waterColor = 0x8b2cff;
 		this.stoneBlock = ZGBlocks.oasisStone;

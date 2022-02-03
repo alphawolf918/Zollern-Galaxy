@@ -9,6 +9,7 @@ package zollerngalaxy.worldgen.structures.villages;
 
 import java.util.List;
 import java.util.Random;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.EnumFacing;
@@ -26,8 +27,7 @@ public class StructureComponentVillageFieldZG extends StructureComponentVillageZ
 	public StructureComponentVillageFieldZG() {
 	}
 	
-	public StructureComponentVillageFieldZG(StructureComponentVillageStartPieceZG par1ComponentVillageStartPiece, int par2, Random par3Random, StructureBoundingBox par4StructureBoundingBox,
-			EnumFacing par5) {
+	public StructureComponentVillageFieldZG(StructureComponentVillageStartPieceZG par1ComponentVillageStartPiece, int par2, Random par3Random, StructureBoundingBox par4StructureBoundingBox, EnumFacing par5) {
 		super(par1ComponentVillageStartPiece, par2);
 		this.setCoordBaseMode(par5);
 		this.boundingBox = par4StructureBoundingBox;
@@ -47,8 +47,7 @@ public class StructureComponentVillageFieldZG extends StructureComponentVillageZ
 		this.averageGroundLevel = nbt.getInteger("AvgGroundLevel");
 	}
 	
-	public static StructureComponentVillageFieldZG func_74900_a(StructureComponentVillageStartPieceZG par0ComponentVillageStartPiece, List<StructureComponent> par1List, Random par2Random, int par3,
-			int par4, int par5, EnumFacing par6, int par7) {
+	public static StructureComponentVillageFieldZG func_74900_a(StructureComponentVillageStartPieceZG par0ComponentVillageStartPiece, List<StructureComponent> par1List, Random par2Random, int par3, int par4, int par5, EnumFacing par6, int par7) {
 		final StructureBoundingBox var8 = StructureBoundingBox.getComponentToAddBoundingBox(par3, par4, par5, 0, 0, 0, 13, 4, 9, par6);
 		return StructureComponent.findIntersecting(par1List, var8) == null ? new StructureComponentVillageFieldZG(par0ComponentVillageStartPiece, par7, par2Random, var8, par6) : null;
 	}
@@ -65,16 +64,18 @@ public class StructureComponentVillageFieldZG extends StructureComponentVillageZ
 			this.boundingBox.offset(0, this.averageGroundLevel - this.boundingBox.maxY + 7 - 1, 0);
 		}
 		
+		IBlockState surroundingBlock = Blocks.OBSIDIAN.getDefaultState();
+		
 		this.fillWithBlocks(par1World, par3StructureBoundingBox, 0, 1, 0, 12, 4, 8, Blocks.AIR.getDefaultState(), Blocks.AIR.getDefaultState(), false);
 		this.fillWithBlocks(par1World, par3StructureBoundingBox, 1, 0, 1, 2, 0, 7, Blocks.FARMLAND.getDefaultState(), Blocks.FARMLAND.getDefaultState(), false);
 		this.fillWithBlocks(par1World, par3StructureBoundingBox, 4, 0, 1, 5, 0, 7, Blocks.FARMLAND.getDefaultState(), Blocks.FARMLAND.getDefaultState(), false);
 		this.fillWithBlocks(par1World, par3StructureBoundingBox, 7, 0, 1, 8, 0, 7, Blocks.FARMLAND.getDefaultState(), Blocks.FARMLAND.getDefaultState(), false);
 		this.fillWithBlocks(par1World, par3StructureBoundingBox, 10, 0, 1, 11, 0, 7, Blocks.FARMLAND.getDefaultState(), Blocks.FARMLAND.getDefaultState(), false);
-		this.fillWithBlocks(par1World, par3StructureBoundingBox, 0, 0, 0, 0, 0, 8, Blocks.LOG.getDefaultState(), Blocks.LOG.getDefaultState(), false);
-		this.fillWithBlocks(par1World, par3StructureBoundingBox, 6, 0, 0, 6, 0, 8, Blocks.LOG.getDefaultState(), Blocks.LOG.getDefaultState(), false);
-		this.fillWithBlocks(par1World, par3StructureBoundingBox, 12, 0, 0, 12, 0, 8, Blocks.LOG.getDefaultState(), Blocks.LOG.getDefaultState(), false);
-		this.fillWithBlocks(par1World, par3StructureBoundingBox, 1, 0, 0, 11, 0, 0, Blocks.LOG.getDefaultState(), Blocks.LOG.getDefaultState(), false);
-		this.fillWithBlocks(par1World, par3StructureBoundingBox, 1, 0, 8, 11, 0, 8, Blocks.LOG.getDefaultState(), Blocks.LOG.getDefaultState(), false);
+		this.fillWithBlocks(par1World, par3StructureBoundingBox, 0, 0, 0, 0, 0, 8, surroundingBlock, surroundingBlock, false);
+		this.fillWithBlocks(par1World, par3StructureBoundingBox, 6, 0, 0, 6, 0, 8, surroundingBlock, surroundingBlock, false);
+		this.fillWithBlocks(par1World, par3StructureBoundingBox, 12, 0, 0, 12, 0, 8, surroundingBlock, surroundingBlock, false);
+		this.fillWithBlocks(par1World, par3StructureBoundingBox, 1, 0, 0, 11, 0, 0, surroundingBlock, surroundingBlock, false);
+		this.fillWithBlocks(par1World, par3StructureBoundingBox, 1, 0, 8, 11, 0, 8, surroundingBlock, surroundingBlock, false);
 		this.fillWithBlocks(par1World, par3StructureBoundingBox, 3, 0, 1, 3, 0, 7, Blocks.FLOWING_WATER.getDefaultState(), Blocks.FLOWING_WATER.getDefaultState(), false);
 		this.fillWithBlocks(par1World, par3StructureBoundingBox, 9, 0, 1, 9, 0, 7, Blocks.FLOWING_WATER.getDefaultState(), Blocks.FLOWING_WATER.getDefaultState(), false);
 		int var4;

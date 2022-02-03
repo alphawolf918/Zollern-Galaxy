@@ -19,7 +19,7 @@ import zollerngalaxy.tileentities.TileEntityTier10TreasureChestZG;
 @SideOnly(Side.CLIENT)
 public class TileEntityTier10TreasureChestZGRenderer extends TileEntitySpecialRenderer<TileEntityTier10TreasureChestZG> {
 	
-	private static final ResourceLocation treasureChestTexture = new ResourceLocation(ZGInfo.MOD_ID, "textures/models/treasure_chest_t1.png");
+	private static final ResourceLocation treasureChestTexture = new ResourceLocation(ZGInfo.MOD_ID, "textures/models/treasure_chest_tlaloc.png");
 	
 	private final ModelTreasureChest chestModel = new ModelTreasureChest();
 	
