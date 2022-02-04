@@ -10,6 +10,9 @@ Zollern Galaxy v2.0.39
     - These ores will only spawn in Obsidian veins, and do not explode.
 * Added fruit tree generation to Oasis.
 * Added more biomes to Oasis.
+* Added an API for modders to add "custom" Star Gates.
+    - Two dimension IDs can be set, and the Gate will work the same way as the rest.
+* Added a new Star Gate to travel between the Overworld and the Moon, using the new Custom Star Gate API.
 * 
 
 [CHANGES]

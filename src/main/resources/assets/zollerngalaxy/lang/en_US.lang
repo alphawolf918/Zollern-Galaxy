@@ -899,6 +899,8 @@ item.stargate_tier9.name=Stargate (Protocol Nine)
 item.stargate_tier10.name=Stargate (Protocol Ten)
 item.stargate_tier918.name=Stargate (Birthday Protocol)
 
+item.stargate_moon.name=Stargate (Moon)
+
 item.omnitool.name=Omnitool
 item.bedrockbreaker.name=Bedrock Breaker
 

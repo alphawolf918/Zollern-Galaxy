@@ -101,7 +101,9 @@ public class MessageTeleportToDimension implements IMessage {
 						Biome biome = chunk.getBiome(blockPos, worldObj.getBiomeProvider());
 						if (biome != null && biome instanceof BiomeSpace) {
 							BiomeSpace spaceBiome = (BiomeSpace) biome;
-							blockStone = spaceBiome.getStoneBlock();
+							if (spaceBiome.getStoneBlock() != null) {
+								blockStone = spaceBiome.getStoneBlock();
+							}
 						}
 					}
 				}

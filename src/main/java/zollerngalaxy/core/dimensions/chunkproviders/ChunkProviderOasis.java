@@ -165,6 +165,10 @@ public class ChunkProviderOasis extends ChunkProviderBase {
 									chunkHeight = (CHUNK_HEIGHT + heightMod);
 								}
 								
+								if (BiomeUtils.isOceanBiome(biome)) {
+									chunkHeight = 10;
+								}
+								
 								if ((lvt_45_1_ += d16) > this.noiseGenSmooth1.getNoise(chunkX * 16 + x, chunkZ * 16 + z) * chunkHeight) {
 									primer.setBlockState(x, y, z, STONE);
 								} else if (y < SEA_LEVEL) {

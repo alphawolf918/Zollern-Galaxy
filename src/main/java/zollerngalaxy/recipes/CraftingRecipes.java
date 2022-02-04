@@ -7,6 +7,7 @@
  */
 package zollerngalaxy.recipes;
 
+import micdoodle8.mods.galacticraft.core.GCBlocks;
 import micdoodle8.mods.galacticraft.core.GCItems;
 import micdoodle8.mods.galacticraft.planets.mars.items.MarsItems;
 import net.minecraft.block.Block;
@@ -457,6 +458,10 @@ public class CraftingRecipes {
 		
 		// Star Gate (Birthday Protocol)
 		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.starGateCandy, 1), new Object[] { "VCV", "HYH", "YCY", 'V', ZGBlocks.xathCobble, 'C', ZGBlocks.oasisRock, 'H', ZGBlocks.atheonConstructBlock, 'Y', ZGBlocks.blockPlutonium });
+		totalCraftRecipes++;
+		
+		// Star Gate (Moon)
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.starGateMoon, 1), new Object[] { "VCV", "HYH", "YCY", 'V', GCItems.meteoricIronRaw, 'C', ZGItems.compressedVirinium, 'H', new ItemStack(GCBlocks.blockMoon, 1, 4), 'Y', ZGItems.dustObsidian });
 		totalCraftRecipes++;
 		
 		// Storm Amulet
