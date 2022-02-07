@@ -323,7 +323,7 @@ public class CraftingRecipes {
 		ZGRecipeHelper.addShapelessRecipe(new ItemStack(ZGItems.cornKernel, 32), new Object[] { ZGItems.corn });
 		
 		// Popcorn Bowl
-		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.popcornBowl, 1), new Object[] { "CCC", "CBC", "CCC", 'C', ZGItems.cornKernel, 'B', Items.BOWL });
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.popcornBowl, 1), new Object[] { "CCC", "CBC", "CCC", 'C', ZGItems.popcorn, 'B', Items.BOWL });
 		
 		// Pickaxes
 		CraftingRecipes.addPickaxe(new ItemStack(ZGItems.pickaxeCobalt), ZGItems.ingotCobalt);

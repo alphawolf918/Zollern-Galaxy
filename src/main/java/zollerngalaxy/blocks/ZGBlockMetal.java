@@ -7,11 +7,13 @@
  */
 package zollerngalaxy.blocks;
 
+import micdoodle8.mods.galacticraft.core.blocks.ISortableBlock;
+import micdoodle8.mods.galacticraft.core.util.EnumSortCategoryBlock;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import zollerngalaxy.core.enums.EnumBlockType;
 
-public class ZGBlockMetal extends ZGBlockBase {
+public class ZGBlockMetal extends ZGBlockBase implements ISortableBlock {
 	
 	public ZGBlockMetal(String strTexture) {
 		super(strTexture, 2.4F);
@@ -25,4 +27,8 @@ public class ZGBlockMetal extends ZGBlockBase {
 		this.setHardResist(hardResist);
 	}
 	
+	@Override
+	public EnumSortCategoryBlock getCategory(int meta) {
+		return EnumSortCategoryBlock.INGOT_BLOCK;
+	}
 }

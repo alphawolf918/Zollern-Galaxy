@@ -7,6 +7,8 @@
  */
 package zollerngalaxy.blocks.oasis;
 
+import micdoodle8.mods.galacticraft.core.blocks.ISortableBlock;
+import micdoodle8.mods.galacticraft.core.util.EnumSortCategoryBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -17,7 +19,7 @@ import zollerngalaxy.blocks.ZGBlockFlower;
 import zollerngalaxy.blocks.ZGBlockGrass;
 import zollerngalaxy.lib.helpers.json.JSONFactory;
 
-public class ZGFlower extends ZGBlockFlower {
+public class ZGFlower extends ZGBlockFlower implements ISortableBlock {
 	
 	protected String flowerName;
 	
@@ -40,4 +42,8 @@ public class ZGFlower extends ZGBlockFlower {
 		return (blockD instanceof ZGBlockGrass || blockD instanceof ZGBlockDirt);
 	}
 	
+	@Override
+	public EnumSortCategoryBlock getCategory(int meta) {
+		return EnumSortCategoryBlock.DECORATION;
+	}
 }

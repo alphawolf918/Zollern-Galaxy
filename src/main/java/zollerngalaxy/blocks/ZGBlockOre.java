@@ -8,11 +8,13 @@
 package zollerngalaxy.blocks;
 
 import java.util.Random;
+import micdoodle8.mods.galacticraft.core.blocks.ISortableBlock;
+import micdoodle8.mods.galacticraft.core.util.EnumSortCategoryBlock;
 import net.minecraft.block.Block;
 import zollerngalaxy.core.enums.EnumBlockTier;
 import zollerngalaxy.core.enums.EnumBlockType;
 
-public class ZGBlockOre extends ZGBlockBase {
+public class ZGBlockOre extends ZGBlockBase implements ISortableBlock {
 	
 	protected EnumBlockTier oreTier = EnumBlockTier.ONE;
 	protected Random rand = new Random();
@@ -29,5 +31,10 @@ public class ZGBlockOre extends ZGBlockBase {
 	public Block setBlockTier(EnumBlockTier variantType) {
 		this.oreTier = variantType;
 		return this;
+	}
+	
+	@Override
+	public EnumSortCategoryBlock getCategory(int meta) {
+		return EnumSortCategoryBlock.ORE;
 	}
 }

@@ -25,8 +25,12 @@ Zollern Galaxy v2.0.39
 * Increased amount of oxygen per tank tier.
 * Oxygen Tanks from this mod are now craftable.
 * ZG Village farms will now generate with Obsidian instead of Logs.
+* Any item in the mod that gives off fuel (e.g. Super Charged Coal) will now show its burn rate in its item description.
+* Updated a few planet and star textures.
 * 
 
 [FIXES]
 * Fixed Tlaloc Dungeon Chest having the wrong render texture (thank you MJRLegends).
+* Fixed Bowl of Popcorn food item requiring regular Corn Kernels instead of Popcorn.
+* Fixed a non-translating tooltip.
 * 

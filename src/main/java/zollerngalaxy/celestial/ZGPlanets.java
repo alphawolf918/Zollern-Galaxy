@@ -71,22 +71,22 @@ public class ZGPlanets {
 	
 	// Coords (Olympus)
 	private static float OLYMPUS_X = (float) (((enableExtraGalaxies) ? 0.0F : 1.2) + ConfigManagerZG.olympusXOffset);
-	private static float OLYMPUS_Y = (float) (((enableExtraGalaxies) ? 0.0F : 2.4) + ConfigManagerZG.olympusYOffset);
+	private static float OLYMPUS_Y = (float) (((enableExtraGalaxies) ? 0.0F : 1.8) + ConfigManagerZG.olympusYOffset);
 	private static float OLYMPUS_Z = 0.0F + ConfigManagerZG.olympusZOffset;
 	
 	// Coords (Asgard)
-	private static float ASGARD_X = 1.5F + ConfigManagerZG.asgardXOffset;
-	private static float ASGARD_Y = 1.8F + ConfigManagerZG.asgardYOffset;
+	private static float ASGARD_X = -0.2F + ConfigManagerZG.asgardXOffset;
+	private static float ASGARD_Y = -1.6F + ConfigManagerZG.asgardYOffset;
 	private static float ASGARD_Z = 0.0F + ConfigManagerZG.asgardZOffset;
 	
 	// Coords (Vega)
 	private static float VEGA_X = 0.5F + ConfigManagerZG.vegaXOffset;
-	private static float VEGA_Y = 1.5F + ConfigManagerZG.vegaYOffset;
+	private static float VEGA_Y = 1.9F + ConfigManagerZG.vegaYOffset;
 	private static float VEGA_Z = 0.0F + ConfigManagerZG.vegaZOffset;
 	
 	// Coords (Nova)
-	private static float NOVA_X = (float) (((enableExtraGalaxies) ? 0.0F : 1.5) + ConfigManagerZG.novaXOffset);
-	private static float NOVA_Y = (float) (((enableExtraGalaxies) ? 0.0F : 1.2) + ConfigManagerZG.novaYOffset);
+	private static float NOVA_X = (float) (((enableExtraGalaxies) ? 0.0F : -1.6) + ConfigManagerZG.novaXOffset);
+	private static float NOVA_Y = (float) (((enableExtraGalaxies) ? 0.0F : 2.0) + ConfigManagerZG.novaYOffset);
 	private static float NOVA_Z = 0.0F + ConfigManagerZG.novaZOffset;
 	
 	private static boolean hideUnusedStarSystems = ConfigManagerZG.hideUnusedStarSystems;
@@ -112,7 +112,7 @@ public class ZGPlanets {
 	public static ZGStar starSol2 = new ZGStar("sol2");
 	public static ZGStar starPantheon = new ZGStar("pantheon");
 	public static ZGStar starOlympus = new ZGStar("olympus");
-	public static ZGStar starAsgard = new ZGStar("asgard");
+	public static ZGStar starAsgard = new ZGStar("asgard", "asgard_star");
 	public static ZGStar starVega = new ZGStar("vega");
 	public static ZGStar starNova = new ZGStar("nova");
 	
@@ -150,15 +150,17 @@ public class ZGPlanets {
 	public static ZGPlanet planetKronos = new ZGPlanet("kronos");
 	
 	// Asgard Planets
-	public static ZGPlanet planetAsgard;
-	public static ZGPlanet planetMaveth;
+	public static ZGPlanet planetMaveth = new ZGPlanet("maveth");
+	public static ZGPlanet planetAsgard = new ZGPlanet("asgard");
 	
 	// Vega Planets
-	public static ZGPlanet planetMeridian;
-	public static ZGPlanet planetRequiem;
+	public static ZGPlanet planetReach = new ZGPlanet("reach");
+	public static ZGPlanet planetRequiem = new ZGPlanet("requiem");
+	public static ZGPlanet planetMeridian = new ZGPlanet("meridian");
 	
 	// Nova Planets
-	public static ZGPlanet planetPrimor;
+	public static ZGPlanet planetSomnium = new ZGPlanet("somnium");
+	public static ZGPlanet planetPrimor = new ZGPlanet("primor");
 	
 	public static void init() {
 		ZGPlanets.initStarSystems();
@@ -684,6 +686,55 @@ public class ZGPlanets {
 		planetIcarus.setRelativeOrbitTime(1.5F);
 		planetIcarus.setBodyIcon("icarus");
 		
+		// Maveth
+		// TODO
+		planetMaveth.setParentSolarSystem(systemAsgard);
+		planetMaveth.setDistanceFromCenter(1.0F);
+		planetMaveth.setRelativeOrbitTime(48.0F);
+		planetMaveth.setBodyIcon("maveth");
+		
+		// Asgard
+		// TODO
+		planetAsgard.setParentSolarSystem(systemAsgard);
+		planetAsgard.setDistanceFromCenter(0.5F);
+		planetAsgard.setRelativeOrbitTime(4.3F);
+		planetAsgard.setBodyIcon("asgard");
+		
+		// Reach
+		// TODO
+		planetReach.setParentSolarSystem(systemVega);
+		planetReach.setDistanceFromCenter(1.0F);
+		planetReach.setRelativeOrbitTime(2.0F);
+		planetReach.setBodyIcon("reach");
+		
+		// Requiem
+		// TODO
+		planetRequiem.setParentSolarSystem(systemVega);
+		planetRequiem.setDistanceFromCenter(1.5F);
+		planetRequiem.setRelativeOrbitTime(4.0F);
+		planetRequiem.setBodyIcon("requiem");
+		
+		// Meridian
+		// TODO
+		planetMeridian.setParentSolarSystem(systemVega);
+		planetMeridian.setDistanceFromCenter(2.0F);
+		planetMeridian.setRelativeOrbitTime(3.5F);
+		planetMeridian.setBodyIcon("meridian");
+		
+		// Somnium
+		// TODO
+		planetSomnium.setParentSolarSystem(systemNova);
+		planetSomnium.setDistanceFromCenter(0.5F);
+		planetSomnium.setRelativeOrbitTime(1.5F);
+		planetSomnium.setBodyIcon("somnium");
+		
+		// Primor
+		// TODO
+		planetPrimor.setParentSolarSystem(systemNova);
+		planetPrimor.setDistanceFromCenter(1.0F);
+		planetPrimor.setRelativeOrbitTime(2.0F);
+		planetPrimor.setBodyIcon("primor");
+		
 		ZGHelper.Log("Loaded a total of " + totalPlanets + " new planets.");
 	}
 	
@@ -719,11 +770,12 @@ public class ZGPlanets {
 		GalaxyRegistry.registerSolarSystem(systemSol2);
 		GalaxyRegistry.registerSolarSystem(systemPantheon);
 		GalaxyRegistry.registerSolarSystem(systemOlympus);
+		GalaxyRegistry.registerSolarSystem(systemAsgard);
+		GalaxyRegistry.registerSolarSystem(systemVega);
+		GalaxyRegistry.registerSolarSystem(systemNova);
 		
 		if (!hideUnusedStarSystems) {
-			GalaxyRegistry.registerSolarSystem(systemAsgard);
-			GalaxyRegistry.registerSolarSystem(systemVega);
-			GalaxyRegistry.registerSolarSystem(systemNova);
+			// unused currently
 		}
 		
 		ZGPlanets.registerPlanets();
@@ -756,6 +808,19 @@ public class ZGPlanets {
 		GalaxyRegistry.registerPlanet(planetAres);
 		GalaxyRegistry.registerPlanet(planetPrometheus);
 		GalaxyRegistry.registerPlanet(planetIcarus);
+		//
+		GalaxyRegistry.registerPlanet(planetMaveth);
+		GalaxyRegistry.registerPlanet(planetAsgard);
+		//
+		GalaxyRegistry.registerPlanet(planetReach);
+		GalaxyRegistry.registerPlanet(planetMaveth);
+		GalaxyRegistry.registerPlanet(planetRequiem);
+		GalaxyRegistry.registerPlanet(planetMeridian);
+		//
+		GalaxyRegistry.registerPlanet(planetSomnium);
+		GalaxyRegistry.registerPlanet(planetPrimor);
+		//
+		
 		ZGPlanets.registerMoons();
 	}
 	

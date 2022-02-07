@@ -35,7 +35,7 @@ public class ZGFruitLeaves extends ZGBlockLeaves {
 	protected void dropFruit(World worldIn, BlockPos pos, IBlockState state, int chance) {
 		super.dropFruit(worldIn, pos, state, chance);
 		this.dropFruit(worldIn, pos);
-		if (ZGHelper.getRNGChance(2, 1)) {
+		if (ZGHelper.getRNGChance(1, 2)) {
 			this.dropSapling(worldIn, pos);
 		}
 	}

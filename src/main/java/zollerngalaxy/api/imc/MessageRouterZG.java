@@ -43,5 +43,4 @@ public class MessageRouterZG {
 	public static void register(String key, Method handler) {
 		handlers.put(key, handler);
 	}
-	
 }

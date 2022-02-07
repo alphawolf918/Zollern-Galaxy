@@ -127,7 +127,7 @@ public abstract class ItemCustomStarGate extends Item {
 	 */
 	protected void teleportPlayer(World world, EntityPlayer player) {
 		if (!ConfigManagerZG.disableStarGates) {
-			if (this.getToDimensionId() != -1 && this.getFromDimensionId() != this.getNullId()) {
+			if (this.getToDimensionId() != this.getNullId() && this.getFromDimensionId() != this.getNullId()) {
 				this.sendToPlanet(player);
 			} else {
 				proxy.sendChatMessage(player, TextFormatting.DARK_RED + "Dimension IDs were invalid. Unable to teleport.");

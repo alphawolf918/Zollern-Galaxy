@@ -16,7 +16,16 @@ public class ZGStar extends Star {
 	
 	public ZGStar(String starName) {
 		super(starName);
-		this.setBodyIcon(new ResourceLocation(ZGInfo.MOD_ID, "textures/gui/" + starName + ".png"));
+		this.setupStar(starName, starName);
+	}
+	
+	public ZGStar(String starName, String starBodyIcon) {
+		super(starName);
+		this.setupStar(starName, starBodyIcon);
+	}
+	
+	protected void setupStar(String starName, String star_icon) {
+		this.setBodyIcon(new ResourceLocation(ZGInfo.MOD_ID, "textures/gui/" + star_icon + ".png"));
 		this.setTierRequired(-1);
 		this.setPhaseShift(0.0F);
 		this.setRelativeSize(1.0F);

@@ -37,5 +37,4 @@ public class ItemStarGateMoon extends ItemCustomStarGate implements ISingleZGIte
 	public String getName() {
 		return this.getUnlocalizedName().substring(5);
 	}
-	
 }

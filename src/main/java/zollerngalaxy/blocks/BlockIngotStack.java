@@ -25,7 +25,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.blocks.fluids.ZGFluidBase;
 
-public class BlockIngotStack extends ZGBlockBase {
+public class BlockIngotStack extends ZGBlockMetal {
 	
 	protected static final AxisAlignedBB INGOT_STACK_AABB = new AxisAlignedBB(0.0525D, 0.0D, 0.0525D, 0.8575D, 0.6D, 0.8575D);
 	protected Item droppedItem = null;

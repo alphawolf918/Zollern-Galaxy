@@ -1227,7 +1227,7 @@ tooltips.lightsword2=into a blade.
 tooltips.blueprint=Protects the Player from certain elements.
 tooltips.blueprint_corruption=Protects the Player from Corruption damage.
 tooltips.blueprint_scorch=Protects the Player from scorching thermal temperatures.
-tooltips.blueprint_freezing=Protects the Player from freezing thermal temperatures.
+tooltips.blueprint_freeze=Protects the Player from freezing thermal temperatures.
 
 tooltips.heart=Restores the Player's health.
 tooltips.maxhealth=You're already at max health!
@@ -1256,6 +1256,8 @@ tooltips.tunneling_tool2=Creates mining tunnels on right-click.
 tooltips.thermal_armor_t3=Protects against advanced, extreme thermal damage.
 
 tooltips.chest_t1.description=A victorious reward for besting the robots!
+
+tooltips.burnrate=Burn Rate
 
 ## Planets and Moons ##
 
