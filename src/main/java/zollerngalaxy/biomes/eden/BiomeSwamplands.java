@@ -30,13 +30,13 @@ public class BiomeSwamplands extends BiomeEdenBase {
 		this.setBiomeType(EnumBiomeTypeZG.SWAMP);
 		this.biomeDecor.generateLakes = true;
 		this.biomeDecor.generateVines = true;
-		this.biomeDecor.edenFlowersPerChunk = 4;
-		this.biomeDecor.edenTallGrassPerChunk = 8;
-		this.biomeDecor.edenTreesPerChunk = 16;
+		this.biomeDecor.flowersPerChunk = 4;
+		this.biomeDecor.tallGrassPerChunk = 8;
+		this.biomeDecor.treesPerChunk = 16;
 		this.biomeDecor.waterLakesPerChunk = 16;
 		this.biomeDecor.waterlilyPerChunk = 16;
 		this.biomeDecor.deadBushPerChunk = 2;
-		this.biomeDecor.edenTallGrassPerChunk = 4;
+		this.biomeDecor.tallGrassPerChunk = 4;
 		this.biomeDecor.mushroomsPerChunk = 15;
 		this.enableSnow = false;
 		this.decorator.generateFalls = true;

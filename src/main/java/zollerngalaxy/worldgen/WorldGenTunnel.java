@@ -26,20 +26,25 @@ public class WorldGenTunnel extends ZGWorldGenMaster {
 			return false;
 		}
 		
-		this.generateTunnels(worldIn, pos);
-		if (rand.nextInt(3) == 0) {
-			this.generateTunnels(worldIn, pos.down(5));
-		}
+		this.generateTunnel(worldIn, pos);
+		
+		// this.generateTunnels(worldIn, pos);
+		//
+		// if (rand.nextInt(3) == 0) {
+		// this.generateTunnels(worldIn, pos.east(3));
+		// }
 		
 		return true;
 	}
 	
 	private void generateTunnels(World worldIn, BlockPos pos) {
 		this.generateTunnel(worldIn, pos);
-		this.generateTunnel(worldIn, pos.add(0, -1, 0));
-		this.generateTunnel(worldIn, pos.add(0, -2, 1));
-		this.generateTunnel(worldIn, pos.add(0, -3, 0));
-		this.generateTunnel(worldIn, pos.add(0, -4, 0));
+		if ((new Random()).nextInt(5) == 0) {
+			this.generateTunnel(worldIn, pos.add(0, -1, 0));
+			this.generateTunnel(worldIn, pos.add(0, -2, 1));
+			this.generateTunnel(worldIn, pos.add(0, -3, 0));
+			this.generateTunnel(worldIn, pos.add(0, -4, 0));
+		}
 	}
 	
 	private void generateTunnel(World worldIn, BlockPos pos) {

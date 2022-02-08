@@ -7,14 +7,22 @@
  */
 package zollerngalaxy.biomes.eden;
 
+import java.util.Random;
+import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
+import zollerngalaxy.lib.helpers.ZGHelper;
+import zollerngalaxy.worldgen.eden.WorldGenEdenTrees;
 
 public class BiomeEdenParadiseWoods extends BiomeEdenBase {
 	
 	public static int grassFoilageColorMultiplier = 0x8b0000;
+	
+	private WorldGenAbstractTree treeGenFall = new WorldGenEdenTrees(false, ZGHelper.rngInt(5, 7), ZGBlocks.edenParadiseWoodLog.getDefaultState(), ZGBlocks.edenParadiseWoodLeaves.getDefaultState(), this.generateVines);
+	private WorldGenAbstractTree treeGenGold = new WorldGenEdenTrees(false, ZGHelper.rngInt(4, 8), ZGBlocks.edenGoldenWoodLog.getDefaultState(), ZGBlocks.edenGoldenWoodLeaves.getDefaultState(), this.generateVines);
+	private WorldGenAbstractTree treeGenLove = new WorldGenEdenTrees(true, 5, ZGBlocks.edenLovetreeLog.getDefaultState(), ZGBlocks.edenLovetreeLeaves.getDefaultState(), this.generateVines);
 	
 	public BiomeEdenParadiseWoods(BiomeProperties props) {
 		super("paradisewoods", props);
@@ -31,18 +39,29 @@ public class BiomeEdenParadiseWoods extends BiomeEdenBase {
 		this.biomeDecor.generateVines = false;
 		this.biomeDecor.waterLakesPerChunk = 1;
 		this.biomeDecor.lavaLakesPerChunk = 0;
-		this.biomeDecor.edenTallGrassPerChunk = 8;
-		this.biomeDecor.edenFlowersPerChunk = 4;
-		this.biomeDecor.edenTreesPerChunk = 0;
-		this.biomeDecor.edenFallTreesPerChunk = 10;
-		this.biomeDecor.edenGoldTreesPerChunk = 6;
-		this.biomeDecor.edenLoveTreesPerChunk = 4;
+		this.biomeDecor.tallGrassPerChunk = 8;
+		this.biomeDecor.flowersPerChunk = 4;
+		this.biomeDecor.treesPerChunk = 10;
 		this.biomeDecor.edenPumpkinsPerChunk = 2;
 		this.grassFoilageColorMultiplier = 0x8b0000;
 		this.waterColor = 0x00008b;
 		this.topBlock = ZGBlocks.edenFallGrass.getDefaultState();
 		this.fillerBlock = ZGBlocks.edenSoil.getDefaultState();
 		this.stoneBlock = ZGBlocks.edenStone;
+	}
+	
+	@Override
+	public WorldGenAbstractTree getRandomTreeFeature(Random rand) {
+		int randInt = rand.nextInt(4);
+		switch (randInt) {
+			default:
+			case 0:
+				return treeGenFall;
+			case 1:
+				return treeGenGold;
+			case 2:
+				return treeGenLove;
+		}
 	}
 	
 	@Override

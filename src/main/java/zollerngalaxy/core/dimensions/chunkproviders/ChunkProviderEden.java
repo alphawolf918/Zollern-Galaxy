@@ -69,9 +69,9 @@ public class ChunkProviderEden extends ChunkProviderBase {
 	
 	public static ChunkProviderEden INSTANCE;
 	
-	// TODO: Setup an Eden Dungeon
+	private static final int CRATER_PROB = 300;
 	
-	private static final int CRATER_PROB = 100;
+	// TODO: Dungeon
 	
 	public ChunkProviderEden(World worldIn, long seed, boolean mapFeaturesEnabled) {
 		this.world = worldIn;
@@ -310,8 +310,7 @@ public class ChunkProviderEden extends ChunkProviderBase {
 			for (int cz = chunkZ - 2; cz <= chunkZ + 2; cz++) {
 				for (int x = 0; x < ChunkProviderEden.CHUNK_SIZE_X; x++) {
 					for (int z = 0; z < ChunkProviderEden.CHUNK_SIZE_Z; z++) {
-						if (Math.abs(this.randFromPoint(cx * 16 + x, (cz * 16 + z) * 1000)) < this.noiseGen4.getValue(x * ChunkProviderEden.CHUNK_SIZE_X + x,
-								cz * ChunkProviderEden.CHUNK_SIZE_Z + z) / ChunkProviderEden.CRATER_PROB) {
+						if (Math.abs(this.randFromPoint(cx * 16 + x, (cz * 16 + z) * 1000)) < this.noiseGen4.getValue(x * ChunkProviderEden.CHUNK_SIZE_X + x, cz * ChunkProviderEden.CHUNK_SIZE_Z + z) / ChunkProviderEden.CRATER_PROB) {
 							final Random random = new Random(cx * 16 + x + (cz * 16 + z) * 5000);
 							final EnumCraterSize cSize = EnumCraterSize.sizeArray[random.nextInt(EnumCraterSize.sizeArray.length)];
 							final int size = random.nextInt(cSize.MAX_SIZE - cSize.MIN_SIZE) + cSize.MIN_SIZE;

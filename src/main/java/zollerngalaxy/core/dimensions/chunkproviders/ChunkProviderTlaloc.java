@@ -13,11 +13,11 @@ import micdoodle8.mods.galacticraft.api.world.ChunkProviderBase;
 import micdoodle8.mods.galacticraft.core.perlin.generator.Gradient;
 import micdoodle8.mods.galacticraft.core.util.ConfigManagerCore;
 import micdoodle8.mods.galacticraft.core.world.gen.EnumCraterSize;
-import micdoodle8.mods.galacticraft.core.world.gen.dungeon.DungeonConfiguration;
 import net.minecraft.block.BlockFalling;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.init.Blocks;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MathHelper;
@@ -35,9 +35,12 @@ import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.biomes.decorators.BiomeDecoratorTlaloc;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.blocks.fluids.ZGFluids;
+import zollerngalaxy.core.ZGLootTables;
+import zollerngalaxy.lib.ZGInfo;
 import zollerngalaxy.util.BiomeUtils;
 import zollerngalaxy.worldgen.mapgen.MapGenCavesZG;
 import zollerngalaxy.worldgen.mapgen.MapGenRavinesZG;
+import zollerngalaxy.worldgen.structures.dungeons.DungeonConfigurationZG;
 import zollerngalaxy.worldgen.structures.dungeons.MapGenDungeonZG;
 import zollerngalaxy.worldgen.structures.dungeons.RoomBossZG;
 import zollerngalaxy.worldgen.structures.dungeons.RoomTreasureZG;
@@ -83,10 +86,23 @@ public class ChunkProviderTlaloc extends ChunkProviderBase {
 	
 	private static final int CRATER_PROB = 300;
 	
-	private final MapGenDungeonZG dungeonGeneratorZG = new MapGenDungeonZG(
-			new DungeonConfiguration(ZGBlocks.tlalocDungeonBricks.getDefaultState(), 25, 8, 16, 5, 6, RoomBossZG.class, RoomTreasureZG.class));
+	private final IBlockState dungeonBricks = ZGBlocks.tlalocDungeonBricks.getDefaultState();
+	private final Class<?> roomBoss = RoomBossZG.class;
+	private final Class<?> roomTreasure = RoomTreasureZG.class;
+	private final int a = 25;
+	private final int b = 8;
+	private final int c = 16;
+	private final int d = 5;
+	private final int e = 6;
+	private final ResourceLocation lootTable = ZGLootTables.CHEST_DUNGEON_TIER10_DEFAULT;
+	private final ResourceLocation dungeonChest = new ResourceLocation(ZGInfo.MOD_ID, "chests/dungeonchest_t10");
+	private final IBlockState chestState = ZGBlocks.treasureChestT10.getDefaultState();
+	private final IBlockState spawnerState = ZGBlocks.TLALOC_SPAWNER.getDefaultState();
+	private final IBlockState fluidState = ZGFluids.blockWhiteLavaFluid.getDefaultState();
+	private final DungeonConfigurationZG dungeonConfigurator = new DungeonConfigurationZG(this.dungeonBricks, a, b, c, d, e, roomBoss, roomTreasure, lootTable, dungeonChest, chestState, spawnerState, fluidState, getMob(new Random()));
+	private final MapGenDungeonZG dungeonGeneratorZG = new MapGenDungeonZG(this.dungeonConfigurator);
 	
-	public static ChunkProviderTlaloc INSTANCE;// ChunkProviderMoon
+	public static ChunkProviderTlaloc INSTANCE;
 	
 	public ChunkProviderTlaloc(World worldIn, long seed, boolean mapFeaturesEnabled) {
 		this.world = worldIn;
@@ -344,9 +360,7 @@ public class ChunkProviderTlaloc extends ChunkProviderBase {
 			for (int cz = chunkZ - 2; cz <= chunkZ + 2; cz++) {
 				for (int x = 0; x < ChunkProviderTlaloc.CHUNK_SIZE_X; x++) {
 					for (int z = 0; z < ChunkProviderTlaloc.CHUNK_SIZE_Z; z++) {
-						if (Math.abs(
-								this.randFromPoint(cx * 16 + x, (cz * 16 + z) * 1000)) < this.noiseGen4.getValue(x * ChunkProviderTlaloc.CHUNK_SIZE_X + x, cz * ChunkProviderTlaloc.CHUNK_SIZE_Z + z)
-										/ ChunkProviderTlaloc.CRATER_PROB) {
+						if (Math.abs(this.randFromPoint(cx * 16 + x, (cz * 16 + z) * 1000)) < this.noiseGen4.getValue(x * ChunkProviderTlaloc.CHUNK_SIZE_X + x, cz * ChunkProviderTlaloc.CHUNK_SIZE_Z + z) / ChunkProviderTlaloc.CRATER_PROB) {
 							final Random random = new Random(cx * 16 + x + (cz * 16 + z) * 5000);
 							final EnumCraterSize cSize = EnumCraterSize.sizeArray[random.nextInt(EnumCraterSize.sizeArray.length)];
 							final int size = random.nextInt(cSize.MAX_SIZE - cSize.MIN_SIZE) + cSize.MIN_SIZE;
@@ -430,5 +444,19 @@ public class ChunkProviderTlaloc extends ChunkProviderBase {
 			this.villageGenerator.generate(this.world, x, z, null);
 		}
 		this.dungeonGeneratorZG.generate(this.world, x, z, null);
+	}
+	
+	private static ResourceLocation getMob(Random rand) {
+		String mobName = "vexbot";
+		switch (rand.nextInt(1)) {
+			default:
+			case 0:
+				mobName = "vexbot";
+				break;
+			case 1:
+				mobName = "vexbotgold";
+				break;
+		}
+		return new ResourceLocation(ZGInfo.MOD_ID, mobName);
 	}
 }

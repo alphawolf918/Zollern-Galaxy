@@ -8,7 +8,6 @@
 package zollerngalaxy.worldgen.structures.dungeons;
 
 import java.util.Random;
-import micdoodle8.mods.galacticraft.core.world.gen.dungeon.DungeonConfiguration;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.world.gen.structure.StructureBoundingBox;
@@ -17,13 +16,15 @@ import net.minecraft.world.gen.structure.template.TemplateManager;
 
 public abstract class PieceZG extends StructureComponent {
 	
-	protected DungeonConfiguration configuration;
+	protected DungeonConfigurationZG configuration;
+	protected static DungeonConfigurationZG DUNGEON_CFG;
 	
 	public PieceZG() {
 	}
 	
-	public PieceZG(DungeonConfiguration configuration) {
+	public PieceZG(DungeonConfigurationZG configuration) {
 		this.configuration = configuration;
+		DUNGEON_CFG = configuration;
 	}
 	
 	@Override
@@ -34,7 +35,7 @@ public abstract class PieceZG extends StructureComponent {
 	@Override
 	protected void readStructureFromNBT(NBTTagCompound tagCompound, TemplateManager manager) {
 		if (this.configuration == null) {
-			this.configuration = new DungeonConfiguration();
+			this.configuration = new DungeonConfigurationZG();
 			this.configuration.readFromNBT(tagCompound);
 		}
 	}

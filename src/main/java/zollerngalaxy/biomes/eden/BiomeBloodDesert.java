@@ -26,8 +26,8 @@ public class BiomeBloodDesert extends BiomeEdenBase {
 		this.setTemp(8.9F);
 		this.setBiomeHeight(62);
 		this.setBiomeType(EnumBiomeTypeZG.DESERT);
-		this.biomeDecor.edenTallGrassPerChunk = 0;
-		this.biomeDecor.edenFlowersPerChunk = 0;
+		this.biomeDecor.tallGrassPerChunk = 0;
+		this.biomeDecor.flowersPerChunk = 0;
 		this.decorator.generateFalls = true;
 		this.biomeDecor.generateLakes = true;
 		this.biomeDecor.generateGiantBones = true;

@@ -8,7 +8,7 @@
 package zollerngalaxy.worldgen.structures.dungeons;
 
 import java.util.Random;
-import micdoodle8.mods.galacticraft.core.world.gen.dungeon.DungeonConfiguration;
+import micdoodle8.mods.galacticraft.core.tile.TileEntityTreasureChest;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
@@ -19,26 +19,23 @@ import net.minecraft.world.gen.structure.StructureComponent;
 import net.minecraft.world.storage.loot.LootTableList;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.blocks.containers.ZGBlockTreasureChest;
-import zollerngalaxy.lib.ZGInfo;
-import zollerngalaxy.tileentities.TileEntityTier10TreasureChestZG;
 
 public class RoomTreasureZG extends SizedPieceZG {
 	
-	public static ResourceLocation MOONCHEST = new ResourceLocation(ZGInfo.MOD_ID, "chests/dungeonchest_t10");
-	public static final ResourceLocation TLALOC_DUNGEON = LootTableList.register(MOONCHEST);
+	public static ResourceLocation DUNGEON_CHEST = DUNGEON_CFG.getDungeonChestLootTable();
+	public static final ResourceLocation PLANET_DUNGEON = LootTableList.register(DUNGEON_CHEST);
 	
 	public RoomTreasureZG() {
 	}
 	
-	public RoomTreasureZG(DungeonConfiguration configuration, Random rand, int blockPosX, int blockPosZ, EnumFacing entranceDir) {
+	public RoomTreasureZG(DungeonConfigurationZG configuration, Random rand, int blockPosX, int blockPosZ, EnumFacing entranceDir) {
 		this(configuration, rand, blockPosX, blockPosZ, rand.nextInt(4) + 6, configuration.getRoomHeight(), rand.nextInt(4) + 6, entranceDir);
 	}
 	
-	public RoomTreasureZG(DungeonConfiguration configuration, Random rand, int blockPosX, int blockPosZ, int sizeX, int sizeY, int sizeZ, EnumFacing entranceDir) {
+	public RoomTreasureZG(DungeonConfigurationZG configuration, Random rand, int blockPosX, int blockPosZ, int sizeX, int sizeY, int sizeZ, EnumFacing entranceDir) {
 		super(configuration, sizeX, sizeY, sizeZ, entranceDir.getOpposite());
 		this.setCoordBaseMode(EnumFacing.SOUTH);
 		int yPos = configuration.getYPosition();
-		
 		this.boundingBox = new StructureBoundingBox(blockPosX, yPos, blockPosZ, blockPosX + this.sizeX, yPos + this.sizeY, blockPosZ + this.sizeZ);
 	}
 	
@@ -80,10 +77,10 @@ public class RoomTreasureZG extends SizedPieceZG {
 					} else if (i == this.sizeX / 2 && j == 1 && k == this.sizeZ / 2) {
 						BlockPos blockpos = new BlockPos(this.getXWithOffset(i, k), this.getYWithOffset(j), this.getZWithOffset(i, k));
 						if (chunkBox.isVecInside(blockpos)) {
-							worldIn.setBlockState(blockpos, ZGBlocks.treasureChestT10.getDefaultState().withProperty(ZGBlockTreasureChest.FACING, this.getDirection().getOpposite()), 2);
-							TileEntityTier10TreasureChestZG treasureChest = (TileEntityTier10TreasureChestZG) worldIn.getTileEntity(blockpos);
+							worldIn.setBlockState(blockpos, this.configuration.getChestState().withProperty(ZGBlockTreasureChest.FACING, this.getDirection().getOpposite()), 2);
+							TileEntityTreasureChest treasureChest = (TileEntityTreasureChest) worldIn.getTileEntity(blockpos);
 							if (treasureChest != null) {
-								ResourceLocation chesttype = TLALOC_DUNGEON;
+								ResourceLocation chesttype = PLANET_DUNGEON;
 								treasureChest.setLootTable(chesttype, random.nextLong());
 							}
 						}

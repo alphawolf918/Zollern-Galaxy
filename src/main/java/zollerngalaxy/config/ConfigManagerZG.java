@@ -238,7 +238,7 @@ public class ConfigManagerZG {
 	public static double maxHealthIncreasedBy;
 	
 	// Set crater spawn chance for affected worlds
-	public static int craterSpawnChanceTlaloc;
+	public static int craterSpawnChance;
 	
 	// Coords (Psios)
 	public static float psiosXOffset;
@@ -608,7 +608,7 @@ public class ConfigManagerZG {
 		maxHealthIncreasedBy = config.get(CTG_CUSTOMS, "Increase Max Health Amount", 10, "The amount of hearts to add to the Player's health when using a Max Heartforce (default: 10).").getInt();
 		//
 		
-		craterSpawnChanceTlaloc = config.get(CTG_CUSTOMS, "Crater Spawn Chance Tlaloc", 40, "Chance out of 100 that craters spawn on Tlaloc. Set to 0 to disable. (default: 40)").getInt();
+		craterSpawnChance = config.get(CTG_CUSTOMS, "Crater Spawn Chance", 40, "Chance out of 100 that craters spawn on planets. Set to 0 to disable. (default: 40)").getInt();
 		
 		// Coords (Psios)
 		psiosXOffset = (float) config.get(CTG_COORDS, "Psios X Offset", 0.0, "(default: 0.0)").getDouble();

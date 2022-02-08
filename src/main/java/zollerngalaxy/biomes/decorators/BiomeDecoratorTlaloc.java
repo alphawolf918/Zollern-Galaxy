@@ -80,7 +80,7 @@ public class BiomeDecoratorTlaloc extends BiomeDecoratorZG {
 	private WorldGenerator plutoniumCrystalsGen = new WorldGenZGCrystals(ZGBlocks.blockCrystalsPlutonium.getDefaultState(), 65);
 	private WorldGenerator ufoGen = new WorldGenUFO(MECH_ROCK_STATE, CHROME_STATE, STONE_STATE, GLOW_STATE);
 	private WorldGenerator mechTreeGen = new WorldGenZGTree(false, 4, ZGBlocks.tlalocChrome.getDefaultState(), ZGBlocks.tlalocMechRock.getDefaultState(), false);
-	public WorldGenerator battleTowerGen = new WorldGenBattleTower(ZGBlocks.xantheonConstructBlock.getDefaultState(), ZGBlocks.tlalocChrome.getDefaultState());
+	private WorldGenerator battleTowerGen = new WorldGenBattleTower(ZGBlocks.xantheonConstructBlock.getDefaultState(), ZGBlocks.tlalocChrome.getDefaultState());
 	
 	public BiomeDecoratorTlaloc() {
 		this.constructGen = new WorldGenMinableZG(CONSTRUCT, ROCK, EnumOreGenZG.CONSTRUCTED);
@@ -152,7 +152,7 @@ public class BiomeDecoratorTlaloc extends BiomeDecoratorZG {
 		}
 		
 		// Craters (Small)
-		int craterSpawnChance = ConfigManagerZG.craterSpawnChanceTlaloc;
+		int craterSpawnChance = ConfigManagerZG.craterSpawnChance;
 		if (this.generateCraters && this.cratersPerChunk > 0 && craterSpawnChance > 0) {
 			ChunkProviderTlaloc.INSTANCE.createCraters(x, z, chunkPrimer);
 			y = rand.nextInt(rand.nextInt(genY) + 8);

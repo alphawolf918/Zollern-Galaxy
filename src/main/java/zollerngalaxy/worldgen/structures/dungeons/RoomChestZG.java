@@ -9,7 +9,6 @@ package zollerngalaxy.worldgen.structures.dungeons;
 
 import java.util.Random;
 import micdoodle8.mods.galacticraft.api.world.IGalacticraftWorldProvider;
-import micdoodle8.mods.galacticraft.core.world.gen.dungeon.DungeonConfiguration;
 import net.minecraft.init.Blocks;
 import net.minecraft.tileentity.TileEntityChest;
 import net.minecraft.util.EnumFacing;
@@ -18,14 +17,13 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.structure.StructureBoundingBox;
 import zollerngalaxy.blocks.containers.ZGBlockTreasureChest;
-import zollerngalaxy.core.ZGLootTables;
 
 public class RoomChestZG extends RoomEmptyZG {
 	
 	public RoomChestZG() {
 	}
 	
-	public RoomChestZG(DungeonConfiguration configuration, Random rand, int blockPosX, int blockPosZ, int sizeX, int sizeY, int sizeZ, EnumFacing entranceDir) {
+	public RoomChestZG(DungeonConfigurationZG configuration, Random rand, int blockPosX, int blockPosZ, int sizeX, int sizeY, int sizeZ, EnumFacing entranceDir) {
 		super(configuration, rand, blockPosX, blockPosZ, sizeX, sizeY, sizeZ, entranceDir);
 	}
 	
@@ -41,7 +39,7 @@ public class RoomChestZG extends RoomEmptyZG {
 			TileEntityChest chest = (TileEntityChest) worldIn.getTileEntity(blockpos);
 			
 			if (chest != null) {
-				ResourceLocation chesttype = ZGLootTables.CHEST_DUNGEON_TIER10_DEFAULT;
+				ResourceLocation chesttype = this.configuration.getChestLootTable();
 				if (worldIn.provider instanceof IGalacticraftWorldProvider) {
 					chesttype = ((IGalacticraftWorldProvider) worldIn.provider).getDungeonChestType();
 				}

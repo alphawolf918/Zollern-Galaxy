@@ -8,7 +8,6 @@
 package zollerngalaxy.worldgen.structures.dungeons;
 
 import java.util.Random;
-import micdoodle8.mods.galacticraft.core.world.gen.dungeon.DungeonConfiguration;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.world.World;
@@ -19,14 +18,13 @@ public class RoomEntranceZG extends SizedPieceZG {
 	public RoomEntranceZG() {
 	}
 	
-	public RoomEntranceZG(DungeonConfiguration configuration, Random rand, int blockPosX, int blockPosZ) {
+	public RoomEntranceZG(DungeonConfigurationZG configuration, Random rand, int blockPosX, int blockPosZ) {
 		super(configuration, rand.nextInt(4) + 6, 12, rand.nextInt(4) + 6, EnumFacing.Plane.HORIZONTAL.random(rand));
 		this.setCoordBaseMode(EnumFacing.SOUTH);
 		int sX = this.sizeX / 2;
 		int sZ = this.sizeZ / 2;
 		
-		this.boundingBox = new StructureBoundingBox(blockPosX - sX, configuration.getYPosition(), blockPosZ - sZ, blockPosX - sX + this.sizeX, configuration.getYPosition() + this.sizeY,
-				blockPosZ - sZ + this.sizeZ);
+		this.boundingBox = new StructureBoundingBox(blockPosX - sX, configuration.getYPosition(), blockPosZ - sZ, blockPosX - sX + this.sizeX, configuration.getYPosition() + this.sizeY, blockPosZ - sZ + this.sizeZ);
 	}
 	
 	@Override

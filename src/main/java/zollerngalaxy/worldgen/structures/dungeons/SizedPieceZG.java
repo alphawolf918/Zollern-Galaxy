@@ -7,7 +7,6 @@
  */
 package zollerngalaxy.worldgen.structures.dungeons;
 
-import micdoodle8.mods.galacticraft.core.world.gen.dungeon.DungeonConfiguration;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.world.gen.structure.template.TemplateManager;
@@ -21,7 +20,7 @@ public abstract class SizedPieceZG extends DirectionalPieceZG {
 	public SizedPieceZG() {
 	}
 	
-	public SizedPieceZG(DungeonConfiguration configuration, int sizeX, int sizeY, int sizeZ, EnumFacing direction) {
+	public SizedPieceZG(DungeonConfigurationZG configuration, int sizeX, int sizeY, int sizeZ, EnumFacing direction) {
 		super(configuration, direction);
 		this.sizeX = sizeX;
 		this.sizeY = sizeY;

@@ -13,6 +13,7 @@ Zollern Galaxy v2.0.39
 * Added an API for modders to add "custom" Star Gates.
     - Two dimension IDs can be set, and the Gate will work the same way as the rest.
 * Added a new Star Gate to travel between the Overworld and the Moon, using the new Custom Star Gate API.
+* Added Small Crater spawns to Eden.
 * 
 
 [CHANGES]
@@ -27,10 +28,13 @@ Zollern Galaxy v2.0.39
 * ZG Village farms will now generate with Obsidian instead of Logs.
 * Any item in the mod that gives off fuel (e.g. Super Charged Coal) will now show its burn rate in its item description.
 * Updated a few planet and star textures.
+* Reworked Eden chunk generation and biome decoration.
+* Modified crater gen config option for Tlaloc to be for all planets.
 * 
 
 [FIXES]
 * Fixed Tlaloc Dungeon Chest having the wrong render texture (thank you MJRLegends).
 * Fixed Bowl of Popcorn food item requiring regular Corn Kernels instead of Popcorn.
 * Fixed a non-translating tooltip.
+* Fixed tunnel gens not generating correctly.
 * 

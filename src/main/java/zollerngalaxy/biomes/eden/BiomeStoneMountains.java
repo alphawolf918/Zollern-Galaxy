@@ -30,9 +30,9 @@ public class BiomeStoneMountains extends BiomeEdenBase {
 		this.decorator.generateFalls = true;
 		this.biomeDecor.waterLakesPerChunk = 1;
 		this.biomeDecor.lavaLakesPerChunk = 1;
-		this.biomeDecor.edenTallGrassPerChunk = 0;
-		this.biomeDecor.edenFlowersPerChunk = 0;
-		this.biomeDecor.edenTreesPerChunk = 0;
+		this.biomeDecor.tallGrassPerChunk = 0;
+		this.biomeDecor.flowersPerChunk = 0;
+		this.biomeDecor.treesPerChunk = 0;
 		this.grassFoilageColorMultiplier = 0x009f00;
 		this.waterColor = 0x0000ff;
 		this.topBlock = ZGBlocks.edenStone.getDefaultState();

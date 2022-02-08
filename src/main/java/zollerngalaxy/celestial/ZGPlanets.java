@@ -70,8 +70,8 @@ public class ZGPlanets {
 	private static float PANTHEON_Z = 0.0F + ConfigManagerZG.pantheonZOffset;
 	
 	// Coords (Olympus)
-	private static float OLYMPUS_X = (float) (((enableExtraGalaxies) ? 0.0F : 1.2) + ConfigManagerZG.olympusXOffset);
-	private static float OLYMPUS_Y = (float) (((enableExtraGalaxies) ? 0.0F : 1.8) + ConfigManagerZG.olympusYOffset);
+	private static float OLYMPUS_X = (float) (((enableExtraGalaxies) ? 0.0F : 1.8) + ConfigManagerZG.olympusXOffset);
+	private static float OLYMPUS_Y = (float) (((enableExtraGalaxies) ? 0.0F : 2.1) + ConfigManagerZG.olympusYOffset);
 	private static float OLYMPUS_Z = 0.0F + ConfigManagerZG.olympusZOffset;
 	
 	// Coords (Asgard)
@@ -81,7 +81,7 @@ public class ZGPlanets {
 	
 	// Coords (Vega)
 	private static float VEGA_X = 0.5F + ConfigManagerZG.vegaXOffset;
-	private static float VEGA_Y = 1.9F + ConfigManagerZG.vegaYOffset;
+	private static float VEGA_Y = 2.2F + ConfigManagerZG.vegaYOffset;
 	private static float VEGA_Z = 0.0F + ConfigManagerZG.vegaZOffset;
 	
 	// Coords (Nova)

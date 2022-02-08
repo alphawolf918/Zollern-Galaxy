@@ -32,16 +32,19 @@ import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeDecorator;
 import net.minecraft.world.chunk.ChunkPrimer;
+import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.biomes.decorators.BiomeDecoratorEden;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.celestial.ZGPlanets;
 import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
+import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.mobs.entities.EntityEdenCow;
 import zollerngalaxy.mobs.entities.EntityOinkus;
 import zollerngalaxy.mobs.entities.villagers.EntityEdenVillager;
 import zollerngalaxy.util.BiomeUtils;
+import zollerngalaxy.worldgen.eden.WorldGenEdenTrees;
 
 public abstract class BiomeEdenBase extends BiomeSpace {
 	
@@ -58,6 +61,10 @@ public abstract class BiomeEdenBase extends BiomeSpace {
 	
 	public BiomeDecoratorEden biomeDecor = this.getBiomeDecorator();
 	
+	public boolean generateVines = false;
+	
+	protected WorldGenAbstractTree edenTreeGen = new WorldGenEdenTrees(false, ZGHelper.rngInt(5, 10), ZGBlocks.edenWoodLog.getDefaultState(), ZGBlocks.edenWoodLeaves.getDefaultState(), this.generateVines);
+	
 	public BiomeEdenBase(String singleName, BiomeProperties props) {
 		super(singleName, props);
 		this.setTempCategory(TempCategory.MEDIUM);
@@ -66,9 +73,9 @@ public abstract class BiomeEdenBase extends BiomeSpace {
 		this.biomeDecor.treesPerChunk = -999;
 		this.biomeDecor.grassPerChunk = -999;
 		this.biomeDecor.mushroomsPerChunk = -999;
-		this.biomeDecor.edenFlowersPerChunk = 4;
-		this.biomeDecor.edenTallGrassPerChunk = 2;
-		this.biomeDecor.edenTreesPerChunk = 1;
+		this.biomeDecor.flowersPerChunk = 4;
+		this.biomeDecor.tallGrassPerChunk = 2;
+		this.biomeDecor.treesPerChunk = 1;
 		this.clearAllSpawning();
 		
 		if (ConfigManagerZG.canEarthAnimalsSpawnOnEden) {
@@ -101,6 +108,11 @@ public abstract class BiomeEdenBase extends BiomeSpace {
 		
 		this.setStoneBlock(ZGBlocks.edenStone);
 		this.setPlanetForBiome(ZGPlanets.planetEden);
+	}
+	
+	@Override
+	public WorldGenAbstractTree getRandomTreeFeature(Random rand) {
+		return this.edenTreeGen;
 	}
 	
 	@Override

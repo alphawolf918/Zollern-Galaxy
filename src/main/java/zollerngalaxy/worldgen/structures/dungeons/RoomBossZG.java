@@ -9,7 +9,6 @@ package zollerngalaxy.worldgen.structures.dungeons;
 
 import java.util.Random;
 import micdoodle8.mods.galacticraft.api.vector.Vector3;
-import micdoodle8.mods.galacticraft.core.world.gen.dungeon.DungeonConfiguration;
 import net.minecraft.init.Blocks;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.EnumFacing;
@@ -17,8 +16,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.structure.StructureBoundingBox;
 import net.minecraft.world.gen.structure.template.TemplateManager;
-import zollerngalaxy.blocks.ZGBlocks;
-import zollerngalaxy.blocks.fluids.ZGFluids;
 import zollerngalaxy.tileentities.TileEntityDungeonSpawnerZG;
 
 public class RoomBossZG extends SizedPieceZG {
@@ -28,11 +25,11 @@ public class RoomBossZG extends SizedPieceZG {
 	public RoomBossZG() {
 	}
 	
-	public RoomBossZG(DungeonConfiguration configuration, Random rand, int blockPosX, int blockPosZ, EnumFacing entranceDir) {
+	public RoomBossZG(DungeonConfigurationZG configuration, Random rand, int blockPosX, int blockPosZ, EnumFacing entranceDir) {
 		this(configuration, rand, blockPosX, blockPosZ, rand.nextInt(6) + 14, rand.nextInt(2) + 8, rand.nextInt(6) + 14, entranceDir);
 	}
 	
-	public RoomBossZG(DungeonConfiguration configuration, Random rand, int blockPosX, int blockPosZ, int sizeX, int sizeY, int sizeZ, EnumFacing entranceDir) {
+	public RoomBossZG(DungeonConfigurationZG configuration, Random rand, int blockPosX, int blockPosZ, int sizeX, int sizeY, int sizeZ, EnumFacing entranceDir) {
 		super(configuration, sizeX, sizeY, sizeZ, entranceDir.getOpposite());
 		this.setCoordBaseMode(EnumFacing.SOUTH);
 		this.sizeX = sizeX;
@@ -77,13 +74,11 @@ public class RoomBossZG extends SizedPieceZG {
 							this.setBlockState(worldIn, Blocks.AIR.getDefaultState(), i, j, k, chunkBox);
 						}
 					} else if ((i == 1 && k == 1) || (i == 1 && k == this.sizeZ - 1) || (i == this.sizeX - 1 && k == 1) || (i == this.sizeX - 1 && k == this.sizeZ - 1)) {
-						this.setBlockState(worldIn, ZGFluids.blockWhiteLavaFluid.getDefaultState(), i, j, k, chunkBox);
-					} else if (j % 3 == 0 && j >= 2 && ((i == 1 || i == this.sizeX - 1 || k == 1 || k == this.sizeZ - 1) || (i == 2 && k == 2) || (i == 2 && k == this.sizeZ - 2)
-							|| (i == this.sizeX - 2 && k == 2) || (i == this.sizeX - 2 && k == this.sizeZ - 2))) {
+						this.setBlockState(worldIn, this.configuration.getFluidState(), i, j, k, chunkBox);
+					} else if (j % 3 == 0 && j >= 2 && ((i == 1 || i == this.sizeX - 1 || k == 1 || k == this.sizeZ - 1) || (i == 2 && k == 2) || (i == 2 && k == this.sizeZ - 2) || (i == this.sizeX - 2 && k == 2) || (i == this.sizeX - 2 && k == this.sizeZ - 2))) {
 						// Horizontal bars
 						this.setBlockState(worldIn, Blocks.IRON_BARS.getDefaultState(), i, j, k, chunkBox);
-					} else if ((i == 1 && k == 2) || (i == 2 && k == 1) || (i == 1 && k == this.sizeZ - 2) || (i == 2 && k == this.sizeZ - 1) || (i == this.sizeX - 1 && k == 2)
-							|| (i == this.sizeX - 2 && k == 1) || (i == this.sizeX - 1 && k == this.sizeZ - 2) || (i == this.sizeX - 2 && k == this.sizeZ - 1)) {
+					} else if ((i == 1 && k == 2) || (i == 2 && k == 1) || (i == 1 && k == this.sizeZ - 2) || (i == 2 && k == this.sizeZ - 1) || (i == this.sizeX - 1 && k == 2) || (i == this.sizeX - 2 && k == 1) || (i == this.sizeX - 1 && k == this.sizeZ - 2) || (i == this.sizeX - 2 && k == this.sizeZ - 1)) {
 						// Vertical bars
 						this.setBlockState(worldIn, Blocks.IRON_BARS.getDefaultState(), i, j, k, chunkBox);
 					} else {
@@ -99,7 +94,7 @@ public class RoomBossZG extends SizedPieceZG {
 		BlockPos blockpos = new BlockPos(this.getXWithOffset(spawnerX, spawnerZ), this.getYWithOffset(spawnerY), this.getZWithOffset(spawnerX, spawnerZ));
 		// Is this position inside the chunk currently being generated?
 		if (chunkBox.isVecInside(blockpos)) {
-			worldIn.setBlockState(blockpos, ZGBlocks.TLALOC_SPAWNER.getDefaultState(), 2);
+			worldIn.setBlockState(blockpos, this.configuration.getSpawnerState(), 2);
 			TileEntityDungeonSpawnerZG spawner = (TileEntityDungeonSpawnerZG) worldIn.getTileEntity(blockpos);
 			if (spawner != null) {
 				spawner.setRoom(new Vector3(this.boundingBox.minX + 1, this.boundingBox.minY + 1, this.boundingBox.minZ + 1), new Vector3(this.sizeX - 1, this.sizeY - 1, this.sizeZ - 1));

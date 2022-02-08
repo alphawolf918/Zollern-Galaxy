@@ -29,9 +29,10 @@ public class BiomeAsteroidCraters extends BiomeEdenBase {
 		this.biomeDecor.generateCraters = true;
 		this.biomeDecor.waterLakesPerChunk = 0;
 		this.biomeDecor.lavaLakesPerChunk = 4;
-		this.biomeDecor.edenTallGrassPerChunk = 0;
-		this.biomeDecor.edenFlowersPerChunk = 0;
-		this.biomeDecor.edenTreesPerChunk = 0;
+		this.biomeDecor.tallGrassPerChunk = 0;
+		this.biomeDecor.flowersPerChunk = 0;
+		this.biomeDecor.treesPerChunk = 0;
+		this.biomeDecor.cratersPerChunk = 4;
 		this.grassFoliageColor = 0x009f00;
 		this.waterColor = 0x000000;
 		this.topBlock = ZGBlocks.blockCrater.getDefaultState();

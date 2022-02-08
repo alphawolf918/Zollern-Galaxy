@@ -24,13 +24,13 @@ public class BiomeEdenwoodForest extends BiomeEdenBase {
 		this.setBiomeType(EnumBiomeTypeZG.FOREST);
 		this.decorator.generateFalls = true;
 		this.biomeDecor.generateLakes = true;
-		this.biomeDecor.lavaLakesPerChunk = 0;
 		this.biomeDecor.generateVines = false;
-		this.biomeDecor.edenFlowersPerChunk = 4;
-		this.biomeDecor.edenTallGrassPerChunk = 8;
-		this.biomeDecor.edenTreesPerChunk = 90;
+		this.biomeDecor.lavaLakesPerChunk = 0;
+		this.biomeDecor.flowersPerChunk = 4;
+		this.biomeDecor.tallGrassPerChunk = 8;
+		this.biomeDecor.treesPerChunk = 25;
 		this.biomeDecor.waterLakesPerChunk = 4;
-		this.biomeDecor.edenTallGrassPerChunk = 14;
+		this.biomeDecor.tallGrassPerChunk = 14;
 		this.enableSnow = true;
 		this.grassFoliageColor = 0x00ff00;
 		this.waterColor = 0x0000ff;
@@ -44,5 +44,4 @@ public class BiomeEdenwoodForest extends BiomeEdenBase {
 	public int getSkyColorByTemp(float p_76731_1_) {
 		return 0x004a4b;
 	}
-	
 }

@@ -38,9 +38,9 @@ public class BiomeTerranValley extends BiomeEdenBase {
 		this.decorator.generateFalls = true;
 		this.biomeDecor.waterLakesPerChunk = 2;
 		this.biomeDecor.lavaLakesPerChunk = 0;
-		this.biomeDecor.edenTallGrassPerChunk = 14;
-		this.biomeDecor.edenFlowersPerChunk = 8;
-		this.biomeDecor.edenTreesPerChunk = 1;
+		this.biomeDecor.tallGrassPerChunk = 14;
+		this.biomeDecor.flowersPerChunk = 8;
+		this.biomeDecor.treesPerChunk = 1;
 		this.grassFoliageColor = 0x00008b;
 		this.waterColor = 0x00008b;
 		this.spawnableCreatureList.add(new SpawnListEntry(EntityEdenCow.class, 100, 2, 3));

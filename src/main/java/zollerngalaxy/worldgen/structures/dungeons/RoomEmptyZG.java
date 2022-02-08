@@ -8,7 +8,6 @@
 package zollerngalaxy.worldgen.structures.dungeons;
 
 import java.util.Random;
-import micdoodle8.mods.galacticraft.core.world.gen.dungeon.DungeonConfiguration;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.world.World;
@@ -19,7 +18,7 @@ public class RoomEmptyZG extends SizedPieceZG {
 	public RoomEmptyZG() {
 	}
 	
-	public RoomEmptyZG(DungeonConfiguration configuration, Random rand, int blockPosX, int blockPosZ, int sizeX, int sizeY, int sizeZ, EnumFacing entranceDir) {
+	public RoomEmptyZG(DungeonConfigurationZG configuration, Random rand, int blockPosX, int blockPosZ, int sizeX, int sizeY, int sizeZ, EnumFacing entranceDir) {
 		super(configuration, sizeX, sizeY, sizeZ, entranceDir.getOpposite());
 		this.setCoordBaseMode(EnumFacing.SOUTH);
 		this.sizeX = sizeX;

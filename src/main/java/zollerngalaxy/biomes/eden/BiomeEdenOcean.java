@@ -31,8 +31,8 @@ public class BiomeEdenOcean extends BiomeEdenBase {
 		this.clearAllNonMonsterSpawning();
 		this.spawnableWaterCreatureList.add(new SpawnListEntry(EntitySquid.class, 100, 1, 4));
 		this.spawnableWaterCreatureList.add(new SpawnListEntry(EntitySquidlus.class, 100, 1, 4));
-		this.biomeDecor.edenTallGrassPerChunk = 6;
-		this.biomeDecor.edenFlowersPerChunk = 5;
+		this.biomeDecor.tallGrassPerChunk = 6;
+		this.biomeDecor.flowersPerChunk = 5;
 		this.biomeDecor.generateFalls = true;
 		this.biomeDecor.generateLakes = true;
 		this.biomeDecor.generateTowers = false;

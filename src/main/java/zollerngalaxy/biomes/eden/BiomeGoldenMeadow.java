@@ -7,14 +7,19 @@
  */
 package zollerngalaxy.biomes.eden;
 
+import java.util.Random;
+import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
+import zollerngalaxy.lib.helpers.ZGHelper;
+import zollerngalaxy.worldgen.eden.WorldGenEdenTrees;
 
 public class BiomeGoldenMeadow extends BiomeEdenBase {
 	
 	public static int grassFoilageColorMultiplier = 0x8b0000;
+	private WorldGenAbstractTree edenTreeGen = new WorldGenEdenTrees(false, ZGHelper.rngInt(4, 8), ZGBlocks.edenGoldenWoodLog.getDefaultState(), ZGBlocks.edenGoldenWoodLeaves.getDefaultState(), this.generateVines);
 	
 	public BiomeGoldenMeadow(BiomeProperties props) {
 		super("goldmeadow", props);
@@ -27,16 +32,21 @@ public class BiomeGoldenMeadow extends BiomeEdenBase {
 		this.setBiomeType(EnumBiomeTypeZG.PLAINS);
 		this.enableSnow = false;
 		this.biomeDecor.generateFalls = true;
-		this.biomeDecor.edenGoldTreesPerChunk = 5;
+		this.biomeDecor.treesPerChunk = 5;
 		this.biomeDecor.waterLakesPerChunk = 1;
 		this.biomeDecor.lavaLakesPerChunk = 0;
-		this.biomeDecor.edenTallGrassPerChunk = 5;
-		this.biomeDecor.edenFlowersPerChunk = 2;
+		this.biomeDecor.tallGrassPerChunk = 5;
+		this.biomeDecor.flowersPerChunk = 2;
 		this.grassFoilageColorMultiplier = 0x00008b;
 		this.waterColor = 0x00008b;
 		this.topBlock = ZGBlocks.edenGoldenGrass.getDefaultState();
 		this.fillerBlock = ZGBlocks.edenSoil.getDefaultState();
 		this.stoneBlock = ZGBlocks.edenStone;
+	}
+	
+	@Override
+	public WorldGenAbstractTree getRandomTreeFeature(Random rand) {
+		return this.edenTreeGen;
 	}
 	
 	@Override

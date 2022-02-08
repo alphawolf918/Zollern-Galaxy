@@ -8,7 +8,6 @@
 package zollerngalaxy.worldgen.structures.dungeons;
 
 import java.util.Random;
-import micdoodle8.mods.galacticraft.core.world.gen.dungeon.DungeonConfiguration;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
@@ -26,7 +25,7 @@ public class EntranceCraterZG extends SizedPieceZG {
 	public EntranceCraterZG() {
 	}
 	
-	public EntranceCraterZG(World world, DungeonConfiguration configuration, Random rand, int blockPosX, int blockPosZ) {
+	public EntranceCraterZG(World world, DungeonConfigurationZG configuration, Random rand, int blockPosX, int blockPosZ) {
 		super(configuration, rand.nextInt(4) + 6, 12, rand.nextInt(4) + 6, EnumFacing.Plane.HORIZONTAL.random(rand));
 		this.setCoordBaseMode(EnumFacing.SOUTH);
 		

@@ -11,7 +11,6 @@ import java.util.List;
 import java.util.Random;
 import com.google.common.collect.Lists;
 import micdoodle8.mods.galacticraft.core.util.GCLog;
-import micdoodle8.mods.galacticraft.core.world.gen.dungeon.DungeonConfiguration;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.structure.StructureBoundingBox;
 import net.minecraft.world.gen.structure.StructureComponent;
@@ -24,7 +23,7 @@ public class DungeonStartZG extends EntranceCraterZG {
 	public DungeonStartZG() {
 	}
 	
-	public DungeonStartZG(World world, DungeonConfiguration configuration, Random rand, int blockPosX, int blockPosZ) {
+	public DungeonStartZG(World world, DungeonConfigurationZG configuration, Random rand, int blockPosX, int blockPosZ) {
 		super(world, configuration, rand, blockPosX, blockPosZ);
 	}
 	
@@ -47,8 +46,7 @@ public class DungeonStartZG extends EntranceCraterZG {
 				
 				next = next.getNextPiece(this, rand);
 			}
-			if (attachedComponents.size() >= 3 && attachedComponents.get(attachedComponents.size() - 1) instanceof RoomTreasureZG
-					&& attachedComponents.get(attachedComponents.size() - 3) instanceof RoomBossZG) {
+			if (attachedComponents.size() >= 3 && attachedComponents.get(attachedComponents.size() - 1) instanceof RoomTreasureZG && attachedComponents.get(attachedComponents.size() - 3) instanceof RoomBossZG) {
 				validAttempt = true;
 			}
 			attempts++;
@@ -76,7 +74,6 @@ public class DungeonStartZG extends EntranceCraterZG {
 				return true;
 			}
 		}
-		
 		return false;
 	}
 }

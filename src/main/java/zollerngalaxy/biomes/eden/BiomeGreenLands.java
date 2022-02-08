@@ -28,9 +28,9 @@ public class BiomeGreenLands extends BiomeEdenBase {
 		this.enableSnow = false;
 		this.decorator.generateFalls = true;
 		this.biomeDecor.waterLakesPerChunk = 2;
-		this.biomeDecor.edenTallGrassPerChunk = 1;
-		this.biomeDecor.edenFlowersPerChunk = 4;
-		this.biomeDecor.edenTreesPerChunk = 0;
+		this.biomeDecor.tallGrassPerChunk = 1;
+		this.biomeDecor.flowersPerChunk = 4;
+		this.biomeDecor.treesPerChunk = 0;
 		this.grassFoilageColorMultiplier = 0x009f00;
 		this.waterColor = 0x009f9f;
 		this.topBlock = ZGBlocks.edenSurfaceRock.getDefaultState();

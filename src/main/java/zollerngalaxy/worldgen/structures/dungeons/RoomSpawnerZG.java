@@ -8,7 +8,6 @@
 package zollerngalaxy.worldgen.structures.dungeons;
 
 import java.util.Random;
-import micdoodle8.mods.galacticraft.core.world.gen.dungeon.DungeonConfiguration;
 import net.minecraft.init.Blocks;
 import net.minecraft.tileentity.TileEntityMobSpawner;
 import net.minecraft.util.EnumFacing;
@@ -16,14 +15,13 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.structure.StructureBoundingBox;
-import zollerngalaxy.lib.ZGInfo;
 
 public class RoomSpawnerZG extends RoomEmptyZG {
 	
 	public RoomSpawnerZG() {
 	}
 	
-	public RoomSpawnerZG(DungeonConfiguration configuration, Random rand, int blockPosX, int blockPosZ, int sizeX, int sizeY, int sizeZ, EnumFacing entranceDir) {
+	public RoomSpawnerZG(DungeonConfigurationZG configuration, Random rand, int blockPosX, int blockPosZ, int sizeX, int sizeY, int sizeZ, EnumFacing entranceDir) {
 		super(configuration, rand, blockPosX, blockPosZ, sizeX, sizeY, sizeZ, entranceDir);
 	}
 	
@@ -65,16 +63,6 @@ public class RoomSpawnerZG extends RoomEmptyZG {
 	}
 	
 	private static ResourceLocation getMob(Random rand) {
-		String mobName = "vexbot";
-		switch (rand.nextInt(1)) {
-			default:
-			case 0:
-				mobName = "vexbot";
-				break;
-			case 1:
-				mobName = "vexbotgold";
-				break;
-		}
-		return new ResourceLocation(ZGInfo.MOD_ID, mobName);
+		return DUNGEON_CFG.getMob();
 	}
 }

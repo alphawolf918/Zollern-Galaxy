@@ -20,9 +20,6 @@ import javax.swing.UnsupportedLookAndFeelException;
 import com.google.common.collect.Lists;
 import micdoodle8.mods.galacticraft.api.world.IGalacticraftWorldProvider;
 import micdoodle8.mods.galacticraft.core.util.GCCoreUtil;
-import micdoodle8.mods.galacticraft.core.world.gen.dungeon.DungeonConfiguration;
-import micdoodle8.mods.galacticraft.core.world.gen.dungeon.RoomBoss;
-import micdoodle8.mods.galacticraft.core.world.gen.dungeon.RoomTreasure;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
@@ -35,7 +32,7 @@ import net.minecraft.world.gen.structure.StructureStart;
 public class MapGenDungeonZG extends MapGenStructure {
 	
 	private static boolean initialized;
-	private DungeonConfiguration configuration;
+	private DungeonConfigurationZG configuration;
 	
 	static {
 		try {
@@ -45,7 +42,7 @@ public class MapGenDungeonZG extends MapGenStructure {
 		}
 	}
 	
-	public MapGenDungeonZG(DungeonConfiguration configuration) {
+	public MapGenDungeonZG(DungeonConfigurationZG configuration) {
 		this.configuration = configuration;
 	}
 	
@@ -142,13 +139,14 @@ public class MapGenDungeonZG extends MapGenStructure {
 	}
 	
 	public static class Start extends StructureStart {
-		private DungeonConfiguration configuration;
+		
+		private DungeonConfigurationZG configuration;
 		DungeonStartZG startPiece;
 		
 		public Start() {
 		}
 		
-		public Start(World worldIn, Random rand, int chunkX, int chunkZ, DungeonConfiguration configuration) {
+		public Start(World worldIn, Random rand, int chunkX, int chunkZ, DungeonConfigurationZG configuration) {
 			super(chunkX, chunkZ);
 			this.configuration = configuration;
 			startPiece = new DungeonStartZG(worldIn, configuration, rand, (chunkX << 4) + 2, (chunkZ << 4) + 2);
@@ -167,7 +165,7 @@ public class MapGenDungeonZG extends MapGenStructure {
 	
 	public static void main(String args[]) {
 		Random rand = new Random();
-		Start start = new Start(null, rand, 0, 0, new DungeonConfiguration(null, 25, 8, 16, 5, 6, RoomBoss.class, RoomTreasure.class));
+		Start start = new Start(null, rand, 0, 0, new DungeonConfigurationZG(null, 25, 8, 16, 5, 6, RoomBossZG.class, RoomTreasureZG.class, null, null, null, null, null));
 		
 		EventQueue.invokeLater(() -> {
 			try {
@@ -238,5 +236,4 @@ public class MapGenDungeonZG extends MapGenStructure {
 			}
 		}
 	}
-	
 }

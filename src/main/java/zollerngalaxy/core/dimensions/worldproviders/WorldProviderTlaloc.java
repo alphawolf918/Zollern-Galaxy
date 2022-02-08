@@ -188,7 +188,7 @@ public class WorldProviderTlaloc extends WorldProviderPlanetZG {
 	
 	@Override
 	public ResourceLocation getDungeonChestType() {
-		return RoomTreasureZG.MOONCHEST;
+		return RoomTreasureZG.DUNGEON_CHEST;
 	}
 	
 	@Override

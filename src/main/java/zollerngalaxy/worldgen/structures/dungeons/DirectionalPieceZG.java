@@ -8,7 +8,6 @@
 package zollerngalaxy.worldgen.structures.dungeons;
 
 import java.util.Random;
-import micdoodle8.mods.galacticraft.core.world.gen.dungeon.DungeonConfiguration;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.world.gen.structure.StructureBoundingBox;
@@ -21,7 +20,7 @@ public abstract class DirectionalPieceZG extends PieceZG {
 	public DirectionalPieceZG() {
 	}
 	
-	public DirectionalPieceZG(DungeonConfiguration configuration, EnumFacing direction) {
+	public DirectionalPieceZG(DungeonConfigurationZG configuration, EnumFacing direction) {
 		super(configuration);
 		this.direction = direction;
 	}
@@ -63,8 +62,7 @@ public abstract class DirectionalPieceZG extends PieceZG {
 		int randDir = rand.nextInt(3);
 		do {
 			randomDir = EnumFacing.getHorizontal((getDirection().getOpposite().getHorizontalIndex() + 1 + randDir) % 4);
-			StructureBoundingBox extension = getExtension(randomDir,
-					this.configuration.getHallwayLengthMin() + rand.nextInt(this.configuration.getHallwayLengthMax() - this.configuration.getHallwayLengthMin()), 3);
+			StructureBoundingBox extension = getExtension(randomDir, this.configuration.getHallwayLengthMin() + rand.nextInt(this.configuration.getHallwayLengthMax() - this.configuration.getHallwayLengthMin()), 3);
 			blockX = extension.minX;
 			blockZ = extension.minZ;
 			sizeX = extension.maxX - extension.minX;
