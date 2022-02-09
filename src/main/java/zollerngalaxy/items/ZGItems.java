@@ -200,7 +200,7 @@ public class ZGItems {
 	public static final Item chocolateStrawberry = new ItemSweetFood("strawberry_chocolate", MobEffects.ABSORPTION);
 	
 	// Dungeon Keys
-	public static final Item edenDungeonKey = new ZGItemBase("edendungeonkey");
+	public static final Item edenDungeonKey = new ItemKeyZG("edendungeonkey", 4);
 	public static final Item shadeKey = new ZGItemBase("shadekey");
 	public static final Item tlalocDungeonKey = new ItemKeyZG("tlalocdungeonkey", 10);
 	

@@ -29,6 +29,7 @@ import zollerngalaxy.blocks.caligro.corrupted.ZGOreGemCorrupted;
 import zollerngalaxy.blocks.caligro.corrupted.ZGPlanetStoneCorrupted;
 import zollerngalaxy.blocks.centotl.BlockFacehuggerEgg;
 import zollerngalaxy.blocks.containers.ZGBlockTreasureChest;
+import zollerngalaxy.blocks.containers.ZGBlockTreasureChestTier4;
 import zollerngalaxy.blocks.crops.BlockCropBlackberry;
 import zollerngalaxy.blocks.crops.BlockCropBlueberry;
 import zollerngalaxy.blocks.crops.BlockCropCorn;
@@ -79,8 +80,11 @@ import zollerngalaxy.items.ZGItems;
 import zollerngalaxy.lib.ZGInfo;
 import zollerngalaxy.lib.helpers.CommonZGRegisterHelper;
 import zollerngalaxy.lib.helpers.ZGHelper;
+import zollerngalaxy.mobs.entities.boss.EntityCrawler;
+import zollerngalaxy.mobs.entities.boss.EntityVexBotBoss;
 import zollerngalaxy.tileentities.TileEntityDungeonSpawnerZG;
 import zollerngalaxy.tileentities.TileEntityTier10TreasureChestZG;
+import zollerngalaxy.tileentities.TileEntityTier4TreasureChestZG;
 import zollerngalaxy.util.RegisterUtilsZG;
 import zollerngalaxy.worldgen.WorldGenZGTree;
 import zollerngalaxy.worldgen.eden.WorldGenEdenTrees;
@@ -734,9 +738,11 @@ public class ZGBlocks {
 	
 	// Chests
 	public static final Block treasureChestT10 = new ZGBlockTreasureChest("treasure_chest_tlaloc");
+	public static final Block treasureChestT4 = new ZGBlockTreasureChestTier4("treasure_chest_eden");
 	
 	// Boss Spawners
-	public static final Block TLALOC_SPAWNER = new ZGBlockBossSpawner("boss_spawner_t1");
+	public static final Block TLALOC_SPAWNER = new ZGBlockBossSpawner("boss_spawner_t1", EntityVexBotBoss.class);
+	public static final Block EDEN_SPAWNER = new ZGBlockBossSpawner("boss_spawner_t4", EntityCrawler.class);
 	
 	//
 	public static final Block mudClayBlock = new BlockMudClay();
@@ -800,14 +806,17 @@ public class ZGBlocks {
 		// Farmable Crops
 		ZGBlocks.registerBlocks(cropStrawberry, cropBlackberry, cropBlueberry, cropGrape, cropTomato, cropCorn, cropCucumber, cropRadish, cropOnion, cropPea, cropGarlic, cropGhostPepper);
 		//
-		//
+		// Dungeon Chests
 		ZGBlocks.addBlockItemDesc(treasureChestT10);
+		ZGBlocks.addBlockItemDesc(treasureChestT4);
+		//
 		//
 		ZGHelper.Log("Loaded a total of " + totalBlocks + " new blocks.");
 	}
 	
 	public static void initSpawnerBlocks() throws NoSuchMethodException {
 		registerSpecialBlock(TLALOC_SPAWNER, ItemBlockDefaultZG.class, "boss_spawner_t1");
+		registerSpecialBlock(EDEN_SPAWNER, ItemBlockDefaultZG.class, "boss_spawner_t4");
 	}
 	
 	private static void addBlock(Block block) {
@@ -856,5 +865,6 @@ public class ZGBlocks {
 	private static void registerTileEntities() {
 		RegisterUtilsZG.registerTileEntity(TileEntityDungeonSpawnerZG.class, ZGInfo.MOD_ID + "ZG Dungeon Spawner");
 		RegisterUtilsZG.registerTileEntity(TileEntityTier10TreasureChestZG.class, ZGInfo.MOD_ID + "Tier 10 Treasure Chest ZG");
+		RegisterUtilsZG.registerTileEntity(TileEntityTier4TreasureChestZG.class, ZGInfo.MOD_ID + "Tier 4 Treasure Chest ZG");
 	}
 }

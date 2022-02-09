@@ -109,7 +109,7 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 	private WorldGenerator clayGen = new WorldGenClayZG(ZGBlocks.mudClayBlock, 8);
 	private WorldGenerator gravelGen = new WorldGenSandZG(ZGBlocks.edenGravel, 6);
 	private WorldGenerator sandGen = new WorldGenSandZG(ZGBlocks.edenBloodSand, 7);
-	private WorldGenerator battleTowerGen = new WorldGenBattleTower(Blocks.COBBLESTONE.getDefaultState(), Blocks.GLOWSTONE.getDefaultState());
+	private WorldGenerator battleTowerGen = new WorldGenBattleTower(ZGBlocks.edenCobbleRock.getDefaultState(), ZGBlocks.blockShinestone.getDefaultState());
 	private WorldGenerator craterGen = new WorldGenSmallCraterZG();
 	private WorldGenerator cropGen;
 	

@@ -18,7 +18,7 @@ import zollerngalaxy.mobs.entities.EntityEdenCow;
 import zollerngalaxy.mobs.entities.EntityFacehugger;
 import zollerngalaxy.mobs.entities.EntityFaceless;
 import zollerngalaxy.mobs.entities.EntityFrostGiant;
-import zollerngalaxy.mobs.entities.EntityGalaxyDragon;
+import zollerngalaxy.mobs.entities.EntityGalaxyKnight;
 import zollerngalaxy.mobs.entities.EntityGrayAlien;
 import zollerngalaxy.mobs.entities.EntityGypsyFish;
 import zollerngalaxy.mobs.entities.EntityHelleton;
@@ -40,10 +40,11 @@ import zollerngalaxy.mobs.entities.EntityVexBotGold;
 import zollerngalaxy.mobs.entities.EntityWanderer;
 import zollerngalaxy.mobs.entities.EntityWasp;
 import zollerngalaxy.mobs.entities.EntityXenomorph;
+import zollerngalaxy.mobs.entities.boss.EntityCrawler;
 import zollerngalaxy.mobs.entities.boss.EntityShadowAlien;
 import zollerngalaxy.mobs.entities.boss.EntityVexBotBoss;
 import zollerngalaxy.mobs.entities.boss.EntityXenomorphQueen;
-import zollerngalaxy.mobs.entities.companions.EntityGalaxyKnight;
+import zollerngalaxy.mobs.entities.companions.EntityGalaxyDragon;
 import zollerngalaxy.mobs.entities.villagers.EntityAbyssalVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityAstrosVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityAtheonVillager;
@@ -96,6 +97,7 @@ import zollerngalaxy.mobs.renders.RenderVexbotGold;
 import zollerngalaxy.mobs.renders.RenderWanderer;
 import zollerngalaxy.mobs.renders.RenderWasp;
 import zollerngalaxy.mobs.renders.RenderXenomorph;
+import zollerngalaxy.mobs.renders.boss.RenderCrawler;
 import zollerngalaxy.mobs.renders.boss.RenderShadowAlien;
 import zollerngalaxy.mobs.renders.boss.RenderVexbotBoss;
 import zollerngalaxy.mobs.renders.boss.RenderXenomorphQueen;
@@ -207,6 +209,7 @@ public final class MobRenders {
 		MobRenders.renderMob(EntityShadowAlien.class, RenderShadowAlien::new);
 		MobRenders.renderMob(EntityXenomorphQueen.class, RenderXenomorphQueen::new);
 		MobRenders.renderMob(EntityVexBotBoss.class, RenderVexbotBoss::new);
+		MobRenders.renderMob(EntityCrawler.class, RenderCrawler::new);
 	}
 	
 	/**

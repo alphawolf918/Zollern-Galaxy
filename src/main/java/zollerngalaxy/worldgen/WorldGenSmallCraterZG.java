@@ -775,7 +775,7 @@ public class WorldGenSmallCraterZG extends ZGWorldGenMaster {
 	@Override
 	protected void setBlock(World world, BlockPos pos, Block block) {
 		IBlockState state = world.getBlockState(pos);
-		if (state != ZGBlocks.tlalocDungeonBricks.getDefaultState()) {
+		if (state != ZGBlocks.tlalocDungeonBricks.getDefaultState() && state != ZGBlocks.edenDungeonBricks.getDefaultState()) {
 			super.setBlock(world, pos, block);
 		}
 	}

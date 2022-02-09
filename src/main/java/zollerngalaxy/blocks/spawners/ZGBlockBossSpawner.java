@@ -8,32 +8,32 @@
 package zollerngalaxy.blocks.spawners;
 
 import micdoodle8.mods.galacticraft.core.blocks.BlockBossSpawner;
+import micdoodle8.mods.galacticraft.core.entities.EntityBossBase;
 import net.minecraft.block.Block;
-import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 import zollerngalaxy.tileentities.TileEntityDungeonSpawnerZG;
 
 public class ZGBlockBossSpawner extends BlockBossSpawner {
 	
-	protected Class<? extends EntityMob> bossMob;
+	protected Class<? extends EntityBossBase> bossMob;
 	
-	public ZGBlockBossSpawner(String blockName) {
+	public ZGBlockBossSpawner(String blockName, Class<? extends EntityBossBase> bossMobIn) {
 		super(blockName);
+		this.bossMob = bossMobIn;
 	}
 	
-	public Block setBossSpawn(Class<? extends EntityMob> mobClass) {
+	public Block setBossSpawn(Class<? extends EntityBossBase> mobClass) {
 		this.bossMob = mobClass;
 		return this;
 	}
 	
-	public Class<? extends EntityMob> getBossSpawn() {
+	public Class<? extends EntityBossBase> getBossSpawn() {
 		return this.bossMob;
 	}
 	
 	@Override
 	public TileEntity createNewTileEntity(World worldIn, int meta) {
-		return new TileEntityDungeonSpawnerZG();
+		return new TileEntityDungeonSpawnerZG(this.bossMob);
 	}
-	
 }

@@ -14,6 +14,10 @@ Zollern Galaxy v2.0.39
     - Two dimension IDs can be set, and the Gate will work the same way as the rest.
 * Added a new Star Gate to travel between the Overworld and the Moon, using the new Custom Star Gate API.
 * Added Small Crater spawns to Eden.
+* Added crop generation to Eden.
+* Added Batte Tower spawns to Eden.
+* Added a GC Boss Dungeon to Eden.
+* Added the Crawler boss mob.
 * 
 
 [CHANGES]
@@ -30,6 +34,7 @@ Zollern Galaxy v2.0.39
 * Updated a few planet and star textures.
 * Reworked Eden chunk generation and biome decoration.
 * Modified crater gen config option for Tlaloc to be for all planets.
+* Changed Xenomorph Queen's boss health bar color to purple.
 * 
 
 [FIXES]

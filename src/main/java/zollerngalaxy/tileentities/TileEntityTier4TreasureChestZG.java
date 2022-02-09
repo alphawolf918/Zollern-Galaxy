@@ -9,9 +9,9 @@ package zollerngalaxy.tileentities;
 
 import micdoodle8.mods.galacticraft.core.tile.TileEntityTreasureChest;
 
-public class TileEntityTier10TreasureChestZG extends TileEntityTreasureChest {
+public class TileEntityTier4TreasureChestZG extends TileEntityTreasureChest {
 	
-	public TileEntityTier10TreasureChestZG() {
-		super(10);
+	public TileEntityTier4TreasureChestZG() {
+		super(4);
 	}
 }

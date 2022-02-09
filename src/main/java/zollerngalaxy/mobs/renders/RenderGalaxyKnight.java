@@ -14,7 +14,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import org.lwjgl.opengl.GL11;
 import zollerngalaxy.lib.ZGInfo;
-import zollerngalaxy.mobs.entities.companions.EntityGalaxyKnight;
+import zollerngalaxy.mobs.entities.EntityGalaxyKnight;
 import zollerngalaxy.mobs.models.ModelGalaxyKnight;
 
 @SideOnly(Side.CLIENT)

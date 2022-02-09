@@ -29,6 +29,7 @@ import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.ZGDimensions;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderEden;
 import zollerngalaxy.core.dimensions.skyproviders.SkyProviderEden;
+import zollerngalaxy.worldgen.structures.dungeons.RoomTreasureZG;
 
 public class WorldProviderEden extends WorldProviderPlanetZG {
 	
@@ -191,7 +192,12 @@ public class WorldProviderEden extends WorldProviderPlanetZG {
 	
 	@Override
 	public ResourceLocation getDungeonChestType() {
-		return null;
+		return RoomTreasureZG.DUNGEON_CHEST;
+	}
+	
+	@Override
+	public int getDungeonSpacing() {
+		return 800;
 	}
 	
 	@Override

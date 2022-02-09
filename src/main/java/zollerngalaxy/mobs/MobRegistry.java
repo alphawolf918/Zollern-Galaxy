@@ -24,7 +24,7 @@ import zollerngalaxy.mobs.entities.EntityEdenCow;
 import zollerngalaxy.mobs.entities.EntityFacehugger;
 import zollerngalaxy.mobs.entities.EntityFaceless;
 import zollerngalaxy.mobs.entities.EntityFrostGiant;
-import zollerngalaxy.mobs.entities.EntityGalaxyDragon;
+import zollerngalaxy.mobs.entities.EntityGalaxyKnight;
 import zollerngalaxy.mobs.entities.EntityGrayAlien;
 import zollerngalaxy.mobs.entities.EntityGypsyFish;
 import zollerngalaxy.mobs.entities.EntityHelleton;
@@ -46,10 +46,11 @@ import zollerngalaxy.mobs.entities.EntityVexBotGold;
 import zollerngalaxy.mobs.entities.EntityWanderer;
 import zollerngalaxy.mobs.entities.EntityWasp;
 import zollerngalaxy.mobs.entities.EntityXenomorph;
+import zollerngalaxy.mobs.entities.boss.EntityCrawler;
 import zollerngalaxy.mobs.entities.boss.EntityShadowAlien;
 import zollerngalaxy.mobs.entities.boss.EntityVexBotBoss;
 import zollerngalaxy.mobs.entities.boss.EntityXenomorphQueen;
-import zollerngalaxy.mobs.entities.companions.EntityGalaxyKnight;
+import zollerngalaxy.mobs.entities.companions.EntityGalaxyDragon;
 import zollerngalaxy.mobs.entities.villagers.EntityAbyssalVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityAstrosVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityAtheonVillager;
@@ -141,6 +142,9 @@ public class MobRegistry {
 		
 		// Vexbot Boss
 		registerEntity("vexbotboss", EntityVexBotBoss.class, entityId++, 0xeeddea, 0x8b009f);
+		
+		// Crawler
+		registerEntity("crawler", EntityCrawler.class, entityId++, 0xdddddd, 0x444444);
 		// ***** END BOSSES ***** //
 		
 		// Blubber Fish

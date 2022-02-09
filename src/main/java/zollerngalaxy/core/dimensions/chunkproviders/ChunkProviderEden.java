@@ -3,6 +3,7 @@ package zollerngalaxy.core.dimensions.chunkproviders;
 import java.util.List;
 import java.util.Random;
 import micdoodle8.mods.galacticraft.api.world.ChunkProviderBase;
+import micdoodle8.mods.galacticraft.core.Constants;
 import micdoodle8.mods.galacticraft.core.perlin.generator.Gradient;
 import micdoodle8.mods.galacticraft.core.util.ConfigManagerCore;
 import micdoodle8.mods.galacticraft.core.world.gen.EnumCraterSize;
@@ -10,6 +11,7 @@ import net.minecraft.block.BlockFalling;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.init.Blocks;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MathHelper;
@@ -25,9 +27,15 @@ import net.minecraft.world.gen.NoiseGeneratorPerlin;
 import net.minecraft.world.gen.structure.MapGenMineshaft;
 import zollerngalaxy.biomes.decorators.BiomeDecoratorEden;
 import zollerngalaxy.blocks.ZGBlocks;
+import zollerngalaxy.core.ZGLootTables;
+import zollerngalaxy.lib.ZGInfo;
 import zollerngalaxy.util.BiomeUtils;
 import zollerngalaxy.worldgen.mapgen.MapGenCavesZG;
 import zollerngalaxy.worldgen.mapgen.MapGenRavinesZG;
+import zollerngalaxy.worldgen.structures.dungeons.DungeonConfigurationZG;
+import zollerngalaxy.worldgen.structures.dungeons.MapGenDungeonZG;
+import zollerngalaxy.worldgen.structures.dungeons.RoomBossZG;
+import zollerngalaxy.worldgen.structures.dungeons.RoomTreasureZG;
 import zollerngalaxy.worldgen.structures.villages.MapGenVillageZG;
 
 public class ChunkProviderEden extends ChunkProviderBase {
@@ -69,9 +77,23 @@ public class ChunkProviderEden extends ChunkProviderBase {
 	
 	public static ChunkProviderEden INSTANCE;
 	
-	private static final int CRATER_PROB = 300;
+	private static final int CRATER_PROB = 100;
 	
-	// TODO: Dungeon
+	private final IBlockState dungeonBricks = ZGBlocks.edenDungeonBricks.getDefaultState();
+	private final Class<?> roomBoss = RoomBossZG.class;
+	private final Class<?> roomTreasure = RoomTreasureZG.class;
+	private final int a = 25;
+	private final int b = 8;
+	private final int c = 16;
+	private final int d = 5;
+	private final int e = 6;
+	private final ResourceLocation lootTable = ZGLootTables.CHEST_DUNGEON_TIER4_DEFAULT;
+	private final ResourceLocation dungeonChest = new ResourceLocation(ZGInfo.MOD_ID, "chests/dungeonchest_t4a");
+	private final IBlockState chestState = ZGBlocks.treasureChestT4.getDefaultState();
+	private final IBlockState spawnerState = ZGBlocks.EDEN_SPAWNER.getDefaultState();
+	private final IBlockState fluidState = Blocks.LAVA.getDefaultState();
+	private final DungeonConfigurationZG dungeonConfigurator = new DungeonConfigurationZG(this.dungeonBricks, a, b, c, d, e, roomBoss, roomTreasure, lootTable, dungeonChest, chestState, spawnerState, fluidState, getMob(new Random()));
+	private final MapGenDungeonZG dungeonGeneratorZG = new MapGenDungeonZG(this.dungeonConfigurator);
 	
 	public ChunkProviderEden(World worldIn, long seed, boolean mapFeaturesEnabled) {
 		this.world = worldIn;
@@ -197,6 +219,7 @@ public class ChunkProviderEden extends ChunkProviderBase {
 		this.ravineGenerator.generate(this.world, x, z, chunkprimer);
 		this.villageGenerator.generate(this.world, x, z, chunkprimer);
 		this.mineshaftGenerator.generate(this.world, x, z, chunkprimer);
+		this.dungeonGeneratorZG.generate(this.world, x, z, chunkprimer);
 		
 		Chunk chunk = new Chunk(this.world, chunkprimer, x, z);
 		byte[] abyte = chunk.getBiomeArray();
@@ -372,6 +395,7 @@ public class ChunkProviderEden extends ChunkProviderBase {
 		}
 		
 		this.mineshaftGenerator.generateStructure(this.world, this.rand, new ChunkPos(x, z));
+		this.dungeonGeneratorZG.generateStructure(this.world, this.rand, new ChunkPos(x, z));
 		
 		biomegenbase.decorate(this.world, this.rand, new BlockPos(i, 0, j));
 		WorldEntitySpawner.performWorldGenSpawning(this.world, biomegenbase, i + 8, j + 8, 16, 16, this.rand);
@@ -392,5 +416,27 @@ public class ChunkProviderEden extends ChunkProviderBase {
 		if (!ConfigManagerCore.disableMoonVillageGen && !BiomeUtils.isOceanBiome(biome)) {
 			this.villageGenerator.generate(this.world, x, z, null);
 		}
+		this.dungeonGeneratorZG.generate(this.world, x, z, null);
+	}
+	
+	private static ResourceLocation getMob(Random rand) {
+		String mobName = "spiderling";
+		String modId = ZGInfo.MOD_ID;
+		switch (rand.nextInt(3)) {
+			default:
+			case 0:
+				mobName = "spiderling";
+				modId = ZGInfo.MOD_ID;
+				break;
+			case 1:
+				mobName = "scorpion";
+				modId = ZGInfo.MOD_ID;
+				break;
+			case 2:
+				mobName = "evolved_spider";
+				modId = Constants.MOD_ID_CORE;
+				break;
+		}
+		return new ResourceLocation(modId, mobName);
 	}
 }

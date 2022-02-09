@@ -5,7 +5,7 @@
  * but do not claim it as your own, and
  * do not redistribute it.
  */
-package zollerngalaxy.mobs.entities;
+package zollerngalaxy.mobs.entities.companions;
 
 import java.util.Set;
 import java.util.UUID;
@@ -59,7 +59,6 @@ import net.minecraft.world.World;
 import net.minecraftforge.event.ForgeEventFactory;
 import zollerngalaxy.items.ZGItems;
 import zollerngalaxy.mobs.entities.ai.EntityAIDragonBeg;
-import zollerngalaxy.mobs.entities.companions.EnumCompanionType;
 import zollerngalaxy.mobs.entities.interfaces.ICompanionEntity;
 
 public class EntityGalaxyDragon extends EntityTameable implements ICompanionEntity {

@@ -13,7 +13,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumHand;
 import net.minecraft.world.World;
-import zollerngalaxy.mobs.entities.EntityGalaxyDragon;
+import zollerngalaxy.mobs.entities.companions.EntityGalaxyDragon;
 
 public class EntityAIDragonBeg extends EntityAIBase {
 	

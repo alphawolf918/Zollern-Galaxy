@@ -7,7 +7,9 @@
  */
 package zollerngalaxy.mobs.entities.boss;
 
+import java.util.List;
 import java.util.Random;
+import micdoodle8.mods.galacticraft.api.GalacticraftRegistry;
 import micdoodle8.mods.galacticraft.api.entity.IEntityBreathable;
 import micdoodle8.mods.galacticraft.core.entities.EntityAlienVillager;
 import micdoodle8.mods.galacticraft.core.entities.EntityBossBase;
@@ -154,7 +156,8 @@ public class EntityVexBotBoss extends EntityBossBase implements IEntityBreathabl
 	
 	@Override
 	public ItemStack getGuaranteedLoot(Random rand) {
-		return new ItemStack(ZGItems.rokkite, 9);
+		List<ItemStack> stackList = GalacticraftRegistry.getDungeonLoot(10);
+		return stackList.get(rand.nextInt(stackList.size())).copy();
 	}
 	
 	@Override

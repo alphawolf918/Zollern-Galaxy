@@ -34,7 +34,9 @@ import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.mobs.MobRenders;
 import zollerngalaxy.potions.ZGPotions;
 import zollerngalaxy.tileentities.TileEntityTier10TreasureChestZG;
+import zollerngalaxy.tileentities.TileEntityTier4TreasureChestZG;
 import zollerngalaxy.tileentities.renderers.TileEntityTier10TreasureChestZGRenderer;
+import zollerngalaxy.tileentities.renderers.TileEntityTier4TreasureChestZGRenderer;
 import zollerngalaxy.util.ClientUtilsZG;
 import zollerngalaxy.util.RegisterUtilsZG;
 import zollerngalaxy.util.ZGDamageSrc;
@@ -117,6 +119,7 @@ public class ClientProxy extends CommonProxy {
 	@SideOnly(Side.CLIENT)
 	public void renderBlocksTileEntitySpecialRenderers() {
 		ClientUtilsZG.registerTileEntityRenderer(TileEntityTier10TreasureChestZG.class, new TileEntityTier10TreasureChestZGRenderer());
+		ClientUtilsZG.registerTileEntityRenderer(TileEntityTier4TreasureChestZG.class, new TileEntityTier4TreasureChestZGRenderer());
 	}
 	
 	@SubscribeEvent

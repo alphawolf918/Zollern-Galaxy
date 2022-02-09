@@ -1,0 +1,23 @@
+{
+	"forge_marker": 1,
+	"variants": {
+		"normal": {
+			"model": "zollerngalaxy:treasure_chest_eden"
+		},
+		"facing=north": {
+			"model": "zollerngalaxy:treasure_chest_eden"
+		},
+		"facing=east": {
+			"model": "zollerngalaxy:treasure_chest_eden",
+			"y": 90
+		},
+		"facing=south": {
+			"model": "zollerngalaxy:treasure_chest_eden",
+			"y": 180
+		},
+		"facing=west": {
+			"model": "zollerngalaxy:treasure_chest_eden",
+			"y": 270
+		}
+	}
+}

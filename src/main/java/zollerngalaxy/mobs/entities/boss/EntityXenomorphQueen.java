@@ -187,7 +187,7 @@ public class EntityXenomorphQueen extends EntityXenomorph {
 		return false;
 	}
 	
-	private final BossInfoServer bossInfo = new BossInfoServer(this.getDisplayName(), BossInfo.Color.RED, BossInfo.Overlay.PROGRESS);
+	private final BossInfoServer bossInfo = new BossInfoServer(this.getDisplayName(), BossInfo.Color.PURPLE, BossInfo.Overlay.PROGRESS);
 	
 	@Override
 	public void addTrackingPlayer(EntityPlayerMP player) {

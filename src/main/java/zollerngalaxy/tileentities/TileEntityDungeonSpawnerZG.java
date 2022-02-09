@@ -10,6 +10,7 @@ package zollerngalaxy.tileentities;
 import java.util.ArrayList;
 import java.util.List;
 import micdoodle8.mods.galacticraft.core.client.sounds.GCSounds;
+import micdoodle8.mods.galacticraft.core.entities.EntityBossBase;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedCreeper;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedSkeleton;
 import micdoodle8.mods.galacticraft.core.entities.EntityEvolvedSpider;
@@ -18,12 +19,11 @@ import micdoodle8.mods.galacticraft.core.tile.TileEntityDungeonSpawner;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.util.SoundCategory;
-import zollerngalaxy.mobs.entities.boss.EntityVexBotBoss;
 
-public class TileEntityDungeonSpawnerZG extends TileEntityDungeonSpawner<EntityVexBotBoss> {
+public class TileEntityDungeonSpawnerZG<E extends Entity> extends TileEntityDungeonSpawner {
 	
-	public TileEntityDungeonSpawnerZG() {
-		super(EntityVexBotBoss.class);
+	public TileEntityDungeonSpawnerZG(Class<? extends EntityBossBase> bossMobClass) {
+		super(bossMobClass);
 	}
 	
 	@Override
