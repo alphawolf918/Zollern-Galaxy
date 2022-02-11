@@ -24,8 +24,8 @@ public class BiomeEdenOcean extends BiomeEdenBase {
 		props.setHeightVariation(0.0F);
 		props.setTemperature(5.0F);
 		this.setTempCategory(TempCategory.OCEAN);
-		this.setTemp(5.0F);
-		this.setBiomeHeight(63);
+		this.setTemp(8.0F);
+		this.setBiomeHeight(10);
 		this.setBlocks(Blocks.AIR);
 		this.setBiomeType(EnumBiomeTypeZG.OCEAN);
 		this.clearAllNonMonsterSpawning();

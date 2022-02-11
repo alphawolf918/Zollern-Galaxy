@@ -30,7 +30,6 @@ import zollerngalaxy.blocks.ZGBlockTallGrass;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderEden;
-import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderTlaloc;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 import zollerngalaxy.core.enums.EnumOreGenZG;
 import zollerngalaxy.lib.helpers.ZGDecorateHelper;
@@ -97,6 +96,8 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 	public int cropsPerChunk = 2;
 	public int battleTowersPerChunk = 2;
 	public int cratersPerChunk = 0;
+	
+	public float extraTreeChance = 0.5F;
 	
 	private WorldGenerator pumpkinGen = new WorldGenEdenPumpkins();
 	private WorldGenerator tallGrassGen = new WorldGenTallGrassZG((ZGBlockTallGrass) ZGBlocks.edenTallGrass);
@@ -543,7 +544,7 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 		// Craters (Small)
 		int craterSpawnChance = ConfigManagerZG.craterSpawnChance;
 		if (this.generateCraters && this.cratersPerChunk > 0 && craterSpawnChance > 0) {
-			ChunkProviderTlaloc.INSTANCE.createCraters(x, z, chunkPrimer);
+			ChunkProviderEden.INSTANCE.createCraters(x, z, chunkPrimer);
 			y = rand.nextInt(rand.nextInt(genY) + 8);
 			if (ZGHelper.rngInt(1, 100) <= craterSpawnChance) {
 				for (int i = 0; i < this.cratersPerChunk; ++i) {

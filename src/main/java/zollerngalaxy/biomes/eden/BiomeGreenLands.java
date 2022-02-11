@@ -23,13 +23,13 @@ public class BiomeGreenLands extends BiomeEdenBase {
 		props.setTemperature(5.0F);
 		this.setTempCategory(TempCategory.MEDIUM);
 		this.setTemp(5F);
-		this.setBiomeHeight(72);
+		this.setBiomeHeight(50);
 		this.setBiomeType(EnumBiomeTypeZG.NORMAL);
 		this.enableSnow = false;
 		this.decorator.generateFalls = true;
-		this.biomeDecor.waterLakesPerChunk = 2;
-		this.biomeDecor.tallGrassPerChunk = 1;
-		this.biomeDecor.flowersPerChunk = 4;
+		this.biomeDecor.waterLakesPerChunk = 4;
+		this.biomeDecor.tallGrassPerChunk = 0;
+		this.biomeDecor.flowersPerChunk = 0;
 		this.biomeDecor.treesPerChunk = 0;
 		this.grassFoilageColorMultiplier = 0x009f00;
 		this.waterColor = 0x009f9f;

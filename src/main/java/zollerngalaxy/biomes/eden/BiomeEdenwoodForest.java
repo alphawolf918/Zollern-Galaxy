@@ -20,7 +20,7 @@ public class BiomeEdenwoodForest extends BiomeEdenBase {
 		props.setHeightVariation(0.2F);
 		props.setTemperature(5.5F);
 		this.setTemp(5.4F);
-		this.setBiomeHeight(72);
+		this.setBiomeHeight(30);
 		this.setBiomeType(EnumBiomeTypeZG.FOREST);
 		this.decorator.generateFalls = true;
 		this.biomeDecor.generateLakes = true;
@@ -28,9 +28,9 @@ public class BiomeEdenwoodForest extends BiomeEdenBase {
 		this.biomeDecor.lavaLakesPerChunk = 0;
 		this.biomeDecor.flowersPerChunk = 4;
 		this.biomeDecor.tallGrassPerChunk = 8;
-		this.biomeDecor.treesPerChunk = 25;
+		this.biomeDecor.treesPerChunk = 60;
 		this.biomeDecor.waterLakesPerChunk = 4;
-		this.biomeDecor.tallGrassPerChunk = 14;
+		this.biomeDecor.tallGrassPerChunk = 28;
 		this.enableSnow = true;
 		this.grassFoliageColor = 0x00ff00;
 		this.waterColor = 0x0000ff;

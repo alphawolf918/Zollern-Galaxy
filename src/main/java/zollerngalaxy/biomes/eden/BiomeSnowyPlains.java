@@ -30,11 +30,13 @@ public class BiomeSnowyPlains extends BiomeEdenBase {
 		this.setBiomeType(EnumBiomeTypeZG.ICY);
 		this.spawnableCreatureList.add(new SpawnListEntry(EntityPolarBear.class, 100, 2, 3));
 		this.enableSnow = true;
-		this.decorator.generateFalls = true;
+		this.biomeDecor.generateFalls = true;
 		this.biomeDecor.generateLakes = true;
+		this.biomeDecor.generateTrees = true;
 		this.biomeDecor.waterLakesPerChunk = 4;
-		this.biomeDecor.tallGrassPerChunk = 6;
-		this.biomeDecor.flowersPerChunk = 4;
+		this.biomeDecor.tallGrassPerChunk = 24;
+		this.biomeDecor.flowersPerChunk = 24;
+		this.biomeDecor.treesPerChunk = 40;
 		this.grassFoilageColorMultiplier = 0x00009f;
 		this.waterColor = 0x00009f;
 		this.topBlock = ZGBlocks.edenSnow.getDefaultState();

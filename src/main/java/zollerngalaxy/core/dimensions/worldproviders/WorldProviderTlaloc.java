@@ -29,7 +29,7 @@ import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.ZGDimensions;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderTlaloc;
 import zollerngalaxy.core.dimensions.skyproviders.SkyProviderTlaloc;
-import zollerngalaxy.worldgen.structures.dungeons.RoomTreasureZG;
+import zollerngalaxy.lib.ZGInfo;
 
 public class WorldProviderTlaloc extends WorldProviderPlanetZG {
 	
@@ -188,7 +188,7 @@ public class WorldProviderTlaloc extends WorldProviderPlanetZG {
 	
 	@Override
 	public ResourceLocation getDungeonChestType() {
-		return RoomTreasureZG.DUNGEON_CHEST;
+		return new ResourceLocation(ZGInfo.MOD_ID, "chests/dungeonchest_t10");
 	}
 	
 	@Override

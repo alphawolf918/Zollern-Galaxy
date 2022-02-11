@@ -23,13 +23,13 @@ public class BiomeStoneMountains extends BiomeEdenBase {
 		props.setHeightVariation(0.6F);
 		props.setTemperature(7.2F);
 		this.setTempCategory(TempCategory.WARM);
-		this.setTemp(7.2F);
-		this.setBiomeHeight(81);
+		this.setTemp(18.24F);
+		this.setBiomeHeight(128);
 		this.setBiomeType(EnumBiomeTypeZG.ROCKY);
 		this.enableSnow = false;
-		this.decorator.generateFalls = true;
+		this.biomeDecor.generateFalls = true;
 		this.biomeDecor.waterLakesPerChunk = 1;
-		this.biomeDecor.lavaLakesPerChunk = 1;
+		this.biomeDecor.lavaLakesPerChunk = 8;
 		this.biomeDecor.tallGrassPerChunk = 0;
 		this.biomeDecor.flowersPerChunk = 0;
 		this.biomeDecor.treesPerChunk = 0;

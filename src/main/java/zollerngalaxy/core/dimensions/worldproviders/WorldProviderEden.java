@@ -29,7 +29,7 @@ import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.ZGDimensions;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderEden;
 import zollerngalaxy.core.dimensions.skyproviders.SkyProviderEden;
-import zollerngalaxy.worldgen.structures.dungeons.RoomTreasureZG;
+import zollerngalaxy.lib.ZGInfo;
 
 public class WorldProviderEden extends WorldProviderPlanetZG {
 	
@@ -177,12 +177,12 @@ public class WorldProviderEden extends WorldProviderPlanetZG {
 	
 	@Override
 	public double getHorizon() {
-		return 54.0D;
+		return 58.0D;
 	}
 	
 	@Override
 	public int getAverageGroundLevel() {
-		return 82;
+		return 64;
 	}
 	
 	@Override
@@ -192,11 +192,16 @@ public class WorldProviderEden extends WorldProviderPlanetZG {
 	
 	@Override
 	public ResourceLocation getDungeonChestType() {
-		return RoomTreasureZG.DUNGEON_CHEST;
+		return new ResourceLocation(ZGInfo.MOD_ID, "chests/dungeonchest_t4a");
 	}
 	
 	@Override
 	public int getDungeonSpacing() {
+		return 400;
+	}
+	
+	@Override
+	public int getHeight() {
 		return 800;
 	}
 	
@@ -242,5 +247,4 @@ public class WorldProviderEden extends WorldProviderPlanetZG {
 	public Class<? extends IChunkGenerator> getChunkProviderClass() {
 		return ChunkProviderEden.class;
 	}
-	
 }

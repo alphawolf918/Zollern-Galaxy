@@ -27,14 +27,14 @@ public class BiomeFlowerGarden extends BiomeEdenBase {
 		props.setTemperature(4.0F);
 		this.setTempCategory(TempCategory.MEDIUM);
 		this.setTemp(4.0F);
-		this.setBiomeHeight(72);
+		this.setBiomeHeight(24);
 		this.setBiomeType(EnumBiomeTypeZG.LUSH);
 		this.enableSnow = false;
 		this.decorator.generateFalls = true;
-		this.biomeDecor.waterLakesPerChunk = 4;
+		this.biomeDecor.waterLakesPerChunk = 8;
 		this.biomeDecor.lavaLakesPerChunk = 0;
-		this.biomeDecor.tallGrassPerChunk = 24;
-		this.biomeDecor.flowersPerChunk = 48;
+		this.biomeDecor.tallGrassPerChunk = 40;
+		this.biomeDecor.flowersPerChunk = 60;
 		this.biomeDecor.treesPerChunk = 0;
 		this.grassFoliageColor = 0x00228b;
 		this.waterColor = 0x00228b;

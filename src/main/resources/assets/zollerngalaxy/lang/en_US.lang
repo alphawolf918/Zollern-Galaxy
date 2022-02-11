@@ -100,8 +100,9 @@ tile.fruitofedenblock.name=Fruit of Eden
 tile.edengravel.name=Eden's Gravel
 tile.edenwinterrock.name=Eden's Snowrock
 tile.brightstone.name=Eden's Britestone
-tile.edentreasurechest.name=Eden's Treasure
+tile.treasure_chest_eden.name=Eden's Treasure
 tile.edendungeonbricks.name=Eden's Sacred Bricks
+tile.boss_spawner_t4.name=Eden Boss Spawner
 
 tile.crater_rock.name=Crater Rock
 

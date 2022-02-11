@@ -31,7 +31,7 @@ public class BiomeEdenParadiseWoods extends BiomeEdenBase {
 		props.setHeightVariation(2.5F);
 		props.setTemperature(1.0F);
 		this.setTemp(4F);
-		this.setBiomeHeight(62);
+		this.setBiomeHeight(30);
 		this.setBiomeType(EnumBiomeTypeZG.FOREST);
 		this.enableSnow = false;
 		this.biomeDecor.generatePumpkins = true;
@@ -39,10 +39,10 @@ public class BiomeEdenParadiseWoods extends BiomeEdenBase {
 		this.biomeDecor.generateVines = false;
 		this.biomeDecor.waterLakesPerChunk = 1;
 		this.biomeDecor.lavaLakesPerChunk = 0;
-		this.biomeDecor.tallGrassPerChunk = 8;
+		this.biomeDecor.tallGrassPerChunk = 16;
 		this.biomeDecor.flowersPerChunk = 4;
-		this.biomeDecor.treesPerChunk = 10;
-		this.biomeDecor.edenPumpkinsPerChunk = 2;
+		this.biomeDecor.treesPerChunk = 60;
+		this.biomeDecor.edenPumpkinsPerChunk = 8;
 		this.grassFoilageColorMultiplier = 0x8b0000;
 		this.waterColor = 0x00008b;
 		this.topBlock = ZGBlocks.edenFallGrass.getDefaultState();

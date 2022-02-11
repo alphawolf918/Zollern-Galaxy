@@ -21,7 +21,7 @@ import zollerngalaxy.worldgen.WorldGenZGMushroomTree;
 
 public class BiomeShroomHills extends BiomeEdenBase {
 	
-	private WorldGenAbstractTree edenTreeGen = new WorldGenZGMushroomTree(false, ZGHelper.rngInt(3, 6));
+	private WorldGenAbstractTree mushroomTreeGen = new WorldGenZGMushroomTree(false, ZGHelper.rngInt(3, 6));
 	
 	public BiomeShroomHills(BiomeProperties props) {
 		super("shroomhills", props);
@@ -31,7 +31,7 @@ public class BiomeShroomHills extends BiomeEdenBase {
 		props.setTemperature(5.5F);
 		this.setTempCategory(TempCategory.MEDIUM);
 		this.setTemp(5.5F);
-		this.setBiomeHeight(72);
+		this.setBiomeHeight(15);
 		this.setBiomeType(EnumBiomeTypeZG.WEIRD);
 		this.clearAllNonMonsterSpawning();
 		this.spawnableCreatureList.add(new SpawnListEntry(EntityPigShroom.class, 100, 1, 2));
@@ -46,8 +46,8 @@ public class BiomeShroomHills extends BiomeEdenBase {
 		this.biomeDecor.lavaLakesPerChunk = 1;
 		this.biomeDecor.tallGrassPerChunk = 0;
 		this.biomeDecor.flowersPerChunk = 0;
-		this.biomeDecor.treesPerChunk = 5;
-		this.biomeDecor.mushroomTreesPerChunk = 5;
+		this.biomeDecor.treesPerChunk = 20;
+		this.biomeDecor.mushroomTreesPerChunk = 10;
 		this.grassFoliageColor = 0x009f00;
 		this.waterColor = 0x002bcc;
 		this.topBlock = ZGBlocks.blockRedshroom.getDefaultState();
@@ -57,7 +57,7 @@ public class BiomeShroomHills extends BiomeEdenBase {
 	
 	@Override
 	public WorldGenAbstractTree getRandomTreeFeature(Random rand) {
-		return this.edenTreeGen;
+		return this.mushroomTreeGen;
 	}
 	
 	@Override

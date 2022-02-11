@@ -1,10 +1,10 @@
 {
    "pools":[
       {
-         "name":"dungeonchest_t1b",
+         "name":"dungeonchest_t4a",
          "rolls":{
-            "min":3,
-            "max":6
+            "min":6,
+            "max":9
          },
          "entries":[
             {
@@ -171,7 +171,7 @@
             {
                "type":"item",
                "name":"zollerngalaxy:stargate_tier4",
-               "weight":100,
+               "weight":4,
                "functions":[
                   {
                      "function":"minecraft:set_count",
