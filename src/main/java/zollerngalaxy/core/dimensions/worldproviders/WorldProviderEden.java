@@ -40,7 +40,7 @@ public class WorldProviderEden extends WorldProviderPlanetZG {
 	
 	@Override
 	public float getSolarSize() {
-		return 1.0F;
+		return 1.2F;
 	}
 	
 	@Override

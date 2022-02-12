@@ -35,6 +35,7 @@ Zollern Galaxy v2.0.39
 * Reworked Eden chunk generation and biome decoration.
 * Modified crater gen config option for Tlaloc to be for all planets.
 * Changed Xenomorph Queen's boss health bar color to purple.
+* Reworked Crystal Towers entirely.
 * 
 
 [FIXES]
@@ -42,4 +43,5 @@ Zollern Galaxy v2.0.39
 * Fixed Bowl of Popcorn food item requiring regular Corn Kernels instead of Popcorn.
 * Fixed a non-translating tooltip.
 * Fixed tunnel gens not generating correctly.
+* Fixed Crystal Towers not generating correctly.
 * 
