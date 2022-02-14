@@ -23,6 +23,7 @@ import zollerngalaxy.mobs.entities.EntityGrayAlien;
 import zollerngalaxy.mobs.entities.EntityGypsyFish;
 import zollerngalaxy.mobs.entities.EntityHelleton;
 import zollerngalaxy.mobs.entities.EntityJellyfish;
+import zollerngalaxy.mobs.entities.EntityKree;
 import zollerngalaxy.mobs.entities.EntityKrull;
 import zollerngalaxy.mobs.entities.EntityMagmos;
 import zollerngalaxy.mobs.entities.EntityMegaCreeper;
@@ -79,6 +80,7 @@ import zollerngalaxy.mobs.renders.RenderGrayAlien;
 import zollerngalaxy.mobs.renders.RenderGypsyFish;
 import zollerngalaxy.mobs.renders.RenderHelleton;
 import zollerngalaxy.mobs.renders.RenderJellyfish;
+import zollerngalaxy.mobs.renders.RenderKree;
 import zollerngalaxy.mobs.renders.RenderKrull;
 import zollerngalaxy.mobs.renders.RenderMagmos;
 import zollerngalaxy.mobs.renders.RenderMegaCreeper;
@@ -203,6 +205,7 @@ public final class MobRenders {
 		MobRenders.renderMob(EntityFacehugger.class, RenderFacehugger::new);
 		MobRenders.renderMob(EntityXenomorph.class, RenderXenomorph::new);
 		MobRenders.renderMob(EntityBloodWorm.class, RenderBloodWorm::new);
+		MobRenders.renderMob(EntityKree.class, RenderKree::new);
 	}
 	
 	private static void renderBosses() {

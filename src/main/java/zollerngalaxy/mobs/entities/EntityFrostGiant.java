@@ -40,6 +40,7 @@ public class EntityFrostGiant extends EntityMob implements IEntityBreathable {
 	public EntityFrostGiant(World worldIn) {
 		super(worldIn);
 		this.setSize(this.width * 3.6F, this.height * 3.6F);
+		this.ignoreFrustumCheck = true;
 	}
 	
 	@Override
@@ -56,10 +57,12 @@ public class EntityFrostGiant extends EntityMob implements IEntityBreathable {
 	
 	protected void applyEntityAI() {
 		this.tasks.addTask(6, new EntityAIMoveThroughVillage(this, 1.0D, false));
-		this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, true, new Class[] { EntityEnderman.class }));
-		this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, true));
-		this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityZollusVillager.class, false));
-		this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityIronGolem.class, true));
+		this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
+		this.targetTasks.addTask(2, new EntityAINearestAttackableTarget<>(this, EntityPlayer.class, false, true));
+		this.targetTasks.addTask(3, new EntityAIHurtByTarget(this, true, new Class[] { EntityEnderman.class }));
+		this.targetTasks.addTask(4, new EntityAINearestAttackableTarget(this, EntityPlayer.class, true));
+		this.targetTasks.addTask(5, new EntityAINearestAttackableTarget(this, EntityZollusVillager.class, false));
+		this.targetTasks.addTask(6, new EntityAINearestAttackableTarget(this, EntityIronGolem.class, true));
 	}
 	
 	@Override

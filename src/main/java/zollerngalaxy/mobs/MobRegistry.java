@@ -29,6 +29,7 @@ import zollerngalaxy.mobs.entities.EntityGrayAlien;
 import zollerngalaxy.mobs.entities.EntityGypsyFish;
 import zollerngalaxy.mobs.entities.EntityHelleton;
 import zollerngalaxy.mobs.entities.EntityJellyfish;
+import zollerngalaxy.mobs.entities.EntityKree;
 import zollerngalaxy.mobs.entities.EntityKrull;
 import zollerngalaxy.mobs.entities.EntityMagmos;
 import zollerngalaxy.mobs.entities.EntityMegaCreeper;
@@ -275,6 +276,9 @@ public class MobRegistry {
 		
 		// Blood Worm
 		registerEntity("bloodworm", EntityBloodWorm.class, entityId++, 0x8b008b, 0x8b008b);
+		
+		// Kree
+		registerEntity("kree", EntityKree.class, entityId++, 0x0099ff, 0x00cc8b);
 		
 		ZGHelper.Log("Loaded a total of " + totalMobs + " new mobs.");
 	}

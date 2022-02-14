@@ -103,20 +103,22 @@ public class EntityCrawler extends EntityBossBase implements IEntityBreathable {
 		int randInt = rand.nextInt(10);
 		int randIntI = rand.nextInt(4);
 		
-		if (ticksExisted >= 1500) {
-			Entity spider;
-			spider = (randInt >= 5) ? new EntitySpiderling(this.world) : new EntityScorpion(this.world);
-			spider.setLocationAndAngles(this.posX, this.posY, this.posZ, this.rotationYaw, this.rotationPitch);
-			for (int i = 1; i < randIntI; i++) {
-				this.world.spawnEntity(spider);
+		if (!this.world.isRemote) {
+			if (ticksExisted >= 1000) {
+				Entity spider;
+				spider = (randInt >= 5) ? new EntitySpiderling(this.world) : new EntityScorpion(this.world);
+				spider.setLocationAndAngles(this.posX, this.posY, this.posZ, this.rotationYaw, this.rotationPitch);
+				for (int i = 1; i < randIntI; i++) {
+					this.world.spawnEntity(spider);
+					this.heal(randIntI * 6.0F);
+				}
+				ticksExisted = 0;
+			}
+			ticksExisted++;
+			if (rand.nextInt(1000) == 5) {
+				this.world.setBlockState(new BlockPos((int) this.posX, (int) this.posY, (int) this.posZ), ZGBlocks.spiderlingEgg.getDefaultState());
 				this.heal(randIntI * 6.0F);
 			}
-			ticksExisted = 0;
-		}
-		ticksExisted++;
-		if (rand.nextInt(1000) == 5) {
-			this.world.setBlockState(new BlockPos((int) this.posX, (int) this.posY, (int) this.posZ), ZGBlocks.spiderlingEgg.getDefaultState());
-			this.heal(randIntI * 6.0F);
 		}
 		super.onLivingUpdate();
 	}

@@ -5,7 +5,7 @@
  * but do not claim it as your own, and
  * do not redistribute it.
  */
-package zollerngalaxy.worldgen.structures.dungeons;
+package zollerngalaxy.worldgen.structures.dungeons.eden;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -29,42 +29,42 @@ import net.minecraft.world.gen.structure.StructureBoundingBox;
 import net.minecraft.world.gen.structure.StructureComponent;
 import net.minecraft.world.gen.structure.StructureStart;
 
-public class MapGenDungeonZG extends MapGenStructure {
+public class MapGenDungeonEden extends MapGenStructure {
 	
 	private static boolean initialized;
-	private DungeonConfigurationZG configuration;
+	private DungeonConfigurationEden configuration;
 	
 	static {
 		try {
-			MapGenDungeonZG.initiateStructures();
+			MapGenDungeonEden.initiateStructures();
 		} catch (Throwable e) {
 			
 		}
 	}
 	
-	public MapGenDungeonZG(DungeonConfigurationZG configuration) {
+	public MapGenDungeonEden(DungeonConfigurationEden configuration) {
 		this.configuration = configuration;
 	}
 	
 	public static void initiateStructures() throws Throwable {
-		if (!MapGenDungeonZG.initialized) {
-			MapGenStructureIO.registerStructure(MapGenDungeonZG.Start.class, "ZGDungeon");
-			MapGenStructureIO.registerStructureComponent(DungeonStartZG.class, "ZGDungeonStart");
-			MapGenStructureIO.registerStructureComponent(CorridorZG.class, "ZGDungeonCorridor");
-			MapGenStructureIO.registerStructureComponent(RoomEmptyZG.class, "ZGDungeonEmptyRoom");
-			MapGenStructureIO.registerStructureComponent(RoomBossZG.class, "ZGDungeonBossRoom");
-			MapGenStructureIO.registerStructureComponent(RoomTreasureZG.class, "ZGDungeonTreasureRoom");
-			MapGenStructureIO.registerStructureComponent(RoomSpawnerZG.class, "ZGDungeonSpawnerRoom");
-			MapGenStructureIO.registerStructureComponent(RoomChestZG.class, "ZGDungeonChestRoom");
-			MapGenStructureIO.registerStructureComponent(RoomEntranceZG.class, "ZGDungeonEntranceRoom");
+		if (!MapGenDungeonEden.initialized) {
+			MapGenStructureIO.registerStructure(MapGenDungeonEden.Start.class, "EdenDungeon");
+			MapGenStructureIO.registerStructureComponent(DungeonStartEden.class, "EdenDungeonStart");
+			MapGenStructureIO.registerStructureComponent(CorridorEden.class, "EdenDungeonCorridor");
+			MapGenStructureIO.registerStructureComponent(RoomEmptyEden.class, "EdenDungeonEmptyRoom");
+			MapGenStructureIO.registerStructureComponent(RoomBossEden.class, "EdenDungeonBossRoom");
+			MapGenStructureIO.registerStructureComponent(RoomTreasureEden.class, "EdenDungeonTreasureRoom");
+			MapGenStructureIO.registerStructureComponent(RoomSpawnerEden.class, "EdenDungeonSpawnerRoom");
+			MapGenStructureIO.registerStructureComponent(RoomChestEden.class, "EdenDungeonChestRoom");
+			MapGenStructureIO.registerStructureComponent(RoomEntranceEden.class, "EdenDungeonEntranceRoom");
 		}
 		
-		MapGenDungeonZG.initialized = true;
+		MapGenDungeonEden.initialized = true;
 	}
 	
 	@Override
 	public String getStructureName() {
-		return "ZG_Dungeon";
+		return "Eden_Dungeon";
 	}
 	
 	@Override
@@ -130,7 +130,7 @@ public class MapGenDungeonZG extends MapGenStructure {
 	
 	@Override
 	protected StructureStart getStructureStart(int chunkX, int chunkZ) {
-		return new MapGenDungeonZG.Start(this.world, this.rand, chunkX, chunkZ, this.configuration);
+		return new MapGenDungeonEden.Start(this.world, this.rand, chunkX, chunkZ, this.configuration);
 	}
 	
 	@Override
@@ -140,16 +140,16 @@ public class MapGenDungeonZG extends MapGenStructure {
 	
 	public static class Start extends StructureStart {
 		
-		private DungeonConfigurationZG configuration;
-		DungeonStartZG startPiece;
+		private DungeonConfigurationEden configuration;
+		DungeonStartEden startPiece;
 		
 		public Start() {
 		}
 		
-		public Start(World worldIn, Random rand, int chunkX, int chunkZ, DungeonConfigurationZG configuration) {
+		public Start(World worldIn, Random rand, int chunkX, int chunkZ, DungeonConfigurationEden configuration) {
 			super(chunkX, chunkZ);
 			this.configuration = configuration;
-			startPiece = new DungeonStartZG(worldIn, configuration, rand, (chunkX << 4) + 2, (chunkZ << 4) + 2);
+			startPiece = new DungeonStartEden(worldIn, configuration, rand, (chunkX << 4) + 2, (chunkZ << 4) + 2);
 			startPiece.buildComponent(startPiece, this.components, rand);
 			List<StructureComponent> list = startPiece.attachedComponents;
 			
@@ -165,7 +165,7 @@ public class MapGenDungeonZG extends MapGenStructure {
 	
 	public static void main(String args[]) {
 		Random rand = new Random();
-		Start start = new Start(null, rand, 0, 0, new DungeonConfigurationZG(null, 25, 8, 16, 5, 6, RoomBossZG.class, RoomTreasureZG.class, null, null, null, null, null, null));
+		Start start = new Start(null, rand, 0, 0, new DungeonConfigurationEden(null, 25, 8, 16, 5, 6, RoomBossEden.class, RoomTreasureEden.class));
 		
 		EventQueue.invokeLater(() -> {
 			try {

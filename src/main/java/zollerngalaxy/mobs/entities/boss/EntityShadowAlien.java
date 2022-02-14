@@ -239,5 +239,4 @@ public class EntityShadowAlien extends EntityMob implements IShadeEntity {
 		super.onUpdate();
 		this.bossInfo.setPercent(this.getHealth() / this.getMaxHealth());
 	}
-	
 }

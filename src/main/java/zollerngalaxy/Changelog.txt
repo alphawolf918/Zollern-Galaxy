@@ -18,6 +18,7 @@ Zollern Galaxy v2.0.39
 * Added Batte Tower spawns to Eden.
 * Added a GC Boss Dungeon to Eden.
 * Added the Crawler boss mob.
+* Added the Kree mob.
 * 
 
 [CHANGES]
@@ -36,6 +37,7 @@ Zollern Galaxy v2.0.39
 * Modified crater gen config option for Tlaloc to be for all planets.
 * Changed Xenomorph Queen's boss health bar color to purple.
 * Reworked Crystal Towers entirely.
+* Created placeholders for all planned future planets.
 * 
 
 [FIXES]

@@ -28,15 +28,14 @@ import net.minecraft.world.gen.structure.MapGenMineshaft;
 import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.biomes.decorators.BiomeDecoratorEden;
 import zollerngalaxy.blocks.ZGBlocks;
-import zollerngalaxy.core.ZGLootTables;
 import zollerngalaxy.lib.ZGInfo;
 import zollerngalaxy.util.BiomeUtils;
 import zollerngalaxy.worldgen.mapgen.MapGenCavesZG;
 import zollerngalaxy.worldgen.mapgen.MapGenRavinesZG;
-import zollerngalaxy.worldgen.structures.dungeons.DungeonConfigurationZG;
-import zollerngalaxy.worldgen.structures.dungeons.MapGenDungeonZG;
-import zollerngalaxy.worldgen.structures.dungeons.RoomBossZG;
-import zollerngalaxy.worldgen.structures.dungeons.RoomTreasureZG;
+import zollerngalaxy.worldgen.structures.dungeons.eden.DungeonConfigurationEden;
+import zollerngalaxy.worldgen.structures.dungeons.eden.MapGenDungeonEden;
+import zollerngalaxy.worldgen.structures.dungeons.eden.RoomBossEden;
+import zollerngalaxy.worldgen.structures.dungeons.eden.RoomTreasureEden;
 import zollerngalaxy.worldgen.structures.villages.MapGenVillageZG;
 
 public class ChunkProviderEden extends ChunkProviderBase {
@@ -81,20 +80,15 @@ public class ChunkProviderEden extends ChunkProviderBase {
 	private static final int CRATER_PROB = 50;
 	
 	private final IBlockState dungeonBricks = ZGBlocks.edenDungeonBricks.getDefaultState();
-	private final Class<?> roomBoss = RoomBossZG.class;
-	private final Class<?> roomTreasure = RoomTreasureZG.class;
+	private final Class<?> roomBoss = RoomBossEden.class;
+	private final Class<?> roomTreasure = RoomTreasureEden.class;
 	private final int a = 25;
 	private final int b = 8;
 	private final int c = 16;
 	private final int d = 5;
 	private final int e = 6;
-	private final ResourceLocation lootTable = ZGLootTables.CHEST_DUNGEON_TIER4_DEFAULT;
-	private final ResourceLocation dungeonChest = new ResourceLocation(ZGInfo.MOD_ID, "chests/dungeonchest_t4a");
-	private final IBlockState chestState = ZGBlocks.treasureChestT4.getDefaultState();
-	private final IBlockState spawnerState = ZGBlocks.EDEN_SPAWNER.getDefaultState();
-	private final IBlockState fluidState = Blocks.LAVA.getDefaultState();
-	private final DungeonConfigurationZG dungeonConfigurator = new DungeonConfigurationZG(this.dungeonBricks, a, b, c, d, e, roomBoss, roomTreasure, lootTable, dungeonChest, chestState, spawnerState, fluidState, getMob(new Random()));
-	private final MapGenDungeonZG dungeonGeneratorZG = new MapGenDungeonZG(this.dungeonConfigurator);
+	private final DungeonConfigurationEden dungeonConfigurator = new DungeonConfigurationEden(this.dungeonBricks, a, b, c, d, e, roomBoss, roomTreasure);
+	private final MapGenDungeonEden dungeonGeneratorZG = new MapGenDungeonEden(this.dungeonConfigurator);
 	
 	public ChunkProviderEden(World worldIn, long seed, boolean mapFeaturesEnabled) {
 		this.world = worldIn;
