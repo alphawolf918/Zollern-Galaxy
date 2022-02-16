@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "zollerngalaxy:vibraniumblock"
+    }
+  ],
+  "result": {
+    "item": "zollerngalaxy:vibraniumingot",
+    "count": 9
+  }
+}

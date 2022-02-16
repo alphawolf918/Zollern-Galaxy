@@ -37,6 +37,7 @@ public class ZGLootTables {
 	public static final ResourceLocation CHEST_DUNGEON_TIER4_DEFAULT = CommonZGRegisterHelper.registerChestLoot("dungeonchest_t4b");
 	public static final ResourceLocation CHEST_DUNGEON_TIER10_DEFAULT = CommonZGRegisterHelper.registerChestLoot("dungeonchest_t1");
 	public static final ResourceLocation CHEST_BATTLE_TOWER = CommonZGRegisterHelper.registerChestLoot("battle_tower_chest");
+	public static final ResourceLocation CHEST_MOB_SPAWNER_EDEN = CommonZGRegisterHelper.registerChestLoot("mob_spawner_eden");
 	
 	// Gameplay
 	public static final ResourceLocation GAMEPLAY_FISHING = CommonZGRegisterHelper.registerGameplayLoot("zgfishing");

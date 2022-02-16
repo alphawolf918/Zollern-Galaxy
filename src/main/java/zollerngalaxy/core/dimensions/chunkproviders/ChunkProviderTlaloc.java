@@ -17,7 +17,6 @@ import net.minecraft.block.BlockFalling;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.init.Blocks;
-import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MathHelper;
@@ -35,15 +34,13 @@ import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.biomes.decorators.BiomeDecoratorTlaloc;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.blocks.fluids.ZGFluids;
-import zollerngalaxy.core.ZGLootTables;
-import zollerngalaxy.lib.ZGInfo;
 import zollerngalaxy.util.BiomeUtils;
 import zollerngalaxy.worldgen.mapgen.MapGenCavesZG;
 import zollerngalaxy.worldgen.mapgen.MapGenRavinesZG;
-import zollerngalaxy.worldgen.structures.dungeons.DungeonConfigurationZG;
-import zollerngalaxy.worldgen.structures.dungeons.MapGenDungeonZG;
-import zollerngalaxy.worldgen.structures.dungeons.RoomBossZG;
-import zollerngalaxy.worldgen.structures.dungeons.RoomTreasureZG;
+import zollerngalaxy.worldgen.structures.dungeons.tlaloc.DungeonConfigurationTlaloc;
+import zollerngalaxy.worldgen.structures.dungeons.tlaloc.MapGenDungeonTlaloc;
+import zollerngalaxy.worldgen.structures.dungeons.tlaloc.RoomBossTlaloc;
+import zollerngalaxy.worldgen.structures.dungeons.tlaloc.RoomTreasureTlaloc;
 import zollerngalaxy.worldgen.structures.villages.MapGenVillageZG;
 
 public class ChunkProviderTlaloc extends ChunkProviderBase {
@@ -87,20 +84,15 @@ public class ChunkProviderTlaloc extends ChunkProviderBase {
 	private static final int CRATER_PROB = 300;
 	
 	private final IBlockState dungeonBricks = ZGBlocks.tlalocDungeonBricks.getDefaultState();
-	private final Class<?> roomBoss = RoomBossZG.class;
-	private final Class<?> roomTreasure = RoomTreasureZG.class;
+	private final Class<?> roomBoss = RoomBossTlaloc.class;
+	private final Class<?> roomTreasure = RoomTreasureTlaloc.class;
 	private final int a = 25;
 	private final int b = 8;
 	private final int c = 16;
 	private final int d = 5;
 	private final int e = 6;
-	private final ResourceLocation lootTable = ZGLootTables.CHEST_DUNGEON_TIER10_DEFAULT;
-	private final ResourceLocation dungeonChest = new ResourceLocation(ZGInfo.MOD_ID, "chests/dungeonchest_t10");
-	private final IBlockState chestState = ZGBlocks.treasureChestT10.getDefaultState();
-	private final IBlockState spawnerState = ZGBlocks.TLALOC_SPAWNER.getDefaultState();
-	private final IBlockState fluidState = ZGFluids.blockWhiteLavaFluid.getDefaultState();
-	private final DungeonConfigurationZG dungeonConfigurator = new DungeonConfigurationZG(this.dungeonBricks, a, b, c, d, e, roomBoss, roomTreasure, lootTable, dungeonChest, chestState, spawnerState, fluidState, getMob(new Random()));
-	private final MapGenDungeonZG dungeonGeneratorZG = new MapGenDungeonZG(this.dungeonConfigurator);
+	private final DungeonConfigurationTlaloc dungeonConfigurator = new DungeonConfigurationTlaloc(this.dungeonBricks, a, b, c, d, e, roomBoss, roomTreasure);
+	private final MapGenDungeonTlaloc dungeonGeneratorZG = new MapGenDungeonTlaloc(this.dungeonConfigurator);
 	
 	public static ChunkProviderTlaloc INSTANCE;
 	
@@ -444,19 +436,5 @@ public class ChunkProviderTlaloc extends ChunkProviderBase {
 			this.villageGenerator.generate(this.world, x, z, null);
 		}
 		this.dungeonGeneratorZG.generate(this.world, x, z, null);
-	}
-	
-	private static ResourceLocation getMob(Random rand) {
-		String mobName = "vexbot";
-		switch (rand.nextInt(1)) {
-			default:
-			case 0:
-				mobName = "vexbot";
-				break;
-			case 1:
-				mobName = "vexbotgold";
-				break;
-		}
-		return new ResourceLocation(ZGInfo.MOD_ID, mobName);
 	}
 }

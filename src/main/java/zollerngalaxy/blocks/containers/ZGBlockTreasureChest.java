@@ -15,9 +15,8 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.blocks.ISingleZGBlockRender;
 import zollerngalaxy.creativetabs.ZGTabs;
-import zollerngalaxy.tileentities.TileEntityTier10TreasureChestZG;
 
-public class ZGBlockTreasureChest extends BlockTier1TreasureChest implements ISingleZGBlockRender {
+public abstract class ZGBlockTreasureChest extends BlockTier1TreasureChest implements ISingleZGBlockRender {
 	
 	protected static String blockName;
 	
@@ -44,7 +43,6 @@ public class ZGBlockTreasureChest extends BlockTier1TreasureChest implements ISi
 	}
 	
 	@Override
-	public TileEntity createNewTileEntity(World worldIn, int meta) {
-		return new TileEntityTier10TreasureChestZG();
-	}
+	public abstract TileEntity createNewTileEntity(World worldIn, int meta);
+	
 }

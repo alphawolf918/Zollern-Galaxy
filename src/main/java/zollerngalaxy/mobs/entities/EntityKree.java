@@ -16,7 +16,6 @@ import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIBreakDoor;
-import net.minecraft.entity.ai.EntityAILeapAtTarget;
 import net.minecraft.entity.ai.EntityAIMoveThroughVillage;
 import net.minecraft.entity.ai.EntityAIMoveTowardsRestriction;
 import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
@@ -44,12 +43,13 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.items.ZGItems;
+import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.mobs.entities.ai.EntityAIKreeAttack;
 import zollerngalaxy.mobs.entities.base.EntityZGVillagerBase;
 
 public class EntityKree extends EntityMob implements IEntityBreathable {
 	
-	protected static final DataParameter<Boolean> ARMS_RAISED = EntityDataManager.<Boolean> createKey(EntityXenomorph.class, DataSerializers.BOOLEAN);
+	protected static final DataParameter<Boolean> ARMS_RAISED = EntityDataManager.<Boolean> createKey(EntityKree.class, DataSerializers.BOOLEAN);
 	protected final EntityAIBreakDoor breakDoor = new EntityAIBreakDoor(this);
 	protected boolean isBreakDoorsTaskSet;
 	
@@ -65,15 +65,14 @@ public class EntityKree extends EntityMob implements IEntityBreathable {
 	@Override
 	protected void initEntityAI() {
 		this.tasks.addTask(1, new EntityAISwimming(this));
-		this.tasks.addTask(2, new EntityAILeapAtTarget(this, 1.4F));
-		this.tasks.addTask(3, new EntityAIKreeAttack(this, 1.4F, true));
-		this.tasks.addTask(4, new EntityAIMoveTowardsRestriction(this, 1.8F));
-		this.tasks.addTask(5, new EntityAIWanderAvoidWater(this, 1.4F));
+		this.tasks.addTask(2, new EntityAIKreeAttack(this, 1.4F, true));
+		this.tasks.addTask(3, new EntityAIMoveTowardsRestriction(this, 1.8F));
+		this.tasks.addTask(4, new EntityAIWanderAvoidWater(this, 1.4F));
 		this.applyEntityAI();
 	}
 	
 	protected void applyEntityAI() {
-		this.tasks.addTask(6, new EntityAIMoveThroughVillage(this, 1.8F, false));
+		this.tasks.addTask(5, new EntityAIMoveThroughVillage(this, 1.8F, false));
 		this.targetTasks.addTask(1, new EntityAINearestAttackableTarget(this, EntityPlayer.class, true));
 		this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityZGVillagerBase.class, true));
 		this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityAlienVillager.class, true));
@@ -82,23 +81,26 @@ public class EntityKree extends EntityMob implements IEntityBreathable {
 		this.targetTasks.addTask(6, new EntityAINearestAttackableTarget(this, EntityCreeper.class, true));
 		this.targetTasks.addTask(7, new EntityAINearestAttackableTarget(this, EntityEnderman.class, true));
 		this.targetTasks.addTask(8, new EntityAINearestAttackableTarget(this, EntityAgeable.class, true));
+		this.targetTasks.addTask(9, new EntityAINearestAttackableTarget(this, EntityFacehugger.class, true));
+		this.targetTasks.addTask(10, new EntityAINearestAttackableTarget(this, EntityXenomorph.class, true));
 	}
 	
 	@Override
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(60.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(80.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(20.0D);
-		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.28257213517232513D);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(8.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.28557213517232513D);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(8.2D);
 		this.getEntityAttribute(SharedMonsterAttributes.ARMOR).setBaseValue(20.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.ARMOR_TOUGHNESS).setBaseValue(10.0D);
 	}
 	
 	@Override
 	protected void setEquipmentBasedOnDifficulty(DifficultyInstance difficulty) {
 		super.setEquipmentBasedOnDifficulty(difficulty);
 		
-		if (this.rand.nextFloat() < (this.world.getDifficulty() == EnumDifficulty.HARD ? 0.05F : 0.01F)) {
+		if (ZGHelper.rngFloat(0.4F, 1.0F) < (this.world.getDifficulty() == EnumDifficulty.HARD ? 0.5F : 1.0F)) {
 			int i = this.rand.nextInt(3);
 			
 			if (i == 0) {
@@ -203,7 +205,7 @@ public class EntityKree extends EntityMob implements IEntityBreathable {
 	
 	@Override
 	public float getBrightness() {
-		return 4.0F;
+		return 5.0F;
 	}
 	
 	@Override
@@ -226,8 +228,12 @@ public class EntityKree extends EntityMob implements IEntityBreathable {
 	}
 	
 	@Override
-	public boolean canBreath() {
+	public boolean isValidLightLevel() {
 		return true;
 	}
 	
+	@Override
+	public boolean canBreath() {
+		return true;
+	}
 }

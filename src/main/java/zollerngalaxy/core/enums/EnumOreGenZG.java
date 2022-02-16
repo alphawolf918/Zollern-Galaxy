@@ -63,6 +63,7 @@ public enum EnumOreGenZG {
 	ZANIUM(13, 2, 0, 64),
 	RADITE(8, 4, 0, 34),
 	ZOGITE(8, 4, 0, 24),
+	VIBRANIUM(10, 5, 0, 62),
 	ZINC(20, 4, 0, 26),
 	SPECIAL_STONE(25, 15, 0, 32),
 	PRISMARINE(20, 20, 0, 74),

@@ -563,6 +563,19 @@ tile.azuriteore.name=Azurite Ore
 tile.raditeore.name=Radite Ore
 tile.zogiteore.name=Zogite Ore
 
+tile.mavethstone.name=Maveth Stone
+tile.mavethstonebricks.name=Maveth Stone Bricks
+tile.mavethsand.name=Maveth Sand
+tile.mavethgravel.name=Maveth Gravel
+tile.mavethrock.name=Maveth Rock
+tile.mavethcobblestone.name=Maveth Cobblestone
+tile.mavethironore.name=Maveth Iron Ore
+tile.mavethelectrumore.name=Maveth Electrum Ore
+tile.mavethvibraniumore.name=Maveth Vibranium Ore
+tile.mavethamaranthore.name=Maveth Amaranth Ore
+tile.mavethzollerniumore.name=Maveth Zollernium Ore
+tile.vibraniumblock.name=Block of Vibranium
+
 tile.mudclayblock.name=Mud Clay
 tile.endrock.name=Endrock
 
@@ -809,6 +822,9 @@ item.radiumingot.name=Radium Ingot
 item.obsidianingot.name=Obsidian Ingot
 item.obsidiandust.name=Obsidian Dust
 
+item.vibraniumdust.name=Vibranium Dust
+item.vibraniumingot.name=Vibranium Ingot
+
 item.rokkite.name=Rokkite
 item.amber.name=Amber
 item.topaz.name=Topaz
@@ -973,6 +989,12 @@ item.zogite_hoe.name=Zogite Hoe
 
 item.zogradite_scyte.name=Zogradite Scythe
 
+item.vibranium_pickaxe.name=Vibranium Pickaxe
+item.vibranium_sword.name=Vibranium Sword
+item.vibranium_shovel.name=Vibranium Shovel
+item.vibranium_axe.name=Vibranium Axe
+item.vibranium_hoe.name=Vibranium Hoe
+
 item.woodhelmet.name=Wooden Helmet
 item.woodchestplate.name=Wooden Chestplate
 item.woodleggings.name=Wooden Leggings
@@ -1028,6 +1050,11 @@ item.zogitechestplate.name=Zogite Chestplate
 item.zogiteleggings.name=Zogite Leggings
 item.zogiteboots.name=Zogite Boots
 
+item.vibraniumhelmet.name=Vibranium Helmet
+item.vibraniumchestplate.name=Vibranium Chestplate
+item.vibraniumleggings.name=Vibranium Leggings
+item.vibraniumboots.name=Vibranium Boots
+
 item.heart.name=Healing Heart
 item.heartforce.name=Max Heartforce
 item.alcohol.name=Alcohol
@@ -1038,6 +1065,10 @@ item.nailgroup.name=Nail Group
 item.woodbox.name=Wooden Box
 item.metalparts.name=Metal Parts
 item.mudclayball.name=Mud Clay Ball
+
+item.kreeflesh.name=Kree Flesh
+item.vibraniumingot.name=Vibranium Ingot
+item.vibraniumdust.name=Vibranium Dust
 
 item.copper_tunneler.name=Copper Cave Tunneler
 item.gold_tunneler.name=Gold Cave Tunneler

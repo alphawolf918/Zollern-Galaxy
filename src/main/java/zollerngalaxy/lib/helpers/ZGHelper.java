@@ -513,7 +513,7 @@ public final class ZGHelper {
 	public static ResourceLocation getRandomMob(Random rand) {
 		String mobName = "evolved_zombie";
 		String modId = Constants.MOD_ID_CORE;
-		switch (rand.nextInt(16)) {
+		switch (rand.nextInt(17)) {
 			default:
 				mobName = "evolved_zombie";
 				modId = Constants.MOD_ID_CORE;
@@ -584,6 +584,10 @@ public final class ZGHelper {
 				break;
 			case 16:
 				mobName = "bloodworm";
+				modId = ZGInfo.MOD_ID;
+				break;
+			case 17:
+				mobName = "kree";
 				modId = ZGInfo.MOD_ID;
 				break;
 		}

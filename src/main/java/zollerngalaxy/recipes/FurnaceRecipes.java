@@ -179,6 +179,13 @@ public class FurnaceRecipes {
 		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.netherRaditeOre, ZGItems.ingotRadite, 8.6F);
 		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.netherZogiteOre, ZGItems.ingotZogite, 8.6F);
 		
+		// Maveth
+		FurnaceRecipes.SmeltBlock(ZGBlocks.mavethCobblestone, ZGBlocks.mavethStone, 1.5F);
+		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.mavethIronOre, Items.IRON_INGOT, 5.9F);
+		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.mavethAmaranthOre, ZGItems.ingotAmaranth, 5.9F);
+		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.mavethZollerniumOre, ZGItems.ingotZollernium, 5.9F);
+		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.mavethVibraniumOre, ZGItems.ingotVibranium, 5.9F);
+		
 		// Dust -> Ingots/Gems
 		FurnaceRecipes.SmeltItem(ZGItems.dustDiamond, Items.DIAMOND, 2.6F);
 		FurnaceRecipes.SmeltItem(ZGItems.dustEmerald, Items.EMERALD, 3.2F);
@@ -196,6 +203,7 @@ public class FurnaceRecipes {
 		FurnaceRecipes.SmeltItem(ZGItems.perdEtrium, ZGItems.ingotEtrium, 5.6F);
 		FurnaceRecipes.SmeltItem(ZGItems.dustPlutonium, ZGItems.ingotPlutonium, 8.4F);
 		FurnaceRecipes.SmeltItem(ZGItems.dustObsidian, ZGItems.ingotObsidian, 9.6F);
+		FurnaceRecipes.SmeltItem(ZGItems.dustVibranium, ZGItems.ingotVibranium, 10.82F);
 		
 		// Lapis Dust -> Lapis Ingot
 		FurnaceRecipes.SmeltItem(new ItemStack(Items.DYE, 1, 4), new ItemStack(ZGItems.ingotLapis, 1), 1.0F);

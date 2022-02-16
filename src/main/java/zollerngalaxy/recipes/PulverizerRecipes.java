@@ -81,6 +81,7 @@ public class PulverizerRecipes {
 		PulverizerRecipes.addRecipe(ZGBlocks.centoIronOre, TFItems.itemMaterial.dustIron);
 		PulverizerRecipes.addRecipe(ZGBlocks.tociIronOre, TFItems.itemMaterial.dustIron);
 		PulverizerRecipes.addRecipe(ZGBlocks.netherIronOre, TFItems.itemMaterial.dustIron);
+		PulverizerRecipes.addRecipe(ZGBlocks.mavethIronOre, TFItems.itemMaterial.dustIron);
 		
 		// Gold
 		PulverizerRecipes.addRecipe(ZGBlocks.zolGoldOre, TFItems.itemMaterial.dustGold, 1);
@@ -125,6 +126,7 @@ public class PulverizerRecipes {
 		
 		// Electrum
 		PulverizerRecipes.addRecipe(ZGBlocks.edenElectrumOre, TFItems.itemMaterial.dustElectrum, 97);
+		PulverizerRecipes.addRecipe(ZGBlocks.mavethElectrumOre, TFItems.itemMaterial.dustElectrum, 97);
 		
 		// Invar
 		PulverizerRecipes.addRecipe(ZGBlocks.edenInvarOre, TFItems.itemMaterial.dustInvar, 98);
@@ -152,6 +154,7 @@ public class PulverizerRecipes {
 		PulverizerRecipes.addRecipe(ZGBlocks.tociAmaranthOre, ZGItems.dustAmaranth);
 		PulverizerRecipes.addRecipe(ZGBlocks.harranAmaranthOre, ZGItems.dustAmaranth);
 		PulverizerRecipes.addRecipe(ZGBlocks.netherAmaranthOre, ZGItems.dustAmaranth);
+		PulverizerRecipes.addRecipe(ZGBlocks.mavethAmaranthOre, ZGItems.dustAmaranth);
 		
 		// Zollernium
 		PulverizerRecipes.addRecipe(ZGBlocks.atheonZollerniumOre, ZGItems.dustZollernium);
@@ -160,6 +163,7 @@ public class PulverizerRecipes {
 		PulverizerRecipes.addRecipe(ZGBlocks.astrosZollerniumOre, ZGItems.dustZollernium);
 		PulverizerRecipes.addRecipe(ZGBlocks.centoZollerniumOre, ZGItems.dustZollernium);
 		PulverizerRecipes.addRecipe(ZGBlocks.tlalocZollerniumOre, ZGItems.dustZollernium);
+		PulverizerRecipes.addRecipe(ZGBlocks.mavethZollerniumOre, ZGItems.dustZollernium);
 		
 		// Zinc
 		PulverizerRecipes.addRecipe(ZGBlocks.atheonZincOre, ZGItems.dustZinc);
@@ -197,6 +201,9 @@ public class PulverizerRecipes {
 		
 		// Zogite
 		PulverizerRecipes.addRecipe(ZGBlocks.netherZogiteOre, ZGItems.dustZogite);
+		
+		// Vibranium
+		PulverizerRecipes.addRecipe(ZGBlocks.mavethVibraniumOre, ZGItems.dustVibranium);
 		
 		// Wheat -> Flour
 		ThermalExpansionHelper.addPulverizerRecipe(400, new ItemStack(Items.WHEAT), new ItemStack(ZGItems.flour, 2));

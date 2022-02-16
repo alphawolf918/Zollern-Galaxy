@@ -82,6 +82,7 @@ import zollerngalaxy.mobs.entities.EntityBlubberFish;
 import zollerngalaxy.mobs.entities.EntityEdenCow;
 import zollerngalaxy.mobs.entities.EntityGalaxyKnight;
 import zollerngalaxy.mobs.entities.EntityGrayAlien;
+import zollerngalaxy.mobs.entities.EntityKree;
 import zollerngalaxy.mobs.entities.EntityMegaCreeper;
 import zollerngalaxy.mobs.entities.EntityMummy;
 import zollerngalaxy.mobs.entities.EntityOinkus;
@@ -560,6 +561,15 @@ public class ZGEvents {
 			if (ZGHelper.getRNGChance(5, 10)) {
 				for (int i = 0; i < ZGHelper.rngInt(1, 2); i++) {
 					ZGHelper.dropItem(ZGItems.ingotZinc, worldObj, theEntity);
+				}
+			}
+		}
+		
+		// Kree
+		if (theEntity instanceof EntityKree) {
+			if (ZGHelper.getRNGChance(1, 2)) {
+				for (int i = 0; i < ZGHelper.rngInt(1, 2); i++) {
+					ZGHelper.dropItem(ZGItems.kreeFlesh, worldObj, theEntity);
 				}
 			}
 		}

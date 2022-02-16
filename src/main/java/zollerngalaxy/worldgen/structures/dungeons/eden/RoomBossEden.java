@@ -17,7 +17,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.gen.structure.StructureBoundingBox;
 import net.minecraft.world.gen.structure.template.TemplateManager;
 import zollerngalaxy.blocks.ZGBlocks;
-import zollerngalaxy.tileentities.TileEntityDungeonSpawnerZG;
+import zollerngalaxy.tileentities.dungeons.TileEntityDungeonSpawnerEden;
 
 public class RoomBossEden extends SizedPieceEden {
 	
@@ -96,7 +96,7 @@ public class RoomBossEden extends SizedPieceEden {
 		// Is this position inside the chunk currently being generated?
 		if (chunkBox.isVecInside(blockpos)) {
 			worldIn.setBlockState(blockpos, ZGBlocks.EDEN_SPAWNER.getDefaultState(), 2);
-			TileEntityDungeonSpawnerZG spawner = (TileEntityDungeonSpawnerZG) worldIn.getTileEntity(blockpos);
+			TileEntityDungeonSpawnerEden spawner = (TileEntityDungeonSpawnerEden) worldIn.getTileEntity(blockpos);
 			if (spawner != null) {
 				spawner.setRoom(new Vector3(this.boundingBox.minX + 1, this.boundingBox.minY + 1, this.boundingBox.minZ + 1), new Vector3(this.sizeX - 1, this.sizeY - 1, this.sizeZ - 1));
 				spawner.setChestPos(this.chestPos);

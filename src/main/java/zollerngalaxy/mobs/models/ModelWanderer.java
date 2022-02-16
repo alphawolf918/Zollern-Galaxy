@@ -19,7 +19,7 @@ public class ModelWanderer extends ModelBiped {
 		this(modelSize, 0.0F, 64, 32);
 	}
 	
-	public ModelWanderer(float modelSize, float p_i1149_2_, int textureWidthIn, int textureHeightIn) {
-		super(modelSize, p_i1149_2_, textureWidthIn, textureHeightIn);
+	public ModelWanderer(float modelSize, float isChild, int textureWidthIn, int textureHeightIn) {
+		super(modelSize, isChild, textureWidthIn, textureHeightIn);
 	}
 }

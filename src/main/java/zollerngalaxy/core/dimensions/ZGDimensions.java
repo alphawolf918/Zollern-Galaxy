@@ -117,6 +117,8 @@ public class ZGDimensions {
 	public static DimensionType KRONOS_ORBIT;
 	public static DimensionType KRONOS_ORBIT_STATIC;
 	
+	public static DimensionType MAVETH;
+	
 	public static void init() {
 		// Psion-6 (Zollus)
 		ZGDimensions.ZOLLUS = ZGDimensions.getDimType(ConfigManagerZG.planetZollusDimensionId);
@@ -215,6 +217,18 @@ public class ZGDimensions {
 		ZGDimensions.KRONOS = ZGDimensions.getDimType(ConfigManagerZG.planetKronosDimensionId);
 		ZGDimensions.KRONOS_ORBIT = DimensionType.register("Kronos Space Station", "_kronos_orbit", ConfigManagerZG.spaceStationKronosId, WorldProviderOrbitKronos.class, false);
 		ZGDimensions.KRONOS_ORBIT_STATIC = DimensionType.register("Kronos Space Station", "_kronos_orbit", ConfigManagerZG.spaceStationKronosStaticId, WorldProviderOrbitKronos.class, true);
+		
+		//
+		// TODO
+		
+		// TODO
+		
+		// TODO
+		
+		// TODO
+		
+		// Asgard (Maveth)
+		ZGDimensions.MAVETH = ZGDimensions.getDimType(ConfigManagerZG.planetMavethDimensionId);
 	}
 	
 	public static DimensionType getDimType(int dimId) {
@@ -263,6 +277,8 @@ public class ZGDimensions {
 			body = ZGPlanets.planetTlaloc;
 		} else if (dimID == ConfigManagerZG.planetKronosDimensionId) {
 			body = ZGPlanets.planetKronos;
+		} else if (dimID == ConfigManagerZG.planetMavethDimensionId) {
+			body = ZGPlanets.planetMaveth;
 		}
 		
 		if (body == null) {

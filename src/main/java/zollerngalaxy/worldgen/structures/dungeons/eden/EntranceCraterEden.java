@@ -20,7 +20,7 @@ import net.minecraft.world.gen.structure.StructureBoundingBox;
 
 public class EntranceCraterEden extends SizedPieceEden {
 	
-	private final int range = 32;
+	private final int range = 16;
 	
 	public EntranceCraterEden() {
 	}

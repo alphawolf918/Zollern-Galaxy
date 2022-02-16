@@ -20,6 +20,7 @@ import static net.minecraftforge.common.BiomeDictionary.Type.MOUNTAIN;
 import static net.minecraftforge.common.BiomeDictionary.Type.NETHER;
 import static net.minecraftforge.common.BiomeDictionary.Type.OCEAN;
 import static net.minecraftforge.common.BiomeDictionary.Type.PLAINS;
+import static net.minecraftforge.common.BiomeDictionary.Type.SANDY;
 import static net.minecraftforge.common.BiomeDictionary.Type.SNOWY;
 import static net.minecraftforge.common.BiomeDictionary.Type.SPOOKY;
 import static net.minecraftforge.common.BiomeDictionary.Type.SWAMP;
@@ -81,6 +82,7 @@ import zollerngalaxy.biomes.kronos.BiomeKronosDeathValley;
 import zollerngalaxy.biomes.kronos.BiomeKronosLavaOcean;
 import zollerngalaxy.biomes.kronos.BiomeKronosMagmaSlimelands;
 import zollerngalaxy.biomes.kronos.BiomeKronosSoulDesert;
+import zollerngalaxy.biomes.maveth.BiomeMaveth;
 import zollerngalaxy.biomes.metztli.BiomeHarranClayMesa;
 import zollerngalaxy.biomes.metztli.BiomeHarranDunes;
 import zollerngalaxy.biomes.metztli.BiomeHarranForest;
@@ -267,6 +269,9 @@ public class ZGBiomes {
 	public static final Biome KRONOS_LAVA_OCEAN = new BiomeKronosLavaOcean(new BiomeProperties("Kronos Lava Ocean"));
 	public static final Biome KRONOS_MAGMA_SLIMELANDS = new BiomeKronosMagmaSlimelands(new BiomeProperties("Kronos Magma Slimelands"));
 	
+	// Maveth
+	public static final Biome MAVETH_BASE = new BiomeMaveth(new BiomeProperties("Maveth"));
+	
 	public static void init() {
 		// Zollus
 		ZGBiomes.addBiome(ZGBiomes.ZOLLUS, COLD, DEAD, DRY);
@@ -402,6 +407,9 @@ public class ZGBiomes {
 		ZGBiomes.addBiome(ZGBiomes.KRONOS_BLAZING_HILLS, NETHER, HOT, DEAD, DRY, SPOOKY, WASTELAND);
 		ZGBiomes.addBiome(ZGBiomes.KRONOS_LAVA_OCEAN, NETHER, HOT, DEAD, DRY, SPOOKY, WASTELAND, OCEAN);
 		ZGBiomes.addBiome(ZGBiomes.KRONOS_MAGMA_SLIMELANDS, NETHER, HOT, DEAD, DRY, SPOOKY, WASTELAND);
+		
+		// Maveth
+		ZGBiomes.addBiome(ZGBiomes.MAVETH_BASE, MOUNTAIN, SANDY, COLD, DEAD, SPOOKY);
 		
 		ZGHelper.Log("Loaded a total of " + totalBiomes + " new biomes.");
 	}

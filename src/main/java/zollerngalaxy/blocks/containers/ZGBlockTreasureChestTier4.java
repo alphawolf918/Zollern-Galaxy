@@ -13,8 +13,8 @@ import zollerngalaxy.tileentities.TileEntityTier4TreasureChestZG;
 
 public class ZGBlockTreasureChestTier4 extends ZGBlockTreasureChest {
 	
-	public ZGBlockTreasureChestTier4(String assetName) {
-		super(assetName);
+	public ZGBlockTreasureChestTier4() {
+		super("treasure_chest_eden");
 	}
 	
 	@Override

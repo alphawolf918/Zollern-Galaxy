@@ -134,6 +134,9 @@ public class ConfigManagerZG {
 	public static int spaceStationKronosId;
 	public static int spaceStationKronosStaticId;
 	
+	public static int spaceStationMavethId;
+	public static int spaceStationMavethStaticId;
+	
 	// Misc
 	public static boolean canEarthAnimalsSpawnOnEden;
 	public static boolean disableStarGates;
@@ -209,6 +212,7 @@ public class ConfigManagerZG {
 	public static double meteorGenToci;
 	public static double meteorGenTlaloc;
 	public static double meteorGenKronos;
+	public static double meteorGenMaveth;
 	////////////////////////////////////////////////
 	
 	// Set as unreachable with rockets by planet
@@ -231,6 +235,7 @@ public class ConfigManagerZG {
 	public static boolean planetUnreachableToci;
 	public static boolean planetUnreachableTlaloc;
 	public static boolean planetUnreachableKronos;
+	public static boolean planetUnreachableMaveth;
 	////////////////////////////////////////////////
 	
 	// Max Health Customization
@@ -308,6 +313,11 @@ public class ConfigManagerZG {
 	
 	// Planet Tiers (Olympus)
 	public static int planetKronosTier;
+	// TODO
+	
+	// Planet Tiers (Asgard)
+	public static int planetMavethTier;
+	// TODO
 	
 	public static void init(FMLPreInitializationEvent event) {
 		config = new Configuration(new File(event.getModConfigurationDirectory().getAbsolutePath() + "/ZollernGalaxy/core.cfg"));
@@ -449,6 +459,10 @@ public class ConfigManagerZG {
 		spaceStationKronosId = config.get(CTG_SATS, "Kronos Space Station ID", -6036, "Dimension ID for Kronos Space Station. (default: -6036)").getInt();
 		spaceStationKronosStaticId = config.get(CTG_SATS, "Kronos Space Station Static ID", -6037, "Dimension static ID for Kronos Space Station. (default: -6037)").getInt();
 		
+		// Maveth
+		spaceStationMavethId = config.get(CTG_SATS, "Maveth Space Station ID", -6038, "Dimension ID for Maveth Space Station. (default: -6038)").getInt();
+		spaceStationMavethStaticId = config.get(CTG_SATS, "Maveth Space Station Static ID", -6039, "Dimension static ID for Maveth Space Station. (default: -6039)").getInt();
+		
 		// Misc (Can Earth animals spawn on Eden?)
 		canEarthAnimalsSpawnOnEden = config.get(CTG_MISC, "Earth Animals Spawn On Eden", true, "Should Earth animals spawn on Eden? (default: true)").getBoolean();
 		
@@ -573,6 +587,7 @@ public class ConfigManagerZG {
 		meteorGenToci = config.get(CTG_CUSTOMS, "Meteor Gen Toci", 30, "Percentage chance for meteors to fall. (default: 30)").getInt();
 		meteorGenTlaloc = config.get(CTG_CUSTOMS, "Meteor Gen Tlaloc", 0, "Percentage chance for meteors to fall. (default: 0)").getInt();
 		meteorGenKronos = config.get(CTG_CUSTOMS, "Meteor Gen Kronos", 0, "Percentage chance co meteors to fall. (default: 0)").getInt();
+		meteorGenMaveth = config.get(CTG_CUSTOMS, "Meteor Gen Maveth", 1, "Percentage chance co meteors to fall. (default: 1)").getInt();
 		//
 		//
 		
@@ -602,6 +617,7 @@ public class ConfigManagerZG {
 		planetUnreachableToci = config.get(CTG_CUSTOMS, "Disable Rockets For Planet Toci", false, "Disable rocket travel for this planet. (default: false)").getBoolean();
 		planetUnreachableTlaloc = config.get(CTG_CUSTOMS, "Disable Rockets For Planet Tlaloc", false, "Disable rocket travel for this planet. (default: false)").getBoolean();
 		planetUnreachableKronos = config.get(CTG_CUSTOMS, "Disable Rockets For Planet Kronos", false, "Disable rocket travel for this planet. (default: false)").getBoolean();
+		planetUnreachableMaveth = config.get(CTG_CUSTOMS, "Disable Rockets For Planet Maveth", false, "Disable rocket travel for this planet. (default: false)").getBoolean();
 		
 		//
 		maxHealthAllowed = config.get(CTG_CUSTOMS, "Max Health Allowed", 40, "The max health that Players are allowed to have. (default: 40)").getInt();
@@ -677,6 +693,10 @@ public class ConfigManagerZG {
 		
 		// Planet Tiers (Olympus)
 		planetKronosTier = config.get(CTG_TIERS, "Planet Kronos Tier", 3, "Kronos Planet Tier. (default: 3)").getInt();
+		// TODO
+		
+		// Planet Tiers (Asgard)
+		planetMavethTier = config.get(CTG_TIERS, "Planet Maveth Tier", 3, "Maveth Planet Tier. (default: 3)").getInt();
 		
 		config.save();
 	}

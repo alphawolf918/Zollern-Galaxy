@@ -9,8 +9,9 @@ package zollerngalaxy.mobs.renders;
 
 import org.lwjgl.opengl.GL11;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
+import net.minecraft.client.renderer.entity.RenderBiped;
 import net.minecraft.client.renderer.entity.RenderManager;
+import net.minecraft.client.renderer.entity.layers.LayerBipedArmor;
 import net.minecraft.client.renderer.entity.layers.LayerHeldItem;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.relauncher.Side;
@@ -20,15 +21,22 @@ import zollerngalaxy.mobs.entities.EntityKree;
 import zollerngalaxy.mobs.models.ModelKree;
 
 @SideOnly(Side.CLIENT)
-public class RenderKree extends RenderLiving<EntityKree> {
+public class RenderKree extends RenderBiped<EntityKree> {
 	
-	private static final float f6 = 1.2F;
+	private static final float f6 = 1.1F;
 	
 	private static final ResourceLocation KREE_TEXTURE = new ResourceLocation(ZGInfo.MOD_ID + ":textures/entity/kree.png");
 	
 	public RenderKree(RenderManager renderManagerIn) {
 		super(renderManagerIn, new ModelKree(), 0.5F);
 		this.addLayer(new LayerHeldItem(this));
+		this.addLayer(new LayerBipedArmor(this) {
+			@Override
+			protected void initArmor() {
+				this.modelLeggings = new ModelKree(0.5F);
+				this.modelArmor = new ModelKree(1.0F);
+			}
+		});
 	}
 	
 	@Override

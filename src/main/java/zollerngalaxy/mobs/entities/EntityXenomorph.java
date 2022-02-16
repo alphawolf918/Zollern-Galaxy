@@ -84,16 +84,18 @@ public class EntityXenomorph extends EntityMob implements IShadeEntity, IEntityB
 		this.targetTasks.addTask(11, new EntityAINearestAttackableTarget(this, EntityCreeper.class, true));
 		this.targetTasks.addTask(12, new EntityAINearestAttackableTarget(this, EntityEnderman.class, true));
 		this.targetTasks.addTask(13, new EntityAINearestAttackableTarget(this, EntityAgeable.class, true));
+		this.targetTasks.addTask(14, new EntityAINearestAttackableTarget(this, EntityKree.class, true));
 	}
 	
 	@Override
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(85.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(120.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(35.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.34257213517232513D);
-		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(15.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(20.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.ARMOR).setBaseValue(20.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.ARMOR_TOUGHNESS).setBaseValue(10.0D);
 	}
 	
 	@Override

@@ -3,7 +3,6 @@ package zollerngalaxy.core.dimensions.chunkproviders;
 import java.util.List;
 import java.util.Random;
 import micdoodle8.mods.galacticraft.api.world.ChunkProviderBase;
-import micdoodle8.mods.galacticraft.core.Constants;
 import micdoodle8.mods.galacticraft.core.perlin.generator.Gradient;
 import micdoodle8.mods.galacticraft.core.util.ConfigManagerCore;
 import micdoodle8.mods.galacticraft.core.world.gen.EnumCraterSize;
@@ -11,7 +10,6 @@ import net.minecraft.block.BlockFalling;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.init.Blocks;
-import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MathHelper;
@@ -25,11 +23,14 @@ import net.minecraft.world.gen.NoiseGenerator;
 import net.minecraft.world.gen.NoiseGeneratorOctaves;
 import net.minecraft.world.gen.NoiseGeneratorPerlin;
 import net.minecraft.world.gen.structure.MapGenMineshaft;
+import net.minecraftforge.event.terraingen.PopulateChunkEvent;
+import net.minecraftforge.event.terraingen.TerrainGen;
 import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.biomes.decorators.BiomeDecoratorEden;
 import zollerngalaxy.blocks.ZGBlocks;
-import zollerngalaxy.lib.ZGInfo;
+import zollerngalaxy.core.ZGLootTables;
 import zollerngalaxy.util.BiomeUtils;
+import zollerngalaxy.worldgen.WorldGenMobDungeonsZG;
 import zollerngalaxy.worldgen.mapgen.MapGenCavesZG;
 import zollerngalaxy.worldgen.mapgen.MapGenRavinesZG;
 import zollerngalaxy.worldgen.structures.dungeons.eden.DungeonConfigurationEden;
@@ -406,6 +407,16 @@ public class ChunkProviderEden extends ChunkProviderBase {
 			this.villageGenerator.generateStructure(this.world, this.rand, new ChunkPos(x, z));
 		}
 		
+		// Dungeons
+		if (TerrainGen.populate(this, this.world, this.rand, x, z, false, PopulateChunkEvent.Populate.EventType.DUNGEON)) {
+			for (int j2 = 0; j2 < 8; ++j2) {
+				int i3 = this.rand.nextInt(16) + 8;
+				int l3 = this.rand.nextInt(128);
+				int l1 = this.rand.nextInt(16) + 8;
+				(new WorldGenMobDungeonsZG(ZGLootTables.CHEST_MOB_SPAWNER_EDEN, ZGBlocks.edenCobbleRock.getDefaultState())).generate(this.world, this.rand, blockpos.add(i3, l3, l1));
+			}
+		}
+		
 		this.mineshaftGenerator.generateStructure(this.world, this.rand, new ChunkPos(x, z));
 		this.dungeonGeneratorZG.generateStructure(this.world, this.rand, new ChunkPos(x, z));
 		
@@ -429,26 +440,5 @@ public class ChunkProviderEden extends ChunkProviderBase {
 			this.villageGenerator.generate(this.world, x, z, null);
 		}
 		this.dungeonGeneratorZG.generate(this.world, x, z, null);
-	}
-	
-	private static ResourceLocation getMob(Random rand) {
-		String mobName = "spiderling";
-		String modId = ZGInfo.MOD_ID;
-		switch (rand.nextInt(3)) {
-			default:
-			case 0:
-				mobName = "spiderling";
-				modId = ZGInfo.MOD_ID;
-				break;
-			case 1:
-				mobName = "scorpion";
-				modId = ZGInfo.MOD_ID;
-				break;
-			case 2:
-				mobName = "evolved_spider";
-				modId = Constants.MOD_ID_CORE;
-				break;
-		}
-		return new ResourceLocation(modId, mobName);
 	}
 }

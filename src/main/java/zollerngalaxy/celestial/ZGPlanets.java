@@ -26,6 +26,7 @@ import zollerngalaxy.core.dimensions.worldproviders.WorldProviderEden;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderExodus;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderKriffon;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderKronos;
+import zollerngalaxy.core.dimensions.worldproviders.WorldProviderMaveth;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderMetztli;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderOasis;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderPerdita;
@@ -647,7 +648,6 @@ public class ZGPlanets {
 		planetKronos.setDimensionInfo(ConfigManagerZG.planetKronosDimensionId, WorldProviderKronos.class);
 		planetKronos.setParentSolarSystem(systemOlympus);
 		planetKronos.setBodyClass(EnumBodyClass.Y);
-		planetKronos.setRelativeOrbitTime(10000.56F);
 		planetKronos.setDistanceFromCenter(2.5F);
 		planetKronos.setRelativeOrbitTime(24.46F);
 		planetKronos.setTierRequired(ConfigManagerZG.planetKronosTier);
@@ -688,10 +688,27 @@ public class ZGPlanets {
 		
 		// Maveth
 		// TODO
+		planetMaveth.setDimensionInfo(ConfigManagerZG.planetMavethDimensionId, WorldProviderMaveth.class);
 		planetMaveth.setParentSolarSystem(systemAsgard);
+		planetMaveth.setBodyClass(EnumBodyClass.ABANDONED);
+		planetMaveth.setRelativeOrbitTime(50000F);
 		planetMaveth.setDistanceFromCenter(1.0F);
-		planetMaveth.setRelativeOrbitTime(48.0F);
+		planetMaveth.setRelativeOrbitTime(256.0F);
+		planetMaveth.setDistanceFromCenter(1.5F);
+		planetMaveth.setTierRequired(ConfigManagerZG.planetMavethTier);
+		if (ConfigManagerZG.planetUnreachableMaveth || ConfigManagerZG.planetUnreachableAll) {
+			planetMaveth.setDisableRockets();
+		}
+		planetMaveth.setBodyTemperature(-86.24F);
+		planetMaveth.setDensity(10.0F);
+		planetMaveth.setWindLevel(20.45F);
+		planetMaveth.setBodyGasses(EnumAtmosphericGas.NITROGEN, EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.ARGON, EnumAtmosphericGas.WATER, EnumAtmosphericGas.METHANE);
+		planetMaveth.setBreathable(true);
+		planetMaveth.setHasRain(false);
+		planetMaveth.setAtmosphere();
 		planetMaveth.setBodyIcon("maveth");
+		planetMaveth.setBiomeInfo(ZGBiomes.MAVETH_BASE);
+		totalPlanets++;
 		
 		// Asgard
 		// TODO

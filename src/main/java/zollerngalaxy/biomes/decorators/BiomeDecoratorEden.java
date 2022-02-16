@@ -244,7 +244,7 @@ public class BiomeDecoratorEden extends BiomeDecoratorZG {
 		
 		// Dead Bushes
 		if (this.generateDeadBush && this.deadBushPerChunk > 0) {
-			if (TerrainGen.decorate(world, rand, forgeChunkPos, net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.DEAD_BUSH)) {
+			if (TerrainGen.decorate(world, rand, forgeChunkPos, DecorateBiomeEvent.Decorate.EventType.DEAD_BUSH)) {
 				for (int j3 = 0; j3 < this.deadBushPerChunk; ++j3) {
 					int k7 = rand.nextInt(16) + 8;
 					int j11 = rand.nextInt(16) + 8;

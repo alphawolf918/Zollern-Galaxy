@@ -89,6 +89,7 @@ public class EntityFacehugger extends EntityMob implements IShadeEntity, IEntity
 		this.targetTasks.addTask(10, new EntityAINearestAttackableTarget(this, EntityCreeper.class, true));
 		this.targetTasks.addTask(11, new EntityAINearestAttackableTarget(this, EntityEnderman.class, true));
 		this.targetTasks.addTask(12, new EntityAINearestAttackableTarget(this, EntityAgeable.class, true));
+		this.targetTasks.addTask(13, new EntityAINearestAttackableTarget(this, EntityKree.class, true));
 	}
 	
 	@Override

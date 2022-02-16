@@ -132,7 +132,7 @@ public class OreDictRegistry {
 		registerOre("blockSpaceStation", ZGBlocks.blockSpaceStation);
 		
 		// Gravel
-		registerOre("gravel", ZGBlocks.edenGravel, ZGBlocks.purgGravel, ZGBlocks.xathGravel, ZGBlocks.oasisGravel, ZGBlocks.perdGravel, ZGBlocks.altumGravel, ZGBlocks.caligroGravel, ZGBlocks.exodusGravel, ZGBlocks.astrosGravel, ZGBlocks.centoGravel);
+		registerOre("gravel", ZGBlocks.edenGravel, ZGBlocks.purgGravel, ZGBlocks.xathGravel, ZGBlocks.oasisGravel, ZGBlocks.perdGravel, ZGBlocks.altumGravel, ZGBlocks.caligroGravel, ZGBlocks.exodusGravel, ZGBlocks.astrosGravel, ZGBlocks.centoGravel, ZGBlocks.mavethGravel);
 		
 		// Grass
 		registerOre("grass", ZGBlocks.edenGoldenGrass, ZGBlocks.edenGrass, ZGBlocks.edenSwampGrass, ZGBlocks.edenFallGrass, ZGBlocks.xathGrass, ZGBlocks.oasisGrass, ZGBlocks.perdGrass, ZGBlocks.exodusGrass, ZGBlocks.harranGrassCherry, ZGBlocks.harranGrass);
@@ -157,11 +157,11 @@ public class OreDictRegistry {
 		
 		// Stone
 		registerOre("stone", ZGBlocks.edenStone, ZGBlocks.kriffStone, ZGBlocks.purgStone, ZGBlocks.zolStone, ZGBlocks.xathStone, ZGBlocks.oasisStone, ZGBlocks.xantheonStone, ZGBlocks.atheonStone, ZGBlocks.perdStone, ZGBlocks.perdCreepStone, ZGBlocks.perdCaveStone, ZGBlocks.altumStone, ZGBlocks.caligroStone, ZGBlocks.caligroCreepstone, ZGBlocks.corruptStone,
-				ZGBlocks.corruptCreepstone, ZGBlocks.exodusStone, ZGBlocks.vortexStone, ZGBlocks.astrosStone, ZGBlocks.centoStone, ZGBlocks.tociStone, ZGBlocks.tlalocStone);
+				ZGBlocks.corruptCreepstone, ZGBlocks.exodusStone, ZGBlocks.vortexStone, ZGBlocks.astrosStone, ZGBlocks.centoStone, ZGBlocks.tociStone, ZGBlocks.tlalocStone, ZGBlocks.mavethStone);
 		
 		// Stone Bricks
 		registerOre("stonebrick", ZGBlocks.edenRockBricks, ZGBlocks.kriffRockBricks, ZGBlocks.purgRockBricks, ZGBlocks.zolRockBricks, ZGBlocks.xathRockBricks, ZGBlocks.oasisRockBricks, ZGBlocks.blockShinestoneCrystalBricks, ZGBlocks.atheonRockBricks, ZGBlocks.perdRockBricks, ZGBlocks.perdCaveStoneBricks, ZGBlocks.caligroStoneBricks, ZGBlocks.corruptStoneBricks,
-				ZGBlocks.tociStoneBricks);
+				ZGBlocks.tociStoneBricks, ZGBlocks.mavethStoneBricks);
 		
 		// Glowstone
 		registerOre("glowstone", ZGBlocks.edenBrightStone, ZGBlocks.blockShinestone, ZGBlocks.perdGlowstone);
@@ -171,7 +171,7 @@ public class OreDictRegistry {
 		
 		// Cobblestone
 		registerOre("cobblestone", ZGBlocks.edenCobbleRock, ZGBlocks.kriffCobbleRock, ZGBlocks.purgCobbleRock, ZGBlocks.zolCobbleRock, ZGBlocks.xathCobble, ZGBlocks.oasisCobble, ZGBlocks.atheonCobble, ZGBlocks.perdCobble, ZGBlocks.altumCobble, ZGBlocks.caligroCobblestone, ZGBlocks.caligroCobblestoneMossy, ZGBlocks.corruptCobble, ZGBlocks.exodusCobblestone,
-				ZGBlocks.vortexCobblestone, ZGBlocks.astrosCobblestone, ZGBlocks.centoCobblestone, ZGBlocks.tociCobblestone, ZGBlocks.tociMossyCobblestone);
+				ZGBlocks.vortexCobblestone, ZGBlocks.astrosCobblestone, ZGBlocks.centoCobblestone, ZGBlocks.tociCobblestone, ZGBlocks.tociMossyCobblestone, ZGBlocks.mavethCobblestone);
 		
 		// Obsidian
 		registerOre("dustObsidian", ZGItems.dustObsidian);
@@ -184,7 +184,7 @@ public class OreDictRegistry {
 		
 		// Iron
 		registerOre("oreIron", ZGBlocks.edenIronOre, ZGBlocks.kriffIronOre, ZGBlocks.purgIronOre, ZGBlocks.zolIronOre, ZGBlocks.xathIronOre, ZGBlocks.oasisIronOre, ZGBlocks.xantheonIronOre, ZGBlocks.perdIronOre, ZGBlocks.altumIronOre, ZGBlocks.caligroIronOre, ZGBlocks.exodusIronOre, ZGBlocks.vortexIronOre, ZGBlocks.astrosIronOre, ZGBlocks.centoIronOre, ZGBlocks.tociIronOre,
-				ZGBlocks.netherIronOre);
+				ZGBlocks.netherIronOre, ZGBlocks.mavethIronOre);
 		
 		// Gold
 		registerOre("oreGold", ZGBlocks.edenGoldOre, ZGBlocks.kriffGoldOre, ZGBlocks.purgGoldOre, ZGBlocks.zolGoldOre, ZGBlocks.xathGoldOre, ZGBlocks.oasisGoldOre, ZGBlocks.perdGoldOre, ZGBlocks.altumGoldOre, ZGBlocks.caligroGoldOre, ZGBlocks.exodusGoldOre, ZGBlocks.vortexGoldOre, ZGBlocks.astrosGoldOre, ZGBlocks.centoGoldOre, ZGBlocks.tociGoldOre, ZGBlocks.netherGoldOre);
@@ -232,7 +232,7 @@ public class OreDictRegistry {
 		registerOre("blockShinestone", ZGBlocks.blockShinestone);
 		
 		// Electrum
-		registerOre("oreElectrum", ZGBlocks.edenElectrumOre);
+		registerOre("oreElectrum", ZGBlocks.edenElectrumOre, ZGBlocks.mavethElectrumOre);
 		
 		// Invar
 		registerOre("oreInvar", ZGBlocks.edenInvarOre);
@@ -310,7 +310,7 @@ public class OreDictRegistry {
 		registerOre("swordVirinium", ZGItems.swordVirinium);
 		
 		// Amaranth
-		registerOre("oreAmaranth", ZGBlocks.xantheonAmaranthOre, ZGBlocks.atheonAmaranthOre, ZGBlocks.altumAmaranthOre, ZGBlocks.caligroAmaranthOre, ZGBlocks.tociAmaranthOre, ZGBlocks.harranAmaranthOre, ZGBlocks.netherAmaranthOre);
+		registerOre("oreAmaranth", ZGBlocks.xantheonAmaranthOre, ZGBlocks.atheonAmaranthOre, ZGBlocks.altumAmaranthOre, ZGBlocks.caligroAmaranthOre, ZGBlocks.tociAmaranthOre, ZGBlocks.harranAmaranthOre, ZGBlocks.netherAmaranthOre, ZGBlocks.mavethAmaranthOre);
 		registerOre("dustAmaranth", ZGItems.dustAmaranth);
 		registerOre("ingotAmaranth", ZGItems.ingotAmaranth);
 		registerOre("blockAmaranth", ZGBlocks.blockAmaranth);
@@ -331,7 +331,7 @@ public class OreDictRegistry {
 		registerOre("swordAzurite", ZGItems.swordAzurite);
 		
 		// Zollernium
-		registerOre("oreZollernium", ZGBlocks.atheonZollerniumOre, ZGBlocks.perdZollerniumOre, ZGBlocks.altumZollerniumOre, ZGBlocks.astrosZollerniumOre, ZGBlocks.centoZollerniumOre, ZGBlocks.tlalocZollerniumOre);
+		registerOre("oreZollernium", ZGBlocks.atheonZollerniumOre, ZGBlocks.perdZollerniumOre, ZGBlocks.altumZollerniumOre, ZGBlocks.astrosZollerniumOre, ZGBlocks.centoZollerniumOre, ZGBlocks.tlalocZollerniumOre, ZGBlocks.mavethZollerniumOre);
 		registerOre("dustZollernium", ZGItems.dustZollernium);
 		registerOre("ingotZollernium", ZGItems.ingotZollernium);
 		registerOre("blockZollernium", ZGBlocks.blockZollernium);
@@ -424,6 +424,12 @@ public class OreDictRegistry {
 		registerOre("blockZogradite", ZGBlocks.blockZogradite);
 		registerOre("ingotZogradite", ZGItems.ingotZogradite);
 		registerOre("dustZogradite", ZGItems.dustZogradite);
+		
+		// Vibranium
+		registerOre("oreVibranium", ZGBlocks.mavethVibraniumOre);
+		registerOre("blockVibranium", ZGBlocks.blockVibranium);
+		registerOre("ingotVibranium", ZGItems.ingotVibranium);
+		registerOre("dustVibranium", ZGItems.dustVibranium);
 		
 		// Blazerock
 		registerOre("blockBlazePowder", ZGBlocks.blazeRock);

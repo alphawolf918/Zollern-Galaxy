@@ -28,6 +28,7 @@ public class TFSmeltingRecipes {
 		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.edenBronzeOre, new ItemStack(ItemHelper.getItemFromStack(TFItems.itemMaterial.ingotBronze), 1, 163), 4.2F);
 		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.tociBronzeOre, new ItemStack(ItemHelper.getItemFromStack(TFItems.itemMaterial.ingotBronze), 1, 163), 4.2F);
 		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.edenElectrumOre, new ItemStack(ItemHelper.getItemFromStack(TFItems.itemMaterial.ingotElectrum), 1, 161), 4.2F);
+		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.mavethElectrumOre, new ItemStack(ItemHelper.getItemFromStack(TFItems.itemMaterial.ingotElectrum), 1, 161), 6.2F);
 		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.edenInvarOre, new ItemStack(ItemHelper.getItemFromStack(TFItems.itemMaterial.ingotInvar), 1, 162), 4.2F);
 		FurnaceRecipes.SmeltBlockToItem(ZGBlocks.edenPlatinumOre, new ItemStack(ItemHelper.getItemFromStack(TFItems.itemMaterial.ingotPlatinum), 1, 134), 4.2F);
 	}

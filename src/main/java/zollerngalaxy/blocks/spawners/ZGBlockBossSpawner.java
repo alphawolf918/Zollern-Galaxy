@@ -12,9 +12,8 @@ import micdoodle8.mods.galacticraft.core.entities.EntityBossBase;
 import net.minecraft.block.Block;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
-import zollerngalaxy.tileentities.TileEntityDungeonSpawnerZG;
 
-public class ZGBlockBossSpawner extends BlockBossSpawner {
+public abstract class ZGBlockBossSpawner extends BlockBossSpawner {
 	
 	protected Class<? extends EntityBossBase> bossMob;
 	
@@ -33,7 +32,5 @@ public class ZGBlockBossSpawner extends BlockBossSpawner {
 	}
 	
 	@Override
-	public TileEntity createNewTileEntity(World worldIn, int meta) {
-		return new TileEntityDungeonSpawnerZG(this.bossMob);
-	}
+	public abstract TileEntity createNewTileEntity(World worldIn, int meta);
 }
