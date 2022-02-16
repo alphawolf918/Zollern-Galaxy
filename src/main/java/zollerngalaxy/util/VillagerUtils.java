@@ -23,6 +23,7 @@ import zollerngalaxy.core.dimensions.worldproviders.WorldProviderEden;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderExodus;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderKriffon;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderKronos;
+import zollerngalaxy.core.dimensions.worldproviders.WorldProviderMaveth;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderMetztli;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderOasis;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderPerdita;
@@ -44,6 +45,7 @@ import zollerngalaxy.mobs.entities.villagers.EntityExodusVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityHarranVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityKriffonVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityKronosVillager;
+import zollerngalaxy.mobs.entities.villagers.EntityMavethVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityOasisVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityPerditaVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityPurgotVillager;
@@ -82,6 +84,7 @@ public class VillagerUtils {
 			VillagerUtils.transformIntoVillager(world, entity, EntityExodusVillager.class, WorldProviderExodus.class);
 			VillagerUtils.transformIntoVillager(world, entity, EntityKronosVillager.class, WorldProviderKronos.class);
 			VillagerUtils.transformIntoVillager(world, entity, EntityAtheonVillager.class, WorldProviderAtheon.class);
+			VillagerUtils.transformIntoVillager(world, entity, EntityMavethVillager.class, WorldProviderMaveth.class);
 		}
 	}
 	

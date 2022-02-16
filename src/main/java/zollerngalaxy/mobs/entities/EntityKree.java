@@ -29,6 +29,7 @@ import net.minecraft.entity.monster.EntitySpider;
 import net.minecraft.entity.monster.EntityZombie;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.EntityEquipmentSlot;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.datasync.DataParameter;
@@ -38,12 +39,10 @@ import net.minecraft.pathfinding.PathNavigate;
 import net.minecraft.pathfinding.PathNavigateGround;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.DifficultyInstance;
-import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.items.ZGItems;
-import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.mobs.entities.ai.EntityAIKreeAttack;
 import zollerngalaxy.mobs.entities.base.EntityZGVillagerBase;
 
@@ -57,7 +56,7 @@ public class EntityKree extends EntityMob implements IEntityBreathable {
 		super(worldIn);
 		this.setSize(this.width * 1.2F, this.height * 1.2F);
 		this.setCanPickUpLoot(true);
-		this.experienceValue = 45;
+		this.experienceValue = 90;
 		this.scoreValue = 90;
 		this.stepHeight = 2.0F;
 	}
@@ -83,6 +82,7 @@ public class EntityKree extends EntityMob implements IEntityBreathable {
 		this.targetTasks.addTask(8, new EntityAINearestAttackableTarget(this, EntityAgeable.class, true));
 		this.targetTasks.addTask(9, new EntityAINearestAttackableTarget(this, EntityFacehugger.class, true));
 		this.targetTasks.addTask(10, new EntityAINearestAttackableTarget(this, EntityXenomorph.class, true));
+		this.targetTasks.addTask(11, new EntityAINearestAttackableTarget(this, EntityVexBot.class, true));
 	}
 	
 	@Override
@@ -99,16 +99,7 @@ public class EntityKree extends EntityMob implements IEntityBreathable {
 	@Override
 	protected void setEquipmentBasedOnDifficulty(DifficultyInstance difficulty) {
 		super.setEquipmentBasedOnDifficulty(difficulty);
-		
-		if (ZGHelper.rngFloat(0.4F, 1.0F) < (this.world.getDifficulty() == EnumDifficulty.HARD ? 0.5F : 1.0F)) {
-			int i = this.rand.nextInt(3);
-			
-			if (i == 0) {
-				this.setItemStackToSlot(EntityEquipmentSlot.MAINHAND, new ItemStack(ZGItems.swordAmaranth));
-			} else {
-				this.setItemStackToSlot(EntityEquipmentSlot.MAINHAND, new ItemStack(ZGItems.swordZanium));
-			}
-		}
+		this.setItemStackToSlot(EntityEquipmentSlot.MAINHAND, new ItemStack(ZGItems.kreeReaperAxe));
 	}
 	
 	@Override
@@ -153,6 +144,11 @@ public class EntityKree extends EntityMob implements IEntityBreathable {
 	public void readEntityFromNBT(NBTTagCompound compound) {
 		super.readEntityFromNBT(compound);
 		this.setBreakDoorsAItask(compound.getBoolean("CanBreakDoors"));
+	}
+	
+	@Override
+	protected Item getDropItem() {
+		return ZGItems.kreeFlesh;
 	}
 	
 	@Override
@@ -225,11 +221,6 @@ public class EntityKree extends EntityMob implements IEntityBreathable {
 	@Override
 	public float getBlockPathWeight(BlockPos pos) {
 		return 1.5F - this.world.getLightBrightness(pos);
-	}
-	
-	@Override
-	public boolean isValidLightLevel() {
-		return true;
 	}
 	
 	@Override

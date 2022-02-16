@@ -168,7 +168,6 @@ public class EntityWanderer extends EntityAgeable {
 	
 	@Override
 	public boolean processInteract(EntityPlayer player, EnumHand hand) {
-		World world = player.world;
 		if (!world.isRemote) {
 			String txtFormatGold = TextFormatting.GOLD + "";
 			String txtFormatWhite = TextFormatting.WHITE + "";

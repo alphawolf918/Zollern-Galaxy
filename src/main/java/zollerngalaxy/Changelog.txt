@@ -19,7 +19,7 @@ Zollern Galaxy v2.0.39
 * Added a GC Boss Dungeon to Eden.
 * Added the Crawler boss mob.
 * Added the Kree mob.
-    - Drops Kree Flesh on death.
+    - Drops Kree Flesh on death, with a chance to drop their Reaper Axe.
 * Added the planet Maveth.
     - The Kree spawn here.
     - Inspired by Agents of S.H.I.E.L.D.

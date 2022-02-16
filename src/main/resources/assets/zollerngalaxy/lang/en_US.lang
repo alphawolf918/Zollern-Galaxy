@@ -988,6 +988,7 @@ item.zogite_axe.name=Zogite Axe
 item.zogite_hoe.name=Zogite Hoe
 
 item.zogradite_scyte.name=Zogradite Scythe
+item.kree_reaper_axe.name=Kree Reaper Axe
 
 item.vibranium_pickaxe.name=Vibranium Pickaxe
 item.vibranium_sword.name=Vibranium Sword
@@ -1142,7 +1143,7 @@ entity.zollerngalaxy:bloodworm.name=Blood Worm
 entity.zollerngalaxy:blubberfish.name=Blubber Fish
 entity.zollerngalaxy:gypsyfish.name=Gypsy Fish
 entity.zollerngalaxy:bladefish.name=Blade Fish
-entity.zollerngalaxy:kree.name=Kree
+entity.zollerngalaxy:kree.name=Kree Reaper
 
 ## Villagers ##
 
@@ -1256,6 +1257,8 @@ tooltips.icesword2=the lands of frost.
 
 tooltips.lightsword1=Light, forged
 tooltips.lightsword2=into a blade.
+
+tooltips.kreereaperaxe=The powerful weapon of the ruthless Kree.
 
 tooltips.blueprint=Protects the Player from certain elements.
 tooltips.blueprint_corruption=Protects the Player from Corruption damage.

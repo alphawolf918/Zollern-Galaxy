@@ -63,6 +63,7 @@ import zollerngalaxy.mobs.entities.villagers.EntityExodusVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityHarranVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityKriffonVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityKronosVillager;
+import zollerngalaxy.mobs.entities.villagers.EntityMavethVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityOasisVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityPerditaVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityPurgotVillager;
@@ -222,6 +223,9 @@ public class MobRegistry {
 		// Atheon Villager
 		registerEntity("atheonvillager", EntityAtheonVillager.class, entityId++, 0x00ffff, 0x008b8b);
 		
+		// Maveth Villager
+		registerEntity("mavethvillager", EntityMavethVillager.class, entityId++, 0x0044cc, 0xeeeeee);
+		
 		/** END VILLAGERS **/
 		
 		// Wanderer
@@ -278,7 +282,7 @@ public class MobRegistry {
 		registerEntity("bloodworm", EntityBloodWorm.class, entityId++, 0x8b008b, 0x8b008b);
 		
 		// Kree
-		registerEntity("kree", EntityKree.class, entityId++, 0x0099ff, 0x00cc8b);
+		registerEntity("kree", EntityKree.class, entityId++, 0x00008b, 0x00008b);
 		
 		ZGHelper.Log("Loaded a total of " + totalMobs + " new mobs.");
 	}

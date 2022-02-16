@@ -8,7 +8,6 @@
 package zollerngalaxy.biomes.maveth;
 
 import java.util.Random;
-import micdoodle8.mods.galacticraft.core.entities.EntityAlienVillager;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
@@ -23,6 +22,7 @@ import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderMaveth;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 import zollerngalaxy.mobs.entities.EntityKree;
+import zollerngalaxy.mobs.entities.villagers.EntityMavethVillager;
 
 public class BiomeMavethBase extends BiomeSpace {
 	
@@ -39,7 +39,7 @@ public class BiomeMavethBase extends BiomeSpace {
 	
 	public BiomeMavethBase(String singleName, BiomeProperties props) {
 		super(singleName, props);
-		this.setTempCategory(TempCategory.WARM);
+		this.setTempCategory(TempCategory.COLD);
 		this.setTemp(-2.42F);
 		this.biomeDecor.flowersPerChunk = -999;
 		this.biomeDecor.treesPerChunk = -999;
@@ -48,7 +48,7 @@ public class BiomeMavethBase extends BiomeSpace {
 		this.clearAllSpawning();
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityKree.class, 100, 4, 4));
 		if (ConfigManagerZG.enableAlienVillagerSpawn) {
-			this.spawnableCreatureList.add(new SpawnListEntry(EntityAlienVillager.class, this.villagerSpawnRate, this.villagerMinSpawnRate, this.villagerMaxSpawnRate));
+			this.spawnableCreatureList.add(new SpawnListEntry(EntityMavethVillager.class, this.villagerSpawnRate, this.villagerMinSpawnRate, this.villagerMaxSpawnRate));
 		}
 		this.setBodyForBiome(ZGPlanets.planetMaveth);
 	}

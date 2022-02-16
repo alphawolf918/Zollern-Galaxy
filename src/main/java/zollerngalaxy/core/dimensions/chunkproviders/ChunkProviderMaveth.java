@@ -30,12 +30,16 @@ import net.minecraft.world.gen.NoiseGenerator;
 import net.minecraft.world.gen.NoiseGeneratorOctaves;
 import net.minecraft.world.gen.NoiseGeneratorPerlin;
 import net.minecraft.world.gen.structure.MapGenMineshaft;
+import net.minecraftforge.event.terraingen.PopulateChunkEvent;
+import net.minecraftforge.event.terraingen.TerrainGen;
 import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.biomes.decorators.BiomeDecoratorMaveth;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.blocks.fluids.ZGFluids;
+import zollerngalaxy.core.ZGLootTables;
 import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.util.BiomeUtils;
+import zollerngalaxy.worldgen.WorldGenMobDungeonsZG;
 import zollerngalaxy.worldgen.mapgen.MapGenCavesZG;
 import zollerngalaxy.worldgen.mapgen.MapGenRavinesZG;
 import zollerngalaxy.worldgen.structures.villages.MapGenVillageZG;
@@ -389,6 +393,16 @@ public class ChunkProviderMaveth extends ChunkProviderBase {
 		
 		if (!ConfigManagerCore.disableMoonVillageGen && !BiomeUtils.isOceanBiome(biomegenbase)) {
 			this.villageGenerator.generateStructure(this.world, this.rand, new ChunkPos(x, z));
+		}
+		
+		// Dungeons
+		if (TerrainGen.populate(this, this.world, this.rand, x, z, false, PopulateChunkEvent.Populate.EventType.DUNGEON)) {
+			for (int j2 = 0; j2 < 8; ++j2) {
+				int i3 = this.rand.nextInt(16) + 8;
+				int l3 = this.rand.nextInt(128);
+				int l1 = this.rand.nextInt(16) + 8;
+				(new WorldGenMobDungeonsZG(ZGLootTables.CHEST_MOB_SPAWNER_MAVETH, ZGBlocks.mavethCobblestone.getDefaultState())).generate(this.world, this.rand, blockpos.add(i3, l3, l1));
+			}
 		}
 		
 		this.mineshaftGenerator.generateStructure(this.world, this.rand, new ChunkPos(x, z));

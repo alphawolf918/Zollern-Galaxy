@@ -112,13 +112,11 @@ public class EntityMagmos extends EntityMob implements IEntityBreathable {
 			}
 			
 			if (this.rand.nextInt(24) == 0) {
-				this.world.playSound(null, new BlockPos(this.posX + 0.5D, this.posY + 0.5D, this.posZ + 0.5D), SoundEvents.BLOCK_FIRE_AMBIENT, SoundCategory.AMBIENT,
-						1.0F + this.rand.nextFloat(), this.rand.nextFloat() * 0.7F + 0.3F);
+				this.world.playSound(null, new BlockPos(this.posX + 0.5D, this.posY + 0.5D, this.posZ + 0.5D), SoundEvents.BLOCK_FIRE_AMBIENT, SoundCategory.AMBIENT, 1.0F + this.rand.nextFloat(), this.rand.nextFloat() * 0.7F + 0.3F);
 			}
 			
 			for (int i = 0; i < 2; ++i) {
-				this.world.spawnParticle(EnumParticleTypes.SMOKE_LARGE, this.posX + (this.rand.nextDouble() - 0.5D) * this.width, this.posY + this.rand.nextDouble() * this.height,
-						this.posZ + (this.rand.nextDouble() - 0.5D) * this.width, 0.0D, 0.0D, 0.0D);
+				this.world.spawnParticle(EnumParticleTypes.SMOKE_LARGE, this.posX + (this.rand.nextDouble() - 0.5D) * this.width, this.posY + this.rand.nextDouble() * this.height, this.posZ + (this.rand.nextDouble() - 0.5D) * this.width, 0.0D, 0.0D, 0.0D);
 			}
 		}
 	}

@@ -8,6 +8,7 @@
 package zollerngalaxy.mobs.entities;
 
 import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -44,7 +45,7 @@ public class EntityVexBotGold extends EntityVexBot {
 	@Override
 	public void onLivingUpdate() {
 		if (this.isInWater()) {
-			// this.attackEntityFrom(DamageSource.DROWN, 10.0F);
+			this.attackEntityFrom(DamageSource.DROWN, 10.0F);
 		}
 		super.onLivingUpdate();
 	}

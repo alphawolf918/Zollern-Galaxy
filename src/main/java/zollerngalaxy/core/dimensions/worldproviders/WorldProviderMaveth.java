@@ -130,13 +130,13 @@ public class WorldProviderMaveth extends WorldProviderPlanetZG {
 	
 	@Override
 	public Vector3 getFogColor() {
-		float f = 1.1F - this.getStarBrightness(1.0F);
+		float f = 1.2F - this.getStarBrightness(1.0F);
 		return new Vector3(1F / 255F * f, 1F / 255F * f, 24F / 255F * f);
 	}
 	
 	@Override
 	public Vector3 getSkyColor() {
-		float f = 1.05F - this.getStarBrightness(1.0F);
+		float f = 1.07F - this.getStarBrightness(1.0F);
 		return new Vector3(1F / 255F * f, 4F / 255F * f, 48F / 255F * f);
 	}
 	
@@ -152,7 +152,7 @@ public class WorldProviderMaveth extends WorldProviderPlanetZG {
 	
 	@Override
 	public long getDayLength() {
-		return 680100L;
+		return 30000L;
 	}
 	
 	@Override

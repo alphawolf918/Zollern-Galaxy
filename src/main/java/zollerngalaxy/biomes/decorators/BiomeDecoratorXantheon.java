@@ -85,6 +85,7 @@ public class BiomeDecoratorXantheon extends BiomeDecoratorZG {
 			}
 		}
 		
+		// Radiolaria Spouts
 		if (this.generateSpouts) {
 			y = rand.nextInt(rand.nextInt(genY) + 8);
 			if (rand.nextInt(100) <= 5) {

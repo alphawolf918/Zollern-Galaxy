@@ -431,145 +431,148 @@ public class ZGEvents {
 	public void onLivingDropsEvent(LivingDropsEvent event) {
 		Entity theEntity = event.getEntityLiving();
 		World worldObj = theEntity.world;
-		Random rand = new Random();
-		int randInt = rand.nextInt(100);
-		
-		// Moolus (Alien Cow)
-		if (theEntity instanceof EntityEdenCow) {
-			for (int i = 0; i < ZGHelper.rngInt(1, 4); i++) {
-				ZGHelper.dropItem(ZGItems.rawAlienBeef, worldObj, theEntity);
-			}
-		}
-		
-		// Oinkus (Alien Pig)
-		if (theEntity instanceof EntityOinkus) {
-			for (int i = 0; i < ZGHelper.rngInt(1, 4); i++) {
-				ZGHelper.dropItem(ZGItems.rawAlienBacon, worldObj, theEntity);
-			}
-		}
-		
-		// Gray Alien
-		if (theEntity instanceof EntityGrayAlien) {
-			for (int i = 0; i < ZGHelper.rngInt(1, 2); i++) {
-				ZGHelper.dropItem(ZGItems.alienStone, worldObj, theEntity);
-			}
-		}
-		
-		// Mega Creeper
-		if (theEntity instanceof EntityMegaCreeper) {
-			for (int i = 0; i < ZGHelper.rngInt(1, 4); i++) {
-				ZGHelper.dropItem(ZGItems.superChargedCoal, worldObj, theEntity);
-			}
-		}
-		
-		// Mummy
-		if (theEntity instanceof EntityMummy) {
-			if (ZGHelper.getRNGChance(5, 10)) {
-				for (int i = 0; i < ZGHelper.rngInt(1, 3); i++) {
-					ZGHelper.dropItem(Items.PAPER, worldObj, theEntity);
-				}
-			}
+		if (!worldObj.isRemote) {
+			Random rand = new Random();
+			int randInt = rand.nextInt(100);
 			
-			if (ZGHelper.getRNGChance(5, 20)) {
-				for (int i = 0; i < ZGHelper.rngInt(1, 2); i++) {
-					ZGHelper.dropItem(ZGItems.perdGlowdust, worldObj, theEntity);
-				}
-			}
-		}
-		
-		// Scorpion
-		if (theEntity instanceof EntityScorpion) {
-			if (ZGHelper.getRNGChance(5, 20)) {
-				for (int i = 0; i < ZGHelper.rngInt(1, 2); i++) {
-					ZGHelper.dropItem(ZGItems.dustEmerald, worldObj, theEntity);
-				}
-			}
-		}
-		
-		// Shadow Skeleton
-		if (theEntity instanceof EntityShadowSkeleton) {
-			if (ZGHelper.getRNGChance(5, 10)) {
+			// Moolus (Alien Cow)
+			if (theEntity instanceof EntityEdenCow) {
 				for (int i = 0; i < ZGHelper.rngInt(1, 4); i++) {
-					ZGHelper.dropItem(ZGItems.shadowBone, worldObj, theEntity);
-				}
-			}
-		}
-		
-		// Blubber Fish
-		if (theEntity instanceof EntityBlubberFish) {
-			ZGHelper.dropItem(ZGItems.rawBlubberFish, worldObj, theEntity);
-		}
-		
-		// Gypsy Fish
-		if (theEntity instanceof EntityBlubberFish) {
-			ZGHelper.dropItem(ZGItems.rawGypsyFish, worldObj, theEntity);
-		}
-		
-		// Blade Fish
-		if (theEntity instanceof EntityBladeFish) {
-			ZGHelper.dropItem(ZGItems.rawBladeFish, worldObj, theEntity);
-		}
-		
-		// Shark
-		if (theEntity instanceof EntityShark) {
-			// Shagreen (Shark Leather)
-			if (ZGHelper.getRNGChance(5, 10)) {
-				for (int i = 0; i < ZGHelper.rngInt(1, 2); i++) {
-					ZGHelper.dropItem(ZGItems.shagreen, worldObj, theEntity);
+					ZGHelper.dropItem(ZGItems.rawAlienBeef, worldObj, theEntity);
 				}
 			}
 			
-			// Shark Tooth
-			if (ZGHelper.getRNGChance(5, 10)) {
-				for (int i = 0; i < ZGHelper.rngInt(1, 3); i++) {
-					ZGHelper.dropItem(ZGItems.sharkTooth, worldObj, theEntity);
+			// Oinkus (Alien Pig)
+			if (theEntity instanceof EntityOinkus) {
+				for (int i = 0; i < ZGHelper.rngInt(1, 4); i++) {
+					ZGHelper.dropItem(ZGItems.rawAlienBacon, worldObj, theEntity);
 				}
 			}
-		}
-		
-		// Shade Entities
-		if (theEntity instanceof IShadeEntity) {
-			if (((IShadeEntity) theEntity).shouldDropEssence()) {
+			
+			// Gray Alien
+			if (theEntity instanceof EntityGrayAlien) {
+				for (int i = 0; i < ZGHelper.rngInt(1, 2); i++) {
+					ZGHelper.dropItem(ZGItems.alienStone, worldObj, theEntity);
+				}
+			}
+			
+			// Mega Creeper
+			if (theEntity instanceof EntityMegaCreeper) {
+				for (int i = 0; i < ZGHelper.rngInt(1, 4); i++) {
+					ZGHelper.dropItem(ZGItems.superChargedCoal, worldObj, theEntity);
+				}
+			}
+			
+			// Mummy
+			if (theEntity instanceof EntityMummy) {
 				if (ZGHelper.getRNGChance(5, 10)) {
-					for (int i = 0; i < ZGHelper.rngInt(1, 4); i++) {
-						ZGHelper.dropItem(ZGItems.darkEssence, worldObj, theEntity);
+					for (int i = 0; i < ZGHelper.rngInt(1, 3); i++) {
+						ZGHelper.dropItem(Items.PAPER, worldObj, theEntity);
+					}
+				}
+				
+				if (ZGHelper.getRNGChance(5, 20)) {
+					for (int i = 0; i < ZGHelper.rngInt(1, 2); i++) {
+						ZGHelper.dropItem(ZGItems.perdGlowdust, worldObj, theEntity);
 					}
 				}
 			}
-		}
-		
-		// Xenomorph
-		// TODO
-		
-		// Vexbot
-		if (theEntity instanceof EntityVexBot) {
-			// Raw Virinium
-			if (ZGHelper.getRNGChance(5, 10)) {
-				for (int i = 0; i < ZGHelper.rngInt(1, 2); i++) {
-					ZGHelper.dropItem(ZGItems.dustVirinium, worldObj, theEntity);
+			
+			// Scorpion
+			if (theEntity instanceof EntityScorpion) {
+				if (ZGHelper.getRNGChance(5, 20)) {
+					for (int i = 0; i < ZGHelper.rngInt(1, 2); i++) {
+						ZGHelper.dropItem(ZGItems.dustEmerald, worldObj, theEntity);
+					}
 				}
 			}
 			
-			// Rhodium Ingot
-			if (ZGHelper.getRNGChance(5, 10)) {
-				for (int i = 0; i < ZGHelper.rngInt(1, 2); i++) {
-					ZGHelper.dropItem(ZGItems.ingotRhodium, worldObj, theEntity);
+			// Shadow Skeleton
+			if (theEntity instanceof EntityShadowSkeleton) {
+				if (ZGHelper.getRNGChance(5, 10)) {
+					for (int i = 0; i < ZGHelper.rngInt(1, 4); i++) {
+						ZGHelper.dropItem(ZGItems.shadowBone, worldObj, theEntity);
+					}
 				}
 			}
 			
-			// Zinc Ingot
-			if (ZGHelper.getRNGChance(5, 10)) {
-				for (int i = 0; i < ZGHelper.rngInt(1, 2); i++) {
-					ZGHelper.dropItem(ZGItems.ingotZinc, worldObj, theEntity);
+			// Blubber Fish
+			if (theEntity instanceof EntityBlubberFish) {
+				ZGHelper.dropItem(ZGItems.rawBlubberFish, worldObj, theEntity);
+			}
+			
+			// Gypsy Fish
+			if (theEntity instanceof EntityBlubberFish) {
+				ZGHelper.dropItem(ZGItems.rawGypsyFish, worldObj, theEntity);
+			}
+			
+			// Blade Fish
+			if (theEntity instanceof EntityBladeFish) {
+				ZGHelper.dropItem(ZGItems.rawBladeFish, worldObj, theEntity);
+			}
+			
+			// Shark
+			if (theEntity instanceof EntityShark) {
+				// Shagreen (Shark Leather)
+				if (ZGHelper.getRNGChance(5, 10)) {
+					for (int i = 0; i < ZGHelper.rngInt(1, 2); i++) {
+						ZGHelper.dropItem(ZGItems.shagreen, worldObj, theEntity);
+					}
+				}
+				
+				// Shark Tooth
+				if (ZGHelper.getRNGChance(5, 10)) {
+					for (int i = 0; i < ZGHelper.rngInt(1, 3); i++) {
+						ZGHelper.dropItem(ZGItems.sharkTooth, worldObj, theEntity);
+					}
 				}
 			}
-		}
-		
-		// Kree
-		if (theEntity instanceof EntityKree) {
-			if (ZGHelper.getRNGChance(1, 2)) {
+			
+			// Shade Entities
+			if (theEntity instanceof IShadeEntity) {
+				if (((IShadeEntity) theEntity).shouldDropEssence()) {
+					if (ZGHelper.getRNGChance(5, 10)) {
+						for (int i = 0; i < ZGHelper.rngInt(1, 4); i++) {
+							ZGHelper.dropItem(ZGItems.darkEssence, worldObj, theEntity);
+						}
+					}
+				}
+			}
+			
+			// Xenomorph
+			// TODO
+			
+			// Vexbot
+			if (theEntity instanceof EntityVexBot) {
+				// Raw Virinium
+				if (ZGHelper.getRNGChance(5, 10)) {
+					for (int i = 0; i < ZGHelper.rngInt(1, 2); i++) {
+						ZGHelper.dropItem(ZGItems.dustVirinium, worldObj, theEntity);
+					}
+				}
+				
+				// Rhodium Ingot
+				if (ZGHelper.getRNGChance(5, 10)) {
+					for (int i = 0; i < ZGHelper.rngInt(1, 2); i++) {
+						ZGHelper.dropItem(ZGItems.ingotRhodium, worldObj, theEntity);
+					}
+				}
+				
+				// Zinc Ingot
+				if (ZGHelper.getRNGChance(5, 10)) {
+					for (int i = 0; i < ZGHelper.rngInt(1, 2); i++) {
+						ZGHelper.dropItem(ZGItems.ingotZinc, worldObj, theEntity);
+					}
+				}
+			}
+			
+			// Kree (Guarantee drop of Kree Flesh; give a chance to drop the Kree Reaper Axe)
+			if (theEntity instanceof EntityKree) {
 				for (int i = 0; i < ZGHelper.rngInt(1, 2); i++) {
 					ZGHelper.dropItem(ZGItems.kreeFlesh, worldObj, theEntity);
+				}
+				if (rand.nextInt(6) == 0) {
+					ZGHelper.dropItem(ZGItems.kreeReaperAxe, worldObj, theEntity);
 				}
 			}
 		}

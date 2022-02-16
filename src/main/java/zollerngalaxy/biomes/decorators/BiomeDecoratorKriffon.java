@@ -44,8 +44,6 @@ public class BiomeDecoratorKriffon extends BiomeDecoratorZG {
 	
 	public BiomeDecoratorKriffon() {
 		this.dirtGen = new WorldGenMinableZG(ZGBlocks.kriffDirt, SURFACE, EnumOreGenZG.DIRT);
-		// this.magmaGen = new WorldGenMinableZG(MAGMA, SURFACE,
-		// EnumOreGenZG.MAGMA);
 		this.magmaGen2 = new WorldGenMinableZG(MAGMA, STONE, EnumOreGenZG.MAGMA.setGenCount(15));
 		this.blazeGen = new WorldGenMinableZG(ZGBlocks.blazeRock, STONE, EnumOreGenZG.BLAZE);
 		this.copperGen = new WorldGenMinableZG(ZGBlocks.kriffCopperOre, STONE, EnumOreGenZG.COPPER);
@@ -66,7 +64,6 @@ public class BiomeDecoratorKriffon extends BiomeDecoratorZG {
 		this.generateOre(this.copperGen, EnumOreGenZG.COPPER, world, rand);
 		this.generateOre(this.cobaltGen, EnumOreGenZG.COBALT, world, rand);
 		this.generateOre(this.dirtGen, EnumOreGenZG.DIRT, world, rand);
-		// this.generateOre(this.magmaGen, EnumOreGenZG.MAGMA, world, rand);
 		this.generateOre(this.magmaGen2, EnumOreGenZG.MAGMA, world, rand);
 		this.generateOre(this.blazeGen, EnumOreGenZG.BLAZE, world, rand);
 		this.generateOre(this.coalGen, EnumOreGenZG.COAL, world, rand);

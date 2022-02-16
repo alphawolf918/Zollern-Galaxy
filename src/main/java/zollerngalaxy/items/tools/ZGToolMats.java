@@ -22,5 +22,6 @@ public abstract class ZGToolMats {
 	public static final ToolMaterial ZOLLERNIUM = EnumHelper.addToolMaterial("zollernium", 9, 7480, 16.7F, 9.4F, 30);
 	public static final ToolMaterial ASCENDANT = EnumHelper.addToolMaterial("ascendant", 10, 20480, 42.14F, 16.5F, 46);
 	public static final ToolMaterial ZANIUM = EnumHelper.addToolMaterial("zanium", 11, 40960, 58.26F, 32.62F, 58);
+	public static final ToolMaterial REAPER = EnumHelper.addToolMaterial("reaper", 14, 20060, 64.26F, 42.62F, 64);
 	
 }

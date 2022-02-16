@@ -1,0 +1,178 @@
+{
+    "pools": [
+        {
+            "name": "mob_spawner_maveth",
+            "rolls": {
+                "min": 3,
+                "max": 6
+            },
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "galacticraftplanets:item_basic_mars",
+                    "weight": 5,
+                    "functions": [
+                        {
+                            "function": "minecraft:set_data",
+                            "data": 4
+                        },
+                        {
+                            "function": "minecraft:set_count",
+                            "count": {
+                                "min": 1,
+                                "max": 3
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "zollerngalaxy:kreeflesh",
+                    "weight": 20,
+                    "functions": [
+                        {
+                            "function": "minecraft:set_count",
+                            "count": {
+                                "min": 1,
+                                "max": 9
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "zollerngalaxy:vibraniumingot",
+                    "weight": 9,
+                    "functions": [
+                        {
+                            "function": "minecraft:set_count",
+                            "count": {
+                                "min": 1,
+                                "max": 9
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:diamond",
+                    "weight": 7,
+                    "functions": [
+                        {
+                            "function": "minecraft:set_count",
+                            "count": {
+                                "min": 1,
+                                "max": 9
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:emerald",
+                    "weight": 5,
+                    "functions": [
+                        {
+                            "function": "minecraft:set_count",
+                            "count": {
+                                "min": 1,
+                                "max": 9
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "galacticraftplanets:item_basic_asteroids",
+                    "weight": 3,
+                    "functions": [
+                        {
+                            "function": "minecraft:set_data",
+                            "data": {
+                                "min": 1,
+                                "max": 6
+                            }
+                        },
+                        {
+                            "function": "minecraft:set_count",
+                            "count": {
+                                "min": 3,
+                                "max": 6
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "zollerngalaxy:sapphire",
+                    "weight": 2,
+                    "functions": [
+                        {
+                            "function": "minecraft:set_count",
+                            "count": {
+                                "min": 1,
+                                "max": 9
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "zollerngalaxy:raditeingot",
+                    "weight": 2,
+                    "functions": [
+                        {
+                            "function": "minecraft:set_count",
+                            "count": {
+                                "min": 1,
+                                "max": 9
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "zollerngalaxy:zogiteingot",
+                    "weight": 2,
+                    "functions": [
+                        {
+                            "function": "minecraft:set_count",
+                            "count": {
+                                "min": 1,
+                                "max": 9
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "zollerngalaxy:zanium",
+                    "weight": 8,
+                    "functions": [
+                        {
+                            "function": "minecraft:set_count",
+                            "count": {
+                                "min": 1,
+                                "max": 9
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "zollerngalaxy:kree_reaper_axe",
+                    "weight": 1,
+                    "functions": [
+                        {
+                            "function": "minecraft:set_count",
+                            "count": {
+                                "min": 0,
+                                "max": 1
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

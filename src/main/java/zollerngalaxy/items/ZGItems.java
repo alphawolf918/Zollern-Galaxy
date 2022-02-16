@@ -24,6 +24,7 @@ import zollerngalaxy.items.healing.ItemHeart;
 import zollerngalaxy.items.healing.ItemHeartForce;
 import zollerngalaxy.items.healing.ItemMedkit;
 import zollerngalaxy.items.tools.ItemBedrockBreaker;
+import zollerngalaxy.items.tools.ItemKreeReaperAxe;
 import zollerngalaxy.items.tools.ItemOmnitool;
 import zollerngalaxy.items.tools.ItemTunneler;
 import zollerngalaxy.items.tools.ZGItemAxe;
@@ -289,6 +290,7 @@ public class ZGItems {
 	public static final Item swordEnder = new ItemEnderSword();
 	public static final Item swordIce = new ItemIceSword();
 	public static final Item swordLight = new ItemLightSword();
+	public static final Item kreeReaperAxe = new ItemKreeReaperAxe();
 	
 	// Tunnelers
 	public static final Item tunnelerCopper = new ItemTunneler("copper", 1000);
@@ -405,9 +407,9 @@ public class ZGItems {
 				rawAlienBeef, cookedAlienBeef, edenFruit, perdBerry, perdPeach, rawBlubberFish, cookedBlubberFish, rawBladeFish, cookedBladeFish, rawGypsyFish, cookedGypsyFish, creamBall, chocolateRaw, chocolateBar, brownie, candyApple, iceCreamSandwich, iceCream, chocolateStrawberry, edenDungeonKey, shadeKey, tlalocDungeonKey, perdReed, shagreen, sharkTooth, shadowBone,
 				darkEssence, radium, zanium, superChargedCoal, powerStick, lapisStick, starGateTier1, starGateTier2, starGateTier3, starGateTier4, starGateTier5, starGateTier6, starGateTier7, starGateTier8, starGateTier9, starGateTier10, starGateCandy, starGateMoon, OMNITOOL, BEDROCK_BREAKER, pickaxeCobalt, pickaxeEvenium, pickaxeVirinium, pickaxeAmaranth, pickaxeAzurite,
 				pickaxeZollernium, pickaxeRuby, pickaxeSapphire, pickaxeZanium, shovelCobalt, shovelEvenium, shovelVirinium, shovelAmaranth, shovelAzurite, shovelZollernium, shovelRuby, shovelSapphire, shovelZanium, axeCobalt, axeEvenium, axeVirinium, axeAmaranth, axeAzurite, axeZollernium, axeRuby, axeSapphire, axeZanium, hoeCobalt, hoeEvenium, hoeVirinium, hoeAmaranth,
-				hoeAzurite, hoeZollernium, hoeRuby, hoeSapphire, hoeZanium, swordCobalt, swordEvenium, swordVirinium, swordAmaranth, swordAzurite, swordZollernium, swordRuby, swordSapphire, swordZanium, swordWither, swordFire, swordThor, swordEnder, swordIce, swordLight, tunnelerCopper, tunnelerGold, tunnelerAmaranth, helmetWood, helmetStone, helmetAmaranth, helmetZollernium,
-				helmetAzurite, helmetRadium, helmetRuby, helmetSapphire, helmetZanium, helmetRadite, helmetZogite, chestWood, chestStone, chestAmaranth, chestZollernium, chestAzurite, chestRadium, chestRuby, chestSapphire, chestZanium, chestRadite, chestZogite, legsWood, legsStone, legsAmaranth, legsZollernium, legsAzurite, legsRadium, legsRuby, legsSapphire, legsZanium,
-				legsRadite, legsZogite, bootsWood, bootsStone, bootsAmaranth, bootsZollernium, bootsAzurite, bootsRadium, bootsRuby, bootsSapphire, bootsZanium, bootsRadite, bootsZogite, blueprintCorruption, blueprintThermalHot, blueprintThermalCold, healingHeart, healingHeartForce, amuletStorm, oxygenTankTier4, oxygenTankTier5, oxygenTankTier6);
+				hoeAzurite, hoeZollernium, hoeRuby, hoeSapphire, hoeZanium, swordCobalt, swordEvenium, swordVirinium, swordAmaranth, swordAzurite, swordZollernium, swordRuby, swordSapphire, swordZanium, swordWither, swordFire, swordThor, swordEnder, swordIce, swordLight, kreeReaperAxe, tunnelerCopper, tunnelerGold, tunnelerAmaranth, helmetWood, helmetStone, helmetAmaranth,
+				helmetZollernium, helmetAzurite, helmetRadium, helmetRuby, helmetSapphire, helmetZanium, helmetRadite, helmetZogite, chestWood, chestStone, chestAmaranth, chestZollernium, chestAzurite, chestRadium, chestRuby, chestSapphire, chestZanium, chestRadite, chestZogite, legsWood, legsStone, legsAmaranth, legsZollernium, legsAzurite, legsRadium, legsRuby, legsSapphire,
+				legsZanium, legsRadite, legsZogite, bootsWood, bootsStone, bootsAmaranth, bootsZollernium, bootsAzurite, bootsRadium, bootsRuby, bootsSapphire, bootsZanium, bootsRadite, bootsZogite, blueprintCorruption, blueprintThermalHot, blueprintThermalCold, healingHeart, healingHeartForce, amuletStorm, oxygenTankTier4, oxygenTankTier5, oxygenTankTier6);
 		//
 		//
 		ZGItems.registerItems(alcohol, gauze, medkit, nail, nailGroup, woodBox, metalParts, dough, doughCooked, flour, kreeFlesh);

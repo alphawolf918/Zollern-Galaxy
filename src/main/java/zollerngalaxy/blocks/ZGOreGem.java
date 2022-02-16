@@ -140,7 +140,7 @@ public class ZGOreGem extends ZGBlockOre {
 	@Override
 	public int getExpDrop(IBlockState state, IBlockAccess world, BlockPos pos, int fortune) {
 		int extMod = (this.enableExtremeMode) ? 2 : 0;
-		Random rand = world instanceof World ? ((World) world).rand : new Random();
+		Random rand = (world instanceof World) ? ((World) world).rand : new Random();
 		return MathHelper.getInt(rand, 3 + extMod, 7 + extMod);
 	}
 	
