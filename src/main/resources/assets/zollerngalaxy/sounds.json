@@ -318,6 +318,37 @@
       ],
       "subtitle":"zollerngalaxy.subtitle.vexbot.die"
    },
+   "mob.sentinel.say":{
+	   "category":"master",
+	   "sounds":[
+		 "zollerngalaxy:mob/sentinel/say1",
+		 "zollerngalaxy:mob/sentinel/say2",
+		 "zollerngalaxy:mob/sentinel/say3"
+	   ],
+	   "subtitle":"zollerngalaxy.subtitle.sentinel.say"
+   },
+   "mob.sentinel.hurt":{
+	   "category":"master",
+	   "sounds":[
+		 "zollerngalaxy:mob/sentinel/hurt1",
+		 "zollerngalaxy:mob/sentinel/hurt2"
+	   ],
+	   "subtitle":"zollerngalaxy.subtitle.sentinel.hurt"
+   },
+   "mob.sentinel.die":{
+	   "category":"master",
+	   "sounds":[
+		 "zollerngalaxy:mob/sentinel/die"
+	   ],
+	   "subtitle":"zollerngalaxy.subtitle.sentinel.die"
+   },
+   "mob.sentinel.shoot":{
+	   "category":"master",
+	   "sounds":[
+	     "zollerngalaxy:mob/sentinel/shoot"
+	   ],
+	   "subtitle":"zollerngalaxy.subtitle.sentinel.shoot"
+   },
    "mob.bloodworm.say":{
 	   "category":"master",
 	   "sounds":[

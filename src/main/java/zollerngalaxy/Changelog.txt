@@ -23,6 +23,8 @@ Zollern Galaxy v2.0.39
 * Added the planet Maveth.
     - The Kree spawn here.
     - Inspired by Agents of S.H.I.E.L.D.
+* Added the Sentinel mob.
+    - Inspired by No Man's Sky.
 * 
 
 [CHANGES]

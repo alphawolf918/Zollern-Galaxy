@@ -677,6 +677,10 @@ zollerngalaxy.subtitle.xenomorph.queen.die=Xenomorph Queen perishes
 zollerngalaxy.subtitle.vexbot.say=Vexbot calculates existence
 zollerngalaxy.subtitle.vexbot.hurt=Vexbot is damaged
 zollerngalaxy.subtitle.vexbot.die=Vexbot expires
+zollerngalaxy.subtitle.sentinel.say=Sentinel runs its protocols
+zollerngalaxy.subtitle.sentinel.hurt=Sentinel breaking
+zollerngalaxy.subtitle.sentinel.die=Sentinel broken
+zollerngalaxy.subtitle.sentinel.shoot=Sentinel fires
 zollerngalaxy.subtitle.bloodworm.say=Bloodworm hisses
 zollerngalaxy.subtitle.bloodworm.step=Bloodworm slithering
 zollerngalaxy.subtitle.bloodworm.hurt=Bloodworm hurts
@@ -1144,6 +1148,7 @@ entity.zollerngalaxy:blubberfish.name=Blubber Fish
 entity.zollerngalaxy:gypsyfish.name=Gypsy Fish
 entity.zollerngalaxy:bladefish.name=Blade Fish
 entity.zollerngalaxy:kree.name=Kree Reaper
+entity.zollerngalaxy:sentinel.name=Sentinel
 
 ## Villagers ##
 

@@ -8,7 +8,6 @@
 package zollerngalaxy.mobs.entities;
 
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -28,7 +27,6 @@ public class EntityVexBotGold extends EntityVexBot {
 		this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(25.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.284D);
 		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(16.0D);
-		this.getEntityAttribute(SharedMonsterAttributes.ARMOR).setBaseValue(20.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(75.0D);
 	}
 	
@@ -40,14 +38,6 @@ public class EntityVexBotGold extends EntityVexBot {
 	@Override
 	protected float getSoundVolume() {
 		return 4.15F;
-	}
-	
-	@Override
-	public void onLivingUpdate() {
-		if (this.isInWater()) {
-			this.attackEntityFrom(DamageSource.DROWN, 10.0F);
-		}
-		super.onLivingUpdate();
 	}
 	
 	@Override

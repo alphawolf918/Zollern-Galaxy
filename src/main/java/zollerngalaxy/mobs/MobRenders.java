@@ -31,6 +31,7 @@ import zollerngalaxy.mobs.entities.EntityMummy;
 import zollerngalaxy.mobs.entities.EntityOinkus;
 import zollerngalaxy.mobs.entities.EntityPigShroom;
 import zollerngalaxy.mobs.entities.EntityScorpion;
+import zollerngalaxy.mobs.entities.EntitySentinel;
 import zollerngalaxy.mobs.entities.EntityShade;
 import zollerngalaxy.mobs.entities.EntityShadowSkeleton;
 import zollerngalaxy.mobs.entities.EntityShark;
@@ -46,6 +47,8 @@ import zollerngalaxy.mobs.entities.boss.EntityShadowAlien;
 import zollerngalaxy.mobs.entities.boss.EntityVexBotBoss;
 import zollerngalaxy.mobs.entities.boss.EntityXenomorphQueen;
 import zollerngalaxy.mobs.entities.companions.EntityGalaxyDragon;
+import zollerngalaxy.mobs.entities.projectiles.EntitySentinelGunShot;
+import zollerngalaxy.mobs.entities.projectiles.render.RenderSentinelGunShot;
 import zollerngalaxy.mobs.entities.villagers.EntityAbyssalVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityAstrosVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityAtheonVillager;
@@ -90,6 +93,7 @@ import zollerngalaxy.mobs.renders.RenderMummy;
 import zollerngalaxy.mobs.renders.RenderOinkus;
 import zollerngalaxy.mobs.renders.RenderPigShroom;
 import zollerngalaxy.mobs.renders.RenderScorpion;
+import zollerngalaxy.mobs.renders.RenderSentinel;
 import zollerngalaxy.mobs.renders.RenderShade;
 import zollerngalaxy.mobs.renders.RenderShadowSkeleton;
 import zollerngalaxy.mobs.renders.RenderShark;
@@ -136,6 +140,7 @@ public final class MobRenders {
 		MobRenders.renderPassiveAliens();
 		MobRenders.renderVillagers();
 		MobRenders.renderEnemies();
+		MobRenders.renderProjectiles();
 		MobRenders.renderBosses();
 	}
 	
@@ -209,6 +214,11 @@ public final class MobRenders {
 		MobRenders.renderMob(EntityXenomorph.class, RenderXenomorph::new);
 		MobRenders.renderMob(EntityBloodWorm.class, RenderBloodWorm::new);
 		MobRenders.renderMob(EntityKree.class, RenderKree::new);
+		MobRenders.renderMob(EntitySentinel.class, RenderSentinel::new);
+	}
+	
+	private static void renderProjectiles() {
+		MobRenders.renderMob(EntitySentinelGunShot.class, RenderSentinelGunShot::new);
 	}
 	
 	private static void renderBosses() {

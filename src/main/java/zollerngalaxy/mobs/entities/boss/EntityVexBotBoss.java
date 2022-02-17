@@ -43,8 +43,9 @@ import zollerngalaxy.items.ZGItems;
 import zollerngalaxy.mobs.entities.EntityGrayAlien;
 import zollerngalaxy.mobs.entities.ai.EntityAIVexbotBossAttack;
 import zollerngalaxy.mobs.entities.base.EntityZGVillagerBase;
+import zollerngalaxy.mobs.entities.interfaces.IEntityRobot;
 
-public class EntityVexBotBoss extends EntityBossBase implements IEntityBreathable {
+public class EntityVexBotBoss extends EntityBossBase implements IEntityRobot, IEntityBreathable {
 	
 	private BlockPos entPos = this.getPosition();
 	

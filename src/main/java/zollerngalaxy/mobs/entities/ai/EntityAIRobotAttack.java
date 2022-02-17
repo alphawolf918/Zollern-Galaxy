@@ -9,14 +9,14 @@ package zollerngalaxy.mobs.entities.ai;
 
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.ai.EntityAIAttackMelee;
-import zollerngalaxy.mobs.entities.EntityVexBot;
+import zollerngalaxy.mobs.entities.base.EntityRobotBaseZG;
 
-public class EntityAIVexbotAttack extends EntityAIAttackMelee {
+public class EntityAIRobotAttack extends EntityAIAttackMelee {
 	
-	private final EntityVexBot bot;
+	private final EntityRobotBaseZG bot;
 	private int raiseArmTicks;
 	
-	public EntityAIVexbotAttack(EntityVexBot botIn, double speedIn, boolean longMemoryIn) {
+	public EntityAIRobotAttack(EntityRobotBaseZG botIn, double speedIn, boolean longMemoryIn) {
 		super(botIn, speedIn, longMemoryIn);
 		this.bot = botIn;
 	}
@@ -30,5 +30,4 @@ public class EntityAIVexbotAttack extends EntityAIAttackMelee {
 			this.attacker.attackEntityAsMob(p_190102_1_);
 		}
 	}
-	
 }

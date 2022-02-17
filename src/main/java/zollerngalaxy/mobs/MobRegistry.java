@@ -37,6 +37,7 @@ import zollerngalaxy.mobs.entities.EntityMummy;
 import zollerngalaxy.mobs.entities.EntityOinkus;
 import zollerngalaxy.mobs.entities.EntityPigShroom;
 import zollerngalaxy.mobs.entities.EntityScorpion;
+import zollerngalaxy.mobs.entities.EntitySentinel;
 import zollerngalaxy.mobs.entities.EntityShade;
 import zollerngalaxy.mobs.entities.EntityShadowSkeleton;
 import zollerngalaxy.mobs.entities.EntityShark;
@@ -283,6 +284,9 @@ public class MobRegistry {
 		
 		// Kree
 		registerEntity("kree", EntityKree.class, entityId++, 0x00008b, 0x00008b);
+		
+		// Sentinel
+		registerEntity("sentinel", EntitySentinel.class, entityId++, 0xdddddd, 0x8b0000);
 		
 		ZGHelper.Log("Loaded a total of " + totalMobs + " new mobs.");
 	}
