@@ -27,7 +27,7 @@ import zollerngalaxy.celestial.ZGPlanets;
 import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderZollus;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
-import zollerngalaxy.mobs.entities.EntitySentinelDrone;
+import zollerngalaxy.mobs.entities.robots.sentinels.EntitySentinelDrone;
 import zollerngalaxy.mobs.entities.villagers.EntityZollusVillager;
 
 public class BiomeZollusBase extends BiomeSpace {

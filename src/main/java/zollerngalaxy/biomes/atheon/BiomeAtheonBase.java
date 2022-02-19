@@ -23,8 +23,8 @@ import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderAtheon;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 import zollerngalaxy.mobs.entities.EntityGrayAlien;
-import zollerngalaxy.mobs.entities.EntitySentinelDrone;
-import zollerngalaxy.mobs.entities.EntityVexBotGold;
+import zollerngalaxy.mobs.entities.robots.EntityVexBotGold;
+import zollerngalaxy.mobs.entities.robots.sentinels.EntitySentinelDrone;
 import zollerngalaxy.mobs.entities.villagers.EntityAtheonVillager;
 
 public abstract class BiomeAtheonBase extends BiomeSpace {

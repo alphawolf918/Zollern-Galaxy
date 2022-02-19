@@ -23,9 +23,9 @@ Zollern Galaxy v2.0.39
 * Added the planet Maveth.
     - The Kree spawn here.
     - Inspired by Agents of S.H.I.E.L.D.
-* Added the Sentinel mob.
+* Added the Sentinel mobs: Drones, Hounds and Walkers.
     - Inspired by No Man's Sky.
-    - These will spawn on most (not all) planets and moons from this mod.
+    - Drones will spawn on most (not all) planets and moons from this mod, while others are called as backup.
         - This can be disabled in the config.
 * Added compatibility with Aliens vs Predator mod.
     - Several entities from that mod will now spawn on Centotl if it is present.
@@ -53,6 +53,7 @@ Zollern Galaxy v2.0.39
 * Facehuggers and Xenomorphs will now spawn naturally on planet Centotl.
 * Vexbots will now spawn on Xantheon.
 * Centotl now has a breathable atmosphere.
+* Updated Russian translations by mMONTAGEm.
 * 
 
 [FIXES]
@@ -61,4 +62,5 @@ Zollern Galaxy v2.0.39
 * Fixed a non-translating tooltip.
 * Fixed tunnel gens not generating correctly.
 * Fixed Crystal Towers not generating correctly.
+* Fixed Zollus Gold Ore not translating correctly.
 * 

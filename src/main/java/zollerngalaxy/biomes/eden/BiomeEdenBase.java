@@ -42,7 +42,7 @@ import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.mobs.entities.EntityEdenCow;
 import zollerngalaxy.mobs.entities.EntityOinkus;
-import zollerngalaxy.mobs.entities.EntitySentinelDrone;
+import zollerngalaxy.mobs.entities.robots.sentinels.EntitySentinelDrone;
 import zollerngalaxy.mobs.entities.villagers.EntityEdenVillager;
 import zollerngalaxy.util.BiomeUtils;
 import zollerngalaxy.worldgen.eden.WorldGenEdenTrees;

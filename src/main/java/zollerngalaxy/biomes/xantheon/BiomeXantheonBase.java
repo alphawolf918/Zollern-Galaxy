@@ -23,8 +23,8 @@ import zollerngalaxy.celestial.ZGPlanets;
 import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 import zollerngalaxy.mobs.entities.EntityGrayAlien;
-import zollerngalaxy.mobs.entities.EntitySentinelDrone;
-import zollerngalaxy.mobs.entities.EntityVexBot;
+import zollerngalaxy.mobs.entities.robots.EntityVexBot;
+import zollerngalaxy.mobs.entities.robots.sentinels.EntitySentinelDrone;
 
 public class BiomeXantheonBase extends BiomeSpace {
 	

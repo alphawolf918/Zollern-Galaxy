@@ -24,8 +24,8 @@ import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderCentotl;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 import zollerngalaxy.lib.helpers.ModHelperBase;
 import zollerngalaxy.mobs.entities.EntityFacehugger;
-import zollerngalaxy.mobs.entities.EntitySentinelDrone;
 import zollerngalaxy.mobs.entities.EntityXenomorph;
+import zollerngalaxy.mobs.entities.robots.sentinels.EntitySentinelDrone;
 import zollerngalaxy.mobs.entities.villagers.EntityCentotlVillager;
 
 public class BiomeCentoBase extends BiomeSpace {

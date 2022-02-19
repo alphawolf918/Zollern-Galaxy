@@ -23,8 +23,8 @@ import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderTlaloc;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 import zollerngalaxy.lib.helpers.ZGHelper;
-import zollerngalaxy.mobs.entities.EntitySentinelDrone;
-import zollerngalaxy.mobs.entities.EntityVexBot;
+import zollerngalaxy.mobs.entities.robots.EntityVexBot;
+import zollerngalaxy.mobs.entities.robots.sentinels.EntitySentinelDrone;
 import zollerngalaxy.mobs.entities.villagers.EntityTlalocVillager;
 
 public class BiomeTlalocBase extends BiomeSpace {

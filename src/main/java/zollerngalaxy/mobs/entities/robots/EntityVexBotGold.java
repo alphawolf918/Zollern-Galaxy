@@ -5,7 +5,7 @@
  * but do not claim it as your own, and
  * do not redistribute it.
  */
-package zollerngalaxy.mobs.entities;
+package zollerngalaxy.mobs.entities.robots;
 
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.world.World;

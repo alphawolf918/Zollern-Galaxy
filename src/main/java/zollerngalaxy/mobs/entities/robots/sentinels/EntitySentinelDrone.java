@@ -5,7 +5,7 @@
  * but do not claim it as your own, and
  * do not redistribute it.
  */
-package zollerngalaxy.mobs.entities;
+package zollerngalaxy.mobs.entities.robots.sentinels;
 
 import java.util.Random;
 import net.minecraft.block.state.IBlockState;
@@ -14,30 +14,18 @@ import net.minecraft.entity.MoverType;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIBase;
 import net.minecraft.entity.ai.EntityMoveHelper;
-import net.minecraft.network.datasync.DataParameter;
-import net.minecraft.network.datasync.DataSerializers;
-import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.events.ZGSoundEvents;
-import zollerngalaxy.mobs.entities.EntitySentinelDrone.SentinelMoveHelper.AILookAround;
-import zollerngalaxy.mobs.entities.EntitySentinelDrone.SentinelMoveHelper.AIRandomFly;
-import zollerngalaxy.mobs.entities.EntitySentinelDrone.SentinelMoveHelper.AISentinelLaserAttack;
 import zollerngalaxy.mobs.entities.ai.EntityAIFindNearestPlayerZG;
-import zollerngalaxy.mobs.entities.base.EntityRobotBaseZG;
-import zollerngalaxy.mobs.entities.projectiles.EntitySentinelLaser;
+import zollerngalaxy.mobs.entities.robots.sentinels.EntitySentinelDrone.SentinelMoveHelper.AILookAround;
+import zollerngalaxy.mobs.entities.robots.sentinels.EntitySentinelDrone.SentinelMoveHelper.AIRandomFly;
 
-public class EntitySentinelDrone extends EntityRobotBaseZG {
-	
-	private static final DataParameter<Boolean> ATTACKING = EntityDataManager.<Boolean> createKey(EntitySentinelDrone.class, DataSerializers.BOOLEAN);
+public class EntitySentinelDrone extends EntityAbstractSentinel {
 	
 	public EntitySentinelDrone(World worldIn) {
 		super(worldIn);
@@ -50,7 +38,6 @@ public class EntitySentinelDrone extends EntityRobotBaseZG {
 		super.initEntityAI();
 		this.tasks.addTask(5, new AIRandomFly(this));
 		this.tasks.addTask(6, new AILookAround(this));
-		this.tasks.addTask(6, new AISentinelLaserAttack(this));
 		this.targetTasks.addTask(6, new EntityAIFindNearestPlayerZG(this));
 	}
 	
@@ -70,26 +57,6 @@ public class EntitySentinelDrone extends EntityRobotBaseZG {
 		return 1;
 	}
 	
-	public void setAttacking(boolean attacking) {
-		this.dataManager.set(ATTACKING, Boolean.valueOf(attacking));
-	}
-	
-	@SideOnly(Side.CLIENT)
-	public boolean isAttacking() {
-		return this.dataManager.get(ATTACKING).booleanValue();
-	}
-	
-	@Override
-	protected void entityInit() {
-		super.entityInit();
-		this.dataManager.register(ATTACKING, Boolean.valueOf(false));
-	}
-	
-	@Override
-	protected float getSoundVolume() {
-		return 5.0F;
-	}
-	
 	@Override
 	protected SoundEvent getAmbientSound() {
 		return ZGSoundEvents.ENTITY_SENTINEL_SAY;
@@ -105,6 +72,7 @@ public class EntitySentinelDrone extends EntityRobotBaseZG {
 		return ZGSoundEvents.ENTITY_SENTINEL_DIE;
 	}
 	
+	// Same code that the Ghast uses to travel.
 	@Override
 	public void travel(float strafe, float vertical, float forward) {
 		if (this.isInWater()) {
@@ -209,61 +177,6 @@ public class EntitySentinelDrone extends EntityRobotBaseZG {
 				}
 			}
 			return true;
-		}
-		
-		static class AISentinelLaserAttack extends EntityAIBase {
-			
-			private final EntitySentinelDrone parentEntity;
-			public int attackTimer;
-			
-			public AISentinelLaserAttack(EntitySentinelDrone sentinel) {
-				this.parentEntity = sentinel;
-			}
-			
-			@Override
-			public boolean shouldExecute() {
-				return this.parentEntity.getAttackTarget() != null;
-			}
-			
-			@Override
-			public void startExecuting() {
-				this.attackTimer = 0;
-			}
-			
-			@Override
-			public void resetTask() {
-				this.parentEntity.setAttacking(false);
-			}
-			
-			@Override
-			public void updateTask() {
-				EntityLivingBase entitylivingbase = this.parentEntity.getAttackTarget();
-				double d0 = 64.0D;
-				
-				if (entitylivingbase.getDistanceSq(this.parentEntity) < 4096.0D && this.parentEntity.canEntityBeSeen(entitylivingbase)) {
-					World world = this.parentEntity.world;
-					++this.attackTimer;
-					
-					if (this.attackTimer == 20) {
-						double d1 = 8.0D;
-						Vec3d vec3d = this.parentEntity.getLook(1.0F);
-						double d2 = entitylivingbase.posX - (this.parentEntity.posX + vec3d.x * 4.0D);
-						double d3 = entitylivingbase.getEntityBoundingBox().minY + entitylivingbase.height / 2.0F - (0.5D + this.parentEntity.posY + this.parentEntity.height / 2.0F);
-						double d4 = entitylivingbase.posZ - (this.parentEntity.posZ + vec3d.z * 4.0D);
-						EntitySentinelLaser entitySentinelLaser = new EntitySentinelLaser(world, this.parentEntity, d2, d3, d4);
-						entitySentinelLaser.posX = this.parentEntity.posX + vec3d.x * 4.0D;
-						entitySentinelLaser.posY = this.parentEntity.posY + this.parentEntity.height / 2.0F + 0.5D;
-						entitySentinelLaser.posZ = this.parentEntity.posZ + vec3d.z * 4.0D;
-						world.spawnEntity(entitySentinelLaser);
-						this.parentEntity.world.playSound(null, this.parentEntity.getPosition(), ZGSoundEvents.ENTITY_SENTINEL_SHOOT, SoundCategory.MASTER, 8.0F, 1.0F);
-						this.attackTimer = -10;
-					}
-				} else if (this.attackTimer > 0) {
-					--this.attackTimer;
-				}
-				
-				this.parentEntity.setAttacking(this.attackTimer > 10);
-			}
 		}
 		
 		static class AILookAround extends EntityAIBase {

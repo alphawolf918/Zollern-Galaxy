@@ -31,14 +31,11 @@ import zollerngalaxy.mobs.entities.EntityMummy;
 import zollerngalaxy.mobs.entities.EntityOinkus;
 import zollerngalaxy.mobs.entities.EntityPigShroom;
 import zollerngalaxy.mobs.entities.EntityScorpion;
-import zollerngalaxy.mobs.entities.EntitySentinelDrone;
 import zollerngalaxy.mobs.entities.EntityShade;
 import zollerngalaxy.mobs.entities.EntityShadowSkeleton;
 import zollerngalaxy.mobs.entities.EntityShark;
 import zollerngalaxy.mobs.entities.EntitySpiderling;
 import zollerngalaxy.mobs.entities.EntitySquidlus;
-import zollerngalaxy.mobs.entities.EntityVexBot;
-import zollerngalaxy.mobs.entities.EntityVexBotGold;
 import zollerngalaxy.mobs.entities.EntityWanderer;
 import zollerngalaxy.mobs.entities.EntityWasp;
 import zollerngalaxy.mobs.entities.EntityXenomorph;
@@ -49,6 +46,10 @@ import zollerngalaxy.mobs.entities.boss.EntityXenomorphQueen;
 import zollerngalaxy.mobs.entities.companions.EntityGalaxyDragon;
 import zollerngalaxy.mobs.entities.projectiles.EntitySentinelLaser;
 import zollerngalaxy.mobs.entities.projectiles.render.RenderSentinelLaser;
+import zollerngalaxy.mobs.entities.robots.EntityVexBot;
+import zollerngalaxy.mobs.entities.robots.EntityVexBotGold;
+import zollerngalaxy.mobs.entities.robots.sentinels.EntitySentinelDrone;
+import zollerngalaxy.mobs.entities.robots.sentinels.EntitySentinelHound;
 import zollerngalaxy.mobs.entities.villagers.EntityAbyssalVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityAstrosVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityAtheonVillager;
@@ -94,6 +95,7 @@ import zollerngalaxy.mobs.renders.RenderOinkus;
 import zollerngalaxy.mobs.renders.RenderPigShroom;
 import zollerngalaxy.mobs.renders.RenderScorpion;
 import zollerngalaxy.mobs.renders.RenderSentinelDrone;
+import zollerngalaxy.mobs.renders.RenderSentinelHound;
 import zollerngalaxy.mobs.renders.RenderShade;
 import zollerngalaxy.mobs.renders.RenderShadowSkeleton;
 import zollerngalaxy.mobs.renders.RenderShark;
@@ -215,6 +217,7 @@ public final class MobRenders {
 		MobRenders.renderMob(EntityBloodWorm.class, RenderBloodWorm::new);
 		MobRenders.renderMob(EntityKree.class, RenderKree::new);
 		MobRenders.renderMob(EntitySentinelDrone.class, RenderSentinelDrone::new);
+		MobRenders.renderMob(EntitySentinelHound.class, RenderSentinelHound::new);
 	}
 	
 	private static void renderProjectiles() {

@@ -14,7 +14,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.lib.ZGInfo;
-import zollerngalaxy.mobs.entities.EntitySentinelDrone;
+import zollerngalaxy.mobs.entities.robots.sentinels.EntitySentinelDrone;
 import zollerngalaxy.mobs.models.ModelSentinelDrone;
 
 @SideOnly(Side.CLIENT)

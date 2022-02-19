@@ -21,7 +21,7 @@ import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.celestial.ZGPlanets;
 import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
-import zollerngalaxy.mobs.entities.EntitySentinelDrone;
+import zollerngalaxy.mobs.entities.robots.sentinels.EntitySentinelDrone;
 
 public abstract class BiomeXathiusBase extends BiomeSpace {
 	

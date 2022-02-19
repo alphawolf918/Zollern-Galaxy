@@ -14,7 +14,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import zollerngalaxy.core.ZGLootTables;
 import zollerngalaxy.lib.helpers.ZGHelper;
-import zollerngalaxy.mobs.entities.EntityVexBot;
+import zollerngalaxy.mobs.entities.robots.EntityVexBot;
 
 public class WorldGenUFO extends ZGWorldGenMaster {
 	

@@ -7,7 +7,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.lib.ZGInfo;
-import zollerngalaxy.mobs.entities.EntityVexBot;
+import zollerngalaxy.mobs.entities.robots.EntityVexBot;
 import zollerngalaxy.mobs.models.ModelVexbot;
 
 @SideOnly(Side.CLIENT)

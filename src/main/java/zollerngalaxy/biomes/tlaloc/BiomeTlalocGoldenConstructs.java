@@ -10,7 +10,7 @@ package zollerngalaxy.biomes.tlaloc;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.celestial.ZGPlanets;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
-import zollerngalaxy.mobs.entities.EntityVexBotGold;
+import zollerngalaxy.mobs.entities.robots.EntityVexBotGold;
 
 public class BiomeTlalocGoldenConstructs extends BiomeTlalocBase {
 	

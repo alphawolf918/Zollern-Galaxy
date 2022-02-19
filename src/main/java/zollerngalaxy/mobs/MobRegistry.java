@@ -37,14 +37,11 @@ import zollerngalaxy.mobs.entities.EntityMummy;
 import zollerngalaxy.mobs.entities.EntityOinkus;
 import zollerngalaxy.mobs.entities.EntityPigShroom;
 import zollerngalaxy.mobs.entities.EntityScorpion;
-import zollerngalaxy.mobs.entities.EntitySentinelDrone;
 import zollerngalaxy.mobs.entities.EntityShade;
 import zollerngalaxy.mobs.entities.EntityShadowSkeleton;
 import zollerngalaxy.mobs.entities.EntityShark;
 import zollerngalaxy.mobs.entities.EntitySpiderling;
 import zollerngalaxy.mobs.entities.EntitySquidlus;
-import zollerngalaxy.mobs.entities.EntityVexBot;
-import zollerngalaxy.mobs.entities.EntityVexBotGold;
 import zollerngalaxy.mobs.entities.EntityWanderer;
 import zollerngalaxy.mobs.entities.EntityWasp;
 import zollerngalaxy.mobs.entities.EntityXenomorph;
@@ -54,6 +51,10 @@ import zollerngalaxy.mobs.entities.boss.EntityVexBotBoss;
 import zollerngalaxy.mobs.entities.boss.EntityXenomorphQueen;
 import zollerngalaxy.mobs.entities.companions.EntityGalaxyDragon;
 import zollerngalaxy.mobs.entities.projectiles.EntitySentinelLaser;
+import zollerngalaxy.mobs.entities.robots.EntityVexBot;
+import zollerngalaxy.mobs.entities.robots.EntityVexBotGold;
+import zollerngalaxy.mobs.entities.robots.sentinels.EntitySentinelDrone;
+import zollerngalaxy.mobs.entities.robots.sentinels.EntitySentinelHound;
 import zollerngalaxy.mobs.entities.villagers.EntityAbyssalVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityAstrosVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityAtheonVillager;
@@ -286,11 +287,14 @@ public class MobRegistry {
 		// Kree
 		registerEntity("kree", EntityKree.class, entityId++, 0x00008b, 0x00008b);
 		
-		// Sentinel
-		registerEntity("sentinel", EntitySentinelDrone.class, entityId++, 0xdddddd, 0x8b0000);
-		
-		// Sentinel Gunshot
+		// Sentinel Laser
 		registerEntity("sentinelgunshot", EntitySentinelLaser.class, entityId++);
+		
+		// Sentinel Drone
+		registerEntity("sentinel", EntitySentinelDrone.class, entityId++, 0x444444, 0x8b0000);
+		
+		// Sentinel Hound
+		registerEntity("sentinelhound", EntitySentinelHound.class, entityId++, 0x777777, 0xff0000);
 		
 		ZGHelper.Log("Loaded a total of " + totalMobs + " new mobs.");
 	}

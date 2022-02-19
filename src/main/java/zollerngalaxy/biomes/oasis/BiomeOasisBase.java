@@ -22,7 +22,7 @@ import zollerngalaxy.compat.ThermalFoundationCompat;
 import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderOasis;
 import zollerngalaxy.lib.helpers.ModHelperBase;
-import zollerngalaxy.mobs.entities.EntitySentinelDrone;
+import zollerngalaxy.mobs.entities.robots.sentinels.EntitySentinelDrone;
 import zollerngalaxy.mobs.entities.villagers.EntityOasisVillager;
 import zollerngalaxy.util.BiomeUtils;
 

@@ -45,6 +45,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.items.ZGItems;
 import zollerngalaxy.mobs.entities.ai.EntityAIKreeAttack;
 import zollerngalaxy.mobs.entities.base.EntityZGVillagerBase;
+import zollerngalaxy.mobs.entities.robots.EntityVexBot;
 
 public class EntityKree extends EntityMob implements IEntityBreathable {
 	
