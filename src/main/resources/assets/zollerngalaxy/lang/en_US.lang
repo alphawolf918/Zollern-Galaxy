@@ -850,11 +850,11 @@ item.shadekey.name=Shade Key
 
 item.blueprint_rad.name=Radiation Protection
 item.blueprint_tox.name=Toxicity Protection
-item.blueprint_poison.name=Posion Protection
+item.blueprint_poison.name=Poison Protection
 item.blueprint_corruption.name=Corruption Protection
 item.blueprint_radiance.name=Darkness Protection
 item.blueprint_scorch.name=Scorch Protection
-item.blueprint_freeze.name=Freeze Protection
+tooltips.blueprint_freezing=Freeze Protection
 
 item.compressedemerald.name=Compressed Emerald
 item.compresseddiamond.name=Compressed Diamond
