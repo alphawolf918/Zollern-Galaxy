@@ -27,6 +27,7 @@ import zollerngalaxy.celestial.ZGPlanets;
 import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderAstros;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
+import zollerngalaxy.mobs.entities.EntitySentinelDrone;
 import zollerngalaxy.mobs.entities.villagers.EntityAstrosVillager;
 
 public class BiomeAstrosBase extends BiomeSpace {
@@ -59,6 +60,9 @@ public class BiomeAstrosBase extends BiomeSpace {
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedCreeper.class, 100, 4, 4));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedEnderman.class, 100, 4, 4));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedWitch.class, 100, 4, 4));
+		if (ConfigManagerZG.enableSentinels) {
+			this.spawnableMonsterList.add(new SpawnListEntry(EntitySentinelDrone.class, 100, 1, 4));
+		}
 		if (ConfigManagerZG.enableAlienVillagerSpawn) {
 			this.spawnableCreatureList.add(new SpawnListEntry(EntityAstrosVillager.class, this.villagerSpawnRate, this.villagerMinSpawnRate, this.villagerMaxSpawnRate));
 		}

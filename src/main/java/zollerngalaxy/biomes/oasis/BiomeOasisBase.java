@@ -22,6 +22,7 @@ import zollerngalaxy.compat.ThermalFoundationCompat;
 import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderOasis;
 import zollerngalaxy.lib.helpers.ModHelperBase;
+import zollerngalaxy.mobs.entities.EntitySentinelDrone;
 import zollerngalaxy.mobs.entities.villagers.EntityOasisVillager;
 import zollerngalaxy.util.BiomeUtils;
 
@@ -45,6 +46,9 @@ public abstract class BiomeOasisBase extends BiomeSpace {
 	public BiomeOasisBase(String singleName, BiomeProperties props) {
 		super(singleName, props);
 		this.setTempCategory(TempCategory.MEDIUM);
+		if (ConfigManagerZG.enableSentinels) {
+			this.spawnableMonsterList.add(new SpawnListEntry(EntitySentinelDrone.class, 10, 1, 2));
+		}
 		if (ConfigManagerZG.enableAlienVillagerSpawn) {
 			this.spawnableCreatureList.add(new SpawnListEntry(EntityOasisVillager.class, this.villagerSpawnRate, this.villagerMinSpawnRate, this.villagerMaxSpawnRate));
 		}

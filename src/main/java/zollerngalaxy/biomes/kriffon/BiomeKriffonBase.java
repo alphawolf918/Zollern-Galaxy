@@ -21,6 +21,7 @@ import zollerngalaxy.celestial.ZGPlanets;
 import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderKriffon;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
+import zollerngalaxy.mobs.entities.EntitySentinelDrone;
 import zollerngalaxy.mobs.entities.villagers.EntityKriffonVillager;
 
 public abstract class BiomeKriffonBase extends BiomeSpace {
@@ -45,11 +46,12 @@ public abstract class BiomeKriffonBase extends BiomeSpace {
 		this.biomeDecor.treesPerChunk = -999;
 		this.biomeDecor.grassPerChunk = -999;
 		this.biomeDecor.mushroomsPerChunk = -999;
-		
+		if (ConfigManagerZG.enableSentinels) {
+			this.spawnableMonsterList.add(new SpawnListEntry(EntitySentinelDrone.class, 10, 1, 2));
+		}
 		if (ConfigManagerZG.enableAlienVillagerSpawn) {
 			this.spawnableCreatureList.add(new SpawnListEntry(EntityKriffonVillager.class, this.villagerSpawnRate, this.villagerMinSpawnRate, this.villagerMaxSpawnRate));
 		}
-		
 		this.setStoneBlock(ZGBlocks.kriffStone);
 		this.setPlanetForBiome(ZGPlanets.planetKriffon);
 	}

@@ -27,6 +27,7 @@ import zollerngalaxy.celestial.ZGPlanets;
 import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderZollus;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
+import zollerngalaxy.mobs.entities.EntitySentinelDrone;
 import zollerngalaxy.mobs.entities.villagers.EntityZollusVillager;
 
 public class BiomeZollusBase extends BiomeSpace {
@@ -50,11 +51,12 @@ public class BiomeZollusBase extends BiomeSpace {
 		this.decorator.grassPerChunk = -999;
 		this.decorator.mushroomsPerChunk = -999;
 		this.clearAllSpawning();
-		
+		if (ConfigManagerZG.enableSentinels) {
+			this.spawnableMonsterList.add(new SpawnListEntry(EntitySentinelDrone.class, 10, 1, 2));
+		}
 		if (ConfigManagerZG.enableAlienVillagerSpawn) {
 			this.spawnableCreatureList.add(new SpawnListEntry(EntityZollusVillager.class, this.villagerSpawnRate, this.villagerMinSpawnRate, this.villagerMaxSpawnRate));
 		}
-		
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedZombie.class, 100, 4, 4));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedSpider.class, 100, 4, 4));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedSkeleton.class, 100, 4, 4));

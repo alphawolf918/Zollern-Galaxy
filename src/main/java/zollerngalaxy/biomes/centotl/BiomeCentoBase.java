@@ -18,9 +18,14 @@ import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.biomes.decorators.BiomeDecoratorCentotl;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.celestial.ZGPlanets;
+import zollerngalaxy.compat.AvPCompat;
 import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderCentotl;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
+import zollerngalaxy.lib.helpers.ModHelperBase;
+import zollerngalaxy.mobs.entities.EntityFacehugger;
+import zollerngalaxy.mobs.entities.EntitySentinelDrone;
+import zollerngalaxy.mobs.entities.EntityXenomorph;
 import zollerngalaxy.mobs.entities.villagers.EntityCentotlVillager;
 
 public class BiomeCentoBase extends BiomeSpace {
@@ -41,13 +46,17 @@ public class BiomeCentoBase extends BiomeSpace {
 		super(singleName, props);
 		this.setTempCategory(TempCategory.WARM);
 		this.setTemp(8.42F);
-		this.biomeDecor.flowersPerChunk = -999;
-		this.biomeDecor.treesPerChunk = -999;
-		this.biomeDecor.grassPerChunk = -999;
-		this.biomeDecor.mushroomsPerChunk = -999;
 		this.clearAllSpawning();
+		if (ConfigManagerZG.enableSentinels) {
+			this.spawnableMonsterList.add(new SpawnListEntry(EntitySentinelDrone.class, 10, 1, 2));
+		}
+		this.spawnableMonsterList.add(new SpawnListEntry(EntityFacehugger.class, 4, 1, 1));
+		this.spawnableMonsterList.add(new SpawnListEntry(EntityXenomorph.class, 2, 1, 1));
 		if (ConfigManagerZG.enableAlienVillagerSpawn) {
 			this.spawnableCreatureList.add(new SpawnListEntry(EntityCentotlVillager.class, this.villagerSpawnRate, this.villagerMinSpawnRate, this.villagerMaxSpawnRate));
+		}
+		if (ModHelperBase.useAvP && ConfigManagerZG.enableAvPCompat) {
+			AvPCompat.addAvPSpawns(this);
 		}
 		this.setBodyForBiome(ZGPlanets.planetCentotl);
 	}
@@ -58,7 +67,6 @@ public class BiomeCentoBase extends BiomeSpace {
 		IBlockState topState = this.topBlock;
 		IBlockState fillState = this.fillerBlock;
 		int j = -1;
-		// int k = (int) (noiseVal / 3.0D + 3.5D + rand.nextDouble() * 0.25D);
 		int k = (int) (noiseVal / 2.0D + 2.5D + rand.nextDouble() * 0.35D);
 		int l = x & 15;
 		int i1 = z & 15;

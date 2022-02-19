@@ -54,7 +54,7 @@ public class WorldProviderCentotl extends WorldProviderPlanetZG {
 	
 	@Override
 	public boolean hasBreathableAtmosphere() {
-		return false;
+		return true;
 	}
 	
 	@Override
@@ -232,5 +232,4 @@ public class WorldProviderCentotl extends WorldProviderPlanetZG {
 	public Class<? extends IChunkGenerator> getChunkProviderClass() {
 		return ChunkProviderCentotl.class;
 	}
-	
 }

@@ -36,5 +36,9 @@ public class ZGCompats {
 		if (ModHelperBase.useAppliedEnergistics2) {
 			AE2Compat.init();
 		}
+		
+		if (ModHelperBase.useAvP) {
+			AvPCompat.init();
+		}
 	}
 }

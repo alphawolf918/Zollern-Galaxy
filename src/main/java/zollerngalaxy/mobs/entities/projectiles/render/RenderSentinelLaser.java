@@ -9,23 +9,23 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.lib.ZGInfo;
-import zollerngalaxy.mobs.entities.projectiles.EntitySentinelGunShot;
-import zollerngalaxy.mobs.models.projectiles.ModelSentinelGunShot;
+import zollerngalaxy.mobs.entities.projectiles.EntitySentinelLaser;
+import zollerngalaxy.mobs.models.projectiles.ModelSentinelLaser;
 
 @SideOnly(Side.CLIENT)
-public class RenderSentinelGunShot extends Render<EntitySentinelGunShot> {
+public class RenderSentinelLaser extends Render<EntitySentinelLaser> {
 	
 	private static final ResourceLocation TEXTURE = new ResourceLocation(ZGInfo.MOD_ID, "textures/entity/projectiles/sentinelshot.png");
-	private final ModelSentinelGunShot model = new ModelSentinelGunShot();
+	private final ModelSentinelLaser model = new ModelSentinelLaser();
 	
-	float f6 = 2.0F;
+	float f6 = 4.0F;
 	
-	public RenderSentinelGunShot(RenderManager manager) {
+	public RenderSentinelLaser(RenderManager manager) {
 		super(manager);
 	}
 	
 	@Override
-	public void doRender(EntitySentinelGunShot entity, double x, double y, double z, float entityYaw, float partialTicks) {
+	public void doRender(EntitySentinelLaser entity, double x, double y, double z, float entityYaw, float partialTicks) {
 		float lightMapSaveX = OpenGlHelper.lastBrightnessX;
 		float lightMapSaveY = OpenGlHelper.lastBrightnessY;
 		float red = 255.0F, green = 0.0F, blue = 0.0F;
@@ -53,12 +53,12 @@ public class RenderSentinelGunShot extends Render<EntitySentinelGunShot> {
 		GlStateManager.popMatrix();
 	}
 	
-	protected void scaleSentinel(EntitySentinelGunShot par1EntitySentinel, float par2) {
+	protected void scaleSentinel(EntitySentinelLaser par1EntitySentinel, float par2) {
 		GL11.glScalef(f6, f6, f6);
 	}
 	
 	@Override
-	protected ResourceLocation getEntityTexture(EntitySentinelGunShot entity) {
-		return RenderSentinelGunShot.TEXTURE;
+	protected ResourceLocation getEntityTexture(EntitySentinelLaser entity) {
+		return RenderSentinelLaser.TEXTURE;
 	}
 }

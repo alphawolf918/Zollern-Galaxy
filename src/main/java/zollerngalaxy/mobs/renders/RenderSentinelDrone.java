@@ -14,31 +14,31 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.lib.ZGInfo;
-import zollerngalaxy.mobs.entities.EntitySentinel;
-import zollerngalaxy.mobs.models.ModelSentinel;
+import zollerngalaxy.mobs.entities.EntitySentinelDrone;
+import zollerngalaxy.mobs.models.ModelSentinelDrone;
 
 @SideOnly(Side.CLIENT)
-public class RenderSentinel extends RenderLiving<EntitySentinel> {
+public class RenderSentinelDrone extends RenderLiving<EntitySentinelDrone> {
 	
 	private static final ResourceLocation ENTITY_TEXTURES = new ResourceLocation(ZGInfo.MOD_ID + ":textures/entity/sentinel.png");
 	
 	private static final float f6 = 3.0F;
 	
-	public RenderSentinel(RenderManager rendermanagerIn) {
-		super(rendermanagerIn, new ModelSentinel(), 0.5F);
+	public RenderSentinelDrone(RenderManager rendermanagerIn) {
+		super(rendermanagerIn, new ModelSentinelDrone(), 0.5F);
 	}
 	
 	@Override
-	protected void preRenderCallback(EntitySentinel entitylivingbaseIn, float partialTickTime) {
+	protected void preRenderCallback(EntitySentinelDrone entitylivingbaseIn, float partialTickTime) {
 		this.scaleSentinel(entitylivingbaseIn, partialTickTime);
 	}
 	
-	protected void scaleSentinel(EntitySentinel par1EntitySentinel, float par2) {
+	protected void scaleSentinel(EntitySentinelDrone par1EntitySentinel, float par2) {
 		GL11.glScalef(f6, f6, f6);
 	}
 	
 	@Override
-	protected ResourceLocation getEntityTexture(EntitySentinel entity) {
+	protected ResourceLocation getEntityTexture(EntitySentinelDrone entity) {
 		return ENTITY_TEXTURES;
 	}
 }

@@ -33,6 +33,7 @@ import zollerngalaxy.mobs.entities.EntityKrull;
 import zollerngalaxy.mobs.entities.EntityMegaCreeper;
 import zollerngalaxy.mobs.entities.EntityMummy;
 import zollerngalaxy.mobs.entities.EntityScorpion;
+import zollerngalaxy.mobs.entities.EntitySentinelDrone;
 import zollerngalaxy.mobs.entities.EntityShade;
 import zollerngalaxy.mobs.entities.EntityShadowSkeleton;
 import zollerngalaxy.mobs.entities.EntitySpiderling;
@@ -76,6 +77,9 @@ public class BiomeCaligroBase extends BiomeSpace {
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityShadowSkeleton.class, 100, 1, 4));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityWitherSkeleton.class, 80, 1, 4));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityShade.class, 100, 1, 4));
+		if (ConfigManagerZG.enableSentinels) {
+			this.spawnableMonsterList.add(new SpawnListEntry(EntitySentinelDrone.class, 100, 1, 4));
+		}
 		if (ConfigManagerZG.enableAlienVillagerSpawn) {
 			this.spawnableCreatureList.add(new SpawnListEntry(EntityCaligroVillager.class, this.villagerSpawnRate, this.villagerMinSpawnRate, this.villagerMaxSpawnRate));
 		}

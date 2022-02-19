@@ -95,7 +95,7 @@ public class EntityXenomorph extends EntityMob implements IShadeEntity, IEntityB
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.34257213517232513D);
 		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(20.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.ARMOR).setBaseValue(20.0D);
-		this.getEntityAttribute(SharedMonsterAttributes.ARMOR_TOUGHNESS).setBaseValue(10.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.ARMOR_TOUGHNESS).setBaseValue(15.0D);
 	}
 	
 	@Override

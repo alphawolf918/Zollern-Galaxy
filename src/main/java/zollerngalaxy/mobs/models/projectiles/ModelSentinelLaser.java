@@ -10,11 +10,11 @@ package zollerngalaxy.mobs.models.projectiles;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
 
-public class ModelSentinelGunShot extends ModelBase {
+public class ModelSentinelLaser extends ModelBase {
 	
 	private final ModelRenderer sentinelShot;
 	
-	public ModelSentinelGunShot() {
+	public ModelSentinelLaser() {
 		this.textureWidth = 64;
 		this.textureHeight = 32;
 		this.sentinelShot = new ModelRenderer(this, 0, 0);

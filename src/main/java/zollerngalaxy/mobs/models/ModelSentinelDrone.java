@@ -11,15 +11,18 @@ import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.util.EnumHandSide;
+import net.minecraft.util.math.MathHelper;
 
-public class ModelSentinel extends ModelBase {
+public class ModelSentinelDrone extends ModelBase {
 	
 	private final ModelRenderer sentinel;
 	private final ModelRenderer head;
 	private final ModelRenderer body;
 	private final ModelRenderer back2_r1;
 	
-	public ModelSentinel() {
+	public ModelSentinelDrone() {
 		textureWidth = 32;
 		textureHeight = 32;
 		
@@ -56,5 +59,41 @@ public class ModelSentinel extends ModelBase {
 		modelRenderer.rotateAngleX = x;
 		modelRenderer.rotateAngleY = y;
 		modelRenderer.rotateAngleZ = z;
+	}
+	
+	@Override
+	public void setRotationAngles(float limbSwing, float limbSwingAmount, float ageInTicks, float netheadYaw, float headPitch, float scaleFactor, Entity entityIn) {
+		boolean flag = (entityIn instanceof EntityLivingBase) && (((EntityLivingBase) entityIn).getTicksElytraFlying() > 4);
+		float f = 1.0F;
+		
+		if (flag) {
+			f = (float) (entityIn.motionX * entityIn.motionX + entityIn.motionY * entityIn.motionY + entityIn.motionZ * entityIn.motionZ);
+			f = f / 0.2F;
+			f = f * f * f;
+		}
+		
+		if (f < 1.0F) {
+			f = 1.0F;
+		}
+		
+		this.head.rotateAngleY = netheadYaw * 0.017453292F;
+		this.head.rotateAngleX = headPitch * 0.017453292F;
+		
+		if (this.swingProgress > 0.0F) {
+			EnumHandSide enumhandside = EnumHandSide.LEFT;
+			float f1 = this.swingProgress;
+			this.body.rotateAngleY = MathHelper.sin(MathHelper.sqrt(f1) * ((float) Math.PI * 2F)) * 0.2F;
+			
+			if (enumhandside == EnumHandSide.LEFT) {
+				this.body.rotateAngleY *= -1.0F;
+			}
+			
+			f1 = 1.0F - this.swingProgress;
+			f1 = f1 * f1;
+			f1 = f1 * f1;
+			f1 = 1.0F - f1;
+			float f2 = MathHelper.sin(f1 * (float) Math.PI);
+			float f3 = MathHelper.sin(this.swingProgress * (float) Math.PI) * -(this.head.rotateAngleX - 0.7F) * 0.75F;
+		}
 	}
 }

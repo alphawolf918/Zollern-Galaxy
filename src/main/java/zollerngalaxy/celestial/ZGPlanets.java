@@ -595,7 +595,7 @@ public class ZGPlanets {
 		planetCentotl.setBodyToxicity(35.67F);
 		planetCentotl.setBodyRadiation(0.0F);
 		planetCentotl.setWindLevel(0.0F);
-		planetCentotl.setBodyGasses(EnumAtmosphericGas.ARGON, EnumAtmosphericGas.METHANE, EnumAtmosphericGas.NITROGEN, EnumAtmosphericGas.HELIUM);
+		planetCentotl.setBodyGasses(EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.ARGON, EnumAtmosphericGas.METHANE, EnumAtmosphericGas.NITROGEN, EnumAtmosphericGas.HELIUM, EnumAtmosphericGas.WATER);
 		planetCentotl.setBodyIcon("centotl");
 		planetCentotl.setAtmosphere();
 		planetCentotl.setBiomeInfo(ZGBiomes.CENTOTL_BASE, ZGBiomes.CENTOTL_ROCKY_MOUNTAINS, ZGBiomes.CENTOTL_ENGINEERING_PLAINS, ZGBiomes.CENTOTL_CONSTRUCTS);

@@ -23,6 +23,7 @@ public final class ModHelperBase {
 	public static boolean useTinkerConstruct = false;
 	public static boolean useDraconicEvolution = false;
 	public static boolean useAppliedEnergistics2 = false;
+	public static boolean useAvP = false;
 	
 	public static void detectMods() {
 		useCofh = isModLoaded("cofhcore");
@@ -37,6 +38,7 @@ public final class ModHelperBase {
 		useTinkerConstruct = isModLoaded("tconstruct");
 		useDraconicEvolution = isModLoaded("draconicevolution");
 		useAppliedEnergistics2 = isModLoaded("appliedenergistics2");
+		useAvP = isModLoaded("avp");
 	}
 	
 	public static boolean isModLoaded(String modId) {

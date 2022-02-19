@@ -33,6 +33,7 @@ import zollerngalaxy.mobs.entities.EntityBladeFish;
 import zollerngalaxy.mobs.entities.EntityBlubberFish;
 import zollerngalaxy.mobs.entities.EntityGypsyFish;
 import zollerngalaxy.mobs.entities.EntityJellyfish;
+import zollerngalaxy.mobs.entities.EntitySentinelDrone;
 import zollerngalaxy.mobs.entities.EntityShark;
 import zollerngalaxy.mobs.entities.EntitySquidlus;
 import zollerngalaxy.mobs.entities.villagers.EntityAbyssalVillager;
@@ -69,6 +70,9 @@ public class BiomeAltumBase extends BiomeSpace {
 		this.setTempCategory(TempCategory.MEDIUM);
 		this.setBiomeHeight(45);
 		this.setTemp(84.23F);
+		if (ConfigManagerZG.enableSentinels) {
+			this.spawnableMonsterList.add(new SpawnListEntry(EntitySentinelDrone.class, 10, 1, 2));
+		}
 		this.addWaterSpawns();
 		this.waterColor = 0x00008b;
 		this.setPlanetForBiome(ZGPlanets.planetAltum);

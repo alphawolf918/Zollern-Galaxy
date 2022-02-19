@@ -25,6 +25,11 @@ Zollern Galaxy v2.0.39
     - Inspired by Agents of S.H.I.E.L.D.
 * Added the Sentinel mob.
     - Inspired by No Man's Sky.
+    - These will spawn on most (not all) planets and moons from this mod.
+        - This can be disabled in the config.
+* Added compatibility with Aliens vs Predator mod.
+    - Several entities from that mod will now spawn on Centotl if it is present.
+    - This can be disabled in the config.
 * 
 
 [CHANGES]
@@ -45,6 +50,9 @@ Zollern Galaxy v2.0.39
 * Reworked Crystal Towers entirely.
 * Created placeholders for all planned future planets.
 * Increased health and attack damage of Xenomorphs.
+* Facehuggers and Xenomorphs will now spawn naturally on planet Centotl.
+* Vexbots will now spawn on Xantheon.
+* Centotl now has a breathable atmosphere.
 * 
 
 [FIXES]

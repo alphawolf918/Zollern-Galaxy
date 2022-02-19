@@ -166,6 +166,7 @@ public class ConfigManagerZG {
 	public static boolean enableStepHeight;
 	public static boolean enableExtraPlanetsCompat;
 	public static boolean enableExtremeReactorsCompat;
+	public static boolean enableAvPCompat;
 	
 	// Customizations
 	public static int kriffonLavaLakesPerChunk;
@@ -191,6 +192,7 @@ public class ConfigManagerZG {
 	public static boolean enableOilLakes;
 	public static boolean showCompanionNameTags;
 	public static boolean enableMineshaftsOnKronos;
+	public static boolean enableSentinels;
 	
 	/////////////////////////////////////////////////
 	public static double meteorGenZollus;
@@ -540,8 +542,11 @@ public class ConfigManagerZG {
 		// Compat (Extra Planets)
 		enableExtraPlanetsCompat = config.get(CTG_COMPAT, "Enable Extra Planets Compatibility", true, "If enabled, these mods will work together. Disable if needed or desired. (default: true)").getBoolean();
 		
-		// Compat
+		// Compat (Extreme Reactors)
 		enableExtremeReactorsCompat = config.get(CTG_COMPAT, "Enable Extreme Reactors Compatibility", true, "If enabled, some of this mod's metals and fluids can be used in Turbines and Reactors. (default: true)").getBoolean();
+		
+		// Compat (Aliens vs Predator)
+		enableAvPCompat = config.get(CTG_COMPAT, "Enable Aliens vs Predator Compatibility", true, "If enabled, a few Xenomorph mobs will spawn on Centotl and Prometheus. (default: true)").getBoolean();
 		
 		// Customization Options
 		kriffonLavaLakesPerChunk = config.get(CTG_CUSTOMS, "Kriffon Lava Lakes Per Chunk", 4, "The amount of Lava Lakes to generate per chunk on planet Kriffon. (default: 4)").getInt();
@@ -565,6 +570,7 @@ public class ConfigManagerZG {
 		enableOilLakes = config.get(CTG_CUSTOMS, "Enable Oil Lake Generation on ZG Planets", true, "Enables the generation of lakes of Galacticraft's Crude Oil to generate on planets and moons from this mod. (default: true). ").getBoolean();
 		showCompanionNameTags = config.get(CTG_CUSTOMS, "Show Companion Name Tags", true, "Shows the name tag of companion mobs. (default: true). ").getBoolean();
 		enableMineshaftsOnKronos = config.get(CTG_CUSTOMS, "Enable Kronos Mineshafts", false, "Enable to allow Mineshafts to spawn on Kronos. (default: false). ").getBoolean();
+		enableSentinels = config.get(CTG_CUSTOMS, "Enable Sentinels", true, "Should Sentinels spawn on planets and moons from this mod? (default: true). ").getBoolean();
 		
 		//
 		//

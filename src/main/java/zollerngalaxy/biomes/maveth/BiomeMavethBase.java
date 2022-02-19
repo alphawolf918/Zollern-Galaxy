@@ -22,6 +22,7 @@ import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderMaveth;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 import zollerngalaxy.mobs.entities.EntityKree;
+import zollerngalaxy.mobs.entities.EntitySentinelDrone;
 import zollerngalaxy.mobs.entities.villagers.EntityMavethVillager;
 
 public class BiomeMavethBase extends BiomeSpace {
@@ -31,6 +32,7 @@ public class BiomeMavethBase extends BiomeSpace {
 	protected static final IBlockState BEDROCK = Blocks.BEDROCK.getDefaultState();
 	protected static final IBlockState GRAVEL = ZGBlocks.mavethGravel.getDefaultState();
 	protected static final IBlockState SAND = ZGBlocks.mavethSand.getDefaultState();
+	protected static final IBlockState WATER = Blocks.WATER.getDefaultState();
 	
 	protected static final int SEA_LEVEL = ChunkProviderMaveth.SEA_LEVEL;
 	protected static final int SEA_FLOOR_LEVEL = (SEA_LEVEL - 21);
@@ -46,7 +48,10 @@ public class BiomeMavethBase extends BiomeSpace {
 		this.biomeDecor.grassPerChunk = -999;
 		this.biomeDecor.mushroomsPerChunk = -999;
 		this.clearAllSpawning();
-		this.spawnableMonsterList.add(new SpawnListEntry(EntityKree.class, 100, 4, 4));
+		this.spawnableMonsterList.add(new SpawnListEntry(EntityKree.class, 10, 1, 2));
+		if (ConfigManagerZG.enableSentinels) {
+			this.spawnableMonsterList.add(new SpawnListEntry(EntitySentinelDrone.class, 10, 1, 2));
+		}
 		if (ConfigManagerZG.enableAlienVillagerSpawn) {
 			this.spawnableCreatureList.add(new SpawnListEntry(EntityMavethVillager.class, this.villagerSpawnRate, this.villagerMinSpawnRate, this.villagerMaxSpawnRate));
 		}

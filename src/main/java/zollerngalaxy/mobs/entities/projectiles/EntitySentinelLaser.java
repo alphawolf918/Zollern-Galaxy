@@ -30,7 +30,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.lib.helpers.ZGHelper;
 
-public class EntitySentinelGunShot extends EntityThrowable {
+public class EntitySentinelLaser extends EntityThrowable {
 	
 	public EntityLivingBase shootingEntity;
 	private int ticksAlive;
@@ -39,9 +39,9 @@ public class EntitySentinelGunShot extends EntityThrowable {
 	public double accelerationY;
 	public double accelerationZ;
 	
-	public EntitySentinelGunShot(World worldIn) {
+	public EntitySentinelLaser(World worldIn) {
 		super(worldIn);
-		this.setSize(2.0F, 2.0F);
+		this.setSize(4.0F, 4.0F);
 	}
 	
 	@Override
@@ -75,19 +75,19 @@ public class EntitySentinelGunShot extends EntityThrowable {
 	@Override
 	@SideOnly(Side.CLIENT)
 	public boolean isInRangeToRenderDist(double distance) {
-		double d0 = this.getEntityBoundingBox().getAverageEdgeLength() * 4.0D;
+		double d0 = this.getEntityBoundingBox().getAverageEdgeLength() * 8.0D;
 		
 		if (Double.isNaN(d0)) {
-			d0 = 4.0D;
+			d0 = 8.0D;
 		}
 		
 		d0 = d0 * 64.0D;
 		return distance < d0 * d0;
 	}
 	
-	public EntitySentinelGunShot(World worldIn, double x, double y, double z, double accelX, double accelY, double accelZ) {
+	public EntitySentinelLaser(World worldIn, double x, double y, double z, double accelX, double accelY, double accelZ) {
 		super(worldIn);
-		this.setSize(2.0F, 2.0F);
+		this.setSize(4.0F, 4.0F);
 		this.setLocationAndAngles(x, y, z, this.rotationYaw, this.rotationPitch);
 		this.setPosition(x, y, z);
 		double d0 = MathHelper.sqrt(accelX * accelX + accelY * accelY + accelZ * accelZ);
@@ -96,10 +96,10 @@ public class EntitySentinelGunShot extends EntityThrowable {
 		this.accelerationZ = accelZ / d0 * 0.1D;
 	}
 	
-	public EntitySentinelGunShot(World worldIn, EntityLivingBase shooter, double accelX, double accelY, double accelZ) {
+	public EntitySentinelLaser(World worldIn, EntityLivingBase shooter, double accelX, double accelY, double accelZ) {
 		super(worldIn);
 		this.shootingEntity = shooter;
-		this.setSize(1.0F, 1.0F);
+		this.setSize(4.0F, 4.0F);
 		this.setLocationAndAngles(shooter.posX, shooter.posY, shooter.posZ, shooter.rotationYaw, shooter.rotationPitch);
 		this.setPosition(this.posX, this.posY, this.posZ);
 		this.motionX = 0.0D;

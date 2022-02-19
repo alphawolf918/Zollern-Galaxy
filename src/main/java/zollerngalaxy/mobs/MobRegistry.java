@@ -37,7 +37,7 @@ import zollerngalaxy.mobs.entities.EntityMummy;
 import zollerngalaxy.mobs.entities.EntityOinkus;
 import zollerngalaxy.mobs.entities.EntityPigShroom;
 import zollerngalaxy.mobs.entities.EntityScorpion;
-import zollerngalaxy.mobs.entities.EntitySentinel;
+import zollerngalaxy.mobs.entities.EntitySentinelDrone;
 import zollerngalaxy.mobs.entities.EntityShade;
 import zollerngalaxy.mobs.entities.EntityShadowSkeleton;
 import zollerngalaxy.mobs.entities.EntityShark;
@@ -53,6 +53,7 @@ import zollerngalaxy.mobs.entities.boss.EntityShadowAlien;
 import zollerngalaxy.mobs.entities.boss.EntityVexBotBoss;
 import zollerngalaxy.mobs.entities.boss.EntityXenomorphQueen;
 import zollerngalaxy.mobs.entities.companions.EntityGalaxyDragon;
+import zollerngalaxy.mobs.entities.projectiles.EntitySentinelLaser;
 import zollerngalaxy.mobs.entities.villagers.EntityAbyssalVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityAstrosVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityAtheonVillager;
@@ -286,7 +287,10 @@ public class MobRegistry {
 		registerEntity("kree", EntityKree.class, entityId++, 0x00008b, 0x00008b);
 		
 		// Sentinel
-		registerEntity("sentinel", EntitySentinel.class, entityId++, 0xdddddd, 0x8b0000);
+		registerEntity("sentinel", EntitySentinelDrone.class, entityId++, 0xdddddd, 0x8b0000);
+		
+		// Sentinel Gunshot
+		registerEntity("sentinelgunshot", EntitySentinelLaser.class, entityId++);
 		
 		ZGHelper.Log("Loaded a total of " + totalMobs + " new mobs.");
 	}

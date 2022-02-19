@@ -23,6 +23,7 @@ import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderAtheon;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 import zollerngalaxy.mobs.entities.EntityGrayAlien;
+import zollerngalaxy.mobs.entities.EntitySentinelDrone;
 import zollerngalaxy.mobs.entities.EntityVexBotGold;
 import zollerngalaxy.mobs.entities.villagers.EntityAtheonVillager;
 
@@ -46,6 +47,9 @@ public abstract class BiomeAtheonBase extends BiomeSpace {
 		this.setTempCategory(TempCategory.MEDIUM);
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityGrayAlien.class, 1, 1, 1));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityVexBotGold.class, 100, 1, 2));
+		if (ConfigManagerZG.enableSentinels) {
+			this.spawnableMonsterList.add(new SpawnListEntry(EntitySentinelDrone.class, 100, 1, 4));
+		}
 		if (ConfigManagerZG.enableAlienVillagerSpawn) {
 			this.spawnableCreatureList.add(new SpawnListEntry(EntityAtheonVillager.class, this.villagerSpawnRate, this.villagerMinSpawnRate, this.villagerMaxSpawnRate));
 		}

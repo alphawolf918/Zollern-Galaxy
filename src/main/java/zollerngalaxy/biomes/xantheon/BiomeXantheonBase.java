@@ -23,6 +23,8 @@ import zollerngalaxy.celestial.ZGPlanets;
 import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 import zollerngalaxy.mobs.entities.EntityGrayAlien;
+import zollerngalaxy.mobs.entities.EntitySentinelDrone;
+import zollerngalaxy.mobs.entities.EntityVexBot;
 
 public class BiomeXantheonBase extends BiomeSpace {
 	
@@ -53,11 +55,13 @@ public class BiomeXantheonBase extends BiomeSpace {
 		this.biomeDecor.grassPerChunk = -999;
 		this.biomeDecor.mushroomsPerChunk = -999;
 		this.clearAllNonMonsterSpawning();
-		
+		this.spawnableMonsterList.add(new SpawnListEntry(EntityVexBot.class, 100, 1, 2));
+		if (ConfigManagerZG.enableSentinels) {
+			this.spawnableMonsterList.add(new SpawnListEntry(EntitySentinelDrone.class, 10, 1, 2));
+		}
 		if (ConfigManagerZG.enableAlienVillagerSpawn) {
 			this.spawnableCreatureList.add(new SpawnListEntry(EntityAlienVillager.class, this.villagerSpawnRate, this.villagerMinSpawnRate, this.villagerMaxSpawnRate));
 		}
-		
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityGrayAlien.class, 15, 1, 1));
 		this.topBlock = ZGBlocks.xantheonRock.getDefaultState();
 		this.fillerBlock = ZGBlocks.xantheonChrome.getDefaultState();

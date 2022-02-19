@@ -13,7 +13,6 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.MoverType;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIBase;
-import net.minecraft.entity.ai.EntityAIFindEntityNearestPlayer;
 import net.minecraft.entity.ai.EntityMoveHelper;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
@@ -29,19 +28,21 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.events.ZGSoundEvents;
-import zollerngalaxy.mobs.entities.EntitySentinel.SentinelMoveHelper.AIGunShotAttack;
-import zollerngalaxy.mobs.entities.EntitySentinel.SentinelMoveHelper.AILookAround;
-import zollerngalaxy.mobs.entities.EntitySentinel.SentinelMoveHelper.AIRandomFly;
+import zollerngalaxy.mobs.entities.EntitySentinelDrone.SentinelMoveHelper.AILookAround;
+import zollerngalaxy.mobs.entities.EntitySentinelDrone.SentinelMoveHelper.AIRandomFly;
+import zollerngalaxy.mobs.entities.EntitySentinelDrone.SentinelMoveHelper.AISentinelLaserAttack;
+import zollerngalaxy.mobs.entities.ai.EntityAIFindNearestPlayerZG;
 import zollerngalaxy.mobs.entities.base.EntityRobotBaseZG;
-import zollerngalaxy.mobs.entities.projectiles.EntitySentinelGunShot;
+import zollerngalaxy.mobs.entities.projectiles.EntitySentinelLaser;
 
-public class EntitySentinel extends EntityRobotBaseZG {
+public class EntitySentinelDrone extends EntityRobotBaseZG {
 	
-	private static final DataParameter<Boolean> ATTACKING = EntityDataManager.<Boolean> createKey(EntitySentinel.class, DataSerializers.BOOLEAN);
+	private static final DataParameter<Boolean> ATTACKING = EntityDataManager.<Boolean> createKey(EntitySentinelDrone.class, DataSerializers.BOOLEAN);
 	
-	public EntitySentinel(World worldIn) {
+	public EntitySentinelDrone(World worldIn) {
 		super(worldIn);
-		this.moveHelper = new EntitySentinel.SentinelMoveHelper(this);
+		this.setSize(2.0F, 2.0F);
+		this.moveHelper = new EntitySentinelDrone.SentinelMoveHelper(this);
 	}
 	
 	@Override
@@ -49,14 +50,9 @@ public class EntitySentinel extends EntityRobotBaseZG {
 		super.initEntityAI();
 		this.tasks.addTask(5, new AIRandomFly(this));
 		this.tasks.addTask(6, new AILookAround(this));
-		this.tasks.addTask(6, new AIGunShotAttack(this));
-		this.targetTasks.addTask(6, new EntityAIFindEntityNearestPlayer(this));
+		this.tasks.addTask(6, new AISentinelLaserAttack(this));
+		this.targetTasks.addTask(6, new EntityAIFindNearestPlayerZG(this));
 	}
-	
-	// @Override
-	// protected PathNavigate createNavigator(World worldIn) {
-	// return new PathNavigateFlying(this, worldIn);
-	// }
 	
 	@Override
 	protected void applyEntityAttributes() {
@@ -65,13 +61,13 @@ public class EntitySentinel extends EntityRobotBaseZG {
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.26D);
 		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(5.85D);
 		this.getEntityAttribute(SharedMonsterAttributes.ARMOR).setBaseValue(10.0D);
-		this.getEntityAttribute(SharedMonsterAttributes.ARMOR_TOUGHNESS).setBaseValue(5.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.ARMOR_TOUGHNESS).setBaseValue(15.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(25.0D);
 	}
 	
 	@Override
 	public int getMaxSpawnedInChunk() {
-		return 6;
+		return 1;
 	}
 	
 	public void setAttacking(boolean attacking) {
@@ -91,7 +87,7 @@ public class EntitySentinel extends EntityRobotBaseZG {
 	
 	@Override
 	protected float getSoundVolume() {
-		return 10.0F;
+		return 5.0F;
 	}
 	
 	@Override
@@ -168,10 +164,10 @@ public class EntitySentinel extends EntityRobotBaseZG {
 	
 	static class SentinelMoveHelper extends EntityMoveHelper {
 		
-		private final EntitySentinel parentEntity;
+		private final EntitySentinelDrone parentEntity;
 		private int courseChangeCooldown;
 		
-		public SentinelMoveHelper(EntitySentinel sentinel) {
+		public SentinelMoveHelper(EntitySentinelDrone sentinel) {
 			super(sentinel);
 			this.parentEntity = sentinel;
 		}
@@ -215,12 +211,12 @@ public class EntitySentinel extends EntityRobotBaseZG {
 			return true;
 		}
 		
-		static class AIGunShotAttack extends EntityAIBase {
+		static class AISentinelLaserAttack extends EntityAIBase {
 			
-			private final EntitySentinel parentEntity;
+			private final EntitySentinelDrone parentEntity;
 			public int attackTimer;
 			
-			public AIGunShotAttack(EntitySentinel sentinel) {
+			public AISentinelLaserAttack(EntitySentinelDrone sentinel) {
 				this.parentEntity = sentinel;
 			}
 			
@@ -249,18 +245,18 @@ public class EntitySentinel extends EntityRobotBaseZG {
 					++this.attackTimer;
 					
 					if (this.attackTimer == 20) {
-						double d1 = 4.0D;
+						double d1 = 8.0D;
 						Vec3d vec3d = this.parentEntity.getLook(1.0F);
 						double d2 = entitylivingbase.posX - (this.parentEntity.posX + vec3d.x * 4.0D);
 						double d3 = entitylivingbase.getEntityBoundingBox().minY + entitylivingbase.height / 2.0F - (0.5D + this.parentEntity.posY + this.parentEntity.height / 2.0F);
 						double d4 = entitylivingbase.posZ - (this.parentEntity.posZ + vec3d.z * 4.0D);
-						EntitySentinelGunShot entitySentinelShot = new EntitySentinelGunShot(world, this.parentEntity, d2, d3, d4);
-						entitySentinelShot.posX = this.parentEntity.posX + vec3d.x * 4.0D;
-						entitySentinelShot.posY = this.parentEntity.posY + this.parentEntity.height / 2.0F + 0.5D;
-						entitySentinelShot.posZ = this.parentEntity.posZ + vec3d.z * 4.0D;
-						world.spawnEntity(entitySentinelShot);
-						this.parentEntity.world.playSound(null, this.parentEntity.getPosition(), ZGSoundEvents.ENTITY_SENTINEL_SHOOT, SoundCategory.MASTER, 5.0F, 1.0F);
-						this.attackTimer = -40;
+						EntitySentinelLaser entitySentinelLaser = new EntitySentinelLaser(world, this.parentEntity, d2, d3, d4);
+						entitySentinelLaser.posX = this.parentEntity.posX + vec3d.x * 4.0D;
+						entitySentinelLaser.posY = this.parentEntity.posY + this.parentEntity.height / 2.0F + 0.5D;
+						entitySentinelLaser.posZ = this.parentEntity.posZ + vec3d.z * 4.0D;
+						world.spawnEntity(entitySentinelLaser);
+						this.parentEntity.world.playSound(null, this.parentEntity.getPosition(), ZGSoundEvents.ENTITY_SENTINEL_SHOOT, SoundCategory.MASTER, 8.0F, 1.0F);
+						this.attackTimer = -10;
 					}
 				} else if (this.attackTimer > 0) {
 					--this.attackTimer;
@@ -272,9 +268,9 @@ public class EntitySentinel extends EntityRobotBaseZG {
 		
 		static class AILookAround extends EntityAIBase {
 			
-			private final EntitySentinel parentEntity;
+			private final EntitySentinelDrone parentEntity;
 			
-			public AILookAround(EntitySentinel sentinel) {
+			public AILookAround(EntitySentinelDrone sentinel) {
 				this.parentEntity = sentinel;
 				this.setMutexBits(2);
 			}
@@ -305,9 +301,9 @@ public class EntitySentinel extends EntityRobotBaseZG {
 		
 		static class AIRandomFly extends EntityAIBase {
 			
-			private final EntitySentinel parentEntity;
+			private final EntitySentinelDrone parentEntity;
 			
-			public AIRandomFly(EntitySentinel sentinel) {
+			public AIRandomFly(EntitySentinelDrone sentinel) {
 				this.parentEntity = sentinel;
 				this.setMutexBits(1);
 			}

@@ -28,6 +28,7 @@ import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderToci;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 import zollerngalaxy.lib.helpers.ZGHelper;
+import zollerngalaxy.mobs.entities.EntitySentinelDrone;
 import zollerngalaxy.mobs.entities.EntityWanderer;
 import zollerngalaxy.mobs.entities.villagers.EntityTociVillager;
 
@@ -53,6 +54,9 @@ public class BiomeTociBase extends BiomeSpace {
 		}
 		if (ConfigManagerZG.enableWandererSpawn) {
 			this.spawnableCreatureList.add(new SpawnListEntry(EntityWanderer.class, 1, 0, 1));
+		}
+		if (ConfigManagerZG.enableSentinels) {
+			this.spawnableMonsterList.add(new SpawnListEntry(EntitySentinelDrone.class, 10, 1, 2));
 		}
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedZombie.class, 100, 4, 4));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedSpider.class, 100, 4, 4));

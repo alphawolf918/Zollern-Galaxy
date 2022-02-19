@@ -1148,7 +1148,10 @@ entity.zollerngalaxy:blubberfish.name=Blubber Fish
 entity.zollerngalaxy:gypsyfish.name=Gypsy Fish
 entity.zollerngalaxy:bladefish.name=Blade Fish
 entity.zollerngalaxy:kree.name=Kree Reaper
-entity.zollerngalaxy:sentinel.name=Sentinel
+entity.zollerngalaxy:sentinel.name=Sentinel Drone
+entity.zollerngalaxy:sentinel_hound.name=Sentinel Hound
+zollerngalaxy:sentinel=Sentinel Drone
+zollerngalaxy:sentinel_hound=Sentinel Drone
 
 ## Villagers ##
 
