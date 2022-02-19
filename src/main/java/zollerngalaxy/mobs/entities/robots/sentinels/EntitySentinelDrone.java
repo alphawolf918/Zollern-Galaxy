@@ -22,15 +22,15 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 import zollerngalaxy.events.ZGSoundEvents;
 import zollerngalaxy.mobs.entities.ai.EntityAIFindNearestPlayerZG;
-import zollerngalaxy.mobs.entities.robots.sentinels.EntitySentinelDrone.SentinelMoveHelper.AILookAround;
-import zollerngalaxy.mobs.entities.robots.sentinels.EntitySentinelDrone.SentinelMoveHelper.AIRandomFly;
+import zollerngalaxy.mobs.entities.robots.sentinels.EntitySentinelDrone.SentinelDroneMoveHelper.AILookAround;
+import zollerngalaxy.mobs.entities.robots.sentinels.EntitySentinelDrone.SentinelDroneMoveHelper.AIRandomFly;
 
 public class EntitySentinelDrone extends EntityAbstractSentinel {
 	
 	public EntitySentinelDrone(World worldIn) {
 		super(worldIn);
-		this.setSize(2.0F, 2.0F);
-		this.moveHelper = new EntitySentinelDrone.SentinelMoveHelper(this);
+		this.setSize(this.width * 2.0F, this.height * 2.0F);
+		this.moveHelper = new EntitySentinelDrone.SentinelDroneMoveHelper(this);
 	}
 	
 	@Override
@@ -47,39 +47,38 @@ public class EntitySentinelDrone extends EntityAbstractSentinel {
 		this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(65.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.26D);
 		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(5.85D);
-		this.getEntityAttribute(SharedMonsterAttributes.ARMOR).setBaseValue(10.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.ARMOR).setBaseValue(20.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.ARMOR_TOUGHNESS).setBaseValue(15.0D);
-		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(25.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(35.0D);
 	}
 	
 	@Override
 	public int getMaxSpawnedInChunk() {
-		return 1;
+		return 2;
 	}
 	
 	@Override
 	protected SoundEvent getAmbientSound() {
-		return ZGSoundEvents.ENTITY_SENTINEL_SAY;
+		return ZGSoundEvents.ENTITY_SENTINEL_DRONE_SAY;
 	}
 	
 	@Override
 	protected SoundEvent getHurtSound(DamageSource damageSourceIn) {
-		return ZGSoundEvents.ENTITY_SENTINEL_HURT;
+		return ZGSoundEvents.ENTITY_SENTINEL_DRONE_HURT;
 	}
 	
 	@Override
 	protected SoundEvent getDeathSound() {
-		return ZGSoundEvents.ENTITY_SENTINEL_DIE;
+		return ZGSoundEvents.ENTITY_SENTINEL_DRONE_DIE;
 	}
 	
-	// Same code that the Ghast uses to travel.
 	@Override
 	public void travel(float strafe, float vertical, float forward) {
 		if (this.isInWater()) {
 			this.moveRelative(strafe, vertical, forward, 0.02F);
 			this.move(MoverType.SELF, this.motionX, this.motionY, this.motionZ);
 			this.motionX *= 0.800000011920929D;
-			this.motionY *= 0.800000011920929D;
+			this.motionY *= 0.600000011920929D;
 			this.motionZ *= 0.800000011920929D;
 		} else if (this.isInLava()) {
 			this.moveRelative(strafe, vertical, forward, 0.02F);
@@ -130,12 +129,12 @@ public class EntitySentinelDrone extends EntityAbstractSentinel {
 		return false;
 	}
 	
-	static class SentinelMoveHelper extends EntityMoveHelper {
+	protected static class SentinelDroneMoveHelper extends EntityMoveHelper {
 		
 		private final EntitySentinelDrone parentEntity;
 		private int courseChangeCooldown;
 		
-		public SentinelMoveHelper(EntitySentinelDrone sentinel) {
+		public SentinelDroneMoveHelper(EntitySentinelDrone sentinel) {
 			super(sentinel);
 			this.parentEntity = sentinel;
 		}
@@ -179,7 +178,7 @@ public class EntitySentinelDrone extends EntityAbstractSentinel {
 			return true;
 		}
 		
-		static class AILookAround extends EntityAIBase {
+		protected static class AILookAround extends EntityAIBase {
 			
 			private final EntitySentinelDrone parentEntity;
 			
@@ -212,7 +211,7 @@ public class EntitySentinelDrone extends EntityAbstractSentinel {
 			}
 		}
 		
-		static class AIRandomFly extends EntityAIBase {
+		protected static class AIRandomFly extends EntityAIBase {
 			
 			private final EntitySentinelDrone parentEntity;
 			

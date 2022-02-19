@@ -318,29 +318,51 @@
       ],
       "subtitle":"zollerngalaxy.subtitle.vexbot.die"
    },
-   "mob.sentinel.say":{
+   "mob.sentinel.drone.say":{
 	   "category":"master",
 	   "sounds":[
-		 "zollerngalaxy:mob/sentinel/say1",
-		 "zollerngalaxy:mob/sentinel/say2",
-		 "zollerngalaxy:mob/sentinel/say3"
+		 "zollerngalaxy:mob/sentinel/drone/say1",
+		 "zollerngalaxy:mob/sentinel/drone/say2",
+		 "zollerngalaxy:mob/sentinel/drone/say3"
 	   ],
-	   "subtitle":"zollerngalaxy.subtitle.sentinel.say"
+	   "subtitle":"zollerngalaxy.subtitle.sentinel.drone.say"
    },
-   "mob.sentinel.hurt":{
+   "mob.sentinel.drone.hurt":{
 	   "category":"master",
 	   "sounds":[
-		 "zollerngalaxy:mob/sentinel/hurt1",
-		 "zollerngalaxy:mob/sentinel/hurt2"
+		 "zollerngalaxy:mob/sentinel/drone/hurt1",
+		 "zollerngalaxy:mob/sentinel/drone/hurt2"
 	   ],
-	   "subtitle":"zollerngalaxy.subtitle.sentinel.hurt"
+	   "subtitle":"zollerngalaxy.subtitle.sentinel.drone.hurt"
    },
-   "mob.sentinel.die":{
+   "mob.sentinel.drone.die":{
 	   "category":"master",
 	   "sounds":[
-		 "zollerngalaxy:mob/sentinel/die"
+		 "zollerngalaxy:mob/sentinel/drone/die"
 	   ],
-	   "subtitle":"zollerngalaxy.subtitle.sentinel.die"
+	   "subtitle":"zollerngalaxy.subtitle.sentinel.drone.die"
+   },
+   "mob.sentinel.hound.say":{
+	   "category":"master",
+	   "sounds":[
+	     "zollerngalaxy:mob/sentinel/hound/say1",
+		 "zollerngalaxy:mob/sentinel/hound/say2"
+	   ],
+	   "subtitle":"zollerngalaxy.subtitle.sentinel.hound.say"
+   },
+   "mob.sentinel.hound.hurt":{
+	   "category":"master",
+	   "sounds":[
+	     "zollerngalaxy:mob/sentinel/hound/hurt"
+	   ],
+	   "subtitle":"zollerngalaxy.subtitle.sentinel.hound.hurt"
+   },
+   "mob.sentinel.hound.die":{
+	   "category":"master",
+	   "sounds":[
+	     "zollerngalaxy:mob/sentinel/hound/die"
+	   ],
+	   "subtitle":"zollerngalaxy.subtitle.sentinel.hound.die"
    },
    "mob.sentinel.shoot":{
 	   "category":"master",

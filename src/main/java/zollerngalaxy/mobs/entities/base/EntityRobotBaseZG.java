@@ -10,6 +10,7 @@ package zollerngalaxy.mobs.entities.base;
 import micdoodle8.mods.galacticraft.api.entity.IEntityBreathable;
 import micdoodle8.mods.galacticraft.core.entities.EntityAlienVillager;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -26,7 +27,10 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import zollerngalaxy.mobs.entities.EntityFacehugger;
 import zollerngalaxy.mobs.entities.EntityGrayAlien;
+import zollerngalaxy.mobs.entities.EntityKree;
+import zollerngalaxy.mobs.entities.EntityXenomorph;
 import zollerngalaxy.mobs.entities.ai.EntityAIRobotAttack;
 import zollerngalaxy.mobs.entities.interfaces.IEntityRobot;
 
@@ -47,6 +51,10 @@ public class EntityRobotBaseZG extends EntityMob implements IEntityRobot, IEntit
 	}
 	
 	@Override
+	public void knockBack(Entity par1Entity, float par2, double par3, double par5) {
+	}
+	
+	@Override
 	protected void initEntityAI() {
 		this.tasks.addTask(0, new EntityAISwimming(this));
 		this.tasks.addTask(1, new EntityAIMoveTowardsRestriction(this, 1.6D));
@@ -60,9 +68,12 @@ public class EntityRobotBaseZG extends EntityMob implements IEntityRobot, IEntit
 	protected void applyEntityAI() {
 		this.targetTasks.addTask(1, new EntityAINearestAttackableTarget(this, EntityPlayer.class, true));
 		this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityAgeable.class, true));
-		this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityZGVillagerBase.class, false));
-		this.targetTasks.addTask(4, new EntityAINearestAttackableTarget(this, EntityAlienVillager.class, false));
+		this.targetTasks.addTask(3, new EntityAINearestAttackableTarget(this, EntityZGVillagerBase.class, true));
+		this.targetTasks.addTask(4, new EntityAINearestAttackableTarget(this, EntityAlienVillager.class, true));
 		this.targetTasks.addTask(5, new EntityAINearestAttackableTarget(this, EntityGrayAlien.class, true));
+		this.targetTasks.addTask(6, new EntityAINearestAttackableTarget(this, EntityKree.class, true));
+		this.targetTasks.addTask(7, new EntityAINearestAttackableTarget(this, EntityFacehugger.class, true));
+		this.targetTasks.addTask(8, new EntityAINearestAttackableTarget(this, EntityXenomorph.class, true));
 	}
 	
 	@Override
@@ -98,12 +109,12 @@ public class EntityRobotBaseZG extends EntityMob implements IEntityRobot, IEntit
 	@Override
 	@SideOnly(Side.CLIENT)
 	public int getBrightnessForRender() {
-		return 15728890;
+		return 16728890;
 	}
 	
 	@Override
 	public float getBrightness() {
-		return 4.0F;
+		return 5.0F;
 	}
 	
 	@Override

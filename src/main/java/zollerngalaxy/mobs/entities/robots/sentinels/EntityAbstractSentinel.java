@@ -8,24 +8,22 @@
 package zollerngalaxy.mobs.entities.robots.sentinels;
 
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.EntityAIBase;
+import net.minecraft.entity.ai.EntityAIHurtByTarget;
+import net.minecraft.entity.ai.attributes.IAttributeInstance;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.SoundCategory;
-import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import zollerngalaxy.events.ZGSoundEvents;
+import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.mobs.entities.ai.EntityAIFindNearestPlayerZG;
+import zollerngalaxy.mobs.entities.ai.EntityAISentinelLaserAttack;
 import zollerngalaxy.mobs.entities.base.EntityRobotBaseZG;
-import zollerngalaxy.mobs.entities.projectiles.EntitySentinelLaser;
 
 public abstract class EntityAbstractSentinel extends EntityRobotBaseZG {
 	
@@ -41,7 +39,8 @@ public abstract class EntityAbstractSentinel extends EntityRobotBaseZG {
 	@Override
 	protected void initEntityAI() {
 		super.initEntityAI();
-		this.tasks.addTask(5, new AISentinelLaserAttack(this));
+		this.tasks.addTask(0, new EntityAIHurtByTarget(this, true));
+		this.tasks.addTask(5, new EntityAISentinelLaserAttack(this));
 		this.targetTasks.addTask(6, new EntityAIFindNearestPlayerZG(this));
 	}
 	
@@ -52,14 +51,30 @@ public abstract class EntityAbstractSentinel extends EntityRobotBaseZG {
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
 		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(5.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.ARMOR).setBaseValue(20.0D);
-		this.getEntityAttribute(SharedMonsterAttributes.ARMOR_TOUGHNESS).setBaseValue(1.0D);
-		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(10.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.ARMOR_TOUGHNESS).setBaseValue(5.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(20.0D);
 	}
 	
 	@Override
 	public void onLivingUpdate() {
-		if (!world.isRemote) {
-			if (this.getThreatLevel() >= 8 && rand.nextInt(6) == 0) {
+		IAttributeInstance maxHealth = this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH);
+		if ((this.threatLevel >= 8) || (this.getHealth() <= (maxHealth.getBaseValue() / 2) && rand.nextInt(3) == 0)) {
+			this.callReinforcements();
+		}
+		super.onLivingUpdate();
+	}
+	
+	@Override
+	public void onDeath(DamageSource damagesource) {
+		super.onDeath(damagesource);
+		if (rand.nextInt(3) == 0) {
+			this.callReinforcements();
+		}
+	}
+	
+	protected void callReinforcements() {
+		if (!this.world.isRemote && ConfigManagerZG.enableSentinelReinforcements) {
+			if (rand.nextInt(this.getCallReinforcementsChance()) == 0) {
 				EntityAbstractSentinel sentinel = null;
 				int spawnTypeChance = rand.nextInt(100);
 				if (spawnTypeChance <= 15) {
@@ -70,16 +85,21 @@ public abstract class EntityAbstractSentinel extends EntityRobotBaseZG {
 				if (sentinel != null) {
 					sentinel.copyLocationAndAnglesFrom(this);
 					this.world.spawnEntity(sentinel);
-					this.threatLevel = 0;
+					this.setThreatLevel(0);
 				}
 			}
 		}
-		super.onLivingUpdate();
 	}
 	
-	@Override
-	public int getMaxSpawnedInChunk() {
-		return 4;
+	/**
+	 * Chance for this Sentinel to call for reinforcements.
+	 * Smaller Numbers = Higher Chance / Higher Numbers = Smaller Chance.
+	 * Default: 6
+	 * 
+	 * @return
+	 */
+	protected int getCallReinforcementsChance() {
+		return 6;
 	}
 	
 	@Override
@@ -136,60 +156,5 @@ public abstract class EntityAbstractSentinel extends EntityRobotBaseZG {
 	@Override
 	protected float getSoundVolume() {
 		return 5.0F;
-	}
-	
-	protected static class AISentinelLaserAttack extends EntityAIBase {
-		
-		private final EntityAbstractSentinel parentEntity;
-		public int attackTimer;
-		
-		public AISentinelLaserAttack(EntityAbstractSentinel sentinel) {
-			this.parentEntity = sentinel;
-		}
-		
-		@Override
-		public boolean shouldExecute() {
-			return this.parentEntity.getAttackTarget() != null;
-		}
-		
-		@Override
-		public void startExecuting() {
-			this.attackTimer = 0;
-		}
-		
-		@Override
-		public void resetTask() {
-			this.parentEntity.setAttacking(false);
-		}
-		
-		@Override
-		public void updateTask() {
-			EntityLivingBase entityLivingTarget = this.parentEntity.getAttackTarget();
-			if (entityLivingTarget.getDistanceSq(this.parentEntity) < 4096.0D && this.parentEntity.canEntityBeSeen(entityLivingTarget)) {
-				World world = this.parentEntity.world;
-				++this.attackTimer;
-				if (this.attackTimer == 20) {
-					for (int i = 0; i < 9; i++) {
-						if ((i % 2) == 0) {
-							continue;
-						}
-						Vec3d vec3d = this.parentEntity.getLook(1.0F);
-						double d2 = entityLivingTarget.posX - (this.parentEntity.posX + vec3d.x * 4.0D);
-						double d3 = entityLivingTarget.getEntityBoundingBox().minY + entityLivingTarget.height / 2.0F - (0.5D + this.parentEntity.posY + this.parentEntity.height / 2.0F);
-						double d4 = entityLivingTarget.posZ - (this.parentEntity.posZ + vec3d.z * 4.0D);
-						EntitySentinelLaser entitySentinelLaser = new EntitySentinelLaser(world, this.parentEntity, d2, d3, d4);
-						entitySentinelLaser.posX = this.parentEntity.posX + vec3d.x * 4.0D;
-						entitySentinelLaser.posY = this.parentEntity.posY + this.parentEntity.height / 2.0F + 0.5D;
-						entitySentinelLaser.posZ = this.parentEntity.posZ + vec3d.z * 4.0D;
-						world.spawnEntity(entitySentinelLaser);
-						this.parentEntity.world.playSound(null, this.parentEntity.getPosition(), ZGSoundEvents.ENTITY_SENTINEL_SHOOT, SoundCategory.MASTER, 8.0F, 1.0F);
-						this.attackTimer = -10;
-					}
-				}
-			} else if (this.attackTimer > 0) {
-				--this.attackTimer;
-			}
-			this.parentEntity.setAttacking(this.attackTimer > 10);
-		}
 	}
 }
