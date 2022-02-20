@@ -1153,11 +1153,10 @@ entity.zollerngalaxy:bladefish.name=Blade Fish
 entity.zollerngalaxy:kree.name=Kree Reaper
 entity.zollerngalaxy:sentinel.name=Sentinel Drone
 entity.zollerngalaxy:sentinelhound.name=Sentinel Hound
-zollerngalaxy:sentinel=Sentinel Drone
-zollerngalaxy:sentinelhound=Sentinel Hound
+entity.zollerngalaxy:sentinelwalker.name=Sentinel Walker
 
+## Projectiles ##
 entity.zollerngalaxy:sentinelgunshot.name=Sentinel Laser
-zollerngalaxy:sentinelgunshot=Sentinel Laser
 
 ## Villagers ##
 

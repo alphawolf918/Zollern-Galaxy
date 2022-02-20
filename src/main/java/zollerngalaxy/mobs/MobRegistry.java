@@ -55,6 +55,7 @@ import zollerngalaxy.mobs.entities.robots.EntityVexBot;
 import zollerngalaxy.mobs.entities.robots.EntityVexBotGold;
 import zollerngalaxy.mobs.entities.robots.sentinels.EntitySentinelDrone;
 import zollerngalaxy.mobs.entities.robots.sentinels.EntitySentinelHound;
+import zollerngalaxy.mobs.entities.robots.sentinels.EntitySentinelWalker;
 import zollerngalaxy.mobs.entities.villagers.EntityAbyssalVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityAstrosVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityAtheonVillager;
@@ -288,7 +289,7 @@ public class MobRegistry {
 		registerEntity("kree", EntityKree.class, entityId++, 0x00008b, 0x00008b);
 		
 		// Sentinel Laser
-		registerEntity("sentinelgunshot", EntitySentinelLaser.class, entityId++);
+		registerNonMobEntity("sentinelgunshot", EntitySentinelLaser.class, entityId++);
 		
 		// Sentinel Drone
 		registerEntity("sentinel", EntitySentinelDrone.class, entityId++, 0x444444, 0x8b0000);
@@ -296,10 +297,13 @@ public class MobRegistry {
 		// Sentinel Hound
 		registerEntity("sentinelhound", EntitySentinelHound.class, entityId++, 0x777777, 0xff0000);
 		
+		// Sentinel Walker
+		registerEntity("sentinelwalker", EntitySentinelWalker.class, entityId++, 0x222222, 0x8f0000);
+		
 		ZGHelper.Log("Loaded a total of " + totalMobs + " new mobs.");
 	}
 	
-	private static void registerEntity(String name, Class<? extends Entity> cls, int id) {
+	private static void registerNonMobEntity(String name, Class<? extends Entity> cls, int id) {
 		ResourceLocation registryName = new ResourceLocation(ZGInfo.MOD_ID + ":" + name);
 		String strName = registryName.toString();
 		String entityName = caseFormUnder.to(caseFormLower, strName);

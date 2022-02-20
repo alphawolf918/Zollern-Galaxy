@@ -46,6 +46,7 @@ import zollerngalaxy.items.ZGItems;
 import zollerngalaxy.mobs.entities.ai.EntityAIKreeAttack;
 import zollerngalaxy.mobs.entities.base.EntityZGVillagerBase;
 import zollerngalaxy.mobs.entities.robots.EntityVexBot;
+import zollerngalaxy.mobs.entities.robots.sentinels.EntityAbstractSentinel;
 
 public class EntityKree extends EntityMob implements IEntityBreathable {
 	
@@ -84,6 +85,7 @@ public class EntityKree extends EntityMob implements IEntityBreathable {
 		this.targetTasks.addTask(9, new EntityAINearestAttackableTarget(this, EntityFacehugger.class, true));
 		this.targetTasks.addTask(10, new EntityAINearestAttackableTarget(this, EntityXenomorph.class, true));
 		this.targetTasks.addTask(11, new EntityAINearestAttackableTarget(this, EntityVexBot.class, true));
+		this.targetTasks.addTask(12, new EntityAINearestAttackableTarget(this, EntityAbstractSentinel.class, true));
 	}
 	
 	@Override

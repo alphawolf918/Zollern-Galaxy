@@ -8,6 +8,7 @@
 package zollerngalaxy.mobs.entities.robots.sentinels;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
 import net.minecraft.entity.ai.attributes.IAttributeInstance;
@@ -21,7 +22,11 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.config.ConfigManagerZG;
+import zollerngalaxy.mobs.entities.EntityFacehugger;
+import zollerngalaxy.mobs.entities.EntityKree;
+import zollerngalaxy.mobs.entities.EntityXenomorph;
 import zollerngalaxy.mobs.entities.ai.EntityAIFindNearestPlayerZG;
+import zollerngalaxy.mobs.entities.ai.EntityAISentinelAttackOnCollide;
 import zollerngalaxy.mobs.entities.ai.EntityAISentinelLaserAttack;
 import zollerngalaxy.mobs.entities.base.EntityRobotBaseZG;
 
@@ -29,11 +34,13 @@ public abstract class EntityAbstractSentinel extends EntityRobotBaseZG {
 	
 	protected static final DataParameter<Boolean> ATTACKING = EntityDataManager.<Boolean> createKey(EntityAbstractSentinel.class, DataSerializers.BOOLEAN);
 	protected int threatLevel;
+	protected boolean hasCalledForBackup;
 	protected static final int MAX_THREAT_LEVEL = 10;
 	
 	public EntityAbstractSentinel(World worldIn) {
 		super(worldIn);
-		this.threatLevel = 0;
+		this.setThreatLevel(0);
+		this.setHasCalledForBackup(false);
 	}
 	
 	@Override
@@ -41,6 +48,11 @@ public abstract class EntityAbstractSentinel extends EntityRobotBaseZG {
 		super.initEntityAI();
 		this.tasks.addTask(0, new EntityAIHurtByTarget(this, true));
 		this.tasks.addTask(5, new EntityAISentinelLaserAttack(this));
+		this.tasks.addTask(6, new EntityAISentinelAttackOnCollide(this, EntityPlayer.class, 1.0D, true));
+		this.tasks.addTask(7, new EntityAISentinelAttackOnCollide(this, EntityAgeable.class, 1.0D, true));
+		this.tasks.addTask(7, new EntityAISentinelAttackOnCollide(this, EntityXenomorph.class, 1.0D, true));
+		this.tasks.addTask(7, new EntityAISentinelAttackOnCollide(this, EntityFacehugger.class, 1.0D, true));
+		this.tasks.addTask(7, new EntityAISentinelAttackOnCollide(this, EntityKree.class, 1.0D, true));
 		this.targetTasks.addTask(6, new EntityAIFindNearestPlayerZG(this));
 	}
 	
@@ -57,8 +69,10 @@ public abstract class EntityAbstractSentinel extends EntityRobotBaseZG {
 	
 	@Override
 	public void onLivingUpdate() {
-		IAttributeInstance maxHealth = this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH);
-		if ((this.threatLevel >= 8) || (this.getHealth() <= (maxHealth.getBaseValue() / 2) && rand.nextInt(3) == 0)) {
+		IAttributeInstance maxHealthAttr = this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH);
+		float currentHealth = this.getHealth();
+		double maxHealth = maxHealthAttr.getBaseValue();
+		if ((this.threatLevel >= MAX_THREAT_LEVEL) || (currentHealth <= (maxHealth / 2) && rand.nextInt(10) == 0)) {
 			this.callReinforcements();
 		}
 		super.onLivingUpdate();
@@ -67,25 +81,30 @@ public abstract class EntityAbstractSentinel extends EntityRobotBaseZG {
 	@Override
 	public void onDeath(DamageSource damagesource) {
 		super.onDeath(damagesource);
-		if (rand.nextInt(3) == 0) {
+		if (rand.nextInt(8) == 0) {
 			this.callReinforcements();
 		}
 	}
 	
 	protected void callReinforcements() {
-		if (!this.world.isRemote && ConfigManagerZG.enableSentinelReinforcements) {
-			if (rand.nextInt(this.getCallReinforcementsChance()) == 0) {
+		if (!this.world.isRemote && ConfigManagerZG.enableSentinelReinforcements && !this.getHasCalledForBackup()) {
+			if (this.rand.nextInt(this.getCallReinforcementsChance()) == 0) {
 				EntityAbstractSentinel sentinel = null;
-				int spawnTypeChance = rand.nextInt(100);
-				if (spawnTypeChance <= 15) {
+				int spawnTypeChance = this.rand.nextInt(100);
+				if (spawnTypeChance == 1) {
+					sentinel = new EntitySentinelWalker(this.world);
+				} else if (spawnTypeChance <= 25) {
 					sentinel = new EntitySentinelHound(this.world);
-				} else if (spawnTypeChance <= 35) {
+				} else if (spawnTypeChance <= 45) {
 					sentinel = new EntitySentinelDrone(this.world);
 				}
 				if (sentinel != null) {
-					sentinel.copyLocationAndAnglesFrom(this);
-					this.world.spawnEntity(sentinel);
-					this.setThreatLevel(0);
+					if (sentinel.getCanSpawnHere()) {
+						sentinel.copyLocationAndAnglesFrom(this);
+						this.world.spawnEntity(sentinel);
+						this.setThreatLevel(0);
+						this.setHasCalledForBackup(true);
+					}
 				}
 			}
 		}
@@ -99,27 +118,37 @@ public abstract class EntityAbstractSentinel extends EntityRobotBaseZG {
 	 * @return
 	 */
 	protected int getCallReinforcementsChance() {
-		return 6;
+		return 8;
 	}
 	
 	@Override
 	public void writeEntityToNBT(NBTTagCompound tag) {
 		super.writeEntityToNBT(tag);
-		tag.setShort("ThreatLevel", (short) threatLevel);
+		tag.setShort("ThreatLevel", (short) this.threatLevel);
+		tag.setBoolean("HasCalledForBackup", this.hasCalledForBackup);
 	}
 	
 	@Override
 	public void readEntityFromNBT(NBTTagCompound tag) {
 		super.readEntityFromNBT(tag);
 		this.threatLevel = tag.getShort("ThreatLevel");
+		this.hasCalledForBackup = tag.getBoolean("HasCalledForBackup");
 	}
 	
 	protected void setThreatLevel(int i) {
 		this.threatLevel = i;
 	}
 	
+	protected void setHasCalledForBackup(boolean hasCalledIn) {
+		this.hasCalledForBackup = hasCalledIn;
+	}
+	
 	protected int getThreatLevel() {
 		return this.threatLevel;
+	}
+	
+	protected boolean getHasCalledForBackup() {
+		return this.hasCalledForBackup;
 	}
 	
 	@Override
@@ -129,7 +158,7 @@ public abstract class EntityAbstractSentinel extends EntityRobotBaseZG {
 		} else {
 			Entity entity = source.getTrueSource();
 			if (entity instanceof EntityPlayer) {
-				this.threatLevel += (rand.nextInt(3) == 0) ? 1 : 0;
+				this.threatLevel += (rand.nextInt(4) == 0) ? 1 : 0;
 				if (this.getThreatLevel() > MAX_THREAT_LEVEL) {
 					this.setThreatLevel(MAX_THREAT_LEVEL);
 				}

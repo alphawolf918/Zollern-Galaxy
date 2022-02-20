@@ -48,9 +48,9 @@ public class EntityAISentinelLaserAttack extends EntityAIBase {
 		if (entityLivingTarget.getDistanceSq(this.parentEntity) < 4096.0D && this.parentEntity.canEntityBeSeen(entityLivingTarget)) {
 			World world = this.parentEntity.world;
 			++this.attackTimer;
-			if (this.attackTimer == 20) {
+			if (this.attackTimer == 10) {
 				for (int i = 0; i < 9; i++) {
-					if ((i % 2) == 0 && rand.nextInt(4) == 0) {
+					if ((i % 2) == 0 && rand.nextInt(8) == 0) {
 						continue;
 					}
 					Vec3d vec3d = this.parentEntity.getLook(1.0F);
@@ -63,12 +63,12 @@ public class EntityAISentinelLaserAttack extends EntityAIBase {
 					entitySentinelLaser.posZ = this.parentEntity.posZ + vec3d.z * 4.0D;
 					world.spawnEntity(entitySentinelLaser);
 					this.parentEntity.world.playSound(null, this.parentEntity.getPosition(), ZGSoundEvents.ENTITY_SENTINEL_SHOOT, SoundCategory.MASTER, 8.0F, 1.0F);
-					this.attackTimer = -10;
+					this.attackTimer = -5;// EntityGhast
 				}
 			}
 		} else if (this.attackTimer > 0) {
 			--this.attackTimer;
 		}
-		this.parentEntity.setAttacking(this.attackTimer > 10);
+		this.parentEntity.setAttacking(this.attackTimer > 5);
 	}
 }

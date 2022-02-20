@@ -12,9 +12,6 @@ import net.minecraft.block.SoundType;
 import net.minecraft.block.material.EnumPushReaction;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.util.BlockRenderLayer;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.core.enums.EnumBlockType;
 
 public class ZGBlockIce extends ZGBlockBase {
@@ -32,12 +29,6 @@ public class ZGBlockIce extends ZGBlockBase {
 	}
 	
 	@Override
-	@SideOnly(Side.CLIENT)
-	public BlockRenderLayer getBlockLayer() {
-		return BlockRenderLayer.TRANSLUCENT;
-	}
-	
-	@Override
 	public int quantityDropped(Random random) {
 		return 0;
 	}
@@ -46,5 +37,4 @@ public class ZGBlockIce extends ZGBlockBase {
 	public EnumPushReaction getMobilityFlag(IBlockState state) {
 		return EnumPushReaction.NORMAL;
 	}
-	
 }

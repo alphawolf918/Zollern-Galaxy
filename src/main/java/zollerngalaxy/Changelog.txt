@@ -26,10 +26,12 @@ Zollern Galaxy v2.0.39
 * Added the Sentinel mobs: Drones, Hounds and Walkers.
     - Inspired by No Man's Sky.
     - Drones will spawn on most (not all) planets and moons from this mod, while others are called as backup.
-        - This can be disabled in the config.
+        - This can be disabled in the config, and backup chances can be customized.
 * Added compatibility with Aliens vs Predator mod.
     - Several entities from that mod will now spawn on Centotl if it is present.
     - This can be disabled in the config.
+* Added a config option to control spawn generation chance of Facehugger Eggs on Centotl.
+* Added a config option to control how many Facehugger Eggs spawn per chunk on Centotl.
 * 
 
 [CHANGES]
@@ -54,6 +56,9 @@ Zollern Galaxy v2.0.39
 * Vexbots will now spawn on Xantheon.
 * Centotl now has a breathable atmosphere.
 * Updated Russian translations by mMONTAGEm.
+* Astros Ice blocks are no longer see-through.
+* Lowered chance for Facehugger Eggs to spawn on Centotl.
+* Most of the ore gens have had a dramatic decrease in generation chance and block count.
 * 
 
 [FIXES]

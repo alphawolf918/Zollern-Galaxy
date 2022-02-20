@@ -41,7 +41,7 @@ public class BiomeDecoratorCentotl extends BiomeDecoratorZG {
 	private WorldGenerator zollerniumGen;
 	
 	public int tunnelsPerChunk = 5;
-	public int eggsPerChunk = 5;
+	public int eggsPerChunk = ConfigManagerZG.facehuggerEggsPerChunk;
 	
 	public boolean generateCraters = true;
 	public boolean generateTunnels = true;
@@ -104,7 +104,7 @@ public class BiomeDecoratorCentotl extends BiomeDecoratorZG {
 				if (y <= 10) {
 					y += ZGHelper.rngInt(0, 75);
 				}
-				if (rand.nextInt(100) <= 25) {
+				if (rand.nextInt(100) <= ConfigManagerZG.facehuggerEggSpawnChance) {
 					this.eggGen.generate(world, rand, this.chunkPos.add(x, y, z));
 					this.eggGen.generate(world, rand, this.chunkPos.add(x + 3, y, z));
 					this.eggGen.generate(world, rand, this.chunkPos.add(x - 3, y, z));

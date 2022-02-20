@@ -177,6 +177,8 @@ public class ConfigManagerZG {
 	public static boolean shouldExplosiveBlocksExplodeOtherBlocks;
 	public static int outpostGenChance;
 	public static int windBlowChance;
+	public static int facehuggerEggSpawnChance;
+	public static int facehuggerEggsPerChunk;
 	public static boolean enableWindBlowEvent;
 	public static boolean enableAlienVillagerSpawn;
 	public static int alienVillagerMinSpawnRate;
@@ -556,6 +558,8 @@ public class ConfigManagerZG {
 		zollusIceSpikesGenChance = config.get(CTG_CUSTOMS, "Zollus Ice Spikes Gen Percentage", 42, "The chance (out of 100) for Ice Spikes to generate on planet Zollus. (default: 42)").getInt();
 		outpostGenChance = config.get(CTG_CUSTOMS, "Outpost Gen Percentage", 5, "The chance (out of 100) for Outpost buildings to generate on planets. (default: 5)").getInt();
 		windBlowChance = config.get(CTG_CUSTOMS, "Wind Blow Chance", 25, "Percentage chance of how often storm wind blows. (default: 25)").getInt();
+		facehuggerEggSpawnChance = config.get(CTG_CUSTOMS, "Facehugger Egg Spawn Chance", 20, "Percentage chance of how often Facehugger Eggs spawn on Centotl and Prometheus. (default: 20)").getInt();
+		facehuggerEggsPerChunk = config.get(CTG_CUSTOMS, "Facehugger Eggs Per Chunk", 2, "The amount of Facehugger Eggs to generate per chunk on planets Centotl and Prometheus. (default: 2)").getInt();
 		enableWindBlowEvent = config.get(CTG_CUSTOMS, "Enable Wind Blowing Event", true, "Allow the wind blowing event to move Players around on Vortex (default: true). ").getBoolean();
 		enableAlienVillagerSpawn = config.get(CTG_CUSTOMS, "Enable Alien Villager Spawn", true, "Control whether Alien Villagers can spawn randomly outside of Alien Villages; disable if they're causing lag or being annoying. (default: true). ").getBoolean();
 		alienVillagerMinSpawnRate = config.get(CTG_CUSTOMS, "Alien Villager Spawn Rate Min", 0, "Min rate for Alien Villagers to spawn naturally. (default: 0)").getInt();
