@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "zollerngalaxy:woodbox"
+    },
+    {
+      "item": "zollerngalaxy:nailgroup"
+    }
+  ],
+  "result": {
+    "item": "zollerngalaxy:metalparts"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "Z Z",
+    "Z Z",
+    "   "
+  ],
+  "key": {
+    "Z": {
+      "item": "zollerngalaxy:azurite"
+    }
+  },
+  "result": {
+    "item": "zollerngalaxy:azuriteboots"
+  }
+}

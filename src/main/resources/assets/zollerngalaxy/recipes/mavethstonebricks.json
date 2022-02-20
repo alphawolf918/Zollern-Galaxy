@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SS",
+    "SS"
+  ],
+  "key": {
+    "S": {
+      "item": "zollerngalaxy:mavethstone"
+    }
+  },
+  "result": {
+    "item": "zollerngalaxy:mavethstonebricks",
+    "count": 4
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "zollerngalaxy:goldenwoodlog"
+    }
+  ],
+  "result": {
+    "item": "zollerngalaxy:goldenwoodplanks",
+    "count": 4
+  }
+}

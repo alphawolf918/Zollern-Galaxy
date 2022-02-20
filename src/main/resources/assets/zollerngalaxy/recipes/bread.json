@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "   ",
+    "DDD",
+    "   "
+  ],
+  "key": {
+    "D": {
+      "item": "zollerngalaxy:cookeddough"
+    }
+  },
+  "result": {
+    "item": "minecraft:bread",
+    "count": 16
+  }
+}

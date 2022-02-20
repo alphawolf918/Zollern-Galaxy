@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ZZZ",
+    "Z Z",
+    "   "
+  ],
+  "key": {
+    "Z": {
+      "item": "zollerngalaxy:raditeingot"
+    }
+  },
+  "result": {
+    "item": "zollerngalaxy:raditehelmet"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:apple"
+    },
+    {
+      "item": "zollerngalaxy:rawchocolate"
+    }
+  ],
+  "result": {
+    "item": "zollerngalaxy:candyapple"
+  }
+}

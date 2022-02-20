@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "zollerngalaxy:superchargedcoalblock"
+    }
+  ],
+  "result": {
+    "item": "zollerngalaxy:superchargedcoal",
+    "count": 9
+  }
+}

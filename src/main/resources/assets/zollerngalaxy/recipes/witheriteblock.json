@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "III",
+    "III",
+    "III"
+  ],
+  "key": {
+    "I": {
+      "item": "zollerngalaxy:witherite"
+    }
+  },
+  "result": {
+    "item": "zollerngalaxy:witheriteblock"
+  }
+}

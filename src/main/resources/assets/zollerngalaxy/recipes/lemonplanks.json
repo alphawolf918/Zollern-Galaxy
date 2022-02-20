@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "zollerngalaxy:lemonlog"
+    }
+  ],
+  "result": {
+    "item": "zollerngalaxy:lemonplanks",
+    "count": 4
+  }
+}

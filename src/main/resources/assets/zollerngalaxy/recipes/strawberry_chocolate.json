@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "zollerngalaxy:rawchocolate"
+    },
+    {
+      "item": "zollerngalaxy:strawberry"
+    }
+  ],
+  "result": {
+    "item": "zollerngalaxy:strawberry_chocolate"
+  }
+}

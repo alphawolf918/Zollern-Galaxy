@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " RR",
+    " S ",
+    " S "
+  ],
+  "key": {
+    "R": {
+      "item": "zollerngalaxy:zanium"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "zollerngalaxy:zanium_hoe"
+  }
+}

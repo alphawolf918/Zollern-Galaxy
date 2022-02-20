@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "zollerngalaxy:redshroomblock"
+    }
+  ],
+  "result": {
+    "item": "minecraft:red_mushroom",
+    "count": 9
+  }
+}

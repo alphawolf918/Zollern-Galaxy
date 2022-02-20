@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "zollerngalaxy:limelog"
+    }
+  ],
+  "result": {
+    "item": "zollerngalaxy:limeplanks",
+    "count": 4
+  }
+}

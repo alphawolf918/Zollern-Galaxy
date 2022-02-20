@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " L ",
+    " L ",
+    " L "
+  ],
+  "key": {
+    "L": {
+      "item": "zollerngalaxy:lapisingot"
+    }
+  },
+  "result": {
+    "item": "zollerngalaxy:lapisstick",
+    "count": 4
+  }
+}

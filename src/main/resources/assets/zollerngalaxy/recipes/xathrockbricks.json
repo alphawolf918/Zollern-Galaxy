@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SS",
+    "SS"
+  ],
+  "key": {
+    "S": {
+      "item": "zollerngalaxy:xathstone"
+    }
+  },
+  "result": {
+    "item": "zollerngalaxy:xathrockbricks",
+    "count": 4
+  }
+}

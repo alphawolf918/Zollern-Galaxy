@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SS",
+    "SS"
+  ],
+  "key": {
+    "S": {
+      "item": "zollerngalaxy:caligrostone"
+    }
+  },
+  "result": {
+    "item": "zollerngalaxy:caligrostonebricks",
+    "count": 4
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "VCV",
+    "HYH",
+    "YCY"
+  ],
+  "key": {
+    "C": {
+      "item": "zollerngalaxy:compressedvirinium"
+    },
+    "V": {
+      "item": "galacticraftcore:meteoric_iron_raw"
+    },
+    "H": {
+      "item": "galacticraftcore:basic_block_moon",
+      "data": 4
+    },
+    "Y": {
+      "item": "zollerngalaxy:obsidiandust"
+    }
+  },
+  "result": {
+    "item": "zollerngalaxy:stargate_moon"
+  }
+}
