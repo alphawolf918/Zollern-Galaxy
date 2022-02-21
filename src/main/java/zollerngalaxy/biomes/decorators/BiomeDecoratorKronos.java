@@ -230,13 +230,15 @@ public class BiomeDecoratorKronos extends BiomeDecoratorZG {
 		}
 		
 		// Obsidian Lakes
-		if (this.generateLakes && this.obsidianLakesPerChunk > 0) {
-			for (int i = 0; i < this.lavaLakesPerChunk + 4; ++i) {
-				y = rand.nextInt(rand.nextInt(genY) + 8);
-			}
-			
-			if (rand.nextInt(100) <= 50 && rand.nextInt(3) == 0) {
-				(new WorldGenLakesZG(OBSIDIAN, NETHERRACK)).generate(world, rand, this.chunkPos.add(x, y, z));
+		if (TerrainGen.decorate(world, rand, forgeChunkPos, DecorateBiomeEvent.Decorate.EventType.CUSTOM)) {
+			if (this.generateLakes && this.obsidianLakesPerChunk > 0) {
+				for (int i = 0; i < this.lavaLakesPerChunk + 4; ++i) {
+					y = rand.nextInt(rand.nextInt(genY) + 8);
+				}
+				
+				if (rand.nextInt(100) <= 50 && rand.nextInt(3) == 0) {
+					(new WorldGenLakesZG(OBSIDIAN, NETHERRACK)).generate(world, rand, this.chunkPos.add(x, y, z));
+				}
 			}
 		}
 		

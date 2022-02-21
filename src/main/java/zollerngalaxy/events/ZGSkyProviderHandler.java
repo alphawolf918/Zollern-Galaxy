@@ -28,6 +28,7 @@ import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitEden
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitExodus;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitKriffon;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitKronos;
+import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitMaveth;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitMetztli;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitOasis;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitPerdita;
@@ -250,7 +251,7 @@ public class ZGSkyProviderHandler {
 			// Pantheon (Metztli)
 			if (world.provider instanceof WorldProviderOrbitMetztli) {
 				if (world.provider.getSkyRenderer() == null || world.provider.getSkyRenderer() instanceof SkyProviderOrbit) {
-					SkyProviderOrbitZG sky = new SkyProviderOrbitZG(new ResourceLocation(ZGInfo.MOD_ID + ":textures/gui/metztli.png"), "metztli", world.provider);
+					SkyProviderOrbitZG sky = new SkyProviderOrbitZG(new ResourceLocation(ZGInfo.MOD_ID + ":textures/gui/metztli.png"), "pantheon", world.provider);
 					WorldProviderOrbitMetztli provider = (WorldProviderOrbitMetztli) world.provider;
 					provider.setSpinDeltaPerTick(provider.getSpinManager().getSpinRate());
 					world.provider.setSkyRenderer(sky);
@@ -264,7 +265,7 @@ public class ZGSkyProviderHandler {
 			// Pantheon (Centotl)
 			if (world.provider instanceof WorldProviderOrbitCentotl) {
 				if (world.provider.getSkyRenderer() == null || world.provider.getSkyRenderer() instanceof SkyProviderOrbit) {
-					SkyProviderOrbitZG sky = new SkyProviderOrbitZG(new ResourceLocation(ZGInfo.MOD_ID + ":textures/gui/centotl.png"), "centotl", world.provider);
+					SkyProviderOrbitZG sky = new SkyProviderOrbitZG(new ResourceLocation(ZGInfo.MOD_ID + ":textures/gui/centotl.png"), "pantheon", world.provider);
 					WorldProviderOrbitCentotl provider = (WorldProviderOrbitCentotl) world.provider;
 					provider.setSpinDeltaPerTick(provider.getSpinManager().getSpinRate());
 					world.provider.setSkyRenderer(sky);
@@ -278,7 +279,7 @@ public class ZGSkyProviderHandler {
 			// Pantheon (Toci)
 			if (world.provider instanceof WorldProviderOrbitToci) {
 				if (world.provider.getSkyRenderer() == null || world.provider.getSkyRenderer() instanceof SkyProviderOrbit) {
-					SkyProviderOrbitZG sky = new SkyProviderOrbitZG(new ResourceLocation(ZGInfo.MOD_ID + ":textures/gui/toci.png"), "toci", world.provider);
+					SkyProviderOrbitZG sky = new SkyProviderOrbitZG(new ResourceLocation(ZGInfo.MOD_ID + ":textures/gui/toci.png"), "pantheon", world.provider);
 					WorldProviderOrbitToci provider = (WorldProviderOrbitToci) world.provider;
 					provider.setSpinDeltaPerTick(provider.getSpinManager().getSpinRate());
 					world.provider.setSkyRenderer(sky);
@@ -292,7 +293,7 @@ public class ZGSkyProviderHandler {
 			// Pantheon (Tlaloc)
 			if (world.provider instanceof WorldProviderOrbitTlaloc) {
 				if (world.provider.getSkyRenderer() == null || world.provider.getSkyRenderer() instanceof SkyProviderOrbit) {
-					SkyProviderOrbitZG sky = new SkyProviderOrbitZG(new ResourceLocation(ZGInfo.MOD_ID + ":textures/gui/tlaloc.png"), "tlaloc", world.provider);
+					SkyProviderOrbitZG sky = new SkyProviderOrbitZG(new ResourceLocation(ZGInfo.MOD_ID + ":textures/gui/tlaloc.png"), "pantheon", world.provider);
 					WorldProviderOrbitTlaloc provider = (WorldProviderOrbitTlaloc) world.provider;
 					provider.setSpinDeltaPerTick(provider.getSpinManager().getSpinRate());
 					world.provider.setSkyRenderer(sky);
@@ -306,8 +307,24 @@ public class ZGSkyProviderHandler {
 			// Olympus (Kronos)
 			if (world.provider instanceof WorldProviderOrbitKronos) {
 				if (world.provider.getSkyRenderer() == null || world.provider.getSkyRenderer() instanceof SkyProviderOrbit) {
-					SkyProviderOrbitZG sky = new SkyProviderOrbitZG(new ResourceLocation(ZGInfo.MOD_ID + ":textures/gui/kronos.png"), "kronos", world.provider);
+					SkyProviderOrbitZG sky = new SkyProviderOrbitZG(new ResourceLocation(ZGInfo.MOD_ID + ":textures/gui/kronos.png"), "olympus", world.provider);
 					WorldProviderOrbitKronos provider = (WorldProviderOrbitKronos) world.provider;
+					provider.setSpinDeltaPerTick(provider.getSpinManager().getSpinRate());
+					world.provider.setSkyRenderer(sky);
+				}
+				
+				if (world.provider.getCloudRenderer() == null) {
+					world.provider.setCloudRenderer(new CloudRenderer());
+				}
+			}
+			
+			// TODO
+			
+			// Asgard (Maveth)
+			if (world.provider instanceof WorldProviderOrbitMaveth) {
+				if (world.provider.getSkyRenderer() == null || world.provider.getSkyRenderer() instanceof SkyProviderOrbit) {
+					SkyProviderOrbitZG sky = new SkyProviderOrbitZG(new ResourceLocation(ZGInfo.MOD_ID + ":textures/gui/maveth.png"), "asgard_star", world.provider);
+					WorldProviderOrbitMaveth provider = (WorldProviderOrbitMaveth) world.provider;
 					provider.setSpinDeltaPerTick(provider.getSpinManager().getSpinRate());
 					world.provider.setSkyRenderer(sky);
 				}

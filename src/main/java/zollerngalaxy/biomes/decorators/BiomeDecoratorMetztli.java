@@ -194,28 +194,31 @@ public class BiomeDecoratorMetztli extends BiomeDecoratorZG {
 		}
 		
 		// Lava Lakes
-		if (this.generateLakes && this.lavaLakesPerChunk > 0) {
-			for (int i = 0; i < this.lavaLakesPerChunk; ++i) {
-				y = rand.nextInt(rand.nextInt(genY) + 8);
-				
-				if (rand.nextInt((this.enableExtremeMode) ? 75 : 100) <= 50) {
-					(new WorldGenLakesZG(Blocks.LAVA, BLOCK_STONE)).generate(world, rand, this.chunkPos.add(x, y, z));
+		if (TerrainGen.decorate(world, rand, forgeChunkPos, DecorateBiomeEvent.Decorate.EventType.LAKE_LAVA)) {
+			if (this.generateLakes && this.lavaLakesPerChunk > 0) {
+				for (int i = 0; i < this.lavaLakesPerChunk; ++i) {
+					y = rand.nextInt(rand.nextInt(genY) + 8);
+					if (rand.nextInt((this.enableExtremeMode) ? 75 : 100) <= 50) {
+						(new WorldGenLakesZG(Blocks.LAVA, BLOCK_STONE)).generate(world, rand, this.chunkPos.add(x, y, z));
+					}
 				}
 			}
 		}
 		
 		// Water Lakes
-		if (this.generateLakes && this.waterLakesPerChunk > 0) {
-			for (int i = 0; i < this.waterLakesPerChunk; ++i) {
-				y = rand.nextInt(rand.nextInt(genY) + 8);
-				Block blockToUse = (BiomeUtils.isColdBiome(biome)) ? Blocks.ICE : Blocks.WATER;
-				(new WorldGenLakesZG(blockToUse, BLOCK_TOP)).generate(world, rand, this.chunkPos.add(x, y, z));
-			}
-			
-			// Water Lilies
-			if (this.generateWaterLilies && this.waterlilyPerChunk > 0) {
-				for (int i = 0; i < this.waterlilyPerChunk; ++i) {
-					this.waterLilyGen.generate(world, rand, this.chunkPos.add(x, y, z));
+		if (TerrainGen.decorate(world, rand, forgeChunkPos, DecorateBiomeEvent.Decorate.EventType.LAKE_WATER)) {
+			if (this.generateLakes && this.waterLakesPerChunk > 0) {
+				for (int i = 0; i < this.waterLakesPerChunk; ++i) {
+					y = rand.nextInt(rand.nextInt(genY) + 8);
+					Block blockToUse = (BiomeUtils.isColdBiome(biome)) ? Blocks.ICE : Blocks.WATER;
+					(new WorldGenLakesZG(blockToUse, BLOCK_TOP)).generate(world, rand, this.chunkPos.add(x, y, z));
+				}
+				
+				// Water Lilies
+				if (this.generateWaterLilies && this.waterlilyPerChunk > 0) {
+					for (int i = 0; i < this.waterlilyPerChunk; ++i) {
+						this.waterLilyGen.generate(world, rand, this.chunkPos.add(x, y, z));
+					}
 				}
 			}
 		}

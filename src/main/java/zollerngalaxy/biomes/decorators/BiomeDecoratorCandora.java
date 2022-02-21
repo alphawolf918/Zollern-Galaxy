@@ -10,11 +10,14 @@ package zollerngalaxy.biomes.decorators;
 import java.util.Random;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.Biome.TempCategory;
 import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.gen.feature.WorldGenerator;
+import net.minecraftforge.event.terraingen.DecorateBiomeEvent;
+import net.minecraftforge.event.terraingen.TerrainGen;
 import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.blocks.fluids.ZGFluids;
@@ -96,13 +99,16 @@ public class BiomeDecoratorCandora extends BiomeDecoratorZG {
 		this.generateOre(this.iceCreamSandwichGen, EnumOreGenZG.SWEET, world, rand);
 		
 		ChunkPrimer chunkPrimer = new ChunkPrimer();
+		ChunkPos forgeChunkPos = new ChunkPos(this.chunkPos);
 		
 		// Chocolate Lakes
-		if (this.generateLakes && this.chocolateLakesPerChunk > 0) {
-			for (int i = 0; i < this.chocolateLakesPerChunk; ++i) {
-				y = rand.nextInt(rand.nextInt(genY) + 8);
-				Block blockToUse = (biome.getTempCategory() == TempCategory.COLD) ? ZGBlocks.candyCubeCyan : ZGFluids.blockChocolateFluid;
-				(new WorldGenLakesZG(blockToUse, BLOCK_TOP)).generate(world, rand, this.chunkPos.add(x, y, z));
+		if (TerrainGen.decorate(world, rand, forgeChunkPos, DecorateBiomeEvent.Decorate.EventType.CUSTOM)) {
+			if (this.generateLakes && this.chocolateLakesPerChunk > 0) {
+				for (int i = 0; i < this.chocolateLakesPerChunk; ++i) {
+					y = rand.nextInt(rand.nextInt(genY) + 8);
+					Block blockToUse = (biome.getTempCategory() == TempCategory.COLD) ? ZGBlocks.candyCubeCyan : ZGFluids.blockChocolateFluid;
+					(new WorldGenLakesZG(blockToUse, BLOCK_TOP)).generate(world, rand, this.chunkPos.add(x, y, z));
+				}
 			}
 		}
 		

@@ -73,6 +73,9 @@ public class ZGSpaceStations {
 	public static ZGSpaceStation KRONOS_SPACE_STATION;
 	// TODO
 	
+	// Asgard
+	public static ZGSpaceStation MAVETH_SPACE_STATION;
+	
 	public static void init() {
 		ZGSpaceStations.initSpaceStations();
 		ZGSpaceStations.registerSpaceStations();
@@ -407,6 +410,17 @@ public class ZGSpaceStations {
 		inputMap.put("waferAdvanced", 1);
 		inputMap.put(new ItemStack(ZGItems.compressedZanium, 8), 24);
 		inputMap.put(ZGItems.netheridium, 24);
+		ZGRecipeHelper.addSpaceStationRecipe(ConfigManagerZG.spaceStationKronosId, ConfigManagerZG.planetKronosDimensionId, inputMap);
+		inputMap.clear();
+		
+		// TODO
+		
+		// Asgard (Maveth)
+		inputMap = new HashMap<Object, Integer>();
+		inputMap.put("ingotVibranium", 64);
+		inputMap.put("waferAdvanced", 1);
+		inputMap.put(new ItemStack(ZGItems.compressedZucrite, 8), 24);
+		inputMap.put(ZGItems.rokkite, 24);
 		ZGRecipeHelper.addSpaceStationRecipe(ConfigManagerZG.spaceStationKronosId, ConfigManagerZG.planetKronosDimensionId, inputMap);
 		inputMap.clear();
 	}

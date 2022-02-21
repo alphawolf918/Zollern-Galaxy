@@ -8,13 +8,16 @@
 package zollerngalaxy.mobs.entities.robots.sentinels;
 
 import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.util.DamageSource;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
+import zollerngalaxy.events.ZGSoundEvents;
 
 public class EntitySentinelWalker extends EntityAbstractSentinel {
 	
 	public EntitySentinelWalker(World worldIn) {
 		super(worldIn);
-		this.setSize(this.width * 4.0F, this.height * 4.0F);
+		this.setSize(this.width * 4.2F, this.height * 8.0F);
 	}
 	
 	@Override
@@ -25,7 +28,22 @@ public class EntitySentinelWalker extends EntityAbstractSentinel {
 		this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(10.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.ARMOR).setBaseValue(20.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.ARMOR_TOUGHNESS).setBaseValue(20.0D);
-		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(125.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(150.0D);
+	}
+	
+	@Override
+	protected SoundEvent getAmbientSound() {
+		return ZGSoundEvents.ENTITY_SENTINEL_WALKER_SAY;
+	}
+	
+	@Override
+	protected SoundEvent getHurtSound(DamageSource damageSourceIn) {
+		return ZGSoundEvents.ENTITY_SENTINEL_WALKER_HURT;
+	}
+	
+	@Override
+	protected SoundEvent getDeathSound() {
+		return ZGSoundEvents.ENTITY_SENTINEL_WALKER_DIE;
 	}
 	
 	@Override

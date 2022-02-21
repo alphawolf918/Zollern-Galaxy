@@ -11,9 +11,13 @@ import java.util.Random;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.gen.feature.WorldGenerator;
+import net.minecraftforge.event.terraingen.DecorateBiomeEvent;
+import net.minecraftforge.event.terraingen.TerrainGen;
 import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.config.ConfigManagerZG;
@@ -72,12 +76,16 @@ public class BiomeDecoratorKriffon extends BiomeDecoratorZG {
 		int genY = 128;
 		int y = genY;
 		
-		if (this.lavaLakesPerChunk > 0) {
-			for (int i = 0; i < this.lavaLakesPerChunk; ++i) {
-				y = rand.nextInt(rand.nextInt(genY) + 8);
-				
-				if (rand.nextInt(150) <= ConfigManagerZG.kriffonLavaLakesGenChance) {
-					(new WorldGenLakesZG(Blocks.LAVA, STONE)).generate(world, rand, this.chunkPos.add(x, y, z));
+		ChunkPrimer chunkPrimer = new ChunkPrimer();
+		ChunkPos forgeChunkPos = new ChunkPos(this.chunkPos);
+		
+		if (TerrainGen.decorate(world, rand, forgeChunkPos, DecorateBiomeEvent.Decorate.EventType.LAKE_LAVA)) {
+			if (this.lavaLakesPerChunk > 0) {
+				for (int i = 0; i < this.lavaLakesPerChunk; ++i) {
+					y = rand.nextInt(rand.nextInt(genY) + 8);
+					if (rand.nextInt(150) <= ConfigManagerZG.kriffonLavaLakesGenChance) {
+						(new WorldGenLakesZG(Blocks.LAVA, STONE)).generate(world, rand, this.chunkPos.add(x, y, z));
+					}
 				}
 			}
 		}

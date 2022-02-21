@@ -32,7 +32,6 @@ Zollern Galaxy v2.0.39
     - This can be disabled in the config.
 * Added a config option to control spawn generation chance of Facehugger Eggs on Centotl.
 * Added a config option to control how many Facehugger Eggs spawn per chunk on Centotl.
-* 
 
 [CHANGES]
 * Radite Ingots and Blocks can now be used inside of a Magma Crucible to make Radite Fluid.
@@ -44,7 +43,7 @@ Zollern Galaxy v2.0.39
 * Increased amount of oxygen per tank tier.
 * Oxygen Tanks from this mod are now craftable.
 * ZG Village farms will now generate with Obsidian instead of Logs.
-* Any item in the mod that gives off fuel (e.g. Super Charged Coal) will now show its burn rate in its item description.
+* Any item in the mod that can be used as fuel (e.g. Super Charged Coal) will now show its burn rate in its item description.
 * Updated a few planet and star textures.
 * Reworked Eden chunk generation and biome decoration.
 * Modified crater gen config option for Tlaloc to be for all planets.
@@ -59,7 +58,7 @@ Zollern Galaxy v2.0.39
 * Astros Ice blocks are no longer see-through.
 * Lowered chance for Facehugger Eggs to spawn on Centotl.
 * Most of the ore gens have had a dramatic decrease in generation chance and block count.
-* 
+* Lake generation has also been decreased.
 
 [FIXES]
 * Fixed Tlaloc Dungeon Chest having the wrong render texture (thank you MJRLegends).
@@ -68,4 +67,4 @@ Zollern Galaxy v2.0.39
 * Fixed tunnel gens not generating correctly.
 * Fixed Crystal Towers not generating correctly.
 * Fixed Zollus Gold Ore not translating correctly.
-* 
+* Fixed some Space Stations having incorrect texture for their stars.

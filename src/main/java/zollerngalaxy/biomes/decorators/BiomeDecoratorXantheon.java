@@ -10,9 +10,13 @@ package zollerngalaxy.biomes.decorators;
 import java.util.Random;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.gen.feature.WorldGenerator;
+import net.minecraftforge.event.terraingen.DecorateBiomeEvent;
+import net.minecraftforge.event.terraingen.TerrainGen;
 import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.blocks.fluids.ZGFluids;
@@ -70,16 +74,20 @@ public class BiomeDecoratorXantheon extends BiomeDecoratorZG {
 		this.generateOre(this.amaranthGen, EnumOreGenZG.AMARANTH, world, rand);
 		this.generateOre(this.constructGen, EnumOreGenZG.CONSTRUCTED, world, rand);
 		
+		ChunkPrimer chunkPrimer = new ChunkPrimer();
+		ChunkPos forgeChunkPos = new ChunkPos(this.chunkPos);
+		
 		int genY = 248;
 		int y = genY;
 		
-		if (this.generateLakes && this.whiteLavaLakesPerChunk > 0) {
-			for (int i = 0; i < this.whiteLavaLakesPerChunk; ++i) {
-				y = rand.nextInt(rand.nextInt(genY) + 8);
-				
-				if (rand.nextInt(150) <= 10) {
-					if (y <= 62) {
-						(new WorldGenLakesZG(ZGFluids.blockWhiteLavaFluid, STONE)).generate(world, rand, this.chunkPos.add(x, y, z));
+		if (TerrainGen.decorate(world, rand, forgeChunkPos, DecorateBiomeEvent.Decorate.EventType.LAKE_LAVA)) {
+			if (this.generateLakes && this.whiteLavaLakesPerChunk > 0) {
+				for (int i = 0; i < this.whiteLavaLakesPerChunk; ++i) {
+					y = rand.nextInt(rand.nextInt(genY) + 8);
+					if (rand.nextInt(150) <= 10) {
+						if (y <= 62) {
+							(new WorldGenLakesZG(ZGFluids.blockWhiteLavaFluid, STONE)).generate(world, rand, this.chunkPos.add(x, y, z));
+						}
 					}
 				}
 			}

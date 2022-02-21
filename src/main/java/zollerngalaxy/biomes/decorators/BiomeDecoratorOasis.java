@@ -143,27 +143,31 @@ public class BiomeDecoratorOasis extends BiomeDecoratorZG {
 		}
 		
 		// Water Lakes
-		if (this.generateLakes && this.waterLakesPerChunk > 0) {
-			for (int i = 0; i < this.waterLakesPerChunk; ++i) {
-				y = rand.nextInt(rand.nextInt(genY) + 8);
-				Block blockToUse = (biome.getTempCategory() == TempCategory.COLD) ? Blocks.ICE : Blocks.WATER;
-				(new WorldGenLakesZG(blockToUse, BLOCK_TOP)).generate(world, rand, this.chunkPos.add(x, y, z));
-			}
-			
-			// Lilypads
-			if (this.waterlilyPerChunk > 0) {
-				for (int i = 0; i < this.waterlilyPerChunk; ++i) {
-					(new WorldGenWaterlily()).generate(world, rand, this.chunkPos.add(x, y, z));
+		if (TerrainGen.decorate(world, rand, forgeChunkPos, DecorateBiomeEvent.Decorate.EventType.LAKE_WATER)) {
+			if (this.generateLakes && this.waterLakesPerChunk > 0) {
+				for (int i = 0; i < this.waterLakesPerChunk; ++i) {
+					y = rand.nextInt(rand.nextInt(genY) + 8);
+					Block blockToUse = (biome.getTempCategory() == TempCategory.COLD) ? Blocks.ICE : Blocks.WATER;
+					(new WorldGenLakesZG(blockToUse, BLOCK_TOP)).generate(world, rand, this.chunkPos.add(x, y, z));
+				}
+				
+				// Lilypads
+				if (this.waterlilyPerChunk > 0) {
+					for (int i = 0; i < this.waterlilyPerChunk; ++i) {
+						(new WorldGenWaterlily()).generate(world, rand, this.chunkPos.add(x, y, z));
+					}
 				}
 			}
 		}
 		
 		// Lava Lakes
-		if (this.generateLakes && this.lavaLakesPerChunk > 0) {
-			for (int i = 0; i < this.lavaLakesPerChunk; ++i) {
-				y = rand.nextInt(rand.nextInt(genY) + 8);
-				if (rand.nextInt(100) <= 5) {
-					(new WorldGenLakesZG(Blocks.LAVA, STONE)).generate(world, rand, this.chunkPos.add(x, y, z));
+		if (TerrainGen.decorate(world, rand, forgeChunkPos, DecorateBiomeEvent.Decorate.EventType.LAKE_LAVA)) {
+			if (this.generateLakes && this.lavaLakesPerChunk > 0) {
+				for (int i = 0; i < this.lavaLakesPerChunk; ++i) {
+					y = rand.nextInt(rand.nextInt(genY) + 8);
+					if (rand.nextInt(100) <= 5) {
+						(new WorldGenLakesZG(Blocks.LAVA, STONE)).generate(world, rand, this.chunkPos.add(x, y, z));
+					}
 				}
 			}
 		}

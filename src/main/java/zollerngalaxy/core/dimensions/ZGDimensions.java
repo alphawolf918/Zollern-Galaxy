@@ -21,6 +21,7 @@ import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitEden
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitExodus;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitKriffon;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitKronos;
+import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitMaveth;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitMetztli;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitOasis;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitPerdita;
@@ -118,6 +119,8 @@ public class ZGDimensions {
 	public static DimensionType KRONOS_ORBIT_STATIC;
 	
 	public static DimensionType MAVETH;
+	public static DimensionType MAVETH_ORBIT;
+	public static DimensionType MAVETH_ORBIT_STATIC;
 	
 	public static void init() {
 		// Psion-6 (Zollus)
@@ -229,6 +232,8 @@ public class ZGDimensions {
 		
 		// Asgard (Maveth)
 		ZGDimensions.MAVETH = ZGDimensions.getDimType(ConfigManagerZG.planetMavethDimensionId);
+		ZGDimensions.MAVETH_ORBIT = DimensionType.register("Maveth Space Station", "_maveth_orbit", ConfigManagerZG.spaceStationMavethId, WorldProviderOrbitMaveth.class, false);
+		ZGDimensions.MAVETH_ORBIT_STATIC = DimensionType.register("Maveth Space Station", "_maveth_orbit", ConfigManagerZG.spaceStationMavethStaticId, WorldProviderOrbitMaveth.class, true);
 	}
 	
 	public static DimensionType getDimType(int dimId) {

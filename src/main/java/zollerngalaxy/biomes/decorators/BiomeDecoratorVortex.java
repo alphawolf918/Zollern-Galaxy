@@ -9,10 +9,13 @@ package zollerngalaxy.biomes.decorators;
 
 import java.util.Random;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.gen.feature.WorldGenerator;
+import net.minecraftforge.event.terraingen.DecorateBiomeEvent;
+import net.minecraftforge.event.terraingen.TerrainGen;
 import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.blocks.fluids.ZGFluids;
@@ -63,6 +66,7 @@ public class BiomeDecoratorVortex extends BiomeDecoratorZG {
 		int z = rand.nextInt(16) + 8;
 		
 		ChunkPrimer chunkPrimer = new ChunkPrimer();
+		ChunkPos forgeChunkPos = new ChunkPos(this.chunkPos);
 		
 		int genY = 248;
 		int y = genY;
@@ -82,13 +86,15 @@ public class BiomeDecoratorVortex extends BiomeDecoratorZG {
 		}
 		
 		// Chargium Lakes
-		if (this.generateChargiumLakes && this.chargiumLakesPerChunk > 0) {
-			for (int i = 0; i < this.chargiumLakesPerChunk; ++i) {
-				y = rand.nextInt(rand.nextInt(genY) + 8);
-				
-				if (rand.nextInt((this.enableExtremeMode) ? 80 : 100) <= 10) {
-					if (y <= 82) {
-						this.chargiumLakeGen.generate(world, rand, this.chunkPos.add(x, y, z));
+		if (TerrainGen.decorate(world, rand, forgeChunkPos, DecorateBiomeEvent.Decorate.EventType.LAKE_LAVA)) {
+			if (this.generateChargiumLakes && this.chargiumLakesPerChunk > 0) {
+				for (int i = 0; i < this.chargiumLakesPerChunk; ++i) {
+					y = rand.nextInt(rand.nextInt(genY) + 8);
+					
+					if (rand.nextInt((this.enableExtremeMode) ? 80 : 100) <= 10) {
+						if (y <= 82) {
+							this.chargiumLakeGen.generate(world, rand, this.chunkPos.add(x, y, z));
+						}
 					}
 				}
 			}
