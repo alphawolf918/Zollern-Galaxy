@@ -134,8 +134,10 @@ public class BiomeAltumBase extends BiomeSpace {
 							IBlockState state = chunkPrimerIn.getBlockState(posX, posY, posZ);
 							Block block = state.getBlock();
 							
-							if (chestPos != null && chestPos != null && block != null) {
-								OCEAN_TREASURE_GEN.generate(worldIn, rand, chestPos);
+							if (ConfigManagerZG.enableAltumTreasureGen) {
+								if (chestPos != null && chestPos != null && block != null) {
+									OCEAN_TREASURE_GEN.generate(worldIn, rand, chestPos);
+								}
 							}
 						}
 						//
@@ -219,7 +221,6 @@ public class BiomeAltumBase extends BiomeSpace {
 		this.spawnableWaterCreatureList.add(new SpawnListEntry(EntityBladeFish.class, 55, 1, 3));
 		this.spawnableWaterCreatureList.add(new SpawnListEntry(EntityShark.class, 45, 1, 2));
 		this.spawnableWaterCreatureList.add(new SpawnListEntry(EntityAbyssalVillager.class, 40, 1, 2));
-		
 		if (ConfigManagerZG.enableAlienVillagerSpawn) {
 			this.spawnableCreatureList.add(new SpawnListEntry(EntityAbyssalVillager.class, this.villagerSpawnRate, this.villagerMinSpawnRate, this.villagerMaxSpawnRate));
 		}

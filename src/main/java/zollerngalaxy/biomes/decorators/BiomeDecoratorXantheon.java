@@ -45,7 +45,7 @@ public class BiomeDecoratorXantheon extends BiomeDecoratorZG {
 	public boolean generateLakes = true;
 	public boolean generateSpouts = true;
 	
-	public int whiteLavaLakesPerChunk = 2;
+	public int whiteLavaLakesPerChunk = 1;
 	
 	public BiomeDecoratorXantheon() {
 		this.chromeGen = new WorldGenMinableZG(ZGBlocks.xantheonChrome, ZGBlocks.xantheonRock, EnumOreGenZG.DIRT.setBlockCount(45));

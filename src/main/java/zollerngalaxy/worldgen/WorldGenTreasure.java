@@ -31,27 +31,23 @@ public class WorldGenTreasure extends ZGWorldGenMaster {
 	
 	@Override
 	public boolean generate(World worldIn, Random rand, BlockPos pos) {
-		// Only validate chest gens if enabled in config (ExistingEevee).
+		// Only validate chest gens if enabled in config. (ExistingEevee)
 		if (ConfigManagerZG.enableChestValidation) {
 			if (!this.isValidSpawn(worldIn, pos)) {
 				return false;
 			}
 		}
-		
 		// Don't generate an empty chest.
 		if (lootTable == null) {
 			return false;
 		}
-		
 		BlockPos chestPos = pos.down();
-		
 		worldIn.setBlockState(chestPos, CHEST.correctFacing(worldIn, chestPos, CHEST_STATE), 2);
 		TileEntity tileEntity = worldIn.getTileEntity(chestPos);
 		
 		if (tileEntity instanceof TileEntityChest) {
 			((TileEntityChest) tileEntity).setLootTable(this.lootTable, rand.nextLong());
 		}
-		
 		return true;
 	}
 	

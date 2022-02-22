@@ -317,11 +317,11 @@ public class ZGPlanets {
 		if (ConfigManagerZG.planetUnreachableAll || ConfigManagerZG.planetUnreachableEden) {
 			planetEden.setDisableRockets();
 		}
-		planetEden.setBodyTemperature(75.4F);
+		planetEden.setBodyTemperature(95.42F);
 		planetEden.setBodyToxicity(0.0F);
 		planetEden.setBodyRadiation(0.0F);
 		planetEden.setBreathable(true);
-		planetEden.setWindLevel(0.6F);
+		planetEden.setWindLevel(0.8F);
 		planetEden.setDensity(1.0F);
 		planetEden.setHasRain(true);
 		planetEden.setBodyGasses(EnumAtmosphericGas.NITROGEN, EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.ARGON, EnumAtmosphericGas.WATER, EnumAtmosphericGas.CO2);

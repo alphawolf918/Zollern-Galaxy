@@ -61,8 +61,8 @@ public class BiomeDecoratorTlaloc extends BiomeDecoratorZG {
 	private WorldGenerator zollerniumGen;
 	private WorldGenerator plutoniumGen;
 	
-	public int tunnelsPerChunk = 10;
-	public int cratersPerChunk = 6;
+	public int tunnelsPerChunk = 5;
+	public int cratersPerChunk = 4;
 	public int plutoniumCrystalsPerChunk = 2;
 	public int ufosPerChunk = 2;
 	public int mechTreesPerChunk = 0;

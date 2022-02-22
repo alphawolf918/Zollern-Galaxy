@@ -49,9 +49,9 @@ public class BiomeDecoratorXathius extends BiomeDecoratorZG {
 	private WorldGenerator tinGen;
 	private WorldGenerator azuriteGen;
 	
-	public int waterLakesPerChunk = 4;
+	public int waterLakesPerChunk = 2;
 	public int lavaLakesPerChunk = 1;
-	public int oilLakesPerChunk = 4;
+	public int oilLakesPerChunk = 2;
 	public int obsidianLakesPerChunk = 1;
 	public int xathTallGrassPerChunk = 8;
 	

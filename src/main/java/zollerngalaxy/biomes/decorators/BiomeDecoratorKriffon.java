@@ -79,6 +79,7 @@ public class BiomeDecoratorKriffon extends BiomeDecoratorZG {
 		ChunkPrimer chunkPrimer = new ChunkPrimer();
 		ChunkPos forgeChunkPos = new ChunkPos(this.chunkPos);
 		
+		// Lava
 		if (TerrainGen.decorate(world, rand, forgeChunkPos, DecorateBiomeEvent.Decorate.EventType.LAKE_LAVA)) {
 			if (this.lavaLakesPerChunk > 0) {
 				for (int i = 0; i < this.lavaLakesPerChunk; ++i) {

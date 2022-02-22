@@ -29,7 +29,6 @@ import zollerngalaxy.core.enums.EnumOreGenZG;
 import zollerngalaxy.worldgen.WorldGenLakesZG;
 import zollerngalaxy.worldgen.WorldGenMinableZG;
 import zollerngalaxy.worldgen.WorldGenOutpost;
-import zollerngalaxy.worldgen.WorldGenTreasure;
 import zollerngalaxy.worldgen.WorldGenWaterGrass;
 
 public class BiomeDecoratorAltum extends BiomeDecoratorZG {
@@ -47,7 +46,7 @@ public class BiomeDecoratorAltum extends BiomeDecoratorZG {
 	private WorldGenerator coalGen;
 	private WorldGenerator prismarineGen;
 	
-	public int waterLakesPerChunk = 6;
+	public int waterLakesPerChunk = 2;
 	public int treasurePerChunk = 1;
 	public int seaweedPerChunk = 2;
 	
@@ -56,7 +55,8 @@ public class BiomeDecoratorAltum extends BiomeDecoratorZG {
 	private int seaLevel = ChunkProviderAltum.SEA_LEVEL;
 	
 	private WorldGenerator waterLakeGen = new WorldGenLakesZG(Blocks.WATER, ZGBlocks.altumSand);
-	private WorldGenerator treasureGen = new WorldGenTreasure(oceanLootTable).setLootTable(oceanLootTable);
+	// private WorldGenerator treasureGen = new
+	// WorldGenTreasure(oceanLootTable).setLootTable(oceanLootTable);
 	private WorldGenerator seaweedGen = new WorldGenWaterGrass((ZGWaterGrass) ZGBlocks.altumSeaweed);
 	
 	public BiomeDecoratorAltum() {
@@ -114,7 +114,7 @@ public class BiomeDecoratorAltum extends BiomeDecoratorZG {
 		
 		// Chest Gen
 		// if (TerrainGen.decorate(world, rand, forgeChunkPos,
-		// DecorateBiomeEvent.Decorate.EventType.FOSSIL)) {
+		// DecorateBiomeEvent.Decorate.EventType.CUSTOM)) {
 		// // if (rand.nextInt(50) == 0) {
 		// // for (int i = 0; i < this.treasurePerChunk; i++) {
 		// // int x1 = rand.nextInt(16) + 8;

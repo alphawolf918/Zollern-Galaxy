@@ -92,8 +92,8 @@ public class BiomeDecoratorMetztli extends BiomeDecoratorZG {
 	private WorldGenerator cropGen;
 	private WorldGenerator jungleTreeGen;
 	
-	public int waterLakesPerChunk = 3;
-	public int lavaLakesPerChunk = 4;
+	public int waterLakesPerChunk = 2;
+	public int lavaLakesPerChunk = 2;
 	public int oilPerChunk = 3;
 	public int waterLilyPerChunk = 4;
 	public int tallGrassPerChunk = 6;

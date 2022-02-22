@@ -27,7 +27,7 @@ public enum EnumOreGenZG {
 	EVENIUM(5, 4, 0, 12),
 	DESH(4, 5, 0, 32),
 	METEORIC_IRON(4, 11, 0, 32),
-	DIRT(16, 20, 0, 128),
+	DIRT(16, 16, 0, 128),
 	SAND(16, 14, 0, 128),
 	STONE(20, 15, 0, 128),
 	CANDY(35, 10, 0, 128),
@@ -202,10 +202,10 @@ public enum EnumOreGenZG {
 	/**
 	 * Set minimum AND maximum spawn height.
 	 * 
-	 * @param height
+	 * @param minMax
 	 */
-	public void setMinMaxHeight(int height) {
-		this.setMinMaxHeight(height);
+	public void setMinMaxHeight(int minMax) {
+		this.setMinMaxHeight(minMax, minMax);
 	}
 	
 	/**

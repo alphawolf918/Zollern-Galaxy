@@ -138,22 +138,23 @@ public abstract class ZGWorldGenMaster extends WorldGenerator {
 	 * @return True/False
 	 */
 	protected boolean isValidSpawn(World world, BlockPos pos) {
+		if (world == null) {
+			return false;
+		}
+		if (pos == null) {
+			return false;
+		}
 		IBlockState state = world.getBlockState(pos.down());
-		
 		if (state == null) {
 			return false;
 		}
-		
 		Block blockBelow = state.getBlock();
-		
 		if (blockBelow == null) {
 			return false;
 		}
-		
 		if (blockBelow == Blocks.AIR || blockBelow == Blocks.WATER) {
 			return false;
 		}
-		
 		return true;
 	}
 	

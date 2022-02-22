@@ -91,7 +91,7 @@ public class BiomeDecoratorKronos extends BiomeDecoratorZG {
 	public boolean generateOil = true;
 	public boolean generateCrops = true;
 	
-	public int lavaLakesPerChunk = 15;
+	public int lavaLakesPerChunk = 8;
 	public int obsidianLakesPerChunk = 2;
 	public int mushroomsPerChunk = 5;
 	public int sandPatchesPerChunk = 4;

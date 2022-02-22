@@ -196,6 +196,7 @@ public class ConfigManagerZG {
 	public static boolean enableMineshaftsOnKronos;
 	public static boolean enableSentinels;
 	public static boolean enableSentinelReinforcements;
+	public static boolean enableAltumTreasureGen;
 	
 	/////////////////////////////////////////////////
 	public static double meteorGenZollus;
@@ -577,6 +578,7 @@ public class ConfigManagerZG {
 		enableMineshaftsOnKronos = config.get(CTG_CUSTOMS, "Enable Kronos Mineshafts", false, "Enable to allow Mineshafts to spawn on Kronos. (default: false). ").getBoolean();
 		enableSentinels = config.get(CTG_CUSTOMS, "Enable Sentinels", true, "Should Sentinels spawn on planets and moons from this mod? (default: true). ").getBoolean();
 		enableSentinelReinforcements = config.get(CTG_CUSTOMS, "Enable Sentinel Reinforcements", true, "Should Sentinels be allowed to call reinforcements? (default: true). ").getBoolean();
+		enableAltumTreasureGen = config.get(CTG_CUSTOMS, "Enable Altum Treasure Gen", true, "Disable if Altum treasure chest generation is causing a crash. (default: true). ").getBoolean();
 		
 		//
 		//

@@ -71,7 +71,7 @@ public class BiomeDecoratorOasis extends BiomeDecoratorZG {
 	
 	public int waterLakesPerChunk = 4;
 	public int lavaLakesPerChunk = (this.enableExtremeMode) ? 12 : 6;
-	public int oilLakesPerChunk = 4;
+	public int oilLakesPerChunk = 2;
 	public int oasisTallGrassPerChunk = 3;
 	public int oasisFlowersPerChunk = 4;
 	public int battleTowersPerChunk = 2;
