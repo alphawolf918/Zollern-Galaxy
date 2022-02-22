@@ -25,6 +25,7 @@ import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitEden
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitExodus;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitKriffon;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitKronos;
+import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitMaveth;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitMetztli;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitOasis;
 import zollerngalaxy.core.dimensions.worldproviders.orbit.WorldProviderOrbitPerdita;
@@ -178,6 +179,11 @@ public class ZGSpaceStations {
 		KRONOS_SPACE_STATION = new ZGSpaceStation("kronos", ZGPlanets.planetKronos);
 		KRONOS_SPACE_STATION.setDimensionInfo(ConfigManagerZG.spaceStationKronosId, ConfigManagerZG.spaceStationKronosStaticId, WorldProviderOrbitKronos.class);
 		totalSpaceStations++;
+		
+		// Asgard (Maveth)
+		MAVETH_SPACE_STATION = new ZGSpaceStation("maveth", ZGPlanets.planetMaveth);
+		MAVETH_SPACE_STATION.setDimensionInfo(ConfigManagerZG.spaceStationMavethId, ConfigManagerZG.spaceStationMavethStaticId, WorldProviderOrbitMaveth.class);
+		totalSpaceStations++;
 	}
 	
 	private static void registerSpaceStations() {
@@ -237,6 +243,9 @@ public class ZGSpaceStations {
 		
 		// Olympus (Kronos)
 		ZGSpaceStations.registerSpaceStation(KRONOS_SPACE_STATION, "Kronos Space Station", "_kronos_orbit", WorldProviderOrbitKronos.class, ConfigManagerZG.spaceStationKronosId, ConfigManagerZG.spaceStationKronosStaticId);
+		
+		// Asgard (Maveth)
+		ZGSpaceStations.registerSpaceStation(MAVETH_SPACE_STATION, "Maveth Space Station", "_maveth_orbit", WorldProviderOrbitMaveth.class, ConfigManagerZG.spaceStationMavethId, ConfigManagerZG.spaceStationMavethStaticId);
 	}
 	
 	public static void registerSpaceStationRecipes() {
@@ -421,7 +430,7 @@ public class ZGSpaceStations {
 		inputMap.put("waferAdvanced", 1);
 		inputMap.put(new ItemStack(ZGItems.compressedZucrite, 8), 24);
 		inputMap.put(ZGItems.rokkite, 24);
-		ZGRecipeHelper.addSpaceStationRecipe(ConfigManagerZG.spaceStationKronosId, ConfigManagerZG.planetKronosDimensionId, inputMap);
+		ZGRecipeHelper.addSpaceStationRecipe(ConfigManagerZG.spaceStationKronosId, ConfigManagerZG.planetMavethDimensionId, inputMap);
 		inputMap.clear();
 	}
 	
