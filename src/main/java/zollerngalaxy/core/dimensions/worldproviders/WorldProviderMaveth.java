@@ -170,6 +170,7 @@ public class WorldProviderMaveth extends WorldProviderPlanetZG {
 	}
 	
 	@Override
+	@SideOnly(Side.CLIENT)
 	protected void renderSky() {
 		this.setSkyRenderer(new SkyProviderMaveth(this));
 	}

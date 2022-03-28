@@ -37,10 +37,12 @@ public class WorldGenTreasure extends ZGWorldGenMaster {
 				return false;
 			}
 		}
+		
 		// Don't generate an empty chest.
 		if (lootTable == null) {
 			return false;
 		}
+		
 		BlockPos chestPos = pos.down();
 		worldIn.setBlockState(chestPos, CHEST.correctFacing(worldIn, chestPos, CHEST_STATE), 2);
 		TileEntity tileEntity = worldIn.getTileEntity(chestPos);

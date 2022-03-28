@@ -1311,6 +1311,8 @@ tooltips.chest_t1.description=A victorious reward for besting the robots!
 
 tooltips.burnrate=Burn Rate
 
+tooltips.nova_level=Nova Level
+
 ## Planets and Moons ##
 
 planet.zollus=Zollus

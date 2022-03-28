@@ -1,13 +1,14 @@
 ===== CHANGELOG =====
-Zollern Galaxy v2.0.41
+Zollern Galaxy v2.0.43
 =====================
 
 [NEW]
-* Added a config option to disable Altum treasure generation if it is causing a crash.
+* Added "Nova Levels."
+    - Inspired by Light Levels in Destiny, these will eventually increase stats and have other effects.
+    - Currently of no use, but will be in the future.
 
 [CHANGES]
-* Eden has been given a slight temperature increase.
-* Lowered lake generation per chunk on most worlds.
+* All armor pieces will have a default Nova Level when crafted.
 
 [FIXES]
-* Fixed ore generation causing a cascading NullPointerException when launching with a rocket.
+* Removed treasure gen from Altum completely until it can be determined what's actually going on.
