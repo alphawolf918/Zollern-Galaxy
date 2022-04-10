@@ -1,0 +1,9 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "all": "zollerngalaxy:blocks/xathwoodlog_top",
+    "top": "zollerngalaxy:blocks/xathwoodlog_top",
+    "right": "zollerngalaxy:blocks/xathwoodlog",
+    "left": "zollerngalaxy:blocks/xathwoodlog"
+  }
+}

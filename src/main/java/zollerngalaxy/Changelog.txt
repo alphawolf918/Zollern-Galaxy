@@ -3,9 +3,11 @@ Zollern Galaxy v2.0.44
 =====================
 
 [NEW]
+* Created Goliath Trees.
 * 
 
 [CHANGES]
+* Added Goliath Trees to Xathius.
 * 
 
 [FIXES]

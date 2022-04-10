@@ -11,11 +11,13 @@ import java.util.Random;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.Biome.TempCategory;
 import net.minecraft.world.chunk.ChunkPrimer;
+import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 import net.minecraft.world.gen.feature.WorldGenWaterlily;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.event.terraingen.DecorateBiomeEvent;
@@ -54,10 +56,12 @@ public class BiomeDecoratorXathius extends BiomeDecoratorZG {
 	public int oilLakesPerChunk = 2;
 	public int obsidianLakesPerChunk = 1;
 	public int xathTallGrassPerChunk = 8;
+	public int treesPerChunk = 0;
 	
 	public boolean generateLakes = true;
 	public boolean generateVines = false;
 	public boolean generateCraters = false;
+	public boolean generateTrees = false;
 	
 	public BiomeDecoratorXathius() {
 		this.dirtGen = new WorldGenMinableZG(ZGBlocks.xathDirt, STONE, EnumOreGenZG.DIRT);
@@ -153,6 +157,29 @@ public class BiomeDecoratorXathius extends BiomeDecoratorZG {
 		if (this.xathTallGrassPerChunk > 0) {
 			for (int i = 0; i < this.xathTallGrassPerChunk + 4; ++i) {
 				ZGDecorateHelper.generatePlants(new WorldGenTallGrassZG((ZGBlockTallGrass) ZGBlocks.xathTallGrass), world, rand, this.chunkPos);
+			}
+		}
+		
+		int k1 = this.treesPerChunk;
+		
+		if (rand.nextFloat() < this.extraTreeChance) {
+			++k1;
+		}
+		
+		// Random Tree Feature
+		if (TerrainGen.decorate(world, rand, forgeChunkPos, DecorateBiomeEvent.Decorate.EventType.TREE)) {
+			if (rand.nextInt(4) == 0) {
+				for (int j2 = 0; j2 < y; ++j2) {
+					int k6 = rand.nextInt(16) + 8;
+					int l = rand.nextInt(16) + 8;
+					WorldGenAbstractTree worldgenabstracttree = biome.getRandomTreeFeature(rand);
+					worldgenabstracttree.setDecorationDefaults();
+					BlockPos blockpos = world.getHeight(this.chunkPos.add(k6, 0, l));
+					
+					if (worldgenabstracttree.generate(world, rand, blockpos)) {
+						worldgenabstracttree.generateSaplings(world, rand, blockpos);
+					}
+				}
 			}
 		}
 		

@@ -350,7 +350,7 @@ public class ZGPlanets {
 		planetXathius.setBodyGasses(EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.WATER, EnumAtmosphericGas.NITROGEN, EnumAtmosphericGas.ARGON);
 		planetXathius.setAtmosphere();
 		planetXathius.setBodyIcon("xathius");
-		planetXathius.setBiomeInfo(ZGBiomes.XATHIUS_ABSTRACT_PLAINS, ZGBiomes.XATHIUS_OCEAN, ZGBiomes.XATHIUS_BLUELANDS, ZGBiomes.XATHIUS_MOUNTAINS);
+		planetXathius.setBiomeInfo(ZGBiomes.XATHIUS_ABSTRACT_PLAINS, ZGBiomes.XATHIUS_OCEAN, ZGBiomes.XATHIUS_BLUELANDS, ZGBiomes.XATHIUS_MOUNTAINS, ZGBiomes.XATHIUS_GOLIATH_FOREST);
 		totalPlanets++;
 		
 		// Planet Oasis

@@ -9,6 +9,7 @@ package zollerngalaxy.biomes.genlayers.xathius;
 
 import java.util.ArrayList;
 import java.util.List;
+import com.google.common.collect.ImmutableList;
 import net.minecraft.util.WeightedRandom;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.layer.IntCache;
@@ -18,7 +19,6 @@ import net.minecraftforge.common.BiomeManager.BiomeType;
 import zollerngalaxy.biomes.ZGBiomes;
 import zollerngalaxy.biomes.genlayers.purgot.GenLayerPurgot;
 import zollerngalaxy.util.CachedEnumZG;
-import com.google.common.collect.ImmutableList;
 
 public class GenLayerXathiusBiomes extends GenLayerPurgot {
 	
@@ -46,7 +46,8 @@ public class GenLayerXathiusBiomes extends GenLayerPurgot {
 		@SuppressWarnings("unchecked")
 		ArrayList<BiomeEntry>[] currentBiomes = new ArrayList[CachedEnumZG.valuesBiomeCached().length];
 		List<BiomeEntry> list = new ArrayList<>();
-		list.add(new BiomeEntry(ZGBiomes.XATHIUS_ABSTRACT_PLAINS, 85));
+		list.add(new BiomeEntry(ZGBiomes.XATHIUS_ABSTRACT_PLAINS, 100));
+		list.add(new BiomeEntry(ZGBiomes.XATHIUS_GOLIATH_FOREST, 95));
 		list.add(new BiomeEntry(ZGBiomes.XATHIUS_OCEAN, 75));
 		list.add(new BiomeEntry(ZGBiomes.XATHIUS_BLUELANDS, 65));
 		list.add(new BiomeEntry(ZGBiomes.XATHIUS_MOUNTAINS, 55));

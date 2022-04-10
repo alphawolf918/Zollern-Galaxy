@@ -122,6 +122,7 @@ import zollerngalaxy.biomes.vortex.BiomeVortexMountain;
 import zollerngalaxy.biomes.xantheon.BiomeXantheon;
 import zollerngalaxy.biomes.xathius.BiomeAbstractPlains;
 import zollerngalaxy.biomes.xathius.BiomeBluelands;
+import zollerngalaxy.biomes.xathius.BiomeXathiusGoliathForest;
 import zollerngalaxy.biomes.xathius.BiomeXathiusMountains;
 import zollerngalaxy.biomes.xathius.BiomeXathiusOcean;
 import zollerngalaxy.biomes.zollus.BiomeZollus;
@@ -166,6 +167,7 @@ public class ZGBiomes {
 	public static final Biome XATHIUS_OCEAN = new BiomeXathiusOcean(new BiomeProperties("Xathius Ocean"));
 	public static final Biome XATHIUS_BLUELANDS = new BiomeBluelands(new BiomeProperties("Bluelands"));
 	public static final Biome XATHIUS_MOUNTAINS = new BiomeXathiusMountains(new BiomeProperties("Xathian Mountains"));
+	public static final Biome XATHIUS_GOLIATH_FOREST = new BiomeXathiusGoliathForest(new BiomeProperties("Goliath Forest"));
 	
 	// Oasis
 	public static final Biome OASIS_PLAINS = new BiomeOasisPlains(new BiomeProperties("Oasis Plains"));
@@ -305,6 +307,7 @@ public class ZGBiomes {
 		ZGBiomes.addBiome(ZGBiomes.XATHIUS_OCEAN, LUSH, WET, OCEAN);
 		ZGBiomes.addBiome(ZGBiomes.XATHIUS_BLUELANDS, LUSH, MOUNTAIN);
 		ZGBiomes.addBiome(ZGBiomes.XATHIUS_MOUNTAINS, MOUNTAIN, DEAD);
+		ZGBiomes.addBiome(ZGBiomes.XATHIUS_GOLIATH_FOREST, LUSH, WET, HILLS, FOREST);
 		
 		// Oasis
 		ZGBiomes.addBiome(ZGBiomes.OASIS_PLAINS, LUSH, WET, PLAINS);

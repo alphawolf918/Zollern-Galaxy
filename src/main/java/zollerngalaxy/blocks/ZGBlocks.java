@@ -86,6 +86,7 @@ import zollerngalaxy.tileentities.TileEntityTier4TreasureChestZG;
 import zollerngalaxy.tileentities.dungeons.TileEntityDungeonSpawnerEden;
 import zollerngalaxy.tileentities.dungeons.TileEntityDungeonSpawnerTlaloc;
 import zollerngalaxy.util.RegisterUtilsZG;
+import zollerngalaxy.worldgen.WorldGenTreeGiantZG;
 import zollerngalaxy.worldgen.WorldGenZGTree;
 import zollerngalaxy.worldgen.eden.WorldGenEdenTrees;
 import zollerngalaxy.worldgen.exodus.WorldGenExoTrees;
@@ -112,6 +113,10 @@ public class ZGBlocks {
 	public static final Block edenLovetreeLog = new ZGBlockLog("lovetreelog");
 	public static final Block edenLovetreeLeaves = new ZGBlockLeaves("lovetreeleaves", ZGBlocks.edenLovetreeSapling);
 	public static WorldGenerator edenLovetreeGen = new WorldGenEdenTrees(true, 5, ZGBlocks.edenLovetreeLog.getDefaultState(), ZGBlocks.edenLovetreeLeaves.getDefaultState(), false);
+	
+	public static final Block xathWoodLog = new ZGBlockLog("xathwoodlog");
+	public static final Block xathWoodLeaves = new ZGBlockLeaves("xathwoodleaves", ZGBlocks.xathWoodSapling);
+	public static WorldGenerator xathWoodTreeGen = new WorldGenTreeGiantZG(true, 5, ZGBlocks.xathWoodLog.getDefaultState(), ZGBlocks.xathWoodLeaves.getDefaultState(), false);
 	
 	public static final Block perdWoodLogs = new ZGBlockLog("palmwoodlog");
 	public static final Block perdWoodLeaves = new ZGFruitLeaves("palmwoodleaves", ZGBlocks.perdTreeSapling, ZGItems.perdPeach);
@@ -183,6 +188,7 @@ public class ZGBlocks {
 	public static final Block edenParadiseWoodSapling = new ZGBlockSapling("paradisewoodsapling", edenParadiseTreeGen);
 	public static final Block edenGoldenWoodSapling = new ZGBlockSapling("goldenwoodsapling", edenGoldenTreeGen);
 	public static final Block edenLovetreeSapling = new ZGBlockSapling("lovetreesapling", edenLovetreeGen);
+	public static final Block xathWoodSapling = new ZGBlockSapling("xathwoodsapling", xathWoodTreeGen);
 	public static final Block exoWoodSapling = new ZGBlockSapling("exoduswoodsapling", exoWoodTreeGen);
 	public static final Block cherryWoodSapling = new ZGBlockSapling("cherrysapling", cherryWoodGen);
 	public static final Block bananaSapling = new ZGBlockSapling("bananasapling", bananaGen);
@@ -804,11 +810,11 @@ public class ZGBlocks {
 				caligroRock, caligroCobblestone, caligroCobblestoneMossy, caligroStone, caligroStoneBricks, caligroGravel, caligroDirt, witherrack, caligroCreepstone, caligroCreepdirt, caligroWitheriteOre, caligroShiniumOre, caligroSilverOre, caligroNickelOre, caligroLeadOre, caligroTinOre, caligroCopperOre, caligroIronOre, caligroGoldOre, caligroRedstoneOre,
 				caligroAmaranthOre, caligroZincOre, caligroAmberOre, caligroTopazOre, caligroOpalOre, caligroAquamarineOre, caligroGarnetOre, caligroSuperChargedCoalOre, caligroFueltoniumOre, caligroDiamondOre, caligroEmeraldOre, caligroRadiumOre, caligroLapisOre, caligroZollerniumOre, caligroRubyOre, spiderlingEgg, shadowBossSpawner, corruptRock, corruptCobble, corruptStone,
 				corruptStoneBricks, corruptAscendiumOre, corruptEtriumOre, corruptChargiumOre, corruptCreepstone, exodusTallGrass, exodusDirt, exodusGrass, exodusCobblestone, exodusStone, exodusGravel, exodusRock, exodusSand, exodusIronOre, exodusGoldOre, exodusDiamondOre, exodusRedstoneOre, exodusCopperOre, exoWoodLogs, exoWoodLeaves, exoWoodPlanks, exoWoodSapling,
-				cherryWoodLog, bananaLog, guavaLog, peachLog, grapefruitLog, orangeLog, lemonLog, limeLog, limonLog, cherryWoodLeaves, bananaLeaves, guavaLeaves, peachLeaves, grapefruitLeaves, orangeLeaves, lemonLeaves, limeLeaves, limonLeaves, cherryWoodPlanks, bananaPlanks, guavaPlanks, peachPlanks, orangePlanks, grapefruitPlanks, lemonPlanks, limePlanks, limonPlanks,
-				cherryWoodSapling, bananaSapling, guavaSapling, peachSapling, grapefruitSapling, orangeSapling, lemonSapling, limeSapling, limonSapling, vortexSurfaceRock, vortexCobblestone, vortexStone, vortexVoltRock, vortexIronOre, vortexGoldOre, astrosRock, astrosDirt, astrosGravel, astrosCobblestone, astrosStone, astrosIce, astrosIronOre, astrosGoldOre, astrosDiamondOre,
-				astrosEmeraldOre, astrosRedstoneOre, astrosCoalOre, astrosSuperChargedCoalOre, astrosTinOre, astrosZollerniumOre, astrosSapphireOre, centoRock, centoCobblestone, centoStone, centoDirt, centoGravel, centoShiniumOre, centoGoldOre, centoIronOre, centoFueltoniumOre, centoZollerniumOre, vortexDiamondOre, vortexRedstoneOre, vortexCopperOre, vortexSuperChargedCoalOre,
-				vortexFueltoniumOre, vortexEveniumOre, harranGrass, harranGrassCherry, harranSoil, harranAquamarineOre, harranAmberOre, harranZincOre, harranGarnetOre, harranSuperChargedCoalOre, harranSapphireOre, harranOpalOre, harranRubyOre, harranAmaranthOre, harranTopazOre, harranFueltoniumOre, blockBlueprintStation, blockHealingStation, blockCrystalsPlutonium,
-				blockCrystalsStorm, blockCrystalsEden, blockIngotStackIron, ironSirenON, goldSirenON, diamondSirenON, emeraldSirenON, ironSiren, goldSiren, diamondSiren, emeraldSiren, facehuggerEgg);
+				cherryWoodLog, bananaLog, guavaLog, peachLog, grapefruitLog, orangeLog, lemonLog, limeLog, limonLog, xathWoodLog, cherryWoodLeaves, bananaLeaves, guavaLeaves, peachLeaves, grapefruitLeaves, orangeLeaves, lemonLeaves, limeLeaves, limonLeaves, xathWoodLeaves, cherryWoodPlanks, bananaPlanks, guavaPlanks, peachPlanks, orangePlanks, grapefruitPlanks, lemonPlanks,
+				limePlanks, limonPlanks, cherryWoodSapling, bananaSapling, guavaSapling, peachSapling, grapefruitSapling, orangeSapling, lemonSapling, limeSapling, limonSapling, xathWoodSapling, vortexSurfaceRock, vortexCobblestone, vortexStone, vortexVoltRock, vortexIronOre, vortexGoldOre, astrosRock, astrosDirt, astrosGravel, astrosCobblestone, astrosStone, astrosIce,
+				astrosIronOre, astrosGoldOre, astrosDiamondOre, astrosEmeraldOre, astrosRedstoneOre, astrosCoalOre, astrosSuperChargedCoalOre, astrosTinOre, astrosZollerniumOre, astrosSapphireOre, centoRock, centoCobblestone, centoStone, centoDirt, centoGravel, centoShiniumOre, centoGoldOre, centoIronOre, centoFueltoniumOre, centoZollerniumOre, vortexDiamondOre,
+				vortexRedstoneOre, vortexCopperOre, vortexSuperChargedCoalOre, vortexFueltoniumOre, vortexEveniumOre, harranGrass, harranGrassCherry, harranSoil, harranAquamarineOre, harranAmberOre, harranZincOre, harranGarnetOre, harranSuperChargedCoalOre, harranSapphireOre, harranOpalOre, harranRubyOre, harranAmaranthOre, harranTopazOre, harranFueltoniumOre,
+				blockBlueprintStation, blockHealingStation, blockCrystalsPlutonium, blockCrystalsStorm, blockCrystalsEden, blockIngotStackIron, ironSirenON, goldSirenON, diamondSirenON, emeraldSirenON, ironSiren, goldSiren, diamondSiren, emeraldSiren, facehuggerEgg);
 		//
 		ZGBlocks.registerBlocks(tociSand, tociStarSand, tociDirt, tociRock, tociCobblestone, tociMossyCobblestone, tociStone, tociStoneBricks, tociGravel, tociNickelOre, tociTinOre, tociBronzeOre, tociSilverOre, tociLeadOre, tociCopperOre, tociZincOre, tociSuperChargedCoalOre, tociRedstoneOre, tociGoldOre, tociAmaranthOre, tociIronOre, tociEmeraldOre, tociCoalOre,
 				tociFueltoniumOre, tociDiamondOre, tociQuartzOre);

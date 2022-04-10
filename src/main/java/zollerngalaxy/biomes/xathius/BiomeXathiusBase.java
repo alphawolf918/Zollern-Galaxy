@@ -8,7 +8,6 @@
 package zollerngalaxy.biomes.xathius;
 
 import java.util.Random;
-import micdoodle8.mods.galacticraft.core.entities.EntityAlienVillager;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
@@ -41,15 +40,17 @@ public abstract class BiomeXathiusBase extends BiomeSpace {
 	public BiomeXathiusBase(String singleName, BiomeProperties props) {
 		super(singleName, props);
 		this.setTempCategory(TempCategory.MEDIUM);
-		this.decorator.flowersPerChunk = -999;
-		this.decorator.treesPerChunk = -999;
-		this.decorator.grassPerChunk = -999;
-		this.decorator.mushroomsPerChunk = -999;
+		this.biomeDecor.flowersPerChunk = -999;
+		this.biomeDecor.treesPerChunk = -999;
+		this.biomeDecor.grassPerChunk = -999;
+		this.biomeDecor.mushroomsPerChunk = -999;
 		if (ConfigManagerZG.enableSentinels) {
 			this.spawnableMonsterList.add(new SpawnListEntry(EntitySentinelDrone.class, 10, 1, 2));
 		}
 		if (ConfigManagerZG.enableAlienVillagerSpawn) {
-			this.spawnableCreatureList.add(new SpawnListEntry(EntityAlienVillager.class, this.villagerSpawnRate, this.villagerMinSpawnRate, this.villagerMaxSpawnRate));
+			// this.spawnableCreatureList.add(new SpawnListEntry(EntityAlienVillager.class,
+			// this.villagerSpawnRate, this.villagerMinSpawnRate, this.villagerMaxSpawnRate));
+			// Removed Villager Spawning until a Xathian Villager is created.
 		}
 		this.setStoneBlock(ZGBlocks.xathStone);
 		this.setPlanetForBiome(ZGPlanets.planetXathius);
@@ -143,5 +144,4 @@ public abstract class BiomeXathiusBase extends BiomeSpace {
 	public int getModdedBiomeGrassColor(int original) {
 		return this.grassFoliageColor;
 	}
-	
 }
