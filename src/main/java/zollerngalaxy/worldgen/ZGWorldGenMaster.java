@@ -152,7 +152,7 @@ public abstract class ZGWorldGenMaster extends WorldGenerator {
 		if (blockBelow == null) {
 			return false;
 		}
-		if (blockBelow == Blocks.AIR || blockBelow == Blocks.WATER) {
+		if ((blockBelow == Blocks.AIR || blockBelow == Blocks.WATER) || (pos.down() == null || world.getBlockState(pos.down()).getBlock() == null)) {
 			return false;
 		}
 		return true;

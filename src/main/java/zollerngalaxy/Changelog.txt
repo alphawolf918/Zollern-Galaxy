@@ -1,14 +1,14 @@
 ===== CHANGELOG =====
-Zollern Galaxy v2.0.43
+Zollern Galaxy v2.0.44
 =====================
 
 [NEW]
-* Added "Nova Levels."
-    - Inspired by Light Levels in Destiny, these will eventually increase stats and have other effects.
-    - Currently of no use, but will be in the future.
+* 
 
 [CHANGES]
-* All armor pieces will have a default Nova Level when crafted.
+* 
 
 [FIXES]
-* Removed treasure gen from Altum completely until it can be determined what's actually going on.
+* Added error validation (TRY/CATCH) to Altum chest generation.
+    - If it causes problems, the Player is advised to turn off chest validation in the config file.
+* 

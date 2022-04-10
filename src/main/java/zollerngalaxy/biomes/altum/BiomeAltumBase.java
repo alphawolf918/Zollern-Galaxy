@@ -8,15 +8,18 @@
 package zollerngalaxy.biomes.altum;
 
 import java.util.Random;
+import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.passive.EntitySquid;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeDecorator;
 import net.minecraft.world.chunk.ChunkPrimer;
+import net.minecraft.world.gen.feature.WorldGenerator;
 import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.biomes.decorators.BiomeDecoratorAltum;
 import zollerngalaxy.blocks.ZGBlocks;
@@ -34,6 +37,7 @@ import zollerngalaxy.mobs.entities.EntityShark;
 import zollerngalaxy.mobs.entities.EntitySquidlus;
 import zollerngalaxy.mobs.entities.robots.sentinels.EntitySentinelDrone;
 import zollerngalaxy.mobs.entities.villagers.EntityAbyssalVillager;
+import zollerngalaxy.worldgen.WorldGenTreasure;
 
 public class BiomeAltumBase extends BiomeSpace {
 	
@@ -52,7 +56,7 @@ public class BiomeAltumBase extends BiomeSpace {
 	protected static final PropertyBool WET = PropertyBool.create("wet");
 	
 	protected static final ResourceLocation LOOT_TABLE = ZGLootTables.CHEST_OCEAN_TREASURE;
-	// protected static final WorldGenerator OCEAN_TREASURE_GEN = new WorldGenTreasure(LOOT_TABLE);
+	protected static final WorldGenerator OCEAN_TREASURE_GEN = new WorldGenTreasure(LOOT_TABLE);
 	
 	protected static final int SEA_LEVEL = ChunkProviderAltum.SEA_LEVEL;
 	protected static final int SEA_FLOOR_LEVEL = ChunkProviderAltum.SEA_FLOOR_LEVEL;
@@ -119,24 +123,27 @@ public class BiomeAltumBase extends BiomeSpace {
 							}
 							chunkPrimerIn.setBlockState(x2, y, z2, DIRT);
 						}
-						//
-						// if (rand.nextInt(1000) <= 5) {
-						// BlockPos chestPos = new BlockPos(x2, (y + 1), z2);
-						//
-						// int posX = chestPos.getX();
-						// int posY = chestPos.getY();
-						// int posZ = chestPos.getZ();
-						//
-						// IBlockState state = chunkPrimerIn.getBlockState(posX, posY, posZ);
-						// Block block = state.getBlock();
-						//
-						// if (ConfigManagerZG.enableAltumTreasureGen) {
-						// if (chestPos != null && chestPos != null && block != null) {
-						// OCEAN_TREASURE_GEN.generate(worldIn, rand, chestPos);
-						// }
-						// }
-						// }
-						//
+						try {
+							if (rand.nextInt(1000) <= 5) {
+								BlockPos chestPos = new BlockPos(x2, (y + 1), z2);
+								
+								int posX = chestPos.getX();
+								int posY = chestPos.getY();
+								int posZ = chestPos.getZ();
+								
+								IBlockState state = chunkPrimerIn.getBlockState(posX, posY, posZ);
+								Block block = state.getBlock();
+								
+								if (ConfigManagerZG.enableAltumTreasureGen) {
+									if (chestPos != null && chestPos != null && block != null) {
+										OCEAN_TREASURE_GEN.generate(worldIn, rand, chestPos);
+									}
+								}
+							}
+						} catch (Exception ex) {
+							ZGHelper.LogErr("Error generating Altum treasure chest! Try turning off CHEST VALIDATION in the config file. You can find this under ZollernGalaxy/core.cfg.");
+							ex.printStackTrace();
+						}
 					} else if (y >= SEA_LEVEL) {
 						chunkPrimerIn.setBlockState(x2, y, z2, AIR);
 					}
