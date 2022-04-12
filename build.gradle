@@ -1,77 +1,225 @@
 buildscript {
-    repositories {
-        jcenter()
-        maven { url = "http://files.minecraftforge.net/maven" }
-    }
-    dependencies {
-        classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
-    }
+	repositories {
+		maven { url = 'https://maven.minecraftforge.net' }
+		mavenCentral()
+	}
+	dependencies {
+		classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
+	}
 }
-apply plugin: 'net.minecraftforge.gradle.forge'
-//Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
 
+plugins {
+	id 'wtf.gofancy.fancygradle' version '1.+'
+}
 
-version = "1.12.2-v2.0.43"
-group = "zollerngalaxy" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "ZollernGalaxy"
+apply plugin: 'net.minecraftforge.gradle'
+apply plugin: 'eclipse'
+apply plugin: 'maven-publish'
 
-sourceCompatibility = targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
-compileJava {
-    sourceCompatibility = targetCompatibility = '1.8'
+version = "${minecraft_version}-${mod_version}"
+group = 'zollerngalaxy'
+archivesBaseName = 'ZollernGalaxy'
+description = 'ZollernGalaxy: A Galacticraft Addon'
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(8)
+
+eclipse.project {
+	buildCommand 'org.eclipse.buildship.core.gradleprojectbuilder'
+	natures 'org.eclipse.buildship.core.gradleprojectnature'
 }
 
 minecraft {
-    version = "1.12.2-14.23.5.2847"
-    runDir = "run"
-    
-    // the mappings can be changed at any time, and must be in the following format.
-    // snapshot_YYYYMMDD   snapshot are built nightly.
-    // stable_#            stables are built at the discretion of the MCP team.
-    // Use non-default mappings at your own risk. they may not always work.
-    // simply re-run your setup task after changing the mappings to update your workspace.
-    mappings = "snapshot_20171003"
-    makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
+
+	mappings channel: "${mapping_channel}", version: "${mapping_version}"
+
+	// accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
+
+	runs {
+		client {
+			workingDirectory project.file('run')
+
+			// Recommended logging data for a userdev environment
+			// The markers can be added/remove as needed separated by commas.
+			// "SCAN": For mods scan.
+			// "REGISTRIES": For firing of registry events.
+			// "REGISTRYDUMP": For getting the contents of all registries.
+			property 'forge.logging.markers', 'REGISTRIES'
+
+			// Recommended logging level for the console
+			// You can set various levels here.
+			// Please read: https://stackoverflow.com/questions/2031163/when-to-use-the-different-log-levels
+			property 'forge.logging.console.level', 'debug'
+
+			// These arguments allow for optional authentication with Mojang servers.
+			// If you want to authenticate, put these properties in GRADLE_HOME/gradle.properties.
+			// By default, this is C:\Users\<your username>\.gradle\gradle.properties on Windows or 
+			// ~/.gradle/gradle.properties on Linux/MacOS.
+			if (project.hasProperty('mc_uuid')) {
+				// Your UUID, trimmed / without the dashes
+				args '--uuid', project.getProperty('mc_uuid')
+			}
+			if (project.hasProperty('mc_username')) {
+				// Your Minecraft in-game username, not email
+				args '--username', project.getProperty('mc_username')
+			}
+		}
+
+		server {
+			workingDirectory project.file('run')
+			property 'forge.logging.markers', 'REGISTRIES'
+			property 'forge.logging.console.level', 'debug'
+		}
+	}
+}
+
+configurations {
+	// 
+	implementation.extendsFrom mod
+	//
+	compileOnly.extendsFrom modCompile
+	//
+	runtimeOnly.extendsFrom runOnly
+}
+
+repositories {
+	// Provides a fixed LegacyDev version for assets
+	maven { 
+		name 'TeamGalacticraft'
+		url 'https://repo.galacticraft.net/repository/maven-public/'
+	}
+	maven { 
+		name 'MJRLegends'
+		url 'https://maven.mjrlegends.com/'
+		content {
+			includeGroup 'com.mjr.planetprogression'
+			includeGroup 'com.mjr.extraplanets'
+			includeGroup 'com.mjr.mjrlegendslib'
+		}
+	}
+	maven {
+		name 'prog'
+		url 'https://dvs1.progwml6.com/files/maven'
+		content {
+			includeGroup 'mezz.jei'
+			includeGroup 'slimeknights'
+			includeGroup 'slimeknights.mantle'
+		}
+	}
+	maven {
+		name 'TheCBProject'
+		url 'https://chickenbones.net/maven'
+		content {
+			includeGroup 'codechicken'
+		}
+	}
 }
 
 dependencies {
-    // you may put jars on which you depend on in ./libs
-    // or you may define them like so..
-    //compile "some.group:artifact:version:classifier"
-    //compile "some.group:artifact:version"
-      
-    // real examples
-    //compile 'com.mod-buildcraft:buildcraft:6.0.8:dev'  // adds buildcraft to the dev env
-    //compile 'com.googlecode.efficient-java-matrix-library:ejml:0.24' // adds ejml to the dev env
+	// These will always be `minecraft` and `mod` but version numbers can be changed
+	minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
+	mod fg.deobf('dev.galacticraft:galacticraft-legacy:4.0.3-SNAPSHOT')
+	
+	// Everything below is included when runs are executed, loading each mod into the game
+	// These are directly referenced in code so are needed during compile time
+	mod fg.deobf('com.mjr.planetprogression:PlanetProgression:1.12.2-0.4.6')
+	mod fg.deobf('com.mjr.extraplanets:ExtraPlanets:1.12.2-0.7.4')
+	// Required liv for all his mods, only needed at runtime
+	runOnly fg.deobf('com.mjr.mjrlegendslib:MJRLegendsLib:1.12.2-1.2.1')
+	// Really don't know why this is a hard runtime dependency but yea, add it
+	runOnly fg.deobf('net.industrial-craft:industrialcraft-2:2.8.170-ex112')
+	
+	// Explain: Both will be visable and used during compile and runtime
+	mod fg.deobf('slimeknights:TConstruct:1.12.2-2.13.0.183')
+	// Required library for Tinkers
+	mod fg.deobf('slimeknights.mantle:Mantle:1.12-1.3.3.49')
+	
+	// Explain: Disable mods during runs but expose to classpath for compile time
+	//modCompile fg.deobf('slimeknights:TConstruct:1.12.2-2.13.0.183')
+	//modCompile fg.deobf('slimeknights.mantle:Mantle:1.12-1.3.3.49')
+	
+	mod fg.deobf('curse.maven:aliensvspredator-221641:3397885')
+	// Required lib for scary alien mod /w funny guns
+	mod fg.deobf('curse.maven:mdxlib-248278:2975661')
+	
+	mod fg.deobf('curse.maven:extremereactors-250277:3194746')
+	// Required library for Chernobyl w/o Boom mod
+	mod fg.deobf('curse.maven:zerocore-247921:3194743')
+	
+	mod fg.deobf('curse.maven:thermal-foundation-222880:2926428')
+	// Required library for thermal mods
+	mod fg.deobf('curse.maven:cofhcore-69162:2920433')
+	// Required library for thermal mods
+	runOnly fg.deobf('curse.maven:CodeChickenLib-242818:2779848')
+	
+	// Adding this for future compat with JEI if planned
+	modCompile fg.deobf('mezz.jei:jei_1.12.2:4.16.1.302:api')
+	// But lets use the mod in runs because its big brain
+	runOnly fg.deobf('mezz.jei:jei_1.12.2:4.16.1.302')
+	
+	mod fg.deobf('curse.maven:appliedenergistics2-223794:2747063')
 
-    // the 'provided' configuration is for optional dependencies that exist at compile-time but might not at runtime.
-    //provided 'com.mod-buildcraft:buildcraft:6.0.8:dev'
-
-    // the deobf configurations:  'deobfCompile' and 'deobfProvided' are the same as the normal compile and provided,
-    // except that these dependencies get remapped to your current MCP mappings
-    //deobfCompile 'com.mod-buildcraft:buildcraft:6.0.8:dev'
-    //deobfProvided 'com.mod-buildcraft:buildcraft:6.0.8:dev'
-
-    // for more info...
-    // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
-    // http://www.gradle.org/docs/current/userguide/dependency_management.html
-
+	// All others that are not directly referenced in code but want to include in runs
+	// Since we don't use them in our code, no need to remap its mappings to ours
+	runOnly 'curse.maven:cofhworld-271384:2920434'
+	runOnly 'curse.maven:redstoneflux-270789:2920436'
+	runOnly 'curse.maven:numina-235440:2715198'
+	runOnly 'curse.maven:modular-powersuits-235442:2743885'
+	runOnly 'curse.maven:blankplanet-248412:2614326'
+	runOnly 'curse.maven:thermal-expansion-69163:2926431'
+	runOnly 'curse.maven:thermal-dynamics-227443:2920505'
 }
 
-processResources {
-    // this will ensure that this task is redone when the versions change.
-    inputs.property "version", project.version
-    inputs.property "mcversion", project.minecraft.version
-
-    // replace stuff in mcmod.info, nothing else
-    from(sourceSets.main.resources.srcDirs) {
-        include 'mcmod.info'
-                
-        // replace version and mcversion
-        expand 'version':project.version, 'mcversion':project.minecraft.version
-    }
-        
-    // copy everything else except the mcmod.info
-    from(sourceSets.main.resources.srcDirs) {
-        exclude 'mcmod.info'
+fancyGradle {
+    patches {
+        resources
+        //coremods
+        codeChickenLib
+        //asm
     }
 }
+
+apply from: 'gradle/resources.gradle'
+
+jar {
+	duplicatesStrategy(DuplicatesStrategy.EXCLUDE)
+	manifest {
+		attributes([
+				'Specification-Title'		: 'zollerngalaxy',
+				'Specification-Vendor'		: 'ZollernWolf',
+				'Specification-Version'		: '1', // We are version 1 of ourselves
+				'Implementation-Title'		: project.name,
+				'Implementation-Version'	: mod_version,
+				'Implementation-Vendor'		: 'ZollernWolf',
+				'Implementation-Timestamp'	: new Date().format('yyyy-MM-dd\'T\'HH:mm:ssZ'),
+				'Built-On-Minecraft'		: "${minecraft_version}",
+				'Built-On-Forge'            : "${forge_version}",
+				'Built-On-Mapping'          : "${mapping_channel}-${mapping_version}",
+				'Built-Using'               : "ForgeGradle: 5.1.+"
+		])
+	}
+	
+	afterEvaluate { finalizedBy reobfJar }
+}
+
+task sourcesJar(type: Jar) {
+	duplicatesStrategy(DuplicatesStrategy.EXCLUDE)
+	archiveClassifier.set('sources')
+	from sourceSets.main.allSource
+}
+
+task deobfJar(type: Jar) {
+	duplicatesStrategy(DuplicatesStrategy.EXCLUDE)
+	archiveClassifier.set('deobf')
+	from sourceSets.main.output
+	from sourceSets.main.allJava
+}
+
+tasks.withType(GenerateModuleMetadata) {
+	//Disable Gradle 7 module metadata generation as it does not play nicely with FG
+	enabled = false
+}
+
+tasks.withType(JavaCompile).configureEach({
+	it.options.encoding = 'UTF-8'
+	it.options.compilerArgs << "-Xmaxerrs" << "100000"
+})

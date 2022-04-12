@@ -52,7 +52,7 @@ import zollerngalaxy.util.OreDictRegistry;
 import zollerngalaxy.util.RegisterUtilsZG;
 import zollerngalaxy.util.ZGLore;
 
-@Mod(modid = ZGInfo.MOD_ID, version = ZGInfo.MOD_VERSION, name = ZGInfo.NAME, dependencies = ZGInfo.DEPENDENCIES)
+@Mod(modid = ZGInfo.MOD_ID, version = ZGInfo.MOD_VERSION, name = ZGInfo.NAME, acceptedMinecraftVersions = ZGInfo.MC_RANGE, dependencies = ZGInfo.DEPENDENCIES)
 public class ZollernGalaxyCore {
 	
 	@SidedProxy(clientSide = ZGInfo.PROXY_CLIENT, serverSide = ZGInfo.PROXY_SERVER)

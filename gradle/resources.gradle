@@ -1,0 +1,65 @@
+// This block of code expands all the gradle properties in the specified resource targets.
+// It copies them into the targets and expands all the defined properties.
+def resourceTargets = [
+	'mcmod.info'
+]
+def intoTargets = [
+	"$rootDir/out/production/resources/",
+	"$rootDir/out/production/${project.name}.main/",
+	"$rootDir/bin/main/"
+]
+def replaceProperties = [
+	mod_id: mod_id,
+	mod_version: mod_version,
+	minecraft_version: minecraft_version
+]
+processResources {
+	inputs.properties replaceProperties
+	replaceProperties.put 'project', project
+
+	filesMatching(resourceTargets) {
+		expand replaceProperties
+	}
+
+	intoTargets.each { target ->
+		if (file(target).exists()) {
+			copy {
+				from(sourceSets.main.resources) {
+					include resourceTargets
+					expand replaceProperties
+				}
+				into target
+			}
+		}
+	}
+}
+
+def modFileTokens = [
+	MOD_VERSION: mod_version,
+	MC_RANGE: minecraft_version_range,
+	FORGE_VERSION: forge_version
+]
+def included = [
+	"zollerngalaxy/lib/${mod_variables_class}.java".toString()
+]
+
+def expandedSrc = new File(project.buildDir, 'expandedSrc')
+def srcMainJava = project.file('src/main/java').toPath()
+def includedPaths = included.collect { java.nio.file.Paths.get(it) }
+
+task javaReplaceTokens(type: Copy) {
+	inputs.property 'tokens', modFileTokens
+	from(srcMainJava) {
+		include included
+	}
+	into expandedSrc
+	filter(org.apache.tools.ant.filters.ReplaceTokens, beginToken: '${', endToken: '}', tokens: modFileTokens)
+}
+
+compileJava {
+	dependsOn javaReplaceTokens
+	exclude {
+		srcMainJava.relativize(it.file.toPath()) in includedPaths
+	}
+	source expandedSrc
+}
