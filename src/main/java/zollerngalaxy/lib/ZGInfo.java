@@ -15,10 +15,19 @@ import zollerngalaxy.lib.helpers.ZGHelper;
 public class ZGInfo {
 	
 	public static final String MOD_ID = "zollerngalaxy";
-	public static final String vMAJOR = "2";
-	public static final String vMINOR = "0";
-	public static final String vBUILD = "44";
-	public static final String MOD_VERSION = vMAJOR + "." + vMINOR + "." + vBUILD;
+	
+	// Feel free to delete the changes and not use it, used it to ensure everything ran form the
+	// start
+	// public static final String vMAJOR = "2";
+	// public static final String vMINOR = "0";
+	// public static final String vBUILD = "43";
+	// public static final String MOD_VERSION = vMAJOR + "." + vMINOR + "." + vBUILD;
+	
+	// Dynamic variables set during build task
+	public static final String MOD_VERSION = "${MOD_VERSION}";
+	public static final String MC_RANGE = "${MC_RANGE}";
+	public static final String FORGE_VERSION_MIN = "${FORGE_VERSION}";
+	
 	public static final String MINECRAFT_VERSION = "1.12.2";
 	public static final String OFFICIAL_NAME = "Zollern Galaxy";
 	public static final String NAME = OFFICIAL_NAME;
@@ -26,9 +35,9 @@ public class ZGInfo {
 	public static final String PROXY_CLIENT = PROXY_LOCATION + "ClientProxy";
 	public static final String PROXY_SERVER = PROXY_LOCATION + "CommonProxy";
 	public static final String CHANNEL = ZGInfo.MOD_ID;
-	public static final String FORGE_MODS = "before:planetprogression@[1.12.2-0.3.8,]; " + "before:extraplanets; " + "before:powersuits;";
-	public static final String FORGE_VERSION = "after:forge@[14.23.5.2847,); after:tconstruct; ";
-	public static final String DEPENDENCIES = "required-after:galacticraftcore@[4.0.2.261,); " + "required-after:galacticraftplanets@[4.0.2.261,); " + "required-after:micdoodlecore; " + ZGInfo.FORGE_VERSION + ZGInfo.FORGE_MODS;
+	public static final String FORGE_MODS = "after:tconstruct; before:planetprogression@[1.12.2-0.3.8,]; " + "before:extraplanets; " + "before:powersuits;";
+	public static final String FORGE_DEPENDENCY = "required-after:forge@[" + FORGE_VERSION_MIN + ",); ";
+	public static final String DEPENDENCIES = ZGInfo.FORGE_DEPENDENCY + "required-after:galacticraftcore@[4.0.2.261,); " + ZGInfo.FORGE_MODS;
 	
 	public static final int SPACE_STATION_LOWER_Y_LIMIT = 10;
 	public static final int SPACE_STATION_HIGHER_Y_LIMIT = 1200;
@@ -50,8 +59,9 @@ public class ZGInfo {
 		info.name = ZGInfo.NAME;
 		info.version = ZGInfo.MOD_VERSION;
 		info.description = "An adventurous space exploration add-on mod for Galacticraft.";
-		info.credits = "All credits to Galacticraft Sources/API, MJRLegends, ExistingEevee and Skaptic.";
+		info.credits = "All credits to Galacticraft Sources/API, MJRLegends, ROMVoid, ExistingEevee and Skaptic.";
 		info.authorList = Arrays.asList("Zollern Wolf");
+		
 		ZGHelper.Log("Mod information load completed.");
 	}
 }

@@ -52,7 +52,7 @@ import zollerngalaxy.util.OreDictRegistry;
 import zollerngalaxy.util.RegisterUtilsZG;
 import zollerngalaxy.util.ZGLore;
 
-@Mod(modid = ZGInfo.MOD_ID, version = ZGInfo.MOD_VERSION, name = ZGInfo.NAME, dependencies = ZGInfo.DEPENDENCIES)
+@Mod(modid = ZGInfo.MOD_ID, version = ZGInfo.MOD_VERSION, name = ZGInfo.NAME, acceptedMinecraftVersions = ZGInfo.MC_RANGE, dependencies = ZGInfo.DEPENDENCIES)
 public class ZollernGalaxyCore {
 	
 	@SidedProxy(clientSide = ZGInfo.PROXY_CLIENT, serverSide = ZGInfo.PROXY_SERVER)
@@ -62,8 +62,8 @@ public class ZollernGalaxyCore {
 	private static ZollernGalaxyCore INSTANCE;
 	
 	// CHANGE THESE TO FALSE BEFORE DEPLOYMENT!!
-	private static final boolean DEV_MODE = true; // Controls creating the JSON files.
-	private static final boolean TEST_MODE = true; // Set to True when developing!
+	private static final boolean DEV_MODE = false; // Controls creating the JSON files.
+	private static final boolean TEST_MODE = false; // Set to True when developing!
 	
 	// Block/Item Registering Lists
 	public static List<Item> itemList = new ArrayList<>();

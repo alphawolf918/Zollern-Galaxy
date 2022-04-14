@@ -1,16 +1,16 @@
 [
-{
-  "modid": "zollerngalaxy",
-  "name": "Zollern Galaxy",
-  "description": "An adventurous space exploration add-on mod for Galacticraft.An adventurous space exploration add-on mod for Galacticraft.",
-  "version": "${version}",
-  "mcversion": "${mcversion}",
-  "url": "",
-  "updateUrl": "",
-  "authorList": ["ZollernWolf"],
-  "credits": "Zollern Wolf, Steve Kung, MJRLegends, micdoodle8.",
-  "logoFile": "",
-  "screenshots": [],
-  "dependencies": []
-}
+  {
+    "modid": "${mod_id}",
+    "name": "Zollern Galaxy",
+    "description": "An adventurous space exploration add-on mod for Galacticraft",
+    "version": "${mod_version}",
+    "mcversion": "${minecraft_version}",
+    "url": "https://www.curseforge.com/minecraft/mc-mods/zollern-galaxy",
+    "updateUrl": "",
+    "authorList": ["ZollernWolf"],
+    "credits": "SteveKunG, MJRLegends, micdoodle8, ROMVoid",
+    "logoFile": "",
+    "screenshots": [],
+    "dependencies": []
+  }
 ]

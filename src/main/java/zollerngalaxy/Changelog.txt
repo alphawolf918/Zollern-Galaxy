@@ -8,7 +8,7 @@ Zollern Galaxy v2.0.44
 
 [CHANGES]
 * Added Goliath Trees to Xathius.
-* 
+* Updated Gradle to a newer version (thank you ROM!).
 
 [FIXES]
 * Added error validation (TRY/CATCH) to Altum chest generation.
