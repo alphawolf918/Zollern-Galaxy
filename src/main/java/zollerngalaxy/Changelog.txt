@@ -4,13 +4,13 @@ Zollern Galaxy v2.0.44
 
 [NEW]
 * Created Goliath Trees.
-* 
+* Added the Goliath Forest biome to Xathius.
 
 [CHANGES]
-* Added Goliath Trees to Xathius.
+* Added Goliath Trees to Xathius in a new biome.
 * Updated Gradle to a newer version (thank you ROM!).
 
 [FIXES]
 * Added error validation (TRY/CATCH) to Altum chest generation.
     - If it causes problems, the Player is advised to turn off chest validation in the config file.
-* 
+* Fixed Maveth arrival causing a crash (was missing its Teleport Type).

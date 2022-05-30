@@ -10,6 +10,7 @@ buildscript {
 
 plugins {
 	id 'wtf.gofancy.fancygradle' version '1.+'
+	id 'net.galacticraft.gradle.publishing.nexus' version '1.0.1'
 }
 
 apply plugin: 'net.minecraftforge.gradle'

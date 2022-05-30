@@ -227,7 +227,7 @@ public class SkyProviderMaveth extends IRenderHandler {
 		worldRenderer1.pos(-f10, 100.0D, f10).tex(0.0D, 1.0D).endVertex();
 		tessellator1.draw();
 		
-		// Render Tlaloc
+		// Render Asgard
 		f10 = 2.5F;
 		GL11.glScalef(0.8F, 0.8F, 0.8F);
 		GL11.glRotatef(0.0F, 0.0F, 0.0F, 1.0F);

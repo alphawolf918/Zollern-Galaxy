@@ -8,13 +8,12 @@
 package zollerngalaxy.biomes.maveth;
 
 import zollerngalaxy.blocks.ZGBlocks;
-import zollerngalaxy.celestial.ZGPlanets;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 
 public class BiomeMaveth extends BiomeMavethBase {
 	
 	public BiomeMaveth(BiomeProperties props) {
-		super("maveth", props);
+		super("zg_maveth", props);
 		props.setRainDisabled();
 		this.setBiomeHeight(86);
 		this.setBiomeType(EnumBiomeTypeZG.DESERT);
@@ -23,6 +22,5 @@ public class BiomeMaveth extends BiomeMavethBase {
 		this.topBlock = ZGBlocks.mavethSand.getDefaultState();
 		this.fillerBlock = ZGBlocks.mavethRock.getDefaultState();
 		this.stoneBlock = ZGBlocks.mavethStone;
-		this.setPlanetForBiome(ZGPlanets.planetMaveth);
 	}
 }

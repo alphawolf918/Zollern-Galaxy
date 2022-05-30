@@ -687,7 +687,6 @@ public class ZGPlanets {
 		planetIcarus.setBodyIcon("icarus");
 		
 		// Maveth
-		// TODO
 		planetMaveth.setDimensionInfo(ConfigManagerZG.planetMavethDimensionId, WorldProviderMaveth.class);
 		planetMaveth.setParentSolarSystem(systemAsgard);
 		planetMaveth.setBodyClass(EnumBodyClass.ABANDONED);
@@ -884,6 +883,7 @@ public class ZGPlanets {
 		// TeleportTypeBaseZG());
 		
 		// Asgard
+		GalacticraftRegistry.registerTeleportType(WorldProviderMaveth.class, new TeleportTypeBaseZG());
 		// TODO
 		
 		// Vega

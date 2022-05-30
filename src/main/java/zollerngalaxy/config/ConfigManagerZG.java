@@ -475,6 +475,7 @@ public class ConfigManagerZG {
 		// Misc (Should Star Gates be disabled?)
 		disableStarGates = config.get(CTG_MISC, "Disable use of Star Gates", false, "Set this to true if you want to ONLY access Zollern Galaxy planets using rockets. " + "WARNING: will not work without another add-on this way! (default: false)").getBoolean();
 		
+		// Misc (Should star systems without any planets be hidden?)
 		hideUnusedStarSystems = config.get(CTG_MISC, "Hide Stars with no Planets", true, "Enable to see Stars that have no Planets yet. (default: true)").getBoolean();
 		
 		// Misc (Should Mega Creeper explosions harm terrain?)
