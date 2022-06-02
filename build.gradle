@@ -86,7 +86,7 @@ repositories {
 	// Provides a fixed LegacyDev version for assets
 	maven { 
 		name 'TeamGalacticraft'
-		url 'https://repo.galacticraft.net/repository/maven-public/'
+		url 'https://repo.galacticraft.net/repository/maven/'
 	}
 	maven { 
 		name 'MJRLegends'
@@ -111,6 +111,12 @@ repositories {
 		url 'https://chickenbones.net/maven'
 		content {
 			includeGroup 'codechicken'
+		}
+	}
+	maven {
+		url 'https://maven.ic2.player.to'
+		content {
+			includeGroup 'net.industrial-craft'
 		}
 	}
 }
