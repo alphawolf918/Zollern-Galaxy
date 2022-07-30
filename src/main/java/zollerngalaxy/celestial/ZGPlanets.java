@@ -706,7 +706,7 @@ public class ZGPlanets {
 		planetMaveth.setHasRain(false);
 		planetMaveth.setAtmosphere();
 		planetMaveth.setBodyIcon("maveth");
-		planetMaveth.setBiomeInfo(ZGBiomes.MAVETH_BASE);
+		planetMaveth.setBiomeInfo(ZGBiomes.MAVETH_BASE, ZGBiomes.MAVETH_INFECTED_VALLEY);
 		totalPlanets++;
 		
 		// Asgard

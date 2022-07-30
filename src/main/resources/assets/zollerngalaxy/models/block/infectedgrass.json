@@ -1,0 +1,9 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "all": "zollerngalaxy:blocks/infectedsoil",
+    "top": "zollerngalaxy:blocks/infectedgrass",
+    "right": "zollerngalaxy:blocks/infectedgrass_side",
+    "left": "zollerngalaxy:blocks/infectedgrass_side"
+  }
+}

@@ -24,10 +24,12 @@ import net.minecraftforge.event.terraingen.DecorateBiomeEvent;
 import net.minecraftforge.event.terraingen.TerrainGen;
 import zollerngalaxy.biomes.BiomeSpace;
 import zollerngalaxy.blocks.ZGBlocks;
+import zollerngalaxy.blocks.infected.ZGBlockInfectedTallGrass;
 import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.chunkproviders.ChunkProviderMaveth;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 import zollerngalaxy.core.enums.EnumOreGenZG;
+import zollerngalaxy.lib.helpers.ZGDecorateHelper;
 import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.util.BiomeUtils;
 import zollerngalaxy.worldgen.WorldGenBattleTower;
@@ -35,12 +37,14 @@ import zollerngalaxy.worldgen.WorldGenLakesZG;
 import zollerngalaxy.worldgen.WorldGenMinableZG;
 import zollerngalaxy.worldgen.WorldGenOutpost;
 import zollerngalaxy.worldgen.WorldGenSmallCraterZG;
+import zollerngalaxy.worldgen.WorldGenTallGrassZG;
 import zollerngalaxy.worldgen.WorldGenTunnel;
 
 public class BiomeDecoratorMaveth extends BiomeDecoratorZG {
 	
 	private static final Block STONE = ZGBlocks.mavethStone;
 	private static final Block ROCK = ZGBlocks.mavethRock;
+	private static final Block COBBLE = ZGBlocks.mavethCobblestone;
 	
 	private WorldGenerator ironGen;
 	private WorldGenerator electrumGen;
@@ -50,7 +54,8 @@ public class BiomeDecoratorMaveth extends BiomeDecoratorZG {
 	
 	private WorldGenerator tunnelGen = new WorldGenTunnel();
 	private WorldGenerator craterGen = new WorldGenSmallCraterZG();
-	private WorldGenerator battleTowerGen = new WorldGenBattleTower(ZGBlocks.mavethCobblestone.getDefaultState(), ZGBlocks.mavethRock.getDefaultState());
+	private WorldGenerator battleTowerGen = new WorldGenBattleTower(COBBLE.getDefaultState(), ROCK.getDefaultState());
+	private WorldGenerator tallGrassGen = new WorldGenTallGrassZG((ZGBlockInfectedTallGrass) ZGBlocks.mavethInfectedTallGrass);
 	
 	public int tunnelsPerChunk = 5;
 	public int cratersPerChunk = 2;
@@ -58,12 +63,14 @@ public class BiomeDecoratorMaveth extends BiomeDecoratorZG {
 	public int waterLakesPerChunk = 1;
 	public int lavaLakesPerChunk = 1;
 	public int mushroomsPerChunk = 2;
+	public int tallGrassPerChunk = 0;
 	
 	public boolean generateCraters = true;
 	public boolean generateTunnels = true;
 	public boolean generateBattleTowers = true;
 	public boolean generateLakes = true;
 	public boolean generateMushrooms = true;
+	public boolean generateTallGrass = false;
 	
 	public BiomeDecoratorMaveth() {
 		this.ironGen = new WorldGenMinableZG(ZGBlocks.mavethIronOre, STONE, EnumOreGenZG.IRON);
@@ -86,7 +93,7 @@ public class BiomeDecoratorMaveth extends BiomeDecoratorZG {
 		
 		Block BLOCK_TOP = biome.topBlock.getBlock();
 		Block BLOCK_FILL = biome.fillerBlock.getBlock();
-		Block BLOCK_STONE = ZGBlocks.mavethStone;
+		Block BLOCK_STONE = STONE;
 		
 		if (biome instanceof BiomeSpace) {
 			BiomeSpace spaceBiome = (BiomeSpace) biome;
@@ -128,7 +135,7 @@ public class BiomeDecoratorMaveth extends BiomeDecoratorZG {
 			if (this.generateOil && this.oilPerChunk > 0 && this.enableOilGen) {
 				for (int i = 0; i < this.oilPerChunk; ++i) {
 					y = rand.nextInt(rand.nextInt(genY) + 8);
-					(new WorldGenLakesZG(GCBlocks.crudeOil, ZGBlocks.edenStone)).generate(world, rand, this.chunkPos.add(x, y, z));
+					(new WorldGenLakesZG(GCBlocks.crudeOil, STONE)).generate(world, rand, this.chunkPos.add(x, y, z));
 					EventHandlerGC.generateOil(world, rand, x, z, false);
 				}
 			}
@@ -179,6 +186,13 @@ public class BiomeDecoratorMaveth extends BiomeDecoratorZG {
 						this.mushroomRedGen.generate(world, rand, this.chunkPos.add(j4, l15, l8));
 					}
 				}
+			}
+		}
+		
+		// Tall Grass
+		if (this.generateTallGrass && this.tallGrassPerChunk > 0) {
+			for (int i = 0; i < this.tallGrassPerChunk + 4; ++i) {
+				ZGDecorateHelper.generatePlants(this.tallGrassGen, world, rand, this.chunkPos);
 			}
 		}
 		

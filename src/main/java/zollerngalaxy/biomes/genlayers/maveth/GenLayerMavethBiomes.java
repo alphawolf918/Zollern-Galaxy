@@ -46,6 +46,7 @@ public class GenLayerMavethBiomes extends GenLayerMaveth {
 		ArrayList<BiomeEntry>[] currentBiomes = new ArrayList[CachedEnumZG.valuesBiomeCached().length];
 		List<BiomeEntry> list = new ArrayList<>();
 		list.add(new BiomeEntry(ZGBiomes.MAVETH_BASE, 100));
+		list.add(new BiomeEntry(ZGBiomes.MAVETH_INFECTED_VALLEY, 80));
 		
 		currentBiomes[BiomeType.WARM.ordinal()] = new ArrayList<>(list);
 		return currentBiomes;

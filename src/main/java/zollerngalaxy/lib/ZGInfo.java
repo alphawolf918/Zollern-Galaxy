@@ -20,7 +20,7 @@ public class ZGInfo {
 	// start
 	// public static final String vMAJOR = "2";
 	// public static final String vMINOR = "0";
-	// public static final String vBUILD = "43";
+	// public static final String vBUILD = "45";
 	// public static final String MOD_VERSION = vMAJOR + "." + vMINOR + "." + vBUILD;
 	
 	// Dynamic variables set during build task

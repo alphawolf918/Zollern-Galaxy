@@ -123,7 +123,8 @@ public class OreDictRegistry {
 		registerOre("ingotLapis", ZGItems.ingotLapis);
 		
 		// Dirt
-		registerOre("dirt", ZGBlocks.edenSoil, ZGBlocks.kriffDirt, ZGBlocks.purgDirt, ZGBlocks.zolDirt, ZGBlocks.xathDirt, ZGBlocks.oasisDirt, ZGBlocks.perdCreepDirt, ZGBlocks.perdSoil, ZGBlocks.altumDirt, ZGBlocks.caligroDirt, ZGBlocks.caligroCreepdirt, ZGBlocks.exodusDirt, ZGBlocks.astrosDirt, ZGBlocks.centoDirt, ZGBlocks.tociDirt, ZGBlocks.harranSoil, ZGBlocks.netherDirt);
+		registerOre("dirt", ZGBlocks.edenSoil, ZGBlocks.kriffDirt, ZGBlocks.purgDirt, ZGBlocks.zolDirt, ZGBlocks.xathDirt, ZGBlocks.oasisDirt, ZGBlocks.perdCreepDirt, ZGBlocks.perdSoil, ZGBlocks.altumDirt, ZGBlocks.caligroDirt, ZGBlocks.caligroCreepdirt, ZGBlocks.exodusDirt, ZGBlocks.astrosDirt, ZGBlocks.centoDirt, ZGBlocks.tociDirt, ZGBlocks.harranSoil, ZGBlocks.netherDirt,
+				ZGBlocks.mavethInfectedSoil);
 		
 		// Constructed
 		registerOre("blockConstructed", ZGBlocks.xantheonConstructBlock, ZGBlocks.atheonConstructBlock);
@@ -135,7 +136,7 @@ public class OreDictRegistry {
 		registerOre("gravel", ZGBlocks.edenGravel, ZGBlocks.purgGravel, ZGBlocks.xathGravel, ZGBlocks.oasisGravel, ZGBlocks.perdGravel, ZGBlocks.altumGravel, ZGBlocks.caligroGravel, ZGBlocks.exodusGravel, ZGBlocks.astrosGravel, ZGBlocks.centoGravel, ZGBlocks.mavethGravel);
 		
 		// Grass
-		registerOre("grass", ZGBlocks.edenGoldenGrass, ZGBlocks.edenGrass, ZGBlocks.edenSwampGrass, ZGBlocks.edenFallGrass, ZGBlocks.xathGrass, ZGBlocks.oasisGrass, ZGBlocks.perdGrass, ZGBlocks.exodusGrass, ZGBlocks.harranGrassCherry, ZGBlocks.harranGrass);
+		registerOre("grass", ZGBlocks.edenGoldenGrass, ZGBlocks.edenGrass, ZGBlocks.edenSwampGrass, ZGBlocks.edenFallGrass, ZGBlocks.xathGrass, ZGBlocks.oasisGrass, ZGBlocks.perdGrass, ZGBlocks.exodusGrass, ZGBlocks.harranGrassCherry, ZGBlocks.harranGrass, ZGBlocks.mavethInfectedGrass);
 		
 		// Ice
 		registerOre("ice", ZGBlocks.astrosIce);

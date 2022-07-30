@@ -83,6 +83,7 @@ import zollerngalaxy.biomes.kronos.BiomeKronosLavaOcean;
 import zollerngalaxy.biomes.kronos.BiomeKronosMagmaSlimelands;
 import zollerngalaxy.biomes.kronos.BiomeKronosSoulDesert;
 import zollerngalaxy.biomes.maveth.BiomeMaveth;
+import zollerngalaxy.biomes.maveth.BiomeMavethInfectedValley;
 import zollerngalaxy.biomes.metztli.BiomeHarranClayMesa;
 import zollerngalaxy.biomes.metztli.BiomeHarranDunes;
 import zollerngalaxy.biomes.metztli.BiomeHarranForest;
@@ -273,6 +274,7 @@ public class ZGBiomes {
 	
 	// Maveth
 	public static final Biome MAVETH_BASE = new BiomeMaveth(new BiomeProperties("Maveth"));
+	public static final Biome MAVETH_INFECTED_VALLEY = new BiomeMavethInfectedValley(new BiomeProperties("Maveth Infected Valley"));
 	
 	public static void init() {
 		// Zollus
@@ -413,6 +415,7 @@ public class ZGBiomes {
 		
 		// Maveth
 		ZGBiomes.addBiome(ZGBiomes.MAVETH_BASE, MOUNTAIN, SANDY, COLD, DEAD, SPOOKY);
+		ZGBiomes.addBiome(ZGBiomes.MAVETH_INFECTED_VALLEY, MOUNTAIN, SANDY, HOT, DEAD, SPOOKY);// ZGPlanets
 		
 		ZGHelper.Log("Loaded a total of " + totalBiomes + " new biomes.");
 	}

@@ -51,6 +51,9 @@ import zollerngalaxy.blocks.eden.ZGBlockGrassEden;
 import zollerngalaxy.blocks.exodus.ZGBlockGrassExodus;
 import zollerngalaxy.blocks.harran.ZGBlockCherryGrassHarran;
 import zollerngalaxy.blocks.harran.ZGBlockGrassHarran;
+import zollerngalaxy.blocks.infected.ZGBlockInfectedTallGrass;
+import zollerngalaxy.blocks.infected.ZGInfectedDirt;
+import zollerngalaxy.blocks.infected.ZGInfectedGrass;
 import zollerngalaxy.blocks.oasis.BlockMudClay;
 import zollerngalaxy.blocks.oasis.ZGBlockGrassOasis;
 import zollerngalaxy.blocks.oasis.ZGFlower;
@@ -638,6 +641,11 @@ public class ZGBlocks {
 	public static final Block mavethRock = new ZGBlockBase("mavethrock", 6.2F);
 	public static final Block mavethCobblestone = new ZGBlockCobble("mavethcobblestone", 3.4F);
 	public static final Block mavethGravel = new ZGGravel("mavethgravel", 3.4F);
+	public static final Block mavethInfectedSoil = new ZGInfectedDirt("infectedsoil");
+	public static final Block mavethInfectedGrass = new ZGInfectedGrass("infectedgrass");
+	public static final Block mavethInfectedTallGrass = new ZGBlockInfectedTallGrass("infectedtallgrass");
+	// TODO
+	
 	public static final Block mavethStoneBricks = new ZGBlockBase("mavethstonebricks", 4.8F);
 	public static final Block mavethStone = new ZGPlanetStone("mavethstone", 4.6F, ZGBlocks.mavethCobblestone).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.SAPPHIRE.getHarvestLevel());
 	public static final Block mavethIronOre = new ZGBlockOre("mavethironore", 4.7F).setBlockHarvestLevel(EnumHarvestToolZG.PICKAXE.getHarvestTool(), EnumHarvestLevelZG.AMARANTH.getHarvestLevel());
@@ -827,7 +835,7 @@ public class ZGBlocks {
 				netherSuperChargedCoalOre, netherZaniumOre, netherRaditeOre, netherZogiteOre, azuriteOre);
 		//
 		//
-		ZGBlocks.registerBlocks(mavethSand, mavethRock, mavethGravel, mavethStoneBricks, mavethCobblestone, mavethStone, mavethIronOre, mavethElectrumOre, mavethAmaranthOre, mavethZollerniumOre, mavethVibraniumOre);
+		ZGBlocks.registerBlocks(mavethSand, mavethRock, mavethGravel, mavethInfectedGrass, mavethInfectedSoil, mavethInfectedTallGrass, mavethStoneBricks, mavethCobblestone, mavethStone, mavethIronOre, mavethElectrumOre, mavethAmaranthOre, mavethZollerniumOre, mavethVibraniumOre);
 		//
 		// Farmable Crops
 		ZGBlocks.registerBlocks(cropStrawberry, cropBlackberry, cropBlueberry, cropGrape, cropTomato, cropCorn, cropCucumber, cropRadish, cropOnion, cropPea, cropGarlic, cropGhostPepper);

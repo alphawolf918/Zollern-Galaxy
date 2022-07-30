@@ -32,6 +32,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.blocks.caligro.corrupted.ICorruptBlock;
+import zollerngalaxy.blocks.infected.IInfectedBlock;
 import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.enums.EnumBlockType;
 import zollerngalaxy.core.enums.EnumHarvestLevelZG;
@@ -63,6 +64,7 @@ public class ZGBlockBase extends Block implements ISingleZGBlockRender, IJSONBlo
 	protected boolean isSolidColor = true;
 	protected boolean hasParticles = false;
 	protected EnumParticleTypes particleType = EnumParticleTypes.SMOKE_NORMAL;
+	protected EnumParticleTypes particleType2 = EnumParticleTypes.REDSTONE;
 	protected String[] blockInfo;
 	protected static String name;
 	protected int harvestLvl = EnumHarvestLevelZG.DIAMOND.getHarvestLevel();
@@ -142,21 +144,33 @@ public class ZGBlockBase extends Block implements ISingleZGBlockRender, IJSONBlo
 			entityIn.attackEntityFrom(DamageSource.HOT_FLOOR, (this.enableExtremeMode) ? 8.2F : 4.5F);
 		}
 		
-		// Corruption Damage
 		if (entityIn instanceof EntityPlayer) {
 			EntityPlayer player = (EntityPlayer) entityIn;
-			if (!(player.capabilities.isCreativeMode) && (this instanceof ICorruptBlock)) {
-				ICorruptBlock corruptBlock = (ICorruptBlock) this;
-				if (corruptBlock.canCorrupt()) {
-					ZGDamageSrc corruption = ZGDamageSrc.deathCorruption;
-					if (!player.isPotionActive(ZGPotions.antiCorruption)) {
-						Item blueprintItem = ZGItems.blueprintCorruption;
-						ZGHelper.performBlueprintCheck(rand, blueprintItem, player, corruption);
+			if (!(player.capabilities.isCreativeMode)) {
+				// Corruption Damage
+				if (this instanceof ICorruptBlock) {
+					ICorruptBlock corruptBlock = (ICorruptBlock) this;
+					if (corruptBlock.canCorrupt()) {
+						ZGDamageSrc corruption = ZGDamageSrc.deathCorruption;
+						if (!player.isPotionActive(ZGPotions.antiCorruption)) {
+							Item blueprintItem = ZGItems.blueprintCorruption;
+							ZGHelper.performBlueprintCheck(rand, blueprintItem, player, corruption);
+						}
+						
+					}
+					// Infected Damage
+				} else if (this instanceof IInfectedBlock) {
+					IInfectedBlock infectedBlock = (IInfectedBlock) this;
+					if (infectedBlock.canInfect()) {
+						int timerIncrease = ((this.enableExtremeMode) ? 300 : 0);
+						int infectionTimer = (ZGPotions.infectionTime + timerIncrease);
+						Potion potionInfected = ZGPotions.infected;
+						PotionEffect infectedEffect = new PotionEffect(potionInfected, infectionTimer, 0);
+						player.addPotionEffect(infectedEffect);
 					}
 				}
 			}
 		}
-		
 		super.onEntityWalk(worldIn, pos, entityIn);
 	}
 	
@@ -446,7 +460,7 @@ public class ZGBlockBase extends Block implements ISingleZGBlockRender, IJSONBlo
 				}
 				
 				if (d1 < pos.getX() || d1 > pos.getX() + 1 || d2 < 0.0D || d2 > pos.getY() + 1 || d3 < pos.getZ() || d3 > pos.getZ() + 1) {
-					worldIn.spawnParticle(EnumParticleTypes.REDSTONE, d1, d2, d3, 0.0D, 0.0D, 0.0D);
+					worldIn.spawnParticle(this.particleType2, d1, d2, d3, 0.0D, 0.0D, 0.0D);
 				}
 			}
 		}

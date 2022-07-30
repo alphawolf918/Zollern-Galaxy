@@ -572,6 +572,9 @@ tile.mavethsand.name=Maveth Sand
 tile.mavethgravel.name=Maveth Gravel
 tile.mavethrock.name=Maveth Rock
 tile.mavethcobblestone.name=Maveth Cobblestone
+tile.infectedgrass.name=Infectious Grass
+tile.infectedsoil.name=Infectious Soil
+tile.infectedtallgrass.name=Infected Tall Grass
 tile.mavethironore.name=Maveth Iron Ore
 tile.mavethelectrumore.name=Maveth Electrum Ore
 tile.mavethvibraniumore.name=Maveth Vibranium Ore
@@ -1081,6 +1084,8 @@ item.metalparts.name=Metal Parts
 item.mudclayball.name=Mud Clay Ball
 
 item.kreeflesh.name=Kree Flesh
+item.kreeblood.name=Kree Blood Vial
+item.kreesummoner.name=Kree Summoner
 item.vibraniumingot.name=Vibranium Ingot
 item.vibraniumdust.name=Vibranium Dust
 

@@ -5,17 +5,17 @@
  * but do not claim it as your own, and
  * do not redistribute it.
  */
-package zollerngalaxy.blocks.caligro.corrupted;
+package zollerngalaxy.blocks.infected;
 
 import zollerngalaxy.blocks.ZGBlockBase;
 
-public class ZGCorruptBlock extends ZGBlockBase implements ICorruptBlock {
+public class InfectedBlock extends ZGBlockBase implements IInfectedBlock {
 	
-	public ZGCorruptBlock(String blockName, float hardResist) {
+	public InfectedBlock(String blockName, float hardResist) {
 		super(blockName, hardResist);
 	}
 	
-	public ZGCorruptBlock(String blockName) {
-		this(blockName, 5.6F);
+	public InfectedBlock(String blockName) {
+		super(blockName, 8.6F);
 	}
 }

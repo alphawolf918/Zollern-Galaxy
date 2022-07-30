@@ -379,6 +379,8 @@ public class ZGItems {
 	public static final Item doughCooked = new ZGItemBase("cookeddough");
 	
 	public static final Item kreeFlesh = new ZGItemBase("kreeflesh");
+	public static final Item kreeBloodVial = new KreeBloodVial(); // TODO
+	public static final Item kreeSummoner = new ZGItemBase("kreesummoner"); // TODO
 	
 	// Crops
 	public static final Item strawberry = new ZGItemSeedFood("strawberry", 8, 1.7F, ZGBlocks.cropStrawberry);
@@ -412,7 +414,7 @@ public class ZGItems {
 				legsZanium, legsRadite, legsZogite, bootsWood, bootsStone, bootsAmaranth, bootsZollernium, bootsAzurite, bootsRadium, bootsRuby, bootsSapphire, bootsZanium, bootsRadite, bootsZogite, blueprintCorruption, blueprintThermalHot, blueprintThermalCold, healingHeart, healingHeartForce, amuletStorm, oxygenTankTier4, oxygenTankTier5, oxygenTankTier6);
 		//
 		//
-		ZGItems.registerItems(alcohol, gauze, medkit, nail, nailGroup, woodBox, metalParts, dough, doughCooked, flour, kreeFlesh);
+		ZGItems.registerItems(alcohol, gauze, medkit, nail, nailGroup, woodBox, metalParts, dough, doughCooked, flour, kreeFlesh, kreeBloodVial, kreeSummoner);
 		//
 		// Crops & Fruits
 		ZGItems.registerItems(strawberry, blackberry, blueberry, grape, tomato, corn, cucumber, radish, onion, peas, garlic, ghostPepper, cherry, banana, guava, peach, grapefruit, orange, lemon, lime, limon, pea, cornKernel, popcorn, popcornBowl);
