@@ -12,11 +12,12 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.worldgen.ZGWorldGenMaster;
 
 public class WorldGenZGIceSpikes extends ZGWorldGenMaster {
 	
-	private int spikeHeight = 16;
+	private int spikeHeight = ZGHelper.rngInt(4, 16);
 	private IBlockState iceBlock = Blocks.PACKED_ICE.getDefaultState();
 	
 	@Override

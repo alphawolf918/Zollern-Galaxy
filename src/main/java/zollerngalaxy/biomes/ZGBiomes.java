@@ -127,7 +127,11 @@ import zollerngalaxy.biomes.xathius.BiomeXathiusGoliathForest;
 import zollerngalaxy.biomes.xathius.BiomeXathiusMountains;
 import zollerngalaxy.biomes.xathius.BiomeXathiusOcean;
 import zollerngalaxy.biomes.zollus.BiomeZollus;
+import zollerngalaxy.biomes.zollus.BiomeZollusDirtFields;
 import zollerngalaxy.biomes.zollus.BiomeZollusIceOcean;
+import zollerngalaxy.biomes.zollus.BiomeZollusIcyRockies;
+import zollerngalaxy.biomes.zollus.BiomeZollusRoyalTundra;
+import zollerngalaxy.biomes.zollus.BiomeZollusSnowPlains;
 import zollerngalaxy.lib.helpers.CommonZGRegisterHelper;
 import zollerngalaxy.lib.helpers.ZGHelper;
 
@@ -139,6 +143,10 @@ public class ZGBiomes {
 	// Zollus
 	public static final Biome ZOLLUS = new BiomeZollus(new BiomeProperties("Zollus"));
 	public static final Biome ZOLLUS_OCEAN = new BiomeZollusIceOcean(new BiomeProperties("Zollus Ice Ocean"));
+	public static final Biome ZOLLUS_ICY_ROCKIES = new BiomeZollusIcyRockies(new BiomeProperties("Zollus Icy Rockies"));
+	public static final Biome ZOLLUS_ROYAL_TUNDRA = new BiomeZollusRoyalTundra(new BiomeProperties("Zollus Royal Tundra"));
+	public static final Biome ZOLLUS_SNOW_PLAINS = new BiomeZollusSnowPlains(new BiomeProperties("Zollus Snow Plains"));
+	public static final Biome ZOLLUS_DIRT_FIELDS = new BiomeZollusDirtFields(new BiomeProperties("Zollus Dirt Fields"));
 	
 	// Kriffon
 	public static final Biome KRIFFON = new BiomeKriffon(new BiomeProperties("Kriffon"));
@@ -280,6 +288,10 @@ public class ZGBiomes {
 		// Zollus
 		ZGBiomes.addBiome(ZGBiomes.ZOLLUS, COLD, DEAD, DRY);
 		ZGBiomes.addBiome(ZGBiomes.ZOLLUS_OCEAN, COLD, DEAD, WET, OCEAN);
+		ZGBiomes.addBiome(ZGBiomes.ZOLLUS_ICY_ROCKIES, COLD, DEAD, WET, MOUNTAIN, HILLS);
+		ZGBiomes.addBiome(ZGBiomes.ZOLLUS_ROYAL_TUNDRA, COLD, WET, MOUNTAIN, HILLS);
+		ZGBiomes.addBiome(ZGBiomes.ZOLLUS_SNOW_PLAINS, COLD, DEAD, WET, PLAINS);
+		ZGBiomes.addBiome(ZGBiomes.ZOLLUS_DIRT_FIELDS, COLD, DEAD, WET, PLAINS);
 		
 		// Kriffon
 		ZGBiomes.addBiome(ZGBiomes.KRIFFON, HOT, DEAD, DRY);

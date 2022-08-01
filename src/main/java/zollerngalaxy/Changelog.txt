@@ -4,10 +4,13 @@ Zollern Galaxy v2.0.45
 
 [NEW]
 * Added Infected Valley biome to Maveth.
+    - When stepping on these blocks, they cause the Player to receive the Infected potion effect, which can then spread to other Players.
+* Added more biomes to Zollus.
 * 
 
 [CHANGES]
-* 
+* Scaled down the size of Frost Giants slightly.
+* Changed Ice Spikes on Zollus to be a randomized height of 8 - 16 blocks.
 * 
 
 [FIXES]

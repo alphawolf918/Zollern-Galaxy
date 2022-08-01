@@ -21,7 +21,6 @@ public class BiomeZollus extends BiomeZollusBase {
 		this.setBiomeType(EnumBiomeTypeZG.ICY);
 		this.setTemp(-10.2F);
 		this.enableSnow = true;
-		this.clearAllSpawning();
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityFrostGiant.class, 10, 1, 1));
 		this.topBlock = ZGBlocks.zolSurfaceRock.getDefaultState();
 		this.fillerBlock = ZGBlocks.zolDirt.getDefaultState();

@@ -39,7 +39,7 @@ public class EntityFrostGiant extends EntityMob implements IEntityBreathable {
 	
 	public EntityFrostGiant(World worldIn) {
 		super(worldIn);
-		this.setSize(this.width * 3.6F, this.height * 3.6F);
+		this.setSize(this.width * 3.0F, this.height * 3.0F);
 		this.ignoreFrustumCheck = true;
 	}
 	
@@ -121,5 +121,4 @@ public class EntityFrostGiant extends EntityMob implements IEntityBreathable {
 	public boolean canBreath() {
 		return true;
 	}
-	
 }

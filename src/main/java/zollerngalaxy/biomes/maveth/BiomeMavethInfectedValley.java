@@ -13,16 +13,16 @@ import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 public class BiomeMavethInfectedValley extends BiomeMavethBase {
 	
 	public BiomeMavethInfectedValley(BiomeProperties props) {
-		super("zg_maveth_infected_valley", props);
+		super("maveth_infected_valley", props);
 		props.setRainDisabled();
 		props.setHeightVariation(0.0F);
 		props.setTemperature(8.0F);
 		props.setBaseHeight(4.0F);
-		this.setBiomeHeight(32);
+		this.setBiomeHeight(4);
 		this.setBiomeType(EnumBiomeTypeZG.INFECTED);
 		this.setTemp(54.0F);
 		this.biomeDecor.generateTallGrass = true;
-		this.biomeDecor.tallGrassPerChunk = 6;
+		this.biomeDecor.tallGrassPerChunk = 14;
 		this.enableSnow = false;
 		this.topBlock = ZGBlocks.mavethInfectedGrass.getDefaultState();
 		this.fillerBlock = ZGBlocks.mavethInfectedSoil.getDefaultState();

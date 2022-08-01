@@ -7,23 +7,21 @@
  */
 package zollerngalaxy.biomes.zollus;
 
-import net.minecraft.init.Blocks;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.celestial.ZGPlanets;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
-import zollerngalaxy.mobs.entities.EntityFrostGiant;
 
-public class BiomeZollusIceOcean extends BiomeZollusBase {
+public class BiomeZollusSnowPlains extends BiomeZollusBase {
 	
-	public BiomeZollusIceOcean(BiomeProperties props) {
-		super("zollus_ocean", props);
+	public BiomeZollusSnowPlains(BiomeProperties props) {
+		super("zollus_snowplains", props);
 		props.setRainDisabled();
-		this.setBiomeHeight(25);
-		this.setBiomeType(EnumBiomeTypeZG.OCEAN);
-		this.setBlocks(Blocks.AIR);
-		this.setTemp(-14.2F);
+		this.setBiomeHeight(35);
+		this.setBiomeType(EnumBiomeTypeZG.ICY);
+		this.setTemp(-18.8F);
 		this.enableSnow = true;
-		this.spawnableMonsterList.add(new SpawnListEntry(EntityFrostGiant.class, 10, 1, 1));
+		this.topBlock = ZGBlocks.zolSnow.getDefaultState();
+		this.fillerBlock = ZGBlocks.zolSnow.getDefaultState();
 		this.stoneBlock = ZGBlocks.zolStone;
 		this.setPlanetForBiome(ZGPlanets.planetZollus);
 	}

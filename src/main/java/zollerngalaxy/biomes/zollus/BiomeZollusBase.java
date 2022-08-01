@@ -43,6 +43,8 @@ public class BiomeZollusBase extends BiomeSpace {
 	protected static final int SEA_LEVEL = ChunkProviderZollus.SEA_LEVEL;
 	protected static final int SEA_FLOOR_LEVEL = (SEA_LEVEL - 21);
 	
+	public BiomeDecoratorZollus biomeDecor = this.getBiomeDecorator();
+	
 	public BiomeZollusBase(String singleName, BiomeProperties props) {
 		super(singleName, props);
 		this.setTempCategory(TempCategory.COLD);
@@ -52,7 +54,7 @@ public class BiomeZollusBase extends BiomeSpace {
 		this.decorator.mushroomsPerChunk = -999;
 		this.clearAllSpawning();
 		if (ConfigManagerZG.enableSentinels) {
-			this.spawnableMonsterList.add(new SpawnListEntry(EntitySentinelDrone.class, 10, 1, 2));
+			this.spawnableMonsterList.add(new SpawnListEntry(EntitySentinelDrone.class, 5, 1, 2));
 		}
 		if (ConfigManagerZG.enableAlienVillagerSpawn) {
 			this.spawnableCreatureList.add(new SpawnListEntry(EntityZollusVillager.class, this.villagerSpawnRate, this.villagerMinSpawnRate, this.villagerMaxSpawnRate));
@@ -96,7 +98,7 @@ public class BiomeZollusBase extends BiomeSpace {
 				} else {
 					if (iblockstate2.getMaterial() == Material.AIR) {
 						j = -1;
-					} else if (iblockstate2.getBlock() == ZGBlocks.zolStone) {
+					} else if (iblockstate2.getBlock() == STONE.getBlock()) {
 						if (j == -1) {
 							if (k <= 0) {
 								topState = AIR;

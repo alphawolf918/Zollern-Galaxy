@@ -7,12 +7,12 @@
  */
 package zollerngalaxy.mobs.renders;
 
+import org.lwjgl.opengl.GL11;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import org.lwjgl.opengl.GL11;
 import zollerngalaxy.lib.ZGInfo;
 import zollerngalaxy.mobs.entities.EntityFrostGiant;
 import zollerngalaxy.mobs.models.ModelFrostGiant;
@@ -21,7 +21,7 @@ import zollerngalaxy.mobs.models.ModelFrostGiant;
 public class RenderFrostGiant extends RenderLiving<EntityFrostGiant> {
 	
 	private ModelFrostGiant model;
-	private static float f6 = 3.6F;
+	private static float f6 = 3.0F;
 	
 	public RenderFrostGiant(RenderManager rendermanagerIn) {
 		super(rendermanagerIn, new ModelFrostGiant(), 0.5F);

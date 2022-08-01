@@ -46,7 +46,11 @@ public class GenLayerZollusBiomes extends GenLayerZollus {
 		ArrayList<BiomeEntry>[] currentBiomes = new ArrayList[CachedEnumZG.valuesBiomeCached().length];
 		List<BiomeEntry> list = new ArrayList<>();
 		list.add(new BiomeEntry(ZGBiomes.ZOLLUS, 100));
+		list.add(new BiomeEntry(ZGBiomes.ZOLLUS_SNOW_PLAINS, 95));
+		list.add(new BiomeEntry(ZGBiomes.ZOLLUS_ICY_ROCKIES, 85));
 		list.add(new BiomeEntry(ZGBiomes.ZOLLUS_OCEAN, 75));
+		list.add(new BiomeEntry(ZGBiomes.ZOLLUS_ROYAL_TUNDRA, 65));
+		list.add(new BiomeEntry(ZGBiomes.ZOLLUS_DIRT_FIELDS, 55));
 		
 		currentBiomes[BiomeType.WARM.ordinal()] = new ArrayList<>(list);
 		return currentBiomes;

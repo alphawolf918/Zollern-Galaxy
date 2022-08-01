@@ -64,7 +64,7 @@ public class BiomeDecoratorZollus extends BiomeDecoratorZG {
 		
 		ChunkPrimer chunkPrimer = new ChunkPrimer();
 		
-		int genY = 248;
+		int genY = 128;
 		int y = genY;
 		
 		if (biome instanceof BiomeSpace) {
