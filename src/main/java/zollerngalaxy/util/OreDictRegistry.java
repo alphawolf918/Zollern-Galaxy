@@ -133,13 +133,13 @@ public class OreDictRegistry {
 		registerOre("blockSpaceStation", ZGBlocks.blockSpaceStation);
 		
 		// Gravel
-		registerOre("gravel", ZGBlocks.edenGravel, ZGBlocks.purgGravel, ZGBlocks.xathGravel, ZGBlocks.oasisGravel, ZGBlocks.perdGravel, ZGBlocks.altumGravel, ZGBlocks.caligroGravel, ZGBlocks.exodusGravel, ZGBlocks.astrosGravel, ZGBlocks.centoGravel, ZGBlocks.mavethGravel);
+		registerOre("gravel", ZGBlocks.zolGravel, ZGBlocks.edenGravel, ZGBlocks.purgGravel, ZGBlocks.xathGravel, ZGBlocks.oasisGravel, ZGBlocks.perdGravel, ZGBlocks.altumGravel, ZGBlocks.caligroGravel, ZGBlocks.exodusGravel, ZGBlocks.astrosGravel, ZGBlocks.centoGravel, ZGBlocks.mavethGravel);
 		
 		// Grass
 		registerOre("grass", ZGBlocks.edenGoldenGrass, ZGBlocks.edenGrass, ZGBlocks.edenSwampGrass, ZGBlocks.edenFallGrass, ZGBlocks.xathGrass, ZGBlocks.oasisGrass, ZGBlocks.perdGrass, ZGBlocks.exodusGrass, ZGBlocks.harranGrassCherry, ZGBlocks.harranGrass, ZGBlocks.mavethInfectedGrass);
 		
 		// Ice
-		registerOre("ice", ZGBlocks.astrosIce);
+		registerOre("ice", ZGBlocks.astrosIce, ZGBlocks.zolIce);
 		
 		// Logs
 		registerOre("logWood", ZGBlocks.edenWoodLog, ZGBlocks.perdWoodLogs, ZGBlocks.edenParadiseWoodLog, ZGBlocks.edenGoldenWoodLog, ZGBlocks.edenLovetreeLog, ZGBlocks.exoWoodLogs, ZGBlocks.cherryWoodLog, ZGBlocks.bananaLog, ZGBlocks.guavaLog, ZGBlocks.peachLog, ZGBlocks.grapefruitLog, ZGBlocks.orangeLog, ZGBlocks.lemonLog, ZGBlocks.limeLog, ZGBlocks.limonLog);

@@ -125,7 +125,7 @@ public abstract class ItemCustomStarGate extends Item {
 	 * @param world
 	 * @param player
 	 */
-	protected void teleportPlayer(World world, EntityPlayer player) {
+	private void teleportPlayer(World world, EntityPlayer player) {
 		if (!ConfigManagerZG.disableStarGates) {
 			if (this.getToDimensionId() != this.getNullId() && this.getFromDimensionId() != this.getNullId()) {
 				this.sendToPlanet(player);
@@ -159,12 +159,11 @@ public abstract class ItemCustomStarGate extends Item {
 	/**
 	 * This does the actual teleportation: it sends the IMessage to the Simple Network Wrapper to
 	 * change the Player's dimension.
-	 * Override this method to use your own way, if desired.
 	 * 
 	 * @param dimId
 	 * @param player
 	 */
-	protected void sendToServer(int dimId, EntityPlayer player) {
+	private void sendToServer(int dimId, EntityPlayer player) {
 		int playerId = player.getEntityId();
 		boolean canTP = true;
 		
@@ -178,7 +177,7 @@ public abstract class ItemCustomStarGate extends Item {
 	 * Override this method with your own, if desired.
 	 */
 	@Override
-	public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn) {
+	public final ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn) {
 		ItemStack itemstack = playerIn.getHeldItem(handIn);
 		this.teleportPlayer(worldIn, playerIn);
 		return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, itemstack);

@@ -41,7 +41,7 @@ public class ChunkProviderZollus extends ChunkProviderBase {
 	
 	public static final IBlockState STONE = ZGBlocks.zolStone.getDefaultState();
 	public static final IBlockState WATER = Blocks.WATER.getDefaultState();
-	public static final IBlockState ICE = Blocks.PACKED_ICE.getDefaultState();
+	public static final IBlockState ICE = ZGBlocks.zolIce.getDefaultState();
 	
 	public static final double CHUNK_HEIGHT = 55.0D;
 	public static final int SEA_LEVEL = 63;
@@ -74,9 +74,11 @@ public class ChunkProviderZollus extends ChunkProviderBase {
 	private double[] octaves3;
 	private double[] octaves4;
 	
-	private static final int CRATER_PROB = 100;
+	private static final int CRATER_PROB = 70;
+	public static ChunkProviderZollus INSTANCE;
 	
 	public ChunkProviderZollus(World worldIn, long seed, boolean mapFeaturesEnabled) {
+		INSTANCE = this;
 		this.world = worldIn;
 		this.worldType = worldIn.getWorldInfo().getTerrainType();
 		this.rand = new Random(seed);
@@ -311,8 +313,7 @@ public class ChunkProviderZollus extends ChunkProviderBase {
 			for (int cz = chunkZ - 2; cz <= chunkZ + 2; cz++) {
 				for (int x = 0; x < ChunkProviderZollus.CHUNK_SIZE_X; x++) {
 					for (int z = 0; z < ChunkProviderZollus.CHUNK_SIZE_Z; z++) {
-						if (Math.abs(this.randFromPoint(cx * 16 + x, (cz * 16 + z) * 1000)) < this.noiseGen4.getValue(x * ChunkProviderZollus.CHUNK_SIZE_X + x,
-								cz * ChunkProviderZollus.CHUNK_SIZE_Z + z) / ChunkProviderZollus.CRATER_PROB) {
+						if (Math.abs(this.randFromPoint(cx * 16 + x, (cz * 16 + z) * 1000)) < this.noiseGen4.getValue(x * ChunkProviderZollus.CHUNK_SIZE_X + x, cz * ChunkProviderZollus.CHUNK_SIZE_Z + z) / ChunkProviderZollus.CRATER_PROB) {
 							final Random random = new Random(cx * 16 + x + (cz * 16 + z) * 5000);
 							final EnumCraterSize cSize = EnumCraterSize.sizeArray[random.nextInt(EnumCraterSize.sizeArray.length)];
 							final int size = random.nextInt(cSize.MAX_SIZE - cSize.MIN_SIZE) + cSize.MIN_SIZE;

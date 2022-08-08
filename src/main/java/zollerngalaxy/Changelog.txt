@@ -6,6 +6,7 @@ Zollern Galaxy v2.0.45
 * Added Infected Valley biome to Maveth.
     - When stepping on these blocks, they cause the Player to receive the Infected potion effect, which can then spread to other Players.
 * Added more biomes to Zollus.
+* Added Small Craters, Tunnel Generation and Battle Towers to Zollus.
 * 
 
 [CHANGES]
@@ -15,4 +16,5 @@ Zollern Galaxy v2.0.45
 
 [FIXES]
 * Fixed Maveth having Eden stone in its lava lakes.
+* Fixed Xathius Tree Sapling having incorrect registry name.
 * 

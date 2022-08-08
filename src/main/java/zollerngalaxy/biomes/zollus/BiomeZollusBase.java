@@ -35,9 +35,9 @@ public class BiomeZollusBase extends BiomeSpace {
 	protected static final IBlockState STONE = ZGBlocks.zolStone.getDefaultState();
 	protected static final IBlockState AIR = Blocks.AIR.getDefaultState();
 	protected static final IBlockState BEDROCK = Blocks.BEDROCK.getDefaultState();
-	protected static final IBlockState GRAVEL = ZGBlocks.zolCobbleRock.getDefaultState();
+	protected static final IBlockState GRAVEL = ZGBlocks.zolGravel.getDefaultState();
 	protected static final IBlockState DIRT = ZGBlocks.zolDirt.getDefaultState();
-	protected static final IBlockState ICE = Blocks.PACKED_ICE.getDefaultState();
+	protected static final IBlockState ICE = ZGBlocks.zolIce.getDefaultState();
 	protected static final IBlockState WATER = Blocks.WATER.getDefaultState();
 	
 	protected static final int SEA_LEVEL = ChunkProviderZollus.SEA_LEVEL;
@@ -48,10 +48,11 @@ public class BiomeZollusBase extends BiomeSpace {
 	public BiomeZollusBase(String singleName, BiomeProperties props) {
 		super(singleName, props);
 		this.setTempCategory(TempCategory.COLD);
-		this.decorator.flowersPerChunk = -999;
-		this.decorator.treesPerChunk = -999;
-		this.decorator.grassPerChunk = -999;
-		this.decorator.mushroomsPerChunk = -999;
+		this.setBiomeType(EnumBiomeTypeZG.ICY);
+		this.biomeDecor.flowersPerChunk = -999;
+		this.biomeDecor.treesPerChunk = -999;
+		this.biomeDecor.grassPerChunk = -999;
+		this.biomeDecor.mushroomsPerChunk = -999;
 		this.clearAllSpawning();
 		if (ConfigManagerZG.enableSentinels) {
 			this.spawnableMonsterList.add(new SpawnListEntry(EntitySentinelDrone.class, 5, 1, 2));

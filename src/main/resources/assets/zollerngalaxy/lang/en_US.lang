@@ -18,6 +18,8 @@ tile.zolheartore.name=Zollus Heartium Ore
 tile.zoldirt.name=Zollus Dirt
 tile.zolroyalrock.name=Zollus Royal Rock
 tile.zolsnow.name=Zollus Snow
+tile.zolice.name=Zollus Ice
+tile.zolgravel.name=Zollus Gravel
 
 tile.edensurfacerock.name=Eden's Greenrock
 tile.edengrass.name=Eden's Grass
@@ -1322,6 +1324,10 @@ tooltips.chest_t1.description=A victorious reward for besting the robots!
 tooltips.burnrate=Burn Rate
 
 tooltips.nova_level=Nova Level
+
+tooltips.kreesummon1=An ancient relic used to
+tooltips.kreesummon2=summon the Blue Angels
+tooltips.kreesummon3=to where they are called.
 
 ## Planets and Moons ##
 

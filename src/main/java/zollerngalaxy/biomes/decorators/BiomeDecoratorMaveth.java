@@ -88,7 +88,7 @@ public class BiomeDecoratorMaveth extends BiomeDecoratorZG {
 		ChunkPrimer chunkPrimer = new ChunkPrimer();
 		ChunkPos forgeChunkPos = new ChunkPos(this.chunkPos);
 		
-		int genY = 248;
+		int genY = 128;
 		int y = genY;
 		
 		Block BLOCK_TOP = biome.topBlock.getBlock();
@@ -191,7 +191,7 @@ public class BiomeDecoratorMaveth extends BiomeDecoratorZG {
 		
 		// Tall Grass
 		if (this.generateTallGrass && this.tallGrassPerChunk > 0) {
-			for (int i = 0; i < this.tallGrassPerChunk + 4; ++i) {
+			for (int i = 0; i < this.tallGrassPerChunk + 8; ++i) {
 				ZGDecorateHelper.generatePlants(this.tallGrassGen, world, rand, this.chunkPos);
 			}
 		}

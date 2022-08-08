@@ -92,6 +92,7 @@ public class ChunkProviderEden extends ChunkProviderBase {
 	private final MapGenDungeonEden dungeonGeneratorZG = new MapGenDungeonEden(this.dungeonConfigurator);
 	
 	public ChunkProviderEden(World worldIn, long seed, boolean mapFeaturesEnabled) {
+		INSTANCE = this;
 		this.world = worldIn;
 		this.worldType = worldIn.getWorldInfo().getTerrainType();
 		this.rand = new Random(seed);
@@ -121,7 +122,6 @@ public class ChunkProviderEden extends ChunkProviderBase {
 		this.noiseGen5 = (NoiseGeneratorOctaves) noiseGens[4];
 		this.noiseGen6 = (NoiseGeneratorOctaves) noiseGens[5];
 		this.mobSpawnerNoise = (NoiseGeneratorOctaves) noiseGens[6];
-		this.INSTANCE = this;
 	}
 	
 	private void setBlocksInChunk(int chunkX, int chunkZ, ChunkPrimer primer) {
@@ -231,8 +231,8 @@ public class ChunkProviderEden extends ChunkProviderBase {
 		this.caveGenerator.generate(this.world, x, z, chunkprimer);
 		this.ravineGenerator.generate(this.world, x, z, chunkprimer);
 		this.villageGenerator.generate(this.world, x, z, chunkprimer);
-		this.mineshaftGenerator.generate(this.world, x, z, chunkprimer);
 		this.dungeonGeneratorZG.generate(this.world, x, z, chunkprimer);
+		this.mineshaftGenerator.generate(this.world, x, z, chunkprimer);
 		
 		Chunk chunk = new Chunk(this.world, chunkprimer, x, z);
 		byte[] abyte = chunk.getBiomeArray();
@@ -417,8 +417,8 @@ public class ChunkProviderEden extends ChunkProviderBase {
 			}
 		}
 		
-		this.mineshaftGenerator.generateStructure(this.world, this.rand, new ChunkPos(x, z));
 		this.dungeonGeneratorZG.generateStructure(this.world, this.rand, new ChunkPos(x, z));
+		this.mineshaftGenerator.generateStructure(this.world, this.rand, new ChunkPos(x, z));
 		
 		biomegenbase.decorate(this.world, this.rand, new BlockPos(i, 0, j));
 		WorldEntitySpawner.performWorldGenSpawning(this.world, biomegenbase, i + 8, j + 8, 16, 16, this.rand);
