@@ -22,6 +22,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import zollerngalaxy.lib.helpers.CommonZGRegisterHelper;
+import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.util.ZGUtils;
 
 public class KreeSummoner extends ZGItemBase {
@@ -29,22 +30,15 @@ public class KreeSummoner extends ZGItemBase {
 	public KreeSummoner() {
 		super("kreesummoner");
 		this.setMaxStackSize(1);
+		this.setMaxDamage(5);
 	}
 	
 	@Override
 	public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn) {
 		ItemStack itemstack = playerIn.getHeldItem(handIn);
-		if (!worldIn.isRemote) {
-			BlockPos pos = playerIn.getPosition();
-			this.summonKree(worldIn, pos);
-		}
+		BlockPos pos = playerIn.getPosition();
+		ZGHelper.summonKree(worldIn, pos);
 		return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, itemstack);
-	}
-	
-	protected void summonKree(World world, BlockPos pos) {
-		if (!world.isRemote) {
-			// TODO
-		}
 	}
 	
 	@Override

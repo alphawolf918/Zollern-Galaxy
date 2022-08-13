@@ -22,6 +22,7 @@ import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.init.Blocks;
+import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntityMobSpawner;
@@ -38,7 +39,9 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.creativetabs.CreativeTabsHelper;
 import zollerngalaxy.creativetabs.ZGTabs;
+import zollerngalaxy.items.ZGItems;
 import zollerngalaxy.lib.ZGInfo;
+import zollerngalaxy.mobs.entities.EntityKree;
 import zollerngalaxy.util.ZGDamageSrc;
 
 public final class ZGHelper {
@@ -127,6 +130,20 @@ public final class ZGHelper {
 	public static void spawnEntity(Entity entityIn, World worldIn, BlockPos pos, float pitch, float yaw) {
 		entityIn.setLocationAndAngles(pos.getX(), pos.getY(), pos.getZ(), pitch, yaw);
 		worldIn.spawnEntity(entityIn);
+	}
+	
+	public static void summonKree(World world, BlockPos pos) {
+		if (!world.isRemote) {
+			for (int i = 0; i < ZGHelper.rngInt(3, 6); i++) {
+				EntityKree kree = new EntityKree(world);
+				kree.setItemStackToSlot(EntityEquipmentSlot.MAINHAND, new ItemStack(ZGItems.kreeReaperAxe));
+				int xRand = pos.getX() + ZGHelper.rngInt(10, 25);
+				int yRand = pos.getY() + ZGHelper.rngInt(10, 25);
+				int zRand = pos.getZ() + ZGHelper.rngInt(10, 25);
+				BlockPos randPos = new BlockPos(xRand, yRand, zRand);
+				ZGHelper.spawnEntity(kree, world, randPos);
+			}
+		}
 	}
 	
 	public static void dropItem(Item droppedItem, World worldObj, Entity theEntity) {

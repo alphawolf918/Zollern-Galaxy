@@ -21,6 +21,7 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import zollerngalaxy.blocks.ZGBlockFlower;
+import zollerngalaxy.blocks.ZGBlockIce;
 import zollerngalaxy.core.enums.EnumHarvestLevelZG;
 import zollerngalaxy.core.enums.EnumHarvestToolZG;
 import zollerngalaxy.items.ZGItems;
@@ -44,7 +45,7 @@ public class ZolniumCrystals extends ZGBlockFlower {
 	@Override
 	public boolean canBlockStay(World world, BlockPos pos, IBlockState state) {
 		Block block = world.getBlockState(new BlockPos(pos.getX(), pos.getY() - 1, pos.getZ())).getBlock();
-		if (block == Blocks.PACKED_ICE) {
+		if (block == Blocks.PACKED_ICE || block instanceof ZGBlockIce) {
 			return true;
 		}
 		return false;
@@ -101,9 +102,7 @@ public class ZolniumCrystals extends ZGBlockFlower {
 	
 	@Override
 	public int quantityDroppedWithBonus(int fortune, Random random) {
-		if (fortune > 0
-				&& Item.getItemFromBlock(this) != this.getItemDropped(this.getBlockState().getValidStates().iterator().next(), random,
-						fortune)) {
+		if (fortune > 0 && Item.getItemFromBlock(this) != this.getItemDropped(this.getBlockState().getValidStates().iterator().next(), random, fortune)) {
 			int i = random.nextInt(fortune + 2) - 1;
 			
 			if (i < 0) {

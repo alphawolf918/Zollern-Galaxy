@@ -20,6 +20,8 @@ tile.zolroyalrock.name=Zollus Royal Rock
 tile.zolsnow.name=Zollus Snow
 tile.zolice.name=Zollus Ice
 tile.zolgravel.name=Zollus Gravel
+tile.zolsand.name=Zollus Frozen Sand
+tile.zolsandstone.name=Zollus Freezestone
 
 tile.edensurfacerock.name=Eden's Greenrock
 tile.edengrass.name=Eden's Grass
@@ -1089,7 +1091,7 @@ item.mudclayball.name=Mud Clay Ball
 
 item.kreeflesh.name=Kree Flesh
 item.kreebloodvial.name=Kree Blood Vial
-item.kreesummoner.name=Kree Summoner
+item.kreesummoner.name=Kree Summoner Orb
 item.vibraniumingot.name=Vibranium Ingot
 item.vibraniumdust.name=Vibranium Dust
 

@@ -89,7 +89,7 @@ public class ChunkProviderZollus extends ChunkProviderBase {
 		this.noiseGen5 = new NoiseGeneratorOctaves(this.rand, 10);
 		this.noiseGen6 = new NoiseGeneratorOctaves(this.rand, 16);
 		this.mobSpawnerNoise = new NoiseGeneratorOctaves(this.rand, 8);
-		this.noiseGenSmooth1 = new Gradient(this.rand.nextLong(), 4, 0.25F);
+		this.noiseGenSmooth1 = new Gradient(this.rand.nextLong(), 4, 0.35F);// 0.25F
 		this.terrainCalcs = new double[825];
 		this.parabolicField = new float[25];
 		

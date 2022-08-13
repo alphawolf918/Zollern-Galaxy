@@ -10,6 +10,7 @@ package zollerngalaxy.mobs.entities;
 import javax.annotation.Nullable;
 import micdoodle8.mods.galacticraft.api.entity.IEntityBreathable;
 import micdoodle8.mods.galacticraft.core.entities.EntityAlienVillager;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -22,6 +23,7 @@ import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
 import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.ai.EntityAIWanderAvoidWater;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
+import net.minecraft.entity.monster.AbstractSkeleton;
 import net.minecraft.entity.monster.EntityCreeper;
 import net.minecraft.entity.monster.EntityEnderman;
 import net.minecraft.entity.monster.EntityMob;
@@ -42,7 +44,9 @@ import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.items.ZGItems;
+import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.mobs.entities.ai.EntityAIKreeAttack;
 import zollerngalaxy.mobs.entities.base.EntityZGVillagerBase;
 import zollerngalaxy.mobs.entities.robots.EntityVexBot;
@@ -51,16 +55,19 @@ import zollerngalaxy.mobs.entities.robots.sentinels.EntityAbstractSentinel;
 public class EntityKree extends EntityMob implements IEntityBreathable {
 	
 	protected static final DataParameter<Boolean> ARMS_RAISED = EntityDataManager.<Boolean> createKey(EntityKree.class, DataSerializers.BOOLEAN);
+	protected static final DataParameter<Boolean> ROYAL_REAPER = EntityDataManager.<Boolean> createKey(EntityKree.class, DataSerializers.BOOLEAN);
+	
 	protected final EntityAIBreakDoor breakDoor = new EntityAIBreakDoor(this);
 	protected boolean isBreakDoorsTaskSet;
 	
 	public EntityKree(World worldIn) {
 		super(worldIn);
-		this.setSize(this.width * 1.2F, this.height * 1.2F);
+		this.setSize(this.width * 1.1F, this.height * 1.1F);
 		this.setCanPickUpLoot(true);
 		this.experienceValue = 90;
 		this.scoreValue = 90;
 		this.stepHeight = 2.0F;
+		this.fallDistance = 0.0F;
 	}
 	
 	@Override
@@ -86,6 +93,7 @@ public class EntityKree extends EntityMob implements IEntityBreathable {
 		this.targetTasks.addTask(10, new EntityAINearestAttackableTarget(this, EntityXenomorph.class, true));
 		this.targetTasks.addTask(11, new EntityAINearestAttackableTarget(this, EntityVexBot.class, true));
 		this.targetTasks.addTask(12, new EntityAINearestAttackableTarget(this, EntityAbstractSentinel.class, true));
+		this.targetTasks.addTask(13, new EntityAINearestAttackableTarget(this, AbstractSkeleton.class, true));
 	}
 	
 	@Override
@@ -109,15 +117,25 @@ public class EntityKree extends EntityMob implements IEntityBreathable {
 	protected void entityInit() {
 		super.entityInit();
 		this.getDataManager().register(ARMS_RAISED, Boolean.valueOf(false));
+		this.getDataManager().register(ROYAL_REAPER, (ZGHelper.rngInt(0, 100) <= 50) ? Boolean.valueOf(false) : Boolean.valueOf(true));
 	}
 	
 	public void setArmsRaised(boolean armsRaised) {
 		this.getDataManager().set(ARMS_RAISED, Boolean.valueOf(armsRaised));
 	}
 	
+	public void setIsRoyalReaper(boolean isRoyal) {
+		this.getDataManager().set(ROYAL_REAPER, Boolean.valueOf(isRoyal));
+	}
+	
 	@SideOnly(Side.CLIENT)
 	public boolean isArmsRaised() {
 		return this.getDataManager().get(ARMS_RAISED).booleanValue();
+	}
+	
+	@SideOnly(Side.CLIENT)
+	public boolean isRoyalReaper() {
+		return this.getDataManager().get(ROYAL_REAPER).booleanValue();
 	}
 	
 	public boolean isBreakDoorsTaskSet() {
@@ -160,6 +178,10 @@ public class EntityKree extends EntityMob implements IEntityBreathable {
 			this.experienceValue = (int) (this.experienceValue * 2.5F);
 		}
 		
+		if (ConfigManagerZG.enableExtremeMode) {
+			this.experienceValue *= 4;
+		}
+		
 		return super.getExperiencePoints(player);
 	}
 	
@@ -172,6 +194,16 @@ public class EntityKree extends EntityMob implements IEntityBreathable {
 	@Override
 	public EnumCreatureAttribute getCreatureAttribute() {
 		return EnumCreatureAttribute.UNDEFINED;
+	}
+	
+	@Override
+	public void updateFallState(double y, boolean onGroundIn, IBlockState stateIn, BlockPos pos) {
+		
+	}
+	
+	@Override
+	public void fall(float par1, float par2) {
+		
 	}
 	
 	@Override

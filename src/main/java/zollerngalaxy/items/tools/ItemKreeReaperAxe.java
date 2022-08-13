@@ -83,5 +83,4 @@ public class ItemKreeReaperAxe extends ItemSword implements ISingleZGItemRender 
 			tooltip.add(ZGUtils.translate("tooltips.holdshift"));
 		}
 	}
-	
 }

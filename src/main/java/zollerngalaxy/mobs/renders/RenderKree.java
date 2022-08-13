@@ -23,7 +23,7 @@ import zollerngalaxy.mobs.models.ModelKree;
 @SideOnly(Side.CLIENT)
 public class RenderKree extends RenderBiped<EntityKree> {
 	
-	private static final float f6 = 1.1F;
+	private static final float f6 = 1.0F;
 	
 	private static final ResourceLocation KREE_TEXTURE = new ResourceLocation(ZGInfo.MOD_ID + ":textures/entity/kree.png");
 	

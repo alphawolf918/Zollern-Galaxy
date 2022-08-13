@@ -7,11 +7,13 @@ Zollern Galaxy v2.0.45
     - When stepping on these blocks, they cause the Player to receive the Infected potion effect, which can then spread to other Players.
 * Added more biomes to Zollus.
 * Added Small Craters, Tunnel Generation and Battle Towers to Zollus.
+* Added the Kree Summoner Orb, which calls the Kree when activated.
 * 
 
 [CHANGES]
 * Scaled down the size of Frost Giants slightly.
 * Changed Ice Spikes on Zollus to be a randomized height of 8 - 16 blocks.
+* Kree Reapers no longer take fall damage.
 * 
 
 [FIXES]

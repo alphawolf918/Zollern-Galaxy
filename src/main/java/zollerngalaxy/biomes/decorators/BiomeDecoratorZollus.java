@@ -51,7 +51,7 @@ public class BiomeDecoratorZollus extends BiomeDecoratorZG {
 	public int iceSpikesPerChunk = ConfigManagerZG.zollusIceSpikesPerChunk;
 	public int tunnelsPerChunk = 3;
 	public int cratersPerChunk = 6;
-	public int battleTowersPerChunk = 1;
+	public int battleTowersPerChunk = 2;
 	
 	public boolean generateCrystals = true;
 	public boolean generateIceSpikes = true;
