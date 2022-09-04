@@ -9,15 +9,24 @@ Zollern Galaxy v2.0.45
 * Added Small Craters, Tunnel Generation and Battle Towers to Zollus.
 * Added the Kree Summoner Orb, which calls the Kree when activated.
 * Added a config option to disable custom ZG fishing loot.
+* Added a config option to disable lightning turning Sand into Glass.
+* Added Goliath Tree Planks.
 * 
 
 [CHANGES]
 * Scaled down the size of Frost Giants slightly.
-* Changed Ice Spikes on Zollus to be a randomized height of 8 - 16 blocks.
+* Changed Ice Spikes on Planet Zollus to be a randomized height of 8 - 16 blocks.
+* Modified chunk generation of Planet Zollus.
 * Kree Reapers no longer take fall damage.
+* Lost Glowstone now spawns in caves on Planet Perdita like it's supposed to.
+* Lost Cactus and Lost Dead Bush have been made more common on Planet Perdita.
+* Kree Flesh can now be turned into Kree Blood via a Magma Crucible.
+* Goliath Tree Logs can now be turned into Planks.
+* Goliath Tree wood is now immune to fire and explosions.
 * 
 
 [FIXES]
 * Fixed Maveth having Eden stone in its lava lakes.
 * Fixed Xathius Tree Sapling having incorrect registry name.
+* Fixed Altum fishing loot occurring on all planets; will now only occur on Altum. Credit to ExistingEeevee!
 * 

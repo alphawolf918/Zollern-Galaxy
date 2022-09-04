@@ -138,6 +138,7 @@ public class CraftingRecipes {
 		CraftingRecipes.addPlanks(ZGBlocks.lemonLog, ZGBlocks.lemonPlanks);
 		CraftingRecipes.addPlanks(ZGBlocks.limeLog, ZGBlocks.limePlanks);
 		CraftingRecipes.addPlanks(ZGBlocks.limonLog, ZGBlocks.limonPlanks);
+		CraftingRecipes.addPlanks(ZGBlocks.xathWoodLog, ZGBlocks.xathPlanks);
 		
 		// Helmet
 		CraftingRecipes.addArmorSet(ZGItems.helmetWood, Blocks.PLANKS, "helmet");
@@ -517,6 +518,13 @@ public class CraftingRecipes {
 		CraftingRecipes.addOxygenTank(ZGItems.oxygenTankTier4, ZGItems.ingotLapis, ZGItems.compressedVirinium);
 		CraftingRecipes.addOxygenTank(ZGItems.oxygenTankTier5, ZGItems.ingotAmaranth, ZGItems.compressedRhodium);
 		CraftingRecipes.addOxygenTank(ZGItems.oxygenTankTier6, ZGItems.ingotPlutonium, ZGItems.compressedZanium);
+		
+		// Kree Blood Vial
+		ItemStack filledKreeBloodBucket = FluidUtil.getFilledBucket(new FluidStack(ZGFluids.fluidKreeBlood, ZGFluids.fluidKreeBlood.BUCKET_VOLUME));
+		ZGRecipeHelper.addShapelessRecipe(new ItemStack(ZGItems.kreeBloodVial, 4), new Object[] { Items.GLASS_BOTTLE, filledKreeBloodBucket });
+		
+		// Kree Summoner
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.kreeSummoner, 1), new Object[] { " R ", "RBR", " R ", 'R', ZGItems.compressedRhodium, 'B', filledKreeBloodBucket });
 	}
 	
 	public static void addBricks(Item coloredBrick, Block coloredBlock) {

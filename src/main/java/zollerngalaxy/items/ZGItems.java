@@ -380,7 +380,7 @@ public class ZGItems {
 	
 	public static final Item kreeFlesh = new ZGItemBase("kreeflesh");
 	public static final Item kreeBloodVial = new KreeBloodVial(); // TODO
-	public static final Item kreeSummoner = new KreeSummoner();
+	public static final Item kreeSummoner = new ItemKreeSummoner();
 	
 	// Crops
 	public static final Item strawberry = new ZGItemSeedFood("strawberry", 8, 1.7F, ZGBlocks.cropStrawberry);

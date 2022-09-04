@@ -153,6 +153,7 @@ public class ConfigManagerZG {
 	public static boolean enableArmorEffects;
 	public static boolean enableSweetFoodPotionEffects;
 	public static boolean enableZGFishingLoot;
+	public static boolean lightningTurnsSandToGlass;
 	
 	// Compat
 	public static boolean shouldOasisUseLiquidRedstone;
@@ -514,6 +515,9 @@ public class ConfigManagerZG {
 		
 		// Enable custom fishing loot from this mod
 		enableZGFishingLoot = config.get(CTG_MISC, "Enable Custom Fishing Loot", true, "Enable additional fishing loot from this mod. (default: true)").getBoolean();
+		
+		// Should Sand turn to Glass when struck by lightning?
+		lightningTurnsSandToGlass = config.get(CTG_MISC, "Lightning Turns Sand to Glass", true, "Should lightning bolts turn Sand into Glass? (default: true)").getBoolean();
 		
 		// Compat (Whether or not to use Thermal Foundation's Detabilized Redstone for the Red Sea
 		// in Oasis)

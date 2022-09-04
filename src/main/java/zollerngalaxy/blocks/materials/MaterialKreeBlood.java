@@ -10,10 +10,15 @@ package zollerngalaxy.blocks.materials;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.MaterialLiquid;
 
-public class MaterialSpaceMilk extends MaterialLiquid {
+public class MaterialKreeBlood extends MaterialLiquid {
 	
-	public MaterialSpaceMilk() {
-		super(MapColor.PINK_STAINED_HARDENED_CLAY);
+	public MaterialKreeBlood() {
+		super(MapColor.BLUE_STAINED_HARDENED_CLAY);
+	}
+	
+	@Override
+	public boolean blocksMovement() {
+		return true;
 	}
 	
 	@Override

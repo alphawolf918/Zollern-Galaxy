@@ -61,14 +61,14 @@ public class BiomeDecoratorPerdita extends BiomeDecoratorZG {
 	private WorldGenerator perdGoldOreGen;
 	private WorldGenerator perdZollerniumOreGen;
 	private WorldGenerator perdFueltoniumOreGen;
+	private WorldGenerator perdGlowGen;
 	
 	private WorldGenerator lostCactusGen = new WorldGenLostCactus();
 	private WorldGenerator lostDeadBushGen = new WorldGenLostDeadBush();
 	private WorldGenerator lostLakeGen = new WorldGenLakesZG(Blocks.WATER, ZGBlocks.perdGrass);
 	private WorldGenerator lostTallGrassGen = new WorldGenTallGrassZG((ZGBlockTallGrass) ZGBlocks.perdTallGrass);
 	private WorldGenerator lostReedGen = new WorldGenLostReeds();
-	private WorldGenerator lostPalmWoodTreeGen = new WorldGenPalmwoodTrees(true, ZGHelper.rngInt(5, 15), ZGBlocks.perdWoodLogs.getDefaultState(),
-			ZGBlocks.perdWoodLeaves.getDefaultState(), false);
+	private WorldGenerator lostPalmWoodTreeGen = new WorldGenPalmwoodTrees(true, ZGHelper.rngInt(5, 15), ZGBlocks.perdWoodLogs.getDefaultState(), ZGBlocks.perdWoodLeaves.getDefaultState(), false);
 	private WorldGenerator lostFueltoniumLakeGen = new WorldGenLakesZG(ZGFluids.blockFueltoniumFluid, ZGBlocks.perdSand);
 	private WorldGenerator lostTreasureGen = new WorldGenTreasure(ZGLootTables.CHEST_BURIED_TREASURE);
 	
@@ -82,6 +82,7 @@ public class BiomeDecoratorPerdita extends BiomeDecoratorZG {
 		this.perdGoldOreGen = new WorldGenMinableZG(ZGBlocks.perdGoldOre, STONE, EnumOreGenZG.GOLD);
 		this.perdZollerniumOreGen = new WorldGenMinableZG(ZGBlocks.perdZollerniumOre, STONE, EnumOreGenZG.ZOLLERNIUM);
 		this.perdFueltoniumOreGen = new WorldGenMinableZG(ZGBlocks.perdFueltoniumOre, STONE, EnumOreGenZG.FUELTONIUM);
+		this.perdGlowGen = new WorldGenMinableZG(ZGBlocks.perdGlowstone, STONE, EnumOreGenZG.SHINESTONE);
 	}
 	
 	@Override
@@ -106,13 +107,14 @@ public class BiomeDecoratorPerdita extends BiomeDecoratorZG {
 		this.generateOre(this.perdGoldOreGen, EnumOreGenZG.GOLD, world, rand);
 		this.generateOre(this.perdZollerniumOreGen, EnumOreGenZG.ZOLLERNIUM, world, rand);
 		this.generateOre(this.perdFueltoniumOreGen, EnumOreGenZG.FUELTONIUM, world, rand);
+		this.generateOre(this.perdGlowGen, EnumOreGenZG.SHINESTONE, world, rand);
 		
 		ChunkPos forgeChunkPos = new ChunkPos(chunkPos);
 		
 		// Lost Cactus
 		if (TerrainGen.decorate(world, rand, forgeChunkPos, DecorateBiomeEvent.Decorate.EventType.CACTUS)) {
 			if (rand.nextInt(12) == 0) {
-				for (int i = 0; i < this.lostCactiPerChunk; ++i) {
+				for (int i = 0; i < this.lostCactiPerChunk + 4; ++i) {
 					int x1 = rand.nextInt(16) + 8;
 					int z1 = rand.nextInt(16) + 8;
 					int y1 = world.getHeight(this.chunkPos.add(x1, 0, z1)).getY() * 2;
@@ -127,7 +129,7 @@ public class BiomeDecoratorPerdita extends BiomeDecoratorZG {
 		// Lost Dead Bush
 		if (TerrainGen.decorate(world, rand, forgeChunkPos, DecorateBiomeEvent.Decorate.EventType.DEAD_BUSH)) {
 			if (rand.nextInt(6) == 0) {
-				for (int i = 0; i < this.lostDeadBushPerChunk; ++i) {
+				for (int i = 0; i < this.lostDeadBushPerChunk + 8; ++i) {
 					int x1 = rand.nextInt(16) + 8;
 					int z1 = rand.nextInt(16) + 8;
 					int y1 = world.getHeight(this.chunkPos.add(x1, 0, z1)).getY() * 2;

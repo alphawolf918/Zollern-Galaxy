@@ -22,6 +22,7 @@ import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -41,7 +42,19 @@ import zollerngalaxy.creativetabs.CreativeTabsHelper;
 import zollerngalaxy.creativetabs.ZGTabs;
 import zollerngalaxy.items.ZGItems;
 import zollerngalaxy.lib.ZGInfo;
+import zollerngalaxy.mobs.entities.EntityBladeFish;
+import zollerngalaxy.mobs.entities.EntityBlubberFish;
+import zollerngalaxy.mobs.entities.EntityEdenCow;
+import zollerngalaxy.mobs.entities.EntityGrayAlien;
 import zollerngalaxy.mobs.entities.EntityKree;
+import zollerngalaxy.mobs.entities.EntityMegaCreeper;
+import zollerngalaxy.mobs.entities.EntityMummy;
+import zollerngalaxy.mobs.entities.EntityOinkus;
+import zollerngalaxy.mobs.entities.EntityScorpion;
+import zollerngalaxy.mobs.entities.EntityShadowSkeleton;
+import zollerngalaxy.mobs.entities.EntityShark;
+import zollerngalaxy.mobs.entities.interfaces.IShadeEntity;
+import zollerngalaxy.mobs.entities.robots.EntityVexBot;
 import zollerngalaxy.util.ZGDamageSrc;
 
 public final class ZGHelper {
@@ -134,7 +147,7 @@ public final class ZGHelper {
 	
 	public static void summonKree(World world, BlockPos pos) {
 		if (!world.isRemote) {
-			for (int i = 0; i < ZGHelper.rngInt(3, 6); i++) {
+			for (int i = 0; i < ZGHelper.rngInt(4, 16); i++) {
 				EntityKree kree = new EntityKree(world);
 				kree.setItemStackToSlot(EntityEquipmentSlot.MAINHAND, new ItemStack(ZGItems.kreeReaperAxe));
 				int xRand = pos.getX() + ZGHelper.rngInt(10, 25);
@@ -142,6 +155,152 @@ public final class ZGHelper {
 				int zRand = pos.getZ() + ZGHelper.rngInt(10, 25);
 				BlockPos randPos = new BlockPos(xRand, yRand, zRand);
 				ZGHelper.spawnEntity(kree, world, randPos);
+			}
+		}
+	}
+	
+	public static void addCustomDrops(World worldObj, Entity theEntity) {
+		Random rand = new Random();
+		int randInt = rand.nextInt(100);
+		
+		// Moolus (Alien Cow)
+		if (theEntity instanceof EntityEdenCow) {
+			for (int i = 0; i < ZGHelper.rngInt(1, 4); i++) {
+				ZGHelper.dropItem(ZGItems.rawAlienBeef, worldObj, theEntity);
+			}
+		}
+		
+		// Oinkus (Alien Pig)
+		if (theEntity instanceof EntityOinkus) {
+			for (int i = 0; i < ZGHelper.rngInt(1, 4); i++) {
+				ZGHelper.dropItem(ZGItems.rawAlienBacon, worldObj, theEntity);
+			}
+		}
+		
+		// Gray Alien
+		if (theEntity instanceof EntityGrayAlien) {
+			for (int i = 0; i < ZGHelper.rngInt(1, 2); i++) {
+				ZGHelper.dropItem(ZGItems.alienStone, worldObj, theEntity);
+			}
+		}
+		
+		// Mega Creeper
+		if (theEntity instanceof EntityMegaCreeper) {
+			for (int i = 0; i < ZGHelper.rngInt(1, 4); i++) {
+				ZGHelper.dropItem(ZGItems.superChargedCoal, worldObj, theEntity);
+			}
+		}
+		
+		// Mummy
+		if (theEntity instanceof EntityMummy) {
+			if (ZGHelper.getRNGChance(5, 10)) {
+				for (int i = 0; i < ZGHelper.rngInt(1, 3); i++) {
+					ZGHelper.dropItem(Items.PAPER, worldObj, theEntity);
+				}
+			}
+			
+			if (ZGHelper.getRNGChance(5, 20)) {
+				for (int i = 0; i < ZGHelper.rngInt(1, 2); i++) {
+					ZGHelper.dropItem(ZGItems.perdGlowdust, worldObj, theEntity);
+				}
+			}
+		}
+		
+		// Scorpion
+		if (theEntity instanceof EntityScorpion) {
+			if (ZGHelper.getRNGChance(5, 20)) {
+				for (int i = 0; i < ZGHelper.rngInt(1, 2); i++) {
+					ZGHelper.dropItem(ZGItems.dustEmerald, worldObj, theEntity);
+				}
+			}
+		}
+		
+		// Shadow Skeleton
+		if (theEntity instanceof EntityShadowSkeleton) {
+			if (ZGHelper.getRNGChance(5, 10)) {
+				for (int i = 0; i < ZGHelper.rngInt(1, 4); i++) {
+					ZGHelper.dropItem(ZGItems.shadowBone, worldObj, theEntity);
+				}
+			}
+		}
+		
+		// Blubber Fish
+		if (theEntity instanceof EntityBlubberFish) {
+			ZGHelper.dropItem(ZGItems.rawBlubberFish, worldObj, theEntity);
+		}
+		
+		// Gypsy Fish
+		if (theEntity instanceof EntityBlubberFish) {
+			ZGHelper.dropItem(ZGItems.rawGypsyFish, worldObj, theEntity);
+		}
+		
+		// Blade Fish
+		if (theEntity instanceof EntityBladeFish) {
+			ZGHelper.dropItem(ZGItems.rawBladeFish, worldObj, theEntity);
+		}
+		
+		// Shark
+		if (theEntity instanceof EntityShark) {
+			// Shagreen (Shark Leather)
+			if (ZGHelper.getRNGChance(5, 10)) {
+				for (int i = 0; i < ZGHelper.rngInt(1, 2); i++) {
+					ZGHelper.dropItem(ZGItems.shagreen, worldObj, theEntity);
+				}
+			}
+			
+			// Shark Tooth
+			if (ZGHelper.getRNGChance(5, 10)) {
+				for (int i = 0; i < ZGHelper.rngInt(1, 3); i++) {
+					ZGHelper.dropItem(ZGItems.sharkTooth, worldObj, theEntity);
+				}
+			}
+		}
+		
+		// Shade Entities
+		if (theEntity instanceof IShadeEntity) {
+			if (((IShadeEntity) theEntity).shouldDropEssence()) {
+				if (ZGHelper.getRNGChance(5, 10)) {
+					for (int i = 0; i < ZGHelper.rngInt(1, 4); i++) {
+						ZGHelper.dropItem(ZGItems.darkEssence, worldObj, theEntity);
+					}
+				}
+			}
+		}
+		
+		// Xenomorph
+		// TODO
+		
+		// Vexbot
+		if (theEntity instanceof EntityVexBot) {
+			// Raw Virinium
+			if (ZGHelper.getRNGChance(5, 10)) {
+				for (int i = 0; i < ZGHelper.rngInt(1, 2); i++) {
+					ZGHelper.dropItem(ZGItems.dustVirinium, worldObj, theEntity);
+				}
+			}
+			
+			// Rhodium Ingot
+			if (ZGHelper.getRNGChance(5, 10)) {
+				for (int i = 0; i < ZGHelper.rngInt(1, 2); i++) {
+					ZGHelper.dropItem(ZGItems.ingotRhodium, worldObj, theEntity);
+				}
+			}
+			
+			// Zinc Ingot
+			if (ZGHelper.getRNGChance(5, 10)) {
+				for (int i = 0; i < ZGHelper.rngInt(1, 2); i++) {
+					ZGHelper.dropItem(ZGItems.ingotZinc, worldObj, theEntity);
+				}
+			}
+		}
+		
+		// Kree (Guarantee drop of Kree Flesh; give a chance to drop the Kree Reaper Axe)
+		if (theEntity instanceof EntityKree) {
+			for (int i = 0; i < ZGHelper.rngInt(1, 2); i++) {
+				ZGHelper.dropItem(ZGItems.kreeFlesh, worldObj, theEntity);
+			}
+			if (rand.nextInt(6) == 0) {
+				ZGHelper.dropItem(ZGItems.kreeReaperAxe, worldObj, theEntity);
 			}
 		}
 	}

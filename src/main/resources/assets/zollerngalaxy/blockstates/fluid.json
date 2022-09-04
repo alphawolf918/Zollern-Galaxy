@@ -52,6 +52,13 @@
 					"fluid": "raditefluid"
 				}
 			}
+		],
+		"kreebloodfluid": [
+			{
+				"custom": {
+					"fluid": "kreebloodfluid"
+				}
+			}
 		]
 	}
 }

@@ -63,6 +63,7 @@ public class ZGBlockBase extends Block implements ISingleZGBlockRender, IJSONBlo
 	protected boolean shouldJSONIgnore = false;
 	protected boolean isSolidColor = true;
 	protected boolean hasParticles = false;
+	protected boolean isFireproof = false;
 	protected EnumParticleTypes particleType = EnumParticleTypes.SMOKE_NORMAL;
 	protected EnumParticleTypes particleType2 = EnumParticleTypes.REDSTONE;
 	protected String[] blockInfo;

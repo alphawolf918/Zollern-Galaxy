@@ -160,6 +160,7 @@ tile.xathtallgrass.name=Xathian Tall Grass
 tile.xathwoodsapling.name=Goliath Tree Sapling
 tile.xathwoodlog.name=Goliath Tree Log
 tile.xathwoodleaves.name=Goliath Tree Leaves
+tile.xathplanks.name=Goliath Tree Planks
 tile.xathprometheanore.name=Xathian Promethean Ore
 tile.xathemeraldore.name=Xathian Emerald Ore
 tile.xathdiamondore.name=Xathian Diamond Ore
@@ -736,6 +737,10 @@ fluid.spacemilk=Space Milk
 raditefluid=Molten Radite
 tile.raditefluid.name=Molten Radite
 fluid.raditefluid=Molten Radite
+
+kreebloodfluid=Kree Blood
+tile.kreebloodfluid.name=Kree Blood
+fluid.kreebloodfluid=Kree Blood
 
 ## Containers ##
 

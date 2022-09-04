@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:glass_bottle"
+    },
+    {
+      "type": "minecraft:item_nbt",
+      "item": "forge:bucketfilled",
+      "nbt": "{FluidName:\"kreebloodfluid\",Amount:1000}"
+    }
+  ],
+  "result": {
+    "item": "zollerngalaxy:kreebloodvial",
+    "count": 4
+  }
+}

@@ -30,10 +30,14 @@ import net.minecraft.world.gen.NoiseGenerator;
 import net.minecraft.world.gen.NoiseGeneratorOctaves;
 import net.minecraft.world.gen.NoiseGeneratorPerlin;
 import net.minecraft.world.gen.structure.MapGenMineshaft;
+import net.minecraftforge.event.terraingen.PopulateChunkEvent;
+import net.minecraftforge.event.terraingen.TerrainGen;
 import zollerngalaxy.biomes.decorators.BiomeDecoratorPerdita;
 import zollerngalaxy.blocks.ZGBlocks;
 import zollerngalaxy.blocks.fluids.ZGFluids;
 import zollerngalaxy.util.BiomeUtils;
+import zollerngalaxy.worldgen.WorldGenGlowBlocksZG1;
+import zollerngalaxy.worldgen.WorldGenGlowBlocksZG2;
 import zollerngalaxy.worldgen.mapgen.MapGenCavesZG;
 import zollerngalaxy.worldgen.mapgen.MapGenRavinesZG;
 import zollerngalaxy.worldgen.structures.villages.MapGenVillageZG;
@@ -68,6 +72,8 @@ public class ChunkProviderPerdita extends ChunkProviderBase {
 	private MapGenCavesZG caveGenerator2 = new MapGenCavesZG(ZGBlocks.perdStone);
 	private final MapGenRavinesZG ravineGenerator = new MapGenRavinesZG(ZGBlocks.perdStone);
 	private final MapGenRavinesZG ravineGenerator2 = new MapGenRavinesZG(ZGBlocks.perdStone);
+	private final WorldGenGlowBlocksZG1 lostGlowGen1 = new WorldGenGlowBlocksZG1(ZGBlocks.perdGlowstone, ZGBlocks.perdStone);
+	private final WorldGenGlowBlocksZG2 lostGlowGen2 = new WorldGenGlowBlocksZG2(ZGBlocks.perdGlowstone, ZGBlocks.perdStone);
 	private final MapGenVillageZG villageGenerator = new MapGenVillageZG("Perdita", ZGBlocks.perdCaveStoneBricks);
 	private MapGenMineshaft mineshaftGenerator = new MapGenMineshaft();
 	private Biome[] biomesForGeneration;
@@ -76,7 +82,7 @@ public class ChunkProviderPerdita extends ChunkProviderBase {
 	private double[] octaves3;
 	private double[] octaves4;
 	
-	private static final int CRATER_PROB = 500;
+	private static final int CRATER_PROB = 80;
 	
 	public ChunkProviderPerdita(World worldIn, long seed, boolean mapFeaturesEnabled) {
 		this.world = worldIn;
@@ -315,8 +321,7 @@ public class ChunkProviderPerdita extends ChunkProviderBase {
 			for (int cz = chunkZ - 2; cz <= chunkZ + 2; cz++) {
 				for (int x = 0; x < ChunkProviderPerdita.CHUNK_SIZE_X; x++) {
 					for (int z = 0; z < ChunkProviderPerdita.CHUNK_SIZE_Z; z++) {
-						if (Math.abs(this.randFromPoint(cx * 16 + x, (cz * 16 + z) * 1000)) < this.noiseGen4.getValue(x * ChunkProviderPerdita.CHUNK_SIZE_X + x,
-								cz * ChunkProviderPerdita.CHUNK_SIZE_Z + z) / ChunkProviderPerdita.CRATER_PROB) {
+						if (Math.abs(this.randFromPoint(cx * 16 + x, (cz * 16 + z) * 1000)) < this.noiseGen4.getValue(x * ChunkProviderPerdita.CHUNK_SIZE_X + x, cz * ChunkProviderPerdita.CHUNK_SIZE_Z + z) / ChunkProviderPerdita.CRATER_PROB) {
 							final Random random = new Random(cx * 16 + x + (cz * 16 + z) * 5000);
 							final EnumCraterSize cSize = EnumCraterSize.sizeArray[random.nextInt(EnumCraterSize.sizeArray.length)];
 							final int size = random.nextInt(cSize.MAX_SIZE - cSize.MIN_SIZE) + cSize.MIN_SIZE;
@@ -375,6 +380,17 @@ public class ChunkProviderPerdita extends ChunkProviderBase {
 		
 		if (!ConfigManagerCore.disableMoonVillageGen && !BiomeUtils.isOceanBiome(biomegenbase)) {
 			this.villageGenerator.generateStructure(this.world, this.rand, new ChunkPos(x, z));
+		}
+		
+		// Lost Glowstone
+		if (TerrainGen.populate(this, this.world, this.rand, x, z, false, PopulateChunkEvent.Populate.EventType.GLOWSTONE)) {
+			for (int j1 = 0; j1 < this.rand.nextInt(this.rand.nextInt(10) + 1); ++j1) {
+				this.lostGlowGen1.generate(this.world, this.rand, blockpos.add(this.rand.nextInt(16) + 8, this.rand.nextInt(120) + 4, this.rand.nextInt(16) + 8));
+			}
+			
+			for (int k1 = 0; k1 < 10; ++k1) {
+				this.lostGlowGen2.generate(this.world, this.rand, blockpos.add(this.rand.nextInt(16) + 8, this.rand.nextInt(128), this.rand.nextInt(16) + 8));
+			}
 		}
 		
 		this.mineshaftGenerator.generateStructure(this.world, this.rand, new ChunkPos(x, z));

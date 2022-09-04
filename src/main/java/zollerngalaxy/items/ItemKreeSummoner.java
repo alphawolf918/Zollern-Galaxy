@@ -25,9 +25,9 @@ import zollerngalaxy.lib.helpers.CommonZGRegisterHelper;
 import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.util.ZGUtils;
 
-public class KreeSummoner extends ZGItemBase {
+public class ItemKreeSummoner extends ZGItemBase {
 	
-	public KreeSummoner() {
+	public ItemKreeSummoner() {
 		super("kreesummoner");
 		this.setMaxStackSize(1);
 		this.setMaxDamage(5);

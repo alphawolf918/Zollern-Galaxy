@@ -23,40 +23,34 @@ import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.effect.EntityLightningBolt;
+import net.minecraft.entity.item.EntityItem;
+import net.minecraft.entity.item.EntityXPOrb;
 import net.minecraft.entity.monster.EntityZombie;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
+import net.minecraft.entity.projectile.EntityFishHook;
 import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumHand;
-import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldProvider;
-import net.minecraft.world.storage.loot.LootEntry;
-import net.minecraft.world.storage.loot.LootEntryTable;
-import net.minecraft.world.storage.loot.LootPool;
-import net.minecraft.world.storage.loot.LootTable;
-import net.minecraft.world.storage.loot.LootTableList;
-import net.minecraft.world.storage.loot.LootTableManager;
-import net.minecraft.world.storage.loot.RandomValueRange;
-import net.minecraft.world.storage.loot.conditions.LootCondition;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.LootTableLoadEvent;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
+import net.minecraftforge.event.entity.player.ItemFishedEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent.NameFormat;
 import net.minecraftforge.event.entity.player.UseHoeEvent;
 import net.minecraftforge.event.world.BlockEvent.BreakEvent;
@@ -70,30 +64,16 @@ import zollerngalaxy.blocks.ZGBlockDirt;
 import zollerngalaxy.blocks.ZGBlockGrass;
 import zollerngalaxy.blocks.ZGSand;
 import zollerngalaxy.config.ConfigManagerZG;
-import zollerngalaxy.core.ZGLootTables;
 import zollerngalaxy.core.ZollernGalaxyCore;
-import zollerngalaxy.core.dimensions.worldproviders.WorldProviderAltum;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderCaligro;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderMetztli;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderVortex;
 import zollerngalaxy.items.ZGItems;
 import zollerngalaxy.lib.helpers.ZGHelper;
-import zollerngalaxy.mobs.entities.EntityBladeFish;
-import zollerngalaxy.mobs.entities.EntityBlubberFish;
-import zollerngalaxy.mobs.entities.EntityEdenCow;
 import zollerngalaxy.mobs.entities.EntityGalaxyKnight;
 import zollerngalaxy.mobs.entities.EntityGrayAlien;
-import zollerngalaxy.mobs.entities.EntityKree;
-import zollerngalaxy.mobs.entities.EntityMegaCreeper;
-import zollerngalaxy.mobs.entities.EntityMummy;
-import zollerngalaxy.mobs.entities.EntityOinkus;
-import zollerngalaxy.mobs.entities.EntityScorpion;
-import zollerngalaxy.mobs.entities.EntityShadowSkeleton;
-import zollerngalaxy.mobs.entities.EntityShark;
 import zollerngalaxy.mobs.entities.base.EntityMutantZombie;
 import zollerngalaxy.mobs.entities.companions.EntityGalaxyDragon;
-import zollerngalaxy.mobs.entities.interfaces.IShadeEntity;
-import zollerngalaxy.mobs.entities.robots.EntityVexBot;
 import zollerngalaxy.potions.ZGPotions;
 import zollerngalaxy.proxy.IProxy;
 import zollerngalaxy.util.ArmorUtils;
@@ -108,7 +88,6 @@ public class ZGEvents {
 	private ZollernGalaxyCore core = ZollernGalaxyCore.instance();
 	private IProxy proxy = this.core.proxy;
 	private Map<BlockPos, Integer> lightning = Maps.newHashMap();
-	private boolean isPlayerOnAltum = false;
 	
 	@SubscribeEvent(priority = EventPriority.HIGH, receiveCanceled = true)
 	public void onBlockBrokenEvent(BreakEvent event) {
@@ -155,7 +134,6 @@ public class ZGEvents {
 		InventoryPlayer playerInventory = player.inventory;
 		World world = player.world;
 		WorldProvider provider = world.provider;
-		this.isPlayerOnAltum = (provider instanceof WorldProviderAltum);
 		
 		boolean isCreativeMode = player.capabilities.isCreativeMode;
 		boolean isRadianceActive = player.isPotionActive(ZGPotions.radiance);
@@ -382,22 +360,59 @@ public class ZGEvents {
 		}
 	}
 	
+	// Credit to ExistingEevee for this.
 	@SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
-	public void onLootTableLoadEvent(LootTableLoadEvent event) {
-		if (ConfigManagerZG.enableZGFishingLoot && this.isPlayerOnAltum) {
-			ResourceLocation lootName = event.getName();
-			if (lootName == LootTableList.GAMEPLAY_FISHING_FISH) {
-				LootTableManager lootMgr = event.getLootTableManager();
-				LootTable lootTbl = event.getTable();
-				LootCondition[] conditions = new LootCondition[] {};
-				RandomValueRange rng = new RandomValueRange(1.0F);
-				RandomValueRange rngBonus = new RandomValueRange(0.0F);
-				LootEntry entryZGFish = new LootEntryTable(ZGLootTables.GAMEPLAY_FISHING, 80, 10, conditions, "zgfishingentry");
-				LootEntry[] entries = new LootEntry[] { entryZGFish };
-				LootPool pool = new LootPool(entries, conditions, rng, rngBonus, "zgfishingpool");
-				lootTbl.addPool(pool);
+	public void onItemFishedEvent(ItemFishedEvent event) {
+		if (ConfigManagerZG.enableZGFishingLoot) {
+			EntityPlayer player = event.getEntityPlayer();
+			int dimension = player.dimension;
+			if (dimension == ConfigManagerZG.planetAltumDimensionId && !event.getDrops().isEmpty()) {
+				event.setCanceled(true);
+				ItemStack customFishLoot = new ItemStack(ZGItems.ingotRhodium, 1);
+				int randInt = ZGHelper.rngInt(1, 6);
+				if (randInt == 1) {
+					customFishLoot = new ItemStack(ZGItems.rawBladeFish, 1);
+				} else if (randInt == 2) {
+					customFishLoot = new ItemStack(ZGItems.rawBlubberFish, 1);
+				} else if (randInt == 3) {
+					customFishLoot = new ItemStack(ZGItems.rawGypsyFish, 1);
+				} else if (randInt == 4) {
+					customFishLoot = new ItemStack(ZGItems.shagreen, 1);
+				} else if (randInt == 5) {
+					customFishLoot = new ItemStack(ZGItems.sharkTooth, 1);
+				}
+				gibFishStuffs(customFishLoot, event.getHookEntity());
 			}
 		}
+	}
+	
+	/**
+	 * Credit to ExistingEevee for this.
+	 * 
+	 * @param toGive
+	 * @param fishHook
+	 */
+	private static void gibFishStuffs(ItemStack toGive, EntityFishHook fishHook) {
+		if (toGive == null || fishHook == null || fishHook.getAngler() == null) {
+			return;
+		}
+		
+		EntityItem toHook = new EntityItem(fishHook.world, fishHook.posX, fishHook.posY, fishHook.posZ, toGive);
+		double d0 = fishHook.getAngler().posX - fishHook.posX;
+		double d1 = fishHook.getAngler().posY - fishHook.posY;
+		double d2 = fishHook.getAngler().posZ - fishHook.posZ;
+		double d3 = MathHelper.sqrt(d0 * d0 + d1 * d1 + d2 * d2);
+		double d4 = 0.1D;
+		toHook.motionX = d0 * 0.1D;
+		toHook.motionY = d1 * 0.1D + MathHelper.sqrt(d3) * 0.08D;
+		toHook.motionZ = d2 * 0.1D;
+		fishHook.world.spawnEntity(toHook);
+		World world = fishHook.getAngler().world;
+		double posX = fishHook.getAngler().posX;
+		double posY = fishHook.getAngler().posY + 0.5D;
+		double posZ = fishHook.getAngler().posZ + 0.5D;
+		EntityXPOrb xpOrb = new EntityXPOrb(world, posX, posY, posZ, new Random().nextInt(6) + 1);
+		world.spawnEntity(xpOrb);
 	}
 	
 	@SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
@@ -416,13 +431,15 @@ public class ZGEvents {
 			}
 			
 			// Turn sand blocks to glass when struck by lightning
-			if (ent instanceof EntityLightningBolt) {
-				EntityLightningBolt bolt = (EntityLightningBolt) ent;
-				BlockPos boltPos = bolt.getPosition();
-				IBlockState posState = world.getBlockState(boltPos);
-				Block stateBlock = posState.getBlock();
-				if (stateBlock instanceof BlockSand || stateBlock instanceof ZGSand) {
-					world.setBlockState(boltPos, Blocks.GLASS.getDefaultState());
+			if (ConfigManagerZG.lightningTurnsSandToGlass) {
+				if (ent instanceof EntityLightningBolt) {
+					EntityLightningBolt bolt = (EntityLightningBolt) ent;
+					BlockPos boltPos = bolt.getPosition();
+					IBlockState posState = world.getBlockState(boltPos);
+					Block stateBlock = posState.getBlock();
+					if (stateBlock instanceof BlockSand || stateBlock instanceof ZGSand) {
+						world.setBlockState(boltPos, Blocks.GLASS.getDefaultState());
+					}
 				}
 			}
 		}
@@ -436,149 +453,7 @@ public class ZGEvents {
 		Entity theEntity = event.getEntityLiving();
 		World worldObj = theEntity.world;
 		if (!worldObj.isRemote) {
-			Random rand = new Random();
-			int randInt = rand.nextInt(100);
-			
-			// Moolus (Alien Cow)
-			if (theEntity instanceof EntityEdenCow) {
-				for (int i = 0; i < ZGHelper.rngInt(1, 4); i++) {
-					ZGHelper.dropItem(ZGItems.rawAlienBeef, worldObj, theEntity);
-				}
-			}
-			
-			// Oinkus (Alien Pig)
-			if (theEntity instanceof EntityOinkus) {
-				for (int i = 0; i < ZGHelper.rngInt(1, 4); i++) {
-					ZGHelper.dropItem(ZGItems.rawAlienBacon, worldObj, theEntity);
-				}
-			}
-			
-			// Gray Alien
-			if (theEntity instanceof EntityGrayAlien) {
-				for (int i = 0; i < ZGHelper.rngInt(1, 2); i++) {
-					ZGHelper.dropItem(ZGItems.alienStone, worldObj, theEntity);
-				}
-			}
-			
-			// Mega Creeper
-			if (theEntity instanceof EntityMegaCreeper) {
-				for (int i = 0; i < ZGHelper.rngInt(1, 4); i++) {
-					ZGHelper.dropItem(ZGItems.superChargedCoal, worldObj, theEntity);
-				}
-			}
-			
-			// Mummy
-			if (theEntity instanceof EntityMummy) {
-				if (ZGHelper.getRNGChance(5, 10)) {
-					for (int i = 0; i < ZGHelper.rngInt(1, 3); i++) {
-						ZGHelper.dropItem(Items.PAPER, worldObj, theEntity);
-					}
-				}
-				
-				if (ZGHelper.getRNGChance(5, 20)) {
-					for (int i = 0; i < ZGHelper.rngInt(1, 2); i++) {
-						ZGHelper.dropItem(ZGItems.perdGlowdust, worldObj, theEntity);
-					}
-				}
-			}
-			
-			// Scorpion
-			if (theEntity instanceof EntityScorpion) {
-				if (ZGHelper.getRNGChance(5, 20)) {
-					for (int i = 0; i < ZGHelper.rngInt(1, 2); i++) {
-						ZGHelper.dropItem(ZGItems.dustEmerald, worldObj, theEntity);
-					}
-				}
-			}
-			
-			// Shadow Skeleton
-			if (theEntity instanceof EntityShadowSkeleton) {
-				if (ZGHelper.getRNGChance(5, 10)) {
-					for (int i = 0; i < ZGHelper.rngInt(1, 4); i++) {
-						ZGHelper.dropItem(ZGItems.shadowBone, worldObj, theEntity);
-					}
-				}
-			}
-			
-			// Blubber Fish
-			if (theEntity instanceof EntityBlubberFish) {
-				ZGHelper.dropItem(ZGItems.rawBlubberFish, worldObj, theEntity);
-			}
-			
-			// Gypsy Fish
-			if (theEntity instanceof EntityBlubberFish) {
-				ZGHelper.dropItem(ZGItems.rawGypsyFish, worldObj, theEntity);
-			}
-			
-			// Blade Fish
-			if (theEntity instanceof EntityBladeFish) {
-				ZGHelper.dropItem(ZGItems.rawBladeFish, worldObj, theEntity);
-			}
-			
-			// Shark
-			if (theEntity instanceof EntityShark) {
-				// Shagreen (Shark Leather)
-				if (ZGHelper.getRNGChance(5, 10)) {
-					for (int i = 0; i < ZGHelper.rngInt(1, 2); i++) {
-						ZGHelper.dropItem(ZGItems.shagreen, worldObj, theEntity);
-					}
-				}
-				
-				// Shark Tooth
-				if (ZGHelper.getRNGChance(5, 10)) {
-					for (int i = 0; i < ZGHelper.rngInt(1, 3); i++) {
-						ZGHelper.dropItem(ZGItems.sharkTooth, worldObj, theEntity);
-					}
-				}
-			}
-			
-			// Shade Entities
-			if (theEntity instanceof IShadeEntity) {
-				if (((IShadeEntity) theEntity).shouldDropEssence()) {
-					if (ZGHelper.getRNGChance(5, 10)) {
-						for (int i = 0; i < ZGHelper.rngInt(1, 4); i++) {
-							ZGHelper.dropItem(ZGItems.darkEssence, worldObj, theEntity);
-						}
-					}
-				}
-			}
-			
-			// Xenomorph
-			// TODO
-			
-			// Vexbot
-			if (theEntity instanceof EntityVexBot) {
-				// Raw Virinium
-				if (ZGHelper.getRNGChance(5, 10)) {
-					for (int i = 0; i < ZGHelper.rngInt(1, 2); i++) {
-						ZGHelper.dropItem(ZGItems.dustVirinium, worldObj, theEntity);
-					}
-				}
-				
-				// Rhodium Ingot
-				if (ZGHelper.getRNGChance(5, 10)) {
-					for (int i = 0; i < ZGHelper.rngInt(1, 2); i++) {
-						ZGHelper.dropItem(ZGItems.ingotRhodium, worldObj, theEntity);
-					}
-				}
-				
-				// Zinc Ingot
-				if (ZGHelper.getRNGChance(5, 10)) {
-					for (int i = 0; i < ZGHelper.rngInt(1, 2); i++) {
-						ZGHelper.dropItem(ZGItems.ingotZinc, worldObj, theEntity);
-					}
-				}
-			}
-			
-			// Kree (Guarantee drop of Kree Flesh; give a chance to drop the Kree Reaper Axe)
-			if (theEntity instanceof EntityKree) {
-				for (int i = 0; i < ZGHelper.rngInt(1, 2); i++) {
-					ZGHelper.dropItem(ZGItems.kreeFlesh, worldObj, theEntity);
-				}
-				if (rand.nextInt(6) == 0) {
-					ZGHelper.dropItem(ZGItems.kreeReaperAxe, worldObj, theEntity);
-				}
-			}
+			ZGHelper.addCustomDrops(worldObj, theEntity);
 		}
 	}
 	

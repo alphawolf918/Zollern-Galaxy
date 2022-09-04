@@ -28,5 +28,8 @@ public class FluidTransposerRecipes {
 		
 		// Radite
 		ThermalExpansionHelper.addTransposerFill(18400, new ItemStack(Items.BUCKET, 1), FluidUtil.getFilledBucket(new FluidStack(ZGFluids.fluidRadite, ZGFluids.fluidRadium.BUCKET_VOLUME)), new FluidStack(ZGFluids.fluidRadite, 4000), true);
+		
+		// Kree Blood
+		ThermalExpansionHelper.addTransposerFill(1500, new ItemStack(Items.BUCKET, 1), FluidUtil.getFilledBucket(new FluidStack(ZGFluids.fluidKreeBlood, ZGFluids.fluidKreeBlood.BUCKET_VOLUME)), new FluidStack(ZGFluids.fluidKreeBlood, 4000), true);
 	}
 }

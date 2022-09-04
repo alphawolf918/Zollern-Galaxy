@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "zollerngalaxy:xathwoodlog"
+    }
+  ],
+  "result": {
+    "item": "zollerngalaxy:xathplanks",
+    "count": 4
+  }
+}

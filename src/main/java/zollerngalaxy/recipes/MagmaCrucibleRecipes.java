@@ -41,6 +41,9 @@ public class MagmaCrucibleRecipes {
 		
 		// Molten Radite Block
 		addCrucibleRecipe(30000, new ItemStack(ZGBlocks.blockRadite, 1), ZGFluids.fluidRadite, 18000);
+		
+		// Kree Blood Fluid
+		addCrucibleRecipe(1500, new ItemStack(ZGItems.kreeFlesh, 1), ZGFluids.fluidKreeBlood, 1000);
 	}
 	
 	private static void addCrucibleRecipe(int energy, ItemStack itemStack, Fluid fluid, int fluidAmount) {
