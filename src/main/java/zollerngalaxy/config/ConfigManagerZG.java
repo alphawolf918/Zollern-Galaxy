@@ -152,6 +152,7 @@ public class ConfigManagerZG {
 	public static boolean enableStackChanges;
 	public static boolean enableArmorEffects;
 	public static boolean enableSweetFoodPotionEffects;
+	public static boolean enableZGFishingLoot;
 	
 	// Compat
 	public static boolean shouldOasisUseLiquidRedstone;
@@ -510,6 +511,9 @@ public class ConfigManagerZG {
 		
 		// Enable Sweet Food potion effects
 		enableSweetFoodPotionEffects = config.get(CTG_MISC, "Enable Sweet Food Potion Effects", true, "Enable sweet foods from this mod to give Potion Effects. (default: true)").getBoolean();
+		
+		// Enable custom fishing loot from this mod
+		enableZGFishingLoot = config.get(CTG_MISC, "Enable Custom Fishing Loot", true, "Enable additional fishing loot from this mod. (default: true)").getBoolean();
 		
 		// Compat (Whether or not to use Thermal Foundation's Detabilized Redstone for the Red Sea
 		// in Oasis)

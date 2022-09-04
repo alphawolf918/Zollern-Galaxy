@@ -72,6 +72,7 @@ import zollerngalaxy.blocks.ZGSand;
 import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.ZGLootTables;
 import zollerngalaxy.core.ZollernGalaxyCore;
+import zollerngalaxy.core.dimensions.worldproviders.WorldProviderAltum;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderCaligro;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderMetztli;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderVortex;
@@ -106,8 +107,8 @@ public class ZGEvents {
 	
 	private ZollernGalaxyCore core = ZollernGalaxyCore.instance();
 	private IProxy proxy = this.core.proxy;
-	
 	private Map<BlockPos, Integer> lightning = Maps.newHashMap();
+	private boolean isPlayerOnAltum = false;
 	
 	@SubscribeEvent(priority = EventPriority.HIGH, receiveCanceled = true)
 	public void onBlockBrokenEvent(BreakEvent event) {
@@ -154,6 +155,7 @@ public class ZGEvents {
 		InventoryPlayer playerInventory = player.inventory;
 		World world = player.world;
 		WorldProvider provider = world.provider;
+		this.isPlayerOnAltum = (provider instanceof WorldProviderAltum);
 		
 		boolean isCreativeMode = player.capabilities.isCreativeMode;
 		boolean isRadianceActive = player.isPotionActive(ZGPotions.radiance);
@@ -382,17 +384,19 @@ public class ZGEvents {
 	
 	@SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
 	public void onLootTableLoadEvent(LootTableLoadEvent event) {
-		ResourceLocation lootName = event.getName();
-		if (lootName == LootTableList.GAMEPLAY_FISHING_FISH) {
-			LootTableManager lootMgr = event.getLootTableManager();
-			LootTable lootTbl = event.getTable();
-			LootCondition[] conditions = new LootCondition[] {};
-			RandomValueRange rng = new RandomValueRange(1.0F);
-			RandomValueRange rngBonus = new RandomValueRange(0.0F);
-			LootEntry entryZGFish = new LootEntryTable(ZGLootTables.GAMEPLAY_FISHING, 20, 10, conditions, "zgfishingentry");
-			LootEntry[] entries = new LootEntry[] { entryZGFish };
-			LootPool pool = new LootPool(entries, conditions, rng, rngBonus, "zgfishingpool");
-			lootTbl.addPool(pool);
+		if (ConfigManagerZG.enableZGFishingLoot && this.isPlayerOnAltum) {
+			ResourceLocation lootName = event.getName();
+			if (lootName == LootTableList.GAMEPLAY_FISHING_FISH) {
+				LootTableManager lootMgr = event.getLootTableManager();
+				LootTable lootTbl = event.getTable();
+				LootCondition[] conditions = new LootCondition[] {};
+				RandomValueRange rng = new RandomValueRange(1.0F);
+				RandomValueRange rngBonus = new RandomValueRange(0.0F);
+				LootEntry entryZGFish = new LootEntryTable(ZGLootTables.GAMEPLAY_FISHING, 80, 10, conditions, "zgfishingentry");
+				LootEntry[] entries = new LootEntry[] { entryZGFish };
+				LootPool pool = new LootPool(entries, conditions, rng, rngBonus, "zgfishingpool");
+				lootTbl.addPool(pool);
+			}
 		}
 	}
 	

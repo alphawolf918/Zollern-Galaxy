@@ -8,6 +8,7 @@ Zollern Galaxy v2.0.45
 * Added more biomes to Zollus.
 * Added Small Craters, Tunnel Generation and Battle Towers to Zollus.
 * Added the Kree Summoner Orb, which calls the Kree when activated.
+* Added a config option to disable custom ZG fishing loot.
 * 
 
 [CHANGES]
