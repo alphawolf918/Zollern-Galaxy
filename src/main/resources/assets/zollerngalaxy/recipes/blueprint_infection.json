@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ZZZ",
+    "APA",
+    " P "
+  ],
+  "key": {
+    "P": {
+      "item": "zollerngalaxy:witherite"
+    },
+    "A": {
+      "item": "zollerngalaxy:raditeingot"
+    },
+    "Z": {
+      "item": "zollerngalaxy:compressedrhodiumblock"
+    }
+  },
+  "result": {
+    "item": "zollerngalaxy:blueprint_infection"
+  }
+}

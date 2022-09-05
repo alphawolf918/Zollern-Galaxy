@@ -73,6 +73,7 @@ import zollerngalaxy.mobs.entities.villagers.EntityPerditaVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityPurgotVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityTlalocVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityTociVillager;
+import zollerngalaxy.mobs.entities.villagers.EntityXathiusVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityZollusVillager;
 import zollerngalaxy.mobs.entities.zombiemutations.EntityGhoul;
 import zollerngalaxy.mobs.entities.zombiemutations.EntityOverlord;
@@ -229,6 +230,9 @@ public class MobRegistry {
 		
 		// Maveth Villager
 		registerEntity("mavethvillager", EntityMavethVillager.class, entityId++, 0x0044cc, 0xeeeeee);
+		
+		// Xathius Villager
+		registerEntity("xathiusvillager", EntityXathiusVillager.class, entityId++, 0x0099ff, 0x00ffce);
 		
 		/** END VILLAGERS **/
 		

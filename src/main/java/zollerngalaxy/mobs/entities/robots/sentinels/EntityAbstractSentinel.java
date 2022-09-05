@@ -91,7 +91,7 @@ public abstract class EntityAbstractSentinel extends EntityRobotBaseZG {
 			if (this.rand.nextInt(this.getCallReinforcementsChance()) == 0) {
 				EntityAbstractSentinel sentinel = null;
 				int spawnTypeChance = this.rand.nextInt(100);
-				if (spawnTypeChance == 1) {
+				if (spawnTypeChance <= 5) {
 					sentinel = new EntitySentinelWalker(this.world);
 				} else if (spawnTypeChance <= 25) {
 					sentinel = new EntitySentinelHound(this.world);
@@ -113,7 +113,7 @@ public abstract class EntityAbstractSentinel extends EntityRobotBaseZG {
 	/**
 	 * Chance for this Sentinel to call for reinforcements.
 	 * Smaller Numbers = Higher Chance / Higher Numbers = Smaller Chance.
-	 * Default: 6
+	 * Default: 8
 	 * 
 	 * @return
 	 */

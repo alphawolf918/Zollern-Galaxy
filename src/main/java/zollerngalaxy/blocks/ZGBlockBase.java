@@ -141,7 +141,11 @@ public class ZGBlockBase extends Block implements ISingleZGBlockRender, IJSONBlo
 	@Override
 	public void onEntityWalk(World worldIn, BlockPos pos, Entity entityIn) {
 		// Heat Damage
-		if (!entityIn.isImmuneToFire() && entityIn instanceof EntityLivingBase && !EnchantmentHelper.hasFrostWalkerEnchantment((EntityLivingBase) entityIn) && this.getIsHotBlock()) {
+		boolean immuneToFire = entityIn.isImmuneToFire();
+		boolean isLivingBase = (entityIn instanceof EntityLivingBase);
+		boolean hasFrostWalkerEnchantment = EnchantmentHelper.hasFrostWalkerEnchantment((EntityLivingBase) entityIn);
+		boolean isHotBlock = this.getIsHotBlock();
+		if (!immuneToFire && isLivingBase && !hasFrostWalkerEnchantment && isHotBlock) {
 			entityIn.attackEntityFrom(DamageSource.HOT_FLOOR, (this.enableExtremeMode) ? 8.2F : 4.5F);
 		}
 		
@@ -166,8 +170,10 @@ public class ZGBlockBase extends Block implements ISingleZGBlockRender, IJSONBlo
 						int timerIncrease = ((this.enableExtremeMode) ? 300 : 0);
 						int infectionTimer = (ZGPotions.infectionTime + timerIncrease);
 						Potion potionInfected = ZGPotions.infected;
-						PotionEffect infectedEffect = new PotionEffect(potionInfected, infectionTimer, 0);
-						player.addPotionEffect(infectedEffect);
+						PotionEffect infectedEffect = new PotionEffect(potionInfected, infectionTimer, 1);
+						if (!player.isPotionActive(potionInfected)) {
+							player.addPotionEffect(infectedEffect);
+						}
 					}
 				}
 			}

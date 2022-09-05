@@ -107,7 +107,7 @@ public class ClientProxy extends CommonProxy {
 	@Override
 	public void doPotionEffect(EntityPlayer player, Potion potionId) {
 		if (potionId == ZGPotions.infected) {
-			player.attackEntityFrom(ZGDamageSrc.deathInfection, ZGDamageSrc.deathInfection.getDamageBase());
+			ZGHelper.performBlueprintCheck(new Random(), ZGItems.blueprintInfection, player, ZGDamageSrc.deathInfection);
 		}
 		
 		if (potionId == ZGPotions.corruption) {

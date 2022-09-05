@@ -408,7 +408,11 @@ public class CraftingRecipes {
 		totalCraftRecipes++;
 		
 		// Corruption Protection
-		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.blueprintCorruption, 1), new Object[] { "ZZZ", "APA", " P ", 'Z', ZGItems.compressedAscendantAmaranth, 'A', ZGItems.ascendium, 'P', ZGItems.ascendium });
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.blueprintCorruption, 1), new Object[] { "ZZZ", "APA", " P ", 'Z', ZGItems.compressedAscendantAmaranth, 'A', ZGItems.ascendium, 'P', ZGItems.perdDiamond });
+		totalCraftRecipes++;
+		
+		// Infection Protection
+		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.blueprintInfection, 1), new Object[] { "ZZZ", "APA", " P ", 'Z', ZGBlocks.blockCompressedRhodium, 'A', ZGItems.ingotRadite, 'P', ZGItems.witherite });
 		totalCraftRecipes++;
 		
 		// Healing Heart
@@ -522,9 +526,11 @@ public class CraftingRecipes {
 		// Kree Blood Vial
 		ItemStack filledKreeBloodBucket = FluidUtil.getFilledBucket(new FluidStack(ZGFluids.fluidKreeBlood, ZGFluids.fluidKreeBlood.BUCKET_VOLUME));
 		ZGRecipeHelper.addShapelessRecipe(new ItemStack(ZGItems.kreeBloodVial, 4), new Object[] { Items.GLASS_BOTTLE, filledKreeBloodBucket });
+		totalCraftRecipes++;
 		
 		// Kree Summoner
 		ZGRecipeHelper.addRecipe(new ItemStack(ZGItems.kreeSummoner, 1), new Object[] { " R ", "RBR", " R ", 'R', ZGItems.compressedRhodium, 'B', filledKreeBloodBucket });
+		totalCraftRecipes++;
 	}
 	
 	public static void addBricks(Item coloredBrick, Block coloredBlock) {

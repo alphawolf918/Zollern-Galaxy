@@ -199,6 +199,8 @@ public class ConfigManagerZG {
 	public static boolean enableSentinels;
 	public static boolean enableSentinelReinforcements;
 	public static boolean enableAltumTreasureGen;
+	public static boolean squidDropRawMeat;
+	public static boolean enableAlienVillagerConversions;
 	
 	/////////////////////////////////////////////////
 	public static double meteorGenZollus;
@@ -588,6 +590,8 @@ public class ConfigManagerZG {
 		enableSentinels = config.get(CTG_CUSTOMS, "Enable Sentinels", true, "Should Sentinels spawn on planets and moons from this mod? (default: true). ").getBoolean();
 		enableSentinelReinforcements = config.get(CTG_CUSTOMS, "Enable Sentinel Reinforcements", true, "Should Sentinels be allowed to call reinforcements? (default: true). ").getBoolean();
 		enableAltumTreasureGen = config.get(CTG_CUSTOMS, "Enable Altum Treasure Gen", true, "Disable if Altum treasure chest generation is causing a crash. (default: true). ").getBoolean();
+		squidDropRawMeat = config.get(CTG_CUSTOMS, "Squid Drop Raw Meat", true, "If disabled, Squid will not drop Raw Squid that can be cooked. (default: true). ").getBoolean();
+		enableAlienVillagerConversions = config.get(CTG_CUSTOMS, "Enable Alien Villager Conversions", true, "Should Alien Villagers convert to planet-specific Zollern Galaxy Villagers? (default: true). ").getBoolean();
 		
 		//
 		//

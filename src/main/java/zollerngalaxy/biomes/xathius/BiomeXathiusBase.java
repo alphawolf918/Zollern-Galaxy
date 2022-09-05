@@ -21,6 +21,7 @@ import zollerngalaxy.celestial.ZGPlanets;
 import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.enums.EnumBiomeTypeZG;
 import zollerngalaxy.mobs.entities.robots.sentinels.EntitySentinelDrone;
+import zollerngalaxy.mobs.entities.villagers.EntityXathiusVillager;
 
 public abstract class BiomeXathiusBase extends BiomeSpace {
 	
@@ -48,9 +49,7 @@ public abstract class BiomeXathiusBase extends BiomeSpace {
 			this.spawnableMonsterList.add(new SpawnListEntry(EntitySentinelDrone.class, 10, 1, 2));
 		}
 		if (ConfigManagerZG.enableAlienVillagerSpawn) {
-			// this.spawnableCreatureList.add(new SpawnListEntry(EntityAlienVillager.class,
-			// this.villagerSpawnRate, this.villagerMinSpawnRate, this.villagerMaxSpawnRate));
-			// Removed Villager Spawning until a Xathian Villager is created.
+			this.spawnableCreatureList.add(new SpawnListEntry(EntityXathiusVillager.class, this.villagerSpawnRate, this.villagerMinSpawnRate, this.villagerMaxSpawnRate));
 		}
 		this.setStoneBlock(ZGBlocks.xathStone);
 		this.setPlanetForBiome(ZGPlanets.planetXathius);

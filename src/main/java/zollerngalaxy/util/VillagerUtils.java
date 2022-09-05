@@ -13,6 +13,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
+import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderAltum;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderAstros;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderAtheon;
@@ -30,6 +31,7 @@ import zollerngalaxy.core.dimensions.worldproviders.WorldProviderPerdita;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderPurgot;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderTlaloc;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderToci;
+import zollerngalaxy.core.dimensions.worldproviders.WorldProviderXathius;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderZG;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderZollus;
 import zollerngalaxy.lib.helpers.ZGHelper;
@@ -51,6 +53,7 @@ import zollerngalaxy.mobs.entities.villagers.EntityPerditaVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityPurgotVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityTlalocVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityTociVillager;
+import zollerngalaxy.mobs.entities.villagers.EntityXathiusVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityZollusVillager;
 
 public class VillagerUtils {
@@ -65,7 +68,7 @@ public class VillagerUtils {
 	 */
 	public static void ConvertVillagers(EntityJoinWorldEvent event) {
 		World world = event.getWorld();
-		if (!world.isRemote) {
+		if (!world.isRemote && ConfigManagerZG.enableAlienVillagerConversions) {
 			Entity entity = event.getEntity();
 			VillagerUtils.transformIntoVillager(world, entity, EntityAbyssalVillager.class, WorldProviderAltum.class);
 			VillagerUtils.transformIntoVillager(world, entity, EntityHarranVillager.class, WorldProviderMetztli.class);
@@ -85,6 +88,7 @@ public class VillagerUtils {
 			VillagerUtils.transformIntoVillager(world, entity, EntityKronosVillager.class, WorldProviderKronos.class);
 			VillagerUtils.transformIntoVillager(world, entity, EntityAtheonVillager.class, WorldProviderAtheon.class);
 			VillagerUtils.transformIntoVillager(world, entity, EntityMavethVillager.class, WorldProviderMaveth.class);
+			VillagerUtils.transformIntoVillager(world, entity, EntityXathiusVillager.class, WorldProviderXathius.class);
 		}
 	}
 	
@@ -102,7 +106,7 @@ public class VillagerUtils {
 	 *            The WorldProvider class for this planet or moon.
 	 */
 	private static void transformIntoVillager(World worldIn, Entity entity, Class<? extends EntityZGVillagerBase> villagerIn, Class<? extends WorldProviderZG> providerClassIn) {
-		if (!worldIn.isRemote) {
+		if (!worldIn.isRemote && ConfigManagerZG.enableAlienVillagerConversions) {
 			if (entity instanceof EntityAlienVillager) {
 				if (worldIn.provider.getClass() == providerClassIn) {
 					EntityAlienVillager alienVillager = (EntityAlienVillager) entity;

@@ -19,6 +19,7 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.item.EntityItem;
+import net.minecraft.entity.passive.EntitySquid;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.init.Blocks;
@@ -38,6 +39,7 @@ import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import zollerngalaxy.blocks.ZGBlocks;
+import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.creativetabs.CreativeTabsHelper;
 import zollerngalaxy.creativetabs.ZGTabs;
 import zollerngalaxy.items.ZGItems;
@@ -253,6 +255,13 @@ public final class ZGHelper {
 				for (int i = 0; i < ZGHelper.rngInt(1, 3); i++) {
 					ZGHelper.dropItem(ZGItems.sharkTooth, worldObj, theEntity);
 				}
+			}
+		}
+		
+		// Squid & Squidlus
+		if (theEntity instanceof EntitySquid && ConfigManagerZG.squidDropRawMeat) {
+			for (int i = 0; i < ZGHelper.rngInt(1, 2); i++) {
+				ZGHelper.dropItem(ZGItems.rawAlienSquid, worldObj, theEntity);
 			}
 		}
 		

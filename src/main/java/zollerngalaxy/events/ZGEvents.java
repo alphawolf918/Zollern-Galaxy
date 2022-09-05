@@ -369,7 +369,7 @@ public class ZGEvents {
 			if (dimension == ConfigManagerZG.planetAltumDimensionId && !event.getDrops().isEmpty()) {
 				event.setCanceled(true);
 				ItemStack customFishLoot = new ItemStack(ZGItems.ingotRhodium, 1);
-				int randInt = ZGHelper.rngInt(1, 6);
+				int randInt = ZGHelper.rngInt(0, 6);
 				if (randInt == 1) {
 					customFishLoot = new ItemStack(ZGItems.rawBladeFish, 1);
 				} else if (randInt == 2) {
@@ -445,7 +445,9 @@ public class ZGEvents {
 		}
 		
 		// Convert Alien Villagers to planet-specific Villagers
-		VillagerUtils.ConvertVillagers(event);
+		if (ConfigManagerZG.enableAlienVillagerConversions) {
+			VillagerUtils.ConvertVillagers(event);
+		}
 	}
 	
 	@SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)

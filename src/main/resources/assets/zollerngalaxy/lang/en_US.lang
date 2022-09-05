@@ -769,6 +769,8 @@ item.alienbeefraw.name=Raw Alien Beef
 item.alienbeefcooked.name=Cooked Alien Beef
 item.alienbaconraw.name=Raw Alien Bacon
 item.alienbaconcooked.name=Cooked Alien Bacon
+item.calamari_raw.name=Raw Squid
+item.calamari_cooked.name=Calamari
 item.fruitofeden.name=Fruit of Eden
 item.perdberry.name=Lost Berry
 item.perdpeach.name=Lost Peach
@@ -873,11 +875,12 @@ item.shadekey.name=Shade Key
 
 item.blueprint_rad.name=Radiation Protection
 item.blueprint_tox.name=Toxicity Protection
-item.blueprint_poison.name=Posion Protection
+item.blueprint_poison.name=Poison Protection
 item.blueprint_corruption.name=Corruption Protection
 item.blueprint_radiance.name=Darkness Protection
 item.blueprint_scorch.name=Scorch Protection
 item.blueprint_freeze.name=Freeze Protection
+item.blueprint_infection.name=Infection Protection
 
 item.compressedemerald.name=Compressed Emerald
 item.compresseddiamond.name=Compressed Diamond
@@ -1299,6 +1302,7 @@ tooltips.blueprint=Protects the Player from certain elements.
 tooltips.blueprint_corruption=Protects the Player from Corruption damage.
 tooltips.blueprint_scorch=Protects the Player from scorching thermal temperatures.
 tooltips.blueprint_freeze=Protects the Player from freezing thermal temperatures.
+tooltips.blueprint_infection=Protects the Player from Infection.
 
 tooltips.heart=Restores the Player's health.
 tooltips.maxhealth=You're already at max health!

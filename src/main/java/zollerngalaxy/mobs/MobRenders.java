@@ -68,6 +68,7 @@ import zollerngalaxy.mobs.entities.villagers.EntityPerditaVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityPurgotVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityTlalocVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityTociVillager;
+import zollerngalaxy.mobs.entities.villagers.EntityXathiusVillager;
 import zollerngalaxy.mobs.entities.villagers.EntityZollusVillager;
 import zollerngalaxy.mobs.entities.zombiemutations.EntityGhoul;
 import zollerngalaxy.mobs.entities.zombiemutations.EntityOverlord;
@@ -129,6 +130,7 @@ import zollerngalaxy.mobs.renders.villagers.RenderPerditaVillager;
 import zollerngalaxy.mobs.renders.villagers.RenderPurgotVillager;
 import zollerngalaxy.mobs.renders.villagers.RenderTlalocVillager;
 import zollerngalaxy.mobs.renders.villagers.RenderTociVillager;
+import zollerngalaxy.mobs.renders.villagers.RenderXathiusVillager;
 import zollerngalaxy.mobs.renders.villagers.RenderZollusVillager;
 import zollerngalaxy.mobs.renders.zombiemutations.RenderGhoul;
 import zollerngalaxy.mobs.renders.zombiemutations.RenderOverlord;
@@ -193,6 +195,7 @@ public final class MobRenders {
 		renderMob(EntityKronosVillager.class, RenderKronosVillager::new);
 		renderMob(EntityAtheonVillager.class, RenderAtheonVillager::new);
 		renderMob(EntityMavethVillager.class, RenderMavethVillager::new);
+		renderMob(EntityXathiusVillager.class, RenderXathiusVillager::new);
 	}
 	
 	private static void renderEnemies() {

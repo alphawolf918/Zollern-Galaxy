@@ -211,6 +211,7 @@ public class FurnaceRecipes {
 		// Food (Raw -> Cooked)
 		FurnaceRecipes.SmeltItem(ZGItems.rawAlienBacon, ZGItems.cookedAlienBacon, 1.2F);
 		FurnaceRecipes.SmeltItem(ZGItems.rawAlienBeef, ZGItems.cookedAlienBeef, 1.2F);
+		FurnaceRecipes.SmeltItem(ZGItems.rawAlienSquid, ZGItems.cookedAlienSquid, 1.4F);
 		FurnaceRecipes.SmeltItem(ZGItems.rawBlubberFish, ZGItems.cookedBlubberFish, 1.2F);
 		FurnaceRecipes.SmeltItem(ZGItems.rawBladeFish, ZGItems.cookedBladeFish, 1.2F);
 		FurnaceRecipes.SmeltItem(ZGItems.rawGypsyFish, ZGItems.cookedGypsyFish, 1.2F);

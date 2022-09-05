@@ -163,6 +163,8 @@ public class ZGItems {
 	public static final Item rawAlienBeef = new ZGItemFood("alienbeefraw", 2, 1.5F, true);
 	public static final Item cookedAlienBacon = new ZGItemFood("alienbaconcooked", 6, 4.0F, true);
 	public static final Item cookedAlienBeef = new ZGItemFood("alienbeefcooked", 6, 4.0F, true);
+	public static final Item rawAlienSquid = new ZGItemFood("calamari_raw", 1, 0.5F, false);
+	public static final Item cookedAlienSquid = new ZGItemFood("calamari_cooked", 6, 4.0F, false);
 	public static final Item edenFruit = new ZGItemFood("fruitofeden", 4, 2.5F, false);
 	public static final Item perdBerry = new ZGItemFood("perdberry", 8, 3.6F, false);
 	public static final Item perdPeach = new ZGItemFood("perdpeach", 13, 8.2F, false);
@@ -353,6 +355,7 @@ public class ZGItems {
 	public static final Item blueprintCorruption = new ItemBlueprint("corruption").setTooltipText("tooltips.blueprint_corruption");
 	public static final Item blueprintThermalHot = new ItemBlueprint("scorch").setTooltipText("tooltips.blueprint_scorch");
 	public static final Item blueprintThermalCold = new ItemBlueprint("freeze").setTooltipText("tooltips.blueprint_freeze");
+	public static final Item blueprintInfection = new ItemBlueprint("infection").setTooltipText("tooltips.blueprint_infection");
 	
 	// Healing Items
 	public static final Item healingHeart = new ItemHeart();
@@ -406,12 +409,13 @@ public class ZGItems {
 		ZGItems.registerItems(dustBrightstone, dustShinestone, dustVirinium, dustEvenium, dustCobalt, dustFueltonium, dustShinium, dustChargium, dustDiamond, dustEmerald, dustAmaranth, dustZollernium, dustZinc, dustZucrite, dustRhodium, dustPlutonium, dustEnrichment, dustObsidian, dustRadite, dustZogite, dustZogradite, dustVibranium, ingotVirinium, ingotCobalt, ingotEvenium,
 				ingotShinestone, ingotShinium, ingotChargium, ingotFueltonium, ingotLapis, ingotAmaranth, ingotAscendantAmaranth, ingotZollernium, ingotZinc, ingotEtrium, ingotZucrite, ingotRhodium, ingotRadium, ingotPlutonium, ingotObsidian, ingotRadite, ingotZogite, ingotZogradite, ingotVibranium, hud, alienStone, compressedCobalt, compressedDiamond, compressedEmerald,
 				compressedEvenium, compressedGold, compressedHeartium, compressedKriffonium, compressedVirinium, compressedVyrex, compressedPromethean, compressedSuperChargedCoal, compressedRiven, compressedAmaranth, compressedAzurite, compressedZollernium, compressedZucrite, compressedRhodium, compressedAscendantAmaranth, compressedZanium, rawAlienBacon, cookedAlienBacon,
-				rawAlienBeef, cookedAlienBeef, edenFruit, perdBerry, perdPeach, rawBlubberFish, cookedBlubberFish, rawBladeFish, cookedBladeFish, rawGypsyFish, cookedGypsyFish, creamBall, chocolateRaw, chocolateBar, brownie, candyApple, iceCreamSandwich, iceCream, chocolateStrawberry, edenDungeonKey, shadeKey, tlalocDungeonKey, perdReed, shagreen, sharkTooth, shadowBone,
-				darkEssence, radium, zanium, superChargedCoal, powerStick, lapisStick, starGateTier1, starGateTier2, starGateTier3, starGateTier4, starGateTier5, starGateTier6, starGateTier7, starGateTier8, starGateTier9, starGateTier10, starGateCandy, starGateMoon, OMNITOOL, BEDROCK_BREAKER, pickaxeCobalt, pickaxeEvenium, pickaxeVirinium, pickaxeAmaranth, pickaxeAzurite,
-				pickaxeZollernium, pickaxeRuby, pickaxeSapphire, pickaxeZanium, shovelCobalt, shovelEvenium, shovelVirinium, shovelAmaranth, shovelAzurite, shovelZollernium, shovelRuby, shovelSapphire, shovelZanium, axeCobalt, axeEvenium, axeVirinium, axeAmaranth, axeAzurite, axeZollernium, axeRuby, axeSapphire, axeZanium, hoeCobalt, hoeEvenium, hoeVirinium, hoeAmaranth,
-				hoeAzurite, hoeZollernium, hoeRuby, hoeSapphire, hoeZanium, swordCobalt, swordEvenium, swordVirinium, swordAmaranth, swordAzurite, swordZollernium, swordRuby, swordSapphire, swordZanium, swordWither, swordFire, swordThor, swordEnder, swordIce, swordLight, kreeReaperAxe, tunnelerCopper, tunnelerGold, tunnelerAmaranth, helmetWood, helmetStone, helmetAmaranth,
-				helmetZollernium, helmetAzurite, helmetRadium, helmetRuby, helmetSapphire, helmetZanium, helmetRadite, helmetZogite, chestWood, chestStone, chestAmaranth, chestZollernium, chestAzurite, chestRadium, chestRuby, chestSapphire, chestZanium, chestRadite, chestZogite, legsWood, legsStone, legsAmaranth, legsZollernium, legsAzurite, legsRadium, legsRuby, legsSapphire,
-				legsZanium, legsRadite, legsZogite, bootsWood, bootsStone, bootsAmaranth, bootsZollernium, bootsAzurite, bootsRadium, bootsRuby, bootsSapphire, bootsZanium, bootsRadite, bootsZogite, blueprintCorruption, blueprintThermalHot, blueprintThermalCold, healingHeart, healingHeartForce, amuletStorm, oxygenTankTier4, oxygenTankTier5, oxygenTankTier6);
+				rawAlienBeef, cookedAlienBeef, rawAlienSquid, cookedAlienSquid, edenFruit, perdBerry, perdPeach, rawBlubberFish, cookedBlubberFish, rawBladeFish, cookedBladeFish, rawGypsyFish, cookedGypsyFish, creamBall, chocolateRaw, chocolateBar, brownie, candyApple, iceCreamSandwich, iceCream, chocolateStrawberry, edenDungeonKey, shadeKey, tlalocDungeonKey, perdReed,
+				shagreen, sharkTooth, shadowBone, darkEssence, radium, zanium, superChargedCoal, powerStick, lapisStick, starGateTier1, starGateTier2, starGateTier3, starGateTier4, starGateTier5, starGateTier6, starGateTier7, starGateTier8, starGateTier9, starGateTier10, starGateCandy, starGateMoon, OMNITOOL, BEDROCK_BREAKER, pickaxeCobalt, pickaxeEvenium, pickaxeVirinium,
+				pickaxeAmaranth, pickaxeAzurite, pickaxeZollernium, pickaxeRuby, pickaxeSapphire, pickaxeZanium, shovelCobalt, shovelEvenium, shovelVirinium, shovelAmaranth, shovelAzurite, shovelZollernium, shovelRuby, shovelSapphire, shovelZanium, axeCobalt, axeEvenium, axeVirinium, axeAmaranth, axeAzurite, axeZollernium, axeRuby, axeSapphire, axeZanium, hoeCobalt, hoeEvenium,
+				hoeVirinium, hoeAmaranth, hoeAzurite, hoeZollernium, hoeRuby, hoeSapphire, hoeZanium, swordCobalt, swordEvenium, swordVirinium, swordAmaranth, swordAzurite, swordZollernium, swordRuby, swordSapphire, swordZanium, swordWither, swordFire, swordThor, swordEnder, swordIce, swordLight, kreeReaperAxe, tunnelerCopper, tunnelerGold, tunnelerAmaranth, helmetWood,
+				helmetStone, helmetAmaranth, helmetZollernium, helmetAzurite, helmetRadium, helmetRuby, helmetSapphire, helmetZanium, helmetRadite, helmetZogite, chestWood, chestStone, chestAmaranth, chestZollernium, chestAzurite, chestRadium, chestRuby, chestSapphire, chestZanium, chestRadite, chestZogite, legsWood, legsStone, legsAmaranth, legsZollernium, legsAzurite,
+				legsRadium, legsRuby, legsSapphire, legsZanium, legsRadite, legsZogite, bootsWood, bootsStone, bootsAmaranth, bootsZollernium, bootsAzurite, bootsRadium, bootsRuby, bootsSapphire, bootsZanium, bootsRadite, bootsZogite, blueprintCorruption, blueprintThermalHot, blueprintThermalCold, blueprintInfection, healingHeart, healingHeartForce, amuletStorm,
+				oxygenTankTier4, oxygenTankTier5, oxygenTankTier6);
 		//
 		//
 		ZGItems.registerItems(alcohol, gauze, medkit, nail, nailGroup, woodBox, metalParts, dough, doughCooked, flour, kreeFlesh, kreeBloodVial, kreeSummoner);

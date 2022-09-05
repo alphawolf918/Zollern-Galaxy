@@ -6,11 +6,16 @@ Zollern Galaxy v2.0.45
 * Added Infected Valley biome to Maveth.
     - When stepping on these blocks, they cause the Player to receive the Infected potion effect, which can then spread to other Players.
 * Added more biomes to Zollus.
+* Added Goliath Tree Planks.
 * Added Small Craters, Tunnel Generation and Battle Towers to Zollus.
 * Added the Kree Summoner Orb, which calls the Kree when activated.
 * Added a config option to disable custom ZG fishing loot.
 * Added a config option to disable lightning turning Sand into Glass.
-* Added Goliath Tree Planks.
+* Added a config option to disable Squid dropping food.
+* Added a config option to disable Galacticraft's Alien Villagers from turning into planet-specific Zollern Galaxy Villagers.
+* Added the Xathius Villager.
+* Added the Infection Protection blueprint item.
+    - Protects the Player from Infection damage as long as it's in their inventory.
 * 
 
 [CHANGES]
@@ -22,7 +27,13 @@ Zollern Galaxy v2.0.45
 * Lost Cactus and Lost Dead Bush have been made more common on Planet Perdita.
 * Kree Flesh can now be turned into Kree Blood via a Magma Crucible.
 * Goliath Tree Logs can now be turned into Planks.
-* Goliath Tree wood is now immune to fire and explosions.
+* Goliath Tree wood is now resistant to fire and explosions.
+* Sentinel Drones now have an increased chance to call Sentinel Walkers for reinforcements.
+* Squid and Squidlus now drop Raw Squid (can be cooked into Calamari).
+    - Can be disabled in the config.
+* Xathius Villagers will now replace regular GC Alien Villagers on the planet by default.
+    - Can be disabled in config.
+* Corruption Protection blueprint item now requires a Lost Diamond and Ascendium instead of two Ascendium.
 * 
 
 [FIXES]
