@@ -7,11 +7,14 @@
  */
 package zollerngalaxy.events;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
+
 import com.google.common.collect.Maps;
+
 import micdoodle8.mods.galacticraft.core.proxy.ClientProxyCore;
 import micdoodle8.mods.galacticraft.planets.venus.client.FakeLightningBoltRenderer;
 import net.minecraft.block.Block;
@@ -68,6 +71,8 @@ import zollerngalaxy.core.ZollernGalaxyCore;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderCaligro;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderMetztli;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderVortex;
+import zollerngalaxy.events.WindBlowingEvent;
+import zollerngalaxy.events.ZGSoundEvents;
 import zollerngalaxy.items.ZGItems;
 import zollerngalaxy.lib.helpers.ZGHelper;
 import zollerngalaxy.mobs.entities.EntityGalaxyKnight;
@@ -127,17 +132,14 @@ public class ZGEvents {
 		}
 	}
 	
+	//ONLY RENDERING OR CLIENT BASED THINGS SHOULD HAPPEN HERE. NO LOGIC AT ALL IF POSSIBLE, OR THE SERVER WILL NOT KNOW AND WILL THINK THE CLIENT IS CHEATING
 	@SideOnly(Side.CLIENT)
 	@SubscribeEvent(priority = EventPriority.HIGH, receiveCanceled = true)
-	public void onPlayerTick(TickEvent.PlayerTickEvent event) {
+	public void onPlayerTickClient(TickEvent.PlayerTickEvent event) {
 		EntityPlayer player = event.player;
 		InventoryPlayer playerInventory = player.inventory;
 		World world = player.world;
 		WorldProvider provider = world.provider;
-		
-		boolean isCreativeMode = player.capabilities.isCreativeMode;
-		boolean isRadianceActive = player.isPotionActive(ZGPotions.radiance);
-		boolean isAntiCorruptActive = player.isPotionActive(ZGPotions.antiCorruption);
 		
 		Iterator<Map.Entry<BlockPos, Integer>> it = lightning.entrySet().iterator();
 		while (it.hasNext()) {
@@ -164,7 +166,22 @@ public class ZGEvents {
 			SoundEvent thunder = SoundEvents.ENTITY_LIGHTNING_THUNDER;
 			SoundCategory category = SoundCategory.WEATHER;
 			world.playSound(player, posX, posY, posZ, thunder, category, volume, pitch);
-		} else if (provider instanceof WorldProviderCaligro) {
+		} 
+	}
+	
+	//NO RENDERING OR CLIENT BASED THINGS SHOULD HAPPEN HERE. ALL USUAL LOGIC (breaking, item edits, inventory) SHOULD HAPPEN HERE
+	@SubscribeEvent(priority = EventPriority.HIGH, receiveCanceled = true)
+	public void onPlayerTick(TickEvent.PlayerTickEvent event) {
+		EntityPlayer player = event.player;
+		InventoryPlayer playerInventory = player.inventory;
+		World world = player.world;
+		WorldProvider provider = world.provider;
+		
+		boolean isCreativeMode = player.capabilities.isCreativeMode;
+		boolean isRadianceActive = player.isPotionActive(ZGPotions.radiance);
+		boolean isAntiCorruptActive = player.isPotionActive(ZGPotions.antiCorruption);
+		
+		if (provider instanceof WorldProviderCaligro) {
 			// Radiance Protection
 			Item radium = ZGItems.radium;
 			ItemStack radiumStack = new ItemStack(radium, 1);
@@ -215,7 +232,7 @@ public class ZGEvents {
 	@SideOnly(Side.CLIENT)
 	@SubscribeEvent(priority = EventPriority.HIGH, receiveCanceled = true)
 	public void renderLightning(ClientProxyCore.EventSpecialRender event) {
-		Iterator<Map.Entry<BlockPos, Integer>> it = lightning.entrySet().iterator();
+        	Iterator<Map.Entry<BlockPos, Integer>> it = new ArrayList<>(lightning.entrySet()).iterator();
 		while (it.hasNext()) {
 			Map.Entry<BlockPos, Integer> entry = it.next();
 			BlockPos entryKey = entry.getKey();
@@ -332,7 +349,7 @@ public class ZGEvents {
 			event.setDisplayname(TextFormatting.GOLD + "Master Zane" + TextFormatting.WHITE);
 		} else if (username.equals("chronoxshift") || username.equals("chrono_miles_")) {
 			event.setDisplayname(TextFormatting.AQUA + "ChronoxShift" + TextFormatting.WHITE);
-		} else if (username.equals("actural_guy")) {
+		} else if (username.equals("existingeevee")) {
 			event.setDisplayname(TextFormatting.GOLD + "ExistingEevee" + TextFormatting.WHITE);
 		} else if (username.equals("autumnstarfire")) {
 			event.setDisplayname(TextFormatting.LIGHT_PURPLE + "AutumnStarFire" + TextFormatting.WHITE);
