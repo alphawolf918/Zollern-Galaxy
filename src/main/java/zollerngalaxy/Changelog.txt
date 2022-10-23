@@ -16,7 +16,6 @@ Zollern Galaxy v2.0.45
 * Added the Xathius Villager.
 * Added the Infection Protection blueprint item.
     - Protects the Player from Infection damage as long as it's in their inventory.
-* 
 
 [CHANGES]
 * Scaled down the size of Frost Giants slightly.
@@ -34,10 +33,8 @@ Zollern Galaxy v2.0.45
 * Xathius Villagers will now replace regular GC Alien Villagers on the planet by default.
     - Can be disabled in config.
 * Corruption Protection blueprint item now requires a Lost Diamond and Ascendium instead of two Ascendium.
-* 
 
 [FIXES]
 * Fixed Maveth having Eden stone in its lava lakes.
 * Fixed Xathius Tree Sapling having incorrect registry name.
 * Fixed Altum fishing loot occurring on all planets; will now only occur on Altum. Credit to ExistingEeevee!
-* 

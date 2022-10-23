@@ -1,6 +1,3 @@
-pluginManagement {
-    repositories {
-        gradlePluginPortal()
-        maven { url = 'https://gitlab.com/api/v4/projects/26758973/packages/maven' }
-    }
+plugins {
+    id "net.galacticraft.addon" version "1.0.0"
 }

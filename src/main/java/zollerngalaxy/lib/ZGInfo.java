@@ -16,7 +16,7 @@ public class ZGInfo {
 	
 	public static final String MOD_ID = "zollerngalaxy";
 	
-	// Feel free to delete the changes and not use it, used it to ensure everything ran form the
+	// Feel free to delete the changes and not use it, used it to ensure everything ran from the
 	// start
 	// public static final String vMAJOR = "2";
 	// public static final String vMINOR = "0";

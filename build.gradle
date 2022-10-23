@@ -1,37 +1,26 @@
-buildscript {
-	repositories {
-		maven { url = 'https://maven.minecraftforge.net' }
-		mavenCentral()
-	}
-	dependencies {
-		classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
-	}
-}
-
 plugins {
-	id 'wtf.gofancy.fancygradle' version '1.+'
-	id 'net.galacticraft.gradle.publishing.nexus' version '1.0.1'
+	id 'eclipse'
+	id 'maven-publish'
+	id "net.galacticraft.addon" version "1.0.0"
 }
-
-apply plugin: 'net.minecraftforge.gradle'
-apply plugin: 'eclipse'
-apply plugin: 'maven-publish'
 
 version = "${minecraft_version}-${mod_version}"
 group = 'zollerngalaxy'
 archivesBaseName = 'ZollernGalaxy'
 description = 'ZollernGalaxy: A Galacticraft Addon'
 
-java.toolchain.languageVersion = JavaLanguageVersion.of(8)
-
 eclipse.project {
 	buildCommand 'org.eclipse.buildship.core.gradleprojectbuilder'
 	natures 'org.eclipse.buildship.core.gradleprojectnature'
 }
 
+galacticraft {
+    version('4.0.3')
+}
+
 minecraft {
 
-	mappings channel: "${mapping_channel}", version: "${mapping_version}"
+	mappings channel: mappings_channel, version: mappings_version
 
 	// accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
 
@@ -53,7 +42,7 @@ minecraft {
 
 			// These arguments allow for optional authentication with Mojang servers.
 			// If you want to authenticate, put these properties in GRADLE_HOME/gradle.properties.
-			// By default, this is C:\Users\<your username>\.gradle\gradle.properties on Windows or 
+			// By default, this is C:\Users\<your username>\.gradle\gradle.properties on Windows or
 			// ~/.gradle/gradle.properties on Linux/MacOS.
 			if (project.hasProperty('mc_uuid')) {
 				// Your UUID, trimmed / without the dashes
@@ -74,7 +63,7 @@ minecraft {
 }
 
 configurations {
-	// 
+	//
 	implementation.extendsFrom mod
 	//
 	compileOnly.extendsFrom modCompile
@@ -83,12 +72,7 @@ configurations {
 }
 
 repositories {
-	// Provides a fixed LegacyDev version for assets
-	maven { 
-		name 'TeamGalacticraft'
-		url 'https://repo.galacticraft.net/repository/maven/'
-	}
-	maven { 
+	maven {
 		name 'MJRLegends'
 		url 'https://maven.mjrlegends.com/'
 		content {
@@ -119,51 +103,56 @@ repositories {
 			includeGroup 'net.industrial-craft'
 		}
 	}
+    maven {
+        url "https://cursemaven.com"
+        content {
+            includeGroup "curse.maven"
+        }
+    }
 }
 
 dependencies {
 	// These will always be `minecraft` and `mod` but version numbers can be changed
 	minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
-	mod fg.deobf('dev.galacticraft:galacticraft-legacy:4.0.3-SNAPSHOT')
-	
+
 	// Everything below is included when runs are executed, loading each mod into the game
 	// These are directly referenced in code so are needed during compile time
-	// mod fg.deobf('com.mjr.planetprogression:PlanetProgression:1.12.2-0.4.6')
-	// mod fg.deobf('com.mjr.extraplanets:ExtraPlanets:1.12.2-0.7.4')
+	mod fg.deobf('com.mjr.planetprogression:PlanetProgression:1.12.2-0.4.6')
+	mod fg.deobf('com.mjr.extraplanets:ExtraPlanets:1.12.2-0.7.4')
 	// Required liv for all his mods, only needed at runtime
-	// runOnly fg.deobf('com.mjr.mjrlegendslib:MJRLegendsLib:1.12.2-1.2.1')
+	runOnly fg.deobf('com.mjr.mjrlegendslib:MJRLegendsLib:1.12.2-1.2.1')
 	// Really don't know why this is a hard runtime dependency but yea, add it
-	// runOnly fg.deobf('net.industrial-craft:industrialcraft-2:2.8.170-ex112')
-	
+	runOnly fg.deobf('net.industrial-craft:industrialcraft-2:2.8.170-ex112')
+
 	// Explain: Both will be visable and used during compile and runtime
-	// mod fg.deobf('slimeknights:TConstruct:1.12.2-2.13.0.183')
+	mod fg.deobf('slimeknights:TConstruct:1.12.2-2.13.0.183')
 	// Required library for Tinkers
-	// mod fg.deobf('slimeknights.mantle:Mantle:1.12-1.3.3.49')
-	
+	mod fg.deobf('slimeknights.mantle:Mantle:1.12-1.3.3.49')
+
 	// Explain: Disable mods during runs but expose to classpath for compile time
-	//modCompile fg.deobf('slimeknights:TConstruct:1.12.2-2.13.0.183')
-	//modCompile fg.deobf('slimeknights.mantle:Mantle:1.12-1.3.3.49')
-	
-	// mod fg.deobf('curse.maven:aliensvspredator-221641:3397885')
+	modCompile fg.deobf('slimeknights:TConstruct:1.12.2-2.13.0.183')
+	modCompile fg.deobf('slimeknights.mantle:Mantle:1.12-1.3.3.49')
+
+	mod fg.deobf('curse.maven:aliensvspredator-221641:3397885')
 	// Required lib for scary alien mod /w funny guns
-	// mod fg.deobf('curse.maven:mdxlib-248278:2975661')
-	
-	// mod fg.deobf('curse.maven:extremereactors-250277:3194746')
+	mod fg.deobf('curse.maven:mdxlib-248278:2975661')
+
+	mod fg.deobf('curse.maven:extremereactors-250277:3194746')
 	// Required library for Chernobyl w/o Boom mod
-	// mod fg.deobf('curse.maven:zerocore-247921:3194743')
-	
-	// mod fg.deobf('curse.maven:thermal-foundation-222880:2926428')
+	mod fg.deobf('curse.maven:zerocore-247921:3194743')
+
+	mod fg.deobf('curse.maven:thermal-foundation-222880:2926428')
 	// Required library for thermal mods
-	// mod fg.deobf('curse.maven:cofhcore-69162:2920433')
+	mod fg.deobf('curse.maven:cofhcore-69162:2920433')
 	// Required library for thermal mods
-	// runOnly fg.deobf('curse.maven:CodeChickenLib-242818:2779848')
-	
+	runOnly fg.deobf('curse.maven:CodeChickenLib-242818:2779848')
+
 	// Adding this for future compat with JEI if planned
-	// modCompile fg.deobf('mezz.jei:jei_1.12.2:4.16.1.302:api')
+	modCompile fg.deobf('mezz.jei:jei_1.12.2:4.16.1.302:api')
 	// But lets use the mod in runs because its big brain
-	// runOnly fg.deobf('mezz.jei:jei_1.12.2:4.16.1.302')
-	
-	// mod fg.deobf('curse.maven:appliedenergistics2-223794:2747063')
+	runOnly fg.deobf('mezz.jei:jei_1.12.2:4.16.1.302')
+
+	mod fg.deobf('curse.maven:appliedenergistics2-223794:2747063')
 
 	// All others that are not directly referenced in code but want to include in runs
 	// Since we don't use them in our code, no need to remap its mappings to ours
@@ -174,15 +163,6 @@ dependencies {
 	runOnly 'curse.maven:blankplanet-248412:2614326'
 	runOnly 'curse.maven:thermal-expansion-69163:2926431'
 	runOnly 'curse.maven:thermal-dynamics-227443:2920505'
-}
-
-fancyGradle {
-    patches {
-        resources
-        //coremods
-        codeChickenLib
-        //asm
-    }
 }
 
 apply from: 'gradle/resources.gradle'
@@ -200,11 +180,11 @@ jar {
 				'Implementation-Timestamp'	: new Date().format('yyyy-MM-dd\'T\'HH:mm:ssZ'),
 				'Built-On-Minecraft'		: "${minecraft_version}",
 				'Built-On-Forge'            : "${forge_version}",
-				'Built-On-Mapping'          : "${mapping_channel}-${mapping_version}",
+				'Built-On-Mapping'          : "${mappings_channel}-${mappings_version}",
 				'Built-Using'               : "ForgeGradle: 5.1.+"
 		])
 	}
-	
+
 	afterEvaluate { finalizedBy reobfJar }
 }
 
