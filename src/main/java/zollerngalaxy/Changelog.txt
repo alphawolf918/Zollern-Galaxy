@@ -1,40 +1,14 @@
 ===== CHANGELOG =====
-Zollern Galaxy v2.0.45
+Zollern Galaxy v2.0.46
 =====================
 
 [NEW]
-* Added Infected Valley biome to Maveth.
-    - When stepping on these blocks, they cause the Player to receive the Infected potion effect, which can then spread to other Players.
-* Added more biomes to Zollus.
-* Added Goliath Tree Planks.
-* Added Small Craters, Tunnel Generation and Battle Towers to Zollus.
-* Added the Kree Summoner Orb, which calls the Kree when activated.
-* Added a config option to disable custom ZG fishing loot.
-* Added a config option to disable lightning turning Sand into Glass.
-* Added a config option to disable Squid dropping food.
-* Added a config option to disable Galacticraft's Alien Villagers from turning into planet-specific Zollern Galaxy Villagers.
-* Added the Xathius Villager.
-* Added the Infection Protection blueprint item.
-    - Protects the Player from Infection damage as long as it's in their inventory.
+* 
 
 [CHANGES]
-* Scaled down the size of Frost Giants slightly.
-* Changed Ice Spikes on Planet Zollus to be a randomized height of 8 - 16 blocks.
-* Modified chunk generation of Planet Zollus.
-* Kree Reapers no longer take fall damage.
-* Lost Glowstone now spawns in caves on Planet Perdita like it's supposed to.
-* Lost Cactus and Lost Dead Bush have been made more common on Planet Perdita.
-* Kree Flesh can now be turned into Kree Blood via a Magma Crucible.
-* Goliath Tree Logs can now be turned into Planks.
-* Goliath Tree wood is now resistant to fire and explosions.
-* Sentinel Drones now have an increased chance to call Sentinel Walkers for reinforcements.
-* Squid and Squidlus now drop Raw Squid (can be cooked into Calamari).
-    - Can be disabled in the config.
-* Xathius Villagers will now replace regular GC Alien Villagers on the planet by default.
-    - Can be disabled in config.
-* Corruption Protection blueprint item now requires a Lost Diamond and Ascendium instead of two Ascendium.
+* Updated Oasis grass texture to be more red.
+* 
 
 [FIXES]
-* Fixed Maveth having Eden stone in its lava lakes.
-* Fixed Xathius Tree Sapling having incorrect registry name.
-* Fixed Altum fishing loot occurring on all planets; will now only occur on Altum. Credit to ExistingEeevee!
+* Fixed bug with invalid cast in onEntityWalk.
+* 

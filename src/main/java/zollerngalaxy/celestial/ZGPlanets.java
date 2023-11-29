@@ -751,7 +751,7 @@ public class ZGPlanets {
 		planetPrimor.setRelativeOrbitTime(2.0F);
 		planetPrimor.setBodyIcon("primor");
 		
-		ZGHelper.Log("Loaded a total of " + totalPlanets + " new planets.");
+		ZGHelper.Log("Loaded a total of " + totalPlanets + " planets.");
 	}
 	
 	public static void initMoons() {
@@ -777,7 +777,7 @@ public class ZGPlanets {
 		moonAstros.setAtmosphere();
 		moonAstros.setBiomeInfo(ZGBiomes.ASTROS_BASE, ZGBiomes.ASTROS_ROCKIES, ZGBiomes.ASTROS_GLACIERS);
 		totalMoons++;
-		ZGHelper.Log("Loaded a total of " + totalMoons + " new moons.");
+		ZGHelper.Log("Loaded a total of " + totalMoons + " moons.");
 	}
 	
 	public static void registerSystems() {
