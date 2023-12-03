@@ -20,6 +20,7 @@ import zollerngalaxy.celestial.IZollernBody;
 import zollerngalaxy.celestial.ZGMoon;
 import zollerngalaxy.config.ConfigManagerZG;
 import zollerngalaxy.core.dimensions.worldproviders.WorldProviderPlanetZG;
+import zollerngalaxy.lib.helpers.ZGHelper;
 
 public class BiomeSpace extends ZGBiomeBase {
 	
@@ -53,7 +54,7 @@ public class BiomeSpace extends ZGBiomeBase {
 	
 	private void init() {
 		int numSpawn = 4;
-		numSpawn *= (this.enableExtremeMode) ? 2 : 1;
+		numSpawn *= (this.enableExtremeMode) ? ZGHelper.rngInt(2, 4) : 1;
 		this.clearAllSpawning();
 		List<SpawnListEntry> monsterList = this.spawnableMonsterList;
 		monsterList.add(new SpawnListEntry(EntityEvolvedZombie.class, 100, numSpawn, numSpawn));
@@ -162,15 +163,11 @@ public class BiomeSpace extends ZGBiomeBase {
 	 */
 	public float getBodyTemp() {
 		IZollernBody planet = this.getBodyForBiome();
-		
-		float biomeTemp = this.getBiomeTemp();
 		Random rand = new Random();
-		
+		float biomeTemp = this.getBiomeTemp();
 		float planetTemp = planet.getBodyTemperature();
 		float flucTemp = planetTemp;
-		
 		int tempChangeBy = (this.enableExtremeMode) ? 50 : 25;
-		
 		float maxTemp = planetTemp + tempChangeBy;
 		float minTemp = planetTemp - tempChangeBy;
 		

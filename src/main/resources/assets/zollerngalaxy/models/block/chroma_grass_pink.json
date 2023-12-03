@@ -1,0 +1,9 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "all": "zollerngalaxy:blocks/chromasoil",
+    "top": "zollerngalaxy:blocks/chroma_grass_pink",
+    "right": "zollerngalaxy:blocks/chroma_grass_pink_side",
+    "left": "zollerngalaxy:blocks/chroma_grass_pink_side"
+  }
+}

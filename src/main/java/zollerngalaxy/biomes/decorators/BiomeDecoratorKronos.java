@@ -130,7 +130,7 @@ public class BiomeDecoratorKronos extends BiomeDecoratorZG {
 		this.zaniumGen = new WorldGenMinableZG(ZGBlocks.netherZaniumOre, NETHERRACK, EnumOreGenZG.ZANIUM);
 		this.raditeGen = new WorldGenMinableZG(ZGBlocks.netherRaditeOre, NETHERRACK, EnumOreGenZG.RADITE);
 		this.zogiteGen = new WorldGenMinableZG(ZGBlocks.netherZogiteOre, NETHERRACK, EnumOreGenZG.ZOGITE);
-		this.azuriteGen = new WorldGenMinableZG(ZGBlocks.azuriteOre, OBSIDIAN, EnumOreGenZG.AZURITE);
+		this.azuriteGen = new WorldGenMinableZG(ZGBlocks.netherAzuriteOre, OBSIDIAN, EnumOreGenZG.AZURITE);
 	}
 	
 	@Override

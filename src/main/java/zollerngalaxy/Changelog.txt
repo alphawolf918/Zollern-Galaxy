@@ -1,14 +1,16 @@
 ===== CHANGELOG =====
-Zollern Galaxy v2.0.46
+Zollern Galaxy v2.0.47
 =====================
 
 [NEW]
+* Added Chroma Grass and Chroma Soil blocks.
+* Added the Chroma Grass Fields biome to Exodus.
+    - Biome has varying colors of grass with Chroma Soil underneath.
 * 
 
 [CHANGES]
-* Updated Oasis grass texture to be more red.
+* Changed Extreme mode from x2 spawns to 2x - 4x spawns (RNG).
 * 
 
 [FIXES]
-* Fixed bug with invalid cast in onEntityWalk.
 * 

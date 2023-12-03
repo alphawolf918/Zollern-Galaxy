@@ -60,7 +60,7 @@ public class BiomeKronosBlackMountain extends BiomeKronosBase {
 				
 				IBlockState state = worldIn.getBlockState(blockpos);
 				if (state.getBlock().isReplaceableOreGen(state, worldIn, blockpos, BlockMatcher.forBlock(Blocks.OBSIDIAN))) {
-					worldIn.setBlockState(blockpos, ZGBlocks.azuriteOre.getDefaultState(), 16 | 2);
+					worldIn.setBlockState(blockpos, ZGBlocks.netherAzuriteOre.getDefaultState(), 16 | 2);
 				}
 			}
 			return true;

@@ -68,7 +68,7 @@ public class BiomeDecoratorExodus extends BiomeDecoratorZG {
 	
 	public int tallGrassPerChunk = 10;
 	public int waterLakesPerChunk = 2;
-	public int lavaLakesPerChunk = (this.enableExtremeMode) ? 12 : 6;
+	public int lavaLakesPerChunk = (this.enableExtremeMode) ? 2 : 1;
 	public int flowersPerChunk = 2;
 	public int cropsPerChunk = 2;
 	public int battleTowersPerChunk = 2;

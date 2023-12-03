@@ -1,0 +1,27 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "textures": {
+      "bottom": "zollerngalaxy:blocks/chromasoil",
+      "top": "zollerngalaxy:blocks/chroma_grass_blue",
+      "side": "zollerngalaxy:blocks/chroma_grass_blue_side"
+    },
+    "model": "cube_bottom_top"
+  },
+  "variants": {
+    "normal": [
+      {
+        "y": 90
+      },
+      {
+        "y": 180
+      },
+      {
+        "y": 270
+      }
+    ],
+    "inventory": [
+      {}
+    ]
+  }
+}

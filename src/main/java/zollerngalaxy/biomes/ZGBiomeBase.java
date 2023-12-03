@@ -140,16 +140,29 @@ public class ZGBiomeBase extends BiomeGenBaseGC {
 	}
 	
 	public Biome clearAllSpawning() {
-		this.spawnableCreatureList.clear();
-		this.spawnableMonsterList.clear();
-		this.spawnableCaveCreatureList.clear();
-		this.spawnableWaterCreatureList.clear();
+		this.clearAllNonMonsterSpawning();
+		this.clearMonsterSpawning();
 		return this;
 	}
 	
 	public Biome clearAllNonMonsterSpawning() {
+		this.clearCreatureSpawning();
+		this.clearCaveCreatureSpawning();
+		this.clearWaterSpawning();
+		return this;
+	}
+	
+	public Biome clearCreatureSpawning() {
 		this.spawnableCreatureList.clear();
+		return this;
+	}
+	
+	public Biome clearCaveCreatureSpawning() {
 		this.spawnableCaveCreatureList.clear();
+		return this;
+	}
+	
+	public Biome clearWaterSpawning() {
 		this.spawnableWaterCreatureList.clear();
 		return this;
 	}

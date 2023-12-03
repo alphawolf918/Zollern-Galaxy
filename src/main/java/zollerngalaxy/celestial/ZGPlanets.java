@@ -531,7 +531,7 @@ public class ZGPlanets {
 		planetExodus.setBodyGasses(EnumAtmosphericGas.OXYGEN, EnumAtmosphericGas.CO2, EnumAtmosphericGas.NITROGEN, EnumAtmosphericGas.WATER, EnumAtmosphericGas.HYDROGEN);
 		planetExodus.setBodyIcon("exodus");
 		planetExodus.setAtmosphere();
-		planetExodus.setBiomeInfo(ZGBiomes.EXODUS_AZURE_PLAINS, ZGBiomes.EXODUS_ROCKY_HILLS, ZGBiomes.EXODUS_OCEAN, ZGBiomes.EXODUS_FOREST, ZGBiomes.EXODUS_BLACK_MESA);
+		planetExodus.setBiomeInfo(ZGBiomes.EXODUS_AZURE_PLAINS, ZGBiomes.EXODUS_CHROMA_GRASS_FIELDS, ZGBiomes.EXODUS_ROCKY_HILLS, ZGBiomes.EXODUS_OCEAN, ZGBiomes.EXODUS_FOREST, ZGBiomes.EXODUS_BLACK_MESA);
 		totalPlanets++;
 		
 		// Vortex

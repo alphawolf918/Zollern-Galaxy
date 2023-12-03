@@ -323,7 +323,7 @@ public class OreDictRegistry {
 		registerOre("swordAmaranth", ZGItems.swordAmaranth);
 		
 		// Azurite
-		registerOre("oreAzurite", ZGBlocks.xathAzuriteOre, ZGBlocks.azuriteOre);
+		registerOre("oreAzurite", ZGBlocks.xathAzuriteOre, ZGBlocks.netherAzuriteOre);
 		registerOre("gemAzurite", ZGItems.azurite);
 		registerOre("blockAzurite", ZGBlocks.blockAzurite);
 		registerOre("pickaxeAzurite", ZGItems.pickaxeAzurite);

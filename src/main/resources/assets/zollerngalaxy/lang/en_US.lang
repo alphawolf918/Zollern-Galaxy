@@ -589,6 +589,13 @@ tile.mavethamaranthore.name=Maveth Amaranth Ore
 tile.mavethzollerniumore.name=Maveth Zollernium Ore
 tile.vibraniumblock.name=Block of Vibranium
 
+tile.chroma_grass_pink.name=Pink Chroma Grass
+tile.chroma_grass_blue.name=Blue Chroma Grass
+tile.chroma_grass_green.name=Green Chroma Grass
+tile.chroma_grass_yellow.name=Yellow Chroma Grass
+tile.chroma_grass_red.name=Red Chroma Grass
+tile.chromasoil.name=Chroma Soil
+
 tile.mudclayblock.name=Mud Clay
 tile.endrock.name=Endrock
 
