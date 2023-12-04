@@ -199,6 +199,11 @@ public class WorldProviderExodus extends WorldProviderPlanetZG {
 	public List<Block> getSurfaceBlocks() {
 		ArrayList<Block> blockList = new ArrayList<Block>();
 		blockList.add(ZGBlocks.exodusGrass);
+		blockList.add(ZGBlocks.chromaGrassPink);
+		blockList.add(ZGBlocks.chromaGrassBlue);
+		blockList.add(ZGBlocks.chromaGrassGreen);
+		blockList.add(ZGBlocks.chromaGrassYellow);
+		blockList.add(ZGBlocks.chromaGrassRed);
 		return blockList;
 	}
 	

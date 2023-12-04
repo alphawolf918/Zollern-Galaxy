@@ -61,6 +61,7 @@ public abstract class BiomeExodusBase extends BiomeSpace {
 		this.biomeDecor.mushroomsPerChunk = -999;
 		this.biomeDecor.lavaLakesPerChunk = 1;
 		this.biomeDecor.treesPerChunk = 0;
+		this.biomeDecor.battleTowersPerChunk = 1;
 		this.clearAllSpawning();
 		this.spawnableCreatureList.add(new SpawnListEntry(EntityArcon.class, 2, 2, 2));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityEvolvedZombie.class, 100, 4, 4));

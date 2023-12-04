@@ -38,7 +38,7 @@ public class BiomeBlackMesa extends BiomeExodusBase {
 		props.setTemperature(6.0F);
 		this.biomeDecor.tallGrassPerChunk = 0;
 		this.biomeDecor.flowersPerChunk = 0;
-		this.biomeDecor.lavaLakesPerChunk = 12;
+		this.biomeDecor.lavaLakesPerChunk = 6;
 		this.biomeDecor.generateFalls = false;
 		this.enableSnow = false;
 		this.setTemp(36F);

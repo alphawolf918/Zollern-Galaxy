@@ -32,7 +32,7 @@ public class BiomeAzuralPlains extends BiomeExodusBase {
 		this.biomeDecor.generateFalls = true;
 		this.biomeDecor.tallGrassPerChunk = 14;
 		this.biomeDecor.treesPerChunk = 2;
-		this.biomeDecor.lavaLakesPerChunk = 1;
+		this.biomeDecor.lavaLakesPerChunk = 0;
 		this.biomeDecor.flowersPerChunk = 8;
 		this.enableSnow = false;
 		this.setTemp(4F);

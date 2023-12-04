@@ -6,10 +6,12 @@ Zollern Galaxy v2.0.47
 * Added Chroma Grass and Chroma Soil blocks.
 * Added the Chroma Grass Fields biome to Exodus.
     - Biome has varying colors of grass with Chroma Soil underneath.
+* Added Battle Towers to Exodus.
 * 
 
 [CHANGES]
 * Changed Extreme mode from x2 spawns to 2x - 4x spawns (RNG).
+* Reduced the amount of lava generated on Exodus.
 * 
 
 [FIXES]

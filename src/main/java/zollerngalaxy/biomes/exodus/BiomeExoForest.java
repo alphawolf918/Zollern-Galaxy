@@ -39,14 +39,14 @@ public class BiomeExoForest extends BiomeExodusBase {
 		props.setHeightVariation(0.5F);
 		props.setTemperature(5.0F);
 		this.biomeDecor.tallGrassPerChunk = 15;
-		this.biomeDecor.lavaLakesPerChunk = 1;
+		this.biomeDecor.lavaLakesPerChunk = 0;
 		this.biomeDecor.generateFalls = true;
-		this.biomeDecor.treesPerChunk = 6;
+		this.biomeDecor.treesPerChunk = 8;
 		this.biomeDecor.flowersPerChunk = 10;
 		this.enableSnow = false;
 		this.setTemp(5.2F);
 		this.setBiomeHeight(24);
-		this.setBiomeType(EnumBiomeTypeZG.LUSH);
+		this.setBiomeType(EnumBiomeTypeZG.FOREST);
 		this.grassFoliageColor = 0xff008b;
 		this.waterColor = 0x8b008b;
 		this.topBlock = ZGBlocks.exodusGrass.getDefaultState();

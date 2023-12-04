@@ -21,29 +21,25 @@ public class BiomeChromaGrassFields extends BiomeExodusBase {
 		this.setupBiome(props);
 	}
 	
-	public BiomeChromaGrassFields(String singleName, BiomeProperties props) {
-		super(singleName, props);
-		this.setupBiome(props);
-	}
-	
 	private void setupBiome(BiomeProperties props) {
 		this.setTempCategory(TempCategory.MEDIUM);
-		props.setBaseHeight(1.0F);
-		props.setHeightVariation(0.0F);
-		props.setTemperature(5.6F);
-		this.biomeDecor.generateFalls = true;
+		props.setBaseHeight(1.2F);
+		props.setHeightVariation(0.2F);
+		props.setTemperature(4.6F);
+		this.biomeDecor.generateFalls = false;
 		this.biomeDecor.tallGrassPerChunk = 16;
-		this.biomeDecor.treesPerChunk = -999;
-		this.biomeDecor.lavaLakesPerChunk = -999;
-		this.biomeDecor.flowersPerChunk = 8;
+		this.biomeDecor.treesPerChunk = 2;
+		this.biomeDecor.lavaLakesPerChunk = 0;
+		this.biomeDecor.waterLakesPerChunk = 4;
+		this.biomeDecor.flowersPerChunk = 4;
 		this.enableSnow = false;
-		this.setTemp(5.6F);
+		this.setTemp(4.6F);
 		this.setBiomeHeight(42);
 		this.setBiomeType(EnumBiomeTypeZG.LUSH);
 		int rng = ZGHelper.rngInt(1, 100);
 		this.grassFoliageColor = (rng > 50) ? 0x00008b : 0xff00ff;
 		this.waterColor = 0x00008b;
-		this.topBlock = this.getChromaVariant();
+		this.topBlock = this.getChromaVariant(); // Still only getting the one color...
 		this.fillerBlock = ZGBlocks.chromaSoil.getDefaultState();
 		this.stoneBlock = ZGBlocks.exodusStone;
 	}
@@ -66,6 +62,6 @@ public class BiomeChromaGrassFields extends BiomeExodusBase {
 	@Override
 	@SideOnly(Side.CLIENT)
 	public int getSkyColorByTemp(float p_76731_1_) {
-		return 0xff4c6e;
+		return 0x0099ff;
 	}
 }

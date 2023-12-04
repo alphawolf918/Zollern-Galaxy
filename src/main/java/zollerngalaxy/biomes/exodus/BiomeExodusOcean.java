@@ -35,9 +35,10 @@ public class BiomeExodusOcean extends BiomeExodusBase {
 		this.biomeDecor.flowersPerChunk = 5;
 		this.biomeDecor.generateFalls = true;
 		this.biomeDecor.generateLakes = true;
-		this.biomeDecor.lavaLakesPerChunk = 4;
+		this.biomeDecor.lavaLakesPerChunk = 0;
 		this.biomeDecor.deadBushPerChunk = 0;
 		this.biomeDecor.waterLakesPerChunk = 6;
+		this.biomeDecor.battleTowersPerChunk = 0;
 		this.enableSnow = false;
 		this.grassFoliageColor = 0x009f00;
 		this.waterColor = 0x00009f;

@@ -135,11 +135,13 @@ public class BiomeDecoratorExodus extends BiomeDecoratorZG {
 		// Lava Lakes
 		if (TerrainGen.decorate(world, rand, forgeChunkPos, DecorateBiomeEvent.Decorate.EventType.LAKE_LAVA)) {
 			if (this.generateLakes && this.lavaLakesPerChunk > 0) {
-				for (int i = 0; i < this.lavaLakesPerChunk; ++i) {
-					y = rand.nextInt(rand.nextInt(genY) + 8);
-					
-					if (rand.nextInt((this.enableExtremeMode) ? 75 : 100) <= 50) {
-						(new WorldGenLakesZG(Blocks.LAVA, BLOCK_STONE)).generate(world, rand, this.chunkPos.add(x, y, z));
+				if (rand.nextInt(5) == 0) {
+					for (int i = 0; i < this.lavaLakesPerChunk; ++i) {
+						y = rand.nextInt(rand.nextInt(genY) + 8);
+						
+						if (rand.nextInt((this.enableExtremeMode) ? 75 : 100) <= 50) {
+							(new WorldGenLakesZG(Blocks.LAVA, BLOCK_STONE)).generate(world, rand, this.chunkPos.add(x, y, z));
+						}
 					}
 				}
 			}
@@ -197,12 +199,14 @@ public class BiomeDecoratorExodus extends BiomeDecoratorZG {
 				}
 			
 			if (TerrainGen.decorate(world, rand, forgeChunkPos, DecorateBiomeEvent.Decorate.EventType.LAKE_LAVA))
-				for (int l5 = 0; l5 < 20; ++l5) {
-					int j10 = rand.nextInt(16) + 8;
-					int i14 = rand.nextInt(16) + 8;
-					int j17 = rand.nextInt(rand.nextInt(rand.nextInt(112) + 8) + 8);
-					BlockPos blockpos3 = this.chunkPos.add(j10, j17, i14);
-					(new WorldGenLiquids(Blocks.FLOWING_LAVA)).generate(world, rand, blockpos3);
+				if (rand.nextInt(3) == 0) {
+					for (int l5 = 0; l5 < 20; ++l5) {
+						int j10 = rand.nextInt(16) + 8;
+						int i14 = rand.nextInt(16) + 8;
+						int j17 = rand.nextInt(rand.nextInt(rand.nextInt(112) + 8) + 8);
+						BlockPos blockpos3 = this.chunkPos.add(j10, j17, i14);
+						(new WorldGenLiquids(Blocks.FLOWING_LAVA)).generate(world, rand, blockpos3);
+					}
 				}
 		}
 		
@@ -235,7 +239,18 @@ public class BiomeDecoratorExodus extends BiomeDecoratorZG {
 					}
 				}
 			}
-			
+		}
+		
+		// Battle Towers
+		if (this.generateBattleTowers && this.battleTowersPerChunk > 0 && !BiomeUtils.isOceanBiome(biome)) {
+			if (ZGHelper.rngInt(1, 250) <= 35) {
+				for (int i = 0; i < this.battleTowersPerChunk; ++i) {
+					y = rand.nextInt(rand.nextInt(genY) + 8);
+					if (y >= 60 && y < 80) {
+						this.battleTowerGen.generate(world, rand, this.chunkPos.add(x, y, z));
+					}
+				}
+			}
 		}
 		
 		// Craters
